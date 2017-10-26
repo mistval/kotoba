@@ -115,7 +115,7 @@ sh ./generate_documentation.sh
 ```
 And then open monochrome/documentation/index.html.
 
-The core code follows Google's JavaScript coding conventions, with the exception of its maximum line length limit. Code style in the core classes can be checked with ```sh ./style_checks.sh```
+The core code (mostly) complies with Google's JavaScript coding conventions, with the exception of its maximum line length limit. Code style in the core classes can be checked with ```sh ./style_checks.sh```
 
 ## Tests
 ```
