@@ -1,0 +1,17 @@
+{
+  "botToken": "",
+  "botAdminIds": [""],
+  "discordBotsDotOrgAPIKey": "",
+  "logsDirectory": "./logs",
+  "useANSIColorsInLogFiles": true,
+  "serverAdminRoleName": "monochrome",
+  "genericErrorMessage": "Oh no, that command had an error! Please tell my owner to check the logs!",
+  "genericDMReply": "Hi <user>, bot!help to see my commands!",
+  "genericMentionReply": "Hi <@user>, say bot!help to see my commands!",
+  "statusRotation": [
+    "bot!help for commands!",
+    "eating chicken",
+    "buying games on steam"
+  ],
+  "statusRotationIntervalInSeconds": 600
+}
