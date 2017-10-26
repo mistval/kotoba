@@ -95,12 +95,15 @@ class Command {
       return 'Command can only be used in server';
     }
     if (this.serverAdminOnly_ && !isBotAdmin) {
-      let serverAdminRole = msg.channel.guild.roles.find((role) => {
-        return role.name.toLowerCase() === config.serverAdminRoleName.toLowerCase();
-      });
+      let isServerAdmin = userIsServerAdmin(msg, config);
 
-      if (!serverAdminRole || msg.member.roles.indexOf(serverAdminRole.id) === -1) {
-        ErisUtils.sendMessageAndDelete(msg, 'You must have a role called \'' + config.serverAdminRoleName + '\' in order to use that command.');
+      if (!isServerAdmin) {
+        let errorMessage = 'You must be a server admin ';
+        if (config.serverAdminRoleName) {
+          errorMessage += 'or have a role called \'' + config.serverAdminRoleName + '\' ';
+        }
+        errorMessage += 'in order to do that.';
+        ErisUtils.sendMessageAndDelete(msg, errorMessage);
         return 'User is not a server admin';
       }
     }
@@ -141,6 +144,24 @@ class Command {
     this.cooldown_ * 1000);
     return this.action_(bot, msg, suffix);
   }
+}
+
+function userIsServerAdmin(msg, config) {
+  debugger;
+  let permission = msg.member.permission.json;
+  if (permission.manageGuild || permission.administrator || permission.manageChannels) {
+    return true;
+  }
+
+  let serverAdminRole = msg.channel.guild.roles.find((role) => {
+    return role.name.toLowerCase() === config.serverAdminRoleName.toLowerCase();
+  });
+
+  if (serverAdminRole && msg.member.roles.indexOf(serverAdminRole.id) !== -1) {
+    return true;
+  }
+
+  return false;
 }
 
 module.exports = Command;
