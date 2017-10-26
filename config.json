@@ -1,0 +1,28 @@
+{
+  "botToken": "",
+  "botAdminIds": [""],
+  "discordBotsDotOrgAPIKey": "",
+  "logsDirectory": "./logs",
+  "useANSIColorsInLogFiles": true,
+  "serverAdminRoleName": "kotoba",
+  "genericErrorMessage": "Sorry, I had an error! It has been logged and will be addressed.",
+  "genericDMReply": "Say k!help to see my commands!",
+  "genericMentionReply": "Hi <@user>, say k!help to see my commands!",
+  "statusRotation": [
+    "k!help for commands!",
+    "with my dog",
+    "k!help for commands!",
+    "Half Life 3",
+    "k!help for commands!",
+    "with myself",
+    "k!help for commands!",
+    "Russian Roulette",
+    "k!help for commands!",
+    "吾輩は猫であるよ",
+    "k!help for commands!",
+    "with fire",
+    "k!help for commands!",
+    "why so serious?"
+  ],
+  "statusRotationIntervalInSeconds": 600
+}
