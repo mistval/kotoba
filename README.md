@@ -1,5 +1,6 @@
 # monochrome
 A flexible Discord bot core.
+Node 6.9.1+ recommended.
 
 ## Installation
 ```
