@@ -40,7 +40,7 @@ function reloadCore() {
 }
 
 function validateConfiguration(config) {
-  let errorMessage = null;
+  let errorMessage;
   if (!config.botToken) {
     errorMessage = 'Invalid botToken value in configuration (should be non-empty string)';
   } else if (typeof config.serverAdminRoleName !== typeof '') {
@@ -78,7 +78,7 @@ function validateConfiguration(config) {
 
   if (errorMessage) {
     logger.logFailure('CONFIG', errorMessage);
-    throw errorMessage;
+    throw new Error(errorMessage);
   }
 }
 
