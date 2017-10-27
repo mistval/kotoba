@@ -127,3 +127,7 @@ npm test
 ## Sample bot
 
 Add my bot [Kotoba](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) to your server to see an example of a bot running on monochrome.
+
+## Help
+
+[Support](https://discord.gg/f4Gkqku)
