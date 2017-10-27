@@ -14,7 +14,7 @@ npm install -S --no-optional
 <li>Create an application in <a href='https://discordapp.com/developers/applications/me'>Discord applications</a>. (or use an existing bot token)</li>
 <li>In your application's settings, click "Create a Bot User" and confirm.
 <li>Enter your new bot's Token into monochrome/config.json's botToken field.</li>
-<li>User your application's Client ID to add your bot to your server at: https://discordapp.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot</li>
+<li>User your application's Client ID to add your bot to your server. Substitute the Client ID into this link: https://discordapp.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&scope=bot</li>
 </ol>
 
 ## Starting the bot
