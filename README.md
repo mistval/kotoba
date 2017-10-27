@@ -1,4 +1,4 @@
-# kotoba
+# Kotoba
 A Discord bot for helping with language learning (especially Japanese)
 
 Node 6.9.1+ recommended.
@@ -51,3 +51,7 @@ k!about
 ## Public bot
 
 [The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) has a couple extras that aren't here (Weblio search and much better definitions for the English vocabulary game)
+
+## Help
+
+[Support](https://discord.gg/f4Gkqku)
