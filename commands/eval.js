@@ -10,7 +10,7 @@ module.exports = {
       return msg.channel.createMessage('Say \'}eval [javascript code]\' to evaluate code.');
     }
     let result = eval(suffix);
-    let text = JSON.stringify(result);
+    let text = JSON.stringify(result, null, 2);
     return msg.channel.createMessage('```js\n' + text + '\n```');
   },
 };
