@@ -11,12 +11,10 @@ const UPDATE_STATS_INTERVAL_IN_MS = 7200000; // 2 hours
 const UserMentionReplaceRegex = new RegExp('<@user>', 'g');
 const UserNameReplaceRegex = new RegExp('<user>', 'g');
 
-let MessageProcessorManagerClass = null;
-let messageProcessorManager = null;
-let CommandManagerClass = null;
-let commandManager = null;
-let config = null;
-let RepeatingQueue = null;
+let messageProcessorManager;
+let commandManager;
+let config;
+let RepeatingQueue;
 
 let botMentionString = '';
 persistence.init();
@@ -30,10 +28,8 @@ function reloadCore() {
   navigationManager.reload();
 
   config = reload('./config.json');
-  MessageProcessorManagerClass = reload('./core/message_processor_manager.js');
-  messageProcessorManager = new MessageProcessorManagerClass(__dirname + '/message_processors/', logger);
-  CommandManagerClass = reload('./core/command_manager.js');
-  commandManager = new CommandManagerClass(__dirname + '/commands', reloadCore, logger);
+  messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
+  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load();
   messageProcessorManager.load();
@@ -63,17 +59,10 @@ function validateConfiguration(config) {
     errorMessage = 'Invalid statusRotation value in configuration (should be array, use empty array for no status. 1 value array for no rotation.)';
   } else if (typeof config.statusRotationIntervalInSeconds !== typeof 2) {
     errorMessage = 'Invalid statusRotationIntervalInSeconds value in configuration (should be a number of seconds (not a string))';
-  } else {
-    for (let i = 0; i < config.botAdminIds.length; ++i) {
-      if (typeof config.botAdminIds[i] !== typeof '') {
-        errorMessage = 'Invalid botAdminId in configuration (should be a string (not a number! put quotes around it))';
-      }
-    }
-    for (let i = 0; i < config.statusRotation.length; ++i) {
-      if (typeof config.statusRotation[i] !== typeof '') {
-        errorMessage = 'Invalid status in configuration (should be a string)';
-      }
-    }
+  } else if (config.botAdminIds.some(id => typeof id !== typeof '')) {
+    errorMessage = 'Invalid botAdminId in configuration (should be a string (not a number! put quotes around it))';
+  } else if (config.statusRotation.some(status => typeof status !== typeof '')) {
+    errorMessage = 'Invalid status in configuration (should be a string)';
   }
 
   if (errorMessage) {
@@ -131,7 +120,7 @@ function updateStats(config, bot) {
   updateDiscordBotsDotOrg(config, bot);
 }
 
-function startUpdateDiscordBotsDotOrgInterval(config, bot) {
+function startUpdateStatsInterval(config, bot) {
   if (config.discordBotsDotOrgAPIKey || config.botsDotDiscordDotPwAPIKey) {
     updateStats(config, bot);
     setInterval(updateStats, UPDATE_STATS_INTERVAL_IN_MS, config, bot);
@@ -178,7 +167,7 @@ bot.on('ready', () => {
   logger.logSuccess(LOGGER_TITLE, 'Bot ready.');
   botMentionString = '<@' + bot.user.id + '>';
   rotateStatuses(config);
-  startUpdateDiscordBotsDotOrgInterval(config, bot);
+  startUpdateStatsInterval(config, bot);
 });
 
 bot.on('messageCreate', (msg) => {
