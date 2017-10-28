@@ -16,6 +16,8 @@ module.exports = {
 \t# Make me say something.
 }reload
 \t# Reload my commands.
+}dumpheap [filename (optional)]
+\t# Dump a heap snapshot to help debug memory leaks.
 }eval [javascript code]
 \t# Evaluate arbitrary code. Use wisely.
 \`\`\``;
