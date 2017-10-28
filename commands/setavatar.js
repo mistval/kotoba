@@ -1,6 +1,7 @@
 'use strict'
 const request = require('request-promise').defaults({encoding: null});
 const logger = require('./../core/logger.js');
+const PublicError = require('./../core/public_error.js');
 
 /**
 * Sets the bot avatar.
@@ -17,17 +18,16 @@ module.exports = {
     return request({
       uri: suffix,
       json: false,
-      resolveWithFullResponse: true}).then(response => {
-        let dataUri = 'data:image/' + response.headers['content-type'] + ';base64,' + new Buffer(response.body).toString('base64');
-        bot.editSelf({avatar: dataUri}).then(() => {
-          msg.channel.createMessage('Avatar updated!');
-        }).catch(err => {
-          msg.channel.createMessage('Error updating avatar: ' + err);
-          logger.logFailure('SET AVATAR', '', err);
-        });
+      resolveWithFullResponse: true
+    }).then(response => {
+      let dataUri = 'data:image/' + response.headers['content-type'] + ';base64,' + new Buffer(response.body).toString('base64');
+      return bot.editSelf({avatar: dataUri}).then(() => {
+        return msg.channel.createMessage('Avatar updated!');
       }).catch(err => {
-        msg.channel.createMessage('Error getting avatar at that url: ' + err);
-        logger.logFailure('SET AVATAR', '', err);
+        throw new PublicError('Error updating avatar, check the logs for error info.', '', err);
       });
+    }).catch(err => {
+      throw new PublicError('Error updating avatar, check the logs for error info.', '', err);
+    });
   },
 };
