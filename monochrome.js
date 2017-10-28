@@ -7,7 +7,7 @@ const persistence = require('./core/persistence.js');
 const navigationManager = require('./core/navigation_manager.js');
 
 const LOGGER_TITLE = 'CORE';
-const UpdateDiscordBotsDotOrgIntervalInMs = 7200000; // 2 hours
+const UPDATE_STATS_INTERVAL_IN_MS = 7200000; // 2 hours
 const UserMentionReplaceRegex = new RegExp('<@user>', 'g');
 const UserNameReplaceRegex = new RegExp('<user>', 'g');
 
@@ -87,15 +87,18 @@ let bot = new Eris(config.botToken);
 let statusQueue = new RepeatingQueue(config.statusRotation);
 
 function updateDiscordBotsDotOrg(config, bot) {
+  if (!config.discordBotsDotOrgAPIKey) {
+    return;
+  }
   request({
     headers: {
       'Content-Type': 'application/json',
       'Authorization': config.discordBotsDotOrgAPIKey,
-      'Accept': 'application/json'
+      'Accept': 'application/json',
     },
     uri: 'https://discordbots.org/api/bots/' + bot.user.id + '/stats',
     body: '{"server_count": ' + bot.guilds.size.toString() + '}',
-    method: 'POST'
+    method: 'POST',
   }).then(() => {
     logger.logSuccess(LOGGER_TITLE, 'Sent stats to discordbots.org: ' + bot.guilds.size.toString() + ' servers.');
   }).catch(err => {
@@ -103,10 +106,35 @@ function updateDiscordBotsDotOrg(config, bot) {
   });
 }
 
+function updateBotsDotDiscordDotPw(config, bot) {
+  if (!config.botsDotDiscordDotPwAPIKey) {
+    return;
+  }
+  request({
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': config.botsDotDiscordDotPwAPIKey,
+      'Accept': 'application/json',
+    },
+    uri: 'https://bots.discord.pw/api/bots/' + bot.user.id + '/stats',
+    body: '{"server_count": ' + bot.guilds.size.toString() + '}',
+    method: 'POST',
+  }).then(() => {
+    logger.logSuccess(LOGGER_TITLE, 'Sent stats to bots.discord.pw: ' + bot.guilds.size.toString() + ' servers.');
+  }).catch(err => {
+    logger.logFailure(LOGGER_TITLE, 'Error sending stats to bots.discord.pw', err);
+  });
+}
+
+function updateStats(config, bot) {
+  updateBotsDotDiscordDotPw(config, bot);
+  updateDiscordBotsDotOrg(config, bot);
+}
+
 function startUpdateDiscordBotsDotOrgInterval(config, bot) {
-  if (config.discordBotsDotOrgAPIKey) {
-    updateDiscordBotsDotOrg(config, bot);
-    setInterval(updateDiscordBotsDotOrg, UpdateDiscordBotsDotOrgIntervalInMs, config, bot);
+  if (config.discordBotsDotOrgAPIKey || config.botsDotDiscordDotPwAPIKey) {
+    updateStats(config, bot);
+    setInterval(updateStats, UPDATE_STATS_INTERVAL_IN_MS, config, bot);
   }
 }
 

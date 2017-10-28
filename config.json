@@ -2,6 +2,7 @@
   "botToken": "",
   "botAdminIds": [""],
   "discordBotsDotOrgAPIKey": "",
+  "botsDotDiscordDotPwAPIKey": "",
   "logsDirectory": "./logs",
   "useANSIColorsInLogFiles": true,
   "serverAdminRoleName": "monochrome",
