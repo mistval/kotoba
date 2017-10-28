@@ -1,4 +1,5 @@
 const logger = require('./logger.js');
+const assert = require('assert');
 
 /**
 * An error containing a message that should be sent to the channel the command was invoked in.
@@ -6,14 +7,16 @@ const logger = require('./logger.js');
 */
 class PublicError extends Error {
   /**
-  * @param {String} source - A title for the source of the error.
   * @param {String} publicMessage - The message to send to the channel.
-  * @param {Error} [internalError] - The original error that was thrown (if one exists)
+  * @param {String} logDescription - Brief description of the error (for logging).
+  * @param {Error} [internalError] - The original error that was thrown (if one exists and you want its stack trace logged)
   */
-  constructor(source, publicMessage, internalError) {
-    super(publicMessage, internalError.fileName, internalError.lineNumber);
+  constructor(publicMessage, logDescription, internalErr) {
+    assert(publicMessage || logDescription || internalErr, 'PublicError must be constructed with at least one argument');
+    super(publicMessage, internalErr && internalErr.fileName, internalErr && internalErr.lineNumber);
     this.publicMessage = publicMessage;
-    logger.logFailure(source.toUpperCase(), 'Public error created. Public message: ' + publicMessage, internalError);
+    this.internalErr = internalErr;
+    this.logDescription = logDescription;
   }
 }
 

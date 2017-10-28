@@ -6,6 +6,29 @@ const UnrestrictCommand = reload('./commands/unrestrict_command.js');
 const BanCommand = reload('./commands/ban_command.js');
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
+const PublicError = reload('./public_error.js');
+
+function handleCommandError(msg, err, config, logger) {
+  const loggerTitle = 'COMMAND';
+  let errDescription = err.logDescription || 'Exception or promise rejection';
+  let publicMessage = err.publicMessage || config.genericErrorMessage;
+  let internalErr = err instanceof PublicError ? err.internalErr : err;
+  if (publicMessage) {
+    msg.channel.createMessage(publicMessage);
+  }
+  logger.logInputReaction(loggerTitle, msg, '', false, errDescription);
+  if (internalErr) {
+    logger.logFailure(loggerTitle, 'Command \'' + msg.content + '\' threw an exception or returned a promise that rejected.', internalErr);
+  }
+}
+
+function getDuplicateAlias(command, otherCommands) {
+  for (let alias of command.aliases) {
+    if (otherCommands.find(cmd => cmd.aliases.indexOf(alias) !== -1)) {
+      return alias;
+    }
+  }
+}
 
 /**
 * Loads and executes commands in response to user input.
@@ -48,7 +71,7 @@ class CommandManager {
           continue;
         }
 
-        let duplicateAlias = this.getDuplicateAlias_(command, this.commands_);
+        let duplicateAlias = getDuplicateAlias(command, this.commands_);
         if (duplicateAlias) {
           this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile + '. Error: alias: ' + duplicateAlias + ' is not unique');
           continue;
@@ -99,21 +122,9 @@ class CommandManager {
           Promise.resolve(command.handle(bot, msg, suffix, config)).then(result => {
             let success = typeof result !== typeof '';
             this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
-          }).catch(err => {
-            if (err.publicMessage) {
-              msg.channel.createMessage(err.publicMessage);
-            } else if (config.genericErrorMessage) {
-              msg.channel.createMessage(config.genericErrorMessage);
-            }
-            this.logger_.logInputReaction(loggerTitle, msg, '', false, 'Promise rejection');
-            this.logger_.logFailure(loggerTitle, 'Command \'' + msgContent + '\' returned a promise that rejected.', err);
-          });
+          }).catch(err => handleCommandError(msg, err, config, this.logger_));
         } catch (err) {
-          this.logger_.logInputReaction(loggerTitle, msg, '', false, 'Threw exception');
-          this.logger_.logFailure(loggerTitle, 'Command \'' + msgContent + '\' threw an exception.', err);
-          if (config.genericErrorMessage) {
-            msg.channel.createMessage(config.genericErrorMessage);
-          }
+          handleCommandError(msg, err, config, this.logger_);
         }
 
         return true;
@@ -121,14 +132,6 @@ class CommandManager {
     }
 
     return false;
-  }
-
-  getDuplicateAlias_(command, otherCommands) {
-    for (let alias of command.aliases) {
-      if (otherCommands.find(cmd => cmd.aliases.indexOf(alias) !== -1)) {
-        return alias;
-      }
-    }
   }
 }
 
