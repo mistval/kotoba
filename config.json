@@ -9,6 +9,7 @@
   "genericErrorMessage": "Oh no, that command had an error! Please tell my owner to check the logs!",
   "genericDMReply": "Hi <user>, bot!help to see my commands!",
   "genericMentionReply": "Hi <@user>, say bot!help to see my commands!",
+  "missingPermissionsErrorMessage": "I don't have permission to reply to that command in this channel (maybe I don't have permission to upload files, embed links, etc)",
   "statusRotation": [
     "bot!help for commands!",
     "eating chicken",
