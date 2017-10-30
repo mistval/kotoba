@@ -10,8 +10,20 @@ const PublicError = reload('./public_error.js');
 
 function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
-  let errDescription = err.logDescription || 'Exception or promise rejection';
-  let publicMessage = err.publicMessage || config.genericErrorMessage;
+  let errDescription = err.logDescription;
+  let publicMessage = err.publicMessage;
+  if (!publicMessage && err.message.indexOf('Missing Permissions') !== -1 && config.missingPermissionsErrorMessage) {
+    publicMessage = config.missingPermissionsErrorMessage;
+    if (!errDescription) {
+      errDescription = 'Missing permissions';
+    }
+  }
+  if (!errDescription) {
+     errDescription = 'Exception or promise rejection'
+  }
+  if (!publicMessage) {
+    publicMessage = config.genericErrorMessage;
+  }
   let internalErr = err instanceof PublicError ? err.internalErr : err;
   if (publicMessage) {
     msg.channel.createMessage(publicMessage);

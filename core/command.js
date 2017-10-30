@@ -147,6 +147,10 @@ class Command {
 }
 
 function userIsServerAdmin(msg, config) {
+  if (!msg.member) {
+    return true;
+  }
+
   let permission = msg.member.permission.json;
   if (permission.manageGuild || permission.administrator || permission.manageChannels) {
     return true;
