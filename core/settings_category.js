@@ -3,48 +3,46 @@ const reload = require('require-reload')(require);
 const Setting = reload('setting.js')
 const assert = require('assert');
 
-const CATEGORY_IDENTIFIER = 'CATEGORY';
-const SETTING_IDENTIFIER = 'SETTING';
-
 function throwError(baseString, failedBlob) {
   throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
 }
 
 class SettingsCategory {
-  constructor(settingsBlob, qualificationWithoutName) {
+  constructor(settingsBlob, qualificationWithoutName, categoryIdentifier, settingIdentifier, config) {
     this.name_ = settingsBlob.name || '';
-    this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + '.' + this.name_ : '';
+    this.settingsCategorySeparator_ = config.settingsCategorySeparator;
+    this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + this.settingsCategorySeparator_ + this.name_ : '';
     this.isTopLevel_ = !this.fullyQualifiedName_;
-    if (this.name_.indexOf('.') !== -1) {
-      throwError('A settings category has an invalid name. It must not contain a period.', settingsBlob);
-    }
-    if (!isTopLevel && !this.name_) {
+    if (this.name_.indexOf(config.settingsCategorySeparator) !== -1) {
+      throwError('A settings category has an invalid name. It must not contain a ' + config.settingsCategorySeparator, settingsBlob);
+    } else if (!isTopLevel && !this.name_) {
       throwError('A settings category has an invalid or nonexistent name property. It should be a non-empty string.', settingsBlob);
-    }
-    if (!blob.children || blob.children.length < 1) {
+    } else if (!blob.children || blob.children.length < 1) {
       throwError('A settings category has an empty or non-existent children children proprty. It should be an array of settings categories or settings', settingsBlob);
+    } else if (this.name_.indexOf(' ') !== -1) {
+      throwError('A settings category has an invalid name. It must not contain a space.', settingsBlob);
     }
     this.children_ = [];
     for (let child of blob.children) {
       if (!child) {
         throwError('A child is invalid.', settingsBlob);
       }
-      if (!child.type || typeof child.type !== typeof '' || (child.type !== CATEGORY_IDENTIFIER && child.type !== SETTING_IDENTIFIER)) {
-        throwError(```A child has an invalid type. It should be a string, either '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'.```, settingsBlob);
+      if (!child.type || typeof child.type !== typeof '' || (child.type !== categoryIdentifier && child.type !== settingIdentifier)) {
+        throwError(```A child has an invalid type. It should be a string, either '${categoryIdentifier}'' or '${settingIdentifier}'.```, settingsBlob);
       }
       if (this.children_.find(otherChild => otherChild.getName() === child.getName())) {
         throwError('Two children have the same name.', settingsBlob);
       }
       if (child.type === CATEGORY_IDENTIFIER) {
-        this.children_.push(new SettingsCategory(child, false));
+        this.children_.push(new SettingsCategory(child, this.fullyQualifiedName_, categoryIdentifier, settingIdentifier, config));
       } else {
-        this.children_.push(new Setting(child));
+        this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_));
       }
     }
 
     this.childrenType_ = typeof this.children_[0];
     if (!children.every(child => typeof child === this.childrenType)) {
-      throwError(```A settings category has children of different type. They should all either be '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'. They cannot be mixed.```, settingsBlob);
+      throwError(```A settings category has children of different type. They should all either be '${categoryIdentifier}'' or '${settingIdentifier}'. They cannot be mixed.```, settingsBlob);
     }
   }
 
@@ -66,7 +64,7 @@ class SettingsCategory {
   }
 
   getChildForRelativeQualifiedName_(relativeQualifiedName) {
-    let childName = relativeQualifiedName.split('.')[0];
+    let childName = relativeQualifiedName.split(this.settingsCategorySeparator_)[0];
     if (childName) {
       for (let child of this.children_) {
         if (child.getName() === childName) {
@@ -85,11 +83,11 @@ class SettingsCategory {
   }
 
   getRelativeQualifiedNameForChild_(relativeQualifiedName) {
-    return relativeQualifiedName.split('.').slice(1).join('.');
+    return relativeQualifiedName.split(this.settingsCategorySeparator_).slice(1).join(this.settingsCategorySeparator_);
   }
 
   getConfigurationInstructionsStringForCategoryChildren_() {
-    let subCategories = this.children.map(child => '  ' + this.fullyQualifiedName_ + '.' + child.getName());
+    let subCategories = this.children.map(child => '  ' + this.fullyQualifiedName_ + this.settingsCategorySeparator_ + child.getName());
     let subCategoryListString = subCategories.join('\n');
     let titleString;
     if (this.isTopLevel_) {
@@ -112,7 +110,7 @@ Say ']settings [category name]' to view and set that category's settings. For ex
     let exampleSetting = this.children_[0].getName();
     let exampleValue = this.children_[0].getExampleValues()[0];
     let settingsListString = this.children_
-      .map(child => '  ' + this.fullyQualifiedName + '.' + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
+      .map(child => '  ' + this.fullyQualifiedName + this.settingsCategorySeparator_ + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings';

@@ -63,6 +63,8 @@ function validateConfiguration(config) {
     errorMessage = 'Invalid botAdminId in configuration (should be a string (not a number! put quotes around it))';
   } else if (config.statusRotation.some(status => typeof status !== typeof '')) {
     errorMessage = 'Invalid status in configuration (should be a string)';
+  } else if (!config.settingsCategorySeparator || typeof config.settingsCategorySeparator !== typeof '' || config.settingsCategorySeparator.indexOf(' ') !== -1) {
+    errorMessage = 'Invalid settingsCategorySeparator in configuration (should be a string with no spaces)';
   }
 
   if (errorMessage) {
