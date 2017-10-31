@@ -144,3 +144,5 @@ ${settingsListString}
 ```;
   }
 }
+
+module.exports = SettingsCategory;
