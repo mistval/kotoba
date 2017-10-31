@@ -13,6 +13,7 @@ const UserNameReplaceRegex = new RegExp('<user>', 'g');
 
 let messageProcessorManager;
 let commandManager;
+let settingsManager;
 let config;
 let RepeatingQueue;
 
@@ -28,8 +29,9 @@ function reloadCore() {
   navigationManager.reload();
 
   config = reload('./config.json');
+  settingsManager = new (reload('./core/settings_manager.js'))([], logger);
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
-  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger);
+  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, settingsManager, logger);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load();
   messageProcessorManager.load();
