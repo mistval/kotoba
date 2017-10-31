@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const Setting = reload('setting.js')
+const Setting = reload('./setting.js')
 const assert = require('assert');
 
 function throwError(baseString, failedBlob) {
@@ -22,11 +22,11 @@ class SettingsCategory {
     let settingsBlob = {
       name: '',
     };
-    return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
+    return new SettingsCategory(settingsBlob, '', categoryIdentifier, settingIdentifier, config);
   }
 
   setChildren(children) {
-    if (!children) {
+    if (!children || children.length === 0) {
       return;
     }
     this.children_ = [];

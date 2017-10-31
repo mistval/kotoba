@@ -26,7 +26,7 @@ class SettingsManager {
   * Loads settings categories. Can be called to reload settings that have been edited.
   * @param {object} config - The bot config
   */
-  load(settingsCategoriesData, settingsCategoriesFilePaths) {
+  load(settingsCategoriesData, settingsCategoriesFilePaths, config) {
     const loggerTitle = 'SETTINGS MANAGER';
     let categories = [];
     for (let settingsFilePath of settingsCategoriesFilePaths) {
