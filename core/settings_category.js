@@ -44,14 +44,14 @@ class SettingsCategory {
         throwError(`A child has an invalid type. It should be a string, either '${this.categoryIdentifier_}'' or '${this.settingIdentifier_}'.`, children);
       }
       if (this.children_.find(otherChild => otherChild.name === child.name)) {
-        throwError('Two children have the same name.', cildren);
+        throwError('Two children have the same name.', children);
       }
       if (child.type === this.categoryIdentifier_) {
         let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryIdentifier_, this.settingIdentifier_, this.config_)
         this.children_.push(childCategory);
         childCategory.setChildren(child.children);
       } else {
-        this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_));
+        this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_, this.config_.colorForSettingsSystemEmbeds));
       }
     }
   }
@@ -115,7 +115,7 @@ class SettingsCategory {
       titleString = 'Sub-categories under ' + this.fullyQualifiedName_;
     }
     return prefix + `
-\`\`\`glsl
+\`\`\`md
 # ${titleString}
 
 ${subCategoryListString}
@@ -142,10 +142,10 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 
 ${settingsListString}
 
+# Say ']settings [setting] [value]' to set a setting. Next, you will choose which channels to apply the setting to.
+    Example: ]settings ${exampleSetting} ${exampleValue}
 # Say ']settings [setting]' to get more information about that setting, including allowed values.
     Example: ]setting ${exampleSetting}
-# Say ']settings [setting] [value]' to set a setting. Next, you can choose which channels to apply the setting to.
-    Example: ]settings ${exampleSetting} ${exampleValue}
 \`\`\`
 `;
   }
