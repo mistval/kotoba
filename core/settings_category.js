@@ -72,6 +72,14 @@ class SettingsCategory {
     }
   }
 
+  getConfigurationInstructionsString(currentSettings) {
+    if (this.childrenType === this.categoryIdentifier_) {
+      return this.getConfigurationInstructionsStringForCategoryChildren_();
+    } else {
+      return this.getConfigurationInstructionsStringForSettingsChildren_(currentSettings);
+    }
+  }
+
   getChildForRelativeQualifiedName_(relativeQualifiedName) {
     let childName = relativeQualifiedName.split(this.settingsCategorySeparator_)[0];
     if (childName) {
@@ -80,14 +88,6 @@ class SettingsCategory {
           return child;
         }
       }
-    }
-  }
-
-  getConfigurationInstructionsString(currentSettings) {
-    if (this.childrenType === this.categoryIdentifier_) {
-      return this.getConfigurationInstructionsStringForCategoryChildren_();
-    } else {
-      return this.getConfigurationInstructionsStringForSettingsChildren_(currentSettings);
     }
   }
 
