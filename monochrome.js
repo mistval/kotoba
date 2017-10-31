@@ -19,22 +19,31 @@ let RepeatingQueue;
 
 let botMentionString = '';
 persistence.init();
-reloadCore();
-
+config = reload('./config.json');
 logger.initialize(__dirname + '/' + config.logsDirectory, config.useANSIColorsInLogFiles);
+reloadCore();
 
 function reloadCore() {
   logger.reload();
   persistence.reload();
   navigationManager.reload();
 
-  config = reload('./config.json');
-  settingsManager = new (reload('./core/settings_manager.js'))([], logger);
+  settingsManager = new (reload('./core/settings_manager.js'))(logger);
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
   commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, settingsManager, logger);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load();
   messageProcessorManager.load();
+
+  let settingsSources = [commandManager, messageProcessorManager];
+  let settingsCategories = [];
+  for (let settingsSource of settingsSources) {
+    if (settingsSource.collectSettingsCategories) {
+      settingsCategories.concat(settingsSource.collectSettingsCategories());
+    }
+  }
+
+  settingsManager.load(settingsCategories, [], config);
 }
 
 function validateConfiguration(config) {

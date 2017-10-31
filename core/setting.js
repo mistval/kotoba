@@ -10,7 +10,7 @@ prettyPrintForValueType[INTEGER_VALUE_TYPE] = 'Whole number';
 prettyPrintForValueType[FLOAT_VALUE_TYPE] = 'Number';
 prettyPrintForValueType[BOOLEAN_VALUE_TYPE] = 'true or false';
 
-class Range() {
+class Range {
   constructor(lower, upper) {
     this.lower_ = lower;
     this.upper_ = upper;
