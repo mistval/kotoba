@@ -52,20 +52,17 @@ class SettingsCategory {
     return this.name_;
   }
 
-  getConfigurationInstructionsStringForQualifierChain(fullyQualifiedName, relativeQualifiedName, currentSettings) {
-    if (fullyQualifiedName === this.fullyQualifiedName_) {
-      return this.getConfigurationInstructionsStringAtThisLevel_();
-    }
+  getFullyQualifiedName() {
+    return this.fullyQualifiedName_;
+  }
+
+  getNearestElementForQualifierChain(relativeQualifiedName) {
     let child = this.getChildForRelativeQualifiedName_(relativeQualifiedName);
     if (child) {
-      return child.getConfigurationInstructionsStringForQualifierChain(fullyQualifiedName, this.getRelativeQualifiedNameForChild_(relativeQualifiedName), currentSettings);
+      return child.getNearestElementForQualifierChain(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
+    } else {
+      return this;
     }
-    let configurationInstructionsAtThisLevel = this.getConfigurationInstructionsStringAtThisLevel_(currentSettings);
-    return ```
-Couldn't find that setting. Here are the settings for ${this.fullyQualifiedName_}
-
-${configurationInstructionsAtThisLevel}
-```;
   }
 
   getChildForRelativeQualifiedName_(relativeQualifiedName) {
@@ -79,19 +76,19 @@ ${configurationInstructionsAtThisLevel}
     }
   }
 
+  getConfigurationInstructionsString(currentSettings) {
+    if (this.childrenType === typeof SettingsCategory) {
+      return this.getConfigurationInstructionsStringForCategoryChildren_();
+    } else {
+      return this.getConfigurationInstructionsStringForSettingsChildren_(currentSettings);
+    }
+  }
+
   getRelativeQualifiedNameForChild_(relativeQualifiedName) {
     return relativeQualifiedName.split('.').slice(1).join('.');
   }
 
-  getConfigurationInstructionsStringAtThisLevel_(currentSettings) {
-    if (this.childrenType === typeof SettingsCategory) {
-      return this.getConfigurationInstructionsStringAtThisLevelForCategoryChildren_();
-    } else {
-      return this.getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(currentSettings);
-    }
-  }
-
-  getConfigurationInstructionsStringAtThisLevelForCategoryChildren_() {
+  getConfigurationInstructionsStringForCategoryChildren_() {
     let subCategories = this.children.map(child => '  ' + this.fullyQualifiedName_ + '.' + child.getName());
     let subCategoryListString = subCategories.join('\n');
     let titleString;
@@ -111,7 +108,7 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 ```;
   }
 
-  getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(currentSettings) {
+  getConfigurationInstructionsStringForSettingsChildren_(currentSettings) {
     let exampleSetting = this.children_[0].getName();
     let exampleValue = this.children_[0].getExampleValues()[0];
     let settingsListString = this.children_
