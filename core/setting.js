@@ -48,7 +48,7 @@ class Setting {
     this.allowedValues = settingsBlob.allowedValues;
     if (this.allowedValues.indexOf('Range(') === 0) {
       try {
-        this.allowedValues = eval(this.allowedValues);
+        this.allowedValues = eval('new ' + this.allowedValues);
       } catch (err) { }
       if (!this.allowedValues) {
         throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob.allowedValues);
