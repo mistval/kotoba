@@ -15,7 +15,9 @@ class Settings {
   }
 
   execute_(bot, msg, suffix, settingsManager) {
-    return msg.channel.createMessage(settingsManager.getConfigurationInstructionsString(bot, msg, suffix));
+    return settingsManager.getConfigurationInstructionsString(bot, msg, suffix).then(responseString => {
+      return msg.channel.createMessage(responseString);
+    });
   }
 }
 
