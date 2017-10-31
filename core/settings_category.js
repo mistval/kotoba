@@ -3,16 +3,45 @@ const reload = require('require-reload')(require);
 const Setting = reload('setting.js')
 const assert = require('assert');
 
+const CATEGORY_IDENTIFIER = 'CATEGORY';
+const SETTING_IDENTIFIER = 'SETTING';
+
+function throwError(baseString, failedBlob) {
+  throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
+}
+
 class SettingsCategory {
-  constructor(name, children) {
-    this.children_ = children;
-    this.name_ = name;
-    assert(children && children.length > 0, 'Children argument is undefined empty. It should be an array with at least one element.');
-    this.childrenType_ = typeof children[0];
-    assert(typeof name === typeof '' && name, 'The name argument is not a string or is empty. It should be a string.');
-    assert(name.indexOf('.') === -1, 'The name argument should not contain a period');
-    assert(children.every(child => typeof child === this.childrenType), 'The children are of different type. They should either all be Settings or they should all be SettingsCategorys');
-    assert(this.childrenType === typeof SettingsCategory || this.childrenType === typeof Setting, 'The children are of the wrong type. They should all be Settings or SettingsCategorys');
+  constructor(settingsBlob, isTopLevel) {
+    this.isTopLevel_ = isTopLevel;
+    this.name_ = settingsBlob.name || '';
+    if (this.name_.indexOf('.') !== -1) {
+      throwError('A settings category has an invalid name. It must not contain a period.');
+    }
+    if (!isTopLevel && !this.name_) {
+      throwError('A settings category has an invalid or nonexistent name property. It should be a non-empty string.', settingsBlob);
+    }
+    if (!blob.children || blob.children.length < 1) {
+      throwError('A settings category has an empty or non-existent children children proprty. It should be an array of settings categories or settings', settingsBlob);
+    }
+    this.children_ = [];
+    for (let child of blob.children) {
+      if (!child) {
+        throwError('A child is invalid.', settingsBlob);
+      }
+      if (!child.type || typeof child.type !== typeof '' || (child.type !== CATEGORY_IDENTIFIER && child.type !== SETTING_IDENTIFIER)) {
+        throwError(```A child has an invalid type. It should be a string, either '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'.```, child);
+      }
+      if (child.type === CATEGORY_IDENTIFIER) {
+        this.children_.push(new SettingsCategory(child, false));
+      } else {
+        this.children_.push(new Setting(child));
+      }
+    }
+
+    this.childrenType_ = typeof this.children_[0];
+    if (!children.every(child => typeof child === this.childrenType)) {
+      throwError(```A settings category has children of different type. They should all either be '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'. They cannot be mixed.```, settingsBlob);
+    }
   }
 
   getName() {
@@ -49,7 +78,11 @@ ${configurationInstructionsAtThisLevel}
   }
 
   getQualifierChainForChild(currentQualifierChain) {
-    return currentQualifierChain.replace(this.getName() + '.', '');
+    if (this.isTopLevel_) {
+      return currentQualifierChain;
+    } else {
+      return currentQualifierChain.replace(this.getName() + '.', '');
+    }
   }
 
   getConfigurationInstructionsStringAtThisLevel_(qualifierChainResolvedPart, currentSettings) {
@@ -63,8 +96,14 @@ ${configurationInstructionsAtThisLevel}
   getConfigurationInstructionsStringAtThisLevelForCategoryChildren_(qualifierChainResolvedPart) {
     let subCategories = this.children.map(child => qualifierChainResolvedPart + '.' + child.getName());
     let subCategoryListString = subCategories.join('\n');
+    let titleString;
+    if (this.isTopLevel_) {
+      titleString = 'Settings categories:';
+    } else {
+      titleString = 'Sub-categories under ' + qualifierChainSuccessfullyResolvedPart + ':';
+    }
     return ```
-Sub-categories under ${qualifierChainResolvedPart}:
+${titleString}
 
 \`\`\`
 ${subCategoryListString}
@@ -79,8 +118,14 @@ Say ']settings [category name]' to view and set that category's settings. For ex
     let exampleValue = this.children_[0].getExampleValues()[0];
     let settingsListString = this.children_
       .map(child => qualifierChainResolvedPart + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
+    let titleString;
+    if (this.isTopLevel_) {
+      titleString = 'Settings:';
+    } else {
+      titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart + ':';
+    }
     return ```
-Settings available under ${qualifierChainResolvedPart}:
+${titleString}
 
 \`\`\`
 ${settingsListString}
