@@ -64,7 +64,6 @@ class SettingsCategory {
   getChildForRelativeQualifiedName(relativeQualifiedName) {
     let child = this.getChildForRelativeQualifiedNameHelper_(relativeQualifiedName);
     if (child) {
-      debugger;
       return child.getChildForRelativeQualifiedName(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
     } else {
       return this;
@@ -127,9 +126,8 @@ Say ']settings [category name]' to view and set that category's settings. For ex
   }
 
   getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName) {
-    debugger;
     let exampleSetting = this.children_[0].getFullyQualifiedName();
-    let exampleValue = this.children_[0].getUserFacingExampleValue(bot, msg);
+    let exampleValue = this.children_[0].getUserFacingExampleValues(bot, msg)[0];
     let settingsListString = this.children_
       .map(child => '  ' + child.getFullyQualifiedName() + ' -> ' + child.getCurrentUserFacingValue(bot, msg, settings)).join('\n');
     let titleString;
@@ -144,15 +142,10 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 
 ${settingsListString}
 
-
 # Say ']settings [setting]' to get more information about that setting, including allowed values.
     Example: ]setting ${exampleSetting}
-# Say ']settings [setting] [value]' to set a setting in this channel.
+# Say ']settings [setting] [value]' to set a setting. Next, you can choose which channels to apply the setting to.
     Example: ]settings ${exampleSetting} ${exampleValue}
-# Say ']settings [setting] [value] --all' to set a setting server-wide.
-    Example: ]settings ${exampleSetting} ${exampleValue} --all
-# Say ']settings [setting] [value] #channel1 #channel2 #channelx' to set a setting on specific channels.
-    Example: ]settings ${exampleSetting} ${exampleValue} #welcome #general
 \`\`\`
 `;
   }

@@ -9,8 +9,16 @@ const prettyPrintForValueType = {};
 prettyPrintForValueType[STRING_VALUE_TYPE] = 'Text';
 prettyPrintForValueType[INTEGER_VALUE_TYPE] = 'Whole number';
 prettyPrintForValueType[FLOAT_VALUE_TYPE] = 'Number';
-prettyPrintForValueType[BOOLEAN_VALUE_TYPE] = 'true or false';
+prettyPrintForValueType[BOOLEAN_VALUE_TYPE] = 'True or false';
 prettyPrintForValueType[CUSTOM_VALUE_TYPE] = '';
+
+const arbitraryAllowedValuesForType = {};
+arbitraryAllowedValuesForType[STRING_VALUE_TYPE] = 'Any text';
+arbitraryAllowedValuesForType[INTEGER_VALUE_TYPE] = 'Any whole number';
+arbitraryAllowedValuesForType[FLOAT_VALUE_TYPE] = 'Any number';
+arbitraryAllowedValuesForType[BOOLEAN_VALUE_TYPE] = 'True or false';
+arbitraryAllowedValuesForType[CUSTOM_VALUE_TYPE] = '';
+
 
 class Range {
   constructor(lower, upper) {
@@ -153,7 +161,7 @@ class Setting {
         fields: [
           {name: 'Value type', value: this.getValueTypeDescription_()},
           {name: 'Allowed values', value: this.getAllowedValueString_()},
-          {name: 'Current value', value: this.getCurrentUserFacingValue(bot, msg, settings)},
+          {name: 'Current value in this channel', value: this.getCurrentUserFacingValue(bot, msg, settings)},
           {name: 'Examples of setting value', value: examplesString}
         ]
       }
@@ -230,16 +238,16 @@ class Setting {
   }
 
   getValueTypeDescription_() {
-    return this.customValueTypeDescription_ || this.prettyPrintForValueType[this.valueType_];
+    return this.customValueTypeDescription_ || prettyPrintForValueType[this.valueType_];
   }
 
   getAllowedValueString_() {
     if (this.customAllowedValuesString_) {
       return this.customAllowedValuesString_;
     }
-    let prettyPrintedValueType = this.prettyPrintForValueType[this.valueType_];
+    let prettyPrintedValueType = prettyPrintForValueType[this.valueType_];
     if (!this.allowedDatabaseFacingValues_) {
-      return 'Any ' + prettyPrintedValueType.toLowerCase();
+      return arbitraryAllowedValuesForType[this.valueType_];
     }
     if (this.allowedDatabaseFacingValues_ instanceof Range) {
       return prettyPrintedValueType + ' between ${this.allowedDatabaseFacingValues_.getLower()} and ${this.allowedDatabaseFacingValues_.getUpper()}';

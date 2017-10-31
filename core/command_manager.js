@@ -43,53 +43,13 @@ function getDuplicateAlias(command, otherCommands) {
   }
 }
 
-function channelsInChannelStringButNotInGuild(channelsString, guild) {
-  return channelsString.split(' ').filter(channel => {
-    return !!guild.channels.find(
-      guildChannel => guildChannel.id === channel.replace('<#', '').replace('>', ''));
-  });
-}
-
 function createSettingsHierarchyForCommand(userCommand) {
   return {
     type: 'SETTING',
-    name: userCommand.aliases[0] + '_allowed_channels',
-    description: `The channels in which the ${userCommand.aliases[0]} command (and all aliases) is allowed to execute.`,
-    valueType: 'CUSTOM',
-    customValueTypeDescription: 'Channels',
-    customAllowedValuesDescription: `A space-separated list of channels in this server, or 'all' or 'none'`,
-    customUserFacingExampleValues: ['#general #welcome #bot', 'all', 'none'],
-    defaultDatabaseFacingValue: undefined,
-    customValidateDatabaseFacingValueFunction(bot, msg, value) {
-      if (userFacingValue === 'all' || userFacingValue === 'none') {
-        return true;
-      }
-      let guild = msg.channel.guild;
-      let invalidChannels = channelsInChannelStringButNotInGuild(value, guild);
-      if (invalidChannels.length === 0) {
-        return true;
-      } else {
-        return 'The following channels were not found in this guild: ' + invalidChannels.join(', ');
-      }
-    },
-    customConvertFromUserToDatabaseFacingValue(bot, msg, userFacingValue) {
-      if (userFacingValue === 'all') {
-        return undefined;
-      }
-      if (userFacingValue === 'none') {
-        return [];
-      }
-      return userFacingValue.replace(/<#/g, '').replace(/>/g, '').split(' ');
-    },
-    customConvertFromDatabaseToUserFacingValue(bot, msg, databaseFacingValue) {
-      if (!databaseFacingValue) {
-        return 'all';
-      }
-      if (databaseFacingValue.length === 0) {
-        return 'none';
-      }
-      return databaseFacingValue.map(channelId => '<#' + channelId + '>').join(' ');
-    },
+    name: userCommand.aliases[0] + '_enabled',
+    description: `This setting controls whether the ${userCommand.aliases[0]} command (and all of its aliases) is allowed to be used in this channel or not.`,
+    valueType: 'BOOLEAN',
+    defaultDatabaseFacingValue: true,
   }
 }
 
