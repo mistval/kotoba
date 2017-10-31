@@ -13,6 +13,7 @@ class SettingsCategory {
     this.settingsCategorySeparator_ = config.settingsCategorySeparator;
     this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + this.settingsCategorySeparator_ + this.name_ : '';
     this.isTopLevel_ = !this.fullyQualifiedName_;
+    this.categoryIdentifier_ = categoryIdentifier;
     if (this.name_.indexOf(config.settingsCategorySeparator) !== -1) {
       throwError('A settings category has an invalid name. It must not contain a ' + config.settingsCategorySeparator, settingsBlob);
     } else if (!isTopLevel && !this.name_) {
@@ -40,8 +41,8 @@ class SettingsCategory {
       }
     }
 
-    this.childrenType_ = typeof this.children_[0];
-    if (!children.every(child => typeof child === this.childrenType)) {
+    this.childrenType_ = this.children_[0].type;
+    if (!children.every(child => child.type === this.childrenType)) {
       throwError(```A settings category has children of different type. They should all either be '${categoryIdentifier}'' or '${settingIdentifier}'. They cannot be mixed.```, settingsBlob);
     }
   }
@@ -75,7 +76,7 @@ class SettingsCategory {
   }
 
   getConfigurationInstructionsString(currentSettings) {
-    if (this.childrenType === typeof SettingsCategory) {
+    if (this.childrenType === this.categoryIdentifier_) {
       return this.getConfigurationInstructionsStringForCategoryChildren_();
     } else {
       return this.getConfigurationInstructionsStringForSettingsChildren_(currentSettings);
