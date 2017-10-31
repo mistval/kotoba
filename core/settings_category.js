@@ -18,13 +18,13 @@ class SettingsCategory {
       throwError('A settings category has an invalid name. It must not contain a ' + config.settingsCategorySeparator, settingsBlob);
     } else if (!isTopLevel && !this.name_) {
       throwError('A settings category has an invalid or nonexistent name property. It should be a non-empty string.', settingsBlob);
-    } else if (!blob.children || blob.children.length < 1) {
+    } else if (!settingsBlob.children || settingsBlob.children.length < 1) {
       throwError('A settings category has an empty or non-existent children children proprty. It should be an array of settings categories or settings', settingsBlob);
     } else if (this.name_.indexOf(' ') !== -1) {
       throwError('A settings category has an invalid name. It must not contain a space.', settingsBlob);
     }
     this.children_ = [];
-    for (let child of blob.children) {
+    for (let child of settingsBlob.children) {
       if (!child) {
         throwError('A child is invalid.', settingsBlob);
       }
@@ -45,6 +45,14 @@ class SettingsCategory {
     if (!children.every(child => child.type === this.childrenType)) {
       throwError(```A settings category has children of different type. They should all either be '${categoryIdentifier}'' or '${settingIdentifier}'. They cannot be mixed.```, settingsBlob);
     }
+  }
+
+  static createRootCategory(children, categoryIdentifier, settingIdentifier, config) {
+    let settingsBlob = {
+      name: '',
+      children: children,
+    };
+    return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
   }
 
   getName() {
