@@ -18,46 +18,29 @@ class SettingsManager {
   * @param {Array<String>} settingsFilesPaths - Paths to the files containing the settions information.
   * @param {Logger} logger - The logger to log to
   */
-  constructor(settingsFilesPaths, logger) {
+  constructor(logger) {
     this.logger_ = logger;
-    this.settingsFilesPaths_ = settingsFilesPaths;
-    this.rootSettingsCategory_;
   }
 
   /**
   * Loads settings categories. Can be called to reload settings that have been edited.
   * @param {object} config - The bot config
   */
-  load(config, extraBaseCategoriesData) {
+  load(settingsCategoriesData, settingsCategoriesFilePaths) {
     const loggerTitle = 'SETTINGS MANAGER';
     let categories = [];
-    for (let settingsFilePath of this.settingsFilesPaths_) {
+    for (let settingsFilePath of settingsCategoriesFilePaths) {
       try {
-        let categoriesData = reload(settingsFilePath);
-        if (!Array.isArray(categoriesData)) {
-          categoriesData = [categoriesData];
-        }
-        if (!categoriesData.every(category => category.type !== CATEGORY_IDENTIFIER)) {
-          throw new Error('At least one of the childrens\' type properties is not ' + CATEGORY_IDENTIFIER + '. All root settings nodes must be categories.');
-        }
-        for (let category of categoriesData) {
-          let newCategory = new SettingsCategory(category, '', CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
-          if (this.categories.find(otherCategory => otherCategory.getFullyQualifiedName() === newCategory.getFullyQualifiedName())) {
-            throw new Error('Two categories have the same fully qualified name: ' + newCategory.getFullyQualifiedName());
-          }
-          this.categories.push(newCategory);
-        }
+        let categoryData = reload(settingsFilePath);
+        categories.push(categoryData);
       } catch (err) {
         this.logger_.logFailure(loggerTitle, 'Failed to load settings category from file: ' + settingsFilePath, internalErr);
       }
     }
 
-    for (let category of extraBaseCategoriesData) {
-      categories.push(new SettingsCategory(category, '', CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config));
-    }
-
     try {
-      this.rootSettingsCategory_ = SettingsCategory.createRootCategory(categories, CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
+      this.rootSettingsCategory_ = SettingsCategory.createRootCategory(CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
+      this.rootSettingsCategory_.setChildren(settingsCategoriesData.concat(categories));
     } catch (err) {
       this.logger_.logFailure(loggerTitle, 'Failed to load settings', err);
     }

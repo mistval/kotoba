@@ -10,32 +10,40 @@ function throwError(baseString, failedBlob) {
 class SettingsCategory {
   constructor(settingsBlob, qualificationWithoutName, categoryIdentifier, settingIdentifier, config) {
     this.name_ = settingsBlob.name || '';
+    this.settingIdentifier_ = settingIdentifier;
     this.settingsCategorySeparator_ = config.settingsCategorySeparator;
     this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + this.settingsCategorySeparator_ + this.name_ : '';
     this.isTopLevel_ = !this.fullyQualifiedName_;
     this.categoryIdentifier_ = categoryIdentifier;
-    if (this.name_.indexOf(config.settingsCategorySeparator) !== -1) {
-      throwError('A settings category has an invalid name. It must not contain a ' + config.settingsCategorySeparator, settingsBlob);
-    } else if (!isTopLevel && !this.name_) {
-      throwError('A settings category has an invalid or nonexistent name property. It should be a non-empty string.', settingsBlob);
-    } else if (!settingsBlob.children || settingsBlob.children.length < 1) {
-      throwError('A settings category has an empty or non-existent children children proprty. It should be an array of settings categories or settings', settingsBlob);
-    } else if (this.name_.indexOf(' ') !== -1) {
-      throwError('A settings category has an invalid name. It must not contain a space.', settingsBlob);
+    this.children_ = [];
+  }
+
+  static createRootCategory(categoryIdentifier, settingIdentifier, config) {
+    let settingsBlob = {
+      name: '',
+    };
+    return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
+  }
+
+  setChildren(children) {
+    if (!children) {
+      return;
     }
     this.children_ = [];
-    for (let child of settingsBlob.children) {
+    for (let child of children) {
       if (!child) {
         throwError('A child is invalid.', settingsBlob);
       }
-      if (!child.type || typeof child.type !== typeof '' || (child.type !== categoryIdentifier && child.type !== settingIdentifier)) {
-        throwError(```A child has an invalid type. It should be a string, either '${categoryIdentifier}'' or '${settingIdentifier}'.```, settingsBlob);
+      if (!child.type || typeof child.type !== typeof '' || (child.type !== this.categoryIdentifier_ && child.type !== this.settingIdentifier_)) {
+        throwError(```A child has an invalid type. It should be a string, either '${categoryIdentifier}'' or '${this.settingIdentifier_}'.```, settingsBlob);
       }
       if (this.children_.find(otherChild => otherChild.getName() === child.getName())) {
         throwError('Two children have the same name.', settingsBlob);
       }
-      if (child.type === CATEGORY_IDENTIFIER) {
-        this.children_.push(new SettingsCategory(child, this.fullyQualifiedName_, categoryIdentifier, settingIdentifier, config));
+      if (child.type === this.categoryIdentifier_) {
+        let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, categoryIdentifier, this.settingIdentifier_, config)
+        this.children_.push(childCategory);
+        childCategory.setChildren(child.chilren);
       } else {
         this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_));
       }
@@ -43,16 +51,8 @@ class SettingsCategory {
 
     this.childrenType_ = this.children_[0].type;
     if (!children.every(child => child.type === this.childrenType)) {
-      throwError(```A settings category has children of different type. They should all either be '${categoryIdentifier}'' or '${settingIdentifier}'. They cannot be mixed.```, settingsBlob);
+      throwError(```A settings category has children of different type. They should all either be '${categoryIdentifier}'' or '${this.settingIdentifier_}'. They cannot be mixed.```, settingsBlob);
     }
-  }
-
-  static createRootCategory(children, categoryIdentifier, settingIdentifier, config) {
-    let settingsBlob = {
-      name: '',
-      children: children,
-    };
-    return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
   }
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
