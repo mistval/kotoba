@@ -4,6 +4,7 @@ const STRING_VALUE_TYPE = 'STRING';
 const INTEGER_VALUE_TYPE = 'INTEGER';
 const FLOAT_VALUE_TYPE = 'FLOAT';
 const BOOLEAN_VALUE_TYPE = 'BOOLEAN';
+const CUSTOM_VALUE_TYPE = 'CUSTOM';
 const prettyPrintForValueType = {};
 prettyPrintForValueType[STRING_VALUE_TYPE] = 'Text';
 prettyPrintForValueType[INTEGER_VALUE_TYPE] = 'Whole number';
@@ -35,9 +36,22 @@ function throwError(baseString, failedBlob) {
 
 class Setting {
   constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator) {
-    if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
+    let hasAllCustomFields = settingsBlob.customAllowedValuesDescription
+      && settingsBlob.customValidateDatabaseFacingValueFunction
+      && settingsBlob.customConvertFromUserToDatabaseFacingValue
+      && settingsBlob.customConvertFromDatabaseToUserFacingValue
+      && settingsBlob.customUserFacingExampleValue
+      && settignsBlob.customValueTypeDescription;
+    if ((!settingsBlob.valueType || settingsBlob.valueType === CUSTOM_VALUE_TYPE) && !hasAllCustomFields) {
+      throwError('Setting has a custom (or no specified) value type, but does not define all the required custom fields. It must define: '
+        + 'customValidateDatabaseFacingValueFunction'
+        + 'customConvertFromUserToDatabaseFacingValue'
+        + 'customConvertFromDatabaseToUserFacingValue'
+        + 'customUserFacingExampleValue'
+        + 'customValueTypeDescription');
+    } else if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
       throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
-    } else if (Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
+    } else if (settingsBlob.valueType && Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
       throwError('Setting needs a value type. it either doesn\'t have one, or it has one that\'s invalid. It must be one of: ' + Object.keys(prettyPrintForValueType).join(', '), settingsBlob);
     } else if (!settingsBlob.name || typeof settingsBlob.name !== typeof '') {
       throwError('Setting does not have a name, or it is invalid. It must be a non-empty string.', settingsBlob);
@@ -51,21 +65,21 @@ class Setting {
     this.isSetting = true;
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
-    this.customAllowedValuesString_ = settingsBlob.customAllowedValuesString;
+    this.customAllowedValuesString_ = settingsBlob.customAllowedValuesDescription;
     this.customValidateDatabaseFacingValueFunction_ = settingsBlob.customValidateDatabaseFacingValueFunction;
     this.name_ = settingsBlob.name;
-    this.allowedValues = settingsBlob.allowedValues;
+    this.allowedDatabaseFacingValues_ = settingsBlob.allowedDatabaseFacingValues;
     this.fullyQualifiedName_ = qualificationWithoutName + '.' + this.name_;
     this.defaultDatabaseFacingValue_ = defaultDatabaseFacingValue;
     this.customConvertFromDatabaseToUserFacingValue_ = settingsBlob.customConvertFromDatabaseToUserFacingValue;
     this.customConvertFromUserToDatabaseFacingValue_ = settingsBlob.customConvertFromUserToDatabaseFacingValue;
     this.customUserFacingExampleValue_ = settingsBlob.customUserFacingExampleValue.toString();
-    if (this.allowedValues.indexOf('Range(') === 0) {
+    if (typeof this.allowedDatabaseFacingValues_ === typeof '' && this.allowedDatabaseFacingValues_.indexOf('Range(') === 0) {
       try {
-        this.allowedValues = eval('new ' + this.allowedValues);
+        this.allowedDatabaseFacingValues_ = eval('new ' + this.allowedDatabaseFacingValues_);
       } catch (err) { }
-      if (!this.allowedValues) {
-        throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob.allowedValues);
+      if (!this.allowedDatabaseFacingValues_) {
+        throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob.allowedDatabaseFacingValues);
       }
       if (this.valueType_ === STRING_VALUE_TYPE) {
         throwError('The allowed values are a range for that setting, but the value type is STRING. If the allowed values are a range, the value type must be INTEGER or FLOAT');
@@ -128,6 +142,9 @@ Allowed values:
 
 Current value:
   ${this.getCurrentUserFacingValue(bot, msg, settings)}
+
+Example:
+  ]settings ${this.fullyQualifiedName_} ${this.getUserFacingExampleValue(bot, msg)}
 \`\`\`
 ```;
   }
@@ -167,13 +184,13 @@ Current value:
         return result;
       }
     }
-    if (!this.allowedValues) {
+    if (!this.allowedDatabaseFacingValues_) {
       return true;
     }
-    if (Array.isArray(this.allowedValues) && this.validateDatabaseFacingValueIsInArray_(value)) {
+    if (Array.isArray(this.allowedDatabaseFacingValues_) && this.validateDatabaseFacingValueIsInArray_(value)) {
       return true;
     }
-    if (this.allowedValues instanceof Range && this.validateDatabaseFacingValueIsWithinRange_(value)) {
+    if (this.allowedDatabaseFacingValues_ instanceof Range && this.validateDatabaseFacingValueIsWithinRange_(value)) {
       return true;
     }
     if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validatDatabaseFacingValueIsBoolean_(value)) {
@@ -187,11 +204,11 @@ Current value:
   }
 
   validateDatabaseFacingValueIsWithinRange_(value) {
-    return this.allowedValues.isWithinRange(value);
+    return this.allowedDatabaseFacingValues_.isWithinRange(value);
   }
 
   validateDatabaseFacingValueIsInArray_(value) {
-    return this.allowedValues.indexOf(value) !== -1;
+    return this.allowedDatabaseFacingValues_.indexOf(value) !== -1;
   }
 
   convertDatabaseFacingValueToUserFacingValue_(bot, msg, value) {
@@ -206,14 +223,14 @@ Current value:
       return this.customAllowedValuesString_;
     }
     let prettyPrintedValueType = this.prettyPrintForValueType[this.valueType_];
-    if (!this.allowedValues) {
+    if (!this.allowedDatabaseFacingValues_) {
       return 'Any ' + prettyPrintedValueType.toLowerCase();
     }
-    if (this.allowedValues instanceof Range) {
-      return prettyPrintedValueType + ' between ${this.allowedValues.getLower()} and ${this.allowedValues.getUpper()}';
+    if (this.allowedDatabaseFacingValues_ instanceof Range) {
+      return prettyPrintedValueType + ' between ${this.allowedDatabaseFacingValues_.getLower()} and ${this.allowedDatabaseFacingValues_.getUpper()}';
     }
-    if (Array.isArray(this.allowedValues)) {
-      return 'One of: ' + this.allowedValues.join(', ');
+    if (Array.isArray(this.allowedDatabaseFacingValues_)) {
+      return 'One of: ' + this.allowedDatabaseFacingValues_.join(', ');
     }
   }
 
