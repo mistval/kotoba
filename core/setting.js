@@ -74,10 +74,10 @@ class Setting {
     return this.name_;
   }
 
-  getConfigurationInstructionsStringForQualifierChain(wholeQualifierChain, currentQualifierChain, currentSettings) {
+  getConfigurationInstructionsString(currentSettings) {
     return ```
 \`\`\`glsl
-# ${wholeQualifierChain}
+# ${this.fullyQualifiedName_}
 
 ${this.description_}
 
@@ -85,14 +85,13 @@ Value type:
   ${this.prettyPrintForValueType[this.valueType_]}
 
 Allowed values:
-  ${getAllowedValueString_()}
-
+  ${this.getAllowedValueString_()}
 \`\`\`
 ```;
   }
 
-  validateNewSetting(setting) {
-    if (this.customValidationFunction_ && this.customValidationFunction_(setting)) {
+  validateNewSetting(setting, bot, msg) {
+    if (this.customValidationFunction_ && this.customValidationFunction_(setting, bot, msg)) {
       return true;
     }
     if (!this.allowedValues) {
@@ -111,28 +110,6 @@ Allowed values:
       return true;
     }
     return createValidationFailureString_();
-  }
-
-  createValidationFailureString_() {
-    return 'Could not apply that setting, because it is invalid. It must be: ' + this.getAllowedValueString_().toLowerCase();
-  }
-
-  validateNewSettingIsBoolean_(setting) {
-    let lowerCaseSetting = setting.toLowerCase();
-    return lowerCaseSetting === 'true' || lowerCaseSetting === 'false';
-  }
-
-  validateNewSettingIsWithinRange_(setting) {
-    let number = parseFloat(setting);
-    if (this.valueType_ === INTEGER_VALUE_TYPE) {
-      number = Math.floor(number);
-    }
-
-    return this.allowedValues.isWithinRange(number);
-  }
-
-  validateNewSettingIsInArray_(setting) {
-    return this.allowedValues.indexOf(setting) !== -1;
   }
 
   getUserFacingSettingValueString(setting) {
@@ -156,6 +133,28 @@ Allowed values:
       return setting.toLowerCase() === 'true';
     }
     return setting;
+  }
+
+  createValidationFailureString_() {
+    return 'Could not apply that setting, because it is invalid. It must be: ' + this.getAllowedValueString_().toLowerCase();
+  }
+
+  validateNewSettingIsBoolean_(setting) {
+    let lowerCaseSetting = setting.toLowerCase();
+    return lowerCaseSetting === 'true' || lowerCaseSetting === 'false';
+  }
+
+  validateNewSettingIsWithinRange_(setting) {
+    let number = parseFloat(setting);
+    if (this.valueType_ === INTEGER_VALUE_TYPE) {
+      number = Math.floor(number);
+    }
+
+    return this.allowedValues.isWithinRange(number);
+  }
+
+  validateNewSettingIsInArray_(setting) {
+    return this.allowedValues.indexOf(setting) !== -1;
   }
 
   getAllowedValueString_() {
