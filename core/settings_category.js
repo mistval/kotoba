@@ -55,32 +55,32 @@ class SettingsCategory {
     return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
   }
 
-  getName() {
-    return this.name_;
+  getChildForRelativeQualifiedName(fullyQualifiedName) {
+    let child = this.getChildForRelativeQualifiedNameHelper_(relativeQualifiedName);
+    if (child) {
+      return child.getChildForRelativeQualifiedName(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
+    } else {
+      return this;
+    }
+  }
+
+  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
+    let prefix = '';
+    if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
+    }
+    if (this.childrenType === this.categoryIdentifier_) {
+      return this.getConfigurationInstructionsStringForCategoryChildren_(prefix);
+    } else {
+      return this.getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName);
+    }
   }
 
   getFullyQualifiedName() {
     return this.fullyQualifiedName_;
   }
 
-  getNearestElementForQualifierChain(relativeQualifiedName) {
-    let child = this.getChildForRelativeQualifiedName_(relativeQualifiedName);
-    if (child) {
-      return child.getNearestElementForQualifierChain(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
-    } else {
-      return this;
-    }
-  }
-
-  getConfigurationInstructionsString(currentSettings) {
-    if (this.childrenType === this.categoryIdentifier_) {
-      return this.getConfigurationInstructionsStringForCategoryChildren_();
-    } else {
-      return this.getConfigurationInstructionsStringForSettingsChildren_(currentSettings);
-    }
-  }
-
-  getChildForRelativeQualifiedName_(relativeQualifiedName) {
+  getChildForRelativeQualifiedNameHelper_(relativeQualifiedName) {
     let childName = relativeQualifiedName.split(this.settingsCategorySeparator_)[0];
     if (childName) {
       for (let child of this.children_) {
@@ -95,8 +95,8 @@ class SettingsCategory {
     return relativeQualifiedName.split(this.settingsCategorySeparator_).slice(1).join(this.settingsCategorySeparator_);
   }
 
-  getConfigurationInstructionsStringForCategoryChildren_() {
-    let subCategories = this.children.map(child => '  ' + this.fullyQualifiedName_ + this.settingsCategorySeparator_ + child.getName());
+  getConfigurationInstructionsStringForCategoryChildren_(prefix) {
+    let subCategories = this.children.map(child => '  ' + child.getFullyQualifiedName());
     let subCategoryListString = subCategories.join('\n');
     let titleString;
     if (this.isTopLevel_) {
@@ -104,7 +104,7 @@ class SettingsCategory {
     } else {
       titleString = 'Sub-categories under ' + this.fullyQualifiedName;
     }
-    return ```
+    return prefix + ```
 \`\`\`glsl
 # ${titleString}
 
@@ -115,18 +115,18 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 ```;
   }
 
-  getConfigurationInstructionsStringForSettingsChildren_(currentSettings) {
-    let exampleSetting = this.children_[0].getName();
-    let exampleValue = this.children_[0].getExampleValues()[0];
+  getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName) {
+    let exampleSetting = this.children_[0].getFullyQualifiedName();
+    let exampleValue = this.children_[0].getUserFacingExampleValue(bot, msg);
     let settingsListString = this.children_
-      .map(child => '  ' + this.fullyQualifiedName + this.settingsCategorySeparator_ + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
+      .map(child => '  ' + this.fullyQualifiedName + this.settingsCategorySeparator_ + child.getFullyQualifiedName() + ': ' + child.getCurrentUserFacingValue(bot, msg, settings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings';
     } else {
       titleString = 'Settings under ' + this.fullyQualifiedName;
     }
-    return ```
+    return prefix + ```
 \`\`\`glsl
 # ${titleString}
 

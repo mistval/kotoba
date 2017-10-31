@@ -58,6 +58,7 @@ class Setting {
     this.defaultDatabaseFacingValue_ = defaultDatabaseFacingValue;
     this.customConvertFromDatabaseToUserFacingValue_ = settingsBlob.customConvertFromDatabaseToUserFacingValue;
     this.customConvertFromUserToDatabaseFacingValue_ = settingsBlob.customConvertFromUserToDatabaseFacingValue;
+    this.customUserFacingExampleValue_ = settingsBlob.customUserFacingExampleValue.toString();
     if (this.allowedValues.indexOf('Range(') === 0) {
       try {
         this.allowedValues = eval('new ' + this.allowedValues);
@@ -92,6 +93,14 @@ class Setting {
 
   getDefaultUserFacingValue(bot, msg) {
     return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
+  }
+
+  getUserFacingExampleValue(bot, msg) {
+    if (this.customUserFacingExampleValue_) {
+      return this.customUserFacingExampleValue_;
+    } else {
+      return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
+    }
   }
 
   getFullyQualifiedName() {
@@ -186,7 +195,7 @@ Current value:
 
   convertDatabaseFacingValueToUserFacingValue_(bot, msg, value) {
     if (this.customConvertFromDatabaseToUserFacingValue_) {
-      return this.customConvertFromDatabaseToUserFacingValue_(bot, msg, value);
+      return this.customConvertFromDatabaseToUserFacingValue_(bot, msg, value).toString();
     }
     return value.toString();
   }
