@@ -98,12 +98,12 @@ ${configurationInstructionsAtThisLevel}
     let subCategoryListString = subCategories.join('\n');
     let titleString;
     if (this.isTopLevel_) {
-      titleString = 'Settings categories:';
+      titleString = 'Settings categories';
     } else {
-      titleString = 'Sub-categories under ' + qualifierChainSuccessfullyResolvedPart + ':';
+      titleString = 'Sub-categories under ' + qualifierChainSuccessfullyResolvedPart;
     }
-    return ```
-${titleString}
+    return ```glsl
+# ${titleString}
 
 \`\`\`
 ${subCategoryListString}
@@ -124,15 +124,25 @@ Say ']settings [category name]' to view and set that category's settings. For ex
     } else {
       titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart + ':';
     }
-    return ```
+    return ```glsl
+# Settings
+
 ${titleString}
 
 \`\`\`
 ${settingsListString}
 \`\`\`
 
-Say ']settings [setting] [value]' to set a setting. For example: ]settings ${exampleSetting} ${exampleValue}
-Say ']settings [setting]' to get more information about that setting. For example: ]setting ${exampleSetting}
+# Help
+
+# Say ']settings [setting]' to get more information about that setting, including allowed values.
+    Example: ]setting ${exampleSetting}
+# Say ']settings [setting] [value]' to set a setting in this channel.
+    Example: ]settings ${exampleSetting} ${exampleValue}
+# Say ']settings [setting] [value] --all' to set a setting server-wide.
+    Example: ]settings ${exampleSetting} ${exampleValue} --all
+# Say ']settings [setting] [value] #channel1 #channel2 #channelx' to set a setting on specific channels.
+    Example: ]settings ${exampleSetting} ${exampleValue} #welcome #general
 ```;
   }
 }
