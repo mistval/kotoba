@@ -1,6 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const SettingsCategory = reload('./settings_category.js');
+const persistence = require('./persistence.js');
 
 const CATEGORY_IDENTIFIER = 'CATEGORY';
 const SETTING_IDENTIFIER = 'SETTING';
@@ -23,7 +24,7 @@ class SettingsManager {
   * Loads settings categories. Can be called to reload settings that have been edited.
   * @param {object} config - The bot config
   */
-  load(config) {
+  load(config, extraBaseCategoriesData) {
     const loggerTitle = 'SETTINGS MANAGER';
     let categories = [];
     for (let settingsFile of this.settingsFiles_) {
@@ -43,6 +44,10 @@ class SettingsManager {
       }
     }
 
+    for (let category of extraBaseCategoriesData) {
+      categories.push(new SettingsCategory(category, '', CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config));
+    }
+
     try {
       this.rootSettingsCategory_ = SettingsCategory.createRootCategory(categories, CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
     } catch (err) {
@@ -50,10 +55,12 @@ class SettingsManager {
     }
   }
 
-  getInstructionsForArgument(argument) {
-    let nearestChild = this.rootSettingsCategory_.getNearestElementForQualifierChain(argument);
-    let currentSettings = null; //TODO
-    return nearestChild.getConfigurationInstructionsString();
+  getInstructionsForSetting(bot, msg, fullyQualifiedName) {
+    let nearestChild = this.rootSettingsCategory_.getNearestElementForQualifierChain(fullyQualifiedName);
+    let serverId = msg.channel.guild ? msg.channel.guild.id : msg.channel.id;
+    persistence.getDataForServer(serverId).then(data => {
+      return nearestChild.getConfigurationInstructionsString(data.settings);
+    });
   }
 }
 
