@@ -15,5 +15,6 @@
     "eating chicken",
     "buying games on steam"
   ],
-  "statusRotationIntervalInSeconds": 600
+  "statusRotationIntervalInSeconds": 600,
+  "settingsCategorySeparator": "/"
 }

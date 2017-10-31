@@ -34,18 +34,17 @@ function throwError(baseString, failedBlob) {
 }
 
 class Setting {
-  constructor(settingsBlob, qualificationWithoutName) {
+  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator) {
     if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
       throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
-    }
-    if (Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
+    } else if (Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
       throwError('Setting needs a value type. it either doesn\'t have one, or it has one that\'s invalid. It must be one of: ' + Object.keys(prettyPrintForValueType).join(', '), settingsBlob);
-    }
-    if (!settingsBlob.name || typeof settingsBlob.name !== typeof '') {
+    } else if (!settingsBlob.name || typeof settingsBlob.name !== typeof '') {
       throwError('Setting does not have a name, or it is invalid. It must be a non-empty string.', settingsBlob);
-    }
-    if (settingsBlob.name.indexOf('.') !== -1) {
-      throwError('A setting has an invalid name. It must not contain a period.', settingsBlob);
+    } else if (settingsBlob.name.indexOf(settingsCategorySeparator) !== -1) {
+      throwError('A setting has an invalid name. It must not contain a ' + settingsCategorySeparator, settingsBlob);
+    } else if (settingsBlob.name.indexOf(' ') !== -1) {
+      throwError('A setting has an invalid name. It must not be a space.', settingsBlob);
     }
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
