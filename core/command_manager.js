@@ -7,6 +7,7 @@ const BanCommand = reload('./commands/ban_command.js');
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
+const SettingsCommand = reload('./commands/settings.js');
 
 function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
@@ -42,6 +43,51 @@ function getDuplicateAlias(command, otherCommands) {
   }
 }
 
+function channelsInChannelStringButNotInGuild(channelsString, guild) {
+  return channelsString.split(' ').filter(channel => {
+    return !!guild.channels.find(
+      guildChannel => guildChannel.id === channel.replace('<#', '').replace('>', ''));
+  });
+}
+
+function createSettingsHierarchyForCommand(userCommand) {
+  return {
+    name: userCommand.aliases[0] + '_allowed_channels',
+    description: 'The channels in which the ${userCommand.aliases[0]} command (and all aliases) is allowed to execute.',
+    valueType: 'CUSTOM',
+    customValueTypeDescription: 'Channels',
+    customAllowedValuesDescription: 'A space-separated list of channels in this server',
+    customUserFacingExampleValue: '#general #welcome #bot',
+    defaultDatabaseFacingValue: undefined,
+    customValidateDatabaseFacingValueFunction(bot, msg, value) {
+      let guild = msg.channel.guild;
+      let invalidChannels = channelsInChannelStringButNotInGuild(value, guild);
+      if (invalidChannels.length === 0) {
+        return true;
+      } else {
+        return 'The following channels were not found in this guild: ' + invalidChannels.join(', ');
+      }
+    },
+    customConvertFromUserToDatabaseFacingValue(bot, msg, userFacingValue) {
+      return userFacingValue.replace(/<#/g, '').replace(/>/g, '').split(' ');
+    },
+    customConvertFromDatabaseToUserFacingValue(bot, msg, databaseFacingValue) {
+      return databaseFacingValue.map(channelId => '<#' + channelId + '>').join(' ');
+    },
+  }
+}
+
+function createSettingsHierarchyForCommands(userCommands) {
+  return userCommands.map(command => createSettingsHierarchyForCommand(command));
+}
+
+function createSettingsCategoryForCommands(userCommands) {
+  return {
+    name: 'commands',
+    children: createSettingsHierarchyForCommands(userCommands),
+  }
+}
+
 /**
 * Loads and executes commands in response to user input.
 * @param {function} [reloadAction] - A lambda for the reload command to call to execute a reload.
@@ -62,7 +108,7 @@ class CommandManager {
   /**
   * Loads commands. Can be called to reload commands.
   */
-  load() {
+  load(settingsManager) {
     const loggerTitle = 'COMMAND MANAGER';
     const FailedToLoadMessageStart = 'Failed to load command from file: ';
     this.commands_ = [];
@@ -95,6 +141,8 @@ class CommandManager {
       this.commands_.push(new Command(new AllowCommand(userCommands)));
       this.commands_.push(new Command(new UnrestrictCommand(userCommands)));
       this.commands_.push(new Command(new BanCommand(userCommands)));
+      this.commands_.push(new Command(new SettingsCommand(settingsManager)));
+      this.settingsCategory_ = createSettingsCategoryForCommands(userCommands);
 
       if (this.reloadAction_) {
         this.commands_.push(new Command(new ReloadCommand(this.reloadAction_)));
@@ -102,6 +150,10 @@ class CommandManager {
     }).catch(err => {
       this.logger_.logFailure(loggerTitle, 'Error loading commands.', err);
     });
+  }
+
+  collectSettingsCategories() {
+    return [this.settingsCategory_];
   }
 
   /**

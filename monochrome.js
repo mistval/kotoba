@@ -30,20 +30,12 @@ function reloadCore() {
 
   settingsManager = new (reload('./core/settings_manager.js'))(logger);
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
-  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, settingsManager, logger);
+  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger);
   RepeatingQueue = reload('./core/repeating_queue.js');
-  commandManager.load();
+  commandManager.load(settingsManager).then(() => {
+    settingsManager.load(commandManager.collectSettingsCategories(), [], config);
+  });
   messageProcessorManager.load();
-
-  let settingsSources = [commandManager, messageProcessorManager];
-  let settingsCategories = [];
-  for (let settingsSource of settingsSources) {
-    if (settingsSource.collectSettingsCategories) {
-      settingsCategories.concat(settingsSource.collectSettingsCategories());
-    }
-  }
-
-  settingsManager.load(settingsCategories, [], config);
 }
 
 function validateConfiguration(config) {
