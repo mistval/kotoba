@@ -123,7 +123,7 @@ Current value:
   }
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
-    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(newValue);
+    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
     let validationResult = validateNewDatabaseFacingValue(bot, msg, databaseFacingValue);
     if (!validationResult) {
       return createValidationFailureString_();
@@ -137,9 +137,9 @@ Current value:
     return true;
   }
 
-  convertUserFacingValueToDatabaseFacingValue_(value) {
+  convertUserFacingValueToDatabaseFacingValue_(bot, msg, value) {
     if (this.customConvertFromUserToDatabaseFacingValue_) {
-      return this.customConvertFromUserFacingToDatabaseFacingValue_(value);
+      return this.customConvertFromUserFacingToDatabaseFacingValue_(bot, msg, value);
     } else if (this.valueType_ === INTEGER_VALUE_TYPE) {
       return parseInt(value);
     } else if (this.valueType_ === FLOAT_VALUE_TYPE) {
