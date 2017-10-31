@@ -102,12 +102,14 @@ ${configurationInstructionsAtThisLevel}
     } else {
       titleString = 'Sub-categories under ' + qualifierChainSuccessfullyResolvedPart;
     }
-    return ```glsl
+    return ```
+\`\`\`glsl
 # ${titleString}
 
 ${subCategoryListString}
 
 Say ']settings [category name]' to view and set that category's settings. For example: ]settings ${subCategories[0]}
+\`\`\`
 ```;
   }
 
@@ -122,7 +124,8 @@ Say ']settings [category name]' to view and set that category's settings. For ex
     } else {
       titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart;
     }
-    return ```glsl
+    return ```
+\`\`\`glsl
 # ${titleString}
 
 ${settingsListString}
@@ -137,6 +140,7 @@ ${settingsListString}
     Example: ]settings ${exampleSetting} ${exampleValue} --all
 # Say ']settings [setting] [value] #channel1 #channel2 #channelx' to set a setting on specific channels.
     Example: ]settings ${exampleSetting} ${exampleValue} #welcome #general
+\`\`\`
 ```;
   }
 }
