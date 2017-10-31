@@ -44,7 +44,8 @@ function throwError(baseString, failedBlob) {
 }
 
 class Setting {
-  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator) {
+  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds) {
+    this.colorForEmbeds_ = colorForEmbeds;
     let hasAllCustomFields = settingsBlob.customAllowedValuesDescription
       && settingsBlob.customValidateDatabaseFacingValueFunction
       && settingsBlob.customConvertFromUserToDatabaseFacingValue
@@ -158,6 +159,7 @@ class Setting {
       embed: {
         title: this.fullyQualifiedName_,
         description: this.description_,
+        color: this.colorForEmbeds_,
         fields: [
           {name: 'Value type', value: this.getValueTypeDescription_()},
           {name: 'Allowed values', value: this.getAllowedValueString_()},
