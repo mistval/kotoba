@@ -52,14 +52,18 @@ function channelsInChannelStringButNotInGuild(channelsString, guild) {
 
 function createSettingsHierarchyForCommand(userCommand) {
   return {
+    type: 'SETTING',
     name: userCommand.aliases[0] + '_allowed_channels',
-    description: 'The channels in which the ${userCommand.aliases[0]} command (and all aliases) is allowed to execute.',
+    description: `The channels in which the ${userCommand.aliases[0]} command (and all aliases) is allowed to execute.`,
     valueType: 'CUSTOM',
     customValueTypeDescription: 'Channels',
-    customAllowedValuesDescription: 'A space-separated list of channels in this server',
-    customUserFacingExampleValue: '#general #welcome #bot',
+    customAllowedValuesDescription: `A space-separated list of channels in this server, or 'all' or 'none'`,
+    customUserFacingExampleValues: ['#general #welcome #bot', 'all', 'none'],
     defaultDatabaseFacingValue: undefined,
     customValidateDatabaseFacingValueFunction(bot, msg, value) {
+      if (userFacingValue === 'all' || userFacingValue === 'none') {
+        return true;
+      }
       let guild = msg.channel.guild;
       let invalidChannels = channelsInChannelStringButNotInGuild(value, guild);
       if (invalidChannels.length === 0) {
@@ -69,9 +73,21 @@ function createSettingsHierarchyForCommand(userCommand) {
       }
     },
     customConvertFromUserToDatabaseFacingValue(bot, msg, userFacingValue) {
+      if (userFacingValue === 'all') {
+        return undefined;
+      }
+      if (userFacingValue === 'none') {
+        return [];
+      }
       return userFacingValue.replace(/<#/g, '').replace(/>/g, '').split(' ');
     },
     customConvertFromDatabaseToUserFacingValue(bot, msg, databaseFacingValue) {
+      if (!databaseFacingValue) {
+        return 'all';
+      }
+      if (databaseFacingValue.length === 0) {
+        return 'none';
+      }
       return databaseFacingValue.map(channelId => '<#' + channelId + '>').join(' ');
     },
   }
@@ -83,6 +99,7 @@ function createSettingsHierarchyForCommands(userCommands) {
 
 function createSettingsCategoryForCommands(userCommands) {
   return {
+    type: 'CATEGORY',
     name: 'commands',
     children: createSettingsHierarchyForCommands(userCommands),
   }

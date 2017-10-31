@@ -81,7 +81,12 @@ class SettingsManager {
     let child = this.rootSettingsCategory_.getChildForRelativeQualifiedName(desiredFullyQualifedName);
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
-      return getConfigurationInstructionsString(bot, msg, data.settings, desiredFullyQualifiedName)
+      if (!data.settings) {
+        data.settings = {};
+        data.settings.serverSettings = {};
+        data.settings.channelSettings = {};
+      }
+      return child.getConfigurationInstructionsString(bot, msg, data.settings, desiredFullyQualifedName)
     });
   }
 }

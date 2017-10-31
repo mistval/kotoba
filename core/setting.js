@@ -10,6 +10,7 @@ prettyPrintForValueType[STRING_VALUE_TYPE] = 'Text';
 prettyPrintForValueType[INTEGER_VALUE_TYPE] = 'Whole number';
 prettyPrintForValueType[FLOAT_VALUE_TYPE] = 'Number';
 prettyPrintForValueType[BOOLEAN_VALUE_TYPE] = 'true or false';
+prettyPrintForValueType[CUSTOM_VALUE_TYPE] = '';
 
 class Range {
   constructor(lower, upper) {
@@ -40,15 +41,15 @@ class Setting {
       && settingsBlob.customValidateDatabaseFacingValueFunction
       && settingsBlob.customConvertFromUserToDatabaseFacingValue
       && settingsBlob.customConvertFromDatabaseToUserFacingValue
-      && settingsBlob.customUserFacingExampleValue
-      && settignsBlob.customValueTypeDescription;
+      && settingsBlob.customUserFacingExampleValues
+      && settingsBlob.customValueTypeDescription;
     if ((!settingsBlob.valueType || settingsBlob.valueType === CUSTOM_VALUE_TYPE) && !hasAllCustomFields) {
       throwError('Setting has a custom (or no specified) value type, but does not define all the required custom fields. It must define: '
-        + 'customValidateDatabaseFacingValueFunction'
-        + 'customConvertFromUserToDatabaseFacingValue'
-        + 'customConvertFromDatabaseToUserFacingValue'
-        + 'customUserFacingExampleValue'
-        + 'customValueTypeDescription');
+        + 'customValidateDatabaseFacingValueFunction '
+        + 'customConvertFromUserToDatabaseFacingValue '
+        + 'customConvertFromDatabaseToUserFacingValue '
+        + 'customUserFacingExampleValues '
+        + 'customValueTypeDescription ');
     } else if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
       throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
     } else if (settingsBlob.valueType && Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
@@ -59,9 +60,10 @@ class Setting {
       throwError('A setting has an invalid name. It must not contain a ' + settingsCategorySeparator, settingsBlob);
     } else if (settingsBlob.name.indexOf(' ') !== -1) {
       throwError('A setting has an invalid name. It must not be a space.', settingsBlob);
-    } else if (settingsBlob.defaultDatabaseFacingValue === undefined) {
+    } else if (!('defaultDatabaseFacingValue' in settingsBlob)) {
       throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
     }
+    this.customValueTypeDescription_ = settingsBlob.customValueTypeDescription;
     this.isSetting = true;
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
@@ -69,11 +71,11 @@ class Setting {
     this.customValidateDatabaseFacingValueFunction_ = settingsBlob.customValidateDatabaseFacingValueFunction;
     this.name_ = settingsBlob.name;
     this.allowedDatabaseFacingValues_ = settingsBlob.allowedDatabaseFacingValues;
-    this.fullyQualifiedName_ = qualificationWithoutName + '.' + this.name_;
-    this.defaultDatabaseFacingValue_ = defaultDatabaseFacingValue;
+    this.fullyQualifiedName_ = qualificationWithoutName + settingsCategorySeparator + this.name_;
+    this.defaultDatabaseFacingValue_ = settingsBlob.defaultDatabaseFacingValue;
     this.customConvertFromDatabaseToUserFacingValue_ = settingsBlob.customConvertFromDatabaseToUserFacingValue;
     this.customConvertFromUserToDatabaseFacingValue_ = settingsBlob.customConvertFromUserToDatabaseFacingValue;
-    this.customUserFacingExampleValue_ = settingsBlob.customUserFacingExampleValue.toString();
+    this.customUserFacingExampleValues_ = settingsBlob.customUserFacingExampleValues;
     if (typeof this.allowedDatabaseFacingValues_ === typeof '' && this.allowedDatabaseFacingValues_.indexOf('Range(') === 0) {
       try {
         this.allowedDatabaseFacingValues_ = eval('new ' + this.allowedDatabaseFacingValues_);
@@ -90,10 +92,18 @@ class Setting {
     }
   }
 
+  getChildForRelativeQualifiedName(relativeQualifiedName) {
+    assert(!relativeQualifiedName);
+    return this;
+  }
+
   getCurrentDatabaseFacingValue(settings, channelId) {
-    let channelSetting = settings.channelSettings[channelId][this.fullyQualifiedName_];
-    if (channelSetting) {
-      return channelSetting;
+    let settingsForChannel = settings.channelSettings[channelId];
+    if (settingsForChannel) {
+      let setting = settings.channelSettings[channelId][this.fullyQualifiedName_];
+      if (setting) {
+        return setting;
+      }
     }
     let serverSetting = settings.serverSettings[this.fullyQualifiedName_];
     if (serverSetting) {
@@ -110,16 +120,20 @@ class Setting {
     return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
   }
 
-  getUserFacingExampleValue(bot, msg) {
-    if (this.customUserFacingExampleValue_) {
-      return this.customUserFacingExampleValue_;
+  getUserFacingExampleValues(bot, msg) {
+    if (this.customUserFacingExampleValues_) {
+      return this.customUserFacingExampleValues_;
     } else {
-      return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
+      return [this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_)];
     }
   }
 
   getFullyQualifiedName() {
     return this.fullyQualifiedName_;
+  }
+
+  getUnqualifiedName() {
+    return this.name_;
   }
 
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
@@ -128,25 +142,22 @@ class Setting {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
     }
 
-    return prefix +  ```
-\`\`\`glsl
-# ${this.fullyQualifiedName_}
+    let examplesString = this.getUserFacingExampleValues(bot, msg).map(exampleValue => {
+      return `]settings ${this.fullyQualifiedName_} ${exampleValue}`;
+    }).join('\n');
 
-${this.description_}
-
-Value type:
-  ${this.prettyPrintForValueType[this.valueType_]}
-
-Allowed values:
-  ${this.getAllowedValueString_()}
-
-Current value:
-  ${this.getCurrentUserFacingValue(bot, msg, settings)}
-
-Example:
-  ]settings ${this.fullyQualifiedName_} ${this.getUserFacingExampleValue(bot, msg)}
-\`\`\`
-```;
+    return {
+      embed: {
+        title: this.fullyQualifiedName_,
+        description: this.description_,
+        fields: [
+          {name: 'Value type', value: this.getValueTypeDescription_()},
+          {name: 'Allowed values', value: this.getAllowedValueString_()},
+          {name: 'Current value', value: this.getCurrentUserFacingValue(bot, msg, settings)},
+          {name: 'Examples of setting value', value: examplesString}
+        ]
+      }
+    }
   }
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
@@ -216,6 +227,10 @@ Example:
       return this.customConvertFromDatabaseToUserFacingValue_(bot, msg, value).toString();
     }
     return value.toString();
+  }
+
+  getValueTypeDescription_() {
+    return this.customValueTypeDescription_ || this.prettyPrintForValueType[this.valueType_];
   }
 
   getAllowedValueString_() {
