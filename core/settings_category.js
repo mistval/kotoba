@@ -55,7 +55,12 @@ class SettingsCategory {
     return new SettingsCategory(settingsBlob, '', categoryIdentifier_, settingIdentifier, config);
   }
 
-  getChildForRelativeQualifiedName(fullyQualifiedName) {
+  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
+    // This is a category, not a setting. Return the category information to print.
+    return getConfigurationInstructionsString(bot, msg, currentSettings, this.fullyQualifiedName_);
+  }
+
+  getChildForRelativeQualifiedName(relativeQualifiedName) {
     let child = this.getChildForRelativeQualifiedNameHelper_(relativeQualifiedName);
     if (child) {
       return child.getChildForRelativeQualifiedName(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
