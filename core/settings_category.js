@@ -29,7 +29,10 @@ class SettingsCategory {
         throwError('A child is invalid.', settingsBlob);
       }
       if (!child.type || typeof child.type !== typeof '' || (child.type !== CATEGORY_IDENTIFIER && child.type !== SETTING_IDENTIFIER)) {
-        throwError(```A child has an invalid type. It should be a string, either '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'.```, child);
+        throwError(```A child has an invalid type. It should be a string, either '${CATEGORY_IDENTIFIER}'' or '${SETTING_IDENTIFIER}'.```, settingsBlob);
+      }
+      if (this.children_.find(otherChild => otherChild.getName() === child.getName())) {
+        throwError('Two children have the same name.', settingsBlob);
       }
       if (child.type === CATEGORY_IDENTIFIER) {
         this.children_.push(new SettingsCategory(child, false));
