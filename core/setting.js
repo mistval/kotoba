@@ -45,6 +45,8 @@ class Setting {
       throwError('A setting has an invalid name. It must not contain a ' + settingsCategorySeparator, settingsBlob);
     } else if (settingsBlob.name.indexOf(' ') !== -1) {
       throwError('A setting has an invalid name. It must not be a space.', settingsBlob);
+    } else if (settingsBlob.defaultDatabaseFacingValue === undefined) {
+      throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
     }
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
@@ -53,6 +55,9 @@ class Setting {
     this.name_ = settingsBlob.name;
     this.allowedValues = settingsBlob.allowedValues;
     this.fullyQualifiedName_ = qualificationWithoutName + '.' + this.name_;
+    this.defaultDatabaseFacingValue_ = defaultDatabaseFacingValue;
+    this.customConvertSettingFromDatabaseToUserFacingValue_ = settingsBlob.customConvertSettingFromDatabaseToUserFacingValue;
+    this.customConvertSettingFromUserInputToDatabaseValue_ = settingsBlob.customConvertSettingFromUserInputToDatabaseValue;
     if (this.allowedValues.indexOf('Range(') === 0) {
       try {
         this.allowedValues = eval('new ' + this.allowedValues);
@@ -69,12 +74,37 @@ class Setting {
     }
   }
 
-  getName() {
-    return this.name_;
+  getCurrentDatabaseFacingValue(settings, channelId) {
+    let channelSetting = settings.channelSettings[channelId][this.fullyQualifiedName_];
+    if (channelSetting) {
+      return channelSetting;
+    }
+    let serverSetting = settings.serverSettings[this.fullyQualifiedName_];
+    if (serverSetting) {
+      return serverSetting;
+    }
+    return this.defaultDatabaseFacingValue_;
   }
 
-  getConfigurationInstructionsString(currentSettings) {
-    return ```
+  getCurrentUserFacingValue(settings, channelId) {
+    return this.convertDatabaseFacingValueToUserFacingValue_(this.getCurrentDatabaseFacingValue(settings, channelId));
+  }
+
+  getDefaultUserFacingValue(settings, channelId) {
+    return this.convertDatabaseValueToUserFacingValue_(this.defaultDatabaseFacingValue_);
+  }
+
+  getFullyQualifiedName() {
+    return this.fullyQualifiedName_;
+  }
+
+  getConfigurationInstructionsString(currentSettings, channelId, desiredFullyQualifiedName) {
+    let prefix = '';
+    if (this.fullyQualifiedName_ !== desiredFullyQualifiedName) {
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
+    }
+
+    return prefix +  ```
 \`\`\`glsl
 # ${this.fullyQualifiedName_}
 
@@ -85,91 +115,84 @@ Value type:
 
 Allowed values:
   ${this.getAllowedValueString_()}
+
+Current value:
+  ${this.getCurrentUserFacingValue(currentSettings, channelId)}
 \`\`\`
 ```;
   }
 
-  validateNewSetting(setting, bot, msg) {
-    if (this.customValidationFunction_ && this.customValidationFunction_(setting, bot, msg)) {
-      return true;
+  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
+    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(newValue);
+    let validationResult = validateNewDatabaseFacingValue(bot, msg, databaseFacingValue);
+    if (!validationResult) {
+      return createValidationFailureString_();
+    }
+
+    if (serverWide) {
+      currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
+    } else {
+      currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedName_] = databaseFacingValue;
+    }
+    return true;
+  }
+
+  convertUserFacingValueToDatabaseFacingValue_(value) {
+    if (this.customConvertFromUserFacingToDatabaseFacingValue_) {
+      return this.customConvertFromUserFacingToDatabaseFacingValue_(value);
+    } else if (this.valueType_ === INTEGER_VALUE_TYPE) {
+      return parseInt(value);
+    } else if (this.valueType_ === FLOAT_VALUE_TYPE) {
+      return parseFloat(value);
+    } else if (this.valueType_ === BOOLEAN_VALUE_TYPE) {
+      return value === 'true';
+    }
+    return value.toString();
+  }
+
+  validateNewDatabaseFacingValue(bot, msg, value) {
+    if (this.customValidationFunction_) {
+      let result = this.customValidationFunction_(bot, msg, value);
+      if (result) {
+        return result;
+      }
     }
     if (!this.allowedValues) {
       return true;
     }
-    if (this.valueType_ === STRING_VALUE_TYPE) {
+    if (Array.isArray(this.allowedValues) && this.validateDatabaseFacingValueIsInArray_(value)) {
       return true;
     }
-    if (this.allowedValues instanceof Range && this.validateNewSettingIsWithinRange_(setting)) {
+    if (this.allowedValues instanceof Range && this.validateDatabaseFacingValueIsWithinRange_(value)) {
       return true;
     }
-    if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validateNewSettingIsBoolean_(setting)) {
+    if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validatDatabaseFacingValueIsBoolean_(value)) {
       return true;
     }
-    if (Array.isArray(this.allowedValues) && this.validateNewSettingIsInArray_(setting)) {
-      return true;
-    }
-    return createValidationFailureString_();
+    return false;
   }
 
-  getUserFacingSettingValueString(setting) {
-    if (this.getUserFacingSettingValueString_) {
-      return this.getUserFacingSettingValueString_(setting);
-    }
-    return setting;
+  validateDatabaseFacingValueIsBoolean_(value) {
+    return typeof value === typeof true;
   }
 
-  getDatabaseSettingValueString(setting) {
-    if (this.getDatabaseSettingValueString_) {
-      return this.getDatabaseSettingValueString_(setting);
+  validateDatabaseFacingValueIsWithinRange_(value) {
+    return this.allowedValues.isWithinRange(value);
+  }
+
+  validateDatabaseFacingValueIsInArray_(value) {
+    return this.allowedValues.indexOf(value) !== -1;
+  }
+
+  convertDatabaseFacingValueToUserFacingValue_(value) {
+    if (this.customConvertSettingFromDatabaseToUserFacingValue_) {
+      return this.customConvertSettingFromDatabaseToUserFacingValue_(value);
     }
-    if (this.valueType_ === INTEGER_VALUE_TYPE) {
-      return parseInt(setting);
-    }
-    if (this.valueType_ === FLOAT_VALUE_TYPE) {
-      return parseFloat(setting);
-    }
-    if (this.valueType_ === BOOLEAN_VALUE_TYPE) {
-      return setting.toLowerCase() === 'true';
-    }
-    return setting;
+    return value.toString();
   }
 
   createValidationFailureString_() {
     return 'Could not apply that setting, because it is invalid. It must be: ' + this.getAllowedValueString_().toLowerCase();
-  }
-
-  validateNewSettingIsBoolean_(setting) {
-    let lowerCaseSetting = setting.toLowerCase();
-    return lowerCaseSetting === 'true' || lowerCaseSetting === 'false';
-  }
-
-  validateNewSettingIsWithinRange_(setting) {
-    let number = parseFloat(setting);
-    if (this.valueType_ === INTEGER_VALUE_TYPE) {
-      number = Math.floor(number);
-    }
-
-    return this.allowedValues.isWithinRange(number);
-  }
-
-  validateNewSettingIsInArray_(setting) {
-    return this.allowedValues.indexOf(setting) !== -1;
-  }
-
-  getAllowedValueString_() {
-    if (this.customAllowedValuesString_) {
-      return this.customAllowedValuesString_;
-    }
-    let prettyPrintedValueType = this.prettyPrintForValueType[this.valueType_];
-    if (!this.allowedValues) {
-      return 'Any ' + prettyPrintedValueType.toLowerCase();
-    }
-    if (this.allowedValues instanceof Range) {
-      return prettyPrintedValueType + ' between ${this.allowedValues.getLower()} and ${this.allowedValues.getUpper()}';
-    }
-    if (Array.isArray(this.allowedValues)) {
-      return 'One of: ' + this.allowedValues.join(', ');
-    }
   }
 }
 
