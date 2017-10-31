@@ -34,18 +34,26 @@ function throwError(baseString, failedBlob) {
 }
 
 class Setting {
-  constructor(settingsBlob) {
+  constructor(settingsBlob, qualificationWithoutName) {
     if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
       throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
     }
     if (Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
       throwError('Setting needs a value type. it either doesn\'t have one, or it has one that\'s invalid. It must be one of: ' + Object.keys(prettyPrintForValueType).join(', '), settingsBlob);
     }
+    if (!settingsBlob.name || typeof settingsBlob.name !== typeof '') {
+      throwError('Setting does not have a name, or it is invalid. It must be a non-empty string.', settingsBlob);
+    }
+    if (settingsBlob.name.indexOf('.') !== -1) {
+      throwError('A setting has an invalid name. It must not contain a period.', settingsBlob);
+    }
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
     this.customAllowedValuesString_ = settingsBlob.customAllowedValuesString;
     this.customValidationFunction_ = settingsBlob.customValidationFunction;
+    this.name_ = settingsBlob.name;
     this.allowedValues = settingsBlob.allowedValues;
+    this.fullyQualifiedName_ = qualificationWithoutName + '.' + this.name_;
     if (this.allowedValues.indexOf('Range(') === 0) {
       try {
         this.allowedValues = eval('new ' + this.allowedValues);
@@ -60,6 +68,10 @@ class Setting {
         throwError('The allowed values are a range for that setting, but the value type is BOOLEAN. If the allowed values are a range, the value type must be INTEGER or FLOAT');
       }
     }
+  }
+
+  getName() {
+    return this.name_;
   }
 
   getConfigurationInstructionsStringForQualifierChain(wholeQualifierChain, currentQualifierChain, currentSettings) {
