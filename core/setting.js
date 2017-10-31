@@ -48,6 +48,7 @@ class Setting {
     } else if (settingsBlob.defaultDatabaseFacingValue === undefined) {
       throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
     }
+    this.isSetting = true;
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
     this.customAllowedValuesString_ = settingsBlob.customAllowedValuesString;
@@ -133,7 +134,7 @@ Current value:
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
     let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
-    let validationResult = validateNewDatabaseFacingValue(bot, msg, databaseFacingValue);
+    let validationResult = this.validateNewDatabaseFacingValue_(bot, msg, databaseFacingValue);
     if (!validationResult) {
       return createValidationFailureString_();
     }
@@ -159,7 +160,7 @@ Current value:
     return value.toString();
   }
 
-  validateNewDatabaseFacingValue(bot, msg, value) {
+  validateNewDatabaseFacingValue_(bot, msg, value) {
     if (this.customValidateDatabaseFacingValueFunction_) {
       let result = this.customValidateDatabaseFacingValueFunction_(bot, msg, value);
       if (result) {
