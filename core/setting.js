@@ -51,13 +51,13 @@ class Setting {
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
     this.customAllowedValuesString_ = settingsBlob.customAllowedValuesString;
-    this.customValidationFunction_ = settingsBlob.customValidationFunction;
+    this.customValidateDatabaseFacingValueFunction_ = settingsBlob.customValidateDatabaseFacingValueFunction;
     this.name_ = settingsBlob.name;
     this.allowedValues = settingsBlob.allowedValues;
     this.fullyQualifiedName_ = qualificationWithoutName + '.' + this.name_;
     this.defaultDatabaseFacingValue_ = defaultDatabaseFacingValue;
-    this.customConvertSettingFromDatabaseToUserFacingValue_ = settingsBlob.customConvertSettingFromDatabaseToUserFacingValue;
-    this.customConvertSettingFromUserInputToDatabaseValue_ = settingsBlob.customConvertSettingFromUserInputToDatabaseValue;
+    this.customConvertFromDatabaseToUserFacingValue_ = settingsBlob.customConvertFromDatabaseToUserFacingValue;
+    this.customConvertFromUserToDatabaseFacingValue_ = settingsBlob.customConvertFromUserToDatabaseFacingValue;
     if (this.allowedValues.indexOf('Range(') === 0) {
       try {
         this.allowedValues = eval('new ' + this.allowedValues);
@@ -86,19 +86,19 @@ class Setting {
     return this.defaultDatabaseFacingValue_;
   }
 
-  getCurrentUserFacingValue(settings, channelId) {
-    return this.convertDatabaseFacingValueToUserFacingValue_(this.getCurrentDatabaseFacingValue(settings, channelId));
+  getCurrentUserFacingValue(bot, msg, settings) {
+    return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.getCurrentDatabaseFacingValue(settings, msg.channel.id));
   }
 
-  getDefaultUserFacingValue(settings, channelId) {
-    return this.convertDatabaseValueToUserFacingValue_(this.defaultDatabaseFacingValue_);
+  getDefaultUserFacingValue(bot, msg) {
+    return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
   }
 
   getFullyQualifiedName() {
     return this.fullyQualifiedName_;
   }
 
-  getConfigurationInstructionsString(currentSettings, channelId, desiredFullyQualifiedName) {
+  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
     let prefix = '';
     if (this.fullyQualifiedName_ !== desiredFullyQualifiedName) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
@@ -117,7 +117,7 @@ Allowed values:
   ${this.getAllowedValueString_()}
 
 Current value:
-  ${this.getCurrentUserFacingValue(currentSettings, channelId)}
+  ${this.getCurrentUserFacingValue(bot, msg, settings)}
 \`\`\`
 ```;
   }
@@ -138,7 +138,7 @@ Current value:
   }
 
   convertUserFacingValueToDatabaseFacingValue_(value) {
-    if (this.customConvertFromUserFacingToDatabaseFacingValue_) {
+    if (this.customConvertFromUserToDatabaseFacingValue_) {
       return this.customConvertFromUserFacingToDatabaseFacingValue_(value);
     } else if (this.valueType_ === INTEGER_VALUE_TYPE) {
       return parseInt(value);
@@ -151,8 +151,8 @@ Current value:
   }
 
   validateNewDatabaseFacingValue(bot, msg, value) {
-    if (this.customValidationFunction_) {
-      let result = this.customValidationFunction_(bot, msg, value);
+    if (this.customValidateDatabaseFacingValueFunction_) {
+      let result = this.customValidateDatabaseFacingValueFunction_(bot, msg, value);
       if (result) {
         return result;
       }
@@ -184,11 +184,27 @@ Current value:
     return this.allowedValues.indexOf(value) !== -1;
   }
 
-  convertDatabaseFacingValueToUserFacingValue_(value) {
-    if (this.customConvertSettingFromDatabaseToUserFacingValue_) {
-      return this.customConvertSettingFromDatabaseToUserFacingValue_(value);
+  convertDatabaseFacingValueToUserFacingValue_(bot, msg, value) {
+    if (this.customConvertFromDatabaseToUserFacingValue_) {
+      return this.customConvertFromDatabaseToUserFacingValue_(bot, msg, value);
     }
     return value.toString();
+  }
+
+  getAllowedValueString_() {
+    if (this.customAllowedValuesString_) {
+      return this.customAllowedValuesString_;
+    }
+    let prettyPrintedValueType = this.prettyPrintForValueType[this.valueType_];
+    if (!this.allowedValues) {
+      return 'Any ' + prettyPrintedValueType.toLowerCase();
+    }
+    if (this.allowedValues instanceof Range) {
+      return prettyPrintedValueType + ' between ${this.allowedValues.getLower()} and ${this.allowedValues.getUpper()}';
+    }
+    if (Array.isArray(this.allowedValues)) {
+      return 'One of: ' + this.allowedValues.join(', ');
+    }
   }
 
   createValidationFailureString_() {
