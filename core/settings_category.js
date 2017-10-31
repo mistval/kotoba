@@ -94,7 +94,7 @@ ${configurationInstructionsAtThisLevel}
   }
 
   getConfigurationInstructionsStringAtThisLevelForCategoryChildren_(qualifierChainResolvedPart) {
-    let subCategories = this.children.map(child => qualifierChainResolvedPart + '.' + child.getName());
+    let subCategories = this.children.map(child => '  ' + qualifierChainResolvedPart + '.' + child.getName());
     let subCategoryListString = subCategories.join('\n');
     let titleString;
     if (this.isTopLevel_) {
@@ -105,9 +105,7 @@ ${configurationInstructionsAtThisLevel}
     return ```glsl
 # ${titleString}
 
-\`\`\`
 ${subCategoryListString}
-\`\`\`
 
 Say ']settings [category name]' to view and set that category's settings. For example: ]settings ${subCategories[0]}
 ```;
@@ -117,21 +115,17 @@ Say ']settings [category name]' to view and set that category's settings. For ex
     let exampleSetting = this.children_[0].getName();
     let exampleValue = this.children_[0].getExampleValues()[0];
     let settingsListString = this.children_
-      .map(child => qualifierChainResolvedPart + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
+      .map(child => '  ' + qualifierChainResolvedPart + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
-      titleString = 'Settings:';
+      titleString = 'Settings';
     } else {
-      titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart + ':';
+      titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart;
     }
     return ```glsl
-# Settings
+# ${titleString}
 
-${titleString}
-
-\`\`\`
 ${settingsListString}
-\`\`\`
 
 # Help
 
