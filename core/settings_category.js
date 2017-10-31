@@ -11,11 +11,12 @@ function throwError(baseString, failedBlob) {
 }
 
 class SettingsCategory {
-  constructor(settingsBlob, isTopLevel) {
-    this.isTopLevel_ = isTopLevel;
+  constructor(settingsBlob, qualificationWithoutName) {
     this.name_ = settingsBlob.name || '';
+    this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + '.' + this.name_ : '';
+    this.isTopLevel_ = !this.fullyQualifiedName_;
     if (this.name_.indexOf('.') !== -1) {
-      throwError('A settings category has an invalid name. It must not contain a period.');
+      throwError('A settings category has an invalid name. It must not contain a period.', settingsBlob);
     }
     if (!isTopLevel && !this.name_) {
       throwError('A settings category has an invalid or nonexistent name property. It should be a non-empty string.', settingsBlob);
@@ -51,25 +52,24 @@ class SettingsCategory {
     return this.name_;
   }
 
-  getConfigurationInstructionsStringForQualifierChain(wholeQualifierChain, currentQualifierChain, currentSettings) {
-    if (currentQualifierChain === this.getName()) {
-      return this.getConfigurationInstructionsStringAtThisLevel_(wholeQualifierChain);
+  getConfigurationInstructionsStringForQualifierChain(fullyQualifiedName, relativeQualifiedName, currentSettings) {
+    if (fullyQualifiedName === this.fullyQualifiedName_) {
+      return this.getConfigurationInstructionsStringAtThisLevel_();
     }
-    let child = this.getChildForQualifierChain(currentQualifierChain);
+    let child = this.getChildForRelativeQualifiedName_(relativeQualifiedName);
     if (child) {
-      return child.getConfigurationInstructionsStringForQualifierChain(wholeQualifierChain, this.getQualifierChainForChild(currentQualifierChain), currentSettings);
+      return child.getConfigurationInstructionsStringForQualifierChain(fullyQualifiedName, this.getRelativeQualifiedNameForChild_(relativeQualifiedName), currentSettings);
     }
-    let qualifierChainSuccessfullyResolvedPart = wholeQualifierChain.replace('.' + currentQualifierChain, '');
-    let configurationInstructionsAtThisLevel = this.getConfigurationInstructionsStringAtThisLevel_(qualifierChainSuccessfullyResolvedPart);
+    let configurationInstructionsAtThisLevel = this.getConfigurationInstructionsStringAtThisLevel_(currentSettings);
     return ```
-Couldn't find that setting. Here are the settings for ${qualifierChainSuccessfullyResolvedPart}
+Couldn't find that setting. Here are the settings for ${this.fullyQualifiedName_}
 
 ${configurationInstructionsAtThisLevel}
 ```;
   }
 
-  getChildForQualifierChain(currentQualifierChain) {
-    let childName = currentQualifierChain.split('.')[1];
+  getChildForRelativeQualifiedName_(relativeQualifiedName) {
+    let childName = relativeQualifiedName.split('.')[0];
     if (childName) {
       for (let child of this.children_) {
         if (child.getName() === childName) {
@@ -77,33 +77,28 @@ ${configurationInstructionsAtThisLevel}
         }
       }
     }
-    return undefined;
   }
 
-  getQualifierChainForChild(currentQualifierChain) {
-    if (this.isTopLevel_) {
-      return currentQualifierChain;
-    } else {
-      return currentQualifierChain.replace(this.getName() + '.', '');
-    }
+  getRelativeQualifiedNameForChild_(relativeQualifiedName) {
+    return relativeQualifiedName.split('.').slice(1).join('.');
   }
 
-  getConfigurationInstructionsStringAtThisLevel_(qualifierChainResolvedPart, currentSettings) {
+  getConfigurationInstructionsStringAtThisLevel_(currentSettings) {
     if (this.childrenType === typeof SettingsCategory) {
-      return this.getConfigurationInstructionsStringAtThisLevelForCategoryChildren_(qualifierChainResolvedPart);
+      return this.getConfigurationInstructionsStringAtThisLevelForCategoryChildren_();
     } else {
-      return this.getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(qualifierChainResolvedPart, currentSettings);
+      return this.getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(currentSettings);
     }
   }
 
-  getConfigurationInstructionsStringAtThisLevelForCategoryChildren_(qualifierChainResolvedPart) {
-    let subCategories = this.children.map(child => '  ' + qualifierChainResolvedPart + '.' + child.getName());
+  getConfigurationInstructionsStringAtThisLevelForCategoryChildren_() {
+    let subCategories = this.children.map(child => '  ' + this.fullyQualifiedName_ + '.' + child.getName());
     let subCategoryListString = subCategories.join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings categories';
     } else {
-      titleString = 'Sub-categories under ' + qualifierChainSuccessfullyResolvedPart;
+      titleString = 'Sub-categories under ' + this.fullyQualifiedName;
     }
     return ```
 \`\`\`glsl
@@ -116,16 +111,16 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 ```;
   }
 
-  getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(qualifierChainResolvedPart, currentSettings) {
+  getConfigurationInstructionsStringAtThisLevelForSettingsChildren_(currentSettings) {
     let exampleSetting = this.children_[0].getName();
     let exampleValue = this.children_[0].getExampleValues()[0];
     let settingsListString = this.children_
-      .map(child => '  ' + qualifierChainResolvedPart + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
+      .map(child => '  ' + this.fullyQualifiedName + '.' + child.getName() + ': ' + child.getCurrentUserFacingValue(currentSettings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings';
     } else {
-      titleString = 'Settings under ' + qualifierChainSuccessfullyResolvedPart;
+      titleString = 'Settings under ' + this.fullyQualifiedName;
     }
     return ```
 \`\`\`glsl
