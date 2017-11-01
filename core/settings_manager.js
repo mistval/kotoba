@@ -6,8 +6,34 @@ const persistence = require('./persistence.js');
 const CATEGORY_IDENTIFIER = 'CATEGORY';
 const SETTING_IDENTIFIER = 'SETTING';
 
+function addSettingsObjectIfNotAlreadyInData(data) {
+  if (!data.settings) {
+    data.settings = {
+      serverSettings: {},
+      channelSettings: {},
+    };
+  }
+
+  return data;
+}
+
 function getServerIdFromMessage(msg) {
   return msg.channel.guild ? msg.channel.guild.id : msg.channel.id;
+}
+
+class InitiateSetSettingResult {
+  static createErrorResult(errorString) {
+    let result = new InitiateSetSettingResult();
+    result.errorString = errorString;
+    return result;
+  }
+
+  static createRequestInputResult(requestInputString, userResponseCallback) {
+    let result = new InitiateSetSettingResult();
+    result.nextStepInstructions = requestInputString;
+    result.userResponseCallback = userResponseCallback;
+    return result;
+  }
 }
 
 /**
@@ -60,32 +86,34 @@ class SettingsManager {
     });
   }
 
-  setSetting(bot, msg, fullyQualifiedName, value, serverWide) {
+  initiateSetSetting(bot, msg, fullyQualifiedName, value) {
     let child = this.rootSettingsCategory_.getChildForRelativeQualifiedName(fullyQualifiedName);
-    let serverId = getServerIdFromMessage(msg);
-    return persistence.editDataForServer(serverId, data => {
-      let result = child.setNewValueFromUserFacingString(bot, msg, data.settings, value, serverWide);
-      if (typeof result === typeof 'string') {
-        msg.channel.createMessage(result);
-      } else {
-        msg.channel.createMessage(
-          'Setting set! Here are the new settings for '
-            + child.getFullyQualifiedName() + ':\n\n'
-            + child.getConfigurationInstructionsString(bot, msg, data.settings, fullyQualifiedName));
-      }
-      return data;
-    });
+    if (child.getFullyQualifiedName() !== fullyQualifiedName) {
+      return this.getConfigurationInstructionsString(bot, msg, fullyQualifiedName).then(resultStr => {
+        return InitiateSetSettingResult.createErrorResult(resultStr);
+      });
+    }
+
+    let userResponseCallback = message => {
+      let serverId = getServerIdFromMessage(msg);
+      debugger;
+      return persistence.editDataForServer(serverId, data => {
+        data = addSettingsObjectIfNotAlreadyInData(data);
+        let result = child.setNewValueFromUserFacingString(bot, msg, data.settings, value, message);
+        msg.channel.createMessage(result)
+        return data;
+      });
+    };
+
+    let result = InitiateSetSettingResult.createRequestInputResult(child.getRequestInputMessageString(), userResponseCallback);
+    return Promise.resolve(result);
   }
 
   getConfigurationInstructionsString(bot, msg, desiredFullyQualifedName) {
     let child = this.rootSettingsCategory_.getChildForRelativeQualifiedName(desiredFullyQualifedName);
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
-      if (!data.settings) {
-        data.settings = {};
-        data.settings.serverSettings = {};
-        data.settings.channelSettings = {};
-      }
+      addSettingsObjectIfNotAlreadyInData(data);
       return child.getConfigurationInstructionsString(bot, msg, data.settings, desiredFullyQualifedName)
     });
   }

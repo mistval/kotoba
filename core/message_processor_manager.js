@@ -44,6 +44,7 @@ class MessageProcessorManager {
           this.logger_.logFailure(loggerTitle, 'Failed to load message processor from file: ' + processorFile, err);
         }
       }
+      this.processors_.push(new MessageProcessor(reload('./message_processors/user_and_channel_hook.js')));
     }).catch(err => {
       this.logger_.logFailure(loggerTitle, 'Error loading message processors.', err);
     });

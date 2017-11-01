@@ -84,6 +84,13 @@ strategyForValueType[BOOLEAN_VALUE_TYPE] =  new ValueTypeStrategy(
   (bot, msg, value) => value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
 );
 
+function clearValueFromChannelSettings(channelSettings, settingName) {
+  let keys = Object.keys(channelSettings);
+  for (let key of keys) {
+    delete channelSettings[key][settingName];
+  }
+}
+
 class Setting {
   constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds) {
     this.colorForEmbeds_ = colorForEmbeds;
@@ -167,7 +174,7 @@ class Setting {
       }
     }
     let serverSetting = settings.serverSettings[this.fullyQualifiedName_];
-    if (serverSetting) {
+    if (serverSetting !== undefined) {
       return serverSetting;
     }
     return this.defaultDatabaseFacingValue_;
@@ -222,6 +229,10 @@ class Setting {
     }
   }
 
+  getRequestInputMessageString() {
+    return `What channels should the new setting apply to? You can say 'all', or 'here', or specify a list of channels, for example: '#welcome #general #bot'. You can also say 'cancel'.`;
+  }
+
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, channelsString) {
     if (!this.valueTypeStrategy_.validateUserFacingValue(bot, msg, newValue)) {
       return createValidationFailureString_();
@@ -229,10 +240,17 @@ class Setting {
     let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
     channelsString = channelsString.toLowerCase();
 
+    if (channelsString === 'cancel') {
+      return 'The settings were not changed.';
+    }
     if (channelsString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
     } else if (channelsString === 'here') {
+      if (!currentSettings.channelSettings[msg.channel.id]) {
+        currentSettings.channelSettings[msg.channel.id] = {};
+      }
       currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedName_] = databaseFacingValue;
+      clearValueFromChannelSettings(currentSettings.channelSettings[msg.channel.id], this.fullyQualifiedName_);
     } else {
       let channelIds = extractChannelIdsFromString(channelsString);
       let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);
@@ -243,7 +261,9 @@ class Setting {
         currentSettings.channelSettings[channelId] = databaseFacingValue;
       }
     }
-    return true;
+    let configurationInstructions = this.getConfigurationInstructionsString(bot, msg, currentSettings);
+    configurationInstructions.content = 'Setting updated! Here is the new setting.';
+    return configurationInstructions;
   }
 
   convertUserFacingValueToDatabaseFacingValue_(bot, msg, value) {
