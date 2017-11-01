@@ -239,7 +239,7 @@ class Setting {
       channelsString = 'all';
     }
     if (!this.valueTypeStrategy_.validateUserFacingValue(bot, msg, newValue)) {
-      return createValidationFailureString_();
+      return this.createValidationFailureString_();
     }
     let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
     channelsString = channelsString.toLowerCase();
