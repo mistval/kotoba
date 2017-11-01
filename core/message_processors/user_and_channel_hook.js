@@ -1,10 +1,8 @@
 'use strict'
-
 const unreloadableDataStore = require('./../util/misc_unreloadable_data.js');
-unreloadableDataStore.hookForUserAndChannel = {};
 
-function unregisterHook(hook) {
-  delete unreloadableDataStore.hookForUserAndChannel[createHookIdentifier(hook.getUserId(), hook.getChannelId())];
+if (!unreloadableDataStore.hookForUserAndChannel) {
+  unreloadableDataStore.hookForUserAndChannel = {};
 }
 
 function createHookIdentifier(userId, channelId) {
@@ -18,21 +16,30 @@ class Hook {
     this.callback_ = callback;
   }
 
+  register() {
+    let existingHook = unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()];
+    if (existingHook) {
+      existingHook.unregister();
+    }
+    unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()] = this;
+    this.registered_ = true;
+  }
+
   unregister() {
-    unregisterHook(this);
+    delete unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()];
+    this.registered_ = false;
+  }
+
+  getIsRegistered() {
+    return this.registered_;
   }
 
   callback(messageString) {
-    this.unregister();
     return this.callback_(messageString);
   }
 
-  getChannelId() {
-    return this.channelId_;
-  }
-
-  getUserId() {
-    return this.userId_;
+  getIdentifier_() {
+    return createHookIdentifier(this.userId_, this.channelId_);
   }
 }
 
@@ -41,7 +48,7 @@ class Hook {
 * to register arbitrary hooks for when a certain user says something in a certain channel
 */
 module.exports = {
-  name: 'Arbitrary Hook',
+  name: 'Followup Message',
   action(bot, msg) {
     let hookIdentifier = createHookIdentifier(msg.author.id, msg.channel.id);
     let correspondingHook = unreloadableDataStore.hookForUserAndChannel[hookIdentifier];
@@ -52,7 +59,7 @@ module.exports = {
   },
   registerHook(userId, channelId, callback) {
     let hook = new Hook(userId, channelId, callback);
-    unreloadableDataStore.hookForUserAndChannel[createHookIdentifier(userId, channelId)] = hook;
+    hook.register();
     return hook;
   }
 };
