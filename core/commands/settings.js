@@ -6,14 +6,17 @@ const NEXT_STEP_EXPIRATION_TIME_IN_MS = 1000 * 120;
 
 function registerHook(msg, userResponseCallback) {
   let hook = userAndChannelHook.registerHook(msg.author.id, msg.channel.id, message => {
+    hook.unregister();
     let result = userResponseCallback(message);
     return result.then(resultString => {
       return msg.channel.createMessage(resultString);
     });
   });
   setTimeout(() => {
-      hook.unregister();
-      msg.channel.createMessage('Settings have not been updated.');
+      if (hook.getIsRegistered()) {
+        hook.unregister();
+        msg.channel.createMessage('The settings were not changed.');
+      }
     },
     NEXT_STEP_EXPIRATION_TIME_IN_MS);
 }

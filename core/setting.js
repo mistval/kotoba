@@ -230,7 +230,7 @@ class Setting {
   }
 
   getRequestInputMessageString() {
-    return `What channels should the new setting apply to? You can say 'all', or 'here', or specify a list of channels, for example: '#welcome #general #bot'. You can also say 'cancel'.`;
+    return `What channels should the new setting apply to? You can say **all**, or **here**, or specify a list of channels, for example: **#welcome #general #bot**. You can also say 'cancel'.`;
   }
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, channelsString) {
