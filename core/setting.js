@@ -40,8 +40,7 @@ class Range {
 }
 
 function extractChannelIdsFromString(str) {
-  str.replace(/<#/g, '').replace(/>/g, '');
-  return str.split(' ');
+  return str.replace(/<#/g, '').replace(/>/g, '').split(' ');
 }
 
 function findChannelsNotInGuild(channelIds, guild) {
@@ -259,10 +258,13 @@ class Setting {
       let channelIds = extractChannelIdsFromString(channelsString);
       let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);
       if (channelsNotInGuild.length > 0) {
-        return `The setting wasn't applied. I couldn't find channels: ${channelsNotInGuild.join(', ')} in this server`;
+        return `The setting wasn't applied. I couldn't find channels: ${channelsNotInGuild.join(', ')} in this server.`;
       }
       for (let channelId of channelIds) {
-        currentSettings.channelSettings[channelId] = databaseFacingValue;
+        if (!currentSettings.channelSettings[channelId]) {
+          currentSettings.channelSettings[channelId] = {};
+        }
+        currentSettings.channelSettings[channelId][this.fullyQualifiedName_] = databaseFacingValue;
       }
     }
     let configurationInstructions = this.getConfigurationInstructionsString(bot, msg, currentSettings);
