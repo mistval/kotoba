@@ -39,9 +39,50 @@ class Range {
   }
 }
 
+function extractChannelIdsFromString(str) {
+  str.replace(/<#/g, '').replace(/>/g, '');
+  return str.split(' ');
+}
+
+function findChannelsNotInGuild(channelIds, guild) {
+  return channelIds.filter(channelId => {
+    return !guild.channels.find(guildChannel => guildChannel.id === channelId);
+  });
+}
+
 function throwError(baseString, failedBlob) {
   throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
 }
+
+class ValueTypeStrategy {
+  constructor(convertUserFacingValueToDatabaseFacingValue, convertDatabaseFacingValueToUserFacingValue, validateUserFacingValue) {
+    this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
+    this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
+    this.validateUserFacingValue = validateUserFacingValue;
+  }
+}
+
+let strategyForValueType = {};
+strategyForValueType[STRING_VALUE_TYPE] = new ValueTypeStrategy(
+  (bot, msg, value) => value,
+  (bot, msg, value) => value.toString(),
+  (bot, msg, value) => true
+);
+strategyForValueType[INTEGER_VALUE_TYPE] = new ValueTypeStrategy(
+  (bot, msg, value) => parseInt(value),
+  (bot, msg, value) => value.toString(),
+  (bot, msg, value) => typeof parseInt(value) === typeof 1
+);
+strategyForValueType[FLOAT_VALUE_TYPE] = new ValueTypeStrategy(
+  (bot, msg, value) => parseFloat(value),
+  (bot, msg, value) => value.toString(),
+  (bot, msg, value) => typeof parseFloat(value) === typeof 1.5
+);
+strategyForValueType[BOOLEAN_VALUE_TYPE] =  new ValueTypeStrategy(
+  (bot, msg, value) => value.toLowerCase() === 'true',
+  (bot, msg, value) => value.toString(),
+  (bot, msg, value) => value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
+);
 
 class Setting {
   constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds) {
@@ -54,7 +95,7 @@ class Setting {
       && settingsBlob.customValueTypeDescription;
     if ((!settingsBlob.valueType || settingsBlob.valueType === CUSTOM_VALUE_TYPE) && !hasAllCustomFields) {
       throwError('Setting has a custom (or no specified) value type, but does not define all the required custom fields. It must define: '
-        + 'customValidateDatabaseFacingValueFunction '
+        + 'customValidateDatabaseFacingValue '
         + 'customConvertFromUserToDatabaseFacingValue '
         + 'customConvertFromDatabaseToUserFacingValue '
         + 'customUserFacingExampleValues '
@@ -76,15 +117,27 @@ class Setting {
     this.isSetting = true;
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
-    this.customAllowedValuesString_ = settingsBlob.customAllowedValuesDescription;
-    this.customValidateDatabaseFacingValueFunction_ = settingsBlob.customValidateDatabaseFacingValueFunction;
+    this.customAllowedValuesString_ = settingsBlob.customAllowedValuesDescription;;
     this.name_ = settingsBlob.name;
     this.allowedDatabaseFacingValues_ = settingsBlob.allowedDatabaseFacingValues;
     this.fullyQualifiedName_ = qualificationWithoutName + settingsCategorySeparator + this.name_;
     this.defaultDatabaseFacingValue_ = settingsBlob.defaultDatabaseFacingValue;
-    this.customConvertFromDatabaseToUserFacingValue_ = settingsBlob.customConvertFromDatabaseToUserFacingValue;
-    this.customConvertFromUserToDatabaseFacingValue_ = settingsBlob.customConvertFromUserToDatabaseFacingValue;
     this.customUserFacingExampleValues_ = settingsBlob.customUserFacingExampleValues;
+
+    let hasCustomFunctions = settingsBlob.customConvertFromDatabaseToUserFacingValue
+      && settingsBlob.customConvertFromUserFacingToDatabaseFacingValue
+      && settingsBlob.customValidateDatabaseFacingValue;
+    if (this.valueType_ === CUSTOM_VALUE_TYPE && !hasCustomFunctions) {
+      throwError('A setting with a custom value type must have all of: customConvertFromDatabaseToUserFacingValue, customConvertFromUserFacingToDatabaseFacingValue, customValidateUserFacingValue properties.', settingsBlob);
+    }
+    if (this.valueType_ === CUSTOM_VALUE_TYPE) {
+      this.valueTypeStrategy_ = new ValueTypeStrategy(
+        settingsBlob.customConvertFromUserToDatabaseFacingValue,
+        settingsBlob.customConvertFromDatabaseToUserFacingValue,
+        settingsBlob.customValidateUserFacingValue);
+    } else {
+      this.valueTypeStrategy_ = strategyForValueType[this.valueType_];
+    }
     if (typeof this.allowedDatabaseFacingValues_ === typeof '' && this.allowedDatabaseFacingValues_.indexOf('Range(') === 0) {
       try {
         this.allowedDatabaseFacingValues_ = eval('new ' + this.allowedDatabaseFacingValues_);
@@ -93,10 +146,10 @@ class Setting {
         throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob.allowedDatabaseFacingValues);
       }
       if (this.valueType_ === STRING_VALUE_TYPE) {
-        throwError('The allowed values are a range for that setting, but the value type is STRING. If the allowed values are a range, the value type must be INTEGER or FLOAT');
+        throwError('The allowed values are a range for that setting, but the value type is STRING. If the allowed values are a range, the value type must be INTEGER or FLOAT', settingsBlob);
       }
       if (this.valueType_ === BOOLEAN_VALUE_TYPE) {
-        throwError('The allowed values are a range for that setting, but the value type is BOOLEAN. If the allowed values are a range, the value type must be INTEGER or FLOAT');
+        throwError('The allowed values are a range for that setting, but the value type is BOOLEAN. If the allowed values are a range, the value type must be INTEGER or FLOAT', settingsBlob);
       }
     }
   }
@@ -170,32 +223,32 @@ class Setting {
     }
   }
 
-  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
-    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
-    let validationResult = this.validateNewDatabaseFacingValue_(bot, msg, databaseFacingValue);
-    if (!validationResult) {
+  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, channelsString) {
+    if (!this.valueTypeStrategy_.validateUserFacingValue(bot, msg, newValue)) {
       return createValidationFailureString_();
     }
+    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
+    channelsString = channelsString.toLowerCase();
 
-    if (serverWide) {
+    if (channelsString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
-    } else {
+    } else if (channelsString === 'here') {
       currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedName_] = databaseFacingValue;
+    } else {
+      let channelIds = extractChannelIdsFromString(channelsString);
+      let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);
+      if (channelsNotInGuild.length > 0) {
+        return `The setting wasn't applied. I couldn't find channels: ${channelsNotInGuild.join(', ')} in this server`;
+      }
+      for (let channelId of channelIds) {
+        currentSettings.channelSettings[channelId] = databaseFacingValue;
+      }
     }
     return true;
   }
 
   convertUserFacingValueToDatabaseFacingValue_(bot, msg, value) {
-    if (this.customConvertFromUserToDatabaseFacingValue_) {
-      return this.customConvertFromUserFacingToDatabaseFacingValue_(bot, msg, value);
-    } else if (this.valueType_ === INTEGER_VALUE_TYPE) {
-      return parseInt(value);
-    } else if (this.valueType_ === FLOAT_VALUE_TYPE) {
-      return parseFloat(value);
-    } else if (this.valueType_ === BOOLEAN_VALUE_TYPE) {
-      return value === 'true';
-    }
-    return value.toString();
+    return this.valueTypeStrategy_.convertUserFacingValueToDatabaseFacingValue(bot, msg, value);
   }
 
   validateNewDatabaseFacingValue_(bot, msg, value) {
@@ -205,16 +258,13 @@ class Setting {
         return result;
       }
     }
-    if (!this.allowedDatabaseFacingValues_) {
-      return true;
-    }
-    if (Array.isArray(this.allowedDatabaseFacingValues_) && this.validateDatabaseFacingValueIsInArray_(value)) {
+    if (this.allowedDatabaseFacingValues_ && Array.isArray(this.allowedDatabaseFacingValues_) && this.validateDatabaseFacingValueIsInArray_(value)) {
       return true;
     }
     if (this.allowedDatabaseFacingValues_ instanceof Range && this.validateDatabaseFacingValueIsWithinRange_(value)) {
       return true;
     }
-    if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validatDatabaseFacingValueIsBoolean_(value)) {
+    if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validateDatabaseFacingValueIsBoolean_(value)) {
       return true;
     }
     return false;
@@ -233,10 +283,7 @@ class Setting {
   }
 
   convertDatabaseFacingValueToUserFacingValue_(bot, msg, value) {
-    if (this.customConvertFromDatabaseToUserFacingValue_) {
-      return this.customConvertFromDatabaseToUserFacingValue_(bot, msg, value).toString();
-    }
-    return value.toString();
+    return this.valueTypeStrategy_.convertDatabaseFacingValueToUserFacingValue(bot, msg, value);
   }
 
   getValueTypeDescription_() {
