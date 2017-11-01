@@ -47,7 +47,7 @@ function createSettingsHierarchyForCommand(userCommand) {
   return {
     type: 'SETTING',
     name: userCommand.aliases[0] + '_enabled',
-    description: `This setting controls whether the ${userCommand.aliases[0]} command (and all of its aliases) is allowed to be used in this channel or not.`,
+    description: `This setting controls whether the ${userCommand.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
     valueType: 'BOOLEAN',
     defaultDatabaseFacingValue: true,
   }

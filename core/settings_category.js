@@ -137,7 +137,7 @@ ${subCategoryListString}
     if (this.isTopLevel_) {
       titleString = 'Settings';
     } else {
-      titleString = `Settings under '${this.fullyQualifiedName_}'`;
+      titleString = `Settings under '${this.fullyQualifiedName_}' and their current values in this channel.`;
     }
     return prefix + `
 \`\`\`md

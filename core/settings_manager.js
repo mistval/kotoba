@@ -107,7 +107,9 @@ class SettingsManager {
       });
     }
 
-    let userResponseCallback = userResponseString => commitEdit(bot, msg, childToEdit, value, userResponseString);
+    let userResponseCallback = userResponseString => {
+      return commitEdit(bot, msg, childToEdit, value, userResponseString);
+    };
     let result = InitiateSetSettingResult.createRequestInputResult(childToEdit.getRequestInputMessageString(), userResponseCallback);
     return Promise.resolve(result);
   }
@@ -124,10 +126,13 @@ class SettingsManager {
 
 function commitEdit(bot, msg, childSettingToEdit, value, scopeString) {
   let serverId = getServerIdFromMessage(msg);
+  let responseString;
   return persistence.editDataForServer(serverId, data => {
     data = addSettingsObjectIfNotAlreadyInData(data);
-    let result = childSettingToEdit.setNewValueFromUserFacingString(bot, msg, data.settings, value, scopeString);
-    return result;
+    responseString = childSettingToEdit.setNewValueFromUserFacingString(bot, msg, data.settings, value, scopeString);
+    return data;
+  }).then(data => {
+    return responseString;
   });
 }
 
