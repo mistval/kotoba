@@ -41,6 +41,9 @@ class EditLock {
           nextEdit.reject(err);
           finishEdit(nextEdit);
         });
+      }).catch(err => {
+        nextEdit.reject(err);
+        finishEdit(nextEdit);
       });
     }
   }
