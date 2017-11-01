@@ -80,8 +80,9 @@ class Command {
   createEnabledSetting() {
     if (this.canBeChannelRestricted_) {
       return {
+        userFacingName: this.aliases[0] + '_enabled',
+        databaseFacingName: this.uniqueId + '_enabled',
         type: 'SETTING',
-        name: this.aliases[0] + '_enabled',
         description: `This setting controls whether the ${this.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
         valueType: 'BOOLEAN',
         defaultDatabaseFacingValue: true,

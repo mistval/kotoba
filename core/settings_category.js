@@ -40,14 +40,13 @@ class SettingsCategory {
     for (let child of children) {
       if (!child) {
         throwError('A child is invalid.', children);
-      }
-      if (!child.type || typeof child.type !== typeof '' || (child.type !== this.categoryIdentifier_ && child.type !== this.settingIdentifier_)) {
+      } else if (!child.type || typeof child.type !== typeof '' || (child.type !== this.categoryIdentifier_ && child.type !== this.settingIdentifier_)) {
         throwError(`A child has an invalid type. It should be a string, either '${this.categoryIdentifier_}'' or '${this.settingIdentifier_}'.`, children);
-      }
-      if (this.children_.find(otherChild => otherChild.name === child.name)) {
-        throwError('Two children have the same name.', children);
-      }
-      if (child.type === this.categoryIdentifier_) {
+      } else if (this.children_.find(otherChild => otherChild.userFacingName === child.userFacingName)) {
+        throwError('Two children have the same userFacingName.', children);
+      } else if (this.children_.find(otherChild => otherChild.databaseFacingName === child.databaseFacingName)) {
+        throwError('Two children have the same databaseFacingName.', children);
+      } else if (child.type === this.categoryIdentifier_) {
         let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryIdentifier_, this.settingIdentifier_, this.config_)
         this.children_.push(childCategory);
         childCategory.setChildren(child.children);
@@ -62,16 +61,17 @@ class SettingsCategory {
     return getConfigurationInstructionsString(bot, msg, currentSettings, this.fullyQualifiedName_);
   }
 
-  getChildForRelativeQualifiedName(relativeQualifiedName) {
-    let child = this.getChildForRelativeQualifiedNameHelper_(relativeQualifiedName);
+  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
+    let child = this.getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName);
     if (child) {
-      return child.getChildForRelativeQualifiedName(this.getRelativeQualifiedNameForChild_(relativeQualifiedName));
+      return child.getChildForRelativeQualifiedUserFacingName(this.getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName));
     } else {
       return this;
     }
   }
 
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
+    debugger;
     let prefix = '';
     let prefixExtention = this.fullyQualifiedName_ ? ' for ' + this.fullyQualifiedName_ : '';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
@@ -84,31 +84,31 @@ class SettingsCategory {
     }
   }
 
-  getFullyQualifiedName() {
+  getFullyQualifiedUserFacingName() {
     return this.fullyQualifiedName_;
   }
 
-  getUnqualifiedName() {
+  getUnqualifiedUserFacingName() {
     return this.name_;
   }
 
-  getChildForRelativeQualifiedNameHelper_(relativeQualifiedName) {
+  getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName) {
     let childName = relativeQualifiedName.split(this.settingsCategorySeparator_)[0];
     if (childName) {
       for (let child of this.children_) {
-        if (child.getUnqualifiedName() === childName) {
+        if (child.getUnqualifiedUserFacingName() === childName) {
           return child;
         }
       }
     }
   }
 
-  getRelativeQualifiedNameForChild_(relativeQualifiedName) {
+  getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName) {
     return relativeQualifiedName.split(this.settingsCategorySeparator_).slice(1).join(this.settingsCategorySeparator_);
   }
 
   getConfigurationInstructionsStringForCategoryChildren_(prefix) {
-    let subCategories = this.children_.map(child => child.getFullyQualifiedName());
+    let subCategories = this.children_.map(child => child.getFullyQualifiedUserFacingName());
     let subCategoryListString = subCategories.map(subCategory => '  ' + subCategory).join('\n');
     let titleString;
     if (this.isTopLevel_) {
@@ -129,10 +129,10 @@ ${subCategoryListString}
   }
 
   getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName) {
-    let exampleSetting = this.children_[0].getFullyQualifiedName();
+    let exampleSetting = this.children_[0].getFullyQualifiedUserFacingName();
     let exampleValue = this.children_[0].getUserFacingExampleValues(bot, msg)[0];
     let settingsListString = this.children_
-      .map(child => '  ' + child.getFullyQualifiedName() + ' -> ' + child.getCurrentUserFacingValue(bot, msg, settings)).join('\n');
+      .map(child => '  ' + child.getFullyQualifiedUserFacingName() + ' -> ' + child.getCurrentUserFacingValue(bot, msg, settings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings';
