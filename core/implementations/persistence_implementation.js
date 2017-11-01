@@ -1,12 +1,11 @@
 'use strict'
-const storage = require('node-persist');
+const reload = require('require-reload')(require);
+const storage = require('./../util/node_persist_atomic.js');
 
 const USER_DATA_KEY_PREFIX = 'User';
 const SERVER_DATA_KEY_PREFIX = 'Server';
 const GLOBAL_DATA_KEY = 'Global';
 const ALLOWED_CHANNELS_FOR_COMMAND_KEY = 'AllowedChannelsForCommand';
-
-const editLockForKey = {};
 
 function getData(key) {
   return storage.getItem(key).then(data => {
@@ -18,64 +17,12 @@ function getData(key) {
   });
 }
 
-function setData(key, value) {
-  return storage.setItem(key, value);
-}
-
 function keyForUserId(userId) {
   return USER_DATA_KEY_PREFIX + userId;
 }
 
 function keyForServerId(serverId) {
   return SERVER_DATA_KEY_PREFIX + serverId;
-}
-
-function getOrCreateEditLockForKey(key) {
-  if (!editLockForKey[key]) {
-    editLockForKey[key] = new EditLock(key);
-  }
-
-  return editLockForKey[key];
-}
-
-class EditLock {
-  constructor(key) {
-    this.key_ = key;
-    this.queue_ = [];
-    this.editing_ = false;
-  }
-
-  edit(editFunction) {
-    let promise = new Promise((fulfill, reject) => {
-      this.queue_.push({editFunction: editFunction, fulfill: fulfill, reject: reject});
-      this.tryEditNext_();
-    });
-
-    return promise;
-  }
-
-  tryEditNext_() {
-    if (!this.editing_ && this.queue_.length > 0) {
-      this.editing_ = true;
-      let nextEdit = this.queue_.pop();
-      getData(this.key_).then(data => {
-        let newData = nextEdit.editFunction(data);
-        setData(this.key_, newData).then(() => {
-          this.finishEdit(nextEdit);
-          nextEdit.fulfill(newData);
-        }).catch(nextEdit.reject).then(() => this.finishEdit(nextEdit));
-      }).catch(nextEdit.reject).then(() => this.finishEdit(nextEdit));
-    }
-  }
-
-  finishEdit(edit) {
-    if (this.queue_.length === 0) {
-      delete editLockForKey[this.key_];
-    }
-
-    this.editing_ = false;
-    this.tryEditNext_();
-  }
 }
 
 class PersistenceImplementation {
@@ -110,16 +57,16 @@ class PersistenceImplementation {
 
   static editDataForUser(userId, editData, persistenceState) {
     let key = keyForUserId(userId);
-    return getOrCreateEditLockForKey(key).edit(editData);
+    return storage.editItem(key, editData);
   }
 
   static editDataForServer(serverId, editData, persistenceState) {
     let key = keyForServerId(serverId);
-    return getOrCreateEditLockForKey(key).edit(editData);
+    return storage.editItem(key, editData);
   }
 
   static editGlobalData(editData, persistenceState) {
-    return getOrCreateEditLockForKey(GLOBAL_DATA_KEY).edit(editData);
+    return storage.editItem(GLOBAL_DATA_KEY, editData);
   }
 
   static editAllowedChannelsForCommand(msg, commandId, editFunction, persistenceState) {
