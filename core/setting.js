@@ -155,7 +155,6 @@ class Setting {
   }
 
   getChildForRelativeQualifiedName(relativeQualifiedName) {
-    assert(!relativeQualifiedName);
     return this;
   }
 
