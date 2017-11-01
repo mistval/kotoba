@@ -85,7 +85,7 @@ class CommandManager {
   /**
   * Loads commands. Can be called to reload commands.
   */
-  load(settingsManager) {
+  load(settingsManager, config) {
     const loggerTitle = 'COMMAND MANAGER';
     const FailedToLoadMessageStart = 'Failed to load command from file: ';
     this.commands_ = [];
@@ -118,7 +118,7 @@ class CommandManager {
       this.commands_.push(new Command(new AllowCommand(userCommands)));
       this.commands_.push(new Command(new UnrestrictCommand(userCommands)));
       this.commands_.push(new Command(new BanCommand(userCommands)));
-      this.commands_.push(new Command(new SettingsCommand(settingsManager)));
+      this.commands_.push(new Command(new SettingsCommand(settingsManager, config)));
       this.settingsCategory_ = createSettingsCategoryForCommands(userCommands);
 
       if (this.reloadAction_) {

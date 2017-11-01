@@ -26,8 +26,8 @@ class Settings {
   /**
   * @param {Array<Command>} userCommands - All non-core commands.
   */
-  constructor(settingsManager) {
-    this.commandAliases = [']settings'];
+  constructor(settingsManager, config) {
+    this.commandAliases = config.serverSettingsCommandAliases;
     this.canBeChannelRestricted = false;
     this.serverAdminOnly = true;
     this.action = (bot, msg, suffix) => this.execute_(bot, msg, suffix, settingsManager);

@@ -92,8 +92,9 @@ function clearValueFromChannelSettings(channelSettings, settingName) {
 }
 
 class Setting {
-  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds) {
+  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds, serverSettingsCommand) {
     this.colorForEmbeds_ = colorForEmbeds;
+    this.serverSettingsCommand_ = serverSettingsCommand;
     let hasAllCustomFields = settingsBlob.customAllowedValuesDescription
       && settingsBlob.customValidateDatabaseFacingValueFunction
       && settingsBlob.customConvertFromUserToDatabaseFacingValue
@@ -211,7 +212,7 @@ class Setting {
     }
 
     let examplesString = this.getUserFacingExampleValues(bot, msg).map(exampleValue => {
-      return `]settings ${this.fullyQualifiedName_} ${exampleValue}`;
+      return `${this.serverSettingsCommand_} ${this.fullyQualifiedName_} ${exampleValue}`;
     }).join('\n');
 
     return {
