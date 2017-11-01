@@ -170,7 +170,7 @@ class Setting {
     let settingsForChannel = settings.channelSettings[channelId];
     if (settingsForChannel) {
       let setting = settings.channelSettings[channelId][this.fullyQualifiedName_];
-      if (setting) {
+      if (setting !== undefined) {
         return setting;
       }
     }
@@ -249,12 +249,12 @@ class Setting {
     }
     if (channelsString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
+      clearValueFromChannelSettings(currentSettings.channelSettings[msg.channel.id], this.fullyQualifiedName_);
     } else if (channelsString === 'here') {
       if (!currentSettings.channelSettings[msg.channel.id]) {
         currentSettings.channelSettings[msg.channel.id] = {};
       }
       currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedName_] = databaseFacingValue;
-      clearValueFromChannelSettings(currentSettings.channelSettings[msg.channel.id], this.fullyQualifiedName_);
     } else {
       let channelIds = extractChannelIdsFromString(channelsString);
       let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);

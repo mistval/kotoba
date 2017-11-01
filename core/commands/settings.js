@@ -7,10 +7,9 @@ const NEXT_STEP_EXPIRATION_TIME_IN_MS = 1000 * 120;
 function registerHook(msg, userResponseCallback) {
   let hook = userAndChannelHook.registerHook(msg.author.id, msg.channel.id, message => {
     let result = userResponseCallback(message);
-    if (typeof result === 'string') {
-      return msg.channel.createMessage(result);
-    }
-    return true;
+    return result.then(resultString => {
+      return msg.channel.createMessage(resultString);
+    });
   });
   setTimeout(() => {
       hook.unregister();
