@@ -1,6 +1,7 @@
 {
   "botToken": "",
   "botAdminIds": [""],
+  "serverSettingsCommandAliases": ["]settings", "]s"],
   "discordBotsDotOrgAPIKey": "",
   "botsDotDiscordDotPwAPIKey": "",
   "logsDirectory": "./logs",

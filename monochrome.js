@@ -32,7 +32,7 @@ function reloadCore() {
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
   commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger);
   RepeatingQueue = reload('./core/repeating_queue.js');
-  commandManager.load(settingsManager).then(() => {
+  commandManager.load(settingsManager, config).then(() => {
     settingsManager.load(commandManager.collectSettingsCategories(), [], config);
   });
   messageProcessorManager.load();
@@ -68,6 +68,8 @@ function validateConfiguration(config) {
     errorMessage = 'Invalid status in configuration (should be a string)';
   } else if (!config.settingsCategorySeparator || typeof config.settingsCategorySeparator !== typeof '' || config.settingsCategorySeparator.indexOf(' ') !== -1) {
     errorMessage = 'Invalid settingsCategorySeparator in configuration (should be a string with no spaces)';
+  } else if (!config.serverSettingsCommandAliases || config.serverSettingsCommandAliases.some(alias => typeof alias !== typeof '')) {
+    errorMessage = 'Invalid serverSettingsCommandAliases in configuration (should be an array of strings)';
   }
 
   if (errorMessage) {

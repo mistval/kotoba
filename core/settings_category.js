@@ -18,6 +18,7 @@ class SettingsCategory {
     this.categoryIdentifier_ = categoryIdentifier;
     this.children_ = [];
     this.type = categoryIdentifier;
+    this.settingsCommand_ = config.serverSettingsCommandAliases[0];
   }
 
   static createRootCategory(categoryIdentifier, settingIdentifier, config) {
@@ -51,7 +52,7 @@ class SettingsCategory {
         this.children_.push(childCategory);
         childCategory.setChildren(child.children);
       } else {
-        this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_, this.config_.colorForSettingsSystemEmbeds));
+        this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_, this.config_.colorForSettingsSystemEmbeds, this.settingsCommand_));
       }
     }
   }
@@ -121,7 +122,8 @@ class SettingsCategory {
 
 ${subCategoryListString}
 
-Say ']settings [category name]' to view and set that category's settings. For example: ]settings ${subCategories[0]}
+# Say '${this.settingsCommand_} [category name]' to view and set that category's settings.
+    Example: ${this.settingsCommand_} ${subCategories[0]}
 \`\`\`
 `;
   }
@@ -143,10 +145,10 @@ Say ']settings [category name]' to view and set that category's settings. For ex
 
 ${settingsListString}
 
-# Say ']settings [setting] [value]' to set a setting. Next, you will choose which channels to apply the setting to.
-    Example: ]settings ${exampleSetting} ${exampleValue}
-# Say ']settings [setting]' to get more information about that setting, including allowed values.
-    Example: ]settings ${exampleSetting}
+# Say '${this.settingsCommand_} [setting] [value]' to set a setting. Next, you will choose which channels to apply the setting to.
+    Example: ${this.settingsCommand_} ${exampleSetting} ${exampleValue}
+# Say '${this.settingsCommand_} [setting]' to get more information about that setting, including allowed values.
+    Example: ${this.settingsCommand_} ${exampleSetting}
 \`\`\`
 `;
   }
