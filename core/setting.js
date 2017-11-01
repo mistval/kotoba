@@ -1,23 +1,26 @@
 const assert = require('assert');
 
-const STRING_VALUE_TYPE = 'STRING';
-const INTEGER_VALUE_TYPE = 'INTEGER';
-const FLOAT_VALUE_TYPE = 'FLOAT';
-const BOOLEAN_VALUE_TYPE = 'BOOLEAN';
-const CUSTOM_VALUE_TYPE = 'CUSTOM';
+const ValueType = {
+  STRING: 'STRING',
+  INTEGER: 'INTEGER',
+  FLOAT: 'FLOAT',
+  BOOLEAN: 'BOOLEAN',
+  CUSTOM: 'CUSTOM',
+};
+
 const prettyPrintForValueType = {};
-prettyPrintForValueType[STRING_VALUE_TYPE] = 'Text';
-prettyPrintForValueType[INTEGER_VALUE_TYPE] = 'Whole number';
-prettyPrintForValueType[FLOAT_VALUE_TYPE] = 'Number';
-prettyPrintForValueType[BOOLEAN_VALUE_TYPE] = 'True or false';
-prettyPrintForValueType[CUSTOM_VALUE_TYPE] = '';
+prettyPrintForValueType[ValueType.STRING] = 'Text';
+prettyPrintForValueType[ValueType.INTEGER] = 'Whole number';
+prettyPrintForValueType[ValueType.FLOAT] = 'Number';
+prettyPrintForValueType[ValueType.BOOLEAN] = 'True or false';
+prettyPrintForValueType[ValueType.CUSTOM] = '';
 
 const arbitraryAllowedValuesForType = {};
-arbitraryAllowedValuesForType[STRING_VALUE_TYPE] = 'Any text';
-arbitraryAllowedValuesForType[INTEGER_VALUE_TYPE] = 'Any whole number';
-arbitraryAllowedValuesForType[FLOAT_VALUE_TYPE] = 'Any number';
-arbitraryAllowedValuesForType[BOOLEAN_VALUE_TYPE] = 'True or false';
-arbitraryAllowedValuesForType[CUSTOM_VALUE_TYPE] = '';
+arbitraryAllowedValuesForType[ValueType.STRING] = 'Any text';
+arbitraryAllowedValuesForType[ValueType.INTEGER] = 'Any whole number';
+arbitraryAllowedValuesForType[ValueType.FLOAT] = 'Any number';
+arbitraryAllowedValuesForType[ValueType.BOOLEAN] = 'True or false';
+arbitraryAllowedValuesForType[ValueType.CUSTOM] = '';
 
 
 class Range {
@@ -54,30 +57,33 @@ function throwError(baseString, failedBlob) {
 }
 
 class ValueTypeStrategy {
-  constructor(convertUserFacingValueToDatabaseFacingValue, convertDatabaseFacingValueToUserFacingValue, validateUserFacingValue) {
-    this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
-    this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
-    this.validateUserFacingValue = validateUserFacingValue;
+  constructor(
+    convertUserFacingValueToDatabaseFacingValue,
+    convertDatabaseFacingValueToUserFacingValue,
+    validateUserFacingValue) {
+      this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
+      this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
+      this.validateUserFacingValue = validateUserFacingValue;
   }
 }
 
 let strategyForValueType = {};
-strategyForValueType[STRING_VALUE_TYPE] = new ValueTypeStrategy(
+strategyForValueType[ValueType.STRING] = new ValueTypeStrategy(
   (bot, msg, value) => value,
   (bot, msg, value) => value.toString(),
   (bot, msg, value) => true
 );
-strategyForValueType[INTEGER_VALUE_TYPE] = new ValueTypeStrategy(
+strategyForValueType[ValueType.INTEGER] = new ValueTypeStrategy(
   (bot, msg, value) => parseInt(value),
   (bot, msg, value) => value.toString(),
   (bot, msg, value) => typeof parseInt(value) === typeof 1
 );
-strategyForValueType[FLOAT_VALUE_TYPE] = new ValueTypeStrategy(
+strategyForValueType[ValueType.FLOAT] = new ValueTypeStrategy(
   (bot, msg, value) => parseFloat(value),
   (bot, msg, value) => value.toString(),
   (bot, msg, value) => typeof parseFloat(value) === typeof 1.5
 );
-strategyForValueType[BOOLEAN_VALUE_TYPE] =  new ValueTypeStrategy(
+strategyForValueType[ValueType.BOOLEAN] =  new ValueTypeStrategy(
   (bot, msg, value) => value.toLowerCase() === 'true',
   (bot, msg, value) => value.toString(),
   (bot, msg, value) => value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
@@ -92,54 +98,77 @@ function clearValueFromChannelSettings(channelSettings, settingName) {
   }
 }
 
+const requiredBlobPropertiesForCustomType = [
+  'customAllowedValuesDescription',
+  'customValidateDatabaseFacingValueFunction',
+  'customConvertFromUserToDatabaseFacingValue',
+  'customConvertFromDatabaseToUserFacingValue',
+  'customUserFacingExampleValues',
+  'customValueTypeDescription',
+];
+
+function stringIsRangeConstructor(str) {
+  return str && str.indexOf('Range(') === 0;
+}
+
+function validateSettingsBlob(settingsBlob, settingsCategorySeparator) {
+  let hasAllNecessaryPropertiesForCustomType = requiredBlobPropertiesForCustomType.every(property => {
+    return property in settingsBlob;
+  });
+  if (!('valueType' in settingsBlob)) {
+    throwError('Setting does not a valueType property. It must be one of ' + Object.keys(prettyPrintForValueType).join(', '), settingsBlob);
+  } else if (settingsBlob.valueType === ValueType.CUSTOM && !hasAllNecessaryPropertiesForCustomType) {
+    throwError('The valueType is custom, but the setting does not contain the necessary custom properties: ' + requiredBlobPropertiesForCustomType.join(', '), settingsBlob);
+  } else if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
+    throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
+  } else if (ValueType[settingsBlob.valueType] === undefined) {
+    throwError('Setting needs a value type. it either doesn\'t have one, or it has one that\'s invalid. It must be one of: ' + Object.keys(ValueType).join(', '), settingsBlob);
+  } else if (!settingsBlob.userFacingName || typeof settingsBlob.userFacingName !== typeof '') {
+    throwError('Setting does not have a userFacingName, or it is invalid. It must be a non-empty string.', settingsBlob);
+  } else if (settingsBlob.userFacingName.indexOf(settingsCategorySeparator) !== -1) {
+    throwError('A setting has an invalid userFacingName. It must not contain a ' + settingsCategorySeparator, settingsBlob);
+  } else if (settingsBlob.databaseFacingName && settingsBlob.databaseFacingName.indexOf(settingsCategorySeparator) !== -1) {
+    throwError('A setting has an invalid databaseFacingName. It must not contain a ' + settingsCategorySeparator, settingsBlob);
+  } else if (!('defaultDatabaseFacingValue' in settingsBlob)) {
+    throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
+  } else if (settingsBlob.allowedDatabaseFacingValues && !stringIsRangeConstructor(settingsBlob.allowedDatabaseFacingValues) && !Array.isArray(settingsBlob.allowedDatabaseFacingValues)) {
+    throwError('A setting has and invalid allowedDatabaseFacingValues. It must be an array or a Range(x,y)', settingsBlob);
+  } else if (stringIsRangeConstructor(settingsBlob.allowedDatabaseFacingValues) && settingsBlob.valueType !== ValueType.INTEGER && settingsBlob.valueType !== ValueType.FLOAT) {
+    throwError('A setting has an allowedDatabaseFacingValues value that looks like a range, but its valueType is neither INTEGER nor FLOAT', settingsBlob);
+  }
+}
+
+function tryParseAllowedDatabaseFacingValues(allowedDatabaseFacingValues) {
+  if (stringIsRangeConstructor(allowedDatabaseFacingValues)) {
+    try {
+      return eval('new ' + allowedDatabaseFacingValues);
+    } catch (err) {
+      throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob);
+    }
+  }
+  return allowedDatabaseFacingValues;
+}
+
 class Setting {
   constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds, serverSettingsCommand) {
+    validateSettingsBlob(settingsBlob, settingsCategorySeparator);
     this.colorForEmbeds_ = colorForEmbeds;
     this.serverSettingsCommand_ = serverSettingsCommand;
-    let hasAllCustomFields = settingsBlob.customAllowedValuesDescription
-      && settingsBlob.customValidateDatabaseFacingValueFunction
-      && settingsBlob.customConvertFromUserToDatabaseFacingValue
-      && settingsBlob.customConvertFromDatabaseToUserFacingValue
-      && settingsBlob.customUserFacingExampleValues
-      && settingsBlob.customValueTypeDescription;
-    if ((!settingsBlob.valueType || settingsBlob.valueType === CUSTOM_VALUE_TYPE) && !hasAllCustomFields) {
-      throwError('Setting has a custom (or no specified) value type, but does not define all the required custom fields. It must define: '
-        + 'customValidateDatabaseFacingValue '
-        + 'customConvertFromUserToDatabaseFacingValue '
-        + 'customConvertFromDatabaseToUserFacingValue '
-        + 'customUserFacingExampleValues '
-        + 'customValueTypeDescription ');
-    } else if (!settingsBlob.description || typeof settingsBlob.description !== typeof '') {
-      throwError('Setting needs a description. It either doesn\'t have one, or it has one that isn\'t a string', settingsBlob);
-    } else if (settingsBlob.valueType && Object.keys(prettyPrintForValueType).indexOf(settingsBlob.valueType) === -1) {
-      throwError('Setting needs a value type. it either doesn\'t have one, or it has one that\'s invalid. It must be one of: ' + Object.keys(prettyPrintForValueType).join(', '), settingsBlob);
-    } else if (!settingsBlob.name || typeof settingsBlob.name !== typeof '') {
-      throwError('Setting does not have a name, or it is invalid. It must be a non-empty string.', settingsBlob);
-    } else if (settingsBlob.name.indexOf(settingsCategorySeparator) !== -1) {
-      throwError('A setting has an invalid name. It must not contain a ' + settingsCategorySeparator, settingsBlob);
-    } else if (settingsBlob.name.indexOf(' ') !== -1) {
-      throwError('A setting has an invalid name. It must not contain a space.', settingsBlob);
-    } else if (!('defaultDatabaseFacingValue' in settingsBlob)) {
-      throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
-    }
     this.customValueTypeDescription_ = settingsBlob.customValueTypeDescription;
     this.isSetting = true;
     this.description_ = settingsBlob.description;
     this.valueType_ = settingsBlob.valueType;
     this.customAllowedValuesString_ = settingsBlob.customAllowedValuesDescription;;
-    this.name_ = settingsBlob.name;
+    this.userFacingName_ = settingsBlob.userFacingName;
     this.allowedDatabaseFacingValues_ = settingsBlob.allowedDatabaseFacingValues;
-    this.fullyQualifiedName_ = qualificationWithoutName + settingsCategorySeparator + this.name_;
     this.defaultDatabaseFacingValue_ = settingsBlob.defaultDatabaseFacingValue;
     this.customUserFacingExampleValues_ = settingsBlob.customUserFacingExampleValues;
+    this.databaseFacingName_ = settingsBlob.databaseFacingName || this.userFacingName_;
+    this.fullyQualifiedUserFacingName_ = qualificationWithoutName + settingsCategorySeparator + this.userFacingName_;
+    this.fullyQualifiedDatabaseFacingName_ = qualificationWithoutName + settingsCategorySeparator + this.databaseFacingName_;
+    this.allowedDatabaseFacingValues_ = tryParseAllowedDatabaseFacingValues(settingsBlob.allowedDatabaseFacingValues);
 
-    let hasCustomFunctions = settingsBlob.customConvertFromDatabaseToUserFacingValue
-      && settingsBlob.customConvertFromUserFacingToDatabaseFacingValue
-      && settingsBlob.customValidateDatabaseFacingValue;
-    if (this.valueType_ === CUSTOM_VALUE_TYPE && !hasCustomFunctions) {
-      throwError('A setting with a custom value type must have all of: customConvertFromDatabaseToUserFacingValue, customConvertFromUserFacingToDatabaseFacingValue, customValidateUserFacingValue properties.', settingsBlob);
-    }
-    if (this.valueType_ === CUSTOM_VALUE_TYPE) {
+    if (this.valueType_ === ValueType.CUSTOM) {
       this.valueTypeStrategy_ = new ValueTypeStrategy(
         settingsBlob.customConvertFromUserToDatabaseFacingValue,
         settingsBlob.customConvertFromDatabaseToUserFacingValue,
@@ -147,35 +176,21 @@ class Setting {
     } else {
       this.valueTypeStrategy_ = strategyForValueType[this.valueType_];
     }
-    if (typeof this.allowedDatabaseFacingValues_ === typeof '' && this.allowedDatabaseFacingValues_.indexOf('Range(') === 0) {
-      try {
-        this.allowedDatabaseFacingValues_ = eval('new ' + this.allowedDatabaseFacingValues_);
-      } catch (err) { }
-      if (!this.allowedDatabaseFacingValues_) {
-        throwError('Tried to parse allowedValues as a Range, but failed.', settingsBlob.allowedDatabaseFacingValues);
-      }
-      if (this.valueType_ === STRING_VALUE_TYPE) {
-        throwError('The allowed values are a range for that setting, but the value type is STRING. If the allowed values are a range, the value type must be INTEGER or FLOAT', settingsBlob);
-      }
-      if (this.valueType_ === BOOLEAN_VALUE_TYPE) {
-        throwError('The allowed values are a range for that setting, but the value type is BOOLEAN. If the allowed values are a range, the value type must be INTEGER or FLOAT', settingsBlob);
-      }
-    }
   }
 
-  getChildForRelativeQualifiedName(relativeQualifiedName) {
+  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
     return this;
   }
 
   getCurrentDatabaseFacingValue(settings, channelId) {
     let settingsForChannel = settings.channelSettings[channelId];
     if (settingsForChannel) {
-      let setting = settings.channelSettings[channelId][this.fullyQualifiedName_];
+      let setting = settings.channelSettings[channelId][this.fullyQualifiedDatabaseFacingName_];
       if (setting !== undefined) {
         return setting;
       }
     }
-    let serverSetting = settings.serverSettings[this.fullyQualifiedName_];
+    let serverSetting = settings.serverSettings[this.fullyQualifiedDatabaseFacingName_];
     if (serverSetting !== undefined) {
       return serverSetting;
     }
@@ -198,27 +213,27 @@ class Setting {
     }
   }
 
-  getFullyQualifiedName() {
-    return this.fullyQualifiedName_;
+  getFullyQualifiedUserFacingName() {
+    return this.fullyQualifiedUserFacingName_;
   }
 
-  getUnqualifiedName() {
-    return this.name_;
+  getUnqualifiedUserFacingName() {
+    return this.userFacingName_;
   }
 
-  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
+  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedUserFacingName) {
     let prefix = '';
-    if (this.fullyQualifiedName_ !== desiredFullyQualifiedName) {
-      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
+    if (this.fullyQualifiedUserFacingName_ !== desiredFullyQualifiedUserFacingName) {
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for ' + this.fullyQualifiedDatabaseFacingName_ + '.\n\n';
     }
 
     let examplesString = this.getUserFacingExampleValues(bot, msg).map(exampleValue => {
-      return `${this.serverSettingsCommand_} ${this.fullyQualifiedName_} ${exampleValue}`;
+      return `${this.serverSettingsCommand_} ${this.fullyQualifiedUserFacingName_} ${exampleValue}`;
     }).join('\n');
 
     return {
       embed: {
-        title: this.fullyQualifiedName_,
+        title: this.fullyQualifiedUserFacingName_,
         description: this.description_,
         color: this.colorForEmbeds_,
         fields: [
@@ -249,13 +264,13 @@ class Setting {
       return 'The settings were not changed.';
     }
     if (channelsString === 'all') {
-      currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
-      clearValueFromChannelSettings(currentSettings.channelSettings, this.fullyQualifiedName_);
+      currentSettings.serverSettings[this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
+      clearValueFromChannelSettings(currentSettings.channelSettings, this.fullyQualifiedDatabaseFacingName_);
     } else if (channelsString === 'here') {
       if (!currentSettings.channelSettings[msg.channel.id]) {
         currentSettings.channelSettings[msg.channel.id] = {};
       }
-      currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedName_] = databaseFacingValue;
+      currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
     } else {
       let channelIds = extractChannelIdsFromString(channelsString);
       let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);
@@ -266,7 +281,7 @@ class Setting {
         if (!currentSettings.channelSettings[channelId]) {
           currentSettings.channelSettings[channelId] = {};
         }
-        currentSettings.channelSettings[channelId][this.fullyQualifiedName_] = databaseFacingValue;
+        currentSettings.channelSettings[channelId][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
       }
     }
     let configurationInstructions = this.getConfigurationInstructionsString(bot, msg, currentSettings);
@@ -291,7 +306,7 @@ class Setting {
     if (this.allowedDatabaseFacingValues_ instanceof Range && this.validateDatabaseFacingValueIsWithinRange_(value)) {
       return true;
     }
-    if (this.valueType_ === BOOLEAN_VALUE_TYPE && this.validateDatabaseFacingValueIsBoolean_(value)) {
+    if (this.valueType_ === ValueType.BOOLEAN && this.validateDatabaseFacingValueIsBoolean_(value)) {
       return true;
     }
     return false;

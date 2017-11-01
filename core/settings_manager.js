@@ -79,8 +79,8 @@ class SettingsManager {
   }
 
   getSetting(bot, msg, settingName) {
-    let setting = this.rootSettingsCategory_.getChildForRelativeQualifiedName(settingName);
-    if (setting.getFullyQualifiedName() !== settingName) {
+    let setting = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(settingName);
+    if (setting.getFullyQualifiedUserFacingName() !== settingName) {
       throw new Error('That setting doesn\'t exist in the settings hierarchy');
     }
     if (!setting.isSetting) {
@@ -93,8 +93,8 @@ class SettingsManager {
   }
 
   initiateSetSetting(bot, msg, fullyQualifiedName, value) {
-    let childToEdit = this.rootSettingsCategory_.getChildForRelativeQualifiedName(fullyQualifiedName);
-    if (childToEdit.getFullyQualifiedName() !== fullyQualifiedName) {
+    let childToEdit = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(fullyQualifiedName);
+    if (childToEdit.getFullyQualifiedUserFacingName() !== fullyQualifiedName) {
       return this.getConfigurationInstructionsString(bot, msg, fullyQualifiedName).then(resultStr => {
         return InitiateSetSettingResult.createErrorResult(resultStr);
       });
@@ -115,7 +115,7 @@ class SettingsManager {
   }
 
   getConfigurationInstructionsString(bot, msg, desiredFullyQualifedName) {
-    let child = this.rootSettingsCategory_.getChildForRelativeQualifiedName(desiredFullyQualifedName);
+    let child = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(desiredFullyQualifedName);
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
       addSettingsObjectIfNotAlreadyInData(data);
