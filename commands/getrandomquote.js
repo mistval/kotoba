@@ -8,6 +8,7 @@ module.exports = {
   commandAliases: ['bot!getquote', 'bot!gq'],
   canBeChannelRestricted: false,
   serverAdminOnly: false,
+  uniqueId: 'getQuote45954',
   action(bot, msg, suffix) {
     return persistence.getGlobalData().then(globalData => {
       if (!globalData.quotes) {

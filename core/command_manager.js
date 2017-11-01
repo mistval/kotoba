@@ -43,25 +43,17 @@ function getDuplicateAlias(command, otherCommands) {
   }
 }
 
-function createSettingsHierarchyForCommand(userCommand) {
-  return {
-    type: 'SETTING',
-    name: userCommand.aliases[0] + '_enabled',
-    description: `This setting controls whether the ${userCommand.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
-    valueType: 'BOOLEAN',
-    defaultDatabaseFacingValue: true,
-  }
-}
-
-function createSettingsHierarchyForCommands(userCommands) {
-  return userCommands.map(command => createSettingsHierarchyForCommand(command));
+function createSettingsForCommands(userCommands) {
+  return userCommands
+    .map(command => command.createEnabledSetting())
+    .filter(setting => !!setting);
 }
 
 function createSettingsCategoryForCommands(userCommands) {
   return {
     type: 'CATEGORY',
     name: 'commands',
-    children: createSettingsHierarchyForCommands(userCommands),
+    children: createSettingsForCommands(userCommands),
   }
 }
 

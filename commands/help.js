@@ -2,6 +2,7 @@
 module.exports = {
   commandAliases: ['bot!help', 'bot!h'],
   cooldown: 5,
+  uniqueId: 'help5489',
   action(bot, msg, suffix) {
     let message = `\`\`\`glsl
 // Here are my commands!

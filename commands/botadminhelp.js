@@ -2,6 +2,7 @@
 module.exports = {
   commandAliases: ['}help', '}h'],
   cooldown: 5,
+  botAdminOnly: true,
   action(bot, msg, suffix) {
     let message = `\`\`\`glsl
 // Here are my bot admin commands!
