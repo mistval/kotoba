@@ -84,9 +84,11 @@ strategyForValueType[BOOLEAN_VALUE_TYPE] =  new ValueTypeStrategy(
 );
 
 function clearValueFromChannelSettings(channelSettings, settingName) {
-  let keys = Object.keys(channelSettings);
-  for (let key of keys) {
-    delete channelSettings[key][settingName];
+  if (channelSettings) {
+    let keys = Object.keys(channelSettings);
+    for (let key of keys) {
+      delete channelSettings[key][settingName];
+    }
   }
 }
 
@@ -116,7 +118,7 @@ class Setting {
     } else if (settingsBlob.name.indexOf(settingsCategorySeparator) !== -1) {
       throwError('A setting has an invalid name. It must not contain a ' + settingsCategorySeparator, settingsBlob);
     } else if (settingsBlob.name.indexOf(' ') !== -1) {
-      throwError('A setting has an invalid name. It must not be a space.', settingsBlob);
+      throwError('A setting has an invalid name. It must not contain a space.', settingsBlob);
     } else if (!('defaultDatabaseFacingValue' in settingsBlob)) {
       throwError('A setting has no defaultDatabaseFacingValue value. It must have one.', settingsBlob);
     }
@@ -248,7 +250,7 @@ class Setting {
     }
     if (channelsString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedName_] = databaseFacingValue;
-      clearValueFromChannelSettings(currentSettings.channelSettings[msg.channel.id], this.fullyQualifiedName_);
+      clearValueFromChannelSettings(currentSettings.channelSettings, this.fullyQualifiedName_);
     } else if (channelsString === 'here') {
       if (!currentSettings.channelSettings[msg.channel.id]) {
         currentSettings.channelSettings[msg.channel.id] = {};

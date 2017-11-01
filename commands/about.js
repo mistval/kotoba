@@ -4,6 +4,7 @@ const botVersion = require('../package.json').version;
 
 module.exports = {
   commandAliases: ['bot!about'],
+  uniqueId: 'about53463',
   cooldown: 5,
   action(bot, msg, suffix) {
     return msg.channel.createMessage(`\`\`\`md

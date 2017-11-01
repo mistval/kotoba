@@ -4,6 +4,7 @@ const config = require('./../config.json');
 module.exports = {
   commandAliases: [']help', ']h'],
   cooldown: 5,
+  serverAdminOnly: true,
   action(bot, msg, suffix) {
     let message = `\`\`\`glsl
 // Here are my server admin commands!

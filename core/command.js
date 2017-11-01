@@ -49,9 +49,18 @@ class Command {
       throw new Error('Invalid onlyInServer value');
     }
 
+    if (commandData.canBeChannelRestricted === undefined) {
+      if (commandData.serverAdminOnly || commandData.botAdminOnly) {
+        this.canBeChannelRestricted_ = false;
+      } else {
+        this.canBeChannelRestricted_ = true;
+      }
+    } else {
+      this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
+    }
+
     this.aliases = aliases;
     this.uniqueId = commandData.uniqueId;
-    this.canBeChannelRestricted = !!commandData.canBeChannelRestricted;
     this.action_ = commandData.action;
     this.serverAdminOnly_ = !!commandData.serverAdminOnly;
     this.botAdminOnly_ = !!commandData.botAdminOnly;
@@ -63,8 +72,20 @@ class Command {
       throw new Error('Invalid cooldown');
     }
 
-    if (this.canBeChannelRestricted && (!this.uniqueId || typeof this.uniqueId !== typeof '')) {
-      throw new Error('Command can be channel restricted, but does not have a uniqueId, or its uniqueId is not a string. Commands that can be channel restricted must have a uniqueId.');
+    if (this.canBeChannelRestricted_ && (!this.uniqueId || typeof this.uniqueId !== typeof '')) {
+      throw new Error('Command has canBeChannelRestricted true (or undefined, defaulting to true), but does not have a uniqueId, or its uniqueId is not a string. Commands that can be channel restricted must have a uniqueId.');
+    }
+  }
+
+  createEnabledSetting() {
+    if (this.canBeChannelRestricted_) {
+      return {
+        type: 'SETTING',
+        name: this.aliases[0] + '_enabled',
+        description: `This setting controls whether the ${this.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
+        valueType: 'BOOLEAN',
+        defaultDatabaseFacingValue: true,
+      }
     }
   }
 
