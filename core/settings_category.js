@@ -146,7 +146,7 @@ ${settingsListString}
 # Say ']settings [setting] [value]' to set a setting. Next, you will choose which channels to apply the setting to.
     Example: ]settings ${exampleSetting} ${exampleValue}
 # Say ']settings [setting]' to get more information about that setting, including allowed values.
-    Example: ]setting ${exampleSetting}
+    Example: ]settings ${exampleSetting}
 \`\`\`
 `;
   }
