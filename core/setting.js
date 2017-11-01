@@ -224,7 +224,7 @@ class Setting {
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedUserFacingName) {
     let prefix = '';
     if (this.fullyQualifiedUserFacingName_ !== desiredFullyQualifiedUserFacingName) {
-      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for ' + this.fullyQualifiedDatabaseFacingName_ + '.\n\n';
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for **' + this.fullyQualifiedDatabaseFacingName_ + '**\n\n';
     }
 
     let examplesString = this.getUserFacingExampleValues(bot, msg).map(exampleValue => {
