@@ -147,7 +147,7 @@ class Command {
 }
 
 function userIsServerAdmin(msg, config) {
-  if (!msg.member) {
+  if (!msg.channel.guild) {
     return true;
   }
 

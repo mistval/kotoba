@@ -34,6 +34,12 @@ class InitiateSetSettingResult {
     result.userResponseCallback = userResponseCallback;
     return result;
   }
+
+  static createNoNeedToRequestInputResult(message) {
+    let result = new InitiateSetSettingResult();
+    result.nextStepInstructions = message;
+    return result;
+  }
 }
 
 /**
@@ -87,25 +93,22 @@ class SettingsManager {
   }
 
   initiateSetSetting(bot, msg, fullyQualifiedName, value) {
-    let child = this.rootSettingsCategory_.getChildForRelativeQualifiedName(fullyQualifiedName);
-    if (child.getFullyQualifiedName() !== fullyQualifiedName) {
+    let childToEdit = this.rootSettingsCategory_.getChildForRelativeQualifiedName(fullyQualifiedName);
+    if (childToEdit.getFullyQualifiedName() !== fullyQualifiedName) {
       return this.getConfigurationInstructionsString(bot, msg, fullyQualifiedName).then(resultStr => {
         return InitiateSetSettingResult.createErrorResult(resultStr);
       });
     }
 
-    let userResponseCallback = message => {
-      let serverId = getServerIdFromMessage(msg);
-      debugger;
-      return persistence.editDataForServer(serverId, data => {
-        data = addSettingsObjectIfNotAlreadyInData(data);
-        let result = child.setNewValueFromUserFacingString(bot, msg, data.settings, value, message);
-        msg.channel.createMessage(result)
-        return data;
+    // If it is a DM, commit immediately. No need to ask for scope.
+    if (!msg.channel.guild) {
+      return commitEdit(bot, msg, childToEdit, value).then(result => {
+        return InitiateSetSettingResult.createNoNeedToRequestInputResult(result);
       });
-    };
+    }
 
-    let result = InitiateSetSettingResult.createRequestInputResult(child.getRequestInputMessageString(), userResponseCallback);
+    let userResponseCallback = userResponseString => commitEdit(bot, msg, childToEdit, value, userResponseString);
+    let result = InitiateSetSettingResult.createRequestInputResult(childToEdit.getRequestInputMessageString(), userResponseCallback);
     return Promise.resolve(result);
   }
 
@@ -117,6 +120,15 @@ class SettingsManager {
       return child.getConfigurationInstructionsString(bot, msg, data.settings, desiredFullyQualifedName)
     });
   }
+}
+
+function commitEdit(bot, msg, childSettingToEdit, value, scopeString) {
+  let serverId = getServerIdFromMessage(msg);
+  return persistence.editDataForServer(serverId, data => {
+    data = addSettingsObjectIfNotAlreadyInData(data);
+    let result = childSettingToEdit.setNewValueFromUserFacingString(bot, msg, data.settings, value, scopeString);
+    return result;
+  });
 }
 
 module.exports = SettingsManager;

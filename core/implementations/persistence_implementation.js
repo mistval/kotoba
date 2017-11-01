@@ -17,6 +17,15 @@ function getData(key) {
   });
 }
 
+function editData(key, editFunction) {
+  return storage.editItem(key, data => {
+    if (!data) {
+      data = {};
+    }
+    return editFunction(data);
+  });
+}
+
 function keyForUserId(userId) {
   return USER_DATA_KEY_PREFIX + userId;
 }
@@ -55,18 +64,18 @@ class PersistenceImplementation {
     });
   }
 
-  static editDataForUser(userId, editData, persistenceState) {
+  static editDataForUser(userId, editDataFunction, persistenceState) {
     let key = keyForUserId(userId);
-    return storage.editItem(key, editData);
+    return editData(key, editDataFunction);
   }
 
-  static editDataForServer(serverId, editData, persistenceState) {
+  static editDataForServer(serverId, editDataFunction, persistenceState) {
     let key = keyForServerId(serverId);
-    return storage.editItem(key, editData);
+    return editData(key, editDataFunction);
   }
 
-  static editGlobalData(editData, persistenceState) {
-    return storage.editItem(GLOBAL_DATA_KEY, editData);
+  static editGlobalData(editDataFunction, persistenceState) {
+    return editData(GLOBAL_DATA_KEY, editDataFunction);
   }
 
   static editAllowedChannelsForCommand(msg, commandId, editFunction, persistenceState) {
