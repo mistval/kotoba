@@ -111,6 +111,12 @@ class CommandManager {
           this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile + '. Error: alias: ' + duplicateAlias + ' is not unique');
           continue;
         }
+
+        if (config.settingsCategorySeparator && command.aliases.find(alias => alias.indexOf(config.settingsCategorySeparator) !== -1)) {
+          this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile +
+            `. Error: an alias contains the settings category separator (${config.settingsCategorySeparator}). It must not.`);
+          continue;
+        }
         this.commands_.push(command);
       }
 
