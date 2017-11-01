@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const storage = require('node-persist');
+const storage = require('./util/node_persist_atomic.js');
 
 let implementation;
 
@@ -17,7 +17,7 @@ class Persistence {
   * @param {Object} options - The options to pass into the node-persist initializer.
   */
   init(options) {
-    storage.initSync(options);
+    storage.init(options);
     this.initialized_ = true;
   }
 
