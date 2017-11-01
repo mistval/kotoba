@@ -73,7 +73,7 @@ class SettingsCategory {
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
     debugger;
     let prefix = '';
-    let prefixExtention = this.fullyQualifiedName_ ? ' for ' + this.fullyQualifiedName_ : '';
+    let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
     }
