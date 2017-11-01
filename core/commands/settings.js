@@ -8,9 +8,9 @@ function registerHook(msg, userResponseCallback) {
   let hook = userAndChannelHook.registerHook(msg.author.id, msg.channel.id, message => {
     let result = userResponseCallback(message);
     if (typeof result === 'string') {
-      msg.channel.createMessage(result);
+      return msg.channel.createMessage(result);
     }
-    return result;
+    return true;
   });
   setTimeout(() => {
       hook.unregister();
@@ -47,7 +47,9 @@ class Settings {
         } else {
           let nextStepInstructions = results.nextStepInstructions;
           let userResponseCallback = results.userResponseCallback;
-          registerHook(msg, userResponseCallback);
+          if (userResponseCallback) {
+            registerHook(msg, userResponseCallback);
+          }
           return msg.channel.createMessage(nextStepInstructions);
         }
       });

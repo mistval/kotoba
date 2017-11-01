@@ -235,6 +235,9 @@ class Setting {
   }
 
   setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, channelsString) {
+    if (!channelsString) {
+      channelsString = 'all';
+    }
     if (!this.valueTypeStrategy_.validateUserFacingValue(bot, msg, newValue)) {
       return createValidationFailureString_();
     }
