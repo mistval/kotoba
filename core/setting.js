@@ -262,7 +262,7 @@ class Setting {
       }
     }
     let configurationInstructions = this.getConfigurationInstructionsString(bot, msg, currentSettings);
-    configurationInstructions.content = 'Setting updated! Here is the new setting.';
+    configurationInstructions.content = 'Setting updated! Here is the updated setting.';
     return configurationInstructions;
   }
 
