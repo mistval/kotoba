@@ -72,8 +72,9 @@ class SettingsCategory {
 
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
     let prefix = '';
+    let prefixExtention = this.fullyQualifiedName_ ? ' for ' + this.fullyQualifiedName_ : '';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
-      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings for ' + this.fullyQualifiedName_ + '.\n\n';
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
     }
     if (this.childrenType_ === this.categoryIdentifier_) {
       return this.getConfigurationInstructionsStringForCategoryChildren_(prefix);
