@@ -1,4 +1,7 @@
+'use strict'
+const reload = require('require-reload')(require);
 const assert = require('assert');
+const AbstractSettingElement = reload('./abstract_setting_element.js');
 
 const ValueType = {
   STRING: 'STRING',
@@ -149,8 +152,9 @@ function tryParseAllowedDatabaseFacingValues(allowedDatabaseFacingValues) {
   return allowedDatabaseFacingValues;
 }
 
-class Setting {
+class Setting extends AbstractSettingElement {
   constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds, serverSettingsCommand) {
+    super();
     validateSettingsBlob(settingsBlob, settingsCategorySeparator);
     this.colorForEmbeds_ = colorForEmbeds;
     this.serverSettingsCommand_ = serverSettingsCommand;
@@ -182,6 +186,14 @@ class Setting {
     return this;
   }
 
+  getUnqualifiedUserFacingName() {
+    return this.userFacingName_;
+  }
+
+  getFullyQualifiedUserFacingName() {
+    return this.fullyQualifiedUserFacingName_;
+  }
+
   getCurrentDatabaseFacingValue(settings, channelId) {
     let settingsForChannel = settings.channelSettings[channelId];
     if (settingsForChannel) {
@@ -211,14 +223,6 @@ class Setting {
     } else {
       return [this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_)];
     }
-  }
-
-  getFullyQualifiedUserFacingName() {
-    return this.fullyQualifiedUserFacingName_;
-  }
-
-  getUnqualifiedUserFacingName() {
-    return this.userFacingName_;
   }
 
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedUserFacingName) {

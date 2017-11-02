@@ -1,5 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
+const AbstractSettingElement = reload('./abstract_setting_element.js');
 const Setting = reload('./setting.js')
 const assert = require('assert');
 
@@ -7,8 +8,9 @@ function throwError(baseString, failedBlob) {
   throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
 }
 
-class SettingsCategory {
+class SettingsCategory extends AbstractSettingElement {
   constructor(settingsBlob, qualificationWithoutName, categoryIdentifier, settingIdentifier, config) {
+    super();
     this.name_ = settingsBlob.name || '';
     this.config_ = config;
     this.settingIdentifier_ = settingIdentifier;
@@ -26,6 +28,23 @@ class SettingsCategory {
       name: '',
     };
     return new SettingsCategory(settingsBlob, '', categoryIdentifier, settingIdentifier, config);
+  }
+
+  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
+    let child = this.getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName);
+    if (child) {
+      return child.getChildForRelativeQualifiedUserFacingName(this.getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName));
+    } else {
+      return this;
+    }
+  }
+
+  getFullyQualifiedUserFacingName() {
+    return this.fullyQualifiedName_;
+  }
+
+  getUnqualifiedUserFacingName() {
+    return this.name_;
   }
 
   setChildren(children) {
@@ -61,15 +80,6 @@ class SettingsCategory {
     return getConfigurationInstructionsString(bot, msg, currentSettings, this.fullyQualifiedName_);
   }
 
-  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
-    let child = this.getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName);
-    if (child) {
-      return child.getChildForRelativeQualifiedUserFacingName(this.getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName));
-    } else {
-      return this;
-    }
-  }
-
   getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
     debugger;
     let prefix = '';
@@ -82,14 +92,6 @@ class SettingsCategory {
     } else {
       return this.getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName);
     }
-  }
-
-  getFullyQualifiedUserFacingName() {
-    return this.fullyQualifiedName_;
-  }
-
-  getUnqualifiedUserFacingName() {
-    return this.name_;
   }
 
   getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName) {
