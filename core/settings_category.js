@@ -8,54 +8,98 @@ function throwError(baseString, failedBlob) {
   throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
 }
 
+/**
+* Represents a category of settings (a branch) as opposed to a setting (a leaf)
+*/
 class SettingsCategory extends AbstractSettingElement {
-  constructor(settingsBlob, qualificationWithoutName, categoryIdentifier, settingIdentifier, config) {
+  /**
+  * @param {Object} settingsBlob - The raw data for this category and all its children.
+  * @param {String} parentFullyQualifiedName - The fully qualified name of the parent category.
+  * @param {String} categoryTypeIdentifier - The string that identifies an element of the settings blob
+  *   as a setting category, as opposed to a setting. Every settings element should have a type property.
+  *   If the element is a settings category, the type should be the value of this argument.
+  * @param {String} settingTypeIdentifier - The string that identifies an element of the settings blob
+  *   as a setting leaf (as opposed to a settings category).
+  * @param {Object} config - The monochrome config object.
+  */
+  constructor(settingsBlob, parentFullyQualifiedName, categoryTypeIdentifier, settingTypeIdentifier, config) {
     super();
     this.name_ = settingsBlob.name || '';
     this.config_ = config;
-    this.settingIdentifier_ = settingIdentifier;
+    this.settingTypeIdentifier_ = settingTypeIdentifier;
     this.settingsCategorySeparator_ = config.settingsCategorySeparator;
-    this.fullyQualifiedName_ = qualificationWithoutName ? qualificationWithoutName + this.settingsCategorySeparator_ + this.name_ : this.name_;
+    this.fullyQualifiedName_ = parentFullyQualifiedName ? parentFullyQualifiedName + this.settingsCategorySeparator_ + this.name_ : this.name_;
     this.isTopLevel_ = !this.fullyQualifiedName_;
-    this.categoryIdentifier_ = categoryIdentifier;
+    this.categoryTypeIdentifier_ = categoryTypeIdentifier;
     this.children_ = [];
-    this.type = categoryIdentifier;
+    this.type = categoryTypeIdentifier;
     this.settingsCommand_ = config.serverSettingsCommandAliases[0];
   }
 
-  static createRootCategory(categoryIdentifier, settingIdentifier, config) {
+  /**
+  * Factory method to create the root category of the settings hierarchy. It is
+  * a special snowflake with no name.
+  * @param {String} categoryTypeIdentifier - The string that identifies an element of the settings blob
+  *   as a setting category, as opposed to a setting. Every settings element should have a type property.
+  *   If the element is a settings category, the type should be the value of this argument.
+  * @param {String} settingTypeIdentifier - The string that identifies an element of the settings blob
+  *   as a setting leaf (as opposed to a settings category).
+  * @param {Object} config - The monochrome config object.
+  * @returns {SettingsCategory} The created SettingsCategory.
+  */
+  static createRootCategory(categoryTypeIdentifier, settingTypeIdentifier, config) {
     let settingsBlob = {
       name: '',
     };
-    return new SettingsCategory(settingsBlob, '', categoryIdentifier, settingIdentifier, config);
+    return new SettingsCategory(settingsBlob, '', categoryTypeIdentifier, settingTypeIdentifier, config);
   }
 
-  getChildForFullyQualifiedUserFacingName(fullyQualifiedName) {
-    debugger;
-    let child = this.getChildForFullyQualifiedUserFacingNameHelper_(fullyQualifiedName);
+  /**
+  * Gets the child for the specified fully qualified name, or if there isn't one, the nearest child.
+  * This recurses up the settings hierarchy looking for an element whose fully qualfied name matches the
+  * one we're searching for. If it doesn't find such an element, it returns the nearest one it can resolve to.
+  * @param {String} desiredFullyQualifiedName - The fully qualified name for which we seek an element whose name matches.
+  * @returns {(Setting|SettingsCategory)} The child for the specified fully qualified name, or if there isn't one, the nearest child.
+  */
+  getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedName) {
+    let child = this.getChildForFullyQualifiedUserFacingNameHelper_(desiredFullyQualifiedName);
     if (child) {
-      return child.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
+      return child.getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedName);
     } else {
       return this;
     }
   }
 
+  /**
+  * @returns {String} The fully qualfied user facing name for this.
+  */
   getFullyQualifiedUserFacingName() {
     return this.fullyQualifiedName_;
   }
 
-  setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, channelsToApplyToString) {
-    // This is a category, not a setting. Return the category information to print.
-    return getConfigurationInstructionsBotContent(currentSettings, this.fullyQualifiedName_);
+  /**
+  * As this is a category, not a setting, we should never try to set a setting on it.
+  * This method with a throw is here for debugging purposes.
+  */
+  setNewValueFromUserFacingString() {
+    throw new Error('This is a category, not a setting');
   }
 
+  /**
+  * @param {String} channelId - The channel that we are looking at the settings for.
+  * @param {Object} settings - The settings object from the database for the server we are looking at the settings for.
+  * @param {String} desiredFullyQualifiedUserFacingName - The fully qualified setting name we were searching for.
+  *   Since getChildForFullyQualifiedName returns the nearest matching child, even if there is no exact match,
+  *   the desiredFullyQualifiedUserFacingName may not be the one we landed on.
+  * @returns {Object} Bot content instructing the user how to proceed at this level of the instructions hierarchy.
+  */
   getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedName) {
     let prefix = '';
     let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
     }
-    if (this.childrenType_ === this.categoryIdentifier_) {
+    if (this.childrenType_ === this.categoryTypeIdentifier_) {
       return this.getConfigurationInstructionsBotContentForCategoryChildren_(prefix);
     } else {
       return this.getConfigurationInstructionsBotContentForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName);
@@ -68,20 +112,20 @@ class SettingsCategory extends AbstractSettingElement {
     }
     this.childrenType_ = children[0].type;
     if (!children.every(child => child.type === this.childrenType_)) {
-      throwError(`A settings category has children of different type. They should all either be '${this.categoryIdentifier_}'' or '${this.settingIdentifier_}'. They cannot be mixed.`, children);
+      throwError(`A settings category has children of different type. They should all either be '${this.categoryTypeIdentifier_}'' or '${this.settingTypeIdentifier_}'. They cannot be mixed.`, children);
     }
     this.children_ = [];
     for (let child of children) {
       if (!child) {
         throwError('A child is invalid.', children);
-      } else if (!child.type || typeof child.type !== typeof '' || (child.type !== this.categoryIdentifier_ && child.type !== this.settingIdentifier_)) {
-        throwError(`A child has an invalid type. It should be a string, either '${this.categoryIdentifier_}'' or '${this.settingIdentifier_}'.`, children);
+      } else if (!child.type || typeof child.type !== typeof '' || (child.type !== this.categoryTypeIdentifier_ && child.type !== this.settingTypeIdentifier_)) {
+        throwError(`A child has an invalid type. It should be a string, either '${this.categoryTypeIdentifier_}'' or '${this.settingTypeIdentifier_}'.`, children);
       } else if (this.children_.find(otherChild => otherChild.userFacingName === child.userFacingName)) {
         throwError('Two children have the same userFacingName.', children);
       } else if (this.children_.find(otherChild => otherChild.databaseFacingName === child.databaseFacingName)) {
         throwError('Two children have the same databaseFacingName.', children);
-      } else if (child.type === this.categoryIdentifier_) {
-        let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryIdentifier_, this.settingIdentifier_, this.config_)
+      } else if (child.type === this.categoryTypeIdentifier_) {
+        let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryTypeIdentifier_, this.settingTypeIdentifier_, this.config_)
         this.children_.push(childCategory);
         childCategory.setChildren(child.children);
       } else {

@@ -6,6 +6,9 @@ const requiredMethods = [
   'setNewValueFromUserFacingString'
 ];
 
+/**
+* Verifies that an element in the settings hierarchy implements the correct methods.
+*/
 class AbstractSettingElement {
   constructor() {
     for (let requiredMethod of requiredMethods) {

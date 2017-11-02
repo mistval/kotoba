@@ -1,5 +1,4 @@
 'use strict'
-
 const userAndChannelHook = require('./../message_processors/user_and_channel_hook.js');
 
 const NEXT_STEP_EXPIRATION_TIME_IN_MS = 1000 * 120;
@@ -26,7 +25,8 @@ function registerHook(msg, userResponseCallback) {
 */
 class Settings {
   /**
-  * @param {Array<Command>} userCommands - All non-core commands.
+  * @param {Array<Command>} settingsManager - The settings manager controlling the settings.
+  * @param {Object} config - The monochrome config object.
   */
   constructor(settingsManager, config) {
     this.commandAliases = config.serverSettingsCommandAliases;
