@@ -45,10 +45,10 @@ function sanitizeCommandData(commandData) {
 
   if (commandData.cooldown === undefined) {
     commandData.cooldown = 0;
-  } else if (commandData.cooldown < 0) {
-    commandData.cooldown = 0;
   } else if (typeof commandData.cooldown !== typeof 1.5) {
     throw new Error('Invalid cooldown, it\'s not a number');
+  } else if (commandData.cooldown < 0) {
+    throw new Error('Cooldown is less than 0. Cannot reverse time.');
   }
   if (commandData.canBeChannelRestricted && (!commandData.uniqueId || typeof commandData.uniqueId !== typeof '')) {
     throw new Error('Command has canBeChannelRestricted true (or undefined, defaulting to true), but does not have a uniqueId, or its uniqueId is not a string. Commands that can be channel restricted must have a uniqueId.');
