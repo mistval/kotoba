@@ -119,7 +119,7 @@ class SettingsManager {
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
       addSettingsObjectIfNotAlreadyInData(data);
-      return child.getConfigurationInstructionsString(bot, msg, data.settings, desiredFullyQualifedName)
+      return child.getConfigurationInstructionsString(msg.channel.id, data.settings, desiredFullyQualifedName)
     });
   }
 }
@@ -129,7 +129,8 @@ function commitEdit(bot, msg, childSettingToEdit, value, scopeString) {
   let responseString;
   return persistence.editDataForServer(serverId, data => {
     data = addSettingsObjectIfNotAlreadyInData(data);
-    responseString = childSettingToEdit.setNewValueFromUserFacingString(bot, msg, data.settings, value, scopeString);
+    let channelsInGuild = msg.channel.guild ? msg.channel.guild.channels : msg.channel;
+    responseString = childSettingToEdit.setNewValueFromUserFacingString(msg.channel.id, channelsInGuild, data.settings, value, scopeString);
     return data;
   }).then(data => {
     return responseString;

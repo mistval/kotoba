@@ -3,6 +3,8 @@ const requiredMethods = [
   'getChildForRelativeQualifiedUserFacingName',
   'getUnqualifiedUserFacingName',
   'getFullyQualifiedUserFacingName',
+  'getConfigurationInstructionsString',
+  'setNewValueFromUserFacingString'
 ];
 
 class AbstractSettingElement {

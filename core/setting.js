@@ -49,9 +49,9 @@ function extractChannelIdsFromString(str) {
   return str.replace(/<#/g, '').replace(/>/g, '').split(' ');
 }
 
-function findChannelsNotInGuild(channelIds, guild) {
+function findChannelsNotInGuild(channelIds, channelsInGuild) {
   return channelIds.filter(channelId => {
-    return !guild.channels.find(guildChannel => guildChannel.id === channelId);
+    return !channelsInGuild.find(guildChannel => guildChannel.id === channelId);
   });
 }
 
@@ -72,24 +72,24 @@ class ValueTypeStrategy {
 
 let strategyForValueType = {};
 strategyForValueType[ValueType.STRING] = new ValueTypeStrategy(
-  (bot, msg, value) => value,
-  (bot, msg, value) => value.toString(),
-  (bot, msg, value) => true
+  (value) => value,
+  (value) => value.toString(),
+  (value) => true
 );
 strategyForValueType[ValueType.INTEGER] = new ValueTypeStrategy(
-  (bot, msg, value) => parseInt(value),
-  (bot, msg, value) => value.toString(),
-  (bot, msg, value) => typeof parseInt(value) === typeof 1
+  (value) => parseInt(value),
+  (value) => value.toString(),
+  (value) => typeof parseInt(value) === typeof 1
 );
 strategyForValueType[ValueType.FLOAT] = new ValueTypeStrategy(
-  (bot, msg, value) => parseFloat(value),
-  (bot, msg, value) => value.toString(),
-  (bot, msg, value) => typeof parseFloat(value) === typeof 1.5
+  (value) => parseFloat(value),
+  (value) => value.toString(),
+  (value) => typeof parseFloat(value) === typeof 1.5
 );
 strategyForValueType[ValueType.BOOLEAN] =  new ValueTypeStrategy(
-  (bot, msg, value) => value.toLowerCase() === 'true',
-  (bot, msg, value) => value.toString(),
-  (bot, msg, value) => value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
+  (value) => value.toLowerCase() === 'true',
+  (value) => value.toString(),
+  (value) => value.toLowerCase() === 'true' || value.toLowerCase() === 'false'
 );
 
 function clearValueFromChannelSettings(channelSettings, settingName) {
@@ -194,7 +194,32 @@ class Setting extends AbstractSettingElement {
     return this.fullyQualifiedUserFacingName_;
   }
 
-  getCurrentDatabaseFacingValue(settings, channelId) {
+  getConfigurationInstructionsString(channelId, settings, desiredFullyQualifiedUserFacingName) {
+    let prefix = '';
+    if (this.fullyQualifiedUserFacingName_ !== desiredFullyQualifiedUserFacingName) {
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for **' + this.fullyQualifiedDatabaseFacingName_ + '**\n\n';
+    }
+
+    let examplesString = this.getUserFacingExampleValues().map(exampleValue => {
+      return `${this.serverSettingsCommand_} ${this.fullyQualifiedUserFacingName_} ${exampleValue}`;
+    }).join('\n');
+
+    return {
+      embed: {
+        title: this.fullyQualifiedUserFacingName_,
+        description: this.description_,
+        color: this.colorForEmbeds_,
+        fields: [
+          {name: 'Value type', value: this.getValueTypeDescription_()},
+          {name: 'Allowed values', value: this.getAllowedValueString_()},
+          {name: 'Current value in this channel', value: this.getCurrentUserFacingValue(channelId, settings)},
+          {name: 'Examples of setting value', value: examplesString}
+        ]
+      }
+    }
+  }
+
+  getCurrentDatabaseFacingValue(channelId, settings) {
     let settingsForChannel = settings.channelSettings[channelId];
     if (settingsForChannel) {
       let setting = settings.channelSettings[channelId][this.fullyQualifiedDatabaseFacingName_];
@@ -209,44 +234,19 @@ class Setting extends AbstractSettingElement {
     return this.defaultDatabaseFacingValue_;
   }
 
-  getCurrentUserFacingValue(bot, msg, settings) {
-    return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.getCurrentDatabaseFacingValue(settings, msg.channel.id));
+  getCurrentUserFacingValue(channelId, settings) {
+    return this.convertDatabaseFacingValueToUserFacingValue_(this.getCurrentDatabaseFacingValue(channelId, settings));
   }
 
-  getDefaultUserFacingValue(bot, msg) {
-    return this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_);
+  getDefaultUserFacingValue() {
+    return this.convertDatabaseFacingValueToUserFacingValue_(this.defaultDatabaseFacingValue_);
   }
 
-  getUserFacingExampleValues(bot, msg) {
+  getUserFacingExampleValues() {
     if (this.customUserFacingExampleValues_) {
       return this.customUserFacingExampleValues_;
     } else {
-      return [this.convertDatabaseFacingValueToUserFacingValue_(bot, msg, this.defaultDatabaseFacingValue_)];
-    }
-  }
-
-  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedUserFacingName) {
-    let prefix = '';
-    if (this.fullyQualifiedUserFacingName_ !== desiredFullyQualifiedUserFacingName) {
-      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for **' + this.fullyQualifiedDatabaseFacingName_ + '**\n\n';
-    }
-
-    let examplesString = this.getUserFacingExampleValues(bot, msg).map(exampleValue => {
-      return `${this.serverSettingsCommand_} ${this.fullyQualifiedUserFacingName_} ${exampleValue}`;
-    }).join('\n');
-
-    return {
-      embed: {
-        title: this.fullyQualifiedUserFacingName_,
-        description: this.description_,
-        color: this.colorForEmbeds_,
-        fields: [
-          {name: 'Value type', value: this.getValueTypeDescription_()},
-          {name: 'Allowed values', value: this.getAllowedValueString_()},
-          {name: 'Current value in this channel', value: this.getCurrentUserFacingValue(bot, msg, settings)},
-          {name: 'Examples of setting value', value: examplesString}
-        ]
-      }
+      return [this.convertDatabaseFacingValueToUserFacingValue_(this.defaultDatabaseFacingValue_)];
     }
   }
 
@@ -254,30 +254,30 @@ class Setting extends AbstractSettingElement {
     return `What channels should the new setting apply to? You can say **all**, or **here**, or specify a list of channels, for example: **#welcome #general #bot**. You can also say 'cancel'.`;
   }
 
-  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, channelsString) {
-    if (!channelsString) {
-      channelsString = 'all';
+  setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, channelsToApplyToString) {
+    if (!channelsToApplyToString) {
+      channelsToApplyToString = 'all';
     }
-    if (!this.valueTypeStrategy_.validateUserFacingValue(bot, msg, newValue)) {
+    if (!this.valueTypeStrategy_.validateUserFacingValue(newValue)) {
       return this.createValidationFailureString_();
     }
-    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(bot, msg, newValue);
-    channelsString = channelsString.toLowerCase();
+    let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(newValue);
+    channelsToApplyToString = channelsToApplyToString.toLowerCase();
 
-    if (channelsString === 'cancel') {
+    if (channelsToApplyToString === 'cancel') {
       return 'The settings were not changed.';
     }
-    if (channelsString === 'all') {
+    if (channelsToApplyToString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
       clearValueFromChannelSettings(currentSettings.channelSettings, this.fullyQualifiedDatabaseFacingName_);
-    } else if (channelsString === 'here') {
-      if (!currentSettings.channelSettings[msg.channel.id]) {
-        currentSettings.channelSettings[msg.channel.id] = {};
+    } else if (channelsToApplyToString === 'here') {
+      if (!currentSettings.channelSettings[currentChannelId]) {
+        currentSettings.channelSettings[currentChannelId] = {};
       }
-      currentSettings.channelSettings[msg.channel.id][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
+      currentSettings.channelSettings[currentChannelId][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
     } else {
-      let channelIds = extractChannelIdsFromString(channelsString);
-      let channelsNotInGuild = findChannelsNotInGuild(channelIds, msg.channel.guild);
+      let channelIds = extractChannelIdsFromString(channelsToApplyToString);
+      let channelsNotInGuild = findChannelsNotInGuild(channelIds, channelsInGuild);
       if (channelsNotInGuild.length > 0) {
         return `The setting wasn't applied. I couldn't find channels: ${channelsNotInGuild.join(', ')} in this server.`;
       }
@@ -288,18 +288,18 @@ class Setting extends AbstractSettingElement {
         currentSettings.channelSettings[channelId][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
       }
     }
-    let configurationInstructions = this.getConfigurationInstructionsString(bot, msg, currentSettings);
+    let configurationInstructions = this.getConfigurationInstructionsString(currentChannelId, currentSettings);
     configurationInstructions.content = 'Setting updated! Here is the updated setting.';
     return configurationInstructions;
   }
 
-  convertUserFacingValueToDatabaseFacingValue_(bot, msg, value) {
-    return this.valueTypeStrategy_.convertUserFacingValueToDatabaseFacingValue(bot, msg, value);
+  convertUserFacingValueToDatabaseFacingValue_(value) {
+    return this.valueTypeStrategy_.convertUserFacingValueToDatabaseFacingValue(value);
   }
 
-  validateNewDatabaseFacingValue_(bot, msg, value) {
+  validateNewDatabaseFacingValue_(value) {
     if (this.customValidateDatabaseFacingValueFunction_) {
-      let result = this.customValidateDatabaseFacingValueFunction_(bot, msg, value);
+      let result = this.customValidateDatabaseFacingValueFunction_(value);
       if (result) {
         return result;
       }
@@ -328,8 +328,8 @@ class Setting extends AbstractSettingElement {
     return this.allowedDatabaseFacingValues_.indexOf(value) !== -1;
   }
 
-  convertDatabaseFacingValueToUserFacingValue_(bot, msg, value) {
-    return this.valueTypeStrategy_.convertDatabaseFacingValueToUserFacingValue(bot, msg, value);
+  convertDatabaseFacingValueToUserFacingValue_(value) {
+    return this.valueTypeStrategy_.convertDatabaseFacingValueToUserFacingValue(value);
   }
 
   getValueTypeDescription_() {
