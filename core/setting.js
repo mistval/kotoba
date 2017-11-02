@@ -193,13 +193,14 @@ class Setting extends AbstractSettingElement {
   /**
   * Gets the child for the specified fully qualified name (that parameter is not needed so it is omitted)
   * or if there isn't one, the nearest child. Since this class represents a leaf in the tree, the answer is always this.
+  * @returns {Setting} The child for the fully qualified name (always 'this' because a Setting has no children).
   */
   getChildForFullyQualifiedUserFacingName() {
     return this;
   }
 
   /**
-  * Gets the fully qualfied user facing name for this.
+  * @returns {String} The fully qualfied user facing name for this.
   */
   getFullyQualifiedUserFacingName() {
     return this.fullyQualifiedUserFacingName_;
@@ -212,6 +213,7 @@ class Setting extends AbstractSettingElement {
   * @param {String} desiredFullyQualifiedUserFacingName - The fully qualified setting name we were searching for.
   *   Since getChildForFullyQualifiedName returns the nearest matching child, even if there is no exact match,
   *   the desiredFullyQualifiedUserFacingName may not be the one we landed on.
+  * @returns {Object} Discord bot content that should be displayed to the user.
   */
   getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedUserFacingName) {
     let prefix = '';
@@ -239,9 +241,9 @@ class Setting extends AbstractSettingElement {
   }
 
   /**
-  * Get the current database facing value of this setting for the channel we are examining the settings for.
   * @param {String} channelId - The ID of the channel we are looking at the settings for.
   * @param {Object} settings - The settings object for the server we are looking at the settings for.
+  * @returns {Object} The current database facing value of this setting for the channel we are examining the settings for.
   */
   getCurrentDatabaseFacingValue(channelId, settings) {
     let settingsForChannel = settings.channelSettings[channelId];
@@ -259,20 +261,24 @@ class Setting extends AbstractSettingElement {
   }
 
   /**
-  * Gets the current user facing value for the channel we are examing the settings for.
   * @param {String} channelId - The ID of the channel we are looking at the settings for.
   * @param {Object} settings - The settings object for the server we are looking at the settings for.
+  * @returns {Object} The current user facing value for the channel we are examing the settings for.
   */
   getCurrentUserFacingValue(channelId, settings) {
     return this.convertDatabaseFacingValueToUserFacingValue_(this.getCurrentDatabaseFacingValue(channelId, settings));
   }
 
-  /** Gets the default user facing value of the setting. */
+  /**
+  * @returns {Object} The default user facing value of the setting.
+  */
   getDefaultUserFacingValue() {
     return this.convertDatabaseFacingValueToUserFacingValue_(this.defaultDatabaseFacingValue_);
   }
 
-  /** Gets example(s) of values that can be used for this setting */
+  /**
+  * @returns {Array<String>} Example(s) of values that can be used for this setting
+  */
   getUserFacingExampleValues() {
     if (this.customUserFacingExampleValues_) {
       return this.customUserFacingExampleValues_;
@@ -286,6 +292,7 @@ class Setting extends AbstractSettingElement {
   * then the bot will ask you which channel(s) you want to apply the setting to.
   * After the user specifies the new setting, this method should be called to get
   * instructions to show the user for the next step of the process.
+  * @returns {String} Instructions for the next step. Should be sent directly to the user.
   */
   getNextStepInstructionsForSettingSetting() {
     return `What channels should the new setting apply to? You can say **all**, or **here**, or specify a list of channels, for example: **#welcome #general #bot**. You can also say 'cancel'.`;
@@ -298,6 +305,7 @@ class Setting extends AbstractSettingElement {
   * @param {Object} currentSetting - The settings object for the server the command was invoked in.
   * @param {Object} newValue - The desired new value for this setting.
   * @param {String} secondStepUserResponseString - What the user answered to "what channels do you want to apply this setting to"
+  * @returns {String} The result of the operation in the form of a string that the bot should send to the user.
   */
   setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, secondStepUserResponseString) {
     if (!secondStepUserResponseString) {

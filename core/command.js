@@ -21,6 +21,7 @@ function sanitizeCommandData(commandData) {
     }
     aliases.push(alias.toLowerCase());
   }
+  commandData.commandAliases = aliases;
 
   if (!commandData.action || typeof commandData.action !== 'function') {
     throw new Error('Command does not have an action, or it is not a function.');
@@ -46,7 +47,7 @@ function sanitizeCommandData(commandData) {
     commandData.cooldown = 0;
   } else if (commandData.cooldown < 0) {
     commandData.cooldown = 0;
-  } else if (typeof this.cooldown_ !== typeof 1.5) {
+  } else if (typeof commandData.cooldown !== typeof 1.5) {
     throw new Error('Invalid cooldown, it\'s not a number');
   }
   if (commandData.canBeChannelRestricted && (!commandData.uniqueId || typeof commandData.uniqueId !== typeof '')) {
@@ -77,7 +78,7 @@ class Command {
   constructor(commandData) {
     commandData = sanitizeCommandData(commandData);
     this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
-    this.aliases = aliases;
+    this.aliases = commandData.commandAliases;
     this.uniqueId = commandData.uniqueId;
     this.action_ = commandData.action;
     this.serverAdminOnly_ = !!commandData.serverAdminOnly;
