@@ -20,40 +20,48 @@ Storage.clearSync();
 
 const commandDataNoAliases = {
   commandAliases: [],
+  canBeChannelRestricted: false,
   action(bot, msg, suffix) { },
 };
 
 const commandDataUndefinedAliases = {
+  canBeChannelRestricted: false,
   action(bot, msg, suffix) { },
 };
 
 const commandDataBlankAlias = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', ''],
   action(bot, msg, suffix) { },
 };
 
 const commandDataNonStringAliases = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 5],
   action(bot, msg, suffix) { },
 };
 
 const commandDataNonNumberCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: 'string',
   action(bot, msg, suffix) { },
 };
 
 const commandDataNegativeCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: -5,
   action(bot, msg, suffix) { },
 };
 
 const commandDataNoAction = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
 };
 
 const commandDataInvalidAction = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   action: 'invalid',
 };
@@ -72,48 +80,56 @@ const commandDataNonStringUniqueId = {
 };
 
 const commandDataInvalidServerAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   serverAdminOnly: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidBotAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   botAdminOnly: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidCanBeChannelRestricted = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   canBeChannelRestricted: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidOnlyInServer = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   onlyInServer: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const validCommandDataWith1SecondCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: 1,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandDataBotAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   botAdminOnly: true,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandDataServerAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   serverAdminOnly: true,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandServerOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   onlyInServer: true,
   action(bot, msg, suffix) { this.invoked = true; },
@@ -136,6 +152,7 @@ const validCommandStringAlias = {
 const validCommandDatas = [
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     action(bot, msg, suffix) { },
   },
   {
@@ -146,21 +163,25 @@ const validCommandDatas = [
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     serverAdminOnly: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     botAdminOnly: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     onlyInServer: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     cooldown: 5,
     action(bot, msg, suffix) { },
   },
