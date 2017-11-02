@@ -30,7 +30,7 @@ function reloadCore() {
 
   settingsManager = new (reload('./core/settings_manager.js'))(logger);
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
-  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger);
+  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger, config);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load(settingsManager, config).then(() => {
     settingsManager.load(commandManager.collectSettingsCategories(), [], config);
@@ -185,7 +185,7 @@ bot.on('messageCreate', (msg) => {
     return;
   }
   try {
-    if (commandManager.processInput(bot, msg, config)) {
+    if (commandManager.processInput(bot, msg)) {
       return;
     }
     if (messageProcessorManager.processInput(bot, msg, config)) {

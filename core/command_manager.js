@@ -11,6 +11,7 @@ const SettingsCommand = reload('./commands/settings.js');
 
 function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
+  this.config_ = config;
   let errDescription = err.logDescription;
   let publicMessage = err.publicMessage;
   if (!publicMessage && err.message.indexOf('Missing Permissions') !== -1 && config.missingPermissionsErrorMessage) {
@@ -67,17 +68,18 @@ class CommandManager {
   * @param {Function} reloadAction - The function that the reload command should invoke to initiate a reload.
   * @param {Logger} logger - The logger to log to.
   */
-  constructor(directory, reloadAction, logger) {
+  constructor(directory, reloadAction, logger, config) {
     this.commands_ = [];
     this.reloadAction_ = reloadAction;
     this.logger_ = logger;
     this.directory_ = directory;
+    this.config_ = config;
   }
 
   /**
   * Loads commands. Can be called to reload commands.
   */
-  load(settingsManager, config) {
+  load() {
     const loggerTitle = 'COMMAND MANAGER';
     const FailedToLoadMessageStart = 'Failed to load command from file: ';
     this.commands_ = [];
@@ -104,9 +106,9 @@ class CommandManager {
           continue;
         }
 
-        if (config.settingsCategorySeparator && command.aliases.find(alias => alias.indexOf(config.settingsCategorySeparator) !== -1)) {
+        if (this.config_.settingsCategorySeparator && command.aliases.find(alias => alias.indexOf(this.config_.settingsCategorySeparator) !== -1)) {
           this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile +
-            `. Error: an alias contains the settings category separator (${config.settingsCategorySeparator}). It must not.`);
+            `. Error: an alias contains the settings category separator (${this.config_.settingsCategorySeparator}). It must not.`);
           continue;
         }
         this.commands_.push(command);
@@ -116,7 +118,6 @@ class CommandManager {
       this.commands_.push(new Command(new AllowCommand(userCommands)));
       this.commands_.push(new Command(new UnrestrictCommand(userCommands)));
       this.commands_.push(new Command(new BanCommand(userCommands)));
-      this.commands_.push(new Command(new SettingsCommand(settingsManager, config)));
       this.settingsCategory_ = createSettingsCategoryForCommands(userCommands);
 
       if (this.reloadAction_) {
@@ -127,6 +128,10 @@ class CommandManager {
     });
   }
 
+  /**
+  * Collects any settings that the command subsystem wants to register with the settings subsystem.
+  * @returns {Array<SettingsCategory>} The settings categories this subsystem wants to register.
+  */
   collectSettingsCategories() {
     return [this.settingsCategory_];
   }
@@ -135,11 +140,10 @@ class CommandManager {
   * Tries to process user input as a command.
   * @param {Eris.Client} bot - The Eris bot.
   * @param {Eris.Message} msg - The msg to process.
-  * @param {Object} config - The monochrome configuration.
   * @returns {Boolean} True if the input is processed as a command, false otherwise.
   *   Note: this returning true does not mean that a command was necessarily successful. It only means that the input was handed to a command to process.
   */
-  processInput(bot, msg, config) {
+  processInput(bot, msg) {
     const loggerTitle = 'COMMAND';
     let msgContent = msg.content.replace('\u3000', ' ');
     let spaceIndex = msgContent.indexOf(' ');
@@ -158,12 +162,12 @@ class CommandManager {
           suffix = msgContent.substring(spaceIndex + 1, msgContent.length).trim();
         }
         try {
-          Promise.resolve(command.handle(bot, msg, suffix, config)).then(result => {
+          Promise.resolve(command.handle(bot, msg, suffix, this.config_)).then(result => {
             let success = typeof result !== typeof '';
             this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
-          }).catch(err => handleCommandError(msg, err, config, this.logger_));
+          }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));
         } catch (err) {
-          handleCommandError(msg, err, config, this.logger_);
+          handleCommandError(msg, err, this.config_, this.logger_);
         }
 
         return true;
