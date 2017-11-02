@@ -47,6 +47,24 @@ class SettingsCategory extends AbstractSettingElement {
     return this.name_;
   }
 
+  setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, channelsToApplyToString) {
+    // This is a category, not a setting. Return the category information to print.
+    return getConfigurationInstructionsString(currentSettings, this.fullyQualifiedName_);
+  }
+
+  getConfigurationInstructionsString(channelId, settings, desiredFullyQualifiedName) {
+    let prefix = '';
+    let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
+    if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
+      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
+    }
+    if (this.childrenType_ === this.categoryIdentifier_) {
+      return this.getConfigurationInstructionsStringForCategoryChildren_(prefix);
+    } else {
+      return this.getConfigurationInstructionsStringForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName);
+    }
+  }
+
   setChildren(children) {
     if (!children || children.length === 0) {
       return;
@@ -72,25 +90,6 @@ class SettingsCategory extends AbstractSettingElement {
       } else {
         this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_, this.config_.colorForSettingsSystemEmbeds, this.settingsCommand_));
       }
-    }
-  }
-
-  setNewValueFromUserFacingString(bot, msg, currentSettings, newValue, serverWide) {
-    // This is a category, not a setting. Return the category information to print.
-    return getConfigurationInstructionsString(bot, msg, currentSettings, this.fullyQualifiedName_);
-  }
-
-  getConfigurationInstructionsString(bot, msg, settings, desiredFullyQualifiedName) {
-    debugger;
-    let prefix = '';
-    let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
-    if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
-      prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
-    }
-    if (this.childrenType_ === this.categoryIdentifier_) {
-      return this.getConfigurationInstructionsStringForCategoryChildren_(prefix);
-    } else {
-      return this.getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName);
     }
   }
 
@@ -130,11 +129,11 @@ ${subCategoryListString}
 `;
   }
 
-  getConfigurationInstructionsStringForSettingsChildren_(prefix, bot, msg, settings, desiredFullyQualifiedName) {
+  getConfigurationInstructionsStringForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName) {
     let exampleSetting = this.children_[0].getFullyQualifiedUserFacingName();
-    let exampleValue = this.children_[0].getUserFacingExampleValues(bot, msg)[0];
+    let exampleValue = this.children_[0].getUserFacingExampleValues()[0];
     let settingsListString = this.children_
-      .map(child => '  ' + child.getFullyQualifiedUserFacingName() + ' -> ' + child.getCurrentUserFacingValue(bot, msg, settings)).join('\n');
+      .map(child => '  ' + child.getFullyQualifiedUserFacingName() + ' -> ' + child.getCurrentUserFacingValue(channelId, settings)).join('\n');
     let titleString;
     if (this.isTopLevel_) {
       titleString = 'Settings';
