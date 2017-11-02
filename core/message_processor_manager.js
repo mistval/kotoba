@@ -4,7 +4,7 @@ const FileSystemUtils = reload('./util/file_system_utils.js');
 const MessageProcessor = reload('./message_processor.js');
 const PublicError = reload('./../core/public_error.js');
 
-function handleError(msg, err, config, logger) {
+function handleError(msg, err, logger) {
   const loggerTitle = 'MESSAGE';
   let errDescription = err.logDescription || 'Exception or promise rejection';
   let internalErr = err instanceof PublicError ? err.internalErr : err;
@@ -57,11 +57,11 @@ class MessageProcessorManager {
   * @param {Config} config - The monochrome configuration.
   * @returns {Boolean} True if a message processor accepted responsibility to handle the message and did so, false otherwise.
   */
-  processInput(bot, msg, config) {
+  processInput(bot, msg) {
     const loggerTitle = 'MESSAGE';
     for (let processor of this.processors_) {
       try {
-        let result = processor.handle(bot, msg, config);
+        let result = processor.handle(bot, msg);
         if (result && result.then) {
           result.then(innerResult => {
             if (typeof innerResult === typeof '') {
@@ -69,7 +69,7 @@ class MessageProcessorManager {
             } else {
               this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
             }
-          }).catch(err => handleError(msg, err, config, this.logger_));
+          }).catch(err => handleError(msg, err, this.logger_));
           return true;
         } else if (typeof result === typeof '') {
           this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, result);
@@ -82,7 +82,7 @@ class MessageProcessorManager {
             '\' returned an invalid value. It should return true if it will handle the message, false if it will not. A string return value will be treated as true and logged as an error. A promise will be treated as true and resolved.');
         }
       } catch (err) {
-        handleError(msg, err, config, this.logger_);
+        handleError(msg, err, this.logger_);
       };
     }
 
