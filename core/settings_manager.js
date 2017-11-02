@@ -78,8 +78,8 @@ class SettingsManager {
     }
   }
 
-  getSetting(bot, msg, settingName) {
-    let setting = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(settingName);
+  getSetting(bot, msg, fullyQualifiedUserFacingSettingName) {
+    let setting = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedUserFacingSettingName);
     if (setting.getFullyQualifiedUserFacingName() !== settingName) {
       throw new Error('That setting doesn\'t exist in the settings hierarchy');
     }
@@ -93,9 +93,9 @@ class SettingsManager {
   }
 
   initiateSetSetting(bot, msg, fullyQualifiedName, value) {
-    let childToEdit = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(fullyQualifiedName);
+    let childToEdit = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
     if (childToEdit.getFullyQualifiedUserFacingName() !== fullyQualifiedName) {
-      return this.getConfigurationInstructionsString(bot, msg, fullyQualifiedName).then(resultStr => {
+      return this.getConfigurationInstructionsBotContent(bot, msg, fullyQualifiedName).then(resultStr => {
         return InitiateSetSettingResult.createErrorResult(resultStr);
       });
     }
@@ -110,27 +110,27 @@ class SettingsManager {
     let userResponseCallback = userResponseString => {
       return commitEdit(bot, msg, childToEdit, value, userResponseString);
     };
-    let result = InitiateSetSettingResult.createRequestInputResult(childToEdit.getRequestInputMessageString(), userResponseCallback);
+    let result = InitiateSetSettingResult.createRequestInputResult(childToEdit.getNextStepInstructionsForSettingSetting(), userResponseCallback);
     return Promise.resolve(result);
   }
 
-  getConfigurationInstructionsString(bot, msg, desiredFullyQualifedName) {
-    let child = this.rootSettingsCategory_.getChildForRelativeQualifiedUserFacingName(desiredFullyQualifedName);
+  getConfigurationInstructionsBotContent(bot, msg, desiredFullyQualifedName) {
+    let child = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(desiredFullyQualifedName);
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
       addSettingsObjectIfNotAlreadyInData(data);
-      return child.getConfigurationInstructionsString(msg.channel.id, data.settings, desiredFullyQualifedName)
+      return child.getConfigurationInstructionsBotContent(msg.channel.id, data.settings, desiredFullyQualifedName)
     });
   }
 }
 
-function commitEdit(bot, msg, childSettingToEdit, value, scopeString) {
+function commitEdit(bot, msg, childSettingToEdit, value, nextStepResponseString) {
   let serverId = getServerIdFromMessage(msg);
   let responseString;
   return persistence.editDataForServer(serverId, data => {
     data = addSettingsObjectIfNotAlreadyInData(data);
     let channelsInGuild = msg.channel.guild ? msg.channel.guild.channels : msg.channel;
-    responseString = childSettingToEdit.setNewValueFromUserFacingString(msg.channel.id, channelsInGuild, data.settings, value, scopeString);
+    responseString = childSettingToEdit.setNewValueFromUserFacingString(msg.channel.id, channelsInGuild, data.settings, value, nextStepResponseString);
     return data;
   }).then(data => {
     return responseString;

@@ -30,10 +30,11 @@ class SettingsCategory extends AbstractSettingElement {
     return new SettingsCategory(settingsBlob, '', categoryIdentifier, settingIdentifier, config);
   }
 
-  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
-    let child = this.getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName);
+  getChildForFullyQualifiedUserFacingName(fullyQualifiedName) {
+    debugger;
+    let child = this.getChildForFullyQualifiedUserFacingNameHelper_(fullyQualifiedName);
     if (child) {
-      return child.getChildForRelativeQualifiedUserFacingName(this.getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName));
+      return child.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
     } else {
       return this;
     }
@@ -43,25 +44,21 @@ class SettingsCategory extends AbstractSettingElement {
     return this.fullyQualifiedName_;
   }
 
-  getUnqualifiedUserFacingName() {
-    return this.name_;
-  }
-
   setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, channelsToApplyToString) {
     // This is a category, not a setting. Return the category information to print.
-    return getConfigurationInstructionsString(currentSettings, this.fullyQualifiedName_);
+    return getConfigurationInstructionsBotContent(currentSettings, this.fullyQualifiedName_);
   }
 
-  getConfigurationInstructionsString(channelId, settings, desiredFullyQualifiedName) {
+  getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedName) {
     let prefix = '';
     let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
     }
     if (this.childrenType_ === this.categoryIdentifier_) {
-      return this.getConfigurationInstructionsStringForCategoryChildren_(prefix);
+      return this.getConfigurationInstructionsBotContentForCategoryChildren_(prefix);
     } else {
-      return this.getConfigurationInstructionsStringForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName);
+      return this.getConfigurationInstructionsBotContentForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName);
     }
   }
 
@@ -93,22 +90,17 @@ class SettingsCategory extends AbstractSettingElement {
     }
   }
 
-  getChildForRelativeQualifiedUserFacingNameHelper_(relativeQualifiedName) {
-    let childName = relativeQualifiedName.split(this.settingsCategorySeparator_)[0];
-    if (childName) {
+  getChildForFullyQualifiedUserFacingNameHelper_(fullyQualifiedName) {
+    if (fullyQualifiedName !== this.fullyQualifiedName_) {
       for (let child of this.children_) {
-        if (child.getUnqualifiedUserFacingName() === childName) {
+        if (fullyQualifiedName.startsWith(child.getFullyQualifiedUserFacingName())) {
           return child;
         }
       }
     }
   }
 
-  getRelativeQualifiedUserFacingNameForChild_(relativeQualifiedName) {
-    return relativeQualifiedName.split(this.settingsCategorySeparator_).slice(1).join(this.settingsCategorySeparator_);
-  }
-
-  getConfigurationInstructionsStringForCategoryChildren_(prefix) {
+  getConfigurationInstructionsBotContentForCategoryChildren_(prefix) {
     let subCategories = this.children_.map(child => child.getFullyQualifiedUserFacingName());
     let subCategoryListString = subCategories.map(subCategory => '  ' + subCategory).join('\n');
     let titleString;
@@ -129,7 +121,7 @@ ${subCategoryListString}
 `;
   }
 
-  getConfigurationInstructionsStringForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName) {
+  getConfigurationInstructionsBotContentForSettingsChildren_(prefix, channelId, settings, desiredFullyQualifiedName) {
     let exampleSetting = this.children_[0].getFullyQualifiedUserFacingName();
     let exampleValue = this.children_[0].getUserFacingExampleValues()[0];
     let settingsListString = this.children_

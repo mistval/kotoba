@@ -38,7 +38,7 @@ class Settings {
   execute_(bot, msg, suffix, settingsManager) {
     let suffixParts = suffix.split(' ');
     if (suffixParts.length < 2) {
-      return settingsManager.getConfigurationInstructionsString(bot, msg, suffix).then(responseString => {
+      return settingsManager.getConfigurationInstructionsBotContent(bot, msg, suffix).then(responseString => {
         return msg.channel.createMessage(responseString);
       });
     } else {
