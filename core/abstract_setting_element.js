@@ -1,9 +1,8 @@
 'use strict'
 const requiredMethods = [
-  'getChildForRelativeQualifiedUserFacingName',
-  'getUnqualifiedUserFacingName',
+  'getChildForFullyQualifiedUserFacingName',
   'getFullyQualifiedUserFacingName',
-  'getConfigurationInstructionsString',
+  'getConfigurationInstructionsBotContent',
   'setNewValueFromUserFacingString'
 ];
 

@@ -152,12 +152,20 @@ function tryParseAllowedDatabaseFacingValues(allowedDatabaseFacingValues) {
   return allowedDatabaseFacingValues;
 }
 
+/** Represents a setting leaf, as opposed to a category of settings */
 class Setting extends AbstractSettingElement {
-  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds, serverSettingsCommand) {
+  /**
+  * @param {Object} settingsBlob - The raw, unsanitized data for the setting.
+  * @param {String} qualificationWithoutName - The qualification for this setting up until its parent category. (for example /commands/help/etc/etc/etc)
+  * @param {String} settingsCategorySeparator - The string that is used to separate the setting's qualification, like the /s in a filepath.
+  * @param {Number} colorForEmbeds - What color embeds returned by this class should be.
+  * @param {String} serverSettingsCommandName - The name of the command to interact with server settings.
+  */
+  constructor(settingsBlob, qualificationWithoutName, settingsCategorySeparator, colorForEmbeds, serverSettingsCommandName) {
     super();
     validateSettingsBlob(settingsBlob, settingsCategorySeparator);
     this.colorForEmbeds_ = colorForEmbeds;
-    this.serverSettingsCommand_ = serverSettingsCommand;
+    this.serverSettingsCommandName_ = serverSettingsCommandName;
     this.customValueTypeDescription_ = settingsBlob.customValueTypeDescription;
     this.isSetting = true;
     this.description_ = settingsBlob.description;
@@ -182,26 +190,37 @@ class Setting extends AbstractSettingElement {
     }
   }
 
-  getChildForRelativeQualifiedUserFacingName(relativeQualifiedName) {
+  /**
+  * Gets the child for the specified fully qualified name (that parameter is not needed so it is omitted)
+  * or if there isn't one, the nearest child. Since this class represents a leaf in the tree, the answer is always this.
+  */
+  getChildForFullyQualifiedUserFacingName() {
     return this;
   }
 
-  getUnqualifiedUserFacingName() {
-    return this.userFacingName_;
-  }
-
+  /**
+  * Gets the fully qualfied user facing name for this.
+  */
   getFullyQualifiedUserFacingName() {
     return this.fullyQualifiedUserFacingName_;
   }
 
-  getConfigurationInstructionsString(channelId, settings, desiredFullyQualifiedUserFacingName) {
+  /**
+  * Gets bot content instructing the user how to proceed at this level of the instructions hierarchy.
+  * @param {String} channelId - The channel that we are looking at the settings for.
+  * @param {Object} settings - The settings object from the database for the server we are looking at the settings for.
+  * @param {String} desiredFullyQualifiedUserFacingName - The fully qualified setting name we were searching for.
+  *   Since getChildForFullyQualifiedName returns the nearest matching child, even if there is no exact match,
+  *   the desiredFullyQualifiedUserFacingName may not be the one we landed on.
+  */
+  getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedUserFacingName) {
     let prefix = '';
     if (this.fullyQualifiedUserFacingName_ !== desiredFullyQualifiedUserFacingName) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedUserFacingName + '. Here are the settings for **' + this.fullyQualifiedDatabaseFacingName_ + '**\n\n';
     }
 
     let examplesString = this.getUserFacingExampleValues().map(exampleValue => {
-      return `${this.serverSettingsCommand_} ${this.fullyQualifiedUserFacingName_} ${exampleValue}`;
+      return `${this.serverSettingsCommandName_} ${this.fullyQualifiedUserFacingName_} ${exampleValue}`;
     }).join('\n');
 
     return {
@@ -219,6 +238,11 @@ class Setting extends AbstractSettingElement {
     }
   }
 
+  /**
+  * Get the current database facing value of this setting for the channel we are examining the settings for.
+  * @param {String} channelId - The ID of the channel we are looking at the settings for.
+  * @param {Object} settings - The settings object for the server we are looking at the settings for.
+  */
   getCurrentDatabaseFacingValue(channelId, settings) {
     let settingsForChannel = settings.channelSettings[channelId];
     if (settingsForChannel) {
@@ -234,14 +258,21 @@ class Setting extends AbstractSettingElement {
     return this.defaultDatabaseFacingValue_;
   }
 
+  /**
+  * Gets the current user facing value for the channel we are examing the settings for.
+  * @param {String} channelId - The ID of the channel we are looking at the settings for.
+  * @param {Object} settings - The settings object for the server we are looking at the settings for.
+  */
   getCurrentUserFacingValue(channelId, settings) {
     return this.convertDatabaseFacingValueToUserFacingValue_(this.getCurrentDatabaseFacingValue(channelId, settings));
   }
 
+  /** Gets the default user facing value of the setting. */
   getDefaultUserFacingValue() {
     return this.convertDatabaseFacingValueToUserFacingValue_(this.defaultDatabaseFacingValue_);
   }
 
+  /** Gets example(s) of values that can be used for this setting */
   getUserFacingExampleValues() {
     if (this.customUserFacingExampleValues_) {
       return this.customUserFacingExampleValues_;
@@ -250,33 +281,47 @@ class Setting extends AbstractSettingElement {
     }
   }
 
-  getRequestInputMessageString() {
+  /**
+  * Setting a setting is a two-step process. First you specify the new setting,
+  * then the bot will ask you which channel(s) you want to apply the setting to.
+  * After the user specifies the new setting, this method should be called to get
+  * instructions to show the user for the next step of the process.
+  */
+  getNextStepInstructionsForSettingSetting() {
     return `What channels should the new setting apply to? You can say **all**, or **here**, or specify a list of channels, for example: **#welcome #general #bot**. You can also say 'cancel'.`;
   }
 
-  setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, channelsToApplyToString) {
-    if (!channelsToApplyToString) {
-      channelsToApplyToString = 'all';
+  /**
+  * If possible, sets the new setting value, or rejects it.
+  * @param {String} currentChannelId - The channel the command was invoked in.
+  * @param {Array<Eris.Channel>} channelsInGuild - The array of channels for the server the command was invoked in.
+  * @param {Object} currentSetting - The settings object for the server the command was invoked in.
+  * @param {Object} newValue - The desired new value for this setting.
+  * @param {String} secondStepUserResponseString - What the user answered to "what channels do you want to apply this setting to"
+  */
+  setNewValueFromUserFacingString(currentChannelId, channelsInGuild, currentSettings, newValue, secondStepUserResponseString) {
+    if (!secondStepUserResponseString) {
+      secondStepUserResponseString = 'all';
     }
     if (!this.valueTypeStrategy_.validateUserFacingValue(newValue)) {
       return this.createValidationFailureString_();
     }
     let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(newValue);
-    channelsToApplyToString = channelsToApplyToString.toLowerCase();
+    secondStepUserResponseString = secondStepUserResponseString.toLowerCase();
 
-    if (channelsToApplyToString === 'cancel') {
+    if (secondStepUserResponseString === 'cancel') {
       return 'The settings were not changed.';
     }
-    if (channelsToApplyToString === 'all') {
+    if (secondStepUserResponseString === 'all') {
       currentSettings.serverSettings[this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
       clearValueFromChannelSettings(currentSettings.channelSettings, this.fullyQualifiedDatabaseFacingName_);
-    } else if (channelsToApplyToString === 'here') {
+    } else if (secondStepUserResponseString === 'here') {
       if (!currentSettings.channelSettings[currentChannelId]) {
         currentSettings.channelSettings[currentChannelId] = {};
       }
       currentSettings.channelSettings[currentChannelId][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
     } else {
-      let channelIds = extractChannelIdsFromString(channelsToApplyToString);
+      let channelIds = extractChannelIdsFromString(secondStepUserResponseString);
       let channelsNotInGuild = findChannelsNotInGuild(channelIds, channelsInGuild);
       if (channelsNotInGuild.length > 0) {
         return `The setting wasn't applied. I couldn't find channels: ${channelsNotInGuild.join(', ')} in this server.`;
@@ -288,7 +333,7 @@ class Setting extends AbstractSettingElement {
         currentSettings.channelSettings[channelId][this.fullyQualifiedDatabaseFacingName_] = databaseFacingValue;
       }
     }
-    let configurationInstructions = this.getConfigurationInstructionsString(currentChannelId, currentSettings);
+    let configurationInstructions = this.getConfigurationInstructionsBotContent(currentChannelId, currentSettings);
     configurationInstructions.content = 'Setting updated! Here is the updated setting.';
     return configurationInstructions;
   }
