@@ -10,7 +10,6 @@ Storage.clearSync();
 
 function createNextEdit(index) {
   persistence.editGlobalData(data => {
-    debugger;
     if (index < 100) {
       createNextEdit(index + 1);
     }
