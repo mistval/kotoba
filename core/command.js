@@ -3,6 +3,67 @@ const reload = require('require-reload')(require);
 const persistence = require('./persistence.js');
 const ErisUtils = reload('./util/eris_utils.js');
 
+function sanitizeCommandData(commandData) {
+  if (!commandData) {
+    throw new Error('No command data.');
+  } else if (!commandData.commandAliases) {
+    throw new Error('Command does not have command aliases.');
+  } else if (commandData.commandAliases.length === 0) {
+    throw new Error('Command does not have command aliases.');
+  } else if (typeof commandData.commandAliases === typeof '') {
+    commandData.commandAliases = [commandData.commandAliases];
+  }
+
+  let aliases = [];
+  for (let alias of commandData.commandAliases) {
+    if (typeof alias !== typeof '' || alias === '') {
+      throw new Error('Command alias is not a string, or is an empty string.');
+    }
+    aliases.push(alias.toLowerCase());
+  }
+
+  if (!commandData.action || typeof commandData.action !== 'function') {
+    throw new Error('Command does not have an action, or it is not a function.');
+  } else if (commandData.serverAdminOnly !== undefined && typeof commandData.serverAdminOnly !== typeof true) {
+    throw new Error('Invalid serverAdminOnly value');
+  } else if (commandData.botAdminOnly !== undefined && typeof commandData.botAdminOnly !== typeof true) {
+    throw new Error('Invalid botAdminOnly value');
+  } else if (commandData.canBeChannelRestricted !== undefined && typeof commandData.canBeChannelRestricted !== typeof true) {
+    throw new Error('Invalid canBeChannelRestricted value');
+  } else if (commandData.onlyInServer !== undefined && typeof commandData.onlyInServer !== typeof true) {
+    throw new Error('Invalid onlyInServer value');
+  } else if (commandData.canBeChannelRestricted === undefined) {
+    if (commandData.serverAdminOnly || commandData.botAdminOnly) {
+      commandData.canBeChannelRestricted = false;
+    } else {
+      commandData.canBeChannelRestricted = true;
+    }
+  } else {
+    commandData.canBeChannelRestricted = commandData.canBeChannelRestricted;
+  }
+
+  if (commandData.cooldown === undefined) {
+    commandData.cooldown = 0;
+  } else if (commandData.cooldown < 0) {
+    commandData.cooldown = 0;
+  } else if (typeof this.cooldown_ !== typeof 1.5) {
+    throw new Error('Invalid cooldown, it\'s not a number');
+  }
+  if (commandData.canBeChannelRestricted && (!commandData.uniqueId || typeof commandData.uniqueId !== typeof '')) {
+    throw new Error('Command has canBeChannelRestricted true (or undefined, defaulting to true), but does not have a uniqueId, or its uniqueId is not a string. Commands that can be channel restricted must have a uniqueId.');
+  }
+
+  if (typeof commandData.requiredSettings === typeof '') {
+    commandData.requiredSettings = [commandData.requiredSettings];
+  } else if (commandData.requiredSettings === undefined) {
+    commandData.requiredSettings = [];
+  }
+  if (commandData.requiredSettings.find(setting => typeof setting !== typeof '')) {
+    throw new Error('A required setting is not a string.');
+  }
+  return commandData;
+}
+
 /**
 * Represents a command that users can invoke.
 * @property {Array<String>} aliases - A list of aliases that should trigger this command.
@@ -14,67 +75,17 @@ class Command {
   * @param {Object} commandData - The raw command loaded from a command file.
   */
   constructor(commandData) {
-    if (!commandData) {
-      throw new Error('No command data.');
-    }
-    if (!commandData.commandAliases) {
-      throw new Error('Command does not have command aliases.');
-    }
-    if (typeof commandData.commandAliases === typeof '') {
-      commandData.commandAliases = [commandData.commandAliases];
-    }
-    if (commandData.commandAliases.length === 0) {
-      throw new Error('Command does not have command aliases.');
-    }
-    let aliases = [];
-    for (let alias of commandData.commandAliases) {
-      if (typeof alias !== typeof '' || alias === '') {
-        throw new Error('Command alias is not a string, or is an empty string.');
-      }
-      aliases.push(alias.toLowerCase());
-    }
-    if (!commandData.action || typeof commandData.action !== 'function') {
-      throw new Error('Command does not have an action, or it is not a function.');
-    }
-    if (commandData.serverAdminOnly !== undefined && typeof commandData.serverAdminOnly !== typeof true) {
-      throw new Error('Invalid serverAdminOnly value');
-    }
-    if (commandData.botAdminOnly !== undefined && typeof commandData.botAdminOnly !== typeof true) {
-      throw new Error('Invalid botAdminOnly value');
-    }
-    if (commandData.canBeChannelRestricted !== undefined && typeof commandData.canBeChannelRestricted !== typeof true) {
-      throw new Error('Invalid canBeChannelRestricted value');
-    }
-    if (commandData.onlyInServer !== undefined && typeof commandData.onlyInServer !== typeof true) {
-      throw new Error('Invalid onlyInServer value');
-    }
-
-    if (commandData.canBeChannelRestricted === undefined) {
-      if (commandData.serverAdminOnly || commandData.botAdminOnly) {
-        this.canBeChannelRestricted_ = false;
-      } else {
-        this.canBeChannelRestricted_ = true;
-      }
-    } else {
-      this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
-    }
-
+    commandData = sanitizeCommandData(commandData);
+    this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
     this.aliases = aliases;
     this.uniqueId = commandData.uniqueId;
     this.action_ = commandData.action;
     this.serverAdminOnly_ = !!commandData.serverAdminOnly;
     this.botAdminOnly_ = !!commandData.botAdminOnly;
     this.onlyInServer_ = !!commandData.onlyInServer;
-    this.cooldown_ = commandData.cooldown === undefined ? 0 : commandData.cooldown;
+    this.cooldown_ = commandData.cooldown = commandData.cooldown;
+    this.requiredSettings_ = commandData.requiredSettings;
     this.usersCoolingDown_ = [];
-
-    if (typeof this.cooldown_ !== typeof 1 || this.cooldown_ < 0) {
-      throw new Error('Invalid cooldown');
-    }
-
-    if (this.canBeChannelRestricted_ && (!this.uniqueId || typeof this.uniqueId !== typeof '')) {
-      throw new Error('Command has canBeChannelRestricted true (or undefined, defaulting to true), but does not have a uniqueId, or its uniqueId is not a string. Commands that can be channel restricted must have a uniqueId.');
-    }
   }
 
   createEnabledSetting() {
