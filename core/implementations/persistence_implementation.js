@@ -36,15 +36,15 @@ function keyForServerId(serverId) {
 
 class PersistenceImplementation {
   static getDataForUser(userId, persistenceState) {
-    return getData(keyForUserId(userId), persistenceState);
+    return getData(keyForUserId(userId));
   }
 
   static getDataForServer(serverId, persistenceState) {
-    return getData(keyForServerId(serverId), persistenceState);
+    return getData(keyForServerId(serverId));
   }
 
   static getGlobalData(persistenceState) {
-    return getData(GLOBAL_DATA_KEY, persistenceState);
+    return getData(GLOBAL_DATA_KEY);
   }
 
   static getAllowedChannelsForCommand(msg, commandId, persistenceState) {

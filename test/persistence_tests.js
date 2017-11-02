@@ -9,7 +9,7 @@ if (!persistence.initialized_) {
 Storage.clearSync();
 
 function createNextEdit(index) {
-  persistence.editGlobalData((data) => {
+  persistence.editGlobalData(data => {
     if (index < 100) {
       createNextEdit(index + 1);
     }
