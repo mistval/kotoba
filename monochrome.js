@@ -179,7 +179,7 @@ bot.on('ready', () => {
 
 bot.on('messageCreate', (msg) => {
   if (!msg.author) {
-    logger.logFailure(LOGGER_TITLE, 'Authorless message: ' + msg.content);
+    return; // Sometimes an empty message with no author appears. *shrug*
   }
   if (msg.author.bot) {
     return;
