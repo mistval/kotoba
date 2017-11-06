@@ -49,7 +49,7 @@ class SettingsCommand {
         return msg.channel.createMessage(responseString);
       });
     } else {
-      return settingsManager.initiateSetSetting(bot, msg, suffixParts[0], suffixParts[1]).then(results => {
+      return settingsManager.initiateSetSetting_(bot, msg, suffixParts[0], suffixParts[1]).then(results => {
         let errorString = results.errorString;
         if (errorString) {
           return msg.channel.createMessage(errorString);
@@ -139,21 +139,46 @@ class SettingsManager {
     }
   }
 
+  /**
+  * @returns {Array<Object>} Command data for the commands the SettingsManager wants to register with the CommandManager.
+  */
   collectCommands() {
     return [new SettingsCommand(this, this.config_)];
   }
 
-  getSetting(bot, msg, fullyQualifiedUserFacingSettingName) {
-    let setting = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedUserFacingSettingName);
-    if (setting.getFullyQualifiedUserFacingName() !== settingName) {
-      throw new Error('That setting doesn\'t exist in the settings hierarchy');
+  /**
+  * I just don't want to pass the whole SettingsManager into the CommandManager.
+  * I'd prefer looser coupling.
+  * @returns {Object} An object with a getSettings method.
+  */
+  createSettingsGetter() {
+    return {
+      getSettings: (bot, msg, fullyQualifiedUserFacingSettingNames) => {
+        return this.getSettings_(bot, msg, fullyQualifiedUserFacingSettingNames);
+      }
     }
-    if (!setting.isSetting) {
-      throw new Error('That setting (${settingName}) isn\'t a setting (maybe it\'s a category?)');
-    }
+  }
+
+  getSettings_(bot, msg, fullyQualifiedUserFacingSettingNames) {
     let serverId = getServerIdFromMessage(msg);
+    if (!fullyQualifiedUserFacingSettingNames || fullyQualifiedUserFacingSettingNames.length === 0) {
+      return Promise.resolve({});
+    }
     return persistence.getDataForServer(serverId).then(data => {
-      setting.getCurrentDatabaseFacingValue(data.settings, msg.channel.id);
+      debugger;
+      let settingsReturnBlob = {};
+      for (let fullyQualifiedUserFacingSettingName of fullyQualifiedUserFacingSettingNames) {
+        let setting = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedUserFacingSettingName);
+        if (setting.getFullyQualifiedUserFacingName() !== fullyQualifiedUserFacingSettingName) {
+          throw new Error('That setting doesn\'t exist in the settings hierarchy');
+        }
+        if (!setting.isSetting) {
+          throw new Error('That setting (${settingName}) isn\'t a setting (maybe it\'s a category?)');
+        }
+        let settingValue = setting.getCurrentDatabaseFacingValue(msg.channel.id, data.settings);
+        settingsReturnBlob[fullyQualifiedUserFacingSettingName] = settingValue;
+        return settingsReturnBlob;
+      }
     });
   }
 
