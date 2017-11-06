@@ -30,9 +30,12 @@ class MockMessage {
         this.member.roles.push(guildRoleId);
       }
     }
-    this.member.permission = {
-      json: authorPermissions || [],
-    };
+    this.member.permission = {};
+    this.member.permission.json = {};
+    authorPermissions = authorPermissions || [];
+    for (let authorPermission of authorPermissions) {
+      this.member.permission.json[authorPermission] = true;
+    }
   }
 
   delete() {
