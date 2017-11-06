@@ -1,9 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
 const Command = reload('./command.js');
-const AllowCommand = reload('./commands/allow_command.js');
-const UnrestrictCommand = reload('./commands/unrestrict_command.js');
-const BanCommand = reload('./commands/ban_command.js');
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
