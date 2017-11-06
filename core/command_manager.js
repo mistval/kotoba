@@ -108,7 +108,7 @@ class CommandManager {
 
         let duplicateAlias = getDuplicateAlias(command, this.commands_);
         if (duplicateAlias) {
-          this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile + '. Error: alias: ' + duplicateAlias + ' is not unique');
+          this.logger_.logFailure(loggerTitle, failureMessageStart + commandFile + '. Error: alias: ' + duplicateAlias + ' is not unique');
           continue;
         }
 

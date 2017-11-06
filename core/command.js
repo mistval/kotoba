@@ -161,7 +161,7 @@ class Command {
     });
   }
 
-  invokeAction_(bot, msg, suffix) {
+  invokeAction_(bot, msg, suffix, settings) {
     if (this.cooldown_ !== 0) {
       this.usersCoolingDown_.push(msg.author.id);
     }
@@ -170,7 +170,7 @@ class Command {
       this.usersCoolingDown_.splice(index, 1);
     },
     this.cooldown_ * 1000);
-    return this.action_(bot, msg, suffix);
+    return this.action_(bot, msg, suffix, settings);
   }
 
   getEnabledSettingUserFacingName_() {
