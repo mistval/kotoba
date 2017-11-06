@@ -3,7 +3,7 @@ const reload = require('require-reload')(require);
 const persistence = require('./persistence.js');
 const ErisUtils = reload('./util/eris_utils.js');
 
-function sanitizeCommandData(commandData) {
+function sanitizeCommandData(commandData, settingsCategorySeparator) {
   if (!commandData) {
     throw new Error('No command data.');
   } else if (!commandData.commandAliases) {
@@ -62,6 +62,9 @@ function sanitizeCommandData(commandData) {
   if (commandData.requiredSettings.find(setting => typeof setting !== typeof '')) {
     throw new Error('A required setting is not a string.');
   }
+  if (settingsCategorySeparator && commandData.commandAliases.find(alias => alias.indexOf(settingsCategorySeparator) !== -1)) {
+    throw new Error(`An alias contains the settings category separator (${settingsCategorySeparator}). It must not.`);
+  }
   return commandData;
 }
 
@@ -75,24 +78,25 @@ class Command {
   /**
   * @param {Object} commandData - The raw command loaded from a command file.
   */
-  constructor(commandData) {
-    commandData = sanitizeCommandData(commandData);
+  constructor(commandData, settingsCategorySeparator) {
+    commandData = sanitizeCommandData(commandData, settingsCategorySeparator);
     this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
     this.aliases = commandData.commandAliases;
     this.uniqueId = commandData.uniqueId;
+    this.requiredSettings_ = commandData.requiredSettings;
     this.action_ = commandData.action;
     this.serverAdminOnly_ = !!commandData.serverAdminOnly;
     this.botAdminOnly_ = !!commandData.botAdminOnly;
     this.onlyInServer_ = !!commandData.onlyInServer;
     this.cooldown_ = commandData.cooldown = commandData.cooldown;
-    this.requiredSettings_ = commandData.requiredSettings;
     this.usersCoolingDown_ = [];
+    this.settingsCategorySeparator_ = settingsCategorySeparator;
   }
 
   createEnabledSetting() {
     if (this.canBeChannelRestricted_) {
       return {
-        userFacingName: this.aliases[0] + '_enabled',
+        userFacingName: this.getEnabledSettingUserFacingName_(),
         databaseFacingName: this.uniqueId + '_enabled',
         type: 'SETTING',
         description: `This setting controls whether the ${this.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
@@ -114,7 +118,7 @@ class Command {
   *    (Or if the error is a PublicError, or if it has a publicMessage property, the value of that property
   *    will be sent to the channel instead of the generic error message)
   */
-  handle(bot, msg, suffix, config) {
+  handle(bot, msg, suffix, config, settingsGetter, settingsCategoryFullyQualifiedUserFacingName) {
     if (this.usersCoolingDown_.indexOf(msg.author.id) !== -1) {
       ErisUtils.sendMessageAndDelete(msg, msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.');
       return 'Not cooled down';
@@ -142,29 +146,19 @@ class Command {
       }
     }
 
-    if (this.uniqueId && msg.channel.guild) {
-      return persistence.getAllowedChannelsForCommand(msg, this.uniqueId).then(allowedChannels => {
-        if (!allowedChannels) {
-          return this.invokeAction_(bot, msg, suffix);
-        }
-
-        if (allowedChannels.length === 0) {
-          ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this server.');
-          return 'Command disabled in server';
-        } else if (allowedChannels.indexOf(msg.channel.id) !== -1) {
-          return this.invokeAction_(bot, msg, suffix);
-        } else {
-          let allowedChannelsString = '';
-          for (let allowedChannel of allowedChannels) {
-            allowedChannelsString += '<#' + allowedChannel + '> ';
-          }
-          ErisUtils.sendMessageAndDelete(msg,  'To use that command, please go to one of these channels: ' + allowedChannelsString);
-          return 'Command disabled in channel';
-        }
-      });
-    } else {
-      return this.invokeAction_(bot, msg, suffix);
+    let requiredSettings = this.requiredSettings_;
+    let enabledSettingFullyQualifiedUserFacingName = this.getEnabledSettingFullyQualifiedUserFacingName_(settingsCategoryFullyQualifiedUserFacingName);
+    if (this.canBeChannelRestricted_) {
+      requiredSettings = requiredSettings.concat([enabledSettingFullyQualifiedUserFacingName]);
     }
+    return settingsGetter.getSettings(bot, msg, requiredSettings).then(settings => {
+      if (settings[enabledSettingFullyQualifiedUserFacingName] === true || settings[enabledSettingFullyQualifiedUserFacingName] === undefined) {
+        return this.invokeAction_(bot, msg, suffix, settings);
+      }
+
+      ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this channel.');
+      return 'Command disabled';
+    });
   }
 
   invokeAction_(bot, msg, suffix) {
@@ -177,6 +171,14 @@ class Command {
     },
     this.cooldown_ * 1000);
     return this.action_(bot, msg, suffix);
+  }
+
+  getEnabledSettingUserFacingName_() {
+    return this.aliases[0];
+  }
+
+  getEnabledSettingFullyQualifiedUserFacingName_(fullyQualifiedUserFacingCategoryName) {
+    return fullyQualifiedUserFacingCategoryName + this.settingsCategorySeparator_ + this.getEnabledSettingUserFacingName_();
   }
 }
 

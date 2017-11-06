@@ -5,6 +5,8 @@ const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
 
+const COMMAND_CATEGORY_NAME = 'enabled_commands';
+
 function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
   let errDescription = err.logDescription;
@@ -48,7 +50,7 @@ function createSettingsForCommands(userCommands) {
 function createSettingsCategoryForCommands(userCommands) {
   return {
     type: 'CATEGORY',
-    name: 'commands',
+    name: COMMAND_CATEGORY_NAME,
     children: createSettingsForCommands(userCommands),
   }
 }
@@ -63,12 +65,13 @@ class CommandManager {
   * @param {Function} reloadAction - The function that the reload command should invoke to initiate a reload.
   * @param {Logger} logger - The logger to log to.
   */
-  constructor(directory, reloadAction, logger, config) {
+  constructor(directory, reloadAction, logger, config, settingsGetter) {
     this.commands_ = [];
     this.reloadAction_ = reloadAction;
     this.logger_ = logger;
     this.directory_ = directory;
     this.config_ = config;
+    this.settingsGetter_ = settingsGetter;
   }
 
   /**
@@ -93,7 +96,7 @@ class CommandManager {
         const failureMessageStart = 'Failed to load command with uniqueId: ' + commandData.uniqueId;
         let command;
         try {
-          command = new Command(commandData);
+          command = new Command(commandData, this.config_.settingsCategorySeparator);
         } catch (err) {
           this.logger_.logFailure(loggerTitle, failureMessageStart + '.', err);
           continue;
@@ -109,11 +112,6 @@ class CommandManager {
           continue;
         }
 
-        if (this.config_.settingsCategorySeparator && command.aliases.find(alias => alias.indexOf(this.config_.settingsCategorySeparator) !== -1)) {
-          this.logger_.logFailure(loggerTitle, failureMessageStart +
-            `. Error: an alias contains the settings category separator (${this.config_.settingsCategorySeparator}). It must not.`);
-          continue;
-        }
         this.commands_.push(command);
       }
 
@@ -159,7 +157,7 @@ class CommandManager {
           suffix = msgContent.substring(spaceIndex + 1, msgContent.length).trim();
         }
         try {
-          Promise.resolve(command.handle(bot, msg, suffix, this.config_)).then(result => {
+          Promise.resolve(command.handle(bot, msg, suffix, this.config_, this.settingsGetter_, COMMAND_CATEGORY_NAME)).then(result => {
             let success = typeof result !== typeof '';
             this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
           }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));
