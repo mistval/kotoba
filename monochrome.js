@@ -8,6 +8,7 @@ const navigationManager = require('./core/navigation_manager.js');
 
 const LOGGER_TITLE = 'CORE';
 const UPDATE_STATS_INTERVAL_IN_MS = 7200000; // 2 hours
+const SETTINGS_FILE_PATH = __dirname + '/server_settings.json';
 const UserMentionReplaceRegex = new RegExp('<@user>', 'g');
 const UserNameReplaceRegex = new RegExp('<user>', 'g');
 
@@ -35,7 +36,7 @@ function reloadCore() {
   commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger, config, settingsGetter);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load(settingsManagerCommands).then(() => {
-    settingsManager.load(commandManager.collectSettingsCategories(), [], config);
+    settingsManager.load(commandManager.collectSettingsCategories(), [SETTINGS_FILE_PATH], config);
   });
   messageProcessorManager.load();
 }

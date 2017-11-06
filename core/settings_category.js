@@ -24,11 +24,11 @@ class SettingsCategory extends AbstractSettingElement {
   */
   constructor(settingsBlob, parentFullyQualifiedName, categoryTypeIdentifier, settingTypeIdentifier, config) {
     super();
-    this.name_ = settingsBlob.name || '';
+    this.userFacingName_ = settingsBlob.userFacingName || '';
     this.config_ = config;
     this.settingTypeIdentifier_ = settingTypeIdentifier;
     this.settingsCategorySeparator_ = config.settingsCategorySeparator;
-    this.fullyQualifiedName_ = parentFullyQualifiedName ? parentFullyQualifiedName + this.settingsCategorySeparator_ + this.name_ : this.name_;
+    this.fullyQualifiedName_ = parentFullyQualifiedName ? parentFullyQualifiedName + this.settingsCategorySeparator_ + this.userFacingName_ : this.userFacingName_;
     this.isTopLevel_ = !this.fullyQualifiedName_;
     this.categoryTypeIdentifier_ = categoryTypeIdentifier;
     this.children_ = [];
@@ -112,7 +112,7 @@ class SettingsCategory extends AbstractSettingElement {
     }
     this.childrenType_ = children[0].type;
     if (!children.every(child => child.type === this.childrenType_)) {
-      throwError(`A settings category has children of different type. They should all either be '${this.categoryTypeIdentifier_}'' or '${this.settingTypeIdentifier_}'. They cannot be mixed.`, children);
+      throwError(`A settings category has children of different type. They should all either be '${this.categoryTypeIdentifier_}' or '${this.settingTypeIdentifier_}'. They cannot be mixed.`, children);
     }
     this.children_ = [];
     for (let child of children) {
@@ -122,7 +122,7 @@ class SettingsCategory extends AbstractSettingElement {
         throwError(`A child has an invalid type. It should be a string, either '${this.categoryTypeIdentifier_}'' or '${this.settingTypeIdentifier_}'.`, children);
       } else if (this.children_.find(otherChild => otherChild.userFacingName === child.userFacingName)) {
         throwError('Two children have the same userFacingName.', children);
-      } else if (this.children_.find(otherChild => otherChild.databaseFacingName === child.databaseFacingName)) {
+      } else if (child.databaseFacingName && this.children_.find(otherChild => otherChild.databaseFacingName === child.databaseFacingName)) {
         throwError('Two children have the same databaseFacingName.', children);
       } else if (child.type === this.categoryTypeIdentifier_) {
         let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryTypeIdentifier_, this.settingTypeIdentifier_, this.config_)
