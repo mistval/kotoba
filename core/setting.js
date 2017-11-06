@@ -63,10 +63,10 @@ class ValueTypeStrategy {
   constructor(
     convertUserFacingValueToDatabaseFacingValue,
     convertDatabaseFacingValueToUserFacingValue,
-    validateUserFacingValue) {
+    validateUserFacingValueType) {
       this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
       this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
-      this.validateUserFacingValue = validateUserFacingValue;
+      this.validateUserFacingValueType = validateUserFacingValueType;
   }
 }
 
@@ -184,7 +184,7 @@ class Setting extends AbstractSettingElement {
       this.valueTypeStrategy_ = new ValueTypeStrategy(
         settingsBlob.customConvertFromUserToDatabaseFacingValue,
         settingsBlob.customConvertFromDatabaseToUserFacingValue,
-        settingsBlob.customValidateUserFacingValue);
+        settingsBlob.customvalidateUserFacingValueType);
     } else {
       this.valueTypeStrategy_ = strategyForValueType[this.valueType_];
     }
@@ -311,12 +311,15 @@ class Setting extends AbstractSettingElement {
     if (!secondStepUserResponseString) {
       secondStepUserResponseString = 'all';
     }
-    if (!this.valueTypeStrategy_.validateUserFacingValue(newValue)) {
+    if (!this.valueTypeStrategy_.validateUserFacingValueType(newValue)) {
       return this.createValidationFailureString_();
     }
     let databaseFacingValue = this.convertUserFacingValueToDatabaseFacingValue_(newValue);
-    secondStepUserResponseString = secondStepUserResponseString.toLowerCase();
+    if (!this.validateNewDatabaseFacingValue_(databaseFacingValue)) {
+      return this.createValidationFailureString_();
+    }
 
+    secondStepUserResponseString = secondStepUserResponseString.toLowerCase();
     if (secondStepUserResponseString === 'cancel') {
       return 'The settings were not changed.';
     }

@@ -167,6 +167,7 @@ class SettingsManager {
       return Promise.resolve({});
     }
     return persistence.getDataForServer(serverId).then(data => {
+      data = addSettingsObjectIfNotAlreadyInData(data);
       let settingsReturnBlob = {};
       for (let fullyQualifiedUserFacingSettingName of fullyQualifiedUserFacingSettingNames) {
         let setting = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedUserFacingSettingName);

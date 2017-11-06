@@ -6,11 +6,11 @@
     [
       {
         "type": "SETTING",
-        "userFacingName": "magic_number",
-        "description": "This setting lets server admins specify a magic number. You can then use the bot!magicnumber command to see the magic number in a channel.",
+        "userFacingName": "countdown_start",
+        "description": "This setting controls what number I'll count down from when you use the bot!countdown command.",
         "valueType": "INTEGER",
-        "defaultDatabaseFacingValue": 1,
-        "allowedDatabaseFacingValues": "Range(0, 100)"
+        "defaultDatabaseFacingValue": 10,
+        "allowedDatabaseFacingValues": "Range(1, 10)"
       }
     ]
   }
