@@ -28,11 +28,12 @@ function reloadCore() {
   persistence.reload();
   navigationManager.reload();
 
-  settingsManager = new (reload('./core/settings_manager.js'))(logger);
+  settingsManager = new (reload('./core/settings_manager.js'))(logger, config);
+  let settingsManagerCommands = settingsManager.collectCommands();
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
   commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger, config);
   RepeatingQueue = reload('./core/repeating_queue.js');
-  commandManager.load(settingsManager, config).then(() => {
+  commandManager.load(settingsManagerCommands).then(() => {
     settingsManager.load(commandManager.collectSettingsCategories(), [], config);
   });
   messageProcessorManager.load();

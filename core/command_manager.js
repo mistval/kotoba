@@ -7,11 +7,9 @@ const BanCommand = reload('./commands/ban_command.js');
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
-const SettingsCommand = reload('./commands/settings.js');
 
 function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
-  this.config_ = config;
   let errDescription = err.logDescription;
   let publicMessage = err.publicMessage;
   if (!publicMessage && err.message.indexOf('Missing Permissions') !== -1 && config.missingPermissionsErrorMessage) {
@@ -79,24 +77,32 @@ class CommandManager {
   /**
   * Loads commands. Can be called to reload commands.
   */
-  load() {
+  load(extraCommandDatas) {
     const loggerTitle = 'COMMAND MANAGER';
-    const FailedToLoadMessageStart = 'Failed to load command from file: ';
+    let commandDatasToLoad = extraCommandDatas || [];
     this.commands_ = [];
     return FileSystemUtils.getFilesInDirectory(this.directory_).then((commandFiles) => {
       for (let commandFile of commandFiles) {
-        let command;
-
         try {
-          let commandInformation = reload(commandFile);
-          command = new Command(commandInformation);
+          let commandData = reload(commandFile);
+          commandDatasToLoad.push(commandData);
         } catch (e) {
-          this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile, e);
+          this.logger_.logFailure(loggerTitle, 'Failed to load command from file: ' + commandFile, e);
           continue;
         }
+      }
 
-        if (command.uniqueId && this.commands_.find(cmd => cmd.uniqueId === command.uniqueId)) {
-          this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile + '. Error: uniqueId: ' + command.uniqueId + ' not unique');
+      for (let commandData of commandDatasToLoad) {
+        const failureMessageStart = 'Failed to load command with uniqueId: ' + commandData.uniqueId;
+        let command;
+        try {
+          command = new Command(commandData);
+        } catch (err) {
+          this.logger_.logFailure(loggerTitle, failureMessageStart + '.', err);
+          continue;
+        }
+        if (commandData.uniqueId && this.commands_.find(cmd => cmd.uniqueId === commandData.uniqueId)) {
+          this.logger_.logFailure(loggerTitle, failureMessageStart + '. Error: uniqueId: ' + commandData.uniqueId + ' not unique');
           continue;
         }
 
@@ -107,18 +113,12 @@ class CommandManager {
         }
 
         if (this.config_.settingsCategorySeparator && command.aliases.find(alias => alias.indexOf(this.config_.settingsCategorySeparator) !== -1)) {
-          this.logger_.logFailure(loggerTitle, FailedToLoadMessageStart + commandFile +
+          this.logger_.logFailure(loggerTitle, failureMessageStart +
             `. Error: an alias contains the settings category separator (${this.config_.settingsCategorySeparator}). It must not.`);
           continue;
         }
         this.commands_.push(command);
       }
-
-      let userCommands = this.commands_.slice();
-      this.commands_.push(new Command(new AllowCommand(userCommands)));
-      this.commands_.push(new Command(new UnrestrictCommand(userCommands)));
-      this.commands_.push(new Command(new BanCommand(userCommands)));
-      this.settingsCategory_ = createSettingsCategoryForCommands(userCommands);
 
       if (this.reloadAction_) {
         this.commands_.push(new Command(new ReloadCommand(this.reloadAction_)));
@@ -133,7 +133,7 @@ class CommandManager {
   * @returns {Array<SettingsCategory>} The settings categories this subsystem wants to register.
   */
   collectSettingsCategories() {
-    return [this.settingsCategory_];
+    return [createSettingsCategoryForCommands(this.commands_)];
   }
 
   /**

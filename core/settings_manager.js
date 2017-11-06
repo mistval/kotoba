@@ -2,9 +2,69 @@
 const reload = require('require-reload')(require);
 const SettingsCategory = reload('./settings_category.js');
 const persistence = require('./persistence.js');
+const userAndChannelHook = require('./message_processors/user_and_channel_hook.js');
 
 const CATEGORY_IDENTIFIER = 'CATEGORY';
 const SETTING_IDENTIFIER = 'SETTING';
+const LOGGER_TITLE = 'SETTINGS';
+
+const NEXT_STEP_EXPIRATION_TIME_IN_MS = 1000 * 120;
+
+/**
+* A command for displaying and changing settings.
+*/
+class SettingsCommand {
+  /**
+  * @param {Array<Command>} settingsManager - The settings manager controlling the settings.
+  * @param {Object} config - The monochrome config object.
+  */
+  constructor(settingsManager, config) {
+    this.commandAliases = config.serverSettingsCommandAliases;
+    this.canBeChannelRestricted = false;
+    this.serverAdminOnly = true;
+    this.action = (bot, msg, suffix) => this.execute_(bot, msg, suffix, settingsManager);
+  }
+
+  static registerHook_(msg, userResponseCallback) {
+    let hook = userAndChannelHook.registerHook(msg.author.id, msg.channel.id, message => {
+      hook.unregister();
+      let result = userResponseCallback(message);
+      return result.then(resultString => {
+        return msg.channel.createMessage(resultString);
+      });
+    });
+    setTimeout(() => {
+        if (hook.getIsRegistered()) {
+          hook.unregister();
+          msg.channel.createMessage('The settings were not changed.');
+        }
+      },
+      NEXT_STEP_EXPIRATION_TIME_IN_MS);
+  }
+
+  execute_(bot, msg, suffix, settingsManager) {
+    let suffixParts = suffix.split(' ');
+    if (suffixParts.length < 2) {
+      return settingsManager.getConfigurationInstructionsBotContent_(bot, msg, suffix).then(responseString => {
+        return msg.channel.createMessage(responseString);
+      });
+    } else {
+      return settingsManager.initiateSetSetting(bot, msg, suffixParts[0], suffixParts[1]).then(results => {
+        let errorString = results.errorString;
+        if (errorString) {
+          return msg.channel.createMessage(errorString);
+        } else {
+          let nextStepInstructions = results.nextStepInstructions;
+          let userResponseCallback = results.userResponseCallback;
+          if (userResponseCallback) {
+            SettingsCommand.registerHook(msg, userResponseCallback);
+          }
+          return msg.channel.createMessage(nextStepInstructions);
+        }
+      });
+    }
+  }
+}
 
 function addSettingsObjectIfNotAlreadyInData(data) {
   if (!data.settings) {
@@ -50,8 +110,9 @@ class SettingsManager {
   * @param {Array<String>} settingsFilesPaths - Paths to the files containing the settions information.
   * @param {Logger} logger - The logger to log to
   */
-  constructor(logger) {
+  constructor(logger, config) {
     this.logger_ = logger;
+    this.config_ = config;
   }
 
   /**
@@ -78,6 +139,10 @@ class SettingsManager {
     }
   }
 
+  collectCommands() {
+    return [new SettingsCommand(this, this.config_)];
+  }
+
   getSetting(bot, msg, fullyQualifiedUserFacingSettingName) {
     let setting = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedUserFacingSettingName);
     if (setting.getFullyQualifiedUserFacingName() !== settingName) {
@@ -92,10 +157,14 @@ class SettingsManager {
     });
   }
 
-  initiateSetSetting(bot, msg, fullyQualifiedName, value) {
+  reportError_(err) {
+    this.logger_.logFailure(LOGGER_TITLE, 'Error processing input as settings command.', err);
+  }
+
+  initiateSetSetting_(bot, msg, fullyQualifiedName, value) {
     let childToEdit = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
     if (childToEdit.getFullyQualifiedUserFacingName() !== fullyQualifiedName) {
-      return this.getConfigurationInstructionsBotContent(bot, msg, fullyQualifiedName).then(resultStr => {
+      return this.getConfigurationInstructionsBotContent_(bot, msg, fullyQualifiedName).then(resultStr => {
         return InitiateSetSettingResult.createErrorResult(resultStr);
       });
     }
@@ -114,7 +183,7 @@ class SettingsManager {
     return Promise.resolve(result);
   }
 
-  getConfigurationInstructionsBotContent(bot, msg, desiredFullyQualifedName) {
+  getConfigurationInstructionsBotContent_(bot, msg, desiredFullyQualifedName) {
     let child = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(desiredFullyQualifedName);
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
