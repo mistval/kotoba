@@ -62,12 +62,22 @@ class SettingsCategory extends AbstractSettingElement {
   * @returns {(Setting|SettingsCategory)} The child for the specified fully qualified name, or if there isn't one, the nearest child.
   */
   getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedName) {
-    let child = this.getChildForFullyQualifiedUserFacingNameHelper_(desiredFullyQualifiedName);
-    if (child) {
-      return child.getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedName);
-    } else {
+    if (desiredFullyQualifiedName === this.getFullyQualifiedUserFacingName()) {
       return this;
     }
+    for (let child of this.children_) {
+      let foundChild = child.getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedName);
+      if (foundChild) {
+        return foundChild;
+      }
+    }
+    if (desiredFullyQualifiedName.startsWith(this.getFullyQualifiedUserFacingName() + this.settingsCategorySeparator_)) {
+      return this;
+    }
+    if (this.isTopLevel_) {
+      return this;
+    }
+    return undefined;
   }
 
   /**
