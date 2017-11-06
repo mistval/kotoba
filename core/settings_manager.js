@@ -67,7 +67,7 @@ class SettingsCommand {
 }
 
 function addSettingsObjectIfNotAlreadyInData(data) {
-  if (!data.settings) {
+  if (!data.settings || !data.settings.serverSettings || !data.settings.channelSettings) {
     data.settings = {
       serverSettings: {},
       channelSettings: {},
