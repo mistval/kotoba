@@ -191,12 +191,15 @@ class Setting extends AbstractSettingElement {
   }
 
   /**
-  * Gets the child for the specified fully qualified name (that parameter is not needed so it is omitted)
-  * or if there isn't one, the nearest child. Since this class represents a leaf in the tree, the answer is always this.
-  * @returns {Setting} The child for the fully qualified name (always 'this' because a Setting has no children).
+  * If this settings matches the one being sought, return it.
+  * @param {String} desiredFullyQualifiedUserFacingName - The name of the setting being sought.
+  * @returns {Setting} Returns this if this matches the desired user facing name. Undefined otherwise.
   */
-  getChildForFullyQualifiedUserFacingName() {
-    return this;
+  getChildForFullyQualifiedUserFacingName(desiredFullyQualifiedUserFacingName) {
+    if (this.fullyQualifiedUserFacingName_ === desiredFullyQualifiedUserFacingName) {
+      return this;
+    }
+    return undefined;
   }
 
   /**
