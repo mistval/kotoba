@@ -1,0 +1,17 @@
+[
+  {
+    "type": "CATEGORY",
+    "userFacingName": "fun",
+    "children":
+    [
+      {
+        "type": "SETTING",
+        "userFacingName": "magic_number",
+        "description": "This setting lets server admins specify a magic number. You can then use the bot!magicnumber command to see the magic number in a channel.",
+        "valueType": "INTEGER",
+        "defaultDatabaseFacingValue": 1,
+        "allowedDatabaseFacingValues": "Range(0, 100)"
+      }
+    ]
+  }
+]

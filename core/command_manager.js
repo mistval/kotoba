@@ -50,7 +50,7 @@ function createSettingsForCommands(userCommands) {
 function createSettingsCategoryForCommands(userCommands) {
   return {
     type: 'CATEGORY',
-    name: COMMAND_CATEGORY_NAME,
+    userFacingName: COMMAND_CATEGORY_NAME,
     children: createSettingsForCommands(userCommands),
   }
 }

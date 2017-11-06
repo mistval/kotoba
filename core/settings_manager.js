@@ -124,10 +124,12 @@ class SettingsManager {
     let categories = [];
     for (let settingsFilePath of settingsCategoriesFilePaths) {
       try {
-        let categoryData = reload(settingsFilePath);
-        categories.push(categoryData);
+        let categoryDatas = reload(settingsFilePath);
+        for (let categoryData of categoryDatas) {
+          categories.push(categoryData);
+        }
       } catch (err) {
-        this.logger_.logFailure(loggerTitle, 'Failed to load settings category from file: ' + settingsFilePath, internalErr);
+        this.logger_.logFailure(loggerTitle, 'Failed to load settings category from file: ' + settingsFilePath, err);
       }
     }
 

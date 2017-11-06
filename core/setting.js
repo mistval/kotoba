@@ -398,7 +398,7 @@ class Setting extends AbstractSettingElement {
       return arbitraryAllowedValuesForType[this.valueType_];
     }
     if (this.allowedDatabaseFacingValues_ instanceof Range) {
-      return prettyPrintedValueType + ' between ${this.allowedDatabaseFacingValues_.getLower()} and ${this.allowedDatabaseFacingValues_.getUpper()}';
+      return prettyPrintedValueType + ` between ${this.allowedDatabaseFacingValues_.getLower()} and ${this.allowedDatabaseFacingValues_.getUpper()}`;
     }
     if (Array.isArray(this.allowedDatabaseFacingValues_)) {
       return 'One of: ' + this.allowedDatabaseFacingValues_.join(', ');
