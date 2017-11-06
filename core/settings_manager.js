@@ -57,7 +57,7 @@ class SettingsCommand {
           let nextStepInstructions = results.nextStepInstructions;
           let userResponseCallback = results.userResponseCallback;
           if (userResponseCallback) {
-            SettingsCommand.registerHook(msg, userResponseCallback);
+            SettingsCommand.registerHook_(msg, userResponseCallback);
           }
           return msg.channel.createMessage(nextStepInstructions);
         }
