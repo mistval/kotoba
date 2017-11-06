@@ -179,8 +179,8 @@ class SettingsManager {
         }
         let settingValue = setting.getCurrentDatabaseFacingValue(msg.channel.id, data.settings);
         settingsReturnBlob[fullyQualifiedUserFacingSettingName] = settingValue;
-        return settingsReturnBlob;
       }
+      return settingsReturnBlob;
     });
   }
 
