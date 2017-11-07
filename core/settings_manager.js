@@ -124,7 +124,10 @@ class SettingsManager {
 
     try {
       this.rootSettingsCategory_ = SettingsCategory.createRootCategory(CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
-      this.rootSettingsCategory_.setChildren(settingsCategoriesData.concat(categoriesFromFilesData));
+      let childCategories = settingsCategoriesData.concat(categoriesFromFilesData);
+      if (childCategories && childCategories.length > 0) {
+        this.rootSettingsCategory_.setChildren(settingsCategoriesData.concat(categoriesFromFilesData));
+      }
     } catch (err) {
       this.logger_.logFailure(loggerTitle, 'Failed to load settings', err);
     }
