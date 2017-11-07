@@ -1,6 +1,6 @@
 'use strict'
 /**
-* Send a message as the bot. }eval [javascript code]
+* Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
 */
 module.exports = {
   commandAliases: ['}eval'],

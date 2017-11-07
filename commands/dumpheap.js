@@ -19,6 +19,8 @@ module.exports = {
     }
     if (!suffix) {
       suffix = undefined;
+    } else {
+      suffix = suffix + '.heapsnapshot';
     }
     heapDump.writeSnapshot(suffix, (err, filename) => {
       if (err) {

@@ -1,6 +1,6 @@
 'use strict'
 /**
-* Get a text file list of all servers the bot is in, and all their channels.
+* Get a text file list of all servers the bot is in.
 * Syntax: }servers
 */
 module.exports = {
