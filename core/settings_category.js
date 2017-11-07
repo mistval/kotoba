@@ -48,10 +48,7 @@ class SettingsCategory extends AbstractSettingElement {
   * @returns {SettingsCategory} The created SettingsCategory.
   */
   static createRootCategory(categoryTypeIdentifier, settingTypeIdentifier, config) {
-    let settingsBlob = {
-      name: '',
-    };
-    return new SettingsCategory(settingsBlob, '', categoryTypeIdentifier, settingTypeIdentifier, config);
+    return new SettingsCategory({}, '', categoryTypeIdentifier, settingTypeIdentifier, config);
   }
 
   /**
@@ -105,7 +102,7 @@ class SettingsCategory extends AbstractSettingElement {
   */
   getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedName) {
     let prefix = '';
-    let prefixExtention = this.fullyQualifiedName_ ? ' for **' + this.fullyQualifiedName_ + '**': '';
+    let prefixExtention = this.isTopLevel_ ? '' : ' for **' + this.fullyQualifiedName_ + '**';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
       prefix = 'I didn\'t find settings for ' + desiredFullyQualifiedName + '. Here are the settings' + prefixExtention + '.\n';
     }
@@ -140,16 +137,6 @@ class SettingsCategory extends AbstractSettingElement {
         childCategory.setChildren(child.children);
       } else {
         this.children_.push(new Setting(child, this.fullyQualifiedName_, this.settingsCategorySeparator_, this.config_.colorForSettingsSystemEmbeds, this.settingsCommand_));
-      }
-    }
-  }
-
-  getChildForFullyQualifiedUserFacingNameHelper_(fullyQualifiedName) {
-    if (fullyQualifiedName !== this.fullyQualifiedName_) {
-      for (let child of this.children_) {
-        if (fullyQualifiedName.startsWith(child.getFullyQualifiedUserFacingName())) {
-          return child;
-        }
       }
     }
   }
