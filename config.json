@@ -11,7 +11,15 @@
     "bot!addquote",
     "bot!getquote",
     "bot!navigation",
-    "bot!countdown"
+    "bot!countdown",
+    "bot!about",
+    "}setavatar",
+    "}broadcast",
+    "}delete",
+    "}dumpheap",
+    "}eval",
+    "}servers",
+    "]settings"
   ],
   "useANSIColorsInLogFiles": true,
   "serverAdminRoleName": "monochrome",

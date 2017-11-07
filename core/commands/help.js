@@ -25,9 +25,6 @@ function createTopLevelHelpTextForCommands(commands, helpCommandAlias) {
 }
 
 function createTopLevelHelpTextForCommand(command) {
-  if (command.hidden) {
-    return;
-  }
   validateCommand(command);
   let firstAlias = command.aliases[0];
   let otherAliases = command.aliases.slice(1);
@@ -52,7 +49,6 @@ function indexOfAliasInList(command, list) {
   for (let alias of command.aliases) {
     let index = list.indexOf(alias);
     if (index !== -1) {
-      debugger;
       return index;
     }
   }
