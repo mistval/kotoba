@@ -101,6 +101,9 @@ class SettingsCategory extends AbstractSettingElement {
   * @returns {Object} Bot content instructing the user how to proceed at this level of the instructions hierarchy.
   */
   getConfigurationInstructionsBotContent(channelId, settings, desiredFullyQualifiedName) {
+    if (!this.children_ || this.children_.length === 0) {
+      return 'There are no settable settings.';
+    }
     let prefix = '';
     let prefixExtention = this.isTopLevel_ ? '' : ' for **' + this.fullyQualifiedName_ + '**';
     if (desiredFullyQualifiedName !== this.fullyQualifiedName_) {
