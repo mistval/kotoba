@@ -115,7 +115,7 @@ class SettingsCategory extends AbstractSettingElement {
 
   setChildren(children) {
     if (!children || children.length === 0) {
-      return;
+      throwError('Trying to set 0 children on a settings category.', children);
     }
     this.childrenType_ = children[0].type;
     if (!children.every(child => child.type === this.childrenType_)) {
