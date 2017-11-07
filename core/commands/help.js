@@ -19,8 +19,7 @@ function createTopLevelHelpTextForCommands(commands, helpCommandAlias) {
   for (let command of commands) {
     helpText += createTopLevelHelpTextForCommand(command) + '\n';
   }
-  helpText += '\n```\n\n';
-  helpText += `Say ${helpCommandAlias} [command name] to see more help for a command.`
+  helpText += `\nSay ${helpCommandAlias} [command name] to see more help for a command. (no, no brackets, silly)\n\`\`\``;
   return helpText;
 }
 
