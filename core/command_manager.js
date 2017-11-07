@@ -4,6 +4,7 @@ const Command = reload('./command.js');
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
+const HelpCommand = reload('./commands/help.js');
 
 const COMMAND_CATEGORY_NAME = 'enabled_commands';
 
@@ -102,7 +103,7 @@ class CommandManager {
         const failureMessageStart = 'Failed to load command with uniqueId: ' + commandData.uniqueId;
         let command;
         try {
-          command = new Command(commandData, this.config_.settingsCategorySeparator);
+          command = new Command(commandData, this.config_.settingsCategorySeparator, COMMAND_CATEGORY_NAME);
         } catch (err) {
           debugger;
           this.logger_.logFailure(loggerTitle, failureMessageStart + '.', err);
@@ -122,8 +123,16 @@ class CommandManager {
         this.commands_.push(command);
       }
 
+      if (this.config_.autoGenerateHelpCommand) {
+        let helpCommandData = new HelpCommand(this.commands_, this.config_);
+        let helpCommand = new Command(helpCommandData, this.config_.settingsCategorySeparator, COMMAND_CATEGORY_NAME);
+        this.commands_.push(helpCommand);
+      }
+
       if (this.reloadAction_) {
-        this.commands_.push(new Command(new ReloadCommand(this.reloadAction_)));
+        let reloadCommandData = new ReloadCommand(this.reloadAction_);
+        let reloadCommand = new Command(reloadCommandData, this.config_.settingsCategorySeparator, COMMAND_CATEGORY_NAME);
+        this.commands_.push(reloadCommand);
       }
     }).catch(err => {
       this.logger_.logFailure(loggerTitle, 'Error loading commands.', err);
@@ -165,7 +174,7 @@ class CommandManager {
           suffix = msgContent.substring(spaceIndex + 1, msgContent.length).trim();
         }
         try {
-          Promise.resolve(command.handle(bot, msg, suffix, this.config_, this.settingsGetter_, COMMAND_CATEGORY_NAME)).then(result => {
+          Promise.resolve(command.handle(bot, msg, suffix, this.config_, this.settingsGetter_)).then(result => {
             let success = typeof result !== typeof '';
             this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
           }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));

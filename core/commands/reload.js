@@ -13,6 +13,7 @@ class Reload {
     this.commandAliases = ['}reload'];
     this.canBeChannelRestricted = false;
     this.botAdminOnly = true;
+    this.hidden = true;
     this.action = (bot, msg, suffix) => this.execute_(bot, msg, suffix, reloadAction);
   }
 
