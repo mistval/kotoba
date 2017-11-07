@@ -78,9 +78,8 @@ class Command {
   /**
   * @param {Object} commandData - The raw command loaded from a command file.
   */
-  constructor(commandData, settingsCategorySeparator) {
+  constructor(commandData, settingsCategorySeparator, enabledCommandsSettingsCategoryFullyQualifiedUserFacingName) {
     commandData = sanitizeCommandData(commandData, settingsCategorySeparator);
-    this.canBeChannelRestricted_ = commandData.canBeChannelRestricted;
     this.aliases = commandData.commandAliases;
     this.uniqueId = commandData.uniqueId;
     this.requiredSettings_ = commandData.requiredSettings;
@@ -91,10 +90,18 @@ class Command {
     this.cooldown_ = commandData.cooldown = commandData.cooldown;
     this.usersCoolingDown_ = [];
     this.settingsCategorySeparator_ = settingsCategorySeparator;
+    this.shortDescription = commandData.shortDescription;
+    this.usageExample = commandData.usageExample;
+    this.hidden = !!commandData.hidden;
+    if (commandData.canBeChannelRestricted) {
+      this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
+        + settingsCategorySeparator
+        + this.getEnabledSettingUserFacingName_();
+    }
   }
 
   createEnabledSetting() {
-    if (this.canBeChannelRestricted_) {
+    if (this.enabledSettingFullyQualifiedUserFacingName_) {
       return {
         userFacingName: this.getEnabledSettingUserFacingName_(),
         databaseFacingName: this.uniqueId + '_enabled',
@@ -118,7 +125,7 @@ class Command {
   *    (Or if the error is a PublicError, or if it has a publicMessage property, the value of that property
   *    will be sent to the channel instead of the generic error message)
   */
-  handle(bot, msg, suffix, config, settingsGetter, settingsCategoryFullyQualifiedUserFacingName) {
+  handle(bot, msg, suffix, config, settingsGetter) {
     if (this.usersCoolingDown_.indexOf(msg.author.id) !== -1) {
       ErisUtils.sendMessageAndDelete(msg, msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.');
       return 'Not cooled down';
@@ -147,18 +154,23 @@ class Command {
     }
 
     let requiredSettings = this.requiredSettings_;
-    let enabledSettingFullyQualifiedUserFacingName = this.getEnabledSettingFullyQualifiedUserFacingName_(settingsCategoryFullyQualifiedUserFacingName);
-    if (this.canBeChannelRestricted_) {
-      requiredSettings = requiredSettings.concat([enabledSettingFullyQualifiedUserFacingName]);
+    if (this.enabledSettingFullyQualifiedUserFacingName_) {
+      requiredSettings = requiredSettings.concat([this.enabledSettingFullyQualifiedUserFacingName_]);
     }
     return settingsGetter.getSettings(bot, msg, requiredSettings).then(settings => {
-      if (settings[enabledSettingFullyQualifiedUserFacingName] === true || settings[enabledSettingFullyQualifiedUserFacingName] === undefined) {
+      if (!this.enabledSettingFullyQualifiedUserFacingName_
+          || settings[this.enabledSettingFullyQualifiedUserFacingName_] === true
+          || settings[this.enabledSettingFullyQualifiedUserFacingName_] === undefined) {
         return this.invokeAction_(bot, msg, suffix, settings);
       }
 
       ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this channel.');
       return 'Command disabled';
     });
+  }
+
+  getEnabledSettingFullyQualifiedUserFacingName() {
+    return this.enabledSettingFullyQualifiedUserFacingName_;
   }
 
   invokeAction_(bot, msg, suffix, settings) {
@@ -175,10 +187,6 @@ class Command {
 
   getEnabledSettingUserFacingName_() {
     return this.aliases[0];
-  }
-
-  getEnabledSettingFullyQualifiedUserFacingName_(fullyQualifiedUserFacingCategoryName) {
-    return fullyQualifiedUserFacingCategoryName + this.settingsCategorySeparator_ + this.getEnabledSettingUserFacingName_();
   }
 }
 
