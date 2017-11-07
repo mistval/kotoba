@@ -11,6 +11,8 @@ const UPDATE_STATS_INTERVAL_IN_MS = 7200000; // 2 hours
 const SETTINGS_FILE_PATH = __dirname + '/server_settings.json';
 const UserMentionReplaceRegex = new RegExp('<@user>', 'g');
 const UserNameReplaceRegex = new RegExp('<user>', 'g');
+const MESSAGE_PROCESSOR_DIR = __dirname + '/message_processors/';
+const COMMANDS_DIR = __dirname + '/commands';
 
 let messageProcessorManager;
 let commandManager;
@@ -32,13 +34,13 @@ function reloadCore() {
   settingsManager = new (reload('./core/settings_manager.js'))(logger, config);
   let settingsManagerCommands = settingsManager.collectCommands();
   let settingsGetter = settingsManager.createSettingsGetter();
-  messageProcessorManager = new (reload('./core/message_processor_manager.js'))(__dirname + '/message_processors/', logger);
-  commandManager = new (reload('./core/command_manager.js'))(__dirname + '/commands', reloadCore, logger, config, settingsGetter);
+  messageProcessorManager = new (reload('./core/message_processor_manager.js'))(logger);
+  commandManager = new (reload('./core/command_manager.js'))(COMMANDS_DIR, reloadCore, logger, config, settingsGetter);
   RepeatingQueue = reload('./core/repeating_queue.js');
   commandManager.load(settingsManagerCommands).then(() => {
     settingsManager.load(commandManager.collectSettingsCategories(), [SETTINGS_FILE_PATH], config);
   });
-  messageProcessorManager.load();
+  messageProcessorManager.load(MESSAGE_PROCESSOR_DIR);
 }
 
 function validateConfiguration(config) {
