@@ -48,10 +48,14 @@ function createSettingsForCommands(userCommands) {
 }
 
 function createSettingsCategoryForCommands(userCommands) {
+  let children = createSettingsForCommands(userCommands);
+  if (!children || children.length === 0) {
+    return;
+  }
   return {
     type: 'CATEGORY',
     userFacingName: COMMAND_CATEGORY_NAME,
-    children: createSettingsForCommands(userCommands),
+    children: children,
   }
 }
 
@@ -130,7 +134,8 @@ class CommandManager {
   * @returns {Array<SettingsCategory>} The settings categories this subsystem wants to register.
   */
   collectSettingsCategories() {
-    return [createSettingsCategoryForCommands(this.commands_)];
+    let category = createSettingsCategoryForCommands(this.commands_);
+    return category ? [category] : [];
   }
 
   /**
