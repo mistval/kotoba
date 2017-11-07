@@ -50,17 +50,12 @@ class SettingsCommand {
       });
     } else {
       return settingsManager.initiateSetSetting_(bot, msg, suffixParts[0], suffixParts[1]).then(results => {
-        let errorString = results.errorString;
-        if (errorString) {
-          return msg.channel.createMessage(errorString);
-        } else {
-          let nextStepInstructions = results.nextStepInstructions;
-          let userResponseCallback = results.userResponseCallback;
-          if (userResponseCallback) {
-            SettingsCommand.registerHook_(msg, userResponseCallback);
-          }
-          return msg.channel.createMessage(nextStepInstructions);
+        let nextStepInstructions = results.nextStepInstructions;
+        let userResponseCallback = results.userResponseCallback;
+        if (userResponseCallback) {
+          SettingsCommand.registerHook_(msg, userResponseCallback);
         }
+        return msg.channel.createMessage(nextStepInstructions);
       });
     }
   }
@@ -82,12 +77,6 @@ function getServerIdFromMessage(msg) {
 }
 
 class InitiateSetSettingResult {
-  static createErrorResult(errorString) {
-    let result = new InitiateSetSettingResult();
-    result.errorString = errorString;
-    return result;
-  }
-
   static createRequestInputResult(requestInputString, userResponseCallback) {
     let result = new InitiateSetSettingResult();
     result.nextStepInstructions = requestInputString;
@@ -121,12 +110,12 @@ class SettingsManager {
   */
   load(settingsCategoriesData, settingsCategoriesFilePaths, config) {
     const loggerTitle = 'SETTINGS MANAGER';
-    let categories = [];
+    let categoriesFromFilesData = [];
     for (let settingsFilePath of settingsCategoriesFilePaths) {
       try {
         let categoryDatas = reload(settingsFilePath);
         for (let categoryData of categoryDatas) {
-          categories.push(categoryData);
+          categoriesFromFilesData.push(categoryData);
         }
       } catch (err) {
         this.logger_.logFailure(loggerTitle, 'Failed to load settings category from file: ' + settingsFilePath, err);
@@ -135,7 +124,7 @@ class SettingsManager {
 
     try {
       this.rootSettingsCategory_ = SettingsCategory.createRootCategory(CATEGORY_IDENTIFIER, SETTING_IDENTIFIER, config);
-      this.rootSettingsCategory_.setChildren(settingsCategoriesData.concat(categories));
+      this.rootSettingsCategory_.setChildren(settingsCategoriesData.concat(categoriesFromFilesData));
     } catch (err) {
       this.logger_.logFailure(loggerTitle, 'Failed to load settings', err);
     }
@@ -192,7 +181,7 @@ class SettingsManager {
     let childToEdit = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
     if (childToEdit.getFullyQualifiedUserFacingName() !== fullyQualifiedName) {
       return this.getConfigurationInstructionsBotContent_(bot, msg, fullyQualifiedName).then(resultStr => {
-        return InitiateSetSettingResult.createErrorResult(resultStr);
+        return InitiateSetSettingResult.createNoNeedToRequestInputResult(resultStr);
       });
     }
 
@@ -225,7 +214,7 @@ function commitEdit(bot, msg, childSettingToEdit, value, nextStepResponseString)
   let responseString;
   return persistence.editDataForServer(serverId, data => {
     data = addSettingsObjectIfNotAlreadyInData(data);
-    let channelsInGuild = msg.channel.guild ? msg.channel.guild.channels : msg.channel;
+    let channelsInGuild = msg.channel.guild ? msg.channel.guild.channels : [msg.channel];
     responseString = childSettingToEdit.setNewValueFromUserFacingString(msg.channel.id, channelsInGuild, data.settings, value, nextStepResponseString);
     return data;
   }).then(data => {
