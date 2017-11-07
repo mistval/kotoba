@@ -17,7 +17,6 @@ module.exports = {
   uniqueId: 'nav403543',
   serverAdminOnly: false,
   shortDescription: 'Demonstrate how to use a navigation.',
-  hidden: false,
   action(bot, msg, suffix) {
     let randomNumberChapter = new NavigationChapter(new RandomNumberDataSource());
 

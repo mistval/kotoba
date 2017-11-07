@@ -11,7 +11,6 @@ module.exports = {
   serverAdminOnly: false,
   shortDescription: 'Add a quote to my database.',
   usageExample: '}addquote I\'m not very quotable',
-  hidden: false,
   action(bot, msg, suffix) {
     if (!suffix) {
       return msg.channel.createMessage('You gotta give me a quote to add!');

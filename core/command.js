@@ -92,7 +92,6 @@ class Command {
     this.settingsCategorySeparator_ = settingsCategorySeparator;
     this.shortDescription = commandData.shortDescription;
     this.usageExample = commandData.usageExample;
-    this.hidden = !!commandData.hidden;
     if (commandData.canBeChannelRestricted) {
       this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
         + settingsCategorySeparator

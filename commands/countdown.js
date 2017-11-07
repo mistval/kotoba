@@ -10,7 +10,6 @@ module.exports = {
   uniqueId: 'countdown29490',
   requiredSettings: ['fun/countdown_start'],
   shortDescription: 'Start a countdown.',
-  hidden: false,
   action(bot, msg, suffix, settings) {
     let countdownStart = settings['fun/countdown_start'];
     for (let i = countdownStart; i >= 0; --i) {

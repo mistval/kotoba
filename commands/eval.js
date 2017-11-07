@@ -7,7 +7,6 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Evaluate arbitrary javascript code (use wisely).',
   usageExample: '}eval 4+5',
-  hidden: false,
   action(bot, msg, suffix) {
     if (!suffix) {
       return msg.channel.createMessage('Say \'}eval [javascript code]\' to evaluate code.');
