@@ -16,8 +16,8 @@ bot!navigation (short: bot!nav)
 \t# Navigation demonstration!
 bot!about
 \t# Find out more about me!
-]help (short: ]h)
-\t# Help for server admins!
+]settings (short: ]s)
+\t# Server admins can use this command to view and set server-specific settings.
 }help (short: }h)
 \t# Help for bot admins!
 \`\`\``;

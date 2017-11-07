@@ -5,6 +5,12 @@ const NavigationChapter = reload('./../core/navigation_chapter.js');
 const Navigation = reload('./../core/navigation.js');
 const NavigationManager = require('./../core/navigation_manager.js');
 
+/*
+* Demonstrates how to create a navigation with three chapters.
+* The first chapter has 3 pages of latin text.
+* The second has 2 pages of galaxy photos.
+* The third has infinite pages of random numbers.
+*/
 module.exports = {
   commandAliases: ['bot!navigation', 'bot!nav'],
   canBeChannelRestricted: true,
@@ -55,7 +61,8 @@ class RandomNumberDataSource {
     // getPageFromPreparedData().
 
     // If available synchronously, the data itself can be returned.
-    // Otherwise, a promise can be returned.
+    // Otherwise, a promise can be returned. What that promise resolves
+    // with will be passed into getPageFromPreparedData.
     return Promise.resolve();
   }
 
