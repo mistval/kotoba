@@ -6,6 +6,8 @@
 module.exports = {
   commandAliases: ['}servers', '}s'],
   botAdminOnly: true,
+  shortDescription: 'Show servers that I\'m in.',
+  hidden: false,
   action(bot, msg, suffix) {
     let guildsString = Array.from(bot.guilds.values()).map(guild => {
       return guild.name + ' (' + guild.memberCount + ' members)';

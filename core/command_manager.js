@@ -104,6 +104,7 @@ class CommandManager {
         try {
           command = new Command(commandData, this.config_.settingsCategorySeparator);
         } catch (err) {
+          debugger;
           this.logger_.logFailure(loggerTitle, failureMessageStart + '.', err);
           continue;
         }

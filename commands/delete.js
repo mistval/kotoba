@@ -8,6 +8,9 @@
 module.exports = {
   commandAliases: ['}delete', '}d'],
   botAdminOnly: true,
+  shortDescription: 'Delete a message.',
+  usageExample: '}setavatar [channelId] [messageId]',
+  hidden: false,
   action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       return msg.channel.createMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.');

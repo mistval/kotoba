@@ -9,6 +9,9 @@ module.exports = {
   canBeChannelRestricted: false,
   serverAdminOnly: false,
   uniqueId: 'getQuote45954',
+  shortDescription: 'Get a random quote from my database.',
+  longDescription: 'Get a random quote from my database. I will randomly select a quote from among the quotes stored with the bot!addquote command.',
+  hidden: false,
   action(bot, msg, suffix) {
     return persistence.getGlobalData().then(globalData => {
       if (!globalData.quotes) {

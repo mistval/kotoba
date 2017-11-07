@@ -6,6 +6,9 @@
 module.exports = {
   commandAliases: ['}broadcast', '}b'],
   botAdminOnly: true,
+  shortDescription: 'Send a message as me.',
+  usageExample: '}broadcast [channelId] Hello!',
+  hidden: false,
   action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       msg.channel.createMessage('Say \'}broadcast [channel_id] [announcement]\' to broadcast  a message');
