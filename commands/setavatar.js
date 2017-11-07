@@ -10,6 +10,9 @@ const PublicError = require('./../core/public_error.js');
 module.exports = {
   commandAliases: ['}setavatar'],
   botAdminOnly: true,
+  shortDescription: 'Change my avatar.',
+  usageExample: '}setavatar http://url.com/image.png',
+  hidden: false,
   action(bot, msg, suffix) {
     if (!suffix) {
       msg.channel.createMessage('Say \'}setavatar [http url]\' to set my avatar.');

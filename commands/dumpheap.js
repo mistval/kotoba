@@ -12,6 +12,9 @@ try {
 module.exports = {
   commandAliases: ['}dumpheap'],
   botAdminOnly: true,
+  shortDescription: 'Dump a snapshot of the heap to the disk, for debugging purposes.',
+  usageExample: '}dumpheap outputfilename',
+  hidden: true,
   action(bot, msg, suffix) {
     if (!heapDump) {
       msg.channel.createMessage('Module \'heapdump\' not found. Did you install dev dependencies?');
