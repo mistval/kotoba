@@ -128,7 +128,7 @@ class Command {
       ErisUtils.sendMessageAndDelete(msg, 'Only a bot admin can use that command.');
       return 'User is not a bot admin';
     }
-    if (this.onlyInServer_ && msg.channel.guild === undefined) {
+    if (this.onlyInServer_ && !msg.channel.guild) {
       ErisUtils.sendMessageAndDelete(msg, 'That command can only be used in a server.');
       return 'Command can only be used in server';
     }
