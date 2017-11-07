@@ -35,9 +35,9 @@ function reloadCore() {
   let settingsManagerCommands = settingsManager.collectCommands();
   let settingsGetter = settingsManager.createSettingsGetter();
   messageProcessorManager = new (reload('./core/message_processor_manager.js'))(logger);
-  commandManager = new (reload('./core/command_manager.js'))(COMMANDS_DIR, reloadCore, logger, config, settingsGetter);
+  commandManager = new (reload('./core/command_manager.js'))(reloadCore, logger, config, settingsGetter);
   RepeatingQueue = reload('./core/repeating_queue.js');
-  commandManager.load(settingsManagerCommands).then(() => {
+  commandManager.load(COMMANDS_DIR, settingsManagerCommands).then(() => {
     settingsManager.load(commandManager.collectSettingsCategories(), [SETTINGS_FILE_PATH], config);
   });
   messageProcessorManager.load(MESSAGE_PROCESSOR_DIR);

@@ -23,7 +23,7 @@ function handleCommandError(msg, err, config, logger) {
   if (!publicMessage) {
     publicMessage = config.genericErrorMessage;
   }
-  let internalErr = err instanceof PublicError ? err.internalErr : err;
+  let internalErr = err.internalErr || err;
   if (publicMessage) {
     msg.channel.createMessage(publicMessage);
   }
@@ -61,27 +61,29 @@ function createSettingsCategoryForCommands(userCommands) {
 */
 class CommandManager {
   /**
-  * @param {String} directory - The directory from which to load commands.
   * @param {Function} reloadAction - The function that the reload command should invoke to initiate a reload.
   * @param {Logger} logger - The logger to log to.
+  * @param {Object} config - The monochrome config data.
+  * @param {Object} settingsGetter - An object with a getSettings() function.
   */
-  constructor(directory, reloadAction, logger, config, settingsGetter) {
+  constructor(reloadAction, logger, config, settingsGetter) {
     this.commands_ = [];
     this.reloadAction_ = reloadAction;
     this.logger_ = logger;
-    this.directory_ = directory;
     this.config_ = config;
     this.settingsGetter_ = settingsGetter;
   }
 
   /**
   * Loads commands. Can be called to reload commands.
+  * @param {String} directory - A file path to the command data directory.
+  * @param {Array<Object>} extraCommandDatas - Any other command data that should be loaded.
   */
-  load(extraCommandDatas) {
+  load(directory, extraCommandDatas) {
     const loggerTitle = 'COMMAND MANAGER';
     let commandDatasToLoad = extraCommandDatas || [];
     this.commands_ = [];
-    return FileSystemUtils.getFilesInDirectory(this.directory_).then((commandFiles) => {
+    return FileSystemUtils.getFilesInDirectory(directory).then(commandFiles => {
       for (let commandFile of commandFiles) {
         try {
           let commandData = reload(commandFile);
@@ -124,7 +126,7 @@ class CommandManager {
   }
 
   /**
-  * Collects any settings that the command subsystem wants to register with the settings subsystem.
+  * Collects any settings categories that the command subsystem wants to register with the settings subsystem.
   * @returns {Array<SettingsCategory>} The settings categories this subsystem wants to register.
   */
   collectSettingsCategories() {
