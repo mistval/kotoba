@@ -6,7 +6,7 @@
 */
 module.exports = {
   commandAliases: ['bot!countdown'],
-  botAdminOnly: true,
+  botAdminOnly: false,
   requiredSettings: ['fun/countdown_start'],
   action(bot, msg, suffix, settings) {
     let countdownStart = settings['fun/countdown_start'];
