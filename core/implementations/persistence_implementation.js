@@ -1,6 +1,5 @@
 'use strict'
-const reload = require('require-reload')(require);
-const storage = reload('./../util/node_persist_atomic.js');
+const storage = require('./../util/node_persist_atomic.js');
 
 const USER_DATA_KEY_PREFIX = 'User';
 const SERVER_DATA_KEY_PREFIX = 'Server';

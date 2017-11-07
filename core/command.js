@@ -87,16 +87,29 @@ class Command {
     this.serverAdminOnly_ = !!commandData.serverAdminOnly;
     this.botAdminOnly_ = !!commandData.botAdminOnly;
     this.onlyInServer_ = !!commandData.onlyInServer;
-    this.cooldown_ = commandData.cooldown = commandData.cooldown;
+    this.cooldown_ = commandData.cooldown || 0;
     this.usersCoolingDown_ = [];
     this.settingsCategorySeparator_ = settingsCategorySeparator;
     this.shortDescription = commandData.shortDescription;
+    this.longDescription = commandData.longDescription;
     this.usageExample = commandData.usageExample;
     if (commandData.canBeChannelRestricted) {
       this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
         + settingsCategorySeparator
         + this.getEnabledSettingUserFacingName_();
     }
+  }
+
+  getCooldown() {
+    return this.cooldown_;
+  }
+
+  getIsForServerAdminOnly() {
+    return this.serverAdminOnly_;
+  }
+
+  getIsForBotAdminOnly() {
+    return this.botAdminOnly_;
   }
 
   createEnabledSetting() {
