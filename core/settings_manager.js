@@ -51,6 +51,9 @@ class SettingsCommand {
       });
     } else {
       return settingsManager.initiateSetSetting_(bot, msg, suffixParts[0], suffixParts[1]).then(results => {
+        if (typeof results === typeof '') {
+          return msg.channel.createMessage(results);
+        }
         let nextStepInstructions = results.nextStepInstructions;
         let userResponseCallback = results.userResponseCallback;
         if (userResponseCallback) {
@@ -183,6 +186,9 @@ class SettingsManager {
 
   initiateSetSetting_(bot, msg, fullyQualifiedName, value) {
     let childToEdit = this.rootSettingsCategory_.getChildForFullyQualifiedUserFacingName(fullyQualifiedName);
+    if (childToEdit.type === CATEGORY_IDENTIFIER) {
+      return this.getConfigurationInstructionsBotContent_(bot, msg, fullyQualifiedName);
+    }
     if (childToEdit.getFullyQualifiedUserFacingName() !== fullyQualifiedName) {
       return this.getConfigurationInstructionsBotContent_(bot, msg, fullyQualifiedName).then(resultStr => {
         return InitiateSetSettingResult.createNoNeedToRequestInputResult(resultStr);
