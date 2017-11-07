@@ -7,7 +7,7 @@ const PublicError = reload('./../core/public_error.js');
 function handleError(msg, err, logger) {
   const loggerTitle = 'MESSAGE';
   let errDescription = err.logDescription || 'Exception or promise rejection';
-  let internalErr = err instanceof PublicError ? err.internalErr : err;
+  let internalErr = err.internalErr || err;
   logger.logInputReaction(loggerTitle, msg, '', false, errDescription);
   if (internalErr) {
     logger.logFailure(loggerTitle, 'A message processor threw an exception or returned a promise that rejected for message: \'' + msg.content + '\'', internalErr);
@@ -22,8 +22,7 @@ class MessageProcessorManager {
   * @param {String} directory - The directory to load message processors from
   * @param {Logger} logger - The logger to log to
   */
-  constructor(directory, logger) {
-    this.directory_ = directory;
+  constructor(logger) {
     this.logger_ = logger;
     this.processors_ = [];
   }
@@ -31,10 +30,10 @@ class MessageProcessorManager {
   /**
   * Loads message processors. Can be called to reload message processors that have been edited.
   */
-  load() {
+  load(directory) {
     const loggerTitle = 'MESSAGE MANAGER';
     this.processors_ = [];
-    return FileSystemUtils.getFilesInDirectory(this.directory_).then((processorFiles) => {
+    return FileSystemUtils.getFilesInDirectory(directory).then((processorFiles) => {
       for (let processorFile of processorFiles) {
         try {
           let processorInformation = reload(processorFile);

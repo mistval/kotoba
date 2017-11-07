@@ -3,7 +3,8 @@ const assert = require('assert');
 
 /**
 * An error containing a message that should be sent to the channel the command was invoked in.
-* That message gets sent instead of the generic error message.
+* That message gets sent instead of the generic error message (assuming commands and message processors
+* and such are returning their promises).
 */
 class PublicError extends Error {
   /**
