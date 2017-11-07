@@ -35,15 +35,15 @@ class EditLock {
             nextEdit.fulfill(newData);
           }).catch(err => {
             nextEdit.reject(err);
-            finishEdit(nextEdit);
+            this.finishEdit(nextEdit);
           });
         }).catch(err => {
           nextEdit.reject(err);
-          finishEdit(nextEdit);
+          this.finishEdit(nextEdit);
         });
       }).catch(err => {
         nextEdit.reject(err);
-        finishEdit(nextEdit);
+        this.finishEdit(nextEdit);
       });
     }
   }
