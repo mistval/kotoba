@@ -23,7 +23,7 @@ function createTopLevelHelpTextForCommands(commands, helpCommandAlias) {
   for (let command of commands) {
     helpText += createTopLevelHelpTextForCommand(command) + '\n';
   }
-  helpText += `\nSay ${helpCommandAlias} [command name] to see more help for a command. (no, no brackets, silly)\n\`\`\``;
+  helpText += `\nSay ${helpCommandAlias} [command name] to see more help for a command. Example: ${helpCommandAlias} ${commands[0].aliases[0]}\n\`\`\``;
   return helpText;
 }
 
@@ -59,7 +59,7 @@ function findCloseMatchCommandForAlias(commands, alias) {
   for (let command of commands) {
     for (let candidateAlias of command.aliases) {
       if (candidateAlias.indexOf(alias) !== -1) {
-        if (!currentCandidateAlias || currentCandidateAlias.length > alias.length) {
+        if (!currentCandidateAlias || currentCandidateAlias.length > candidateAlias.length) {
           currentCandidateAlias = candidateAlias;
           currentCandidate = command;
         }
