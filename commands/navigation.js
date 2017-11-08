@@ -12,11 +12,12 @@ const NavigationManager = require('./../core/navigation_manager.js');
 * The third has infinite pages of random numbers.
 */
 module.exports = {
-  commandAliases: ['bot!navigation', 'bot!nav'],
+  commandAliases: ['bot!navigation', 'bot!nav', 'nnnnn'],
   canBeChannelRestricted: true,
   uniqueId: 'nav403543',
   serverAdminOnly: false,
   shortDescription: 'Demonstrate how to use a navigation.',
+  aliasesForHelp: ['bot!navigation', 'bot!nav'],
   action(bot, msg, suffix) {
     let randomNumberChapter = new NavigationChapter(new RandomNumberDataSource());
 

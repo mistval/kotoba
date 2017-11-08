@@ -8,6 +8,10 @@ function validateCommand(command) {
     throw new Error('The shortDescription must be a string. It is not for ' + commandName);
   } else if (command.usageExample && typeof command.usageExample !== typeof '') {
     throw new Error('The usageExample must be a string. It is not for ' + commandName);
+  } else if (command.longDescription && typeof command.longDescription !== typeof '') {
+    throw new Error('The longDescription must be a string. It is not for ' + commandName);
+  } else if (command.aliasesForHelp && (!Array.isArray(command.aliasesForHelp) || command.aliasesForHelp.length < 1)) {
+    throw new Error('The aliasesForHelp must be an array. It is not for ' + commandName);
   }
 }
 
@@ -25,8 +29,9 @@ function createTopLevelHelpTextForCommands(commands, helpCommandAlias) {
 
 function createTopLevelHelpTextForCommand(command) {
   validateCommand(command);
-  let firstAlias = command.aliases[0];
-  let otherAliases = command.aliases.slice(1);
+  let aliases = command.aliasesForHelp || command.aliases;
+  let firstAlias = aliases[0];
+  let otherAliases = aliases.slice(1);
   let helpText = firstAlias;
   if (otherAliases.length > 0) {
     helpText += ` (aliases: ${otherAliases.join(', ')})`;
