@@ -149,16 +149,16 @@ class Command {
   handle(bot, msg, suffix, extension, config, settingsGetter) {
     if (this.usersCoolingDown_.indexOf(msg.author.id) !== -1) {
       ErisUtils.sendMessageAndDelete(msg, msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.');
-      return 'Not cooled down';
+      return Promise.resolve('Not cooled down');
     }
     let isBotAdmin = config.botAdminIds.indexOf(msg.author.id) !== -1;
     if (this.botAdminOnly_ && !isBotAdmin) {
       ErisUtils.sendMessageAndDelete(msg, 'Only a bot admin can use that command.');
-      return 'User is not a bot admin';
+      return Promise.resolve('User is not a bot admin');
     }
     if (this.onlyInServer_ && !msg.channel.guild) {
       ErisUtils.sendMessageAndDelete(msg, 'That command can only be used in a server.');
-      return 'Command can only be used in server';
+      return Promise.resolve('Command can only be used in server');
     }
     if (this.serverAdminOnly_ && !isBotAdmin) {
       let isServerAdmin = userIsServerAdmin(msg, config);
@@ -170,7 +170,7 @@ class Command {
         }
         errorMessage += 'in order to do that.';
         ErisUtils.sendMessageAndDelete(msg, errorMessage);
-        return 'User is not a server admin';
+        return Promise.resolve('User is not a server admin');
       }
     }
 
@@ -186,7 +186,7 @@ class Command {
       }
 
       ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this channel.');
-      return 'Command disabled';
+      return Promise.resolve('Command disabled');
     });
   }
 
