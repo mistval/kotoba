@@ -74,14 +74,14 @@ function checkInit() {
 
 module.exports.init = function(options) {
   storageInit = storage.init(options);
-}
+};
 
 module.exports.editItem = function(itemKey, editFunction) {
   checkInit();
   return storageInit.then(() => getOrCreateEditLockForKey(itemKey).edit(editFunction));
-}
+};
 
 module.exports.getItem = function(itemKey) {
   checkInit();
   return storageInit.then(() => storage.getItem(itemKey));
-}
+};

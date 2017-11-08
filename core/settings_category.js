@@ -1,7 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const AbstractSettingElement = reload('./abstract_setting_element.js');
-const Setting = reload('./setting.js')
+const Setting = reload('./setting.js');
 const assert = require('assert');
 
 function throwError(baseString, failedBlob) {
@@ -135,7 +135,7 @@ class SettingsCategory extends AbstractSettingElement {
       } else if (child.databaseFacingName && this.children_.find(otherChild => otherChild.databaseFacingName === child.databaseFacingName)) {
         throwError('Two children have the same databaseFacingName.', children);
       } else if (child.type === this.categoryTypeIdentifier_) {
-        let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryTypeIdentifier_, this.settingTypeIdentifier_, this.config_)
+        let childCategory = new SettingsCategory(child, this.fullyQualifiedName_, this.categoryTypeIdentifier_, this.settingTypeIdentifier_, this.config_);
         this.children_.push(childCategory);
         childCategory.setChildren(child.children);
       } else {

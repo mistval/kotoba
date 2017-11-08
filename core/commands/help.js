@@ -153,7 +153,7 @@ class Help {
         color: this.embedColor_,
         fields: fields,
       }
-    }
+    };
 
     return msg.channel.createMessage(botContent);
   }

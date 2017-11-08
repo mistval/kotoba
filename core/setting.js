@@ -25,7 +25,6 @@ arbitraryAllowedValuesForType[ValueType.FLOAT] = 'Any number';
 arbitraryAllowedValuesForType[ValueType.BOOLEAN] = 'True or false';
 arbitraryAllowedValuesForType[ValueType.CUSTOM] = '';
 
-
 class Range {
   constructor(lower, upper) {
     this.lower_ = lower;
@@ -61,12 +60,12 @@ function throwError(baseString, failedBlob) {
 
 class ValueTypeStrategy {
   constructor(
-    convertUserFacingValueToDatabaseFacingValue,
-    convertDatabaseFacingValueToUserFacingValue,
-    validateUserFacingValueType) {
-      this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
-      this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
-      this.validateUserFacingValueType = validateUserFacingValueType;
+  convertUserFacingValueToDatabaseFacingValue,
+  convertDatabaseFacingValueToUserFacingValue,
+  validateUserFacingValueType) {
+    this.convertUserFacingValueToDatabaseFacingValue = convertUserFacingValueToDatabaseFacingValue;
+    this.convertDatabaseFacingValueToUserFacingValue = convertDatabaseFacingValueToUserFacingValue;
+    this.validateUserFacingValueType = validateUserFacingValueType;
   }
 }
 
@@ -240,7 +239,7 @@ class Setting extends AbstractSettingElement {
           {name: 'Examples of setting value', value: examplesString}
         ]
       }
-    }
+    };
   }
 
   /**

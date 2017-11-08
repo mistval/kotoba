@@ -22,7 +22,7 @@ class SettingsCommand {
     this.commandAliases = config.serverSettingsCommandAliases;
     this.canBeChannelRestricted = false;
     this.serverAdminOnly = true;
-    this.shortDescription = 'Server admins can use this command to see and configure my settings on their server.'
+    this.shortDescription = 'Server admins can use this command to see and configure my settings on their server.';
     this.action = (bot, msg, suffix) => this.execute_(bot, msg, suffix, settingsManager);
   }
 
@@ -154,7 +154,7 @@ class SettingsManager {
       getSettings: (bot, msg, fullyQualifiedUserFacingSettingNames) => {
         return this.getSettings_(bot, msg, fullyQualifiedUserFacingSettingNames);
       }
-    }
+    };
   }
 
   getSettings_(bot, msg, fullyQualifiedUserFacingSettingNames) {
@@ -214,7 +214,7 @@ class SettingsManager {
     let serverId = getServerIdFromMessage(msg);
     return persistence.getDataForServer(serverId).then(data => {
       addSettingsObjectIfNotAlreadyInData(data);
-      return child.getConfigurationInstructionsBotContent(msg.channel.id, data.settings, desiredFullyQualifedName)
+      return child.getConfigurationInstructionsBotContent(msg.channel.id, data.settings, desiredFullyQualifedName);
     });
   }
 }
