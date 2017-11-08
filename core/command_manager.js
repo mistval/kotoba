@@ -105,7 +105,6 @@ class CommandManager {
         try {
           command = new Command(commandData, this.config_.settingsCategorySeparator, COMMAND_CATEGORY_NAME);
         } catch (err) {
-          debugger;
           this.logger_.logFailure(loggerTitle, failureMessageStart + '.', err);
           continue;
         }
@@ -191,7 +190,7 @@ class CommandManager {
       suffix = msgContent.substring(spaceIndex + 1).trim();
     }
     try {
-      Promise.resolve(commandToExecute.handle(bot, msg, suffix, extension, this.config_, this.settingsGetter_)).then(result => {
+      commandToExecute.handle(bot, msg, suffix, extension, this.config_, this.settingsGetter_).then(result => {
         let success = typeof result !== typeof '';
         this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
       }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));

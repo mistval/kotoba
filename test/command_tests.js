@@ -15,6 +15,18 @@ const MsgIsBotAndServerAdmin = new MockMessage('channel1', 'bot-admin-id', 'User
 const MsgDM = new MockMessage('channel1', 'not-bot-admin', 'Username');
 const config = new MockConfig('Server Admin', ['bot-admin-id']);
 
+let enabledSettingsGetter = {
+  getSettings: (bot, msg, fullyQualifiedUserFacingSettingNames) => {
+    let settings = {
+      serverSettings: {},
+    };
+    for (let fullyQualifiedUserFacingSettingName of fullyQualifiedUserFacingSettingNames) {
+      settings.serverSettings[fullyQualifiedUserFacingSettingName] = true;
+    }
+    return Promise.resolve(settings);
+  }
+};
+
 if (!persistence.initialized_) {
   persistence.init({dir: './test/persistence'});
 }
@@ -297,107 +309,87 @@ describe('Command', function() {
   describe('handle()', function() {
     it('should not execute if not cooled down', function() {
       let command = new Command(validCommandDataWith1SecondCooldown);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      let invoke2Result = command.handle(null, MsgNoPerms, '', config);
-      assert(invoke1Result === undefined && typeof invoke2Result === typeof '');
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(result1 => {
+        return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(result2 => {
+          assert(result1 === undefined && typeof result2 === typeof '');
+        });
+      });
     });
     it('should execute if cooled down', function(done) {
       let command = new Command(validCommandDataWith1SecondCooldown);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      setTimeout(() => {
-        let invoke2Result = command.handle(null, MsgNoPerms, '', config);
-        if (invoke1Result === undefined && typeof invoke2Result !== typeof '') {
-          done();
-        } else {
-          done('Failed to cool down');
-        }
-      },
-      1500);
+      command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        setTimeout(() => {
+          command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke2Result => {
+            if (invoke1Result === undefined && typeof invoke2Result !== typeof '') {
+              done();
+            } else {
+              done('Failed to cool down');
+            }
+          });
+        },
+        1500);
+      });
     });
     it('should not execute if user must be a bot admin but is not', function() {
       let command = new Command(validCommandDataBotAdminOnly);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
-      command = new Command(validCommandDataBotAdminOnly);
-      let invoke2Result = command.handle(null, MsgIsServerAdminWithTag, '', config);
-      assert(typeof invoke2Result === typeof '' && !command.invoked);
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        assert(typeof invoke1Result === typeof '' && !command.invoked);
+        command = new Command(validCommandDataBotAdminOnly);
+        return command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter).then(invoke2Result => {
+          assert(typeof invoke2Result === typeof '' && !command.invoked);
+        })
+      });
     });
     it('should execute if user must be a bot admin and is', function() {
       let command = new Command(validCommandDataBotAdminOnly);
-      let invoke1Result = command.handle(null, MsgIsBotAdmin, '', config);
-      assert(invoke1Result === undefined && command.invoked);
+      return command.handle(null, MsgIsBotAdmin, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        assert(invoke1Result === undefined && command.invoked);
+      });
     });
     it('should not execute if must be in server but is not', function() {
       let command = new Command(validCommandServerOnly);
-      let invoke1Result = command.handle(null, MsgDM, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
+      return command.handle(null, MsgDM, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        assert(typeof invoke1Result === typeof '' && !command.invoked);
+      });
     });
     it('should execute if must be in server and is', function() {
       let command = new Command(validCommandServerOnly);
-      return command.handle(null, MsgNoPerms, '', config).then(() => {
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(() => {
         assert(command.invoked);
       });
     });
     it('should not execute if user must be a server admin but is not', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        assert(typeof invoke1Result === typeof '' && !command.invoked);
+      });
     });
     it('should execute if user must be a server admin, is not, but its a DM', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      command.handle(null, MsgDM, '', config);
-      assert(command.invoked);
+      return command.handle(null, MsgDM, '', '', config, enabledSettingsGetter).then(() => {
+        assert(command.invoked);
+      });
     });
     it('should execute if user must be a server admin and is', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      let invokeResult = command.handle(null, MsgIsBotAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-      command = new Command(validCommandDataServerAdminOnly);
-      debugger;
-      invokeResult = command.handle(null, MsgIsServerAdminWithTag, '', config);
-      assert(invokeResult === undefined && command.invoked);
-      command = new Command(validCommandDataServerAdminOnly);
-      invokeResult = command.handle(null, MsgIsServerAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-      command = new Command(validCommandDataServerAdminOnly);
-      invokeResult = command.handle(null, MsgIsBotAndServerAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-    });
-    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function(done) {
-      let command = new Command(validCommandCanBeRestricted);
-      persistence.editAllowedChannelsForCommand(MsgIsServerAdminWithTag, command.uniqueId, () => ['channel2']).then(() => {
-        command.handle(null, MsgIsServerAdminWithTag, '', config).then(invokeResult => {
-          if (typeof invokeResult === typeof '') {
-            persistence.editAllowedChannelsForCommand(MsgIsServerAdminWithTag, command.uniqueId, () => ['channel1']).then(() => {
-              invokeResult = command.handle(null, MsgIsServerAdminWithTag, '', config).then(invokeResult => {
-                if (invokeResult === undefined) {
-                  persistence.editAllowedChannelsForCommand(MsgIsServerAdminWithTag, command.uniqueId, () => []).then(() => {
-                    invokeResult = command.handle(null, MsgIsServerAdminWithTag, '', config).then(invokeResult => {
-                      if (typeof invokeResult === typeof '') {
-                        persistence.editAllowedChannelsForCommand(MsgIsServerAdminWithTag, command.uniqueId, () => undefined).then(() => {
-                          invokeResult = command.handle(null, MsgIsServerAdminWithTag, '', config).then(invokeResult => {
-                            if (invokeResult === undefined) {
-                              done();
-                            } else {
-                              done('Should have executed in that channel, but did not');
-                            }
-                          });
-                        });
-                      } else {
-                        done('Should not have executed in that channel, but did');
-                      }
-                    });
-                  });
-                } else {
-                  done('Should have executed in that channel, but did not');
-                }
-              });
+      return command.handle(null, MsgIsBotAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+        assert(invokeResult === undefined && command.invoked);
+        command = new Command(validCommandDataServerAdminOnly);
+        return command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter).then(invokeResult => {
+          assert(invokeResult === undefined && command.invoked);
+          command = new Command(validCommandDataServerAdminOnly);
+          return command.handle(null, MsgIsServerAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+            assert(invokeResult === undefined && command.invoked);
+            command = new Command(validCommandDataServerAdminOnly);
+            return command.handle(null, MsgIsBotAndServerAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+              assert(invokeResult === undefined && command.invoked);
             });
-          } else {
-            done('Should not have executed in that channel, but did');
-          }
+          });
         });
       });
+    });
+    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function(done) {
+      // TODO. Add test.
     });
   });
   describe('createEnabledSetting()', function() {
