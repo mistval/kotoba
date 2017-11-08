@@ -98,6 +98,7 @@ class Command {
     this.longDescription = commandData.longDescription;
     this.usageExample = commandData.usageExample;
     this.canHandleExtension = commandData.canHandleExtension;
+    this.aliasesForHelp = commandData.aliasesForHelp;
     if (commandData.canBeChannelRestricted) {
       this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
         + settingsCategorySeparator
