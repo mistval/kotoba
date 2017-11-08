@@ -168,25 +168,38 @@ class CommandManager {
     commandText = commandText.toLowerCase();
 
     for (let command of this.commands_) {
-      if (command.aliases.indexOf(commandText) !== -1) {
-        let suffix = '';
-        if (spaceIndex !== -1) {
-          suffix = msgContent.substring(spaceIndex + 1, msgContent.length).trim();
+      for (let alias of command.aliases) {
+        if (commandText === alias) {
+          return this.executeCommand_(bot, msg, command, alias, msgContent, spaceIndex);
         }
-        try {
-          Promise.resolve(command.handle(bot, msg, suffix, this.config_, this.settingsGetter_)).then(result => {
-            let success = typeof result !== typeof '';
-            this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
-          }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));
-        } catch (err) {
-          handleCommandError(msg, err, this.config_, this.logger_);
+        if (command.canHandleExtension && commandText.startsWith(alias)) {
+          let extension = commandText.replace(alias, '');
+          if (command.canHandleExtension(extension)) {
+            return this.executeCommand_(bot, msg, command, alias, msgContent, spaceIndex, extension);
+          }
         }
-
-        return true;
       }
     }
 
     return false;
+  }
+
+  executeCommand_(bot, msg, commandToExecute, alias, msgContent, spaceIndex, extension) {
+    const loggerTitle = 'COMMAND';
+    let suffix = '';
+    if (spaceIndex !== -1) {
+      suffix = msgContent.substring(spaceIndex + 1).trim();
+    }
+    try {
+      Promise.resolve(commandToExecute.handle(bot, msg, suffix, extension, this.config_, this.settingsGetter_)).then(result => {
+        let success = typeof result !== typeof '';
+        this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
+      }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));
+    } catch (err) {
+      handleCommandError(msg, err, this.config_, this.logger_);
+    }
+
+    return true;
   }
 }
 

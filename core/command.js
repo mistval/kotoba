@@ -43,6 +43,10 @@ function sanitizeCommandData(commandData, settingsCategorySeparator) {
     commandData.canBeChannelRestricted = commandData.canBeChannelRestricted;
   }
 
+  if (commandData.canHandleExtension && typeof commandData.canHandleExtension !== 'function') {
+    throw new Error('Command has a canHandleExtension property, but it\'s not a function. It must be.');
+  }
+
   if (commandData.cooldown === undefined) {
     commandData.cooldown = 0;
   } else if (typeof commandData.cooldown !== typeof 1.5) {
@@ -93,6 +97,7 @@ class Command {
     this.shortDescription = commandData.shortDescription;
     this.longDescription = commandData.longDescription;
     this.usageExample = commandData.usageExample;
+    this.canHandleExtension = commandData.canHandleExtension;
     if (commandData.canBeChannelRestricted) {
       this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
         + settingsCategorySeparator
@@ -130,6 +135,9 @@ class Command {
   * @param {Eris.Client} bot - The Eris bot.
   * @param {Eris.Message} msg - The Eris message to handle.
   * @param {String} suffix - The command suffix.
+  * @param {String} extension - The command extension, if there is one.
+  * @param {Object} config - The monochrome config.
+  * @param {Object} settingsGetter - An object with a getSettings() function.
   * @returns {(String|undefined|Promise)} An error string if there is a benign, expected error (invalid command syntax, etc).
   *    undefined if there is no error.
   *    A promise can also be returned. It should resolve with either a benign error string, or undefined.
@@ -137,7 +145,7 @@ class Command {
   *    (Or if the error is a PublicError, or if it has a publicMessage property, the value of that property
   *    will be sent to the channel instead of the generic error message)
   */
-  handle(bot, msg, suffix, config, settingsGetter) {
+  handle(bot, msg, suffix, extension, config, settingsGetter) {
     if (this.usersCoolingDown_.indexOf(msg.author.id) !== -1) {
       ErisUtils.sendMessageAndDelete(msg, msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.');
       return 'Not cooled down';
@@ -173,7 +181,7 @@ class Command {
       if (!this.enabledSettingFullyQualifiedUserFacingName_
           || settings[this.enabledSettingFullyQualifiedUserFacingName_] === true
           || settings[this.enabledSettingFullyQualifiedUserFacingName_] === undefined) {
-        return this.invokeAction_(bot, msg, suffix, settings);
+        return this.invokeAction_(bot, msg, suffix, settings, extension);
       }
 
       ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this channel.');
@@ -185,7 +193,7 @@ class Command {
     return this.enabledSettingFullyQualifiedUserFacingName_;
   }
 
-  invokeAction_(bot, msg, suffix, settings) {
+  invokeAction_(bot, msg, suffix, settings, extension) {
     if (this.cooldown_ !== 0) {
       this.usersCoolingDown_.push(msg.author.id);
     }
@@ -194,7 +202,7 @@ class Command {
       this.usersCoolingDown_.splice(index, 1);
     },
     this.cooldown_ * 1000);
-    return this.action_(bot, msg, suffix, settings);
+    return this.action_(bot, msg, suffix, settings, extension);
   }
 
   getEnabledSettingUserFacingName_() {
