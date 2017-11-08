@@ -337,7 +337,7 @@ describe('Command', function() {
         command = new Command(validCommandDataBotAdminOnly);
         return command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter).then(invoke2Result => {
           assert(typeof invoke2Result === typeof '' && !command.invoked);
-        })
+        });
       });
     });
     it('should execute if user must be a bot admin and is', function() {
