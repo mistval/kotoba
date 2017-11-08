@@ -388,7 +388,7 @@ describe('Command', function() {
         });
       });
     });
-    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function(done) {
+    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function() {
       // TODO. Add test.
     });
   });
