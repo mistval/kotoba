@@ -19,7 +19,7 @@ function handleCommandError(msg, err, config, logger) {
     }
   }
   if (!errDescription) {
-     errDescription = 'Exception or promise rejection'
+    errDescription = 'Exception or promise rejection';
   }
   if (!publicMessage) {
     publicMessage = config.genericErrorMessage;
@@ -57,7 +57,7 @@ function createSettingsCategoryForCommands(userCommands) {
     type: 'CATEGORY',
     userFacingName: COMMAND_CATEGORY_NAME,
     children: children,
-  }
+  };
 }
 
 /**

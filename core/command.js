@@ -100,9 +100,9 @@ class Command {
     this.canHandleExtension = commandData.canHandleExtension;
     this.aliasesForHelp = commandData.aliasesForHelp;
     if (commandData.canBeChannelRestricted) {
-      this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName
-        + settingsCategorySeparator
-        + this.getEnabledSettingUserFacingName_();
+      this.enabledSettingFullyQualifiedUserFacingName_ = enabledCommandsSettingsCategoryFullyQualifiedUserFacingName +
+        settingsCategorySeparator +
+        this.getEnabledSettingUserFacingName_();
     }
   }
 
@@ -127,7 +127,7 @@ class Command {
         description: `This setting controls whether the ${this.aliases[0]} command (and all of its aliases) is allowed to be used or not.`,
         valueType: 'BOOLEAN',
         defaultDatabaseFacingValue: true,
-      }
+      };
     }
   }
 
@@ -179,9 +179,9 @@ class Command {
       requiredSettings = requiredSettings.concat([this.enabledSettingFullyQualifiedUserFacingName_]);
     }
     return settingsGetter.getSettings(bot, msg, requiredSettings).then(settings => {
-      if (!this.enabledSettingFullyQualifiedUserFacingName_
-          || settings[this.enabledSettingFullyQualifiedUserFacingName_] === true
-          || settings[this.enabledSettingFullyQualifiedUserFacingName_] === undefined) {
+      if (!this.enabledSettingFullyQualifiedUserFacingName_ ||
+        settings[this.enabledSettingFullyQualifiedUserFacingName_] === true ||
+        settings[this.enabledSettingFullyQualifiedUserFacingName_] === undefined) {
         return this.invokeAction_(bot, msg, suffix, settings, extension);
       }
 
