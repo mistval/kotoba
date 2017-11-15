@@ -1,90 +1,72 @@
 'use strict'
 const reload = require('require-reload')(require);
-const ResponseStatus = reload('./dictionary_response_status.js');
 const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
+const constants = require('./constants.js');
 
 const MaxResultPhrases = 4;
 
 class DictionaryResponseData {
-  constructor() {
-  }
-
-  static CreateErrorResponse(errorMessage) {
-    KotobaUtils.assertIsString(errorMessage);;
-    let response = new DictionaryResponseData();
-    response.responseStatus = ResponseStatus.RESULTS_ERROR;
-    response.errorDetail = errorMessage;
-    return response;
-  }
-
-  static CreateSyntaxErrorResponse(errorDetail) {
-    KotobaUtils.assertIsString(errorDetail);
-    let response = new DictionaryResponseData();
-    response.responseStatus = ResponseStatus.INVALID_SYNTAX;
-    response.errorDetail = errorDetail;
-    return response;
-  }
-
-  static CreateNonErrorResponse(searchedWord, fromLanguagePretty, toLanguagePretty, showLanguages, dictionaryResults, extraText) {
+  constructor(searchedWord, fromLanguagePretty, toLanguagePretty, showLanguages, dictionaryResults, extraText) {
     KotobaUtils.assertIsString(searchedWord, fromLanguagePretty, toLanguagePretty, extraText);
     KotobaUtils.assertIsBoolean(showLanguages);
     KotobaUtils.assertIsArray(dictionaryResults);
-    let response = new DictionaryResponseData();
-    response.dictionaryResults = dictionaryResults;
-    response.extraText = extraText;
-    response.fromLanguage = fromLanguagePretty;
-    response.toLanguage = toLanguagePretty;
-    response.showLanguages = showLanguages;
-    response.searchedWord = searchedWord;
+    this.dictionaryResults_ = dictionaryResults;
+    this.extraText_ = extraText;
+    this.fromLanguage_ = fromLanguagePretty;
+    this.toLanguage_ = toLanguagePretty;
+    this.showLanguages_ = showLanguages;
+    this.searchedWord_ = searchedWord;
+  }
 
-    if (KotobaUtils.isNonEmptyArray(dictionaryResults)) {
-      response.responseStatus = ResponseStatus.OK;
+  toDiscordBotContent(large) {
+    if (this.dictionaryResults_.length < 1) {
+      if (this.showLanguages_) {
+        return 'Sorry, didn\'t find any ' + this.toLanguage_ + ' results for the ' + this.fromLanguage_ + ' word or phrase: **' + this.searchedWord_ + '**.';
+      } else {
+        return 'Sorry, didn\'t find any results for the word or phrase: **' + this.searchedWord_ + '**.';
+      }
+    }
+
+    if (large) {
+      return this.toDiscordBotContentLarge_();
     } else {
-      response.responseStatus = ResponseStatus.NO_RESULTS;
+      return this.toDiscordBotContentSmall_();
     }
 
     return response;
   }
 
-  toDiscordBotString() {
+  toDiscordBotContentLarge_() {
     let page = 0;
     let response = '';
-    if (this.responseStatus === ResponseStatus.OK) {
-      if (this.showLanguages) {
-        response += this.toLanguage + ' results for the ' + this.fromLanguage + ' word or phrase: **' + this.searchedWord + '**';
-      } else {
-        response += 'Results for the word or phrase: **' + this.searchedWord + '**';
-      }
-
-      response += '\n\n';
-      let startIndex = page * MaxResultPhrases;
-      let endIndex = Math.min(this.dictionaryResults.length, startIndex + MaxResultPhrases);
-      for (let i = startIndex; i < endIndex; ++i) {
-        response += this.dictionaryResults[i].toDiscordBotString();
-
-        if (i < endIndex - 1) {
-          response += '\n';
-        }
-      }
-    } else if (this.responseStatus === ResponseStatus.NO_RESULTS) {
-      if (this.showLanguages) {
-        response += 'Sorry, didn\'t find any ' + this.toLanguage + ' results for the ' + this.fromLanguage + ' word or phrase: **' + this.searchedWord + '**.';
-      } else {
-        response += 'Sorry, didn\'t find any results for the word or phrase: **' + this.searchedWord + '**.';
-      }
-    } else if (this.responseStatus === ResponseStatus.RESULT_ERROR) {
-      response += 'Sorry, there was an error! ' + this.errorDetail;
-    } else if (this.responseStatus === ResponseStatus.INVALID_SYNTAX) {
-      response += this.errorDetail;
+    if (this.showLanguages_) {
+      response += this.toLanguage_ + ' results for the ' + this.fromLanguage_ + ' word or phrase: **' + this.searchedWord_ + '**';
+    } else {
+      response += 'Results for the word or phrase: **' + this.searchedWord_ + '**';
     }
 
-    if (this.extraText) {
+    response += '\n\n';
+    let startIndex = page * MaxResultPhrases;
+    let endIndex = Math.min(this.dictionaryResults_.length, startIndex + MaxResultPhrases);
+    for (let i = startIndex; i < endIndex; ++i) {
+      response += this.dictionaryResults_[i].toDiscordBotString();
+
+      if (i < endIndex - 1) {
+        response += '\n';
+      }
+    }
+
+    if (this.extraText_) {
       response += '\n\n';
-      response += this.extraText;
+      response += this.extraText_;
     }
 
     return response;
+  }
+
+  toDiscordBotContentSmall_() {
+    return this.dictionaryResults_[0].toStandaloneDiscordBotContent(this.searchedWord_);
   }
 }
 
