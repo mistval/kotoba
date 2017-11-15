@@ -2,9 +2,10 @@
 const reload = require('require-reload')(require);
 const YoutubeApi = reload('./../kotoba/youtube_api_utils.js');
 const logger = require('./../core/logger.js');
+const KotobaUtils = require('./../kotoba/utils.js');
 let videoUris = [];
 
-YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ').then(links => {
+KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then(links => {
   videoUris = links;
 }).catch(err => {
   logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);
@@ -15,12 +16,16 @@ module.exports = {
   canBeChannelRestricted: true,
   uniqueId: 'jukebox409453',
   cooldown: 5,
+  shortDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link.',
+  longDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link. Songs are chosen from this playlist: https://www.youtube.com/watch?v=iyL_SXBlNIk&list=PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ. There are about 800 songs.',
   action(bot, msg, suffix) {
     if (videoUris.length === 0) {
       msg.channel.createMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.');
-      return;
+      return 'Tracks not available';
     }
     let random = Math.floor(Math.random() * videoUris.length);
-    bot.createMessage(msg.channel.id, videoUris[random]);
+    let link = videoUris[random];
+    bot.createMessage(msg.channel.id, link);
+    logger.logSuccess('YOUTUBE', 'Sent link: ' + link);
   },
 };

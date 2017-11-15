@@ -4,7 +4,7 @@ const prettyLanguageForLanguageCode = reload('./language_code_maps.js').prettyLa
 const DictionaryResponseData = reload('./dictionary_response_data.js');
 const KotobaUtils = reload('./utils.js');
 const NavigationPage = reload('./../core/navigation_page.js');
-const ResponseStatus = reload('./dictionary_response_status.js');
+const PublicError = reload('./../core/public_error.js');
 
 function getHelp(langStr, fromLanguage, toLanguage) {
   let fromLanguagePretty = prettyLanguageForLanguageCode[fromLanguage];
@@ -15,7 +15,19 @@ function getHelp(langStr, fromLanguage, toLanguage) {
   return 'Say \'k!' + langStr + ' [word]\' to search for ' + toLanguagePretty + ' definitions of a ' + fromLanguagePretty + ' word.';
 }
 
-module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction) {
+function throwSyntaxError(publicMessage) {
+  throw new PublicError(publicMessage, 'Bad syntax');
+}
+
+module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction, defaultSize) {
+  let big = defaultSize === 'big';
+  if (term.indexOf('--small') !== -1) {
+    big = false;
+  }
+  if (term.indexOf('--big') !== -1) {
+    big = true;
+  }
+  term = term.replace('--small', '').replace('--big', '');
   if (typeof fromLanguage === typeof '') {
     let autoSetToLanguage = typeof toLanguage !== 'string';
 
@@ -37,20 +49,13 @@ module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction) {
     if (!term) {
       let result = '';
       if (autoSetToLanguage) {
-        result = DictionaryResponseData.CreateSyntaxErrorResponse(getHelp(fromLanguage, fromLanguage, toLanguage));
+        throwSyntaxError(getHelp(fromLanguage, fromLanguage, toLanguage));
       } else {
-        result = DictionaryResponseData.CreateSyntaxErrorResponse(getHelp(fromLanguage + '-' + toLanguage, fromLanguage, toLanguage));
+        throwSyntaxError(getHelp(fromLanguage + '-' + toLanguage, fromLanguage, toLanguage));
       }
-      return msg.channel.createMessage(result.toDiscordBotString());
     } else {
       return queryFunction(fromLanguage, toLanguage, term).then(result => {
-        return msg.channel.createMessage(result.toDiscordBotString());
-      }).catch(err => {
-        if (err.publicMessage) {
-          msg.channel.createMessage(err.publicMessage);
-        }
-
-        return 'Error';
+        return msg.channel.createMessage(result.toDiscordBotContent(big));
       });
     }
 

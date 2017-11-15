@@ -34,67 +34,66 @@ function addMeaningsForLanguage(outMeanings, inMeanings, toLanguage) {
 }
 
 function parseGlosbeResponse(inData) {
-  if (inData.result !== 'ok') {
-    return DictionaryResponseData.CreateErrorResponse('Received an error code from Glosbe: ' + inData.result);
-  } else {
-    let inResults = inData.tuc;
-    let fromLanguage = inData.from;
-    let toLanguage = inData.dest;
-    let phrase = inData.phrase;
-    let fromLanguagePretty = prettyLanguageForLanguageCode[fromLanguage];
-    let toLanguagePretty = prettyLanguageForLanguageCode[toLanguage];
+  let inResults = inData.tuc;
+  let fromLanguage = inData.from;
+  let toLanguage = inData.dest;
+  let phrase = inData.phrase;
+  let fromLanguagePretty = prettyLanguageForLanguageCode[fromLanguage];
+  let toLanguagePretty = prettyLanguageForLanguageCode[toLanguage];
 
-    let outResults = [];
+  let outResults = [];
 
-    if (inResults) {
-      for (let inResult of inResults) {
-        let inPhrase = inResult.phrase;
+  if (inResults) {
+    for (let inResult of inResults) {
+      let inPhrase = inResult.phrase;
 
-        if (inPhrase && inPhrase.language === toLanguage) {
-          let resultWord = inPhrase.text;
+      if (inPhrase && inPhrase.language === toLanguage) {
+        let resultWord = inPhrase.text;
 
-          let inMeanings = inResult.meanings;
-          let outMeanings = [];
-          if (inMeanings) {
-            addMeaningsForLanguage(outMeanings, inMeanings, fromLanguage);
-            addMeaningsForLanguage(outMeanings, inMeanings, toLanguage);
+        let inMeanings = inResult.meanings;
+        let outMeanings = [];
+        if (inMeanings) {
+          addMeaningsForLanguage(outMeanings, inMeanings, fromLanguage);
+          addMeaningsForLanguage(outMeanings, inMeanings, toLanguage);
 
-            if (fromLanguage !== 'en' && toLanguage !== 'en') {
-              addMeaningsForLanguage(outMeanings, inMeanings, 'en');
-            }
-
-            outResults.push(new DictionaryResult(resultWord, '', [], outMeanings));
+          if (fromLanguage !== 'en' && toLanguage !== 'en') {
+            addMeaningsForLanguage(outMeanings, inMeanings, 'en');
           }
+
+          outResults.push(new DictionaryResult(resultWord, [], [], outMeanings));
         }
       }
     }
-
-    return DictionaryResponseData.CreateNonErrorResponse(phrase, fromLanguagePretty, toLanguagePretty, true, outResults, '');
   }
+
+  return new DictionaryResponseData(phrase, fromLanguagePretty, toLanguagePretty, true, outResults, '');
 }
 
-module.exports = function(fromLanguage, toLanguage, suffix) {
+module.exports.supportsLanguage = function(languageCode) {
+  return !!threeLetterLanguageCodeForTwoLetterLanguageCode[languageCode];
+}
+
+module.exports.search = function(fromLanguage, toLanguage, suffix) {
   suffix = suffix.trim();
   let requestFromLanguage = threeLetterLanguageCodeForTwoLetterLanguageCode[fromLanguage];
   let requestToLanguage = threeLetterLanguageCodeForTwoLetterLanguageCode[toLanguage];
 
-  if (requestToLanguage && requestFromLanguage) {
-    return request({
-      uri: TRANSLATE_API,
-      qs: {
-        from: requestFromLanguage,
-        dest: requestToLanguage,
-        format: RESPONSE_FORMAT,
-        phrase: suffix
-      },
-      json: true,
-      timeout: 10000
-    }).then(data => {
-      return parseGlosbeResponse(data);
-    }).catch(err => {
-      throw new PublicError('glosbe', 'Sorry, Glosbe dictionary is not responding. Please try again later.', err);
-    });
-  } else {
-    return Promise.reject(new Error('unsupported language'));
-  }
+  return request({
+    uri: TRANSLATE_API,
+    qs: {
+      from: requestFromLanguage,
+      dest: requestToLanguage,
+      format: RESPONSE_FORMAT,
+      phrase: suffix,
+    },
+    json: true,
+    timeout: 10000,
+  }).catch(err => {
+    throw new PublicError('Sorry, Glosbe dictionary is not responding. Please try again later.', 'Error', err);
+  }).then(data => {
+    if (data.result !== 'ok') {
+      throw new Error('Bad response code from Glosbe: ', data.result);
+    }
+    return parseGlosbeResponse(data);
+  });
 };
