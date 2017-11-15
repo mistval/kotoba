@@ -162,7 +162,7 @@ function createGuildLeaveJoinLogString(guild) {
     return guild.name + ' owned by ' + owner.username + '#' + owner.discriminator;
   } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Couldn\'t create join/leave guild log string', err);
-    return config.genericErrorMessage;
+    return '<Error getting guild name or owner name>';
   }
 }
 
