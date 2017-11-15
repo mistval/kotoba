@@ -58,7 +58,7 @@ class TranslationResult {
 
       content.embed = {
         title: 'Result from ' + this.resultProvider + ':',
-        description: this.resultTranslation,
+        description: this.resultTranslation.replace(/&#39;/g, '\''),
         url: this.resultLink,
         fields: embedFields,
         color: constants.EMBED_NEUTRAL_COLOR,

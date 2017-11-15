@@ -38,7 +38,6 @@ module.exports.translate = function(sourceLanguage, targetLanguage, text) {
   if (languageCodeAliases[targetLanguage]) {
     targetLanguage = languageCodeAliases[targetLanguage];
   }
-
   return request({
     uri: TRANSLATE_API,
     qs: {
@@ -68,8 +67,19 @@ module.exports.getPrettyLanguageForLanguageCode = function(languageCode) {
   return prettyLanguageForLanguageCode[languageCode];
 };
 
+module.exports.getLanguageCodeForPrettyLanguage = function(prettyLanguage) {
+  if (!prettyLanguage) {
+    return;
+  }
+  prettyLanguage = prettyLanguage.toLowerCase();
+  for (let key of Object.keys(prettyLanguageForLanguageCode)) {
+    if (prettyLanguageForLanguageCode[key].toLowerCase() === prettyLanguage) {
+      return key;
+    }
+  }
+};
+
 function throwNotRespondingError(internalError) {
-  let error = new PublicError('Google translate', 'Sorry, Google translate is not responding. Please try again later.', internalError);
-  error.isTimeout = true;
+  let error = new PublicError('Sorry, Google translate is not responding. Please try again later.', 'error', internalError);
   throw error;
 }
