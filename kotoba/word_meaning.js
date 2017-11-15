@@ -20,21 +20,18 @@ function cleanMeaning(str) {
 
 class WordMeaning {
   constructor(meaning, meaningTags) {
-    assert(typeof meaning === 'string' && meaning !== '', 'WordMeaning meaning parameter bad');
-    assert(Array.isArray(meaningTags), 'WordMeaning meaningTags parameter bad');
-    this.meaning = meaning;
-    this.meaningTags = meaningTags;
+    KotobaUtils.assertIsString(meaning);
+    KotobaUtils.assertIsArray(meaningTags);
+    this.meaning_ = meaning;
+    this.meaningTags_ = meaningTags;
   }
 
   toDiscordBotString() {
-    let response = '*' + this.meaning;
-
-    if (KotobaUtils.isNonEmptyArray(this.meaningTags)) {
-      response += ' ' + cleanMeaning(KotobaUtils.tagArrayToString(this.meaningTags));
+    let response = '*' + this.meaning_;
+    if (this.meaningTags_.length > 0) {
+      response += ' ' + cleanMeaning(KotobaUtils.tagArrayToString(this.meaningTags_));
     }
-
     response += '*';
-
     return response;
   }
 }

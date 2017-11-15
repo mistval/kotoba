@@ -3,8 +3,10 @@ class Logger {
     this.succeeded = true;
   }
 
-  logFailure() {
+  logFailure(loggerTitle, failureMessage, err) {
     this.failed = true;
+    this.error = err;
+    this.failureMessage = failureMessage;
   }
 
   logInputReaction(title, msg, inputReactorTitle, succeeded, failureMessage) {
