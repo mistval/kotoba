@@ -2,6 +2,17 @@
 const reload = require('require-reload')(require);
 const FileSystemUtils = reload('./util/file_system_utils.js');
 const MessageProcessor = reload('./message_processor.js');
+const PublicError = reload('./../core/public_error.js');
+
+function handleError(msg, err, logger) {
+  const loggerTitle = 'MESSAGE';
+  let errDescription = err.logDescription || 'Exception or promise rejection';
+  let internalErr = err.internalErr || err;
+  logger.logInputReaction(loggerTitle, msg, '', false, errDescription);
+  if (internalErr) {
+    logger.logFailure(loggerTitle, 'A message processor threw an exception or returned a promise that rejected for message: \'' + msg.content + '\'', internalErr);
+  }
+}
 
 /**
 * Loads and executes commands in response to user input.
@@ -11,8 +22,7 @@ class MessageProcessorManager {
   * @param {String} directory - The directory to load message processors from
   * @param {Logger} logger - The logger to log to
   */
-  constructor(directory, logger) {
-    this.directory_ = directory;
+  constructor(logger) {
     this.logger_ = logger;
     this.processors_ = [];
   }
@@ -20,10 +30,10 @@ class MessageProcessorManager {
   /**
   * Loads message processors. Can be called to reload message processors that have been edited.
   */
-  load() {
+  load(directory) {
     const loggerTitle = 'MESSAGE MANAGER';
     this.processors_ = [];
-    return FileSystemUtils.getFilesInDirectory(this.directory_).then((processorFiles) => {
+    return FileSystemUtils.getFilesInDirectory(directory).then((processorFiles) => {
       for (let processorFile of processorFiles) {
         try {
           let processorInformation = reload(processorFile);
@@ -33,6 +43,7 @@ class MessageProcessorManager {
           this.logger_.logFailure(loggerTitle, 'Failed to load message processor from file: ' + processorFile, err);
         }
       }
+      this.processors_.push(new MessageProcessor(reload('./message_processors/user_and_channel_hook.js')));
     }).catch(err => {
       this.logger_.logFailure(loggerTitle, 'Error loading message processors.', err);
     });
@@ -45,41 +56,31 @@ class MessageProcessorManager {
   * @param {Config} config - The monochrome configuration.
   * @returns {Boolean} True if a message processor accepted responsibility to handle the message and did so, false otherwise.
   */
-  processInput(bot, msg, config) {
+  processInput(bot, msg) {
     const loggerTitle = 'MESSAGE';
     for (let processor of this.processors_) {
       try {
-        let result = processor.handle(bot, msg, config);
-        if (result === true) {
-          this.logger_.logInputReaction(loggerTitle, msg, processor.name, result);
+        let result = processor.handle(bot, msg);
+        if (result && result.then) {
+          result.then(innerResult => {
+            if (typeof innerResult === typeof '') {
+              throw new PublicError('', false, innerResult);
+            }
+            this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
+          }).catch(err => handleError(msg, err, this.logger_));
           return true;
         } else if (typeof result === typeof '') {
-          this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, result);
-          return true;
-        } else if (result && typeof result.then === 'function') {
-          result.then(innerResult => {
-            if (typeof innerResult === typeof true) {
-              this.logger_.logInputReaction(loggerTitle, msg, processor.name, innerResult);
-            } else if (typeof innerResult === typeof '') {
-              this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, innerResult);
-            } else {
-              this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
-            }
-          }).catch(err => {
-            // Do not send an error message to the Discord channel here, because there's a possibility the message processor is throwing on every message sent.
-            this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, 'Promise reject');
-            this.logger_.logFailure(loggerTitle, 'MessageProcessor \'' + processor.name + '\' returned a promise that rejected.', err);
-          });
+          throw new PublicError('', false, result);
+        } else if (result === true) {
+          this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
           return true;
         } else if (result !== false) {
-          this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, 'Message processor invalid return value');
           this.logger_.logFailure(loggerTitle, 'Message processor \'' + processor.name +
-            '\' returned an invalid value. It should return true if it will handle the message, false if it will not. A string return value will be treated as true and logged as an error. A promise will be treated as true and resolved.');
+            '\' returned an invalid value. It should return true if it will handle the message, false if it will not. A promise will be treated as true and resolved.');
         }
       } catch (err) {
-        // Do not send an error message to the Discord channel here, because there's a possibility the message processor is throwing on every message sent.
-        this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, 'Exception');
-        this.logger_.logFailure(loggerTitle, 'MessageProcessor \'' + processor.name + '\' threw an exception.', err);
+        handleError(msg, err, this.logger_);
+        return true;
       };
     }
 
