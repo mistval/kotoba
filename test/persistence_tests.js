@@ -9,7 +9,7 @@ if (!persistence.initialized_) {
 Storage.clearSync();
 
 function createNextEdit(index) {
-  persistence.editGlobalData((data) => {
+  persistence.editGlobalData(data => {
     if (index < 100) {
       createNextEdit(index + 1);
     }
@@ -75,13 +75,13 @@ describe('Persistence', function() {
     const globalData = 'globalData';
     it('Stores the data without error', function() {
       return persistence.editGlobalData((data) => {
-        data = globalData;
+        data.data = globalData;
         return data;
       });
     });
     it('Reads the correct data back', function() {
       return persistence.getGlobalData().then(data => {
-        if (data === globalData) {
+        if (data.data === globalData) {
           return true;
         } else {
           throw new Error('Wrong user name in data ' + JSON.stringify(data));

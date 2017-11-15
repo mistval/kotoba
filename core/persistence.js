@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const storage = require('node-persist');
+const storage = require('./util/node_persist_atomic.js');
 
 let implementation;
 
@@ -17,7 +17,7 @@ class Persistence {
   * @param {Object} options - The options to pass into the node-persist initializer.
   */
   init(options) {
-    storage.initSync(options);
+    storage.init(options);
     this.initialized_ = true;
   }
 
@@ -55,16 +55,6 @@ class Persistence {
   }
 
   /**
-  * Get the channel ids that a command is allowed to be run in in a server.
-  * @param {Eris.Message} msg - The msg in the server.
-  * @param {String} commandId - The uniqueId of the command.
-  * @returns {(Promise<Array<String>>|Promise<undefined>)} a promise that will be fulfilled with an array of allowed channelIds, or undefined if the command is unrestricted.
-  */
-  getAllowedChannelsForCommand(msg, commandId) {
-    return implementation.getAllowedChannelsForCommand(msg, commandId, this);
-  }
-
-  /**
   * Edit data associated with a userId
   * @param {String} userId - The id of the user to set data associated with.
   * @param {function(data)} editFunction - The callback to perform the edit on the data. It should return the edited data.
@@ -91,17 +81,6 @@ class Persistence {
   */
   editGlobalData(editFunction) {
     return implementation.editGlobalData(editFunction, this);
-  }
-
-  /**
-  * Set the channel ids that a command is allowed to be run in in a server.
-  * @param {Eris.Message} msg - The msg in the server.
-  * @param {String} commandId - The uniqueId of the command.
-  * @param {function(data)} editFunction - The callback to perform the edit on the data. It should return the edited data.
-  * @returns {Promise} a promise that will be fulfilled when the data has been edited.
-  */
-  editAllowedChannelsForCommand(msg, commandId, editFunction) {
-    return implementation.editAllowedChannelsForCommand(msg, commandId, editFunction, this);
   }
 }
 
