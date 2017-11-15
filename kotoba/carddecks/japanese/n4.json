@@ -6,6 +6,7 @@
   "article": "a",
   "instructions": "Type the reading of the below word in Hiragana!",
   "cards": [
+    {"meaning":"to say","kanjiLevel":4,"question":"言う","answer":["ゆう","いう"]},
     {"meaning":"a space","kanjiLevel":5,"question":"間","answer":["あいだ","ま"]},
     {"meaning":"to rise","kanjiLevel":5,"question":"上る","answer":["あがる","のぼる"]},
     {"meaning":"to open, to become empty","kanjiLevel":4,"question":"空く","answer":["あく","すく"]},
@@ -151,7 +152,6 @@
     {"meaning":"(humble) older brother","kanjiLevel":4,"question":"兄","answer":["あに"]},
     {"meaning":"(humble) older sister","kanjiLevel":4,"question":"姉","answer":["あね"]},
     {"meaning":"to walk","kanjiLevel":4,"question":"歩く","answer":["あるく"]},
-    {"meaning":"to say","kanjiLevel":4,"question":"言う","answer":["いう","ゆう"]},
     {"meaning":"house","kanjiLevel":4,"question":"家","answer":["いえ"]},
     {"meaning":"medical doctor","kanjiLevel":4,"question":"医者","answer":["いしゃ"]},
     {"meaning":"dog","kanjiLevel":4,"question":"犬","answer":["いぬ"]},
