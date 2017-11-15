@@ -100,7 +100,7 @@ module.exports = {
 };
 ```
 ### Command extensions
-Command extensions are an alternative to command arguments, and may be more diserable in some cases.
+Command extensions are an alternative to command arguments and command aliases, and may be more diserable in some cases.
 
 As an example, consider a bot!translate command. If someone says "bot!translate German is fun", do they want to translate "German is fun" or do they want to translate "is fun" into German?
 
