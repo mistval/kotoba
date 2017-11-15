@@ -5,7 +5,6 @@ FILES="\
   core/util/* \
   message_processors/* \
   commands/* \
-  kotoba/* \
   test/*"
 
 jscs -c ./style_rules.json ${FILES}

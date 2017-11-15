@@ -1,0 +1,17 @@
+[
+  {
+    "type": "CATEGORY",
+    "userFacingName": "fun",
+    "children":
+    [
+      {
+        "type": "SETTING",
+        "userFacingName": "countdown_start",
+        "description": "This setting controls what number I'll count down from when you use the bot!countdown command.",
+        "valueType": "INTEGER",
+        "defaultDatabaseFacingValue": 10,
+        "allowedDatabaseFacingValues": "Range(1, 10)"
+      }
+    ]
+  }
+]
