@@ -12,12 +12,13 @@ class PublicError extends Error {
   * @param {String} logDescription - Brief description of the error (for logging).
   * @param {Error} [internalError] - The original error that was thrown (if one exists and you want its stack trace logged)
   */
-  constructor(publicMessage, logDescription, internalErr) {
+  constructor(publicMessage, deleteAutomatically, logDescription, internalErr) {
     assert(publicMessage || logDescription || internalErr, 'PublicError must be constructed with at least one argument');
     super(publicMessage, internalErr && internalErr.fileName, internalErr && internalErr.lineNumber);
     this.publicMessage = publicMessage;
     this.internalErr = internalErr;
     this.logDescription = logDescription;
+    this.deleteAutomatically = !!deleteAutomatically;
   }
 }
 

@@ -310,9 +310,7 @@ describe('Command', function() {
     it('should not execute if not cooled down', function() {
       let command = new Command(validCommandDataWith1SecondCooldown);
       return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(result1 => {
-        return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(result2 => {
-          assert(result1 === undefined && typeof result2 === typeof '');
-        });
+        return assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
       });
     });
     it('should execute if cooled down', function(done) {
@@ -332,13 +330,8 @@ describe('Command', function() {
     });
     it('should not execute if user must be a bot admin but is not', function() {
       let command = new Command(validCommandDataBotAdminOnly);
-      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
-        assert(typeof invoke1Result === typeof '' && !command.invoked);
-        command = new Command(validCommandDataBotAdminOnly);
-        return command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter).then(invoke2Result => {
-          assert(typeof invoke2Result === typeof '' && !command.invoked);
-        });
-      });
+      assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
+      assert.throws(() => command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter));
     });
     it('should execute if user must be a bot admin and is', function() {
       let command = new Command(validCommandDataBotAdminOnly);
@@ -348,9 +341,7 @@ describe('Command', function() {
     });
     it('should not execute if must be in server but is not', function() {
       let command = new Command(validCommandServerOnly);
-      return command.handle(null, MsgDM, '', '', config, enabledSettingsGetter).then(invoke1Result => {
-        assert(typeof invoke1Result === typeof '' && !command.invoked);
-      });
+      assert.throws(() => command.handle(null, MsgDM, '', '', config, enabledSettingsGetter));
     });
     it('should execute if must be in server and is', function() {
       let command = new Command(validCommandServerOnly);
@@ -360,9 +351,7 @@ describe('Command', function() {
     });
     it('should not execute if user must be a server admin but is not', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
-        assert(typeof invoke1Result === typeof '' && !command.invoked);
-      });
+      assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
     });
     it('should execute if user must be a server admin, is not, but its a DM', function() {
       let command = new Command(validCommandDataServerAdminOnly);

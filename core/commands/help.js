@@ -1,6 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const ErisUtils = reload('./../util/eris_utils.js');
+const PublicError = reload('./../public_error.js');
 
 function validateCommand(command) {
   let commandName = command.aliases[0];
@@ -172,7 +173,7 @@ class Help {
     if (helpText) {
       return msg.channel.createMessage(helpText);
     } else {
-      return 'No commands to show help for';
+      throw new PublicError('No commands to show help for', false, 'No commands for help');
     }
   }
 }
