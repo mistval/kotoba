@@ -8,6 +8,8 @@ module.exports = {
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'examples53059',
+  shortDescription: 'Search Jisho for example sentences.',
+  usageExample: 'k!examples 少し',
   action(bot, msg, suffix) {
     return exampleQuery('ja', suffix, jishoScreenScraper.searchExamples, bot, msg);
   },
