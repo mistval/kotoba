@@ -64,24 +64,23 @@ class MessageProcessorManager {
         if (result && result.then) {
           result.then(innerResult => {
             if (typeof innerResult === typeof '') {
-              this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, innerResult);
-            } else {
-              this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
+              throw new PublicError('', false, innerResult);
             }
+            this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
           }).catch(err => handleError(msg, err, this.logger_));
           return true;
         } else if (typeof result === typeof '') {
-          this.logger_.logInputReaction(loggerTitle, msg, processor.name, false, result);
-          return true;
+          throw new PublicError('', false, result);
         } else if (result === true) {
           this.logger_.logInputReaction(loggerTitle, msg, processor.name, true);
           return true;
         } else if (result !== false) {
           this.logger_.logFailure(loggerTitle, 'Message processor \'' + processor.name +
-            '\' returned an invalid value. It should return true if it will handle the message, false if it will not. A string return value will be treated as true and logged as an error. A promise will be treated as true and resolved.');
+            '\' returned an invalid value. It should return true if it will handle the message, false if it will not. A promise will be treated as true and resolved.');
         }
       } catch (err) {
         handleError(msg, err, this.logger_);
+        return true;
       };
     }
 

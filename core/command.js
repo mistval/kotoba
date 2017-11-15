@@ -1,7 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const persistence = require('./persistence.js');
-const ErisUtils = reload('./util/eris_utils.js');
+const PublicError = reload('./public_error.js');
 
 function sanitizeCommandData(commandData, settingsCategorySeparator) {
   if (!commandData) {
@@ -148,17 +148,15 @@ class Command {
   */
   handle(bot, msg, suffix, extension, config, settingsGetter) {
     if (this.usersCoolingDown_.indexOf(msg.author.id) !== -1) {
-      ErisUtils.sendMessageAndDelete(msg, msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.');
-      return Promise.resolve('Not cooled down');
+      let publicErrorMessage = msg.author.username + ', that command has a ' + this.cooldown_.toString() + ' second cooldown.';
+      throw new PublicError(publicErrorMessage, true, 'Not cooled down');
     }
     let isBotAdmin = config.botAdminIds.indexOf(msg.author.id) !== -1;
     if (this.botAdminOnly_ && !isBotAdmin) {
-      ErisUtils.sendMessageAndDelete(msg, 'Only a bot admin can use that command.');
-      return Promise.resolve('User is not a bot admin');
+      throw new PublicError('Only a bot admin can use that command.', true, 'User is not a bot admin');
     }
     if (this.onlyInServer_ && !msg.channel.guild) {
-      ErisUtils.sendMessageAndDelete(msg, 'That command can only be used in a server.');
-      return Promise.resolve('Command can only be used in server');
+      throw new PublicError('That command can only be used in a server.', true, 'Not in a server');
     }
     if (this.serverAdminOnly_ && !isBotAdmin) {
       let isServerAdmin = userIsServerAdmin(msg, config);
@@ -169,8 +167,7 @@ class Command {
           errorMessage += 'or have a role called \'' + config.serverAdminRoleName + '\' ';
         }
         errorMessage += 'in order to do that.';
-        ErisUtils.sendMessageAndDelete(msg, errorMessage);
-        return Promise.resolve('User is not a server admin');
+        throw new PublicError(errorMessage, true, 'User is not a server admin');
       }
     }
 
@@ -185,8 +182,7 @@ class Command {
         return this.invokeAction_(bot, msg, suffix, settings, extension);
       }
 
-      ErisUtils.sendMessageAndDelete(msg, 'That command is disabled in this channel.');
-      return Promise.resolve('Command disabled');
+      throw new PublicError('That command is disabled in this channel.', true, 'Command disabled');
     });
   }
 

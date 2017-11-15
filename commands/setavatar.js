@@ -1,7 +1,8 @@
 'use strict'
+const reload = require('require-reload')(require);
 const request = require('request-promise').defaults({encoding: null});
 const logger = require('./../core/logger.js');
-const PublicError = require('./../core/public_error.js');
+const PublicError = reload('./../core/public_error.js');
 
 /**
 * Sets the bot avatar.
@@ -14,8 +15,7 @@ module.exports = {
   usageExample: '}setavatar http://url.com/image.png',
   action(bot, msg, suffix) {
     if (!suffix) {
-      msg.channel.createMessage('Say \'}setavatar [http url]\' to set my avatar.');
-      return 'invalid syntax';
+      throw new PublicError('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');
     }
     return request({
       uri: suffix,
@@ -26,10 +26,10 @@ module.exports = {
       return bot.editSelf({avatar: dataUri}).then(() => {
         return msg.channel.createMessage('Avatar updated!');
       }).catch(err => {
-        throw new PublicError('Error updating avatar, check the logs for error info.', '', err);
+        throw new PublicError('Error updating avatar, check the logs for error info.', false, 'Error', err);
       });
     }).catch(err => {
-      throw new PublicError('Error updating avatar, check the logs for error info.', '', err);
+      throw new PublicError('Error updating avatar, check the logs for error info.', false, 'Error', err);
     });
   },
 };

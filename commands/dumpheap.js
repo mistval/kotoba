@@ -1,4 +1,7 @@
 'use strict'
+const reload = require('require-reload')(require);
+const PublicError = reload('./../core/public_error.js');
+
 let heapDump;
 try {
   heapDump = require('heapdump');
@@ -16,8 +19,7 @@ module.exports = {
   usageExample: '}dumpheap outputfilename',
   action(bot, msg, suffix) {
     if (!heapDump) {
-      msg.channel.createMessage('Module \'heapdump\' not found. Did you install dev dependencies?');
-      return 'No heapdump module';
+      throw new PublicError('Module \'heapdump\' not found. Did you install dev dependencies?', false, 'No heapdump module');
     }
     if (!suffix) {
       suffix = undefined;

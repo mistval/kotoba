@@ -5,6 +5,7 @@ const FileSystemUtils = reload('./util/file_system_utils.js');
 const ReloadCommand = reload('./commands/reload.js');
 const PublicError = reload('./public_error.js');
 const HelpCommand = reload('./commands/help.js');
+const ErisUtils = reload('./util/eris_utils.js');
 
 const COMMAND_CATEGORY_NAME = 'enabled_commands';
 
@@ -12,6 +13,7 @@ function handleCommandError(msg, err, config, logger) {
   const loggerTitle = 'COMMAND';
   let errDescription = err.logDescription;
   let publicMessage = err.publicMessage;
+  let deletePublicMessage = err.deleteAutomatically;
   if (!publicMessage && err.message.indexOf('Missing Permissions') !== -1 && config.missingPermissionsErrorMessage) {
     publicMessage = config.missingPermissionsErrorMessage;
     if (!errDescription) {
@@ -21,12 +23,19 @@ function handleCommandError(msg, err, config, logger) {
   if (!errDescription) {
     errDescription = 'Exception or promise rejection';
   }
-  if (!publicMessage) {
+  if (typeof publicMessage !== typeof '') {
     publicMessage = config.genericErrorMessage;
   }
-  let internalErr = err.internalErr || err;
+  let internalErr = err.internalErr;
+  if (!err.logDescription && !err.publicMessage && !internalErr) {
+    internalErr = err;
+  }
   if (publicMessage) {
-    msg.channel.createMessage(publicMessage);
+    if (deletePublicMessage) {
+      ErisUtils.sendMessageAndDelete(msg, publicMessage);
+    } else {
+      msg.channel.createMessage(publicMessage);
+    }
   }
   logger.logInputReaction(loggerTitle, msg, '', false, errDescription);
   if (internalErr) {
@@ -191,8 +200,10 @@ class CommandManager {
     }
     try {
       commandToExecute.handle(bot, msg, suffix, extension, this.config_, this.settingsGetter_).then(result => {
-        let success = typeof result !== typeof '';
-        this.logger_.logInputReaction(loggerTitle, msg, '', success, result);
+        if (typeof result === typeof '') {
+          throw new PublicError('', false, result);
+        }
+        this.logger_.logInputReaction(loggerTitle, msg, '', true);
       }).catch(err => handleCommandError(msg, err, this.config_, this.logger_));
     } catch (err) {
       handleCommandError(msg, err, this.config_, this.logger_);

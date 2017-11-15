@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const AbstractSettingElement = reload('./abstract_setting_element.js');
 const Setting = reload('./setting.js');
 const assert = require('assert');
+const PublicError = reload('./../core/public_error.js');
 
 function throwError(baseString, failedBlob) {
   throw new Error(baseString + ' Failed blob: \n' + JSON.stringify(failedBlob, null, 2));
