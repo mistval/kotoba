@@ -1,5 +1,5 @@
 const reload = require('require-reload')(require);
-const searchGlosbe = reload('./../kotoba/glosbe_word_search.js');
+const glosbe = reload('./../kotoba/glosbe_word_search.js');
 const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
 
 module.exports = {
@@ -17,7 +17,9 @@ module.exports = {
     if ((commandChunks.length === 1 || commandChunks.length === 2) && commandChunks[0]) {
       fromLanguage = commandChunks[0];
       toLanguage = commandChunks[1];
-      return dictionaryQuery(msg, fromLanguage, toLanguage, queryPart, searchGlosbe);
+      if (glosbe.supportsLanguage(fromLanguage) && (!toLanguage || glosbe.supportsLanguage(toLanguage))) {
+        return dictionaryQuery(msg, fromLanguage, toLanguage, queryPart, glosbe.search, 'big');
+      }
     }
 
     return false;

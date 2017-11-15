@@ -1,16 +1,78 @@
 [
   {
     "type": "CATEGORY",
-    "userFacingName": "fun",
+    "userFacingName": "quiz",
+    "children":
+    [
+      {
+        "type": "CATEGORY",
+        "userFacingName": "japanese",
+        "children":
+        [
+          {
+            "type": "SETTING",
+            "userFacingName": "answer_time_limit",
+            "description": "This setting controls how many seconds players have to answer a quiz question before I say time's up and move on to the next question.",
+            "valueType": "FLOAT",
+            "defaultDatabaseFacingValue": 20,
+            "allowedDatabaseFacingValues": "Range(5, 120)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "score_limit",
+            "description": "This setting controls how many points the quiz game stops at. When a player scores this many points, the game stops and they win.",
+            "valueType": "INTEGER",
+            "defaultDatabaseFacingValue": 10,
+            "allowedDatabaseFacingValues": "Range(1, 10000)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "unanswered_question_limit",
+            "description": "This setting controls how many questions in a row are allowed to go unanswered before the game stops. The intended purpose for this is to automatically end games that players abandon.",
+            "valueType": "INTEGER",
+            "defaultDatabaseFacingValue": 5,
+            "allowedDatabaseFacingValues": "Range(1, 25)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "new_question_delay_after_unanswered",
+            "description": "This setting controls how long I will wait (in seconds) after a timed out question before showing a new one. By setting this higher, players get more time to view and consider the correct answer.",
+            "valueType": "FLOAT",
+            "defaultDatabaseFacingValue": 4,
+            "allowedDatabaseFacingValues": "Range(0, 120)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "new_question_delay_after_answered",
+            "description": "This setting controls how long I will wait (in seconds) after an answer is correctly answered and the window for additional answers closes, before I show a new question. For example, if additional_answer_wait_time is set to two, and this setting is set to three, then after a question is answered correctly a total of five seconds will pass before I ask a new one.",
+            "valueType": "FLOAT",
+            "defaultDatabaseFacingValue": 2,
+            "allowedDatabaseFacingValues": "Range(0, 120)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "additional_answer_wait_time",
+            "description": "After a question is correctly answered, other players have a chance to also answer the question and get a point. This setting controls how long they have (in seconds).",
+            "valueType": "FLOAT",
+            "defaultDatabaseFacingValue": 2,
+            "allowedDatabaseFacingValues": "Range(0, 100)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "CATEGORY",
+    "userFacingName": "dictionary",
     "children":
     [
       {
         "type": "SETTING",
-        "userFacingName": "countdown_start",
-        "description": "This setting controls what number I'll count down from when you use the bot!countdown command.",
-        "valueType": "INTEGER",
-        "defaultDatabaseFacingValue": 10,
-        "allowedDatabaseFacingValues": "Range(1, 10)"
+        "userFacingName": "display_mode",
+        "description": "This setting controls the default display mode for dictionary results. 'big' shows up to four results with up to three definitions each. 'small' only shows one result with up to three definitions.",
+        "valueType": "STRING",
+        "defaultDatabaseFacingValue": "big",
+        "allowedDatabaseFacingValues": ["big", "small"]
       }
     ]
   }

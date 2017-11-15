@@ -2,39 +2,66 @@
 const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
+const constants = require('./constants.js');
 
 const MaxPhraseMeanings = 3;
 
 class DictionaryResult {
-  constructor(targetLanguageWordResult, targetLanguageWordReading, wordTags, wordMeanings) {
-    KotobaUtils.assertIsString(targetLanguageWordResult, targetLanguageWordReading);
-    KotobaUtils.assertIsArray(wordTags, wordMeanings);
+  constructor(targetLanguageWordResult, targetLanguageWordReadings, wordTags, wordMeanings) {
+    KotobaUtils.assertIsString(targetLanguageWordResult);
+    KotobaUtils.assertIsArray(wordTags, wordMeanings, targetLanguageWordReadings);
 
-    this.targetLanguageWordResult = targetLanguageWordResult;
-    this.targetLanguageWordReading = targetLanguageWordReading;
-    this.wordTags = wordTags;
-    this.wordMeanings = wordMeanings;
+    this.targetLanguageWordResult_ = targetLanguageWordResult;
+    this.targetLanguageWordReadings_ = targetLanguageWordReadings;
+    this.wordTags_ = wordTags;
+    this.wordMeanings_ = wordMeanings;
   }
 
   toDiscordBotString() {
-    let response = '- **' + this.targetLanguageWordResult + '**';
+    let response = '- ' + this.targetLanguageWordResult_;
 
-    if (this.targetLanguageWordReading !== '') {
-      response += ' (' + this.targetLanguageWordReading + ')';
+    if (this.targetLanguageWordReadings_.length > 0) {
+      response += '  (' + this.targetLanguageWordReadings_.join(', ') + ')';
     }
+    response += ' ' + KotobaUtils.tagArrayToString(this.wordTags_);
 
-    if (KotobaUtils.isNonEmptyArray(this.wordTags)) {
-      response += ' ' + KotobaUtils.tagArrayToString(this.wordTags);
-    }
-
-    if (KotobaUtils.isNonEmptyArray(this.wordMeanings)) {
+    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
       response += '\n';
-      response += this.wordMeanings.slice(0, Math.min(this.wordMeanings.length, MaxPhraseMeanings)).map((meaning, index) => {
+      response += this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
         return '    *' + (index + 1) + '.* ' + meaning.toDiscordBotString();
       }).join('\n');
     }
 
     return response;
+  }
+
+  toStandaloneDiscordBotContent(searchedWord) {
+    let content = {};
+    let embed = {};
+    content.embed = embed;
+    content.embed.color = constants.EMBED_NEUTRAL_COLOR;
+    content.embed.title = 'First Jisho result for: ' + searchedWord;
+    content.embed.url = `http://jisho.org/search/${encodeURIComponent(searchedWord)}`;
+
+    let fields = [];
+    content.embed.fields = fields;
+    let wordField = {name: 'Word', value: this.targetLanguageWordResult_, inline: true};
+    fields.push(wordField);
+
+    if (this.targetLanguageWordReadings_) {
+      let readingField = {name: 'Readings', value: this.targetLanguageWordReadings_.join(', '), inline: true};
+      fields.push(readingField);
+    }
+
+    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
+      let meaningsString = this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
+        return (index + 1).toString() + '. ' + meaning.toDiscordBotString();
+      }).join('\n');
+      let meaningsField = {name: 'Meanings', value: meaningsString};
+      fields.push(meaningsField);
+    }
+
+    return content;
   }
 }
 

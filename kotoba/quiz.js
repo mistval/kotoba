@@ -3,10 +3,11 @@ const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 const logger = require('./../core/logger.js');
-const renderText = reload('./render_text.js');
+const renderText = reload('./render_text.js').render;
 const fs = require('fs');
 const constants = require('./constants.js');
 const LOGGER_TITLE = 'QUIZ';
+const deckForName = require('./deck_for_name.js');
 
 class JapaneseDeckStrategy {
   completeQuestionInfoForNewQuestion(questionInfo, card, name, instructions) {
@@ -54,8 +55,8 @@ class JapaneseDeckStrategy {
     return 'a';
   }
 
-  getDefaultTimeLimit() {
-    return 20;
+  getDefaultTimeLimit(japaneseSetting) {
+    return japaneseSetting;
   }
 
   createQuizEndUriForUnansweredMementos(unansweredMementos) {
@@ -176,10 +177,10 @@ class EnglishDeckStrategy {
 }
 
 let uniqueIds = [];
-let japaneseDeckForName = {};
-let englishDeckForName = {};
-getDecksInDirectory(japaneseDeckForName, '/carddecks/japanese/', new JapaneseDeckStrategy());
-getDecksInDirectory(englishDeckForName, '/carddecks/english/', new EnglishDeckStrategy());
+deckForName.japaneseDeckForName = {};
+deckForName.englishDeckForName = {};
+getDecksInDirectory(deckForName.japaneseDeckForName, '/carddecks/japanese/', new JapaneseDeckStrategy());
+getDecksInDirectory(deckForName.englishDeckForName, '/carddecks/english/', new EnglishDeckStrategy());
 
 function getDecksInDirectory(dictionaryToFill, directory, strategy) {
   fs.readdir(__dirname + directory, (err, files) => {
@@ -325,13 +326,13 @@ class DeckCollection {
     return mementoForDictionaryLink.deckCollectionMemento.strategy.createQuizEndUriForUnansweredMementos(mementosWithMatchingStrategy);
   }
 
-  getDefaultTimeLimit() {
+  getDefaultTimeLimit(japaneseSetting) {
     if (this.allDecksHaveSameStrategy()) {
-      return this.decks[0].strategy.getDefaultTimeLimit();
+      return this.decks[0].strategy.getDefaultTimeLimit(japaneseSetting);
     } else {
       let max = 0;
       for (let deck of this.decks) {
-        max = Math.max(max, deck.strategy.getDefaultTimeLimit());
+        max = Math.max(max, deck.strategy.getDefaultTimeLimit(japaneseSetting));
       }
       return max;
     }
@@ -349,9 +350,11 @@ class DeckCollection {
 }
 
 class Quiz {
-  constructor(suffix) {
+  constructor(settings, suffix) {
     suffix = suffix.toLowerCase();
     suffix = suffix.replace('jlpt ', '');
+    suffix = suffix.replace(/\+ /g, '+');
+    suffix = suffix.replace(/ \+/g, '+');
     let suffixParts = suffix.split(' ');
     let deckArg = suffixParts[0];
     let deckNames = deckArg.split('+');
@@ -361,10 +364,10 @@ class Quiz {
 
     let decks = [];
     for (let deckName of deckNames) {
-      if (japaneseDeckForName[deckName]) {
-        decks.push(japaneseDeckForName[deckName].copy());
-      } else if (englishDeckForName[deckName]) {
-        decks.push(englishDeckForName[deckName].copy());
+      if (deckForName.japaneseDeckForName[deckName]) {
+        decks.push(deckForName.japaneseDeckForName[deckName].copy());
+      } else if (deckForName.englishDeckForName[deckName]) {
+        decks.push(deckForName.englishDeckForName[deckName].copy());
       } else {
         this.loaded = false;
         this.unloadedDeckName = deckName;
@@ -384,28 +387,35 @@ class Quiz {
       this.correctAnswerLimit = Math.max(this.correctAnswerLimit, 1);
       this.correctAnswerLimit = Math.min(this.correctAnswerLimit, 1000000);
     } else {
-      this.correctAnswerLimit = 10;
+      this.correctAnswerLimit = settings['quiz/japanese/score_limit'];
     }
 
-    this.nextWordDelayInMs = suffixParts[2];
-    if (this.nextWordDelayInMs) {
-      this.nextWordDelayInMs = parseFloat(this.nextWordDelayInMs);
-      this.nextWordDelayInMs = Math.max(this.nextWordDelayInMs, 0);
-      this.nextWordDelayInMs = Math.min(this.nextWordDelayInMs, 20);
+    this.additionalAnswerWaitTimeInSeconds = settings['quiz/japanese/additional_answer_wait_time'];
+
+    this.nextWordDelayInSeconds = suffixParts[2];
+    if (this.nextWordDelayInSeconds) {
+      let nextWordDelayInSeconds = parseFloat(this.nextWordDelayInSeconds);
+      nextWordDelayInSeconds = Math.max(this.nextWordDelayInSeconds, 0);
+      nextWordDelayInSeconds = Math.min(this.nextWordDelayInSeconds, 20);
+      this.timeoutNextWordDelay = nextWordDelayInSeconds;
+      this.correctAnswerNextWordDelay = nextWordDelayInSeconds - this.additionalAnswerWaitTimeInSeconds;
+      this.correctAnswerNextWordDelay = Math.max(this.correctAnswerNextWordDelay, 0);
+      this.additionalAnswerWaitTimeInSeconds = Math.max(nextWordDelayInSeconds - this.correctAnswerNextWordDelay, 0);
     } else {
-      this.nextWordDelayInMs = 4;
+      this.timeoutNextWordDelay = settings['quiz/japanese/new_question_delay_after_unanswered'];
+      this.correctAnswerNextWordDelay = settings['quiz/japanese/new_question_delay_after_answered'];
     }
 
-    this.timeLimitInMs = suffixParts[3];
-    if (this.timeLimitInMs) {
-      this.timeLimitInMs = parseFloat(this.timeLimitInMs);
-      this.timeLimitInMs = Math.max(this.timeLimitInMs, 3);
-      this.timeLimitInMs = Math.min(this.timeLimitInMs, 30);
+    this.timeLimitInSeconds = suffixParts[3];
+    if (this.timeLimitInSeconds) {
+      this.timeLimitInSeconds = parseFloat(this.timeLimitInSeconds);
+      this.timeLimitInSeconds = Math.max(this.timeLimitInSeconds, 3);
+      this.timeLimitInSeconds = Math.min(this.timeLimitInSeconds, 30);
     } else {
-      this.timeLimitInMs = this.deckCollection.getDefaultTimeLimit();
+      this.timeLimitInSeconds = this.deckCollection.getDefaultTimeLimit(settings['quiz/japanese/answer_time_limit']);
     }
 
-    this.incorrectAnswerLimit = 5;
+    this.incorrectAnswerLimit = settings['quiz/japanese/unanswered_question_limit'];
     this.loaded = true;
   }
 

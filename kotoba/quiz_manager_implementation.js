@@ -8,7 +8,6 @@ const constants = reload('./constants.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const INITIAL_DELAY_IN_MS = 5000;
-const ADDITIONAL_ANSWER_WAIT_TIME_IN_MS = 2000;
 
 const State = {
   INITIALIZATION: 0,
@@ -53,16 +52,23 @@ class Scores {
     return this.scoreForUserId[userId];
   }
 
-  getScoreList() {
-    let scoreList = '';
-
-    let scorePairs = Object.keys(this.scoreForUserId).map(key => {
+  getSortedScorePairs_() {
+    return Object.keys(this.scoreForUserId).map(key => {
       let score = this.scoreForUserId[key];
       return {player: key, score: score};
     }).sort((a, b) => {
       return b.score - a.score;
     });
+  }
 
+  getTopScorerId() {
+    return this.getSortedScorePairs_()[0].player;
+  }
+
+  getScoreList() {
+    let scoreList = '';
+
+    let scorePairs = this.getSortedScorePairs_();
     for (let scorePair of scorePairs) {
       scoreList += '<@' + scorePair.player + '> has ' + scorePair.score + ' point';
       if (scorePair.score > 1) {
@@ -89,10 +95,6 @@ class QuizState {
     this.state = State.INITIALIZATION;
     this.correctAnswerers = [];
   }
-}
-
-function calculateAdditionalAnswerWait(quiz) {
-  return Math.min(ADDITIONAL_ANSWER_WAIT_TIME_IN_MS, quiz.nextWordDelayInMs * 1000);
 }
 
 class QuizManagerImplementation {
@@ -169,7 +171,7 @@ class QuizManagerImplementation {
       }
     } catch (e) {
       logger.logFailure(LOGGER_TITLE, 'Error advancing state', e);
-      QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+      QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, 'There was an error :( So I stopped.');
     }
   }
 
@@ -181,16 +183,7 @@ class QuizManagerImplementation {
     }
 
     QuizManagerImplementation.stopTimersForChannel_(quizManager, channelId);
-
-    let content = {};
-    content.embed = {
-      title: quiz.name,
-      description: 'Stopping the quiz at the request of <@' + msg.author.id + '>!',
-      color: constants.EMBED_NEUTRAL_COLOR,
-    };
-
-    msg.channel.createMessage(content);
-    QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+    QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, '<@' + msg.author.id + '> asked me to stop the quiz.');
   }
 
   static tryAdvanceStateFromInitialization_(quizManager, bot, msg, reason) {
@@ -231,9 +224,9 @@ class QuizManagerImplementation {
       QuizManagerImplementation.showTimeExpiredMessage_(quizManager, bot, msg, limitReached, memento);
 
       if (limitReached) {
-        QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+        QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, quizState.questionsUnansweredCount.toString() + ' questions in a row went unanswered. So I stopped!');
       } else {
-        quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, quiz.nextWordDelayInMs * 1000, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
+        quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, quiz.timeoutNextWordDelay * 1000, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
         quizState.state = State.WAITING_FOR_NEXT_QUESTION;
       }
     } else if (correctAnswer) {
@@ -243,7 +236,7 @@ class QuizManagerImplementation {
       QuizManagerImplementation.showCorrectAnswerMessage_(quizManager, bot, msg, memento, true).catch(err => {
         logger.logFailure(LOGGER_TITLE, 'Error showing correct answer message', err);
       }).then(() => {
-        let additionalAnswerWait = calculateAdditionalAnswerWait(quiz);
+        let additionalAnswerWait = quiz.additionalAnswerWaitTimeInSeconds * 1000;
         quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, additionalAnswerWait, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
       });
       quizState.state = State.WAITING_FOR_ADDITIONAL_ANSWERS;
@@ -255,11 +248,10 @@ class QuizManagerImplementation {
     let quizState = quizManager.quizStateForChannelId[channelId];
     if (reason === AdvanceStateReason.TIMEOUT) {
       if (quizState.scores.checkForWin()) {
-        QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+        QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, 'The score limit of ' + quizState.scores.pointsToWin.toString() + ' was reached by <@' + quizState.scores.getTopScorerId() + '>. Congratulations!');
       } else {
         let quiz = quizManager.quizForChannelId[channelId];
-        let additionalAnswerWait = calculateAdditionalAnswerWait(quiz);
-        let delay = quiz.nextWordDelayInMs * 1000 - additionalAnswerWait;
+        let delay = quiz.correctAnswerNextWordDelay * 1000;
         quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, delay, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
         quizState.state = State.WAITING_FOR_NEXT_QUESTION;
       }
@@ -364,7 +356,7 @@ class QuizManagerImplementation {
         return;
       }
       if (!nextQuestionInfo) {
-        return QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+        return QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, 'No more questions in that deck. Impressive!');
       }
       KotobaUtils.retryPromise(() => msg.channel.createMessage(nextQuestionInfo.content, nextQuestionInfo.attachment), 3).catch(err => {
         logger.logFailure(LOGGER_TITLE, 'Error creating message', err);
@@ -377,7 +369,7 @@ class QuizManagerImplementation {
         quizState.pendingAnswers = nextQuestionInfo.correctAnswers;
         quizState.unansweredQuestionMementos.push(nextQuestionInfo.memento);
         quizState.allQuestionMementos.push(nextQuestionInfo.memento);
-        quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, quiz.timeLimitInMs * 1000, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
+        quizState.quizTimer = setTimeout(QuizManagerImplementation.advanceState_, quiz.timeLimitInSeconds * 1000, quizManager, bot, msg, AdvanceStateReason.TIMEOUT);
         quizState.state = State.WAITING_FOR_FIRST_ANSWER;
         if (sentMessage && nextQuestionInfo.updateQuestionIntervalInMs > 0) {
           quizState.updateQuestionTimer = setInterval(() => {
@@ -395,14 +387,14 @@ class QuizManagerImplementation {
       });
     }).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Failed to get next question', err);
-      QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg);
+      QuizManagerImplementation.endQuizForChannel_(quizManager, bot, msg, 'There was an error :( So I stopped.');
     });
   }
 
-  static endQuizForChannel_(quizManager, bot, msg) {
+  static endQuizForChannel_(quizManager, bot, msg, endReasonDescription) {
     let channelId = msg.channel.id;
     QuizManagerImplementation.stopTimersForChannel_(quizManager, channelId);
-    QuizManagerImplementation.outputResults_(quizManager, bot, msg);
+    QuizManagerImplementation.outputResults_(quizManager, bot, msg, endReasonDescription);
     quizManager.quizForChannelId[channelId] = undefined;
     quizManager.quizStateForChannelId[channelId] = undefined;
   }
@@ -419,7 +411,7 @@ class QuizManagerImplementation {
     }
   }
 
-  static outputResults_(quizManager, bot, msg) {
+  static outputResults_(quizManager, bot, msg, endReasonDescription) {
     let channelId = msg.channel.id;
     let content = {};
     let quizState = quizManager.quizStateForChannelId[channelId];
@@ -430,6 +422,7 @@ class QuizManagerImplementation {
     quizState.scores.commitScores(guildId, quiz.deckid);
     content.embed = {
       title: quiz.name + ' Ended',
+      description: endReasonDescription,
       color: constants.EMBED_NEUTRAL_COLOR,
     };
 
