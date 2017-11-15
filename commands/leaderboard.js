@@ -50,7 +50,7 @@ function sendScores(bot, msg, scores, title, description, footer) {
 }
 
 module.exports = {
-  commandAliases: ['k!leaderboard', 'k!lb'],
+  commandAliases: ['k!lb', 'k!leaderboard'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'leaderboard409359',

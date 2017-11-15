@@ -37,7 +37,7 @@ exports.tagArrayToString = function(tagArray) {
     result += ']';
     return result;
   } else {
-    return;
+    return '';
   }
 };
 

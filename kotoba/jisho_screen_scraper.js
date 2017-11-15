@@ -4,7 +4,7 @@ const request = require('request-promise');
 const htmlparser = require('htmlparser');
 const KanjiInformation = reload('./kanji_information.js');
 const KanjiExample = reload('./kanji_example.js');
-const renderText = reload('./render_text.js');
+const renderText = reload('./render_text.js').render;
 const PublicError = reload('./../core/public_error.js');
 
 const kanjiRegex = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
@@ -241,7 +241,7 @@ function parseKanjiData(inData, kanji) {
 }
 
 function throwTimeoutError(err) {
-  throw new PublicError('jisho', 'Sorry, Jisho is not responding. Please try again later.', err);
+  throw new PublicError('Sorry, Jisho is not responding. Please try again later.', 'Error', err);
 }
 
 exports.searchExamples = function(language, phrase) {

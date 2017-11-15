@@ -34,11 +34,10 @@ class MessageProcessor {
   * Try handling a message.
   * @param {Eris.Client} bot - The Eris bot.
   * @param {Eris.Message} msg - The Eris message to consider handling.
-  * @param {Object} config - The monochrome configuration.
   * @returns {(boolean|ActionResponse)} Returns the return value of the action. That should be either true if the message was handled, false otherwise.
   *   Alternatively, an ActionResponse can be returned with an error string for logging.
   */
-  handle(bot, msg, config) {
+  handle(bot, msg) {
     return this.action_(bot, msg);
   }
 }

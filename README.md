@@ -26,26 +26,30 @@ The bot should now be online. Invite it to your server and say k!help to see com
 ## Commands
 
 ```glsl
-k!j [word] (short: !j)
-  # Search Jisho for an English or Japanese word. For example: k!j 家族
-k!quiz [deck] (short: k!q)
-  # Start a quiz with the specified deck. k!quizdecks lists available decks. 'k!quiz stop' stops the quiz.
-k!kanji [kanji] (short: k!k)
-  # Search for information about a Kanji. For example: k!kanji 雨
-k!strokeorder [kanji] (short: k!so)
-  # Search for details about a Kanji's strokes. For example: k!strokeorder 雨
-k!gt [text]
-  # Use google translate to translate text. For example: k!gt 日本
+k!j (aliases: !j)
+  # Search Jisho for an English or Japanese word. Example: k!j 少し
+k!kanji (aliases: k!k)
+  # Search for information about a kanji. Example: k!kanji 少
+k!strokeorder (aliases: k!so)
+  # Search for details about a kanji's strokes. Example: k!strokeorder 少
+k!furigana (aliases: k!furi, k!f)
+  # Render furigana for Japanese text. Example: k!furigana 吾輩は猫である
+k!translate (aliases: k!t)
+  # Use Google Translate to translate text. Example: k!translate 吾輩は猫である
+k!quiz (aliases: k!q)
+  # Start a quiz with the specified deck. Example: 'k!quiz n5'. 'k!quiz' lists decks, 'k!quiz stop' stops the quiz.
+k!examples (aliases: k!ex)
+  # Search Jisho for example sentences. Example: k!examples 少し
 k!jukebox
-  # I will choose a song for you (probably Touhou or Vocaloid)
-k!examples [word] (short: k!ex)
-  # Search Jisho for examples of a word.
+  # I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link.
 k!invite
-  # Get a link to invite me to your server :)
-k!help more
-  # Show advanced help
+  # Get a link to invite me to your server.
 k!about
-  # See some meta information about me.
+  # Show some meta information about me.
+k!settings (aliases: k!s)
+  # Server admins can use this command to see and configure my settings on their server.
+
+Say k!help [command name] to see more help for a command. Example: k!help k!j
 ```
 
 ## Public bot

@@ -14,8 +14,8 @@ describe('MessageProcessorManager', function() {
   describe('load()', function() {
     it('Fails to load from invalid directory', function() {
       let logger = new MockLogger();
-      let processorManager = new MessageProcessorManager('invalid_dir', logger);
-      return processorManager.load().then(() => {
+      let processorManager = new MessageProcessorManager(logger);
+      return processorManager.load('invalid_dir').then(() => {
         assert(logger.failed === true);
         let result = processorManager.processInput(null, Msg, config);
         assert(result === false);
@@ -23,8 +23,8 @@ describe('MessageProcessorManager', function() {
     });
     it('Fails to load invalid processor', function() {
       let logger = new MockLogger();
-      let processorManager = new MessageProcessorManager(__dirname + '/mock_message_processors/valid_and_invalid', logger);
-      return processorManager.load().then(() => {
+      let processorManager = new MessageProcessorManager(logger);
+      return processorManager.load(__dirname + '/mock_message_processors/valid_and_invalid').then(() => {
         assert(logger.failed === true);
         let result = processorManager.processInput(null, Msg, config);
         assert(result === false);
@@ -32,8 +32,8 @@ describe('MessageProcessorManager', function() {
     });
     it('Loads valid processors', function() {
       let logger = new MockLogger();
-      let processorManager = new MessageProcessorManager(__dirname + '/mock_message_processors/valid_and_invalid', logger);
-      return processorManager.load().then(() => {
+      let processorManager = new MessageProcessorManager(logger);
+      return processorManager.load(__dirname + '/mock_message_processors/valid_and_invalid').then(() => {
         let result = processorManager.processInput(null, MsgHello, config);
         assert(result === true);
         result = processorManager.processInput(null, MsgHello2, config);
@@ -44,8 +44,8 @@ describe('MessageProcessorManager', function() {
     });
     it('Gracefully handles exception in processor', function() {
       let logger = new MockLogger();
-      let processorManager = new MessageProcessorManager(__dirname + '/mock_message_processors/valid_throws', logger);
-      return processorManager.load().then(() => {
+      let processorManager = new MessageProcessorManager(logger);
+      return processorManager.load(__dirname + '/mock_message_processors/valid_throws').then(() => {
         assert(logger.failed !== true);
         let result = processorManager.processInput(null, MsgHello, config);
         assert(logger.failed === true);
@@ -53,8 +53,8 @@ describe('MessageProcessorManager', function() {
     });
     it('Gracefully handles message processor returning undefined', function() {
       let logger = new MockLogger();
-      let processorManager = new MessageProcessorManager(__dirname + '/mock_message_processors/valid_returns_undefined', logger);
-      return processorManager.load().then(() => {
+      let processorManager = new MessageProcessorManager(logger);
+      return processorManager.load(__dirname + '/mock_message_processors/valid_returns_undefined').then(() => {
         assert(logger.failed !== true);
         let result = processorManager.processInput(null, MsgHello, config);
         assert(logger.failed === true);

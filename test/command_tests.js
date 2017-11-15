@@ -4,13 +4,28 @@ const MockMessage = require('./mock_objects/mock_message.js');
 const MockConfig = require('./mock_objects/mock_config.js');
 const persistence = require('./../core/persistence.js');
 const Storage = require('node-persist');
+const MockLogger = require('./mock_objects/mock_logger.js');
+const SettingsManager = require('./../core/settings_manager.js');
 
 const MsgNoPerms = new MockMessage('channel1', 'user1', 'Username', ['Server Admin'], []);
-const MsgIsServerAdmin = new MockMessage('channel1', 'user1', 'Username', ['Server Admin'], ['Server Admin']);
+const MsgIsServerAdminWithTag = new MockMessage('channel1', 'user1', 'Username', ['Server Admin'], ['Server Admin']);
+const MsgIsServerAdmin = new MockMessage('channel1', 'user1', 'Username', [], [], 'content', ['manageGuild']);
 const MsgIsBotAdmin = new MockMessage('channel1', 'bot-admin-id', 'Username');
 const MsgIsBotAndServerAdmin = new MockMessage('channel1', 'bot-admin-id', 'Username', ['Server Admin'], ['Server Admin']);
-const MsgDM = new MockMessage('channel1', 'bot-admin-id', 'Username');
+const MsgDM = new MockMessage('channel1', 'not-bot-admin', 'Username');
 const config = new MockConfig('Server Admin', ['bot-admin-id']);
+
+let enabledSettingsGetter = {
+  getSettings: (bot, msg, fullyQualifiedUserFacingSettingNames) => {
+    let settings = {
+      serverSettings: {},
+    };
+    for (let fullyQualifiedUserFacingSettingName of fullyQualifiedUserFacingSettingNames) {
+      settings.serverSettings[fullyQualifiedUserFacingSettingName] = true;
+    }
+    return Promise.resolve(settings);
+  }
+};
 
 if (!persistence.initialized_) {
   persistence.init({dir: './test/persistence'});
@@ -20,40 +35,48 @@ Storage.clearSync();
 
 const commandDataNoAliases = {
   commandAliases: [],
+  canBeChannelRestricted: false,
   action(bot, msg, suffix) { },
 };
 
 const commandDataUndefinedAliases = {
+  canBeChannelRestricted: false,
   action(bot, msg, suffix) { },
 };
 
 const commandDataBlankAlias = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', ''],
   action(bot, msg, suffix) { },
 };
 
 const commandDataNonStringAliases = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 5],
   action(bot, msg, suffix) { },
 };
 
 const commandDataNonNumberCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: 'string',
   action(bot, msg, suffix) { },
 };
 
 const commandDataNegativeCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: -5,
   action(bot, msg, suffix) { },
 };
 
 const commandDataNoAction = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
 };
 
 const commandDataInvalidAction = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   action: 'invalid',
 };
@@ -72,48 +95,57 @@ const commandDataNonStringUniqueId = {
 };
 
 const commandDataInvalidServerAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   serverAdminOnly: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidBotAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   botAdminOnly: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidCanBeChannelRestricted = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   canBeChannelRestricted: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const commandDataInvalidOnlyInServer = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   onlyInServer: 'invalid',
   action(bot, msg, suffix) { },
 };
 
 const validCommandDataWith1SecondCooldown = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   cooldown: 1,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandDataBotAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   botAdminOnly: true,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandDataServerAdminOnly = {
+  canBeChannelRestricted: false,
   commandAliases: ['alias1', 'alias2'],
   serverAdminOnly: true,
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
 const validCommandServerOnly = {
+  canBeChannelRestricted: true,
+  uniqueId: 'serverOnlyffff',
   commandAliases: ['alias1', 'alias2'],
   onlyInServer: true,
   action(bot, msg, suffix) { this.invoked = true; },
@@ -133,9 +165,50 @@ const validCommandStringAlias = {
   action(bot, msg, suffix) { this.invoked = true; },
 };
 
+const invalidRequiredSettings1 = {
+  commandAliases: 'alias1',
+  canBeChannelRestricted: false,
+  requiredSettings: 534545,
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
+const invalidRequiredSettings2 = {
+  commandAliases: 'alias1',
+  canBeChannelRestricted: false,
+  requiredSettings: [534545],
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
+const validRequiredSettings1 = {
+  commandAliases: 'alias1',
+  canBeChannelRestricted: false,
+  requiredSettings: 'requiredSetting',
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
+const validRequiredSettings2 = {
+  commandAliases: 'alias1',
+  canBeChannelRestricted: false,
+  requiredSettings: ['requiredSetting'],
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
+const validCommandUndefinedCanBeChannelRestrictedUserCommand = {
+  commandAliases: 'alias1',
+  uniqueId: 'uniqueid',
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
+const validCommandUndefinedCanBeChannelRestrictedAdminCommand = {
+  commandAliases: 'alias1',
+  botAdminOnly: true,
+  action(bot, msg, suffix) { this.invoked = true; },
+};
+
 const validCommandDatas = [
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     action(bot, msg, suffix) { },
   },
   {
@@ -146,21 +219,25 @@ const validCommandDatas = [
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     serverAdminOnly: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     botAdminOnly: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     onlyInServer: true,
     action(bot, msg, suffix) { },
   },
   {
     commandAliases: ['alias1', 'alias2'],
+    canBeChannelRestricted: false,
     cooldown: 5,
     action(bot, msg, suffix) { },
   },
@@ -214,101 +291,103 @@ describe('Command', function() {
       let command = new Command(validCommandStringAlias);
       assert.deepEqual(command.aliases, [alias]);
     });
+    it('should accept valid requiredSettings values', function() {
+      let command = new Command(validRequiredSettings1);
+      command = new Command(validRequiredSettings2);
+    });
+    it('should throw on invalid requiredSettings values', function() {
+      assert.throws(() => new Command(invalidRequiredSettings1));
+      assert.throws(() => new Command(invalidRequiredSettings2));
+    });
+    it('should correctly auto-set canBeChannelRestricted if it\'s undefined', function() {
+      let command1 = new Command(validCommandUndefinedCanBeChannelRestrictedAdminCommand);
+      let command2 = new Command(validCommandUndefinedCanBeChannelRestrictedUserCommand);
+      assert(!command1.createEnabledSetting());
+      assert(command2.createEnabledSetting());
+    });
   });
   describe('handle()', function() {
     it('should not execute if not cooled down', function() {
       let command = new Command(validCommandDataWith1SecondCooldown);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      let invoke2Result = command.handle(null, MsgNoPerms, '', config);
-      assert(invoke1Result === undefined && typeof invoke2Result === typeof '');
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(result1 => {
+        return assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
+      });
     });
     it('should execute if cooled down', function(done) {
       let command = new Command(validCommandDataWith1SecondCooldown);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      setTimeout(() => {
-        let invoke2Result = command.handle(null, MsgNoPerms, '', config);
-        if (invoke1Result === undefined && typeof invoke2Result !== typeof '') {
-          done();
-        } else {
-          done('Failed to cool down');
-        }
-      },
-      1500);
+      command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        setTimeout(() => {
+          command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(invoke2Result => {
+            if (invoke1Result === undefined && typeof invoke2Result !== typeof '') {
+              done();
+            } else {
+              done('Failed to cool down');
+            }
+          });
+        },
+        1500);
+      });
     });
     it('should not execute if user must be a bot admin but is not', function() {
       let command = new Command(validCommandDataBotAdminOnly);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
-      command = new Command(validCommandDataBotAdminOnly);
-      let invoke2Result = command.handle(null, MsgIsServerAdmin, '', config);
-      assert(typeof invoke2Result === typeof '' && !command.invoked);
+      assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
+      assert.throws(() => command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter));
     });
     it('should execute if user must be a bot admin and is', function() {
       let command = new Command(validCommandDataBotAdminOnly);
-      let invoke1Result = command.handle(null, MsgIsBotAdmin, '', config);
-      assert(invoke1Result === undefined && command.invoked);
+      return command.handle(null, MsgIsBotAdmin, '', '', config, enabledSettingsGetter).then(invoke1Result => {
+        assert(invoke1Result === undefined && command.invoked);
+      });
     });
     it('should not execute if must be in server but is not', function() {
       let command = new Command(validCommandServerOnly);
-      let invoke1Result = command.handle(null, MsgDM, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
+      assert.throws(() => command.handle(null, MsgDM, '', '', config, enabledSettingsGetter));
     });
     it('should execute if must be in server and is', function() {
       let command = new Command(validCommandServerOnly);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      assert(invoke1Result === undefined && command.invoked);
+      return command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter).then(() => {
+        assert(command.invoked);
+      });
     });
     it('should not execute if user must be a server admin but is not', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      let invoke1Result = command.handle(null, MsgNoPerms, '', config);
-      assert(typeof invoke1Result === typeof '' && !command.invoked);
+      assert.throws(() => command.handle(null, MsgNoPerms, '', '', config, enabledSettingsGetter));
+    });
+    it('should execute if user must be a server admin, is not, but its a DM', function() {
+      let command = new Command(validCommandDataServerAdminOnly);
+      return command.handle(null, MsgDM, '', '', config, enabledSettingsGetter).then(() => {
+        assert(command.invoked);
+      });
     });
     it('should execute if user must be a server admin and is', function() {
       let command = new Command(validCommandDataServerAdminOnly);
-      let invokeResult = command.handle(null, MsgIsBotAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-      command = new Command(validCommandDataServerAdminOnly);
-      invokeResult = command.handle(null, MsgIsServerAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-      command = new Command(validCommandDataServerAdminOnly);
-      invokeResult = command.handle(null, MsgIsBotAndServerAdmin, '', config);
-      assert(invokeResult === undefined && command.invoked);
-    });
-    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function(done) {
-      let command = new Command(validCommandCanBeRestricted);
-      persistence.editAllowedChannelsForCommand(MsgIsServerAdmin, command.uniqueId, () => ['channel2']).then(() => {
-        command.handle(null, MsgIsServerAdmin, '', config).then(invokeResult => {
-          if (typeof invokeResult === typeof '') {
-            persistence.editAllowedChannelsForCommand(MsgIsServerAdmin, command.uniqueId, () => ['channel1']).then(() => {
-              invokeResult = command.handle(null, MsgIsServerAdmin, '', config).then(invokeResult => {
-                if (invokeResult === undefined) {
-                  persistence.editAllowedChannelsForCommand(MsgIsServerAdmin, command.uniqueId, () => []).then(() => {
-                    invokeResult = command.handle(null, MsgIsServerAdmin, '', config).then(invokeResult => {
-                      if (typeof invokeResult === typeof '') {
-                        persistence.editAllowedChannelsForCommand(MsgIsServerAdmin, command.uniqueId, () => undefined).then(() => {
-                          invokeResult = command.handle(null, MsgIsServerAdmin, '', config).then(invokeResult => {
-                            if (invokeResult === undefined) {
-                              done();
-                            } else {
-                              done('Should have executed in that channel, but did not');
-                            }
-                          });
-                        });
-                      } else {
-                        done('Should not have executed in that channel, but did');
-                      }
-                    });
-                  });
-                } else {
-                  done('Should have executed in that channel, but did not');
-                }
-              });
+      return command.handle(null, MsgIsBotAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+        assert(invokeResult === undefined && command.invoked);
+        command = new Command(validCommandDataServerAdminOnly);
+        return command.handle(null, MsgIsServerAdminWithTag, '', '', config, enabledSettingsGetter).then(invokeResult => {
+          assert(invokeResult === undefined && command.invoked);
+          command = new Command(validCommandDataServerAdminOnly);
+          return command.handle(null, MsgIsServerAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+            assert(invokeResult === undefined && command.invoked);
+            command = new Command(validCommandDataServerAdminOnly);
+            return command.handle(null, MsgIsBotAndServerAdmin, '', '', config, enabledSettingsGetter).then(invokeResult => {
+              assert(invokeResult === undefined && command.invoked);
             });
-          } else {
-            done('Should not have executed in that channel, but did');
-          }
+          });
         });
       });
+    });
+    it('should be able to be restricted and unrestricted, and allow or refuse to allow itself to be invoked accordingly', function() {
+      // TODO. Add test.
+    });
+  });
+  describe('createEnabledSetting()', function() {
+    it('should return a valid setting that the SettingsManager can load', function() {
+      let logger = new MockLogger();
+      let command = new Command(validCommandServerOnly);
+      let setting = command.createEnabledSetting();
+      let settingsManager = new SettingsManager(logger, config);
+      assert(logger.failed !== true);
     });
   });
 });
