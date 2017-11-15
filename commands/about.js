@@ -4,7 +4,9 @@ const botVersion = require('../package.json').version;
 
 module.exports = {
   commandAliases: ['k!about'],
+  uniqueId: 'about53463',
   cooldown: 30,
+  shortDescription: 'Show some meta information about me.',
   action(bot, msg, suffix) {
     return bot.createMessage(msg.channel.id, `\`\`\`md
 # Kotoba
@@ -12,10 +14,12 @@ module.exports = {
 [ CREATOR ](K33#5261)
 [ LIBRARY ](Eris v${libVersion})
 
-Kotoba was designed for language learning Discord servers.
-It runs on the monochrome bot framework (https://github.com/mistval/monochrome).
+Need help, want to report a bug, make a suggestion, etc? https://discordapp.com/invite/aXsaM9h
 
-It uses data from the following sources:
+Kotoba's code is mostly open source (https://github.com/mistval/kotoba).
+Kotoba runs on the monochrome bot framework (https://github.com/mistval/monochrome).
+
+Kotoba uses data from the following sources:
     - Jisho (http://jisho.org)
     - KanjiAlive (https://kanjialive.com/)
     - Weblio (http://ejje.weblio.jp/)
