@@ -18,11 +18,11 @@ npm install --no-optional
 
 ## Starting the bot
 ```
-node monochrome/monochrome.js
+node bot.js
 ```
 Your bot should now appear as online in your server. Try bot!help to get a response, and see the demo commands.
 ## Building your bot
-The demo version of monochrome comes with demo commands, message processors, settings, and configuration. While some of these are useful, such as the set avatar command, others are not, and you will wish to delete them. To make the bot yours, you should:
+The demo version of monochrome comes with demo commands, demo message processors, demo settings, and demo configuration. While some of these are useful, such as the set avatar command, others are not, and you will wish to delete them. To make the bot yours, you should:
 
 <ol>
 <li>Delete unwanted commands from monochrome/commands. Simply delete the files for the commands you don't want.</li>
@@ -33,5 +33,6 @@ The demo version of monochrome comes with demo commands, message processors, set
 <li>Add your own settings hierarchy to monochrome/server_settings.js.</li>
 <li>Update monochrome/config.json with your desired configuration.</li>
 </ol>
+
 ## Help
 [Support](https://discord.gg/f4Gkqku)
