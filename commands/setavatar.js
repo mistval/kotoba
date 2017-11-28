@@ -1,8 +1,7 @@
 'use strict'
-const reload = require('require-reload')(require);
 const request = require('request-promise').defaults({encoding: null});
-const logger = require('./../core/logger.js');
-const PublicError = reload('./../core/public_error.js');
+const logger = require('monochrome-bot').logger;
+const PublicError = require('monochrome-bot').PublicError;
 
 /**
 * Sets the bot avatar.
@@ -15,7 +14,7 @@ module.exports = {
   usageExample: '}setavatar http://url.com/image.png',
   action(bot, msg, suffix) {
     if (!suffix) {
-      throw new PublicError('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');
+      throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'No argument');
     }
     return request({
       uri: suffix,
@@ -26,10 +25,10 @@ module.exports = {
       return bot.editSelf({avatar: dataUri}).then(() => {
         return msg.channel.createMessage('Avatar updated!');
       }).catch(err => {
-        throw new PublicError('Error updating avatar, check the logs for error info.', false, 'Error', err);
+        throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);
       });
     }).catch(err => {
-      throw new PublicError('Error updating avatar, check the logs for error info.', false, 'Error', err);
+      throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);
     });
   },
 };

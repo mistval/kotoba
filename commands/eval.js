@@ -1,4 +1,6 @@
 'use strict'
+const PublicError = require('monochrome-bot').PublicError;
+
 /**
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
 */
@@ -9,7 +11,7 @@ module.exports = {
   usageExample: '}eval 4+5',
   action(bot, msg, suffix) {
     if (!suffix) {
-      return msg.channel.createMessage('Say \'}eval [javascript code]\' to evaluate code.');
+      throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No argument');
     }
     let result = eval(suffix);
     let text = JSON.stringify(result, null, 2);
