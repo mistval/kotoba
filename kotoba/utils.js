@@ -1,5 +1,6 @@
 'use strict'
-const logger = require('./../core/logger.js');
+const reload = require('require-reload')(require);
+const logger = reload('monochrome-bot').logger;
 const assert = require('assert');
 
 exports.assertIsString = function() {

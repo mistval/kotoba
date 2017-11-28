@@ -3,8 +3,8 @@ const reload = require('require-reload')(require);
 const prettyLanguageForLanguageCode = reload('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
 const DictionaryResponseData = reload('./dictionary_response_data.js');
 const KotobaUtils = reload('./utils.js');
-const NavigationPage = reload('./../core/navigation_page.js');
-const PublicError = reload('./../core/public_error.js');
+const NavigationPage = reload('monochrome-bot').NavigationPage;
+const PublicError = reload('monochrome-bot').PublicError;
 
 function getHelp(langStr, fromLanguage, toLanguage) {
   let fromLanguagePretty = prettyLanguageForLanguageCode[fromLanguage];
@@ -16,7 +16,7 @@ function getHelp(langStr, fromLanguage, toLanguage) {
 }
 
 function throwSyntaxError(publicMessage) {
-  throw new PublicError(publicMessage, 'Bad syntax');
+  throw PublicError.createWithCustomPublicMessage(publicMessage, false, 'Bad syntax');
 }
 
 module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction, defaultSize) {

@@ -3,8 +3,9 @@ const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const ScoreStorageUtils = reload('./quiz_score_storage_utils.js');
 const assert = require('assert');
-const logger = require('./../core/logger.js');
+const logger = reload('monochrome-bot').logger;
 const constants = reload('./constants.js');
+const PublicError = reload('monochrome-bot').PublicError;
 
 const LOGGER_TITLE = 'QUIZ';
 const INITIAL_DELAY_IN_MS = 5000;
@@ -100,13 +101,12 @@ class QuizState {
 class QuizManagerImplementation {
   static createQuizSession(quizManager, bot, msg, quiz) {
     if (quizManager.quizForChannelId[msg.channel.id]) {
-      msg.channel.createMessage('There is already a quiz running in this channel. I can\'t do two at once, that would be confusing!');
-      return 'Quiz already running';
+      throw PublicError.createWithCustomPublicMessage('There is already a quiz running in this channel. I can\'t do two at once, that would be confusing!', true, 'Quiz already running');
     }
 
     if (!quiz.loaded) {
-      msg.channel.createMessage('Couldn\'t load deck: ' + quiz.unloadedDeckName + '. Try k!quizdecks to see available decks.');
-      return 'Could not load deck';
+      let message = quiz.unloadedReason || 'Couldn\'t load deck: ' + quiz.unloadedDeckName + '. Try k!quizdecks to see available decks.';
+      throw PublicError.createWithCustomPublicMessage(message, false, 'Could not load deck');
     }
 
     quizManager.quizForChannelId[msg.channel.id] = quiz;
@@ -395,6 +395,12 @@ class QuizManagerImplementation {
     let channelId = msg.channel.id;
     QuizManagerImplementation.stopTimersForChannel_(quizManager, channelId);
     QuizManagerImplementation.outputResults_(quizManager, bot, msg, endReasonDescription);
+    try {
+      quizManager.quizForChannelId[channelId].onQuizFinished(msg, quizManager.quizStateForChannelId[channelId].unansweredQuestionMementos);
+    } catch (err) {
+      logger.logFailure(LOGGER_TITLE, 'onQuizFinished threw', err);
+    }
+
     quizManager.quizForChannelId[channelId] = undefined;
     quizManager.quizStateForChannelId[channelId] = undefined;
   }

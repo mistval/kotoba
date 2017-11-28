@@ -3,7 +3,7 @@ const reload = require('require-reload')(require);
 const QuizManager = require('./../kotoba/quiz_manager.js');
 const Quiz = reload('./../kotoba/quiz.js');
 const content = reload('./../kotoba/quiz_decks_content.js');
-const persistence = require('./../core/persistence.js');
+const persistence = reload('monochrome-bot').persistence;
 
 QuizManager.reload();
 
@@ -35,7 +35,7 @@ module.exports = {
     }
     let serverId = msg.channel.guild && msg.channel.guild.id;
     serverId = serverId || msg.channel.id;
-    let quiz = new Quiz(settings, suffix);
+    let quiz = new Quiz(settings, suffix, msg.channel.id);
     return QuizManager.createQuizSession(bot, msg, quiz);
   },
 };
