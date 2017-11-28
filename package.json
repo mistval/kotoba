@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "monochrome",
   "version": "1.0.0",
   "description": "A lightweight and simple node.js Discord bot core based on Eris",
@@ -32,12 +33,11 @@
     "eris": "^0.8.0",
     "htmlparser": "^1.7.7",
     "kuroshiro": "^0.1.5",
-    "node-persist": "^2.1.0",
     "render-furigana": "^1.0.0",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
-    "require-reload": "^0.2.2",
-    "striptags": "^3.1.0"
+    "striptags": "^3.1.0",
+    "monochrome-bot": "^1.0.0"
   },
   "devDependencies": {
     "heapdump": "^0.3.9"

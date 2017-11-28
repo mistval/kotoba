@@ -1,7 +1,5 @@
 'use strict'
-
-const reload = require('require-reload')(require);
-const PublicError = reload('./../core/public_error.js');
+const PublicError = require('monochrome-bot').PublicError;
 
 /**
 * Send a message as the bot.
@@ -14,7 +12,7 @@ module.exports = {
   usageExample: '}broadcast [channelId] Hello!',
   action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
-      throw new PublicError('Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.', false, 'invalid syntax');
+      throw PublicError.createWithCustomPublicMessage('Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.', false, 'Invalid syntax');
     }
     let spaceIndex = suffix.indexOf(' ');
     let channelId = suffix.substring(0, spaceIndex);
