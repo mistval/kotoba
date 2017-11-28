@@ -1,7 +1,8 @@
 'use strict'
+const reload = require('require-reload')(require);
 const request = require('request-promise').defaults({encoding: null});
-const logger = require('monochrome-bot').logger;
-const PublicError = require('monochrome-bot').PublicError;
+const logger = reload('monochrome-bot').logger;
+const PublicError = reload('monochrome-bot').PublicError;
 
 /**
 * Sets the bot avatar.
@@ -14,7 +15,7 @@ module.exports = {
   usageExample: '}setavatar http://url.com/image.png',
   action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'No argument');
+      throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');
     }
     return request({
       uri: suffix,

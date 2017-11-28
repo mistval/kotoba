@@ -1,0 +1,502 @@
+{
+  "uniqueId": "bugs",
+  "showDictionaryLink": true,
+  "name": "Bugs Reading Quiz",
+  "category": "Mother Nature",
+  "article": "a",
+  "instructions": "Type the reading of the below bug in Hiragana!",
+  "cards": [
+    {
+      "question": "秋茜",
+      "answer": [
+        "あきあかね"
+      ],
+      "meaning": "var. of red dragonfly (Sympetrum frequens)"
+    },
+    {
+      "question": "揚羽蝶",
+      "answer": [
+        "あげはちょう"
+      ],
+      "meaning": "swallowtail butterfly (esp. the citrus swallowtail butterfly, Papilio xuthus)"
+    },
+    {
+      "question": "鳳蝶",
+      "answer": [
+        "あげはちょう"
+      ],
+      "meaning": "swallowtail butterfly (esp. the citrus swallowtail butterfly, Papilio xuthus)"
+    },
+    {
+      "question": "虻",
+      "answer": [
+        "あぶ",
+        "あむ"
+      ],
+      "meaning": "horsefly, gadfly"
+    },
+    {
+      "question": "水黽",
+      "answer": [
+        "あめんぼ",
+        "あめんぼう"
+      ],
+      "meaning": "pond skater (any insect of family Gerridae), water strider"
+    },
+    {
+      "question": "水馬",
+      "answer": [
+        "あめんぼ",
+        "あめんぼう",
+        "すいば"
+      ],
+      "meaning": "pond skater (any insect of family Gerridae), water strider, crossing water with a horse"
+    },
+    {
+      "question": "飴坊",
+      "answer": [
+        "あめんぼ",
+        "あめんぼう"
+      ],
+      "meaning": "pond skater (any insect of family Gerridae), water strider"
+    },
+    {
+      "question": "蟻",
+      "answer": [
+        "あり"
+      ],
+      "meaning": "ant"
+    },
+    {
+      "question": "芋虫",
+      "answer": [
+        "いもむし"
+      ],
+      "meaning": "hornworm (caterpillar of a hawk moth), (hairless) caterpillar"
+    },
+    {
+      "question": "蛆",
+      "answer": [
+        "うじ"
+      ],
+      "meaning": "maggot, larva, grub"
+    },
+    {
+      "question": "馬大頭",
+      "answer": [
+        "おにやんま"
+      ],
+      "meaning": "Siebold's dragonfly (Anotogaster sieboldii), jumbo dragonfly"
+    },
+    {
+      "question": "蚊",
+      "answer": [
+        "か"
+      ],
+      "meaning": "mosquito"
+    },
+    {
+      "question": "蛾",
+      "answer": [
+        "が"
+      ],
+      "meaning": "moth"
+    },
+    {
+      "question": "蚕",
+      "answer": [
+        "かいこ"
+      ],
+      "meaning": "silkworm (Bombyx mori)"
+    },
+    {
+      "question": "蜉蝣",
+      "answer": [
+        "かげろう",
+        "ふゆう"
+      ],
+      "meaning": "mayfly, ephemeropteran"
+    },
+    {
+      "question": "蜻蛉",
+      "answer": [
+        "とんぼ",
+        "とんぼう",
+        "せいれい"
+      ],
+      "meaning": "dragonfly, damselfly"
+    },
+    {
+      "question": "兜虫",
+      "answer": [
+        "かぶとむし"
+      ],
+      "meaning": "rhinoceros beetle (esp. the Japanese rhinoceros beetle, Trypoxylus dichotomus)"
+    },
+    {
+      "question": "甲虫",
+      "answer": [
+        "かぶとむし",
+        "こうちゅう"
+      ],
+      "meaning": "rhinoceros beetle (esp. the Japanese rhinoceros beetle, Trypoxylus dichotomus), beetle"
+    },
+    {
+      "question": "蟷螂",
+      "answer": [
+        "かまきり",
+        "とうろう",
+        "いもじり",
+        "いいぼむしり"
+      ],
+      "meaning": "praying mantis (esp. the narrow-winged mantis, Tenodera angustipennis)"
+    },
+    {
+      "question": "螳螂",
+      "answer": [
+        "かまきり",
+        "とうろう"
+      ],
+      "meaning": "praying mantis (esp. the narrow-winged mantis, Tenodera angustipennis)"
+    },
+    {
+      "question": "鎌切",
+      "answer": [
+        "かまきり"
+      ],
+      "meaning": "praying mantis (esp. the narrow-winged mantis, Tenodera angustipennis)"
+    },
+    {
+      "question": "天牛",
+      "answer": [
+        "かみきりむし"
+      ],
+      "meaning": "long-horned beetle"
+    },
+    {
+      "question": "髪切虫",
+      "answer": [
+        "かみきりむし"
+      ],
+      "meaning": "long-horned beetle"
+    },
+    {
+      "question": "椿象",
+      "answer": [
+        "かめむし"
+      ],
+      "meaning": "shield bug, stink bug"
+    },
+    {
+      "question": "亀虫",
+      "answer": [
+        "かめむし"
+      ],
+      "meaning": "shield bug, stink bug"
+    },
+    {
+      "question": "螽斯",
+      "answer": [
+        "きりぎりす"
+      ],
+      "meaning": "Japanese katydid (Gampsocleis buergeri)"
+    },
+    {
+      "question": "蟋蟀",
+      "answer": [
+        "こおろぎ",
+        "きりぎりす"
+      ],
+      "meaning": "cricket (Gryllidae spp.), Japanese katydid (Gampsocleis buergeri)"
+    },
+    {
+      "question": "蜘蛛",
+      "answer": [
+        "くも",
+        "ちちゅ",
+        "ちちゅう",
+        "ちしゅ"
+      ],
+      "meaning": "spider"
+    },
+    {
+      "question": "鍬形虫",
+      "answer": [
+        "くわがたむし"
+      ],
+      "meaning": "stag beetle"
+    },
+    {
+      "question": "蚰蜒",
+      "answer": [
+        "げじげじ",
+        "げじ"
+      ],
+      "meaning": "house centipede (Scutigeromorpha spp.)"
+    },
+    {
+      "question": "螻蛄",
+      "answer": [
+        "けら",
+        "おけら",
+        "ろうこ"
+      ],
+      "meaning": "mole cricket (esp. the Oriental mole cricket, Gryllotalpa orientalis)"
+    },
+    {
+      "question": "源五郎",
+      "answer": [
+        "げんごろう"
+      ],
+      "meaning": "diving beetle"
+    },
+    {
+      "question": "穀象虫",
+      "answer": [
+        "こくぞうむし"
+      ],
+      "meaning": "maize weevil (Sitophilus zeamais)"
+    },
+    {
+      "question": "黄金虫",
+      "answer": [
+        "こがねむし"
+      ],
+      "meaning": "scarabaeid beetle"
+    },
+    {
+      "question": "金亀子",
+      "answer": [
+        "こがねむし"
+      ],
+      "meaning": "scarabaeid beetle"
+    },
+    {
+      "question": "塩辛蜻蛉",
+      "answer": [
+        "しおからとんぼ"
+      ],
+      "meaning": "Orthetrum albistylum speciosum (subspecies of white-tailed skimmer)"
+    },
+    {
+      "question": "衣魚",
+      "answer": [
+        "しみ"
+      ],
+      "meaning": "true bristletail (any insect of order Thysanura, esp. of family Lepismatidae)"
+    },
+    {
+      "question": "紙魚",
+      "answer": [
+        "しみ"
+      ],
+      "meaning": "true bristletail (any insect of order Thysanura, esp. of family Lepismatidae)"
+    },
+    {
+      "question": "尺取虫",
+      "answer": [
+        "しゃくとりむし"
+      ],
+      "meaning": "inchworm, measuring worm, looper (caterpillar)"
+    },
+    {
+      "question": "虱",
+      "answer": [
+        "しらみ",
+        "しし"
+      ],
+      "meaning": "louse (esp. a sucking louse), lice"
+    },
+    {
+      "question": "蝨",
+      "answer": [
+        "しらみ"
+      ],
+      "meaning": "louse (esp. a sucking louse), lice"
+    },
+    {
+      "question": "雀蜂",
+      "answer": [
+        "すずめばち"
+      ],
+      "meaning": "hornet, yellow jacket, wasp (of subfamily Vespinae)"
+    },
+    {
+      "question": "胡蜂",
+      "answer": [
+        "すずめばち"
+      ],
+      "meaning": "hornet, yellow jacket, wasp (of subfamily Vespinae)"
+    },
+    {
+      "question": "蝉",
+      "answer": [
+        "せみ",
+        "せび"
+      ],
+      "meaning": "cicada, locust"
+    },
+    {
+      "question": "水爬虫",
+      "answer": [
+        "たがめ"
+      ],
+      "meaning": "Lethocerus deyrollei (species of giant water bug)"
+    },
+    {
+      "question": "田鼈",
+      "answer": [
+        "たがめ"
+      ],
+      "meaning": "Lethocerus deyrollei (species of giant water bug)"
+    },
+    {
+      "question": "玉虫",
+      "answer": [
+        "たまむし"
+      ],
+      "meaning": "jewel beetle, Chrysochroa fulgidissima, insect with iridescent wings"
+    },
+    {
+      "question": "吉丁虫",
+      "answer": [
+        "たまむし"
+      ],
+      "meaning": "jewel beetle, Chrysochroa fulgidissima, insect with iridescent wings"
+    },
+    {
+      "question": "蝶",
+      "answer": [
+        "ちょう"
+      ],
+      "meaning": "butterfly"
+    },
+    {
+      "question": "瓢虫",
+      "answer": [
+        "てんとうむし"
+      ],
+      "meaning": "ladybug (Harmonia axyridis), ladybird"
+    },
+    {
+      "question": "天道虫",
+      "answer": [
+        "てんとうむし"
+      ],
+      "meaning": "ladybug (Harmonia axyridis), ladybird"
+    },
+    {
+      "question": "紅娘",
+      "answer": [
+        "てんとうむし"
+      ],
+      "meaning": "ladybug (Harmonia axyridis), ladybird"
+    },
+    {
+      "question": "七節",
+      "answer": [
+        "ななふし"
+      ],
+      "meaning": "walking stick (any insect of order Phasmatodea), walkingstick, stick insect, leaf insect"
+    },
+    {
+      "question": "竹節虫",
+      "answer": [
+        "ななふし"
+      ],
+      "meaning": "walking stick (any insect of order Phasmatodea), walkingstick, stick insect, leaf insect"
+    },
+    {
+      "question": "七星瓢虫",
+      "answer": [
+        "ななほしてんとう"
+      ],
+      "meaning": "seven-spot ladybird, seven-spotted ladybug (Coccinella septempunctata)"
+    },
+    {
+      "question": "蚤",
+      "answer": [
+        "のみ"
+      ],
+      "meaning": "flea"
+    },
+    {
+      "question": "蠅",
+      "answer": [
+        "はえ"
+      ],
+      "meaning": "fly (of infraorder Muscomorpha)"
+    },
+    {
+      "question": "蜂",
+      "answer": [
+        "はち"
+      ],
+      "meaning": "bee, wasp, hornet"
+    },
+    {
+      "question": "飛蝗",
+      "answer": [
+        "ばった",
+        "ひこう",
+        "とびばった"
+      ],
+      "meaning": "grasshopper, locust (of superfamily Acridoidea), locust swarming, locust swarm, (swarming) locusts"
+    },
+    {
+      "question": "蝗",
+      "answer": [
+        "いなご",
+        "こう",
+        "いなむし",
+        "おおねむし",
+        "ばった"
+      ],
+      "meaning": "rice grasshopper (of genus Oxya), rice pest, grasshopper, locust (of superfamily Acridoidea)"
+    },
+    {
+      "question": "孑孑",
+      "answer": [
+        "ぼうふら",
+        "ぼうふり"
+      ],
+      "meaning": "mosquito larva, wriggler, maggot"
+    },
+    {
+      "question": "棒振",
+      "answer": [
+        "ぼうふら",
+        "ぼうふり"
+      ],
+      "meaning": "mosquito larva, wriggler, maggot"
+    },
+    {
+      "question": "蛍",
+      "answer": [
+        "ほたる"
+      ],
+      "meaning": "firefly (Luciola cruciata), lightning bug, glowworm"
+    },
+    {
+      "question": "水蟷螂",
+      "answer": [
+        "みずかまきり"
+      ],
+      "meaning": "water stick, water scorpion"
+    },
+    {
+      "question": "蓑虫",
+      "answer": [
+        "みのむし"
+      ],
+      "meaning": "bagworm, bagworm moth"
+    },
+    {
+      "question": "紋白蝶",
+      "answer": [
+        "もんしろちょう"
+      ],
+      "meaning": "small cabbage white butterfly (Pieris rapae)"
+    }
+  ]
+}

@@ -2,12 +2,14 @@
 const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
-const logger = require('./../core/logger.js');
+const logger = reload('monochrome-bot').logger;
 const renderText = reload('./render_text.js').render;
 const fs = require('fs');
 const constants = require('./constants.js');
 const LOGGER_TITLE = 'QUIZ';
 const deckForName = require('./deck_for_name.js');
+
+let reviewDecksForChannel = {};
 
 class JapaneseDeckStrategy {
   completeQuestionInfoForNewQuestion(questionInfo, card, name, instructions) {
@@ -104,7 +106,7 @@ class EnglishDeckStrategy {
       color: constants.EMBED_NEUTRAL_COLOR,
     };
 
-    return Promise.resolve(questionInfo);
+    return questionInfo;
   }
 
   getUpdatedQuestionInfo(questionInfo) {
@@ -222,6 +224,18 @@ class Deck {
   copy() {
     return new Deck(this, this.strategy);
   }
+
+  clearCards() {
+    this.cards = [];
+  }
+
+  addCard(card) {
+    this.cards.push(card);
+  }
+
+  setIsReviewDeck() {
+    this.instructions = 'Don\'t look up, cheater!';
+  }
 }
 
 class DeckCollection {
@@ -231,6 +245,25 @@ class DeckCollection {
     for (let deck of decks) {
       this.cardCount += deck.cards.length;
     }
+  }
+
+  createDecksForReview(unansweredMementos) {
+    if (unansweredMementos.length === 0) {
+      return;
+    }
+    let newDeckForDeckUniqueId = {};
+    for (let memento of unansweredMementos) {
+      let deckCollectionMemento = memento.deckCollectionMemento;
+      if (!newDeckForDeckUniqueId[deckCollectionMemento.deck.uniqueId]) {
+        let newDeck = deckCollectionMemento.deck.copy();
+        newDeckForDeckUniqueId[deckCollectionMemento.deck.uniqueId] = newDeck;
+        newDeck.clearCards();
+        newDeck.setIsReviewDeck();
+      }
+      newDeckForDeckUniqueId[deckCollectionMemento.deck.uniqueId].addCard(deckCollectionMemento.card);
+    }
+
+    return Object.keys(newDeckForDeckUniqueId).map(key => newDeckForDeckUniqueId[key]);
   }
 
   getNewQuestionInfo() {
@@ -243,6 +276,8 @@ class DeckCollection {
         let card = deck.cards.splice(cardIndex, 1)[0];
         --this.cardCount;
         let deckCollectionMemento = {
+          deck: deck,
+          card: card,
           showDictionaryLink: deck.showDictionaryLink,
           strategy: deck.strategy,
         };
@@ -350,7 +385,7 @@ class DeckCollection {
 }
 
 class Quiz {
-  constructor(settings, suffix) {
+  constructor(settings, suffix, channelId) {
     suffix = suffix.toLowerCase();
     suffix = suffix.replace('jlpt ', '');
     suffix = suffix.replace(/\+ /g, '+');
@@ -358,19 +393,36 @@ class Quiz {
     let suffixParts = suffix.split(' ');
     let deckArg = suffixParts[0];
     let deckNames = deckArg.split('+');
+    for (let i = 0; i < deckNames.length; ++i) {
+      if (deckNames[i] === 'kana') {
+        deckNames.splice(i, 1);
+        deckNames.push('katakana');
+        deckNames.push('hiragana');
+      }
+    }
     deckNames = deckNames.filter((deckName, position) => {
       return deckNames.indexOf(deckName) === position;
     });
 
     let decks = [];
     for (let deckName of deckNames) {
-      if (deckForName.japaneseDeckForName[deckName]) {
+      if (deckName === 'review' && reviewDecksForChannel[channelId]) {
+        decks = decks.concat(reviewDecksForChannel[channelId]);
+        let totalCardsToReview = 0;
+        for (let deck of reviewDecksForChannel[channelId]) {
+          totalCardsToReview += deck.cards.length;
+        }
+
+        this.incorrectanswerlimit = totalCardsToReview;
+        suffixParts[1] = Math.max(suffixParts[1] || 0, totalCardsToReview);
+      } else if (deckForName.japaneseDeckForName[deckName]) {
         decks.push(deckForName.japaneseDeckForName[deckName].copy());
       } else if (deckForName.englishDeckForName[deckName]) {
         decks.push(deckForName.englishDeckForName[deckName].copy());
       } else {
         this.loaded = false;
         this.unloadedDeckName = deckName;
+        this.unloadedReason = deckName === 'review' ? 'Sorry, I don\'t remember the session you want to review. Say k!quiz to start a new quiz.' : undefined;
         return;
       }
     }
@@ -415,7 +467,7 @@ class Quiz {
       this.timeLimitInSeconds = this.deckCollection.getDefaultTimeLimit(settings['quiz/japanese/answer_time_limit']);
     }
 
-    this.incorrectAnswerLimit = settings['quiz/japanese/unanswered_question_limit'];
+    this.incorrectAnswerLimit = this.incorrectanswerlimit || settings['quiz/japanese/unanswered_question_limit'];
     this.loaded = true;
   }
 
@@ -445,6 +497,22 @@ class Quiz {
 
   getNewQuestionInfo() {
     return this.deckCollection.getNewQuestionInfo();
+  }
+
+  onQuizFinished(msg, unansweredMementos) {
+    let decksForReview = this.deckCollection.createDecksForReview(unansweredMementos);
+    if (!decksForReview) {
+      return;
+    }
+    reviewDecksForChannel[msg.channel.id] = decksForReview;
+    setTimeout(() => {
+      msg.channel.createMessage({
+        embed: {
+          title: 'Say \'k!quiz review\' to review the questions you missed.',
+          color: constants.EMBED_NEUTRAL_COLOR,
+        }
+      })
+    }, 1000);
   }
 }
 

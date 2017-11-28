@@ -2,7 +2,6 @@
 
 const reload = require('require-reload')(require);
 const glosbeApi = reload('./../kotoba/glosbe_word_search.js');
-const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
 const translateQuery = reload('./../kotoba/translate_query.js');
 const googleTranslate = reload('./../kotoba/google_translate_utils.js');
 const prettyLanguageForLanguageCode = reload('./../kotoba/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
