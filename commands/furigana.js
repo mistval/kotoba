@@ -1,6 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const textRenderer = reload('./../kotoba/render_text.js');
+const PublicError = reload('monochrome-bot').PublicError;
 
 /**
 * Delete a message (if the bot has moderator powers it can delete the messages of others. If not it can only delete its own messages).
@@ -18,8 +19,7 @@ module.exports = {
       return;
     }
     if (suffix.length > 200) {
-      msg.channel.createMessage('Two hundred characters or fewer please :)');
-      return 'Too many characters';
+      throw PublicError.createWithCustomPublicMessage('Two hundred characters or fewer please :)', true, 'Too long');
     }
     return textRenderer.renderJapaneseWithFurigana(suffix).then(buffer => {
       msg.channel.createMessage('', {name: 'furigana.png', file: buffer});

@@ -12,14 +12,30 @@ class DictionaryResult {
     KotobaUtils.assertIsArray(wordTags, wordMeanings, targetLanguageWordReadings);
 
     this.targetLanguageWordResult_ = targetLanguageWordResult;
-    this.targetLanguageWordReadings_ = targetLanguageWordReadings;
+    this.targetLanguageWordReadings_ = targetLanguageWordReadings.filter(reading => !!reading);
     this.wordTags_ = wordTags;
     this.wordMeanings_ = wordMeanings;
   }
 
+  toDiscordBotField() {
+    let title = this.targetLanguageWordResult_;
+    if (this.targetLanguageWordReadings_.length > 0) {
+      title += '  (' + this.targetLanguageWordReadings_.join(', ') + ')';
+    }
+    title += ' ' + KotobaUtils.tagArrayToString(this.wordTags_);
+
+    let value;
+    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
+      value = this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
+        return (index + 1) + '. ' + meaning.toDiscordBotString();
+      }).join('\n');
+    }
+
+    return {name: title, value: value};
+  }
+
   toDiscordBotString() {
     let response = '- ' + this.targetLanguageWordResult_;
-
     if (this.targetLanguageWordReadings_.length > 0) {
       response += '  (' + this.targetLanguageWordReadings_.join(', ') + ')';
     }
@@ -48,9 +64,11 @@ class DictionaryResult {
     let wordField = {name: 'Word', value: this.targetLanguageWordResult_, inline: true};
     fields.push(wordField);
 
-    if (this.targetLanguageWordReadings_) {
+    if (this.targetLanguageWordReadings_ && this.targetLanguageWordReadings_.length > 0) {
       let readingField = {name: 'Readings', value: this.targetLanguageWordReadings_.join(', '), inline: true};
-      fields.push(readingField);
+      if (readingField.value) {
+        fields.push(readingField);
+      }
     }
 
     if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {

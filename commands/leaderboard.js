@@ -11,11 +11,24 @@ function createFieldForScorer(index, username, score) {
   };
 }
 
+function createScoreTotalString(scores) {
+  let scoreTotal = 0;
+  let users = {};
+  for (let score of scores) {
+    scoreTotal += score.score;
+    users[score.username] = true;
+  }
+
+  let usersTotal = Object.keys(users).length;
+  let scoreTotalString = scoreTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return `${scoreTotalString} points have been scored by ${usersTotal} players.`;
+}
+
 function sendScores(bot, msg, scores, title, description, footer) {
   let content = {};
   content.embed = {
     title: title,
-    description: description,
+    description: description + '\n' + createScoreTotalString(scores),
     color: constants.EMBED_NEUTRAL_COLOR,
   };
   if (footer) {

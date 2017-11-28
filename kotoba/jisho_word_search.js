@@ -4,7 +4,7 @@ const request = require('request-promise');
 const DictionaryResponseData = reload('./dictionary_response_data.js');
 const WordMeaning = reload('./word_meaning.js');
 const DictionaryResult = reload('./dictionary_result.js');
-const PublicError = reload('./../core/public_error.js');
+const PublicError = reload('monochrome-bot').PublicError;
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 
@@ -62,11 +62,15 @@ function parseJishoResponse(inData, phrase) {
   if (dictionaryResults.length > 0) {
     extraText = 'I got these definitions from Jisho. See more: <http://jisho.org/search/' + encodeURIComponent(phrase) + '>\nTry k!w to search Weblio, k!k to search for Kanji, or k!help to see more commands.';
   }
-  return new DictionaryResponseData(phrase, FROM_LANGUAGE_CODE, TO_LANGUAGE_CODE, false, dictionaryResults, extraText);
+
+  if (dictionaryResults.length === 0) {
+    throw PublicError.createWithCustomPublicMessage('Didn\'t find any results for **' + phrase + '**', false, 'No results');
+  }
+  return new DictionaryResponseData(phrase, FROM_LANGUAGE_CODE, TO_LANGUAGE_CODE, false, dictionaryResults, extraText, 'http://jisho.org/search/' + encodeURIComponent(phrase));
 }
 
 function throwNotRespondingError(err) {
-  throw new PublicError('Sorry, Jisho is not responding. Please try again later.', 'Error fetching from Jisho', err);
+  throw new PublicError('Sorry, Jisho is not responding. Please try again later.', false, 'Error fetching from Jisho', err);
 }
 
 module.exports = function(fromLanguage, toLanguage, suffix) {

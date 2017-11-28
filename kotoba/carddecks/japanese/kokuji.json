@@ -1,0 +1,722 @@
+{
+  "uniqueId": "kokugo",
+  "showDictionaryLink": true,
+  "name": "Kokuji Reading Quiz",
+  "category": "Japanese Misc.",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "cards": [
+    {
+      "question": "鯏",
+      "answer": [
+        "あさり"
+      ],
+      "meaning": "Manila clam (Ruditapes philippinarum)"
+    },
+    {
+      "question": "遖",
+      "answer": [
+        "あっぱれ"
+      ],
+      "meaning": "splendid, praiseworthy, admirable, brilliant"
+    },
+    {
+      "question": "鵤",
+      "answer": [
+        "いかる"
+      ],
+      "meaning": "Japanese grosbeak (Eophona personata)"
+    },
+    {
+      "question": "鰯",
+      "answer": [
+        "いわし"
+      ],
+      "meaning": "pilchard (esp. Japanese pilchard, Sardinops melanostictus), sardine (esp. sardine of Japanese pilchard)"
+    },
+    {
+      "question": "蛯",
+      "answer": [
+        "えび"
+      ],
+      "meaning": "prawn, shrimp, lobster, crayfish"
+    },
+    {
+      "question": "縅",
+      "answer": [
+        "おどし"
+      ],
+      "meaning": "leather strap binding the plates of traditional Japanese armor (armour)"
+    },
+    {
+      "question": "俤",
+      "answer": [
+        "おもかげ"
+      ],
+      "meaning": "face, looks, vestiges, trace"
+    },
+    {
+      "question": "颪",
+      "answer": [
+        "おろし"
+      ],
+      "meaning": "wind blowing down from mountains"
+    },
+    {
+      "question": "嬶",
+      "answer": [
+        "かかあ",
+        "かか"
+      ],
+      "meaning": "wife"
+    },
+    {
+      "question": "硴",
+      "answer": [
+        "かき"
+      ],
+      "meaning": "oyster, oyster shell"
+    },
+    {
+      "question": "樫",
+      "answer": [
+        "かし",
+        "かしい"
+      ],
+      "meaning": "evergreen oak"
+    },
+    {
+      "question": "鎹",
+      "answer": [
+        "かすがい"
+      ],
+      "meaning": "large staple driven into two pieces of wood to hold them together, clamp, cramp (metal)"
+    },
+    {
+      "question": "綛",
+      "answer": [
+        "かせ"
+      ],
+      "meaning": "hank, skein, reel"
+    },
+    {
+      "question": "鯑",
+      "answer": [
+        "かずのこ"
+      ],
+      "meaning": "herring roe"
+    },
+    {
+      "question": "叺",
+      "answer": [
+        "かます"
+      ],
+      "meaning": "straw bag"
+    },
+    {
+      "question": "裃",
+      "answer": [
+        "かみしも"
+      ],
+      "meaning": "samurai costume, old ceremonial costume"
+    },
+    {
+      "question": "鱚",
+      "answer": [
+        "きす"
+      ],
+      "meaning": "sillago (any fish of genus Sillago, esp. the Japanese whiting, Sillago japonica)"
+    },
+    {
+      "question": "瓩",
+      "answer": [
+        "キログラム",
+        "きろぐらむ"
+      ],
+      "meaning": "kilogram, kilogramme"
+    },
+    {
+      "question": "粁",
+      "answer": [
+        "キロメートル",
+        "きろめーとる",
+        "キロメイトル",
+        "きろめいとる"
+      ],
+      "meaning": "kilometer, kilometre"
+    },
+    {
+      "question": "竏",
+      "answer": [
+        "キロリットル",
+        "きろりっとる"
+      ],
+      "meaning": "kilolitre, kiloliter"
+    },
+    {
+      "question": "喰う",
+      "answer": [
+        "くう"
+      ],
+      "meaning": "to eat"
+    },
+    {
+      "question": "喰らう",
+      "answer": [
+        "くらう"
+      ],
+      "meaning": "to eat, to drink"
+    },
+    {
+      "question": "椚",
+      "answer": [
+        "くぬぎ",
+        "くのぎ"
+      ],
+      "meaning": "sawtooth oak (Quercus acutissima)"
+    },
+    {
+      "question": "俥",
+      "answer": [
+        "くるま"
+      ],
+      "meaning": "rickshaw, jinrikisha"
+    },
+    {
+      "question": "糀",
+      "answer": [
+        "こうじ"
+      ],
+      "meaning": "mould grown on rice, barley, beans, etc. as a starter to make sake, miso, soy sauce, etc. (mold), malted rice, malt"
+    },
+    {
+      "question": "凩",
+      "answer": [
+        "こがらし"
+      ],
+      "meaning": "cold wintry wind"
+    },
+    {
+      "question": "鯒",
+      "answer": [
+        "こち"
+      ],
+      "meaning": "flathead (esp. the bartailed flathead, Platycephalus indicus)"
+    },
+    {
+      "question": "鮗",
+      "answer": [
+        "このしろ"
+      ],
+      "meaning": "konoshiro gizzard shad (Konosirus punctatus)"
+    },
+    {
+      "question": "鞐",
+      "answer": [
+        "こはぜ"
+      ],
+      "meaning": "clasp"
+    },
+    {
+      "question": "込む",
+      "answer": [
+        "こむ"
+      ],
+      "meaning": "to be crowded, to be packed"
+    },
+    {
+      "question": "込める",
+      "answer": [
+        "こめる"
+      ],
+      "meaning": "to load (a gun, etc.), to charge"
+    },
+    {
+      "question": "怺える",
+      "answer": [
+        "こらえる"
+      ],
+      "meaning": "to bear, to stand, to endure, to put up with"
+    },
+    {
+      "question": "鮴",
+      "answer": [
+        "ごり"
+      ],
+      "meaning": "fish of the genus Rhinogobius"
+    },
+    {
+      "question": "蓙",
+      "answer": [
+        "ござ"
+      ],
+      "meaning": "rush mat, matting, mat"
+    },
+    {
+      "question": "榊",
+      "answer": [
+        "さかき"
+      ],
+      "meaning": "sakaki (species of evergreen sacred to Shinto, Cleyera japonica)"
+    },
+    {
+      "question": "搾る",
+      "answer": [
+        "しぼる"
+      ],
+      "meaning": "to wring (towel, rag), to squeeze"
+    },
+    {
+      "question": "笹",
+      "answer": [
+        "ささ"
+      ],
+      "meaning": "bamboo grass, generally smaller species of running bamboo that do not shed their sheaths (e.g. Sasa spp.)"
+    },
+    {
+      "question": "簓",
+      "answer": [
+        "ささら"
+      ],
+      "meaning": "bamboo whisk"
+    },
+    {
+      "question": "扨",
+      "answer": [
+        "さて"
+      ],
+      "meaning": "well, now, then"
+    },
+    {
+      "question": "聢と",
+      "answer": [
+        "しかと",
+        "しっかと"
+      ],
+      "meaning": "certainly, for sure"
+    },
+    {
+      "question": "鴫",
+      "answer": [
+        "しぎ"
+      ],
+      "meaning": "sandpiper (any bird of family Scolopacidae, incl. the curlews, godwits, phalaropes, redshanks, ruff, snipes, turnstones, and woodcocks)"
+    },
+    {
+      "question": "躾",
+      "answer": [
+        "しつけ"
+      ],
+      "meaning": "discipline, training, teaching manners"
+    },
+    {
+      "question": "椣",
+      "answer": [
+        "しで"
+      ],
+      "meaning": "zigzag-shaped paper streamer often used to adorn Shinto-related objects"
+    },
+    {
+      "question": "癪",
+      "answer": [
+        "しゃく"
+      ],
+      "meaning": "cause of offense, cause of offence, annoyance, peeve"
+    },
+    {
+      "question": "鯱",
+      "answer": [
+        "しゃち",
+        "しゃちほこ",
+        "しゃっちょこ",
+        "さちほこ"
+      ],
+      "meaning": "orca (Orcinus orca), killer whale, grampus, mythical carp with the head of a lion and the body of a fish (auspicious protectors of well-being)"
+    },
+    {
+      "question": "椙",
+      "answer": [
+        "すぎ"
+      ],
+      "meaning": "Japanese cedar (Cryptomeria japonica)"
+    },
+    {
+      "question": "辷る",
+      "answer": [
+        "すべる"
+      ],
+      "meaning": "to glide, to slide (e.g. on skis), to slip"
+    },
+    {
+      "question": "鱈",
+      "answer": [
+        "たら"
+      ],
+      "meaning": "gadid (any fish of the family Gadidae, incl. cod, haddock, whiting and pollack)"
+    },
+    {
+      "question": "腺",
+      "answer": [
+        "せん"
+      ],
+      "meaning": "gland"
+    },
+    {
+      "question": "糎",
+      "answer": [
+        "サンチ",
+        "さんち"
+      ],
+      "meaning": "centimeter (esp. of cannon caliber, etc.)"
+    },
+    {
+      "question": "轌",
+      "answer": [
+        "そり"
+      ],
+      "meaning": "sleigh, sled, sledge"
+    },
+    {
+      "question": "雫",
+      "answer": [
+        "しずく"
+      ],
+      "meaning": "drop (of water), drip"
+    },
+    {
+      "question": "凧",
+      "answer": [
+        "たこ",
+        "いかのぼり",
+        "いか",
+        "はた"
+      ],
+      "meaning": "kite"
+    },
+    {
+      "question": "襷",
+      "answer": [
+        "たすき"
+      ],
+      "meaning": "cord used to tuck up the sleeves of a kimono"
+    },
+    {
+      "question": "椨",
+      "answer": [
+        "たぶのき"
+      ],
+      "meaning": "Machilus thunbergii (species of laurel)"
+    },
+    {
+      "question": "鵆",
+      "answer": [
+        "ちどり"
+      ],
+      "meaning": "plover"
+    },
+    {
+      "question": "栂",
+      "answer": [
+        "つが",
+        "とが"
+      ],
+      "meaning": "southern Japanese hemlock (species of conifer native to Japan, Tsuga sieboldii)"
+    },
+    {
+      "question": "閊える",
+      "answer": [
+        "つかえる",
+        "つっかえる"
+      ],
+      "meaning": "to stick, to get stuck, to get caught, to get jammed, to clog"
+    },
+    {
+      "question": "鶫",
+      "answer": [
+        "つぐみ"
+      ],
+      "meaning": "thrush (esp. the dusky thrush, Turdus naumanni)"
+    },
+    {
+      "question": "辻",
+      "answer": [
+        "つじ"
+      ],
+      "meaning": "intersection, crossing, crossroad, street corner, street"
+    },
+    {
+      "question": "褄",
+      "answer": [
+        "つま"
+      ],
+      "meaning": "skirt (of a kimono), hem (of a kimono)"
+    },
+    {
+      "question": "籵",
+      "answer": [
+        "デカメートル",
+        "でかめーとる"
+      ],
+      "meaning": "decametre, decameter, dekametre, dekameter"
+    },
+    {
+      "question": "働く",
+      "answer": [
+        "はたらく"
+      ],
+      "meaning": "to work, to labor, to labour"
+    },
+    {
+      "question": "峠",
+      "answer": [
+        "とうげ"
+      ],
+      "meaning": "ridge, (mountain) pass, difficult part"
+    },
+    {
+      "question": "栃",
+      "answer": [
+        "とちのき",
+        "とち"
+      ],
+      "meaning": "Japanese horse chestnut (Aesculus turbinata)"
+    },
+    {
+      "question": "迚も",
+      "answer": [
+        "とても",
+        "とっても"
+      ],
+      "meaning": "very, awfully, exceedingly"
+    },
+    {
+      "question": "鞆",
+      "answer": [
+        "とも"
+      ],
+      "meaning": "archer's left-wrist protector"
+    },
+    {
+      "question": "噸",
+      "answer": [
+        "トン",
+        "とん"
+      ],
+      "meaning": "ton (now usu. a metric ton, i.e. 1,000kg), tonne"
+    },
+    {
+      "question": "瓲",
+      "answer": [
+        "トン",
+        "とん"
+      ],
+      "meaning": "ton (now usu. a metric ton, i.e. 1,000kg), tonne"
+    },
+    {
+      "question": "凪",
+      "answer": [
+        "なぎ"
+      ],
+      "meaning": "calm (at sea), lull"
+    },
+    {
+      "question": "凪ぐ",
+      "answer": [
+        "なぐ"
+      ],
+      "meaning": "to become calm, to die down"
+    },
+    {
+      "question": "鳰",
+      "answer": [
+        "にお"
+      ],
+      "meaning": "little grebe (Tachybaptus ruficollis)"
+    },
+    {
+      "question": "匂う",
+      "answer": [
+        "におう"
+      ],
+      "meaning": "to be fragrant, to smell (good)"
+    },
+    {
+      "question": "鯰",
+      "answer": [
+        "なまず"
+      ],
+      "meaning": "catfish (esp. the Amur catfish, Silurus asotus)"
+    },
+    {
+      "question": "畑",
+      "answer": [
+        "はたけ",
+        "はた"
+      ],
+      "meaning": "field (for fruits, vegetables, etc.), cultivated land, vegetable plot, kitchen garden, plantation"
+    },
+    {
+      "question": "畠",
+      "answer": [
+        "はたけ",
+        "はた"
+      ],
+      "meaning": "field (for fruits, vegetables, etc.), cultivated land, vegetable plot, kitchen garden, plantation"
+    },
+    {
+      "question": "鰰",
+      "answer": [
+        "はたはた"
+      ],
+      "meaning": "sailfin sandfish (Arctoscopus japonicus), Japanese sandfish"
+    },
+    {
+      "question": "噺",
+      "answer": [
+        "はなし"
+      ],
+      "meaning": "talk, speech, chat, story, conversation"
+    },
+    {
+      "question": "楾",
+      "answer": [
+        "はんぞう"
+      ],
+      "meaning": "teapot-like object made typically of lacquerware and used to pour hot and cold liquids"
+    },
+    {
+      "question": "鋲",
+      "answer": [
+        "びょう"
+      ],
+      "meaning": "rivet, tack, thumbtack, drawing-pin, hobnail"
+    },
+    {
+      "question": "梺",
+      "answer": [
+        "ふもと"
+      ],
+      "meaning": "foot (of a mountain or hill), bottom, base"
+    },
+    {
+      "question": "錻",
+      "answer": [
+        "ブリキ",
+        "ぶりき"
+      ],
+      "meaning": "tin plate"
+    },
+    {
+      "question": "塀",
+      "answer": [
+        "へい"
+      ],
+      "meaning": "wall"
+    },
+    {
+      "question": "蚫",
+      "answer": [
+        "あわび"
+      ],
+      "meaning": "abalone, ear shell"
+    },
+    {
+      "question": "柾",
+      "answer": [
+        "まさき"
+      ],
+      "meaning": "Japanese spindletree (Euonymus japonicus)"
+    },
+    {
+      "question": "枡",
+      "answer": [
+        "ます"
+      ],
+      "meaning": "measuring container, measure"
+    },
+    {
+      "question": "桝",
+      "answer": [
+        "ます"
+      ],
+      "meaning": "measuring container, measure"
+    },
+    {
+      "question": "俣",
+      "answer": [
+        "また"
+      ],
+      "meaning": "crotch, crutch, groin, thigh"
+    },
+    {
+      "question": "麿",
+      "answer": [
+        "まろ"
+      ],
+      "meaning": "I, me"
+    },
+    {
+      "question": "粍",
+      "answer": [
+        "みりめいとる"
+      ],
+      "meaning": "millimeter, millimetre"
+    },
+    {
+      "question": "毟る",
+      "answer": [
+        "むしる"
+      ],
+      "meaning": "to pluck, to pick, to tear"
+    },
+    {
+      "question": "籾",
+      "answer": [
+        "もみ"
+      ],
+      "meaning": "unhulled rice, rice in the husk, paddy"
+    },
+    {
+      "question": "匁",
+      "answer": [
+        "もんめ"
+      ],
+      "meaning": "monme (unit of weight, 3.75 g)"
+    },
+    {
+      "question": "軈て",
+      "answer": [
+        "やがて"
+      ],
+      "meaning": "before long, soon"
+    },
+    {
+      "question": "簗",
+      "answer": [
+        "やな"
+      ],
+      "meaning": "(fish) weir, fish trap"
+    },
+    {
+      "question": "鑓",
+      "answer": [
+        "やり"
+      ],
+      "meaning": "spear, lance"
+    },
+    {
+      "question": "裄",
+      "answer": [
+        "ゆき"
+      ],
+      "meaning": "distance from the seam in the back of a kimono to the end of the sleeve"
+    },
+    {
+      "question": "枠",
+      "answer": [
+        "わく"
+      ],
+      "meaning": "frame, framework"
+    }
+  ]
+}

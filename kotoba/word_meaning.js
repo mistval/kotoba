@@ -27,11 +27,10 @@ class WordMeaning {
   }
 
   toDiscordBotString() {
-    let response = '*' + this.meaning_;
+    let response = this.meaning_;
     if (this.meaningTags_.length > 0) {
-      response += ' ' + cleanMeaning(KotobaUtils.tagArrayToString(this.meaningTags_));
+      response += ' *' + cleanMeaning(KotobaUtils.tagArrayToString(this.meaningTags_) + '*');
     }
-    response += '*';
     return response;
   }
 }

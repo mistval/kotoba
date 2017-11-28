@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const TranslationResultStatus = reload('./translation_result_status.js');
 const constants = require('./constants.js');
+const htmlEntities = new (require('html-entities').XmlEntities)();
 
 class TranslationResult {
   constructor() {
@@ -44,6 +45,7 @@ class TranslationResult {
   toDiscordBotContent() {
     let content = {};
 
+    this.resultTranslation = htmlEntities.decode(this.resultTranslation);
     if (this.status === TranslationResultStatus.ERROR) {
       content.content = 'Sorry, there was an error :( ' + this.errorDetail;
     } else if (this.status === TranslationResultStatus.NO_RESULT) {
