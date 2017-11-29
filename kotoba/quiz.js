@@ -106,7 +106,7 @@ class EnglishDeckStrategy {
       color: constants.EMBED_NEUTRAL_COLOR,
     };
 
-    return questionInfo;
+    return Promise.resolve(questionInfo);
   }
 
   getUpdatedQuestionInfo(questionInfo) {
