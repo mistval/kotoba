@@ -1,5 +1,6 @@
 'use strict'
-const persistence = require('./../core/persistence.js');
+const reload = require('require-reload')(require);
+const persistence = reload('monochrome-bot').persistence;
 
 class Score {
   constructor(discordUserId, score) {

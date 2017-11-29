@@ -1,6 +1,17 @@
 'use strict'
 const reload = require('require-reload')(require);
-let strokeOrderLookup = reload('./../kotoba/stroke_order_lookup.js');
+const jishoSearch = reload('./../kotoba/jisho_search.js');
+const navigationManager = reload('monochrome-bot').navigationManager;
+const constants = require('./../kotoba/constants.js');
+
+function createTitleOnlyEmbed(title) {
+  return {
+    embed: {
+      title: title,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  };
+}
 
 module.exports = {
   commandAliases: ['k!strokeorder', 'k!so'],
@@ -11,6 +22,11 @@ module.exports = {
   longDescription: 'Search for details about a kanji\'s strokes. For most kanji, I will provide a sequential stroke order diagram from Jisho and a stroke order gif generated from KanjiVG data.',
   usageExample: 'k!strokeorder 少',
   action(bot, msg, suffix) {
-    return strokeOrderLookup(suffix, bot, msg);
+    if (!suffix) {
+      return msg.channel.createMessage(createTitleOnlyEmbed(`Say 'k!strokeorder [kanji]' to search for stroke order information. For example: k!strokeorder 瞬間`));
+    }
+    return jishoSearch.createNavigationForStrokeOrder(msg.author.username, msg.author.id, suffix).then(navigation => {
+      navigationManager.register(navigation, 6000000, msg);
+    });
   },
 };

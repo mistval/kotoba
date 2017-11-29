@@ -3,7 +3,7 @@ const reload = require('require-reload')(require);
 const API_KEY = reload('./api_keys.js').GOOGLE_TRANSLATE;
 const TranslationResult = reload('./translation_result.js');
 const request = require('request-promise');
-const PublicError = reload('./../core/public_error.js');
+const PublicError = reload('monochrome-bot').PublicError;
 
 const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2';
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';
