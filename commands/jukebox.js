@@ -1,9 +1,10 @@
 'use strict'
 const reload = require('require-reload')(require);
 const YoutubeApi = reload('./../kotoba/youtube_api_utils.js');
-const logger = require('./../core/logger.js');
+const logger = reload('monochrome-bot').logger;
 const KotobaUtils = require('./../kotoba/utils.js');
 let videoUris = [];
+const PublicError = reload('monochrome-bot').PublicError;
 
 KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then(links => {
   videoUris = links;
@@ -20,8 +21,7 @@ module.exports = {
   longDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link. Songs are chosen from this playlist: https://www.youtube.com/watch?v=iyL_SXBlNIk&list=PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ. There are about 800 songs.',
   action(bot, msg, suffix) {
     if (videoUris.length === 0) {
-      msg.channel.createMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.');
-      return 'Tracks not available';
+      throw PublicError.createWithCustomPublicMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.', true, 'Tracks not available');
     }
     let random = Math.floor(Math.random() * videoUris.length);
     let link = videoUris[random];

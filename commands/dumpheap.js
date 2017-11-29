@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const PublicError = reload('./../core/public_error.js');
+const PublicError = reload('monochrome-bot').PublicError;
 
 let heapDump;
 try {
@@ -19,7 +19,7 @@ module.exports = {
   usageExample: '}dumpheap outputfilename',
   action(bot, msg, suffix) {
     if (!heapDump) {
-      throw new PublicError('Module \'heapdump\' not found. Did you install dev dependencies?', false, 'No heapdump module');
+      throw PublicError.createWithCustomPublicMessage('Module \'heapdump\' not found. Did you install dev dependencies?', false, 'No heapdump module');
     }
     if (!suffix) {
       suffix = undefined;
