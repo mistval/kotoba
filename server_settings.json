@@ -14,7 +14,7 @@
             "userFacingName": "answer_time_limit",
             "description": "This setting controls how many seconds players have to answer a quiz question before I say time's up and move on to the next question.",
             "valueType": "FLOAT",
-            "defaultDatabaseFacingValue": 20,
+            "defaultDatabaseFacingValue": 15,
             "allowedDatabaseFacingValues": "Range(5, 120)"
           },
           {
@@ -56,6 +56,13 @@
             "valueType": "FLOAT",
             "defaultDatabaseFacingValue": 2,
             "allowedDatabaseFacingValues": "Range(0, 100)"
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "immediate_feedback",
+            "description": "This setting controls when I respond to the first correct answer.\n\nIf this setting is set to true, then when a user answers correctly, I will immediately show the answer and the scoreboard. Other users have a short period (by default, 2 seconds) during which they can also answer, and I will edit them onto the scoreboard.\n\nIf this settings is set to false, then when a user answers correctly, I will not show the answer immediately. Instead I will wait until the answer period (by default 2 seconds) ends, and then I will show the answer and the scoreboard with all of the scorers.",
+            "valueType": "BOOLEAN",
+            "defaultDatabaseFacingValue": false
           }
         ]
       }
