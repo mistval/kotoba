@@ -1,10 +1,16 @@
 {
   "uniqueId": 38,
-  "showDictionaryLink": true,
   "name": "English Vocabulary Quiz",
-  "category": "English",
   "article": "an",
   "instructions": "Guess the word!",
+  "questionCreationStrategy": "TEXT_WITH_HINT",
+  "dictionaryLinkStrategy": "WEBSTER_ANSWER",
+  "answerTimeLimitStrategy": "WITH_HINT",
+  "cardPreprocessingStrategy": "BETTER_ENGLISH_DEFINITIONS",
+  "discordFinalAnswerListElementStrategy": "ANSWER_ONLY",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "any of numerous agile ruminants related to sheep but having a beard and straight horns  ",
