@@ -1,10 +1,16 @@
 {
   "uniqueId": 17,
-  "showDictionaryLink": false,
   "name": "Myouji Reading Quiz",
-  "category": "Japanese proper nouns",
   "article": "a",
-  "instructions": "Type the reading of the below Japanese family name in Hiragana!",
+  "instructions": "Type the reading of the below family name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "千葉",

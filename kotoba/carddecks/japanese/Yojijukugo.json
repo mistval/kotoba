@@ -1,10 +1,16 @@
 {
   "uniqueId": 10,
-  "showDictionaryLink": true,
   "name": "Yojijukugo Reading Quiz",
-  "category": "Japanese Misc.",
   "article": "a",
   "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "以一当千",

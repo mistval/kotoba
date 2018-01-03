@@ -106,11 +106,17 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
     });
 
     let unansweredQuestionsCharacters = 0;
+    let separator = '\n';
     for (let i = 0; i < unansweredQuestionsLines.length; ++i) {
-      unansweredQuestionsCharacters += unansweredQuestionsLines[i].length + '\n'.length;
+      unansweredQuestionsCharacters += unansweredQuestionsLines[i].length + separator.length;
       if (unansweredQuestionsCharacters > constants.MAXIMUM_FIELD_LENGTH || i >= MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED) {
-        unansweredQuestionsLines = unansweredQuestionsLines.slice(0, i - 1);
-        unansweredQuestionsLines.push('...More...');
+        let moreString = '...More...';
+
+        // Pop off the last lines until it's small enough.
+        while (unansweredQuestionsLines.join(separator).length + separator.length + moreString.length > constants.MAXIMUM_FIELD_LENGTH) {
+          unansweredQuestionsLines.pop();
+        }
+        unansweredQuestionsLines.push(moreString);
         break;
       }
     }

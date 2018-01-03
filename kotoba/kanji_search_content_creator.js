@@ -13,7 +13,7 @@ function exampleToDiscordBotString(example) {
   if (meaning.length > MAXIMUM_EXAMPLE_LENGTH_IN_CHARS) {
     meaning = meaning.substring(0, MAXIMUM_EXAMPLE_LENGTH_IN_CHARS - 3) + '...';
   }
-  return '**' + example.example + '** (' + example.reading + ')\n\t' + meaning;
+  return example.example + ' (' + example.reading + ')\n\t' + meaning;
 }
 
 function commaSepartedStringForYomi(yomiArray) {
@@ -52,6 +52,60 @@ function addEmbedFieldForParts(kanjiInformation, embedFields) {
   }
 }
 
+function sortExamplesByHaveDesiredKanji(examples, desiredKanji) {
+  let examplesWithDesiredKanji = [];
+  let examplesWithoutDesiredKanji = [];
+  for (let example of examples) {
+    if (example.example.indexOf(desiredKanji) !== -1) {
+      examplesWithDesiredKanji.push(example);
+    } else {
+      examplesWithoutDesiredKanji.push(example);
+    }
+  }
+  return examplesWithDesiredKanji.concat(examplesWithoutDesiredKanji);
+}
+
+function getExamplesString(kanjiInformation) {
+  let onyomiExamples = sortExamplesByHaveDesiredKanji(kanjiInformation.onyomiExamples, kanjiInformation.query);
+  let kunyomiExamples = sortExamplesByHaveDesiredKanji(kanjiInformation.kunyomiExamples, kanjiInformation.query);
+
+  let desiredExamplesCount = MAXIMUM_EXAMPLE_COUNT;
+  let desiredOnyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT / 2, onyomiExamples.length);
+  let desiredKunyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT / 2, kunyomiExamples.length);
+  if (desiredOnyomiExamplesCount + desiredKunyomiExamplesCount < desiredExamplesCount) {
+    if (desiredOnyomiExamplesCount < desiredKunyomiExamplesCount) {
+      desiredKunyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT - desiredOnyomiExamplesCount, kunyomiExamples.length);
+    } else {
+      desiredOnyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT - desiredKunyomiExamplesCount, onyomiExamples.length);
+    }
+  }
+
+  kunyomiExamples = kunyomiExamples.slice(0, desiredKunyomiExamplesCount);
+  onyomiExamples = onyomiExamples.slice(0, desiredOnyomiExamplesCount);
+  let examples = sortExamplesByHaveDesiredKanji(kunyomiExamples.concat(onyomiExamples), kanjiInformation.query);
+
+  let examplesStr = '';
+  for (let example of examples) {
+    examplesStr += exampleToDiscordBotString(example) + '\n';
+  }
+
+  return examplesStr;
+}
+
+function getDescriptionString(kanjiInformation) {
+  let descriptionLines = [];
+  if (kanjiInformation.taughtIn) {
+    descriptionLines.push(`Taught in ${kanjiInformation.taughtIn}`);
+  }
+  if (kanjiInformation.jlptLevel) {
+    descriptionLines.push(`JLPT ${kanjiInformation.jlptLevel}`);
+  }
+  if (kanjiInformation.newspaperFrequencyRank) {
+    descriptionLines.push(`newspaper frequency rank #${kanjiInformation.newspaperFrequencyRank}.`);
+  }
+  return descriptionLines.join(', ');
+}
+
 function convertToDiscordBotContent(kanjiInformation) {
   if (!kanjiInformation.found) {
     return createTitleOnlyEmbed('No results found for the kanji: ' + kanjiInformation.query);
@@ -69,25 +123,7 @@ function convertToDiscordBotContent(kanjiInformation) {
   embedFields.push({name: 'Stroke Count', inline: true, value: kanjiInformation.strokeCount});
   embedFields.push({name: 'Meaning', inline: true, value: kanjiInformation.meaning});
 
-  let desiredExamplesCount = MAXIMUM_EXAMPLE_COUNT;
-  let desiredOnyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT / 2, kanjiInformation.onyomiExamples.length);
-  let desiredKunyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT / 2, kanjiInformation.kunyomiExamples.length);
-  if (desiredOnyomiExamplesCount + desiredKunyomiExamplesCount < desiredExamplesCount) {
-    if (desiredOnyomiExamplesCount < desiredKunyomiExamplesCount) {
-      desiredKunyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT - desiredOnyomiExamplesCount, kanjiInformation.kunyomiExamples.length);
-    } else {
-      desiredOnyomiExamplesCount = Math.min(MAXIMUM_EXAMPLE_COUNT - desiredKunyomiExamplesCount, kanjiInformation.onyomiExamples.length);
-    }
-  }
-
-  let kunyomiExamples = kanjiInformation.kunyomiExamples.slice(0, desiredKunyomiExamplesCount);
-  let onyomiExamples = kanjiInformation.onyomiExamples.slice(0, desiredOnyomiExamplesCount);
-  let examples = kunyomiExamples.concat(onyomiExamples);
-
-  let examplesStr = '';
-  for (let example of examples) {
-    examplesStr += exampleToDiscordBotString(example) + '\n';
-  }
+  let examplesStr = getExamplesString(kanjiInformation);
 
   const fileCodeStringLength = 5;
   let unicodeString = kanjiInformation.query.codePointAt(0).toString(10);
@@ -100,6 +136,7 @@ function convertToDiscordBotContent(kanjiInformation) {
 
   content.embed = {
     'title': 'Information about the Kanji: ' + kanjiInformation.query,
+    'description': getDescriptionString(kanjiInformation),
     'url': kanjiInformation.uri,
     'fields': embedFields,
     'thumbnail': thumbnailInfo,
