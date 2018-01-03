@@ -1,10 +1,16 @@
 {
   "uniqueId": "vegetables",
-  "showDictionaryLink": true,
   "name": "Vegetables & Fruit Reading Quiz",
-  "category": "Mother Nature",
   "article": "a",
-  "instructions": "Type the reading of the below vegetable in Hiragana!",
+  "instructions": "Type the reading of the below fruit or vegetable name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "通草",
