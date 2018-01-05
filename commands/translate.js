@@ -1,10 +1,10 @@
 'use strict'
-
 const reload = require('require-reload')(require);
 const glosbeApi = reload('./../kotoba/glosbe_word_search.js');
 const translateQuery = reload('./../kotoba/translate_query.js');
 const googleTranslate = reload('./../kotoba/google_translate_utils.js');
 const prettyLanguageForLanguageCode = reload('./../kotoba/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
+const PublicError = reload('monochrome-bot').PublicError;
 
 function createUnknownLanguageCodeString(languageCode) {
   return 'I don\'t recognize the language code **' + languageCode + '**. Say \'k!help translate\' for a list of supported languages.';
@@ -38,7 +38,7 @@ module.exports = {
   usageExample: 'k!translate 吾輩は猫である',
   action(bot, msg, suffix, settings, extension) {
     if (!suffix && (!extension || extension === '-')) {
-      return msg.channel.createMessage('Say \'k!translate [text]\' to translate text. Say \'k!help translate\' for help.');
+      throw PublicError.createWithCustomPublicMessage('Say \'k!translate [text]\' to translate text. Say \'k!help translate\' for help.', false, 'No suffix');
     }
     let fromLanguageCode;
     let toLanguageCode;
@@ -56,18 +56,19 @@ module.exports = {
     let fromLanguagePretty = googleTranslate.getPrettyLanguageForLanguageCode(fromLanguageCode);
     let toLanguagePretty = googleTranslate.getPrettyLanguageForLanguageCode(toLanguageCode);
     if (!toLanguagePretty && toLanguageCode) {
-      return msg.channel.createMessage(createUnknownLanguageCodeString(toLanguageCode));
+      throw PublicError.createWithCustomPublicMessage(createUnknownLanguageCodeString(toLanguageCode), false, 'Unknown language');
     } else if (!fromLanguagePretty && fromLanguageCode) {
-      return msg.channel.createMessage(createUnknownLanguageCodeString(fromLanguageCode));
+      throw PublicError.createWithCustomPublicMessage(createUnknownLanguageCodeString(fromLanguageCode), false, 'Unknown language');
     }
 
     if (!suffix) {
+      let errorMessage;
       if (fromLanguagePretty && toLanguagePretty) {
-        return msg.channel.createMessage(
-          'Say \'k!translate-' + fromLanguageCode + '>' + toLanguageCode + ' [text]\' to translate text from ' + fromLanguagePretty + ' to ' + toLanguagePretty + '.');
+        errorMessage = 'Say \'k!translate-' + fromLanguageCode + '>' + toLanguageCode + ' [text]\' to translate text from ' + fromLanguagePretty + ' to ' + toLanguagePretty + '.';
       } else if (fromLanguagePretty) {
-        return msg.channel.createMessage('Say \'k!translate-' + fromLanguageCode + ' [text]\' to translate text to or from ' + fromLanguagePretty + '.');
+        errorMessage = 'Say \'k!translate-' + fromLanguageCode + ' [text]\' to translate text to or from ' + fromLanguagePretty + '.';
       }
+      throw PublicError.createWithCustomPublicMessage(errorMessage, false, 'No suffix');
     }
 
     if (toLanguageCode) {
