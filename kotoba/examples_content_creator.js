@@ -6,7 +6,7 @@ const PublicError = reload('monochrome-bot').PublicError;
 const searchForExamples = new (require('unofficial-jisho-api'))().searchForExamples;
 const constants = require('./constants.js');
 
-const MAX_EXAMPLE_RESULTS = 3;
+const MAX_EXAMPLE_RESULTS = 4;
 const LONG_CUTOFF_IN_CHARS = 22;
 
 function createTitleOnlyEmbed(title) {
@@ -50,7 +50,7 @@ class ExamplesResult {
     if (exampleStart >= this.examples_.length) {
       return;
     }
-    let exampleEnd = Math.min((pageIndex * MAX_EXAMPLE_RESULTS) + 4, this.examples_.length);
+    let exampleEnd = Math.min((pageIndex * MAX_EXAMPLE_RESULTS) + MAX_EXAMPLE_RESULTS, this.examples_.length);
 
     let fields = [];
     for (let i = exampleStart; i < exampleEnd; ++i) {

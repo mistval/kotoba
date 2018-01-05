@@ -2,9 +2,9 @@
 let quizManager = require('./../kotoba/quiz_manager.js');
 
 module.exports = {
-  commandAliases: ['k!endquiz', 'k!endtest', 'k!stop', 'k!quit'],
+  commandAliases: ['k!endquiz', 'k!endtest', 'k!stop', 'k!quit', 'ｋ！ｑｓ'],
   canBeChannelRestricted: false,
   action(bot, msg, suffix) {
-    quizManager.stopQuiz(bot, msg);
+    return quizManager.stopQuiz(msg.channel.id, msg.author.id);
   },
 };

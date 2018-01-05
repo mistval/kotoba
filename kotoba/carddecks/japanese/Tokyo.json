@@ -1,10 +1,16 @@
 {
   "uniqueId": 11,
-  "showDictionaryLink": false,
   "name": "Tokyo Place Name Quiz",
-  "category": "Japanese proper nouns",
   "article": "a",
   "instructions": "Type the reading of the below Tokyo place name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "千代田区",
