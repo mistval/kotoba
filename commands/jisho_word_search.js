@@ -28,10 +28,10 @@ module.exports = {
   usageExample: 'k!j 少し',
   action(bot, msg, suffix, settings) {
     if (!suffix) {
-      return msg.channel.createMessage(createTitleOnlyEmbed(`Say 'k!j [text]' to search for definitions. For example: k!j 瞬間`));
+      throw PublicError.createWithCustomPublicMessage(createTitleOnlyEmbed(`Say 'k!j [text]' to search for definitions. For example: k!j 瞬間`), false, 'No suffix');
     }
 
-    let displayMode;
+    let displayMode = settings['dictionary/display_mode'];
     if (suffix.indexOf('--small') !== -1) {
       displayMode = 'small';
     }
@@ -40,7 +40,6 @@ module.exports = {
     }
     suffix = suffix.replace('--small', '').replace('--big', '');
 
-    displayMode = displayMode || settings['dictionary/display_mode'];
     if (displayMode === 'small') {
       return dictionaryQuery(msg, 'en', 'ja', suffix, jishoWordSearch, displayMode);
     }

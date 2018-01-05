@@ -1,10 +1,17 @@
 {
   "uniqueId": 13,
-  "showDictionaryLink": false,
   "name": "Prefectures Reading Quiz",
-  "category": "Japanese proper nouns",
   "article": "a",
   "instructions": "Type the reading of the below prefecture in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "answerModificationStrategy": "NONE",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "cards": [
     {
       "question": "北海道",
