@@ -6,12 +6,13 @@ let configFilePath = __dirname + '/config.json';
 let commandsDirectoryPath = __dirname + '/commands';
 let messageProcessorsDirectoryPath = __dirname + '/message_processors';
 let settingsFilePath = __dirname + '/server_settings.json';
+let logsDirectoryPath = __dirname + '/logs';
 
 if (!fs.existsSync(settingsFilePath)) {
   settingsFilePath = undefined;
 }
 
-let bot = new monochrome(configFilePath, commandsDirectoryPath, messageProcessorsDirectoryPath, settingsFilePath);
+let bot = new monochrome(configFilePath, commandsDirectoryPath, messageProcessorsDirectoryPath, settingsFilePath, logsDirectoryPath);
 
 // EPIC HACK. This prevents the bot from responding to !j is specified servers, due to collision with
 // other bots in those servers.
