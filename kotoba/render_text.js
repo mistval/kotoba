@@ -3,6 +3,8 @@ const reload = require('require-reload')(require);
 const Canvas = require('canvas');
 const fs = require('fs');
 const renderFurigana = require('render-furigana');
+const imagemin = require('imagemin');
+const imageminPngquant = require('imagemin-pngquant');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
@@ -10,6 +12,13 @@ const LEFT_PADDING_IN_PIXELS = 6;
 const RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 const TOTAL_HORIZONTAL_PADDING_IN_PIXELS = LEFT_PADDING_IN_PIXELS + RIGHT_PADDING_IN_PIXELS;
+
+const minifier = imageminPngquant({
+  quality: '0-25',
+  floyd: 0,
+  nofs: true,
+  speed: 0,
+});
 
 module.exports.render = function(text) {
   return new Promise((fulfill, reject) => {
@@ -30,9 +39,15 @@ module.exports.render = function(text) {
       if (err) {
         reject(err);
       } else {
-        fulfill(buffer);
+        let minifyPromise = imagemin.buffer(buffer, {
+          plugins: [minifier],
+        }).then(buffer => {
+          return buffer;
+        });
+
+        fulfill(minifyPromise);
       }
-    });
+    }, 0, canvas.PNG_FILTER_NONE);
   });
 };
 
