@@ -59,7 +59,7 @@ function sendScores(bot, msg, scores, title, description, footer) {
     }
   }
 
-  return bot.createMessage(msg.channel.id, content);
+  return msg.channel.createMessage(content, null, msg);
 }
 
 module.exports = {

@@ -21,7 +21,7 @@ module.exports = {
       throw PublicError.createWithCustomPublicMessage('Two hundred characters or fewer please :)', true, 'Too long');
     }
     return textRenderer.renderJapaneseWithFurigana(suffix).then(buffer => {
-      msg.channel.createMessage('', {name: 'furigana.png', file: buffer});
+      return msg.channel.createMessage('', {name: 'furigana.png', file: buffer}, msg);
     });
   },
 };

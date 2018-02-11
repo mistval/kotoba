@@ -9,7 +9,7 @@ module.exports = {
   shortDescription: 'Show some meta information about me.',
   canBeChannelRestricted: false,
   action(bot, msg, suffix) {
-    return bot.createMessage(msg.channel.id, `\`\`\`md
+    return msg.channel.createMessage(`\`\`\`md
 # Kotoba
 
 [ CREATOR ](K33#5261)
@@ -31,6 +31,6 @@ Kotoba uses data from the following sources:
     - Glosbe Dictionary (https://glosbe.com/)
     - Bing news (http://bing.com/news)
 
-Many of the quiz decks come from https://github.com/darkgray1981/kanjiquizbot\`\`\``);
+Many of the quiz decks come from https://github.com/darkgray1981/kanjiquizbot\`\`\``, null, msg);
   },
 };

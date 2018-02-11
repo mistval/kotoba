@@ -1,0 +1,889 @@
+{
+  "uniqueId": "fish",
+  "name": "Fish Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below fish name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "藍子",
+      "answer": [
+        "あいご"
+      ],
+      "meaning": "mottled spinefoot (Siganus fuscescens, species of Western Pacific rabbitfish), dusky rabbitfish, sandy spinefoot"
+    },
+    {
+      "question": "鮎魚女",
+      "answer": [
+        "あいなめ"
+      ],
+      "meaning": "fat greenling (Hexagrammos otakii)"
+    },
+    {
+      "question": "鮎並",
+      "answer": [
+        "あいなめ"
+      ],
+      "meaning": "fat greenling (Hexagrammos otakii)"
+    },
+    {
+      "question": "海豹",
+      "answer": [
+        "あざらし",
+        "かいひょう"
+      ],
+      "meaning": "true seal (animal), earless seal"
+    },
+    {
+      "question": "鯏",
+      "answer": [
+        "あさり"
+      ],
+      "meaning": "Manila clam (Ruditapes philippinarum)"
+    },
+    {
+      "question": "鯵",
+      "answer": [
+        "あじ"
+      ],
+      "meaning": "horse mackerel (Carangidae spp., esp. the Japanese horse mackerel, Trachurus japonicus), jack mackerel, pompano, scad"
+    },
+    {
+      "question": "穴子",
+      "answer": [
+        "あなご"
+      ],
+      "meaning": "garden eel, conger eel (esp. the common Japanese conger, Conger myriaster)"
+    },
+    {
+      "question": "鮎",
+      "answer": [
+        "あゆ",
+        "あい"
+      ],
+      "meaning": "sweetfish (Plecoglossus altivelis altivelis), ayu"
+    },
+    {
+      "question": "年魚",
+      "answer": [
+        "あゆ",
+        "ねんぎょ"
+      ],
+      "meaning": "sweetfish (Plecoglossus altivelis altivelis), ayu"
+    },
+    {
+      "question": "香魚",
+      "answer": [
+        "あゆ",
+        "こうぎょ"
+      ],
+      "meaning": "sweetfish (Plecoglossus altivelis altivelis), ayu"
+    },
+    {
+      "question": "鮑",
+      "answer": [
+        "あわび"
+      ],
+      "meaning": "abalone, ear shell"
+    },
+    {
+      "question": "鮟鱇",
+      "answer": [
+        "あんこう",
+        "あんこ"
+      ],
+      "meaning": "goosefish (any fish of family Lophiidae), monkfish, sea devil, potbellied sumo wrestler, wrestler with a big belly"
+    },
+    {
+      "question": "烏賊",
+      "answer": [
+        "いか"
+      ],
+      "meaning": "cuttlefish, squid"
+    },
+    {
+      "question": "糸魚",
+      "answer": [
+        "いとよ"
+      ],
+      "meaning": "three-spined stickleback (Gasterosteus aculeatus)"
+    },
+    {
+      "question": "海豚",
+      "answer": [
+        "いるか"
+      ],
+      "meaning": "dolphin (or other small toothed whales, such as porpoises, belugas, etc.)"
+    },
+    {
+      "question": "鰯",
+      "answer": [
+        "いわし"
+      ],
+      "meaning": "pilchard (esp. Japanese pilchard, Sardinops melanostictus), sardine (esp. sardine of Japanese pilchard)"
+    },
+    {
+      "question": "鰮",
+      "answer": [
+        "いわし"
+      ],
+      "meaning": "pilchard (esp. Japanese pilchard, Sardinops melanostictus), sardine (esp. sardine of Japanese pilchard)"
+    },
+    {
+      "question": "岩魚",
+      "answer": [
+        "いわな"
+      ],
+      "meaning": "char, charr"
+    },
+    {
+      "question": "嘉魚",
+      "answer": [
+        "いわな"
+      ],
+      "meaning": "char, charr"
+    },
+    {
+      "question": "鰻",
+      "answer": [
+        "うなぎ",
+        "むなぎ",
+        "うな",
+        "う"
+      ],
+      "meaning": "eel (esp. the Japanese eel, Anguilla japonica)"
+    },
+    {
+      "question": "海胆",
+      "answer": [
+        "うに"
+      ],
+      "meaning": "sea urchin"
+    },
+    {
+      "question": "海栗",
+      "answer": [
+        "うに"
+      ],
+      "meaning": "sea urchin"
+    },
+    {
+      "question": "海鷂魚",
+      "answer": [
+        "えい"
+      ],
+      "meaning": "ray (any fish of superorder Batoidea)"
+    },
+    {
+      "question": "狗母魚",
+      "answer": [
+        "えそ"
+      ],
+      "meaning": "lizardfish (any fish of family Synodontidae)"
+    },
+    {
+      "question": "海老",
+      "answer": [
+        "えび"
+      ],
+      "meaning": "prawn, shrimp, lobster, crayfish"
+    },
+    {
+      "question": "蝦",
+      "answer": [
+        "えび",
+        "かえる"
+      ],
+      "meaning": "prawn, shrimp, lobster, crayfish, frog"
+    },
+    {
+      "question": "鰕",
+      "answer": [
+        "えび"
+      ],
+      "meaning": "prawn, shrimp, lobster, crayfish"
+    },
+    {
+      "question": "追河",
+      "answer": [
+        "おいかわ"
+      ],
+      "meaning": "freshwater minnow, pale chub (Zacco platypus)"
+    },
+    {
+      "question": "笠子",
+      "answer": [
+        "かさご"
+      ],
+      "meaning": "scorpionfish"
+    },
+    {
+      "question": "牡蠣",
+      "answer": [
+        "かき",
+        "ぼれい"
+      ],
+      "meaning": "oyster, oyster shell"
+    },
+    {
+      "question": "鰍",
+      "answer": [
+        "かじか",
+        "いなだ"
+      ],
+      "meaning": "sculpin (any fish of family Cottidae, incl. the bullheads and the miller's-thumb), young Japanese amberjack (Seriola quinqueradiata)"
+    },
+    {
+      "question": "杜父魚",
+      "answer": [
+        "かじか",
+        "とふぎょ",
+        "かくぶつ"
+      ],
+      "meaning": "sculpin (any fish of family Cottidae, incl. the bullheads and the miller's-thumb), fourspine sculpin (species of fish, Cottus kazika)"
+    },
+    {
+      "question": "旗魚",
+      "answer": [
+        "かじき"
+      ],
+      "meaning": "marlin, swordfish, spearfish, sailfish"
+    },
+    {
+      "question": "鯑",
+      "answer": [
+        "かずのこ"
+      ],
+      "meaning": "herring roe"
+    },
+    {
+      "question": "鰹",
+      "answer": [
+        "かつお"
+      ],
+      "meaning": "skipjack tuna (Katsuwonus pelamis), oceanic bonito, victorfish"
+    },
+    {
+      "question": "堅魚",
+      "answer": [
+        "かつお"
+      ],
+      "meaning": "skipjack tuna (Katsuwonus pelamis), oceanic bonito, victorfish"
+    },
+    {
+      "question": "松魚",
+      "answer": [
+        "かつお",
+        "しょうぎょ"
+      ],
+      "meaning": "skipjack tuna (Katsuwonus pelamis), oceanic bonito, victorfish"
+    },
+    {
+      "question": "河馬",
+      "answer": [
+        "かば",
+        "かわうま"
+      ],
+      "meaning": "hippopotamus (Hippopotamus amphibius)"
+    },
+    {
+      "question": "梭魚",
+      "answer": [
+        "かます"
+      ],
+      "meaning": "barracuda"
+    },
+    {
+      "question": "梭子魚",
+      "answer": [
+        "かます"
+      ],
+      "meaning": "barracuda"
+    },
+    {
+      "question": "鰈",
+      "answer": [
+        "かれい"
+      ],
+      "meaning": "righteye flounder (any fish of family Pleuronectidae)"
+    },
+    {
+      "question": "皮剥",
+      "answer": [
+        "かわはぎ"
+      ],
+      "meaning": "thread-sail filefish (Stephanolepis cirrhifer)"
+    },
+    {
+      "question": "間八",
+      "answer": [
+        "かんぱち"
+      ],
+      "meaning": "greater amberjack (Seriola dumerili), purplish amberjack, greater yellowtail"
+    },
+    {
+      "question": "鱚",
+      "answer": [
+        "きす"
+      ],
+      "meaning": "sillago (any fish of genus Sillago, esp. the Japanese whiting, Sillago japonica)"
+    },
+    {
+      "question": "鯨",
+      "answer": [
+        "くじら"
+      ],
+      "meaning": "whale (Cetacea spp.)"
+    },
+    {
+      "question": "水母",
+      "answer": [
+        "くらげ",
+        "すいぼ"
+      ],
+      "meaning": "jellyfish"
+    },
+    {
+      "question": "海月",
+      "answer": [
+        "くらげ"
+      ],
+      "meaning": "jellyfish"
+    },
+    {
+      "question": "水月",
+      "answer": [
+        "すいげつ"
+      ],
+      "meaning": "water and moon"
+    },
+    {
+      "question": "黒鯛",
+      "answer": [
+        "くろだい"
+      ],
+      "meaning": "black porgy (Acanthopagrus schlegeli)"
+    },
+    {
+      "question": "鯉",
+      "answer": [
+        "こい"
+      ],
+      "meaning": "common carp (Cyprinus carpio), koi carp"
+    },
+    {
+      "question": "鯒",
+      "answer": [
+        "こち"
+      ],
+      "meaning": "flathead (esp. the bartailed flathead, Platycephalus indicus)"
+    },
+    {
+      "question": "牛尾魚",
+      "answer": [
+        "こち"
+      ],
+      "meaning": "flathead (esp. the bartailed flathead, Platycephalus indicus)"
+    },
+    {
+      "question": "鮗",
+      "answer": [
+        "このしろ"
+      ],
+      "meaning": "konoshiro gizzard shad (Konosirus punctatus)"
+    },
+    {
+      "question": "鮴",
+      "answer": [
+        "ごり"
+      ],
+      "meaning": "fish of the genus Rhinogobius"
+    },
+    {
+      "question": "鮭",
+      "answer": [
+        "さけ",
+        "しゃけ"
+      ],
+      "meaning": "salmon (Salmonidae spp.)"
+    },
+    {
+      "question": "栄螺",
+      "answer": [
+        "さざえ",
+        "さざい"
+      ],
+      "meaning": "turban shell (any mollusc of the family Turbinidae, esp. the horned turban, Turbo cornutus)"
+    },
+    {
+      "question": "拳螺",
+      "answer": [
+        "さざえ"
+      ],
+      "meaning": "turban shell (any mollusc of the family Turbinidae, esp. the horned turban, Turbo cornutus)"
+    },
+    {
+      "question": "鯖",
+      "answer": [
+        "さば"
+      ],
+      "meaning": "mackerel (esp. the chub mackerel, Scomber japonicus)"
+    },
+    {
+      "question": "鮫",
+      "answer": [
+        "さめ"
+      ],
+      "meaning": "shark"
+    },
+    {
+      "question": "針魚",
+      "answer": [
+        "さより",
+        "はりお",
+        "はりよ",
+        "はりうお"
+      ],
+      "meaning": "Japanese halfbeak (species of fish with elongated lower jaw) (Hemiramphus sajori), stickleback, Gasterosteus microcephalus (species of stickleback)"
+    },
+    {
+      "question": "細魚",
+      "answer": [
+        "さより"
+      ],
+      "meaning": "Japanese halfbeak (species of fish with elongated lower jaw) (Hemiramphus sajori), stickleback"
+    },
+    {
+      "question": "鰆",
+      "answer": [
+        "さわら"
+      ],
+      "meaning": "Japanese Spanish mackerel (Scomberomorus niphonius)"
+    },
+    {
+      "question": "秋刀魚",
+      "answer": [
+        "さんま"
+      ],
+      "meaning": "Pacific saury (Cololabis saira), mackerel pike"
+    },
+    {
+      "question": "柳葉魚",
+      "answer": [
+        "ししゃも"
+      ],
+      "meaning": "shishamo smelt (Spirinchus lanceolatus)"
+    },
+    {
+      "question": "蝦蛄",
+      "answer": [
+        "しゃこ"
+      ],
+      "meaning": "mantis shrimp (any marine crustacean of order Stomatopoda, esp. the species Oratosquilla oratoria)"
+    },
+    {
+      "question": "鯱",
+      "answer": [
+        "しゃち",
+        "しゃちほこ",
+        "しゃっちょこ",
+        "さちほこ"
+      ],
+      "meaning": "orca (Orcinus orca), killer whale, grampus, mythical carp with the head of a lion and the body of a fish (auspicious protectors of well-being)"
+    },
+    {
+      "question": "鯣",
+      "answer": [
+        "するめ"
+      ],
+      "meaning": "dried squid, dried cuttlefish"
+    },
+    {
+      "question": "鯛",
+      "answer": [
+        "たい"
+      ],
+      "meaning": "sea bream (Sparidae), porgy"
+    },
+    {
+      "question": "蛸",
+      "answer": [
+        "たこ"
+      ],
+      "meaning": "octopus"
+    },
+    {
+      "question": "鮹",
+      "answer": [
+        "たこ"
+      ],
+      "meaning": "octopus"
+    },
+    {
+      "question": "章魚",
+      "answer": [
+        "たこ"
+      ],
+      "meaning": "octopus"
+    },
+    {
+      "question": "太刀魚",
+      "answer": [
+        "たちうお"
+      ],
+      "meaning": "largehead hairtail (Trichiurus lepturus), scabbard fish, beltfish"
+    },
+    {
+      "question": "刺魚",
+      "answer": [
+        "とげうお"
+      ],
+      "meaning": "stickleback (fish), stickleback (any fish of family Gasterosteidae)"
+    },
+    {
+      "question": "鱈",
+      "answer": [
+        "たら"
+      ],
+      "meaning": "gadid (any fish of the family Gadidae, incl. cod, haddock, whiting and pollack)"
+    },
+    {
+      "question": "知知武",
+      "answer": [
+        "ちちぶ"
+      ],
+      "meaning": "dusky tripletooth goby (Tridentiger obscurus)"
+    },
+    {
+      "question": "蝶鮫",
+      "answer": [
+        "ちょうざめ"
+      ],
+      "meaning": "sturgeon (esp. the green sturgeon, Acipenser medirostris)"
+    },
+    {
+      "question": "鰌",
+      "answer": [
+        "どじょう"
+      ],
+      "meaning": "loach (any fish of family Cobitidae)"
+    },
+    {
+      "question": "泥鰌",
+      "answer": [
+        "どじょう",
+        "どんじょう",
+        "どんじょ"
+      ],
+      "meaning": "loach (any fish of family Cobitidae)"
+    },
+    {
+      "question": "飛魚",
+      "answer": [
+        "とびうお"
+      ],
+      "meaning": "flying fish (esp. the Japanese flying fish, Cypselurus agoo)"
+    },
+    {
+      "question": "海鼠",
+      "answer": [
+        "なまこ",
+        "かいそ",
+        "こ"
+      ],
+      "meaning": "sea cucumber (Holothuroidea spp.)"
+    },
+    {
+      "question": "鯰",
+      "answer": [
+        "なまず"
+      ],
+      "meaning": "catfish (esp. the Amur catfish, Silurus asotus)"
+    },
+    {
+      "question": "鱠",
+      "answer": [
+        "なます"
+      ],
+      "meaning": "dish of raw fish and vegetables seasoned in vinegar"
+    },
+    {
+      "question": "鰊",
+      "answer": [
+        "にしん",
+        "かど"
+      ],
+      "meaning": "Pacific herring (Clupea pallasii)"
+    },
+    {
+      "question": "鯡",
+      "answer": [
+        "にしん"
+      ],
+      "meaning": "Pacific herring (Clupea pallasii)"
+    },
+    {
+      "question": "鯊",
+      "answer": [
+        "はぜ"
+      ],
+      "meaning": "goby (fish)"
+    },
+    {
+      "question": "沙魚",
+      "answer": [
+        "はぜ"
+      ],
+      "meaning": "goby (fish)"
+    },
+    {
+      "question": "蝦虎魚",
+      "answer": [
+        "はぜ"
+      ],
+      "meaning": "goby (fish)"
+    },
+    {
+      "question": "鰰",
+      "answer": [
+        "はたはた"
+      ],
+      "meaning": "sailfin sandfish (Arctoscopus japonicus), Japanese sandfish"
+    },
+    {
+      "question": "燭魚",
+      "answer": [
+        "はたはた"
+      ],
+      "meaning": "sailfin sandfish (Arctoscopus japonicus), Japanese sandfish"
+    },
+    {
+      "question": "蛤",
+      "answer": [
+        "かえる",
+        "はまぐり"
+      ],
+      "meaning": "frog, common orient clam (Meretrix lusoria)"
+    },
+    {
+      "question": "鱧",
+      "answer": [
+        "はも",
+        "はむ"
+      ],
+      "meaning": "daggertooth pike conger (Muraenesox cinereus)"
+    },
+    {
+      "question": "鮠",
+      "answer": [
+        "はや",
+        "はえ",
+        "はい"
+      ],
+      "meaning": "minnow, shinner"
+    },
+    {
+      "question": "平政",
+      "answer": [
+        "ひらまさ"
+      ],
+      "meaning": "yellowtail amberjack (species of fish, Seriola lalandi)"
+    },
+    {
+      "question": "鮃",
+      "answer": [
+        "ひらめ"
+      ],
+      "meaning": "flounder (esp. the large-tooth flounders of family Paralichthyidae, but also lefteye flounders of family Bothidae)"
+    },
+    {
+      "question": "平目",
+      "answer": [
+        "ひらめ"
+      ],
+      "meaning": "flounder (esp. the large-tooth flounders of family Paralichthyidae, but also lefteye flounders of family Bothidae)"
+    },
+    {
+      "question": "比目魚",
+      "answer": [
+        "ひらめ"
+      ],
+      "meaning": "flounder (esp. the large-tooth flounders of family Paralichthyidae, but also lefteye flounders of family Bothidae)"
+    },
+    {
+      "question": "鰭",
+      "answer": [
+        "ひれ",
+        "はた"
+      ],
+      "meaning": "fin (e.g. of a fish)"
+    },
+    {
+      "question": "鱶",
+      "answer": [
+        "ふか"
+      ],
+      "meaning": "(large) shark"
+    },
+    {
+      "question": "鰒",
+      "answer": [
+        "ふぐ",
+        "あわび"
+      ],
+      "meaning": "puffer fish, blow fish, fugu, globefish, swellfish, abalone, ear shell"
+    },
+    {
+      "question": "河豚",
+      "answer": [
+        "ふぐ",
+        "ふく",
+        "ふくべ",
+        "かとん"
+      ],
+      "meaning": "puffer fish, blow fish, fugu, globefish, swellfish"
+    },
+    {
+      "question": "鮒",
+      "answer": [
+        "ふな"
+      ],
+      "meaning": "crucian carp (Carassius spp.)"
+    },
+    {
+      "question": "鰤",
+      "answer": [
+        "ぶり"
+      ],
+      "meaning": "Japanese amberjack (species of yellowtail, Seriola quinqueradiata)"
+    },
+    {
+      "question": "鯔",
+      "answer": [
+        "ぼら",
+        "いな",
+        "なよし",
+        "とど"
+      ],
+      "meaning": "striped mullet (Mugil cephalus), young striped mullet, adult striped mullet"
+    },
+    {
+      "question": "鮪",
+      "answer": [
+        "まぐろ",
+        "しび"
+      ],
+      "meaning": "tuna (edible fish, Thunnus spp.), tunny"
+    },
+    {
+      "question": "鱒",
+      "answer": [
+        "ます"
+      ],
+      "meaning": "trout, sea trout"
+    },
+    {
+      "question": "的鯛",
+      "answer": [
+        "まとうだい"
+      ],
+      "meaning": "John Dory (Zeus faber)"
+    },
+    {
+      "question": "翻車魚",
+      "answer": [
+        "まんぼう"
+      ],
+      "meaning": "ocean sunfish (Mola mola)"
+    },
+    {
+      "question": "目高",
+      "answer": [
+        "めだか"
+      ],
+      "meaning": "Japanese rice fish (Oryzias latipes), killifish, Japanese medaka"
+    },
+    {
+      "question": "目張",
+      "answer": [
+        "めばる"
+      ],
+      "meaning": "black rockfish (Sebastes inermis), darkbanded rockfish"
+    },
+    {
+      "question": "眼張",
+      "answer": [
+        "めばる"
+      ],
+      "meaning": "black rockfish (Sebastes inermis), darkbanded rockfish"
+    },
+    {
+      "question": "山女",
+      "answer": [
+        "やまめ",
+        "やまおんな"
+      ],
+      "meaning": "landlocked masu salmon (Oncorhynchus masou masou), mountain witch"
+    },
+    {
+      "question": "山女魚",
+      "answer": [
+        "やまめ"
+      ],
+      "meaning": "landlocked masu salmon (Oncorhynchus masou masou)"
+    },
+    {
+      "question": "鰥",
+      "answer": [
+        "やもめ",
+        "やもお"
+      ],
+      "meaning": "widower, divorced man not remarried"
+    },
+    {
+      "question": "雷魚",
+      "answer": [
+        "らいぎょ",
+        "はたはた",
+        "かみなりうお"
+      ],
+      "meaning": "blotched snakehead (species of fish, Channa maculata), sailfin sandfish (Arctoscopus japonicus), Japanese sandfish"
+    },
+    {
+      "question": "公魚",
+      "answer": [
+        "わかさぎ"
+      ],
+      "meaning": "Japanese pond smelt (Hypomesus nipponensis)"
+    },
+    {
+      "question": "若鷺",
+      "answer": [
+        "わかさぎ"
+      ],
+      "meaning": "Japanese pond smelt (Hypomesus nipponensis)"
+    },
+    {
+      "question": "鰐",
+      "answer": [
+        "わに"
+      ],
+      "meaning": "crocodile, alligator, crocodilian"
+    },
+    {
+      "question": "稚鰤",
+      "answer": [
+        "わらさ"
+      ],
+      "meaning": "middle-sized Japanese amberjack (species of yellowtail, Seriola quinqueradiata)"
+    }
+  ]
+}

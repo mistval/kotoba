@@ -4,7 +4,7 @@ const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 const constants = require('./constants.js');
 
-const MaxResultPhrases = 4;
+const MaxLinesPerPage = 11;
 
 class DictionaryResponseData {
   constructor(searchedWord, fromLanguagePretty, toLanguagePretty, showLanguages, dictionaryResults, extraText, embedUrl) {
@@ -12,20 +12,49 @@ class DictionaryResponseData {
     KotobaUtils.assertIsBoolean(showLanguages);
     KotobaUtils.assertIsArray(dictionaryResults);
     this.dictionaryResults_ = dictionaryResults;
+    this.hasResults = this.dictionaryResults_ && this.dictionaryResults_.length > 0;
     this.extraText_ = extraText;
     this.fromLanguage_ = fromLanguagePretty;
     this.toLanguage_ = toLanguagePretty;
     this.showLanguages_ = showLanguages;
     this.searchedWord_ = searchedWord;
+    this.searchedWord = this.searchedWord_;
     this.embedUrl_ = embedUrl;
+    this.resultsCache_ = {};
   }
 
   getNumberOfPages() {
-    let lastPageIndex = Math.floor(this.dictionaryResults_.length / MaxResultPhrases);
-    if (this.dictionaryResults_.length % MaxResultPhrases === 0) {
-      --lastPageIndex;
+    let pageIndex = 0;
+    while (this.getResultsForPage_(pageIndex).length > 0) {
+      ++pageIndex;
     }
-    return lastPageIndex + 1;
+    return pageIndex;
+  }
+
+  getResultsForPage_(targetPageIndex) {
+    if (this.resultsCache_[targetPageIndex]) {
+      return this.resultsCache_[targetPageIndex];
+    }
+    let thisPageIndex = 0;
+    let linesOnThisPage = 0;
+    let results = [];
+    for (let result of this.dictionaryResults_) {
+      let linesForThisResult = result.getDiscordBotFieldLengthInRows();
+      if (linesOnThisPage + linesForThisResult > MaxLinesPerPage && linesOnThisPage > 0) {
+        ++thisPageIndex;
+        linesOnThisPage = 0;
+      }
+      if (thisPageIndex === targetPageIndex) {
+        results.push(result);
+        this.resultsCache_[thisPageIndex] = results;
+      }
+      if (thisPageIndex > targetPageIndex) {
+        return results;
+      }
+      linesOnThisPage += linesForThisResult;
+    }
+
+    return results;
   }
 
   toDiscordBotContent(large, page) {
@@ -63,11 +92,9 @@ class DictionaryResponseData {
       embed.url = this.embedUrl_;
     }
 
-    let startIndex = page * MaxResultPhrases;
-    let endIndex = Math.min(this.dictionaryResults_.length, startIndex + MaxResultPhrases);
     embed.fields = [];
-    for (let i = startIndex; i < endIndex; ++i) {
-      embed.fields.push(this.dictionaryResults_[i].toDiscordBotField());
+    for (let result of this.getResultsForPage_(page)) {
+      embed.fields.push(result.toDiscordBotField());
     }
 
     return {embed: embed};

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Japanese and Kanji learning games and tools.">
+    <meta name="keywords" content="Japanese,kanji,learning,games">
+    <link rel="icon" href="kan.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>About</title>
+  </head>
+  <body>
+    <div id="gameJoiner">
+      <div class="modal fade" id="currentGamesModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Join a Game</h5>
+            </div>
+            <form v-on:submit.prevent="joinWithName">
+              <div class="modal-body">
+                <div v-if="currentGameInfos.length === 0">
+                  There aren't any public games running now.
+                </div>
+                <div v-else v-for="gameInfo in currentGameInfos">
+                  <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand">KotobaWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="create.html">Create Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="joinGame()">Join Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kanji.html">Kanji</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://kotoba.k33.we.bs/">Discord Bot</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+          <div class="page">
+            <br><br>
+              <h2>About</h2><br>
+              <p class="lead">KotobaWeb is an extension of work I've done for <a href="http://kotoba.k33.we.bs">my Discord Bot</a>. In addition to the features here on the website, the bot has SRS, saving/loading, leaderboards, more question categories, plus other Japanese-related functions including dictionary searching, kanji searching, verb deconjugation, furigana rendering, and more.</p>
+              <p>The site was launched on 2/4/2018 and is under construction.</p>
+              <p><b>Help!</b> I'm hoping to enlist the help of a skilled designer to help make the site look better.</p><br>
+              <h2>Contact</h2><br>
+              <form id="contact-form" method="post" action="/contact" role="form">
+              <div class="messages"></div>
+              <div class="controls">
+                  <div class="row">
+                      <div class="col-md-8">
+                          <div class="form-group">
+                              <label for="form_email">Email</label>
+                              <input id="form_email" type="email" name="email" class="form-control" placeholder="Your email address" required="required" data-error="">
+                              <div class="help-block with-errors"></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-8">
+                          <div class="form-group">
+                              <label for="form_message">Message</label>
+                              <textarea id="form_message" name="message" class="form-control" placeholder="Your message" rows="4" required="required" data-error=""></textarea>
+                              <div class="help-block with-errors"></div>
+                          </div>
+                      </div>
+                      <div class="col-md-12">
+                          <input type="submit" class="btn btn-success btn-send">
+                      </div>
+                  </div>
+              </div><br>
+              <!-- <p>You can also contact me in my <a href="https://discordapp.com/invite/zkAKbyJ">Discord server</a>.</p><br> -->
+            </form>
+          </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="validator.js"></script>
+    <script src="about.js"></script>
+    <script src="gamejoiner.js"></script>
+  </body>
+</html>

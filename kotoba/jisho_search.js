@@ -117,8 +117,15 @@ class ExamplesSource {
   }
 }
 
+function removeDuplicates(array) {
+  if (!array) {
+    return;
+  }
+  return array.filter((element, i) => array.indexOf(element) === i);
+}
+
 function addNavigationChapterForKanji(authorName, word, chapterForEmojiName, isStandalone) {
-  let kanjis = word.match(KANJI_REGEX);
+  let kanjis = removeDuplicates(word.match(KANJI_REGEX));
   if (kanjis && kanjis.length > 0) {
     chapterForEmojiName[KANJI_EMOTE] = new NavigationChapter(new KanjiDataSource(authorName, kanjis, isStandalone));
   } else if (isStandalone) {
@@ -128,7 +135,7 @@ function addNavigationChapterForKanji(authorName, word, chapterForEmojiName, isS
 }
 
 function addNavigationChapterForStrokeOrder(authorName, word, chapterForEmojiName, isStandalone) {
-  let kanjis = word.match(KANJI_REGEX);
+  let kanjis = removeDuplicates(word.match(KANJI_REGEX));
   if (kanjis && kanjis.length > 0) {
     chapterForEmojiName[STROKE_ORDER_EMOTE] = new NavigationChapter(new StrokeOrderDataSource(authorName, kanjis, isStandalone));
   } else if (isStandalone) {
@@ -170,4 +177,15 @@ module.exports.createNavigationForWord = function(authorName, authorId, word) {
     addNavigationChapterForExamples(authorName, word, chapterForEmojiName);
     return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
   });
+};
+
+module.exports.createNavigationForJishoResults = function(authorName, authorId, data) {
+  let word = data.searchedWord;
+  let navigationChapter = new NavigationChapter(new JishoWordDataSource(authorName, data));
+  let chapterForEmojiName = {};
+  chapterForEmojiName[JISHO_EMOTE] = navigationChapter;
+  addNavigationChapterForKanji(authorName, word, chapterForEmojiName);
+  addNavigationChapterForStrokeOrder(authorName, word, chapterForEmojiName);
+  addNavigationChapterForExamples(authorName, word, chapterForEmojiName);
+  return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
 };

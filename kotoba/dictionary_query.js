@@ -55,7 +55,7 @@ module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction, de
       }
     } else {
       return queryFunction(fromLanguage, toLanguage, term).then(result => {
-        return msg.channel.createMessage(result.toDiscordBotContent(big));
+        return msg.channel.createMessage(result.toDiscordBotContent(big), null, msg);
       });
     }
 
