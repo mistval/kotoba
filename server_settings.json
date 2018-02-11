@@ -14,7 +14,7 @@
             "userFacingName": "answer_time_limit",
             "description": "This setting controls how many seconds players have to answer a quiz question before I say time's up and move on to the next question.",
             "valueType": "FLOAT",
-            "defaultDatabaseFacingValue": 15,
+            "defaultDatabaseFacingValue": 16,
             "allowedDatabaseFacingValues": "Range(5, 120)"
           },
           {
@@ -46,7 +46,7 @@
             "userFacingName": "new_question_delay_after_answered",
             "description": "This setting controls how long I will wait (in seconds) after an answer is correctly answered and the window for additional answers closes, before I show a new question. For example, if additional_answer_wait_time is set to two, and this setting is set to three, then after a question is answered correctly a total of five seconds will pass before I ask a new one.",
             "valueType": "FLOAT",
-            "defaultDatabaseFacingValue": 2,
+            "defaultDatabaseFacingValue": 2.5,
             "allowedDatabaseFacingValues": "Range(0, 120)"
           },
           {
@@ -54,13 +54,20 @@
             "userFacingName": "additional_answer_wait_time",
             "description": "After a question is correctly answered, other players have a chance to also answer the question and get a point. This setting controls how long they have (in seconds).",
             "valueType": "FLOAT",
-            "defaultDatabaseFacingValue": 2,
+            "defaultDatabaseFacingValue": 2.15,
             "allowedDatabaseFacingValues": "Range(0, 100)"
           },
           {
             "type": "SETTING",
-            "userFacingName": "immediate_feedback",
-            "description": "This setting controls when I respond to the first correct answer.\n\nIf this setting is set to true, then when a user answers correctly, I will immediately show the answer and the scoreboard. Other users have a short period (by default, 2 seconds) during which they can also answer, and I will edit them onto the scoreboard.\n\nIf this settings is set to false, then when a user answers correctly, I will not show the answer immediately. Instead I will wait until the answer period (by default 2 seconds) ends, and then I will show the answer and the scoreboard with all of the scorers.",
+            "userFacingName": "conquest_and_inferno_enabled",
+            "description": "This setting controls whether Conquest and Inferno mode quizzes can be run. Say k!quiz-conquest and k!quiz-inferno to find out more about what those are. Since only the person who started a Conquest or Inferno mode quiz or a server admin can stop it, it has potential to be disruptive if not controlled, so it is disabled by default.",
+            "valueType": "BOOLEAN",
+            "defaultDatabaseFacingValue": false
+          },
+          {
+            "type": "SETTING",
+            "userFacingName": "internet_decks_enabled",
+            "description": "This setting controls whether decks imported from the internet may be used in this channel. If enabled, it is possible that someone will load a deck containing disagreeable content in this channel.",
             "valueType": "BOOLEAN",
             "defaultDatabaseFacingValue": false
           }

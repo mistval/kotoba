@@ -20,7 +20,7 @@ module.exports = {
   cooldown: 3,
   uniqueId: 'strokeorder303489',
   shortDescription: 'Search for details about a kanji\'s strokes.',
-  longDescription: 'Search for details about a kanji\'s strokes. For most kanji, I will provide a sequential stroke order diagram from Jisho and a stroke order gif generated from KanjiVG data.',
+  longDescription: 'Search for details about a kanji\'s strokes. For most kanji, I will provide a sequential stroke order diagram from Jisho and a stroke order gif generated from KanjiVG data. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: 'k!strokeorder 少',
   action(bot, msg, suffix) {
     if (!suffix) {

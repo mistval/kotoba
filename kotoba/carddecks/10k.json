@@ -1,0 +1,634 @@
+{
+  "uniqueId": "kanken_10k",
+  "name": "Kanken 10級 Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "一",
+      "answer": [
+        "いち"
+      ],
+      "meaning": "one, most"
+    },
+    {
+      "question": "右",
+      "answer": [
+        "みぎ"
+      ],
+      "meaning": "right, right hand side"
+    },
+    {
+      "question": "雨",
+      "answer": [
+        "あめ"
+      ],
+      "meaning": "rain"
+    },
+    {
+      "question": "円",
+      "answer": [
+        "えん",
+        "まる"
+      ],
+      "meaning": "yen, Japanese monetary unit, circle"
+    },
+    {
+      "question": "王",
+      "answer": [
+        "おう"
+      ],
+      "meaning": "king, ruler, sovereign, monarch, emperor, prince"
+    },
+    {
+      "question": "音",
+      "answer": [
+        "おと",
+        "ね",
+        "おん"
+      ],
+      "meaning": "sound, noise, report"
+    },
+    {
+      "question": "下",
+      "answer": [
+        "した"
+      ],
+      "meaning": "below, down, under, younger (e.g. daughter), under (esp. influence or guidance), lower reaches (of a river), lowness (of degree, value, etc.), inferiority, under (being in said condition or environment)"
+    },
+    {
+      "question": "火",
+      "answer": [
+        "ひ"
+      ],
+      "meaning": "fire, flame, blaze, Tuesday"
+    },
+    {
+      "question": "花",
+      "answer": [
+        "はな"
+      ],
+      "meaning": "flower, blossom, bloom, petal"
+    },
+    {
+      "question": "貝",
+      "answer": [
+        "かい"
+      ],
+      "meaning": "shellfish, Japanese babylon (species of shelled mollusk, Babylonia japonica), Japanese ivory shell"
+    },
+    {
+      "question": "五",
+      "answer": [
+        "ご"
+      ],
+      "meaning": "five"
+    },
+    {
+      "question": "口",
+      "answer": [
+        "くち"
+      ],
+      "meaning": "mouth, speech"
+    },
+    {
+      "question": "学校",
+      "answer": [
+        "がっこう"
+      ],
+      "meaning": "school"
+    },
+    {
+      "question": "左手",
+      "answer": [
+        "ひだりて",
+        "ゆんで"
+      ],
+      "meaning": "left hand, one's left hand, bow hand"
+    },
+    {
+      "question": "出る",
+      "answer": [
+        "でる"
+      ],
+      "meaning": "coming out, going out, outflow, efflux, rising (of the sun or moon), emerging"
+    },
+    {
+      "question": "山",
+      "answer": [
+        "やま",
+        "さん"
+      ],
+      "meaning": "mountain, hill, Mt., Mount"
+    },
+    {
+      "question": "子",
+      "answer": [
+        "こ"
+      ],
+      "meaning": "child, fruit, nut, first sign of Chinese zodiac (The Rat, 11pm-1am, north, November), child (esp. a boy), honorific (or familiar) suffix used after a name"
+    },
+    {
+      "question": "糸",
+      "answer": [
+        "いと"
+      ],
+      "meaning": "thread, yarn, string"
+    },
+    {
+      "question": "字",
+      "answer": [
+        "じ",
+        "あざ",
+        "あざな"
+      ],
+      "meaning": "character (i.e. kanji), section of village, Chinese courtesy name (name formerly given to adult Chinese men, used in place of their given name in formal situations)"
+    },
+    {
+      "question": "耳",
+      "answer": [
+        "みみ"
+      ],
+      "meaning": "ear"
+    },
+    {
+      "question": "学ぶ",
+      "answer": [
+        "まなぶ"
+      ],
+      "meaning": "learning, scholarship, study, erudition, knowledge, education"
+    },
+    {
+      "question": "気",
+      "answer": [
+        "き"
+      ],
+      "meaning": "spirit, mind, heart, seeming, giving the appearance of, giving one the feeling of, sign, indication, trace, touch, feeling, -like nature, -like disposition, -ish temperament"
+    },
+    {
+      "question": "九",
+      "answer": [
+        "きゅう",
+        "く"
+      ],
+      "meaning": "nine"
+    },
+    {
+      "question": "休む",
+      "answer": [
+        "やすむ"
+      ]
+    },
+    {
+      "question": "玉",
+      "answer": [
+        "たま",
+        "ぎょく"
+      ],
+      "meaning": "ball, sphere, globe, orb, precious stone (esp. jade)"
+    },
+    {
+      "question": "金",
+      "answer": [
+        "かね"
+      ],
+      "meaning": "gold, money, gold (Au), golden (color), gold (medal, cup)"
+    },
+    {
+      "question": "空",
+      "answer": [
+        "そら",
+        "から",
+        "くう",
+        "うろ"
+      ],
+      "meaning": "sky, the air, the heavens, emptiness, vacuum, blank, empty air, hollow, cavity, hole"
+    },
+    {
+      "question": "月",
+      "answer": [
+        "つき"
+      ],
+      "meaning": "moon, month (of the year), used after number or question word (e.g. nan or nani), Monday"
+    },
+    {
+      "question": "犬",
+      "answer": [
+        "いぬ"
+      ],
+      "meaning": "dog (Canis (lupus) familiaris)"
+    },
+    {
+      "question": "見る",
+      "answer": [
+        "みる"
+      ],
+      "meaning": "looking, viewing, view (of life, etc.), outlook"
+    },
+    {
+      "question": "車",
+      "answer": [
+        "くるま",
+        "しゃ"
+      ],
+      "meaning": "car, automobile, vehicle"
+    },
+    {
+      "question": "手",
+      "answer": [
+        "て"
+      ],
+      "meaning": "hand, arm"
+    },
+    {
+      "question": "女",
+      "answer": [
+        "おんな"
+      ],
+      "meaning": "female, woman, female sex, girl, daughter"
+    },
+    {
+      "question": "小さい",
+      "answer": [
+        "ちいさい"
+      ],
+      "meaning": "smallness, small item, small, little, slight, narrow, dear (figurative sense), thin"
+    },
+    {
+      "question": "上",
+      "answer": [
+        "うえ",
+        "じょう",
+        "かみ",
+        "うわ"
+      ],
+      "meaning": "above, up, over, elder (e.g. daughter), from the standpoint of, as a matter of (e.g. fact), in the field of, being of the type of, upper reaches (of a river), upper stream, upper, upward, outer, surface, top"
+    },
+    {
+      "question": "森",
+      "answer": [
+        "もり"
+      ],
+      "meaning": "forest"
+    },
+    {
+      "question": "人",
+      "answer": [
+        "ひと"
+      ],
+      "meaning": "man, person, -ian (e.g. Italian), -ite (e.g. Tokyoite), indicates nationality, race, origin, etc., counter for people"
+    },
+    {
+      "question": "水",
+      "answer": [
+        "みず"
+      ],
+      "meaning": "water (esp. cool, fresh water, e.g. drinking water), Wednesday"
+    },
+    {
+      "question": "正しい",
+      "answer": [
+        "ただしい"
+      ],
+      "meaning": "(logical) true, regular, greater (of equal court ranks), upper, senior, exact, precise"
+    },
+    {
+      "question": "生",
+      "answer": [
+        "なま"
+      ],
+      "meaning": "raw, uncooked, fresh, life, living, pure, undiluted, crude, vital, virile, lively, area of thick growth (of trees, grass, etc.), innocent, naive, unsophisticated, inexperienced, green, wet behind the ears, boiled and half-dried bonito"
+    },
+    {
+      "question": "青",
+      "answer": [
+        "あお"
+      ],
+      "meaning": "blue"
+    },
+    {
+      "question": "夕日",
+      "answer": [
+        "ゆうひ",
+        "せきじつ"
+      ],
+      "meaning": "evening sun, setting sun"
+    },
+    {
+      "question": "石",
+      "answer": [
+        "いし"
+      ],
+      "meaning": "stone, measure of volume (approx. 180.39 liters, 6.37 cub. ft.)"
+    },
+    {
+      "question": "赤",
+      "answer": [
+        "あか"
+      ],
+      "meaning": "red, crimson, scarlet"
+    },
+    {
+      "question": "千人",
+      "answer": [
+        "せんにん"
+      ]
+    },
+    {
+      "question": "川",
+      "answer": [
+        "かわ"
+      ],
+      "meaning": "river, stream"
+    },
+    {
+      "question": "先生",
+      "answer": [
+        "せんせい"
+      ],
+      "meaning": "teacher, master, doctor, boy"
+    },
+    {
+      "question": "早い",
+      "answer": [
+        "はやい"
+      ],
+      "meaning": "already, now, by this time, early"
+    },
+    {
+      "question": "草",
+      "answer": [
+        "くさ"
+      ],
+      "meaning": "grass, weed, herb, thatch, draft, rough copy"
+    },
+    {
+      "question": "足",
+      "answer": [
+        "あし"
+      ],
+      "meaning": "foot, counter for pairs (of socks, shoes, etc.)"
+    },
+    {
+      "question": "村",
+      "answer": [
+        "むら"
+      ],
+      "meaning": "village"
+    },
+    {
+      "question": "大きい",
+      "answer": [
+        "おおきい"
+      ],
+      "meaning": "the large part of, big, large, great, grand, greater (of equal court ranks), upper, senior"
+    },
+    {
+      "question": "男",
+      "answer": [
+        "おとこ"
+      ],
+      "meaning": "man, male, boy, son"
+    },
+    {
+      "question": "竹",
+      "answer": [
+        "たけ"
+      ],
+      "meaning": "bamboo"
+    },
+    {
+      "question": "中",
+      "answer": [
+        "なか",
+        "ちゅう",
+        "じゅう"
+      ],
+      "meaning": "medium, average, middle, inside, in, within, through, throughout, in the course of, red dragon tile"
+    },
+    {
+      "question": "虫",
+      "answer": [
+        "むし"
+      ],
+      "meaning": "insect, bug, cricket, moth, worm"
+    },
+    {
+      "question": "町",
+      "answer": [
+        "まち",
+        "ちょう"
+      ],
+      "meaning": "town, block, neighbourhood, neighborhood"
+    },
+    {
+      "question": "田",
+      "answer": [
+        "た"
+      ],
+      "meaning": "rice field"
+    },
+    {
+      "question": "土",
+      "answer": [
+        "つち",
+        "ど"
+      ],
+      "meaning": "earth, soil, dirt, clay, mud, Saturday, soil (esp. reddish soil)"
+    },
+    {
+      "question": "日",
+      "answer": [
+        "ひ",
+        "にち"
+      ],
+      "meaning": "Sunday, day, days, day of month"
+    },
+    {
+      "question": "林",
+      "answer": [
+        "はやし"
+      ],
+      "meaning": "woods, forest, copse, thicket"
+    },
+    {
+      "question": "六",
+      "answer": [
+        "ろく"
+      ],
+      "meaning": "six"
+    },
+    {
+      "question": "四",
+      "answer": [
+        "よん",
+        "し"
+      ],
+      "meaning": "four"
+    },
+    {
+      "question": "手",
+      "answer": [
+        "て"
+      ],
+      "meaning": "hand, arm"
+    },
+    {
+      "question": "見学",
+      "answer": [
+        "けんがく"
+      ],
+      "meaning": "inspection, study by observation, field trip"
+    },
+    {
+      "question": "二年",
+      "answer": [
+        "にねん"
+      ]
+    },
+    {
+      "question": "白",
+      "answer": [
+        "しろ"
+      ],
+      "meaning": "white"
+    },
+    {
+      "question": "百",
+      "answer": [
+        "ひゃく"
+      ],
+      "meaning": "100, hundred"
+    },
+    {
+      "question": "文",
+      "answer": [
+        "ぶん"
+      ],
+      "meaning": "sentence, letter, writings, one-thousandth of a kan (obsolete unit of currency), figure, design"
+    },
+    {
+      "question": "木",
+      "answer": [
+        "き"
+      ],
+      "meaning": "tree, shrub, bush, Thursday"
+    },
+    {
+      "question": "本",
+      "answer": [
+        "ほん"
+      ],
+      "meaning": "book, volume, script, origin, source"
+    },
+    {
+      "question": "名",
+      "answer": [
+        "な"
+      ],
+      "meaning": "name, given name, counter for people (usu. seating, reservations and such)"
+    },
+    {
+      "question": "目",
+      "answer": [
+        "め"
+      ],
+      "meaning": "eye, eyeball, order"
+    },
+    {
+      "question": "立つ",
+      "answer": [
+        "たつ"
+      ]
+    },
+    {
+      "question": "力",
+      "answer": [
+        "ちから"
+      ],
+      "meaning": "force, strength, might, vigour (vigor), energy, power, proficiency, ability"
+    },
+    {
+      "question": "三",
+      "answer": [
+        "さん"
+      ],
+      "meaning": "three"
+    },
+    {
+      "question": "左右",
+      "answer": [
+        "さゆう"
+      ],
+      "meaning": "left and right, (doing) various things, (doing) this and that"
+    },
+    {
+      "question": "先",
+      "answer": [
+        "さき"
+      ],
+      "meaning": "previous, prior, former, first, earlier, some time ago, preceding, old"
+    },
+    {
+      "question": "年玉",
+      "answer": [
+        "としだま"
+      ],
+      "meaning": "New Year's gift"
+    },
+    {
+      "question": "花火",
+      "answer": [
+        "はなび"
+      ],
+      "meaning": "fireworks"
+    },
+    {
+      "question": "足",
+      "answer": [
+        "あし"
+      ],
+      "meaning": "foot, counter for pairs (of socks, shoes, etc.)"
+    },
+    {
+      "question": "入学",
+      "answer": [
+        "にゅうがく"
+      ],
+      "meaning": "entry to school or university, matriculation, enrolment (in university, etc.)"
+    },
+    {
+      "question": "千円",
+      "answer": [
+        "せんえん"
+      ],
+      "meaning": "1000 yen"
+    },
+    {
+      "question": "三文",
+      "answer": [
+        "さんもん"
+      ],
+      "meaning": "cheapness, farthing"
+    },
+    {
+      "question": "女子",
+      "answer": [
+        "じょし",
+        "おなご",
+        "おみなご",
+        "めこ"
+      ],
+      "meaning": "woman, girl"
+    }
+  ]
+}

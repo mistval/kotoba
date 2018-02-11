@@ -6,18 +6,18 @@ const categoryFields = [
   {'name': 'JLPT Reading Decks', value: 'N5 N4 N3 N2 N1'},
   {'name': 'JLPT Kanji Usage Decks', value: 'k_N5 k_N4 k_N3 k_N2 k_N1'},
   {'name': 'Kanken Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
-  {'name': 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures stations tokyo countries places'},
+  {'name': 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures stations tokyo countries places kirakira'},
   {'name': 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {'name': 'Kana Decks', value: 'hiragana katakana'},
-  {'name': 'Japanese Misc. Decks', value: 'common numbers hard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard radicals kklc jouyou'},
+  {'name': 'Japanese Misc. Decks', value: 'jptrivia common numbers hard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard radicals kklc jouyou'},
   {'name': 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans'},
   {'name': 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
 
 module.exports.content = {
   embed: {
-    title: 'Currently available quiz decks',
-    description: 'Say \'k!quiz [deck]\' to start a quiz (Example: k!quiz N5). Say \'k!help quiz\' to see advanced quiz options.',
+    title: 'Quiz',
+    description: 'Say **k!quiz <deck name>** to start a quiz (Example: **k!quiz N5**). Say **k!quiz stop** to stop a quiz. Say **k!help quiz** to see advanced quiz options. Say **k!quiz save** to save your progress and **k!quiz load** to reload it. Say **k!quiz-conquest** or **k!quiz-inferno** to learn about these new game types.',
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: categoryFields,
     footer: {

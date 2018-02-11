@@ -8,7 +8,7 @@ const PublicError = reload('monochrome-bot').PublicError;
 
 const JISHO_API = 'http://jisho.org/api/v1/search/words';
 
-const WANIKANA_TAG_PREFIX = 'wanikani';
+const WANIKANI_TAG_PREFIX = 'wanikani';
 const PARTS_OF_SPEECH_KEY = 'parts_of_speech';
 const ENGLISH_DEFINITIONS_KEY = 'english_definitions';
 const FROM_LANGUAGE_CODE = 'en';
@@ -16,7 +16,7 @@ const TO_LANGUAGE_CODE = 'ja';
 
 function removeWanikaniTags(tags) {
   return tags.filter(tag => {
-    return !(typeof tag === typeof '' && tag.startsWith(WANIKANA_TAG_PREFIX));
+    return !(typeof tag === typeof '' && tag.startsWith(WANIKANI_TAG_PREFIX));
   });
 }
 
@@ -35,27 +35,50 @@ function getMeanings(senses) {
   return meanings;
 }
 
+function getJapanesePartFromDataElement(dataElement, phrase) {
+  let partThatMatches = dataElement.japanese.find(japanese => japanese.word === phrase);
+  return partThatMatches || dataElement.japanese[0];
+}
+
 function parseJishoResponse(inData, phrase) {
   inData = inData.data;
   let dictionaryResults = [];
 
   for (let dataElement of inData) {
-    let readings = [];
-    let result = '';
-    if (typeof dataElement.japanese[0].word === typeof '') {
-      result = dataElement.japanese[0].word;
-      readings = dataElement.japanese.filter(japanese => {
-        return japanese.word === result;
-      }).map(japanese => {
-        return japanese.reading;
-      });
-    } else {
-      result = dataElement.japanese[0].reading;
+    let readingsForWord = {};
+    for (let japanese of dataElement.japanese) {
+      let word;
+      if (typeof japanese.word === typeof '') {
+        word = japanese.word;
+      }  else {
+        word = japanese.reading;
+      }
+
+      if (!readingsForWord[word]) {
+        readingsForWord[word] = [];
+      }
+      if (japanese.reading !== word && readingsForWord[word].indexOf(japanese.reading) === -1) {
+        readingsForWord[word].push(japanese.reading);
+      }
     }
+
+    let words = Object.keys(readingsForWord).sort((a, b) => {
+      if (a === phrase) {
+        return -1;
+      }
+      if (b === phrase) {
+        return 1;
+      }
+      return 0;
+    });
+
+    let wordsAndReadings = words.map(word => {
+      return {word: word, readings: readingsForWord[word].filter(reading => !!reading)};
+    });
 
     let tags = removeWanikaniTags(dataElement.tags);
     let wordMeanings = getMeanings(dataElement.senses);
-    dictionaryResults.push(new DictionaryResult(result, readings, tags, wordMeanings));
+    dictionaryResults.push(new DictionaryResult(wordsAndReadings, tags, wordMeanings));
   }
 
   let extraText = '';
@@ -80,7 +103,7 @@ module.exports = function(fromLanguage, toLanguage, suffix) {
       keyword: suffix
     },
     json: true,
-    timeout: 10000
+    timeout: 10000,
   }).catch(err => {
     throwNotRespondingError(err);
   }).then(data => {

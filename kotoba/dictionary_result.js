@@ -4,51 +4,45 @@ const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 const constants = require('./constants.js');
 
-const MaxPhraseMeanings = 3;
+const MaxPhraseMeanings = 999;
 
 class DictionaryResult {
-  constructor(targetLanguageWordResult, targetLanguageWordReadings, wordTags, wordMeanings) {
-    KotobaUtils.assertIsString(targetLanguageWordResult);
-    KotobaUtils.assertIsArray(wordTags, wordMeanings, targetLanguageWordReadings);
+  constructor(targetLanguageWordsAndReadings, wordTags, wordMeanings) {
 
-    this.targetLanguageWordResult_ = targetLanguageWordResult;
-    this.targetLanguageWordReadings_ = targetLanguageWordReadings.filter(reading => !!reading);
+    if (!wordMeanings) {
+      wordMeanings = [];
+    }
+
+    this.targetLanguageWordsAndReadings_ = targetLanguageWordsAndReadings;
     this.wordTags_ = wordTags;
     this.wordMeanings_ = wordMeanings;
   }
 
+  getDiscordBotFieldLengthInRows() {
+    return 1 + this.wordMeanings_.length;
+  }
+
   toDiscordBotField() {
-    let title = this.targetLanguageWordResult_;
-    if (this.targetLanguageWordReadings_.length > 0) {
-      title += '  (' + this.targetLanguageWordReadings_.join(', ') + ')';
-    }
-    title += ' ' + KotobaUtils.tagArrayToString(this.wordTags_);
+    let title = this.targetLanguageWordsAndReadings_.map(targetLanguageWordAndReadings => {
+      let result = targetLanguageWordAndReadings.word;
+      if (targetLanguageWordAndReadings.readings.length > 0) {
+        result += ' (' + targetLanguageWordAndReadings.readings.join(', ') + ')';
+      }
+      return result;
+    }).join(', ');
 
     let value;
     if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
-      value = this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
+      value = this.wordMeanings_.slice(0, MaxPhraseMeanings).map((meaning, index) => {
         return (index + 1) + '. ' + meaning.toDiscordBotString();
       }).join('\n');
     }
 
+    if (value.length > 1024) {
+      value = value.substring(0, 1010) + ' [...]';
+    }
+
     return {name: title, value: value};
-  }
-
-  toDiscordBotString() {
-    let response = '- ' + this.targetLanguageWordResult_;
-    if (this.targetLanguageWordReadings_.length > 0) {
-      response += '  (' + this.targetLanguageWordReadings_.join(', ') + ')';
-    }
-    response += ' ' + KotobaUtils.tagArrayToString(this.wordTags_);
-
-    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
-      response += '\n';
-      response += this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
-        return '    *' + (index + 1) + '.* ' + meaning.toDiscordBotString();
-      }).join('\n');
-    }
-
-    return response;
   }
 
   toStandaloneDiscordBotContent(searchedWord) {
@@ -61,18 +55,18 @@ class DictionaryResult {
 
     let fields = [];
     content.embed.fields = fields;
-    let wordField = {name: 'Word', value: this.targetLanguageWordResult_, inline: true};
+    let wordField = {name: 'Word', value: this.targetLanguageWordsAndReadings_[0].word, inline: true};
     fields.push(wordField);
 
-    if (this.targetLanguageWordReadings_ && this.targetLanguageWordReadings_.length > 0) {
-      let readingField = {name: 'Readings', value: this.targetLanguageWordReadings_.join(', '), inline: true};
+    if (this.targetLanguageWordsAndReadings_[0].readings.length > 0) {
+      let readingField = {name: 'Readings', value: this.targetLanguageWordsAndReadings_[0].readings.join(', '), inline: true};
       if (readingField.value) {
         fields.push(readingField);
       }
     }
 
     if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
-      let meaningsString = this.wordMeanings_.slice(0, Math.min(this.wordMeanings_.length, MaxPhraseMeanings)).map((meaning, index) => {
+      let meaningsString = this.wordMeanings_.slice(0, MaxPhraseMeanings).map((meaning, index) => {
         return (index + 1).toString() + '. ' + meaning.toDiscordBotString();
       }).join('\n');
       let meaningsField = {name: 'Meanings', value: meaningsString};

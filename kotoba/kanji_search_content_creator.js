@@ -120,8 +120,12 @@ function convertToDiscordBotContent(kanjiInformation) {
   addEmbedFieldForRadical(kanjiInformation, embedFields);
   addEmbedFieldForParts(kanjiInformation, embedFields);
 
-  embedFields.push({name: 'Stroke Count', inline: true, value: kanjiInformation.strokeCount});
-  embedFields.push({name: 'Meaning', inline: true, value: kanjiInformation.meaning});
+  if (kanjiInformation.strokeCount) {
+    embedFields.push({name: 'Stroke Count', inline: true, value: kanjiInformation.strokeCount});
+  }
+  if (kanjiInformation.meaning) {
+    embedFields.push({name: 'Meaning', inline: true, value: kanjiInformation.meaning});
+  }
 
   let examplesStr = getExamplesString(kanjiInformation);
 

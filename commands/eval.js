@@ -16,6 +16,6 @@ module.exports = {
     }
     let result = eval(suffix);
     let text = JSON.stringify(result, null, 2);
-    return msg.channel.createMessage('```js\n' + text + '\n```');
+    return msg.channel.createMessage('```js\n' + text + '\n```', null, msg);
   },
 };

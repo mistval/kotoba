@@ -1,814 +1,302 @@
 'use strict'
 const reload = require('require-reload')(require);
 const state = require('./static_state.js');
-const fs = require('fs');
-const renderText = reload('./render_text.js').render;
+const deckLoader = reload('./quiz_deck_loader.js');
 const logger = reload('monochrome-bot').logger;
-const ScoreStorageUtils = reload('./quiz_score_storage_utils.js');
 const assert = require('assert');
 const Util = reload('./utils.js');
+const saveManager = reload('./quiz_pause_manager.js');
+const cardStrategies = reload('./quiz_card_strategies.js');
+const Session = reload('./quiz_session.js');
+const DeckCollection = reload('./quiz_deck_collection.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
-let BetterEnglishDefinitions;
-try {
-  BetterEnglishDefinitions = reload('./BetterEnglishDefinitions.js');
-} catch (err) {
-  logger.logFailure(LOGGER_TITLE, 'Couldn\'t load better English definitions. The crappy definitions will be used. The better definitions are not available in the public repo (for legitimate reasons I might add!)');
-}
-
 const INITIAL_DELAY_IN_MS = 5000;
-
-const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 25000;
 const REVEAL_INTERVAL_IN_MS = 8000;
-const NUMBER_OF_REVEALS_PER_CARD = 2;
-const FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL = .25;
-const ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS = 10000;
-
-/* DICTIONARY LINK STRATEGIES */
-
-const CreateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.question)},
-  JISHO_QUESTION_KANJI: card => {return `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`},
-  JISHO_ANSWER_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.answer[0])},
-  WEBSTER_ANSWER: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.answer[0])},
-  WEBSTER_QUESTION: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.question)},
-  NONE: card => {},
-};
-
-const CreateAggregateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.question).join(','))}`},
-  JISHO_QUESTION_KANJI: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.question).join(','))}%23kanji`},
-  JISHO_ANSWER_WORD: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.answer[0]).join(','))}`},
-  WEBSTER_ANSWER: cards => {},
-  WEBSTER_QUESTION: card => {},
-  NONE: cards => {},
-};
-
-/* SCORES */
-
-class Scores {
-  constructor(scoreLimit, deckId, scoreScopeId) {
-    this.questionScores_ = [];
-    this.scoreLimit_ = scoreLimit;
-    this.scoreScopeId_ = scoreScopeId;
-    this.deckId_ = deckId;
-  }
-
-  commitScores() {
-    ScoreStorageUtils.addScores(this.scoreScopeId_, this.deckId_, this.getRoundedScoresForLb_(), this.nameForUserId_);
-  }
-
-  addQuestionScores(questionScores) {
-    this.questionScores_.push(questionScores);
-  }
-
-  checkForWin() {
-    this.updateTotals_();
-    return Object.keys(this.scoreForUserId_).some(key => this.scoreForUserId_[key].normalizedScore >= this.scoreLimit_);
-  }
-
-  getScoreForUserPairs() {
-    this.updateTotals_();
-    return Object.keys(this.scoreForUserId_).map(key => {
-      let userId = key;
-      let normalizedScore = this.scoreForUserId_[userId].normalizedScore;
-      let totalScore = this.scoreForUserId_[userId].totalScore;
-      return {userId: key, totalScore: totalScore, normalizedScore: normalizedScore};
-    }).sort((a, b) => {
-      return b.normalizedScore - a.normalizedScore;
-    });
-  }
-
-  getScoreForUserId() {
-    this.updateTotals_();
-    return this.scoreForUserId_;
-  }
-
-  getScoreLimit() {
-    return this.scoreLimit_;
-  }
-
-  updateTotals_() {
-    this.scoreForUserId_ = {};
-    this.nameForUserId_ = {};
-    for (let questionScores of this.questionScores_) {
-      let questionNormalizedScoreForUserId = questionScores.getNormalizedScoreForUserIds();
-      let questionNonNormalizedScoreForUserId = questionScores.getNonNormalizedScoreForUserIds();
-      let questionNameForUserId = questionScores.getNameForUserIds();
-
-      for (let userId of Object.keys(questionNormalizedScoreForUserId)) {
-        this.nameForUserId_[userId] = questionNameForUserId[userId];
-        if (!this.scoreForUserId_[userId]) {
-          this.scoreForUserId_[userId] = {
-            totalScore: 0,
-            normalizedScore: 0,
-          };
-        }
-        this.scoreForUserId_[userId].totalScore += questionNonNormalizedScoreForUserId[userId];
-        this.scoreForUserId_[userId].normalizedScore += questionNormalizedScoreForUserId[userId];
-      }
-    }
-
-    for (let userId of Object.keys(this.scoreForUserId_)) {
-      let score = this.scoreForUserId_[userId];
-      score.normalizedScore = Math.floor(score.normalizedScore);
-    }
-  }
-
-  getRoundedScoresForLb_() {
-    this.updateTotals_();
-    return Util.mapObjectValue(this.scoreForUserId_, score => score.normalizedScore);
-  }
-}
-
-class QuestionScores {
-  constructor() {
-    this.answersForUserId_ = {};
-    this.pointsPerAnswerForUserId_ = {};
-    this.nameForUserId_ = {};
-    this.answerersInOrder_ = [];
-    this.allAnswers_ = {};
-  }
-
-  getAnswersForUser() {
-    return this.answersForUserId_;
-  }
-
-  getPointsPerAnswerForUser() {
-    return this.pointsPerAnswerForUserId_;
-  }
-
-  getNonNormalizedScoreForUserIds() {
-    return Util.mapObjectKey(this.pointsPerAnswerForUserId_, key => {
-      return this.getTotalScoreForUserId_(key);
-    });
-  }
-
-  getNormalizedScoreForUserIds() {
-    let maxScore = 0;
-    let userIds = Object.keys(this.answersForUserId_);
-    for (let userId of userIds) {
-      let score = this.getTotalScoreForUserId_(userId);
-      maxScore = Math.max(maxScore, score);
-    }
-
-    let normalizedScoreForUserId = {};
-    for (let userId of userIds) {
-      normalizedScoreForUserId[userId] = this.getTotalScoreForUserId_(userId) / maxScore;
-    }
-
-    return normalizedScoreForUserId;
-  }
-
-  getAnswerersInOrder() {
-    return this.answerersInOrder_;
-  }
-
-  getNameForUserIds() {
-    return this.nameForUserId_;
-  }
-
-  // Precondition: The user provided a correct answer.
-  // Postcondition: If that answer should be awarded points,
-  //   they are awarded.
-  // Returns true if points are awarded, false otherwise.
-  submitAnswer(userId, userName, answer, points, scoreDifferentAnswers) {
-    if (scoreDifferentAnswers && this.allAnswers_[answer]) {
-      return false;
-    } else if (this.answersForUserId_[userId] && ~this.answersForUserId_[userId].indexOf(answer)) {
-      return false;
-    }
-
-    if (!scoreDifferentAnswers && this.answersForUserId_[userId]) {
-      return false;
-    }
-
-    this.allAnswers_[answer] = true;
-    this.nameForUserId_[userId] = userName;
-    if (!this.answersForUserId_[userId]) {
-      this.answersForUserId_[userId] = [];
-      this.pointsPerAnswerForUserId_[userId] = [];
-    }
-
-    this.answersForUserId_[userId].push(answer);
-    this.pointsPerAnswerForUserId_[userId].push(points);
-
-    if (!~this.answerersInOrder_.indexOf(userId)) {
-      this.answerersInOrder_.push(userId);
-    }
-    return true;
-  }
-
-  getTotalScoreForUserId_(userId) {
-    return this.pointsPerAnswerForUserId_[userId].reduce((sum, points) => sum + points, 0);
-  }
-}
-
-/* SCORING STRATEGIES */
-
-function scoreOneAnswerOnePoint(userId, userName, answer, card, questionScores) {
-  let correctAnswer = ~card.answer.indexOf(answer);
-  if (!correctAnswer) {
-    return false;
-  }
-  return questionScores.submitAnswer(userId, userName, answer, 1, false);
-}
-
-function scoreMultipleAnswersPositionPoints(userId, userName, answer, card, questionScores) {
-  let answerIndex = card.answer.indexOf(answer);
-  let correctAnswer = answerIndex !== -1;
-  if (!correctAnswer) {
-    return false;
-  }
-  let points = 1;
-  if (card.pointsForAnswer) {
-    points = card.pointsForAnswer[answerIndex];
-  }
-  return questionScores.submitAnswer(userId, userName, answer, points, true);
-}
-
-const ScoreAnswerStrategy = {
-  ONE_ANSWER_ONE_POINT: scoreOneAnswerOnePoint,
-  MULTIPLE_ANSWERS_POSITION_POINTS: scoreMultipleAnswersPositionPoints,
-};
-
-/* QUESTION CREATION STRATEGIES */
-
-function createQuestionCommon(card) {
-  return {
-    deckName: card.deckName,
-    instructions: card.instructions,
-  };
-}
-
-function createImageQuestion(card) {
-  let question = createQuestionCommon(card);
-  return renderText(card.question).then(pngBuffer => {
-    question.bodyAsPngBuffer = pngBuffer;
-    return question;
-  });
-}
-
-function createTextQuestionWithHint(card, quizState) {
-  if (!quizState.textQuestionWithHintStrategyState) {
-    quizState.textQuestionWithHintStrategyState = {};
-  }
-  if (quizState.textQuestionWithHintStrategyState.cardId !== card.id) {
-    quizState.textQuestionWithHintStrategyState.cardId = card.id;
-    let totalNumberOfCharactersToReveal = Math.ceil(card.answer[0].length * NUMBER_OF_REVEALS_PER_CARD * FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL);
-
-    // Randomize which indices to reveal in which order
-    let allCharacterIndices = [];
-    for (let i = 0; i < card.answer[0].length; ++i) {
-      allCharacterIndices.push(i);
-    }
-    let shuffledIndices = Util.shuffleArray(allCharacterIndices);
-    let revealIndexQueue = shuffledIndices.slice(0, totalNumberOfCharactersToReveal);
-    let revelationState = Array(card.answer[0].length + 1).join('_');
-    quizState.textQuestionWithHintStrategyState.revealIndexQueue = revealIndexQueue;
-    quizState.textQuestionWithHintStrategyState.revelationState = revelationState;
-  } else {
-    let numberOfIndicesToReveal = Math.ceil(FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL * card.answer[0].length);
-    let revealIndexQueue = quizState.textQuestionWithHintStrategyState.revealIndexQueue;
-    let revelationStateArray = quizState.textQuestionWithHintStrategyState.revelationState.split('');
-    for (let i = 0; i < numberOfIndicesToReveal && revealIndexQueue.length > 0; ++i) {
-      let indexToReveal = revealIndexQueue.pop();
-      revelationStateArray[indexToReveal] = card.answer[0][indexToReveal];
-    }
-    quizState.textQuestionWithHintStrategyState.revelationState = revelationStateArray.join('');
-  }
-
-  let revelationString = quizState.textQuestionWithHintStrategyState.revelationState.split('').join(' ');
-  let question = createQuestionCommon(card);
-  question.bodyAsText = card.question;
-  question.hintString = revelationString;
-  return Promise.resolve(question);
-}
-
-const CreateQuestionStrategy = {
-  IMAGE: createImageQuestion,
-  TEXT_WITH_HINT: createTextQuestionWithHint,
-};
-
-/* CARD PREPROCESSING STRATEGIES */
-
-function updateWithBetterEnglishDefinition(card) {
-  if (!BetterEnglishDefinitions) {
-    return Promise.resolve(card);
-  }
-  return BetterEnglishDefinitions.getDefinition(card.answer[0]).then(result => {
-    card.question = result.question;
-    card.answer = [result.answer];
-    return card;
-  }).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Failed to get better English definitions for: ' + card.answer[0]);
-    return false;
-  });
-}
-
-function randomizeQuestionCharacters(card) {
-  let loopCounter = 0;
-  let newQuestion = Util.shuffleArray(card.question.split('')).join('');
-
-  // If the new question is the same as the original one, swap one random character with one other.
-  if (newQuestion === card.question) {
-    let newQuestionCharArray = newQuestion.split('');
-    let randomIndex1 = Math.floor(Math.random() * newQuestionCharArray.length);
-    let randomIndex2 = Math.floor(Math.random() * (newQuestionCharArray.length - 1));
-    if (randomIndex2 >= randomIndex1) {
-      ++randomIndex2;
-    }
-    let temp = newQuestionCharArray[randomIndex1];
-    newQuestionCharArray[randomIndex1] = newQuestionCharArray[randomIndex2];
-    newQuestionCharArray[randomIndex2] = temp;
-    newQuestion = newQuestionCharArray.join('');
-  }
-
-  card.question = newQuestion;
-  return Promise.resolve(card);
-}
-
-const CardPreprocessingStrategy = {
-  BETTER_ENGLISH_DEFINITIONS: updateWithBetterEnglishDefinition,
-  RANDOMIZE_QUESTION_CHARACTERS: randomizeQuestionCharacters,
-  NONE: card => Promise.resolve(card),
-};
-
-/* TIMING STRATEGIES */
-
-const AnswerTimeLimitStrategy = {
-  JAPANESE_SETTINGS: settings => {return settings.timeoutOverrideInMs || settings.serverQuizSettings['quiz/japanese/answer_time_limit'] * 1000;},
-  WITH_HINT: settings => {return settings.timeoutOverrideInMs || DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS;},
-};
-
-const AdditionalAnswerWaitStrategy = {
-  JAPANESE_SETTINGS: settings => {return settings.additionalAnswerWaitTimeInMs},
-  MULTIPLE_ANSWERS: settings => {return ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS;}
-};
-
-const RevealsLeftStrategy = {
-  JAPANESE_SETTINGS: () => 0,
-  WITH_HINT: () => 2,
-}
+const MAX_SAVES_PER_USER = 5;
+const MINIMUM_ANSWER_LIMIT_IN_MS = 4000;
+const QUIZ_END_STATUS_ERROR = 1;
 
 /* LOADING AND INITIALIZATION */
 
-function validateDeckPropertiesValid(deck) {
-  assert(deck.name, 'No name.');
-  assert(deck.article, 'No article.');
-  assert(deck.instructions, 'No instructions.');
-  assert(deck.cards, 'No cards.');
-  assert(~Object.keys(CreateQuestionStrategy).indexOf(deck.questionCreationStrategy), 'No or invalid question creation strategy.');
-  assert(~Object.keys(CreateDictionaryLinkStrategy).indexOf(deck.dictionaryLinkStrategy), 'No or invalid dictionary link strategy.');
-  assert(~Object.keys(AnswerTimeLimitStrategy).indexOf(deck.answerTimeLimitStrategy), 'No or invalid answer time limit strategy.');
-  assert(~Object.keys(CardPreprocessingStrategy).indexOf(deck.cardPreprocessingStrategy), 'No or invalid preprocessing strategy.');
-  assert(~Object.keys(ScoreAnswerStrategy).indexOf(deck.scoreAnswerStrategy), 'No or invalid score answer strategy.');
-  assert(~Object.keys(AdditionalAnswerWaitStrategy).indexOf(deck.additionalAnswerWaitStrategy), 'No or invalid additional answer wait strategy.');
-  assert(deck.discordIntermediateAnswerListElementStrategy, 'No or invalid Discord answer list intermediate element strategy.');
-  assert(deck.discordFinalAnswerListElementStrategy, 'No or invalid Discord answer list final element strategy.');
-}
-
 if (!state.quizManager) {
   state.quizManager = {
-    deckForName: {},
-    currentActionForSessionId: {},
-    stateInformationForSessionId: {},
-    reviewDeckForSessionId: {},
+    currentActionForLocationId: {},
+    sessionForLocationId: {},
+    reviewDeckForLocationId: {},
+    reviewDeckForUserId: {},
   };
-}
-
-function getObjectValues(obj) {
-  return Object.keys(obj).map(key => obj[key]);
-}
-
-function loadDecksInDirectory(dictionaryToFill, directory, strategy) {
-  let files = fs.readdirSync(__dirname + directory);
-  for (let name of files) {
-    if (name.endsWith('.json')) {
-      try {
-        let baseName = name.replace(/\.json$/, '');
-        let deckData = reload('.' + directory + name);
-        validateDeckPropertiesValid(deckData);
-        dictionaryToFill[baseName.toLowerCase()] = deckData;
-      } catch (err) {
-        logger.logFailure(LOGGER_TITLE, 'Error loading deck ' + name, err);
-      }
-    }
-  }
-}
-
-function verifyUniqueIdsUnique(decks) {
-  let uniqueIds = {};
-  for (let deck of decks) {
-    if (!deck.uniqueId || uniqueIds[deck.uniqueId]) {
-      throw new Error('A deck does not have a unique unique id. Deck name: ' + deck.name);
-    }
-  }
-}
-
-loadDecksInDirectory(state.quizManager.deckForName, '/carddecks/japanese/');
-loadDecksInDirectory(state.quizManager.deckForName, '/carddecks/english/');
-verifyUniqueIdsUnique(getObjectValues(state.quizManager.deckForName));
-
-/* DECK MANAGEMENT HELPERS */
-
-function deepCopy(object) {
-  return JSON.parse(JSON.stringify(object));
-}
-
-function createRandomIndexSetForDecks(decks) {
-  let indexSet = [];
-  for (let deck of decks) {
-    let deckLength = deck.cards.length;
-    let indices = Array(deck.cards.length);
-    for (let i = 0; i < deck.cards.length; ++i) {
-      indices[i] = i;
-    }
-    indexSet.push(Util.shuffleArray(indices));
-  }
-
-  return indexSet;
-}
-
-class DeckCollection {
-  constructor(decks) {
-    this.nextCardId_ = 0;
-    this.decks_ = decks;
-    this.indexSet_ = createRandomIndexSetForDecks(decks);
-    let deckName = this.decks_[0].name;
-    if (this.decks_.every(deck => deck.name === deckName)) {
-      this.name_ = deckName;
-      this.article_ = this.decks_[0].article;
-    } else {
-      this.name_ = 'Multiple Deck Quiz';
-      this.article_ = 'a';
-    }
-  }
-
-  popUndisplayedCard(settings) {
-    if (this.indexSet_.length === 0) {
-      return;
-    }
-
-    let deckIndex = Math.floor(Math.random() * this.decks_.length);
-    let cardIndex = this.indexSet_[deckIndex].pop();
-
-    let deck = this.decks_[deckIndex];
-    let card = deepCopy(this.decks_[deckIndex].cards[cardIndex]);
-
-    if (this.indexSet_[deckIndex].length === 0) {
-      this.decks_.splice(deckIndex, 1);
-      this.indexSet_.splice(deckIndex, 1);
-    }
-
-    if (!Array.isArray(card.answer)) {
-      card.answer = [card.answer];
-    }
-
-    card.deckName = card.deckName || deck.name;
-    card.instructions = card.instructions || deck.instructions;
-    card.dictionaryLinkStrategy = card.dictionaryLinkStrategy || deck.dictionaryLinkStrategy;
-    card.questionCreationStrategy = card.questionCreationStrategy || deck.questionCreationStrategy;
-    card.preprocessingStrategy = card.preprocessingStrategy || deck.cardPreprocessingStrategy;
-    card.dictionaryLink = card.dictionaryLink || CreateDictionaryLinkStrategy[deck.dictionaryLinkStrategy](card);
-    card.answerTimeLimitStrategy = card.answerTimeLimitStrategy || deck.answerTimeLimitStrategy;
-    card.discordFinalAnswerListElementStrategy = card.discordFinalAnswerListElementStrategy || deck.discordFinalAnswerListElementStrategy;
-    card.discordIntermediateAnswerListElementStrategy = card.discordIntermediateAnswerListElementStrategy || deck.discordIntermediateAnswerListElementStrategy;
-    card.scoreAnswerStrategy = card.scoreAnswerStrategy || deck.scoreAnswerStrategy;
-    card.additionalAnswerWaitStrategy = card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
-    card.id = this.nextCardId_++;
-    if (card.unansweredQuestionLimit === undefined) {
-      card.unansweredQuestionLimit = settings.unansweredQuestionLimit;
-    }
-    if (card.answerTimeLimitInMs === undefined) {
-      card.answerTimeLimitInMs = AnswerTimeLimitStrategy[card.answerTimeLimitStrategy](settings);
-    }
-    if (card.additionalAnswerWaitTimeInMs === undefined) {
-      card.additionalAnswerWaitTimeInMs = AdditionalAnswerWaitStrategy[card.additionalAnswerWaitStrategy](settings);
-    }
-    if (card.newQuestionDelayAfterAnsweredInMs === undefined) {
-      card.newQuestionDelayAfterAnsweredInMs = settings.newQuestionDelayAfterAnsweredInMs;
-    }
-    if (card.newQuestionDelayAfterUnansweredInMs === undefined) {
-      card.newQuestionDelayAfterUnansweredInMs = settings.newQuestionDelayAfterUnansweredInMs;
-    }
-    if (card.numberOfReveals === undefined) {
-      card.numberOfReveals = RevealsLeftStrategy[card.answerTimeLimitStrategy]();
-    }
-    card.createQuestion = CreateQuestionStrategy[card.questionCreationStrategy];
-    card.preprocess = CardPreprocessingStrategy[card.preprocessingStrategy];
-    card.scoreAnswer = ScoreAnswerStrategy[card.scoreAnswerStrategy];
-    return card;
-  }
-
-  getName() {
-    return this.name_;
-  }
-
-  getArticle() {
-    return this.article_;
-  }
-
-  getDeckId() {
-    if (this.decks_.length === 1) {
-      return this.decks_[0].uniqueId;
-    }
-    return -1;
-  }
-}
-
-function updateReviewDeck(sessionId, unansweredCards) {
-  try {
-    if (unansweredCards.length <= 0) {
-      delete state.quizManager.reviewDeckForSessionId[sessionId];
-      return false;
-    }
-
-    state.quizManager.reviewDeckForSessionId[sessionId] = {
-      uniqueId: -1,
-      name: 'Review Quiz',
-      article: 'a',
-      cards: unansweredCards,
-    };
-    return true;
-  } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error updating review deck', err);
-    return false;
-  }
 }
 
 /* STOPPING */
 
-function createAggregateUnansweredCardsLink(unansweredCards) {
-  try {
-    if (unansweredCards.length > 0) {
-      let dictionaryLinkStrategy = unansweredCards[0].dictionaryLinkStrategy;
-      if (CreateAggregateDictionaryLinkStrategy[dictionaryLinkStrategy] && unansweredCards.every(card => card.dictionaryLinkStrategy === dictionaryLinkStrategy)) {
-        return CreateAggregateDictionaryLinkStrategy[dictionaryLinkStrategy](unansweredCards);
-      }
-    }
-  } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error creating aggregated unanswered cards link', err);
-    return '';
-  }
-}
-
-function closeSession(sessionId) {
-  let stateForSession = state.quizManager.stateInformationForSessionId[sessionId];
-  if (!stateForSession) {
-    return;
-  }
-  stateForSession.scores.commitScores();
-  stateForSession.closed = true;
-  delete state.quizManager.stateInformationForSessionId[sessionId];
-  delete state.quizManager.currentActionForSessionId[sessionId];
-}
-
-function stopQuizForError(sessionId) {
-  let stateForSession = state.quizManager.stateInformationForSessionId[sessionId];
-  if (!stateForSession) {
-    return Promise.resolve(); // Already closed the session.
-  }
-
-  let promise;
-  try {
-    let aggregateLink = createAggregateUnansweredCardsLink(stateForSession.unansweredCards);
-    promise = stateForSession.messageSender.notifyQuizEndedError(
-    stateForSession.deckCollection.getName(),
-    stateForSession.scores.getScoreForUserPairs(),
-    stateForSession.unansweredCards,
-    aggregateLink,
-    updateReviewDeck(sessionId, stateForSession.unansweredCards));
-  } catch (err) {
-    closeSession(sessionId);
-    throw err;
-  }
-
-  closeSession(sessionId);
-  return promise;
-}
-
-function stopQuizCommand(sessionId, cancelingUserId) {
-  let stateForSession = state.quizManager.stateInformationForSessionId[sessionId];
-  if (!stateForSession) {
+function closeSession(session, gameOver) {
+  if (!session) {
     return Promise.resolve();
   }
-  let aggregateLink = createAggregateUnansweredCardsLink(stateForSession.unansweredCards);
-  let promise = stateForSession.messageSender.notifyQuizEndedUserCanceled(
-    stateForSession.deckCollection.getName(),
-    stateForSession.scores.getScoreForUserPairs(),
-    stateForSession.unansweredCards,
-    aggregateLink,
-    updateReviewDeck(sessionId, stateForSession.unansweredCards),
-    cancelingUserId);
-  closeSession(sessionId);
+
+  let locationId = session.getLocationId();
+
+  delete state.quizManager.sessionForLocationId[locationId];
+  delete state.quizManager.currentActionForLocationId[locationId];
+  return Promise.resolve(session.finalize(gameOver));
+}
+
+function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgument) {
+  if (!session) {
+    return Promise.resolve();
+  }
+
+  let locationId = session.getLocationId();
+  if (state.quizManager.currentActionForLocationId[locationId]) {
+    if (state.quizManager.currentActionForLocationId[locationId].stop) {
+      state.quizManager.currentActionForLocationId[locationId].stop();
+    }
+    delete state.quizManager.currentActionForLocationId[locationId];
+  }
+
+  try {
+    return Util.retryPromise(() => {
+      return Promise.resolve(notifyDelegate.call(
+        notifier,
+        session.getName(),
+        session.getScoresForUserPairs(),
+        session.getUnansweredCards(),
+        session.createAggregateUnansweredCardsLink(),
+        session.getDidCreateReviewDecks(),
+        delegateFinalArgument));
+    }, 3).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
+    }).then(() => {
+      return closeSession(session, true);
+    });
+  } catch (err) {
+    logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
+    return closeSession(session, true);
+  }
+}
+
+function stopAllQuizzesCommand() {
+  let allLocationIds = Object.keys(state.quizManager.sessionForLocationId);
+  let promise = Promise.resolve();
+  for (let locationId of allLocationIds) {
+    let session = state.quizManager.sessionForLocationId[locationId];
+    let messageSender = session.getMessageSender();
+    promise = promise.then(() => {
+      return endQuiz(true, session, messageSender, messageSender.notifyStoppingAllQuizzes);
+    }).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Failed to send quiz stop message to location ID ' + locationId, err);
+    });
+  }
+
   return promise;
+}
+
+function stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin) {
+  let session = state.quizManager.sessionForLocationId[locationId];
+
+  if (session) {
+    let messageSender = session.getMessageSender();
+    let gameMode = session.getGameMode();
+    if (gameMode.onlyOwnerOrAdminCanStop && !cancelingUserIsAdmin && session.getOwnerId() !== cancelingUserId) {
+      return Promise.resolve(messageSender.notifyStopFailedUserNotAuthorized());
+    }
+    return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedUserCanceled, cancelingUserId));
+  }
+}
+
+function skipCommand(locationId) {
+  let action = state.quizManager.currentActionForLocationId[locationId];
+  if (action && action.skip) {
+    action.skip();
+    return true;
+  }
+  return false;
+}
+
+function saveQuizCommand(locationId, savingUserId) {
+  let session = state.quizManager.sessionForLocationId[locationId];
+  if (!session) {
+    return Promise.resolve(false);
+  }
+  if (session.getGameMode().isReviewMode) {
+    return session.getMessageSender().notifySaveFailedIsReview();
+  }
+  let ownerId = session.getOwnerId();
+  if (savingUserId !== ownerId) {
+    return session.getMessageSender().notifySaveFailedNotOwner();
+  }
+
+  return saveManager.getSaveMementos(savingUserId).then(mementos => {
+    let hasSpace = mementos.length < MAX_SAVES_PER_USER;
+    if (session.saveRequestedByUserId) {
+      return;
+    }
+    if (hasSpace) {
+      session.saveRequestedByUserId = savingUserId;
+      return session.getMessageSender().notifySaving();
+    } else {
+      return session.getMessageSender().notifySaveFailedNoSpace(MAX_SAVES_PER_USER);
+    }
+  });
+}
+
+function isSessionInProgressAtLocation(locationId) {
+  return !!state.quizManager.sessionForLocationId[locationId];
+}
+
+function setSessionForLocationId(session, locationId) {
+  assert(!isSessionInProgressAtLocation(locationId), 'Already have a session for that loction ID');
+  state.quizManager.sessionForLocationId[locationId] = session;
 }
 
 /* ACTIONS */
 
-class EndQuizScoreLimitReachedAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
+class Action {
+  constructor(session) {
+    this.session_ = session;
   }
 
-  do() {
-    let aggregateLink = createAggregateUnansweredCardsLink(this.quizStateInformation_.unansweredCards);
-    let promise = Util.retryPromise(
-      () => this.quizStateInformation_.messageSender.notifyQuizEndedScoreLimitReached(
-        this.quizStateInformation_.deckCollection.getName(),
-        this.quizStateInformation_.scores.getScoreForUserPairs(),
-        this.quizStateInformation_.unansweredCards,
-        aggregateLink,
-        updateReviewDeck(this.quizStateInformation_.sessionId, this.quizStateInformation_.unansweredCards),
-        this.quizStateInformation_.scores.getScoreLimit()),
-      3
-    );
-    closeSession(this.quizStateInformation_.sessionId);
-    return promise;
+  getSession_() {
+    return this.session_;
   }
 }
 
-class EndQuizNoQuestionsLeftAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-  }
-
+class EndQuizForErrorAction extends Action {
   do() {
-    let aggregateLink = createAggregateUnansweredCardsLink(this.quizStateInformation_.unansweredCards);
-    let promise = Util.retryPromise(
-      () => this.quizStateInformation_.messageSender.notifyQuizEndedNoQuestionsLeft(
-        this.quizStateInformation_.deckCollection.getName(),
-        this.quizStateInformation_.scores.getScoreForUserPairs(),
-        this.quizStateInformation_.unansweredCards,
-        aggregateLink,
-        updateReviewDeck(this.quizStateInformation_.sessionId, this.quizStateInformation_.unansweredCards)),
-      3
-    );
-    closeSession(this.quizStateInformation_.sessionId);
-    return promise;
-  }
-}
-
-class EndQuizTooManyWrongAnswersAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-  }
-
-  do() {
-    let wrongAnswersCount = this.quizStateInformation_.wrongAnswersInARow;
-    let aggregateLink = createAggregateUnansweredCardsLink(this.quizStateInformation_.unansweredCards);
-    let promise = Util.retryPromise(
-      () => this.quizStateInformation_.messageSender.notifyQuizEndedTooManyWrongAnswers(
-        this.quizStateInformation_.deckCollection.getName(),
-        this.quizStateInformation_.scores.getScoreForUserPairs(),
-        this.quizStateInformation_.unansweredCards,
-        aggregateLink,
-        updateReviewDeck(this.quizStateInformation_.sessionId, this.quizStateInformation_.unansweredCards),
-        wrongAnswersCount),
-      3
-    );
-    closeSession(this.quizStateInformation_.sessionId);
-    return promise;
-  }
-}
-
-class ShowAnswersAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-    this.immediateFeedbackMode_ = quizStateInformation.settings.immediateFeedback;
-    this.timedOut_ = false;
-  }
-
-  do() {
-    let outputPromiseQueue = Promise.resolve();
-    if (this.immediateFeedbackMode_) {
-      let currentCard = this.quizStateInformation_.currentCard;
-      let questionScores = this.quizStateInformation_.currentQuestionScores;
-      let answersForUser = questionScores.getAnswersForUser();
-      let pointsPerAnswerForUser = questionScores.getPointsPerAnswerForUser();
-      let scoreForUserId = this.quizStateInformation_.scores.getScoreForUserId();
-      outputPromiseQueue = this.quizStateInformation_.messageSender.outputQuestionScorers(currentCard, questionScores.getAnswerersInOrder(), scoreForUserId, answersForUser, pointsPerAnswerForUser).then(scoreboardId => {
-        this.scoreboardId_ = scoreboardId;
-      }).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
+    let session = this.getSession_();
+    try {
+      logger.logFailure(LOGGER_TITLE, 'Stopping for error');
+      let messageSender = session.getMessageSender();
+      return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedError)).catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
+        return Promise.resolve(closeSession(session, true)).then(() => {
+          logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
+          throw err;
+        });
+      });
+    } catch (err) {
+      logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
+      return Promise.resolve(closeSession(session, true)).then(() => {
+        logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
+        throw err;
       });
     }
-
-    return new Promise((fulfill, reject) => {
-      let timer = setTimeout(() => {
-        try {
-          this.timedOut_ = true;
-          if (!this.immediateFeedbackMode_) {
-            let questionScores = this.quizStateInformation_.currentQuestionScores;
-            let answersForUser = questionScores.getAnswersForUser();
-            let pointsPerAnswerForUser = questionScores.getPointsPerAnswerForUser();
-            let scoreForUserId = this.quizStateInformation_.scores.getScoreForUserId();
-            outputPromiseQueue = outputPromiseQueue.then(() => {
-              return this.quizStateInformation_.messageSender.outputQuestionScorers(this.quizStateInformation_.currentCard, questionScores.getAnswerersInOrder(), scoreForUserId, answersForUser, pointsPerAnswerForUser);
-            }).then(scoreboardId => {
-              this.scoreboardId_ = scoreboardId;
-            }).catch(err => {
-              logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
-            });
-          }
-
-          outputPromiseQueue = outputPromiseQueue.then(() => {
-            if (this.quizStateInformation_.scores.checkForWin()) {
-              return new EndQuizScoreLimitReachedAction(this.quizStateInformation_);
-            } else {
-              return new WaitAction(this.quizStateInformation_, this.quizStateInformation_.currentCard.newQuestionDelayAfterAnsweredInMs, new AskQuestionAction(this.quizStateInformation_));
-            }
-          });
-
-          fulfill(outputPromiseQueue);
-        } catch (err) {
-          reject(err);
-        }
-      }, this.quizStateInformation_.currentCard.additionalAnswerWaitTimeInMs);
-    });
-    this.quizStateInformation_.timers.push(timer);
-
-    return outputPromiseQueue;
-  }
-
-  tryAcceptUserInput(userId, userName, input) {
-    if (this.timedOut_) {
-      return false;
-    }
-    let currentCard = this.quizStateInformation_.currentCard;
-    let questionScores = this.quizStateInformation_.currentQuestionScores;
-    let totalScores = this.quizStateInformation_.scores;
-    if (currentCard.scoreAnswer(userId, userName, input, currentCard, questionScores)) {
-      if (this.immediateFeedbackMode_) {
-        this.promiseQueue_ = this.promiseQueue_.then(() => {
-          let scoreForUserId = totalScores.getScoreForUserId();
-          let answersForUser = questionScores.getAnswersForUser();
-          let pointsPerAnswerForUser = questionScores.getPointsPerAnswerForUser();
-          return this.quizStateInformation_.messageSender.outputQuestionScorers(
-            currentCard, questionScores.getAnswerersInOrder(), scoreForUserId, answersForUser, pointsPerAnswerForUser, this.scoreboardId_).then(scoreboardId => {
-              this.scoreboardId_ = scoreboardId;
-            }).catch(err => {
-              logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
-            });
-        });
-      }
-      return true;
-    }
-    return false;
   }
 }
 
-class ShowTimedOutAnswerAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-  }
-
+class EndQuizScoreLimitReachedAction extends Action {
   do() {
-    return this.quizStateInformation_.messageSender.showAnswerTimeout(this.quizStateInformation_.currentCard).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message', err);
-    }).then(() => {
-      if (this.quizStateInformation_.wrongAnswersInARow >= this.quizStateInformation_.currentCard.unansweredQuestionLimit) {
-        return new EndQuizTooManyWrongAnswersAction(this.quizStateInformation_);
-      } else {
-        return new WaitAction(this.quizStateInformation_, this.quizStateInformation_.currentCard.newQuestionDelayAfterUnansweredInMs, new AskQuestionAction(this.quizStateInformation_));
-      }
-    });
+    let session = this.getSession_();
+    let messageSender = session.getMessageSender();
+    let scoreLimit = session.getScores().getScoreLimit();
+    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedScoreLimitReached, scoreLimit);
   }
 }
 
-class WaitForFirstAnswerAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-  }
-
+class EndQuizNoQuestionsLeftAction extends Action {
   do() {
+    let session = this.getSession_();
+    let messageSender = session.getMessageSender();
+    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedNoQuestionsLeft, session.getGameMode());
+  }
+}
+
+class EndQuizTooManyWrongAnswersAction extends Action {
+  do() {
+    let session = this.getSession_();
+    let wrongAnswersCount = session.getUnansweredQuestionsInARow();
+    let messageSender = session.getMessageSender();
+    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedTooManyWrongAnswers, wrongAnswersCount);
+  }
+}
+
+class ShowAnswersAction extends Action {
+  do() {
+    let session = this.getSession_();
+    let currentCard = session.getCurrentCard();
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
       let timer = setTimeout(() => {
         try {
-          ++this.quizStateInformation_.wrongAnswersInARow;
-          fulfill(new ShowTimedOutAnswerAction(this.quizStateInformation_));
-        } catch(err) {
+          session.markCurrentCardAnswered();
+          let scores = session.getScores();
+          let answerersInOrder = scores.getCurrentQuestionAnswerersInOrder();
+          let scoresForUser = scores.getAggregateScoreForUser();
+          let answersForUser = scores.getCurrentQuestionsAnswersForUser();
+          let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
+          Promise.resolve(session.getMessageSender().outputQuestionScorers(
+            currentCard,
+            answerersInOrder,
+            answersForUser,
+            pointsForAnswer,
+            scoresForUser)).catch(err => {
+            logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
+          });
+
+          if (scores.checkForWin()) {
+            fulfill(new EndQuizScoreLimitReachedAction(session));
+          } else {
+            fulfill(new WaitAction(session, currentCard.newQuestionDelayAfterAnsweredInMs, new AskQuestionAction(session)));
+          }
+        } catch (err) {
           reject(err);
         }
-      }, this.quizStateInformation_.currentCard.answerTimeLimitInMs);
-      this.quizStateInformation_.timers.push(timer);
-      let currentCard = this.quizStateInformation_.currentCard;
-      this.scheduleReveal_(currentCard.numberOfReveals);
+      }, currentCard.additionalAnswerWaitTimeInMs);
+      session.addTimer(timer);
     });
   }
 
-  tryAcceptUserInput(userId, userName, input) {
-    let currentCard = this.quizStateInformation_.currentCard;
-    if (currentCard.scoreAnswer(userId, userName, input, currentCard, this.quizStateInformation_.currentQuestionScores)) {
-      this.quizStateInformation_.wrongAnswersInARow = 0;
-      this.quizStateInformation_.unansweredCards.pop();
-      this.fulfill_(new ShowAnswersAction(this.quizStateInformation_));
-      return true;
+  stop() {
+    if (this.fulfill_) {
+      this.fulfill_();
     }
-    return false;
+  }
+
+  tryAcceptUserInput(userId, userName, input) {
+    return this.getSession_().tryAcceptAnswer(userId, userName, input);
+  }
+}
+
+class ShowWrongAnswerAction extends Action {
+  constructor(session, skipped) {
+    super(session);
+    this.skipped_ = skipped;
+  }
+
+  do() {
+    let session = this.getSession_();
+    let currentCard = session.getCurrentCard();
+    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_)).catch(err => {
+      let question = currentCard.question;
+      logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message for ' + question, err);
+    }).then(() => {
+      if (session.checkTooManyWrongAnswers()) {
+        return new EndQuizTooManyWrongAnswersAction(session);
+      } else {
+        return new WaitAction(session, currentCard.newQuestionDelayAfterUnansweredInMs, new AskQuestionAction(session));
+      }
+    });
+  }
+}
+
+class AskQuestionAction extends Action {
+  constructor(session) {
+    super(session);
+    this.canBeSaved = true;
+  }
+
+  tryAcceptUserInput(userId, userName, input) {
+    if (!this.readyForAnswers_) {
+      return false;
+    }
+    let session = this.getSession_();
+    let accepted = session.tryAcceptAnswer(userId, userName, input);
+    if (accepted) {
+      this.fulfill_(new ShowAnswersAction(session));
+    }
+    return accepted;
   }
 
   scheduleReveal_(numberOfReveals) {
@@ -816,39 +304,50 @@ class WaitForFirstAnswerAction {
       return;
     }
 
+    let session = this.getSession_();
     let timer = setTimeout(() => {
       try {
-        createTextQuestionWithHint(this.quizStateInformation_.currentCard, this.quizStateInformation_).then(question => {
-          return this.quizStateInformation_.messageSender.showQuestion(question, this.quizStateInformation_.shownQuestionId).catch(err => {
-            logger.logFailure(LOGGER_TITLE, 'Failed to update reveal.', err);
-          });
+        cardStrategies.createTextQuestionWithHint(session.getCurrentCard(), session).then(question => {
+          if (question) {
+            return session.getMessageSender().showQuestion(question, this.shownQuestionId_).catch(err => {
+              logger.logFailure(LOGGER_TITLE, 'Failed to update reveal.', err);
+            });
+          }
         }).then(() => {
           this.scheduleReveal_(numberOfReveals - 1);
+        }).catch(err => {
+          this.reject_(err);
         });
       } catch(err) {
         this.reject_(err);
       }
     }, REVEAL_INTERVAL_IN_MS);
-    this.quizStateInformation_.timers.push(timer);
+    session.addTimer(timer);
   }
-}
 
-class AskQuestionAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
+  stop() {
+    if (this.fulfill_) {
+      this.fulfill_();
+    }
+  }
+
+  skip() {
+    try {
+      if (this.fulfill_) {
+        let session = this.getSession_();
+        session.markCurrentCardUnanswered();
+        this.fulfill_(new ShowWrongAnswerAction(session, true));
+      }
+    } catch (err) {
+      logger.logFailure(LOGGER_TITLE, 'Failed to skip', err);
+    }
   }
 
   do() {
-    if (this.quizStateInformation_.closed) {
-      return Promise.resolve();
-    }
-
-    let questionScores = new QuestionScores();
-    this.quizStateInformation_.currentQuestionScores = questionScores;
-    this.quizStateInformation_.scores.addQuestionScores(questionScores);
-    let nextCard = this.quizStateInformation_.deckCollection.popUndisplayedCard(this.quizStateInformation_.settings);
+    let session = this.getSession_();
+    let nextCard = session.getNextCard();
     if (!nextCard) {
-      return Promise.resolve(new EndQuizNoQuestionsLeftAction(this.quizStateInformation_));
+      return Promise.resolve(new EndQuizNoQuestionsLeftAction(session));
     }
 
     let preprocessPromise = Promise.resolve(nextCard);
@@ -861,200 +360,143 @@ class AskQuestionAction {
         return this.do();
       }
       card.wasPreprocessed = true;
-      this.quizStateInformation_.currentCard = card;
-      this.quizStateInformation_.unansweredCards.push(card);
-      return card.createQuestion(card, this.quizStateInformation_).then(question => {
-        return Util.retryPromise(() => this.quizStateInformation_.messageSender.showQuestion(question), 3).catch(err => {
+      session.setCurrentCard(card);
+      this.readyForAnswers_ = true;
+      return card.createQuestion(card, session).then(question => {
+        return Util.retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
           logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
         });
       }).then(shownQuestionId => {
-        this.quizStateInformation_.shownQuestionId = shownQuestionId;
-        return new WaitForFirstAnswerAction(this.quizStateInformation_);
+        this.shownQuestionId_ = shownQuestionId;
+        return new Promise((fulfill, reject) => {
+          this.fulfill_ = fulfill;
+          this.reject_ = reject;
+          let timer = setTimeout(() => {
+            try {
+              session.markCurrentCardUnanswered();
+              fulfill(new ShowWrongAnswerAction(session, false));
+            } catch(err) {
+              reject(err);
+            }
+          }, card.answerTimeLimitInMs);
+          session.addTimer(timer);
+          this.scheduleReveal_(card.numberOfReveals);
+        });
       });
     });
   }
 }
 
-class StartAction {
-  constructor(quizStateInformation) {
-    this.quizStateInformation_ = quizStateInformation;
-  }
-
+class StartAction extends Action {
   do() {
-    let deckCollection = this.quizStateInformation_.deckCollection;
-    return this.quizStateInformation_.messageSender.notifyStarting(INITIAL_DELAY_IN_MS, deckCollection.getName(), deckCollection.getArticle()).catch(err => {
+    let session = this.getSession_();
+    let name = session.getQuizName();
+    let article = session.getQuizArticle();
+    return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, article)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
     }).then(() => {
-      let askQuestionAction = new AskQuestionAction(this.quizStateInformation_);
-      return new WaitAction(this.quizStateInformation_, INITIAL_DELAY_IN_MS, askQuestionAction);
+      let askQuestionAction = new AskQuestionAction(session);
+      return new WaitAction(session, INITIAL_DELAY_IN_MS, askQuestionAction);
     });
   }
 }
 
-class WaitAction {
-  constructor(quizStateInformation, waitInterval, nextAction) {
+class WaitAction extends Action {
+  constructor(session, waitInterval, nextAction) {
+    super(session);
     this.waitInterval_ = waitInterval;
-    this.quizStateInformation_ = quizStateInformation;
     this.nextAction_ = nextAction;
   }
 
   do() {
     return new Promise((fulfill, reject) => {
-      setTimeout(() => {
-        try {
-          fulfill(this.nextAction_);
-        } catch (err) {
-          reject(err);
-        }
+      this.fulfill_ = fulfill;
+      let timer = setTimeout(() => {
+        fulfill(this.nextAction_);
       }, this.waitInterval_);
+      this.getSession_().addTimer(timer);
+    });
+  }
+
+  stop() {
+    if (this.fulfill_) {
+      this.fulfill_();
+    }
+  }
+}
+
+class SaveAction extends Action {
+  constructor(session, savingUserId) {
+    super(session);
+    this.savingUserId_ = savingUserId;
+  }
+
+  do() {
+    let session = this.getSession_();
+    return Promise.resolve(closeSession(session, false)).then(() => {
+      let saveData = session.createSaveData();
+      return saveManager.save(saveData, this.savingUserId_, session.getName(), session.getGameModeIdentifier());
+    }).then(() => {
+      return session.getMessageSender().notifySaveSuccessful().catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'Error sending quiz save message', err);
+      });
+    }).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Error saving', err);
+      return new EndQuizForErrorAction(session);
     });
   }
 }
 
-function chainActions(sessionId, action) {
-  let stateInformation = state.quizManager.stateInformationForSessionId[sessionId];
-  if (!action || !action.do || !stateInformation) {
+function chainActions(locationId, action) {
+  let session = state.quizManager.sessionForLocationId[locationId];
+  if (!action || !action.do || !session) {
     return Promise.resolve();
   }
-  state.quizManager.currentActionForSessionId[sessionId] = action;
+  state.quizManager.currentActionForLocationId[locationId] = action;
 
-  return action.do().then(result => {
-    stateInformation.timers.forEach(timer => clearTimeout(timer));
-    stateInformation.timers = [];
-    return chainActions(sessionId, result);
-  }).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Error', err);
-    return stopQuizForError(sessionId);
-  }).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Error stopping the quiz in response to an error. Bad state possible.', err);
-  });
+  try {
+    return Promise.resolve(action.do()).then(result => {
+      if (session.saveRequestedByUserId && result && result.canBeSaved) {
+        return chainActions(locationId, new SaveAction(session, session.saveRequestedByUserId));
+      }
+
+      session.clearTimers();
+      return chainActions(locationId, result);
+    }).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Error', err);
+      return chainActions(locationId, new EndQuizForErrorAction(session)).then(() => {
+        return QUIZ_END_STATUS_ERROR;
+      });;
+    });
+  } catch (err) {
+    logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
+    let messageSender = session.getMessageSender();
+    return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedError)).then(() => {
+      return QUIZ_END_STATUS_ERROR;
+    });
+  }
 }
 
 /* EXPORT */
 
-const CreateSessionFailureReason = {
-  ALREADY_RUNNING: 'Already a quiz running',
-  DECK_NOT_FOUND: 'Deck not found',
-  NO_REVIEW_DECK: 'No review deck available',
-};
-
-function checkQuizRunning(sessionId) {
-  return !!state.quizManager.stateInformationForSessionId[sessionId];
-}
-
-function findNonExistentDeck(deckNames) {
-  for (let deckName of deckNames) {
-    if (!state.quizManager.deckForName[deckName]) {
-      return deckName;
-    }
-  }
-}
-
-function tryCreateQuizError(sessionId, deckNames) {
-  if (checkQuizRunning(sessionId)) {
-    return {
-      errorType: CreateSessionFailureReason.ALREADY_RUNNING,
-    };
-  }
-
-  let nonExistentDeckName = findNonExistentDeck(deckNames);
-  if (nonExistentDeckName) {
-    return {
-      errorType: CreateSessionFailureReason.DECK_NOT_FOUND,
-      nonExistentDeckName: nonExistentDeckName,
-    };
-  }
-}
-
-function startQuiz(sessionId, deckCollection, messageSender, scoreScopeId, settingsBlob, settingsOverrides, isReview) {
-  settingsOverrides = settingsOverrides.map(str => parseFloat(str));
-  let scoreLimitOverride = settingsOverrides[0];
-  let timeBetweenQuestionsOverride = settingsOverrides[1];
-  let timeoutOverrideInS = settingsOverrides[2];
-
-  if (scoreLimitOverride !== undefined) {
-    scoreLimitOverride = Math.max(scoreLimitOverride, 1);
-  }
-  if (timeBetweenQuestionsOverride !== undefined) {
-    timeBetweenQuestionsOverride = Math.max(timeBetweenQuestionsOverride, 0);
-    timeBetweenQuestionsOverride = Math.min(timeBetweenQuestionsOverride, 120);
-  }
-  if (timeoutOverrideInS !== undefined) {
-    timeoutOverrideInS = Math.max(timeoutOverrideInS, 4);
-    timeoutOverrideInS = Math.min(timeoutOverrideInS, 120);
-  }
-
-  let scoreLimit;
-  if (isReview) {
-    scoreLimit = Number.MAX_SAFE_INTEGER;
-  } else {
-    scoreLimit = scoreLimitOverride || settingsBlob['quiz/japanese/score_limit'];
-  }
-
-  let newQuestionDelayAfterUnansweredInS = settingsBlob['quiz/japanese/new_question_delay_after_unanswered'];
-  let newQuestionDelayAfterAnsweredInS = settingsBlob['quiz/japanese/new_question_delay_after_answered'];
-  let additionalAnswerWaitTimeInS = settingsOverrides[1] || settingsBlob['quiz/japanese/additional_answer_wait_time'];
-  if (timeBetweenQuestionsOverride !== undefined) {
-    newQuestionDelayAfterUnansweredInS = timeBetweenQuestionsOverride;
-    newQuestionDelayAfterAnsweredInS = 0;
-    additionalAnswerWaitTimeInS = timeBetweenQuestionsOverride;
-  }
-
-  let quizState = {
-    scores: new Scores(scoreLimit, deckCollection.getDeckId(), scoreScopeId),
-    deckCollection: deckCollection,
-    messageSender: messageSender,
-    sessionId: sessionId,
-    wrongAnswersInARow: 0,
-    unansweredCards: [],
-    timers: [],
-    settings: {
-      serverQuizSettings: settingsBlob,
-      unansweredQuestionLimit: settingsBlob['quiz/japanese/unanswered_question_limit'],
-      immediateFeedback: settingsBlob['quiz/japanese/immediate_feedback'],
-      newQuestionDelayAfterAnsweredInMs: newQuestionDelayAfterAnsweredInS * 1000,
-      newQuestionDelayAfterUnansweredInMs: newQuestionDelayAfterUnansweredInS * 1000,
-      additionalAnswerWaitTimeInMs: additionalAnswerWaitTimeInS * 1000,
-      timeoutOverrideInMs: timeoutOverrideInS * 1000,
-    },
-  };
-  state.quizManager.stateInformationForSessionId[sessionId] = quizState;
-  chainActions(sessionId, new StartAction(quizState));
+function verifySessionNotInProgress(locationId) {
+  assert(!isSessionInProgressAtLocation(locationId), 'Already a session in progress there.');
 }
 
 class QuizManager {
-  tryCreateQuizSession(messageSender, sessionId, sessionArguments, scoreScopeId, settingsBlob) {
-    sessionArguments = sessionArguments.toLowerCase();
-    sessionArguments = sessionArguments.split(' ');
-    let decksArgument = sessionArguments.shift();
-    let deckNames = decksArgument.split('+');
-    let error = tryCreateQuizError(sessionId, deckNames);
-    if (error) {
-      return error;
-    }
-
-    let decks = [];
-    for (let deckName of deckNames) {
-      decks.push(state.quizManager.deckForName[deckName]);
-    }
-    let deckCollection = new DeckCollection(decks);
-    startQuiz(sessionId, deckCollection, messageSender, scoreScopeId, settingsBlob, sessionArguments, false);
+  startSession(session, locationId) {
+    verifySessionNotInProgress(locationId);
+    setSessionForLocationId(session, locationId);
+    return chainActions(locationId, new StartAction(session));
   }
 
-  tryCreateReviewQuizSession(messageSender, sessionId, scoreScopeId, settingsBlob) {
-    let deck = state.quizManager.reviewDeckForSessionId[sessionId];
-    if (!deck) {
-      return {
-        errorType: CreateSessionFailureReason.NO_REVIEW_DECK,
-      };
-    }
-    let deckCollection = new DeckCollection([deck]);
-    startQuiz(sessionId, deckCollection, messageSender, scoreScopeId, settingsBlob, [], false);
+  isSessionInProgressAtLocation(locationId) {
+    return isSessionInProgressAtLocation(locationId);
   }
 
-  processUserInput(sessionId, userId, userName, input) {
+  processUserInput(locationId, userId, userName, input) {
     input = input.toLowerCase();
-    let currentAction = state.quizManager.currentActionForSessionId[sessionId];
+    let currentAction = state.quizManager.currentActionForLocationId[locationId];
     if (!currentAction) {
       return false;
     }
@@ -1064,8 +506,20 @@ class QuizManager {
     return false;
   }
 
-  stopQuiz(sessionId, cancelingUserId) {
-    return stopQuizCommand(sessionId, cancelingUserId);
+  stopAllQuizzes() {
+    return stopAllQuizzesCommand();
+  }
+
+  stopQuiz(locationId, cancelingUserId, cancelingUserIsAdmin) {
+    return stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin);
+  }
+
+  saveQuiz(locationId, savingUserId) {
+    return saveQuizCommand(locationId, savingUserId);
+  }
+
+  skip(locationId) {
+    return skipCommand(locationId);
   }
 
   getDesiredSettings() {
@@ -1076,14 +530,13 @@ class QuizManager {
       'quiz/japanese/new_question_delay_after_unanswered',
       'quiz/japanese/new_question_delay_after_answered',
       'quiz/japanese/additional_answer_wait_time',
-      'quiz/japanese/immediate_feedback',
     ];
   }
 
-  hasQuizSession(sessionId) {
-    return !!state.quizManager.currentActionForSessionId[sessionId];
+  hasQuizSession(locationId) {
+    return !!state.quizManager.currentActionForLocationId[locationId];
   }
 }
 
 module.exports = new QuizManager();
-module.exports.CreateSessionFailureReason = CreateSessionFailureReason;
+module.exports.END_STATUS_ERROR = QUIZ_END_STATUS_ERROR;
