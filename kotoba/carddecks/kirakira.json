@@ -1,0 +1,1663 @@
+{
+  "uniqueId": "kirakira-name",
+  "name": "Kirakira Names Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the kirakira name!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "cards": [
+    {
+      "question": "剣（男）",
+      "answer": [
+        "ぶれいど"
+      ]
+    },
+    {
+      "question": "繰英人（男）",
+      "answer": [
+        "くりえいと"
+      ]
+    },
+    {
+      "question": "空宙乃（女）",
+      "answer": [
+        "そぷらの"
+      ]
+    },
+    {
+      "question": "友情（男）",
+      "answer": [
+        "とものじょう"
+      ]
+    },
+    {
+      "question": "たった（女）",
+      "answer": [
+        "たった"
+      ]
+    },
+    {
+      "question": "獣王（男）",
+      "answer": [
+        "らいおん"
+      ]
+    },
+    {
+      "question": "不思議（女）",
+      "answer": [
+        "はてな"
+      ]
+    },
+    {
+      "question": "樹理笑汰（男）",
+      "answer": [
+        "じゅりえった"
+      ]
+    },
+    {
+      "question": "運命（男）",
+      "answer": [
+        "さだめ"
+      ]
+    },
+    {
+      "question": "七虹（男）",
+      "answer": [
+        "らるく"
+      ]
+    },
+    {
+      "question": "舞宇（男）",
+      "answer": [
+        "まいう"
+      ]
+    },
+    {
+      "question": "月々菜（女）",
+      "answer": [
+        "るなるな"
+      ]
+    },
+    {
+      "question": "帝（男）",
+      "answer": [
+        "おう"
+      ]
+    },
+    {
+      "question": "聖闘（男）",
+      "answer": [
+        "せいんと"
+      ]
+    },
+    {
+      "question": "梨理南（女）",
+      "answer": [
+        "りりーな",
+        "りりいな"
+      ]
+    },
+    {
+      "question": "緋愛空（女）",
+      "answer": [
+        "ぴあす"
+      ]
+    },
+    {
+      "question": "楽園（男）",
+      "answer": [
+        "らあん"
+      ]
+    },
+    {
+      "question": "宝石（女）",
+      "answer": [
+        "たから"
+      ]
+    },
+    {
+      "question": "奈々（女）",
+      "answer": [
+        "にな"
+      ]
+    },
+    {
+      "question": "野風平蔵重親（男）",
+      "answer": [
+        "のかぜへいぞうしげちか"
+      ]
+    },
+    {
+      "question": "炎（男）",
+      "answer": [
+        "ほのう"
+      ]
+    },
+    {
+      "question": "赤斗（男）",
+      "answer": [
+        "れっど"
+      ]
+    },
+    {
+      "question": "一三（女）",
+      "answer": [
+        "にとり"
+      ]
+    },
+    {
+      "question": "笑歩（男）",
+      "answer": [
+        "らいふ"
+      ]
+    },
+    {
+      "question": "宇宙（男）",
+      "answer": [
+        "なさ"
+      ]
+    },
+    {
+      "question": "女優（女）",
+      "answer": [
+        "めもりー",
+        "めもりい"
+      ]
+    },
+    {
+      "question": "ビス湖（女）",
+      "answer": [
+        "びすこ"
+      ]
+    },
+    {
+      "question": "美姫（女）",
+      "answer": [
+        "びゅーてぃー",
+        "びゅうてぃい"
+      ]
+    },
+    {
+      "question": "詩（男）",
+      "answer": [
+        "ぽえむ"
+      ]
+    },
+    {
+      "question": "肉丸（男）",
+      "answer": [
+        "にくまる"
+      ]
+    },
+    {
+      "question": "暖々（女）",
+      "answer": [
+        "ぬくぬく"
+      ]
+    },
+    {
+      "question": "美保鈴（女）",
+      "answer": [
+        "みぽりん"
+      ]
+    },
+    {
+      "question": "核（男）",
+      "answer": [
+        "あとむ"
+      ]
+    },
+    {
+      "question": "礼（女）",
+      "answer": [
+        "ぺこ"
+      ]
+    },
+    {
+      "question": "琉銀明（男）",
+      "answer": [
+        "るぎあ"
+      ]
+    },
+    {
+      "question": "沙音瑠（女）",
+      "answer": [
+        "しゃねる"
+      ]
+    },
+    {
+      "question": "美似意（女）",
+      "answer": [
+        "みにー",
+        "みにい"
+      ]
+    },
+    {
+      "question": "美気意（男）",
+      "answer": [
+        "みっきー",
+        "みっきい"
+      ]
+    },
+    {
+      "question": "空飛太（男）",
+      "answer": [
+        "らぴゅた"
+      ]
+    },
+    {
+      "question": "早苗月恵（女）",
+      "answer": [
+        "さつきけい"
+      ]
+    },
+    {
+      "question": "虹笑空（女）",
+      "answer": [
+        "くれよん"
+      ]
+    },
+    {
+      "question": "カス美（女）",
+      "answer": [
+        "かすみ"
+      ]
+    },
+    {
+      "question": "行晃（男）",
+      "answer": [
+        "いけてる"
+      ]
+    },
+    {
+      "question": "桜桜桜（女）",
+      "answer": [
+        "あらし"
+      ]
+    },
+    {
+      "question": "超好愛（女）",
+      "answer": [
+        "ここあ"
+      ]
+    },
+    {
+      "question": "美富（女）",
+      "answer": [
+        "びとん"
+      ]
+    },
+    {
+      "question": "真路丹（女）",
+      "answer": [
+        "まろに"
+      ]
+    },
+    {
+      "question": "涼介（男）",
+      "answer": [
+        "くうるがい"
+      ]
+    },
+    {
+      "question": "大賀寿（男）",
+      "answer": [
+        "たいがーす",
+        "たいがあす"
+      ]
+    },
+    {
+      "question": "恥子（女）",
+      "answer": [
+        "さとこ"
+      ]
+    },
+    {
+      "question": "心る（女）",
+      "answer": [
+        "くくる"
+      ]
+    },
+    {
+      "question": "心（女）",
+      "answer": [
+        "ききらん"
+      ]
+    },
+    {
+      "question": "聖水（女）",
+      "answer": [
+        "せな"
+      ]
+    },
+    {
+      "question": "救世主（男）",
+      "answer": [
+        "めしあ"
+      ]
+    },
+    {
+      "question": "王様（男）",
+      "answer": [
+        "きんぐ"
+      ]
+    },
+    {
+      "question": "ららら（女）",
+      "answer": [
+        "ららら"
+      ]
+    },
+    {
+      "question": "窓風朝穂子（女）",
+      "answer": [
+        "そふぃあすいこ"
+      ]
+    },
+    {
+      "question": "碧（女）",
+      "answer": [
+        "あくあまりん"
+      ]
+    },
+    {
+      "question": "金魚（女）",
+      "answer": [
+        "きんぎょ"
+      ]
+    },
+    {
+      "question": "理想女（女）",
+      "answer": [
+        "りそな"
+      ]
+    },
+    {
+      "question": "舞曲（女）",
+      "answer": [
+        "まいめろ"
+      ]
+    },
+    {
+      "question": "龍騎士（男）",
+      "answer": [
+        "ないと"
+      ]
+    },
+    {
+      "question": "嗣音羽（女）",
+      "answer": [
+        "つぉねぱ"
+      ]
+    },
+    {
+      "question": "戦士（男）",
+      "answer": [
+        "をりあ"
+      ]
+    },
+    {
+      "question": "静蓮（男）",
+      "answer": [
+        "せいれーん",
+        "せいれいん"
+      ]
+    },
+    {
+      "question": "勇愛人（男）",
+      "answer": [
+        "はあと"
+      ]
+    },
+    {
+      "question": "愛と夢（男）",
+      "answer": [
+        "あとむ"
+      ]
+    },
+    {
+      "question": "千襖（女）",
+      "answer": [
+        "ちふす"
+      ]
+    },
+    {
+      "question": "エリカ（男）",
+      "answer": [
+        "えりか"
+      ]
+    },
+    {
+      "question": "音音（女）",
+      "answer": [
+        "のんのん"
+      ]
+    },
+    {
+      "question": "るにゃ（女）",
+      "answer": [
+        "るにゃ"
+      ]
+    },
+    {
+      "question": "九珠（男）",
+      "answer": [
+        "くず"
+      ]
+    },
+    {
+      "question": "治譲（女）",
+      "answer": [
+        "けある"
+      ]
+    },
+    {
+      "question": "麻風愛（女）",
+      "answer": [
+        "まふぃあ"
+      ]
+    },
+    {
+      "question": "渉愛人（男）",
+      "answer": [
+        "ふぁいと"
+      ]
+    },
+    {
+      "question": "純粋（男）",
+      "answer": [
+        "ぴゅわ"
+      ]
+    },
+    {
+      "question": "創価（女）",
+      "answer": [
+        "そうか"
+      ]
+    },
+    {
+      "question": "愛茅（女）",
+      "answer": [
+        "なち"
+      ]
+    },
+    {
+      "question": "闘女（女）",
+      "answer": [
+        "きゅあ"
+      ]
+    },
+    {
+      "question": "須佐之雄大牙（男）",
+      "answer": [
+        "すさのおたいが"
+      ]
+    },
+    {
+      "question": "勉次（男）",
+      "answer": [
+        "べんつ"
+      ]
+    },
+    {
+      "question": "笑冠（女）",
+      "answer": [
+        "えむかっぷ"
+      ]
+    },
+    {
+      "question": "海凛都羽（女）",
+      "answer": [
+        "かりんとう"
+      ]
+    },
+    {
+      "question": "無（男）",
+      "answer": [
+        "む"
+      ]
+    },
+    {
+      "question": "天夢雅（男）",
+      "answer": [
+        "てんが"
+      ]
+    },
+    {
+      "question": "爆走蛇亜（男）",
+      "answer": [
+        "ばくそうじゃあ"
+      ]
+    },
+    {
+      "question": "雄（男）",
+      "answer": [
+        "らいおん"
+      ]
+    },
+    {
+      "question": "初花（女）",
+      "answer": [
+        "はか"
+      ]
+    },
+    {
+      "question": "大穴（女）",
+      "answer": [
+        "だいあな"
+      ]
+    },
+    {
+      "question": "出（男）",
+      "answer": [
+        "で"
+      ]
+    },
+    {
+      "question": "力（男）",
+      "answer": [
+        "ぱわ"
+      ]
+    },
+    {
+      "question": "煮物（女）",
+      "answer": [
+        "にもの"
+      ]
+    },
+    {
+      "question": "初珠（女）",
+      "answer": [
+        "うぃっしゅ"
+      ]
+    },
+    {
+      "question": "北斗拳（男）",
+      "answer": [
+        "ほとけ"
+      ]
+    },
+    {
+      "question": "雫雲（女）",
+      "answer": [
+        "だうん"
+      ]
+    },
+    {
+      "question": "可わ委（女）",
+      "answer": [
+        "かわい"
+      ]
+    },
+    {
+      "question": "星輪太（男）",
+      "answer": [
+        "ほわた"
+      ]
+    },
+    {
+      "question": "偉人（男）",
+      "answer": [
+        "ぐれいと"
+      ]
+    },
+    {
+      "question": "藍ドル（女）",
+      "answer": [
+        "あいどる"
+      ]
+    },
+    {
+      "question": "星（女）",
+      "answer": [
+        "あっぷる"
+      ]
+    },
+    {
+      "question": "大（男）",
+      "answer": [
+        "びっく"
+      ]
+    },
+    {
+      "question": "高飛（男）",
+      "answer": [
+        "じゃんぷ"
+      ]
+    },
+    {
+      "question": "麻理緒音都（女）",
+      "answer": [
+        "まりおねっと"
+      ]
+    },
+    {
+      "question": "宇宙（男）",
+      "answer": [
+        "あーす",
+        "ああす"
+      ]
+    },
+    {
+      "question": "永久恋愛（女）",
+      "answer": [
+        "えくれあ"
+      ]
+    },
+    {
+      "question": "奈々安寿絵里（女）",
+      "answer": [
+        "ななあんじゅえり"
+      ]
+    },
+    {
+      "question": "麗音菜愛梨亜（女）",
+      "answer": [
+        "れおなあめりあ"
+      ]
+    },
+    {
+      "question": "喜怒哀楽（男）",
+      "answer": [
+        "ゆたか"
+      ]
+    },
+    {
+      "question": "賢一郎（女）",
+      "answer": [
+        "けんいちろう"
+      ]
+    },
+    {
+      "question": "苺苺苺（女）",
+      "answer": [
+        "まりなる"
+      ]
+    },
+    {
+      "question": "いちご姫（女）",
+      "answer": [
+        "いちごひめ"
+      ]
+    },
+    {
+      "question": "本気（男）",
+      "answer": [
+        "まじ"
+      ]
+    },
+    {
+      "question": "陽流（男）",
+      "answer": [
+        "ぱるる"
+      ]
+    },
+    {
+      "question": "新幹線（男）",
+      "answer": [
+        "しんかんせん"
+      ]
+    },
+    {
+      "question": "雨存（男）",
+      "answer": [
+        "あまぞん"
+      ]
+    },
+    {
+      "question": "吾郎（女）",
+      "answer": [
+        "ごろう"
+      ]
+    },
+    {
+      "question": "湯女（女）",
+      "answer": [
+        "ゆな"
+      ]
+    },
+    {
+      "question": "栄務（男）",
+      "answer": [
+        "あぶらはむ"
+      ]
+    },
+    {
+      "question": "輝弥虎進（男）",
+      "answer": [
+        "きゃとらしん"
+      ]
+    },
+    {
+      "question": "憂入合夢（男）",
+      "answer": [
+        "うぃりあむ"
+      ]
+    },
+    {
+      "question": "歩如（女）",
+      "answer": [
+        "ぽにょ"
+      ]
+    },
+    {
+      "question": "宗真葉（男）",
+      "answer": [
+        "しゅーまっは",
+        "しゅうまっは"
+      ]
+    },
+    {
+      "question": "不可思議光（女）",
+      "answer": [
+        "ふかしぎこう"
+      ]
+    },
+    {
+      "question": "笑来星（女）",
+      "answer": [
+        "えめらるだす"
+      ]
+    },
+    {
+      "question": "腸（男）",
+      "answer": [
+        "ひろし"
+      ]
+    },
+    {
+      "question": "美空（女）",
+      "answer": [
+        "びゅあっぷる"
+      ]
+    },
+    {
+      "question": "叫（男）",
+      "answer": [
+        "しゃうと"
+      ]
+    },
+    {
+      "question": "七七七（女）",
+      "answer": [
+        "ななみ"
+      ]
+    },
+    {
+      "question": "メロディ愛（女）",
+      "answer": [
+        "めろでぃあい"
+      ]
+    },
+    {
+      "question": "愛ぷり（女）",
+      "answer": [
+        "あいぷり"
+      ]
+    },
+    {
+      "question": "戦争（女）",
+      "answer": [
+        "せんそう"
+      ]
+    },
+    {
+      "question": "今鹿（女）",
+      "answer": [
+        "なうしか"
+      ]
+    },
+    {
+      "question": "るるる（女）",
+      "answer": [
+        "るるる"
+      ]
+    },
+    {
+      "question": "アロハ勇人（男）",
+      "answer": [
+        "あろはゆうと"
+      ]
+    },
+    {
+      "question": "無大（女）",
+      "answer": [
+        "むにえる"
+      ]
+    },
+    {
+      "question": "愛アイ（女）",
+      "answer": [
+        "あいあい"
+      ]
+    },
+    {
+      "question": "是留舵（女）",
+      "answer": [
+        "ぜるだ"
+      ]
+    },
+    {
+      "question": "十兵（男）",
+      "answer": [
+        "くりすとふぁー",
+        "くりすとふぁあ"
+      ]
+    },
+    {
+      "question": "王子様（男）",
+      "answer": [
+        "おうじさま"
+      ]
+    },
+    {
+      "question": "たまてば子（女）",
+      "answer": [
+        "たまてばこ"
+      ]
+    },
+    {
+      "question": "凛空（女）",
+      "answer": [
+        "りすか"
+      ]
+    },
+    {
+      "question": "桜鈴（女）",
+      "answer": [
+        "さりん"
+      ]
+    },
+    {
+      "question": "憧れ（女）",
+      "answer": [
+        "あこがれ"
+      ]
+    },
+    {
+      "question": "振門体（女）",
+      "answer": [
+        "ふるもんてぃ"
+      ]
+    },
+    {
+      "question": "黄熊（男）",
+      "answer": [
+        "ぷう"
+      ]
+    },
+    {
+      "question": "ポチ男（男）",
+      "answer": [
+        "ぽちお"
+      ]
+    },
+    {
+      "question": "一（女）",
+      "answer": [
+        "あん"
+      ]
+    },
+    {
+      "question": "空理鈴（女）",
+      "answer": [
+        "くりりん"
+      ]
+    },
+    {
+      "question": "悪（男）",
+      "answer": [
+        "たける"
+      ]
+    },
+    {
+      "question": "世歩玲（女）",
+      "answer": [
+        "せふれ"
+      ]
+    },
+    {
+      "question": "珍子（女）",
+      "answer": [
+        "よしこ"
+      ]
+    },
+    {
+      "question": "伽莉依（女）",
+      "answer": [
+        "きゃりい"
+      ]
+    },
+    {
+      "question": "夢星（男）",
+      "answer": [
+        "むせい"
+      ]
+    },
+    {
+      "question": "縁佳（女）",
+      "answer": [
+        "ぺりか"
+      ]
+    },
+    {
+      "question": "二成（男）",
+      "answer": [
+        "ふたなり"
+      ]
+    },
+    {
+      "question": "の（女）",
+      "answer": [
+        "の"
+      ]
+    },
+    {
+      "question": "詩羽楊（男）",
+      "answer": [
+        "じばにゃん"
+      ]
+    },
+    {
+      "question": "しいたけ（女）",
+      "answer": [
+        "しいたけ"
+      ]
+    },
+    {
+      "question": "万華（女）",
+      "answer": [
+        "まんげ"
+      ]
+    },
+    {
+      "question": "たかしくん（男）",
+      "answer": [
+        "たかしくん"
+      ]
+    },
+    {
+      "question": "新一（男）",
+      "answer": [
+        "こなん"
+      ]
+    },
+    {
+      "question": "雲広（男）",
+      "answer": [
+        "うんこう"
+      ]
+    },
+    {
+      "question": "愛子エンジェル（女）",
+      "answer": [
+        "あいこえんじぇる"
+      ]
+    },
+    {
+      "question": "ララ桜桃（女）",
+      "answer": [
+        "ららさくらんぼ"
+      ]
+    },
+    {
+      "question": "弥有二（男）",
+      "answer": [
+        "みゅうつー",
+        "みゅうつう"
+      ]
+    },
+    {
+      "question": "二人（男）",
+      "answer": [
+        "ぴったん"
+      ]
+    },
+    {
+      "question": "とっぽ（男）",
+      "answer": [
+        "とっぽ"
+      ]
+    },
+    {
+      "question": "凸（女）",
+      "answer": [
+        "てとり"
+      ]
+    },
+    {
+      "question": "光中（男）",
+      "answer": [
+        "ぴかちゅう"
+      ]
+    },
+    {
+      "question": "精飛愛（女）",
+      "answer": [
+        "せぴあ"
+      ]
+    },
+    {
+      "question": "羽姫芽（女）",
+      "answer": [
+        "わきが"
+      ]
+    },
+    {
+      "question": "キック今日中（男）",
+      "answer": [
+        "きっくきょうじゅう"
+      ]
+    },
+    {
+      "question": "愛人（女）",
+      "answer": [
+        "らびっと"
+      ]
+    },
+    {
+      "question": "手洗（女）",
+      "answer": [
+        "てぃあら"
+      ]
+    },
+    {
+      "question": "愛して（女）",
+      "answer": [
+        "あいして"
+      ]
+    },
+    {
+      "question": "動画（男）",
+      "answer": [
+        "てれび"
+      ]
+    },
+    {
+      "question": "望己利（女）",
+      "answer": [
+        "もこり"
+      ]
+    },
+    {
+      "question": "歩木鈴（女）",
+      "answer": [
+        "ぽこりん"
+      ]
+    },
+    {
+      "question": "愛歩（女）",
+      "answer": [
+        "あほ"
+      ]
+    },
+    {
+      "question": "大麻（男）",
+      "answer": [
+        "たいま"
+      ]
+    },
+    {
+      "question": "愛保（女）",
+      "answer": [
+        "らぶほ"
+      ]
+    },
+    {
+      "question": "愛引（女）",
+      "answer": [
+        "あいーん",
+        "あいいん"
+      ]
+    },
+    {
+      "question": "主人公（男）",
+      "answer": [
+        "ひーろー",
+        "ひいろう"
+      ]
+    },
+    {
+      "question": "ラッキー星（男）",
+      "answer": [
+        "らっきーすたー",
+        "らっきいすたあ"
+      ]
+    },
+    {
+      "question": "ハム太郎（男）",
+      "answer": [
+        "はむたろう"
+      ]
+    },
+    {
+      "question": "樹茶（女）",
+      "answer": [
+        "きてぃちゃん"
+      ]
+    },
+    {
+      "question": "福福福福（男）",
+      "answer": [
+        "ふくふくふくふく"
+      ]
+    },
+    {
+      "question": "幻の銀侍（男）",
+      "answer": [
+        "まぼろしのぎんじ"
+      ]
+    },
+    {
+      "question": "お星ちん（男）",
+      "answer": [
+        "おせちん"
+      ]
+    },
+    {
+      "question": "姫守（男）",
+      "answer": [
+        "ひも"
+      ]
+    },
+    {
+      "question": "月姫（女）",
+      "answer": [
+        "らめ"
+      ]
+    },
+    {
+      "question": "覇安威（男）",
+      "answer": [
+        "はあい"
+      ]
+    },
+    {
+      "question": "羽々亜（男）",
+      "answer": [
+        "うはあ"
+      ]
+    },
+    {
+      "question": "生愛（男）",
+      "answer": [
+        "りばい"
+      ]
+    },
+    {
+      "question": "神生理（女）",
+      "answer": [
+        "かおり"
+      ]
+    },
+    {
+      "question": "大魂（男）",
+      "answer": [
+        "だいそー",
+        "だいそう"
+      ]
+    },
+    {
+      "question": "愛百足（男）",
+      "answer": [
+        "あどり"
+      ]
+    },
+    {
+      "question": "核（男）",
+      "answer": [
+        "アトム",
+        "あとむ"
+      ]
+    },
+    {
+      "question": "心太（男）",
+      "answer": [
+        "はあふ"
+      ]
+    },
+    {
+      "question": "空海（男）",
+      "answer": [
+        "ぶるう"
+      ]
+    },
+    {
+      "question": "妃仁（女）",
+      "answer": [
+        "ひにん"
+      ]
+    },
+    {
+      "question": "茄子（女）",
+      "answer": [
+        "かこ"
+      ]
+    },
+    {
+      "question": "翁（女）",
+      "answer": [
+        "おきな"
+      ]
+    },
+    {
+      "question": "王子（男）",
+      "answer": [
+        "きんぐ"
+      ]
+    },
+    {
+      "question": "誕生（男）",
+      "answer": [
+        "バース",
+        "ばあす"
+      ]
+    },
+    {
+      "question": "羽夢舞（女）",
+      "answer": [
+        "ぱろま"
+      ]
+    },
+    {
+      "question": "達愛（男）",
+      "answer": [
+        "だあ"
+      ]
+    },
+    {
+      "question": "愛人（男）",
+      "answer": [
+        "あいと"
+      ]
+    },
+    {
+      "question": "萌胡莉（女）",
+      "answer": [
+        "もこり"
+      ]
+    },
+    {
+      "question": "聖戦（男）",
+      "answer": [
+        "じはーど",
+        "じはあど"
+      ]
+    },
+    {
+      "question": "歌姫（女）",
+      "answer": [
+        "みく"
+      ]
+    },
+    {
+      "question": "博忠（男）",
+      "answer": [
+        "はくち"
+      ]
+    },
+    {
+      "question": "黄泉（女）",
+      "answer": [
+        "よみ"
+      ]
+    },
+    {
+      "question": "夜神（男）",
+      "answer": [
+        "はです"
+      ]
+    },
+    {
+      "question": "皇帝（男）",
+      "answer": [
+        "しいざあ"
+      ]
+    },
+    {
+      "question": "天使（女）",
+      "answer": [
+        "ふぇあり"
+      ]
+    },
+    {
+      "question": "純粋（女）",
+      "answer": [
+        "ぴゅわ"
+      ]
+    },
+    {
+      "question": "聖夜（男）",
+      "answer": [
+        "いぶ"
+      ]
+    },
+    {
+      "question": "寿命（女）",
+      "answer": [
+        "すみ"
+      ]
+    },
+    {
+      "question": "山梨（女）",
+      "answer": [
+        "ふりん"
+      ]
+    },
+    {
+      "question": "世導（男）",
+      "answer": [
+        "りいだ"
+      ]
+    },
+    {
+      "question": "犯士（男）",
+      "answer": [
+        "ひろし"
+      ]
+    },
+    {
+      "question": "熱寿（男）",
+      "answer": [
+        "ひいと"
+      ]
+    },
+    {
+      "question": "菜七（女）",
+      "answer": [
+        "ななな"
+      ]
+    },
+    {
+      "question": "良妃（女）",
+      "answer": [
+        "らびん"
+      ]
+    },
+    {
+      "question": "射夢（男）",
+      "answer": [
+        "じゃむ"
+      ]
+    },
+    {
+      "question": "優央良（男）",
+      "answer": [
+        "やおい"
+      ]
+    },
+    {
+      "question": "昇天（男）",
+      "answer": [
+        "しょうた"
+      ]
+    },
+    {
+      "question": "美少年（男）",
+      "answer": [
+        "みさと"
+      ]
+    },
+    {
+      "question": "殉子（女）",
+      "answer": [
+        "じゅんこ"
+      ]
+    },
+    {
+      "question": "仮名（女）",
+      "answer": [
+        "かな"
+      ]
+    },
+    {
+      "question": "初運子（女）",
+      "answer": [
+        "しょうこ"
+      ]
+    },
+    {
+      "question": "哀枷（女）",
+      "answer": [
+        "あいか"
+      ]
+    },
+    {
+      "question": "雄喜衛（女）",
+      "answer": [
+        "ゆきえ"
+      ]
+    },
+    {
+      "question": "初夜（女）",
+      "answer": [
+        "はつよ"
+      ]
+    },
+    {
+      "question": "樹海（女）",
+      "answer": [
+        "いつみ"
+      ]
+    },
+    {
+      "question": "今鹿（女）",
+      "answer": [
+        "なうしか"
+      ]
+    },
+    {
+      "question": "凸（男）",
+      "answer": [
+        "てとり"
+      ]
+    },
+    {
+      "question": "大男（男）",
+      "answer": [
+        "びっくまん"
+      ]
+    },
+    {
+      "question": "紅葉（女）",
+      "answer": [
+        "さくら"
+      ]
+    },
+    {
+      "question": "究極美子（女）",
+      "answer": [
+        "くみこ"
+      ]
+    },
+    {
+      "question": "千秋楽（女）",
+      "answer": [
+        "てぃあら"
+      ]
+    },
+    {
+      "question": "音譜（男）",
+      "answer": [
+        "ふぉるてしも"
+      ]
+    },
+    {
+      "question": "権兵衛（女）",
+      "answer": [
+        "ごんべえ"
+      ]
+    },
+    {
+      "question": "円四惟（男）",
+      "answer": [
+        "まるふぉい"
+      ]
+    },
+    {
+      "question": "永久恋愛（女）",
+      "answer": [
+        "えくれあ"
+      ]
+    },
+    {
+      "question": "永遠人（女）",
+      "answer": [
+        "とわに"
+      ]
+    },
+    {
+      "question": "神王（男）",
+      "answer": [
+        "ぜうす"
+      ]
+    },
+    {
+      "question": "不可思議光（男）",
+      "answer": [
+        "ふかしぎこう"
+      ]
+    },
+    {
+      "question": "春愛人（男）",
+      "answer": [
+        "はあと"
+      ]
+    },
+    {
+      "question": "磨姫大（男）",
+      "answer": [
+        "まきだい"
+      ]
+    },
+    {
+      "question": "笑笑（女）",
+      "answer": [
+        "にこにこ"
+      ]
+    },
+    {
+      "question": "瑠恋星（女）",
+      "answer": [
+        "るいず"
+      ]
+    },
+    {
+      "question": "大熊猫（男）",
+      "answer": [
+        "ぱんだ"
+      ]
+    },
+    {
+      "question": "愛結晶（女）",
+      "answer": [
+        "きらら"
+      ]
+    },
+    {
+      "question": "瞳（女）",
+      "answer": [
+        "めるへん"
+      ]
+    },
+    {
+      "question": "愛証（女）",
+      "answer": [
+        "あてね"
+      ]
+    },
+    {
+      "question": "息子（男）",
+      "answer": [
+        "じゅにあ"
+      ]
+    },
+    {
+      "question": "百獣王（男）",
+      "answer": [
+        "りおと"
+      ]
+    },
+    {
+      "question": "涼介（男）",
+      "answer": [
+        "くうるがい"
+      ]
+    },
+    {
+      "question": "羽日夢（女）",
+      "answer": [
+        "ぱひゅむ"
+      ]
+    },
+    {
+      "question": "アンドロメダ（女）",
+      "answer": [
+        "あんどろめだ"
+      ]
+    },
+    {
+      "question": "遊亀（女）",
+      "answer": [
+        "ゆうき"
+      ]
+    },
+    {
+      "question": "ビス湖（女）",
+      "answer": [
+        "びすこ"
+      ]
+    },
+    {
+      "question": "愛棒（女）",
+      "answer": [
+        "らぼ"
+      ]
+    },
+    {
+      "question": "抱美弟（男）",
+      "answer": [
+        "だびで"
+      ]
+    },
+    {
+      "question": "汰強（男）",
+      "answer": [
+        "でじる"
+      ]
+    },
+    {
+      "question": "茶菓子（女）",
+      "answer": [
+        "ちょこ"
+      ]
+    },
+    {
+      "question": "女神（女）",
+      "answer": [
+        "あるてみす",
+        "まどか",
+        "さやか"
+      ]
+    },
+    {
+      "question": "神（男）",
+      "answer": [
+        "かみ",
+        "しはい"
+      ]
+    },
+    {
+      "question": "不思議（女）",
+      "answer": [
+        "はてな"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3524 @@
+{
+  "uniqueId": "kanken_2k",
+  "name": "Kanken 2級 Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "酪農",
+      "answer": [
+        "らくのう"
+      ],
+      "meaning": "dairy farming"
+    },
+    {
+      "question": "彙報",
+      "answer": [
+        "いほう"
+      ],
+      "meaning": "bulletin, collection of reports"
+    },
+    {
+      "question": "刹那",
+      "answer": [
+        "せつな"
+      ],
+      "meaning": "moment, instant, juncture"
+    },
+    {
+      "question": "甚大",
+      "answer": [
+        "じんだい"
+      ],
+      "meaning": "very great, enormous, serious"
+    },
+    {
+      "question": "憤り",
+      "answer": [
+        "いきどおり"
+      ],
+      "meaning": "resentment, indignation, anger"
+    },
+    {
+      "question": "溺愛",
+      "answer": [
+        "できあい"
+      ],
+      "meaning": "doting"
+    },
+    {
+      "question": "頻発",
+      "answer": [
+        "ひんぱつ"
+      ],
+      "meaning": "frequent occurrence"
+    },
+    {
+      "question": "尚早",
+      "answer": [
+        "しょうそう"
+      ],
+      "meaning": "prematurity"
+    },
+    {
+      "question": "肯定",
+      "answer": [
+        "こうてい"
+      ],
+      "meaning": "positive, affirmation"
+    },
+    {
+      "question": "雪渓",
+      "answer": [
+        "せっけい"
+      ],
+      "meaning": "snowy valley"
+    },
+    {
+      "question": "嫡子",
+      "answer": [
+        "ちゃくし"
+      ],
+      "meaning": "legitimate child"
+    },
+    {
+      "question": "臆面",
+      "answer": [
+        "おくめん"
+      ],
+      "meaning": "shy face"
+    },
+    {
+      "question": "霜害",
+      "answer": [
+        "そうがい"
+      ],
+      "meaning": "frost damage"
+    },
+    {
+      "question": "一蹴",
+      "answer": [
+        "いっしゅう"
+      ],
+      "meaning": "kicking"
+    },
+    {
+      "question": "土壌",
+      "answer": [
+        "どじょう"
+      ],
+      "meaning": "soil"
+    },
+    {
+      "question": "旋回",
+      "answer": [
+        "せんかい"
+      ],
+      "meaning": "revolution, rotation, turning, circling, swiveling"
+    },
+    {
+      "question": "醜悪",
+      "answer": [
+        "しゅうあく"
+      ],
+      "meaning": "ugly, unsightly, hideous, mean, repulsive, disgraceful"
+    },
+    {
+      "question": "露呈",
+      "answer": [
+        "ろてい"
+      ],
+      "meaning": "exposure, disclosure"
+    },
+    {
+      "question": "顕著",
+      "answer": [
+        "けんちょ"
+      ],
+      "meaning": "remarkable, striking, obvious"
+    },
+    {
+      "question": "国璽",
+      "answer": [
+        "こくじ"
+      ],
+      "meaning": "the seal of state"
+    },
+    {
+      "question": "会釈",
+      "answer": [
+        "えしゃく"
+      ],
+      "meaning": "slight bow (as a greeting or sign of gratitude), nod, salutation"
+    },
+    {
+      "question": "土壇場",
+      "answer": [
+        "どたんば"
+      ],
+      "meaning": "last moment, eleventh hour"
+    },
+    {
+      "question": "愁嘆場",
+      "answer": [
+        "しゅうたんば"
+      ],
+      "meaning": "pathetic scene"
+    },
+    {
+      "question": "回向",
+      "answer": [
+        "えこう"
+      ],
+      "meaning": "Buddhist memorial service, prayers for the repose of the soul"
+    },
+    {
+      "question": "罷免",
+      "answer": [
+        "ひめん"
+      ],
+      "meaning": "dismissal, discharge"
+    },
+    {
+      "question": "頒布",
+      "answer": [
+        "はんぷ"
+      ],
+      "meaning": "distribution, circulation"
+    },
+    {
+      "question": "脅嚇",
+      "answer": [
+        "きょうかく"
+      ],
+      "meaning": "intimidation, threat"
+    },
+    {
+      "question": "蚊柱",
+      "answer": [
+        "かばしら"
+      ],
+      "meaning": "mosquito swarm"
+    },
+    {
+      "question": "砕石",
+      "answer": [
+        "さいせき"
+      ],
+      "meaning": "broken stone, rubble"
+    },
+    {
+      "question": "抄訳",
+      "answer": [
+        "しょうやく"
+      ],
+      "meaning": "abridged translation"
+    },
+    {
+      "question": "曖昧",
+      "answer": [
+        "あいまい"
+      ],
+      "meaning": "vague, ambiguous, unclear"
+    },
+    {
+      "question": "種苗",
+      "answer": [
+        "しゅびょう"
+      ],
+      "meaning": "seeds and seedlings"
+    },
+    {
+      "question": "萎縮",
+      "answer": [
+        "いしゅく"
+      ],
+      "meaning": "withering, shrivelling, shrinking, atrophy, contraction"
+    },
+    {
+      "question": "思索",
+      "answer": [
+        "しさく"
+      ],
+      "meaning": "speculation, thinking, meditation"
+    },
+    {
+      "question": "漆",
+      "answer": [
+        "うるし",
+        "しち",
+        "なな",
+        "な"
+      ],
+      "meaning": "seven, lacquer, varnish, japan, seven (used in legal documents)"
+    },
+    {
+      "question": "製靴",
+      "answer": [
+        "せいか"
+      ],
+      "meaning": "shoe-making"
+    },
+    {
+      "question": "咽喉",
+      "answer": [
+        "いんこう"
+      ],
+      "meaning": "throat"
+    },
+    {
+      "question": "童歌",
+      "answer": [
+        "わらべうた"
+      ],
+      "meaning": "children's song, nursery song"
+    },
+    {
+      "question": "稼働",
+      "answer": [
+        "かどう"
+      ],
+      "meaning": "operation (of machine), operating, running, working"
+    },
+    {
+      "question": "逓減",
+      "answer": [
+        "ていげん"
+      ],
+      "meaning": "gradual decrease, gradual diminution"
+    },
+    {
+      "question": "椅子",
+      "answer": [
+        "いす",
+        "いし"
+      ],
+      "meaning": "chair, stool, traditional square chair with armrests and a torii-shaped back (used by the emperor, etc. during ceremonies)"
+    },
+    {
+      "question": "誓約書",
+      "answer": [
+        "せいやくしょ"
+      ],
+      "meaning": "written oath, covenant, pledge"
+    },
+    {
+      "question": "貼用",
+      "answer": [
+        "ちょうよう"
+      ]
+    },
+    {
+      "question": "紙幣",
+      "answer": [
+        "しへい"
+      ],
+      "meaning": "paper money, note, bill"
+    },
+    {
+      "question": "危惧",
+      "answer": [
+        "きぐ"
+      ],
+      "meaning": "apprehensions, misgivings, uneasiness, anxiety, fear"
+    },
+    {
+      "question": "競り",
+      "answer": [
+        "せり"
+      ],
+      "meaning": "competing, competition"
+    },
+    {
+      "question": "怨恨",
+      "answer": [
+        "えんこん"
+      ],
+      "meaning": "enmity, grudge"
+    },
+    {
+      "question": "挨拶",
+      "answer": [
+        "あいさつ"
+      ],
+      "meaning": "greeting, greetings, salutation, salute, polite set phrase used when meeting or parting from somebody"
+    },
+    {
+      "question": "宛先",
+      "answer": [
+        "あてさき"
+      ],
+      "meaning": "address, destination"
+    },
+    {
+      "question": "産着",
+      "answer": [
+        "うぶぎ"
+      ],
+      "meaning": "clothes for a newborn baby, baby clothes"
+    },
+    {
+      "question": "疎遠",
+      "answer": [
+        "そえん"
+      ],
+      "meaning": "estrangement, alienation, neglecting to stay in contact"
+    },
+    {
+      "question": "溺死",
+      "answer": [
+        "できし"
+      ],
+      "meaning": "death by drowning"
+    },
+    {
+      "question": "畏怖",
+      "answer": [
+        "いふ"
+      ],
+      "meaning": "awe, fear, fright"
+    },
+    {
+      "question": "狂奔",
+      "answer": [
+        "きょうほん"
+      ],
+      "meaning": "rushing around, running wild"
+    },
+    {
+      "question": "愛猫",
+      "answer": [
+        "あいびょう"
+      ],
+      "meaning": "pet cat, beloved cat"
+    },
+    {
+      "question": "鬱屈",
+      "answer": [
+        "うっくつ"
+      ],
+      "meaning": "gloomy"
+    },
+    {
+      "question": "戦慄",
+      "answer": [
+        "せんりつ"
+      ],
+      "meaning": "shudder, shiver, trembling with fear"
+    },
+    {
+      "question": "妖艶",
+      "answer": [
+        "ようえん"
+      ],
+      "meaning": "fascinating, voluptuous, bewitching"
+    },
+    {
+      "question": "旺盛",
+      "answer": [
+        "おうせい"
+      ],
+      "meaning": "full of vim and vigor"
+    },
+    {
+      "question": "辣腕",
+      "answer": [
+        "らつわん"
+      ],
+      "meaning": "shrewdness, sharpness, astuteness, acumen, tact"
+    },
+    {
+      "question": "苛酷",
+      "answer": [
+        "かこく"
+      ],
+      "meaning": "severe, harsh, hard, cruel, rigorous"
+    },
+    {
+      "question": "脇腹",
+      "answer": [
+        "わきばら"
+      ],
+      "meaning": "side, flank"
+    },
+    {
+      "question": "諦観",
+      "answer": [
+        "ていかん"
+      ],
+      "meaning": "clear vision, resignation (as in reconciling oneself)"
+    },
+    {
+      "question": "進捗",
+      "answer": [
+        "しんちょく"
+      ],
+      "meaning": "progress, being under way"
+    },
+    {
+      "question": "裾",
+      "answer": [
+        "すそ"
+      ],
+      "meaning": "hem, (trouser) cuff, shirttail"
+    },
+    {
+      "question": "凄惨",
+      "answer": [
+        "せいさん"
+      ],
+      "meaning": "ghastly, gruesome, appalling, lurid"
+    },
+    {
+      "question": "蜜月",
+      "answer": [
+        "みつげつ"
+      ],
+      "meaning": "honeymoon"
+    },
+    {
+      "question": "親戚",
+      "answer": [
+        "しんせき"
+      ],
+      "meaning": "relative, relation, kin"
+    },
+    {
+      "question": "失踪",
+      "answer": [
+        "しっそう"
+      ],
+      "meaning": "absconding, disappearance"
+    },
+    {
+      "question": "捕捉",
+      "answer": [
+        "ほそく"
+      ],
+      "meaning": "capture, seizure, prehension, trapping"
+    },
+    {
+      "question": "唾棄",
+      "answer": [
+        "だき"
+      ],
+      "meaning": "despising, disdaining, scorning, holding in contempt"
+    },
+    {
+      "question": "妬む",
+      "answer": [
+        "ねたむ",
+        "そねむ"
+      ],
+      "meaning": "to be jealous of, to envy, to begrudge"
+    },
+    {
+      "question": "瞳孔",
+      "answer": [
+        "どうこう"
+      ],
+      "meaning": "pupil, pupillary"
+    },
+    {
+      "question": "汎用性",
+      "answer": [
+        "はんようせい"
+      ],
+      "meaning": "versatility, multiplicity of use"
+    },
+    {
+      "question": "勃発",
+      "answer": [
+        "ぼっぱつ"
+      ],
+      "meaning": "outbreak (e.g. war), outburst, sudden occurrence"
+    },
+    {
+      "question": "陶冶",
+      "answer": [
+        "とうや"
+      ],
+      "meaning": "training, education, cultivation"
+    },
+    {
+      "question": "臆断",
+      "answer": [
+        "おくだん"
+      ],
+      "meaning": "jumping to hasty conclusions, conjecture"
+    },
+    {
+      "question": "拉致",
+      "answer": [
+        "らち"
+      ],
+      "meaning": "taking captive, carrying away, kidnapping, kidnaping, abduction"
+    },
+    {
+      "question": "横柄",
+      "answer": [
+        "おうへい"
+      ],
+      "meaning": "arrogant, haughty, insolent"
+    },
+    {
+      "question": "瓦解",
+      "answer": [
+        "がかい"
+      ],
+      "meaning": "collapse, downfall"
+    },
+    {
+      "question": "出藍",
+      "answer": [
+        "しゅつらん"
+      ],
+      "meaning": "pupil excelling his master"
+    },
+    {
+      "question": "崖",
+      "answer": [
+        "がけ"
+      ],
+      "meaning": "cliff, precipice"
+    },
+    {
+      "question": "明瞭",
+      "answer": [
+        "めいりょう"
+      ],
+      "meaning": "clarity, clearness"
+    },
+    {
+      "question": "玩味",
+      "answer": [
+        "がんみ"
+      ],
+      "meaning": "tasting, relishing, savouring, savoring"
+    },
+    {
+      "question": "賄賂",
+      "answer": [
+        "わいろ"
+      ],
+      "meaning": "bribe, sweetener, douceur"
+    },
+    {
+      "question": "愚弄",
+      "answer": [
+        "ぐろう"
+      ],
+      "meaning": "mockery, derision, ridicule"
+    },
+    {
+      "question": "僅差",
+      "answer": [
+        "きんさ"
+      ],
+      "meaning": "narrow margin (esp. victory or defeat), slim margin"
+    },
+    {
+      "question": "籠城",
+      "answer": [
+        "ろうじょう"
+      ],
+      "meaning": "holding a castle (during a siege), holing up"
+    },
+    {
+      "question": "山麓",
+      "answer": [
+        "さんろく"
+      ],
+      "meaning": "foot of a mountain, base of a mountain"
+    },
+    {
+      "question": "鍵盤",
+      "answer": [
+        "けんばん"
+      ],
+      "meaning": "keyboard (e.g. piano, computer)"
+    },
+    {
+      "question": "怨念",
+      "answer": [
+        "おんねん"
+      ],
+      "meaning": "deep-seated grudge, hatred"
+    },
+    {
+      "question": "顎",
+      "answer": [
+        "あご",
+        "がく",
+        "あぎと"
+      ],
+      "meaning": "chin, jaw"
+    },
+    {
+      "question": "虎口",
+      "answer": [
+        "ここう"
+      ],
+      "meaning": "tiger's den, jaws of death, dangerous place"
+    },
+    {
+      "question": "亀裂",
+      "answer": [
+        "きれつ"
+      ],
+      "meaning": "crack, crevice, fissure, chap, rift"
+    },
+    {
+      "question": "脱臼",
+      "answer": [
+        "だっきゅう"
+      ],
+      "meaning": "dislocation"
+    },
+    {
+      "question": "嗅覚",
+      "answer": [
+        "きゅうかく"
+      ],
+      "meaning": "sense of smell, olfaction"
+    },
+    {
+      "question": "真摯",
+      "answer": [
+        "しんし"
+      ],
+      "meaning": "sincere, earnest"
+    },
+    {
+      "question": "餌食",
+      "answer": [
+        "えじき"
+      ],
+      "meaning": "prey, victim"
+    },
+    {
+      "question": "叱責",
+      "answer": [
+        "しっせき"
+      ],
+      "meaning": "reprimand, rebuke"
+    },
+    {
+      "question": "羨望",
+      "answer": [
+        "せんぼう"
+      ],
+      "meaning": "envy"
+    },
+    {
+      "question": "砂嵐",
+      "answer": [
+        "すなあらし"
+      ],
+      "meaning": "sandstorm"
+    },
+    {
+      "question": "畏敬",
+      "answer": [
+        "いけい"
+      ],
+      "meaning": "reverence, awe, respect"
+    },
+    {
+      "question": "語彙",
+      "answer": [
+        "ごい"
+      ],
+      "meaning": "vocabulary, lexicon, lexis, terminology"
+    },
+    {
+      "question": "茨",
+      "answer": [
+        "いばら"
+      ],
+      "meaning": "thorny shrub"
+    },
+    {
+      "question": "均斉",
+      "answer": [
+        "きんせい"
+      ],
+      "meaning": "symmetry, balance, proportion, uniformity"
+    },
+    {
+      "question": "鬱結",
+      "answer": [
+        "うっけつ"
+      ],
+      "meaning": "depression, oppression"
+    },
+    {
+      "question": "才媛",
+      "answer": [
+        "さいえん"
+      ],
+      "meaning": "literary woman, talented woman"
+    },
+    {
+      "question": "俺様",
+      "answer": [
+        "おれさま"
+      ],
+      "meaning": "I, myself"
+    },
+    {
+      "question": "牙城",
+      "answer": [
+        "がじょう"
+      ],
+      "meaning": "stronghold (esp. of an enemy or opponent), inner citadel, bastion"
+    },
+    {
+      "question": "楷書体",
+      "answer": [
+        "かいしょたい"
+      ],
+      "meaning": "square (block) style of printed typeface"
+    },
+    {
+      "question": "潰走",
+      "answer": [
+        "かいそう"
+      ],
+      "meaning": "rout, stampede"
+    },
+    {
+      "question": "俳諧",
+      "answer": [
+        "はいかい"
+      ],
+      "meaning": "haikai, collective name for haiku, haibun, haiga, senryū, etc."
+    },
+    {
+      "question": "蓋然",
+      "answer": [
+        "がいぜん"
+      ],
+      "meaning": "probability"
+    },
+    {
+      "question": "形骸化",
+      "answer": [
+        "けいがいか"
+      ],
+      "meaning": "becoming a mere shell, becoming a dead letter, losing (one's) substance, being reduced to a formality"
+    },
+    {
+      "question": "柿",
+      "answer": [
+        "かき",
+        "こけら"
+      ],
+      "meaning": "kaki, Japanese persimmon (Diospyros kaki), chopped wood, wood chips"
+    },
+    {
+      "question": "葛藤",
+      "answer": [
+        "かっとう",
+        "つづらふじ"
+      ],
+      "meaning": "conflict, complication, troubles, discord, Chinese moonseed (Sinomenium acutum)"
+    },
+    {
+      "question": "釜飯",
+      "answer": [
+        "かまめし"
+      ],
+      "meaning": "rice, meat and vegetable dish served in a small pot"
+    },
+    {
+      "question": "毀損",
+      "answer": [
+        "きそん"
+      ],
+      "meaning": "damage, injury, defamation, harm"
+    },
+    {
+      "question": "憧憬",
+      "answer": [
+        "しょうけい",
+        "しょうけい",
+        "どうけい"
+      ],
+      "meaning": "longing, aspiration"
+    },
+    {
+      "question": "近畿",
+      "answer": [
+        "きんき"
+      ],
+      "meaning": "Kinki (region around Osaka, Kyoto, Nara)"
+    },
+    {
+      "question": "鎌",
+      "answer": [
+        "かま"
+      ],
+      "meaning": "sickle"
+    },
+    {
+      "question": "巣窟",
+      "answer": [
+        "そうくつ"
+      ],
+      "meaning": "den, haunt, hangout, nest, lair"
+    },
+    {
+      "question": "詣でる",
+      "answer": [
+        "もうでる"
+      ],
+      "meaning": "to make a pilgrimage"
+    },
+    {
+      "question": "頬桁",
+      "answer": [
+        "ほおげた"
+      ],
+      "meaning": "cheekbone"
+    },
+    {
+      "question": "歌舞伎",
+      "answer": [
+        "かぶき"
+      ],
+      "meaning": "kabuki, Japanese classical drama"
+    },
+    {
+      "question": "間隙",
+      "answer": [
+        "かんげき"
+      ],
+      "meaning": "gap"
+    },
+    {
+      "question": "禁錮",
+      "answer": [
+        "きんこ"
+      ],
+      "meaning": "imprisonment, confinement"
+    },
+    {
+      "question": "梗概",
+      "answer": [
+        "こうがい"
+      ],
+      "meaning": "outline, summary, epitome"
+    },
+    {
+      "question": "竹串",
+      "answer": [
+        "たけぐし"
+      ],
+      "meaning": "bamboo skewer"
+    },
+    {
+      "question": "雑巾",
+      "answer": [
+        "ぞうきん"
+      ],
+      "meaning": "house-cloth, dust cloth"
+    },
+    {
+      "question": "錦",
+      "answer": [
+        "にしき"
+      ],
+      "meaning": "brocade"
+    },
+    {
+      "question": "寡聞",
+      "answer": [
+        "かぶん"
+      ],
+      "meaning": "limited information"
+    },
+    {
+      "question": "熊",
+      "answer": [
+        "くま"
+      ],
+      "meaning": "bear (any mammal of family Ursidae)"
+    },
+    {
+      "question": "滑稽",
+      "answer": [
+        "こっけい"
+      ],
+      "meaning": "funny, comical, humorous, humourous, laughable"
+    },
+    {
+      "question": "右舷",
+      "answer": [
+        "うげん"
+      ],
+      "meaning": "starboard"
+    },
+    {
+      "question": "股関節",
+      "answer": [
+        "こかんせつ"
+      ],
+      "meaning": "hip joint, coxa"
+    },
+    {
+      "question": "勾留",
+      "answer": [
+        "こうりゅう"
+      ],
+      "meaning": "detention pending trial, confinement, custody"
+    },
+    {
+      "question": "沙汰",
+      "answer": [
+        "さた"
+      ],
+      "meaning": "affair, state, incident, issue, matter"
+    },
+    {
+      "question": "嫉視",
+      "answer": [
+        "しっし"
+      ],
+      "meaning": "jealousy"
+    },
+    {
+      "question": "斬新",
+      "answer": [
+        "ざんしん"
+      ],
+      "meaning": "novel, original, newness"
+    },
+    {
+      "question": "乞う",
+      "answer": [
+        "こう"
+      ],
+      "meaning": "to beg, to ask, to request, to invite"
+    },
+    {
+      "question": "叱正",
+      "answer": [
+        "しっせい"
+      ],
+      "meaning": "pointing out errors, correction, critique"
+    },
+    {
+      "question": "鬱乎",
+      "answer": [
+        "うっこ"
+      ]
+    },
+    {
+      "question": "愛媛",
+      "answer": [
+        "えひめ"
+      ]
+    },
+    {
+      "question": "頓挫",
+      "answer": [
+        "とんざ"
+      ],
+      "meaning": "setback, deadlock, being at a standstill or impasse"
+    },
+    {
+      "question": "拭浄",
+      "answer": [
+        "しょくじょう"
+      ],
+      "meaning": "wiping and purifying, wiping and cleansing"
+    },
+    {
+      "question": "目尻",
+      "answer": [
+        "めじり"
+      ],
+      "meaning": "outer canthus, outer corner of the eye"
+    },
+    {
+      "question": "喝采",
+      "answer": [
+        "かっさい"
+      ],
+      "meaning": "acclamation, applause, ovation, cheers"
+    },
+    {
+      "question": "頃合い",
+      "answer": [
+        "ころあい"
+      ],
+      "meaning": "suitable time, good time"
+    },
+    {
+      "question": "腫瘍",
+      "answer": [
+        "しゅよう"
+      ],
+      "meaning": "tumor, tumour, neoplasm, neoplasia"
+    },
+    {
+      "question": "傲岸",
+      "answer": [
+        "ごうがん"
+      ],
+      "meaning": "haughty, arrogant, supercilious"
+    },
+    {
+      "question": "駒",
+      "answer": [
+        "こま"
+      ],
+      "meaning": "piece (in shogi, chess, etc.)"
+    },
+    {
+      "question": "血痕",
+      "answer": [
+        "けっこん"
+      ],
+      "meaning": "bloodstain"
+    },
+    {
+      "question": "脱柵",
+      "answer": [
+        "だっさく"
+      ]
+    },
+    {
+      "question": "恣意",
+      "answer": [
+        "しい"
+      ],
+      "meaning": "arbitrariness"
+    },
+    {
+      "question": "呪縛",
+      "answer": [
+        "じゅばく"
+      ],
+      "meaning": "spell (that restricts one's movements), binding spell"
+    },
+    {
+      "question": "羞悪",
+      "answer": [
+        "しゅうお"
+      ],
+      "meaning": "shame and hatred of evil"
+    },
+    {
+      "question": "必須",
+      "answer": [
+        "ひっす",
+        "ひっしゅ",
+        "ひっすう"
+      ],
+      "meaning": "indispensable, essential, requisite, required, compulsory, necessary"
+    },
+    {
+      "question": "煎る",
+      "answer": [
+        "いる"
+      ],
+      "meaning": "to parch, to fry, to fire, to broil, to roast, to boil down (in oil)"
+    },
+    {
+      "question": "詮議",
+      "answer": [
+        "せんぎ"
+      ],
+      "meaning": "discussion, examination"
+    },
+    {
+      "question": "肝腎",
+      "answer": [
+        "かんじん"
+      ],
+      "meaning": "essential, fundamental, crucial, vital, main"
+    },
+    {
+      "question": "遡及",
+      "answer": [
+        "そきゅう",
+        "さっきゅう"
+      ],
+      "meaning": "tracing back, retroactivity"
+    },
+    {
+      "question": "未曽有",
+      "answer": [
+        "みぞう",
+        "みそう"
+      ],
+      "meaning": "unprecedented, unheard of"
+    },
+    {
+      "question": "爽やか",
+      "answer": [
+        "さわやか"
+      ],
+      "meaning": "fresh, refreshing, invigorating"
+    },
+    {
+      "question": "痩地",
+      "answer": [
+        "そうち"
+      ]
+    },
+    {
+      "question": "踪跡",
+      "answer": [
+        "そうせき"
+      ]
+    },
+    {
+      "question": "丼勘定",
+      "answer": [
+        "どんぶりかんじょう"
+      ],
+      "meaning": "rough estimate, sloppy accounting, slapdash bookkeeping"
+    },
+    {
+      "question": "遮蔽",
+      "answer": [
+        "しゃへい"
+      ],
+      "meaning": "shielding, sheltering, screening, shading, masking"
+    },
+    {
+      "question": "衆寡",
+      "answer": [
+        "しゅうか"
+      ],
+      "meaning": "the many and the few"
+    },
+    {
+      "question": "八百長",
+      "answer": [
+        "やおちょう"
+      ],
+      "meaning": "match fixing, put-up job, fixed game"
+    },
+    {
+      "question": "葬る",
+      "answer": [
+        "ほうむる",
+        "ほうぶる"
+      ],
+      "meaning": "to bury, to inter, to entomb"
+    },
+    {
+      "question": "安寧",
+      "answer": [
+        "あんねい"
+      ],
+      "meaning": "peace (esp. public peace)"
+    },
+    {
+      "question": "双璧",
+      "answer": [
+        "そうへき"
+      ],
+      "meaning": "(two) matchless things, (two) matchless people"
+    },
+    {
+      "question": "捻出",
+      "answer": [
+        "ねんしゅつ"
+      ],
+      "meaning": "contriving (to raise funds, to find time, etc.)"
+    },
+    {
+      "question": "奈落",
+      "answer": [
+        "ならく"
+      ],
+      "meaning": "Naraka, hell, hades"
+    },
+    {
+      "question": "嘲罵",
+      "answer": [
+        "ちょうば"
+      ],
+      "meaning": "taunt, insult, abuse"
+    },
+    {
+      "question": "綻びる",
+      "answer": [
+        "ほころびる"
+      ],
+      "meaning": "to come apart at the seams, to be ripped, to be torn"
+    },
+    {
+      "question": "遜色",
+      "answer": [
+        "そんしょく"
+      ],
+      "meaning": "inferiority"
+    },
+    {
+      "question": "和睦",
+      "answer": [
+        "わぼく"
+      ],
+      "meaning": "reconciliation, peace, rapprochement"
+    },
+    {
+      "question": "弥次馬",
+      "answer": [
+        "やじうま"
+      ],
+      "meaning": "curious onlookers, rubbernecks"
+    },
+    {
+      "question": "比喩",
+      "answer": [
+        "ひゆ"
+      ],
+      "meaning": "simile, metaphor, allegory, parable"
+    },
+    {
+      "question": "蜂起",
+      "answer": [
+        "ほうき"
+      ],
+      "meaning": "uprising, revolt"
+    },
+    {
+      "question": "粛然",
+      "answer": [
+        "しゅくぜん"
+      ],
+      "meaning": "silent, quiet, solemn"
+    },
+    {
+      "question": "傑物",
+      "answer": [
+        "けつぶつ"
+      ],
+      "meaning": "great man, heroic figure, remarkable character"
+    },
+    {
+      "question": "枝垂れ",
+      "answer": [
+        "しだれ"
+      ],
+      "meaning": "weeping form (e.g. tree)"
+    },
+    {
+      "question": "旨",
+      "answer": [
+        "むね"
+      ],
+      "meaning": "principle, aim, main purpose, central part, pillar"
+    },
+    {
+      "question": "貪る",
+      "answer": [
+        "むさぼる"
+      ],
+      "meaning": "to covet, to crave, to lust insatiably for"
+    },
+    {
+      "question": "配膳",
+      "answer": [
+        "はいぜん"
+      ],
+      "meaning": "setting a place, setting the table"
+    },
+    {
+      "question": "旦夕",
+      "answer": [
+        "たんせき"
+      ],
+      "meaning": "on the brink of"
+    },
+    {
+      "question": "焼酎",
+      "answer": [
+        "しょうちゅう"
+      ],
+      "meaning": "shochu, Japanese spirit distilled from sweet potatoes, rice, etc."
+    },
+    {
+      "question": "斑点",
+      "answer": [
+        "はんてん"
+      ],
+      "meaning": "speck, fleck"
+    },
+    {
+      "question": "匂い",
+      "answer": [
+        "におい"
+      ],
+      "meaning": "odour, odor, scent, smell, stench"
+    },
+    {
+      "question": "謎めいた",
+      "answer": [
+        "なぞめいた"
+      ]
+    },
+    {
+      "question": "蔑視",
+      "answer": [
+        "べっし"
+      ],
+      "meaning": "contempt, derision, slight, disdain"
+    },
+    {
+      "question": "冥加",
+      "answer": [
+        "みょうが"
+      ],
+      "meaning": "divine protection or blessing"
+    },
+    {
+      "question": "伴侶",
+      "answer": [
+        "はんりょ",
+        "ばんりょ"
+      ],
+      "meaning": "companion, partner, spouse"
+    },
+    {
+      "question": "疎い",
+      "answer": [
+        "うとい"
+      ],
+      "meaning": "distant, estranged, disinterested"
+    },
+    {
+      "question": "剥製",
+      "answer": [
+        "はくせい"
+      ],
+      "meaning": "stuffing, mounting"
+    },
+    {
+      "question": "訃報",
+      "answer": [
+        "ふほう"
+      ],
+      "meaning": "news of a person's death, obituary"
+    },
+    {
+      "question": "薫陶",
+      "answer": [
+        "くんとう"
+      ],
+      "meaning": "education, training, discipline"
+    },
+    {
+      "question": "急騰",
+      "answer": [
+        "きゅうとう"
+      ],
+      "meaning": "sudden rise, jump, sharp rise"
+    },
+    {
+      "question": "瀬戸際",
+      "answer": [
+        "せとぎわ"
+      ],
+      "meaning": "brink, critical moment"
+    },
+    {
+      "question": "筒先",
+      "answer": [
+        "つつさき"
+      ],
+      "meaning": "nozzle, muzzle, gunpoint"
+    },
+    {
+      "question": "年端",
+      "answer": [
+        "としは"
+      ],
+      "meaning": "age, years (old)"
+    },
+    {
+      "question": "拝謁",
+      "answer": [
+        "はいえつ"
+      ],
+      "meaning": "having an audience with someone of very high social standing (e.g. the emperor)"
+    },
+    {
+      "question": "懐柔",
+      "answer": [
+        "かいじゅう"
+      ],
+      "meaning": "winning over, placation, gentle persuasion"
+    },
+    {
+      "question": "窮状",
+      "answer": [
+        "きゅうじょう"
+      ],
+      "meaning": "distress, wretched condition"
+    },
+    {
+      "question": "潔く",
+      "answer": [
+        "いさぎよく"
+      ]
+    },
+    {
+      "question": "好事家",
+      "answer": [
+        "こうずか"
+      ],
+      "meaning": "dilettante, person of fantastic taste"
+    },
+    {
+      "question": "絡む",
+      "answer": [
+        "からむ"
+      ],
+      "meaning": "to entangle, to entwine"
+    },
+    {
+      "question": "涙腺",
+      "answer": [
+        "るいせん"
+      ],
+      "meaning": "tear gland, lacrimal gland"
+    },
+    {
+      "question": "堆積",
+      "answer": [
+        "たいせき"
+      ],
+      "meaning": "accumulation, pile, heap"
+    },
+    {
+      "question": "懐かしい",
+      "answer": [
+        "なつかしい"
+      ],
+      "meaning": "dear, desired, missed"
+    },
+    {
+      "question": "霜柱",
+      "answer": [
+        "しもばしら"
+      ],
+      "meaning": "frost columns, ice needles"
+    },
+    {
+      "question": "利益",
+      "answer": [
+        "りやく",
+        "りえき"
+      ],
+      "meaning": "profit, gains"
+    },
+    {
+      "question": "礎",
+      "answer": [
+        "いしずえ"
+      ],
+      "meaning": "foundation stone, cornerstone"
+    },
+    {
+      "question": "但し",
+      "answer": [
+        "ただし"
+      ],
+      "meaning": "but, however, provided that"
+    },
+    {
+      "question": "汎説",
+      "answer": [
+        "はんせつ"
+      ]
+    },
+    {
+      "question": "焦眉",
+      "answer": [
+        "しょうび"
+      ],
+      "meaning": "emergency, urgency, imminence"
+    },
+    {
+      "question": "変貌",
+      "answer": [
+        "へんぼう"
+      ],
+      "meaning": "transfiguration, transformation, change of appearance"
+    },
+    {
+      "question": "殻",
+      "answer": [
+        "から",
+        "がら",
+        "かく",
+        "かい"
+      ],
+      "meaning": "shell, husk, hull, pod, chaff, chicken bones (e.g. for soup), chicken carcass, shell (e.g. electron shell), egg, eggshell"
+    },
+    {
+      "question": "競う",
+      "answer": [
+        "きそう"
+      ],
+      "meaning": "to compete, to contend, to vie, to contest"
+    },
+    {
+      "question": "浄瑠璃",
+      "answer": [
+        "じょうるり"
+      ],
+      "meaning": "type of dramatic recitation accompanied by a shamisen (associated with the Japanese puppet theater)"
+    },
+    {
+      "question": "乾麺",
+      "answer": [
+        "かんめん"
+      ],
+      "meaning": "dried noodles"
+    },
+    {
+      "question": "施錠",
+      "answer": [
+        "せじょう"
+      ],
+      "meaning": "locking"
+    },
+    {
+      "question": "精緻",
+      "answer": [
+        "せいち"
+      ],
+      "meaning": "delicate, minute, subtle"
+    },
+    {
+      "question": "充填",
+      "answer": [
+        "じゅうてん"
+      ],
+      "meaning": "filling (up), replenishing, filling in (tooth), loading (gun with ammunition, camera with film, etc.), packing, plugging"
+    },
+    {
+      "question": "索引",
+      "answer": [
+        "さくいん"
+      ],
+      "meaning": "index (in a book)"
+    },
+    {
+      "question": "虹",
+      "answer": [
+        "にじ"
+      ],
+      "meaning": "rainbow"
+    },
+    {
+      "question": "尻餅",
+      "answer": [
+        "しりもち"
+      ],
+      "meaning": "falling on one's backside (behind, bottom), pratfall"
+    },
+    {
+      "question": "湧水",
+      "answer": [
+        "ゆうすい"
+      ],
+      "meaning": "spring, welling of water"
+    },
+    {
+      "question": "肥沃",
+      "answer": [
+        "ひよく"
+      ],
+      "meaning": "fertile, rich, productive"
+    },
+    {
+      "question": "冷徹",
+      "answer": [
+        "れいてつ"
+      ],
+      "meaning": "cool-headed"
+    },
+    {
+      "question": "全幅",
+      "answer": [
+        "ぜんぷく"
+      ],
+      "meaning": "full, wholehearted, utmost, all, every"
+    },
+    {
+      "question": "膝",
+      "answer": [
+        "ひざ"
+      ],
+      "meaning": "knee"
+    },
+    {
+      "question": "頬張る",
+      "answer": [
+        "ほおばる",
+        "ほうばる"
+      ],
+      "meaning": "to stuff one's cheeks, to fill one's mouth (with food)"
+    },
+    {
+      "question": "賭博",
+      "answer": [
+        "とばく"
+      ],
+      "meaning": "gambling"
+    },
+    {
+      "question": "爪先",
+      "answer": [
+        "つまさき"
+      ],
+      "meaning": "toes, tips of the toes, toe of a shoe, sock, etc."
+    },
+    {
+      "question": "脊椎",
+      "answer": [
+        "せきつい"
+      ],
+      "meaning": "spine, vertebral column"
+    },
+    {
+      "question": "箸",
+      "answer": [
+        "はし"
+      ],
+      "meaning": "chopsticks"
+    },
+    {
+      "question": "肘",
+      "answer": [
+        "ひじ"
+      ],
+      "meaning": "elbow"
+    },
+    {
+      "question": "哺乳瓶",
+      "answer": [
+        "ほにゅうびん"
+      ],
+      "meaning": "baby bottle"
+    },
+    {
+      "question": "夕闇",
+      "answer": [
+        "ゆうやみ"
+      ],
+      "meaning": "dusk, twilight"
+    },
+    {
+      "question": "夢枕",
+      "answer": [
+        "ゆめまくら"
+      ],
+      "meaning": "at the bedside where one dreams"
+    },
+    {
+      "question": "頂戴",
+      "answer": [
+        "ちょうだい"
+      ],
+      "meaning": "receiving, reception, getting, being given"
+    },
+    {
+      "question": "語呂",
+      "answer": [
+        "ごろ"
+      ],
+      "meaning": "sound (of a sentence), euphony"
+    },
+    {
+      "question": "漠",
+      "answer": [
+        "ばく"
+      ]
+    },
+    {
+      "question": "捉え方",
+      "answer": [
+        "とらえかた"
+      ]
+    },
+    {
+      "question": "処方箋",
+      "answer": [
+        "しょほうせん"
+      ],
+      "meaning": "prescription"
+    },
+    {
+      "question": "梨",
+      "answer": [
+        "なし"
+      ],
+      "meaning": "nashi (Pyrus pyrifolia, esp. var. culta), Japanese pear, Asian pear, sand pear, apple pear"
+    },
+    {
+      "question": "千羽鶴",
+      "answer": [
+        "せんばづる"
+      ],
+      "meaning": "(string of) many (traditionally 1000) paper cranes"
+    },
+    {
+      "question": "盲亀",
+      "answer": [
+        "もうき"
+      ],
+      "meaning": "blind turtle"
+    },
+    {
+      "question": "喉元",
+      "answer": [
+        "のどもと"
+      ],
+      "meaning": "throat"
+    },
+    {
+      "question": "呪文",
+      "answer": [
+        "じゅもん"
+      ],
+      "meaning": "spell, charm, incantation, magic word"
+    },
+    {
+      "question": "謙遜",
+      "answer": [
+        "けんそん"
+      ],
+      "meaning": "modesty, humility, being humble"
+    },
+    {
+      "question": "氾濫",
+      "answer": [
+        "はんらん"
+      ],
+      "meaning": "overflowing, flood, inundation, deluge"
+    },
+    {
+      "question": "妖しい",
+      "answer": [
+        "あやしい"
+      ],
+      "meaning": "suspicious, dubious, doubtful, dodgy, suspicious (referring to a potential amorous relation), dangerous (e.g. financial situation), ominous (e.g. weather), strange, shady, fishy"
+    },
+    {
+      "question": "惨禍",
+      "answer": [
+        "さんか"
+      ],
+      "meaning": "calamity"
+    },
+    {
+      "question": "薦めた",
+      "answer": [
+        "すすめた"
+      ]
+    },
+    {
+      "question": "鬱積",
+      "answer": [
+        "うっせき"
+      ],
+      "meaning": "accumulation (e.g. of emotions, grievances, etc.), buildup, suppression (e.g. of anger)"
+    },
+    {
+      "question": "寸隙",
+      "answer": [
+        "すんげき"
+      ],
+      "meaning": "spare time, spare moment"
+    },
+    {
+      "question": "貼る",
+      "answer": [
+        "はる"
+      ],
+      "meaning": "to stick, to paste, to affix"
+    },
+    {
+      "question": "渇望",
+      "answer": [
+        "かつぼう"
+      ],
+      "meaning": "craving, longing, thirsting"
+    },
+    {
+      "question": "眺め",
+      "answer": [
+        "ながめ"
+      ],
+      "meaning": "scene, view, prospect, outlook"
+    },
+    {
+      "question": "苛性",
+      "answer": [
+        "かせい"
+      ],
+      "meaning": "caustic"
+    },
+    {
+      "question": "深更",
+      "answer": [
+        "しんこう"
+      ],
+      "meaning": "middle of the night, dead of night, midnight"
+    },
+    {
+      "question": "尊崇",
+      "answer": [
+        "そんすう"
+      ],
+      "meaning": "reverence, veneration"
+    },
+    {
+      "question": "畏縮",
+      "answer": [
+        "いしゅく"
+      ],
+      "meaning": "wincing, cowering, shrinking, flinching, recoiling"
+    },
+    {
+      "question": "毀棄",
+      "answer": [
+        "きき"
+      ],
+      "meaning": "destruction, demolition, damage"
+    },
+    {
+      "question": "命乞い",
+      "answer": [
+        "いのちごい"
+      ],
+      "meaning": "begging for one's life, pleading for one's life"
+    },
+    {
+      "question": "羞恥",
+      "answer": [
+        "しゅうち"
+      ],
+      "meaning": "shyness, bashfulness, shame"
+    },
+    {
+      "question": "堆肥",
+      "answer": [
+        "たいひ"
+      ],
+      "meaning": "compost"
+    },
+    {
+      "question": "斑紋",
+      "answer": [
+        "はんもん"
+      ],
+      "meaning": "speckles, spotted pattern"
+    },
+    {
+      "question": "沃野",
+      "answer": [
+        "よくや"
+      ],
+      "meaning": "fertile fields or plain"
+    },
+    {
+      "question": "一矢",
+      "answer": [
+        "いっし"
+      ],
+      "meaning": "an arrow"
+    },
+    {
+      "question": "清艶",
+      "answer": [
+        "せいえん"
+      ]
+    },
+    {
+      "question": "拳銃",
+      "answer": [
+        "けんじゅう"
+      ],
+      "meaning": "pistol, handgun, revolver"
+    },
+    {
+      "question": "嘲弄",
+      "answer": [
+        "ちょうろう"
+      ],
+      "meaning": "scorn, mockery, ridicule"
+    },
+    {
+      "question": "狭義",
+      "answer": [
+        "きょうぎ"
+      ],
+      "meaning": "narrow sense (e.g. of a word)"
+    },
+    {
+      "question": "慶事",
+      "answer": [
+        "けいじ"
+      ],
+      "meaning": "auspicious event"
+    },
+    {
+      "question": "象牙",
+      "answer": [
+        "ぞうげ"
+      ],
+      "meaning": "ivory"
+    },
+    {
+      "question": "虚空",
+      "answer": [
+        "こくう"
+      ],
+      "meaning": "empty space, empty sky"
+    },
+    {
+      "question": "茨城",
+      "answer": [
+        "いばらき"
+      ]
+    },
+    {
+      "question": "臼",
+      "answer": [
+        "うす"
+      ],
+      "meaning": "millstone, mortar"
+    },
+    {
+      "question": "傲語",
+      "answer": [
+        "ごうご"
+      ]
+    },
+    {
+      "question": "払拭",
+      "answer": [
+        "ふっしょく",
+        "ふっしき"
+      ],
+      "meaning": "wiping out, sweeping away, eradicating, dispelling"
+    },
+    {
+      "question": "元旦",
+      "answer": [
+        "がんたん"
+      ],
+      "meaning": "New Year's Day"
+    },
+    {
+      "question": "眉唾物",
+      "answer": [
+        "まゆつばもの"
+      ],
+      "meaning": "fake, counterfeit"
+    },
+    {
+      "question": "藍染め",
+      "answer": [
+        "あいぞめ"
+      ],
+      "meaning": "indigo dye"
+    },
+    {
+      "question": "詩吟",
+      "answer": [
+        "しぎん"
+      ],
+      "meaning": "reciting Chinese poems"
+    },
+    {
+      "question": "臆する",
+      "answer": [
+        "おくする"
+      ],
+      "meaning": "to be hesitant, to feel timid"
+    },
+    {
+      "question": "鍵穴",
+      "answer": [
+        "かぎあな"
+      ],
+      "meaning": "keyhole"
+    },
+    {
+      "question": "諦視",
+      "answer": [
+        "ていし"
+      ]
+    },
+    {
+      "question": "稚拙",
+      "answer": [
+        "ちせつ"
+      ],
+      "meaning": "unskillful, childish, immature, naive, artless, clumsy, crude"
+    },
+    {
+      "question": "煮沸",
+      "answer": [
+        "しゃふつ"
+      ],
+      "meaning": "boiling up"
+    },
+    {
+      "question": "断崖",
+      "answer": [
+        "だんがい"
+      ],
+      "meaning": "palisade, cliff"
+    },
+    {
+      "question": "手綱",
+      "answer": [
+        "たづな"
+      ],
+      "meaning": "bridle, reins"
+    },
+    {
+      "question": "否めない",
+      "answer": [
+        "いなめない"
+      ],
+      "meaning": "cannot deny, undeniable, incontrovertible"
+    },
+    {
+      "question": "色艶",
+      "answer": [
+        "いろつや"
+      ],
+      "meaning": "colour and lustre, color and luster, complexion, colour, color"
+    },
+    {
+      "question": "三角巾",
+      "answer": [
+        "さんかくきん"
+      ],
+      "meaning": "triangular bandage, sling"
+    },
+    {
+      "question": "手頃",
+      "answer": [
+        "てごろ"
+      ],
+      "meaning": "moderate, handy, convenient, reasonable"
+    },
+    {
+      "question": "尻拭い",
+      "answer": [
+        "しりぬぐい"
+      ],
+      "meaning": "cleaning up or covering for another, bearing the consequences of someone else's error, paying a debt for someone, wiping another's buttocks"
+    },
+    {
+      "question": "破綻",
+      "answer": [
+        "はたん"
+      ],
+      "meaning": "failure, bankruptcy"
+    },
+    {
+      "question": "訃告",
+      "answer": [
+        "ふこく"
+      ]
+    },
+    {
+      "question": "慄然",
+      "answer": [
+        "りつぜん"
+      ],
+      "meaning": "terrified, horrified"
+    },
+    {
+      "question": "富裕",
+      "answer": [
+        "ふゆう"
+      ],
+      "meaning": "wealth, riches, opulence"
+    },
+    {
+      "question": "苛辣",
+      "answer": [
+        "からつ"
+      ]
+    },
+    {
+      "question": "傲然",
+      "answer": [
+        "ごうぜん"
+      ],
+      "meaning": "proud, arrogant, haughty"
+    },
+    {
+      "question": "補填",
+      "answer": [
+        "ほてん"
+      ],
+      "meaning": "compensating, making up for, supplementation"
+    },
+    {
+      "question": "払暁",
+      "answer": [
+        "ふつぎょう"
+      ],
+      "meaning": "dawn, daybreak"
+    },
+    {
+      "question": "懇々",
+      "answer": [
+        "こんこん"
+      ],
+      "meaning": "repeated, earnest, kind"
+    },
+    {
+      "question": "葛切り",
+      "answer": [
+        "くずきり"
+      ],
+      "meaning": "kudzu starch noodles"
+    },
+    {
+      "question": "渉外",
+      "answer": [
+        "しょうがい"
+      ],
+      "meaning": "public relations, client liaison, client relations"
+    },
+    {
+      "question": "由",
+      "answer": [
+        "よし"
+      ],
+      "meaning": "reason, significance, cause"
+    },
+    {
+      "question": "旺然",
+      "answer": [
+        "おうぜん"
+      ],
+      "meaning": "prosperous"
+    },
+    {
+      "question": "僅少",
+      "answer": [
+        "きんしょう"
+      ],
+      "meaning": "(a) few, (a) little, trifling, insignificant, small (amount), scarce (stocks)"
+    },
+    {
+      "question": "痕跡",
+      "answer": [
+        "こんせき"
+      ],
+      "meaning": "trace, traces, vestige, vestiges"
+    },
+    {
+      "question": "凄艶",
+      "answer": [
+        "せいえん"
+      ],
+      "meaning": "weirdly beautiful"
+    },
+    {
+      "question": "緻密",
+      "answer": [
+        "ちみつ"
+      ],
+      "meaning": "minute, fine, delicate, accurate, precise, elaborate"
+    },
+    {
+      "question": "隠蔽",
+      "answer": [
+        "いんぺい"
+      ],
+      "meaning": "concealment, suppression, hiding"
+    },
+    {
+      "question": "翻弄",
+      "answer": [
+        "ほんろう"
+      ],
+      "meaning": "trifling with, toying with, playing with, making sport of, making fun of, leading around by the nose"
+    },
+    {
+      "question": "窯元",
+      "answer": [
+        "かまもと"
+      ],
+      "meaning": "pottery (i.e. the place)"
+    },
+    {
+      "question": "爪牙",
+      "answer": [
+        "そうが"
+      ],
+      "meaning": "claws and fangs, claws and tusks"
+    },
+    {
+      "question": "爪痕",
+      "answer": [
+        "つめあと"
+      ],
+      "meaning": "fingernail mark, scratch"
+    },
+    {
+      "question": "賭場",
+      "answer": [
+        "とば"
+      ],
+      "meaning": "gambling den"
+    },
+    {
+      "question": "担う",
+      "answer": [
+        "になう"
+      ],
+      "meaning": "to carry on shoulder, to shoulder (gun)"
+    },
+    {
+      "question": "開襟",
+      "answer": [
+        "かいきん"
+      ],
+      "meaning": "open-necked (shirt)"
+    },
+    {
+      "question": "愛玩",
+      "answer": [
+        "あいがん"
+      ],
+      "meaning": "caring for (esp. a pet or a small object), cherishing, being fond of, prizing, treasuring"
+    },
+    {
+      "question": "緑青",
+      "answer": [
+        "ろくしょう",
+        "りょくしょう"
+      ],
+      "meaning": "verdigris, green rust, copper rust"
+    },
+    {
+      "question": "醜い",
+      "answer": [
+        "みにくい"
+      ],
+      "meaning": "ugly, unattractive"
+    },
+    {
+      "question": "苛烈",
+      "answer": [
+        "かれつ"
+      ],
+      "meaning": "severe, stern"
+    },
+    {
+      "question": "錦衣",
+      "answer": [
+        "きんい"
+      ]
+    },
+    {
+      "question": "挫折",
+      "answer": [
+        "ざせつ"
+      ],
+      "meaning": "setback, failure (e.g. plans, business), frustration, discouragement"
+    },
+    {
+      "question": "脊髄",
+      "answer": [
+        "せきずい"
+      ],
+      "meaning": "spinal cord"
+    },
+    {
+      "question": "貼付",
+      "answer": [
+        "ちょうふ（てんぷ）",
+        "ちょうふ",
+        "てんぷ"
+      ],
+      "meaning": "pasting, sticking, attaching, affixing, appending"
+    },
+    {
+      "question": "完璧",
+      "answer": [
+        "かんぺき"
+      ],
+      "meaning": "perfect, complete, flawless"
+    },
+    {
+      "question": "籠絡",
+      "answer": [
+        "ろうらく"
+      ],
+      "meaning": "inveigling, ensnaring, enticement, cajoling"
+    },
+    {
+      "question": "地下茎",
+      "answer": [
+        "ちかけい"
+      ],
+      "meaning": "rhizome"
+    },
+    {
+      "question": "潰す",
+      "answer": [
+        "つぶす"
+      ],
+      "meaning": "to smash, to crush"
+    },
+    {
+      "question": "捻挫",
+      "answer": [
+        "ねんざ"
+      ],
+      "meaning": "sprain"
+    },
+    {
+      "question": "停頓",
+      "answer": [
+        "ていとん"
+      ],
+      "meaning": "deadlock, standstill, stalemate, set-back, abeyance"
+    },
+    {
+      "question": "醸す",
+      "answer": [
+        "かもす"
+      ],
+      "meaning": "to brew (sake, etc.)"
+    },
+    {
+      "question": "遊山",
+      "answer": [
+        "ゆさん"
+      ],
+      "meaning": "excursion, outing, picnic"
+    },
+    {
+      "question": "魔窟",
+      "answer": [
+        "まくつ"
+      ],
+      "meaning": "den of thieves"
+    },
+    {
+      "question": "聴聞",
+      "answer": [
+        "ちょうもん"
+      ],
+      "meaning": "listening, hearing"
+    },
+    {
+      "question": "布施",
+      "answer": [
+        "ふせ"
+      ],
+      "meaning": "alms, offerings"
+    },
+    {
+      "question": "牙",
+      "answer": [
+        "きば"
+      ],
+      "meaning": "tusk, fang"
+    },
+    {
+      "question": "疑惧",
+      "answer": [
+        "ぎぐ",
+        "ぎく"
+      ],
+      "meaning": "apprehension, uneasiness"
+    },
+    {
+      "question": "風采",
+      "answer": [
+        "ふうさい"
+      ],
+      "meaning": "appearance, air, mien, getup"
+    },
+    {
+      "question": "姻戚",
+      "answer": [
+        "いんせき"
+      ],
+      "meaning": "relative by marriage, affinity"
+    },
+    {
+      "question": "嘲る",
+      "answer": [
+        "あざける"
+      ],
+      "meaning": "to scoff, to laugh at, to make fun of, to ridicule, to jeer at"
+    },
+    {
+      "question": "蔑んだ",
+      "answer": [
+        "さげすんだ"
+      ]
+    },
+    {
+      "question": "麓",
+      "answer": [
+        "ふもと"
+      ],
+      "meaning": "foot (of a mountain or hill), bottom, base"
+    },
+    {
+      "question": "会得",
+      "answer": [
+        "えとく"
+      ],
+      "meaning": "understanding, comprehension, grasp, perception, appreciation, mastery (of an art or skill)"
+    },
+    {
+      "question": "絶崖",
+      "answer": [
+        "ぜつがい"
+      ]
+    },
+    {
+      "question": "采配",
+      "answer": [
+        "さいはい"
+      ],
+      "meaning": "baton (of command)"
+    },
+    {
+      "question": "罵言",
+      "answer": [
+        "ばげん"
+      ],
+      "meaning": "(verbal) abuse, abusive language"
+    },
+    {
+      "question": "端数",
+      "answer": [
+        "はすう"
+      ],
+      "meaning": "fraction, odd amount, leftover amount"
+    },
+    {
+      "question": "漸進",
+      "answer": [
+        "ぜんしん"
+      ],
+      "meaning": "gradual progress, steady advance"
+    },
+    {
+      "question": "造詣",
+      "answer": [
+        "ぞうけい"
+      ],
+      "meaning": "deep knowledge, attainments, scholarship"
+    },
+    {
+      "question": "偽",
+      "answer": [
+        "にせ",
+        "ぎ"
+      ],
+      "meaning": "imitation, fake, phony, counterfeit, forged, bogus, sham, falseness (logic), falsehood"
+    },
+    {
+      "question": "宰領",
+      "answer": [
+        "さいりょう"
+      ],
+      "meaning": "supervision, superintendence, management, supervisor"
+    },
+    {
+      "question": "瓦石",
+      "answer": [
+        "がせき"
+      ],
+      "meaning": "worthless thing, garbage, roof tile and stone"
+    },
+    {
+      "question": "洞窟",
+      "answer": [
+        "どうくつ"
+      ],
+      "meaning": "cavern, cave, cave system, grotto"
+    },
+    {
+      "question": "塞ぐ",
+      "answer": [
+        "ふさぐ"
+      ],
+      "meaning": "to stop up, to close up, to block (up), to plug up, to shut up, to cover (ears, eyes, etc.), to close (eyes, mouth)"
+    },
+    {
+      "question": "煎餅",
+      "answer": [
+        "せんべい"
+      ],
+      "meaning": "rice cracker, Japanese cracker, rice cookie, wafer"
+    },
+    {
+      "question": "椎間板",
+      "answer": [
+        "ついかんばん"
+      ],
+      "meaning": "intervertebral disk"
+    },
+    {
+      "question": "養蜂場",
+      "answer": [
+        "ようほうじょう"
+      ],
+      "meaning": "bee yard, apiary"
+    },
+    {
+      "question": "両脇",
+      "answer": [
+        "りょうわき"
+      ],
+      "meaning": "both sides"
+    },
+    {
+      "question": "比肩",
+      "answer": [
+        "ひけん"
+      ],
+      "meaning": "ranking equal with, comparing favourably with, comparing favorably with"
+    },
+    {
+      "question": "骸骨",
+      "answer": [
+        "がいこつ"
+      ],
+      "meaning": "skeleton"
+    },
+    {
+      "question": "要塞",
+      "answer": [
+        "ようさい"
+      ],
+      "meaning": "fort, stronghold, fortification"
+    },
+    {
+      "question": "剥離",
+      "answer": [
+        "はくり"
+      ],
+      "meaning": "detachment, coming off, peeling off"
+    },
+    {
+      "question": "書棚",
+      "answer": [
+        "しょだな"
+      ],
+      "meaning": "bookshelf"
+    },
+    {
+      "question": "醜聞",
+      "answer": [
+        "しゅうぶん"
+      ],
+      "meaning": "scandal"
+    },
+    {
+      "question": "隙",
+      "answer": [
+        "すき",
+        "げき",
+        "ひま",
+        "すきけ"
+      ],
+      "meaning": "gap, space"
+    },
+    {
+      "question": "廃屋",
+      "answer": [
+        "はいおく"
+      ],
+      "meaning": "dilapidated house, deserted house"
+    },
+    {
+      "question": "陥れる",
+      "answer": [
+        "おとしいれる"
+      ],
+      "meaning": "to trick someone into (committing a crime, etc.), to hatch a plan and deceive someone"
+    },
+    {
+      "question": "潰敗",
+      "answer": [
+        "かいはい"
+      ]
+    },
+    {
+      "question": "往詣",
+      "answer": [
+        "おうけい"
+      ]
+    },
+    {
+      "question": "鉄柵",
+      "answer": [
+        "てっさく"
+      ],
+      "meaning": "iron railing or fence"
+    },
+    {
+      "question": "羨ましい",
+      "answer": [
+        "うらやましい"
+      ],
+      "meaning": "envious (feeling, etc.), jealous"
+    },
+    {
+      "question": "爪弾き",
+      "answer": [
+        "つまはじき",
+        "つまびき",
+        "つめびき"
+      ],
+      "meaning": "black sheep (of a family), ostracism, playing with one's fingers (a guitar, etc.)"
+    },
+    {
+      "question": "美貌",
+      "answer": [
+        "びぼう"
+      ],
+      "meaning": "beautiful face, good looks, beauty"
+    },
+    {
+      "question": "閑却",
+      "answer": [
+        "かんきゃく"
+      ],
+      "meaning": "negligence, disregard"
+    },
+    {
+      "question": "偏狭",
+      "answer": [
+        "へんきょう"
+      ],
+      "meaning": "narrow-mindedness, intolerance, illiberality, narrowness"
+    },
+    {
+      "question": "葛根湯",
+      "answer": [
+        "かっこんとう"
+      ],
+      "meaning": "infusion of kudzu, cinnamon, etc., used as an antifebrile, for hangovers, etc."
+    },
+    {
+      "question": "叱責",
+      "answer": [
+        "しっせき"
+      ],
+      "meaning": "reprimand, rebuke"
+    },
+    {
+      "question": "鏡餅",
+      "answer": [
+        "かがみもち"
+      ],
+      "meaning": "mirror-shaped mochi, usu. a pair stacked in order of size with a daidai on top, used as a New Year offering, then cut and eaten on January 11."
+    },
+    {
+      "question": "頻出",
+      "answer": [
+        "ひんしゅつ"
+      ],
+      "meaning": "common, frequent"
+    },
+    {
+      "question": "亡者",
+      "answer": [
+        "もうじゃ"
+      ],
+      "meaning": "the dead, ghost"
+    },
+    {
+      "question": "傲慢",
+      "answer": [
+        "ごうまん"
+      ],
+      "meaning": "haughty, arrogant, insolent, proud, overbearing"
+    },
+    {
+      "question": "長患い",
+      "answer": [
+        "ながわずらい"
+      ],
+      "meaning": "long illness, protracted illness"
+    },
+    {
+      "question": "平癒",
+      "answer": [
+        "へいゆ"
+      ],
+      "meaning": "recovery, convalescence"
+    },
+    {
+      "question": "諧和",
+      "answer": [
+        "かいわ",
+        "かいか"
+      ],
+      "meaning": "gentle mutual affection, harmony"
+    },
+    {
+      "question": "稽古",
+      "answer": [
+        "けいこ"
+      ],
+      "meaning": "practice, practising, training, study"
+    },
+    {
+      "question": "古刹",
+      "answer": [
+        "こさつ"
+      ],
+      "meaning": "ancient temple"
+    },
+    {
+      "question": "腺毛",
+      "answer": [
+        "せんもう"
+      ],
+      "meaning": "glandular hair"
+    },
+    {
+      "question": "諦め",
+      "answer": [
+        "あきらめ"
+      ],
+      "meaning": "resignation, acceptance, consolation"
+    },
+    {
+      "question": "親睦",
+      "answer": [
+        "しんぼく"
+      ],
+      "meaning": "friendship, amity"
+    },
+    {
+      "question": "拘泥",
+      "answer": [
+        "こうでい"
+      ],
+      "meaning": "adhering to, being a stickler for, being particular about, worrying too much about"
+    },
+    {
+      "question": "媒酌",
+      "answer": [
+        "ばいしゃく"
+      ],
+      "meaning": "matchmaking"
+    },
+    {
+      "question": "玩読",
+      "answer": [
+        "がんどく"
+      ]
+    },
+    {
+      "question": "凄然",
+      "answer": [
+        "せいぜん"
+      ]
+    },
+    {
+      "question": "軽蔑",
+      "answer": [
+        "けいべつ"
+      ],
+      "meaning": "scorn, disdain, contempt"
+    },
+    {
+      "question": "茎",
+      "answer": [
+        "くき",
+        "なかご"
+      ],
+      "meaning": "stalk, stem, core"
+    },
+    {
+      "question": "崇高",
+      "answer": [
+        "すうこう"
+      ],
+      "meaning": "lofty, sublime, noble"
+    },
+    {
+      "question": "爽涼",
+      "answer": [
+        "そうりょう"
+      ],
+      "meaning": "cool and refreshing"
+    },
+    {
+      "question": "据える",
+      "answer": [
+        "すえる"
+      ],
+      "meaning": "to place (in position), to fix, to set (e.g. table), to lay (foundation)"
+    },
+    {
+      "question": "俊才",
+      "answer": [
+        "しゅんさい"
+      ],
+      "meaning": "prodigy, talented person, person of exceptional talent, genius"
+    },
+    {
+      "question": "崖下",
+      "answer": [
+        "がいか（がけした）",
+        "がいか",
+        "がけした"
+      ],
+      "meaning": "below a cliff"
+    },
+    {
+      "question": "空隙",
+      "answer": [
+        "くうげき"
+      ],
+      "meaning": "vacant space, aperture, gap, opening"
+    },
+    {
+      "question": "恣行",
+      "answer": [
+        "しこう"
+      ]
+    },
+    {
+      "question": "詮索",
+      "answer": [
+        "せんさく"
+      ],
+      "meaning": "inquiry into, enquiry into, prying (into), investigation, search, exploration"
+    },
+    {
+      "question": "溺れる",
+      "answer": [
+        "おぼれる"
+      ],
+      "meaning": "to drown, to nearly drown, to sink below the surface (of water)"
+    },
+    {
+      "question": "勃興",
+      "answer": [
+        "ぼっこう"
+      ],
+      "meaning": "sudden rise to power, sudden rise in prosperity"
+    },
+    {
+      "question": "漸増",
+      "answer": [
+        "ぜんぞう"
+      ],
+      "meaning": "gradual increase"
+    },
+    {
+      "question": "荘重",
+      "answer": [
+        "そうちょう"
+      ],
+      "meaning": "solemn, grave, impressive"
+    },
+    {
+      "question": "失跡",
+      "answer": [
+        "しっせき"
+      ],
+      "meaning": "absconding, disappearance"
+    },
+    {
+      "question": "毀誉",
+      "answer": [
+        "きよ"
+      ],
+      "meaning": "praise and censure, approval and disapproval, approbation and condemnation"
+    },
+    {
+      "question": "煎茶",
+      "answer": [
+        "せんちゃ"
+      ],
+      "meaning": "green tea, green leaf tea, non-powdered tea (as opposed to matcha)"
+    },
+    {
+      "question": "風貌",
+      "answer": [
+        "ふうぼう"
+      ],
+      "meaning": "looks, appearance"
+    },
+    {
+      "question": "御法度",
+      "answer": [
+        "ごはっと"
+      ],
+      "meaning": "contraband, taboo, strictly forbidden"
+    },
+    {
+      "question": "嘲笑",
+      "answer": [
+        "ちょうしょう"
+      ],
+      "meaning": "scorn, sneer"
+    },
+    {
+      "question": "弊社",
+      "answer": [
+        "へいしゃ"
+      ],
+      "meaning": "our firm, our company"
+    },
+    {
+      "question": "散逸",
+      "answer": [
+        "さんいつ"
+      ],
+      "meaning": "being scattered and ultimately lost"
+    },
+    {
+      "question": "火蓋",
+      "answer": [
+        "ひぶた"
+      ],
+      "meaning": "apron of a gun, cover for the touch-hole on a cannon or matchlock"
+    },
+    {
+      "question": "桁違い",
+      "answer": [
+        "けたちがい"
+      ],
+      "meaning": "an order of magnitude higher, off by a digit, in a different league, unbelievable, incomparable, unimaginable"
+    },
+    {
+      "question": "摯実",
+      "answer": [
+        "しじつ"
+      ],
+      "meaning": "serious, sincere"
+    },
+    {
+      "question": "便箋",
+      "answer": [
+        "びんせん"
+      ],
+      "meaning": "writing paper, stationery"
+    },
+    {
+      "question": "装填",
+      "answer": [
+        "そうてん"
+      ],
+      "meaning": "loading, charging, filling"
+    },
+    {
+      "question": "愚昧",
+      "answer": [
+        "ぐまい"
+      ],
+      "meaning": "stupid"
+    },
+    {
+      "question": "壮図",
+      "answer": [
+        "そうと"
+      ],
+      "meaning": "ambitious undertaking, grand scheme"
+    },
+    {
+      "question": "嫌悪",
+      "answer": [
+        "けんお"
+      ],
+      "meaning": "disgust, hate, repugnance"
+    },
+    {
+      "question": "音頭",
+      "answer": [
+        "おんど"
+      ],
+      "meaning": "leading a group of people, someone who leads others into a song by singing the leading notes"
+    },
+    {
+      "question": "僅かな",
+      "answer": [
+        "わずかな"
+      ]
+    },
+    {
+      "question": "所詮",
+      "answer": [
+        "しょせん",
+        "そせん"
+      ],
+      "meaning": "after all"
+    },
+    {
+      "question": "冥利",
+      "answer": [
+        "みょうり"
+      ],
+      "meaning": "providence, luck, favor, favour, advantage"
+    },
+    {
+      "question": "拙宅",
+      "answer": [
+        "せったく"
+      ],
+      "meaning": "one's home, one's humble abode"
+    },
+    {
+      "question": "諦聴",
+      "answer": [
+        "ていちょう"
+      ]
+    },
+    {
+      "question": "督促",
+      "answer": [
+        "とくそく"
+      ],
+      "meaning": "urge, demand, importunity"
+    },
+    {
+      "question": "営巣",
+      "answer": [
+        "えいそう"
+      ],
+      "meaning": "building a nest"
+    },
+    {
+      "question": "残骸",
+      "answer": [
+        "ざんがい"
+      ],
+      "meaning": "ruins, wreckage"
+    },
+    {
+      "question": "黒鍵",
+      "answer": [
+        "こっけん"
+      ],
+      "meaning": "black keys"
+    },
+    {
+      "question": "好餌",
+      "answer": [
+        "こうじ"
+      ],
+      "meaning": "bait, decoy, lure"
+    },
+    {
+      "question": "狙撃",
+      "answer": [
+        "そげき"
+      ],
+      "meaning": "shooting, sniping"
+    },
+    {
+      "question": "賭け事",
+      "answer": [
+        "かけごと"
+      ],
+      "meaning": "betting, gambling"
+    },
+    {
+      "question": "冥土",
+      "answer": [
+        "めいど"
+      ],
+      "meaning": "Hades, the underworld, the other world, realm of the dead"
+    },
+    {
+      "question": "旋風",
+      "answer": [
+        "せんぷう",
+        "つむじかぜ",
+        "つじかぜ"
+      ],
+      "meaning": "whirlwind"
+    },
+    {
+      "question": "罪業",
+      "answer": [
+        "ざいごう"
+      ],
+      "meaning": "sin, iniquity, crime"
+    },
+    {
+      "question": "詐称",
+      "answer": [
+        "さしょう"
+      ],
+      "meaning": "misrepresentation, false statement"
+    },
+    {
+      "question": "錦秋",
+      "answer": [
+        "きんしゅう"
+      ],
+      "meaning": "autumn where the foliage is as beautiful as brocade, autumn with beautiful leaves"
+    },
+    {
+      "question": "遡上",
+      "answer": [
+        "そじょう"
+      ],
+      "meaning": "going upstream, retroact, retrospect"
+    },
+    {
+      "question": "豊沃",
+      "answer": [
+        "ほうよく"
+      ],
+      "meaning": "fertility"
+    },
+    {
+      "question": "安泰",
+      "answer": [
+        "あんたい"
+      ],
+      "meaning": "peace, security, tranquility, tranquillity"
+    },
+    {
+      "question": "衷心",
+      "answer": [
+        "ちゅうしん"
+      ],
+      "meaning": "innermost feelings"
+    },
+    {
+      "question": "頓知",
+      "answer": [
+        "とんち"
+      ],
+      "meaning": "quick wit, ready wit"
+    },
+    {
+      "question": "一献",
+      "answer": [
+        "いっこん"
+      ],
+      "meaning": "one cup (of sake)"
+    },
+    {
+      "question": "施主",
+      "answer": [
+        "せしゅ"
+      ],
+      "meaning": "donor, benefactor, almsgiver"
+    },
+    {
+      "question": "顎関節",
+      "answer": [
+        "がくかんせつ"
+      ],
+      "meaning": "jaw joint, temporomandibular joint, TMJ"
+    },
+    {
+      "question": "接舷",
+      "answer": [
+        "せつげん"
+      ],
+      "meaning": "coming alongside (a boat, pier, etc)"
+    },
+    {
+      "question": "叱る",
+      "answer": [
+        "しかる"
+      ],
+      "meaning": "to scold, to chide, to rebuke, to reprimand"
+    },
+    {
+      "question": "遡る",
+      "answer": [
+        "さかのぼる"
+      ],
+      "meaning": "to go upstream"
+    },
+    {
+      "question": "整頓",
+      "answer": [
+        "せいとん"
+      ],
+      "meaning": "orderliness, put in order, tidying up, arranging neatly"
+    },
+    {
+      "question": "冶金学",
+      "answer": [
+        "やきんがく"
+      ],
+      "meaning": "metallurgy (the science)"
+    },
+    {
+      "question": "悪寒",
+      "answer": [
+        "おかん"
+      ],
+      "meaning": "chill, shakes, ague"
+    },
+    {
+      "question": "顕示",
+      "answer": [
+        "けんじ"
+      ],
+      "meaning": "manifestation, public show, showing conspicuously"
+    },
+    {
+      "question": "且つ",
+      "answer": [
+        "かつ"
+      ],
+      "meaning": "yet, moreover, and"
+    },
+    {
+      "question": "憂惧",
+      "answer": [
+        "ゆうぐ"
+      ]
+    },
+    {
+      "question": "爽昧",
+      "answer": [
+        "そうまい"
+      ]
+    },
+    {
+      "question": "辛辣",
+      "answer": [
+        "しんらつ"
+      ],
+      "meaning": "bitter (e.g. criticism), sharp, biting, severe, scathing, harsh"
+    },
+    {
+      "question": "窮める",
+      "answer": [
+        "きわめる"
+      ],
+      "meaning": "to carry to extremes, to go to the end of something"
+    },
+    {
+      "question": "頒価",
+      "answer": [
+        "はんか"
+      ],
+      "meaning": "distribution price"
+    },
+    {
+      "question": "罵声",
+      "answer": [
+        "ばせい"
+      ],
+      "meaning": "boos, jeers"
+    },
+    {
+      "question": "舌禍",
+      "answer": [
+        "ぜっか"
+      ],
+      "meaning": "slip of tongue"
+    },
+    {
+      "question": "罵倒",
+      "answer": [
+        "ばとう"
+      ],
+      "meaning": "abuse, disparagement"
+    },
+    {
+      "question": "葛湯",
+      "answer": [
+        "くずゆ"
+      ],
+      "meaning": "kudzu starch gruel"
+    },
+    {
+      "question": "虎威",
+      "answer": [
+        "こい"
+      ]
+    },
+    {
+      "question": "叱声",
+      "answer": [
+        "しっせい"
+      ]
+    },
+    {
+      "question": "爽快",
+      "answer": [
+        "そうかい"
+      ],
+      "meaning": "refreshing, exhilarating, invigorating, bracing"
+    },
+    {
+      "question": "貪欲",
+      "answer": [
+        "どんよく",
+        "とんよく",
+        "たんよく"
+      ],
+      "meaning": "avarice, greed, covetousness"
+    },
+    {
+      "question": "弥生",
+      "answer": [
+        "やよい",
+        "いやおい"
+      ],
+      "meaning": "third month of the lunar calendar"
+    },
+    {
+      "question": "脚立",
+      "answer": [
+        "きゃたつ"
+      ],
+      "meaning": "stepladder, steps"
+    },
+    {
+      "question": "泥縄",
+      "answer": [
+        "どろなわ"
+      ],
+      "meaning": "measure taken too late, measure taken in haste"
+    },
+    {
+      "question": "喝破",
+      "answer": [
+        "かっぱ"
+      ],
+      "meaning": "arguing someone down, scolding, rebuking"
+    },
+    {
+      "question": "偏窟",
+      "answer": [
+        "へんくつ"
+      ],
+      "meaning": "eccentric, warped, narrow-minded, perverse, obstinate, stubborn, bigoted"
+    },
+    {
+      "question": "痩せる",
+      "answer": [
+        "やせる"
+      ],
+      "meaning": "to become thin, to lose weight, to reduce (one's) weight, to slim"
+    },
+    {
+      "question": "藍色",
+      "answer": [
+        "あいいろ（らんしょく）",
+        "あいいろ",
+        "らんしょく"
+      ],
+      "meaning": "indigo blue"
+    },
+    {
+      "question": "反物",
+      "answer": [
+        "たんもの"
+      ],
+      "meaning": "fabric, cloth, textiles, drapery, dry-goods, piece goods"
+    },
+    {
+      "question": "搭載",
+      "answer": [
+        "とうさい"
+      ],
+      "meaning": "loading (on board), equipping"
+    },
+    {
+      "question": "灯籠",
+      "answer": [
+        "とうろう"
+      ],
+      "meaning": "garden lantern, hanging lantern"
+    },
+    {
+      "question": "諦念",
+      "answer": [
+        "ていねん"
+      ],
+      "meaning": "understanding and acceptance, spiritual awakening, a heart that understands truth, (feeling of) resignation"
+    },
+    {
+      "question": "鎌首",
+      "answer": [
+        "かまくび"
+      ],
+      "meaning": "sickle-shaped neck (e.g. snake, praying mantis), crooked neck, gooseneck"
+    },
+    {
+      "question": "勾配",
+      "answer": [
+        "こうばい"
+      ],
+      "meaning": "slope, incline, gradient, grade, pitch"
+    },
+    {
+      "question": "嫉妬",
+      "answer": [
+        "しっと"
+      ],
+      "meaning": "jealousy, envy"
+    },
+    {
+      "question": "痩身",
+      "answer": [
+        "そうしん"
+      ],
+      "meaning": "slim figure, lean figure"
+    },
+    {
+      "question": "罵る",
+      "answer": [
+        "ののしる"
+      ],
+      "meaning": "to abuse (verbally), to curse at, to shout abuse at, to speak ill of"
+    },
+    {
+      "question": "闇夜",
+      "answer": [
+        "やみよ",
+        "あんや"
+      ],
+      "meaning": "dark night"
+    },
+    {
+      "question": "倣う",
+      "answer": [
+        "ならう"
+      ],
+      "meaning": "to imitate, to follow, to emulate"
+    }
+  ]
+}

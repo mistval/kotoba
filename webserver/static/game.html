@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Japanese and Kanji learning games and tools.">
+    <meta name="keywords" content="Japanese,kanji,learning,games">
+    <link rel="icon" href="kan.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Play</title>
+  </head>
+  <body>
+    <div id="gameJoiner">
+      <div class="modal fade" id="currentGamesModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Join a Game</h5>
+            </div>
+            <form v-on:submit.prevent="joinWithName">
+              <div class="modal-body">
+                <div v-if="currentGameInfos.length === 0">
+                  There aren't any public games running now.
+                </div>
+                <div v-else v-for="gameInfo in currentGameInfos">
+                  <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="app">
+      <div class="modal fade" id="userNameModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Choose a Username</h5>
+            </div>
+            <form v-on:submit.prevent="joinWithName" id="joinForm">
+              <div class="modal-body">
+                <input type="text" v-model="userName">
+              </div>
+              <div class="modal-footer">
+                <input type="Submit" value="Join" class="btn btn-primary"></input>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">KotobaWeb</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="create.html">Create Game</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" onclick="joinGame()">Join Game</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="kanji.html">Kanji</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://kotoba.k33.we.bs/">Discord Bot</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="spinner" v-if="!loaded">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+      <br>
+      <div class="container" v-cloak>
+        <div class="page">
+          <div class="row">
+            <div class="col-md-10">
+              <div class="message-area" id="messageArea">
+                <div v-for="messageData in messageDatas">
+                  <div v-if="messageData.type === 'chat'" class="chat-message">
+                    <span class="username"><b><strong>{{ messageData.userName }}</strong></b></span>&nbsp;&nbsp;
+                    {{ messageData.message }}
+                  </div>
+                  <div v-if="messageData.type === 'correctAnswer'" class="chat-message correct-answer">
+                    <b>Correct!</b><br>
+                    {{ messageData.answerersText }}<br>
+                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
+                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
+                  </div>
+                  <div v-if="messageData.type === 'timedOutQuestion'" class="chat-message wrong-answer">
+                    <b>Time's up!</b><br>
+                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
+                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
+                  </div>
+                  <div v-if="messageData.type === 'skippedQuestion'" class="chat-message wrong-answer">
+                    <b>Skipped!</b><br>
+                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
+                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
+                  </div>
+                  <div v-if="messageData.type === 'broadcast'" class="broadcast">
+                    <span class="username"><b><strong>Important</strong></b></span>&nbsp;&nbsp;
+                    {{ messageData.message }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='user-list col-md-2 shadow'>
+              <h1>Players</h1>
+              <div class='chatbox__user--active' v-for="player in players">
+                <span class="playername" class="form-control">{{ player.name }}</span><span class="playerscore">{{ player.score }}</span>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="next-question-area col-md-10 shadow">
+            <div class="instructions">
+              <h3>{{ instructions }}</h3>
+            </div>
+            <div>
+              <transition name="fade">
+                <img :src="imageDataUri" :key="imageDataUri" class="questionImage">
+              </transition>
+            </div>
+          </div>
+          <div class="row">
+            <div class="chatbox col-md-10">
+              <form action="" class="form-inline" id="chatform" v-on:submit.prevent="">
+                <input id="m" type="text" class="col-md-10 form-control" autocomplete="off" placeholder="Enter Answer" />
+                &nbsp;<button class="btn btn-primary" v-on:click="send">Send</button>
+                &nbsp;<button class="btn btn-primary" v-on:click="skip">Skip</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="multi.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="game.js"></script>
+    <script src="gamejoiner.js"></script>
+    <script>
+      $(function () {
+        var select = document.getElementById('selectdecks');
+        if (select) {
+          multi( select, {
+              non_selected_header: 'Decks',
+              selected_header: 'Selected Decks'
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

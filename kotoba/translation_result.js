@@ -16,9 +16,9 @@ class TranslationResult {
     result.resultProvider = resultProvider;
     result.resultLanguage = resultLanguage;
     result.inputLanguage = inputLanguage;
-    result.resultTranslation = resultTranslation;
+    result.resultTranslation = resultTranslation.substring(0, 1024);
     result.status = TranslationResultStatus.OK;
-    result.resultLink = resultLink;
+    result.resultLink = resultLink.length < 2048 ? resultLink : undefined;
     return result;
   }
 

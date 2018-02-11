@@ -1,0 +1,3755 @@
+{
+  "uniqueId": "stations",
+  "name": "Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "相原",
+      "answer": [
+        "あいはら"
+      ]
+    },
+    {
+      "question": "青砥",
+      "answer": [
+        "あおと"
+      ]
+    },
+    {
+      "question": "青海",
+      "answer": [
+        "あおみ"
+      ]
+    },
+    {
+      "question": "青物横丁",
+      "answer": [
+        "あおものよこちょう"
+      ]
+    },
+    {
+      "question": "青山一丁目",
+      "answer": [
+        "あおやまいっちょうめ"
+      ]
+    },
+    {
+      "question": "赤坂",
+      "answer": [
+        "あかさか"
+      ]
+    },
+    {
+      "question": "赤坂見附",
+      "answer": [
+        "あかさかみつけ"
+      ]
+    },
+    {
+      "question": "赤羽",
+      "answer": [
+        "あかばね"
+      ]
+    },
+    {
+      "question": "赤羽岩淵",
+      "answer": [
+        "あかばねいわぶち"
+      ]
+    },
+    {
+      "question": "赤羽橋",
+      "answer": [
+        "あかばねばし"
+      ]
+    },
+    {
+      "question": "秋川",
+      "answer": [
+        "あきがわ"
+      ]
+    },
+    {
+      "question": "昭島",
+      "answer": [
+        "あきしま"
+      ]
+    },
+    {
+      "question": "秋津",
+      "answer": [
+        "あきつ"
+      ]
+    },
+    {
+      "question": "秋葉原",
+      "answer": [
+        "あきはばら"
+      ]
+    },
+    {
+      "question": "曙橋",
+      "answer": [
+        "あけぼのばし"
+      ]
+    },
+    {
+      "question": "阿佐ケ谷",
+      "answer": [
+        "あさがや"
+      ]
+    },
+    {
+      "question": "浅草",
+      "answer": [
+        "あさくさ"
+      ]
+    },
+    {
+      "question": "浅草橋",
+      "answer": [
+        "あさくさばし"
+      ]
+    },
+    {
+      "question": "麻布十番",
+      "answer": [
+        "あざぶじゅうばん"
+      ]
+    },
+    {
+      "question": "飛鳥山",
+      "answer": [
+        "あすかやま"
+      ]
+    },
+    {
+      "question": "穴守稲荷",
+      "answer": [
+        "あなもりいなり"
+      ]
+    },
+    {
+      "question": "綾瀬",
+      "answer": [
+        "あやせ"
+      ]
+    },
+    {
+      "question": "新井薬師前",
+      "answer": [
+        "あらいやくしまえ"
+      ]
+    },
+    {
+      "question": "荒川一中前",
+      "answer": [
+        "あらかわいっちゅうまえ"
+      ]
+    },
+    {
+      "question": "荒川区役所前",
+      "answer": [
+        "あらかわくやくしょまえ"
+      ]
+    },
+    {
+      "question": "荒川車庫前",
+      "answer": [
+        "あらかわしゃこまえ"
+      ]
+    },
+    {
+      "question": "荒川七丁目",
+      "answer": [
+        "あらかわななちょうめ"
+      ]
+    },
+    {
+      "question": "荒川二丁目",
+      "answer": [
+        "あらかわにちょうめ"
+      ]
+    },
+    {
+      "question": "荒川遊園地前",
+      "answer": [
+        "あらかわゆうえんちまえ"
+      ]
+    },
+    {
+      "question": "有明",
+      "answer": [
+        "ありあけ"
+      ]
+    },
+    {
+      "question": "淡路町",
+      "answer": [
+        "あわじちょう"
+      ]
+    },
+    {
+      "question": "飯田橋",
+      "answer": [
+        "いいだばし"
+      ]
+    },
+    {
+      "question": "井荻",
+      "answer": [
+        "いおぎ"
+      ]
+    },
+    {
+      "question": "軍畑",
+      "answer": [
+        "いくさばた"
+      ]
+    },
+    {
+      "question": "池上",
+      "answer": [
+        "いけがみ"
+      ]
+    },
+    {
+      "question": "池尻大橋",
+      "answer": [
+        "いけじりおおはし"
+      ]
+    },
+    {
+      "question": "池ノ上",
+      "answer": [
+        "いけのうえ"
+      ]
+    },
+    {
+      "question": "池袋",
+      "answer": [
+        "いけぶくろ"
+      ]
+    },
+    {
+      "question": "石川台",
+      "answer": [
+        "いしかわだい"
+      ]
+    },
+    {
+      "question": "石神前",
+      "answer": [
+        "いしがみまえ"
+      ]
+    },
+    {
+      "question": "泉体育館",
+      "answer": [
+        "いずみたいいくかん"
+      ]
+    },
+    {
+      "question": "和泉多摩川",
+      "answer": [
+        "いずみたまがわ"
+      ]
+    },
+    {
+      "question": "板橋",
+      "answer": [
+        "いたばし"
+      ]
+    },
+    {
+      "question": "板橋区役所前",
+      "answer": [
+        "いたばしくやくしょまえ"
+      ]
+    },
+    {
+      "question": "板橋本町",
+      "answer": [
+        "いたばしほんちょう"
+      ]
+    },
+    {
+      "question": "市ケ谷",
+      "answer": [
+        "いちがや"
+      ]
+    },
+    {
+      "question": "一之江",
+      "answer": [
+        "いちのえ"
+      ]
+    },
+    {
+      "question": "稲城",
+      "answer": [
+        "いなぎ"
+      ]
+    },
+    {
+      "question": "稲城長沼",
+      "answer": [
+        "いなぎながぬま"
+      ]
+    },
+    {
+      "question": "稲荷町",
+      "answer": [
+        "いなりちょう"
+      ]
+    },
+    {
+      "question": "井の頭公園",
+      "answer": [
+        "いのかしらこうえん"
+      ]
+    },
+    {
+      "question": "入谷",
+      "answer": [
+        "いりや"
+      ]
+    },
+    {
+      "question": "岩本町",
+      "answer": [
+        "いわもとちょう"
+      ]
+    },
+    {
+      "question": "上野",
+      "answer": [
+        "うえの"
+      ]
+    },
+    {
+      "question": "上野御徒町",
+      "answer": [
+        "うえのおかちまち"
+      ]
+    },
+    {
+      "question": "上野広小路",
+      "answer": [
+        "うえのひろこうじ"
+      ]
+    },
+    {
+      "question": "浮間舟渡",
+      "answer": [
+        "うきまふなど"
+      ]
+    },
+    {
+      "question": "鶯谷",
+      "answer": [
+        "うぐいすだに"
+      ]
+    },
+    {
+      "question": "牛込神楽坂",
+      "answer": [
+        "うしごめかぐらざか"
+      ]
+    },
+    {
+      "question": "牛込柳町",
+      "answer": [
+        "うしごめやなぎちょう"
+      ]
+    },
+    {
+      "question": "牛田",
+      "answer": [
+        "うしだ"
+      ]
+    },
+    {
+      "question": "牛浜",
+      "answer": [
+        "うしはま"
+      ]
+    },
+    {
+      "question": "内幸町",
+      "answer": [
+        "うちさいわいちょう"
+      ]
+    },
+    {
+      "question": "鵜の木",
+      "answer": [
+        "うのき"
+      ]
+    },
+    {
+      "question": "梅ケ丘",
+      "answer": [
+        "うめがおか"
+      ]
+    },
+    {
+      "question": "梅島",
+      "answer": [
+        "うめじま"
+      ]
+    },
+    {
+      "question": "梅屋敷",
+      "answer": [
+        "うめやしき"
+      ]
+    },
+    {
+      "question": "越中島",
+      "answer": [
+        "えっちゅうじま"
+      ]
+    },
+    {
+      "question": "永福町",
+      "answer": [
+        "えいふくちょう"
+      ]
+    },
+    {
+      "question": "江古田",
+      "answer": [
+        "えこだ"
+      ]
+    },
+    {
+      "question": "江戸川",
+      "answer": [
+        "えどがわ"
+      ]
+    },
+    {
+      "question": "江戸川橋",
+      "answer": [
+        "えどがわばし"
+      ]
+    },
+    {
+      "question": "荏原中延",
+      "answer": [
+        "えばらなかのぶ"
+      ]
+    },
+    {
+      "question": "荏原町",
+      "answer": [
+        "えばらまち"
+      ]
+    },
+    {
+      "question": "恵比寿",
+      "answer": [
+        "えびす"
+      ]
+    },
+    {
+      "question": "王子",
+      "answer": [
+        "おうじ"
+      ]
+    },
+    {
+      "question": "王子駅前",
+      "answer": [
+        "おうじえきまえ"
+      ]
+    },
+    {
+      "question": "王子神谷",
+      "answer": [
+        "おうじかみや"
+      ]
+    },
+    {
+      "question": "青梅",
+      "answer": [
+        "おうめ"
+      ]
+    },
+    {
+      "question": "青梅街道",
+      "answer": [
+        "おうめかいどう"
+      ]
+    },
+    {
+      "question": "大井競馬場前",
+      "answer": [
+        "おおいけいばじょうまえ"
+      ]
+    },
+    {
+      "question": "大泉学園",
+      "answer": [
+        "おおいずみがくえん"
+      ]
+    },
+    {
+      "question": "大井町",
+      "answer": [
+        "おおいまち"
+      ]
+    },
+    {
+      "question": "大岡山",
+      "answer": [
+        "おおおかやま"
+      ]
+    },
+    {
+      "question": "大久保",
+      "answer": [
+        "おおくぼ"
+      ]
+    },
+    {
+      "question": "大崎",
+      "answer": [
+        "おおさき"
+      ]
+    },
+    {
+      "question": "大崎広小路",
+      "answer": [
+        "おおさきひろこうじ"
+      ]
+    },
+    {
+      "question": "大島",
+      "answer": [
+        "おおじま"
+      ]
+    },
+    {
+      "question": "大塚",
+      "answer": [
+        "おおつか"
+      ]
+    },
+    {
+      "question": "大塚駅前",
+      "answer": [
+        "おおつかえきまえ"
+      ]
+    },
+    {
+      "question": "大塚・帝京大学",
+      "answer": [
+        "おおつかていきょうだいがく"
+      ]
+    },
+    {
+      "question": "大手町",
+      "answer": [
+        "おおてまち"
+      ]
+    },
+    {
+      "question": "大鳥居",
+      "answer": [
+        "おおとりい"
+      ]
+    },
+    {
+      "question": "大森",
+      "answer": [
+        "おおもり"
+      ]
+    },
+    {
+      "question": "大森海岸",
+      "answer": [
+        "おおもりかいがん"
+      ]
+    },
+    {
+      "question": "大森町",
+      "answer": [
+        "おおもりまち"
+      ]
+    },
+    {
+      "question": "大山",
+      "answer": [
+        "おおやま"
+      ]
+    },
+    {
+      "question": "御徒町",
+      "answer": [
+        "おかちまち"
+      ]
+    },
+    {
+      "question": "小川",
+      "answer": [
+        "おがわ"
+      ]
+    },
+    {
+      "question": "小川町",
+      "answer": [
+        "おがわまち"
+      ]
+    },
+    {
+      "question": "荻窪",
+      "answer": [
+        "おぎくぼ"
+      ]
+    },
+    {
+      "question": "尾久",
+      "answer": [
+        "おく"
+      ]
+    },
+    {
+      "question": "奥沢",
+      "answer": [
+        "おくさわ"
+      ]
+    },
+    {
+      "question": "奥多摩",
+      "answer": [
+        "おくたま"
+      ]
+    },
+    {
+      "question": "小作",
+      "answer": [
+        "おざく"
+      ]
+    },
+    {
+      "question": "押上",
+      "answer": [
+        "おしあげ"
+      ]
+    },
+    {
+      "question": "小台",
+      "answer": [
+        "おだい"
+      ]
+    },
+    {
+      "question": "お台場海浜公園",
+      "answer": [
+        "おだいばかいひんこうえん"
+      ]
+    },
+    {
+      "question": "小田急多摩センター",
+      "answer": [
+        "おだきゅうたませんたー"
+      ]
+    },
+    {
+      "question": "小田急永山",
+      "answer": [
+        "おだきゅうながやま"
+      ]
+    },
+    {
+      "question": "御茶ノ水",
+      "answer": [
+        "おちゃのみず"
+      ]
+    },
+    {
+      "question": "落合",
+      "answer": [
+        "おちあい"
+      ]
+    },
+    {
+      "question": "落合南長崎",
+      "answer": [
+        "おちあいみなみながさき"
+      ]
+    },
+    {
+      "question": "御成門",
+      "answer": [
+        "おなりもん"
+      ]
+    },
+    {
+      "question": "お花茶屋",
+      "answer": [
+        "おはなぢゃや"
+      ]
+    },
+    {
+      "question": "小村井",
+      "answer": [
+        "おむらい"
+      ]
+    },
+    {
+      "question": "面影橋",
+      "answer": [
+        "おもかげばし"
+      ]
+    },
+    {
+      "question": "表参道",
+      "answer": [
+        "おもてさんどう"
+      ]
+    },
+    {
+      "question": "尾山台",
+      "answer": [
+        "おやまだい"
+      ]
+    },
+    {
+      "question": "御嶽山",
+      "answer": [
+        "おんたけさん"
+      ]
+    },
+    {
+      "question": "神楽坂",
+      "answer": [
+        "かぐらざか"
+      ]
+    },
+    {
+      "question": "葛西",
+      "answer": [
+        "かさい"
+      ]
+    },
+    {
+      "question": "葛西臨海公園",
+      "answer": [
+        "かさいりんかいこうえん"
+      ]
+    },
+    {
+      "question": "梶原",
+      "answer": [
+        "かじわら"
+      ]
+    },
+    {
+      "question": "春日",
+      "answer": [
+        "かすが"
+      ]
+    },
+    {
+      "question": "霞ケ関",
+      "answer": [
+        "かすみがせき"
+      ]
+    },
+    {
+      "question": "片倉",
+      "answer": [
+        "かたくら"
+      ]
+    },
+    {
+      "question": "勝どき",
+      "answer": [
+        "かちどき"
+      ]
+    },
+    {
+      "question": "金町",
+      "answer": [
+        "かなまち"
+      ]
+    },
+    {
+      "question": "要町",
+      "answer": [
+        "かなめちょう"
+      ]
+    },
+    {
+      "question": "鐘ケ淵",
+      "answer": [
+        "かねがふち"
+      ]
+    },
+    {
+      "question": "河辺",
+      "answer": [
+        "かべ"
+      ]
+    },
+    {
+      "question": "蒲田",
+      "answer": [
+        "かまた"
+      ]
+    },
+    {
+      "question": "上井草",
+      "answer": [
+        "かみいぐさ"
+      ]
+    },
+    {
+      "question": "上板橋",
+      "answer": [
+        "かみいたばし"
+      ]
+    },
+    {
+      "question": "上北沢",
+      "answer": [
+        "かみきたざわ"
+      ]
+    },
+    {
+      "question": "上北台",
+      "answer": [
+        "かみきただい"
+      ]
+    },
+    {
+      "question": "上石神井",
+      "answer": [
+        "かみしゃくじい"
+      ]
+    },
+    {
+      "question": "上中里",
+      "answer": [
+        "かみなかざと"
+      ]
+    },
+    {
+      "question": "上野毛",
+      "answer": [
+        "かみのげ"
+      ]
+    },
+    {
+      "question": "上町",
+      "answer": [
+        "かみまち"
+      ]
+    },
+    {
+      "question": "神谷町",
+      "answer": [
+        "かみやちょう"
+      ]
+    },
+    {
+      "question": "亀有",
+      "answer": [
+        "かめあり"
+      ]
+    },
+    {
+      "question": "亀戸",
+      "answer": [
+        "かめいど"
+      ]
+    },
+    {
+      "question": "亀戸水神",
+      "answer": [
+        "かめいどすいじん"
+      ]
+    },
+    {
+      "question": "茅場町",
+      "answer": [
+        "かやばちょう"
+      ]
+    },
+    {
+      "question": "唐木田",
+      "answer": [
+        "からきだ"
+      ]
+    },
+    {
+      "question": "川井",
+      "answer": [
+        "かわい"
+      ]
+    },
+    {
+      "question": "神田",
+      "answer": [
+        "かんだ"
+      ]
+    },
+    {
+      "question": "外苑前",
+      "answer": [
+        "がいえんまえ"
+      ]
+    },
+    {
+      "question": "学芸大学",
+      "answer": [
+        "がくげいだいがく"
+      ]
+    },
+    {
+      "question": "学習院下",
+      "answer": [
+        "がくしゅういんした"
+      ]
+    },
+    {
+      "question": "競艇場前",
+      "answer": [
+        "きょうていじょうまえ"
+      ]
+    },
+    {
+      "question": "経堂",
+      "answer": [
+        "きょうどう"
+      ]
+    },
+    {
+      "question": "京橋",
+      "answer": [
+        "きょうばし"
+      ]
+    },
+    {
+      "question": "菊川",
+      "answer": [
+        "きくかわ"
+      ]
+    },
+    {
+      "question": "鬼子母神前",
+      "answer": [
+        "きしぼじんまえ"
+      ]
+    },
+    {
+      "question": "北赤羽",
+      "answer": [
+        "きたあかばね"
+      ]
+    },
+    {
+      "question": "北綾瀬",
+      "answer": [
+        "きたあやせ"
+      ]
+    },
+    {
+      "question": "北池袋",
+      "answer": [
+        "きたいけぶくろ"
+      ]
+    },
+    {
+      "question": "北品川",
+      "answer": [
+        "きたしながわ"
+      ]
+    },
+    {
+      "question": "北千住",
+      "answer": [
+        "きたせんじゅ"
+      ]
+    },
+    {
+      "question": "北千束",
+      "answer": [
+        "きたせんぞく"
+      ]
+    },
+    {
+      "question": "北野",
+      "answer": [
+        "きたの"
+      ]
+    },
+    {
+      "question": "北八王子",
+      "answer": [
+        "きたはちおうじ"
+      ]
+    },
+    {
+      "question": "北府中",
+      "answer": [
+        "きたふちゅう"
+      ]
+    },
+    {
+      "question": "喜多見",
+      "answer": [
+        "きたみ"
+      ]
+    },
+    {
+      "question": "吉祥寺",
+      "answer": [
+        "きちじょうじ"
+      ]
+    },
+    {
+      "question": "木場",
+      "answer": [
+        "きば"
+      ]
+    },
+    {
+      "question": "清澄白河",
+      "answer": [
+        "きよすみしらかわ"
+      ]
+    },
+    {
+      "question": "清瀬",
+      "answer": [
+        "きよせ"
+      ]
+    },
+    {
+      "question": "錦糸町",
+      "answer": [
+        "きんしちょう"
+      ]
+    },
+    {
+      "question": "銀座",
+      "answer": [
+        "ぎんざ"
+      ]
+    },
+    {
+      "question": "銀座一丁目",
+      "answer": [
+        "ぎんざいっちょうめ"
+      ]
+    },
+    {
+      "question": "久が原",
+      "answer": [
+        "くがはら"
+      ]
+    },
+    {
+      "question": "久我山",
+      "answer": [
+        "くがやま"
+      ]
+    },
+    {
+      "question": "九段下",
+      "answer": [
+        "くだんした"
+      ]
+    },
+    {
+      "question": "国立",
+      "answer": [
+        "くにたち"
+      ]
+    },
+    {
+      "question": "九品仏",
+      "answer": [
+        "くほんぶつ"
+      ]
+    },
+    {
+      "question": "熊川",
+      "answer": [
+        "くまがわ"
+      ]
+    },
+    {
+      "question": "熊野前",
+      "answer": [
+        "くまのまえ"
+      ]
+    },
+    {
+      "question": "久米川",
+      "answer": [
+        "くめがわ"
+      ]
+    },
+    {
+      "question": "蔵前",
+      "answer": [
+        "くらまえ"
+      ]
+    },
+    {
+      "question": "京王片倉",
+      "answer": [
+        "けいおうかたくら"
+      ]
+    },
+    {
+      "question": "京王多摩川",
+      "answer": [
+        "けいおうたまがわ"
+      ]
+    },
+    {
+      "question": "京王多摩センター",
+      "answer": [
+        "けいおうたませんたー"
+      ]
+    },
+    {
+      "question": "京王永山",
+      "answer": [
+        "けいおうながやま"
+      ]
+    },
+    {
+      "question": "京王八王子",
+      "answer": [
+        "けいおうはちおうじ"
+      ]
+    },
+    {
+      "question": "京王堀之内",
+      "answer": [
+        "けいおうほりのうち"
+      ]
+    },
+    {
+      "question": "京王よみうりランド",
+      "answer": [
+        "けいおうよみうりらんど"
+      ]
+    },
+    {
+      "question": "京急蒲田",
+      "answer": [
+        "けいきゅうかまた"
+      ]
+    },
+    {
+      "question": "京成上野",
+      "answer": [
+        "けいせいうえの"
+      ]
+    },
+    {
+      "question": "京成金町",
+      "answer": [
+        "けいせいかなまち"
+      ]
+    },
+    {
+      "question": "京成小岩",
+      "answer": [
+        "けいせいこいわ"
+      ]
+    },
+    {
+      "question": "京成関屋",
+      "answer": [
+        "けいせいせきや"
+      ]
+    },
+    {
+      "question": "京成高砂",
+      "answer": [
+        "けいせいたかさご"
+      ]
+    },
+    {
+      "question": "京成立石",
+      "answer": [
+        "けいせいたていし"
+      ]
+    },
+    {
+      "question": "京成曳舟",
+      "answer": [
+        "けいせいひきふね"
+      ]
+    },
+    {
+      "question": "国会議事堂前",
+      "answer": [
+        "こっかいぎじどうまえ"
+      ]
+    },
+    {
+      "question": "恋ケ窪",
+      "answer": [
+        "こいがくぼ"
+      ]
+    },
+    {
+      "question": "小岩",
+      "answer": [
+        "こいわ"
+      ]
+    },
+    {
+      "question": "高円寺",
+      "answer": [
+        "こうえんじ"
+      ]
+    },
+    {
+      "question": "甲州街道",
+      "answer": [
+        "こうしゅうかいどう"
+      ]
+    },
+    {
+      "question": "庚申塚",
+      "answer": [
+        "こうしんづか"
+      ]
+    },
+    {
+      "question": "麹町",
+      "answer": [
+        "こうじまち"
+      ]
+    },
+    {
+      "question": "糀谷",
+      "answer": [
+        "こうじや"
+      ]
+    },
+    {
+      "question": "後楽園",
+      "answer": [
+        "こうらくえん"
+      ]
+    },
+    {
+      "question": "国際展示場",
+      "answer": [
+        "こくさいてんじじょう"
+      ]
+    },
+    {
+      "question": "国際展示場正門",
+      "answer": [
+        "こくさいてんじじょうせいもん"
+      ]
+    },
+    {
+      "question": "国分寺",
+      "answer": [
+        "こくぶんじ"
+      ]
+    },
+    {
+      "question": "国領",
+      "answer": [
+        "こくりょう"
+      ]
+    },
+    {
+      "question": "国立競技場",
+      "answer": [
+        "こくりつきょうぎじょう"
+      ]
+    },
+    {
+      "question": "小菅",
+      "answer": [
+        "こすげ"
+      ]
+    },
+    {
+      "question": "小竹向原",
+      "answer": [
+        "こたけむかいはら"
+      ]
+    },
+    {
+      "question": "小平",
+      "answer": [
+        "こだいら"
+      ]
+    },
+    {
+      "question": "小伝馬町",
+      "answer": [
+        "こでんまちょう"
+      ]
+    },
+    {
+      "question": "狛江",
+      "answer": [
+        "こまえ"
+      ]
+    },
+    {
+      "question": "駒込",
+      "answer": [
+        "こまごめ"
+      ]
+    },
+    {
+      "question": "駒沢大学",
+      "answer": [
+        "こまざわだいがく"
+      ]
+    },
+    {
+      "question": "駒場東大前",
+      "answer": [
+        "こまばとうだいまえ"
+      ]
+    },
+    {
+      "question": "小宮",
+      "answer": [
+        "こみや"
+      ]
+    },
+    {
+      "question": "古里",
+      "answer": [
+        "こり"
+      ]
+    },
+    {
+      "question": "是政",
+      "answer": [
+        "これまさ"
+      ]
+    },
+    {
+      "question": "豪徳寺",
+      "answer": [
+        "ごうとくじ"
+      ]
+    },
+    {
+      "question": "護国寺",
+      "answer": [
+        "ごこくじ"
+      ]
+    },
+    {
+      "question": "五反田",
+      "answer": [
+        "ごたんだ"
+      ]
+    },
+    {
+      "question": "五反野",
+      "answer": [
+        "ごたんの"
+      ]
+    },
+    {
+      "question": "栄町",
+      "answer": [
+        "さかえちょう"
+      ]
+    },
+    {
+      "question": "鷺ノ宮",
+      "answer": [
+        "さぎのみや"
+      ]
+    },
+    {
+      "question": "桜街道",
+      "answer": [
+        "さくらかいどう"
+      ]
+    },
+    {
+      "question": "桜新町",
+      "answer": [
+        "さくらしんまち"
+      ]
+    },
+    {
+      "question": "桜上水",
+      "answer": [
+        "さくらじょうすい"
+      ]
+    },
+    {
+      "question": "桜台",
+      "answer": [
+        "さくらだい"
+      ]
+    },
+    {
+      "question": "桜田門",
+      "answer": [
+        "さくらだもん"
+      ]
+    },
+    {
+      "question": "笹塚",
+      "answer": [
+        "ささづか"
+      ]
+    },
+    {
+      "question": "鮫洲",
+      "answer": [
+        "さめず"
+      ]
+    },
+    {
+      "question": "沢井",
+      "answer": [
+        "さわい"
+      ]
+    },
+    {
+      "question": "参宮橋",
+      "answer": [
+        "さんぐうばし"
+      ]
+    },
+    {
+      "question": "三軒茶屋",
+      "answer": [
+        "さんげんぢゃや"
+      ]
+    },
+    {
+      "question": "石神井公園",
+      "answer": [
+        "しゃくじいこうえん"
+      ]
+    },
+    {
+      "question": "松陰神社前",
+      "answer": [
+        "しょういんじんじゃまえ"
+      ]
+    },
+    {
+      "question": "昭和島",
+      "answer": [
+        "しょうわじま"
+      ]
+    },
+    {
+      "question": "椎名町",
+      "answer": [
+        "しいなまち"
+      ]
+    },
+    {
+      "question": "汐留",
+      "answer": [
+        "しおどめ"
+      ]
+    },
+    {
+      "question": "潮見",
+      "answer": [
+        "しおみ"
+      ]
+    },
+    {
+      "question": "品川",
+      "answer": [
+        "しながわ"
+      ]
+    },
+    {
+      "question": "品川シーサイド",
+      "answer": [
+        "しながわしーさいど"
+      ]
+    },
+    {
+      "question": "信濃町",
+      "answer": [
+        "しなのまち"
+      ]
+    },
+    {
+      "question": "篠崎",
+      "answer": [
+        "しのざき"
+      ]
+    },
+    {
+      "question": "東雲",
+      "answer": [
+        "しののめ"
+      ]
+    },
+    {
+      "question": "芝浦ふ頭",
+      "answer": [
+        "しばうらふとう"
+      ]
+    },
+    {
+      "question": "芝公園",
+      "answer": [
+        "しばこうえん"
+      ]
+    },
+    {
+      "question": "柴崎",
+      "answer": [
+        "しばさき"
+      ]
+    },
+    {
+      "question": "柴崎体育館",
+      "answer": [
+        "しばさきたいいくかん"
+      ]
+    },
+    {
+      "question": "柴又",
+      "answer": [
+        "しばまた"
+      ]
+    },
+    {
+      "question": "渋谷",
+      "answer": [
+        "しぶや"
+      ]
+    },
+    {
+      "question": "志村坂上",
+      "answer": [
+        "しむらさかうえ"
+      ]
+    },
+    {
+      "question": "志村三丁目",
+      "answer": [
+        "しむらさんちょうめ"
+      ]
+    },
+    {
+      "question": "志茂",
+      "answer": [
+        "しも"
+      ]
+    },
+    {
+      "question": "下赤塚",
+      "answer": [
+        "しもあかつか"
+      ]
+    },
+    {
+      "question": "下井草",
+      "answer": [
+        "しもいぐさ"
+      ]
+    },
+    {
+      "question": "下板橋",
+      "answer": [
+        "しもいたばし"
+      ]
+    },
+    {
+      "question": "下落合",
+      "answer": [
+        "しもおちあい"
+      ]
+    },
+    {
+      "question": "下北沢",
+      "answer": [
+        "しもきたざわ"
+      ]
+    },
+    {
+      "question": "下神明",
+      "answer": [
+        "しもしんめい"
+      ]
+    },
+    {
+      "question": "下高井戸",
+      "answer": [
+        "しもたかいど"
+      ]
+    },
+    {
+      "question": "下丸子",
+      "answer": [
+        "しもまるこ"
+      ]
+    },
+    {
+      "question": "白糸台",
+      "answer": [
+        "しらいとだい"
+      ]
+    },
+    {
+      "question": "白金高輪",
+      "answer": [
+        "しろかねたかなわ"
+      ]
+    },
+    {
+      "question": "白金台",
+      "answer": [
+        "しろかねだい"
+      ]
+    },
+    {
+      "question": "白丸",
+      "answer": [
+        "しろまる"
+      ]
+    },
+    {
+      "question": "新秋津",
+      "answer": [
+        "しんあきつ"
+      ]
+    },
+    {
+      "question": "新板橋",
+      "answer": [
+        "しんいたばし"
+      ]
+    },
+    {
+      "question": "新江古田",
+      "answer": [
+        "しんえごた"
+      ]
+    },
+    {
+      "question": "新大久保",
+      "answer": [
+        "しんおおくぼ"
+      ]
+    },
+    {
+      "question": "新大塚",
+      "answer": [
+        "しんおおつか"
+      ]
+    },
+    {
+      "question": "新御徒町",
+      "answer": [
+        "しんおかちまち"
+      ]
+    },
+    {
+      "question": "新御茶ノ水",
+      "answer": [
+        "しんおちゃのみず"
+      ]
+    },
+    {
+      "question": "新木場",
+      "answer": [
+        "しんきば"
+      ]
+    },
+    {
+      "question": "新小岩",
+      "answer": [
+        "しんこいわ"
+      ]
+    },
+    {
+      "question": "新高円寺",
+      "answer": [
+        "しんこうえんじ"
+      ]
+    },
+    {
+      "question": "新庚申塚",
+      "answer": [
+        "しんこうしんづか"
+      ]
+    },
+    {
+      "question": "新小金井",
+      "answer": [
+        "しんこがねい"
+      ]
+    },
+    {
+      "question": "新小平",
+      "answer": [
+        "しんこだいら"
+      ]
+    },
+    {
+      "question": "新桜台",
+      "answer": [
+        "しんさくらだい"
+      ]
+    },
+    {
+      "question": "新柴又",
+      "answer": [
+        "しんしばまた"
+      ]
+    },
+    {
+      "question": "新宿",
+      "answer": [
+        "しんじゅく"
+      ]
+    },
+    {
+      "question": "新宿御苑前",
+      "answer": [
+        "しんじゅくぎょえんまえ"
+      ]
+    },
+    {
+      "question": "新宿三丁目",
+      "answer": [
+        "しんじゅくさんちょうめ"
+      ]
+    },
+    {
+      "question": "新宿西口",
+      "answer": [
+        "しんじゅくにしぐち"
+      ]
+    },
+    {
+      "question": "新整備場",
+      "answer": [
+        "しんせいびじょう"
+      ]
+    },
+    {
+      "question": "神泉",
+      "answer": [
+        "しんせん"
+      ]
+    },
+    {
+      "question": "新線池袋",
+      "answer": [
+        "しんせんいけぶくろ"
+      ]
+    },
+    {
+      "question": "新高島平",
+      "answer": [
+        "しんたかしまだいら"
+      ]
+    },
+    {
+      "question": "新代田",
+      "answer": [
+        "しんだいた"
+      ]
+    },
+    {
+      "question": "新富町",
+      "answer": [
+        "しんとみちょう"
+      ]
+    },
+    {
+      "question": "新中野",
+      "answer": [
+        "しんなかの"
+      ]
+    },
+    {
+      "question": "新日本橋",
+      "answer": [
+        "しんにほんばし"
+      ]
+    },
+    {
+      "question": "新橋",
+      "answer": [
+        "しんばし"
+      ]
+    },
+    {
+      "question": "新馬場",
+      "answer": [
+        "しんばんば"
+      ]
+    },
+    {
+      "question": "新三河島",
+      "answer": [
+        "しんみかわしま"
+      ]
+    },
+    {
+      "question": "十条",
+      "answer": [
+        "じゅうじょう"
+      ]
+    },
+    {
+      "question": "自由が丘",
+      "answer": [
+        "じゆうがおか"
+      ]
+    },
+    {
+      "question": "神保町",
+      "answer": [
+        "じんぼうちょう"
+      ]
+    },
+    {
+      "question": "水天宮前",
+      "answer": [
+        "すいてんぐうまえ"
+      ]
+    },
+    {
+      "question": "水道橋",
+      "answer": [
+        "すいどうばし"
+      ]
+    },
+    {
+      "question": "末広町",
+      "answer": [
+        "すえひろちょう"
+      ]
+    },
+    {
+      "question": "巣鴨",
+      "answer": [
+        "すがも"
+      ]
+    },
+    {
+      "question": "巣鴨新田",
+      "answer": [
+        "すがもしんでん"
+      ]
+    },
+    {
+      "question": "すずかけ台",
+      "answer": [
+        "すずかけだい"
+      ]
+    },
+    {
+      "question": "砂川七番",
+      "answer": [
+        "すながわななばん"
+      ]
+    },
+    {
+      "question": "住吉",
+      "answer": [
+        "すみよし"
+      ]
+    },
+    {
+      "question": "成城学園前",
+      "answer": [
+        "せいじょうがくえんまえ"
+      ]
+    },
+    {
+      "question": "聖蹟桜ケ丘",
+      "answer": [
+        "せいせきさくらがおか"
+      ]
+    },
+    {
+      "question": "整備場",
+      "answer": [
+        "せいびじょう"
+      ]
+    },
+    {
+      "question": "西武園",
+      "answer": [
+        "せいぶえん"
+      ]
+    },
+    {
+      "question": "西武新宿",
+      "answer": [
+        "せいぶしんじゅく"
+      ]
+    },
+    {
+      "question": "西武立川",
+      "answer": [
+        "せいぶたちかわ"
+      ]
+    },
+    {
+      "question": "西武柳沢",
+      "answer": [
+        "せいぶやぎさわ"
+      ]
+    },
+    {
+      "question": "西武遊園地",
+      "answer": [
+        "せいぶゆうえんち"
+      ]
+    },
+    {
+      "question": "世田谷",
+      "answer": [
+        "せたがや"
+      ]
+    },
+    {
+      "question": "世田谷代田",
+      "answer": [
+        "せたがやだいた"
+      ]
+    },
+    {
+      "question": "千川",
+      "answer": [
+        "せんかわ"
+      ]
+    },
+    {
+      "question": "泉岳寺",
+      "answer": [
+        "せんがくじ"
+      ]
+    },
+    {
+      "question": "仙川",
+      "answer": [
+        "せんがわ"
+      ]
+    },
+    {
+      "question": "千石",
+      "answer": [
+        "せんごく"
+      ]
+    },
+    {
+      "question": "千住大橋",
+      "answer": [
+        "せんじゅおおはし"
+      ]
+    },
+    {
+      "question": "洗足",
+      "answer": [
+        "せんぞく"
+      ]
+    },
+    {
+      "question": "洗足池",
+      "answer": [
+        "せんぞくいけ"
+      ]
+    },
+    {
+      "question": "千駄ケ谷",
+      "answer": [
+        "せんだがや"
+      ]
+    },
+    {
+      "question": "千駄木",
+      "answer": [
+        "せんだぎ"
+      ]
+    },
+    {
+      "question": "祖師ケ谷大蔵",
+      "answer": [
+        "そしがやおおくら"
+      ]
+    },
+    {
+      "question": "雑司ケ谷",
+      "answer": [
+        "ぞうしがや"
+      ]
+    },
+    {
+      "question": "雑色",
+      "answer": [
+        "ぞうしき"
+      ]
+    },
+    {
+      "question": "高井戸",
+      "answer": [
+        "たかいど"
+      ]
+    },
+    {
+      "question": "高尾",
+      "answer": [
+        "たかお"
+      ]
+    },
+    {
+      "question": "高尾山口",
+      "answer": [
+        "たかおさんぐち"
+      ]
+    },
+    {
+      "question": "高島平",
+      "answer": [
+        "たかしまだいら"
+      ]
+    },
+    {
+      "question": "高田馬場",
+      "answer": [
+        "たかだのばば"
+      ]
+    },
+    {
+      "question": "高輪台",
+      "answer": [
+        "たかなわだい"
+      ]
+    },
+    {
+      "question": "鷹の台",
+      "answer": [
+        "たかのだい"
+      ]
+    },
+    {
+      "question": "高幡不動",
+      "answer": [
+        "たかはたふどう"
+      ]
+    },
+    {
+      "question": "高松",
+      "answer": [
+        "たかまつ"
+      ]
+    },
+    {
+      "question": "宝町",
+      "answer": [
+        "たからちょう"
+      ]
+    },
+    {
+      "question": "滝野川一丁目",
+      "answer": [
+        "たきのがわいっちょうめ"
+      ]
+    },
+    {
+      "question": "竹芝",
+      "answer": [
+        "たけしば"
+      ]
+    },
+    {
+      "question": "竹ノ塚",
+      "answer": [
+        "たけのつか"
+      ]
+    },
+    {
+      "question": "竹橋",
+      "answer": [
+        "たけばし"
+      ]
+    },
+    {
+      "question": "立会川",
+      "answer": [
+        "たちあいがわ"
+      ]
+    },
+    {
+      "question": "立川",
+      "answer": [
+        "たちかわ"
+      ]
+    },
+    {
+      "question": "立川北",
+      "answer": [
+        "たちかわきた"
+      ]
+    },
+    {
+      "question": "立川南",
+      "answer": [
+        "たちかわみなみ"
+      ]
+    },
+    {
+      "question": "立飛",
+      "answer": [
+        "たちひ"
+      ]
+    },
+    {
+      "question": "辰巳",
+      "answer": [
+        "たつみ"
+      ]
+    },
+    {
+      "question": "田無",
+      "answer": [
+        "たなし"
+      ]
+    },
+    {
+      "question": "田端",
+      "answer": [
+        "たばた"
+      ]
+    },
+    {
+      "question": "多磨",
+      "answer": [
+        "たま"
+      ]
+    },
+    {
+      "question": "多摩川",
+      "answer": [
+        "たまがわ"
+      ]
+    },
+    {
+      "question": "玉川学園前",
+      "answer": [
+        "たまがわがくえんまえ"
+      ]
+    },
+    {
+      "question": "玉川上水",
+      "answer": [
+        "たまがわじょうすい"
+      ]
+    },
+    {
+      "question": "多摩境",
+      "answer": [
+        "たまさかい"
+      ]
+    },
+    {
+      "question": "多摩センター",
+      "answer": [
+        "たませんたー"
+      ]
+    },
+    {
+      "question": "田町",
+      "answer": [
+        "たまち"
+      ]
+    },
+    {
+      "question": "多摩動物公園",
+      "answer": [
+        "たまどうぶつこうえん"
+      ]
+    },
+    {
+      "question": "多磨霊園",
+      "answer": [
+        "たまれいえん"
+      ]
+    },
+    {
+      "question": "溜池山王",
+      "answer": [
+        "ためいけさんのう"
+      ]
+    },
+    {
+      "question": "田原町",
+      "answer": [
+        "たわらまち"
+      ]
+    },
+    {
+      "question": "代官山",
+      "answer": [
+        "だいかんやま"
+      ]
+    },
+    {
+      "question": "大師前",
+      "answer": [
+        "だいしまえ"
+      ]
+    },
+    {
+      "question": "代田橋",
+      "answer": [
+        "だいたばし"
+      ]
+    },
+    {
+      "question": "台場",
+      "answer": [
+        "だいば"
+      ]
+    },
+    {
+      "question": "大門",
+      "answer": [
+        "だいもん"
+      ]
+    },
+    {
+      "question": "中央大学・明星大学",
+      "answer": [
+        "ちゅうおうだいがくめいせいだいがく"
+      ]
+    },
+    {
+      "question": "調布",
+      "answer": [
+        "ちょうふ"
+      ]
+    },
+    {
+      "question": "地下鉄赤塚",
+      "answer": [
+        "ちかてつあかつか"
+      ]
+    },
+    {
+      "question": "地下鉄成増",
+      "answer": [
+        "ちかてつなります"
+      ]
+    },
+    {
+      "question": "千歳烏山",
+      "answer": [
+        "ちとせからすやま"
+      ]
+    },
+    {
+      "question": "千歳船橋",
+      "answer": [
+        "ちとせふなばし"
+      ]
+    },
+    {
+      "question": "千鳥町",
+      "answer": [
+        "ちどりちょう"
+      ]
+    },
+    {
+      "question": "月島",
+      "answer": [
+        "つきしま"
+      ]
+    },
+    {
+      "question": "築地",
+      "answer": [
+        "つきじ"
+      ]
+    },
+    {
+      "question": "築地市場",
+      "answer": [
+        "つきじしじょう"
+      ]
+    },
+    {
+      "question": "つくし野",
+      "answer": [
+        "つくしの"
+      ]
+    },
+    {
+      "question": "つつじケ丘",
+      "answer": [
+        "つつじがおか"
+      ]
+    },
+    {
+      "question": "鶴川",
+      "answer": [
+        "つるかわ"
+      ]
+    },
+    {
+      "question": "天空橋",
+      "answer": [
+        "てんくうばし"
+      ]
+    },
+    {
+      "question": "天王洲アイル",
+      "answer": [
+        "てんのうずあいる"
+      ]
+    },
+    {
+      "question": "田園調布",
+      "answer": [
+        "でんえんちょうふ"
+      ]
+    },
+    {
+      "question": "東京",
+      "answer": [
+        "とうきょう"
+      ]
+    },
+    {
+      "question": "東京テレポート",
+      "answer": [
+        "とうきょうてれぽーと"
+      ]
+    },
+    {
+      "question": "東大前",
+      "answer": [
+        "とうだいまえ"
+      ]
+    },
+    {
+      "question": "東武練馬",
+      "answer": [
+        "とうぶねりま"
+      ]
+    },
+    {
+      "question": "東陽町",
+      "answer": [
+        "とうようちょう"
+      ]
+    },
+    {
+      "question": "ときわ台",
+      "answer": [
+        "ときわだい"
+      ]
+    },
+    {
+      "question": "戸越",
+      "answer": [
+        "とごし"
+      ]
+    },
+    {
+      "question": "戸越銀座",
+      "answer": [
+        "とごしぎんざ"
+      ]
+    },
+    {
+      "question": "戸越公園",
+      "answer": [
+        "とごしこうえん"
+      ]
+    },
+    {
+      "question": "豊島園",
+      "answer": [
+        "としまえん"
+      ]
+    },
+    {
+      "question": "都庁前",
+      "answer": [
+        "とちょうまえ"
+      ]
+    },
+    {
+      "question": "等々力",
+      "answer": [
+        "とどろき"
+      ]
+    },
+    {
+      "question": "飛田給",
+      "answer": [
+        "とびたきゅう"
+      ]
+    },
+    {
+      "question": "豊洲",
+      "answer": [
+        "とよす"
+      ]
+    },
+    {
+      "question": "豊田",
+      "answer": [
+        "とよだ"
+      ]
+    },
+    {
+      "question": "虎ノ門",
+      "answer": [
+        "とらのもん"
+      ]
+    },
+    {
+      "question": "都立家政",
+      "answer": [
+        "とりつかせい"
+      ]
+    },
+    {
+      "question": "都立大学",
+      "answer": [
+        "とりつだいがく"
+      ]
+    },
+    {
+      "question": "中井",
+      "answer": [
+        "なかい"
+      ]
+    },
+    {
+      "question": "中板橋",
+      "answer": [
+        "なかいたばし"
+      ]
+    },
+    {
+      "question": "仲御徒町",
+      "answer": [
+        "なかおかちまち"
+      ]
+    },
+    {
+      "question": "中神",
+      "answer": [
+        "なかがみ"
+      ]
+    },
+    {
+      "question": "中河原",
+      "answer": [
+        "なかがわら"
+      ]
+    },
+    {
+      "question": "中野",
+      "answer": [
+        "なかの"
+      ]
+    },
+    {
+      "question": "中野坂上",
+      "answer": [
+        "なかのさかうえ"
+      ]
+    },
+    {
+      "question": "中野新橋",
+      "answer": [
+        "なかのしんばし"
+      ]
+    },
+    {
+      "question": "中野富士見町",
+      "answer": [
+        "なかのふじみちょう"
+      ]
+    },
+    {
+      "question": "中延",
+      "answer": [
+        "なかのぶ"
+      ]
+    },
+    {
+      "question": "中村橋",
+      "answer": [
+        "なかむらばし"
+      ]
+    },
+    {
+      "question": "中目黒",
+      "answer": [
+        "なかめぐろ"
+      ]
+    },
+    {
+      "question": "永田町",
+      "answer": [
+        "ながたちょう"
+      ]
+    },
+    {
+      "question": "長沼",
+      "answer": [
+        "ながぬま"
+      ]
+    },
+    {
+      "question": "長原",
+      "answer": [
+        "ながはら"
+      ]
+    },
+    {
+      "question": "業平橋",
+      "answer": [
+        "なりひらばし"
+      ]
+    },
+    {
+      "question": "成増",
+      "answer": [
+        "なります"
+      ]
+    },
+    {
+      "question": "成瀬",
+      "answer": [
+        "なるせ"
+      ]
+    },
+    {
+      "question": "日暮里",
+      "answer": [
+        "にっぽり"
+      ]
+    },
+    {
+      "question": "西新井",
+      "answer": [
+        "にしあらい"
+      ]
+    },
+    {
+      "question": "西永福",
+      "answer": [
+        "にしえいふく"
+      ]
+    },
+    {
+      "question": "西大井",
+      "answer": [
+        "にしおおい"
+      ]
+    },
+    {
+      "question": "西大島",
+      "answer": [
+        "にしおおじま"
+      ]
+    },
+    {
+      "question": "西荻窪",
+      "answer": [
+        "にしおぎくぼ"
+      ]
+    },
+    {
+      "question": "西葛西",
+      "answer": [
+        "にしかさい"
+      ]
+    },
+    {
+      "question": "西ケ原",
+      "answer": [
+        "にしがはら"
+      ]
+    },
+    {
+      "question": "西ケ原四丁目",
+      "answer": [
+        "にしがはらよんちょうめ"
+      ]
+    },
+    {
+      "question": "西国立",
+      "answer": [
+        "にしくにたち"
+      ]
+    },
+    {
+      "question": "西国分寺",
+      "answer": [
+        "にしこくぶんじ"
+      ]
+    },
+    {
+      "question": "西小山",
+      "answer": [
+        "にしこやま"
+      ]
+    },
+    {
+      "question": "西新宿",
+      "answer": [
+        "にししんじゅく"
+      ]
+    },
+    {
+      "question": "西新宿五丁目",
+      "answer": [
+        "にししんじゅくごちょうめ"
+      ]
+    },
+    {
+      "question": "西巣鴨",
+      "answer": [
+        "にしすがも"
+      ]
+    },
+    {
+      "question": "西太子堂",
+      "answer": [
+        "にしたいしどう"
+      ]
+    },
+    {
+      "question": "西高島平",
+      "answer": [
+        "にしたかしまだいら"
+      ]
+    },
+    {
+      "question": "西立川",
+      "answer": [
+        "にしたちかわ"
+      ]
+    },
+    {
+      "question": "西台",
+      "answer": [
+        "にしだい"
+      ]
+    },
+    {
+      "question": "西調布",
+      "answer": [
+        "にしちょうふ"
+      ]
+    },
+    {
+      "question": "西日暮里",
+      "answer": [
+        "にしにっぽり"
+      ]
+    },
+    {
+      "question": "西八王子",
+      "answer": [
+        "にしはちおうじ"
+      ]
+    },
+    {
+      "question": "西馬込",
+      "answer": [
+        "にしまごめ"
+      ]
+    },
+    {
+      "question": "二重橋前",
+      "answer": [
+        "にじゅうばしまえ"
+      ]
+    },
+    {
+      "question": "日本橋",
+      "answer": [
+        "にほんばし"
+      ]
+    },
+    {
+      "question": "人形町",
+      "answer": [
+        "にんぎょうちょう"
+      ]
+    },
+    {
+      "question": "沼袋",
+      "answer": [
+        "ぬまぶくろ"
+      ]
+    },
+    {
+      "question": "沼部",
+      "answer": [
+        "ぬまべ"
+      ]
+    },
+    {
+      "question": "根津",
+      "answer": [
+        "ねづ"
+      ]
+    },
+    {
+      "question": "練馬",
+      "answer": [
+        "ねりま"
+      ]
+    },
+    {
+      "question": "練馬春日町",
+      "answer": [
+        "ねりまかすがちょう"
+      ]
+    },
+    {
+      "question": "練馬高野台",
+      "answer": [
+        "ねりまたかのだい"
+      ]
+    },
+    {
+      "question": "野方",
+      "answer": [
+        "のがた"
+      ]
+    },
+    {
+      "question": "乃木坂",
+      "answer": [
+        "のぎざか"
+      ]
+    },
+    {
+      "question": "八丁堀",
+      "answer": [
+        "はっちょうぼり"
+      ]
+    },
+    {
+      "question": "拝島",
+      "answer": [
+        "はいじま"
+      ]
+    },
+    {
+      "question": "萩山",
+      "answer": [
+        "はぎやま"
+      ]
+    },
+    {
+      "question": "白山",
+      "answer": [
+        "はくさん"
+      ]
+    },
+    {
+      "question": "箱根ケ崎",
+      "answer": [
+        "はこねがさき"
+      ]
+    },
+    {
+      "question": "狭間",
+      "answer": [
+        "はざま"
+      ]
+    },
+    {
+      "question": "蓮沼",
+      "answer": [
+        "はすぬま"
+      ]
+    },
+    {
+      "question": "蓮根",
+      "answer": [
+        "はすね"
+      ]
+    },
+    {
+      "question": "幡ケ谷",
+      "answer": [
+        "はたがや"
+      ]
+    },
+    {
+      "question": "旗の台",
+      "answer": [
+        "はたのだい"
+      ]
+    },
+    {
+      "question": "八王子",
+      "answer": [
+        "はちおうじ"
+      ]
+    },
+    {
+      "question": "八王子みなみ野",
+      "answer": [
+        "はちおうじみなみの"
+      ]
+    },
+    {
+      "question": "八幡山",
+      "answer": [
+        "はちまんやま"
+      ]
+    },
+    {
+      "question": "初台",
+      "answer": [
+        "はつだい"
+      ]
+    },
+    {
+      "question": "鳩ノ巣",
+      "answer": [
+        "はとのす"
+      ]
+    },
+    {
+      "question": "花小金井",
+      "answer": [
+        "はなこがねい"
+      ]
+    },
+    {
+      "question": "羽田空港",
+      "answer": [
+        "はねだくうこう"
+      ]
+    },
+    {
+      "question": "浜田山",
+      "answer": [
+        "はまだやま"
+      ]
+    },
+    {
+      "question": "浜町",
+      "answer": [
+        "はまちょう"
+      ]
+    },
+    {
+      "question": "浜松町",
+      "answer": [
+        "はままつちょう"
+      ]
+    },
+    {
+      "question": "羽村",
+      "answer": [
+        "はむら"
+      ]
+    },
+    {
+      "question": "原宿",
+      "answer": [
+        "はらじゅく"
+      ]
+    },
+    {
+      "question": "半蔵門",
+      "answer": [
+        "はんぞうもん"
+      ]
+    },
+    {
+      "question": "馬喰町",
+      "answer": [
+        "ばくろちょう"
+      ]
+    },
+    {
+      "question": "馬喰横山",
+      "answer": [
+        "ばくろよこやま"
+      ]
+    },
+    {
+      "question": "光が丘",
+      "answer": [
+        "ひかりがおか"
+      ]
+    },
+    {
+      "question": "氷川台",
+      "answer": [
+        "ひかわだい"
+      ]
+    },
+    {
+      "question": "東秋留",
+      "answer": [
+        "ひがしあきる"
+      ]
+    },
+    {
+      "question": "東あずま",
+      "answer": [
+        "ひがしあずま"
+      ]
+    },
+    {
+      "question": "東池袋",
+      "answer": [
+        "ひがしいけぶくろ"
+      ]
+    },
+    {
+      "question": "東池袋四丁目",
+      "answer": [
+        "ひがしいけぶくろよんちょうめ"
+      ]
+    },
+    {
+      "question": "東青梅",
+      "answer": [
+        "ひがしおうめ"
+      ]
+    },
+    {
+      "question": "東大島",
+      "answer": [
+        "ひがしおおじま"
+      ]
+    },
+    {
+      "question": "東尾久三丁目",
+      "answer": [
+        "ひがしおぐさんちょうめ"
+      ]
+    },
+    {
+      "question": "東北沢",
+      "answer": [
+        "ひがしきたざわ"
+      ]
+    },
+    {
+      "question": "東銀座",
+      "answer": [
+        "ひがしぎんざ"
+      ]
+    },
+    {
+      "question": "東久留米",
+      "answer": [
+        "ひがしくるめ"
+      ]
+    },
+    {
+      "question": "東高円寺",
+      "answer": [
+        "ひがしこうえんじ"
+      ]
+    },
+    {
+      "question": "東小金井",
+      "answer": [
+        "ひがしこがねい"
+      ]
+    },
+    {
+      "question": "東新宿",
+      "answer": [
+        "ひがししんじゅく"
+      ]
+    },
+    {
+      "question": "東十条",
+      "answer": [
+        "ひがしじゅうじょう"
+      ]
+    },
+    {
+      "question": "東中神",
+      "answer": [
+        "ひがしなかがみ"
+      ]
+    },
+    {
+      "question": "東中野",
+      "answer": [
+        "ひがしなかの"
+      ]
+    },
+    {
+      "question": "東長崎",
+      "answer": [
+        "ひがしながさき"
+      ]
+    },
+    {
+      "question": "東日本橋",
+      "answer": [
+        "ひがしにほんばし"
+      ]
+    },
+    {
+      "question": "東福生",
+      "answer": [
+        "ひがしふっさ"
+      ]
+    },
+    {
+      "question": "東伏見",
+      "answer": [
+        "ひがしふしみ"
+      ]
+    },
+    {
+      "question": "東府中",
+      "answer": [
+        "ひがしふちゅう"
+      ]
+    },
+    {
+      "question": "東松原",
+      "answer": [
+        "ひがしまつばら"
+      ]
+    },
+    {
+      "question": "東向島",
+      "answer": [
+        "ひがしむこうじま"
+      ]
+    },
+    {
+      "question": "東村山",
+      "answer": [
+        "ひがしむらやま"
+      ]
+    },
+    {
+      "question": "東大和市",
+      "answer": [
+        "ひがしやまとし"
+      ]
+    },
+    {
+      "question": "曳舟",
+      "answer": [
+        "ひきふね"
+      ]
+    },
+    {
+      "question": "一橋学園",
+      "answer": [
+        "ひとつばしがくえん"
+      ]
+    },
+    {
+      "question": "日向和田",
+      "answer": [
+        "ひなたわだ"
+      ]
+    },
+    {
+      "question": "日野",
+      "answer": [
+        "ひの"
+      ]
+    },
+    {
+      "question": "日の出",
+      "answer": [
+        "ひので"
+      ]
+    },
+    {
+      "question": "ひばりケ丘",
+      "answer": [
+        "ひばりがおか"
+      ]
+    },
+    {
+      "question": "日比谷",
+      "answer": [
+        "ひびや"
+      ]
+    },
+    {
+      "question": "平井",
+      "answer": [
+        "ひらい"
+      ]
+    },
+    {
+      "question": "平山城址公園",
+      "answer": [
+        "ひらやまじょうしこうえん"
+      ]
+    },
+    {
+      "question": "広尾",
+      "answer": [
+        "ひろお"
+      ]
+    },
+    {
+      "question": "福生",
+      "answer": [
+        "ふっさ"
+      ]
+    },
+    {
+      "question": "富士見ケ丘",
+      "answer": [
+        "ふじみがおか"
+      ]
+    },
+    {
+      "question": "富士見台",
+      "answer": [
+        "ふじみだい"
+      ]
+    },
+    {
+      "question": "二子玉川",
+      "answer": [
+        "ふたこたまがわ"
+      ]
+    },
+    {
+      "question": "二俣尾",
+      "answer": [
+        "ふたまたお"
+      ]
+    },
+    {
+      "question": "布田",
+      "answer": [
+        "ふだ"
+      ]
+    },
+    {
+      "question": "府中",
+      "answer": [
+        "ふちゅう"
+      ]
+    },
+    {
+      "question": "府中競馬正門前",
+      "answer": [
+        "ふちゅうけいばせいもんまえ"
+      ]
+    },
+    {
+      "question": "府中本町",
+      "answer": [
+        "ふちゅうほんまち"
+      ]
+    },
+    {
+      "question": "不動前",
+      "answer": [
+        "ふどうまえ"
+      ]
+    },
+    {
+      "question": "船堀",
+      "answer": [
+        "ふなぼり"
+      ]
+    },
+    {
+      "question": "船の科学館",
+      "answer": [
+        "ふねのかがくかん"
+      ]
+    },
+    {
+      "question": "分倍河原",
+      "answer": [
+        "ぶばいがわら"
+      ]
+    },
+    {
+      "question": "平和島",
+      "answer": [
+        "へいわじま"
+      ]
+    },
+    {
+      "question": "平和台",
+      "answer": [
+        "へいわだい"
+      ]
+    },
+    {
+      "question": "方南町",
+      "answer": [
+        "ほうなんちょう"
+      ]
+    },
+    {
+      "question": "保谷",
+      "answer": [
+        "ほうや"
+      ]
+    },
+    {
+      "question": "程久保",
+      "answer": [
+        "ほどくぼ"
+      ]
+    },
+    {
+      "question": "堀切",
+      "answer": [
+        "ほりきり"
+      ]
+    },
+    {
+      "question": "堀切菖蒲園",
+      "answer": [
+        "ほりきりしょうぶえん"
+      ]
+    },
+    {
+      "question": "本駒込",
+      "answer": [
+        "ほんこまごめ"
+      ]
+    },
+    {
+      "question": "本郷三丁目",
+      "answer": [
+        "ほんごうさんちょうめ"
+      ]
+    },
+    {
+      "question": "本所吾妻橋",
+      "answer": [
+        "ほんじょあづまばし"
+      ]
+    },
+    {
+      "question": "馬込",
+      "answer": [
+        "まごめ"
+      ]
+    },
+    {
+      "question": "町田",
+      "answer": [
+        "まちだ"
+      ]
+    },
+    {
+      "question": "町屋",
+      "answer": [
+        "まちや"
+      ]
+    },
+    {
+      "question": "町屋駅前",
+      "answer": [
+        "まちやえきまえ"
+      ]
+    },
+    {
+      "question": "町屋二丁目",
+      "answer": [
+        "まちやにちょうめ"
+      ]
+    },
+    {
+      "question": "松が谷",
+      "answer": [
+        "まつがや"
+      ]
+    },
+    {
+      "question": "松原",
+      "answer": [
+        "まつばら"
+      ]
+    },
+    {
+      "question": "万願寺",
+      "answer": [
+        "まんがんじ"
+      ]
+    },
+    {
+      "question": "茗荷谷",
+      "answer": [
+        "みょうがだに"
+      ]
+    },
+    {
+      "question": "三河島",
+      "answer": [
+        "みかわしま"
+      ]
+    },
+    {
+      "question": "瑞江",
+      "answer": [
+        "みずえ"
+      ]
+    },
+    {
+      "question": "三田",
+      "answer": [
+        "みた"
+      ]
+    },
+    {
+      "question": "三鷹",
+      "answer": [
+        "みたか"
+      ]
+    },
+    {
+      "question": "三鷹台",
+      "answer": [
+        "みたかだい"
+      ]
+    },
+    {
+      "question": "御嶽",
+      "answer": [
+        "みたけ"
+      ]
+    },
+    {
+      "question": "三越前",
+      "answer": [
+        "みつこしまえ"
+      ]
+    },
+    {
+      "question": "緑が丘",
+      "answer": [
+        "みどりがおか"
+      ]
+    },
+    {
+      "question": "南阿佐ケ谷",
+      "answer": [
+        "みなみあさがや"
+      ]
+    },
+    {
+      "question": "南大沢",
+      "answer": [
+        "みなみおおさわ"
+      ]
+    },
+    {
+      "question": "南新宿",
+      "answer": [
+        "みなみしんじゅく"
+      ]
+    },
+    {
+      "question": "南砂町",
+      "answer": [
+        "みなみすなまち"
+      ]
+    },
+    {
+      "question": "南千住",
+      "answer": [
+        "みなみせんじゅ"
+      ]
+    },
+    {
+      "question": "南多摩",
+      "answer": [
+        "みなみたま"
+      ]
+    },
+    {
+      "question": "南平",
+      "answer": [
+        "みなみだいら"
+      ]
+    },
+    {
+      "question": "南町田",
+      "answer": [
+        "みなみまちだ"
+      ]
+    },
+    {
+      "question": "三ノ輪",
+      "answer": [
+        "みのわ"
+      ]
+    },
+    {
+      "question": "三ノ輪橋",
+      "answer": [
+        "みのわばし"
+      ]
+    },
+    {
+      "question": "宮の坂",
+      "answer": [
+        "みやのさか"
+      ]
+    },
+    {
+      "question": "宮ノ平",
+      "answer": [
+        "みやのひら"
+      ]
+    },
+    {
+      "question": "宮ノ前",
+      "answer": [
+        "みやのまえ"
+      ]
+    },
+    {
+      "question": "向原",
+      "answer": [
+        "むこうはら"
+      ]
+    },
+    {
+      "question": "武蔵五日市",
+      "answer": [
+        "むさしいつかいち"
+      ]
+    },
+    {
+      "question": "武蔵小金井",
+      "answer": [
+        "むさしこがねい"
+      ]
+    },
+    {
+      "question": "武蔵小山",
+      "answer": [
+        "むさしこやま"
+      ]
+    },
+    {
+      "question": "武蔵境",
+      "answer": [
+        "むさしさかい"
+      ]
+    },
+    {
+      "question": "武蔵砂川",
+      "answer": [
+        "むさしすながわ"
+      ]
+    },
+    {
+      "question": "武蔵関",
+      "answer": [
+        "むさしせき"
+      ]
+    },
+    {
+      "question": "武蔵新田",
+      "answer": [
+        "むさしにった"
+      ]
+    },
+    {
+      "question": "武蔵野台",
+      "answer": [
+        "むさしのだい"
+      ]
+    },
+    {
+      "question": "武蔵引田",
+      "answer": [
+        "むさしひきだ"
+      ]
+    },
+    {
+      "question": "武蔵増戸",
+      "answer": [
+        "むさしますこ"
+      ]
+    },
+    {
+      "question": "武蔵大和",
+      "answer": [
+        "むさしやまと"
+      ]
+    },
+    {
+      "question": "明治神宮前",
+      "answer": [
+        "めいじじんぐうまえ"
+      ]
+    },
+    {
+      "question": "明大前",
+      "answer": [
+        "めいだいまえ"
+      ]
+    },
+    {
+      "question": "目黒",
+      "answer": [
+        "めぐろ"
+      ]
+    },
+    {
+      "question": "目白",
+      "answer": [
+        "めじろ"
+      ]
+    },
+    {
+      "question": "めじろ台",
+      "answer": [
+        "めじろだい"
+      ]
+    },
+    {
+      "question": "百草園",
+      "answer": [
+        "もぐさえん"
+      ]
+    },
+    {
+      "question": "本蓮沼",
+      "answer": [
+        "もとはすぬま"
+      ]
+    },
+    {
+      "question": "森下",
+      "answer": [
+        "もりした"
+      ]
+    },
+    {
+      "question": "門前仲町",
+      "answer": [
+        "もんぜんなかちょう"
+      ]
+    },
+    {
+      "question": "矢川",
+      "answer": [
+        "やがわ"
+      ]
+    },
+    {
+      "question": "矢口渡",
+      "answer": [
+        "やぐちのわたし"
+      ]
+    },
+    {
+      "question": "八坂",
+      "answer": [
+        "やさか"
+      ]
+    },
+    {
+      "question": "矢野口",
+      "answer": [
+        "やのくち"
+      ]
+    },
+    {
+      "question": "八広",
+      "answer": [
+        "やひろ"
+      ]
+    },
+    {
+      "question": "谷保",
+      "answer": [
+        "やほ"
+      ]
+    },
+    {
+      "question": "山下",
+      "answer": [
+        "やました"
+      ]
+    },
+    {
+      "question": "山田",
+      "answer": [
+        "やまだ"
+      ]
+    },
+    {
+      "question": "祐天寺",
+      "answer": [
+        "ゆうてんじ"
+      ]
+    },
+    {
+      "question": "有楽町",
+      "answer": [
+        "ゆうらくちょう"
+      ]
+    },
+    {
+      "question": "雪が谷大塚",
+      "answer": [
+        "ゆきがやおおつか"
+      ]
+    },
+    {
+      "question": "湯島",
+      "answer": [
+        "ゆしま"
+      ]
+    },
+    {
+      "question": "用賀",
+      "answer": [
+        "ようが"
+      ]
+    },
+    {
+      "question": "四ツ木",
+      "answer": [
+        "よつぎ"
+      ]
+    },
+    {
+      "question": "四ツ谷",
+      "answer": [
+        "よつや"
+      ]
+    },
+    {
+      "question": "四谷三丁目",
+      "answer": [
+        "よつやさんちょうめ"
+      ]
+    },
+    {
+      "question": "代々木",
+      "answer": [
+        "よよぎ"
+      ]
+    },
+    {
+      "question": "代々木上原",
+      "answer": [
+        "よよぎうえはら"
+      ]
+    },
+    {
+      "question": "代々木公園",
+      "answer": [
+        "よよぎこうえん"
+      ]
+    },
+    {
+      "question": "代々木八幡",
+      "answer": [
+        "よよぎはちまん"
+      ]
+    },
+    {
+      "question": "流通センター",
+      "answer": [
+        "りゅうつうせんたー"
+      ]
+    },
+    {
+      "question": "両国",
+      "answer": [
+        "りょうごく"
+      ]
+    },
+    {
+      "question": "六本木",
+      "answer": [
+        "ろっぽんぎ"
+      ]
+    },
+    {
+      "question": "六本木一丁目",
+      "answer": [
+        "ろっぽんぎいっちょうめ"
+      ]
+    },
+    {
+      "question": "芦花公園",
+      "answer": [
+        "ろかこうえん"
+      ]
+    },
+    {
+      "question": "六郷土手",
+      "answer": [
+        "ろくごうどて"
+      ]
+    },
+    {
+      "question": "若林",
+      "answer": [
+        "わかばやし"
+      ]
+    },
+    {
+      "question": "若松河田",
+      "answer": [
+        "わかまつかわだ"
+      ]
+    },
+    {
+      "question": "早稲田",
+      "answer": [
+        "わせだ"
+      ]
+    }
+  ]
+}

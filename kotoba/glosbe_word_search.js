@@ -60,7 +60,7 @@ function parseGlosbeResponse(inData) {
             addMeaningsForLanguage(outMeanings, inMeanings, 'en');
           }
 
-          outResults.push(new DictionaryResult(resultWord, [], [], outMeanings));
+          outResults.push(new DictionaryResult([{word: resultWord, readings: []}], [], outMeanings));
         }
       }
     }

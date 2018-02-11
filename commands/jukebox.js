@@ -5,12 +5,17 @@ const logger = reload('monochrome-bot').logger;
 const KotobaUtils = require('./../kotoba/utils.js');
 let videoUris = [];
 const PublicError = reload('monochrome-bot').PublicError;
+const apiKeys = reload('./../kotoba/api_keys.js');
 
-KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then(links => {
-  videoUris = links;
-}).catch(err => {
-  logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);
-});
+if (apiKeys.YOUTUBE) {
+  KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then(links => {
+    videoUris = links;
+  }).catch(err => {
+    logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);
+  });
+} else {
+  logger.logFailure('YOUTUBE', 'No Youtube API key present in kotoba/api_keys.js. The jukebox command will not work.');
+}
 
 module.exports = {
   commandAliases: ['k!jukebox'],
@@ -25,7 +30,7 @@ module.exports = {
     }
     let random = Math.floor(Math.random() * videoUris.length);
     let link = videoUris[random];
-    bot.createMessage(msg.channel.id, link);
+    msg.channel.createMessage(link, null, msg);
     logger.logSuccess('YOUTUBE', 'Sent link: ' + link);
   },
 };

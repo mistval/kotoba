@@ -1,4 +1,6 @@
-const QuizManager = require('./../kotoba/quiz_manager.js');
+'use strict'
+const reload = require('require-reload')(require);
+const QuizManager = reload('./../kotoba/quiz_manager.js');
 
 module.exports = {
   name: 'Quiz Answer',
@@ -11,6 +13,9 @@ module.exports = {
     let result = QuizManager.processUserInput(msg.channel.id, msg.author.id, userName, msg.content);
     if (result) {
       return true;
+    }
+    if (msg.content === 'skip' || msg.content === 's' || msg.content === 'ｓ' || msg.content === 'S') {
+      return QuizManager.skip(msg.channel.id);
     }
     let isDm = !msg.channel.guild;
     if (isDm) {

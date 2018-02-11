@@ -1,46 +1,34 @@
 {
-  "name": "monochrome",
+  "name": "kotoba",
   "version": "1.0.0",
-  "description": "A lightweight and simple node.js Discord bot core based on Eris",
+  "description": "A Discord bot for learning Japanese",
   "main": "monochrome.js",
-  "scripts": {
-    "test": "nyc mocha"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mistval/monochrome.git"
+    "url": "git+https://github.com/mistval/kotoba.git"
   },
   "keywords": [
-    "discord",
-    "node.js",
-    "nodejs",
-    "node",
-    "js",
-    "bot",
-    "framework",
-    "library",
-    "core"
   ],
   "author": "Randall",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mistval/monochrome/issues"
+    "url": "https://github.com/mistval/kotoba/issues"
   },
-  "homepage": "https://github.com/mistval/monochrome#readme",
+  "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
+    "bluebird": "^3.5.1",
     "canvas": "^1.6.7",
-    "eris": "^0.8.0",
+    "eris": "git+https://github.com/mistval/eris.git#patches",
+    "express": "^4.16.2",
     "html-entities": "^1.2.1",
     "htmlparser": "^1.7.7",
-    "imagemin": "^5.3.1",
-    "imagemin-pngquant": "^5.0.1",
-    "kuroshiro": "^0.1.5",
+    "jp-verbs": "^1.0.0",
     "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
-    "node-persist": "^2.1.0",
     "render-furigana": "^1.0.3",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "require-reload": "^0.2.2",
+    "socket.io": "1.7.4",
     "striptags": "^3.1.0",
     "unofficial-jisho-api": "^1.0.0"
   },
