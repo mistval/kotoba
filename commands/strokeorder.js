@@ -27,7 +27,7 @@ module.exports = {
       throw PublicError.createWithCustomPublicMessage(`Say 'k!strokeorder [kanji]' to search for stroke order information. For example: k!strokeorder 瞬間`, false, 'No suffix');
     }
     return jishoSearch.createNavigationForStrokeOrder(msg.author.username, msg.author.id, suffix).then(navigation => {
-      navigationManager.register(navigation, 6000000, msg);
+      return navigationManager.register(navigation, 6000000, msg);
     });
   },
 };

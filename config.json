@@ -26,7 +26,7 @@
   "useANSIColorsInLogFiles": true,
   "serverAdminRoleName": "kotoba",
   "genericErrorMessage": "Sorry, there was an error with that command. It has been logged and will be addressed.",
-  "missingPermissionsErrorMessage": "I don't have permission to reply to that command in this channel (maybe I don't have permission to upload files, embed links, etc). A server admin can give me the permissions I need in the Discord channel settings.",
+  "missingPermissionsErrorMessage": "I don't have permission to reply to that command in this channel. A server admin can give me the permissions I need in the channel settings. I need permission to **embed links**, **attach files**, and **add reactions**. If you don't want this command to be used in this channel, consider using **k!settings** to disable it.",
   "genericDMReply": "Say **k!help** to see my commands!",
   "genericMentionReply": "Hi <@user>, say **k!help** to see my commands!",
   "statusRotation": [
