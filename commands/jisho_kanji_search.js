@@ -27,7 +27,7 @@ module.exports = {
       throw PublicError.createWithCustomPublicMessage(createTitleOnlyEmbed(`Say 'k!kanji [kanji]' to search for kanji. For example: k!kanji 瞬間`), false, 'No suffix');
     }
     return jishoSearch.createNavigationForKanji(msg.author.username, msg.author.id, suffix).then(navigation => {
-      navigationManager.register(navigation, 6000000, msg);
+      return navigationManager.register(navigation, 6000000, msg);
     });
   },
 };
