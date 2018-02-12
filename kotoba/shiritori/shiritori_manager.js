@@ -382,7 +382,7 @@ class AskQuestionAction extends Action {
 class AskInitialQuestionAction extends Action {
   do() {
     let session = this.getSession_();
-    
+    let word = wordData.getRandomWord();
   }
 }
 
@@ -499,35 +499,8 @@ class ShiritoriManager {
     return false;
   }
 
-  stopAllQuizzes() {
-    return stopAllQuizzesCommand();
-  }
-
-  stopQuiz(locationId, cancelingUserId, cancelingUserIsAdmin) {
+  stop(locationId, cancelingUserId, cancelingUserIsAdmin) {
     return stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin);
-  }
-
-  saveQuiz(locationId, savingUserId) {
-    return saveQuizCommand(locationId, savingUserId);
-  }
-
-  skip(locationId) {
-    return skipCommand(locationId);
-  }
-
-  getDesiredSettings() {
-    return [
-      'quiz/japanese/answer_time_limit',
-      'quiz/japanese/score_limit',
-      'quiz/japanese/unanswered_question_limit',
-      'quiz/japanese/new_question_delay_after_unanswered',
-      'quiz/japanese/new_question_delay_after_answered',
-      'quiz/japanese/additional_answer_wait_time',
-    ];
-  }
-
-  hasQuizSession(locationId) {
-    return !!state.shiritoriManager.currentActionForLocationId[locationId];
   }
 }
 
