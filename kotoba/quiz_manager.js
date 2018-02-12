@@ -355,22 +355,24 @@ class AskQuestionAction extends Action {
       preprocessPromise = nextCard.preprocess(nextCard);
     }
 
-    return preprocessPromise.then(card => {
-      if (card === false) {
-        return this.do();
-      }
-      card.wasPreprocessed = true;
-      session.setCurrentCard(card);
-      this.readyForAnswers_ = true;
-      return card.createQuestion(card, session).then(question => {
-        return Util.retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
-          logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
-        });
-      }).then(shownQuestionId => {
-        this.shownQuestionId_ = shownQuestionId;
-        return new Promise((fulfill, reject) => {
-          this.fulfill_ = fulfill;
-          this.reject_ = reject;
+    return new Promise((fulfill, reject) => {
+      this.fulfill_ = fulfill;
+      this.reject_ = reject;
+      preprocessPromise.then(card => {
+        if (card === false) {
+          return fulfill(this.do());
+        }
+        card.wasPreprocessed = true;
+        session.setCurrentCard(card);
+        this.readyForAnswers_ = true;
+        return card.createQuestion(card, session).then(question => {
+          return Util.retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
+            logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
+          });
+        }).catch(err => {
+          reject(err);
+        }).then(shownQuestionId => {
+          this.shownQuestionId_ = shownQuestionId;
           let timer = setTimeout(() => {
             try {
               session.markCurrentCardUnanswered();
@@ -381,6 +383,8 @@ class AskQuestionAction extends Action {
           }, card.answerTimeLimitInMs);
           session.addTimer(timer);
           this.scheduleReveal_(card.numberOfReveals);
+        }).catch(err => {
+          reject(err);
         });
       });
     });
