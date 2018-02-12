@@ -44,7 +44,7 @@ module.exports = {
       return dictionaryQuery(msg, 'en', 'ja', suffix, jishoWordSearch, displayMode);
     }
     return jishoSearch.createNavigationForWord(msg.author.username, msg.author.id, suffix).then(navigation => {
-      navigationManager.register(navigation, 6000000, msg);
+      return navigationManager.register(navigation, 6000000, msg);
     });
   },
 };
