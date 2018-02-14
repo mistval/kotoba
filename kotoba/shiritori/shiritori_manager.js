@@ -7,13 +7,19 @@ const logger = reload('monochrome-bot').logger;
 // TODO: These should be configurable
 const BOT_TURN_WAIT_MIN_IN_MS = 5000;
 const BOT_TURN_WAIT_MAX_IN_MS = 8000;
-const ANSWER_TIME_LIMIT_IN_MS = 40000;
+const ANSWER_TIME_LIMIT_IN_MS = 10000;
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
-const WAIT_AFTER_TIMEOUT_IN_MS = 5000;
+const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
 
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
+
+const EndGameReason = {
+  NO_PLAYERS: 1,
+  STOP_COMMAND: 2,
+  ERROR: 3,
+};
 
 /* LOADING AND INITIALIZATION */
 
@@ -58,39 +64,70 @@ class Action {
   }
 }
 
-class SkipPlayerAction extends Action {
+function endGame(locationId, reason, arg) {
+  let session = state.shiritoriManager.sessionForLocationId[locationId];
+  delete state.shiritoriManager.sessionForLocationId[locationId];
+  let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
+  delete state.shiritoriManager.currentActionForLocationId[locationId];
+
+  if (currentAction.stop) {
+    currentAction.stop();
+  }
+
+  return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
+}
+
+class EndGameForErrorAction extends Action {
+  do() {
+    return endGame(this.getSession_().getLocationId(), EndGameReason.ERROR);
+  }
+}
+
+class EndGameForNoPlayersAction extends Action {
+  do() {
+    return endGame(this.getSession_().getLocationId(), EndGameReason.NO_PLAYERS);
+  }
+}
+
+class TimeoutAction extends Action {
+  constructor(session, boot) {
+    super(session);
+    this.boot_ = boot;
+  }
+
   do() {
     let session = this.getSession_();
     let clientDelegate = session.getClientDelegate();
     let currentPlayerId = session.getNextPlayerId();
-    return clientDelegate.skippedPlayer(currentPlayerId).catch(err => {
+    let promise;
+
+    if (this.boot_) {
+      promise = clientDelegate.removedPlayer(currentPlayerId);
+    } else {
+      promise = clientDelegate.skippedPlayer(currentPlayerId);
+    }
+
+    return promise.catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
     }).then(() => {
       return createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS);
     }).then(() => {
+      if (this.boot_) {
+         session.markCurrentPlayerInactive();
+         if (!session.hasActivePlayersBesidesBot()) {
+          return new EndGameForNoPlayersAction(session);
+         }
+      }
       session.advanceCurrentPlayer();
       let nextPlayerId = session.getNextPlayerId();
       let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
       let wordHistory = session.getWordHistory();
       let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
-      return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot);
-    }).then(() => {
-      return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
-    });
-  }
-}
-
-class RemovePlayerAction extends Action {
-  do() {
-    let session = this.getSession_();
-    let clientDelegate = session.getClientDelegate();
-    let currentPlayerId = session.getNextPlayerId();
-    return clientDelegate.removedPlayer(currentPlayerId).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
-    }).then(() => {
-      session.markCurrentPlayerInactive();
-      session.advanceCurrentPlayer();
-      return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
+      return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot).catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'Client delegate fail');
+      }).then(() => {
+        return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
+      });
     });
   }
 }
@@ -102,11 +139,8 @@ class PlayerTurnAction extends Action {
       this.fulfill_ = fulfill;
       return createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
         let session = this.getSession_();
-        if (this.playerDidTalk_) {
-          this.fulfill_(new SkipPlayerAction(session));
-        } else {
-          this.fulfill_(new RemovePlayerAction(session));
-        }
+        let boot = !this.playerDidTalk_;
+        this.fulfill_(new TimeoutAction(session, boot));
       });
     });
   }
@@ -146,6 +180,12 @@ class PlayerTurnAction extends Action {
     }
 
     return 'Rule violation';
+  }
+
+  stop() {
+    if (this.fulfill_) {
+      this.fulfill_();
+    }
   }
 }
 
@@ -261,10 +301,11 @@ function verifySessionNotInProgress(locationId) {
 }
 
 class ShiritoriManager {
-  startSession(session, locationId) {
+  startSession(session) {
+    let locationId = session.getLocationId();
     verifySessionNotInProgress(locationId);
     setSessionForLocationId(session, locationId);
-    return chainActions(locationId, new StartAction(session));
+    return chainActions(session.getLocationId(), new StartAction(session));
   }
 
   isSessionInProgressAtLocation(locationId) {
@@ -281,7 +322,12 @@ class ShiritoriManager {
     }
     return false;
   }
+
+  stop(locationId, userId) {
+    return endGame(locationId, EndGameReason.STOP_COMMAND, userId);
+  }
 }
 
 module.exports = new ShiritoriManager();
 module.exports.END_STATUS_ERROR = END_STATUS_ERROR;
+module.exports.EndGameReason = EndGameReason;
