@@ -10,6 +10,7 @@ const BOT_TURN_WAIT_MAX_IN_MS = 8000;
 const ANSWER_TIME_LIMIT_IN_MS = 40000;
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
+const WAIT_AFTER_TIMEOUT_IN_MS = 5000;
 
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
@@ -57,29 +58,67 @@ class Action {
   }
 }
 
-class TimeoutAction extends Action {
+class SkipPlayerAction extends Action {
   do() {
+    let session = this.getSession_();
+    let clientDelegate = session.getClientDelegate();
+    let currentPlayerId = session.getNextPlayerId();
+    return clientDelegate.skippedPlayer(currentPlayerId).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+    }).then(() => {
+      return createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS);
+    }).then(() => {
+      session.advanceCurrentPlayer();
+      let nextPlayerId = session.getNextPlayerId();
+      let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
+      let wordHistory = session.getWordHistory();
+      let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
+      return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot);
+    }).then(() => {
+      return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
+    });
+  }
+}
 
+class RemovePlayerAction extends Action {
+  do() {
+    let session = this.getSession_();
+    let clientDelegate = session.getClientDelegate();
+    let currentPlayerId = session.getNextPlayerId();
+    return clientDelegate.removedPlayer(currentPlayerId).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+    }).then(() => {
+      session.markCurrentPlayerInactive();
+      session.advanceCurrentPlayer();
+      return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
+    });
   }
 }
 
 class PlayerTurnAction extends Action {
   do() {
+    this.playerDidTalk_ = false;
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
-      createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
-        this.fulfill_(new TimeoutAction(this.getSession_()));
+      return createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
+        let session = this.getSession_();
+        if (this.playerDidTalk_) {
+          this.fulfill_(new SkipPlayerAction(session));
+        } else {
+          this.fulfill_(new RemovePlayerAction(session));
+        }
       });
     });
   }
 
   tryAcceptUserInput(userId, input) {
-    if (input.indexOf(' ') !== -1) {
-      return false;
-    }
     let session = this.getSession_();
     let currentPlayerId = session.getNextPlayerId();
     if (userId !== currentPlayerId) {
+      return false;
+    }
+    this.playerDidTalk_ = true;
+    if (input.indexOf(' ') !== -1) {
       return false;
     }
     let gameStrategy = this.getGameStrategy_();
