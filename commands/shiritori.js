@@ -89,13 +89,16 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds!`,
+        description: `Starting a Shiritori game in ${inSeconds} seconds. I'll go first!`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
   }
 
   botWillTakeTurnIn(inMs) {
+    if (inMs === 0) {
+      return Promise.resolve();
+    }
     return this.bot_.sendChannelTyping(this.commanderMessage_.channel.id);
   }
 

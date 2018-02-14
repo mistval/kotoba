@@ -62,6 +62,15 @@ class PlayerTurnAction extends Action {
 }
 
 class BotTurnAction extends Action {
+  constructor(session, doDelay) {
+    super(session);
+    if (doDelay) {
+      this.delay_ = BOT_TURN_WAIT_MIN_IN_MS + Math.floor(Math.random() * (BOT_TURN_WAIT_MAX_IN_MS - BOT_TURN_WAIT_MAX_IN_MS));
+    } else {
+      this.delay_ = 0;
+    }
+  }
+
   do() {
     let session = this.getSession_();
     let gameStrategy = this.getGameStrategy_();
@@ -70,12 +79,10 @@ class BotTurnAction extends Action {
     let nextWord = gameStrategy.getViableNextWord(wordHistory);
     nextWord.userId = session.getBotUserId();
 
-    let delayUntilTurnTakenInMs = BOT_TURN_WAIT_MIN_IN_MS + Math.floor(Math.random() * (BOT_TURN_WAIT_MAX_IN_MS - BOT_TURN_WAIT_MAX_IN_MS));
-
-    return Promise.resolve(clientDelegate.botWillTakeTurnIn(delayUntilTurnTakenInMs)).catch(err => {
+    return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay_)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
     }).then(() => {
-      return createTimeoutPromise(session, delayUntilTurnTakenInMs)
+      return createTimeoutPromise(session, this.delay_);
     }).then(() => {
       wordHistory.push(nextWord);
       session.advanceCurrentPlayer();
@@ -95,7 +102,7 @@ class StartAction extends Action {
     return Promise.resolve(session.getClientDelegate().notifyStarting(INITIAL_DELAY_IN_MS)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Error showing starting message', err);
     }).then(() => {
-      let askQuestionAction = new BotTurnAction(session);
+      let askQuestionAction = new BotTurnAction(session, false);
       return new WaitAction(session, INITIAL_DELAY_IN_MS, askQuestionAction);
     });
   }
