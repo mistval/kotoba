@@ -56,6 +56,7 @@ function createFieldForUsedWord(msg, wordInformation) {
   return {
     name: `${playerName} said`,
     value: `${wordInformation.word} (${wordInformation.reading})`,
+    inline: true,
   }
 }
 
@@ -105,7 +106,12 @@ class DiscordClientDelegate {
   playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot) {
     let previousPlayerId = wordHistory[wordHistory.length - 1].userId;
     let fields = [];
+    let content;
+    if (previousPlayerWasBot) {
+      content = 'I say **' + wordHistory[wordHistory.length - 1].word + '**!'
+    }
     let message = {
+      content: content,
       embed: {
         title: 'Shiritori',
         description: getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot),
