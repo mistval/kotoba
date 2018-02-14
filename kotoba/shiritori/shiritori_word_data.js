@@ -2,6 +2,7 @@ const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const wordStartingSequences = reload('./word_starting_sequences.js');
 const logger = reload('monochrome-bot').logger;
+const convertToHirgana = reload('./../util/convert_to_hiragana.js');
 
 if (!state.shiritori) {
   state.shiritori = {};
@@ -83,7 +84,9 @@ if (!state.shiritori.wordData) {
         readingsForWord[word] = [];
       }
 
-      readingsForWord[word].push(reading);
+      let readingFromEdict = reading;
+      let readingHiragana = convertToHirgana(readingFromEdict);
+      readingsForWord[word].push(readingHiragana);
     }
 
     let wordsForStartSequence = {};
