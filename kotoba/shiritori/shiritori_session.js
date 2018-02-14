@@ -3,7 +3,7 @@ const assert = require('assert');
 const BOT_USER_ID = 'BOT';
 
 class Session {
-  constructor(players, clientDelegate, gameStrategy) {
+  constructor(players, clientDelegate, gameStrategy, locationId) {
     this.players_ = [BOT_USER_ID].concat(players);
     this.playerAtIndexIsActive_ = this.players_.map(() => true);
 
@@ -12,6 +12,11 @@ class Session {
     this.gameStrategy_ = gameStrategy;
     this.wordHistory_ = [];
     this.timers_ = [];
+    this.locationId_ = locationId;
+  }
+
+  getLocationId() {
+    return this.locationId_;
   }
 
   markCurrentPlayerInactive() {
