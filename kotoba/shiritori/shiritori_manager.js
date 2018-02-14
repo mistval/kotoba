@@ -80,6 +80,18 @@ function endGame(locationId, reason, arg) {
   }
 }
 
+function joinCommand(locationId, userId, userName) {
+  let session = state.shiritoriManager.sessionForLocationId[locationId];
+  if (!session) {
+    return false;
+  }
+
+  let addedOrReactivated = session.addPlayer(userId, userName);
+  if (addedOrReactivated) {
+    session.getClientDelegate().addedPlayer(userId);
+  }
+}
+
 class EndGameForErrorAction extends Action {
   do() {
     return endGame(this.getSession_().getLocationId(), EndGameReason.ERROR);
@@ -164,6 +176,7 @@ class PlayerTurnAction extends Action {
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
     if (result.accepted) {
       result.word.userId = userId;
+      result.word.userName = session.getNameForUserId(userId);
       wordHistory.push(result.word);
       session.advanceCurrentPlayer();
       let nextPlayerId = session.getNextPlayerId();
@@ -328,6 +341,10 @@ class ShiritoriManager {
 
   stop(locationId, userId) {
     return endGame(locationId, EndGameReason.STOP_COMMAND, userId);
+  }
+
+  join(locationId, userId, userName) {
+    return joinCommand(locationId, userId, userName);
   }
 }
 
