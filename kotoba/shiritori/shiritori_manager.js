@@ -297,14 +297,13 @@ function chainActions(locationId, action) {
       return chainActions(locationId, result);
     }).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Error', err);
-      return chainActions(locationId, new EndQuizForErrorAction(session)).then(() => {
+      return chainActions(locationId, new EndGameForErrorAction(session)).then(() => {
         return END_STATUS_ERROR;
       });
     });
   } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
-    let messageSender = session.getClientDelegate();
-    return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedError)).then(() => {
+    return Promise.resolve(endGame(locationId, EndGameReason.ERROR)).then(() => {
       return END_STATUS_ERROR;
     });
   }
