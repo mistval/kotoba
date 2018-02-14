@@ -68,16 +68,23 @@ class RejectedResult {
 
 function tryAcceptAnswer(answer, wordInformationsHistory) {
   let readingsForAnswer = wordData.readingsForWord[answer];
+  let reading;
 
   // If we can't find readings for that answer, treat it as a reading and look for words with that reading.
   if (!readingsForAnswer) {
     let wordInformations = wordData.wordInformationsForReading[answer];
     if (wordInformations && wordInformations.length > 0) {
+      reading = answer;
       answer = wordInformations[0].word;
     }
   }
 
-  readingsForAnswer = wordData.readingsForWord[answer];
+  if (reading) {
+    readingsForAnswer = [reading];
+  } else {
+    readingsForAnswer = wordData.readingsForWord[answer];
+  }
+
   if (!readingsForAnswer) {
     return new RejectedResult(true);
   }
@@ -116,7 +123,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let ruleViolations = [];
   if (alreadyUsedReadings.length > 0) {
     let pluralizer = '';
-    if (alreadyUsedReadings.length > 0) {
+    if (alreadyUsedReadings.length > 1) {
       pluralizer = 's';
     }
     ruleViolations.push(`Someone already used the reading${pluralizer}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
