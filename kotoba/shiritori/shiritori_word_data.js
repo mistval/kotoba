@@ -92,8 +92,9 @@ if (!state.shiritori.wordData) {
     }
 
     for (let word of wordsByFrequency) {
+      let readings = readingsForWord[word];
       for (let startSequence of wordStartingSequences) {
-        if (word.startsWith(startSequence)) {
+        if (word.startsWith(startSequence) || (readings && readings.some(reading => reading.startsWith(startSequence)))) {
           wordsForStartSequence[startSequence].push(word);
         }
       }
