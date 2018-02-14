@@ -20,12 +20,14 @@ function throwIfSessionInProgress(locationId) {
 }
 
 function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot) {
-  if (nextPlayerIsBot) {
+  if (nextPlayerIsBot && previousPlayerWasBot) {
+    return 'Back to me!';
+  } else if (nextPlayerIsBot) {
     return `<@${previousPlayerId}> went and now it\'s my turn!`;
   } else if (previousPlayerWasBot) {
     return `I went and now it's <@${nextPlayerId}>'s turn!`;
   } else {
-    return `<@${previousPlayerId} went and now it's <@${nextPlayerId}>'s turn!`;
+    return `<@${previousPlayerId}> went and now it's <@${nextPlayerId}>'s turn!`;
   }
 }
 
@@ -92,6 +94,26 @@ class DiscordClientDelegate {
         title: 'Shiritori',
         description: `Starting a Shiritori game in ${inSeconds} seconds. I'll go first!`,
         color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    });
+  }
+
+  skippedPlayer(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Skipping Player',
+        description: `<@${userId}> is taking too long so I'm skipping them!`,
+        color: constants.EMBED_WRONG_COLOR,
+      },
+    });
+  }
+
+  removedPlayer(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Removing Player',
+        description: `<@${userId}> seems AFK so I'm booting them! They can rejoin by saying **join**.`,
+        color: constants.EMBED_WRONG_COLOR,
       },
     });
   }
