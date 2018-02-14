@@ -3,7 +3,7 @@ const wordData = reload('./shiritori_word_data.js');
 const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
-const largeHirganaForSmallHirgana = {
+const largeHiraganaForSmallHirgana = {
   'ゃ': 'や',
   'ゅ': 'ゆ',
   'ょ': 'よ',
@@ -11,11 +11,11 @@ const largeHirganaForSmallHirgana = {
 
 function getNextWordMustStartWith(currentWordReading) {
   let finalCharacter = currentWordReading[currentWordReading.length - 1];
-  if (!largeHirganaForSmallHirgana[finalCharacter]) {
+  if (!largeHiraganaForSmallHirgana[finalCharacter]) {
     return [finalCharacter];
   }
 
-  return [largeHirganaForSmallHirgana[finalCharacter], currentWordReading[currentWordReading.length - 2] + currentWordReading[currentWordReading.length - 1]];
+  return [largeHiraganaForSmallHirgana[finalCharacter], currentWordReading[currentWordReading.length - 2] + currentWordReading[currentWordReading.length - 1]];
 }
 
 class WordInformation {
@@ -40,8 +40,8 @@ function getFirstReadingOfWord(word) {
 function getNextWordStartSequence(previousWordReading) {
   let previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
 
-  if (largeHirganaForSmallHirgana[previousWordFinalCharacter]) {
-    return largeHirganaForSmallHirgana[previousWordFinalCharacter];
+  if (largeHiraganaForSmallHirgana[previousWordFinalCharacter]) {
+    return largeHiraganaForSmallHirgana[previousWordFinalCharacter];
   } else {
     return previousWordFinalCharacter;
   }
@@ -68,6 +68,8 @@ class RejectedResult {
 
 function tryAcceptAnswer(answer, wordInformationsHistory) {
   let readingsForAnswer = wordData.readingsForWord[answer];
+
+  // If we can't find readings for that answer, treat it as a reading and look for words with that reading.
   if (!readingsForAnswer) {
     let wordInformations = wordData.wordInformationsForReading[answer];
     if (wordInformations && wordInformations.length > 0) {
@@ -113,7 +115,11 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
 
   let ruleViolations = [];
   if (alreadyUsedReadings.length > 0) {
-    ruleViolations.push(`Someone already used the readings: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
+    let pluralizer = '';
+    if (alreadyUsedReadings.length > 0) {
+      pluralizer = 's';
+    }
+    ruleViolations.push(`Someone already used the reading${pluralizer}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
   }
   if (readingsEndingWithN.length > 0) {
     ruleViolations.push(`Words in Shiritori can't have readings that end with ん! (${readingsEndingWithN.join(', ')})`);
