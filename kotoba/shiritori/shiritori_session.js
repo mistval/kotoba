@@ -3,9 +3,12 @@ const assert = require('assert');
 const BOT_USER_ID = 'BOT';
 
 class Session {
-  constructor(players, clientDelegate, gameStrategy, locationId) {
-    this.players_ = [BOT_USER_ID].concat(players);
+  constructor(starterUserId, starterName, clientDelegate, gameStrategy, locationId) {
+    this.players_ = [BOT_USER_ID, starterUserId];
     this.playerAtIndexIsActive_ = this.players_.map(() => true);
+    this.nameForUserId_ = {};
+    this.nameForUserId_[starterUserId] = starterName;
+    this.nameForUserId_[BOT_USER_ID] = 'Kotoba';
 
     this.clientDelegate_ = clientDelegate;
     this.nextPlayerIndex_ = 0;
@@ -15,8 +18,30 @@ class Session {
     this.locationId_ = locationId;
   }
 
+  getNameForUserId(userId) {
+    return this.nameForUserId_[userId];
+  }
+
   getLocationId() {
     return this.locationId_;
+  }
+
+  addPlayer(userId, userName) {
+    for (let i = 0; i < this.players_.length; ++i) {
+      if (this.players_[i] === userId) {
+        if (this.playerAtIndexIsActive_[i]) {
+          return false;
+        } else {
+          this.playerAtIndexIsActive_[i] = true;
+          return true;
+        }
+      }
+    }
+
+    this.players_.push(userId);
+    this.playerAtIndexIsActive_.push(true);
+    this.nameForUserId_[userId] = userName;
+    return true;
   }
 
   markCurrentPlayerInactive() {
