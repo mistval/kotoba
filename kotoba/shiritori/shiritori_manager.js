@@ -34,7 +34,7 @@ function createTimeoutPromise(session, inMs) {
   return new Promise((fulfill, reject) => {
     let timer = setTimeout(() => {
       fulfill();
-    });
+    }, inMs);
     session.addTimer(timer);
   });
 }
