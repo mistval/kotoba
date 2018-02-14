@@ -120,6 +120,21 @@ class DiscordClientDelegate {
 
     return this.commanderMessage_.channel.createMessage(message);
   }
+
+  answerRejected(input, rejectionReason) {
+    let message = {
+      embed: {
+        title: `Answer Rejected (${input})`,
+        description: rejectionReason,
+        color: constants.EMBED_WRONG_COLOR,
+        footer: {
+          icon_url: constants.FOOTER_ICON_URI,
+          text: 'Better come up with something else ;)',
+        },
+      },
+    };
+    return this.commanderMessage_.channel.createMessage(message);
+  }
 }
 
 module.exports = {

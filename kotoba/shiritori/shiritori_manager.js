@@ -7,7 +7,9 @@ const logger = reload('monochrome-bot').logger;
 // TODO: These should be configurable
 const BOT_TURN_WAIT_MIN_IN_MS = 5000;
 const BOT_TURN_WAIT_MAX_IN_MS = 8000;
+const ANSWER_TIME_LIMIT_IN_MS = 40000;
 const INITIAL_DELAY_IN_MS = 5000;
+const SPACING_DELAY_IN_MS = 1000;
 
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
@@ -55,9 +57,56 @@ class Action {
   }
 }
 
-class PlayerTurnAction extends Action {
+class TimeoutAction extends Action {
   do() {
 
+  }
+}
+
+class PlayerTurnAction extends Action {
+  do() {
+    return new Promise((fulfill, reject) => {
+      this.fulfill_ = fulfill;
+      createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
+        this.fulfill_(new TimeoutAction(this.getSession_()));
+      });
+    });
+  }
+
+  tryAcceptUserInput(userId, input) {
+    if (input.indexOf(' ') !== -1) {
+      return false;
+    }
+    let session = this.getSession_();
+    let currentPlayerId = session.getNextPlayerId();
+    if (userId !== currentPlayerId) {
+      return false;
+    }
+    let gameStrategy = this.getGameStrategy_();
+    let clientDelegate = session.getClientDelegate();
+    let wordHistory = session.getWordHistory();
+    let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
+    if (result.accepted) {
+      result.word.userId = userId;
+      wordHistory.push(result.word);
+      session.advanceCurrentPlayer();
+      let nextPlayerId = session.getNextPlayerId();
+      let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
+      return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => {
+        return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, false, nextPlayerIsBot);
+      }).catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
+      }).then(() => {
+        this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
+      });
+    } else if (!result.isSilent) {
+      let rejectionReason = result.rejectionReason;
+      return clientDelegate.answerRejected(input, rejectionReason).then(() => {
+        return 'Rule violation';
+      });
+    }
+
+    return 'Rule violation';
   }
 }
 
@@ -91,8 +140,20 @@ class BotTurnAction extends Action {
         logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
       });
     }).then(() => {
-      return new PlayerTurnAction(session);
+      return new TakeTurnForCurrentPlayerAction(session);
     });
+  }
+}
+
+class TakeTurnForCurrentPlayerAction extends Action {
+  do() {
+    let session = this.getSession_();
+    let currentPlayerId = session.getNextPlayerId();
+    if (currentPlayerId === session.getBotUserId()) {
+      return new BotTurnAction(session, true);
+    } else {
+      return new PlayerTurnAction(session);
+    }
   }
 }
 
@@ -171,14 +232,13 @@ class ShiritoriManager {
     return isSessionInProgressAtLocation(locationId);
   }
 
-  processUserInput(locationId, userId, userName, input) {
-    input = input.toLowerCase();
+  processUserInput(locationId, userId, input) {
     let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
     if (!currentAction) {
       return false;
     }
     if (currentAction.tryAcceptUserInput) {
-      return currentAction.tryAcceptUserInput(userId, userName, input);
+      return currentAction.tryAcceptUserInput(userId, input);
     }
     return false;
   }
