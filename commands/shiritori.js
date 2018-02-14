@@ -6,6 +6,7 @@ const constants = reload('./../kotoba/constants.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
 const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
 const assert = require('assert');
+const logger = reload('monochrome-bot').logger;
 
 function throwIfSessionInProgress(locationId) {
   if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
@@ -60,9 +61,13 @@ function createMarkdownLinkForWord(word) {
 
 function createFieldForUsedWord(msg, wordInformation) {
   let playerName = getPlayerName(msg, wordInformation);
+  let readingPart = '';
+  if (wordInformation.reading !== wordInformation.word) {
+    readingPart = `(${wordInformation.reading})`;
+  }
   return {
     name: `${playerName} said`,
-    value: `${createMarkdownLinkForWord(wordInformation.word)} (${wordInformation.reading})`,
+    value: `${createMarkdownLinkForWord(wordInformation.word)} ${readingPart}`,
     inline: true,
   }
 }
@@ -94,6 +99,7 @@ class DiscordClientDelegate {
 
   stopped(reason, wordHistory, arg) {
     let description;
+    clearTimeout(this.sendTypingTimeout);
     if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
       description = `<@${arg}> asked me to stop.`;
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
@@ -108,6 +114,7 @@ class DiscordClientDelegate {
       embed: {
         title: 'Shiritori Ended',
         description: description,
+        color: constants.EMBED_NEUTRAL_COLOR,
         fields: [{
           name: 'Words used',
           value: wordHistory.map(wordInformation => wordInformation.word).join(', '),
@@ -121,7 +128,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds. I'll go first!`,
+        description: `Starting a Shiritori game in ${inSeconds} seconds. Say **k!shiritori stop** when you want to stop. I'll go first!`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
@@ -151,7 +158,13 @@ class DiscordClientDelegate {
     if (inMs === 0) {
       return Promise.resolve();
     }
-    return this.bot_.sendChannelTyping(this.commanderMessage_.channel.id);
+    if (inMs > 3500) {
+      this.sendTypingTimeout = setTimeout(() => {
+        this.bot_.sendChannelTyping(this.commanderMessage_.channel.id).catch(err => {
+          logger.logFailure('SHIRITORI', 'Failed to send typing', err);
+        });
+      }, inMs - 3000);
+    }
   }
 
   playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot) {
@@ -202,6 +215,11 @@ module.exports = {
   shortDescription: 'Start a game of shiritori in this channel.',
   action(bot, msg, suffix) {
     const locationId = msg.channel.id;
+
+    if (suffix === 'stop') {
+      return shiritoriManager.stop(locationId, msg.author.id);
+    }
+
     throwIfSessionInProgress(locationId);
 
     const clientDelegate = new DiscordClientDelegate(bot, msg);

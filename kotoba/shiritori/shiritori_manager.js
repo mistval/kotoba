@@ -5,9 +5,9 @@ const assert = require('assert');
 const logger = reload('monochrome-bot').logger;
 
 // TODO: These should be configurable
-const BOT_TURN_WAIT_MIN_IN_MS = 5000;
-const BOT_TURN_WAIT_MAX_IN_MS = 8000;
-const ANSWER_TIME_LIMIT_IN_MS = 10000;
+const BOT_TURN_WAIT_MIN_IN_MS = 6000;
+const BOT_TURN_WAIT_MAX_IN_MS = 9000;
+const ANSWER_TIME_LIMIT_IN_MS = 40000;
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
 const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
@@ -70,11 +70,14 @@ function endGame(locationId, reason, arg) {
   let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
   delete state.shiritoriManager.currentActionForLocationId[locationId];
 
-  if (currentAction.stop) {
+  if (currentAction && currentAction.stop) {
     currentAction.stop();
   }
 
-  return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
+  if (session) {
+    session.clearTimers();
+    return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
+  }
 }
 
 class EndGameForErrorAction extends Action {
