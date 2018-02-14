@@ -5,6 +5,7 @@ const PublicError = reload('monochrome-bot').PublicError;
 const constants = reload('./../kotoba/constants.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
 const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
+const assert = require('assert');
 
 function throwIfSessionInProgress(locationId) {
   if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
@@ -21,7 +22,7 @@ function throwIfSessionInProgress(locationId) {
 
 function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot) {
   if (nextPlayerIsBot && previousPlayerWasBot) {
-    return 'Back to me!';
+    return 'It\'s my turn again!';
   } else if (nextPlayerIsBot) {
     return `<@${previousPlayerId}> went and now it\'s my turn!`;
   } else if (previousPlayerWasBot) {
@@ -53,11 +54,15 @@ function getPlayerName(msg, wordInformation) {
   return 'Unknown';
 }
 
+function createMarkdownLinkForWord(word) {
+  return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
+}
+
 function createFieldForUsedWord(msg, wordInformation) {
   let playerName = getPlayerName(msg, wordInformation);
   return {
     name: `${playerName} said`,
-    value: `${wordInformation.word} (${wordInformation.reading})`,
+    value: `${createMarkdownLinkForWord(wordInformation.word)} (${wordInformation.reading})`,
     inline: true,
   }
 }
@@ -85,6 +90,30 @@ class DiscordClientDelegate {
   constructor(bot, commanderMessage) {
     this.bot_ = bot;
     this.commanderMessage_ = commanderMessage;
+  }
+
+  stopped(reason, wordHistory, arg) {
+    let description;
+    if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
+      description = `<@${arg}> asked me to stop.`;
+    } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
+      description = 'There aren\'t any players left except me, so I stopped!';
+    } else if (reason === shiritoriManager.EndGameReason.ERROR) {
+      description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
+    } else {
+      assert(false, 'Unknown stop reason');
+    }
+
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Shiritori Ended',
+        description: description,
+        fields: [{
+          name: 'Words used',
+          value: wordHistory.map(wordInformation => wordInformation.word).join(', '),
+        }],
+      },
+    });
   }
 
   notifyStarting(inMs) {
@@ -129,7 +158,7 @@ class DiscordClientDelegate {
     let previousPlayerId = wordHistory[wordHistory.length - 1].userId;
     let fields = [];
     let content;
-    if (previousPlayerWasBot) {
+    if (previousPlayerWasBot && !nextPlayerIsBot) {
       content = 'I say **' + wordHistory[wordHistory.length - 1].word + '**!'
     }
     let message = {
@@ -176,8 +205,8 @@ module.exports = {
     throwIfSessionInProgress(locationId);
 
     const clientDelegate = new DiscordClientDelegate(bot, msg);
-    const session = new ShiritoriSession([msg.author.id], clientDelegate, new JapaneseGameStrategy());
+    const session = new ShiritoriSession([msg.author.id], clientDelegate, new JapaneseGameStrategy(), locationId);
 
-    return shiritoriManager.startSession(session, locationId);
+    return shiritoriManager.startSession(session);
   },
 };
