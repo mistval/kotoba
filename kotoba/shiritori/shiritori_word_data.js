@@ -1,4 +1,7 @@
+const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
+const wordStartingSequences = reload('./word_starting_sequences.js');
+const logger = reload('monochrome-bot').logger;
 
 if (!state.shiritori) {
   state.shiritori = {};
@@ -11,7 +14,6 @@ if (!state.shiritori.wordData) {
   } catch (err) {
     const reload = require('require-reload')(require);
     const fs = require('fs');
-    const logger = reload('monochrome-bot').logger;
     const wordStartingSequences = reload('./word_starting_sequences.js');
     const wordsByFrequency = reload('./../resources/dictionaries/frequency.json');
 
@@ -108,17 +110,4 @@ if (!state.shiritori.wordData) {
   }
 }
 
-function getRandomArrayElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-function getRandomWord() {
-  let startSequences = Object.keys(state.shiritori.wordData.wordsForStartSequence);
-  let startSequence = getRandomArrayElement(startSequences);
-  let words = state.shiritori.wordData.wordsForStartSequence[startSequence];
-  let word = getRandomArrayElement(words);
-  return word;
-}
-
 module.exports = state.shiritori.wordData;
-module.exports.getRandomWord = getRandomWord;

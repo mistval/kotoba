@@ -4,9 +4,10 @@ const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 const PublicError = reload('monochrome-bot').PublicError;
 const constants = reload('./../kotoba/constants.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
+const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
 
 function throwIfSessionInProgress(locationId) {
-  if (shiritori.isSessionInProgressAtLocation(locationId)) {
+  if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
     const message = {
       embed: {
         title: 'Game in progress',
@@ -18,8 +19,68 @@ function throwIfSessionInProgress(locationId) {
   }
 }
 
+function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot) {
+  if (nextPlayerIsBot) {
+    return `<@${previousPlayerId}> went and now it\'s my turn!`;
+  } else if (previousPlayerWasBot) {
+    return `I went and now it's <@${nextPlayerId}>'s turn!`;
+  } else {
+    return `<@${previousPlayerId} went and now it's <@${nextPlayerId}>'s turn!`;
+  }
+}
+
+function getPlayerName(msg, wordInformation) {
+  let isBot = wordInformation.userId === ShiritoriSession.BOT_USER_ID;
+
+  if (isBot) {
+    return 'I';
+  }
+
+  if (!msg.channel.guild) {
+    return msg.channel.recipient.username;
+  }
+
+  let member = msg.channel.guild.members.find(member => {
+    member.id === wordInformation.userId;
+  });
+
+  if (member) {
+    return member.username;
+  }
+
+  return 'Unknown';
+}
+
+function createFieldForUsedWord(msg, wordInformation) {
+  let playerName = getPlayerName(msg, wordInformation);
+  return {
+    name: `${playerName} said`,
+    value: `${wordInformation.word} (${wordInformation.reading})`,
+  }
+}
+
+function createFieldsForTookTurnEmbed(msg, wordHistory) {
+  let previousWord = wordHistory[wordHistory.length - 1];
+  let penultimateWord = wordHistory[wordHistory.length - 2];
+
+  let fields = [];
+  if (penultimateWord) {
+    fields.push(createFieldForUsedWord(msg, penultimateWord));
+  }
+
+  fields.push(createFieldForUsedWord(msg, previousWord));
+
+  fields.push({
+    name: 'Next word starts with',
+    value: previousWord.nextWordMustStartWith.join(', '),
+  });
+
+  return fields;
+}
+
 class DiscordClientDelegate {
-  constructor(commanderMessage) {
+  constructor(bot, commanderMessage) {
+    this.bot_ = bot;
     this.commanderMessage_ = commanderMessage;
   }
 
@@ -29,8 +90,32 @@ class DiscordClientDelegate {
       embed: {
         title: 'Shiritori',
         description: `Starting a Shiritori game in ${inSeconds} seconds!`,
+        color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
+  }
+
+  botWillTakeTurnIn(inMs) {
+    return this.bot_.sendChannelTyping(this.commanderMessage_.channel.id);
+  }
+
+  playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot) {
+    let previousPlayerId = wordHistory[wordHistory.length - 1].userId;
+    let fields = [];
+    let message = {
+      embed: {
+        title: 'Shiritori',
+        description: getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot),
+        fields: createFieldsForTookTurnEmbed(this.commanderMessage_, wordHistory),
+        color: constants.EMBED_NEUTRAL_COLOR,
+        footer: {
+          text: `Say 'join' to join!`,
+          icon_url: constants.FOOTER_ICON_URI,
+        },
+      },
+    };
+
+    return this.commanderMessage_.channel.createMessage(message);
   }
 }
 
@@ -44,8 +129,8 @@ module.exports = {
     const locationId = msg.channel.id;
     throwIfSessionInProgress(locationId);
 
-    const clientDelegate = new DiscordClientDelegate(msg);
-    const session = new ShiritoriSession([msg.author.id], clientDelegate);
+    const clientDelegate = new DiscordClientDelegate(bot, msg);
+    const session = new ShiritoriSession([msg.author.id], clientDelegate, new JapaneseGameStrategy());
 
     return shiritoriManager.startSession(session, locationId);
   },
