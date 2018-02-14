@@ -33,26 +33,13 @@ function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlay
   }
 }
 
-function getPlayerName(msg, wordInformation) {
+function getPlayerName(wordInformation) {
   let isBot = wordInformation.userId === ShiritoriSession.BOT_USER_ID;
-
   if (isBot) {
     return 'I';
+  } else {
+    return wordInformation.userName;
   }
-
-  if (!msg.channel.guild) {
-    return msg.channel.recipient.username;
-  }
-
-  let member = msg.channel.guild.members.find(member => {
-    member.id === wordInformation.userId;
-  });
-
-  if (member) {
-    return member.username;
-  }
-
-  return 'Unknown';
 }
 
 function createMarkdownLinkForWord(word) {
@@ -60,7 +47,7 @@ function createMarkdownLinkForWord(word) {
 }
 
 function createFieldForUsedWord(msg, wordInformation) {
-  let playerName = getPlayerName(msg, wordInformation);
+  let playerName = getPlayerName(wordInformation);
   let readingPart = '';
   if (wordInformation.reading !== wordInformation.word) {
     readingPart = `(${wordInformation.reading})`;
@@ -129,6 +116,16 @@ class DiscordClientDelegate {
       embed: {
         title: 'Shiritori',
         description: `Starting a Shiritori game in ${inSeconds} seconds. Say **k!shiritori stop** when you want to stop. I'll go first!`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    });
+  }
+
+  addedPlayer(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Player Joined',
+        description: `<@${userId}> has joined the game! Their turn will come soon.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
@@ -223,7 +220,7 @@ module.exports = {
     throwIfSessionInProgress(locationId);
 
     const clientDelegate = new DiscordClientDelegate(bot, msg);
-    const session = new ShiritoriSession([msg.author.id], clientDelegate, new JapaneseGameStrategy(), locationId);
+    const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId);
 
     return shiritoriManager.startSession(session);
   },
