@@ -1,13 +1,21 @@
+const assert = require('assert');
+
 const BOT_USER_ID = 'BOT';
 
 class Session {
   constructor(players, clientDelegate, gameStrategy) {
     this.players_ = [BOT_USER_ID].concat(players);
+    this.playerAtIndexIsActive_ = this.players_.map(() => true);
+
     this.clientDelegate_ = clientDelegate;
     this.nextPlayerIndex_ = 0;
     this.gameStrategy_ = gameStrategy;
     this.wordHistory_ = [];
     this.timers_ = [];
+  }
+
+  markCurrentPlayerInactive() {
+    this.playerAtIndexIsActive_[this.nextPlayerIndex_] = false;
   }
 
   getClientDelegate() {
@@ -41,10 +49,18 @@ class Session {
     return this.players_[this.nextPlayerIndex_];
   }
 
+  hasActivePlayersBesidesBot() {
+    return this.playerAtIndexIsActive_.reduce((sum, active) => active ? sum + 1 : sum, 0) > 1;
+  }
+
   advanceCurrentPlayer() {
+    assert(this.hasActivePlayersBesidesBot(), 'No active players');
     ++this.nextPlayerIndex_;
     if (this.nextPlayerIndex_ >= this.players_.length) {
       this.nextPlayerIndex_ = 0;
+    }
+    if (!this.playerAtIndexIsActive_[this.nextPlayerIndex_]) {
+      this.advanceCurrentPlayer();
     }
   }
 }
