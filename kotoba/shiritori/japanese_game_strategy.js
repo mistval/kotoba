@@ -87,7 +87,6 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let alreadyUsedReadings = [];
   let readingsEndingWithN = [];
   let readingsStartingWithWrongSequence = [];
-  let readingsWithNoNouns = [];
   let noNounReadings = [];
   let readingToUse;
   let answerToUse;
