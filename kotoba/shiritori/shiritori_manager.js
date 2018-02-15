@@ -94,6 +94,20 @@ function botLeaveCommand(locationId, userId) {
   return false;
 }
 
+function botJoinCommand(locationId, userId) {
+  let session = state.shiritoriManager.sessionForLocationId[locationId];
+  if (!session) {
+    return false;
+  }
+
+  let clientDelegate = session.getClientDelegate();
+  let added = session.addBot();
+  if (added) {
+    return clientDelegate.botJoined(userId);
+  }
+  return false;
+}
+
 function joinCommand(locationId, userId, userName) {
   let session = state.shiritoriManager.sessionForLocationId[locationId];
   if (!session) {
@@ -373,6 +387,10 @@ class ShiritoriManager {
 
   botLeave(locationId, userId) {
     return botLeaveCommand(locationId, userId);
+  }
+
+  botJoin(locationId, userId) {
+    return botJoinCommand(locationId, userId);
   }
 }
 
