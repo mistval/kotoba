@@ -59,6 +59,19 @@ class RejectedResult {
   }
 }
 
+function pushUnique(array, element) {
+  if (array.indexOf(element) === -1) {
+    array.push(element);
+  }
+}
+
+function getPluralizer(array) {
+  if (array.length > 1) {
+    return 's';
+  }
+  return '';
+}
+
 function tryAcceptAnswer(answer, wordInformationsHistory) {
   let possibleWordInformations = wordData.wordInformationsForWordAsHiragana[convertToHiragana(answer)];
 
@@ -74,21 +87,27 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let alreadyUsedReadings = [];
   let readingsEndingWithN = [];
   let readingsStartingWithWrongSequence = [];
+  let readingsWithNoNouns = [];
+  let noNounReadings = [];
   let readingToUse;
   let answerToUse;
   for (let possibleWordInformation of possibleWordInformations) {
     let reading = possibleWordInformation.reading;
     if (startSequences && !startSequences.some(sequence => reading.startsWith(sequence))) {
-      readingsStartingWithWrongSequence.push(reading);
+      pushUnique(readingsStartingWithWrongSequence, reading);
       continue;
     }
     if (reading.endsWith('ん')) {
-      readingsEndingWithN.push(reading);
+      pushUnique(readingsEndingWithN, reading);
       continue;
     }
     let alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
     if (alreadyUsed) {
-      alreadyUsedReadings.push(reading);
+      pushUnique(alreadyUsedReadings, reading);
+      continue;
+    }
+    if (!possibleWordInformation.definitions.some(definition => definition.isNoun)) {
+      pushUnique(noNounReadings, reading);
       continue;
     }
     readingToUse = reading;
@@ -102,17 +121,16 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
 
   let ruleViolations = [];
   if (alreadyUsedReadings.length > 0) {
-    let pluralizer = '';
-    if (alreadyUsedReadings.length > 1) {
-      pluralizer = 's';
-    }
-    ruleViolations.push(`Someone already used the reading${pluralizer}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
+    ruleViolations.push(`Someone already used the reading${getPluralizer(alreadyUsedReadings)}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
   }
   if (readingsEndingWithN.length > 0) {
-    ruleViolations.push(`Words in Shiritori can't have readings that end with ん! (${readingsEndingWithN.join(', ')})`);
+    ruleViolations.push(`Words in Shiritori can't have readings that end with ん! (**${readingsEndingWithN.join(', ')}**)`);
   }
   if (readingsStartingWithWrongSequence.length > 0) {
-    ruleViolations.push(`Your answer must begin with ${startSequences.join(', ')}. I found these readings for that word but they don't start with the right kana: ${readingsStartingWithWrongSequence.join(', ')}`);
+    ruleViolations.push(`Your answer must begin with ${startSequences.join(', ')}. I found these readings for that word but they don't start with the right kana: **${readingsStartingWithWrongSequence.join(', ')}**`);
+  }
+  if (noNounReadings.length > 0) {
+    ruleViolations.push(`Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(noNounReadings)}: **${noNounReadings.join(', ')}**`);
   }
 
   let ruleViolation = ruleViolations.join('\n\n');

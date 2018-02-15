@@ -19,11 +19,12 @@ class WordInformation {
   }
 }
 
-const partsOfSpeechPartRegex = /(?:\(.*?\) ){1,10}/;
+const partsOfSpeechPartRegex = /\((.*?)\)/;
 const edictNounCodes = [
   'n',
   'n-pref',
   'n-suf',
+  'n-t',
 ];
 
 function getReadings(wordInformations) {
@@ -73,11 +74,10 @@ if (!state.shiritori.wordData) {
       for (let definitionPart of definitionParts) {
         let partsOfSpeech = [];
         let partOfSpeechMatch = definitionPart.match(partsOfSpeechPartRegex);
-
         let definition;
         if (partOfSpeechMatch) {
           definition = definitionPart.replace(partOfSpeechMatch[0], '');
-          partsOfSpeech = partOfSpeechMatch[0].replace(/\(/g, '').replace(/\)/g, '').trim().split(' ');
+          partsOfSpeech = partOfSpeechMatch[1].split(',');
           if (!isNoun) {
             isNoun = partsOfSpeech.some(partOfSpeechSymbol => edictNounCodes.indexOf(partOfSpeechSymbol) !== -1);
           }
