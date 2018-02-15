@@ -60,8 +60,16 @@ class Session {
     return true;
   }
 
-  markCurrentPlayerInactive() {
-    this.playerAtIndexIsActive_[this.nextPlayerIndex_] = false;
+  removePlayer(userId) {
+    for (let i = 0; i < this.players_.length; ++i) {
+      if (this.players_[i] === userId) {
+        if (this.playerAtIndexIsActive_[i]) {
+          this.playerAtIndexIsActive_[i] = false;
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   getClientDelegate() {

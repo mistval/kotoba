@@ -19,6 +19,8 @@ module.exports = {
       return shiritoriManager.botLeave(locationId, userId);
     } else if (contentLowerCase === 'bot join') {
       return shiritoriManager.botJoin(locationId, userId);
+    } else if (contentLowerCase === 'leave') {
+      return shiritoriManager.leave(locationId, userId);
     } else {
       return shiritoriManager.processUserInput(msg.channel.id, msg.author.id, msg.content);
     }
