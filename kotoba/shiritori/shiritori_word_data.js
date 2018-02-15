@@ -2,7 +2,33 @@ const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const wordStartingSequences = reload('./word_starting_sequences.js');
 const logger = reload('monochrome-bot').logger;
-const convertToHirgana = reload('./../util/convert_to_hiragana.js');
+const convertToHiragana = reload('./../util/convert_to_hiragana.js');
+
+class Definition {
+  constructor(meaning, isNoun) {
+    this.meaning = meaning;
+    this.isNoun = isNoun;
+  }
+}
+
+class WordInformation {
+  constructor(word, reading, definitions) {
+    this.word = word;
+    this.reading = reading;
+    this.definitions = definitions;
+  }
+}
+
+const partsOfSpeechPartRegex = /(?:\(.*?\) ){1,10}/;
+const edictNounCodes = [
+  'n',
+  'n-pref',
+  'n-suf',
+];
+
+function getReadings(wordInformations) {
+  return wordInformations.map(wordInformation => wordInformation.reading);
+}
 
 if (!state.shiritori) {
   state.shiritori = {};
@@ -21,24 +47,7 @@ if (!state.shiritori.wordData) {
     const edictLines = fs.readFileSync(__dirname + '/../resources/dictionaries/edictutf8.txt', 'utf8').split('\n');
     edictLines.shift(); // First line is a header.
 
-    const wordInformationsForReading = {};
-    const readingsForWord = {};
-
-    const partsOfSpeechPartRegex = /(?:\(.*?\) ){1,10}/;
-
-    const partOfSpeechStringForId = {
-      n: 'noun',
-      'adj-i': 'い adj',
-      'adj-na': 'な adj',
-      'adj-no': 'の adj',
-    };
-
-    class Definition {
-      constructor(meaning, partsOfSpeechIds) {
-        this.meaning = meaning;
-        this.partsOfSpeech = partsOfSpeechIds.map(id => partOfSpeechStringForId[id]).filter(str => !!str);
-      }
-    }
+    const wordInformationsForWordAsHiragana ={};
 
     for (let line of edictLines) {
       if (!line) {
@@ -46,19 +55,21 @@ if (!state.shiritori.wordData) {
       }
       let tokens = line.split(' ');
       let word = tokens.shift();
+      let wordAsHiragana = convertToHiragana(word);
       let readingPart = tokens[0];
       let reading;
       if (readingPart.startsWith('[')) {
-        reading = readingPart.replace('[', '').replace(']', '');
+        reading = convertToHiragana(readingPart.replace('[', '').replace(']', ''));
         tokens.shift();
       } else {
-        reading = word;
+        reading = wordAsHiragana;
       }
 
       let definitionParts = tokens.join(' ').split('/');
       definitionParts.pop(); // The last one is always empty
       definitionParts.shift(); // The first one is always empty
       let definitions = [];
+      let isNoun = false;
       for (let definitionPart of definitionParts) {
         let partsOfSpeech = [];
         let partOfSpeechMatch = definitionPart.match(partsOfSpeechPartRegex);
@@ -66,46 +77,47 @@ if (!state.shiritori.wordData) {
         let definition;
         if (partOfSpeechMatch) {
           definition = definitionPart.replace(partOfSpeechMatch[0], '');
-          partsOfSpeech = partOfSpeechMatch[0].replace(/\(/g, '').replace(/\)/g, '').trim().split(' ').map(partOfSpeech => partOfSpeech.trim());
+          partsOfSpeech = partOfSpeechMatch[0].replace(/\(/g, '').replace(/\)/g, '').trim().split(' ');
+          if (!isNoun) {
+            isNoun = partsOfSpeech.some(partOfSpeechSymbol => edictNounCodes.indexOf(partOfSpeechSymbol) !== -1);
+          }
         } else {
           definition = definitionPart;
         }
 
-        definitions.push(new Definition(definition, partsOfSpeech));
+        definitions.push(new Definition(definition, isNoun));
       }
 
-      if (!wordInformationsForReading[reading]) {
-        wordInformationsForReading[reading] = [];
+      let wordInformation = new WordInformation(word, reading, definitions);
+      if (!wordInformationsForWordAsHiragana[wordAsHiragana]) {
+        wordInformationsForWordAsHiragana[wordAsHiragana] = [];
       }
-
-      wordInformationsForReading[reading].push({ word, definitions });
-
-      if (!readingsForWord[word]) {
-        readingsForWord[word] = [];
+      wordInformationsForWordAsHiragana[wordAsHiragana].push(wordInformation);
+      if (!wordInformationsForWordAsHiragana[reading]) {
+        wordInformationsForWordAsHiragana[reading] = [];
       }
-
-      let readingFromEdict = reading;
-      let readingHiragana = convertToHirgana(readingFromEdict);
-      readingsForWord[word].push(readingHiragana);
+      wordInformationsForWordAsHiragana[reading].push(wordInformation);
     }
 
     let wordsForStartSequence = {};
-    for (let startSequence of wordStartingSequences) {
-      wordsForStartSequence[startSequence] = [];
-    }
-
     for (let word of wordsByFrequency) {
-      let readings = readingsForWord[word];
+      let wordAsHiragana = convertToHiragana(word);
+      if (!wordInformationsForWordAsHiragana[wordAsHiragana]) {
+        continue;
+      }
+      let readings = getReadings(wordInformationsForWordAsHiragana[wordAsHiragana]);
       for (let startSequence of wordStartingSequences) {
-        if (word.startsWith(startSequence) || (readings && readings.some(reading => reading.startsWith(startSequence)))) {
+        if (wordAsHiragana.startsWith(startSequence) || (readings && readings.some(reading => reading.startsWith(startSequence)))) {
+          if (!wordsForStartSequence[startSequence]) {
+            wordsForStartSequence[startSequence] = [];
+          }
           wordsForStartSequence[startSequence].push(word);
         }
       }
     }
 
     state.shiritori.wordData = {
-      readingsForWord,
-      wordInformationsForReading,
+      wordInformationsForWordAsHiragana,
       wordsForStartSequence,
     };
 

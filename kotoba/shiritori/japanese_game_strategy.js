@@ -30,13 +30,6 @@ function getRandomArrayElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function getFirstReadingOfWord(word) {
-  if (wordData.readingsForWord[word] && wordData.readingsForWord[word].length > 0) {
-    return wordData.readingsForWord[word][0];
-  }
-  return word;
-}
-
 function getNextWordStartSequence(previousWordReading) {
   let previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
 
@@ -67,25 +60,9 @@ class RejectedResult {
 }
 
 function tryAcceptAnswer(answer, wordInformationsHistory) {
-  let readingsForAnswer = wordData.readingsForWord[answer];
-  let reading;
+  let possibleWordInformations = wordData.wordInformationsForWordAsHiragana[convertToHiragana(answer)];
 
-  // If we can't find readings for that answer, treat it as a reading and look for words with that reading.
-  if (!readingsForAnswer) {
-    let wordInformations = wordData.wordInformationsForReading[answer];
-    if (wordInformations && wordInformations.length > 0) {
-      reading = answer;
-      answer = wordInformations[0].word;
-    }
-  }
-
-  if (reading) {
-    readingsForAnswer = [reading];
-  } else {
-    readingsForAnswer = wordData.readingsForWord[answer];
-  }
-
-  if (!readingsForAnswer) {
+  if (!possibleWordInformations) {
     return new RejectedResult(true);
   }
 
@@ -98,7 +75,9 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let readingsEndingWithN = [];
   let readingsStartingWithWrongSequence = [];
   let readingToUse;
-  for (let reading of readingsForAnswer) {
+  let answerToUse;
+  for (let possibleWordInformation of possibleWordInformations) {
+    let reading = possibleWordInformation.reading;
     if (startSequences && !startSequences.some(sequence => reading.startsWith(sequence))) {
       readingsStartingWithWrongSequence.push(reading);
       continue;
@@ -113,11 +92,12 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
       continue;
     }
     readingToUse = reading;
+    answerToUse = possibleWordInformation.word;
     break;
   }
 
-  if (readingToUse) {
-    return new AcceptedResult(answer, readingToUse);
+  if (answerToUse) {
+    return new AcceptedResult(answerToUse, readingToUse);
   }
 
   let ruleViolations = [];
@@ -139,7 +119,11 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   return new RejectedResult(false, ruleViolation);
 }
 
-function getViableWord(wordInformationsHistory) {
+function getViableWord(wordInformationsHistory, retriesLeft) {
+  if (retriesLeft === 0) {
+    throw new Error('Couldn\'t get a viable next word :/');
+  }
+
   let startSequence;
   if (!wordInformationsHistory || wordInformationsHistory.length === 0) {
     let startSequences = Object.keys(wordData.wordsForStartSequence);
@@ -168,8 +152,8 @@ function getViableWord(wordInformationsHistory) {
       nextWordIndex = 0;
     }
     if (nextWordIndex === firstWordTestedIndex) {
-      // We came full circle. This is perfectly possible in theory, but I doubt anyone will ever play a game long enough for it to happen, so just throw.
-      throw new Error('Couldn\t get a viable next word');
+      // We came full circle. Try again. Although possible, it is extremely unlikely that a game would continue so long that there are no viable words left.
+      return getViableWord(wordInformationsHistory, retriesLeft ? retriesLeft - 1 : 1000);
     }
   }
 }
