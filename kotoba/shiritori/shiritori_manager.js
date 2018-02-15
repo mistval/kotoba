@@ -121,6 +121,19 @@ function joinCommand(locationId, userId, userName) {
   return false;
 }
 
+function leaveCommand(locationId, userId) {
+  let session = state.shiritoriManager.sessionForLocationId[locationId];
+  if (!session) {
+    return false;
+  }
+
+  let removed = session.removePlayer(userId);
+  if (removed) {
+    return session.getClientDelegate().playerLeft(userId);
+  }
+  return false;
+}
+
 class EndGameForErrorAction extends Action {
   do() {
     return endGame(this.getSession_().getLocationId(), EndGameReason.ERROR);
@@ -160,7 +173,7 @@ class TimeoutAction extends Action {
       return createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS);
     }).then(() => {
       if (this.boot_) {
-        session.markCurrentPlayerInactive();
+        session.removePlayer(session.getNextPlayerId());
       }
       if (!session.hasMultiplePlayers()) {
         return new EndGameForNoPlayersAction(session);
@@ -383,6 +396,10 @@ class ShiritoriManager {
 
   join(locationId, userId, userName) {
     return joinCommand(locationId, userId, userName);
+  }
+
+  leave(locationId, userId) {
+    return leaveCommand(locationId, userId);
   }
 
   botLeave(locationId, userId) {

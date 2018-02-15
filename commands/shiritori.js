@@ -157,7 +157,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Player Joined',
-        description: `<@${userId}> has joined the game! Their turn will come soon. If you'd like me to stop playing, say **bot leave**.`,
+        description: `<@${userId}> has joined the game! Their turn will come soon. You can leave the game by saying **leave**. If you'd like me to stop playing, say **bot leave**.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
@@ -180,6 +180,16 @@ class DiscordClientDelegate {
         description: `<@${userId}> seems AFK so I'm booting them! They can rejoin by saying **join**.`,
         color: constants.EMBED_WRONG_COLOR,
       },
+    });
+  }
+
+  playerLeft(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Player left',
+        description: `<@${userId}> has left the game.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      }
     });
   }
 
