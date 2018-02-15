@@ -26,6 +26,14 @@ class Session {
     return this.locationId_;
   }
 
+  removeBot() {
+    if (this.playerAtIndexIsActive_[0]) {
+      this.playerAtIndexIsActive_[0] = false;
+      return true;
+    }
+    return false;
+  }
+
   addPlayer(userId, userName) {
     for (let i = 0; i < this.players_.length; ++i) {
       if (this.players_[i] === userId) {
@@ -79,12 +87,16 @@ class Session {
     return this.players_[this.nextPlayerIndex_];
   }
 
-  hasActivePlayersBesidesBot() {
-    return this.playerAtIndexIsActive_.reduce((sum, active) => active ? sum + 1 : sum, 0) > 1;
+  getActivePlayers() {
+    return this.players_.filter((userId, index) => this.playerAtIndexIsActive_[index]);
+  }
+
+  hasMultiplePlayers() {
+    return this.getActivePlayers().length > 1;
   }
 
   advanceCurrentPlayer() {
-    assert(this.hasActivePlayersBesidesBot(), 'No active players');
+    assert(this.hasMultiplePlayers(), 'Not enough players');
     ++this.nextPlayerIndex_;
     if (this.nextPlayerIndex_ >= this.players_.length) {
       this.nextPlayerIndex_ = 0;
