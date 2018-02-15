@@ -97,15 +97,21 @@ class DiscordClientDelegate {
       assert(false, 'Unknown stop reason');
     }
 
+    let wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
+    let embedFields;
+    if (wordsUsedString) {
+      embedFields = [{
+        name: 'Words used',
+        value: wordHistory.map(wordInformation => wordInformation.word).join(', '),
+      }];
+    }
+
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
         description: description,
         color: constants.EMBED_NEUTRAL_COLOR,
-        fields: [{
-          name: 'Words used',
-          value: wordHistory.map(wordInformation => wordInformation.word).join(', '),
-        }],
+        fields: embedFields,
       },
     });
   }
@@ -115,7 +121,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds. Say **k!shiritori stop** when you want to stop. I'll go first!`,
+        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **k!shiritori stop** when you want to stop. I'll go first!`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
