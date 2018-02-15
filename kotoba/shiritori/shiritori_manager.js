@@ -80,6 +80,20 @@ function endGame(locationId, reason, arg) {
   }
 }
 
+function botLeaveCommand(locationId, userId) {
+  let session = state.shiritoriManager.sessionForLocationId[locationId];
+  if (!session) {
+    return false;
+  }
+
+  let clientDelegate = session.getClientDelegate();
+  let removed = session.removeBot();
+  if (removed) {
+    return clientDelegate.botLeft(userId);
+  }
+  return false;
+}
+
 function joinCommand(locationId, userId, userName) {
   let session = state.shiritoriManager.sessionForLocationId[locationId];
   if (!session) {
@@ -88,8 +102,9 @@ function joinCommand(locationId, userId, userName) {
 
   let addedOrReactivated = session.addPlayer(userId, userName);
   if (addedOrReactivated) {
-    session.getClientDelegate().addedPlayer(userId);
+    return session.getClientDelegate().addedPlayer(userId);
   }
+  return false;
 }
 
 class EndGameForErrorAction extends Action {
@@ -100,7 +115,10 @@ class EndGameForErrorAction extends Action {
 
 class EndGameForNoPlayersAction extends Action {
   do() {
-    return endGame(this.getSession_().getLocationId(), EndGameReason.NO_PLAYERS);
+    let session = this.getSession_();
+    let players = session.getActivePlayers();
+    let botIsPlaying = players.indexOf(session.getBotUserId()) !== -1;
+    return endGame(this.getSession_().getLocationId(), EndGameReason.NO_PLAYERS, {players, botIsPlaying});
   }
 }
 
@@ -128,10 +146,10 @@ class TimeoutAction extends Action {
       return createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS);
     }).then(() => {
       if (this.boot_) {
-         session.markCurrentPlayerInactive();
-         if (!session.hasActivePlayersBesidesBot()) {
-          return new EndGameForNoPlayersAction(session);
-         }
+        session.markCurrentPlayerInactive();
+      }
+      if (!session.hasMultiplePlayers()) {
+        return new EndGameForNoPlayersAction(session);
       }
       session.advanceCurrentPlayer();
       let nextPlayerId = session.getNextPlayerId();
@@ -177,8 +195,12 @@ class PlayerTurnAction extends Action {
     if (result.accepted) {
       result.word.userId = userId;
       result.word.userName = session.getNameForUserId(userId);
-      wordHistory.push(result.word);
+      if (!session.hasMultiplePlayers()) {
+        this.fulfill_(new EndGameForNoPlayersAction(session));
+        return true;
+      }
       session.advanceCurrentPlayer();
+      wordHistory.push(result.word);
       let nextPlayerId = session.getNextPlayerId();
       let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
       return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => {
@@ -228,14 +250,17 @@ class BotTurnAction extends Action {
     }).then(() => {
       return createTimeoutPromise(session, this.delay_);
     }).then(() => {
-      wordHistory.push(nextWord);
+      if (!session.hasMultiplePlayers()) {
+        return new EndGameForNoPlayersAction(session);
+      }
       session.advanceCurrentPlayer();
+      wordHistory.push(nextWord);
       let nextPlayerId = session.getNextPlayerId();
       return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, true, false).catch(err => {
         logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
-      });
-    }).then(() => {
-      return new TakeTurnForCurrentPlayerAction(session);
+      }).then(() => {
+        return new TakeTurnForCurrentPlayerAction(session);
+      })
     });
   }
 }
@@ -339,11 +364,15 @@ class ShiritoriManager {
   }
 
   stop(locationId, userId) {
-    return endGame(locationId, EndGameReason.STOP_COMMAND, userId);
+    return endGame(locationId, EndGameReason.STOP_COMMAND, {userId});
   }
 
   join(locationId, userId, userName) {
     return joinCommand(locationId, userId, userName);
+  }
+
+  botLeave(locationId, userId) {
+    return botLeaveCommand(locationId, userId);
   }
 }
 

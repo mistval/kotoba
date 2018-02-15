@@ -84,13 +84,29 @@ class DiscordClientDelegate {
     this.commanderMessage_ = commanderMessage;
   }
 
+  botLeft(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: `I'm leaving!`,
+        description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    });
+  }
+
   stopped(reason, wordHistory, arg) {
     let description;
     clearTimeout(this.sendTypingTimeout);
     if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
-      description = `<@${arg}> asked me to stop.`;
+      description = `<@${arg.userId}> asked me to stop.`;
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
-      description = 'There aren\'t any players left except me, so I stopped!';
+      if (arg.botIsPlaying) {
+        description = 'I am the last player, so I stopped.';
+      } else if (arg.players[0]) {
+        description = `<@${arg.players[0]}> is the last player standing, so I stopped. Congratulations!`;
+      } else {
+        description = `There's no one left in the game, so I stopped!`;
+      }
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
@@ -131,7 +147,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Player Joined',
-        description: `<@${userId}> has joined the game! Their turn will come soon.`,
+        description: `<@${userId}> has joined the game! Their turn will come soon. If you'd like me to stop playing, say **bot leave**.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
