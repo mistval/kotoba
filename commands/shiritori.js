@@ -88,7 +88,17 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: `I'm leaving!`,
-        description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game.`,
+        description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    });
+  }
+
+  botJoined(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: `I'm back!`,
+        description: `<@${userId}> asked me to rejoin the game.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });

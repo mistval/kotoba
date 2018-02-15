@@ -34,6 +34,14 @@ class Session {
     return false;
   }
 
+  addBot() {
+    if (!this.playerAtIndexIsActive_[0]) {
+      this.playerAtIndexIsActive_[0] = true;
+      return true;
+    }
+    return false;
+  }
+
   addPlayer(userId, userName) {
     for (let i = 0; i < this.players_.length; ++i) {
       if (this.players_[i] === userId) {
