@@ -11,6 +11,7 @@
   "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
   "cards": [
     {"meaning":"useless, no good, hopeless","kanjiLevel":1,"question":"駄目","answer":["だめ"]},

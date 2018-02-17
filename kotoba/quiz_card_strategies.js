@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const renderText = reload('./render_text.js').render;
 const Util = reload('./utils.js');
 const logger = reload('monochrome-bot').logger;
+const convertToHiragana = reload('./util/convert_to_hiragana.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
@@ -27,6 +28,27 @@ function arrayToLowerCase(array) {
   }
   return result;
 }
+
+/* COMPARE ANSWER STRATEGIES */
+
+function answerCompareConvertKana(card, answerCandidate) {
+  let convertedAnswerCandidate = convertToHiragana(answerCandidate);
+  for (let correctAnswer of arrayToLowerCase(card.answer)) {
+    if (convertToHiragana(correctAnswer) === convertedAnswerCandidate) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function answerCompareStrict(card, answerCandidate) {
+  return ~arrayToLowerCase(card.answer).indexOf(answerCandidate);
+}
+
+module.exports.AnswerCompareStrategy = {
+  CONVERT_KANA: answerCompareConvertKana,
+  STRICT: answerCompareStrict,
+};
 
 /* DICTIONARY LINK STRATEGIES */
 
@@ -126,7 +148,7 @@ module.exports.CreateQuestionStrategy = {
 /* SCORING STRATEGIES */
 
 function scoreOneAnswerOnePoint(userId, userName, answer, card, scores) {
-  let correctAnswer = ~arrayToLowerCase(card.answer).indexOf(answer);
+  let correctAnswer = card.compareAnswer(card, answer);
   if (!correctAnswer) {
     return false;
   }
@@ -134,7 +156,7 @@ function scoreOneAnswerOnePoint(userId, userName, answer, card, scores) {
 }
 
 function scoreMultipleAnswersPositionPoints(userId, userName, answer, card, scores) {
-  let answerIndex = arrayToLowerCase(card.answer).indexOf(answer);
+  let answerIndex = card.compareAnswer(card, answer);
   let correctAnswer = answerIndex !== -1;
   if (!correctAnswer) {
     return false;

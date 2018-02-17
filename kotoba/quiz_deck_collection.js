@@ -160,6 +160,7 @@ class DeckCollection {
     card.discordIntermediateAnswerListElementStrategy = card.discordIntermediateAnswerListElementStrategy || deck.discordIntermediateAnswerListElementStrategy;
     card.scoreAnswerStrategy = card.scoreAnswerStrategy || deck.scoreAnswerStrategy;
     card.additionalAnswerWaitStrategy = card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
+    card.answerCompareStrategy = card.answerCompareStrategy || deck.answerCompareStrategy;
     card.answerHistory = card.answerHistory || [];
     card.cardIndex = cardIndex;
     card.deckIndex = deckIndex;
@@ -171,7 +172,7 @@ class DeckCollection {
       card.id = this.nextCardId_++;
     }
     if (card.dictionaryLink === undefined) {
-      card.dictionaryLink = card.dictionaryLink || cardStrategies.CreateDictionaryLinkStrategy[deck.dictionaryLinkStrategy](card);
+      card.dictionaryLink = cardStrategies.CreateDictionaryLinkStrategy[deck.dictionaryLinkStrategy](card);
     }
     if (card.unansweredQuestionLimit === undefined) {
       card.unansweredQuestionLimit = settings.unansweredQuestionLimit;
@@ -190,6 +191,9 @@ class DeckCollection {
     }
     if (card.numberOfReveals === undefined) {
       card.numberOfReveals = cardStrategies.RevealsLeftStrategy[card.answerTimeLimitStrategy]();
+    }
+    if (card.compareAnswer === undefined) {
+      card.compareAnswer = cardStrategies.AnswerCompareStrategy[card.answerCompareStrategy];
     }
     card.createQuestion = cardStrategies.CreateQuestionStrategy[card.questionCreationStrategy];
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
