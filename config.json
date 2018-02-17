@@ -49,5 +49,8 @@
   ],
   "statusRotationIntervalInSeconds": 600,
   "colorForSettingsSystemEmbeds": 2522111,
-  "settingsCategorySeparator": "/"
+  "settingsCategorySeparator": "/",
+  "erisOptions": {
+    "maxShards": "auto"
+  }
 }
