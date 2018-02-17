@@ -147,7 +147,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
     }
 
     let unansweredQuestionsString = unansweredQuestionsLines.join('\n');
-    fields.push({name: 'Unanswered Questions', value: unansweredQuestionsString});
+    fields.push({name: `Unanswered Questions (${unansweredQuestions.length})`, value: unansweredQuestionsString});
   }
 
   let response = {
