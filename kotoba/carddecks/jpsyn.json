@@ -11,6 +11,7 @@
   "scoreAnswerStrategy": "MULTIPLE_ANSWERS_POSITION_POINTS",
   "additionalAnswerWaitStrategy": "MULTIPLE_ANSWERS",
   "discordIntermediateAnswerListElementStrategy": "ANSWERS_WITH_SCORERS_AND_POINTS_FIRST",
+  "answerCompareStrategy": "CONVERT_KANA",
   "cards": [
     {
       "question": "出来事（できごと）\n【名詞】関係/事柄/事柄",

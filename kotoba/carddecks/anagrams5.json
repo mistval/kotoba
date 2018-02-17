@@ -11,6 +11,7 @@
   "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "STRICT",
   "cards": [
     {
       "question": "abate",
