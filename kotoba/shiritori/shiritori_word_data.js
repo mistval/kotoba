@@ -6,7 +6,7 @@ const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 
 class Definition {
   constructor(meaning, isNoun) {
-    this.meaning = meaning;
+    this.meaning = meaning.trim();
     this.isNoun = isNoun;
   }
 }
@@ -73,17 +73,16 @@ if (!state.shiritori.wordData) {
       let definitions = [];
       let isNoun = false;
       for (let definitionPart of definitionParts) {
+        let definition = definitionPart;
         let partsOfSpeech = [];
-        let partOfSpeechMatch = definitionPart.match(partsOfSpeechPartRegex);
-        let definition;
-        if (partOfSpeechMatch) {
-          definition = definitionPart.replace(partOfSpeechMatch[0], '');
+        let partOfSpeechMatch = definition.match(partsOfSpeechPartRegex);
+        while (partOfSpeechMatch) {
+          definition = definition.replace(partOfSpeechMatch[0], '');
           partsOfSpeech = partOfSpeechMatch[1].split(',');
           if (!isNoun) {
             isNoun = partsOfSpeech.some(partOfSpeechSymbol => edictNounCodes.indexOf(partOfSpeechSymbol) !== -1);
           }
-        } else {
-          definition = definitionPart;
+          partOfSpeechMatch = definition.match(partsOfSpeechPartRegex);
         }
 
         definitions.push(new Definition(definition, isNoun));
