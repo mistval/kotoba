@@ -11,7 +11,7 @@ class Session {
     this.nameForUserId_[BOT_USER_ID] = 'Kotoba';
 
     this.clientDelegate_ = clientDelegate;
-    this.nextPlayerIndex_ = 0;
+    this.currentPlayerIndex_ = 0;
     this.gameStrategy_ = gameStrategy;
     this.wordHistory_ = [];
     this.timers_ = [];
@@ -104,8 +104,8 @@ class Session {
     return BOT_USER_ID;
   }
 
-  getNextPlayerId() {
-    return this.players_[this.nextPlayerIndex_];
+  getCurrentPlayerId() {
+    return this.players_[this.currentPlayerIndex_];
   }
 
   getActivePlayers() {
@@ -118,11 +118,11 @@ class Session {
 
   advanceCurrentPlayer() {
     assert(this.hasMultiplePlayers(), 'Not enough players');
-    ++this.nextPlayerIndex_;
-    if (this.nextPlayerIndex_ >= this.players_.length) {
-      this.nextPlayerIndex_ = 0;
+    ++this.currentPlayerIndex_;
+    if (this.currentPlayerIndex_ >= this.players_.length) {
+      this.currentPlayerIndex_ = 0;
     }
-    if (!this.playerAtIndexIsActive_[this.nextPlayerIndex_]) {
+    if (!this.playerAtIndexIsActive_[this.currentPlayerIndex_]) {
       this.advanceCurrentPlayer();
     }
   }
