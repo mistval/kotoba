@@ -134,6 +134,17 @@ function leaveCommand(locationId, userId) {
   return false;
 }
 
+function tryShowCurrentState(session) {
+  let wordHistory = session.getWordHistory();
+  let nextPlayerId = session.getNextPlayerId();
+  let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
+  let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
+  let clientDelegate = session.getClientDelegate();
+  return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot).catch(err => {
+    logger.logFailure(LOGGER_TITLE, 'Client delegate fail');
+  });
+}
+
 class EndGameForErrorAction extends Action {
   do() {
     return endGame(this.getSession_().getLocationId(), EndGameReason.ERROR);
@@ -162,7 +173,7 @@ class TimeoutAction extends Action {
     let promise;
 
     if (this.boot_) {
-      promise = clientDelegate.removedPlayer(currentPlayerId);
+      promise = clientDelegate.removedPlayerForInactivity(currentPlayerId);
     } else {
       promise = clientDelegate.skippedPlayer(currentPlayerId);
     }
@@ -179,13 +190,7 @@ class TimeoutAction extends Action {
         return new EndGameForNoPlayersAction(session);
       }
       session.advanceCurrentPlayer();
-      let nextPlayerId = session.getNextPlayerId();
-      let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
-      let wordHistory = session.getWordHistory();
-      let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
-      return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Client delegate fail');
-      }).then(() => {
+      return tryShowCurrentState(session).then(() => {
         return new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session));
       });
     });
@@ -194,6 +199,7 @@ class TimeoutAction extends Action {
 
 class PlayerTurnAction extends Action {
   do() {
+    this.acceptingAnswers_ = true;
     this.playerDidTalk_ = false;
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
@@ -206,6 +212,9 @@ class PlayerTurnAction extends Action {
   }
 
   tryAcceptUserInput(userId, input) {
+    if (!this.acceptingAnswers_) {
+      return false;
+    }
     let session = this.getSession_();
     let currentPlayerId = session.getNextPlayerId();
     if (userId !== currentPlayerId) {
@@ -215,10 +224,12 @@ class PlayerTurnAction extends Action {
     if (input.indexOf(' ') !== -1) {
       return false;
     }
+
     let gameStrategy = this.getGameStrategy_();
     let clientDelegate = session.getClientDelegate();
     let wordHistory = session.getWordHistory();
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
+
     if (result.accepted) {
       result.word.userId = userId;
       result.word.userName = session.getNameForUserId(userId);
@@ -228,18 +239,38 @@ class PlayerTurnAction extends Action {
       }
       session.advanceCurrentPlayer();
       wordHistory.push(result.word);
-      let nextPlayerId = session.getNextPlayerId();
-      let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
       return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => {
-        return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, false, nextPlayerIsBot);
-      }).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
+        return tryShowCurrentState(session);
       }).then(() => {
         this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
       });
     } else if (!result.isSilent) {
+      let removePlayer = session.shouldRemovePlayerForRuleViolations();
+      this.acceptingAnswers_ = !removePlayer;
       let rejectionReason = result.rejectionReason;
-      return clientDelegate.answerRejected(input, rejectionReason).then(() => {
+      return clientDelegate.answerRejected(input, rejectionReason).catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+      }).then(() => {
+        if (removePlayer) {
+          session.removePlayer(currentPlayerId);
+          return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => {
+            return clientDelegate.removedPlayerForRuleViolation(currentPlayerId).catch(err => {
+              logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+            });
+          }).then(() => {
+            return createTimeoutPromise(session, SPACING_DELAY_IN_MS);
+          }).then(() => {
+            if (!session.hasMultiplePlayers()) {
+              this.fulfill_(new EndGameForNoPlayersAction(session));
+              return;
+            }
+            session.advanceCurrentPlayer();
+            return tryShowCurrentState(session).then(() => {
+              this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
+            })
+          });
+        }
+      }).then(() => {
         return 'Rule violation';
       });
     }
@@ -282,10 +313,7 @@ class BotTurnAction extends Action {
       }
       session.advanceCurrentPlayer();
       wordHistory.push(nextWord);
-      let nextPlayerId = session.getNextPlayerId();
-      return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, true, false).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
-      }).then(() => {
+      return tryShowCurrentState(session).then(() => {
         return new TakeTurnForCurrentPlayerAction(session);
       })
     });
