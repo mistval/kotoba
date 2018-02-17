@@ -11,6 +11,7 @@
   "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
   "cards": [
     {"meaning":"love","kanjiLevel":3,"question":"愛","answer":["あい"]},

@@ -43,6 +43,7 @@ function validateDeckPropertiesValid(deck) {
   assert(~Object.keys(cardStrategies.CardPreprocessingStrategy).indexOf(deck.cardPreprocessingStrategy), 'No or invalid preprocessing strategy.');
   assert(~Object.keys(cardStrategies.ScoreAnswerStrategy).indexOf(deck.scoreAnswerStrategy), 'No or invalid score answer strategy.');
   assert(~Object.keys(cardStrategies.AdditionalAnswerWaitStrategy).indexOf(deck.additionalAnswerWaitStrategy), 'No or invalid additional answer wait strategy.');
+  assert(~Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy), 'No or invalid answerCompareStrategy.');
   assert(deck.discordIntermediateAnswerListElementStrategy, 'No or invalid Discord answer list intermediate element strategy.');
   assert(deck.discordFinalAnswerListElementStrategy, 'No or invalid Discord answer list final element strategy.');
 }
@@ -212,7 +213,7 @@ function tryCreateDeckFromRawData(data, uri) {
     throwParsePublicError('No questions', 0, uri);
   }
 
-  return {
+  let deck = {
     "isInternetDeck": true,
     "name": deckName,
     "shortName": shortName,
@@ -226,9 +227,12 @@ function tryCreateDeckFromRawData(data, uri) {
     "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
     "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
     "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+    "answerCompareStrategy": "CONVERT_KANA",
     "compileImages": false,
     "cards": cards,
   };
+  validateDeckPropertiesValid(deck);
+  return deck;
 }
 
 async function tryFetchRawFromPastebin(pastebinUri) {
