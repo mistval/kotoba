@@ -3,7 +3,7 @@ const assert = require('assert');
 const BOT_USER_ID = 'BOT';
 
 class Session {
-  constructor(starterUserId, starterName, clientDelegate, gameStrategy, locationId) {
+  constructor(starterUserId, starterName, clientDelegate, gameStrategy, locationId, settings) {
     this.players_ = [BOT_USER_ID, starterUserId];
     this.playerAtIndexIsActive_ = this.players_.map(() => true);
     this.nameForUserId_ = {};
@@ -16,6 +16,11 @@ class Session {
     this.wordHistory_ = [];
     this.timers_ = [];
     this.locationId_ = locationId;
+    this.settings_ = settings;
+  }
+
+  shouldRemovePlayerForRuleViolations() {
+    return this.settings_.removePlayerForRuleViolations;
   }
 
   getNameForUserId(userId) {

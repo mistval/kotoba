@@ -147,7 +147,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **k!shiritori stop** when you want to stop. I'll go first!`,
+        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **k!shiritori stop** when you want to stop. I'll go first!\n\nBy the way, if you want me to kick players out of the game when they violate a rule, you can start a game with **k!shiritori hardcore**.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
@@ -173,11 +173,21 @@ class DiscordClientDelegate {
     });
   }
 
-  removedPlayer(userId) {
+  removedPlayerForInactivity(userId) {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Removing Player',
         description: `<@${userId}> seems AFK so I'm booting them! They can rejoin by saying **join**.`,
+        color: constants.EMBED_WRONG_COLOR,
+      },
+    });
+  }
+
+  removedPlayerForRuleViolation(userId) {
+    return this.commanderMessage_.channel.createMessage({
+      embed: {
+        title: 'Removing Player',
+        description: `<@${userId}> violated a rule, and this is **hardcore mode**, so they get booted! They can rejoin by saying **join**.`,
         color: constants.EMBED_WRONG_COLOR,
       },
     });
@@ -261,8 +271,9 @@ module.exports = {
 
     throwIfSessionInProgress(locationId);
 
+    let removePlayerForRuleViolations = suffix.toLowerCase() === 'hardcore';
     const clientDelegate = new DiscordClientDelegate(bot, msg);
-    const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId);
+    const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId, {removePlayerForRuleViolations});
 
     return shiritoriManager.startSession(session);
   },
