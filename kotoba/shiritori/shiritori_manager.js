@@ -136,12 +136,12 @@ function leaveCommand(locationId, userId) {
 
 function tryShowCurrentState(session) {
   let wordHistory = session.getWordHistory();
-  let nextPlayerId = session.getNextPlayerId();
-  let nextPlayerIsBot = nextPlayerId === session.getBotUserId();
+  let currentPlayerId = session.getCurrentPlayerId();
+  let currentPlayerIsBot = currentPlayerId === session.getBotUserId();
   let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
   let clientDelegate = session.getClientDelegate();
-  return clientDelegate.playerTookTurn(wordHistory, nextPlayerId, previousPlayerIsBot, nextPlayerIsBot).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Client delegate fail');
+  return clientDelegate.playerTookTurn(wordHistory, currentPlayerId, previousPlayerIsBot, currentPlayerIsBot).catch(err => {
+    logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
   });
 }
 
@@ -169,7 +169,7 @@ class TimeoutAction extends Action {
   do() {
     let session = this.getSession_();
     let clientDelegate = session.getClientDelegate();
-    let currentPlayerId = session.getNextPlayerId();
+    let currentPlayerId = session.getCurrentPlayerId();
     let promise;
 
     if (this.boot_) {
@@ -184,7 +184,7 @@ class TimeoutAction extends Action {
       return createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS);
     }).then(() => {
       if (this.boot_) {
-        session.removePlayer(session.getNextPlayerId());
+        session.removePlayer(session.getCurrentPlayerId());
       }
       if (!session.hasMultiplePlayers()) {
         return new EndGameForNoPlayersAction(session);
@@ -216,7 +216,7 @@ class PlayerTurnAction extends Action {
       return false;
     }
     let session = this.getSession_();
-    let currentPlayerId = session.getNextPlayerId();
+    let currentPlayerId = session.getCurrentPlayerId();
     if (userId !== currentPlayerId) {
       return false;
     }
@@ -323,7 +323,7 @@ class BotTurnAction extends Action {
 class TakeTurnForCurrentPlayerAction extends Action {
   do() {
     let session = this.getSession_();
-    let currentPlayerId = session.getNextPlayerId();
+    let currentPlayerId = session.getCurrentPlayerId();
     if (currentPlayerId === session.getBotUserId()) {
       return new BotTurnAction(session, true);
     } else {
