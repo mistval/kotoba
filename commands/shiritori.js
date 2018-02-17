@@ -8,6 +8,9 @@ const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strateg
 const assert = require('assert');
 const logger = reload('monochrome-bot').logger;
 
+const EMBED_FIELD_MAX_LENGTH = 1024;
+const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
+
 function throwIfSessionInProgress(locationId) {
   if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
     const message = {
@@ -123,12 +126,17 @@ class DiscordClientDelegate {
       assert(false, 'Unknown stop reason');
     }
 
+    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
+    if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
+      wordHistoryString = wordHistoryString.substring(0, EMBED_FIELD_MAX_LENGTH - EMBED_TRUNCATION_REPLACEMENT.length) + EMBED_TRUNCATION_REPLACEMENT; 
+    }
+
     let wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
     let embedFields;
     if (wordsUsedString) {
       embedFields = [{
         name: 'Words used',
-        value: wordHistory.map(wordInformation => wordInformation.word).join(', '),
+        value: wordHistoryString,
       }];
     }
 
