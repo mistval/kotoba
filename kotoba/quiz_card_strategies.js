@@ -33,16 +33,18 @@ function arrayToLowerCase(array) {
 
 function answerCompareConvertKana(card, answerCandidate) {
   let convertedAnswerCandidate = convertToHiragana(answerCandidate);
-  for (let correctAnswer of arrayToLowerCase(card.answer)) {
+  let correctAnswersLowercase = arrayToLowerCase(card.answer);
+  for (let i = 0; i < correctAnswersLowercase.length; ++i) {
+    let correctAnswer = correctAnswersLowercase[i];
     if (convertToHiragana(correctAnswer) === convertedAnswerCandidate) {
-      return true;
+      return i;
     }
   }
-  return false;
+  return -1;
 }
 
 function answerCompareStrict(card, answerCandidate) {
-  return ~arrayToLowerCase(card.answer).indexOf(answerCandidate);
+  return arrayToLowerCase(card.answer).indexOf(answerCandidate);
 }
 
 module.exports.AnswerCompareStrategy = {
@@ -148,8 +150,8 @@ module.exports.CreateQuestionStrategy = {
 /* SCORING STRATEGIES */
 
 function scoreOneAnswerOnePoint(userId, userName, answer, card, scores) {
-  let correctAnswer = card.compareAnswer(card, answer);
-  if (!correctAnswer) {
+  let correctAnswerIndex = card.compareAnswer(card, answer);
+  if (correctAnswerIndex === -1) {
     return false;
   }
   return scores.submitAnswer(userId, userName, answer, 1, false, card.id);
