@@ -3,7 +3,7 @@ const wordData = reload('./shiritori_word_data.js');
 const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
-const largeHiraganaForSmallHirgana = {
+const largeHiraganaForSmallHiragana = {
   'ゃ': 'や',
   'ゅ': 'ゆ',
   'ょ': 'よ',
@@ -11,11 +11,15 @@ const largeHiraganaForSmallHirgana = {
 
 function getNextWordMustStartWith(currentWordReading) {
   let finalCharacter = currentWordReading[currentWordReading.length - 1];
-  if (!largeHiraganaForSmallHirgana[finalCharacter]) {
+  if (finalCharacter === 'ぢ') {
+    return ['じ', 'ぢ'];
+  } else if (finalCharacter === 'づ') {
+    return ['ず', 'づ'];
+  } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
     return [finalCharacter];
+  } else {
+    return [largeHiraganaForSmallHiragana[finalCharacter], currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length)];
   }
-
-  return [largeHiraganaForSmallHirgana[finalCharacter], currentWordReading[currentWordReading.length - 2] + currentWordReading[currentWordReading.length - 1]];
 }
 
 class WordInformation {
@@ -33,8 +37,8 @@ function getRandomArrayElement(array) {
 function getNextWordStartSequence(previousWordReading) {
   let previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
 
-  if (largeHiraganaForSmallHirgana[previousWordFinalCharacter]) {
-    return largeHiraganaForSmallHirgana[previousWordFinalCharacter];
+  if (largeHiraganaForSmallHiragana[previousWordFinalCharacter]) {
+    return largeHiraganaForSmallHiragana[previousWordFinalCharacter];
   } else {
     return previousWordFinalCharacter;
   }
