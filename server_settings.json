@@ -89,5 +89,36 @@
         "allowedDatabaseFacingValues": ["big", "small"]
       }
     ]
+  },
+  {
+    "type": "CATEGORY",
+    "userFacingName": "shiritori",
+    "children":
+    [
+      {
+        "type": "SETTING",
+        "userFacingName": "bot_turn_minimum_wait",
+        "description": "This setting controls the minimum amount of time (in seconds) that the bot will wait before giving its answer.",
+        "valueType": "FLOAT",
+        "defaultDatabaseFacingValue": 6,
+        "allowedDatabaseFacingValues": "Range(1, 30)"
+      },
+      {
+        "type": "SETTING",
+        "userFacingName": "bot_turn_maximum_wait",
+        "description": "This setting controls the maximum amount of time (in seconds) that the bot will wait before giving its answer.",
+        "valueType": "FLOAT",
+        "defaultDatabaseFacingValue": 9,
+        "allowedDatabaseFacingValues": "Range(1, 30)"
+      },
+      {
+        "type": "SETTING",
+        "userFacingName": "answer_time_limit",
+        "description": "This setting controls the amount of time (in seconds) that players have to give their answer. This does not apply to the bot player.",
+        "valueType": "FLOAT",
+        "defaultDatabaseFacingValue": 40,
+        "allowedDatabaseFacingValues": "Range(5, 300)"
+      }
+    ]
   }
 ]

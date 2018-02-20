@@ -23,6 +23,18 @@ class Session {
     return this.settings_.removePlayerForRuleViolations;
   }
 
+  getAnswerTimeLimitInMs() {
+    return this.settings_.answerTimeLimitInMs;
+  }
+
+  getBotTurnMinimumWaitInMs() {
+    return this.settings_.botTurnMinimumWaitInMs;
+  }
+
+  getBotTurnMaximumWaitInMs() {
+    return this.settings_.botTurnMaximumWaitInMs;
+  }
+
   getNameForUserId(userId) {
     return this.nameForUserId_[userId];
   }
