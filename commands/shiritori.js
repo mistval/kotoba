@@ -270,6 +270,7 @@ module.exports = {
   cooldown: 2,
   uniqueId: 'shiritori43953',
   shortDescription: 'Start a game of shiritori in this channel.',
+  longDescription: 'Start a game of shiritori in this channel. **k!shiritori hardcore** starts a game in hardcore mode, which means you get kicked out if you give an invalid answer. Some timing settings can be configured in **k!settings shiritori**',
   requiredSettings: [
     'shiritori/bot_turn_minimum_wait',
     'shiritori/bot_turn_maximum_wait',
