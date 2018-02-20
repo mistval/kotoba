@@ -200,7 +200,7 @@ class TimeoutAction extends Action {
 class PlayerTurnAction extends Action {
   do() {
     this.acceptingAnswers_ = true;
-    this.canTimeout = true;
+    this.canTimeout_ = true;
     this.playerDidTalk_ = false;
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
