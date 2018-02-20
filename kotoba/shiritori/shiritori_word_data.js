@@ -27,6 +27,7 @@ const edictNounCodes = [
   'n-t',
   'pn',
   'num',
+  'n-adv',
 ];
 
 function getReadings(wordInformations) {
