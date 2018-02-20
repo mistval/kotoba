@@ -234,6 +234,7 @@ class PlayerTurnAction extends Action {
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
 
     if (result.accepted) {
+      this.acceptingAnswers_ = false;
       this.canTimeout_ = false;
       result.word.userId = userId;
       result.word.userName = session.getNameForUserId(userId);
@@ -248,8 +249,11 @@ class PlayerTurnAction extends Action {
       }).then(() => {
         this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
       });
-    } else if (!result.isSilent) {
-      let removePlayer = session.shouldRemovePlayerForRuleViolations();
+    }
+
+    let removePlayer = session.shouldRemovePlayerForRuleViolations();
+    let isSilent = result.possiblyChat && !removePlayer;
+    if (!isSilent) {
       this.canTimeout_ = !removePlayer;
       this.acceptingAnswers_ = !removePlayer;
       let rejectionReason = result.rejectionReason;
