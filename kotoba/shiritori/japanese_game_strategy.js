@@ -56,9 +56,9 @@ class AcceptedResult {
 }
 
 class RejectedResult {
-  constructor(silent, reason) {
+  constructor(possiblyChat, reason) {
     this.accepted = false;
-    this.isSilent = silent;
+    this.possiblyChat = possiblyChat;
     this.rejectionReason = reason;
   }
 }
@@ -80,7 +80,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let possibleWordInformations = wordData.wordInformationsForWordAsHiragana[convertToHiragana(answer)];
 
   if (!possibleWordInformations) {
-    return new RejectedResult(true);
+    return new RejectedResult(true, `I don't know the word **${answer}**`);
   }
 
   let startSequences;
