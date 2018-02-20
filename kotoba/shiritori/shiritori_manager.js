@@ -4,10 +4,6 @@ const state = require('./../static_state.js');
 const assert = require('assert');
 const logger = reload('monochrome-bot').logger;
 
-// TODO: These should be configurable
-const BOT_TURN_WAIT_MIN_IN_MS = 6000;
-const BOT_TURN_WAIT_MAX_IN_MS = 9000;
-const ANSWER_TIME_LIMIT_IN_MS = 40000;
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
 const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
@@ -204,7 +200,8 @@ class PlayerTurnAction extends Action {
     this.playerDidTalk_ = false;
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
-      return createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
+      let session = this.getSession_();
+      return createTimeoutPromise(session, session.getAnswerTimeLimitInMs()).then(() => {
         if (this.canTimeout_) {
           let session = this.getSession_();
           let boot = !this.playerDidTalk_;
@@ -298,7 +295,9 @@ class BotTurnAction extends Action {
   constructor(session, doDelay) {
     super(session);
     if (doDelay) {
-      this.delay_ = BOT_TURN_WAIT_MIN_IN_MS + Math.floor(Math.random() * (BOT_TURN_WAIT_MAX_IN_MS - BOT_TURN_WAIT_MAX_IN_MS));
+      let minWaitInMs = session.getBotTurnMinimumWaitInMs();
+      let maxWaitInMs = session.getBotTurnMaximumWaitInMs();
+      this.delay_ = minWaitInMs + Math.floor(Math.random() * (maxWaitInMs - minWaitInMs));
     } else {
       this.delay_ = 0;
     }
