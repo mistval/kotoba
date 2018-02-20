@@ -265,7 +265,7 @@ class DiscordClientDelegate {
 }
 
 module.exports = {
-  commandAliases: ['k!shiritori'],
+  commandAliases: ['k!shiritori', 'k!st', 'k!sh'],
   canBeChannelRestricted: true,
   cooldown: 2,
   uniqueId: 'shiritori43953',
@@ -286,7 +286,8 @@ module.exports = {
     throwIfSessionInProgress(locationId);
     const clientDelegate = new DiscordClientDelegate(bot, msg);
 
-    let removePlayerForRuleViolations = suffix.toLowerCase() === 'hardcore';
+    let suffixLowerCase = suffix.toLowerCase();
+    let removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
     let botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     let botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
     let answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
