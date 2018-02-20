@@ -270,7 +270,12 @@ module.exports = {
   cooldown: 2,
   uniqueId: 'shiritori43953',
   shortDescription: 'Start a game of shiritori in this channel.',
-  action(bot, msg, suffix) {
+  requiredSettings: [
+    'shiritori/bot_turn_minimum_wait',
+    'shiritori/bot_turn_maximum_wait',
+    'shiritori/answer_time_limit',
+  ],
+  action(bot, msg, suffix, serverSettings) {
     const locationId = msg.channel.id;
 
     if (suffix === 'stop') {
@@ -278,11 +283,15 @@ module.exports = {
     }
 
     throwIfSessionInProgress(locationId);
+    const clientDelegate = new DiscordClientDelegate(bot, msg);
 
     let removePlayerForRuleViolations = suffix.toLowerCase() === 'hardcore';
-    const clientDelegate = new DiscordClientDelegate(bot, msg);
-    const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId, {removePlayerForRuleViolations});
+    let botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
+    let botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
+    let answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
+    let settings = {answerTimeLimitInMs, botTurnMinimumWaitInMs, botTurnMaximumWaitInMs, removePlayerForRuleViolations};
 
+    const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId, settings);
     return shiritoriManager.startSession(session);
   },
 };
