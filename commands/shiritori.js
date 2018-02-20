@@ -135,7 +135,7 @@ class DiscordClientDelegate {
     let embedFields;
     if (wordsUsedString) {
       embedFields = [{
-        name: 'Words used',
+        name: `Words used (${wordHistory.length})`,
         value: wordHistoryString,
       }];
     }
