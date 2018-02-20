@@ -200,13 +200,16 @@ class TimeoutAction extends Action {
 class PlayerTurnAction extends Action {
   do() {
     this.acceptingAnswers_ = true;
+    this.canTimeout = true;
     this.playerDidTalk_ = false;
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
       return createTimeoutPromise(this.getSession_(), ANSWER_TIME_LIMIT_IN_MS).then(() => {
-        let session = this.getSession_();
-        let boot = !this.playerDidTalk_;
-        this.fulfill_(new TimeoutAction(session, boot));
+        if (this.canTimeout_) {
+          let session = this.getSession_();
+          let boot = !this.playerDidTalk_;
+          this.fulfill_(new TimeoutAction(session, boot));
+        }
       });
     });
   }
@@ -231,6 +234,7 @@ class PlayerTurnAction extends Action {
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
 
     if (result.accepted) {
+      this.canTimeout_ = false;
       result.word.userId = userId;
       result.word.userName = session.getNameForUserId(userId);
       if (!session.hasMultiplePlayers()) {
@@ -246,6 +250,7 @@ class PlayerTurnAction extends Action {
       });
     } else if (!result.isSilent) {
       let removePlayer = session.shouldRemovePlayerForRuleViolations();
+      this.canTimeout_ = !removePlayer;
       this.acceptingAnswers_ = !removePlayer;
       let rejectionReason = result.rejectionReason;
       return clientDelegate.answerRejected(input, rejectionReason).catch(err => {
