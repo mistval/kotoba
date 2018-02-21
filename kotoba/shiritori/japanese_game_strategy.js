@@ -24,10 +24,26 @@ function getNextWordMustStartWith(currentWordReading) {
 }
 
 class WordInformation {
-  constructor(word, reading) {
+  constructor(word, reading, meaning) {
     this.word = word;
     this.reading = reading;
+    this.meaning = meaning;
     this.nextWordMustStartWith = getNextWordMustStartWith(this.reading);
+  }
+}
+
+class AcceptedResult {
+  constructor(word, reading, meaning) {
+    this.accepted = true;
+    this.word = new WordInformation(word, reading, meaning);
+  }
+}
+
+class RejectedResult {
+  constructor(possiblyChat, reason) {
+    this.accepted = false;
+    this.possiblyChat = possiblyChat;
+    this.rejectionReason = reason;
   }
 }
 
@@ -47,21 +63,6 @@ function getNextWordStartSequence(previousWordReading) {
 
 function readingAlreadyUsed(reading, wordInformationsHistory) {
   return wordInformationsHistory.some(wordInformation => wordInformation.reading === reading);
-}
-
-class AcceptedResult {
-  constructor(word, reading) {
-    this.accepted = true;
-    this.word = new WordInformation(word, reading);
-  }
-}
-
-class RejectedResult {
-  constructor(possiblyChat, reason) {
-    this.accepted = false;
-    this.possiblyChat = possiblyChat;
-    this.rejectionReason = reason;
-  }
 }
 
 function pushUnique(array, element) {
@@ -95,6 +96,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let noNounReadings = [];
   let readingToUse;
   let answerToUse;
+  let meaningToUse;
   for (let possibleWordInformation of possibleWordInformations) {
     let reading = possibleWordInformation.reading;
     if (startSequences && !startSequences.some(sequence => reading.startsWith(sequence))) {
@@ -116,11 +118,14 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
     }
     readingToUse = reading;
     answerToUse = possibleWordInformation.word;
+    if (possibleWordInformation.definitions) {
+      meaningToUse = possibleWordInformation.definitions.map(definition => definition.meaning).join(', ');
+    }
     break;
   }
 
   if (answerToUse) {
-    return new AcceptedResult(answerToUse, readingToUse);
+    return new AcceptedResult(answerToUse, readingToUse, meaningToUse);
   }
 
   let ruleViolations = [];

@@ -6,7 +6,7 @@ const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 
 class Definition {
   constructor(meaning, isNoun) {
-    this.meaning = meaning.trim();
+    this.meaning = meaning;
     this.isNoun = isNoun;
   }
 }
@@ -87,7 +87,10 @@ if (!state.shiritori.wordData) {
           partOfSpeechMatch = definition.match(partsOfSpeechPartRegex);
         }
 
-        definitions.push(new Definition(definition, isNoun));
+        definition = definition.trim();
+        if (definition) {
+          definitions.push(new Definition(definition, isNoun));
+        }
       }
 
       let wordInformation = new WordInformation(word, reading, definitions);
