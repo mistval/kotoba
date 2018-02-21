@@ -9,16 +9,6 @@ const constants = require('./constants.js');
 const MAX_EXAMPLE_RESULTS = 4;
 const LONG_CUTOFF_IN_CHARS = 22;
 
-function createTitleOnlyEmbed(title) {
-  return {
-    pages: 0,
-    embed: {
-      title: title,
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  };
-}
-
 class ExamplesResult {
   constructor(result) {
     this.parseResult(result);
@@ -43,7 +33,14 @@ class ExamplesResult {
 
   toDiscordBotContent(pageIndex) {
     if (this.examples_.length === 0) {
-      return createTitleOnlyEmbed('Didn\'t find any examples for the word or phrase: ' + this.query_);
+      return {
+        pages: 0,
+        embed: {
+          title: 'Didn\'t find any examples for the word or phrase: ' + this.query_,
+          description: `Did you search for **romaji**? Jisho's example search doesn't like romaji, try using hiragana and/or kanji!`,
+          color: constants.EMBED_NEUTRAL_COLOR,
+        },
+      };
     }
 
     let exampleStart = pageIndex * MAX_EXAMPLE_RESULTS;
