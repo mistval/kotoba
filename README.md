@@ -7,6 +7,10 @@ Node 6.9.1+ recommended.
 
 Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
 
+## Help Wanted
+
+I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know. There are brief descriptions of some TODOs in the issues, and I can give you more details if you ask.
+
 ## Installation
 ```
 git clone https://github.com/mistval/kotoba.git
