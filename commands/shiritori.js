@@ -73,6 +73,10 @@ function createFieldsForTookTurnEmbed(msg, wordHistory) {
 
   fields.push(createFieldForUsedWord(msg, previousWord));
 
+  if (previousWord.meaning) {
+    fields.push({name: 'It Means', value: previousWord.meaning});
+  }
+
   fields.push({
     name: 'Next word starts with',
     value: previousWord.nextWordMustStartWith.join(', '),
@@ -225,16 +229,16 @@ class DiscordClientDelegate {
   }
 
   playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot) {
-    let previousPlayerId = wordHistory[wordHistory.length - 1].userId;
+    let wordInformation = wordHistory[wordHistory.length - 1];
+    let previousPlayerId = wordInformation.userId;
     let fields = [];
     let content;
     if (previousPlayerWasBot && !nextPlayerIsBot) {
-      content = 'I say **' + wordHistory[wordHistory.length - 1].word + '**!'
+      content = 'I say **' + wordInformation.word + '**!'
     }
     let message = {
       content: content,
       embed: {
-        title: 'Shiritori',
         description: getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot),
         fields: createFieldsForTookTurnEmbed(this.commanderMessage_, wordHistory),
         color: constants.EMBED_NEUTRAL_COLOR,
