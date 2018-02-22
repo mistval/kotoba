@@ -44,8 +44,6 @@ function validateDeckPropertiesValid(deck) {
   assert(~Object.keys(cardStrategies.ScoreAnswerStrategy).indexOf(deck.scoreAnswerStrategy), 'No or invalid score answer strategy.');
   assert(~Object.keys(cardStrategies.AdditionalAnswerWaitStrategy).indexOf(deck.additionalAnswerWaitStrategy), 'No or invalid additional answer wait strategy.');
   assert(~Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy), 'No or invalid answerCompareStrategy.');
-  assert(deck.discordIntermediateAnswerListElementStrategy, 'No or invalid Discord answer list intermediate element strategy.');
-  assert(deck.discordFinalAnswerListElementStrategy, 'No or invalid Discord answer list final element strategy.');
 }
 
 function loadDecksFromDisk() {
