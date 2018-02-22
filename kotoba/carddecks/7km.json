@@ -1,0 +1,768 @@
+{
+  "uniqueId": "kanken_7km",
+  "name": "Kanken 7級 Meaning Quiz",
+  "article": "a",
+  "instructions": "Type the meaning of the word!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "案外",
+      "answer": [
+        "unexpectedly, surprisingly"
+      ],
+      "meaning": "あんがい"
+    },
+    {
+      "question": "以前",
+      "answer": [
+        "ago, since, before, previous"
+      ],
+      "meaning": "いぜん"
+    },
+    {
+      "question": "芽",
+      "answer": [
+        "sprout"
+      ],
+      "meaning": "め"
+    },
+    {
+      "question": "種",
+      "answer": [
+        "seed (e.g. of a plant), pip, kind, variety, quality, tone, cause, seed, origin"
+      ],
+      "meaning": "たね, しゅ, くさ"
+    },
+    {
+      "question": "号泣",
+      "answer": [
+        "crying aloud, lamentation, wailing"
+      ],
+      "meaning": "ごうきゅう"
+    },
+    {
+      "question": "残る",
+      "answer": [
+        "remain, be left over"
+      ],
+      "meaning": "のこる"
+    },
+    {
+      "question": "松",
+      "answer": [
+        "pine tree (Pinus spp.)"
+      ],
+      "meaning": "まつ"
+    },
+    {
+      "question": "仲",
+      "answer": [
+        "relation, relationship, broker, brokerage, brokerage fee"
+      ],
+      "meaning": "なか, すあい"
+    },
+    {
+      "question": "生徒",
+      "answer": [
+        "pupil, student, schoolchild"
+      ],
+      "meaning": "せいと"
+    },
+    {
+      "question": "孫",
+      "answer": [
+        "grandchild"
+      ],
+      "meaning": "まご"
+    },
+    {
+      "question": "特別",
+      "answer": [
+        "special"
+      ],
+      "meaning": "とくべつ"
+    },
+    {
+      "question": "達成",
+      "answer": [
+        "achievement, attainment, accomplishment, realization"
+      ],
+      "meaning": "たっせい"
+    },
+    {
+      "question": "海底",
+      "answer": [
+        "bottom of the ocean, seafloor, seabed"
+      ],
+      "meaning": "かいてい, うなぞこ"
+    },
+    {
+      "question": "敗る",
+      "answer": [
+        "lose, be defeated"
+      ],
+      "meaning": "やぶる"
+    },
+    {
+      "question": "希望",
+      "answer": [
+        "hope, wish, aspiration"
+      ],
+      "meaning": "きぼう"
+    },
+    {
+      "question": "別人",
+      "answer": [
+        "different person, someone else, changed man"
+      ],
+      "meaning": "べつじん, べつにん"
+    },
+    {
+      "question": "変動",
+      "answer": [
+        "change, fluctuation"
+      ],
+      "meaning": "へんどう"
+    },
+    {
+      "question": "料理",
+      "answer": [
+        "cooking, cookery, cuisine"
+      ],
+      "meaning": "りょうり"
+    },
+    {
+      "question": "必要",
+      "answer": [
+        "necessary, needed, essential, indispensable"
+      ],
+      "meaning": "ひつよう"
+    },
+    {
+      "question": "選ぶ",
+      "answer": [
+        "to choose, to select"
+      ],
+      "meaning": "えらぶ"
+    },
+    {
+      "question": "巣",
+      "answer": [
+        "nest, rookery, breeding place, hive"
+      ],
+      "meaning": "す"
+    },
+    {
+      "question": "包囲",
+      "answer": [
+        "siege, encirclement, envelopment, surrounding, besiegement"
+      ],
+      "meaning": "ほうい"
+    },
+    {
+      "question": "各自",
+      "answer": [
+        "each (person), everyone, individual, respective"
+      ],
+      "meaning": "かくじ"
+    },
+    {
+      "question": "告げる",
+      "answer": [
+        "to tell, to inform, to announce"
+      ],
+      "meaning": "つげる"
+    },
+    {
+      "question": "出航",
+      "answer": [
+        "departure, sailing, shipping out, putting out to sea, takeoff, leaving port"
+      ],
+      "meaning": "しゅっこう"
+    },
+    {
+      "question": "野菜",
+      "answer": [
+        "vegetable"
+      ],
+      "meaning": "やさい"
+    },
+    {
+      "question": "祝福",
+      "answer": [
+        "blessing"
+      ],
+      "meaning": "しゅくふく"
+    },
+    {
+      "question": "打席",
+      "answer": [
+        "batter's box, one's turn at bat"
+      ],
+      "meaning": "だせき"
+    },
+    {
+      "question": "試合",
+      "answer": [
+        "match, game, bout, contest"
+      ],
+      "meaning": "しあい"
+    },
+    {
+      "question": "機会",
+      "answer": [
+        "chance, opportunity"
+      ],
+      "meaning": "きかい"
+    },
+    {
+      "question": "目印",
+      "answer": [
+        "mark, sign, landmark, benchmark"
+      ],
+      "meaning": "めじるし"
+    },
+    {
+      "question": "英語",
+      "answer": [
+        "English (language)"
+      ],
+      "meaning": "えいご"
+    },
+    {
+      "question": "材料",
+      "answer": [
+        "ingredients, material"
+      ],
+      "meaning": "ざいりょう"
+    },
+    {
+      "question": "省",
+      "answer": [
+        "ministry, department"
+      ],
+      "meaning": "しょう"
+    },
+    {
+      "question": "大臣",
+      "answer": [
+        "cabinet minister, minister (of government), noble"
+      ],
+      "meaning": "だいじん, おとど"
+    },
+    {
+      "question": "訓練",
+      "answer": [
+        "training, drill, practice, discipline"
+      ],
+      "meaning": "くんれん"
+    },
+    {
+      "question": "体積",
+      "answer": [
+        "capacity, volume"
+      ],
+      "meaning": "たいせき"
+    },
+    {
+      "question": "説得",
+      "answer": [
+        "persuasion"
+      ],
+      "meaning": "せっとく"
+    },
+    {
+      "question": "借りる",
+      "answer": [
+        "to borrow, to have a loan"
+      ],
+      "meaning": "かりる"
+    },
+    {
+      "question": "印刷",
+      "answer": [
+        "printing"
+      ],
+      "meaning": "いんさつ"
+    },
+    {
+      "question": "出産",
+      "answer": [
+        "childbirth, (giving) birth, delivery, parturition, confinement"
+      ],
+      "meaning": "しゅっさん"
+    },
+    {
+      "question": "欠席",
+      "answer": [
+        "absence, non-attendance"
+      ],
+      "meaning": "けっせき"
+    },
+    {
+      "question": "氏名",
+      "answer": [
+        "full name, identity"
+      ],
+      "meaning": "しめい, うじな"
+    },
+    {
+      "question": "順番",
+      "answer": [
+        "turn (in line), order of things, sequential order"
+      ],
+      "meaning": "じゅんばん"
+    },
+    {
+      "question": "季節",
+      "answer": [
+        "season, time of year"
+      ],
+      "meaning": "きせつ"
+    },
+    {
+      "question": "受験",
+      "answer": [
+        "taking an examination (esp. school and university entrance)"
+      ],
+      "meaning": "じゅけん"
+    },
+    {
+      "question": "成功",
+      "answer": [
+        "success, hit"
+      ],
+      "meaning": "せいこう"
+    },
+    {
+      "question": "軍",
+      "answer": [
+        "army, force, troops, war, battle, campaign, fight"
+      ],
+      "meaning": "ぐん, いくさ"
+    },
+    {
+      "question": "観察",
+      "answer": [
+        "observation, survey, watching"
+      ],
+      "meaning": "かんさつ"
+    },
+    {
+      "question": "辞任",
+      "answer": [
+        "resignation (from a position)"
+      ],
+      "meaning": "じにん"
+    },
+    {
+      "question": "上司",
+      "answer": [
+        "superior authorities, boss"
+      ],
+      "meaning": "じょうし"
+    },
+    {
+      "question": "安静",
+      "answer": [
+        "rest, quiet, repose"
+      ],
+      "meaning": "あんせい"
+    },
+    {
+      "question": "浅い",
+      "answer": [
+        "shallow, superficial"
+      ],
+      "meaning": "あさい"
+    },
+    {
+      "question": "歴史",
+      "answer": [
+        "history"
+      ],
+      "meaning": "れきし"
+    },
+    {
+      "question": "光景",
+      "answer": [
+        "scene, spectacle, sight, view"
+      ],
+      "meaning": "こうけい"
+    },
+    {
+      "question": "健やか",
+      "answer": [
+        "vigorous, healthy, sound"
+      ],
+      "meaning": "すこやか"
+    },
+    {
+      "question": "願う",
+      "answer": [
+        "to desire, to wish, to hope"
+      ],
+      "meaning": "ねがう"
+    },
+    {
+      "question": "直径",
+      "answer": [
+        "diameter"
+      ],
+      "meaning": "ちょっけい"
+    },
+    {
+      "question": "北極",
+      "answer": [
+        "North Pole"
+      ],
+      "meaning": "ほっきょく"
+    },
+    {
+      "question": "観戦",
+      "answer": [
+        "watching a (sports) game, spectating, observing (military operations)"
+      ],
+      "meaning": "かんせん"
+    },
+    {
+      "question": "通貨",
+      "answer": [
+        "currency"
+      ],
+      "meaning": "つうか"
+    },
+    {
+      "question": "有害",
+      "answer": [
+        "harmful, hazardous"
+      ],
+      "meaning": "ゆうがい"
+    },
+    {
+      "question": "条約",
+      "answer": [
+        "treaty, pact"
+      ],
+      "meaning": "じょうやく"
+    },
+    {
+      "question": "入浴",
+      "answer": [
+        "bathing"
+      ],
+      "meaning": "にゅうよく"
+    },
+    {
+      "question": "車輪",
+      "answer": [
+        "(car) wheel"
+      ],
+      "meaning": "しゃりん"
+    },
+    {
+      "question": "無理",
+      "answer": [
+        "unreasonable, unnatural, unjustifiable"
+      ],
+      "meaning": "むり"
+    },
+    {
+      "question": "低下",
+      "answer": [
+        "fall, decline, lowering, deterioration, degradation"
+      ],
+      "meaning": "ていか"
+    },
+    {
+      "question": "費用",
+      "answer": [
+        "cost, expense"
+      ],
+      "meaning": "ひよう"
+    },
+    {
+      "question": "争い",
+      "answer": [
+        "dispute, strife, quarrel, dissension, conflict, rivalry, contest"
+      ],
+      "meaning": "あらそい"
+    },
+    {
+      "question": "熱湯",
+      "answer": [
+        "boiling water, warmer than usual bath"
+      ],
+      "meaning": "ねっとう, あつゆ"
+    },
+    {
+      "question": "格別",
+      "answer": [
+        "particular, special, exceptional, especial"
+      ],
+      "meaning": "かくべつ, かくべち"
+    },
+    {
+      "question": "満席",
+      "answer": [
+        "full house, all seats occupied, fully occupied"
+      ],
+      "meaning": "まんせき"
+    },
+    {
+      "question": "努力",
+      "answer": [
+        "effort, exertion, endeavour, endeavor, hard work, striving"
+      ],
+      "meaning": "どりょく"
+    },
+    {
+      "question": "勇気",
+      "answer": [
+        "courage, bravery, valour, valor, nerve, boldness"
+      ],
+      "meaning": "ゆうき"
+    },
+    {
+      "question": "山脈",
+      "answer": [
+        "mountain range"
+      ],
+      "meaning": "さんみゃく, やまなみ"
+    },
+    {
+      "question": "停車",
+      "answer": [
+        "stopping (e.g. train)"
+      ],
+      "meaning": "ていしゃ"
+    },
+    {
+      "question": "卒業",
+      "answer": [
+        "graduation, completion (e.g. of a course)"
+      ],
+      "meaning": "そつぎょう"
+    },
+    {
+      "question": "記録",
+      "answer": [
+        "record, minutes, document"
+      ],
+      "meaning": "きろく"
+    },
+    {
+      "question": "栄養",
+      "answer": [
+        "nutrition, nourishment"
+      ],
+      "meaning": "えいよう"
+    },
+    {
+      "question": "加熱",
+      "answer": [
+        "heating, application of heat"
+      ],
+      "meaning": "かねつ"
+    },
+    {
+      "question": "方法",
+      "answer": [
+        "method, process, manner, way, means, technique"
+      ],
+      "meaning": "ほうほう"
+    },
+    {
+      "question": "種類",
+      "answer": [
+        "variety, kind, type, category"
+      ],
+      "meaning": "しゅるい"
+    },
+    {
+      "question": "民宿",
+      "answer": [
+        "pension, guesthouse, bed and breakfast, private home providing lodging for travelers (travellers)"
+      ],
+      "meaning": "みんしゅく"
+    },
+    {
+      "question": "腸",
+      "answer": [
+        "guts, bowels, intestines"
+      ],
+      "meaning": "ちょう, はらわた, わた"
+    },
+    {
+      "question": "例える",
+      "answer": [
+        "to compare (something) to, to liken, to speak figuratively, to use a simile, to use a metaphor"
+      ],
+      "meaning": "たとえる"
+    },
+    {
+      "question": "命令",
+      "answer": [
+        "order, command, decree, directive"
+      ],
+      "meaning": "めいれい"
+    },
+    {
+      "question": "粉末",
+      "answer": [
+        "fine powder"
+      ],
+      "meaning": "ふんまつ"
+    },
+    {
+      "question": "続ける",
+      "answer": [
+        "to continue, to keep up, to keep on"
+      ],
+      "meaning": "つづける"
+    },
+    {
+      "question": "塩分",
+      "answer": [
+        "salt, salt content"
+      ],
+      "meaning": "えんぶん"
+    },
+    {
+      "question": "機械",
+      "answer": [
+        "machine, mechanism"
+      ],
+      "meaning": "きかい"
+    },
+    {
+      "question": "完全",
+      "answer": [
+        "perfection, completeness"
+      ],
+      "meaning": "かんぜん"
+    },
+    {
+      "question": "関係",
+      "answer": [
+        "relation, relationship, connection"
+      ],
+      "meaning": "かんけい"
+    },
+    {
+      "question": "旗",
+      "answer": [
+        "flag"
+      ],
+      "meaning": "はた"
+    },
+    {
+      "question": "改札",
+      "answer": [
+        "examination of tickets"
+      ],
+      "meaning": "かいさつ"
+    },
+    {
+      "question": "失笑",
+      "answer": [
+        "laughing at an inappropriate time, not being able to hold back one's laughter"
+      ],
+      "meaning": "しっしょう"
+    },
+    {
+      "question": "散歩",
+      "answer": [
+        "walk, stroll"
+      ],
+      "meaning": "さんぽ"
+    },
+    {
+      "question": "入賞",
+      "answer": [
+        "winning a prize or place (in a contest)"
+      ],
+      "meaning": "にゅうしょう"
+    },
+    {
+      "question": "達観",
+      "answer": [
+        "taking a philosophic view"
+      ],
+      "meaning": "たっかん"
+    },
+    {
+      "question": "的中",
+      "answer": [
+        "striking home, hitting the mark"
+      ],
+      "meaning": "てきちゅう"
+    },
+    {
+      "question": "約束",
+      "answer": [
+        "promise, agreement, arrangement, one's word, contract, pact, appointment, engagement, date"
+      ],
+      "meaning": "やくそく"
+    },
+    {
+      "question": "差",
+      "answer": [
+        "difference, variation, between (e.g. two people), face to face"
+      ],
+      "meaning": "さ, さし"
+    },
+    {
+      "question": "関心",
+      "answer": [
+        "concern, interest"
+      ],
+      "meaning": "かんしん"
+    },
+    {
+      "question": "不満",
+      "answer": [
+        "dissatisfaction, displeasure, discontent, complaints, unhappiness, disgruntled"
+      ],
+      "meaning": "ふまん"
+    },
+    {
+      "question": "失敗",
+      "answer": [
+        "failure, mistake, blunder"
+      ],
+      "meaning": "しっぱい"
+    },
+    {
+      "question": "達意",
+      "answer": [
+        "lucidity, intelligibility, perspicuity"
+      ],
+      "meaning": "たつい"
+    },
+    {
+      "question": "史実",
+      "answer": [
+        "historical fact"
+      ],
+      "meaning": "しじつ"
+    },
+    {
+      "question": "志願",
+      "answer": [
+        "aspiration, volunteering, desire, application"
+      ],
+      "meaning": "しがん"
+    }
+  ],
+  "commentFieldName": "Reading"
+}
