@@ -1,0 +1,938 @@
+{
+  "uniqueId": "images",
+  "description": "Identify what's in the image",
+  "name": "Image Quiz",
+  "article": "an",
+  "instructions": "What's in the picture?",
+  "questionCreationStrategy": "IMAGE_URI",
+  "dictionaryLinkStrategy": "JISHO_ANSWER_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_ANSWER",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "cards": [
+    {
+      "question": "https://imgur.com/V4ibwkL",
+      "answer": [
+        "蛇",
+        "ヘビ",
+        "青大将",
+        "アオダイショウ",
+        "snake",
+        "japanese rat snake"
+      ],
+      "meaning": "蛇（へび） - snake, 青大将（あおだいしょう） - Japanese rat snake"
+    },
+    {
+      "question": "https://imgur.com/rKVbpnK",
+      "answer": [
+        "ブルーベリー",
+        "blueberry"
+      ],
+      "meaning": "ブルーベリー - blueberry"
+    },
+    {
+      "question": "https://imgur.com/CX5mIpJ",
+      "answer": [
+        "メロン",
+        "melon"
+      ],
+      "meaning": "メロン - melon"
+    },
+    {
+      "question": "https://imgur.com/8D222Tb",
+      "answer": [
+        "桃",
+        "モモ",
+        "peach"
+      ],
+      "meaning": "桃（もも） - peach"
+    },
+    {
+      "question": "https://imgur.com/fpp5KHs",
+      "answer": [
+        "西瓜",
+        "水瓜",
+        "スイカ",
+        "watermelon"
+      ],
+      "meaning": "西瓜（すいか） - watermelon, 水瓜（すいか） - watermelon"
+    },
+    {
+      "question": "https://imgur.com/VvG4nPp",
+      "answer": [
+        "パイナップル",
+        "pineapple"
+      ],
+      "meaning": "パイナップル - pineapple"
+    },
+    {
+      "question": "https://imgur.com/HSbp7GS",
+      "answer": [
+        "マンゴー",
+        "mango"
+      ],
+      "meaning": "マンゴー - mango"
+    },
+    {
+      "question": "https://imgur.com/cyUZr06",
+      "answer": [
+        "葡萄",
+        "ブドウ",
+        "grape",
+        "grapes"
+      ],
+      "meaning": "葡萄（ぶどう） - grape(s)"
+    },
+    {
+      "question": "https://imgur.com/H1wUfAv",
+      "answer": [
+        "苺",
+        "イチゴ",
+        "strawberry"
+      ],
+      "meaning": "苺（いちご） - strawberry"
+    },
+    {
+      "question": "https://imgur.com/9Kyzt60",
+      "answer": [
+        "梨",
+        "ナシ",
+        "洋梨",
+        "洋なし",
+        "pear"
+      ],
+      "meaning": "梨（なし） - pear"
+    },
+    {
+      "question": "https://imgur.com/jeTbesb",
+      "answer": [
+        "林檎",
+        "リンゴ",
+        "apple"
+      ],
+      "meaning": "林檎（りんご） - apple"
+    },
+    {
+      "question": "https://imgur.com/wy2rLmT",
+      "answer": [
+        "バナナ",
+        "banana"
+      ],
+      "meaning": "バナナ - banana"
+    },
+    {
+      "question": "https://imgur.com/cU5RMS0",
+      "answer": [
+        "レモン",
+        "lemon"
+      ],
+      "meaning": "レモン - lemon"
+    },
+    {
+      "question": "https://imgur.com/9PDGKrG",
+      "answer": [
+        "蜜柑",
+        "みかん",
+        "mandarin orange"
+      ],
+      "meaning": "蜜柑（みかん） - mandarin orange"
+    },
+    {
+      "question": "https://imgur.com/Uk7c6JN",
+      "answer": [
+        "猫",
+        "ネコ",
+        "cat"
+      ],
+      "meaning": "猫（ねこ） - cat"
+    },
+    {
+      "question": "https://imgur.com/8lw5sPZ",
+      "answer": [
+        "犬",
+        "イヌ",
+        "柴犬",
+        "しばいぬ",
+        "しばけん",
+        "dog",
+        "shiba"
+      ],
+      "meaning": "犬（いぬ） - dog"
+    },
+    {
+      "question": "https://imgur.com/7LkAliV",
+      "answer": [
+        "獅子",
+        "ライオン",
+        "シシ",
+        "lion"
+      ],
+      "meaning": "獅子（しし） - lion"
+    },
+    {
+      "question": "https://imgur.com/MN5Sypj",
+      "answer": [
+        "象",
+        "ゾウ",
+        "elephant"
+      ],
+      "meaning": "象（ぞう） - elephant"
+    },
+    {
+      "question": "https://imgur.com/Z8J8ySv",
+      "answer": [
+        "麒麟",
+        "騏驎",
+        "キリン",
+        "giraffe"
+      ],
+      "meaning": "麒麟（きりん） - giraffe"
+    },
+    {
+      "question": "https://imgur.com/BqObT6S",
+      "answer": [
+        "犀",
+        "サイ",
+        "rhinoceros",
+        "rhino"
+      ],
+      "meaning": "犀（さい） - rhinoceros, rhino"
+    },
+    {
+      "question": "https://imgur.com/aYpQR1j",
+      "answer": [
+        "栗鼠",
+        "リス",
+        "squirrel"
+      ],
+      "meaning": "栗鼠（りす） - squirrel"
+    },
+    {
+      "question": "https://imgur.com/FcAJ6xj",
+      "answer": [
+        "鼠",
+        "ネズミ",
+        "rat"
+      ],
+      "meaning": "鼠（ねずみ） - rat"
+    },
+    {
+      "question": "https://imgur.com/tjJrnki",
+      "answer": [
+        "鼬",
+        "イタチ",
+        "weasel"
+      ],
+      "meaning": "鼬（いたち） - weasel"
+    },
+    {
+      "question": "https://imgur.com/5PZedZ4",
+      "answer": [
+        "猿",
+        "サル",
+        "monkey"
+      ],
+      "meaning": "猿（さる） - monkey"
+    },
+    {
+      "question": "https://imgur.com/88UW5Sh",
+      "answer": [
+        "虎",
+        "トラ",
+        "tiger"
+      ],
+      "meaning": "虎（とら） - tiger"
+    },
+    {
+      "question": "https://imgur.com/nbXSFp7",
+      "answer": [
+        "豹",
+        "ヒョウ",
+        "leopard"
+      ],
+      "meaning": "豹（ひょう） - leopard"
+    },
+    {
+      "question": "https://imgur.com/Kez97IZ",
+      "answer": [
+        "牛",
+        "ウシ",
+        "cow"
+      ],
+      "meaning": "牛（うし） - cow"
+    },
+    {
+      "question": "https://imgur.com/m6I7FID",
+      "answer": [
+        "馬",
+        "ウマ",
+        "horse"
+      ],
+      "meaning": "馬（うま） - horse"
+    },
+    {
+      "question": "https://imgur.com/RIqGQCj",
+      "answer": [
+        "羊",
+        "ヒツジ",
+        "sheep"
+      ],
+      "meaning": "羊（ひつじ） - sheep"
+    },
+    {
+      "question": "https://imgur.com/XNSIZAU",
+      "answer": [
+        "山羊",
+        "野羊",
+        "ヤギ",
+        "goat"
+      ],
+      "meaning": "山羊（やぎ） - goat"
+    },
+    {
+      "question": "https://imgur.com/2DKtBrt",
+      "answer": [
+        "豚",
+        "ブタ",
+        "pig"
+      ],
+      "meaning": "豚（ぶた） - pig"
+    },
+    {
+      "question": "https://imgur.com/TGXKFH5",
+      "answer": [
+        "猪",
+        "イノシシ",
+        "wild boar"
+      ],
+      "meaning": "猪（いのしし） - wild boar"
+    },
+    {
+      "question": "https://imgur.com/sOHPTQU",
+      "answer": [
+        "熊",
+        "クマ",
+        "bear"
+      ],
+      "meaning": "熊（くま） - bear"
+    },
+    {
+      "question": "https://imgur.com/fMvC2WM",
+      "answer": [
+        "白熊",
+        "シロクマ",
+        "北極熊",
+        "ほっきょくぐま",
+        "polar bear"
+      ],
+      "meaning": "白熊（しろくま） - polar bear, 北極熊（ほっきょくぐま） - polar bear"
+    },
+    {
+      "question": "https://imgur.com/NqIT8CQ",
+      "answer": [
+        "驢馬",
+        "ロバ",
+        "donkey",
+        "ass"
+      ],
+      "meaning": "驢馬（ろば） - donkey, ass"
+    },
+    {
+      "question": "https://imgur.com/Dz8kcbb",
+      "answer": [
+        "鹿",
+        "シカ",
+        "deer"
+      ],
+      "meaning": "鹿（シカ） - deer"
+    },
+    {
+      "question": "https://imgur.com/1sYJ0Hl",
+      "answer": [
+        "狼",
+        "オオカミ",
+        "wolf"
+      ],
+      "meaning": "狼（おおかみ） - wolf"
+    },
+    {
+      "question": "https://imgur.com/mcuaVyE",
+      "answer": [
+        "狐",
+        "キツネ",
+        "fox"
+      ],
+      "meaning": "狐（きつね） - fox"
+    },
+    {
+      "question": "https://imgur.com/E5zUfD4",
+      "answer": [
+        "兎",
+        "ウサギ",
+        "野兎",
+        "ノウサギ",
+        "rabbit",
+        "hare"
+      ],
+      "meaning": "兎（うさぎ） - rabbit, 野兎（のうさぎ） - hare"
+    },
+    {
+      "question": "https://imgur.com/MTWuRRg",
+      "answer": [
+        "蝙蝠",
+        "コウモリ",
+        "bat"
+      ],
+      "meaning": "蝙蝠（こうもり） - bat"
+    },
+    {
+      "question": "https://imgur.com/cnQBg6m",
+      "answer": [
+        "猟虎",
+        "海獺",
+        "ラッコ",
+        "sea otter"
+      ],
+      "meaning": "猟虎（らっこ） - sea otter, 海獺（らっこ） - sea otter"
+    },
+    {
+      "question": "https://imgur.com/VNGNjkd",
+      "answer": [
+        "海豹",
+        "アザラシ",
+        "seal"
+      ],
+      "meaning": "海豹（あざらし） - seal"
+    },
+    {
+      "question": "https://imgur.com/T0jkVQO",
+      "answer": [
+        "河馬",
+        "カバ",
+        "hippopotamus",
+        "hippo"
+      ],
+      "meaning": "河馬（かば） - hippopotamus, hippo"
+    },
+    {
+      "question": "https://imgur.com/brwpWTB",
+      "answer": [
+        "駱駝",
+        "ラクダ",
+        "camel"
+      ],
+      "meaning": "駱駝（らくだ） - camel"
+    },
+    {
+      "question": "https://imgur.com/nDYaNUL",
+      "answer": [
+        "縞馬",
+        "斑馬",
+        "シマウマ",
+        "zebra"
+      ],
+      "meaning": "縞馬（しまうま） - zebra"
+    },
+    {
+      "question": "https://imgur.com/I3mcfCT",
+      "answer": [
+        "烏",
+        "鴉",
+        "カラス",
+        "crow",
+        "raven"
+      ],
+      "meaning": "烏（からす） - crow, raven, 鴉（からす） - crow, raven"
+    },
+    {
+      "question": "https://imgur.com/FOcBr9B",
+      "answer": [
+        "梟",
+        "フクロウ",
+        "owl"
+      ],
+      "meaning": "梟（ふくろう） - owl"
+    },
+    {
+      "question": "https://imgur.com/8xUXnYD",
+      "answer": [
+        "鸚鵡",
+        "オウム",
+        "parrot"
+      ],
+      "meaning": "鸚鵡（おうむ） - parrot"
+    },
+    {
+      "question": "https://imgur.com/CO3C0Oa",
+      "answer": [
+        "鸚哥",
+        "インコ",
+        "parakeet",
+        "budgerigar",
+        "budgie"
+      ],
+      "meaning": "鸚哥（いんこ） - parakeet, budgerigar, budgie"
+    },
+    {
+      "question": "https://imgur.com/YPlXZNy",
+      "answer": [
+        "鶴",
+        "ツル",
+        "丹頂",
+        "タンチョウ",
+        "crane",
+        "red-crowned crane",
+        "japanese crane"
+      ],
+      "meaning": "鶴（つる） - crane, 丹頂（たんちょう） - red-crowned crane, Japanese crane"
+    },
+    {
+      "question": "https://imgur.com/IKZIAU7",
+      "answer": [
+        "白鳥",
+        "ハクチョウ",
+        "swan"
+      ],
+      "meaning": "白鳥（はくちょう） - swan"
+    },
+    {
+      "question": "https://imgur.com/pxAGYtb",
+      "answer": [
+        "鴨",
+        "カモ",
+        "真鴨",
+        "マガモ",
+        "duck",
+        "drake"
+      ],
+      "meaning": "鴨（かも） - duck, drake, 真鴨（まがも） - mallard"
+    },
+    {
+      "question": "https://imgur.com/p61ksJ0",
+      "answer": [
+        "家鴨",
+        "アヒル",
+        "domestic duck",
+        "duck"
+      ],
+      "meaning": "家鴨（あひる） - domestic duck, duck"
+    },
+    {
+      "question": "https://imgur.com/TDAHwH1",
+      "answer": [
+        "鶏",
+        "ニワトリ",
+        "chicken",
+        "hen"
+      ],
+      "meaning": "鶏（にわとり） - chicken, hen"
+    },
+    {
+      "question": "https://imgur.com/QSj1Uy5",
+      "answer": [
+        "鳩",
+        "ハト",
+        "pigeon"
+      ],
+      "meaning": "鳩（はと） - pigeon"
+    },
+    {
+      "question": "https://imgur.com/UamdoFS",
+      "answer": [
+        "鷲",
+        "ワシ",
+        "eagle"
+      ],
+      "meaning": "鷲（わし） - eagle"
+    },
+    {
+      "question": "https://imgur.com/SqG3EdI",
+      "answer": [
+        "孔雀",
+        "クジャク",
+        "peacock"
+      ],
+      "meaning": "孔雀（くじゃく） - peacock"
+    },
+    {
+      "question": "https://imgur.com/7FnbE7a",
+      "answer": [
+        "駝鳥",
+        "ダチョウ",
+        "ostrich"
+      ],
+      "meaning": "駝鳥（だちょう） - ostrich"
+    },
+    {
+      "question": "https://imgur.com/MwLFT2I",
+      "answer": [
+        "雀",
+        "スズメ",
+        "sparrow"
+      ],
+      "meaning": "雀（すずめ） - sparrow"
+    },
+    {
+      "question": "https://imgur.com/9csShe4",
+      "answer": [
+        "燕",
+        "ツバメ",
+        "swallow"
+      ],
+      "meaning": "燕（つばめ） - swallow"
+    },
+    {
+      "question": "https://imgur.com/BkffLTX",
+      "answer": [
+        "雉",
+        "雉子",
+        "キジ",
+        "pheasant"
+      ],
+      "meaning": "雉（きじ） - pheasant, 雉子（きじ） - pheasant"
+    },
+    {
+      "question": "https://imgur.com/vMLTFuP",
+      "answer": [
+        "鷺",
+        "サギ",
+        "青鷺",
+        "アオサギ",
+        "heron"
+      ],
+      "meaning": "鷺（サギ） - heron, 青鷺（アオサギ） - (gray) heron"
+    },
+    {
+      "question": "https://imgur.com/YoWc3ll",
+      "answer": [
+        "目白",
+        "メジロ",
+        "white-eye",
+        "japanese white-eye"
+      ],
+      "meaning": "目白（めじろ） - (Japanese) white-eye"
+    },
+    {
+      "question": "https://imgur.com/x0o4JLs",
+      "answer": [
+        "鶯",
+        "ウグイス",
+        "bush warbler",
+        "japanese bush warbler"
+      ],
+      "meaning": "鶯（うぐいす） - (Japanese) bush warbler"
+    },
+    {
+      "question": "https://imgur.com/Ja7cQqD",
+      "answer": [
+        "蜂鳥",
+        "ハチドリ",
+        "hummingbird"
+      ],
+      "meaning": "蜂鳥（はちどり） - hummingbird"
+    },
+    {
+      "question": "https://imgur.com/e0GMcI3",
+      "answer": [
+        "ペンギン",
+        "penguin"
+      ],
+      "meaning": "ペンギン - penguin"
+    },
+    {
+      "question": "https://imgur.com/z302SoV",
+      "answer": [
+        "朝顔",
+        "あさがお",
+        "morning glory",
+        "japanese morning glory"
+      ],
+      "meaning": "朝顔（あさがお） - (Japanese) morning glory"
+    },
+    {
+      "question": "https://imgur.com/WIUkYqW",
+      "answer": [
+        "紫陽花",
+        "あじさい",
+        "hydrangea",
+        "bigleaf hydrangea",
+        "french hydrangea"
+      ],
+      "meaning": "紫陽花（あじさい） - hydrangea"
+    },
+    {
+      "question": "https://imgur.com/bUzsAF9",
+      "answer": [
+        "松",
+        "まつ",
+        "pine",
+        "pine tree"
+      ],
+      "meaning": "松（まつ） - pine tree (Pinus spp.)"
+    },
+    {
+      "question": "https://imgur.com/cMsRJWN",
+      "answer": [
+        "銀杏",
+        "公孫樹",
+        "鴨脚樹",
+        "いちょう",
+        "ginkgo",
+        "gingko",
+        "maidenhair tree"
+      ],
+      "meaning": "銀杏（いちょう） - ginkgo, maidenhair tree"
+    },
+    {
+      "question": "https://imgur.com/eXfKJjg",
+      "answer": [
+        "楓",
+        "槭樹",
+        "かえで",
+        "maple",
+        "maple tree"
+      ],
+      "meaning": "楓（かえで） - maple (tree), 槭樹（かえで） - maple (tree)"
+    },
+    {
+      "question": "https://imgur.com/h4LVuSq",
+      "answer": [
+        "菊",
+        "きく",
+        "chrysanthemum"
+      ],
+      "meaning": "菊（きく） - chrysanthemum"
+    },
+    {
+      "question": "https://imgur.com/FO7fLEM",
+      "answer": [
+        "桑",
+        "くわ",
+        "mulberry"
+      ],
+      "meaning": "桑（くわ） - mulberry"
+    },
+    {
+      "question": "https://imgur.com/FopaOe7",
+      "answer": [
+        "コスモス",
+        "秋桜",
+        "あきざくら",
+        "cosmos"
+      ],
+      "meaning": "コスモス - cosmos, 秋桜（あきざくら） - cosmos"
+    },
+    {
+      "question": "https://imgur.com/WJy7Xg6",
+      "answer": [
+        "桜",
+        "さくら",
+        "cherry tree",
+        "cherry blossom"
+      ],
+      "meaning": "桜（さくら） - (Japanese) cherry tree, cherry blossom"
+    },
+    {
+      "question": "https://imgur.com/dKlvtze",
+      "answer": [
+        "水仙",
+        "すいせん",
+        "daffodil",
+        "narcissus"
+      ],
+      "meaning": "水仙（すいせん） - narcissus, daffodil"
+    },
+    {
+      "question": "https://imgur.com/UJagNSv",
+      "answer": [
+        "杉",
+        "すぎ",
+        "japanese cedar",
+        "cryptomeria"
+      ],
+      "meaning": "杉（すぎ） - Japanese cedar, cryptomeria"
+    },
+    {
+      "question": "https://imgur.com/yk0lLWT",
+      "answer": [
+        "鈴蘭",
+        "すずらん",
+        "lily of the valley",
+        "lily-of-the-valley"
+      ],
+      "meaning": "鈴蘭（すずらん） - lily of the valley"
+    },
+    {
+      "question": "https://imgur.com/hzg3pzv",
+      "answer": [
+        "菫",
+        "すみれ",
+        "violet"
+      ],
+      "meaning": "菫（すみれ） - violet"
+    },
+    {
+      "question": "https://imgur.com/Co6OZRd",
+      "answer": [
+        "蒲公英",
+        "たんぽぽ",
+        "ほこうえい",
+        "dandelion"
+      ],
+      "meaning": "蒲公英（たんぽぽ） - dandelion"
+    },
+    {
+      "question": "https://imgur.com/khvfEP6",
+      "answer": [
+        "躑躅",
+        "つつじ",
+        "azalea"
+      ],
+      "meaning": "躑躅（つつじ） - azalea"
+    },
+    {
+      "question": "https://imgur.com/Qee1TvE",
+      "answer": [
+        "椿",
+        "つばき",
+        "camellia",
+        "common camellia",
+        "camellia japonica"
+      ],
+      "meaning": "椿（つばき） - (common) camellia"
+    },
+    {
+      "question": "https://imgur.com/4Q5t6Dn",
+      "answer": [
+        "撫子",
+        "瞿麦",
+        "河原撫子",
+        "なでしこ",
+        "カワラナデシコ",
+        "dianthus",
+        "pink"
+      ],
+      "meaning": "撫子（なでしこ） - Dianthus, pink, 瞿麦（なでしこ・くばく） - Dianthus, pink"
+    },
+    {
+      "question": "https://imgur.com/M7T6FGA",
+      "answer": [
+        "蓮",
+        "はす",
+        "はちす",
+        "lotus",
+        "sacred lotus",
+        "indian lotus"
+      ],
+      "meaning": "蓮（はす・はちす） - (Indian) lotus, sacred lotus"
+    },
+    {
+      "question": "https://imgur.com/kuBdgcr",
+      "answer": [
+        "薔薇",
+        "ばら",
+        "しょうび",
+        "そうび",
+        "rose"
+      ],
+      "meaning": "薔薇（ばら・しょうび・そうび） - rose"
+    },
+    {
+      "question": "https://imgur.com/9E0n3n3",
+      "answer": [
+        "彼岸花",
+        "ひがんばな",
+        "red spider lily",
+        "cluster amaryllis"
+      ],
+      "meaning": "彼岸花（ひがんばな） - red spider lily, cluster amaryllis"
+    },
+    {
+      "question": "https://imgur.com/BgiVUF1",
+      "answer": [
+        "向日葵",
+        "ひまわり",
+        "sunflower"
+      ],
+      "meaning": "向日葵（ひまわり） - sunflower"
+    },
+    {
+      "question": "https://imgur.com/VQK1Ycr",
+      "answer": [
+        "牡丹",
+        "ぼたん",
+        "tree peony",
+        "moutan"
+      ],
+      "meaning": "牡丹（ぼたん） - tree peony, moutan"
+    },
+    {
+      "question": "https://imgur.com/hLKKnuC",
+      "answer": [
+        "百合",
+        "ゆり",
+        "lily"
+      ],
+      "meaning": "百合（ゆり） - lily"
+    },
+    {
+      "question": "https://imgur.com/bL4vUg6",
+      "answer": [
+        "蘭",
+        "らん",
+        "胡蝶蘭",
+        "コチョウラン",
+        "orchid"
+      ],
+      "meaning": "蘭（らん） - orchid"
+    },
+    {
+      "question": "https://imgur.com/lsWyFx6",
+      "answer": [
+        "団栗",
+        "どんぐり",
+        "acorn"
+      ],
+      "meaning": "団栗（どんぐり） - acorn"
+    },
+    {
+      "question": "https://imgur.com/ck7Ryvy",
+      "answer": [
+        "竹",
+        "たけ",
+        "bamboo"
+      ],
+      "meaning": "竹（たけ） - bamboo"
+    },
+    {
+      "question": "https://imgur.com/LkBnzSq",
+      "answer": [
+        "狸",
+        "たぬき",
+        "raccoon dog"
+      ],
+      "meaning": "狸（たぬき） - raccoon dog"
+    },
+    {
+      "question": "https://imgur.com/1JnuKbY",
+      "answer": [
+        "ゴリラ",
+        "gorilla"
+      ],
+      "meaning": "ゴリラ - gorilla"
+    },
+    {
+      "question": "https://imgur.com/cfzJAPW",
+      "answer": [
+        "梅",
+        "うめ",
+        "Japanese apricot"
+      ],
+      "meaning": "梅（うめ） - Japanese apricot"
+    }
+  ]
+}

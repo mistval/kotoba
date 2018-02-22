@@ -62,9 +62,18 @@ const FinalAnswerListElementStrategy = {
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
 };
 
-function getIntermediateAnswerLineForCorrectAnswers(card) {
-  return card.answer.join('\n');
+function truncateIntermediateAnswerString(str) {
+  if (str.length > MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH) {
+    return str.substring(0, MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH - intermediateAnswerTruncationReplacement.length) + intermediateAnswerTruncationReplacement;
+  }
+  return str;
 }
+
+function getIntermediateAnswerLineForCorrectAnswers(card) {
+  return truncateIntermediateAnswerString(card.answer.join('\n'));
+}
+
+const intermediateAnswerTruncationReplacement = ' [...]';
 
 function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(card, answersForUser, pointsForAnswer) {
   let userIds = Object.keys(answersForUser);
@@ -341,6 +350,9 @@ class DiscordMessageSender {
     }
     if (question.bodyAsText) {
       content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
+    }
+    if (question.bodyAsImageUri) {
+      content.embed.image = {url: question.bodyAsImageUri + '.png'};
     }
 
     if (!questionId) {

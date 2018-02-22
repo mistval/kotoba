@@ -91,6 +91,13 @@ function createImageQuestion(card) {
   });
 }
 
+function createImageUriQuestion(card) {
+  let question = createQuestionCommon(card);
+  question.bodyAsImageUri = card.question;
+  return Promise.resolve(question);
+}
+
+
 function createTextQuestion(card) {
   let question = createQuestionCommon(card);
   question.bodyAsText = card.question;
@@ -145,6 +152,7 @@ function createTextQuestionWithHint(card, quizState) {
 
 module.exports.CreateQuestionStrategy = {
   IMAGE: createImageQuestion,
+  IMAGE_URI: createImageUriQuestion,
   TEXT_WITH_HINT: createTextQuestionWithHint,
   TEXT: createTextQuestion,
 };
