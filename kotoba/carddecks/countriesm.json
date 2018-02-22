@@ -1,0 +1,593 @@
+{
+  "uniqueId": "countriesm",
+  "name": "Countries Meaning Quiz",
+  "article": "a",
+  "instructions": "Type the meaning of the word!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "cards": [
+    {
+      "question": "氷州",
+      "answer": [
+        "Iceland"
+      ],
+      "meaning": "アイスランド, あいすらんど"
+    },
+    {
+      "question": "愛蘭",
+      "answer": [
+        "Ireland, Eire"
+      ],
+      "meaning": "アイルランド, あいるらんど"
+    },
+    {
+      "question": "阿富汗斯坦",
+      "answer": [
+        "Afghanistan"
+      ],
+      "meaning": "アフガニスタン, あふがにすたん"
+    },
+    {
+      "question": "亜米利加",
+      "answer": [
+        "America"
+      ],
+      "meaning": "アメリカ, あめりか"
+    },
+    {
+      "question": "阿爾及",
+      "answer": [
+        "Algeria"
+      ],
+      "meaning": "アルジェリア, あるじぇりあ"
+    },
+    {
+      "question": "亜爾然丁",
+      "answer": [
+        "Argentina"
+      ],
+      "meaning": "アルゼンチン, あるぜんちん"
+    },
+    {
+      "question": "英吉利",
+      "answer": [
+        "Great Britain, United Kingdom"
+      ],
+      "meaning": "イギリス, いぎりす"
+    },
+    {
+      "question": "以色列",
+      "answer": [
+        "Israel"
+      ],
+      "meaning": "イスラエル, いすらえる"
+    },
+    {
+      "question": "伊太利",
+      "answer": [
+        "Italy"
+      ],
+      "meaning": "イタリア, いたりあ, イタリヤ, いたりや, イタリー, いたりー"
+    },
+    {
+      "question": "伊蘭",
+      "answer": [
+        "castor oil plant (Ricinus communis)"
+      ],
+      "meaning": "イラン, いらん"
+    },
+    {
+      "question": "印度",
+      "answer": [
+        "India"
+      ],
+      "meaning": "インド, いんど"
+    },
+    {
+      "question": "印度尼西亜",
+      "answer": [
+        "Indonesia"
+      ],
+      "meaning": "インドネシア, いんどねしあ"
+    },
+    {
+      "question": "烏克蘭",
+      "answer": [
+        "Ukraine"
+      ],
+      "meaning": "ウクライナ, うくらいな"
+    },
+    {
+      "question": "宇柳貝",
+      "answer": [
+        "Uruguay"
+      ],
+      "meaning": "ウルグアイ, うるぐあい"
+    },
+    {
+      "question": "厄瓜多",
+      "answer": [
+        "Ecuador"
+      ],
+      "meaning": "エクアドル, えくあどる"
+    },
+    {
+      "question": "埃及",
+      "answer": [
+        "Egypt"
+      ],
+      "meaning": "エジプト, えじぷと, エジブト, えじぶと"
+    },
+    {
+      "question": "濠太剌利",
+      "answer": [
+        "Australia"
+      ],
+      "meaning": "オーストラリア, おーすとらりあ"
+    },
+    {
+      "question": "墺太利",
+      "answer": [
+        "Austria"
+      ],
+      "meaning": "オーストリア, おーすとりあ"
+    },
+    {
+      "question": "和蘭",
+      "answer": [
+        "Holland, The Netherlands"
+      ],
+      "meaning": "オランダ, おらんだ"
+    },
+    {
+      "question": "阿蘭陀",
+      "answer": [
+        "Holland, The Netherlands"
+      ],
+      "meaning": "オランダ, おらんだ"
+    },
+    {
+      "question": "加奈陀",
+      "answer": [
+        "Canada"
+      ],
+      "meaning": "カナダ, かなだ"
+    },
+    {
+      "question": "柬埔寨",
+      "answer": [
+        "Cambodia"
+      ],
+      "meaning": "カンボジア, かんぼじあ"
+    },
+    {
+      "question": "幾内亜",
+      "answer": [
+        "Guinea"
+      ],
+      "meaning": "ギニア, ぎにあ"
+    },
+    {
+      "question": "玖馬",
+      "answer": [
+        "Cuba"
+      ],
+      "meaning": "キューバ, きゅーば, クーバ, くーば"
+    },
+    {
+      "question": "希臘",
+      "answer": [
+        "Greece"
+      ],
+      "meaning": "ギリシャ, ぎりしゃ, ギリシア, ぎりしあ"
+    },
+    {
+      "question": "科威都",
+      "answer": [
+        "Kuwait"
+      ],
+      "meaning": "クウェート, くうぇーと"
+    },
+    {
+      "question": "象牙海岸",
+      "answer": [
+        "(Republic of) Ivory Coast, Côte d'Ivoire"
+      ],
+      "meaning": "コートジボワール, こーとじぼわーる, ぞうげかいがん"
+    },
+    {
+      "question": "哥倫比亜",
+      "answer": [
+        "Colombia"
+      ],
+      "meaning": "コロンビア, ころんびあ"
+    },
+    {
+      "question": "牙買加",
+      "answer": [
+        "Jamaica"
+      ],
+      "meaning": "ジャマイカ, じゃまいか"
+    },
+    {
+      "question": "叙利亜",
+      "answer": [
+        "Syria"
+      ],
+      "meaning": "シリア, しりあ"
+    },
+    {
+      "question": "新嘉坡",
+      "answer": [
+        "Singapore"
+      ],
+      "meaning": "シンガポール, しんがぽーる"
+    },
+    {
+      "question": "瑞西",
+      "answer": [
+        "Switzerland"
+      ],
+      "meaning": "スイス, すいす"
+    },
+    {
+      "question": "瑞典",
+      "answer": [
+        "Sweden"
+      ],
+      "meaning": "スウェーデン, すうぇーでん, スエーデン, すえーでん, スヰーデン, すゐーでん"
+    },
+    {
+      "question": "蘇丹",
+      "answer": [
+        "Sudan"
+      ],
+      "meaning": "スーダン, すーだん"
+    },
+    {
+      "question": "西班牙",
+      "answer": [
+        "Spain"
+      ],
+      "meaning": "スペイン, すぺいん"
+    },
+    {
+      "question": "錫蘭",
+      "answer": [
+        "Ceylon"
+      ],
+      "meaning": "スリランカ, すりらんか, セイロン, せいろん"
+    },
+    {
+      "question": "塞爾維",
+      "answer": [
+        "Serbia"
+      ],
+      "meaning": "セルビア, せるびあ"
+    },
+    {
+      "question": "泰",
+      "answer": [
+        "Thailand"
+      ],
+      "meaning": "タイ, たい"
+    },
+    {
+      "question": "泰国",
+      "answer": [
+        "Thailand"
+      ],
+      "meaning": "タイ, たい, たいこく"
+    },
+    {
+      "question": "突尼斯",
+      "answer": [
+        "Tunisia"
+      ],
+      "meaning": "チュニジア, ちゅにじあ, テュニジア, てゅにじあ"
+    },
+    {
+      "question": "智利",
+      "answer": [
+        "Chile"
+      ],
+      "meaning": "チリ, ちり"
+    },
+    {
+      "question": "丁抹",
+      "answer": [
+        "Denmark"
+      ],
+      "meaning": "デンマーク, でんまーく"
+    },
+    {
+      "question": "独逸",
+      "answer": [
+        "Germany"
+      ],
+      "meaning": "ドイツ, どいつ"
+    },
+    {
+      "question": "独乙",
+      "answer": [
+        "Germany"
+      ],
+      "meaning": "ドイツ, どいつ"
+    },
+    {
+      "question": "独国",
+      "answer": [
+        "Germany"
+      ],
+      "meaning": "ドイツ, どいつ, どくこく"
+    },
+    {
+      "question": "土耳古",
+      "answer": [
+        "Turkey"
+      ],
+      "meaning": "トルコ, とるこ"
+    },
+    {
+      "question": "尼加拉瓦",
+      "answer": [
+        "Nicaragua"
+      ],
+      "meaning": "ニカラグア, にからぐあ, ニカラグワ, にからぐわ"
+    },
+    {
+      "question": "新西蘭",
+      "answer": [
+        "New Zealand"
+      ],
+      "meaning": "ニュージーランド, にゅーじーらんど, ニュージランド, にゅーじらんど"
+    },
+    {
+      "question": "諾威",
+      "answer": [
+        "Norway"
+      ],
+      "meaning": "ノルウェー, のるうぇー"
+    },
+    {
+      "question": "海地",
+      "answer": [
+        "Haiti"
+      ],
+      "meaning": "ハイチ, はいち"
+    },
+    {
+      "question": "和地関",
+      "answer": [
+        "Vatican"
+      ],
+      "meaning": "バチカン, ばちかん, ヴァチカン, ゔぁちかん, バティカン, ばてぃかん, ヴァティカン, ゔぁてぃかん"
+    },
+    {
+      "question": "巴奈馬",
+      "answer": [
+        "Panama"
+      ],
+      "meaning": "パナマ, ぱなま"
+    },
+    {
+      "question": "巴拉圭",
+      "answer": [
+        "Paraguay"
+      ],
+      "meaning": "パラグアイ, ぱらぐあい"
+    },
+    {
+      "question": "洪牙利",
+      "answer": [
+        "Hungary"
+      ],
+      "meaning": "ハンガリー, はんがりー"
+    },
+    {
+      "question": "比律賓",
+      "answer": [
+        "Philippines"
+      ],
+      "meaning": "フィリピン, ふぃりぴん, フイリピン, ふいりぴん"
+    },
+    {
+      "question": "芬蘭",
+      "answer": [
+        "Finland"
+      ],
+      "meaning": "フィンランド, ふぃんらんど"
+    },
+    {
+      "question": "不丹",
+      "answer": [
+        "Bhutan"
+      ],
+      "meaning": "ブータン, ぶーたん"
+    },
+    {
+      "question": "伯剌西爾",
+      "answer": [
+        "Brazil"
+      ],
+      "meaning": "ブラジル, ぶらじる"
+    },
+    {
+      "question": "仏蘭西",
+      "answer": [
+        "France"
+      ],
+      "meaning": "フランス, ふらんす"
+    },
+    {
+      "question": "仏国",
+      "answer": [
+        "France"
+      ],
+      "meaning": "フランス, ふらんす, ふっこく"
+    },
+    {
+      "question": "勃牙利",
+      "answer": [
+        "Bulgaria"
+      ],
+      "meaning": "ブルガリア, ぶるがりあ"
+    },
+    {
+      "question": "越南",
+      "answer": [
+        "Vietnam"
+      ],
+      "meaning": "ベトナム, べとなむ, えつなん"
+    },
+    {
+      "question": "委内瑞拉",
+      "answer": [
+        "Venezuela"
+      ],
+      "meaning": "ベネズエラ, べねずえら"
+    },
+    {
+      "question": "白露",
+      "answer": [
+        "glistening dew"
+      ],
+      "meaning": "ベラルーシ, べらるーし, しらつゆ, はくろ"
+    },
+    {
+      "question": "秘露",
+      "answer": [
+        "Peru"
+      ],
+      "meaning": "ペルー, ぺるー"
+    },
+    {
+      "question": "白耳義",
+      "answer": [
+        "Belgium"
+      ],
+      "meaning": "ベルギー, べるぎー"
+    },
+    {
+      "question": "波蘭",
+      "answer": [
+        "Poland"
+      ],
+      "meaning": "ポーランド, ぽーらんど"
+    },
+    {
+      "question": "暮利比亜",
+      "answer": [
+        "Bolivia"
+      ],
+      "meaning": "ボリビア, ぼりびあ"
+    },
+    {
+      "question": "葡萄牙",
+      "answer": [
+        "Portugal"
+      ],
+      "meaning": "ポルトガル, ぽるとがる"
+    },
+    {
+      "question": "馬達加斯加",
+      "answer": [
+        "Madagascar"
+      ],
+      "meaning": "マダガスカル, まだがすかる"
+    },
+    {
+      "question": "馬来西亜",
+      "answer": [
+        "Malaysia"
+      ],
+      "meaning": "マレーシア, まれーしあ"
+    },
+    {
+      "question": "緬甸",
+      "answer": [
+        "Burma"
+      ],
+      "meaning": "ミャンマー, みゃんまー, めんでん"
+    },
+    {
+      "question": "墨西哥",
+      "answer": [
+        "Mexico"
+      ],
+      "meaning": "メキシコ, めきしこ, メヒコ, めひこ"
+    },
+    {
+      "question": "摩納哥",
+      "answer": [
+        "Monaco"
+      ],
+      "meaning": "モナコ, もなこ"
+    },
+    {
+      "question": "摩洛哥",
+      "answer": [
+        "Morocco"
+      ],
+      "meaning": "モロッコ, もろっこ"
+    },
+    {
+      "question": "莫臥児",
+      "answer": [
+        "lace, lacing braid"
+      ],
+      "meaning": "モンゴル, もんごる, もうる, モール, もーる"
+    },
+    {
+      "question": "蒙古",
+      "answer": [
+        "Mongolia"
+      ],
+      "meaning": "モンゴル, もんごる, もうこ"
+    },
+    {
+      "question": "黒山",
+      "answer": [
+        "large crowd, mass of people"
+      ],
+      "meaning": "モンテネグロ, もんてねぐろ, くろやま"
+    },
+    {
+      "question": "利比亜",
+      "answer": [
+        "Libya"
+      ],
+      "meaning": "リビア, りびあ"
+    },
+    {
+      "question": "羅馬尼亜",
+      "answer": [
+        "Romania, Rumania"
+      ],
+      "meaning": "ルーマニア, るーまにあ"
+    },
+    {
+      "question": "黎巴嫩",
+      "answer": [
+        "Lebanon"
+      ],
+      "meaning": "レバノン, ればのん"
+    },
+    {
+      "question": "露西亜",
+      "answer": [
+        "Russia"
+      ],
+      "meaning": "ロシア, ろしあ, ロシヤ, ろしや"
+    }
+  ],
+  "commentFieldName": "Reading"
+}

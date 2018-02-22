@@ -10,6 +10,7 @@ const categoryFields = [
   {'name': 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {'name': 'Kana Decks', value: 'hiragana katakana'},
   {'name': 'Japanese Misc. Decks', value: 'jptrivia common numbers hard haard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard jsyn jsynj ranobe radicals kklc jouyou images jpdefs'},
+  {'name': 'Japanese Word Meaning Decks', value: 'N5m-mc N4m-mc N3m-mc N2m-mc N1m-mc 10km-mc 9km-mc 8km-mc 7km-mc 6km-mc 5km-mc 4km-mc 3km-mc j2km-mc 2km-mc j1km-mc 1km-mc animalsm-mc birdsm-mc bugsm-mc fishm-mc plantsm-mc vegetablesm-mc hardm-mc haardm-mc commonm-mc kokujim-mc kklcm-mc'},
   {'name': 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans ee en_syn'},
   {'name': 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
