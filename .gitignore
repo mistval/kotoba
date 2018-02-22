@@ -57,3 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
+# Generated
+.node-persist
+kotoba/shiritori/shiritori_word_data.json
+save_data
