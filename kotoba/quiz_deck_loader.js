@@ -104,11 +104,18 @@ function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
   deck = Object.assign({}, deck);
   deck.startIndex = deckInformation.startIndex;
   deck.endIndex = deckInformation.endIndex;
+
+  if (typeof deckInformation.numberOfOptions === typeof 1) {
+    deck.numberOfOptions = deckInformation.numberOfOptions;
+  } else {
+    deck.numberOfOptions = 0;
+  }
+
   return deck;
 }
 
 function getDeckFromMemory(deckInformation) {
-  let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckName] || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckName];
+  let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckNameOrUniqueId] || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckNameOrUniqueId];
   if (deck) {
     deck.isInternetDeck = false;
     deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
@@ -268,7 +275,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   let deckUri;
 
   // If the deck name is a pastebin URI, extract the good stuff.
-  let pastebinRegexResults = PASTEBIN_REGEX.exec(deckInformation.deckName);
+  let pastebinRegexResults = PASTEBIN_REGEX.exec(deckInformation.deckNameOrUniqueId);
   if (pastebinRegexResults) {
     let pastebinCode = pastebinRegexResults[1];
     deckUri = `http://pastebin.com/raw/${pastebinCode}`;
@@ -280,7 +287,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   let uniqueId;
   let author;
   if (databaseData.communityDecks) {
-    let foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckName] || databaseData.communityDecks[deckUri];
+    let foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckNameOrUniqueId] || databaseData.communityDecks[deckUri];
     if (foundDatabaseEntry) {
       foundInDatabase = true;
       deckUri = foundDatabaseEntry.uri;
@@ -355,29 +362,6 @@ async function deleteInternetDeck(searchTerm, deletingUserId) {
   return returnStatus;
 }
 
-const rangeRegex = /\(([0-9]*) *- *([0-9]*)\)/;
-
-function getDeckNameAndModifierInformation(deckNames) {
-  return deckNames.map(deckName => {
-    let nameWithoutExtension = deckName;
-    let startIndex;
-    let endIndex;
-
-    let match = deckName.match(rangeRegex);
-    if (match) {
-      startIndex = parseInt(match[1]);
-      endIndex = parseInt(match[2]);
-      nameWithoutExtension = deckName.replace(rangeRegex, '');
-    }
-
-    return {
-      deckName: nameWithoutExtension,
-      startIndex,
-      endIndex,
-    }
-  });
-}
-
 class OutOfBoundsCardRangeStatus {
   constructor(deck) {
     this.status = DeckRequestStatus.INDEX_OUT_OF_RANGE;
@@ -398,16 +382,12 @@ function createOutOfBoundsCardRangeStatus(decks) {
   }
 }
 
-async function getQuizDecks(deckNamesOrUniqueIds, invokerUserId, invokerUserName) {
+async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
   let decks = [];
 
-  // TODO: Tech debt. Really the client specific code should be parsing the deck options, not this module.
-  let deckNameAndModifierInformation = getDeckNameAndModifierInformation(deckNamesOrUniqueIds);
-  deckNameAndModifierInformation = deckNameAndModifierInformation.filter((obj1, i) => deckNameAndModifierInformation.findIndex(obj2 => obj1.deckName === obj2.deckName) === i);
-
   // Try to get decks from memory.
-  for (let deckInformation of deckNameAndModifierInformation) {
-    decks.push(getDeckFromMemory(deckInformation));
+  for (let deckInfo of deckInfos) {
+    decks.push(getDeckFromMemory(deckInfo));
   }
 
   // For any decks not found in memory, try to get from internet.
@@ -415,7 +395,7 @@ async function getQuizDecks(deckNamesOrUniqueIds, invokerUserId, invokerUserName
   for (let i = 0; i < decks.length; ++i) {
     let deck = decks[i];
     if (!deck) {
-      promises.push(getDeckFromInternet(deckNameAndModifierInformation[i], invokerUserId, invokerUserName).then(internetDeck => {
+      promises.push(getDeckFromInternet(deckInfos[i], invokerUserId, invokerUserName).then(internetDeck => {
         decks[i] = internetDeck;
       }));
     }
@@ -427,7 +407,7 @@ async function getQuizDecks(deckNamesOrUniqueIds, invokerUserId, invokerUserName
   for (let i = 0; i < decks.length; ++i) {
     let deck = decks[i];
     if (!deck) {
-      return createDeckNotFoundStatus(deckNamesOrUniqueIds[i]);
+      return createDeckNotFoundStatus(deckInfos[i].deckNameOrUniqueId);
     }
   }
 

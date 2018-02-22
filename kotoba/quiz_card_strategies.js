@@ -78,6 +78,7 @@ function createQuestionCommon(card) {
   return {
     deckName: card.deckName,
     instructions: card.instructions,
+    options: card.options,
   };
 }
 
@@ -100,28 +101,29 @@ function createTextQuestionWithHint(card, quizState) {
   if (!quizState.textQuestionWithHintStrategyState) {
     quizState.textQuestionWithHintStrategyState = {};
   }
+  let answer = card.options ? card.answer[1] : card.answer[0];
   if (quizState.textQuestionWithHintStrategyState.cardId !== card.id) {
     quizState.textQuestionWithHintStrategyState.cardId = card.id;
-    let totalNumberOfCharactersToReveal = Math.ceil(card.answer[0].length * NUMBER_OF_REVEALS_PER_CARD * FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL);
-    totalNumberOfCharactersToReveal = Math.min(totalNumberOfCharactersToReveal, card.answer[0].length - 1);
+    let totalNumberOfCharactersToReveal = Math.ceil(answer.length * NUMBER_OF_REVEALS_PER_CARD * FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL);
+    totalNumberOfCharactersToReveal = Math.min(totalNumberOfCharactersToReveal, answer.length - 1);
 
     // Randomize which indices to reveal in which order
     let allCharacterIndices = [];
-    for (let i = 0; i < card.answer[0].length; ++i) {
+    for (let i = 0; i < answer.length; ++i) {
       allCharacterIndices.push(i);
     }
     let shuffledIndices = Util.shuffleArray(allCharacterIndices);
     let revealIndexQueue = shuffledIndices.slice(0, totalNumberOfCharactersToReveal);
-    let revelationState = Array(card.answer[0].length + 1).join('_');
+    let revelationState = Array(answer.length + 1).join('_');
     quizState.textQuestionWithHintStrategyState.revealIndexQueue = revealIndexQueue;
     quizState.textQuestionWithHintStrategyState.revelationState = revelationState;
   } else {
-    let numberOfIndicesToReveal = Math.ceil(FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL * card.answer[0].length);
+    let numberOfIndicesToReveal = Math.ceil(FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL * answer.length);
     let revealIndexQueue = quizState.textQuestionWithHintStrategyState.revealIndexQueue;
     let revelationStateArray = quizState.textQuestionWithHintStrategyState.revelationState.split('');
     for (let i = 0; i < numberOfIndicesToReveal && revealIndexQueue.length > 0; ++i) {
       let indexToReveal = revealIndexQueue.pop();
-      revelationStateArray[indexToReveal] = card.answer[0][indexToReveal];
+      revelationStateArray[indexToReveal] = answer[indexToReveal];
     }
     let oldRevelationState = quizState.textQuestionWithHintStrategyState.revelationState;
     let newRevelationState = revelationStateArray.join('');
