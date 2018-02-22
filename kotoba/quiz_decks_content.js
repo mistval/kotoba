@@ -9,8 +9,8 @@ const categoryFields = [
   {'name': 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures stations tokyo countries places kirakira'},
   {'name': 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {'name': 'Kana Decks', value: 'hiragana katakana'},
-  {'name': 'Japanese Misc. Decks', value: 'jptrivia common numbers hard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard radicals kklc jouyou'},
-  {'name': 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans'},
+  {'name': 'Japanese Misc. Decks', value: 'jptrivia common numbers hard haard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard jsyn jsynj ranobe radicals kklc jouyou images jpdefs'},
+  {'name': 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans ee en_syn'},
   {'name': 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
 
