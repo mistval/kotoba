@@ -319,6 +319,7 @@ class DiscordMessageSender {
         title: question.deckName,
         description: question.instructions,
         color: constants.EMBED_NEUTRAL_COLOR,
+        fields: [],
       },
     };
 
@@ -327,11 +328,19 @@ class DiscordMessageSender {
       content.embed.image = {url: 'attachment://upload.png'};
       uploadInformation = {file: question.bodyAsPngBuffer, name: 'upload.png'};
     }
-    if (question.bodyAsText) {
-      content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
-    }
     if (question.hintString) {
       content.embed.footer = {text: question.hintString};
+    }
+    if (question.options) {
+      content.embed.description = 'Type the letter of the correct answer!'; // This overwrites the quiz instructions.
+      let fieldValue = question.options.map((option, index) => {
+        let optionCharacter = String.fromCharCode('A'.charCodeAt(0) + index);
+        return `**${optionCharacter}:** ${option}`;
+      }).join('\n');
+      content.embed.fields.push({name: 'Possible Answers', value: fieldValue});
+    }
+    if (question.bodyAsText) {
+      content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
     }
 
     if (!questionId) {
@@ -675,6 +684,36 @@ function throwIfSessionInProgressAtLocation(locationId) {
   }
 }
 
+const rangeRegex = /\(([0-9]*) *- *([0-9]*)\)/;
+
+function getDeckNameAndModifierInformation(deckNames) {
+  return deckNames.map(deckName => {
+    let nameWithoutExtension = deckName;
+    let startIndex;
+    let endIndex;
+    let numberOfOptions = 0;
+
+    let match = deckName.match(rangeRegex);
+    if (match) {
+      startIndex = parseInt(match[1]);
+      endIndex = parseInt(match[2]);
+      nameWithoutExtension = deckName.replace(rangeRegex, '');
+    }
+
+    if (nameWithoutExtension.endsWith('-mc')) {
+      numberOfOptions = 5;
+      nameWithoutExtension = nameWithoutExtension.substring(0, nameWithoutExtension.length - 3);
+    }
+
+    return {
+      deckNameOrUniqueId: nameWithoutExtension,
+      startIndex,
+      endIndex,
+      numberOfOptions,
+    }
+  });
+}
+
 async function startNewQuiz(msg, suffix, messageSender, masteryEnabled, internetDecksEnabled, serverSettings, extension) {
   // TECH DEBT: Replacing these right into the suffix and pretending the user entered them is a little janky.
   for (let replacementKey of Object.keys(mixtureReplacements)) {
@@ -701,7 +740,7 @@ async function startNewQuiz(msg, suffix, messageSender, masteryEnabled, internet
     gameMode = createGameModeForExtension(extension);
 
     let invokerName = msg.author.name + msg.author.discriminator;
-    let decksLookupResult = await deckLoader.getQuizDecks(deckNames, invokerId, invokerName);
+    let decksLookupResult = await deckLoader.getQuizDecks(getDeckNameAndModifierInformation(deckNames), invokerId, invokerName);
 
     if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
       return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **k!quiz** to see the decks I have!`, null, msg);

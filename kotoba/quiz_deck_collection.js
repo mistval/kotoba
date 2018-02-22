@@ -70,7 +70,12 @@ class DeckCollection {
   }
 
   static async createFromSaveData(saveData) {
-    let deckLookupStatus = await deckLoader.getQuizDecks(saveData.deckUniqueIds);
+    let deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
+      let numberOfOptions = saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
+      return {deckNameOrUniqueId: uniqueId, numberOfOptions: saveData.numberOfOptionsForDeck[index]};
+    });
+
+    let deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
     let deckCollection = new DeckCollection();
     deckCollection.decks_ = deckLookupStatus.decks;
     assert(deckCollection.decks_, `couldn't find a save deck by unique ID`);
@@ -161,6 +166,7 @@ class DeckCollection {
     card.scoreAnswerStrategy = card.scoreAnswerStrategy || deck.scoreAnswerStrategy;
     card.additionalAnswerWaitStrategy = card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
     card.answerCompareStrategy = card.answerCompareStrategy || deck.answerCompareStrategy;
+    card.numberOfOptions = card.numberOfOptions || deck.numberOfOptions;
     card.answerHistory = card.answerHistory || [];
     card.cardIndex = cardIndex;
     card.deckIndex = deckIndex;
@@ -199,6 +205,8 @@ class DeckCollection {
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
+    card = this.addOptionsAndModifyAnswer_(card);
+
     this.previousCardCache_[deckIndex][cardIndex] = card;
     return card;
   }
@@ -206,6 +214,7 @@ class DeckCollection {
   createSaveData() {
     return {
       deckUniqueIds: this.decks_.map(deck => deck.uniqueId),
+      numberOfOptionsForDeck: this.decks_.map(deck => deck.numberOfOptions),
       indexSet: this.indexSet_,
       name: this.getName(),
       article: this.getArticle(),
@@ -227,6 +236,43 @@ class DeckCollection {
       return this.decks_[0].uniqueId;
     }
     return -1;
+  }
+
+  addOptionsAndModifyAnswer_(card) {
+    if (!card.numberOfOptions || card.options) {
+      return card;
+    }
+    let numberOfOptions = card.numberOfOptions;
+    let correctAnswer = card.answer[0];
+    let options = [correctAnswer];
+
+    let loopCounter = 0;
+    while (options.length < numberOfOptions) {
+      let randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
+      let randomDeck = this.decks_[randomDeckIndex];
+      let randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
+      let randomCard = randomDeck.cards[randomCardIndex];
+      let randomAnswer = randomCard.answer[0];
+
+      if (options.indexOf(randomAnswer) === -1) {
+        options.push(randomAnswer);
+      }
+
+      ++loopCounter;
+      if (loopCounter > 10000) {
+        logger.logFailure(LOGGER_TITLE, `Couldn't generate enough options. Weird`);
+        break;
+      }
+    }
+
+    card.options = Util.shuffleArray(options);
+    let correctOptionIndex = card.options.indexOf(correctAnswer);
+    assert(correctOptionIndex !== -1, 'No correct option?');
+
+    let correctOptionCharacter = String.fromCharCode('A'.charCodeAt(0) + correctOptionIndex);
+    card.answer.unshift(correctOptionCharacter);
+
+    return card;
   }
 
   purgeCache_() {
