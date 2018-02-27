@@ -18,7 +18,7 @@ const categoryFields = [
 module.exports.content = {
   embed: {
     title: 'Quiz',
-    description: 'Say **k!quiz <deck name>** to start a quiz (Example: **k!quiz N5**). Say **k!quiz stop** to stop a quiz. Say **k!help quiz** to see advanced quiz options. Say **k!quiz save** to save your progress and **k!quiz load** to reload it. Say **k!quiz-conquest** or **k!quiz-inferno** to learn about these new game types.',
+    description: 'Say **k!quiz <deck name>** to start a quiz (Example: **k!quiz N5**). Say **k!quiz stop** to stop a quiz. Say **k!help quiz** to see advanced quiz help. Say **k!quiz save** to save your progress and **k!quiz load** to reload it. Say **k!quiz-conquest** or **k!quiz-inferno** to learn about these game types. Add **-mc** to the end of any deck name to make it multiple choice.',
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: categoryFields,
     footer: {
