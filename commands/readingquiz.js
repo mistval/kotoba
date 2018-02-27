@@ -190,9 +190,9 @@ const afterQuizMessages = [
   },
   {
     embed: {
-      title: 'Needs More Heat?',
+      title: 'Too hard?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: `Try **Inferno Mode**. Say **k!quiz-inferno** to learn more.`,
+      description: `You can add **-mc** to any deck name to make it multiple choice. For example: **k!quiz n1-mc**.`,
     },
   },
   {
@@ -341,9 +341,9 @@ class DiscordMessageSender {
       content.embed.footer = {text: question.hintString};
     }
     if (question.options) {
-      content.embed.description = 'Type the letter of the correct answer!'; // This overwrites the quiz instructions.
+      content.embed.description = 'Type the number of the correct answer!'; // This overwrites the quiz instructions.
       let fieldValue = question.options.map((option, index) => {
-        let optionCharacter = String.fromCharCode('A'.charCodeAt(0) + index);
+        let optionCharacter = '' + (index + 1);
         return `**${optionCharacter}:** ${option}`;
       }).join('\n');
       content.embed.fields.push({name: 'Possible Answers', value: fieldValue});
