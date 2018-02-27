@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Meaning",
   "cards": [
     {
       "question": "捺印",
