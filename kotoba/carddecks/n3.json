@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Meaning",
   "cards": [
     {"meaning":"love","question":"愛","answer":["あい"]},
     {"meaning":"love, affection","question":"愛情","answer":["あいじょう"]},
