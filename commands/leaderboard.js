@@ -68,7 +68,6 @@ module.exports = {
   cooldown: 3,
   uniqueId: 'leaderboard409359',
   action(bot, msg, suffix) {
-    return msg.channel.createMessage('Sorry, viewing the leaderboard is currently disabled. Calculating the leaderboard suddenly started taking way too long! The command will be back soon. Scores are still being recorded.');
     let title = '';
     let footer = {};
     let description = '';
