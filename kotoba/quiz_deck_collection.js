@@ -72,7 +72,7 @@ class DeckCollection {
   static async createFromSaveData(saveData) {
     let deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
       let numberOfOptions = saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
-      return {deckNameOrUniqueId: uniqueId, numberOfOptions: saveData.numberOfOptionsForDeck[index]};
+      return {deckNameOrUniqueId: uniqueId, numberOfOptions};
     });
 
     let deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
