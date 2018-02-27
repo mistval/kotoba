@@ -270,7 +270,7 @@ class DeckCollection {
     let correctOptionIndex = card.options.indexOf(correctAnswer);
     assert(correctOptionIndex !== -1, 'No correct option?');
 
-    let correctOptionCharacter = String.fromCharCode('A'.charCodeAt(0) + correctOptionIndex);
+    let correctOptionCharacter = '' + (correctOptionIndex + 1);
     card.answer.unshift(correctOptionCharacter);
 
     return card;
