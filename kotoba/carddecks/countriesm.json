@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Reading",
   "cards": [
     {
       "question": "氷州",

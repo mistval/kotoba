@@ -12,6 +12,7 @@
   "additionalAnswerWaitStrategy": "MULTIPLE_ANSWERS",
   "discordIntermediateAnswerListElementStrategy": "ANSWERS_WITH_SCORERS_AND_POINTS_FIRST",
   "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Comment",
   "cards": [
     {
       "question": "一",

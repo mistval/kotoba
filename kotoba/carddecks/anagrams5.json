@@ -12,6 +12,7 @@
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "STRICT",
+  "commentFieldName": "Comment",
   "cards": [
     {
       "question": "abate",

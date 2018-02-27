@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Meaning",
   "cards": [
     {"meaning":"footprints","question":"足跡","answer":["あしあと"]},
     {"meaning":"to keep in custody, to receive on deposit, to take charge of","question":"預かる","answer":["あずかる"]},

@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Meaning",
   "cards": [
     {"question":"野菜","answer":["やさい"],"meaning":"vegetable"},
     {"meaning":"a space","question":"間","answer":["あいだ","ま"]},
