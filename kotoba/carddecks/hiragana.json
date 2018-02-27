@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "STRICT",
   "compileImages": true,
+  "commentFieldName": "Comment",
   "cards": [
     {"question":"あ","answer":["a"]},
     {"question":"い","answer":["i"]},
