@@ -274,7 +274,7 @@ class DiscordMessageSender {
 
     // fields.push({name: 'Answer Rate', value: `${card.timesAnswered} / ${card.timesShown}`, inline: true});
     if (card.meaning) {
-      fields.push({name: 'Meaning', value: card.meaning, inline: false});
+      fields.push({name: card.commentFieldName, value: card.meaning, inline: false});
     }
     let response = {
       embed: {
@@ -305,7 +305,7 @@ class DiscordMessageSender {
       fields.push(correctPercentageField);
     }
     if (card.meaning) {
-      fields.push({name: 'Meaning', value: card.meaning, inline: !!correctPercentageField});
+      fields.push({name: card.commentFieldName, value: card.meaning, inline: !!correctPercentageField});
     }
 
     let response = {
