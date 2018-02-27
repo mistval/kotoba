@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Meaning",
   "cards": [
     {"question":"駅","answer":["えき"],"meaning":"station"},
     {"meaning":"afterwards","question":"後","answer":["あと","ご","のち"]},

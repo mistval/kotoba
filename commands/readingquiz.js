@@ -62,9 +62,18 @@ const FinalAnswerListElementStrategy = {
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
 };
 
-function getIntermediateAnswerLineForCorrectAnswers(card) {
-  return card.answer.join('\n');
+function truncateIntermediateAnswerString(str) {
+  if (str.length > MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH) {
+    return str.substring(0, MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH - intermediateAnswerTruncationReplacement.length) + intermediateAnswerTruncationReplacement;
+  }
+  return str;
 }
+
+function getIntermediateAnswerLineForCorrectAnswers(card) {
+  return truncateIntermediateAnswerString(card.answer.join('\n'));
+}
+
+const intermediateAnswerTruncationReplacement = ' [...]';
 
 function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(card, answersForUser, pointsForAnswer) {
   let userIds = Object.keys(answersForUser);
@@ -265,7 +274,7 @@ class DiscordMessageSender {
 
     // fields.push({name: 'Answer Rate', value: `${card.timesAnswered} / ${card.timesShown}`, inline: true});
     if (card.meaning) {
-      fields.push({name: 'Meaning', value: card.meaning, inline: false});
+      fields.push({name: card.commentFieldName, value: card.meaning, inline: false});
     }
     let response = {
       embed: {
@@ -296,7 +305,7 @@ class DiscordMessageSender {
       fields.push(correctPercentageField);
     }
     if (card.meaning) {
-      fields.push({name: 'Meaning', value: card.meaning, inline: !!correctPercentageField});
+      fields.push({name: card.commentFieldName, value: card.meaning, inline: !!correctPercentageField});
     }
 
     let response = {
@@ -319,6 +328,7 @@ class DiscordMessageSender {
         title: question.deckName,
         description: question.instructions,
         color: constants.EMBED_NEUTRAL_COLOR,
+        fields: [],
       },
     };
 
@@ -327,11 +337,22 @@ class DiscordMessageSender {
       content.embed.image = {url: 'attachment://upload.png'};
       uploadInformation = {file: question.bodyAsPngBuffer, name: 'upload.png'};
     }
+    if (question.hintString) {
+      content.embed.footer = {text: question.hintString};
+    }
+    if (question.options) {
+      content.embed.description = 'Type the letter of the correct answer!'; // This overwrites the quiz instructions.
+      let fieldValue = question.options.map((option, index) => {
+        let optionCharacter = String.fromCharCode('A'.charCodeAt(0) + index);
+        return `**${optionCharacter}:** ${option}`;
+      }).join('\n');
+      content.embed.fields.push({name: 'Possible Answers', value: fieldValue});
+    }
     if (question.bodyAsText) {
       content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
     }
-    if (question.hintString) {
-      content.embed.footer = {text: question.hintString};
+    if (question.bodyAsImageUri) {
+      content.embed.image = {url: question.bodyAsImageUri + '.png'};
     }
 
     if (!questionId) {
@@ -431,13 +452,9 @@ function createMasteryHelp(isEnabledInServer) {
       title: 'Conquest Mode',
       description: `In Conquest Mode your goal is to conquer one or more entire quiz decks. If you get a question right on the first try, you won't see it again. But if you get it wrong, you'll see it again until I think you've learned it. The game ends when I think you know every card in the deck (or if you miss too many questions in a row or use **k!quiz stop**).
 
-This will take a while, so use **k!quiz save** and **k!quiz load** to save and load progress.
+You can use **k!quiz save** and **k!quiz load** to save and load progress so you can learn over a period of days or weeks or months.
 
-I recommend doing this in a DM. You can do it anywhere, but anyone around can answer the questions. After you save your progress, you can load it somewhere else if you want.
-
-To start, say **k!quiz-conquest** plus a deck name. For example: **k!quiz-conquest N5**.
-
-This feature is in alpha! If an error causes you to lose save data, please come moan in my support server and I can probably recover your data. Support server link is in **k!about**.
+To start, say **k!quiz-conquest** plus a deck name. For example: **k!quiz-conquest N5**. Keep in mind that if you aren't in a DM, other people can answer the questions too, and then you won't see them again.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -457,15 +474,13 @@ function createConquestHelp(isEnabledInServer) {
       title: 'Inferno Mode',
       description: `In Inferno Mode, every time you miss a question, you have a little bit less time to answer the next one. And I might throw that question back into the deck, so try to remember it!
 
-There is no score limit, so try to get as far as you can. On a deck that you know well, this may take a while, so you can use **k!quiz save** and **k!quiz load** to save and load progress.
+There is no score limit, so try to get as far as you can. You can use **k!quiz save** and **k!quiz load** to save and load progress.
 
 Bring you friends! The top scorers will appear together as a team on the inferno leaderboard (when/if I make it ;)
 
 To start, say **k!quiz-inferno** plus a deck name. For example: **k!quiz-inferno N5**.
 
 You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **k!quiz-inferno N5 .5 20**.
-
-This feature is in alpha! If an error causes you to lose save data, please come moan in my support server and I can probably recover your data. Support server link is in **k!about**.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -675,6 +690,36 @@ function throwIfSessionInProgressAtLocation(locationId) {
   }
 }
 
+const rangeRegex = /\(([0-9]*) *- *([0-9]*)\)/;
+
+function getDeckNameAndModifierInformation(deckNames) {
+  return deckNames.map(deckName => {
+    let nameWithoutExtension = deckName;
+    let startIndex;
+    let endIndex;
+    let numberOfOptions = 0;
+
+    let match = deckName.match(rangeRegex);
+    if (match) {
+      startIndex = parseInt(match[1]);
+      endIndex = parseInt(match[2]);
+      nameWithoutExtension = deckName.replace(rangeRegex, '');
+    }
+
+    if (nameWithoutExtension.endsWith('-mc')) {
+      numberOfOptions = 5;
+      nameWithoutExtension = nameWithoutExtension.substring(0, nameWithoutExtension.length - 3);
+    }
+
+    return {
+      deckNameOrUniqueId: nameWithoutExtension,
+      startIndex,
+      endIndex,
+      numberOfOptions,
+    }
+  });
+}
+
 async function startNewQuiz(msg, suffix, messageSender, masteryEnabled, internetDecksEnabled, serverSettings, extension) {
   // TECH DEBT: Replacing these right into the suffix and pretending the user entered them is a little janky.
   for (let replacementKey of Object.keys(mixtureReplacements)) {
@@ -701,7 +746,7 @@ async function startNewQuiz(msg, suffix, messageSender, masteryEnabled, internet
     gameMode = createGameModeForExtension(extension);
 
     let invokerName = msg.author.name + msg.author.discriminator;
-    let decksLookupResult = await deckLoader.getQuizDecks(deckNames, invokerId, invokerName);
+    let decksLookupResult = await deckLoader.getQuizDecks(getDeckNameAndModifierInformation(deckNames), invokerId, invokerName);
 
     if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
       return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **k!quiz** to see the decks I have!`, null, msg);
@@ -754,15 +799,35 @@ function showHelp(msg, extension, masteryEnabled) {
   return msg.channel.createMessage(helpMessage, null, msg);
 }
 
+const helpLongDescription = `
+See available quiz decks, or start a quiz.
+
+You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
+**k!quiz N4 30 1 10**
+
+Any deck can be made multiple choice by adding **-mc** to the end of its name. Like this:
+**k!quiz N4-mc**
+
+You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
+**k!quiz N4(0-99)**
+
+Associated commands:
+**k!quiz stop** (ends the current quiz)
+**k!lb** (shows the quiz leaderboard)
+**k!quiz-conquest** (show information about conquest mode)
+**k!quiz-inferno** (show information about inferno mode)
+
+Server admins can set default quiz settings by using the k!settings command.
+`;
+
 module.exports = {
   commandAliases: ['k!quiz', 'k!readingQuiz', 'k!starttest', 'k!startquiz', 'k!rt', 'k!rq', 'k!q'],
   aliasesForHelp: ['k!quiz', 'k!q'],
   canBeChannelRestricted: true,
   uniqueId: 'readingQuiz14934',
   cooldown: 1,
-  shortDescription: 'Start a quiz with the specified deck.',
-  longDescription: 'See available quiz decks, or start a quiz.\n\nYou can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:\nk!quiz N4 30 1 10\n\nAssociated commands:\nk!quiz stop (ends the current quiz)\nk!lb (shows the quiz leaderboard)\n\nServer admins can set default quiz settings by using the k!settings command.',
-  usageExample: '\'k!quiz n5\'. \'k!quiz\' lists decks, \'k!quiz stop\' stops the quiz.',
+  shortDescription: 'See how to start a quiz in this channel.',
+  longDescription: helpLongDescription,
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',

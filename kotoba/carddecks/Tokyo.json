@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Comment",
   "cards": [
     {
       "question": "千代田区",

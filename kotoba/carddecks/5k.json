@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
+  "commentFieldName": "Comment",
   "cards": [
     {
       "question": "株式",
@@ -828,7 +829,8 @@
     {
       "question": "垂直",
       "answer": [
-        "すいちょく"      ],
+        "すいちょく"
+      ],
       "meaning": "vertical"
     },
     {
