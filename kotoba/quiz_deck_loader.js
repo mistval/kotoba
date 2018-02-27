@@ -37,6 +37,7 @@ function validateDeckPropertiesValid(deck) {
   assert(deck.article, 'No article.');
   assert(deck.instructions, 'No instructions.');
   assert(deck.cards, 'No cards.');
+  assert(deck.commentFieldName, 'No comment field name');
   assert(~Object.keys(cardStrategies.CreateQuestionStrategy).indexOf(deck.questionCreationStrategy), 'No or invalid question creation strategy.');
   assert(~Object.keys(cardStrategies.CreateDictionaryLinkStrategy).indexOf(deck.dictionaryLinkStrategy), 'No or invalid dictionary link strategy.');
   assert(~Object.keys(cardStrategies.AnswerTimeLimitStrategy).indexOf(deck.answerTimeLimitStrategy), 'No or invalid answer time limit strategy.');
@@ -234,6 +235,7 @@ function tryCreateDeckFromRawData(data, uri) {
     "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
     "answerCompareStrategy": "CONVERT_KANA",
     "compileImages": false,
+    "commentFieldName": "Meaning",
     "cards": cards,
   };
   validateDeckPropertiesValid(deck);

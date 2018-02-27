@@ -167,6 +167,7 @@ class DeckCollection {
     card.additionalAnswerWaitStrategy = card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
     card.answerCompareStrategy = card.answerCompareStrategy || deck.answerCompareStrategy;
     card.numberOfOptions = card.numberOfOptions || deck.numberOfOptions;
+    card.commentFieldName = card.commentFieldName || deck.commentFieldName;
     card.answerHistory = card.answerHistory || [];
     card.cardIndex = cardIndex;
     card.deckIndex = deckIndex;
