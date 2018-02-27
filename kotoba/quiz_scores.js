@@ -62,7 +62,7 @@ class Scores {
     assert(cardId !== undefined, 'No cardId');
 
     if (cardId === this.lastFinalizedCardId_) {
-      logger.logFailure(LOGGER_TITLE, 'Already finalized scores for that card. Scores will probably be a little messed up.');
+      logger.logFailure('QUIZ SCORES', 'Already finalized scores for that card. Scores will probably be a little messed up.');
     }
 
     if (this.currentCardId_ !== cardId) {
