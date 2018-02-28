@@ -219,14 +219,21 @@ const afterQuizMessages = [
       description: `[Here's How](http://kotoba.k33.we.bs/importdecks.html)`,
     },
   },
+  {
+    embed: {
+      title: 'O, u love me?',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: `I'll love you too if you [vote for me](https://discordbots.org/bot/251239170058616833/vote) :3 You can do it every 24 hours for extra love!`,
+    },
+  },
 ];
 
 function createAfterQuizMessage(canReview) {
   let index;
   if (canReview) {
-    index = Math.floor(Math.random() * 4);
+    index = Math.floor(Math.random() * 5);
   } else {
-    index = 1 + Math.floor(Math.random() * 3);
+    index = 1 + Math.floor(Math.random() * 4);
   }
   return afterQuizMessages[index];
 }
