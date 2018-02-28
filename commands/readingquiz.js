@@ -18,6 +18,8 @@ const Session = reload('./../kotoba/quiz_session.js');
 const state = require('./../kotoba/static_state.js');
 
 const LOGGER_TITLE = 'QUIZ';
+const embedFieldMaxLength = 1020; // It's actually 1024 but let's leave a little room.
+const embedFieldTrimReplacement = ' [...]';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const MASTERY_MODE_DISABLED_STRING = 'Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled true**';
@@ -25,6 +27,21 @@ const CONQUEST_MODE_DISABLED_STRING = 'Inferno Mode is not enabled in this chann
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_EXTENSION = '-conquest';
 const CONQUEST_EXTENSION = '-inferno';
+
+function trimEmbedFields(content) {
+  if (!content || !content.embed || !content.embed.fields || content.embed.fields.length === 0) {
+    return content;
+  }
+  let fields = content.embed.fields;
+  for (let field of fields) {
+    if (field.value.length > embedFieldMaxLength) {
+      field.value = field.value.substring(0, embedFieldMaxLength - embedFieldTrimReplacement.length);
+      field.value += embedFieldTrimReplacement;
+    }
+  }
+
+  return content;
+}
 
 function createTitleOnlyEmbedWithColor(title, color) {
   return {
@@ -170,7 +187,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
     }
   };
 
-  return response;
+  return trimEmbedFields(response);
 }
 
 const afterQuizMessages = [
@@ -272,7 +289,6 @@ class DiscordMessageSender {
       fields.push(correctPercentageField);
     }
 
-    // fields.push({name: 'Answer Rate', value: `${card.timesAnswered} / ${card.timesShown}`, inline: true});
     if (card.meaning) {
       fields.push({name: card.commentFieldName, value: card.meaning, inline: false});
     }
@@ -286,6 +302,7 @@ class DiscordMessageSender {
         footer: {icon_url: constants.FOOTER_ICON_URI, text: `You can skip questions by saying 'skip' or just 's'.`},
       },
     };
+    response = trimEmbedFields(response);
     return this.bot_.createMessage(this.channelId_, response);
   }
 
@@ -317,6 +334,8 @@ class DiscordMessageSender {
         fields: fields,
       },
     };
+
+    response = trimEmbedFields(response);
     return this.bot_.createMessage(this.channelId_, response).then(newMessage => {
       return newMessage && newMessage.id;
     });
@@ -355,6 +374,7 @@ class DiscordMessageSender {
       content.embed.image = {url: question.bodyAsImageUri + '.png'};
     }
 
+    content = trimEmbedFields(content);
     if (!questionId) {
       return this.bot_.createMessage(this.channelId_, content, uploadInformation).then(msg => {
         return msg.id;
@@ -834,7 +854,7 @@ module.exports = {
   ]),
   attachIsServerAdmin: true,
   action: async function(bot, msg, suffix, serverSettings, extension) {
-    suffix = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+');
+    suffix = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+').replace(/ *-mc/g, '-mc');
     suffix = suffix.toLowerCase();
     let locationId = msg.channel.id;
     let messageSender = new DiscordMessageSender(bot, locationId);
