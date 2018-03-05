@@ -253,10 +253,12 @@ class DeckCollection {
       let randomDeck = this.decks_[randomDeckIndex];
       let randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
       let randomCard = randomDeck.cards[randomCardIndex];
-      let randomAnswer = randomCard.answer[0];
 
-      if (options.indexOf(randomAnswer) === -1) {
-        options.push(randomAnswer);
+      if (randomCard) {
+        let randomAnswer = randomCard.answer[0];
+        if (options.indexOf(randomAnswer) === -1) {
+          options.push(randomAnswer);
+        }
       }
 
       ++loopCounter;
