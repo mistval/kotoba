@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const assert = require('assert');
 const logger = reload('monochrome-bot').logger;
+const scoreManager = reload('./../score_manager.js');
 
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
@@ -415,7 +416,8 @@ class ShiritoriManager {
     return isSessionInProgressAtLocation(locationId);
   }
 
-  processUserInput(locationId, userId, input) {
+  processUserInput(locationId, userId, userName, input) {
+    scoreManager.registerUsernameForUserId(userId, userName);
     let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
     if (!currentAction) {
       return false;
