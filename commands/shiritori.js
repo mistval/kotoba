@@ -47,7 +47,7 @@ function createFieldForUsedWord(msg, wordInformation, scoreForUserId) {
     readingPart = `(${wordInformation.reading})`;
   }
   return {
-    name: `${playerName} (${scoreForUserId[wordInformation.userId]})`,
+    name: `${playerName} (${scoreForUserId[wordInformation.userId]}) said`,
     value: `${createMarkdownLinkForWord(wordInformation.word)} ${readingPart}`,
     inline: true,
   }
