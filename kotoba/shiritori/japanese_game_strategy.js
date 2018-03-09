@@ -147,7 +147,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   return new RejectedResult(false, ruleViolation);
 }
 
-function getViableWord(wordInformationsHistory, retriesLeft) {
+function getViableNextResult(wordInformationsHistory, retriesLeft) {
   if (retriesLeft === 0) {
     throw new Error('Couldn\'t get a viable next word :/');
   }
@@ -171,7 +171,7 @@ function getViableWord(wordInformationsHistory, retriesLeft) {
     let nextWord = possibleNextWords[nextWordIndex];
     let result = tryAcceptAnswer(nextWord, wordInformationsHistory);
     if (result.accepted) {
-      return result.word;
+      return result;
     }
 
     ++nextWordIndex;
@@ -187,8 +187,8 @@ function getViableWord(wordInformationsHistory, retriesLeft) {
 }
 
 class JapaneseStrategy {
-  getViableNextWord(wordInformationsHistory) {
-    return getViableWord(wordInformationsHistory);
+  getViableNextResult(wordInformationsHistory) {
+    return getViableNextResult(wordInformationsHistory);
   }
 
   tryAcceptAnswer(answer, wordInformationsHistory) {
