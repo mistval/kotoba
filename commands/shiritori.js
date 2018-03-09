@@ -36,42 +36,33 @@ function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlay
   }
 }
 
-function getPlayerName(wordInformation) {
-  let isBot = wordInformation.userId === ShiritoriSession.BOT_USER_ID;
-  if (isBot) {
-    return 'I';
-  } else {
-    return wordInformation.userName;
-  }
-}
-
 function createMarkdownLinkForWord(word) {
   return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
 }
 
-function createFieldForUsedWord(msg, wordInformation) {
-  let playerName = getPlayerName(wordInformation);
+function createFieldForUsedWord(msg, wordInformation, scoreForUserId) {
+  let playerName = wordInformation.userName;
   let readingPart = '';
   if (wordInformation.reading !== wordInformation.word) {
     readingPart = `(${wordInformation.reading})`;
   }
   return {
-    name: `${playerName} said`,
+    name: `${playerName} (${scoreForUserId[wordInformation.userId]})`,
     value: `${createMarkdownLinkForWord(wordInformation.word)} ${readingPart}`,
     inline: true,
   }
 }
 
-function createFieldsForTookTurnEmbed(msg, wordHistory) {
+function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
   let previousWord = wordHistory[wordHistory.length - 1];
   let penultimateWord = wordHistory[wordHistory.length - 2];
 
   let fields = [];
   if (penultimateWord) {
-    fields.push(createFieldForUsedWord(msg, penultimateWord));
+    fields.push(createFieldForUsedWord(msg, penultimateWord, scoreForUserId));
   }
 
-  fields.push(createFieldForUsedWord(msg, previousWord));
+  fields.push(createFieldForUsedWord(msg, previousWord, scoreForUserId));
 
   if (previousWord.meaning) {
     fields.push({name: 'It Means', value: previousWord.meaning});
@@ -228,7 +219,7 @@ class DiscordClientDelegate {
     }
   }
 
-  playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot) {
+  playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot, scoreForUserId) {
     let wordInformation = wordHistory[wordHistory.length - 1];
     let previousPlayerId = wordInformation.userId;
     let fields = [];
@@ -240,7 +231,7 @@ class DiscordClientDelegate {
       content: content,
       embed: {
         description: getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot),
-        fields: createFieldsForTookTurnEmbed(this.commanderMessage_, wordHistory),
+        fields: createFieldsForTookTurnEmbed(this.commanderMessage_, wordHistory, scoreForUserId),
         color: constants.EMBED_NEUTRAL_COLOR,
         footer: {
           text: `Say 'join' to join!`,
