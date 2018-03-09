@@ -33,8 +33,9 @@ class WordInformation {
 }
 
 class AcceptedResult {
-  constructor(word, reading, meaning) {
+  constructor(word, reading, meaning, score) {
     this.accepted = true;
+    this.score = score;
     this.word = new WordInformation(word, reading, meaning);
   }
 }
@@ -125,7 +126,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   }
 
   if (answerToUse) {
-    return new AcceptedResult(answerToUse, readingToUse, meaningToUse);
+    return new AcceptedResult(answerToUse, readingToUse, meaningToUse, readingToUse.length);
   }
 
   let ruleViolations = [];
