@@ -405,8 +405,9 @@ function verifySessionNotInProgress(locationId) {
 }
 
 class ShiritoriManager {
-  startSession(session) {
+  startSession(session, scoreScopeId) {
     let locationId = session.getLocationId();
+    scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
     verifySessionNotInProgress(locationId);
     setSessionForLocationId(session, locationId);
     return chainActions(session.getLocationId(), new StartAction(session));

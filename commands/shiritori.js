@@ -132,7 +132,7 @@ class DiscordClientDelegate {
 
     let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
     if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
-      wordHistoryString = wordHistoryString.substring(0, EMBED_FIELD_MAX_LENGTH - EMBED_TRUNCATION_REPLACEMENT.length) + EMBED_TRUNCATION_REPLACEMENT; 
+      wordHistoryString = wordHistoryString.substring(0, EMBED_FIELD_MAX_LENGTH - EMBED_TRUNCATION_REPLACEMENT.length) + EMBED_TRUNCATION_REPLACEMENT;
     }
 
     let wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
@@ -268,6 +268,13 @@ class DiscordClientDelegate {
   }
 }
 
+function getScoreScopeIdForMessage(msg) {
+  if (msg.channel.guild) {
+    return msg.channel.guild.id;
+  }
+  return msg.channel.id;
+}
+
 module.exports = {
   commandAliases: ['k!shiritori', 'k!st', 'k!sh'],
   canBeChannelRestricted: true,
@@ -296,8 +303,9 @@ module.exports = {
     let botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
     let answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
     let settings = {answerTimeLimitInMs, botTurnMinimumWaitInMs, botTurnMaximumWaitInMs, removePlayerForRuleViolations};
+    let scoreScopeId = getScoreScopeIdForMessage(msg);
 
     const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId, settings);
-    return shiritoriManager.startSession(session);
+    return shiritoriManager.startSession(session, scoreScopeId);
   },
 };
