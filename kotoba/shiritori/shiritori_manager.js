@@ -79,12 +79,13 @@ function endGame(locationId, reason, arg) {
     }
 
     if (session) {
+      let scores = scoreManager.getScoresForLocationId(session.getLocationId());
       scoreManager.commitAndClearScores(session.getLocationId(), SHIRITORI_DECK_ID);
-      return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
+      return session.getClientDelegate().stopped(reason, session.getWordHistory(), scores, arg);
     }
   } catch (err) {
     if (session) {
-      return session.getClientDelegate().stopped(EndGameReason.ERROR, session.getWordHistory(), arg).then(() => {
+      return session.getClientDelegate().stopped(EndGameReason.ERROR, session.getWordHistory(), {}, arg).then(() => {
         throw err;
       });
     } else {
