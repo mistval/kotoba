@@ -11,6 +11,7 @@ const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
 
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
+const BOT_USER_NAME = 'Kotoba';
 
 const EndGameReason = {
   NO_PLAYERS: 1,
@@ -410,6 +411,7 @@ class ShiritoriManager {
     scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
     verifySessionNotInProgress(locationId);
     setSessionForLocationId(session, locationId);
+    scoreManager.registerUsernameForUserId(session.getBotUserId(), BOT_USER_NAME);
     return chainActions(session.getLocationId(), new StartAction(session));
   }
 
