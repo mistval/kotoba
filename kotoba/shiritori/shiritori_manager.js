@@ -65,19 +65,33 @@ class Action {
 
 function endGame(locationId, reason, arg) {
   let session = state.shiritoriManager.sessionForLocationId[locationId];
-  delete state.shiritoriManager.sessionForLocationId[locationId];
-  let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
-  delete state.shiritoriManager.currentActionForLocationId[locationId];
+  try {
+    delete state.shiritoriManager.sessionForLocationId[locationId];
+    let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
+    delete state.shiritoriManager.currentActionForLocationId[locationId];
 
-  if (currentAction && currentAction.stop) {
-    currentAction.stop();
+    if (session) {
+      session.clearTimers();
+    }
+
+    if (currentAction && currentAction.stop) {
+      currentAction.stop();
+    }
+
+    if (session) {
+      scoreManager.commitAndClearScores(session.getLocationId(), SHIRITORI_DECK_ID);
+      return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
+    }
+  } catch (err) {
+    if (session) {
+      return session.getClientDelegate().stopped(EndGameReason.ERROR, session.getWordHistory(), arg).then(() => {
+        throw err;
+      });
+    } else {
+      throw err;
+    }
   }
 
-  if (session) {
-    scoreManager.commitAndClearScores(session.getLocationId(), SHIRITORI_DECK_ID);
-    session.clearTimers();
-    return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
-  }
 }
 
 function botLeaveCommand(locationId, userId) {
