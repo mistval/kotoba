@@ -146,7 +146,7 @@ function tryShowCurrentState(session) {
     currentPlayerId,
     previousPlayerIsBot,
     currentPlayerIsBot,
-    scoreManager.getScores(getLocationId)).catch(err => {
+    scoreManager.getScoresForLocationId(locationId)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
   });
 }

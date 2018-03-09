@@ -55,7 +55,7 @@ function addScore(locationId, userId, score) {
 
 function commitAndClearScores(locationId, deckId) {
   let scoreForUserId = scoresForLocationId[locationId];
-  if (!scoreForUser) {
+  if (!scoreForUserId) {
     return Promise.resolve();
   }
 
@@ -70,14 +70,14 @@ function commitAndClearScores(locationId, deckId) {
   );
 }
 
-function getScoresForUserId(locationId) {
+function getScoresForLocationId(locationId) {
   return scoresForLocationId[locationId];
 }
 
 module.exports = {
   addScore,
   commitAndClearScores,
-  getScores,
+  getScoresForLocationId,
   registerUsernameForUserId,
   registerScoreScopeIdForLocationId,
 };
