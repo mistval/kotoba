@@ -313,8 +313,12 @@ class BotTurnAction extends Action {
     let gameStrategy = this.getGameStrategy_();
     let wordHistory = session.getWordHistory();
     let clientDelegate = session.getClientDelegate();
-    let nextWord = gameStrategy.getViableNextWord(wordHistory);
+    let nextResult = gameStrategy.getViableNextResult(wordHistory);
+    let nextWord = nextResult.word;
+    let botUserId = session.getBotUserId();
+    let locationId = session.getLocationId();
     nextWord.userId = session.getBotUserId();
+    scoreManager.addScore(locationId, botUserId, nextResult.score);
 
     return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay_)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
