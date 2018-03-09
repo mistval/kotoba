@@ -140,8 +140,14 @@ function tryShowCurrentState(session) {
   let currentPlayerIsBot = currentPlayerId === session.getBotUserId();
   let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
   let clientDelegate = session.getClientDelegate();
-  return clientDelegate.playerTookTurn(wordHistory, currentPlayerId, previousPlayerIsBot, currentPlayerIsBot).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+  let locationId = session.getLocationId();
+  return clientDelegate.playerTookTurn(
+    wordHistory,
+    currentPlayerId,
+    previousPlayerIsBot,
+    currentPlayerIsBot,
+    scoreManager.getScores(getLocationId)).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
   });
 }
 
@@ -320,6 +326,7 @@ class BotTurnAction extends Action {
     let botUserId = session.getBotUserId();
     let locationId = session.getLocationId();
     nextWord.userId = session.getBotUserId();
+    nextWord.userName = BOT_USER_NAME;
     scoreManager.addScore(locationId, botUserId, nextResult.score);
 
     return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay_)).catch(err => {
