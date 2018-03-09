@@ -12,6 +12,7 @@ const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
 const BOT_USER_NAME = 'Kotoba';
+const SHIRITORI_DECK_ID = 'shiritori';
 
 const EndGameReason = {
   NO_PLAYERS: 1,
@@ -73,6 +74,7 @@ function endGame(locationId, reason, arg) {
   }
 
   if (session) {
+    scoreManager.commitAndClearScores(session.getLocationId(), SHIRITORI_DECK_ID);
     session.clearTimers();
     return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
   }
