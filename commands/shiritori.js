@@ -76,6 +76,12 @@ function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
   return fields;
 }
 
+function createScoresString(scoreForUserId) {
+  return Object.keys(scoreForUserId).map(userId => {
+    return `<@${userId}> has ${scoreForUserId[userId]} points`;
+  }).join('\n');
+}
+
 class DiscordClientDelegate {
   constructor(bot, commanderMessage) {
     this.bot_ = bot;
@@ -102,7 +108,7 @@ class DiscordClientDelegate {
     });
   }
 
-  stopped(reason, wordHistory, arg) {
+  stopped(reason, wordHistory, scoreForUserId, arg) {
     let description;
     clearTimeout(this.sendTypingTimeout);
     if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
@@ -132,6 +138,10 @@ class DiscordClientDelegate {
       embedFields = [{
         name: `Words used (${wordHistory.length})`,
         value: wordHistoryString,
+      },
+      {
+        name: 'Scores',
+        value: createScoresString(scoreForUserId),
       }];
     }
 

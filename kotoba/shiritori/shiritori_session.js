@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-const BOT_USER_ID = 'BOT';
+const BOT_USER_ID = '251239170058616833';
 
 class Session {
   constructor(starterUserId, starterName, clientDelegate, gameStrategy, locationId, settings) {
