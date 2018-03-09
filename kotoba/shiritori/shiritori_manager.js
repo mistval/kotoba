@@ -233,6 +233,9 @@ class PlayerTurnAction extends Action {
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
 
     if (result.accepted) {
+      let locationId = session.getLocationId();
+      scoreManager.addScore(locationId, userId, result.score);
+
       this.acceptingAnswers_ = false;
       this.canTimeout_ = false;
       result.word.userId = userId;
