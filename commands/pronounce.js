@@ -108,7 +108,10 @@ function createFoundResult(msg, pronounceInfo) {
   let query = pronounceInfo.query;
   let uriEncodedQuery = encodeURIComponent(query);
 
-  embed.title = `Pronunciation information for ${pronounceInfo.query}`;
+  // TODO: Properly handle multiple results.
+  pronounceInfo = pronounceInfo.entries[0];
+
+  embed.title = `Pronunciation information for ${pronounceInfo.kanji || pronounceInfo.katakana}`;
   embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedQuery}`;
   embed.description = `Class [${pronounceInfo.pitchAccentClass}](http://www.sanseido-publ.co.jp/publ/dicts/daijirin_ac.html) pitch accent`;
 

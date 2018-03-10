@@ -48,16 +48,18 @@ module.exports = async function(queryWord) {
 
   if (pronounceDataForQuery) {
     result.found = true;
-    result.katakana = pronounceDataForQuery.k;
-
-    let katakanaLength = result.katakana.length;
-    let uriEncodedQuery = encodeURIComponent(queryWord);
-
-    result.noPronounceIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npr);
-    result.nasalPitchIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npi);
-    result.pitchAccentClass = pronounceDataForQuery.pac;
-    result.pitchAccent = getHighLowPitch(result.katakana.length, pronounceDataForQuery.pa);
-    result.forvoUri = `https://forvo.com/word/${uriEncodedQuery}/#ja`;
+    result.entries = pronounceDataForQuery.map(entry => {
+      let katakanaLength = entry.kat.length;
+      return {
+        katakana: entry.kat,
+        kanji: entry.kan,
+        noPronounceIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npr),
+        nasalPitchIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npi),
+        pitchAccent: getHighLowPitch(katakanaLength, entry.pa),
+        pitchAccentClass: entry.pac,
+        forvoUri: `https://forvo.com/word/${entry.kan || entry.kat}/#ja`,
+      };
+    });
 
     try {
       let forvoResults = await searchForvo(queryWord);
