@@ -5,13 +5,21 @@ if (!state.pronounceData) {
   state.pronounceData = require('./resources/dictionaries/pronunciation.json');
 }
 
-function convertIndexStringToIndices(indexString) {
+function convertIndexStringToTrueFalse(wordLength, indexString) {
   if (!indexString) {
     return [];
   }
-  return indexString.split('0')
+
+  let trueIndices = indexString.split('0')
     .filter(str => !!str)
     .map(str => parseInt(str) - 1);
+
+  let trueAndFalse = [];
+  for (let i = 0; i < wordLength; ++i) {
+    trueAndFalse.push(trueIndices.indexOf(i) !== -1);
+  }
+
+  return trueAndFalse;
 }
 
 function getHighLowPitch(wordLength, pitchAccentString) {
@@ -21,14 +29,7 @@ function getHighLowPitch(wordLength, pitchAccentString) {
     parts.unshift(0);
   }
 
-  let highIndicies = [];
-  for (let i = 0; i < parts.length; ++i) {
-    if (parts[i] === 1) {
-      highIndicies.push(i);
-    }
-  }
-
-  return highIndicies;
+  return parts.map(int => int ? true : false);
 }
 
 module.exports = function(queryWord) {
@@ -43,8 +44,11 @@ module.exports = function(queryWord) {
   if (pronounceDataForQuery) {
     result.found = true;
     result.katakana = pronounceDataForQuery.k;
-    result.noPronounceIndices = convertIndexStringToIndices(pronounceDataForQuery.npr);
-    result.nasalPitchIndices = convertIndexStringToIndices(pronounceDataForQuery.npi);
+
+    let katakanaLength = result.katakana.length;
+
+    result.noPronounceIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npr);
+    result.nasalPitchIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npi);
     result.pitchAccentClass = pronounceDataForQuery.pac;
     result.pitchAccent = getHighLowPitch(result.katakana.length, pronounceDataForQuery.pa);
   }

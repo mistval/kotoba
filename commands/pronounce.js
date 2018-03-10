@@ -26,12 +26,12 @@ function createNoSuffixResult(msg) {
   return msg.channel.createMessage(content, null, msg);
 }
 
-function underlineStringAtIndices(string, indices) {
+function underlineStringAtTrueIndices(string, indices) {
   let underline = false;
   let outString = '';
   for (let i = 0; i < string.length; ++i) {
     let char = string[i];
-    let shouldUnderline = indices.indexOf(i) !== -1;
+    let shouldUnderline = indices[i];
     if (shouldUnderline === underline) {
       outString += char;
     } else if (!shouldUnderline && underline) {
@@ -54,8 +54,8 @@ function addPitchField(fields, pronounceInfo) {
   if (pronounceInfo.pitchAccent.length > 0) {
     let katakana = pronounceInfo.katakana;
     fields.push({
-      name: 'Pitch (underline is high)',
-      value: underlineStringAtIndices(katakana, pronounceInfo.pitchAccent),
+      name: 'Pitch',
+      value: underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent),
     });
   }
 }
@@ -65,7 +65,7 @@ function addMutedSoundsField(fields, pronounceInfo) {
     let katakana = pronounceInfo.katakana;
     fields.push({
       name: 'Muted sounds',
-      value: underlineStringAtIndices(katakana, pronounceInfo.noPronounceIndices),
+      value: underlineStringAtTrueIndices(katakana, pronounceInfo.noPronounceIndices),
     });
   }
 }
@@ -75,7 +75,7 @@ function addNasalSoundsField(fields, pronounceInfo) {
     let katakana = pronounceInfo.katakana;
     fields.push({
       name: 'Nasal sounds',
-      value: underlineStringAtIndices(katakana, pronounceInfo.nasalPitchIndices),
+      value: underlineStringAtTrueIndices(katakana, pronounceInfo.nasalPitchIndices),
     });
   }
 }
