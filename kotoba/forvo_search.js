@@ -5,6 +5,10 @@ const forvoApiKey = reload('./api_keys.js').FORVO;
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
 
 function getApiUriForQuery(query) {
+  if (!forvoApiKey) {
+    throw new Error('No Forvo API Key');
+  }
+
   let uriEncodedQuery = encodeURIComponent(query);
   return `https://apifree.forvo.com/action/word-pronunciations/format/json/word/${uriEncodedQuery}/id_lang_speak/76/key/${forvoApiKey}/`;
 }
