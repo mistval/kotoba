@@ -3,6 +3,8 @@ const reload = require('require-reload')(require);
 const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
 const constants = reload('./../kotoba/constants.js');
 
+const MAX_AUDIO_CLIPS = 6;
+
 function createEmbedContent() {
   return {
     embed: {
@@ -87,6 +89,19 @@ function addNasalSoundsField(fields, pronounceInfo) {
   }
 }
 
+function addAudioClipsField(fields, pronounceInfo) {
+  if (pronounceInfo.audioClips) {
+    let audioClipsString = pronounceInfo.audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => {
+      return `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${pronounceInfo.forvoUri})`;
+    }).join('\n');
+
+    fields.push({
+      name: 'Audio Clips',
+      value: audioClipsString,
+    });
+  }
+}
+
 function createFoundResult(msg, pronounceInfo) {
   let content = createEmbedContent();
   let embed = content.embed;
@@ -101,6 +116,7 @@ function createFoundResult(msg, pronounceInfo) {
   addPitchField(embed.fields, pronounceInfo);
   addMutedSoundsField(embed.fields, pronounceInfo);
   addNasalSoundsField(embed.fields, pronounceInfo);
+  addAudioClipsField(embed.fields, pronounceInfo);
 
   return msg.channel.createMessage(content, null, msg);
 }
@@ -110,12 +126,12 @@ module.exports = {
   canBeChannelRestricted: true,
   cooldown: 5,
   uniqueId: 'pronounce30294',
-  action(bot, msg, suffix) {
+  action: async function(bot, msg, suffix) {
     if (!suffix) {
       return createNoSuffixResult(msg);
     }
 
-    let pronounceInfo = getPronounceInfo(suffix);
+    let pronounceInfo = await getPronounceInfo(suffix);
     if (!pronounceInfo.found) {
       return createNotFoundResult(msg, pronounceInfo);
     }
