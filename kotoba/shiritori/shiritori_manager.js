@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const assert = require('assert');
 const logger = reload('monochrome-bot').logger;
+const scoreManager = reload('./../score_manager.js');
 
 const INITIAL_DELAY_IN_MS = 5000;
 const SPACING_DELAY_IN_MS = 1000;
@@ -10,6 +11,8 @@ const WAIT_AFTER_TIMEOUT_IN_MS = 4000;
 
 const LOGGER_TITLE = 'SHIRITORI';
 const END_STATUS_ERROR = 1;
+const BOT_USER_NAME = 'Kotoba';
+const SHIRITORI_DECK_ID = 'shiritori';
 
 const EndGameReason = {
   NO_PLAYERS: 1,
@@ -62,18 +65,34 @@ class Action {
 
 function endGame(locationId, reason, arg) {
   let session = state.shiritoriManager.sessionForLocationId[locationId];
-  delete state.shiritoriManager.sessionForLocationId[locationId];
-  let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
-  delete state.shiritoriManager.currentActionForLocationId[locationId];
+  try {
+    delete state.shiritoriManager.sessionForLocationId[locationId];
+    let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
+    delete state.shiritoriManager.currentActionForLocationId[locationId];
 
-  if (currentAction && currentAction.stop) {
-    currentAction.stop();
+    if (session) {
+      session.clearTimers();
+    }
+
+    if (currentAction && currentAction.stop) {
+      currentAction.stop();
+    }
+
+    if (session) {
+      let scores = scoreManager.getScoresForLocationId(session.getLocationId());
+      scoreManager.commitAndClearScores(session.getLocationId(), SHIRITORI_DECK_ID);
+      return session.getClientDelegate().stopped(reason, session.getWordHistory(), scores, arg);
+    }
+  } catch (err) {
+    if (session) {
+      return session.getClientDelegate().stopped(EndGameReason.ERROR, session.getWordHistory(), {}, arg).then(() => {
+        throw err;
+      });
+    } else {
+      throw err;
+    }
   }
 
-  if (session) {
-    session.clearTimers();
-    return session.getClientDelegate().stopped(reason, session.getWordHistory(), arg);
-  }
 }
 
 function botLeaveCommand(locationId, userId) {
@@ -136,8 +155,14 @@ function tryShowCurrentState(session) {
   let currentPlayerIsBot = currentPlayerId === session.getBotUserId();
   let previousPlayerIsBot = wordHistory[wordHistory.length - 1].userId === session.getBotUserId();
   let clientDelegate = session.getClientDelegate();
-  return clientDelegate.playerTookTurn(wordHistory, currentPlayerId, previousPlayerIsBot, currentPlayerIsBot).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+  let locationId = session.getLocationId();
+  return clientDelegate.playerTookTurn(
+    wordHistory,
+    currentPlayerId,
+    previousPlayerIsBot,
+    currentPlayerIsBot,
+    scoreManager.getScoresForLocationId(locationId)).catch(err => {
+      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
   });
 }
 
@@ -231,6 +256,9 @@ class PlayerTurnAction extends Action {
     let result = gameStrategy.tryAcceptAnswer(input, wordHistory);
 
     if (result.accepted) {
+      let locationId = session.getLocationId();
+      scoreManager.addScore(locationId, userId, result.score);
+
       this.acceptingAnswers_ = false;
       this.canTimeout_ = false;
       result.word.userId = userId;
@@ -308,8 +336,13 @@ class BotTurnAction extends Action {
     let gameStrategy = this.getGameStrategy_();
     let wordHistory = session.getWordHistory();
     let clientDelegate = session.getClientDelegate();
-    let nextWord = gameStrategy.getViableNextWord(wordHistory);
+    let nextResult = gameStrategy.getViableNextResult(wordHistory);
+    let nextWord = nextResult.word;
+    let botUserId = session.getBotUserId();
+    let locationId = session.getLocationId();
     nextWord.userId = session.getBotUserId();
+    nextWord.userName = BOT_USER_NAME;
+    scoreManager.addScore(locationId, botUserId, nextResult.score);
 
     return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay_)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
@@ -404,10 +437,12 @@ function verifySessionNotInProgress(locationId) {
 }
 
 class ShiritoriManager {
-  startSession(session) {
+  startSession(session, scoreScopeId) {
     let locationId = session.getLocationId();
+    scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
     verifySessionNotInProgress(locationId);
     setSessionForLocationId(session, locationId);
+    scoreManager.registerUsernameForUserId(session.getBotUserId(), BOT_USER_NAME);
     return chainActions(session.getLocationId(), new StartAction(session));
   }
 
@@ -415,7 +450,8 @@ class ShiritoriManager {
     return isSessionInProgressAtLocation(locationId);
   }
 
-  processUserInput(locationId, userId, input) {
+  processUserInput(locationId, userId, userName, input) {
+    scoreManager.registerUsernameForUserId(userId, userName);
     let currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
     if (!currentAction) {
       return false;
