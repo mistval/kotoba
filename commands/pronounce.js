@@ -44,18 +44,25 @@ function underlineStringAtTrueIndices(string, indices) {
   }
 
   if (underline) {
-    outString += '__';
+    outString += '**__';
   }
 
   return outString;
 }
 
+function createLHString(pronounceInfo) {
+  return pronounceInfo.pitchAccent.map(bool => bool ? 'H' : 'L').join('  ');
+}
+
 function addPitchField(fields, pronounceInfo) {
   if (pronounceInfo.pitchAccent.length > 0) {
     let katakana = pronounceInfo.katakana;
+    let underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
+    let lhString = createLHString(pronounceInfo);
+    let fieldValue = `${underlinedKana}\n ${lhString}`;
     fields.push({
       name: 'Pitch',
-      value: underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent),
+      value: fieldValue,
     });
   }
 }
