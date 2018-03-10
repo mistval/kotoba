@@ -1,5 +1,10 @@
+const reload = require('require-reload')(require);
 const state = require('./static_state.js');
-const convertToHiragana = require('./util/convert_to_hiragana.js');
+const convertToHiragana = reload('./util/convert_to_hiragana.js');
+const searchForvo = reload('./forvo_search.js');
+const logger = reload('monochrome-bot').logger;
+
+const LOGGER_TITLE = 'PRONOUNCE';
 
 if (!state.pronounceData) {
   state.pronounceData = require('./resources/dictionaries/pronunciation.json');
@@ -32,7 +37,7 @@ function getHighLowPitch(wordLength, pitchAccentString) {
   return parts.map(int => int ? true : false);
 }
 
-module.exports = function(queryWord) {
+module.exports = async function(queryWord) {
   let result = {
     query: queryWord,
     found: false,
@@ -46,12 +51,23 @@ module.exports = function(queryWord) {
     result.katakana = pronounceDataForQuery.k;
 
     let katakanaLength = result.katakana.length;
+    let uriEncodedQuery = encodeURIComponent(queryWord);
 
     result.noPronounceIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npr);
     result.nasalPitchIndices = convertIndexStringToTrueFalse(katakanaLength, pronounceDataForQuery.npi);
     result.pitchAccentClass = pronounceDataForQuery.pac;
     result.pitchAccent = getHighLowPitch(result.katakana.length, pronounceDataForQuery.pa);
+    result.forvoUri = `https://forvo.com/word/${uriEncodedQuery}/#ja`;
+
+    try {
+      let forvoResults = await searchForvo(queryWord);
+      if (forvoResults.found) {
+        result.audioClips = forvoResults.pronunciations;
+      }
+    } catch (err) {
+      logger.logFailure(LOGGER_TITLE, `Error getting forvo results for ${queryWord}`, err);
+    }
   }
 
   return result;
-}
+};
