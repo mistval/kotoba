@@ -2,8 +2,13 @@
 const reload = require('require-reload')(require);
 const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
 const constants = reload('./../kotoba/constants.js');
+const NavigationChapter = reload('monochrome-bot').NavigationChapter;
+const Navigation = reload('monochrome-bot').Navigation;
+const navigationManager = reload('monochrome-bot').navigationManager;
+const NavigationPage = reload('monochrome-bot').NavigationPage;
 
 const MAX_AUDIO_CLIPS = 6;
+const NAVIGATION_EXPIRATION_TIME = 1000 * 60 * 30; // 30 minutes
 
 function createEmbedContent() {
   return {
@@ -102,26 +107,60 @@ function addAudioClipsField(fields, pronounceInfo) {
   }
 }
 
+class PronunciationDataSource {
+  constructor(authorName, pronunciationEntries) {
+    this.pronunciationEntries_ = pronunciationEntries;
+    this.authorName_ = authorName;
+  }
+
+  prepareData() {
+  }
+
+  getPageFromPreparedData(arg, pageIndex) {
+    let entry = this.pronunciationEntries_[pageIndex];
+    let numberOfPages = this.pronunciationEntries_.length;
+    if (!entry) {
+      return;
+    }
+
+    let pagesString = '';
+    if (numberOfPages > 1) {
+      pagesString = `(page ${pageIndex + 1} of ${numberOfPages})`;
+    }
+
+    let content = createEmbedContent();
+    let embed = content.embed;
+    let word = entry.kanji || entry.katakana;
+    let uriEncodedWord = encodeURIComponent(word);
+    embed.title = `Pronunciation information for ${word} ${pagesString}`;
+    embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
+    embed.description = `Class [${entry.pitchAccentClass}](http://www.sanseido-publ.co.jp/publ/dicts/daijirin_ac.html) pitch accent`;
+
+    embed.fields = [];
+    addPitchField(embed.fields, entry);
+    addMutedSoundsField(embed.fields, entry);
+    addNasalSoundsField(embed.fields, entry);
+    addAudioClipsField(embed.fields, entry);
+
+    if (this.pronunciationEntries_.length > 1) {
+      embed.footer = {
+        icon_url: constants.FOOTER_ICON_URI,
+        text: `${this.authorName_} can use the reaction buttons below to see more information!`,
+      };
+    }
+
+    return new NavigationPage(content);
+  }
+}
+
 function createFoundResult(msg, pronounceInfo) {
-  let content = createEmbedContent();
-  let embed = content.embed;
-  let query = pronounceInfo.query;
-  let uriEncodedQuery = encodeURIComponent(query);
-
-  // TODO: Properly handle multiple results.
-  pronounceInfo = pronounceInfo.entries[0];
-
-  embed.title = `Pronunciation information for ${pronounceInfo.kanji || pronounceInfo.katakana}`;
-  embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedQuery}`;
-  embed.description = `Class [${pronounceInfo.pitchAccentClass}](http://www.sanseido-publ.co.jp/publ/dicts/daijirin_ac.html) pitch accent`;
-
-  embed.fields = [];
-  addPitchField(embed.fields, pronounceInfo);
-  addMutedSoundsField(embed.fields, pronounceInfo);
-  addNasalSoundsField(embed.fields, pronounceInfo);
-  addAudioClipsField(embed.fields, pronounceInfo);
-
-  return msg.channel.createMessage(content, null, msg);
+  let navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo.entries);
+  let navigationChapter = new NavigationChapter(navigationDataSource);
+  let chapterForEmojiName = {a: navigationChapter};
+  let hasMultiplePages = pronounceInfo.entries.length > 1;
+  let authorId = msg.author.id;
+  let navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
+  return navigationManager.register(navigation, NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 module.exports = {
