@@ -155,7 +155,6 @@ class PronunciationDataSource {
 
     try {
       let audioClips = await entry.getAudioClips();
-      debugger;
       addAudioClipsField(embed.fields, audioClips, this.pronounceInfo_);
     } catch (err) {
       logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
@@ -187,6 +186,8 @@ module.exports = {
   canBeChannelRestricted: true,
   cooldown: 5,
   uniqueId: 'pronounce30294',
+  shortDescription: 'Look up information about how to pronounce a Japanese word.',
+  usageExample: 'k!pronounce 瞬間',
   action: async function(bot, msg, suffix) {
     if (!suffix) {
       return createNoSuffixResult(msg);
