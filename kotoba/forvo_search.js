@@ -30,16 +30,17 @@ function parseItems(items) {
       gender: item.sex === 'm' ? 'Male' : 'Female',
       country: item.country,
       audioUri: item.pathmp3 || item.pathogg,
+      forvoUri: `https://forvo.com/word/${item.word}/#ja`,
     };
   });
 }
 
 function parseResponse(responseJson, query) {
-  let pronunciations = parseItems(responseJson.items);
+  let audioClips = parseItems(responseJson.items);
   return {
     query,
-    found: pronunciations.length > 0,
-    pronunciations,
+    found: audioClips.length > 0,
+    audioClips,
   };
 }
 

@@ -6,9 +6,11 @@ const NavigationChapter = reload('monochrome-bot').NavigationChapter;
 const Navigation = reload('monochrome-bot').Navigation;
 const navigationManager = reload('monochrome-bot').navigationManager;
 const NavigationPage = reload('monochrome-bot').NavigationPage;
+const logger = reload('monochrome-bot').logger;
 
-const MAX_AUDIO_CLIPS = 6;
+const MAX_AUDIO_CLIPS = 4;
 const NAVIGATION_EXPIRATION_TIME = 1000 * 60 * 30; // 30 minutes
+const LOGGER_TITLE = 'PRONOUNCE';
 
 function createEmbedContent() {
   return {
@@ -70,6 +72,7 @@ function addPitchField(fields, pronounceInfo) {
     fields.push({
       name: 'Pitch',
       value: fieldValue,
+      inline: true,
     });
   }
 }
@@ -80,6 +83,7 @@ function addMutedSoundsField(fields, pronounceInfo) {
     fields.push({
       name: 'Muted sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.noPronounceIndices),
+      inline: true,
     });
   }
 }
@@ -90,14 +94,16 @@ function addNasalSoundsField(fields, pronounceInfo) {
     fields.push({
       name: 'Nasal sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.nasalPitchIndices),
+      inline: true,
     });
   }
 }
 
-function addAudioClipsField(fields, pronounceInfo) {
-  if (pronounceInfo.audioClips) {
-    let audioClipsString = pronounceInfo.audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => {
-      return `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${pronounceInfo.forvoUri})`;
+function addAudioClipsField(fields, forvoData) {
+  if (forvoData.found) {
+    let audioClips = forvoData.audioClips;
+    let audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => {
+      return `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`;
     }).join('\n');
 
     fields.push({
@@ -108,17 +114,17 @@ function addAudioClipsField(fields, pronounceInfo) {
 }
 
 class PronunciationDataSource {
-  constructor(authorName, pronunciationEntries) {
-    this.pronunciationEntries_ = pronunciationEntries;
+  constructor(authorName, pronounceInfo) {
+    this.pronounceInfo_ = pronounceInfo;
     this.authorName_ = authorName;
   }
 
   prepareData() {
   }
 
-  getPageFromPreparedData(arg, pageIndex) {
-    let entry = this.pronunciationEntries_[pageIndex];
-    let numberOfPages = this.pronunciationEntries_.length;
+  async getPageFromPreparedData(arg, pageIndex) {
+    let entry = this.pronounceInfo_.entries[pageIndex];
+    let numberOfPages = this.pronounceInfo_.entries.length;
     if (!entry) {
       return;
     }
@@ -134,15 +140,21 @@ class PronunciationDataSource {
     let uriEncodedWord = encodeURIComponent(word);
     embed.title = `Pronunciation information for ${word} ${pagesString}`;
     embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
-    embed.description = `Class [${entry.pitchAccentClass}](http://www.sanseido-publ.co.jp/publ/dicts/daijirin_ac.html) pitch accent`;
 
     embed.fields = [];
     addPitchField(embed.fields, entry);
     addMutedSoundsField(embed.fields, entry);
     addNasalSoundsField(embed.fields, entry);
-    addAudioClipsField(embed.fields, entry);
 
-    if (this.pronunciationEntries_.length > 1) {
+    try {
+      let audioClips = await entry.getAudioClips();
+      debugger;
+      addAudioClipsField(embed.fields, audioClips, this.pronounceInfo_);
+    } catch (err) {
+      logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
+    }
+
+    if (numberOfPages > 1) {
       embed.footer = {
         icon_url: constants.FOOTER_ICON_URI,
         text: `${this.authorName_} can use the reaction buttons below to see more information!`,
@@ -154,7 +166,7 @@ class PronunciationDataSource {
 }
 
 function createFoundResult(msg, pronounceInfo) {
-  let navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo.entries);
+  let navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo);
   let navigationChapter = new NavigationChapter(navigationDataSource);
   let chapterForEmojiName = {a: navigationChapter};
   let hasMultiplePages = pronounceInfo.entries.length > 1;
