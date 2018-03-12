@@ -55,7 +55,7 @@ module.exports = async function(queryWord) {
         nasalPitchIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npi),
         pitchAccent: getHighLowPitch(katakanaLength, entry.pa),
         pitchAccentClass: entry.pac,
-        getAudioClips: () => searchForvo(entry.kan || entry.kat),
+        getAudioClips: () => searchForvo(entry.kan[0]),
       };
     });
   }
