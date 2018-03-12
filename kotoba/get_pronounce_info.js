@@ -4,8 +4,6 @@ const convertToHiragana = reload('./util/convert_to_hiragana.js');
 const searchForvo = reload('./forvo_search.js');
 const logger = reload('monochrome-bot').logger;
 
-const LOGGER_TITLE = 'PRONOUNCE';
-
 if (!state.pronounceData) {
   state.pronounceData = require('./resources/dictionaries/pronunciation.json');
 }
@@ -57,18 +55,9 @@ module.exports = async function(queryWord) {
         nasalPitchIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npi),
         pitchAccent: getHighLowPitch(katakanaLength, entry.pa),
         pitchAccentClass: entry.pac,
-        forvoUri: `https://forvo.com/word/${entry.kan || entry.kat}/#ja`,
+        getAudioClips: () => searchForvo(entry.kan || entry.kat),
       };
     });
-
-    try {
-      let forvoResults = await searchForvo(queryWord);
-      if (forvoResults.found) {
-        result.audioClips = forvoResults.pronunciations;
-      }
-    } catch (err) {
-      logger.logFailure(LOGGER_TITLE, `Error getting forvo results for ${queryWord}`, err);
-    }
   }
 
   return result;
