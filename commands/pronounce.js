@@ -122,6 +122,13 @@ class PronunciationDataSource {
   prepareData() {
   }
 
+  getWordForTitle(entry) {
+    if (entry.kanji.indexOf(this.pronounceInfo_.query) !== -1) {
+      return this.pronounceInfo_.query;
+    }
+    return entry.kanji[0];
+  }
+
   async getPageFromPreparedData(arg, pageIndex) {
     let entry = this.pronounceInfo_.entries[pageIndex];
     let numberOfPages = this.pronounceInfo_.entries.length;
@@ -136,7 +143,7 @@ class PronunciationDataSource {
 
     let content = createEmbedContent();
     let embed = content.embed;
-    let word = entry.kanji || entry.katakana;
+    let word = this.getWordForTitle(entry);
     let uriEncodedWord = encodeURIComponent(word);
     embed.title = `Pronunciation information for ${word} ${pagesString}`;
     embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
