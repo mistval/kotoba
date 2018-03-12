@@ -154,8 +154,8 @@ class PronunciationDataSource {
     addNasalSoundsField(embed.fields, entry);
 
     try {
-      let audioClips = await entry.getAudioClips();
-      addAudioClipsField(embed.fields, audioClips, this.pronounceInfo_);
+      let forvoData = await entry.getAudioClips();
+      addAudioClipsField(embed.fields, forvoData, this.pronounceInfo_);
     } catch (err) {
       logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
     }
