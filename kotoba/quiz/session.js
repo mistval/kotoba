@@ -210,6 +210,12 @@ class SessionInformation {
         unansweredCards.push(card);
       }
     }
+
+    if (this.getGameMode().isReviewMode) {
+      let undisplayedCards = this.deckCollection_.getAllUndisplayedCards();
+      unansweredCards = unansweredCards.concat(undisplayedCards);
+    }
+
     return unansweredCards;
   }
 
