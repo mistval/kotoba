@@ -13,13 +13,13 @@
 * 02.Bootstrap-custom
     -Page-custom
 * 03.Typography
-* 04.Tabs 
+* 04.Tabs
 * 05.Modal
 * 06.Icons
 * 07.Bootstrap-UI
 * 08.Progressbar
-* 09.Carousel  
-* 10.Grid   
+* 09.Carousel
+* 10.Grid
 * 11.Calender
 * 12.Portlets
 * 13.Widgets
@@ -438,6 +438,15 @@ p {
     letter-spacing: 0.5px;
 }
 
+.image-area {
+  min-height: 150px;
+  padding: 1.25rem;
+}
+
+.question-image {
+  position: absolute;
+}
+
 
 /*-------------
     4.tabs
@@ -588,7 +597,7 @@ p {
 }
 
 
-/*----------------- 
+/*-----------------
     8.progress
 ------------------*/
 
@@ -964,7 +973,7 @@ a:not([href]):not([tabindex]):hover {
 
 
 /*-------------------
-     12.Portlets 
+     12.Portlets
 --------------------*/
 
 .portlet {
@@ -1332,9 +1341,13 @@ lesshat-selector {
 
 #boxscroll,
 #boxscrol2 {
-    height: 370px;
+    height: 430px;
     width: auto;
     overflow: auto;
+}
+
+#boxscroll {
+  height: 448px;
 }
 
 #boxscrol1 {
@@ -1741,7 +1754,7 @@ lesshat-selector {
 .wizard > .steps .done a:active,
 .wizard > .steps .done a:hover {
     background-color: #e9f2fb;
-    color: #2e61f2; 
+    color: #2e61f2;
     font-weight: 700;
     font-size: 15px;
 }
@@ -2102,7 +2115,7 @@ input[type="checkbox"]:checked:after {
 
 
 /*----------------
-    18.Mail 
+    18.Mail
  ----------------*/
 
 .mails .mail-rateing {
@@ -2324,7 +2337,7 @@ input[type="checkbox"]:checked:after {
 
 
 /*-----------------
-     21.Timeline 
+     21.Timeline
 ------------------*/
 
 

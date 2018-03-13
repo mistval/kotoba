@@ -8,7 +8,7 @@ $(document).ready(function () {
      $("#range_01").ionRangeSlider({
         min: 5,
         max: 180,
-        from: 20
+        from: 30
     });
 
     $("#range_02").ionRangeSlider({
