@@ -2765,3 +2765,7 @@ ul.p-social-link li a {
         display: block;
     }
 }
+
+/* v-cloak */
+
+[v-cloak] { display:none; }
