@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const SettingsOverride = reload('./quiz_settings_override.js');
+const SettingsOverride = reload('./settings_override.js');
 const persistence = reload('monochrome-bot').persistence;
 
 const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;

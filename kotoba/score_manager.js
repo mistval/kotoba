@@ -3,7 +3,7 @@ const state = require('./static_state.js');
 const persistence = reload('monochrome-bot').persistence;
 
 // Piggyback on the quiz scores for now.
-const quizScoreStorageUtils = reload('./quiz_score_storage_utils.js');
+const quizScoreStorageUtils = reload('./quiz/score_storage_utils.js');
 
 if (!state.scoreManager) {
   state.scoreManager = {

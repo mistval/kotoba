@@ -1,14 +1,14 @@
 'use strict'
 const reload = require('require-reload')(require);
-const state = require('./static_state.js');
-const deckLoader = reload('./quiz_deck_loader.js');
+const state = require('./../static_state.js');
+const deckLoader = reload('./deck_loader.js');
 const logger = reload('monochrome-bot').logger;
 const assert = require('assert');
-const Util = reload('./utils.js');
-const saveManager = reload('./quiz_pause_manager.js');
-const cardStrategies = reload('./quiz_card_strategies.js');
-const Session = reload('./quiz_session.js');
-const DeckCollection = reload('./quiz_deck_collection.js');
+const Util = reload('./../utils.js');
+const saveManager = reload('./pause_manager.js');
+const cardStrategies = reload('./card_strategies.js');
+const Session = reload('./session.js');
+const DeckCollection = reload('./deck_collection.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
@@ -528,12 +528,12 @@ class QuizManager {
 
   getDesiredSettings() {
     return [
-      'quiz/japanese/answer_time_limit',
-      'quiz/japanese/score_limit',
-      'quiz/japanese/unanswered_question_limit',
-      'quiz/japanese/new_question_delay_after_unanswered',
-      'quiz/japanese/new_question_delay_after_answered',
-      'quiz/japanese/additional_answer_wait_time',
+      'japanese/answer_time_limit',
+      'japanese/score_limit',
+      'japanese/unanswered_question_limit',
+      'japanese/new_question_delay_after_unanswered',
+      'japanese/new_question_delay_after_answered',
+      'japanese/additional_answer_wait_time',
     ];
   }
 

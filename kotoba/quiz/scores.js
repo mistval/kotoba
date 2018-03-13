@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 const assert = require('assert');
-const Util = reload('./utils.js');
-const ScoreStorageUtils = reload('./quiz_score_storage_utils.js');
+const Util = reload('./../utils.js');
+const ScoreStorageUtils = reload('./score_storage_utils.js');
 const logger = reload('monochrome-bot').logger;
 
 class Scores {

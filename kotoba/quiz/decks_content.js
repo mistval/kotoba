@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require)
-const constants = reload('./../kotoba/constants.js');
+const constants = reload('./../constants.js');
 
 const categoryFields = [
   {'name': 'JLPT Reading Decks', value: 'N5 N4 N3 N2 N1'},

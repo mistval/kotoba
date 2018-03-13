@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const ScoreStorageUtils = reload('./../kotoba/quiz_score_storage_utils.js');
+const ScoreStorageUtils = reload('./../kotoba/quiz/score_storage_utils.js');
 const constants = reload('./../kotoba/constants.js');
 const MAX_SCORERS = 20;
 
