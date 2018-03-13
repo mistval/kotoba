@@ -35,7 +35,7 @@ function getReadings(wordInformations) {
   return wordInformations.map(wordInformation => wordInformation.reading);
 }
 
-function buildShiritoriData() {
+function getEdictLines() {
   let edictPath = path.resolve(
     __dirname,
     '..',
@@ -46,8 +46,13 @@ function buildShiritoriData() {
 
   let edictLines = fs.readFileSync(edictPath, 'utf8').split('\n');
   edictLines.shift(); // First line is a header.
+  return edictLines;
+}
 
-  let wordInformationsForWordAsHiragana = {};
+function buildShiritoriData() {
+  let edictLines = getEdictLines();
+  let wordInformationIndicesForWordAsHiragana = {};
+  let wordInformations = [];
 
   for (let line of edictLines) {
     if (!line) {
@@ -72,11 +77,10 @@ function buildShiritoriData() {
     let isNoun = false;
     for (let definitionPart of definitionParts) {
       let definition = definitionPart;
-      let partsOfSpeech = [];
       let partOfSpeechMatch = definition.match(partsOfSpeechPartRegex);
       while (partOfSpeechMatch) {
         definition = definition.replace(partOfSpeechMatch[0], '');
-        partsOfSpeech = partOfSpeechMatch[1].split(',');
+        let partsOfSpeech = partOfSpeechMatch[1].split(',');
         if (!isNoun) {
           isNoun = partsOfSpeech.some(partOfSpeechSymbol => edictNounCodes.indexOf(partOfSpeechSymbol) !== -1);
         }
@@ -90,23 +94,28 @@ function buildShiritoriData() {
     }
 
     let wordInformation = new WordInformation(word, reading, definitions, isNoun);
-    if (!wordInformationsForWordAsHiragana[wordAsHiragana]) {
-      wordInformationsForWordAsHiragana[wordAsHiragana] = [];
+    wordInformations.push(wordInformation);
+    let wordIndex = wordInformations.length - 1;
+
+    if (!wordInformationIndicesForWordAsHiragana[wordAsHiragana]) {
+      wordInformationIndicesForWordAsHiragana[wordAsHiragana] = [];
     }
-    wordInformationsForWordAsHiragana[wordAsHiragana].push(wordInformation);
-    if (!wordInformationsForWordAsHiragana[reading]) {
-      wordInformationsForWordAsHiragana[reading] = [];
+    wordInformationIndicesForWordAsHiragana[wordAsHiragana].push(wordIndex);
+    if (!wordInformationIndicesForWordAsHiragana[reading]) {
+      wordInformationIndicesForWordAsHiragana[reading] = [];
     }
-    wordInformationsForWordAsHiragana[reading].push(wordInformation);
+    wordInformationIndicesForWordAsHiragana[reading].push(wordIndex);
   }
 
   let wordsForStartSequence = {};
   for (let word of wordsByFrequency) {
     let wordAsHiragana = convertToHiragana(word);
-    if (!wordInformationsForWordAsHiragana[wordAsHiragana]) {
+    if (!wordInformationIndicesForWordAsHiragana[wordAsHiragana]) {
       continue;
     }
-    let readings = getReadings(wordInformationsForWordAsHiragana[wordAsHiragana]);
+    let wordInformationIndices = wordInformationIndicesForWordAsHiragana[wordAsHiragana];
+    let wordInformationsForWord = wordInformationIndices.map(index => wordInformations[index]);
+    let readings = getReadings(wordInformationsForWord);
     for (let startSequence of wordStartingSequences) {
       if (wordAsHiragana.startsWith(startSequence) || (readings && readings.some(reading => reading.startsWith(startSequence)))) {
         if (!wordsForStartSequence[startSequence]) {
@@ -118,8 +127,9 @@ function buildShiritoriData() {
   }
 
   let outputData = {
-    wordInformationsForWordAsHiragana,
+    wordInformationIndicesForWordAsHiragana,
     wordsForStartSequence,
+    wordInformations,
   };
 
   mkdirIgnoreError(path.resolve(__dirname, '..', 'objects'));
