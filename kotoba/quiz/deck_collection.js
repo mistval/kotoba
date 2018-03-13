@@ -24,26 +24,6 @@ function createRandomIndexSetForDecks(decks) {
   return indexSet;
 }
 
-function decompileCard(card) {
-  if (card.q) {
-    card.question = card.q;
-    delete card.q;
-  }
-  if (card.a) {
-    card.answer = card.a;
-    delete card.a;
-  }
-  if (card.m) {
-    card.meaning = card.m;
-    delete card.m;
-  }
-  if (card.p) {
-    card.pointsForAnswer = card.p;
-    delete card.p;
-  }
-  return card;
-}
-
 class DeckCollection {
   static createNewFromDecks(decks, gameMode) {
     let deckCollection = new DeckCollection();
@@ -143,7 +123,7 @@ class DeckCollection {
       if (!deckCard) {
         return this.popUndisplayedCard(settings);
       }
-      card = decompileCard(deepCopy(deckCard));
+      card = deepCopy(deckCard);
     }
 
     if (!Array.isArray(card.answer)) {
