@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
-const wordStartingSequences = reload('./word_starting_sequences.js');
+const wordStartingSequences = reload('./../../build/shiritori_word_starting_sequences.js');
 const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 
