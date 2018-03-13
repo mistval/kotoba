@@ -95,7 +95,7 @@ class DeckCollection {
     return true;
   }
 
-  popUndisplayedCard(settings) {
+  async popUndisplayedCard(settings) {
     if (this.isEmpty()) {
       return;
     }
@@ -119,7 +119,7 @@ class DeckCollection {
 
     let card = this.previousCardCache_[deckIndex][cardIndex];
     if (!card) {
-      let deckCard = this.decks_[deckIndex].cards[cardIndex];
+      let deckCard = await this.decks_[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings);
       }
@@ -186,7 +186,7 @@ class DeckCollection {
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
-    card = this.addOptionsAndModifyAnswer_(card);
+    card = await this.addOptionsAndModifyAnswer_(card);
 
     this.previousCardCache_[deckIndex][cardIndex] = card;
     return card;
@@ -219,7 +219,7 @@ class DeckCollection {
     return -1;
   }
 
-  addOptionsAndModifyAnswer_(card) {
+  async addOptionsAndModifyAnswer_(card) {
     if (!card.numberOfOptions || card.options) {
       return card;
     }
@@ -232,7 +232,7 @@ class DeckCollection {
       let randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
       let randomDeck = this.decks_[randomDeckIndex];
       let randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
-      let randomCard = randomDeck.cards[randomCardIndex];
+      let randomCard = await randomDeck.cards.get(randomCardIndex);
 
       if (randomCard) {
         let randomAnswer = randomCard.answer[0];
