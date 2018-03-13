@@ -8,7 +8,7 @@ const cardStrategies = reload('./card_strategies.js');
 const persistence = reload('monochrome-bot').persistence;
 const request = require('request-promise');
 const PublicError = reload('monochrome-bot').PublicError;
-const arrayOnDisk = require('array-on-disk');
+const arrayOnDisk = require('disk-array');
 const decksMetadata = reload('./../../objects/quiz/decks.json')
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
