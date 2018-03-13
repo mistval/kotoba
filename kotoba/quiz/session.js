@@ -5,6 +5,7 @@ const state = require('./../static_state.js');
 const cardStrategies = reload('./card_strategies.js');
 const DeckCollection = reload('./deck_collection.js');
 const assert = require('assert');
+const deckLoader = reload('./deck_loader.js');
 const gameModes = [
   reload('./normal_mode.js'),
   reload('./mastery_mode.js'),
@@ -13,17 +14,8 @@ const gameModes = [
 
 const LOGGER_TITLE = 'QUIZ';
 
-function deepCopy(object) {
-  return JSON.parse(JSON.stringify(object));
-}
-
 function createReviewDeck(unansweredCards) {
-  return {
-    uniqueId: -1,
-    name: 'Review Quiz',
-    article: 'a',
-    cards: deepCopy(unansweredCards),
-  }
+  return deckLoader.createReviewDeck(unansweredCards);
 }
 
 function updateReviewDecks(locationId, sessionInformation) {
@@ -212,16 +204,6 @@ class SessionInformation {
   }
 
   getUnansweredCards(userId) {
-    // HACK: This is convenient, but pretty hacky. If the game is review mode, pop all the undisplayed cards
-    // in order to move them into the cache so that they are considered unanswered.
-    // This hack means that this method must not be called before the game is over.
-    // https://github.com/mistval/kotoba/issues/29
-    if (this.getGameMode().isReviewMode) {
-      while (this.deckCollection_.popUndisplayedCard(this.settings_)) {
-        // NOOP
-      }
-    }
-
     let unansweredCards = [];
     for (let card of this.deckCollection_.getCachedPreviousCards()) {
       if ((!userId && card.mostRecentApperanceAnswerers.length === 0) || (userId && !~card.mostRecentApperanceAnswerers.indexOf(userId))) {
