@@ -528,12 +528,12 @@ class QuizManager {
 
   getDesiredSettings() {
     return [
-      'japanese/answer_time_limit',
-      'japanese/score_limit',
-      'japanese/unanswered_question_limit',
-      'japanese/new_question_delay_after_unanswered',
-      'japanese/new_question_delay_after_answered',
-      'japanese/additional_answer_wait_time',
+      'quiz/japanese/answer_time_limit',
+      'quiz/japanese/score_limit',
+      'quiz/japanese/unanswered_question_limit',
+      'quiz/japanese/new_question_delay_after_unanswered',
+      'quiz/japanese/new_question_delay_after_answered',
+      'quiz/japanese/additional_answer_wait_time',
     ];
   }
 
