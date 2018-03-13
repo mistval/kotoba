@@ -80,7 +80,9 @@ function getPluralizer(array) {
 }
 
 function tryAcceptAnswer(answer, wordInformationsHistory) {
-  let possibleWordInformations = wordData.wordInformationsForWordAsHiragana[convertToHiragana(answer)];
+  let hiragana = convertToHiragana(answer);
+  let possibleWordInformations =
+    wordData.getWordInformationsForWordAsHirgana(hiragana);
 
   if (!possibleWordInformations) {
     return new RejectedResult(true, `I don't know the word **${answer}**`);
@@ -113,14 +115,14 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
       pushUnique(alreadyUsedReadings, reading);
       continue;
     }
-    if (!possibleWordInformation.definitions.some(definition => definition.isNoun)) {
+    if (!possibleWordInformation.isNoun) {
       pushUnique(noNounReadings, reading);
       continue;
     }
     readingToUse = reading;
     answerToUse = possibleWordInformation.word;
     if (possibleWordInformation.definitions) {
-      meaningToUse = possibleWordInformation.definitions.map(definition => definition.meaning).join(', ');
+      meaningToUse = possibleWordInformation.definitions.join(', ');
     }
     break;
   }
@@ -181,7 +183,7 @@ function getViableNextResult(wordInformationsHistory, retriesLeft) {
     }
     if (nextWordIndex === firstWordTestedIndex) {
       // We came full circle. Try again. Although possible, it is extremely unlikely that a game would continue so long that there are no viable words left.
-      return getViableWord(wordInformationsHistory, retriesLeft ? retriesLeft - 1 : 1000);
+      return getViableNextResult(wordInformationsHistory, retriesLeft ? retriesLeft - 1 : 1000);
     }
   }
 }
