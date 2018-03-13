@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const quizManager = reload('./../kotoba/quiz_manager.js');
+const quizManager = reload('./../kotoba/quiz/manager.js');
 const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 
 module.exports = {

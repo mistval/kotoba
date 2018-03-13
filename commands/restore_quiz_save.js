@@ -1,7 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const PublicError = reload('monochrome-bot').PublicError;
-const pauseManager = require('./../kotoba/quiz_pause_manager.js');
+const pauseManager = require('./../kotoba/quiz/pause_manager.js');
 const constants = require('./../kotoba/constants.js');
 
 /**

@@ -1,10 +1,10 @@
 'use strict'
 const reload = require('require-reload')(require);
 const logger = reload('monochrome-bot').logger;
-const state = require('./static_state.js');
+const state = require('./../static_state.js');
 const fs = require('fs');
 const assert = require('assert');
-const cardStrategies = reload('./quiz_card_strategies.js');
+const cardStrategies = reload('./card_strategies.js');
 const persistence = reload('monochrome-bot').persistence;
 const request = require('request-promise');
 const PublicError = reload('monochrome-bot').PublicError;
