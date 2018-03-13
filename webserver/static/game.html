@@ -117,6 +117,23 @@
                 </div>
                 <!-- header section end-->
 
+                <div class="modal fade" id="userNameModal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Choose a Username</h5>
+                      </div>
+                      <form v-on:submit.prevent="joinWithName" id="joinForm">
+                        <div class="modal-body">
+                          <input type="text" v-model="userName">
+                        </div>
+                        <div class="modal-footer">
+                          <input type="Submit" value="Join" class="btn btn-primary"></input>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
                 <div class="container-fluid" v-cloak>
                   <br>
                     <div class="row">
