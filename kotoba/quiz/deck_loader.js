@@ -224,7 +224,10 @@ function tryCreateDeckFromRawData(data, uri) {
     "answerCompareStrategy": "CONVERT_KANA",
     "compileImages": false,
     "commentFieldName": "Meaning",
-    "cards": cards,
+    "cards": {
+      get: i => Promise.resolve(cards[i]),
+      length: cards.length,
+    },
   };
   validateDeckPropertiesValid(deck);
   return deck;
