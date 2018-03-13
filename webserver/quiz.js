@@ -191,8 +191,13 @@ class RoomInformation {
 
 async function createRoom(sio, config) {
   const messageSender = new WebSocketMessageSender(sio);
+  const deckInformations = config.decks.map(deckName => {
+    return {
+      deckNameOrUniqueId: deckName,
+    };
+  });
 
-  const decksStatus = await DeckLoader.getQuizDecks(config.decks);
+  const decksStatus = await DeckLoader.getQuizDecks(deckInformations);
   const decks = decksStatus.decks;
 
   if (!decks || decks.length === 0) {
