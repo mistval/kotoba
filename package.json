@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
+    "array-on-disk": "git+https://github.com/mistval/array-on-disk.git",
     "bluebird": "^3.5.1",
     "canvas": "^1.6.7",
     "eris": "git+https://github.com/mistval/eris.git#patches",
