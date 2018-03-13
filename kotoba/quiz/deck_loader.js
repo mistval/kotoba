@@ -34,6 +34,17 @@ const QuestionCreationStrategyForQuestionType = {
   TEXT: 'TEXT',
 };
 
+function createCardGetterFromInMemoryArray(array) {
+  return {
+    get: i => Promise.resolve(array[i]),
+    length: array.length,
+  };
+}
+
+function createCardGetterFromDiskArray(array) {
+  return array;
+}
+
 function validateDeckPropertiesValid(deck) {
   assert(deck.name, 'No name.');
   assert(deck.article, 'No article.');
@@ -60,7 +71,7 @@ async function loadDecksFromDisk() {
 
       let diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath);
       let deck = JSON.parse(JSON.stringify(deckMetadata));
-      deck.cards = diskArray;
+      deck.cards = createCardGetterFromDiskArray(diskArray);
       deck.isInternetDeck = false;
       state.quizDecksLoader.quizDeckForName[deckName] = deck;
       state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
@@ -224,10 +235,7 @@ function tryCreateDeckFromRawData(data, uri) {
     "answerCompareStrategy": "CONVERT_KANA",
     "compileImages": false,
     "commentFieldName": "Meaning",
-    "cards": {
-      get: i => Promise.resolve(cards[i]),
-      length: cards.length,
-    },
+    "cards": createCardGetterFromInMemoryArray(cards),
   };
   validateDeckPropertiesValid(deck);
   return deck;
