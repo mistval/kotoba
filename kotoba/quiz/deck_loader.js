@@ -427,7 +427,24 @@ if (!state.quizDecksLoader) {
   loadDecksFromDisk();
 }
 
-module.exports.getQuizDecks = getQuizDecks;
-module.exports.DeckRequestStatus = DeckRequestStatus;
-module.exports.deleteInternetDeck = deleteInternetDeck;
-module.exports.DeletionStatus = DeletionStatus;
+function deepCopy(object) {
+  return JSON.parse(JSON.stringify(object));
+}
+
+function createReviewDeck(unansweredCards) {
+  return {
+    uniqueId: 'REVIEW',
+    name: 'Review Quiz',
+    article: 'a',
+    isInternetDeck: unansweredCards.some(card => card.isInternetCard),
+    cards: createCardGetterFromInMemoryArray(deepCopy(unansweredCards)),
+  }
+}
+
+module.exports = {
+  getQuizDecks,
+  DeckRequestStatus,
+  deleteInternetDeck,
+  DeletionStatus,
+  createReviewDeck,
+}

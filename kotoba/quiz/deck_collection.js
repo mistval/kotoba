@@ -68,12 +68,7 @@ class DeckCollection {
   }
 
   containsInternetCards() {
-    return this.decks_.some(deck => {
-      if (deck.isInternetDeck === undefined) {
-        return deck.cards.some(card => card.isInternetCard);
-      }
-      return deck.isInternetDeck;
-    });
+    return this.decks_.some(deck => deck.isInternetDeck);
   }
 
   getCachedPreviousCards() {
