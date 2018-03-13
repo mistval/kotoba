@@ -48,7 +48,6 @@ let timer;
 
 bot.connect();
 
-/*
 webserver.start((email, message) => {
   if (contactEnabled === false) {
     return Promise.reject();
@@ -66,4 +65,4 @@ webserver.start((email, message) => {
   }
   ++contactsSinceTimerReset;
   return bot.getErisBot().createMessage('408587745745698826', 'Contact from: ' + email + '\n\n' + message);
-});*/
+});
