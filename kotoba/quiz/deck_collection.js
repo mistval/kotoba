@@ -90,6 +90,24 @@ class DeckCollection {
     return true;
   }
 
+  getAllUndisplayedCards() {
+    let undisplayedCards = [];
+     for (let deckIndex = 0; deckIndex < this.indexSet_.length; ++deckIndex) {
+       let deck = this.decks_[deckIndex];
+       let unseenCardIndices = this.indexSet_[deckIndex];
+
+       if (!deck.cards.memoryArray) {
+         throw new Error('Trying to get all undisplayed cards from a non-memory deck. That\'s too expensive!');
+       }
+
+       for (let cardIndex of unseenCardIndices) {
+         undisplayedCards.push(deck.cards.memoryArray[cardIndex]);
+       }
+     }
+
+     return undisplayedCards;
+  }
+
   async popUndisplayedCard(settings) {
     if (this.isEmpty()) {
       return;

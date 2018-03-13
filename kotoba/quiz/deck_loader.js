@@ -38,6 +38,7 @@ function createCardGetterFromInMemoryArray(array) {
   return {
     get: i => Promise.resolve(array[i]),
     length: array.length,
+    memoryArray: array,
   };
 }
 
