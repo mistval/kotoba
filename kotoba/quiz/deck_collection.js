@@ -1,8 +1,8 @@
 'use strict'
 const reload = require('require-reload')(require);
-const Util = reload('./utils.js');
-const cardStrategies = reload('./quiz_card_strategies.js');
-const deckLoader = reload('./../kotoba/quiz_deck_loader.js');
+const Util = reload('./../utils.js');
+const cardStrategies = reload('./card_strategies.js');
+const deckLoader = reload('./deck_loader.js');
 const assert = require('assert');
 
 function deepCopy(object) {

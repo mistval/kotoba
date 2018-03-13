@@ -1,14 +1,14 @@
 const reload = require('require-reload')(require);
-const Scores = reload('./quiz_scores.js');
+const Scores = reload('./scores.js');
 const logger = reload('monochrome-bot').logger;
-const state = require('./static_state.js');
-const cardStrategies = reload('./quiz_card_strategies.js');
-const DeckCollection = reload('./quiz_deck_collection.js');
+const state = require('./../static_state.js');
+const cardStrategies = reload('./card_strategies.js');
+const DeckCollection = reload('./deck_collection.js');
 const assert = require('assert');
 const gameModes = [
-  reload('./quiz_normal_mode.js'),
-  reload('./quiz_mastery_mode.js'),
-  reload('./quiz_conquest_mode.js'),
+  reload('./normal_mode.js'),
+  reload('./mastery_mode.js'),
+  reload('./conquest_mode.js'),
 ];
 
 const LOGGER_TITLE = 'QUIZ';

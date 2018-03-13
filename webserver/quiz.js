@@ -1,10 +1,10 @@
 'use strict'
 const reload = require('require-reload')(require);
-const quizManager = require('./../kotoba/quiz_manager.js');
-const Session = require('./../kotoba/quiz_session.js');
-const DeckCollection = require('./../kotoba/quiz_deck_collection.js');
-const DeckLoader = require('./../kotoba/quiz_deck_loader.js');
-const normalGameMode = require('./../kotoba/quiz_normal_mode.js');
+const quizManager = require('./../kotoba/quiz/manager.js');
+const Session = require('./../kotoba/quiz/session.js');
+const DeckCollection = require('./../kotoba/quiz/deck_collection.js');
+const DeckLoader = require('./../kotoba/quiz/deck_loader.js');
+const normalGameMode = require('./../kotoba/quiz/normal_mode.js');
 const socketIo = require('socket.io');
 const logger = require('monochrome-bot').logger;
 const MAX_GAMES = 50;

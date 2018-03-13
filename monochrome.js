@@ -18,7 +18,7 @@ function onShutdown(bot) {
 // (That's an oversight and should be corrected)
 let bot = new monochrome(configFilePath, commandsDirectoryPath, messageProcessorsDirectoryPath, settingsFilePath, logsDirectoryPath, onShutdown);
 
-const quizManager = reload('./kotoba/quiz_manager.js');
+const quizManager = reload('./kotoba/quiz/manager.js');
 
 if (!fs.existsSync(settingsFilePath)) {
   settingsFilePath = undefined;

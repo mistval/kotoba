@@ -1,9 +1,9 @@
 'use strict'
 const reload = require('require-reload')(require);
-const renderText = reload('./render_text.js').render;
-const Util = reload('./utils.js');
+const renderText = reload('./../render_text.js').render;
+const Util = reload('./../utils.js');
 const logger = reload('monochrome-bot').logger;
-const convertToHiragana = reload('./util/convert_to_hiragana.js');
+const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
