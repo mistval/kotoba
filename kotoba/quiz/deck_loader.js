@@ -16,6 +16,7 @@ const DECKS_DIRECTORY = `${__dirname}/carddecks`;
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
 const MAX_DECKS_PER_USER = 10;
+const CACHE_SIZE_IN_PAGES = 1000;
 
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
@@ -63,6 +64,7 @@ function validateDeckPropertiesValid(deck) {
 
 async function loadDecksFromDisk() {
   let deckNames = Object.keys(decksMetadata);
+  let cache = state.quizDecksLoader.quizDecksCache;
   for (let deckName of deckNames) {
     try {
       let deckMetadata = decksMetadata[deckName];
@@ -70,7 +72,7 @@ async function loadDecksFromDisk() {
         throw new Error(`Deck ${name} does not have a unique uniqueId, or doesn't have one at all.`);
       }
 
-      let diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath);
+      let diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
       let deck = JSON.parse(JSON.stringify(deckMetadata));
       deck.cards = createCardGetterFromDiskArray(diskArray);
       deck.isInternetDeck = false;
@@ -424,6 +426,7 @@ if (!state.quizDecksLoader) {
   state.quizDecksLoader = {
     quizDeckForName: {},
     quizDeckForUniqueId: {},
+    quizDecksCache: new arrayOnDisk.Cache(CACHE_SIZE_IN_PAGES),
   };
   loadDecksFromDisk();
 }
