@@ -9,13 +9,14 @@ Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
 
 ## Help Wanted
 
-I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know. There are brief descriptions of some TODOs in the issues, and I can give you more details if you ask.
+I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know.
 
 ## Installation
 ```
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
 npm install -S --no-optional
+npm run build
 ```
 
 ## Configuration
@@ -36,35 +37,43 @@ k!j
     # Search Jisho for an English or Japanese word. Example: k!j 少し
 k!kanji (aliases: k!k)
     # Search for information about a kanji. Example: k!kanji 少
+k!shiritori (aliases: k!st, k!sh)
+    # Start a game of shiritori in this channel.
 k!strokeorder (aliases: k!so)
     # Search for details about a kanji's strokes. Example: k!strokeorder 少
+k!kotobank (aliases: k!ko)
+    # (Experimental) Search Kotobank for a Japanese word.
 k!furigana (aliases: k!furi, k!f)
     # Render furigana for Japanese text. Example: k!furigana 吾輩は猫である
 k!quiz (aliases: k!q)
-    # Start a quiz with the specified deck. Example: 'k!quiz n5'. 'k!quiz' lists decks, 'k!quiz stop' stops the quiz.
+    # See how to start a quiz in this channel.
 k!examples (aliases: k!ex)
     # Search Jisho for example sentences. Example: k!examples 少し
+k!pronounce (aliases: k!p)
+    # Look up information about how to pronounce a Japanese word. Example: k!pronounce 瞬間
 k!random (aliases: k!r)
     # Search Jisho for a random word. You can specify a JLPT or 漢検 level if you want. Example: 'k!random N3', 'k!random 2k'
 k!deconjugate (aliases: k!d)
     # Deconjugate a Japanese verb. Example: k!deconjugate 食べさせられたかった
 k!translate (aliases: k!t)
     # Use Google Translate to translate text. Example: k!translate 吾輩は猫である
+k!weblio (aliases: k!w)
+    # Search the Weblio Japanese dictionary for a word or phrase. Example: k!weblio 少し
 k!jukebox
-    # I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link. 
+    # I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link.
 k!invite
-    # Get a link to invite me to your server. 
+    # Get a link to invite me to your server.
 k!about
-    # Show some meta information about me. 
+    # Show some meta information about me.
 k!settings (aliases: k!s)
-    # Server admins can use this command to see and configure my settings on their server. 
+    # Server admins can use this command to see and configure my settings on their server.
 
 Say k!help [command name] to see more help for a command. Example: k!help k!j
 ```
 
 ## Public bot
 
-[The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) has a couple extras that aren't here (Weblio search, Kotobank search, much better definitions for the English vocabulary game)
+[The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) has a few things that aren't here.
 
 ## Help
 
