@@ -1,270 +1,212 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="Mannat Themes">
-        <meta name="keyword" content="">
-
-        <title>Create a Game</title>
-
-        <!-- Theme icon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-<!-- ION Slider -->
-        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
-
-
-        <!-- Theme Css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/slidebars.min.css" rel="stylesheet">
-        <link href="assets/css/icons.css" rel="stylesheet">
-        <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet">
-
-
-        <link rel="stylesheet" type="text/css" href="assets/css/multi-select.css">
-
-
-
-
-    </head>
-
-    <body class="sticky-header">
-        <section>
-            <!-- sidebar left start-->
-            <div class="sidebar-left">
-                <div class="sidebar-left-info">
-
-
-
-                    <!--sidebar nav start-->
-                    <ul class="side-navigation">
-                        <li>
-                            <h3 class="navigation-title">Navigation</h3>
-                        </li>
-                        <li class="active"><a href="index.html"><i class="mdi mdi-gauge"></i> <span>Create a Game</span></a></li>
-                        <li><a href="#" data-animation="slideInLeft" data-toggle="modal" data-target="#exampleModalLong-1" class="btn-animation"><i class="mdi mdi-bell-plus"></i> <span onclick="joinGame()">Join Game</span></a></li>
-                        <li><a href="kanji.html"><i class="mdi mdi-blur-off"></i> <span>Kanji</span></a></li>
-                        <li><a href="http://kotoba.k33.we.bs/"><i class="mdi mdi-account-switch"></i> <span>Discord Bot</span></a></li>
-                        <li><a href="about.html"><i class="mdi mdi-information"></i> <span>About</span></a></li>
-
-                    </ul><!--sidebar nav end-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Multiplayer game for practicing reading Japanese kanji.">
+    <meta name="keyword" content="kanji game readings kotoba web kotobaweb">
+    <title>Create a Game</title>
+    <!-- Theme icon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- ION Slider -->
+    <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
+    <!-- Theme Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slidebars.min.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/multi-select.css">
+  </head>
+  <body class="sticky-header">
+    <section>
+      <!-- sidebar left start-->
+      <div class="sidebar-left">
+        <div class="sidebar-left-info">
+          <!--sidebar nav start-->
+          <ul class="side-navigation">
+            <li>
+              <h3 class="navigation-title">Navigation</h3>
+            </li>
+            <li class="active"><a href="index.html"><i class="mdi mdi-gauge"></i> <span>Create a Game</span></a></li>
+            <li><a href="#" data-animation="slideInLeft" data-toggle="modal" data-target="#exampleModalLong-1" class="btn-animation"><i class="mdi mdi-bell-plus"></i> <span onclick="joinGame()">Join Game</span></a></li>
+            <li><a href="kanji.html"><i class="mdi mdi-blur-off"></i> <span>Kanji</span></a></li>
+            <li><a href="http://kotoba.k33.we.bs/"><i class="mdi mdi-account-switch"></i> <span>Discord Bot</span></a></li>
+            <li><a href="about.html"><i class="mdi mdi-information"></i> <span>About</span></a></li>
+          </ul>
+          <!--sidebar nav end-->
+        </div>
+      </div>
+      <!-- sidebar left end-->
+      <div id="gameJoiner">
+        <div class="modal fade" id="currentGamesModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Join a Game</h5>
+              </div>
+              <form v-on:submit.prevent="joinWithName">
+                <div class="modal-body">
+                  <div v-if="currentGameInfos.length === 0">
+                    There aren't any public games running now.
+                  </div>
+                  <div v-else v-for="gameInfo in currentGameInfos">
+                    <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
+                  </div>
                 </div>
-            </div><!-- sidebar left end-->
-
-
-
-            <div id="gameJoiner">
-              <div class="modal fade" id="currentGamesModal">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Join a Game</h5>
-                    </div>
-                    <form v-on:submit.prevent="joinWithName">
-                      <div class="modal-body">
-                        <div v-if="currentGameInfos.length === 0">
-                          There aren't any public games running now.
-                        </div>
-                        <div v-else v-for="gameInfo in currentGameInfos">
-                          <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
-                        </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- body content start-->
+      <div class="body-content" id="app">
+        <!-- header section start-->
+        <div class="header-section">
+          <!--logo and logo icon start-->
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-img">
+              </span>
+              <!--<i class="fa fa-maxcdn"></i>-->
+              <span class="brand-name">KotobaWeb</span>
+            </a>
+          </div>
+          <!--toggle button start-->
+          <a class="toggle-btn"><i class="ti ti-menu"></i></a>
+          <!--toggle button end-->
+          <!--mega menu start-->
+          <div id="navbar-collapse-1" class="navbar-collapse collapse mega-menu">
+            <ul class="nav navbar-nav">
+              <!-- Classic dropdown -->
+              <!-- Classic list -->
+              <li>
+              </li>
+            </ul>
+          </div>
+          <!--mega menu end-->
+          <div class="notification-wrap">
+            <!--right notification start-->
+            <!--right notification end-->
+          </div>
+        </div>
+        <!-- header section end-->
+        <div class="container-fluid" v-cloak>
+          <div class="page-head">
+            <h4 class="mt-2 mb-2">Create a Game</h4>
+          </div>
+          <div class="row">
+          </div>
+          <!--end row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card m-b-30  min-height">
+                <div class="card-body">
+                  <table width="100%" border="0">
+                    <tbody>
+                      <tr>
+                        <td width="55.5%">
+                          <h5 class="header-title pb-3">Select Categories</h5>
+                        </td>
+                        <td width="44.5%">
+                          <h5 class="header-title pb-3">Selected Categories</h5>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <select id="selectdecks" multiple="multiple">
+                    <option v-for="deck in decks" :value="deck.shortName">
+                      {{ deck.longName }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card m-b-30 min-height">
+                <div class="card-body">
+                  <h5 class="header-title pb-3">Configuration</h5>
+                  <br>
+                  <form class="form-horizontal">
+                    <div class="form-group row">
+                      <div class="col-sm-12">
+                        <h6><strong>Answer Time Limit</strong> <small> - Seconds</small></h6>
+                        <input type="text" id="range_01">
                       </div>
-                    </form>
+                    </div>
+                  </form>
+                  <br>
+                  <form class="form-horizontal">
+                    <div class="form-group row">
+                      <div class="col-sm-12">
+                        <h6><strong>Answer Leeway Window</strong><small> - Milliseconds</small></h6>
+                        <input type="text" id="range_02">
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+                  <div class="form-group">
+                    <label class="cr-styled">
+                    <input type="checkbox" v-model="private">
+                    <i class="fa"></i>
+                    <strong>Private Game</strong>
+                    </label>
                   </div>
                 </div>
               </div>
             </div>
-
-
-            <!-- body content start-->
-            <div class="body-content" id="app">
-                <!-- header section start-->
-                <div class="header-section">
-                    <!--logo and logo icon start-->
-                    <div class="logo">
-                        <a href="index.html">
-                            <span class="logo-img">
-
-                            </span>
-                            <!--<i class="fa fa-maxcdn"></i>-->
-                            <span class="brand-name">KotobaWeb</span>
-                        </a>
+            <div class="col-md-3">
+              <div class="card m-b-30 min-height">
+                <div class="card-body">
+                  <h5 class="header-title pb-3">User</h5>
+                  <form v-on:submit.prevent="create">
+                    <div class="form-group">
+                      <label for="username">Choose a username</label>
+                      <input type="text" class="form-control" id="username" placeholder="Enter username" v-model="userName">
+                      <br>
+                      <small>1-20 characters long, letters and numbers only.</small>
                     </div>
-
-                    <!--toggle button start-->
-                    <a class="toggle-btn"><i class="ti ti-menu"></i></a>
-                    <!--toggle button end-->
-
-                    <!--mega menu start-->
-                    <div id="navbar-collapse-1" class="navbar-collapse collapse mega-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Classic dropdown -->
-
-                             <!-- Classic list -->
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-                    <!--mega menu end-->
-
-                    <div class="notification-wrap">
-                        <!--right notification start-->
-                        <!--right notification end-->
-                    </div>
+                    <br><br>
+                    <center><button type="submit" class="btn btn-danger btn-lg "><i class="mdi mdi-gamepad"></i>  START GAME</button></center>
+                    <center>
+                      <div v-if="errorText" class="alert danger alert-dismissable">{{ errorText }}</div>
+                    </center>
+                  </form>
                 </div>
-                <!-- header section end-->
-                <div class="container-fluid" v-cloak>
-                    <div class="page-head">
-                        <h4 class="mt-2 mb-2">Create a Game</h4>
-                    </div>
-                    <div class="row">
-
-                    </div><!--end row-->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card m-b-30  min-height">
-                                <div class="card-body">
-                                   <table width="100%" border="0">
-  <tbody>
-    <tr>
-      <td width="55.5%"><h5 class="header-title pb-3">Select Categories</h5>    </td>
-      <td width="44.5%"><h5 class="header-title pb-3">Selected Categories</h5>    </td>
-    </tr>
-  </tbody>
-</table>
-
-
-
-
-
-
-  <select id="selectdecks" multiple="multiple">
-    <option v-for="deck in decks" :value="deck.shortName">
-      {{ deck.longName }}
-    </option>
-
-  </select>
-
-
-
-
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card m-b-30 min-height">
-                                <div class="card-body">
-
-                                    <h5 class="header-title pb-3">Configuration</h5>
-
-
-                                    <br>
-                                    <form class="form-horizontal">
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                            <h6><strong>Answer Time Limit</strong> <small> - Seconds</small></h6>
-                                                <input type="text" id="range_01">
-                                            </div>
-                                        </div>
-                                    </form>
-
-                                     <br>
-                                    <form class="form-horizontal">
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                            <h6><strong>Answer Leeway Window</strong><small> - Milliseconds</small></h6>
-                                                <input type="text" id="range_02">
-                                            </div>
-                                        </div>
-                                    </form>
-<br>
-                                   <div class="form-group">
-                                                <label class="cr-styled">
-                                                    <input type="checkbox" v-model="private">
-                                                    <i class="fa"></i>
-                                                    <strong>Private Game</strong>
-                                                </label>
-                                            </div>
-
-
-
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="col-md-3">
-                            <div class="card m-b-30 min-height">
-                                <div class="card-body">
-
-                                   <h5 class="header-title pb-3">User</h5>
-                                  <form v-on:submit.prevent="create">
-
-                                  <div class="form-group">
-                                                <label for="username">Choose a username</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Enter username" v-model="userName">
-                                                <br>
-                                                <small>1-20 characters long, letters and numbers only.</small>
-                                            </div>
-
-                                            <br><br>
-
-                                            <center><button type="submit" class="btn btn-danger btn-lg "><i class="mdi mdi-gamepad"></i>  START GAME</button></center>
-                                            <center><div v-if="errorText" class="alert danger alert-dismissable">{{ errorText }}</div></center>
-
-                                  </form>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div><!--end container-->
-
-                <!--footer section start-->
-                <footer class="footer">
-                    2018 &copy; KotobaWeb.
-                </footer>
-                <!--footer section end-->
-
-
-
+              </div>
             </div>
-            <!--end body content-->
-        </section>
-
-        <!-- jQuery -->
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery-migrate.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
-        <script src="assets/js/slidebars.min.js"></script>
- <!-- rangeSlider -->
-        <script src="assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
-        <script src="assets/plugins/ion-rangeslider/ui-sliders.js"></script>
-
-        <!--app js-->
-        <script src="assets/js/jquery.app.js"></script>
-
-        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-        <script src="https://unpkg.com/vue"></script>
-        <script src="gamejoiner.js"></script>
-        <script src="create.js"></script>
-
-         <script src="assets/js/jquery.multi-select.js"></script>
-  <script type="text/javascript">
-  $('#selectdecks').multiSelect();
-  </script>
-
-    </body>
+          </div>
+        </div>
+        <!--end container-->
+        <!--footer section start-->
+        <footer class="footer">
+          2018 &copy; KotobaWeb.
+        </footer>
+        <!--footer section end-->
+      </div>
+      <!--end body content-->
+    </section>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-migrate.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/slidebars.min.js"></script>
+    <!-- rangeSlider -->
+    <script src="assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
+    <script src="assets/plugins/ion-rangeslider/ui-sliders.js"></script>
+    <!--app js-->
+    <script src="assets/js/jquery.app.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="gamejoiner.js"></script>
+    <script src="create.js"></script>
+    <script src="assets/js/jquery.multi-select.js"></script>
+    <script type="text/javascript">
+      $('#selectdecks').multiSelect();
+    </script>
+  </body>
 </html>

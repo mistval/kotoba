@@ -1,210 +1,161 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="Mannat Themes">
-        <meta name="keyword" content="">
-
-        <title>About</title>
-
-        <!-- Theme icon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-<!-- ION Slider -->
-        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
-
-
-        <!-- Theme Css -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="assets/css/slidebars.min.css" rel="stylesheet">
-        <link href="assets/css/icons.css" rel="stylesheet">
-        <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/style.css" rel="stylesheet">
-
-
-        <link rel="stylesheet" type="text/css" href="assets/css/multi-select.css">
-
-
-
-
-    </head>
-
-    <body class="sticky-header">
-      <div id="gameJoiner">
-        <div class="modal fade" id="currentGamesModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Join a Game</h5>
-              </div>
-              <form v-on:submit.prevent="joinWithName">
-                <div class="modal-body">
-                  <div v-if="currentGameInfos.length === 0">
-                    There aren't any public games running now.
-                  </div>
-                  <div v-else v-for="gameInfo in currentGameInfos">
-                    <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
-                  </div>
-                </div>
-              </form>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="About KotobaWeb">
+    <meta name="keyword" content="about kotoba web kotobaweb">
+    <title>About</title>
+    <!-- Theme icon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- ION Slider -->
+    <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
+    <!-- Theme Css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/slidebars.min.css" rel="stylesheet">
+    <link href="assets/css/icons.css" rel="stylesheet">
+    <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/multi-select.css">
+  </head>
+  <body class="sticky-header">
+    <div id="gameJoiner">
+      <div class="modal fade" id="currentGamesModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Join a Game</h5>
             </div>
+            <form v-on:submit.prevent="joinWithName">
+              <div class="modal-body">
+                <div v-if="currentGameInfos.length === 0">
+                  There aren't any public games running now.
+                </div>
+                <div v-else v-for="gameInfo in currentGameInfos">
+                  <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-        <section>
-            <!-- sidebar left start-->
-            <div class="sidebar-left">
-                <div class="sidebar-left-info">
-
-
-
-                    <!--sidebar nav start-->
-                    <ul class="side-navigation">
-                        <li>
-                            <h3 class="navigation-title">Navigation</h3>
-                        </li>
-                        <li><a href="index.html"><i class="mdi mdi-gauge"></i> <span>Create a Game</span></a></li>
-                        <li><a href="#" data-animation="slideInLeft" data-toggle="modal" data-target="#exampleModalLong-1" class="btn-animation"><i class="mdi mdi-bell-plus"></i> <span onclick="joinGame()">Join Game</span></a></li>
-                        <li><a href="kanji.html"><i class="mdi mdi-blur-off"></i> <span>Kanji</span></a></li>
-                        <li><a href="http://kotoba.k33.we.bs/"><i class="mdi mdi-account-switch"></i> <span>Discord Bot</span></a></li>
-                        <li class="active"><a href="about.html"><i class="mdi mdi-information"></i> <span>About</span></a></li>
-
-                    </ul><!--sidebar nav end-->
+    </div>
+    <section>
+      <!-- sidebar left start-->
+      <div class="sidebar-left">
+        <div class="sidebar-left-info">
+          <!--sidebar nav start-->
+          <ul class="side-navigation">
+            <li>
+              <h3 class="navigation-title">Navigation</h3>
+            </li>
+            <li><a href="index.html"><i class="mdi mdi-gauge"></i> <span>Create a Game</span></a></li>
+            <li><a href="#" data-animation="slideInLeft" data-toggle="modal" data-target="#exampleModalLong-1" class="btn-animation"><i class="mdi mdi-bell-plus"></i> <span onclick="joinGame()">Join Game</span></a></li>
+            <li><a href="kanji.html"><i class="mdi mdi-blur-off"></i> <span>Kanji</span></a></li>
+            <li><a href="http://kotoba.k33.we.bs/"><i class="mdi mdi-account-switch"></i> <span>Discord Bot</span></a></li>
+            <li class="active"><a href="about.html"><i class="mdi mdi-information"></i> <span>About</span></a></li>
+          </ul>
+          <!--sidebar nav end-->
+        </div>
+      </div>
+      <!-- sidebar left end-->
+      <!-- body content start-->
+      <div class="body-content">
+        <!-- header section start-->
+        <div class="header-section">
+          <!--logo and logo icon start-->
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-img">
+              </span>
+              <!--<i class="fa fa-maxcdn"></i>-->
+              <span class="brand-name">KotobaWeb</span>
+            </a>
+          </div>
+          <!--toggle button start-->
+          <a class="toggle-btn"><i class="ti ti-menu"></i></a>
+          <!--toggle button end-->
+          <!--mega menu start-->
+          <div id="navbar-collapse-1" class="navbar-collapse collapse mega-menu">
+            <ul class="nav navbar-nav">
+              <!-- Classic dropdown -->
+              <!-- Classic list -->
+              <li>
+              </li>
+            </ul>
+          </div>
+          <!--mega menu end-->
+          <div class="notification-wrap">
+            <!--right notification start-->
+            <!--right notification end-->
+          </div>
+        </div>
+        <!-- header section end-->
+        <div class="container-fluid">
+          <div class="page-head">
+          </div>
+          <div class="row">
+          </div>
+          <!--end row-->
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card bg-white m-b-30">
+                <div class="card-body">
+                  <h5 class="header-title pb-3">About</h5>
+                  <p>KotobaWeb is an extension of work I've done for <a href="http://kotoba.k33.we.bs/" style="color: #2e61f2;font-weight: bold;">my Discord Bot</a>. In addition to the features here on the website, the bot has SRS, saving/loading, leaderboards, more question categories, plus other Japanese-related functions including dictionary searching, kanji searching, verb deconjugation, furigana rendering, and more.</p>
                 </div>
-            </div><!-- sidebar left end-->
-
-
-            <!-- body content start-->
-            <div class="body-content">
-                <!-- header section start-->
-                <div class="header-section">
-                    <!--logo and logo icon start-->
-                    <div class="logo">
-                        <a href="index.html">
-                            <span class="logo-img">
-
-                            </span>
-                            <!--<i class="fa fa-maxcdn"></i>-->
-                            <span class="brand-name">KotobaWeb</span>
-                        </a>
-                    </div>
-
-                    <!--toggle button start-->
-                    <a class="toggle-btn"><i class="ti ti-menu"></i></a>
-                    <!--toggle button end-->
-
-                    <!--mega menu start-->
-                    <div id="navbar-collapse-1" class="navbar-collapse collapse mega-menu">
-                        <ul class="nav navbar-nav">
-                            <!-- Classic dropdown -->
-
-                             <!-- Classic list -->
-                            <li>
-
-                            </li>
-                        </ul>
-                    </div>
-                    <!--mega menu end-->
-
-                    <div class="notification-wrap">
-                        <!--right notification start-->
-                        <!--right notification end-->
-                    </div>
-                </div>
-                <!-- header section end-->
-
-                <div class="container-fluid">
-                    <div class="page-head">
-
-                    </div>
-                    <div class="row">
-
-                    </div><!--end row-->
-
-
-                    <div class="row">
-                         <div class="col-md-8">
-                            <div class="card bg-white m-b-30">
-                                <div class="card-body">
-                                     <h5 class="header-title pb-3">About</h5>
-                                <p>KotobaWeb is an extension of work I've done for <a href="http://kotoba.k33.we.bs/" style="color: #2e61f2;font-weight: bold;">my Discord Bot</a>. In addition to the features here on the website, the bot has SRS, saving/loading, leaderboards, more question categories, plus other Japanese-related functions including dictionary searching, kanji searching, verb deconjugation, furigana rendering, and more.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="card bg-white m-b-30">
-                               <div class="card-body">
-                                    <h5 class="header-title pb-3">Contact</h5>
-                                    <div class="general-label">
-                                      <form class="form-horizontal" role="form" id="contact-form" method="post" action="/contact">
-                                        <div class="messages"></div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-
-                                                    <input type="email" id="form_email" name="email" class="form-control" placeholder="Email">
-
-                                            </div>
-
-
-
-
-                                            <div class="form-group">
-                                                <label>Message</label>
-
-                                                    <textarea id="form_message" name="message" class="form-control" rows="5" placeholder="Your message"></textarea>
-
-                                            </div>
-
-
-<input type="submit" class="btn btn-success btn-send">
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                </div><!--end container-->
-
-                <!--footer section start-->
-                <footer class="footer">
-                    2018 &copy; KotobaWeb.
-                </footer>
-                <!--footer section end-->
-
-
-
+              </div>
             </div>
-            <!--end body content-->
-        </section>
-
-        <!-- jQuery -->
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/popper.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery-migrate.js"></script>
-        <script src="assets/js/modernizr.min.js"></script>
-        <script src="assets/js/jquery.slimscroll.min.js"></script>
-        <script src="assets/js/slidebars.min.js"></script>
- <!-- rangeSlider -->
-        <script src="assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
-        <script src="assets/plugins/ion-rangeslider/ui-sliders.js"></script>
-
-        <!--app js-->
-        <script src="assets/js/jquery.app.js"></script>
-
-         <script src="assets/js/jquery.multi-select.js"></script>
-         <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-         <script src="https://unpkg.com/vue"></script>
-         <script src="about.js"></script>
-         <script src="gamejoiner.js"></script>
-    </body>
+            <div class="col-md-4">
+              <div class="card bg-white m-b-30">
+                <div class="card-body">
+                  <h5 class="header-title pb-3">Contact</h5>
+                  <div class="general-label">
+                    <form class="form-horizontal" role="form" id="contact-form" method="post" action="/contact">
+                      <div class="messages"></div>
+                      <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="form_email" name="email" class="form-control" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="form_message" name="message" class="form-control" rows="5" placeholder="Your message"></textarea>
+                      </div>
+                      <input type="submit" class="btn btn-success btn-send">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end container-->
+        <!--footer section start-->
+        <footer class="footer">
+          2018 &copy; KotobaWeb.
+        </footer>
+        <!--footer section end-->
+      </div>
+      <!--end body content-->
+    </section>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-migrate.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/slidebars.min.js"></script>
+    <!-- rangeSlider -->
+    <script src="assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
+    <script src="assets/plugins/ion-rangeslider/ui-sliders.js"></script>
+    <!--app js-->
+    <script src="assets/js/jquery.app.js"></script>
+    <script src="assets/js/jquery.multi-select.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="about.js"></script>
+    <script src="gamejoiner.js"></script>
+  </body>
 </html>
