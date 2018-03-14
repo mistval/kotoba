@@ -7,7 +7,7 @@ const logger = require('monochrome-bot').logger;
 const MEMENTO_VERSION = 'v1';
 
 const LOGGER_TITLE = 'QUIZ SAVE MANAGER';
-const SAVE_DATA_DIR = __dirname + '/../save_data';
+const SAVE_DATA_DIR = __dirname + '/../../save_data';
 const QUIZ_SAVES_KEY = 'QuizSaveDataFiles';
 const QUIZ_SAVES_BACKUP_KEY = 'QuizSavesBackup';
 const MAX_RESTORABLE_PER_USER = 10;
