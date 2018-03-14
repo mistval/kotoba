@@ -16,8 +16,9 @@ function createRandomIndexSetForDecks(decks) {
     let endIndex = deck.endIndex === undefined ? deck.cards.length - 1 : deck.endIndex;
     let indices = Array(endIndex - startIndex + 1);
     for (let i = startIndex; i <= endIndex; ++i) {
-      indices[i] = i;
+      indices[i - startIndex] = i;
     }
+
     indexSet.push(Util.shuffleArray(indices));
   }
 
