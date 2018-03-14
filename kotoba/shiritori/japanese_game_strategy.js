@@ -84,7 +84,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let possibleWordInformations =
     wordData.getWordInformationsForWordAsHirgana(hiragana);
 
-  if (!possibleWordInformations) {
+  if (!possibleWordInformations || possibleWordInformations.length === 0) {
     return new RejectedResult(true, `I don't know the word **${answer}**`);
   }
 
