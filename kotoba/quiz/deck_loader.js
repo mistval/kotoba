@@ -8,12 +8,15 @@ const cardStrategies = reload('./card_strategies.js');
 const persistence = reload('monochrome-bot').persistence;
 const request = require('request-promise');
 const PublicError = reload('monochrome-bot').PublicError;
+const arrayOnDisk = require('disk-array');
+const decksMetadata = reload('./../../objects/quiz/decks.json')
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
 const DECKS_DIRECTORY = `${__dirname}/carddecks`;
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
 const MAX_DECKS_PER_USER = 10;
+const CACHE_SIZE_IN_PAGES = 1000;
 
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
@@ -32,6 +35,18 @@ const QuestionCreationStrategyForQuestionType = {
   TEXT: 'TEXT',
 };
 
+function createCardGetterFromInMemoryArray(array) {
+  return {
+    get: i => Promise.resolve(array[i]),
+    length: array.length,
+    memoryArray: array,
+  };
+}
+
+function createCardGetterFromDiskArray(array) {
+  return array;
+}
+
 function validateDeckPropertiesValid(deck) {
   assert(deck.name, 'No name.');
   assert(deck.article, 'No article.');
@@ -47,38 +62,26 @@ function validateDeckPropertiesValid(deck) {
   assert(~Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy), 'No or invalid answerCompareStrategy.');
 }
 
-function loadDecksFromDisk() {
-  let files = fs.readdir(DECKS_DIRECTORY, (err, files) => {
-    if (err) {
-      return logger.logFailure(LOGGER_TITLE, 'Error reading files in quiz decks directory', err);
-    }
+async function loadDecksFromDisk() {
+  let deckNames = Object.keys(decksMetadata);
+  let cache = state.quizDecksLoader.quizDecksCache;
+  for (let deckName of deckNames) {
     try {
-      for (let name of files) {
-        if (name.endsWith('.json')) {
-          let deckFilePath = `${DECKS_DIRECTORY}/${name}`;
-          fs.readFile(deckFilePath, (err, data) => {
-            if (err) {
-              return logger.logFailure(LOGGER_TITLE, `Error loading quiz deck ${name}`, err);
-            }
-            try {
-              let deckData = JSON.parse(data);
-              validateDeckPropertiesValid(deckData);
-              let deckFileBaseName = name.replace(/\.json$/, '');
-              state.quizDecksLoader.quizDeckForName[deckFileBaseName.toLowerCase()] = deckData;
-              if (!deckData.uniqueId || state.quizDecksLoader.quizDeckForUniqueId[deckData.uniqueId]) {
-                throw new Error(`Deck ${name} does not have a unique uniqueId, or doesn't have one at all.`);
-              }
-              state.quizDecksLoader.quizDeckForUniqueId[deckData.uniqueId] = deckData;
-            } catch (err) {
-              logger.logFailure(LOGGER_TITLE, `Error loading deck ${name}`, err);
-            }
-          });
-        }
+      let deckMetadata = decksMetadata[deckName];
+      if (!deckMetadata.uniqueId || state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId]) {
+        throw new Error(`Deck ${name} does not have a unique uniqueId, or doesn't have one at all.`);
       }
-    } catch (err) {
-      logger.logFailure(LOGGER_TITLE, 'Unexpected error loading quiz decks', err);
+
+      let diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
+      let deck = JSON.parse(JSON.stringify(deckMetadata));
+      deck.cards = createCardGetterFromDiskArray(diskArray);
+      deck.isInternetDeck = false;
+      state.quizDecksLoader.quizDeckForName[deckName] = deck;
+      state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
+    } catch(err) {
+      logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
     }
-  });
+  }
 }
 
 function getObjectValues(obj) {
@@ -116,7 +119,6 @@ function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
 function getDeckFromMemory(deckInformation) {
   let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckNameOrUniqueId] || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckNameOrUniqueId];
   if (deck) {
-    deck.isInternetDeck = false;
     deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
   }
   return deck;
@@ -236,7 +238,7 @@ function tryCreateDeckFromRawData(data, uri) {
     "answerCompareStrategy": "CONVERT_KANA",
     "compileImages": false,
     "commentFieldName": "Meaning",
-    "cards": cards,
+    "cards": createCardGetterFromInMemoryArray(cards),
   };
   validateDeckPropertiesValid(deck);
   return deck;
@@ -424,11 +426,29 @@ if (!state.quizDecksLoader) {
   state.quizDecksLoader = {
     quizDeckForName: {},
     quizDeckForUniqueId: {},
+    quizDecksCache: new arrayOnDisk.Cache(CACHE_SIZE_IN_PAGES),
   };
   loadDecksFromDisk();
 }
 
-module.exports.getQuizDecks = getQuizDecks;
-module.exports.DeckRequestStatus = DeckRequestStatus;
-module.exports.deleteInternetDeck = deleteInternetDeck;
-module.exports.DeletionStatus = DeletionStatus;
+function deepCopy(object) {
+  return JSON.parse(JSON.stringify(object));
+}
+
+function createReviewDeck(unansweredCards) {
+  return {
+    uniqueId: 'REVIEW',
+    name: 'Review Quiz',
+    article: 'a',
+    isInternetDeck: unansweredCards.some(card => card.isInternetCard),
+    cards: createCardGetterFromInMemoryArray(deepCopy(unansweredCards)),
+  }
+}
+
+module.exports = {
+  getQuizDecks,
+  DeckRequestStatus,
+  deleteInternetDeck,
+  DeletionStatus,
+  createReviewDeck,
+}

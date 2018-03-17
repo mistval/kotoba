@@ -2,7 +2,6 @@
 const reload = require('require-reload')(require);
 const searchForKanji = new (require('unofficial-jisho-api'))().searchForKanji;
 const constants = reload('./constants.js');
-const renderText = reload('./render_text.js').render;
 const PublicError = reload('monochrome-bot').PublicError;
 
 const MAXIMUM_EXAMPLE_COUNT = 4;
@@ -151,10 +150,7 @@ function convertToDiscordBotContent(kanjiInformation) {
     }
   };
 
-  return renderText(kanjiInformation.query).then(buffer => {
-    content.fileInfo = {file: buffer, name: 'upload.png'};
-    return content;
-  });
+  return content;
 }
 
 module.exports.createContent = function(kanji) {

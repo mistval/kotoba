@@ -343,9 +343,9 @@ class AskQuestionAction extends Action {
     }
   }
 
-  do() {
+  async do() {
     let session = this.getSession_();
-    let nextCard = session.getNextCard();
+    let nextCard = await session.getNextCard();
     if (!nextCard) {
       return Promise.resolve(new EndQuizNoQuestionsLeftAction(session));
     }

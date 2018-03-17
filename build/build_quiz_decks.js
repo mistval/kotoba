@@ -1,4 +1,4 @@
-const diskArray = require('array-on-disk');
+const diskArray = require('disk-array');
 const fs = require('fs');
 const path = require('path');
 
