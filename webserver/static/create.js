@@ -1,8 +1,10 @@
 var vue;
 
-var maxAnswerTimeLimit = 999999999;
-
 var names = ["Acrallef","Apnalled","AprilHomey","Archift","Atediney","Attractive","Boboundraw","Boninget","Buddientbr","BuffMatterExclusive","Buggyreet","Carecore","Certion","Cessorks","Chasemalead","CheeseSra","Churuser","Cleanzant","ComfyConspiracy","Cosinks","CrashStories","CrazyEye","Dailiesba","DarthCeticNight","Divagoon","Dubyaricamf","Dubyarita","Ducatchab","EatsyouIzPhobic","EssenceReporter","Everchicat","Exegycond","ExoticMaxi","Fashionew","Fighteritaz","Fishitly","Fixtudy","Fourianity","Fruitelec","FuzzyQuote","Gemainn","GinoJournal","Goosead","Greateguren","Griffonomed","Handcapod","HaroMajere","Heheadcobb","Himestn","Hunterhead","Incartleze","Inordity","Issuestre","KaiBrace","Konristi","LessPurfect","LightFred","LimeWeirdHello","LouAnime","Lumecher","MaidCheeNaybor","MajorYui","Mantecklena","Masterield","Mixalys","Natucsco","NeoRozMonkey","Nomyoknu","Nuwerclo","Parance","Phobicatic","Piercessor","Primirier","Pruntson","RadiantXglossy","Recomlepa","Rhemadou","Rundping","SandWriting","SchoolAlli","ScoobyVital","Shinginket","Smarthweb","SocialSmarter","StahMrFeature","Sweettems","Swingbigb","Talentedia","Tasoftie","ThehibikiLunatic","ThenornDancer","ThenornKitGorgeous","Trendynetc","TrimbleBee","TrippinTins","Undervera","Uoutschumb","VanderMiracle","Waredusk","Wellbeyer"];
+
+function sliderValueAsInteger(slider) {
+  return parseInt(slider.value);
+}
 
 function create() {
   var selector = $('#selectdecks')[0];
@@ -24,56 +26,26 @@ function create() {
     return;
   }
 
-  let answerTimeLimitInS = sliderValueAsInteger($('#answerTimeLimitSlider')[0], vue.answerTimeLimitMax);
-  let answerTimeLimitInMs;
-  if (answerTimeLimitInS !== Number.MAX_SAFE_INTEGER) {
-    answerTimeLimitInMs = answerTimeLimitInS * 1000;
-  } else {
-    answerTimeLimitInMs = maxAnswerTimeLimit;
-  }
+  let answerTimeLimitInS = sliderValueAsInteger($('#range_01')[0], vue.answerTimeLimitMax);
+  let answerTimeLimitInMs = answerTimeLimitInS * 1000;
+
+  let answerForgivenessWindow = sliderValueAsInteger($('#range_02')[0]);
 
   vue.socket.emit('create', {
     decks: selectedDecks,
     answerTimeLimitInMs: answerTimeLimitInMs,
     private: vue.private,
-    answerForgivenessWindow: this.answerForgivenessWindow,
+    answerForgivenessWindow: answerForgivenessWindow,
   });
-  vue.gameStarted = true;
-}
-
-function answerTimeLimitChanged() {
-  var slider = $('#answerTimeLimitSlider')[0];
-  var selectedTimeLimit = slider.value;
-  vue.answerTimeLimit = selectedTimeLimit;
-}
-
-function answerForgivenessWindowChanged() {
-  var slider = $('#answerForgivenessWindowSlider')[0];
-  var selectedAnswerForgivenessWindow = slider.value;
-  vue.answerForgivenessWindow = selectedAnswerForgivenessWindow;
-}
-
-function sliderValueAsInteger(slider, maxValue) {
-  var asInt = parseInt(slider.value);
-  if (asInt === maxValue) {
-    return Number.MAX_SAFE_INTEGER;
-  }
-  return asInt;
 }
 
 vue = new Vue({
   el: '#app',
   data: {
     socket: io(),
-    answerTimeLimit: 180,
-    answerTimeLimitMax: 180,
-    answerTimeLimitMin: 5,
     userName: names[Math.floor(Math.random() * names.length)],
     private: false,
     loaded: true,
-    answerForgivenessWindowMax: 10000,
-    answerForgivenessWindowMin: 0,
-    answerForgivenessWindow: 0,
     errorText: '',
     decks: [
       {shortName: 'hiragana', longName: 'Hiragana'},
@@ -132,8 +104,6 @@ vue = new Vue({
   },
   methods: {
     create: create,
-    answerTimeLimitChanged: answerTimeLimitChanged,
-    answerForgivenessWindowChanged: answerForgivenessWindowChanged,
   },
 });
 
@@ -141,9 +111,6 @@ function joinGame() {
   vue.socket.emit('request games');
   return false;
 }
-
-$('#answerTimeLimitSlider')[0].value = vue.answerTimeLimitMax;
-$('#answerForgivenessWindowSlider')[0].value = vue.answerForgivenessWindowMin;
 
 vue.socket.on('room created', function(roomId) {
   window.location = '/game.html?id=' + roomId + '&username=' + vue.userName;

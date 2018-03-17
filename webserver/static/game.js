@@ -27,6 +27,11 @@ function getRoomIdFromGetArgs() {
   }
 }
 
+function getJoinLinkFromGetArgs() {
+  var roomId = getRoomIdFromGetArgs();
+  return 'http://' + window.location.host + window.location.pathname + '?id=' + roomId;
+}
+
 function getUserNameFromGetArgs() {
   var regex = new RegExp('username=(.*?)(&|$)')
   var regexResults = regex.exec(location.search);
@@ -52,6 +57,7 @@ vue = new Vue({
     loaded: true,
     instructions: 'Next Question',
     imageDataUri: undefined,
+    joinUri: getJoinLinkFromGetArgs(),
   },
   methods: {
     send: send,
@@ -59,7 +65,7 @@ vue = new Vue({
     joinWithName: joinWithName,
   },
   updated: function() {
-    var element = document.getElementById('messageArea');
+    var element = document.getElementById('boxscrol2');
     element.scrollTop = element.scrollHeight;
   }
 });
@@ -118,7 +124,7 @@ vue.socket.on('correct', function(data) {
 });
 
 vue.socket.on('no such room', function() {
-  window.location = 'create.html';
+  window.location = 'index.html';
 });
 
 vue.socket.on('scores', function(scoreForUserName) {

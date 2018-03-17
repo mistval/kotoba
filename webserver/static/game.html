@@ -1,172 +1,331 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Japanese and Kanji learning games and tools.">
-    <meta name="keywords" content="Japanese,kanji,learning,games">
-    <link rel="icon" href="kan.png">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Play</title>
-  </head>
-  <body>
-    <div id="gameJoiner">
-      <div class="modal fade" id="currentGamesModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Join a Game</h5>
-            </div>
-            <form v-on:submit.prevent="joinWithName">
-              <div class="modal-body">
-                <div v-if="currentGameInfos.length === 0">
-                  There aren't any public games running now.
-                </div>
-                <div v-else v-for="gameInfo in currentGameInfos">
-                  <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Mannat Themes">
+        <meta name="keyword" content="">
+
+        <title>Create a Game</title>
+
+        <!-- Theme icon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+<!-- ION Slider -->
+        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/plugins/ion-rangeslider/ion.rangeSlider.skinFlat.css" rel="stylesheet" type="text/css"/>
+
+
+        <!-- Theme Css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/slidebars.min.css" rel="stylesheet">
+        <link href="assets/css/icons.css" rel="stylesheet">
+        <link href="assets/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" type="text/css" href="assets/css/multi-select.css">
+
+
+
+
+    </head>
+
+    <body class="sticky-header">
+      <div id="gameJoiner">
+        <div class="modal fade" id="currentGamesModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Join a Game</h5>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="app">
-      <div class="modal fade" id="userNameModal">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Choose a Username</h5>
-            </div>
-            <form v-on:submit.prevent="joinWithName" id="joinForm">
-              <div class="modal-body">
-                <input type="text" v-model="userName">
-              </div>
-              <div class="modal-footer">
-                <input type="Submit" value="Join" class="btn btn-primary"></input>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">KotobaWeb</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="create.html">Create Game</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" onclick="joinGame()">Join Game</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="kanji.html">Kanji</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="http://kotoba.k33.we.bs/">Discord Bot</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="spinner" v-if="!loaded">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
-      </div>
-      <br>
-      <div class="container" v-cloak>
-        <div class="page">
-          <div class="row">
-            <div class="col-md-10">
-              <div class="message-area" id="messageArea">
-                <div v-for="messageData in messageDatas">
-                  <div v-if="messageData.type === 'chat'" class="chat-message">
-                    <span class="username"><b><strong>{{ messageData.userName }}</strong></b></span>&nbsp;&nbsp;
-                    {{ messageData.message }}
+              <form v-on:submit.prevent="joinWithName">
+                <div class="modal-body">
+                  <div v-if="currentGameInfos.length === 0">
+                    There aren't any public games running now.
                   </div>
-                  <div v-if="messageData.type === 'correctAnswer'" class="chat-message correct-answer">
-                    <b>Correct!</b><br>
-                    {{ messageData.answerersText }}<br>
-                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
-                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
-                  </div>
-                  <div v-if="messageData.type === 'timedOutQuestion'" class="chat-message wrong-answer">
-                    <b>Time's up!</b><br>
-                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
-                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
-                  </div>
-                  <div v-if="messageData.type === 'skippedQuestion'" class="chat-message wrong-answer">
-                    <b>Skipped!</b><br>
-                    <b>Correct answers:</b> {{ messageData.correctAnswers.join(', ') }}<br>
-                    <span v-if="messageData.meaning"><b>Meaning:</b> {{ messageData.meaning }}</span>
-                  </div>
-                  <div v-if="messageData.type === 'broadcast'" class="broadcast">
-                    <span class="username"><b><strong>Important</strong></b></span>&nbsp;&nbsp;
-                    {{ messageData.message }}
+                  <div v-else v-for="gameInfo in currentGameInfos">
+                    <a :href="gameInfo.uri">{{ gameInfo.creatorName }}'s Game ({{ gameInfo.decks.slice(0, 3).join(', ') }})</a>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class='user-list col-md-2 shadow'>
-              <h1>Players</h1>
-              <div class='chatbox__user--active' v-for="player in players">
-                <span class="playername" class="form-control">{{ player.name }}</span><span class="playerscore">{{ player.score }}</span>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="next-question-area col-md-10 shadow">
-            <div class="instructions">
-              <h3>{{ instructions }}</h3>
-            </div>
-            <div>
-              <transition name="fade">
-                <img :src="imageDataUri" :key="imageDataUri" class="questionImage">
-              </transition>
-            </div>
-          </div>
-          <div class="row">
-            <div class="chatbox col-md-10">
-              <form action="" class="form-inline" id="chatform" v-on:submit.prevent="">
-                <input id="m" type="text" class="col-md-10 form-control" autocomplete="off" placeholder="Enter Answer" />
-                &nbsp;<button class="btn btn-primary" v-on:click="send">Send</button>
-                &nbsp;<button class="btn btn-primary" v-on:click="skip">Skip</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <script src="multi.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="game.js"></script>
-    <script src="gamejoiner.js"></script>
-    <script>
-      $(function () {
-        var select = document.getElementById('selectdecks');
-        if (select) {
-          multi( select, {
-              non_selected_header: 'Decks',
-              selected_header: 'Selected Decks'
-          });
-        }
-      });
-    </script>
-  </body>
+        <section>
+            <!-- sidebar left start-->
+            <div class="sidebar-left">
+                <div class="sidebar-left-info">
+
+
+
+                    <!--sidebar nav start-->
+                    <ul class="side-navigation">
+                        <li>
+                            <h3 class="navigation-title">Navigation</h3>
+                        </li>
+                        <li><a href="index.html"><i class="mdi mdi-gauge"></i> <span>Create a Game</span></a></li>
+                        <li class="active"><a href="#" data-animation="slideInLeft" data-toggle="modal" class="btn-animation"><i class="mdi mdi-bell-plus"></i> <span onclick="joinGame()">Join Game</span></a></li>
+                        <li><a href="kanji.html"><i class="mdi mdi-blur-off"></i> <span>Kanji</span></a></li>
+                        <li><a href="discord-bot.html"><i class="mdi mdi-account-switch"></i> <span>Discord Bot</span></a></li>
+                        <li><a href="about.html"><i class="mdi mdi-information"></i> <span>About</span></a></li>
+
+                    </ul><!--sidebar nav end-->
+                </div>
+            </div><!-- sidebar left end-->
+
+
+
+            <!-- body content start-->
+            <div class="body-content" id="app">
+                <!-- header section start-->
+                <div class="header-section">
+                    <!--logo and logo icon start-->
+                    <div class="logo">
+                        <a href="index.html">
+                            <span class="logo-img">
+
+                            </span>
+                            <!--<i class="fa fa-maxcdn"></i>-->
+                            <span class="brand-name">KotobaWeb</span>
+                        </a>
+                    </div>
+
+                    <!--toggle button start-->
+                    <a class="toggle-btn"><i class="ti ti-menu"></i></a>
+                    <!--toggle button end-->
+
+                    <!--mega menu start-->
+                    <div id="navbar-collapse-1" class="navbar-collapse collapse mega-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Classic dropdown -->
+
+                             <!-- Classic list -->
+                            <li>
+
+                            </li>
+                        </ul>
+                    </div>
+                    <!--mega menu end-->
+
+                    <div class="notification-wrap">
+                        <!--right notification start-->
+                        <!--right notification end-->
+                    </div>
+                </div>
+                <!-- header section end-->
+
+                <div class="modal fade" id="userNameModal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Choose a Username</h5>
+                      </div>
+                      <form v-on:submit.prevent="joinWithName" id="joinForm">
+                        <div class="modal-body">
+                          <input type="text" v-model="userName">
+                        </div>
+                        <div class="modal-footer">
+                          <input type="Submit" value="Join" class="btn btn-primary"></input>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="container-fluid" v-cloak>
+                  <br>
+                    <div class="row">
+
+                        <div class="col-md-9">
+                            <div class="card m-b-30">
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                         <div class="card-body new-user">
+
+                                    <ul class="list-unstyled mb-0" id="boxscrol2" tabindex="2">
+                                       <div v-for="messageData in messageDatas">
+                                          <li class="p-2 correct-answer" v-if="messageData.type === 'correctAnswer'">
+                                              <div class="media">
+                                                  <div class="pull-left thumb thumb-sm" style="margin-top: 12px;">
+                                                      <img class=" rounded-circle" src="assets/images/man.svg" alt="">
+                                                  </div>
+                                                  <div class="media-body">
+                                                      <p class="media-heading mb-0">Correct! </p>
+                                                       <p class="media-heading mb-0">{{ messageData.answerersText }}</p>
+                                                      <h4 class="text-muted">Correct answers: {{ messageData.correctAnswers.join(', ') }}</h4>
+                                                      <p class="media-heading mb-0" v-if="messageData.meaning">Meaning: {{ messageData.meaning }}</p>
+                                                  </div>
+                                              </div>
+                                          </li>
+                                           <li class="p-2 wrong-answer" v-if="messageData.type === 'timedOutQuestion'">
+                                              <div class="media">
+                                                  <div class="pull-left thumb thumb-sm"  style="margin-top: 12px;">
+                                                      <img class=" rounded-circle" src="assets/images/robot.svg" alt="">
+                                                  </div>
+                                                 <div class="media-body">
+                                                      <p class="media-heading mb-0">Time's up! </p>
+                                                      <h4 class="text-muted">Correct answers: {{ messageData.correctAnswers.join(', ') }}</h4>
+                                                      <p class="media-heading mb-0" v-if="messageData.meaning">Meaning: {{ messageData.meaning }}</p>
+                                                  </div>
+                                              </div>
+                                          </li>
+                                          <li class="p-2 wrong-answer" v-if="messageData.type === 'skippedQuestion'">
+                                             <div class="media">
+                                                 <div class="pull-left thumb thumb-sm"  style="margin-top: 12px;">
+                                                     <img class=" rounded-circle" src="assets/images/robot.svg" alt="">
+                                                 </div>
+                                                <div class="media-body">
+                                                     <p class="media-heading mb-0">Skipped! </p>
+                                                     <h4 class="text-muted">Correct answers: {{ messageData.correctAnswers.join(', ') }}</h4>
+                                                     <p class="media-heading mb-0" v-if="messageData.meaning">Meaning: {{ messageData.meaning }}</p>
+                                                 </div>
+                                             </div>
+                                         </li>
+                                           <li class="p-2 time-up" v-if="messageData.type === 'chat'">
+                                              <div class="media">
+                                                  <div class="pull-left thumb thumb-sm">
+                                                      <img class=" rounded-circle" src="assets/images/man.svg" alt="">
+                                                  </div>
+                                                  <div class="media-body">
+                                                      <p class="media-heading mb-0">{{ messageData.userName }}</p>
+                                                      <p class="media-heading mb-0">{{ messageData.message }} </p>
+                                                  </div>
+                                              </div>
+                                          </li>
+                                          <br>
+                                      </div>
+                                    </ul>
+
+
+
+
+                                    <div class="row mt-5">
+                                       <div class="card bg-white" style="width: 100%;">
+                                <h4 class="card-header">{{ instructions }}</h4>
+                                <div class="image-area">
+                                   <div>
+                                     <transition name="fade">
+                                       <img :src="imageDataUri" :key="imageDataUri" class="question-image">
+                                     </transition>
+
+                                    </div>
+                                </div>
+                            </div>
+                                    </div>
+
+                                    <form action="" id="chatform" v-on:submit.prevent="">
+                                      <div class="row mt-5">
+                                          <div class="col-sm-10">
+                                              <input type="text" class="form-control chat-input" autocomplete="off" id="m" placeholder="Enter your answer">
+                                          </div>
+                                          <div class="col-sm-1 px-1">
+                                              <button type="submit" class="btn btn-md btn-primary btn-block" v-on:click="send">Send</button>
+
+                                          </div>
+
+                                          <div class="col-sm-1 px-1">
+                                              <button type="submit" class="btn btn-md btn-primary btn-block" v-on:click="skip">Skip</button>
+
+                                          </div>
+                                      </div>
+                                  </form>
+                                </div>
+
+
+
+
+
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--end row-->
+                        </div>
+
+                         <div class="col-md-3">
+
+
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12">
+                                    <div class="card m-b-30 contact">
+                                        <div class="card-body">
+                                            <h6 class="header-title pb-3">Join Link</h6>
+                                            <code>{{ joinUri }}</code>
+
+                                            <br><br>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="card bg-white m-b-30">
+                                <div class="card-body new-user">
+                                        <h5 class="header-title mb-4">Players</h5>
+                                    <ul class="list-unstyled mb-0 pr-3" id="boxscroll">
+                                        <li class="p-2 border-b" v-for="player in players">
+                                            <div class="media">
+                                                <div class="pull-left thumb thumb-sm">
+                                                    <a href="#">
+                                                        <img class=" rounded-circle" src="assets/images/man.svg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <p class="media-heading mb-0">{{ player.name }}</p>
+                                                    <small class="pull-right text-muted score"> {{ player.score }}</small>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!--end row-->
+
+                </div><!--end container-->
+
+                <!--footer section start-->
+                <footer class="footer">
+                    2018 &copy; KotobaWeb.
+                </footer>
+                <!--footer section end-->
+
+
+
+            </div>
+            <!--end body content-->
+        </section>
+
+        <!-- jQuery -->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery-migrate.js"></script>
+        <script src="assets/js/modernizr.min.js"></script>
+        <script src="assets/js/jquery.slimscroll.min.js"></script>
+        <script src="assets/js/slidebars.min.js"></script>
+ <!-- rangeSlider -->
+        <script src="assets/plugins/ion-rangeslider/ion.rangeSlider.min.js"></script>
+        <script src="assets/plugins/ion-rangeslider/ui-sliders.js"></script>
+        <script src="assets/js/jquery.nicescroll.min.js" type="text/javascript"></script>
+
+        <!--app js-->
+        <script src="assets/js/jquery.app.js"></script>
+
+        <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+         <script src="game.js"></script>
+         <script src="gamejoiner.js"></script>
+
+    </body>
 </html>

@@ -24,26 +24,6 @@ function createRandomIndexSetForDecks(decks) {
   return indexSet;
 }
 
-function decompileCard(card) {
-  if (card.q) {
-    card.question = card.q;
-    delete card.q;
-  }
-  if (card.a) {
-    card.answer = card.a;
-    delete card.a;
-  }
-  if (card.m) {
-    card.meaning = card.m;
-    delete card.m;
-  }
-  if (card.p) {
-    card.pointsForAnswer = card.p;
-    delete card.p;
-  }
-  return card;
-}
-
 class DeckCollection {
   static createNewFromDecks(decks, gameMode) {
     let deckCollection = new DeckCollection();
@@ -88,12 +68,7 @@ class DeckCollection {
   }
 
   containsInternetCards() {
-    return this.decks_.some(deck => {
-      if (deck.isInternetDeck === undefined) {
-        return deck.cards.some(card => card.isInternetCard);
-      }
-      return deck.isInternetDeck;
-    });
+    return this.decks_.some(deck => deck.isInternetDeck);
   }
 
   getCachedPreviousCards() {
@@ -115,7 +90,25 @@ class DeckCollection {
     return true;
   }
 
-  popUndisplayedCard(settings) {
+  getAllUndisplayedCards() {
+    let undisplayedCards = [];
+     for (let deckIndex = 0; deckIndex < this.indexSet_.length; ++deckIndex) {
+       let deck = this.decks_[deckIndex];
+       let unseenCardIndices = this.indexSet_[deckIndex];
+
+       if (!deck.cards.memoryArray) {
+         throw new Error('Trying to get all undisplayed cards from a non-memory deck. That\'s too expensive!');
+       }
+
+       for (let cardIndex of unseenCardIndices) {
+         undisplayedCards.push(deck.cards.memoryArray[cardIndex]);
+       }
+     }
+
+     return undisplayedCards;
+  }
+
+  async popUndisplayedCard(settings) {
     if (this.isEmpty()) {
       return;
     }
@@ -139,11 +132,11 @@ class DeckCollection {
 
     let card = this.previousCardCache_[deckIndex][cardIndex];
     if (!card) {
-      let deckCard = this.decks_[deckIndex].cards[cardIndex];
+      let deckCard = await this.decks_[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings);
       }
-      card = decompileCard(deepCopy(deckCard));
+      card = deepCopy(deckCard);
     }
 
     if (!Array.isArray(card.answer)) {
@@ -206,7 +199,7 @@ class DeckCollection {
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
-    card = this.addOptionsAndModifyAnswer_(card);
+    card = await this.addOptionsAndModifyAnswer_(card);
 
     this.previousCardCache_[deckIndex][cardIndex] = card;
     return card;
@@ -239,7 +232,7 @@ class DeckCollection {
     return -1;
   }
 
-  addOptionsAndModifyAnswer_(card) {
+  async addOptionsAndModifyAnswer_(card) {
     if (!card.numberOfOptions || card.options) {
       return card;
     }
@@ -252,7 +245,7 @@ class DeckCollection {
       let randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
       let randomDeck = this.decks_[randomDeckIndex];
       let randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
-      let randomCard = randomDeck.cards[randomCardIndex];
+      let randomCard = await randomDeck.cards.get(randomCardIndex);
 
       if (randomCard) {
         let randomAnswer = randomCard.answer[0];
