@@ -17,7 +17,7 @@
   "cards": [
     {"question":"黙る","answer":["だまる"],"meaning":"to be silent"},
     {"meaning":"relation(ship)","question":"間柄","answer":["あいだがら"]},
-    {"meaning":"likes and dislikes","question":"愛憎","answer":["あいにく"]},
+    {"meaning":"likes and dislikes","question":"愛憎","answer":["あいぞう","あいにく"]},
     {"meaning":"to look up (to), to respect, to depend on, to ask for, to seek, to revere, to drink, to take","question":"仰ぐ","answer":["あおぐ"]},
     {"meaning":"suborder, subfamily","question":"亜科","answer":["あか"]},
     {"question":"籠","answer":["かご"],"meaning":"basket (shopping, etc.); hamper; cage"},
@@ -1294,7 +1294,7 @@
     {"meaning":"membrane, film","question":"膜","answer":["まく"]},
     {"meaning":"truth, faith, fidelity, sincerity, trust, confidence, reliance, devotion","question":"誠","answer":["まこと"]},
     {"meaning":"anaesthesia","question":"麻酔","answer":["ますい"]},
-    {"meaning":"wink, twinkling (of stars), flicker (of light)","question":"瞬き","answer":["またたき"]},
+    {"meaning":"wink, twinkling (of stars), flicker (of light)","question":"瞬き","answer":["またたき", "まばたき"]},
     {"meaning":"to escape from, to be rescued from, to avoid, to evade, to avert, to elude, to be exempted, to be relieved","question":"免れる","answer":["まぬかれる","まぬがれる"]},
     {"meaning":"eyebrow","question":"眉","answer":["まゆ"]},
     {"meaning":"ball","question":"鞠","answer":["まり"]},
