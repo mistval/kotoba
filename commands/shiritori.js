@@ -16,7 +16,7 @@ function throwIfSessionInProgress(locationId) {
     const message = {
       embed: {
         title: 'Game in progress',
-        description: 'There is already a game in progress. I can\'t start another, that would be confusing!',
+        description: 'There is already a game in progress. I can\'t start another, that would be confusing! You can stop the current game by saying **k!shiritori stop**.',
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
