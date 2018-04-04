@@ -1,4 +1,4 @@
-'use strict'
+
 module.exports = {
   commandAliases: ['k!invite'],
   canBeChannelRestricted: true,

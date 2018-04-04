@@ -1,16 +1,18 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const YoutubeApi = reload('./../kotoba/youtube_api_utils.js');
 const logger = reload('monochrome-bot').logger;
 const KotobaUtils = require('./../kotoba/utils.js');
+
 let videoUris = [];
 const PublicError = reload('monochrome-bot').PublicError;
 const apiKeys = reload('./../kotoba/api_keys.js');
 
 if (apiKeys.YOUTUBE) {
-  KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then(links => {
+  KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then((links) => {
     videoUris = links;
-  }).catch(err => {
+  }).catch((err) => {
     logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);
   });
 } else {
@@ -28,9 +30,9 @@ module.exports = {
     if (videoUris.length === 0) {
       throw PublicError.createWithCustomPublicMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.', true, 'Tracks not available');
     }
-    let random = Math.floor(Math.random() * videoUris.length);
-    let link = videoUris[random];
+    const random = Math.floor(Math.random() * videoUris.length);
+    const link = videoUris[random];
     msg.channel.createMessage(link, null, msg);
-    logger.logSuccess('YOUTUBE', 'Sent link: ' + link);
+    logger.logSuccess('YOUTUBE', `Sent link: ${link}`);
   },
 };
