@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const getRandomWord = reload('./../kotoba/get_random_word.js');
 const jishoWordSearch = reload('./../kotoba/jisho_word_search.js');
 const constants = reload('./../kotoba/constants.js');
@@ -25,14 +26,14 @@ function getRandomWordRecusive(suffix, msg, retriesRemaining) {
     logger.logFailure('RANDOM WORD', `Failed to get a random word ${NUMBER_OF_RETRIES} times`);
     return msg.channel.createMessage(createJishoNotRespondingResponse(msg), null, msg);
   }
-  let word = getRandomWord(suffix);
-  return jishoWordSearch('', '', word).then(data => {
+  const word = getRandomWord(suffix);
+  return jishoWordSearch('', '', word).then((data) => {
     if (!data.hasResults) {
       return getRandomWordRecusive(suffix, msg, retriesRemaining - 1);
     }
-    let navigation = jishoSearch.createNavigationForJishoResults(msg.author.username, msg.author.id, data);
+    const navigation = jishoSearch.createNavigationForJishoResults(msg.author.username, msg.author.id, data);
     navigationManager.register(navigation, 6000000, msg);
-  }).catch(err => {
+  }).catch((err) => {
     logger.logFailure('RANDOM WORD', `Failed to find ${word}`);
     return getRandomWordRecusive(suffix, msg, retriesRemaining - 1);
   });

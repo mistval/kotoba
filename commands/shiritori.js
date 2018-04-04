@@ -1,11 +1,13 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 const PublicError = reload('monochrome-bot').PublicError;
 const constants = reload('./../kotoba/constants.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
 const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
 const assert = require('assert');
+
 const logger = reload('monochrome-bot').logger;
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
@@ -31,9 +33,8 @@ function getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlay
     return `<@${previousPlayerId}> went and now it\'s my turn!`;
   } else if (previousPlayerWasBot) {
     return `I went and now it's <@${nextPlayerId}>'s turn!`;
-  } else {
-    return `<@${previousPlayerId}> went and now it's <@${nextPlayerId}>'s turn!`;
   }
+  return `<@${previousPlayerId}> went and now it's <@${nextPlayerId}>'s turn!`;
 }
 
 function createMarkdownLinkForWord(word) {
@@ -41,7 +42,7 @@ function createMarkdownLinkForWord(word) {
 }
 
 function createFieldForUsedWord(msg, wordInformation, scoreForUserId) {
-  let playerName = wordInformation.userName;
+  const playerName = wordInformation.userName;
   let readingPart = '';
   if (wordInformation.reading !== wordInformation.word) {
     readingPart = `(${wordInformation.reading})`;
@@ -50,14 +51,14 @@ function createFieldForUsedWord(msg, wordInformation, scoreForUserId) {
     name: `${playerName} (${scoreForUserId[wordInformation.userId]}) said`,
     value: `${createMarkdownLinkForWord(wordInformation.word)} ${readingPart}`,
     inline: true,
-  }
+  };
 }
 
 function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
-  let previousWord = wordHistory[wordHistory.length - 1];
-  let penultimateWord = wordHistory[wordHistory.length - 2];
+  const previousWord = wordHistory[wordHistory.length - 1];
+  const penultimateWord = wordHistory[wordHistory.length - 2];
 
-  let fields = [];
+  const fields = [];
   if (penultimateWord) {
     fields.push(createFieldForUsedWord(msg, penultimateWord, scoreForUserId));
   }
@@ -65,7 +66,7 @@ function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
   fields.push(createFieldForUsedWord(msg, previousWord, scoreForUserId));
 
   if (previousWord.meaning) {
-    fields.push({name: 'It Means', value: previousWord.meaning});
+    fields.push({ name: 'It Means', value: previousWord.meaning });
   }
 
   fields.push({
@@ -77,9 +78,7 @@ function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
 }
 
 function createScoresString(scoreForUserId) {
-  return Object.keys(scoreForUserId).map(userId => {
-    return `<@${userId}> has ${scoreForUserId[userId]} points`;
-  }).join('\n');
+  return Object.keys(scoreForUserId).map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
 }
 
 class DiscordClientDelegate {
@@ -91,7 +90,7 @@ class DiscordClientDelegate {
   botLeft(userId) {
     return this.commanderMessage_.channel.createMessage({
       embed: {
-        title: `I'm leaving!`,
+        title: 'I\'m leaving!',
         description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
@@ -101,7 +100,7 @@ class DiscordClientDelegate {
   botJoined(userId) {
     return this.commanderMessage_.channel.createMessage({
       embed: {
-        title: `I'm back!`,
+        title: 'I\'m back!',
         description: `<@${userId}> asked me to rejoin the game.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
@@ -119,7 +118,7 @@ class DiscordClientDelegate {
       } else if (arg.players[0]) {
         description = `<@${arg.players[0]}> is the last player standing, so I stopped. Congratulations!`;
       } else {
-        description = `There's no one left in the game, so I stopped!`;
+        description = 'There\'s no one left in the game, so I stopped!';
       }
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
@@ -132,7 +131,7 @@ class DiscordClientDelegate {
       wordHistoryString = wordHistoryString.substring(0, EMBED_FIELD_MAX_LENGTH - EMBED_TRUNCATION_REPLACEMENT.length) + EMBED_TRUNCATION_REPLACEMENT;
     }
 
-    let wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
+    const wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
     let embedFields;
     if (wordsUsedString) {
       embedFields = [{
@@ -148,7 +147,7 @@ class DiscordClientDelegate {
     return this.commanderMessage_.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
-        description: description,
+        description,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: embedFields,
       },
@@ -212,7 +211,7 @@ class DiscordClientDelegate {
         title: 'Player left',
         description: `<@${userId}> has left the game.`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      }
+      },
     });
   }
 
@@ -222,7 +221,7 @@ class DiscordClientDelegate {
     }
     if (inMs > 3500) {
       this.sendTypingTimeout = setTimeout(() => {
-        this.bot_.sendChannelTyping(this.commanderMessage_.channel.id).catch(err => {
+        this.bot_.sendChannelTyping(this.commanderMessage_.channel.id).catch((err) => {
           logger.logFailure('SHIRITORI', 'Failed to send typing', err);
         });
       }, inMs - 3000);
@@ -230,21 +229,21 @@ class DiscordClientDelegate {
   }
 
   playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot, scoreForUserId) {
-    let wordInformation = wordHistory[wordHistory.length - 1];
-    let previousPlayerId = wordInformation.userId;
-    let fields = [];
+    const wordInformation = wordHistory[wordHistory.length - 1];
+    const previousPlayerId = wordInformation.userId;
+    const fields = [];
     let content;
     if (previousPlayerWasBot && !nextPlayerIsBot) {
-      content = 'I say **' + wordInformation.word + '**!'
+      content = `I say **${wordInformation.word}**!`;
     }
-    let message = {
-      content: content,
+    const message = {
+      content,
       embed: {
         description: getDescriptionForTookTurnEmbed(previousPlayerId, nextPlayerId, nextPlayerIsBot, previousPlayerWasBot),
         fields: createFieldsForTookTurnEmbed(this.commanderMessage_, wordHistory, scoreForUserId),
         color: constants.EMBED_NEUTRAL_COLOR,
         footer: {
-          text: `Say 'join' to join!`,
+          text: 'Say \'join\' to join!',
           icon_url: constants.FOOTER_ICON_URI,
         },
       },
@@ -254,7 +253,7 @@ class DiscordClientDelegate {
   }
 
   answerRejected(input, rejectionReason) {
-    let message = {
+    const message = {
       embed: {
         title: `Answer Rejected (${input})`,
         description: rejectionReason,
@@ -298,13 +297,15 @@ module.exports = {
     throwIfSessionInProgress(locationId);
     const clientDelegate = new DiscordClientDelegate(bot, msg);
 
-    let suffixLowerCase = suffix.toLowerCase();
-    let removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
-    let botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
-    let botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
-    let answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
-    let settings = {answerTimeLimitInMs, botTurnMinimumWaitInMs, botTurnMaximumWaitInMs, removePlayerForRuleViolations};
-    let scoreScopeId = getScoreScopeIdForMessage(msg);
+    const suffixLowerCase = suffix.toLowerCase();
+    const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
+    const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
+    const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
+    const answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
+    const settings = {
+      answerTimeLimitInMs, botTurnMinimumWaitInMs, botTurnMaximumWaitInMs, removePlayerForRuleViolations,
+    };
+    const scoreScopeId = getScoreScopeIdForMessage(msg);
 
     const session = new ShiritoriSession(msg.author.id, msg.author.username, clientDelegate, new JapaneseGameStrategy(), locationId, settings);
     return shiritoriManager.startSession(session, scoreScopeId);

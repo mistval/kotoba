@@ -1,6 +1,7 @@
-'use strict'
+
 const reload = require('require-reload')(require);
-const request = require('request-promise').defaults({encoding: null});
+const request = require('request-promise').defaults({ encoding: null });
+
 const logger = reload('monochrome-bot').logger;
 const PublicError = reload('monochrome-bot').PublicError;
 
@@ -20,15 +21,13 @@ module.exports = {
     return request({
       uri: suffix,
       json: false,
-      resolveWithFullResponse: true
-    }).then(response => {
-      let dataUri = 'data:image/' + response.headers['content-type'] + ';base64,' + new Buffer(response.body).toString('base64');
-      return bot.editSelf({avatar: dataUri}).then(() => {
-        return msg.channel.createMessage('Avatar updated!');
-      }).catch(err => {
+      resolveWithFullResponse: true,
+    }).then((response) => {
+      const dataUri = `data:image/${response.headers['content-type']};base64,${new Buffer(response.body).toString('base64')}`;
+      return bot.editSelf({ avatar: dataUri }).then(() => msg.channel.createMessage('Avatar updated!')).catch((err) => {
         throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);
       });
-    }).catch(err => {
+    }).catch((err) => {
       throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);
     });
   },

@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const PublicError = reload('monochrome-bot').PublicError;
 
 let heapDump;
@@ -24,13 +25,13 @@ module.exports = {
     if (!suffix) {
       suffix = undefined;
     } else {
-      suffix = suffix + '.heapsnapshot';
+      suffix += '.heapsnapshot';
     }
     heapDump.writeSnapshot(suffix, (err, filename) => {
       if (err) {
-        msg.channel.createMessage('Error creating heap dump: ' + err);
+        msg.channel.createMessage(`Error creating heap dump: ${err}`);
       } else {
-        msg.channel.createMessage('Heap dump written to file: ' + filename + '. You can inspect it with Chrome developer tools.');
+        msg.channel.createMessage(`Heap dump written to file: ${filename}. You can inspect it with Chrome developer tools.`);
       }
     });
   },

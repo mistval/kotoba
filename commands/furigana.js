@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const textRenderer = reload('./../kotoba/render_text.js');
 const PublicError = reload('monochrome-bot').PublicError;
 
@@ -20,8 +21,6 @@ module.exports = {
     if (suffix.length > 200) {
       throw PublicError.createWithCustomPublicMessage('Two hundred characters or fewer please :)', true, 'Too long');
     }
-    return textRenderer.renderJapaneseWithFurigana(suffix).then(buffer => {
-      return msg.channel.createMessage('', {name: 'furigana.png', file: buffer}, msg);
-    });
+    return textRenderer.renderJapaneseWithFurigana(suffix).then(buffer => msg.channel.createMessage('', { name: 'furigana.png', file: buffer }, msg));
   },
 };
