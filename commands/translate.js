@@ -1,11 +1,9 @@
-
 const reload = require('require-reload')(require);
 
-const glosbeApi = reload('./../kotoba/glosbe_word_search.js');
 const translateQuery = reload('./../kotoba/translate_query.js');
 const googleTranslate = reload('./../kotoba/google_translate_utils.js');
 const prettyLanguageForLanguageCode = reload('./../kotoba/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
-const PublicError = reload('monochrome-bot').PublicError;
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
 
 function createUnknownLanguageCodeString(languageCode) {
   return `I don't recognize the language code **${languageCode}**. Say 'k!help translate' for a list of supported languages.`;
@@ -26,6 +24,10 @@ ${supportedLanguageString}
 `;
 }
 
+function throwPublicError(publicMessage, logMessage) {
+  return throwPublicErrorInfo('Translate', publicMessage, logMessage);
+}
+
 module.exports = {
   commandAliases: ['k!translate', 'k!trans', 'k!gt', 'k!t'],
   aliasesForHelp: ['k!translate', 'k!t'],
@@ -35,65 +37,92 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: 'k!translate 吾輩は猫である',
-  action(bot, msg, suffix, settings, extension) {
+  action: async function action(bot, msg, suffix, settings, extension) {
     if (!suffix && (!extension || extension === '-')) {
-      throw PublicError.createWithCustomPublicMessage('Say \'k!translate [text]\' to translate text. Say \'k!help translate\' for help.', false, 'No suffix');
+      return throwPublicError('Say **k!translate yourtexthere** to translate text. Say **k!help translate** for help.', 'No suffix');
     }
-    let fromLanguageCode;
-    let toLanguageCode;
+
+    let firstLanguageCode;
+    let secondLanguageCode;
+
     if (extension) {
       const languagePart = extension.replace('-', '');
       let languages = languagePart.split('/');
+
       if (languagePart.indexOf('>') !== -1) {
         languages = languagePart.split('>');
       }
-      fromLanguageCode = languages[0];
-      toLanguageCode = languages[1];
+
+      [firstLanguageCode, secondLanguageCode] = languages;
     }
-    fromLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(fromLanguageCode) || fromLanguageCode;
-    toLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(toLanguageCode) || toLanguageCode;
-    const fromLanguagePretty = googleTranslate.getPrettyLanguageForLanguageCode(fromLanguageCode);
-    const toLanguagePretty = googleTranslate.getPrettyLanguageForLanguageCode(toLanguageCode);
-    if (!toLanguagePretty && toLanguageCode) {
-      throw PublicError.createWithCustomPublicMessage(createUnknownLanguageCodeString(toLanguageCode), false, 'Unknown language');
-    } else if (!fromLanguagePretty && fromLanguageCode) {
-      throw PublicError.createWithCustomPublicMessage(createUnknownLanguageCodeString(fromLanguageCode), false, 'Unknown language');
+
+    // In case the user specified pretty language names instead of language codes,
+    // convert those to language codes.
+    firstLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(firstLanguageCode)
+      || firstLanguageCode;
+    secondLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(secondLanguageCode)
+      || secondLanguageCode;
+
+    const firstLanguagePretty =
+      googleTranslate.getPrettyLanguageForLanguageCode(firstLanguageCode);
+    const secondLanguagePretty =
+      googleTranslate.getPrettyLanguageForLanguageCode(secondLanguageCode);
+
+    // If we couldn't find a pretty language corresponding to the language code, we don't
+    // know that language. Error.
+    if (!secondLanguagePretty && secondLanguageCode) {
+      return throwPublicError(createUnknownLanguageCodeString(secondLanguageCode), 'Unknown language');
+    }
+
+    if (!firstLanguagePretty && firstLanguageCode) {
+      return throwPublicError(createUnknownLanguageCodeString(firstLanguageCode), 'Unknown language');
     }
 
     if (!suffix) {
       let errorMessage;
-      if (fromLanguagePretty && toLanguagePretty) {
-        errorMessage = `Say 'k!translate-${fromLanguageCode}>${toLanguageCode} [text]' to translate text from ${fromLanguagePretty} to ${toLanguagePretty}.`;
-      } else if (fromLanguagePretty) {
-        errorMessage = `Say 'k!translate-${fromLanguageCode} [text]' to translate text to or from ${fromLanguagePretty}.`;
+
+      if (firstLanguagePretty && secondLanguagePretty) {
+        errorMessage = `Say **k!translate-${firstLanguageCode}>${secondLanguageCode} yourtexthere** to translate text from ${firstLanguagePretty} to ${secondLanguagePretty}.`;
+      } else if (firstLanguagePretty) {
+        errorMessage = `Say **k!translate-${firstLanguageCode} yourtexthere** to translate text to or from ${firstLanguagePretty}.`;
       }
-      throw PublicError.createWithCustomPublicMessage(errorMessage, false, 'No suffix');
+
+      return throwPublicError(errorMessage, 'No suffix');
     }
 
-    if (toLanguageCode) {
-      return translateQuery(suffix, fromLanguageCode, toLanguageCode, googleTranslate.translate, bot, msg);
-    }
-    return googleTranslate.detectLanguage(suffix).then((languageCode) => {
-      if (languageCode === 'und' || !googleTranslate.getPrettyLanguageForLanguageCode(languageCode)) {
-        languageCode = 'en';
+    if (!secondLanguageCode) {
+      let detectedLanguageCode = await googleTranslate.detectLanguage(suffix);
+
+      if (detectedLanguageCode === 'und' || !googleTranslate.getPrettyLanguageForLanguageCode(detectedLanguageCode)) {
+        detectedLanguageCode = 'en';
       }
-      if (languageCode === 'zh-CN' || languageCode === 'zh-TW') {
-        languageCode = 'ja';
+
+      if (detectedLanguageCode === 'zh-CN' || detectedLanguageCode === 'zh-TW') {
+        detectedLanguageCode = 'ja';
       }
-      if (fromLanguageCode !== languageCode) {
-        toLanguageCode = fromLanguageCode;
-        fromLanguageCode = languageCode;
+
+      if (firstLanguageCode !== detectedLanguageCode) {
+        secondLanguageCode = firstLanguageCode;
+        firstLanguageCode = detectedLanguageCode;
       }
-      if (!toLanguageCode) {
-        if (fromLanguageCode === 'en') {
-          toLanguageCode = 'ja';
+
+      if (!secondLanguageCode) {
+        if (firstLanguageCode === 'en') {
+          secondLanguageCode = 'ja';
         } else {
-          toLanguageCode = 'en';
+          secondLanguageCode = 'en';
         }
       }
+    }
 
-      return translateQuery(suffix, fromLanguageCode, toLanguageCode, googleTranslate.translate, bot, msg);
-    });
+    return translateQuery(
+      suffix,
+      firstLanguageCode,
+      secondLanguageCode,
+      googleTranslate.translate,
+      bot,
+      msg,
+    );
   },
   canHandleExtension(extension) {
     return extension.startsWith('-');
