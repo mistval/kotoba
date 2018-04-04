@@ -22,6 +22,7 @@
     "canvas": "^1.6.7",
     "disk-array": "git+https://github.com/mistval/array-on-disk.git",
     "eris": "git+https://github.com/mistval/eris.git#patches",
+    "eslint": "^4.19.1",
     "express": "^4.16.2",
     "html-entities": "^1.2.1",
     "htmlparser": "^1.7.7",
@@ -36,6 +37,8 @@
     "unofficial-jisho-api": "^1.0.0"
   },
   "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
     "heapdump": "^0.3.9"
   }
 }
