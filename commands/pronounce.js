@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
 const constants = reload('./../kotoba/constants.js');
 const NavigationChapter = reload('monochrome-bot').NavigationChapter;
@@ -21,15 +22,15 @@ function createEmbedContent() {
 }
 
 function createNotFoundResult(msg, pronounceInfo) {
-  let content = createEmbedContent();
-  let query = pronounceInfo.query;
+  const content = createEmbedContent();
+  const query = pronounceInfo.query;
   content.embed.description = `I didn't find any results for **${query}**.`;
 
   return msg.channel.createMessage(content, null, msg);
 }
 
 function createNoSuffixResult(msg) {
-  let content = createEmbedContent();
+  const content = createEmbedContent();
   content.embed.description = 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**';
 
   return msg.channel.createMessage(content, null, msg);
@@ -39,8 +40,8 @@ function underlineStringAtTrueIndices(string, indices) {
   let underline = false;
   let outString = '';
   for (let i = 0; i < string.length; ++i) {
-    let char = string[i];
-    let shouldUnderline = indices[i];
+    const char = string[i];
+    const shouldUnderline = indices[i];
     if (shouldUnderline === underline) {
       outString += char;
     } else if (!shouldUnderline && underline) {
@@ -60,15 +61,15 @@ function underlineStringAtTrueIndices(string, indices) {
 }
 
 function createLHString(pronounceInfo) {
-  return pronounceInfo.pitchAccent.map(bool => bool ? 'H' : 'L').join('  ');
+  return pronounceInfo.pitchAccent.map(bool => (bool ? 'H' : 'L')).join('  ');
 }
 
 function addPitchField(fields, pronounceInfo) {
   if (pronounceInfo.pitchAccent.length > 0) {
-    let katakana = pronounceInfo.katakana;
-    let underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
-    let lhString = createLHString(pronounceInfo);
-    let fieldValue = `${underlinedKana}\n ${lhString}`;
+    const katakana = pronounceInfo.katakana;
+    const underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
+    const lhString = createLHString(pronounceInfo);
+    const fieldValue = `${underlinedKana}\n ${lhString}`;
     fields.push({
       name: 'Pitch',
       value: fieldValue,
@@ -79,7 +80,7 @@ function addPitchField(fields, pronounceInfo) {
 
 function addMutedSoundsField(fields, pronounceInfo) {
   if (pronounceInfo.noPronounceIndices.length > 0) {
-    let katakana = pronounceInfo.katakana;
+    const katakana = pronounceInfo.katakana;
     fields.push({
       name: 'Muted sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.noPronounceIndices),
@@ -90,7 +91,7 @@ function addMutedSoundsField(fields, pronounceInfo) {
 
 function addNasalSoundsField(fields, pronounceInfo) {
   if (pronounceInfo.nasalPitchIndices.length > 0) {
-    let katakana = pronounceInfo.katakana;
+    const katakana = pronounceInfo.katakana;
     fields.push({
       name: 'Nasal sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.nasalPitchIndices),
@@ -101,10 +102,8 @@ function addNasalSoundsField(fields, pronounceInfo) {
 
 function addAudioClipsField(fields, forvoData) {
   if (forvoData.found) {
-    let audioClips = forvoData.audioClips;
-    let audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => {
-      return `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`;
-    }).join('\n');
+    const audioClips = forvoData.audioClips;
+    const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
 
     fields.push({
       name: 'Audio Clips',
@@ -130,8 +129,8 @@ class PronunciationDataSource {
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
-    let entry = this.pronounceInfo_.entries[pageIndex];
-    let numberOfPages = this.pronounceInfo_.entries.length;
+    const entry = this.pronounceInfo_.entries[pageIndex];
+    const numberOfPages = this.pronounceInfo_.entries.length;
     if (!entry) {
       return;
     }
@@ -141,10 +140,10 @@ class PronunciationDataSource {
       pagesString = `(page ${pageIndex + 1} of ${numberOfPages})`;
     }
 
-    let content = createEmbedContent();
-    let embed = content.embed;
-    let word = this.getWordForTitle(entry);
-    let uriEncodedWord = encodeURIComponent(word);
+    const content = createEmbedContent();
+    const embed = content.embed;
+    const word = this.getWordForTitle(entry);
+    const uriEncodedWord = encodeURIComponent(word);
     embed.title = `Pronunciation information for ${word} ${pagesString}`;
     embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
 
@@ -154,7 +153,7 @@ class PronunciationDataSource {
     addNasalSoundsField(embed.fields, entry);
 
     try {
-      let forvoData = await entry.getAudioClips();
+      const forvoData = await entry.getAudioClips();
       addAudioClipsField(embed.fields, forvoData, this.pronounceInfo_);
     } catch (err) {
       logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
@@ -172,12 +171,12 @@ class PronunciationDataSource {
 }
 
 function createFoundResult(msg, pronounceInfo) {
-  let navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo);
-  let navigationChapter = new NavigationChapter(navigationDataSource);
-  let chapterForEmojiName = {a: navigationChapter};
-  let hasMultiplePages = pronounceInfo.entries.length > 1;
-  let authorId = msg.author.id;
-  let navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
+  const navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo);
+  const navigationChapter = new NavigationChapter(navigationDataSource);
+  const chapterForEmojiName = { a: navigationChapter };
+  const hasMultiplePages = pronounceInfo.entries.length > 1;
+  const authorId = msg.author.id;
+  const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
   return navigationManager.register(navigation, NAVIGATION_EXPIRATION_TIME, msg);
 }
 
@@ -188,12 +187,12 @@ module.exports = {
   uniqueId: 'pronounce30294',
   shortDescription: 'Look up information about how to pronounce a Japanese word.',
   usageExample: 'k!pronounce 瞬間',
-  action: async function(bot, msg, suffix) {
+  async action(bot, msg, suffix) {
     if (!suffix) {
       return createNoSuffixResult(msg);
     }
 
-    let pronounceInfo = await getPronounceInfo(suffix);
+    const pronounceInfo = await getPronounceInfo(suffix);
     if (!pronounceInfo.found) {
       return createNotFoundResult(msg, pronounceInfo);
     }

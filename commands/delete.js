@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const PublicError = reload('monochrome-bot').PublicError;
 
 /**
@@ -17,7 +18,7 @@ module.exports = {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.', false, 'No suffix');
     }
-    let parts = suffix.split(' ');
+    const parts = suffix.split(' ');
     return bot.deleteMessage(parts[0], parts[1]);
   },
 };

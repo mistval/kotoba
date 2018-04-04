@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const PublicError = reload('monochrome-bot').PublicError;
 
 /**
@@ -14,8 +15,8 @@ module.exports = {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No suffix');
     }
-    let result = eval(suffix);
-    let text = JSON.stringify(result, null, 2);
-    return msg.channel.createMessage('```js\n' + text + '\n```', null, msg);
+    const result = eval(suffix);
+    const text = JSON.stringify(result, null, 2);
+    return msg.channel.createMessage(`\`\`\`js\n${text}\n\`\`\``, null, msg);
   },
 };

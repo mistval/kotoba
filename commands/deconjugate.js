@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const PublicError = reload('monochrome-bot').PublicError;
 const Conjugator = require('jp-verbs');
 const constants = require('./../kotoba/constants.js');
@@ -242,27 +243,27 @@ module.exports = {
       throw PublicError.createWithCustomPublicMessage('Sorry, that\'s too long.', true, 'too long');
     }
     console.time('deconjugate');
-    let results = Conjugator.unconjugate(suffix, true);
+    const results = Conjugator.unconjugate(suffix, true);
     if (results.length === 0) {
       throw PublicError.createWithCustomPublicMessage('I couldn\'t deconjugate that verb.', false, 'no results');
     }
 
-    let bestResult = results[0];
-    let sequence = bestResult.currentDerivationSequence;
-    let path = bestResult.derivationPath;
-    let baseWord = sequence.shift();
-    let embed = {};
-    embed.title = 'Deconjugation of ' + suffix;
+    const bestResult = results[0];
+    const sequence = bestResult.currentDerivationSequence;
+    const path = bestResult.derivationPath;
+    const baseWord = sequence.shift();
+    const embed = {};
+    embed.title = `Deconjugation of ${suffix}`;
     embed.color = constants.EMBED_NEUTRAL_COLOR;
-    embed.description = '-\nStart with ' + baseWord + '\n\n';
+    embed.description = `-\nStart with ${baseWord}\n\n`;
     for (let i = 0; i < sequence.length; ++i) {
       if (linkForDerivationStep[path[i]]) {
-        embed.description += '[**+ ' + titleForDerivationStep[path[i]] + '**](' + linkForDerivationStep[path[i]] + ')';
+        embed.description += `[**+ ${titleForDerivationStep[path[i]]}**](${linkForDerivationStep[path[i]]})`;
       } else {
-        embed.description += '**+ ' + titleForDerivationStep[path[i]] + '**';
+        embed.description += `**+ ${titleForDerivationStep[path[i]]}**`;
       }
       embed.description += '\n';
-      embed.description += sequence[i] + '\n\n';
+      embed.description += `${sequence[i]}\n\n`;
 
       if (i === sequence.length - 1 && sequence[i] !== suffix) {
         embed.description += '+ Unknown\n';
@@ -270,8 +271,8 @@ module.exports = {
       }
     }
 
-    embed.footer = {icon_url: constants.FOOTER_ICON_URI, text: 'This feature is in alpha. Please report bugs at https://discord.gg/zkAKbyJ'};
+    embed.footer = { icon_url: constants.FOOTER_ICON_URI, text: 'This feature is in alpha. Please report bugs at https://discord.gg/zkAKbyJ' };
     console.timeEnd('deconjugate');
-    return msg.channel.createMessage({embed: embed}, null, msg);
+    return msg.channel.createMessage({ embed }, null, msg);
   },
 };
