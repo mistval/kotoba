@@ -21,8 +21,12 @@ class Score {
 }
 
 async function getScores(serverId, deckName) {
-  const data = await persistence.getGlobalData();
   const deckUniqueId = uniqueIdForDeckName[deckName];
+  if (deckName && !deckUniqueId) {
+    return undefined;
+  }
+
+  const data = await persistence.getGlobalData();
 
   if (!data.quizScores) {
     return [];
