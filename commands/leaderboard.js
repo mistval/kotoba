@@ -60,27 +60,63 @@ function sendScores(bot, msg, scores, title, description, footer) {
   return msg.channel.createMessage(content, null, msg);
 }
 
+function notifyDeckNotFound(msg, isGlobal, deckName) {
+  const content = {
+    embed: {
+      title: 'Leaderboard',
+      description: `I don't have a deck named **${deckName}**.`,
+      color: constants.EMBED_WRONG_COLOR,
+    },
+  };
+
+  return msg.channel.createMessage(content);
+}
+
 module.exports = {
   commandAliases: ['k!lb', 'k!leaderboard'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'leaderboard409359',
-  action(bot, msg, suffix) {
+  action: async function action(bot, msg, suffix) {
     let title = '';
     let footer = {};
     let description = '';
+    let scores;
 
-    if (!suffix && msg.channel.guild) {
-      title = `Server leaderboard for **${msg.channel.guild.name}**`;
+    let suffixReplaced = suffix.toLowerCase();
+    const isGlobal = suffixReplaced.indexOf('global') !== -1 || !msg.channel.guild;
+
+    suffixReplaced = suffixReplaced.replace(/global/g, '');
+    const deckName = suffixReplaced.trim();
+
+    const deckNameTitlePart = deckName ? ` (${deckName})` : '';
+
+    if (isGlobal) {
+      title = `Global leaderboard ${deckNameTitlePart}`;
+      description = 'The top scorers in the whole wide world.';
+
+      if (!deckName) {
+        footer = {
+          text: 'Say \'k!lb global N1\' to see the global N1 leaderboard.',
+          icon_url: constants.FOOTER_ICON_URI,
+        };
+      }
+
+      scores = await ScoreStorageUtils.getGlobalScores(deckName);
+    } else {
+      title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNameTitlePart}`;
       description = 'The top scorers in this server.';
       footer = {
-        text: 'Say \'k!lb global\' to see the global leaderboard.',
+        text: 'Say \'k!lb global\' to see the global leaderboard. \'k!lb N1\' to see the N1 leaderboard.',
         icon_url: constants.FOOTER_ICON_URI,
       };
-      return ScoreStorageUtils.getServerScores(msg.channel.guild.id).then(scores => sendScores(bot, msg, scores, title, description, footer));
+      scores = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckName);
     }
-    title = 'Global leaderboard';
-    description = 'The top scorers in the whole wide world.';
-    return ScoreStorageUtils.getGlobalScores().then(scores => sendScores(bot, msg, scores, title, description));
+
+    if (!scores) {
+      return notifyDeckNotFound(msg, isGlobal, deckName);
+    }
+
+    return sendScores(bot, msg, scores, title, description, footer);
   },
 };
