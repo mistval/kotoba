@@ -1,23 +1,19 @@
-
 const reload = require('require-reload')(require);
+const state = require('./../kotoba/static_state.js');
+const assert = require('assert');
 
 const quizManager = reload('./../kotoba/quiz/manager.js');
-const content = reload('./../kotoba/quiz/decks_content.js').content;
-const getCategoryHelp = reload('./../kotoba/quiz/decks_content.js').getHelpForCategory;
+const helpContent = reload('./../kotoba/quiz/decks_content.js').content;
 const constants = reload('./../kotoba/constants.js');
-const logger = reload('monochrome-bot').logger;
-const PublicError = reload('monochrome-bot').PublicError;
+const { logger, PublicError } = reload('monochrome-bot');
 const NormalGameMode = reload('./../kotoba/quiz/normal_mode.js');
 const MasteryGameMode = reload('./../kotoba/quiz/mastery_mode.js');
 const ConquestGameMode = reload('./../kotoba/quiz/conquest_mode.js');
 const ReviewGameMode = reload('./../kotoba/quiz/review_mode.js');
 const saveManager = reload('./../kotoba/quiz/pause_manager.js');
 const deckLoader = reload('./../kotoba/quiz/deck_loader.js');
-const assert = require('assert');
-
 const DeckCollection = reload('./../kotoba/quiz/deck_collection.js');
 const Session = reload('./../kotoba/quiz/session.js');
-const state = require('./../kotoba/static_state.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const embedFieldMaxLength = 1020; // It's actually 1024 but let's leave a little room.
@@ -29,20 +25,31 @@ const CONQUEST_MODE_DISABLED_STRING = 'Inferno Mode is not enabled in this chann
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_EXTENSION = '-conquest';
 const CONQUEST_EXTENSION = '-inferno';
+const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
 
 function trimEmbedFields(content) {
   if (!content || !content.embed || !content.embed.fields || content.embed.fields.length === 0) {
     return content;
   }
-  const fields = content.embed.fields;
-  for (const field of fields) {
-    if (field.value.length > embedFieldMaxLength) {
-      field.value = field.value.substring(0, embedFieldMaxLength - embedFieldTrimReplacement.length);
-      field.value += embedFieldTrimReplacement;
-    }
-  }
 
-  return content;
+  const contentCopy = Object.assign({}, content);
+  const { fields } = contentCopy.embed;
+
+  contentCopy.fields = fields.map((field) => {
+    const fieldCopy = Object.assign({}, field);
+    if (fieldCopy.value.length > embedFieldMaxLength) {
+      fieldCopy.value = fieldCopy.value.substring(
+        0,
+        embedFieldMaxLength - embedFieldTrimReplacement.length,
+      );
+
+      fieldCopy.value += embedFieldTrimReplacement;
+    }
+
+    return fieldCopy;
+  });
+
+  return contentCopy;
 }
 
 function createTitleOnlyEmbedWithColor(title, color) {
@@ -83,7 +90,11 @@ const FinalAnswerListElementStrategy = {
 
 function truncateIntermediateAnswerString(str) {
   if (str.length > MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH) {
-    return str.substring(0, MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH - intermediateAnswerTruncationReplacement.length) + intermediateAnswerTruncationReplacement;
+    const substringStart = 0;
+    const substringEnd = MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH -
+      INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT.length;
+
+    return str.substring(substringStart, substringEnd) + INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT;
   }
   return str;
 }
@@ -92,31 +103,35 @@ function getIntermediateAnswerLineForCorrectAnswers(card) {
   return truncateIntermediateAnswerString(card.answer.join('\n'));
 }
 
-const intermediateAnswerTruncationReplacement = ' [...]';
-
-function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(card, answersForUser, pointsForAnswer) {
+function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(
+  card,
+  answersForUser,
+  pointsForAnswer,
+) {
   const userIds = Object.keys(answersForUser);
-  const answers = card.answer;
   const lines = [];
-  for (const userId of userIds) {
+
+  userIds.forEach((userId) => {
     const answers = answersForUser[userId];
-    for (const answer of answers) {
+    answers.forEach((answer) => {
       const point = pointsForAnswer[answer];
       lines.push(`${answer} (<@${userId}> got ${point} points)`);
-    }
-  }
+    });
+  });
 
-  let scorersString = lines.join('\n');
-  let totalString = scorersString += '\n\n';
+  const scorersString = lines.join('\n');
+  let totalString = `${scorersString}\n\n`;
 
+  const answers = card.answer;
   let nextAnswerIndex = 0;
   while (true) {
     if (nextAnswerIndex >= answers.length) {
       break;
     }
     const nextAnswer = answers[nextAnswerIndex];
-    ++nextAnswerIndex;
-    if (totalString.length + nextAnswer.length + 3 > MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH) {
+    const stringLengthWithNextAnswer = totalString.length + nextAnswer.length + 3;
+    nextAnswerIndex += 1;
+    if (stringLengthWithNextAnswer > MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH) {
       break;
     }
 
@@ -135,8 +150,10 @@ function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(card, answ
 }
 
 const IntermediateAnswerListElementStrategy = {
-  CORRECT_ANSWERS: getIntermediateAnswerLineForCorrectAnswers,
-  ANSWERS_WITH_SCORERS_AND_POINTS_FIRST: getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst,
+  CORRECT_ANSWERS:
+    getIntermediateAnswerLineForCorrectAnswers,
+  ANSWERS_WITH_SCORERS_AND_POINTS_FIRST:
+    getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst,
 };
 
 function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description) {
@@ -154,17 +171,26 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
   }
 
   if (unansweredQuestions.length > 0) {
-    const unansweredQuestionsLines = unansweredQuestions.map(card => FinalAnswerListElementStrategy[card.discordFinalAnswerListElementStrategy](card));
+    const unansweredQuestionsLines = unansweredQuestions.map(card =>
+      FinalAnswerListElementStrategy[card.discordFinalAnswerListElementStrategy](card));
 
     let unansweredQuestionsCharacters = 0;
     const separator = '\n';
-    for (let i = 0; i < unansweredQuestionsLines.length; ++i) {
+    for (let i = 0; i < unansweredQuestionsLines.length; i += 1) {
       unansweredQuestionsCharacters += unansweredQuestionsLines[i].length + separator.length;
-      if (unansweredQuestionsCharacters > constants.MAXIMUM_FIELD_LENGTH || i >= MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED) {
+      if (
+        unansweredQuestionsCharacters > constants.MAXIMUM_FIELD_LENGTH ||
+        i >= MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED
+      ) {
         const moreString = '...More...';
 
         // Pop off the last lines until it's small enough.
-        while (unansweredQuestionsLines.join(separator).length + separator.length + moreString.length > constants.MAXIMUM_FIELD_LENGTH) {
+        while (
+          unansweredQuestionsLines.join(separator).length +
+          separator.length +
+          moreString.length >
+          constants.MAXIMUM_FIELD_LENGTH
+        ) {
           unansweredQuestionsLines.pop();
         }
         unansweredQuestionsLines.push(moreString);
@@ -238,14 +264,40 @@ function createAfterQuizMessage(canReview) {
   return afterQuizMessages[index];
 }
 
-function sendEndQuizMessages(bot, channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description) {
-  const endQuizMessage = createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description);
+function sendEndQuizMessages(
+  bot,
+  channelId,
+  quizName,
+  scores,
+  unansweredQuestions,
+  aggregateLink,
+  canReview,
+  description,
+) {
+  const endQuizMessage = createEndQuizMessage(
+    quizName,
+    scores,
+    unansweredQuestions,
+    aggregateLink,
+    description,
+  );
+
   return bot.createMessage(channelId, endQuizMessage).then(() => {
     const afterQuizMessage = createAfterQuizMessage(canReview);
     if (afterQuizMessage) {
       return bot.createMessage(channelId, createAfterQuizMessage(canReview));
     }
+
+    return Promise.resolve();
   });
+}
+
+function convertDatabaseFacingSaveIdToUserFacing(saveId) {
+  return saveId + 1;
+}
+
+function convertUserFacingSaveIdToDatabaseFacing(saveId) {
+  return saveId - 1;
 }
 
 function sendSaveMementos(msg, saveMementos, extraContent) {
@@ -269,20 +321,22 @@ function createCorrectPercentageField(card) {
   const totalAnswers = card.answerHistory.length;
   const totalCorrect = card.answerHistory.reduce((a, b) => (b ? a + 1 : a), 0);
   if (totalAnswers > 1) {
-    const percentage = Math.floor(totalCorrect / totalAnswers * 100);
+    const percentage = Math.floor((totalCorrect / totalAnswers) * 100);
     return { name: 'Correct Answers', value: `${percentage}%`, inline: true };
   }
+
+  return undefined;
 }
 
 class DiscordMessageSender {
   constructor(bot, channelId) {
-    this.bot_ = bot;
-    this.channelId_ = channelId;
+    this.bot = bot;
+    this.channelId = channelId;
   }
 
   notifyStarting(inMs, quizName, quizArticle) {
     const inSeconds = inMs / 1000;
-    return this.bot_.createMessage(this.channelId_, `Starting ${quizArticle} **${quizName}** in ${inSeconds} seconds!`);
+    return this.bot.createMessage(this.channelId, `Starting ${quizArticle} **${quizName}** in ${inSeconds} seconds!`);
   }
 
   showWrongAnswer(card, skipped) {
@@ -310,7 +364,7 @@ class DiscordMessageSender {
       },
     };
     response = trimEmbedFields(response);
-    return this.bot_.createMessage(this.channelId_, response);
+    return this.bot.createMessage(this.channelId, response);
   }
 
   outputQuestionScorers(card, answerersInOrder, answersForUser, pointsForAnswer, scoreForUser) {
@@ -341,7 +395,7 @@ class DiscordMessageSender {
     };
 
     response = trimEmbedFields(response);
-    return this.bot_.createMessage(this.channelId_, response).then(newMessage => newMessage && newMessage.id);
+    return this.bot.createMessage(this.channelId, response).then(newMessage => newMessage && newMessage.id);
   }
 
   showQuestion(question, questionId) {
@@ -379,52 +433,52 @@ class DiscordMessageSender {
 
     content = trimEmbedFields(content);
     if (!questionId) {
-      return this.bot_.createMessage(this.channelId_, content, uploadInformation).then(msg => msg.id);
+      return this.bot.createMessage(this.channelId, content, uploadInformation).then(msg => msg.id);
     }
-    return this.bot_.editMessage(this.channelId_, questionId, content, uploadInformation);
+    return this.bot.editMessage(this.channelId, questionId, content, uploadInformation);
   }
 
   notifySaveSuccessful() {
-    return this.bot_.createMessage(this.channelId_, createTitleOnlyEmbed('The quiz has been saved and paused! Say \'k!quiz load\' later to start it again.'));
+    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('The quiz has been saved and paused! Say \'k!quiz load\' later to start it again.'));
   }
 
   notifySaveFailedNoSpace(maxSaves) {
-    return this.bot_.createMessage(this.channelId_, createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying 'k!quiz load'.`));
+    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying 'k!quiz load'.`));
   }
 
   notifySaveFailedIsReview() {
-    return this.bot_.createMessage(this.channelId_, createTitleOnlyEmbed('You can\'t save a review quiz.'));
+    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('You can\'t save a review quiz.'));
   }
 
   notifySaving() {
-    return this.bot_.createMessage(this.channelId_, createTitleOnlyEmbed('Saving at the next opportunity.'));
+    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('Saving at the next opportunity.'));
   }
 
   notifySaveFailedNotOwner() {
-    return this.bot_.createMessage(
-      this.channelId_,
+    return this.bot.createMessage(
+      this.channelId,
       createTitleOnlyEmbed('Only the person who started the quiz can save it. Maybe ask them nicely?'),
     );
   }
 
   notifyQuizEndedScoreLimitReached(quizName, scores, unansweredQuestions, aggregateLink, canReview, scoreLimit) {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
   }
 
   notifyQuizEndedUserCanceled(quizName, scores, unansweredQuestions, aggregateLink, canReview, cancelingUserId) {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
   }
 
   notifyQuizEndedTooManyWrongAnswers(quizName, scores, unansweredQuestions, aggregateLink, canReview, wrongAnswers) {
     const description = `${wrongAnswers} questions in a row went unanswered. So I stopped!`;
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
   }
 
   notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
   }
 
   notifyQuizEndedNoQuestionsLeft(quizName, scores, unansweredQuestions, aggregateLink, canReview, gameMode) {
@@ -434,16 +488,16 @@ class DiscordMessageSender {
     } else {
       description = 'No questions left in that deck. Impressive!';
     }
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, canReview, description);
   }
 
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
     const description = 'I have to reboot for an update. I\'ll be back in 20 seconds :)\n再起動させていただきます。後２０秒で戻りますね :)';
-    return sendEndQuizMessages(this.bot_, this.channelId_, quizName, scores, unansweredQuestions, aggregateLink, false, description);
+    return sendEndQuizMessages(this.bot, this.channelId, quizName, scores, unansweredQuestions, aggregateLink, false, description);
   }
 
   notifyStopFailedUserNotAuthorized() {
-    this.bot_.createMessage(this.channelId_, createTitleOnlyEmbed('Only a server admin can stop someone else\'s quiz in Conquest or Inferno Mode.'));
+    this.bot.createMessage(this.channelId, createTitleOnlyEmbed('Only a server admin can stop someone else\'s quiz in Conquest or Inferno Mode.'));
   }
 }
 
@@ -518,14 +572,6 @@ function createGameMode(isMastery, isConquest, isReview) {
     return ConquestGameMode;
   }
   return NormalGameMode;
-}
-
-function convertDatabaseFacingSaveIdToUserFacing(saveId) {
-  return saveId + 1;
-}
-
-function convertUserFacingSaveIdToDatabaseFacing(saveId) {
-  return saveId - 1;
 }
 
 function getScoreScopeIdFromMsg(msg) {
@@ -804,7 +850,7 @@ async function startNewQuiz(msg, suffix, messageSender, masteryEnabled, internet
 function showHelp(msg, extension, masteryEnabled) {
   let helpMessage;
   if (!extension) {
-    helpMessage = content;
+    helpMessage = helpContent;
   } else if (extension === MASTERY_EXTENSION) {
     helpMessage = createMasteryHelp(masteryEnabled);
   } else if (extension === CONQUEST_EXTENSION) {
