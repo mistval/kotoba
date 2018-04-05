@@ -4,14 +4,16 @@ const persistence = reload('monochrome-bot').persistence;
 const logger = reload('monochrome-bot').logger;
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 
+const SHIRITORI_DECK_ID = 'shiritori';
+
 const uniqueIdForDeckName = {};
 
 Object.keys(decksMetadata).forEach((deckName) => {
   const uniqueId = decksMetadata[deckName].uniqueId;
-  uniqueIdForDeckName[deckName] = uniqueId;
+  uniqueIdForDeckName[deckName.toLowerCase()] = uniqueId;
 });
 
-const SHIRITORI_DECK_ID = 'shiritori';
+uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
 class Score {
   constructor(discordUserId, score) {
@@ -21,12 +23,14 @@ class Score {
 }
 
 async function getScores(serverId, deckName) {
-  const deckUniqueId = uniqueIdForDeckName[deckName];
+  let deckUniqueId = uniqueIdForDeckName[deckName];
+
   if (deckName && !deckUniqueId) {
     return undefined;
   }
 
   const data = await persistence.getGlobalData();
+  console.time('calculate scores');
 
   if (!data.quizScores) {
     return [];
@@ -60,6 +64,8 @@ async function getScores(serverId, deckName) {
       aggregatedRows.push({userId: databaseRow.userId, score: databaseRow.score, username: data.nameForUser[databaseRow.userId]});
     }
   }
+
+  console.timeEnd('calculate scores');
 
   return aggregatedRows;
 }
