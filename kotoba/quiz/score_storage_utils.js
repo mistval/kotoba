@@ -2,6 +2,16 @@
 const reload = require('require-reload')(require);
 const persistence = reload('monochrome-bot').persistence;
 const logger = reload('monochrome-bot').logger;
+const decksMetadata = reload('./../../objects/quiz/decks.json');
+
+const uniqueIdForDeckName = {};
+
+Object.keys(decksMetadata).forEach((deckName) => {
+  const uniqueId = decksMetadata[deckName].uniqueId;
+  uniqueIdForDeckName[deckName] = uniqueId;
+});
+
+const SHIRITORI_DECK_ID = 'shiritori';
 
 class Score {
   constructor(discordUserId, score) {
@@ -10,35 +20,44 @@ class Score {
   }
 }
 
-function getScores(serverId) {
-  return persistence.getGlobalData().then(data => {
-    if (!data.quizScores) {
-      return [];
-    }
-    if (!data.nameForUser) {
-      data.nameForUser = {};
-    }
-    let aggregatedRows = [];
-    let databaseRows = data.quizScores;
-    while (databaseRows.length > 0) {
-      let databaseRow = databaseRows.pop();
-      if (serverId && databaseRow.serverId !== serverId) {
-        continue;
-      }
+async function getScores(serverId, deckName) {
+  const data = await persistence.getGlobalData();
+  const deckUniqueId = uniqueIdForDeckName[deckName];
 
-      let aggregatedRow = aggregatedRows.find(row => {
-        return row.userId === databaseRow.userId;
-      });
+  if (!data.quizScores) {
+    return [];
+  }
+  if (!data.nameForUser) {
+    data.nameForUser = {};
+  }
 
-      if (aggregatedRow) {
-        aggregatedRow.score += databaseRow.score;
-      } else {
-        aggregatedRows.push({userId: databaseRow.userId, score: databaseRow.score, username: data.nameForUser[databaseRow.userId]});
-      }
+  let aggregatedRows = [];
+  let databaseRows = data.quizScores;
+  while (databaseRows.length > 0) {
+    let databaseRow = databaseRows.pop();
+
+    if (serverId && databaseRow.serverId !== serverId) {
+      continue;
+    }
+    if (deckUniqueId && databaseRow.deckId !== deckUniqueId) {
+      continue;
+    }
+    if (!deckUniqueId && databaseRow.deckId === SHIRITORI_DECK_ID) {
+      continue;
     }
 
-    return aggregatedRows;
-  });
+    let aggregatedRow = aggregatedRows.find(row => {
+      return row.userId === databaseRow.userId;
+    });
+
+    if (aggregatedRow) {
+      aggregatedRow.score += databaseRow.score;
+    } else {
+      aggregatedRows.push({userId: databaseRow.userId, score: databaseRow.score, username: data.nameForUser[databaseRow.userId]});
+    }
+  }
+
+  return aggregatedRows;
 }
 
 class QuizScoreStorageUtils {
@@ -84,12 +103,12 @@ class QuizScoreStorageUtils {
     });
   }
 
-  static getGlobalScores() {
-    return getScores();
+  static getGlobalScores(deckName) {
+    return getScores(undefined, deckName);
   }
 
-  static getServerScores(discordServerId) {
-    return getScores(discordServerId);
+  static getServerScores(discordServerId, deckName) {
+    return getScores(discordServerId, deckName);
   }
 }
 
