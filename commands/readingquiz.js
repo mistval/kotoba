@@ -216,7 +216,7 @@ const afterQuizMessages = [
     embed: {
       title: 'O, you want to add your own questions?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: '[Here\'s How](http://kotoba.k33.we.bs/importdecks.html)',
+      description: '[Here\'s how](http://kotoba.k33.we.bs/importdecks.html)',
     },
   },
   {
