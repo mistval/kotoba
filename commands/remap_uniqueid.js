@@ -24,6 +24,10 @@ module.exports = {
 
     await persistence.editGlobalData((data) => {
       data.quizScores.forEach((row) => {
+        // We want fuzzy comparison here because some of the old
+        // deck unique ids are numbers (which is bad, but they
+        // are all strings now)
+        // eslint-disable-next-line eqeqeq
         if (row.deckId == fromId) {
           // Hotspot. Don't want to copy.
           // eslint-disable-next-line no-param-reassign
