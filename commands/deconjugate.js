@@ -1,9 +1,9 @@
-
 const reload = require('require-reload')(require);
+const Conjugator = require('jp-verbs');
 
 const { PublicError } = reload('monochrome-bot');
-const Conjugator = require('jp-verbs');
-const constants = require('./../kotoba/constants.js');
+const constants = reload('./../kotoba/constants.js');
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
 
 const titleForDerivationStep = {};
 titleForDerivationStep[Conjugator.WordType.POLITE_MASU] = 'ます Polite';
@@ -237,7 +237,7 @@ module.exports = {
   cooldown: 3,
   action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('Say \'k!deconjugate [verb]\' to deconjugate a Japanese verb. Example: k!deconjugate 食べさせられたかった', false, 'invalid syntax');
+      return throwPublicErrorInfo('Deconjugate', 'Say **k!deconjugate [verb]** to deconjugate a Japanese verb. For example: **k!deconjugate 食べさせられたかった**', 'No suffix');
     }
     if (suffix.length > 20) {
       throw PublicError.createWithCustomPublicMessage('Sorry, that\'s too long.', true, 'too long');
