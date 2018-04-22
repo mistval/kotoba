@@ -1,7 +1,7 @@
-
 const reload = require('require-reload')(require);
 
 const textRenderer = reload('./../kotoba/render_text.js');
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
 const { PublicError } = reload('monochrome-bot');
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
   usageExample: 'k!furigana 吾輩は猫である',
   action: async function action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('Say \'k!furigana [Japanese text]\' to render Japanese text with furigana!', true, 'No suffix');
+      return throwPublicErrorInfo('Furigana', 'Say **k!furigana [Japanese text]** to render Japanese text with furigana. For example: **k!f 家を出てすぐの所**', 'No suffix');
     }
 
     if (suffix.length > 200) {

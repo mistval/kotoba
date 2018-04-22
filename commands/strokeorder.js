@@ -14,7 +14,7 @@ module.exports = {
   usageExample: 'k!strokeorder 少',
   action: async function action(bot, msg, suffix) {
     if (!suffix) {
-      return errors.throwPublicErrorInfo('Stroke order', 'Say **k!strokeorder yourkanjihere** to search for stroke order information. For example: **k!strokeorder 瞬間**', 'No suffix');
+      return errors.throwPublicErrorInfo('Stroke order', 'Say **k!strokeorder [kanji]** to search for stroke order information. For example: **k!strokeorder 瞬間**. Say **k!help strokeorder** for more help.', 'No suffix');
     }
 
     const navigation = await jishoSearch.createNavigationForStrokeOrder(

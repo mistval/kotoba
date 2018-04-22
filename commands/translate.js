@@ -39,7 +39,7 @@ module.exports = {
   usageExample: 'k!translate 吾輩は猫である',
   action: async function action(bot, msg, suffix, settings, extension) {
     if (!suffix && (!extension || extension === '-')) {
-      return throwPublicError('Say **k!translate yourtexthere** to translate text. Say **k!help translate** for help.', 'No suffix');
+      return throwPublicError('Say **k!translate [text]** to translate text. For example: **k!translate 私は子猫です**. Say **k!help translate** for more help.', 'No suffix');
     }
 
     let firstLanguageCode;

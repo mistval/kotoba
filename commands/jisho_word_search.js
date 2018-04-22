@@ -3,21 +3,12 @@ const reload = require('require-reload')(require);
 const jishoSearch = reload('./../kotoba/jisho_search.js');
 const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
 const jishoWordSearch = reload('./../kotoba/jisho_word_search.js');
-const constants = reload('./../kotoba/constants.js');
-const { PublicError, navigationManager } = reload('monochrome-bot');
-
-function createTitleOnlyEmbed(title) {
-  return {
-    embed: {
-      title,
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  };
-}
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
+const { navigationManager } = reload('monochrome-bot');
 
 module.exports = {
-  commandAliases: ['k!j', '!j', 'k!en', 'k!ja', 'k!jp', 'k!ja-en', 'k!jp-en', 'k!en-jp', 'k!en-ja', '!ja', '!jp'],
-  aliasesForHelp: ['k!j'],
+  commandAliases: ['k!j', '!j', 'k!en', 'k!ja', 'k!jp', 'k!ja-en', 'k!jp-en', 'k!en-jp', 'k!en-ja', '!ja', '!jp', 'k!jisho'],
+  aliasesForHelp: ['k!jisho', 'k!j'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'jishoword403895',
@@ -27,7 +18,7 @@ module.exports = {
   usageExample: 'k!j 少し',
   action: async function action(bot, msg, suffix, settings) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage(createTitleOnlyEmbed('Say \'k!j [text]\' to search for definitions. For example: k!j 瞬間'), false, 'No suffix');
+      return throwPublicErrorInfo('Jisho', 'Say **k!j [word]** to search for words on Jisho.org. For example: **k!j 瞬間**. Say **k!help jisho** for more help.', 'No suffix');
     }
 
     let displayMode = settings['dictionary/display_mode'];
