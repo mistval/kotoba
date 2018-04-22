@@ -53,6 +53,7 @@ async function getScores(serverId, deckName) {
           userId: databaseRow.userId,
           score: databaseRow.score,
           username: data.nameForUser[databaseRow.userId],
+          deckId: databaseRow.deckId,
         });
       }
     }
