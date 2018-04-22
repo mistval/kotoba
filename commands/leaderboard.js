@@ -1,9 +1,15 @@
-
 const reload = require('require-reload')(require);
 
 const ScoreStorageUtils = reload('./../kotoba/quiz/score_storage_utils.js');
 const constants = reload('./../kotoba/constants.js');
-const MAX_SCORERS = 20;
+const {
+  NavigationChapter,
+  Navigation,
+  navigationManager,
+} = reload('monochrome-bot');
+
+const MAX_SCORERS_PER_PAGE = 20;
+const NAVIGATION_EXPIRATION_TIME = 600000; // Ten minutes
 
 function createFieldForScorer(index, username, score) {
   return {
@@ -27,37 +33,60 @@ function createScoreTotalString(scores) {
 }
 
 function sendScores(bot, msg, scores, title, description, footer) {
-  const content = {};
-  content.embed = {
-    title,
-    description: `${description}\n${createScoreTotalString(scores)}`,
-    color: constants.EMBED_NEUTRAL_COLOR,
-  };
-  if (footer) {
-    content.embed.footer = footer;
-  }
-  content.embed.fields = [];
-  scores = scores.sort((a, b) => b.score - a.score);
-  for (let i = 0; i < scores.length && i < MAX_SCORERS; ++i) {
-    let userName = scores[i].username;
-    const score = scores[i].score;
-    if (!userName) {
-      userName = '<Name Unknown>';
+  const navigationContents = [];
+  const numPages = scores.length % MAX_SCORERS_PER_PAGE === 0 ?
+    Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1):
+    Math.floor(scores.length / MAX_SCORERS_PER_PAGE) + 1;
+
+  const sortedScores = scores.sort((a, b) => b.score - a.score);
+
+  for (let pageIndex = 0; pageIndex < numPages; ++pageIndex) {
+    const elementStartIndex = pageIndex * MAX_SCORERS_PER_PAGE;
+    const elementEndIndex = Math.min(
+      ((pageIndex + 1) * MAX_SCORERS_PER_PAGE) - 1,
+      sortedScores.length - 1,
+    );
+
+    const content = {
+      embed: {
+        title,
+        description: `${description}\n${createScoreTotalString(scores)}`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+        fields: [],
+      },
+    };
+    if (footer) {
+      content.embed.footer = footer;
     }
-    content.embed.fields.push(createFieldForScorer(i, userName, score));
-  }
 
-  const commandInvokersRow = scores.find(row => row.userId === msg.author.id);
-
-  if (commandInvokersRow) {
-    const commandInvokersIndex = scores.indexOf(commandInvokersRow);
-
-    if (commandInvokersIndex >= MAX_SCORERS) {
-      content.embed.fields.push(createFieldForScorer(commandInvokersIndex, commandInvokersRow.username, commandInvokersRow.score));
+    for (let i = elementStartIndex; i <= elementEndIndex; ++i) {
+      let userName = sortedScores[i].username;
+      const score = sortedScores[i].score;
+      if (!userName) {
+        userName = '<Name Unknown>';
+      }
+      content.embed.fields.push(createFieldForScorer(i, userName, score));
     }
+
+    const commandInvokersRow = sortedScores.find(row => row.userId === msg.author.id);
+
+    if (commandInvokersRow) {
+      const commandInvokersIndex = sortedScores.indexOf(commandInvokersRow);
+
+      if (commandInvokersIndex < elementStartIndex || commandInvokersIndex > elementEndIndex) {
+        content.embed.fields.push(createFieldForScorer(commandInvokersIndex, commandInvokersRow.username, commandInvokersRow.score));
+      }
+    }
+
+    navigationContents.push(content);
   }
 
-  return msg.channel.createMessage(content, null, msg);
+  const navigationChapter = NavigationChapter.fromContent(navigationContents);
+  const chapterForReaction = { a: navigationChapter };
+  const hasMultiplePages = navigationContents.length > 1;
+  const authorId = msg.author.id;
+  const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForReaction);
+  return navigationManager.register(navigation, NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 function notifyDeckNotFound(msg, isGlobal, deckName) {
