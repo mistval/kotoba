@@ -1,7 +1,6 @@
-'use strict'
 const reload = require('require-reload')(require);
-const persistence = reload('monochrome-bot').persistence;
-const logger = reload('monochrome-bot').logger;
+
+const { persistence, logger } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 
 const SHIRITORI_DECK_ID = 'shiritori';
@@ -9,21 +8,14 @@ const SHIRITORI_DECK_ID = 'shiritori';
 const uniqueIdForDeckName = {};
 
 Object.keys(decksMetadata).forEach((deckName) => {
-  const uniqueId = decksMetadata[deckName].uniqueId;
+  const { uniqueId } = decksMetadata[deckName];
   uniqueIdForDeckName[deckName.toLowerCase()] = uniqueId;
 });
 
 uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
-class Score {
-  constructor(discordUserId, score) {
-    this.discordUserId = discordUserId;
-    this.score = score;
-  }
-}
-
 async function getScores(serverId, deckName) {
-  let deckUniqueId = uniqueIdForDeckName[deckName];
+  const deckUniqueId = uniqueIdForDeckName[deckName];
 
   if (deckName && !deckUniqueId) {
     return undefined;
@@ -39,30 +31,30 @@ async function getScores(serverId, deckName) {
     data.nameForUser = {};
   }
 
-  let aggregatedRows = [];
-  let databaseRows = data.quizScores;
+  const aggregatedRows = [];
+  const databaseRows = data.quizScores;
 
   while (databaseRows.length > 0) {
-    let databaseRow = databaseRows.pop();
+    const databaseRow = databaseRows.pop();
 
     if (serverId && databaseRow.serverId !== serverId) {
-      continue;
-    }
-    if (deckUniqueId && databaseRow.deckId !== deckUniqueId) {
-      continue;
-    }
-    if (!deckUniqueId && databaseRow.deckId === SHIRITORI_DECK_ID) {
-      continue;
-    }
-
-    let aggregatedRow = aggregatedRows.find(row => {
-      return row.userId === databaseRow.userId;
-    });
-
-    if (aggregatedRow) {
-      aggregatedRow.score += databaseRow.score;
+      // NOOP
+    } else if (deckUniqueId && databaseRow.deckId !== deckUniqueId) {
+      // NOOP
+    } else if (!deckUniqueId && databaseRow.deckId === SHIRITORI_DECK_ID) {
+      // NOOP
     } else {
-      aggregatedRows.push({userId: databaseRow.userId, score: databaseRow.score, username: data.nameForUser[databaseRow.userId]});
+      const aggregatedRow = aggregatedRows.find(row => row.userId === databaseRow.userId);
+
+      if (aggregatedRow) {
+        aggregatedRow.score += databaseRow.score;
+      } else {
+        aggregatedRows.push({
+          userId: databaseRow.userId,
+          score: databaseRow.score,
+          username: data.nameForUser[databaseRow.userId],
+        });
+      }
     }
   }
 
@@ -73,42 +65,50 @@ async function getScores(serverId, deckName) {
 
 class QuizScoreStorageUtils {
   static addScores(discordServerId, deckId, scoreForUserId, nameForUserId) {
-    return persistence.editGlobalData(data => {
+    return persistence.editGlobalData((data) => {
       if (!data.quizScores) {
+        // Hotspot. Don't want to copy.
+        // eslint-disable-next-line no-param-reassign
         data.quizScores = [];
       }
       if (!data.nameForUser) {
+        // Hotspot. Don't want to copy.
+        // eslint-disable-next-line no-param-reassign
         data.nameForUser = {};
       }
-      for (let userId of Object.keys(scoreForUserId)) {
-        let score = scoreForUserId[userId];
+
+      Object.keys(scoreForUserId).forEach((userId) => {
+        const score = scoreForUserId[userId];
         if (!score) {
           logger.logFailure('QUIZ SCORES', 'User has a falsy score. Skipping them, but this suggests a bug.');
-          continue;
-        }
-        let name = nameForUserId[userId];
-        data.nameForUser[userId] = name;
-        let rowForScore = data.quizScores.find(row => {
-          return row.userId === userId && row.serverId === discordServerId && row.deckId === deckId;
-        });
-
-        if (!rowForScore) {
-          rowForScore = {
-            userId: userId,
-            serverId: discordServerId,
-            deckId: deckId,
-            score: score
-          };
-          data.quizScores.push(rowForScore);
         } else {
-          // Some (very few) people have NaN scores in the database because of a bug.
-          // So set them to 0 so that they can start increasing again.
-          if (!rowForScore.score) {
-            rowForScore.score = 0;
+          const name = nameForUserId[userId];
+
+          // Hotspot. Don't want to copy.
+          // eslint-disable-next-line no-param-reassign
+          data.nameForUser[userId] = name;
+          let rowForScore = data.quizScores.find(row =>
+            row.userId === userId && row.serverId === discordServerId && row.deckId === deckId);
+
+          if (!rowForScore) {
+            rowForScore = {
+              userId,
+              serverId: discordServerId,
+              deckId,
+              score,
+            };
+            data.quizScores.push(rowForScore);
+          } else {
+            // Some (very few) people have NaN scores in the database because of a bug.
+            // So set them to 0 so that they can start increasing again.
+            if (!rowForScore.score) {
+              rowForScore.score = 0;
+            }
+            rowForScore.score += score;
           }
-          rowForScore.score += score;
         }
-      }
+      });
+
 
       return data;
     });

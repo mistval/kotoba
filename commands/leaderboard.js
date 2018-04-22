@@ -22,10 +22,10 @@ function createFieldForScorer(index, username, score) {
 function createScoreTotalString(scores) {
   let scoreTotal = 0;
   const users = {};
-  for (const score of scores) {
+  scores.forEach((score) => {
     scoreTotal += score.score;
     users[score.username] = true;
-  }
+  });
 
   const usersTotal = Object.keys(users).length;
   const scoreTotalString = scoreTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -35,12 +35,12 @@ function createScoreTotalString(scores) {
 function sendScores(bot, msg, scores, title, description, footer) {
   const navigationContents = [];
   const numPages = scores.length % MAX_SCORERS_PER_PAGE === 0 ?
-    Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1):
+    Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1) :
     Math.floor(scores.length / MAX_SCORERS_PER_PAGE) + 1;
 
   const sortedScores = scores.sort((a, b) => b.score - a.score);
 
-  for (let pageIndex = 0; pageIndex < numPages; ++pageIndex) {
+  for (let pageIndex = 0; pageIndex < numPages; pageIndex += 1) {
     const elementStartIndex = pageIndex * MAX_SCORERS_PER_PAGE;
     const elementEndIndex = Math.min(
       ((pageIndex + 1) * MAX_SCORERS_PER_PAGE) - 1,
@@ -59,9 +59,9 @@ function sendScores(bot, msg, scores, title, description, footer) {
       content.embed.footer = footer;
     }
 
-    for (let i = elementStartIndex; i <= elementEndIndex; ++i) {
+    for (let i = elementStartIndex; i <= elementEndIndex; i += 1) {
       let userName = sortedScores[i].username;
-      const score = sortedScores[i].score;
+      const { score } = sortedScores[i];
       if (!userName) {
         userName = '<Name Unknown>';
       }
@@ -74,7 +74,11 @@ function sendScores(bot, msg, scores, title, description, footer) {
       const commandInvokersIndex = sortedScores.indexOf(commandInvokersRow);
 
       if (commandInvokersIndex < elementStartIndex || commandInvokersIndex > elementEndIndex) {
-        content.embed.fields.push(createFieldForScorer(commandInvokersIndex, commandInvokersRow.username, commandInvokersRow.score));
+        content.embed.fields.push(createFieldForScorer(
+          commandInvokersIndex,
+          commandInvokersRow.username,
+          commandInvokersRow.score,
+        ));
       }
     }
 
