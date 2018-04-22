@@ -1,10 +1,12 @@
 'use strict'
 const reload = require('require-reload')(require);
+const UnofficialJishoApi = require('unofficial-jisho-api');
 const KotobaUtils = reload('./utils.js');
-const logger = reload('monochrome-bot').logger;
-const PublicError = reload('monochrome-bot').PublicError;
-const searchForExamples = new (require('unofficial-jisho-api'))().searchForExamples;
-const constants = require('./constants.js');
+const { logger, PublicError } = reload('monochrome-bot').logger;
+const constants = reload('./constants.js');
+const { throwPublicErrorFatal } = reload('./util/errors.js');
+
+const searchForExamples = new UnofficialJishoApi().searchForExamples;
 
 const MAX_EXAMPLE_RESULTS = 4;
 const LONG_CUTOFF_IN_CHARS = 22;
@@ -73,14 +75,18 @@ class ExamplesResult {
   }
 }
 
-module.exports.createContent = function(word) {
+async function createContent(word) {
   if (!word) {
     throw new Error('No word');
   }
-  return searchForExamples(word).catch(err => {
-    let embed = createTitleOnlyEmbed('Jisho is not responding. Please try again later.');
-    throw PublicError.createWithCustomPublicMessage(embed, true, 'Jisho fetch fail', err);
-  }).then(result => {
+  try {
+    const result = await searchForExamples(word);
     return new ExamplesResult(result);
-  });
+  } catch (err) {
+    return throwPublicErrorFatal('Examples', 'Jisho is not responding. Please try again later.', 'Jisho fetch fail', err);
+  }
+}
+
+module.exports = {
+  createContent,
 };
