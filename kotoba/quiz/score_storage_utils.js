@@ -31,11 +31,11 @@ async function getScores(serverId, deckName) {
     data.nameForUser = {};
   }
 
-  const aggregatedRows = [];
+  const aggregateRowForUser = {};
   const databaseRows = data.quizScores;
 
-  while (databaseRows.length > 0) {
-    const databaseRow = databaseRows.pop();
+  for (let rowIndex = 0; rowIndex < databaseRows.length; rowIndex += 1) {
+    const databaseRow = databaseRows[rowIndex];
 
     if (serverId && databaseRow.serverId !== serverId) {
       // NOOP
@@ -44,20 +44,23 @@ async function getScores(serverId, deckName) {
     } else if (!deckUniqueId && databaseRow.deckId === SHIRITORI_DECK_ID) {
       // NOOP
     } else {
-      const aggregatedRow = aggregatedRows.find(row => row.userId === databaseRow.userId);
+      const aggregatedRow = aggregateRowForUser[databaseRow.userId];
 
       if (aggregatedRow) {
         aggregatedRow.score += databaseRow.score;
       } else {
-        aggregatedRows.push({
+        aggregateRowForUser[databaseRow.userId] = {
           userId: databaseRow.userId,
           score: databaseRow.score,
           username: data.nameForUser[databaseRow.userId],
           deckId: databaseRow.deckId,
-        });
+        };
       }
     }
   }
+
+  const aggregatedRows = Object.keys(aggregateRowForUser).map(
+    userId => aggregateRowForUser[userId]);
 
   console.timeEnd('calculate scores');
 
