@@ -1,10 +1,10 @@
-
 const reload = require('require-reload')(require);
 
-const PublicError = reload('monochrome-bot').PublicError;
+const { PublicError } = reload('monochrome-bot');
 
 let heapDump;
 try {
+  // eslint-disable-next-line global-require,import/no-extraneous-dependencies
   heapDump = require('heapdump');
 } catch (err) {
   // It's just a dev tool
@@ -22,12 +22,14 @@ module.exports = {
     if (!heapDump) {
       throw PublicError.createWithCustomPublicMessage('Module \'heapdump\' not found. Did you install dev dependencies?', false, 'No heapdump module');
     }
-    if (!suffix) {
-      suffix = undefined;
-    } else {
-      suffix += '.heapsnapshot';
+
+    let outputFile;
+
+    if (suffix) {
+      outputFile = `${suffix}.heapsnapshot`;
     }
-    heapDump.writeSnapshot(suffix, (err, filename) => {
+
+    heapDump.writeSnapshot(outputFile, (err, filename) => {
       if (err) {
         msg.channel.createMessage(`Error creating heap dump: ${err}`);
       } else {

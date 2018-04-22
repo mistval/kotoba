@@ -1,7 +1,6 @@
-
 const reload = require('require-reload')(require);
 
-const PublicError = reload('monochrome-bot').PublicError;
+const { PublicError } = reload('monochrome-bot');
 
 /**
 * Send a message as the bot.

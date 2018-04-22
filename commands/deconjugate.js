@@ -1,7 +1,7 @@
 
 const reload = require('require-reload')(require);
 
-const PublicError = reload('monochrome-bot').PublicError;
+const { PublicError } = reload('monochrome-bot');
 const Conjugator = require('jp-verbs');
 const constants = require('./../kotoba/constants.js');
 
@@ -256,7 +256,7 @@ module.exports = {
     embed.title = `Deconjugation of ${suffix}`;
     embed.color = constants.EMBED_NEUTRAL_COLOR;
     embed.description = `-\nStart with ${baseWord}\n\n`;
-    for (let i = 0; i < sequence.length; ++i) {
+    for (let i = 0; i < sequence.length; i += 1) {
       if (linkForDerivationStep[path[i]]) {
         embed.description += `[**+ ${titleForDerivationStep[path[i]]}**](${linkForDerivationStep[path[i]]})`;
       } else {
