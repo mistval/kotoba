@@ -1,11 +1,8 @@
-
 const reload = require('require-reload')(require);
 
 const jishoSearch = reload('./../kotoba/jisho_search.js');
-const navigationManager = reload('monochrome-bot').navigationManager;
-const constants = require('./../kotoba/constants.js');
-
-const PublicError = reload('monochrome-bot').PublicError;
+const constants = reload('./../kotoba/constants.js');
+const { navigationManager, PublicError } = reload('monochrome-bot');
 
 function createTitleOnlyEmbed(title) {
   return {
@@ -24,10 +21,17 @@ module.exports = {
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: 'k!kanji 少',
-  action(bot, msg, suffix) {
+  action: async function action(bot, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage(createTitleOnlyEmbed('Say \'k!kanji [kanji]\' to search for kanji. For example: k!kanji 瞬間'), false, 'No suffix');
     }
-    return jishoSearch.createNavigationForKanji(msg.author.username, msg.author.id, suffix).then(navigation => navigationManager.register(navigation, 6000000, msg));
+
+    const navigation = await jishoSearch.createNavigationForKanji(
+      msg.author.username,
+      msg.author.id,
+      suffix,
+    );
+
+    return navigationManager.register(navigation, 6000000, msg);
   },
 };
