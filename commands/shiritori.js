@@ -156,6 +156,10 @@ class DiscordClientDelegate {
         description,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: embedFields,
+        footer: {
+          text: 'Say \'k!lb shiritori\' to see the leaderboard for this server. \'k!lb global shiritori\' for global scores.',
+          icon_url: constants.FOOTER_ICON_URI,
+        },
       },
     });
   }
