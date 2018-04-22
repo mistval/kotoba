@@ -1,6 +1,4 @@
-
 const libVersion = require('../node_modules/eris/package.json').version;
-const botVersion = require('../package.json').version;
 
 module.exports = {
   commandAliases: ['k!about'],
@@ -8,7 +6,7 @@ module.exports = {
   cooldown: 30,
   shortDescription: 'Show some meta information about me.',
   canBeChannelRestricted: false,
-  action(bot, msg, suffix) {
+  action(bot, msg) {
     return msg.channel.createMessage(`\`\`\`md
 # Kotoba
 

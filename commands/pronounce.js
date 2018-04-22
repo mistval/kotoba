@@ -3,11 +3,13 @@ const reload = require('require-reload')(require);
 
 const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
 const constants = reload('./../kotoba/constants.js');
-const NavigationChapter = reload('monochrome-bot').NavigationChapter;
-const Navigation = reload('monochrome-bot').Navigation;
-const navigationManager = reload('monochrome-bot').navigationManager;
-const NavigationPage = reload('monochrome-bot').NavigationPage;
-const logger = reload('monochrome-bot').logger;
+const {
+  NavigationChapter,
+  Navigation,
+  navigationManager,
+  NavigationPage,
+  logger,
+} = reload('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 4;
 const NAVIGATION_EXPIRATION_TIME = 1000 * 60 * 30; // 30 minutes
@@ -23,7 +25,7 @@ function createEmbedContent() {
 
 function createNotFoundResult(msg, pronounceInfo) {
   const content = createEmbedContent();
-  const query = pronounceInfo.query;
+  const { query } = pronounceInfo;
   content.embed.description = `I didn't find any results for **${query}**.`;
 
   return msg.channel.createMessage(content, null, msg);
@@ -39,7 +41,7 @@ function createNoSuffixResult(msg) {
 function underlineStringAtTrueIndices(string, indices) {
   let underline = false;
   let outString = '';
-  for (let i = 0; i < string.length; ++i) {
+  for (let i = 0; i < string.length; i += 1) {
     const char = string[i];
     const shouldUnderline = indices[i];
     if (shouldUnderline === underline) {
@@ -66,7 +68,7 @@ function createLHString(pronounceInfo) {
 
 function addPitchField(fields, pronounceInfo) {
   if (pronounceInfo.pitchAccent.length > 0) {
-    const katakana = pronounceInfo.katakana;
+    const { katakana } = pronounceInfo;
     const underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
     const lhString = createLHString(pronounceInfo);
     const fieldValue = `${underlinedKana}\n ${lhString}`;
@@ -80,7 +82,7 @@ function addPitchField(fields, pronounceInfo) {
 
 function addMutedSoundsField(fields, pronounceInfo) {
   if (pronounceInfo.noPronounceIndices.length > 0) {
-    const katakana = pronounceInfo.katakana;
+    const { katakana } = pronounceInfo;
     fields.push({
       name: 'Muted sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.noPronounceIndices),
@@ -91,7 +93,7 @@ function addMutedSoundsField(fields, pronounceInfo) {
 
 function addNasalSoundsField(fields, pronounceInfo) {
   if (pronounceInfo.nasalPitchIndices.length > 0) {
-    const katakana = pronounceInfo.katakana;
+    const { katakana } = pronounceInfo;
     fields.push({
       name: 'Nasal sounds',
       value: underlineStringAtTrueIndices(katakana, pronounceInfo.nasalPitchIndices),
@@ -102,8 +104,9 @@ function addNasalSoundsField(fields, pronounceInfo) {
 
 function addAudioClipsField(fields, forvoData) {
   if (forvoData.found) {
-    const audioClips = forvoData.audioClips;
-    const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS).map(audioClip => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
+    const { audioClips } = forvoData;
+    const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS)
+      .map(audioClip => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
 
     fields.push({
       name: 'Audio Clips',
@@ -114,25 +117,26 @@ function addAudioClipsField(fields, forvoData) {
 
 class PronunciationDataSource {
   constructor(authorName, pronounceInfo) {
-    this.pronounceInfo_ = pronounceInfo;
-    this.authorName_ = authorName;
+    this.pronounceInfo = pronounceInfo;
+    this.authorName = authorName;
   }
 
   prepareData() {
+    // NOOP
   }
 
   getWordForTitle(entry) {
-    if (entry.kanji.indexOf(this.pronounceInfo_.query) !== -1) {
-      return this.pronounceInfo_.query;
+    if (entry.kanji.indexOf(this.pronounceInfo.query) !== -1) {
+      return this.pronounceInfo.query;
     }
     return entry.kanji[0];
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
-    const entry = this.pronounceInfo_.entries[pageIndex];
-    const numberOfPages = this.pronounceInfo_.entries.length;
+    const entry = this.pronounceInfo.entries[pageIndex];
+    const numberOfPages = this.pronounceInfo.entries.length;
     if (!entry) {
-      return;
+      return undefined;
     }
 
     let pagesString = '';
@@ -141,7 +145,7 @@ class PronunciationDataSource {
     }
 
     const content = createEmbedContent();
-    const embed = content.embed;
+    const { embed } = content;
     const word = this.getWordForTitle(entry);
     const uriEncodedWord = encodeURIComponent(word);
     embed.title = `Pronunciation information for ${word} ${pagesString}`;
@@ -154,7 +158,7 @@ class PronunciationDataSource {
 
     try {
       const forvoData = await entry.getAudioClips();
-      addAudioClipsField(embed.fields, forvoData, this.pronounceInfo_);
+      addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
     } catch (err) {
       logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
     }
@@ -162,7 +166,7 @@ class PronunciationDataSource {
     if (numberOfPages > 1) {
       embed.footer = {
         icon_url: constants.FOOTER_ICON_URI,
-        text: `${this.authorName_} can use the reaction buttons below to see more information!`,
+        text: `${this.authorName} can use the reaction buttons below to see more information!`,
       };
     }
 
