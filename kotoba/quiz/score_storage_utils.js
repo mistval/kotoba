@@ -41,6 +41,7 @@ async function getScores(serverId, deckName) {
 
   let aggregatedRows = [];
   let databaseRows = data.quizScores;
+
   while (databaseRows.length > 0) {
     let databaseRow = databaseRows.pop();
 
