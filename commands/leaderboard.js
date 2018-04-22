@@ -130,7 +130,7 @@ module.exports = {
 
       if (!deckName) {
         footer = {
-          text: 'Say \'k!lb global N1\' to see the global N1 leaderboard.',
+          text: 'Say \'k!lb global deckname\' to see the global leaderboard for a deck.',
           icon_url: constants.FOOTER_ICON_URI,
         };
       }
@@ -140,7 +140,7 @@ module.exports = {
       title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNameTitlePart}`;
       description = 'The top scorers in this server.';
       footer = {
-        text: 'Say \'k!lb global\' to see the global leaderboard. \'k!lb N1\' to see the N1 leaderboard.',
+        text: 'Say \'k!lb global\' to see the global leaderboard. Say \'k!lb deckname\' to see a deck leaderboard.',
         icon_url: constants.FOOTER_ICON_URI,
       };
       scores = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckName);
