@@ -1,7 +1,7 @@
-
 const reload = require('require-reload')(require);
 
 const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
 const constants = reload('./../kotoba/constants.js');
 const {
   NavigationChapter,
@@ -27,13 +27,6 @@ function createNotFoundResult(msg, pronounceInfo) {
   const content = createEmbedContent();
   const { query } = pronounceInfo;
   content.embed.description = `I didn't find any results for **${query}**.`;
-
-  return msg.channel.createMessage(content, null, msg);
-}
-
-function createNoSuffixResult(msg) {
-  const content = createEmbedContent();
-  content.embed.description = 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**';
 
   return msg.channel.createMessage(content, null, msg);
 }
@@ -193,7 +186,7 @@ module.exports = {
   usageExample: 'k!pronounce 瞬間',
   async action(bot, msg, suffix) {
     if (!suffix) {
-      return createNoSuffixResult(msg);
+      return throwPublicErrorInfo('Pronounce', 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**', 'No suffix');
     }
 
     const pronounceInfo = await getPronounceInfo(suffix);

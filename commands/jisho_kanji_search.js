@@ -1,17 +1,8 @@
 const reload = require('require-reload')(require);
 
 const jishoSearch = reload('./../kotoba/jisho_search.js');
-const constants = reload('./../kotoba/constants.js');
-const { navigationManager, PublicError } = reload('monochrome-bot');
-
-function createTitleOnlyEmbed(title) {
-  return {
-    embed: {
-      title,
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  };
-}
+const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
+const { navigationManager } = reload('monochrome-bot');
 
 module.exports = {
   commandAliases: ['k!kanji', 'k!k'],
@@ -23,7 +14,7 @@ module.exports = {
   usageExample: 'k!kanji 少',
   action: async function action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage(createTitleOnlyEmbed('Say \'k!kanji [kanji]\' to search for kanji. For example: k!kanji 瞬間'), false, 'No suffix');
+      return throwPublicErrorInfo('Kanji', 'Say **k!kanji [kanji]** to search for kanji. For example: **k!kanji 瞬間**. Say **k!help kanji** for more help.', 'No suffix');
     }
 
     const navigation = await jishoSearch.createNavigationForKanji(
