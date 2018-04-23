@@ -190,16 +190,18 @@ function createNavigationChapterInformationForExamples(authorName, word, isStand
   return new NavigationChapterInformation(navigationChapter);
 }
 
-function createNavigationForExamples(authorName, authorId, word) {
+function createNavigationForExamples(msg, authorName, authorId, word) {
   const navigationChapterInformation =
     createNavigationChapterInformationForExamples(authorName, word, true);
 
   const chapterForEmojiName = {};
   chapterForEmojiName[EXAMPLES_EMOTE] = navigationChapterInformation.navigationChapter;
-  return Promise.resolve(new Navigation(authorId, true, EXAMPLES_EMOTE, chapterForEmojiName));
+  const navigation = new Navigation(authorId, true, EXAMPLES_EMOTE, chapterForEmojiName);
+
+  return navigationManager.register(navigation, 6000000, msg);
 }
 
-function createNavigationForStrokeOrder(authorName, authorId, kanji) {
+function createNavigationForStrokeOrder(msg, authorName, authorId, kanji) {
   const navigationChapterInformation = createNavigationChapterInformationForStrokeOrder(
     authorName,
     kanji,
@@ -209,15 +211,17 @@ function createNavigationForStrokeOrder(authorName, authorId, kanji) {
   const chapterForEmojiName = {};
   chapterForEmojiName[STROKE_ORDER_EMOTE] = navigationChapterInformation.navigationChapter;
 
-  return Promise.resolve(new Navigation(
+  const navigation = new Navigation(
     authorId,
     navigationChapterInformation.hasMultiplePages,
     STROKE_ORDER_EMOTE,
     chapterForEmojiName,
-  ));
+  );
+
+  return navigationManager.register(navigation, 6000000, msg);
 }
 
-function createNavigationForKanji(authorName, authorId, kanji) {
+function createNavigationForKanji(msg, authorName, authorId, kanji) {
   const navigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     kanji,
@@ -227,12 +231,14 @@ function createNavigationForKanji(authorName, authorId, kanji) {
   const chapterForEmojiName = {};
   chapterForEmojiName[KANJI_EMOTE] = navigationChapterInformation.navigationChapter;
 
-  return Promise.resolve(new Navigation(
+  const navigation = new Navigation(
     authorId,
     navigationChapterInformation.hasMultiplePages,
     KANJI_EMOTE,
     chapterForEmojiName,
-  ));
+  );
+
+  return navigationManager.register(navigation, 6000000, msg);
 }
 
 function createNavigationForJishoResults(authorName, authorId, crossPlatformResponseData) {
