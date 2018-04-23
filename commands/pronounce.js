@@ -12,7 +12,6 @@ const {
 } = reload('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 4;
-const NAVIGATION_EXPIRATION_TIME = 1000 * 60 * 30; // 30 minutes
 const LOGGER_TITLE = 'PRONOUNCE';
 
 function createEmbedContent() {
@@ -174,7 +173,7 @@ function createFoundResult(msg, pronounceInfo) {
   const hasMultiplePages = pronounceInfo.entries.length > 1;
   const authorId = msg.author.id;
   const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
-  return navigationManager.register(navigation, NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 module.exports = {
