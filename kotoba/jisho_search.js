@@ -1,4 +1,3 @@
-
 const reload = require('require-reload')(require);
 
 const jishoWordSearch = reload('./jisho_word_search.js');
@@ -198,7 +197,7 @@ function createNavigationForExamples(msg, authorName, authorId, word) {
   chapterForEmojiName[EXAMPLES_EMOTE] = navigationChapterInformation.navigationChapter;
   const navigation = new Navigation(authorId, true, EXAMPLES_EMOTE, chapterForEmojiName);
 
-  return navigationManager.register(navigation, 6000000, msg);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 function createNavigationForStrokeOrder(msg, authorName, authorId, kanji) {
@@ -218,7 +217,7 @@ function createNavigationForStrokeOrder(msg, authorName, authorId, kanji) {
     chapterForEmojiName,
   );
 
-  return navigationManager.register(navigation, 6000000, msg);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 function createNavigationForKanji(msg, authorName, authorId, kanji) {
@@ -238,10 +237,10 @@ function createNavigationForKanji(msg, authorName, authorId, kanji) {
     chapterForEmojiName,
   );
 
-  return navigationManager.register(navigation, 6000000, msg);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
-function createNavigationForJishoResults(authorName, authorId, crossPlatformResponseData) {
+function createNavigationForJishoResults(msg, authorName, authorId, crossPlatformResponseData) {
   const word = crossPlatformResponseData.searchPhrase;
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,
@@ -281,7 +280,8 @@ function createNavigationForJishoResults(authorName, authorId, crossPlatformResp
   ).navigationChapter;
   chapterForEmojiName[EXAMPLES_EMOTE] = examplesNavigationChapter;
 
-  return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
+  const navigation = new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 async function createOnePageBigResultForWord(msg, word) {
@@ -297,13 +297,12 @@ async function createOnePageBigResultForWord(msg, word) {
 
 async function createNavigationForWord(authorName, authorId, word, msg) {
   const crossPlatformResponseData = await jishoWordSearch(word);
-  const navigation = createNavigationForJishoResults(
+  return createNavigationForJishoResults(
+    msg,
     authorName,
     authorId,
     crossPlatformResponseData,
   );
-
-  return navigationManager.register(navigation, 6000000, msg);
 }
 
 async function createSmallResultForWord(msg, word) {

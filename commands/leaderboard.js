@@ -9,7 +9,6 @@ const {
 } = reload('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
-const NAVIGATION_EXPIRATION_TIME = 600000; // Ten minutes
 
 function createFieldForScorer(index, username, score) {
   return {
@@ -90,7 +89,7 @@ function sendScores(bot, msg, scores, title, description, footer) {
   const hasMultiplePages = navigationContents.length > 1;
   const authorId = msg.author.id;
   const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForReaction);
-  return navigationManager.register(navigation, NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
 function notifyDeckNotFound(msg, isGlobal, deckName) {
