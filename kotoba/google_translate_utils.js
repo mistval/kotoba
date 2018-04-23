@@ -1,6 +1,7 @@
-'use strict'
+
 const reload = require('require-reload')(require);
 const request = require('request-promise');
+
 const API_KEY = reload('./api_keys.js').GOOGLE_TRANSLATE;
 const TranslationResult = reload('./translation_result.js');
 const { logger, PublicError } = reload('monochrome-bot');
@@ -9,81 +10,101 @@ const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2'
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';
 
 const prettyLanguageForLanguageCode = require('./language_code_maps.js').prettyLanguageForGoogleLanguageCode;
+
 const languageCodeAliases = {
-  'cns': 'zh-CN',
-  'cnt': 'zh-TW',
+  cns: 'zh-CN',
+  cnt: 'zh-TW',
   'zh-cn': 'zh-CN',
   'zh-tw': 'zh-TW',
-  'jp': 'ja',
+  jp: 'ja',
 };
 
 if (!API_KEY) {
   logger.logFailure('TRANSLATE', 'No Google API key present in kotoba/api_keys.js. The translate command will not work.');
 }
 
-module.exports.detectLanguage = function(text) {
-  return request({
-    uri: DETECTION_API,
-    qs: {
-      q: text,
-      key: API_KEY,
-    },
-    json: true,
-    timeout: 10000
-  }).then(data => {
-    return data.data.detections[0][0].language;
-  }).catch(throwNotRespondingError);
+function throwNotRespondingError(internalError) {
+  const error = new PublicError('Sorry, Google translate is not responding. Please try again later.', 'error', internalError);
+  throw error;
 }
 
-module.exports.translate = function(sourceLanguage, targetLanguage, text) {
+async function detectLanguage(text) {
+  try {
+    const detectionResult = await request({
+      uri: DETECTION_API,
+      qs: {
+        q: text,
+        key: API_KEY,
+      },
+      json: true,
+      timeout: 10000,
+    });
+
+    return detectionResult.data.detections[0][0].language;
+  } catch (err) {
+    return throwNotRespondingError(err);
+  }
+}
+
+async function translate(sourceLanguage, targetLanguage, text) {
+  let sourceLanguageUnaliased = sourceLanguage;
+  let targetLanguageUnaliased = targetLanguage;
+
   if (languageCodeAliases[sourceLanguage]) {
-    sourceLanguage = languageCodeAliases[sourceLanguage];
+    sourceLanguageUnaliased = languageCodeAliases[sourceLanguage];
   }
   if (languageCodeAliases[targetLanguage]) {
-    targetLanguage = languageCodeAliases[targetLanguage];
+    targetLanguageUnaliased = languageCodeAliases[targetLanguage];
   }
-  return request({
-    uri: TRANSLATE_API,
-    qs: {
-      target: targetLanguage,
-      q: text,
-      key: API_KEY,
-    },
-    json: true,
-    timeout: 10000,
-  }).then(data => {
-    let sourceLanguagePretty = prettyLanguageForLanguageCode[sourceLanguage];
-    let targetLanguagePretty = prettyLanguageForLanguageCode[targetLanguage];
+
+  try {
+    const responseBody = await request({
+      uri: TRANSLATE_API,
+      qs: {
+        target: targetLanguageUnaliased,
+        q: text,
+        key: API_KEY,
+      },
+      json: true,
+      timeout: 10000,
+    });
+
+    const sourceLanguagePretty = prettyLanguageForLanguageCode[sourceLanguageUnaliased];
+    const targetLanguagePretty = prettyLanguageForLanguageCode[targetLanguageUnaliased];
     return TranslationResult.CreateSuccessfulResult(
       'Google Translate',
       sourceLanguagePretty,
       targetLanguagePretty,
-      'https://translate.google.com/#' + sourceLanguage + '/' + targetLanguage + '/' + encodeURIComponent(text),
-      data.data.translations[0].translatedText);
-  }).catch(throwNotRespondingError);
-};
-
-module.exports.getPrettyLanguageForLanguageCode = function(languageCode) {
-  if (languageCodeAliases[languageCode]) {
-    languageCode = languageCodeAliases[languageCode];
+      `https://translate.google.com/#${sourceLanguage}/${targetLanguage}/${encodeURIComponent(text)}`,
+      responseBody.data.translations[0].translatedText,
+    );
+  } catch (err) {
+    return throwNotRespondingError(err);
   }
-
-  return prettyLanguageForLanguageCode[languageCode];
-};
-
-module.exports.getLanguageCodeForPrettyLanguage = function(prettyLanguage) {
-  if (!prettyLanguage) {
-    return;
-  }
-  prettyLanguage = prettyLanguage.toLowerCase();
-  for (let key of Object.keys(prettyLanguageForLanguageCode)) {
-    if (prettyLanguageForLanguageCode[key].toLowerCase() === prettyLanguage) {
-      return key;
-    }
-  }
-};
-
-function throwNotRespondingError(internalError) {
-  let error = new PublicError('Sorry, Google translate is not responding. Please try again later.', 'error', internalError);
-  throw error;
 }
+
+function getPrettyLanguageForLanguageCode(languageCode) {
+  let unaliasedLanguageCode = languageCode;
+  if (languageCodeAliases[languageCode]) {
+    unaliasedLanguageCode = languageCodeAliases[languageCode];
+  }
+
+  return prettyLanguageForLanguageCode[unaliasedLanguageCode];
+}
+
+function getLanguageCodeForPrettyLanguage(prettyLanguage) {
+  if (!prettyLanguage) {
+    return undefined;
+  }
+  const prettyLanguageLowercase = prettyLanguage.toLowerCase();
+
+  return Object.keys(prettyLanguageForLanguageCode)
+    .find(key => prettyLanguageForLanguageCode[key].toLowerCase() === prettyLanguageLowercase);
+}
+
+module.exports = {
+  getLanguageCodeForPrettyLanguage,
+  getPrettyLanguageForLanguageCode,
+  translate,
+  detectLanguage,
+};
