@@ -12,6 +12,9 @@ Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
 I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know.
 
 ## Installation
+
+First, you must have Cairo installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
+
 ```
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
