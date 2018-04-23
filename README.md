@@ -13,7 +13,7 @@ I'd love to get help from other developers, and there is plenty to do. If you're
 
 ## Installation
 
-First, you must have Cairo installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
+First, you must have **cairo** installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
 
 ```
 git clone https://github.com/mistval/kotoba.git
