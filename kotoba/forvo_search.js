@@ -1,5 +1,6 @@
 const reload = require('require-reload')(require);
 const request = require('request-promise');
+
 const API_KEY = reload('./api_keys.js').FORVO;
 const { logger } = reload('monochrome-bot');
 
@@ -10,11 +11,11 @@ if (!API_KEY) {
 }
 
 function getApiUriForQuery(query) {
-  if (API_KEY) {
+  if (!API_KEY) {
     throw new Error('No Forvo API Key');
   }
 
-  let uriEncodedQuery = encodeURIComponent(query);
+  const uriEncodedQuery = encodeURIComponent(query);
   return `https://apifree.forvo.com/action/word-pronunciations/format/json/word/${uriEncodedQuery}/id_lang_speak/76/key/${API_KEY}/`;
 }
 
@@ -26,22 +27,18 @@ function rethrowError(err) {
 }
 
 function parseItems(items) {
-  return items.sort((a, b) => {
-    return b.num_positive_votes - a.num_positive_votes;
-  }).map(item => {
-    return {
-      word: item.word,
-      userName: item.username,
-      gender: item.sex === 'm' ? 'Male' : 'Female',
-      country: item.country,
-      audioUri: item.pathmp3 || item.pathogg,
-      forvoUri: `https://forvo.com/word/${item.word}/#ja`,
-    };
-  });
+  return items.sort((a, b) => b.num_positive_votes - a.num_positive_votes).map(item => ({
+    word: item.word,
+    userName: item.username,
+    gender: item.sex === 'm' ? 'Male' : 'Female',
+    country: item.country,
+    audioUri: item.pathmp3 || item.pathogg,
+    forvoUri: `https://forvo.com/word/${item.word}/#ja`,
+  }));
 }
 
 function parseResponse(responseJson, query) {
-  let audioClips = parseItems(responseJson.items);
+  const audioClips = parseItems(responseJson.items);
   return {
     query,
     found: audioClips.length > 0,
@@ -49,9 +46,9 @@ function parseResponse(responseJson, query) {
   };
 }
 
-module.exports = async function(query) {
+async function search(query) {
   try {
-    let responseJson = await request({
+    const responseJson = await request({
       uri: getApiUriForQuery(query),
       json: true,
       timeout: 10000,
@@ -59,6 +56,8 @@ module.exports = async function(query) {
 
     return parseResponse(responseJson, query);
   } catch (e) {
-    rethrowError(e);
+    return rethrowError(e);
   }
-};
+}
+
+module.exports = search;
