@@ -1,107 +1,135 @@
 const reload = require('require-reload')(require);
-const request = require('request-promise');
+const UnofficialJishoApi = require('unofficial-jisho-api');
 
-const DictionaryResponseData = reload('./dictionary_response_data.js');
-const WordMeaning = reload('./word_meaning.js');
-const DictionaryResult = reload('./dictionary_result.js');
-const { PublicError } = reload('monochrome-bot');
+const errors = reload('./util/errors.js');
 
-const JISHO_API = 'http://jisho.org/api/v1/search/words';
+const { searchForPhrase } = new UnofficialJishoApi();
 
-const WANIKANI_TAG_PREFIX = 'wanikani';
-const FROM_LANGUAGE_CODE = 'en';
-const TO_LANGUAGE_CODE = 'ja';
+function cleanMeaning(str) {
+  let cleanStr = str;
 
-function removeWanikaniTags(tags) {
-  return tags.filter(tag => typeof tag !== typeof '' || !tag.startsWith(WANIKANI_TAG_PREFIX));
+  cleanStr = str.replace(/&lt;/g, '<');
+  cleanStr = str.replace(/&gt;/g, '>');
+  cleanStr = str.replace(/<i>/g, '');
+  cleanStr = str.replace(/<\/i>/g, '');
+  cleanStr = str.replace(/<b>/g, '');
+  cleanStr = str.replace(/<\/b>/g, '');
+  cleanStr = str.replace(/<u>/g, '');
+  cleanStr = str.replace(/<\/u>/g, '');
+  cleanStr = str.replace(/&#39;/g, '\'');
+  cleanStr = str.replace(/&quot;/g, '"');
+
+  return cleanStr;
 }
 
 function getMeanings(senses) {
   const meanings = [];
   senses.forEach((sense) => {
     const tags = sense.parts_of_speech.concat(sense.tags).concat(sense.info);
-    removeWanikaniTags(tags);
     if (sense.english_definitions) {
       const meaning = sense.english_definitions.join(', ');
-      meanings.push(new WordMeaning(meaning, tags));
+
+      meanings.push({
+        definition: cleanMeaning(meaning),
+        tags,
+      });
     }
   });
 
   return meanings;
 }
 
-function parseJishoResponse(inData, phrase) {
-  const dictionaryResults = [];
+function getReadingsForWord(jishoResponseItem) {
+  const readingsForWord = {};
+  jishoResponseItem.japanese.forEach((japanese) => {
+    let word;
 
-  inData.data.forEach((dataElement) => {
-    const readingsForWord = {};
-    dataElement.japanese.forEach((japanese) => {
-      let word;
-      if (typeof japanese.word === typeof '') {
-        ({ word } = japanese);
-      } else {
-        word = japanese.reading;
-      }
+    // If the japanese.word property is available, use that.
+    // Otherwise, the word and the reading are the same,
+    // so use japanese.reading.
+    if (typeof japanese.word === typeof '') {
+      ({ word } = japanese);
+    } else {
+      word = japanese.reading;
+    }
 
-      if (!readingsForWord[word]) {
-        readingsForWord[word] = [];
-      }
-      if (japanese.reading !== word && readingsForWord[word].indexOf(japanese.reading) === -1) {
-        readingsForWord[word].push(japanese.reading);
-      }
-    });
+    if (!readingsForWord[word]) {
+      readingsForWord[word] = [];
+    }
 
-    const words = Object.keys(readingsForWord).sort((a, b) => {
-      if (a === phrase) {
-        return -1;
-      }
-      if (b === phrase) {
-        return 1;
-      }
-      return 0;
-    });
+    const hasReading = !!japanese.reading;
+    const readingIsNotWord = japanese.reading !== word;
+    const readingIsNotInArray = readingsForWord[word].indexOf(japanese.reading) === -1;
 
-    const wordsAndReadings = words.map(word => ({
+    const shouldAddReading = hasReading && readingIsNotWord && readingIsNotInArray;
+
+    if (shouldAddReading) {
+      readingsForWord[word].push(japanese.reading);
+    }
+  });
+
+  return readingsForWord;
+}
+
+function sortWords(words, searchPhrase) {
+  // If the word exactly matches the search query,
+  // it should come first.
+  return words.sort((a, b) => {
+    if (a === searchPhrase) {
+      return -1;
+    }
+    if (b === searchPhrase) {
+      return 1;
+    }
+    return 0;
+  });
+}
+
+// The jishoResponseBody is the full response body of the request.
+// A jishoResponseItem is one element of the jishoResponseBody.data array.
+function parseJishoResponse(jishoResponseBody, searchPhrase) {
+  const dictionaryEntries = [];
+
+  jishoResponseBody.data.forEach((jishoResponseItem) => {
+    const readingsForWord = getReadingsForWord(jishoResponseItem);
+    const allWords = Object.keys(readingsForWord);
+    const sortedWords = sortWords(allWords, searchPhrase);
+
+    const sortedWordsAndReadings = sortedWords.map(word => ({
       word,
       readings: readingsForWord[word].filter(reading => !!reading),
     }));
 
-    const tags = removeWanikaniTags(dataElement.tags);
-    const wordMeanings = getMeanings(dataElement.senses);
-    dictionaryResults.push(new DictionaryResult(wordsAndReadings, tags, wordMeanings));
+    const resultMeanings = getMeanings(jishoResponseItem.senses);
+    dictionaryEntries.push({
+      wordsAndReadings: sortedWordsAndReadings,
+      resultTags: jishoResponseItem.tags,
+      resultMeanings,
+    });
   });
 
-  let extraText = '';
-  if (dictionaryResults.length > 0) {
-    extraText = `I got these definitions from Jisho. See more: <http://jisho.org/search/${encodeURIComponent(phrase)}>\nTry k!w to search Weblio, k!k to search for Kanji, or k!help to see more commands.`;
-  }
-
-  if (dictionaryResults.length === 0) {
-    throw PublicError.createWithCustomPublicMessage(`Didn't find any results for **${phrase}**`, false, 'No results');
-  }
-  return new DictionaryResponseData(phrase, FROM_LANGUAGE_CODE, TO_LANGUAGE_CODE, false, dictionaryResults, extraText, `http://jisho.org/search/${encodeURIComponent(phrase)}`);
+  return {
+    searchPhrase,
+    dictionaryEntries,
+    hasResults: dictionaryEntries.length > 0,
+    uri: `http://jisho.org/search/${encodeURIComponent(searchPhrase)}`,
+  };
 }
 
 function throwNotRespondingError(err) {
-  throw new PublicError('Sorry, Jisho is not responding. Please try again later.', false, 'Error fetching from Jisho', err);
+  return errors.throwPublicErrorFatal('Jisho', 'Sorry, Jisho is not responding. Please try again later.', 'Error fetching from Jisho', err);
 }
 
-function searchWord(fromLanguage, toLanguage, suffix) {
-  return request({
-    uri: JISHO_API,
-    qs: {
-      keyword: suffix,
-    },
-    json: true,
-    timeout: 10000,
-  }).catch((err) => {
-    throwNotRespondingError(err);
-  }).then((data) => {
+async function searchWord(suffix) {
+  try {
+    const data = await searchForPhrase(suffix);
     if (data.meta.status !== 200) {
-      throwNotRespondingError(new Error(`Bad response status, code: ${data.meta.status.toString()}`));
+      throw new Error(`Bad response status, code: ${data.meta.status.toString()}`);
     }
     return parseJishoResponse(data, suffix);
-  });
+  } catch (err) {
+    return throwNotRespondingError(err);
+  }
 }
 
 module.exports = searchWord;
