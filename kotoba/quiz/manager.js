@@ -345,6 +345,7 @@ class AskQuestionAction extends Action {
 
   async do() {
     let session = this.getSession_();
+    session.getScores().resetStateForNewCard();
     let nextCard = await session.getNextCard();
     if (!nextCard) {
       return Promise.resolve(new EndQuizNoQuestionsLeftAction(session));

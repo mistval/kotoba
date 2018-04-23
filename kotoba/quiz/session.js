@@ -142,7 +142,7 @@ class SessionInformation {
     let deckDepleted = this.deckCollection_.isEmpty();
       return this.getGameMode().updateGameModeLeaderboardForSessionEnded(
         this.deckCollection_.getDeckId(),
-        this.getScores().getRoundedScoresForLb(),
+        this.getScores().getScoresForLb(),
         this.startTime_,
         this.numCardsAnswered_,
         deckDepleted,
