@@ -264,7 +264,7 @@ function createAfterQuizMessage(canReview) {
   return afterQuizMessages[index];
 }
 
-function sendEndQuizMessages(
+async function sendEndQuizMessages(
   bot,
   channelId,
   quizName,
@@ -282,14 +282,13 @@ function sendEndQuizMessages(
     description,
   );
 
-  return bot.createMessage(channelId, endQuizMessage).then(() => {
-    const afterQuizMessage = createAfterQuizMessage(canReview);
-    if (afterQuizMessage) {
-      return bot.createMessage(channelId, createAfterQuizMessage(canReview));
-    }
+  await bot.createMessage(channelId, endQuizMessage);
+  const afterQuizMessage = createAfterQuizMessage(canReview);
+  if (afterQuizMessage) {
+    return bot.createMessage(channelId, createAfterQuizMessage(canReview));
+  }
 
-    return Promise.resolve();
-  });
+  return undefined;
 }
 
 function convertDatabaseFacingSaveIdToUserFacing(saveId) {
@@ -414,7 +413,7 @@ class DiscordMessageSender {
     return newMessage && newMessage.id;
   }
 
-  showQuestion(question, questionId) {
+  async showQuestion(question, questionId) {
     let content = {
       embed: {
         title: question.deckName,
@@ -449,8 +448,10 @@ class DiscordMessageSender {
 
     content = trimEmbedFields(content);
     if (!questionId) {
-      return this.bot.createMessage(this.channelId, content, uploadInformation).then(msg => msg.id);
+      const msg = await this.bot.createMessage(this.channelId, content, uploadInformation);
+      return msg.id;
     }
+
     return this.bot.editMessage(this.channelId, questionId, content, uploadInformation);
   }
 
@@ -760,14 +761,17 @@ async function load(
     await saveManager.restore(msg.author.id, memento);
     throw err;
   }
-  return quizManager.startSession(session, msg.channel.id).then((endStatus) => {
+
+  try {
+    const endStatus = await quizManager.startSession(session, msg.channel.id);
     if (endStatus === quizManager.END_STATUS_ERROR) {
       throw new Error('The quiz manager successfully handled an error condition');
     }
-  }).catch((err) => {
+  } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Error with loaded save', err);
-    return saveManager.restore(msg.author.id, memento).then(() => msg.channel.createMessage('Looks like there was an error, sorry about that. I have attempted to restore your save data to its previous state, you can try to load it again with **k!quiz load**. The error has been logged and will be addressed.'));
-  });
+    await saveManager.restore(msg.author.id, memento);
+    return msg.channel.createMessage('Looks like there was an error, sorry about that. I have attempted to restore your save data to its previous state, you can try to load it again with **k!quiz load**. The error has been logged and will be addressed.');
+  }
 }
 
 async function deleteInternetDeck(msg, searchTerm, userId) {

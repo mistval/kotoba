@@ -56,14 +56,13 @@ class StrokeOrderDataSource {
   prepareData() {
   }
 
-  getPageFromPreparedData(arg, pageIndex) {
+  async getPageFromPreparedData(arg, pageIndex) {
     if (pageIndex < this.kanjis.length) {
-      return strokeOrderContentCreator.createContent(this.kanjis[pageIndex]).then((content) => {
-        if (this.kanjis.length > 1 || !this.isStandalone) {
-          return new NavigationPage(addFooter(this.authorName, content));
-        }
-        return new NavigationPage(content);
-      });
+      const content = await strokeOrderContentCreator.createContent(this.kanjis[pageIndex]);
+      if (this.kanjis.length > 1 || !this.isStandalone) {
+        return new NavigationPage(addFooter(this.authorName, content));
+      }
+      return new NavigationPage(content);
     }
 
     return undefined;
@@ -83,14 +82,13 @@ class KanjiDataSource {
   prepareData() {
   }
 
-  getPageFromPreparedData(arg, pageIndex) {
+  async getPageFromPreparedData(arg, pageIndex) {
     if (pageIndex < this.kanjis.length) {
-      return kanjiContentCreator.createContent(this.kanjis[pageIndex]).then((content) => {
-        if (this.kanjis.length > 1 || !this.isStandalone) {
-          return new NavigationPage(addFooter(this.authorName, content));
-        }
-        return new NavigationPage(content);
-      });
+      const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex]);
+      if (this.kanjis.length > 1 || !this.isStandalone) {
+        return new NavigationPage(addFooter(this.authorName, content));
+      }
+      return new NavigationPage(content);
     }
 
     return undefined;
