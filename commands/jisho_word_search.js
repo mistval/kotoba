@@ -4,7 +4,7 @@ const jishoSearch = reload('./../kotoba/jisho_search.js');
 const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
 
 module.exports = {
-  commandAliases: ['k!j', '!j', 'k!en', 'k!ja', 'k!jp', 'k!ja-en', 'k!jp-en', 'k!en-jp', 'k!en-ja', '!ja', '!jp', 'k!jisho'],
+  commandAliases: ['k!jisho', 'k!j', '!j', 'k!en', 'k!ja', 'k!jp', 'k!ja-en', 'k!jp-en', 'k!en-jp', 'k!en-ja', '!ja', '!jp'],
   aliasesForHelp: ['k!jisho', 'k!j'],
   canBeChannelRestricted: true,
   cooldown: 3,
