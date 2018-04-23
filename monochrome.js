@@ -24,7 +24,7 @@ if (!fs.existsSync(settingsFilePath)) {
   settingsFilePath = undefined;
 }
 
-// EPIC HACK. This prevents the bot from responding to !j is specified servers, due to collision with
+// EPIC HACK. This prevents the bot from responding to !j in specified servers, due to collision with
 // other bots in those servers.
 let shortDictionaryCommandDisabledServers = [
   '116379774825267202',
