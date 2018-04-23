@@ -22,7 +22,7 @@ function start(handleContact) {
   });
 
   http.listen(port, function(){
-    console.log('listening on *:' + port);
+    console.log('Webserver listening on *:' + port);
   });
 }
 
