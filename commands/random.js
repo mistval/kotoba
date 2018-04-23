@@ -26,7 +26,7 @@ async function getRandomWordRecusive(suffix, msg, retriesRemaining) {
   }
   const word = getRandomWord(suffix);
   try {
-    const data = await jishoWordSearch('', '', word);
+    const data = await jishoWordSearch(word);
     if (!data.hasResults) {
       return getRandomWordRecusive(suffix, msg, retriesRemaining - 1);
     }
