@@ -1,4 +1,10 @@
-'use strict'
+/*
+ * This code is no longer maintained.
+ * It is still used for Glosbe dictionary searches.
+ * If it breaks, the Glosbe dictionary search
+ * feature may be removed from the bot.
+ */
+
 const reload = require('require-reload')(require);
 const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
