@@ -53,7 +53,12 @@ function getFieldForEntry(entry) {
   };
 }
 
-function formatJishoDataBig(jishoData, pagingPermitted, callerName) {
+function formatJishoDataBig(
+  jishoData,
+  pagingPermitted,
+  forMultiChapterNavigation,
+  callerName,
+) {
   if (!jishoData.hasResults) {
     return throwForEmptyJishoData(jishoData);
   }
@@ -87,7 +92,7 @@ function formatJishoDataBig(jishoData, pagingPermitted, callerName) {
   }
 
   const numberOfPages = discordContents.length;
-  if (pagingPermitted && numberOfPages > 1) {
+  if (pagingPermitted && (numberOfPages > 1 || forMultiChapterNavigation)) {
     for (let index = 0; index < numberOfPages; index += 1) {
       const discordContent = discordContents[index];
       discordContent.embed.title += ` (page ${index + 1} of ${numberOfPages})`;
