@@ -8,6 +8,7 @@ const constants = reload('./constants.js');
 const { throwPublicErrorInfo } = reload('./util/errors.js');
 
 const MAX_LINES_PER_BIG_PAGE = 11;
+const MAX_MEANINGS_SMALL = 3;
 
 function throwForEmptyJishoData(jishoData) {
   return throwPublicErrorInfo('Jisho', `I didn't find any results for **${jishoData.searchPhrase}**.`, 'No results');
@@ -32,17 +33,21 @@ function getFieldNameForEntry(entry) {
   }).join(', ');
 }
 
+function getLineForMeaning(meaning, meaningNumber) {
+  const { definition, tags } = meaning;
+
+  let line = `${meaningNumber}. ${definition}`;
+  if (tags.length > 0) {
+    line += ` *[${tags.join(', ')}]*`;
+  }
+
+  return line;
+}
+
 function getFieldValueForEntry(entry) {
   return entry.resultMeanings.map((meaning, index) => {
     const meaningNumber = index + 1;
-    const { definition, tags } = meaning;
-
-    let line = `${meaningNumber}. ${definition}`;
-    if (tags.length > 0) {
-      line += ` *[${tags.join(', ')}]*`;
-    }
-
-    return line;
+    return getLineForMeaning(meaning, meaningNumber);
   }).join('\n');
 }
 
@@ -106,6 +111,53 @@ function formatJishoDataBig(
   return discordContents;
 }
 
+function formatJishoDataSmall(jishoData) {
+  if (!jishoData.hasResults) {
+    return throwForEmptyJishoData(jishoData);
+  }
+
+  const embed = {
+    color: constants.EMBED_NEUTRAL_COLOR,
+    title: jishoData.searchPhrase,
+    url: jishoData.uri,
+    fields: [],
+  };
+
+  const entry = jishoData.dictionaryEntries[0];
+  const { word, readings } = entry.wordsAndReadings[0];
+  const meanings = entry.resultMeanings;
+  const wordField = {
+    name: 'Word',
+    value: word,
+    inline: true,
+  };
+
+  embed.fields.push(wordField);
+
+  if (readings.length > 0) {
+    const readingField = {
+      name: 'Readings',
+      value: readings.join(', '),
+      inline: true,
+    };
+
+    embed.fields.push(readingField);
+  }
+
+  if (meanings.length > 0) {
+    const meaningsString = meanings.slice(0, MAX_MEANINGS_SMALL).map((meaning, index) => {
+      const meaningNumber = index + 1;
+      return getLineForMeaning(meaning, meaningNumber);
+    }).join('\n');
+
+    const meaningsField = { name: 'Meanings', value: meaningsString };
+    embed.fields.push(meaningsField);
+  }
+
+  return { embed };
+}
+
 module.exports = {
   formatJishoDataBig,
+  formatJishoDataSmall,
 };
