@@ -186,6 +186,7 @@ function createNavigationForJishoResults(authorName, authorId, crossPlatformResp
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,
     true,
+    true,
     authorName,
   );
 
@@ -193,7 +194,7 @@ function createNavigationForJishoResults(authorName, authorId, crossPlatformResp
   const chapterForEmojiName = {};
   chapterForEmojiName[JISHO_EMOTE] = navigationChapter;
   addNavigationChapterForKanji(authorName, word, chapterForEmojiName);
-  addNavigationChapterForStrokeOrder(authorName, word, chapterForEmojiName);
+  addNavigationChapterForStrokeOrder(authorName, word, chapterForEmojiName);``
   addNavigationChapterForExamples(authorName, word, chapterForEmojiName);
   return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
 }
