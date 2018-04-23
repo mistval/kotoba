@@ -12,17 +12,16 @@ module.exports = {
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: 'k!kanji 少',
-  action: async function action(bot, msg, suffix) {
+  action(bot, msg, suffix) {
     if (!suffix) {
       return throwPublicErrorInfo('Kanji', 'Say **k!kanji [kanji]** to search for kanji. For example: **k!kanji 瞬間**. Say **k!help kanji** for more help.', 'No suffix');
     }
 
-    const navigation = await jishoSearch.createNavigationForKanji(
+    return jishoSearch.createNavigationForKanji(
+      msg,
       msg.author.username,
       msg.author.id,
       suffix,
     );
-
-    return navigationManager.register(navigation, 6000000, msg);
   },
 };
