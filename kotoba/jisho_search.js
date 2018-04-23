@@ -278,6 +278,17 @@ function createNavigationForJishoResults(authorName, authorId, crossPlatformResp
   return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
 }
 
+async function createOnePageBigResultForWord(msg, word) {
+  const crossPlatformResponseData = await jishoWordSearch(word);
+  const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
+    crossPlatformResponseData,
+    false,
+  );
+
+  const response = discordContents[0];
+  return msg.channel.createMessage(response, null, msg);
+}
+
 async function createNavigationForWord(authorName, authorId, word, msg) {
   const crossPlatformResponseData = await jishoWordSearch(word);
   const navigation = createNavigationForJishoResults(
@@ -304,4 +315,5 @@ module.exports = {
   createNavigationForStrokeOrder,
   createNavigationForExamples,
   createSmallResultForWord,
+  createOnePageBigResultForWord,
 };
