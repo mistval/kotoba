@@ -1,16 +1,21 @@
 const reload = require('require-reload')(require);
 const request = require('request-promise');
-const forvoApiKey = reload('./api_keys.js').FORVO;
+const API_KEY = reload('./api_keys.js').FORVO;
+const { logger } = reload('monochrome-bot');
 
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
 
+if (!API_KEY) {
+  logger.logFailure('PRONOUNCE', 'No Forvo API key present in kotoba/api_keys.js. The pronounce command will not show audio files.');
+}
+
 function getApiUriForQuery(query) {
-  if (!forvoApiKey) {
+  if (API_KEY) {
     throw new Error('No Forvo API Key');
   }
 
   let uriEncodedQuery = encodeURIComponent(query);
-  return `https://apifree.forvo.com/action/word-pronunciations/format/json/word/${uriEncodedQuery}/id_lang_speak/76/key/${forvoApiKey}/`;
+  return `https://apifree.forvo.com/action/word-pronunciations/format/json/word/${uriEncodedQuery}/id_lang_speak/76/key/${API_KEY}/`;
 }
 
 function rethrowError(err) {
