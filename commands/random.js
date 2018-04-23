@@ -30,12 +30,12 @@ async function getRandomWordRecusive(suffix, msg, retriesRemaining) {
     if (!data.hasResults) {
       return getRandomWordRecusive(suffix, msg, retriesRemaining - 1);
     }
-    const navigation = jishoSearch.createNavigationForJishoResults(
+    return jishoSearch.createNavigationForJishoResults(
+      msg,
       msg.author.username,
       msg.author.id,
       data,
     );
-    return navigationManager.register(navigation, 6000000, msg);
   } catch (err) {
     logger.logFailure('RANDOM WORD', `Failed to find ${word}`);
     return getRandomWordRecusive(suffix, msg, retriesRemaining - 1);
