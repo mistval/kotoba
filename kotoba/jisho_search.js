@@ -4,10 +4,15 @@ const reload = require('require-reload')(require);
 const jishoWordSearch = reload('./jisho_word_search.js');
 const kanjiContentCreator = reload('./kanji_search_content_creator.js');
 const strokeOrderContentCreator = reload('./stroke_order_content_creator.js');
-const { NavigationPage, NavigationChapter, Navigation } = reload('monochrome-bot');
 const examplesContentCreator = reload('./examples_content_creator.js');
 const constants = reload('./constants.js');
 const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.js');
+const {
+  NavigationPage,
+  NavigationChapter,
+  Navigation,
+  navigationManager,
+} = reload('monochrome-bot');
 
 const KANJI_REGEX = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
 const STROKE_ORDER_EMOTE = '🇸';
@@ -273,9 +278,23 @@ function createNavigationForJishoResults(authorName, authorId, crossPlatformResp
   return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
 }
 
-async function createNavigationForWord(authorName, authorId, word) {
+async function createNavigationForWord(authorName, authorId, word, msg) {
   const crossPlatformResponseData = await jishoWordSearch(word);
-  return createNavigationForJishoResults(authorName, authorId, crossPlatformResponseData);
+  const navigation = createNavigationForJishoResults(
+    authorName,
+    authorId,
+    crossPlatformResponseData,
+  );
+
+  return navigationManager.register(navigation, 6000000, msg);
+}
+
+async function createSmallResultForWord(msg, word) {
+  const crossPlatformResponseData = await jishoWordSearch(word);
+  const discordContent =
+    JishoDiscordContentFormatter.formatJishoDataSmall(crossPlatformResponseData);
+
+  return msg.channel.createMessage(discordContent, null, msg);
 }
 
 module.exports = {
@@ -284,4 +303,5 @@ module.exports = {
   createNavigationForKanji,
   createNavigationForStrokeOrder,
   createNavigationForExamples,
+  createSmallResultForWord,
 };
