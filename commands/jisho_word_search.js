@@ -1,10 +1,7 @@
 const reload = require('require-reload')(require);
 
 const jishoSearch = reload('./../kotoba/jisho_search.js');
-const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
-const jishoWordSearch = reload('./../kotoba/jisho_word_search.js');
 const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
-const { navigationManager } = reload('monochrome-bot');
 
 module.exports = {
   commandAliases: ['k!j', '!j', 'k!en', 'k!ja', 'k!jp', 'k!ja-en', 'k!jp-en', 'k!en-jp', 'k!en-ja', '!ja', '!jp', 'k!jisho'],
@@ -21,26 +18,23 @@ module.exports = {
       return throwPublicErrorInfo('Jisho', 'Say **k!j [word]** to search for words on Jisho.org. For example: **k!j 瞬間**. Say **k!help jisho** for more help.', 'No suffix');
     }
 
-    let displayMode = settings['dictionary/display_mode'];
+    let big = settings['dictionary/display_mode'] === 'big';
     if (suffix.indexOf('--small') !== -1) {
-      displayMode = 'small';
-    }
-    if (suffix.indexOf('--big') !== -1) {
-      displayMode = 'big';
-    }
-
-    const searchTerm = suffix.replace('--small', '').replace('--big', '');
-
-    if (displayMode === 'small') {
-      return dictionaryQuery(msg, 'en', 'ja', searchTerm, jishoWordSearch, displayMode);
+      big = false;
+    } else if (suffix.indexOf('--big') !== -1) {
+      big = true;
     }
 
-    const navigation = await jishoSearch.createNavigationForWord(
-      msg.author.username,
-      msg.author.id,
-      searchTerm,
-    );
+    const searchTerm = suffix.replace(/--small/g, '').replace(/--big/g, '');
 
-    return navigationManager.register(navigation, 6000000, msg);
+    if (big) {
+      return jishoSearch.createNavigationForWord(
+        msg.author.username,
+        msg.author.id,
+        searchTerm,
+        msg,
+      );
+    }
+    return jishoSearch.createSmallResultForWord(msg, searchTerm);
   },
 };
