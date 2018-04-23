@@ -3,56 +3,56 @@ const assert = require('assert');
 
 const Util = reload('./../utils.js');
 const ScoreStorageUtils = reload('./score_storage_utils.js');
-const logger = reload('monochrome-bot').logger;
+const { logger } = reload('monochrome-bot');
 
 class Scores {
   constructor() {
-    this.aggregateScoreForUserId_ = {};
-    this.nameForUserId_ = {};
-    this.committedScoreForUserId_ = {};
+    this.aggregateScoreForUserId = {};
+    this.nameForUserId = {};
+    this.committedScoreForUserId = {};
   }
 
   static createNew(scoreLimit, deckId, scoreScopeId) {
     const scores = new Scores();
-    scores.scoreLimit_ = scoreLimit;
-    scores.scoreScopeId_ = scoreScopeId;
-    scores.deckId_ = deckId;
+    scores.scoreLimit = scoreLimit;
+    scores.scoreScopeId = scoreScopeId;
+    scores.deckId = deckId;
     return scores;
   }
 
   static createFromSaveData(scoreScopeId, saveData) {
     const scores = new Scores();
-    scores.deckId_ = saveData.deckId;
-    scores.scoreLimit_ = saveData.scoreLimit;
-    scores.aggregateScoreForUserId_ = saveData.aggregateScoreForUserId;
-    scores.nameForUserId_ = saveData.nameForUserId;
-    scores.scoreScopeId_ = scoreScopeId;
-    scores.committedScoreForUserId_ = saveData.committedScoreForUserId;
+    scores.deckId = saveData.deckId;
+    scores.scoreLimit = saveData.scoreLimit;
+    scores.aggregateScoreForUserId = saveData.aggregateScoreForUserId;
+    scores.nameForUserId = saveData.nameForUserId;
+    scores.scoreScopeId = scoreScopeId;
+    scores.committedScoreForUserId = saveData.committedScoreForUserId;
     return scores;
   }
 
   // Do not call until all answers for current card have been given.
   createSaveData() {
-    this.finalizeForCurrentCard_();
+    this.finalizeForCurrentCard();
     return {
-      scoreLimit: this.scoreLimit_,
-      deckId: this.deckId_,
-      aggregateScoreForUserId: this.aggregateScoreForUserId_,
-      nameForUserId: this.nameForUserId_,
-      committedScoreForUserId: this.committedScoreForUserId_,
+      scoreLimit: this.scoreLimit,
+      deckId: this.deckId,
+      aggregateScoreForUserId: this.aggregateScoreForUserId,
+      nameForUserId: this.nameForUserId,
+      committedScoreForUserId: this.committedScoreForUserId,
     };
   }
 
   getCurrentQuestionAnswerersInOrder() {
-    return this.currentQuestionAnswerersInOrder_;
+    return this.currentQuestionAnswerersInOrder;
   }
 
   getCurrentQuestionsAnswersForUser() {
-    return this.currentQuestionAnswersForUserId_;
+    return this.currentQuestionAnswersForUserId;
   }
 
   getCurrentQuestionPointsForAnswer() {
-    return this.currentQuestionPointsPerAnswer_;
+    return this.currentQuestionPointsPerAnswer;
   }
 
   // Precondition: The user provided a correct answer.
@@ -62,117 +62,121 @@ class Scores {
   submitAnswer(userId, userName, answer, points, scoreDifferentAnswers, cardId) {
     assert(cardId !== undefined, 'No cardId');
 
-    if (cardId === this.lastFinalizedCardId_) {
+    if (cardId === this.lastFinalizedCardId) {
       logger.logFailure('QUIZ SCORES', 'Already finalized scores for that card. Scores will probably be a little messed up.');
     }
 
-    if (this.currentCardId_ !== cardId) {
-      this.finalizeForCurrentCard_();
-      this.resetStateForNewCard_();
-      this.currentCardId_ = cardId;
+    if (this.currentCardId !== cardId) {
+      this.finalizeForCurrentCard();
+      this.resetStateForNewCard();
+      this.currentCardId = cardId;
     }
 
     // If we should score different answers, there is no score window.
     // So return false if the answer has already been given.
-    if (scoreDifferentAnswers && this.currentQuestionPointsPerAnswer_[answer] !== undefined) {
+    if (scoreDifferentAnswers && this.currentQuestionPointsPerAnswer[answer] !== undefined) {
       return false;
     }
 
     // If the user has given this answer already, return false.
-    if (this.currentQuestionAnswersForUserId_[userId] && ~this.currentQuestionAnswersForUserId_[userId].indexOf(answer)) {
+    if (
+      this.currentQuestionAnswersForUserId[userId] &&
+      this.currentQuestionAnswersForUserId[userId].indexOf(answer) !== -1
+    ) {
       return false;
     }
 
     // If we should not score different answers, and the
     // user has already given answers, return false.
-    if (!scoreDifferentAnswers && this.currentQuestionAnswersForUserId_[userId]) {
+    if (!scoreDifferentAnswers && this.currentQuestionAnswersForUserId[userId]) {
       return false;
     }
 
-    // If we're here, the answer is accepted and awared points.
-    assert(
-      !this.currentQuestionPointsPerAnswer_[answer] || this.currentQuestionPointsPerAnswer_[answer] === points,
-      'No support for awarding different number of points for identical answers',
-    );
-    this.currentQuestionPointsPerAnswer_[answer] = points;
-    this.nameForUserId_[userId] = userName;
-    this.currentQuestionAnswersForUserId_[userId] = this.currentQuestionAnswersForUserId_[userId] || [];
-    this.currentQuestionAnswersForUserId_[userId].push(answer);
+    this.currentQuestionPointsPerAnswer[answer] = points;
+    this.nameForUserId[userId] = userName;
 
-    if (!~this.currentQuestionAnswerersInOrder_.indexOf(userId)) {
-      this.currentQuestionAnswerersInOrder_.push(userId);
+    this.currentQuestionAnswersForUserId[userId] =
+      this.currentQuestionAnswersForUserId[userId] || [];
+
+    this.currentQuestionAnswersForUserId[userId].push(answer);
+
+    if (this.currentQuestionAnswerersInOrder.indexOf(userId) === -1) {
+      this.currentQuestionAnswerersInOrder.push(userId);
     }
     return true;
   }
 
   // Do not call until all answers for current card have been given.
-  commitScores() {
-    if (this.scoreScopeId_) {
-      this.finalizeForCurrentCard_();
-      const uncommitedScores = this.getUncommittedScoreForUserIds_();
-      return ScoreStorageUtils.addScores(this.scoreScopeId_, this.deckId_, uncommitedScores, this.nameForUserId_).then(() => {
-        this.updateCommitedScores_(uncommitedScores);
-      });
+  async commitScores() {
+    if (this.scoreScopeId) {
+      this.finalizeForCurrentCard();
+      const uncommitedScores = this.getUncommittedScoreForUserIds();
+      await ScoreStorageUtils.addScores(
+        this.scoreScopeId,
+        this.deckId,
+        uncommitedScores,
+        this.nameForUserId,
+      );
+
+      this.updateCommitedScores(uncommitedScores);
     }
   }
 
   // Do not call until all answers for current card have been given.
   checkForWin() {
-    this.finalizeForCurrentCard_();
-    return Object.keys(this.aggregateScoreForUserId_).some(userId => this.aggregateScoreForUserId_[userId].normalizedScore >= this.scoreLimit_);
-  }
-
-  // Do not call until all answers for current card have been given.
-  getScoresForUserPairs() {
-    this.finalizeForCurrentCard_();
-    return this.getScoresForUserPairs_();
+    this.finalizeForCurrentCard();
+    return Object.keys(this.aggregateScoreForUserId)
+      .some(userId => this.aggregateScoreForUserId[userId].normalizedScore >= this.scoreLimit);
   }
 
   // Do not call until all answers for current card have been given.
   getAggregateScoreForUser() {
-    this.finalizeForCurrentCard_();
-    return this.aggregateScoreForUserId_;
+    this.finalizeForCurrentCard();
+    return this.aggregateScoreForUserId;
   }
 
   // Do not call until all answers for current card have been given.
   getScoresForUserId() {
-    this.finalizeForCurrentCard_();
-    return this.aggregateScoreForUserId_;
+    this.finalizeForCurrentCard();
+    return this.aggregateScoreForUserId;
   }
 
   getScoreLimit() {
-    return this.scoreLimit_;
+    return this.scoreLimit;
   }
 
   getRoundedScoresForLb() {
-    return Util.mapObjectValue(this.aggregateScoreForUserId_, score => Math.floor(score.normalizedScore));
+    return Util.mapObjectValue(
+      this.aggregateScoreForUserId,
+      score => Math.floor(score.normalizedScore),
+    );
   }
 
-  updateCommitedScores_(newlyCommitedPointsForUserId) {
-    for (const userId of Object.keys(newlyCommitedPointsForUserId)) {
-      if (!this.committedScoreForUserId_[userId]) {
-        this.committedScoreForUserId_[userId] = 0;
+  updateCommitedScores(newlyCommitedPointsForUserId) {
+    Object.keys(newlyCommitedPointsForUserId).forEach((userId) => {
+      if (!this.committedScoreForUserId[userId]) {
+        this.committedScoreForUserId[userId] = 0;
       }
-      this.committedScoreForUserId_[userId] += newlyCommitedPointsForUserId[userId];
-    }
+      this.committedScoreForUserId[userId] += newlyCommitedPointsForUserId[userId];
+    });
   }
 
-  getUncommittedScoreForUserIds_() {
+  getUncommittedScoreForUserIds() {
     const totalLbScores = this.getRoundedScoresForLb();
     const uncommitedScores = {};
-    for (const userId of Object.keys(totalLbScores)) {
-      if (!this.committedScoreForUserId_[userId]) {
-        this.committedScoreForUserId_[userId] = 0;
+    Object.keys(totalLbScores).forEach((userId) => {
+      if (!this.committedScoreForUserId[userId]) {
+        this.committedScoreForUserId[userId] = 0;
       }
-      uncommitedScores[userId] = totalLbScores[userId] - this.committedScoreForUserId_[userId];
-    }
+      uncommitedScores[userId] = totalLbScores[userId] - this.committedScoreForUserId[userId];
+    });
+
     return uncommitedScores;
   }
 
-  getScoresForUserPairs_() {
-    return Object.keys(this.aggregateScoreForUserId_).map((userId) => {
-      const normalizedScore = this.aggregateScoreForUserId_[userId].normalizedScore;
-      const totalScore = this.aggregateScoreForUserId_[userId].totalScore;
+  getScoresForUserPairs() {
+    return Object.keys(this.aggregateScoreForUserId).map((userId) => {
+      const { normalizedScore, totalScore } = this.aggregateScoreForUserId[userId];
       return { userId, totalScore, normalizedScore };
     }).sort((a, b) => {
       if (a.totalScore === b.totalScore) {
@@ -182,56 +186,58 @@ class Scores {
     });
   }
 
-  finalizeForCurrentCard_() {
-    if (this.currentCardId_ === undefined) {
+  finalizeForCurrentCard() {
+    if (this.currentCardId === undefined) {
       return;
     }
-    this.lastFinalizedCardId_ = this.currentCardId_;
-    this.currentCardId_ = undefined;
-    this.calculateQuestionScoresAndAddToTotal_();
+    this.lastFinalizedCardId = this.currentCardId;
+    this.currentCardId = undefined;
+    this.calculateQuestionScoresAndAddToTotal();
   }
 
-  getTotalPointsForUserId_(userId) {
-    if (!this.currentQuestionAnswersForUserId_ || !this.currentQuestionAnswersForUserId_[userId]) {
+  getTotalPointsForUserId(userId) {
+    if (!this.currentQuestionAnswersForUserId || !this.currentQuestionAnswersForUserId[userId]) {
       return 0;
     }
-    return this.currentQuestionAnswersForUserId_[userId]
-      .reduce((total, answer) => total + this.currentQuestionPointsPerAnswer_[answer], 0);
+    return this.currentQuestionAnswersForUserId[userId]
+      .reduce((total, answer) => total + this.currentQuestionPointsPerAnswer[answer], 0);
   }
 
-  getMaximumPointsScored_() {
-    if (!this.currentQuestionPointsPerAnswer_) {
+  getMaximumPointsScored() {
+    if (!this.currentQuestionPointsPerAnswer) {
       return 0;
     }
+
     let max = 0;
-    for (const userId of Object.keys(this.currentQuestionAnswersForUserId_)) {
-      max = Math.max(max, this.getTotalPointsForUserId_(userId));
-    }
+    Object.keys(this.currentQuestionAnswersForUserId).forEach((userId) => {
+      max = Math.max(max, this.getTotalPointsForUserId(userId));
+    });
+
     return max;
   }
 
-  calculateQuestionScoresAndAddToTotal_() {
-    const maxPointsScored = this.getMaximumPointsScored_();
+  calculateQuestionScoresAndAddToTotal() {
+    const maxPointsScored = this.getMaximumPointsScored();
 
-    for (const userId of this.currentQuestionAnswerersInOrder_) {
-      if (!this.aggregateScoreForUserId_[userId]) {
-        this.aggregateScoreForUserId_[userId] = {
+    this.currentQuestionAnswerersInOrder.forEach((userId) => {
+      if (!this.aggregateScoreForUserId[userId]) {
+        this.aggregateScoreForUserId[userId] = {
           totalScore: 0,
           normalizedScore: 0,
         };
       }
 
-      const totalScore = this.getTotalPointsForUserId_(userId);
+      const totalScore = this.getTotalPointsForUserId(userId);
       const normalizedScore = totalScore / maxPointsScored;
-      this.aggregateScoreForUserId_[userId].totalScore += totalScore;
-      this.aggregateScoreForUserId_[userId].normalizedScore += normalizedScore;
-    }
+      this.aggregateScoreForUserId[userId].totalScore += totalScore;
+      this.aggregateScoreForUserId[userId].normalizedScore += normalizedScore;
+    });
   }
 
-  resetStateForNewCard_() {
-    this.currentQuestionAnswersForUserId_ = {};
-    this.currentQuestionPointsPerAnswer_ = {};
-    this.currentQuestionAnswerersInOrder_ = [];
+  resetStateForNewCard() {
+    this.currentQuestionAnswersForUserId = {};
+    this.currentQuestionPointsPerAnswer = {};
+    this.currentQuestionAnswerersInOrder = [];
   }
 }
 
