@@ -10,6 +10,40 @@ const {
 
 const MAX_SCORERS_PER_PAGE = 20;
 
+const deckNamesForGroupAlias = {
+  anagrams: [
+    'anagrams3',
+    'anagrams4',
+    'anagrams5',
+    'anagrams6',
+    'anagrams7',
+    'anagrams8',
+    'anagrams9',
+    'anagrams10',
+  ],
+  jlpt: [
+    'n1',
+    'n2',
+    'n3',
+    'n4',
+    'n5',
+  ],
+  kanken: [
+    '1k',
+    'j1k',
+    '2k',
+    'j2k',
+    '3k',
+    '4k',
+    '5k',
+    '6k',
+    '7k',
+    '8k',
+    '9k',
+    '10k',
+  ],
+};
+
 function createFieldForScorer(index, username, score) {
   return {
     name: `${(index + 1).toString()}) ${username}`,
@@ -104,6 +138,43 @@ function notifyDeckNotFound(msg, isGlobal, deckName) {
   return msg.channel.createMessage(content);
 }
 
+function getDeckNamesArray(deckNamesString) {
+  const deckNamesStringTrimmed = deckNamesString.trim();
+  const didSpecifyDecks = !!deckNamesStringTrimmed;
+  if (!didSpecifyDecks) {
+    return [];
+  }
+
+  const deckNamesArray = deckNamesString.split(/ *\+ */);
+
+  const deckNamesArrayUnaliased = [];
+  for (let i = 0; i < deckNamesArray.length; i += 1) {
+    const deckName = deckNamesArray[i];
+    const deckNames = deckNamesForGroupAlias[deckName];
+    if (deckNames) {
+      deckNamesArrayUnaliased.push(...deckNames);
+    } else {
+      deckNamesArrayUnaliased.push(deckName);
+    }
+  }
+
+  return deckNamesArrayUnaliased;
+}
+
+function getDeckNamesTitlePart(deckNamesArray) {
+  let deckNamesTitlePart = '';
+  if (deckNamesArray.length > 0) {
+    deckNamesTitlePart = deckNamesArray.slice(0, 5).join(', ');
+    if (deckNamesArray.length > 5) {
+      deckNamesTitlePart += ', ...';
+    }
+
+    deckNamesTitlePart = ` (${deckNamesTitlePart})`;
+  }
+
+  return deckNamesTitlePart;
+}
+
 module.exports = {
   commandAliases: ['k!lb', 'k!leaderboard'],
   canBeChannelRestricted: true,
@@ -119,19 +190,9 @@ module.exports = {
     const isGlobal = suffixReplaced.indexOf('global') !== -1 || !msg.channel.guild;
 
     suffixReplaced = suffixReplaced.replace(/global/g, '');
-    const deckNamesString = suffixReplaced.trim();
-    const didSpecifyDecks = !!deckNamesString;
-    const deckNamesArray = didSpecifyDecks ? deckNamesString.split(/ *\+ */) : [];
-
-    let deckNamesTitlePart = '';
-    if (didSpecifyDecks) {
-      deckNamesTitlePart = deckNamesArray.slice(0, 5).join(', ');
-      if (deckNamesArray.length > 5) {
-        deckNamesTitlePart += ', ...';
-      }
-
-      deckNamesTitlePart = ` (${deckNamesTitlePart})`;
-    }
+    const deckNamesArray = getDeckNamesArray(suffixReplaced);
+    const didSpecifyDecks = deckNamesArray.length > 0;
+    const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
 
     if (isGlobal) {
       title = `Global leaderboard${deckNamesTitlePart}`;
