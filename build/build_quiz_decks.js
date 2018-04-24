@@ -35,6 +35,7 @@ module.exports = function() {
   mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz', 'decks'));
 
   const deckDataForDeckName = {};
+  const promises = [];
 
   // Build disk arrays for the quiz decks
   const quizDeckFileNames = fs.readdirSync(getPathForQuizDeckFile());
@@ -45,10 +46,12 @@ module.exports = function() {
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     delete deck.cards;
     deck.cardDiskArrayPath = diskArrayDirectory;
-    diskArray.create(cards, diskArrayDirectory);
+    promises.push(diskArray.create(cards, diskArrayDirectory));
     deckDataForDeckName[deckName] = deck;
   }
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
-  writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString);
+  promises.push(writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString));
+
+  return Promise.all(promises);
 }
