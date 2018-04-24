@@ -9,6 +9,7 @@ const {
 } = reload('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
+const HELP_DESCRIPTION = 'Say **k!help lb** for help viewing leaderboards';
 
 const deckNamesForGroupAlias = {
   anagrams: [
@@ -83,7 +84,7 @@ function sendScores(bot, msg, scores, title, description, footer) {
     const content = {
       embed: {
         title,
-        description: `${description}\n${createScoreTotalString(scores)}`,
+        description: `${description}\n${createScoreTotalString(scores)}\n${HELP_DESCRIPTION}`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
       },
@@ -183,10 +184,12 @@ function createFooter(text) {
 }
 
 module.exports = {
-  commandAliases: ['k!lb', 'k!leaderboard'],
+  commandAliases: ['k!leaderboard', 'k!lb'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'leaderboard409359',
+  shortDescription: 'View leaderboards for quiz and/or shiritori',
+  longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**k!lb** - View all quiz scores in this server\n**k!lb shiritori** - View shiritori scores in this server\n**k!lb global** - View all quiz scores globally\n**k!lb global N1** - View the global leaderboard for the N1 quiz deck\n**k!lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**k!lb anagrams**\n**k!lb jlpt**\n**k!lb kanken**',
   action: async function action(bot, msg, suffix) {
     let title = '';
     let footer = {};
