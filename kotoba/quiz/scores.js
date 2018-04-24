@@ -53,7 +53,7 @@ class Scores {
   // Postcondition: If that answer should be awarded points,
   //   they are awarded.
   // Returns true if points are awarded, false otherwise.
-  submitAnswer(userId, userName, answer, points, scoreDifferentAnswers, deckId) {
+  submitAnswer(userId, userName, answer, totalPoints, normalizedPoints, scoreDifferentAnswers, deckId) {
     // If we should score different answers, there is no score window.
     // So return false if the answer has already been given.
     if (scoreDifferentAnswers && this.currentQuestionPointsPerAnswer[answer] !== undefined) {
@@ -74,7 +74,7 @@ class Scores {
       return false;
     }
 
-    this.currentQuestionPointsPerAnswer[answer] = points;
+    this.currentQuestionPointsPerAnswer[answer] = totalPoints;
     this.nameForUserId[userId] = userName;
 
     this.currentQuestionAnswersForUserId[userId] =
@@ -101,9 +101,9 @@ class Scores {
       this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId] = 0;
     }
 
-    this.aggregateScoreForUserId[userId].normalizedScore += 1;
-    this.aggregateScoreForUserId[userId].totalScore += points;
-    this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId] += 1;
+    this.aggregateScoreForUserId[userId].normalizedScore += normalizedPoints;
+    this.aggregateScoreForUserId[userId].totalScore += totalPoints;
+    this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId] += normalizedPoints;
 
     return true;
   }
