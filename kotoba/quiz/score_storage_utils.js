@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+const assert = require('assert');
 
 const { persistence, logger } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
@@ -59,58 +60,89 @@ async function getScores(serverId, deckName) {
     }
   }
 
-  const aggregatedRows = Object.keys(aggregateRowForUser).map(
-    userId => aggregateRowForUser[userId]);
+  const aggregatedRows = Object.keys(aggregateRowForUser)
+    .map(userId => aggregateRowForUser[userId]);
 
   console.timeEnd('calculate scores');
 
   return aggregatedRows;
 }
 
+function getRows(allRows, userId, serverId) {
+  const rowsForUser = [];
+  for (let i = 0; i < allRows.length; i += 1) {
+    if (allRows[i].userId === userId && allRows[i].serverId === serverId) {
+      rowsForUser.push(allRows[i]);
+    }
+  }
+
+  return rowsForUser;
+}
+
 class QuizScoreStorageUtils {
-  static addScores(discordServerId, deckId, scoreForUserId, nameForUserId) {
+  static addScores(serverId, scoresForUserId, nameForUserId) {
+    assert(typeof serverId === 'string', 'serverId is not string');
+    assert(typeof scoresForUserId === 'object', 'scoresForUserId is not object');
+    assert(typeof nameForUserId === 'object', 'nameForUserId is not object');
+
     return persistence.editGlobalData((data) => {
       if (!data.quizScores) {
         // Hotspot. Don't want to copy.
         // eslint-disable-next-line no-param-reassign
         data.quizScores = [];
       }
+
       if (!data.nameForUser) {
         // Hotspot. Don't want to copy.
         // eslint-disable-next-line no-param-reassign
         data.nameForUser = {};
       }
 
-      Object.keys(scoreForUserId).forEach((userId) => {
-        const score = scoreForUserId[userId];
-        if (!score) {
-          logger.logFailure('QUIZ SCORES', 'User has a falsy score. Skipping them, but this suggests a bug.');
-        } else {
-          const name = nameForUserId[userId];
+      Object.keys(scoresForUserId).forEach((userId) => {
+        assert(typeof userId === 'string', 'userId is not string');
+        const rowsForUserAndServer = getRows(data.quizScores, userId, serverId);
+        const scoreForDeck = scoresForUserId[userId];
+        const deckIds = Object.keys(scoreForDeck);
 
-          // Hotspot. Don't want to copy.
-          // eslint-disable-next-line no-param-reassign
-          data.nameForUser[userId] = name;
-          let rowForScore = data.quizScores.find(row =>
-            row.userId === userId && row.serverId === discordServerId && row.deckId === deckId);
+        const foundMatchingRowForDeckId = {};
+        rowsForUserAndServer.forEach((row) => {
+          if (scoreForDeck[row.deckId]) {
+            if (foundMatchingRowForDeckId[row.deckId]) {
+              logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
+            } else {
+              // Some (very few) people have NaN scores in the database because of a bug.
+              // So set them to 0 so that they can start increasing again.
+              if (!row.score) {
+                // eslint-disable-next-line no-param-reassign
+                row.score = 0;
+              }
 
-          if (!rowForScore) {
-            rowForScore = {
-              userId,
-              serverId: discordServerId,
-              deckId,
-              score,
-            };
-            data.quizScores.push(rowForScore);
-          } else {
-            // Some (very few) people have NaN scores in the database because of a bug.
-            // So set them to 0 so that they can start increasing again.
-            if (!rowForScore.score) {
-              rowForScore.score = 0;
+              assert(typeof scoreForDeck[row.deckId] === 'number', 'Score for a deck is not a number');
+
+              // eslint-disable-next-line no-param-reassign
+              row.score += scoreForDeck[row.deckId];
+              foundMatchingRowForDeckId[row.deckId] = true;
             }
-            rowForScore.score += score;
           }
-        }
+        });
+
+        deckIds.forEach((deckId) => {
+          if (!foundMatchingRowForDeckId[deckId]) {
+            const newRow = {
+              userId,
+              serverId,
+              deckId,
+              score: scoreForDeck[deckId],
+            };
+            data.quizScores.push(newRow);
+          }
+        });
+
+        const name = nameForUserId[userId];
+
+        // Hotspot. Don't want to copy.
+        // eslint-disable-next-line no-param-reassign
+        data.nameForUser[userId] = name;
       });
 
 
@@ -122,8 +154,8 @@ class QuizScoreStorageUtils {
     return getScores(undefined, deckName);
   }
 
-  static getServerScores(discordServerId, deckName) {
-    return getScores(discordServerId, deckName);
+  static getServerScores(serverId, deckName) {
+    return getScores(serverId, deckName);
   }
 }
 

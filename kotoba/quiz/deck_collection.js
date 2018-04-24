@@ -150,6 +150,7 @@ class DeckCollection {
     }
 
     card.deckName = card.deckName || deck.name;
+    card.deckId = card.deckId || deck.uniqueId;
     card.instructions = card.instructions || deck.instructions;
     card.dictionaryLinkStrategy = card.dictionaryLinkStrategy || deck.dictionaryLinkStrategy;
     card.questionCreationStrategy = card.questionCreationStrategy || deck.questionCreationStrategy;

@@ -7,7 +7,6 @@ class Scores {
   constructor() {
     this.aggregateScoreForUserId = {};
     this.nameForUserId = {};
-    this.committedScoreForUserId = {};
   }
 
   static createNew(scoreLimit, deckId, scoreScopeId) {
@@ -25,7 +24,6 @@ class Scores {
     scores.aggregateScoreForUserId = saveData.aggregateScoreForUserId;
     scores.nameForUserId = saveData.nameForUserId;
     scores.scoreScopeId = scoreScopeId;
-    scores.committedScoreForUserId = saveData.committedScoreForUserId;
 
     return scores;
   }
@@ -34,10 +32,8 @@ class Scores {
   createSaveData() {
     return {
       scoreLimit: this.scoreLimit,
-      deckId: this.deckId,
       aggregateScoreForUserId: this.aggregateScoreForUserId,
       nameForUserId: this.nameForUserId,
-      committedScoreForUserId: this.committedScoreForUserId,
     };
   }
 
@@ -57,7 +53,7 @@ class Scores {
   // Postcondition: If that answer should be awarded points,
   //   they are awarded.
   // Returns true if points are awarded, false otherwise.
-  submitAnswer(userId, userName, answer, points, scoreDifferentAnswers) {
+  submitAnswer(userId, userName, answer, points, scoreDifferentAnswers, deckId) {
     // If we should score different answers, there is no score window.
     // So return false if the answer has already been given.
     if (scoreDifferentAnswers && this.currentQuestionPointsPerAnswer[answer] !== undefined) {
@@ -97,23 +93,34 @@ class Scores {
       };
     }
 
+    if (!this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId) {
+      this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId = {};
+    }
+
+    if (!this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId]) {
+      this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId] = 0;
+    }
+
     this.aggregateScoreForUserId[userId].normalizedScore += 1;
     this.aggregateScoreForUserId[userId].totalScore += points;
+    this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId[deckId] += 1;
 
     return true;
   }
 
   async commitScores() {
     if (this.scoreScopeId) {
-      const uncommitedScores = this.getUncommittedScoreForUserIds();
+      const uncommittedScores = this.getUncommittedScoreForUserIds();
       await ScoreStorageUtils.addScores(
         this.scoreScopeId,
-        this.deckId,
-        uncommitedScores,
+        uncommittedScores,
         this.nameForUserId,
       );
 
-      this.updateCommitedScores(uncommitedScores);
+      const userIds = this.getParticipantUserIds();
+      userIds.forEach((userId) => {
+        delete this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId;
+      });
     }
   }
 
@@ -141,26 +148,19 @@ class Scores {
     );
   }
 
-  updateCommitedScores(newlyCommittedPointsForUserId) {
-    Object.keys(newlyCommittedPointsForUserId).forEach((userId) => {
-      if (!this.committedScoreForUserId[userId]) {
-        this.committedScoreForUserId[userId] = 0;
-      }
-      this.committedScoreForUserId[userId] += newlyCommittedPointsForUserId[userId];
+  getUncommittedScoreForUserIds() {
+    const uncommittedScores = {};
+    const userIds = this.getParticipantUserIds();
+    userIds.forEach((userId) => {
+      uncommittedScores[userId] =
+        this.aggregateScoreForUserId[userId].uncommittedScoreForDeckId;
     });
+
+    return uncommittedScores;
   }
 
-  getUncommittedScoreForUserIds() {
-    const lbScores = this.getScoresForLb();
-    const uncommitedScores = {};
-    Object.keys(lbScores).forEach((userId) => {
-      if (!this.committedScoreForUserId[userId]) {
-        this.committedScoreForUserId[userId] = 0;
-      }
-      uncommitedScores[userId] = lbScores[userId] - this.committedScoreForUserId[userId];
-    });
-
-    return uncommitedScores;
+  getParticipantUserIds() {
+    return Object.keys(this.aggregateScoreForUserId);
   }
 
   getScoresForUserPairs() {
