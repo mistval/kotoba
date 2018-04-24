@@ -145,7 +145,7 @@ function getDeckNamesArray(deckNamesString) {
     return [];
   }
 
-  const deckNamesArray = deckNamesString.split(/ *\+ */);
+  const deckNamesArray = deckNamesStringTrimmed.split(/ *\+ */);
 
   const deckNamesArrayUnaliased = [];
   for (let i = 0; i < deckNamesArray.length; i += 1) {
@@ -175,6 +175,13 @@ function getDeckNamesTitlePart(deckNamesArray) {
   return deckNamesTitlePart;
 }
 
+function createFooter(text) {
+  return {
+    text,
+    icon_url: constants.FOOTER_ICON_URI,
+  };
+}
+
 module.exports = {
   commandAliases: ['k!lb', 'k!leaderboard'],
   canBeChannelRestricted: true,
@@ -199,25 +206,23 @@ module.exports = {
       description = 'The top scorers in the whole wide world.';
 
       if (!didSpecifyDecks) {
-        footer = {
-          text: 'Say \'k!lb global deckname\' to see the global leaderboard for a deck.',
-          icon_url: constants.FOOTER_ICON_URI,
-        };
+        footer = createFooter('Say \'k!lb global deckname\' to see the global leaderboard for a deck.');
       }
 
       scoresResult = await ScoreStorageUtils.getGlobalScores(deckNamesArray);
     } else {
       title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNamesTitlePart}`;
       description = 'The top scorers in this server.';
-      footer = {
-        text: 'Say \'k!lb global\' to see the global leaderboard. Say \'k!lb deckname\' to see a deck leaderboard.',
-        icon_url: constants.FOOTER_ICON_URI,
-      };
+      footer = createFooter('Say \'k!lb global\' to see the global leaderboard. Say \'k!lb deckname\' to see a deck leaderboard.');
       scoresResult = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckNamesArray);
     }
 
     if (scoresResult.unfoundDeckName !== undefined) {
       return notifyDeckNotFound(msg, isGlobal, scoresResult.unfoundDeckName);
+    }
+
+    if (!footer.text) {
+      footer = createFooter('You can mix any decks by using the + symbol. For example: k!lb N5+N4+N3');
     }
 
     return sendScores(bot, msg, scoresResult.rows, title, description, footer);
