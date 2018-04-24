@@ -15,19 +15,37 @@ Object.keys(decksMetadata).forEach((deckName) => {
 
 uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
-async function getScores(serverId, deckName) {
-  const deckUniqueId = uniqueIdForDeckName[deckName];
+function createUnfoundDeckResult(unfoundDeckName) {
+  return {
+    unfoundDeckName,
+  };
+}
 
-  if (deckName && !deckUniqueId) {
-    return undefined;
-  }
+function createOkayResult(rows) {
+  return {
+    rows,
+  };
+}
 
+async function getScores(serverId, deckNames) {
   const data = await persistence.getGlobalData();
   console.time('calculate scores');
 
-  if (!data.quizScores) {
-    return [];
+  const didSpecifyDecks = deckNames.length > 0;
+  const deckUniqueIds = [];
+  for (let i = 0; i < deckNames.length; i += 1) {
+    const deckName = deckNames[i];
+    if (!uniqueIdForDeckName[deckName]) {
+      return createUnfoundDeckResult(deckName);
+    }
+
+    deckUniqueIds.push(uniqueIdForDeckName[deckName]);
   }
+
+  if (!data.quizScores) {
+    return createOkayResult([]);
+  }
+
   if (!data.nameForUser) {
     data.nameForUser = {};
   }
@@ -40,9 +58,9 @@ async function getScores(serverId, deckName) {
 
     if (serverId && databaseRow.serverId !== serverId) {
       // NOOP
-    } else if (deckUniqueId && databaseRow.deckId !== deckUniqueId) {
+    } else if (didSpecifyDecks && deckUniqueIds.indexOf(databaseRow.deckId) === -1) {
       // NOOP
-    } else if (!deckUniqueId && databaseRow.deckId === SHIRITORI_DECK_ID) {
+    } else if (!didSpecifyDecks && databaseRow.deckId === SHIRITORI_DECK_ID) {
       // NOOP
     } else {
       const aggregatedRow = aggregateRowForUser[databaseRow.userId];
@@ -65,7 +83,7 @@ async function getScores(serverId, deckName) {
 
   console.timeEnd('calculate scores');
 
-  return aggregatedRows;
+  return createOkayResult(aggregatedRows);
 }
 
 function getRows(allRows, userId, serverId) {
@@ -150,12 +168,12 @@ class QuizScoreStorageUtils {
     });
   }
 
-  static getGlobalScores(deckName) {
-    return getScores(undefined, deckName);
+  static getGlobalScores(deckNames) {
+    return getScores(undefined, deckNames);
   }
 
-  static getServerScores(serverId, deckName) {
-    return getScores(serverId, deckName);
+  static getServerScores(serverId, deckNames) {
+    return getScores(serverId, deckNames);
   }
 }
 
