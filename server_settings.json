@@ -38,7 +38,7 @@
             "userFacingName": "new_question_delay_after_unanswered",
             "description": "This setting controls how long I will wait (in seconds) after a timed out question before showing a new one. By setting this higher, players get more time to view and consider the correct answer.",
             "valueType": "FLOAT",
-            "defaultDatabaseFacingValue": 5,
+            "defaultDatabaseFacingValue": 3.75,
             "allowedDatabaseFacingValues": "Range(0, 120)"
           },
           {
