@@ -164,7 +164,7 @@ function scoreOneAnswerOnePoint(userId, userName, answer, card, scores) {
   if (correctAnswerIndex === -1) {
     return false;
   }
-  return scores.submitAnswer(userId, userName, answer, 1, false, card.id);
+  return scores.submitAnswer(userId, userName, answer, 1, false, card.deckId);
 }
 
 function scoreMultipleAnswersPositionPoints(userId, userName, answer, card, scores) {
@@ -177,7 +177,7 @@ function scoreMultipleAnswersPositionPoints(userId, userName, answer, card, scor
   if (card.pointsForAnswer) {
     points = card.pointsForAnswer[answerIndex];
   }
-  return scores.submitAnswer(userId, userName, answer, points, true, card.id);
+  return scores.submitAnswer(userId, userName, answer, points, true, card.deckId);
 }
 
 module.exports.ScoreAnswerStrategy = {
