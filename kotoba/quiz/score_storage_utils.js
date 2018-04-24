@@ -138,7 +138,7 @@ class QuizScoreStorageUtils {
               assert(typeof scoreForDeck[row.deckId] === 'number', 'Score for a deck is not a number');
 
               // eslint-disable-next-line no-param-reassign
-              row.score += scoreForDeck[row.deckId];
+              row.score += Math.floor(scoreForDeck[row.deckId]);
               foundMatchingRowForDeckId[row.deckId] = true;
             }
           }
