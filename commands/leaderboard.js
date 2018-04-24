@@ -113,42 +113,52 @@ module.exports = {
     let title = '';
     let footer = {};
     let description = '';
-    let scores;
+    let scoresResult;
 
     let suffixReplaced = suffix.toLowerCase();
     const isGlobal = suffixReplaced.indexOf('global') !== -1 || !msg.channel.guild;
 
     suffixReplaced = suffixReplaced.replace(/global/g, '');
-    const deckName = suffixReplaced.trim();
+    const deckNamesString = suffixReplaced.trim();
+    const didSpecifyDecks = !!deckNamesString;
+    const deckNamesArray = didSpecifyDecks ? deckNamesString.split(/ *\+ */) : [];
 
-    const deckNameTitlePart = deckName ? ` (${deckName})` : '';
+    let deckNamesTitlePart = '';
+    if (didSpecifyDecks) {
+      deckNamesTitlePart = deckNamesArray.slice(0, 5).join(', ');
+      if (deckNamesArray.length > 5) {
+        deckNamesTitlePart += ', ...';
+      }
+
+      deckNamesTitlePart = ` (${deckNamesTitlePart})`;
+    }
 
     if (isGlobal) {
-      title = `Global leaderboard ${deckNameTitlePart}`;
+      title = `Global leaderboard${deckNamesTitlePart}`;
       description = 'The top scorers in the whole wide world.';
 
-      if (!deckName) {
+      if (!didSpecifyDecks) {
         footer = {
           text: 'Say \'k!lb global deckname\' to see the global leaderboard for a deck.',
           icon_url: constants.FOOTER_ICON_URI,
         };
       }
 
-      scores = await ScoreStorageUtils.getGlobalScores(deckName);
+      scoresResult = await ScoreStorageUtils.getGlobalScores(deckNamesArray);
     } else {
-      title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNameTitlePart}`;
+      title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNamesTitlePart}`;
       description = 'The top scorers in this server.';
       footer = {
         text: 'Say \'k!lb global\' to see the global leaderboard. Say \'k!lb deckname\' to see a deck leaderboard.',
         icon_url: constants.FOOTER_ICON_URI,
       };
-      scores = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckName);
+      scoresResult = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckNamesArray);
     }
 
-    if (!scores) {
-      return notifyDeckNotFound(msg, isGlobal, deckName);
+    if (scoresResult.unfoundDeckName !== undefined) {
+      return notifyDeckNotFound(msg, isGlobal, scoresResult.unfoundDeckName);
     }
 
-    return sendScores(bot, msg, scores, title, description, footer);
+    return sendScores(bot, msg, scoresResult.rows, title, description, footer);
   },
 };
