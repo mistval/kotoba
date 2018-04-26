@@ -1,14 +1,18 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const logger = reload('monochrome-bot').logger;
 const state = require('./../static_state.js');
 const fs = require('fs');
 const assert = require('assert');
+
 const cardStrategies = reload('./card_strategies.js');
 const persistence = reload('monochrome-bot').persistence;
 const request = require('request-promise');
+
 const PublicError = reload('monochrome-bot').PublicError;
 const arrayOnDisk = require('disk-array');
+
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
@@ -63,22 +67,22 @@ function validateDeckPropertiesValid(deck) {
 }
 
 async function loadDecksFromDisk() {
-  let deckNames = Object.keys(decksMetadata);
-  let cache = state.quizDecksLoader.quizDecksCache;
-  for (let deckName of deckNames) {
+  const deckNames = Object.keys(decksMetadata);
+  const cache = state.quizDecksLoader.quizDecksCache;
+  for (const deckName of deckNames) {
     try {
-      let deckMetadata = decksMetadata[deckName];
+      const deckMetadata = decksMetadata[deckName];
       if (!deckMetadata.uniqueId || state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId]) {
         throw new Error(`Deck ${name} does not have a unique uniqueId, or doesn't have one at all.`);
       }
 
-      let diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
-      let deck = JSON.parse(JSON.stringify(deckMetadata));
+      const diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
+      const deck = JSON.parse(JSON.stringify(deckMetadata));
       deck.cards = createCardGetterFromDiskArray(diskArray);
       deck.isInternetDeck = false;
       state.quizDecksLoader.quizDeckForName[deckName] = deck;
       state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
-    } catch(err) {
+    } catch (err) {
       logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
     }
   }
@@ -91,7 +95,7 @@ function getObjectValues(obj) {
 function createAllDecksFoundStatus(decks) {
   return {
     status: DeckRequestStatus.ALL_DECKS_FOUND,
-    decks: decks,
+    decks,
   };
 }
 
@@ -130,7 +134,7 @@ function throwParsePublicError(errorReason, lineIndex, uri) {
 
 function tryCreateDeckFromRawData(data, uri) {
   // data = data.replace(/\r\n/g, '\n'); // Uncomment for testing with embedded data.
-  let lines = data.split('\r\n');
+  const lines = data.split('\r\n');
   let lineIndex = 0;
 
   // Parse and validate header
@@ -159,7 +163,7 @@ function tryCreateDeckFromRawData(data, uri) {
         throwParsePublicError('SHORT NAME must not contain any spaces.', lineIndex, uri);
       }
     } else if (lines[lineIndex].startsWith('QUESTION TYPE:')) {
-      let questionType = lines[lineIndex].replace('QUESTION TYPE:', '').trim().toUpperCase();
+      const questionType = lines[lineIndex].replace('QUESTION TYPE:', '').trim().toUpperCase();
       if (!QuestionCreationStrategyForQuestionType[questionType]) {
         throwParsePublicError(`QUESTION TYPE must be one of the following: ${Object.keys(QuestionCreationStrategyForQuestionType).join(', ')}`, lineIndex, uri);
       }
@@ -176,20 +180,20 @@ function tryCreateDeckFromRawData(data, uri) {
   }
 
   if (!questionCreationStrategy) {
-    questionCreationStrategy = 'IMAGE'
+    questionCreationStrategy = 'IMAGE';
   }
 
   // Parse and validate questions
-  let cards = [];
+  const cards = [];
   ++lineIndex;
   for (; lineIndex < lines.length; ++lineIndex) {
     if (!lines[lineIndex]) {
       continue;
     }
-    let parts = lines[lineIndex].split(',');
-    let question = parts[0];
-    let answers = parts[1];
-    let meaning = parts[2];
+    const parts = lines[lineIndex].split(',');
+    const question = parts[0];
+    const answers = parts[1];
+    const meaning = parts[2];
 
     if (!question) {
       throwParsePublicError('No question', lineIndex, uri);
@@ -205,8 +209,8 @@ function tryCreateDeckFromRawData(data, uri) {
       throwParsePublicError('Meaning must not contain more than 300 characters', lineIndex, uri);
     }
 
-    let card = {
-      question: question,
+    const card = {
+      question,
       answer: answers.split('/'),
     };
 
@@ -221,24 +225,24 @@ function tryCreateDeckFromRawData(data, uri) {
     throwParsePublicError('No questions', 0, uri);
   }
 
-  let deck = {
-    "isInternetDeck": true,
-    "name": deckName,
-    "shortName": shortName,
-    "article": "a",
-    "instructions": instructions,
-    "questionCreationStrategy": questionCreationStrategy,
-    "dictionaryLinkStrategy": "NONE",
-    "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
-    "cardPreprocessingStrategy": "NONE",
-    "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
-    "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
-    "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
-    "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
-    "answerCompareStrategy": "CONVERT_KANA",
-    "compileImages": false,
-    "commentFieldName": "Meaning",
-    "cards": createCardGetterFromInMemoryArray(cards),
+  const deck = {
+    isInternetDeck: true,
+    name: deckName,
+    shortName,
+    article: 'a',
+    instructions,
+    questionCreationStrategy,
+    dictionaryLinkStrategy: 'NONE',
+    answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
+    cardPreprocessingStrategy: 'NONE',
+    discordFinalAnswerListElementStrategy: 'QUESTION_AND_ANSWER_LINK_QUESTION',
+    scoreAnswerStrategy: 'ONE_ANSWER_ONE_POINT',
+    additionalAnswerWaitStrategy: 'JAPANESE_SETTINGS',
+    discordIntermediateAnswerListElementStrategy: 'CORRECT_ANSWERS',
+    answerCompareStrategy: 'CONVERT_KANA',
+    compileImages: false,
+    commentFieldName: 'Meaning',
+    cards: createCardGetterFromInMemoryArray(cards),
   };
   validateDeckPropertiesValid(deck);
   return deck;
@@ -257,14 +261,14 @@ INSTRUCTIONS: fgrg
     uri: pastebinUri,
     json: false,
     timeout: 10000,
-  }).catch(err => {
+  }).catch((err) => {
     throw PublicError.createWithCustomPublicMessage('There was an error downloading the deck from that URI. Check that the URI is correct and try again.', false, 'Pastebin fetch error', err);
   });
 }
 
 function countRowsForUserId(data, userId) {
-  let keys = Object.keys(data.communityDecks);
-  let total = keys.reduce((sum, key) => {
+  const keys = Object.keys(data.communityDecks);
+  const total = keys.reduce((sum, key) => {
     if (data.communityDecks[key].authorId === userId) {
       return sum + 1;
     }
@@ -277,19 +281,19 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   let deckUri;
 
   // If the deck name is a pastebin URI, extract the good stuff.
-  let pastebinRegexResults = PASTEBIN_REGEX.exec(deckInformation.deckNameOrUniqueId);
+  const pastebinRegexResults = PASTEBIN_REGEX.exec(deckInformation.deckNameOrUniqueId);
   if (pastebinRegexResults) {
-    let pastebinCode = pastebinRegexResults[1];
+    const pastebinCode = pastebinRegexResults[1];
     deckUri = `http://pastebin.com/raw/${pastebinCode}`;
   }
 
   // Check for a matching database entry and use the URI from there if there is one.
-  let databaseData = await persistence.getGlobalData();
+  const databaseData = await persistence.getGlobalData();
   let foundInDatabase = false;
   let uniqueId;
   let author;
   if (databaseData.communityDecks) {
-    let foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckNameOrUniqueId] || databaseData.communityDecks[deckUri];
+    const foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckNameOrUniqueId] || databaseData.communityDecks[deckUri];
     if (foundDatabaseEntry) {
       foundInDatabase = true;
       deckUri = foundDatabaseEntry.uri;
@@ -305,7 +309,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   }
 
   // Try to create the deck from pastebin.
-  let pastebinData = await tryFetchRawFromPastebin(deckUri);
+  const pastebinData = await tryFetchRawFromPastebin(deckUri);
   let deck = tryCreateDeckFromRawData(pastebinData, deckUri);
   deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
 
@@ -315,7 +319,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
     deck.uniqueId = uniqueId;
     deck.author = author;
   } else if (invokerUserId && invokerUserName) {
-    await persistence.editGlobalData(data => {
+    await persistence.editGlobalData((data) => {
       if (!data.communityDecks) {
         data.communityDecks = {};
       }
@@ -325,8 +329,10 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
       if (data.communityDecks[deck.shortName]) {
         throwParsePublicError('There is already a deck with that SHORT NAME. Please choose another SHORT NAME and make a new paste.', 0, deckUri);
       }
-      let uniqueId = Date.now().toString();
-      let databaseEntry = {uri: deckUri, authorId: invokerUserId, authorName: invokerUserName, uniqueId: uniqueId};
+      const uniqueId = Date.now().toString();
+      const databaseEntry = {
+        uri: deckUri, authorId: invokerUserId, authorName: invokerUserName, uniqueId,
+      };
       data.communityDecks[deckUri] = databaseEntry;
       data.communityDecks[uniqueId] = databaseEntry;
       data.communityDecks[deck.shortName] = databaseEntry;
@@ -336,7 +342,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
     });
   }
 
-  deck.description = `[User submitted deck loaded remotely from Pastebin]`;
+  deck.description = '[User submitted deck loaded remotely from Pastebin]';
 
   return deck;
 }
@@ -344,16 +350,16 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
 async function deleteInternetDeck(searchTerm, deletingUserId) {
   let returnStatus;
 
-  await persistence.editGlobalData(data => {
-    let foundRow = data.communityDecks[searchTerm];
+  await persistence.editGlobalData((data) => {
+    const foundRow = data.communityDecks[searchTerm];
     if (!foundRow) {
       returnStatus = DeletionStatus.DECK_NOT_FOUND;
     } else if (foundRow.authorId !== deletingUserId) {
       returnStatus = DeletionStatus.USER_NOT_OWNER;
     } else {
-      let uniqueId = foundRow.uniqueId;
-      let communityDeckKeys = Object.keys(data.communityDecks);
-      for (let key of communityDeckKeys) {
+      const uniqueId = foundRow.uniqueId;
+      const communityDeckKeys = Object.keys(data.communityDecks);
+      for (const key of communityDeckKeys) {
         if (data.communityDecks[key].uniqueId === uniqueId) {
           delete data.communityDecks[key];
         }
@@ -376,7 +382,7 @@ class OutOfBoundsCardRangeStatus {
 }
 
 function createOutOfBoundsCardRangeStatus(decks) {
-  for (let deck of decks) {
+  for (const deck of decks) {
     if (deck.startIndex === undefined && deck.endIndex === undefined) {
       continue;
     }
@@ -387,19 +393,19 @@ function createOutOfBoundsCardRangeStatus(decks) {
 }
 
 async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
-  let decks = [];
+  const decks = [];
 
   // Try to get decks from memory.
-  for (let deckInfo of deckInfos) {
+  for (const deckInfo of deckInfos) {
     decks.push(getDeckFromMemory(deckInfo));
   }
 
   // For any decks not found in memory, try to get from internet.
-  let promises = [];
+  const promises = [];
   for (let i = 0; i < decks.length; ++i) {
-    let deck = decks[i];
+    const deck = decks[i];
     if (!deck) {
-      promises.push(getDeckFromInternet(deckInfos[i], invokerUserId, invokerUserName).then(internetDeck => {
+      promises.push(getDeckFromInternet(deckInfos[i], invokerUserId, invokerUserName).then((internetDeck) => {
         decks[i] = internetDeck;
       }));
     }
@@ -409,13 +415,13 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
 
   // If not all decks were found, return error.
   for (let i = 0; i < decks.length; ++i) {
-    let deck = decks[i];
+    const deck = decks[i];
     if (!deck) {
       return createDeckNotFoundStatus(deckInfos[i].deckNameOrUniqueId);
     }
   }
 
-  let outOfBoundsStatus = createOutOfBoundsCardRangeStatus(decks);
+  const outOfBoundsStatus = createOutOfBoundsCardRangeStatus(decks);
   if (outOfBoundsStatus) {
     return outOfBoundsStatus;
   }
@@ -444,7 +450,7 @@ function createReviewDeck(unansweredCards) {
     article: 'a',
     isInternetDeck: unansweredCards.some(card => card.isInternetCard),
     cards: createCardGetterFromInMemoryArray(deepCopy(unansweredCards)),
-  }
+  };
 }
 
 module.exports = {
@@ -453,4 +459,4 @@ module.exports = {
   deleteInternetDeck,
   DeletionStatus,
   createReviewDeck,
-}
+};
