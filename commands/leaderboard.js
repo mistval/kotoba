@@ -9,7 +9,7 @@ const {
 } = reload('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
-const HELP_DESCRIPTION = 'Say **k!help lb** for help viewing leaderboards';
+const HELP_DESCRIPTION = 'Say **k!help lb** for help viewing leaderboards.';
 
 const deckNamesForGroupAlias = {
   anagrams: [
