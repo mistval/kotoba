@@ -1,22 +1,14 @@
-
 const reload = require('require-reload')(require);
-
-const logger = reload('monochrome-bot').logger;
 const state = require('./../static_state.js');
-const fs = require('fs');
 const assert = require('assert');
-
-const cardStrategies = reload('./card_strategies.js');
-const persistence = reload('monochrome-bot').persistence;
 const request = require('request-promise');
-
-const PublicError = reload('monochrome-bot').PublicError;
 const arrayOnDisk = require('disk-array');
 
+const { logger, persistence, PublicError } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
+const cardStrategies = reload('./card_strategies.js');
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
-const DECKS_DIRECTORY = `${__dirname}/carddecks`;
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
 const MAX_DECKS_PER_USER = 10;
@@ -57,25 +49,30 @@ function validateDeckPropertiesValid(deck) {
   assert(deck.instructions, 'No instructions.');
   assert(deck.cards, 'No cards.');
   assert(deck.commentFieldName, 'No comment field name');
-  assert(~Object.keys(cardStrategies.CreateQuestionStrategy).indexOf(deck.questionCreationStrategy), 'No or invalid question creation strategy.');
-  assert(~Object.keys(cardStrategies.CreateDictionaryLinkStrategy).indexOf(deck.dictionaryLinkStrategy), 'No or invalid dictionary link strategy.');
-  assert(~Object.keys(cardStrategies.AnswerTimeLimitStrategy).indexOf(deck.answerTimeLimitStrategy), 'No or invalid answer time limit strategy.');
-  assert(~Object.keys(cardStrategies.CardPreprocessingStrategy).indexOf(deck.cardPreprocessingStrategy), 'No or invalid preprocessing strategy.');
-  assert(~Object.keys(cardStrategies.ScoreAnswerStrategy).indexOf(deck.scoreAnswerStrategy), 'No or invalid score answer strategy.');
-  assert(~Object.keys(cardStrategies.AdditionalAnswerWaitStrategy).indexOf(deck.additionalAnswerWaitStrategy), 'No or invalid additional answer wait strategy.');
-  assert(~Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy), 'No or invalid answerCompareStrategy.');
+  assert(Object.keys(cardStrategies.CreateQuestionStrategy).indexOf(deck.questionCreationStrategy) !== -1, 'No or invalid question creation strategy.');
+  assert(Object.keys(cardStrategies.CreateDictionaryLinkStrategy).indexOf(deck.dictionaryLinkStrategy) !== -1, 'No or invalid dictionary link strategy.');
+  assert(Object.keys(cardStrategies.AnswerTimeLimitStrategy).indexOf(deck.answerTimeLimitStrategy) !== -1, 'No or invalid answer time limit strategy.');
+  assert(Object.keys(cardStrategies.CardPreprocessingStrategy).indexOf(deck.cardPreprocessingStrategy) !== -1, 'No or invalid preprocessing strategy.');
+  assert(Object.keys(cardStrategies.ScoreAnswerStrategy).indexOf(deck.scoreAnswerStrategy) !== -1, 'No or invalid score answer strategy.');
+  assert(Object.keys(cardStrategies.AdditionalAnswerWaitStrategy).indexOf(deck.additionalAnswerWaitStrategy !== -1), 'No or invalid additional answer wait strategy.');
+  assert(Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy !== -1), 'No or invalid answerCompareStrategy.');
 }
 
 async function loadDecksFromDisk() {
   const deckNames = Object.keys(decksMetadata);
   const cache = state.quizDecksLoader.quizDecksCache;
-  for (const deckName of deckNames) {
+
+  for (let i = 0; i < deckNames.length; i += 1) {
+    const deckName = deckNames[i];
     try {
       const deckMetadata = decksMetadata[deckName];
-      if (!deckMetadata.uniqueId || state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId]) {
-        throw new Error(`Deck ${name} does not have a unique uniqueId, or doesn't have one at all.`);
+      if (!deckMetadata.uniqueId
+        || state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId]) {
+        throw new Error(`Deck ${deckName} does not have a unique uniqueId, or doesn't have one at all.`);
       }
 
+      // Await makes this code simpler, and the performance is irrelevant.
+      // eslint-disable-next-line no-await-in-loop
       const diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
       const deck = JSON.parse(JSON.stringify(deckMetadata));
       deck.cards = createCardGetterFromDiskArray(diskArray);
@@ -86,10 +83,6 @@ async function loadDecksFromDisk() {
       logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
     }
   }
-}
-
-function getObjectValues(obj) {
-  return Object.keys(obj).map(key => obj[key]);
 }
 
 function createAllDecksFoundStatus(decks) {
@@ -107,21 +100,23 @@ function createDeckNotFoundStatus(missingDeckName) {
 }
 
 function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
-  deck = Object.assign({}, deck);
-  deck.startIndex = deckInformation.startIndex;
-  deck.endIndex = deckInformation.endIndex;
+  const deckCopy = Object.assign({}, deck);
+  deckCopy.startIndex = deckInformation.startIndex;
+  deckCopy.endIndex = deckInformation.endIndex;
 
   if (typeof deckInformation.numberOfOptions === typeof 1) {
-    deck.numberOfOptions = deckInformation.numberOfOptions;
+    deckCopy.numberOfOptions = deckInformation.numberOfOptions;
   } else {
-    deck.numberOfOptions = 0;
+    deckCopy.numberOfOptions = 0;
   }
 
-  return deck;
+  return deckCopy;
 }
 
 function getDeckFromMemory(deckInformation) {
-  let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckNameOrUniqueId] || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckNameOrUniqueId];
+  let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckNameOrUniqueId]
+    || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckNameOrUniqueId];
+
   if (deck) {
     deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
   }
@@ -142,7 +137,11 @@ function tryCreateDeckFromRawData(data, uri) {
   let instructions;
   let shortName;
   let questionCreationStrategy;
-  for (; lineIndex < lines.length && !lines[lineIndex].startsWith(QUESTIONS_START_IDENTIFIER); ++lineIndex) {
+  for (
+    ;
+    lineIndex < lines.length && !lines[lineIndex].startsWith(QUESTIONS_START_IDENTIFIER);
+    lineIndex += 1
+  ) {
     if (lines[lineIndex].startsWith('FULL NAME:')) {
       deckName = lines[lineIndex].replace('FULL NAME:', '').trim();
       if (deckName.length > 80) {
@@ -157,9 +156,9 @@ function tryCreateDeckFromRawData(data, uri) {
       shortName = lines[lineIndex].replace('SHORT NAME:', '').trim().toLowerCase();
       if (shortName.length > 20) {
         throwParsePublicError('SHORT NAME must be shorter than 20 characters.', lineIndex, uri);
-      } else if (~shortName.indexOf('+')) {
+      } else if (shortName.indexOf('+') !== -1) {
         throwParsePublicError('SHORT NAME must not contain a + symbol.', lineIndex, uri);
-      } else if (~shortName.indexOf(' ')) {
+      } else if (shortName.indexOf(' ') !== -1) {
         throwParsePublicError('SHORT NAME must not contain any spaces.', lineIndex, uri);
       }
     } else if (lines[lineIndex].startsWith('QUESTION TYPE:')) {
@@ -185,40 +184,39 @@ function tryCreateDeckFromRawData(data, uri) {
 
   // Parse and validate questions
   const cards = [];
-  ++lineIndex;
-  for (; lineIndex < lines.length; ++lineIndex) {
-    if (!lines[lineIndex]) {
-      continue;
+  lineIndex += 1;
+  for (; lineIndex < lines.length; lineIndex += 1) {
+    if (lines[lineIndex]) {
+      const parts = lines[lineIndex].split(',');
+      const question = parts[0];
+      const answers = parts[1];
+      const meaning = parts[2];
+
+      if (!question) {
+        throwParsePublicError('No question', lineIndex, uri);
+      } else if (!answers) {
+        throwParsePublicError('No answers', lineIndex, uri);
+      } else if (question.length > 10 && questionCreationStrategy === 'IMAGE') {
+        throwParsePublicError('Image questions must not contain more than 10 characters. Consider shortening this question or changing the QUESTION TYPE to TEXT.', lineIndex, uri);
+      } else if (question.length > 300) {
+        throwParsePublicError('Questions must not contain more than 300 characters.', lineIndex, uri);
+      } else if (answers.length > 300) {
+        throwParsePublicError('Answers must not contain more than 300 characters', lineIndex, uri);
+      } else if (meaning && meaning.length > 300) {
+        throwParsePublicError('Meaning must not contain more than 300 characters', lineIndex, uri);
+      }
+
+      const card = {
+        question,
+        answer: answers.split('/'),
+      };
+
+      if (meaning) {
+        card.meaning = meaning.split('/').join(', ');
+      }
+
+      cards.push(card);
     }
-    const parts = lines[lineIndex].split(',');
-    const question = parts[0];
-    const answers = parts[1];
-    const meaning = parts[2];
-
-    if (!question) {
-      throwParsePublicError('No question', lineIndex, uri);
-    } else if (!answers) {
-      throwParsePublicError('No answers', lineIndex, uri);
-    } else if (question.length > 10 && questionCreationStrategy === 'IMAGE') {
-      throwParsePublicError('Image questions must not contain more than 10 characters. Consider shortening this question or changing the QUESTION TYPE to TEXT.', lineIndex, uri);
-    } else if (question.length > 300) {
-      throwParsePublicError('Questions must not contain more than 300 characters.', lineIndex, uri);
-    } else if (answers.length > 300) {
-      throwParsePublicError('Answers must not contain more than 300 characters', lineIndex, uri);
-    } else if (meaning && meaning.length > 300) {
-      throwParsePublicError('Meaning must not contain more than 300 characters', lineIndex, uri);
-    }
-
-    const card = {
-      question,
-      answer: answers.split('/'),
-    };
-
-    if (meaning) {
-      card.meaning = meaning.split('/').join(', ');
-    }
-
-    cards.push(card);
   }
 
   if (cards.length === 0) {
@@ -293,11 +291,13 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   let uniqueId;
   let author;
   if (databaseData.communityDecks) {
-    const foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckNameOrUniqueId] || databaseData.communityDecks[deckUri];
+    const foundDatabaseEntry = databaseData.communityDecks[deckInformation.deckNameOrUniqueId]
+      || databaseData.communityDecks[deckUri];
+
     if (foundDatabaseEntry) {
       foundInDatabase = true;
       deckUri = foundDatabaseEntry.uri;
-      uniqueId = foundDatabaseEntry.uniqueId;
+      ({ uniqueId } = foundDatabaseEntry);
       author = foundDatabaseEntry.authorName;
     }
   }
@@ -305,7 +305,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   // If the given deck name is not a pastebin URI, and we didn't
   // find one in the database, the deck is unfound. Return undefined.
   if (!deckUri) {
-    return;
+    return undefined;
   }
 
   // Try to create the deck from pastebin.
@@ -321,6 +321,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   } else if (invokerUserId && invokerUserName) {
     await persistence.editGlobalData((data) => {
       if (!data.communityDecks) {
+        // eslint-disable-next-line no-param-reassign
         data.communityDecks = {};
       }
       if (countRowsForUserId(data, invokerUserId) >= MAX_DECKS_PER_USER) {
@@ -329,12 +330,15 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
       if (data.communityDecks[deck.shortName]) {
         throwParsePublicError('There is already a deck with that SHORT NAME. Please choose another SHORT NAME and make a new paste.', 0, deckUri);
       }
-      const uniqueId = Date.now().toString();
+      uniqueId = Date.now().toString();
       const databaseEntry = {
         uri: deckUri, authorId: invokerUserId, authorName: invokerUserName, uniqueId,
       };
+      // eslint-disable-next-line no-param-reassign
       data.communityDecks[deckUri] = databaseEntry;
+      // eslint-disable-next-line no-param-reassign
       data.communityDecks[uniqueId] = databaseEntry;
+      // eslint-disable-next-line no-param-reassign
       data.communityDecks[deck.shortName] = databaseEntry;
       deck.uniqueId = uniqueId;
       deck.author = invokerUserName;
@@ -357,13 +361,16 @@ async function deleteInternetDeck(searchTerm, deletingUserId) {
     } else if (foundRow.authorId !== deletingUserId) {
       returnStatus = DeletionStatus.USER_NOT_OWNER;
     } else {
-      const uniqueId = foundRow.uniqueId;
+      const { uniqueId } = foundRow;
       const communityDeckKeys = Object.keys(data.communityDecks);
-      for (const key of communityDeckKeys) {
+
+      communityDeckKeys.forEach((key) => {
         if (data.communityDecks[key].uniqueId === uniqueId) {
+          // eslint-disable-next-line no-param-reassign
           delete data.communityDecks[key];
         }
-      }
+      });
+
       returnStatus = DeletionStatus.DELETED;
     }
     return data;
@@ -382,39 +389,50 @@ class OutOfBoundsCardRangeStatus {
 }
 
 function createOutOfBoundsCardRangeStatus(decks) {
-  for (const deck of decks) {
-    if (deck.startIndex === undefined && deck.endIndex === undefined) {
-      continue;
-    }
-    if (deck.startIndex < 0 || deck.endIndex > deck.cards.length || deck.startIndex > deck.endIndex) {
-      return new OutOfBoundsCardRangeStatus(deck);
+  for (let i = 0; i < decks.length; i += 1) {
+    const deck = decks[i];
+
+    if (deck.startIndex !== undefined || deck.endIndex !== undefined) {
+      if (deck.startIndex < 0
+        || deck.endIndex > deck.cards.length
+        || deck.startIndex > deck.endIndex) {
+        return new OutOfBoundsCardRangeStatus(deck);
+      }
     }
   }
+
+  return undefined;
 }
 
 async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
   const decks = [];
 
   // Try to get decks from memory.
-  for (const deckInfo of deckInfos) {
+  deckInfos.forEach((deckInfo) => {
     decks.push(getDeckFromMemory(deckInfo));
-  }
+  });
 
   // For any decks not found in memory, try to get from internet.
   const promises = [];
-  for (let i = 0; i < decks.length; ++i) {
+  for (let i = 0; i < decks.length; i += 1) {
     const deck = decks[i];
     if (!deck) {
-      promises.push(getDeckFromInternet(deckInfos[i], invokerUserId, invokerUserName).then((internetDeck) => {
+      const internetDeckPromise = getDeckFromInternet(
+        deckInfos[i],
+        invokerUserId,
+        invokerUserName,
+      ).then((internetDeck) => {
         decks[i] = internetDeck;
-      }));
+      });
+
+      promises.push(internetDeckPromise);
     }
   }
 
   await Promise.all(promises);
 
   // If not all decks were found, return error.
-  for (let i = 0; i < decks.length; ++i) {
+  for (let i = 0; i < decks.length; i += 1) {
     const deck = decks[i];
     if (!deck) {
       return createDeckNotFoundStatus(deckInfos[i].deckNameOrUniqueId);
