@@ -29,29 +29,27 @@ function writeFile(path, content) {
   });
 }
 
-module.exports = function() {
+module.exports = async function() {
   mkdirIgnoreError(path.join(__dirname, '..', 'objects'));
   mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz'));
   mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz', 'decks'));
 
   const deckDataForDeckName = {};
-  const promises = [];
 
   // Build disk arrays for the quiz decks
   const quizDeckFileNames = fs.readdirSync(getPathForQuizDeckFile());
   for (let fileName of quizDeckFileNames) {
     const deckName = fileName.replace('.json', '');
-    const deck = require(getPathForQuizDeckFile(fileName));
+    const deckString = fs.readFileSync(getPathForQuizDeckFile(fileName), 'utf8');
+    const deck = JSON.parse(deckString);
     const cards = deck.cards;
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     delete deck.cards;
     deck.cardDiskArrayPath = diskArrayDirectory;
-    promises.push(diskArray.create(cards, diskArrayDirectory));
+    await diskArray.create(cards, diskArrayDirectory);
     deckDataForDeckName[deckName] = deck;
   }
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
-  promises.push(writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString));
-
-  return Promise.all(promises);
+  await writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString);
 }
