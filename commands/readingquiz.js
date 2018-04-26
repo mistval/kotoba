@@ -335,7 +335,7 @@ class DiscordMessageSender {
 
   notifyStarting(inMs, quizName, quizDescription) {
     const inSeconds = inMs / 1000;
-    const embedTitle = 'Quiz Starting in 5 seconds';
+    const embedTitle = `Quiz Starting in ${inSeconds} seconds`;
     let embedDescription = `**${quizName}**`;
     if (quizDescription) {
       embedDescription = `${embedDescription} - ${quizDescription}`;
@@ -779,6 +779,8 @@ async function load(
     if (endStatus === quizManager.END_STATUS_ERROR) {
       throw new Error('The quiz manager successfully handled an error condition');
     }
+
+    return undefined;
   } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Error with loaded save', err);
     await saveManager.restore(msg.author.id, memento);
