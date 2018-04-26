@@ -34,10 +34,9 @@ class DeckCollection {
     let deckName = deckCollection.decks_[0].name;
     if (deckCollection.decks_.every(deck => deck.name === deckName)) {
       deckCollection.name_ = deckName;
-      deckCollection.article_ = deckCollection.decks_[0].article;
+      deckCollection.description_ = decks[0].description;
     } else {
       deckCollection.name_ = 'Multiple Deck Quiz';
-      deckCollection.article_ = 'a';
     }
 
     deckCollection.name_ = gameMode.overrideDeckTitle(deckCollection.name_);
@@ -62,7 +61,6 @@ class DeckCollection {
     assert(deckCollection.decks_, `couldn't find a save deck by unique ID`);
     deckCollection.indexSet_ = saveData.indexSet;
     deckCollection.name_ = saveData.name;
-    deckCollection.article_ = saveData.article;
     deckCollection.nextCardId_ = saveData.nextCardId;
     deckCollection.previousCardCache_ = saveData.previousCardCache;
     return deckCollection;
@@ -213,7 +211,7 @@ class DeckCollection {
       numberOfOptionsForDeck: this.decks_.map(deck => deck.numberOfOptions),
       indexSet: this.indexSet_,
       name: this.getName(),
-      article: this.getArticle(),
+      description: this.getDescription(),
       nextCardId: this.nextCardId_,
       previousCardCache: this.purgeCache_(),
     };
@@ -223,8 +221,8 @@ class DeckCollection {
     return this.name_;
   }
 
-  getArticle() {
-    return this.article_;
+  getDescription() {
+    return this.description_;
   }
 
   getDeckId() {

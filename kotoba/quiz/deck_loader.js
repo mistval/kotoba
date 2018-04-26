@@ -336,6 +336,8 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
     });
   }
 
+  deck.description = `[User submitted deck loaded remotely from Pastebin]`;
+
   return deck;
 }
 
