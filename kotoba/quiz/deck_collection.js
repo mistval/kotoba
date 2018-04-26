@@ -1,5 +1,6 @@
-'use strict'
+
 const reload = require('require-reload')(require);
+
 const Util = reload('./../utils.js');
 const cardStrategies = reload('./card_strategies.js');
 const deckLoader = reload('./deck_loader.js');
@@ -10,11 +11,11 @@ function deepCopy(object) {
 }
 
 function createRandomIndexSetForDecks(decks) {
-  let indexSet = [];
-  for (let deck of decks) {
-    let startIndex = deck.startIndex || 0;
-    let endIndex = deck.endIndex === undefined ? deck.cards.length - 1 : deck.endIndex;
-    let indices = Array(endIndex - startIndex + 1);
+  const indexSet = [];
+  for (const deck of decks) {
+    const startIndex = deck.startIndex || 0;
+    const endIndex = deck.endIndex === undefined ? deck.cards.length - 1 : deck.endIndex;
+    const indices = Array(endIndex - startIndex + 1);
     for (let i = startIndex; i <= endIndex; ++i) {
       indices[i - startIndex] = i;
     }
@@ -27,11 +28,11 @@ function createRandomIndexSetForDecks(decks) {
 
 class DeckCollection {
   static createNewFromDecks(decks, gameMode) {
-    let deckCollection = new DeckCollection();
+    const deckCollection = new DeckCollection();
     deckCollection.nextCardId_ = 0;
     deckCollection.decks_ = decks;
     deckCollection.indexSet_ = createRandomIndexSetForDecks(decks);
-    let deckName = deckCollection.decks_[0].name;
+    const deckName = deckCollection.decks_[0].name;
     if (deckCollection.decks_.every(deck => deck.name === deckName)) {
       deckCollection.name_ = deckName;
       deckCollection.description_ = decks[0].description;
@@ -42,7 +43,7 @@ class DeckCollection {
     deckCollection.name_ = gameMode.overrideDeckTitle(deckCollection.name_);
 
     deckCollection.previousCardCache_ = [];
-    for (let deck of decks) {
+    for (const deck of decks) {
       deckCollection.previousCardCache_.push({});
     }
 
@@ -50,15 +51,15 @@ class DeckCollection {
   }
 
   static async createFromSaveData(saveData) {
-    let deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
-      let numberOfOptions = saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
-      return {deckNameOrUniqueId: uniqueId, numberOfOptions};
+    const deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
+      const numberOfOptions = saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
+      return { deckNameOrUniqueId: uniqueId, numberOfOptions };
     });
 
-    let deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
-    let deckCollection = new DeckCollection();
+    const deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
+    const deckCollection = new DeckCollection();
     deckCollection.decks_ = deckLookupStatus.decks;
-    assert(deckCollection.decks_, `couldn't find a save deck by unique ID`);
+    assert(deckCollection.decks_, 'couldn\'t find a save deck by unique ID');
     deckCollection.indexSet_ = saveData.indexSet;
     deckCollection.name_ = saveData.name;
     deckCollection.nextCardId_ = saveData.nextCardId;
@@ -71,9 +72,9 @@ class DeckCollection {
   }
 
   getCachedPreviousCards() {
-    let cards = [];
-    for (let cachedDeck of this.previousCardCache_) {
-      for (let cachedCard of Object.keys(cachedDeck).map(key => cachedDeck[key])) {
+    const cards = [];
+    for (const cachedDeck of this.previousCardCache_) {
+      for (const cachedCard of Object.keys(cachedDeck).map(key => cachedDeck[key])) {
         cards.push(cachedCard);
       }
     }
@@ -81,7 +82,7 @@ class DeckCollection {
   }
 
   isEmpty() {
-    for (let array of this.indexSet_) {
+    for (const array of this.indexSet_) {
       if (array.length > 0) {
         return false;
       }
@@ -90,21 +91,21 @@ class DeckCollection {
   }
 
   getAllUndisplayedCards() {
-    let undisplayedCards = [];
-     for (let deckIndex = 0; deckIndex < this.indexSet_.length; ++deckIndex) {
-       let deck = this.decks_[deckIndex];
-       let unseenCardIndices = this.indexSet_[deckIndex];
+    const undisplayedCards = [];
+    for (let deckIndex = 0; deckIndex < this.indexSet_.length; ++deckIndex) {
+      const deck = this.decks_[deckIndex];
+      const unseenCardIndices = this.indexSet_[deckIndex];
 
-       if (!deck.cards.memoryArray) {
-         throw new Error('Trying to get all undisplayed cards from a non-memory deck. That\'s too expensive!');
-       }
+      if (!deck.cards.memoryArray) {
+        throw new Error('Trying to get all undisplayed cards from a non-memory deck. That\'s too expensive!');
+      }
 
-       for (let cardIndex of unseenCardIndices) {
-         undisplayedCards.push(deck.cards.memoryArray[cardIndex]);
-       }
-     }
+      for (const cardIndex of unseenCardIndices) {
+        undisplayedCards.push(deck.cards.memoryArray[cardIndex]);
+      }
+    }
 
-     return undisplayedCards;
+    return undisplayedCards;
   }
 
   async popUndisplayedCard(settings) {
@@ -112,11 +113,11 @@ class DeckCollection {
       return;
     }
 
-    let numDecksWithCardsLeft = this.indexSet_.reduce((numDecksWithCardsLeft, deck) => deck.length > 0 ? numDecksWithCardsLeft + 1 : numDecksWithCardsLeft , 0);
+    const numDecksWithCardsLeft = this.indexSet_.reduce((numDecksWithCardsLeft, deck) => (deck.length > 0 ? numDecksWithCardsLeft + 1 : numDecksWithCardsLeft), 0);
 
     let deckWithCardsLeftIndex = Math.floor(Math.random() * numDecksWithCardsLeft);
     let deckIndex = 0;
-    for (let array of this.indexSet_) {
+    for (const array of this.indexSet_) {
       if (array.length > 0) {
         --deckWithCardsLeftIndex;
       }
@@ -126,12 +127,12 @@ class DeckCollection {
       ++deckIndex;
     }
 
-    let cardIndex = this.indexSet_[deckIndex].pop();
-    let deck = this.decks_[deckIndex];
+    const cardIndex = this.indexSet_[deckIndex].pop();
+    const deck = this.decks_[deckIndex];
 
     let card = this.previousCardCache_[deckIndex][cardIndex];
     if (!card) {
-      let deckCard = await this.decks_[deckIndex].cards.get(cardIndex);
+      const deckCard = await this.decks_[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings);
       }
@@ -143,7 +144,7 @@ class DeckCollection {
     }
 
     if (card.answer.length === 0 || card.answer[0] === '') {
-      logger.logFailure(LOGGER_TITLE, 'Card with no answer: ' + card.question);
+      logger.logFailure(LOGGER_TITLE, `Card with no answer: ${card.question}`);
       return this.popUndisplayedCard(settings);
     }
 
@@ -236,19 +237,19 @@ class DeckCollection {
     if (!card.numberOfOptions || card.options) {
       return card;
     }
-    let numberOfOptions = card.numberOfOptions;
-    let correctAnswer = card.answer[0];
-    let options = [correctAnswer];
+    const numberOfOptions = card.numberOfOptions;
+    const correctAnswer = card.answer[0];
+    const options = [correctAnswer];
 
     let loopCounter = 0;
     while (options.length < numberOfOptions) {
-      let randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
-      let randomDeck = this.decks_[randomDeckIndex];
-      let randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
-      let randomCard = await randomDeck.cards.get(randomCardIndex);
+      const randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
+      const randomDeck = this.decks_[randomDeckIndex];
+      const randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
+      const randomCard = await randomDeck.cards.get(randomCardIndex);
 
       if (randomCard) {
-        let randomAnswer = randomCard.answer[0];
+        const randomAnswer = randomCard.answer[0];
         if (options.indexOf(randomAnswer) === -1) {
           options.push(randomAnswer);
         }
@@ -256,24 +257,24 @@ class DeckCollection {
 
       ++loopCounter;
       if (loopCounter > 10000) {
-        logger.logFailure(LOGGER_TITLE, `Couldn't generate enough options. Weird`);
+        logger.logFailure(LOGGER_TITLE, 'Couldn\'t generate enough options. Weird');
         break;
       }
     }
 
     card.options = Util.shuffleArray(options);
-    let correctOptionIndex = card.options.indexOf(correctAnswer);
+    const correctOptionIndex = card.options.indexOf(correctAnswer);
     assert(correctOptionIndex !== -1, 'No correct option?');
 
-    let correctOptionCharacter = '' + (correctOptionIndex + 1);
+    const correctOptionCharacter = `${correctOptionIndex + 1}`;
     card.answer.unshift(correctOptionCharacter);
 
     return card;
   }
 
   purgeCache_() {
-    for (let cardMap of this.previousCardCache_) {
-      for (let cardIndex of Object.keys(cardMap)) {
+    for (const cardMap of this.previousCardCache_) {
+      for (const cardIndex of Object.keys(cardMap)) {
         if (cardMap[cardIndex].discarded) {
           delete cardMap[cardIndex];
         }
@@ -283,7 +284,7 @@ class DeckCollection {
   }
 
   recycleCard(card, gameMode) {
-    let recycled = gameMode.recycleCard(card, this.indexSet_[card.deckIndex], this.decks_.length);
+    const recycled = gameMode.recycleCard(card, this.indexSet_[card.deckIndex], this.decks_.length);
     if (!recycled) {
       card.discarded = true;
     }
