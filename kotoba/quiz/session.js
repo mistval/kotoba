@@ -187,8 +187,8 @@ class SessionInformation {
     return this.deckCollection_.getName();
   }
 
-  getQuizArticle() {
-    return this.deckCollection_.getArticle();
+  getQuizDescription() {
+    return this.deckCollection_.getDescription();
   }
 
   containsInternetCards() {

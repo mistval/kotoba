@@ -396,8 +396,8 @@ class StartAction extends Action {
   do() {
     let session = this.getSession_();
     let name = session.getQuizName();
-    let article = session.getQuizArticle();
-    return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, article)).catch(err => {
+    const description = session.getQuizDescription();
+    return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description)).catch(err => {
       logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
     }).then(() => {
       let askQuestionAction = new AskQuestionAction(session);

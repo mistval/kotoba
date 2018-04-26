@@ -333,9 +333,21 @@ class DiscordMessageSender {
     this.channelId = channelId;
   }
 
-  notifyStarting(inMs, quizName, quizArticle) {
+  notifyStarting(inMs, quizName, quizDescription) {
     const inSeconds = inMs / 1000;
-    return this.bot.createMessage(this.channelId, `Starting ${quizArticle} **${quizName}** in ${inSeconds} seconds!`);
+    const embedTitle = 'Quiz Starting in 5 seconds';
+    let embedDescription = `**${quizName}**`;
+    if (quizDescription) {
+      embedDescription = `${embedDescription} - ${quizDescription}`;
+    }
+
+    return this.bot.createMessage(this.channelId, {
+      embed: {
+        title: embedTitle,
+        description: embedDescription,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    });
   }
 
   showWrongAnswer(card, skipped) {
