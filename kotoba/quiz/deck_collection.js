@@ -1,10 +1,12 @@
-
 const reload = require('require-reload')(require);
+const assert = require('assert');
 
 const Util = reload('./../utils.js');
 const cardStrategies = reload('./card_strategies.js');
 const deckLoader = reload('./deck_loader.js');
-const assert = require('assert');
+const { logger } = reload('monochrome-bot');
+
+const LOGGER_TITLE = 'DECK COLLECTION';
 
 function deepCopy(object) {
   return JSON.parse(JSON.stringify(object));
@@ -12,39 +14,43 @@ function deepCopy(object) {
 
 function createRandomIndexSetForDecks(decks) {
   const indexSet = [];
-  for (const deck of decks) {
+  decks.forEach((deck) => {
     const startIndex = deck.startIndex || 0;
     const endIndex = deck.endIndex === undefined ? deck.cards.length - 1 : deck.endIndex;
-    const indices = Array(endIndex - startIndex + 1);
-    for (let i = startIndex; i <= endIndex; ++i) {
+    const indices = Array((endIndex - startIndex) + 1);
+    for (let i = startIndex; i <= endIndex; i += 1) {
       indices[i - startIndex] = i;
     }
 
     indexSet.push(Util.shuffleArray(indices));
-  }
+  });
 
   return indexSet;
 }
 
 class DeckCollection {
+  constructor() {
+    this.discardedCards = [];
+  }
+
   static createNewFromDecks(decks, gameMode) {
     const deckCollection = new DeckCollection();
-    deckCollection.nextCardId_ = 0;
-    deckCollection.decks_ = decks;
-    deckCollection.indexSet_ = createRandomIndexSetForDecks(decks);
-    const deckName = deckCollection.decks_[0].name;
-    if (deckCollection.decks_.every(deck => deck.name === deckName)) {
-      deckCollection.name_ = deckName;
-      deckCollection.description_ = decks[0].description;
+    deckCollection.nextCardId = 0;
+    deckCollection.decks = decks;
+    deckCollection.indexSet = createRandomIndexSetForDecks(decks);
+    const deckName = deckCollection.decks[0].name;
+    if (deckCollection.decks.every(deck => deck.name === deckName)) {
+      deckCollection.name = deckName;
+      deckCollection.description = decks[0].description;
     } else {
-      deckCollection.name_ = 'Multiple Deck Quiz';
+      deckCollection.name = 'Multiple Deck Quiz';
     }
 
-    deckCollection.name_ = gameMode.overrideDeckTitle(deckCollection.name_);
+    deckCollection.name = gameMode.overrideDeckTitle(deckCollection.name);
 
-    deckCollection.previousCardCache_ = [];
-    for (const deck of decks) {
-      deckCollection.previousCardCache_.push({});
+    deckCollection.previousCardCache = [];
+    for (let i = 0; i < decks.length; i += 1) {
+      deckCollection.previousCardCache.push({});
     }
 
     return deckCollection;
@@ -52,37 +58,39 @@ class DeckCollection {
 
   static async createFromSaveData(saveData) {
     const deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
-      const numberOfOptions = saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
+      const numberOfOptions =
+        saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
       return { deckNameOrUniqueId: uniqueId, numberOfOptions };
     });
 
     const deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
     const deckCollection = new DeckCollection();
-    deckCollection.decks_ = deckLookupStatus.decks;
-    assert(deckCollection.decks_, 'couldn\'t find a save deck by unique ID');
-    deckCollection.indexSet_ = saveData.indexSet;
-    deckCollection.name_ = saveData.name;
-    deckCollection.nextCardId_ = saveData.nextCardId;
-    deckCollection.previousCardCache_ = saveData.previousCardCache;
+    deckCollection.decks = deckLookupStatus.decks;
+    assert(deckCollection.decks, 'couldn\'t find a save deck by unique ID');
+    deckCollection.indexSet = saveData.indexSet;
+    deckCollection.name = saveData.name;
+    deckCollection.nextCardId = saveData.nextCardId;
+    deckCollection.previousCardCache = saveData.previousCardCache;
     return deckCollection;
   }
 
   containsInternetCards() {
-    return this.decks_.some(deck => deck.isInternetDeck);
+    return this.decks.some(deck => deck.isInternetDeck);
   }
 
-  getCachedPreviousCards() {
-    const cards = [];
-    for (const cachedDeck of this.previousCardCache_) {
-      for (const cachedCard of Object.keys(cachedDeck).map(key => cachedDeck[key])) {
-        cards.push(cachedCard);
-      }
-    }
-    return cards;
+  getPreviousShownCards() {
+    const cachedCards = [];
+    this.previousCardCache.forEach((cachedDeck) => {
+      Object.keys(cachedDeck).map(key => cachedDeck[key]).forEach((cachedCard) => {
+        cachedCards.push(cachedCard);
+      });
+    });
+    return cachedCards.concat(this.discardedCards);
   }
 
   isEmpty() {
-    for (const array of this.indexSet_) {
+    for (let i = 0; i < this.indexSet.length; i += 1) {
+      const array = this.indexSet[i];
       if (array.length > 0) {
         return false;
       }
@@ -92,17 +100,17 @@ class DeckCollection {
 
   getAllUndisplayedCards() {
     const undisplayedCards = [];
-    for (let deckIndex = 0; deckIndex < this.indexSet_.length; ++deckIndex) {
-      const deck = this.decks_[deckIndex];
-      const unseenCardIndices = this.indexSet_[deckIndex];
+    for (let deckIndex = 0; deckIndex < this.indexSet.length; deckIndex += 1) {
+      const deck = this.decks[deckIndex];
+      const unseenCardIndices = this.indexSet[deckIndex];
 
       if (!deck.cards.memoryArray) {
         throw new Error('Trying to get all undisplayed cards from a non-memory deck. That\'s too expensive!');
       }
 
-      for (const cardIndex of unseenCardIndices) {
+      unseenCardIndices.forEach((cardIndex) => {
         undisplayedCards.push(deck.cards.memoryArray[cardIndex]);
-      }
+      });
     }
 
     return undisplayedCards;
@@ -110,29 +118,31 @@ class DeckCollection {
 
   async popUndisplayedCard(settings) {
     if (this.isEmpty()) {
-      return;
+      return undefined;
     }
 
-    const numDecksWithCardsLeft = this.indexSet_.reduce((numDecksWithCardsLeft, deck) => (deck.length > 0 ? numDecksWithCardsLeft + 1 : numDecksWithCardsLeft), 0);
+    const numDecksWithCardsLeft = this.indexSet.reduce((total, deck) =>
+      (deck.length > 0 ? total + 1 : total), 0);
 
     let deckWithCardsLeftIndex = Math.floor(Math.random() * numDecksWithCardsLeft);
     let deckIndex = 0;
-    for (const array of this.indexSet_) {
+    for (let i = 0; i < this.indexSet.length; i += 1) {
+      const array = this.indexSet[i];
       if (array.length > 0) {
-        --deckWithCardsLeftIndex;
+        deckWithCardsLeftIndex -= 1;
       }
       if (deckWithCardsLeftIndex === -1) {
         break;
       }
-      ++deckIndex;
+      deckIndex += 1;
     }
 
-    const cardIndex = this.indexSet_[deckIndex].pop();
-    const deck = this.decks_[deckIndex];
+    const cardIndex = this.indexSet[deckIndex].pop();
+    const deck = this.decks[deckIndex];
 
-    let card = this.previousCardCache_[deckIndex][cardIndex];
+    let card = this.previousCardCache[deckIndex][cardIndex];
     if (!card) {
-      const deckCard = await this.decks_[deckIndex].cards.get(cardIndex);
+      const deckCard = await this.decks[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings);
       }
@@ -155,10 +165,19 @@ class DeckCollection {
     card.questionCreationStrategy = card.questionCreationStrategy || deck.questionCreationStrategy;
     card.preprocessingStrategy = card.preprocessingStrategy || deck.cardPreprocessingStrategy;
     card.answerTimeLimitStrategy = card.answerTimeLimitStrategy || deck.answerTimeLimitStrategy;
-    card.discordFinalAnswerListElementStrategy = card.discordFinalAnswerListElementStrategy || deck.discordFinalAnswerListElementStrategy;
-    card.discordIntermediateAnswerListElementStrategy = card.discordIntermediateAnswerListElementStrategy || deck.discordIntermediateAnswerListElementStrategy;
+
+    card.discordFinalAnswerListElementStrategy =
+      card.discordFinalAnswerListElementStrategy || deck.discordFinalAnswerListElementStrategy;
+
+    card.discordIntermediateAnswerListElementStrategy =
+      card.discordIntermediateAnswerListElementStrategy
+      || deck.discordIntermediateAnswerListElementStrategy;
+
     card.scoreAnswerStrategy = card.scoreAnswerStrategy || deck.scoreAnswerStrategy;
-    card.additionalAnswerWaitStrategy = card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
+
+    card.additionalAnswerWaitStrategy =
+      card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
+
     card.answerCompareStrategy = card.answerCompareStrategy || deck.answerCompareStrategy;
     card.numberOfOptions = card.numberOfOptions || deck.numberOfOptions;
     card.commentFieldName = card.commentFieldName || deck.commentFieldName;
@@ -170,19 +189,23 @@ class DeckCollection {
       card.isInternetCard = deck.isInternetDeck;
     }
     if (card.id === undefined) {
-      card.id = this.nextCardId_++;
+      card.id = this.nextCardId + 1;
+      this.nextCardId += 1;
     }
     if (card.dictionaryLink === undefined) {
-      card.dictionaryLink = cardStrategies.CreateDictionaryLinkStrategy[deck.dictionaryLinkStrategy](card);
+      card.dictionaryLink =
+        cardStrategies.CreateDictionaryLinkStrategy[deck.dictionaryLinkStrategy](card);
     }
     if (card.unansweredQuestionLimit === undefined) {
       card.unansweredQuestionLimit = settings.unansweredQuestionLimit;
     }
     if (card.answerTimeLimitInMs === undefined) {
-      card.answerTimeLimitInMs = cardStrategies.AnswerTimeLimitStrategy[card.answerTimeLimitStrategy](settings);
+      card.answerTimeLimitInMs =
+        cardStrategies.AnswerTimeLimitStrategy[card.answerTimeLimitStrategy](settings);
     }
     if (card.additionalAnswerWaitTimeInMs === undefined) {
-      card.additionalAnswerWaitTimeInMs = cardStrategies.AdditionalAnswerWaitStrategy[card.additionalAnswerWaitStrategy](settings);
+      card.additionalAnswerWaitTimeInMs =
+        cardStrategies.AdditionalAnswerWaitStrategy[card.additionalAnswerWaitStrategy](settings);
     }
     if (card.newQuestionDelayAfterAnsweredInMs === undefined) {
       card.newQuestionDelayAfterAnsweredInMs = settings.newQuestionDelayAfterAnsweredInMs;
@@ -200,52 +223,23 @@ class DeckCollection {
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
-    card = await this.addOptionsAndModifyAnswer_(card);
-
-    this.previousCardCache_[deckIndex][cardIndex] = card;
-    return card;
-  }
-
-  createSaveData() {
-    return {
-      deckUniqueIds: this.decks_.map(deck => deck.uniqueId),
-      numberOfOptionsForDeck: this.decks_.map(deck => deck.numberOfOptions),
-      indexSet: this.indexSet_,
-      name: this.getName(),
-      description: this.getDescription(),
-      nextCardId: this.nextCardId_,
-      previousCardCache: this.purgeCache_(),
-    };
-  }
-
-  getName() {
-    return this.name_;
-  }
-
-  getDescription() {
-    return this.description_;
-  }
-
-  getDeckId() {
-    if (this.decks_.length === 1) {
-      return this.decks_[0].uniqueId;
-    }
-    return -1;
-  }
-
-  async addOptionsAndModifyAnswer_(card) {
-    if (!card.numberOfOptions || card.options) {
+    const { numberOfOptions } = card;
+    if (!numberOfOptions || card.options) {
       return card;
     }
-    const numberOfOptions = card.numberOfOptions;
+
     const correctAnswer = card.answer[0];
     const options = [correctAnswer];
 
     let loopCounter = 0;
-    while (options.length < numberOfOptions) {
-      const randomDeckIndex = Math.floor(Math.random() * this.decks_.length);
-      const randomDeck = this.decks_[randomDeckIndex];
+    while (options.length < numberOfOptions && options.length < this.decks[0].cards.length) {
+      const randomDeckIndex = Math.floor(Math.random() * this.decks.length);
+      const randomDeck = this.decks[randomDeckIndex];
       const randomCardIndex = Math.floor(Math.random() * randomDeck.cards.length);
+
+      // This could probably be refactored to be at least a
+      // little more parallel. For now, disable the rule.
+      // eslint-disable-next-line no-await-in-loop
       const randomCard = await randomDeck.cards.get(randomCardIndex);
 
       if (randomCard) {
@@ -255,7 +249,7 @@ class DeckCollection {
         }
       }
 
-      ++loopCounter;
+      loopCounter += 1;
       if (loopCounter > 10000) {
         logger.logFailure(LOGGER_TITLE, 'Couldn\'t generate enough options. Weird');
         break;
@@ -269,24 +263,47 @@ class DeckCollection {
     const correctOptionCharacter = `${correctOptionIndex + 1}`;
     card.answer.unshift(correctOptionCharacter);
 
+    this.previousCardCache[deckIndex][cardIndex] = card;
     return card;
   }
 
-  purgeCache_() {
-    for (const cardMap of this.previousCardCache_) {
-      for (const cardIndex of Object.keys(cardMap)) {
-        if (cardMap[cardIndex].discarded) {
-          delete cardMap[cardIndex];
-        }
-      }
+  createSaveData() {
+    return {
+      deckUniqueIds: this.decks.map(deck => deck.uniqueId),
+      numberOfOptionsForDeck: this.decks.map(deck => deck.numberOfOptions),
+      indexSet: this.indexSet,
+      name: this.getName(),
+      description: this.getDescription(),
+      nextCardId: this.nextCardId,
+      previousCardCache: this.previousCardCache,
+    };
+  }
+
+  getName() {
+    return this.name;
+  }
+
+  getDescription() {
+    return this.description;
+  }
+
+  getDeckId() {
+    if (this.decks.length === 1) {
+      return this.decks[0].uniqueId;
     }
-    return this.previousCardCache_;
+    return -1;
   }
 
   recycleCard(card, gameMode) {
-    const recycled = gameMode.recycleCard(card, this.indexSet_[card.deckIndex], this.decks_.length);
+    const recycled = gameMode.recycleCard(card, this.indexSet[card.deckIndex], this.decks.length);
     if (!recycled) {
-      card.discarded = true;
+      // The previous card cache gets saved to disk if the user saves.
+      // But we don't want to save all previously seen cards, that would
+      // take a lot of space. We only need to save the ones that the user
+      // will see again. So if the card gets discarded, put it into
+      // a different data structure.
+      delete this.previousCardCache[card.deckIndex][card.cardIndex];
+      this.discardedCards.push(card);
     }
   }
 }

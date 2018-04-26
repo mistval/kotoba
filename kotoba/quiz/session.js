@@ -205,7 +205,7 @@ class SessionInformation {
 
   getUnansweredCards(userId) {
     let unansweredCards = [];
-    for (let card of this.deckCollection_.getCachedPreviousCards()) {
+    for (let card of this.deckCollection_.getPreviousShownCards()) {
       if ((!userId && card.mostRecentApperanceAnswerers.length === 0) || (userId && !~card.mostRecentApperanceAnswerers.indexOf(userId))) {
         unansweredCards.push(card);
       }
@@ -221,7 +221,7 @@ class SessionInformation {
 
   getAllKnownUsers() {
     let users = [];
-    for (let card of this.deckCollection_.getCachedPreviousCards()) {
+    for (let card of this.deckCollection_.getPreviousShownCards()) {
       for (let answerer of card.mostRecentApperanceAnswerers) {
         if (users.indexOf(answerer) === -1) {
           users.push(answerer);
