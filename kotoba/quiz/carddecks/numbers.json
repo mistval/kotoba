@@ -2,7 +2,7 @@
   "uniqueId": "numbers",
   "name": "Japanese Numbers Quiz",
   "article": "a",
-  "instructions": "Type the number represented by the Kanji!",
+  "instructions": "Type the digits represented by the Kanji!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "NONE",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
