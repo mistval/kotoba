@@ -9,11 +9,13 @@ Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
 
 ## Help Wanted
 
-I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know.
+I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know, you can contact me in my [Discord server](https://discord.gg/f4Gkqku). New code should be written using AirBnB style guidelines and functional coding styles should be preferred. (Older code is being incrementally brought up to these standards)
 
 ## Installation
 
 First, you must have **cairo** installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
+
+Then:
 
 ```
 git clone https://github.com/mistval/kotoba.git
