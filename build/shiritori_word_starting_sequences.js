@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-let sequences = [
+const sequences = [
   'ぱ',
   'ば',
   'だ',

@@ -3,8 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 function getPathForQuizDeckFile(fileName) {
-  fileName = fileName || '';
-  return path.resolve(__dirname, '..', 'kotoba', 'quiz', 'carddecks', fileName);
+  return path.resolve(__dirname, '..', 'kotoba', 'quiz', 'carddecks', fileName || '');
 }
 
 function getDiskArrayDirectoryForDeckName(deckName) {
@@ -15,12 +14,13 @@ function mkdirIgnoreError(dir) {
   try {
     fs.mkdirSync(dir);
   } catch (err) {
+    // NOOP
   }
 }
 
-function writeFile(path, content) {
+function writeFile(filePath, content) {
   return new Promise((fulfill, reject) => {
-    fs.writeFile(path, content, err => {
+    fs.writeFile(filePath, content, (err) => {
       if (err) {
         return reject(err);
       }
@@ -29,7 +29,7 @@ function writeFile(path, content) {
   });
 }
 
-module.exports = async function() {
+async function build() {
   mkdirIgnoreError(path.join(__dirname, '..', 'objects'));
   mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz'));
   mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz', 'decks'));
@@ -38,14 +38,19 @@ module.exports = async function() {
 
   // Build disk arrays for the quiz decks
   const quizDeckFileNames = fs.readdirSync(getPathForQuizDeckFile());
-  for (let fileName of quizDeckFileNames) {
+  for (let i = 0; i < quizDeckFileNames.length; i += 1) {
+    const fileName = quizDeckFileNames[i];
     const deckName = fileName.replace('.json', '');
     const deckString = fs.readFileSync(getPathForQuizDeckFile(fileName), 'utf8');
     const deck = JSON.parse(deckString);
-    const cards = deck.cards;
+    const { cards } = deck;
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     delete deck.cards;
     deck.cardDiskArrayPath = diskArrayDirectory;
+
+    // We creates the arrays in sequence instead of in parallel
+    // because that way there's less memory pressure.
+    // eslint-disable-next-line no-await-in-loop
     await diskArray.create(cards, diskArrayDirectory);
     deckDataForDeckName[deckName] = deck;
   }
@@ -53,3 +58,5 @@ module.exports = async function() {
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
   await writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString);
 }
+
+module.exports = build;
