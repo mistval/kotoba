@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Meaning",
+  "description": "Words/phrases marked as Common in JMdict",
   "cards": [
     {
       "question": "あだ名",
