@@ -137,17 +137,20 @@ class DiscordClientDelegate {
       wordHistoryString += EMBED_TRUNCATION_REPLACEMENT;
     }
 
-    const wordsUsedString = wordHistory.map(wordInformation => wordInformation.word).join(', ');
-    let embedFields;
-    if (wordsUsedString) {
-      embedFields = [{
+    const embedFields = [];
+    if (wordHistoryString) {
+      embedFields.push({
         name: `Words used (${wordHistory.length})`,
         value: wordHistoryString,
-      },
-      {
+      });
+    }
+
+    const scorersString = createScoresString(scoreForUserId);
+    if (scorersString) {
+      embedFields.push({
         name: 'Scores',
         value: createScoresString(scoreForUserId),
-      }];
+      });
     }
 
     return this.commanderMessage.channel.createMessage({
