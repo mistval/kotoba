@@ -62,10 +62,16 @@ function commitAndClearScores(locationId, deckId) {
   checkScoreScopeIdRegisteredForLocationId(locationId);
   delete scoresForLocationId[locationId];
 
+  const scoreForDeckForUserId = {};
+  Object.keys(scoreForUserId).forEach((userId) => {
+    scoreForDeckForUserId[userId] = {
+      shiritori: scoreForUserId[userId],
+    };
+  });
+
   return quizScoreStorageUtils.addScores(
     scoreScopeIdForLocationId[locationId],
-    deckId,
-    scoreForUserId,
+    scoreForDeckForUserId,
     nameForUserId,
   );
 }
