@@ -6,6 +6,7 @@ const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 
 const LOGGER_TITLE = 'QUIZ';
+const URI_MAX_LENGTH = 2048;
 
 let BetterEnglishDefinitions;
 try {
@@ -47,6 +48,20 @@ function answerCompareStrict(card, answerCandidate) {
   return arrayToLowerCase(card.answer).indexOf(answerCandidate);
 }
 
+function createAggregateLink(queryParts, tag) {
+  let aggregateLink = `http://jisho.org/search/${encodeURIComponent(queryParts.join(','))}`;
+
+  if (tag) {
+    aggregateLink += `%23${tag}`;
+  }
+
+  if (aggregateLink.length > URI_MAX_LENGTH) {
+    return createAggregateLink(queryParts.slice(0, queryParts.length - 1), tag);
+  }
+
+  return aggregateLink;
+}
+
 module.exports.AnswerCompareStrategy = {
   CONVERT_KANA: answerCompareConvertKana,
   STRICT: answerCompareStrict,
@@ -64,9 +79,9 @@ module.exports.CreateDictionaryLinkStrategy = {
 };
 
 module.exports.CreateAggregateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.question).join(','))}`;},
-  JISHO_QUESTION_KANJI: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.question).join(','))}%23kanji`;},
-  JISHO_ANSWER_WORD: cards => {return `http://jisho.org/search/${encodeURIComponent(cards.map(card => card.answer[0]).join(','))}`;},
+  JISHO_QUESTION_WORD: cards => {return createAggregateLink(cards.map(card => card.question));},
+  JISHO_QUESTION_KANJI: cards => {return createAggregateLink(cards.map(card => card.question), 'kanji');},
+  JISHO_ANSWER_WORD: cards => {return createAggregateLink(cards.map(card => card.answer[0]));},
   WEBSTER_ANSWER: cards => {return '';},
   WEBSTER_QUESTION: card => {return '';},
   NONE: cards => {return '';},
