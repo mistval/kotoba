@@ -259,7 +259,7 @@ async function sendEndQuizMessages(
   await bot.createMessage(channelId, endQuizMessage);
   const afterQuizMessage = createAfterQuizMessage(canReview);
   if (afterQuizMessage) {
-    return bot.createMessage(channelId, createAfterQuizMessage(canReview));
+    return bot.createMessage(channelId, afterQuizMessage);
   }
 
   return undefined;
