@@ -292,10 +292,10 @@ function sendSaveMementos(msg, saveMementos, extraContent) {
 
 function createCorrectPercentageField(card) {
   const totalAnswers = card.answerHistory.length;
-  const totalCorrect = card.answerHistory.reduce((a, b) => (b ? a + 1 : a), 0);
   if (totalAnswers > 1) {
+    const totalCorrect = card.answerHistory.reduce((a, b) => (b ? a + 1 : a), 0);
     const percentage = Math.floor((totalCorrect / totalAnswers) * 100);
-    return { name: 'Correct Answers', value: `${percentage}%`, inline: true };
+    return { name: 'Correct Answer Rate', value: `${percentage}%`, inline: true };
   }
 
   return undefined;

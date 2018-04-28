@@ -149,6 +149,8 @@ class DeckCollection {
       card = deepCopy(deckCard);
     }
 
+    this.previousCardCache[deckIndex][cardIndex] = card;
+
     if (!Array.isArray(card.answer)) {
       card.answer = [card.answer];
     }
@@ -263,7 +265,6 @@ class DeckCollection {
     const correctOptionCharacter = `${correctOptionIndex + 1}`;
     card.answer.unshift(correctOptionCharacter);
 
-    this.previousCardCache[deckIndex][cardIndex] = card;
     return card;
   }
 
