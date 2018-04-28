@@ -4,8 +4,8 @@
 const reload = require('require-reload')(require);
 
 const constants = reload('./constants.js');
-
 const { throwPublicErrorInfo } = reload('./util/errors.js');
+const trimEmbedFields = reload('./util/trim_embed_fields.js');
 
 const MAX_LINES_PER_BIG_PAGE = 11;
 const MAX_MEANINGS_SMALL = 3;
@@ -93,7 +93,8 @@ function formatJishoDataBig(
       dictionaryEntriesQueue.push(nextEntry);
     }
 
-    discordContents.push({ embed });
+    const trimmedContent = trimEmbedFields({ embed });
+    discordContents.push(trimmedContent);
   }
 
   const numberOfPages = discordContents.length;
@@ -154,7 +155,8 @@ function formatJishoDataSmall(jishoData) {
     embed.fields.push(meaningsField);
   }
 
-  return { embed };
+  const trimmedContent = trimEmbedFields({ embed });
+  return trimmedContent;
 }
 
 module.exports = {
