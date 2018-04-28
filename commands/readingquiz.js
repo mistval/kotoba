@@ -14,10 +14,9 @@ const saveManager = reload('./../kotoba/quiz/pause_manager.js');
 const deckLoader = reload('./../kotoba/quiz/deck_loader.js');
 const DeckCollection = reload('./../kotoba/quiz/deck_collection.js');
 const Session = reload('./../kotoba/quiz/session.js');
+const trimEmbedFields = reload('./../kotoba/util/trim_embed_fields.js');
 
 const LOGGER_TITLE = 'QUIZ';
-const embedFieldMaxLength = 1020; // It's actually 1024 but let's leave a little room.
-const embedFieldTrimReplacement = ' [...]';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const MASTERY_MODE_DISABLED_STRING = 'Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled true**';
@@ -26,31 +25,6 @@ const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_EXTENSION = '-conquest';
 const CONQUEST_EXTENSION = '-inferno';
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
-
-function trimEmbedFields(content) {
-  if (!content || !content.embed || !content.embed.fields || content.embed.fields.length === 0) {
-    return content;
-  }
-
-  const contentCopy = Object.assign({}, content);
-  const { fields } = contentCopy.embed;
-
-  contentCopy.fields = fields.map((field) => {
-    const fieldCopy = Object.assign({}, field);
-    if (fieldCopy.value.length > embedFieldMaxLength) {
-      fieldCopy.value = fieldCopy.value.substring(
-        0,
-        embedFieldMaxLength - embedFieldTrimReplacement.length,
-      );
-
-      fieldCopy.value += embedFieldTrimReplacement;
-    }
-
-    return fieldCopy;
-  });
-
-  return contentCopy;
-}
 
 function createTitleOnlyEmbedWithColor(title, color) {
   return {
