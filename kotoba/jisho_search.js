@@ -44,10 +44,11 @@ class NavigationChapterInformation {
 }
 
 class StrokeOrderDataSource {
-  constructor(authorName, kanjis, isStandalone) {
+  constructor(authorName, kanjis, isStandalone, hasMultiplePages) {
     this.kanjis = kanjis;
     this.authorName = authorName;
     this.isStandalone = isStandalone;
+    this.hasMultiplePages = hasMultiplePages;
   }
 
   // Nothing to do here, but we need the method due to
@@ -59,7 +60,7 @@ class StrokeOrderDataSource {
   async getPageFromPreparedData(arg, pageIndex) {
     if (pageIndex < this.kanjis.length) {
       const content = await strokeOrderContentCreator.createContent(this.kanjis[pageIndex]);
-      if (this.kanjis.length > 1 || !this.isStandalone) {
+      if (this.hasMultiplePages || !this.isStandalone) {
         return new NavigationPage(addFooter(this.authorName, content));
       }
       return new NavigationPage(content);
@@ -70,10 +71,11 @@ class StrokeOrderDataSource {
 }
 
 class KanjiDataSource {
-  constructor(authorName, kanjis, isStandalone) {
+  constructor(authorName, kanjis, isStandalone, hasMultiplePages) {
     this.kanjis = kanjis;
     this.authorName = authorName;
     this.isStandalone = isStandalone;
+    this.hasMultiplePages = hasMultiplePages;
   }
 
   // Nothing to do here, but we need the method due to
@@ -85,7 +87,7 @@ class KanjiDataSource {
   async getPageFromPreparedData(arg, pageIndex) {
     if (pageIndex < this.kanjis.length) {
       const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex]);
-      if (this.kanjis.length > 1 || !this.isStandalone) {
+      if (this.hasMultiplePages || !this.isStandalone) {
         return new NavigationPage(addFooter(this.authorName, content));
       }
       return new NavigationPage(content);
@@ -141,12 +143,14 @@ function createNavigationChapterInformationForKanji(authorName, word, isStandalo
       authorName,
       kanjis,
       isStandalone,
+      hasMultiplePages,
     ));
   } else if (isStandalone) {
     navigationChapter = new NavigationChapter(new KanjiDataSource(
       authorName,
       word,
       isStandalone,
+      hasMultiplePages,
     ));
   }
 
@@ -165,12 +169,14 @@ function createNavigationChapterInformationForStrokeOrder(authorName, word, isSt
       authorName,
       kanjis,
       isStandalone,
+      hasMultiplePages,
     ));
   } else if (isStandalone) {
     navigationChapter = new NavigationChapter(new StrokeOrderDataSource(
       authorName,
       word,
       isStandalone,
+      hasMultiplePages,
     ));
   }
 
