@@ -43,7 +43,7 @@ function closeSession(session, gameOver) {
   return Promise.resolve(session.finalize(gameOver));
 }
 
-function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgument) {
+async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgument) {
   if (!session) {
     return Promise.resolve();
   }
@@ -57,7 +57,8 @@ function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgum
   }
 
   try {
-    return Util.retryPromise(() => {
+    await closeSession(session, true);
+    await Util.retryPromise(() => {
       return Promise.resolve(notifyDelegate.call(
         notifier,
         session.getName(),
@@ -66,14 +67,9 @@ function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgum
         session.createAggregateUnansweredCardsLink(),
         session.getDidCreateReviewDecks(),
         delegateFinalArgument));
-    }, 3).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
-    }).then(() => {
-      return closeSession(session, true);
-    });
+    }, 3);
   } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
-    return closeSession(session, true);
   }
 }
 
