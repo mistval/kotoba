@@ -66,11 +66,11 @@ async function getScores(serverId, deckNames) {
       const aggregatedRow = aggregateRowForUser[databaseRow.userId];
 
       if (aggregatedRow) {
-        aggregatedRow.score += databaseRow.score;
+        aggregatedRow.score += Math.floor(databaseRow.score);
       } else {
         aggregateRowForUser[databaseRow.userId] = {
           userId: databaseRow.userId,
-          score: databaseRow.score,
+          score: Math.floor(databaseRow.score),
           username: data.nameForUser[databaseRow.userId],
           deckId: databaseRow.deckId,
         };
@@ -138,7 +138,9 @@ class QuizScoreStorageUtils {
               assert(typeof scoreForDeck[row.deckId] === 'number', 'Score for a deck is not a number');
 
               // eslint-disable-next-line no-param-reassign
-              row.score += Math.floor(scoreForDeck[row.deckId]);
+              row.score += scoreForDeck[row.deckId];
+              // eslint-disable-next-line no-param-reassign
+              row.score = Math.floor(row.score);
               foundMatchingRowForDeckId[row.deckId] = true;
             }
           }
@@ -150,7 +152,7 @@ class QuizScoreStorageUtils {
               userId,
               serverId,
               deckId,
-              score: scoreForDeck[deckId],
+              score: Math.floor(scoreForDeck[deckId]),
             };
             data.quizScores.push(newRow);
           }
