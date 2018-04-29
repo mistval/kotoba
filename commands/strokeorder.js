@@ -5,7 +5,7 @@ const { navigationManager } = reload('monochrome-bot');
 const errors = reload('./../kotoba/util/errors.js');
 
 module.exports = {
-  commandAliases: ['k!strokeorder', 'k!so'],
+  commandAliases: ['k!strokeorder', 'k!s', 'k!so'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'strokeorder303489',
