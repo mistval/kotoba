@@ -119,8 +119,12 @@ class QuizScoreStorageUtils {
       Object.keys(scoresForUserId).forEach((userId) => {
         assert(typeof userId === 'string', 'userId is not string');
         const rowsForUserAndServer = getRows(data.quizScores, userId, serverId);
-        const scoreForDeck = scoresForUserId[userId];
+        const scoreForDeck = scoresForUserId[userId] || {};
         const deckIds = Object.keys(scoreForDeck);
+
+        if (deckIds.length === 0) {
+          return;
+        }
 
         const foundMatchingRowForDeckId = {};
         rowsForUserAndServer.forEach((row) => {
