@@ -16,116 +16,102 @@
 		<meta name="description" content="A Discord bot for Japanese learners... and weebs too!">
 		<meta name="keywords" content="Discord,bot,bots,Japanese,kotoba,learning,language,languages">
 		<style>
-		    a {
-				color: red;
-			}
-			body {
-			  font-family: 'Open Sans', sans-serif;
-			  font-weight: 300;
-			  line-height: 1.42em;
-			  color:#A7A1AE;
-			  background-color:#1F2739;
-			}
-			div {
-				margin: 0 auto;
-			}
-			h1 {
-			  font-size:4em;
-			  font-weight: 300;
-			  text-align: center;
-			  color: #ffd400;
-			}
-			h2 {
-			  font-size:3em; 
-			  font-weight: 300;
-			  text-align: center;
-			  display: block;
-			  line-height:1em;
-			  color: #e9eaeb;
-			}
-			.button {
-				background: #ffd400;
-				border: 1px solid #ffd05f;
-				color: #1d1d1d!important;
-				font-weight: 600;
-				font-size: 14px;
-				display: inline-block;
-				padding: 6px 12px;
-				margin-bottom: 0;
-				text-align: center;
-				white-space: nowrap;
-				vertical-align: middle;
-				touch-action: manipulation;
-				cursor: pointer;
-				user-select: none;
-				border-radius: 4px;
-				text-decoration: none;
-				box-sizing: border-box;
-			}
-			.commandDivOuter {
-				border-radius: 10px;
-				margin: 6px;
-				margin-top: 10px;
-				display: inline-block;
-				background-color: #2C3446;
-			}
-
-			.commandDivInner {
-				padding: 10px;
-				width: 410px;
-				height: 270px;
-			}
-			.commandText {
-				color: #e9eaeb;
-				font-weight: bold;
-			}
-			.commandHeader {  color: #ffd400; }
-			.example {
-				color: #24bddc;
-				font-weight: bold;
-			}
-			#container>div {display:inline-block;vertical-align:top;}
+    a
+    {
+      color: red;
+    }
+    body
+    {
+      padding-top: 40px;
+      font-family: 'Open Sans', sans-serif;
+      background-color:#1F2739;
+      text-align: center;
+      color: #A7A1AE;
+    }
+    #headerAvatarImg
+    {
+      border-radius:50%;
+      width: 200;
+      height: 200;
+    }
+    #headerTitleH1
+    {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      font-size: 4em;
+      font-weight: 300;
+      color: #ffd400;
+    }
+    #taglineH3
+    {
+      color:#A7A1AE;
+      margin-bottom: 1.5em;
+    }
+    .button
+    {
+      background: #ffd400;
+      color: #1F2739;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .buttonRightMargin
+    {
+      margin-right: .5em;
+    }
+    #commandsSectionHeaderH2
+    {
+      margin-top: 1.5em;
+      font-size:3em; 
+      font-weight: 300;
+      color: #ffd400;
+    }
+    .commandHeaderH3
+    {
+      color: #ffd400;
+    }
+    .commandText
+    {
+      color: #e9eaeb;
+      font-weight: bold;
+    }
+    .exampleAnchor
+    {
+      color: #24bddc;
+      font-weight: bold;
+    }
+    .commandDiv
+    {
+      padding: 10px;
+      width: 410px;
+      height: 270px;
+      border-radius: 10px;
+      margin-top: 14px;
+      margin-right: 10px;
+      background-color: #2C3446;
+      display:inline-block;
+      vertical-align: top;
+    }
+    .exhibitGifImg
+    {
+      margin-top: 15px;
+    }
 		</style>
 	</head>
 	<body>
-	<br />
-	<br />
-	<br />
 	<div align="center">
-		<div>
-		  <img id="botimages" src="https://images.discordapp.net/avatars/251239170058616833/dd046f3353b2e3b53c38c5d17dfef3f7.png?size=512" style="border-radius:50%;" width="200" height="200 /">
-		</div>
-		<div>
-			<h1>Kotoba</h1>
-			<table cellpadding="5">
-				<tr>
-					<td>
-						<a href="https://discordbots.org/bot/251239170058616833">
-						  <img src="https://discordbots.org/api/widget/status/251239170058616833.svg" alt="Discord Bots" />
-						</a>
-					</td>
-					<td>
-						<a href="https://discordbots.org/bot/251239170058616833">
-						  <img src="https://discordbots.org/api/widget/servers/251239170058616833.svg" alt="Discord Bots" />
-						</a>
-					</td>
-				</tr>
-			</table>
-			<h3> A Discord bot for Japanese learners... and weebs too!</h3>
-			<table cellpadding="5">
-				<tr>
-					<td>
-						<a href="https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot" class="button">Invite</a>
-					</td>
-					<td>
-						<a class="button" href="https://github.com/mistval/kotoba">Github</a>
-					</td>
-					<td>
-						<a class="button" href="https://discord.gg/zkAKbyJ">Support</a>
-					</td>
-				</tr>
-			</table>
-		</div>
+    <div id="header">
+      <img id="headerAvatarImg" src="assets/images/avatar.png">
+      <h1 id="headerTitleH1">Kotoba</h1>
+      <a href="https://discordbots.org/bot/251239170058616833"><img src="https://discordbots.org/api/widget/status/251239170058616833.svg" alt="Discord Bots"></a>
+      <a href="https://discordbots.org/bot/251239170058616833"><img src="https://discordbots.org/api/widget/servers/251239170058616833.svg" alt="Discord Bots"></a>
+      <h3 id="taglineH3">A Discord bot for Japanese learners... and weebs too!</h3>
+      <a class="button buttonRightMargin" href="https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot">Invite</a>
+      <a class="button buttonRightMargin" href="https://github.com/mistval/kotoba">Github</a>
+      <a class="button" href="https://discord.gg/zkAKbyJ">Support</a>
+    </div>
 		<div id="container">
 			<div style="max-width: 1200px;text-align: left"><br />
 I can import decks that you put on <a href="http://pastebin.com">pastebin.com</a><br /><br />
