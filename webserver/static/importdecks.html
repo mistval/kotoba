@@ -1,0 +1,158 @@
+
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44207699-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-44207699-2');
+		</script>
+		<title>Kotoba Discord Bot</title>
+		<link rel="icon" href="https://images.discordapp.net/avatars/251239170058616833/dd046f3353b2e3b53c38c5d17dfef3f7.png">
+		<meta charset="UTF-8">
+		<meta name="description" content="A Discord bot for Japanese learners... and weebs too!">
+		<meta name="keywords" content="Discord,bot,bots,Japanese,kotoba,learning,language,languages">
+		<style>
+		    a {
+				color: red;
+			}
+			body {
+			  font-family: 'Open Sans', sans-serif;
+			  font-weight: 300;
+			  line-height: 1.42em;
+			  color:#A7A1AE;
+			  background-color:#1F2739;
+			}
+			div {
+				margin: 0 auto;
+			}
+			h1 {
+			  font-size:4em;
+			  font-weight: 300;
+			  text-align: center;
+			  color: #ffd400;
+			}
+			h2 {
+			  font-size:3em; 
+			  font-weight: 300;
+			  text-align: center;
+			  display: block;
+			  line-height:1em;
+			  color: #e9eaeb;
+			}
+			.button {
+				background: #ffd400;
+				border: 1px solid #ffd05f;
+				color: #1d1d1d!important;
+				font-weight: 600;
+				font-size: 14px;
+				display: inline-block;
+				padding: 6px 12px;
+				margin-bottom: 0;
+				text-align: center;
+				white-space: nowrap;
+				vertical-align: middle;
+				touch-action: manipulation;
+				cursor: pointer;
+				user-select: none;
+				border-radius: 4px;
+				text-decoration: none;
+				box-sizing: border-box;
+			}
+			.commandDivOuter {
+				border-radius: 10px;
+				margin: 6px;
+				margin-top: 10px;
+				display: inline-block;
+				background-color: #2C3446;
+			}
+
+			.commandDivInner {
+				padding: 10px;
+				width: 410px;
+				height: 270px;
+			}
+			.commandText {
+				color: #e9eaeb;
+				font-weight: bold;
+			}
+			.commandHeader {  color: #ffd400; }
+			.example {
+				color: #24bddc;
+				font-weight: bold;
+			}
+			#container>div {display:inline-block;vertical-align:top;}
+		</style>
+	</head>
+	<body>
+	<br />
+	<br />
+	<br />
+	<div align="center">
+		<div>
+		  <img id="botimages" src="https://images.discordapp.net/avatars/251239170058616833/dd046f3353b2e3b53c38c5d17dfef3f7.png?size=512" style="border-radius:50%;" width="200" height="200 /">
+		</div>
+		<div>
+			<h1>Kotoba</h1>
+			<table cellpadding="5">
+				<tr>
+					<td>
+						<a href="https://discordbots.org/bot/251239170058616833">
+						  <img src="https://discordbots.org/api/widget/status/251239170058616833.svg" alt="Discord Bots" />
+						</a>
+					</td>
+					<td>
+						<a href="https://discordbots.org/bot/251239170058616833">
+						  <img src="https://discordbots.org/api/widget/servers/251239170058616833.svg" alt="Discord Bots" />
+						</a>
+					</td>
+				</tr>
+			</table>
+			<h3> A Discord bot for Japanese learners... and weebs too!</h3>
+			<table cellpadding="5">
+				<tr>
+					<td>
+						<a href="https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot" class="button">Invite</a>
+					</td>
+					<td>
+						<a class="button" href="https://github.com/mistval/kotoba">Github</a>
+					</td>
+					<td>
+						<a class="button" href="https://discord.gg/zkAKbyJ">Support</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="container">
+			<div style="max-width: 1200px;text-align: left"><br />
+I can import decks that you put on <a href="http://pastebin.com">pastebin.com</a><br /><br />
+To use such a deck in a server, that server must have internet decks enabled. If you're a server admin, you can enable internet decks with <span class="commandText">k!settings quiz/japanese/internet_decks_enabled true</span>. Understand that someone may put explicit content in a deck and use it in your server. If that becomes a problem, I may have to make a review queue or disable the feature.<br /><br />
+
+Here is an example of a deck with three questions:<br /><br />
+				<textarea rows="10" cols="70" style="text-align:left;overflow:hidden;">
+FULL NAME: My Easy Deck
+SHORT NAME: myeasy
+INSTRUCTIONS: Type the reading of the Kanji in Hiragana!
+QUESTION TYPE: Image
+
+--QuestionsStart--
+犬,いぬ,dog
+1日,いちにち/ついたち,first of the month/one day
+太陽,たいよう</textarea><br /><br />
+After putting that on <a href="https://pastebin.com/Lu9SUGxY">pastebin</a>, you can take your pastebin link and say <span class="commandText">k!quiz pastebin.com/xxxxx</span>. After I load the deck successfully the first time, you can use your deck's short name instead: <span class="commandText">k!quiz myeasy</span>. If there is an error loading it, I will tell you what's wrong and you can fix it and make a new pastebin paste (don't edit the old one, make a new one) and try again.<br /><br />
+
+The <span class="commandText">QUESTION TYPE</span> can be either "Image" or "Text", depending on if you want your question to be shown as a rendered image or just plain text. Image questions must be 10 characters or fewer. Text questions can be up to 300 characters long.<br /><br />
+
+Each question consists of three parts, separated by commas. The first part is the question that will be shown to players. The second part is one or more acceptable answers. If there is more than one answer, separate them with slashes. The third part is optional, it's a comment (it will appear under "meaning" but it doesn't necessarily have to be a word meaning). Use slashes here too to separate stuff, they will be converted to commas (don't put in commas yourself though, only use commas to separate the three parts).<br /><br />
+
+You can delete your decks with <span class="commandText">k!quiz delete deckname</span>. If you want to edit your deck, you must delete it and recreate it with a new pastebin paste.<br /><br />
+
+Programs like Excel and Google Sheets can export to CSV format (comma separated values) so it might be easier to create your list of questions in a program like that and export to CSV.
+			</div>
+		</div>
+	</div><br /><br />
+	</body>
+</html>
