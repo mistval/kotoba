@@ -16,7 +16,7 @@ function onShutdown(bot) {
 
 // The bot must be instantiated before anything relying on monochrome components (like quiz manager) can be used.
 // (That's an oversight and should be corrected)
-let bot = new monochrome(configFilePath, commandsDirectoryPath, messageProcessorsDirectoryPath, settingsFilePath, logsDirectoryPath, onShutdown);
+let bot = new monochrome({configFilePath, commandsDirectoryPath, messageProcessorsDirectoryPath, settingsFilePath, logsDirectoryPath, onShutdown});
 
 const quizManager = reload('./kotoba/quiz/manager.js');
 
