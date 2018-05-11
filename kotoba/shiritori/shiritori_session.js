@@ -1,14 +1,21 @@
 const assert = require('assert');
 
-const BOT_USER_ID = '251239170058616833';
-
 class Session {
-  constructor(starterUserId, starterName, clientDelegate, gameStrategy, locationId, settings) {
-    this.players = [BOT_USER_ID, starterUserId];
+  constructor(
+    starterUserId,
+    starterName,
+    clientDelegate,
+    gameStrategy,
+    locationId,
+    settings,
+    botUserId,
+  ) {
+    this.botUserId = botUserId;
+    this.players = [botUserId, starterUserId];
     this.playerAtIndexIsActive = this.players.map(() => true);
     this.nameForUserId = {};
     this.nameForUserId[starterUserId] = starterName;
-    this.nameForUserId[BOT_USER_ID] = 'Kotoba';
+    this.nameForUserId[botUserId] = 'Kotoba';
 
     this.clientDelegate = clientDelegate;
     this.currentPlayerIndex = 0;
@@ -110,7 +117,7 @@ class Session {
   }
 
   getBotUserId() {
-    return BOT_USER_ID;
+    return this.botUserId;
   }
 
   getCurrentPlayerId() {
@@ -138,4 +145,3 @@ class Session {
 }
 
 module.exports = Session;
-module.exports.BOT_USER_ID = BOT_USER_ID;
