@@ -149,13 +149,13 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   return new RejectedResult(false, ruleViolation);
 }
 
-function getViableNextResult(wordInformationsHistory, retriesLeft) {
+function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomStartSequence) {
   if (retriesLeft === 0) {
     throw new Error('Couldn\'t get a viable next word :/');
   }
 
   let startSequence;
-  if (!wordInformationsHistory || wordInformationsHistory.length === 0) {
+  if (!wordInformationsHistory || wordInformationsHistory.length === 0 || forceRandomStartSequence) {
     let startSequences = Object.keys(wordData.wordsForStartSequence);
     startSequence = getRandomArrayElement(startSequences);
   } else {
@@ -163,6 +163,11 @@ function getViableNextResult(wordInformationsHistory, retriesLeft) {
   }
 
   let possibleNextWords = wordData.wordsForStartSequence[startSequence];
+
+  if (!possibleNextWords) {
+    logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
+    return getViableNextResult(wordInformationsHistory, retriesLeft, true);
+  }
 
   // Cube it in order to prefer more common words.
   let nextWordIndex = Math.floor(Math.random() * Math.random() * Math.random() * possibleNextWords.length);
