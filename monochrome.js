@@ -66,6 +66,7 @@ function checkApiKeys(bot) {
 
 function saveGlobalLogger(bot) {
   globals.logger = bot.getLogger();
+  globals.persistence = bot.getPersistence();
 }
 
 function startWebserver(bot) {

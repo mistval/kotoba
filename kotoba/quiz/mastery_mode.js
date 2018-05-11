@@ -1,7 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
+const globals = require('./../globals.js');
 const SettingsOverride = reload('./settings_override.js');
-const persistence = reload('monochrome-bot').persistence;
 
 const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;
 const PERCENT_CORRECT_FOR_MASTERY = .75;
@@ -69,7 +69,7 @@ function updateMasteryModeLeaderboard(deckId, finalScoreForUser, sessionStartTim
   }
 
   let completionTimeInMs = Date.now() - sessionStartTime;
-  return persistence.editGlobalData(data => {
+  return globals.persistence.editGlobalData(data => {
     data.masteryModeQuizScores = data.masteryModeQuizScores || {};
     data.masteryModeQuizScores[deckId] = data.masteryModeQuizScores[deckId] || [];
     for (let userId of Object.keys(finalScoreForUser)) {
