@@ -2,7 +2,6 @@ const reload = require('require-reload')(require);
 
 const jishoSearch = reload('./../kotoba/jisho_search.js');
 const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
-const { navigationManager } = reload('monochrome-bot');
 
 module.exports = {
   commandAliases: ['k!kanji', 'k!k'],

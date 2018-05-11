@@ -3,7 +3,7 @@ const reload = require('require-reload')(require);
 const getRandomWord = reload('./../kotoba/get_random_word.js');
 const jishoWordSearch = reload('./../kotoba/jisho_word_search.js');
 const constants = reload('./../kotoba/constants.js');
-const { logger, navigationManager } = reload('monochrome-bot');
+const { logger } = reload('monochrome-bot');
 const jishoSearch = reload('./../kotoba/jisho_search.js');
 
 const NUMBER_OF_RETRIES = 5;
