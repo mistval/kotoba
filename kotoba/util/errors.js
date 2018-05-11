@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+
 const { PublicError } = reload('monochrome-bot');
 const constants = reload('./../constants.js');
 
@@ -15,11 +16,22 @@ function throwPublicError(sourceCommandName, publicMessage, logMessage, embedCol
 }
 
 function throwPublicErrorInfo(sourceCommandName, publicMessage, logMessage) {
-  return throwPublicError(sourceCommandName, publicMessage, logMessage, constants.EMBED_NEUTRAL_COLOR);
+  return throwPublicError(
+    sourceCommandName,
+    publicMessage,
+    logMessage,
+    constants.EMBED_NEUTRAL_COLOR,
+  );
 }
 
 function throwPublicErrorFatal(sourceCommandName, publicMessage, logMessage, err) {
-  return throwPublicError(sourceCommandName, publicMessage, logMessage, constants.EMBED_WRONG_COLOR, err);
+  return throwPublicError(
+    sourceCommandName,
+    publicMessage,
+    logMessage,
+    constants.EMBED_WRONG_COLOR,
+    err,
+  );
 }
 
 module.exports = {
