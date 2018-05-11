@@ -1,15 +1,20 @@
-'use strict'
 const reload = require('require-reload')(require);
-const TranslationResultStatus = reload('./translation_result_status.js');
 const constants = require('./constants.js');
-const htmlEntities = new (require('html-entities').XmlEntities)();
+const htmlEntitiesModule = require('html-entities');
+
+const TranslationResultStatus = reload('./translation_result_status.js');
+
+const htmlEntities = new htmlEntitiesModule.XmlEntities();
 
 class TranslationResult {
-  constructor() {
-  }
-
-  static CreateSuccessfulResult(resultProvider, inputLanguage, resultLanguage, resultLink, resultTranslation) {
-    let result = new TranslationResult();
+  static CreateSuccessfulResult(
+    resultProvider,
+    inputLanguage,
+    resultLanguage,
+    resultLink,
+    resultTranslation,
+  ) {
+    const result = new TranslationResult();
     result.resultProvider = resultProvider;
     result.resultLanguage = resultLanguage;
     result.inputLanguage = inputLanguage;
@@ -20,43 +25,43 @@ class TranslationResult {
   }
 
   static CreateErrorResult(error) {
-    let result = new TranslationResult();
+    const result = new TranslationResult();
     result.status = TranslationResultStatus.ERROR;
     result.errorDetail = error.message;
     return result;
   }
 
   static CreateNoResult() {
-    let result = new TranslationResult();
+    const result = new TranslationResult();
     result.status = TranslationResultStatus.NO_RESULT;
     return result;
   }
 
   static CreateUnsupportedLanguageCodeResult(languageCode) {
-    let result = new TranslationResult();
+    const result = new TranslationResult();
     result.status = TranslationResultStatus.UNSUPPORTED_LANGUAGE;
     result.unsupportedLanguageCode = languageCode;
     return result;
   }
 
   toDiscordBotContent() {
-    let content = {};
+    const content = {};
 
     this.resultTranslation = htmlEntities.decode(this.resultTranslation);
     if (this.status === TranslationResultStatus.ERROR) {
-      content.content = 'Sorry, there was an error :( ' + this.errorDetail;
+      content.content = `Sorry, there was an error :( ${this.errorDetail}`;
     } else if (this.status === TranslationResultStatus.NO_RESULT) {
       content.content = 'Sorry, didn\'t find any results!';
     } else if (this.status === TranslationResultStatus.UNSUPPORTED_LANGUAGE) {
-      content.content = 'Sorry, I don\'t support the language code **' + this.unsupportedLanguageCode + '**.';
+      content.content = `Sorry, I don't support the language code **${this.unsupportedLanguageCode}**.`;
     } else {
-      let embedFields = [
-        {name: 'Original language', inline: true, value: this.inputLanguage},
-        {name: 'Result language', inline: true, value: this.resultLanguage},
+      const embedFields = [
+        { name: 'Original language', inline: true, value: this.inputLanguage },
+        { name: 'Result language', inline: true, value: this.resultLanguage },
       ];
 
       content.embed = {
-        title: 'Result from ' + this.resultProvider + ':',
+        title: `Result from ${this.resultProvider}:`,
         description: this.resultTranslation.replace(/&#39;/g, '\''),
         url: this.resultLink,
         fields: embedFields,
