@@ -81,7 +81,7 @@ class DeckCollection {
   getPreviousShownCards() {
     const cachedCards = [];
     this.previousCardCache.forEach((cachedDeck) => {
-      Object.keys(cachedDeck).map(key => cachedDeck[key]).forEach((cachedCard) => {
+      Object.values(cachedDeck).forEach((cachedCard) => {
         cachedCards.push(cachedCard);
       });
     });
