@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 
-const logger = reload('monochrome-bot').logger;
+const { logger } = reload('monochrome-bot');
 
 function retryPromise(promiseFactory, retryCount) {
   return promiseFactory().catch((err) => {
