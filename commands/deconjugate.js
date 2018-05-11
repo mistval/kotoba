@@ -239,10 +239,11 @@ module.exports = {
     if (!suffix) {
       return throwPublicErrorInfo('Deconjugate', 'Say **k!deconjugate [verb]** to deconjugate a Japanese verb. For example: **k!deconjugate 食べさせられたかった**', 'No suffix');
     }
+
     if (suffix.length > 20) {
       throw PublicError.createWithCustomPublicMessage('Sorry, that\'s too long.', true, 'too long');
     }
-    console.time('deconjugate');
+
     const results = Conjugator.unconjugate(suffix, true);
     if (results.length === 0) {
       throw PublicError.createWithCustomPublicMessage('I couldn\'t deconjugate that verb.', false, 'no results');
@@ -272,7 +273,6 @@ module.exports = {
     }
 
     embed.footer = { icon_url: constants.FOOTER_ICON_URI, text: 'This feature is in alpha. Please report bugs at https://discord.gg/zkAKbyJ' };
-    console.timeEnd('deconjugate');
     return msg.channel.createMessage({ embed }, null, msg);
   },
 };
