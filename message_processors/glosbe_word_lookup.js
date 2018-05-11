@@ -4,7 +4,7 @@ const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
 
 module.exports = {
   name: 'Glosbe',
-  action: (bot, msg) => {
+  action: (erisBot, monochrome, msg) => {
     if (!msg.content.startsWith('k!')) {
       return false;
     }
