@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
 const wordData = reload('./shiritori_word_data.js');
-const logger = reload('monochrome-bot').logger;
+const { logger } = reload('monochrome-bot');
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
 const largeHiraganaForSmallHiragana = {
@@ -20,7 +20,10 @@ function getNextWordMustStartWith(currentWordReading) {
   } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
     return [finalCharacter];
   }
-  return [largeHiraganaForSmallHiragana[finalCharacter], currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length)];
+  return [
+    largeHiraganaForSmallHiragana[finalCharacter],
+    currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length),
+  ];
 }
 
 class WordInformation {
@@ -52,15 +55,6 @@ function getRandomArrayElement(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function getNextWordStartSequence(previousWordReading) {
-  const previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
-
-  if (largeHiraganaForSmallHiragana[previousWordFinalCharacter]) {
-    return largeHiraganaForSmallHiragana[previousWordFinalCharacter];
-  }
-  return previousWordFinalCharacter;
-}
-
 function readingAlreadyUsed(reading, wordInformationsHistory) {
   return wordInformationsHistory.some(wordInformation => wordInformation.reading === reading);
 }
@@ -89,7 +83,8 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
 
   let startSequences;
   if (wordInformationsHistory.length > 0) {
-    startSequences = wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith;
+    startSequences =
+      wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith;
   }
 
   const alreadyUsedReadings = [];
@@ -99,31 +94,26 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   let readingToUse;
   let answerToUse;
   let meaningToUse;
-  for (const possibleWordInformation of possibleWordInformations) {
-    const reading = possibleWordInformation.reading;
+  for (let i = 0; i < possibleWordInformations.length; i += 1) {
+    const possibleWordInformation = possibleWordInformations[i];
+    const { reading } = possibleWordInformation;
+    const alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
     if (startSequences && !startSequences.some(sequence => reading.startsWith(sequence))) {
       pushUnique(readingsStartingWithWrongSequence, reading);
-      continue;
-    }
-    if (reading.endsWith('ん')) {
+    } else if (reading.endsWith('ん')) {
       pushUnique(readingsEndingWithN, reading);
-      continue;
-    }
-    const alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
-    if (alreadyUsed) {
+    } else if (alreadyUsed) {
       pushUnique(alreadyUsedReadings, reading);
-      continue;
-    }
-    if (!possibleWordInformation.isNoun) {
+    } else if (!possibleWordInformation.isNoun) {
       pushUnique(noNounReadings, reading);
-      continue;
+    } else {
+      readingToUse = reading;
+      answerToUse = possibleWordInformation.word;
+      if (possibleWordInformation.definitions) {
+        meaningToUse = possibleWordInformation.definitions.join(', ');
+      }
+      break;
     }
-    readingToUse = reading;
-    answerToUse = possibleWordInformation.word;
-    if (possibleWordInformation.definitions) {
-      meaningToUse = possibleWordInformation.definitions.join(', ');
-    }
-    break;
   }
 
   if (answerToUse) {
@@ -154,11 +144,16 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
   }
 
   let startSequence;
-  if (!wordInformationsHistory || wordInformationsHistory.length === 0 || forceRandomStartSequence) {
+  if (
+    !wordInformationsHistory
+    || wordInformationsHistory.length === 0
+    || forceRandomStartSequence
+  ) {
     const startSequences = Object.keys(wordData.wordsForStartSequence);
     startSequence = getRandomArrayElement(startSequences);
   } else {
-    startSequence = wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith[0];
+    ([startSequence] =
+      wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith);
   }
 
   const possibleNextWords = wordData.wordsForStartSequence[startSequence];
@@ -169,7 +164,8 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
   }
 
   // Cube it in order to prefer more common words.
-  let nextWordIndex = Math.floor(Math.random() * Math.random() * Math.random() * possibleNextWords.length);
+  let nextWordIndex =
+    Math.floor(Math.random() * Math.random() * Math.random() * possibleNextWords.length);
   const firstWordTestedIndex = nextWordIndex;
 
   // Find a word that is usable and return it.
@@ -180,26 +176,21 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
       return result;
     }
 
-    ++nextWordIndex;
+    nextWordIndex += 1;
     if (nextWordIndex === possibleNextWords.length) {
       // Wrap around to the start of the array
       nextWordIndex = 0;
     }
     if (nextWordIndex === firstWordTestedIndex) {
-      // We came full circle. Try again. Although possible, it is extremely unlikely that a game would continue so long that there are no viable words left.
+      // We came full circle. Try again.
+      // Although possible, it is extremely unlikely that a game would continue
+      // so long that there are no viable words left.
       return getViableNextResult(wordInformationsHistory, retriesLeft ? retriesLeft - 1 : 1000);
     }
   }
 }
 
-class JapaneseStrategy {
-  getViableNextResult(wordInformationsHistory) {
-    return getViableNextResult(wordInformationsHistory);
-  }
-
-  tryAcceptAnswer(answer, wordInformationsHistory) {
-    return tryAcceptAnswer(answer, wordInformationsHistory);
-  }
-}
-
-module.exports = JapaneseStrategy;
+module.exports = {
+  getViableNextResult,
+  tryAcceptAnswer,
+};
