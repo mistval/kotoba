@@ -1,3 +1,6 @@
 module.exports = {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "rules": {
+      "class-methods-use-this": [2, { "exceptMethods": ['prepareData'] }]
+    }
 };
