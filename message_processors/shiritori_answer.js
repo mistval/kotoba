@@ -4,7 +4,7 @@ const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 
 module.exports = {
   name: 'Shiritori Answer',
-  action: (bot, msg) => {
+  action: (erisBot, monochrome, msg) => {
     let locationId = msg.channel.id;
     if (!shiritoriManager.isSessionInProgressAtLocation(locationId)) {
       return false
