@@ -1,26 +1,26 @@
 const reload = require('require-reload')(require);
+
 const wordData = reload('./shiritori_word_data.js');
 const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
 const largeHiraganaForSmallHiragana = {
-  'ゃ': 'や',
-  'ゅ': 'ゆ',
-  'ょ': 'よ',
-  'ぃ': 'い',
+  ゃ: 'や',
+  ゅ: 'ゆ',
+  ょ: 'よ',
+  ぃ: 'い',
 };
 
 function getNextWordMustStartWith(currentWordReading) {
-  let finalCharacter = currentWordReading[currentWordReading.length - 1];
+  const finalCharacter = currentWordReading[currentWordReading.length - 1];
   if (finalCharacter === 'ぢ') {
     return ['じ', 'ぢ'];
   } else if (finalCharacter === 'づ') {
     return ['ず', 'づ'];
   } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
     return [finalCharacter];
-  } else {
-    return [largeHiraganaForSmallHiragana[finalCharacter], currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length)];
   }
+  return [largeHiraganaForSmallHiragana[finalCharacter], currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length)];
 }
 
 class WordInformation {
@@ -53,13 +53,12 @@ function getRandomArrayElement(array) {
 }
 
 function getNextWordStartSequence(previousWordReading) {
-  let previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
+  const previousWordFinalCharacter = previousWordReading[previousWordReading.length - 1];
 
   if (largeHiraganaForSmallHiragana[previousWordFinalCharacter]) {
     return largeHiraganaForSmallHiragana[previousWordFinalCharacter];
-  } else {
-    return previousWordFinalCharacter;
   }
+  return previousWordFinalCharacter;
 }
 
 function readingAlreadyUsed(reading, wordInformationsHistory) {
@@ -80,8 +79,8 @@ function getPluralizer(array) {
 }
 
 function tryAcceptAnswer(answer, wordInformationsHistory) {
-  let hiragana = convertToHiragana(answer);
-  let possibleWordInformations =
+  const hiragana = convertToHiragana(answer);
+  const possibleWordInformations =
     wordData.getWordInformationsForWordAsHirgana(hiragana);
 
   if (!possibleWordInformations || possibleWordInformations.length === 0) {
@@ -93,15 +92,15 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
     startSequences = wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith;
   }
 
-  let alreadyUsedReadings = [];
-  let readingsEndingWithN = [];
-  let readingsStartingWithWrongSequence = [];
-  let noNounReadings = [];
+  const alreadyUsedReadings = [];
+  const readingsEndingWithN = [];
+  const readingsStartingWithWrongSequence = [];
+  const noNounReadings = [];
   let readingToUse;
   let answerToUse;
   let meaningToUse;
-  for (let possibleWordInformation of possibleWordInformations) {
-    let reading = possibleWordInformation.reading;
+  for (const possibleWordInformation of possibleWordInformations) {
+    const reading = possibleWordInformation.reading;
     if (startSequences && !startSequences.some(sequence => reading.startsWith(sequence))) {
       pushUnique(readingsStartingWithWrongSequence, reading);
       continue;
@@ -110,7 +109,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
       pushUnique(readingsEndingWithN, reading);
       continue;
     }
-    let alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
+    const alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
     if (alreadyUsed) {
       pushUnique(alreadyUsedReadings, reading);
       continue;
@@ -131,7 +130,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
     return new AcceptedResult(answerToUse, readingToUse, meaningToUse, readingToUse.length);
   }
 
-  let ruleViolations = [];
+  const ruleViolations = [];
   if (alreadyUsedReadings.length > 0) {
     ruleViolations.push(`Someone already used the reading${getPluralizer(alreadyUsedReadings)}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
   }
@@ -145,7 +144,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
     ruleViolations.push(`Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(noNounReadings)}: **${noNounReadings.join(', ')}**`);
   }
 
-  let ruleViolation = ruleViolations.join('\n\n');
+  const ruleViolation = ruleViolations.join('\n\n');
   return new RejectedResult(false, ruleViolation);
 }
 
@@ -156,13 +155,13 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
 
   let startSequence;
   if (!wordInformationsHistory || wordInformationsHistory.length === 0 || forceRandomStartSequence) {
-    let startSequences = Object.keys(wordData.wordsForStartSequence);
+    const startSequences = Object.keys(wordData.wordsForStartSequence);
     startSequence = getRandomArrayElement(startSequences);
   } else {
     startSequence = wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith[0];
   }
 
-  let possibleNextWords = wordData.wordsForStartSequence[startSequence];
+  const possibleNextWords = wordData.wordsForStartSequence[startSequence];
 
   if (!possibleNextWords) {
     logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
@@ -171,12 +170,12 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
 
   // Cube it in order to prefer more common words.
   let nextWordIndex = Math.floor(Math.random() * Math.random() * Math.random() * possibleNextWords.length);
-  let firstWordTestedIndex = nextWordIndex;
+  const firstWordTestedIndex = nextWordIndex;
 
   // Find a word that is usable and return it.
   while (true) {
-    let nextWord = possibleNextWords[nextWordIndex];
-    let result = tryAcceptAnswer(nextWord, wordInformationsHistory);
+    const nextWord = possibleNextWords[nextWordIndex];
+    const result = tryAcceptAnswer(nextWord, wordInformationsHistory);
     if (result.accepted) {
       return result;
     }
