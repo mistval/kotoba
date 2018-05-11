@@ -64,10 +64,9 @@ class Session {
       if (this.players_[i] === userId) {
         if (this.playerAtIndexIsActive_[i]) {
           return false;
-        } else {
-          this.playerAtIndexIsActive_[i] = true;
-          return true;
         }
+        this.playerAtIndexIsActive_[i] = true;
+        return true;
       }
     }
 
@@ -106,7 +105,7 @@ class Session {
   }
 
   clearTimers() {
-    for (let timer of this.timers_) {
+    for (const timer of this.timers_) {
       clearTimeout(timer);
     }
     this.timers_ = [];
