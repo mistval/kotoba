@@ -361,7 +361,7 @@ function onRequestGames(socket) {
 }
 
 function broadcast(msg) {
-  let roomInformations = Object.keys(roomInformationForRoomId).map(roomId => roomInformationForRoomId[roomId]);
+  let roomInformations = Object.values(roomInformationForRoomId);
   for (let roomInformation of roomInformations) {
     roomInformation.messageSender.broadcast(msg);
   }
