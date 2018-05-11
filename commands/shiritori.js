@@ -336,6 +336,7 @@ module.exports = {
       new JapaneseGameStrategy(),
       locationId,
       settings,
+      bot.user.id,
     );
 
     return shiritoriManager.startSession(session, scoreScopeId);
