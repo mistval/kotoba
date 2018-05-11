@@ -5,7 +5,7 @@ const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 const constants = reload('./../kotoba/constants.js');
 const errors = reload('./../kotoba/util/errors.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
-const JapaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
+const japaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
 const { logger } = reload('monochrome-bot');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
@@ -333,7 +333,7 @@ module.exports = {
       msg.author.id,
       msg.author.username,
       clientDelegate,
-      new JapaneseGameStrategy(),
+      japaneseGameStrategy,
       locationId,
       settings,
       bot.user.id,
