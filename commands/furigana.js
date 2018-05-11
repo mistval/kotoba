@@ -10,7 +10,7 @@ module.exports = {
   uniqueId: 'furigana5345',
   shortDescription: 'Render furigana for Japanese text.',
   usageExample: 'k!furigana 吾輩は猫である',
-  action: async function action(bot, msg, suffix) {
+  action: async function action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       return throwPublicErrorInfo('Furigana', 'Say **k!furigana [Japanese text]** to render Japanese text with furigana. For example: **k!f 家を出てすぐの所**', 'No suffix');
     }

@@ -1,9 +1,8 @@
-
 const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const assert = require('assert');
+const globals = require('./../globals.js');
 
-const { logger } = reload('monochrome-bot');
 const scoreManager = reload('./../score_manager.js');
 
 const INITIAL_DELAY_IN_MS = 5000;
@@ -153,7 +152,7 @@ function tryShowCurrentState(session) {
     currentPlayerIsBot,
     scoreManager.getScoresForLocationId(locationId),
   ).catch((err) => {
-    logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+    globals.globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
   });
 }
 
@@ -245,7 +244,7 @@ class TimeoutAction extends Action {
     }
 
     return promise.catch((err) => {
-      logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
     }).then(() => createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS)).then(() => {
       if (this.boot) {
         session.removePlayer(session.getCurrentPlayerId());
@@ -327,13 +326,13 @@ class PlayerTurnAction extends Action {
       this.acceptingAnswers = !removePlayer;
       const { rejectionReason } = result;
       return clientDelegate.answerRejected(input, rejectionReason).catch((err) => {
-        logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+        globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
       }).then(() => {
         if (removePlayer) {
           session.removePlayer(currentPlayerId);
           return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() =>
             clientDelegate.removedPlayerForRuleViolation(currentPlayerId)).catch((err) => {
-            logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+            globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
           }).then(() => createTimeoutPromise(session, SPACING_DELAY_IN_MS))
             .then(() => {
               if (!session.hasMultiplePlayers()) {
@@ -384,7 +383,7 @@ class BotTurnAction extends Action {
     scoreManager.addScore(locationId, botUserId, nextResult.score);
 
     return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay)).catch((err) => {
-      logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
     }).then(() => createTimeoutPromise(session, this.delay)).then(() => {
       if (!session.hasMultiplePlayers()) {
         return new EndGameForNoPlayersAction(session);
@@ -402,7 +401,7 @@ class StartAction extends Action {
     try {
       await session.getClientDelegate().notifyStarting(INITIAL_DELAY_IN_MS);
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, 'Error showing starting message', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error showing starting message', err);
     }
 
     const askQuestionAction = new BotTurnAction(session, false);
@@ -424,10 +423,10 @@ async function chainActions(locationId, action) {
     return chainActions(locationId, result);
   } catch (err) {
     try {
-      logger.logFailure(LOGGER_TITLE, 'Error', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error', err);
       await chainActions(locationId, new EndGameForErrorAction(session));
     } catch (innerErr) {
-      logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', innerErr);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', innerErr);
       await endGame(locationId, EndGameReason.ERROR);
     }
 

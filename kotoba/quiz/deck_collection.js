@@ -3,10 +3,7 @@ const assert = require('assert');
 
 const cardStrategies = reload('./card_strategies.js');
 const deckLoader = reload('./deck_loader.js');
-const { logger } = reload('monochrome-bot');
 const shuffleArray = reload('./../util/shuffle_array.js');
-
-const LOGGER_TITLE = 'DECK COLLECTION';
 
 function deepCopy(object) {
   return JSON.parse(JSON.stringify(object));
@@ -156,7 +153,6 @@ class DeckCollection {
     }
 
     if (card.answer.length === 0 || card.answer[0] === '') {
-      logger.logFailure(LOGGER_TITLE, `Card with no answer: ${card.question}`);
       return this.popUndisplayedCard(settings);
     }
 
@@ -253,7 +249,6 @@ class DeckCollection {
 
       loopCounter += 1;
       if (loopCounter > 10000) {
-        logger.logFailure(LOGGER_TITLE, 'Couldn\'t generate enough options. Weird');
         break;
       }
     }

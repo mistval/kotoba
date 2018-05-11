@@ -2,13 +2,13 @@
 const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const deckLoader = reload('./deck_loader.js');
-const logger = reload('monochrome-bot').logger;
 const assert = require('assert');
 const saveManager = reload('./pause_manager.js');
 const cardStrategies = reload('./card_strategies.js');
 const Session = reload('./session.js');
 const DeckCollection = reload('./deck_collection.js');
 const retryPromise = reload('./../util/retry_promise.js');
+const globals = require('./../globals.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
@@ -69,7 +69,7 @@ async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFina
         delegateFinalArgument));
     }, 3);
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
+    globals.logger.logFailure(LOGGER_TITLE, 'Error ending quiz. Continuing and closing session.', err);
   }
 }
 
@@ -82,7 +82,7 @@ function stopAllQuizzesCommand() {
     promise = promise.then(() => {
       return endQuiz(true, session, messageSender, messageSender.notifyStoppingAllQuizzes);
     }).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Failed to send quiz stop message to location ID ' + locationId, err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Failed to send quiz stop message to location ID ' + locationId, err);
     });
   }
 
@@ -163,19 +163,19 @@ class EndQuizForErrorAction extends Action {
   do() {
     let session = this.getSession_();
     try {
-      logger.logFailure(LOGGER_TITLE, 'Stopping for error');
+      globals.logger.logFailure(LOGGER_TITLE, 'Stopping for error');
       let messageSender = session.getMessageSender();
       return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedError)).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
+        globals.logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
         return Promise.resolve(closeSession(session, true)).then(() => {
-          logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
+          globals.logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
           throw err;
         });
       });
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
+      globals.logger.logFailure(LOGGER_TITLE, 'Error ending quiz gracefully for error. Attempting to close session.');
       return Promise.resolve(closeSession(session, true)).then(() => {
-        logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
+        globals.logger.logSuccess(LOGGER_TITLE, 'Session closed successfully.');
         throw err;
       });
     }
@@ -228,7 +228,7 @@ class ShowAnswersAction extends Action {
             answersForUser,
             pointsForAnswer,
             scoresForUser)).catch(err => {
-            logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
+            globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
           });
 
           if (scores.checkForWin()) {
@@ -266,7 +266,7 @@ class ShowWrongAnswerAction extends Action {
     let currentCard = session.getCurrentCard();
     return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_)).catch(err => {
       let question = currentCard.question;
-      logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message for ' + question, err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message for ' + question, err);
     }).then(() => {
       if (session.checkTooManyWrongAnswers()) {
         return new EndQuizTooManyWrongAnswersAction(session);
@@ -306,7 +306,7 @@ class AskQuestionAction extends Action {
         cardStrategies.createTextQuestionWithHint(session.getCurrentCard(), session).then(question => {
           if (question) {
             return session.getMessageSender().showQuestion(question, this.shownQuestionId_).catch(err => {
-              logger.logFailure(LOGGER_TITLE, 'Failed to update reveal.', err);
+              globals.logger.logFailure(LOGGER_TITLE, 'Failed to update reveal.', err);
             });
           }
         }).then(() => {
@@ -335,7 +335,7 @@ class AskQuestionAction extends Action {
         this.fulfill_(new ShowWrongAnswerAction(session, true));
       }
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, 'Failed to skip', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Failed to skip', err);
     }
   }
 
@@ -364,7 +364,7 @@ class AskQuestionAction extends Action {
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
-            logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
+            globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
           });
         }).catch(err => {
           reject(err);
@@ -394,7 +394,7 @@ class StartAction extends Action {
     let name = session.getQuizName();
     const description = session.getQuizDescription();
     return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description)).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
     }).then(() => {
       let askQuestionAction = new AskQuestionAction(session);
       return new WaitAction(session, INITIAL_DELAY_IN_MS, askQuestionAction);
@@ -439,10 +439,10 @@ class SaveAction extends Action {
       return saveManager.save(saveData, this.savingUserId_, session.getName(), session.getGameModeIdentifier());
     }).then(() => {
       return session.getMessageSender().notifySaveSuccessful().catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'Error sending quiz save message', err);
+        globals.logger.logFailure(LOGGER_TITLE, 'Error sending quiz save message', err);
       });
     }).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Error saving', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error saving', err);
       return new EndQuizForErrorAction(session);
     });
   }
@@ -464,13 +464,13 @@ function chainActions(locationId, action) {
       session.clearTimers();
       return chainActions(locationId, result);
     }).catch(err => {
-      logger.logFailure(LOGGER_TITLE, 'Error', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error', err);
       return chainActions(locationId, new EndQuizForErrorAction(session)).then(() => {
         return QUIZ_END_STATUS_ERROR;
       });;
     });
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
+    globals.logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
     let messageSender = session.getMessageSender();
     return Promise.resolve(endQuiz(true, session, messageSender, messageSender.notifyQuizEndedError)).then(() => {
       return QUIZ_END_STATUS_ERROR;

@@ -1,7 +1,8 @@
 const reload = require('require-reload')(require);
 const assert = require('assert');
+const globals = require('./../globals.js');
 
-const { persistence, logger } = reload('monochrome-bot');
+const { persistence } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 
 const SHIRITORI_DECK_ID = 'shiritori';
@@ -130,7 +131,7 @@ class QuizScoreStorageUtils {
         rowsForUserAndServer.forEach((row) => {
           if (scoreForDeck[row.deckId]) {
             if (foundMatchingRowForDeckId[row.deckId]) {
-              logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
+              globals.logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
             } else {
               // Some (very few) people have NaN scores in the database because of a bug.
               // So set them to 0 so that they can start increasing again.

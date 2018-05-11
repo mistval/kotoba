@@ -11,7 +11,7 @@ Object.keys(decksMetadata).forEach((deckName) => {
 module.exports = {
   commandAliases: ['}unmappeduids'],
   botAdminOnly: true,
-  action: async function action(bot, msg) {
+  action: async function action(erisBot, monochrome, msg) {
     const allScores = await ScoreStorageUtils.getGlobalScores();
     const unmappedUniqueIds = [];
 

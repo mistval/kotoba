@@ -10,7 +10,6 @@ const {
   NavigationPage,
   NavigationChapter,
   Navigation,
-  navigationManager,
 } = reload('monochrome-bot');
 
 const KANJI_REGEX = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
@@ -193,7 +192,7 @@ function createNavigationChapterInformationForExamples(authorName, word, isStand
   return new NavigationChapterInformation(navigationChapter);
 }
 
-function createNavigationForExamples(msg, authorName, authorId, word) {
+function createNavigationForExamples(msg, authorName, authorId, word, navigationManager) {
   const navigationChapterInformation =
     createNavigationChapterInformationForExamples(authorName, word, true);
 
@@ -204,7 +203,7 @@ function createNavigationForExamples(msg, authorName, authorId, word) {
   return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
-function createNavigationForStrokeOrder(msg, authorName, authorId, kanji) {
+function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, navigationManager) {
   const navigationChapterInformation = createNavigationChapterInformationForStrokeOrder(
     authorName,
     kanji,
@@ -224,7 +223,7 @@ function createNavigationForStrokeOrder(msg, authorName, authorId, kanji) {
   return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
-function createNavigationForKanji(msg, authorName, authorId, kanji) {
+function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager) {
   const navigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     kanji,
@@ -244,7 +243,7 @@ function createNavigationForKanji(msg, authorName, authorId, kanji) {
   return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
-function createNavigationForJishoResults(msg, authorName, authorId, crossPlatformResponseData) {
+function createNavigationForJishoResults(msg, authorName, authorId, crossPlatformResponseData, navigationManager) {
   const word = crossPlatformResponseData.searchPhrase;
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,

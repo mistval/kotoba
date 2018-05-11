@@ -1,11 +1,9 @@
 'use strict'
 const reload = require('require-reload')(require);
 const renderText = reload('./../render_text.js').render;
-const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 const shuffleArray = reload('./../util/shuffle_array.js');
 
-const LOGGER_TITLE = 'QUIZ';
 const URI_MAX_LENGTH = 2048;
 
 let BetterEnglishDefinitions;
@@ -211,7 +209,6 @@ function updateWithBetterEnglishDefinition(card) {
     card.answer = [result.answer];
     return card;
   }).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Failed to get better English definitions for: ' + card.answer[0]);
     return false;
   });
 }

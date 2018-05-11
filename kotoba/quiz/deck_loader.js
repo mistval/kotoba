@@ -3,8 +3,9 @@ const state = require('./../static_state.js');
 const assert = require('assert');
 const request = require('request-promise');
 const arrayOnDisk = require('disk-array');
+const globals = require('./../globals.js');
 
-const { logger, persistence, PublicError } = reload('monochrome-bot');
+const { persistence, PublicError } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 const cardStrategies = reload('./card_strategies.js');
 
@@ -58,7 +59,17 @@ function validateDeckPropertiesValid(deck) {
   assert(Object.keys(cardStrategies.AnswerCompareStrategy).indexOf(deck.answerCompareStrategy !== -1), 'No or invalid answerCompareStrategy.');
 }
 
-async function loadDecksFromDisk() {
+async function loadDecks() {
+  if (state.quizDecksLoader) {
+    return;
+  }
+
+  state.quizDecksLoader = {
+    quizDeckForName: {},
+    quizDeckForUniqueId: {},
+    quizDecksCache: new arrayOnDisk.Cache(CACHE_SIZE_IN_PAGES),
+  };
+
   const deckNames = Object.keys(decksMetadata);
   const cache = state.quizDecksLoader.quizDecksCache;
 
@@ -80,7 +91,7 @@ async function loadDecksFromDisk() {
       state.quizDecksLoader.quizDeckForName[deckName] = deck;
       state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
+      globals.logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
     }
   }
 }
@@ -448,15 +459,6 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
   return createAllDecksFoundStatus(decks);
 }
 
-if (!state.quizDecksLoader) {
-  state.quizDecksLoader = {
-    quizDeckForName: {},
-    quizDeckForUniqueId: {},
-    quizDecksCache: new arrayOnDisk.Cache(CACHE_SIZE_IN_PAGES),
-  };
-  loadDecksFromDisk();
-}
-
 function deepCopy(object) {
   return JSON.parse(JSON.stringify(object));
 }
@@ -477,4 +479,5 @@ module.exports = {
   deleteInternetDeck,
   DeletionStatus,
   createReviewDeck,
+  loadDecks,
 };

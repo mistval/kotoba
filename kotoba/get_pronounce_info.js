@@ -2,7 +2,6 @@ const reload = require('require-reload')(require);
 const state = require('./static_state.js');
 const convertToHiragana = reload('./util/convert_to_hiragana.js');
 const searchForvo = reload('./forvo_search.js');
-const logger = reload('monochrome-bot').logger;
 
 if (!state.pronounceData) {
   state.pronounceData = require('./resources/dictionaries/pronunciation.json');
