@@ -1,41 +1,45 @@
-'use strict'
+
 const reload = require('require-reload')(require);
 const request = require('request-promise');
+
 const API_KEY = reload('./api_keys.js').YOUTUBE;
 
-exports.getAllLinksInPlaylist = function(playlistId, pageToken) {
+function addLinksFromPlaylistData(data, inputArray) {
+  const resultArray = inputArray.slice();
+  data.items.forEach((item) => {
+    if (item.snippet.title !== 'Private video' && item.snippet.title !== 'Deleted video') {
+      resultArray.push(`https://www.youtube.com/watch?v=${item.contentDetails.videoId}`);
+    }
+  });
+
+  return resultArray;
+}
+
+async function getAllLinksInPlaylist(playlistId, pageToken) {
   if (!API_KEY) {
     return Promise.reject(new Error('No Youtube API key'));
   }
-  return request({
+  const data = await request({
     uri: 'https://www.googleapis.com/youtube/v3/playlistItems',
     qs: {
       maxResults: 50,
       part: 'contentDetails,snippet',
-      playlistId: playlistId,
+      playlistId,
       key: API_KEY,
-      pageToken: pageToken,
+      pageToken,
     },
     json: true,
-    timeout: 10000
-  }).then(data => {
-    if (data.nextPageToken) {
-      return module.exports.getAllLinksInPlaylist(playlistId, data.nextPageToken).then(resultArray => {
-        return addLinksFromPlaylistData(data, resultArray);
-      });
-    } else {
-      let resultArray = [];
-      return addLinksFromPlaylistData(data, resultArray);
-    }
+    timeout: 10000,
   });
-};
 
-function addLinksFromPlaylistData(data, resultArray) {
-  for (let item of data.items) {
-    if (item.snippet.title !== 'Private video' && item.snippet.title !== 'Deleted video') {
-      resultArray.push('https://www.youtube.com/watch?v=' + item.contentDetails.videoId);
-    }
+  if (data.nextPageToken) {
+    const resultArray = await getAllLinksInPlaylist(playlistId, data.nextPageToken);
+    return addLinksFromPlaylistData(data, resultArray);
   }
-
-  return resultArray;
+  const resultArray = [];
+  return addLinksFromPlaylistData(data, resultArray);
 }
+
+module.exports = {
+  getAllLinksInPlaylist,
+};
