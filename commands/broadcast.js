@@ -11,13 +11,13 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Send a message as me.',
   usageExample: '}broadcast [channelId] Hello!',
-  action(bot, msg, suffix) {
+  action(erisBot, monochrome, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.', false, 'invalid syntax');
     }
     const spaceIndex = suffix.indexOf(' ');
     const channelId = suffix.substring(0, spaceIndex);
     const announcement = suffix.substring(spaceIndex + 1);
-    return bot.createMessage(channelId, announcement);
+    return erisBot.createMessage(channelId, announcement);
   },
 };

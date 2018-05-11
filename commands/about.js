@@ -6,7 +6,7 @@ module.exports = {
   cooldown: 30,
   shortDescription: 'Show some meta information about me.',
   canBeChannelRestricted: false,
-  action(bot, msg) {
+  action(erisBot, monochrome, msg) {
     return msg.channel.createMessage(`\`\`\`md
 # Kotoba
 

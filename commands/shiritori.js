@@ -6,7 +6,6 @@ const constants = reload('./../kotoba/constants.js');
 const errors = reload('./../kotoba/util/errors.js');
 const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
 const japaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
-const { logger } = reload('monochrome-bot');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
@@ -82,9 +81,10 @@ function createScoresString(scoreForUserId) {
 }
 
 class DiscordClientDelegate {
-  constructor(bot, commanderMessage) {
+  constructor(bot, commanderMessage, logger) {
     this.bot = bot;
     this.commanderMessage = commanderMessage;
+    this.logger = logger;
   }
 
   botLeft(userId) {
@@ -232,7 +232,7 @@ class DiscordClientDelegate {
     if (inMs > 3500) {
       this.sendTypingTimeout = setTimeout(() => {
         this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-          logger.logFailure('SHIRITORI', 'Failed to send typing', err);
+          this.logger.logFailure('SHIRITORI', 'Failed to send typing', err);
         });
       }, inMs - 3000);
     }
@@ -305,7 +305,7 @@ module.exports = {
     'shiritori/bot_turn_maximum_wait',
     'shiritori/answer_time_limit',
   ],
-  action(bot, msg, suffix, serverSettings) {
+  action(erisBot, monochrome, msg, suffix, serverSettings) {
     const locationId = msg.channel.id;
 
     if (suffix === 'stop') {
@@ -313,7 +313,7 @@ module.exports = {
     }
 
     throwIfSessionInProgress(locationId);
-    const clientDelegate = new DiscordClientDelegate(bot, msg);
+    const clientDelegate = new DiscordClientDelegate(erisBot, msg);
 
     const suffixLowerCase = suffix.toLowerCase();
     const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
@@ -336,7 +336,7 @@ module.exports = {
       japaneseGameStrategy,
       locationId,
       settings,
-      bot.user.id,
+      erisBot.user.id,
     );
 
     return shiritoriManager.startSession(session, scoreScopeId);
