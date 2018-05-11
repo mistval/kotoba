@@ -1,14 +1,14 @@
 const reload = require('require-reload')(require);
 
 const YoutubeApi = reload('./../kotoba/youtube_api_utils.js');
-const KotobaUtils = reload('./../kotoba/utils.js');
 const apiKeys = reload('./../kotoba/api_keys.js');
 const { logger, PublicError } = reload('monochrome-bot');
+const retryPromise = reload('./../kotoba/util/retry_promise.js');
 
 let videoUris = [];
 
 if (apiKeys.YOUTUBE) {
-  KotobaUtils.retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then((links) => {
+  retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then((links) => {
     videoUris = links;
   }).catch((err) => {
     logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);

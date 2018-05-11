@@ -4,11 +4,11 @@ const state = require('./../static_state.js');
 const deckLoader = reload('./deck_loader.js');
 const logger = reload('monochrome-bot').logger;
 const assert = require('assert');
-const Util = reload('./../utils.js');
 const saveManager = reload('./pause_manager.js');
 const cardStrategies = reload('./card_strategies.js');
 const Session = reload('./session.js');
 const DeckCollection = reload('./deck_collection.js');
+const retryPromise = reload('./../util/retry_promise.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
@@ -58,7 +58,7 @@ async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFina
 
   try {
     await closeSession(session, true);
-    await Util.retryPromise(() => {
+    await retryPromise(() => {
       return Promise.resolve(notifyDelegate.call(
         notifier,
         session.getName(),
@@ -363,7 +363,7 @@ class AskQuestionAction extends Action {
         session.setCurrentCard(card);
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
-          return Util.retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
+          return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
             logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
           });
         }).catch(err => {
