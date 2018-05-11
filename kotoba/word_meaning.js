@@ -6,7 +6,6 @@
  */
 
 const reload = require('require-reload')(require);
-const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 
 function cleanMeaning(str) {
@@ -24,10 +23,18 @@ function cleanMeaning(str) {
   return str;
 }
 
+function tagArrayToString(tagArray) {
+  if (Array.isArray(tagArray) && tagArray.length > 0) {
+    let result = '[';
+    result += tagArray.join(', ');
+    result += ']';
+    return result;
+  }
+  return '';
+};
+
 class WordMeaning {
   constructor(meaning, meaningTags) {
-    KotobaUtils.assertIsString(meaning);
-    KotobaUtils.assertIsArray(meaningTags);
     this.meaning_ = meaning;
     this.meaningTags_ = meaningTags;
   }
@@ -35,7 +42,7 @@ class WordMeaning {
   toDiscordBotString() {
     let response = this.meaning_;
     if (this.meaningTags_.length > 0) {
-      response += ' *' + cleanMeaning(KotobaUtils.tagArrayToString(this.meaningTags_) + '*');
+      response += ' *' + cleanMeaning(tagArrayToString(this.meaningTags_) + '*');
     }
     return response;
   }

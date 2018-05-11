@@ -1,9 +1,9 @@
 'use strict'
 const reload = require('require-reload')(require);
 const renderText = reload('./../render_text.js').render;
-const Util = reload('./../utils.js');
 const logger = reload('monochrome-bot').logger;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
+const shuffleArray = reload('./../util/shuffle_array.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const URI_MAX_LENGTH = 2048;
@@ -134,7 +134,7 @@ function createTextQuestionWithHint(card, quizState) {
     for (let i = 0; i < answer.length; ++i) {
       allCharacterIndices.push(i);
     }
-    let shuffledIndices = Util.shuffleArray(allCharacterIndices);
+    let shuffledIndices = shuffleArray(allCharacterIndices);
     let revealIndexQueue = shuffledIndices.slice(0, totalNumberOfCharactersToReveal);
     let revelationState = Array(answer.length + 1).join('_');
     quizState.textQuestionWithHintStrategyState.revealIndexQueue = revealIndexQueue;
@@ -217,7 +217,7 @@ function updateWithBetterEnglishDefinition(card) {
 }
 
 function randomizeQuestionCharacters(card) {
-  let newQuestion = Util.shuffleArray(card.question.split('')).join('');
+  let newQuestion = shuffleArray(card.question.split('')).join('');
 
   // If the new question is the same as the original one, swap one random character with one other.
   if (newQuestion === card.question) {

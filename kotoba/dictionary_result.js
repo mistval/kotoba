@@ -6,11 +6,14 @@
  */
 
 const reload = require('require-reload')(require);
-const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 const constants = require('./constants.js');
 
 const MaxPhraseMeanings = 999;
+
+function isNonEmptyArray(array) {
+  return Array.isArray(array) && array.length > 0;
+};
 
 class DictionaryResult {
   constructor(targetLanguageWordsAndReadings, wordTags, wordMeanings) {
@@ -38,7 +41,7 @@ class DictionaryResult {
     }).join(', ');
 
     let value;
-    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
+    if (isNonEmptyArray(this.wordMeanings_)) {
       value = this.wordMeanings_.slice(0, MaxPhraseMeanings).map((meaning, index) => {
         return (index + 1) + '. ' + meaning.toDiscordBotString();
       }).join('\n');
@@ -71,7 +74,7 @@ class DictionaryResult {
       }
     }
 
-    if (KotobaUtils.isNonEmptyArray(this.wordMeanings_)) {
+    if (isNonEmptyArray(this.wordMeanings_)) {
       let meaningsString = this.wordMeanings_.slice(0, MaxPhraseMeanings).map((meaning, index) => {
         return (index + 1).toString() + '. ' + meaning.toDiscordBotString();
       }).join('\n');

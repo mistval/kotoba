@@ -6,7 +6,6 @@
  */
 
 const reload = require('require-reload')(require);
-const KotobaUtils = reload('./utils.js');
 const assert = require('assert');
 const constants = require('./constants.js');
 
@@ -14,9 +13,6 @@ const MaxLinesPerPage = 11;
 
 class DictionaryResponseData {
   constructor(searchedWord, fromLanguagePretty, toLanguagePretty, showLanguages, dictionaryResults, extraText, embedUrl) {
-    KotobaUtils.assertIsString(searchedWord, fromLanguagePretty, toLanguagePretty, extraText);
-    KotobaUtils.assertIsBoolean(showLanguages);
-    KotobaUtils.assertIsArray(dictionaryResults);
     this.dictionaryResults_ = dictionaryResults;
     this.hasResults = this.dictionaryResults_ && this.dictionaryResults_.length > 0;
     this.extraText_ = extraText;
