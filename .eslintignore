@@ -1,0 +1,7 @@
+# These modules are "no longer maintained" and will not have style updated.
+kotoba/word_meaning.js
+kotoba/dictionary_query.js
+kotoba/dictionary_response_data.js
+kotoba/dictionary_result.js
+kotoba/glosbe_word_search.js
+message_processors/glosbe_word_lookup.js
