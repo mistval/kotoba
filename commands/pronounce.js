@@ -6,9 +6,7 @@ const constants = reload('./../kotoba/constants.js');
 const {
   NavigationChapter,
   Navigation,
-  navigationManager,
   NavigationPage,
-  logger,
 } = reload('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 4;
@@ -108,9 +106,10 @@ function addAudioClipsField(fields, forvoData) {
 }
 
 class PronunciationDataSource {
-  constructor(authorName, pronounceInfo) {
+  constructor(authorName, pronounceInfo, logger) {
     this.pronounceInfo = pronounceInfo;
     this.authorName = authorName;
+    this.logger = logger;
   }
 
   prepareData() {
@@ -152,7 +151,7 @@ class PronunciationDataSource {
       const forvoData = await entry.getAudioClips();
       addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
+      this.logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
     }
 
     if (numberOfPages > 1) {
@@ -166,8 +165,8 @@ class PronunciationDataSource {
   }
 }
 
-function createFoundResult(msg, pronounceInfo) {
-  const navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo);
+function createFoundResult(msg, pronounceInfo, navigationManager, logger) {
+  const navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo, logger);
   const navigationChapter = new NavigationChapter(navigationDataSource);
   const chapterForEmojiName = { a: navigationChapter };
   const hasMultiplePages = pronounceInfo.entries.length > 1;
@@ -183,7 +182,7 @@ module.exports = {
   uniqueId: 'pronounce30294',
   shortDescription: 'Look up information about how to pronounce a Japanese word.',
   usageExample: 'k!pronounce 瞬間',
-  async action(bot, msg, suffix) {
+  async action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       return throwPublicErrorInfo('Pronounce', 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**', 'No suffix');
     }
@@ -193,6 +192,6 @@ module.exports = {
       return createNotFoundResult(msg, pronounceInfo);
     }
 
-    return createFoundResult(msg, pronounceInfo);
+    return createFoundResult(msg, pronounceInfo, monochrome.getNavigationManager(), monochrome.getLogger());
   },
 };

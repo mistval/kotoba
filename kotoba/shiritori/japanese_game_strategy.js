@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
+const globals = require('./../globals.js');
 
 const wordData = reload('./shiritori_word_data.js');
-const { logger } = reload('monochrome-bot');
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
 const largeHiraganaForSmallHiragana = {
@@ -159,7 +159,7 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
   const possibleNextWords = wordData.wordsForStartSequence[startSequence];
 
   if (!possibleNextWords) {
-    logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
+    globals.logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
     return getViableNextResult(wordInformationsHistory, retriesLeft, true);
   }
 

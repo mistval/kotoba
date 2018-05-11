@@ -5,7 +5,6 @@ const constants = reload('./../kotoba/constants.js');
 const {
   NavigationChapter,
   Navigation,
-  navigationManager,
 } = reload('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
@@ -66,7 +65,7 @@ function createScoreTotalString(scores) {
   return `${scoreTotalString} points have been scored by ${usersTotal} players.`;
 }
 
-function sendScores(bot, msg, scores, title, description, footer) {
+function sendScores(msg, scores, title, description, footer, navigationManager) {
   const navigationContents = [];
   const numPages = scores.length % MAX_SCORERS_PER_PAGE === 0 ?
     Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1) :
@@ -190,7 +189,7 @@ module.exports = {
   uniqueId: 'leaderboard409359',
   shortDescription: 'View leaderboards for quiz and/or shiritori',
   longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**k!lb** - View all quiz scores in this server\n**k!lb shiritori** - View shiritori scores in this server\n**k!lb global** - View all quiz scores globally\n**k!lb global N1** - View the global leaderboard for the N1 quiz deck\n**k!lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**k!lb anagrams**\n**k!lb jlpt**\n**k!lb kanken**',
-  action: async function action(bot, msg, suffix) {
+  action: async function action(erisBot, monochrome, msg, suffix) {
     let title = '';
     let footer = {};
     let description = '';
@@ -228,6 +227,6 @@ module.exports = {
       footer = createFooter('You can mix any decks by using the + symbol. For example: k!lb N5+N4+N3');
     }
 
-    return sendScores(bot, msg, scoresResult.rows, title, description, footer);
+    return sendScores(msg, scoresResult.rows, title, description, footer, monochrome.getNavigationManager());
   },
 };

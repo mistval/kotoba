@@ -11,7 +11,7 @@ Object.keys(decksMetadata).forEach((deckName) => {
 module.exports = {
   commandAliases: ['}remapuid'],
   botAdminOnly: true,
-  action: async function action(bot, msg, suffix) {
+  action: async function action(erisBot, monochrome, msg, suffix) {
     const args = suffix.split('/');
     const fromId = args[0];
     const toId = args[1];

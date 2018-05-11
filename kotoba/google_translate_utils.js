@@ -4,7 +4,7 @@ const request = require('request-promise');
 
 const API_KEY = reload('./api_keys.js').GOOGLE_TRANSLATE;
 const TranslationResult = reload('./translation_result.js');
-const { logger, PublicError } = reload('monochrome-bot');
+const { PublicError } = reload('monochrome-bot');
 
 const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2';
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';
@@ -18,10 +18,6 @@ const languageCodeAliases = {
   'zh-tw': 'zh-TW',
   jp: 'ja',
 };
-
-if (!API_KEY) {
-  logger.logFailure('TRANSLATE', 'No Google API key present in kotoba/api_keys.js. The translate command will not work.');
-}
 
 function throwNotRespondingError(internalError) {
   const error = new PublicError('Sorry, Google translate is not responding. Please try again later.', 'error', internalError);

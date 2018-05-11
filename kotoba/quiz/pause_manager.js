@@ -2,7 +2,7 @@ const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const persistence = require('monochrome-bot').persistence;
 const assert = require('assert');
-const logger = require('monochrome-bot').logger;
+const { logger } = require('./../globals.js');
 
 const MEMENTO_VERSION = 'v1';
 
