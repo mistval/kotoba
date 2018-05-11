@@ -1,8 +1,9 @@
 function mapObjectKey(object, lambda) {
   const newObject = {};
-  for (const key of Object.keys(object)) {
+  Object.keys(object).forEach((key) => {
     newObject[key] = lambda(key);
-  }
+  });
+
   return newObject;
 }
 
