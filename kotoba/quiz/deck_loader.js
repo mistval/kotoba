@@ -5,7 +5,7 @@ const request = require('request-promise');
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 
-const { persistence, PublicError } = reload('monochrome-bot');
+const { PublicError } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 const cardStrategies = reload('./card_strategies.js');
 
@@ -297,7 +297,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
   }
 
   // Check for a matching database entry and use the URI from there if there is one.
-  const databaseData = await persistence.getGlobalData();
+  const databaseData = await globals.persistence.getGlobalData();
   let foundInDatabase = false;
   let uniqueId;
   let author;
@@ -330,7 +330,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
     deck.uniqueId = uniqueId;
     deck.author = author;
   } else if (invokerUserId && invokerUserName) {
-    await persistence.editGlobalData((data) => {
+    await globals.persistence.editGlobalData((data) => {
       if (!data.communityDecks) {
         // eslint-disable-next-line no-param-reassign
         data.communityDecks = {};
@@ -365,7 +365,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
 async function deleteInternetDeck(searchTerm, deletingUserId) {
   let returnStatus;
 
-  await persistence.editGlobalData((data) => {
+  await globals.persistence.editGlobalData((data) => {
     const foundRow = data.communityDecks[searchTerm];
     if (!foundRow) {
       returnStatus = DeletionStatus.DECK_NOT_FOUND;
