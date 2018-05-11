@@ -3,7 +3,7 @@ const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
 const assert = require('assert');
 
-const logger = reload('monochrome-bot').logger;
+const { logger } = reload('monochrome-bot');
 const scoreManager = reload('./../score_manager.js');
 
 const INITIAL_DELAY_IN_MS = 5000;
@@ -40,28 +40,12 @@ function setSessionForLocationId(session, locationId) {
 }
 
 function createTimeoutPromise(session, inMs) {
-  return new Promise((fulfill, reject) => {
+  return new Promise((fulfill) => {
     const timer = setTimeout(() => {
       fulfill();
     }, inMs);
     session.addTimer(timer);
   });
-}
-
-/* ACTIONS */
-
-class Action {
-  constructor(session) {
-    this.session_ = session;
-  }
-
-  getSession_() {
-    return this.session_;
-  }
-
-  getGameStrategy_() {
-    return this.session_.getGameStrategy();
-  }
 }
 
 function endGame(locationId, reason, arg) {
@@ -86,12 +70,19 @@ function endGame(locationId, reason, arg) {
     }
   } catch (err) {
     if (session) {
-      return session.getClientDelegate().stopped(EndGameReason.ERROR, session.getWordHistory(), {}, arg).then(() => {
+      return session.getClientDelegate().stopped(
+        EndGameReason.ERROR,
+        session.getWordHistory(),
+        {},
+        arg,
+      ).then(() => {
         throw err;
       });
     }
     throw err;
   }
+
+  return undefined;
 }
 
 function botLeaveCommand(locationId, userId) {
@@ -166,34 +157,88 @@ function tryShowCurrentState(session) {
   });
 }
 
+/* ACTIONS */
+
+class Action {
+  constructor(session) {
+    this.session = session;
+  }
+
+  getSession() {
+    return this.session;
+  }
+
+  getGameStrategy() {
+    return this.session.getGameStrategy();
+  }
+}
+
+class WaitAction extends Action {
+  constructor(session, waitInterval, nextAction) {
+    super(session);
+    this.waitInterval = waitInterval;
+    this.nextAction = nextAction;
+  }
+
+  async do() {
+    return createTimeoutPromise(this.getSession(), this.waitInterval).then(() => this.nextAction);
+  }
+
+  stop() {
+    if (this.fulfill) {
+      this.fulfill();
+    }
+  }
+}
+
 class EndGameForErrorAction extends Action {
-  do() {
-    return endGame(this.getSession_().getLocationId(), EndGameReason.ERROR);
+  async do() {
+    return endGame(this.getSession().getLocationId(), EndGameReason.ERROR);
   }
 }
 
 class EndGameForNoPlayersAction extends Action {
-  do() {
-    const session = this.getSession_();
+  async do() {
+    const session = this.getSession();
     const players = session.getActivePlayers();
     const botIsPlaying = players.indexOf(session.getBotUserId()) !== -1;
-    return endGame(this.getSession_().getLocationId(), EndGameReason.NO_PLAYERS, { players, botIsPlaying });
+    return endGame(
+      this.getSession().getLocationId(),
+      EndGameReason.NO_PLAYERS,
+      { players, botIsPlaying },
+    );
+  }
+}
+
+class TakeTurnForCurrentPlayerAction extends Action {
+  async do() {
+    const session = this.getSession();
+    const currentPlayerId = session.getCurrentPlayerId();
+    if (currentPlayerId === session.getBotUserId()) {
+      // These actions depend on each other in an overall circular
+      // way. I've decided that that's perfectly fine given the
+      // way this module is designed. So ignore the style rule.
+      // eslint-disable-next-line no-use-before-define
+      return new BotTurnAction(session, true);
+    }
+    // eslint-disable-next-line no-use-before-define
+    return new PlayerTurnAction(session);
   }
 }
 
 class TimeoutAction extends Action {
   constructor(session, boot) {
     super(session);
-    this.boot_ = boot;
+    this.boot = boot;
   }
 
-  do() {
-    const session = this.getSession_();
+  async do() {
+    const session = this.getSession();
     const clientDelegate = session.getClientDelegate();
     const currentPlayerId = session.getCurrentPlayerId();
     let promise;
 
-    if (this.boot_) {
+    if (this.boot) {
       promise = clientDelegate.removedPlayerForInactivity(currentPlayerId);
     } else {
       promise = clientDelegate.skippedPlayer(currentPlayerId);
@@ -202,51 +247,54 @@ class TimeoutAction extends Action {
     return promise.catch((err) => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
     }).then(() => createTimeoutPromise(session, WAIT_AFTER_TIMEOUT_IN_MS)).then(() => {
-      if (this.boot_) {
+      if (this.boot) {
         session.removePlayer(session.getCurrentPlayerId());
       }
       if (!session.hasMultiplePlayers()) {
         return new EndGameForNoPlayersAction(session);
       }
       session.advanceCurrentPlayer();
-      return tryShowCurrentState(session).then(() => new WaitAction(session, WAIT_AFTER_TIMEOUT_IN_MS, new TakeTurnForCurrentPlayerAction(session)));
+      return tryShowCurrentState(session).then(() => new WaitAction(
+        session,
+        WAIT_AFTER_TIMEOUT_IN_MS,
+        new TakeTurnForCurrentPlayerAction(session),
+      ));
     });
   }
 }
 
 class PlayerTurnAction extends Action {
-  do() {
-    this.acceptingAnswers_ = true;
-    this.canTimeout_ = true;
-    this.playerDidTalk_ = false;
-    return new Promise((fulfill, reject) => {
-      this.fulfill_ = fulfill;
-      const session = this.getSession_();
+  async do() {
+    this.acceptingAnswers = true;
+    this.canTimeout = true;
+    this.playerDidTalk = false;
+    return new Promise((fulfill) => {
+      this.fulfill = fulfill;
+      const session = this.getSession();
       return createTimeoutPromise(session, session.getAnswerTimeLimitInMs()).then(() => {
-        if (this.canTimeout_) {
-          const session = this.getSession_();
-          const boot = !this.playerDidTalk_;
-          this.fulfill_(new TimeoutAction(session, boot));
+        if (this.canTimeout) {
+          const boot = !this.playerDidTalk;
+          this.fulfill(new TimeoutAction(session, boot));
         }
       });
     });
   }
 
   tryAcceptUserInput(userId, input) {
-    if (!this.acceptingAnswers_) {
+    if (!this.acceptingAnswers) {
       return false;
     }
-    const session = this.getSession_();
+    const session = this.getSession();
     const currentPlayerId = session.getCurrentPlayerId();
     if (userId !== currentPlayerId) {
       return false;
     }
-    this.playerDidTalk_ = true;
+    this.playerDidTalk = true;
     if (input.indexOf(' ') !== -1) {
       return false;
     }
 
-    const gameStrategy = this.getGameStrategy_();
+    const gameStrategy = this.getGameStrategy();
     const clientDelegate = session.getClientDelegate();
     const wordHistory = session.getWordHistory();
     const result = gameStrategy.tryAcceptAnswer(input, wordHistory);
@@ -255,45 +303,48 @@ class PlayerTurnAction extends Action {
       const locationId = session.getLocationId();
       scoreManager.addScore(locationId, userId, result.score);
 
-      this.acceptingAnswers_ = false;
-      this.canTimeout_ = false;
+      this.acceptingAnswers = false;
+      this.canTimeout = false;
       result.word.userId = userId;
       result.word.userName = session.getNameForUserId(userId);
       if (!session.hasMultiplePlayers()) {
-        this.fulfill_(new EndGameForNoPlayersAction(session));
+        this.fulfill(new EndGameForNoPlayersAction(session));
         return true;
       }
       session.advanceCurrentPlayer();
       wordHistory.push(result.word);
-      return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => tryShowCurrentState(session)).then(() => {
-        this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
-      });
+      return createTimeoutPromise(session, SPACING_DELAY_IN_MS)
+        .then(() => tryShowCurrentState(session))
+        .then(() => {
+          this.fulfill(new TakeTurnForCurrentPlayerAction(session));
+        });
     }
 
     const removePlayer = session.shouldRemovePlayerForRuleViolations();
     const isSilent = result.possiblyChat && !removePlayer;
     if (!isSilent) {
-      this.canTimeout_ = !removePlayer;
-      this.acceptingAnswers_ = !removePlayer;
-      const rejectionReason = result.rejectionReason;
+      this.canTimeout = !removePlayer;
+      this.acceptingAnswers = !removePlayer;
+      const { rejectionReason } = result;
       return clientDelegate.answerRejected(input, rejectionReason).catch((err) => {
         logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
       }).then(() => {
         if (removePlayer) {
           session.removePlayer(currentPlayerId);
-          return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() => clientDelegate.removedPlayerForRuleViolation(currentPlayerId).catch((err) => {
+          return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() =>
+            clientDelegate.removedPlayerForRuleViolation(currentPlayerId)).catch((err) => {
             logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
-          })).then(() => createTimeoutPromise(session, SPACING_DELAY_IN_MS)).then(() => {
-            if (!session.hasMultiplePlayers()) {
-              this.fulfill_(new EndGameForNoPlayersAction(session));
-              return;
-            }
-            session.advanceCurrentPlayer();
-            return tryShowCurrentState(session).then(() => {
-              this.fulfill_(new TakeTurnForCurrentPlayerAction(session));
+          }).then(() => createTimeoutPromise(session, SPACING_DELAY_IN_MS))
+            .then(() => {
+              if (!session.hasMultiplePlayers()) {
+                return this.fulfill(new EndGameForNoPlayersAction(session));
+              }
+              session.advanceCurrentPlayer();
+              return tryShowCurrentState(session).then(() =>
+                this.fulfill(new TakeTurnForCurrentPlayerAction(session)));
             });
-          });
         }
+        return undefined;
       }).then(() => 'Rule violation');
     }
 
@@ -301,8 +352,8 @@ class PlayerTurnAction extends Action {
   }
 
   stop() {
-    if (this.fulfill_) {
-      this.fulfill_();
+    if (this.fulfill) {
+      this.fulfill();
     }
   }
 }
@@ -313,15 +364,15 @@ class BotTurnAction extends Action {
     if (doDelay) {
       const minWaitInMs = session.getBotTurnMinimumWaitInMs();
       const maxWaitInMs = session.getBotTurnMaximumWaitInMs();
-      this.delay_ = minWaitInMs + Math.floor(Math.random() * (maxWaitInMs - minWaitInMs));
+      this.delay = minWaitInMs + Math.floor(Math.random() * (maxWaitInMs - minWaitInMs));
     } else {
-      this.delay_ = 0;
+      this.delay = 0;
     }
   }
 
-  do() {
-    const session = this.getSession_();
-    const gameStrategy = this.getGameStrategy_();
+  async do() {
+    const session = this.getSession();
+    const gameStrategy = this.getGameStrategy();
     const wordHistory = session.getWordHistory();
     const clientDelegate = session.getClientDelegate();
     const nextResult = gameStrategy.getViableNextResult(wordHistory);
@@ -332,9 +383,9 @@ class BotTurnAction extends Action {
     nextWord.userName = BOT_USER_NAME;
     scoreManager.addScore(locationId, botUserId, nextResult.score);
 
-    return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay_)).catch((err) => {
+    return Promise.resolve(clientDelegate.botWillTakeTurnIn(this.delay)).catch((err) => {
       logger.logFailure(LOGGER_TITLE, 'Client delegate failed', err);
-    }).then(() => createTimeoutPromise(session, this.delay_)).then(() => {
+    }).then(() => createTimeoutPromise(session, this.delay)).then(() => {
       if (!session.hasMultiplePlayers()) {
         return new EndGameForNoPlayersAction(session);
       }
@@ -345,121 +396,101 @@ class BotTurnAction extends Action {
   }
 }
 
-class TakeTurnForCurrentPlayerAction extends Action {
-  do() {
-    const session = this.getSession_();
-    const currentPlayerId = session.getCurrentPlayerId();
-    if (currentPlayerId === session.getBotUserId()) {
-      return new BotTurnAction(session, true);
-    }
-    return new PlayerTurnAction(session);
-  }
-}
-
 class StartAction extends Action {
-  do() {
-    const session = this.getSession_();
-    return Promise.resolve(session.getClientDelegate().notifyStarting(INITIAL_DELAY_IN_MS)).catch((err) => {
+  async do() {
+    const session = this.getSession();
+    try {
+      await session.getClientDelegate().notifyStarting(INITIAL_DELAY_IN_MS);
+    } catch (err) {
       logger.logFailure(LOGGER_TITLE, 'Error showing starting message', err);
-    }).then(() => {
-      const askQuestionAction = new BotTurnAction(session, false);
-      return new WaitAction(session, INITIAL_DELAY_IN_MS, askQuestionAction);
-    });
-  }
-}
-
-class WaitAction extends Action {
-  constructor(session, waitInterval, nextAction) {
-    super(session);
-    this.waitInterval_ = waitInterval;
-    this.nextAction_ = nextAction;
-  }
-
-  do() {
-    return createTimeoutPromise(this.getSession_(), this.waitInterval_).then(() => this.nextAction_);
-  }
-
-  stop() {
-    if (this.fulfill_) {
-      this.fulfill_();
     }
+
+    const askQuestionAction = new BotTurnAction(session, false);
+    return new WaitAction(session, INITIAL_DELAY_IN_MS, askQuestionAction);
   }
 }
 
-function chainActions(locationId, action) {
+async function chainActions(locationId, action) {
   const session = state.shiritoriManager.sessionForLocationId[locationId];
   if (!action || !action.do || !session) {
-    return Promise.resolve();
+    return undefined;
   }
+
   state.shiritoriManager.currentActionForLocationId[locationId] = action;
 
   try {
-    return Promise.resolve(action.do()).then((result) => {
-      session.clearTimers();
-      return chainActions(locationId, result);
-    }).catch((err) => {
-      logger.logFailure(LOGGER_TITLE, 'Error', err);
-      return chainActions(locationId, new EndGameForErrorAction(session)).then(() => END_STATUS_ERROR);
-    });
+    const result = await action.do();
+    session.clearTimers();
+    return chainActions(locationId, result);
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
-    return Promise.resolve(endGame(locationId, EndGameReason.ERROR)).then(() => END_STATUS_ERROR);
+    try {
+      logger.logFailure(LOGGER_TITLE, 'Error', err);
+      await chainActions(locationId, new EndGameForErrorAction(session));
+    } catch (innerErr) {
+      logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', innerErr);
+      await endGame(locationId, EndGameReason.ERROR);
+    }
+
+    return END_STATUS_ERROR;
   }
 }
-
-/* EXPORT */
 
 function verifySessionNotInProgress(locationId) {
   assert(!isSessionInProgressAtLocation(locationId), 'Already a session in progress there.');
 }
 
-class ShiritoriManager {
-  startSession(session, scoreScopeId) {
-    const locationId = session.getLocationId();
-    scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
-    verifySessionNotInProgress(locationId);
-    setSessionForLocationId(session, locationId);
-    scoreManager.registerUsernameForUserId(session.getBotUserId(), BOT_USER_NAME);
-    return chainActions(session.getLocationId(), new StartAction(session));
-  }
+/* EXPORT */
 
-  isSessionInProgressAtLocation(locationId) {
-    return isSessionInProgressAtLocation(locationId);
-  }
-
-  processUserInput(locationId, userId, userName, input) {
-    scoreManager.registerUsernameForUserId(userId, userName);
-    const currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
-    if (!currentAction) {
-      return false;
-    }
-    if (currentAction.tryAcceptUserInput) {
-      return currentAction.tryAcceptUserInput(userId, input);
-    }
-    return false;
-  }
-
-  stop(locationId, userId) {
-    return endGame(locationId, EndGameReason.STOP_COMMAND, { userId });
-  }
-
-  join(locationId, userId, userName) {
-    return joinCommand(locationId, userId, userName);
-  }
-
-  leave(locationId, userId) {
-    return leaveCommand(locationId, userId);
-  }
-
-  botLeave(locationId, userId) {
-    return botLeaveCommand(locationId, userId);
-  }
-
-  botJoin(locationId, userId) {
-    return botJoinCommand(locationId, userId);
-  }
+function startSession(session, scoreScopeId) {
+  const locationId = session.getLocationId();
+  scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
+  verifySessionNotInProgress(locationId);
+  setSessionForLocationId(session, locationId);
+  scoreManager.registerUsernameForUserId(session.getBotUserId(), BOT_USER_NAME);
+  return chainActions(session.getLocationId(), new StartAction(session));
 }
 
-module.exports = new ShiritoriManager();
-module.exports.END_STATUS_ERROR = END_STATUS_ERROR;
-module.exports.EndGameReason = EndGameReason;
+function processUserInput(locationId, userId, userName, input) {
+  scoreManager.registerUsernameForUserId(userId, userName);
+  const currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
+  if (!currentAction) {
+    return false;
+  }
+  if (currentAction.tryAcceptUserInput) {
+    return currentAction.tryAcceptUserInput(userId, input);
+  }
+  return false;
+}
+
+function stop(locationId, userId) {
+  return endGame(locationId, EndGameReason.STOP_COMMAND, { userId });
+}
+
+function join(locationId, userId, userName) {
+  return joinCommand(locationId, userId, userName);
+}
+
+function leave(locationId, userId) {
+  return leaveCommand(locationId, userId);
+}
+
+function botLeave(locationId, userId) {
+  return botLeaveCommand(locationId, userId);
+}
+
+function botJoin(locationId, userId) {
+  return botJoinCommand(locationId, userId);
+}
+
+module.exports = {
+  startSession,
+  isSessionInProgressAtLocation,
+  processUserInput,
+  stop,
+  join,
+  leave,
+  botLeave,
+  botJoin,
+  END_STATUS_ERROR,
+  EndGameReason,
+};
