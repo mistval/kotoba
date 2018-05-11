@@ -4,7 +4,7 @@ const QuizManager = reload('./../kotoba/quiz/manager.js');
 
 module.exports = {
   name: 'Quiz Answer',
-  action: (bot, msg) => {
+  action: (erisBot, monochrome, msg) => {
     if (!QuizManager.hasQuizSession(msg.channel.id)) {
       return false;
     }
