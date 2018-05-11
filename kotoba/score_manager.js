@@ -77,7 +77,7 @@ function commitAndClearScores(locationId, deckId) {
 }
 
 function getScoresForLocationId(locationId) {
-  return scoresForLocationId[locationId];
+  return scoresForLocationId[locationId] || {};
 }
 
 module.exports = {
