@@ -1,10 +1,10 @@
 const reload = require('require-reload')(require);
 const assert = require('assert');
 
-const Util = reload('./../utils.js');
 const cardStrategies = reload('./card_strategies.js');
 const deckLoader = reload('./deck_loader.js');
 const { logger } = reload('monochrome-bot');
+const shuffleArray = reload('./../util/shuffle_array.js');
 
 const LOGGER_TITLE = 'DECK COLLECTION';
 
@@ -22,7 +22,7 @@ function createRandomIndexSetForDecks(decks) {
       indices[i - startIndex] = i;
     }
 
-    indexSet.push(Util.shuffleArray(indices));
+    indexSet.push(shuffleArray(indices));
   });
 
   return indexSet;
@@ -258,7 +258,7 @@ class DeckCollection {
       }
     }
 
-    card.options = Util.shuffleArray(options);
+    card.options = shuffleArray(options);
     const correctOptionIndex = card.options.indexOf(correctAnswer);
     assert(correctOptionIndex !== -1, 'No correct option?');
 

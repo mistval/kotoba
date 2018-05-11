@@ -1,6 +1,5 @@
 'use strict'
 const reload = require('require-reload')(require);
-const KotobaUtils = reload('./utils.js');
 const TranslationResultStatus = reload('./translation_result_status.js');
 const constants = require('./constants.js');
 const htmlEntities = new (require('html-entities').XmlEntities)();
@@ -10,8 +9,6 @@ class TranslationResult {
   }
 
   static CreateSuccessfulResult(resultProvider, inputLanguage, resultLanguage, resultLink, resultTranslation) {
-    KotobaUtils.assertIsString(resultProvider, inputLanguage, resultLanguage, resultLink, resultTranslation);
-
     let result = new TranslationResult();
     result.resultProvider = resultProvider;
     result.resultLanguage = resultLanguage;
