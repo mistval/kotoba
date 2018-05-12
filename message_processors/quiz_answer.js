@@ -14,7 +14,8 @@ module.exports = {
     if (result) {
       return true;
     }
-    if (msg.content === 'skip' || msg.content === 's' || msg.content === 'ｓ' || msg.content === 'S') {
+    const msgLowercase = msg.content.toLowerCase();
+    if (msgLowercase === 'skip' || msgLowercase === 's' || msgLowercase === 'ｓ') {
       return QuizManager.skip(msg.channel.id);
     }
     let isDm = !msg.channel.guild;
