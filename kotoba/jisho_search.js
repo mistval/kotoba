@@ -298,13 +298,14 @@ async function createOnePageBigResultForWord(msg, word) {
   return msg.channel.createMessage(response, null, msg);
 }
 
-async function createNavigationForWord(authorName, authorId, word, msg) {
+async function createNavigationForWord(authorName, authorId, word, msg, navigationManager) {
   const crossPlatformResponseData = await jishoWordSearch(word);
   return createNavigationForJishoResults(
     msg,
     authorName,
     authorId,
     crossPlatformResponseData,
+    navigationManager,
   );
 }
 
