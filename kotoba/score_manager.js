@@ -1,6 +1,5 @@
 const reload = require('require-reload')(require);
 const state = require('./static_state.js');
-const persistence = reload('monochrome-bot').persistence;
 
 // Piggyback on the quiz scores for now.
 const quizScoreStorageUtils = reload('./quiz/score_storage_utils.js');

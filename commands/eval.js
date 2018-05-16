@@ -10,7 +10,8 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Evaluate arbitrary javascript code (use wisely).',
   usageExample: '}eval 4+5',
-  action(bot, msg, suffix) {
+  hidden: true,
+  action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No suffix');
     }

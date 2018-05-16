@@ -12,7 +12,8 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Change my avatar.',
   usageExample: '}setavatar http://url.com/image.png',
-  action: async function action(bot, msg, suffix) {
+  hidden: true,
+  action: async function action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');
     }
@@ -25,7 +26,7 @@ module.exports = {
       });
 
       const dataUri = `data:image/${response.headers['content-type']};base64,${Buffer.from(response.body).toString('base64')}`;
-      await bot.editSelf({ avatar: dataUri });
+      await erisBot.editSelf({ avatar: dataUri });
       return await msg.channel.createMessage('Avatar updated!');
     } catch (err) {
       throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);

@@ -5,7 +5,7 @@ const assert = require('assert');
 const quizManager = reload('./../kotoba/quiz/manager.js');
 const helpContent = reload('./../kotoba/quiz/decks_content.js').content;
 const constants = reload('./../kotoba/constants.js');
-const { logger, PublicError } = reload('monochrome-bot');
+const { PublicError } = reload('monochrome-bot');
 const NormalGameMode = reload('./../kotoba/quiz/normal_mode.js');
 const MasteryGameMode = reload('./../kotoba/quiz/mastery_mode.js');
 const ConquestGameMode = reload('./../kotoba/quiz/conquest_mode.js');
@@ -697,6 +697,7 @@ async function load(
   messageSender,
   masteryModeEnabled,
   internetCardsAllowed,
+  logger,
 ) {
   // TODO: Need to prevent loading decks with internet cards if internet decks aren't enabled.
   // Tech debt: The deck collection shouldn't be reloading itself.
@@ -1048,11 +1049,11 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(bot, msg, suffix, serverSettings, extension) {
+  async action(erisBot, monochrome, msg, suffix, serverSettings, extension) {
     let suffixReplaced = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+').replace(/ *-mc/g, '-mc');
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
-    const messageSender = new DiscordMessageSender(bot, locationId);
+    const messageSender = new DiscordMessageSender(erisBot, locationId);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 
@@ -1068,7 +1069,7 @@ module.exports = {
 
     // Load operation
     if (suffixReplaced.startsWith('load')) {
-      return load(msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled);
+      return load(msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
     }
 
     // Stop operation

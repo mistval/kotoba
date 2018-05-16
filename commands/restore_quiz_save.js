@@ -11,7 +11,8 @@ const constants = require('./../kotoba/constants.js');
 module.exports = {
   commandAliases: ['}restoresave'],
   botAdminOnly: true,
-  action: async function action(bot, msg, suffix) {
+  hidden: true,
+  action: async function action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('You need to provide a user ID and index to restore.', false, 'No suffix');
     }

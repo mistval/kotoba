@@ -10,7 +10,7 @@ module.exports = {
   uniqueId: 'examples53059',
   shortDescription: 'Search Jisho for example sentences.',
   usageExample: 'k!examples 少し',
-  action(bot, msg, suffix) {
+  action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       return throwPublicErrorInfo('Examples', 'Say **k!examples [text]** to search for examples. For example: **k!examples 瞬間**', 'No suffix');
     }
@@ -20,6 +20,7 @@ module.exports = {
       msg.author.username,
       msg.author.id,
       suffix,
+      monochrome.getNavigationManager(),
     );
   },
 };

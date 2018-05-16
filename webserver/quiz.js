@@ -6,7 +6,6 @@ const DeckCollection = require('./../kotoba/quiz/deck_collection.js');
 const DeckLoader = require('./../kotoba/quiz/deck_loader.js');
 const normalGameMode = require('./../kotoba/quiz/normal_mode.js');
 const socketIo = require('socket.io');
-const logger = require('monochrome-bot').logger;
 const MAX_GAMES = 50;
 
 const roomInformationForRoomId = {};
@@ -20,14 +19,15 @@ function generateRoomId() {
 }
 
 class WebSocketMessageSender {
-  constructor(sio, roomId) {
+  constructor(sio, roomId, logger) {
     this.roomId_ = roomId;
     this.sio_ = sio;
     this.emitBuffer_ = [];
+    this.logger_ = logger;
   }
 
   notifyStarting(inMs, quizName, quizArticle) {
-    logger.logSuccess(LOGGER_TITLE, 'Starting web quiz ' + this.roomId_);
+    this.logger_.logSuccess(LOGGER_TITLE, 'Starting web quiz ' + this.roomId_);
   }
 
   showWrongAnswer(card, skipped) {
@@ -51,7 +51,7 @@ class WebSocketMessageSender {
   emitScores(scoreForUserId) {
     this.sio_.in(this.roomId_).clients((error, clients) => {
       if (error) {
-        logger.logFailure(LOGGER_TITLE, 'Error getting clients', error);
+        this.logger_.logFailure(LOGGER_TITLE, 'Error getting clients', error);
       } else {
         let scoreForUserName = {};
         for (let userId of clients) {
@@ -112,7 +112,7 @@ class WebSocketMessageSender {
   }
 
   notifyQuizEndedTooManyWrongAnswers(quizName, scoreForUserId, unansweredQuestions, aggregateLink, canReview, wrongAnswers) {
-    logger.logFailure(LOGGER_TITLE, 'Too many wrong answers');
+    this.logger_.logFailure(LOGGER_TITLE, 'Too many wrong answers');
     this.emit_('ended too many wrong answers', {
       quizName,
       scoreForUserId,
@@ -181,16 +181,15 @@ class WebSocketMessageSender {
 }
 
 class RoomInformation {
-  constructor(sio, roomId, deckNames, privateGame) {
-    this.messageSender = new WebSocketMessageSender(sio, roomId);
+  constructor(sio, roomId, deckNames, privateGame, logger) {
+    this.messageSender = new WebSocketMessageSender(sio, roomId, logger);
     this.deckNames = deckNames;
     this.creatorName = '';
     this.private = privateGame;
   }
 }
 
-async function createRoom(sio, config) {
-  const messageSender = new WebSocketMessageSender(sio);
+async function createRoom(sio, config, logger) {
   const deckInformations = config.decks.map(deckName => {
     return {
       deckNameOrUniqueId: deckName,
@@ -216,7 +215,7 @@ async function createRoom(sio, config) {
   };
 
   const roomId = generateRoomId();
-  const roomInformation = new RoomInformation(sio, roomId, config.decks, config.private);
+  const roomInformation = new RoomInformation(sio, roomId, config.decks, config.private, logger);
   roomInformationForRoomId[roomId] = roomInformation;
   const session = Session.createNew(roomId, undefined, deckCollection, roomInformation.messageSender, undefined, settings, normalGameMode);
   quizManager.startSession(session, roomId);
@@ -234,7 +233,7 @@ function emitRoomHistoryToSocket(roomId, socket) {
   }
 }
 
-function closeRoomIfEmpty(io, roomId) {
+function closeRoomIfEmpty(io, roomId, logger) {
   io.in(roomId).clients((error, clients) => {
     if (error) {
       logger.logFailure(LOGGER_TITLE, 'Error closing room', error);
@@ -248,7 +247,7 @@ function closeRoomIfEmpty(io, roomId) {
   });
 }
 
-function onReceivedChatMessage(io, socket, roomId, msg) {
+function onReceivedChatMessage(io, socket, roomId, msg, logger) {
   try {
     socket.to(roomId).emit('chat message', {
       msg,
@@ -260,10 +259,10 @@ function onReceivedChatMessage(io, socket, roomId, msg) {
   }
 }
 
-function onDisconnect(io, socket, roomId, userId, userName) {
+function onDisconnect(io, socket, roomId, userId, userName, logger) {
   try {
     delete userNameForUserId[userId];
-    closeRoomIfEmpty(io, roomId);
+    closeRoomIfEmpty(io, roomId, logger);
 
     socket.to(roomId).emit('chat message', {
       msg: userName + ' has left the game.',
@@ -274,7 +273,7 @@ function onDisconnect(io, socket, roomId, userId, userName) {
   }
 }
 
-function onJoin(io, socket, roomId, userId, userName) {
+function onJoin(io, socket, roomId, userId, userName, logger) {
   if (!roomInformationForRoomId[roomId]) {
     socket.emit('no such room');
   } else {
@@ -310,7 +309,7 @@ function onJoin(io, socket, roomId, userId, userName) {
       });
 
       socket.on('disconnect', function() {
-        onDisconnect(io, socket, roomId, userId, userName);
+        onDisconnect(io, socket, roomId, userId, userName, logger);
       });
 
       socket.on('skip', function() {
@@ -319,20 +318,20 @@ function onJoin(io, socket, roomId, userId, userName) {
 
       // TODO: Chat messages should be in the room history
       socket.on('chat message', function(msg) {
-        onReceivedChatMessage(io, socket, roomId, msg);
+        onReceivedChatMessage(io, socket, roomId, msg, logger);
       });
     });
   }
 }
 
-function onCreate(io, socket, config) {
+function onCreate(io, socket, config, logger) {
   try {
     let roomsRunningCount = Object.keys(roomInformationForRoomId).length;
     if (roomsRunningCount >= MAX_GAMES) {
       logger.logFailure(LOGGER_TITLE, 'TOO MANY GAMES RUNNING');
     } else {
       logger.logSuccess(LOGGER_TITLE, 'Creating game. Games running: ' + (roomsRunningCount + 1));
-      createRoom(io, config).then(roomId => {
+      createRoom(io, config, logger).then(roomId => {
         socket.emit('room created', roomId);
       }).catch(err => {
         logger.logFailure(LOGGER_TITLE, 'Error creating room', err);
@@ -343,7 +342,7 @@ function onCreate(io, socket, config) {
   }
 }
 
-function onRequestGames(socket) {
+function onRequestGames(socket, logger) {
   try {
     let currentGamesInformation = Object.keys(roomInformationForRoomId).filter(roomId => {
       return !roomInformationForRoomId[roomId].private;
@@ -367,22 +366,23 @@ function broadcast(msg) {
   }
 }
 
-function init(httpServer) {
-  let io = socketIo(httpServer);
+function init(monochrome, httpServer) {
+  const io = socketIo(httpServer);
+  const logger = monochrome.getLogger();
 
   io.on('connection', function(socket){
     let userId = socket.id;
 
     socket.on('request games', function() {
-      onRequestGames(socket);
+      onRequestGames(socket, logger);
     });
 
     socket.on('create', function(config) {
-      onCreate(io, socket, config);
+      onCreate(io, socket, config, logger);
     });
 
     socket.on('join', function(roomId, userName) {
-      onJoin(io, socket, roomId, userId, userName);
+      onJoin(io, socket, roomId, userId, userName, logger);
     });
   });
 }

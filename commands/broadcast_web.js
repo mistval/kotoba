@@ -10,7 +10,8 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Send a message as me.',
   usageExample: '}broadcast [channelId] Hello!',
-  action(bot, msg, suffix) {
+  hidden: true,
+  action(erisBot, monochrome, msg, suffix) {
     webQuiz.broadcast(suffix);
   },
 };

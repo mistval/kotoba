@@ -15,11 +15,12 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Delete a message.',
   usageExample: '}setavatar [channelId] [messageId]',
-  action(bot, msg, suffix) {
+  hidden: true,
+  action(erisBot, monochrome, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.', false, 'No suffix');
     }
     const parts = suffix.split(' ');
-    return bot.deleteMessage(parts[0], parts[1]);
+    return erisBot.deleteMessage(parts[0], parts[1]);
   },
 };
