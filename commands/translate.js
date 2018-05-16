@@ -37,7 +37,7 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: 'k!translate 吾輩は猫である',
-  action: async function action(bot, msg, suffix, settings, extension) {
+  action: async function action(erisBot, monochrome, msg, suffix, settings, extension) {
     if (!suffix && (!extension || extension === '-')) {
       return throwPublicError('Say **k!translate [text]** to translate text. For example: **k!translate 私は子猫です**. Say **k!help translate** for more help.', 'No suffix');
     }
@@ -120,7 +120,7 @@ module.exports = {
       firstLanguageCode,
       secondLanguageCode,
       googleTranslate.translate,
-      bot,
+      erisBot,
       msg,
     );
   },
