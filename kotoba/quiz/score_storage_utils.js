@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 const assert = require('assert');
+const globals = require('./../globals.js');
 
-const { persistence, logger } = reload('monochrome-bot');
 const decksMetadata = reload('./../../objects/quiz/decks.json');
 
 const SHIRITORI_DECK_ID = 'shiritori';
@@ -28,7 +28,7 @@ function createOkayResult(rows) {
 }
 
 async function getScores(serverId, deckNames) {
-  const data = await persistence.getGlobalData();
+  const data = await globals.persistence.getGlobalData();
   console.time('calculate scores');
 
   const didSpecifyDecks = deckNames.length > 0;
@@ -103,7 +103,7 @@ class QuizScoreStorageUtils {
     assert(typeof scoresForUserId === 'object', 'scoresForUserId is not object');
     assert(typeof nameForUserId === 'object', 'nameForUserId is not object');
 
-    return persistence.editGlobalData((data) => {
+    return globals.persistence.editGlobalData((data) => {
       if (!data.quizScores) {
         // Hotspot. Don't want to copy.
         // eslint-disable-next-line no-param-reassign
@@ -130,7 +130,7 @@ class QuizScoreStorageUtils {
         rowsForUserAndServer.forEach((row) => {
           if (scoreForDeck[row.deckId]) {
             if (foundMatchingRowForDeckId[row.deckId]) {
-              logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
+              globals.logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
             } else {
               // Some (very few) people have NaN scores in the database because of a bug.
               // So set them to 0 so that they can start increasing again.

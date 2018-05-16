@@ -1,8 +1,8 @@
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
-const persistence = require('monochrome-bot').persistence;
+const globals = require('./../globals.js');
 const assert = require('assert');
-const logger = require('monochrome-bot').logger;
+const { logger } = require('./../globals.js');
 
 const MEMENTO_VERSION = 'v1';
 
@@ -40,7 +40,7 @@ function save(saveData, savingUser, quizName, gameType) {
   let fileName = savingUser + '_' + now;
   let json = JSON.stringify(saveData);
   return fs.writeFileAsync(SAVE_DATA_DIR + '/' + fileName, json).then(() => {
-    return persistence.editDataForUser(savingUser, data => {
+    return globals.persistence.editDataForUser(savingUser, data => {
       if (!data[QUIZ_SAVES_KEY]) {
         data[QUIZ_SAVES_KEY] = [];
       }
@@ -56,7 +56,7 @@ function getIndexOfMemento(array, memento) {
 }
 
 function deleteMemento(memento) {
-  let deleteFromDb = persistence.editDataForUser(memento.userId, data => {
+  let deleteFromDb = globals.persistence.editDataForUser(memento.userId, data => {
     data[QUIZ_SAVES_KEY] = data[QUIZ_SAVES_KEY]
       .filter(otherMemento => otherMemento.time + otherMemento.userId !== memento.time + memento.userId);
     return data;
@@ -81,7 +81,7 @@ function deleteMementos(mementos) {
 module.exports.load = function(memento) {
   return fs.readFileAsync(SAVE_DATA_DIR + '/' + memento.fileName, 'utf8').then(data => {
     let json = JSON.parse(data);
-    return persistence.editDataForUser(memento.userId, dbData => {
+    return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
       dbData[QUIZ_SAVES_KEY].splice(mementoIndex, 1);
       dbData[QUIZ_SAVES_BACKUP_KEY] = dbData[QUIZ_SAVES_BACKUP_KEY] || [];
@@ -101,7 +101,7 @@ module.exports.load = function(memento) {
     });
   }).catch(err => {
     logger.logFailure(LOGGER_TITLE, 'Failed to load file ' + memento.fileName);
-    return persistence.editDataForUser(memento.userId, dbData => {
+    return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
       dbData[QUIZ_SAVES_KEY].splice(mementoIndex, 1);
       return dbData;
@@ -112,7 +112,7 @@ module.exports.load = function(memento) {
 };
 
 module.exports.getSaveMementos = function(savingUser) {
-  return persistence.getDataForUser(savingUser).then(data => {
+  return globals.persistence.getDataForUser(savingUser).then(data => {
     let allMementos = data[QUIZ_SAVES_KEY] || [];
     let wrongFormatVersionMementos = allMementos.filter(memento => memento.formatVersion !== MEMENTO_VERSION);
     let rightFormatMementos = allMementos.filter(memento => memento.formatVersion === MEMENTO_VERSION);
@@ -128,13 +128,13 @@ module.exports.save = function(saveData, savingUser, quizName, gameType) {
 };
 
 module.exports.getRestorable = function(userId) {
-  return persistence.getDataForUser(userId).then(dbData => {
+  return globals.persistence.getDataForUser(userId).then(dbData => {
     return dbData[QUIZ_SAVES_BACKUP_KEY];
   });
 }
 
 module.exports.restore = function(userId, mementoToRestore) {
-  return persistence.editDataForUser(userId, dbData => {
+  return globals.persistence.editDataForUser(userId, dbData => {
     if (!dbData[QUIZ_SAVES_BACKUP_KEY] || !dbData[QUIZ_SAVES_KEY]) {
       return -1;
     }

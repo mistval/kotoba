@@ -2,13 +2,8 @@ const reload = require('require-reload')(require);
 const request = require('request-promise');
 
 const API_KEY = reload('./api_keys.js').FORVO;
-const { logger } = reload('monochrome-bot');
 
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
-
-if (!API_KEY) {
-  logger.logFailure('PRONOUNCE', 'No Forvo API key present in kotoba/api_keys.js. The pronounce command will not show audio files.');
-}
 
 function getApiUriForQuery(query) {
   if (!API_KEY) {

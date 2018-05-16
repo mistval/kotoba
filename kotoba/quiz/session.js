@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
+const globals = require('./../globals.js');
 const Scores = reload('./scores.js');
-const logger = reload('monochrome-bot').logger;
 const state = require('./../static_state.js');
 const cardStrategies = reload('./card_strategies.js');
 const DeckCollection = reload('./deck_collection.js');
@@ -43,7 +43,7 @@ function updateReviewDecks(locationId, sessionInformation) {
 
     return reviewDeckCreated;
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error updating review deck', err);
+    globals.logger.logFailure(LOGGER_TITLE, 'Error updating review deck', err);
     return false;
   }
 }
@@ -121,7 +121,7 @@ class SessionInformation {
         }
       }
     } catch (err) {
-      logger.logFailure(LOGGER_TITLE, 'Error creating aggregated unanswered cards link', err);
+      globals.logger.logFailure(LOGGER_TITLE, 'Error creating aggregated unanswered cards link', err);
       return '';
     }
   }

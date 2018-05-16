@@ -6,7 +6,7 @@ const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
 module.exports = {
   commandAliases: ['k!endquiz', 'k!endtest', 'k!stop', 'k!quit', 'ｋ！ｑｓ'],
   canBeChannelRestricted: false,
-  action(bot, msg) {
+  action(erisBot, monochrome, msg) {
     const locationId = msg.channel.id;
     const userId = msg.author.id;
 

@@ -7,8 +7,9 @@ module.exports = {
   commandAliases: ['}servers', '}s'],
   botAdminOnly: true,
   shortDescription: 'Show servers that I\'m in.',
-  action(bot, msg) {
-    const guildsString = Array.from(bot.guilds.values()).map(guild => `${guild.name} (${guild.memberCount} members)`).join('\n');
+  hidden: true,
+  action(erisBot, monochrome, msg) {
+    const guildsString = Array.from(erisBot.guilds.values()).map(guild => `${guild.name} (${guild.memberCount} members)`).join('\n');
     return msg.channel.createMessage('Here is a list of servers that I\'m in.', { file: guildsString, name: 'servers.txt' });
   },
 };
