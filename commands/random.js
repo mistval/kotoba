@@ -16,7 +16,7 @@ function createJishoNotRespondingResponse() {
   };
 }
 
-async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger) {
+async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navigationManager) {
   if (retriesRemaining <= 0) {
     // It's not necessarily true that Jisho isn't responding, but if we fail to look up 5
     // random words in a row on Jisho, it's highly likely that the problem is on their end.
@@ -34,6 +34,7 @@ async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger) {
       msg.author.username,
       msg.author.id,
       data,
+      navigationManager,
     );
   } catch (err) {
     logger.logFailure('RANDOM WORD', `Failed to find ${word}`);
@@ -52,6 +53,6 @@ module.exports = {
   usageExample: '\'k!random N3\', \'k!random 2k\'',
   action(erisBot, monochrome, msg, suffix) {
     const suffixLowerCase = suffix.toLowerCase();
-    return getRandomWordRecusive(suffixLowerCase, msg, NUMBER_OF_RETRIES, monochrome.getLogger());
+    return getRandomWordRecusive(suffixLowerCase, msg, NUMBER_OF_RETRIES, monochrome.getLogger(), monochrome.getNavigationManager());
   },
 };
