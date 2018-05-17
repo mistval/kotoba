@@ -255,6 +255,7 @@ module.exports.AdditionalAnswerWaitStrategy = {
 };
 
 module.exports.RevealsLeftStrategy = {
+  GRAMMAR: () => 0,
   JAPANESE_SETTINGS: () => 0,
   WITH_HINT: () => 2,
 }
