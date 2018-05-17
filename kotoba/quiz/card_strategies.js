@@ -14,6 +14,7 @@ try {
 }
 
 const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 25000;
+const DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS = 40000;
 const NUMBER_OF_REVEALS_PER_CARD = 2;
 const FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL = .25;
 const ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS = 10000;
@@ -243,6 +244,7 @@ module.exports.CardPreprocessingStrategy = {
 /* TIMING STRATEGIES */
 
 module.exports.AnswerTimeLimitStrategy = {
+  GRAMMAR: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
   JAPANESE_SETTINGS: settings => {return settings.answerTimeLimitInMs;},
   WITH_HINT: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
 };
