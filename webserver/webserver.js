@@ -3,10 +3,12 @@ const app = express();
 const http = require('http').Server(app);
 const path = require('path');
 const formDataParser = require('body-parser').urlencoded({extended: false});
-const quiz = require('./quiz.js').init(http);
+const quiz = require('./quiz.js');
 
-function start(handleContact) {
+function start(monochrome, handleContact) {
   const port = 3000;
+
+  quiz.init(monochrome, http);
 
   app.use(express.static(path.join(__dirname, 'static')));
 
