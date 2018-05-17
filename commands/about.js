@@ -1,4 +1,4 @@
-const libVersion = require('../node_modules/eris/package.json').version;
+const libVersion = require('../node_modules/monochrome-bot/node_modules/eris/package.json').version;
 
 module.exports = {
   commandAliases: ['k!about'],
