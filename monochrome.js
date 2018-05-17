@@ -69,7 +69,7 @@ function saveGlobalLogger(bot) {
   globals.persistence = bot.getPersistence();
 }
 
-function startWebserver(bot) {
+function startWebserver(monochrome) {
   const CONTACT_SPAM_INTERVAL_IN_MS = 120000;
   const MAX_CONTACTS_IN_INTERVAL = 10;
 
@@ -77,7 +77,7 @@ function startWebserver(bot) {
   let contactEnabled = true;
   let timer;
 
-  webserver.start((email, message) => {
+  webserver.start(monochrome, (email, message) => {
     if (contactEnabled === false) {
       return Promise.reject();
     }
