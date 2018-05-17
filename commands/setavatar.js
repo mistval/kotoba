@@ -12,6 +12,7 @@ module.exports = {
   botAdminOnly: true,
   shortDescription: 'Change my avatar.',
   usageExample: '}setavatar http://url.com/image.png',
+  hidden: true,
   action: async function action(erisBot, monochrome, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');
