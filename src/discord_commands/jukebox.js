@@ -1,8 +1,8 @@
 const reload = require('require-reload')(require);
-const YoutubeApi = reload('./../kotoba/youtube_api_utils.js');
-const apiKeys = reload('./../kotoba/api_keys.js');
+const YoutubeApi = reload('./../common/youtube_api_utils.js');
+const apiKeys = reload('./../common/api_keys.js');
 const { PublicError } = reload('monochrome-bot');
-const retryPromise = reload('./../kotoba/util/retry_promise.js');
+const retryPromise = reload('./../common/util/retry_promise.js');
 
 let videoUris = [];
 

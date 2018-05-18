@@ -1,11 +1,11 @@
 const assert = require('assert');
 const reload = require('require-reload')(require);
 
-const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
-const constants = reload('./../kotoba/constants.js');
-const errors = reload('./../kotoba/util/errors.js');
-const ShiritoriSession = reload('./../kotoba/shiritori/shiritori_session.js');
-const japaneseGameStrategy = reload('./../kotoba/shiritori/japanese_game_strategy.js');
+const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
+const constants = reload('./../common/constants.js');
+const errors = reload('./../common/util/errors.js');
+const ShiritoriSession = reload('./../common/shiritori/shiritori_session.js');
+const japaneseGameStrategy = reload('./../common/shiritori/japanese_game_strategy.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';

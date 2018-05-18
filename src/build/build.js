@@ -1,5 +1,5 @@
-const buildQuizDecks = require('./build/build_quiz_decks.js');
-const buildShiritoriData = require('./build/build_shiritori_data.js')
+const buildQuizDecks = require('./build_quiz_decks.js');
+const buildShiritoriData = require('./build_shiritori_data.js')
 
 console.log('Building shiritori data');
 buildShiritoriData();

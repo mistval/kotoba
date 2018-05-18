@@ -2,8 +2,8 @@ const reload = require('require-reload')(require);
 const Conjugator = require('jp-verbs');
 
 const { PublicError } = reload('monochrome-bot');
-const constants = reload('./../kotoba/constants.js');
-const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
+const constants = reload('./../common/constants.js');
+const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
 const titleForDerivationStep = {};
 titleForDerivationStep[Conjugator.WordType.POLITE_MASU] = 'ます Polite';

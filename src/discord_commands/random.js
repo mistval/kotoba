@@ -1,9 +1,9 @@
 const reload = require('require-reload')(require);
 
-const getRandomWord = reload('./../kotoba/get_random_word.js');
-const jishoWordSearch = reload('./../kotoba/jisho_word_search.js');
-const constants = reload('./../kotoba/constants.js');
-const jishoSearch = reload('./../kotoba/jisho_search.js');
+const getRandomWord = reload('./../common/get_random_word.js');
+const jishoWordSearch = reload('./../common/jisho_word_search.js');
+const constants = reload('./../common/constants.js');
+const jishoSearch = reload('./../common/jisho_search.js');
 
 const NUMBER_OF_RETRIES = 5;
 

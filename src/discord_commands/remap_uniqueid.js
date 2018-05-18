@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 
-const decksMetadata = reload('./../objects/quiz/decks.json');
+const decksMetadata = reload('./../../generated/quiz/decks.json');
 const { persistence } = reload('monochrome-bot');
 
 const deckUniqueIdMap = {};

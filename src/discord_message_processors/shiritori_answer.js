@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const shiritoriManager = reload('./../kotoba/shiritori/shiritori_manager.js');
+const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
 
 module.exports = {
   name: 'Shiritori Answer',

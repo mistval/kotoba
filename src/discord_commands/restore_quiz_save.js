@@ -2,8 +2,8 @@
 const reload = require('require-reload')(require);
 
 const { PublicError } = reload('monochrome-bot');
-const pauseManager = require('./../kotoba/quiz/pause_manager.js');
-const constants = require('./../kotoba/constants.js');
+const pauseManager = require('./../common/quiz/pause_manager.js');
+const constants = require('./../common/constants.js');
 
 /**
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
