@@ -6,7 +6,7 @@ const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 
 const { PublicError } = reload('monochrome-bot');
-const decksMetadata = reload('./../../objects/quiz/decks.json');
+const decksMetadata = reload('./../../../generated/quiz/decks.json');
 const cardStrategies = reload('./card_strategies.js');
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';

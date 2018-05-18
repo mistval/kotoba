@@ -1,9 +1,9 @@
 const reload = require('require-reload')(require);
 
-const translateQuery = reload('./../kotoba/translate_query.js');
-const googleTranslate = reload('./../kotoba/google_translate_utils.js');
-const prettyLanguageForLanguageCode = reload('./../kotoba/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
-const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
+const translateQuery = reload('./../common/translate_query.js');
+const googleTranslate = reload('./../common/google_translate_utils.js');
+const prettyLanguageForLanguageCode = reload('./../common/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
+const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
 function createUnknownLanguageCodeString(languageCode) {
   return `I don't recognize the language code **${languageCode}**. Say 'k!help translate' for a list of supported languages.`;

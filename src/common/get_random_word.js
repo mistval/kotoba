@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const wordList = reload('./resources/dictionaries/random_word_corpus.json');
+const wordList = reload('./../../resources/dictionaries/random_word_corpus.json');
 
 const totalNumberOfWords = Object.keys(wordList).reduce((total, key) => total + wordList[key].length, 0);
 const wordTypes = Object.keys(wordList);

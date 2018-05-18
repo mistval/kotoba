@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
-const glosbe = reload('./../kotoba/glosbe_word_search.js');
-const dictionaryQuery = reload('./../kotoba/dictionary_query.js');
+const glosbe = reload('./../common/glosbe_word_search.js');
+const dictionaryQuery = reload('./../common/dictionary_query.js');
 
 module.exports = {
   name: 'Glosbe',

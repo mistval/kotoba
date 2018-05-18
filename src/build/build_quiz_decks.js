@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 function getPathForQuizDeckFile(fileName) {
-  return path.resolve(__dirname, '..', 'kotoba', 'quiz', 'carddecks', fileName || '');
+  return path.resolve(__dirname, '..', '..', 'resources', 'quiz_data', fileName || '');
 }
 
 function getDiskArrayDirectoryForDeckName(deckName) {
-  return path.resolve('objects', 'quiz', 'decks', deckName);
+  return path.resolve(__dirname, '..', '..', 'generated', 'quiz', 'decks', deckName);
 }
 
 function mkdirIgnoreError(dir) {
@@ -30,9 +30,9 @@ function writeFile(filePath, content) {
 }
 
 async function build() {
-  mkdirIgnoreError(path.join(__dirname, '..', 'objects'));
-  mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz'));
-  mkdirIgnoreError(path.join(__dirname, '..', 'objects', 'quiz', 'decks'));
+  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated'));
+  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz'));
+  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
 
   const deckDataForDeckName = {};
 
@@ -56,7 +56,7 @@ async function build() {
   }
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
-  await writeFile(path.join(__dirname, '..', 'objects', 'quiz', 'decks.json'), deckDataString);
+  await writeFile(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks.json'), deckDataString);
 }
 
 module.exports = build;

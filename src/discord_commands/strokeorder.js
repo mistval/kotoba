@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
-const jishoSearch = reload('./../kotoba/jisho_search.js');
-const errors = reload('./../kotoba/util/errors.js');
+const jishoSearch = reload('./../common/jisho_search.js');
+const errors = reload('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['k!strokeorder', 'k!s', 'k!so'],

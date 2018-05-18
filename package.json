@@ -4,7 +4,7 @@
   "description": "A Discord bot for learning Japanese",
   "main": "monochrome.js",
   "scripts": {
-    "build": "node --max-old-space-size=500 ./build.js"
+    "build": "node --max-old-space-size=500 ./src/build/build.js"
   },
   "repository": {
     "type": "git",

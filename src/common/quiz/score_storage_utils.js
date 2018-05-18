@@ -2,7 +2,7 @@ const reload = require('require-reload')(require);
 const assert = require('assert');
 const globals = require('./../globals.js');
 
-const decksMetadata = reload('./../../objects/quiz/decks.json');
+const decksMetadata = reload('./../../../generated/quiz/decks.json');
 
 const SHIRITORI_DECK_ID = 'shiritori';
 

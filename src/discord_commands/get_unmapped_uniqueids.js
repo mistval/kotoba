@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
-const ScoreStorageUtils = reload('./../kotoba/quiz/score_storage_utils.js');
-const decksMetadata = reload('./../objects/quiz/decks.json');
+const ScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
+const decksMetadata = reload('./../../generated/quiz/decks.json');
 
 const deckUniqueIdMap = {};
 Object.keys(decksMetadata).forEach((deckName) => {

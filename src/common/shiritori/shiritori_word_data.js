@@ -1,4 +1,4 @@
-const wordData = require('./../../objects/shiritori/word_data.json');
+const wordData = require('./../../../generated/shiritori/word_data.json');
 
 function getWordInformationsForWordAsHirgana(wordAsHiragana) {
   const indices = wordData.wordInformationIndicesForWordAsHiragana[wordAsHiragana];

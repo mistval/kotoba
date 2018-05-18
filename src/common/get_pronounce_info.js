@@ -4,7 +4,7 @@ const convertToHiragana = reload('./util/convert_to_hiragana.js');
 const searchForvo = reload('./forvo_search.js');
 
 if (!state.pronounceData) {
-  state.pronounceData = require('./resources/dictionaries/pronunciation.json');
+  state.pronounceData = require('./../../resources/dictionaries/pronunciation.json');
 }
 
 function convertIndexStringToTrueFalse(wordLength, indexString) {

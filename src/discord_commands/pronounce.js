@@ -1,8 +1,8 @@
 const reload = require('require-reload')(require);
 
-const getPronounceInfo = reload('./../kotoba/get_pronounce_info.js');
-const { throwPublicErrorInfo } = reload('./../kotoba/util/errors.js');
-const constants = reload('./../kotoba/constants.js');
+const getPronounceInfo = reload('./../common/get_pronounce_info.js');
+const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+const constants = reload('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,

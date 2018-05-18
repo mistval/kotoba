@@ -1,24 +1,23 @@
 'use strict'
 const reload = require('require-reload')(require);
-const apiKeys = reload('./kotoba/api_keys.js');
+const apiKeys = reload('./common/api_keys.js');
 const monochrome = reload('monochrome-bot');
 const fs = require('fs');
 const webserver = require('./webserver/webserver.js');
-const quizManager = reload('./kotoba/quiz/manager.js');
-const globals = require('./kotoba/globals.js');
-const loadQuizDecks = reload('./kotoba/quiz/deck_loader.js').loadDecks;
+const quizManager = reload('./common/quiz/manager.js');
+const globals = require('./common/globals.js');
+const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 
 function onShutdown(bot) {
   return quizManager.stopAllQuizzes();
 }
 
 function createBot() {
-  let configFilePath = __dirname + '/config.json';
-  let commandsDirectoryPath = __dirname + '/commands';
-  let messageProcessorsDirectoryPath = __dirname + '/message_processors';
-  let settingsFilePath = __dirname + '/server_settings.js';
-  let logsDirectoryPath = __dirname + '/logs';
-  let extensionsDirectoryPath = __dirname +'/extensions';
+  let configFilePath = __dirname + '/../config.json';
+  let commandsDirectoryPath = __dirname + '/discord_commands';
+  let messageProcessorsDirectoryPath = __dirname + '/discord_message_processors';
+  let settingsFilePath = __dirname + '/user_settings.js';
+  let logsDirectoryPath = __dirname + '/../logs';
 
   let bot = new monochrome({
     configFilePath,
@@ -26,8 +25,7 @@ function createBot() {
     messageProcessorsDirectoryPath,
     settingsFilePath,
     logsDirectoryPath,
-    extensionsDirectoryPath,
-    onShutdown
+    onShutdown,
   });
 
   // EPIC HACK. This prevents the bot from responding to !j in specified servers, due to collision with

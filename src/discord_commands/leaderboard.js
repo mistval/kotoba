@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
-const ScoreStorageUtils = reload('./../kotoba/quiz/score_storage_utils.js');
-const constants = reload('./../kotoba/constants.js');
+const ScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
+const constants = reload('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
