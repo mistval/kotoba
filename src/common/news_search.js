@@ -1,7 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
 const https = require('https');
-const API_KEY = reload('./api_keys.js').AZURE_NEWS;
+const API_KEY = reload('./../../api_keys.js').AZURE_NEWS;
 const PublicError = reload('monochrome-bot').PublicError;
 
 const API_HOST = 'api.cognitive.microsoft.com';

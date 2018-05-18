@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 const YoutubeApi = reload('./../common/youtube_api_utils.js');
-const apiKeys = reload('./../common/api_keys.js');
+const API_KEY = reload('./../../api_keys.js').YOUTUBE;
 const { PublicError } = reload('monochrome-bot');
 const retryPromise = reload('./../common/util/retry_promise.js');
 
@@ -16,7 +16,7 @@ module.exports = {
   initialize(monochrome) {
     const logger = monochrome.getLogger();
 
-    if (apiKeys.YOUTUBE) {
+    if (API_KEY) {
       retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then((links) => {
         videoUris = links;
         logger.logSuccess('YOUTUBE', 'Track URIs loaded');
