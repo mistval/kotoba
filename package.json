@@ -2,7 +2,7 @@
   "name": "kotoba",
   "version": "1.0.0",
   "description": "A Discord bot for learning Japanese",
-  "main": "monochrome.js",
+  "main": "./src/start.js",
   "scripts": {
     "build": "node --max-old-space-size=500 ./src/build/build.js"
   },
