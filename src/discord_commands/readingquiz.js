@@ -19,8 +19,8 @@ const trimEmbedFields = reload('./../common/util/trim_embed_fields.js');
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
-const MASTERY_MODE_DISABLED_STRING = 'Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled true**';
-const CONQUEST_MODE_DISABLED_STRING = 'Inferno Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled true**';
+const MASTERY_MODE_DISABLED_STRING = 'Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**';
+const CONQUEST_MODE_DISABLED_STRING = 'Inferno Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**';
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_EXTENSION = '-conquest';
 const CONQUEST_EXTENSION = '-inferno';
@@ -653,7 +653,7 @@ function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed) {
     const message = {
       embed: {
         title: 'Internet decks disabled',
-        description: 'That deck contains internet cards, but internet decks are disabled in this channel. You can try in a different channel, or in a DM, or ask a server admin to enable internet decks by saying **k!settings quiz/japanese/internet_decks_enabled true**',
+        description: 'That deck contains internet cards, but internet decks are disabled in this channel. You can try in a different channel, or in a DM, or ask a server admin to enable internet decks by saying **k!settings quiz/japanese/internet_decks_enabled enabled**',
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
@@ -670,7 +670,7 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled) {
     const message = {
       embed: {
         title: 'Game mode disabled',
-        description: 'That game mode is not enabled in this channel. You can try it in a different channel, or via DM, or ask a server admin to enable the game mode by saying **k!settings quiz/japanese/conquest_and_inferno_enabled true**',
+        description: 'That game mode is not enabled in this channel. You can try it in a different channel, or via DM, or ask a server admin to enable the game mode by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**',
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
