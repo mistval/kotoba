@@ -1,7 +1,7 @@
 const wordStartingSequences = require('./shiritori_word_starting_sequences.js');
-const convertToHiragana = require('./../kotoba/util/convert_to_hiragana.js');
+const convertToHiragana = require('./../common/util/convert_to_hiragana.js');
 const fs = require('fs');
-const wordsByFrequency = require('./../kotoba/resources/dictionaries/frequency.json');
+const wordsByFrequency = require('./../../resources/dictionaries/frequency.json');
 const path = require('path');
 
 const partsOfSpeechPartRegex = /\((.*?)\)/;
@@ -40,7 +40,7 @@ function getEdictLines() {
   const edictPath = path.resolve(
     __dirname,
     '..',
-    'kotoba',
+    '..',
     'resources',
     'dictionaries',
     'edictutf8.txt',
@@ -136,10 +136,10 @@ function buildShiritoriData() {
     wordInformations,
   };
 
-  mkdirIgnoreError(path.resolve(__dirname, '..', 'objects'));
-  mkdirIgnoreError(path.resolve(__dirname, '..', 'objects', 'shiritori'));
+  mkdirIgnoreError(path.resolve(__dirname, '..', '..', 'generated'));
+  mkdirIgnoreError(path.resolve(__dirname, '..', '..', 'generated', 'shiritori'));
 
-  const filePath = path.resolve(__dirname, '..', 'objects', 'shiritori', 'word_data.json');
+  const filePath = path.resolve(__dirname, '..', '..', 'generated', 'shiritori', 'word_data.json');
   fs.writeFileSync(filePath, JSON.stringify(outputData));
 }
 

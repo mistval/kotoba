@@ -47,7 +47,7 @@ function convertToDiscordBotContent(kanjiInformation) {
   let fillZeroes = fileCodeStringLength - unicodeString.length;
   let fileCode = new Array(fillZeroes + 1).join('0') + unicodeString;
   let fileName = fileCode + '_anim.gif';
-  let animationUri = 'https://raw.githubusercontent.com/mistval/kotoba/master/kotoba/resources/images/kanjianimations/' + fileName;
+  let animationUri = 'https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/' + fileName;
 
   if (kanjiInformation.found) {
     let embedFields = [];

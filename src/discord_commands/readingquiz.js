@@ -1,20 +1,20 @@
 const reload = require('require-reload')(require);
-const state = require('./../kotoba/static_state.js');
+const state = require('./../common/static_state.js');
 const assert = require('assert');
 
-const quizManager = reload('./../kotoba/quiz/manager.js');
-const helpContent = reload('./../kotoba/quiz/decks_content.js').content;
-const constants = reload('./../kotoba/constants.js');
+const quizManager = reload('./../common/quiz/manager.js');
+const helpContent = reload('./../common/quiz/decks_content.js').content;
+const constants = reload('./../common/constants.js');
 const { PublicError } = reload('monochrome-bot');
-const NormalGameMode = reload('./../kotoba/quiz/normal_mode.js');
-const MasteryGameMode = reload('./../kotoba/quiz/mastery_mode.js');
-const ConquestGameMode = reload('./../kotoba/quiz/conquest_mode.js');
-const ReviewGameMode = reload('./../kotoba/quiz/review_mode.js');
-const saveManager = reload('./../kotoba/quiz/pause_manager.js');
-const deckLoader = reload('./../kotoba/quiz/deck_loader.js');
-const DeckCollection = reload('./../kotoba/quiz/deck_collection.js');
-const Session = reload('./../kotoba/quiz/session.js');
-const trimEmbedFields = reload('./../kotoba/util/trim_embed_fields.js');
+const NormalGameMode = reload('./../common/quiz/normal_mode.js');
+const MasteryGameMode = reload('./../common/quiz/mastery_mode.js');
+const ConquestGameMode = reload('./../common/quiz/conquest_mode.js');
+const ReviewGameMode = reload('./../common/quiz/review_mode.js');
+const saveManager = reload('./../common/quiz/pause_manager.js');
+const deckLoader = reload('./../common/quiz/deck_loader.js');
+const DeckCollection = reload('./../common/quiz/deck_collection.js');
+const Session = reload('./../common/quiz/session.js');
+const trimEmbedFields = reload('./../common/util/trim_embed_fields.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
