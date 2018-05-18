@@ -18,14 +18,14 @@ function createBot() {
   let commandsDirectoryPath = __dirname + '/discord_commands';
   let messageProcessorsDirectoryPath = __dirname + '/discord_message_processors';
   let settingsFilePath = __dirname + '/user_settings.js';
-  let logsDirectoryPath = __dirname + '/../logs';
+  let logDirectoryPath = __dirname + '/../logs';
 
   let bot = new monochrome({
     configFilePath,
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
     settingsFilePath,
-    logsDirectoryPath,
+    logDirectoryPath,
     onShutdown,
   });
 
