@@ -51,6 +51,7 @@
   "statusRotationIntervalInSeconds": 600,
   "colorForSettingsSystemEmbeds": 2522111,
   "settingsIconUri": "http://image.ibb.co/n5V0vb/dd046f3353b2e3b53c38c5d17dfef3f7.png",
+  "startWebServer": true,
   "erisOptions": {
     "maxShards": "auto"
   }
