@@ -2,7 +2,7 @@
 const reload = require('require-reload')(require);
 const request = require('request-promise');
 
-const API_KEY = reload('./api_keys.js').GOOGLE_TRANSLATE;
+const API_KEY = reload('./../../api_keys.js').GOOGLE_TRANSLATE;
 const TranslationResult = reload('./translation_result.js');
 const { PublicError } = reload('monochrome-bot');
 
