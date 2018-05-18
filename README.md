@@ -25,7 +25,7 @@ npm run build
 ```
 
 ## Configuration
-For the bot to run, you must add your bot token to config.json.
+For the bot to run, you must add your bot token to ./config.json.
 
 Optionally, add API keys to ./api_keys.js. Some commands require API keys to work.
 
