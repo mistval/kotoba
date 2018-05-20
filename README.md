@@ -9,7 +9,7 @@ Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
 
 ## Help Wanted
 
-I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know, you can contact me in my [Discord server](https://discord.gg/f4Gkqku). New code should be written using AirBnB style guidelines and functional coding styles should be preferred. (Older code is being incrementally brought up to these standards)
+I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know, you can contact me in my [Discord server](https://discord.gg/f4Gkqku). New code should be written using AirBnB style guidelines and functional coding styles should be preferred. New code should be as platform-independent (that is, Discord-independent) as possible, and the platform-independent code should live in ./src/common while Discord code should live in ./src/discord_* directories. (Older code is being incrementally brought up to these standards)
 
 ## Installation
 
@@ -20,34 +20,34 @@ Then:
 ```
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
-npm install -S --no-optional
+npm install
 npm run build
 ```
 
 ## Configuration
-For the bot to run, you must add your bot token to config.json.
+For the bot to run, you must add your bot token to ./config.json.
 
-Optionally, add API keys to kotoba/api_keys.js. Some commands require API keys to work.
+Optionally, add API keys to ./api_keys.js. Some commands require API keys to work.
 
 ## Starting the bot
 ```
-node ./monochrome.js
+node ./
 ```
 The bot should now be online. Invite it to your server and say k!help to see commands.
 
 ## Commands
 
-```glsl
-k!j
+```
+k!jisho (aliases: k!j)
     # Search Jisho for an English or Japanese word. Example: k!j 少し
+k!jn
+    # The same as k!jisho, but without command buttons, in case you don't like them! Example: k!jn 少し
 k!kanji (aliases: k!k)
     # Search for information about a kanji. Example: k!kanji 少
 k!shiritori (aliases: k!st, k!sh)
     # Start a game of shiritori in this channel.
-k!strokeorder (aliases: k!so)
+k!strokeorder (aliases: k!s, k!so)
     # Search for details about a kanji's strokes. Example: k!strokeorder 少
-k!kotobank (aliases: k!ko)
-    # (Experimental) Search Kotobank for a Japanese word.
 k!furigana (aliases: k!furi, k!f)
     # Render furigana for Japanese text. Example: k!furigana 吾輩は猫である
 k!quiz (aliases: k!q)
@@ -70,10 +70,10 @@ k!invite
     # Get a link to invite me to your server.
 k!about
     # Show some meta information about me.
-k!settings (aliases: k!s)
-    # Server admins can use this command to see and configure my settings on their server.
+k!settings
+    # Configure my settings.
 
-Say k!help [command name] to see more help for a command. Example: k!help k!j
+Say k!help [command name] to see more help for a command. Example: k!help k!jisho
 ```
 
 ## Public bot
