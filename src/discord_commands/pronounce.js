@@ -117,8 +117,8 @@ class PronunciationDataSource {
   }
 
   getWordForTitle(entry) {
-    if (entry.kanji.indexOf(this.pronounceInfo.query) !== -1) {
-      return this.pronounceInfo.query;
+    if (entry.kanji[0] !== entry.kanji[1]) {
+      return `${entry.kanji[0]} (${entry.kanji[1]})`;
     }
     return entry.kanji[0];
   }
@@ -139,7 +139,7 @@ class PronunciationDataSource {
     const { embed } = content;
     const word = this.getWordForTitle(entry);
     const uriEncodedWord = encodeURIComponent(word);
-    embed.title = `Pronunciation information for ${word} ${pagesString}`;
+    embed.title = `${word} ${pagesString}`;
     embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
 
     embed.fields = [];
