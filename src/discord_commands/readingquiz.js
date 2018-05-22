@@ -14,7 +14,7 @@ const saveManager = reload('./../common/quiz/pause_manager.js');
 const deckLoader = reload('./../common/quiz/deck_loader.js');
 const DeckCollection = reload('./../common/quiz/deck_collection.js');
 const Session = reload('./../common/quiz/session.js');
-const trimEmbedFields = reload('./../common/util/trim_embed_fields.js');
+const trimEmbed = reload('./../common/util/trim_embed.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
@@ -187,7 +187,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
     },
   };
 
-  return trimEmbedFields(response);
+  return trimEmbed(response);
 }
 
 const afterQuizMessages = [
@@ -350,7 +350,7 @@ class DiscordMessageSender {
         footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\'.' },
       },
     };
-    response = trimEmbedFields(response);
+    response = trimEmbed(response);
     return this.bot.createMessage(this.channelId, response);
   }
 
@@ -393,7 +393,7 @@ class DiscordMessageSender {
       },
     };
 
-    response = trimEmbedFields(response);
+    response = trimEmbed(response);
 
     const newMessage = await this.bot.createMessage(this.channelId, response);
     return newMessage && newMessage.id;
@@ -432,7 +432,7 @@ class DiscordMessageSender {
       content.embed.image = { url: `${question.bodyAsImageUri}.png` };
     }
 
-    content = trimEmbedFields(content);
+    content = trimEmbed(content);
     if (!questionId) {
       const msg = await this.bot.createMessage(this.channelId, content, uploadInformation);
       return msg.id;
