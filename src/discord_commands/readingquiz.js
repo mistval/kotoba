@@ -1049,7 +1049,7 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(erisBot, monochrome, msg, suffix, serverSettings, extension) {
+  async action(erisBot, msg, suffix, monochrome, serverSettings, extension) {
     let suffixReplaced = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+').replace(/ *-mc/g, '-mc');
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;

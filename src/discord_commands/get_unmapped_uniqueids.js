@@ -12,7 +12,7 @@ module.exports = {
   commandAliases: ['}unmappeduids'],
   botAdminOnly: true,
   hidden: true,
-  action: async function action(erisBot, monochrome, msg) {
+  action: async function action(erisBot, msg) {
     const allScores = await ScoreStorageUtils.getGlobalScores();
     const unmappedUniqueIds = [];
 

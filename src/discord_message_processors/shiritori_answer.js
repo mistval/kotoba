@@ -4,7 +4,7 @@ const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
 
 module.exports = {
   name: 'Shiritori Answer',
-  action: (erisBot, monochrome, msg) => {
+  action: (erisBot, msg, monochrome) => {
     let locationId = msg.channel.id;
     if (!shiritoriManager.isSessionInProgressAtLocation(locationId)) {
       return false

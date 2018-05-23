@@ -4,7 +4,7 @@ const QuizManager = reload('./../common/quiz/manager.js');
 
 module.exports = {
   name: 'Quiz Answer',
-  action: (erisBot, monochrome, msg) => {
+  action: (erisBot, msg, monochrome) => {
     if (!QuizManager.hasQuizSession(msg.channel.id)) {
       return false;
     }

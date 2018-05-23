@@ -235,7 +235,7 @@ module.exports = {
   usageExample: 'k!deconjugate 食べさせられたかった',
   uniqueId: 'deconjugate35252',
   cooldown: 3,
-  action(erisBot, monochrome, msg, suffix) {
+  action(erisBot, msg, suffix) {
     if (!suffix) {
       return throwPublicErrorInfo('Deconjugate', 'Say **k!deconjugate [verb]** to deconjugate a Japanese verb. For example: **k!deconjugate 食べさせられたかった**', 'No suffix');
     }

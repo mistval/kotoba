@@ -51,7 +51,7 @@ module.exports = {
   shortDescription: 'Search Jisho for a random word. You can specify a JLPT or 漢検 level if you want.',
   longDescription: 'Search Jisho for a random word. You can specify a JLPT or 漢検 level. The available levels are: N1, N2, N3, N4, N5, 10k, 9k, 8k, 7k, 6k, 5k, 4k, 3k, j2k, 2k, j1k, 1k',
   usageExample: '\'k!random N3\', \'k!random 2k\'',
-  action(erisBot, monochrome, msg, suffix) {
+  action(erisBot, msg, suffix, monochrome) {
     const suffixLowerCase = suffix.toLowerCase();
     return getRandomWordRecusive(suffixLowerCase, msg, NUMBER_OF_RETRIES, monochrome.getLogger(), monochrome.getNavigationManager());
   },
