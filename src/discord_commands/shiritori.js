@@ -305,7 +305,7 @@ module.exports = {
     'shiritori/bot_turn_maximum_wait',
     'shiritori/answer_time_limit',
   ],
-  action(erisBot, monochrome, msg, suffix, serverSettings) {
+  action(erisBot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
 
     if (suffix === 'stop') {

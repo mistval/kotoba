@@ -189,7 +189,7 @@ module.exports = {
   uniqueId: 'leaderboard409359',
   shortDescription: 'View leaderboards for quiz and/or shiritori',
   longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**k!lb** - View all quiz scores in this server\n**k!lb shiritori** - View shiritori scores in this server\n**k!lb global** - View all quiz scores globally\n**k!lb global N1** - View the global leaderboard for the N1 quiz deck\n**k!lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**k!lb anagrams**\n**k!lb jlpt**\n**k!lb kanken**',
-  action: async function action(erisBot, monochrome, msg, suffix) {
+  action: async function action(erisBot, msg, suffix, monochrome) {
     let title = '';
     let footer = {};
     let description = '';
