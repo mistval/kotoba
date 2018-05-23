@@ -182,7 +182,7 @@ module.exports = {
   uniqueId: 'pronounce30294',
   shortDescription: 'Look up information about how to pronounce a Japanese word.',
   usageExample: 'k!pronounce 瞬間',
-  async action(erisBot, monochrome, msg, suffix) {
+  async action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
       return throwPublicErrorInfo('Pronounce', 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**', 'No suffix');
     }
