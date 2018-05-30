@@ -7,7 +7,7 @@ const retryPromise = reload('./../common/util/retry_promise.js');
 let videoUris = [];
 
 module.exports = {
-  commandAliases: ['k!jukebox'],
+  commandAliases: ['jukebox'],
   canBeChannelRestricted: true,
   uniqueId: 'jukebox409453',
   cooldown: 5,

@@ -183,7 +183,7 @@ function createFooter(text) {
 }
 
 module.exports = {
-  commandAliases: ['k!leaderboard', 'k!lb'],
+  commandAliases: ['leaderboard', 'lb'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'leaderboard409359',

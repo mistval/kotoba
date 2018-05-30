@@ -230,9 +230,9 @@ linkForDerivationStep[Conjugator.WordType.YAGARU] = 'http://www.guidetojapanese.
 linkForDerivationStep[Conjugator.WordType.BEKU] = 'http://www.guidetojapanese.org/learn/grammar/should#Using_to_describe_what_one_tries_to_do';
 
 module.exports = {
-  commandAliases: ['k!deconjugate', 'k!d'],
+  commandAliases: ['deconjugate', 'd'],
   shortDescription: 'Deconjugate a Japanese verb.',
-  usageExample: 'k!deconjugate 食べさせられたかった',
+  usageExample: '<prefix>deconjugate 食べさせられたかった',
   uniqueId: 'deconjugate35252',
   cooldown: 3,
   action(erisBot, msg, suffix) {

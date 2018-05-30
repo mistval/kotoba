@@ -4,13 +4,13 @@ const jishoSearch = reload('./../common/jisho_search.js');
 const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
 module.exports = {
-  commandAliases: ['k!kanji', 'k!k'],
+  commandAliases: ['kanji', 'k'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'jishokanji54094',
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
-  usageExample: 'k!kanji 少',
+  usageExample: '<prefix>kanji 少',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
       return throwPublicErrorInfo('Kanji', 'Say **k!kanji [kanji]** to search for kanji. For example: **k!kanji 瞬間**. Say **k!help kanji** for more help.', 'No suffix');
