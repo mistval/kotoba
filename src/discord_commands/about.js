@@ -1,7 +1,7 @@
 const libVersion = require('eris/package.json').version;
 
 module.exports = {
-  commandAliases: ['k!about'],
+  commandAliases: ['about'],
   uniqueId: 'about53463',
   cooldown: 30,
   shortDescription: 'Show some meta information about me.',

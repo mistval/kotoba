@@ -1,6 +1,6 @@
 
 module.exports = {
-  commandAliases: ['k!invite'],
+  commandAliases: ['invite'],
   canBeChannelRestricted: true,
   cooldown: 60,
   uniqueId: 'invite530-95',

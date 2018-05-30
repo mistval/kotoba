@@ -176,12 +176,12 @@ function createFoundResult(msg, pronounceInfo, navigationManager, logger) {
 }
 
 module.exports = {
-  commandAliases: ['k!pronounce', 'k!p'],
+  commandAliases: ['pronounce', 'p'],
   canBeChannelRestricted: true,
   cooldown: 5,
   uniqueId: 'pronounce30294',
   shortDescription: 'Look up information about how to pronounce a Japanese word.',
-  usageExample: 'k!pronounce 瞬間',
+  usageExample: '<prefix>pronounce 瞬間',
   async action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
       return throwPublicErrorInfo('Pronounce', 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**', 'No suffix');

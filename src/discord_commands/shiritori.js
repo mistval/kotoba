@@ -294,7 +294,7 @@ function getScoreScopeIdForMessage(msg) {
 }
 
 module.exports = {
-  commandAliases: ['k!shiritori', 'k!st', 'k!sh'],
+  commandAliases: ['shiritori', 'st', 'sh'],
   canBeChannelRestricted: true,
   cooldown: 2,
   uniqueId: 'shiritori43953',
