@@ -1037,8 +1037,8 @@ Server admins can set default quiz settings by using the k!settings command.
 `;
 
 module.exports = {
-  commandAliases: ['k!quiz', 'k!readingQuiz', 'k!starttest', 'k!startquiz', 'k!rt', 'k!rq', 'k!q'],
-  aliasesForHelp: ['k!quiz', 'k!q'],
+  commandAliases: ['quiz', 'readingQuiz', 'starttest', 'startquiz', 'rt', 'rq', 'q'],
+  aliasesForHelp: ['quiz', 'q'],
   canBeChannelRestricted: true,
   uniqueId: 'readingQuiz14934',
   cooldown: 1,

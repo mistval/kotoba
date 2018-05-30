@@ -4,7 +4,7 @@ const quizManager = reload('./../common/quiz/manager.js');
 const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
 
 module.exports = {
-  commandAliases: ['k!endquiz', 'k!endtest', 'k!stop', 'k!quit', 'ｋ！ｑｓ'],
+  commandAliases: ['endquiz', 'endtest', 'stop', 'quit', 'ｑｓ'],
   canBeChannelRestricted: false,
   action(erisBot, msg) {
     const locationId = msg.channel.id;
