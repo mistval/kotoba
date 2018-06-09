@@ -8,7 +8,6 @@ const {
 } = reload('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
-const HELP_DESCRIPTION = 'Say **k!help lb** for help viewing leaderboards.';
 
 const deckNamesForGroupAlias = {
   anagrams: [
@@ -65,7 +64,7 @@ function createScoreTotalString(scores) {
   return `${scoreTotalString} points have been scored by ${usersTotal} players.`;
 }
 
-function sendScores(msg, scores, title, description, footer, navigationManager) {
+function sendScores(msg, scores, title, description, footer, navigationManager, prefix) {
   const navigationContents = [];
   const numPages = scores.length % MAX_SCORERS_PER_PAGE === 0 ?
     Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1) :
@@ -83,7 +82,7 @@ function sendScores(msg, scores, title, description, footer, navigationManager) 
     const content = {
       embed: {
         title,
-        description: `${description}\n${createScoreTotalString(scores)}\n${HELP_DESCRIPTION}`,
+        description: `${description}\n${createScoreTotalString(scores)}\nSay **${prefix}help lb** for help viewing leaderboards.`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
       },
@@ -188,7 +187,7 @@ module.exports = {
   cooldown: 3,
   uniqueId: 'leaderboard409359',
   shortDescription: 'View leaderboards for quiz and/or shiritori',
-  longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**k!lb** - View all quiz scores in this server\n**k!lb shiritori** - View shiritori scores in this server\n**k!lb global** - View all quiz scores globally\n**k!lb global N1** - View the global leaderboard for the N1 quiz deck\n**k!lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**k!lb anagrams**\n**k!lb jlpt**\n**k!lb kanken**',
+  longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**<prefix>lb** - View all quiz scores in this server\n**<prefix>lb shiritori** - View shiritori scores in this server\n**<prefix>lb global** - View all quiz scores globally\n**<prefix>lb global N1** - View the global leaderboard for the N1 quiz deck\n**<prefix>lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**<prefix>lb anagrams**\n**<prefix>lb jlpt**\n**<prefix>lb kanken**',
   action: async function action(erisBot, msg, suffix, monochrome) {
     let title = '';
     let footer = {};
@@ -203,19 +202,20 @@ module.exports = {
     const didSpecifyDecks = deckNamesArray.length > 0;
     const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
 
+    const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
     if (isGlobal) {
       title = `Global leaderboard${deckNamesTitlePart}`;
       description = 'The top scorers in the whole wide world.';
 
       if (!didSpecifyDecks) {
-        footer = createFooter('Say \'k!lb global deckname\' to see the global leaderboard for a deck.');
+        footer = createFooter(`Say '${prefix}lb global deckname' to see the global leaderboard for a deck.`);
       }
 
       scoresResult = await ScoreStorageUtils.getGlobalScores(deckNamesArray);
     } else {
       title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNamesTitlePart}`;
       description = 'The top scorers in this server.';
-      footer = createFooter('Say \'k!lb global\' to see the global leaderboard. Say \'k!lb deckname\' to see a deck leaderboard.');
+      footer = createFooter(`Say '${prefix}lb global' to see the global leaderboard. Say '${prefix}lb deckname' to see a deck leaderboard.`);
       scoresResult = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckNamesArray);
     }
 
@@ -224,9 +224,9 @@ module.exports = {
     }
 
     if (!footer.text) {
-      footer = createFooter('You can mix any decks by using the + symbol. For example: k!lb N5+N4+N3');
+      footer = createFooter(`You can mix any decks by using the + symbol. For example: ${prefix}lb N5+N4+N3`);
     }
 
-    return sendScores(msg, scoresResult.rows, title, description, footer, monochrome.getNavigationManager());
+    return sendScores(msg, scoresResult.rows, title, description, footer, monochrome.getNavigationManager(), prefix);
   },
 };

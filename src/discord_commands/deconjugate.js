@@ -235,9 +235,11 @@ module.exports = {
   usageExample: '<prefix>deconjugate 食べさせられたかった',
   uniqueId: 'deconjugate35252',
   cooldown: 3,
-  action(erisBot, msg, suffix) {
+  action(erisBot, msg, suffix, monochrome) {
+    const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+
     if (!suffix) {
-      return throwPublicErrorInfo('Deconjugate', 'Say **k!deconjugate [verb]** to deconjugate a Japanese verb. For example: **k!deconjugate 食べさせられたかった**', 'No suffix');
+      return throwPublicErrorInfo('Deconjugate', `Say **${prefix}deconjugate [verb]** to deconjugate a Japanese verb. For example: **${prefix}deconjugate 食べさせられたかった**`, 'No suffix');
     }
 
     if (suffix.length > 20) {
