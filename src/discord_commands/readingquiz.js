@@ -1,9 +1,10 @@
 const reload = require('require-reload')(require);
 const state = require('./../common/static_state.js');
 const assert = require('assert');
+const globals = require('./../common/globals.js');
 
 const quizManager = reload('./../common/quiz/manager.js');
-const helpContent = reload('./../common/quiz/decks_content.js').content;
+const createHelpContent = reload('./../common/quiz/decks_content.js').createContent;
 const constants = reload('./../common/constants.js');
 const { PublicError } = reload('monochrome-bot');
 const NormalGameMode = reload('./../common/quiz/normal_mode.js');
@@ -1001,9 +1002,11 @@ async function startNewQuiz(
 }
 
 function showHelp(msg, extension, masteryEnabled) {
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+
   let helpMessage;
   if (!extension) {
-    helpMessage = helpContent;
+    helpMessage = createHelpContent(prefix);
   } else if (extension === MASTERY_EXTENSION) {
     helpMessage = createMasteryHelp(masteryEnabled);
   } else if (extension === CONQUEST_EXTENSION) {

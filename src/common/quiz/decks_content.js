@@ -1,5 +1,6 @@
 'use strict'
-const reload = require('require-reload')(require)
+const reload = require('require-reload')(require);
+const globals = require('./../globals.js');
 const constants = reload('./../constants.js');
 
 const categoryFields = [
@@ -15,17 +16,19 @@ const categoryFields = [
   {'name': 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
 
-module.exports.content = {
-  embed: {
-    title: 'Quiz',
-    description: 'Say **k!quiz <deck name>** to start a quiz (Example: **k!quiz N5**). Say **k!quiz stop** to stop a quiz. Say **k!help quiz** to see advanced quiz help. Say **k!quiz save** to save your progress and **k!quiz load** to reload it. Say **k!quiz-conquest** or **k!quiz-inferno** to learn about these game types. Add **-mc** to the end of any deck name to make it multiple choice.',
-    color: constants.EMBED_NEUTRAL_COLOR,
-    fields: categoryFields,
-    footer: {
-      icon_url: constants.FOOTER_ICON_URI,
-      text: 'You can mix any decks by using the + symbol. For example: k!quiz N5+N4+N3',
+module.exports.createContent = function(prefix) {
+  return {
+    embed: {
+      title: 'Quiz',
+      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **${prefix}help quiz** to see advanced quiz help. Say **${prefix}quiz save** to save your progress and **${prefix}quiz load** to reload it. Say **${prefix}quiz-conquest** or **${prefix}quiz-inferno** to learn about these game types. Add **-mc** to the end of any deck name to make it multiple choice.`,
+      color: constants.EMBED_NEUTRAL_COLOR,
+      fields: categoryFields,
+      footer: {
+        icon_url: constants.FOOTER_ICON_URI,
+        text: `You can mix any decks by using the + symbol. For example: ${prefix}quiz N5+N4+N3`,
+      },
     },
-  },
+  };
 };
 
 module.exports.getHelpForCategory = function(userInput) {

@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+const globals = require('./globals.js');
 
 const jishoWordSearch = reload('./jisho_word_search.js');
 const kanjiContentCreator = reload('./kanji_search_content_creator.js');
@@ -70,11 +71,12 @@ class StrokeOrderDataSource {
 }
 
 class KanjiDataSource {
-  constructor(authorName, kanjis, isStandalone, hasMultiplePages) {
+  constructor(authorName, kanjis, isStandalone, hasMultiplePages, prefix) {
     this.kanjis = kanjis;
     this.authorName = authorName;
     this.isStandalone = isStandalone;
     this.hasMultiplePages = hasMultiplePages;
+    this.prefix = prefix;
   }
 
   // Nothing to do here, but we need the method due to
@@ -85,7 +87,7 @@ class KanjiDataSource {
 
   async getPageFromPreparedData(arg, pageIndex) {
     if (pageIndex < this.kanjis.length) {
-      const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex]);
+      const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex], this.prefix);
       if (this.hasMultiplePages || !this.isStandalone) {
         return new NavigationPage(addFooter(this.authorName, content));
       }
@@ -130,7 +132,7 @@ function removeDuplicates(array) {
   return array.filter((element, i) => array.indexOf(element) === i);
 }
 
-function createNavigationChapterInformationForKanji(authorName, word, isStandalone) {
+function createNavigationChapterInformationForKanji(authorName, word, isStandalone, prefix) {
   const kanjis = removeDuplicates(word.match(KANJI_REGEX));
   const pageCount = kanjis ? kanjis.length : 0;
   const hasMultiplePages = pageCount > 1;
@@ -143,6 +145,7 @@ function createNavigationChapterInformationForKanji(authorName, word, isStandalo
       kanjis,
       isStandalone,
       hasMultiplePages,
+      prefix,
     ));
   } else if (isStandalone) {
     navigationChapter = new NavigationChapter(new KanjiDataSource(
@@ -150,6 +153,7 @@ function createNavigationChapterInformationForKanji(authorName, word, isStandalo
       word,
       isStandalone,
       hasMultiplePages,
+      prefix,
     ));
   }
 
@@ -223,11 +227,12 @@ function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, naviga
   return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
 }
 
-function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager) {
+function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager, prefix) {
   const navigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     kanji,
     true,
+    prefix,
   );
 
   const chapterForEmojiName = {};
@@ -256,10 +261,12 @@ function createNavigationForJishoResults(msg, authorName, authorId, crossPlatfor
   const chapterForEmojiName = {};
   chapterForEmojiName[JISHO_EMOTE] = jishoNavigationChapter;
 
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
   const kanjiNavigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     word,
     false,
+    prefix,
   );
   if (kanjiNavigationChapterInformation.hasAnyPages) {
     chapterForEmojiName[KANJI_EMOTE] =
@@ -306,6 +313,7 @@ async function createNavigationForWord(authorName, authorId, word, msg, navigati
     authorId,
     crossPlatformResponseData,
     navigationManager,
+    globals.persistence.getPrimaryPrefixFromMsg(msg),
   );
 }
 

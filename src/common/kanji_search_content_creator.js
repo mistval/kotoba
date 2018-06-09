@@ -105,7 +105,7 @@ function getDescriptionString(kanjiInformation) {
   return descriptionLines.join(', ');
 }
 
-function convertToDiscordBotContent(kanjiInformation) {
+function convertToDiscordBotContent(kanjiInformation, prefix) {
   if (!kanjiInformation.found) {
     return createTitleOnlyEmbed('No results found for the kanji: ' + kanjiInformation.query);
   }
@@ -145,7 +145,7 @@ function convertToDiscordBotContent(kanjiInformation) {
     'thumbnail': thumbnailInfo,
     'color': constants.EMBED_NEUTRAL_COLOR,
     'footer': {
-      'text': 'Wanna see detailed stroke information for this Kanji? Try k!so ' + kanjiInformation.query,
+      'text': `Wanna see detailed stroke information for this Kanji? Try '${prefix}so ${kanjiInformation.query}'`,
       'icon_url': constants.FOOTER_ICON_URI,
     }
   };
@@ -153,7 +153,7 @@ function convertToDiscordBotContent(kanjiInformation) {
   return content;
 }
 
-module.exports.createContent = function(kanji) {
+module.exports.createContent = function(kanji, prefix) {
   if (!kanji) {
     throw new Error('No Kanji');
   }
@@ -161,6 +161,6 @@ module.exports.createContent = function(kanji) {
     let embed = createTitleOnlyEmbed('Jisho is not responding. Please try again later.');
     throw PublicError.createWithCustomPublicMessage(embed, true, 'Jisho fetch fail', err);
   }).then(result => {
-    return convertToDiscordBotContent(result);
+    return convertToDiscordBotContent(result, prefix);
   });
 };
