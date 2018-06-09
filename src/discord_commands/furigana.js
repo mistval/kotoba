@@ -10,9 +10,10 @@ module.exports = {
   uniqueId: 'furigana5345',
   shortDescription: 'Render furigana for Japanese text.',
   usageExample: '<prefix>furigana 吾輩は猫である',
-  action: async function action(erisBot, msg, suffix) {
+  action: async function action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      return throwPublicErrorInfo('Furigana', 'Say **k!furigana [Japanese text]** to render Japanese text with furigana. For example: **k!f 家を出てすぐの所**', 'No suffix');
+      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      return throwPublicErrorInfo('Furigana', `Say **${prefix}furigana [Japanese text]** to render Japanese text with furigana. For example: **${prefix}furigana 家を出てすぐの所**`, 'No suffix');
     }
 
     if (suffix.length > 200) {
