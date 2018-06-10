@@ -184,7 +184,8 @@ module.exports = {
   usageExample: '<prefix>pronounce 瞬間',
   async action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      return throwPublicErrorInfo('Pronounce', 'Say **k!pronounce [word]** to see pronunciation information for a word. For example: **k!pronounce 瞬間**', 'No suffix');
+      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      return throwPublicErrorInfo('Pronounce', `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`, 'No suffix');
     }
 
     const pronounceInfo = await getPronounceInfo(suffix);
