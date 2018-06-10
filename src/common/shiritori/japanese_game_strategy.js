@@ -17,6 +17,8 @@ function getNextWordMustStartWith(currentWordReading) {
     return ['じ', 'ぢ'];
   } else if (finalCharacter === 'づ') {
     return ['ず', 'づ'];
+  } else if (finalCharacter === 'を') {
+    return ['お', 'を'];
   } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
     return [finalCharacter];
   }
