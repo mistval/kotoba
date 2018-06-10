@@ -20,12 +20,18 @@ const trimEmbed = reload('./../common/util/trim_embed.js');
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
-const MASTERY_MODE_DISABLED_STRING = 'Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**';
-const CONQUEST_MODE_DISABLED_STRING = 'Inferno Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**';
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_EXTENSION = '-conquest';
 const CONQUEST_EXTENSION = '-inferno';
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
+
+function createMasteryModeDisabledString(prefix) {
+  return `Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`;
+}
+
+function createConquestModeDisabledString(prefix) {
+  return `Inferno Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`;
+}
 
 function createTitleOnlyEmbedWithColor(title, color) {
   return {
@@ -131,7 +137,7 @@ const IntermediateAnswerListElementStrategy = {
     getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst,
 };
 
-function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description) {
+function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description, prefix) {
   const fields = [];
 
   if (scores.length > 0) {
@@ -184,7 +190,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
       description,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields,
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: 'Say k!lb to see the server leaderboard.' },
+      footer: { icon_url: constants.FOOTER_ICON_URI, text: `Say ${prefix}lb to see the server leaderboard.` },
     },
   };
 
@@ -196,21 +202,21 @@ const afterQuizMessages = [
     embed: {
       title: 'Reviewing',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'Say **k!quiz review** to review the questions no one answered, or **k!quiz reviewme** to review the questions you didn\'t answer (only if you did answer at least one). You can say **k!quiz reviewme** somewhere else (like in a DM) if you prefer.',
+      description: 'Say **<prefix>quiz review** to review the questions no one answered, or **<prefix>quiz reviewme** to review the questions you didn\'t answer (only if you did answer at least one). You can say **<prefix>quiz reviewme** somewhere else (like in a DM) if you prefer.',
     },
   },
   {
     embed: {
       title: 'O, so you want Anki in Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'Try **Conquest Mode**. Say **k!quiz-conquest** to learn more.',
+      description: 'Try **Conquest Mode**. Say **<prefix>quiz-conquest** to learn more.',
     },
   },
   {
     embed: {
       title: 'Too hard?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can add **-mc** to any deck name to make it multiple choice. For example: **k!quiz n1-mc**.',
+      description: 'You can add **-mc** to any deck name to make it multiple choice. For example: **<prefix>quiz n1-mc**.',
     },
   },
   {
@@ -229,19 +235,20 @@ const afterQuizMessages = [
   },
 ];
 
-function createAfterQuizMessage(canReview) {
+function createAfterQuizMessage(canReview, prefix) {
   let index;
   if (canReview) {
     index = Math.floor(Math.random() * 5);
   } else {
     index = 1 + Math.floor(Math.random() * 4);
   }
-  return afterQuizMessages[index];
+  const afterQuizMessage = Object.assign({}, afterQuizMessages[index]);
+  afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
+  return afterQuizMessage;
 }
 
 async function sendEndQuizMessages(
-  bot,
-  channelId,
+  commanderMessage,
   quizName,
   scores,
   unansweredQuestions,
@@ -249,18 +256,20 @@ async function sendEndQuizMessages(
   canReview,
   description,
 ) {
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(commanderMessage);
   const endQuizMessage = createEndQuizMessage(
     quizName,
     scores,
     unansweredQuestions,
     aggregateLink,
     description,
+    prefix,
   );
 
-  await bot.createMessage(channelId, endQuizMessage);
-  const afterQuizMessage = createAfterQuizMessage(canReview);
+  await commanderMessage.channel.createMessage(endQuizMessage);
+  const afterQuizMessage = createAfterQuizMessage(canReview, prefix);
   if (afterQuizMessage) {
-    return bot.createMessage(channelId, afterQuizMessage);
+    return commanderMessage.channel.createMessage(afterQuizMessage);
   }
 
   return undefined;
@@ -275,6 +284,7 @@ function convertUserFacingSaveIdToDatabaseFacing(saveId) {
 }
 
 function sendSaveMementos(msg, saveMementos, extraContent) {
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
   const content = {
     content: extraContent,
     embed: {
@@ -284,7 +294,7 @@ function sendSaveMementos(msg, saveMementos, extraContent) {
         const dateString = `${date.getDate() + 1}/${date.getMonth() + 1}/${date.getFullYear()}`;
         return `${convertDatabaseFacingSaveIdToUserFacing(index)}: ${memento.quizType} (${dateString})`;
       }).join('\n'),
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: 'Load the first save with: k!quiz load 1' },
+      footer: { icon_url: constants.FOOTER_ICON_URI, text: `Load the first save with: ${prefix}quiz load 1` },
       color: constants.EMBED_NEUTRAL_COLOR,
     },
   };
@@ -303,9 +313,10 @@ function createCorrectPercentageField(card) {
 }
 
 class DiscordMessageSender {
-  constructor(bot, channelId) {
+  constructor(bot, commanderMessage) {
+    this.commanderMessage = commanderMessage;
     this.bot = bot;
-    this.channelId = channelId;
+    this.prefix = globals.persistence.getPrimaryPrefixFromMsg(commanderMessage);
   }
 
   notifyStarting(inMs, quizName, quizDescription) {
@@ -316,7 +327,7 @@ class DiscordMessageSender {
       embedDescription = `${embedDescription} - ${quizDescription}`;
     }
 
-    return this.bot.createMessage(this.channelId, {
+    return this.commanderMessage.channel.createMessage({
       embed: {
         title: embedTitle,
         description: embedDescription,
@@ -352,7 +363,7 @@ class DiscordMessageSender {
       },
     };
     response = trimEmbed(response);
-    return this.bot.createMessage(this.channelId, response);
+    return this.commanderMessage.channel.createMessage(response);
   }
 
   async outputQuestionScorers(
@@ -396,7 +407,7 @@ class DiscordMessageSender {
 
     response = trimEmbed(response);
 
-    const newMessage = await this.bot.createMessage(this.channelId, response);
+    const newMessage = await this.commanderMessage.channel.createMessage(response);
     return newMessage && newMessage.id;
   }
 
@@ -435,32 +446,31 @@ class DiscordMessageSender {
 
     content = trimEmbed(content);
     if (!questionId) {
-      const msg = await this.bot.createMessage(this.channelId, content, uploadInformation);
+      const msg = await this.commanderMessage.channel.createMessage(content, uploadInformation);
       return msg.id;
     }
 
-    return this.bot.editMessage(this.channelId, questionId, content, uploadInformation);
+    return this.bot.editMessage(this.commanderMessage.channel.id, questionId, content, uploadInformation);
   }
 
   notifySaveSuccessful() {
-    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('The quiz has been saved and paused! Say \'k!quiz load\' later to start it again.'));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.prefix}quiz load' later to start it again.`));
   }
 
   notifySaveFailedNoSpace(maxSaves) {
-    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying 'k!quiz load'.`));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying '${this.prefix}quiz load'.`));
   }
 
   notifySaveFailedIsReview() {
-    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('You can\'t save a review quiz.'));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed('You can\'t save a review quiz.'));
   }
 
   notifySaving() {
-    return this.bot.createMessage(this.channelId, createTitleOnlyEmbed('Saving at the next opportunity.'));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed('Saving at the next opportunity.'));
   }
 
   notifySaveFailedNotOwner() {
-    return this.bot.createMessage(
-      this.channelId,
+    return this.commanderMessage.channel.createMessage(
       createTitleOnlyEmbed('Only the person who started the quiz can save it. Maybe ask them nicely?'),
     );
   }
@@ -476,8 +486,7 @@ class DiscordMessageSender {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
 
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -498,8 +507,7 @@ class DiscordMessageSender {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
 
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -520,8 +528,7 @@ class DiscordMessageSender {
     const description = `${wrongAnswers} questions in a row went unanswered. So I stopped!`;
 
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -534,8 +541,7 @@ class DiscordMessageSender {
   notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -560,8 +566,7 @@ class DiscordMessageSender {
       description = 'No questions left in that deck. Impressive!';
     }
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -574,8 +579,7 @@ class DiscordMessageSender {
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
     const description = 'I have to reboot for an update. I\'ll be back in 20 seconds :)\n再起動させていただきます。後２０秒で戻りますね :)';
     return sendEndQuizMessages(
-      this.bot,
-      this.channelId,
+      this.commanderMessage,
       quizName,
       scores,
       unansweredQuestions,
@@ -586,7 +590,7 @@ class DiscordMessageSender {
   }
 
   notifyStopFailedUserNotAuthorized() {
-    this.bot.createMessage(this.channelId, createTitleOnlyEmbed('Only a server admin can stop someone else\'s quiz in Conquest or Inferno Mode.'));
+    this.commanderMessage.channel.createMessage(createTitleOnlyEmbed('Only a server admin can stop someone else\'s quiz in Conquest or Inferno Mode.'));
   }
 }
 
@@ -598,32 +602,32 @@ const mixtureReplacements = {
   insanemix: '2k+j1k+1k+anagrams9+anagrams10+yojijukugo+countries+animals',
 };
 
-function createMasteryHelp(isEnabledInServer) {
+function createMasteryHelp(isEnabledInServer, prefix) {
   let footerMessage = '';
   if (!isEnabledInServer) {
-    footerMessage = `**Disabled!** ${MASTERY_MODE_DISABLED_STRING}`;
+    footerMessage = `**Disabled!** ${createMasteryModeDisabledString(prefix)}`;
   }
 
   return {
     embed: {
       title: 'Conquest Mode',
-      description: `In Conquest Mode your goal is to conquer one or more entire quiz decks. If you get a question right on the first try, you won't see it again. But if you get it wrong, you'll see it again until I think you've learned it. The game ends when I think you know every card in the deck (or if you miss too many questions in a row or use **k!quiz stop**).
+      description: `In Conquest Mode your goal is to conquer one or more entire quiz decks. If you get a question right on the first try, you won't see it again. But if you get it wrong, you'll see it again until I think you've learned it. The game ends when I think you know every card in the deck (or if you miss too many questions in a row or use **${prefix}quiz stop**).
 
-You can use **k!quiz save** and **k!quiz load** to save and load progress so you can learn over a period of days or weeks or months.
+You can use **${prefix}quiz save** and **${prefix}quiz load** to save and load progress so you can learn over a period of days or weeks or months.
 
-To start, say **k!quiz-conquest** plus a deck name. For example: **k!quiz-conquest N5**. Keep in mind that if you aren't in a DM, other people can answer the questions too, and then you won't see them again.
+To start, say **${prefix}quiz-conquest** plus a deck name. For example: **${prefix}quiz-conquest N5**. Keep in mind that if you aren't in a DM, other people can answer the questions too, and then you won't see them again.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can also conquer multiple decks. For example: k!quiz-conquest N5+N4' },
+      footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can also conquer multiple decks. For example: ${prefix}quiz-conquest N5+N4' },
     },
   };
 }
 
-function createConquestHelp(isEnabledInServer) {
+function createConquestHelp(isEnabledInServer, prefix) {
   let footerMessage = '';
   if (!isEnabledInServer) {
-    footerMessage = `**Disabled!** ${CONQUEST_MODE_DISABLED_STRING}`;
+    footerMessage = `**Disabled!** ${createConquestModeDisabledString(prefix)}`;
   }
 
   return {
@@ -631,13 +635,13 @@ function createConquestHelp(isEnabledInServer) {
       title: 'Inferno Mode',
       description: `In Inferno Mode, every time you miss a question, you have a little bit less time to answer the next one. And I might throw that question back into the deck, so try to remember it!
 
-There is no score limit, so try to get as far as you can. You can use **k!quiz save** and **k!quiz load** to save and load progress.
+There is no score limit, so try to get as far as you can. You can use **${prefix}quiz save** and **${prefix}quiz load** to save and load progress.
 
 Bring you friends! The top scorers will appear together as a team on the inferno leaderboard (when/if I make it ;)
 
-To start, say **k!quiz-inferno** plus a deck name. For example: **k!quiz-inferno N5**.
+To start, say **${prefix}quiz-inferno** plus a deck name. For example: **${prefix}quiz-inferno N5**.
 
-You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **k!quiz-inferno N5 .5 20**.
+You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **${prefix}quiz-inferno N5 .5 20**.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -649,12 +653,12 @@ function getScoreScopeIdFromMsg(msg) {
   return msg.channel.guild ? msg.channel.guild.id : msg.channel.id;
 }
 
-function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed) {
+function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix) {
   if (!internetCardsAllowed && !isDm && session.containsInternetCards()) {
     const message = {
       embed: {
         title: 'Internet decks disabled',
-        description: 'That deck contains internet cards, but internet decks are disabled in this channel. You can try in a different channel, or in a DM, or ask a server admin to enable internet decks by saying **k!settings quiz/japanese/internet_decks_enabled enabled**',
+        description: `That deck contains internet cards, but internet decks are disabled in this channel. You can try in a different channel, or in a DM, or ask a server admin to enable internet decks by saying **${prefix}settings quiz/japanese/internet_decks_enabled enabled**`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
@@ -662,7 +666,7 @@ function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed) {
   }
 }
 
-function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled) {
+function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix) {
   if (!masteryEnabled && !isDm &&
       (gameMode.isMasteryMode ||
        gameMode.isConquestMode ||
@@ -671,7 +675,7 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled) {
     const message = {
       embed: {
         title: 'Game mode disabled',
-        description: 'That game mode is not enabled in this channel. You can try it in a different channel, or via DM, or ask a server admin to enable the game mode by saying **k!settings quiz/japanese/conquest_and_inferno_enabled enabled**',
+        description: `That game mode is not enabled in this channel. You can try it in a different channel, or via DM, or ask a server admin to enable the game mode by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
@@ -679,12 +683,12 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled) {
   }
 }
 
-function throwIfSessionInProgressAtLocation(locationId) {
+function throwIfSessionInProgressAtLocation(locationId, prefix) {
   if (quizManager.isSessionInProgressAtLocation(locationId)) {
     const message = {
       embed: {
         title: 'Quiz In Progress',
-        description: 'Only one quiz can run in a channel at a time. Try another channel, or DM.',
+        description: `Only one quiz can run in a channel at a time. Try another channel, or DM. You can stop the currently running quiz by saying **${prefix}quiz stop**`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
@@ -708,14 +712,15 @@ async function load(
 
   const isDm = !msg.channel.guild;
   const scoreScopeId = getScoreScopeIdFromMsg(msg);
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
 
-  throwIfSessionInProgressAtLocation(msg.channel.id);
+  throwIfSessionInProgressAtLocation(msg.channel.id, prefix);
 
   const userId = msg.author.id;
   const mementos = await saveManager.getSaveMementos(userId);
 
   if (!mementos || mementos.length === 0) {
-    return msg.channel.createMessage(createTitleOnlyEmbed('I don\'t have any sessions I can load for you. Say k!quiz to start a new quiz.'), null, msg);
+    return msg.channel.createMessage(createTitleOnlyEmbed(`I don\'t have any sessions I can load for you. Say ${prefix}quiz to start a new quiz.`), null, msg);
   }
   if (userFacingSaveId === undefined) {
     if (mementos.length === 1) {
@@ -732,7 +737,7 @@ async function load(
     return sendSaveMementos(msg, mementos, `I couldn't find save #${userFacingSaveId}. Here are the available saves.`);
   }
 
-  throwIfGameModeNotAllowed(isDm, memento, masteryModeEnabled);
+  throwIfGameModeNotAllowed(isDm, memento, masteryModeEnabled, prefix);
 
   const saveData = await saveManager.load(memento);
   const session = await Session.createFromSaveData(
@@ -760,7 +765,7 @@ async function load(
   } catch (err) {
     logger.logFailure(LOGGER_TITLE, 'Error with loaded save', err);
     await saveManager.restore(msg.author.id, memento);
-    return msg.channel.createMessage('Looks like there was an error, sorry about that. I have attempted to restore your save data to its previous state, you can try to load it again with **k!quiz load**. The error has been logged and will be addressed.');
+    return msg.channel.createMessage(`Looks like there was an error, sorry about that. I have attempted to restore your save data to its previous state, you can try to load it again with **${prefix}quiz load**. The error has been logged and will be addressed.`);
   }
 }
 
@@ -869,12 +874,12 @@ function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
   };
 }
 
-function getReviewDeckOrThrow(deck) {
+function getReviewDeckOrThrow(deck, prefix) {
   if (!deck) {
     const message = {
       embed: {
         title: 'Review deck not found',
-        description: 'I don\'t remember the session you want to review. Say **k!quiz** to start a new session!',
+        description: `I don\'t remember the session you want to review. Say **${prefix}quiz** to start a new session!`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
@@ -937,15 +942,16 @@ async function startNewQuiz(
   const locationId = msg.channel.id;
   const isDm = !msg.channel.guild;
   const scoreScopeId = getScoreScopeIdFromMsg(msg);
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
 
   let decks;
   let gameMode;
   if (suffixReplaced.startsWith('reviewme')) {
     gameMode = ReviewGameMode;
-    decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForUserId[msg.author.id])];
+    decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForUserId[msg.author.id], prefix)];
   } else if (suffixReplaced.startsWith('review')) {
     gameMode = ReviewGameMode;
-    decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForLocationId[locationId])];
+    decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForLocationId[locationId], prefix)];
   } else {
     gameMode = createGameModeForExtension(extension);
 
@@ -957,7 +963,7 @@ async function startNewQuiz(
     );
 
     if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
-      return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **k!quiz** to see the decks I have!`, null, msg);
+      return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **${prefix}quiz** to see the decks I have!`, null, msg);
     } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.INDEX_OUT_OF_RANGE) {
       return msg.channel.createMessage(`Something is wrong with the range for ${decksLookupResult.deckName}. The maximum range for that deck is (${decksLookupResult.allowedStart}-${decksLookupResult.allowedEnd})`);
     } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.ALL_DECKS_FOUND) {
@@ -973,10 +979,10 @@ async function startNewQuiz(
   // 3. A quiz is already in progress in this channel.
 
   // 1. Check the game mode.
-  throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled);
+  throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
 
   // 3. Check if a game is in progress
-  throwIfSessionInProgressAtLocation(locationId);
+  throwIfSessionInProgressAtLocation(locationId, prefix);
 
   // Create the deck collection.
   const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode);
@@ -1008,9 +1014,9 @@ function showHelp(msg, extension, masteryEnabled) {
   if (!extension) {
     helpMessage = createHelpContent(prefix);
   } else if (extension === MASTERY_EXTENSION) {
-    helpMessage = createMasteryHelp(masteryEnabled);
+    helpMessage = createMasteryHelp(masteryEnabled, prefix);
   } else if (extension === CONQUEST_EXTENSION) {
-    helpMessage = createConquestHelp(masteryEnabled);
+    helpMessage = createConquestHelp(masteryEnabled, prefix);
   } else {
     assert(false, 'Unknown extension');
   }
@@ -1022,21 +1028,21 @@ const helpLongDescription = `
 See available quiz decks, or start a quiz.
 
 You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
-**k!quiz N4 30 1 10**
+**<prefix>quiz N4 30 1 10**
 
 Any deck can be made multiple choice by adding **-mc** to the end of its name. Like this:
-**k!quiz N4-mc**
+**<prefix>quiz N4-mc**
 
 You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
-**k!quiz N4(0-99)**
+**<prefix>quiz N4(0-99)**
 
 Associated commands:
-**k!quiz stop** (ends the current quiz)
-**k!lb** (shows the quiz leaderboard)
-**k!quiz-conquest** (show information about conquest mode)
-**k!quiz-inferno** (show information about inferno mode)
+**<prefix>quiz stop** (ends the current quiz)
+**<prefix>lb** (shows the quiz leaderboard)
+**<prefix>quiz-conquest** (show information about conquest mode)
+**<prefix>quiz-inferno** (show information about inferno mode)
 
-Server admins can set default quiz settings by using the k!settings command.
+You can set default quiz settings by using the <prefix>settings command.
 `;
 
 module.exports = {
@@ -1056,7 +1062,7 @@ module.exports = {
     let suffixReplaced = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+').replace(/ *-mc/g, '-mc');
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
-    const messageSender = new DiscordMessageSender(erisBot, locationId);
+    const messageSender = new DiscordMessageSender(erisBot, msg);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 
