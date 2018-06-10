@@ -8,7 +8,11 @@ const largeHiraganaForSmallHiragana = {
   ゃ: 'や',
   ゅ: 'ゆ',
   ょ: 'よ',
+  ぁ: 'あ',
   ぃ: 'い',
+  ぅ: 'う',
+  ぇ: 'え',
+  ぉ: 'お',
 };
 
 function getNextWordMustStartWith(currentWordReading) {
