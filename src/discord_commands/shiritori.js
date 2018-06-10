@@ -1,5 +1,6 @@
 const assert = require('assert');
 const reload = require('require-reload')(require);
+const globals = require('./../common/globals.js');
 
 const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
 const constants = reload('./../common/constants.js');
@@ -10,11 +11,11 @@ const japaneseGameStrategy = reload('./../common/shiritori/japanese_game_strateg
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
 
-function throwIfSessionInProgress(locationId) {
+function throwIfSessionInProgress(locationId, prefix) {
   if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
     errors.throwPublicErrorInfo(
       'Game in progress',
-      'There is already a game in progress. I can\'t start another, that would be confusing! You can stop the current game by saying **k!shiritori stop**.',
+      `There is already a game in progress. I can\'t start another, that would be confusing! You can stop the current game by saying **${prefix}shiritori stop**.`,
       'Session in progress',
     );
   }
@@ -153,6 +154,7 @@ class DiscordClientDelegate {
       });
     }
 
+    const prefix = globals.persistence.getPrimaryPrefixFromMsg(this.commanderMessage);
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
@@ -160,7 +162,7 @@ class DiscordClientDelegate {
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: embedFields,
         footer: {
-          text: 'Say \'k!lb shiritori\' to see the leaderboard for this server. \'k!lb global shiritori\' for global scores.',
+          text: `Say '${prefix}lb shiritori' to see the leaderboard for this server. '${prefix}lb global shiritori' for global scores.`,
           icon_url: constants.FOOTER_ICON_URI,
         },
       },
@@ -169,10 +171,11 @@ class DiscordClientDelegate {
 
   notifyStarting(inMs) {
     const inSeconds = Math.floor(inMs / 1000);
+    const prefix = globals.persistence.getPrimaryPrefixFromMsg(this.commanderMessage);
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **k!shiritori stop** when you want to stop. I'll go first!\n\nBy the way, if you want me to kick players out of the game when they violate a rule, you can start a game with **k!shiritori hardcore**.`,
+        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **${prefix}shiritori stop** when you want to stop. I'll go first!\n\nBy the way, if you want me to kick players out of the game when they violate a rule, you can start a game with **${prefix}shiritori hardcore**.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
@@ -299,7 +302,7 @@ module.exports = {
   cooldown: 2,
   uniqueId: 'shiritori43953',
   shortDescription: 'Start a game of shiritori in this channel.',
-  longDescription: 'Start a game of shiritori in this channel. **k!shiritori hardcore** starts a game in hardcore mode, which means you get kicked out if you give an invalid answer. Some timing settings can be configured in **k!settings shiritori**',
+  longDescription: 'Start a game of shiritori in this channel. **<prefix>shiritori hardcore** starts a game in hardcore mode, which means you get kicked out if you give an invalid answer. Some timing settings can be configured in **<prefix>settings shiritori**',
   requiredSettings: [
     'shiritori/bot_turn_minimum_wait',
     'shiritori/bot_turn_maximum_wait',
@@ -312,7 +315,8 @@ module.exports = {
       return shiritoriManager.stop(locationId, msg.author.id);
     }
 
-    throwIfSessionInProgress(locationId);
+    const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+    throwIfSessionInProgress(locationId, prefix);
     const clientDelegate = new DiscordClientDelegate(erisBot, msg);
 
     const suffixLowerCase = suffix.toLowerCase();

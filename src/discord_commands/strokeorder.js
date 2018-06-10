@@ -13,7 +13,8 @@ module.exports = {
   usageExample: '<prefix>strokeorder 少',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      return errors.throwPublicErrorInfo('Stroke order', 'Say **k!strokeorder [kanji]** to search for stroke order information. For example: **k!strokeorder 瞬間**. Say **k!help strokeorder** for more help.', 'No suffix');
+      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      return errors.throwPublicErrorInfo('Stroke order', `Say **${prefix}strokeorder [kanji]** to search for stroke order information. For example: **${prefix}strokeorder 瞬間**. Say **${prefix}help strokeorder** for more help.`, 'No suffix');
     }
 
     return jishoSearch.createNavigationForStrokeOrder(

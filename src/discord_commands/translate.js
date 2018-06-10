@@ -5,18 +5,18 @@ const googleTranslate = reload('./../common/google_translate_utils.js');
 const prettyLanguageForLanguageCode = reload('./../common/language_code_maps.js').prettyLanguageForGoogleLanguageCode;
 const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
-function createUnknownLanguageCodeString(languageCode) {
-  return `I don't recognize the language code **${languageCode}**. Say 'k!help translate' for a list of supported languages.`;
+function createUnknownLanguageCodeString(languageCode, prefix) {
+  return `I don't recognize the language code **${languageCode}**. Say '${prefix}help translate' for a list of supported languages.`;
 }
 
 function createLongDescription() {
   const supportedLanguageString = Object.keys(prettyLanguageForLanguageCode).map(key => `${prettyLanguageForLanguageCode[key]} (${key})`).join(', ');
 
-  return `Use Google Translate to translate text. If you want to translate from any language into English, or from English into Japanese, you can just use k!translate and I will usually detect the languages and do what you want.
+  return `Use Google Translate to translate text. If you want to translate from any language into English, or from English into Japanese, you can just use <prefix>translate and I will usually detect the languages and do what you want.
 
-If you want to translate into a language other than English, you can do that too. The syntax is k!translate-[language code]. For example, k!translate-de to translate into German.
+If you want to translate into a language other than English, you can do that too. The syntax is <prefix>translate-[language code]. For example, <prefix>translate-de to translate into German.
 
-If you need to specify both the original and the target language, you can do that too by saying k!translate-[from language code]>[to language code]. For example, k!translate-de>ru to translate German into Russian.
+If you need to specify both the original and the target language, you can do that too by saying <prefix>translate-[from language code]>[to language code]. For example, <prefix>translate-de>ru to translate German into Russian.
 
 I support the following languages:
 
@@ -39,7 +39,8 @@ module.exports = {
   usageExample: '<prefix>translate 吾輩は猫である',
   action: async function action(erisBot, msg, suffix, monochrome, settings, extension) {
     if (!suffix && (!extension || extension === '-')) {
-      return throwPublicError('Say **k!translate [text]** to translate text. For example: **k!translate 私は子猫です**. Say **k!help translate** for more help.', 'No suffix');
+      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      return throwPublicError(`Say **${prefix}translate [text]** to translate text. For example: **${prefix}translate 私は子猫です**. Say **${prefix}help translate** for more help.`, 'No suffix');
     }
 
     let firstLanguageCode;
@@ -68,23 +69,25 @@ module.exports = {
     const secondLanguagePretty =
       googleTranslate.getPrettyLanguageForLanguageCode(secondLanguageCode);
 
+   const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+
     // If we couldn't find a pretty language corresponding to the language code, we don't
     // know that language. Error.
     if (!secondLanguagePretty && secondLanguageCode) {
-      return throwPublicError(createUnknownLanguageCodeString(secondLanguageCode), 'Unknown language');
+      return throwPublicError(createUnknownLanguageCodeString(secondLanguageCode, prefix), 'Unknown language');
     }
 
     if (!firstLanguagePretty && firstLanguageCode) {
-      return throwPublicError(createUnknownLanguageCodeString(firstLanguageCode), 'Unknown language');
+      return throwPublicError(createUnknownLanguageCodeString(firstLanguageCode, prefix), 'Unknown language');
     }
 
     if (!suffix) {
       let errorMessage;
 
       if (firstLanguagePretty && secondLanguagePretty) {
-        errorMessage = `Say **k!translate-${firstLanguageCode}>${secondLanguageCode} yourtexthere** to translate text from ${firstLanguagePretty} to ${secondLanguagePretty}.`;
+        errorMessage = `Say **${prefix}translate-${firstLanguageCode}>${secondLanguageCode} yourtexthere** to translate text from ${firstLanguagePretty} to ${secondLanguagePretty}.`;
       } else if (firstLanguagePretty) {
-        errorMessage = `Say **k!translate-${firstLanguageCode} yourtexthere** to translate text to or from ${firstLanguagePretty}.`;
+        errorMessage = `Say **${prefix}translate-${firstLanguageCode} yourtexthere** to translate text to or from ${firstLanguagePretty}.`;
       }
 
       return throwPublicError(errorMessage, 'No suffix');
