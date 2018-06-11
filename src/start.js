@@ -29,8 +29,6 @@ function createBot() {
     onShutdown,
   });
 
-  // EPIC HACK. This prevents the bot from responding to !j in specified servers, due to collision with
-  // other bots in those servers.
   let shortDictionaryCommandDisabledServers = [
     '116379774825267202',
     '163547731137265664',
@@ -38,8 +36,17 @@ function createBot() {
 
   let oldOnMessageCreate = bot.onMessageCreate_;
   bot.onMessageCreate_ = msg => {
+    // EPIC HACK. This prevents the bot from responding to !j in specified servers, due to collision with
+    // other bots in those servers.
     if (msg.content.startsWith('!j') && msg.channel.guild && ~shortDictionaryCommandDisabledServers.indexOf(msg.channel.guild.id)) {
       return;
+    }
+    // EPIC HACK. This allows the !j command to keep working temporarly
+    // so that users have time before they need to either add ! as a prefix
+    // or start using k!.
+    if (msg.content.startsWith('!j') && bot.getPersistence().getPrefixesForServerId(msg.channel.guild ? msg.channel.guild.id : msg.channel.id).indexOf('!') === -1) {
+      msg.content = msg.content.replace('!j', 'k!j');
+      msg.wasShortJishoAlias = true;
     }
     oldOnMessageCreate.call(bot, msg);
   }
