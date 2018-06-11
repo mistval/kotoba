@@ -257,11 +257,18 @@ function createNavigationForJishoResults(msg, authorName, authorId, crossPlatfor
     authorName,
   );
 
+  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+
+  // HACK: Remove this after !j alias is deprecated
+  if (msg.wasShortJishoAlias) {
+    const firstContent = discordContents[0];
+    firstContent.content = 'The **!j** command alias is scheduled to stop working around 7/1. Please start using **k!j**, or ask a server admin to add **!** to my list of prefixes by saying **k!settings prefixes k! !** or by using the **k!settings** command menu. Say **k!about** to get a link to my support server for additional help.';
+  }
+
   const jishoNavigationChapter = NavigationChapter.fromContent(discordContents);
   const chapterForEmojiName = {};
   chapterForEmojiName[JISHO_EMOTE] = jishoNavigationChapter;
 
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
   const kanjiNavigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     word,
