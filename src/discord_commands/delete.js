@@ -16,6 +16,7 @@ module.exports = {
   shortDescription: 'Delete a message.',
   usageExample: '}setavatar [channelId] [messageId]',
   hidden: true,
+  uniqueId: 'delete',
   action(erisBot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.', false, 'No suffix');

@@ -13,6 +13,7 @@ module.exports = {
   shortDescription: 'Change my avatar.',
   usageExample: '}setavatar http://url.com/image.png',
   hidden: true,
+  uniqueId: 'setavatar',
   action: async function action(erisBot, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}setavatar [http url]\' to set my avatar.', false, 'invalid syntax');

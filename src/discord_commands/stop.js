@@ -6,6 +6,7 @@ const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
 module.exports = {
   commandAliases: ['endquiz', 'endtest', 'stop', 'quit', 'ｑｓ'],
   canBeChannelRestricted: false,
+  uniqueId: 'stop',
   action(erisBot, msg) {
     const locationId = msg.channel.id;
     const userId = msg.author.id;
