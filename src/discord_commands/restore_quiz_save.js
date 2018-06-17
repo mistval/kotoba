@@ -12,6 +12,7 @@ module.exports = {
   commandAliases: ['}restoresave'],
   botAdminOnly: true,
   hidden: true,
+  uniqueId: 'restoresave',
   action: async function action(erisBot, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('You need to provide a user ID and index to restore.', false, 'No suffix');

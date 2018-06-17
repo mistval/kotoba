@@ -11,6 +11,7 @@ module.exports = {
   shortDescription: 'Evaluate arbitrary javascript code (use wisely).',
   usageExample: '}eval 4+5',
   hidden: true,
+  uniqueId: 'eval',
   action(bot, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No suffix');
