@@ -77,7 +77,7 @@ function updateConquestModeLeaderboard(deckId, finalScoreForUser, sessionStartTi
 }
 
 function updateAnswerTimeLimitForUnansweredQuestion(currentTime, gameModeSettings) {
-  return Math.max(currentTime - gameModeSettings.timeoutReductionPerWrongAnswer, 2500);
+  return Math.max(currentTime - gameModeSettings.timeoutReductionPerWrongAnswer, 2000);
 }
 
 function parseUserOverrides(settingsOverrides) {
