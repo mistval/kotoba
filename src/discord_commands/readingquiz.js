@@ -637,7 +637,7 @@ function createConquestHelp(isEnabledInServer, prefix) {
 
 There is no score limit, so try to get as far as you can. You can use **${prefix}quiz save** and **${prefix}quiz load** to save and load progress.
 
-Bring you friends! The top scorers will appear together as a team on the inferno leaderboard (when/if I make it ;)
+Bring your friends! The top scorers will appear together as a team on the inferno leaderboard (when/if I make it ;)
 
 To start, say **${prefix}quiz-inferno** plus a deck name. For example: **${prefix}quiz-inferno N5**.
 
