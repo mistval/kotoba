@@ -14,19 +14,47 @@ function onShutdown(bot) {
 }
 
 function createBot() {
-  let configFilePath = __dirname + '/../config.json';
   let commandsDirectoryPath = __dirname + '/discord_commands';
   let messageProcessorsDirectoryPath = __dirname + '/discord_message_processors';
   let settingsFilePath = __dirname + '/user_settings.js';
-  let logDirectoryPath = __dirname + '/../logs';
+  let logsDirectoryPath = __dirname + '/../logs';
 
   let bot = new monochrome({
-    configFilePath,
-    commandsDirectoryPath,
-    messageProcessorsDirectoryPath,
-    settingsFilePath,
-    logDirectoryPath,
-    onShutdown,
+    botToken: config.token,
+    botAdminIds: config.adminIds,
+    prefixes: ['k!'],
+    commandsDirectoryPath: commandsDirectoryPath,
+    messageProcessorsDirectoryPath: messageProcessorsDirectoryPath,
+    logsDirectoryPath: logsDirectoryPath,
+    settingsFilePath: settingsFilePath,
+    discordBotsDotOrgAPIKey: config.discordBotsDotOrgAPIKey,
+    botsDotDiscordDotPwAPIKey: config.botsDotDiscordDotPwAPIKey,
+    useANSIColorsInLogFiles: true,
+    serverAdminRoleName: 'kotoba',
+    genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.', // (optional) If a command errors and that error escapes into core code, this message will be sent to the channel.
+    missingPermissionsErrorMessage: 'I do not have permission to reply to that command in this channel. A server admin can give me the permissions I need in the channel settings. I need permission to **embed links**, **attach files**, and **add reactions**. If you do not want this command to be used in this channel, consider using **<prefix>settings** to disable it.',
+    genericDMReply: 'Say **<prefix>help** to see my commands!',
+    genericMentionReply: 'Hi <@user>, say **<prefix>help** to see my commands!',
+    inviteLinkDmReply: 'You can invite me to your server with this link! https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot',
+    statusRotation: [
+      '@ me for help!',
+      'Half Life 3',
+      '@ me for help!',
+      'shiritori',
+      '@ me for help!',
+      'Russian Roulette',
+      '@ me for help!',
+      'アタシは子猫なのよ',
+      '@ me for help!',
+      'with fire',
+      '@ me for help!',
+      'hard to get'
+    ],
+    statusRotationIntervalInSeconds: 600, // (optional) How often to change status.
+    startWebServer: true,
+    erisOptions: {
+      maxShards: 'auto'
+    }
   });
 
   let shortDictionaryCommandDisabledServers = [
