@@ -22,6 +22,10 @@ module.exports = {
     const mementos = await pauseManager.getRestorable(userId);
 
     if (userId && saveIndex === undefined) {
+      if (!mementos) {
+        return msg.channel.createMessage('No restorable saves were found for that user.');
+      }
+
       return msg.channel.createMessage(mementos.map((memento, index) => {
         const date = new Date(memento.time);
         const dateString = `${date.getDate() + 1}/${date.getMonth() + 1}/${date.getFullYear()}`;
@@ -33,7 +37,7 @@ module.exports = {
 
     return msg.channel.createMessage({
       embed: {
-        title: `One save was restored. User can load it by saying k!quiz load ${indexString}.`,
+        title: `One save was restored. User can load it by saying k!quiz load ${indexString + 1}.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
