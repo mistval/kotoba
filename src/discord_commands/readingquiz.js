@@ -1042,7 +1042,7 @@ Associated commands:
 **<prefix>quiz-conquest** (show information about conquest mode)
 **<prefix>quiz-inferno** (show information about inferno mode)
 
-You can set default quiz settings by using the <prefix>settings command.
+You can set default quiz settings by using the **<prefix>settings** command.
 `;
 
 module.exports = {
