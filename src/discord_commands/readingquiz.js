@@ -619,7 +619,7 @@ To start, say **${prefix}quiz-conquest** plus a deck name. For example: **${pref
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can also conquer multiple decks. For example: ${prefix}quiz-conquest N5+N4' },
+      footer: { icon_url: constants.FOOTER_ICON_URI, text: `You can also conquer multiple decks. For example: ${prefix}quiz-conquest N5+N4` },
     },
   };
 }
