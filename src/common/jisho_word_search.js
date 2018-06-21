@@ -5,6 +5,8 @@ const errors = reload('./util/errors.js');
 
 const { searchForPhrase } = new UnofficialJishoApi();
 
+const JISHO_SEARCH_BASE_URI = 'http://jisho.org/search/';
+
 function cleanMeaning(str) {
   let cleanStr = str;
 
@@ -29,9 +31,18 @@ function getMeanings(senses) {
     if (sense.english_definitions) {
       const meaning = sense.english_definitions.join(', ');
 
+      let seeAlso = [];
+      if (sense.see_also) {
+        seeAlso = sense.see_also.map(word => ({
+          word,
+          uri: `${JISHO_SEARCH_BASE_URI}${encodeURIComponent(word)}`,
+        }));
+      }
+
       meanings.push({
         definition: cleanMeaning(meaning),
         tags,
+        seeAlso,
       });
     }
   });
@@ -112,7 +123,7 @@ function parseJishoResponse(jishoResponseBody, searchPhrase) {
     searchPhrase,
     dictionaryEntries,
     hasResults: dictionaryEntries.length > 0,
-    uri: `http://jisho.org/search/${encodeURIComponent(searchPhrase)}`,
+    uri: `${JISHO_SEARCH_BASE_URI}${encodeURIComponent(searchPhrase)}`,
   };
 }
 
