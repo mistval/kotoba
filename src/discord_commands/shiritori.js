@@ -78,7 +78,9 @@ function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
 }
 
 function createScoresString(scoreForUserId) {
-  return Object.keys(scoreForUserId).map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
+  return Object.keys(scoreForUserId)
+    .sort((userIdA, userIdB) => scoreForUserId[userIdB] - scoreForUserId[userIdA])
+    .map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
 }
 
 class DiscordClientDelegate {
@@ -150,7 +152,7 @@ class DiscordClientDelegate {
     if (scorersString) {
       embedFields.push({
         name: 'Scores',
-        value: createScoresString(scoreForUserId),
+        value: scorersString,
       });
     }
 
