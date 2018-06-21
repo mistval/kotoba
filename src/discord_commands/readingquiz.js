@@ -936,7 +936,7 @@ async function startNewQuiz(
   });
 
   const parts = suffixReplaced.split(' ');
-  const deckNames = parts.shift().split('+');
+  const deckNames = parts.shift().split('+').filter(deckName => !!deckName);
   const args = parts;
   const invokerId = msg.author.id;
   const locationId = msg.channel.id;
