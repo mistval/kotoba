@@ -749,7 +749,7 @@ async function load(
 
   logger.logSuccess(LOGGER_TITLE, 'Loading save data');
   try {
-    throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed);
+    throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
   } catch (err) {
     await saveManager.restore(msg.author.id, memento);
     throw err;
@@ -999,7 +999,7 @@ async function startNewQuiz(
   );
 
   // 2. Check for internet cards
-  throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled);
+  throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
 
   // All systems go. Liftoff!
   quizManager.startSession(session, locationId);
