@@ -55,7 +55,11 @@ function recycleCard(card, upcomingCardsIndexArray, numDecks) {
   if (index < 0) {
     index = arraySize - 1 - (newDistanceFromFront / 2);
     if (index < 0) {
-      return false;
+      if (card.answerHistory[card.answerHistory.length - 1]) {
+        return false;
+      } else {
+        index = 0;
+      }
     }
   }
 
