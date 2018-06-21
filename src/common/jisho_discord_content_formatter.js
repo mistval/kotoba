@@ -34,11 +34,16 @@ function getFieldNameForEntry(entry) {
 }
 
 function getLineForMeaning(meaning, meaningNumber) {
-  const { definition, tags } = meaning;
+  const { definition, tags, seeAlso } = meaning;
 
   let line = `${meaningNumber}. ${definition}`;
   if (tags.length > 0) {
     line += ` *[${tags.join(', ')}]*`;
+  }
+  if (seeAlso.length > 0) {
+    const linkListString = seeAlso.map(seeAlsoEntry => `[${seeAlsoEntry.word}](${seeAlsoEntry.uri})`)
+      .join(', ');
+    line += `  (See also: ${linkListString})`;
   }
 
   return line;
