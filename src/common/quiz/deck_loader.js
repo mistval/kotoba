@@ -12,7 +12,7 @@ const cardStrategies = reload('./card_strategies.js');
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
-const MAX_DECKS_PER_USER = 10;
+const MAX_DECKS_PER_USER = 100;
 const CACHE_SIZE_IN_PAGES = 1000;
 
 const DeckRequestStatus = {
