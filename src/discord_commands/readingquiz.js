@@ -1034,7 +1034,7 @@ Any deck can be made multiple choice by adding **-mc** to the end of its name. L
 **<prefix>quiz N4-mc**
 
 You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
-**<prefix>quiz N4(0-99)**
+**<prefix>quiz N4(1-100)**
 
 Associated commands:
 **<prefix>quiz stop** (ends the current quiz)
