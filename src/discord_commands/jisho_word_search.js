@@ -14,6 +14,9 @@ module.exports = {
   longDescription: 'Search Jisho for an English or Japanese word. Tip: sometimes Jisho will interpret your English search term as a Japanese word written in romaji. To force it to interpret your search term as English, put quotes around your search term. Example: <prefix>jn "gone"\n\nThere are two display modes. The default is \'big\' (unless your server admins have changed it). There is also \'small\'. Try both:\n\n<prefix>jn 少し --big\n<prefix>j 少し --small\n\nServer admins can change the default display mode by using the <prefix>settings command.',
   usageExample: '<prefix>j 少し',
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
+    if (msg.wasShortJishoAlias) {
+      return msg.channel.createMessage('The **!j** command alias is now disabled by default. Please start using **k!j**, or ask a server admin to add **!** to my list of prefixes by saying **k!settings prefixes k! !** or by using the **k!settings** command menu. Say **k!about** to get a link to my support server for additional help.');
+    }
     if (!suffix) {
       const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
       return throwPublicErrorInfo('Jisho', `Say **${prefix}j [word]** to search for words on Jisho.org. For example: **${prefix}j 瞬間**. Say **${prefix}help jisho** for more help.`, 'No suffix');
