@@ -12,11 +12,11 @@ function deepCopy(object) {
 function createRandomIndexSetForDecks(decks) {
   const indexSet = [];
   decks.forEach((deck) => {
-    const startIndex = deck.startIndex || 0;
-    const endIndex = deck.endIndex === undefined ? deck.cards.length - 1 : deck.endIndex;
+    const startIndex = deck.startIndex || 1;
+    const endIndex = deck.endIndex || deck.cards.length;
     const indices = Array((endIndex - startIndex) + 1);
     for (let i = startIndex; i <= endIndex; i += 1) {
-      indices[i - startIndex] = i;
+      indices[i - startIndex] = i - 1;
     }
 
     indexSet.push(shuffleArray(indices));
