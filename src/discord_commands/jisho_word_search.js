@@ -15,7 +15,7 @@ module.exports = {
   usageExample: '<prefix>j 少し',
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (msg.wasShortJishoAlias) {
-      return msg.channel.createMessage('The **!j** command alias is now disabled by default. Please start using **k!j**, or ask a server admin to add **!** to my list of prefixes by saying **k!settings prefixes k! !** or by using the **k!settings** command menu. Say **k!about** to get a link to my support server for additional help.');
+      return msg.channel.createMessage('Please use **k!j** instead. Or ask a server admin to add **!** to my list of prefixes by saying **k!settings prefixes k! !** or by using the **k!settings** command menu. Say **k!about** to get a link to my support server for additional help.');
     }
     if (!suffix) {
       const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
