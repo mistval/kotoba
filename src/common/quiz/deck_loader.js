@@ -394,7 +394,7 @@ class OutOfBoundsCardRangeStatus {
   constructor(deck) {
     this.status = DeckRequestStatus.INDEX_OUT_OF_RANGE;
     this.deckName = deck.name;
-    this.allowedStart = 0;
+    this.allowedStart = 1;
     this.allowedEnd = deck.cards.length;
   }
 }
@@ -404,7 +404,7 @@ function createOutOfBoundsCardRangeStatus(decks) {
     const deck = decks[i];
 
     if (deck.startIndex !== undefined || deck.endIndex !== undefined) {
-      if (deck.startIndex < 0
+      if (deck.startIndex < 1
         || deck.endIndex > deck.cards.length
         || deck.startIndex > deck.endIndex) {
         return new OutOfBoundsCardRangeStatus(deck);
