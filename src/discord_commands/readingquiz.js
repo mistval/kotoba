@@ -895,7 +895,7 @@ function getDeckNameAndModifierInformation(deckNames) {
     let nameWithoutExtension = deckName;
     let startIndex;
     let endIndex;
-    let numberOfOptions = 0;
+    let mc = false;
 
     const match = deckName.match(rangeRegex);
     if (match) {
@@ -905,7 +905,7 @@ function getDeckNameAndModifierInformation(deckNames) {
     }
 
     if (nameWithoutExtension.endsWith('-mc')) {
-      numberOfOptions = 5;
+      mc = true;
       nameWithoutExtension = nameWithoutExtension.substring(0, nameWithoutExtension.length - 3);
     }
 
@@ -913,7 +913,7 @@ function getDeckNameAndModifierInformation(deckNames) {
       deckNameOrUniqueId: nameWithoutExtension,
       startIndex,
       endIndex,
-      numberOfOptions,
+      mc,
     };
   });
 }

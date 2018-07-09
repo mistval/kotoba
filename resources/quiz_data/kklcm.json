@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Reading",
+  "forceMC": true,
   "cards": [
     {
       "question": "にも拘らず",

@@ -14,6 +14,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "STRICT",
   "commentFieldName": "Comment",
+  "forceNoMC": true,
   "cards": [
     {
       "question": "、この一字の違いはきわめて大きい",
