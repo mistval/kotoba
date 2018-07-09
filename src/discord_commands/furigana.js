@@ -14,6 +14,7 @@ module.exports = {
     'furigana_main_font_size',
     'furigana_font_color',
     'furigana_background_color',
+    'furigana_font',
   ],
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (!suffix) {
@@ -30,6 +31,7 @@ module.exports = {
       settings.furigana_main_font_size,
       settings.furigana_font_color,
       settings.furigana_background_color,
+      settings.furigana_font,
     );
 
     return msg.channel.createMessage('', { name: 'furigana.png', file: buffer }, msg);
