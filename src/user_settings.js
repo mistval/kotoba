@@ -1,4 +1,5 @@
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
+const { execSync } = require('child_process');
 
 function isInRange(min, max, value) {
   return value >= min && value <= max;
@@ -49,6 +50,25 @@ function validateRGBAColor(input) {
 function validateRGBorRGBA(input) {
   return validateRGBColor(input) || validateRGBAColor(input);
 }
+
+const descriptionForFont = {
+  'IPAMincho': 'An elegant font',
+  'Noto Sans CJK JP': 'A commonly used web font',
+  'SetoFont': 'A cute handwritten font',
+  'YOzFont': 'Another handwritten font',
+  'AoyagiKouzanFontT': 'A caligraphy brush font (kinda challenging)',
+};
+
+const fontForIndex = {};
+Object.keys(descriptionForFont).map((key, index) => {
+  fontForIndex[index + 1] = key;
+});
+
+const fontDescriptionList = Object.keys(fontForIndex)
+  .map(index => `${index}. ${fontForIndex[index]} - ${descriptionForFont[fontForIndex[index]]}`)
+  .join('\n');
+
+const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}`;
 
 module.exports = [
   {
@@ -173,6 +193,16 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(20, 200),
+      },
+      {
+        userFacingName: 'Quiz font',
+        description: 'This setting controls the font used for text rendered for quizzes.',
+        allowedValuesDescription: availableFontsAllowedValuesString,
+        uniqueId: 'quiz_font',
+        defaultUserFacingValue: 'IPA明朝',
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForIndex),
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.isMappable,
       },
       {
         userFacingName: 'Furigana font color',

@@ -167,6 +167,7 @@ class DeckCollection {
     card.fontSize = settings.fontSize;
     card.fontColor = settings.fontColor;
     card.backgroundColor = settings.backgroundColor;
+    card.font = settings.font;
 
     card.discordFinalAnswerListElementStrategy =
       card.discordFinalAnswerListElementStrategy || deck.discordFinalAnswerListElementStrategy;

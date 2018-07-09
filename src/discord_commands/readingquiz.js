@@ -844,6 +844,7 @@ function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
   const fontSize = settingsBlob['quiz_font_size'];
   const fontColor = settingsBlob['quiz_font_color'];
   const backgroundColor = settingsBlob['quiz_background_color'];
+  const font = settingsBlob['quiz_font'];
 
   return {
     scoreLimit:
@@ -877,6 +878,7 @@ function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
     fontSize,
     fontColor,
     backgroundColor,
+    font,
   };
 }
 
