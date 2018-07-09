@@ -9,7 +9,7 @@ const {
   NavigationPage,
 } = reload('monochrome-bot');
 
-const MAX_AUDIO_CLIPS = 4;
+const MAX_AUDIO_CLIPS = 6;
 const LOGGER_TITLE = 'PRONOUNCE';
 
 function createEmbedContent() {
@@ -57,7 +57,7 @@ function createLHString(pronounceInfo) {
 }
 
 function addPitchField(fields, pronounceInfo) {
-  if (pronounceInfo.pitchAccent.length > 0) {
+  if (pronounceInfo.hasPitchData && pronounceInfo.pitchAccent.length > 0) {
     const { katakana } = pronounceInfo;
     const underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
     const lhString = createLHString(pronounceInfo);
@@ -71,7 +71,7 @@ function addPitchField(fields, pronounceInfo) {
 }
 
 function addMutedSoundsField(fields, pronounceInfo) {
-  if (pronounceInfo.noPronounceIndices.length > 0) {
+  if (pronounceInfo.hasPitchData && pronounceInfo.noPronounceIndices.length > 0) {
     const { katakana } = pronounceInfo;
     fields.push({
       name: 'Muted sounds',
@@ -82,7 +82,7 @@ function addMutedSoundsField(fields, pronounceInfo) {
 }
 
 function addNasalSoundsField(fields, pronounceInfo) {
-  if (pronounceInfo.nasalPitchIndices.length > 0) {
+  if (pronounceInfo.hasPitchData && pronounceInfo.nasalPitchIndices.length > 0) {
     const { katakana } = pronounceInfo;
     fields.push({
       name: 'Nasal sounds',
@@ -93,7 +93,7 @@ function addNasalSoundsField(fields, pronounceInfo) {
 }
 
 function addAudioClipsField(fields, forvoData) {
-  if (forvoData.found) {
+  if (forvoData && forvoData.found) {
     const { audioClips } = forvoData;
     const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS)
       .map(audioClip => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
@@ -117,10 +117,14 @@ class PronunciationDataSource {
   }
 
   getWordForTitle(entry) {
-    if (entry.kanji[0] !== entry.kanji[1]) {
-      return `${entry.kanji[0]} (${entry.kanji[1]})`;
+    if (entry.hasPitchData) {
+      if (entry.kanji[0] !== entry.kanji[1]) {
+        return `${entry.kanji[0]} (${entry.kanji[1]})`;
+      }
+      return entry.kanji[0];
+    } else {
+      return this.pronounceInfo.query;
     }
-    return entry.kanji[0];
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
@@ -140,19 +144,29 @@ class PronunciationDataSource {
     const word = this.getWordForTitle(entry);
     const uriEncodedWord = encodeURIComponent(word);
     embed.title = `${word} ${pagesString}`;
-    embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
+
+    if (entry.hasPitchData) {
+      embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
+    }
 
     embed.fields = [];
     addPitchField(embed.fields, entry);
     addMutedSoundsField(embed.fields, entry);
     addNasalSoundsField(embed.fields, entry);
 
-    try {
-      const forvoData = await entry.getAudioClips();
-      addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
-    } catch (err) {
-      this.logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
+    let forvoData;
+
+    if (entry.forvoData) {
+      ({ forvoData } = entry);
+    } else if (entry.getAudioClips) {
+      try {
+        forvoData = await entry.getAudioClips();
+      } catch (err) {
+        this.logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
+      }
     }
+
+    addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
 
     if (numberOfPages > 1) {
       embed.footer = {

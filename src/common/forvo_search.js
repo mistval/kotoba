@@ -4,7 +4,11 @@ const request = require('request-promise');
 const API_KEY = reload('./../../api_keys.js').FORVO;
 
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
-const JAPANESE_LANG_NAME = 'Japanese';
+const preferredLanguageNames = ['Japanese', 'English'];
+const langCodeForLangName = {
+  'Japanese': 'ja',
+  'English': 'en',
+};
 
 function getApiUriForQuery(query) {
   if (!API_KEY) {
@@ -23,8 +27,17 @@ function rethrowError(err) {
 }
 
 function parseItems(items) {
-  return items
-    .filter(item => item.langname === JAPANESE_LANG_NAME)
+  let itemsToUse = [];
+  for (let i = 0; i < preferredLanguageNames.length && itemsToUse.length === 0; ++i) {
+    const preferredLanguageName = preferredLanguageNames[i];
+    itemsToUse = items.filter(item => item.langname === preferredLanguageName);
+  }
+
+  if (itemsToUse.length === 0) {
+    itemsToUse = items;
+  }
+
+  return itemsToUse
     .sort((a, b) => b.num_positive_votes - a.num_positive_votes)
     .map(item => ({
       word: item.word,
@@ -32,7 +45,7 @@ function parseItems(items) {
       gender: item.sex === 'm' ? 'Male' : 'Female',
       country: item.country,
       audioUri: item.pathmp3 || item.pathogg,
-      forvoUri: `https://forvo.com/word/${item.word}/#ja`,
+      forvoUri: `https://forvo.com/word/${item.word}/#${langCodeForLangName[item.langname] || ''}`,
     }));
 }
 
