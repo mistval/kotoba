@@ -8,7 +8,7 @@ function validateRGBColor(input) {
   const MIN = 0;
   const MAX = 255;
 
-  const regex = /rgb\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})\)/;
+  const regex = /rgb\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})\)/i;
   const regexResult = regex.exec(input);
 
   if (!regexResult) {
@@ -20,6 +20,34 @@ function validateRGBColor(input) {
   const b = parseInt(regexResult[3]);
 
   return isInRange(MIN, MAX, r) && isInRange(MIN, MAX, g) && isInRange(MIN, MAX, b);
+}
+
+function validateRGBAColor(input) {
+  const RGB_MIN = 0;
+  const RGB_MAX = 255;
+  const A_MIN = 0;
+  const A_MAX = 1;
+
+  const regex = /rgba\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]*\.[0-9]+|[0-9]+)\)/i;
+  const regexResult = regex.exec(input);
+
+  if (!regexResult) {
+    return false;
+  }
+
+  const r = parseInt(regexResult[1]);
+  const g = parseInt(regexResult[2]);
+  const b = parseInt(regexResult[3]);
+  const a = parseFloat(regexResult[4]);
+
+  return isInRange(RGB_MIN, RGB_MAX, r)
+    && isInRange(RGB_MIN, RGB_MAX, g)
+    && isInRange(RGB_MIN, RGB_MAX, b)
+    && isInRange(A_MIN, A_MAX, a);
+}
+
+function validateRGBorRGBA(input) {
+  return validateRGBColor(input) || validateRGBAColor(input);
 }
 
 module.exports = [
@@ -119,12 +147,22 @@ module.exports = [
       {
         userFacingName: 'Furigana font color',
         description: 'This setting controls the color of the text produced by the furigana command.',
-        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255.',
+        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
         uniqueId: 'furigana_font_color',
         defaultUserFacingValue: 'rgb(192, 193, 194)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateRGBColor,
+        validateInternalValue: validateRGBorRGBA,
+      },
+      {
+        userFacingName: 'Furigana background color',
+        description: 'This setting controls the background color of the text produced by the furigana command.',
+        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        uniqueId: 'furigana_background_color',
+        defaultUserFacingValue: 'rgb(54, 57, 62)',
+        convertUserFacingValueToInternalValue: SettingsConverters.toString,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: validateRGBorRGBA,
       },
       {
         userFacingName: 'Furigana font size',

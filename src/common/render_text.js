@@ -38,7 +38,7 @@ module.exports.render = function(text, textColor, backgroundColor) {
   });
 };
 
-module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, fontColor) {
+module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, textColor, backgroundColor) {
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
   const kanjiFont = `${mainFontSizeDivisibleBy2}px IPAMincho`;
@@ -49,8 +49,8 @@ module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, fontCol
 
   let options = {
     maxWidthInPixels,
-    backgroundColor: 'rgba(54, 57, 62, 1)',
-    textColor: fontColor,
+    backgroundColor,
+    textColor,
   };
 
   console.time('render furigana time');
