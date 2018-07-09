@@ -534,6 +534,7 @@ class QuizManager {
       'quiz_font_color',
       'quiz_background_color',
       'quiz_font_size',
+      'quiz_font',
     ];
   }
 
