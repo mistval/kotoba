@@ -233,6 +233,20 @@ const afterQuizMessages = [
       description: 'I\'ll love you too if you [vote for me](https://discordbots.org/bot/251239170058616833/vote) :3 You can do it every 24 hours for extra love!',
     },
   },
+  {
+    embed: {
+      title: 'Fonts',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'You can change fonts, colors, and sizes by using the **k!settings** command.',
+    },
+  },
+  {
+    embed: {
+      title: 'O, too fast/slow?',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'You can change timing settings by using the **k!settings** command, or say **k!help quiz** to see how to do it per-game.',
+    },
+  },
 ];
 
 function createAfterQuizMessage(canReview, prefix) {
