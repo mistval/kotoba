@@ -14,6 +14,7 @@
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
   "commentFieldName": "Reading",
+  "forceMC": true,
   "cards": [
     {
       "question": "一",

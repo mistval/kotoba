@@ -114,12 +114,7 @@ function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
   const deckCopy = Object.assign({}, deck);
   deckCopy.startIndex = deckInformation.startIndex;
   deckCopy.endIndex = deckInformation.endIndex;
-
-  if (typeof deckInformation.numberOfOptions === typeof 1) {
-    deckCopy.numberOfOptions = deckInformation.numberOfOptions;
-  } else {
-    deckCopy.numberOfOptions = 0;
-  }
+  deckCopy.mc = deckCopy.forceMC || (deckInformation.mc && !deckCopy.forceNoMC);
 
   return deckCopy;
 }
