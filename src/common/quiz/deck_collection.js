@@ -5,6 +5,8 @@ const cardStrategies = reload('./card_strategies.js');
 const deckLoader = reload('./deck_loader.js');
 const shuffleArray = reload('./../util/shuffle_array.js');
 
+const NUM_OPTIONS_FOR_MC = 5;
+
 function deepCopy(object) {
   return JSON.parse(JSON.stringify(object));
 }
@@ -55,9 +57,8 @@ class DeckCollection {
 
   static async createFromSaveData(saveData) {
     const deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
-      const numberOfOptions =
-        saveData.numberOfOptionsForDeck ? saveData.numberOfOptionsForDeck[index] : 0;
-      return { deckNameOrUniqueId: uniqueId, numberOfOptions };
+      const mc = !!saveData.numberOfOptionsForDeck;
+      return { deckNameOrUniqueId: uniqueId, mc };
     });
 
     const deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
@@ -177,7 +178,7 @@ class DeckCollection {
       card.additionalAnswerWaitStrategy || deck.additionalAnswerWaitStrategy;
 
     card.answerCompareStrategy = card.answerCompareStrategy || deck.answerCompareStrategy;
-    card.numberOfOptions = card.numberOfOptions || deck.numberOfOptions;
+    card.mc = card.mc || deck.mc;
     card.commentFieldName = card.commentFieldName || deck.commentFieldName;
     card.answerHistory = card.answerHistory || [];
     card.cardIndex = cardIndex;
@@ -221,8 +222,8 @@ class DeckCollection {
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
-    const { numberOfOptions } = card;
-    if (!numberOfOptions || card.options) {
+    const { mc } = card;
+    if (!mc || card.options) {
       return card;
     }
 
@@ -230,6 +231,7 @@ class DeckCollection {
     const options = [correctAnswer];
 
     let loopCounter = 0;
+    const numberOfOptions = NUM_OPTIONS_FOR_MC;
     while (options.length < numberOfOptions && options.length < this.decks[0].cards.length) {
       const randomDeckIndex = Math.floor(Math.random() * this.decks.length);
       const randomDeck = this.decks[randomDeckIndex];
@@ -266,7 +268,7 @@ class DeckCollection {
   createSaveData() {
     return {
       deckUniqueIds: this.decks.map(deck => deck.uniqueId),
-      numberOfOptionsForDeck: this.decks.map(deck => deck.numberOfOptions),
+      numberOfOptionsForDeck: this.decks.map(deck => deck.mc),
       indexSet: this.indexSet,
       name: this.getName(),
       description: this.getDescription(),

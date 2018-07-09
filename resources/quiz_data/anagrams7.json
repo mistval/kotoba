@@ -13,6 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "STRICT",
   "commentFieldName": "Comment",
+  "forceNoMC": true,
   "cards": [
     {
       "question": "abandon",
