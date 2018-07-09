@@ -40,11 +40,11 @@ module.exports.render = function(text, textColor, backgroundColor, fontSize, fon
   });
 };
 
-module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, textColor, backgroundColor) {
+module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, textColor, backgroundColor, font) {
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
-  const kanjiFont = `${mainFontSizeDivisibleBy2}px IPAMincho`;
-  const furiganaFont = `${furiganaFontSize}px IPAMincho`;
+  const kanjiFont = `${mainFontSizeDivisibleBy2}px ${font}`;
+  const furiganaFont = `${furiganaFontSize}px ${font}`;
 
   // This is pretty arbitrary but works well.
   const maxWidthInPixels = Math.ceil(Math.floor((mainFontSizeDivisibleBy2 / 40) * 600), 600);
