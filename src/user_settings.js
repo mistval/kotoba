@@ -145,6 +145,36 @@ module.exports = [
     children:
     [
       {
+        userFacingName: 'Quiz text font color',
+        description: 'This setting controls the color of the text rendered for quizzes.',
+        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        uniqueId: 'quiz_font_color',
+        defaultUserFacingValue: 'rgb(0, 0, 0)',
+        convertUserFacingValueToInternalValue: SettingsConverters.toString,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: validateRGBorRGBA,
+      },
+      {
+        userFacingName: 'Quiz text background color',
+        description: 'This setting controls the background color of the text rendered for quizzes.',
+        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        uniqueId: 'quiz_background_color',
+        defaultUserFacingValue: 'rgb(255, 255, 255)',
+        convertUserFacingValueToInternalValue: SettingsConverters.toString,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: validateRGBorRGBA,
+      },
+      {
+        userFacingName: 'Quiz text font size',
+        description: 'This setting controls the font size of the text rendered for quizzes.',
+        allowedValuesDescription: 'A number between 20 and 200 (in font size points)',
+        uniqueId: 'quiz_font_size',
+        defaultUserFacingValue: '106',
+        convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.createRangeValidator(20, 200),
+      },
+      {
         userFacingName: 'Furigana font color',
         description: 'This setting controls the color of the text produced by the furigana command.',
         allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
