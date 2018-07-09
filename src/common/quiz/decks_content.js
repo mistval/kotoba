@@ -11,7 +11,7 @@ const categoryFields = [
   {'name': 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {'name': 'Kana Decks', value: 'hiragana katakana'},
   {'name': 'Japanese Misc. Decks', value: 'jptrivia common numbers hard haard insane yojijukugo kokuji onomato 擬音語 jpsyn jpsyn_hard jsyn jsynj ranobe radicals kklc jouyou images jpdefs'},
-  {'name': 'Japanese Word Meaning Decks', value: 'N5m-mc N4m-mc N3m-mc N2m-mc N1m-mc 10km-mc 9km-mc 8km-mc 7km-mc 6km-mc 5km-mc 4km-mc 3km-mc j2km-mc 2km-mc j1km-mc 1km-mc animalsm-mc birdsm-mc bugsm-mc fishm-mc plantsm-mc vegetablesm-mc hardm-mc haardm-mc commonm-mc kokujim-mc kklcm-mc'},
+  {'name': 'Japanese Word Meaning Decks', value: 'N5m N4m N3m N2m N1m 10km 9km 8km 7km 6km 5km 4km 3km j2km 2km j1km 1km animalsm birdsm bugsm fishm plantsm vegetablesm hardm haardm commonm kokujim kklcm'},
   {'name': 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans ee en_syn'},
   {'name': 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
@@ -20,7 +20,7 @@ module.exports.createContent = function(prefix) {
   return {
     embed: {
       title: 'Quiz',
-      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **${prefix}help quiz** to see advanced quiz help. Say **${prefix}quiz save** to save your progress and **${prefix}quiz load** to reload it. Say **${prefix}quiz-conquest** or **${prefix}quiz-inferno** to learn about these game types. Add **-mc** to the end of any deck name to make it multiple choice.`,
+      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **${prefix}help quiz** to see advanced quiz help. Say **${prefix}quiz save** to save your progress and **${prefix}quiz load** to reload it. Say **${prefix}quiz-conquest** or **${prefix}quiz-inferno** to learn about these game types.`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: categoryFields,
       footer: {

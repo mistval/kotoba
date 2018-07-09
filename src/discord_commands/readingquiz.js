@@ -216,7 +216,7 @@ const afterQuizMessages = [
     embed: {
       title: 'Too hard?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can add **-mc** to any deck name to make it multiple choice. For example: **<prefix>quiz n1-mc**.',
+      description: 'You can add **-mc** to most deck names to make a multiple choice quiz. For example: **<prefix>quiz n1-mc**.',
     },
   },
   {
@@ -1030,7 +1030,7 @@ See available quiz decks, or start a quiz.
 You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
 **<prefix>quiz N4 30 1 10**
 
-Any deck can be made multiple choice by adding **-mc** to the end of its name. Like this:
+Most decks can be made multiple choice by adding **-mc** to the end of its name. Like this:
 **<prefix>quiz N4-mc**
 
 You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
