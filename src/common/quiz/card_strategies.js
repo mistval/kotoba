@@ -96,13 +96,13 @@ function createQuestionCommon(card) {
   };
 }
 
-function createImageQuestion(card) {
+async function createImageQuestion(card) {
   let question = createQuestionCommon(card);
 
-  return renderText(card.question).then(pngBuffer => {
-    question.bodyAsPngBuffer = pngBuffer;
-    return question;
-  });
+  const pngBuffer = await renderText(card.question, card.fontColor, card.backgroundColor, card.fontSize, card.font);
+
+  question.bodyAsPngBuffer = pngBuffer;
+  return question;
 }
 
 function createImageUriQuestion(card) {
