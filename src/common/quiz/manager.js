@@ -531,6 +531,9 @@ class QuizManager {
       'quiz/japanese/new_question_delay_after_unanswered',
       'quiz/japanese/new_question_delay_after_answered',
       'quiz/japanese/additional_answer_wait_time',
+      'quiz_font_color',
+      'quiz_background_color',
+      'quiz_font_size',
     ];
   }
 
