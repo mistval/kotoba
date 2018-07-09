@@ -1,5 +1,27 @@
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 
+function isInRange(min, max, value) {
+  return value >= min && value <= max;
+}
+
+function validateRGBColor(input) {
+  const MIN = 0;
+  const MAX = 255;
+
+  const regex = /rgb\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})\)/;
+  const regexResult = regex.exec(input);
+
+  if (!regexResult) {
+    return false;
+  }
+
+  const r = parseInt(regexResult[1]);
+  const g = parseInt(regexResult[2]);
+  const b = parseInt(regexResult[3]);
+
+  return isInRange(MIN, MAX, r) && isInRange(MIN, MAX, g) && isInRange(MIN, MAX, b);
+}
+
 module.exports = [
   {
     userFacingName: 'Quiz',
@@ -94,6 +116,16 @@ module.exports = [
     userFacingName: 'Fonts',
     children:
     [
+      {
+        userFacingName: 'Furigana font color',
+        description: 'This setting controls the color of the text produced by the furigana command.',
+        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255.',
+        uniqueId: 'furigana_font_color',
+        defaultUserFacingValue: 'rgb(192, 193, 194)',
+        convertUserFacingValueToInternalValue: SettingsConverters.toString,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: validateRGBColor,
+      },
       {
         userFacingName: 'Furigana font size',
         description: 'This setting controls the font size of the main text of the furigana command. The size of the furigana text (above the main text) is this value divided by two.',

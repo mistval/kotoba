@@ -10,7 +10,7 @@ module.exports = {
   uniqueId: 'furigana5345',
   shortDescription: 'Render furigana for Japanese text.',
   usageExample: '<prefix>furigana 吾輩は猫である',
-  requiredSettings: ['furigana_main_font_size'],
+  requiredSettings: ['furigana_main_font_size', 'furigana_font_color'],
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (!suffix) {
       const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
@@ -23,7 +23,8 @@ module.exports = {
 
     const buffer = await textRenderer.renderJapaneseWithFurigana(
       suffix,
-      settings.furigana_main_font_size
+      settings.furigana_main_font_size,
+      settings.furigana_font_color,
     );
 
     return msg.channel.createMessage('', { name: 'furigana.png', file: buffer }, msg);
