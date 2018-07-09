@@ -37,17 +37,17 @@ function getHighLowPitch(wordLength, pitchAccentString) {
 module.exports = async function(queryWord) {
   let result = {
     query: queryWord,
-    found: false,
+    entries: [],
   };
 
   let queryAsHiragana = convertToHiragana(queryWord);
   let pronounceDataForQuery = state.pronounceData[queryAsHiragana];
 
   if (pronounceDataForQuery) {
-    result.found = true;
     result.entries = pronounceDataForQuery.map(entry => {
       let katakanaLength = entry.kat.length;
       return {
+        hasPitchData: true,
         katakana: entry.kat,
         kanji: entry.kan,
         noPronounceIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npr),
@@ -57,7 +57,13 @@ module.exports = async function(queryWord) {
         getAudioClips: () => searchForvo(entry.kan[0]),
       };
     });
+  } else {
+    const forvoData = await searchForvo(queryWord);
+    if (forvoData.found) {
+      result.entries = [{ forvoData, hasPitchData: false }];
+    }
   }
 
+  result.found = result.entries.length > 0;
   return result;
 };
