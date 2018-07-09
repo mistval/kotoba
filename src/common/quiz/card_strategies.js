@@ -99,7 +99,7 @@ function createQuestionCommon(card) {
 async function createImageQuestion(card) {
   let question = createQuestionCommon(card);
 
-  const pngBuffer = await renderText(card.question, card.fontColor, card.backgroundColor, card.fontSize);
+  const pngBuffer = await renderText(card.question, card.fontColor, card.backgroundColor, card.fontSize, card.font);
 
   question.bodyAsPngBuffer = pngBuffer;
   return question;
