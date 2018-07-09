@@ -91,6 +91,22 @@ module.exports = [
     ]
   },
   {
+    userFacingName: 'Fonts',
+    children:
+    [
+      {
+        userFacingName: 'Furigana font size',
+        description: 'This setting controls the font size of the main text of the furigana command. The size of the furigana text (above the main text) is this value divided by two.',
+        allowedValuesDescription: 'A number between 10 and 80 (in font size points)',
+        uniqueId: 'furigana_main_font_size',
+        defaultUserFacingValue: '40',
+        convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.createRangeValidator(20, 80),
+      },
+    ]
+  },
+  {
     userFacingName: 'Dictionary',
     children:
     [
