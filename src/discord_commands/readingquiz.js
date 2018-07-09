@@ -841,6 +841,10 @@ function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
   const serverScoreLimit = settingsBlob['quiz/japanese/score_limit'];
   const serverUnansweredQuestionLimit = settingsBlob['quiz/japanese/unanswered_question_limit'];
   const serverAnswerTimeLimitInMs = settingsBlob['quiz/japanese/answer_time_limit'] * 1000;
+  const fontSize = settingsBlob['quiz_font_size'];
+  const fontColor = settingsBlob['quiz_font_color'];
+  const backgroundColor = settingsBlob['quiz_background_color'];
+  const font = settingsBlob['quiz_font'];
 
   return {
     scoreLimit:
@@ -871,6 +875,10 @@ function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
         userAdditionalAnswerWaitTimeInMs,
       ),
     gameModeSettings,
+    fontSize,
+    fontColor,
+    backgroundColor,
+    font,
   };
 }
 

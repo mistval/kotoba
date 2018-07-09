@@ -164,6 +164,10 @@ class DeckCollection {
     card.questionCreationStrategy = card.questionCreationStrategy || deck.questionCreationStrategy;
     card.preprocessingStrategy = card.preprocessingStrategy || deck.cardPreprocessingStrategy;
     card.answerTimeLimitStrategy = card.answerTimeLimitStrategy || deck.answerTimeLimitStrategy;
+    card.fontSize = settings.fontSize;
+    card.fontColor = settings.fontColor;
+    card.backgroundColor = settings.backgroundColor;
+    card.font = settings.font;
 
     card.discordFinalAnswerListElementStrategy =
       card.discordFinalAnswerListElementStrategy || deck.discordFinalAnswerListElementStrategy;
