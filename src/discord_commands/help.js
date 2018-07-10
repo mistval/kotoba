@@ -1,10 +1,11 @@
 'use strict'
 const reload = require('require-reload')(require);
 const PublicError = require('monochrome-bot').PublicError;
+const embedColor = require('./../common/constants.js').EMBED_NEUTRAL_COLOR;
 
 // Configuration start
 
-const EMBED_COLOR = 2522111;
+const EMBED_COLOR = embedColor;
 const ALIASES = ['help', 'h'];
 
 const COMMANDS_TO_GENERATE_HELP_FOR = [
