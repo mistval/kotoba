@@ -209,7 +209,7 @@ const afterQuizMessages = [
     embed: {
       title: 'O, so you want Anki in Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'Try **Conquest Mode**. Say **<prefix>quiz-conquest** to learn more.',
+      description: `Try **Conquest Mode**. Say **<prefix>quiz${MASTERY_EXTENSION}** to learn more.``,
     },
   },
   {
@@ -629,11 +629,11 @@ function createMasteryHelp(isEnabledInServer, prefix) {
 
 You can use **${prefix}quiz save** and **${prefix}quiz load** to save and load progress so you can learn over a period of days or weeks or months.
 
-To start, say **${prefix}quiz-conquest** plus a deck name. For example: **${prefix}quiz-conquest N5**. Keep in mind that if you aren't in a DM, other people can answer the questions too, and then you won't see them again.
+To start, say **${prefix}quiz${MASTERY_EXTENSION}** plus a deck name. For example: **${prefix}quiz${MASTERY_EXTENSION} N5**. Keep in mind that if you aren't in a DM, other people can answer the questions too, and then you won't see them again.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: `You can also conquer multiple decks. For example: ${prefix}quiz-conquest N5+N4` },
+      footer: { icon_url: constants.FOOTER_ICON_URI, text: `You can also conquer multiple decks. For example: ${prefix}quiz${MASTERY_EXTENSION} N5+N4` },
     },
   };
 }
@@ -653,9 +653,9 @@ There is no score limit, so try to get as far as you can. You can use **${prefix
 
 Bring your friends! The top scorers will appear together as a team on the inferno leaderboard (when/if I make it ;)
 
-To start, say **${prefix}quiz-inferno** plus a deck name. For example: **${prefix}quiz-inferno N5**.
+To start, say **${prefix}quiz${CONQUEST_EXTENSION}** plus a deck name. For example: **${prefix}quiz${CONQUEST_EXTENSION} N5**.
 
-You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **${prefix}quiz-inferno N5 .5 20**.
+You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **${prefix}quiz${CONQUEST_EXTENSION} N5 .5 20**.
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -1061,8 +1061,8 @@ You can set the range of cards that you want to see. For example, if you only wa
 Associated commands:
 **<prefix>quiz stop** (ends the current quiz)
 **<prefix>lb** (shows the quiz leaderboard)
-**<prefix>quiz-conquest** (show information about conquest mode)
-**<prefix>quiz-inferno** (show information about inferno mode)
+**<prefix>quiz${MASTERY_EXTENSION}** (show information about conquest mode)
+**<prefix>quiz${CONQUEST_EXTENSION}** (show information about inferno mode)
 
 You can set default quiz settings by using the **<prefix>settings** command.
 `;
