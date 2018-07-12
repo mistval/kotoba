@@ -252,9 +252,9 @@ const afterQuizMessages = [
 function createAfterQuizMessage(canReview, prefix) {
   let index;
   if (canReview) {
-    index = Math.floor(Math.random() * 5);
+    index = Math.floor(Math.random() * afterQuizMessages.length);
   } else {
-    index = 1 + Math.floor(Math.random() * 4);
+    index = 1 + Math.floor(Math.random() * (afterQuizMessages.length - 1));
   }
   const afterQuizMessage = Object.assign({}, afterQuizMessages[index]);
   afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
