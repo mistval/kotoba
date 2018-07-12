@@ -5,7 +5,6 @@ const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['jn'],
-  aliasesForHelp: ['jn'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'jishowordjn64054',

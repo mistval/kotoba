@@ -4,7 +4,7 @@
 * Syntax: }servers
 */
 module.exports = {
-  commandAliases: ['}servers', '}s'],
+  commandAliases: ['servers'],
   botAdminOnly: true,
   shortDescription: 'Show servers that I\'m in.',
   hidden: true,
