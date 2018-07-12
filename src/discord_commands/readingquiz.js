@@ -21,8 +21,10 @@ const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
-const MASTERY_EXTENSION = '-conquest';
-const CONQUEST_EXTENSION = '-inferno';
+const MASTERY_NAME = 'conquest';
+const CONQUEST_NAME = 'inferno';
+const MASTERY_EXTENSION = `-${MASTERY_NAME}`;
+const CONQUEST_EXTENSION = `-${CONQUEST_NAME}`;
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
 
 function createMasteryModeDisabledString(prefix) {
@@ -209,7 +211,7 @@ const afterQuizMessages = [
     embed: {
       title: 'O, so you want Anki in Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: `Try **Conquest Mode**. Say **<prefix>quiz${MASTERY_EXTENSION}** to learn more.``,
+      description: `Try **Conquest Mode**. Say **<prefix>quiz${MASTERY_EXTENSION}** to learn more.`,
     },
   },
   {
@@ -797,17 +799,14 @@ async function deleteInternetDeck(msg, searchTerm, userId) {
   return undefined;
 }
 
-function createGameModeForExtension(extension) {
-  if (extension === MASTERY_EXTENSION) {
+function createNonReviewGameMode(isMastery, isConquest) {
+  if (isMastery) {
     return MasteryGameMode;
-  } else if (extension === CONQUEST_EXTENSION) {
+  } else if (isConquest) {
     return ConquestGameMode;
-  } else if (!extension) {
+  } else {
     return NormalGameMode;
   }
-
-  assert(`Extension ${extension} is not known gamemode`);
-  return undefined;
 }
 
 function createSettings(settingsBlob, gameMode, settingsOverridesStrings) {
@@ -947,7 +946,8 @@ async function startNewQuiz(
   masteryEnabled,
   internetDecksEnabled,
   serverSettings,
-  extension,
+  isMastery,
+  isConquest,
 ) {
   let suffixReplaced = suffix;
 
@@ -975,7 +975,7 @@ async function startNewQuiz(
     gameMode = ReviewGameMode;
     decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForLocationId[locationId], prefix)];
   } else {
-    gameMode = createGameModeForExtension(extension);
+    gameMode = createNonReviewGameMode(isMastery, isConquest);
 
     const invokerName = msg.author.name + msg.author.discriminator;
     const decksLookupResult = await deckLoader.getQuizDecks(
@@ -1029,15 +1029,15 @@ async function startNewQuiz(
   return undefined;
 }
 
-function showHelp(msg, extension, masteryEnabled) {
+function showHelp(msg, isMastery, isConquest, masteryEnabled) {
   const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
 
   let helpMessage;
-  if (!extension) {
+  if (!isMastery && !isConquest) {
     helpMessage = createHelpContent(prefix);
-  } else if (extension === MASTERY_EXTENSION) {
+  } else if (isMastery) {
     helpMessage = createMasteryHelp(masteryEnabled, prefix);
-  } else if (extension === CONQUEST_EXTENSION) {
+  } else if (isConquest) {
     helpMessage = createConquestHelp(masteryEnabled, prefix);
   } else {
     assert(false, 'Unknown extension');
@@ -1081,12 +1081,19 @@ module.exports = {
   ]),
   attachIsServerAdmin: true,
   async action(erisBot, msg, suffix, monochrome, serverSettings, extension) {
-    let suffixReplaced = suffix.replace(/\+ */g, '+').replace(/ *\+/g, '+').replace(/ *-mc/g, '-mc');
+    let suffixReplaced = suffix.replace(/ *\+ */g, '+').replace(/ *-mc/g, '-mc').trim();
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
     const messageSender = new DiscordMessageSender(erisBot, msg);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
+
+    const isMastery = extension === MASTERY_EXTENSION
+      || suffixReplaced.indexOf(MASTERY_NAME) !== -1;
+    const isConquest = !isMastery
+      && (extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
+
+    suffixReplaced = suffixReplaced.replace(CONQUEST_NAME, '').replace(MASTERY_NAME, '').trim();
 
     // Delete operation
     if (suffixReplaced.startsWith('delete')) {
@@ -1110,7 +1117,7 @@ module.exports = {
 
     // Help operation
     if (!suffixReplaced || suffixReplaced === 'help') {
-      return showHelp(msg, extension, masteryEnabled);
+      return showHelp(msg, isMastery, isConquest, masteryEnabled);
     }
 
     // Start operation
@@ -1121,7 +1128,8 @@ module.exports = {
       masteryEnabled,
       internetDecksEnabled,
       serverSettings,
-      extension,
+      isMastery,
+      isConquest,
     );
   },
   canHandleExtension(extension) {
