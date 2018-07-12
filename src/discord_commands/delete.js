@@ -11,7 +11,7 @@ const { PublicError } = reload('monochrome-bot');
 * Syntax: }delete [channel_id] [message_id]
 */
 module.exports = {
-  commandAliases: ['}delete', '}d'],
+  commandAliases: ['delete'],
   botAdminOnly: true,
   shortDescription: 'Delete a message.',
   usageExample: '}setavatar [channelId] [messageId]',

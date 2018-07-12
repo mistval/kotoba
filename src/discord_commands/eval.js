@@ -6,7 +6,7 @@ const { PublicError } = reload('monochrome-bot');
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
 */
 module.exports = {
-  commandAliases: ['}eval'],
+  commandAliases: ['eval'],
   botAdminOnly: true,
   shortDescription: 'Evaluate arbitrary javascript code (use wisely).',
   usageExample: '}eval 4+5',

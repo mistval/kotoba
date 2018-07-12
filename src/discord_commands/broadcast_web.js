@@ -6,7 +6,7 @@ const webQuiz = require('./../webserver/quiz.js');
 * Syntax: }broadcast [channel_id] [announcement]
 */
 module.exports = {
-  commandAliases: ['}bw'],
+  commandAliases: ['bw'],
   botAdminOnly: true,
   shortDescription: 'Send a message as me.',
   usageExample: '}broadcast [channelId] Hello!',
