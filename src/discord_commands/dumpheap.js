@@ -14,7 +14,7 @@ try {
 * Write a heap dump to disk.
 */
 module.exports = {
-  commandAliases: ['}dumpheap'],
+  commandAliases: ['dumpheap'],
   botAdminOnly: true,
   shortDescription: 'Dump a snapshot of the heap to the disk, for debugging purposes.',
   usageExample: '}dumpheap outputfilename',

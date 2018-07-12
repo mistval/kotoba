@@ -9,7 +9,7 @@ const constants = require('./../common/constants.js');
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
 */
 module.exports = {
-  commandAliases: ['}restoresave'],
+  commandAliases: ['restoresave'],
   botAdminOnly: true,
   hidden: true,
   uniqueId: 'restoresave',

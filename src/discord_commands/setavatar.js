@@ -8,7 +8,7 @@ const { PublicError } = reload('monochrome-bot');
 * Syntax: }setavatar [http url]
 */
 module.exports = {
-  commandAliases: ['}setavatar'],
+  commandAliases: ['setavatar'],
   botAdminOnly: true,
   shortDescription: 'Change my avatar.',
   usageExample: '}setavatar http://url.com/image.png',

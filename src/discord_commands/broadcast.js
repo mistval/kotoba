@@ -7,7 +7,7 @@ const { PublicError } = reload('monochrome-bot');
 * Syntax: }broadcast [channel_id] [announcement]
 */
 module.exports = {
-  commandAliases: ['}broadcast', '}b'],
+  commandAliases: ['broadcast', 'b'],
   botAdminOnly: true,
   shortDescription: 'Send a message as me.',
   usageExample: '}broadcast [channelId] Hello!',
