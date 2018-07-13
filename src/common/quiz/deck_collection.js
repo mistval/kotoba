@@ -57,7 +57,7 @@ class DeckCollection {
 
   static async createFromSaveData(saveData) {
     const deckQueries = saveData.deckUniqueIds.map((uniqueId, index) => {
-      const mc = !!saveData.numberOfOptionsForDeck[index];
+      const mc = saveData.numberOfOptionsForDeck && !!saveData.numberOfOptionsForDeck[index];
       return { deckNameOrUniqueId: uniqueId, mc };
     });
 
