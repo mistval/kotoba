@@ -365,9 +365,8 @@ class AskQuestionAction extends Action {
         return card.createQuestion(card, session).then(question => {
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
             globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
+            throw err;
           });
-        }).catch(err => {
-          reject(err);
         }).then(shownQuestionId => {
           this.shownQuestionId_ = shownQuestionId;
           let timer = setTimeout(() => {
@@ -467,7 +466,7 @@ function chainActions(locationId, action) {
       globals.logger.logFailure(LOGGER_TITLE, 'Error', err);
       return chainActions(locationId, new EndQuizForErrorAction(session)).then(() => {
         return QUIZ_END_STATUS_ERROR;
-      });;
+      });
     });
   } catch (err) {
     globals.logger.logFailure(LOGGER_TITLE, 'Error in chainActions. Closing the session.', err);
