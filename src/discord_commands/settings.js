@@ -341,7 +341,7 @@ function tryCreateLocationErrorString(locationString, msg, setting) {
   }
 
   // If we're here, then we are treating the location string as a list of channels.
-  const channelIds = getChannelIds(locationString, msg);
+  const channelIds = getChannelIds(locationStringLowerCase, msg);
   if (typeof channelIds === typeof '') {
     return `I didn\'t find a channel in this server called **${channelIds}**. Please check that the channel exists and try again.`;
   }
@@ -401,16 +401,16 @@ async function tryApplyNewSetting(hook, monochrome, msg, setting, newUserFacingV
   let resultString;
 
   if (locationStringLowerCase === Location.ME) {
-    resultString = 'The new setting has been applied as a user setting. It will take effect whenever you use the command. The settings menu is now closed.';
+    resultString = 'The new setting has been applied as a user setting. It will take effect whenever you use the command. It will override server and channel settings. The settings menu is now closed.';
     setResults = [await settings.setUserSettingValue(setting.uniqueId, msg.author.id, newUserFacingValue)];
   } else if (locationStringLowerCase === Location.THIS_CHANNEL) {
-    resultString = 'The new setting has been applied to this channel. The settings menu is now closed.';
+    resultString = 'The new setting has been applied to this channel. It will override the server-wide setting in this channel, but will be overriden by user settings. The settings menu is now closed.';
     setResults = [await settings.setChannelSettingValue(setting.uniqueId, serverId, msg.channel.id, newUserFacingValue, userIsServerAdmin)];
   } else if (locationStringLowerCase === Location.THIS_SERVER) {
-    resultString = 'The new setting has been applied to all channels in this server. The settings menu is now closed.';
+    resultString = 'The new setting has been applied to all channels in this server. You can set this setting as a channel setting in specific channels where you want to override the server setting. The settings menu is now closed.';
     setResults = [await settings.setServerWideSettingValue(setting.uniqueId, serverId, newUserFacingValue, userIsServerAdmin)];
   } else {
-    resultString = `The new setting has been applied to the channels: ${locationString}. The settings menu is now closed.`;
+    resultString = `The new setting has been applied to the channels: ${locationString}. It will override the server-wide setting in those channels, but will be overriden by user settings. The settings menu is now closed.`;
     const channelStrings = locationString.split(/ +/);
     const channelIds = getChannelIds(locationString, msg);
 
