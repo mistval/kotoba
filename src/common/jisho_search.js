@@ -111,8 +111,12 @@ class ExamplesSource {
 
   getPageFromPreparedData(arg, pageIndex) {
     let content = arg.toDiscordBotContent(pageIndex);
+    if (!content) {
+      return undefined;
+    }
+
     let showPageArrows = false;
-    if ((content && content.pages > 1) || !this.isStandalone) {
+    if (content.pages > 1 || !this.isStandalone) {
       content = addFooter(this.authorName, content);
       showPageArrows = true;
     }
