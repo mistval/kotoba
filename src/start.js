@@ -17,7 +17,7 @@ function createBot() {
   let commandsDirectoryPath = __dirname + '/discord_commands';
   let messageProcessorsDirectoryPath = __dirname + '/discord_message_processors';
   let settingsFilePath = __dirname + '/user_settings.js';
-  let logsDirectoryPath = __dirname + '/../logs';
+  let logDirectoryPath = __dirname + '/../logs';
 
   let bot = new monochrome({
     botToken: config.token,
@@ -25,7 +25,7 @@ function createBot() {
     prefixes: ['k!'],
     commandsDirectoryPath: commandsDirectoryPath,
     messageProcessorsDirectoryPath: messageProcessorsDirectoryPath,
-    logsDirectoryPath: logsDirectoryPath,
+    logDirectoryPath: logDirectoryPath,
     settingsFilePath: settingsFilePath,
     discordBotsDotOrgAPIKey: config.discordBotsDotOrgAPIKey,
     botsDotDiscordDotPwAPIKey: config.botsDotDiscordDotPwAPIKey,
