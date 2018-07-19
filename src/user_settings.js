@@ -52,7 +52,6 @@ function validateRGBorRGBA(input) {
 }
 
 const descriptionForFont = {
-  'IPAMincho': 'An elegant font',
   'Yu Mincho': 'An elegant font',
   'Noto Sans CJK JP': 'A commonly used web font',
   'Meiryo': 'A commonly used print font',
