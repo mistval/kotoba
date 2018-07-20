@@ -31,7 +31,7 @@ function createBot() {
     botsDotDiscordDotPwAPIKey: config.botsDotDiscordDotPwAPIKey,
     useANSIColorsInLogFiles: true,
     serverAdminRoleName: 'kotoba',
-    genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.', // (optional) If a command errors and that error escapes into core code, this message will be sent to the channel.
+    genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.',
     missingPermissionsErrorMessage: 'I do not have permission to reply to that command in this channel. A server admin can give me the permissions I need in the channel settings. I need permission to **embed links**, **attach files**, and **add reactions**. If you do not want this command to be used in this channel, consider using **<prefix>settings** to disable it.',
     genericDMReply: 'Say **<prefix>help** to see my commands!',
     genericMentionReply: 'Hi <@user>, say **<prefix>help** to see my commands!',
@@ -50,34 +50,12 @@ function createBot() {
       '@ me for help!',
       'hard to get'
     ],
-    statusRotationIntervalInSeconds: 600, // (optional) How often to change status.
+    statusRotationIntervalInSeconds: 600,
     startWebServer: true,
     erisOptions: {
-      maxShards: 'auto'
+      maxShards: 'auto',
     }
   });
-
-  let shortDictionaryCommandDisabledServers = [
-    '116379774825267202',
-    '163547731137265664',
-  ];
-
-  let oldOnMessageCreate = bot.onMessageCreate_;
-  bot.onMessageCreate_ = msg => {
-    // EPIC HACK. This prevents the bot from responding to !j in specified servers, due to collision with
-    // other bots in those servers.
-    if (msg.content.startsWith('!j') && msg.channel.guild && ~shortDictionaryCommandDisabledServers.indexOf(msg.channel.guild.id)) {
-      return;
-    }
-    // EPIC HACK. This allows the !j command to keep working temporarly
-    // so that users have time before they need to either add ! as a prefix
-    // or start using k!.
-    if (msg.content.startsWith('!j') && bot.getPersistence().getPrefixesForServerId(msg.channel.guild ? msg.channel.guild.id : msg.channel.id).indexOf('!') === -1) {
-      msg.content = msg.content.replace('!j', 'k!j');
-      msg.wasShortJishoAlias = true;
-    }
-    oldOnMessageCreate.call(bot, msg);
-  }
 
   return bot;
 }
@@ -98,7 +76,7 @@ function checkApiKeys(bot) {
   }
 }
 
-function saveGlobalLogger(bot) {
+function saveGlobals(bot) {
   globals.logger = bot.getLogger();
   globals.persistence = bot.getPersistence();
 }
@@ -133,7 +111,7 @@ function startWebserver(monochrome) {
 
 const bot = createBot();
 checkApiKeys(bot);
-saveGlobalLogger(bot);
+saveGlobals(bot);
 bot.connect(bot);
 
 if (config.startWebServer) {
