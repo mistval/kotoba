@@ -23,6 +23,7 @@ function getRandomFont() {
 }
 
 function getFontNameForFontSetting(fontSetting) {
+  fontSetting = fontSetting || realFontNames[0];
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
