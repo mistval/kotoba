@@ -3,6 +3,7 @@ const reload = require('require-reload')(require);
 const Canvas = require('canvas');
 const fs = require('fs');
 const renderFurigana = require('render-furigana');
+const fontHelper = reload('./font_helper.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
@@ -11,11 +12,12 @@ const RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 const TOTAL_HORIZONTAL_PADDING_IN_PIXELS = LEFT_PADDING_IN_PIXELS + RIGHT_PADDING_IN_PIXELS;
 
-module.exports.render = function(text, textColor, backgroundColor, fontSize, font) {
+module.exports.render = function(text, textColor, backgroundColor, fontSize, fontSetting) {
   textColor = textColor || 'black';
   backgroundColor = backgroundColor || 'white';
   fontSize = fontSize || 106;
-  font = font || 'IPAMincho';
+  fontSetting = fontSetting || 'Yu Mincho';
+  const font = fontHelper.getFontNameForFontSetting(fontSetting);
   return new Promise((fulfill, reject) => {
     let canvas = new Canvas(0, 0);
     let ctx = canvas.getContext('2d');
@@ -40,7 +42,8 @@ module.exports.render = function(text, textColor, backgroundColor, fontSize, fon
   });
 };
 
-module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, textColor, backgroundColor, font) {
+module.exports.renderJapaneseWithFurigana = function(text, mainFontSize, textColor, backgroundColor, fontSetting) {
+  const font = fontHelper.getFontNameForFontSetting(fontSetting);
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
   const kanjiFont = `${mainFontSizeDivisibleBy2}px ${font}`;
