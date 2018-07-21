@@ -1,5 +1,6 @@
-const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
-const { execSync } = require('child_process');
+const reload = require('require-reload')(require);
+const { SettingsConverters, SettingsValidators } = reload('monochrome-bot');
+const fontHelper = reload('./common/font_helper.js');
 
 function isInRange(min, max, value) {
   return value >= min && value <= max;
@@ -51,22 +52,13 @@ function validateRGBorRGBA(input) {
   return validateRGBColor(input) || validateRGBAColor(input);
 }
 
-const descriptionForFont = {
-  'Yu Mincho': 'An elegant font',
-  'Noto Sans CJK JP': 'A commonly used web font',
-  'Meiryo': 'A commonly used print font',
-  'SetoFont': 'A cute handwritten font',
-  'KaiTi': 'A Chinese font',
-  'AoyagiKouzanFontT': 'A caligraphy brush font (kinda challenging)',
-};
-
 const fontForIndex = {};
-Object.keys(descriptionForFont).map((key, index) => {
+fontHelper.availableFontSettings.map((key, index) => {
   fontForIndex[index + 1] = key;
 });
 
 const fontDescriptionList = Object.keys(fontForIndex)
-  .map(index => `${index}. ${fontForIndex[index]} - ${descriptionForFont[fontForIndex[index]]}`)
+  .map(index => `${index}. ${fontForIndex[index]} - ${fontHelper.descriptionForFontSetting[fontForIndex[index]]}`)
   .join('\n');
 
 const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}`;
