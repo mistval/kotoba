@@ -16,6 +16,7 @@ const deckLoader = reload('./../common/quiz/deck_loader.js');
 const DeckCollection = reload('./../common/quiz/deck_collection.js');
 const Session = reload('./../common/quiz/session.js');
 const trimEmbed = reload('./../common/util/trim_embed.js');
+const audioConnectionManager = reload('./../discord/audio_connection_manager.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
@@ -352,7 +353,17 @@ class DiscordMessageSender {
     });
   }
 
+  stopAudio() {
+    const guild = this.commanderMessage.channel.guild;
+    if (!guild) {
+      return;
+    }
+
+    audioConnectionManager.stopPlaying(guild.id);
+  }
+
   showWrongAnswer(card, skipped) {
+    this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
     const correctAnswerText = correctAnswerFunction(card, {}, {});
@@ -389,6 +400,7 @@ class DiscordMessageSender {
     pointsForAnswer,
     scoreForUser,
   ) {
+    this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
 
     const correctAnswerFunction =
@@ -459,6 +471,13 @@ class DiscordMessageSender {
     if (question.bodyAsImageUri) {
       content.embed.image = { url: `${question.bodyAsImageUri}.png` };
     }
+    if (question.bodyAsAudioUri) {
+      const serverId = this.commanderMessage.channel.guild.id;
+      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(serverId);
+      content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
+      content.embed.description = question.instructions;
+      audioConnectionManager.play(serverId, question.bodyAsAudioUri);
+    }
 
     content = trimEmbed(content);
     if (!questionId) {
@@ -491,6 +510,14 @@ class DiscordMessageSender {
     );
   }
 
+  closeAudioConnection() {
+    const guild = this.commanderMessage.channel.guild;
+    if (!guild) {
+      return;
+    }
+    return audioConnectionManager.closeConnection(guild.id);
+  }
+
   notifyQuizEndedScoreLimitReached(
     quizName,
     scores,
@@ -500,6 +527,7 @@ class DiscordMessageSender {
     scoreLimit,
   ) {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -521,6 +549,7 @@ class DiscordMessageSender {
     cancelingUserId,
   ) {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -542,6 +571,7 @@ class DiscordMessageSender {
     wrongAnswers,
   ) {
     const description = `${wrongAnswers} questions in a row went unanswered. So I stopped!`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -556,6 +586,8 @@ class DiscordMessageSender {
 
   notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
+    this.closeAudioConnection();
+
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
@@ -581,6 +613,9 @@ class DiscordMessageSender {
     } else {
       description = 'No questions left in that deck. Impressive!';
     }
+
+    this.closeAudioConnection();
+
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
@@ -593,6 +628,8 @@ class DiscordMessageSender {
   }
 
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
+    this.closeAudioConnection();
+
     const description = 'I have to reboot for an update. I\'ll be back in 20 seconds :)\n再起動させていただきます。後２０秒で戻りますね :)';
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -999,6 +1036,7 @@ async function startNewQuiz(
   // 1. The game mode is not allowed in this channel.
   // 2. The deck contains internet cards, but internet decks are not allowed in this channel.
   // 3. A quiz is already in progress in this channel.
+  // 4. We need to establish a voice connection but cannot do so
 
   // 1. Check the game mode.
   throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
@@ -1006,13 +1044,24 @@ async function startNewQuiz(
   // 3. Check if a game is in progress
   throwIfSessionInProgressAtLocation(locationId, prefix);
 
+  // 4. Try to establish audio connection
+  const requiresAudioConnection = decks.some(deck => deck.requiresAudioConnection);
+  if (requiresAudioConnection) {
+    const voiceChannel = audioConnectionManager.getVoiceChannelForMessageAuthor(msg);
+    if (!voiceChannel) {
+      throw PublicError.createWithCustomPublicMessage('One of the decks you chose requires a voice connection. Please enter a voice channel and try again.', false, 'Invoker not in voice');
+    }
+    await audioConnectionManager.openConnection(voiceChannel);
+  }
+
   // Create the deck collection.
   const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode);
 
   // Create the session
   const settings = createSettings(serverSettings, gameMode, args);
   const session = Session.createNew(
-    locationId, invokerId,
+    locationId,
+    invokerId,
     deckCollection,
     messageSender,
     scoreScopeId,
