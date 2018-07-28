@@ -382,6 +382,8 @@ class AskQuestionAction extends Action {
         }).catch(err => {
           reject(err);
         });
+      }).catch(err => {
+        reject(err);
       });
     });
   }
