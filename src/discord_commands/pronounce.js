@@ -53,7 +53,7 @@ function underlineStringAtTrueIndices(string, indices) {
 }
 
 function createLHString(pronounceInfo) {
-  return pronounceInfo.pitchAccent.map(bool => (bool ? 'H' : 'L')).join('  ');
+  return pronounceInfo.pitchAccent.map(bool => (bool ? 'H' : 'L')).join('_');
 }
 
 function addPitchField(fields, pronounceInfo) {
