@@ -1,10 +1,12 @@
 'use strict'
 const reload = require('require-reload')(require);
+const path = require('path');
 const renderText = reload('./../render_text.js').render;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 const shuffleArray = reload('./../util/shuffle_array.js');
 
 const URI_MAX_LENGTH = 2048;
+const AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
 
 let BetterEnglishDefinitions;
 try {
@@ -118,6 +120,13 @@ function createTextQuestion(card) {
   return Promise.resolve(question);
 }
 
+function createAudioFileQuestion(card) {
+  const question = createQuestionCommon(card);
+  const audioFileUri = path.join(AUDIO_FILE_DIRECTORY, card.question);
+  question.bodyAsAudioUri = audioFileUri;
+  return Promise.resolve(question);
+}
+
 function createTextQuestionWithHint(card, quizState) {
   if (!quizState.textQuestionWithHintStrategyState) {
     quizState.textQuestionWithHintStrategyState = {};
@@ -169,6 +178,7 @@ module.exports.CreateQuestionStrategy = {
   IMAGE_URI: createImageUriQuestion,
   TEXT_WITH_HINT: createTextQuestionWithHint,
   TEXT: createTextQuestion,
+  AUDIO_FILE: createAudioFileQuestion,
 };
 
 /* SCORING STRATEGIES */
