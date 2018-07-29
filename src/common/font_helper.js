@@ -27,8 +27,10 @@ function getFontNameForFontSetting(fontSetting) {
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
+  if (realFontNames.indexOf(fontSetting) === -1) {
+    fontSetting = realFontNames[0];
+  }
 
-  assert(realFontNames.indexOf(fontSetting) !== -1, 'Requested font setting is unknown');
   return fontSetting;
 }
 
