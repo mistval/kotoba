@@ -92,6 +92,16 @@ function getVoiceChannelForMessageAuthor(msg) {
   return userVoiceChannel;
 }
 
+function userCanJoinAndTalk(voiceChannel, user) {
+  const permissions = voiceChannel.permissionsOf(user.id).json;
+  return permissions.voiceConnect && permissions.voiceSpeak;
+}
+
+function getChannelsCanTalkIn(guild, user) {
+  const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE);
+  return voiceChannels.filter(channel => userCanJoinAndTalk(channel, user));
+}
+
 module.exports = {
   play,
   stopPlaying,
@@ -100,4 +110,5 @@ module.exports = {
   hasConnection,
   getVoiceChannelForMessageAuthor,
   getConnectedVoiceChannelForServerId,
+  getChannelsCanTalkIn,
 };

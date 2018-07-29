@@ -17,6 +17,7 @@ const DeckCollection = reload('./../common/quiz/deck_collection.js');
 const Session = reload('./../common/quiz/session.js');
 const trimEmbed = reload('./../common/util/trim_embed.js');
 const audioConnectionManager = reload('./../discord/audio_connection_manager.js');
+const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
@@ -977,6 +978,7 @@ function getDeckNameAndModifierInformation(deckNames) {
 }
 
 async function startNewQuiz(
+  bot,
   msg,
   suffix,
   messageSender,
@@ -1049,7 +1051,13 @@ async function startNewQuiz(
   if (requiresAudioConnection) {
     const voiceChannel = audioConnectionManager.getVoiceChannelForMessageAuthor(msg);
     if (!voiceChannel) {
-      throw PublicError.createWithCustomPublicMessage('One of the decks you chose requires a voice connection. Please enter a voice channel and try again.', false, 'Invoker not in voice');
+      return throwPublicErrorFatal('Audio', 'One of the decks you chose requires a voice connection. Please enter a voice channel and try again.', 'User not in voice');
+    }
+
+    const channelsCanTalkIn = audioConnectionManager.getChannelsCanTalkIn(msg.channel.guild, bot.user);
+    if (channelsCanTalkIn.indexOf(voiceChannel) === -1) {
+      const channelsCanTalkInString = channelsCanTalkIn.map(channel => `**<#${channel.id}>**`).join(' ');
+      return throwPublicErrorFatal('Audio', `I either don\'t have permission to join your voice channel, or I don\'t have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
     }
     await audioConnectionManager.openConnection(voiceChannel);
   }
@@ -1129,11 +1137,11 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(erisBot, msg, suffix, monochrome, serverSettings, extension) {
+  async action(bot, msg, suffix, monochrome, serverSettings, extension) {
     let suffixReplaced = suffix.replace(/ *\+ */g, '+').replace(/ *-mc/g, '-mc').trim();
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
-    const messageSender = new DiscordMessageSender(erisBot, msg);
+    const messageSender = new DiscordMessageSender(bot, msg);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 
@@ -1171,6 +1179,7 @@ module.exports = {
 
     // Start operation
     return startNewQuiz(
+      bot,
       msg,
       suffixReplaced,
       messageSender,
