@@ -1049,6 +1049,14 @@ async function startNewQuiz(
   // 4. Try to establish audio connection
   const requiresAudioConnection = decks.some(deck => deck.requiresAudioConnection);
   if (requiresAudioConnection) {
+    if (!msg.channel.guild) {
+      return throwPublicErrorFatal('Audio', 'One of the decks you chose requires a voice connection, but I can\'t connect to voice in a DM. Please try again in a server.', 'No voice in DM');
+    }
+
+    if (audioConnectionManager.hasConnection(msg.channel.guild.id)) {
+      return throwPublicErrorFatal('Audio', 'I already have an active voice connection in this server. I can only connect to one voice channel per server.', 'Already in voice');
+    }
+
     const voiceChannel = audioConnectionManager.getVoiceChannelForMessageAuthor(msg);
     if (!voiceChannel) {
       return throwPublicErrorFatal('Audio', 'One of the decks you chose requires a voice connection. Please enter a voice channel and try again.', 'User not in voice');
