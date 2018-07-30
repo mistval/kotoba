@@ -1,18 +1,51 @@
 const assert = require('assert');
 const state = require('./../common/static_state.js');
 const globals = require('./../common/globals.js');
+const reload = require('require-reload')(require);
+
+const constants = reload('./../common/constants.js');
+const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
 
 const VOICE_CHANNEL_TYPE = 2;
+const EMBED_TITLE = 'Audio';
+const ERROR_LOG_TITLE = 'AUDIO';
+const INACTIVITY_TIMEOUT_IN_MS = 300000;
 
 state.audioConnectionManager = state.audioConnectionManager || {
   connectionInfoForServerId: {},
 };
 
-function hasConnection(serverId) {
+function hasConnectionInServer(serverId) {
   return !!state.audioConnectionManager.connectionInfoForServerId[serverId];
 }
 
-function subscribeEvents(voiceConnection) {
+function closeConnection(serverId) {
+  if (!hasConnectionInServer(serverId)) {
+    return;
+  }
+
+  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
+  clearTimeout(connectionInfo.timeoutHandle);
+  return connectionInfo.voiceChannel.leave();
+}
+
+function stopTimeout(serverId) {
+  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
+  clearTimeout(connectionInfo.timeoutHandle);
+}
+
+function startTimeout(serverId) {
+  stopTimeout(serverId);
+  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
+  connectionInfo.timeoutHandle = setTimeout(
+    () => {
+      globals.logger.logFailure(ERROR_LOG_TITLE, 'Closing voice connection due to inactivity.');
+      closeConnection(serverId);
+    },
+    INACTIVITY_TIMEOUT_IN_MS);
+}
+
+function subscribeEvents(voiceConnection, serverId) {
   voiceConnection.on('warn', message => {
     globals.logger.logFailure('VOICE', `Warning: ${message}`);
   });
@@ -22,36 +55,56 @@ function subscribeEvents(voiceConnection) {
   voiceConnection.on('connect', () => {
     globals.logger.logSuccess('VOICE', 'Connected');
   });
+  voiceConnection.on('end', () => {
+    startTimeout(serverId);
+  });
   voiceConnection.on('disconnect', () => {
     globals.logger.logFailure('VOICE', `Disconnected`);
     delete state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
   });
 }
 
-async function openConnection(voiceChannel) {
-  const serverId = voiceChannel.guild.id;
-  assert(!hasConnection(serverId));
+async function openConnectionFromMessage(bot, msg) {
+  if (!msg.channel.guild) {
+    return throwPublicErrorFatal(EMBED_TITLE, 'A voice connection is required for that, but I can\'t connect to voice in a DM. Please try again in a server.', 'No voice in DM');
+  }
+
+  const serverId = msg.channel.guild.id;
+  if (hasConnectionInServer(serverId)) {
+    return throwPublicErrorFatal(EMBED_TITLE, 'A voice connection is required for that, but I already have an active voice connection in this server. I can only have one voice connection per server.', 'Already in voice');
+  }
+
+  const voiceChannel = getVoiceChannelForUser(msg.channel.guild, msg.author.id)
+  if (!voiceChannel) {
+    return throwPublicErrorFatal('Audio', 'A voice connection is required for that. Please enter a voice channel and try again.', 'User not in voice');
+  }
+
+  const channelsCanTalkIn = getChannelsCanTalkIn(msg.channel.guild, bot.user);
+  if (channelsCanTalkIn.indexOf(voiceChannel) === -1) {
+    const channelsCanTalkInString = channelsCanTalkIn.map(channel => `**<#${channel.id}>**`).join(' ');
+    return throwPublicErrorFatal('Audio', `I either don\'t have permission to join your voice channel, or I don\'t have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
+  }
+
   const connectionInformation = {};
   state.audioConnectionManager.connectionInfoForServerId[serverId] = connectionInformation;
 
   try {
     const voiceConnection = await voiceChannel.join();
-    subscribeEvents(voiceConnection);
+    subscribeEvents(voiceConnection, serverId);
     connectionInformation.connection = voiceConnection;
     connectionInformation.voiceChannel = voiceChannel;
   } catch (err) {
     delete state.audioConnectionManager.connectionInfoForServerId[serverId];
     throw err;
   }
-}
 
-function closeConnection(serverId) {
-  if (!hasConnection(serverId)) {
-    return;
-  }
-
-  const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  return connectionInformation.voiceChannel.leave();
+  return msg.channel.createMessage({
+    embed: {
+      title: EMBED_TITLE,
+      description: `Connected to voice channel <#${voiceChannel.id}>`,
+      color: constants.EMBED_CORRECT_COLOR,
+    },
+  });
 }
 
 function stopPlaying(serverId) {
@@ -64,7 +117,8 @@ function stopPlaying(serverId) {
 }
 
 function play(serverId, resource) {
-  assert(hasConnection(serverId));
+  assert(hasConnectionInServer(serverId));
+  stopTimeout(serverId);
   const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
   const { connection } = connectionInformation;
   stopPlaying(serverId);
@@ -80,14 +134,9 @@ function getConnectedVoiceChannelForServerId(serverId) {
   return connectionInformation.voiceChannel;
 }
 
-function getVoiceChannelForMessageAuthor(msg) {
-  const guild = msg.channel.guild;
-  if (!guild) {
-    return undefined;
-  }
-
+function getVoiceChannelForUser(guild, userId) {
   const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE);
-  const userVoiceChannel = voiceChannels.find(channel => channel.voiceMembers.get(msg.author.id));
+  const userVoiceChannel = voiceChannels.find(channel => channel.voiceMembers.get(userId));
 
   return userVoiceChannel;
 }
@@ -106,9 +155,6 @@ module.exports = {
   play,
   stopPlaying,
   closeConnection,
-  openConnection,
-  hasConnection,
-  getVoiceChannelForMessageAuthor,
+  openConnectionFromMessage,
   getConnectedVoiceChannelForServerId,
-  getChannelsCanTalkIn,
 };

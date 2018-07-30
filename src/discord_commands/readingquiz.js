@@ -17,7 +17,6 @@ const DeckCollection = reload('./../common/quiz/deck_collection.js');
 const Session = reload('./../common/quiz/session.js');
 const trimEmbed = reload('./../common/util/trim_embed.js');
 const audioConnectionManager = reload('./../discord/audio_connection_manager.js');
-const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
@@ -1049,25 +1048,7 @@ async function startNewQuiz(
   // 4. Try to establish audio connection
   const requiresAudioConnection = decks.some(deck => deck.requiresAudioConnection);
   if (requiresAudioConnection) {
-    if (!msg.channel.guild) {
-      return throwPublicErrorFatal('Audio', 'One of the decks you chose requires a voice connection, but I can\'t connect to voice in a DM. Please try again in a server.', 'No voice in DM');
-    }
-
-    if (audioConnectionManager.hasConnection(msg.channel.guild.id)) {
-      return throwPublicErrorFatal('Audio', 'I already have an active voice connection in this server. I can only connect to one voice channel per server.', 'Already in voice');
-    }
-
-    const voiceChannel = audioConnectionManager.getVoiceChannelForMessageAuthor(msg);
-    if (!voiceChannel) {
-      return throwPublicErrorFatal('Audio', 'One of the decks you chose requires a voice connection. Please enter a voice channel and try again.', 'User not in voice');
-    }
-
-    const channelsCanTalkIn = audioConnectionManager.getChannelsCanTalkIn(msg.channel.guild, bot.user);
-    if (channelsCanTalkIn.indexOf(voiceChannel) === -1) {
-      const channelsCanTalkInString = channelsCanTalkIn.map(channel => `**<#${channel.id}>**`).join(' ');
-      return throwPublicErrorFatal('Audio', `I either don\'t have permission to join your voice channel, or I don\'t have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
-    }
-    await audioConnectionManager.openConnection(voiceChannel);
+    await audioConnectionManager.openConnectionFromMessage(bot, msg);
   }
 
   // Create the deck collection.
