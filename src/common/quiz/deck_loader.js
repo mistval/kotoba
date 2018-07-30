@@ -463,6 +463,7 @@ function createReviewDeck(unansweredCards) {
     uniqueId: 'REVIEW',
     name: 'Review Quiz',
     article: 'a',
+    requiresAudioConnection: unansweredCards.some(card => card.requiresAudioConnection),
     isInternetDeck: unansweredCards.some(card => card.isInternetCard),
     cards: createCardGetterFromInMemoryArray(deepCopy(unansweredCards)),
   };
