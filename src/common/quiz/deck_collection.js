@@ -72,6 +72,10 @@ class DeckCollection {
     return deckCollection;
   }
 
+  requiresAudioConnection() {
+    return this.decks.some(deck => deck.requiresAudioConnection);
+  }
+
   containsInternetCards() {
     return this.decks.some(deck => deck.isInternetDeck);
   }

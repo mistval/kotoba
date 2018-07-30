@@ -489,6 +489,7 @@ class DiscordMessageSender {
   }
 
   notifySaveSuccessful() {
+    this.closeAudioConnection();
     return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.prefix}quiz load' later to start it again.`));
   }
 
@@ -750,6 +751,7 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
 }
 
 async function load(
+  bot,
   msg,
   userFacingSaveIdArg,
   messageSender,
@@ -802,6 +804,10 @@ async function load(
 
   logger.logSuccess(LOGGER_TITLE, 'Loading save data');
   try {
+    if (session.requiresAudioConnection()) {
+      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+    }
+
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
   } catch (err) {
     await saveManager.restore(msg.author.id, memento);
@@ -1045,12 +1051,6 @@ async function startNewQuiz(
   // 3. Check if a game is in progress
   throwIfSessionInProgressAtLocation(locationId, prefix);
 
-  // 4. Try to establish audio connection
-  const requiresAudioConnection = decks.some(deck => deck.requiresAudioConnection);
-  if (requiresAudioConnection) {
-    await audioConnectionManager.openConnectionFromMessage(bot, msg);
-  }
-
   // Create the deck collection.
   const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode);
 
@@ -1065,6 +1065,11 @@ async function startNewQuiz(
     settings,
     gameMode,
   );
+
+  // 4. Try to establish audio connection
+  if (session.requiresAudioConnection()) {
+    await audioConnectionManager.openConnectionFromMessage(bot, msg);
+  }
 
   // 2. Check for internet cards
   throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
@@ -1153,7 +1158,7 @@ module.exports = {
 
     // Load operation
     if (suffixReplaced.startsWith('load')) {
-      return load(msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
+      return load(bot, msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
     }
 
     // Stop operation
