@@ -88,6 +88,10 @@ class SessionInformation {
     return session;
   }
 
+  requiresAudioConnection() {
+    return this.deckCollection_.requiresAudioConnection();
+  }
+
   containsInternetCards() {
     return this.deckCollection_.containsInternetCards();
   }
