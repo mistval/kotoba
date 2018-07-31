@@ -362,7 +362,7 @@ class DiscordMessageSender {
     audioConnectionManager.stopPlaying(guild.id);
   }
 
-  showWrongAnswer(card, skipped) {
+  showWrongAnswer(card, skipped, hardcore) {
     this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
@@ -383,7 +383,7 @@ class DiscordMessageSender {
       embed: {
         title: card.deckName,
         url: card.dictionaryLink,
-        description: skipped ? 'Question skipped!' : 'Time\'s up!',
+        description: skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!'),
         color: constants.EMBED_WRONG_COLOR,
         fields,
         footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\'.' },
@@ -992,6 +992,7 @@ async function startNewQuiz(
   serverSettings,
   isMastery,
   isConquest,
+  isHardcore,
 ) {
   let suffixReplaced = suffix;
 
@@ -1064,6 +1065,7 @@ async function startNewQuiz(
     scoreScopeId,
     settings,
     gameMode,
+    isHardcore,
   );
 
   // 4. Try to establish audio connection
@@ -1143,8 +1145,13 @@ module.exports = {
       || suffixReplaced.indexOf(MASTERY_NAME) !== -1;
     const isConquest = !isMastery
       && (extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
+    const isHardcore = suffixReplaced.indexOf('hardcore') !== -1;
 
-    suffixReplaced = suffixReplaced.replace(CONQUEST_NAME, '').replace(MASTERY_NAME, '').trim();
+    suffixReplaced = suffixReplaced
+      .replace(CONQUEST_NAME, '')
+      .replace(MASTERY_NAME, '')
+      .replace('hardcore', '')
+      .trim();
 
     // Delete operation
     if (suffixReplaced.startsWith('delete')) {
@@ -1182,6 +1189,7 @@ module.exports = {
       serverSettings,
       isMastery,
       isConquest,
+      isHardcore,
     );
   },
   canHandleExtension(extension) {
