@@ -60,6 +60,7 @@ function subscribeEvents(voiceConnection, serverId) {
   });
   voiceConnection.on('disconnect', () => {
     globals.logger.logFailure('VOICE', `Disconnected`);
+    stopTimeout(serverId);
     delete state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
   });
 }
