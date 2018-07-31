@@ -16,6 +16,7 @@ const deckLoader = reload('./../common/quiz/deck_loader.js');
 const DeckCollection = reload('./../common/quiz/deck_collection.js');
 const Session = reload('./../common/quiz/session.js');
 const trimEmbed = reload('./../common/util/trim_embed.js');
+const audioConnectionManager = reload('./../discord/audio_connection_manager.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
@@ -64,11 +65,17 @@ function getFinalAnswerLineForQuestionOnly(card) {
   return `[${card.question}](${card.dictionaryLink})`;
 }
 
+function getFinalAnswerLineForJpTestAudio(card) {
+  const uri = `http://japanesetest4you.com/mp3/${card.question}`
+  return `[${card.question}](${uri}) (${card.answer.join(', ')})`;
+}
+
 const FinalAnswerListElementStrategy = {
   QUESTION_AND_ANSWER_LINK_QUESTION: getFinalAnswerLineForQuestionAndAnswerLinkQuestion,
   QUESTION_AND_ANSWER_LINK_ANSWER: getFinalAnswerLineForQuestionAndAnswerLinkAnswer,
   ANSWER_ONLY: getFinalAnswerLineForAnswerOnly,
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
+  JPTEST_FOR_YOU_AUDIO_LINK: getFinalAnswerLineForJpTestAudio,
 };
 
 function truncateIntermediateAnswerString(str) {
@@ -352,7 +359,17 @@ class DiscordMessageSender {
     });
   }
 
-  showWrongAnswer(card, skipped) {
+  stopAudio() {
+    const guild = this.commanderMessage.channel.guild;
+    if (!guild) {
+      return;
+    }
+
+    audioConnectionManager.stopPlaying(guild.id);
+  }
+
+  showWrongAnswer(card, skipped, hardcore) {
+    this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
     const correctAnswerText = correctAnswerFunction(card, {}, {});
@@ -372,7 +389,7 @@ class DiscordMessageSender {
       embed: {
         title: card.deckName,
         url: card.dictionaryLink,
-        description: skipped ? 'Question skipped!' : 'Time\'s up!',
+        description: skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!'),
         color: constants.EMBED_WRONG_COLOR,
         fields,
         footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\'.' },
@@ -389,6 +406,7 @@ class DiscordMessageSender {
     pointsForAnswer,
     scoreForUser,
   ) {
+    this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
 
     const correctAnswerFunction =
@@ -459,6 +477,13 @@ class DiscordMessageSender {
     if (question.bodyAsImageUri) {
       content.embed.image = { url: `${question.bodyAsImageUri}.png` };
     }
+    if (question.bodyAsAudioUri) {
+      const serverId = this.commanderMessage.channel.guild.id;
+      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(serverId);
+      content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
+      content.embed.description = question.instructions;
+      audioConnectionManager.play(serverId, question.bodyAsAudioUri);
+    }
 
     content = trimEmbed(content);
     if (!questionId) {
@@ -470,6 +495,7 @@ class DiscordMessageSender {
   }
 
   notifySaveSuccessful() {
+    this.closeAudioConnection();
     return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.prefix}quiz load' later to start it again.`));
   }
 
@@ -491,6 +517,14 @@ class DiscordMessageSender {
     );
   }
 
+  closeAudioConnection() {
+    const guild = this.commanderMessage.channel.guild;
+    if (!guild) {
+      return;
+    }
+    return audioConnectionManager.closeConnection(guild.id);
+  }
+
   notifyQuizEndedScoreLimitReached(
     quizName,
     scores,
@@ -500,6 +534,7 @@ class DiscordMessageSender {
     scoreLimit,
   ) {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -521,6 +556,7 @@ class DiscordMessageSender {
     cancelingUserId,
   ) {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -542,6 +578,7 @@ class DiscordMessageSender {
     wrongAnswers,
   ) {
     const description = `${wrongAnswers} questions in a row went unanswered. So I stopped!`;
+    this.closeAudioConnection();
 
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -556,6 +593,8 @@ class DiscordMessageSender {
 
   notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
+    this.closeAudioConnection();
+
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
@@ -581,6 +620,9 @@ class DiscordMessageSender {
     } else {
       description = 'No questions left in that deck. Impressive!';
     }
+
+    this.closeAudioConnection();
+
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
@@ -593,6 +635,8 @@ class DiscordMessageSender {
   }
 
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
+    this.closeAudioConnection();
+
     const description = 'I have to reboot for an update. I\'ll be back in 20 seconds :)\n再起動させていただきます。後２０秒で戻りますね :)';
     return sendEndQuizMessages(
       this.commanderMessage,
@@ -713,6 +757,7 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
 }
 
 async function load(
+  bot,
   msg,
   userFacingSaveIdArg,
   messageSender,
@@ -765,6 +810,10 @@ async function load(
 
   logger.logSuccess(LOGGER_TITLE, 'Loading save data');
   try {
+    if (session.requiresAudioConnection()) {
+      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+    }
+
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
   } catch (err) {
     await saveManager.restore(msg.author.id, memento);
@@ -940,6 +989,7 @@ function getDeckNameAndModifierInformation(deckNames) {
 }
 
 async function startNewQuiz(
+  bot,
   msg,
   suffix,
   messageSender,
@@ -948,6 +998,7 @@ async function startNewQuiz(
   serverSettings,
   isMastery,
   isConquest,
+  isHardcore,
 ) {
   let suffixReplaced = suffix;
 
@@ -999,6 +1050,7 @@ async function startNewQuiz(
   // 1. The game mode is not allowed in this channel.
   // 2. The deck contains internet cards, but internet decks are not allowed in this channel.
   // 3. A quiz is already in progress in this channel.
+  // 4. We need to establish a voice connection but cannot do so
 
   // 1. Check the game mode.
   throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
@@ -1012,13 +1064,20 @@ async function startNewQuiz(
   // Create the session
   const settings = createSettings(serverSettings, gameMode, args);
   const session = Session.createNew(
-    locationId, invokerId,
+    locationId,
+    invokerId,
     deckCollection,
     messageSender,
     scoreScopeId,
     settings,
     gameMode,
+    isHardcore,
   );
+
+  // 4. Try to establish audio connection
+  if (session.requiresAudioConnection()) {
+    await audioConnectionManager.openConnectionFromMessage(bot, msg);
+  }
 
   // 2. Check for internet cards
   throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
@@ -1080,11 +1139,11 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(erisBot, msg, suffix, monochrome, serverSettings, extension) {
+  async action(bot, msg, suffix, monochrome, serverSettings, extension) {
     let suffixReplaced = suffix.replace(/ *\+ */g, '+').replace(/ *-mc/g, '-mc').trim();
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
-    const messageSender = new DiscordMessageSender(erisBot, msg);
+    const messageSender = new DiscordMessageSender(bot, msg);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 
@@ -1092,8 +1151,13 @@ module.exports = {
       || suffixReplaced.indexOf(MASTERY_NAME) !== -1;
     const isConquest = !isMastery
       && (extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
+    const isHardcore = suffixReplaced.indexOf('hardcore') !== -1;
 
-    suffixReplaced = suffixReplaced.replace(CONQUEST_NAME, '').replace(MASTERY_NAME, '').trim();
+    suffixReplaced = suffixReplaced
+      .replace(CONQUEST_NAME, '')
+      .replace(MASTERY_NAME, '')
+      .replace('hardcore', '')
+      .trim();
 
     // Delete operation
     if (suffixReplaced.startsWith('delete')) {
@@ -1107,7 +1171,7 @@ module.exports = {
 
     // Load operation
     if (suffixReplaced.startsWith('load')) {
-      return load(msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
+      return load(bot, msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
     }
 
     // Stop operation
@@ -1122,6 +1186,7 @@ module.exports = {
 
     // Start operation
     return startNewQuiz(
+      bot,
       msg,
       suffixReplaced,
       messageSender,
@@ -1130,6 +1195,7 @@ module.exports = {
       serverSettings,
       isMastery,
       isConquest,
+      isHardcore,
     );
   },
   canHandleExtension(extension) {

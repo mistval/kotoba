@@ -72,6 +72,10 @@ class DeckCollection {
     return deckCollection;
   }
 
+  requiresAudioConnection() {
+    return this.decks.some(deck => deck.requiresAudioConnection);
+  }
+
   containsInternetCards() {
     return this.decks.some(deck => deck.isInternetDeck);
   }
@@ -164,6 +168,7 @@ class DeckCollection {
     card.questionCreationStrategy = card.questionCreationStrategy || deck.questionCreationStrategy;
     card.preprocessingStrategy = card.preprocessingStrategy || deck.cardPreprocessingStrategy;
     card.answerTimeLimitStrategy = card.answerTimeLimitStrategy || deck.answerTimeLimitStrategy;
+    card.requiresAudioConnection = card.requiresAudioConnection || deck.requiresAudioConnection;
     card.fontSize = settings.fontSize;
     card.fontColor = settings.fontColor;
     card.backgroundColor = settings.backgroundColor;
