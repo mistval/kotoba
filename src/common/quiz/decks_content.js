@@ -4,9 +4,11 @@ const globals = require('./../globals.js');
 const constants = reload('./../constants.js');
 
 const categoryFields = [
-  {'name': 'JLPT Reading Decks', value: 'N5 N4 N3 N2 N1'},
+  {'name': 'JLPT Kanji Reading Decks', value: 'N5 N4 N3 N2 N1'},
+  {'name': 'JLPT Listening Decks (audio) (under construction)', value: 'LN2 LN1'},
+  {'name': 'Kanken Kanji Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
   {'name': 'JLPT Kanji Usage Decks', value: 'k_N5 k_N4 k_N3 k_N2 k_N1'},
-  {'name': 'Kanken Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
+  {'name': 'JLPT Grammar Decks (under construction)', value: 'gN5 gN4'},
   {'name': 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures stations tokyo countries places kirakira'},
   {'name': 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {'name': 'Kana Decks', value: 'hiragana katakana'},
