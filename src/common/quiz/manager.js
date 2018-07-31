@@ -222,14 +222,24 @@ class ShowAnswersAction extends Action {
           let scoresForUser = scores.getAggregateScoreForUser();
           let answersForUser = scores.getCurrentQuestionsAnswersForUser();
           let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
-          Promise.resolve(session.getMessageSender().outputQuestionScorers(
-            currentCard,
-            answerersInOrder,
-            answersForUser,
-            pointsForAnswer,
-            scoresForUser)).catch(err => {
-            globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoredboard.', err);
-          });
+          if (answerersInOrder.length > 0) {
+            Promise.resolve(session.getMessageSender().outputQuestionScorers(
+              currentCard,
+              answerersInOrder,
+              answersForUser,
+              pointsForAnswer,
+              scoresForUser)).catch(err => {
+              globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
+            });
+          } else {
+            Promise.resolve(session.getMessageSender().showWrongAnswer(
+              currentCard,
+              false,
+              true,
+            )).catch(err => {
+              globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
+            });
+          }
 
           if (scores.checkForWin()) {
             fulfill(new EndQuizScoreLimitReachedAction(session));
@@ -251,6 +261,21 @@ class ShowAnswersAction extends Action {
   }
 
   tryAcceptUserInput(userId, userName, input) {
+    const session = this.getSession_();
+    const card = session.getCurrentCard();
+    const oneAnswerPerPlayer = session.oneAnswerPerPlayer() || card.options;
+    if (oneAnswerPerPlayer && session.answerAttempters.indexOf(userId) !== -1) {
+      return false;
+    }
+
+    const inputAsInt = parseInt(input);
+    if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= options.length)) {
+      session.answerAttempters.push(userId);
+      if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
+        return this.getSession_().tryAcceptAnswer(userId, userName, input);
+      }
+    }
+
     return this.getSession_().tryAcceptAnswer(userId, userName, input);
   }
 }
@@ -288,6 +313,21 @@ class AskQuestionAction extends Action {
       return false;
     }
     let session = this.getSession_();
+    const card = session.getCurrentCard();
+    const oneAnswerPerPlayer = session.oneAnswerPerPlayer() || card.options;
+    if (oneAnswerPerPlayer && session.answerAttempters.indexOf(userId) !== -1) {
+      return false;
+    }
+
+    const inputAsInt = parseInt(input);
+    if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
+      session.answerAttempters.push(userId);
+      if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
+        const accepted = session.tryAcceptAnswer(userId, userName, input);
+        this.fulfill_(new ShowAnswersAction(session));
+        return accepted;
+      }
+    }
     let accepted = session.tryAcceptAnswer(userId, userName, input);
     if (accepted) {
       this.fulfill_(new ShowAnswersAction(session));
@@ -341,6 +381,7 @@ class AskQuestionAction extends Action {
 
   async do() {
     let session = this.getSession_();
+    session.answerAttempters = [];
     session.getScores().resetStateForNewCard();
     let nextCard = await session.getNextCard();
     if (!nextCard) {
