@@ -65,11 +65,17 @@ function getFinalAnswerLineForQuestionOnly(card) {
   return `[${card.question}](${card.dictionaryLink})`;
 }
 
+function getFinalAnswerLineForJpTestAudio(card) {
+  const uri = `http://japanesetest4you.com/mp3/${card.question}`
+  return `[${card.question}](${uri}) (${card.answer.join(', ')})`;
+}
+
 const FinalAnswerListElementStrategy = {
   QUESTION_AND_ANSWER_LINK_QUESTION: getFinalAnswerLineForQuestionAndAnswerLinkQuestion,
   QUESTION_AND_ANSWER_LINK_ANSWER: getFinalAnswerLineForQuestionAndAnswerLinkAnswer,
   ANSWER_ONLY: getFinalAnswerLineForAnswerOnly,
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
+  JPTEST_FOR_YOU_AUDIO_LINK: getFinalAnswerLineForJpTestAudio,
 };
 
 function truncateIntermediateAnswerString(str) {
