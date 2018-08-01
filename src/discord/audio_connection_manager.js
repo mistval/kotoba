@@ -105,6 +105,8 @@ async function openConnectionFromMessage(bot, msg) {
       description: `Connected to voice channel <#${voiceChannel.id}>`,
       color: constants.EMBED_CORRECT_COLOR,
     },
+  }).catch(err => {
+    // We're connected but couldn't say so. Swallow the error.
   });
 }
 
