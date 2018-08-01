@@ -174,7 +174,6 @@ class SessionInformation {
   }
 
   getOwnerId() {
-    assert(this.ownerId_, 'No owner id');
     return this.ownerId_;
   }
 
