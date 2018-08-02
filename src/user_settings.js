@@ -245,7 +245,7 @@ module.exports = [
     [
       {
         userFacingName: 'Display mode',
-        description: 'This setting controls the default display mode for dictionary results. **big** shows up to four results with up to three definitions each. **small** only shows one result with up to three definitions.',
+        description: 'This setting controls the default display mode for dictionary results. **big** shows multiple pages and multiple results per page. **small** only shows one result with up to three definitions.',
         allowedValuesDescription: 'Either **Big** or **Small**',
         uniqueId: 'dictionary/display_mode',
         serverOnly: false,
