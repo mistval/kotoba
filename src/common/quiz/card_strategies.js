@@ -10,7 +10,7 @@ const AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resource
 
 let BetterEnglishDefinitions;
 try {
-  BetterEnglishDefinitions = reload('./BetterEnglishDefinitions.js');
+  BetterEnglishDefinitions = reload('./../BetterEnglishDefinitions.js');
 } catch (err) {
   // The better english definitions are not available in the public repo. The crappy definitions will be used.
 }
