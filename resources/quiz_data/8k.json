@@ -13,7 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "compileImages": true,
-  "commentFieldName": "Comment",
+  "commentFieldName": "Meaning",
   "description": "漢検8級 questions provided by seg-fault#7170",
   "cards": [
     {
