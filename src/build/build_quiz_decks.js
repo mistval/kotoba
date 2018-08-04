@@ -113,6 +113,7 @@ async function build() {
 
       await diskArray.create(wordIDDeck.cards, wordIDDiskArrayDirectory);
       delete wordIDDeck.cards;
+      wordIDDeck.cardDiskArrayPath = wordIDDiskArrayDirectory;
       deckDataForDeckName[wordIDDeckName] = wordIDDeck;
     }
 
