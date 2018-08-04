@@ -4,9 +4,10 @@ const path = require('path');
 const renderText = reload('./../render_text.js').render;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 const shuffleArray = reload('./../util/shuffle_array.js');
+const forvoAudioCache = reload('./../forvo_cache.js');
 
 const URI_MAX_LENGTH = 2048;
-const AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
+const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
 
 let BetterEnglishDefinitions;
 try {
@@ -120,11 +121,20 @@ function createTextQuestion(card) {
   return Promise.resolve(question);
 }
 
-function createAudioFileQuestion(card) {
+function createJlptAudioFileQuestion(card) {
   const question = createQuestionCommon(card);
-  const audioFileUri = path.join(AUDIO_FILE_DIRECTORY, card.question);
+  const audioFileUri = path.join(JLPT_AUDIO_FILE_DIRECTORY, card.question);
   question.bodyAsAudioUri = audioFileUri;
   return Promise.resolve(question);
+}
+
+async function createForvoAudioFileQuestion(card) {
+  const question = createQuestionCommon(card);
+  const word = card.question;
+  const uris = await forvoAudioCache.getPronunciationClipsForWord(word);
+  question.bodyAsAudioUri = uris[Math.floor(Math.random() * uris.length)];
+
+  return question;
 }
 
 function createTextQuestionWithHint(card, quizState) {
@@ -178,7 +188,8 @@ module.exports.CreateQuestionStrategy = {
   IMAGE_URI: createImageUriQuestion,
   TEXT_WITH_HINT: createTextQuestionWithHint,
   TEXT: createTextQuestion,
-  AUDIO_FILE: createAudioFileQuestion,
+  JLPT_AUDIO_FILE: createJlptAudioFileQuestion,
+  FORVO_AUDIO_FILE: createForvoAudioFileQuestion,
 };
 
 /* SCORING STRATEGIES */
