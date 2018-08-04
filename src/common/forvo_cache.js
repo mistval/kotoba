@@ -4,7 +4,7 @@ const fs = require('fs');
 const request = require('request');
 const reload = require('require-reload')(require);
 
-const forvoSearch = reload('./forvo_search.js').search;
+const forvoSearch = reload('./forvo_search.js');
 
 const CACHE_KEY = 'FORVO CACHE';
 const AUDIO_DIRECTORY = path.resolve(__dirname, '..', '..', 'generated', 'forvo_audio');
@@ -15,7 +15,7 @@ if (!fs.existsSync(AUDIO_DIRECTORY)) {
 }
 
 function baseNamesToAbsolutePaths(baseNames) {
-  return basenames.map(basname => path.combine(AUDIO_DIRECTORY, basename));
+  return baseNames.map(basename => path.join(AUDIO_DIRECTORY, basename));
 }
 
 function forvoResponseDataToAudioUris(forvoResponseData) {
@@ -26,7 +26,7 @@ function forvoResponseDataToAudioUris(forvoResponseData) {
 function getStringCharCodeString(word) {
   let charCodeString = '';
   for (let i = 0; i < word.length; i += 1) {
-    const charCode = word.chartCodeAt(i);
+    const charCode = word.charCodeAt(i);
     charCodeString = `${charCodeString}${charCode}`;
   }
 
@@ -35,11 +35,11 @@ function getStringCharCodeString(word) {
 
 // Get the filenames we should save the audio clips to
 function getAudioClipDiskFilenames(word, numberOfUris) {
-  const charCodeString = getWordCharCodeString(word);
+  const charCodeString = getStringCharCodeString(word);
   const filenames = [];
 
   for (let i = 0; i < numberOfUris; i += 1) {
-    filenames.push(`${charCodeString}${i}`);
+    filenames.push(`${charCodeString}_${i}`);
   }
 
   return filenames;
@@ -49,6 +49,12 @@ function downloadAndSaveFile(webUri, diskFilePath) {
   // Apparently there's a memory leak in request-promise, so one should use
   // the regular request library when streaming the response.
   return new Promise((fulfill, reject) => {
+    const writeStream = fs.createWriteStream(diskFilePath);
+
+    writeStream.on('finish', () => {
+      fulfill();
+    });
+
     request({
       uri: webUri,
       json: false,
@@ -57,8 +63,7 @@ function downloadAndSaveFile(webUri, diskFilePath) {
       if (err) {
         reject(err)
       }
-      fulfill();
-    }).pipe(fs.createWriteStream(diskFilePath));
+    }).pipe(writeStream);
   });
 }
 
@@ -108,3 +113,7 @@ async function getPronunciationClipsForWord(word) {
 
   return audioClipDiskFilePaths;
 }
+
+module.exports = {
+  getPronunciationClipsForWord,
+};
