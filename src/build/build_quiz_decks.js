@@ -6,7 +6,7 @@ const WORD_ID_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const WORD_ID_DECK_NAME_REPLACE_STRING_TO = 'Word Identification Quiz';
 const WORD_ID_DECK_PREPROCESSING_STRATEGY = 'FORVO_AUDIO_CACHE';
 const WORD_ID_DECK_INSTRUCTIONS = 'Listen to the audio and type the word (in Kanji)';
-const WORD_ID_DECK_QUESTION_CREATION_STRATEGY = 'AUDIO_FILE';
+const WORD_ID_DECK_QUESTION_CREATION_STRATEGY = 'FORVO_AUDIO_FILE';
 const WORD_ID_DECK_DICTIONARY_LINK_STRATEGY = 'JISHO_ANSWER_WORD';
 const WORD_ID_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY = 'QUESTION_AND_ANSWER_LINK_ANSWER';
 const WORD_ID_DECK_NAME_SHORT_NAME_PREFIX = 'wd';
@@ -42,9 +42,15 @@ function createWordIdentificationDeckFromSource(sourceDeck) {
   sourceDeckCopy.instructions = WORD_ID_DECK_INSTRUCTIONS;
   sourceDeckCopy.questionCreationStrategy = WORD_ID_DECK_QUESTION_CREATION_STRATEGY;
   sourceDeckCopy.dictionaryLinkStrategy = WORD_ID_DECK_DICTIONARY_LINK_STRATEGY;
-  sourceDeckCopy.cardPreprocessingStrategy = WORD_ID_DECK_PREPROCESSING_STRATEGY;
   sourceDeckCopy.discordFinalAnswerListElementStrategy
     = WORD_ID_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY;
+  sourceDeckCopy.requiresAudioConnection = true;
+
+  sourceDeckCopy.cards.forEach(card => {
+    if (card) {
+      card.answer = [card.question];
+    }
+  });
 
   return sourceDeckCopy;
 }
@@ -90,8 +96,6 @@ async function build() {
     const deckName = fileName.replace('.json', '');
     const deckString = fs.readFileSync(getPathForQuizDeckFile(fileName), 'utf8');
     const deck = JSON.parse(deckString);
-    const { cards } = deck;
-    delete deck.cards;
 
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     deck.cardDiskArrayPath = diskArrayDirectory;
@@ -99,7 +103,7 @@ async function build() {
     // We creates the arrays in sequence instead of in parallel
     // because that way there's less memory pressure.
     // eslint-disable-next-line no-await-in-loop
-    await diskArray.create(cards, diskArrayDirectory);
+    await diskArray.create(deck.cards, diskArrayDirectory);
 
     // Create the corresponding word identification deck, if applicable
     if (wordIdentificationDeckSourceDeckNames.indexOf(deckName) !== -1) {
@@ -107,10 +111,12 @@ async function build() {
       const wordIDDeckName = `${WORD_ID_DECK_NAME_SHORT_NAME_PREFIX}${deckName}`;
       const wordIDDiskArrayDirectory = getDiskArrayDirectoryForDeckName(wordIDDeckName);
 
+      await diskArray.create(wordIDDeck.cards, wordIDDiskArrayDirectory);
+      delete wordIDDeck.cards;
       deckDataForDeckName[wordIDDeckName] = wordIDDeck;
-      await diskArray.create(cards, wordIDDiskArrayDirectory);
     }
 
+    delete deck.cards;
     deckDataForDeckName[deckName] = deck;
   }
 
