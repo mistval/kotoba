@@ -70,12 +70,19 @@ function getFinalAnswerLineForJpTestAudio(card) {
   return `[${card.question}](${uri}) (${card.answer.join(', ')})`;
 }
 
+function getFinalAnswerLineForForvoAudioLink(card) {
+  const answer = card.answer[0];
+  const uri = `https://forvo.com/word/${encodeURIComponent(answer)}/#ja`;
+  return `[${card.question}](${uri})`;
+}
+
 const FinalAnswerListElementStrategy = {
   QUESTION_AND_ANSWER_LINK_QUESTION: getFinalAnswerLineForQuestionAndAnswerLinkQuestion,
   QUESTION_AND_ANSWER_LINK_ANSWER: getFinalAnswerLineForQuestionAndAnswerLinkAnswer,
   ANSWER_ONLY: getFinalAnswerLineForAnswerOnly,
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
   JPTEST_FOR_YOU_AUDIO_LINK: getFinalAnswerLineForJpTestAudio,
+  FORVO_AUDIO_LINK: getFinalAnswerLineForForvoAudioLink,
 };
 
 function truncateIntermediateAnswerString(str) {
