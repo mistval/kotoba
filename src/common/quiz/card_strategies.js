@@ -125,6 +125,8 @@ function createJlptAudioFileQuestion(card) {
   const question = createQuestionCommon(card);
   const audioFileUri = path.join(JLPT_AUDIO_FILE_DIRECTORY, card.question);
   question.bodyAsAudioUri = audioFileUri;
+  question.audioRepeatCount = card.audioRepeatCount;
+  question.audioRepeatIntervalInMs = card.audioRepeatIntervalInMs;
   return Promise.resolve(question);
 }
 
@@ -133,6 +135,8 @@ async function createForvoAudioFileQuestion(card) {
   const word = card.question;
   const uris = await forvoAudioCache.getPronunciationClipsForWord(word);
   question.bodyAsAudioUri = uris[Math.floor(Math.random() * uris.length)];
+  question.audioRepeatCount = card.audioRepeatCount;
+  question.audioRepeatIntervalInMs = card.audioRepeatIntervalInMs;
 
   return question;
 }

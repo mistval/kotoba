@@ -496,7 +496,12 @@ class DiscordMessageSender {
       const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(serverId);
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
       content.embed.description = question.instructions;
-      audioConnectionManager.play(serverId, question.bodyAsAudioUri);
+      audioConnectionManager.play(
+        serverId,
+        question.bodyAsAudioUri,
+        question.audioRepeatCount,
+        question.audioRepeatIntervalInMs
+      );
     }
 
     content = trimEmbed(content);
