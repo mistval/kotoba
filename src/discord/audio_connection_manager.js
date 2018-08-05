@@ -56,6 +56,25 @@ function subscribeEvents(voiceConnection, serverId) {
     globals.logger.logSuccess('VOICE', 'Connected');
   });
   voiceConnection.on('end', () => {
+    const connectionInfo =
+      state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
+
+    if (connectionInfo && connectionInfo.audioRepeatCount > 1) {
+      clearTimeout(connectionInfo.repeatTimer);
+      connectionInfo.repeatTimer = setTimeout(() => {
+        try {
+          play(
+            voiceConnection.id,
+            connectionInfo.currentResource,
+            connectionInfo.audioRepeatCount - 1,
+            connectionInfo.audioRepeatIntervalInMs
+          );
+        } catch (err) {
+          logger.logFailure(LOGGER_TITLE, 'Failed to replay track', err);
+        }
+      },
+      connectionInfo.audioRepeatIntervalInMs);
+    }
     startTimeout(serverId);
   });
   voiceConnection.on('disconnect', () => {
@@ -115,16 +134,22 @@ function stopPlaying(serverId) {
   if (!connectionInformation) {
     return;
   }
-  const { connection } = connectionInformation;
+  const { connection, repeatTimer } = connectionInformation;
+  clearTimeout(repeatTimer);
   connection.stopPlaying();
 }
 
-function play(serverId, resource) {
+function play(serverId, resource, audioRepeatCount, audioRepeatIntervalInMs) {
+  const audioRepeatCountCoerced = audioRepeatCount || 1;
+  const audioRepeatIntervalInMsCoerced = audioRepeatIntervalInMs || 0;
   assert(hasConnectionInServer(serverId));
   stopTimeout(serverId);
   const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
   const { connection } = connectionInformation;
-  stopPlaying(serverId);
+  connectionInformation.audioRepeatCount = audioRepeatCount;
+  connectionInformation.audioRepeatIntervalInMs = audioRepeatIntervalInMs;
+  connectionInformation.currentResource = resource;
+
   return connection.play(resource);
 }
 

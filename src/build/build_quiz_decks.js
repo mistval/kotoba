@@ -44,6 +44,8 @@ function createWordIdentificationDeckFromSource(sourceDeck) {
   sourceDeckCopy.dictionaryLinkStrategy = WORD_ID_DECK_DICTIONARY_LINK_STRATEGY;
   sourceDeckCopy.discordFinalAnswerListElementStrategy
     = WORD_ID_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY;
+  sourceDeckCopy.audioRepeatCount = 3;
+  sourceDeckCopy.audioRepeatIntervalInMs = 0;
   sourceDeckCopy.requiresAudioConnection = true;
 
   sourceDeckCopy.cards.forEach(card => {
