@@ -9,7 +9,6 @@ const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
 const VOICE_CHANNEL_TYPE = 2;
 const EMBED_TITLE = 'Audio';
 const ERROR_LOG_TITLE = 'AUDIO';
-const INACTIVITY_TIMEOUT_IN_MS = 300000;
 
 state.audioConnectionManager = state.audioConnectionManager || {
   connectionInfoForServerId: {},
@@ -25,24 +24,7 @@ function closeConnection(serverId) {
   }
 
   const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  clearTimeout(connectionInfo.timeoutHandle);
   return connectionInfo.voiceChannel.leave();
-}
-
-function stopTimeout(serverId) {
-  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  clearTimeout(connectionInfo.timeoutHandle);
-}
-
-function startTimeout(serverId) {
-  stopTimeout(serverId);
-  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  connectionInfo.timeoutHandle = setTimeout(
-    () => {
-      globals.logger.logFailure(ERROR_LOG_TITLE, 'Closing voice connection due to inactivity.');
-      closeConnection(serverId);
-    },
-    INACTIVITY_TIMEOUT_IN_MS);
 }
 
 function subscribeEvents(voiceConnection, serverId) {
@@ -75,11 +57,9 @@ function subscribeEvents(voiceConnection, serverId) {
       },
       connectionInfo.audioRepeatIntervalInMs);
     }
-    startTimeout(serverId);
   });
   voiceConnection.on('disconnect', () => {
     globals.logger.logFailure('VOICE', `Disconnected`);
-    stopTimeout(serverId);
     delete state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
   });
 }
@@ -143,7 +123,6 @@ function play(serverId, resource, audioRepeatCount, audioRepeatIntervalInMs) {
   const audioRepeatCountCoerced = audioRepeatCount || 1;
   const audioRepeatIntervalInMsCoerced = audioRepeatIntervalInMs || 0;
   assert(hasConnectionInServer(serverId));
-  stopTimeout(serverId);
   const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
   const { connection } = connectionInformation;
   connectionInformation.audioRepeatCount = audioRepeatCount;
