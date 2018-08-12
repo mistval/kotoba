@@ -169,8 +169,6 @@ class DeckCollection {
     card.preprocessingStrategy = card.preprocessingStrategy || deck.cardPreprocessingStrategy;
     card.answerTimeLimitStrategy = card.answerTimeLimitStrategy || deck.answerTimeLimitStrategy;
     card.requiresAudioConnection = card.requiresAudioConnection || deck.requiresAudioConnection;
-    card.audioRepeatCount = card.audioRepeatCount || deck.audioRepeatCount;
-    card.audioRepeatIntervalInMs = card.audioRepeatIntervalInMs || deck.audioRepeatIntervalInMs;
     card.fontSize = settings.fontSize;
     card.fontColor = settings.fontColor;
     card.backgroundColor = settings.backgroundColor;
