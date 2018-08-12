@@ -9,12 +9,14 @@ if (!state.scoreManager) {
     scoresForLocationId: {},
     nameForUserId: {},
     scoreScopeIdForLocationId: {},
+    scoreMultipliersForLocationId: {},
   };
 }
 
 const scoresForLocationId = state.scoreManager.scoresForLocationId;
 const nameForUserId = state.scoreManager.nameForUserId;
 const scoreScopeIdForLocationId = state.scoreManager.scoreScopeIdForLocationId;
+const scoreMultipliersForLocationId = state.scoreManager.scoreMultipliersForLocationId;
 
 function registerUsernameForUserId(userId, userName) {
   nameForUserId[userId] = userName;
@@ -22,6 +24,12 @@ function registerUsernameForUserId(userId, userName) {
 
 function registerScoreScopeIdForLocationId(locationId, scoreScopeId) {
   scoreScopeIdForLocationId[locationId] = scoreScopeId;
+}
+
+function registerScoreMultiplier(locationId, userId, multiplyer) {
+  scoreMultipliersForLocationId[locationId] = scoreMultipliersForLocationId[locationId] || {};
+  const scoreMultiplierForUserId = scoreMultipliersForLocationId[locationId];
+  scoreMultiplierForUserId[userId] = multiplyer;
 }
 
 function checkUsernameRegisteredForUserId(userId) {
@@ -52,14 +60,27 @@ function addScore(locationId, userId, score) {
   scoreForUser[userId] += score;
 }
 
-function commitAndClearScores(locationId, deckId) {
-  let scoreForUserId = scoresForLocationId[locationId];
-  if (!scoreForUserId) {
-    return Promise.resolve();
-  }
+function getScoresForLocationId(locationId) {
+  const scoreMultiplierForUserId = scoreMultipliersForLocationId[locationId] || {};
+  const unmultipliedScoreForUserId = scoresForLocationId[locationId] || {};
+  const multipliedScoreForUserId = {};
+
+  Object.keys(unmultipliedScoreForUserId).forEach(userId => {
+    const multiplier = scoreMultiplierForUserId[userId] || 1;
+    const unmultipliedScore = unmultipliedScoreForUserId[userId];
+    const multipliedScore = Math.floor(unmultipliedScore * multiplier);
+    multipliedScoreForUserId[userId] = multipliedScore;
+  });
+
+  return multipliedScoreForUserId;
+}
+
+function commitAndClearScores(locationId) {
+  const scoreForUserId = getScoresForLocationId(locationId);
 
   checkScoreScopeIdRegisteredForLocationId(locationId);
   delete scoresForLocationId[locationId];
+  delete scoreMultipliersForLocationId[locationId];
 
   const scoreForDeckForUserId = {};
   Object.keys(scoreForUserId).forEach((userId) => {
@@ -75,14 +96,11 @@ function commitAndClearScores(locationId, deckId) {
   );
 }
 
-function getScoresForLocationId(locationId) {
-  return scoresForLocationId[locationId] || {};
-}
-
 module.exports = {
   addScore,
   commitAndClearScores,
   getScoresForLocationId,
   registerUsernameForUserId,
   registerScoreScopeIdForLocationId,
+  registerScoreMultiplier,
 };

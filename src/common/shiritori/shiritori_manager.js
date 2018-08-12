@@ -443,6 +443,7 @@ function verifySessionNotInProgress(locationId) {
 function startSession(session, scoreScopeId) {
   const locationId = session.getLocationId();
   scoreManager.registerScoreScopeIdForLocationId(locationId, scoreScopeId);
+  scoreManager.registerScoreMultiplier(locationId, session.getBotUserId(), session.getBotScoreMultiplier());
   verifySessionNotInProgress(locationId);
   setSessionForLocationId(session, locationId);
   scoreManager.registerUsernameForUserId(session.getBotUserId(), BOT_USER_NAME);

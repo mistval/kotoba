@@ -309,6 +309,7 @@ module.exports = {
     'shiritori/bot_turn_minimum_wait',
     'shiritori/bot_turn_maximum_wait',
     'shiritori/answer_time_limit',
+    'shiritori/bot_score_multiplier',
   ],
   action(erisBot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
@@ -326,12 +327,14 @@ module.exports = {
     const botTurnMinimumWaitInMs = serverSettings['shiritori/botturn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/botturn_maximum_wait'] * 1000);
     const answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
+    const botScoreMultipler = serverSettings['shiritori/bot_score_multiplier'];
 
     const settings = {
       answerTimeLimitInMs,
       botTurnMinimumWaitInMs,
       botTurnMaximumWaitInMs,
       removePlayerForRuleViolations,
+      botScoreMultipler,
     };
 
     const scoreScopeId = getScoreScopeIdForMessage(msg);
