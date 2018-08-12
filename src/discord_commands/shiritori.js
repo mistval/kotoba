@@ -324,8 +324,8 @@ module.exports = {
 
     const suffixLowerCase = suffix.toLowerCase();
     const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
-    const botTurnMinimumWaitInMs = serverSettings['shiritori/botturn_minimum_wait'] * 1000;
-    const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/botturn_maximum_wait'] * 1000);
+    const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
+    const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
     const answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
     const botScoreMultipler = serverSettings['shiritori/bot_score_multiplier'];
 
