@@ -37,27 +37,6 @@ function subscribeEvents(voiceConnection, serverId) {
   voiceConnection.on('connect', () => {
     globals.logger.logSuccess('VOICE', 'Connected');
   });
-  voiceConnection.on('end', () => {
-    const connectionInfo =
-      state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
-
-    if (connectionInfo && connectionInfo.audioRepeatCount > 1) {
-      clearTimeout(connectionInfo.repeatTimer);
-      connectionInfo.repeatTimer = setTimeout(() => {
-        try {
-          play(
-            voiceConnection.id,
-            connectionInfo.currentResource,
-            connectionInfo.audioRepeatCount - 1,
-            connectionInfo.audioRepeatIntervalInMs
-          );
-        } catch (err) {
-          logger.logFailure(LOGGER_TITLE, 'Failed to replay track', err);
-        }
-      },
-      connectionInfo.audioRepeatIntervalInMs);
-    }
-  });
   voiceConnection.on('disconnect', () => {
     globals.logger.logFailure('VOICE', `Disconnected`);
     delete state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
@@ -114,21 +93,15 @@ function stopPlaying(serverId) {
   if (!connectionInformation) {
     return;
   }
-  const { connection, repeatTimer } = connectionInformation;
-  clearTimeout(repeatTimer);
+  const { connection } = connectionInformation;
   connection.stopPlaying();
 }
 
-function play(serverId, resource, audioRepeatCount, audioRepeatIntervalInMs) {
-  const audioRepeatCountCoerced = audioRepeatCount || 1;
-  const audioRepeatIntervalInMsCoerced = audioRepeatIntervalInMs || 0;
+function play(serverId, resource) {
   assert(hasConnectionInServer(serverId));
   const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
   const { connection } = connectionInformation;
-  connectionInformation.audioRepeatCount = audioRepeatCount;
-  connectionInformation.audioRepeatIntervalInMs = audioRepeatIntervalInMs;
-  connectionInformation.currentResource = resource;
-
+  stopPlaying(serverId);
   return connection.play(resource);
 }
 
