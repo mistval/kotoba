@@ -42,6 +42,10 @@ class Session {
     return this.settings.botTurnMaximumWaitInMs;
   }
 
+  getBotScoreMultiplier() {
+    return this.settings.botScoreMultipler;
+  }
+
   getNameForUserId(userId) {
     return this.nameForUserId[userId];
   }
