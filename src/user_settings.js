@@ -261,6 +261,17 @@ module.exports = [
     children:
     [
       {
+        userFacingName: 'Bot score multiplier',
+        description: 'The bot\'s score is multiplied by this number to handicap it.',
+        allowedValuesDescription: 'A number between 0 and 1',
+        uniqueId: 'shiritori/bot_score_multiplier',
+        serverOnly: false,
+        defaultUserFacingValue: '.8',
+        convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.createRangeValidator(0, 1),
+      },
+      {
         userFacingName: 'Bot turn minimum wait',
         description: 'This setting controls the minimum amount of time (in seconds) that the bot will wait before giving its answer.',
         allowedValuesDescription: 'A number between 1 and 30',
