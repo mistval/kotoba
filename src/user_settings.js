@@ -266,7 +266,7 @@ module.exports = [
         allowedValuesDescription: 'A number between 0 and 1',
         uniqueId: 'shiritori/bot_score_multiplier',
         serverOnly: false,
-        defaultUserFacingValue: '.8',
+        defaultUserFacingValue: '.7',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0, 1),
