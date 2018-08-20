@@ -379,7 +379,7 @@ class DiscordMessageSender {
       return;
     }
 
-    audioConnectionManager.stopPlaying(guild.id);
+    audioConnectionManager.stopPlaying(this.bot, guild.id);
   }
 
   showWrongAnswer(card, skipped, hardcore) {
@@ -493,10 +493,10 @@ class DiscordMessageSender {
     }
     if (question.bodyAsAudioUri) {
       const serverId = this.commanderMessage.channel.guild.id;
-      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(serverId);
+      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(this.bot, serverId);
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
       content.embed.description = question.instructions;
-      audioConnectionManager.play(serverId, question.bodyAsAudioUri);
+      audioConnectionManager.play(this.bot, serverId, question.bodyAsAudioUri);
     }
 
     content = trimEmbed(content);
@@ -536,7 +536,7 @@ class DiscordMessageSender {
     if (!guild) {
       return;
     }
-    return audioConnectionManager.closeConnection(guild.id);
+    return audioConnectionManager.closeConnection(this.bot, guild.id);
   }
 
   notifyQuizEndedScoreLimitReached(
