@@ -1,5 +1,4 @@
 const assert = require('assert');
-const state = require('./../common/static_state.js');
 const globals = require('./../common/globals.js');
 const reload = require('require-reload')(require);
 
@@ -10,21 +9,27 @@ const VOICE_CHANNEL_TYPE = 2;
 const EMBED_TITLE = 'Audio';
 const ERROR_LOG_TITLE = 'AUDIO';
 
-state.audioConnectionManager = state.audioConnectionManager || {
-  connectionInfoForServerId: {},
-};
-
-function hasConnectionInServer(serverId) {
-  return !!state.audioConnectionManager.connectionInfoForServerId[serverId];
+function hasConnectionInServer(bot, serverId) {
+  return !!bot.voiceConnections.get(serverId);
 }
 
-function closeConnection(serverId) {
-  if (!hasConnectionInServer(serverId)) {
+function getVoiceChannel(bot, serverId) {
+  if (!hasConnectionInServer(bot, serverId)) {
+    return undefined;
+  }
+
+  const channelId = bot.voiceConnections.get(serverId).channelID;
+  const channel = bot.guilds.get(bot.channelGuildMap[channelId]).channels.get(channelId);
+
+  return channel;
+}
+
+function closeConnection(bot, serverId) {
+  if (!hasConnectionInServer(bot, serverId)) {
     return;
   }
 
-  const connectionInfo = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  return connectionInfo.voiceChannel.leave();
+  return getVoiceChannel(bot, serverId).leave();
 }
 
 function subscribeEvents(voiceConnection, serverId) {
@@ -39,7 +44,6 @@ function subscribeEvents(voiceConnection, serverId) {
   });
   voiceConnection.on('disconnect', () => {
     globals.logger.logFailure('VOICE', `Disconnected`);
-    delete state.audioConnectionManager.connectionInfoForServerId[voiceConnection.id];
   });
 }
 
@@ -49,7 +53,7 @@ async function openConnectionFromMessage(bot, msg) {
   }
 
   const serverId = msg.channel.guild.id;
-  if (hasConnectionInServer(serverId)) {
+  if (hasConnectionInServer(bot, serverId)) {
     return throwPublicErrorFatal(EMBED_TITLE, 'A voice connection is required for that, but I already have an active voice connection in this server. I can only have one voice connection per server.', 'Already in voice');
   }
 
@@ -64,18 +68,8 @@ async function openConnectionFromMessage(bot, msg) {
     return throwPublicErrorFatal('Audio', `I either don\'t have permission to join your voice channel, or I don\'t have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
   }
 
-  const connectionInformation = {};
-  state.audioConnectionManager.connectionInfoForServerId[serverId] = connectionInformation;
-
-  try {
-    const voiceConnection = await voiceChannel.join();
-    subscribeEvents(voiceConnection, serverId);
-    connectionInformation.connection = voiceConnection;
-    connectionInformation.voiceChannel = voiceChannel;
-  } catch (err) {
-    delete state.audioConnectionManager.connectionInfoForServerId[serverId];
-    throw err;
-  }
+  const voiceConnection = await voiceChannel.join();
+  subscribeEvents(voiceConnection, serverId);
 
   return msg.channel.createMessage({
     embed: {
@@ -88,30 +82,24 @@ async function openConnectionFromMessage(bot, msg) {
   });
 }
 
-function stopPlaying(serverId) {
-  const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  if (!connectionInformation) {
+function stopPlaying(bot, serverId) {
+  const voiceConnection = bot.voiceConnections.get(serverId);
+  if (!voiceConnection) {
     return;
   }
-  const { connection } = connectionInformation;
-  connection.stopPlaying();
+
+  voiceConnection.stopPlaying();
 }
 
-function play(serverId, resource) {
-  assert(hasConnectionInServer(serverId));
-  const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  const { connection } = connectionInformation;
-  stopPlaying(serverId);
-  return connection.play(resource);
+function play(bot, serverId, resource) {
+  assert(hasConnectionInServer(bot, serverId));
+  stopPlaying(bot, serverId);
+  const voiceConnection = bot.voiceConnections.get(serverId);
+  return voiceConnection.play(resource);
 }
 
-function getConnectedVoiceChannelForServerId(serverId) {
-  const connectionInformation = state.audioConnectionManager.connectionInfoForServerId[serverId];
-  if (!connectionInformation) {
-    return undefined;
-  }
-
-  return connectionInformation.voiceChannel;
+function getConnectedVoiceChannelForServerId(bot, serverId) {
+  return getVoiceChannel(bot, serverId);
 }
 
 function getVoiceChannelForUser(guild, userId) {
