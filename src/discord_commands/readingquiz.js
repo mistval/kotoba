@@ -267,7 +267,7 @@ const afterQuizMessages = [
     embed: {
       title: 'Listening quizzes',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'Try my new JLPT listening quizzes: LN1 and LN2. More to come.',
+      description: 'Try my new JLPT listening quizzes: LN1, LN2, LN3. LN4 and LN5 are on the way.',
     },
   },
 ];
