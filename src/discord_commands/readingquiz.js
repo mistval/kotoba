@@ -1175,6 +1175,11 @@ module.exports = {
 
     // Delete operation
     if (suffixReplaced.startsWith('delete')) {
+      const searchTerm = suffixReplaced.split(' ')[1];
+      if (!searchTerm) {
+        const message = 'Say **k!quiz delete deckname** to delete a custom quiz deck.';
+        throw PublicError.createWithCustomPublicMessage(message, false, 'No deck name provided');
+      }
       return deleteInternetDeck(msg, suffixReplaced.split(' ')[1], msg.author.id);
     }
 
