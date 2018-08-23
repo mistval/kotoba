@@ -361,6 +361,7 @@ async function deleteInternetDeck(searchTerm, deletingUserId) {
   let returnStatus;
 
   await globals.persistence.editGlobalData((data) => {
+    data.communityDecks = data.communityDecks || {};
     const foundRow = data.communityDecks[searchTerm];
     if (!foundRow) {
       returnStatus = DeletionStatus.DECK_NOT_FOUND;
