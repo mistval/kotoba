@@ -853,7 +853,7 @@ async function deleteInternetDeck(msg, searchTerm, userId) {
   if (deletionResult === deckLoader.DeletionStatus.DELETED) {
     return msg.channel.createMessage('That deck was successfully deleted.', null, msg);
   } else if (deletionResult === deckLoader.DeletionStatus.DECK_NOT_FOUND) {
-    return msg.channel.createMessage(`I didn't find a deck called ${searchTerm}. Did you type it wrong or has it already been deleted?'`, null, msg);
+    return msg.channel.createMessage(`I didn't find a deck called ${searchTerm}. Did you type it wrong or has it already been deleted?`, null, msg);
   } else if (deletionResult === deckLoader.DeletionStatus.USER_NOT_OWNER) {
     return msg.channel.createMessage('You can\'t delete that deck because you didn\'t create it.', null, msg);
   }
