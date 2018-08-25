@@ -19,9 +19,7 @@ function createBot() {
   let settingsFilePath = __dirname + '/user_settings.js';
   let logDirectoryPath = __dirname + '/../logs';
 
-  let bot = new monochrome({
-    botToken: config.token,
-    botAdminIds: config.adminIds,
+  let options = {
     prefixes: ['k!'],
     commandsDirectoryPath: commandsDirectoryPath,
     messageProcessorsDirectoryPath: messageProcessorsDirectoryPath,
@@ -55,7 +53,11 @@ function createBot() {
     erisOptions: {
       maxShards: 'auto',
     }
-  });
+  };
+
+  options = Object.assign(options, config);
+
+  let bot = new monochrome(options);
 
   return bot;
 }
