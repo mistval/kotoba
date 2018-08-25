@@ -25,7 +25,14 @@ npm run build
 ```
 
 ## Configuration
-For the bot to run, you must add your bot token to ./config.json.
+You must create a file in the root directory called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
+
+```json
+{
+  "botToken": "your_bot_token_here",
+  "botAdminIds": ["your_user_id_here"]
+}
+```
 
 Optionally, add API keys to ./api_keys.js. Some commands require API keys to work.
 
@@ -62,8 +69,6 @@ k!deconjugate (aliases: k!d)
     # Deconjugate a Japanese verb. Example: k!deconjugate 食べさせられたかった
 k!translate (aliases: k!t)
     # Use Google Translate to translate text. Example: k!translate 吾輩は猫である
-k!weblio (aliases: k!w)
-    # Search the Weblio Japanese dictionary for a word or phrase. Example: k!weblio 少し
 k!jukebox
     # I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link.
 k!invite
