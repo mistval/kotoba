@@ -28,6 +28,17 @@ function throwPublicError(publicMessage, logMessage) {
   return throwPublicErrorInfo('Translate', publicMessage, logMessage);
 }
 
+function replaceMentionsWithUsernames(str, msg) {
+  const mentions = msg.mentions;
+  let replacedString = str;
+  mentions.forEach((mention) => {
+    replacedString = replacedString
+      .replace(new RegExp(`<@!?${mention.id}>`, 'g'), mention.username);
+  });
+
+  return replacedString;
+}
+
 module.exports = {
   commandAliases: ['translate', 'trans', 'gt', 't'],
   aliasesForHelp: ['translate', 't'],
@@ -93,8 +104,10 @@ module.exports = {
       return throwPublicError(errorMessage, 'No suffix');
     }
 
+    const mentionReplacedSuffix = replaceMentionsWithUsernames(suffix, msg);
+
     if (!secondLanguageCode) {
-      let detectedLanguageCode = await googleTranslate.detectLanguage(suffix);
+      let detectedLanguageCode = await googleTranslate.detectLanguage(mentionReplacedSuffix);
 
       if (detectedLanguageCode === 'und' || !googleTranslate.getPrettyLanguageForLanguageCode(detectedLanguageCode)) {
         detectedLanguageCode = 'en';
@@ -119,7 +132,7 @@ module.exports = {
     }
 
     return translateQuery(
-      suffix,
+      mentionReplacedSuffix,
       firstLanguageCode,
       secondLanguageCode,
       googleTranslate.translate,
