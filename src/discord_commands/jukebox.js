@@ -1,6 +1,5 @@
 const reload = require('require-reload')(require);
 const YoutubeApi = reload('./../common/youtube_api_utils.js');
-const API_KEY = reload('./../../api_keys.js').YOUTUBE;
 const { PublicError } = reload('monochrome-bot');
 const retryPromise = reload('./../common/util/retry_promise.js');
 
@@ -16,7 +15,7 @@ module.exports = {
   initialize(monochrome) {
     const logger = monochrome.getLogger();
 
-    if (API_KEY) {
+    if (YoutubeApi.hasApiKey()) {
       retryPromise(() => YoutubeApi.getAllLinksInPlaylist('PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ'), 5).then((links) => {
         videoUris = links;
         logger.logSuccess('YOUTUBE', 'Track URIs loaded');
@@ -33,7 +32,8 @@ module.exports = {
     }
     const random = Math.floor(Math.random() * videoUris.length);
     const link = videoUris[random];
-    msg.channel.createMessage(link, null, msg);
-    logger.logSuccess('YOUTUBE', `Sent link: ${link}`);
+
+    logger.logSuccess('YOUTUBE', `Sending link: ${link}`);
+    return msg.channel.createMessage(link, null, msg);
   },
 };

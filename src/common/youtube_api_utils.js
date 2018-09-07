@@ -4,6 +4,10 @@ const request = require('request-promise');
 
 const API_KEY = reload('./../../api_keys.js').YOUTUBE;
 
+function hasApiKey() {
+  return !!API_KEY;
+}
+
 function addLinksFromPlaylistData(data, inputArray) {
   const resultArray = inputArray.slice();
   data.items.forEach((item) => {
@@ -42,4 +46,5 @@ async function getAllLinksInPlaylist(playlistId, pageToken) {
 
 module.exports = {
   getAllLinksInPlaylist,
+  hasApiKey,
 };
