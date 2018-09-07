@@ -28,7 +28,7 @@ module.exports = {
 
       const dataUri = `data:image/${response.headers['content-type']};base64,${Buffer.from(response.body).toString('base64')}`;
       await erisBot.editSelf({ avatar: dataUri });
-      return await msg.channel.createMessage('Avatar updated!');
+      return msg.channel.createMessage('Avatar updated!');
     } catch (err) {
       throw PublicError.createWithCustomPublicMessage('Error updating avatar, check the logs for error info.', false, '', err);
     }
