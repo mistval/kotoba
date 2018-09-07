@@ -1,4 +1,3 @@
-
 const webQuiz = require('./../webserver/quiz.js');
 
 /**
@@ -13,6 +12,6 @@ module.exports = {
   hidden: true,
   uniqueId: 'broadcastweb',
   action(erisBot, msg, suffix) {
-    webQuiz.broadcast(suffix);
+    return webQuiz.broadcast(suffix);
   },
 };
