@@ -1153,7 +1153,7 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(bot, msg, suffix, monochrome, serverSettings, extension) {
+  async action(bot, msg, suffix, monochrome, serverSettings) {
     let suffixReplaced = suffix.replace(/ *\+ */g, '+').replace(/ *-mc/g, '-mc').trim();
     suffixReplaced = suffixReplaced.toLowerCase();
     const locationId = msg.channel.id;
@@ -1161,10 +1161,10 @@ module.exports = {
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 
-    const isMastery = extension === MASTERY_EXTENSION
+    const isMastery = msg.extension === MASTERY_EXTENSION
       || suffixReplaced.indexOf(MASTERY_NAME) !== -1;
     const isConquest = !isMastery
-      && (extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
+      && (msg.extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
     const isHardcore = suffixReplaced.indexOf('hardcore') !== -1;
 
     suffixReplaced = suffixReplaced
