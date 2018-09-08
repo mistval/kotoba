@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+const assert = require('assert');
 
 const translateQuery = reload('./../common/translate_query.js');
 const googleTranslate = reload('./../common/google_translate_utils.js');
@@ -39,6 +40,92 @@ function replaceMentionsWithUsernames(str, msg) {
   return replacedString;
 }
 
+function getPrettyLanguageNamesForLanguageCodes(languageCodes, prefix) {
+  return languageCodes.map((languageCode) => {
+    if (googleTranslate.getLanguageCodeForPrettyLanguage(languageCode)) {
+      // The language code is actually a pretty language name, return it as is.
+      return languageCode;
+    }
+
+    const prettyLanguageName = googleTranslate.getPrettyLanguageForLanguageCode(languageCode);
+
+    if (!prettyLanguageName) {
+      return throwPublicError(createUnknownLanguageCodeString(languageCode, prefix), 'Unknown language');
+    }
+
+    return prettyLanguageName;
+  });
+}
+
+function getLanguageCodesFromExtension(extension) {
+  if (!extension || extension === '-') {
+    return [];
+  }
+
+  const languagePart = extension.replace('-', '');
+  let languages = languagePart.split('>').slice(0, 2);
+
+  return languages;
+}
+
+function respondNoSuffix(msg) {
+  if (!msg.extension || msg.extension === '-') {
+    return throwPublicError(`Say **${msg.prefix}translate [text]** to translate text. For example: **${msg.prefix}translate 私は子猫です**. Say **${msg.prefix}help translate** for more help.`, 'No suffix');
+  }
+
+  const languageCodes = getLanguageCodesFromExtension(msg.extension);
+  const prettyLanguageNames = getPrettyLanguageNamesForLanguageCodes(languageCodes, msg.prefix);
+
+  let errorMessage = '';
+
+  if (prettyLanguageNames[0] && prettyLanguageNames[1]) {
+    errorMessage = `Say **${msg.prefix}translate-${languageCodes[0]}>${languageCodes[1]} yourtexthere** to translate text from ${prettyLanguageNames[0]} to ${prettyLanguageNames[1]}.`;
+  } else if (prettyLanguageNames[0]) {
+    errorMessage = `Say **${msg.prefix}translate-${languageCodes[0]} yourtexthere** to translate text to or from ${prettyLanguageNames[0]}.`;
+  } else {
+    assert(false, 'Unexpected branch');
+  }
+
+  return throwPublicError(errorMessage, 'No suffix');
+}
+
+async function coerceLanguageCodes(languageCodes, text) {
+  // There may be 0, 1, or 2 provided language codes.
+  // They must all be valid.
+  assert(languageCodes.length < 3, 'More language codes than expected');
+
+  let [coercedLanguageCodeFrom, coercedLanguageCodeTo] = languageCodes;
+
+  if (!coercedLanguageCodeTo) {
+    const detectedLanguageCode = await googleTranslate.detectLanguage(text);
+    let coercedDetectedLanguageCode = detectedLanguageCode;
+
+    if (detectedLanguageCode === 'und' || !googleTranslate.getPrettyLanguageForLanguageCode(detectedLanguageCode)) {
+      coercedDetectedLanguageCode = 'en';
+    } else if ((detectedLanguageCode === 'zh-CN' || detectedLanguageCode === 'zh-TW') && text.length < 10) {
+      // For small inputs, force to Japanese if Chinese is detected.
+      // This prevents things like 車 from being detected as Chinese.
+      coercedDetectedLanguageCode = 'ja';
+    }
+
+    if (languageCodes[0] !== detectedLanguageCode) {
+      coercedLanguageCodeTo = languageCodes[0];
+      coercedLanguageCodeFrom = coercedDetectedLanguageCode;
+    }
+
+    if (!coercedLanguageCodeTo) {
+      if (coercedLanguageCodeFrom === 'en') {
+        coercedLanguageCodeTo = 'ja';
+      } else {
+        coercedLanguageCodeTo = 'en';
+      }
+    }
+  }
+
+  assert(coercedLanguageCodeFrom && coercedLanguageCodeTo, 'Should result in two language codes');
+  return [coercedLanguageCodeFrom, coercedLanguageCodeTo];
+}
+
 module.exports = {
   commandAliases: ['translate', 'trans', 'gt', 't'],
   aliasesForHelp: ['translate', 't'],
@@ -48,93 +135,19 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: '<prefix>translate 吾輩は猫である',
-  action: async function action(erisBot, msg, suffix, monochrome, settings, extension) {
-    if (!suffix && (!extension || extension === '-')) {
-      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
-      return throwPublicError(`Say **${prefix}translate [text]** to translate text. For example: **${prefix}translate 私は子猫です**. Say **${prefix}help translate** for more help.`, 'No suffix');
-    }
-
-    let firstLanguageCode;
-    let secondLanguageCode;
-
-    if (extension) {
-      const languagePart = extension.replace('-', '');
-      let languages = languagePart.split('/');
-
-      if (languagePart.indexOf('>') !== -1) {
-        languages = languagePart.split('>');
-      }
-
-      [firstLanguageCode, secondLanguageCode] = languages;
-    }
-
-    // In case the user specified pretty language names instead of language codes,
-    // convert those to language codes.
-    firstLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(firstLanguageCode)
-      || firstLanguageCode;
-    secondLanguageCode = googleTranslate.getLanguageCodeForPrettyLanguage(secondLanguageCode)
-      || secondLanguageCode;
-
-    const firstLanguagePretty =
-      googleTranslate.getPrettyLanguageForLanguageCode(firstLanguageCode);
-    const secondLanguagePretty =
-      googleTranslate.getPrettyLanguageForLanguageCode(secondLanguageCode);
-
-   const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
-
-    // If we couldn't find a pretty language corresponding to the language code, we don't
-    // know that language. Error.
-    if (!secondLanguagePretty && secondLanguageCode) {
-      return throwPublicError(createUnknownLanguageCodeString(secondLanguageCode, prefix), 'Unknown language');
-    }
-
-    if (!firstLanguagePretty && firstLanguageCode) {
-      return throwPublicError(createUnknownLanguageCodeString(firstLanguageCode, prefix), 'Unknown language');
-    }
-
+  action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (!suffix) {
-      let errorMessage;
-
-      if (firstLanguagePretty && secondLanguagePretty) {
-        errorMessage = `Say **${prefix}translate-${firstLanguageCode}>${secondLanguageCode} yourtexthere** to translate text from ${firstLanguagePretty} to ${secondLanguagePretty}.`;
-      } else if (firstLanguagePretty) {
-        errorMessage = `Say **${prefix}translate-${firstLanguageCode} yourtexthere** to translate text to or from ${firstLanguagePretty}.`;
-      }
-
-      return throwPublicError(errorMessage, 'No suffix');
+      return respondNoSuffix(msg);
     }
 
     const mentionReplacedSuffix = replaceMentionsWithUsernames(suffix, msg);
-
-    if (!secondLanguageCode) {
-      let detectedLanguageCode = await googleTranslate.detectLanguage(mentionReplacedSuffix);
-
-      if (detectedLanguageCode === 'und' || !googleTranslate.getPrettyLanguageForLanguageCode(detectedLanguageCode)) {
-        detectedLanguageCode = 'en';
-      }
-
-      if (detectedLanguageCode === 'zh-CN' || detectedLanguageCode === 'zh-TW') {
-        detectedLanguageCode = 'ja';
-      }
-
-      if (firstLanguageCode !== detectedLanguageCode) {
-        secondLanguageCode = firstLanguageCode;
-        firstLanguageCode = detectedLanguageCode;
-      }
-
-      if (!secondLanguageCode) {
-        if (firstLanguageCode === 'en') {
-          secondLanguageCode = 'ja';
-        } else {
-          secondLanguageCode = 'en';
-        }
-      }
-    }
+    const languageCodes = getLanguageCodesFromExtension(msg.extension);
+    const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(languageCodes, suffix);
 
     return translateQuery(
       mentionReplacedSuffix,
-      firstLanguageCode,
-      secondLanguageCode,
+      languageCodeFrom,
+      languageCodeTo,
       googleTranslate.translate,
       erisBot,
       msg,
