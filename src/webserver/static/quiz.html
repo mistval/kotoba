@@ -91,6 +91,7 @@
       border: 1px solid #aaa;
       display: table;
       margin-right: 1.4em;
+      margin-bottom: 1.4em;
       padding: 20px;
       width: auto;
     }
@@ -126,13 +127,14 @@
             <li><a href="#scorelimit">1 Score Limit</a></li>
             <li><a href="#questiondelay">2 Question Delay</a></li>
             <li><a href="#timelimit">3 Time Limit</a></li>
-            <li><a href="#savingandloading">4 Saving and Loading</a></li>
-            <li><a href="#conquestmode">5 Conquest Mode</a></li>
-            <li><a href="#fonts">6 Fonts</a></li>
-            <li><a href="#mixingdecks">7 Mixing Decks</a></li>
-            <li><a href="#questionrange">8 Question Range</a></li>
-            <li><a href="#multiplechoice">9 Multiple Choice</a></li>
-            <li><a href="#importcustomdecks">10 Import Custom Decks</a></li>
+            <li><a href="#reviewing">4 Reviewing</a></li>
+            <li><a href="#savingandloading">5 Saving and Loading</a></li>
+            <li><a href="#conquestmode">6 Conquest Mode</a></li>
+            <li><a href="#fonts">7 Fonts</a></li>
+            <li><a href="#mixingdecks">8 Mixing Decks</a></li>
+            <li><a href="#questionrange">9 Question Range</a></li>
+            <li><a href="#multiplechoice">10 Multiple Choice</a></li>
+            <li><a href="#importcustomdecks">11 Import Custom Decks</a></li>
           </ul>
         </div>
         <div class="section" id="scorelimit">
@@ -150,38 +152,43 @@
           <hr>
           The amount of time that you have to answer each question can be configured by specifying a number in seconds after the question delay. For example: <span class="example">k!quiz N1 20 1 10</span> for a JLPT N1 quiz with a score limit of 20, a delay of 1 second in between questions, and a time limit of 10 seconds to answer each question. For conquest and inferno mode, omit the score limit, for example: <span class="example">k!quiz-conquest N1 1 10</span>. This setting can also be set with the <span class="example">k!settings</span> command.
         </div>
+        <div class="section" id="reviewing">
+          <h3>4. Reviewing</h3>
+          <hr>
+          You can replay the questions you got wrong. To replay the questions no one got correct during the most recent game in the current channel, say <span class="example">k!quiz review</span>. To replay the questions that <b>you</b> did not get correct in the most recent game that you've played, say <span class="example">k!quiz reviewme</span>. Reviewme doesn't have to be used in the same channel that you played in. You can do it elsewhere, or in a DM.
+        </div>
         <div class="section" id="savingandloading">
-          <h3>4. Saving and Loading</h3>
+          <h3>5. Saving and Loading</h3>
           <hr>
           While a quiz is in progress, you can use <span class="example">k!quiz save</span> to save and pause it. When you're ready to play again, you can use <span class="example">k!quiz load</span> to load your save. This is mostly used for conquest mode.
         </div>
         <div class="section" id="conquestmode">
-          <h3>5. Conquest Mode</h3>
+          <h3>6. Conquest Mode</h3>
           <hr>
           Conquest mode tries to teach you by repeating questions that you don't correctly answer. If you answer a question correctly the first time, you won't see it again. If you get it wrong, you'll see it again at least several more times. You can save and load your progress so that you don't have to do a whole deck in one sitting. You can start quiz in conquest mode like this: <span class="example">k!quiz-conquest N1</span>.
         </div>
         <div class="section" id="fonts">
-          <h3>6. Fonts</h3>
+          <h3>7. Fonts</h3>
           <hr>
           You can customize fonts and colors by using the <span class="example">k!settings</span> command and going into the fonts submenu by entering <span class="example">4</span>.
         </div>
         <div class="section" id="mixingdecks">
-          <h3>7. Mixing Decks</h3>
+          <h3>8. Mixing Decks</h3>
           <hr>
           You can mix any decks by using the + sign. For example: <span class="example">k!quiz N1+N2+N3</span>.
         </div>
         <div class="section" id="questionrange">
-          <h3>8. Question Range</h3>
+          <h3>9. Question Range</h3>
           <hr>
           If you want to draw questions from a part of a deck instead of the whole thing, you can do that by specifying a range in parantheses. For example: <span class="example">k!quiz N1(1-100)</span> to draw questions only from the first 100 questions in the N1 deck.
         </div>
         <div class="section" id="multiplechoice">
-          <h3>9. Multiple Choice</h3>
+          <h3>10. Multiple Choice</h3>
           <hr>
           Some decks are multiple choice by default, and you can make most other decks multiple choice by adding <b>-mc</b> to the deck name. For example: <span class="example">k!quiz N1-mc</span> for a multiple choice N1 quiz.
         </div>
         <div class="section" id="importingcustomdecks">
-          <h3>10. Importing Custom Decks</h3>
+          <h3>11. Importing Custom Decks</h3>
           <hr>
 (Copied from <a href="importdecks.html">import decks</a>)<br /><br />
 

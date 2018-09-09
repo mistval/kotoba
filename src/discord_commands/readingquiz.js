@@ -230,20 +230,6 @@ const afterQuizMessages = [
   },
   {
     embed: {
-      title: 'Too hard?',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can add **-mc** to most deck names to make a multiple choice quiz. For example: **<prefix>quiz n1-mc**.',
-    },
-  },
-  {
-    embed: {
-      title: 'O, you want to add your own questions?',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: '[Here\'s how](http://kotoba.k33.we.bs/importdecks.html)',
-    },
-  },
-  {
-    embed: {
       title: 'O, u love me?',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'I\'ll love you too if you [vote for me](https://discordbots.org/bot/251239170058616833/vote) :3 You can do it every 24 hours for extra love!',
@@ -268,6 +254,13 @@ const afterQuizMessages = [
       title: 'Listening quizzes',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'Try my new JLPT listening quizzes: LN1, LN2, LN3. LN4 and LN5 are on the way.',
+    },
+  },
+  {
+    embed: {
+      title: 'Manual',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'For advanced quiz options, [visit me on the web](http://kotobaweb.com/quiz.html).',
     },
   },
 ];
@@ -1121,6 +1114,8 @@ function showHelp(msg, isMastery, isConquest, masteryEnabled) {
 
 const helpLongDescription = `
 See available quiz decks, or start a quiz.
+
+Below are some more advanced options. To see the rest, [Visit me on the web](http://kotobaweb.com/quiz.html).
 
 You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
 **<prefix>quiz N4 30 1 10**
