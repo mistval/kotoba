@@ -1166,12 +1166,21 @@ module.exports = {
     const isConquest = !isMastery
       && (msg.extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
     const isHardcore = suffixReplaced.indexOf('hardcore') !== -1;
+    const isNoDelay = suffixReplaced.indexOf('nodelay') !== -1;
 
     suffixReplaced = suffixReplaced
       .replace(CONQUEST_NAME, '')
       .replace(MASTERY_NAME, '')
-      .replace('hardcore', '')
+      .replace(/hardcore/g, '')
+      .replace(/nodelay/g, '')
       .trim();
+
+    // Hack: manipulate the returned server settings
+    if (isNoDelay) {
+      serverSettings['quiz/japanese/new_question_delay_after_unanswered'] = 0;
+      serverSettings['quiz/japanese/new_question_delay_after_answered'] = 0;
+      serverSettings['quiz/japanese/additional_answer_wait_time'] = 0;
+    }
 
     // Delete operation
     if (suffixReplaced.startsWith('delete')) {
