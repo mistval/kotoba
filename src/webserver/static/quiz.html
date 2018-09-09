@@ -1,0 +1,216 @@
+
+
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44207699-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-44207699-2');
+    </script>
+    <title>Kotoba Discord Bot</title>
+    <link rel="icon" href="https://images.discordapp.net/avatars/251239170058616833/dd046f3353b2e3b53c38c5d17dfef3f7.png">
+    <meta charset="UTF-8">
+    <meta name="description" content="A Discord bot for Japanese learners... and weebs too!">
+    <meta name="keywords" content="Discord,bot,bots,Japanese,kotoba,learning,language,languages">
+    <style>
+    a
+    {
+      color: #24bddc;
+    }
+    body
+    {
+      padding-top: 40px;
+      font-family: 'Open Sans', sans-serif;
+      background-color:#1F2739;
+      text-align: center;
+      color: #A7A1AE;
+    }
+    #headerAvatarImg
+    {
+      border-radius:50%;
+      width: 200;
+      height: 200;
+    }
+    #headerTitleH1
+    {
+      margin-top: .2em;
+      margin-bottom: .2em;
+      font-size: 4em;
+      font-weight: 300;
+      color: #ffd400;
+    }
+    #taglineH3
+    {
+      color:#A7A1AE;
+      margin-bottom: 1.5em;
+    }
+    .button
+    {
+      background: #ffd400;
+      color: #1F2739;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+    .buttonRightMargin
+    {
+      margin-right: .5em;
+    }
+    #sectionHeaderH2
+    {
+      margin-top: 1.5em;
+      font-size:3em;
+      font-weight: 300;
+      color: #ffd400;
+    }
+    .section
+    {
+      line-height: 1.35em;
+      margin-bottom: 2em;
+    }
+    .section h3
+    {
+      color: #F7F1FE;
+    }
+    .example
+    {
+      color: #e9eaeb;
+      font-weight: bold;
+    }
+
+    #toc_container {
+      line-height: 1.5em;
+      float: left;
+      background-color: #2C3446;
+      border: 1px solid #aaa;
+      display: table;
+      margin-right: 1.4em;
+      padding: 20px;
+      width: auto;
+    }
+
+    .toc_title {
+      font-weight: 700;
+      text-align: center;
+    }
+
+    #toc_container li, #toc_container ul, #toc_container ul li{
+      list-style: outside none none !important;
+    }
+    </style>
+  </head>
+  <body>
+  <div align="center">
+    <div id="header">
+      <img id="headerAvatarImg" src="assets/images/avatar.png">
+      <h1 id="headerTitleH1">Kotoba</h1>
+      <a href="https://discordbots.org/bot/251239170058616833"><img src="https://discordbots.org/api/widget/status/251239170058616833.svg" alt="Discord Bots"></a>
+      <a href="https://discordbots.org/bot/251239170058616833"><img src="https://discordbots.org/api/widget/servers/251239170058616833.svg" alt="Discord Bots"></a>
+      <h3 id="taglineH3">A Discord bot for Japanese learners... and weebs too!</h3>
+      <a class="button buttonRightMargin" href="https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot">Invite</a>
+      <a class="button buttonRightMargin" href="https://github.com/mistval/kotoba">Github</a>
+      <a class="button" href="https://discord.gg/zkAKbyJ">Support</a>
+    </div>
+    <div>
+      <h2 id="sectionHeaderH2">Quiz Manual</h2>
+      <div style="max-width: 1200px;text-align: left"><br />
+        <div id="toc_container">
+          <p class="toc_title">Contents</p>
+          <ul class="toc_list">
+            <li><a href="#scorelimit">1 Score Limit</a></li>
+            <li><a href="#questiondelay">2 Question Delay</a></li>
+            <li><a href="#timelimit">3 Time Limit</a></li>
+            <li><a href="#savingandloading">4 Saving and Loading</a></li>
+            <li><a href="#conquestmode">5 Conquest Mode</a></li>
+            <li><a href="#fonts">6 Fonts</a></li>
+            <li><a href="#mixingdecks">7 Mixing Decks</a></li>
+            <li><a href="#questionrange">8 Question Range</a></li>
+            <li><a href="#multiplechoice">9 Multiple Choice</a></li>
+            <li><a href="#importcustomdecks">10 Import Custom Decks</a></li>
+          </ul>
+        </div>
+        <div class="section" id="scorelimit">
+          <h3>1. Score Limit</h3>
+          <hr>
+          The score limit of a quiz can be configured by specifying a number after the quiz name. For example: <span class="example">k!quiz N1 20</span> for a JLPT N1 quiz with a score limit of 20. Note that this does not apply to conquest or inferno mode quizzes (because they do not have a score limit). For those, the first number after the deck name is the question delay. This setting can also be set with the <span class="example">k!settings</span> command.
+        </div>
+        <div class="section" id="questiondelay">
+          <h3>2. Question Delay</h3>
+          <hr>
+          The delay between questions can be configured by specifying a number in seconds after the score limit. For example: <span class="example">k!quiz N1 20 1</span> for a JLPT N1 quiz with a score limit of 20 and a delay of 1 second in between questions. For conquest and inferno mode, omit the score limit, for example: <span class="example">k!quiz-conquest N1 1</span>. You can also use the <b>nodelay</b> keyword to set the delay to zero. For example: <span class="example">k!quiz N1 nodelay</span>. That is the same as <span class="example">k!quiz N1 10 0</span>. This setting can also be set with the <span class="example">k!settings</span> command.
+        </div>
+        <div class="section" id="timelimit">
+          <h3>3. Time Limit</h3>
+          <hr>
+          The amount of time that you have to answer each question can be configured by specifying a number in seconds after the question delay. For example: <span class="example">k!quiz N1 20 1 10</span> for a JLPT N1 quiz with a score limit of 20, a delay of 1 second in between questions, and a time limit of 10 seconds to answer each question. For conquest and inferno mode, omit the score limit, for example: <span class="example">k!quiz-conquest N1 1 10</span>. This setting can also be set with the <span class="example">k!settings</span> command.
+        </div>
+        <div class="section" id="savingandloading">
+          <h3>4. Saving and Loading</h3>
+          <hr>
+          While a quiz is in progress, you can use <span class="example">k!quiz save</span> to save and pause it. When you're ready to play again, you can use <span class="example">k!quiz load</span> to load your save. This is mostly used for conquest mode.
+        </div>
+        <div class="section" id="conquestmode">
+          <h3>5. Conquest Mode</h3>
+          <hr>
+          Conquest mode tries to teach you by repeating questions that you don't correctly answer. If you answer a question correctly the first time, you won't see it again. If you get it wrong, you'll see it again at least several more times. You can save and load your progress so that you don't have to do a whole deck in one sitting. You can start quiz in conquest mode like this: <span class="example">k!quiz-conquest N1</span>.
+        </div>
+        <div class="section" id="fonts">
+          <h3>6. Fonts</h3>
+          <hr>
+          You can customize fonts and colors by using the <span class="example">k!settings</span> command and going into the fonts submenu by entering <span class="example">4</span>.
+        </div>
+        <div class="section" id="mixingdecks">
+          <h3>7. Mixing Decks</h3>
+          <hr>
+          You can mix any decks by using the + sign. For example: <span class="example">k!quiz N1+N2+N3</span>.
+        </div>
+        <div class="section" id="questionrange">
+          <h3>8. Question Range</h3>
+          <hr>
+          If you want to draw questions from a part of a deck instead of the whole thing, you can do that by specifying a range in parantheses. For example: <span class="example">k!quiz N1(1-100)</span> to draw questions only from the first 100 questions in the N1 deck.
+        </div>
+        <div class="section" id="multiplechoice">
+          <h3>9. Multiple Choice</h3>
+          <hr>
+          Some decks are multiple choice by default, and you can make most other decks multiple choice by adding <b>-mc</b> to the deck name. For example: <span class="example">k!quiz N1-mc</span> for a multiple choice N1 quiz.
+        </div>
+        <div class="section" id="importingcustomdecks">
+          <h3>10. Importing Custom Decks</h3>
+          <hr>
+(Copied from <a href="importdecks.html">import decks</a>)<br /><br />
+
+I can import decks that you put on <a href="http://pastebin.com">pastebin.com</a><br /><br />
+To use such a deck in a server, that server must have internet decks enabled. If you're a server admin, you can enable internet decks with <span class="commandText">k!settings quiz/japanese/internet_decks_enabled true</span>. Understand that someone may put explicit content in a deck and use it in your server. If that becomes a problem, I may have to make a review queue or disable the feature.<br /><br />
+
+Here is an example of a deck with three questions:<br /><br />
+        <textarea rows="10" cols="70" style="text-align:left;overflow:hidden;">
+FULL NAME: My Easy Deckk!
+SHORT NAME: myeasy
+INSTRUCTIONS: Type the reading of the Kanji in Hiragana!
+QUESTION TYPE: Image
+
+--QuestionsStart--
+犬,いぬ,dog
+1日,いちにち/ついたち,first of the month/one day
+太陽,たいよう</textarea><br /><br />
+After putting that on <a href="https://pastebin.com/Lu9SUGxY">pastebin</a>, you can take your pastebin link and say <span class="commandText">k!quiz pastebin.com/xxxxx</span>. After I load the deck successfully the first time, you can use your deck's short name instead: <span class="commandText">k!quiz myeasy</span>. If there is an error loading it, I will tell you what's wrong and you can fix it and make a new pastebin paste (don't edit the old one, make a new one) and try again.<br /><br />
+
+The <span class="commandText">QUESTION TYPE</span> can be either "Image" or "Text", depending on if you want your question to be shown as a rendered image or just plain text. Image questions must be 10 characters or fewer. Text questions can be up to 300 characters long.<br /><br />
+
+Each question consists of three parts, separated by commas. The first part is the question that will be shown to players. The second part is one or more acceptable answers. If there is more than one answer, separate them with slashes. The third part is optional, it's a comment (it will appear under "meaning" but it doesn't necessarily have to be a word meaning). Use slashes here too to separate stuff, they will be converted to commas (don't put in commas yourself though, only use commas to separate the three parts).<br /><br />
+
+You can delete your decks with <span class="commandText">k!quiz delete deckname</span>. If you want to edit your deck, you must delete it and recreate it with a new pastebin paste.<br /><br />
+
+Programs like Excel and Google Sheets can export to CSV format (comma separated values) so it might be easier to create your list of questions in a program like that and export to CSV.
+</div>
+      </div>
+    </div>
+  </div><br /><br />
+  </body>
+</html>
