@@ -22,7 +22,7 @@ module.exports.createContent = function(prefix) {
   return {
     embed: {
       title: 'Quiz',
-      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **${prefix}help quiz** to see advanced quiz help. Say **${prefix}quiz save** to save your progress and **${prefix}quiz load** to reload it. Say **${prefix}quiz-conquest** or **${prefix}quiz-inferno** to learn about these game types.`,
+      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. [Visit me on the web](http://kotobaweb.com/quiz.html) to see advanced options and settings that you can use.`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: categoryFields,
       footer: {
