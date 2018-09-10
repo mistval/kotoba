@@ -2,8 +2,6 @@ const reload = require('require-reload')(require);
 const mongoose = require('mongoose');
 const mongoConnect = require('./../mongo_connect.js');
 
-const readingsForStartSequence = reload('./../../../generated/shiritori/readings_for_start_sequence.json');
-
 const wordSchema = new mongoose.Schema({
   word: String,
   reading: String,
@@ -45,6 +43,5 @@ async function clearWords() {
 module.exports = {
   clearWords,
   addWord,
-  readingsForStartSequence,
   getMatchingWords,
 };
