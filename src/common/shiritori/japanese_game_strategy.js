@@ -3,6 +3,7 @@ const globals = require('./../globals.js');
 const assert = require('assert');
 
 const wordDb = reload('./jp_word_db.js');
+const readingsForStartSequence = reload('./../../../generated/shiritori/readings_for_start_sequence.json');
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
 const REJECTION_REASON = {
@@ -159,14 +160,14 @@ async function getViableNextResult(wordInformationsHistory, retriesLeft, forceRa
     || wordInformationsHistory.length === 0
     || forceRandomStartSequence
   ) {
-    const startSequences = Object.keys(wordDb.readingsForStartSequence);
+    const startSequences = Object.keys(readingsForStartSequence);
     startSequence = getRandomArrayElement(startSequences);
   } else {
     ([startSequence] =
       wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith);
   }
 
-  const possibleNextReadings = wordDb.readingsForStartSequence[startSequence];
+  const possibleNextReadings = readingsForStartSequence[startSequence];
 
   if (!possibleNextReadings) {
     globals.logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
