@@ -12,7 +12,7 @@ module.exports = {
   usageExample: '}eval 4+5',
   hidden: true,
   uniqueId: 'eval',
-  action(bot, msg, suffix) {
+  action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No suffix');
     }
