@@ -1,4 +1,7 @@
+const reload = require('require-reload')(require);
 const mongoose = require('mongoose');
+
+const readingsForStartSequence = reload('./../../../generated/shiritori/readings_for_start_sequence.json');
 
 let connectPromise;
 
@@ -40,16 +43,25 @@ function addWord(word, reading, definitions, isNoun, difficultyScore) {
   return record.save();
 }
 
+function getMatchingWords(wordAsHiragana) {
+  return Word.find({
+    $or: [
+      { word: wordAsHiragana },
+      { reading: wordAsHiragana },
+    ],
+  }).lean().exec();
+}
+
 function clearWords() {
   return Word.deleteMany({});
 }
 
-function getRandomForReading(reading) {
-  return Word.find({ reading }).sort({ difficultyScore: -1 }).limit(1);
-}
+connect();
 
 module.exports = {
   clearWords,
   connect,
   addWord,
+  readingsForStartSequence,
+  getMatchingWords,
 };
