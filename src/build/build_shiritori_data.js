@@ -52,7 +52,7 @@ function calculateDifficultyScore(word) {
 
 function log(str) {
   if (VERBOSE) {
-    console.log(str);
+    console.log(`-- ${str}`);
   }
 }
 
@@ -97,11 +97,9 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
 async function build() {
   mkdirp(OUTPUT_DIR);
 
-  log('-- Connecting to mongo DB');
-  await wordDb.connect();
-  log('-- Clearing word DB');
+  log('Clearing word DB');
   await wordDb.clearWords();
-  log('-- Entering words into DB');
+  log('Entering words into DB');
 
   const highestDifficultyForReading = {};
 
@@ -174,7 +172,7 @@ async function build() {
     }
 
     if (i % 10000 === 0) {
-      log(`-- Words entered into DB: ${i}`);
+      log(`Words entered into DB: ${i}`);
     }
   }
 

@@ -1,9 +1,8 @@
 const reload = require('require-reload')(require);
 const mongoose = require('mongoose');
+const mongoConnect = require('./../mongo_connect.js');
 
 const readingsForStartSequence = reload('./../../../generated/shiritori/readings_for_start_sequence.json');
-
-let connectPromise;
 
 const wordSchema = new mongoose.Schema({
   word: String,
@@ -15,23 +14,8 @@ const wordSchema = new mongoose.Schema({
 
 const Word = mongoose.model('JapaneseWord', wordSchema);
 
-function connect() {
-  if (!connectPromise) {
-    connectPromise = new Promise((fulfill, reject) => {
-      mongoose.connect('mongodb://localhost/kotoba', { useNewUrlParser: true });
-      mongoose.connection.on('error', (err) => {
-        reject(err);
-      });
-      mongoose.connection.once('open', () => {
-        fulfill();
-      });
-    });
-  }
-
-  return connectPromise;
-}
-
-function addWord(word, reading, definitions, isNoun, difficultyScore) {
+async function addWord(word, reading, definitions, isNoun, difficultyScore) {
+  await mongoConnect();
   const record = new Word({
     word,
     reading,
@@ -43,7 +27,8 @@ function addWord(word, reading, definitions, isNoun, difficultyScore) {
   return record.save();
 }
 
-function getMatchingWords(wordAsHiragana) {
+async function getMatchingWords(wordAsHiragana) {
+  await mongoConnect();
   return Word.find({
     $or: [
       { word: wordAsHiragana },
@@ -52,15 +37,13 @@ function getMatchingWords(wordAsHiragana) {
   }).lean().exec();
 }
 
-function clearWords() {
+async function clearWords() {
+  await mongoConnect();
   return Word.deleteMany({});
 }
 
-connect();
-
 module.exports = {
   clearWords,
-  connect,
   addWord,
   readingsForStartSequence,
   getMatchingWords,

@@ -1,11 +1,7 @@
 const reload = require('require-reload')(require);
-const state = require('./static_state.js');
 const convertToHiragana = reload('./util/convert_to_hiragana.js');
 const searchForvo = reload('./forvo_search.js');
-
-if (!state.pronounceData) {
-  state.pronounceData = require('./../../resources/dictionaries/pronunciation.json');
-}
+const pronounceDb = reload('./pronunciation_db.js');
 
 function convertIndexStringToTrueFalse(wordLength, indexString) {
   if (!indexString) {
@@ -34,33 +30,37 @@ function getHighLowPitch(wordLength, pitchAccentString) {
   return parts.map(int => int ? true : false);
 }
 
-module.exports = async function(queryWord) {
+module.exports = async function(queryWord, logger) {
   let result = {
     query: queryWord,
     entries: [],
   };
 
   let queryAsHiragana = convertToHiragana(queryWord);
-  let pronounceDataForQuery = state.pronounceData[queryAsHiragana];
+  let pronounceDataForQuery = await pronounceDb.search(queryAsHiragana);
 
   if (pronounceDataForQuery) {
     result.entries = pronounceDataForQuery.map(entry => {
-      let katakanaLength = entry.kat.length;
+      let katakanaLength = entry.katakana.length;
       return {
         hasPitchData: true,
-        katakana: entry.kat,
-        kanji: entry.kan,
-        noPronounceIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npr),
-        nasalPitchIndices: convertIndexStringToTrueFalse(katakanaLength, entry.npi),
-        pitchAccent: getHighLowPitch(katakanaLength, entry.pa),
-        pitchAccentClass: entry.pac,
-        getAudioClips: () => searchForvo(entry.kan[0]),
+        katakana: entry.katakana,
+        kanji: entry.kanji,
+        noPronounceIndices: convertIndexStringToTrueFalse(katakanaLength, entry.noPronounceIndices),
+        nasalPitchIndices: convertIndexStringToTrueFalse(katakanaLength, entry.nasalPitchIndices),
+        pitchAccent: getHighLowPitch(katakanaLength, entry.pitchAccent),
+        pitchAccentClass: entry.pitchAccentClass,
+        getAudioClips: () => searchForvo(entry.kanji[0]),
       };
     });
   } else {
-    const forvoData = await searchForvo(queryWord);
-    if (forvoData.found) {
-      result.entries = [{ forvoData, hasPitchData: false }];
+    try {
+      const forvoData = await searchForvo(queryWord);
+      if (forvoData.found) {
+        result.entries = [{ forvoData, hasPitchData: false }];
+      }
+    } catch (err) {
+      logger.logFailure('PRONOUNCE', 'Failed to get forvo data', err);
     }
   }
 
