@@ -279,20 +279,10 @@ class PlayerTurnAction extends Action {
     });
   }
 
-  tryAcceptUserInput(userId, input) {
-    if (!this.acceptingAnswers) {
-      return false;
-    }
-    const session = this.getSession();
-    const currentPlayerId = session.getCurrentPlayerId();
-    if (userId !== currentPlayerId) {
-      return false;
-    }
+  async tryAcceptUserInputAsync_(userId, input, extraData) {
     this.playerDidTalk = true;
-    if (input.indexOf(' ') !== -1) {
-      return false;
-    }
 
+    const session = this.getSession();
     const gameStrategy = this.getGameStrategy();
     const clientDelegate = session.getClientDelegate();
     const wordHistory = session.getWordHistory();
@@ -312,42 +302,51 @@ class PlayerTurnAction extends Action {
       }
       session.advanceCurrentPlayer();
       wordHistory.push(result.word);
-      return createTimeoutPromise(session, SPACING_DELAY_IN_MS)
-        .then(() => tryShowCurrentState(session))
-        .then(() => {
-          this.fulfill(new TakeTurnForCurrentPlayerAction(session));
-        });
+      await createTimeoutPromise(session, SPACING_DELAY_IN_MS);
+      await tryShowCurrentState(session);
+      return this.fulfill(new TakeTurnForCurrentPlayerAction(session));
     }
 
     const removePlayer = session.shouldRemovePlayerForRuleViolations();
-    const isSilent = result.possiblyChat && !removePlayer;
-    if (!isSilent) {
-      this.canTimeout = !removePlayer;
-      this.acceptingAnswers = !removePlayer;
-      const { rejectionReason } = result;
-      return clientDelegate.answerRejected(input, rejectionReason).catch((err) => {
+
+    try {
+      await clientDelegate.answerRejected(result, extraData);
+    } catch (err) {
+      globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
+    }
+
+    if (removePlayer) {
+      session.removePlayer(currentPlayerId);
+      await createTimeoutPromise(session, SPACING_DELAY_IN_MS);
+
+      try {
+        await clientDelegate.removedPlayerForRuleViolation(currentPlayerId);
+      } catch (err) {
         globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
-      }).then(() => {
-        if (removePlayer) {
-          session.removePlayer(currentPlayerId);
-          return createTimeoutPromise(session, SPACING_DELAY_IN_MS).then(() =>
-            clientDelegate.removedPlayerForRuleViolation(currentPlayerId)).catch((err) => {
-            globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
-          }).then(() => createTimeoutPromise(session, SPACING_DELAY_IN_MS))
-            .then(() => {
-              if (!session.hasMultiplePlayers()) {
-                return this.fulfill(new EndGameForNoPlayersAction(session));
-              }
-              session.advanceCurrentPlayer();
-              return tryShowCurrentState(session).then(() =>
-                this.fulfill(new TakeTurnForCurrentPlayerAction(session)));
-            });
-        }
-        return undefined;
-      }).then(() => 'Rule violation');
+      }
+
+      await createTimeoutPromise(session, SPACING_DELAY_IN_MS);
+
+      if (!session.hasMultiplePlayers()) {
+        return this.fulfill(new EndGameForNoPlayersAction(session));
+      }
+
+      session.advanceCurrentPlayer();
+      await tryShowCurrentState(session);
+      return this.fulfill(new TakeTurnForCurrentPlayerAction(session));
     }
 
     return 'Rule violation';
+  }
+
+  async tryAcceptUserInput(userId, input, extraData) {
+    if (!this.acceptingAnswers) {
+      return false;
+    } else if (this.getSession().getCurrentPlayerId() !== userId) {
+      return false;
+    } else {
+      return this.tryAcceptUserInputAsync_(userId, input, extraData);
+    }
   }
 
   stop() {
@@ -450,14 +449,14 @@ function startSession(session, scoreScopeId) {
   return chainActions(session.getLocationId(), new StartAction(session));
 }
 
-function processUserInput(locationId, userId, userName, input) {
+function processUserInput(locationId, userId, userName, input, extraData) {
   scoreManager.registerUsernameForUserId(userId, userName);
   const currentAction = state.shiritoriManager.currentActionForLocationId[locationId];
   if (!currentAction) {
     return false;
   }
   if (currentAction.tryAcceptUserInput) {
-    return currentAction.tryAcceptUserInput(userId, input);
+    return currentAction.tryAcceptUserInput(userId, input, extraData);
   }
   return false;
 }

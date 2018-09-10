@@ -7,6 +7,7 @@ const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
 const ShiritoriSession = reload('./../common/shiritori/shiritori_session.js');
 const japaneseGameStrategy = reload('./../common/shiritori/japanese_game_strategy.js');
+const { REJECTION_REASON } = japaneseGameStrategy;
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
@@ -81,6 +82,35 @@ function createScoresString(scoreForUserId) {
   return Object.keys(scoreForUserId)
     .sort((userIdA, userIdB) => scoreForUserId[userIdB] - scoreForUserId[userIdA])
     .map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
+}
+
+function getPluralizer(array) {
+  if (array.length > 1) {
+    return 's';
+  }
+  return '';
+}
+
+function discordReactionForRejection(rejection) {
+  if (rejection.rejectionReason === REJECTION_REASON.UnknownWord) {
+    return '❓';
+  }
+
+  return undefined;
+}
+
+function discordDescriptionForRejection(rejection) {
+  if (rejection.rejectionReason === REJECTION_REASON.ReadingAlreadyUsed) {
+    return `Someone already used the reading${getPluralizer(rejection.extraData)}: **${rejection.extraData.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`;
+  } else if (rejection.rejectionReason === REJECTION_REASON.ReadingEndsWithN) {
+    return `Words in Shiritori can't have readings that end with ん! (**${rejection.extraData.join(', ')}**)`;
+  } else if (rejection.rejectionReason === REJECTION_REASON.WrongStartSequence) {
+    return `Your answer must begin with ${rejection.extraData.expected.join(', ')}. I found these readings for that word but they don't start with the right kana: **${rejection.extraData.actual.join(', ')}**`;
+  } else if (rejection.rejectionReason === REJECTION_REASON.NotNoun) {
+    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(rejection.extraData.join)}: **${rejection.extraData.join(', ')}**`;
+  }
+
+  return undefined;
 }
 
 class DiscordClientDelegate {
@@ -275,19 +305,27 @@ class DiscordClientDelegate {
     return this.commanderMessage.channel.createMessage(message);
   }
 
-  answerRejected(input, rejectionReason) {
-    const message = {
-      embed: {
-        title: `Answer Rejected (${input})`,
-        description: rejectionReason,
-        color: constants.EMBED_WRONG_COLOR,
-        footer: {
-          icon_url: constants.FOOTER_ICON_URI,
-          text: 'Better come up with something else ;)',
+  answerRejected(rejection, msg) {
+    const emote = discordReactionForRejection(rejection);
+    const description = discordDescriptionForRejection(rejection);
+
+    if (emote) {
+      return msg.addReaction(emote);
+    }
+    if (description) {
+      const message = {
+        embed: {
+          title: `Answer Rejected (${rejection.rejectedInput})`,
+          description,
+          color: constants.EMBED_WRONG_COLOR,
+          footer: {
+            icon_url: constants.FOOTER_ICON_URI,
+            text: 'Better come up with something else ;)',
+          },
         },
-      },
-    };
-    return this.commanderMessage.channel.createMessage(message);
+      };
+      return msg.channel.createMessage(message);
+    }
   }
 }
 

@@ -22,7 +22,7 @@ module.exports = {
     } else if (contentLowerCase === 'leave') {
       return shiritoriManager.leave(locationId, userId);
     } else {
-      return shiritoriManager.processUserInput(msg.channel.id, msg.author.id, msg.author.username, msg.content);
+      return shiritoriManager.processUserInput(msg.channel.id, msg.author.id, msg.author.username, msg.content, msg);
     }
   }
 };

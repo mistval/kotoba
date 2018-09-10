@@ -1,8 +1,17 @@
 const reload = require('require-reload')(require);
 const globals = require('./../globals.js');
+const assert = require('assert');
 
 const wordData = reload('./shiritori_word_data.js');
 const convertToHiragana = reload('./../util/convert_to_hiragana');
+
+const REJECTION_REASON = {
+  UnknownWord: 1,
+  ReadingAlreadyUsed: 2,
+  ReadingEndsWithN: 3,
+  WrongStartSequence: 4,
+  NotNoun: 5,
+};
 
 const largeHiraganaForSmallHiragana = {
   ゃ: 'や',
@@ -50,10 +59,11 @@ class AcceptedResult {
 }
 
 class RejectedResult {
-  constructor(possiblyChat, reason) {
+  constructor(reason, rejectedInput, extraData) {
     this.accepted = false;
-    this.possiblyChat = possiblyChat;
     this.rejectionReason = reason;
+    this.extraData = extraData;
+    this.rejectedInput = rejectedInput;
   }
 }
 
@@ -71,20 +81,13 @@ function pushUnique(array, element) {
   }
 }
 
-function getPluralizer(array) {
-  if (array.length > 1) {
-    return 's';
-  }
-  return '';
-}
-
 function tryAcceptAnswer(answer, wordInformationsHistory) {
   const hiragana = convertToHiragana(answer);
   const possibleWordInformations =
     wordData.getWordInformationsForWordAsHirgana(hiragana);
 
   if (!possibleWordInformations || possibleWordInformations.length === 0) {
-    return new RejectedResult(true, `I don't know the word **${answer}**`);
+    return new RejectedResult(REJECTION_REASON.UnknownWord, answer);
   }
 
   let startSequences;
@@ -126,22 +129,24 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
     return new AcceptedResult(answerToUse, readingToUse, meaningToUse, readingToUse.length);
   }
 
-  const ruleViolations = [];
   if (alreadyUsedReadings.length > 0) {
-    ruleViolations.push(`Someone already used the reading${getPluralizer(alreadyUsedReadings)}: **${alreadyUsedReadings.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`);
+    return new RejectedResult(REJECTION_REASON.ReadingAlreadyUsed, answer, alreadyUsedReadings);
+  } else if (readingsEndingWithN.length > 0) {
+    return new RejectedResult(REJECTION_REASON.ReadingEndsWithN, answer, readingsEndingWithN);
+  } else if (readingsStartingWithWrongSequence.length > 0) {
+    return new RejectedResult(
+      REJECTION_REASON.WrongStartSequence,
+      answer,
+      {
+        expected: startSequences,
+        actual: readingsStartingWithWrongSequence
+      }
+    );
+  } else if (noNounReadings.length > 0) {
+    return new RejectedResult(REJECTION_REASON.NotNoun, answer, noNounReadings);
+  } else {
+    assert(false, 'Unexpected branch');
   }
-  if (readingsEndingWithN.length > 0) {
-    ruleViolations.push(`Words in Shiritori can't have readings that end with ん! (**${readingsEndingWithN.join(', ')}**)`);
-  }
-  if (readingsStartingWithWrongSequence.length > 0) {
-    ruleViolations.push(`Your answer must begin with ${startSequences.join(', ')}. I found these readings for that word but they don't start with the right kana: **${readingsStartingWithWrongSequence.join(', ')}**`);
-  }
-  if (noNounReadings.length > 0) {
-    ruleViolations.push(`Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(noNounReadings)}: **${noNounReadings.join(', ')}**`);
-  }
-
-  const ruleViolation = ruleViolations.join('\n\n');
-  return new RejectedResult(false, ruleViolation);
 }
 
 function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomStartSequence) {
@@ -199,4 +204,5 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
 module.exports = {
   getViableNextResult,
   tryAcceptAnswer,
+  REJECTION_REASON,
 };
