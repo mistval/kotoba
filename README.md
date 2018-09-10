@@ -15,7 +15,7 @@ I'd love to get help from other developers, and there is plenty to do. If you're
 
 You must have **cairo** installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
 
-You must also have MongoDB installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+You must also have **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
 Then:
 
