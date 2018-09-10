@@ -69,19 +69,16 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
       return;
     }
 
-    const startSequence = wordStartingSequences.find(
+    const startSequences = wordStartingSequences.filter(
       startSequence => reading.startsWith(startSequence));
 
-    // Skip readings that start with an unknown start sequence
-    if (!startSequence) {
-      return;
-    }
+    startSequences.forEach((startSequence) => {
+      if (!readingsForStartSequence[startSequence]) {
+        readingsForStartSequence[startSequence] = [];
+      }
 
-    if (!readingsForStartSequence[startSequence]) {
-      readingsForStartSequence[startSequence] = [];
-    }
-
-    readingsForStartSequence[startSequence].push({ reading, highestDifficulty });
+      readingsForStartSequence[startSequence].push({ reading, highestDifficulty });
+    });
   });
 
   // Sort the readings for each start sequence in ascending order based on
