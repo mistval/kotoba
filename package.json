@@ -26,6 +26,8 @@
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
     "jp-verbs": "1.0.0",
+    "mkdirp": "^0.5.1",
+    "mongoose": "^5.2.14",
     "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
     "render-furigana": "1.0.4",
     "request": "2.86.0",
