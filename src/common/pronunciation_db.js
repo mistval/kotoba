@@ -13,7 +13,7 @@ const pronunciationInfoSchema = new mongoose.Schema({
   }],
 });
 
-PronunciationInfo = mongoose.model('PronunciationInfo', pronunciationInfoSchema);
+const PronunciationInfo = mongoose.model('PronunciationInfo', pronunciationInfoSchema);
 
 async function addEntry(searchTerm, words) {
   await mongoConnect();
