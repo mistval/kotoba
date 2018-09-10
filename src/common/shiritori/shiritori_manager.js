@@ -316,11 +316,11 @@ class PlayerTurnAction extends Action {
     }
 
     if (removePlayer) {
-      session.removePlayer(currentPlayerId);
+      session.removePlayer(session.getCurrentPlayerId());
       await createTimeoutPromise(session, SPACING_DELAY_IN_MS);
 
       try {
-        await clientDelegate.removedPlayerForRuleViolation(currentPlayerId);
+        await clientDelegate.removedPlayerForRuleViolation(session.getCurrentPlayerId());
       } catch (err) {
         globals.logger.logFailure(LOGGER_TITLE, 'Client delegate fail', err);
       }
