@@ -6,6 +6,10 @@ const path = require('path');
 const wordDb = require('./../common/shiritori/jp_word_db.js');
 const mkdirp = require('mkdirp').sync;
 
+const VERBOSE = true;
+
+const OUTPUT_DIR = path.resolve(__dirname, '..', '..', 'generated', 'shiritori');
+
 const partsOfSpeechPartRegex = /\((.*?)\)/;
 const edictNounCodes = [
   'n',
@@ -42,15 +46,67 @@ function getEdictLines() {
   return edictLines;
 }
 
-function calculateDifficultyScore(reading) {
-  return 0;
+function calculateDifficultyScore(word) {
+  return wordsByFrequency.indexOf(word);
+}
+
+function log(str) {
+  if (VERBOSE) {
+    console.log(str);
+  }
+}
+
+function buildReadingsForStartSequence(highestDifficultyForReading) {
+  const readingsForStartSequence = {};
+  const readings = Object.keys(highestDifficultyForReading);
+
+  log('Building readings for start sequence index');
+
+  readings.forEach((reading) => {
+    // Skip any readings with only words of unknown difficulty
+    const highestDifficulty = highestDifficultyForReading[reading];
+    if (highestDifficulty === -1) {
+      return;
+    }
+
+    const startSequence = wordStartingSequences.find(
+      startSequence => reading.startsWith(startSequence));
+
+    // Skip readings that start with an unknown start sequence
+    if (!startSequence) {
+      return;
+    }
+
+    if (!readingsForStartSequence[startSequence]) {
+      readingsForStartSequence[startSequence] = [];
+    }
+
+    readingsForStartSequence[startSequence].push({ reading, highestDifficulty });
+  });
+
+  // Sort the readings for each start sequence in ascending order based on
+  // the highest difficulty word known for that reading.
+  wordStartingSequences.forEach((startSequence) => {
+    readingInfos = readingsForStartSequence[startSequence] || [];
+    readingInfos.sort((a, b) => a.highestDifficulty - b.highestDifficulty);
+    readingsForStartSequence[startSequence] = readingInfos.map(info => info.reading);
+  });
+
+  fs.writeFileSync(
+    path.resolve(OUTPUT_DIR, 'readings_for_start_sequence.json'),
+    JSON.stringify(readingsForStartSequence));
 }
 
 async function build() {
-  console.log('-- Connecting to mongo DB');
+  mkdirp(OUTPUT_DIR);
+
+  log('-- Connecting to mongo DB');
   await wordDb.connect();
-  console.log('-- Clearing JP word mongo DB');
+  log('-- Clearing word DB');
   await wordDb.clearWords();
+  log('-- Entering words into DB');
+
+  const highestDifficultyForReading = {};
 
   const edictLines = getEdictLines();
   let promises = [];
@@ -100,6 +156,10 @@ async function build() {
     });
 
     const difficulty = calculateDifficultyScore(word);
+    highestDifficultyForReading[reading] = highestDifficultyForReading[reading] ?
+      Math.max(highestDifficultyForReading[reading], difficulty) :
+      difficulty;
+
     const wordInformation = new WordInformation(
       word,
       reading,
@@ -117,9 +177,11 @@ async function build() {
     }
 
     if (i % 10000 === 0) {
-      console.log(`-- Words entered into DB: ${i}`);
+      log(`-- Words entered into DB: ${i}`);
     }
   }
+
+  buildReadingsForStartSequence(highestDifficultyForReading);
 
   return Promise.all(promises);
 }
