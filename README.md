@@ -13,11 +13,13 @@ I'd love to get help from other developers, and there is plenty to do. If you're
 
 ## Installation
 
-You must have **cairo** installed (for image rendering). You can install it using the instructions for your operating system [here](https://www.cairographics.org/download/).
+You must have **cairo** and **pango** installed (for image rendering for the quiz and furigana commands). You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages). These must be installed before you run npm install. If you already ran npm install, just delete your node_modules, install cairo and pango, and npm install again.
 
 You must also have **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
-Then:
+You should also install the fonts in the /fonts directory. If you don't do this, the quiz and furigana commands might not use the fonts they are configured to use (and if you don't have any CJK fonts installed, they might just show boxes instead of Japanese characters).
+
+After you've done all that:
 
 ```
 git clone https://github.com/mistval/kotoba.git
@@ -42,7 +44,7 @@ Optionally, add API keys to ./api_keys.js. Some commands require API keys to wor
 ```
 node .
 ```
-The bot should now be online. Invite it to your server and say k!help to see commands.
+The bot should now be online. Invite it to your server and say k!help to see commands. You're good to go.
 
 ## Commands
 
