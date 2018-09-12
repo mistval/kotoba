@@ -32,6 +32,7 @@ async function getMatchingWords(wordAsHiragana) {
       { word: wordAsHiragana },
       { reading: wordAsHiragana },
     ],
+  });
   return results;
 }
 
