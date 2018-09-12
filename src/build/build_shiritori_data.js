@@ -95,6 +95,8 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
 }
 
 async function build() {
+  console.log('Building shiritori data');
+
   mkdirp(OUTPUT_DIR);
 
   log('Clearing word DB');
@@ -179,6 +181,16 @@ async function build() {
   buildReadingsForStartSequence(highestDifficultyForReading);
 
   return Promise.all(promises);
+}
+
+if (require.main === module) {
+  build().then(() => {
+    console.log('done');
+    process.exit(0);
+  }).catch((err) => {
+    console.warn(err);
+    process.exit(1);
+  });
 }
 
 module.exports = build;

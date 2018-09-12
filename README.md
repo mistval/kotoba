@@ -25,7 +25,7 @@ After you've done all that:
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
 npm install
-npm run build
+npm run buildall
 ```
 
 ## Configuration

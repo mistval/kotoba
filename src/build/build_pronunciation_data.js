@@ -9,6 +9,7 @@ function log(str) {
 }
 
 async function build() {
+  console.log('Building pronunciation data');
   const pronunciationData = require('./../../resources/dictionaries/pronunciation.json');
 
   log('Clearing prounciation DB');
@@ -36,6 +37,16 @@ async function build() {
   }
 
   return Promise.all(promises);
+}
+
+if (require.main === module) {
+  build().then(() => {
+    console.log('done');
+    process.exit(0);
+  }).catch((err) => {
+    console.warn(err);
+    process.exit(1);
+  });
 }
 
 module.exports = build;
