@@ -2,7 +2,7 @@ const mongoConnect = require('./mongo_connect.js');
 const mongoose = require('mongoose');
 
 const pronunciationInfoSchema = new mongoose.Schema({
-  searchTerm: String,
+  searchTerm: { type: String, index: true },
   words: [{
     katakana: String,
     pitchAccentClass: String,

@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const mongoConnect = require('./../mongo_connect.js');
 
 const wordSchema = new mongoose.Schema({
-  word: String,
-  reading: String,
+  word: { type: String, index: true },
+  reading: { type: String, index: true },
   definitions: [String],
   isNoun: Boolean,
   difficultyScore: Number,
@@ -27,12 +27,12 @@ async function addWord(word, reading, definitions, isNoun, difficultyScore) {
 
 async function getMatchingWords(wordAsHiragana) {
   await mongoConnect();
-  return Word.find({
+  const results = await Word.find({
     $or: [
       { word: wordAsHiragana },
       { reading: wordAsHiragana },
     ],
-  }).lean().exec();
+  return results;
 }
 
 async function clearWords() {
