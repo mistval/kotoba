@@ -83,6 +83,8 @@ function writeFile(filePath, content) {
 }
 
 async function build() {
+  console.log('Building quiz data');
+
   mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated'));
   mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz'));
   mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
@@ -123,6 +125,16 @@ async function build() {
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
   await writeFile(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks.json'), deckDataString);
+}
+
+if (require.main === module) {
+  build().then(() => {
+    console.log('done');
+    process.exit(0);
+  }).catch((err) => {
+    console.warn(err);
+    process.exit(1);
+  });
 }
 
 module.exports = build;

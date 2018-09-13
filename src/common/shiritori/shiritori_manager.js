@@ -286,7 +286,7 @@ class PlayerTurnAction extends Action {
     const gameStrategy = this.getGameStrategy();
     const clientDelegate = session.getClientDelegate();
     const wordHistory = session.getWordHistory();
-    const result = gameStrategy.tryAcceptAnswer(input, wordHistory);
+    const result = await gameStrategy.tryAcceptAnswer(input, wordHistory);
 
     if (result.accepted) {
       const locationId = session.getLocationId();
@@ -373,7 +373,7 @@ class BotTurnAction extends Action {
     const gameStrategy = this.getGameStrategy();
     const wordHistory = session.getWordHistory();
     const clientDelegate = session.getClientDelegate();
-    const nextResult = gameStrategy.getViableNextResult(wordHistory);
+    const nextResult = await gameStrategy.getViableNextResult(wordHistory);
     const nextWord = nextResult.word;
     const botUserId = session.getBotUserId();
     const locationId = session.getLocationId();

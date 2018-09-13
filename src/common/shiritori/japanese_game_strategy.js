@@ -2,7 +2,8 @@ const reload = require('require-reload')(require);
 const globals = require('./../globals.js');
 const assert = require('assert');
 
-const wordData = reload('./shiritori_word_data.js');
+const wordDb = reload('./jp_word_db.js');
+const readingsForStartSequence = reload('./../../../generated/shiritori/readings_for_start_sequence.json');
 const convertToHiragana = reload('./../util/convert_to_hiragana');
 
 const REJECTION_REASON = {
@@ -81,10 +82,9 @@ function pushUnique(array, element) {
   }
 }
 
-function tryAcceptAnswer(answer, wordInformationsHistory) {
+async function tryAcceptAnswer(answer, wordInformationsHistory) {
   const hiragana = convertToHiragana(answer);
-  const possibleWordInformations =
-    wordData.getWordInformationsForWordAsHirgana(hiragana);
+  const possibleWordInformations = await wordDb.getMatchingWords(hiragana);
 
   if (!possibleWordInformations || possibleWordInformations.length === 0) {
     return new RejectedResult(REJECTION_REASON.UnknownWord, answer);
@@ -149,7 +149,7 @@ function tryAcceptAnswer(answer, wordInformationsHistory) {
   }
 }
 
-function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomStartSequence) {
+async function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomStartSequence) {
   if (retriesLeft === 0) {
     throw new Error('Couldn\'t get a viable next word :/');
   }
@@ -160,39 +160,39 @@ function getViableNextResult(wordInformationsHistory, retriesLeft, forceRandomSt
     || wordInformationsHistory.length === 0
     || forceRandomStartSequence
   ) {
-    const startSequences = Object.keys(wordData.wordsForStartSequence);
+    const startSequences = Object.keys(readingsForStartSequence);
     startSequence = getRandomArrayElement(startSequences);
   } else {
     ([startSequence] =
       wordInformationsHistory[wordInformationsHistory.length - 1].nextWordMustStartWith);
   }
 
-  const possibleNextWords = wordData.wordsForStartSequence[startSequence];
+  const possibleNextReadings = readingsForStartSequence[startSequence];
 
-  if (!possibleNextWords) {
+  if (!possibleNextReadings) {
     globals.logger.logFailure('SHIRITORI', `!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nInvalid start sequence ${startSequence}`);
     return getViableNextResult(wordInformationsHistory, retriesLeft, true);
   }
 
   // Cube it in order to prefer more common words.
-  let nextWordIndex =
-    Math.floor(Math.random() * Math.random() * Math.random() * possibleNextWords.length);
-  const firstWordTestedIndex = nextWordIndex;
+  let nextReadingIndex =
+    Math.floor(Math.random() * Math.random() * Math.random() * possibleNextReadings.length);
+  const firstReadingTestedIndex = nextReadingIndex;
 
   // Find a word that is usable and return it.
   while (true) {
-    const nextWord = possibleNextWords[nextWordIndex];
-    const result = tryAcceptAnswer(nextWord, wordInformationsHistory);
+    const nextReading = possibleNextReadings[nextReadingIndex];
+    const result = await tryAcceptAnswer(nextReading, wordInformationsHistory);
     if (result.accepted) {
       return result;
     }
 
-    nextWordIndex += 1;
-    if (nextWordIndex === possibleNextWords.length) {
+    nextReadingIndex += 1;
+    if (nextReadingIndex === possibleNextReadings.length) {
       // Wrap around to the start of the array
-      nextWordIndex = 0;
+      nextReadingIndex = 0;
     }
-    if (nextWordIndex === firstWordTestedIndex) {
+    if (nextReadingIndex === firstReadingTestedIndex) {
       // We came full circle. Try again.
       // Although possible, it is extremely unlikely that a game would continue
       // so long that there are no viable words left.
