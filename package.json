@@ -4,14 +4,17 @@
   "description": "A Discord bot for learning Japanese",
   "main": "./src/start.js",
   "scripts": {
-    "build": "node --max-old-space-size=500 ./src/build/build.js"
+    "buildall": "node --max-old-space-size=500 ./src/build/buildall.js",
+    "buildshiritori": "node --max-old-space-size=500 ./src/build/build_shiritori_data.js",
+    "buildpronunciation": "node --max-old-space-size=500 ./src/build/build_pronunciation_data.js",
+    "buildquiz": "node --max-old-space-size=500 ./src/build/build_quiz_decks.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mistval/kotoba.git"
   },
   "keywords": [],
-  "author": "Randall",
+  "author": "mistval",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mistval/kotoba/issues"
@@ -25,7 +28,8 @@
     "express": "4.16.2",
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
-    "jp-verbs": "1.0.0",
+    "mkdirp": "^0.5.1",
+    "mongoose": "^5.2.14",
     "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
     "render-furigana": "1.0.4",
     "request": "2.86.0",
