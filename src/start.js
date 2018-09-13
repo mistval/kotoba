@@ -52,6 +52,7 @@ function createBot() {
     startWebServer: true,
     erisOptions: {
       maxShards: 'auto',
+      messageLimit: 0,
       disableEvents: {
         GUILD_UPDATE: true,
         GUILD_BAN_ADD: true,
