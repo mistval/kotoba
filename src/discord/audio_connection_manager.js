@@ -7,7 +7,6 @@ const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
 
 const VOICE_CHANNEL_TYPE = 2;
 const EMBED_TITLE = 'Audio';
-const ERROR_LOG_TITLE = 'AUDIO';
 
 function hasConnectionInServer(bot, serverId) {
   return !!bot.voiceConnections.get(serverId);
@@ -65,7 +64,7 @@ async function openConnectionFromMessage(bot, msg) {
   const channelsCanTalkIn = getChannelsCanTalkIn(msg.channel.guild, bot.user);
   if (channelsCanTalkIn.indexOf(voiceChannel) === -1) {
     const channelsCanTalkInString = channelsCanTalkIn.map(channel => `**<#${channel.id}>**`).join(' ');
-    return throwPublicErrorFatal('Audio', `I either don\'t have permission to join your voice channel, or I don\'t have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
+    return throwPublicErrorFatal('Audio', `I either don't have permission to join your voice channel, or I don't have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString ? channelsCanTalkInString : '**None**'}`, 'Lack voice permission');
   }
 
   const voiceConnection = await voiceChannel.join();

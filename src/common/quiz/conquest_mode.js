@@ -4,42 +4,9 @@ const globals = require('./../globals.js');
 const SettingsOverride = reload('./settings_override.js');
 
 const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;
-const PERCENT_CORRECT_FOR_MASTERY = .70;
-const CARD_CORRECT = 1;
-const CARD_INCORRECT = 0;
 
 function overrideDeckTitle(originalTitle) {
   return originalTitle + ' (Inferno Mode)';
-}
-
-function calculatePercentCorrect(card) {
-  let numberCorrect = card.answerHistory.reduce((a, b) => b ? a + 1 : a , 0);
-  let percentCorrect = numberCorrect / card.answerHistory.length;
-  return percentCorrect;
-}
-
-function calculateReinsertionIndex(card, arraySize, numDecks) {
-  let numberOfLastXCorrect = 0;
-  let foundIncorrect = false;
-  for (let i = card.answerHistory.length - 1; i > card.answerHistory.length - 6; --i) {
-    if (card.answerHistory[i]) {
-      ++numberOfLastXCorrect;
-    } else {
-      break;
-    }
-  }
-
-  let percentCorrect = calculatePercentCorrect(card);
-  let randomFactor = Math.random() * .70 + .30;
-  let newDistanceFromFront = Math.floor(TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER * (numberOfLastXCorrect + 1) * randomFactor * 1 / numDecks);
-  newDistanceFromFront = Math.min(newDistanceFromFront, arraySize - 1);
-  let index = arraySize - 1 - newDistanceFromFront;
-
-  if (index === 0) {
-    index = Math.floor(arraySize * Math.random());
-  }
-
-  return index;
 }
 
 function recycleCard(card, upcomingCardsIndexArray, numDecks) {

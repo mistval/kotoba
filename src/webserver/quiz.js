@@ -1,5 +1,4 @@
 'use strict'
-const reload = require('require-reload')(require);
 const quizManager = require('./../common/quiz/manager.js');
 const Session = require('./../common/quiz/session.js');
 const DeckCollection = require('./../common/quiz/deck_collection.js');

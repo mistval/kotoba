@@ -5,8 +5,6 @@ const SettingsOverride = reload('./settings_override.js');
 
 const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;
 const PERCENT_CORRECT_FOR_MASTERY = .75;
-const CARD_CORRECT = 1;
-const CARD_INCORRECT = 0;
 
 const IndexTopForTimesCorrect = {
   0: 12,

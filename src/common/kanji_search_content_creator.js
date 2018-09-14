@@ -128,7 +128,6 @@ function convertToDiscordBotContent(kanjiInformation, prefix) {
 
   let examplesStr = getExamplesString(kanjiInformation);
 
-  const fileCodeStringLength = 5;
   let unicodeString = kanjiInformation.query.codePointAt(0).toString(10);
   let fileName = unicodeString + '.png';
   let thumbnailInfo = {url: 'https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjipngs/' + fileName};

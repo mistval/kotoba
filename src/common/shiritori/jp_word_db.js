@@ -1,4 +1,3 @@
-const reload = require('require-reload')(require);
 const mongoose = require('mongoose');
 const mongoConnect = require('./../mongo_connect.js');
 
