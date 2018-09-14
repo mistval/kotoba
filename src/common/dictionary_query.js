@@ -8,7 +8,6 @@
 const reload = require('require-reload')(require);
 const prettyLanguageForLanguageCode = reload('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
 const DictionaryResponseData = reload('./dictionary_response_data.js');
-const NavigationPage = reload('monochrome-bot').NavigationPage;
 const PublicError = reload('monochrome-bot').PublicError;
 
 function getHelp(langStr, fromLanguage, toLanguage) {
@@ -52,7 +51,6 @@ module.exports = function(msg, fromLanguage, toLanguage, term, queryFunction, de
     }
 
     if (!term) {
-      let result = '';
       if (autoSetToLanguage) {
         throwSyntaxError(getHelp(fromLanguage, fromLanguage, toLanguage));
       } else {

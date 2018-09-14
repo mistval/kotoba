@@ -152,8 +152,8 @@ module.exports = {
       return respondNoSuffix(msg);
     }
 
-    const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(languageCodes, suffix);
-    const result = await googleTranslate.translate(languageCodeFrom, languageCodeTo, suffix);
+    const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(languageCodes, mentionReplacedSuffix);
+    const result = await googleTranslate.translate(languageCodeFrom, languageCodeTo, mentionReplacedSuffix);
 
     const discordContent = resultToDiscordContent(languageCodeFrom, languageCodeTo, result);
     return msg.channel.createMessage(discordContent, undefined, msg);

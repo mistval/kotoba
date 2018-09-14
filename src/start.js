@@ -2,16 +2,11 @@
 const reload = require('require-reload')(require);
 const apiKeys = reload('./../api_keys.js');
 const monochrome = reload('monochrome-bot');
-const fs = require('fs');
 const webserver = require('./webserver/webserver.js');
 const quizManager = reload('./common/quiz/manager.js');
 const globals = require('./common/globals.js');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const config = reload('./../config.json');
-
-function onShutdown(bot) {
-  return quizManager.stopAllQuizzes();
-}
 
 function createBot() {
   let commandsDirectoryPath = __dirname + '/discord_commands';

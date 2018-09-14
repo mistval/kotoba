@@ -1,6 +1,5 @@
 'use strict'
 const reload = require('require-reload')(require);
-const globals = require('./../globals.js');
 const constants = reload('./../constants.js');
 
 const categoryFields = [
