@@ -14,7 +14,7 @@ module.exports.prettyLanguageForGlosbeLanguageCode = {
   jpn: 'Japanese',
 };
 
-module.exports.prettyLanguageForGoogleLanguageCode = {
+module.exports.languageNameForGoogleLanguageCode = {
   af: 'Afrikaans',
   ga: 'Irish',
   sq: 'Albanian',
