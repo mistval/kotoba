@@ -4,7 +4,6 @@ const Scores = reload('./scores.js');
 const state = require('./../static_state.js');
 const cardStrategies = reload('./card_strategies.js');
 const DeckCollection = reload('./deck_collection.js');
-const assert = require('assert');
 const deckLoader = reload('./deck_loader.js');
 const gameModes = [
   reload('./normal_mode.js'),

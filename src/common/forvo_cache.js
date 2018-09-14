@@ -103,7 +103,8 @@ async function getPronunciationClipsForWord(word) {
   const promises = [];
 
   const recordResultPromise = globals.persistence.editData(CACHE_KEY, storedData => {
-    return storedData[word] = audioClipDiskFilenames;
+    storedData[word] = audioClipDiskFilenames;
+    return storedData;
   });
 
   promises.push(recordResultPromise);

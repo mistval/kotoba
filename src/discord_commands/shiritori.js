@@ -16,7 +16,7 @@ function throwIfSessionInProgress(locationId, prefix) {
   if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
     errors.throwPublicErrorInfo(
       'Game in progress',
-      `There is already a game in progress. I can\'t start another, that would be confusing! You can stop the current game by saying **${prefix}shiritori stop**.`,
+      `There is already a game in progress. I can't start another, that would be confusing! You can stop the current game by saying **${prefix}shiritori stop**.`,
       'Session in progress',
     );
   }

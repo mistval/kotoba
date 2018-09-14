@@ -788,7 +788,7 @@ async function load(
   const mementos = await saveManager.getSaveMementos(userId);
 
   if (!mementos || mementos.length === 0) {
-    return msg.channel.createMessage(createTitleOnlyEmbed(`I don\'t have any sessions I can load for you. Say ${prefix}quiz to start a new quiz.`), null, msg);
+    return msg.channel.createMessage(createTitleOnlyEmbed(`I don't have any sessions I can load for you. Say ${prefix}quiz to start a new quiz.`), null, msg);
   }
   if (userFacingSaveId === undefined) {
     if (mementos.length === 1) {

@@ -1,7 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
 const Canvas = require('canvas');
-const fs = require('fs');
 const renderFurigana = require('render-furigana');
 const fontHelper = reload('./font_helper.js');
 

@@ -5,7 +5,6 @@
  * feature may be removed from the bot.
  */
 
-const reload = require('require-reload')(require);
 const assert = require('assert');
 const constants = require('./constants.js');
 

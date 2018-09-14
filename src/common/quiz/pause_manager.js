@@ -1,7 +1,6 @@
 const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const globals = require('./../globals.js');
-const assert = require('assert');
 const { logger } = require('./../globals.js');
 
 const MEMENTO_VERSION = 'v1';

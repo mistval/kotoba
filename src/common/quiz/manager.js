@@ -1,12 +1,9 @@
 'use strict'
 const reload = require('require-reload')(require);
 const state = require('./../static_state.js');
-const deckLoader = reload('./deck_loader.js');
 const assert = require('assert');
 const saveManager = reload('./pause_manager.js');
 const cardStrategies = reload('./card_strategies.js');
-const Session = reload('./session.js');
-const DeckCollection = reload('./deck_collection.js');
 const retryPromise = reload('./../util/retry_promise.js');
 const globals = require('./../globals.js');
 
@@ -15,7 +12,6 @@ const LOGGER_TITLE = 'QUIZ';
 const INITIAL_DELAY_IN_MS = 5000;
 const REVEAL_INTERVAL_IN_MS = 8000;
 const MAX_SAVES_PER_USER = 5;
-const MINIMUM_ANSWER_LIMIT_IN_MS = 4000;
 const QUIZ_END_STATUS_ERROR = 1;
 
 /* LOADING AND INITIALIZATION */
