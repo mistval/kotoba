@@ -339,7 +339,7 @@ class PlayerTurnAction extends Action {
     return 'Rule violation';
   }
 
-  async tryAcceptUserInput(userId, input, extraData) {
+  tryAcceptUserInput(userId, input, extraData) {
     if (!this.acceptingAnswers) {
       return false;
     } else if (this.getSession().getCurrentPlayerId() !== userId) {
