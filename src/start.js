@@ -6,13 +6,14 @@ const webserver = require('./webserver/webserver.js');
 const quizManager = reload('./common/quiz/manager.js');
 const globals = require('./common/globals.js');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
+const path = require('path');
 const config = reload('./../config.json');
 
 function createBot() {
-  let commandsDirectoryPath = __dirname + '/discord_commands';
-  let messageProcessorsDirectoryPath = __dirname + '/discord_message_processors';
-  let settingsFilePath = __dirname + '/user_settings.js';
-  let logDirectoryPath = __dirname + '/../logs';
+  let commandsDirectoryPath = path.join(__dirname, 'discord_commands');
+  let messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
+  let settingsFilePath = path.join(__dirname, 'user_settings.js');
+  let logDirectoryPath = path.join(__dirname, '..', 'logs');
 
   let options = {
     prefixes: ['k!'],
@@ -20,8 +21,6 @@ function createBot() {
     messageProcessorsDirectoryPath: messageProcessorsDirectoryPath,
     logDirectoryPath: logDirectoryPath,
     settingsFilePath: settingsFilePath,
-    discordBotsDotOrgAPIKey: config.discordBotsDotOrgAPIKey,
-    botsDotDiscordDotPwAPIKey: config.botsDotDiscordDotPwAPIKey,
     useANSIColorsInLogFiles: true,
     serverAdminRoleName: 'kotoba',
     genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.',
@@ -63,9 +62,7 @@ function createBot() {
   };
 
   options = Object.assign(options, config);
-
   let bot = new monochrome(options);
-
   return bot;
 }
 
@@ -121,7 +118,7 @@ function startWebserver(monochrome) {
 const bot = createBot();
 checkApiKeys(bot);
 saveGlobals(bot);
-bot.connect(bot);
+bot.connect();
 
 if (config.startWebServer) {
   startWebserver(bot);
