@@ -84,7 +84,10 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
   // Sort the readings for each start sequence in ascending order based on
   // the highest difficulty word known for that reading.
   wordStartingSequences.forEach((startSequence) => {
-    readingInfos = readingsForStartSequence[startSequence] || [];
+    readingInfos = readingsForStartSequence[startSequence];
+    if (!readingInfos) {
+      return;
+    }
     readingInfos.sort((a, b) => a.highestDifficulty - b.highestDifficulty);
     readingsForStartSequence[startSequence] = readingInfos.map(info => info.reading);
   });
