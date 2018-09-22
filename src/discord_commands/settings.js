@@ -534,7 +534,7 @@ function handleCategoryViewMsg(hook, monochrome, msg, category) {
 
 function showRoot(monochrome, msg) {
   const settingsTree = monochrome.getSettings().getRawSettingsTree();
-  const iconUri = monochrome.getConfig().settingsIconUri;
+  const iconUri = monochrome.getSettingsIconUri();
   const rootContent = createContentForRoot(settingsTree, iconUri);
   const hook = Hook.registerHook(
     msg.author.id,
@@ -552,7 +552,7 @@ function showRoot(monochrome, msg) {
 }
 
 function showCategory(monochrome, msg, category) {
-  const iconUri = monochrome.getConfig().settingsIconUri;
+  const iconUri = monochrome.getSettingsIconUri();
   const categoryContent = createContentForCategory(category, iconUri);
   const hook = Hook.registerHook(
     msg.author.id, msg.channel.id,
@@ -570,7 +570,7 @@ function showCategory(monochrome, msg, category) {
 }
 
 async function showSetting(monochrome, msg, setting) {
-  const iconUri = monochrome.getConfig().settingsIconUri;
+  const iconUri = monochrome.getSettingsIconUri();
   const settings = monochrome.getSettings();
   const settingContent = await createContentForSetting(msg, settings, setting, iconUri);
   const hook = Hook.registerHook(
