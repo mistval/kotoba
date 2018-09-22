@@ -8,7 +8,6 @@ const examplesContentCreator = reload('./examples_content_creator.js');
 const constants = reload('./constants.js');
 const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.js');
 const {
-  NavigationPage,
   NavigationChapter,
   Navigation,
 } = reload('monochrome-bot');
@@ -61,9 +60,9 @@ class StrokeOrderDataSource {
     if (pageIndex < this.kanjis.length) {
       const content = await strokeOrderContentCreator.createContent(this.kanjis[pageIndex]);
       if (this.hasMultiplePages || !this.isStandalone) {
-        return new NavigationPage(addFooter(this.authorName, content));
+        return addFooter(this.authorName, content);
       }
-      return new NavigationPage(content);
+      return content;
     }
 
     return undefined;
@@ -89,9 +88,9 @@ class KanjiDataSource {
     if (pageIndex < this.kanjis.length) {
       const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex], this.prefix);
       if (this.hasMultiplePages || !this.isStandalone) {
-        return new NavigationPage(addFooter(this.authorName, content));
+        return addFooter(this.authorName, content);
       }
-      return new NavigationPage(content);
+      return content;
     }
 
     return undefined;
@@ -121,7 +120,7 @@ class ExamplesSource {
       showPageArrows = true;
     }
 
-    const page = new NavigationPage(content);
+    const page = content;
     page.showPageArrows = showPageArrows;
 
     return page;
@@ -208,7 +207,7 @@ function createNavigationForExamples(msg, authorName, authorId, word, navigation
   chapterForEmojiName[EXAMPLES_EMOTE] = navigationChapterInformation.navigationChapter;
   const navigation = new Navigation(authorId, true, EXAMPLES_EMOTE, chapterForEmojiName);
 
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, navigationManager) {
@@ -228,15 +227,15 @@ function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, naviga
     chapterForEmojiName,
   );
 
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
-function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager, prefix) {
+function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager) {
   const navigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     kanji,
     true,
-    prefix,
+    msg.prefix,
   );
 
   const chapterForEmojiName = {};
@@ -249,7 +248,7 @@ function createNavigationForKanji(msg, authorName, authorId, kanji, navigationMa
     chapterForEmojiName,
   );
 
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 function createNavigationForJishoResults(msg, authorName, authorId, crossPlatformResponseData, navigationManager) {
@@ -261,7 +260,6 @@ function createNavigationForJishoResults(msg, authorName, authorId, crossPlatfor
     authorName,
   );
 
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
   const jishoNavigationChapter = NavigationChapter.fromContent(discordContents);
   const chapterForEmojiName = {};
   chapterForEmojiName[JISHO_EMOTE] = jishoNavigationChapter;
@@ -270,7 +268,7 @@ function createNavigationForJishoResults(msg, authorName, authorId, crossPlatfor
     authorName,
     word,
     false,
-    prefix,
+    msg.prefix,
   );
   if (kanjiNavigationChapterInformation.hasAnyPages) {
     chapterForEmojiName[KANJI_EMOTE] =
@@ -295,7 +293,7 @@ function createNavigationForJishoResults(msg, authorName, authorId, crossPlatfor
   chapterForEmojiName[EXAMPLES_EMOTE] = examplesNavigationChapter;
 
   const navigation = new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 async function createOnePageBigResultForWord(msg, word) {
@@ -317,7 +315,6 @@ async function createNavigationForWord(authorName, authorId, word, msg, navigati
     authorId,
     crossPlatformResponseData,
     navigationManager,
-    globals.persistence.getPrimaryPrefixFromMsg(msg),
   );
 }
 
