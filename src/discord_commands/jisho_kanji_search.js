@@ -13,7 +13,7 @@ module.exports = {
   usageExample: '<prefix>kanji 少',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      const prefix = msg.prefix;
       return throwPublicErrorInfo('Kanji', `Say **${prefix}kanji [kanji]** to search for kanji. For example: **${prefix}kanji 瞬間**. Say **${prefix}help kanji** for more help.`, 'No suffix');
     }
 
@@ -23,7 +23,6 @@ module.exports = {
       msg.author.id,
       suffix,
       monochrome.getNavigationManager(),
-      monochrome.getPersistence().getPrimaryPrefixFromMsg(msg),
     );
   },
 };
