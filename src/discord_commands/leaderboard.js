@@ -122,7 +122,7 @@ function sendScores(msg, scores, title, description, footer, navigationManager, 
   const hasMultiplePages = navigationContents.length > 1;
   const authorId = msg.author.id;
   const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForReaction);
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 function notifyDeckNotFound(msg, isGlobal, deckName) {
@@ -202,7 +202,7 @@ module.exports = {
     const didSpecifyDecks = deckNamesArray.length > 0;
     const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
 
-    const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+    const prefix = msg.prefix;
     if (isGlobal) {
       title = `Global leaderboard${deckNamesTitlePart}`;
       description = 'The top scorers in the whole wide world.';

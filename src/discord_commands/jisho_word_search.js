@@ -15,7 +15,7 @@ module.exports = {
   usageExample: '<prefix>j 少し',
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (!suffix) {
-      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      const prefix = msg.prefix;
       return throwPublicErrorInfo('Jisho', `Say **${prefix}j [word]** to search for words on Jisho.org. For example: **${prefix}j 瞬間**. Say **${prefix}help jisho** for more help.`, 'No suffix');
     }
 

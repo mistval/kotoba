@@ -286,7 +286,7 @@ async function sendEndQuizMessages(
   canReview,
   description,
 ) {
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(commanderMessage);
+  const prefix = commanderMessage.prefix;
   const endQuizMessage = createEndQuizMessage(
     quizName,
     scores,
@@ -314,7 +314,7 @@ function convertUserFacingSaveIdToDatabaseFacing(saveId) {
 }
 
 function sendSaveMementos(msg, saveMementos, extraContent) {
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+  const prefix = msg.prefix;
   const content = {
     content: extraContent,
     embed: {
@@ -346,7 +346,6 @@ class DiscordMessageSender {
   constructor(bot, commanderMessage) {
     this.commanderMessage = commanderMessage;
     this.bot = bot;
-    this.prefix = globals.persistence.getPrimaryPrefixFromMsg(commanderMessage);
   }
 
   notifyStarting(inMs, quizName, quizDescription) {
@@ -503,11 +502,11 @@ class DiscordMessageSender {
 
   notifySaveSuccessful() {
     this.closeAudioConnection();
-    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.prefix}quiz load' later to start it again.`));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.commanderMessage.prefix}quiz load' later to start it again.`));
   }
 
   notifySaveFailedNoSpace(maxSaves) {
-    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying '${this.prefix}quiz load'.`));
+    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying '${this.commanderMessage.prefix}quiz load'.`));
   }
 
   notifySaveFailedIsReview() {
@@ -780,7 +779,7 @@ async function load(
 
   const isDm = !msg.channel.guild;
   const scoreScopeId = getScoreScopeIdFromMsg(msg);
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+  const prefix = msg.prefix;
 
   throwIfSessionInProgressAtLocation(msg.channel.id, prefix);
 
@@ -1022,7 +1021,7 @@ async function startNewQuiz(
   const locationId = msg.channel.id;
   const isDm = !msg.channel.guild;
   const scoreScopeId = getScoreScopeIdFromMsg(msg);
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+  const prefix = msg.prefix;
 
   let decks;
   let gameMode;
@@ -1096,7 +1095,7 @@ async function startNewQuiz(
 }
 
 function showHelp(msg, isMastery, isConquest, masteryEnabled) {
-  const prefix = globals.persistence.getPrimaryPrefixFromMsg(msg);
+  const prefix = msg.prefix;
 
   let helpMessage;
   if (!isMastery && !isConquest) {
