@@ -180,7 +180,7 @@ module.exports = {
     }
 
     const persistence = monochrome.getPersistence();
-    const prefix = persistence.getPrimaryPrefixFromMsg(msg);
+    const prefix = persistence.getPrimaryPrefixForMessage(msg);
     if (suffix) {
       return showAdvancedHelp(msg, suffix, helpCommandHelper, prefix);
     } else {

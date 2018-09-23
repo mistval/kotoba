@@ -60,6 +60,7 @@ typings/
 # Generated
 .node-persist
 save_data
+persistence
 generated
 objects
 config.json

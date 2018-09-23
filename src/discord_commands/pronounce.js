@@ -6,7 +6,6 @@ const constants = reload('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
-  NavigationPage,
 } = reload('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 6;
@@ -175,7 +174,7 @@ class PronunciationDataSource {
       };
     }
 
-    return new NavigationPage(content);
+    return content;
   }
 }
 
@@ -186,7 +185,7 @@ function createFoundResult(msg, pronounceInfo, navigationManager, logger) {
   const hasMultiplePages = pronounceInfo.entries.length > 1;
   const authorId = msg.author.id;
   const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
-  return navigationManager.register(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg);
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 module.exports = {
@@ -198,7 +197,7 @@ module.exports = {
   usageExample: '<prefix>pronounce 瞬間',
   async action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      const prefix = msg.prefix;
       return throwPublicErrorInfo('Pronounce', `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`, 'No suffix');
     }
 
