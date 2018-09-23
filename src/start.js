@@ -10,17 +10,19 @@ const path = require('path');
 const config = reload('./../config.json');
 
 function createBot() {
-  let commandsDirectoryPath = path.join(__dirname, 'discord_commands');
-  let messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
-  let settingsFilePath = path.join(__dirname, 'user_settings.js');
-  let logDirectoryPath = path.join(__dirname, '..', 'logs');
+  const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
+  const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
+  const settingsFilePath = path.join(__dirname, 'user_settings.js');
+  const logDirectoryPath = path.join(__dirname, '..', 'logs');
+  const persistenceDirectoryPath = path.join(__dirname, '..', 'persistence');
 
   let options = {
     prefixes: ['k!'],
-    commandsDirectoryPath: commandsDirectoryPath,
-    messageProcessorsDirectoryPath: messageProcessorsDirectoryPath,
-    logDirectoryPath: logDirectoryPath,
-    settingsFilePath: settingsFilePath,
+    commandsDirectoryPath,
+    messageProcessorsDirectoryPath,
+    logDirectoryPath,
+    settingsFilePath,
+    persistenceDirectoryPath,
     useANSIColorsInLogFiles: true,
     serverAdminRoleName: 'kotoba',
     genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.',
@@ -62,7 +64,7 @@ function createBot() {
   };
 
   options = Object.assign(options, config);
-  let bot = new monochrome(options);
+  const bot = new monochrome(options);
   return bot;
 }
 

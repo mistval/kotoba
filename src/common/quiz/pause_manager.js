@@ -2,21 +2,15 @@ const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const globals = require('./../globals.js');
 const { logger } = require('./../globals.js');
+const path = require('path');
 
 const MEMENTO_VERSION = 'v1';
 
 const LOGGER_TITLE = 'QUIZ SAVE MANAGER';
-const SAVE_DATA_DIR = __dirname + '/../../save_data';
+const SAVE_DATA_DIR = path.join(__dirname, '..', '..', '..', 'save_data');
 const QUIZ_SAVES_KEY = 'QuizSaveDataFiles';
 const QUIZ_SAVES_BACKUP_KEY = 'QuizSavesBackup';
 const MAX_RESTORABLE_PER_USER = 10;
-
-// Difference between normal mode and mastery
-// 1. Unanswered cards do not just get popped. They get reinserted.
-// 2. Different default score limit
-// 3. Server settings ignored.
-// 4. Show correct percentage
-// 5. Can be disabled in servers
 
 try {
   fs.mkdirSync(SAVE_DATA_DIR);
