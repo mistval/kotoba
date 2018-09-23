@@ -18,7 +18,7 @@ module.exports = {
   ],
   action: async function action(erisBot, msg, suffix, monochrome, settings) {
     if (!suffix) {
-      const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+      const prefix = msg.prefix;
       return throwPublicErrorInfo('Furigana', `Say **${prefix}furigana [Japanese text]** to render Japanese text with furigana. For example: **${prefix}furigana 家を出てすぐの所**`, 'No suffix');
     }
 

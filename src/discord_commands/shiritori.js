@@ -186,7 +186,7 @@ class DiscordClientDelegate {
       });
     }
 
-    const prefix = globals.persistence.getPrimaryPrefixFromMsg(this.commanderMessage);
+    const prefix = this.commanderMessage.prefix;
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
@@ -203,7 +203,7 @@ class DiscordClientDelegate {
 
   notifyStarting(inMs) {
     const inSeconds = Math.floor(inMs / 1000);
-    const prefix = globals.persistence.getPrimaryPrefixFromMsg(this.commanderMessage);
+    const prefix = this.commanderMessage.prefix;
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori',
@@ -356,7 +356,7 @@ module.exports = {
       return shiritoriManager.stop(locationId, msg.author.id);
     }
 
-    const prefix = monochrome.getPersistence().getPrimaryPrefixFromMsg(msg);
+    const prefix = msg.prefix;
     throwIfSessionInProgress(locationId, prefix);
     const clientDelegate = new DiscordClientDelegate(erisBot, msg);
 
