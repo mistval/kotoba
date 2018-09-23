@@ -30,7 +30,7 @@
     "htmlparser": "1.7.7",
     "mkdirp": "^0.5.1",
     "mongoose": "^5.2.14",
-    "monochrome-bot": "git+https://github.com/mistval/monochrome.git#dev",
+    "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
     "render-furigana": "1.0.4",
     "request": "2.88.0",
     "request-promise": "4.2.2",
