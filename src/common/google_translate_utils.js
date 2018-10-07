@@ -36,6 +36,10 @@ function throwNotRespondingError(internalError) {
 // Input can be a language code (case insensitive)
 // or it can be a language name (case insensitive)
 function toLanguageCode(input) {
+  if (input === undefined) {
+    return undefined;
+  }
+
   const inputLowercase = input.toLowerCase();
   if (languageCodeAliases[inputLowercase]) {
     return languageCodeAliases[inputLowercase];
