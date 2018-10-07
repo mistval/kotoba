@@ -75,6 +75,8 @@ async function coerceLanguageCodes(languageCodes, text) {
   assert(languageCodes.length < 3, 'More language codes than expected');
 
   let [coercedLanguageCodeFrom, coercedLanguageCodeTo] = languageCodes;
+  coercedLanguageCodeFrom = googleTranslate.toLanguageCode(coercedLanguageCodeFrom);
+  coercedLanguageCodeTo = googleTranslate.toLanguageCode(coercedLanguageCodeTo);
 
   if (!coercedLanguageCodeTo) {
     const detectedLanguageCode = await googleTranslate.detectLanguage(text);
@@ -88,8 +90,8 @@ async function coerceLanguageCodes(languageCodes, text) {
       coercedDetectedLanguageCode = 'ja';
     }
 
-    if (languageCodes[0] !== detectedLanguageCode) {
-      coercedLanguageCodeTo = languageCodes[0];
+    if (coercedLanguageCodeFrom !== detectedLanguageCode) {
+      coercedLanguageCodeTo = coercedLanguageCodeFrom;
       coercedLanguageCodeFrom = coercedDetectedLanguageCode;
     }
 
