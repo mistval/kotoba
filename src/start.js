@@ -2,7 +2,6 @@
 const reload = require('require-reload')(require);
 const apiKeys = reload('./../api_keys.js');
 const monochrome = reload('monochrome-bot');
-const webserver = require('./webserver/webserver.js');
 const quizManager = reload('./common/quiz/manager.js');
 const globals = require('./common/globals.js');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
@@ -45,7 +44,6 @@ function createBot() {
       'hard to get'
     ],
     statusRotationIntervalInSeconds: 600,
-    startWebServer: true,
     erisOptions: {
       maxShards: 'auto',
       messageLimit: 0,
@@ -89,41 +87,8 @@ function saveGlobals(bot) {
   globals.persistence = bot.getPersistence();
 }
 
-function startWebserver(monochrome) {
-  const CONTACT_SPAM_INTERVAL_IN_MS = 120000;
-  const MAX_CONTACTS_IN_INTERVAL = 10;
-
-  let contactsSinceTimerReset = 0;
-  let contactEnabled = true;
-  let timer;
-
-  webserver.start(monochrome, (email, message) => {
-    if (contactEnabled === false) {
-      return Promise.reject();
-    }
-    if (contactsSinceTimerReset >= MAX_CONTACTS_IN_INTERVAL) {
-      bot.getErisBot().createMessage('408587745745698826', {embed: {title: 'Spam detected, contact disabled'}}).catch();
-      contactEnabled = false;
-      return Promise.reject();
-    }
-    if (!timer) {
-      timer = setTimeout(() => {
-        contactsSinceTimerReset = 1;
-        timer = undefined;
-      }, CONTACT_SPAM_INTERVAL_IN_MS);
-    }
-    ++contactsSinceTimerReset;
-    return bot.getErisBot().createMessage('408587745745698826', 'Contact from: ' + email + '\n\n' + message);
-  });
-}
-
 const bot = createBot();
 checkApiKeys(bot);
 saveGlobals(bot);
 bot.connect();
-
-if (config.startWebServer) {
-  startWebserver(bot);
-}
-
 loadQuizDecks();
