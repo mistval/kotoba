@@ -1,6 +1,5 @@
 'use strict'
 const reload = require('require-reload')(require);
-const htmlparser = require('htmlparser');
 const fs = require('fs');
 const request = require('request-promise');
 const constants = require('./constants.js');
