@@ -182,6 +182,8 @@ function tryCreateDeckFromRawData(data, uri) {
     throwParsePublicError('Deck must have a SHORT NAME', 0, uri);
   } else if (!lines[lineIndex] || !lines[lineIndex].startsWith(QUESTIONS_START_IDENTIFIER)) {
     throwParsePublicError(`Did not find ${QUESTIONS_START_IDENTIFIER} separator. You must put your questions below --QuestionsStart--`, 0, uri);
+  } else if (!instructions) {
+    throwParsePublicError('Deck must have INSTRUCTIONS', 0, uri);
   }
 
   if (!questionCreationStrategy) {
