@@ -228,7 +228,7 @@ function tryCancel(hook, msg) {
 function handleRootViewMsg(hook, monochrome, msg) {
   const index = messageToIndex(msg);
   const settingsNodes = monochrome.getSettings().getRawSettingsTree();
-  if (index < settingsNodes.length) {
+  if (index >= 0 && index < settingsNodes.length) {
     const nextNode = settingsNodes[index];
     tryUnregisterHook(hook);
     return showNode(monochrome, msg, nextNode);
@@ -523,7 +523,7 @@ function tryHandleCancelBack(hook, monochrome, msg, node) {
 function handleCategoryViewMsg(hook, monochrome, msg, category) {
   const index = messageToIndex(msg);
   const childNodes = category.children;
-  if (index < childNodes.length) {
+  if (index >= 0 && index < childNodes.length) {
     const nextNode = childNodes[index];
     tryUnregisterHook(hook);
     return showNode(monochrome, msg, nextNode);
