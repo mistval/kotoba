@@ -182,12 +182,14 @@ class DiscordClientDelegate {
       {
         name: `${previousAnswererName} (${scoreForUserId[this.previousAnswererId]}) said`,
         value: `${createMarkdownLinkForWord(previousWordInformation.word)}${readingPart}`,
-        inline: true,
+      },
+      {
+        name: `It means`,
+        value: previousWordInformation.meaning,
       },
       {
         name: 'Next word starts with',
         value: previousWordInformation.nextWordMustStartWith.join(', '),
-        inline: true,
       },
     ];
 
