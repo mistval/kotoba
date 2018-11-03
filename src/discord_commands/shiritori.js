@@ -165,13 +165,7 @@ class DiscordClientDelegate {
     this.previousAnswererId = currentPlayerId;
   }
 
-  onAwaitingInputFromPlayer(playerId, previousWordInformation) {
-    if (playerId === this.bot.user.id) {
-      this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-        this.logger.logFailure('SHIRITORI', 'Failed to send typing', err);
-      });
-    }
-
+  async onAwaitingInputFromPlayer(playerId, previousWordInformation) {
     if (!this.previousAnswererId) {
       return;
     }
@@ -191,14 +185,14 @@ class DiscordClientDelegate {
         inline: true,
       },
       {
-          name: 'Next word starts with',
-          value: previousWordInformation.nextWordMustStartWith.join(', '),
-          inline: true,
+        name: 'Next word starts with',
+        value: previousWordInformation.nextWordMustStartWith.join(', '),
+        inline: true,
       },
     ];
 
     let content = '';
-    const previousWasBot = playerId = this.bot.user.id;
+    const previousWasBot = this.previousAnswererId === this.bot.user.id;
     if (previousWasBot) {
       content = `I say ${previousWordInformation.word}`;
     }
@@ -216,7 +210,15 @@ class DiscordClientDelegate {
       },
     };
 
-    return this.commanderMessage.channel.createMessage(message);
+    const sentMessage = await this.commanderMessage.channel.createMessage(message);
+
+    if (playerId === this.bot.user.id) {
+      return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
+        this.logger.logFailure('SHIRITORI', 'Failed to send typing', err);
+      });
+    }
+
+    return sentMessage;
   }
 
   onPlayerSkipped(playerId) {
