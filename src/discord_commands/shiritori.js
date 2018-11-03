@@ -195,7 +195,8 @@ class DiscordClientDelegate {
 
     let content = '';
     const previousWasBot = this.previousAnswererId === this.bot.user.id;
-    if (previousWasBot) {
+    const currentIsBot = playerId === this.bot.user.id;
+    if (previousWasBot && !currentIsBot) {
       content = `I say ${previousWordInformation.word}`;
     }
 
@@ -244,6 +245,7 @@ class DiscordClientDelegate {
   onAnswerRejected(playerId, input, rejectionReason, rejectionInfo) {
     if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
       // TODO: Add reaction
+      return;
     }
 
     const description = discordDescriptionForRejection(rejectionReason, rejectionInfo);
