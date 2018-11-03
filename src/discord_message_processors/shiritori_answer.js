@@ -12,13 +12,17 @@ module.exports = {
     let userName = msg.author.username;
     let contentLowerCase = msg.content.toLowerCase();
     if (contentLowerCase === 'join') {
-      return shiritoriManager.addRealPlayer(locationId, userId);
+      shiritoriManager.addRealPlayer(locationId, userId);
+      return true;
     } else if (contentLowerCase === 'bot leave') {
-      return shiritoriManager.setPlayerInactive(locationId, bot.user.id);
+      shiritoriManager.setPlayerInactive(locationId, bot.user.id);
+      return true;
     } else if (contentLowerCase === 'bot join') {
-      return shiritoriManager.addBotPlayer(locationId, bot.user.id);
+      shiritoriManager.addBotPlayer(locationId, bot.user.id);
+      return true;
     } else if (contentLowerCase === 'leave') {
-      return shiritoriManager.setPlayerInactive(locationId, userId);
+      shiritoriManager.setPlayerInactive(locationId, userId);
+      return true;
     } else {
       return shiritoriManager.receiveInput(locationId, userId, msg.content);
     }
