@@ -3,7 +3,8 @@ const reload = require('require-reload')(require);
 const fs = require('fs');
 const request = require('request-promise');
 const constants = require('./constants.js');
-const searchForKanji = new (require('unofficial-jisho-api'))().searchForKanji;
+const UnofficialJishoApi = require('unofficial-jisho-api');
+const jishoApi = new UnofficialJishoApi();
 const PublicError = reload('monochrome-bot').PublicError;
 
 function createTitleOnlyEmbed(title) {
@@ -86,7 +87,7 @@ module.exports.createContent = function(kanji) {
   if (!kanji) {
     throw new Error('No Kanji');
   }
-  return searchForKanji(kanji).catch(err => {
+  return jishoApi.searchForKanji(kanji).catch(err => {
     let embed = createTitleOnlyEmbed('Jisho is not responding. Please try again later.');
     throw PublicError.createWithCustomPublicMessage(embed, true, 'Jisho fetch fail', err);
   }).then(result => {

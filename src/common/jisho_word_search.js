@@ -3,7 +3,7 @@ const UnofficialJishoApi = require('unofficial-jisho-api');
 
 const errors = reload('./util/errors.js');
 
-const { searchForPhrase } = new UnofficialJishoApi();
+const jishoApi = new UnofficialJishoApi();
 
 const JISHO_SEARCH_BASE_URI = 'http://jisho.org/search/';
 
@@ -133,7 +133,7 @@ function throwNotRespondingError(err) {
 
 async function searchWord(suffix) {
   try {
-    const data = await searchForPhrase(suffix);
+    const data = await jishoApi.searchForPhrase(suffix);
     if (data.meta.status !== 200) {
       throw new Error(`Bad response status, code: ${data.meta.status.toString()}`);
     }
