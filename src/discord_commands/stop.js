@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
 const quizManager = reload('./../common/quiz/manager.js');
-const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
+const shiritoriManager = require('shiritori');
 
 module.exports = {
   commandAliases: ['endquiz', 'endtest', 'stop', 'quit', 'ｑｓ'],
@@ -13,7 +13,7 @@ module.exports = {
 
     return Promise.all([
       quizManager.stopQuiz(locationId, userId),
-      shiritoriManager.stop(locationId, userId),
+      shiritoriManager.stopGame(locationId, userId),
     ]);
   },
 };
