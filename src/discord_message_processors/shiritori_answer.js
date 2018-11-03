@@ -2,7 +2,7 @@ const shiritoriManager = require('shiritori');
 
 module.exports = {
   name: 'Shiritori Answer',
-  action: (erisBot, msg, monochrome) => {
+  action: (bot, msg, monochrome) => {
     let locationId = msg.channel.id;
     if (!shiritoriManager.gameExists(locationId)) {
       return false;
@@ -12,15 +12,15 @@ module.exports = {
     let userName = msg.author.username;
     let contentLowerCase = msg.content.toLowerCase();
     if (contentLowerCase === 'join') {
-      return shiritoriManager.join(locationId, userId, userName);
+      return shiritoriManager.addRealPlayer(locationId, userId);
     } else if (contentLowerCase === 'bot leave') {
-      return shiritoriManager.botLeave(locationId, userId);
+      return shiritoriManager.setPlayerInactive(locationId, bot.user.id);
     } else if (contentLowerCase === 'bot join') {
-      return shiritoriManager.botJoin(locationId, userId);
+      return shiritoriManager.addBotPlayer(locationId, bot.user.id);
     } else if (contentLowerCase === 'leave') {
-      return shiritoriManager.leave(locationId, userId);
+      return shiritoriManager.setPlayerInactive(locationId, userId);
     } else {
-      return shiritoriManager.receiveInput(msg.channel.id, msg.author.id, msg.content);
+      return shiritoriManager.receiveInput(locationId, userId, msg.content);
     }
   }
 };
