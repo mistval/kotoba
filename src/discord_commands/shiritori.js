@@ -45,7 +45,7 @@ function discordDescriptionForRejection(rejectionReason, extraData) {
   } else if (rejectionReason === REJECTION_REASON.WrongStartSequence) {
     return `Your answer must begin with ${extraData.expected.join(', ')}. I found these readings for that word but they don't start with the right kana: **${extraData.actual.join(', ')}**`;
   } else if (rejectionReason === REJECTION_REASON.NotNoun) {
-    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(extraData.join)}: **${xtraData.join(', ')}**`;
+    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(extraData.join)}: **${extraData.join(', ')}**`;
   }
 
   assert(false, 'Unexpected branch');
