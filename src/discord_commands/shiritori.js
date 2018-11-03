@@ -2,18 +2,16 @@ const assert = require('assert');
 const reload = require('require-reload')(require);
 const globals = require('./../common/globals.js');
 
-const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
+const shiritoriManager = require('shiritori');
+const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
-const ShiritoriSession = reload('./../common/shiritori/shiritori_session.js');
-const japaneseGameStrategy = reload('./../common/shiritori/japanese_game_strategy.js');
-const { REJECTION_REASON } = japaneseGameStrategy;
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
 
 function throwIfSessionInProgress(locationId, prefix) {
-  if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
+  if (shiritoriManager.gameExists(locationId)) {
     errors.throwPublicErrorInfo(
       'Game in progress',
       `There is already a game in progress. I can't start another, that would be confusing! You can stop the current game by saying **${prefix}shiritori stop**.`,
@@ -113,6 +111,17 @@ function discordDescriptionForRejection(rejection) {
   return undefined;
 }
 
+function sendNeutralEmbed(channel, title, description) {
+  return channel.createMessage({
+    embed: {
+      title,
+      description,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  });
+}
+
+// TODO: Send typing
 class DiscordClientDelegate {
   constructor(bot, commanderMessage, logger) {
     this.bot = bot;
@@ -120,45 +129,47 @@ class DiscordClientDelegate {
     this.logger = logger;
   }
 
-  botLeft(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'I\'m leaving!',
-        description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
+  onPlayerSetInactive(userID, reason) {
+    const { channel } = this.commanderMessage;
+
+    if (userId === this.bot.user.id) {
+      return sendNeutralEmbed(
+        channel,
+        'I\'m leaving!',
+        `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
+      );
+    } else if (reason === shiritoriManager.PlayerSetInactiveReason.EXTERNAL_LEAVE_REQUEST) {
+      return sendNeutralEmbed(
+        channel,
+        'Player left',
+        `<@${userId}> has left the game.`,
+      );
+    } else if (reason === shiritoriManager.PlayerSetInactiveReason.AFK) {
+      return sendNeutralEmbed(
+        channel,
+        'Player left',
+        `<@${userId}> seems AFK so I'm booting them! They can say **join** to rejoin.`,
+      );
+    } else {
+      assert(false, 'Unexpected branch');
+    }
   }
 
-  botJoined(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'I\'m back!',
-        description: `<@${userId}> asked me to rejoin the game.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
-  }
-
-  stopped(reason, wordHistory, scoreForUserId, arg) {
+  onGameEnded(reason, args) {
     let description;
-    clearTimeout(this.sendTypingTimeout);
 
-    if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
-      description = `<@${arg.userId}> asked me to stop.`;
+    if (reason === shiritoriManager.EndGameReason.EXTERNAL_STOP_REQUEST) {
+      description = `<@${args}> asked me to stop.`;
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
-      if (arg.botIsPlaying) {
-        description = 'I am the last player, so I stopped.';
-      } else if (arg.players[0]) {
-        description = `<@${arg.players[0]}> is the last player standing, so I stopped. Congratulations!`;
-      } else {
-        description = 'There\'s no one left in the game, so I stopped!';
-      }
+      description = 'There are no players left, so I stopped.';
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
       assert(false, 'Unknown stop reason');
     }
+
+    const channelId = this.commanderMessage.channel.id;
+    const wordHistory = shiritoriManager.getAnswerHistory(channelId);
 
     let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
     if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
@@ -178,6 +189,7 @@ class DiscordClientDelegate {
       });
     }
 
+    const scoreForUserId = shiritoriManager.getScores(channelId);
     const scorersString = createScoresString(scoreForUserId);
     if (scorersString) {
       embedFields.push({
@@ -186,7 +198,7 @@ class DiscordClientDelegate {
       });
     }
 
-    const prefix = this.commanderMessage.prefix;
+    const { prefix } = this.commanderMessage;
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
@@ -197,6 +209,20 @@ class DiscordClientDelegate {
           text: `Say '${prefix}lb shiritori' to see the leaderboard for this server. '${prefix}lb global shiritori' for global scores.`,
           icon_url: constants.FOOTER_ICON_URI,
         },
+      },
+    });
+  }
+
+  onAwaitingInputFromPlayer(playerId, previousWord) {
+    const playerName =
+  }
+
+  botJoined(userId) {
+    return this.commanderMessage.channel.createMessage({
+      embed: {
+        title: 'I\'m back!',
+        description: `<@${userId}> asked me to rejoin the game.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
   }
@@ -233,32 +259,12 @@ class DiscordClientDelegate {
     });
   }
 
-  removedPlayerForInactivity(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Removing Player',
-        description: `<@${userId}> seems AFK so I'm booting them! They can rejoin by saying **join**.`,
-        color: constants.EMBED_WRONG_COLOR,
-      },
-    });
-  }
-
   removedPlayerForRuleViolation(userId) {
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Removing Player',
         description: `<@${userId}> violated a rule, and this is **hardcore mode**, so they get booted! They can rejoin by saying **join**.`,
         color: constants.EMBED_WRONG_COLOR,
-      },
-    });
-  }
-
-  playerLeft(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Player left',
-        description: `<@${userId}> has left the game.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
   }
@@ -329,13 +335,6 @@ class DiscordClientDelegate {
   }
 }
 
-function getScoreScopeIdForMessage(msg) {
-  if (msg.channel.guild) {
-    return msg.channel.guild.id;
-  }
-  return msg.channel.id;
-}
-
 module.exports = {
   commandAliases: ['shiritori', 'st', 'sh'],
   canBeChannelRestricted: true,
@@ -353,8 +352,10 @@ module.exports = {
     const locationId = msg.channel.id;
 
     if (suffix === 'stop') {
-      return shiritoriManager.stop(locationId, msg.author.id);
+      return shiritoriManager.stopGame(locationId, msg.author.id);
     }
+
+    // TODO: Leaving game, removing bot from game.
 
     const prefix = msg.prefix;
     throwIfSessionInProgress(locationId, prefix);
@@ -364,28 +365,22 @@ module.exports = {
     const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
     const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
-    const answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
+    const singlePlayerTimeoutMs = serverSettings['shiritori/answer_time_limit'] * 1000;
     const botScoreMultipler = serverSettings['shiritori/bot_score_multiplier'];
 
+    // TODO: Hardcore mode
     const settings = {
-      answerTimeLimitInMs,
-      botTurnMinimumWaitInMs,
+      singlePlayerTimeoutMs,
+      multiPlayerTimeoutMs: singlePlayerTimeoutMs,
       botTurnMaximumWaitInMs,
-      removePlayerForRuleViolations,
+      botTurnMinimumWaitInMs,
       botScoreMultipler,
     };
 
-    const scoreScopeId = getScoreScopeIdForMessage(msg);
-    const session = new ShiritoriSession(
-      msg.author.id,
-      msg.author.username,
-      clientDelegate,
-      japaneseGameStrategy,
-      locationId,
-      settings,
-      erisBot.user.id,
-    );
-
-    return shiritoriManager.startSession(session, scoreScopeId);
+    // TODO: Saving scores
+    shiritoriManager.createGame(locationId, clientDelegate, settings);
+    shiritoriManager.addBotPlayer(locationId, erisBot.user.id);
+    shiritoriManager.addRealPlayer(locationId, msg.author.id);
+    return shiritoriManager.startGame(locationId);
   },
 };
