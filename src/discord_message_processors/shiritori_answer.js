@@ -1,13 +1,11 @@
-'use strict'
-const reload = require('require-reload')(require);
-const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
+const shiritoriManager = require('shiritori');
 
 module.exports = {
   name: 'Shiritori Answer',
   action: (erisBot, msg, monochrome) => {
     let locationId = msg.channel.id;
-    if (!shiritoriManager.isSessionInProgressAtLocation(locationId)) {
-      return false
+    if (!shiritoriManager.gameExists(locationId)) {
+      return false;
     }
 
     let userId = msg.author.id;
@@ -22,7 +20,7 @@ module.exports = {
     } else if (contentLowerCase === 'leave') {
       return shiritoriManager.leave(locationId, userId);
     } else {
-      return shiritoriManager.processUserInput(msg.channel.id, msg.author.id, msg.author.username, msg.content, msg);
+      return shiritoriManager.receiveInput(msg.channel.id, msg.author.id, msg.content);
     }
   }
 };
