@@ -1,6 +1,7 @@
 'use strict'
 const reload = require('require-reload')(require);
-const searchForKanji = new (require('unofficial-jisho-api'))().searchForKanji;
+const UnofficialJishoApi = require('unofficial-jisho-api');
+const jishoApi = new UnofficialJishoApi();
 const constants = reload('./constants.js');
 const PublicError = reload('monochrome-bot').PublicError;
 
@@ -156,7 +157,7 @@ module.exports.createContent = function(kanji, prefix) {
   if (!kanji) {
     throw new Error('No Kanji');
   }
-  return searchForKanji(kanji).catch(err => {
+  return jishoApi.searchForKanji(kanji).catch(err => {
     let embed = createTitleOnlyEmbed('Jisho is not responding. Please try again later.');
     throw PublicError.createWithCustomPublicMessage(embed, true, 'Jisho fetch fail', err);
   }).then(result => {

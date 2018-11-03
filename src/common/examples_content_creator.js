@@ -4,7 +4,7 @@ const UnofficialJishoApi = require('unofficial-jisho-api');
 const constants = reload('./constants.js');
 const { throwPublicErrorFatal } = reload('./util/errors.js');
 
-const { searchForExamples } = new UnofficialJishoApi();
+const jishoApi = new UnofficialJishoApi();
 
 const MAX_EXAMPLE_RESULTS = 4;
 const LONG_CUTOFF_IN_CHARS = 22;
@@ -82,7 +82,7 @@ async function createContent(word) {
     throw new Error('No word');
   }
   try {
-    const result = await searchForExamples(word);
+    const result = await jishoApi.searchForExamples(word);
     return new ExamplesResult(result);
   } catch (err) {
     return throwPublicErrorFatal('Examples', 'Jisho is not responding. Please try again later.', 'Jisho fetch fail', err);

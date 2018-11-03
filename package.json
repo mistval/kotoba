@@ -23,16 +23,16 @@
   "dependencies": {
     "bluebird": "3.5.1",
     "canvas": "1.6.7",
-    "disk-array": "1.0.1",
+    "disk-array": "^1.0.1",
     "html-entities": "1.2.1",
     "mkdirp": "0.5.1",
     "mongoose": "5.2.14",
-    "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
-    "render-furigana": "1.0.4",
+    "monochrome-bot": "^2.0.0",
+    "render-furigana": "^1.0.4",
     "request": "2.88.0",
     "request-promise": "4.2.2",
     "require-reload": "0.2.2",
-    "unofficial-jisho-api": "1.1.1"
+    "unofficial-jisho-api": "^1.1.1"
   },
   "devDependencies": {
     "eslint": "4.19.1",
