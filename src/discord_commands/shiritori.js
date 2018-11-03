@@ -263,6 +263,17 @@ class DiscordClientDelegate {
   }
 }
 
+function getGameStartDescription(prefix) {
+  return `
+Starting a Shiritori game in five seconds. I'll go first!
+
+To stop the game say **${prefix}shiritori stop**.
+Other players can join by saying **join**.
+If you don't want to play with me, say **bot leave** and I'll leave the game :(
+If you want players to get kicked for breaking rules, start a new game with **k!shiritori hardcore**.
+  `;
+}
+
 module.exports = {
   commandAliases: ['shiritori', 'st', 'sh'],
   canBeChannelRestricted: true,
@@ -283,7 +294,6 @@ module.exports = {
       return shiritoriManager.stopGame(locationId, msg.author.id);
     }
 
-    // TODO: Leaving game, removing bot from game.
     const prefix = msg.prefix;
     throwIfSessionInProgress(locationId, prefix);
     const clientDelegate = new DiscordClientDelegate(erisBot, msg);
@@ -312,7 +322,7 @@ module.exports = {
     await msg.channel.createMessage({
       embed: {
         title: 'Shiritori',
-        description: `Starting a Shiritori game in five seconds. Other players can join by saying **join**. Say **${prefix}shiritori stop** when you want to stop. I'll go first!\n\nBy the way, if you want me to kick players out of the game when they violate a rule, you can start a game with **${prefix}shiritori hardcore**.`,
+        description: getGameStartDescription(prefix),
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });
