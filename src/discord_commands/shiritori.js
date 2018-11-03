@@ -84,7 +84,7 @@ class DiscordClientDelegate {
       return sendNeutralEmbed(
         channel,
         'I\'m leaving!',
-        `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
+        `Well, I'll continue judging, but I won't take turns anymore :) You can say **bot join** if you would like me to start playing with you again.`,
       );
     } else if (reason === shiritoriManager.PlayerSetInactiveReason.EXTERNAL_LEAVE_REQUEST) {
       return sendNeutralEmbed(
