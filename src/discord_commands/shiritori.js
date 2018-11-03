@@ -240,7 +240,22 @@ class DiscordClientDelegate {
     );
   }
 
-  // TODO: Player joined notification
+  onNewPlayerAdded(playerId) {
+    if (playerId === this.bot.user.id) {
+      return;
+    }
+
+    if (!this.firstPlayerHasJoined) {
+      this.firstPlayerHasJoined = true;
+      return;
+    }
+
+    return sendNeutralEmbed(
+      this.commanderMessage.channel,
+      'Player joined',
+      `<@${playerId}> has joined the game. Their turn will come soon!`,
+    );
+  }
 
   onAnswerRejected(playerId, input, rejectionReason, rejectionInfo) {
     if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
