@@ -192,7 +192,7 @@ class DeckCollection {
     card.answerHistory = card.answerHistory || [];
     card.cardIndex = cardIndex;
     card.deckIndex = deckIndex;
-    card.mostRecentApperanceAnswerers = [];
+    card.mostRecentAppearanceAnswerers = [];
     if (card.isInternetCard === undefined) {
       card.isInternetCard = deck.isInternetDeck;
     }
