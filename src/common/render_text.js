@@ -6,10 +6,9 @@ const fontHelper = reload('./font_helper.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
-const LEFT_PADDING_IN_PIXELS = 6;
-const RIGHT_PADDING_IN_PIXELS = 6;
+const BASE_LEFT_PADDING_IN_PIXELS = 6;
+const BASE_RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
-const TOTAL_HORIZONTAL_PADDING_IN_PIXELS = LEFT_PADDING_IN_PIXELS + RIGHT_PADDING_IN_PIXELS;
 
 module.exports.render = function(text, textColor, backgroundColor, fontSize, fontSetting) {
   textColor = textColor || 'black';
@@ -23,13 +22,18 @@ module.exports.render = function(text, textColor, backgroundColor, fontSize, fon
     ctx.font = `${fontSize}px ${font}`;
 
     let measurements = ctx.measureText(text);
-    canvas.width = measurements.width + TOTAL_HORIZONTAL_PADDING_IN_PIXELS;
+
+    const leftPaddingInPixels = BASE_LEFT_PADDING_IN_PIXELS * Math.floor(text.length / 4 + 1);
+    const rightPaddingInPixels = BASE_RIGHT_PADDING_IN_PIXELS * Math.floor(text.length / 4 + 1);
+    const totalHorizontalPaddingInPixels = leftPaddingInPixels + rightPaddingInPixels;
+
+    canvas.width = measurements.width + totalHorizontalPaddingInPixels;
     canvas.height = measurements.actualBoundingBoxAscent + measurements.actualBoundingBoxDescent + TOTAL_VERTICAL_PADDING_IN_PIXELS;
     ctx.fillStyle = backgroundColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx.fillStyle = textColor;
-    ctx.fillText(text, LEFT_PADDING_IN_PIXELS, measurements.actualBoundingBoxAscent + TOP_PADDING_IN_PIXELS);
+    ctx.fillText(text, leftPaddingInPixels, measurements.actualBoundingBoxAscent + TOP_PADDING_IN_PIXELS);
 
     canvas.toBuffer(function(err, buffer) {
       if (err) {
