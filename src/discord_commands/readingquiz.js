@@ -251,9 +251,9 @@ const afterQuizMessages = [
   },
   {
     embed: {
-      title: 'Listening quizzes',
+      title: 'O, your lame friends don\'t use Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'Try my new JLPT listening quizzes: LN1, LN2, LN3. LN4 and LN5 are on the way.',
+      description: '[Play on the web](http://kotobaweb.com/)',
     },
   },
   {
