@@ -1,17 +1,18 @@
 'use strict'
 const reload = require('require-reload')(require);
 const apiKeys = reload('./../api_keys.js');
-const monochrome = reload('monochrome-bot');
+const Monochrome = reload('monochrome-bot');
 const quizManager = reload('./common/quiz/manager.js');
 const globals = require('./common/globals.js');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const path = require('path');
 const config = reload('./../config.json');
+const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
 
 function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
-  const settingsFilePath = path.join(__dirname, 'user_settings.js');
+  const settingsFilePath = path.join(__dirname, 'bot_settings.js');
   const logDirectoryPath = path.join(__dirname, '..', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'persistence');
 
@@ -62,12 +63,11 @@ function createBot() {
   };
 
   options = Object.assign(options, config);
-  const bot = new monochrome(options);
-  return bot;
+  return new Monochrome(options);
 }
 
-function checkApiKeys(bot) {
-  const logger = bot.getLogger();
+function checkApiKeys(monochrome) {
+  const logger = monochrome.getLogger();
 
   if (!apiKeys.YOUTUBE) {
     logger.logFailure('YOUTUBE', 'No Youtube API key present in ./api_keys.js. The jukebox command will not work.');
@@ -82,13 +82,15 @@ function checkApiKeys(bot) {
   }
 }
 
-function saveGlobals(bot) {
-  globals.logger = bot.getLogger();
-  globals.persistence = bot.getPersistence();
+function saveGlobals(monochrome) {
+  globals.logger = monochrome.getLogger();
+  globals.persistence = monochrome.getPersistence();
+  globals.monochrome = monochrome;
 }
 
-const bot = createBot();
-checkApiKeys(bot);
-saveGlobals(bot);
-bot.connect();
+const monochrome = createBot();
+checkApiKeys(monochrome);
+saveGlobals(monochrome);
+monochrome.connect();
 loadQuizDecks();
+loadShiritoriForeverChannels(monochrome);

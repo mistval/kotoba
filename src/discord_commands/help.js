@@ -21,6 +21,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'pronounce',
   'random',
   'shiritori',
+  'shiritoriforever',
   'translate',
   'weblio',
   'jukebox',
