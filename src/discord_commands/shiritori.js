@@ -158,7 +158,7 @@ class DiscordClientDelegate {
 
     const wordHistory = shiritoriManager.getAnswerHistory(channelId);
 
-    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
+    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('　');
     if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
       wordHistoryString = wordHistoryString.substring(
         0,
