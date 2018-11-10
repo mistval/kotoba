@@ -6,6 +6,8 @@ const shiritoriManager = require('shiritori');
 const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
+// Piggyback on the quiz scores for now.
+const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
@@ -24,10 +26,10 @@ function createMarkdownLinkForWord(word) {
   return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
 }
 
-function createScoresString(scoreForUserId) {
-  return Object.keys(scoreForUserId)
-    .sort((userIdA, userIdB) => scoreForUserId[userIdB] - scoreForUserId[userIdA])
-    .map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
+function createScoresString(scoreForUserID) {
+  return Object.keys(scoreForUserID)
+    .sort((userIdA, userIdB) => scoreForUserID[userIdB] - scoreForUserID[userIdA])
+    .map(userId => `<@${userId}> has ${scoreForUserID[userId]} points`).join('\n');
 }
 
 function getPluralizer(array) {
@@ -68,6 +70,36 @@ function sendNeutralEmbed(channel, title, description) {
 
 function sendErrorEmbed(channel, title, description) {
   return sendEmbedWithColor(channel, title, description, constants.EMBED_WRONG_COLOR);
+}
+
+function getNameForUserID(bot, userIDs) {
+  const nameForUserID = {};
+  userIDs.forEach((userID) => {
+    const user = bot.users.get(userID);
+    nameForUserID[userID] = `${user.username}#${user.discriminator}`;
+  });
+
+  return nameForUserID;
+}
+
+function saveScores(bot, commanderMessage, scoreForUserID) {
+  const scoreScopeID = commanderMessage.channel.guild
+    ? commanderMessage.channel.guild.id
+    : commanderMessage.channel.id;
+
+  const scoreForDeckForUserID = {};
+  Object.keys(scoreForUserID).forEach((userID) => {
+    scoreForDeckForUserID[userID] = {
+      shiritori: scoreForUserID[userID],
+    };
+  });
+
+  const nameForUserID = getNameForUserID(bot, Object.keys(scoreForUserID));
+  return quizScoreStorageUtils.addScores(
+    scoreScopeID,
+    scoreForDeckForUserID,
+    nameForUserID,
+  );
 }
 
 class DiscordClientDelegate {
@@ -137,8 +169,9 @@ class DiscordClientDelegate {
       });
     }
 
-    const scoreForUserId = shiritoriManager.getScores(channelId);
-    const scorersString = createScoresString(scoreForUserId);
+    const scoreForUserID = shiritoriManager.getScores(channelId);
+    saveScores(this.bot, this.commanderMessage, scoreForUserID);
+    const scorersString = createScoresString(scoreForUserID);
     if (scorersString) {
       embedFields.push({
         name: 'Scores',
@@ -176,11 +209,11 @@ class DiscordClientDelegate {
     }
 
     const previousAnswererName = this.bot.users.get(this.previousAnswererId).username;
-    const scoreForUserId = shiritoriManager.getScores(this.commanderMessage.channel.id);
+    const scoreForUserID = shiritoriManager.getScores(this.commanderMessage.channel.id);
 
     const fields = [
       {
-        name: `${previousAnswererName} (${scoreForUserId[this.previousAnswererId]}) said`,
+        name: `${previousAnswererName} (${scoreForUserID[this.previousAnswererId]}) said`,
         value: `${createMarkdownLinkForWord(previousWordInformation.word)}${readingPart}`,
       },
       {
@@ -328,7 +361,6 @@ module.exports = {
       botScoreMultiplier,
     };
 
-    // TODO: Saving scores
     shiritoriManager.createGame(locationId, clientDelegate, settings);
     shiritoriManager.addBotPlayer(locationId, erisBot.user.id);
     shiritoriManager.addRealPlayer(locationId, msg.author.id);
