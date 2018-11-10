@@ -300,7 +300,7 @@ function tryCreateLocationErrorString(locationString, msg, setting) {
         throw new Error('If the setting is only a server setting, we shouldn\'t be prompting for location.');
       }
       if (setting.channelSetting) {
-        return `That setting cannot be set as a user setting, it can only be set per channel. You can say **${THIS_CHANNEL}**, **${CANCEL}**, **${BACK}**, or provide a list of channels separated by spaces, for example: **#general #bot**`;
+        return `That setting cannot be set as a user setting, it can only be set per channel. You can say **${Location.THIS_CHANNEL}**, **${CANCEL}**, **${BACK}**, or provide a list of channels separated by spaces, for example: **#general #bot**`;
       }
       throw new Error('Unexpected fallthrough');
     }
@@ -316,7 +316,7 @@ function tryCreateLocationErrorString(locationString, msg, setting) {
         throw new Error('If the setting is only a user setting, we shouldn\'t be prompting for location.');
       }
       if (setting.channelSetting) {
-        return `That setting cannot be set as a server setting, it can only be set per channel. You can say **${THIS_CHANNEL}**, **${CANCEL}**, **${BACK}**, or provide a list of channels separated by spaces, for example: **#general #bot**`;
+        return `That setting cannot be set as a server setting, it can only be set per channel. You can say **${Location.THIS_CHANNEL}**, **${CANCEL}**, **${BACK}**, or provide a list of channels separated by spaces, for example: **#general #bot**`;
       }
       throw new Error('Unexpected fallthrough');
     }
