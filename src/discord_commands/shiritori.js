@@ -368,6 +368,7 @@ module.exports = {
       botTurnMaximumWaitInMs,
       botTurnMinimumWaitInMs,
       botScoreMultiplier,
+      autoRejoin: false,
     };
 
     shiritoriManager.createGame(locationId, clientDelegate, settings);
