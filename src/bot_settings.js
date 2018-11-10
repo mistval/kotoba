@@ -305,5 +305,23 @@ module.exports = [
         validateInternalValue: SettingsValidators.createRangeValidator(5, 300),
       }
     ]
-  }
+  },
+  {
+    userFacingName: 'Shiritori Forever',
+    children:
+    [
+      {
+        userFacingName: 'Shiritori Forever enabled',
+        description: 'Control whether Shiritori Forever is enabled, and where. After you change the setting, you will be asked where to apply it.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritoriforever',
+        userSetting: false,
+        serverSetting: false,
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
+    ]
+  },
 ];
