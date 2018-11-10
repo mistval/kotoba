@@ -238,12 +238,6 @@ class DiscordClientDelegate {
       content = `I say ${previousWordInformation.word}`;
     }
 
-    if (playerId === this.bot.user.id) {
-      this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-        this.logger.logFailure(LOGGER_TITLE, 'Failed to send typing', err);
-      });
-    }
-
     const message = {
       content,
       embed: {
@@ -257,9 +251,17 @@ class DiscordClientDelegate {
       },
     };
 
-    return retryPromise(
+    await retryPromise(
       () => this.commanderMessage.channel.createMessage(message),
     );
+
+    if (playerId === this.bot.user.id) {
+      return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
+        this.logger.logFailure(LOGGER_TITLE, 'Failed to send typing', err);
+      });
+    }
+
+    return undefined;
   }
 
   onPlayerSkipped(playerId) {
