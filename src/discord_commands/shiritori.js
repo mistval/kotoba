@@ -13,6 +13,7 @@ const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
+const LOGGER_TITLE = 'SHIRITORI';
 
 function throwIfSessionInProgress(locationId, prefix) {
   if (shiritoriManager.gameExists(locationId)) {
@@ -145,6 +146,7 @@ class DiscordClientDelegate {
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
       description = 'There are no players left, so I stopped.';
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
+      this.logger.logFailure(LOGGER_TITLE, 'Error', args);
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
       assert(false, 'Unknown stop reason');
@@ -235,6 +237,12 @@ class DiscordClientDelegate {
       content = `I say ${previousWordInformation.word}`;
     }
 
+    if (playerId === this.bot.user.id) {
+      this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
+        this.logger.logFailure(LOGGER_TITLE, 'Failed to send typing', err);
+      });
+    }
+
     const message = {
       content,
       embed: {
@@ -248,17 +256,9 @@ class DiscordClientDelegate {
       },
     };
 
-    const sentMessage = await retryPromise(
+    return retryPromise(
       () => this.commanderMessage.channel.createMessage(message),
     );
-
-    if (playerId === this.bot.user.id) {
-      return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-        this.logger.logFailure('SHIRITORI', 'Failed to send typing', err);
-      });
-    }
-
-    return sentMessage;
   }
 
   onPlayerSkipped(playerId) {
@@ -311,6 +311,10 @@ class DiscordClientDelegate {
         },
       },
     }));
+  }
+
+  onNonFatalError(err) {
+    this.logger.logFailure(LOGGER_TITLE, 'Non fatal error', err);
   }
 }
 
