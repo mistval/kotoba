@@ -257,10 +257,9 @@ class DiscordClientDelegate {
     );
   }
 
-  onAnswerRejected(playerId, input, rejectionReason, rejectionInfo) {
+  onAnswerRejected(playerId, input, rejectionReason, rejectionInfo, msg) {
     if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
-      // TODO: Add reaction
-      return;
+      return msg.addReaction('❓');
     }
 
     const description = discordDescriptionForRejection(rejectionReason, rejectionInfo);
