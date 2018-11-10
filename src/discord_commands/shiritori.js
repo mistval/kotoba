@@ -2,18 +2,21 @@ const assert = require('assert');
 const reload = require('require-reload')(require);
 const globals = require('./../common/globals.js');
 
-const shiritoriManager = reload('./../common/shiritori/shiritori_manager.js');
+const shiritoriManager = require('shiritori');
+const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
-const ShiritoriSession = reload('./../common/shiritori/shiritori_session.js');
-const japaneseGameStrategy = reload('./../common/shiritori/japanese_game_strategy.js');
-const { REJECTION_REASON } = japaneseGameStrategy;
+const retryPromise = reload('./../common/util/retry_promise.js');
+
+// Piggyback on the quiz scores for now.
+const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
+const LOGGER_TITLE = 'SHIRITORI';
 
 function throwIfSessionInProgress(locationId, prefix) {
-  if (shiritoriManager.isSessionInProgressAtLocation(locationId)) {
+  if (shiritoriManager.gameExists(locationId)) {
     errors.throwPublicErrorInfo(
       'Game in progress',
       `There is already a game in progress. I can't start another, that would be confusing! You can stop the current game by saying **${prefix}shiritori stop**.`,
@@ -22,66 +25,14 @@ function throwIfSessionInProgress(locationId, prefix) {
   }
 }
 
-function getDescriptionForTookTurnEmbed(
-  previousPlayerId,
-  nextPlayerId,
-  nextPlayerIsBot,
-  previousPlayerWasBot,
-) {
-  if (nextPlayerIsBot && previousPlayerWasBot) {
-    return 'It\'s my turn again!';
-  } else if (nextPlayerIsBot) {
-    return `<@${previousPlayerId}> went and now it's my turn!`;
-  } else if (previousPlayerWasBot) {
-    return `I went and now it's <@${nextPlayerId}>'s turn!`;
-  }
-  return `<@${previousPlayerId}> went and now it's <@${nextPlayerId}>'s turn!`;
-}
-
 function createMarkdownLinkForWord(word) {
   return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
 }
 
-function createFieldForUsedWord(msg, wordInformation, scoreForUserId) {
-  const playerName = wordInformation.userName;
-  let readingPart = '';
-  if (wordInformation.reading !== wordInformation.word) {
-    readingPart = `(${wordInformation.reading})`;
-  }
-  return {
-    name: `${playerName} (${scoreForUserId[wordInformation.userId]}) said`,
-    value: `${createMarkdownLinkForWord(wordInformation.word)} ${readingPart}`,
-    inline: true,
-  };
-}
-
-function createFieldsForTookTurnEmbed(msg, wordHistory, scoreForUserId) {
-  const previousWord = wordHistory[wordHistory.length - 1];
-  const penultimateWord = wordHistory[wordHistory.length - 2];
-
-  const fields = [];
-  if (penultimateWord) {
-    fields.push(createFieldForUsedWord(msg, penultimateWord, scoreForUserId));
-  }
-
-  fields.push(createFieldForUsedWord(msg, previousWord, scoreForUserId));
-
-  if (previousWord.meaning) {
-    fields.push({ name: 'It Means', value: previousWord.meaning });
-  }
-
-  fields.push({
-    name: 'Next word starts with',
-    value: previousWord.nextWordMustStartWith.join(', '),
-  });
-
-  return fields;
-}
-
-function createScoresString(scoreForUserId) {
-  return Object.keys(scoreForUserId)
-    .sort((userIdA, userIdB) => scoreForUserId[userIdB] - scoreForUserId[userIdA])
-    .map(userId => `<@${userId}> has ${scoreForUserId[userId]} points`).join('\n');
+function createScoresString(scoreForUserID) {
+  return Object.keys(scoreForUserID)
+    .sort((userIdA, userIdB) => scoreForUserID[userIdB] - scoreForUserID[userIdA])
+    .map(userId => `<@${userId}> has ${scoreForUserID[userId]} points`).join('\n');
 }
 
 function getPluralizer(array) {
@@ -91,26 +42,67 @@ function getPluralizer(array) {
   return '';
 }
 
-function discordReactionForRejection(rejection) {
-  if (rejection.rejectionReason === REJECTION_REASON.UnknownWord) {
-    return '❓';
+function discordDescriptionForRejection(rejectionReason, extraData) {
+  if (rejectionReason === REJECTION_REASON.ReadingAlreadyUsed) {
+    return `Someone already used the reading${getPluralizer(extraData)}: **${extraData.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`;
+  } else if (rejectionReason === REJECTION_REASON.ReadingEndsWithN) {
+    return `Words in Shiritori can't have readings that end with ん! (**${extraData.join(', ')}**)`;
+  } else if (rejectionReason === REJECTION_REASON.WrongStartSequence) {
+    return `Your answer must begin with ${extraData.expected.join(', ')}. I found these readings for that word but they don't start with the right kana: **${extraData.actual.join(', ')}**`;
+  } else if (rejectionReason === REJECTION_REASON.NotNoun) {
+    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(extraData.join)}: **${extraData.join(', ')}**`;
   }
 
+  assert(false, 'Unexpected branch');
   return undefined;
 }
 
-function discordDescriptionForRejection(rejection) {
-  if (rejection.rejectionReason === REJECTION_REASON.ReadingAlreadyUsed) {
-    return `Someone already used the reading${getPluralizer(rejection.extraData)}: **${rejection.extraData.join(', ')}**. The same reading can't be used twice in a game (even if the kanji is different!)`;
-  } else if (rejection.rejectionReason === REJECTION_REASON.ReadingEndsWithN) {
-    return `Words in Shiritori can't have readings that end with ん! (**${rejection.extraData.join(', ')}**)`;
-  } else if (rejection.rejectionReason === REJECTION_REASON.WrongStartSequence) {
-    return `Your answer must begin with ${rejection.extraData.expected.join(', ')}. I found these readings for that word but they don't start with the right kana: **${rejection.extraData.actual.join(', ')}**`;
-  } else if (rejection.rejectionReason === REJECTION_REASON.NotNoun) {
-    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(rejection.extraData.join)}: **${rejection.extraData.join(', ')}**`;
-  }
+function sendEmbedWithColor(channel, title, description, color) {
+  return retryPromise(() => channel.createMessage({
+    embed: {
+      title,
+      description,
+      color,
+    },
+  }));
+}
 
-  return undefined;
+function sendNeutralEmbed(channel, title, description) {
+  return sendEmbedWithColor(channel, title, description, constants.EMBED_NEUTRAL_COLOR);
+}
+
+function sendErrorEmbed(channel, title, description) {
+  return sendEmbedWithColor(channel, title, description, constants.EMBED_WRONG_COLOR);
+}
+
+function getNameForUserID(bot, userIDs) {
+  const nameForUserID = {};
+  userIDs.forEach((userID) => {
+    const user = bot.users.get(userID);
+    nameForUserID[userID] = `${user.username}#${user.discriminator}`;
+  });
+
+  return nameForUserID;
+}
+
+function saveScores(bot, commanderMessage, scoreForUserID) {
+  const scoreScopeID = commanderMessage.channel.guild
+    ? commanderMessage.channel.guild.id
+    : commanderMessage.channel.id;
+
+  const scoreForDeckForUserID = {};
+  Object.keys(scoreForUserID).forEach((userID) => {
+    scoreForDeckForUserID[userID] = {
+      shiritori: scoreForUserID[userID],
+    };
+  });
+
+  const nameForUserID = getNameForUserID(bot, Object.keys(scoreForUserID));
+  return quizScoreStorageUtils.addScores(
+    scoreScopeID,
+    scoreForDeckForUserID,
+    nameForUserID,
+  );
 }
 
 class DiscordClientDelegate {
@@ -120,47 +112,53 @@ class DiscordClientDelegate {
     this.logger = logger;
   }
 
-  botLeft(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'I\'m leaving!',
-        description: `Well, I'll continue judging, but I won't take turns anymore :) <@${userId}> asked me to leave the game. You can say **bot join** if you would like me to start playing with you again.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
+  onPlayerSetInactive(userId, reason) {
+    const { channel } = this.commanderMessage;
+
+    if (userId === this.bot.user.id) {
+      return sendNeutralEmbed(
+        channel,
+        'I\'m leaving!',
+        `Well, I'll continue judging, but I won't take turns anymore :) You can say **bot join** if you would like me to start playing with you again.`,
+      );
+    } else if (reason === shiritoriManager.PlayerSetInactiveReason.EXTERNAL_LEAVE_REQUEST) {
+      return sendNeutralEmbed(
+        channel,
+        'Player left',
+        `<@${userId}> has left the game.`,
+      );
+    } else if (reason === shiritoriManager.PlayerSetInactiveReason.AFK) {
+      return sendErrorEmbed(
+        channel,
+        'Player left',
+        `<@${userId}> seems AFK so I'm booting them! They can say **join** to rejoin.`,
+      );
+    } else {
+      assert(false, 'Unexpected branch');
+    }
   }
 
-  botJoined(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'I\'m back!',
-        description: `<@${userId}> asked me to rejoin the game.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
-  }
+  onGameEnded(reason, args) {
+    const channelId = this.commanderMessage.channel.id;
+    const scoreForUserID = shiritoriManager.getScores(channelId);
+    saveScores(this.bot, this.commanderMessage, scoreForUserID);
 
-  stopped(reason, wordHistory, scoreForUserId, arg) {
     let description;
-    clearTimeout(this.sendTypingTimeout);
 
-    if (reason === shiritoriManager.EndGameReason.STOP_COMMAND) {
-      description = `<@${arg.userId}> asked me to stop.`;
+    if (reason === shiritoriManager.EndGameReason.EXTERNAL_STOP_REQUEST) {
+      description = `<@${args}> asked me to stop.`;
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
-      if (arg.botIsPlaying) {
-        description = 'I am the last player, so I stopped.';
-      } else if (arg.players[0]) {
-        description = `<@${arg.players[0]}> is the last player standing, so I stopped. Congratulations!`;
-      } else {
-        description = 'There\'s no one left in the game, so I stopped!';
-      }
+      description = 'There are no players left, so I stopped.';
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
+      this.logger.logFailure(LOGGER_TITLE, 'Error', args);
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
       assert(false, 'Unknown stop reason');
     }
 
-    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
+    const wordHistory = shiritoriManager.getAnswerHistory(channelId);
+
+    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('　');
     if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
       wordHistoryString = wordHistoryString.substring(
         0,
@@ -178,7 +176,7 @@ class DiscordClientDelegate {
       });
     }
 
-    const scorersString = createScoresString(scoreForUserId);
+    const scorersString = createScoresString(scoreForUserID);
     if (scorersString) {
       embedFields.push({
         name: 'Scores',
@@ -186,8 +184,8 @@ class DiscordClientDelegate {
       });
     }
 
-    const prefix = this.commanderMessage.prefix;
-    return this.commanderMessage.channel.createMessage({
+    const { prefix } = this.commanderMessage;
+    return retryPromise(() => this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
         description,
@@ -198,102 +196,53 @@ class DiscordClientDelegate {
           icon_url: constants.FOOTER_ICON_URI,
         },
       },
-    });
+    }));
   }
 
-  notifyStarting(inMs) {
-    const inSeconds = Math.floor(inMs / 1000);
-    const prefix = this.commanderMessage.prefix;
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Shiritori',
-        description: `Starting a Shiritori game in ${inSeconds} seconds. Other players can join by saying **join**. Say **${prefix}shiritori stop** when you want to stop. I'll go first!\n\nBy the way, if you want me to kick players out of the game when they violate a rule, you can start a game with **${prefix}shiritori hardcore**.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
+  onPlayerAnswered(currentPlayerId, wordInformation) {
+    this.previousAnswererId = currentPlayerId;
   }
 
-  addedPlayer(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Player Joined',
-        description: `<@${userId}> has joined the game! Their turn will come soon. You can leave the game by saying **leave**. If you'd like me to stop playing, say **bot leave**.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
-  }
-
-  skippedPlayer(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Skipping Player',
-        description: `<@${userId}> is taking too long so I'm skipping them!`,
-        color: constants.EMBED_WRONG_COLOR,
-      },
-    });
-  }
-
-  removedPlayerForInactivity(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Removing Player',
-        description: `<@${userId}> seems AFK so I'm booting them! They can rejoin by saying **join**.`,
-        color: constants.EMBED_WRONG_COLOR,
-      },
-    });
-  }
-
-  removedPlayerForRuleViolation(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Removing Player',
-        description: `<@${userId}> violated a rule, and this is **hardcore mode**, so they get booted! They can rejoin by saying **join**.`,
-        color: constants.EMBED_WRONG_COLOR,
-      },
-    });
-  }
-
-  playerLeft(userId) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Player left',
-        description: `<@${userId}> has left the game.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    });
-  }
-
-  botWillTakeTurnIn(inMs) {
-    if (inMs > 3500) {
-      this.sendTypingTimeout = setTimeout(() => {
-        this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-          this.logger.logFailure('SHIRITORI', 'Failed to send typing', err);
-        });
-      }, inMs - 3000);
-    }
-  }
-
-  playerTookTurn(wordHistory, nextPlayerId, previousPlayerWasBot, nextPlayerIsBot, scoreForUserId) {
-    const wordInformation = wordHistory[wordHistory.length - 1];
-    const previousPlayerId = wordInformation.userId;
-
-    let content;
-    if (previousPlayerWasBot && !nextPlayerIsBot) {
-      content = `I say **${wordInformation.word}**!`;
+  async onAwaitingInputFromPlayer(playerId, previousWordInformation) {
+    if (!this.previousAnswererId) {
+      return;
     }
 
-    const description = getDescriptionForTookTurnEmbed(
-      previousPlayerId,
-      nextPlayerId,
-      nextPlayerIsBot,
-      previousPlayerWasBot,
-    );
+    let readingPart = '';
+    if (previousWordInformation.reading !== previousWordInformation.word) {
+      readingPart = ` (${previousWordInformation.reading})`;
+    }
+
+    const previousAnswererUsername = this.bot.users.get(this.previousAnswererId).username;
+    const scoreForUserID = shiritoriManager.getScores(this.commanderMessage.channel.id);
+
+    const fields = [
+      {
+        name: `${previousAnswererUsername} (${scoreForUserID[this.previousAnswererId]}) said`,
+        value: `${createMarkdownLinkForWord(previousWordInformation.word)}${readingPart}`,
+      },
+      {
+        name: `It means`,
+        value: previousWordInformation.meaning,
+      },
+      {
+        name: 'Next word starts with',
+        value: previousWordInformation.nextWordMustStartWith.join(', '),
+      },
+    ];
+
+    let content = '';
+    const previousWasBot = this.previousAnswererId === this.bot.user.id;
+    const currentIsBot = playerId === this.bot.user.id;
+    if (previousWasBot && !currentIsBot) {
+      content = `I say ${previousWordInformation.word}`;
+    }
 
     const message = {
       content,
       embed: {
-        description,
-        fields: createFieldsForTookTurnEmbed(this.commanderMessage, wordHistory, scoreForUserId),
+        description: `${previousAnswererUsername} went and now it's <@${playerId}>'s turn!`,
+        fields,
         color: constants.EMBED_NEUTRAL_COLOR,
         footer: {
           text: 'Say \'join\' to join!',
@@ -302,38 +251,84 @@ class DiscordClientDelegate {
       },
     };
 
-    return this.commanderMessage.channel.createMessage(message);
+    await retryPromise(
+      () => this.commanderMessage.channel.createMessage(message),
+    );
+
+    if (playerId === this.bot.user.id) {
+      return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
+        this.logger.logFailure(LOGGER_TITLE, 'Failed to send typing', err);
+      });
+    }
+
+    return undefined;
   }
 
-  answerRejected(rejection, msg) {
-    const emote = discordReactionForRejection(rejection);
-    const description = discordDescriptionForRejection(rejection);
+  onPlayerSkipped(playerId) {
+    return sendErrorEmbed(
+      this.commanderMessage.channel,
+      'Skipping Player',
+      `<@${playerId}> is taking too long so I'm skipping them!`
+    );
+  }
 
-    if (emote) {
-      return msg.addReaction(emote);
+  onPlayerReactivated(playerId) {
+    return sendNeutralEmbed(
+      this.commanderMessage.channel,
+      'Player rejoined',
+      `<@${playerId}> has rejoined the game.`,
+    );
+  }
+
+  onNewPlayerAdded(playerId) {
+    if (playerId === this.bot.user.id) {
+      return;
     }
-    if (description) {
-      const message = {
-        embed: {
-          title: `Answer Rejected (${rejection.rejectedInput})`,
-          description,
-          color: constants.EMBED_WRONG_COLOR,
-          footer: {
-            icon_url: constants.FOOTER_ICON_URI,
-            text: 'Better come up with something else ;)',
-          },
+
+    if (!this.firstPlayerHasJoined) {
+      this.firstPlayerHasJoined = true;
+      return;
+    }
+
+    return sendNeutralEmbed(
+      this.commanderMessage.channel,
+      'Player joined',
+      `<@${playerId}> has joined the game. Their turn will come soon!`,
+    );
+  }
+
+  onAnswerRejected(playerId, input, rejectionReason, rejectionInfo, msg) {
+    if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
+      return retryPromise(() => msg.addReaction('❓'));
+    }
+
+    const description = discordDescriptionForRejection(rejectionReason, rejectionInfo);
+    return retryPromise(() => this.commanderMessage.channel.createMessage({
+      embed: {
+        title: `Answer Rejected (${input})`,
+        description,
+        color: constants.EMBED_WRONG_COLOR,
+        footer: {
+          icon_url: constants.FOOTER_ICON_URI,
+          text: 'Better come up with something else ;)',
         },
-      };
-      return msg.channel.createMessage(message);
-    }
+      },
+    }));
+  }
+
+  onNonFatalError(err) {
+    this.logger.logFailure(LOGGER_TITLE, 'Non fatal error', err);
   }
 }
 
-function getScoreScopeIdForMessage(msg) {
-  if (msg.channel.guild) {
-    return msg.channel.guild.id;
-  }
-  return msg.channel.id;
+function getGameStartDescription(prefix) {
+  return `
+Starting a Shiritori game. I'll go first!
+
+* To stop the game say **${prefix}shiritori stop**.
+* Other players can join by saying **join**.
+* If you don't want to play with me, say **bot leave** and I'll leave the game :(
+  `;
 }
 
 module.exports = {
@@ -349,43 +344,45 @@ module.exports = {
     'shiritori/answer_time_limit',
     'shiritori/bot_score_multiplier',
   ],
-  action(erisBot, msg, suffix, monochrome, serverSettings) {
+  async action(erisBot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
 
     if (suffix === 'stop') {
-      return shiritoriManager.stop(locationId, msg.author.id);
+      return shiritoriManager.stopGame(locationId, msg.author.id);
     }
 
     const prefix = msg.prefix;
     throwIfSessionInProgress(locationId, prefix);
-    const clientDelegate = new DiscordClientDelegate(erisBot, msg);
+    const clientDelegate = new DiscordClientDelegate(erisBot, msg, monochrome.getLogger());
 
     const suffixLowerCase = suffix.toLowerCase();
     const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
     const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
-    const answerTimeLimitInMs = serverSettings['shiritori/answer_time_limit'] * 1000;
-    const botScoreMultipler = serverSettings['shiritori/bot_score_multiplier'];
+    const singlePlayerTimeoutMs = serverSettings['shiritori/answer_time_limit'] * 1000;
+    const botScoreMultiplier = serverSettings['shiritori/bot_score_multiplier'];
 
     const settings = {
-      answerTimeLimitInMs,
-      botTurnMinimumWaitInMs,
+      singlePlayerTimeoutMs,
+      multiPlayerTimeoutMs: singlePlayerTimeoutMs,
       botTurnMaximumWaitInMs,
-      removePlayerForRuleViolations,
-      botScoreMultipler,
+      botTurnMinimumWaitInMs,
+      botScoreMultiplier,
+      autoRejoin: false,
     };
 
-    const scoreScopeId = getScoreScopeIdForMessage(msg);
-    const session = new ShiritoriSession(
-      msg.author.id,
-      msg.author.username,
-      clientDelegate,
-      japaneseGameStrategy,
-      locationId,
-      settings,
-      erisBot.user.id,
-    );
+    shiritoriManager.createGame(locationId, clientDelegate, settings);
+    shiritoriManager.addBotPlayer(locationId, erisBot.user.id);
+    shiritoriManager.addRealPlayer(locationId, msg.author.id);
 
-    return shiritoriManager.startSession(session, scoreScopeId);
+    await retryPromise(() => msg.channel.createMessage({
+      embed: {
+        title: 'Shiritori',
+        description: getGameStartDescription(prefix),
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    }));
+
+    return shiritoriManager.startGame(locationId);
   },
 };
