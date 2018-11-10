@@ -90,12 +90,19 @@ async function sendScores(monochrome, msg) {
   return createScoresNavigation(monochrome, msg, pages);
 }
 
+function getPrefixForChannelID(monochrome, channelID) {
+  const serverID = monochrome.getErisBot().channelGuildMap[channelID];
+  const prefixes = monochrome.getPersistence().getPrefixesForServer(serverID);
+  return prefixes[0];
+}
+
 function createMessageForTurnTaken(monochrome, channelID, userID, wordInformation, userScore) {
   const bot = monochrome.getErisBot();
   const username = bot.users.get(userID).username;
   const { word, reading, meaning, nextWordMustStartWith } = wordInformation;
   const readingStringPart = reading ? ` (${reading})` : '';
   const scoreStringPart = userScore ? ` (${userScore})` : '';
+  const prefix = getPrefixForChannelID(monochrome, channelID);
 
   const fields = [
     {
@@ -116,6 +123,10 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
     embed: {
       fields,
       color: constants.EMBED_NEUTRAL_COLOR,
+      footer: {
+        text: `Say '${prefix}sf scores' to see the current scores.'`,
+        icon_url: constants.FOOTER_ICON_URI,
+      },
     }
   }));
 }
@@ -220,7 +231,7 @@ function sendDisabledMessage(monochrome, channelID) {
   return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
     embed: {
       title: 'Shiritori Forever disabled',
-      description: 'Shiritori is no longer running in this channel',
+      description: 'Shiritori Forever is no longer running in this channel',
       color: constants.EMBED_NEUTRAL_COLOR,
     },
   }));
@@ -230,7 +241,7 @@ function sendEnabledMessage(monochrome, channelID) {
   return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
     embed: {
       title: 'Shiritori Forever enabled',
-      description: 'Shiritori forever is now running in this channel. I\'ll go first!',
+      description: 'Shiritori Forever is now running in this channel. I\'ll go first!',
       color: constants.EMBED_NEUTRAL_COLOR,
     },
   }));
