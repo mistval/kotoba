@@ -1,41 +1,32 @@
+const reload = require('require-reload')(require);
 const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
-const constants = require('./../common/constants.js');
-const retryPromise = require('./../common/util/retry_promise.js');
+const state = require('./../common/static_state.js');
+
+const constants = reload('./../common/constants.js');
+const retryPromise = reload('./../common/util/retry_promise.js');
 
 const japaneseGameStrategy = shiritoriManager.strategies.japanese;
 
-const SHIRITORI_CHANNELS_LIST_KEY = 'shiritoriForeverChannels';
-const CHANNEL_SHIRITORI_KEY_PREFIX = 'shiritoriChannel_';
+const SHIRITORI_CHANNELS_LIST_KEY = 'shiritoriForeverDiscordChannels';
+const CHANNEL_SHIRITORI_KEY_PREFIX = 'shiritoriChannelDiscord_';
+const LOGGER_TITLE = 'SHIRITORI FOREVER';
 
-let shiritoriChannels;
+if (!state.shiritoriChannels) {
+  state.shiritoriChannels = {};
+}
 
 function createKeyForChannel(channelID) {
   return `${CHANNEL_SHIRITORI_KEY_PREFIX}${channelID}`;
 }
 
-function sendDisabledMessage(monochrome, channelID) {
-  return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
-    embed: {
-      title: 'Shiritori Forever disabled',
-      description: 'Shiritori is no longer running in this channel',
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  }));
-}
-
-function sendEnabledMessage(monochrome, channelID) {
-  return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
-    embed: {
-      title: 'Shiritori Forever enabled',
-      description: 'Shiritori forever is now running in this channel. I\'ll go first!',
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  }));
-}
-
-function createMarkdownLinkForWord(word) {
-  return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
+async function loadChannels(monochrome) {
+  try {
+    state.shiritoriChannels = await monochrome.getPersistence().getData(SHIRITORI_CHANNELS_LIST_KEY);
+  } catch (err) {
+    const logger = monochrome.getLogger();
+    logger.logFailure(LOGGER_TITLE, 'Error loading channels', err);
+  }
 }
 
 function createMessageForTurnTaken(monochrome, channelID, userID, wordInformation, userScore) {
@@ -66,6 +57,117 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
       color: constants.EMBED_NEUTRAL_COLOR,
     }
   }));
+}
+
+function getPluralizer(array) {
+  if (array.length > 1) {
+    return 's';
+  }
+  return '';
+}
+
+function discordDescriptionForRejection(rejectionReason, extraData) {
+  if (rejectionReason === shiritoriManager.REJECTION_REASON.ReadingAlreadyUsed) {
+    return `The reading: **${extraData.join(', ')}** was just used. Try coming up with a different one ;)`;
+  } else if (rejectionReason === shiritoriManager.REJECTION_REASON.ReadingEndsWithN) {
+    return `Words in Shiritori can't have readings that end with ん! (**${extraData.join(', ')}**)`;
+  } else if (rejectionReason === shiritoriManager.REJECTION_REASON.WrongStartSequence) {
+    return `The next word must begin with ${extraData.expected.join(', ')}. I found these readings for that word but they don't start with the right kana: **${extraData.actual.join(', ')}**`;
+  } else if (rejectionReason === shiritoriManager.REJECTION_REASON.NotNoun) {
+    return `Shiritori words must be nouns! I didn't find any nouns for the reading${getPluralizer(extraData.join)}: **${extraData.join(', ')}**`;
+  }
+
+  assert(false, 'Unexpected branch');
+  return undefined;
+}
+
+function handleRejectedResult(monochrome, msg, rejectedResult) {
+  const { rejectionReason, extraData } = rejectedResult;
+
+  if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
+    return retryPromise(() => msg.addReaction('❓'));
+  }
+
+  const description = discordDescriptionForRejection(rejectionReason, extraData);
+  return retryPromise(() => msg.channel.createMessage(description));
+}
+
+async function handleAcceptedResult(monochrome, msg, acceptedResult) {
+  let userScore = 0;
+  const persistence = monochrome.getPersistence();
+  const channelID = msg.channel.id;
+  await persistence.editData(createKeyForChannel(channelID), (data) => {
+    data.previousWordInformation = acceptedResult.word;
+
+    if (!data.scores) {
+      data.scores = {};
+    }
+
+    if (!data.scores[msg.author.id]) {
+      data.scores[msg.author.id] = 0;
+    }
+
+    data.scores[msg.author.id] += acceptedResult.score;
+    userScore = data.scores[msg.author.id];
+
+    return data;
+  });
+
+  return createMessageForTurnTaken(
+    monochrome,
+    msg.channel.id,
+    msg.author.id,
+    acceptedResult.word,
+    userScore
+  );
+}
+
+function tryHandleMessage(monochrome, msg) {
+  if (!state.shiritoriChannels[msg.channel.id]) {
+    return false;
+  }
+
+  if (msg.content.indexOf(' ') !== -1) {
+    return false;
+  }
+
+  return monochrome.getPersistence().getData(createKeyForChannel(msg.channel.id)).then((data) => {
+    const { previousWordInformation } = data;
+    return japaneseGameStrategy.tryAcceptAnswer(
+      msg.content,
+      [previousWordInformation]
+    );
+  }).then((acceptanceResult) => {
+    if (acceptanceResult.accepted) {
+      return handleAcceptedResult(monochrome, msg, acceptanceResult);
+    } else {
+      return handleRejectedResult(monochrome, msg, acceptanceResult);
+    }
+  });
+}
+
+function sendDisabledMessage(monochrome, channelID) {
+  return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
+    embed: {
+      title: 'Shiritori Forever disabled',
+      description: 'Shiritori is no longer running in this channel',
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  }));
+}
+
+function sendEnabledMessage(monochrome, channelID) {
+  return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
+    embed: {
+      title: 'Shiritori Forever enabled',
+      description: 'Shiritori forever is now running in this channel. I\'ll go first!',
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  }));
+}
+
+function createMarkdownLinkForWord(word) {
+  return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
 }
 
 async function sendFirstWord(monochrome, channelID) {
@@ -100,13 +202,13 @@ async function handleEnabledChanged(channelID, newInternalValue) {
       delete data[channelID];
     }
 
-    shiritoriChannels = data;
+    state.shiritoriChannels = data;
     return data;
   });
 
   const shiritoriDataKey = createKeyForChannel(channelID);
 
-  await persistence.editData(SHIRITORI_CHANNELS_LIST_KEY, (data) => {
+  await persistence.editData(shiritoriDataKey, (data) => {
     if (changed || !newInternalValue) {
       return {};
     }
@@ -126,4 +228,6 @@ async function handleEnabledChanged(channelID, newInternalValue) {
 
 module.exports = {
   handleEnabledChanged,
+  tryHandleMessage,
+  loadChannels,
 };
