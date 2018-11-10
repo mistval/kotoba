@@ -230,13 +230,6 @@ const afterQuizMessages = [
   },
   {
     embed: {
-      title: 'O, u love me?',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'I\'ll love you too if you [vote for me](https://discordbots.org/bot/251239170058616833/vote) :3 You can do it every 24 hours for extra love!',
-    },
-  },
-  {
-    embed: {
       title: 'Fonts',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'You can change fonts, colors, and sizes by using the **k!settings** command.',
