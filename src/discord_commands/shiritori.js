@@ -6,6 +6,7 @@ const shiritoriManager = require('shiritori');
 const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
+
 // Piggyback on the quiz scores for now.
 const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
 
@@ -312,12 +313,11 @@ class DiscordClientDelegate {
 
 function getGameStartDescription(prefix) {
   return `
-Starting a Shiritori game in five seconds. I'll go first!
+Starting a Shiritori game. I'll go first!
 
-To stop the game say **${prefix}shiritori stop**.
-Other players can join by saying **join**.
-If you don't want to play with me, say **bot leave** and I'll leave the game :(
-If you want players to get kicked for breaking rules, start a new game with **k!shiritori hardcore**.
+* To stop the game say **${prefix}shiritori stop**.
+* Other players can join by saying **join**.
+* If you don't want to play with me, say **bot leave** and I'll leave the game :(
   `;
 }
 
@@ -352,7 +352,6 @@ module.exports = {
     const singlePlayerTimeoutMs = serverSettings['shiritori/answer_time_limit'] * 1000;
     const botScoreMultiplier = serverSettings['shiritori/bot_score_multiplier'];
 
-    // TODO: Hardcore mode
     const settings = {
       singlePlayerTimeoutMs,
       multiPlayerTimeoutMs: singlePlayerTimeoutMs,
