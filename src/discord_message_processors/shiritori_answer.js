@@ -24,7 +24,7 @@ module.exports = {
       shiritoriManager.setPlayerInactive(locationId, userId);
       return true;
     } else {
-      return shiritoriManager.receiveInput(locationId, userId, msg.content);
+      return shiritoriManager.receiveInput(locationId, userId, msg.content, msg);
     }
   }
 };
