@@ -11,7 +11,7 @@ const config = reload('./../config.json');
 function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
-  const settingsFilePath = path.join(__dirname, 'user_settings.js');
+  const settingsFilePath = path.join(__dirname, 'bot_settings.js');
   const logDirectoryPath = path.join(__dirname, '..', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'persistence');
 
