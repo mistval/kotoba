@@ -7,6 +7,7 @@ const globals = require('./common/globals.js');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const path = require('path');
 const config = reload('./../config.json');
+const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
 
 function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
@@ -92,3 +93,4 @@ checkApiKeys(monochrome);
 saveGlobals(monochrome);
 monochrome.connect();
 loadQuizDecks();
+loadShiritoriForeverChannels(monochrome);
