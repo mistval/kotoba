@@ -2,6 +2,7 @@ const reload = require('require-reload')(require);
 const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
+const sendAndDelete = reload('./util/send_and_delete.js');
 
 const constants = reload('./../common/constants.js');
 const retryPromise = reload('./../common/util/retry_promise.js');
@@ -11,6 +12,7 @@ const japaneseGameStrategy = shiritoriManager.strategies.japanese;
 const SHIRITORI_CHANNELS_LIST_KEY = 'shiritoriForeverDiscordChannels';
 const CHANNEL_SHIRITORI_KEY_PREFIX = 'shiritoriChannelDiscord_';
 const LOGGER_TITLE = 'SHIRITORI FOREVER';
+const DELETE_MESSAGE_TIMEOUT_MS = 60000;
 
 if (!state.shiritoriChannels) {
   state.shiritoriChannels = {};
@@ -68,7 +70,7 @@ function getPluralizer(array) {
 
 function discordDescriptionForRejection(rejectionReason, extraData) {
   if (rejectionReason === shiritoriManager.REJECTION_REASON.ReadingAlreadyUsed) {
-    return `The reading: **${extraData.join(', ')}** was just used. Try coming up with a different one ;)`;
+    return `The reading: **${extraData.join(', ')}** was used recently. Try coming up with a different one ;)`;
   } else if (rejectionReason === shiritoriManager.REJECTION_REASON.ReadingEndsWithN) {
     return `Words in Shiritori can't have readings that end with ん! (**${extraData.join(', ')}**)`;
   } else if (rejectionReason === shiritoriManager.REJECTION_REASON.WrongStartSequence) {
@@ -89,7 +91,12 @@ function handleRejectedResult(monochrome, msg, rejectedResult) {
   }
 
   const description = discordDescriptionForRejection(rejectionReason, extraData);
-  return retryPromise(() => msg.channel.createMessage(description));
+  return retryPromise(() => sendAndDelete(
+    monochrome,
+    msg.channel.id,
+    description,
+    DELETE_MESSAGE_TIMEOUT_MS,
+  ));
 }
 
 async function handleAcceptedResult(monochrome, msg, acceptedResult) {
@@ -131,6 +138,7 @@ function tryHandleMessage(monochrome, msg) {
     return false;
   }
 
+  let accepted;
   return monochrome.getPersistence().getData(createKeyForChannel(msg.channel.id)).then((data) => {
     const { previousWordInformation } = data;
     return japaneseGameStrategy.tryAcceptAnswer(
@@ -138,11 +146,14 @@ function tryHandleMessage(monochrome, msg) {
       [previousWordInformation]
     );
   }).then((acceptanceResult) => {
-    if (acceptanceResult.accepted) {
+    accepted = acceptanceResult.accepted;
+    if (accepted) {
       return handleAcceptedResult(monochrome, msg, acceptanceResult);
     } else {
       return handleRejectedResult(monochrome, msg, acceptanceResult);
     }
+  }).then(() => {
+    return accepted;
   });
 }
 
