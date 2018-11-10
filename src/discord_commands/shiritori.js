@@ -213,12 +213,12 @@ class DiscordClientDelegate {
       readingPart = ` (${previousWordInformation.reading})`;
     }
 
-    const previousAnswererName = this.bot.users.get(this.previousAnswererId).username;
+    const previousAnswererUsername = this.bot.users.get(this.previousAnswererId).username;
     const scoreForUserID = shiritoriManager.getScores(this.commanderMessage.channel.id);
 
     const fields = [
       {
-        name: `${previousAnswererName} (${scoreForUserID[this.previousAnswererId]}) said`,
+        name: `${previousAnswererUsername} (${scoreForUserID[this.previousAnswererId]}) said`,
         value: `${createMarkdownLinkForWord(previousWordInformation.word)}${readingPart}`,
       },
       {
@@ -247,7 +247,7 @@ class DiscordClientDelegate {
     const message = {
       content,
       embed: {
-        description: `<@${this.previousAnswererId}> went and now it's <@${playerId}>'s turn!`,
+        description: `${previousAnswererUsername} went and now it's <@${playerId}>'s turn!`,
         fields,
         color: constants.EMBED_NEUTRAL_COLOR,
         footer: {
@@ -351,7 +351,7 @@ module.exports = {
 
     const prefix = msg.prefix;
     throwIfSessionInProgress(locationId, prefix);
-    const clientDelegate = new DiscordClientDelegate(erisBot, msg);
+    const clientDelegate = new DiscordClientDelegate(erisBot, msg, monochrome.getLogger());
 
     const suffixLowerCase = suffix.toLowerCase();
     const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
