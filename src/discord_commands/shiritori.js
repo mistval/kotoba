@@ -139,6 +139,10 @@ class DiscordClientDelegate {
   }
 
   onGameEnded(reason, args) {
+    const channelId = this.commanderMessage.channel.id;
+    const scoreForUserID = shiritoriManager.getScores(channelId);
+    saveScores(this.bot, this.commanderMessage, scoreForUserID);
+
     let description;
 
     if (reason === shiritoriManager.EndGameReason.EXTERNAL_STOP_REQUEST) {
@@ -152,7 +156,6 @@ class DiscordClientDelegate {
       assert(false, 'Unknown stop reason');
     }
 
-    const channelId = this.commanderMessage.channel.id;
     const wordHistory = shiritoriManager.getAnswerHistory(channelId);
 
     let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('   ');
@@ -173,8 +176,6 @@ class DiscordClientDelegate {
       });
     }
 
-    const scoreForUserID = shiritoriManager.getScores(channelId);
-    saveScores(this.bot, this.commanderMessage, scoreForUserID);
     const scorersString = createScoresString(scoreForUserID);
     if (scorersString) {
       embedFields.push({
