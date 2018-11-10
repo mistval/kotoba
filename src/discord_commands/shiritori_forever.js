@@ -1,4 +1,7 @@
 const { EMBED_NEUTRAL_COLOR } = require('./../common/constants.js');
+const reload = require('require-reload')(require);
+
+const shiritoriForeverHelper = reload('./../discord/shiritori_forever_helper');
 
 function createInstructions(prefix) {
   const INSTRUCTIONS_DESCRIPTION = `
@@ -34,7 +37,10 @@ module.exports = {
   shortDescription: 'Learn how to start or stop a long-running, no-time-limit game of shiritori in a channel.',
   hidden: false,
   uniqueId: 'shiritoriforever',
-  action(bot, msg) {
+  action(bot, msg, suffix, monochrome) {
+    if (suffix === 'scores') {
+      return shiritoriForeverHelper.sendScores(monochrome, msg);
+    }
     return msg.channel.createMessage(createInstructions(msg.prefix), undefined, msg);
   },
 };

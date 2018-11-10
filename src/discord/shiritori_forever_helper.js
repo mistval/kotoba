@@ -3,6 +3,7 @@ const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
 const sendAndDelete = reload('./util/send_and_delete.js');
+const { Navigation } = require('monochrome-bot');
 
 const constants = reload('./../common/constants.js');
 const retryPromise = reload('./../common/util/retry_promise.js');
@@ -29,6 +30,59 @@ async function loadChannels(monochrome) {
     const logger = monochrome.getLogger();
     logger.logFailure(LOGGER_TITLE, 'Error loading channels', err);
   }
+}
+
+function createDiscordContentForScoresPage(scoresPage) {
+  const fields = scoresPage.map((scoreInfo, index) => ({
+    name: `${index + 1}) ${scoreInfo.username}`,
+    value: `${scoreInfo.score} points`,
+  }));
+
+  return {
+    embed: {
+      title: 'Scores',
+      description: 'Shiritori Forever scores in the current channel',
+      fields,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  };
+}
+
+function createScoresNavigation(monochrome, msg, scoresPages) {
+  const contents = scoresPages.map(page => createDiscordContentForScoresPage(page));
+  const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
+
+  return monochrome.getNavigationManager().show(navigation, 1800000, msg.channel, msg);
+}
+
+function userNameForUserID(monochrome, userID) {
+  const user = monochrome.getErisBot().users.get(userID);
+  return `${user.username}#${user.discriminator}`;
+}
+
+async function sendScores(monochrome, msg) {
+  const persistence = monochrome.getPersistence();
+  const channelData = await persistence.getData(createKeyForChannel(msg.channel.id));
+
+  let scoreForUserID = channelData.scores || {};
+  const sortedScores = Object.keys(scoreForUserID)
+    .map(userID => ({
+      username: userNameForUserID(monochrome, userID),
+      score: scoreForUserID[userID]
+    }))
+    .sort((a, b) => b.score - a.score);
+
+  const pages = [[]];
+  while (sortedScores.length > 0) {
+    const currentPage = pages[pages.length - 1];
+    currentPage.push(sortedScores.pop());
+
+    if (currentPage.length >= 20 && sortedScores.length > 0) {
+      pages.push([]);
+    }
+  }
+
+  return createScoresNavigation(monochrome, msg, pages);
 }
 
 function createMessageForTurnTaken(monochrome, channelID, userID, wordInformation, userScore) {
@@ -241,4 +295,5 @@ module.exports = {
   handleEnabledChanged,
   tryHandleMessage,
   loadChannels,
+  sendScores,
 };
