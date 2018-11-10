@@ -6,6 +6,7 @@ const shiritoriManager = require('shiritori');
 const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
+const retryPromise = reload('./../common/util/retry_promise.js');
 
 // Piggyback on the quiz scores for now.
 const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
@@ -56,13 +57,13 @@ function discordDescriptionForRejection(rejectionReason, extraData) {
 }
 
 function sendEmbedWithColor(channel, title, description, color) {
-  return channel.createMessage({
+  return retryPromise(() => channel.createMessage({
     embed: {
       title,
       description,
       color,
     },
-  });
+  }));
 }
 
 function sendNeutralEmbed(channel, title, description) {
@@ -181,7 +182,7 @@ class DiscordClientDelegate {
     }
 
     const { prefix } = this.commanderMessage;
-    return this.commanderMessage.channel.createMessage({
+    return retryPromise(() => this.commanderMessage.channel.createMessage({
       embed: {
         title: 'Shiritori Ended',
         description,
@@ -192,7 +193,7 @@ class DiscordClientDelegate {
           icon_url: constants.FOOTER_ICON_URI,
         },
       },
-    });
+    }));
   }
 
   onPlayerAnswered(currentPlayerId, wordInformation) {
@@ -247,7 +248,9 @@ class DiscordClientDelegate {
       },
     };
 
-    const sentMessage = await this.commanderMessage.channel.createMessage(message);
+    const sentMessage = await retryPromise(
+      () => this.commanderMessage.channel.createMessage(message),
+    );
 
     if (playerId === this.bot.user.id) {
       return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
@@ -293,11 +296,11 @@ class DiscordClientDelegate {
 
   onAnswerRejected(playerId, input, rejectionReason, rejectionInfo, msg) {
     if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
-      return msg.addReaction('❓');
+      return retryPromise(() => msg.addReaction('❓'));
     }
 
     const description = discordDescriptionForRejection(rejectionReason, rejectionInfo);
-    return this.commanderMessage.channel.createMessage({
+    return retryPromise(() => this.commanderMessage.channel.createMessage({
       embed: {
         title: `Answer Rejected (${input})`,
         description,
@@ -307,7 +310,7 @@ class DiscordClientDelegate {
           text: 'Better come up with something else ;)',
         },
       },
-    });
+    }));
   }
 }
 
@@ -364,13 +367,13 @@ module.exports = {
     shiritoriManager.addBotPlayer(locationId, erisBot.user.id);
     shiritoriManager.addRealPlayer(locationId, msg.author.id);
 
-    await msg.channel.createMessage({
+    await retryPromise(() => msg.channel.createMessage({
       embed: {
         title: 'Shiritori',
         description: getGameStartDescription(prefix),
         color: constants.EMBED_NEUTRAL_COLOR,
       },
-    });
+    }));
 
     return shiritoriManager.startGame(locationId);
   },
