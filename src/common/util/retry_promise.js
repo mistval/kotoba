@@ -1,13 +1,17 @@
 const globals = require('./../globals.js');
 
-function retryPromise(promiseFactory, retryCount=3) {
-  return promiseFactory().catch((err) => {
-    if (retryCount > 0) {
+async function retryPromise(promiseFactory, retryCount=3) {
+  do {
+    try {
+      return await promiseFactory();
+    } catch (err) {
       globals.logger.logFailure('UTIL', 'Promise failed, but there are still retries left. Retrying.', err);
-      return retryPromise(promiseFactory, retryCount - 1);
+      retryCount -= 1;
+      if (retryCount <= 0) {
+        throw err;
+      }
     }
-    throw err;
-  });
+  } while (retryCount > 0);
 }
 
 module.exports = retryPromise;
