@@ -173,7 +173,16 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
   let userScore = 0;
   const persistence = monochrome.getPersistence();
   const channelID = msg.channel.id;
-  await persistence.editData(createKeyForChannel(channelID), (data) => {
+
+  await createMessageForTurnTaken(
+    monochrome,
+    msg.channel.id,
+    msg.author.id,
+    acceptedResult.word,
+    userScore
+  );
+
+  return persistence.editData(createKeyForChannel(channelID), (data) => {
     data.previousWordInformation = acceptedResult.word;
 
     if (!data.scores) {
@@ -189,14 +198,6 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
 
     return data;
   });
-
-  return createMessageForTurnTaken(
-    monochrome,
-    msg.channel.id,
-    msg.author.id,
-    acceptedResult.word,
-    userScore
-  );
 }
 
 function tryHandleMessage(monochrome, msg) {
@@ -213,7 +214,7 @@ function tryHandleMessage(monochrome, msg) {
     const { previousWordInformation } = data;
     return japaneseGameStrategy.tryAcceptAnswer(
       msg.content,
-      [previousWordInformation]
+      previousWordInformation ? [previousWordInformation] : [],
     );
   }).then((acceptanceResult) => {
     accepted = acceptanceResult.accepted;
@@ -256,17 +257,17 @@ async function sendFirstWord(monochrome, channelID) {
   const result = await japaneseGameStrategy.getViableNextResult([]);
   const wordInformation = result.word;
 
-  await persistence.editData(createKeyForChannel(channelID), (data) => {
-    data.previousWordInformation = wordInformation;
-    return data;
-  });
-
-  return createMessageForTurnTaken(
+  await createMessageForTurnTaken(
     monochrome,
     channelID,
     monochrome.getErisBot().user.id,
     wordInformation,
   );
+
+  return persistence.editData(createKeyForChannel(channelID), (data) => {
+    data.previousWordInformation = wordInformation;
+    return data;
+  });
 }
 
 async function handleEnabledChanged(channelID, newInternalValue) {
@@ -297,13 +298,17 @@ async function handleEnabledChanged(channelID, newInternalValue) {
     return data;
   });
 
-  if (changed) {
-    if (newInternalValue) {
-      await sendEnabledMessage(monochrome, channelID);
-      await sendFirstWord(monochrome, channelID);
-    } else {
-      await sendDisabledMessage(monochrome, channelID);
+  try {
+    if (changed) {
+      if (newInternalValue) {
+        await sendEnabledMessage(monochrome, channelID);
+        await sendFirstWord(monochrome, channelID);
+      } else {
+        await sendDisabledMessage(monochrome, channelID);
+      }
     }
+  } catch (err) {
+    monochrome.getLogger().logFailure(LOGGER_TITLE, 'Error sending shiritoriforever enabled/disabled messages or first word', err);
   }
 }
 
