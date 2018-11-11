@@ -42,7 +42,7 @@ function createDiscordContentForScoresPage(scoresPage) {
   return {
     embed: {
       title: 'Scores',
-      description: 'Shiritori Forever scores in the current channel',
+      description: 'Shiritori Forever scores in the current channel.\nYou get one point per character in your answer.',
       fields,
       color: constants.EMBED_NEUTRAL_COLOR,
     },
