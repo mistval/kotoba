@@ -81,7 +81,7 @@ async function getPronunciationClipsForWord(word) {
   // Download the audio clips from Forvo, record their location in the audioFileBasenamesForWord,
   // and return the clip URIs.
 
-  const { audioClips } = forvoResponseData;
+  const audioClips = forvoResponseData.audioClips.filter(clipInfo => clipInfo.langname === 'Japanese');
   const audioClipWebUris = audioClips.map(clipInfo => clipInfo.audioUri);
 
   const wordCharCodeString = getStringCharCodeString(word);

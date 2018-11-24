@@ -400,6 +400,9 @@ class AskQuestionAction extends Action {
         session.setCurrentCard(card);
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
+          if (!question) {
+            return fulfill(this.do());
+          }
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
             globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
             throw err;

@@ -40,6 +40,7 @@ function parseItems(items) {
   return itemsToUse
     .sort((a, b) => b.num_positive_votes - a.num_positive_votes)
     .map(item => ({
+      langname: item.langname,
       word: item.word,
       userName: item.username,
       gender: item.sex === 'm' ? 'Male' : 'Female',
