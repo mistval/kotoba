@@ -5,6 +5,7 @@ const constants = reload('./../constants.js');
 const categoryFields = [
   {'name': 'JLPT Kanji Reading Decks', value: 'N5 N4 N3 N2 N1'},
   {'name': 'JLPT Listening Decks (audio) (under construction)', value: 'LN3 LN2 LN1'},
+  {'name': 'Listening Vocabulary Decks (audio)', value: 'lvN5 lvN4 lvN3 lvN2 lvN1 lv10k lv9k lv8k lv7k lv6k lv5k lv4k lv3k lvj2k lv2k lvj1k lv1k'},
   {'name': 'Kanken Kanji Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
   {'name': 'JLPT Kanji Usage Decks', value: 'k_N5 k_N4 k_N3 k_N2 k_N1'},
   {'name': 'JLPT Grammar Decks (under construction)', value: 'gN5 gN4'},
