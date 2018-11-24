@@ -424,15 +424,17 @@ class AskQuestionAction extends Action {
       this.reject_ = reject;
       preprocessPromise.then(card => {
         if (card === false) {
+          nextCard.discarded = true;
           return fulfill(this.do());
         }
         card.wasPreprocessed = true;
-        session.setCurrentCard(card);
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
           if (!question) {
+            nextCard.discarded = true;
             return fulfill(this.do());
           }
+          session.setCurrentCard(card);
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
             globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
             throw err;

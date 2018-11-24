@@ -222,6 +222,9 @@ class SessionInformation {
   getUnansweredCards(userId) {
     let unansweredCards = [];
     for (let card of this.deckCollection_.getPreviousShownCards()) {
+      if (card.discarded) {
+        continue;
+      }
       if (!card.mostRecentAppearanceAnswerers || (!userId && card.mostRecentAppearanceAnswerers.length === 0) || (userId && !~card.mostRecentAppearanceAnswerers.indexOf(userId))) {
         unansweredCards.push(card);
       }
