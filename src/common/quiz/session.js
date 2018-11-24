@@ -54,7 +54,7 @@ class SessionInformation {
     this.currentCard_ = undefined;
   }
 
-  static createNew(locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore) {
+  static createNew(locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
     let session = new SessionInformation();
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
@@ -66,6 +66,7 @@ class SessionInformation {
     session.startTime_ = Date.now();
     session.numCardsAnswered_ = 0;
     session.hardcore_ = hardcore;
+    session.noRace_ = noRace;
     return session;
   }
 
@@ -85,6 +86,7 @@ class SessionInformation {
     session.startTime_ = saveData.startTime;
     session.numCardsAnswered_ = saveData.numCardsAnswered;
     session.hardcore_ = !!saveData.hardcore;
+    session.noRace_ = !!saveData.noRace;
 
     return session;
   }
@@ -158,6 +160,10 @@ class SessionInformation {
     return this.hardcore_;
   }
 
+  isNoRace() {
+    return this.noRace_;
+  }
+
   createSaveData() {
     return {
       deckCollectionSaveData: this.deckCollection_.createSaveData(),
@@ -169,6 +175,7 @@ class SessionInformation {
       startTime: this.startTime_,
       numCardsAnswered: this.numCardsAnswered_,
       hardcore: this.hardcore_,
+      noRace: this.noRace_,
     }
   }
 
