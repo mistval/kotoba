@@ -216,6 +216,13 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
 const afterQuizMessages = [
   {
     embed: {
+      title: 'Listening vocabulary',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'Try mai new listening vocabulary quizzes, for example **k!quiz lvN5**. Say **k!quiz** to see the list of available quizzes.',
+    },
+  },
+  {
+    embed: {
       title: 'Reviewing',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'Say **<prefix>quiz review** to review the questions no one answered, or **<prefix>quiz reviewme** to review the questions you didn\'t answer (only if you did answer at least one). You can say **<prefix>quiz reviewme** somewhere else (like in a DM) if you prefer.',
