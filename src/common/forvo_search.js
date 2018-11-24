@@ -45,6 +45,7 @@ function parseItems(items) {
       gender: item.sex === 'm' ? 'Male' : 'Female',
       country: item.country,
       audioUri: item.pathmp3 || item.pathogg,
+      audioType: (item.pathmp3 && 'mp3') || (item.pathogg && 'ogg') || undefined,
       forvoUri: `https://forvo.com/word/${item.word}/#${langCodeForLangName[item.langname] || ''}`,
     }));
 }
