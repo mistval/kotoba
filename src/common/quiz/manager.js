@@ -205,47 +205,68 @@ class EndQuizTooManyWrongAnswersAction extends Action {
 }
 
 class ShowAnswersAction extends Action {
+  constructor(session, timeLeft) {
+    super(session);
+    this.timeLeft = timeLeft;
+  }
+
+  endTimeout() {
+    if (this.timeoutEnded_) {
+      return;
+    }
+
+    this.timeoutEnded_ = true;
+
+    try {
+      const session = this.getSession_();
+      const currentCard = session.getCurrentCard();
+
+      session.markCurrentCardAnswered();
+      let scores = session.getScores();
+      let answerersInOrder = scores.getCurrentQuestionAnswerersInOrder();
+      let scoresForUser = scores.getAggregateScoreForUser();
+      let answersForUser = scores.getCurrentQuestionsAnswersForUser();
+      let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
+      if (answerersInOrder.length > 0) {
+        Promise.resolve(session.getMessageSender().outputQuestionScorers(
+          currentCard,
+          answerersInOrder,
+          answersForUser,
+          pointsForAnswer,
+          scoresForUser)).catch(err => {
+          globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
+        });
+      } else {
+        Promise.resolve(session.getMessageSender().showWrongAnswer(
+          currentCard,
+          false,
+          true,
+        )).catch(err => {
+          globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
+        });
+      }
+
+      if (scores.checkForWin()) {
+        this.fulfill_(new EndQuizScoreLimitReachedAction(session));
+      } else {
+        this.fulfill_(new WaitAction(session, currentCard.newQuestionDelayAfterAnsweredInMs, new AskQuestionAction(session)));
+      }
+    } catch (err) {
+      this.reject_(err);
+    }
+  }
+
   do() {
-    let session = this.getSession_();
-    let currentCard = session.getCurrentCard();
+    const session = this.getSession_();
+    const currentCard = session.getCurrentCard();
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
-      let timer = setTimeout(() => {
-        try {
-          session.markCurrentCardAnswered();
-          let scores = session.getScores();
-          let answerersInOrder = scores.getCurrentQuestionAnswerersInOrder();
-          let scoresForUser = scores.getAggregateScoreForUser();
-          let answersForUser = scores.getCurrentQuestionsAnswersForUser();
-          let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
-          if (answerersInOrder.length > 0) {
-            Promise.resolve(session.getMessageSender().outputQuestionScorers(
-              currentCard,
-              answerersInOrder,
-              answersForUser,
-              pointsForAnswer,
-              scoresForUser)).catch(err => {
-              globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
-            });
-          } else {
-            Promise.resolve(session.getMessageSender().showWrongAnswer(
-              currentCard,
-              false,
-              true,
-            )).catch(err => {
-              globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
-            });
-          }
+      this.reject_ = reject;
+      const additionalAnswerWaitTimeInMs = session.isNoRace()
+        ? this.timeLeft
+        : currentCard.additionalAnswerWaitTimeInMs;
 
-          if (scores.checkForWin()) {
-            fulfill(new EndQuizScoreLimitReachedAction(session));
-          } else {
-            fulfill(new WaitAction(session, currentCard.newQuestionDelayAfterAnsweredInMs, new AskQuestionAction(session)));
-          }
-        } catch (err) {
-          reject(err);
-        }
-      }, currentCard.additionalAnswerWaitTimeInMs);
+      let timer = setTimeout(() => this.endTimeout(), additionalAnswerWaitTimeInMs);
       session.addTimer(timer);
     });
   }
@@ -254,6 +275,10 @@ class ShowAnswersAction extends Action {
     if (this.fulfill_) {
       this.fulfill_();
     }
+  }
+
+  skip() {
+    this.endTimeout();
   }
 
   tryAcceptUserInput(userId, userName, input) {
@@ -315,18 +340,23 @@ class AskQuestionAction extends Action {
       return false;
     }
 
+    let timeLeft = card.answerTimeLimitInMs;
+    if (this.timeoutStartTime) {
+      timeLeft -= (new Date() - this.timeoutStartTime);
+    }
+
     const inputAsInt = parseInt(input);
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
         const accepted = session.tryAcceptAnswer(userId, userName, input);
-        this.fulfill_(new ShowAnswersAction(session));
+        this.fulfill_(new ShowAnswersAction(session, timeLeft));
         return accepted;
       }
     }
     let accepted = session.tryAcceptAnswer(userId, userName, input);
     if (accepted) {
-      this.fulfill_(new ShowAnswersAction(session));
+      this.fulfill_(new ShowAnswersAction(session, timeLeft));
     }
     return accepted;
   }
@@ -409,6 +439,7 @@ class AskQuestionAction extends Action {
           });
         }).then(shownQuestionId => {
           this.shownQuestionId_ = shownQuestionId;
+          this.timeoutStartTime = new Date();
           let timer = setTimeout(() => {
             try {
               session.markCurrentCardUnanswered();

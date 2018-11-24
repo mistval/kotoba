@@ -1012,6 +1012,7 @@ async function startNewQuiz(
   isMastery,
   isConquest,
   isHardcore,
+  isNoRace,
 ) {
   let suffixReplaced = suffix;
 
@@ -1085,6 +1086,7 @@ async function startNewQuiz(
     settings,
     gameMode,
     isHardcore,
+    isNoRace,
   );
 
   // 4. Try to establish audio connection
@@ -1168,12 +1170,14 @@ module.exports = {
       && (msg.extension === CONQUEST_EXTENSION || suffixReplaced.indexOf(CONQUEST_NAME) !== -1);
     const isHardcore = suffixReplaced.indexOf('hardcore') !== -1;
     const isNoDelay = suffixReplaced.indexOf('nodelay') !== -1;
+    const isNoRace = suffixReplaced.indexOf('norace') !== -1;
 
     suffixReplaced = suffixReplaced
       .replace(CONQUEST_NAME, '')
       .replace(MASTERY_NAME, '')
       .replace(/hardcore/g, '')
       .replace(/nodelay/g, '')
+      .replace(/norace/g, '')
       .trim();
 
     // Hack: manipulate the returned server settings
@@ -1225,6 +1229,7 @@ module.exports = {
       isMastery,
       isConquest,
       isHardcore,
+      isNoRace,
     );
   },
   canHandleExtension(extension) {
