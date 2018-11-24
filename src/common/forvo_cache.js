@@ -18,10 +18,6 @@ function baseNamesToAbsolutePaths(baseNames) {
   return baseNames.map(basename => path.join(AUDIO_DIRECTORY, basename));
 }
 
-function forvoResponseDataToAudioUris(forvoResponseData) {
-  return forvoResponseData.audioClips.map(clipInfo => clipInfo.audioUri);
-}
-
 // Return a concatenation of the string's char codes.
 function getStringCharCodeString(word) {
   let charCodeString = '';
@@ -31,18 +27,6 @@ function getStringCharCodeString(word) {
   }
 
   return charCodeString;
-}
-
-// Get the filenames we should save the audio clips to
-function getAudioClipDiskFilenames(word, numberOfUris) {
-  const charCodeString = getStringCharCodeString(word);
-  const filenames = [];
-
-  for (let i = 0; i < numberOfUris; i += 1) {
-    filenames.push(`${charCodeString}_${i}`);
-  }
-
-  return filenames;
 }
 
 function downloadAndSaveFile(webUri, diskFilePath) {
@@ -96,14 +80,18 @@ async function getPronunciationClipsForWord(word) {
 
   // Download the audio clips from Forvo, record their location in the audioFileBasenamesForWord,
   // and return the clip URIs.
-  const audioClipWebUris = forvoResponseDataToAudioUris(forvoResponseData);
-  const audioClipDiskFilenames = getAudioClipDiskFilenames(word, audioClipWebUris.length);
-  const audioClipDiskFilePaths = baseNamesToAbsolutePaths(audioClipDiskFilenames);
+
+  const { audioClips } = forvoResponseData;
+  const audioClipWebUris = audioClips.map(clipInfo => clipInfo.audioUri);
+
+  const wordCharCodeString = getStringCharCodeString(word);
+  const audioClipDiskFileNames = audioClips.map((clipInfo, index) => `${wordCharCodeString}_${index}.${clipInfo.audioType}`);
+  const audioClipDiskFilePaths = baseNamesToAbsolutePaths(audioClipDiskFileNames);
 
   const promises = [];
 
   const recordResultPromise = globals.persistence.editData(CACHE_KEY, storedData => {
-    storedData[word] = audioClipDiskFilenames;
+    storedData[word] = audioClipDiskFileNames;
     return storedData;
   });
 
