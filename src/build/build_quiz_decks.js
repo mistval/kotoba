@@ -2,16 +2,16 @@ const diskArray = require('disk-array');
 const fs = require('fs');
 const path = require('path');
 
-const WORD_ID_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
-const WORD_ID_DECK_NAME_REPLACE_STRING_TO = 'Word Identification Quiz';
-const WORD_ID_DECK_PREPROCESSING_STRATEGY = 'FORVO_AUDIO_CACHE';
-const WORD_ID_DECK_INSTRUCTIONS = 'Listen to the audio and type the word (in Kanji)';
-const WORD_ID_DECK_QUESTION_CREATION_STRATEGY = 'FORVO_AUDIO_FILE';
-const WORD_ID_DECK_DICTIONARY_LINK_STRATEGY = 'JISHO_ANSWER_WORD';
-const WORD_ID_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY = 'FORVO_AUDIO_LINK';
-const WORD_ID_DECK_NAME_SHORT_NAME_PREFIX = 'wd';
+const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
+const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO = 'Listening Vocabulary Quiz';
+const LISTENING_VOCAB_DECK_PREPROCESSING_STRATEGY = 'FORVO_AUDIO_CACHE';
+const LISTENING_VOCAB_DECK_INSTRUCTIONS = 'Listen to the audio and type the word (**in Kanji**)';
+const LISTENING_VOCAB_DECK_QUESTION_CREATION_STRATEGY = 'FORVO_AUDIO_FILE';
+const LISTENING_VOCAB_DECK_DICTIONARY_LINK_STRATEGY = 'JISHO_ANSWER_WORD';
+const LISTENING_VOCAB_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY = 'FORVO_AUDIO_LINK';
+const LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX = 'lv';
 
-const wordIdentificationDeckSourceDeckNames = [
+const listeningVocabDeckSourceDeckNames = [
   'n1',
   'n2',
   'n3',
@@ -34,16 +34,16 @@ const wordIdentificationDeckSourceDeckNames = [
 function createWordIdentificationDeckFromSource(sourceDeck) {
   const sourceDeckCopy = JSON.parse(JSON.stringify(sourceDeck));
 
-  sourceDeckCopy.uniqueId = `${WORD_ID_DECK_NAME_SHORT_NAME_PREFIX}_${sourceDeckCopy.uniqueId}`;
+  sourceDeckCopy.uniqueId = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}_${sourceDeckCopy.uniqueId}`;
   sourceDeckCopy.name = sourceDeckCopy.name.replace(
-    WORD_ID_DECK_NAME_REPLACE_STRING_FROM,
-    WORD_ID_DECK_NAME_REPLACE_STRING_TO,
+    LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM,
+    LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO,
   );
-  sourceDeckCopy.instructions = WORD_ID_DECK_INSTRUCTIONS;
-  sourceDeckCopy.questionCreationStrategy = WORD_ID_DECK_QUESTION_CREATION_STRATEGY;
-  sourceDeckCopy.dictionaryLinkStrategy = WORD_ID_DECK_DICTIONARY_LINK_STRATEGY;
+  sourceDeckCopy.instructions = LISTENING_VOCAB_DECK_INSTRUCTIONS;
+  sourceDeckCopy.questionCreationStrategy = LISTENING_VOCAB_DECK_QUESTION_CREATION_STRATEGY;
+  sourceDeckCopy.dictionaryLinkStrategy = LISTENING_VOCAB_DECK_DICTIONARY_LINK_STRATEGY;
   sourceDeckCopy.discordFinalAnswerListElementStrategy
-    = WORD_ID_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY;
+    = LISTENING_VOCAB_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY;
   sourceDeckCopy.requiresAudioConnection = true;
 
   sourceDeckCopy.cards.forEach(card => {
@@ -108,9 +108,9 @@ async function build() {
     await diskArray.create(deck.cards, diskArrayDirectory);
 
     // Create the corresponding word identification deck, if applicable
-    if (wordIdentificationDeckSourceDeckNames.indexOf(deckName) !== -1) {
+    if (listeningVocabDeckSourceDeckNames.indexOf(deckName) !== -1) {
       const wordIDDeck = createWordIdentificationDeckFromSource(deck);
-      const wordIDDeckName = `${WORD_ID_DECK_NAME_SHORT_NAME_PREFIX}${deckName}`;
+      const wordIDDeckName = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}${deckName}`;
       const wordIDDiskArrayDirectory = getDiskArrayDirectoryForDeckName(wordIDDeckName);
 
       await diskArray.create(wordIDDeck.cards, wordIDDiskArrayDirectory);

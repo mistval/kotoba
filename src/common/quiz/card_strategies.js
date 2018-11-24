@@ -133,8 +133,12 @@ async function createForvoAudioFileQuestion(card) {
   const question = createQuestionCommon(card);
   const word = card.question;
   const uris = await forvoAudioCache.getPronunciationClipsForWord(word);
-  question.bodyAsAudioUri = uris[Math.floor(Math.random() * uris.length)];
 
+  if (uris.length === 0) {
+    return undefined;
+  }
+
+  question.bodyAsAudioUri = uris[Math.floor(Math.random() * uris.length)];
   return question;
 }
 
