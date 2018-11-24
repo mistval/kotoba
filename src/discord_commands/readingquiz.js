@@ -445,9 +445,16 @@ class DiscordMessageSender {
   }
 
   async showQuestion(question, questionId) {
+    let title = question.deckName;
+
+    if (question.deckProgress !== undefined) {
+      const percentDone = Math.floor(question.deckProgress * 100);
+      title = `${title} (${percentDone}% complete)`;
+    }
+
     let content = {
       embed: {
-        title: question.deckName,
+        title,
         description: question.instructions,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],

@@ -96,6 +96,7 @@ function createQuestionCommon(card) {
     deckName: card.deckName,
     instructions: card.instructions,
     options: card.options,
+    deckProgress: card.deckProgress,
   };
 }
 
