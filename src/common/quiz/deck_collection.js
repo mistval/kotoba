@@ -27,6 +27,10 @@ function createRandomIndexSetForDecks(decks) {
   return indexSet;
 }
 
+function countCards(indexSet) {
+  return indexSet.reduce((sum, indices) => sum + indices.length, 0);
+}
+
 class DeckCollection {
   constructor() {
     this.discardedCards = [];
@@ -37,6 +41,7 @@ class DeckCollection {
     deckCollection.nextCardId = 0;
     deckCollection.decks = decks;
     deckCollection.indexSet = createRandomIndexSetForDecks(decks);
+    deckCollection.initialCardCount = countCards(deckCollection.indexSet);
     const deckName = deckCollection.decks[0].name;
     if (deckCollection.decks.every(deck => deck.name === deckName)) {
       deckCollection.name = deckName;
@@ -64,12 +69,23 @@ class DeckCollection {
     const deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
     const deckCollection = new DeckCollection();
     deckCollection.decks = deckLookupStatus.decks;
+    deckCollection.initialCardCount = saveData.initialCardCount;
     assert(deckCollection.decks, 'couldn\'t find a save deck by unique ID');
     deckCollection.indexSet = saveData.indexSet;
     deckCollection.name = saveData.name;
     deckCollection.nextCardId = saveData.nextCardId;
     deckCollection.previousCardCache = saveData.previousCardCache;
     return deckCollection;
+  }
+
+  calculateProgress() {
+    if (!this.initialCardCount) {
+      return undefined;
+    }
+
+    const remainingCards = countCards(this.indexSet);
+    const cardsCompleted = this.initialCardCount - remainingCards;
+    return cardsCompleted / this.initialCardCount;
   }
 
   requiresAudioConnection() {
@@ -118,7 +134,7 @@ class DeckCollection {
     return undisplayedCards;
   }
 
-  async popUndisplayedCard(settings) {
+  async popUndisplayedCard(settings, gameMode) {
     if (this.isEmpty()) {
       return undefined;
     }
@@ -139,6 +155,10 @@ class DeckCollection {
       deckIndex += 1;
     }
 
+    // Calculate progress before popping the next card
+    // so that that card is not counted as complete.
+    const progress = this.calculateProgress();
+
     const cardIndex = this.indexSet[deckIndex].pop();
     const deck = this.decks[deckIndex];
 
@@ -146,9 +166,13 @@ class DeckCollection {
     if (!card) {
       const deckCard = await this.decks[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
-        return this.popUndisplayedCard(settings);
+        return this.popUndisplayedCard(settings, gameMode);
       }
       card = deepCopy(deckCard);
+    }
+
+    if (gameMode.isMasteryMode) {
+      card.deckProgress = progress;
     }
 
     this.previousCardCache[deckIndex][cardIndex] = card;
@@ -158,7 +182,7 @@ class DeckCollection {
     }
 
     if (card.answer.length === 0 || card.answer[0] === '') {
-      return this.popUndisplayedCard(settings);
+      return this.popUndisplayedCard(settings, gameMode);
     }
 
     card.deckName = card.deckName || deck.name;
@@ -283,6 +307,7 @@ class DeckCollection {
       description: this.getDescription(),
       nextCardId: this.nextCardId,
       previousCardCache: this.previousCardCache,
+      initialCardCount: this.initialCardCount,
     };
   }
 

@@ -185,7 +185,7 @@ class SessionInformation {
   }
 
   getNextCard() {
-    return this.deckCollection_.popUndisplayedCard(this.getSettings());
+    return this.deckCollection_.popUndisplayedCard(this.getSettings(), this.gameMode_);
   }
 
   getSettings() {
