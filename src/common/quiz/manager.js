@@ -408,7 +408,6 @@ class AskQuestionAction extends Action {
 
   async do() {
     this.recursionDepth_ += 1;
-    console.log(this.recursionDepth_);
     if (this.recursionDepth_ >= 50) {
       return this.reject_(new Error('Exceeded max recusion depth for discarded cards'));
     }
