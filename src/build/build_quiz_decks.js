@@ -4,7 +4,6 @@ const path = require('path');
 
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO = 'Listening Vocabulary Quiz';
-const LISTENING_VOCAB_DECK_PREPROCESSING_STRATEGY = 'FORVO_AUDIO_CACHE';
 const LISTENING_VOCAB_DECK_INSTRUCTIONS = 'Listen to the audio and type the word (**in Kanji**)';
 const LISTENING_VOCAB_DECK_QUESTION_CREATION_STRATEGY = 'FORVO_AUDIO_FILE';
 const LISTENING_VOCAB_DECK_DICTIONARY_LINK_STRATEGY = 'JISHO_ANSWER_WORD';
@@ -31,7 +30,11 @@ const listeningVocabDeckSourceDeckNames = [
   '10k',
 ];
 
-function createWordIdentificationDeckFromSource(sourceDeck) {
+async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sourceFileName) {
+  if (listeningVocabDeckSourceDeckNames.indexOf(sourceFileName) === -1) {
+    return;
+  }
+
   const sourceDeckCopy = JSON.parse(JSON.stringify(sourceDeck));
 
   sourceDeckCopy.uniqueId = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}_${sourceDeckCopy.uniqueId}`;
@@ -52,7 +55,13 @@ function createWordIdentificationDeckFromSource(sourceDeck) {
     }
   });
 
-  return sourceDeckCopy;
+  const wordIDDeckName = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}${sourceFileName}`;
+  const wordIDDiskArrayDirectory = getDiskArrayDirectoryForDeckName(wordIDDeckName);
+
+  await diskArray.create(sourceDeckCopy.cards, wordIDDiskArrayDirectory);
+  delete sourceDeckCopy.cards;
+  sourceDeckCopy.cardDiskArrayPath = wordIDDiskArrayDirectory;
+  deckDataForDeckName[wordIDDeckName] = sourceDeckCopy;
 }
 
 function getPathForQuizDeckFile(fileName) {
@@ -106,18 +115,8 @@ async function build() {
     // because that way there's less memory pressure.
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
-
-    // Create the corresponding word identification deck, if applicable
-    if (listeningVocabDeckSourceDeckNames.indexOf(deckName) !== -1) {
-      const wordIDDeck = createWordIdentificationDeckFromSource(deck);
-      const wordIDDeckName = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}${deckName}`;
-      const wordIDDiskArrayDirectory = getDiskArrayDirectoryForDeckName(wordIDDeckName);
-
-      await diskArray.create(wordIDDeck.cards, wordIDDiskArrayDirectory);
-      delete wordIDDeck.cards;
-      wordIDDeck.cardDiskArrayPath = wordIDDiskArrayDirectory;
-      deckDataForDeckName[wordIDDeckName] = wordIDDeck;
-    }
+    // eslint-disable-next-line no-await-in-loop
+    await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
 
     delete deck.cards;
     deckDataForDeckName[deckName] = deck;
