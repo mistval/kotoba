@@ -30,6 +30,74 @@ const listeningVocabDeckSourceDeckNames = [
   '10k',
 ];
 
+const MEANING_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
+const MEANING_DECK_NAME_REPLACE_STRING_TO = 'Meaning Quiz';
+const MEANING_DECK_NAME_SHORT_SUFFIX = 'm';
+const MEANING_DECK_COMMENT_FIELD_NAME = 'Meaning';
+
+const meaningDeckSourceDeckNames = [
+  'n1',
+  'n2',
+  'n3',
+  'n4',
+  'n5',
+  '1k',
+  'j1k',
+  '2k',
+  'j2k',
+  '3k',
+  '4k',
+  '5k',
+  '6k',
+  '7k',
+  '8k',
+  '9k',
+  '10k',
+  'animals',
+  'birds',
+  'bugs',
+  'common',
+  'countries',
+  'fish',
+  'haard',
+  'hard',
+  'kklc',
+  'vegetables',
+  'plants',
+  'kokuji',
+];
+
+async function createMeaningDeck(deckDataForDeckName, sourceDeck, sourceFileName) {
+  if (meaningDeckSourceDeckNames.indexOf(sourceFileName) === -1) {
+    return;
+  }
+
+  const sourceDeckCopy = JSON.parse(JSON.stringify(sourceDeck));
+
+  sourceDeckCopy.uniqueId = `${sourceDeckCopy.uniqueId}${MEANING_DECK_NAME_SHORT_SUFFIX}`;
+  sourceDeckCopy.name = sourceDeckCopy.name.replace(
+    MEANING_DECK_NAME_REPLACE_STRING_FROM,
+    MEANING_DECK_NAME_REPLACE_STRING_TO,
+  );
+  sourceDeckCopy.forceMC = true;
+
+  sourceDeckCopy.cards = sourceDeckCopy.cards
+    .filter(card => card && card.meaning)
+    .map(card => ({
+      question: card.question,
+      answer: [card.meaning],
+      meaning: card.answer[0],
+    }));
+
+  const meaningDeckName = `${sourceFileName}${MEANING_DECK_NAME_SHORT_SUFFIX}`;
+  const meaningDeckDiskArrayDirectory = getDiskArrayDirectoryForDeckName(meaningDeckName);
+
+  await diskArray.create(sourceDeckCopy.cards, meaningDeckDiskArrayDirectory);
+  delete sourceDeckCopy.cards;
+  sourceDeckCopy.cardDiskArrayPath = meaningDeckDiskArrayDirectory;
+  deckDataForDeckName[meaningDeckName] = sourceDeckCopy;
+}
+
 async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sourceFileName) {
   if (listeningVocabDeckSourceDeckNames.indexOf(sourceFileName) === -1) {
     return;
@@ -117,6 +185,8 @@ async function build() {
     await diskArray.create(deck.cards, diskArrayDirectory);
     // eslint-disable-next-line no-await-in-loop
     await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
+    // eslint-disable-next-line no-await-in-loop
+    await createMeaningDeck(deckDataForDeckName, deck, deckName);
 
     delete deck.cards;
     deckDataForDeckName[deckName] = deck;
