@@ -1,2 +1,2 @@
 service mongodb start
-node . >> logs.log 2>&1
+node . >> ./latest_log/logs.log 2>&1

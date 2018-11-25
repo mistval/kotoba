@@ -11,5 +11,7 @@ RUN mv ./fonts/opentype/* /usr/share/fonts/opentype
 RUN npm install
 RUN service mongodb start && npm run buildall
 
+RUN mkdir latest_log
+
 RUN chmod +x ./start.sh
 CMD ./start.sh
