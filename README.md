@@ -65,6 +65,26 @@ npm install
 npm run buildall
 ```
 
+Then create a file in the root directory called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
+
+```json
+{
+  "botToken": "your_bot_token_here",
+  "botAdminIds": ["your_user_id_here"]
+}
+```
+
+Then create a file in the root directory called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+
+```json
+{
+  "YOUTUBE": "",
+  "GOOGLE_TRANSLATE": "",
+  "AZURE_NEWS": "",
+  "FORVO": ""
+}
+```
+
 You should also install the fonts in the /fonts directory. If you don't do this, the quiz and furigana commands might not use the fonts they are configured to use (and if you don't have any CJK fonts installed, they might just show boxes instead of Japanese characters).
 
 Finally, to start the bot run:
