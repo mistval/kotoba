@@ -4,6 +4,7 @@
   "description": "A Discord bot for learning Japanese",
   "main": "./src/start.js",
   "scripts": {
+    "start": "node .",
     "buildall": "node --max-old-space-size=500 ./src/build/buildall.js",
     "buildshiritori": "node --max-old-space-size=500 ./src/build/build_shiritori_data.js",
     "buildpronunciation": "node --max-old-space-size=500 ./src/build/build_pronunciation_data.js",
