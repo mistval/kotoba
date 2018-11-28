@@ -1,6 +1,6 @@
 'use strict'
 const reload = require('require-reload')(require);
-const apiKeys = reload('./../api_keys.js');
+const apiKeys = reload('./../api_keys.json');
 const Monochrome = reload('monochrome-bot');
 const quizManager = reload('./common/quiz/manager.js');
 const globals = require('./common/globals.js');
@@ -70,15 +70,15 @@ function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
   if (!apiKeys.YOUTUBE) {
-    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./api_keys.js. The jukebox command will not work.');
+    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./api_keys.json. The jukebox command will not work.');
   }
 
   if (!apiKeys.GOOGLE_TRANSLATE) {
-    logger.logFailure('TRANSLATE', 'No Google API key present in ./api_keys.js. The translate command will not work.');
+    logger.logFailure('TRANSLATE', 'No Google API key present in ./api_keys.json. The translate command will not work.');
   }
 
   if (!apiKeys.FORVO) {
-    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./api_keys.js. The pronounce command will not show audio files.');
+    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./api_keys.json. The pronounce command will not show audio files.');
   }
 }
 

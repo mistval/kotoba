@@ -8,7 +8,7 @@ const htmlEntities = new htmlEntitiesModule.XmlEntities();
 const { throwPublicErrorFatal } = reload('./util/errors.js');
 const { languageNameForGoogleLanguageCode } = reload('./language_code_maps.js');
 
-const API_KEY = reload('./../../api_keys.js').GOOGLE_TRANSLATE;
+const API_KEY = reload('./../../api_keys.json').GOOGLE_TRANSLATE;
 
 const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2';
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';
