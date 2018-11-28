@@ -6,3 +6,10 @@ logs
 persistence
 save_data
 latest_log
+.git
+.gitignore
+randomness_testing.md
+docker-compose.yml
+.eslintignore
+check_sensitive_data.js
+.eslintrc.js
