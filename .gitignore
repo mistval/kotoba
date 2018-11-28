@@ -58,9 +58,11 @@ typings/
 .env
 
 # Generated
-.node-persist
 save_data
 persistence
 generated
 objects
+
+# Sensitive
 config.json
+api_keys.json

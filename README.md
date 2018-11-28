@@ -31,7 +31,16 @@ Then create a file in the root directory called **config.json**. It contains you
 }
 ```
 
-Optionally, add API keys to ./api_keys.js. Some commands require API keys to work.
+Then create a file in the root directory called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+
+```json
+{
+  "YOUTUBE": "",
+  "GOOGLE_TRANSLATE": "",
+  "AZURE_NEWS": "",
+  "FORVO": ""
+}
+```
 
 Run:
 
