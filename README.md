@@ -47,15 +47,20 @@ You must have **cairo** and **pango** installed (for image rendering for the qui
 
 You must also have **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
-You should also install the fonts in the /fonts directory. If you don't do this, the quiz and furigana commands might not use the fonts they are configured to use (and if you don't have any CJK fonts installed, they might just show boxes instead of Japanese characters).
-
-After you've done all that run:
+After you've installed those run:
 
 ```
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
 npm install
 npm run buildall
+```
+
+You should also install the fonts in the /fonts directory. If you don't do this, the quiz and furigana commands might not use the fonts they are configured to use (and if you don't have any CJK fonts installed, they might just show boxes instead of Japanese characters).
+
+Finally, to start the bot run:
+
+```
 npm start
 ```
 
