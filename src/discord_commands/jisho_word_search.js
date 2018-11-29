@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 
 const jishoSearch = reload('./../common/jisho_search.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['jisho', 'j', 'en', 'ja', 'jp', 'ja-en', 'jp-en', 'en-jp', 'en-ja'],
@@ -17,6 +17,10 @@ module.exports = {
     if (!suffix) {
       const prefix = msg.prefix;
       return throwPublicErrorInfo('Jisho', `Say **${prefix}j [word]** to search for words on Jisho.org. For example: **${prefix}j 瞬間**. Say **${prefix}help jisho** for more help.`, 'No suffix');
+    }
+
+    if (suffix.length > 100) {
+      return throwPublicErrorFatal('Jisho', `That query is too long. The maximum length is 100 characters.`, 'Too long');
     }
 
     let big = settings['dictionary/display_mode'] === 'big';
