@@ -4,7 +4,5 @@ services:
     build: .
     restart: always
     volumes:
-      - ./logs:/var/app/logs
-      - ./save_data:/var/app/save_data
-      - ./persistence:/var/app/persistence
+      - ./data:/var/app/data
       - ./latest_log:/var/app/latest_log
