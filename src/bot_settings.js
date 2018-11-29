@@ -143,7 +143,7 @@ module.exports = [
         allowedValuesDescription: 'Either **enabled** or **disabled**',
         uniqueId: 'quiz/japanese/conquest_and_inferno_enabled',
         userSetting: false,
-        defaultUserFacingValue: 'Disabled',
+        defaultUserFacingValue: 'Enabled',
         convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
