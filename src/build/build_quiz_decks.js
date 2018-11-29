@@ -1,6 +1,7 @@
 const diskArray = require('disk-array');
 const fs = require('fs');
 const path = require('path');
+const mkdirp = require('mkdirp');
 
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO = 'Listening Vocabulary Quiz';
@@ -33,7 +34,7 @@ const listeningVocabDeckSourceDeckNames = [
 const MEANING_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const MEANING_DECK_NAME_REPLACE_STRING_TO = 'Meaning Quiz';
 const MEANING_DECK_NAME_SHORT_SUFFIX = 'm';
-const MEANING_DECK_COMMENT_FIELD_NAME = 'Meaning';
+const MEANING_DECK_COMMENT_FIELD_NAME = 'Reading';
 
 const meaningDeckSourceDeckNames = [
   'n1',
@@ -67,14 +68,24 @@ const meaningDeckSourceDeckNames = [
   'kokuji',
 ];
 
+function getPathForQuizDeckFile(fileName) {
+  return path.resolve(__dirname, '..', '..', 'resources', 'quiz_data', fileName || '');
+}
+
+function getDiskArrayDirectoryForDeckName(deckName) {
+  return path.resolve(__dirname, '..', '..', 'generated', 'quiz', 'decks', deckName);
+}
+
 async function createMeaningDeck(deckDataForDeckName, sourceDeck, sourceFileName) {
   if (meaningDeckSourceDeckNames.indexOf(sourceFileName) === -1) {
-    return;
+    return deckDataForDeckName;
   }
 
+  const deckDataForDeckNameCopy = { ...deckDataForDeckName };
   const sourceDeckCopy = JSON.parse(JSON.stringify(sourceDeck));
 
   sourceDeckCopy.uniqueId = `${sourceDeckCopy.uniqueId}${MEANING_DECK_NAME_SHORT_SUFFIX}`;
+  sourceDeckCopy.commentFieldName = MEANING_DECK_COMMENT_FIELD_NAME;
   sourceDeckCopy.name = sourceDeckCopy.name.replace(
     MEANING_DECK_NAME_REPLACE_STRING_FROM,
     MEANING_DECK_NAME_REPLACE_STRING_TO,
@@ -95,14 +106,17 @@ async function createMeaningDeck(deckDataForDeckName, sourceDeck, sourceFileName
   await diskArray.create(sourceDeckCopy.cards, meaningDeckDiskArrayDirectory);
   delete sourceDeckCopy.cards;
   sourceDeckCopy.cardDiskArrayPath = meaningDeckDiskArrayDirectory;
-  deckDataForDeckName[meaningDeckName] = sourceDeckCopy;
+  deckDataForDeckNameCopy[meaningDeckName] = sourceDeckCopy;
+
+  return deckDataForDeckNameCopy;
 }
 
 async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sourceFileName) {
   if (listeningVocabDeckSourceDeckNames.indexOf(sourceFileName) === -1) {
-    return;
+    return deckDataForDeckName;
   }
 
+  const deckDataForDeckNameCopy = { ...deckDataForDeckName };
   const sourceDeckCopy = JSON.parse(JSON.stringify(sourceDeck));
 
   sourceDeckCopy.uniqueId = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}_${sourceDeckCopy.uniqueId}`;
@@ -110,6 +124,7 @@ async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sou
     LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM,
     LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO,
   );
+
   sourceDeckCopy.instructions = LISTENING_VOCAB_DECK_INSTRUCTIONS;
   sourceDeckCopy.questionCreationStrategy = LISTENING_VOCAB_DECK_QUESTION_CREATION_STRATEGY;
   sourceDeckCopy.dictionaryLinkStrategy = LISTENING_VOCAB_DECK_DICTIONARY_LINK_STRATEGY;
@@ -117,11 +132,8 @@ async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sou
     = LISTENING_VOCAB_DECK_DISCORD_FINAL_ANSWER_LIST_ELEMENT_STRATEGY;
   sourceDeckCopy.requiresAudioConnection = true;
 
-  sourceDeckCopy.cards.forEach(card => {
-    if (card) {
-      card.answer = [card.question];
-    }
-  });
+  sourceDeckCopy.cards = sourceDeckCopy.cards
+    .map(card => card && { ...card, answer: card.question });
 
   const wordIDDeckName = `${LISTENING_VOCAB_DECK_NAME_SHORT_NAME_PREFIX}${sourceFileName}`;
   const wordIDDiskArrayDirectory = getDiskArrayDirectoryForDeckName(wordIDDeckName);
@@ -129,23 +141,9 @@ async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sou
   await diskArray.create(sourceDeckCopy.cards, wordIDDiskArrayDirectory);
   delete sourceDeckCopy.cards;
   sourceDeckCopy.cardDiskArrayPath = wordIDDiskArrayDirectory;
-  deckDataForDeckName[wordIDDeckName] = sourceDeckCopy;
-}
+  deckDataForDeckNameCopy[wordIDDeckName] = sourceDeckCopy;
 
-function getPathForQuizDeckFile(fileName) {
-  return path.resolve(__dirname, '..', '..', 'resources', 'quiz_data', fileName || '');
-}
-
-function getDiskArrayDirectoryForDeckName(deckName) {
-  return path.resolve(__dirname, '..', '..', 'generated', 'quiz', 'decks', deckName);
-}
-
-function mkdirIgnoreError(dir) {
-  try {
-    fs.mkdirSync(dir);
-  } catch (err) {
-    // NOOP
-  }
+  return deckDataForDeckNameCopy;
 }
 
 function writeFile(filePath, content) {
@@ -162,11 +160,9 @@ function writeFile(filePath, content) {
 async function build() {
   console.log('Building quiz data');
 
-  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated'));
-  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz'));
-  mkdirIgnoreError(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
+  mkdirp.sync(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
 
-  const deckDataForDeckName = {};
+  let deckDataForDeckName = {};
 
   // Build disk arrays for the quiz decks
   const quizDeckFileNames = fs.readdirSync(getPathForQuizDeckFile());
@@ -184,9 +180,9 @@ async function build() {
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
     // eslint-disable-next-line no-await-in-loop
-    await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
+    deckDataForDeckName = await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
     // eslint-disable-next-line no-await-in-loop
-    await createMeaningDeck(deckDataForDeckName, deck, deckName);
+    deckDataForDeckName = await createMeaningDeck(deckDataForDeckName, deck, deckName);
 
     delete deck.cards;
     deckDataForDeckName[deckName] = deck;

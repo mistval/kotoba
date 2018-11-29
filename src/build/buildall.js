@@ -11,7 +11,7 @@ async function build() {
 build().then(() => {
   console.log('Done');
   process.exit(0);
-}).catch(err => {
+}).catch((err) => {
   console.warn(err);
   process.exit(1);
 });
