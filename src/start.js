@@ -1,20 +1,21 @@
-'use strict'
 const reload = require('require-reload')(require);
-const apiKeys = reload('./../api_keys.json');
-const Monochrome = reload('monochrome-bot');
-const quizManager = reload('./common/quiz/manager.js');
+const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
-const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const path = require('path');
+const mkdirp = require('mkdirp');
+const apiKeys = reload('./../api_keys.json');
+const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const config = reload('./../config.json');
 const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
 
 function createBot() {
+  mkdirp.sync(path.join(__dirname, '..', 'data'));
+
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
-  const logDirectoryPath = path.join(__dirname, '..', 'logs');
-  const persistenceDirectoryPath = path.join(__dirname, '..', 'persistence');
+  const logDirectoryPath = path.join(__dirname, '..', 'data', 'logs');
+  const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
   let options = {
     prefixes: ['k!'],
