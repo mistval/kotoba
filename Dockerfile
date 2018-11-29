@@ -2,7 +2,7 @@ FROM node
 WORKDIR /var/app
 
 RUN apt-get update
-RUN apt-get -y install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev mongodb
+RUN apt-get -y install ffmpeg build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev mongodb
 
 COPY ./package.json .
 COPY ./package-lock.json .
