@@ -1,4 +1,3 @@
-
 const { PublicError } = require('monochrome-bot');
 const embedColor = require('./../common/constants.js').EMBED_NEUTRAL_COLOR;
 

@@ -41,6 +41,7 @@ module.exports = {
         monochrome.getNavigationManager(),
       );
     }
+
     return jishoSearch.createSmallResultForWord(msg, searchTerm);
   },
 };

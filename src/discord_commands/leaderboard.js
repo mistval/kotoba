@@ -66,9 +66,7 @@ function createScoreTotalString(scores) {
 
 function sendScores(msg, scores, title, description, footer, navigationManager, prefix) {
   const navigationContents = [];
-  const numPages = scores.length % MAX_SCORERS_PER_PAGE === 0 ?
-    Math.max(scores.length / MAX_SCORERS_PER_PAGE, 1) :
-    Math.floor(scores.length / MAX_SCORERS_PER_PAGE) + 1;
+  const numPages = Math.max(Math.ceil(scores.length / MAX_SCORERS_PER_PAGE), 1);
 
   const sortedScores = scores.sort((a, b) => b.score - a.score);
 
@@ -85,25 +83,20 @@ function sendScores(msg, scores, title, description, footer, navigationManager, 
         description: `${description}\n${createScoreTotalString(scores)}\nSay **${prefix}help lb** for help viewing leaderboards.`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
+        footer: footer,
       },
     };
-    if (footer) {
-      content.embed.footer = footer;
-    }
 
     for (let i = elementStartIndex; i <= elementEndIndex; i += 1) {
-      let userName = sortedScores[i].username;
+      const username = sortedScores[i].username || '<Name Unknown>';
       const { score } = sortedScores[i];
-      if (!userName) {
-        userName = '<Name Unknown>';
-      }
-      content.embed.fields.push(createFieldForScorer(i, userName, score));
+      content.embed.fields.push(createFieldForScorer(i, username, score));
     }
 
-    const commandInvokersRow = sortedScores.find(row => row.userId === msg.author.id);
+    const commandInvokersIndex = sortedScores.findIndex(row => row.userId === msg.author.id);
 
-    if (commandInvokersRow) {
-      const commandInvokersIndex = sortedScores.indexOf(commandInvokersRow);
+    if (commandInvokersIndex !== -1) {
+      const commandInvokersRow = sortedScores[commandInvokersIndex];
 
       if (commandInvokersIndex < elementStartIndex || commandInvokersIndex > elementEndIndex) {
         content.embed.fields.push(createFieldForScorer(
@@ -117,15 +110,12 @@ function sendScores(msg, scores, title, description, footer, navigationManager, 
     navigationContents.push(content);
   }
 
-  const navigationChapter = NavigationChapter.fromContent(navigationContents);
-  const chapterForReaction = { a: navigationChapter };
-  const hasMultiplePages = navigationContents.length > 1;
   const authorId = msg.author.id;
-  const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForReaction);
+  const navigation = Navigation.fromOneDimensionalContents(authorId, navigationContents);
   return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
-function notifyDeckNotFound(msg, isGlobal, deckName) {
+function notifyDeckNotFound(msg, deckName) {
   const content = {
     embed: {
       title: 'Leaderboard',
@@ -188,7 +178,7 @@ module.exports = {
   uniqueId: 'leaderboard409359',
   shortDescription: 'View leaderboards for quiz and/or shiritori',
   longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**<prefix>lb** - View all quiz scores in this server\n**<prefix>lb shiritori** - View shiritori scores in this server\n**<prefix>lb global** - View all quiz scores globally\n**<prefix>lb global N1** - View the global leaderboard for the N1 quiz deck\n**<prefix>lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**<prefix>lb anagrams**\n**<prefix>lb jlpt**\n**<prefix>lb kanken**',
-  action: async function action(erisBot, msg, suffix, monochrome) {
+  action: async function action(bot, msg, suffix, monochrome) {
     let title = '';
     let footer = {};
     let description = '';
@@ -196,8 +186,8 @@ module.exports = {
 
     let suffixReplaced = suffix.toLowerCase();
     const isGlobal = suffixReplaced.indexOf('global') !== -1 || !msg.channel.guild;
-
     suffixReplaced = suffixReplaced.replace(/global/g, '');
+
     const deckNamesArray = getDeckNamesArray(suffixReplaced);
     const didSpecifyDecks = deckNamesArray.length > 0;
     const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
@@ -220,7 +210,7 @@ module.exports = {
     }
 
     if (scoresResult.unfoundDeckName !== undefined) {
-      return notifyDeckNotFound(msg, isGlobal, scoresResult.unfoundDeckName);
+      return notifyDeckNotFound(msg, scoresResult.unfoundDeckName);
     }
 
     if (!footer.text) {
