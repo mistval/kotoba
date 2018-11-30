@@ -202,7 +202,7 @@ module.exports = {
     const didSpecifyDecks = deckNamesArray.length > 0;
     const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
 
-    const prefix = msg.prefix;
+    const { prefix } = msg;
     if (isGlobal) {
       title = `Global leaderboard${deckNamesTitlePart}`;
       description = 'The top scorers in the whole wide world.';
@@ -227,6 +227,14 @@ module.exports = {
       footer = createFooter(`You can mix any decks by using the + symbol. For example: ${prefix}lb N5+N4+N3`);
     }
 
-    return sendScores(msg, scoresResult.rows, title, description, footer, monochrome.getNavigationManager(), prefix);
+    return sendScores(
+      msg,
+      scoresResult.rows,
+      title,
+      description,
+      footer,
+      monochrome.getNavigationManager(),
+      prefix,
+    );
   },
 };

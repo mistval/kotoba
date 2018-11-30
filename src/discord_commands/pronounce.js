@@ -179,7 +179,12 @@ class PronunciationDataSource {
 }
 
 function createFoundResult(msg, pronounceInfo, navigationManager, logger) {
-  const navigationDataSource = new PronunciationDataSource(msg.author.username, pronounceInfo, logger);
+  const navigationDataSource = new PronunciationDataSource(
+    msg.author.username,
+    pronounceInfo,
+    logger,
+  );
+
   const navigationChapter = new NavigationChapter(navigationDataSource);
   const chapterForEmojiName = { a: navigationChapter };
   const hasMultiplePages = pronounceInfo.entries.length > 1;
@@ -197,7 +202,7 @@ module.exports = {
   usageExample: '<prefix>pronounce 瞬間',
   async action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      const prefix = msg.prefix;
+      const { prefix } = msg;
       return throwPublicErrorInfo('Pronounce', `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`, 'No suffix');
     }
 
