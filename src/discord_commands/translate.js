@@ -25,24 +25,13 @@ function throwPublicError(publicMessage, logMessage) {
   return throwPublicErrorInfo('Translate', publicMessage, logMessage);
 }
 
-function replaceMentionsWithUsernames(str, msg) {
-  const mentions = msg.mentions;
-  let replacedString = str;
-  mentions.forEach((mention) => {
-    replacedString = replacedString
-      .replace(new RegExp(`<@!?${mention.id}>`, 'g'), mention.username);
-  });
-
-  return replacedString;
-}
-
 function getLanguageCodesFromExtension(extension) {
   if (!extension || extension === '-') {
     return [];
   }
 
   const languagePart = extension.replace('-', '');
-  let languages = languagePart.split('>').slice(0, 2);
+  const languages = languagePart.split('>').slice(0, 2);
 
   return languages;
 }
@@ -127,7 +116,7 @@ function resultToDiscordContent(fromLanguage, toLanguage, result) {
 
   return {
     embed: {
-      title: `Result from Google Translate`,
+      title: 'Result from Google Translate',
       description: result.text.substring(0, 2048),
       url: result.uri.length < 2048 ? result.uri : undefined,
       fields: embedFields,
@@ -145,8 +134,8 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: '<prefix>translate 吾輩は猫である',
-  action: async function action(erisBot, msg, suffix, monochrome, settings) {
-    const mentionReplacedSuffix = replaceMentionsWithUsernames(suffix, msg);
+  action: async function action(erisBot, msg, suffix) {
+    const cleanContent = msg.cleanContent.replace(msg.prefix, '').trim();
     const languageCodes = getLanguageCodesFromExtension(msg.extension);
     verifyLanguageCodesValid(languageCodes, msg.prefix);
 
@@ -154,8 +143,16 @@ module.exports = {
       return respondNoSuffix(msg);
     }
 
-    const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(languageCodes, mentionReplacedSuffix);
-    const result = await googleTranslate.translate(languageCodeFrom, languageCodeTo, mentionReplacedSuffix);
+    const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(
+      languageCodes,
+      cleanContent,
+    );
+
+    const result = await googleTranslate.translate(
+      languageCodeFrom,
+      languageCodeTo,
+      cleanContent,
+    );
 
     const discordContent = resultToDiscordContent(languageCodeFrom, languageCodeTo, result);
     return msg.channel.createMessage(discordContent, undefined, msg);
