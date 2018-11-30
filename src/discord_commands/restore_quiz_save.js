@@ -1,6 +1,3 @@
-
-const reload = require('require-reload')(require);
-
 const { PublicError } = require('monochrome-bot');
 const pauseManager = require('./../common/quiz/pause_manager.js');
 const constants = require('./../common/constants.js');
