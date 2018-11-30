@@ -1,5 +1,6 @@
 const reload = require('require-reload')(require);
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
+
 const fontHelper = reload('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
 
@@ -18,9 +19,9 @@ function validateRGBColor(input) {
     return false;
   }
 
-  const r = parseInt(regexResult[1]);
-  const g = parseInt(regexResult[2]);
-  const b = parseInt(regexResult[3]);
+  const r = parseInt(regexResult[1], 10);
+  const g = parseInt(regexResult[2], 10);
+  const b = parseInt(regexResult[3], 10);
 
   return isInRange(MIN, MAX, r) && isInRange(MIN, MAX, g) && isInRange(MIN, MAX, b);
 }
@@ -38,10 +39,10 @@ function validateRGBAColor(input) {
     return false;
   }
 
-  const r = parseInt(regexResult[1]);
-  const g = parseInt(regexResult[2]);
-  const b = parseInt(regexResult[3]);
-  const a = parseFloat(regexResult[4]);
+  const r = parseInt(regexResult[1], 10);
+  const g = parseInt(regexResult[2], 10);
+  const b = parseInt(regexResult[3], 10);
+  const a = parseFloat(regexResult[4], 10);
 
   return isInRange(RGB_MIN, RGB_MAX, r)
     && isInRange(RGB_MIN, RGB_MAX, g)
@@ -56,12 +57,12 @@ function validateRGBorRGBA(input) {
 function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidationResult) {
   return shiritoriForeverHelper.handleEnabledChanged(
     channelID,
-    newSettingValidationResult.newInternalValue
+    newSettingValidationResult.newInternalValue,
   );
 }
 
 const fontForIndex = {};
-fontHelper.availableFontSettings.map((key, index) => {
+fontHelper.availableFontSettings.forEach((key, index) => {
   fontForIndex[index + 1] = key;
 });
 
@@ -158,8 +159,8 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
-      }
-    ]
+      },
+    ],
   },
   {
     userFacingName: 'Fonts',
@@ -245,7 +246,7 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.isMappable,
       },
-    ]
+    ],
   },
   {
     userFacingName: 'Dictionary',
@@ -261,8 +262,8 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.toStringLowercase,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createDiscreteOptionValidator(['big', 'small']),
-      }
-    ]
+      },
+    ],
   },
   {
     userFacingName: 'Shiritori',
@@ -311,8 +312,8 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(5, 300),
-      }
-    ]
+      },
+    ],
   },
   {
     userFacingName: 'Shiritori Forever',
@@ -331,6 +332,6 @@ module.exports = [
         validateInternalValue: SettingsValidators.isBoolean,
         onChannelSettingChanged: onShiritoriForeverEnabledChanged,
       },
-    ]
+    ],
   },
 ];

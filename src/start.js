@@ -3,6 +3,7 @@ const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
 const path = require('path');
 const mkdirp = require('mkdirp');
+
 const apiKeys = reload('./../api_keys.json');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const config = reload('./../config.json');
@@ -43,7 +44,7 @@ function createBot() {
       '@ me for help!',
       'with fire',
       '@ me for help!',
-      'hard to get'
+      'hard to get',
     ],
     statusRotationIntervalInSeconds: 600,
     erisOptions: {
@@ -60,7 +61,7 @@ function createBot() {
         PRESENCE_UPDATE: true,
         TYPING_START: true,
       },
-    }
+    },
   };
 
   options = Object.assign(options, config);
