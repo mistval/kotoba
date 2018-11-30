@@ -5,7 +5,7 @@ const jishoWordSearch = reload('./../common/jisho_word_search.js');
 const constants = reload('./../common/constants.js');
 const jishoSearch = reload('./../common/jisho_search.js');
 
-const NUMBER_OF_RETRIES = 5;
+const NUMBER_OF_RETRIES = 10;
 
 function createJishoNotRespondingResponse() {
   return {
@@ -53,6 +53,12 @@ module.exports = {
   usageExample: '\'<prefix>random N3\', \'<prefix>random 2k\'',
   action(erisBot, msg, suffix, monochrome) {
     const suffixLowerCase = suffix.toLowerCase();
-    return getRandomWordRecusive(suffixLowerCase, msg, NUMBER_OF_RETRIES, monochrome.getLogger(), monochrome.getNavigationManager());
+    return getRandomWordRecusive(
+      suffixLowerCase,
+      msg,
+      NUMBER_OF_RETRIES,
+      monochrome.getLogger(),
+      monochrome.getNavigationManager(),
+    );
   },
 };
