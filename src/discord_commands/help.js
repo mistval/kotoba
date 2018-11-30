@@ -1,6 +1,5 @@
-'use strict'
-const reload = require('require-reload')(require);
-const PublicError = require('monochrome-bot').PublicError;
+
+const { PublicError } = require('monochrome-bot');
 const embedColor = require('./../common/constants.js').EMBED_NEUTRAL_COLOR;
 
 // Configuration start
@@ -27,7 +26,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'jukebox',
   'invite',
   'about',
-  'settings'
+  'settings',
 ];
 
 // Configuration end
@@ -35,15 +34,18 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
 const PREFIX_REPLACE_REGEX = /<prefix>/g;
 
 function validateCommand(command) {
-  let commandName = command.aliases[0];
+  const commandName = command.aliases[0];
   if (command.shortDescription && typeof command.shortDescription !== typeof '') {
-    throw new Error('The shortDescription must be a string. It is not for ' + commandName);
+    throw new Error(`The shortDescription must be a string. It is not for ${commandName}`);
   } else if (command.usageExample && typeof command.usageExample !== typeof '') {
-    throw new Error('The usageExample must be a string. It is not for ' + commandName);
+    throw new Error(`The usageExample must be a string. It is not for ${commandName}`);
   } else if (command.longDescription && typeof command.longDescription !== typeof '') {
-    throw new Error('The longDescription must be a string. It is not for ' + commandName);
-  } else if (command.aliasesForHelp && (!Array.isArray(command.aliasesForHelp) || command.aliasesForHelp.length < 1)) {
-    throw new Error('The aliasesForHelp must be an array. It is not for ' + commandName);
+    throw new Error(`The longDescription must be a string. It is not for ${commandName}`);
+  } else if (
+    command.aliasesForHelp &&
+    (!Array.isArray(command.aliasesForHelp) || command.aliasesForHelp.length < 1)
+  ) {
+    throw new Error(`The aliasesForHelp must be an array. It is not for ${commandName}`);
   }
 }
 
@@ -53,10 +55,10 @@ function prefixAliases(aliases, prefix) {
 
 function createTopLevelHelpTextForCommand(command, prefix) {
   validateCommand(command);
-  let aliases = command.aliasesForHelp || command.aliases;
-  let prefixedAliases = prefixAliases(aliases, prefix);
-  let firstPrefixedAlias = prefixedAliases[0];
-  let otherPrefixedAliases = prefixedAliases.slice(1);
+  const aliases = command.aliasesForHelp || command.aliases;
+  const prefixedAliases = prefixAliases(aliases, prefix);
+  const firstPrefixedAlias = prefixedAliases[0];
+  const otherPrefixedAliases = prefixedAliases.slice(1);
   let helpText = firstPrefixedAlias;
   if (otherPrefixedAliases.length > 0) {
     helpText += ` (aliases: ${otherPrefixedAliases.join(', ')})`;
@@ -68,7 +70,7 @@ function createTopLevelHelpTextForCommand(command, prefix) {
     helpText += `${command.shortDescription.replace(PREFIX_REPLACE_REGEX, prefix)} `;
   }
   if (command.usageExample) {
-    helpText += 'Example: ' + command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix);
+    helpText += `Example: ${command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix)}`;
   }
 
   return helpText;
@@ -76,7 +78,7 @@ function createTopLevelHelpTextForCommand(command, prefix) {
 
 function createTopLevelHelpTextForCommands(commands, helpCommandAlias, prefix) {
   if (commands.length === 0) {
-    return;
+    return undefined;
   }
 
   let helpText = '';
@@ -86,24 +88,14 @@ function createTopLevelHelpTextForCommands(commands, helpCommandAlias, prefix) {
   }
 
   helpText += '```glsl\n';
-
-  for (let command of commands) {
-    helpText += createTopLevelHelpTextForCommand(command, prefix) + '\n';
-  }
-
-  helpText += `\nSay ${prefix}${helpCommandAlias} [command name] to see more help for a command. Example: ${prefix}${helpCommandAlias} ${commands[0].aliases[0]}\n\`\`\``;
+  helpText += commands.map(command => createTopLevelHelpTextForCommand(command, prefix)).join('\n');
+  helpText += `\n\nSay ${prefix}${helpCommandAlias} [command name] to see more help for a command. Example: ${prefix}${helpCommandAlias} ${commands[0].aliases[0]}\n\`\`\``;
 
   return helpText;
 }
 
 function indexOfAliasInList(command, list) {
-  for (let alias of command.aliases) {
-    let index = list.indexOf(alias);
-    if (index !== -1) {
-      return index;
-    }
-  }
-  return -1;
+  return list.findIndex(alias => command.aliases.indexOf(alias) !== -1);
 }
 
 function compareCommandOrder(commandA, commandB, orderList) {
@@ -123,16 +115,19 @@ async function showGeneralHelp(msg, helpCommandHelper, prefix) {
     COMMANDS_TO_GENERATE_HELP_FOR,
   );
 
-  let helpText = createTopLevelHelpTextForCommands(commandsToDisplayHelpFor, ALIASES[0], prefix);
+  const helpText = createTopLevelHelpTextForCommands(commandsToDisplayHelpFor, ALIASES[0], prefix);
   if (helpText) {
     return msg.channel.createMessage(helpText, null, msg);
-  } else {
-    throw PublicError.createWithCustomPublicMessage('There are no commands to show help for. Perhaps the server admins disabled all my commands in this channel.', false, 'No commands to display');
   }
+  throw PublicError.createWithCustomPublicMessage('There are no commands to show help for. Perhaps the server admins disabled all my commands in this channel.', false, 'No commands to display');
 }
 
 function showAdvancedHelp(msg, targetAlias, helpCommandHelper, prefix) {
-  const command = helpCommandHelper.findCommand(targetAlias, msg.channel.guild ? msg.channel.guild.id : msg.channel.id);
+  const command = helpCommandHelper.findCommand(
+    targetAlias,
+    msg.channel.guild ? msg.channel.guild.id : msg.channel.id,
+  );
+
   if (!command) {
     return showGeneralHelp(msg, helpCommandHelper, prefix);
   }
@@ -142,9 +137,9 @@ function showAdvancedHelp(msg, targetAlias, helpCommandHelper, prefix) {
     return showGeneralHelp(msg, helpCommandHelper, prefix);
   }
 
-  let fields = [];
+  const fields = [];
   if (command.getCooldown() !== undefined) {
-    fields.push({name: 'Cooldown', value: command.getCooldown().toString() + ' seconds', inline: true});
+    fields.push({ name: 'Cooldown', value: `${command.getCooldown().toString()} seconds`, inline: true });
   }
   let permissionsString = '';
 
@@ -154,20 +149,20 @@ function showAdvancedHelp(msg, targetAlias, helpCommandHelper, prefix) {
   if (!permissionsString) {
     permissionsString += 'None';
   }
-  fields.push({name: 'Required permissions', value: permissionsString, inline: true});
+  fields.push({ name: 'Required permissions', value: permissionsString, inline: true });
   if (command.usageExample) {
-    fields.push({name: 'Usage example', value: command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix)});
+    fields.push({ name: 'Usage example', value: command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix) });
   }
 
   const prefixedDescription = unprefixedDescription.replace(PREFIX_REPLACE_REGEX, prefix);
 
-  let botContent = {
+  const botContent = {
     embed: {
       title: `${prefix}${command.aliases[0]}`,
       description: prefixedDescription,
       color: EMBED_COLOR,
-      fields: fields,
-    }
+      fields,
+    },
   };
 
   return msg.channel.createMessage(botContent, null, msg);
@@ -184,16 +179,13 @@ module.exports = {
       COMMANDS_TO_GENERATE_HELP_FOR,
     );
 
-    for (let command of commandsForTopLevelHelp) {
-      validateCommand(command);
-    }
+    commandsForTopLevelHelp.forEach(validateCommand);
 
     const persistence = monochrome.getPersistence();
     const prefix = persistence.getPrimaryPrefixForMessage(msg);
     if (suffix) {
       return showAdvancedHelp(msg, suffix, helpCommandHelper, prefix);
-    } else {
-      return showGeneralHelp(msg, helpCommandHelper, prefix);
     }
-  }
+    return showGeneralHelp(msg, helpCommandHelper, prefix);
+  },
 };

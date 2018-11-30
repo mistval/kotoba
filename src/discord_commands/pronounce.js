@@ -121,9 +121,9 @@ class PronunciationDataSource {
         return `${entry.kanji[0]} (${entry.kanji[1]})`;
       }
       return entry.kanji[0];
-    } else {
-      return this.pronounceInfo.query;
     }
+
+    return this.pronounceInfo.query;
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
