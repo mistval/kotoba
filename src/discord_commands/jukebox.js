@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+
 const YoutubeApi = reload('./../common/youtube_api_utils.js');
 const { PublicError } = reload('monochrome-bot');
 const retryPromise = reload('./../common/util/retry_promise.js');
