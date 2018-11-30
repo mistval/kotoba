@@ -28,7 +28,7 @@ function rethrowError(err) {
 
 function parseItems(items) {
   let itemsToUse = [];
-  for (let i = 0; i < preferredLanguageNames.length && itemsToUse.length === 0; ++i) {
+  for (let i = 0; i < preferredLanguageNames.length && itemsToUse.length === 0; i += 1) {
     const preferredLanguageName = preferredLanguageNames[i];
     itemsToUse = items.filter(item => item.langname === preferredLanguageName);
   }

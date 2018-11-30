@@ -4,7 +4,7 @@ const request = require('request-promise');
 const DictionaryResponseData = reload('./dictionary_response_data.js');
 const WordMeaning = reload('./word_meaning.js');
 const DictionaryResult = reload('./dictionary_result.js');
-const PublicError = reload('monochrome-bot').PublicError;
+const PublicError = require('monochrome-bot').PublicError;
 
 const prettyLanguageForLanguageCode = require('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
 const TRANSLATE_API = 'https://glosbe.com/gapi_v0_1/translate';

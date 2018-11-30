@@ -2,7 +2,7 @@ const reload = require('require-reload')(require);
 
 const textRenderer = reload('./../common/render_text.js');
 const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
-const { PublicError } = reload('monochrome-bot');
+const { PublicError } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['furigana', 'furi', 'f'],

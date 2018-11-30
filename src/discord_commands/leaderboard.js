@@ -5,7 +5,7 @@ const constants = reload('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
-} = reload('monochrome-bot');
+} = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
 

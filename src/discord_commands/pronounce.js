@@ -6,7 +6,7 @@ const constants = reload('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
-} = reload('monochrome-bot');
+} = require('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 6;
 const LOGGER_TITLE = 'PRONOUNCE';

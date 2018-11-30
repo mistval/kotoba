@@ -1,5 +1,4 @@
 const reload = require('require-reload')(require);
-const globals = require('./globals.js');
 
 const jishoWordSearch = reload('./jisho_word_search.js');
 const kanjiContentCreator = reload('./kanji_search_content_creator.js');
@@ -10,7 +9,7 @@ const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.j
 const {
   NavigationChapter,
   Navigation,
-} = reload('monochrome-bot');
+} = require('monochrome-bot');
 
 const KANJI_REGEX = /[\u4e00-\u9faf\u3400-\u4dbf]/g;
 const STROKE_ORDER_EMOTE = '🇸';
@@ -251,7 +250,13 @@ function createNavigationForKanji(msg, authorName, authorId, kanji, navigationMa
   return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
-function createNavigationForJishoResults(msg, authorName, authorId, crossPlatformResponseData, navigationManager) {
+function createNavigationForJishoResults(
+  msg,
+  authorName,
+  authorId,
+  crossPlatformResponseData,
+  navigationManager,
+) {
   const word = crossPlatformResponseData.searchPhrase;
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,

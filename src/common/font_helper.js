@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 const RANDOM_FONT_SETTING = 'Random';
 
 // List the real fonts here (as opposed to the meta fonts [as of now only 'Random'])
@@ -22,13 +20,12 @@ function getRandomFont() {
   return realFontNames[randomIndex];
 }
 
-function getFontNameForFontSetting(fontSetting) {
-  fontSetting = fontSetting || realFontNames[0];
+function getFontNameForFontSetting(fontSetting = realFontNames[0]) {
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
   if (realFontNames.indexOf(fontSetting) === -1) {
-    fontSetting = realFontNames[0];
+    return realFontNames[0];
   }
 
   return fontSetting;

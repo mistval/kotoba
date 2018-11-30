@@ -1,5 +1,7 @@
 const EMBED_FIELD_MAX_LENGTH = 1024;
-const EMBED_TITLE_MAX_LENGTH = 242; // Experimentally determined. It's supposed to be 256 but in practice it seems to not be >.>
+
+// Experimentally determined. It's supposed to be 256 but in practice it seems to not be >.>
+const EMBED_TITLE_MAX_LENGTH = 242;
 const EMBED_FIELD_TRIM_REPLACEMENT = ' [...]';
 
 function trimString(str, maxLength) {

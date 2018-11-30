@@ -1,12 +1,9 @@
-
-const reload = require('require-reload')(require);
-const fs = require('fs');
 const request = require('request-promise');
 const constants = require('./constants.js');
 const UnofficialJishoApi = require('unofficial-jisho-api');
 
 const jishoApi = new UnofficialJishoApi();
-const PublicError = reload('monochrome-bot').PublicError;
+const { PublicError } = require('monochrome-bot');
 
 function createTitleOnlyEmbed(title) {
   return {
@@ -67,19 +64,20 @@ function convertToDiscordBotContent(kanjiInformation) {
       },
     };
   }
+
   return request({
     uri: animationUri,
     json: false,
     timeout: 10000,
-  }).then(data => ({
+  }).then(() => ({
     embed: {
       color: constants.EMBED_NEUTRAL_COLOR,
       image: { url: animationUri },
     },
-  })).catch(err => createTitleOnlyEmbed(`No results found for the kanji: ${kanjiInformation.query}`));
+  })).catch(() => createTitleOnlyEmbed(`No results found for the kanji: ${kanjiInformation.query}`));
 }
 
-module.exports.createContent = function (kanji) {
+module.exports.createContent = function action(kanji) {
   if (!kanji) {
     throw new Error('No Kanji');
   }

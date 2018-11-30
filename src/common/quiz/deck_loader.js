@@ -5,7 +5,7 @@ const request = require('request-promise');
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 
-const { PublicError } = reload('monochrome-bot');
+const { PublicError } = require('monochrome-bot');
 const decksMetadata = reload('./../../../generated/quiz/decks.json');
 const cardStrategies = reload('./card_strategies.js');
 
