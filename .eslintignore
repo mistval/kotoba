@@ -10,3 +10,4 @@ src/discord_message_processors/glosbe_word_lookup.js
 # They should be refactored and re-added to style checks before being changed
 # in any major way.
 src/discord_commands/quiz.js
+src/common/quiz

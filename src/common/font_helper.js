@@ -6,10 +6,10 @@ const RANDOM_FONT_SETTING = 'Random';
 const descriptionForFontSetting = {
   'Yu Mincho': 'An elegant font',
   'Noto Sans CJK JP': 'A commonly used web font',
-  'Meiryo': 'A commonly used print font',
-  'SetoFont': 'A cute handwritten font',
-  'KaiTi': 'A Chinese font',
-  'AoyagiKouzanFontT': 'A caligraphy brush font (kinda challenging)',
+  Meiryo: 'A commonly used print font',
+  SetoFont: 'A cute handwritten font',
+  KaiTi: 'A Chinese font',
+  AoyagiKouzanFontT: 'A caligraphy brush font (kinda challenging)',
 };
 
 const realFontNames = Object.keys(descriptionForFontSetting);

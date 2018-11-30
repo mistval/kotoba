@@ -1,4 +1,4 @@
-'use strict'
+
 module.exports.prettyLanguageForGlosbeLanguageCode = {
   en: 'English',
   de: 'German',
