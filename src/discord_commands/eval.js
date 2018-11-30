@@ -1,4 +1,3 @@
-
 const { PublicError } = require('monochrome-bot');
 
 /**
@@ -12,7 +11,7 @@ module.exports = {
   uniqueId: 'eval',
   action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('Say \'}eval [javascript code]\' to evaluate code.', false, 'No argument');
+      throw PublicError.createWithCustomPublicMessage(`Say **${msg.prefix}eval javascript_code_here** to evaluate code.`, false, 'No argument');
     }
 
     // eslint-disable-next-line no-eval
