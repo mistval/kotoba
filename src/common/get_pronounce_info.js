@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+
 const convertToHiragana = reload('./util/convert_to_hiragana.js');
 const searchForvo = reload('./forvo_search.js');
 const pronounceDb = reload('./pronunciation_db.js');
@@ -8,11 +9,11 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
     return [];
   }
 
-  let trueIndices = indexString.split('0')
+  const trueIndices = indexString.split('0')
     .filter(str => !!str)
     .map(str => parseInt(str) - 1);
 
-  let trueAndFalse = [];
+  const trueAndFalse = [];
   for (let i = 0; i < wordLength; ++i) {
     trueAndFalse.push(trueIndices.indexOf(i) !== -1);
   }
@@ -21,27 +22,27 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
 }
 
 function getHighLowPitch(wordLength, pitchAccentString) {
-  let parts = pitchAccentString.split('').map(int => parseInt(int));
+  const parts = pitchAccentString.split('').map(int => parseInt(int));
 
   while (parts.length < wordLength) {
     parts.unshift(0);
   }
 
-  return parts.map(int => int ? true : false);
+  return parts.map(int => (!!int));
 }
 
-module.exports = async function(queryWord, logger) {
-  let result = {
+module.exports = async function (queryWord, logger) {
+  const result = {
     query: queryWord,
     entries: [],
   };
 
-  let queryAsHiragana = convertToHiragana(queryWord);
-  let pronounceDataForQuery = await pronounceDb.search(queryAsHiragana);
+  const queryAsHiragana = convertToHiragana(queryWord);
+  const pronounceDataForQuery = await pronounceDb.search(queryAsHiragana);
 
   if (pronounceDataForQuery) {
-    result.entries = pronounceDataForQuery.map(entry => {
-      let katakanaLength = entry.katakana.length;
+    result.entries = pronounceDataForQuery.map((entry) => {
+      const katakanaLength = entry.katakana.length;
       return {
         hasPitchData: true,
         katakana: entry.katakana,

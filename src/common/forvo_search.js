@@ -6,8 +6,8 @@ const API_KEY = reload('./../../api_keys.json').FORVO;
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
 const preferredLanguageNames = ['Japanese', 'English'];
 const langCodeForLangName = {
-  'Japanese': 'ja',
-  'English': 'en',
+  Japanese: 'ja',
+  English: 'en',
 };
 
 function getApiUriForQuery(query) {

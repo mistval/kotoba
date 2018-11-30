@@ -1,6 +1,6 @@
 const globals = require('./../globals.js');
 
-async function retryPromise(promiseFactory, retryCount=3) {
+async function retryPromise(promiseFactory, retryCount = 3) {
   do {
     try {
       return await promiseFactory();
