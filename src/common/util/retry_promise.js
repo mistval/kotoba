@@ -1,17 +1,24 @@
 const globals = require('./../globals.js');
+const assert = require('assert');
 
 async function retryPromise(promiseFactory, retryCount = 3) {
+  let retriesLeft = retryCount;
+
   do {
     try {
+      // eslint-disable-next-line no-await-in-loop
       return await promiseFactory();
     } catch (err) {
       globals.logger.logFailure('UTIL', 'Promise failed, but there are still retries left. Retrying.', err);
-      retryCount -= 1;
-      if (retryCount <= 0) {
+      retriesLeft -= 1;
+      if (retriesLeft <= 0) {
         throw err;
       }
     }
-  } while (retryCount > 0);
+  } while (retriesLeft > 0);
+
+  assert(false, 'Unexpected branch');
+  return undefined;
 }
 
 module.exports = retryPromise;

@@ -1,6 +1,6 @@
 const reload = require('require-reload')(require);
 
-const { PublicError } = reload('monochrome-bot');
+const { PublicError } = require('monochrome-bot');
 
 /**
 * Delete a message (if the bot has moderator powers it can delete the messages of others.

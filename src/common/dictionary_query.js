@@ -8,7 +8,7 @@
 const reload = require('require-reload')(require);
 const prettyLanguageForLanguageCode = reload('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
 const DictionaryResponseData = reload('./dictionary_response_data.js');
-const PublicError = reload('monochrome-bot').PublicError;
+const PublicError = require('monochrome-bot').PublicError;
 
 function getHelp(langStr, fromLanguage, toLanguage) {
   let fromLanguagePretty = prettyLanguageForLanguageCode[fromLanguage];

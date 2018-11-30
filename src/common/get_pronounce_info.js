@@ -11,10 +11,10 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
 
   const trueIndices = indexString.split('0')
     .filter(str => !!str)
-    .map(str => parseInt(str) - 1);
+    .map(str => parseInt(str, 10) - 1);
 
   const trueAndFalse = [];
-  for (let i = 0; i < wordLength; ++i) {
+  for (let i = 0; i < wordLength; i += 1) {
     trueAndFalse.push(trueIndices.indexOf(i) !== -1);
   }
 
@@ -22,7 +22,7 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
 }
 
 function getHighLowPitch(wordLength, pitchAccentString) {
-  const parts = pitchAccentString.split('').map(int => parseInt(int));
+  const parts = pitchAccentString.split('').map(int => parseInt(int, 10));
 
   while (parts.length < wordLength) {
     parts.unshift(0);
@@ -31,7 +31,7 @@ function getHighLowPitch(wordLength, pitchAccentString) {
   return parts.map(int => (!!int));
 }
 
-module.exports = async function (queryWord, logger) {
+async function getPronounceInfo(queryWord, logger) {
   const result = {
     query: queryWord,
     entries: [],
@@ -67,4 +67,6 @@ module.exports = async function (queryWord, logger) {
 
   result.found = result.entries.length > 0;
   return result;
-};
+}
+
+module.exports = getPronounceInfo;

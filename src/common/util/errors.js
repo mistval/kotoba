@@ -1,6 +1,7 @@
 const reload = require('require-reload')(require);
 
-const { PublicError } = reload('monochrome-bot');
+const { PublicError } = require('monochrome-bot');
+
 const constants = reload('./../constants.js');
 
 function throwPublicError(sourceCommandName, publicMessage, logMessage, embedColor, err) {

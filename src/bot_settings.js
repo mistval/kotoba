@@ -1,5 +1,5 @@
 const reload = require('require-reload')(require);
-const { SettingsConverters, SettingsValidators } = reload('monochrome-bot');
+const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 const fontHelper = reload('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
 

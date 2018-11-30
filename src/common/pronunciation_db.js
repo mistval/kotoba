@@ -28,6 +28,8 @@ async function search(searchTerm) {
   if (searchResult) {
     return searchResult.words;
   }
+
+  return undefined;
 }
 
 async function clearPronunciationInfo() {
