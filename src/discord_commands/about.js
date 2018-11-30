@@ -22,14 +22,13 @@ Kotoba runs on the monochrome bot framework (https://github.com/mistval/monochro
 
 Kotoba uses data from the following sources:
     - Jisho (http://jisho.org)
-    - KanjiAlive (https://kanjialive.com/)
-    - Weblio (http://ejje.weblio.jp/)
+    - Weblio (http://weblio.jp/)
     - Google Translate (https://translate.google.com/)
     - KanjiVG (http://kanjivg.tagaini.net/)
     - Tanos (http://www.tanos.co.uk/)
     - Youtube (you know where)
     - Glosbe Dictionary (https://glosbe.com/)
-    - Bing news (http://bing.com/news)
+    - Forvo (https://forvo.com/)
 
 Many of the quiz decks come from https://github.com/darkgray1981/kanjiquizbot\`\`\``, null, msg);
   },
