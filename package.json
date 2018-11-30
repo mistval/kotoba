@@ -28,12 +28,12 @@
     "html-entities": "1.2.1",
     "mkdirp": "0.5.1",
     "mongoose": "5.2.14",
-    "monochrome-bot": "^2.0.3",
+    "monochrome-bot": "^2.0.4",
     "render-furigana": "^1.0.4",
     "request": "2.88.0",
     "request-promise": "4.2.2",
     "require-reload": "0.2.2",
-    "shiritori": "git+https://github.com/mistval/shiritori.git",
+    "shiritori": "^1.0.0",
     "unofficial-jisho-api": "^1.1.1"
   },
   "devDependencies": {
