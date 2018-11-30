@@ -1,9 +1,5 @@
-'use strict'
-const reload = require('require-reload')(require);
-const PublicError = require('monochrome-bot').PublicError;
-
 function delay() {
-  return new Promise((fulfill, reject) => {
+  return new Promise((fulfill) => {
     setTimeout(fulfill, 2000);
   });
 }

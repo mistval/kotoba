@@ -1,8 +1,8 @@
 const assert = require('assert');
 const reload = require('require-reload')(require);
-const globals = require('./../common/globals.js');
 
 const shiritoriManager = require('shiritori');
+
 const { REJECTION_REASON } = shiritoriManager;
 const constants = reload('./../common/constants.js');
 const errors = reload('./../common/util/errors.js');
@@ -119,7 +119,7 @@ class DiscordClientDelegate {
       return sendNeutralEmbed(
         channel,
         'I\'m leaving!',
-        `Well, I'll continue judging, but I won't take turns anymore :) You can say **bot join** if you would like me to start playing with you again.`,
+        'Well, I\'ll continue judging, but I won\'t take turns anymore :) You can say **bot join** if you would like me to start playing with you again.',
       );
     } else if (reason === shiritoriManager.PlayerSetInactiveReason.EXTERNAL_LEAVE_REQUEST) {
       return sendNeutralEmbed(
@@ -133,9 +133,9 @@ class DiscordClientDelegate {
         'Player left',
         `<@${userId}> seems AFK so I'm booting them! They can say **join** to rejoin.`,
       );
-    } else {
-      assert(false, 'Unexpected branch');
     }
+    assert(false, 'Unexpected branch');
+    return undefined;
   }
 
   onGameEnded(reason, args) {
@@ -199,13 +199,13 @@ class DiscordClientDelegate {
     }));
   }
 
-  onPlayerAnswered(currentPlayerId, wordInformation) {
+  onPlayerAnswered(currentPlayerId) {
     this.previousAnswererId = currentPlayerId;
   }
 
   async onAwaitingInputFromPlayer(playerId, previousWordInformation) {
     if (!this.previousAnswererId) {
-      return;
+      return undefined;
     }
 
     let readingPart = '';
@@ -222,7 +222,7 @@ class DiscordClientDelegate {
         value: `${createMarkdownLinkForWord(previousWordInformation.word)}${readingPart}`,
       },
       {
-        name: `It means`,
+        name: 'It means',
         value: previousWordInformation.meaning,
       },
       {
@@ -251,9 +251,7 @@ class DiscordClientDelegate {
       },
     };
 
-    await retryPromise(
-      () => this.commanderMessage.channel.createMessage(message),
-    );
+    await retryPromise(() => this.commanderMessage.channel.createMessage(message));
 
     if (playerId === this.bot.user.id) {
       return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
@@ -268,7 +266,7 @@ class DiscordClientDelegate {
     return sendErrorEmbed(
       this.commanderMessage.channel,
       'Skipping Player',
-      `<@${playerId}> is taking too long so I'm skipping them!`
+      `<@${playerId}> is taking too long so I'm skipping them!`,
     );
   }
 
@@ -282,12 +280,12 @@ class DiscordClientDelegate {
 
   onNewPlayerAdded(playerId) {
     if (playerId === this.bot.user.id) {
-      return;
+      return undefined;
     }
 
     if (!this.firstPlayerHasJoined) {
       this.firstPlayerHasJoined = true;
-      return;
+      return undefined;
     }
 
     return sendNeutralEmbed(
@@ -346,17 +344,16 @@ module.exports = {
   ],
   async action(erisBot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
+    const suffixLowerCase = suffix.toLowerCase();
 
-    if (suffix === 'stop') {
+    if (suffixLowerCase === 'stop') {
       return shiritoriManager.stopGame(locationId, msg.author.id);
     }
 
-    const prefix = msg.prefix;
+    const { prefix } = msg;
     throwIfSessionInProgress(locationId, prefix);
     const clientDelegate = new DiscordClientDelegate(erisBot, msg, monochrome.getLogger());
 
-    const suffixLowerCase = suffix.toLowerCase();
-    const removePlayerForRuleViolations = suffixLowerCase === 'hardcore' || suffixLowerCase === 'hc';
     const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
     const singlePlayerTimeoutMs = serverSettings['shiritori/answer_time_limit'] * 1000;
