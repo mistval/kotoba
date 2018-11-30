@@ -2,6 +2,8 @@ const reload = require('require-reload')(require);
 const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
+const assert = require('assert');
+
 const sendAndDelete = reload('./util/send_and_delete.js');
 const { Navigation } = require('monochrome-bot');
 
@@ -19,13 +21,19 @@ if (!state.shiritoriChannels) {
   state.shiritoriChannels = {};
 }
 
+function createMarkdownLinkForWord(word) {
+  return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
+}
+
 function createKeyForChannel(channelID) {
   return `${CHANNEL_SHIRITORI_KEY_PREFIX}${channelID}`;
 }
 
 async function loadChannels(monochrome) {
   try {
-    state.shiritoriChannels = await monochrome.getPersistence().getData(SHIRITORI_CHANNELS_LIST_KEY);
+    state.shiritoriChannels = await monochrome
+      .getPersistence()
+      .getData(SHIRITORI_CHANNELS_LIST_KEY);
   } catch (err) {
     const logger = monochrome.getLogger();
     logger.logFailure(LOGGER_TITLE, 'Error loading channels', err);
@@ -65,11 +73,11 @@ async function sendScores(monochrome, msg) {
   const persistence = monochrome.getPersistence();
   const channelData = await persistence.getData(createKeyForChannel(msg.channel.id));
 
-  let scoreForUserID = channelData.scores || {};
+  const scoreForUserID = channelData.scores || {};
   const sortedScores = Object.keys(scoreForUserID)
     .map(userID => ({
       username: userNameForUserID(monochrome, userID),
-      score: scoreForUserID[userID]
+      score: scoreForUserID[userID],
     }))
     .sort((a, b) => b.score - a.score);
 
@@ -98,8 +106,10 @@ function getPrefixForChannelID(monochrome, channelID) {
 
 function createMessageForTurnTaken(monochrome, channelID, userID, wordInformation, userScore) {
   const bot = monochrome.getErisBot();
-  const username = bot.users.get(userID).username;
-  const { word, reading, meaning, nextWordMustStartWith } = wordInformation;
+  const { username } = bot.users.get(userID);
+  const {
+    word, reading, meaning, nextWordMustStartWith,
+  } = wordInformation;
   const readingStringPart = reading ? ` (${reading})` : '';
   const scoreStringPart = userScore ? ` (${userScore})` : '';
   const prefix = getPrefixForChannelID(monochrome, channelID);
@@ -116,7 +126,7 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
     {
       name: 'Next word starts with',
       value: nextWordMustStartWith.join(', '),
-    }
+    },
   ];
 
   return retryPromise(() => bot.createMessage(channelID, {
@@ -127,7 +137,7 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
         text: `Say '${prefix}sf scores' to see the current scores.'`,
         icon_url: constants.FOOTER_ICON_URI,
       },
-    }
+    },
   }));
 }
 
@@ -179,24 +189,25 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
     msg.channel.id,
     msg.author.id,
     acceptedResult.word,
-    userScore
+    userScore,
   );
 
   return persistence.editData(createKeyForChannel(channelID), (data) => {
-    data.previousWordInformation = acceptedResult.word;
+    const dataCopy = { ...data };
+    dataCopy.previousWordInformation = acceptedResult.word;
 
-    if (!data.scores) {
-      data.scores = {};
+    if (!dataCopy.scores) {
+      dataCopy.scores = {};
     }
 
-    if (!data.scores[msg.author.id]) {
-      data.scores[msg.author.id] = 0;
+    if (!dataCopy.scores[msg.author.id]) {
+      dataCopy.scores[msg.author.id] = 0;
     }
 
-    data.scores[msg.author.id] += acceptedResult.score;
-    userScore = data.scores[msg.author.id];
+    dataCopy.scores[msg.author.id] += acceptedResult.score;
+    userScore = dataCopy.scores[msg.author.id];
 
-    return data;
+    return dataCopy;
   });
 }
 
@@ -209,7 +220,7 @@ function tryHandleMessage(monochrome, msg) {
     return false;
   }
 
-  let accepted;
+  let accepted = false;
   return monochrome.getPersistence().getData(createKeyForChannel(msg.channel.id)).then((data) => {
     const { previousWordInformation } = data;
     return japaneseGameStrategy.tryAcceptAnswer(
@@ -217,15 +228,13 @@ function tryHandleMessage(monochrome, msg) {
       previousWordInformation ? [previousWordInformation] : [],
     );
   }).then((acceptanceResult) => {
-    accepted = acceptanceResult.accepted;
+    ({ accepted } = acceptanceResult);
     if (accepted) {
       return handleAcceptedResult(monochrome, msg, acceptanceResult);
-    } else {
-      return handleRejectedResult(monochrome, msg, acceptanceResult);
     }
-  }).then(() => {
-    return accepted;
-  });
+    return handleRejectedResult(monochrome, msg, acceptanceResult);
+  })
+    .then(() => accepted);
 }
 
 function sendDisabledMessage(monochrome, channelID) {
@@ -248,10 +257,6 @@ function sendEnabledMessage(monochrome, channelID) {
   }));
 }
 
-function createMarkdownLinkForWord(word) {
-  return `[${word}](http://jisho.org/search/${encodeURIComponent(word)})`;
-}
-
 async function sendFirstWord(monochrome, channelID) {
   const persistence = monochrome.getPersistence();
   const result = await japaneseGameStrategy.getViableNextResult([]);
@@ -265,8 +270,9 @@ async function sendFirstWord(monochrome, channelID) {
   );
 
   return persistence.editData(createKeyForChannel(channelID), (data) => {
-    data.previousWordInformation = wordInformation;
-    return data;
+    const dataCopy = { ...data };
+    dataCopy.previousWordInformation = wordInformation;
+    return dataCopy;
   });
 }
 
@@ -276,16 +282,17 @@ async function handleEnabledChanged(channelID, newInternalValue) {
 
   let changed = false;
   await persistence.editData(SHIRITORI_CHANNELS_LIST_KEY, (data) => {
-    changed = newInternalValue != data[channelID];
+    const dataCopy = { ...data };
+    changed = newInternalValue !== dataCopy[channelID];
 
     if (newInternalValue) {
-      data[channelID] = true;
+      dataCopy[channelID] = true;
     } else {
-      delete data[channelID];
+      delete dataCopy[channelID];
     }
 
-    state.shiritoriChannels = data;
-    return data;
+    state.shiritoriChannels = dataCopy;
+    return dataCopy;
   });
 
   const shiritoriDataKey = createKeyForChannel(channelID);
