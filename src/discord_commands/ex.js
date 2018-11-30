@@ -12,7 +12,7 @@ module.exports = {
   usageExample: '<prefix>examples 少し',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
-      const prefix = msg.prefix;
+      const { prefix } = msg;
       return throwPublicErrorInfo('Examples', `Say **${prefix}examples [text]** to search for examples. For example: **${prefix}examples 瞬間**`, 'No suffix');
     }
 
