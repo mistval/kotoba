@@ -1,4 +1,5 @@
-const libVersion = require('eris/package.json').version;
+const { erisVersion } = require('monochrome-bot');
+const monochromeVersion = require('monochrome-bot/package.json').version;
 
 module.exports = {
   commandAliases: ['about'],
@@ -11,7 +12,8 @@ module.exports = {
 # Kotoba
 
 [ CREATOR ](K33#5261)
-[ LIBRARY ](Eris v${libVersion})
+[ LIBRARY ](Eris v${erisVersion})
+[ FRAMEWORK ](Monochrome v${monochromeVersion})
 
 Need help, want to report a bug, make a suggestion, etc? Visit https://discordapp.com/invite/zkAKbyJ
 
