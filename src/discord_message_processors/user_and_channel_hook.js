@@ -1,4 +1,4 @@
-'use strict'
+
 const unreloadableDataStore = require('./../unreloadable_data.js');
 
 if (!unreloadableDataStore.hookForUserAndChannel) {
@@ -11,48 +11,50 @@ function createHookIdentifier(userId, channelId) {
 
 class Hook {
   constructor(userId, channelId, callback, logger) {
-    this.userId_ = userId;
-    this.channelId_ = channelId;
-    this.callback_ = callback;
-    this.logger_ = logger;
+    this.userId = userId;
+    this.channelId = channelId;
+    this.callback = callback;
+    this.logger = logger;
   }
 
   register() {
-    let existingHook = unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()];
+    const existingHook = unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()];
     if (existingHook) {
       existingHook.unregister();
     }
-    unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()] = this;
-    this.registered_ = true;
+    unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()] = this;
+    this.registered = true;
   }
 
   unregister() {
-    delete unreloadableDataStore.hookForUserAndChannel[this.getIdentifier_()];
-    this.registered_ = false;
-    clearTimeout(this.timer_);
-    delete this.timer_;
+    delete unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()];
+    this.registered = false;
+    clearTimeout(this.timer);
+    delete this.timer;
   }
 
   setExpirationInMs(expiration, timeoutCallback) {
-    clearTimeout(this.timer_);
-    delete this.timer_;
-    this.timer_ = setTimeout(() => {
-      try {
-        this.unregister();
-        timeoutCallback();
-      } catch (err) {
-        this.logger_.logFailure('CORE', 'Hook expiration callback threw error', err);
-      }
-    },
-    expiration);
+    clearTimeout(this.timer);
+    delete this.timer;
+    this.timer = setTimeout(
+      () => {
+        try {
+          this.unregister();
+          timeoutCallback();
+        } catch (err) {
+          this.logger.logFailure('CORE', 'Hook expiration callback threw error', err);
+        }
+      },
+      expiration,
+    );
   }
 
   callback(msg, monochrome) {
-    return this.callback_(this, msg, monochrome);
+    return this.callback(this, msg, monochrome);
   }
 
-  getIdentifier_() {
-    return createHookIdentifier(this.userId_, this.channelId_);
+  getIdentifier() {
+    return createHookIdentifier(this.userId, this.channelId);
   }
 }
 
@@ -63,16 +65,16 @@ class Hook {
 module.exports = {
   name: 'Followup Message',
   action(erisBot, msg, monochrome) {
-    let hookIdentifier = createHookIdentifier(msg.author.id, msg.channel.id);
-    let correspondingHook = unreloadableDataStore.hookForUserAndChannel[hookIdentifier];
+    const hookIdentifier = createHookIdentifier(msg.author.id, msg.channel.id);
+    const correspondingHook = unreloadableDataStore.hookForUserAndChannel[hookIdentifier];
     if (correspondingHook) {
       return correspondingHook.callback(msg, monochrome);
     }
     return false;
   },
   registerHook(userId, channelId, callback, logger) {
-    let hook = new Hook(userId, channelId, callback, logger);
+    const hook = new Hook(userId, channelId, callback, logger);
     hook.register();
     return hook;
-  }
+  },
 };
