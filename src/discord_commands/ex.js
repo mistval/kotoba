@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 3,
   uniqueId: 'examples53059',
   shortDescription: 'Search Jisho for example sentences.',
-  usageExample: '<prefix>examples 少し',
+  usageExample: '**<prefix>examples 少し**',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

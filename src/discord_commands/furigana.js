@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 5,
   uniqueId: 'furigana5345',
   shortDescription: 'Render furigana for Japanese text.',
-  usageExample: '<prefix>furigana 吾輩は猫である',
+  usageExample: '**<prefix>furigana 吾輩は猫である**',
   requiredSettings: [
     'furigana_main_font_size',
     'furigana_font_color',

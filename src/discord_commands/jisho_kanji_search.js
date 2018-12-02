@@ -10,7 +10,7 @@ module.exports = {
   uniqueId: 'jishokanji54094',
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
-  usageExample: '<prefix>kanji 少',
+  usageExample: '**<prefix>kanji 少**',
   action(erisBot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
