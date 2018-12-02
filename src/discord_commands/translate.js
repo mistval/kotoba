@@ -133,7 +133,7 @@ module.exports = {
   uniqueId: 'translate49394',
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
-  usageExample: '<prefix>translate 吾輩は猫である',
+  usageExample: '**<prefix>translate 吾輩は猫である**',
   action: async function action(erisBot, msg, suffix) {
     const cleanContent = msg.cleanContent.replace(msg.prefix, '').trim();
     const languageCodes = getLanguageCodesFromExtension(msg.extension);
