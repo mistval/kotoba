@@ -1,6 +1,7 @@
 version: '3'
 services:
   kotoba:
+    image: mistval/kotoba
     build: .
     restart: always
     volumes:
