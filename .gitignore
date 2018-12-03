@@ -58,10 +58,10 @@ typings/
 .env
 
 # Generated
-save_data
-persistence
 generated
-objects
+
+# Persisted data
+data
 
 # Sensitive
 config.json
