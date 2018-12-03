@@ -6,3 +6,4 @@ services:
     volumes:
       - ./data:/var/app/data
       - ./latest_log:/var/app/latest_log
+      - ./config:/var/app/config

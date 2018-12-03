@@ -22,7 +22,5 @@ RUN mkdir latest_log data
 
 COPY ./start.sh ./start.sh
 COPY ./src ./src
-COPY ./config.json ./config.json
-COPY ./api_keys.json ./api_keys.json
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]
