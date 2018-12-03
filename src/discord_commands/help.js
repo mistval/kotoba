@@ -13,23 +13,23 @@ const NAVIGATION_EXPIRATION_TIME_MS = 30 * 60 * 1000; // 30 minutes
 
 const COMMANDS_TO_GENERATE_HELP_FOR = [
   'jisho',
-  'jn',
   'kanji',
   'strokeorder',
   'quiz',
-  'examples',
-  'thesaurus',
-  'furigana',
-  'pronounce',
-  'random',
   'shiritori',
-  'shiritoriforever',
+  'examples',
   'translate',
-  'weblio',
+  'furigana',
+  'shiritoriforever',
+  'random',
+  'thesaurus',
+  'pronounce',
   'jukebox',
+  'jn',
+  'weblio',
   'invite',
-  'about',
   'settings',
+  'about',
 ];
 
 // Configuration end
