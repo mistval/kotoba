@@ -135,7 +135,8 @@ module.exports = {
   longDescription: createLongDescription(),
   usageExample: '**<prefix>translate 吾輩は猫である**',
   action: async function action(erisBot, msg, suffix) {
-    const cleanContent = msg.cleanContent.replace(msg.prefix, '').trim();
+    const spaceIndex = msg.cleanContent.indexOf(' ');
+    const cleanContent = msg.cleanContent.substring(spaceIndex + 1).trim();
     const languageCodes = getLanguageCodesFromExtension(msg.extension);
     verifyLanguageCodesValid(languageCodes, msg.prefix);
 
