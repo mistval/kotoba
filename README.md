@@ -17,7 +17,7 @@ Installation instructions below are for Ubuntu Linux.
 Run:
 
 ```
-sudo apt install docker-compose
+sudo apt install docker docker-compose
 git clone https://github.com/mistval/kotoba.git
 cd kotoba
 ```
