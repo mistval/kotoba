@@ -231,7 +231,6 @@ function tryCancel(hook, msg) {
 }
 
 function handleRootViewMsg(hook, monochrome, msg) {
-  debugger;
   const index = messageToIndex(msg);
   const settingsNodes = monochrome.getSettings().getRawSettingsTree();
   if (index >= 0 && index < settingsNodes.length) {
