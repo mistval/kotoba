@@ -22,7 +22,7 @@ git clone https://github.com/mistval/kotoba.git
 cd kotoba
 ```
 
-Then create a file in the root directory called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
+Then create a directory in the root directory called **config** and a file inside of it called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
 
 ```json
 {
@@ -31,7 +31,7 @@ Then create a file in the root directory called **config.json**. It contains you
 }
 ```
 
-Then create a file in the root directory called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
 
 ```json
 {
@@ -65,7 +65,7 @@ npm install
 npm run buildall
 ```
 
-Then create a file in the root directory called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
+Then create a directory in the root directory called **config** and a file inside of it called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
 
 ```json
 {
@@ -74,7 +74,7 @@ Then create a file in the root directory called **config.json**. It contains you
 }
 ```
 
-Then create a file in the root directory called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
 
 ```json
 {

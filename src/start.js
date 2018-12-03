@@ -4,9 +4,9 @@ const globals = require('./common/globals.js');
 const path = require('path');
 const mkdirp = require('mkdirp');
 
-const apiKeys = reload('./../api_keys.json');
+const apiKeys = reload('./../config/api_keys.json');
 const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
-const config = reload('./../config.json');
+const config = reload('./../config/config.json');
 const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
 
 function createBot() {
