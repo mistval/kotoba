@@ -424,6 +424,7 @@ class AskQuestionAction extends Action {
       this.reject_ = reject;
       preprocessPromise.then(card => {
         if (card === false) {
+          nextCard.discarded = true;
           return fulfill(this.do());
         }
         card.wasPreprocessed = true;
