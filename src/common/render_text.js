@@ -11,7 +11,7 @@ const BASE_LEFT_PADDING_IN_PIXELS = 6;
 const BASE_RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 
-function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 106, fontSetting = 'Yu Mincho') {
+function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 96, fontSetting = 'Yu Mincho') {
   const font = fontHelper.getFontNameForFontSetting(fontSetting);
   return new Promise((fulfill, reject) => {
     const canvas = new Canvas(0, 0);
