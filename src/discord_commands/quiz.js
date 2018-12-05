@@ -54,7 +54,7 @@ function getFinalAnswerLineForQuestionAndAnswerLinkAnswer(card) {
 }
 
 function getFinalAnswerLineForQuestionAndAnswerBoldAnswer(card) {
-  return `${card.question} (**${card.answer.join(', ')}**)`;
+  return `-- ${card.question} (**${card.answer.join(', ')}**)`;
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkQuestion(card) {
