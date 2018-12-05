@@ -71,11 +71,18 @@ module.exports.AnswerCompareStrategy = {
 
 /* DICTIONARY LINK STRATEGIES */
 
+function getAnswerToLink(card) {
+  if (card.options) {
+    return card.answer[1];
+  }
+  return card.answer[0];
+}
+
 module.exports.CreateDictionaryLinkStrategy = {
   JISHO_QUESTION_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.question);},
   JISHO_QUESTION_KANJI: card => {return `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`;},
-  JISHO_ANSWER_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.answer[0]);},
-  WEBSTER_ANSWER: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.answer[0]);},
+  JISHO_ANSWER_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(getAnswerToLink(card));},
+  WEBSTER_ANSWER: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(getAnswerToLink(card));},
   WEBSTER_QUESTION: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.question);},
   NONE: card => {return '';},
 };
