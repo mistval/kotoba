@@ -327,7 +327,6 @@ class AskQuestionAction extends Action {
   constructor(session) {
     super(session);
     this.canBeSaved = true;
-    this.recursionDepth_ = 0;
   }
 
   tryAcceptUserInput(userId, userName, input) {
@@ -407,11 +406,6 @@ class AskQuestionAction extends Action {
   }
 
   async do() {
-    this.recursionDepth_ += 1;
-    if (this.recursionDepth_ >= 50) {
-      return this.reject_(new Error('Exceeded max recusion depth for discarded cards'));
-    }
-
     let session = this.getSession_();
     session.answerAttempters = [];
     session.getScores().resetStateForNewCard();
@@ -430,17 +424,12 @@ class AskQuestionAction extends Action {
       this.reject_ = reject;
       preprocessPromise.then(card => {
         if (card === false) {
-          nextCard.discarded = true;
           return fulfill(this.do());
         }
         card.wasPreprocessed = true;
+        session.setCurrentCard(card);
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
-          if (!question) {
-            nextCard.discarded = true;
-            return fulfill(this.do());
-          }
-          session.setCurrentCard(card);
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
             globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
             throw err;

@@ -73,7 +73,7 @@ function getFinalAnswerLineForJpTestAudio(card) {
 function getFinalAnswerLineForForvoAudioLink(card) {
   const answer = card.answer[0];
   const uri = `https://forvo.com/word/${encodeURIComponent(answer)}/#ja`;
-  return `[${card.question}](${uri})`;
+  return `[${answer}](${uri})`;
 }
 
 const FinalAnswerListElementStrategy = {

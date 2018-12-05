@@ -131,15 +131,9 @@ function createJlptAudioFileQuestion(card) {
 
 async function createForvoAudioFileQuestion(card) {
   const question = createQuestionCommon(card);
-  const word = card.question;
-  const uris = await forvoAudioCache.getPronunciationClipsForWord(word);
-
-  if (uris.length === 0) {
-    return undefined;
-  }
-
-  question.bodyAsAudioUri = uris[Math.floor(Math.random() * uris.length)];
-  return question;
+  const audioFileUri = card.question;
+  question.bodyAsAudioUri = audioFileUri;
+  return Promise.resolve(question);
 }
 
 function createTextQuestionWithHint(card, quizState) {
@@ -261,9 +255,22 @@ function randomizeQuestionCharacters(card) {
   return Promise.resolve(card);
 }
 
+async function updateWithForvoAudioUri(card) {
+  const word = card.question;
+  const uris = await forvoAudioCache.getPronunciationClipsForWord(word);
+
+  if (uris.length === 0) {
+    return false;
+  }
+
+  card.question = uris[Math.floor(Math.random() * uris.length)];
+  return card;
+}
+
 module.exports.CardPreprocessingStrategy = {
   BETTER_ENGLISH_DEFINITIONS: updateWithBetterEnglishDefinition,
   RANDOMIZE_QUESTION_CHARACTERS: randomizeQuestionCharacters,
+  FORVO_AUDIO: updateWithForvoAudioUri,
   NONE: card => Promise.resolve(card),
 };
 
