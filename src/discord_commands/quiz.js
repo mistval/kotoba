@@ -50,7 +50,11 @@ function createTitleOnlyEmbed(title) {
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkAnswer(card) {
-  return `${card.question} ([${card.answer.join(',')}](${card.dictionaryLink}))`;
+  return `${card.question} ([${card.answer.join(', ')}](${card.dictionaryLink}))`;
+}
+
+function getFinalAnswerLineForQuestionAndAnswerBoldAnswer(card) {
+  return `${card.question} (**${card.answer.join(', ')}**)`;
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkQuestion(card) {
@@ -79,6 +83,7 @@ function getFinalAnswerLineForForvoAudioLink(card) {
 const FinalAnswerListElementStrategy = {
   QUESTION_AND_ANSWER_LINK_QUESTION: getFinalAnswerLineForQuestionAndAnswerLinkQuestion,
   QUESTION_AND_ANSWER_LINK_ANSWER: getFinalAnswerLineForQuestionAndAnswerLinkAnswer,
+  QUESTION_AND_ANSWER_BOLD_ANSWER: getFinalAnswerLineForQuestionAndAnswerBoldAnswer,
   ANSWER_ONLY: getFinalAnswerLineForAnswerOnly,
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
   JPTEST_FOR_YOU_AUDIO_LINK: getFinalAnswerLineForJpTestAudio,
