@@ -18,7 +18,7 @@ function createBot() {
   const logDirectoryPath = path.join(__dirname, '..', 'data', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
-  let options = {
+  const options = {
     prefixes: ['k!'],
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
@@ -62,9 +62,9 @@ function createBot() {
         TYPING_START: true,
       },
     },
+    ...config,
   };
 
-  options = Object.assign(options, config);
   return new Monochrome(options);
 }
 
