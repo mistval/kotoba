@@ -11,6 +11,8 @@ const {
 const MAX_AUDIO_CLIPS = 6;
 const LOGGER_TITLE = 'PRONOUNCE';
 
+const smallKatakana = ['ァ', 'ィ', 'ゥ', 'ェ', 'ォ', 'ャ', 'ュ', 'ョ', 'ッ'];
+
 function createEmbedContent() {
   return {
     embed: {
@@ -52,7 +54,19 @@ function underlineStringAtTrueIndices(string, indices) {
 }
 
 function createLHString(pronounceInfo) {
-  return pronounceInfo.pitchAccent.map(bool => (bool ? 'H' : 'L')).join('_');
+  let str = '';
+  for (let i = 0; i < pronounceInfo.pitchAccent.length; i += 1) {
+    const katakana = pronounceInfo.katakana[i];
+
+    if (smallKatakana.indexOf(katakana) === -1) {
+      const pitch = pronounceInfo.pitchAccent[i];
+      str += pitch ? 'Ｈ' : 'Ｌ';
+    } else {
+      str += '　';
+    }
+  }
+
+  return str;
 }
 
 function addPitchField(fields, pronounceInfo) {
