@@ -676,7 +676,7 @@ const mixtureReplacements = {
   easymix: 'n5+n4+defs1+anagrams3+anagrams4+10k+katakana',
   medmix: 'n3+defs7+9k+8k+7k+anagrams5+prefectures',
   hardmix: 'n2+n1+6k+5k+defs12+defs13+onomato+numbers+anagrams6',
-  hardermix: '4k+3k+j2k+defs17+defs18+defs14+anagrams7+anagrams8+tokyo+stations+myouji+namae+ejtrans+hard+擬音語+kklc',
+  hardermix: '4k+3k+j2k+defs17+defs18+defs14+anagrams7+anagrams8+myouji+namae+ejtrans+hard+擬音語+kklc',
   insanemix: '2k+j1k+1k+anagrams9+anagrams10+yojijukugo+countries+animals',
 };
 
