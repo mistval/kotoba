@@ -73,7 +73,7 @@ function createFieldForCommand(command, prefix) {
     : '';
 
   const exampleStringPart = command.usageExample
-    ? `\n__Example:__ ${command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix)}`
+    ? `\n__Example:__ **${command.usageExample.replace(PREFIX_REPLACE_REGEX, prefix)}**`
     : '';
 
   return {

@@ -11,7 +11,7 @@ module.exports = {
   usageExample: '}broadcast [channelId] Hello!',
   hidden: true,
   uniqueId: 'broadcast',
-  action(erisBot, msg, suffix) {
+  action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.', false, 'invalid syntax');
     }
