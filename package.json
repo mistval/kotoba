@@ -5,6 +5,8 @@
   "main": "./src/start.js",
   "scripts": {
     "start": "node .",
+    "lint": "./node_modules/.bin/eslint ./src/",
+    "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildall": "node --max-old-space-size=500 ./src/build/buildall.js",
     "buildshiritori": "node --max-old-space-size=500 ./src/build/build_shiritori_data.js",
     "buildpronunciation": "node --max-old-space-size=500 ./src/build/build_pronunciation_data.js",

@@ -2,10 +2,7 @@ const reload = require('require-reload')(require);
 
 const ScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
 const constants = reload('./../common/constants.js');
-const {
-  NavigationChapter,
-  Navigation,
-} = require('monochrome-bot');
+const { Navigation } = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
 
@@ -83,7 +80,7 @@ function sendScores(msg, scores, title, description, footer, navigationManager, 
         description: `${description}\n${createScoreTotalString(scores)}\nSay **${prefix}help lb** for help viewing leaderboards.`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
-        footer: footer,
+        footer,
       },
     };
 
