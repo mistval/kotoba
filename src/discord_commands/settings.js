@@ -6,7 +6,7 @@ const state = require('./../unreloadable_data.js');
 // CONFIG START
 
 const EMBED_COLOR = 2522111;
-const ALIASES = ['settings'];
+const ALIASES = ['settings', 'setting'];
 const HELP_SHORT_DESCRIPTION = 'Configure my settings.';
 const HELP_LONG_DESCRIPTION = 'Configure my settings. Server admins can configure my default settings on their server. Users can configure user settings.';
 
