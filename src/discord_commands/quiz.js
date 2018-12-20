@@ -353,7 +353,7 @@ class DiscordMessageSender {
     this.bot = bot;
   }
 
-  notifyStarting(inMs, quizName, quizDescription) {
+  notifyStarting(inMs, quizName, quizDescription, quizLength, scoreLimit) {
     const inSeconds = inMs / 1000;
     const embedTitle = `Quiz Starting in ${inSeconds} seconds`;
     let embedDescription = `**${quizName}**`;
@@ -361,11 +361,17 @@ class DiscordMessageSender {
       embedDescription = `${embedDescription} - ${quizDescription}`;
     }
 
+    const fields = [
+      { name: 'Deck size', value: quizLength, inline: true },
+      { name: 'Score limit', value: scoreLimit, inline: true },
+    ];
+
     return this.commanderMessage.channel.createMessage({
       embed: {
         title: embedTitle,
         description: embedDescription,
         color: constants.EMBED_NEUTRAL_COLOR,
+        fields,
       },
     });
   }
@@ -416,6 +422,7 @@ class DiscordMessageSender {
     answersForUser,
     pointsForAnswer,
     scoreForUser,
+    scoreLimit,
   ) {
     this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
@@ -425,7 +432,7 @@ class DiscordMessageSender {
     const correctAnswerText = correctAnswerFunction(card, answersForUser, pointsForAnswer);
     const fields = [
       { name: 'Correct Answers', value: correctAnswerText, inline: true },
-      { name: 'Scorers', value: scorersListText, inline: true },
+      { name: `Scorers (playing to ${scoreLimit})`, value: scorersListText, inline: true },
     ];
 
     const correctPercentageField = createCorrectPercentageField(card);

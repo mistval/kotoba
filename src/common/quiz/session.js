@@ -118,6 +118,10 @@ class SessionInformation {
     return this.scores_.commitScores();
   }
 
+  getRemainingCardCount() {
+    return this.deckCollection_.getRemainingCardCount();
+  }
+
   createAggregateUnansweredCardsLink() {
     let unansweredCards = this.getUnansweredCards();
     try {

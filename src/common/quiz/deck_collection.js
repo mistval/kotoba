@@ -78,6 +78,10 @@ class DeckCollection {
     return deckCollection;
   }
 
+  getRemainingCardCount() {
+    return countCards(this.indexSet);
+  }
+
   calculateProgress() {
     if (!this.initialCardCount) {
       return undefined;
