@@ -18,7 +18,7 @@ module.exports = {
   usageExample: '}dumpheap outputfilename',
   hidden: true,
   uniqueId: 'dumpheap',
-  action(erisBot, msg, suffix) {
+  action(bot, msg, suffix) {
     if (!heapDump) {
       throw PublicError.createWithCustomPublicMessage('Module \'heapdump\' not found. Did you install dev dependencies?', false, 'No heapdump module');
     }
