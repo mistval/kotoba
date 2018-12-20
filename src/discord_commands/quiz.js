@@ -363,8 +363,11 @@ class DiscordMessageSender {
 
     const fields = [
       { name: 'Deck size', value: quizLength, inline: true },
-      { name: 'Score limit', value: scoreLimit, inline: true },
     ];
+
+    if (scoreLimit !== Number.MAX_SAFE_INTEGER) {
+      fields.push({ name: 'Score limit', value: scoreLimit, inline: true });
+    }
 
     return this.commanderMessage.channel.createMessage({
       embed: {
@@ -430,9 +433,10 @@ class DiscordMessageSender {
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
     const correctAnswerText = correctAnswerFunction(card, answersForUser, pointsForAnswer);
+    const playingToStr = scoreLimit === Number.MAX_SAFE_INTEGER ? '' : ` (playing to ${scoreLimit})`;
     const fields = [
       { name: 'Correct Answers', value: correctAnswerText, inline: true },
-      { name: `Scorers (playing to ${scoreLimit})`, value: scorersListText, inline: true },
+      { name: `Scorers ${playingToStr}`, value: scorersListText, inline: true },
     ];
 
     const correctPercentageField = createCorrectPercentageField(card);
