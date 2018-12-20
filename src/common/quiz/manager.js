@@ -227,13 +227,16 @@ class ShowAnswersAction extends Action {
       let scoresForUser = scores.getAggregateScoreForUser();
       let answersForUser = scores.getCurrentQuestionsAnswersForUser();
       let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
+      let scoreLimit = scores.getScoreLimit();
       if (answerersInOrder.length > 0) {
         Promise.resolve(session.getMessageSender().outputQuestionScorers(
           currentCard,
           answerersInOrder,
           answersForUser,
           pointsForAnswer,
-          scoresForUser)).catch(err => {
+          scoresForUser,
+          scoreLimit,
+          )).catch(err => {
           globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
         });
       } else {
@@ -460,10 +463,12 @@ class AskQuestionAction extends Action {
 
 class StartAction extends Action {
   do() {
-    let session = this.getSession_();
-    let name = session.getQuizName();
+    const session = this.getSession_();
+    const name = session.getQuizName();
     const description = session.getQuizDescription();
-    return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description)).catch(err => {
+    const quizLength = session.getRemainingCardCount();
+    const scoreLimit = session.getScores().getScoreLimit();
+    return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description, quizLength, scoreLimit)).catch(err => {
       globals.logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
     }).then(() => {
       let askQuestionAction = new AskQuestionAction(session);
