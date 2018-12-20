@@ -293,7 +293,7 @@ class ShowAnswersAction extends Action {
     if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
-        return this.getSession_().tryAcceptAnswer(userId, userName, input);
+        return this.getSession_().tryAcceptAnswer(userId, userName, `${inputAsInt}`);
       }
     }
 
@@ -349,7 +349,7 @@ class AskQuestionAction extends Action {
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
-        const accepted = session.tryAcceptAnswer(userId, userName, input);
+        const accepted = session.tryAcceptAnswer(userId, userName, `${inputAsInt}`);
         this.fulfill_(new ShowAnswersAction(session, timeLeft));
         return accepted;
       }
