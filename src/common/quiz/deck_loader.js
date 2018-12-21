@@ -246,7 +246,6 @@ function tryCreateDeckFromRawData(data, uri) {
     additionalAnswerWaitStrategy: 'JAPANESE_SETTINGS',
     discordIntermediateAnswerListElementStrategy: 'CORRECT_ANSWERS',
     answerCompareStrategy: 'CONVERT_KANA',
-    compileImages: false,
     commentFieldName: 'Meaning',
     cards: createCardGetterFromInMemoryArray(cards),
   };

@@ -12,7 +12,6 @@
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
-  "compileImages": true,
   "commentFieldName": "Meaning",
   "description": "漢検１０級 questions provided by seg-fault#7170",
   "cards": [
