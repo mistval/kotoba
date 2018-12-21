@@ -96,6 +96,10 @@ async function loadDecks() {
   }
 }
 
+loadDecks().catch(err => {
+  globals.logger.logFailure(LOGGER_TITLE, `Error loading decks`, err);
+});
+
 function createAllDecksFoundStatus(decks) {
   return {
     status: DeckRequestStatus.ALL_DECKS_FOUND,
