@@ -5,7 +5,6 @@ const path = require('path');
 const mkdirp = require('mkdirp');
 
 const apiKeys = reload('./../config/api_keys.json');
-const loadQuizDecks = reload('./common/quiz/deck_loader.js').loadDecks;
 const config = reload('./../config/config.json');
 const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
 
@@ -94,5 +93,4 @@ const monochrome = createBot();
 checkApiKeys(monochrome);
 saveGlobals(monochrome);
 monochrome.connect();
-loadQuizDecks();
 loadShiritoriForeverChannels(monochrome);
