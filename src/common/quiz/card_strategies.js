@@ -16,8 +16,8 @@ try {
   // The better english definitions are not available in the public repo. The crappy definitions will be used.
 }
 
-const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 25000;
-const DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS = 40000;
+const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 28000;
+const DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS = 45000;
 const NUMBER_OF_REVEALS_PER_CARD = 2;
 const FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL = .25;
 const ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS = 10000;
