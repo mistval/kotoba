@@ -12,7 +12,6 @@
   "additionalAnswerWaitStrategy": "MULTIPLE_ANSWERS",
   "discordIntermediateAnswerListElementStrategy": "ANSWERS_WITH_SCORERS_AND_POINTS_FIRST",
   "answerCompareStrategy": "CONVERT_KANA",
-  "compileImages": true,
   "commentFieldName": "Comment",
   "forceNoMC": true,
   "cards": [
