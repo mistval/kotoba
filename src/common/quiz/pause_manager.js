@@ -32,7 +32,7 @@ function save(saveData, savingUser, quizName, gameType) {
   let now = Date.now();
   let fileName = savingUser + '_' + now;
   let json = JSON.stringify(saveData);
-  return fs.writeFileAsync(SAVE_DATA_DIR + '/' + fileName, json).then(() => {
+  return fs.writeFileAsync(path.join(SAVE_DATA_DIR, fileName), json).then(() => {
     return globals.persistence.editDataForUser(savingUser, data => {
       if (!data[QUIZ_SAVES_KEY]) {
         data[QUIZ_SAVES_KEY] = [];
@@ -54,7 +54,7 @@ function deleteMemento(memento) {
       .filter(otherMemento => otherMemento.time + otherMemento.userId !== memento.time + memento.userId);
     return data;
   });
-  let deleteFile = fs.unlinkAsync(SAVE_DATA_DIR + '/' + memento.fileName).catch(() => {});
+  let deleteFile = fs.unlinkAsync(path.join(SAVE_DATA_DIR, memento.fileName)).catch(() => {});
   return Promise.all([deleteFromDb, deleteFile]).then(() => {
     logger.logSuccess(LOGGER_TITLE, 'Automatically deleted a non-compatible save.');
   });
@@ -72,7 +72,7 @@ function deleteMementos(mementos) {
 }
 
 module.exports.load = function(memento) {
-  return fs.readFileAsync(SAVE_DATA_DIR + '/' + memento.fileName, 'utf8').then(data => {
+  return fs.readFileAsync(path.join(SAVE_DATA_DIR, memento.fileName), 'utf8').then(data => {
     let json = JSON.parse(data);
     return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
@@ -81,7 +81,7 @@ module.exports.load = function(memento) {
       dbData[QUIZ_SAVES_BACKUP_KEY].push(memento);
       if (dbData[QUIZ_SAVES_BACKUP_KEY].length > MAX_RESTORABLE_PER_USER) {
         let mementoToDelete = dbData[QUIZ_SAVES_BACKUP_KEY].shift();
-        return fs.unlinkAsync(SAVE_DATA_DIR + '/' + mementoToDelete.fileName).then(() => {
+        return fs.unlinkAsync(path.join(SAVE_DATA_DIR, mementoToDelete.fileName)).then(() => {
           return dbData;
         }).catch(err => {
           logger.logFailure(LOGGER_TITLE, 'No file found for that save. Deleting DB entry.', err);
