@@ -1,6 +1,7 @@
 {
   "uniqueId": "jptrivia",
   "name": "Japanese Trivia Quiz",
+  "description": "Trivia questions from [chukai.ne.jp](http://www.chukai.ne.jp/~shintaku/hayaoshi/haya00.htm)",
   "article": "a",
   "instructions": "empty",
   "questionCreationStrategy": "TEXT_WITH_HINT",
