@@ -134,7 +134,7 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
       fields,
       color: constants.EMBED_NEUTRAL_COLOR,
       footer: {
-        text: `Say '${prefix}sf scores' to see the current scores.'`,
+        text: `Say '${prefix}sf scores' to see the current scores.`,
         icon_url: constants.FOOTER_ICON_URI,
       },
     },
