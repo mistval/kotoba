@@ -4,7 +4,7 @@ const SettingsOverride = reload('./settings_override.js');
 
 module.exports = {
   serializationIdentifier: 'REVIEW',
-  questionLimitOverride: new SettingsOverride(10000, true, true, 1, 10000),
+  questionLimitOverride: new SettingsOverride(Number.MAX_SAFE_INTEGER, true, true, 1, Number.MAX_SAFE_INTEGER),
   unansweredQuestionLimitOverride: new SettingsOverride(0, false, false, 1, 20),
   answerTimeLimitOverride: new SettingsOverride(0, false, false, 4000, 120000),
   newQuestionDelayAfterUnansweredOverride: new SettingsOverride(0, false, false, 0, 30000),
