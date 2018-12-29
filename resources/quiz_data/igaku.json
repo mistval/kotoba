@@ -1,0 +1,7030 @@
+{
+  "uniqueId": "igaku",
+  "name": "Medicine Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Meaning",
+  "cards": [
+    {
+      "question": "齲蝕",
+      "answer": [
+        "うしょく"
+      ],
+      "meaning": "dental caries, tooth decay; Dental caries"
+    },
+    {
+      "question": "齲歯",
+      "answer": [
+        "むしば",
+        "うし",
+        "くし"
+      ],
+      "meaning": "cavity, tooth decay, decayed tooth, dental caries"
+    },
+    {
+      "question": "鵞口瘡",
+      "answer": [
+        "がこうそう"
+      ],
+      "meaning": "thrush (pediatric disease), aphtha, moniliasis"
+    },
+    {
+      "question": "鰓裂",
+      "answer": [
+        "さいれつ"
+      ],
+      "meaning": "gill slit"
+    },
+    {
+      "question": "鰓孔",
+      "answer": [
+        "えらあな",
+        "さいこう"
+      ],
+      "meaning": "gill slit; pharyngeal slit"
+    },
+    {
+      "question": "鰓弓",
+      "answer": [
+        "さいきゅう"
+      ],
+      "meaning": "branchial arch, gill arch"
+    },
+    {
+      "question": "饒舌",
+      "answer": [
+        "じょうぜつ"
+      ],
+      "meaning": "garrulity, loquacity, talkativeness"
+    },
+    {
+      "question": "顆粒層",
+      "answer": [
+        "かりゅうそう"
+      ],
+      "meaning": "granular layer, stratum granulosum; Stratum granulosum"
+    },
+    {
+      "question": "顆粒剤",
+      "answer": [
+        "かりゅうざい"
+      ],
+      "meaning": "granule, pellet"
+    },
+    {
+      "question": "顆粒細胞",
+      "answer": [
+        "かりゅうさいぼう"
+      ],
+      "meaning": "granule cell"
+    },
+    {
+      "question": "顆粒球減少症",
+      "answer": [
+        "かりゅうきゅうげんしょうしょう"
+      ],
+      "meaning": "agranulocytosis"
+    },
+    {
+      "question": "顆粒球",
+      "answer": [
+        "かりゅうきゅう"
+      ],
+      "meaning": "granulocyte"
+    },
+    {
+      "question": "頸椎",
+      "answer": [
+        "けいつい"
+      ],
+      "meaning": "cervical vertebrae; Cervical vertebrae"
+    },
+    {
+      "question": "頸肩腕症候群",
+      "answer": [
+        "けいけんわんしょうこうぐん"
+      ],
+      "meaning": "cervicobrachial syndrome, indicates pain, swelling, weakness and/or numbness in the neck/shoulder region, used when specific diagnosis is not known"
+    },
+    {
+      "question": "霰粒腫",
+      "answer": [
+        "さんりゅうしゅ",
+        "せんりゅうしゅ"
+      ],
+      "meaning": "chalazion (sebaceous cyst of the eyelid), tarsal cyst; Chalazion"
+    },
+    {
+      "question": "閾値",
+      "answer": [
+        "いきち",
+        "しきいち"
+      ],
+      "meaning": "threshold (amount, dose, etc.); Sensory threshold"
+    },
+    {
+      "question": "閾刺激",
+      "answer": [
+        "いきしげき"
+      ],
+      "meaning": "threshold stimulus, liminal stimulus"
+    },
+    {
+      "question": "鍼療法",
+      "answer": [
+        "はりりょうほう"
+      ],
+      "meaning": "acupuncture therapy"
+    },
+    {
+      "question": "鉤虫症",
+      "answer": [
+        "こうちゅうしょう"
+      ],
+      "meaning": "hookworm disease, ancylostomiasis, ankylostomiasis, uncinariasis; Ancylostomiasis"
+    },
+    {
+      "question": "鉤",
+      "answer": [
+        "はり",
+        "ち",
+        "かぎ"
+      ],
+      "meaning": "needle, pin; hook; stinger, thorn; hand (e.g. clock, etc.), pointer; staple (for a stapler); needlework, sewing; malice; counter for stitches; Sewing needle; hook; hook bracket (Japanese quotation mark)"
+    },
+    {
+      "question": "鉗子",
+      "answer": [
+        "かんし"
+      ],
+      "meaning": "forceps; Forceps"
+    },
+    {
+      "question": "酩酊歩行",
+      "answer": [
+        "めいていほこう"
+      ],
+      "meaning": "drunken (staggering, tottering) gait, wide-based gait"
+    },
+    {
+      "question": "酩酊",
+      "answer": [
+        "めいてい"
+      ],
+      "meaning": "drunkenness, intoxication"
+    },
+    {
+      "question": "轢死",
+      "answer": [
+        "れきし"
+      ],
+      "meaning": "death by being run over; Roadkill"
+    },
+    {
+      "question": "輻射線",
+      "answer": [
+        "ふくしゃせん"
+      ],
+      "meaning": "radiation, radiant rays"
+    },
+    {
+      "question": "躁病",
+      "answer": [
+        "そうびょう"
+      ],
+      "meaning": "mania; Mania"
+    },
+    {
+      "question": "躁状態",
+      "answer": [
+        "そうじょうたい"
+      ],
+      "meaning": "manic state"
+    },
+    {
+      "question": "跛行",
+      "answer": [
+        "はこう",
+        "ひこう"
+      ],
+      "meaning": "limp, imbalance, unfavorable progress, unfavourable progress"
+    },
+    {
+      "question": "貪食細胞",
+      "answer": [
+        "どんしょくさいぼう"
+      ],
+      "meaning": "phagocyte; Phagocyte"
+    },
+    {
+      "question": "褥瘡",
+      "answer": [
+        "じょくそう"
+      ],
+      "meaning": "bedsore; Pressure ulcer"
+    },
+    {
+      "question": "褥婦",
+      "answer": [
+        "じょくふ"
+      ],
+      "meaning": "woman resting after childbirth"
+    },
+    {
+      "question": "蠕動運動",
+      "answer": [
+        "ぜんどううんどう"
+      ],
+      "meaning": "peristalsis, peristaltic movement, vermiculation"
+    },
+    {
+      "question": "蠕動",
+      "answer": [
+        "ぜんどう"
+      ],
+      "meaning": "vermiculation, peristalsis, crawling like a worm; Peristalsis"
+    },
+    {
+      "question": "蟯虫症",
+      "answer": [
+        "ぎょうちゅうしょう"
+      ],
+      "meaning": "pinworm infection, enterobiasis"
+    },
+    {
+      "question": "蟯虫",
+      "answer": [
+        "ぎょうちゅう"
+      ],
+      "meaning": "pinworm (Enterobius vermicularis), threadworm"
+    },
+    {
+      "question": "螢光",
+      "answer": [
+        "けいこう"
+      ],
+      "meaning": "fluorescence; Fluorescence"
+    },
+    {
+      "question": "蘆薈",
+      "answer": [
+        "ろかい"
+      ],
+      "meaning": "aloe"
+    },
+    {
+      "question": "蕁麻疹",
+      "answer": [
+        "じんましん"
+      ],
+      "meaning": "hives, nettle rash, urticaria; Urticaria"
+    },
+    {
+      "question": "臍帯",
+      "answer": [
+        "さいたい",
+        "せいたい"
+      ],
+      "meaning": "umbilical cord; Umbilical cord"
+    },
+    {
+      "question": "膵島",
+      "answer": [
+        "すいとう"
+      ],
+      "meaning": "pancreatic islets, islets of Langerhans"
+    },
+    {
+      "question": "膵臓炎",
+      "answer": [
+        "すいぞうえん"
+      ],
+      "meaning": "pancreatitis"
+    },
+    {
+      "question": "膵癌",
+      "answer": [
+        "すいがん"
+      ],
+      "meaning": "pancreatic cancer; Pancreatic cancer"
+    },
+    {
+      "question": "膵壊死",
+      "answer": [
+        "すいえし"
+      ],
+      "meaning": "pancreatic necrosis"
+    },
+    {
+      "question": "膵炎",
+      "answer": [
+        "すいえん"
+      ],
+      "meaning": "pancreatitis; Pancreatitis"
+    },
+    {
+      "question": "膵液",
+      "answer": [
+        "すいえき"
+      ],
+      "meaning": "pancreatic juice; Pancreatic juice"
+    },
+    {
+      "question": "腟",
+      "answer": [
+        "ちつ"
+      ],
+      "meaning": "vagina; Vagina"
+    },
+    {
+      "question": "膠質",
+      "answer": [
+        "こうしつ"
+      ],
+      "meaning": "gluey, colloidal"
+    },
+    {
+      "question": "腱膜瘤",
+      "answer": [
+        "けんまくりゅう"
+      ],
+      "meaning": "bunion, hallux valgus"
+    },
+    {
+      "question": "腱板損傷",
+      "answer": [
+        "けんばんそんしょう"
+      ],
+      "meaning": "rotator cuff tear"
+    },
+    {
+      "question": "腱鞘炎",
+      "answer": [
+        "けんしょうえん"
+      ],
+      "meaning": "inflammation of a tendon (sheath), tendonitis, tendinitis, tenosynovitis, tenovaginitis, tendovaginitis; Tenosynovitis"
+    },
+    {
+      "question": "腱鞘",
+      "answer": [
+        "けんしょう"
+      ],
+      "meaning": "sheath of tendon"
+    },
+    {
+      "question": "脾動脈",
+      "answer": [
+        "ひどうみゃく"
+      ],
+      "meaning": "splenic artery, lienal artery"
+    },
+    {
+      "question": "脾腫",
+      "answer": [
+        "ひしゅ"
+      ],
+      "meaning": "splenomegaly, enlarged spleen; Splenomegaly"
+    },
+    {
+      "question": "胚発生",
+      "answer": [
+        "はいはっせい"
+      ],
+      "meaning": "embryogenesis, embryogeny, embryonic development; Embryogenesis"
+    },
+    {
+      "question": "胚子",
+      "answer": [
+        "はいし"
+      ],
+      "meaning": "embryo"
+    },
+    {
+      "question": "胚芽",
+      "answer": [
+        "はいが"
+      ],
+      "meaning": "germ (of a cereal, e.g. wheat, rice), embryo bud; Cereal germ"
+    },
+    {
+      "question": "翅脈",
+      "answer": [
+        "しみゃく"
+      ],
+      "meaning": "wing veins (of an insect)"
+    },
+    {
+      "question": "羞明",
+      "answer": [
+        "しゅうめい"
+      ],
+      "meaning": "photophobia; Photophobia"
+    },
+    {
+      "question": "緘黙",
+      "answer": [
+        "かんもく"
+      ],
+      "meaning": "keeping silent"
+    },
+    {
+      "question": "絨毛",
+      "answer": [
+        "じゅうもう"
+      ],
+      "meaning": "villus (intestinal or chorionic); soft hair"
+    },
+    {
+      "question": "砒化水素",
+      "answer": [
+        "ひかすいそ"
+      ],
+      "meaning": "arsine"
+    },
+    {
+      "question": "睾丸炎",
+      "answer": [
+        "こうがんえん"
+      ],
+      "meaning": "orchitis, inflammation of the testes"
+    },
+    {
+      "question": "睾丸",
+      "answer": [
+        "こうがん"
+      ],
+      "meaning": "testicles, testes, balls"
+    },
+    {
+      "question": "眩暈",
+      "answer": [
+        "めまい",
+        "げんうん"
+      ],
+      "meaning": "dizziness, giddiness, vertigo"
+    },
+    {
+      "question": "癩菌",
+      "answer": [
+        "らいきん"
+      ],
+      "meaning": "Mycobacterium leprae, the bacteria that causes Hansen's disease (leprosy)"
+    },
+    {
+      "question": "癩",
+      "answer": [
+        "らい",
+        "かったい",
+        "かたい"
+      ],
+      "meaning": "Hansen's disease, leprosy, leper"
+    },
+    {
+      "question": "瘴気",
+      "answer": [
+        "しょうき"
+      ],
+      "meaning": "miasma, (supposed) noxious gas originally believed to cause fever; Miasma theory"
+    },
+    {
+      "question": "瘢痕",
+      "answer": [
+        "はんこん"
+      ],
+      "meaning": "scar, cicatrix; Scar"
+    },
+    {
+      "question": "痰",
+      "answer": [
+        "たん"
+      ],
+      "meaning": "phlegm, sputum; Phlegm"
+    },
+    {
+      "question": "痙攣",
+      "answer": [
+        "けいれん"
+      ],
+      "meaning": "convulsion, cramp, spasm, twitch, fit; Spasm"
+    },
+    {
+      "question": "痙性麻痺",
+      "answer": [
+        "けいせいまひ"
+      ],
+      "meaning": "spastic paralysis"
+    },
+    {
+      "question": "痒疹",
+      "answer": [
+        "ようしん"
+      ],
+      "meaning": "rash that accompanies a severe itch, prurigo"
+    },
+    {
+      "question": "疱瘡",
+      "answer": [
+        "ほうそう",
+        "いもがさ",
+        "いもかさ"
+      ],
+      "meaning": "smallpox, variola; pockmark, pock"
+    },
+    {
+      "question": "疥癬虫",
+      "answer": [
+        "かいせんちゅう"
+      ],
+      "meaning": "itch mite (Sarcoptes scabiei)"
+    },
+    {
+      "question": "疥癬",
+      "answer": [
+        "かいせん"
+      ],
+      "meaning": "scabies, sarcoptic mange, the itch; Scabies"
+    },
+    {
+      "question": "猩紅熱",
+      "answer": [
+        "しょうこうねつ"
+      ],
+      "meaning": "scarlet fever; Scarlet fever"
+    },
+    {
+      "question": "濾過性病原体",
+      "answer": [
+        "ろかせいびょうげんたい"
+      ],
+      "meaning": "virus"
+    },
+    {
+      "question": "濾過器",
+      "answer": [
+        "ろかき"
+      ],
+      "meaning": "strainer, colander, filter"
+    },
+    {
+      "question": "漿膜",
+      "answer": [
+        "しょうまく"
+      ],
+      "meaning": "serous membrane; chorion; Serous membrane"
+    },
+    {
+      "question": "灌流圧",
+      "answer": [
+        "かんりゅうあつ"
+      ],
+      "meaning": "perfusion pressure"
+    },
+    {
+      "question": "灌流",
+      "answer": [
+        "かんりゅう"
+      ],
+      "meaning": "perfusion"
+    },
+    {
+      "question": "渙散",
+      "answer": [
+        "かんさん"
+      ],
+      "meaning": "lysis; to lyse"
+    },
+    {
+      "question": "桿菌",
+      "answer": [
+        "かんきん"
+      ],
+      "meaning": "bacillus; Bacillus (shape)"
+    },
+    {
+      "question": "杆体",
+      "answer": [
+        "かんたい"
+      ],
+      "meaning": "rod (shape of cell)"
+    },
+    {
+      "question": "杆状体",
+      "answer": [
+        "かんじょうたい"
+      ],
+      "meaning": "rod (shape of cell)"
+    },
+    {
+      "question": "攣縮",
+      "answer": [
+        "れんしゅく"
+      ],
+      "meaning": "spasm"
+    },
+    {
+      "question": "拮抗",
+      "answer": [
+        "きっこう"
+      ],
+      "meaning": "rivalry, competition, antagonism, struggle for supremacy; rising and falling (of a bird)"
+    },
+    {
+      "question": "扁平苔癬",
+      "answer": [
+        "へんぺいたいせん"
+      ],
+      "meaning": "lichen planus; Lichen planus"
+    },
+    {
+      "question": "扁桃周囲膿瘍",
+      "answer": [
+        "へんとうしゅういのうよう"
+      ],
+      "meaning": "peritonsillar abscess, quinsy"
+    },
+    {
+      "question": "扁桃炎",
+      "answer": [
+        "へんとうえん"
+      ],
+      "meaning": "tonsillitis; Tonsillitis"
+    },
+    {
+      "question": "扁桃",
+      "answer": [
+        "へんとう"
+      ],
+      "meaning": "sweet almond (Prunus dulcis); tonsil; Tonsil"
+    },
+    {
+      "question": "罹病率",
+      "answer": [
+        "りびょうりつ"
+      ],
+      "meaning": "disease rate, infection rate, morbidity rate"
+    },
+    {
+      "question": "罹患率",
+      "answer": [
+        "りかんりつ"
+      ],
+      "meaning": "disease rate, infection rate, morbidity rate"
+    },
+    {
+      "question": "屎尿処理",
+      "answer": [
+        "しにょうしょり"
+      ],
+      "meaning": "sewage disposal"
+    },
+    {
+      "question": "屎",
+      "answer": [
+        "くそ",
+        "ばば"
+      ],
+      "meaning": "bullshit, shit, damn; feces, excrement, dung; damn, damned, blasted, stupid; very, extremely; a lot; pooh-pooh, poop, something dirty; Feces"
+    },
+    {
+      "question": "塹壕熱",
+      "answer": [
+        "ざんごうねつ"
+      ],
+      "meaning": "trench fever"
+    },
+    {
+      "question": "嘔吐反射",
+      "answer": [
+        "おうとはんしゃ"
+      ],
+      "meaning": "vomiting reflex, retching reflex"
+    },
+    {
+      "question": "嘔吐中枢",
+      "answer": [
+        "おうとちゅうすう"
+      ],
+      "meaning": "vomiting center, area postrema, part of the brain that controls vomiting; Area postrema"
+    },
+    {
+      "question": "嘔吐",
+      "answer": [
+        "おうと",
+        "へど"
+      ],
+      "meaning": "vomiting, emesis; Vomiting; vomit, vomiting"
+    },
+    {
+      "question": "嘔気",
+      "answer": [
+        "おうき"
+      ],
+      "meaning": "nausea"
+    },
+    {
+      "question": "嗜癖",
+      "answer": [
+        "しへき"
+      ],
+      "meaning": "addiction"
+    },
+    {
+      "question": "嗜糞症",
+      "answer": [
+        "しふんしょう"
+      ],
+      "meaning": "coprophilia"
+    },
+    {
+      "question": "嗅神経",
+      "answer": [
+        "きゅうしんけい"
+      ],
+      "meaning": "olfactory nerve; Olfactory nerve"
+    },
+    {
+      "question": "嗅細胞",
+      "answer": [
+        "きゅうさいぼう"
+      ],
+      "meaning": "olfactory cell"
+    },
+    {
+      "question": "嗅覚",
+      "answer": [
+        "きゅうかく"
+      ],
+      "meaning": "sense of smell, olfaction; Olfaction"
+    },
+    {
+      "question": "喘鳴",
+      "answer": [
+        "ぜんめい"
+      ],
+      "meaning": "stridor, wheezing, noisy breathing"
+    },
+    {
+      "question": "哺乳期",
+      "answer": [
+        "ほにゅうき"
+      ],
+      "meaning": "lactation period"
+    },
+    {
+      "question": "哺乳",
+      "answer": [
+        "ほにゅう"
+      ],
+      "meaning": "lactation, suckling, mammal"
+    },
+    {
+      "question": "咬痙",
+      "answer": [
+        "こうけい"
+      ],
+      "meaning": "lockjaw, trismus"
+    },
+    {
+      "question": "咬傷",
+      "answer": [
+        "こうしょう"
+      ],
+      "meaning": "biting wound, bite"
+    },
+    {
+      "question": "咬合",
+      "answer": [
+        "こうごう"
+      ],
+      "meaning": "occlusion (dentistry); Occlusion (dentistry)"
+    },
+    {
+      "question": "咀嚼筋",
+      "answer": [
+        "そしゃくきん"
+      ],
+      "meaning": "muscle of mastication; Muscles of mastication"
+    },
+    {
+      "question": "剪刀",
+      "answer": [
+        "はさみ",
+        "せんとう"
+      ],
+      "meaning": "scissors, shears, clippers; hole punch; scissors (esp. surgical scissors)"
+    },
+    {
+      "question": "侏儒",
+      "answer": [
+        "しゅじゅ"
+      ],
+      "meaning": "dwarf"
+    },
+    {
+      "question": "和痛分娩",
+      "answer": [
+        "わつうぶんべん"
+      ],
+      "meaning": "delivery with little pain (i.e. use of pain-reducing drugs)"
+    },
+    {
+      "question": "老人保健施設",
+      "answer": [
+        "ろうじんほけんしせつ"
+      ],
+      "meaning": "rehabilitation facility for the elderly"
+    },
+    {
+      "question": "老人病",
+      "answer": [
+        "ろうじんびょう"
+      ],
+      "meaning": "geriatric diseases"
+    },
+    {
+      "question": "老眼",
+      "answer": [
+        "ろうがん"
+      ],
+      "meaning": "presbyopia, age-related longsightedness, farsightedness"
+    },
+    {
+      "question": "老化",
+      "answer": [
+        "ろうか"
+      ],
+      "meaning": "ageing, aging, senile deterioration; Ageing"
+    },
+    {
+      "question": "労働時間",
+      "answer": [
+        "ろうどうじかん"
+      ],
+      "meaning": "working hours, man-hours; Working time"
+    },
+    {
+      "question": "労基法",
+      "answer": [
+        "ろうきほう"
+      ],
+      "meaning": "Labor Standards Act"
+    },
+    {
+      "question": "魯鈍",
+      "answer": [
+        "ろどん"
+      ],
+      "meaning": "imbecility, stupidity"
+    },
+    {
+      "question": "連用",
+      "answer": [
+        "れんよう"
+      ],
+      "meaning": "continuous use"
+    },
+    {
+      "question": "連鎖球菌",
+      "answer": [
+        "れんさきゅうきん"
+      ],
+      "meaning": "streptococcus; Streptococcus"
+    },
+    {
+      "question": "連関",
+      "answer": [
+        "れんかん"
+      ],
+      "meaning": "connection, relation, linkage"
+    },
+    {
+      "question": "劣等感",
+      "answer": [
+        "れっとうかん"
+      ],
+      "meaning": "inferiority complex; Inferiority complex"
+    },
+    {
+      "question": "劣性",
+      "answer": [
+        "れっせい"
+      ],
+      "meaning": "inferiority, recessiveness; recessive"
+    },
+    {
+      "question": "暦年齢",
+      "answer": [
+        "れきねんれい"
+      ],
+      "meaning": "chronological age"
+    },
+    {
+      "question": "霊長類",
+      "answer": [
+        "れいちょうるい"
+      ],
+      "meaning": "primates"
+    },
+    {
+      "question": "冷血動物",
+      "answer": [
+        "れいけつどうぶつ"
+      ],
+      "meaning": "cold-blooded animal"
+    },
+    {
+      "question": "冷感症",
+      "answer": [
+        "れいかんしょう"
+      ],
+      "meaning": "female sexual arousal disorder, FSAD, anaphrodisia, hyphedonia, frigidity; Female sexual arousal disorder"
+    },
+    {
+      "question": "類洞",
+      "answer": [
+        "るいどう"
+      ],
+      "meaning": "sinusoid; Sinusoid (blood vessel)"
+    },
+    {
+      "question": "涙道",
+      "answer": [
+        "るいどう"
+      ],
+      "meaning": "lachrymal passage (lacrimal, lacrymal)"
+    },
+    {
+      "question": "涙管",
+      "answer": [
+        "るいかん"
+      ],
+      "meaning": "lachrymal or tear duct"
+    },
+    {
+      "question": "涙液",
+      "answer": [
+        "るいえき"
+      ],
+      "meaning": "lacrimal fluid, tears"
+    },
+    {
+      "question": "鱗屑",
+      "answer": [
+        "りんせつ"
+      ],
+      "meaning": "scale (i.e. of pathologically dry skin)"
+    },
+    {
+      "question": "淋病",
+      "answer": [
+        "りんびょう"
+      ],
+      "meaning": "gonorrhea, gonorrhoea"
+    },
+    {
+      "question": "淋菌",
+      "answer": [
+        "りんきん"
+      ],
+      "meaning": "gonococcus (Neisseria gonorrhoeae); Neisseria gonorrhoeae"
+    },
+    {
+      "question": "緑膿菌",
+      "answer": [
+        "りょくのうきん"
+      ],
+      "meaning": "Pseudomonas aeruginosa; Pseudomonas aeruginosa"
+    },
+    {
+      "question": "量的形質",
+      "answer": [
+        "りょうてきけいしつ"
+      ],
+      "meaning": "quantitative trait, quantitative character"
+    },
+    {
+      "question": "療法",
+      "answer": [
+        "りょうほう"
+      ],
+      "meaning": "therapy, treatment, remedy, cure"
+    },
+    {
+      "question": "粒子線",
+      "answer": [
+        "りゅうしせん"
+      ],
+      "meaning": "particle beam; Particle beam"
+    },
+    {
+      "question": "硫酸",
+      "answer": [
+        "りゅうさん"
+      ],
+      "meaning": "sulfuric acid, sulphuric acid; Ryuusan; Sulfuric acid"
+    },
+    {
+      "question": "流行性肝炎",
+      "answer": [
+        "りゅうこうせいかんえん"
+      ],
+      "meaning": "epidemic hepatitis"
+    },
+    {
+      "question": "流感",
+      "answer": [
+        "りゅうかん"
+      ],
+      "meaning": "influenza, flu, cold"
+    },
+    {
+      "question": "立体配座",
+      "answer": [
+        "りったいはいざ"
+      ],
+      "meaning": "conformation"
+    },
+    {
+      "question": "立体視",
+      "answer": [
+        "りったいし"
+      ],
+      "meaning": "stereopsis, binocular vision"
+    },
+    {
+      "question": "裏声",
+      "answer": [
+        "うらごえ"
+      ],
+      "meaning": "falsetto"
+    },
+    {
+      "question": "理学療法士",
+      "answer": [
+        "りがくりょうほうし"
+      ],
+      "meaning": "physiotherapist, physical therapist"
+    },
+    {
+      "question": "理学療法",
+      "answer": [
+        "りがくりょうほう"
+      ],
+      "meaning": "physiotherapy, physical therapy; Physical therapy"
+    },
+    {
+      "question": "理学的所見",
+      "answer": [
+        "りがくてきしょけん"
+      ],
+      "meaning": "physical findings, physical examination findings"
+    },
+    {
+      "question": "卵嚢",
+      "answer": [
+        "らんのう"
+      ],
+      "meaning": "egg sac, egg case, ootheca"
+    },
+    {
+      "question": "卵子",
+      "answer": [
+        "らんし"
+      ],
+      "meaning": "ovum, ovule, egg cell"
+    },
+    {
+      "question": "卵形嚢",
+      "answer": [
+        "らんけいのう"
+      ],
+      "meaning": "utriculus, utricle"
+    },
+    {
+      "question": "卵管妊娠",
+      "answer": [
+        "らんかんにんしん"
+      ],
+      "meaning": "tubal pregnancy"
+    },
+    {
+      "question": "卵管炎",
+      "answer": [
+        "らんかんえん"
+      ],
+      "meaning": "salpingitis"
+    },
+    {
+      "question": "卵割腔",
+      "answer": [
+        "らんかつこう"
+      ],
+      "meaning": "cleavage cavity, segmentation cavity; Blastocoele"
+    },
+    {
+      "question": "卵黄嚢",
+      "answer": [
+        "らんおうのう"
+      ],
+      "meaning": "yolk sac; Yolk sac"
+    },
+    {
+      "question": "卵黄",
+      "answer": [
+        "らんおう"
+      ],
+      "meaning": "egg yolk; Egg yolk"
+    },
+    {
+      "question": "卵円窓",
+      "answer": [
+        "らんえんそう"
+      ],
+      "meaning": "fenestra ovalis (of the ear)"
+    },
+    {
+      "question": "乱流",
+      "answer": [
+        "らんりゅう"
+      ],
+      "meaning": "(air) turbulence; Turbulence"
+    },
+    {
+      "question": "翼",
+      "answer": [
+        "つばさ",
+        "よく"
+      ],
+      "meaning": "wing; Chinese \"Wings\" constellation (one of the 28 mansions); counter for birds or bird wings; Wing"
+    },
+    {
+      "question": "欲求",
+      "answer": [
+        "よっきゅう"
+      ],
+      "meaning": "desire, want, will, wish, urge, craving"
+    },
+    {
+      "question": "養老院",
+      "answer": [
+        "ようろういん"
+      ],
+      "meaning": "home for the aged, old people's home"
+    },
+    {
+      "question": "養護学校",
+      "answer": [
+        "ようごがっこう"
+      ],
+      "meaning": "school for the handicapped, special school; Yougogakkou"
+    },
+    {
+      "question": "養護学級",
+      "answer": [
+        "ようごがっきゅう"
+      ],
+      "meaning": "school for the handicapped, special school"
+    },
+    {
+      "question": "陽電子",
+      "answer": [
+        "ようでんし"
+      ],
+      "meaning": "positron; Positron"
+    },
+    {
+      "question": "陽子線",
+      "answer": [
+        "ようしせん"
+      ],
+      "meaning": "proton beam"
+    },
+    {
+      "question": "陽子",
+      "answer": [
+        "ようし"
+      ],
+      "meaning": "proton; Proton"
+    },
+    {
+      "question": "用不用説",
+      "answer": [
+        "ようふようせつ"
+      ],
+      "meaning": "Lamarckian evolutionary theory in which individuals lose characteristics that are not used and develop characteristics that are often used; Lamarckism"
+    },
+    {
+      "question": "溶連菌",
+      "answer": [
+        "ようれんきん"
+      ],
+      "meaning": "Streptococcus pyogens"
+    },
+    {
+      "question": "溶血",
+      "answer": [
+        "ようけつ"
+      ],
+      "meaning": "hemolysis; Hemolysis"
+    },
+    {
+      "question": "溶血",
+      "answer": [
+        "ようけつ"
+      ],
+      "meaning": "hemolysis; Hemolysis"
+    },
+    {
+      "question": "幼若化反応",
+      "answer": [
+        "ようじゃくかはんのう"
+      ],
+      "meaning": "blastogenesis"
+    },
+    {
+      "question": "預血",
+      "answer": [
+        "よけつ"
+      ],
+      "meaning": "depositing blood (in a blood bank)"
+    },
+    {
+      "question": "余熱",
+      "answer": [
+        "よねつ"
+      ],
+      "meaning": "waste heat, remaining heat"
+    },
+    {
+      "question": "余色",
+      "answer": [
+        "よしょく"
+      ],
+      "meaning": "complementary color, complementary colour"
+    },
+    {
+      "question": "予防接種",
+      "answer": [
+        "よぼうせっしゅ"
+      ],
+      "meaning": "vaccination, inoculation, immunization, immunisation; Vaccination"
+    },
+    {
+      "question": "雄性",
+      "answer": [
+        "ゆうせい"
+      ],
+      "meaning": "male characteristics, manliness"
+    },
+    {
+      "question": "遊走細胞",
+      "answer": [
+        "ゆうそうさいぼう"
+      ],
+      "meaning": "wandering cell"
+    },
+    {
+      "question": "有羊膜類",
+      "answer": [
+        "ゆうようまくるい"
+      ],
+      "meaning": "Amniota, amniotes; Amniote"
+    },
+    {
+      "question": "有頭動物",
+      "answer": [
+        "ゆうとうどうぶつ"
+      ],
+      "meaning": "craniate; Craniata"
+    },
+    {
+      "question": "有性生殖",
+      "answer": [
+        "ゆうせいせいしょく"
+      ],
+      "meaning": "sexual reproduction, zoogamy; Sexual reproduction"
+    },
+    {
+      "question": "有効数字",
+      "answer": [
+        "ゆうこうすうじ"
+      ],
+      "meaning": "significant digits; Significant figures"
+    },
+    {
+      "question": "有意性",
+      "answer": [
+        "ゆういせい"
+      ],
+      "meaning": "significance (esp. in statistics)"
+    },
+    {
+      "question": "優位",
+      "answer": [
+        "ゆうい"
+      ],
+      "meaning": "predominance, superiority, ascendancy, advantage, supremacy"
+    },
+    {
+      "question": "輸送",
+      "answer": [
+        "ゆそう"
+      ],
+      "meaning": "transport, transportation"
+    },
+    {
+      "question": "油症",
+      "answer": [
+        "ゆしょう"
+      ],
+      "meaning": "yusho (disease caused by PCB ingestion)"
+    },
+    {
+      "question": "薬物乱用",
+      "answer": [
+        "やくぶつらんよう"
+      ],
+      "meaning": "drug abuse; Substance abuse"
+    },
+    {
+      "question": "役割演技",
+      "answer": [
+        "やくわりえんぎ"
+      ],
+      "meaning": "role-playing"
+    },
+    {
+      "question": "矢状面",
+      "answer": [
+        "しじょうめん"
+      ],
+      "meaning": "sagittal plane; Sagittal plane"
+    },
+    {
+      "question": "野兎病",
+      "answer": [
+        "やとびょう"
+      ],
+      "meaning": "rabbit fever, tularemia (tularaemia); Tularemia"
+    },
+    {
+      "question": "夜業",
+      "answer": [
+        "やぎょう"
+      ],
+      "meaning": "night work, night shift"
+    },
+    {
+      "question": "門歯",
+      "answer": [
+        "もんし"
+      ],
+      "meaning": "incisor, incisive tooth"
+    },
+    {
+      "question": "目尻",
+      "answer": [
+        "めじり"
+      ],
+      "meaning": "outer canthus, outer corner of the eye"
+    },
+    {
+      "question": "木精",
+      "answer": [
+        "もくせい"
+      ],
+      "meaning": "wood alcohol, the spirit of a tree"
+    },
+    {
+      "question": "蒙古斑",
+      "answer": [
+        "もうこはん"
+      ],
+      "meaning": "Mongolian spot, Mongolian blue spot, congenital dermal melanocytosis; Mongolian spot"
+    },
+    {
+      "question": "蒙古症",
+      "answer": [
+        "もうこしょう"
+      ],
+      "meaning": "mongolism, Down's Syndrome"
+    },
+    {
+      "question": "網様体賦活系",
+      "answer": [
+        "もうようたいふかつけい"
+      ],
+      "meaning": "reticular activating system, RAS"
+    },
+    {
+      "question": "網様体",
+      "answer": [
+        "もうようたい"
+      ],
+      "meaning": "reticular formation; Reticular formation"
+    },
+    {
+      "question": "盲斑",
+      "answer": [
+        "もうはん"
+      ],
+      "meaning": "blind spot (on the retina)"
+    },
+    {
+      "question": "盲腸炎",
+      "answer": [
+        "もうちょうえん"
+      ],
+      "meaning": "appendicitis; typhlitis, cecitis"
+    },
+    {
+      "question": "毛表皮",
+      "answer": [
+        "もうひょうひ"
+      ],
+      "meaning": "cuticle, outermost layer of a hair"
+    },
+    {
+      "question": "毛嚢炎",
+      "answer": [
+        "もうのうえん"
+      ],
+      "meaning": "folliculitis; Folliculitis"
+    },
+    {
+      "question": "毛嚢",
+      "answer": [
+        "もうのう"
+      ],
+      "meaning": "hair follicle"
+    },
+    {
+      "question": "模式標本",
+      "answer": [
+        "もしきひょうほん"
+      ],
+      "meaning": "type specimen"
+    },
+    {
+      "question": "免疫細胞",
+      "answer": [
+        "めんえきさいぼう"
+      ],
+      "meaning": "immune cell"
+    },
+    {
+      "question": "免疫血清",
+      "answer": [
+        "めんえきけっせい"
+      ],
+      "meaning": "immune serum"
+    },
+    {
+      "question": "免疫応答遺伝子",
+      "answer": [
+        "めんえきおうとういでんし"
+      ],
+      "meaning": "immune response gene, IR gene"
+    },
+    {
+      "question": "滅裂",
+      "answer": [
+        "めつれつ"
+      ],
+      "meaning": "in chaos, incoherent"
+    },
+    {
+      "question": "滅菌剤",
+      "answer": [
+        "めっきんざい"
+      ],
+      "meaning": "sterilant, sterilizer, sterilizing agent"
+    },
+    {
+      "question": "滅菌",
+      "answer": [
+        "めっきん"
+      ],
+      "meaning": "sterilization, sterilisation"
+    },
+    {
+      "question": "滅却",
+      "answer": [
+        "めっきゃく"
+      ],
+      "meaning": "extinguishment, destruction, effacement"
+    },
+    {
+      "question": "迷路炎",
+      "answer": [
+        "めいじえん"
+      ],
+      "meaning": "labyrinthitis"
+    },
+    {
+      "question": "迷信",
+      "answer": [
+        "めいしん"
+      ],
+      "meaning": "superstition, superstitious belief; Superstition"
+    },
+    {
+      "question": "霧箱",
+      "answer": [
+        "きりばこ"
+      ],
+      "meaning": "cloud chamber; Cloud chamber"
+    },
+    {
+      "question": "無条件反射",
+      "answer": [
+        "むじょうけんはんしゃ"
+      ],
+      "meaning": "unconditioned reflex"
+    },
+    {
+      "question": "無傷針",
+      "answer": [
+        "むきずはり"
+      ],
+      "meaning": "atraumatic needle"
+    },
+    {
+      "question": "無酸素",
+      "answer": [
+        "むさんそ"
+      ],
+      "meaning": "without oxygen, anaerobic, anoxia, hypoxia"
+    },
+    {
+      "question": "無感覚",
+      "answer": [
+        "むかんかく"
+      ],
+      "meaning": "numb, impervious"
+    },
+    {
+      "question": "無為",
+      "answer": [
+        "むい"
+      ],
+      "meaning": "idleness, inactivity"
+    },
+    {
+      "question": "夢判断",
+      "answer": [
+        "ゆめはんだん"
+      ],
+      "meaning": "interpretation of dreams, dream reading, oneirocriticism, oneiroscopy; The Interpretation of Dreams (book by Sigmund Freud, 1900); The Interpretation of Dreams"
+    },
+    {
+      "question": "夢精",
+      "answer": [
+        "むせい"
+      ],
+      "meaning": "wet dream, nocturnal emission; Nocturnal emission"
+    },
+    {
+      "question": "夢",
+      "answer": [
+        "ゆめ"
+      ],
+      "meaning": "dream; Dream"
+    },
+    {
+      "question": "脈絡網膜炎",
+      "answer": [
+        "みゃくらくもうまくえん"
+      ],
+      "meaning": "chorioretinitis; Chorioretinitis"
+    },
+    {
+      "question": "脈",
+      "answer": [
+        "みゃく"
+      ],
+      "meaning": "pulse; vein; chain (of mountains, etc.); hope; thread (of an argument)"
+    },
+    {
+      "question": "味",
+      "answer": [
+        "あじ",
+        "み"
+      ],
+      "meaning": "flavor, flavour, taste; charm, style; experience; smart, clever, witty, strange; (sense of) taste; counter for food, drink, medicine, etc."
+    },
+    {
+      "question": "万歩計",
+      "answer": [
+        "まんぽけい"
+      ],
+      "meaning": "pedometer"
+    },
+    {
+      "question": "万能供血者",
+      "answer": [
+        "ばんのうきょうけつしゃ"
+      ],
+      "meaning": "universal blood donor (i.e. having blood-type O negative), universal donor"
+    },
+    {
+      "question": "末端肥大症",
+      "answer": [
+        "まったんひだいしょう"
+      ],
+      "meaning": "acromegaly"
+    },
+    {
+      "question": "膜性腎症",
+      "answer": [
+        "まくせいじんしょう"
+      ],
+      "meaning": "membranous nephropathy; Membranous glomerulonephritis"
+    },
+    {
+      "question": "膜性骨",
+      "answer": [
+        "まくせいこつ"
+      ],
+      "meaning": "membranous bone"
+    },
+    {
+      "question": "麻痺性痴呆",
+      "answer": [
+        "まひせいちほう"
+      ],
+      "meaning": "paralytic dementia"
+    },
+    {
+      "question": "麻酔剤",
+      "answer": [
+        "ますいざい"
+      ],
+      "meaning": "anesthetic, anaesthetic, narcotic"
+    },
+    {
+      "question": "魔乳",
+      "answer": [
+        "まにゅう"
+      ],
+      "meaning": "witch's milk (milk secreted by some neonates); Galactorrhea"
+    },
+    {
+      "question": "翻訳",
+      "answer": [
+        "ほんやく"
+      ],
+      "meaning": "translation; de-encryption, deciphering; rendering; Translation"
+    },
+    {
+      "question": "本態性振戦",
+      "answer": [
+        "ほんたいせいしんせん"
+      ],
+      "meaning": "essential tremor"
+    },
+    {
+      "question": "頬紅",
+      "answer": [
+        "ほおべに"
+      ],
+      "meaning": "cheek rouge, blusher, blush; Rouge (cosmetics)"
+    },
+    {
+      "question": "防具",
+      "answer": [
+        "ぼうぐ"
+      ],
+      "meaning": "guard, protector, defensive armament, personal armor (armour); Personal protective equipment"
+    },
+    {
+      "question": "膨隆",
+      "answer": [
+        "ぼうりゅう"
+      ],
+      "meaning": "swelling up"
+    },
+    {
+      "question": "剖検",
+      "answer": [
+        "ぼうけん"
+      ],
+      "meaning": "autopsy, necropsy"
+    },
+    {
+      "question": "訪問看護",
+      "answer": [
+        "ほうもんかんご"
+      ],
+      "meaning": "home nursing, home care"
+    },
+    {
+      "question": "蜂窩織炎",
+      "answer": [
+        "ほうかしきえん"
+      ],
+      "meaning": "cellulitis, phlegmon; Phlegmon"
+    },
+    {
+      "question": "萌出",
+      "answer": [
+        "ほうしゅつ"
+      ],
+      "meaning": "tooth eruption"
+    },
+    {
+      "question": "胞子",
+      "answer": [
+        "ほうし"
+      ],
+      "meaning": "spore; Spore"
+    },
+    {
+      "question": "縫合",
+      "answer": [
+        "ほうごう"
+      ],
+      "meaning": "seam, suture, stitch"
+    },
+    {
+      "question": "放線菌症",
+      "answer": [
+        "ほうせんきんしょう"
+      ],
+      "meaning": "actinomycosis"
+    },
+    {
+      "question": "放射性同位体",
+      "answer": [
+        "ほうしゃせいどういたい"
+      ],
+      "meaning": "radioisotope; Radionuclide"
+    },
+    {
+      "question": "放射性指示薬",
+      "answer": [
+        "ほうしゃせいしじやく"
+      ],
+      "meaning": "radioactive indicator"
+    },
+    {
+      "question": "包帯",
+      "answer": [
+        "ほうたい"
+      ],
+      "meaning": "bandage, dressing; Bandage"
+    },
+    {
+      "question": "母趾外反症",
+      "answer": [
+        "ぼしがいはんしょう"
+      ],
+      "meaning": "bunion, hallux valgus"
+    },
+    {
+      "question": "母子手帳",
+      "answer": [
+        "ぼしてちょう"
+      ],
+      "meaning": "maternity health record book, mother and child health notebook"
+    },
+    {
+      "question": "母音",
+      "answer": [
+        "ぼいん",
+        "ぼおん"
+      ],
+      "meaning": "vowel; Vowel"
+    },
+    {
+      "question": "補装具",
+      "answer": [
+        "ほそうぐ"
+      ],
+      "meaning": "supportive device (for the disabled, e.g. prosthetic limb), assistive device"
+    },
+    {
+      "question": "補因子",
+      "answer": [
+        "ほいんし"
+      ],
+      "meaning": "cofactor (biochemistry); Cofactor (biochemistry)"
+    },
+    {
+      "question": "弁膜症",
+      "answer": [
+        "べんまくしょう"
+      ],
+      "meaning": "valvular disease, valvular heart disease"
+    },
+    {
+      "question": "便失禁",
+      "answer": [
+        "べんしっきん"
+      ],
+      "meaning": "fecal incontinence (faecal), anal leakage"
+    },
+    {
+      "question": "便",
+      "answer": [
+        "びん",
+        "べん",
+        "よすが",
+        "よすか"
+      ],
+      "meaning": "flight (e.g. airline flight), trip (e.g. train trip), service; mail, post, letter; opportunity, chance; convenience, service, facility, accommodation; excreta (esp. faeces), excrement, stool; something to rely on, aid, clue, way, means; someone to rely on, relative; reminder, memento"
+    },
+    {
+      "question": "辺縁系",
+      "answer": [
+        "へんえんけい"
+      ],
+      "meaning": "limbic system"
+    },
+    {
+      "question": "片麻痺",
+      "answer": [
+        "かたまひ"
+      ],
+      "meaning": "hemiplegia (paralysis on one side of the body); Hemiplegia"
+    },
+    {
+      "question": "片山貝",
+      "answer": [
+        "かたやまがい"
+      ],
+      "meaning": "Oncomelania hupensis nosophora (species of tropical freshwater snail)"
+    },
+    {
+      "question": "変量",
+      "answer": [
+        "へんりょう"
+      ],
+      "meaning": "variable"
+    },
+    {
+      "question": "変声",
+      "answer": [
+        "へんせい"
+      ],
+      "meaning": "voice change, voice break; Voice break"
+    },
+    {
+      "question": "変数",
+      "answer": [
+        "へんすう"
+      ],
+      "meaning": "variable; Variable"
+    },
+    {
+      "question": "変種",
+      "answer": [
+        "へんしゅ"
+      ],
+      "meaning": "mutation, freak, novelty, exception; (taxonomical) variety; Variety (botany)"
+    },
+    {
+      "question": "変死",
+      "answer": [
+        "へんし"
+      ],
+      "meaning": "unnatural death, accidental death, violent death"
+    },
+    {
+      "question": "変形体",
+      "answer": [
+        "へんけいたい"
+      ],
+      "meaning": "plasmodium (form within the life cycle of myxomycete slime molds)"
+    },
+    {
+      "question": "変異体",
+      "answer": [
+        "へんいたい"
+      ],
+      "meaning": "mutant, variant"
+    },
+    {
+      "question": "変異",
+      "answer": [
+        "へんい"
+      ],
+      "meaning": "variation, rogue (something)"
+    },
+    {
+      "question": "平熱",
+      "answer": [
+        "へいねつ"
+      ],
+      "meaning": "normal temperature"
+    },
+    {
+      "question": "平均寿命",
+      "answer": [
+        "へいきんじゅみょう"
+      ],
+      "meaning": "life expectancy"
+    },
+    {
+      "question": "平温",
+      "answer": [
+        "へいおん"
+      ],
+      "meaning": "the usual temperature"
+    },
+    {
+      "question": "文身",
+      "answer": [
+        "いれずみ",
+        "ぶんしん"
+      ],
+      "meaning": "tattoo, tattooing; Tattoo"
+    },
+    {
+      "question": "糞尿処理",
+      "answer": [
+        "ふんにょうしょり"
+      ],
+      "meaning": "sewage treatment"
+    },
+    {
+      "question": "糞尿",
+      "answer": [
+        "ふんにょう"
+      ],
+      "meaning": "feces and urine, excreta, human waste"
+    },
+    {
+      "question": "糞石",
+      "answer": [
+        "ふんせき"
+      ],
+      "meaning": "coproma (hardened feces inside the colon), fecaloma, stercoroma; coprolite; Coprolite"
+    },
+    {
+      "question": "糞",
+      "answer": [
+        "くそ",
+        "ふん",
+        "ばば"
+      ],
+      "meaning": "bullshit, shit, damn; feces, excrement, dung; damn, damned, blasted, stupid; very, extremely; a lot; feces (esp. animal), excrement, dung; pooh-pooh, poop, something dirty; Feces"
+    },
+    {
+      "question": "粉塵",
+      "answer": [
+        "ふんじん"
+      ],
+      "meaning": "mineral dust, mine dust, fine particles, dust; Dust"
+    },
+    {
+      "question": "噴霧器",
+      "answer": [
+        "ふんむき"
+      ],
+      "meaning": "sprayer, vaporizer, vaporiser, atomizer, atomiser"
+    },
+    {
+      "question": "分類群",
+      "answer": [
+        "ぶんるいぐん"
+      ],
+      "meaning": "taxon"
+    },
+    {
+      "question": "分利",
+      "answer": [
+        "ぶんり"
+      ],
+      "meaning": "crisis (in an illness)"
+    },
+    {
+      "question": "分枝",
+      "answer": [
+        "ぶんし"
+      ],
+      "meaning": "bifurcation, branch, branching, branched chain, ramification; branched; rami-"
+    },
+    {
+      "question": "分岐",
+      "answer": [
+        "ぶんき"
+      ],
+      "meaning": "divergence, ramification, bifurcation, branching off; Bunki"
+    },
+    {
+      "question": "分割",
+      "answer": [
+        "ぶんかつ",
+        "ぶわり"
+      ],
+      "meaning": "partition, division, separation, segmenting, splitting; rate, ratio, percentage; commission, poundage, percentage"
+    },
+    {
+      "question": "腹圧性尿失禁",
+      "answer": [
+        "ふくあつせいにょうしっきん"
+      ],
+      "meaning": "stress urinary incontinence"
+    },
+    {
+      "question": "副睾丸炎",
+      "answer": [
+        "ふくこうがんえん"
+      ],
+      "meaning": "epididymitis, inflammation of the epididymis"
+    },
+    {
+      "question": "副睾丸",
+      "answer": [
+        "ふくこうがん"
+      ],
+      "meaning": "epididymis"
+    },
+    {
+      "question": "副腎",
+      "answer": [
+        "ふくじん"
+      ],
+      "meaning": "suprarenal body, adrenal glands; Adrenal gland"
+    },
+    {
+      "question": "副甲状腺",
+      "answer": [
+        "ふくこうじょうせん"
+      ],
+      "meaning": "parathyroid; Parathyroid gland"
+    },
+    {
+      "question": "副甲状腺",
+      "answer": [
+        "ふくこうじょうせん"
+      ],
+      "meaning": "parathyroid; Parathyroid gland"
+    },
+    {
+      "question": "浮動",
+      "answer": [
+        "ふどう"
+      ],
+      "meaning": "floating"
+    },
+    {
+      "question": "浮腫",
+      "answer": [
+        "むくみ",
+        "ふしゅ"
+      ],
+      "meaning": "swelling, edema, oedema; Edema"
+    },
+    {
+      "question": "不妊手術",
+      "answer": [
+        "ふにんしゅじゅつ"
+      ],
+      "meaning": "sterilization (operation), sterilisation; Sterilization (medicine)"
+    },
+    {
+      "question": "不妊",
+      "answer": [
+        "ふにん"
+      ],
+      "meaning": "infertility, sterility, barrenness; Infertility"
+    },
+    {
+      "question": "不登校",
+      "answer": [
+        "ふとうこう"
+      ],
+      "meaning": "truancy, school non-attendance; School refusal"
+    },
+    {
+      "question": "不消化",
+      "answer": [
+        "ふしょうか"
+      ],
+      "meaning": "indigestion"
+    },
+    {
+      "question": "不感症",
+      "answer": [
+        "ふかんしょう"
+      ],
+      "meaning": "sexual frigidity; insensitivity, indifference; Hypoactive sexual desire disorder"
+    },
+    {
+      "question": "貧血",
+      "answer": [
+        "ひんけつ"
+      ],
+      "meaning": "anemia, anaemia; Anemia"
+    },
+    {
+      "question": "病人食",
+      "answer": [
+        "びょうにんしょく"
+      ],
+      "meaning": "invalid diet, diet for the sick, diet for patients"
+    },
+    {
+      "question": "病気",
+      "answer": [
+        "びょうき"
+      ],
+      "meaning": "illness, disease, sickness; Disease"
+    },
+    {
+      "question": "病院食",
+      "answer": [
+        "びょういんしょく"
+      ],
+      "meaning": "hospital meals, hospital diet"
+    },
+    {
+      "question": "表面活性剤",
+      "answer": [
+        "ひょうめんかっせいざい"
+      ],
+      "meaning": "surface-active agent, surfactant"
+    },
+    {
+      "question": "表象",
+      "answer": [
+        "ひょうしょう"
+      ],
+      "meaning": "symbol, emblem; mental image, representation, idea"
+    },
+    {
+      "question": "標本調査",
+      "answer": [
+        null
+      ],
+      "meaning": "Sampling (statistics)"
+    },
+    {
+      "question": "標本抽出",
+      "answer": [
+        "ひょうほんちゅうしゅつ"
+      ],
+      "meaning": "sampling"
+    },
+    {
+      "question": "鼻瘤",
+      "answer": [
+        "びりゅう"
+      ],
+      "meaning": "rhinophyma, red swollen nose (often associated with alcoholism)"
+    },
+    {
+      "question": "鼻疽菌",
+      "answer": [
+        "びそきん"
+      ],
+      "meaning": "Burkholderia mallei (bacterium that causes glanders)"
+    },
+    {
+      "question": "鼻疽",
+      "answer": [
+        "びそ"
+      ],
+      "meaning": "glanders, farcy; Glanders"
+    },
+    {
+      "question": "鼻閉",
+      "answer": [
+        "びへい"
+      ],
+      "meaning": "nasal obstruction"
+    },
+    {
+      "question": "鼻声",
+      "answer": [
+        "はなごえ",
+        "びせい"
+      ],
+      "meaning": "nasal voice"
+    },
+    {
+      "question": "鼻汁",
+      "answer": [
+        "はなじる",
+        "はなしる",
+        "びじゅう"
+      ],
+      "meaning": "(liquid) nasal mucus, nasal discharge, pituita, snot"
+    },
+    {
+      "question": "鼻血",
+      "answer": [
+        "はなぢ",
+        "はなじ"
+      ],
+      "meaning": "nosebleed; Epistaxis"
+    },
+    {
+      "question": "非翻訳領域",
+      "answer": [
+        "ひほんやくりょういき"
+      ],
+      "meaning": "untranslated region, UTR; Untranslated region"
+    },
+    {
+      "question": "非点収差",
+      "answer": [
+        "ひてんしゅうさ"
+      ],
+      "meaning": "astigmatism"
+    },
+    {
+      "question": "避妊",
+      "answer": [
+        "ひにん"
+      ],
+      "meaning": "contraception; Birth control"
+    },
+    {
+      "question": "被用者保険",
+      "answer": [
+        "ひようしゃほけん"
+      ],
+      "meaning": "employee insurance"
+    },
+    {
+      "question": "肥満",
+      "answer": [
+        "ひまん"
+      ],
+      "meaning": "corpulence, fatness, obesity; Obesity"
+    },
+    {
+      "question": "皮弁",
+      "answer": [
+        "ひべん"
+      ],
+      "meaning": "skin flap, flap"
+    },
+    {
+      "question": "皮膚粘膜眼症候群",
+      "answer": [
+        "ひふねんまくがんしょうこうぐん"
+      ],
+      "meaning": "Stevens-Johnson syndrome"
+    },
+    {
+      "question": "皮膚炭疽",
+      "answer": [
+        "ひふたんそ"
+      ],
+      "meaning": "cutaneous anthrax"
+    },
+    {
+      "question": "皮膚感覚",
+      "answer": [
+        "ひふかんかく"
+      ],
+      "meaning": "cutaneous sensation"
+    },
+    {
+      "question": "皮脂腺",
+      "answer": [
+        "ひしせん"
+      ],
+      "meaning": "sebaceous gland; Sebaceous gland"
+    },
+    {
+      "question": "蕃椒",
+      "answer": [
+        "とうがらし",
+        "ばんしょう"
+      ],
+      "meaning": "capsicum (Capsicum annuum, esp. the cultivated chili peppers), chili pepper (chile, chilli), cayenne, red pepper; shichimi pepper; Capsicum annuum"
+    },
+    {
+      "question": "亜鉛華",
+      "answer": [
+        "あえんか"
+      ],
+      "meaning": "zinc white, zinc oxide, flowers of zinc"
+    },
+    {
+      "question": "赤鼻",
+      "answer": [
+        "あかはな"
+      ],
+      "meaning": "red nose"
+    },
+    {
+      "question": "反復説",
+      "answer": [
+        "はんぷくせつ"
+      ],
+      "meaning": "biogenetic law, recapitulation theory (theory that ontogeny recapitulates phylogeny); Recapitulation theory"
+    },
+    {
+      "question": "反復",
+      "answer": [
+        "はんぷく"
+      ],
+      "meaning": "repetition, iteration, recursion, recurrence, recapitulation"
+    },
+    {
+      "question": "半盲症",
+      "answer": [
+        "はんもうしょう"
+      ],
+      "meaning": "blindness, half-blindness"
+    },
+    {
+      "question": "半数性",
+      "answer": [
+        "はんすうせい"
+      ],
+      "meaning": "haploidy"
+    },
+    {
+      "question": "半月",
+      "answer": [
+        "はんげつ",
+        "はんつき"
+      ],
+      "meaning": "half-moon; half a month; semicircle"
+    },
+    {
+      "question": "抜毛癖",
+      "answer": [
+        "ばつもうへき"
+      ],
+      "meaning": "trichotillomania"
+    },
+    {
+      "question": "悪性新生物",
+      "answer": [
+        "あくせいしんせいぶつ"
+      ],
+      "meaning": "malignant growth, malignant neoplasm"
+    },
+    {
+      "question": "発赤薬",
+      "answer": [
+        "はっせきやく"
+      ],
+      "meaning": "rubefacient (substance that causes redness of skin)"
+    },
+    {
+      "question": "発疹",
+      "answer": [
+        "はっしん",
+        "ほっしん"
+      ],
+      "meaning": "rash, eruption"
+    },
+    {
+      "question": "発症",
+      "answer": [
+        "はっしょう"
+      ],
+      "meaning": "outbreak of an illness, onset of an illness, appearance of symptoms"
+    },
+    {
+      "question": "発酵素",
+      "answer": [
+        "はっこうそ"
+      ],
+      "meaning": "a ferment"
+    },
+    {
+      "question": "八百屋防風",
+      "answer": [
+        "やおやぼうふう"
+      ],
+      "meaning": "Glehnia littoralis (species of umbellifer used in Chinese medicine)"
+    },
+    {
+      "question": "麦芽糖",
+      "answer": [
+        "ばくがとう"
+      ],
+      "meaning": "maltose, malt sugar"
+    },
+    {
+      "question": "白燐",
+      "answer": [
+        "はくりん"
+      ],
+      "meaning": "white phosphorus"
+    },
+    {
+      "question": "白皮症",
+      "answer": [
+        "はくひしょう"
+      ],
+      "meaning": "albinism"
+    },
+    {
+      "question": "白髪",
+      "answer": [
+        "しらが",
+        "はくはつ",
+        "しろかみ",
+        "しらかみ"
+      ],
+      "meaning": "white hair, grey hair, gray hair"
+    },
+    {
+      "question": "白昼夢",
+      "answer": [
+        "はくちゅうむ"
+      ],
+      "meaning": "daydream, waking dream; Daydream"
+    },
+    {
+      "question": "亜酸化窒素",
+      "answer": [
+        "あさんかちっそ"
+      ],
+      "meaning": "nitrous oxide (N2O); Nitrous oxide"
+    },
+    {
+      "question": "剥脱",
+      "answer": [
+        "はくだつ"
+      ],
+      "meaning": "coming off, peeling off"
+    },
+    {
+      "question": "培養基",
+      "answer": [
+        "ばいようき"
+      ],
+      "meaning": "(culture) medium"
+    },
+    {
+      "question": "配糖体",
+      "answer": [
+        "はいとうたい"
+      ],
+      "meaning": "glycoside; Glycoside"
+    },
+    {
+      "question": "肺浮腫",
+      "answer": [
+        "はいふしゅ"
+      ],
+      "meaning": "pulmonary edema"
+    },
+    {
+      "question": "肺吸虫",
+      "answer": [
+        "はいきゅうちゅう"
+      ],
+      "meaning": "lung fluke (Paragonimus westermani)"
+    },
+    {
+      "question": "背痛",
+      "answer": [
+        "はいつう"
+      ],
+      "meaning": "backache, back pain"
+    },
+    {
+      "question": "亜脱臼",
+      "answer": [
+        "あだっきゅう"
+      ],
+      "meaning": "subluxation"
+    },
+    {
+      "question": "排便",
+      "answer": [
+        "はいべん"
+      ],
+      "meaning": "defecation; Defecation"
+    },
+    {
+      "question": "排液",
+      "answer": [
+        "はいえき"
+      ],
+      "meaning": "drainage, sewerage"
+    },
+    {
+      "question": "廃水",
+      "answer": [
+        "はいすい"
+      ],
+      "meaning": "wastewater, waste water, liquid waste, black water"
+    },
+    {
+      "question": "破傷風菌",
+      "answer": [
+        "はしょうふうきん"
+      ],
+      "meaning": "Clostridium tetani (tetanus bacillus); Clostridium tetani"
+    },
+    {
+      "question": "波状熱",
+      "answer": [
+        "はじょうねつ"
+      ],
+      "meaning": "brucellosis"
+    },
+    {
+      "question": "脳膜炎",
+      "answer": [
+        "のうまくえん"
+      ],
+      "meaning": "meningitis"
+    },
+    {
+      "question": "脳梅毒",
+      "answer": [
+        "のうばいどく"
+      ],
+      "meaning": "cerebral syphilis"
+    },
+    {
+      "question": "脳底部異常血管網症",
+      "answer": [
+        "のうていぶいじょうけっかんもうしょう"
+      ],
+      "meaning": "abnormal cerebrovascular network in the cerebral basal region"
+    },
+    {
+      "question": "脳脊髄膜炎",
+      "answer": [
+        "のうせきずいまくえん"
+      ],
+      "meaning": "cerebrospinal meningitis"
+    },
+    {
+      "question": "脳性麻痺",
+      "answer": [
+        "のうせいまひ"
+      ],
+      "meaning": "cerebral palsy; Cerebral palsy"
+    },
+    {
+      "question": "脳出血",
+      "answer": [
+        "のうしゅっけつ"
+      ],
+      "meaning": "cerebral hemorrhage, cerebral haemorrhage; Intracranial hemorrhage"
+    },
+    {
+      "question": "脳下垂体",
+      "answer": [
+        "のうかすいたい"
+      ],
+      "meaning": "pituitary gland, pituitary body, hypophysis"
+    },
+    {
+      "question": "粘度",
+      "answer": [
+        "ねんど"
+      ],
+      "meaning": "viscosity; Viscosity"
+    },
+    {
+      "question": "粘性",
+      "answer": [
+        "ねんせい"
+      ],
+      "meaning": "viscosity"
+    },
+    {
+      "question": "熱量",
+      "answer": [
+        "ねつりょう"
+      ],
+      "meaning": "quantity of heat, heat value, calorific value, calories"
+    },
+    {
+      "question": "熱射病",
+      "answer": [
+        "ねっしゃびょう"
+      ],
+      "meaning": "heatstroke"
+    },
+    {
+      "question": "熱",
+      "answer": [
+        "ねつ"
+      ],
+      "meaning": "heat; fever, temperature; zeal, passion, enthusiasm; mania, craze, rage; Heat"
+    },
+    {
+      "question": "認知",
+      "answer": [
+        "にんち"
+      ],
+      "meaning": "acknowledgement, acknowledgment, recognition, cognition"
+    },
+    {
+      "question": "妊娠糖尿病",
+      "answer": [
+        "にんしんとうにょうびょう"
+      ],
+      "meaning": "gestational diabetes, gestational diabetes mellitus, pregnancy diabetes; Gestational diabetes"
+    },
+    {
+      "question": "尿嚢",
+      "answer": [
+        "にょうのう"
+      ],
+      "meaning": "allantoic bladder"
+    },
+    {
+      "question": "尿道球腺",
+      "answer": [
+        "にょうどうきゅうせん"
+      ],
+      "meaning": "bulbourethral gland, Cowper's gland; Bulbourethral gland"
+    },
+    {
+      "question": "乳房切除術",
+      "answer": [
+        "にゅうぼうせつじょじゅつ"
+      ],
+      "meaning": "mastectomy"
+    },
+    {
+      "question": "乳糖",
+      "answer": [
+        "にゅうとう"
+      ],
+      "meaning": "milk sugar, lactose"
+    },
+    {
+      "question": "乳清",
+      "answer": [
+        "にゅうせい"
+      ],
+      "meaning": "whey; Whey"
+    },
+    {
+      "question": "乳児湿疹",
+      "answer": [
+        "にゅうじしっしん"
+      ],
+      "meaning": "infantile eczema, baby eczema"
+    },
+    {
+      "question": "乳児脚気",
+      "answer": [
+        "にゅうじかっけ"
+      ],
+      "meaning": "infantile beriberi"
+    },
+    {
+      "question": "乳酸桿菌",
+      "answer": [
+        "にゅうさんかんきん"
+      ],
+      "meaning": "lactobacillus"
+    },
+    {
+      "question": "乳香",
+      "answer": [
+        "にゅうこう"
+      ],
+      "meaning": "frankincense, olibanum; Frankincense"
+    },
+    {
+      "question": "日内周期",
+      "answer": [
+        "にちないしゅうき"
+      ],
+      "meaning": "diurnal cycle"
+    },
+    {
+      "question": "二量体",
+      "answer": [
+        "にりょうたい"
+      ],
+      "meaning": "dimer; Dimer (chemistry)"
+    },
+    {
+      "question": "二尖弁",
+      "answer": [
+        "にせんべん"
+      ],
+      "meaning": "bicuspid valve, mitral valve"
+    },
+    {
+      "question": "二重身",
+      "answer": [
+        "にじゅうしん"
+      ],
+      "meaning": "doppelganger"
+    },
+    {
+      "question": "二酸化硫黄",
+      "answer": [
+        "にさんかいおう"
+      ],
+      "meaning": "sulfur dioxide, sulphur dioxide; Sulfur dioxide"
+    },
+    {
+      "question": "二遺伝子雑種",
+      "answer": [
+        "にいでんしざっしゅ"
+      ],
+      "meaning": "dihybrid"
+    },
+    {
+      "question": "軟毛",
+      "answer": [
+        "なんもう"
+      ],
+      "meaning": "vellus hair, down; pubescence; peach fuzz"
+    },
+    {
+      "question": "南京虫",
+      "answer": [
+        "ナンキンむし"
+      ],
+      "meaning": "bed bug (Cimex lectularius), bedbug"
+    },
+    {
+      "question": "内服",
+      "answer": [
+        "ないふく"
+      ],
+      "meaning": "internal use"
+    },
+    {
+      "question": "内肉",
+      "answer": [
+        "ないにく"
+      ],
+      "meaning": "endosarc"
+    },
+    {
+      "question": "内臓弓",
+      "answer": [
+        "ないぞうきゅう"
+      ],
+      "meaning": "visceral arch"
+    },
+    {
+      "question": "内観",
+      "answer": [
+        "ないかん"
+      ],
+      "meaning": "introspection; Naikan"
+    },
+    {
+      "question": "暗号",
+      "answer": [
+        "あんごう"
+      ],
+      "meaning": "code, password, cipher; Encryption"
+    },
+    {
+      "question": "安産",
+      "answer": [
+        "あんざん"
+      ],
+      "meaning": "easy delivery, easy childbirth"
+    },
+    {
+      "question": "頓死",
+      "answer": [
+        "とんし"
+      ],
+      "meaning": "sudden death"
+    },
+    {
+      "question": "突然死",
+      "answer": [
+        "とつぜんし"
+      ],
+      "meaning": "sudden death; Sudden cardiac death"
+    },
+    {
+      "question": "安定性",
+      "answer": [
+        "あんていせい"
+      ],
+      "meaning": "stability, security, equilibrium"
+    },
+    {
+      "question": "安定同位体",
+      "answer": [
+        "あんていどういたい"
+      ],
+      "meaning": "stable isotope"
+    },
+    {
+      "question": "瞳孔反射",
+      "answer": [
+        "どうこうはんしゃ"
+      ],
+      "meaning": "pupillary reflex"
+    },
+    {
+      "question": "瞳孔縮小",
+      "answer": [
+        "どうこうしゅくしょう"
+      ],
+      "meaning": "pupil contraction"
+    },
+    {
+      "question": "瞳孔散大",
+      "answer": [
+        "どうこうさんだい"
+      ],
+      "meaning": "dilation of the pupil, mydriasis"
+    },
+    {
+      "question": "洞毛",
+      "answer": [
+        "どうもう"
+      ],
+      "meaning": "(animal) whiskers, vibrissae; Whiskers"
+    },
+    {
+      "question": "洞結節",
+      "answer": [
+        "どうけっせつ"
+      ],
+      "meaning": "sinus node, sinoatrial node; Sinoatrial node"
+    },
+    {
+      "question": "導入",
+      "answer": [
+        "どうにゅう"
+      ],
+      "meaning": "introduction, bringing in, leading in, installation"
+    },
+    {
+      "question": "同所性",
+      "answer": [
+        "どうしょせい"
+      ],
+      "meaning": "sympatry"
+    },
+    {
+      "question": "同義性",
+      "answer": [
+        "どうぎせい"
+      ],
+      "meaning": "synonymy, synonymity"
+    },
+    {
+      "question": "同化",
+      "answer": [
+        "どうか"
+      ],
+      "meaning": "assimilation, absorption; adaptation; assimilation, anabolism; assimilation (phonology); Assimilation"
+    },
+    {
+      "question": "同位体",
+      "answer": [
+        "どういたい"
+      ],
+      "meaning": "isotope; Isotope"
+    },
+    {
+      "question": "動物行動学",
+      "answer": [
+        "どうぶつこうどうがく"
+      ],
+      "meaning": "ethology; Ethology"
+    },
+    {
+      "question": "動物愛",
+      "answer": [
+        "どうぶつあい"
+      ],
+      "meaning": "love for animals"
+    },
+    {
+      "question": "動因",
+      "answer": [
+        "どういん"
+      ],
+      "meaning": "drive, motive, agent"
+    },
+    {
+      "question": "陶酔",
+      "answer": [
+        "とうすい"
+      ],
+      "meaning": "intoxication; being carried away by, being enraptured by"
+    },
+    {
+      "question": "鐙骨",
+      "answer": [
+        "あぶみこつ",
+        "とうこつ"
+      ],
+      "meaning": "stirrup (bone of the ear), stapes"
+    },
+    {
+      "question": "医院",
+      "answer": [
+        "いいん"
+      ],
+      "meaning": "doctor's office (surgery), clinic, dispensary"
+    },
+    {
+      "question": "透過性",
+      "answer": [
+        "とうかせい"
+      ],
+      "meaning": "transparency, permeability; Transparency"
+    },
+    {
+      "question": "糖原",
+      "answer": [
+        "とうげん"
+      ],
+      "meaning": "glycogen"
+    },
+    {
+      "question": "糖",
+      "answer": [
+        "とう"
+      ],
+      "meaning": "sugar"
+    },
+    {
+      "question": "痘苗",
+      "answer": [
+        "とうびょう"
+      ],
+      "meaning": "vaccine"
+    },
+    {
+      "question": "当薬",
+      "answer": [
+        "とうやく"
+      ],
+      "meaning": "dried Swertia japonica (used as a traditional medicine)"
+    },
+    {
+      "question": "異化",
+      "answer": [
+        "いか"
+      ],
+      "meaning": "dissimilation; catabolism; dissimilation (phonology); defamiliarization (artistic technique), ostranenie, alienation; Defamiliarization"
+    },
+    {
+      "question": "胃管",
+      "answer": [
+        "いかん"
+      ],
+      "meaning": "stomach tube, nasogastric tube"
+    },
+    {
+      "question": "凍結手術",
+      "answer": [
+        "とうけつしゅじゅつ"
+      ],
+      "meaning": "cryosurgery"
+    },
+    {
+      "question": "凍結乾燥",
+      "answer": [
+        "とうけつかんそう"
+      ],
+      "meaning": "freeze-drying, lyophilization"
+    },
+    {
+      "question": "倒錯",
+      "answer": [
+        "とうさく"
+      ],
+      "meaning": "perversion, inversion"
+    },
+    {
+      "question": "途絶",
+      "answer": [
+        "とぜつ"
+      ],
+      "meaning": "stoppage, interruption, cessation, suspension"
+    },
+    {
+      "question": "塗抹",
+      "answer": [
+        "とまつ"
+      ],
+      "meaning": "smear, daub, coating over"
+    },
+    {
+      "question": "吐剤",
+      "answer": [
+        "とざい"
+      ],
+      "meaning": "emetic"
+    },
+    {
+      "question": "兎唇",
+      "answer": [
+        "いぐち",
+        "としん",
+        "みつくち"
+      ],
+      "meaning": "harelip, cleft lip"
+    },
+    {
+      "question": "異形成",
+      "answer": [
+        "いけいせい"
+      ],
+      "meaning": "dysplasia; Dysplasia"
+    },
+    {
+      "question": "電算機",
+      "answer": [
+        "でんさんき"
+      ],
+      "meaning": "electronic computer"
+    },
+    {
+      "question": "電撃療法",
+      "answer": [
+        "でんげきりょうほう"
+      ],
+      "meaning": "electroshock therapy"
+    },
+    {
+      "question": "点滴注射",
+      "answer": [
+        "てんてきちゅうしゃ"
+      ],
+      "meaning": "intravenous drip infusion"
+    },
+    {
+      "question": "転移酵素",
+      "answer": [
+        "てんいこうそ"
+      ],
+      "meaning": "transferase; Transferase"
+    },
+    {
+      "question": "天然痘",
+      "answer": [
+        "てんねんとう"
+      ],
+      "meaning": "smallpox, variola; Smallpox"
+    },
+    {
+      "question": "適応度",
+      "answer": [
+        "てきおうど"
+      ],
+      "meaning": "fitness; Fitness (biology)"
+    },
+    {
+      "question": "適応機制",
+      "answer": [
+        "てきおうきせい"
+      ],
+      "meaning": "adjustment mechanism"
+    },
+    {
+      "question": "適応",
+      "answer": [
+        "てきおう"
+      ],
+      "meaning": "adaptation, accommodation, conformity"
+    },
+    {
+      "question": "締結",
+      "answer": [
+        "ていけつ"
+      ],
+      "meaning": "conclusion, execution (of a contract), entering (into treaty); fastening (as in a joint)"
+    },
+    {
+      "question": "停留",
+      "answer": [
+        "ていりゅう"
+      ],
+      "meaning": "stop, halt"
+    },
+    {
+      "question": "低体温麻酔",
+      "answer": [
+        "ていたいおんますい"
+      ],
+      "meaning": "hypothermic anesthesia, hypothermic anaesthesia"
+    },
+    {
+      "question": "異色",
+      "answer": [
+        "いしょく"
+      ],
+      "meaning": "unique, distinctive, novel, singular, unusual, special; different color (colour)"
+    },
+    {
+      "question": "異所性",
+      "answer": [
+        "いしょせい"
+      ],
+      "meaning": "allopatry, heterotopy, heterotopia, allopatric, aberrant"
+    },
+    {
+      "question": "通気",
+      "answer": [
+        "つうき"
+      ],
+      "meaning": "ventilation, airflow"
+    },
+    {
+      "question": "痛",
+      "answer": [
+        "いた",
+        "つう"
+      ],
+      "meaning": "ouch, ow, that hurt; pain, ache, -algia"
+    },
+    {
+      "question": "追想",
+      "answer": [
+        "ついそう"
+      ],
+      "meaning": "recollection, reminiscence"
+    },
+    {
+      "question": "椎間板",
+      "answer": [
+        "ついかんばん"
+      ],
+      "meaning": "intervertebral disk; Intervertebral disc"
+    },
+    {
+      "question": "沈殿槽",
+      "answer": [
+        "ちんでんそう"
+      ],
+      "meaning": "precipitation tank, settling tank, sedimentation tank"
+    },
+    {
+      "question": "石綿",
+      "answer": [
+        "いしわた",
+        "せきめん"
+      ],
+      "meaning": "asbestos; Asbestos"
+    },
+    {
+      "question": "異性化酵素",
+      "answer": [
+        "いせいかこうそ"
+      ],
+      "meaning": "isomerase; Isomerase"
+    },
+    {
+      "question": "長期記憶",
+      "answer": [
+        "ちょうききおく"
+      ],
+      "meaning": "long-term memory"
+    },
+    {
+      "question": "超遠心機",
+      "answer": [
+        "ちょうえんしんき"
+      ],
+      "meaning": "ultracentrifuge"
+    },
+    {
+      "question": "依託",
+      "answer": [
+        "いたく"
+      ],
+      "meaning": "entrustment; leaning against, propping up"
+    },
+    {
+      "question": "調節遺伝子",
+      "answer": [
+        "ちょうせついでんし"
+      ],
+      "meaning": "regulator gene, regulatory gene"
+    },
+    {
+      "question": "一次運動野",
+      "answer": [
+        "いちじうんどうや"
+      ],
+      "meaning": "primary motor cortex, primary motor area; Primary motor cortex"
+    },
+    {
+      "question": "腸腺",
+      "answer": [
+        "ちょうせん"
+      ],
+      "meaning": "intestinal gland"
+    },
+    {
+      "question": "腸線",
+      "answer": [
+        "ちょうせん"
+      ],
+      "meaning": "catgut, sheepgut"
+    },
+    {
+      "question": "腸石",
+      "answer": [
+        "ちょうせき"
+      ],
+      "meaning": "enterolith, intestinal calculus"
+    },
+    {
+      "question": "腸詰菌",
+      "answer": [
+        "ちょうづめきん"
+      ],
+      "meaning": "Clostridium botulinum (bacteria that causes botulism)"
+    },
+    {
+      "question": "一代雑種",
+      "answer": [
+        "いちだいざっしゅ"
+      ],
+      "meaning": "F1 hybrid, first filial hybrid, first cross"
+    },
+    {
+      "question": "聴力計",
+      "answer": [
+        "ちょうりょくけい"
+      ],
+      "meaning": "audiometer, sonometer"
+    },
+    {
+      "question": "聴診",
+      "answer": [
+        "ちょうしん"
+      ],
+      "meaning": "auscultation, listening to a person's chest with a stethoscope; Auscultation"
+    },
+    {
+      "question": "朝鮮人参",
+      "answer": [
+        "ちょうせんにんじん"
+      ],
+      "meaning": "Asian ginseng (Panax ginseng)"
+    },
+    {
+      "question": "丁香",
+      "answer": [
+        "ちょうこう"
+      ],
+      "meaning": "clove (Syzygium aromaticum)"
+    },
+    {
+      "question": "五日熱",
+      "answer": [
+        "いつかねつ"
+      ],
+      "meaning": "trench fever"
+    },
+    {
+      "question": "注入",
+      "answer": [
+        "ちゅうにゅう"
+      ],
+      "meaning": "pouring, injection"
+    },
+    {
+      "question": "注意欠陥障害",
+      "answer": [
+        "ちゅういけっかんしょうがい"
+      ],
+      "meaning": "attention deficit disorder, ADD"
+    },
+    {
+      "question": "中性洗剤",
+      "answer": [
+        "ちゅうせいせんざい"
+      ],
+      "meaning": "neutral detergent"
+    },
+    {
+      "question": "溢流性尿失禁",
+      "answer": [
+        "いつりゅうせいにょうしっきん"
+      ],
+      "meaning": "overflow incontinence"
+    },
+    {
+      "question": "中性",
+      "answer": [
+        "ちゅうせい"
+      ],
+      "meaning": "neutrality (incl. chemical, electrical, etc.), indifference; sexlessness, androgyny, androgyne, neuter; neuter gender"
+    },
+    {
+      "question": "中間期",
+      "answer": [
+        "ちゅうかんき"
+      ],
+      "meaning": "interphase, interkinesis, midcycle"
+    },
+    {
+      "question": "遺伝子治療",
+      "answer": [
+        "いでんしちりょう"
+      ],
+      "meaning": "gene therapy; Gene therapy"
+    },
+    {
+      "question": "着色",
+      "answer": [
+        "ちゃくしょく"
+      ],
+      "meaning": "colouring, coloring, colorant"
+    },
+    {
+      "question": "遅効",
+      "answer": [
+        "ちこう"
+      ],
+      "meaning": "delayed effect"
+    },
+    {
+      "question": "致死因子",
+      "answer": [
+        "ちしいんし"
+      ],
+      "meaning": "lethal factor, lethal gene"
+    },
+    {
+      "question": "恥垢",
+      "answer": [
+        "ちこう"
+      ],
+      "meaning": "smegma; Smegma"
+    },
+    {
+      "question": "地方病",
+      "answer": [
+        "ちほうびょう"
+      ],
+      "meaning": "endemic"
+    },
+    {
+      "question": "知能年齢",
+      "answer": [
+        "ちのうねんれい"
+      ],
+      "meaning": "mental age"
+    },
+    {
+      "question": "知覚麻痺",
+      "answer": [
+        "ちかくまひ"
+      ],
+      "meaning": "stupor"
+    },
+    {
+      "question": "男性型脱毛症",
+      "answer": [
+        "だんせいがただつもうしょう"
+      ],
+      "meaning": "male pattern baldness, male pattern alopecia, androgenic alopecia, androgenetic alopecia; Androgenic alopecia"
+    },
+    {
+      "question": "男性",
+      "answer": [
+        "だんせい"
+      ],
+      "meaning": "man, male; masculine gender; Man"
+    },
+    {
+      "question": "男色",
+      "answer": [
+        "だんしょく",
+        "なんしょく"
+      ],
+      "meaning": "sodomy, male homosexuality"
+    },
+    {
+      "question": "断頭",
+      "answer": [
+        "だんとう"
+      ],
+      "meaning": "beheading, decapitation"
+    },
+    {
+      "question": "遺伝地図",
+      "answer": [
+        "いでんちず"
+      ],
+      "meaning": "genetic map"
+    },
+    {
+      "question": "断種",
+      "answer": [
+        "だんしゅ"
+      ],
+      "meaning": "sterilization, sterilisation, castration; Compulsory sterilization"
+    },
+    {
+      "question": "遺伝病",
+      "answer": [
+        "いでんびょう"
+      ],
+      "meaning": "hereditary (genetic) disease"
+    },
+    {
+      "question": "蛋白",
+      "answer": [
+        "たんぱく"
+      ],
+      "meaning": "egg white, albumen, albumin; protein"
+    },
+    {
+      "question": "炭疽菌",
+      "answer": [
+        "たんそきん"
+      ],
+      "meaning": "Bacillus anthracis (anthrax bacteria); Bacillus anthracis"
+    },
+    {
+      "question": "炭疽",
+      "answer": [
+        "たんそ"
+      ],
+      "meaning": "anthrax"
+    },
+    {
+      "question": "炭水化物",
+      "answer": [
+        "たんすいかぶつ"
+      ],
+      "meaning": "carbohydrate; Carbohydrate"
+    },
+    {
+      "question": "炭酸脱水酵素阻害薬",
+      "answer": [
+        "たんさんだっすいこうそそがいやく"
+      ],
+      "meaning": "carbonate dehydratase inhibitor"
+    },
+    {
+      "question": "淡水化",
+      "answer": [
+        "たんすいか"
+      ],
+      "meaning": "desalination, desalinization, desalting"
+    },
+    {
+      "question": "探針",
+      "answer": [
+        "たんしん"
+      ],
+      "meaning": "probe"
+    },
+    {
+      "question": "異物肉芽腫",
+      "answer": [
+        "いぶつにくがしゅ",
+        "いぶつにくげしゅ"
+      ],
+      "meaning": "foreign-body granuloma"
+    },
+    {
+      "question": "担体",
+      "answer": [
+        "たんたい"
+      ],
+      "meaning": "vector, carrier"
+    },
+    {
+      "question": "単量体",
+      "answer": [
+        "たんりょうたい"
+      ],
+      "meaning": "monomer"
+    },
+    {
+      "question": "単純疱疹",
+      "answer": [
+        "たんじゅんほうしん"
+      ],
+      "meaning": "herpes simplex; Herpes labialis"
+    },
+    {
+      "question": "脱疽",
+      "answer": [
+        "だっそ"
+      ],
+      "meaning": "gangrene"
+    },
+    {
+      "question": "脱落",
+      "answer": [
+        "だつらく"
+      ],
+      "meaning": "dropping out, falling behind, falling by the wayside, desertion; omission, being left out, missing part; falling off, coming off, shedding"
+    },
+    {
+      "question": "脱腸帯",
+      "answer": [
+        "だっちょうたい"
+      ],
+      "meaning": "hernia truss, hernia belt"
+    },
+    {
+      "question": "脱窒",
+      "answer": [
+        "だっちつ"
+      ],
+      "meaning": "denitrification, denitration; Denitrification"
+    },
+    {
+      "question": "脱水素酵素",
+      "answer": [
+        "だっすいそこうそ"
+      ],
+      "meaning": "dehydrogenase; Dehydrogenase"
+    },
+    {
+      "question": "脱水",
+      "answer": [
+        "だっすい"
+      ],
+      "meaning": "evaporation, dehydration, dessication"
+    },
+    {
+      "question": "医療法人",
+      "answer": [
+        "いりょうほうじん"
+      ],
+      "meaning": "medical corporation"
+    },
+    {
+      "question": "医療保険",
+      "answer": [
+        "いりょうほけん"
+      ],
+      "meaning": "medical-care insurance; Health insurance"
+    },
+    {
+      "question": "脱灰",
+      "answer": [
+        "だっかい"
+      ],
+      "meaning": "decalcification, demineralization"
+    },
+    {
+      "question": "脱塩",
+      "answer": [
+        "だつえん"
+      ],
+      "meaning": "desalination, desalinization, desalinisation, desalting"
+    },
+    {
+      "question": "陰萎",
+      "answer": [
+        "いんい"
+      ],
+      "meaning": "impotence (sexual), erectile impotence"
+    },
+    {
+      "question": "大腸菌",
+      "answer": [
+        "だいちょうきん"
+      ],
+      "meaning": "Escherichia coli (E. coli); colon bacterium; Escherichia coli"
+    },
+    {
+      "question": "咽頭弓",
+      "answer": [
+        "いんとうきゅう"
+      ],
+      "meaning": "pharyngeal arch; Pharyngeal arch"
+    },
+    {
+      "question": "咽頭反射",
+      "answer": [
+        "いんとうはんしゃ"
+      ],
+      "meaning": "gag reflex"
+    },
+    {
+      "question": "大食細胞",
+      "answer": [
+        "たいしょくさいぼう"
+      ],
+      "meaning": "macrophage"
+    },
+    {
+      "question": "大循環",
+      "answer": [
+        "だいじゅんかん"
+      ],
+      "meaning": "systemic circulation; general circulation (of the atmosphere)"
+    },
+    {
+      "question": "大気圧",
+      "answer": [
+        "たいきあつ"
+      ],
+      "meaning": "atmospheric pressure"
+    },
+    {
+      "question": "大気",
+      "answer": [
+        "たいき"
+      ],
+      "meaning": "atmosphere"
+    },
+    {
+      "question": "袋形動物",
+      "answer": [
+        "たいけいどうぶつ",
+        "ふくろがたどうぶつ"
+      ],
+      "meaning": "aschelminth (any invertebrate animal formerly classified as belonging to phylum Aschelminthes)"
+    },
+    {
+      "question": "胎生",
+      "answer": [
+        "たいせい"
+      ],
+      "meaning": "viviparity; viviparous, zoogonous, live-bearing; Vivipary"
+    },
+    {
+      "question": "胎児死亡",
+      "answer": [
+        "たいじしぼう"
+      ],
+      "meaning": "fetal death (foetal), embryonic demise"
+    },
+    {
+      "question": "待期療法",
+      "answer": [
+        "たいきりょうほう"
+      ],
+      "meaning": "palliative treatment"
+    },
+    {
+      "question": "帯状疱疹",
+      "answer": [
+        "たいじょうほうしん",
+        "おびじょうほうしん"
+      ],
+      "meaning": "shingles, herpes zoster; Herpes zoster"
+    },
+    {
+      "question": "耐性",
+      "answer": [
+        "たいせい"
+      ],
+      "meaning": "resistance (e.g. to antibiotics), tolerance (e.g. drug tolerance)"
+    },
+    {
+      "question": "対合",
+      "answer": [
+        "たいごう",
+        "ついごう"
+      ],
+      "meaning": "pairing, pairwise association; synapsis; involution; Involution (mathematics)"
+    },
+    {
+      "question": "体型",
+      "answer": [
+        "たいけい"
+      ],
+      "meaning": "figure, body shape, build, physique, form; somatotype, biotype, habitus, (type of) physique"
+    },
+    {
+      "question": "体液性免疫",
+      "answer": [
+        "たいえきせいめんえき"
+      ],
+      "meaning": "humoral immunity"
+    },
+    {
+      "question": "唾腺染色体",
+      "answer": [
+        "だせんせんしょくたい"
+      ],
+      "meaning": "salivary-gland chromosome"
+    },
+    {
+      "question": "多動",
+      "answer": [
+        "たどう"
+      ],
+      "meaning": "hyperactivity (of a child)"
+    },
+    {
+      "question": "多幸",
+      "answer": [
+        "たこう"
+      ],
+      "meaning": "great happiness"
+    },
+    {
+      "question": "側位",
+      "answer": [
+        "そくい"
+      ],
+      "meaning": "lateral sexual position, spoons, spooning; Spoons sex position"
+    },
+    {
+      "question": "促進",
+      "answer": [
+        "そくしん"
+      ],
+      "meaning": "promotion, acceleration, encouragement, facilitation, spurring on"
+    },
+    {
+      "question": "造血幹細胞",
+      "answer": [
+        "ぞうけつかんさいぼう"
+      ],
+      "meaning": "hematopoietic stem cell (haematopoietic), hemopoietic stem cell (haemopoietic); Hematopoietic stem cell"
+    },
+    {
+      "question": "臓腑",
+      "answer": [
+        "ぞうふ"
+      ],
+      "meaning": "entrails"
+    },
+    {
+      "question": "運動覚",
+      "answer": [
+        "うんどうかく"
+      ],
+      "meaning": "kinesthesia, kinaesthesia, sense of movement"
+    },
+    {
+      "question": "走光性",
+      "answer": [
+        "そうこうせい"
+      ],
+      "meaning": "phototaxis; Phototaxis"
+    },
+    {
+      "question": "走化性",
+      "answer": [
+        "そうかせい"
+      ],
+      "meaning": "chemotaxis; Chemotaxis"
+    },
+    {
+      "question": "相",
+      "answer": [
+        "あい",
+        "さが",
+        "そう",
+        "しょう",
+        "こもごも"
+      ],
+      "meaning": "together, mutually, fellow; one's nature, one's destiny; custom, tradition, habit, convention; appearance, look, countenance; a 'seeming' that fortune-tellers relate to one's fortune; aspect; phase (e.g. solid, liquid and gaseous); minister of state; alternately, in succession"
+    },
+    {
+      "question": "早漏",
+      "answer": [
+        "そうろう"
+      ],
+      "meaning": "premature ejaculation; Premature ejaculation"
+    },
+    {
+      "question": "運動野",
+      "answer": [
+        "うんどうや"
+      ],
+      "meaning": "motor area (of the cerebral cortex)"
+    },
+    {
+      "question": "早産児",
+      "answer": [
+        "そうざんじ"
+      ],
+      "meaning": "premature baby"
+    },
+    {
+      "question": "掻爬",
+      "answer": [
+        "そうは"
+      ],
+      "meaning": "curettage"
+    },
+    {
+      "question": "双胎間輸血症候群",
+      "answer": [
+        "そうたいかんゆけつしょうこうぐん"
+      ],
+      "meaning": "Twin-to-twin transfusion syndrome, TTTS; Twin-to-twin transfusion syndrome"
+    },
+    {
+      "question": "創傷",
+      "answer": [
+        "そうしょう"
+      ],
+      "meaning": "wound; Wound"
+    },
+    {
+      "question": "僧帽弁",
+      "answer": [
+        "そうぼうべん"
+      ],
+      "meaning": "mitral valve, bicuspid valve; Mitral valve"
+    },
+    {
+      "question": "蘇生",
+      "answer": [
+        "そせい"
+      ],
+      "meaning": "revival, resuscitation; revitalization, rejuvenation, regeneration"
+    },
+    {
+      "question": "素質",
+      "answer": [
+        "そしつ"
+      ],
+      "meaning": "character, qualities, genius, the makings of"
+    },
+    {
+      "question": "栄養不良",
+      "answer": [
+        "えいようふりょう"
+      ],
+      "meaning": "malnutrition, malnourishment"
+    },
+    {
+      "question": "祖型",
+      "answer": [
+        "そけい"
+      ],
+      "meaning": "prototype"
+    },
+    {
+      "question": "措置入院",
+      "answer": [
+        "そちにゅういん"
+      ],
+      "meaning": "involuntary admission (commitment) (to a mental hospital); Involuntary commitment"
+    },
+    {
+      "question": "全身麻酔",
+      "answer": [
+        "ぜんしんますい"
+      ],
+      "meaning": "general anesthesia, general anaesthesia; General anaesthesia"
+    },
+    {
+      "question": "前庭蝸牛神経",
+      "answer": [
+        "ぜんていかぎゅうしんけい"
+      ],
+      "meaning": "vestibulocochlear nerve"
+    },
+    {
+      "question": "前駆体",
+      "answer": [
+        "ぜんくたい"
+      ],
+      "meaning": "(biochemical) precursor; Precursor (chemistry)"
+    },
+    {
+      "question": "腺熱",
+      "answer": [
+        "せんねつ"
+      ],
+      "meaning": "mononucleosis, glandular fever"
+    },
+    {
+      "question": "線条",
+      "answer": [
+        "せんじょう"
+      ],
+      "meaning": "line, a streak"
+    },
+    {
+      "question": "線維素",
+      "answer": [
+        "せんいそ"
+      ],
+      "meaning": "cellulose; fibrin"
+    },
+    {
+      "question": "穿頭",
+      "answer": [
+        "せんとう"
+      ],
+      "meaning": "trepanning, trepanation, trephining"
+    },
+    {
+      "question": "穿孔",
+      "answer": [
+        "せんこう"
+      ],
+      "meaning": "perforation, punching, boring, drilling"
+    },
+    {
+      "question": "潜伏期",
+      "answer": [
+        "せんぷくき"
+      ],
+      "meaning": "incubation period"
+    },
+    {
+      "question": "潜性",
+      "answer": [
+        "せんせい"
+      ],
+      "meaning": "recessiveness"
+    },
+    {
+      "question": "栓子",
+      "answer": [
+        "せんし"
+      ],
+      "meaning": "embolus"
+    },
+    {
+      "question": "尖頭",
+      "answer": [
+        "せんとう"
+      ],
+      "meaning": "point, pointed end, cusp"
+    },
+    {
+      "question": "先天梅毒",
+      "answer": [
+        "せんてんばいどく"
+      ],
+      "meaning": "congenital syphilis"
+    },
+    {
+      "question": "先天性免疫不全症候群",
+      "answer": [
+        "せんてんせいめんえきふぜんしょうこうぐん"
+      ],
+      "meaning": "primary immunodeficiency syndrome"
+    },
+    {
+      "question": "雪盲",
+      "answer": [
+        "せつもう"
+      ],
+      "meaning": "snow blindness"
+    },
+    {
+      "question": "摂食障害",
+      "answer": [
+        "せっしょくしょうがい"
+      ],
+      "meaning": "eating disorder; Eating disorder"
+    },
+    {
+      "question": "摂取",
+      "answer": [
+        "せっしゅ"
+      ],
+      "meaning": "intake (e.g. of salt), ingestion; absorption (e.g. of new knowledge), adoption (e.g. of foreign culture), assimilation; reception and protection; Ingestion"
+    },
+    {
+      "question": "接合子",
+      "answer": [
+        "せつごうし"
+      ],
+      "meaning": "zygote"
+    },
+    {
+      "question": "切断",
+      "answer": [
+        "せつだん"
+      ],
+      "meaning": "cutting, severance, section, amputation, disconnection"
+    },
+    {
+      "question": "切石",
+      "answer": [
+        "きりいし"
+      ],
+      "meaning": "hewn stone, quarried stone, ashlar, flagstone"
+    },
+    {
+      "question": "切除",
+      "answer": [
+        "せつじょ"
+      ],
+      "meaning": "cut off, cut out, ablation, resection, surgical removal"
+    },
+    {
+      "question": "赤痢菌",
+      "answer": [
+        "せきりきん"
+      ],
+      "meaning": "shigella (dysentery bacillus); Shigella"
+    },
+    {
+      "question": "赤沈",
+      "answer": [
+        "せきちん"
+      ],
+      "meaning": "blood sedimentation rate"
+    },
+    {
+      "question": "赤血球凝集",
+      "answer": [
+        "あかけっきゅうぎょうしゅう"
+      ],
+      "meaning": "haemagglutination, hemagglutination"
+    },
+    {
+      "question": "赤芽細胞",
+      "answer": [
+        "せきがさいぼう"
+      ],
+      "meaning": "erythroblast"
+    },
+    {
+      "question": "脊髄性小児麻痺",
+      "answer": [
+        "せきずいせいしょうにまひ"
+      ],
+      "meaning": "poliomyelitis, polio, infantile paralysis"
+    },
+    {
+      "question": "石炭酸",
+      "answer": [
+        "せきたんさん"
+      ],
+      "meaning": "phenol, carbolic acid"
+    },
+    {
+      "question": "石膏",
+      "answer": [
+        "せっこう"
+      ],
+      "meaning": "plaster, gypsum, calcium sulphate (sulfate); Gypsum"
+    },
+    {
+      "question": "石灰化",
+      "answer": [
+        "せっかいか"
+      ],
+      "meaning": "calcification; Calcification"
+    },
+    {
+      "question": "静脈麻酔薬",
+      "answer": [
+        "じょうみゃくますいやく"
+      ],
+      "meaning": "intravenous anaesthetic, intravenous anesthetic"
+    },
+    {
+      "question": "静注",
+      "answer": [
+        "じょうちゅう"
+      ],
+      "meaning": "intravenous injection, IV"
+    },
+    {
+      "question": "静止電位",
+      "answer": [
+        "せいしでんい"
+      ],
+      "meaning": "resting potential"
+    },
+    {
+      "question": "青色症",
+      "answer": [
+        "せいしょくしょう"
+      ],
+      "meaning": "cyanosis"
+    },
+    {
+      "question": "青春期",
+      "answer": [
+        "せいしゅんき"
+      ],
+      "meaning": "puberty, adolescence, youth"
+    },
+    {
+      "question": "青酸中毒",
+      "answer": [
+        "せいさんちゅうどく"
+      ],
+      "meaning": "cyanide poisoning"
+    },
+    {
+      "question": "精虫",
+      "answer": [
+        "せいちゅう"
+      ],
+      "meaning": "spermatozoon, sperm"
+    },
+    {
+      "question": "精神療法",
+      "answer": [
+        "せいしんりょうほう"
+      ],
+      "meaning": "psychotherapy"
+    },
+    {
+      "question": "精神感応",
+      "answer": [
+        "せいしんかんのう"
+      ],
+      "meaning": "telepathy"
+    },
+    {
+      "question": "精上皮腫",
+      "answer": [
+        "せいじょうひしゅ"
+      ],
+      "meaning": "seminoma; Seminoma"
+    },
+    {
+      "question": "精細胞",
+      "answer": [
+        "せいさいぼう"
+      ],
+      "meaning": "spermatid"
+    },
+    {
+      "question": "生薑",
+      "answer": [
+        "しょうが",
+        "しょうきょう"
+      ],
+      "meaning": "ginger (Zingiber officinale); Ginger; dried ginger root (trad. medicine)"
+    },
+    {
+      "question": "生毛",
+      "answer": [
+        "うぶげ"
+      ],
+      "meaning": "soft, downy hair (i.e. such as on one's cheek), peach fuzz, fluff, pappus; lanugo; lanuginous, pappose, pappous"
+    },
+    {
+      "question": "生命工学",
+      "answer": [
+        "せいめいこうがく"
+      ],
+      "meaning": "biotechnology"
+    },
+    {
+      "question": "生物工学",
+      "answer": [
+        "せいぶつこうがく"
+      ],
+      "meaning": "biotechnology; Biotechnology"
+    },
+    {
+      "question": "生体力学",
+      "answer": [
+        "せいたいりきがく"
+      ],
+      "meaning": "biomechanics"
+    },
+    {
+      "question": "生体工学",
+      "answer": [
+        "せいたいこうがく"
+      ],
+      "meaning": "bionics; Bionics"
+    },
+    {
+      "question": "生殖腺",
+      "answer": [
+        "せいしょくせん"
+      ],
+      "meaning": "gonad"
+    },
+    {
+      "question": "生産",
+      "answer": [
+        "せいさん",
+        "せいざん"
+      ],
+      "meaning": "production, manufacture; Outline of industrial organization; live birth"
+    },
+    {
+      "question": "生活環",
+      "answer": [
+        "せいかつかん"
+      ],
+      "meaning": "life cycle; Biological life cycle"
+    },
+    {
+      "question": "正視",
+      "answer": [
+        "せいし"
+      ],
+      "meaning": "looking straight ahead, looking in the face; looking squarely at (e.g. a problem), facing (e.g. the truth), confronting; normal vision, emmetropia"
+    },
+    {
+      "question": "正円窓",
+      "answer": [
+        "せいえんそう"
+      ],
+      "meaning": "fenestra rotunda (of the ear)"
+    },
+    {
+      "question": "成人病",
+      "answer": [
+        "せいじんびょう"
+      ],
+      "meaning": "adult diseases"
+    },
+    {
+      "question": "性淘汰",
+      "answer": [
+        "せいとうた"
+      ],
+      "meaning": "sexual selection; Sexual selection"
+    },
+    {
+      "question": "性質",
+      "answer": [
+        "せいしつ"
+      ],
+      "meaning": "nature, property, disposition"
+    },
+    {
+      "question": "性感",
+      "answer": [
+        "せいかん"
+      ],
+      "meaning": "sexual feelings"
+    },
+    {
+      "question": "性格検査",
+      "answer": [
+        "せいかくけんさ"
+      ],
+      "meaning": "personality test; Personality test"
+    },
+    {
+      "question": "制止",
+      "answer": [
+        "せいし"
+      ],
+      "meaning": "control, check, restraint, inhibition"
+    },
+    {
+      "question": "数珠",
+      "answer": [
+        "じゅず",
+        "ずず",
+        "じゅじゅ"
+      ],
+      "meaning": "rosary, string of prayer beads; Buddhist prayer beads"
+    },
+    {
+      "question": "髄液",
+      "answer": [
+        "ずいえき"
+      ],
+      "meaning": "cerebrospinal fluid"
+    },
+    {
+      "question": "睡眠障害",
+      "answer": [
+        "すいみんしょうがい"
+      ],
+      "meaning": "sleep disorder; Sleep disorder"
+    },
+    {
+      "question": "睡眠周期",
+      "answer": [
+        "すいみんしゅうき"
+      ],
+      "meaning": "sleep cycle"
+    },
+    {
+      "question": "水疱瘡",
+      "answer": [
+        "みずぼうそう"
+      ],
+      "meaning": "chickenpox, chicken pox"
+    },
+    {
+      "question": "水色",
+      "answer": [
+        "みずいろ",
+        "すいしょく"
+      ],
+      "meaning": "light blue, pale blue, aqua; Aqua (color); colour of water (esp. in rivers, lakes, sea); scenery of rivers, lakes, etc.; light blue, pale blue, aqua"
+    },
+    {
+      "question": "水癌",
+      "answer": [
+        "すいがん"
+      ],
+      "meaning": "noma, gangrenous stomatitis, cancrum oris"
+    },
+    {
+      "question": "推定",
+      "answer": [
+        "すいてい"
+      ],
+      "meaning": "presumption, assumption; estimation"
+    },
+    {
+      "question": "推計学",
+      "answer": [
+        "すいけいがく"
+      ],
+      "meaning": "stochastics"
+    },
+    {
+      "question": "腎単位",
+      "answer": [
+        "じんたんい"
+      ],
+      "meaning": "nephron"
+    },
+    {
+      "question": "腎石",
+      "answer": [
+        "じんせき"
+      ],
+      "meaning": "kidney stone, renal calculus"
+    },
+    {
+      "question": "腎障害",
+      "answer": [
+        "じんしょうがい"
+      ],
+      "meaning": "renal impairment, kidney damage"
+    },
+    {
+      "question": "腎細胞癌",
+      "answer": [
+        "じんさいぼうがん"
+      ],
+      "meaning": "renal cell carcinoma, cancerous kidney tumor; Renal cell carcinoma"
+    },
+    {
+      "question": "腎炎",
+      "answer": [
+        "じんえん"
+      ],
+      "meaning": "kidney inflammation, nephritis"
+    },
+    {
+      "question": "塵埃",
+      "answer": [
+        "じんあい",
+        "ちりほこり"
+      ],
+      "meaning": "dust, dirt; dreary world, petty affairs of everyday life"
+    },
+    {
+      "question": "塵肺",
+      "answer": [
+        "じんはい",
+        "じんぱい"
+      ],
+      "meaning": "pneumoconiosis (lung disease caused by dust inhalation); Pneumoconiosis"
+    },
+    {
+      "question": "塵芥",
+      "answer": [
+        "じんかい",
+        "ちりあくた",
+        "ごみあくた"
+      ],
+      "meaning": "rubbish, trash, garbage, refuse; worthless thing"
+    },
+    {
+      "question": "仁",
+      "answer": [
+        "じん",
+        "にん"
+      ],
+      "meaning": "benevolence (esp. as a virtue of Confucianism), consideration, compassion, humanity, charity; human; kernel; nucleolus; Ren (Confucianism)"
+    },
+    {
+      "question": "人工物",
+      "answer": [
+        "じんこうぶつ"
+      ],
+      "meaning": "artificial object, man-made object, artifact, artefact"
+    },
+    {
+      "question": "人工妊娠中絶",
+      "answer": [
+        "じんこうにんしんちゅうぜつ"
+      ],
+      "meaning": "abortion; Abortion"
+    },
+    {
+      "question": "人工心肺",
+      "answer": [
+        "じんこうしんぱい"
+      ],
+      "meaning": "heart-lung machine"
+    },
+    {
+      "question": "人工呼吸器",
+      "answer": [
+        "じんこうこきゅうき"
+      ],
+      "meaning": "artificial respirator, ventilator; Medical ventilator"
+    },
+    {
+      "question": "人工呼吸",
+      "answer": [
+        "じんこうこきゅう"
+      ],
+      "meaning": "artificial respiration; Mechanical ventilation"
+    },
+    {
+      "question": "人工栄養",
+      "answer": [
+        "じんこうえいよう"
+      ],
+      "meaning": "bottle feeding; artificial nourishment"
+    },
+    {
+      "question": "人為淘汰",
+      "answer": [
+        "じんいとうた"
+      ],
+      "meaning": "artificial selection"
+    },
+    {
+      "question": "親和性",
+      "answer": [
+        "しんわせい"
+      ],
+      "meaning": "affinity"
+    },
+    {
+      "question": "神経膠",
+      "answer": [
+        "しんけいこう"
+      ],
+      "meaning": "neuroglia, glia"
+    },
+    {
+      "question": "神経質",
+      "answer": [
+        "しんけいしつ"
+      ],
+      "meaning": "nervous, highly strung, sensitive; fussy, worried about petty things"
+    },
+    {
+      "question": "真珠腫",
+      "answer": [
+        "しんじゅしゅ"
+      ],
+      "meaning": "cholesteatoma, pearl tumor, pearl tumour"
+    },
+    {
+      "question": "真菌毒",
+      "answer": [
+        "しんきんどく"
+      ],
+      "meaning": "mycotoxin, fungal toxin"
+    },
+    {
+      "question": "真菌",
+      "answer": [
+        "しんきん"
+      ],
+      "meaning": "fungus, true fungus"
+    },
+    {
+      "question": "新生物",
+      "answer": [
+        "しんせいぶつ"
+      ],
+      "meaning": "neoplasm, tumor, tumour"
+    },
+    {
+      "question": "振動覚",
+      "answer": [
+        "しんどうかく"
+      ],
+      "meaning": "pallesthesia, sense of vibration, vibratory sense, vibratory sensation, vibration perception, vibratory perception"
+    },
+    {
+      "question": "心拍",
+      "answer": [
+        "しんぱく"
+      ],
+      "meaning": "heartbeat"
+    },
+    {
+      "question": "心破裂",
+      "answer": [
+        "しんはれつ"
+      ],
+      "meaning": "myocardial rupture, cardiac rupture, heart rupture, cardiorrhexis"
+    },
+    {
+      "question": "心臓弁",
+      "answer": [
+        "しんぞうべん"
+      ],
+      "meaning": "heart valve, cardiac valve"
+    },
+    {
+      "question": "心臓神経症",
+      "answer": [
+        "しんぞうしんけいしょう"
+      ],
+      "meaning": "cardiac neurosis"
+    },
+    {
+      "question": "遠隔医療",
+      "answer": [
+        "えんかくいりょう"
+      ],
+      "meaning": "telemedicine, remote medicine; Telemedicine"
+    },
+    {
+      "question": "心身医学",
+      "answer": [
+        "しんしんいがく"
+      ],
+      "meaning": "psychosomatic medicine; Psychosomatic medicine"
+    },
+    {
+      "question": "塩基置換",
+      "answer": [
+        "えんきちかん"
+      ],
+      "meaning": "base substitution"
+    },
+    {
+      "question": "塩基配列",
+      "answer": [
+        "えんきはいれつ"
+      ],
+      "meaning": "base sequence (e.g. of DNA)"
+    },
+    {
+      "question": "心筋梗塞",
+      "answer": [
+        "しんきんこうそく"
+      ],
+      "meaning": "heart attack, myocardial infarction; Myocardial infarction"
+    },
+    {
+      "question": "心因反応",
+      "answer": [
+        "しんいんはんのう"
+      ],
+      "meaning": "psychogenic reaction"
+    },
+    {
+      "question": "寝汗",
+      "answer": [
+        "ねあせ"
+      ],
+      "meaning": "perspiration given off during sleep, sweating while sleeping, night sweats"
+    },
+    {
+      "question": "侵蝕",
+      "answer": [
+        "しんしょく"
+      ],
+      "meaning": "encroachment; erosion, corrosion; Erosion"
+    },
+    {
+      "question": "信号雑音比",
+      "answer": [
+        "しんごうざつおんひ"
+      ],
+      "meaning": "signal-to-noise ratio"
+    },
+    {
+      "question": "伸縮包帯",
+      "answer": [
+        "しんしゅくほうたい"
+      ],
+      "meaning": "elastic bandage"
+    },
+    {
+      "question": "食作用",
+      "answer": [
+        "しょくさよう"
+      ],
+      "meaning": "phagocytosis; Phagocytosis"
+    },
+    {
+      "question": "触診",
+      "answer": [
+        "しょくしん"
+      ],
+      "meaning": "palpation"
+    },
+    {
+      "question": "円柱",
+      "answer": [
+        "えんちゅう",
+        "まるばしら"
+      ],
+      "meaning": "column, shaft, cylinder; round pillar (esp. in buildings); Cylinder"
+    },
+    {
+      "question": "色素細胞",
+      "answer": [
+        "しきそさいぼう"
+      ],
+      "meaning": "pigment cell"
+    },
+    {
+      "question": "色弱",
+      "answer": [
+        "しきじゃく"
+      ],
+      "meaning": "slight color-blindness, slight colour-blindness"
+    },
+    {
+      "question": "浄水",
+      "answer": [
+        "じょうすい"
+      ],
+      "meaning": "clean water"
+    },
+    {
+      "question": "常習者",
+      "answer": [
+        "じょうしゅうしゃ"
+      ],
+      "meaning": "habitual offender, addict"
+    },
+    {
+      "question": "嬢細胞",
+      "answer": [
+        "じょうさいぼう",
+        "むすめさいぼう"
+      ],
+      "meaning": "daughter cell"
+    },
+    {
+      "question": "上皮",
+      "answer": [
+        "うわかわ",
+        "じょうひ"
+      ],
+      "meaning": "outer layer (e.g. of skin), cuticle, epidermis, bark, rind, crust, film (on the surface of a liquid), scum; epithelium"
+    },
+    {
+      "question": "上澄",
+      "answer": [
+        "うわずみ"
+      ],
+      "meaning": "the clear top of a liquid, the clear layer in a fluid, atop the sediment"
+    },
+    {
+      "question": "障害",
+      "answer": [
+        "しょうがい"
+      ],
+      "meaning": "obstacle, impediment, hindrance, difficulty, barrier; handicap, impairment, disability, disorder, malfunction"
+    },
+    {
+      "question": "衝撃療法",
+      "answer": [
+        "しょうげきりょうほう"
+      ],
+      "meaning": "shock therapy, shock treatment"
+    },
+    {
+      "question": "硝子軟骨",
+      "answer": [
+        "しょうしなんこつ"
+      ],
+      "meaning": "hyaline cartilage; Hyaline cartilage"
+    },
+    {
+      "question": "照明灯",
+      "answer": [
+        "しょうめいとう"
+      ],
+      "meaning": "light used for brightly lighting up a plaza, building, etc."
+    },
+    {
+      "question": "黄癬菌",
+      "answer": [
+        "おうせんきん"
+      ],
+      "meaning": "achorion fungus"
+    },
+    {
+      "question": "消毒剤",
+      "answer": [
+        "しょうどくざい"
+      ],
+      "meaning": "antiseptic, disinfectant"
+    },
+    {
+      "question": "樟脳",
+      "answer": [
+        "しょうのう"
+      ],
+      "meaning": "camphor; Camphor"
+    },
+    {
+      "question": "松果腺",
+      "answer": [
+        "しょうかせん"
+      ],
+      "meaning": "pineal gland"
+    },
+    {
+      "question": "昇汞",
+      "answer": [
+        "しょうこう"
+      ],
+      "meaning": "mercury chloride, corrosive sublimate"
+    },
+    {
+      "question": "少糖類",
+      "answer": [
+        "しょうとうるい"
+      ],
+      "meaning": "oligosaccharide (sugar polymer containg several but not many component simple sugars)"
+    },
+    {
+      "question": "小胞",
+      "answer": [
+        "しょうほう"
+      ],
+      "meaning": "vesicle; Vesicle (biology and chemistry)"
+    },
+    {
+      "question": "黄燐",
+      "answer": [
+        "おうりん"
+      ],
+      "meaning": "yellow (white) phosphorus"
+    },
+    {
+      "question": "黄蝋",
+      "answer": [
+        "おうろう",
+        "こうろう"
+      ],
+      "meaning": "yellow beeswax"
+    },
+    {
+      "question": "小人",
+      "answer": [
+        "しょうにん",
+        "こびと",
+        "しょうじん",
+        "こども"
+      ],
+      "meaning": "child, small person; dwarf, midget; narrow-minded person, mean person"
+    },
+    {
+      "question": "小循環",
+      "answer": [
+        "しょうじゅんかん"
+      ],
+      "meaning": "pulmonary circulation"
+    },
+    {
+      "question": "小耳",
+      "answer": [
+        "こみみ"
+      ],
+      "meaning": "overhear, happened to hear that"
+    },
+    {
+      "question": "小指",
+      "answer": [
+        "こゆび"
+      ],
+      "meaning": "little finger, pinky; little toe; Little finger"
+    },
+    {
+      "question": "将軍",
+      "answer": [
+        "しょうぐん"
+      ],
+      "meaning": "general, shogun; General officer"
+    },
+    {
+      "question": "傷害",
+      "answer": [
+        "しょうがい"
+      ],
+      "meaning": "wound, injury, accident, casualty; assault, inflicting bodily injury"
+    },
+    {
+      "question": "除脳",
+      "answer": [
+        "じょのう"
+      ],
+      "meaning": "decerebration"
+    },
+    {
+      "question": "除虫菊",
+      "answer": [
+        "じょちゅうぎく"
+      ],
+      "meaning": "Dalmatian chrysanthemum (Tanacetum cinerariifolium), Dalmatian pyrethrum, Dalmatian pellitory"
+    },
+    {
+      "question": "除感作",
+      "answer": [
+        "じょかんさ"
+      ],
+      "meaning": "(immunological) desensitization"
+    },
+    {
+      "question": "女性化",
+      "answer": [
+        "じょせいか"
+      ],
+      "meaning": "feminization, feminisation"
+    },
+    {
+      "question": "女性",
+      "answer": [
+        "じょせい",
+        "にょしょう"
+      ],
+      "meaning": "woman, female; feminine gender; Woman"
+    },
+    {
+      "question": "助産",
+      "answer": [
+        "じょさん"
+      ],
+      "meaning": "midwifery"
+    },
+    {
+      "question": "助酵素",
+      "answer": [
+        "じょこうそ"
+      ],
+      "meaning": "coenzyme"
+    },
+    {
+      "question": "初潮",
+      "answer": [
+        "しょちょう"
+      ],
+      "meaning": "first menstruation"
+    },
+    {
+      "question": "処置",
+      "answer": [
+        "しょち"
+      ],
+      "meaning": "measure, step, dealing with; medical treatment"
+    },
+    {
+      "question": "春機発動期",
+      "answer": [
+        "しゅんきはつどうき"
+      ],
+      "meaning": "puberty"
+    },
+    {
+      "question": "春化処理",
+      "answer": [
+        "しゅんかしょり"
+      ],
+      "meaning": "vernalization"
+    },
+    {
+      "question": "術野",
+      "answer": [
+        "じゅつや"
+      ],
+      "meaning": "operating field, operative field, surgical field"
+    },
+    {
+      "question": "縮重",
+      "answer": [
+        "しゅくじゅう"
+      ],
+      "meaning": "degeneracy"
+    },
+    {
+      "question": "汚水",
+      "answer": [
+        "おすい"
+      ],
+      "meaning": "filthy water, sewage"
+    },
+    {
+      "question": "銃創",
+      "answer": [
+        "じゅうそう"
+      ],
+      "meaning": "gunshot wound; Ballistic trauma"
+    },
+    {
+      "question": "重複",
+      "answer": [
+        "ちょうふく",
+        "じゅうふく"
+      ],
+      "meaning": "duplication, repetition, overlapping, redundancy, restoration"
+    },
+    {
+      "question": "悪阻",
+      "answer": [
+        "つわり",
+        "おそ"
+      ],
+      "meaning": "morning sickness, hyperemesis gravidarum"
+    },
+    {
+      "question": "重合体",
+      "answer": [
+        "じゅうごうたい"
+      ],
+      "meaning": "polymer; Polymer"
+    },
+    {
+      "question": "重感染",
+      "answer": [
+        "じゅうかんせん"
+      ],
+      "meaning": "coinfection; Coinfection"
+    },
+    {
+      "question": "十二指腸虫",
+      "answer": [
+        "じゅうにしちょうちゅう"
+      ],
+      "meaning": "hookworm"
+    },
+    {
+      "question": "充填",
+      "answer": [
+        "じゅうてん"
+      ],
+      "meaning": "filling (up), replenishing, filling in (tooth), loading (gun with ammunition, camera with film, etc.), packing, plugging"
+    },
+    {
+      "question": "住血吸虫",
+      "answer": [
+        "じゅうけつきゅうちゅう"
+      ],
+      "meaning": "blood fluke (any fluke of family Schistosomatidae), schistosome"
+    },
+    {
+      "question": "醜語症",
+      "answer": [
+        "しゅうごしょう"
+      ],
+      "meaning": "coprolalia, uncontrollable use of obscene language"
+    },
+    {
+      "question": "集落",
+      "answer": [
+        "しゅうらく"
+      ],
+      "meaning": "settlement, village, community, town; (bacterial) colony; Human settlement"
+    },
+    {
+      "question": "臭気",
+      "answer": [
+        "しゅうき"
+      ],
+      "meaning": "bad smell, stink"
+    },
+    {
+      "question": "終板",
+      "answer": [
+        "しゅうばん"
+      ],
+      "meaning": "end plate"
+    },
+    {
+      "question": "樹状細胞",
+      "answer": [
+        "じゅじょうさいぼう"
+      ],
+      "meaning": "dendritic cell; Dendritic cell"
+    },
+    {
+      "question": "温覚",
+      "answer": [
+        "おんかく"
+      ],
+      "meaning": "sense of warmth"
+    },
+    {
+      "question": "音響外傷",
+      "answer": [
+        "おんきょうがいしょう"
+      ],
+      "meaning": "acoustic trauma; Noise-induced hearing loss"
+    },
+    {
+      "question": "温血動物",
+      "answer": [
+        "おんけつどうぶつ"
+      ],
+      "meaning": "warm-blooded animal"
+    },
+    {
+      "question": "温湿布",
+      "answer": [
+        "おんしっぷ"
+      ],
+      "meaning": "hot compress"
+    },
+    {
+      "question": "音痴",
+      "answer": [
+        "おんち"
+      ],
+      "meaning": "tone-deafness, amusia, having no ear for music; tone-deaf, off-key; having no sense (of something), being hopeless (when it comes to something); Tone deafness"
+    },
+    {
+      "question": "手淫",
+      "answer": [
+        "しゅいん"
+      ],
+      "meaning": "masturbation, onanism; Handjob"
+    },
+    {
+      "question": "遮断",
+      "answer": [
+        "しゃだん"
+      ],
+      "meaning": "isolation, cut off, blockade, quarantine, interception, deprivation"
+    },
+    {
+      "question": "社会復帰",
+      "answer": [
+        "しゃかいふっき"
+      ],
+      "meaning": "rehabilitation (in society); Rehabilitation (penology)"
+    },
+    {
+      "question": "疾病",
+      "answer": [
+        "しっぺい"
+      ],
+      "meaning": "illness, disease"
+    },
+    {
+      "question": "湿疹",
+      "answer": [
+        "しっしん"
+      ],
+      "meaning": "eczema, rash"
+    },
+    {
+      "question": "悉無律",
+      "answer": [
+        "しつむりつ"
+      ],
+      "meaning": "all-or-none law, all-or-none-principle"
+    },
+    {
+      "question": "外陰部",
+      "answer": [
+        "がいいんぶ"
+      ],
+      "meaning": "pudenda, external genitalia; Vulva"
+    },
+    {
+      "question": "失調",
+      "answer": [
+        "しっちょう"
+      ],
+      "meaning": "lack of harmony, lack of balance, lack of coordination, malfunction; ataxia; Ataxia"
+    },
+    {
+      "question": "自由意志",
+      "answer": [
+        "じゆういし"
+      ],
+      "meaning": "free will; Free will"
+    },
+    {
+      "question": "自然免疫",
+      "answer": [
+        "しぜんめんえき"
+      ],
+      "meaning": "natural immunity"
+    },
+    {
+      "question": "自然増加",
+      "answer": [
+        "しぜんぞうか"
+      ],
+      "meaning": "natural increase"
+    },
+    {
+      "question": "自傷",
+      "answer": [
+        "じしょう"
+      ],
+      "meaning": "self-mutilation, self-injury"
+    },
+    {
+      "question": "自己抑制",
+      "answer": [
+        "じこよくせい"
+      ],
+      "meaning": "self-restraint, self-control, self-repression, abstinence, self-inhibition, autogenic inhibition, autogenous suppression"
+    },
+    {
+      "question": "自己中心",
+      "answer": [
+        "じこちゅうしん"
+      ],
+      "meaning": "selfishness, egotism, egoism, egocentricity"
+    },
+    {
+      "question": "介在配列",
+      "answer": [
+        "かいざいはいれつ"
+      ],
+      "meaning": "intron"
+    },
+    {
+      "question": "自己血輸血",
+      "answer": [
+        "じこけつゆけつ"
+      ],
+      "meaning": "autotransfusion (infusion of one's own blood)"
+    },
+    {
+      "question": "自己移植",
+      "answer": [
+        "じこいしょく"
+      ],
+      "meaning": "autograft"
+    },
+    {
+      "question": "自己愛",
+      "answer": [
+        "じこあい"
+      ],
+      "meaning": "narcissism"
+    },
+    {
+      "question": "自家中毒",
+      "answer": [
+        "じかちゅうどく"
+      ],
+      "meaning": "autotoxemia"
+    },
+    {
+      "question": "自慰",
+      "answer": [
+        "じい"
+      ],
+      "meaning": "masturbation, self consolation"
+    },
+    {
+      "question": "耳茸",
+      "answer": [
+        "じじょう",
+        "みみたけ"
+      ],
+      "meaning": "ear polyp, aural polyp"
+    },
+    {
+      "question": "外傷",
+      "answer": [
+        "がいしょう"
+      ],
+      "meaning": "external wound, (physical) trauma; Trauma (medicine)"
+    },
+    {
+      "question": "痔",
+      "answer": [
+        "じ",
+        "ぢ"
+      ],
+      "meaning": "hemorrhoids, piles; Hemorrhoid"
+    },
+    {
+      "question": "改善",
+      "answer": [
+        "かいぜん"
+      ],
+      "meaning": "betterment, improvement; kaizen (Japanese business philosophy of continuous improvement); Kaizen"
+    },
+    {
+      "question": "事例研究",
+      "answer": [
+        "じれいけんきゅう"
+      ],
+      "meaning": "case studies"
+    },
+    {
+      "question": "回想",
+      "answer": [
+        "かいそう"
+      ],
+      "meaning": "recollection, retrospection, reflection, reminiscence"
+    },
+    {
+      "question": "咳嗽",
+      "answer": [
+        "がいそう"
+      ],
+      "meaning": "cough, coughing; Cough"
+    },
+    {
+      "question": "解像力",
+      "answer": [
+        "かいぞうりょく"
+      ],
+      "meaning": "resolving power (of a lens)"
+    },
+    {
+      "question": "外側溝",
+      "answer": [
+        "がいそくこう"
+      ],
+      "meaning": "lateral sulcus (brain structure), Sylvian fissure, lateral fissure; Lateral sulcus"
+    },
+    {
+      "question": "歯周病",
+      "answer": [
+        "ししゅうびょう"
+      ],
+      "meaning": "periodontal disease; Periodontitis"
+    },
+    {
+      "question": "雌雄淘汰",
+      "answer": [
+        "しゆうとうた"
+      ],
+      "meaning": "sexual selection"
+    },
+    {
+      "question": "雌雄異株",
+      "answer": [
+        "しゆういしゅ"
+      ],
+      "meaning": "dioecy, dioecism"
+    },
+    {
+      "question": "雌性",
+      "answer": [
+        "しせい"
+      ],
+      "meaning": "female"
+    },
+    {
+      "question": "試料",
+      "answer": [
+        "しりょう"
+      ],
+      "meaning": "sample, specimen, test piece"
+    },
+    {
+      "question": "解糖",
+      "answer": [
+        "かいとう"
+      ],
+      "meaning": "glycolysis"
+    },
+    {
+      "question": "視神経交叉",
+      "answer": [
+        "ししんけいこうさ"
+      ],
+      "meaning": "optic chiasma, optic chiasm"
+    },
+    {
+      "question": "視覚野",
+      "answer": [
+        "しかくや"
+      ],
+      "meaning": "visual area (of the brain), visual cortex; Visual cortex"
+    },
+    {
+      "question": "脂漏性皮膚炎",
+      "answer": [
+        "しろうせいひふえん"
+      ],
+      "meaning": "seborrheic dermatitis, seborrheic eczema"
+    },
+    {
+      "question": "脂漏",
+      "answer": [
+        "しろう"
+      ],
+      "meaning": "seborrhea, seborrhoea"
+    },
+    {
+      "question": "脂肪滴",
+      "answer": [
+        "しぼうてき"
+      ],
+      "meaning": "lipid droplet"
+    },
+    {
+      "question": "開腹",
+      "answer": [
+        "かいふく"
+      ],
+      "meaning": "making a surgical incision in the abdomen"
+    },
+    {
+      "question": "糸状菌",
+      "answer": [
+        "しじょうきん"
+      ],
+      "meaning": "filamentous fungus"
+    },
+    {
+      "question": "死毒",
+      "answer": [
+        "しどく"
+      ],
+      "meaning": "ptomaine poisoning"
+    },
+    {
+      "question": "壊変毎秒",
+      "answer": [
+        "かいへんまいびょう"
+      ],
+      "meaning": "decays per second, disintegrations per second, dps"
+    },
+    {
+      "question": "開放骨折",
+      "answer": [
+        "かいほうこっせつ"
+      ],
+      "meaning": "open fracture"
+    },
+    {
+      "question": "海綿質",
+      "answer": [
+        "かいめんしつ"
+      ],
+      "meaning": "spongin"
+    },
+    {
+      "question": "子宮頸",
+      "answer": [
+        "しきゅうけい"
+      ],
+      "meaning": "uterine cervix"
+    },
+    {
+      "question": "界面張力",
+      "answer": [
+        "かいめんちょうりょく"
+      ],
+      "meaning": "interfacial tension"
+    },
+    {
+      "question": "子宮内膜癌",
+      "answer": [
+        "しきゅうないまくがん"
+      ],
+      "meaning": "endometrial cancer"
+    },
+    {
+      "question": "快楽原則",
+      "answer": [
+        "かいらくげんそく"
+      ],
+      "meaning": "pleasure principle (psychology); Pleasure principle (psychology)"
+    },
+    {
+      "question": "子宮筋腫",
+      "answer": [
+        "しきゅうきんしゅ"
+      ],
+      "meaning": "fibroid, uterine myoma; Uterine fibroid"
+    },
+    {
+      "question": "姿勢",
+      "answer": [
+        "しせい"
+      ],
+      "meaning": "posture, pose, position, stance, carriage (of the body); attitude, approach, stance; Human positions"
+    },
+    {
+      "question": "四診",
+      "answer": [
+        "ししん"
+      ],
+      "meaning": "the four examinations (in Chinese medicine: seeing, hearing, asking, touching)"
+    },
+    {
+      "question": "刺絡",
+      "answer": [
+        "しらく"
+      ],
+      "meaning": "bloodletting"
+    },
+    {
+      "question": "刺青",
+      "answer": [
+        "いれずみ",
+        "しせい"
+      ],
+      "meaning": "tattoo, tattooing; Tattoo"
+    },
+    {
+      "question": "刺激伝導系",
+      "answer": [
+        "しげきでんどうけい"
+      ],
+      "meaning": "impulse conduction system (of the heart); Electrical conduction system of the heart"
+    },
+    {
+      "question": "酸素添加酵素",
+      "answer": [
+        "さんそてんかこうそ"
+      ],
+      "meaning": "oxygenase; Oxygenase"
+    },
+    {
+      "question": "酸素供給",
+      "answer": [
+        "さんそきょうきゅう"
+      ],
+      "meaning": "oxygen supply"
+    },
+    {
+      "question": "酸性白土",
+      "answer": [
+        "さんせいはくど"
+      ],
+      "meaning": "(Japanese) acid clay"
+    },
+    {
+      "question": "酸性血症",
+      "answer": [
+        "さんせいけつしょう"
+      ],
+      "meaning": "acidosis"
+    },
+    {
+      "question": "酸化還元酵素",
+      "answer": [
+        "さんかかんげんこうそ"
+      ],
+      "meaning": "oxidoreductase; Oxidoreductase"
+    },
+    {
+      "question": "産児制限",
+      "answer": [
+        "さんじせいげん"
+      ],
+      "meaning": "birth control"
+    },
+    {
+      "question": "化学伝達物質",
+      "answer": [
+        "かがくでんたつぶっしつ"
+      ],
+      "meaning": "chemical messenger"
+    },
+    {
+      "question": "山岳病",
+      "answer": [
+        "さんがくびょう"
+      ],
+      "meaning": "altitude sickness"
+    },
+    {
+      "question": "三日麻疹",
+      "answer": [
+        "みっかばしか"
+      ],
+      "meaning": "rubella, German measles, three day measles"
+    },
+    {
+      "question": "三尖弁",
+      "answer": [
+        "さんせんべん"
+      ],
+      "meaning": "tricuspid valve; Tricuspid valve"
+    },
+    {
+      "question": "三重水素",
+      "answer": [
+        "さんじゅうすいそ"
+      ],
+      "meaning": "tritium; Tritium"
+    },
+    {
+      "question": "過換気症候群",
+      "answer": [
+        "かかんきしょうこうぐん"
+      ],
+      "meaning": "hyperventilation syndrome; Hyperventilation"
+    },
+    {
+      "question": "三叉神経",
+      "answer": [
+        "さんさしんけい"
+      ],
+      "meaning": "trigeminal nerve; Trigeminal nerve"
+    },
+    {
+      "question": "過期産",
+      "answer": [
+        "かきさん"
+      ],
+      "meaning": "post-term delivery, postmature delivery"
+    },
+    {
+      "question": "雑種細胞",
+      "answer": [
+        "ざっしゅさいぼう"
+      ],
+      "meaning": "hybrid cell"
+    },
+    {
+      "question": "雑音",
+      "answer": [
+        "ざつおん"
+      ],
+      "meaning": "noise (usu. unpleasant); interference (e.g. radio), static, noise; gossip, irresponsible criticism"
+    },
+    {
+      "question": "殺真菌薬",
+      "answer": [
+        "さつしんきんやく"
+      ],
+      "meaning": "fungicide"
+    },
+    {
+      "question": "加虐性愛",
+      "answer": [
+        "かぎゃくせいあい"
+      ],
+      "meaning": "sadism"
+    },
+    {
+      "question": "殺菌剤",
+      "answer": [
+        "さっきんざい"
+      ],
+      "meaning": "disinfectant, germicide"
+    },
+    {
+      "question": "殺菌",
+      "answer": [
+        "さっきん"
+      ],
+      "meaning": "sterilization, sterilisation, disinfection; Sterilization (microbiology)"
+    },
+    {
+      "question": "撮像",
+      "answer": [
+        "さつぞう"
+      ],
+      "meaning": "taking a picture, taking an image, imaging"
+    },
+    {
+      "question": "在郷軍人病",
+      "answer": [
+        "ざいごうぐんじんびょう"
+      ],
+      "meaning": "Legionnaires' disease"
+    },
+    {
+      "question": "細胞器官",
+      "answer": [
+        "さいぼうきかん"
+      ],
+      "meaning": "organelle"
+    },
+    {
+      "question": "細動脈",
+      "answer": [
+        "さいどうみゃく"
+      ],
+      "meaning": "arteriole; Arteriole"
+    },
+    {
+      "question": "細糸期",
+      "answer": [
+        "さいしき"
+      ],
+      "meaning": "leptotene"
+    },
+    {
+      "question": "彩度",
+      "answer": [
+        "さいど"
+      ],
+      "meaning": "chroma, chroma saturation, color saturation (colour); Colorfulness"
+    },
+    {
+      "question": "最頻値",
+      "answer": [
+        "さいひんち"
+      ],
+      "meaning": "mode; Mode (statistics)"
+    },
+    {
+      "question": "角質",
+      "answer": [
+        "かくしつ"
+      ],
+      "meaning": "keratin, corneum, cuticle, collagen, horny substance"
+    },
+    {
+      "question": "最低血圧",
+      "answer": [
+        "さいていけつあつ"
+      ],
+      "meaning": "diastolic blood pressure, minimal blood pressure"
+    },
+    {
+      "question": "最小自乗法",
+      "answer": [
+        "さいしょうじじょうほう"
+      ],
+      "meaning": "least-squares method"
+    },
+    {
+      "question": "最高血圧",
+      "answer": [
+        "さいこうけつあつ"
+      ],
+      "meaning": "systolic blood pressure"
+    },
+    {
+      "question": "覚醒",
+      "answer": [
+        "かくせい"
+      ],
+      "meaning": "waking up, awakening, arousal, revival; disillusion, disillusionment, awakening (figurative)"
+    },
+    {
+      "question": "覚醒剤",
+      "answer": [
+        "かくせいざい"
+      ],
+      "meaning": "stimulant (e.g. psychoactive drugs like methamphetamine, ritalin, etc.); Stimulant"
+    },
+    {
+      "question": "再帰熱",
+      "answer": [
+        "さいきねつ"
+      ],
+      "meaning": "recurrent fever"
+    },
+    {
+      "question": "催眠薬",
+      "answer": [
+        "さいみんやく"
+      ],
+      "meaning": "sleeping medicine"
+    },
+    {
+      "question": "催眠術",
+      "answer": [
+        "さいみんじゅつ"
+      ],
+      "meaning": "hypnotism"
+    },
+    {
+      "question": "催奇性",
+      "answer": [
+        "さいきせい"
+      ],
+      "meaning": "teratogenicity"
+    },
+    {
+      "question": "挫滅症候群",
+      "answer": [
+        "ざめつしょうこうぐん"
+      ],
+      "meaning": "crush syndrome; Crush syndrome"
+    },
+    {
+      "question": "坐薬",
+      "answer": [
+        "ざやく"
+      ],
+      "meaning": "suppository"
+    },
+    {
+      "question": "拡張期",
+      "answer": [
+        "かくちょうき"
+      ],
+      "meaning": "diastole"
+    },
+    {
+      "question": "左心補助循環装置",
+      "answer": [
+        "さしんほじょじゅんかんそうち"
+      ],
+      "meaning": "left ventricular assist device, LVAD"
+    },
+    {
+      "question": "隔壁",
+      "answer": [
+        "かくへき"
+      ],
+      "meaning": "barrier wall, bulkhead, partition, septum, diaphragm"
+    },
+    {
+      "question": "核崩壊",
+      "answer": [
+        "かくほうかい"
+      ],
+      "meaning": "disintegration of a cell nucleus"
+    },
+    {
+      "question": "隔膜",
+      "answer": [
+        "かくまく"
+      ],
+      "meaning": "partition, diaphragm"
+    },
+    {
+      "question": "骨伝導",
+      "answer": [
+        "こつでんどう"
+      ],
+      "meaning": "bone conduction, osteophony; Bone conduction"
+    },
+    {
+      "question": "角膜銀行",
+      "answer": [
+        "かくまくぎんこう"
+      ],
+      "meaning": "eye bank"
+    },
+    {
+      "question": "骨端症",
+      "answer": [
+        "こったんしょう"
+      ],
+      "meaning": "epiphysiopathy"
+    },
+    {
+      "question": "骨増殖体",
+      "answer": [
+        "こつぞうしょくたい"
+      ],
+      "meaning": "bone spur, osteophyte"
+    },
+    {
+      "question": "骨関節症",
+      "answer": [
+        "こつかんせつしょう"
+      ],
+      "meaning": "osteoarthritis"
+    },
+    {
+      "question": "核融合",
+      "answer": [
+        "かくゆうごう"
+      ],
+      "meaning": "nuclear fusion"
+    },
+    {
+      "question": "確率標本",
+      "answer": [
+        "かくりつひょうほん"
+      ],
+      "meaning": "random sample"
+    },
+    {
+      "question": "骨炎",
+      "answer": [
+        "こつえん"
+      ],
+      "meaning": "osteitis; Osteitis"
+    },
+    {
+      "question": "架工義歯",
+      "answer": [
+        "かこうぎし"
+      ],
+      "meaning": "bridge (dentistry), bridgework"
+    },
+    {
+      "question": "黒死病",
+      "answer": [
+        "こくしびょう"
+      ],
+      "meaning": "plague, Black Death"
+    },
+    {
+      "question": "黒化",
+      "answer": [
+        "こっか"
+      ],
+      "meaning": "blackening"
+    },
+    {
+      "question": "国民健康保険",
+      "answer": [
+        "こくみんけんこうほけん"
+      ],
+      "meaning": "national health insurance; National Health Insurance (Japan)"
+    },
+    {
+      "question": "国際放射線防護委員会",
+      "answer": [
+        "こくさいほうしゃせんぼうごいいんかい"
+      ],
+      "meaning": "International Commission on Radiological Protection, ICRP; International Commission on Radiological Protection"
+    },
+    {
+      "question": "過酸化脂質",
+      "answer": [
+        "かさんかししつ"
+      ],
+      "meaning": "fatty acid peroxides"
+    },
+    {
+      "question": "国際電気標準会議",
+      "answer": [
+        "こくさいでんきひょうじゅんかいぎ"
+      ],
+      "meaning": "International Electrotechnical Commission, IEC; International Electrotechnical Commission"
+    },
+    {
+      "question": "国際単位系",
+      "answer": [
+        "こくさいたんいけい"
+      ],
+      "meaning": "International System of Units, SI; International System of Units"
+    },
+    {
+      "question": "餓死",
+      "answer": [
+        "がし",
+        "がしん"
+      ],
+      "meaning": "(death from) starvation, starving to death"
+    },
+    {
+      "question": "可視光線",
+      "answer": [
+        "かしこうせん"
+      ],
+      "meaning": "visible ray; Visible spectrum"
+    },
+    {
+      "question": "高麗人参",
+      "answer": [
+        "こうらいにんじん"
+      ],
+      "meaning": "Asian ginseng (Panax ginseng)"
+    },
+    {
+      "question": "加湿",
+      "answer": [
+        "かしつ"
+      ],
+      "meaning": "humidification"
+    },
+    {
+      "question": "高所病",
+      "answer": [
+        "こうしょびょう"
+      ],
+      "meaning": "altitude sickness"
+    },
+    {
+      "question": "高血圧",
+      "answer": [
+        "こうけつあつ"
+      ],
+      "meaning": "high blood pressure, hypertension; Hypertension"
+    },
+    {
+      "question": "下垂",
+      "answer": [
+        "かすい"
+      ],
+      "meaning": "drooping, hanging down"
+    },
+    {
+      "question": "降圧薬",
+      "answer": [
+        "こうあつやく"
+      ],
+      "meaning": "antihypertensive, hypotensive drug, blood pressure-lowering medicine"
+    },
+    {
+      "question": "鉱質",
+      "answer": [
+        "こうしつ"
+      ],
+      "meaning": "mineral"
+    },
+    {
+      "question": "絞扼",
+      "answer": [
+        "こうやく"
+      ],
+      "meaning": "strangulation, constriction, entrapment"
+    },
+    {
+      "question": "紅斑性狼瘡",
+      "answer": [
+        "こうはんせいろうそう"
+      ],
+      "meaning": "lupus erythematosus"
+    },
+    {
+      "question": "硬化",
+      "answer": [
+        "こうか"
+      ],
+      "meaning": "hardening, vulcanization, vulcanisation, sclerosis, curing; hardening (of attitude, stance, etc.), stiffening, toughening; upturn (in the market), firming up; Curing (chemistry)"
+    },
+    {
+      "question": "仮性近視",
+      "answer": [
+        "かせいきんし"
+      ],
+      "meaning": "false shortsightedness, pseudomyopia"
+    },
+    {
+      "question": "抗痙攣薬",
+      "answer": [
+        "こうけいれんやく"
+      ],
+      "meaning": "anticonvulsant"
+    },
+    {
+      "question": "抗不安薬",
+      "answer": [
+        "こうふあんやく"
+      ],
+      "meaning": "anti-anxiety agent, anti-anxiety drug; Anxiolytic"
+    },
+    {
+      "question": "抗精神病薬",
+      "answer": [
+        "こうせいしんびょうやく"
+      ],
+      "meaning": "antipsychotic drug; Antipsychotic"
+    },
+    {
+      "question": "仮説検定",
+      "answer": [
+        "かせつけんてい"
+      ],
+      "meaning": "hypothesis testing, hypothesis test; Statistical hypothesis testing"
+    },
+    {
+      "question": "抗癌剤",
+      "answer": [
+        "こうがんざい"
+      ],
+      "meaning": "anticancer drug"
+    },
+    {
+      "question": "家族性痙性対麻痺",
+      "answer": [
+        "かぞくせいけいせいたいまひ"
+      ],
+      "meaning": "familial spastic paraplegia"
+    },
+    {
+      "question": "恒常性",
+      "answer": [
+        "こうじょうせい"
+      ],
+      "meaning": "homeostasis, homoeostasis; constancy; Homeostasis"
+    },
+    {
+      "question": "恒温器",
+      "answer": [
+        "こうおんき"
+      ],
+      "meaning": "incubator"
+    },
+    {
+      "question": "向上",
+      "answer": [
+        "こうじょう"
+      ],
+      "meaning": "elevation, rise, improvement, advancement, progress"
+    },
+    {
+      "question": "口吻",
+      "answer": [
+        "こうふん"
+      ],
+      "meaning": "way of speaking, intimation; lips, mouth, snout, proboscis"
+    },
+    {
+      "question": "口蹄疫",
+      "answer": [
+        "こうていえき"
+      ],
+      "meaning": "foot-and-mouth disease, hoof-and-mouth disease; Foot-and-mouth disease"
+    },
+    {
+      "question": "光線療法",
+      "answer": [
+        "こうせんりょうほう"
+      ],
+      "meaning": "phototherapy"
+    },
+    {
+      "question": "光合成",
+      "answer": [
+        "こうごうせい"
+      ],
+      "meaning": "photosynthesis; Photosynthesis"
+    },
+    {
+      "question": "交尾",
+      "answer": [
+        "こうび"
+      ],
+      "meaning": "copulation (in animals); Mating"
+    },
+    {
+      "question": "交叉",
+      "answer": [
+        "こうさ"
+      ],
+      "meaning": "crossing, intersection; (genetic) crossing over"
+    },
+    {
+      "question": "誤嚥性肺炎",
+      "answer": [
+        "ごえんせいはいえん"
+      ],
+      "meaning": "aspiration pneumonia"
+    },
+    {
+      "question": "誤差分布",
+      "answer": [
+        "ごさぶんぷ"
+      ],
+      "meaning": "error distribution"
+    },
+    {
+      "question": "誤飲",
+      "answer": [
+        "ごいん"
+      ],
+      "meaning": "accidental ingestion, swallowing something by mistake"
+    },
+    {
+      "question": "活性酢酸",
+      "answer": [
+        "かっせいさくさん"
+      ],
+      "meaning": "active acetate"
+    },
+    {
+      "question": "活性部位",
+      "answer": [
+        "かっせいぶい"
+      ],
+      "meaning": "active site; Active site"
+    },
+    {
+      "question": "後房",
+      "answer": [
+        "こうぼう"
+      ],
+      "meaning": "deutomerite, posterior sac, posterior chamber; women's quarters at the rear of a house"
+    },
+    {
+      "question": "割線",
+      "answer": [
+        "かっせん"
+      ],
+      "meaning": "secant line"
+    },
+    {
+      "question": "葛藤",
+      "answer": [
+        "かっとう",
+        "つづらふじ"
+      ],
+      "meaning": "conflict, complication, troubles, discord; Chinese moonseed (Sinomenium acutum); complex inter-relationship (as in the struggle between two types of vine over one piece of land)"
+    },
+    {
+      "question": "後産",
+      "answer": [
+        "あとざん",
+        "のちざん"
+      ],
+      "meaning": "placenta, afterbirth, secundina"
+    },
+    {
+      "question": "後臼歯",
+      "answer": [
+        "こうきゅうし"
+      ],
+      "meaning": "molar"
+    },
+    {
+      "question": "五十肩",
+      "answer": [
+        "ごじゅうかた"
+      ],
+      "meaning": "stiff shoulders (owing to age); frozen shoulder; Adhesive capsulitis of shoulder"
+    },
+    {
+      "question": "果糖",
+      "answer": [
+        "かとう"
+      ],
+      "meaning": "fructose, fruit sugar"
+    },
+    {
+      "question": "枯草菌",
+      "answer": [
+        "こそうきん"
+      ],
+      "meaning": "hay bacillus (Bacillus subtilis), grass bacillus; Bacillus subtilis"
+    },
+    {
+      "question": "固定観念",
+      "answer": [
+        "こていかんねん"
+      ],
+      "meaning": "fixed idea, idee fixe, stereotype, prejudice"
+    },
+    {
+      "question": "呼吸停止",
+      "answer": [
+        "こきゅうていし"
+      ],
+      "meaning": "cessation of breathing, respiratory arrest"
+    },
+    {
+      "question": "呼吸鎖",
+      "answer": [
+        "こきゅうさ"
+      ],
+      "meaning": "respiratory chain"
+    },
+    {
+      "question": "化膿性肉芽腫",
+      "answer": [
+        "かのうせいにくがしゅ",
+        "かのうせいにくげしゅ"
+      ],
+      "meaning": "pyogenic granuloma"
+    },
+    {
+      "question": "限局性腸炎",
+      "answer": [
+        "げんきょくせいちょうえん"
+      ],
+      "meaning": "regional enteritis"
+    },
+    {
+      "question": "限局性回腸炎",
+      "answer": [
+        "げんきょくせいかいちょうえん"
+      ],
+      "meaning": "localized ileitis, regional ileitis"
+    },
+    {
+      "question": "言語野",
+      "answer": [
+        "げんごや"
+      ],
+      "meaning": "language area of the cortex, speech centre (center)"
+    },
+    {
+      "question": "株",
+      "answer": [
+        "かぶ",
+        "くい",
+        "かぶた",
+        "くいぜ",
+        "くいせ",
+        "しゅ"
+      ],
+      "meaning": "stock, share; stump; root, rootstock; strain (of bacteria, etc.); tradeable rank, goodwill; one's forte; stake, post, pile, picket; stump; stump; useless item; stump; stump; counter for trees"
+    },
+    {
+      "question": "言語新作",
+      "answer": [
+        "げんごしんさく"
+      ],
+      "meaning": "neologism (esp. medical)"
+    },
+    {
+      "question": "減数分裂",
+      "answer": [
+        "げんすうぶんれつ"
+      ],
+      "meaning": "meiosis; Meiosis"
+    },
+    {
+      "question": "減圧症",
+      "answer": [
+        "げんあつしょう"
+      ],
+      "meaning": "decompression sickness, the bends; Decompression sickness"
+    },
+    {
+      "question": "減圧",
+      "answer": [
+        "げんあつ"
+      ],
+      "meaning": "decompression"
+    },
+    {
+      "question": "幻肢",
+      "answer": [
+        "げんし"
+      ],
+      "meaning": "phantom limb; Phantom limb"
+    },
+    {
+      "question": "原発性側索硬化症",
+      "answer": [
+        "げんぱつせいそくさこうかしょう"
+      ],
+      "meaning": "primary lateral sclerosis, PLS"
+    },
+    {
+      "question": "花粉症",
+      "answer": [
+        "かふんしょう"
+      ],
+      "meaning": "hay fever, pollinosis (allergy to pollen); Allergic rhinitis"
+    },
+    {
+      "question": "原爆症",
+      "answer": [
+        "げんばくしょう"
+      ],
+      "meaning": "atomic-bomb sickness, symptoms of radiation sickness caused by an atomic-bomb (i.e. high fever, nausea), illness caused by atomic-bomb radiation exposure (e.g. leukemia, malignant tumors); Effects of nuclear explosions on human health"
+    },
+    {
+      "question": "原核細胞",
+      "answer": [
+        "げんかくさいぼう"
+      ],
+      "meaning": "prokaryotic cell"
+    },
+    {
+      "question": "顕性",
+      "answer": [
+        "けんせい"
+      ],
+      "meaning": "dominance"
+    },
+    {
+      "question": "肩幅",
+      "answer": [
+        "かたはば"
+      ],
+      "meaning": "shoulder width (breadth)"
+    },
+    {
+      "question": "検痰",
+      "answer": [
+        "けんたん"
+      ],
+      "meaning": "sputum test"
+    },
+    {
+      "question": "検便",
+      "answer": [
+        "けんべん"
+      ],
+      "meaning": "stool (feces) examination; Stool test"
+    },
+    {
+      "question": "検尿",
+      "answer": [
+        "けんにょう"
+      ],
+      "meaning": "urinalysis"
+    },
+    {
+      "question": "検案",
+      "answer": [
+        "けんあん"
+      ],
+      "meaning": "autopsy"
+    },
+    {
+      "question": "健忘",
+      "answer": [
+        "けんぼう"
+      ],
+      "meaning": "forgetfulness; Amnesia"
+    },
+    {
+      "question": "健保",
+      "answer": [
+        "けんぽ"
+      ],
+      "meaning": "health insurance"
+    },
+    {
+      "question": "月経痛",
+      "answer": [
+        "げっけいつう"
+      ],
+      "meaning": "menstrual pain, menstrual cramps, algomenorrhea"
+    },
+    {
+      "question": "月経前緊張症",
+      "answer": [
+        "げっけいぜんきんちょうしょう"
+      ],
+      "meaning": "premenstrual tension, PMT"
+    },
+    {
+      "question": "血瘤",
+      "answer": [
+        "けつりゅう"
+      ],
+      "meaning": "hematocele"
+    },
+    {
+      "question": "血漿瀉血",
+      "answer": [
+        "けっしょうしゃけつ"
+      ],
+      "meaning": "plasmapheresis"
+    },
+    {
+      "question": "血流",
+      "answer": [
+        "けつりゅう"
+      ],
+      "meaning": "blood flow; Blood flow"
+    },
+    {
+      "question": "血統",
+      "answer": [
+        "けっとう"
+      ],
+      "meaning": "lineage, pedigree, family line, birth"
+    },
+    {
+      "question": "血沈",
+      "answer": [
+        "けっちん"
+      ],
+      "meaning": "sedimentation (rate) of blood cells"
+    },
+    {
+      "question": "血族結婚",
+      "answer": [
+        "けつぞくけっこん"
+      ],
+      "meaning": "consanguineous marriage"
+    },
+    {
+      "question": "血族",
+      "answer": [
+        "けつぞく"
+      ],
+      "meaning": "blood relative"
+    },
+    {
+      "question": "血色素計",
+      "answer": [
+        "けっしきそけい"
+      ],
+      "meaning": "hemoglobinometer, haemoglobinometer"
+    },
+    {
+      "question": "血色素",
+      "answer": [
+        "けっしきそ"
+      ],
+      "meaning": "blood pigment (e.g. haemoglobin)"
+    },
+    {
+      "question": "血小板無力症",
+      "answer": [
+        "けっしょうばんむりょくしょう"
+      ],
+      "meaning": "thrombasthenia"
+    },
+    {
+      "question": "血小板凝集",
+      "answer": [
+        "けっしょうばんぎょうしゅう"
+      ],
+      "meaning": "platelet aggregation, thrombocyte"
+    },
+    {
+      "question": "血行",
+      "answer": [
+        "けっこう"
+      ],
+      "meaning": "circulation (of the blood)"
+    },
+    {
+      "question": "血液凝固因子",
+      "answer": [
+        "けつえきぎょうこいんし"
+      ],
+      "meaning": "blood coagulation factor"
+    },
+    {
+      "question": "結腸癌",
+      "answer": [
+        "けっちょうがん"
+      ],
+      "meaning": "colon cancer"
+    },
+    {
+      "question": "結腸炎",
+      "answer": [
+        "けっちょうえん"
+      ],
+      "meaning": "colitis"
+    },
+    {
+      "question": "結節腫",
+      "answer": [
+        "けっせつしゅ"
+      ],
+      "meaning": "ganglion"
+    },
+    {
+      "question": "癌",
+      "answer": [
+        "がん"
+      ],
+      "meaning": "cancer"
+    },
+    {
+      "question": "肝移植",
+      "answer": [
+        "かんいしょく"
+      ],
+      "meaning": "liver transplant"
+    },
+    {
+      "question": "結核菌",
+      "answer": [
+        "けっかくきん"
+      ],
+      "meaning": "tubercle bacillus, tuberculosis germ; Mycobacterium tuberculosis"
+    },
+    {
+      "question": "結核",
+      "answer": [
+        "けっかく"
+      ],
+      "meaning": "tuberculosis, tubercule; Tuberculosis"
+    },
+    {
+      "question": "穴",
+      "answer": [
+        "あな",
+        "けつ"
+      ],
+      "meaning": "hole; deficit, shortage, missing person (in a team, meeting, etc.); vacancy, opening; flaw; profitable place (or item, etc.) not well known by others; upset victory (with a large payoff); pit (of a theater); hiding place; underbelly (of society, etc.); ass, arse, buttocks; rear, end; acupuncture point; hole, notch; Buttocks"
+    },
+    {
+      "question": "乾咳",
+      "answer": [
+        "からせき",
+        "からぜき"
+      ],
+      "meaning": "dry cough, hacking cough; intentional cough (i.e. to get someone's attention)"
+    },
+    {
+      "question": "系図",
+      "answer": [
+        "けいず"
+      ],
+      "meaning": "family tree, pedigree, genealogy; Pedigree chart"
+    },
+    {
+      "question": "系",
+      "answer": [
+        "けい"
+      ],
+      "meaning": "system, lineage, group; corollary; system (range of strata that correspond to a particular time period); (taxonomical) series"
+    },
+    {
+      "question": "形態",
+      "answer": [
+        "けいたい"
+      ],
+      "meaning": "form, shape, figure; Shape"
+    },
+    {
+      "question": "空胞化",
+      "answer": [
+        "くうほうか"
+      ],
+      "meaning": "vacuolation, vacuolization"
+    },
+    {
+      "question": "眼球銀行",
+      "answer": [
+        "がんきゅうぎんこう"
+      ],
+      "meaning": "eye bank"
+    },
+    {
+      "question": "空調",
+      "answer": [
+        "くうちょう"
+      ],
+      "meaning": "air conditioning"
+    },
+    {
+      "question": "空気感染",
+      "answer": [
+        "くうきかんせん"
+      ],
+      "meaning": "air-borne infection"
+    },
+    {
+      "question": "空気汚染",
+      "answer": [
+        "くうきおせん"
+      ],
+      "meaning": "air pollution"
+    },
+    {
+      "question": "近親婚",
+      "answer": [
+        "きんしんこん"
+      ],
+      "meaning": "consanguineous marriage"
+    },
+    {
+      "question": "近親交配",
+      "answer": [
+        "きんしんこうはい"
+      ],
+      "meaning": "inbreeding; Inbreeding"
+    },
+    {
+      "question": "筋膜",
+      "answer": [
+        "きんまく"
+      ],
+      "meaning": "fascia; Fascia"
+    },
+    {
+      "question": "筋痛",
+      "answer": [
+        "きんつう"
+      ],
+      "meaning": "myalgia, muscular pain"
+    },
+    {
+      "question": "筋注",
+      "answer": [
+        "きんちゅう"
+      ],
+      "meaning": "intramuscular injection"
+    },
+    {
+      "question": "筋細胞",
+      "answer": [
+        "きんさいぼう"
+      ],
+      "meaning": "muscle cell"
+    },
+    {
+      "question": "筋原線維",
+      "answer": [
+        "きんげんせんい"
+      ],
+      "meaning": "myofibril"
+    },
+    {
+      "question": "筋緊張性頭痛",
+      "answer": [
+        "きんきんちょうせいずつう"
+      ],
+      "meaning": "muscle-contraction headache, tension headache"
+    },
+    {
+      "question": "筋緊張",
+      "answer": [
+        "きんきんちょう"
+      ],
+      "meaning": "muscle tone, muscular tone; myotonia"
+    },
+    {
+      "question": "筋覚",
+      "answer": [
+        "きんかく"
+      ],
+      "meaning": "muscle sense"
+    },
+    {
+      "question": "筋",
+      "answer": [
+        "すじ",
+        "きん"
+      ],
+      "meaning": "muscle, tendon, sinew; vein, artery; fiber, fibre, string; line, stripe, streak; reason, logic; plot, storyline; lineage, descent; school (e.g. of scholarship or arts); aptitude, talent; source (of information, etc.), circle, channel; well-informed person (in a transaction); logical move (in go, shogi, etc.); ninth vertical line; seam on a helmet; gristly fish paste (made of muscle, tendons, skin, etc.); social position, status; on (a river, road, etc.), along; counter for long thin things, counter for roads or blocks when giving directions; (Edo period) counter for hundreds of mon (obsolete unit of currency); Suji; muscle"
+    },
+    {
+      "question": "禁断症状",
+      "answer": [
+        "きんだんしょうじょう"
+      ],
+      "meaning": "withdrawal symptoms, abstinence syndrome"
+    },
+    {
+      "question": "局方",
+      "answer": [
+        "きょくほう"
+      ],
+      "meaning": "Japanese Pharmacopeia"
+    },
+    {
+      "question": "局部床義歯",
+      "answer": [
+        "きょくぶしょうぎし"
+      ],
+      "meaning": "partial denture; Removable partial denture"
+    },
+    {
+      "question": "還元分裂",
+      "answer": [
+        "かんげんぶんれつ"
+      ],
+      "meaning": "meiosis"
+    },
+    {
+      "question": "眼瞼閉鎖反射",
+      "answer": [
+        "がんけんへいさはんしゃ"
+      ],
+      "meaning": "blink reflex"
+    },
+    {
+      "question": "甘汞",
+      "answer": [
+        "かんこう"
+      ],
+      "meaning": "calomel (mercury chloride)"
+    },
+    {
+      "question": "凝縮",
+      "answer": [
+        "ぎょうしゅく"
+      ],
+      "meaning": "condensation (of ideas, emotions, etc.); condensation (of a vapour or gas)"
+    },
+    {
+      "question": "鏡像体",
+      "answer": [
+        "きょうぞうたい"
+      ],
+      "meaning": "enantiomer"
+    },
+    {
+      "question": "癌細胞",
+      "answer": [
+        "がんさいぼう"
+      ],
+      "meaning": "cancer cell"
+    },
+    {
+      "question": "胸水",
+      "answer": [
+        "きょうすい"
+      ],
+      "meaning": "pleural fluid; Pleural effusion"
+    },
+    {
+      "question": "狭窄",
+      "answer": [
+        "きょうさく"
+      ],
+      "meaning": "stricture, stenosis, contraction"
+    },
+    {
+      "question": "狂信者",
+      "answer": [
+        "きょうしんしゃ"
+      ],
+      "meaning": "religious fanatic"
+    },
+    {
+      "question": "恐水病",
+      "answer": [
+        "きょうすいびょう"
+      ],
+      "meaning": "hydrophobia"
+    },
+    {
+      "question": "強直",
+      "answer": [
+        "きょうちょく"
+      ],
+      "meaning": "rigidity, uprightness; Ankylosis"
+    },
+    {
+      "question": "強直",
+      "answer": [
+        "きょうちょく"
+      ],
+      "meaning": "rigidity, uprightness; Ankylosis"
+    },
+    {
+      "question": "共重合体",
+      "answer": [
+        "きょうじゅうごうたい"
+      ],
+      "meaning": "copolymer, interpolymer"
+    },
+    {
+      "question": "共感",
+      "answer": [
+        "きょうかん"
+      ],
+      "meaning": "sympathy, empathy, response; Empathy"
+    },
+    {
+      "question": "許容量",
+      "answer": [
+        "きょようりょう"
+      ],
+      "meaning": "maximum permissible level or dosage"
+    },
+    {
+      "question": "巨大分子",
+      "answer": [
+        "きょだいぶんし"
+      ],
+      "meaning": "macromolecule"
+    },
+    {
+      "question": "救急自動車",
+      "answer": [
+        "きゅうきゅうじどうしゃ"
+      ],
+      "meaning": "ambulance"
+    },
+    {
+      "question": "吸引性肺炎",
+      "answer": [
+        "きゅういんせいはいえん"
+      ],
+      "meaning": "aspiration pneumonia"
+    },
+    {
+      "question": "含水炭素",
+      "answer": [
+        "がんすいたんそ"
+      ],
+      "meaning": "carbohydrate"
+    },
+    {
+      "question": "間性",
+      "answer": [
+        "かんせい"
+      ],
+      "meaning": "intersex"
+    },
+    {
+      "question": "逆転写酵素",
+      "answer": [
+        "ぎゃくてんしゃこうそ"
+      ],
+      "meaning": "reverse transcriptase; Reverse transcriptase"
+    },
+    {
+      "question": "吃逆",
+      "answer": [
+        "しゃっくり"
+      ],
+      "meaning": "hiccough, hiccup"
+    },
+    {
+      "question": "吃",
+      "answer": [
+        "チー"
+      ],
+      "meaning": "forming a chow by picking up a tile discarded by another player"
+    },
+    {
+      "question": "偽薬",
+      "answer": [
+        "ぎやく"
+      ],
+      "meaning": "inactive placebo, placebo; Placebo"
+    },
+    {
+      "question": "偽妊娠",
+      "answer": [
+        "ぎにんしん"
+      ],
+      "meaning": "false pregnancy, phantom pregnancy, pseudopregnancy"
+    },
+    {
+      "question": "偽足",
+      "answer": [
+        "ぎそく"
+      ],
+      "meaning": "pseudopodium, pseudopod (temporary protrusion of an ameboid cell)"
+    },
+    {
+      "question": "輝線",
+      "answer": [
+        "きせん"
+      ],
+      "meaning": "bright line"
+    },
+    {
+      "question": "気腫疽菌",
+      "answer": [
+        "きしゅそきん"
+      ],
+      "meaning": "Clostridium chauvoei (bacteria that causes blackleg)"
+    },
+    {
+      "question": "帰還",
+      "answer": [
+        "きかん"
+      ],
+      "meaning": "repatriation, return; (electrical) feedback"
+    },
+    {
+      "question": "機嫌",
+      "answer": [
+        "きげん"
+      ],
+      "meaning": "humour, humor, temper, mood, spirits; safety, health, well-being, one's situation; in a good mood, in high spirits, happy, cheery, merry, chipper"
+    },
+    {
+      "question": "機会的浮動",
+      "answer": [
+        "きかいてきふどう"
+      ],
+      "meaning": "random drift, genetic drift"
+    },
+    {
+      "question": "既視感",
+      "answer": [
+        "きしかん"
+      ],
+      "meaning": "deja vu; Déjà vu"
+    },
+    {
+      "question": "既往症",
+      "answer": [
+        "きおうしょう"
+      ],
+      "meaning": "medical history, anamnesis"
+    },
+    {
+      "question": "含嗽",
+      "answer": [
+        "がんそう",
+        "うがい"
+      ],
+      "meaning": "gargling, rinsing one's mouth"
+    },
+    {
+      "question": "乾燥血漿",
+      "answer": [
+        "かんそうけっしょう"
+      ],
+      "meaning": "dried plasma"
+    },
+    {
+      "question": "奇胎",
+      "answer": [
+        "きたい"
+      ],
+      "meaning": "anxiety, concern, (secret) fear; (hydatidiform) mole"
+    },
+    {
+      "question": "基本音",
+      "answer": [
+        "きほんおん"
+      ],
+      "meaning": "fundamental tone, fundamental note"
+    },
+    {
+      "question": "間代",
+      "answer": [
+        "まだい"
+      ],
+      "meaning": "room rent"
+    },
+    {
+      "question": "危険率",
+      "answer": [
+        "きけんりつ"
+      ],
+      "meaning": "risk ratio, percentage of risk, hazard rate; significance level, level of significance"
+    },
+    {
+      "question": "危険因子",
+      "answer": [
+        "きけんいんし"
+      ],
+      "meaning": "risk factor"
+    },
+    {
+      "question": "顔面骨",
+      "answer": [
+        "がんめんこつ"
+      ],
+      "meaning": "facial bone"
+    },
+    {
+      "question": "眼底出血",
+      "answer": [
+        "がんていしゅっけつ"
+      ],
+      "meaning": "hemorrage in the fundus of the eye"
+    },
+    {
+      "question": "冠動脈",
+      "answer": [
+        "かんどうみゃく"
+      ],
+      "meaning": "coronary artery"
+    },
+    {
+      "question": "肝不全",
+      "answer": [
+        "かんふぜん"
+      ],
+      "meaning": "liver failure; Liver failure"
+    },
+    {
+      "question": "緩和時間",
+      "answer": [
+        "かんわじかん"
+      ],
+      "meaning": "relaxation time; Relaxation (physics)"
+    },
+    {
+      "question": "感冒",
+      "answer": [
+        "かんぼう"
+      ],
+      "meaning": "cold (illness)"
+    },
+    {
+      "question": "感応",
+      "answer": [
+        "かんのう",
+        "かんおう"
+      ],
+      "meaning": "inspiration, divine response, sympathy, induction"
+    },
+    {
+      "question": "乾酪化",
+      "answer": [
+        "かんらくか"
+      ],
+      "meaning": "caseation"
+    },
+    {
+      "question": "格子",
+      "answer": [
+        "こうし"
+      ],
+      "meaning": "lattice, latticework, window bars, grid, grating; Latticework"
+    },
+    {
+      "question": "下水溝",
+      "answer": [
+        "げすいこう"
+      ],
+      "meaning": "drainage ditch, canal"
+    },
+    {
+      "question": "下血",
+      "answer": [
+        "げけつ"
+      ],
+      "meaning": "bloody bowel discharge"
+    },
+    {
+      "question": "粟粒結核",
+      "answer": [
+        "ぞくりゅうけっかく"
+      ],
+      "meaning": "miliary tuberculosis"
+    }
+  ]
+}
