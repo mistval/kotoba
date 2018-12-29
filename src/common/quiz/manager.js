@@ -294,9 +294,12 @@ class ShowAnswersAction extends Action {
 
     const inputAsInt = parseInt(input);
     if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
+      if (!Number.isNaN(inputAsInt)) {
+        input = `${inputAsInt}`;
+      }
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
-        return this.getSession_().tryAcceptAnswer(userId, userName, `${inputAsInt}`);
+        return this.getSession_().tryAcceptAnswer(userId, userName, input);
       }
     }
 
@@ -350,9 +353,12 @@ class AskQuestionAction extends Action {
 
     const inputAsInt = parseInt(input);
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
+      if (!Number.isNaN(inputAsInt)) {
+        input = `${inputAsInt}`;
+      }
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
-        const accepted = session.tryAcceptAnswer(userId, userName, `${inputAsInt}`);
+        const accepted = session.tryAcceptAnswer(userId, userName, input);
         this.fulfill_(new ShowAnswersAction(session, timeLeft));
         return accepted;
       }
