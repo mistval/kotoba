@@ -220,7 +220,7 @@ function tryCreateDeckFromRawData(data, uri) {
 
       const card = {
         question,
-        answer: answers.split('/'),
+        answer: answers.split('/').filter(a => a),
       };
 
       if (meaning) {
