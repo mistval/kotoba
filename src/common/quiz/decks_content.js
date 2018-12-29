@@ -9,7 +9,7 @@ const categoryFields = [
   {name: 'JLPT Listening Decks (audio) (under construction)', value: 'LN3 LN2 LN1'},
   {name: 'Kanken Kanji Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
   {name: 'Listening Vocabulary Decks (audio)', value: 'LVN5 LVN4 LVN3 LVN2 LVN1 LV10k LV9k LV8k LV7k LV6k LV5k LV4k LV3k LVj2k LV2k LVj1k LV1k'},
-  {name: '用語 decks', value: 'pasokon rikagaku kenchiku igaku '}
+  {name: '用語 decks', value: 'pasokon rikagaku kenchiku igaku '},
   {name: 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures countries'},
   {name: 'Mother Nature Decks (not for the faint of heart)', value: 'animals birds bugs fish plants vegetables'},
   {name: 'Kana Decks', value: 'hiragana katakana'},
