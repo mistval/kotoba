@@ -1,0 +1,7175 @@
+{
+  "uniqueId": "houritsu",
+  "name": "Legal Terms Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Meaning",
+  "cards": [
+    {
+      "question": "国際労働機関",
+      "answer": [
+        "こくさいろうどうきかん"
+      ],
+      "meaning": "International Labor Organization, ILO; International Labor Organization (ILO); International Labour Organization"
+    },
+    {
+      "question": "自由裁量",
+      "answer": [
+        "じゆうさいりょう"
+      ],
+      "meaning": "latitude, (at one's) discretion, discretionary powers, a free hand"
+    },
+    {
+      "question": "青色申告",
+      "answer": [
+        "あおいろしんこく"
+      ],
+      "meaning": "blue return, blue-paper income-tax return, type of income tax return filing which allows for special income deductions"
+    },
+    {
+      "question": "善意",
+      "answer": [
+        "ぜんい"
+      ],
+      "meaning": "virtuous mind; good intentions, good will; positive mindset; bona fides, good faith"
+    },
+    {
+      "question": "瑕疵担保責任",
+      "answer": [
+        "かしたんぽせきにん"
+      ],
+      "meaning": "warranty against defects"
+    },
+    {
+      "question": "請負",
+      "answer": [
+        "うけおい"
+      ],
+      "meaning": "contract (for work), contracting, undertaking"
+    },
+    {
+      "question": "表現の自由",
+      "answer": [
+        "ひょうげんのじゆう"
+      ],
+      "meaning": "freedom of expression; Freedom of speech"
+    },
+    {
+      "question": "原因において自由な行為",
+      "answer": [
+        "げんいんにおいてじゆうなこうい"
+      ],
+      "meaning": "actio libera in causa, manufacturing the conditions of one's own defence (e.g. getting drunk in order to commit a crime)"
+    },
+    {
+      "question": "収賄罪",
+      "answer": [
+        "しゅうわいざい"
+      ],
+      "meaning": "(the crime of) bribery"
+    },
+    {
+      "question": "実印",
+      "answer": [
+        "じついん"
+      ],
+      "meaning": "officially registered seal"
+    },
+    {
+      "question": "賄賂",
+      "answer": [
+        "わいろ"
+      ],
+      "meaning": "bribe, sweetener, douceur; Bribery"
+    },
+    {
+      "question": "おとり捜査",
+      "answer": [
+        "おとりそうさ"
+      ],
+      "meaning": "sting operation, undercover investigation; Sting operation"
+    },
+    {
+      "question": "見せ金",
+      "answer": [
+        "みせがね"
+      ],
+      "meaning": "displaying money (to prove that one actually has it)"
+    },
+    {
+      "question": "和議",
+      "answer": [
+        "わぎ"
+      ],
+      "meaning": "peace conference, peace negotiations"
+    },
+    {
+      "question": "環境アセスメント",
+      "answer": [
+        "かんきょうアセスメント"
+      ],
+      "meaning": "environmental impact assessment; Environmental impact assessment"
+    },
+    {
+      "question": "給付",
+      "answer": [
+        "きゅうふ"
+      ],
+      "meaning": "payment, provision, benefit, present, delivery; performance"
+    },
+    {
+      "question": "環境権",
+      "answer": [
+        "かんきょうけん"
+      ],
+      "meaning": "environment right"
+    },
+    {
+      "question": "斡旋",
+      "answer": [
+        "あっせん"
+      ],
+      "meaning": "kind offices, services, through the good offices of, influence; intercession, mediation"
+    },
+    {
+      "question": "アドオン方式",
+      "answer": [
+        "アドオンほうしき"
+      ],
+      "meaning": "add-on"
+    },
+    {
+      "question": "和解",
+      "answer": [
+        "わかい",
+        "わげ"
+      ],
+      "meaning": "reconciliation, amicable settlement, accommodation, compromise, mediation, rapprochement; court-mediated settlement; translation of a foreign language into Japanese; Conciliation"
+    },
+    {
+      "question": "論告",
+      "answer": [
+        "ろんこく"
+      ],
+      "meaning": "prosecutor's closing argument"
+    },
+    {
+      "question": "科料",
+      "answer": [
+        "かりょう"
+      ],
+      "meaning": "minor fine"
+    },
+    {
+      "question": "暖簾",
+      "answer": [
+        "のれん",
+        "のうれん",
+        "のんれん"
+      ],
+      "meaning": "(short) curtain hung at shop entrance, split curtain used to divide spaces in a house; reputation (of a store), good name, credit; goodwill; Noren"
+    },
+    {
+      "question": "老人福祉法",
+      "answer": [
+        "ろうじんふくしほう"
+      ],
+      "meaning": "elderly welfare law"
+    },
+    {
+      "question": "老人福祉施設",
+      "answer": [
+        "ろうじんふくししせつ"
+      ],
+      "meaning": "nursing home, welfare facility for the elderly; Retirement home"
+    },
+    {
+      "question": "御目見得",
+      "answer": [
+        "おめみえ"
+      ],
+      "meaning": "(the privilege to have) an audience (with one's lord, a dignitary, etc.), interview (with one's superior); one's debut (first) appearance, debut (of a new product, work of art, actor, etc.); trial service (of a servant)"
+    },
+    {
+      "question": "嘱託殺人",
+      "answer": [
+        "しょくたくさつじん"
+      ],
+      "meaning": "contract murder"
+    },
+    {
+      "question": "順法闘争",
+      "answer": [
+        "じゅんぽうとうそう"
+      ],
+      "meaning": "labor slowdown, labour slowdown"
+    },
+    {
+      "question": "安全保障会議",
+      "answer": [
+        "あんぜんほしょうかいぎ"
+      ],
+      "meaning": "Security Council of Japan; Security Council (Japan)"
+    },
+    {
+      "question": "安全保障理事会",
+      "answer": [
+        "あんぜんほしょうりじかい"
+      ],
+      "meaning": "(UN) Security Council"
+    },
+    {
+      "question": "安定多数",
+      "answer": [
+        "あんていたすう"
+      ],
+      "meaning": "stable majority"
+    },
+    {
+      "question": "労働者派遣法",
+      "answer": [
+        "ろうどうしゃはけんほう"
+      ],
+      "meaning": "Temporary Staffing Services Law"
+    },
+    {
+      "question": "労働基準法",
+      "answer": [
+        "ろうどうきじゅんほう"
+      ],
+      "meaning": "Labor Standards Act; Labor Standards Act of 1947"
+    },
+    {
+      "question": "被保険者",
+      "answer": [
+        "ひほけんしゃ"
+      ],
+      "meaning": "insured person"
+    },
+    {
+      "question": "労働者",
+      "answer": [
+        "ろうどうしゃ"
+      ],
+      "meaning": "employee, worker; laborer (labourer), blue-collar worker"
+    },
+    {
+      "question": "委員会",
+      "answer": [
+        "いいんかい"
+      ],
+      "meaning": "committee, commission, board, panel, committee meeting; Committee"
+    },
+    {
+      "question": "執行機関",
+      "answer": [
+        "しっこうきかん"
+      ],
+      "meaning": "executive committee or organ"
+    },
+    {
+      "question": "府",
+      "answer": [
+        "ふ"
+      ],
+      "meaning": "(metropolitan) prefecture (of Osaka and Kyoto); the centre or seat (of) (center); (government) office"
+    },
+    {
+      "question": "外局",
+      "answer": [
+        "がいきょく"
+      ],
+      "meaning": "external bureau"
+    },
+    {
+      "question": "労働基本権",
+      "answer": [
+        "ろうどうきほんけん"
+      ],
+      "meaning": "basic labor rights, basic workers' rights; Labor rights"
+    },
+    {
+      "question": "労働災害",
+      "answer": [
+        "ろうどうさいがい"
+      ],
+      "meaning": "work-related injury or death; Work accident"
+    },
+    {
+      "question": "労働権",
+      "answer": [
+        "ろうどうけん"
+      ],
+      "meaning": "the right to work"
+    },
+    {
+      "question": "労働基本権",
+      "answer": [
+        "ろうどうきほんけん"
+      ],
+      "meaning": "basic labor rights, basic workers' rights; Labor rights"
+    },
+    {
+      "question": "降任",
+      "answer": [
+        "こうにん"
+      ],
+      "meaning": "demotion"
+    },
+    {
+      "question": "異議",
+      "answer": [
+        "いぎ"
+      ],
+      "meaning": "objection, dissent, protest"
+    },
+    {
+      "question": "労働関係調整法",
+      "answer": [
+        "ろうどうかんけいちょうせいほう"
+      ],
+      "meaning": "labor relations adjustment law (labour)"
+    },
+    {
+      "question": "遺棄罪",
+      "answer": [
+        "いきざい"
+      ],
+      "meaning": "abandonment"
+    },
+    {
+      "question": "行政不服審査法",
+      "answer": [
+        "ぎょうせいふふくしんさほう"
+      ],
+      "meaning": "Administrative Appeal Act (1962), Administrative Complaint Investigation Law; Administrative Appeal Act"
+    },
+    {
+      "question": "労働委員会",
+      "answer": [
+        "ろうどういいんかい"
+      ],
+      "meaning": "labor-relations board, labour-relations board"
+    },
+    {
+      "question": "育児休業",
+      "answer": [
+        "いくじきゅうぎょう"
+      ],
+      "meaning": "childcare leave, leave taken after the compulsory maternity leave; Parental leave"
+    },
+    {
+      "question": "雇用保険",
+      "answer": [
+        "こようほけん"
+      ],
+      "meaning": "unemployment insurance, employment insurance; Unemployment benefits"
+    },
+    {
+      "question": "基準地価",
+      "answer": [
+        "きじゅんちか"
+      ],
+      "meaning": "benchmark land price (used to assess fixed-property taxes)"
+    },
+    {
+      "question": "連帯保証",
+      "answer": [
+        "れんたいほしょう"
+      ],
+      "meaning": "joint liability on guarantee"
+    },
+    {
+      "question": "連帯債務",
+      "answer": [
+        "れんたいさいむ"
+      ],
+      "meaning": "joint liability"
+    },
+    {
+      "question": "連鎖倒産",
+      "answer": [
+        "れんさとうさん"
+      ],
+      "meaning": "chain-reaction bankruptcy, chain bankruptcy"
+    },
+    {
+      "question": "遺言",
+      "answer": [
+        "ゆいごん",
+        "いごん",
+        "いげん"
+      ],
+      "meaning": "will, testament, last request; Will (law)"
+    },
+    {
+      "question": "遺言執行者",
+      "answer": [
+        "ゆいごんしっこうしゃ"
+      ],
+      "meaning": "executor"
+    },
+    {
+      "question": "検認",
+      "answer": [
+        "けんにん"
+      ],
+      "meaning": "probate; validation, certification, accreditation"
+    },
+    {
+      "question": "期間",
+      "answer": [
+        "きかん"
+      ],
+      "meaning": "period, term, interval"
+    },
+    {
+      "question": "相続税",
+      "answer": [
+        "そうぞくぜい"
+      ],
+      "meaning": "inheritance tax, death duty; Inheritance tax"
+    },
+    {
+      "question": "累犯",
+      "answer": [
+        "るいはん"
+      ],
+      "meaning": "repeated offense, repeated offence; Recidivism"
+    },
+    {
+      "question": "累積投票",
+      "answer": [
+        "るいせきとうひょう"
+      ],
+      "meaning": "cumulative voting"
+    },
+    {
+      "question": "契約",
+      "answer": [
+        "けいやく"
+      ],
+      "meaning": "contract, compact, agreement; Contract"
+    },
+    {
+      "question": "税率",
+      "answer": [
+        "ぜいりつ"
+      ],
+      "meaning": "tariff; tax rate; Tax rate"
+    },
+    {
+      "question": "後見",
+      "answer": [
+        "こうけん"
+      ],
+      "meaning": "guardianship, guardian; (theatrical) assistant, prompter"
+    },
+    {
+      "question": "重複保険",
+      "answer": [
+        "じゅうふくほけん"
+      ],
+      "meaning": "double insurance"
+    },
+    {
+      "question": "株主総会",
+      "answer": [
+        "かぶぬしそうかい"
+      ],
+      "meaning": "general meeting of stockholders"
+    },
+    {
+      "question": "会期",
+      "answer": [
+        "かいき"
+      ],
+      "meaning": "session (of a legislature)"
+    },
+    {
+      "question": "意思能力",
+      "answer": [
+        "いしのうりょく"
+      ],
+      "meaning": "mental capacity"
+    },
+    {
+      "question": "禁治産者",
+      "answer": [
+        "きんちさんしゃ"
+      ],
+      "meaning": "(legally) incompetent individual"
+    },
+    {
+      "question": "風致地区",
+      "answer": [
+        "ふうちちく"
+      ],
+      "meaning": "scenic zone, landscape area"
+    },
+    {
+      "question": "領土",
+      "answer": [
+        "りょうど"
+      ],
+      "meaning": "dominion, territory, possession"
+    },
+    {
+      "question": "領置",
+      "answer": [
+        "りょうち"
+      ],
+      "meaning": "retention, keeping in custody (e.g. of a court)"
+    },
+    {
+      "question": "受取書",
+      "answer": [
+        "うけとりしょ"
+      ],
+      "meaning": "receipt (document)"
+    },
+    {
+      "question": "領事",
+      "answer": [
+        "りょうじ"
+      ],
+      "meaning": "consul; Consul (representative)"
+    },
+    {
+      "question": "領空侵犯",
+      "answer": [
+        "りょうくうしんぱん"
+      ],
+      "meaning": "airspace incursion, airspace violation"
+    },
+    {
+      "question": "領空",
+      "answer": [
+        "りょうくう"
+      ],
+      "meaning": "territorial airspace; Airspace"
+    },
+    {
+      "question": "領海",
+      "answer": [
+        "りょうかい"
+      ],
+      "meaning": "territorial waters; Territorial waters"
+    },
+    {
+      "question": "意思表示",
+      "answer": [
+        "いしひょうじ"
+      ],
+      "meaning": "declaration of intent, declaration of intention, expression of one's intention, manifestation of intention; Intention"
+    },
+    {
+      "question": "医師法",
+      "answer": [
+        "いしほう"
+      ],
+      "meaning": "medical practitioner's law"
+    },
+    {
+      "question": "慰謝料",
+      "answer": [
+        "いしゃりょう"
+      ],
+      "meaning": "consolation money, solatium, reparation, damages, settlement"
+    },
+    {
+      "question": "意匠権",
+      "answer": [
+        "いしょうけん"
+      ],
+      "meaning": "design right, right(s) to a design; Design right"
+    },
+    {
+      "question": "交換",
+      "answer": [
+        "こうかん"
+      ],
+      "meaning": "exchange, interchange, switching, reciprocity, barter, substitution, replacement, clearing (of checks, cheques)"
+    },
+    {
+      "question": "二院制",
+      "answer": [
+        "にいんせい"
+      ],
+      "meaning": "bicameral system"
+    },
+    {
+      "question": "両院協議会",
+      "answer": [
+        "りょういんきょうぎかい"
+      ],
+      "meaning": "joint committee of both houses"
+    },
+    {
+      "question": "定足数",
+      "answer": [
+        "ていそくすう"
+      ],
+      "meaning": "quorum; Quorum"
+    },
+    {
+      "question": "旅行業法",
+      "answer": [
+        "りょこうぎょうほう"
+      ],
+      "meaning": "Travel Agency Act"
+    },
+    {
+      "question": "留保",
+      "answer": [
+        "りゅうほ"
+      ],
+      "meaning": "reserving, withholding; Reservation (law)"
+    },
+    {
+      "question": "遺族給付",
+      "answer": [
+        "いぞくきゅうふ"
+      ],
+      "meaning": "survivor's benefit"
+    },
+    {
+      "question": "流質",
+      "answer": [
+        "りゅうしち"
+      ],
+      "meaning": "forfeiting a pawned article"
+    },
+    {
+      "question": "略取",
+      "answer": [
+        "りゃくしゅ"
+      ],
+      "meaning": "abduction, kidnapping"
+    },
+    {
+      "question": "略式命令",
+      "answer": [
+        "りゃくしきめいれい"
+      ],
+      "meaning": "summary order"
+    },
+    {
+      "question": "命令",
+      "answer": [
+        "めいれい"
+      ],
+      "meaning": "order, command, decree, directive; (software) instruction, statement; Command"
+    },
+    {
+      "question": "過失",
+      "answer": [
+        "かしつ"
+      ],
+      "meaning": "error, blunder, accident; fault, defect; Negligence"
+    },
+    {
+      "question": "議院内閣制",
+      "answer": [
+        "ぎいんないかくせい"
+      ],
+      "meaning": "parliamentary system of government; Parliamentary system"
+    },
+    {
+      "question": "立木",
+      "answer": [
+        "たちき",
+        "りゅうぼく"
+      ],
+      "meaning": "standing tree, standing timber"
+    },
+    {
+      "question": "借入金",
+      "answer": [
+        "かりいれきん"
+      ],
+      "meaning": "loan, loan payable, debt"
+    },
+    {
+      "question": "立入り",
+      "answer": [
+        "たちいり"
+      ],
+      "meaning": "entering, going into"
+    },
+    {
+      "question": "立証責任",
+      "answer": [
+        "りっしょうせきにん"
+      ],
+      "meaning": "burden of proof"
+    },
+    {
+      "question": "立候補",
+      "answer": [
+        "りっこうほ"
+      ],
+      "meaning": "announcing candidacy, becoming a candidate, bidding (to host an event e.g. Olympics, World Cup)"
+    },
+    {
+      "question": "政体",
+      "answer": [
+        "せいたい"
+      ],
+      "meaning": "form of government, system of government, polity; Polity"
+    },
+    {
+      "question": "一人会社",
+      "answer": [
+        "いちにんかいしゃ"
+      ],
+      "meaning": "one man company"
+    },
+    {
+      "question": "一人会社",
+      "answer": [
+        "いちにんかいしゃ"
+      ],
+      "meaning": "one man company"
+    },
+    {
+      "question": "律令格式",
+      "answer": [
+        "りつりょうきゃくしき"
+      ],
+      "meaning": "codes of laws and ethics (Tang Code)"
+    },
+    {
+      "question": "自衛隊",
+      "answer": [
+        "じえいたい"
+      ],
+      "meaning": "self-defence force, self-defense force; Japan Self-Defence Force, JSDF; Japan Self-Defense Forces"
+    },
+    {
+      "question": "陸上自衛隊",
+      "answer": [
+        "りくじょうじえいたい"
+      ],
+      "meaning": "Japan Ground Self-Defense Force, JGSDF; Japan Ground Self-Defense Force"
+    },
+    {
+      "question": "離職",
+      "answer": [
+        "りしょく"
+      ],
+      "meaning": "employment separation, leaving one's job, losing one's job"
+    },
+    {
+      "question": "戸籍法",
+      "answer": [
+        "こせきほう"
+      ],
+      "meaning": "Family Registration Law"
+    },
+    {
+      "question": "財産分与",
+      "answer": [
+        "ざいさんぶんよ"
+      ],
+      "meaning": "distribution of property"
+    },
+    {
+      "question": "一部保険",
+      "answer": [
+        "いちぶほけん"
+      ],
+      "meaning": "under-insurance"
+    },
+    {
+      "question": "離婚",
+      "answer": [
+        "りこん"
+      ],
+      "meaning": "divorce; Divorce"
+    },
+    {
+      "question": "人",
+      "answer": [
+        "ひと",
+        "じん",
+        "にん",
+        "たり",
+        "り",
+        "と"
+      ],
+      "meaning": "man, person; human being, mankind, people; human (Homo sapiens), humans as a species; character, personality; man of talent, true man; another person, other people, others; adult; -ian (e.g. Italian), -ite (e.g. Tokyoite); -er (e.g. performer, etc.), person working with ...; man, person, people; counter for people; person; person"
+    },
+    {
+      "question": "満期",
+      "answer": [
+        "まんき"
+      ],
+      "meaning": "expiration (of a term), maturity (e.g. investment), serving one's (full) time"
+    },
+    {
+      "question": "離縁",
+      "answer": [
+        "りえん"
+      ],
+      "meaning": "divorce, dissolution of adoption"
+    },
+    {
+      "question": "裏書",
+      "answer": [
+        "うらがき"
+      ],
+      "meaning": "endorsement, proof, note on back of the scroll; Endorsement"
+    },
+    {
+      "question": "不法行為",
+      "answer": [
+        "ふほうこうい"
+      ],
+      "meaning": "tort, illegal act, illegal activity, offence, offense; Tort"
+    },
+    {
+      "question": "否認",
+      "answer": [
+        "ひにん"
+      ],
+      "meaning": "denial, negation, repudiation, disapproval"
+    },
+    {
+      "question": "理事",
+      "answer": [
+        "りじ"
+      ],
+      "meaning": "director, trustee"
+    },
+    {
+      "question": "履行不能",
+      "answer": [
+        "りこうふのう"
+      ],
+      "meaning": "unenforceability, impossibility of performance"
+    },
+    {
+      "question": "逸脱",
+      "answer": [
+        "いつだつ"
+      ],
+      "meaning": "deviation, departure; omission; Deviance (sociology)"
+    },
+    {
+      "question": "債務不履行",
+      "answer": [
+        "さいむふりこう"
+      ],
+      "meaning": "default on a debt; Default (finance)"
+    },
+    {
+      "question": "履行遅滞",
+      "answer": [
+        "りこうちたい"
+      ],
+      "meaning": "delay in performance, procrastination of execution"
+    },
+    {
+      "question": "民約論",
+      "answer": [
+        "みんやくろん"
+      ],
+      "meaning": "social-contract theory"
+    },
+    {
+      "question": "一般会計",
+      "answer": [
+        "いっぱんかいけい"
+      ],
+      "meaning": "general accounting and finance"
+    },
+    {
+      "question": "無記名社債",
+      "answer": [
+        "むきめいしゃさい"
+      ],
+      "meaning": "unregistered bond"
+    },
+    {
+      "question": "利益配当",
+      "answer": [
+        "りえきはいとう"
+      ],
+      "meaning": "dividend, share of profits"
+    },
+    {
+      "question": "抗告",
+      "answer": [
+        "こうこく"
+      ],
+      "meaning": "appeal, protest, complaint; Appeal"
+    },
+    {
+      "question": "親権",
+      "answer": [
+        "しんけん"
+      ],
+      "meaning": "parental authority; Parental responsibility (access and custody)"
+    },
+    {
+      "question": "公法",
+      "answer": [
+        "こうほう"
+      ],
+      "meaning": "public law; Public law"
+    },
+    {
+      "question": "法定準備金",
+      "answer": [
+        "ほうていじゅんびきん"
+      ],
+      "meaning": "legal reserves"
+    },
+    {
+      "question": "先取特権",
+      "answer": [
+        "せんしゅとっけん",
+        "さきどりとっけん"
+      ],
+      "meaning": "statutory lien, preferential right, prior claim"
+    },
+    {
+      "question": "財物",
+      "answer": [
+        "ざいぶつ",
+        "ざいもつ"
+      ],
+      "meaning": "property"
+    },
+    {
+      "question": "頼母子講",
+      "answer": [
+        "たのもしこう"
+      ],
+      "meaning": "mutual financing association"
+    },
+    {
+      "question": "生命保険",
+      "answer": [
+        "せいめいほけん"
+      ],
+      "meaning": "life insurance; Life insurance"
+    },
+    {
+      "question": "縁組",
+      "answer": [
+        "えんぐみ"
+      ],
+      "meaning": "betrothal, wedding, marriage into a family, matrimonial alliance; adoption"
+    },
+    {
+      "question": "一般職",
+      "answer": [
+        "いっぱんしょく"
+      ],
+      "meaning": "clerical position (e.g. in the civil service), general office work"
+    },
+    {
+      "question": "養子",
+      "answer": [
+        "ようし"
+      ],
+      "meaning": "adopted child (usu. male), son-in-law"
+    },
+    {
+      "question": "選挙権",
+      "answer": [
+        "せんきょけん"
+      ],
+      "meaning": "suffrage, the right to vote"
+    },
+    {
+      "question": "第三者のためにする契約",
+      "answer": [
+        "だいさんしゃのためにするけいやく"
+      ],
+      "meaning": "third party beneficiary contract"
+    },
+    {
+      "question": "地役権",
+      "answer": [
+        "ちえきけん"
+      ],
+      "meaning": "easement; Easement"
+    },
+    {
+      "question": "災害派遣",
+      "answer": [
+        "さいがいはけん"
+      ],
+      "meaning": "disaster relief operation, disaster relief mission"
+    },
+    {
+      "question": "治安出動",
+      "answer": [
+        "ちあんしゅつどう"
+      ],
+      "meaning": "public security operation"
+    },
+    {
+      "question": "廃棄物",
+      "answer": [
+        "はいきぶつ"
+      ],
+      "meaning": "waste matter, waste, garbage, trash; Waste"
+    },
+    {
+      "question": "民法典",
+      "answer": [
+        "みんぽうてん"
+      ],
+      "meaning": "Civil Code"
+    },
+    {
+      "question": "用益物権",
+      "answer": [
+        "ようえきぶっけん"
+      ],
+      "meaning": "usufruct"
+    },
+    {
+      "question": "容積率",
+      "answer": [
+        "ようせきりつ"
+      ],
+      "meaning": "floor space index, FSI, floor area ratio, FAR, ratio of building size to lot, plot ratio; Floor area ratio"
+    },
+    {
+      "question": "婚姻",
+      "answer": [
+        "こんいん"
+      ],
+      "meaning": "marriage, matrimony"
+    },
+    {
+      "question": "商行為",
+      "answer": [
+        "しょうこうい"
+      ],
+      "meaning": "commercial transaction"
+    },
+    {
+      "question": "傭船",
+      "answer": [
+        "ようせん"
+      ],
+      "meaning": "chartered ship, chartering or hiring a vessel"
+    },
+    {
+      "question": "予防接種法",
+      "answer": [
+        "よぼうせっしゅほう"
+      ],
+      "meaning": "Preventive Vaccination Law"
+    },
+    {
+      "question": "本予算",
+      "answer": [
+        "ほんよさん"
+      ],
+      "meaning": "main budget"
+    },
+    {
+      "question": "登記",
+      "answer": [
+        "とうき"
+      ],
+      "meaning": "registry, registration"
+    },
+    {
+      "question": "委任",
+      "answer": [
+        "いにん"
+      ],
+      "meaning": "entrusting, charge, delegation, authorization; Delegation"
+    },
+    {
+      "question": "予備",
+      "answer": [
+        "よび"
+      ],
+      "meaning": "reserve, spare; preparation, preliminaries"
+    },
+    {
+      "question": "委任状",
+      "answer": [
+        "いにんじょう"
+      ],
+      "meaning": "commission, proxy, power of attorney, authorization"
+    },
+    {
+      "question": "予定納税",
+      "answer": [
+        "よていのうぜい"
+      ],
+      "meaning": "prepayment of income taxes"
+    },
+    {
+      "question": "予算",
+      "answer": [
+        "よさん"
+      ],
+      "meaning": "estimate, budget; Budget"
+    },
+    {
+      "question": "委任統治",
+      "answer": [
+        "いにんとうち"
+      ],
+      "meaning": "mandate; League of Nations mandate"
+    },
+    {
+      "question": "物",
+      "answer": [
+        "もの",
+        "もん",
+        "ぶつ"
+      ],
+      "meaning": "thing, object, article, stuff, substance; one's things, possessions, property, belongings; things, something, anything, everything, nothing; quality; reason, the way of things; used to emphasize emotion, judgment, etc., used to indicate a common occurrence in the past (after a verb in past tense), used to indicate a general tendency, used to indicate something that should happen; item classified as ..., item related to ..., work of ...; cause of ..., cause for ...; somehow, somewhat, for some reason; really, truly; stock, products; stolen goods, loot, spoils"
+    },
+    {
+      "question": "譲渡",
+      "answer": [
+        "じょうと"
+      ],
+      "meaning": "transfer, assignment, conveyance; Assignment (law)"
+    },
+    {
+      "question": "違法性",
+      "answer": [
+        "いほうせい"
+      ],
+      "meaning": "illegality"
+    },
+    {
+      "question": "有償契約",
+      "answer": [
+        "ゆうしょうけいやく"
+      ],
+      "meaning": "an onerous contract, contract made for a consideration"
+    },
+    {
+      "question": "寄託",
+      "answer": [
+        "きたく"
+      ],
+      "meaning": "deposit, entrusting"
+    },
+    {
+      "question": "法律行為",
+      "answer": [
+        "ほうりつこうい"
+      ],
+      "meaning": "legal action; Legal instrument"
+    },
+    {
+      "question": "株式会社",
+      "answer": [
+        "かぶしきがいしゃ"
+      ],
+      "meaning": "public company, corporation, KK, formula for an incorporated public company"
+    },
+    {
+      "question": "行為",
+      "answer": [
+        "こうい"
+      ],
+      "meaning": "act, deed, conduct"
+    },
+    {
+      "question": "確信犯",
+      "answer": [
+        "かくしんはん"
+      ],
+      "meaning": "crime of conscience; premeditated crime, act carried out while knowing that it should not be"
+    },
+    {
+      "question": "有限会社",
+      "answer": [
+        "ゆうげんがいしゃ"
+      ],
+      "meaning": "limited company, company structure for small businesses, abolished in 2006 (YK)"
+    },
+    {
+      "question": "変造",
+      "answer": [
+        "へんぞう"
+      ],
+      "meaning": "alteration, defacement, debasement, falsification, forgery"
+    },
+    {
+      "question": "従犯",
+      "answer": [
+        "じゅうはん"
+      ],
+      "meaning": "accomplice, complicity"
+    },
+    {
+      "question": "行政指導",
+      "answer": [
+        "ぎょうせいしどう"
+      ],
+      "meaning": "administrative guidance; Administrative guidance"
+    },
+    {
+      "question": "服務",
+      "answer": [
+        "ふくむ"
+      ],
+      "meaning": "duty, public service"
+    },
+    {
+      "question": "優先権",
+      "answer": [
+        "ゆうせんけん"
+      ],
+      "meaning": "priority, preference, preferential right; Priority right"
+    },
+    {
+      "question": "蛸配当",
+      "answer": [
+        "たこはいとう"
+      ],
+      "meaning": "bogus dividend"
+    },
+    {
+      "question": "違約金",
+      "answer": [
+        "いやくきん"
+      ],
+      "meaning": "penalty for contract breach"
+    },
+    {
+      "question": "薬事法",
+      "answer": [
+        "やくじほう"
+      ],
+      "meaning": "(Japanese) Pharmaceutical Affairs Law; Pharmaceutical Affairs Law (Japan)"
+    },
+    {
+      "question": "入会権",
+      "answer": [
+        "いりあいけん"
+      ],
+      "meaning": "common rights"
+    },
+    {
+      "question": "法定利息",
+      "answer": [
+        "ほうていりそく"
+      ],
+      "meaning": "statutory interest, legal interest, interest set by law"
+    },
+    {
+      "question": "相続権",
+      "answer": [
+        "そうぞくけん"
+      ],
+      "meaning": "heirship, (claim) the (right of) succession, one's inheritance rights"
+    },
+    {
+      "question": "相続分",
+      "answer": [
+        "そうぞくぶん"
+      ],
+      "meaning": "share in inheritance, inheritance share, portion of inheritance"
+    },
+    {
+      "question": "遺留分",
+      "answer": [
+        "いりゅうぶん"
+      ],
+      "meaning": "heir's distributive share; Legitime"
+    },
+    {
+      "question": "担保物権",
+      "answer": [
+        "たんぽぶっけん"
+      ],
+      "meaning": "real rights obtained by security"
+    },
+    {
+      "question": "重利",
+      "answer": [
+        "じゅうり"
+      ],
+      "meaning": "compound interest"
+    },
+    {
+      "question": "約束手形",
+      "answer": [
+        "やくそくてがた"
+      ],
+      "meaning": "promissory note; Promissory note"
+    },
+    {
+      "question": "約款",
+      "answer": [
+        "やっかん"
+      ],
+      "meaning": "agreement, stipulation, article, clause"
+    },
+    {
+      "question": "役員",
+      "answer": [
+        "やくいん"
+      ],
+      "meaning": "officer, official, executive, staff"
+    },
+    {
+      "question": "医療過誤",
+      "answer": [
+        "いりょうかご"
+      ],
+      "meaning": "medical malpractice"
+    },
+    {
+      "question": "役員",
+      "answer": [
+        "やくいん"
+      ],
+      "meaning": "officer, official, executive, staff"
+    },
+    {
+      "question": "自然環境保全地域",
+      "answer": [
+        "しぜんかんきょうほぜんちいき"
+      ],
+      "meaning": "nature conservation area"
+    },
+    {
+      "question": "法の下の平等",
+      "answer": [
+        "ほうのもとのびょうどう"
+      ],
+      "meaning": "equality before the law, equality under the law; Equality before the law"
+    },
+    {
+      "question": "運送取扱人",
+      "answer": [
+        "うんそうとりあつかいにん"
+      ],
+      "meaning": "forwarding merchant, freight forwarder"
+    },
+    {
+      "question": "医療法",
+      "answer": [
+        "いりょうほう"
+      ],
+      "meaning": "Medical Service Law (1948)"
+    },
+    {
+      "question": "問屋",
+      "answer": [
+        "とんや",
+        "といや"
+      ],
+      "meaning": "wholesale store, wholesale dealer, wholesaler"
+    },
+    {
+      "question": "医療保険",
+      "answer": [
+        "いりょうほけん"
+      ],
+      "meaning": "medical-care insurance; Health insurance"
+    },
+    {
+      "question": "仲立人",
+      "answer": [
+        "なかだちにん"
+      ],
+      "meaning": "middleman, mediator, go-between; Broker"
+    },
+    {
+      "question": "取次",
+      "answer": [
+        "とりつぎ"
+      ],
+      "meaning": "agency, commission, distributor, intermediation; reception (of guests); conveyance (of messages)"
+    },
+    {
+      "question": "目論見書",
+      "answer": [
+        "もくろみしょ"
+      ],
+      "meaning": "prospectus, offering memorandum; Prospectus (finance)"
+    },
+    {
+      "question": "因果関係",
+      "answer": [
+        "いんがかんけい"
+      ],
+      "meaning": "consequence, causal relationship, nexus"
+    },
+    {
+      "question": "製造物責任",
+      "answer": [
+        "せいぞうぶつせきにん"
+      ],
+      "meaning": "product liability"
+    },
+    {
+      "question": "因果関係",
+      "answer": [
+        "いんがかんけい"
+      ],
+      "meaning": "consequence, causal relationship, nexus"
+    },
+    {
+      "question": "印形",
+      "answer": [
+        "いんぎょう"
+      ],
+      "meaning": "seal, signet"
+    },
+    {
+      "question": "更新",
+      "answer": [
+        "こうしん"
+      ],
+      "meaning": "renewal, update, innovation, improvement; Koushin"
+    },
+    {
+      "question": "親等",
+      "answer": [
+        "しんとう"
+      ],
+      "meaning": "degree of kinship"
+    },
+    {
+      "question": "面接交渉権",
+      "answer": [
+        "めんせつこうしょけん"
+      ],
+      "meaning": "visitation rights, non-custodial parent's right of access"
+    },
+    {
+      "question": "引致",
+      "answer": [
+        "いんち"
+      ],
+      "meaning": "arrest, custody"
+    },
+    {
+      "question": "免責",
+      "answer": [
+        "めんせき"
+      ],
+      "meaning": "exemption from responsibility, disclaimer"
+    },
+    {
+      "question": "陰謀",
+      "answer": [
+        "いんぼう"
+      ],
+      "meaning": "plot, intrigue, scheme; conspiracy, agreement between two or more people to commit an unlawful act"
+    },
+    {
+      "question": "懲戒",
+      "answer": [
+        "ちょうかい"
+      ],
+      "meaning": "discipline, punishment, reprimand"
+    },
+    {
+      "question": "免除",
+      "answer": [
+        "めんじょ"
+      ],
+      "meaning": "exemption, exoneration, discharge"
+    },
+    {
+      "question": "引用",
+      "answer": [
+        "いんよう"
+      ],
+      "meaning": "quotation, citation, reference; Quotation"
+    },
+    {
+      "question": "官僚制",
+      "answer": [
+        "かんりょうせい"
+      ],
+      "meaning": "bureaucracy; Bureaucracy"
+    },
+    {
+      "question": "不動産",
+      "answer": [
+        "ふどうさん"
+      ],
+      "meaning": "real estate"
+    },
+    {
+      "question": "明治憲法",
+      "answer": [
+        "めいじけんぽう"
+      ],
+      "meaning": "Meiji Constitution (Constitution of the Empire of Japan)"
+    },
+    {
+      "question": "命令",
+      "answer": [
+        "めいれい"
+      ],
+      "meaning": "order, command, decree, directive; (software) instruction, statement; Command"
+    },
+    {
+      "question": "名誉毀損",
+      "answer": [
+        "めいよきそん"
+      ],
+      "meaning": "libel, defamation, slander, character assassination; Defamation"
+    },
+    {
+      "question": "文化財保護法",
+      "answer": [
+        "ぶんかざいほごほう"
+      ],
+      "meaning": "Law for the Protection of Cultural Properties (1950)"
+    },
+    {
+      "question": "名義書換",
+      "answer": [
+        "めいぎかきかえ"
+      ],
+      "meaning": "registration of transfer of shares, entry of a change of holders in the register of shareholders"
+    },
+    {
+      "question": "内金",
+      "answer": [
+        "うちきん"
+      ],
+      "meaning": "deposit, money paid on account; bargain money"
+    },
+    {
+      "question": "著作権",
+      "answer": [
+        "ちょさくけん"
+      ],
+      "meaning": "copyright; Copyright"
+    },
+    {
+      "question": "行為能力",
+      "answer": [
+        "こういのうりょく"
+      ],
+      "meaning": "capacity to act, legal capacity"
+    },
+    {
+      "question": "無任所大臣",
+      "answer": [
+        "むにんしょだいじん"
+      ],
+      "meaning": "minister without a portfolio; Minister without portfolio"
+    },
+    {
+      "question": "支配権",
+      "answer": [
+        "しはいけん"
+      ],
+      "meaning": "right of control, supremacy, sovereignty"
+    },
+    {
+      "question": "私権",
+      "answer": [
+        "しけん"
+      ],
+      "meaning": "private right"
+    },
+    {
+      "question": "被告人",
+      "answer": [
+        "ひこくにん"
+      ],
+      "meaning": "accused, defendant, prisoner at the bar"
+    },
+    {
+      "question": "無記名債権",
+      "answer": [
+        "むきめいさいけん"
+      ],
+      "meaning": "unregistered bond"
+    },
+    {
+      "question": "インサイダー取引",
+      "answer": [
+        "インサイダーとりひき"
+      ],
+      "meaning": "insider trading"
+    },
+    {
+      "question": "勾留",
+      "answer": [
+        "こうりゅう"
+      ],
+      "meaning": "detention pending trial, confinement, custody"
+    },
+    {
+      "question": "受戻し",
+      "answer": [
+        "うけもどし"
+      ],
+      "meaning": "redemption (e.g. of a loan)"
+    },
+    {
+      "question": "商事会社",
+      "answer": [
+        "しょうじがいしゃ"
+      ],
+      "meaning": "commercial company"
+    },
+    {
+      "question": "売買",
+      "answer": [
+        "ばいばい",
+        "ばいかい"
+      ],
+      "meaning": "trade, buying and selling, trafficking (e.g. of humans, arms, drugs), dealing; Contract of sale; crossing (shares)"
+    },
+    {
+      "question": "梅",
+      "answer": [
+        "うめ",
+        "むめ"
+      ],
+      "meaning": "Japanese apricot (Prunus mume), Japanese plum, ume, Chinese plum; lowest (of a three-tier ranking system); Prunus mume"
+    },
+    {
+      "question": "合名会社",
+      "answer": [
+        "ごうめいがいしゃ"
+      ],
+      "meaning": "unlimited company, unlimited partnership; General partnership"
+    },
+    {
+      "question": "故意",
+      "answer": [
+        "こい"
+      ],
+      "meaning": "intent, intention, (on) purpose, bad faith; mens rea (guilty mind); Mens rea"
+    },
+    {
+      "question": "無効投票",
+      "answer": [
+        "むこうとうひょう"
+      ],
+      "meaning": "spoilt (invalid) vote"
+    },
+    {
+      "question": "無過失責任",
+      "answer": [
+        "むかしつせきにん"
+      ],
+      "meaning": "no-fault liability; Absolute liability"
+    },
+    {
+      "question": "訴え",
+      "answer": [
+        "うったえ"
+      ],
+      "meaning": "lawsuit, complaint"
+    },
+    {
+      "question": "無額面株式",
+      "answer": [
+        "むがくめんかぶしき"
+      ],
+      "meaning": "no-par stock, no-par-value stock"
+    },
+    {
+      "question": "無償契約",
+      "answer": [
+        "むしょうけいやく"
+      ],
+      "meaning": "gratuitous contract"
+    },
+    {
+      "question": "民生委員",
+      "answer": [
+        "みんせいいいん"
+      ],
+      "meaning": "district welfare officer"
+    },
+    {
+      "question": "無効",
+      "answer": [
+        "むこう"
+      ],
+      "meaning": "invalid, void, ineffective, unavailable; Void (law)"
+    },
+    {
+      "question": "譲渡担保",
+      "answer": [
+        "じょうとたんぽ"
+      ],
+      "meaning": "mortgage"
+    },
+    {
+      "question": "営業譲渡",
+      "answer": [
+        "えいぎょうじょうと"
+      ],
+      "meaning": "transfer of business, business transfer"
+    },
+    {
+      "question": "無過失責任主義",
+      "answer": [
+        "むかしつせきにんしゅぎ"
+      ],
+      "meaning": "no-fault liability principle"
+    },
+    {
+      "question": "民営化",
+      "answer": [
+        "みんえいか"
+      ],
+      "meaning": "privatization, privatisation; Privatization"
+    },
+    {
+      "question": "未決",
+      "answer": [
+        "みけつ"
+      ],
+      "meaning": "pending, undecided; unconvicted, awaiting judgement"
+    },
+    {
+      "question": "仲立",
+      "answer": [
+        "なかだち"
+      ],
+      "meaning": "mediation, agency, agent, mediator, middleman, go-between"
+    },
+    {
+      "question": "振出し",
+      "answer": [
+        "ふりだし"
+      ],
+      "meaning": "starting point, beginning, outset; drawing (e.g. of a bill), issuing, draft, draught; shaking out; throw (of dice), toss; infusion"
+    },
+    {
+      "question": "運送人",
+      "answer": [
+        "うんそうにん"
+      ],
+      "meaning": "carrier"
+    },
+    {
+      "question": "自動車事故",
+      "answer": [
+        "じどうしゃじこ"
+      ],
+      "meaning": "car accident, automobile accident"
+    },
+    {
+      "question": "信教の自由",
+      "answer": [
+        "しんきょうのじゆう"
+      ],
+      "meaning": "freedom of religion; Freedom of religion"
+    },
+    {
+      "question": "仮処分",
+      "answer": [
+        "かりしょぶん"
+      ],
+      "meaning": "provisional disposition, temporary injunction"
+    },
+    {
+      "question": "防衛施設庁",
+      "answer": [
+        "ぼうえいしせつちょう"
+      ],
+      "meaning": "(Japanese) Defense Facilities Administration Agency (Defence)"
+    },
+    {
+      "question": "未遂",
+      "answer": [
+        "みすい"
+      ],
+      "meaning": "attempt (e.g. at crime); Attempt"
+    },
+    {
+      "question": "成年",
+      "answer": [
+        "せいねん"
+      ],
+      "meaning": "adult age, majority"
+    },
+    {
+      "question": "仮登記",
+      "answer": [
+        "かりとうき"
+      ],
+      "meaning": "provisional registration"
+    },
+    {
+      "question": "原子力基本法",
+      "answer": [
+        "げんしりょくきほんほう"
+      ],
+      "meaning": "Atomic Energy Basic Law; Atomic Energy Basic Law"
+    },
+    {
+      "question": "ローマ法",
+      "answer": [
+        "ローマほう"
+      ],
+      "meaning": "Roman law; Roman law"
+    },
+    {
+      "question": "営団",
+      "answer": [
+        "えいだん"
+      ],
+      "meaning": "corporation, foundation; Eidan"
+    },
+    {
+      "question": "永小作権",
+      "answer": [
+        "えいこさくけん"
+      ],
+      "meaning": "the right to tenant farm in perpetuity"
+    },
+    {
+      "question": "代理権",
+      "answer": [
+        "だいりけん"
+      ],
+      "meaning": "agency, (attorney's) authority of representation"
+    },
+    {
+      "question": "民事訴訟",
+      "answer": [
+        "みんじそしょう"
+      ],
+      "meaning": "civil action, civil suit, civil proceedings"
+    },
+    {
+      "question": "万国著作権条約",
+      "answer": [
+        "ばんこくちょさくけんじょうやく"
+      ],
+      "meaning": "Universal Copyright Convention; Universal Copyright Convention"
+    },
+    {
+      "question": "住所",
+      "answer": [
+        "じゅうしょ"
+      ],
+      "meaning": "address (e.g. of house), residence, domicile; Address (geography)"
+    },
+    {
+      "question": "延納",
+      "answer": [
+        "えんのう"
+      ],
+      "meaning": "deferred payment"
+    },
+    {
+      "question": "没収",
+      "answer": [
+        "ぼっしゅう"
+      ],
+      "meaning": "forfeiture, seizure, confiscation, impounding; Confiscation"
+    },
+    {
+      "question": "市民法",
+      "answer": [
+        "しみんほう"
+      ],
+      "meaning": "civil law"
+    },
+    {
+      "question": "不当労働行為",
+      "answer": [
+        "ふとうろうどうこうい"
+      ],
+      "meaning": "unfair labor practices, unfair labour practices; Unfair Labor Practice (Japan)"
+    },
+    {
+      "question": "行政権",
+      "answer": [
+        "ぎょうせいけん"
+      ],
+      "meaning": "executive power, authority"
+    },
+    {
+      "question": "営業報告書",
+      "answer": [
+        "えいぎょうほうこくしょ"
+      ],
+      "meaning": "business report"
+    },
+    {
+      "question": "社団法人",
+      "answer": [
+        "しゃだんほうじん"
+      ],
+      "meaning": "corporate juridical person, incorporated body, corporation"
+    },
+    {
+      "question": "不作為犯",
+      "answer": [
+        "ふさくいはん"
+      ],
+      "meaning": "crime of omission"
+    },
+    {
+      "question": "未必の故意",
+      "answer": [
+        "みひつのこい"
+      ],
+      "meaning": "conscious neglect, willful negligence, wilful negligence"
+    },
+    {
+      "question": "訪問販売",
+      "answer": [
+        "ほうもんはんばい"
+      ],
+      "meaning": "door-to-door selling; Door-to-door"
+    },
+    {
+      "question": "傍論",
+      "answer": [
+        "ぼうろん"
+      ],
+      "meaning": "digression, dicta, dictums; Obiter dictum"
+    },
+    {
+      "question": "英米法",
+      "answer": [
+        "えいべいほう"
+      ],
+      "meaning": "Anglo-American law"
+    },
+    {
+      "question": "運送保険",
+      "answer": [
+        "うんそうほけん"
+      ],
+      "meaning": "transit or transport(ation) insurance"
+    },
+    {
+      "question": "訴訟指揮",
+      "answer": [
+        "そしょうしき"
+      ],
+      "meaning": "trial management (e.g. by the court)"
+    },
+    {
+      "question": "防衛力",
+      "answer": [
+        "ぼうえいりょく"
+      ],
+      "meaning": "defense capability (defence)"
+    },
+    {
+      "question": "国際私法",
+      "answer": [
+        "こくさいしほう"
+      ],
+      "meaning": "private international law, conflict of laws; Conflict of laws"
+    },
+    {
+      "question": "難民",
+      "answer": [
+        "なんみん"
+      ],
+      "meaning": "refugee, displaced person; person inconvenienced by (lack of something), person unable to satisfactorily (marry, shop, etc.); Refugee"
+    },
+    {
+      "question": "本権",
+      "answer": [
+        "ほんけん"
+      ],
+      "meaning": "property right to an estate, title"
+    },
+    {
+      "question": "防衛庁",
+      "answer": [
+        "ぼうえいちょう"
+      ],
+      "meaning": "Japan Defense Agency (Defence) (became Japanese Ministry of Defense in Jan. 2007); Boueichou"
+    },
+    {
+      "question": "営業所",
+      "answer": [
+        "えいぎょうしょ"
+      ],
+      "meaning": "business office, place of business"
+    },
+    {
+      "question": "清算",
+      "answer": [
+        "せいさん"
+      ],
+      "meaning": "settlement (financial), squaring accounts, clearing debts; liquidation; ending (a relationship), breaking up (with), burying (the past), redeeming (one's faults); Liquidation"
+    },
+    {
+      "question": "事後審",
+      "answer": [
+        "じごしん"
+      ],
+      "meaning": "judicial review by a higher court without introducing new evidence"
+    },
+    {
+      "question": "陳述",
+      "answer": [
+        "ちんじゅつ"
+      ],
+      "meaning": "statement, declaration"
+    },
+    {
+      "question": "法社会学",
+      "answer": [
+        "ほうしゃかいがく"
+      ],
+      "meaning": "sociology of law; Sociology of law"
+    },
+    {
+      "question": "憲法",
+      "answer": [
+        "けんぽう"
+      ],
+      "meaning": "constitution; Constitution"
+    },
+    {
+      "question": "酌量減軽",
+      "answer": [
+        "しゃくりょうげんけい"
+      ],
+      "meaning": "reduction of punishment in the light of extenuating circumstances"
+    },
+    {
+      "question": "難民",
+      "answer": [
+        "なんみん"
+      ],
+      "meaning": "refugee, displaced person; person inconvenienced by (lack of something), person unable to satisfactorily (marry, shop, etc.); Refugee"
+    },
+    {
+      "question": "永世中立",
+      "answer": [
+        "えいせいちゅうりつ"
+      ],
+      "meaning": "permanent neutrality"
+    },
+    {
+      "question": "延滞税",
+      "answer": [
+        "えんたいぜい"
+      ],
+      "meaning": "taxes in arrears, delinquent tax, overdue tax"
+    },
+    {
+      "question": "麻薬及び向精神薬取締法",
+      "answer": [
+        "まやくおよびこうせいしんやくとりしまりほう"
+      ],
+      "meaning": "Narcotics and Psychotropics Control Law"
+    },
+    {
+      "question": "放火罪",
+      "answer": [
+        "ほうかざい"
+      ],
+      "meaning": "(the crime of) arson; Arson"
+    },
+    {
+      "question": "推定",
+      "answer": [
+        "すいてい"
+      ],
+      "meaning": "presumption, assumption; estimation"
+    },
+    {
+      "question": "横領罪",
+      "answer": [
+        "おうりょうざい"
+      ],
+      "meaning": "fraudulent appropriation; Embezzlement"
+    },
+    {
+      "question": "保険",
+      "answer": [
+        "ほけん"
+      ],
+      "meaning": "insurance, guarantee; Insurance"
+    },
+    {
+      "question": "黄金律",
+      "answer": [
+        "おうごんりつ"
+      ],
+      "meaning": "The Golden Rule (\"do unto others as you would have them do unto you\"); Golden Rule"
+    },
+    {
+      "question": "上告",
+      "answer": [
+        "じょうこく"
+      ],
+      "meaning": "final appeal to the highest court"
+    },
+    {
+      "question": "内乱罪",
+      "answer": [
+        "ないらんざい"
+      ],
+      "meaning": "criminal insurrection"
+    },
+    {
+      "question": "生存権",
+      "answer": [
+        "せいぞんけん"
+      ],
+      "meaning": "right to life; Right to life"
+    },
+    {
+      "question": "押収",
+      "answer": [
+        "おうしゅう"
+      ],
+      "meaning": "seizure, confiscation; Search and seizure"
+    },
+    {
+      "question": "大蔵省証券",
+      "answer": [
+        "おおくらしょうしょうけん"
+      ],
+      "meaning": "treasury bill, TB"
+    },
+    {
+      "question": "清算",
+      "answer": [
+        "せいさん"
+      ],
+      "meaning": "settlement (financial), squaring accounts, clearing debts; liquidation; ending (a relationship), breaking up (with), burying (the past), redeeming (one's faults); Liquidation"
+    },
+    {
+      "question": "相互保険",
+      "answer": [
+        "そうごほけん"
+      ],
+      "meaning": "mutual insurance"
+    },
+    {
+      "question": "直接税",
+      "answer": [
+        "ちょくせつぜい"
+      ],
+      "meaning": "direct tax"
+    },
+    {
+      "question": "公の施設",
+      "answer": [
+        "おおやけのしせつ"
+      ],
+      "meaning": "public facility"
+    },
+    {
+      "question": "法定犯",
+      "answer": [
+        "ほうていはん"
+      ],
+      "meaning": "malum prohibitum, unlawful act by virtue of statute"
+    },
+    {
+      "question": "おとり捜査",
+      "answer": [
+        "おとりそうさ"
+      ],
+      "meaning": "sting operation, undercover investigation; Sting operation"
+    },
+    {
+      "question": "法定刑",
+      "answer": [
+        "ほうていけい"
+      ],
+      "meaning": "statutory penalty"
+    },
+    {
+      "question": "地球環境問題",
+      "answer": [
+        "ちきゅうかんきょうもんだい"
+      ],
+      "meaning": "global environment problems, global environmental issues"
+    },
+    {
+      "question": "人",
+      "answer": [
+        "ひと",
+        "じん",
+        "にん",
+        "たり",
+        "り",
+        "と"
+      ],
+      "meaning": "man, person; human being, mankind, people; human (Homo sapiens), humans as a species; character, personality; man of talent, true man; another person, other people, others; adult; -ian (e.g. Italian), -ite (e.g. Tokyoite); -er (e.g. performer, etc.), person working with ...; man, person, people; counter for people; person; person"
+    },
+    {
+      "question": "法人税",
+      "answer": [
+        "ほうじんぜい"
+      ],
+      "meaning": "corporation tax; Corporate tax"
+    },
+    {
+      "question": "錯誤",
+      "answer": [
+        "さくご"
+      ],
+      "meaning": "mistake, error, discrepancy; discrepancy between one's actions and intentions"
+    },
+    {
+      "question": "親子関係",
+      "answer": [
+        "おやこかんけい"
+      ],
+      "meaning": "parent-child relationship"
+    },
+    {
+      "question": "外患罪",
+      "answer": [
+        "がいかんざい"
+      ],
+      "meaning": "treason, conspiracy against one's country; Treason"
+    },
+    {
+      "question": "資本",
+      "answer": [
+        "しほん"
+      ],
+      "meaning": "funds, capital; Capital (economics)"
+    },
+    {
+      "question": "恩赦",
+      "answer": [
+        "おんしゃ"
+      ],
+      "meaning": "amnesty, pardon; Amnesty"
+    },
+    {
+      "question": "法源",
+      "answer": [
+        "ほうげん"
+      ],
+      "meaning": "(a) source of law; Sources of law"
+    },
+    {
+      "question": "覚書",
+      "answer": [
+        "おぼえがき"
+      ],
+      "meaning": "memo, memorandum, note; (diplomatic) memorandum; Memorandum"
+    },
+    {
+      "question": "会期不継続の原則",
+      "answer": [
+        "かいきふけいぞくのげんそく"
+      ],
+      "meaning": "principle holding that any matters left unresolved at the end of one Diet session are not to be carried over to the next"
+    },
+    {
+      "question": "温泉権",
+      "answer": [
+        "おんせんけん"
+      ],
+      "meaning": "hot spring rights, right to make use of hot spring waters"
+    },
+    {
+      "question": "法解釈学",
+      "answer": [
+        "ほうかいしゃくがく"
+      ],
+      "meaning": "legal hermeneutics"
+    },
+    {
+      "question": "検挙",
+      "answer": [
+        "けんきょ"
+      ],
+      "meaning": "arrest, roundup"
+    },
+    {
+      "question": "復仇",
+      "answer": [
+        "ふっきゅう",
+        "ふくきゅう"
+      ],
+      "meaning": "reprisal, revenge"
+    },
+    {
+      "question": "準備金",
+      "answer": [
+        "じゅんびきん"
+      ],
+      "meaning": "reserve fund"
+    },
+    {
+      "question": "国際法",
+      "answer": [
+        "こくさいほう"
+      ],
+      "meaning": "international laws; International law"
+    },
+    {
+      "question": "法益",
+      "answer": [
+        "ほうえき"
+      ],
+      "meaning": "benefit and protection of the law, interests protected by law, legal benefit"
+    },
+    {
+      "question": "会計監査人",
+      "answer": [
+        "かいけいかんさにん"
+      ],
+      "meaning": "auditor"
+    },
+    {
+      "question": "損益計算書",
+      "answer": [
+        "そんえきけいさんしょ"
+      ],
+      "meaning": "profit and loss statement; Income statement"
+    },
+    {
+      "question": "法人",
+      "answer": [
+        "ほうじん"
+      ],
+      "meaning": "corporate body, corporation, (legal) person, (juridical) person; Legal personality"
+    },
+    {
+      "question": "内部部局",
+      "answer": [
+        "ないぶぶきょく"
+      ],
+      "meaning": "internal department, department within an organization"
+    },
+    {
+      "question": "母子健康手帳",
+      "answer": [
+        "ぼしけんこうてちょう"
+      ],
+      "meaning": "maternity health record book, mother and child health notebook"
+    },
+    {
+      "question": "基本的人権",
+      "answer": [
+        "きほんてきじんけん"
+      ],
+      "meaning": "fundamental human rights"
+    },
+    {
+      "question": "外交使節",
+      "answer": [
+        "がいこうしせつ"
+      ],
+      "meaning": "diplomat"
+    },
+    {
+      "question": "嫡出子",
+      "answer": [
+        "ちゃくしゅつし",
+        "てきしゅつし"
+      ],
+      "meaning": "legitimate child"
+    },
+    {
+      "question": "外国為替",
+      "answer": [
+        "がいこくかわせ"
+      ],
+      "meaning": "foreign exchange"
+    },
+    {
+      "question": "補正予算",
+      "answer": [
+        "ほせいよさん"
+      ],
+      "meaning": "revised or supplementary budget"
+    },
+    {
+      "question": "自白",
+      "answer": [
+        "じはく"
+      ],
+      "meaning": "confession, acknowledgement, acknowledgment; Confession (law)"
+    },
+    {
+      "question": "国政調査権",
+      "answer": [
+        "こくせいちょうさけん"
+      ],
+      "meaning": "parliamentary investigation rights"
+    },
+    {
+      "question": "外国会社",
+      "answer": [
+        "がいこくかいしゃ"
+      ],
+      "meaning": "foreign corporation, overseas company"
+    },
+    {
+      "question": "補強証拠",
+      "answer": [
+        "ほきょうしょうこ"
+      ],
+      "meaning": "corroboration, supporting evidence"
+    },
+    {
+      "question": "発起人",
+      "answer": [
+        "ほっきにん"
+      ],
+      "meaning": "originator, promoter"
+    },
+    {
+      "question": "補助参加",
+      "answer": [
+        "ほじょさんか"
+      ],
+      "meaning": "auxiliary intervention (in a lawsuit)"
+    },
+    {
+      "question": "保釈",
+      "answer": [
+        "ほしゃく"
+      ],
+      "meaning": "bail, releasing on bail; Bail"
+    },
+    {
+      "question": "補正",
+      "answer": [
+        "ほせい"
+      ],
+      "meaning": "correction, revision, compensation (e.g. to a pendulum)"
+    },
+    {
+      "question": "捕虜",
+      "answer": [
+        "ほりょ"
+      ],
+      "meaning": "prisoner (of war); Prisoner of war"
+    },
+    {
+      "question": "少年法",
+      "answer": [
+        "しょうねんほう"
+      ],
+      "meaning": "juvenile law"
+    },
+    {
+      "question": "保証書",
+      "answer": [
+        "ほしょうしょ"
+      ],
+      "meaning": "written guarantee, guarantee letter, warranty, warranty card"
+    },
+    {
+      "question": "補充法",
+      "answer": [
+        "ほじゅうけい"
+      ],
+      "meaning": "suppletion; suppletive"
+    },
+    {
+      "question": "解雇",
+      "answer": [
+        "かいこ"
+      ],
+      "meaning": "discharge, dismissal; Termination of employment"
+    },
+    {
+      "question": "保険証券",
+      "answer": [
+        "ほけんしょうけん"
+      ],
+      "meaning": "insurance policy"
+    },
+    {
+      "question": "補佐人",
+      "answer": [
+        "ほさにん"
+      ],
+      "meaning": "assistant, aide, curator"
+    },
+    {
+      "question": "検視",
+      "answer": [
+        "けんし"
+      ],
+      "meaning": "autopsy, inquest, investigation of death; Autopsy"
+    },
+    {
+      "question": "保護観察",
+      "answer": [
+        "ほごかんさつ"
+      ],
+      "meaning": "probation; Probation"
+    },
+    {
+      "question": "保健所",
+      "answer": [
+        "ほけんじょ",
+        "ほけんしょ"
+      ],
+      "meaning": "health care center, health care centre; Health department"
+    },
+    {
+      "question": "属地主義",
+      "answer": [
+        "ぞくちしゅぎ"
+      ],
+      "meaning": "principle of territorial jurisdiction; Territorial principle"
+    },
+    {
+      "question": "保護",
+      "answer": [
+        "ほご"
+      ],
+      "meaning": "protection, safeguard, guardianship, custody, patronage; preservation, conservation; Protection"
+    },
+    {
+      "question": "保育所",
+      "answer": [
+        "ほいくしょ",
+        "ほいくじょ"
+      ],
+      "meaning": "nursery school, nursery; Nursery school"
+    },
+    {
+      "question": "外国為替及び外国貿易法",
+      "answer": [
+        "がいこくかわせおよびがいこくぼうえきほう"
+      ],
+      "meaning": "Foreign Exchange and Foreign Control Trade Law"
+    },
+    {
+      "question": "平和主義",
+      "answer": [
+        "へいわしゅぎ"
+      ],
+      "meaning": "pacifism; Pacifism"
+    },
+    {
+      "question": "保護司",
+      "answer": [
+        "ほごし"
+      ],
+      "meaning": "probation officer"
+    },
+    {
+      "question": "損害保険",
+      "answer": [
+        "そんがいほけん"
+      ],
+      "meaning": "damage insurance; General insurance"
+    },
+    {
+      "question": "片務契約",
+      "answer": [
+        "へんむけいやく"
+      ],
+      "meaning": "unilateral contract"
+    },
+    {
+      "question": "外国人登録法",
+      "answer": [
+        "がいこくじんとうろくほう"
+      ],
+      "meaning": "Alien Registration Law"
+    },
+    {
+      "question": "勾留",
+      "answer": [
+        "こうりゅう"
+      ],
+      "meaning": "detention pending trial, confinement, custody"
+    },
+    {
+      "question": "日米安全保障条約",
+      "answer": [
+        "にちべいあんぜんほしょうじょうやく"
+      ],
+      "meaning": "US-Japan Security Treaty"
+    },
+    {
+      "question": "会計検査院",
+      "answer": [
+        "かいけいけんさいん"
+      ],
+      "meaning": "Board of Audit; Board of Audit (Japan)"
+    },
+    {
+      "question": "分限",
+      "answer": [
+        "ぶげん",
+        "ぶんげん"
+      ],
+      "meaning": "social standing, wealth"
+    },
+    {
+      "question": "解約",
+      "answer": [
+        "かいやく"
+      ],
+      "meaning": "cancellation of contract"
+    },
+    {
+      "question": "変動所得",
+      "answer": [
+        "へんどうしょとく"
+      ],
+      "meaning": "fluctuating income"
+    },
+    {
+      "question": "弁護人",
+      "answer": [
+        "べんごにん"
+      ],
+      "meaning": "counsel, defender, advocate"
+    },
+    {
+      "question": "海上保険",
+      "answer": [
+        "かいじょうほけん"
+      ],
+      "meaning": "maritime insurance; Marine insurance"
+    },
+    {
+      "question": "休日",
+      "answer": [
+        "きゅうじつ"
+      ],
+      "meaning": "holiday, day off; Vacation"
+    },
+    {
+      "question": "保証金",
+      "answer": [
+        "ほしょうきん"
+      ],
+      "meaning": "deposit (esp. on renting a house), security money, bond payment, guarantee"
+    },
+    {
+      "question": "弁護士法",
+      "answer": [
+        "べんごしほう"
+      ],
+      "meaning": "Attorneys-at-Law Act, Lawyer Act"
+    },
+    {
+      "question": "覆審",
+      "answer": [
+        "ふくしん"
+      ],
+      "meaning": "judicial review"
+    },
+    {
+      "question": "海上自衛隊",
+      "answer": [
+        "かいじょうじえいたい"
+      ],
+      "meaning": "Maritime Self Defense Forces (Defence); Japan Maritime Self-Defense Force"
+    },
+    {
+      "question": "海商法",
+      "answer": [
+        "かいしょうほう"
+      ],
+      "meaning": "maritime law"
+    },
+    {
+      "question": "粉じん",
+      "answer": [
+        "ふんじん"
+      ],
+      "meaning": "mineral dust, mine dust, fine particles, dust; Dust"
+    },
+    {
+      "question": "証拠",
+      "answer": [
+        "しょうこ"
+      ],
+      "meaning": "evidence, proof; Evidence (law)"
+    },
+    {
+      "question": "保安処分",
+      "answer": [
+        "ほあんしょぶん"
+      ],
+      "meaning": "measures preserving law and order"
+    },
+    {
+      "question": "代位弁済",
+      "answer": [
+        "だいいべんさい"
+      ],
+      "meaning": "subrogation, subrogated performance, payment in subrogation"
+    },
+    {
+      "question": "併合罪",
+      "answer": [
+        "へいごうざい"
+      ],
+      "meaning": "concurrent offenses, concurrent offences"
+    },
+    {
+      "question": "物権",
+      "answer": [
+        "ぶっけん"
+      ],
+      "meaning": "(legal terminology) real rights; Property law"
+    },
+    {
+      "question": "先買権",
+      "answer": [
+        "せんばいけん"
+      ],
+      "meaning": "right of first refusal, (right of) preemption, purchase option"
+    },
+    {
+      "question": "復権",
+      "answer": [
+        "ふっけん",
+        "ふくけん"
+      ],
+      "meaning": "rehabilitation, reinstatement, restoration of rights"
+    },
+    {
+      "question": "物納",
+      "answer": [
+        "ぶつのう"
+      ],
+      "meaning": "payment in kind"
+    },
+    {
+      "question": "福祉事務所",
+      "answer": [
+        "ふくしじむしょ"
+      ],
+      "meaning": "welfare office, social security office"
+    },
+    {
+      "question": "封鎖",
+      "answer": [
+        "ふうさ"
+      ],
+      "meaning": "blockade; freezing (funds); Blockade"
+    },
+    {
+      "question": "請求権",
+      "answer": [
+        "せいきゅうけん"
+      ],
+      "meaning": "claim rights"
+    },
+    {
+      "question": "複製権",
+      "answer": [
+        "ふくせいけん"
+      ],
+      "meaning": "reproduction right, right of reproduction, right to make copies"
+    },
+    {
+      "question": "添附",
+      "answer": [
+        "てんぷ"
+      ],
+      "meaning": "attachment (e.g. email), appendix (e.g. of a report, document, etc), annex, appendage, annexure"
+    },
+    {
+      "question": "敷金",
+      "answer": [
+        "しききん"
+      ],
+      "meaning": "(security) deposit, caution money; Security deposit"
+    },
+    {
+      "question": "保安処分",
+      "answer": [
+        "ほあんしょぶん"
+      ],
+      "meaning": "measures preserving law and order"
+    },
+    {
+      "question": "解除",
+      "answer": [
+        "かいじょ"
+      ],
+      "meaning": "cancellation, rescinding, release, calling off, lifting (sanctions), delisting; Rescission"
+    },
+    {
+      "question": "弁済",
+      "answer": [
+        "べんさい"
+      ],
+      "meaning": "repayment, settlement (of a debt), paying off, reimbursement (of expenses)"
+    },
+    {
+      "question": "別件逮捕",
+      "answer": [
+        "べっけんたいほ"
+      ],
+      "meaning": "arrest on a separate charge"
+    },
+    {
+      "question": "損害賠償",
+      "answer": [
+        "そんがいばいしょう"
+      ],
+      "meaning": "restitution, damages, indemnity, compensation; Damages"
+    },
+    {
+      "question": "行政",
+      "answer": [
+        "ぎょうせい"
+      ],
+      "meaning": "administration, governance, the authorities, authority; Executive (government)"
+    },
+    {
+      "question": "侮辱罪",
+      "answer": [
+        "ぶじょくざい"
+      ],
+      "meaning": "(crime of) defamation (i.e. slander, libel)"
+    },
+    {
+      "question": "手形割引",
+      "answer": [
+        "てがたわりびき"
+      ],
+      "meaning": "discounting of a bill"
+    },
+    {
+      "question": "除斥",
+      "answer": [
+        "じょせき"
+      ],
+      "meaning": "exclusion"
+    },
+    {
+      "question": "副検事",
+      "answer": [
+        "ふくけんじ"
+      ],
+      "meaning": "assistant prosecutor"
+    },
+    {
+      "question": "附合",
+      "answer": [
+        "ふごう"
+      ],
+      "meaning": "accession"
+    },
+    {
+      "question": "買戻し",
+      "answer": [
+        "かいもどし"
+      ],
+      "meaning": "repurchase, redemption"
+    },
+    {
+      "question": "双務契約",
+      "answer": [
+        "そうむけいやく"
+      ],
+      "meaning": "bilateral agreement"
+    },
+    {
+      "question": "覚せい剤取締法",
+      "answer": [
+        "かくせいざいとりしまりほう"
+      ],
+      "meaning": "Stimulants Control Law (1951)"
+    },
+    {
+      "question": "共有",
+      "answer": [
+        "きょうゆう"
+      ],
+      "meaning": "joint ownership, co-ownership, sharing (e.g. a viewpoint); sharing (files, devices on a network, posts on social media, etc.)"
+    },
+    {
+      "question": "申告納税",
+      "answer": [
+        "しんこくのうぜい"
+      ],
+      "meaning": "self-assessed tax payment"
+    },
+    {
+      "question": "区分所有権",
+      "answer": [
+        "くぶんしょゆうけん"
+      ],
+      "meaning": "unit ownership (in a condominium or other multi-unit building), unit ownership rights"
+    },
+    {
+      "question": "別除権",
+      "answer": [
+        "べつじょけん"
+      ],
+      "meaning": "right of exclusion"
+    },
+    {
+      "question": "動産",
+      "answer": [
+        "どうさん"
+      ],
+      "meaning": "personal property, personal effects"
+    },
+    {
+      "question": "差押え",
+      "answer": [
+        "さしおさえ"
+      ],
+      "meaning": "seizure, attachment, foreclosure"
+    },
+    {
+      "question": "行政官庁",
+      "answer": [
+        "ぎょうせいかんちょう"
+      ],
+      "meaning": "administrative office, government agency"
+    },
+    {
+      "question": "下級裁判所",
+      "answer": [
+        "かきゅうさいばんしょ"
+      ],
+      "meaning": "lower court"
+    },
+    {
+      "question": "扶助",
+      "answer": [
+        "ふじょ"
+      ],
+      "meaning": "aid, help, assistance, support; Riding aids"
+    },
+    {
+      "question": "副総理",
+      "answer": [
+        "ふくそうり"
+      ],
+      "meaning": "deputy (vice) prime minister"
+    },
+    {
+      "question": "手形交換所",
+      "answer": [
+        "てがたこうかんじょ"
+      ],
+      "meaning": "clearing house"
+    },
+    {
+      "question": "不定期刑",
+      "answer": [
+        "ふていきけい"
+      ],
+      "meaning": "indeterminate sentence"
+    },
+    {
+      "question": "閣議",
+      "answer": [
+        "かくぎ"
+      ],
+      "meaning": "cabinet meeting"
+    },
+    {
+      "question": "期限",
+      "answer": [
+        "きげん"
+      ],
+      "meaning": "term, period, time frame; time limit, deadline, cutoff (date)"
+    },
+    {
+      "question": "海損",
+      "answer": [
+        "かいそん"
+      ],
+      "meaning": "sea damage, average loss"
+    },
+    {
+      "question": "条件",
+      "answer": [
+        "じょうけん"
+      ],
+      "meaning": "condition, term, requirement, qualification, prerequisite"
+    },
+    {
+      "question": "風俗営業等取締法",
+      "answer": [
+        "ふうぞくえいぎょうとうとりしまりほう"
+      ],
+      "meaning": "Law Regulating Adult Entertainment Businesses (1948 act, replaced in 1984), Entertainment and Amusement Trades Control Law"
+    },
+    {
+      "question": "失踪宣告",
+      "answer": [
+        "しっそうせんこく"
+      ],
+      "meaning": "court decision declaring a missing person legally dead"
+    },
+    {
+      "question": "成文法",
+      "answer": [
+        "せいぶんほう"
+      ],
+      "meaning": "written law, statutory law; Statutory law"
+    },
+    {
+      "question": "不動産取得税",
+      "answer": [
+        "ふどうさんしゅとくぜい"
+      ],
+      "meaning": "real estate acquisition tax"
+    },
+    {
+      "question": "海難救助",
+      "answer": [
+        "かいなんきゅうじょ"
+      ],
+      "meaning": "sea rescue, air-sea rescue, ASR"
+    },
+    {
+      "question": "扶養",
+      "answer": [
+        "ふよう"
+      ],
+      "meaning": "support (e.g. of one's dependents), maintenance"
+    },
+    {
+      "question": "貞操",
+      "answer": [
+        "ていそう"
+      ],
+      "meaning": "chastity, virtue, fidelity"
+    },
+    {
+      "question": "不当利得",
+      "answer": [
+        "ふとうりとく"
+      ],
+      "meaning": "excessive profit"
+    },
+    {
+      "question": "捜査",
+      "answer": [
+        "そうさ"
+      ],
+      "meaning": "search (esp. in criminal investigations), investigation, inquiry, enquiry"
+    },
+    {
+      "question": "詐欺罪",
+      "answer": [
+        "さぎざい"
+      ],
+      "meaning": "fraud; Deception (criminal law)"
+    },
+    {
+      "question": "回避",
+      "answer": [
+        "かいひ"
+      ],
+      "meaning": "evasion, avoidance"
+    },
+    {
+      "question": "火災保険",
+      "answer": [
+        "かさいほけん"
+      ],
+      "meaning": "fire insurance; Home insurance"
+    },
+    {
+      "question": "共同不法行為",
+      "answer": [
+        "きょうどうふほうこうい"
+      ],
+      "meaning": "joint unlawful act, joint tort"
+    },
+    {
+      "question": "商業登記",
+      "answer": [
+        "しょうぎょうとうき"
+      ],
+      "meaning": "commercial registration"
+    },
+    {
+      "question": "不公正な取引方法",
+      "answer": [
+        "ふこうせいなとりひきほうほう"
+      ],
+      "meaning": "unfair business practice, unfair business practices"
+    },
+    {
+      "question": "不正競争防止法",
+      "answer": [
+        "ふせいきょうそうぼうしほう"
+      ],
+      "meaning": "Unfair Competition Prevention Law"
+    },
+    {
+      "question": "上訴",
+      "answer": [
+        "じょうそ"
+      ],
+      "meaning": "appeal (in court)"
+    },
+    {
+      "question": "過失",
+      "answer": [
+        "かしつ"
+      ],
+      "meaning": "error, blunder, accident; fault, defect; Negligence"
+    },
+    {
+      "question": "代表取締役",
+      "answer": [
+        "だいひょうとりしまりやく"
+      ],
+      "meaning": "representative director, managing director, president, someone chosen by the board of directors from among the directors to actually represent the company in its dealings with the outside world"
+    },
+    {
+      "question": "成文憲法",
+      "answer": [
+        "せいぶんけんぽう"
+      ],
+      "meaning": "codified constitution, written constitution"
+    },
+    {
+      "question": "再審",
+      "answer": [
+        "さいしん"
+      ],
+      "meaning": "retrial, reopening of a case; review, reexamination"
+    },
+    {
+      "question": "加工",
+      "answer": [
+        "かこう"
+      ],
+      "meaning": "manufacturing, processing, treatment, machining"
+    },
+    {
+      "question": "表見代理",
+      "answer": [
+        "ひょうけんだいり"
+      ],
+      "meaning": "apparent authority"
+    },
+    {
+      "question": "被選挙権",
+      "answer": [
+        "ひせんきょけん"
+      ],
+      "meaning": "eligibility for election, suffrage"
+    },
+    {
+      "question": "口頭弁論",
+      "answer": [
+        "こうとうべんろん"
+      ],
+      "meaning": "oral proceedings, oral pleadings"
+    },
+    {
+      "question": "公害",
+      "answer": [
+        "こうがい"
+      ],
+      "meaning": "pollution, public nuisance, contamination; Pollution"
+    },
+    {
+      "question": "居住者",
+      "answer": [
+        "きょじゅうしゃ"
+      ],
+      "meaning": "resident, inhabitant"
+    },
+    {
+      "question": "不戦条約",
+      "answer": [
+        "ふせんじょうやく"
+      ],
+      "meaning": "anti-war treaty; Kellogg–Briand Pact"
+    },
+    {
+      "question": "不完全履行",
+      "answer": [
+        "ふかんぜんりこう"
+      ],
+      "meaning": "defective performance, imperfect performance"
+    },
+    {
+      "question": "番頭",
+      "answer": [
+        "ばんとう"
+      ],
+      "meaning": "(head) clerk"
+    },
+    {
+      "question": "不渡り",
+      "answer": [
+        "ふわたり"
+      ],
+      "meaning": "non-payment, dishonouring (bill), dishonoring (bill), bouncing (cheque, check); Non-sufficient funds"
+    },
+    {
+      "question": "正当防衛",
+      "answer": [
+        "せいとうぼうえい"
+      ],
+      "meaning": "legitimate self-defence, legitimate self-defense; Right of self-defense"
+    },
+    {
+      "question": "被疑者",
+      "answer": [
+        "ひぎしゃ"
+      ],
+      "meaning": "suspect (person); Suspect"
+    },
+    {
+      "question": "批准",
+      "answer": [
+        "ひじゅん"
+      ],
+      "meaning": "ratification; Ratification"
+    },
+    {
+      "question": "住居侵入罪",
+      "answer": [
+        "じゅうきょしんにゅうざい"
+      ],
+      "meaning": "breaking and entering"
+    },
+    {
+      "question": "判決",
+      "answer": [
+        "はんけつ"
+      ],
+      "meaning": "judicial decision, judgement, judgment, sentence, decree; Judgment (law)"
+    },
+    {
+      "question": "庇護権",
+      "answer": [
+        "ひごけん"
+      ],
+      "meaning": "right of asylum"
+    },
+    {
+      "question": "判定",
+      "answer": [
+        "はんてい"
+      ],
+      "meaning": "judgement, judgment, decision, adjudication, award, verdict, determination"
+    },
+    {
+      "question": "公判廷",
+      "answer": [
+        "こうはんてい"
+      ],
+      "meaning": "court, courtroom"
+    },
+    {
+      "question": "反対尋問",
+      "answer": [
+        "はんたいじんもん"
+      ],
+      "meaning": "cross-examination"
+    },
+    {
+      "question": "反訴",
+      "answer": [
+        "はんそ"
+      ],
+      "meaning": "counteraction, counterclaim; Counterclaim"
+    },
+    {
+      "question": "告訴",
+      "answer": [
+        "こくそ"
+      ],
+      "meaning": "accusation, complaint, charge, legal action"
+    },
+    {
+      "question": "判事",
+      "answer": [
+        "はんじ"
+      ],
+      "meaning": "judge, judiciary"
+    },
+    {
+      "question": "評決",
+      "answer": [
+        "ひょうけつ"
+      ],
+      "meaning": "decision, verdict; The Verdict"
+    },
+    {
+      "question": "発明",
+      "answer": [
+        "はつめい"
+      ],
+      "meaning": "invention; intelligent, clever; being enlightened, having the meaning of everything become clear; Invention"
+    },
+    {
+      "question": "許諾",
+      "answer": [
+        "きょだく"
+      ],
+      "meaning": "consent"
+    },
+    {
+      "question": "排出基準",
+      "answer": [
+        "はいしゅつきじゅん"
+      ],
+      "meaning": "effluent standard, effluent standards"
+    },
+    {
+      "question": "訴因",
+      "answer": [
+        "そいん"
+      ],
+      "meaning": "charge, count"
+    },
+    {
+      "question": "再審",
+      "answer": [
+        "さいしん"
+      ],
+      "meaning": "retrial, reopening of a case; review, reexamination"
+    },
+    {
+      "question": "起訴猶予",
+      "answer": [
+        "きそゆうよ"
+      ],
+      "meaning": "suspension of indictment, leaving charge on the file"
+    },
+    {
+      "question": "比較法学",
+      "answer": [
+        "ひかくほうがく"
+      ],
+      "meaning": "comparative law; Comparative law"
+    },
+    {
+      "question": "賃借権",
+      "answer": [
+        "ちんしゃくけん"
+      ],
+      "meaning": "right to lease"
+    },
+    {
+      "question": "犯人蔵匿罪",
+      "answer": [
+        "はんにんぞうとくざい"
+      ],
+      "meaning": "(crime of) harboring a fugitive (harbouring)"
+    },
+    {
+      "question": "破壊活動防止法",
+      "answer": [
+        "はかいかつどうぼうしほう"
+      ],
+      "meaning": "(Japanese) Anti-Subversive Activities Act"
+    },
+    {
+      "question": "基礎控除",
+      "answer": [
+        "きそこうじょ"
+      ],
+      "meaning": "basic or standard deduction"
+    },
+    {
+      "question": "廃棄物",
+      "answer": [
+        "はいきぶつ"
+      ],
+      "meaning": "waste matter, waste, garbage, trash; Waste"
+    },
+    {
+      "question": "秘密漏示罪",
+      "answer": [
+        "ひみつろうじざい"
+      ],
+      "meaning": "the crime of revealing a secret, breach of confidence"
+    },
+    {
+      "question": "罰金",
+      "answer": [
+        "ばっきん"
+      ],
+      "meaning": "fine, penalty; Fine (penalty)"
+    },
+    {
+      "question": "合算課税",
+      "answer": [
+        "がっさんかぜい"
+      ],
+      "meaning": "unitary tax"
+    },
+    {
+      "question": "控訴",
+      "answer": [
+        "こうそ"
+      ],
+      "meaning": "koso appeal (initial appeal to a higher court)"
+    },
+    {
+      "question": "箱乗り",
+      "answer": [
+        "はこのり"
+      ],
+      "meaning": "leaning out of a car or train window"
+    },
+    {
+      "question": "準正",
+      "answer": [
+        "じゅんせい"
+      ],
+      "meaning": "legitimation (of a child born outside a marriage)"
+    },
+    {
+      "question": "抗弁",
+      "answer": [
+        "こうべん"
+      ],
+      "meaning": "protest, refutation, pleading"
+    },
+    {
+      "question": "念書",
+      "answer": [
+        "ねんしょ"
+      ],
+      "meaning": "written pledge, signed note of assurance, memorandum, legal instrument"
+    },
+    {
+      "question": "売春防止法",
+      "answer": [
+        "ばいしゅんぼうしほう"
+      ],
+      "meaning": "Anti-Prostitution Law"
+    },
+    {
+      "question": "月賦販売",
+      "answer": [
+        "げっぷはんばい"
+      ],
+      "meaning": "selling on a (monthly) installment plan (instalment), hire purchase"
+    },
+    {
+      "question": "判事補",
+      "answer": [
+        "はんじほ"
+      ],
+      "meaning": "assistant judge, judge-in-training"
+    },
+    {
+      "question": "公正取引委員会",
+      "answer": [
+        "こうせいとりひきいいんかい"
+      ],
+      "meaning": "Fair Trade Commission; Fair Trade Commission (anti-monopoly body in Japan); Fair Trade Commission (Japan)"
+    },
+    {
+      "question": "年金保険",
+      "answer": [
+        "ねんきんほけん"
+      ],
+      "meaning": "annuity insurance"
+    },
+    {
+      "question": "年末調整",
+      "answer": [
+        "ねんまつちょうせい"
+      ],
+      "meaning": "year-end tax adjustment"
+    },
+    {
+      "question": "実子",
+      "answer": [
+        "じっし"
+      ],
+      "meaning": "biological child, one's own child"
+    },
+    {
+      "question": "日本学術会議",
+      "answer": [
+        "にほんがくじゅつかいぎ"
+      ],
+      "meaning": "Science Council of Japan"
+    },
+    {
+      "question": "緊急避難",
+      "answer": [
+        "きんきゅうひなん"
+      ],
+      "meaning": "emergency evacuation; Necessity"
+    },
+    {
+      "question": "判決",
+      "answer": [
+        "はんけつ"
+      ],
+      "meaning": "judicial decision, judgement, judgment, sentence, decree; Judgment (law)"
+    },
+    {
+      "question": "裁判所",
+      "answer": [
+        "さいばんしょ"
+      ],
+      "meaning": "court, courthouse; Court"
+    },
+    {
+      "question": "破産管財人",
+      "answer": [
+        "はさんかんざいにん"
+      ],
+      "meaning": "trustee or administrator in bankruptcy"
+    },
+    {
+      "question": "独占禁止法",
+      "answer": [
+        "どくせんきんしほう"
+      ],
+      "meaning": "antitrust law, Antitrust Act; Competition law"
+    },
+    {
+      "question": "株式買取請求権",
+      "answer": [
+        "かぶしきかいとりせいきゅうけん"
+      ],
+      "meaning": "right of demand for buying shares"
+    },
+    {
+      "question": "当事者",
+      "answer": [
+        "とうじしゃ"
+      ],
+      "meaning": "person concerned, interested party, related party"
+    },
+    {
+      "question": "公共の福祉",
+      "answer": [
+        "こうきょうのふくし"
+      ],
+      "meaning": "public welfare"
+    },
+    {
+      "question": "虚偽表示",
+      "answer": [
+        "きょぎひょうじ"
+      ],
+      "meaning": "false representation, misrepresentation, false labelling, misstatement"
+    },
+    {
+      "question": "破産",
+      "answer": [
+        "はさん"
+      ],
+      "meaning": "bankruptcy, insolvency"
+    },
+    {
+      "question": "第三者",
+      "answer": [
+        "だいさんしゃ"
+      ],
+      "meaning": "third party, third person, outsider, disinterested person; Third-party beneficiary"
+    },
+    {
+      "question": "定款",
+      "answer": [
+        "ていかん"
+      ],
+      "meaning": "articles of incorporation, company statute"
+    },
+    {
+      "question": "犯罪学",
+      "answer": [
+        "はんざいがく"
+      ],
+      "meaning": "criminology; Criminology"
+    },
+    {
+      "question": "船荷証券",
+      "answer": [
+        "ふなにしょうけん"
+      ],
+      "meaning": "bill of lading, BL"
+    },
+    {
+      "question": "換地",
+      "answer": [
+        "かんち"
+      ],
+      "meaning": "replotting, land substitution; replotted land, substitute lot"
+    },
+    {
+      "question": "破産宣告",
+      "answer": [
+        "はさんせんこく"
+      ],
+      "meaning": "adjudication of bankruptcy"
+    },
+    {
+      "question": "認知",
+      "answer": [
+        "にんち"
+      ],
+      "meaning": "acknowledgement, acknowledgment, recognition, cognition"
+    },
+    {
+      "question": "婚約",
+      "answer": [
+        "こんやく"
+      ],
+      "meaning": "engagement, betrothal; Engagement"
+    },
+    {
+      "question": "仮出獄",
+      "answer": [
+        "かりしゅつごく"
+      ],
+      "meaning": "parole, release on bail"
+    },
+    {
+      "question": "公正取引委員会",
+      "answer": [
+        "こうせいとりひきいいんかい"
+      ],
+      "meaning": "Fair Trade Commission; Fair Trade Commission (anti-monopoly body in Japan); Fair Trade Commission (Japan)"
+    },
+    {
+      "question": "課税標準",
+      "answer": [
+        "かぜいひょうじゅん"
+      ],
+      "meaning": "base of taxation"
+    },
+    {
+      "question": "刑法",
+      "answer": [
+        "けいほう"
+      ],
+      "meaning": "criminal law, penal code; Criminal law"
+    },
+    {
+      "question": "農地法",
+      "answer": [
+        "のうちほう"
+      ],
+      "meaning": "Agricultural Land Act"
+    },
+    {
+      "question": "仮差押",
+      "answer": [
+        "かりさしおさえ"
+      ],
+      "meaning": "provisional seizure, provisional attachment, provisional garnishment"
+    },
+    {
+      "question": "抗告",
+      "answer": [
+        "こうこく"
+      ],
+      "meaning": "appeal, protest, complaint; Appeal"
+    },
+    {
+      "question": "硬性憲法",
+      "answer": [
+        "こうせいけんぽう"
+      ],
+      "meaning": "rigid constitution"
+    },
+    {
+      "question": "毒ガス",
+      "answer": [
+        "どくガス"
+      ],
+      "meaning": "poison gas"
+    },
+    {
+      "question": "カノン法",
+      "answer": [
+        "カノンほう"
+      ],
+      "meaning": "canon law"
+    },
+    {
+      "question": "特許権",
+      "answer": [
+        "とっきょけん"
+      ],
+      "meaning": "patent rights"
+    },
+    {
+      "question": "特別区",
+      "answer": [
+        "とくべつく"
+      ],
+      "meaning": "special ward (esp. of Tokyo); special economic zone (China); special administrative region of China (e.g. Hong Kong)"
+    },
+    {
+      "question": "年次有給休暇",
+      "answer": [
+        "ねんじゆうきゅうきゅうか"
+      ],
+      "meaning": "annual paid vacation"
+    },
+    {
+      "question": "特定",
+      "answer": [
+        "とくてい"
+      ],
+      "meaning": "specific, particular, designated, special; specifying, designating, identifying, pinpointing"
+    },
+    {
+      "question": "内縁",
+      "answer": [
+        "ないえん"
+      ],
+      "meaning": "de facto marriage, common-law marriage"
+    },
+    {
+      "question": "仲裁",
+      "answer": [
+        "ちゅうさい"
+      ],
+      "meaning": "arbitration, intercession, mediation; Arbitration"
+    },
+    {
+      "question": "株式",
+      "answer": [
+        "かぶしき"
+      ],
+      "meaning": "stock (company); Share (finance)"
+    },
+    {
+      "question": "背任罪",
+      "answer": [
+        "はいにんざい"
+      ],
+      "meaning": "breach of trust; Infidelity"
+    },
+    {
+      "question": "束脩",
+      "answer": [
+        "そくしゅう"
+      ],
+      "meaning": "entrance fee, initiation fee, registration fee, present to a teacher; gift of dried meat from a new vassal or pupil"
+    },
+    {
+      "question": "独立国家共同体",
+      "answer": [
+        "どくりつこっかきょうどうたい"
+      ],
+      "meaning": "Commonwealth of Independent States, CIS; Commonwealth of Independent States"
+    },
+    {
+      "question": "学校教育",
+      "answer": [
+        "がっこうきょういく"
+      ],
+      "meaning": "school education, formal education"
+    },
+    {
+      "question": "原本",
+      "answer": [
+        "げんぽん"
+      ],
+      "meaning": "the original, original copy, script"
+    },
+    {
+      "question": "督促",
+      "answer": [
+        "とくそく"
+      ],
+      "meaning": "urge, demand, importunity"
+    },
+    {
+      "question": "主権",
+      "answer": [
+        "しゅけん"
+      ],
+      "meaning": "sovereignty, supremacy, dominion; Sovereignty"
+    },
+    {
+      "question": "内閣官房",
+      "answer": [
+        "ないかくかんぼう"
+      ],
+      "meaning": "Cabinet Secretariat"
+    },
+    {
+      "question": "審議会",
+      "answer": [
+        "しんぎかい"
+      ],
+      "meaning": "council (deliberative, consultative), commission of inquiry (enquiry)"
+    },
+    {
+      "question": "管轄権",
+      "answer": [
+        "かんかつけん"
+      ],
+      "meaning": "(have) jurisdiction over"
+    },
+    {
+      "question": "環境基準",
+      "answer": [
+        "かんきょうきじゅん"
+      ],
+      "meaning": "environmental standard"
+    },
+    {
+      "question": "株主",
+      "answer": [
+        "かぶぬし"
+      ],
+      "meaning": "shareholder, stockholder; Shareholder"
+    },
+    {
+      "question": "小切手",
+      "answer": [
+        "こぎって"
+      ],
+      "meaning": "cheque, check; Cheque"
+    },
+    {
+      "question": "引渡し",
+      "answer": [
+        "ひきわたし"
+      ],
+      "meaning": "delivery, handing over, turning over, extradition"
+    },
+    {
+      "question": "環境教育",
+      "answer": [
+        "かんきょうきょういく"
+      ],
+      "meaning": "environmental education; Environmental education"
+    },
+    {
+      "question": "特殊法人",
+      "answer": [
+        "とくしゅほうじん"
+      ],
+      "meaning": "semigovernmental corporation"
+    },
+    {
+      "question": "株券",
+      "answer": [
+        "かぶけん"
+      ],
+      "meaning": "stock certificate; Stock certificate"
+    },
+    {
+      "question": "訴訟費用",
+      "answer": [
+        "そしょうひよう"
+      ],
+      "meaning": "(lawsuit) costs; Court costs"
+    },
+    {
+      "question": "団体交渉",
+      "answer": [
+        "だんたいこうしょう"
+      ],
+      "meaning": "collective bargaining; Collective bargaining"
+    },
+    {
+      "question": "土地税制",
+      "answer": [
+        "とちぜいせい"
+      ],
+      "meaning": "land taxation system"
+    },
+    {
+      "question": "登記簿",
+      "answer": [
+        "とうきぼ"
+      ],
+      "meaning": "register"
+    },
+    {
+      "question": "同族会社",
+      "answer": [
+        "どうぞくがいしゃ",
+        "どうぞくかいしゃ"
+      ],
+      "meaning": "family corporation, affiliated concern"
+    },
+    {
+      "question": "調停",
+      "answer": [
+        "ちょうてい"
+      ],
+      "meaning": "arbitration, conciliation, mediation; Mediation"
+    },
+    {
+      "question": "財産区",
+      "answer": [
+        "ざいさんく"
+      ],
+      "meaning": "property ward, special local public body which has its own property, etc. and bears the expenses for it"
+    },
+    {
+      "question": "定足数",
+      "answer": [
+        "ていそくすう"
+      ],
+      "meaning": "quorum; Quorum"
+    },
+    {
+      "question": "私的整理",
+      "answer": [
+        "してきせいり"
+      ],
+      "meaning": "voluntary liquidation, winding-up"
+    },
+    {
+      "question": "申込み",
+      "answer": [
+        "もうしこみ"
+      ],
+      "meaning": "application, entry, request, subscription, offer, proposal, overture, challenge"
+    },
+    {
+      "question": "決定",
+      "answer": [
+        "けってい"
+      ],
+      "meaning": "decision, determination"
+    },
+    {
+      "question": "内閣官房長官",
+      "answer": [
+        "ないかくかんぼうちょうかん"
+      ],
+      "meaning": "Chief Cabinet Secretary; Chief Cabinet Secretary"
+    },
+    {
+      "question": "統轄",
+      "answer": [
+        "とうかつ"
+      ],
+      "meaning": "unification, bringing together, generalization; control, supervision"
+    },
+    {
+      "question": "監査委員",
+      "answer": [
+        "かんさいいん"
+      ],
+      "meaning": "supervisory auditor, member of inspection committee"
+    },
+    {
+      "question": "登録免許税",
+      "answer": [
+        "とうろくめんきょぜい"
+      ],
+      "meaning": "registration and license tax"
+    },
+    {
+      "question": "登記所",
+      "answer": [
+        "とうきしょ"
+      ],
+      "meaning": "registry office; Civil registry"
+    },
+    {
+      "question": "為替手形",
+      "answer": [
+        "かわせてがた"
+      ],
+      "meaning": "bill of exchange, draft, draught; Negotiable instrument"
+    },
+    {
+      "question": "当事者能力",
+      "answer": [
+        "とうじしゃのうりょく"
+      ],
+      "meaning": "admissibility of a party (to a suit)"
+    },
+    {
+      "question": "匿名組合",
+      "answer": [
+        "とくめいくみあい"
+      ],
+      "meaning": "anonymous partnership, silent partnership, anonymous association; Tokumei kumiai"
+    },
+    {
+      "question": "自己破産",
+      "answer": [
+        "じこはさん"
+      ],
+      "meaning": "personal bankruptcy, voluntary bankruptcy"
+    },
+    {
+      "question": "当事者能力",
+      "answer": [
+        "とうじしゃのうりょく"
+      ],
+      "meaning": "admissibility of a party (to a suit)"
+    },
+    {
+      "question": "内容証明",
+      "answer": [
+        "ないようしょうめい"
+      ],
+      "meaning": "certification of contents"
+    },
+    {
+      "question": "転質",
+      "answer": [
+        "てんしち",
+        "てんじち"
+      ],
+      "meaning": "repledge (of collateral), repledging, subpledge"
+    },
+    {
+      "question": "環境権",
+      "answer": [
+        "かんきょうけん"
+      ],
+      "meaning": "environment right"
+    },
+    {
+      "question": "抵当権",
+      "answer": [
+        "ていとうけん"
+      ],
+      "meaning": "mortgage, right of pledge, lien; Hypothec"
+    },
+    {
+      "question": "掌理",
+      "answer": [
+        "しょうり"
+      ],
+      "meaning": "rule of law, administration of justice"
+    },
+    {
+      "question": "投票",
+      "answer": [
+        "とうひょう"
+      ],
+      "meaning": "voting, poll; Voting"
+    },
+    {
+      "question": "漁業権",
+      "answer": [
+        "ぎょぎょうけん"
+      ],
+      "meaning": "fishing rights"
+    },
+    {
+      "question": "関連会社",
+      "answer": [
+        "かんれんがいしゃ"
+      ],
+      "meaning": "associated company; Associate company"
+    },
+    {
+      "question": "帝銀事件",
+      "answer": [
+        "ていぎんじけん"
+      ],
+      "meaning": "Tengin Bank robbery (1948), in which 12 people died of cyanide poisoning"
+    },
+    {
+      "question": "道路交通法",
+      "answer": [
+        "どうろこうつうほう"
+      ],
+      "meaning": "Road Traffic Law"
+    },
+    {
+      "question": "撤回",
+      "answer": [
+        "てっかい"
+      ],
+      "meaning": "withdrawal, retraction, revocation, repeal"
+    },
+    {
+      "question": "都市再開発",
+      "answer": [
+        "としさいかいはつ"
+      ],
+      "meaning": "urban redevelopment; Urban renewal"
+    },
+    {
+      "question": "都市計画",
+      "answer": [
+        "としけいかく"
+      ],
+      "meaning": "city planning, urban planning, town planning; Urban planning"
+    },
+    {
+      "question": "教唆犯",
+      "answer": [
+        "きょうさはん"
+      ],
+      "meaning": "criminal instigator"
+    },
+    {
+      "question": "監査役",
+      "answer": [
+        "かんさやく"
+      ],
+      "meaning": "auditor, inspector; Statutory auditor"
+    },
+    {
+      "question": "行政",
+      "answer": [
+        "ぎょうせい"
+      ],
+      "meaning": "administration, governance, the authorities, authority; Executive (government)"
+    },
+    {
+      "question": "賃貸借",
+      "answer": [
+        "ちんたいしゃく"
+      ],
+      "meaning": "renting, leasing; Renting"
+    },
+    {
+      "question": "間諜",
+      "answer": [
+        "かんちょう"
+      ],
+      "meaning": "spy, secret agent"
+    },
+    {
+      "question": "仮差押え",
+      "answer": [
+        "かりさしおさえ"
+      ],
+      "meaning": "provisional seizure, provisional attachment, provisional garnishment"
+    },
+    {
+      "question": "定款",
+      "answer": [
+        "ていかん"
+      ],
+      "meaning": "articles of incorporation, company statute"
+    },
+    {
+      "question": "直間比率",
+      "answer": [
+        "ちょっかんひりつ"
+      ],
+      "meaning": "ratio of direct to indirect taxes"
+    },
+    {
+      "question": "通信販売",
+      "answer": [
+        "つうしんはんばい"
+      ],
+      "meaning": "mail order, mail-order sales, shop-by-mail service, on-line shopping service (with delivery by mail); Mail order"
+    },
+    {
+      "question": "土地収用",
+      "answer": [
+        "とちしゅうよう"
+      ],
+      "meaning": "land expropriation; Eminent domain"
+    },
+    {
+      "question": "特別抗告",
+      "answer": [
+        "とくべつこうこく"
+      ],
+      "meaning": "special kokoku appeal"
+    },
+    {
+      "question": "通達",
+      "answer": [
+        "つうたつ",
+        "つうだつ"
+      ],
+      "meaning": "notification, official notice, directive (e.g. from higher to lower levels of the administration); being well versed (in something)"
+    },
+    {
+      "question": "登録免許税",
+      "answer": [
+        "とうろくめんきょぜい"
+      ],
+      "meaning": "registration and license tax"
+    },
+    {
+      "question": "登記所",
+      "answer": [
+        "とうきしょ"
+      ],
+      "meaning": "registry office; Civil registry"
+    },
+    {
+      "question": "管理価格",
+      "answer": [
+        "かんりかかく"
+      ],
+      "meaning": "administered price"
+    },
+    {
+      "question": "建築物",
+      "answer": [
+        "けんちくぶつ"
+      ],
+      "meaning": "building, structure; Building"
+    },
+    {
+      "question": "超過保険",
+      "answer": [
+        "ちょうかほけん"
+      ],
+      "meaning": "overinsurance"
+    },
+    {
+      "question": "官署",
+      "answer": [
+        "かんしょ"
+      ],
+      "meaning": "government office"
+    },
+    {
+      "question": "体罰",
+      "answer": [
+        "たいばつ"
+      ],
+      "meaning": "corporal punishment; Corporal punishment"
+    },
+    {
+      "question": "間接正犯",
+      "answer": [
+        "かんせつせいはん"
+      ],
+      "meaning": "indirect principal offender, indirect perpetrator, principal offender in the second degree"
+    },
+    {
+      "question": "逮捕",
+      "answer": [
+        "たいほ"
+      ],
+      "meaning": "arrest, apprehension, capture; Arrest"
+    },
+    {
+      "question": "土地税制",
+      "answer": [
+        "とちぜいせい"
+      ],
+      "meaning": "land taxation system"
+    },
+    {
+      "question": "仲裁裁判",
+      "answer": [
+        "ちゅうさいさいばん"
+      ],
+      "meaning": "arbitration"
+    },
+    {
+      "question": "中立",
+      "answer": [
+        "ちゅうりつ",
+        "なかだち"
+      ],
+      "meaning": "neutrality; Neutrality (international relations); break between the light meal and the actual serving of tea (during a formal tea ceremony)"
+    },
+    {
+      "question": "監査役",
+      "answer": [
+        "かんさやく"
+      ],
+      "meaning": "auditor, inspector; Statutory auditor"
+    },
+    {
+      "question": "検察庁",
+      "answer": [
+        "けんさつちょう"
+      ],
+      "meaning": "Public Prosecutor's Office"
+    },
+    {
+      "question": "中間省略登記",
+      "answer": [
+        "ちゅうかんしょうりゃくとうき"
+      ],
+      "meaning": "registration (of change in real estate rights) with all right holders but the initial and final omitted, middle omission registration"
+    },
+    {
+      "question": "管轄",
+      "answer": [
+        "かんかつ"
+      ],
+      "meaning": "jurisdiction, control"
+    },
+    {
+      "question": "参政権",
+      "answer": [
+        "さんせいけん"
+      ],
+      "meaning": "suffrage, franchise; Suffrage"
+    },
+    {
+      "question": "地目",
+      "answer": [
+        "ちもく"
+      ],
+      "meaning": "land classification"
+    },
+    {
+      "question": "時効",
+      "answer": [
+        "じこう"
+      ],
+      "meaning": "statute of limitations, lapse of rights after a period of time, prescription (including acquisitive and extinctive prescription); becoming invalid or void after a set time; ageing, aging; Statute of limitations"
+    },
+    {
+      "question": "国民主権",
+      "answer": [
+        "こくみんしゅけん"
+      ],
+      "meaning": "sovereignty of the people; Popular sovereignty"
+    },
+    {
+      "question": "代理",
+      "answer": [
+        "だいり"
+      ],
+      "meaning": "representation, agency, proxy, deputy, agent, attorney, substitute, alternate, acting (principal, etc.); Law of agency"
+    },
+    {
+      "question": "慣習法",
+      "answer": [
+        "かんしゅうほう"
+      ],
+      "meaning": "common law; customary law (in international law); Custom (law)"
+    },
+    {
+      "question": "行使",
+      "answer": [
+        "こうし"
+      ],
+      "meaning": "use, exercise (of one's right, authority, power, etc.)"
+    },
+    {
+      "question": "地上権",
+      "answer": [
+        "ちじょうけん"
+      ],
+      "meaning": "surface rights (i.e. the right to build a house, etc. on land owned by another), superficies; Superficies"
+    },
+    {
+      "question": "緊急逮捕",
+      "answer": [
+        "きんきゅうたいほ"
+      ],
+      "meaning": "arrest without warrant"
+    },
+    {
+      "question": "地方自治",
+      "answer": [
+        "ちほうじち"
+      ],
+      "meaning": "local (governmental) autonomy; Local self-government"
+    },
+    {
+      "question": "転換社債",
+      "answer": [
+        "てんかんしゃさい"
+      ],
+      "meaning": "convertible (corporate) bond"
+    },
+    {
+      "question": "男女共学",
+      "answer": [
+        "だんじょきょうがく"
+      ],
+      "meaning": "co-education, mixed education; Mixed-sex education"
+    },
+    {
+      "question": "鑑定",
+      "answer": [
+        "かんてい"
+      ],
+      "meaning": "judgement, judgment, expert opinion, appraisal"
+    },
+    {
+      "question": "賃料",
+      "answer": [
+        "ちんりょう"
+      ],
+      "meaning": "rent, rental"
+    },
+    {
+      "question": "議会制民主主義",
+      "answer": [
+        "ぎかいせいみんしゅしゅぎ"
+      ],
+      "meaning": "parliamentary democracy"
+    },
+    {
+      "question": "共犯",
+      "answer": [
+        "きょうはん"
+      ],
+      "meaning": "complicity; Accomplice"
+    },
+    {
+      "question": "還付",
+      "answer": [
+        "かんぷ"
+      ],
+      "meaning": "return, restoration, refund, (duty) drawback"
+    },
+    {
+      "question": "追徴",
+      "answer": [
+        "ついちょう"
+      ],
+      "meaning": "supplementary charge, additional collection"
+    },
+    {
+      "question": "懲役",
+      "answer": [
+        "ちょうえき"
+      ],
+      "meaning": "penal servitude, imprisonment with hard labor (hard labour); Penal labour"
+    },
+    {
+      "question": "倒産",
+      "answer": [
+        "とうさん"
+      ],
+      "meaning": "(corporate) bankruptcy, insolvency, commercial failure, failed business; Bankruptcy"
+    },
+    {
+      "question": "地図",
+      "answer": [
+        "ちず"
+      ],
+      "meaning": "map; Map"
+    },
+    {
+      "question": "共同相続",
+      "answer": [
+        "きょうどうそうぞく"
+      ],
+      "meaning": "joint inheritance"
+    },
+    {
+      "question": "鳥獣保護区",
+      "answer": [
+        "ちょうじゅうほごく"
+      ],
+      "meaning": "wildlife sanctuary, protection area for birds and wild animals; Wildlife refuge"
+    },
+    {
+      "question": "著作物",
+      "answer": [
+        "ちょさくぶつ"
+      ],
+      "meaning": "written thing (e.g. book, musical composition), works"
+    },
+    {
+      "question": "懲罰",
+      "answer": [
+        "ちょうばつ"
+      ],
+      "meaning": "discipline, punishment, reprimand"
+    },
+    {
+      "question": "選挙区",
+      "answer": [
+        "せんきょく"
+      ],
+      "meaning": "electoral district, precinct; Electoral district"
+    },
+    {
+      "question": "心裡留保",
+      "answer": [
+        "しんりりゅうほ"
+      ],
+      "meaning": "mental reservation, making a false declaration of intent"
+    },
+    {
+      "question": "監事",
+      "answer": [
+        "かんじ"
+      ],
+      "meaning": "auditor, controller, comptroller; supervisor, inspector, manager"
+    },
+    {
+      "question": "代理人",
+      "answer": [
+        "だいりにん"
+      ],
+      "meaning": "proxy, agent, substitute, deputy, alternate, representative, attorney"
+    },
+    {
+      "question": "大店法",
+      "answer": [
+        "だいてんほう"
+      ],
+      "meaning": "Large-scale Retail Stores Law"
+    },
+    {
+      "question": "休職",
+      "answer": [
+        "きゅうしょく"
+      ],
+      "meaning": "temporary retirement, suspension from office"
+    },
+    {
+      "question": "転貸借",
+      "answer": [
+        "てんたいしゃく"
+      ],
+      "meaning": "subletting and subleasing"
+    },
+    {
+      "question": "危険性",
+      "answer": [
+        "きけんせい"
+      ],
+      "meaning": "riskiness, danger"
+    },
+    {
+      "question": "代言人",
+      "answer": [
+        "だいげんにん"
+      ],
+      "meaning": "attorney, lawyer"
+    },
+    {
+      "question": "第三債務者",
+      "answer": [
+        "だいさんさいむしゃ"
+      ],
+      "meaning": "garnishee"
+    },
+    {
+      "question": "地方消費税",
+      "answer": [
+        "ちほうしょうひぜい"
+      ],
+      "meaning": "local consumption tax"
+    },
+    {
+      "question": "中国",
+      "answer": [
+        "ちゅうごく",
+        "ちゅうこく"
+      ],
+      "meaning": "China; Chūgoku region of western Honshu (incl. Okayama, Hiroshima, Shimane, Tottori and Yamaguchi prefectures); central part of a country, main region; province of the second lowest rank (ritsuryo system); Chuugoku"
+    },
+    {
+      "question": "地番",
+      "answer": [
+        "ちばん"
+      ],
+      "meaning": "lot number"
+    },
+    {
+      "question": "退社",
+      "answer": [
+        "たいしゃ"
+      ],
+      "meaning": "resignation, leaving office; leaving work (e.g. at the end of the day)"
+    },
+    {
+      "question": "大気汚染防止法",
+      "answer": [
+        "たいきおせんぼうしほう"
+      ],
+      "meaning": "Air Pollution Control Law"
+    },
+    {
+      "question": "眺望権",
+      "answer": [
+        "ちょうぼうけん"
+      ],
+      "meaning": "right to a view"
+    },
+    {
+      "question": "代物弁済",
+      "answer": [
+        "だいぶつべんさい"
+      ],
+      "meaning": "payment in substitutes, accord and satisfaction, substitute performance"
+    },
+    {
+      "question": "知る権利",
+      "answer": [
+        "しるけんり"
+      ],
+      "meaning": "right to know, right to access information"
+    },
+    {
+      "question": "退職金",
+      "answer": [
+        "たいしょくきん"
+      ],
+      "meaning": "severance payment, retirement money (usu. lump-sum), redundancy payment; Severance package"
+    },
+    {
+      "question": "偽証罪",
+      "answer": [
+        "ぎしょうざい"
+      ],
+      "meaning": "crime of perjury"
+    },
+    {
+      "question": "貸借対照表",
+      "answer": [
+        "たいしゃくたいしょうひょう"
+      ],
+      "meaning": "balance sheet; Balance sheet"
+    },
+    {
+      "question": "地方財政法",
+      "answer": [
+        "ちほうざいせいほう"
+      ],
+      "meaning": "Local Government Finance Act"
+    },
+    {
+      "question": "危険負担",
+      "answer": [
+        "きけんふたん"
+      ],
+      "meaning": "risk-bearing"
+    },
+    {
+      "question": "弾劾裁判所",
+      "answer": [
+        "だんがいさいばんしょ"
+      ],
+      "meaning": "(Japanese) Court of Impeachment"
+    },
+    {
+      "question": "脱法行為",
+      "answer": [
+        "だっぽうこうい"
+      ],
+      "meaning": "evasion of the law"
+    },
+    {
+      "question": "裁判権",
+      "answer": [
+        "さいばんけん"
+      ],
+      "meaning": "jurisdiction"
+    },
+    {
+      "question": "第三者異議の訴え",
+      "answer": [
+        "だいさんしゃいぎのうったえ"
+      ],
+      "meaning": "third-party action against execution"
+    },
+    {
+      "question": "賃金",
+      "answer": [
+        "ちんぎん",
+        "ちんきん"
+      ],
+      "meaning": "wages; cash payment of rent; Wage"
+    },
+    {
+      "question": "贈与",
+      "answer": [
+        "ぞうよ"
+      ],
+      "meaning": "donation, presentation; Gift (law)"
+    },
+    {
+      "question": "男女雇用機会均等法",
+      "answer": [
+        "だんじょこようきかいきんとうほう"
+      ],
+      "meaning": "Gender Equality In Employment Act"
+    },
+    {
+      "question": "拘留",
+      "answer": [
+        "こうりゅう"
+      ],
+      "meaning": "custody, detention, confinement; Detention (imprisonment)"
+    },
+    {
+      "question": "即時抗告",
+      "answer": [
+        "そくじこうこく"
+      ],
+      "meaning": "immediate kokoku appeal"
+    },
+    {
+      "question": "議決権",
+      "answer": [
+        "ぎけつけん"
+      ],
+      "meaning": "voting right"
+    },
+    {
+      "question": "企業の社会的責任",
+      "answer": [
+        "きぎょうのしゃかいてきせきにん"
+      ],
+      "meaning": "corporate social responsibility, CSR; Corporate social responsibility"
+    },
+    {
+      "question": "大陸棚",
+      "answer": [
+        "たいりくだな"
+      ],
+      "meaning": "continental shelf; Continental shelf"
+    },
+    {
+      "question": "贈与税",
+      "answer": [
+        "ぞうよぜい"
+      ],
+      "meaning": "gift tax, donation tax"
+    },
+    {
+      "question": "逮捕状",
+      "answer": [
+        "たいほじょう"
+      ],
+      "meaning": "arrest warrant"
+    },
+    {
+      "question": "元本",
+      "answer": [
+        "がんぽん",
+        "げんぽん"
+      ],
+      "meaning": "principal (invest.), capital"
+    },
+    {
+      "question": "総会屋",
+      "answer": [
+        "そうかいや"
+      ],
+      "meaning": "extortionist that threatens to disrupt stock-holder meetings; Sōkaiya"
+    },
+    {
+      "question": "送達",
+      "answer": [
+        "そうたつ"
+      ],
+      "meaning": "delivery, dispatch, despatch, conveyance; service of process; Service of process"
+    },
+    {
+      "question": "国税",
+      "answer": [
+        "こくぜい"
+      ],
+      "meaning": "national tax"
+    },
+    {
+      "question": "争点効",
+      "answer": [
+        "そうてんこう"
+      ],
+      "meaning": "collateral estoppel, issue preclusion; Collateral estoppel"
+    },
+    {
+      "question": "貸与権",
+      "answer": [
+        "たいよけん"
+      ],
+      "meaning": "lending rights (for copyrighted works under Japan's copyright law)"
+    },
+    {
+      "question": "堕胎罪",
+      "answer": [
+        "だたいざい"
+      ],
+      "meaning": "illegal abortion"
+    },
+    {
+      "question": "所持",
+      "answer": [
+        "しょじ"
+      ],
+      "meaning": "possession, owning"
+    },
+    {
+      "question": "相殺",
+      "answer": [
+        "そうさい",
+        "そうさつ"
+      ],
+      "meaning": "offset, offsetting each other, cancelling each other out, counterbalancing; set-off, setoff; Set-off (law)"
+    },
+    {
+      "question": "控訴",
+      "answer": [
+        "こうそ"
+      ],
+      "meaning": "koso appeal (initial appeal to a higher court)"
+    },
+    {
+      "question": "期日",
+      "answer": [
+        "きじつ",
+        "きにち",
+        "ごじつ"
+      ],
+      "meaning": "fixed date, settlement date"
+    },
+    {
+      "question": "地積",
+      "answer": [
+        "ちせき"
+      ],
+      "meaning": "area of a piece of land, acreage"
+    },
+    {
+      "question": "争議行為",
+      "answer": [
+        "そうぎこうい"
+      ],
+      "meaning": "direct action, strike"
+    },
+    {
+      "question": "総量規制",
+      "answer": [
+        "そうりょうきせい"
+      ],
+      "meaning": "total volume control, regulations on total allowable volumes of pollutants"
+    },
+    {
+      "question": "地獄の沙汰も金次第",
+      "answer": [
+        "じごくのさたもかねしだい"
+      ],
+      "meaning": "money talks, money is the key that opens all doors, money is the best lawyer in hell, even the verdict of hell is determined by money"
+    },
+    {
+      "question": "遡求",
+      "answer": [
+        "そきゅう"
+      ],
+      "meaning": "redemption, recourse"
+    },
+    {
+      "question": "端株",
+      "answer": [
+        "はかぶ"
+      ],
+      "meaning": "odd lot (e.g. in share purchase or sale)"
+    },
+    {
+      "question": "証明",
+      "answer": [
+        "しょうめい"
+      ],
+      "meaning": "proof, verification, certification; Mathematical proof"
+    },
+    {
+      "question": "起訴状",
+      "answer": [
+        "きそじょう"
+      ],
+      "meaning": "(written) indictment"
+    },
+    {
+      "question": "前借金",
+      "answer": [
+        "ぜんしゃくきん",
+        "ぜんしゃっきん"
+      ],
+      "meaning": "loan, advance"
+    },
+    {
+      "question": "司法",
+      "answer": [
+        "しほう"
+      ],
+      "meaning": "administration of justice; Judiciary"
+    },
+    {
+      "question": "総理府",
+      "answer": [
+        "そうりふ"
+      ],
+      "meaning": "Prime Minister's office, PMO; Sourifu"
+    },
+    {
+      "question": "題号",
+      "answer": [
+        "だいごう"
+      ],
+      "meaning": "title"
+    },
+    {
+      "question": "専修学校",
+      "answer": [
+        "せんしゅうがっこう"
+      ],
+      "meaning": "(special) vocational school; Vocational school"
+    },
+    {
+      "question": "争議権",
+      "answer": [
+        "そうぎけん"
+      ],
+      "meaning": "right to strike"
+    },
+    {
+      "question": "既判力",
+      "answer": [
+        "きはんりょく"
+      ],
+      "meaning": "res judicata, res adjudicata, claim preclusion, exclusion of further legal action; Res judicata"
+    },
+    {
+      "question": "最高裁判所",
+      "answer": [
+        "さいこうさいばんしょ"
+      ],
+      "meaning": "Supreme Court; Saikousaibansho; Supreme court"
+    },
+    {
+      "question": "贈賄罪",
+      "answer": [
+        "ぞうわいざい"
+      ],
+      "meaning": "crime of bribery"
+    },
+    {
+      "question": "訴状",
+      "answer": [
+        "そじょう"
+      ],
+      "meaning": "petition, complaint, (legal) brief"
+    },
+    {
+      "question": "寄付",
+      "answer": [
+        "きふ"
+      ],
+      "meaning": "contribution, donation; Kifu; Donation"
+    },
+    {
+      "question": "相続人",
+      "answer": [
+        "そうぞくにん"
+      ],
+      "meaning": "heir, heiress, inheritor"
+    },
+    {
+      "question": "総務庁",
+      "answer": [
+        "そうむちょう"
+      ],
+      "meaning": "General Affairs Agency"
+    },
+    {
+      "question": "訴権",
+      "answer": [
+        "そけん"
+      ],
+      "meaning": "right to take legal action, right to take action"
+    },
+    {
+      "question": "滞納処分",
+      "answer": [
+        "たいのうしょぶん"
+      ],
+      "meaning": "disposition for failure to pay"
+    },
+    {
+      "question": "相続財産",
+      "answer": [
+        "そうぞくざいさん"
+      ],
+      "meaning": "inheritance, inherited property, heritage"
+    },
+    {
+      "question": "組合",
+      "answer": [
+        "くみあい"
+      ],
+      "meaning": "association, union, guild; Voluntary association"
+    },
+    {
+      "question": "代表",
+      "answer": [
+        "だいひょう"
+      ],
+      "meaning": "representative, representation, delegation, type, example, model; switchboard number, main number"
+    },
+    {
+      "question": "積荷保険",
+      "answer": [
+        "つみにほけん"
+      ],
+      "meaning": "cargo insurance"
+    },
+    {
+      "question": "先願主義",
+      "answer": [
+        "せんがんしゅぎ"
+      ],
+      "meaning": "first-to-file system (e.g. in patent law); First to file and first to invent"
+    },
+    {
+      "question": "責任能力",
+      "answer": [
+        "せきにんのうりょく"
+      ],
+      "meaning": "legal competency, criminal responsibility, ability to fulfil one's responsibilities, full accountability; Sanity"
+    },
+    {
+      "question": "占領",
+      "answer": [
+        "せんりょう"
+      ],
+      "meaning": "occupying, having (an area) all to oneself; military occupation, possession, capture, seizure; Military occupation"
+    },
+    {
+      "question": "争点",
+      "answer": [
+        "そうてん"
+      ],
+      "meaning": "point at issue"
+    },
+    {
+      "question": "選挙人名簿",
+      "answer": [
+        "せんきょにんめいぼ"
+      ],
+      "meaning": "voter registration list, electoral register; Electoral roll"
+    },
+    {
+      "question": "強迫",
+      "answer": [
+        "きょうはく"
+      ],
+      "meaning": "compelling, using duress"
+    },
+    {
+      "question": "選挙権",
+      "answer": [
+        "せんきょけん"
+      ],
+      "meaning": "suffrage, the right to vote"
+    },
+    {
+      "question": "捜索",
+      "answer": [
+        "そうさく"
+      ],
+      "meaning": "search (esp. for someone or something missing), manhunt; legally authorized search of a person, building, etc."
+    },
+    {
+      "question": "線引き",
+      "answer": [
+        "せんびき",
+        "せんひき"
+      ],
+      "meaning": "delineation, demarcation; (measuring) ruler"
+    },
+    {
+      "question": "窃盗罪",
+      "answer": [
+        "せっとうざい"
+      ],
+      "meaning": "theft, stealing, larceny"
+    },
+    {
+      "question": "占有",
+      "answer": [
+        "せんゆう"
+      ],
+      "meaning": "possession, occupation, occupancy"
+    },
+    {
+      "question": "正当防衛",
+      "answer": [
+        "せいとうぼうえい"
+      ],
+      "meaning": "legitimate self-defence, legitimate self-defense; Right of self-defense"
+    },
+    {
+      "question": "基本的人権",
+      "answer": [
+        "きほんてきじんけん"
+      ],
+      "meaning": "fundamental human rights"
+    },
+    {
+      "question": "政治資金規正法",
+      "answer": [
+        "せいじしきんきせいほう"
+      ],
+      "meaning": "Political Funds Control Law"
+    },
+    {
+      "question": "義務教育",
+      "answer": [
+        "ぎむきょういく"
+      ],
+      "meaning": "compulsory education; Compulsory education"
+    },
+    {
+      "question": "起訴",
+      "answer": [
+        "きそ"
+      ],
+      "meaning": "prosecution, indictment"
+    },
+    {
+      "question": "交戦団体",
+      "answer": [
+        "こうせんだんたい"
+      ],
+      "meaning": "belligerent communities, armed resistance group"
+    },
+    {
+      "question": "請願",
+      "answer": [
+        "せいがん"
+      ],
+      "meaning": "petition; Petition"
+    },
+    {
+      "question": "生活環境",
+      "answer": [
+        "せいかつかんきょう"
+      ],
+      "meaning": "one's (living) environment"
+    },
+    {
+      "question": "取得時効",
+      "answer": [
+        "しゅとくじこう"
+      ],
+      "meaning": "acquisitive prescription, positive prescription; Usucaption"
+    },
+    {
+      "question": "国家承認",
+      "answer": [
+        "こっかしょうにん"
+      ],
+      "meaning": "diplomatic recognition (of a country)"
+    },
+    {
+      "question": "選挙運動",
+      "answer": [
+        "せんきょうんどう"
+      ],
+      "meaning": "election campaign, political campaign, campaigning, electioneering, canvassing"
+    },
+    {
+      "question": "税理士",
+      "answer": [
+        "ぜいりし"
+      ],
+      "meaning": "tax counsellor, tax counselor, licensed tax accountant; Tax advisor"
+    },
+    {
+      "question": "責任",
+      "answer": [
+        "せきにん"
+      ],
+      "meaning": "duty, responsibility (incl. supervision of staff); liability, onus; Moral responsibility"
+    },
+    {
+      "question": "戦力",
+      "answer": [
+        "せんりょく"
+      ],
+      "meaning": "war potential, military strength, fighting power; ability (to compete), capabilities, valuable asset"
+    },
+    {
+      "question": "署名",
+      "answer": [
+        "しょめい"
+      ],
+      "meaning": "signature; Signature"
+    },
+    {
+      "question": "親族",
+      "answer": [
+        "しんぞく",
+        "うから"
+      ],
+      "meaning": "relative, relation; Kinship; blood relative"
+    },
+    {
+      "question": "控訴理由",
+      "answer": [
+        "こうそりゆう"
+      ],
+      "meaning": "grounds for an appeal"
+    },
+    {
+      "question": "占有権",
+      "answer": [
+        "せんゆうけん"
+      ],
+      "meaning": "right of exclusive possession"
+    },
+    {
+      "question": "診療報酬",
+      "answer": [
+        "しんりょうほうしゅう"
+      ],
+      "meaning": "payment (system) for medical services"
+    },
+    {
+      "question": "生涯教育",
+      "answer": [
+        "しょうがいきょういく"
+      ],
+      "meaning": "lifelong education, continuing education, further education"
+    },
+    {
+      "question": "主観主義",
+      "answer": [
+        "しゅかんしゅぎ"
+      ],
+      "meaning": "subjectivism"
+    },
+    {
+      "question": "相続",
+      "answer": [
+        "そうぞく"
+      ],
+      "meaning": "succession, inheritance; Inheritance"
+    },
+    {
+      "question": "税額控除",
+      "answer": [
+        "ぜいがくこうじょ"
+      ],
+      "meaning": "tax credit, tax exemption"
+    },
+    {
+      "question": "期待権",
+      "answer": [
+        "きたいけん"
+      ],
+      "meaning": "expectant right (as opposed to a vested right), contingent right"
+    },
+    {
+      "question": "請願権",
+      "answer": [
+        "せいがんけん"
+      ],
+      "meaning": "right to petition (the government)"
+    },
+    {
+      "question": "税務署",
+      "answer": [
+        "ぜいむしょ"
+      ],
+      "meaning": "tax office"
+    },
+    {
+      "question": "森林法",
+      "answer": [
+        "しんりんほう"
+      ],
+      "meaning": "the Forest Act"
+    },
+    {
+      "question": "生活保護法",
+      "answer": [
+        "せいかつほごほう"
+      ],
+      "meaning": "Livelihood Protection Law"
+    },
+    {
+      "question": "検証",
+      "answer": [
+        "けんしょう"
+      ],
+      "meaning": "verification, inspection"
+    },
+    {
+      "question": "製造物責任",
+      "answer": [
+        "せいぞうぶつせきにん"
+      ],
+      "meaning": "product liability"
+    },
+    {
+      "question": "既得権",
+      "answer": [
+        "きとくけん"
+      ],
+      "meaning": "vested rights"
+    },
+    {
+      "question": "政務次官",
+      "answer": [
+        "せいむじかん"
+      ],
+      "meaning": "deputy minister, assistant minister; Parliamentary Under-Secretary of State"
+    },
+    {
+      "question": "詐欺",
+      "answer": [
+        "さぎ"
+      ],
+      "meaning": "fraud, swindle, graft, cheating, trick, scam; Fraud"
+    },
+    {
+      "question": "政治倫理",
+      "answer": [
+        "せいじりんり"
+      ],
+      "meaning": "political ethics"
+    },
+    {
+      "question": "教育機関",
+      "answer": [
+        "きょういくきかん"
+      ],
+      "meaning": "educational institution"
+    },
+    {
+      "question": "選挙管理委員会",
+      "answer": [
+        "せんきょかんりいいんかい"
+      ],
+      "meaning": "Committee for Election Administration"
+    },
+    {
+      "question": "市街化区域",
+      "answer": [
+        "しがいかくいき"
+      ],
+      "meaning": "area zoned for urbanization (urbanisation)"
+    },
+    {
+      "question": "審査請求",
+      "answer": [
+        "しんさせいきゅう"
+      ],
+      "meaning": "formal objection (to an administrative disposition), request for examination (of a patent), request for administrative review"
+    },
+    {
+      "question": "振出人",
+      "answer": [
+        "ふりだしにん"
+      ],
+      "meaning": "remitter, writer of cheque, writer of check"
+    },
+    {
+      "question": "信任状",
+      "answer": [
+        "しんにんじょう"
+      ],
+      "meaning": "credentials"
+    },
+    {
+      "question": "親告罪",
+      "answer": [
+        "しんこくざい"
+      ],
+      "meaning": "type of crime which requires a formal complaint from the victim in order to prosecute; Antragsdelikt"
+    },
+    {
+      "question": "常習犯",
+      "answer": [
+        "じょうしゅうはん"
+      ],
+      "meaning": "habitual criminal, recidivist; recidivism, habitual criminal activity"
+    },
+    {
+      "question": "信託統治",
+      "answer": [
+        "しんたくとうち"
+      ],
+      "meaning": "trusteeship; United Nations trust territories"
+    },
+    {
+      "question": "職務質問",
+      "answer": [
+        "しょくむしつもん"
+      ],
+      "meaning": "police questioning"
+    },
+    {
+      "question": "忌避",
+      "answer": [
+        "きひ"
+      ],
+      "meaning": "evasion, avoidance, shirking; recusation (of a judge), taking exception (to a judge), challenge; Voir dire"
+    },
+    {
+      "question": "戦争",
+      "answer": [
+        "せんそう"
+      ],
+      "meaning": "war; fighting, fierce competition; War"
+    },
+    {
+      "question": "信義則",
+      "answer": [
+        "しんぎそく"
+      ],
+      "meaning": "fair and equitable principle"
+    },
+    {
+      "question": "幸福追求権",
+      "answer": [
+        "こうふくついきゅうけん"
+      ],
+      "meaning": "right to the pursuit of happiness; Life, liberty and the pursuit of happiness"
+    },
+    {
+      "question": "新規性",
+      "answer": [
+        "しんきせい"
+      ],
+      "meaning": "novelty (patentability requirement); Novelty (patent)"
+    },
+    {
+      "question": "教育行政",
+      "answer": [
+        "きょういくぎょうせい"
+      ],
+      "meaning": "educational administration"
+    },
+    {
+      "question": "公務執行妨害罪",
+      "answer": [
+        "こうむしっこうぼうがいざい"
+      ],
+      "meaning": "obstructing the discharge of official duties, hindering a government official in the execution of his duties"
+    },
+    {
+      "question": "食品衛生法",
+      "answer": [
+        "しょくひんえいせいほう"
+      ],
+      "meaning": "food hygiene law"
+    },
+    {
+      "question": "条約",
+      "answer": [
+        "じょうやく"
+      ],
+      "meaning": "treaty, pact, convention, agreement; Treaty"
+    },
+    {
+      "question": "財団法人",
+      "answer": [
+        "ざいだんほうじん"
+      ],
+      "meaning": "incorporated foundation, juridical foundation; Foundation (non-profit)"
+    },
+    {
+      "question": "審査",
+      "answer": [
+        "しんさ"
+      ],
+      "meaning": "judging, inspection, examination, investigation, review"
+    },
+    {
+      "question": "休戦",
+      "answer": [
+        "きゅうせん"
+      ],
+      "meaning": "cease-fire, truce, armistice"
+    },
+    {
+      "question": "給付",
+      "answer": [
+        "きゅうふ"
+      ],
+      "meaning": "payment, provision, benefit, present, delivery; performance"
+    },
+    {
+      "question": "新株",
+      "answer": [
+        "しんかぶ"
+      ],
+      "meaning": "newly issued stock or share, stock issue, share issue"
+    },
+    {
+      "question": "進歩性",
+      "answer": [
+        "しんぽせい"
+      ],
+      "meaning": "inventive step, invention (with respect to prior art); Inventive step and non-obviousness"
+    },
+    {
+      "question": "審判",
+      "answer": [
+        "しんぱん",
+        "しんばん"
+      ],
+      "meaning": "refereeing, trial, judgement, judgment, umpire, referee"
+    },
+    {
+      "question": "所得控除",
+      "answer": [
+        "しょとくこうじょ"
+      ],
+      "meaning": "tax deduction, deduction from taxable income, income exemptions and deductions"
+    },
+    {
+      "question": "挙証責任",
+      "answer": [
+        "きょしょうせきにん"
+      ],
+      "meaning": "burden of proof"
+    },
+    {
+      "question": "職階制",
+      "answer": [
+        "しょっかいせい"
+      ],
+      "meaning": "job ranking system"
+    },
+    {
+      "question": "申立て",
+      "answer": [
+        "もうしたて"
+      ],
+      "meaning": "statement, account (of something), declaration, allegation"
+    },
+    {
+      "question": "肖像権",
+      "answer": [
+        "しょうぞうけん"
+      ],
+      "meaning": "rights to usage of one's likeness"
+    },
+    {
+      "question": "証券取引法",
+      "answer": [
+        "しょうけんとりひきほう"
+      ],
+      "meaning": "Securities and Exchange Act"
+    },
+    {
+      "question": "恐喝罪",
+      "answer": [
+        "きょうかつざい"
+      ],
+      "meaning": "(the crime of) extortion"
+    },
+    {
+      "question": "教育委員会",
+      "answer": [
+        "きょういくいいんかい"
+      ],
+      "meaning": "Board of Education; Board of education"
+    },
+    {
+      "question": "条約",
+      "answer": [
+        "じょうやく"
+      ],
+      "meaning": "treaty, pact, convention, agreement; Treaty"
+    },
+    {
+      "question": "消費税",
+      "answer": [
+        "しょうひぜい"
+      ],
+      "meaning": "consumption tax (incl. sales tax, VAT, excise duty, etc.); Value added tax"
+    },
+    {
+      "question": "床面積",
+      "answer": [
+        "ゆかめんせき"
+      ],
+      "meaning": "floor space"
+    },
+    {
+      "question": "検察官",
+      "answer": [
+        "けんさつかん"
+      ],
+      "meaning": "public prosecutor; Prosecutor"
+    },
+    {
+      "question": "共益費",
+      "answer": [
+        "きょうえきひ"
+      ],
+      "meaning": "monthly fee for common areas of an apartment building (lighting, etc.), condo fees"
+    },
+    {
+      "question": "証拠",
+      "answer": [
+        "しょうこ"
+      ],
+      "meaning": "evidence, proof; Evidence (law)"
+    },
+    {
+      "question": "小商人",
+      "answer": [
+        "こあきんど"
+      ],
+      "meaning": "small businessman, petty trader"
+    },
+    {
+      "question": "消滅時効",
+      "answer": [
+        "しょうめつじこう"
+      ],
+      "meaning": "extinctive prescription, negative prescription, statute of limitations"
+    },
+    {
+      "question": "傷害罪",
+      "answer": [
+        "しょうがいざい"
+      ],
+      "meaning": "(crime of) inflicting bodily injury; Bodily harm"
+    },
+    {
+      "question": "商標権",
+      "answer": [
+        "しょうひょうけん"
+      ],
+      "meaning": "trademark rights"
+    },
+    {
+      "question": "除斥",
+      "answer": [
+        "じょせき"
+      ],
+      "meaning": "exclusion"
+    },
+    {
+      "question": "上告",
+      "answer": [
+        "じょうこく"
+      ],
+      "meaning": "final appeal to the highest court"
+    },
+    {
+      "question": "少年犯罪",
+      "answer": [
+        "しょうねんはんざい"
+      ],
+      "meaning": "juvenile crime, juvenile delinquency"
+    },
+    {
+      "question": "所有権",
+      "answer": [
+        "しょゆうけん"
+      ],
+      "meaning": "ownership, dominion, ownership rights, proprietorship, property rights; Ownership"
+    },
+    {
+      "question": "召喚",
+      "answer": [
+        "しょうかん"
+      ],
+      "meaning": "summons, summonsing, citation, subpoena, arraigning, calling, summoning"
+    },
+    {
+      "question": "人間環境宣言",
+      "answer": [
+        "にんげんかんきょうせんげん"
+      ],
+      "meaning": "Declaration of the United Nations Conference on the Human Environment (Stockholm, 1972); Declaration of the United Nations Conference on the Human Environment"
+    },
+    {
+      "question": "身体検査",
+      "answer": [
+        "しんたいけんさ"
+      ],
+      "meaning": "physical examination, medical checkup; frisking, pat-down, search"
+    },
+    {
+      "question": "商慣習",
+      "answer": [
+        "しょうかんしゅう"
+      ],
+      "meaning": "commercial practice"
+    },
+    {
+      "question": "出版権",
+      "answer": [
+        "しゅっぱんけん"
+      ],
+      "meaning": "publishing rights, right to publish"
+    },
+    {
+      "question": "消費貸借",
+      "answer": [
+        "しょうひたいしゃく"
+      ],
+      "meaning": "loan for consumption"
+    },
+    {
+      "question": "行政処分",
+      "answer": [
+        "ぎょうせいしょぶん"
+      ],
+      "meaning": "administrative measures (disposition)"
+    },
+    {
+      "question": "強姦罪",
+      "answer": [
+        "ごうかんざい"
+      ],
+      "meaning": "(crime of) rape, criminal assault"
+    },
+    {
+      "question": "承諾",
+      "answer": [
+        "しょうだく"
+      ],
+      "meaning": "consent, approval, acceptance, agreement, compliance; Acceptance"
+    },
+    {
+      "question": "準抗告",
+      "answer": [
+        "じゅんこうこく"
+      ],
+      "meaning": "jun-kokoku appeal, quasi-appeal, quasi-complaint"
+    },
+    {
+      "question": "権限",
+      "answer": [
+        "けんげん"
+      ],
+      "meaning": "power, authority, jurisdiction; Ultra vires"
+    },
+    {
+      "question": "準禁治産者",
+      "answer": [
+        "じゅんきんちさんしゃ"
+      ],
+      "meaning": "a quasi-incompetent (individual)"
+    },
+    {
+      "question": "新株引受権",
+      "answer": [
+        "しんかぶひきうけけん"
+      ],
+      "meaning": "pre-emptive right (to subscribe for new shares)"
+    },
+    {
+      "question": "手形",
+      "answer": [
+        "てがた"
+      ],
+      "meaning": "draft, draught, promissory note, bill; handprint; signed hand-print; Tegata"
+    },
+    {
+      "question": "強制競売",
+      "answer": [
+        "きょうせいけいばい"
+      ],
+      "meaning": "compulsory sale by auction, forced auction"
+    },
+    {
+      "question": "収入印紙",
+      "answer": [
+        "しゅうにゅういんし"
+      ],
+      "meaning": "revenue stamp; Revenue stamp"
+    },
+    {
+      "question": "準備書面",
+      "answer": [
+        "じゅんびしょめん"
+      ],
+      "meaning": "preparatory document, legal brief"
+    },
+    {
+      "question": "侵略",
+      "answer": [
+        "しんりゃく"
+      ],
+      "meaning": "aggression, invasion, raid"
+    },
+    {
+      "question": "重加算税",
+      "answer": [
+        "じゅうかさんぜい"
+      ],
+      "meaning": "heavy additional tax(ation)"
+    },
+    {
+      "question": "現行犯",
+      "answer": [
+        "げんこうはん"
+      ],
+      "meaning": "flagrante delicto, caught red-handed; In flagrante delicto"
+    },
+    {
+      "question": "所得税",
+      "answer": [
+        "しょとくぜい"
+      ],
+      "meaning": "income tax; Income tax"
+    },
+    {
+      "question": "修正申告",
+      "answer": [
+        "しゅうせいしんこく"
+      ],
+      "meaning": "(filing) revised (income tax) return"
+    },
+    {
+      "question": "行政法",
+      "answer": [
+        "ぎょうせいほう"
+      ],
+      "meaning": "administrative law; Administrative law"
+    },
+    {
+      "question": "合議制",
+      "answer": [
+        "ごうぎせい"
+      ],
+      "meaning": "parliamentary system"
+    },
+    {
+      "question": "工業地域",
+      "answer": [
+        "こうぎょうちいき"
+      ],
+      "meaning": "industrial area, industrial district, industrial zone; Industrial region"
+    },
+    {
+      "question": "従量税",
+      "answer": [
+        "じゅうりょうぜい"
+      ],
+      "meaning": "(taxation) a specific duty; Specific rate duty"
+    },
+    {
+      "question": "職務発明",
+      "answer": [
+        "しょくむはつめい"
+      ],
+      "meaning": "invention by an employee, employee invention, service invention"
+    },
+    {
+      "question": "取締役",
+      "answer": [
+        "とりしまりやく"
+      ],
+      "meaning": "company director, board member"
+    },
+    {
+      "question": "実体法",
+      "answer": [
+        "じったいほう"
+      ],
+      "meaning": "substantive law"
+    },
+    {
+      "question": "集団的自衛権",
+      "answer": [
+        "しゅうだんてきじえいけん"
+      ],
+      "meaning": "right to collective defense, right to collective defence"
+    },
+    {
+      "question": "収入",
+      "answer": [
+        "しゅうにゅう"
+      ],
+      "meaning": "income, receipts, revenue; Income"
+    },
+    {
+      "question": "就業規則",
+      "answer": [
+        "しゅうぎょうきそく"
+      ],
+      "meaning": "work regulations"
+    },
+    {
+      "question": "教育基本法",
+      "answer": [
+        "きょういくきほんほう"
+      ],
+      "meaning": "(Japanese) Education Act, Fundamental Law of Education; Fundamental Law of Education"
+    },
+    {
+      "question": "傷害保険",
+      "answer": [
+        "しょうがいほけん"
+      ],
+      "meaning": "accident insurance"
+    },
+    {
+      "question": "公判",
+      "answer": [
+        "こうはん"
+      ],
+      "meaning": "public hearing, trial"
+    },
+    {
+      "question": "銃砲刀剣類所持等取締法",
+      "answer": [
+        "じゅうほうとうけんるいしょじとうとりしまりほう"
+      ],
+      "meaning": "Swords and Firearms Control Law (1958)"
+    },
+    {
+      "question": "取締役会",
+      "answer": [
+        "とりしまりやくかい"
+      ],
+      "meaning": "board of directors; board of directors' meeting; Board of directors"
+    },
+    {
+      "question": "条理",
+      "answer": [
+        "じょうり"
+      ],
+      "meaning": "reason"
+    },
+    {
+      "question": "出願",
+      "answer": [
+        "しゅつがん"
+      ],
+      "meaning": "application"
+    },
+    {
+      "question": "取締役",
+      "answer": [
+        "とりしまりやく"
+      ],
+      "meaning": "company director, board member"
+    },
+    {
+      "question": "住民税",
+      "answer": [
+        "じゅうみんぜい"
+      ],
+      "meaning": "municipal tax"
+    },
+    {
+      "question": "収得",
+      "answer": [
+        "しゅうとく"
+      ],
+      "meaning": "acquiring, obtaining, receiving"
+    },
+    {
+      "question": "市民法",
+      "answer": [
+        "しみんほう"
+      ],
+      "meaning": "civil law"
+    },
+    {
+      "question": "所轄",
+      "answer": [
+        "しょかつ"
+      ],
+      "meaning": "jurisdiction"
+    },
+    {
+      "question": "社会保険",
+      "answer": [
+        "しゃかいほけん"
+      ],
+      "meaning": "social insurance; Social insurance"
+    },
+    {
+      "question": "手荷物",
+      "answer": [
+        "てにもつ"
+      ],
+      "meaning": "hand luggage, hand baggage"
+    },
+    {
+      "question": "実定法",
+      "answer": [
+        "じっていほう"
+      ],
+      "meaning": "positive law (i.e. law made by humans); Positive law"
+    },
+    {
+      "question": "消防法",
+      "answer": [
+        "しょうぼうほう"
+      ],
+      "meaning": "Fire Services Act, fire laws"
+    },
+    {
+      "question": "わいせつ罪",
+      "answer": [
+        "わいせつざい"
+      ],
+      "meaning": "criminal indecency"
+    },
+    {
+      "question": "取消し",
+      "answer": [
+        "とりけし"
+      ],
+      "meaning": "cancellation, withdrawal, abolition, revocation, cancel, CAN; Voidable"
+    },
+    {
+      "question": "社会保障",
+      "answer": [
+        "しゃかいほしょう"
+      ],
+      "meaning": "social security; Social security"
+    },
+    {
+      "question": "社債",
+      "answer": [
+        "しゃさい"
+      ],
+      "meaning": "corporate bond, corporate debenture; Corporate bond"
+    },
+    {
+      "question": "小選挙区比例代表並立制",
+      "answer": [
+        "しょうせんきょくひれいだいひょうへいりつせい"
+      ],
+      "meaning": "electoral system comprised of single-seat constituencies and proportionally represented multiple-seat constituencies; Parallel voting"
+    },
+    {
+      "question": "社会教育",
+      "answer": [
+        "しゃかいきょういく"
+      ],
+      "meaning": "social education; Social education in Japan"
+    },
+    {
+      "question": "商号",
+      "answer": [
+        "しょうごう"
+      ],
+      "meaning": "firm name, trade name; Legal name (business)"
+    },
+    {
+      "question": "自首",
+      "answer": [
+        "じしゅ"
+      ],
+      "meaning": "surrender (to the authorities), giving oneself up, turning oneself in"
+    },
+    {
+      "question": "事務次官",
+      "answer": [
+        "じむじかん"
+      ],
+      "meaning": "permanent vice-president, undersecretary, vice-minister"
+    },
+    {
+      "question": "質権",
+      "answer": [
+        "しちけん"
+      ],
+      "meaning": "right of pledge; Pledge (law)"
+    },
+    {
+      "question": "自動車損害賠償責任保険",
+      "answer": [
+        "じどうしゃそんがいばいしょうせきにんほけん"
+      ],
+      "meaning": "mandatory vehicle liability insurance; Vehicle insurance"
+    },
+    {
+      "question": "自首",
+      "answer": [
+        "じしゅ"
+      ],
+      "meaning": "surrender (to the authorities), giving oneself up, turning oneself in"
+    },
+    {
+      "question": "持株会社",
+      "answer": [
+        "もちかぶがいしゃ"
+      ],
+      "meaning": "holding company; Holding company"
+    },
+    {
+      "question": "事件屋",
+      "answer": [
+        "じけんや"
+      ],
+      "meaning": "fixer, dispute resolution specialist"
+    },
+    {
+      "question": "自然債務",
+      "answer": [
+        "しぜんさいむ"
+      ],
+      "meaning": "natural obligation"
+    },
+    {
+      "question": "自動車保険",
+      "answer": [
+        "じどうしゃほけん"
+      ],
+      "meaning": "automobile insurance"
+    },
+    {
+      "question": "公法",
+      "answer": [
+        "こうほう"
+      ],
+      "meaning": "public law; Public law"
+    },
+    {
+      "question": "児童福祉法",
+      "answer": [
+        "じどうふくしほう"
+      ],
+      "meaning": "Child Welfare Law (1947)"
+    },
+    {
+      "question": "除斥期間",
+      "answer": [
+        "じょせききかん"
+      ],
+      "meaning": "(time limit imposed by the) statute of limitations"
+    },
+    {
+      "question": "引当金",
+      "answer": [
+        "ひきあてきん"
+      ],
+      "meaning": "reserves, provisions"
+    },
+    {
+      "question": "行政書士",
+      "answer": [
+        "ぎょうせいしょし"
+      ],
+      "meaning": "administrative scrivener, notary public, paralegal qualified to prepare legal documents on administrative matters, e.g. immigration; Administrative scrivener"
+    },
+    {
+      "question": "行政機関",
+      "answer": [
+        "ぎょうせいきかん"
+      ],
+      "meaning": "administrative organ, administrative body; Government agency"
+    },
+    {
+      "question": "強盗罪",
+      "answer": [
+        "ごうとうざい"
+      ],
+      "meaning": "(crime of) robbery"
+    },
+    {
+      "question": "共同正犯",
+      "answer": [
+        "きょうどうせいはん"
+      ],
+      "meaning": "crime committed together by two or more people (in which each is known as a co-principal)"
+    },
+    {
+      "question": "司法研修所",
+      "answer": [
+        "しほうけんしゅうじょ"
+      ],
+      "meaning": "Judicial Research and Training Institute"
+    },
+    {
+      "question": "児童福祉施設",
+      "answer": [
+        "じどうふくししせつ"
+      ],
+      "meaning": "child welfare facility"
+    },
+    {
+      "question": "使者",
+      "answer": [
+        "ししゃ"
+      ],
+      "meaning": "messenger, envoy, emissary"
+    },
+    {
+      "question": "事情変更の原則",
+      "answer": [
+        "じじょうへんこうのげんそく"
+      ],
+      "meaning": "clausula rebus sic stantibus (legal principle that agreements become non-binding if there is a major, unforeseeable change of circumstances)"
+    },
+    {
+      "question": "出資法",
+      "answer": [
+        "しゅっしほう"
+      ],
+      "meaning": "Investment Law, Capital Subscription Law"
+    },
+    {
+      "question": "自然犯",
+      "answer": [
+        "しぜんはん"
+      ],
+      "meaning": "malum in se, act inherently wrong by nature"
+    },
+    {
+      "question": "重過失",
+      "answer": [
+        "じゅうかしつ"
+      ],
+      "meaning": "gross negligence"
+    },
+    {
+      "question": "事業税",
+      "answer": [
+        "じぎょうぜい"
+      ],
+      "meaning": "business tax"
+    },
+    {
+      "question": "諮問機関",
+      "answer": [
+        "しもんきかん"
+      ],
+      "meaning": "consultative body, advisory committee, advisory organ"
+    },
+    {
+      "question": "死亡診断書",
+      "answer": [
+        "しぼうしんだんしょ"
+      ],
+      "meaning": "death certificate"
+    },
+    {
+      "question": "主物",
+      "answer": [
+        "しゅぶつ"
+      ],
+      "meaning": "the main thing"
+    },
+    {
+      "question": "指導主事",
+      "answer": [
+        "しどうしゅじ"
+      ],
+      "meaning": "(governmental) supervisor of teachers"
+    },
+    {
+      "question": "児童手当",
+      "answer": [
+        "じどうてあて"
+      ],
+      "meaning": "child-care allowance; Child benefit"
+    },
+    {
+      "question": "裁判所",
+      "answer": [
+        "さいばんしょ"
+      ],
+      "meaning": "court, courthouse; Court"
+    },
+    {
+      "question": "宗教教育",
+      "answer": [
+        "しゅうきょうきょういく"
+      ],
+      "meaning": "religious education; Religious education"
+    },
+    {
+      "question": "脅迫罪",
+      "answer": [
+        "きょうはくざい"
+      ],
+      "meaning": "criminal intimidation"
+    },
+    {
+      "question": "支出",
+      "answer": [
+        "ししゅつ"
+      ],
+      "meaning": "expenditure, disbursement, expenses"
+    },
+    {
+      "question": "司法取引",
+      "answer": [
+        "しほうとりひき"
+      ],
+      "meaning": "plea bargaining; Plea bargain"
+    },
+    {
+      "question": "資本取引",
+      "answer": [
+        "しほんとりひき"
+      ],
+      "meaning": "capital transaction"
+    },
+    {
+      "question": "罪数",
+      "answer": [
+        "ざいすう"
+      ],
+      "meaning": "number of crimes"
+    },
+    {
+      "question": "強制執行",
+      "answer": [
+        "きょうせいしっこう"
+      ],
+      "meaning": "compulsory execution, forcible execution; Foreclosure"
+    },
+    {
+      "question": "債務超過",
+      "answer": [
+        "さいむちょうか"
+      ],
+      "meaning": "insolvency; Insolvency"
+    },
+    {
+      "question": "作為犯",
+      "answer": [
+        "さくいはん"
+      ],
+      "meaning": "crime of commission"
+    },
+    {
+      "question": "司法書士",
+      "answer": [
+        "しほうしょし"
+      ],
+      "meaning": "judicial scrivener, judicial clerk, person qualified to prepare legal documents, handle real-estate transactions, etc.; Judicial scrivener"
+    },
+    {
+      "question": "使用者",
+      "answer": [
+        "しようしゃ"
+      ],
+      "meaning": "user, consumer; employer"
+    },
+    {
+      "question": "財政投融資",
+      "answer": [
+        "ざいせいとうゆうし"
+      ],
+      "meaning": "Fiscal Investment and Loan Program, FILP"
+    },
+    {
+      "question": "裁判長",
+      "answer": [
+        "さいばんちょう"
+      ],
+      "meaning": "presiding judge"
+    },
+    {
+      "question": "裁判所",
+      "answer": [
+        "さいばんしょ"
+      ],
+      "meaning": "court, courthouse; Court"
+    },
+    {
+      "question": "罪刑法定主義",
+      "answer": [
+        "ざいけいほうていしゅぎ"
+      ],
+      "meaning": "nulla poena sine lege, no punishment without law; Nulla poena sine lege"
+    },
+    {
+      "question": "執行猶予",
+      "answer": [
+        "しっこうゆうよ"
+      ],
+      "meaning": "stay of execution, suspended sentence; Suspended sentence"
+    },
+    {
+      "question": "国税局",
+      "answer": [
+        "こくぜいきょく"
+      ],
+      "meaning": "revenue office, taxation bureau"
+    },
+    {
+      "question": "居住権",
+      "answer": [
+        "きょじゅうけん"
+      ],
+      "meaning": "right of residence (i.e. right to go on leasing a house, etc.)"
+    },
+    {
+      "question": "国選弁護人",
+      "answer": [
+        "こくせんべんごにん"
+      ],
+      "meaning": "court-appointed attorney"
+    },
+    {
+      "question": "殺人罪",
+      "answer": [
+        "さつじんざい"
+      ],
+      "meaning": "(the crime of) murder"
+    },
+    {
+      "question": "裁判所書記官",
+      "answer": [
+        "さいばんしょしょきかん"
+      ],
+      "meaning": "clerk of court"
+    },
+    {
+      "question": "行政手続",
+      "answer": [
+        "ぎょうせいてつづき"
+      ],
+      "meaning": "administrative procedure"
+    },
+    {
+      "question": "再審",
+      "answer": [
+        "さいしん"
+      ],
+      "meaning": "retrial, reopening of a case; review, reexamination"
+    },
+    {
+      "question": "財産目録",
+      "answer": [
+        "ざいさんもくろく"
+      ],
+      "meaning": "inventory of property"
+    },
+    {
+      "question": "歳出",
+      "answer": [
+        "さいしゅつ"
+      ],
+      "meaning": "annual expenditure; Government spending"
+    },
+    {
+      "question": "自然環境保全法",
+      "answer": [
+        "しぜんかんきょうほぜんほう"
+      ],
+      "meaning": "(Japanese) Natural Conservation Law (1972)"
+    },
+    {
+      "question": "自己株式",
+      "answer": [
+        "じこかぶしき"
+      ],
+      "meaning": "own shares, treasury stock; Treasury stock"
+    },
+    {
+      "question": "債権",
+      "answer": [
+        "さいけん"
+      ],
+      "meaning": "credit, claim; Law of obligations"
+    },
+    {
+      "question": "債権譲渡",
+      "answer": [
+        "さいけんじょうと"
+      ],
+      "meaning": "cession of an obligation, assignment of an obligation, transfer of an obligation"
+    },
+    {
+      "question": "差押え",
+      "answer": [
+        "さしおさえ"
+      ],
+      "meaning": "seizure, attachment, foreclosure"
+    },
+    {
+      "question": "校則",
+      "answer": [
+        "こうそく"
+      ],
+      "meaning": "school regulations"
+    },
+    {
+      "question": "共謀共同正犯",
+      "answer": [
+        "きょうぼうきょうどうせいはん"
+      ],
+      "meaning": "criminal conspiracy (participation in the planning a crime, but not its execution)"
+    },
+    {
+      "question": "再審",
+      "answer": [
+        "さいしん"
+      ],
+      "meaning": "retrial, reopening of a case; review, reexamination"
+    },
+    {
+      "question": "持分",
+      "answer": [
+        "もちぶん"
+      ],
+      "meaning": "share (of expenses), equity (in company), holdings, interest (in company)"
+    },
+    {
+      "question": "軽犯罪法",
+      "answer": [
+        "けいはんざいほう"
+      ],
+      "meaning": "Minor Offenses Act"
+    },
+    {
+      "question": "更改",
+      "answer": [
+        "こうかい"
+      ],
+      "meaning": "renewal, extension, revision; Novation"
+    },
+    {
+      "question": "差別的取扱い",
+      "answer": [
+        "さべつてきとりあつかい"
+      ],
+      "meaning": "discriminatory treatment"
+    },
+    {
+      "question": "更新料",
+      "answer": [
+        "こうしんりょう"
+      ],
+      "meaning": "renewal charge, renewal fee"
+    },
+    {
+      "question": "事業年度",
+      "answer": [
+        "じぎょうねんど"
+      ],
+      "meaning": "fiscal year"
+    },
+    {
+      "question": "国際連盟",
+      "answer": [
+        "こくさいれんめい"
+      ],
+      "meaning": "League of Nations; League of Nations"
+    },
+    {
+      "question": "国際司法裁判所",
+      "answer": [
+        "こくさいしほうさいばんしょ"
+      ],
+      "meaning": "International Court of Justice, ICJ; International Court of Justice"
+    },
+    {
+      "question": "国家行政組織法",
+      "answer": [
+        "こっかぎょうせいそしきほう"
+      ],
+      "meaning": "National Government Organization Law (1948)"
+    },
+    {
+      "question": "国連海洋法条約",
+      "answer": [
+        "こくれんかいようほうじょうやく"
+      ],
+      "meaning": "UN Convention on the Law of the Sea"
+    },
+    {
+      "question": "国際カルテル",
+      "answer": [
+        "こくさいカルテル"
+      ],
+      "meaning": "international cartel"
+    },
+    {
+      "question": "国民年金",
+      "answer": [
+        "こくみんねんきん"
+      ],
+      "meaning": "national pension, government pension system; National Pension (Japan)"
+    },
+    {
+      "question": "児童相談所",
+      "answer": [
+        "じどうそうだんじょ",
+        "じどうそうだんしょ"
+      ],
+      "meaning": "child consultation center, children's welfare center"
+    },
+    {
+      "question": "公然",
+      "answer": [
+        "こうぜん"
+      ],
+      "meaning": "open, public, official, overt"
+    },
+    {
+      "question": "告示",
+      "answer": [
+        "こくじ"
+      ],
+      "meaning": "notice, bulletin"
+    },
+    {
+      "question": "死刑",
+      "answer": [
+        "しけい"
+      ],
+      "meaning": "death penalty, capital punishment; Capital punishment"
+    },
+    {
+      "question": "厚生年金保険",
+      "answer": [
+        "こうせいねんきんほけん"
+      ],
+      "meaning": "welfare annuity insurance"
+    },
+    {
+      "question": "支配人",
+      "answer": [
+        "しはいにん"
+      ],
+      "meaning": "manager, executive; Shihainin"
+    },
+    {
+      "question": "財産",
+      "answer": [
+        "ざいさん"
+      ],
+      "meaning": "property, fortune, assets; Estate (law)"
+    },
+    {
+      "question": "航空自衛隊",
+      "answer": [
+        "こうくうじえいたい"
+      ],
+      "meaning": "Japan Air Self-Defense Force, JASDF; Air Self-Defense Force, ASDF; Japan Air Self-Defense Force"
+    },
+    {
+      "question": "拘束名簿式比例代表制",
+      "answer": [
+        "こうそくめいぼしきひれいだいひょうせい"
+      ],
+      "meaning": "proportional representation electoral system (in which party votes are cast, and candidates from each party are elected based on an ordered list available to the public)"
+    },
+    {
+      "question": "国家補償",
+      "answer": [
+        "こっかほしょう"
+      ],
+      "meaning": "state reparations"
+    },
+    {
+      "question": "公害対策基本法",
+      "answer": [
+        "こうがいたいさくきほんほう"
+      ],
+      "meaning": "(Japanese) Environmental Pollution Prevention Act"
+    },
+    {
+      "question": "禁錮",
+      "answer": [
+        "きんこ"
+      ],
+      "meaning": "imprisonment (without forced labour), incarceration, confinement"
+    },
+    {
+      "question": "告発",
+      "answer": [
+        "こくはつ"
+      ],
+      "meaning": "indictment, prosecution, complaint"
+    },
+    {
+      "question": "混同",
+      "answer": [
+        "こんどう"
+      ],
+      "meaning": "confusion, mixing, merger; Commingling"
+    },
+    {
+      "question": "交互計算",
+      "answer": [
+        "こうごけいさん"
+      ],
+      "meaning": "open account, running account, current account, mutual account"
+    },
+    {
+      "question": "固定資産税",
+      "answer": [
+        "こていしさんぜい"
+      ],
+      "meaning": "real estate tax, fixed assets tax, property tax, rates; Property tax"
+    },
+    {
+      "question": "公序",
+      "answer": [
+        "こうじょ"
+      ],
+      "meaning": "public order, public policy"
+    },
+    {
+      "question": "公知の事実",
+      "answer": [
+        "こうちのじじつ"
+      ],
+      "meaning": "common knowledge, well-known fact, public knowledge"
+    },
+    {
+      "question": "更正",
+      "answer": [
+        "こうせい"
+      ],
+      "meaning": "correction, revision, rectification; Kousei"
+    },
+    {
+      "question": "権利金",
+      "answer": [
+        "けんりきん"
+      ],
+      "meaning": "key money (esp. on an apartment), premium (payment)"
+    },
+    {
+      "question": "勾引",
+      "answer": [
+        "こういん",
+        "かどわかし"
+      ],
+      "meaning": "arrest, custody, seduction, abduction; kidnapper"
+    },
+    {
+      "question": "公団",
+      "answer": [
+        "こうだん"
+      ],
+      "meaning": "public corporation; public housing"
+    },
+    {
+      "question": "公害罪",
+      "answer": [
+        "こうがいざい"
+      ],
+      "meaning": "(act or crime of) pollution"
+    },
+    {
+      "question": "交付",
+      "answer": [
+        "こうふ"
+      ],
+      "meaning": "delivery, issuance, handing over, granting"
+    },
+    {
+      "question": "故意",
+      "answer": [
+        "こい"
+      ],
+      "meaning": "intent, intention, (on) purpose, bad faith; mens rea (guilty mind); Mens rea"
+    },
+    {
+      "question": "公債",
+      "answer": [
+        "こうさい"
+      ],
+      "meaning": "public debt, public bond or securities; Government debt"
+    },
+    {
+      "question": "検事正",
+      "answer": [
+        "けんじせい"
+      ],
+      "meaning": "chief public prosecutor"
+    },
+    {
+      "question": "国営企業労働関係法",
+      "answer": [
+        "こくえいきぎょうろうどうかんけいほう"
+      ],
+      "meaning": "National Enterprise Labor Relations Law (1986)"
+    },
+    {
+      "question": "嫌煙権",
+      "answer": [
+        "けんえんけん"
+      ],
+      "meaning": "non-smokers' rights, right for nonsmokers to not be exposed to smoking in public space"
+    },
+    {
+      "question": "古稀",
+      "answer": [
+        "こき"
+      ],
+      "meaning": "70th birthday"
+    },
+    {
+      "question": "合資会社",
+      "answer": [
+        "ごうしがいしゃ"
+      ],
+      "meaning": "limited partnership; Kommanditgesellschaft"
+    },
+    {
+      "question": "金銭債権",
+      "answer": [
+        "きんせんさいけん"
+      ],
+      "meaning": "monetary claim"
+    },
+    {
+      "question": "緊急避難",
+      "answer": [
+        "きんきゅうひなん"
+      ],
+      "meaning": "emergency evacuation; Necessity"
+    },
+    {
+      "question": "工業所有権",
+      "answer": [
+        "こうぎょうしょゆうけん"
+      ],
+      "meaning": "(rights to) industrial property"
+    },
+    {
+      "question": "個人情報保護法",
+      "answer": [
+        "こじんじょうほうほごほう"
+      ],
+      "meaning": "Personal Information Protection Law (2003)"
+    },
+    {
+      "question": "歳入",
+      "answer": [
+        "さいにゅう"
+      ],
+      "meaning": "annual revenue (government), annual income (government), budget receipts; Government revenue"
+    },
+    {
+      "question": "原子力委員会",
+      "answer": [
+        "げんしりょくいいんかい"
+      ],
+      "meaning": "Atomic Energy Commission (US); Japanese Atomic Energy Commission"
+    },
+    {
+      "question": "苦情処理機関",
+      "answer": [
+        "くじょうしょりきかん"
+      ],
+      "meaning": "grievance machinery, complaints department"
+    },
+    {
+      "question": "検証",
+      "answer": [
+        "けんしょう"
+      ],
+      "meaning": "verification, inspection"
+    },
+    {
+      "question": "公害等調整委員会",
+      "answer": [
+        "こうがいとうちょうせいいいんかい"
+      ],
+      "meaning": "Environmental Dispute Coordination Commission"
+    },
+    {
+      "question": "最恵国待遇",
+      "answer": [
+        "さいけいこくたいぐう"
+      ],
+      "meaning": "most favored nation treatment, most favoured nation status; Most favoured nation"
+    },
+    {
+      "question": "嫌煙権",
+      "answer": [
+        "けんえんけん"
+      ],
+      "meaning": "non-smokers' rights, right for nonsmokers to not be exposed to smoking in public space"
+    },
+    {
+      "question": "決定",
+      "answer": [
+        "けってい"
+      ],
+      "meaning": "decision, determination"
+    },
+    {
+      "question": "業務上過失",
+      "answer": [
+        "ぎょうむじょうかしつ"
+      ],
+      "meaning": "(professional) negligence"
+    },
+    {
+      "question": "警察官職務執行法",
+      "answer": [
+        "けいさつかんしょくむしっこうほう"
+      ],
+      "meaning": "police execution of duties law"
+    },
+    {
+      "question": "検事",
+      "answer": [
+        "けんじ"
+      ],
+      "meaning": "public prosecutor"
+    },
+    {
+      "question": "割増賃金",
+      "answer": [
+        "わりましちんぎん"
+      ],
+      "meaning": "extra pay; Overtime rate"
+    },
+    {
+      "question": "源泉徴収",
+      "answer": [
+        "げんせんちょうしゅう"
+      ],
+      "meaning": "tax withholding at the source; Withholding tax"
+    },
+    {
+      "question": "引当金",
+      "answer": [
+        "ひきあてきん"
+      ],
+      "meaning": "reserves, provisions"
+    },
+    {
+      "question": "交戦権",
+      "answer": [
+        "こうせんけん"
+      ],
+      "meaning": "right of belligerency"
+    },
+    {
+      "question": "結合犯",
+      "answer": [
+        "けつごうはん"
+      ],
+      "meaning": "single crime consisting of multiple independent crimes (i.e. robbery, which consists of theft and threats or use of violence)"
+    },
+    {
+      "question": "再婚",
+      "answer": [
+        "さいこん"
+      ],
+      "meaning": "second marriage, remarriage"
+    },
+    {
+      "question": "経歴詐称",
+      "answer": [
+        "けいれきさしょう"
+      ],
+      "meaning": "misrepresentation (falsification) of one's past record (personal history)"
+    },
+    {
+      "question": "湖沼水質保全特別措置法",
+      "answer": [
+        "こしょうすいしつほぜんとくべつそちほう"
+      ],
+      "meaning": "Law Concerning Special Measures for Conservation of Lake Water Quality (1984)"
+    },
+    {
+      "question": "引受",
+      "answer": [
+        "ひきうけ"
+      ],
+      "meaning": "undertaking, underwriting, acceptance"
+    },
+    {
+      "question": "国際連合",
+      "answer": [
+        "こくさいれんごう"
+      ],
+      "meaning": "United Nations; United Nations"
+    },
+    {
+      "question": "検事総長",
+      "answer": [
+        "けんじそうちょう"
+      ],
+      "meaning": "attorney general"
+    },
+    {
+      "question": "繰延資産",
+      "answer": [
+        "くりのべしさん"
+      ],
+      "meaning": "deferred asset"
+    },
+    {
+      "question": "混和",
+      "answer": [
+        "こんわ"
+      ],
+      "meaning": "mixture, mingling"
+    },
+    {
+      "question": "結納",
+      "answer": [
+        "ゆいのう"
+      ],
+      "meaning": "engagement gift, (ceremonial) exchange of engagement gifts"
+    },
+    {
+      "question": "ばい煙",
+      "answer": [
+        "ばいえん"
+      ],
+      "meaning": "dirty smoke, soot and smoke"
+    },
+    {
+      "question": "ロッキード事件",
+      "answer": [
+        "ロッキードじけん"
+      ],
+      "meaning": "Lockheed bribery scandal (uncovered in 1976); Lockheed bribery scandals"
+    },
+    {
+      "question": "権利",
+      "answer": [
+        "けんり"
+      ],
+      "meaning": "right, privilege; Rights"
+    },
+    {
+      "question": "喧嘩両成敗",
+      "answer": [
+        "けんかりょうせいばい"
+      ],
+      "meaning": "in a quarrel, both parties are to blame"
+    },
+    {
+      "question": "ナポレオン法典",
+      "answer": [
+        "ナポレオンほうてん"
+      ],
+      "meaning": "Napoleonic code"
+    },
+    {
+      "question": "警察",
+      "answer": [
+        "けいさつ"
+      ],
+      "meaning": "police; police officer; police station; Police"
+    },
+    {
+      "question": "検察審査会",
+      "answer": [
+        "けんさつしんさかい"
+      ],
+      "meaning": "Committee for the Inquest of Prosecution"
+    },
+    {
+      "question": "ヤメ検",
+      "answer": [
+        "ヤメけん"
+      ],
+      "meaning": "former public prosecutor who now works as a lawyer, retired public prosecutor"
+    },
+    {
+      "question": "銀行法",
+      "answer": [
+        "ぎんこうほう"
+      ],
+      "meaning": "Banking Law; Bank of Japan Act (1981)"
+    },
+    {
+      "question": "国家",
+      "answer": [
+        "こっか"
+      ],
+      "meaning": "state, country, nation; State (polity)"
+    },
+    {
+      "question": "拒否権",
+      "answer": [
+        "きょひけん"
+      ],
+      "meaning": "right of veto; Veto"
+    },
+    {
+      "question": "公衆送信権",
+      "answer": [
+        "こうしゅうそうしんけん"
+      ],
+      "meaning": "public transmission rights (e.g. putting copyrightable material on the WWW or an FTP server)"
+    },
+    {
+      "question": "銀行",
+      "answer": [
+        "ぎんこう"
+      ],
+      "meaning": "bank; Bank"
+    },
+    {
+      "question": "ワシントン条約",
+      "answer": [
+        "ワシントンじょうやく"
+      ],
+      "meaning": "Washington Convention (i.e. Convention on International Trade in Endangered Species of Wild Fauna and Flora)"
+    },
+    {
+      "question": "ポツダム宣言",
+      "answer": [
+        "ポツダムせんげん"
+      ],
+      "meaning": "Potsdam Declaration (July 26, 1945 statement establishing the terms of a Japanese surrender); Potsdam Declaration"
+    },
+    {
+      "question": "雇用",
+      "answer": [
+        "こよう"
+      ],
+      "meaning": "employment (long term), hire"
+    },
+    {
+      "question": "軽自動車税",
+      "answer": [
+        "けいじどうしゃぜい"
+      ],
+      "meaning": "light vehicle tax"
+    },
+    {
+      "question": "ジュネーブ条約",
+      "answer": [
+        "ジュネーブじょうやく"
+      ],
+      "meaning": "Geneva Convention; Geneva Conventions"
+    },
+    {
+      "question": "経済社会理事会",
+      "answer": [
+        "けいざいしゃかいりじかい"
+      ],
+      "meaning": "UN Economic and Social Council"
+    },
+    {
+      "question": "繰延資産",
+      "answer": [
+        "くりのべしさん"
+      ],
+      "meaning": "deferred asset"
+    },
+    {
+      "question": "訓令",
+      "answer": [
+        "くんれい"
+      ],
+      "meaning": "directive, instructions"
+    },
+    {
+      "question": "ダムダム弾",
+      "answer": [
+        "ダムダムだん"
+      ],
+      "meaning": "dum-dum ammunition"
+    }
+  ]
+}
