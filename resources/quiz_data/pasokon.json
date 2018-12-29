@@ -1,5 +1,5 @@
 {
-  "uniqueId": "pasakon",
+  "uniqueId": "pasokon",
   "name": "Computer and Programming Reading Quiz",
   "article": "a",
   "instructions": "Type the reading of the below word in Hiragana!",
@@ -50,13 +50,6 @@
         "わく"
       ],
       "meaning": "frame, framework; border, box; limit, restriction, quota; Structural system"
-    },
-    {
-      "question": "話者認識",
-      "answer": [
-        null
-      ],
-      "meaning": "Speaker recognition"
     },
     {
       "question": "話者",
@@ -364,13 +357,6 @@
       "meaning": "linkage section"
     },
     {
-      "question": "連邦情報処理標準",
-      "answer": [
-        null
-      ],
-      "meaning": "Federal Information Processing Standard"
-    },
-    {
       "question": "連動",
       "answer": [
         "れんどう"
@@ -478,13 +464,6 @@
       "meaning": "compander, compandor"
     },
     {
-      "question": "圧電素子",
-      "answer": [
-        null
-      ],
-      "meaning": "Piezoelectric sensor"
-    },
-    {
       "question": "連鎖",
       "answer": [
         "れんさ"
@@ -588,25 +567,11 @@
       "meaning": "string variable"
     },
     {
-      "question": "列挙法",
-      "answer": [
-        null
-      ],
-      "meaning": "Enumeratio"
-    },
-    {
       "question": "列挙分類体系",
       "answer": [
         "れっきょぶんるいたいけい"
       ],
       "meaning": "enumerative classification system"
-    },
-    {
-      "question": "列挙型",
-      "answer": [
-        null
-      ],
-      "meaning": "Enumerated type"
     },
     {
       "question": "列挙",
@@ -825,25 +790,11 @@
       "meaning": "force, strength, might, vigour (vigor), energy; capability, ability, proficiency, capacity, faculty; efficacy, effect; effort, endeavours (endeavors), exertions; power, authority, influence, good offices, agency; support, help, aid, assistance; stress, emphasis; means, resources; Force; strength, power, proficiency, ability; strength, power, proficiency, ability; the strength of ... people, the strength of ... men"
     },
     {
-      "question": "領域理論",
-      "answer": [
-        null
-      ],
-      "meaning": "Domain theory"
-    },
-    {
       "question": "領域",
       "answer": [
         "りょういき"
       ],
       "meaning": "area, domain, territory, field, range, region, regime"
-    },
-    {
-      "question": "量子光学",
-      "answer": [
-        null
-      ],
-      "meaning": "Quantum optics"
     },
     {
       "question": "量子化雑音",
@@ -985,13 +936,6 @@
         "りさんてき"
       ],
       "meaning": "discrete, separate"
-    },
-    {
-      "question": "離散数学",
-      "answer": [
-        null
-      ],
-      "meaning": "Discrete mathematics"
     },
     {
       "question": "離散",
@@ -1255,13 +1199,6 @@
         "ようきゅうじこう"
       ],
       "meaning": "requirement"
-    },
-    {
-      "question": "要求仕様",
-      "answer": [
-        null
-      ],
-      "meaning": "Requirement"
     },
     {
       "question": "安全在庫",
@@ -1664,13 +1601,6 @@
       "meaning": "non-gratuitous acquisition"
     },
     {
-      "question": "有向集合",
-      "answer": [
-        null
-      ],
-      "meaning": "Directed set"
-    },
-    {
       "question": "位相符号化",
       "answer": [
         "いそうふごうか"
@@ -1728,13 +1658,6 @@
       "meaning": "significant digits; Significant figures"
     },
     {
-      "question": "依存文法",
-      "answer": [
-        null
-      ],
-      "meaning": "Dependency grammar"
-    },
-    {
       "question": "委託",
       "answer": [
         "いたく"
@@ -1770,13 +1693,6 @@
       "meaning": "finite element method; Finite element method"
     },
     {
-      "question": "有限体積法",
-      "answer": [
-        null
-      ],
-      "meaning": "Finite volume method"
-    },
-    {
       "question": "有限体",
       "answer": [
         "ゆうげんたい"
@@ -1805,13 +1721,6 @@
         "ゆうげんしゅうごう"
       ],
       "meaning": "finite set; Finite set"
-    },
-    {
-      "question": "有機半導体",
-      "answer": [
-        null
-      ],
-      "meaning": "Organic semiconductor"
     },
     {
       "question": "有意性検定",
@@ -2012,13 +1921,6 @@
       "meaning": "uniform random number, uniformly distributed random number"
     },
     {
-      "question": "問題解決環境",
-      "answer": [
-        null
-      ],
-      "meaning": "Problem Solving Environment"
-    },
-    {
       "question": "問題解決",
       "answer": [
         "もんだいかいけつ"
@@ -2094,13 +1996,6 @@
         "いっぱんか"
       ],
       "meaning": "generalization, generalisation, popularization, popularisation; to generalize, to generalise, to popularize, to popularise"
-    },
-    {
-      "question": "一般化句構造文法",
-      "answer": [
-        null
-      ],
-      "meaning": "Generalized phrase structure grammar"
     },
     {
       "question": "目録",
@@ -2658,13 +2553,6 @@
       "meaning": "printer"
     },
     {
-      "question": "無線LAN",
-      "answer": [
-        null
-      ],
-      "meaning": "Wireless LAN"
-    },
-    {
       "question": "無条件文",
       "answer": [
         "むじょうけんぶん"
@@ -3166,13 +3054,6 @@
       "meaning": "envelope; Envelope (mathematics)"
     },
     {
-      "question": "包除原理",
-      "answer": [
-        null
-      ],
-      "meaning": "Inclusion–exclusion principle"
-    },
-    {
       "question": "包含的",
       "answer": [
         "ほうがんてき"
@@ -3340,13 +3221,6 @@
         "ほりゅう"
       ],
       "meaning": "reservation, putting on hold, deferment"
-    },
-    {
-      "question": "保存則",
-      "answer": [
-        null
-      ],
-      "meaning": "Conservation law"
     },
     {
       "question": "保存期間検査",
@@ -3545,13 +3419,6 @@
       "meaning": "charge, custody, safekeeping, deposit, storage"
     },
     {
-      "question": "弁別的素性",
-      "answer": [
-        null
-      ],
-      "meaning": "Distinctive feature"
-    },
-    {
       "question": "便覧",
       "answer": [
         "びんらん",
@@ -3647,13 +3514,6 @@
         "かたほうこうつうしん"
       ],
       "meaning": "one-way communication"
-    },
-    {
-      "question": "変分法",
-      "answer": [
-        null
-      ],
-      "meaning": "Calculus of variations"
     },
     {
       "question": "変分原理",
@@ -3782,13 +3642,6 @@
       "meaning": "deductive reasoning, deduction; Deductive reasoning"
     },
     {
-      "question": "演繹定理",
-      "answer": [
-        null
-      ],
-      "meaning": "Deduction theorem"
-    },
-    {
       "question": "変換機",
       "answer": [
         "へんかんき"
@@ -3822,13 +3675,6 @@
         "えんかくいっかつにゅうりょく"
       ],
       "meaning": "remote batch entry"
-    },
-    {
-      "question": "遠隔会議",
-      "answer": [
-        null
-      ],
-      "meaning": "Teleconference"
     },
     {
       "question": "遠隔教育",
@@ -3957,13 +3803,6 @@
         "へいろ"
       ],
       "meaning": "closed circuit; Cycle (graph theory)"
-    },
-    {
-      "question": "閉世界仮説",
-      "answer": [
-        null
-      ],
-      "meaning": "Closed world assumption"
     },
     {
       "question": "閉止",
@@ -4436,13 +4275,6 @@
       "meaning": "context-sensitive grammar; Context-sensitive grammar"
     },
     {
-      "question": "文脈依存言語",
-      "answer": [
-        null
-      ],
-      "meaning": "Context-sensitive language"
-    },
-    {
       "question": "文脈",
       "answer": [
         "ぶんみゃく"
@@ -4787,13 +4619,6 @@
       "meaning": "distributive law; Distributive property"
     },
     {
-      "question": "分配係数",
-      "answer": [
-        null
-      ],
-      "meaning": "Partition coefficient"
-    },
-    {
       "question": "分配",
       "answer": [
         "ぶんぱい"
@@ -4869,13 +4694,6 @@
         "ぶんしゅうき"
       ],
       "meaning": "frequency demultiplier, frequency divider"
-    },
-    {
-      "question": "分枝限定法",
-      "answer": [
-        null
-      ],
-      "meaning": "Branch and bound"
     },
     {
       "question": "分散分析",
@@ -4992,13 +4810,6 @@
       "meaning": "branch prediction; Branch predictor"
     },
     {
-      "question": "分岐命令",
-      "answer": [
-        null
-      ],
-      "meaning": "Branch (computer science)"
-    },
-    {
       "question": "音声合成",
       "answer": [
         "おんせいごうせい"
@@ -5088,13 +4899,6 @@
         "おんせいにんしき"
       ],
       "meaning": "voice recognition, speech recognition; Speech recognition"
-    },
-    {
-      "question": "音声分析",
-      "answer": [
-        null
-      ],
-      "meaning": "Voice analysis"
     },
     {
       "question": "分割",
@@ -5194,13 +4998,6 @@
         "ぶつりきろくみつど"
       ],
       "meaning": "physical recording density"
-    },
-    {
-      "question": "物体認識",
-      "answer": [
-        null
-      ],
-      "meaning": "Outline of object recognition"
     },
     {
       "question": "複素定数",
@@ -5457,13 +5254,6 @@
       "meaning": "width, breadth; freedom (e.g. of thought), latitude; gap, difference (e.g. in price), range (e.g. of voice); unit of measurement for cloth breadth (30-38 cm); scroll; counter for scrolls"
     },
     {
-      "question": "階差機関",
-      "answer": [
-        null
-      ],
-      "meaning": "Difference engine"
-    },
-    {
       "question": "復調装置",
       "answer": [
         "ふくちょうそうち"
@@ -5618,13 +5408,6 @@
       "meaning": "analyzer"
     },
     {
-      "question": "解析的",
-      "answer": [
-        null
-      ],
-      "meaning": "Analytic"
-    },
-    {
       "question": "開設",
       "answer": [
         "かいせつ"
@@ -5688,13 +5471,6 @@
       "meaning": "substring; subsequence"
     },
     {
-      "question": "部分評価",
-      "answer": [
-        null
-      ],
-      "meaning": "Partial evaluation"
-    },
-    {
       "question": "部分全体関係",
       "answer": [
         "ぶぶんぜんたいかんけい"
@@ -5728,13 +5504,6 @@
         "ぶぶんご"
       ],
       "meaning": "partitive term"
-    },
-    {
-      "question": "部分空間",
-      "answer": [
-        null
-      ],
-      "meaning": "Subspace"
     },
     {
       "question": "部分",
@@ -5829,13 +5598,6 @@
       "meaning": "line network, trunk network"
     },
     {
-      "question": "負性抵抗",
-      "answer": [
-        null
-      ],
-      "meaning": "Negative resistance"
-    },
-    {
       "question": "階層",
       "answer": [
         "かいそう"
@@ -5869,13 +5631,6 @@
         "ふか"
       ],
       "meaning": "burden, load (e.g. cpu time, electricity, etc.); Load"
-    },
-    {
-      "question": "負温度",
-      "answer": [
-        null
-      ],
-      "meaning": "Negative temperature"
     },
     {
       "question": "階層関係",
@@ -6481,20 +6236,6 @@
       "meaning": "(electrical circuit) substrate"
     },
     {
-      "question": "回路計",
-      "answer": [
-        null
-      ],
-      "meaning": "Multimeter"
-    },
-    {
-      "question": "不可能図形",
-      "answer": [
-        null
-      ],
-      "meaning": "Impossible object"
-    },
-    {
       "question": "不一致",
       "answer": [
         "ふいっち"
@@ -6529,13 +6270,6 @@
         "ひんど"
       ],
       "meaning": "frequency (of occurrence)"
-    },
-    {
-      "question": "回路設計",
-      "answer": [
-        null
-      ],
-      "meaning": "Circuit design"
     },
     {
       "question": "品質保証",
@@ -6599,13 +6333,6 @@
         "かいろようりょう"
       ],
       "meaning": "circuit capacity"
-    },
-    {
-      "question": "評価関数",
-      "answer": [
-        null
-      ],
-      "meaning": "Evaluation function"
     },
     {
       "question": "会話",
@@ -6690,13 +6417,6 @@
         "ひょうじめいれい"
       ],
       "meaning": "display command, display instruction"
-    },
-    {
-      "question": "表示的意味論",
-      "answer": [
-        null
-      ],
-      "meaning": "Denotational semantics"
     },
     {
       "question": "表示装置",
@@ -6824,13 +6544,6 @@
         "ひょう"
       ],
       "meaning": "surface; face (i.e. the visible side of an object); front (of a building, etc.), obverse side (i.e. \"head\") of a coin; outside, exterior; appearance; public; first half (of an inning), top (of an inning); cover (for tatami mats, etc.); foreground; table (e.g. Table 1), chart, list"
-    },
-    {
-      "question": "標本調査",
-      "answer": [
-        null
-      ],
-      "meaning": "Sampling (statistics)"
     },
     {
       "question": "顔文字",
@@ -7011,13 +6724,6 @@
       "meaning": "necessary condition, requirement"
     },
     {
-      "question": "拡散方程式",
-      "answer": [
-        null
-      ],
-      "meaning": "Diffusion equation"
-    },
-    {
       "question": "核磁気共鳴",
       "answer": [
         "かくじききょうめい"
@@ -7065,13 +6771,6 @@
         "びぶんほうていしき"
       ],
       "meaning": "differential equation; Differential equation"
-    },
-    {
-      "question": "微分回路",
-      "answer": [
-        null
-      ],
-      "meaning": "Differentiator"
     },
     {
       "question": "角速度一定",
@@ -7156,13 +6855,6 @@
         "かくちょうきごう"
       ],
       "meaning": "extension sign"
-    },
-    {
-      "question": "非破壊検査",
-      "answer": [
-        null
-      ],
-      "meaning": "Nondestructive testing"
     },
     {
       "question": "非同期伝送",
@@ -7291,13 +6983,6 @@
       "meaning": "storage, housing for equipment and machines; putting into computer memory"
     },
     {
-      "question": "格文法",
-      "answer": [
-        null
-      ],
-      "meaning": "Case grammar"
-    },
-    {
       "question": "確率",
       "answer": [
         "かくりつ"
@@ -7310,13 +6995,6 @@
         "かくりつかてい"
       ],
       "meaning": "stochastic process; Stochastic process"
-    },
-    {
-      "question": "確率空間",
-      "answer": [
-        null
-      ],
-      "meaning": "Probability space"
     },
     {
       "question": "非線形計画法",
@@ -7620,13 +7298,6 @@
         "ひ"
       ],
       "meaning": "fault, error, mistake; going poorly, being disadvantageous, being unfavorable; un-, non-, an-"
-    },
-    {
-      "question": "避雷器",
-      "answer": [
-        null
-      ],
-      "meaning": "Lightning arrester"
     },
     {
       "question": "仮想回線",
@@ -8018,13 +7689,6 @@
       "meaning": "edition, version, printing, impression, implementation (e.g. software); plate, block, cast; editions of a publication"
     },
     {
-      "question": "型推論",
-      "answer": [
-        null
-      ],
-      "meaning": "Type inference"
-    },
-    {
       "question": "型宣言文",
       "answer": [
         "かたせんげんぶん"
@@ -8051,13 +7715,6 @@
         "かたもじ"
       ],
       "meaning": "superscript"
-    },
-    {
-      "question": "型理論",
-      "answer": [
-        null
-      ],
-      "meaning": "Type theory"
     },
     {
       "question": "汎関数",
@@ -8412,13 +8069,6 @@
         "はっしんき"
       ],
       "meaning": "oscillator"
-    },
-    {
-      "question": "発振回路",
-      "answer": [
-        null
-      ],
-      "meaning": "Electronic oscillator"
     },
     {
       "question": "金物",
@@ -8780,13 +8430,6 @@
       "meaning": "arrangement (of resources), deployment, stationing, posting, disposition, configuration, layout"
     },
     {
-      "question": "配線用遮断器",
-      "answer": [
-        null
-      ],
-      "meaning": "Earth leakage circuit breaker"
-    },
-    {
       "question": "配線盤",
       "answer": [
         "はいせんばん"
@@ -9061,25 +8704,11 @@
       "meaning": "derivative document"
     },
     {
-      "question": "派生型",
-      "answer": [
-        null
-      ],
-      "meaning": "Subtype polymorphism"
-    },
-    {
       "question": "派生",
       "answer": [
         "はせい"
       ],
       "meaning": "derivation; Derivation (linguistics)"
-    },
-    {
-      "question": "環境部",
-      "answer": [
-        null
-      ],
-      "meaning": "Ministry of Environment (South Korea)"
     },
     {
       "question": "関係",
@@ -9169,13 +8798,6 @@
       "meaning": "annual report, yearbook"
     },
     {
-      "question": "関係論理",
-      "answer": [
-        null
-      ],
-      "meaning": "Relational calculus"
-    },
-    {
       "question": "年月日",
       "answer": [
         "ねんがっぴ"
@@ -9216,13 +8838,6 @@
         "かんげん"
       ],
       "meaning": "restoration, return; reduction, resolution, deoxidization, deoxidation"
-    },
-    {
-      "question": "熱抵抗",
-      "answer": [
-        null
-      ],
-      "meaning": "Thermal resistance"
     },
     {
       "question": "勧告",
@@ -9456,13 +9071,6 @@
       "meaning": "incoming telephone call; telegram received; Nyuuden"
     },
     {
-      "question": "関数従属性",
-      "answer": [
-        null
-      ],
-      "meaning": "Functional dependency"
-    },
-    {
       "question": "入出力文",
       "answer": [
         "にゅうしゅつりょくぶん"
@@ -9630,13 +9238,6 @@
         "にほんでんしきかいこうぎょうかい"
       ],
       "meaning": "Electronic Industries Association of Japan, EIAJ"
-    },
-    {
-      "question": "日本工業標準調査会",
-      "answer": [
-        null
-      ],
-      "meaning": "Japanese Industrial Standards Committee"
     },
     {
       "question": "日本工業規格",
