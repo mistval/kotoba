@@ -1,0 +1,8533 @@
+{
+  "uniqueId": "shinrigaku",
+  "name": "Psychology Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Meaning",
+  "cards": [
+    {
+      "question": "一次運動野",
+      "answer": [
+        "いちじうんどうや"
+      ],
+      "meaning": "primary motor cortex, primary motor area; Primary motor cortex"
+    },
+    {
+      "question": "一次記憶",
+      "answer": [
+        "いちじきおく"
+      ],
+      "meaning": "first memory"
+    },
+    {
+      "question": "閾刺激",
+      "answer": [
+        "いきしげき"
+      ],
+      "meaning": "threshold stimulus, liminal stimulus"
+    },
+    {
+      "question": "二項分布",
+      "answer": [
+        "にこうぶんぷ"
+      ],
+      "meaning": "binomial distribution; Binomial distribution"
+    },
+    {
+      "question": "二次記憶",
+      "answer": [
+        "にじきおく"
+      ],
+      "meaning": "secondary memory"
+    },
+    {
+      "question": "閾下",
+      "answer": [
+        "いきか"
+      ],
+      "meaning": "subliminal"
+    },
+    {
+      "question": "閾",
+      "answer": [
+        "しきい",
+        "しきみ",
+        "しき",
+        "いき"
+      ],
+      "meaning": "threshold (esp. one with grooves for sliding doors), sill; threshold, limen"
+    },
+    {
+      "question": "五月病",
+      "answer": [
+        "ごがつびょう"
+      ],
+      "meaning": "blues experienced by college freshmen or workplace recruits shortly after beginning school or work, the May blues"
+    },
+    {
+      "question": "能力",
+      "answer": [
+        "のうりょく",
+        "のうりき"
+      ],
+      "meaning": "ability, faculty; low-ranking priest who does manual labour at a temple, male temple employee"
+    },
+    {
+      "question": "異常",
+      "answer": [
+        "いじょう"
+      ],
+      "meaning": "strangeness, abnormality, disorder; Abnormality (behavior)"
+    },
+    {
+      "question": "異常心理学",
+      "answer": [
+        "いじょうしんりがく"
+      ],
+      "meaning": "abnormal psychology; Abnormal psychology"
+    },
+    {
+      "question": "異常性欲",
+      "answer": [
+        "いじょうせいよく"
+      ],
+      "meaning": "sexual abnormality; Hypersexuality"
+    },
+    {
+      "question": "絶対音感",
+      "answer": [
+        "ぜったいおんかん"
+      ],
+      "meaning": "absolute pitch, perfect pitch; Absolute pitch"
+    },
+    {
+      "question": "絶対評価",
+      "answer": [
+        "ぜったいひょうか"
+      ],
+      "meaning": "evaluation on an absolute scale"
+    },
+    {
+      "question": "相対評価",
+      "answer": [
+        "そうたいひょうか"
+      ],
+      "meaning": "relative evaluation, comparative assessment"
+    },
+    {
+      "question": "抽象",
+      "answer": [
+        "ちゅうしょう"
+      ],
+      "meaning": "abstraction"
+    },
+    {
+      "question": "虐待",
+      "answer": [
+        "ぎゃくたい"
+      ],
+      "meaning": "abuse, ill-treatment, maltreatment, mistreatment, cruelty; Abuse"
+    },
+    {
+      "question": "防衛機制",
+      "answer": [
+        "ぼうえいきせい"
+      ],
+      "meaning": "defense mechanism; Defence mechanism"
+    },
+    {
+      "question": "輻輳",
+      "answer": [
+        "ふくそう"
+      ],
+      "meaning": "congestion (e.g. traffic), overcrowding; convergence (esp. optical)"
+    },
+    {
+      "question": "学力",
+      "answer": [
+        "がくりょく"
+      ],
+      "meaning": "scholarly ability, scholarship, knowledge, literary ability"
+    },
+    {
+      "question": "受容",
+      "answer": [
+        "じゅよう"
+      ],
+      "meaning": "reception"
+    },
+    {
+      "question": "同化",
+      "answer": [
+        "どうか"
+      ],
+      "meaning": "assimilation, absorption; adaptation; assimilation, anabolism; assimilation (phonology); Assimilation"
+    },
+    {
+      "question": "調節",
+      "answer": [
+        "ちょうせつ"
+      ],
+      "meaning": "regulation, adjustment, control"
+    },
+    {
+      "question": "無彩色",
+      "answer": [
+        "むさいしょく"
+      ],
+      "meaning": "neutral colour, neutral color, achromatic (colour, color)"
+    },
+    {
+      "question": "躁病",
+      "answer": [
+        "そうびょう"
+      ],
+      "meaning": "mania; Mania"
+    },
+    {
+      "question": "聴神経",
+      "answer": [
+        "ちょうしんけい"
+      ],
+      "meaning": "auditory nerve"
+    },
+    {
+      "question": "音響心理学",
+      "answer": [
+        "おんきょうしんりがく"
+      ],
+      "meaning": "psychoacoustics; Psychoacoustics"
+    },
+    {
+      "question": "習得",
+      "answer": [
+        "しゅうとく"
+      ],
+      "meaning": "learning, acquisition (of a skill, knowledge, etc.)"
+    },
+    {
+      "question": "蝸牛神経",
+      "answer": [
+        "かぎゅうしんけい"
+      ],
+      "meaning": "cochlear nerve"
+    },
+    {
+      "question": "活性化",
+      "answer": [
+        "かっせいか"
+      ],
+      "meaning": "activation, stimulation, revitalization, invigoration; Activation"
+    },
+    {
+      "question": "賦活",
+      "answer": [
+        "ふかつ"
+      ],
+      "meaning": "activation, invigoration, stimulation"
+    },
+    {
+      "question": "能動輸送",
+      "answer": [
+        "のうどうゆそう"
+      ],
+      "meaning": "active transport; Active transport"
+    },
+    {
+      "question": "活動",
+      "answer": [
+        "かつどう"
+      ],
+      "meaning": "action, activity; movie (esp. during the silent movie period)"
+    },
+    {
+      "question": "順応",
+      "answer": [
+        "じゅんのう",
+        "じゅんおう"
+      ],
+      "meaning": "adaptation, accommodation, conforming, adjustment; acclimatization, acclimatisation; Acclimatization"
+    },
+    {
+      "question": "適応",
+      "answer": [
+        "てきおう"
+      ],
+      "meaning": "adaptation, accommodation, conformity"
+    },
+    {
+      "question": "蝸牛",
+      "answer": [
+        "かたつむり",
+        "かぎゅう",
+        "でんでんむし"
+      ],
+      "meaning": "snail; cochlea; Snail; Cochlea"
+    },
+    {
+      "question": "適応機制",
+      "answer": [
+        "てきおうきせい"
+      ],
+      "meaning": "adjustment mechanism"
+    },
+    {
+      "question": "肛門期",
+      "answer": [
+        "こうもんき"
+      ],
+      "meaning": "anal stage; Anal stage"
+    },
+    {
+      "question": "嗜癖",
+      "answer": [
+        "しへき"
+      ],
+      "meaning": "addiction"
+    },
+    {
+      "question": "緘黙",
+      "answer": [
+        "かんもく"
+      ],
+      "meaning": "keeping silent"
+    },
+    {
+      "question": "瞑想法",
+      "answer": [
+        "めいそうほう"
+      ],
+      "meaning": "meditation method, contemplation technique"
+    },
+    {
+      "question": "疼痛",
+      "answer": [
+        "とうつう"
+      ],
+      "meaning": "pain; Pain"
+    },
+    {
+      "question": "青年期",
+      "answer": [
+        "せいねんき"
+      ],
+      "meaning": "adolescence; Adolescence"
+    },
+    {
+      "question": "副腎皮質",
+      "answer": [
+        "ふくじんひしつ"
+      ],
+      "meaning": "adrenal cortex, cortex of the adrenal gland; Adrenal cortex"
+    },
+    {
+      "question": "広告",
+      "answer": [
+        "こうこく"
+      ],
+      "meaning": "advertisement; Advertising"
+    },
+    {
+      "question": "桿状体",
+      "answer": [
+        "かんじょうたい"
+      ],
+      "meaning": "rod (shape of cell)"
+    },
+    {
+      "question": "残像",
+      "answer": [
+        "ざんぞう"
+      ],
+      "meaning": "afterimage, imprint"
+    },
+    {
+      "question": "攻撃",
+      "answer": [
+        "こうげき"
+      ],
+      "meaning": "attack, strike, offensive; criticism, censure, denunciation, condemnation; Attack"
+    },
+    {
+      "question": "攻撃性",
+      "answer": [
+        "こうげきせい"
+      ],
+      "meaning": "aggressiveness, aggression"
+    },
+    {
+      "question": "失認",
+      "answer": [
+        "しつにん"
+      ],
+      "meaning": "agnosia; Agnosia"
+    },
+    {
+      "question": "人工知能",
+      "answer": [
+        "じんこうちのう"
+      ],
+      "meaning": "artificial intelligence, AI; Artificial intelligence"
+    },
+    {
+      "question": "嗜好",
+      "answer": [
+        "しこう"
+      ],
+      "meaning": "taste, liking, preference"
+    },
+    {
+      "question": "異音",
+      "answer": [
+        "いおん"
+      ],
+      "meaning": "allophone; strange noise; Allophone"
+    },
+    {
+      "question": "嗅脳",
+      "answer": [
+        "きゅうのう"
+      ],
+      "meaning": "rhinencephalon"
+    },
+    {
+      "question": "嗅細胞",
+      "answer": [
+        "きゅうさいぼう"
+      ],
+      "meaning": "olfactory cell"
+    },
+    {
+      "question": "嗅球",
+      "answer": [
+        "きゅうきゅう"
+      ],
+      "meaning": "olfactory bulb, bulbus olfactorius; Olfactory bulb"
+    },
+    {
+      "question": "性欲",
+      "answer": [
+        "せいよく"
+      ],
+      "meaning": "sexual desire; Lust"
+    },
+    {
+      "question": "羊水穿刺",
+      "answer": [
+        "ようすいせんし"
+      ],
+      "meaning": "amniocentesis"
+    },
+    {
+      "question": "情報量",
+      "answer": [
+        "じょうほうりょう"
+      ],
+      "meaning": "information content, information volume; Entropy (information theory)"
+    },
+    {
+      "question": "伝達情報量",
+      "answer": [
+        "でんたつじょうほうりょう"
+      ],
+      "meaning": "transinformation (content), transferred information, transmitted information, mutual information"
+    },
+    {
+      "question": "嗅覚",
+      "answer": [
+        "きゅうかく"
+      ],
+      "meaning": "sense of smell, olfaction; Olfaction"
+    },
+    {
+      "question": "相同",
+      "answer": [
+        "そうどう"
+      ],
+      "meaning": "homology; Homology (biology)"
+    },
+    {
+      "question": "相似",
+      "answer": [
+        "そうじ"
+      ],
+      "meaning": "resemblance, likeness, similitude; similarity; analogy"
+    },
+    {
+      "question": "類推",
+      "answer": [
+        "るいすい"
+      ],
+      "meaning": "analogy; analogical reasoning, analogical inference; analogy; Analogy"
+    },
+    {
+      "question": "喃語",
+      "answer": [
+        "なんご"
+      ],
+      "meaning": "lover's whispers, sweet nothings, whispered intimacies; babbling (of a baby), babble; Babbling"
+    },
+    {
+      "question": "分散分析",
+      "answer": [
+        "ぶんさんぶんせき"
+      ],
+      "meaning": "analysis of variance, ANOVA; Analysis of variance"
+    },
+    {
+      "question": "既往歴",
+      "answer": [
+        "きおうれき"
+      ],
+      "meaning": "case or medical history"
+    },
+    {
+      "question": "照応",
+      "answer": [
+        "しょうおう"
+      ],
+      "meaning": "correspondence, being in accordance with, anaphora; Anaphora (linguistics)"
+    },
+    {
+      "question": "枠組",
+      "answer": [
+        "わくぐみ"
+      ],
+      "meaning": "frame; framework, outline"
+    },
+    {
+      "question": "歪度",
+      "answer": [
+        "わいど"
+      ],
+      "meaning": "skewness; Skewness"
+    },
+    {
+      "question": "動物心理学",
+      "answer": [
+        "どうぶつしんりがく"
+      ],
+      "meaning": "animal psychology"
+    },
+    {
+      "question": "動物社会",
+      "answer": [
+        "どうぶつしゃかい"
+      ],
+      "meaning": "animal society"
+    },
+    {
+      "question": "異方性",
+      "answer": [
+        "いほうせい"
+      ],
+      "meaning": "anisotropy"
+    },
+    {
+      "question": "色覚異常",
+      "answer": [
+        "しきかくいじょう"
+      ],
+      "meaning": "color-vision deficiency, colour-vision deficiency, color-blindness, colour-blindness; Color blindness"
+    },
+    {
+      "question": "論理",
+      "answer": [
+        "ろんり"
+      ],
+      "meaning": "logic; logical"
+    },
+    {
+      "question": "匿名性",
+      "answer": [
+        "とくめいせい"
+      ],
+      "meaning": "anonymity"
+    },
+    {
+      "question": "論理実証主義",
+      "answer": [
+        "ろんりじっしょうしゅぎ"
+      ],
+      "meaning": "logical positivism; Logical positivism"
+    },
+    {
+      "question": "直観",
+      "answer": [
+        "ちょっかん"
+      ],
+      "meaning": "intuition, instinct, insight, hunch, immediacy; Intuition (psychology)"
+    },
+    {
+      "question": "人類学",
+      "answer": [
+        "じんるいがく"
+      ],
+      "meaning": "anthropology; Anthropology"
+    },
+    {
+      "question": "抗不安薬",
+      "answer": [
+        "こうふあんやく"
+      ],
+      "meaning": "anti-anxiety agent, anti-anxiety drug; Anxiolytic"
+    },
+    {
+      "question": "抗体",
+      "answer": [
+        "こうたい"
+      ],
+      "meaning": "antibody; Antibody"
+    },
+    {
+      "question": "抗精神病薬",
+      "answer": [
+        "こうせいしんびょうやく"
+      ],
+      "meaning": "antipsychotic drug; Antipsychotic"
+    },
+    {
+      "question": "論理形式",
+      "answer": [
+        "ろんりけいしき"
+      ],
+      "meaning": "logical form"
+    },
+    {
+      "question": "反社会的行動",
+      "answer": [
+        "はんしゃかいてきこうどう"
+      ],
+      "meaning": "antisocial behavior; Anti-social behaviour"
+    },
+    {
+      "question": "反応",
+      "answer": [
+        "はんのう",
+        "はんおう"
+      ],
+      "meaning": "reaction, response; Reaction"
+    },
+    {
+      "question": "不安",
+      "answer": [
+        "ふあん"
+      ],
+      "meaning": "anxiety, uneasiness, insecurity, suspense; Anxiety"
+    },
+    {
+      "question": "不安障害",
+      "answer": [
+        "ふあんしょうがい"
+      ],
+      "meaning": "anxiety disorder; Anxiety disorder"
+    },
+    {
+      "question": "失語",
+      "answer": [
+        "しつご"
+      ],
+      "meaning": "forgetting the words, inability to pronounce a word correctly"
+    },
+    {
+      "question": "仮現運動",
+      "answer": [
+        "かげんうんどう"
+      ],
+      "meaning": "apparent movement"
+    },
+    {
+      "question": "統覚",
+      "answer": [
+        "とうかく"
+      ],
+      "meaning": "apperception"
+    },
+    {
+      "question": "食欲",
+      "answer": [
+        "しょくよく"
+      ],
+      "meaning": "appetite (for food); Appetite"
+    },
+    {
+      "question": "老年期",
+      "answer": [
+        "ろうねんき"
+      ],
+      "meaning": "old age"
+    },
+    {
+      "question": "老年学",
+      "answer": [
+        "ろうねんがく"
+      ],
+      "meaning": "gerontology"
+    },
+    {
+      "question": "老化",
+      "answer": [
+        "ろうか"
+      ],
+      "meaning": "ageing, aging, senile deterioration; Ageing"
+    },
+    {
+      "question": "失行",
+      "answer": [
+        "しっこう"
+      ],
+      "meaning": "(ethical) mistake; apraxia (inability to purposely perform some actions); Apraxia"
+    },
+    {
+      "question": "適性",
+      "answer": [
+        "てきせい"
+      ],
+      "meaning": "aptitude, aptness, suitability"
+    },
+    {
+      "question": "元型",
+      "answer": [
+        "げんけい"
+      ],
+      "meaning": "archetype; Archetype"
+    },
+    {
+      "question": "項",
+      "answer": [
+        "こう",
+        "うなじ"
+      ],
+      "meaning": "clause, paragraph, item; argument; term (of an equation); nape (of the neck); nape (of the neck), nucha"
+    },
+    {
+      "question": "露出症",
+      "answer": [
+        "ろしゅつしょう"
+      ],
+      "meaning": "exhibitionism"
+    },
+    {
+      "question": "算術平均",
+      "answer": [
+        "さんじゅつへいきん"
+      ],
+      "meaning": "arithmetic mean; Arithmetic mean"
+    },
+    {
+      "question": "覚醒",
+      "answer": [
+        "かくせい"
+      ],
+      "meaning": "waking up, awakening, arousal, revival; disillusion, disillusionment, awakening (figurative)"
+    },
+    {
+      "question": "明瞭度",
+      "answer": [
+        "めいりょうど"
+      ],
+      "meaning": "articulation; Articulation score"
+    },
+    {
+      "question": "構音障害",
+      "answer": [
+        "こうおんしょうがい"
+      ],
+      "meaning": "lisp; Lisp"
+    },
+    {
+      "question": "禁欲主義",
+      "answer": [
+        "きんよくしゅぎ"
+      ],
+      "meaning": "stoicism, asceticism; Asceticism"
+    },
+    {
+      "question": "異化",
+      "answer": [
+        "いか"
+      ],
+      "meaning": "dissimilation; catabolism; dissimilation (phonology); defamiliarization (artistic technique), ostranenie, alienation; Defamiliarization"
+    },
+    {
+      "question": "同化",
+      "answer": [
+        "どうか"
+      ],
+      "meaning": "assimilation, absorption; adaptation; assimilation, anabolism; assimilation (phonology); Assimilation"
+    },
+    {
+      "question": "連想",
+      "answer": [
+        "れんそう"
+      ],
+      "meaning": "association (of ideas), being reminded (of something), suggestion; Association (psychology)"
+    },
+    {
+      "question": "連合",
+      "answer": [
+        "れんごう"
+      ],
+      "meaning": "union, alliance, combination; RENGO (Japanese Trade Union Confederation); Rengou"
+    },
+    {
+      "question": "連合野",
+      "answer": [
+        "れんごうや"
+      ],
+      "meaning": "association area (of the cerebral cortex)"
+    },
+    {
+      "question": "運動失調",
+      "answer": [
+        "うんどうしっちょう"
+      ],
+      "meaning": "ataxia, loss of coordination of the muscles, failure of muscular coordination"
+    },
+    {
+      "question": "連合心理学",
+      "answer": [
+        "れんごうしんりがく"
+      ],
+      "meaning": "association psychology"
+    },
+    {
+      "question": "愛着",
+      "answer": [
+        "あいちゃく",
+        "あいじゃく"
+      ],
+      "meaning": "attachment, love, covetous affection"
+    },
+    {
+      "question": "発作",
+      "answer": [
+        "ほっさ"
+      ],
+      "meaning": "fit, spasm, attack, seizure; Paroxysmal attack"
+    },
+    {
+      "question": "連関",
+      "answer": [
+        "れんかん"
+      ],
+      "meaning": "connection, relation, linkage"
+    },
+    {
+      "question": "注意",
+      "answer": [
+        "ちゅうい"
+      ],
+      "meaning": "caution, being careful, attention (heed), warning, advice; Attention"
+    },
+    {
+      "question": "練習",
+      "answer": [
+        "れんしゅう"
+      ],
+      "meaning": "practice, practising"
+    },
+    {
+      "question": "態度",
+      "answer": [
+        "たいど"
+      ],
+      "meaning": "attitude, manner, behaviour"
+    },
+    {
+      "question": "非定型精神病",
+      "answer": [
+        "ひていけいせいしんびょう"
+      ],
+      "meaning": "atypical psychosis; Schizoaffective disorder"
+    },
+    {
+      "question": "恋愛",
+      "answer": [
+        "れんあい"
+      ],
+      "meaning": "love, love-making, passion, emotion, affections; Falling in love"
+    },
+    {
+      "question": "劣等感",
+      "answer": [
+        "れっとうかん"
+      ],
+      "meaning": "inferiority complex; Inferiority complex"
+    },
+    {
+      "question": "暦年齢",
+      "answer": [
+        "れきねんれい"
+      ],
+      "meaning": "chronological age"
+    },
+    {
+      "question": "聴力",
+      "answer": [
+        "ちょうりょく"
+      ],
+      "meaning": "hearing ability"
+    },
+    {
+      "question": "幻聴",
+      "answer": [
+        "げんちょう"
+      ],
+      "meaning": "auditory hallucination"
+    },
+    {
+      "question": "耳小骨",
+      "answer": [
+        "じしょうこつ"
+      ],
+      "meaning": "auditory ossicles; Ossicles"
+    },
+    {
+      "question": "聴覚",
+      "answer": [
+        "ちょうかく"
+      ],
+      "meaning": "the sense of hearing; Hearing (sense)"
+    },
+    {
+      "question": "冷感症",
+      "answer": [
+        "れいかんしょう"
+      ],
+      "meaning": "female sexual arousal disorder, FSAD, anaphrodisia, hyphedonia, frigidity; Female sexual arousal disorder"
+    },
+    {
+      "question": "耳介",
+      "answer": [
+        "じかい"
+      ],
+      "meaning": "auricle; auricular; Pinna (anatomy)"
+    },
+    {
+      "question": "冷覚",
+      "answer": [
+        "れいかく"
+      ],
+      "meaning": "sensation of cold"
+    },
+    {
+      "question": "自律訓練法",
+      "answer": [
+        "じりつくんれんほう"
+      ],
+      "meaning": "autogenic training; Autogenic training"
+    },
+    {
+      "question": "自己催眠",
+      "answer": [
+        "じこさいみん"
+      ],
+      "meaning": "auto-hypnosis, self-hypnosis, self-induced hypnotism"
+    },
+    {
+      "question": "自動性",
+      "answer": [
+        "じどうせい"
+      ],
+      "meaning": "automaticity, automatism"
+    },
+    {
+      "question": "自律神経失調症",
+      "answer": [
+        "じりつしんけいしっちょうしょう"
+      ],
+      "meaning": "autonomic ataxia; Dysautonomia"
+    },
+    {
+      "question": "自律神経系",
+      "answer": [
+        "じりつしんけいけい"
+      ],
+      "meaning": "autonomic nervous system, ANS; Autonomic nervous system"
+    },
+    {
+      "question": "類似性",
+      "answer": [
+        "るいじせい"
+      ],
+      "meaning": "resemblance, similarity, analogy"
+    },
+    {
+      "question": "自己暗示",
+      "answer": [
+        "じこあんじ"
+      ],
+      "meaning": "self suggestion, autosuggestion"
+    },
+    {
+      "question": "平均値",
+      "answer": [
+        "へいきんち"
+      ],
+      "meaning": "average value, mean value, mean, expectation"
+    },
+    {
+      "question": "嫌悪",
+      "answer": [
+        "けんお"
+      ],
+      "meaning": "disgust, hate, repugnance; Disgust"
+    },
+    {
+      "question": "回避",
+      "answer": [
+        "かいひ"
+      ],
+      "meaning": "evasion, avoidance"
+    },
+    {
+      "question": "回避性人格障害",
+      "answer": [
+        "かいひせいじんかくしょうがい"
+      ],
+      "meaning": "avoidant personality disorder"
+    },
+    {
+      "question": "類型論",
+      "answer": [
+        "るいけいろん"
+      ],
+      "meaning": "typology"
+    },
+    {
+      "question": "軸索",
+      "answer": [
+        "じくさく"
+      ],
+      "meaning": "axis cylinder, axon"
+    },
+    {
+      "question": "臨床心理士",
+      "answer": [
+        "りんしょうしんりし"
+      ],
+      "meaning": "clinical psychologist, clinical psychotherapist; Clinical Psychologist"
+    },
+    {
+      "question": "臨床心理学",
+      "answer": [
+        "りんしょうしんりがく"
+      ],
+      "meaning": "clinical psychology; Clinical psychology"
+    },
+    {
+      "question": "行動",
+      "answer": [
+        "こうどう"
+      ],
+      "meaning": "action, conduct, behaviour, behavior, mobilization, mobilisation; Behavior"
+    },
+    {
+      "question": "行動生態学",
+      "answer": [
+        "こうどうせいたいがく"
+      ],
+      "meaning": "behavioral ecology, behavioural ecology"
+    },
+    {
+      "question": "行動経済学",
+      "answer": [
+        "こうどうけいざいがく"
+      ],
+      "meaning": "behavioral economics, behavioural economics; Behavioral economics"
+    },
+    {
+      "question": "行動科学",
+      "answer": [
+        "こうどうかがく"
+      ],
+      "meaning": "behavioral science, behavioural science; Behavioural sciences"
+    },
+    {
+      "question": "行動障害",
+      "answer": [
+        "こうどうしょうがい"
+      ],
+      "meaning": "behavioral disorder, behavioural disorder; Emotional and behavioral disorders"
+    },
+    {
+      "question": "行動主義",
+      "answer": [
+        "こうどうしゅぎ"
+      ],
+      "meaning": "behaviorism, behaviourism; activism"
+    },
+    {
+      "question": "行動変容",
+      "answer": [
+        "こうどうへんよう"
+      ],
+      "meaning": "behavior modification"
+    },
+    {
+      "question": "行動療法",
+      "answer": [
+        "こうどうりょうほう"
+      ],
+      "meaning": "behavioural therapy (behavioral); Behavior modification"
+    },
+    {
+      "question": "良心",
+      "answer": [
+        "りょうしん"
+      ],
+      "meaning": "conscience; Conscience"
+    },
+    {
+      "question": "両面価値",
+      "answer": [
+        "りょうめんかち"
+      ],
+      "meaning": "ambivalence"
+    },
+    {
+      "question": "両性具有",
+      "answer": [
+        "りょうせいぐゆう"
+      ],
+      "meaning": "androgynous, hermaphroditic"
+    },
+    {
+      "question": "了解心理学",
+      "answer": [
+        "りょうかいしんりがく"
+      ],
+      "meaning": "comprehensive psychology, comprehension psychology"
+    },
+    {
+      "question": "流動性知能",
+      "answer": [
+        "りゅうどうせいちのう"
+      ],
+      "meaning": "fluid intelligence"
+    },
+    {
+      "question": "結晶性知能",
+      "answer": [
+        "けっしょうせいちのう"
+      ],
+      "meaning": "crystallized intelligence"
+    },
+    {
+      "question": "信念",
+      "answer": [
+        "しんねん"
+      ],
+      "meaning": "belief, faith, conviction; Belief"
+    },
+    {
+      "question": "流行",
+      "answer": [
+        "りゅうこう"
+      ],
+      "meaning": "fashion, fad, vogue, craze; prevalence (e.g. of a disease)"
+    },
+    {
+      "question": "流言",
+      "answer": [
+        "りゅうげん"
+      ],
+      "meaning": "groundless rumor (rumour)"
+    },
+    {
+      "question": "立体視",
+      "answer": [
+        "りったいし"
+      ],
+      "meaning": "stereopsis, binocular vision"
+    },
+    {
+      "question": "離乳",
+      "answer": [
+        "りにゅう"
+      ],
+      "meaning": "weaning"
+    },
+    {
+      "question": "離人症",
+      "answer": [
+        "りじんしょう"
+      ],
+      "meaning": "depersonalization"
+    },
+    {
+      "question": "離職",
+      "answer": [
+        "りしょく"
+      ],
+      "meaning": "employment separation, leaving one's job, losing one's job"
+    },
+    {
+      "question": "理学療法",
+      "answer": [
+        "りがくりょうほう"
+      ],
+      "meaning": "physiotherapy, physical therapy; Physical therapy"
+    },
+    {
+      "question": "理解",
+      "answer": [
+        "りかい"
+      ],
+      "meaning": "understanding, comprehension, appreciation, sympathy; Understanding"
+    },
+    {
+      "question": "理科系",
+      "answer": [
+        "りかけい"
+      ],
+      "meaning": "science course"
+    },
+    {
+      "question": "文科系",
+      "answer": [
+        "ぶんかけい"
+      ],
+      "meaning": "liberal arts, humanities"
+    },
+    {
+      "question": "理科系",
+      "answer": [
+        "りかけい"
+      ],
+      "meaning": "science course"
+    },
+    {
+      "question": "生体工学",
+      "answer": [
+        "せいたいこうがく"
+      ],
+      "meaning": "bionics; Bionics"
+    },
+    {
+      "question": "生物工学",
+      "answer": [
+        "せいぶつこうがく"
+      ],
+      "meaning": "biotechnology; Biotechnology"
+    },
+    {
+      "question": "卵形嚢",
+      "answer": [
+        "らんけいのう"
+      ],
+      "meaning": "utriculus, utricle"
+    },
+    {
+      "question": "球形嚢",
+      "answer": [
+        "きゅうけいのう"
+      ],
+      "meaning": "sacculus, saccule"
+    },
+    {
+      "question": "卵形嚢",
+      "answer": [
+        "らんけいのう"
+      ],
+      "meaning": "utriculus, utricle"
+    },
+    {
+      "question": "生物測定学",
+      "answer": [
+        "せいぶつそくていがく"
+      ],
+      "meaning": "biometrics, biometry"
+    },
+    {
+      "question": "盲",
+      "answer": [
+        "めくら",
+        "めしい"
+      ],
+      "meaning": "blindness, blind person; illiteracy, illiterate person; ignorance, ignoramus"
+    },
+    {
+      "question": "盲点",
+      "answer": [
+        "もうてん"
+      ],
+      "meaning": "blind spot; Blind spot (vision)"
+    },
+    {
+      "question": "欲望",
+      "answer": [
+        "よくぼう"
+      ],
+      "meaning": "desire, appetite, lust"
+    },
+    {
+      "question": "欲求不満",
+      "answer": [
+        "よっきゅうふまん"
+      ],
+      "meaning": "frustration"
+    },
+    {
+      "question": "阻止",
+      "answer": [
+        "そし"
+      ],
+      "meaning": "obstruction, check, hindrance, prevention, impediment, interdiction, preemption, blocking"
+    },
+    {
+      "question": "欲求",
+      "answer": [
+        "よっきゅう"
+      ],
+      "meaning": "desire, want, will, wish, urge, craving"
+    },
+    {
+      "question": "血糖",
+      "answer": [
+        "けっとう"
+      ],
+      "meaning": "blood sugar"
+    },
+    {
+      "question": "血圧",
+      "answer": [
+        "けつあつ"
+      ],
+      "meaning": "blood pressure; Blood pressure"
+    },
+    {
+      "question": "境界性人格障害",
+      "answer": [
+        "きょうかいせいじんかくしょうがい"
+      ],
+      "meaning": "borderline personality disorder, BPD"
+    },
+    {
+      "question": "抑制",
+      "answer": [
+        "よくせい"
+      ],
+      "meaning": "control, restraint, suppression, constraint, curtailment, inhibition, check, curb"
+    },
+    {
+      "question": "鋭敏性",
+      "answer": [
+        "えいびんせい"
+      ],
+      "meaning": "sensitivity"
+    },
+    {
+      "question": "抑圧",
+      "answer": [
+        "よくあつ"
+      ],
+      "meaning": "check, restraint, oppression, suppression; Repression"
+    },
+    {
+      "question": "点字",
+      "answer": [
+        "てんじ"
+      ],
+      "meaning": "Braille; Braille"
+    },
+    {
+      "question": "脳",
+      "answer": [
+        "のう",
+        "なずき"
+      ],
+      "meaning": "brain; brains, mind; Brain; brain, skull, head"
+    },
+    {
+      "question": "脳幹",
+      "answer": [
+        "のうかん"
+      ],
+      "meaning": "brain stem; Brainstem"
+    },
+    {
+      "question": "洗脳",
+      "answer": [
+        "せんのう"
+      ],
+      "meaning": "brainwashing"
+    },
+    {
+      "question": "要求",
+      "answer": [
+        "ようきゅう"
+      ],
+      "meaning": "demand, firm request, requisition, requirement, desire"
+    },
+    {
+      "question": "様相",
+      "answer": [
+        "ようそう"
+      ],
+      "meaning": "aspect, phase, condition; modality (philosophy)"
+    },
+    {
+      "question": "自己臭症",
+      "answer": [
+        "じこしゅうしょう"
+      ],
+      "meaning": "body odour problem (odor), bromidrosis, bromhidrosis"
+    },
+    {
+      "question": "気管支喘息",
+      "answer": [
+        "きかんしぜんそく"
+      ],
+      "meaning": "bronchial asthma; Asthma"
+    },
+    {
+      "question": "幼児期",
+      "answer": [
+        "ようじき"
+      ],
+      "meaning": "infancy"
+    },
+    {
+      "question": "予告",
+      "answer": [
+        "よこく"
+      ],
+      "meaning": "advance notice, previous note, preliminary announcement"
+    },
+    {
+      "question": "官僚制",
+      "answer": [
+        "かんりょうせい"
+      ],
+      "meaning": "bureaucracy; Bureaucracy"
+    },
+    {
+      "question": "生活年齢",
+      "answer": [
+        "せいかつねんれい"
+      ],
+      "meaning": "chronological age"
+    },
+    {
+      "question": "融合",
+      "answer": [
+        "ゆうごう"
+      ],
+      "meaning": "agglutination, adhesion, fusion, combination, blending, uniting"
+    },
+    {
+      "question": "遊戯療法",
+      "answer": [
+        "ゆうぎりょうほう"
+      ],
+      "meaning": "play therapy; Play therapy"
+    },
+    {
+      "question": "心臓神経症",
+      "answer": [
+        "しんぞうしんけいしょう"
+      ],
+      "meaning": "cardiac neurosis"
+    },
+    {
+      "question": "誘発電位",
+      "answer": [
+        "ゆうはつでんい"
+      ],
+      "meaning": "evoked potential"
+    },
+    {
+      "question": "進路指導",
+      "answer": [
+        "しんろしどう"
+      ],
+      "meaning": "guidance counseling"
+    },
+    {
+      "question": "誘発性",
+      "answer": [
+        "ゆうはつせい"
+      ],
+      "meaning": "inducibility"
+    },
+    {
+      "question": "格",
+      "answer": [
+        "かく",
+        "きゃく"
+      ],
+      "meaning": "status, position, rank; method, way, style; rule, regulation, law; grammatical case; figure (syllogism); Grammatical case; amendment (of the ritsuryo)"
+    },
+    {
+      "question": "格文法",
+      "answer": [
+        null
+      ],
+      "meaning": "Case grammar"
+    },
+    {
+      "question": "事例研究法",
+      "answer": [
+        "じれいけんきゅうほう"
+      ],
+      "meaning": "case method, case study method"
+    },
+    {
+      "question": "去勢不安",
+      "answer": [
+        "きょせいふあん"
+      ],
+      "meaning": "castration anxiety"
+    },
+    {
+      "question": "範疇文法",
+      "answer": [
+        "はんちゅうぶんぽう"
+      ],
+      "meaning": "categorical grammar"
+    },
+    {
+      "question": "誘因",
+      "answer": [
+        "ゆういん"
+      ],
+      "meaning": "contributing cause, exciting cause, incentive, motive"
+    },
+    {
+      "question": "動因",
+      "answer": [
+        "どういん"
+      ],
+      "meaning": "drive, motive, agent"
+    },
+    {
+      "question": "誘因",
+      "answer": [
+        "ゆういん"
+      ],
+      "meaning": "contributing cause, exciting cause, incentive, motive"
+    },
+    {
+      "question": "体感",
+      "answer": [
+        "たいかん"
+      ],
+      "meaning": "bodily sensation, sense, experience"
+    },
+    {
+      "question": "中心極限定理",
+      "answer": [
+        "ちゅうしんきょくげんていり"
+      ],
+      "meaning": "central limit theorem; Central limit theorem"
+    },
+    {
+      "question": "中枢神経系",
+      "answer": [
+        "ちゅうすうしんけいけい"
+      ],
+      "meaning": "central nervous system, CNS; Central nervous system"
+    },
+    {
+      "question": "小脳",
+      "answer": [
+        "しょうのう"
+      ],
+      "meaning": "cerebellum; Cerebellum"
+    },
+    {
+      "question": "大脳皮質",
+      "answer": [
+        "だいのうひしつ"
+      ],
+      "meaning": "cerebral cortex; Cerebral cortex"
+    },
+    {
+      "question": "脳損傷",
+      "answer": [
+        "のうそんしょう"
+      ],
+      "meaning": "brain damage"
+    },
+    {
+      "question": "有意",
+      "answer": [
+        "ゆうい"
+      ],
+      "meaning": "significant, meaningful; intentional, volitional; Statistical significance"
+    },
+    {
+      "question": "有意差",
+      "answer": [
+        "ゆういさ"
+      ],
+      "meaning": "significant difference, statistical significance"
+    },
+    {
+      "question": "脳血管障害",
+      "answer": [
+        "のうけっかんしょうがい"
+      ],
+      "meaning": "cerebrovascular disease; Cerebrovascular disease"
+    },
+    {
+      "question": "大脳",
+      "answer": [
+        "だいのう"
+      ],
+      "meaning": "cerebrum; Cerebrum"
+    },
+    {
+      "question": "有意水準",
+      "answer": [
+        "ゆういすいじゅん"
+      ],
+      "meaning": "significance level, level of significance, critical p-value"
+    },
+    {
+      "question": "優越感",
+      "answer": [
+        "ゆうえつかん"
+      ],
+      "meaning": "superiority complex, sense of superiority; Superiority complex"
+    },
+    {
+      "question": "性格",
+      "answer": [
+        "せいかく"
+      ],
+      "meaning": "character, personality, disposition, nature"
+    },
+    {
+      "question": "薬物療法",
+      "answer": [
+        "やくぶつりょうほう"
+      ],
+      "meaning": "pharmacotherapy"
+    },
+    {
+      "question": "薬物依存",
+      "answer": [
+        "やくぶついそん",
+        "やくぶついぞん"
+      ],
+      "meaning": "drug dependence"
+    },
+    {
+      "question": "役割理論",
+      "answer": [
+        "やくわりりろん"
+      ],
+      "meaning": "role theory"
+    },
+    {
+      "question": "化学療法",
+      "answer": [
+        "かがくりょうほう"
+      ],
+      "meaning": "chemotherapy; Chemotherapy"
+    },
+    {
+      "question": "主訴",
+      "answer": [
+        "しゅそ"
+      ],
+      "meaning": "main complaint"
+    },
+    {
+      "question": "児童画",
+      "answer": [
+        "じどうが"
+      ],
+      "meaning": "pictures drawn by a child"
+    },
+    {
+      "question": "児童心理学",
+      "answer": [
+        "じどうしんりがく"
+      ],
+      "meaning": "child psychology"
+    },
+    {
+      "question": "役割演技",
+      "answer": [
+        "やくわりえんぎ"
+      ],
+      "meaning": "role-playing"
+    },
+    {
+      "question": "役割",
+      "answer": [
+        "やくわり"
+      ],
+      "meaning": "part, assigning (allotment of) parts, role, duties; Role"
+    },
+    {
+      "question": "野生児",
+      "answer": [
+        "やせいじ"
+      ],
+      "meaning": "feral child; Feral child"
+    },
+    {
+      "question": "夜盲症",
+      "answer": [
+        "やもうしょう"
+      ],
+      "meaning": "night blindness; Nyctalopia"
+    },
+    {
+      "question": "舞踏病",
+      "answer": [
+        "ぶとうびょう"
+      ],
+      "meaning": "chorea, St. Vitus's dance"
+    },
+    {
+      "question": "彩度",
+      "answer": [
+        "さいど"
+      ],
+      "meaning": "chroma, chroma saturation, color saturation (colour); Colorfulness"
+    },
+    {
+      "question": "色度図",
+      "answer": [
+        "しきどず"
+      ],
+      "meaning": "chromaticity diagram"
+    },
+    {
+      "question": "色視",
+      "answer": [
+        "しきし"
+      ],
+      "meaning": "chromatopsia"
+    },
+    {
+      "question": "色聴",
+      "answer": [
+        "しきちょう"
+      ],
+      "meaning": "\"colored hearing\" synesthesia"
+    },
+    {
+      "question": "染色体異常",
+      "answer": [
+        "せんしょくたいいじょう"
+      ],
+      "meaning": "chromosomal abnormality; Chromosome abnormality"
+    },
+    {
+      "question": "問題児",
+      "answer": [
+        "もんだいじ"
+      ],
+      "meaning": "problem child"
+    },
+    {
+      "question": "国際照明委員会",
+      "answer": [
+        "こくさいしょうめいいいんかい"
+      ],
+      "meaning": "Commission Internationale de I'Eclairage, CIE; International Commission on Illumination"
+    },
+    {
+      "question": "特殊学級",
+      "answer": [
+        "とくしゅがっきゅう"
+      ],
+      "meaning": "special class for handicapped children"
+    },
+    {
+      "question": "鑑別",
+      "answer": [
+        "かんべつ"
+      ],
+      "meaning": "discrimination, judgement, judgment, separation, sorting"
+    },
+    {
+      "question": "分類",
+      "answer": [
+        "ぶんるい"
+      ],
+      "meaning": "classification, categorization, sorting"
+    },
+    {
+      "question": "問題解決",
+      "answer": [
+        "もんだいかいけつ"
+      ],
+      "meaning": "problem-solving; Problem solving"
+    },
+    {
+      "question": "尤度比",
+      "answer": [
+        "ゆうどひ"
+      ],
+      "meaning": "likelihood ratio"
+    },
+    {
+      "question": "人工内耳",
+      "answer": [
+        "じんこうないじ"
+      ],
+      "meaning": "cochlea implant; Cochlear implant"
+    },
+    {
+      "question": "決定係数",
+      "answer": [
+        "けっていけいすう"
+      ],
+      "meaning": "coefficient of determination; Coefficient of determination"
+    },
+    {
+      "question": "変動係数",
+      "answer": [
+        "へんどうけいすう"
+      ],
+      "meaning": "coefficient of variation, variation coefficient; Coefficient of variation"
+    },
+    {
+      "question": "認知",
+      "answer": [
+        "にんち"
+      ],
+      "meaning": "acknowledgement, acknowledgment, recognition, cognition"
+    },
+    {
+      "question": "認知行動療法",
+      "answer": [
+        "にんちこうどうりょうほう"
+      ],
+      "meaning": "cognitive-behavioral therapy, cognitive-behavioural therapy; Cognitive behavioral therapy"
+    },
+    {
+      "question": "目標",
+      "answer": [
+        "もくひょう",
+        "めじるし"
+      ],
+      "meaning": "mark, objective, target; mark, sign, landmark, benchmark"
+    },
+    {
+      "question": "眼",
+      "answer": [
+        "め",
+        "まなこ"
+      ],
+      "meaning": "eye, eyeball; eyesight, sight, vision; look, stare, gaze, glance; notice, attention, observation, eyes (of the world, public, etc.); an experience; viewpoint; discrimination, discernment, judgement, eye (e.g. for quality); appearance; spacing (between crossed strands of a net, mesh, etc.), opening, stitch, texture, weave; grain (of wood); eye (of a storm, needle, etc.); intersection (on a go board), square (on a chess board); dot (on a dice), pip, rolled number; graduation, division (of a scale); tooth (of a saw, comb, etc.); ordinal number suffix; somewhat, -ish; point (e.g. of change); Eye; eye, eyeball; pupil and (dark) iris of the eye; insight, perceptivity, power of observation; look, field of vision; core, center, centre, essence"
+    },
+    {
+      "question": "認知心理学",
+      "answer": [
+        "にんちしんりがく"
+      ],
+      "meaning": "cognitive psychology; Cognitive psychology"
+    },
+    {
+      "question": "認知科学",
+      "answer": [
+        "にんちかがく"
+      ],
+      "meaning": "cognitive science; Cognitive science"
+    },
+    {
+      "question": "網様体賦活系",
+      "answer": [
+        "もうようたいふかつけい"
+      ],
+      "meaning": "reticular activating system, RAS"
+    },
+    {
+      "question": "網様体",
+      "answer": [
+        "もうようたい"
+      ],
+      "meaning": "reticular formation; Reticular formation"
+    },
+    {
+      "question": "認知療法",
+      "answer": [
+        "にんちりょうほう"
+      ],
+      "meaning": "cognitive therapy; Cognitive therapy"
+    },
+    {
+      "question": "寒色",
+      "answer": [
+        "かんしょく"
+      ],
+      "meaning": "cold color, cold colour"
+    },
+    {
+      "question": "暖色",
+      "answer": [
+        "だんしょく"
+      ],
+      "meaning": "warm colour, warm color"
+    },
+    {
+      "question": "網膜",
+      "answer": [
+        "もうまく"
+      ],
+      "meaning": "retina; Retina"
+    },
+    {
+      "question": "集合的無意識",
+      "answer": [
+        "しゅうごうてきむいしき"
+      ],
+      "meaning": "collective unconscious; Collective unconscious"
+    },
+    {
+      "question": "集団主義",
+      "answer": [
+        "しゅうだんしゅぎ"
+      ],
+      "meaning": "collectivism (giving priority to a group rather than any individual member)"
+    },
+    {
+      "question": "個人主義",
+      "answer": [
+        "こじんしゅぎ"
+      ],
+      "meaning": "individualism; Individualism"
+    },
+    {
+      "question": "色",
+      "answer": [
+        "いろ",
+        "しょく",
+        "しき"
+      ],
+      "meaning": "colour, color, hue, tint, tinge, shade; complexion, skin colour, skin color; look (on one's face), expression; appearance, air, feeling; personality, character; tone (of one's voice, etc.), tune, sound, ring; love, lust, sensuality, love affair; lover, paramour; beauty, sexiness, physical appeal; kind, type, variety; Color; counter for colours; rupa (form); visible objects (i.e. color and form)"
+    },
+    {
+      "question": "色盲",
+      "answer": [
+        "しきもう"
+      ],
+      "meaning": "color-blindness, colour-blindness"
+    },
+    {
+      "question": "色彩調節",
+      "answer": [
+        "しきさいちょうせつ"
+      ],
+      "meaning": "color control, colour control"
+    },
+    {
+      "question": "二重盲検法",
+      "answer": [
+        "にじゅうもうけんほう"
+      ],
+      "meaning": "double blind trial, double blind test; Blind experiment"
+    },
+    {
+      "question": "混色",
+      "answer": [
+        "こんしょく"
+      ],
+      "meaning": "mixed or compound color, mixed or compound colour"
+    },
+    {
+      "question": "妄想症",
+      "answer": [
+        "もうそうしょう"
+      ],
+      "meaning": "paranoia"
+    },
+    {
+      "question": "原色",
+      "answer": [
+        "げんしょく"
+      ],
+      "meaning": "primary colour, primary color; pure color, unmixed color, striking color; original color (of a painting, etc. as opposed to a reproduction); Primary color"
+    },
+    {
+      "question": "表色系",
+      "answer": [
+        "ひょうしょくけい"
+      ],
+      "meaning": "color system"
+    },
+    {
+      "question": "妄想",
+      "answer": [
+        "もうそう",
+        "ぼうそう"
+      ],
+      "meaning": "wild idea, delusion; Delusion"
+    },
+    {
+      "question": "模倣",
+      "answer": [
+        "もほう"
+      ],
+      "meaning": "imitation, copying; Imitation"
+    },
+    {
+      "question": "模写説",
+      "answer": [
+        "もしゃせつ"
+      ],
+      "meaning": "copy theory"
+    },
+    {
+      "question": "面接",
+      "answer": [
+        "めんせつ"
+      ],
+      "meaning": "interview (e.g. for a job); Job interview"
+    },
+    {
+      "question": "面色",
+      "answer": [
+        "めんしょく"
+      ],
+      "meaning": "expression, complexion"
+    },
+    {
+      "question": "後天性免疫不全症候群",
+      "answer": [
+        "こうてんせいめんえきふぜんしょうこうぐん"
+      ],
+      "meaning": "acquired immune deficiency syndrome, AIDS; AIDS"
+    },
+    {
+      "question": "迷信",
+      "answer": [
+        "めいしん"
+      ],
+      "meaning": "superstition, superstitious belief; Superstition"
+    },
+    {
+      "question": "明度",
+      "answer": [
+        "めいど"
+      ],
+      "meaning": "brightness, lightness"
+    },
+    {
+      "question": "明順応",
+      "answer": [
+        "めいじゅんのう"
+      ],
+      "meaning": "light adaptation"
+    },
+    {
+      "question": "命名",
+      "answer": [
+        "めいめい"
+      ],
+      "meaning": "naming, christening"
+    },
+    {
+      "question": "命題",
+      "answer": [
+        "めいだい"
+      ],
+      "meaning": "proposition, thesis, notion, theory; problem, issue, challenge; Proposition"
+    },
+    {
+      "question": "無力感",
+      "answer": [
+        "むりょくかん"
+      ],
+      "meaning": "sense of helplessness, feeling of powerlessness"
+    },
+    {
+      "question": "無作為抽出",
+      "answer": [
+        "むさくいちゅうしゅつ"
+      ],
+      "meaning": "random sampling"
+    },
+    {
+      "question": "帰属意識",
+      "answer": [
+        "きぞくいしき"
+      ],
+      "meaning": "(a feeling of) identification (with), sense of belonging"
+    },
+    {
+      "question": "共通性",
+      "answer": [
+        "きょうつうせい"
+      ],
+      "meaning": "communality, community, having something in common"
+    },
+    {
+      "question": "無意識",
+      "answer": [
+        "むいしき"
+      ],
+      "meaning": "unconsciousness; the unconscious; Unconscious mind"
+    },
+    {
+      "question": "協力",
+      "answer": [
+        "きょうりょく"
+      ],
+      "meaning": "cooperation, collaboration"
+    },
+    {
+      "question": "競争",
+      "answer": [
+        "きょうそう"
+      ],
+      "meaning": "competition, contest, rivalry, race; competition (between organisms or species)"
+    },
+    {
+      "question": "補色",
+      "answer": [
+        "ほしょく"
+      ],
+      "meaning": "complementary color, complementary colour; Complementary colors"
+    },
+    {
+      "question": "相補分布",
+      "answer": [
+        "そうほぶんぷ"
+      ],
+      "meaning": "complementary distribution; Complementary distribution"
+    },
+    {
+      "question": "応諾",
+      "answer": [
+        "おうだく"
+      ],
+      "meaning": "consent, compliance"
+    },
+    {
+      "question": "主成分分析",
+      "answer": [
+        "しゅせいぶんぶんせき"
+      ],
+      "meaning": "principal component analysis, PCA; Principal component analysis"
+    },
+    {
+      "question": "夢",
+      "answer": [
+        "ゆめ"
+      ],
+      "meaning": "dream; Dream"
+    },
+    {
+      "question": "民族性",
+      "answer": [
+        "みんぞくせい"
+      ],
+      "meaning": "racial or national characteristics"
+    },
+    {
+      "question": "魅力",
+      "answer": [
+        "みりょく"
+      ],
+      "meaning": "charm, fascination, glamour, glamor, attraction, appeal"
+    },
+    {
+      "question": "未熟児",
+      "answer": [
+        "みじゅくじ"
+      ],
+      "meaning": "premature baby"
+    },
+    {
+      "question": "味蕾",
+      "answer": [
+        "みらい"
+      ],
+      "meaning": "taste bud; Taste bud"
+    },
+    {
+      "question": "概念",
+      "answer": [
+        "がいねん"
+      ],
+      "meaning": "general idea, concept, notion; Concept"
+    },
+    {
+      "question": "同調",
+      "answer": [
+        "どうちょう"
+      ],
+      "meaning": "sympathy, agreement with, alignment, conformity, tuning; Conformity"
+    },
+    {
+      "question": "交絡",
+      "answer": [
+        "こうらく"
+      ],
+      "meaning": "interrelationship, statistics confounding; Confounding"
+    },
+    {
+      "question": "精神錯乱",
+      "answer": [
+        "せいしんさくらん"
+      ],
+      "meaning": "mental derangement, mental confusion, alienation"
+    },
+    {
+      "question": "意識",
+      "answer": [
+        "いしき"
+      ],
+      "meaning": "consciousness; becoming aware (of), awareness, sense; mano-vijnana (mental consciousness, cognizer of sensory information); Consciousness"
+    },
+    {
+      "question": "味覚",
+      "answer": [
+        "みかく"
+      ],
+      "meaning": "taste, palate, sense of taste; Taste"
+    },
+    {
+      "question": "子音",
+      "answer": [
+        "しいん",
+        "しおん"
+      ],
+      "meaning": "consonant; Consonant"
+    },
+    {
+      "question": "体質",
+      "answer": [
+        "たいしつ"
+      ],
+      "meaning": "constitution (physical), physical make-up, predisposition (to disease), disposition, tendency; character (of a group, organization, etc.), innate characteristics, make-up, nature, culture"
+    },
+    {
+      "question": "末梢神経系",
+      "answer": [
+        "まっしょうしんけいけい"
+      ],
+      "meaning": "peripheral nervous system; Peripheral nervous system"
+    },
+    {
+      "question": "内容分析",
+      "answer": [
+        "ないようぶんせき"
+      ],
+      "meaning": "content analysis; Content analysis"
+    },
+    {
+      "question": "内容語",
+      "answer": [
+        "ないようご"
+      ],
+      "meaning": "content word"
+    },
+    {
+      "question": "文脈",
+      "answer": [
+        "ぶんみゃく"
+      ],
+      "meaning": "context"
+    },
+    {
+      "question": "麻薬中毒",
+      "answer": [
+        "まやくちゅうどく"
+      ],
+      "meaning": "drug addiction"
+    },
+    {
+      "question": "対比",
+      "answer": [
+        "たいひ"
+      ],
+      "meaning": "contrast, comparison"
+    },
+    {
+      "question": "本能",
+      "answer": [
+        "ほんのう"
+      ],
+      "meaning": "instinct; Instinct"
+    },
+    {
+      "question": "制御",
+      "answer": [
+        "せいぎょ"
+      ],
+      "meaning": "control (of a machine, device, etc.); control (over an opponent, one's emotions, etc.), governing, management, suppression, keeping in check"
+    },
+    {
+      "question": "勃起障害",
+      "answer": [
+        "ぼっきしょうがい"
+      ],
+      "meaning": "erectile dysfunction, ED"
+    },
+    {
+      "question": "防衛",
+      "answer": [
+        "ぼうえい"
+      ],
+      "meaning": "defense, defence, protection"
+    },
+    {
+      "question": "回心",
+      "answer": [
+        "かいしん",
+        "えしん"
+      ],
+      "meaning": "conversion; Conversion to Christianity"
+    },
+    {
+      "question": "改宗",
+      "answer": [
+        "かいしゅう"
+      ],
+      "meaning": "religious conversion; Religious conversion"
+    },
+    {
+      "question": "転換",
+      "answer": [
+        "てんかん"
+      ],
+      "meaning": "conversion, diversion, changeover, commutation, switchover"
+    },
+    {
+      "question": "暴力",
+      "answer": [
+        "ぼうりょく"
+      ],
+      "meaning": "violence, mayhem; Violence"
+    },
+    {
+      "question": "汚言症",
+      "answer": [
+        "おげんしょう"
+      ],
+      "meaning": "coprolalia, uncontrollable use of obscene language; Coprolalia"
+    },
+    {
+      "question": "忘却",
+      "answer": [
+        "ぼうきゃく"
+      ],
+      "meaning": "lapse of memory, forgetting completely, (consigning to) oblivion; Forgetting"
+    },
+    {
+      "question": "角膜",
+      "answer": [
+        "かくまく"
+      ],
+      "meaning": "cornea; Cornea"
+    },
+    {
+      "question": "飽和",
+      "answer": [
+        "ほうわ"
+      ],
+      "meaning": "saturation, satiation; Saturation"
+    },
+    {
+      "question": "脳梁",
+      "answer": [
+        "のうりょう"
+      ],
+      "meaning": "corpus callosum; Corpus callosum"
+    },
+    {
+      "question": "線条体",
+      "answer": [
+        "せんじょうたい"
+      ],
+      "meaning": "corpus striatum, striatum; Striatum"
+    },
+    {
+      "question": "相関",
+      "answer": [
+        "そうかん"
+      ],
+      "meaning": "correlation, interrelation"
+    },
+    {
+      "question": "重相関係数",
+      "answer": [
+        "じゅうそうかんけいすう"
+      ],
+      "meaning": "multiple correlation coefficient"
+    },
+    {
+      "question": "相関係数",
+      "answer": [
+        "そうかんけいすう"
+      ],
+      "meaning": "correlation coefficient; Pearson product-moment correlation coefficient"
+    },
+    {
+      "question": "相関図",
+      "answer": [
+        "そうかんず"
+      ],
+      "meaning": "correlation diagram, correlation chart"
+    },
+    {
+      "question": "方略",
+      "answer": [
+        "ほうりゃく"
+      ],
+      "meaning": "plan"
+    },
+    {
+      "question": "方向",
+      "answer": [
+        "ほうこう"
+      ],
+      "meaning": "direction, orientation, bearing, way; course (e.g. of action); Direction (geometry)"
+    },
+    {
+      "question": "求愛行動",
+      "answer": [
+        "きゅうあいこうどう"
+      ],
+      "meaning": "courtship behavior (animals)"
+    },
+    {
+      "question": "共分散",
+      "answer": [
+        "きょうぶんさん"
+      ],
+      "meaning": "covariance; Covariance"
+    },
+    {
+      "question": "報酬",
+      "answer": [
+        "ほうしゅう"
+      ],
+      "meaning": "remuneration, recompense, reward, toll; Remuneration"
+    },
+    {
+      "question": "脳神経",
+      "answer": [
+        "のうしんけい"
+      ],
+      "meaning": "cranial nerves, cerebral nerves; Cranial nerve"
+    },
+    {
+      "question": "創造性",
+      "answer": [
+        "そうぞうせい"
+      ],
+      "meaning": "creativity"
+    },
+    {
+      "question": "信憑性",
+      "answer": [
+        "しんぴょうせい"
+      ],
+      "meaning": "authenticity, credibility"
+    },
+    {
+      "question": "犯罪心理学",
+      "answer": [
+        "はんざいしんりがく"
+      ],
+      "meaning": "criminal psychology; Criminal psychology"
+    },
+    {
+      "question": "肢体不自由児",
+      "answer": [
+        "したいふじゆうじ"
+      ],
+      "meaning": "physically handicapped child"
+    },
+    {
+      "question": "母数",
+      "answer": [
+        "ぼすう"
+      ],
+      "meaning": "(statistical) parameter"
+    },
+    {
+      "question": "母数",
+      "answer": [
+        "ぼすう"
+      ],
+      "meaning": "(statistical) parameter"
+    },
+    {
+      "question": "母集団",
+      "answer": [
+        "ぼしゅうだん"
+      ],
+      "meaning": "population, universe, parent set; Statistical population"
+    },
+    {
+      "question": "母音",
+      "answer": [
+        "ぼいん",
+        "ぼおん"
+      ],
+      "meaning": "vowel; Vowel"
+    },
+    {
+      "question": "縦断的研究",
+      "answer": [
+        "じゅうだんてきけんきゅう"
+      ],
+      "meaning": "longitudinal study"
+    },
+    {
+      "question": "群集",
+      "answer": [
+        "ぐんしゅう"
+      ],
+      "meaning": "crowd, community, group, herd, gathering, assembly"
+    },
+    {
+      "question": "保持",
+      "answer": [
+        "ほじ"
+      ],
+      "meaning": "retention, maintenance, preservation"
+    },
+    {
+      "question": "保護観察",
+      "answer": [
+        "ほごかんさつ"
+      ],
+      "meaning": "probation; Probation"
+    },
+    {
+      "question": "弁別閾",
+      "answer": [
+        "べんべついき"
+      ],
+      "meaning": "difference threshold, differential limen"
+    },
+    {
+      "question": "弁別素性",
+      "answer": [
+        "べんべつそせい"
+      ],
+      "meaning": "distinctive feature"
+    },
+    {
+      "question": "文化人類学",
+      "answer": [
+        "ぶんかじんるいがく"
+      ],
+      "meaning": "cultural anthropology; Cultural anthropology"
+    },
+    {
+      "question": "文化心理学",
+      "answer": [
+        "ぶんかしんりがく"
+      ],
+      "meaning": "cultural psychology; Cultural psychology"
+    },
+    {
+      "question": "文化",
+      "answer": [
+        "ぶんか"
+      ],
+      "meaning": "culture, civilization, civilisation; Bunka era (1804.2.11-1818.4.22); Bunka; Culture"
+    },
+    {
+      "question": "文化相対主義",
+      "answer": [
+        "ぶんかそうたいしゅぎ"
+      ],
+      "meaning": "cultural relativism; Cultural relativism"
+    },
+    {
+      "question": "好奇心",
+      "answer": [
+        "こうきしん"
+      ],
+      "meaning": "curiosity, inquisitiveness; Curiosity"
+    },
+    {
+      "question": "教育課程",
+      "answer": [
+        "きょういくかてい"
+      ],
+      "meaning": "curriculum"
+    },
+    {
+      "question": "弁別",
+      "answer": [
+        "べんべつ"
+      ],
+      "meaning": "distinguishing, distinction, discrimination, telling apart; Benbetsu"
+    },
+    {
+      "question": "皮膚感覚",
+      "answer": [
+        "ひふかんかく"
+      ],
+      "meaning": "cutaneous sensation"
+    },
+    {
+      "question": "暗順応",
+      "answer": [
+        "あんじゅんのう"
+      ],
+      "meaning": "dark adaptation; Adaptation (eye)"
+    },
+    {
+      "question": "弁解",
+      "answer": [
+        "べんかい"
+      ],
+      "meaning": "explanation (e.g. for one's actions), excuse, justification, defense, defence"
+    },
+    {
+      "question": "白昼夢",
+      "answer": [
+        "はくちゅうむ"
+      ],
+      "meaning": "daydream, waking dream; Daydream"
+    },
+    {
+      "question": "大脳辺縁系",
+      "answer": [
+        "だいのうへんえんけい"
+      ],
+      "meaning": "limbic system; Limbic system"
+    },
+    {
+      "question": "自己中心性",
+      "answer": [
+        "じこちゅうしんせい"
+      ],
+      "meaning": "egocentrism; Egocentrism"
+    },
+    {
+      "question": "変量",
+      "answer": [
+        "へんりょう"
+      ],
+      "meaning": "variable"
+    },
+    {
+      "question": "意思決定",
+      "answer": [
+        "いしけってい"
+      ],
+      "meaning": "decision-making; Decision making"
+    },
+    {
+      "question": "復号化",
+      "answer": [
+        "ふくごうか"
+      ],
+      "meaning": "decryption, decipherment, decoding"
+    },
+    {
+      "question": "演繹",
+      "answer": [
+        "えんえき"
+      ],
+      "meaning": "deductive reasoning, deduction; Deductive reasoning"
+    },
+    {
+      "question": "深部感覚",
+      "answer": [
+        "しんぶかんかく"
+      ],
+      "meaning": "bathyesthesia, deep sensibility; Proprioception"
+    },
+    {
+      "question": "表層構造",
+      "answer": [
+        "ひょうそうこうぞう"
+      ],
+      "meaning": "surface structure"
+    },
+    {
+      "question": "変形規則",
+      "answer": [
+        "へんけいきそく"
+      ],
+      "meaning": "transformational rule"
+    },
+    {
+      "question": "自由度",
+      "answer": [
+        "じゆうど"
+      ],
+      "meaning": "degree of freedom; Degrees of freedom (physics and chemistry)"
+    },
+    {
+      "question": "既視感",
+      "answer": [
+        "きしかん"
+      ],
+      "meaning": "deja vu; Déjà vu"
+    },
+    {
+      "question": "変換",
+      "answer": [
+        "へんかん"
+      ],
+      "meaning": "change, conversion, transformation; transformation"
+    },
+    {
+      "question": "非行",
+      "answer": [
+        "ひこう"
+      ],
+      "meaning": "delinquency, misconduct"
+    },
+    {
+      "question": "変位",
+      "answer": [
+        "へんい"
+      ],
+      "meaning": "change of position, displacement; Displacement (vector)"
+    },
+    {
+      "question": "偏食",
+      "answer": [
+        "へんしょく"
+      ],
+      "meaning": "unbalanced diet"
+    },
+    {
+      "question": "誇大妄想",
+      "answer": [
+        "こだいもうそう"
+      ],
+      "meaning": "megalomania"
+    },
+    {
+      "question": "被害妄想",
+      "answer": [
+        "ひがいもうそう"
+      ],
+      "meaning": "persecution complex, paranoia; Persecutory delusion"
+    },
+    {
+      "question": "偏差値",
+      "answer": [
+        "へんさち"
+      ],
+      "meaning": "deviation value (usu. scaled to mean of 50, standard deviation of 10, and often used for academic grades), deviation, T-score, standard score; Standard score"
+    },
+    {
+      "question": "早発性痴呆",
+      "answer": [
+        "そうはつせいちほう"
+      ],
+      "meaning": "dementia praecox"
+    },
+    {
+      "question": "樹状突起",
+      "answer": [
+        "じゅじょうとっき"
+      ],
+      "meaning": "dendrite, dendron; Dendrite"
+    },
+    {
+      "question": "否認",
+      "answer": [
+        "ひにん"
+      ],
+      "meaning": "denial, negation, repudiation, disapproval"
+    },
+    {
+      "question": "思考",
+      "answer": [
+        "しこう"
+      ],
+      "meaning": "thought, consideration, thinking; Thought"
+    },
+    {
+      "question": "依存性",
+      "answer": [
+        "いぞんせい"
+      ],
+      "meaning": "dependence"
+    },
+    {
+      "question": "偏好",
+      "answer": [
+        "へんこう"
+      ],
+      "meaning": "partiality"
+    },
+    {
+      "question": "独立変数",
+      "answer": [
+        "どくりつへんすう"
+      ],
+      "meaning": "independent variable"
+    },
+    {
+      "question": "従属変数",
+      "answer": [
+        "じゅうぞくへんすう"
+      ],
+      "meaning": "dependent variable"
+    },
+    {
+      "question": "偏見",
+      "answer": [
+        "へんけん"
+      ],
+      "meaning": "prejudice, bias, distorted view; Prejudice"
+    },
+    {
+      "question": "脱分極",
+      "answer": [
+        "だつぶんきょく"
+      ],
+      "meaning": "depolarization, depolarisation"
+    },
+    {
+      "question": "剥奪",
+      "answer": [
+        "はくだつ"
+      ],
+      "meaning": "stripping (of rights, office, etc.), deprivation, divestiture, forfeit, revocation"
+    },
+    {
+      "question": "深層心理学",
+      "answer": [
+        "しんそうしんりがく"
+      ],
+      "meaning": "depth psychology; Depth psychology"
+    },
+    {
+      "question": "実験計画法",
+      "answer": [
+        "じっけんけいかくほう"
+      ],
+      "meaning": "experimental design, design of experiments; Design of experiments"
+    },
+    {
+      "question": "並列処理",
+      "answer": [
+        "へいれつしょり"
+      ],
+      "meaning": "parallel processing, array processing"
+    },
+    {
+      "question": "並列処理",
+      "answer": [
+        "へいれつしょり"
+      ],
+      "meaning": "parallel processing, array processing"
+    },
+    {
+      "question": "発達",
+      "answer": [
+        "はったつ"
+      ],
+      "meaning": "development, growth"
+    },
+    {
+      "question": "発達障害",
+      "answer": [
+        "はったつしょうがい"
+      ],
+      "meaning": "developmental disorder; Developmental disorder"
+    },
+    {
+      "question": "平衡感覚",
+      "answer": [
+        "へいこうかんかく"
+      ],
+      "meaning": "sense of equilibrium, sense of balance"
+    },
+    {
+      "question": "発達心理学",
+      "answer": [
+        "はったつしんりがく"
+      ],
+      "meaning": "developmental psychology; Developmental psychology"
+    },
+    {
+      "question": "発達段階",
+      "answer": [
+        "はったつだんかい"
+      ],
+      "meaning": "developmental stage; Developmental stage theories"
+    },
+    {
+      "question": "発達検査",
+      "answer": [
+        "はってんけんさ"
+      ],
+      "meaning": "developmental test"
+    },
+    {
+      "question": "糖尿病",
+      "answer": [
+        "とうにょうびょう"
+      ],
+      "meaning": "diabetes, diabetes mellitus; Diabetes mellitus"
+    },
+    {
+      "question": "平均偏差",
+      "answer": [
+        "へいきんへんさ"
+      ],
+      "meaning": "mean deviation"
+    },
+    {
+      "question": "間脳",
+      "answer": [
+        "かんのう"
+      ],
+      "meaning": "the interbrain, the diencephalon; Diencephalon"
+    },
+    {
+      "question": "食事療法",
+      "answer": [
+        "しょくじりょうほう"
+      ],
+      "meaning": "medical diet, diet therapy, medical nutrition therapy"
+    },
+    {
+      "question": "平滑筋",
+      "answer": [
+        "へいかつきん"
+      ],
+      "meaning": "smooth muscle; Smooth muscle tissue"
+    },
+    {
+      "question": "差音",
+      "answer": [
+        "さおん"
+      ],
+      "meaning": "combination tone (psychoacoustic phenomenon), difference tone; Combination tone"
+    },
+    {
+      "question": "文法",
+      "answer": [
+        "ぶんぽう"
+      ],
+      "meaning": "grammar, syntax; Grammar"
+    },
+    {
+      "question": "文",
+      "answer": [
+        "ぶん",
+        "ふみ",
+        "もん",
+        "あや"
+      ],
+      "meaning": "sentence; composition, text, writings; the literary arts (as opposed to the military arts), academia, literature; statement; letter, writings; Sentence (linguistics); mon, one-thousandth of a kan (unit of currency 1336-1870); 2.4 cm (traditional unit used to measure shoe sizes); letter, character, sentence; scripture, incantation; figure, design; twill weave, pattern of diagonal stripes; style (of writing), figure (of speech); design, plot, plan; minor market fluctuation, technical correction; cat's cradle; lease rod (in a loom)"
+    },
+    {
+      "question": "紛争",
+      "answer": [
+        "ふんそう"
+      ],
+      "meaning": "dispute, trouble, strife"
+    },
+    {
+      "question": "分化",
+      "answer": [
+        "ぶんか"
+      ],
+      "meaning": "specialization, specialisation, differentiation"
+    },
+    {
+      "question": "普及過程",
+      "answer": [
+        "ふきゅうかてい"
+      ],
+      "meaning": "diffusion process"
+    },
+    {
+      "question": "分裂病",
+      "answer": [
+        "ぶんれつびょう"
+      ],
+      "meaning": "schizophrenia"
+    },
+    {
+      "question": "分離不安",
+      "answer": [
+        "ぶんりふあん"
+      ],
+      "meaning": "separation anxiety"
+    },
+    {
+      "question": "複視",
+      "answer": [
+        "ふくし"
+      ],
+      "meaning": "double vision, polyopia; Diplopia"
+    },
+    {
+      "question": "分布",
+      "answer": [
+        "ぶんぷ"
+      ],
+      "meaning": "distribution, allocation; Distribution"
+    },
+    {
+      "question": "障害児",
+      "answer": [
+        "しょうがいじ"
+      ],
+      "meaning": "handicapped child, handicapped children"
+    },
+    {
+      "question": "分析心理学",
+      "answer": [
+        "ぶんせきしんりがく"
+      ],
+      "meaning": "analytical psychology; Analytical psychology"
+    },
+    {
+      "question": "談話",
+      "answer": [
+        "だんわ"
+      ],
+      "meaning": "talk, conversation, dialogue"
+    },
+    {
+      "question": "談話分析",
+      "answer": [
+        "だんわぶんせき"
+      ],
+      "meaning": "discourse analysis; Discourse analysis"
+    },
+    {
+      "question": "判別分析",
+      "answer": [
+        "はんべつぶんせき"
+      ],
+      "meaning": "discriminant analysis"
+    },
+    {
+      "question": "差別",
+      "answer": [
+        "さべつ",
+        "しゃべつ",
+        "しゃべち"
+      ],
+      "meaning": "distinction, differentiation, discrimination; discrimination (against women, minorities, etc.); Discrimination"
+    },
+    {
+      "question": "分散",
+      "answer": [
+        "ぶんさん"
+      ],
+      "meaning": "dispersion, breakup, scattering, decentralization, decentralisation, distribution; variance; dispersion; Variance"
+    },
+    {
+      "question": "分極",
+      "answer": [
+        "ぶんきょく"
+      ],
+      "meaning": "polarization (light, radio waves), polarisation"
+    },
+    {
+      "question": "馴化",
+      "answer": [
+        "じゅんか"
+      ],
+      "meaning": "acclimation; Habituation; acclimatization, naturalization, acclimation; Junka"
+    },
+    {
+      "question": "失見当",
+      "answer": [
+        "しつけんとう"
+      ],
+      "meaning": "disorientation"
+    },
+    {
+      "question": "分割",
+      "answer": [
+        "ぶんかつ",
+        "ぶわり"
+      ],
+      "meaning": "partition, division, separation, segmenting, splitting; rate, ratio, percentage; commission, poundage, percentage"
+    },
+    {
+      "question": "散布度",
+      "answer": [
+        "さんぷど"
+      ],
+      "meaning": "irrelevance, prevarication, spread"
+    },
+    {
+      "question": "解離性障害",
+      "answer": [
+        "かいりせいしょうがい"
+      ],
+      "meaning": "dissociative disorder"
+    },
+    {
+      "question": "意識障害",
+      "answer": [
+        "いしきしょうがい"
+      ],
+      "meaning": "disturbance of consciousness"
+    },
+    {
+      "question": "記憶障害",
+      "answer": [
+        "きおくしょうがい"
+      ],
+      "meaning": "defect of memory; Memory disorder"
+    },
+    {
+      "question": "情緒障害児",
+      "answer": [
+        "じょうしょしょうがいじ",
+        "じょうちょしょうがいじ"
+      ],
+      "meaning": "emotionally disturbed child"
+    },
+    {
+      "question": "服従",
+      "answer": [
+        "ふくじゅう"
+      ],
+      "meaning": "obedience, submission, resignation"
+    },
+    {
+      "question": "副交感神経系",
+      "answer": [
+        "ふくこうかんしんけいけい"
+      ],
+      "meaning": "parasympathetic nerve system, parasympathetic nervous system; Parasympathetic nervous system"
+    },
+    {
+      "question": "部分音",
+      "answer": [
+        "ぶぶんおん"
+      ],
+      "meaning": "partial tone"
+    },
+    {
+      "question": "符号化",
+      "answer": [
+        "ふごうか"
+      ],
+      "meaning": "encoding, coding"
+    },
+    {
+      "question": "符号",
+      "answer": [
+        "ふごう"
+      ],
+      "meaning": "sign, mark, symbol, code; sign (e.g. positive, negative); Code"
+    },
+    {
+      "question": "衝動",
+      "answer": [
+        "しょうどう"
+      ],
+      "meaning": "impulse, impetus, urge"
+    },
+    {
+      "question": "普遍文法",
+      "answer": [
+        "ふへんぶんぽう"
+      ],
+      "meaning": "universal grammar; Universal grammar"
+    },
+    {
+      "question": "不眠",
+      "answer": [
+        "ふみん"
+      ],
+      "meaning": "sleeplessness, insomnia, wakefulness"
+    },
+    {
+      "question": "不偏分散",
+      "answer": [
+        "ふへんぶんさん"
+      ],
+      "meaning": "unbiased estimate of population variance"
+    },
+    {
+      "question": "不能",
+      "answer": [
+        "ふのう"
+      ],
+      "meaning": "impossible, incapable (of doing), unable (to do); incompetence, inability; impotence; having no solution (of an equation)"
+    },
+    {
+      "question": "不登校",
+      "answer": [
+        "ふとうこう"
+      ],
+      "meaning": "truancy, school non-attendance; School refusal"
+    },
+    {
+      "question": "不定愁訴",
+      "answer": [
+        "ふていしゅうそ"
+      ],
+      "meaning": "general malaise, unidentified complaint, all-round poor physical condition"
+    },
+    {
+      "question": "不調和",
+      "answer": [
+        "ふちょうわ"
+      ],
+      "meaning": "discord, incongruity"
+    },
+    {
+      "question": "十二指腸潰瘍",
+      "answer": [
+        "じゅうにしちょうかいよう"
+      ],
+      "meaning": "duodenal ulcer"
+    },
+    {
+      "question": "不純異性交遊",
+      "answer": [
+        "ふじゅんいせいこうゆう"
+      ],
+      "meaning": "illicit sexual relationship"
+    },
+    {
+      "question": "不感症",
+      "answer": [
+        "ふかんしょう"
+      ],
+      "meaning": "sexual frigidity; insensitivity, indifference; Hypoactive sexual desire disorder"
+    },
+    {
+      "question": "不快",
+      "answer": [
+        "ふかい"
+      ],
+      "meaning": "displeasure, discomfort, unpleasantness; indisposition, ailment"
+    },
+    {
+      "question": "月経困難症",
+      "answer": [
+        "げっけいこんなんしょう"
+      ],
+      "meaning": "dysmenorrhea, dysmenorrhoea"
+    },
+    {
+      "question": "不可能図形",
+      "answer": [
+        null
+      ],
+      "meaning": "Impossible object"
+    },
+    {
+      "question": "不応期",
+      "answer": [
+        "ふおうき"
+      ],
+      "meaning": "refractory period"
+    },
+    {
+      "question": "鼓膜",
+      "answer": [
+        "こまく"
+      ],
+      "meaning": "eardrum, tympanic membrane; Eardrum"
+    },
+    {
+      "question": "不一致",
+      "answer": [
+        "ふいっち"
+      ],
+      "meaning": "discrepancy, discord, disagreement, mismatch, dissonance"
+    },
+    {
+      "question": "摂食障害",
+      "answer": [
+        "せっしょくしょうがい"
+      ],
+      "meaning": "eating disorder; Eating disorder"
+    },
+    {
+      "question": "心電図",
+      "answer": [
+        "しんでんず"
+      ],
+      "meaning": "electro-cardiogram, ECG, EKG; Electrocardiography"
+    },
+    {
+      "question": "頻脈",
+      "answer": [
+        "ひんみゃく"
+      ],
+      "meaning": "tachycardia; Tachycardia"
+    },
+    {
+      "question": "生態学",
+      "answer": [
+        "せいたいがく"
+      ],
+      "meaning": "ecology; Ecology"
+    },
+    {
+      "question": "教育心理学",
+      "answer": [
+        "きょういくしんりがく"
+      ],
+      "meaning": "educational psychology; Educational psychology"
+    },
+    {
+      "question": "教育工学",
+      "answer": [
+        "きょういくこうがく"
+      ],
+      "meaning": "educational technology, education technology; Educational technology"
+    },
+    {
+      "question": "英才教育",
+      "answer": [
+        "えいさいきょういく"
+      ],
+      "meaning": "gifted education, special education for gifted children"
+    },
+    {
+      "question": "脳波",
+      "answer": [
+        "のうは"
+      ],
+      "meaning": "brain waves; electroencephalogram, EEG; Electroencephalography"
+    },
+    {
+      "question": "遠心性神経",
+      "answer": [
+        "えんしんせいしんけい"
+      ],
+      "meaning": "efferent neuron, efferent nerve, efferent"
+    },
+    {
+      "question": "努力",
+      "answer": [
+        "どりょく"
+      ],
+      "meaning": "effort, exertion, endeavour, endeavor, hard work, striving"
+    },
+    {
+      "question": "自我",
+      "answer": [
+        "じが"
+      ],
+      "meaning": "self, the ego; Id, ego and super-ego"
+    },
+    {
+      "question": "病識",
+      "answer": [
+        "びょうしき"
+      ],
+      "meaning": "consciousness or awareness of being ill"
+    },
+    {
+      "question": "直観像",
+      "answer": [
+        "ちょっかんぞう"
+      ],
+      "meaning": "eidetic imagery"
+    },
+    {
+      "question": "洞察",
+      "answer": [
+        "どうさつ"
+      ],
+      "meaning": "discernment, insight"
+    },
+    {
+      "question": "精緻化",
+      "answer": [
+        "せいちか"
+      ],
+      "meaning": "refinement, elaboration"
+    },
+    {
+      "question": "評価関数",
+      "answer": [
+        null
+      ],
+      "meaning": "Evaluation function"
+    },
+    {
+      "question": "電気痙攣療法",
+      "answer": [
+        "でんきけいれんりょうほう"
+      ],
+      "meaning": "electroconvulsive therapy, ECT; Electroconvulsive therapy"
+    },
+    {
+      "question": "表層構造",
+      "answer": [
+        "ひょうそうこうぞう"
+      ],
+      "meaning": "surface structure"
+    },
+    {
+      "question": "筋電図",
+      "answer": [
+        "きんでんず"
+      ],
+      "meaning": "electromyogram, EMG; Electromyography"
+    },
+    {
+      "question": "電気生理学",
+      "answer": [
+        "でんきせいりがく"
+      ],
+      "meaning": "electrophysiology; Electrophysiology"
+    },
+    {
+      "question": "表情",
+      "answer": [
+        "ひょうじょう"
+      ],
+      "meaning": "facial expression, countenance; look, appearance, expression (vocal, etc.); Facial expression"
+    },
+    {
+      "question": "表象",
+      "answer": [
+        "ひょうしょう"
+      ],
+      "meaning": "symbol, emblem; mental image, representation, idea"
+    },
+    {
+      "question": "表現型",
+      "answer": [
+        "ひょうげんがた"
+      ],
+      "meaning": "phenotype; Phenotype"
+    },
+    {
+      "question": "標本分布",
+      "answer": [
+        "ひょうほんぶんぷ"
+      ],
+      "meaning": "sampling distribution"
+    },
+    {
+      "question": "標本",
+      "answer": [
+        "ひょうほん"
+      ],
+      "meaning": "example, specimen, sample"
+    },
+    {
+      "question": "標本抽出",
+      "answer": [
+        "ひょうほんちゅうしゅつ"
+      ],
+      "meaning": "sampling"
+    },
+    {
+      "question": "標本調査",
+      "answer": [
+        null
+      ],
+      "meaning": "Sampling (statistics)"
+    },
+    {
+      "question": "標準偏差",
+      "answer": [
+        "ひょうじゅんへんさ"
+      ],
+      "meaning": "standard deviation, SD; Standard deviation"
+    },
+    {
+      "question": "感情",
+      "answer": [
+        "かんじょう"
+      ],
+      "meaning": "emotion, feeling, feelings, sentiment; Emotion"
+    },
+    {
+      "question": "情緒",
+      "answer": [
+        "じょうちょ",
+        "じょうしょ"
+      ],
+      "meaning": "emotion, feeling; atmosphere, mood, spirit"
+    },
+    {
+      "question": "情動",
+      "answer": [
+        "じょうどう"
+      ],
+      "meaning": "emotion, affect"
+    },
+    {
+      "question": "標準誤差",
+      "answer": [
+        "ひょうじゅんごさ"
+      ],
+      "meaning": "standard error, SE; Standard error"
+    },
+    {
+      "question": "標準化",
+      "answer": [
+        "ひょうじゅんか"
+      ],
+      "meaning": "standardization, standardisation; Standardization"
+    },
+    {
+      "question": "筆跡学",
+      "answer": [
+        "ひっせきがく"
+      ],
+      "meaning": "graphology; Graphology"
+    },
+    {
+      "question": "微笑",
+      "answer": [
+        "びしょう"
+      ],
+      "meaning": "smile"
+    },
+    {
+      "question": "内分泌腺",
+      "answer": [
+        "ないぶんぴつせん",
+        "ないぶんぴせん"
+      ],
+      "meaning": "endocrine gland"
+    },
+    {
+      "question": "内因",
+      "answer": [
+        "ないいん"
+      ],
+      "meaning": "the actual reason"
+    },
+    {
+      "question": "終板",
+      "answer": [
+        "しゅうばん"
+      ],
+      "meaning": "end plate"
+    },
+    {
+      "question": "遺尿症",
+      "answer": [
+        "いにょうしょう"
+      ],
+      "meaning": "enuresis, bed-wetting"
+    },
+    {
+      "question": "遺伝",
+      "answer": [
+        "いでん"
+      ],
+      "meaning": "heredity, (genetic) inheritance; Heredity"
+    },
+    {
+      "question": "環境",
+      "answer": [
+        "かんきょう"
+      ],
+      "meaning": "environment, circumstance"
+    },
+    {
+      "question": "知的好奇心",
+      "answer": [
+        "ちてきこうきしん"
+      ],
+      "meaning": "intellectual curiosity, out of curiosity, inquisitiveness"
+    },
+    {
+      "question": "等化",
+      "answer": [
+        "とうか"
+      ],
+      "meaning": "equalization"
+    },
+    {
+      "question": "人間工学",
+      "answer": [
+        "にんげんこうがく"
+      ],
+      "meaning": "ergonomics, human engineering; Ergonomics"
+    },
+    {
+      "question": "性感帯",
+      "answer": [
+        "せいかんたい"
+      ],
+      "meaning": "erogenous zone; Erogenous zone"
+    },
+    {
+      "question": "逃避",
+      "answer": [
+        "とうひ"
+      ],
+      "meaning": "escape, evasion, flight"
+    },
+    {
+      "question": "推定",
+      "answer": [
+        "すいてい"
+      ],
+      "meaning": "presumption, assumption; estimation"
+    },
+    {
+      "question": "被験者",
+      "answer": [
+        "ひけんしゃ"
+      ],
+      "meaning": "subject (of a medical experiment, etc.), test subject, trial subject, testee; examinee (of a full-body scan, etc.)"
+    },
+    {
+      "question": "進化",
+      "answer": [
+        "しんか"
+      ],
+      "meaning": "evolution, progress; Evolution"
+    },
+    {
+      "question": "肥満",
+      "answer": [
+        "ひまん"
+      ],
+      "meaning": "corpulence, fatness, obesity; Obesity"
+    },
+    {
+      "question": "興奮",
+      "answer": [
+        "こうふん"
+      ],
+      "meaning": "excitement, stimulation, agitation, arousal"
+    },
+    {
+      "question": "皮肉",
+      "answer": [
+        "ひにく"
+      ],
+      "meaning": "cynicism, sarcasm, irony, satire"
+    },
+    {
+      "question": "疲労",
+      "answer": [
+        "ひろう"
+      ],
+      "meaning": "fatigue, weariness; Fatigue (medical)"
+    },
+    {
+      "question": "比喩",
+      "answer": [
+        "ひゆ"
+      ],
+      "meaning": "simile, metaphor, allegory, parable"
+    },
+    {
+      "question": "期待",
+      "answer": [
+        "きたい"
+      ],
+      "meaning": "expectation, anticipation, hope; Expectation (epistemic)"
+    },
+    {
+      "question": "期待値",
+      "answer": [
+        "きたいち"
+      ],
+      "meaning": "expected value, expectation value, expectation; Expected value"
+    },
+    {
+      "question": "実験",
+      "answer": [
+        "じっけん"
+      ],
+      "meaning": "experiment; Experiment"
+    },
+    {
+      "question": "比較行動学",
+      "answer": [
+        "ひかくこうどうがく"
+      ],
+      "meaning": "ethology"
+    },
+    {
+      "question": "悲観主義",
+      "answer": [
+        "ひかんしゅぎ"
+      ],
+      "meaning": "pessimism; Pessimism"
+    },
+    {
+      "question": "実験現象学",
+      "answer": [
+        "じっけんげんしょうがく"
+      ],
+      "meaning": "experimental phenomenology"
+    },
+    {
+      "question": "実験心理学",
+      "answer": [
+        "じっけんしんりがく"
+      ],
+      "meaning": "experimental psychology; Experimental psychology"
+    },
+    {
+      "question": "実験者",
+      "answer": [
+        "じっけんしゃ"
+      ],
+      "meaning": "experimenter, researcher"
+    },
+    {
+      "question": "晩成性",
+      "answer": [
+        "ばんせいせい"
+      ],
+      "meaning": "altricial, altricious"
+    },
+    {
+      "question": "範囲",
+      "answer": [
+        "はんい"
+      ],
+      "meaning": "extent, scope, sphere, range, span"
+    },
+    {
+      "question": "般化",
+      "answer": [
+        "はんか"
+      ],
+      "meaning": "generalization (psychology, linguistics, etc.)"
+    },
+    {
+      "question": "汎適応症候群",
+      "answer": [
+        "はんてきおうしょうこうぐん"
+      ],
+      "meaning": "general adaptation syndrome"
+    },
+    {
+      "question": "核家族",
+      "answer": [
+        "かくかぞく"
+      ],
+      "meaning": "nuclear family; Nuclear family"
+    },
+    {
+      "question": "拡大家族",
+      "answer": [
+        "かくだいかぞく"
+      ],
+      "meaning": "extended family"
+    },
+    {
+      "question": "消去",
+      "answer": [
+        "しょうきょ"
+      ],
+      "meaning": "elimination, erasure, dying out, clearing, purge, melting away; Extinction (1995 novel)"
+    },
+    {
+      "question": "反動形成",
+      "answer": [
+        "はんどうけいせい"
+      ],
+      "meaning": "reaction formation"
+    },
+    {
+      "question": "顔認識",
+      "answer": [
+        "かおにんしき"
+      ],
+      "meaning": "facial recognition"
+    },
+    {
+      "question": "反射",
+      "answer": [
+        "はんしゃ"
+      ],
+      "meaning": "reflection, reverberation; reflex, reflexes; Reflection (physics)"
+    },
+    {
+      "question": "反抗期",
+      "answer": [
+        "はんこうき"
+      ],
+      "meaning": "rebellious phase, rebellious age"
+    },
+    {
+      "question": "反語",
+      "answer": [
+        "はんご"
+      ],
+      "meaning": "irony; rhetorical question; Rhetorical question"
+    },
+    {
+      "question": "因子分析",
+      "answer": [
+        "いんしぶんせき"
+      ],
+      "meaning": "factor analysis; Factor analysis"
+    },
+    {
+      "question": "家庭裁判所",
+      "answer": [
+        "かていさいばんしょ"
+      ],
+      "meaning": "family court; Family court"
+    },
+    {
+      "question": "家族療法",
+      "answer": [
+        "かぞくりょうほう"
+      ],
+      "meaning": "family therapy; Family therapy"
+    },
+    {
+      "question": "家庭内暴力",
+      "answer": [
+        "かていないぼうりょく"
+      ],
+      "meaning": "household violence (esp. adolescent children towards parents), domestic violence"
+    },
+    {
+      "question": "空想",
+      "answer": [
+        "くうそう"
+      ],
+      "meaning": "daydream, fantasy, fancy, vision; Fantasy (psychology)"
+    },
+    {
+      "question": "特徴抽出",
+      "answer": [
+        "とくちょうちゅうしゅつ"
+      ],
+      "meaning": "feature extraction"
+    },
+    {
+      "question": "半規管",
+      "answer": [
+        "はんきかん"
+      ],
+      "meaning": "semicircular canals"
+    },
+    {
+      "question": "判断",
+      "answer": [
+        "はんだん"
+      ],
+      "meaning": "judgment, judgement, decision, conclusion, adjudication; divination; judgement"
+    },
+    {
+      "question": "罰",
+      "answer": [
+        "ばつ",
+        "ばち"
+      ],
+      "meaning": "punishment, penalty; (divine) punishment, curse, retribution"
+    },
+    {
+      "question": "発話",
+      "answer": [
+        "はつわ"
+      ],
+      "meaning": "utterance, speech; Utterance"
+    },
+    {
+      "question": "発明",
+      "answer": [
+        "はつめい"
+      ],
+      "meaning": "invention; intelligent, clever; being enlightened, having the meaning of everything become clear; Invention"
+    },
+    {
+      "question": "場",
+      "answer": [
+        "ば",
+        "じょう"
+      ],
+      "meaning": "place, spot, space; field, discipline, sphere, realm; occasion, situation; scene (of a play, movie, etc.); session (of the stock market); area in which cards are laid out (in a card game); round (i.e. east, south, etc.); field; field (gestalt psychology); Field (physics); place, spot, grounds, arena, stadium, range, course"
+    },
+    {
+      "question": "第一印象",
+      "answer": [
+        "だいいちいんしょう"
+      ],
+      "meaning": "first impression"
+    },
+    {
+      "question": "発芽",
+      "answer": [
+        "はつが"
+      ],
+      "meaning": "germination, sprouting, budding; Germination"
+    },
+    {
+      "question": "固着",
+      "answer": [
+        "こちゃく"
+      ],
+      "meaning": "adherence, sticking (to), fixation"
+    },
+    {
+      "question": "白日夢",
+      "answer": [
+        "はくじつむ"
+      ],
+      "meaning": "daydream"
+    },
+    {
+      "question": "媒介変数",
+      "answer": [
+        "ばいかいへんすう"
+      ],
+      "meaning": "parameter; Parameter"
+    },
+    {
+      "question": "追跡調査",
+      "answer": [
+        "ついせきちょうさ"
+      ],
+      "meaning": "follow-up (tracing) survey"
+    },
+    {
+      "question": "脳室",
+      "answer": [
+        "のうしつ"
+      ],
+      "meaning": "cerebral ventricle"
+    },
+    {
+      "question": "脳磁界",
+      "answer": [
+        "のうじかい"
+      ],
+      "meaning": "neuro-magnetic field"
+    },
+    {
+      "question": "脳弓",
+      "answer": [
+        "のうきゅう"
+      ],
+      "meaning": "fornix (of the brain), fornix cerebri"
+    },
+    {
+      "question": "能記",
+      "answer": [
+        "のうき"
+      ],
+      "meaning": "signifier"
+    },
+    {
+      "question": "所記",
+      "answer": [
+        "しょき"
+      ],
+      "meaning": "signified"
+    },
+    {
+      "question": "形式言語",
+      "answer": [
+        "けいしきげんご"
+      ],
+      "meaning": "formal language; Formal language"
+    },
+    {
+      "question": "群集心理",
+      "answer": [
+        "ぐんしゅうしんり"
+      ],
+      "meaning": "mass psychology, mob psychology, crowd psychology; herd mentality, group mind"
+    },
+    {
+      "question": "中心窩",
+      "answer": [
+        "ちゅうしんか"
+      ],
+      "meaning": "fovea centralis; Fovea centralis"
+    },
+    {
+      "question": "虹彩",
+      "answer": [
+        "こうさい"
+      ],
+      "meaning": "iris (of the eye); Iris (anatomy)"
+    },
+    {
+      "question": "周波数",
+      "answer": [
+        "しゅうはすう"
+      ],
+      "meaning": "frequency (esp. of waveforms); Frequency"
+    },
+    {
+      "question": "度数分布",
+      "answer": [
+        "どすうぶんぷ"
+      ],
+      "meaning": "frequency distribution; Frequency distribution"
+    },
+    {
+      "question": "出現頻度",
+      "answer": [
+        "しゅつげんひんど"
+      ],
+      "meaning": "frequency (of appearance)"
+    },
+    {
+      "question": "二重人格",
+      "answer": [
+        "にじゅうじんかく"
+      ],
+      "meaning": "dual personality, split personality"
+    },
+    {
+      "question": "二元論",
+      "answer": [
+        "にげんろん"
+      ],
+      "meaning": "dualism; Dualism"
+    },
+    {
+      "question": "前頭葉",
+      "answer": [
+        "ぜんとうよう"
+      ],
+      "meaning": "frontal lobe; Frontal lobe"
+    },
+    {
+      "question": "内面化",
+      "answer": [
+        "ないめんか"
+      ],
+      "meaning": "internalization; Internalization"
+    },
+    {
+      "question": "内分泌",
+      "answer": [
+        "ないぶんぴつ",
+        "ないぶんぴ"
+      ],
+      "meaning": "endocrine; incretion, internal secretion"
+    },
+    {
+      "question": "遁走",
+      "answer": [
+        "とんそう"
+      ],
+      "meaning": "fleeing, escape"
+    },
+    {
+      "question": "機能",
+      "answer": [
+        "きのう"
+      ],
+      "meaning": "function, facility, faculty, feature"
+    },
+    {
+      "question": "語彙機能文法",
+      "answer": [
+        "ごいきのうぶんぽう"
+      ],
+      "meaning": "lexical-functional grammar, LFG; Lexical functional grammar"
+    },
+    {
+      "question": "機能主義",
+      "answer": [
+        "きのうしゅぎ"
+      ],
+      "meaning": "functionalism; Functionalism"
+    },
+    {
+      "question": "機能語",
+      "answer": [
+        "きのうご"
+      ],
+      "meaning": "function word"
+    },
+    {
+      "question": "基音",
+      "answer": [
+        "きおん"
+      ],
+      "meaning": "fundamental tone, fundamental note"
+    },
+    {
+      "question": "内臓感覚",
+      "answer": [
+        "ないぞうかんかく"
+      ],
+      "meaning": "visceral sensation"
+    },
+    {
+      "question": "内省",
+      "answer": [
+        "ないせい"
+      ],
+      "meaning": "introspection, reflection on one's self"
+    },
+    {
+      "question": "内観療法",
+      "answer": [
+        "ないかんりょうほう"
+      ],
+      "meaning": "Naikan therapy (type of group psychotherapy)"
+    },
+    {
+      "question": "内観",
+      "answer": [
+        "ないかん"
+      ],
+      "meaning": "introspection; Naikan"
+    },
+    {
+      "question": "神経節",
+      "answer": [
+        "しんけいせつ"
+      ],
+      "meaning": "nerve ganglion, nerve knot, ganglion, ganglia; Ganglion"
+    },
+    {
+      "question": "独自性",
+      "answer": [
+        "どくじせい"
+      ],
+      "meaning": "originality, distinctiveness, uniqueness, individuality"
+    },
+    {
+      "question": "独語",
+      "answer": [
+        "どくご"
+      ],
+      "meaning": "monologue, soliloquy; German (language)"
+    },
+    {
+      "question": "胃潰瘍",
+      "answer": [
+        "いかいよう"
+      ],
+      "meaning": "stomach ulcer; Stomach ulcer"
+    },
+    {
+      "question": "性同一性障害",
+      "answer": [
+        "せいどういつせいしょうがい"
+      ],
+      "meaning": "gender identity disorder, GID, gender dysphoria; Gender identity disorder"
+    },
+    {
+      "question": "遺伝子",
+      "answer": [
+        "いでんし"
+      ],
+      "meaning": "gene; genetic; Gene"
+    },
+    {
+      "question": "遺伝子診断",
+      "answer": [
+        "いでんししんだん"
+      ],
+      "meaning": "genetic diagnosis"
+    },
+    {
+      "question": "一般化句構造文法",
+      "answer": [
+        null
+      ],
+      "meaning": "Generalized phrase structure grammar"
+    },
+    {
+      "question": "一般言語学",
+      "answer": [
+        "いっぱんげんごがく"
+      ],
+      "meaning": "general linguistics"
+    },
+    {
+      "question": "一般意味論",
+      "answer": [
+        "いっぱんいみろん"
+      ],
+      "meaning": "general semantics; General semantics"
+    },
+    {
+      "question": "世代",
+      "answer": [
+        "せだい"
+      ],
+      "meaning": "generation, the world, the age; Generation"
+    },
+    {
+      "question": "生成文法",
+      "answer": [
+        "せいせいぶんぽう"
+      ],
+      "meaning": "generative grammar; Generative grammar"
+    },
+    {
+      "question": "天才",
+      "answer": [
+        "てんさい"
+      ],
+      "meaning": "genius, prodigy, natural gift; Genius"
+    },
+    {
+      "question": "道徳性",
+      "answer": [
+        "どうとくせい"
+      ],
+      "meaning": "morality"
+    },
+    {
+      "question": "元型",
+      "answer": [
+        "げんけい"
+      ],
+      "meaning": "archetype; Archetype"
+    },
+    {
+      "question": "道徳意識",
+      "answer": [
+        "どうとくいしき"
+      ],
+      "meaning": "moral consciousness"
+    },
+    {
+      "question": "幾何平均",
+      "answer": [
+        "きかへいきん"
+      ],
+      "meaning": "geometric mean, geometric average; Geometric mean"
+    },
+    {
+      "question": "道具",
+      "answer": [
+        "どうぐ"
+      ],
+      "meaning": "tool, implement, instrument, utensil, apparatus, device; means; furniture; Tool"
+    },
+    {
+      "question": "瞳孔",
+      "answer": [
+        "どうこう"
+      ],
+      "meaning": "pupil (of the eye); Pupil"
+    },
+    {
+      "question": "同定",
+      "answer": [
+        "どうてい"
+      ],
+      "meaning": "identification"
+    },
+    {
+      "question": "同性愛",
+      "answer": [
+        "どうせいあい"
+      ],
+      "meaning": "homosexual love; Homosexuality"
+    },
+    {
+      "question": "同情",
+      "answer": [
+        "どうじょう"
+      ],
+      "meaning": "sympathy, compassion, feeling pity for; Sympathy"
+    },
+    {
+      "question": "同型",
+      "answer": [
+        "どうけい"
+      ],
+      "meaning": "isomorphism, same shape, same type, same pattern"
+    },
+    {
+      "question": "同化",
+      "answer": [
+        "どうか"
+      ],
+      "meaning": "assimilation, absorption; adaptation; assimilation, anabolism; assimilation (phonology); Assimilation"
+    },
+    {
+      "question": "同一視",
+      "answer": [
+        "どういつし"
+      ],
+      "meaning": "viewing and treating as one, regarding as the same, equating one thing with another, identification"
+    },
+    {
+      "question": "動悸",
+      "answer": [
+        "どうき"
+      ],
+      "meaning": "palpitation (e.g. heart), pulsation, throbbing; Palpitation"
+    },
+    {
+      "question": "光沢",
+      "answer": [
+        "こうたく"
+      ],
+      "meaning": "brilliance, polish, lustre, luster, glossy finish (of photographs); Lustre (mineralogy)"
+    },
+    {
+      "question": "動物",
+      "answer": [
+        "どうぶつ"
+      ],
+      "meaning": "animal; Animal"
+    },
+    {
+      "question": "動物行動学",
+      "answer": [
+        "どうぶつこうどうがく"
+      ],
+      "meaning": "ethology; Ethology"
+    },
+    {
+      "question": "黄金分割",
+      "answer": [
+        "おうごんぶんかつ"
+      ],
+      "meaning": "(artistic) golden section"
+    },
+    {
+      "question": "頭痛",
+      "answer": [
+        "ずつう"
+      ],
+      "meaning": "headache; Headache"
+    },
+    {
+      "question": "頭頂葉",
+      "answer": [
+        "とうちょうよう"
+      ],
+      "meaning": "parietal lobe; Parietal lobe"
+    },
+    {
+      "question": "透視図法",
+      "answer": [
+        "とうしずほう"
+      ],
+      "meaning": "perspective drawing, (use of) perspective"
+    },
+    {
+      "question": "透視画法",
+      "answer": [
+        "とうしがほう"
+      ],
+      "meaning": "(the artistic technique of) perspective"
+    },
+    {
+      "question": "統辞論",
+      "answer": [
+        "とうじろん"
+      ],
+      "meaning": "syntax"
+    },
+    {
+      "question": "統合",
+      "answer": [
+        "とうごう"
+      ],
+      "meaning": "integration, unification, unity, combination, consolidation, synthesis"
+    },
+    {
+      "question": "灰白質",
+      "answer": [
+        "かいはくしつ"
+      ],
+      "meaning": "gray matter, grey matter; Grey matter"
+    },
+    {
+      "question": "統語論",
+      "answer": [
+        "とうごろん"
+      ],
+      "meaning": "syntax; Syntax"
+    },
+    {
+      "question": "集団",
+      "answer": [
+        "しゅうだん"
+      ],
+      "meaning": "group, mass; Shuudan; Crowd"
+    },
+    {
+      "question": "統計量",
+      "answer": [
+        "とうけいりょう"
+      ],
+      "meaning": "statistic; Statistic"
+    },
+    {
+      "question": "集団思考",
+      "answer": [
+        "しゅうだんしこう"
+      ],
+      "meaning": "groupthink; Groupthink"
+    },
+    {
+      "question": "成長",
+      "answer": [
+        "せいちょう"
+      ],
+      "meaning": "growth, development, growing up, becoming an adult; growth (of a company, the economy, etc.)"
+    },
+    {
+      "question": "盗癖",
+      "answer": [
+        "とうへき"
+      ],
+      "meaning": "kleptomania"
+    },
+    {
+      "question": "生徒指導",
+      "answer": [
+        "せいとしどう"
+      ],
+      "meaning": "student guidance, student counseling"
+    },
+    {
+      "question": "生活指導",
+      "answer": [
+        "せいかつしどう"
+      ],
+      "meaning": "civic guidance, non-curricular educational guidance, medical guidance"
+    },
+    {
+      "question": "罪悪感",
+      "answer": [
+        "ざいあくかん"
+      ],
+      "meaning": "feelings of guilt; Guilt"
+    },
+    {
+      "question": "投射",
+      "answer": [
+        "とうしゃ"
+      ],
+      "meaning": "projection"
+    },
+    {
+      "question": "投影法",
+      "answer": [
+        "とうえいほう"
+      ],
+      "meaning": "projective technique; Projection"
+    },
+    {
+      "question": "投影",
+      "answer": [
+        "とうえい"
+      ],
+      "meaning": "projection; Psychological projection"
+    },
+    {
+      "question": "島",
+      "answer": [
+        "しま",
+        "とう"
+      ],
+      "meaning": "island; territory (of a prostitute, organized crime gang, etc.), turf; Island; Island; insula, island, islet"
+    },
+    {
+      "question": "倒錯",
+      "answer": [
+        "とうさく"
+      ],
+      "meaning": "perversion, inversion"
+    },
+    {
+      "question": "登校拒否",
+      "answer": [
+        "とうこうきょひ"
+      ],
+      "meaning": "truancy"
+    },
+    {
+      "question": "神経伝達物質",
+      "answer": [
+        "しんけいでんたつぶっしつ"
+      ],
+      "meaning": "neurotransmitter; Neurotransmitter"
+    },
+    {
+      "question": "幻覚",
+      "answer": [
+        "げんかく"
+      ],
+      "meaning": "hallucination, illusion; Hallucination"
+    },
+    {
+      "question": "幻覚剤",
+      "answer": [
+        "げんかくざい"
+      ],
+      "meaning": "hallucinogen, psychedelic; Hallucinogen"
+    },
+    {
+      "question": "光背効果",
+      "answer": [
+        "こうはいこうか"
+      ],
+      "meaning": "halo effect"
+    },
+    {
+      "question": "調和平均",
+      "answer": [
+        "ちょうわへいきん"
+      ],
+      "meaning": "harmonic mean"
+    },
+    {
+      "question": "適応障害",
+      "answer": [
+        "てきおうしょうがい"
+      ],
+      "meaning": "maladjustment; Adjustment disorder"
+    },
+    {
+      "question": "抵抗",
+      "answer": [
+        "ていこう"
+      ],
+      "meaning": "resistance, opposition, standing up to; reluctance, repulsion, repugnance; resistance, drag, friction; electrical resistance; resistor"
+    },
+    {
+      "question": "心拍",
+      "answer": [
+        "しんぱく"
+      ],
+      "meaning": "heartbeat"
+    },
+    {
+      "question": "虚血性心疾患",
+      "answer": [
+        "きょけつせいしんしっかん"
+      ],
+      "meaning": "ischemic heart disease, ischaemic heart disease; Ischaemic heart disease"
+    },
+    {
+      "question": "定常状態",
+      "answer": [
+        "ていじょうじょうたい"
+      ],
+      "meaning": "steady state; Steady state (chemistry)"
+    },
+    {
+      "question": "定位",
+      "answer": [
+        "ていい"
+      ],
+      "meaning": "position, orientation"
+    },
+    {
+      "question": "快楽説",
+      "answer": [
+        "かいらくせつ"
+      ],
+      "meaning": "hedonism"
+    },
+    {
+      "question": "潰瘍性大腸炎",
+      "answer": [
+        "かいようせいだいちょうえん"
+      ],
+      "meaning": "ulcerative colitis; Ulcerative colitis"
+    },
+    {
+      "question": "通過儀礼",
+      "answer": [
+        "つうかぎれい"
+      ],
+      "meaning": "rite of passage; Initiation"
+    },
+    {
+      "question": "痛覚",
+      "answer": [
+        "つうかく"
+      ],
+      "meaning": "sense of pain"
+    },
+    {
+      "question": "解釈学",
+      "answer": [
+        "かいしゃくがく"
+      ],
+      "meaning": "hermeneutics; Hermeneutics"
+    },
+    {
+      "question": "後知恵",
+      "answer": [
+        "あとぢえ"
+      ],
+      "meaning": "hindsight"
+    },
+    {
+      "question": "海馬",
+      "answer": [
+        "あしか",
+        "かいば",
+        "うみうま",
+        "せいうち",
+        "とど"
+      ],
+      "meaning": "eared seal (esp. the California sea lion, Zalophus californianus), sea lion; Sea lion; seahorse, sea horse; hippocampus; walrus; walrus (Odobenus rosmarus); elephant seal (Mirounga spp.); Walrus; Steller sea lion (Eumetopias jubatus), northern sea lion; Steller sea lion"
+    },
+    {
+      "question": "鳥目",
+      "answer": [
+        "とりめ",
+        "ちょうもく"
+      ],
+      "meaning": "night-blindness; cash, money, zeni coin"
+    },
+    {
+      "question": "全体論",
+      "answer": [
+        "ぜんたいろん"
+      ],
+      "meaning": "(philosophical) holism"
+    },
+    {
+      "question": "行動圏",
+      "answer": [
+        "こうどうけん"
+      ],
+      "meaning": "home range; Home range"
+    },
+    {
+      "question": "帰巣",
+      "answer": [
+        "きそう",
+        "きすう"
+      ],
+      "meaning": "homing (instinct)"
+    },
+    {
+      "question": "長期記憶",
+      "answer": [
+        "ちょうききおく"
+      ],
+      "meaning": "long-term memory"
+    },
+    {
+      "question": "短期記憶",
+      "answer": [
+        "たんききおく"
+      ],
+      "meaning": "short-term memory"
+    },
+    {
+      "question": "長期記憶",
+      "answer": [
+        "ちょうききおく"
+      ],
+      "meaning": "long-term memory"
+    },
+    {
+      "question": "超心理学",
+      "answer": [
+        "ちょうしんりがく"
+      ],
+      "meaning": "parapsychology; Parapsychology"
+    },
+    {
+      "question": "超自我",
+      "answer": [
+        "ちょうじが"
+      ],
+      "meaning": "superego"
+    },
+    {
+      "question": "温泉療法",
+      "answer": [
+        "おんせんりょうほう"
+      ],
+      "meaning": "hot-spring cure, onsen therapy, balneotherapy"
+    },
+    {
+      "question": "人事管理",
+      "answer": [
+        "じんじかんり"
+      ],
+      "meaning": "personnel management, personnel administration"
+    },
+    {
+      "question": "調整",
+      "answer": [
+        "ちょうせい"
+      ],
+      "meaning": "adjustment, regulation, coordination, reconciliation, tuning, fixing, tailoring"
+    },
+    {
+      "question": "調査",
+      "answer": [
+        "ちょうさ"
+      ],
+      "meaning": "investigation, examination, inquiry, enquiry, survey; Survey methodology"
+    },
+    {
+      "question": "色相",
+      "answer": [
+        "しきそう"
+      ],
+      "meaning": "hue, color phase, colour phase; Hue"
+    },
+    {
+      "question": "調音",
+      "answer": [
+        "ちょうおん"
+      ],
+      "meaning": "articulation"
+    },
+    {
+      "question": "人間生態学",
+      "answer": [
+        "にんげんせいたいがく"
+      ],
+      "meaning": "human ecology"
+    },
+    {
+      "question": "丁度可知差異",
+      "answer": [
+        "ちょうどかちさい"
+      ],
+      "meaning": "just-noticeable difference (psychology), JND; Just-noticeable difference"
+    },
+    {
+      "question": "中脳",
+      "answer": [
+        "ちゅうのう"
+      ],
+      "meaning": "midbrain, mesencephalon; Midbrain"
+    },
+    {
+      "question": "中年",
+      "answer": [
+        "ちゅうねん"
+      ],
+      "meaning": "middle-age, middle age, midlife, one's middle years; Middle age"
+    },
+    {
+      "question": "高血圧",
+      "answer": [
+        "こうけつあつ"
+      ],
+      "meaning": "high blood pressure, hypertension; Hypertension"
+    },
+    {
+      "question": "過換気症候群",
+      "answer": [
+        "かかんきしょうこうぐん"
+      ],
+      "meaning": "hyperventilation syndrome; Hyperventilation"
+    },
+    {
+      "question": "催眠",
+      "answer": [
+        "さいみん"
+      ],
+      "meaning": "hypnotism; Hypnosis"
+    },
+    {
+      "question": "催眠療法",
+      "answer": [
+        "さいみんりょうほう"
+      ],
+      "meaning": "hypnotherapy; Hypnotherapy"
+    },
+    {
+      "question": "心気症",
+      "answer": [
+        "しんきしょう"
+      ],
+      "meaning": "hypochondria; Hypochondriasis"
+    },
+    {
+      "question": "下垂体",
+      "answer": [
+        "かすいたい"
+      ],
+      "meaning": "pituitary gland, pituitary body, hypophysis; Pituitary gland"
+    },
+    {
+      "question": "視床下部",
+      "answer": [
+        "ししょうかぶ"
+      ],
+      "meaning": "hypothalamus; Hypothalamus"
+    },
+    {
+      "question": "観念",
+      "answer": [
+        "かんねん"
+      ],
+      "meaning": "idea, notion, concept, conception; sense (e.g. of duty); resignation, preparedness, acceptance; observation and contemplation, meditation; Idea"
+    },
+    {
+      "question": "中隔",
+      "answer": [
+        "ちゅうかく"
+      ],
+      "meaning": "septum"
+    },
+    {
+      "question": "中央値",
+      "answer": [
+        "ちゅうおうち"
+      ],
+      "meaning": "median; Median"
+    },
+    {
+      "question": "中位数",
+      "answer": [
+        "ちゅういすう"
+      ],
+      "meaning": "median"
+    },
+    {
+      "question": "照度",
+      "answer": [
+        "しょうど"
+      ],
+      "meaning": "(intensity of) illumination, illuminance; Illuminance"
+    },
+    {
+      "question": "開明",
+      "answer": [
+        "かいめい"
+      ],
+      "meaning": "civilization, civilisation, enlightenment; Kaimei"
+    },
+    {
+      "question": "錯覚",
+      "answer": [
+        "さっかく"
+      ],
+      "meaning": "optical illusion, hallucination; misapprehension, delusion; Illusion"
+    },
+    {
+      "question": "想像",
+      "answer": [
+        "そうぞう"
+      ],
+      "meaning": "imagination, guess"
+    },
+    {
+      "question": "痴呆",
+      "answer": [
+        "ちほう"
+      ],
+      "meaning": "dementia"
+    },
+    {
+      "question": "地位",
+      "answer": [
+        "ちい"
+      ],
+      "meaning": "(social) position, status"
+    },
+    {
+      "question": "知能指数",
+      "answer": [
+        "ちのうしすう"
+      ],
+      "meaning": "intelligence quotient, IQ; Intelligence quotient"
+    },
+    {
+      "question": "知能検査",
+      "answer": [
+        "ちのうけんさ"
+      ],
+      "meaning": "intelligence test"
+    },
+    {
+      "question": "知能",
+      "answer": [
+        "ちのう"
+      ],
+      "meaning": "intelligence, intellect, brains; Intelligence"
+    },
+    {
+      "question": "個人差",
+      "answer": [
+        "こじんさ"
+      ],
+      "meaning": "individual differences, personal equation"
+    },
+    {
+      "question": "知的障害",
+      "answer": [
+        "ちてきしょうがい"
+      ],
+      "meaning": "mental disability, mental retardation; Mental retardation"
+    },
+    {
+      "question": "個性",
+      "answer": [
+        "こせい"
+      ],
+      "meaning": "individuality, personality, idiosyncrasy, character, individual characteristic"
+    },
+    {
+      "question": "知性",
+      "answer": [
+        "ちせい"
+      ],
+      "meaning": "intelligence"
+    },
+    {
+      "question": "帰納法",
+      "answer": [
+        "きのうほう"
+      ],
+      "meaning": "induction, inductive method"
+    },
+    {
+      "question": "知識工学",
+      "answer": [
+        "ちしきこうがく"
+      ],
+      "meaning": "knowledge engineering, information engineering; Knowledge engineering"
+    },
+    {
+      "question": "知識",
+      "answer": [
+        "ちしき"
+      ],
+      "meaning": "knowledge, information; Knowledge"
+    },
+    {
+      "question": "推論",
+      "answer": [
+        "すいろん"
+      ],
+      "meaning": "inference, deduction, induction, reasoning; Inference"
+    },
+    {
+      "question": "情報処理",
+      "answer": [
+        "じょうほうしょり"
+      ],
+      "meaning": "data processing; Information processing"
+    },
+    {
+      "question": "情報検索",
+      "answer": [
+        "じょうほうけんさく"
+      ],
+      "meaning": "information retrieval; Information retrieval"
+    },
+    {
+      "question": "情報理論",
+      "answer": [
+        "じょうほうりろん"
+      ],
+      "meaning": "information theory; Information theory"
+    },
+    {
+      "question": "制止",
+      "answer": [
+        "せいし"
+      ],
+      "meaning": "control, check, restraint, inhibition"
+    },
+    {
+      "question": "企業内教育",
+      "answer": [
+        "きぎょうないきょういく"
+      ],
+      "meaning": "corporate in-service training; Corporate Education"
+    },
+    {
+      "question": "知覚",
+      "answer": [
+        "ちかく"
+      ],
+      "meaning": "perception, sensation, awareness; Perception"
+    },
+    {
+      "question": "暖色",
+      "answer": [
+        "だんしょく"
+      ],
+      "meaning": "warm colour, warm color"
+    },
+    {
+      "question": "制度",
+      "answer": [
+        "せいど"
+      ],
+      "meaning": "system, institution, organization, organisation; Institution"
+    },
+    {
+      "question": "教示",
+      "answer": [
+        "きょうじ",
+        "きょうし"
+      ],
+      "meaning": "instruction, teaching"
+    },
+    {
+      "question": "奪取",
+      "answer": [
+        "だっしゅ"
+      ],
+      "meaning": "usurpation, taking back, dispossession"
+    },
+    {
+      "question": "主知主義",
+      "answer": [
+        "しゅちしゅぎ"
+      ],
+      "meaning": "intellectualism"
+    },
+    {
+      "question": "第二次性徴",
+      "answer": [
+        "だいにじせいちょう"
+      ],
+      "meaning": "secondary sex characteristic; Secondary sex characteristic"
+    },
+    {
+      "question": "第一次性徴",
+      "answer": [
+        "だいいちじせいちょう"
+      ],
+      "meaning": "primary sexual characteristic"
+    },
+    {
+      "question": "志向",
+      "answer": [
+        "しこう"
+      ],
+      "meaning": "intention, aim, preference (for), orientation (towards a goal)"
+    },
+    {
+      "question": "交互作用",
+      "answer": [
+        "こうごさよう"
+      ],
+      "meaning": "(mutual) interaction, reciprocal action, interplay"
+    },
+    {
+      "question": "興味",
+      "answer": [
+        "きょうみ"
+      ],
+      "meaning": "interest (in something), curiosity (about something), zest (for)"
+    },
+    {
+      "question": "干渉",
+      "answer": [
+        "かんしょう"
+      ],
+      "meaning": "interference, intervention, meddling"
+    },
+    {
+      "question": "大衆社会",
+      "answer": [
+        "たいしゅうしゃかい"
+      ],
+      "meaning": "mass society"
+    },
+    {
+      "question": "大衆",
+      "answer": [
+        "たいしゅう"
+      ],
+      "meaning": "general public, the masses"
+    },
+    {
+      "question": "代理",
+      "answer": [
+        "だいり"
+      ],
+      "meaning": "representation, agency, proxy, deputy, agent, attorney, substitute, alternate, acting (principal, etc.); Law of agency"
+    },
+    {
+      "question": "退行",
+      "answer": [
+        "たいこう"
+      ],
+      "meaning": "retrogression, regression"
+    },
+    {
+      "question": "対人関係",
+      "answer": [
+        "たいじんかんけい"
+      ],
+      "meaning": "personal relations"
+    },
+    {
+      "question": "袋小路文",
+      "answer": [
+        "ふくろこうじぶん"
+      ],
+      "meaning": "easily misunderstood sentence, garden-path sentence, cul-de-sac sentence"
+    },
+    {
+      "question": "解釈",
+      "answer": [
+        "かいしゃく"
+      ],
+      "meaning": "explanation, interpretation"
+    },
+    {
+      "question": "胎教",
+      "answer": [
+        "たいきょう"
+      ],
+      "meaning": "prenatal care, antenatal training"
+    },
+    {
+      "question": "親密",
+      "answer": [
+        "しんみつ"
+      ],
+      "meaning": "intimacy, friendship"
+    },
+    {
+      "question": "耐性",
+      "answer": [
+        "たいせい"
+      ],
+      "meaning": "resistance (e.g. to antibiotics), tolerance (e.g. drug tolerance)"
+    },
+    {
+      "question": "侵入",
+      "answer": [
+        "しんにゅう"
+      ],
+      "meaning": "invasion, incursion, raid, aggression, intrusion, trespass, penetration"
+    },
+    {
+      "question": "対処",
+      "answer": [
+        "たいしょ"
+      ],
+      "meaning": "dealing with, coping with"
+    },
+    {
+      "question": "措置入院",
+      "answer": [
+        "そちにゅういん"
+      ],
+      "meaning": "involuntary admission (commitment) (to a mental hospital); Involuntary commitment"
+    },
+    {
+      "question": "過敏性腸症候群",
+      "answer": [
+        "かびんせいちょうしょうこうぐん"
+      ],
+      "meaning": "irritable bowel syndrome, IBS; Irritable bowel syndrome"
+    },
+    {
+      "question": "体型",
+      "answer": [
+        "たいけい"
+      ],
+      "meaning": "figure, body shape, build, physique, form; somatotype, biotype, habitus, (type of) physique"
+    },
+    {
+      "question": "妥当性",
+      "answer": [
+        "だとうせい"
+      ],
+      "meaning": "validity, verification, propriety; Validity"
+    },
+    {
+      "question": "識別力",
+      "answer": [
+        "しきべつりょく"
+      ],
+      "meaning": "ability to discriminate or discern, (powers of) discrimination or discernment"
+    },
+    {
+      "question": "多変量解析",
+      "answer": [
+        "たへんりょうかいせき"
+      ],
+      "meaning": "multivariate analysis; Multivariate statistics"
+    },
+    {
+      "question": "多肢選択法",
+      "answer": [
+        "たしせんたくほう"
+      ],
+      "meaning": "multiple-choice"
+    },
+    {
+      "question": "嫉妬",
+      "answer": [
+        "しっと"
+      ],
+      "meaning": "jealousy, envy; Envy"
+    },
+    {
+      "question": "多血質",
+      "answer": [
+        "たけつしつ"
+      ],
+      "meaning": "sanguine temperament"
+    },
+    {
+      "question": "職務",
+      "answer": [
+        "しょくむ"
+      ],
+      "meaning": "professional duties"
+    },
+    {
+      "question": "速読",
+      "answer": [
+        "そくどく"
+      ],
+      "meaning": "speed reading"
+    },
+    {
+      "question": "測定",
+      "answer": [
+        "そくてい"
+      ],
+      "meaning": "measurement; Measurement"
+    },
+    {
+      "question": "側頭葉",
+      "answer": [
+        "そくとうよう"
+      ],
+      "meaning": "temporal lobe; Temporal lobe"
+    },
+    {
+      "question": "造語症",
+      "answer": [
+        "ぞうごしょう"
+      ],
+      "meaning": "neologism (esp. medical), newly-named disorder"
+    },
+    {
+      "question": "騒音",
+      "answer": [
+        "そうおん"
+      ],
+      "meaning": "noise; Noise pollution"
+    },
+    {
+      "question": "走性",
+      "answer": [
+        "そうせい"
+      ],
+      "meaning": "taxis; Taxis"
+    },
+    {
+      "question": "相貌失認",
+      "answer": [
+        "そうぼうしつにん"
+      ],
+      "meaning": "prosopagnosia, face blindness; Prosopagnosia"
+    },
+    {
+      "question": "相乗平均",
+      "answer": [
+        "そうじょうへいきん"
+      ],
+      "meaning": "geometric mean"
+    },
+    {
+      "question": "相似",
+      "answer": [
+        "そうじ"
+      ],
+      "meaning": "resemblance, likeness, similitude; similarity; analogy"
+    },
+    {
+      "question": "運動感覚",
+      "answer": [
+        "うんどうかんかく"
+      ],
+      "meaning": "kinesthesia, kinaesthesia"
+    },
+    {
+      "question": "相加平均",
+      "answer": [
+        "そうかへいきん"
+      ],
+      "meaning": "arithmetic mean"
+    },
+    {
+      "question": "早漏",
+      "answer": [
+        "そうろう"
+      ],
+      "meaning": "premature ejaculation; Premature ejaculation"
+    },
+    {
+      "question": "操作",
+      "answer": [
+        "そうさ"
+      ],
+      "meaning": "operation, management, handling; manipulating (to one's benefit), manipulation, influencing"
+    },
+    {
+      "question": "想起",
+      "answer": [
+        "そうき"
+      ],
+      "meaning": "remembering, recollection, recall, retrieval; to remember, to recall, to recollect, to call to mind, to envision"
+    },
+    {
+      "question": "層化",
+      "answer": [
+        "そうか"
+      ],
+      "meaning": "layering, stratification; sheafification"
+    },
+    {
+      "question": "双生児",
+      "answer": [
+        "そうせいじ"
+      ],
+      "meaning": "twins; Twin"
+    },
+    {
+      "question": "双極性障害",
+      "answer": [
+        "そうきょくせいしょうがい"
+      ],
+      "meaning": "bipolar disorder; Bipolar disorder"
+    },
+    {
+      "question": "組織風土",
+      "answer": [
+        "そしきふうど"
+      ],
+      "meaning": "organizational climate, organization culture, organizational environment"
+    },
+    {
+      "question": "組織",
+      "answer": [
+        "そしき",
+        "そしょく"
+      ],
+      "meaning": "organization, organisation, formation; structure, construction, setup, constitution; system (e.g. railroad, transport, party, etc.); tissue; texture (of a rock); weave (of a fabric)"
+    },
+    {
+      "question": "素点",
+      "answer": [
+        "そてん"
+      ],
+      "meaning": "raw score, unadjusted score"
+    },
+    {
+      "question": "素質",
+      "answer": [
+        "そしつ"
+      ],
+      "meaning": "character, qualities, genius, the makings of"
+    },
+    {
+      "question": "尖度",
+      "answer": [
+        "せんど"
+      ],
+      "meaning": "kurtosis; Kurtosis"
+    },
+    {
+      "question": "前成説",
+      "answer": [
+        "ぜんせいせつ"
+      ],
+      "meaning": "preformation (theory); Preformationism"
+    },
+    {
+      "question": "前処理",
+      "answer": [
+        "ぜんしょり"
+      ],
+      "meaning": "preprocessing, pretreatment"
+    },
+    {
+      "question": "言語",
+      "answer": [
+        "げんご",
+        "ごんご",
+        "げんきょ"
+      ],
+      "meaning": "language; Language"
+    },
+    {
+      "question": "言語獲得",
+      "answer": [
+        "げんごかくとく"
+      ],
+      "meaning": "language acquisition; Language acquisition"
+    },
+    {
+      "question": "言語障害",
+      "answer": [
+        "げんごしょうがい"
+      ],
+      "meaning": "speech impediment, speech disorder; Speech disorder"
+    },
+    {
+      "question": "前意識",
+      "answer": [
+        "ぜんいしき"
+      ],
+      "meaning": "preconsciousness; Preconscious"
+    },
+    {
+      "question": "言語教育",
+      "answer": [
+        "げんごきょういく"
+      ],
+      "meaning": "language education; Language education"
+    },
+    {
+      "question": "遷移確率",
+      "answer": [
+        "せんいかくりつ"
+      ],
+      "meaning": "transition probability (e.g. in a Markov chain)"
+    },
+    {
+      "question": "潜時",
+      "answer": [
+        "せんじ"
+      ],
+      "meaning": "latency"
+    },
+    {
+      "question": "潜伏期",
+      "answer": [
+        "せんぷくき"
+      ],
+      "meaning": "incubation period"
+    },
+    {
+      "question": "外側溝",
+      "answer": [
+        "がいそくこう"
+      ],
+      "meaning": "lateral sulcus (brain structure), Sylvian fissure, lateral fissure; Lateral sulcus"
+    },
+    {
+      "question": "水平思考",
+      "answer": [
+        "すいへいしこう"
+      ],
+      "meaning": "lateral thinking; Lateral thinking"
+    },
+    {
+      "question": "選好",
+      "answer": [
+        "せんこう"
+      ],
+      "meaning": "preference"
+    },
+    {
+      "question": "学習性無力感",
+      "answer": [
+        "がくしゅうせいむりょくかん"
+      ],
+      "meaning": "learned helplessness (psychology); Learned helplessness"
+    },
+    {
+      "question": "学習",
+      "answer": [
+        "がくしゅう"
+      ],
+      "meaning": "study, learning, tutorial; Learning"
+    },
+    {
+      "question": "線形計画法",
+      "answer": [
+        "せんけいけいかくほう"
+      ],
+      "meaning": "linear programming"
+    },
+    {
+      "question": "学習障害",
+      "answer": [
+        "がくしゅうしょうがい"
+      ],
+      "meaning": "learning disability; Learning disability"
+    },
+    {
+      "question": "学習機械",
+      "answer": [
+        "がくしゅうきかい"
+      ],
+      "meaning": "learning machine"
+    },
+    {
+      "question": "最小二乗法",
+      "answer": [
+        "さいしょうにじょうほう",
+        "さいしょうじじょうほう"
+      ],
+      "meaning": "least-squares method; Least squares"
+    },
+    {
+      "question": "旋律",
+      "answer": [
+        "せんりつ"
+      ],
+      "meaning": "melody, tune"
+    },
+    {
+      "question": "水晶体",
+      "answer": [
+        "すいしょうたい"
+      ],
+      "meaning": "the crystalline lens (of the eye); Lens (anatomy)"
+    },
+    {
+      "question": "宣伝",
+      "answer": [
+        "せんでん"
+      ],
+      "meaning": "publicity, advertisement, advertising, propaganda; Promotion (marketing)"
+    },
+    {
+      "question": "説得",
+      "answer": [
+        "せっとく"
+      ],
+      "meaning": "persuasion; Persuasion"
+    },
+    {
+      "question": "節点",
+      "answer": [
+        "せってん"
+      ],
+      "meaning": "node, nodal point; joint (e.g. in a framework)"
+    },
+    {
+      "question": "窃視症",
+      "answer": [
+        "せっししょう"
+      ],
+      "meaning": "voyeurism, scopophilia, scoptophilia; Voyeurism"
+    },
+    {
+      "question": "摂取",
+      "answer": [
+        "せっしゅ"
+      ],
+      "meaning": "intake (e.g. of salt), ingestion; absorption (e.g. of new knowledge), adoption (e.g. of foreign culture), assimilation; reception and protection; Ingestion"
+    },
+    {
+      "question": "制限時間",
+      "answer": [
+        "せいげんじかん"
+      ],
+      "meaning": "time limit"
+    },
+    {
+      "question": "生活科",
+      "answer": [
+        "せいかつか"
+      ],
+      "meaning": "socio-environmental studies, life environment studies"
+    },
+    {
+      "question": "脊髄反射",
+      "answer": [
+        "せきずいはんしゃ"
+      ],
+      "meaning": "spinal reflex"
+    },
+    {
+      "question": "終身雇用制",
+      "answer": [
+        "しゅうしんこようせい"
+      ],
+      "meaning": "(Japanese) system of lifetime employment"
+    },
+    {
+      "question": "生活空間",
+      "answer": [
+        "せいかつくうかん"
+      ],
+      "meaning": "living space"
+    },
+    {
+      "question": "脊髄神経",
+      "answer": [
+        "せきずいしんけい"
+      ],
+      "meaning": "spinal nerves; Spinal nerve"
+    },
+    {
+      "question": "脊髄",
+      "answer": [
+        "せきずい"
+      ],
+      "meaning": "spinal cord; Spinal cord"
+    },
+    {
+      "question": "積率相関係数",
+      "answer": [
+        "せきりつそうかんけいすう"
+      ],
+      "meaning": "product-moment correlation coefficient"
+    },
+    {
+      "question": "陰影",
+      "answer": [
+        "いんえい"
+      ],
+      "meaning": "shadow, shade, shading, gloom; nuance, shades of meaning, subtleties"
+    },
+    {
+      "question": "光量子",
+      "answer": [
+        "こうりょうし"
+      ],
+      "meaning": "light quantum, photon"
+    },
+    {
+      "question": "光覚",
+      "answer": [
+        "こうかく"
+      ],
+      "meaning": "optic or photic sense"
+    },
+    {
+      "question": "西周",
+      "answer": [
+        "せいしゅう"
+      ],
+      "meaning": "Western Zhou (dynasty of China)"
+    },
+    {
+      "question": "精神療法",
+      "answer": [
+        "せいしんりょうほう"
+      ],
+      "meaning": "psychotherapy"
+    },
+    {
+      "question": "精神薬理学",
+      "answer": [
+        "せいしんやくりがく"
+      ],
+      "meaning": "psychopharmacology; Psychopharmacology"
+    },
+    {
+      "question": "向精神薬",
+      "answer": [
+        "こうせいしんやく"
+      ],
+      "meaning": "psychotropic drug; Psychoactive drug"
+    },
+    {
+      "question": "精神保健",
+      "answer": [
+        "せいしんほけん"
+      ],
+      "meaning": "mental health"
+    },
+    {
+      "question": "精神分裂病",
+      "answer": [
+        "せいしんぶんれつびょう"
+      ],
+      "meaning": "schizophrenia"
+    },
+    {
+      "question": "精神分析",
+      "answer": [
+        "せいしんぶんせき"
+      ],
+      "meaning": "psychoanalysis"
+    },
+    {
+      "question": "言語能力",
+      "answer": [
+        "げんごのうりょく"
+      ],
+      "meaning": "(linguistic) competence, language capability"
+    },
+    {
+      "question": "言語運用",
+      "answer": [
+        "げんごうんよう"
+      ],
+      "meaning": "(linguistic) performance"
+    },
+    {
+      "question": "言語哲学",
+      "answer": [
+        "げんごてつがく"
+      ],
+      "meaning": "philosophy of language; Philosophy of language"
+    },
+    {
+      "question": "精神物理学",
+      "answer": [
+        "せいしんぶつりがく"
+      ],
+      "meaning": "psychophysics; Psychophysics"
+    },
+    {
+      "question": "精神病理学",
+      "answer": [
+        "せいしんびょうりがく"
+      ],
+      "meaning": "psychopathology"
+    },
+    {
+      "question": "精神病",
+      "answer": [
+        "せいしんびょう"
+      ],
+      "meaning": "mental illness, psychosis; Psychosis"
+    },
+    {
+      "question": "精神薄弱",
+      "answer": [
+        "せいしんはくじゃく"
+      ],
+      "meaning": "mental retardation, mentally retarded"
+    },
+    {
+      "question": "精神年齢",
+      "answer": [
+        "せいしんねんれい"
+      ],
+      "meaning": "mental age"
+    },
+    {
+      "question": "精神的外傷",
+      "answer": [
+        "せいしんてきがいしょう"
+      ],
+      "meaning": "psychological trauma"
+    },
+    {
+      "question": "精神遅滞",
+      "answer": [
+        "せいしんちたい"
+      ],
+      "meaning": "mental retardation"
+    },
+    {
+      "question": "精神衰弱",
+      "answer": [
+        "せいしんすいじゃく"
+      ],
+      "meaning": "psychasthenia"
+    },
+    {
+      "question": "精神身体医学",
+      "answer": [
+        "せいしんしんたいいがく"
+      ],
+      "meaning": "psychosomatic medicine"
+    },
+    {
+      "question": "精神障害",
+      "answer": [
+        "せいしんしょうがい"
+      ],
+      "meaning": "mental disorder"
+    },
+    {
+      "question": "精神鑑定",
+      "answer": [
+        "せいしんかんてい"
+      ],
+      "meaning": "psychiatric examination"
+    },
+    {
+      "question": "精神衛生",
+      "answer": [
+        "せいしんえいせい"
+      ],
+      "meaning": "mental health, mental hygiene"
+    },
+    {
+      "question": "精神医学",
+      "answer": [
+        "せいしんいがく"
+      ],
+      "meaning": "psychiatry; Psychiatry"
+    },
+    {
+      "question": "精神安定剤",
+      "answer": [
+        "せいしんあんていざい"
+      ],
+      "meaning": "tranquilizer, tranquiliser; Tranquilizer"
+    },
+    {
+      "question": "愛",
+      "answer": [
+        "あい",
+        "まな"
+      ],
+      "meaning": "love, affection, care; attachment, craving, desire; Love; beloved, dear"
+    },
+    {
+      "question": "輝度",
+      "answer": [
+        "きど"
+      ],
+      "meaning": "brightness, clearness, luminance"
+    },
+    {
+      "question": "光輝",
+      "answer": [
+        "こうき"
+      ],
+      "meaning": "brightness, splendour, splendor"
+    },
+    {
+      "question": "光束",
+      "answer": [
+        "こうそく"
+      ],
+      "meaning": "luminous flux; pencil (of light), beam; Luminous flux"
+    },
+    {
+      "question": "光度",
+      "answer": [
+        "こうど"
+      ],
+      "meaning": "intensity of light"
+    },
+    {
+      "question": "生産的思考",
+      "answer": [
+        "せいさんてきしこう"
+      ],
+      "meaning": "productive thinking"
+    },
+    {
+      "question": "機械翻訳",
+      "answer": [
+        "きかいほんやく"
+      ],
+      "meaning": "machine translation, mechanical translation, automatic translation; Machine translation"
+    },
+    {
+      "question": "呪術的思考",
+      "answer": [
+        "じゅじゅつてきしこう"
+      ],
+      "meaning": "magical thinking; Magical thinking"
+    },
+    {
+      "question": "生気論",
+      "answer": [
+        "せいきろん"
+      ],
+      "meaning": "vitalism (philosphy, biology); Vitalism"
+    },
+    {
+      "question": "正当化",
+      "answer": [
+        "せいとうか"
+      ],
+      "meaning": "justification, warrant"
+    },
+    {
+      "question": "正規分布",
+      "answer": [
+        "せいきぶんぷ"
+      ],
+      "meaning": "normal distribution, Gaussian distribution; Normal distribution"
+    },
+    {
+      "question": "成熟",
+      "answer": [
+        "せいじゅく"
+      ],
+      "meaning": "maturity, ripeness"
+    },
+    {
+      "question": "性役割",
+      "answer": [
+        "せいやくわり"
+      ],
+      "meaning": "gender role, sex role; Gender role"
+    },
+    {
+      "question": "性犯罪",
+      "answer": [
+        "せいはんざい"
+      ],
+      "meaning": "sex crime; Sex and the law"
+    },
+    {
+      "question": "市場調査",
+      "answer": [
+        "しじょうちょうさ"
+      ],
+      "meaning": "market research"
+    },
+    {
+      "question": "結婚",
+      "answer": [
+        "けっこん"
+      ],
+      "meaning": "marriage; Marriage"
+    },
+    {
+      "question": "性的倒錯",
+      "answer": [
+        "せいてきとうさく"
+      ],
+      "meaning": "paraphilia, sexual deviancy; Paraphilia"
+    },
+    {
+      "question": "性徴",
+      "answer": [
+        "せいちょう"
+      ],
+      "meaning": "sexual characteristics"
+    },
+    {
+      "question": "性差",
+      "answer": [
+        "せいさ"
+      ],
+      "meaning": "difference between the sexes, sexual difference"
+    },
+    {
+      "question": "性行動",
+      "answer": [
+        "せいこうどう"
+      ],
+      "meaning": "sex (sexual) behavior (behaviour)"
+    },
+    {
+      "question": "性機能障害",
+      "answer": [
+        "せいきのうしょうがい"
+      ],
+      "meaning": "sexual dysfunction; Sexual dysfunction"
+    },
+    {
+      "question": "自慰",
+      "answer": [
+        "じい"
+      ],
+      "meaning": "masturbation, self consolation"
+    },
+    {
+      "question": "性格検査",
+      "answer": [
+        "せいかくけんさ"
+      ],
+      "meaning": "personality test; Personality test"
+    },
+    {
+      "question": "性科学",
+      "answer": [
+        "せいかがく"
+      ],
+      "meaning": "sexology; Sexology"
+    },
+    {
+      "question": "世論",
+      "answer": [
+        "よろん",
+        "せろん"
+      ],
+      "meaning": "public opinion, popular voice, public sentiment, consensus; Public opinion"
+    },
+    {
+      "question": "世論",
+      "answer": [
+        "よろん",
+        "せろん"
+      ],
+      "meaning": "public opinion, popular voice, public sentiment, consensus; Public opinion"
+    },
+    {
+      "question": "世間",
+      "answer": [
+        "せけん"
+      ],
+      "meaning": "world, society, people, the public; Loka"
+    },
+    {
+      "question": "世間体",
+      "answer": [
+        "せけんてい"
+      ],
+      "meaning": "appearance (in the eyes of society), decency"
+    },
+    {
+      "question": "世界保健機関",
+      "answer": [
+        "せかいほけんきかん"
+      ],
+      "meaning": "World Health Organization (Organisation), WHO; World Health Organization"
+    },
+    {
+      "question": "世界観",
+      "answer": [
+        "せかいかん"
+      ],
+      "meaning": "world view, outlook on the world, Weltanschauung (philosophy); appearance of a world (e.g. in fiction); World view"
+    },
+    {
+      "question": "最尤法",
+      "answer": [
+        "さいゆうほう"
+      ],
+      "meaning": "maximum-likelihood estimation, maximum likelihood method; Maximum likelihood"
+    },
+    {
+      "question": "数量化理論",
+      "answer": [
+        "すうりょうかりろん"
+      ],
+      "meaning": "quantification theory"
+    },
+    {
+      "question": "睡眠障害",
+      "answer": [
+        "すいみんしょうがい"
+      ],
+      "meaning": "sleep disorder; Sleep disorder"
+    },
+    {
+      "question": "睡眠",
+      "answer": [
+        "すいみん"
+      ],
+      "meaning": "sleep; Sleep"
+    },
+    {
+      "question": "図式",
+      "answer": [
+        "ずしき"
+      ],
+      "meaning": "diagram, graph, schema"
+    },
+    {
+      "question": "機械論",
+      "answer": [
+        "きかいろん"
+      ],
+      "meaning": "(in philosophy) mechanism; Mechanism (philosophy)"
+    },
+    {
+      "question": "人事考課",
+      "answer": [
+        "じんじこうか"
+      ],
+      "meaning": "merit (ability, efficiency) rating, employee performance evaluation"
+    },
+    {
+      "question": "延髄",
+      "answer": [
+        "えんずい"
+      ],
+      "meaning": "medulla oblongata; Medulla oblongata"
+    },
+    {
+      "question": "記銘",
+      "answer": [
+        "きめい"
+      ],
+      "meaning": "memorization"
+    },
+    {
+      "question": "記憶装置",
+      "answer": [
+        "きおくそうち"
+      ],
+      "meaning": "storage (device), memory; Computer data storage"
+    },
+    {
+      "question": "記憶",
+      "answer": [
+        "きおく"
+      ],
+      "meaning": "memory, recollection, remembrance; storage; Memory"
+    },
+    {
+      "question": "人格障害",
+      "answer": [
+        "じんかくしょうがい"
+      ],
+      "meaning": "personality disorder"
+    },
+    {
+      "question": "人格",
+      "answer": [
+        "じんかく"
+      ],
+      "meaning": "personality, character, individuality, personhood; Persona"
+    },
+    {
+      "question": "親子関係",
+      "answer": [
+        "おやこかんけい"
+      ],
+      "meaning": "parent-child relationship"
+    },
+    {
+      "question": "神秘主義",
+      "answer": [
+        "しんぴしゅぎ"
+      ],
+      "meaning": "mysticism; Mysticism"
+    },
+    {
+      "question": "神経膠細胞",
+      "answer": [
+        "しんけいこうさいぼう"
+      ],
+      "meaning": "neuroglial cell"
+    },
+    {
+      "question": "神経線維",
+      "answer": [
+        "しんけいせんい"
+      ],
+      "meaning": "nerve fiber, nerve fibre; Axon"
+    },
+    {
+      "question": "神経生理学",
+      "answer": [
+        "しんけいせいりがく"
+      ],
+      "meaning": "neurophysiology, nerve physiology"
+    },
+    {
+      "question": "神経衰弱",
+      "answer": [
+        "しんけいすいじゃく"
+      ],
+      "meaning": "neurasthenia, nervous breakdown; concentration (card game involving turning over face-down cards to find identical pairs)"
+    },
+    {
+      "question": "神経心理学",
+      "answer": [
+        "しんけいしんりがく"
+      ],
+      "meaning": "neuropsychology"
+    },
+    {
+      "question": "神経症",
+      "answer": [
+        "しんけいしょう"
+      ],
+      "meaning": "nervous disorder, neurosis"
+    },
+    {
+      "question": "神経質",
+      "answer": [
+        "しんけいしつ"
+      ],
+      "meaning": "nervous, highly strung, sensitive; fussy, worried about petty things"
+    },
+    {
+      "question": "神経細胞",
+      "answer": [
+        "しんけいさいぼう"
+      ],
+      "meaning": "nerve cell, neuron; Neuron"
+    },
+    {
+      "question": "神経言語学",
+      "answer": [
+        "しんけいげんごがく"
+      ],
+      "meaning": "neurolinguistics; Neurolinguistics"
+    },
+    {
+      "question": "神経系",
+      "answer": [
+        "しんけいけい"
+      ],
+      "meaning": "nervous system; Nervous system"
+    },
+    {
+      "question": "神経学",
+      "answer": [
+        "しんけいがく"
+      ],
+      "meaning": "neurology; Neurology"
+    },
+    {
+      "question": "神経核",
+      "answer": [
+        "しんけいかく"
+      ],
+      "meaning": "neuron; Nucleus (neuroanatomy)"
+    },
+    {
+      "question": "神経解剖学",
+      "answer": [
+        "しんけいかいぼうがく"
+      ],
+      "meaning": "neuroanatomy; Neuroanatomy"
+    },
+    {
+      "question": "再生法",
+      "answer": [
+        "さいせいほう"
+      ],
+      "meaning": "regeneration process, rehabilitation method, recovery"
+    },
+    {
+      "question": "再生",
+      "answer": [
+        "さいせい"
+      ],
+      "meaning": "resuscitation, regeneration, restoration to life; reformation, rehabilitation; playback, regeneration (sound, etc.), view (of a video clip); reclamation, recovery; rebirth, reincarnation"
+    },
+    {
+      "question": "換喩",
+      "answer": [
+        "かんゆ"
+      ],
+      "meaning": "metonymy; Metonymy"
+    },
+    {
+      "question": "小頭症",
+      "answer": [
+        "しょうとうしょう"
+      ],
+      "meaning": "microcephaly"
+    },
+    {
+      "question": "新皮質",
+      "answer": [
+        "しんひしつ"
+      ],
+      "meaning": "neocortex, neopallium"
+    },
+    {
+      "question": "新機軸",
+      "answer": [
+        "しんきじく"
+      ],
+      "meaning": "innovation, new departure, milestone, breakthrough"
+    },
+    {
+      "question": "振戦",
+      "answer": [
+        "しんせん"
+      ],
+      "meaning": "tremor (muscular), trembling, shaking; Tremor"
+    },
+    {
+      "question": "心悸亢進",
+      "answer": [
+        "しんきこうしん"
+      ],
+      "meaning": "palpitations (of the heart)"
+    },
+    {
+      "question": "心理療法",
+      "answer": [
+        "しんりりょうほう"
+      ],
+      "meaning": "psychotherapy; Psychotherapy"
+    },
+    {
+      "question": "記憶術",
+      "answer": [
+        "きおくじゅつ"
+      ],
+      "meaning": "mnemonics, art of memorizing, mnemonic device; Mnemonic"
+    },
+    {
+      "question": "最頻値",
+      "answer": [
+        "さいひんち"
+      ],
+      "meaning": "mode; Mode (statistics)"
+    },
+    {
+      "question": "心理言語学",
+      "answer": [
+        "しんりげんごがく"
+      ],
+      "meaning": "psycholinguistics; Psycholinguistics"
+    },
+    {
+      "question": "心理学",
+      "answer": [
+        "しんりがく"
+      ],
+      "meaning": "psychology; Psychology"
+    },
+    {
+      "question": "心的外傷",
+      "answer": [
+        "しんてきがいしょう"
+      ],
+      "meaning": "psychic trauma, psychological trauma; Psychological trauma"
+    },
+    {
+      "question": "心像",
+      "answer": [
+        "しんぞう"
+      ],
+      "meaning": "mental image"
+    },
+    {
+      "question": "心像",
+      "answer": [
+        "しんぞう"
+      ],
+      "meaning": "mental image"
+    },
+    {
+      "question": "心身症",
+      "answer": [
+        "しんしんしょう"
+      ],
+      "meaning": "psychosomatic illness; Somatoform disorder"
+    },
+    {
+      "question": "気分",
+      "answer": [
+        "きぶん"
+      ],
+      "meaning": "feeling, mood; Mood (psychology)"
+    },
+    {
+      "question": "気分障害",
+      "answer": [
+        "きぶんしょうがい"
+      ],
+      "meaning": "mood disorder; Mood disorder"
+    },
+    {
+      "question": "心身医学",
+      "answer": [
+        "しんしんいがく"
+      ],
+      "meaning": "psychosomatic medicine; Psychosomatic medicine"
+    },
+    {
+      "question": "心因反応",
+      "answer": [
+        "しんいんはんのう"
+      ],
+      "meaning": "psychogenic reaction"
+    },
+    {
+      "question": "心因",
+      "answer": [
+        "しんいん"
+      ],
+      "meaning": "psychogenesis"
+    },
+    {
+      "question": "信頼性",
+      "answer": [
+        "しんらいせい"
+      ],
+      "meaning": "credibility, authenticity, confidence, reliability"
+    },
+    {
+      "question": "食欲不振症",
+      "answer": [
+        "しょくよくふしんしょう"
+      ],
+      "meaning": "anorexia"
+    },
+    {
+      "question": "形態素",
+      "answer": [
+        "けいたいそ"
+      ],
+      "meaning": "morpheme; Morpheme"
+    },
+    {
+      "question": "形態論",
+      "answer": [
+        "けいたいろん"
+      ],
+      "meaning": "morphology; Morphology (linguistics)"
+    },
+    {
+      "question": "触覚",
+      "answer": [
+        "しょっかく"
+      ],
+      "meaning": "sense of touch; tactile, tactual; hair style with long bangs"
+    },
+    {
+      "question": "圧覚",
+      "answer": [
+        "あっかく"
+      ],
+      "meaning": "sense of pressure"
+    },
+    {
+      "question": "職業病",
+      "answer": [
+        "しょくぎょうびょう"
+      ],
+      "meaning": "occupational disease; Occupational disease"
+    },
+    {
+      "question": "運動野",
+      "answer": [
+        "うんどうや"
+      ],
+      "meaning": "motor area (of the cerebral cortex)"
+    },
+    {
+      "question": "職業教育",
+      "answer": [
+        "しょくぎょうきょういく"
+      ],
+      "meaning": "professional education, vocational training; Vocational education"
+    },
+    {
+      "question": "浄化",
+      "answer": [
+        "じょうか"
+      ],
+      "meaning": "purification; cleanup (e.g. of politics), purge"
+    },
+    {
+      "question": "情操",
+      "answer": [
+        "じょうそう"
+      ],
+      "meaning": "sensibility (artistic, moral), (good) taste, sentiment"
+    },
+    {
+      "question": "冗長度",
+      "answer": [
+        "じょうちょうど"
+      ],
+      "meaning": "redundancy, relative redundancy (in information theory)"
+    },
+    {
+      "question": "上音",
+      "answer": [
+        "じょうおん"
+      ],
+      "meaning": "overtone"
+    },
+    {
+      "question": "重回帰分析",
+      "answer": [
+        "じゅうかいきぶんせき"
+      ],
+      "meaning": "multiple regression analysis"
+    },
+    {
+      "question": "賞罰",
+      "answer": [
+        "しょうばつ"
+      ],
+      "meaning": "reward and punishment"
+    },
+    {
+      "question": "音程",
+      "answer": [
+        "おんてい"
+      ],
+      "meaning": "interval, step; Interval (music)"
+    },
+    {
+      "question": "音階",
+      "answer": [
+        "おんかい"
+      ],
+      "meaning": "scale; Musical scale"
+    },
+    {
+      "question": "楽音",
+      "answer": [
+        "がくおん"
+      ],
+      "meaning": "musical note"
+    },
+    {
+      "question": "音楽療法",
+      "answer": [
+        "おんがくりょうほう"
+      ],
+      "meaning": "music therapy; Music therapy"
+    },
+    {
+      "question": "象徴",
+      "answer": [
+        "しょうちょう"
+      ],
+      "meaning": "symbol"
+    },
+    {
+      "question": "硝子体",
+      "answer": [
+        "しょうしたい"
+      ],
+      "meaning": "vitreous body (of the eye), vitreous humor, vitreous humour, the vitreous; Vitreous humour"
+    },
+    {
+      "question": "症候群",
+      "answer": [
+        "しょうこうぐん"
+      ],
+      "meaning": "syndrome"
+    },
+    {
+      "question": "自己愛",
+      "answer": [
+        "じこあい"
+      ],
+      "meaning": "narcissism"
+    },
+    {
+      "question": "国民性",
+      "answer": [
+        "こくみんせい"
+      ],
+      "meaning": "national traits or character, nationality; National character studies"
+    },
+    {
+      "question": "消化性潰瘍",
+      "answer": [
+        "しょうかせいかいよう"
+      ],
+      "meaning": "peptic ulcer; Peptic ulcer"
+    },
+    {
+      "question": "自然言語",
+      "answer": [
+        "しぜんげんご"
+      ],
+      "meaning": "natural language; Natural language"
+    },
+    {
+      "question": "自然言語処理",
+      "answer": [
+        "しぜんげんごしょり"
+      ],
+      "meaning": "natural language processing, NLP; Natural language processing"
+    },
+    {
+      "question": "松果体",
+      "answer": [
+        "しょうかたい"
+      ],
+      "meaning": "pineal, pineal body, pineal gland; Pineal gland"
+    },
+    {
+      "question": "昇華",
+      "answer": [
+        "しょうか"
+      ],
+      "meaning": "sublimation; Sublimation"
+    },
+    {
+      "question": "近点",
+      "answer": [
+        "きんてん"
+      ],
+      "meaning": "near point (closest point at which an object can be brought into focus by the eye); periapsis"
+    },
+    {
+      "question": "屍姦",
+      "answer": [
+        "しかん"
+      ],
+      "meaning": "necrophilia, necrophilism; Necrophilia"
+    },
+    {
+      "question": "承認欲求",
+      "answer": [
+        "しょうにんよっきゅう"
+      ],
+      "meaning": "need for social approval and self-esteem"
+    },
+    {
+      "question": "承諾",
+      "answer": [
+        "しょうだく"
+      ],
+      "meaning": "consent, approval, acceptance, agreement, compliance; Acceptance"
+    },
+    {
+      "question": "徐波睡眠",
+      "answer": [
+        "じょはすいみん"
+      ],
+      "meaning": "non-REM sleep"
+    },
+    {
+      "question": "書痙",
+      "answer": [
+        "しょけい"
+      ],
+      "meaning": "writer's cramp; Writer's cramp"
+    },
+    {
+      "question": "所記",
+      "answer": [
+        "しょき"
+      ],
+      "meaning": "signified"
+    },
+    {
+      "question": "初老",
+      "answer": [
+        "しょろう"
+      ],
+      "meaning": "past middle-aged, aging, ageing, elderly; age 40"
+    },
+    {
+      "question": "順向抑制",
+      "answer": [
+        "じゅんこうよくせい"
+      ],
+      "meaning": "proactive inhibition"
+    },
+    {
+      "question": "純音",
+      "answer": [
+        "じゅんおん"
+      ],
+      "meaning": "pure tone; Pure tone"
+    },
+    {
+      "question": "熟達",
+      "answer": [
+        "じゅくたつ"
+      ],
+      "meaning": "mastery"
+    },
+    {
+      "question": "熟成",
+      "answer": [
+        "じゅくせい"
+      ],
+      "meaning": "maturing, ripening, aging, ageing, curing, fermenting"
+    },
+    {
+      "question": "重量感覚",
+      "answer": [
+        "じゅうりょうかんかく"
+      ],
+      "meaning": "sense of weight"
+    },
+    {
+      "question": "縦断的研究",
+      "answer": [
+        "じゅうだんてきけんきゅう"
+      ],
+      "meaning": "longitudinal study"
+    },
+    {
+      "question": "従属変数",
+      "answer": [
+        "じゅうぞくへんすう"
+      ],
+      "meaning": "dependent variable"
+    },
+    {
+      "question": "充当",
+      "answer": [
+        "じゅうとう"
+      ],
+      "meaning": "allocation, appropriation"
+    },
+    {
+      "question": "集団力学",
+      "answer": [
+        "しゅうだんりきがく"
+      ],
+      "meaning": "group dynamics; Group dynamics"
+    },
+    {
+      "question": "雑音",
+      "answer": [
+        "ざつおん"
+      ],
+      "meaning": "noise (usu. unpleasant); interference (e.g. radio), static, noise; gossip, irresponsible criticism"
+    },
+    {
+      "question": "集団遺伝学",
+      "answer": [
+        "しゅうだんいでんがく"
+      ],
+      "meaning": "population genetics; Population genetics"
+    },
+    {
+      "question": "終脳",
+      "answer": [
+        "しゅうのう"
+      ],
+      "meaning": "telencephalon"
+    },
+    {
+      "question": "周産期",
+      "answer": [
+        "しゅうさんき"
+      ],
+      "meaning": "(similar to) perinatal, period from around the 28th week of pregnancy to a week after the baby is born"
+    },
+    {
+      "question": "受容器",
+      "answer": [
+        "じゅようき"
+      ],
+      "meaning": "receptor, acceptor"
+    },
+    {
+      "question": "手話",
+      "answer": [
+        "しゅわ"
+      ],
+      "meaning": "sign language; Sign language"
+    },
+    {
+      "question": "核酸",
+      "answer": [
+        "かくさん"
+      ],
+      "meaning": "nucleic acid; Nucleic acid"
+    },
+    {
+      "question": "帰無仮説",
+      "answer": [
+        "きむかせつ"
+      ],
+      "meaning": "null hypothesis"
+    },
+    {
+      "question": "眼球振盪",
+      "answer": [
+        "がんきゅうしんとう"
+      ],
+      "meaning": "nystagmus (rapid involuntary eye movements); Nystagmus"
+    },
+    {
+      "question": "主意主義",
+      "answer": [
+        "しゅいしゅぎ"
+      ],
+      "meaning": "voluntarism"
+    },
+    {
+      "question": "弱視",
+      "answer": [
+        "じゃくし"
+      ],
+      "meaning": "amblyopia, weak sight; Amblyopia"
+    },
+    {
+      "question": "釈明",
+      "answer": [
+        "しゃくめい"
+      ],
+      "meaning": "explanation, vindication"
+    },
+    {
+      "question": "遮蔽",
+      "answer": [
+        "しゃへい"
+      ],
+      "meaning": "shielding, sheltering, screening, shading, masking"
+    },
+    {
+      "question": "観察",
+      "answer": [
+        "かんさつ"
+      ],
+      "meaning": "observation, survey, watching"
+    },
+    {
+      "question": "強迫性障害",
+      "answer": [
+        "きょうはくせいしょうがい"
+      ],
+      "meaning": "obsessive-compulsive disorder, OCD; Obsessive–compulsive disorder"
+    },
+    {
+      "question": "遮断",
+      "answer": [
+        "しゃだん"
+      ],
+      "meaning": "isolation, cut off, blockade, quarantine, interception, deprivation"
+    },
+    {
+      "question": "社会福祉",
+      "answer": [
+        "しゃかいふくし"
+      ],
+      "meaning": "social welfare"
+    },
+    {
+      "question": "後頭葉",
+      "answer": [
+        "こうとうよう"
+      ],
+      "meaning": "occipital lobe; Occipital lobe"
+    },
+    {
+      "question": "社会復帰",
+      "answer": [
+        "しゃかいふっき"
+      ],
+      "meaning": "rehabilitation (in society); Rehabilitation (penology)"
+    },
+    {
+      "question": "作業療法士",
+      "answer": [
+        "さぎょうりょうほうし"
+      ],
+      "meaning": "occupational therapist; Occupational therapist"
+    },
+    {
+      "question": "作業療法",
+      "answer": [
+        "さぎょうりょうほう"
+      ],
+      "meaning": "occupational therapy; Occupational therapy"
+    },
+    {
+      "question": "社会的地位",
+      "answer": [
+        "しゃかいてきちい"
+      ],
+      "meaning": "social status, social position; Social status"
+    },
+    {
+      "question": "系統発生",
+      "answer": [
+        "けいとうはっせい"
+      ],
+      "meaning": "phylogeny, phylogenesis"
+    },
+    {
+      "question": "個体発生",
+      "answer": [
+        "こたいはっせい"
+      ],
+      "meaning": "ontogeny, ontogenesis"
+    },
+    {
+      "question": "視交叉",
+      "answer": [
+        "しこうさ"
+      ],
+      "meaning": "optic chiasma, optic chiasm"
+    },
+    {
+      "question": "社会生物学",
+      "answer": [
+        "しゃかいせいぶつがく"
+      ],
+      "meaning": "sociobiology; Sociobiology"
+    },
+    {
+      "question": "社会性",
+      "answer": [
+        "しゃかいせい"
+      ],
+      "meaning": "sociality; Sociability"
+    },
+    {
+      "question": "口述試験",
+      "answer": [
+        "こうじゅつしけん"
+      ],
+      "meaning": "oral examination"
+    },
+    {
+      "question": "口唇期",
+      "answer": [
+        "こうしんき"
+      ],
+      "meaning": "oral phase, oral stage; Oral stage"
+    },
+    {
+      "question": "社会心理学",
+      "answer": [
+        "しゃかいしんりがく"
+      ],
+      "meaning": "social psychology; Social psychology"
+    },
+    {
+      "question": "社会教育",
+      "answer": [
+        "しゃかいきょういく"
+      ],
+      "meaning": "social education; Social education in Japan"
+    },
+    {
+      "question": "社会階級",
+      "answer": [
+        "しゃかいかいきゅう"
+      ],
+      "meaning": "social class; Social class"
+    },
+    {
+      "question": "社会化",
+      "answer": [
+        "しゃかいか"
+      ],
+      "meaning": "socialization, socialisation; Socialization"
+    },
+    {
+      "question": "斜頸",
+      "answer": [
+        "しゃけい"
+      ],
+      "meaning": "torticollis, wryneck, stiff neck; Torticollis"
+    },
+    {
+      "question": "斜視",
+      "answer": [
+        "しゃし"
+      ],
+      "meaning": "strabismus, squint; Strabismus"
+    },
+    {
+      "question": "実体鏡",
+      "answer": [
+        "じったいきょう"
+      ],
+      "meaning": "stereoscope"
+    },
+    {
+      "question": "実在論",
+      "answer": [
+        "じつざいろん"
+      ],
+      "meaning": "realism (as opposed to idealism); realism (as opposed to nominalism); Philosophical realism"
+    },
+    {
+      "question": "悉無律",
+      "answer": [
+        "しつむりつ"
+      ],
+      "meaning": "all-or-none law, all-or-none-principle"
+    },
+    {
+      "question": "識別",
+      "answer": [
+        "しきべつ"
+      ],
+      "meaning": "discrimination, discernment, identification"
+    },
+    {
+      "question": "自民族中心主義",
+      "answer": [
+        "じみんぞくちゅうしんしゅぎ"
+      ],
+      "meaning": "ethnocentrism"
+    },
+    {
+      "question": "自発性",
+      "answer": [
+        "じはつせい"
+      ],
+      "meaning": "self-motivation, spontaneity, spontaneousness"
+    },
+    {
+      "question": "自涜",
+      "answer": [
+        "じとく"
+      ],
+      "meaning": "masturbation"
+    },
+    {
+      "question": "過保護",
+      "answer": [
+        "かほご"
+      ],
+      "meaning": "overprotective, excessive care, overprotection, overprotectiveness"
+    },
+    {
+      "question": "隠蔽",
+      "answer": [
+        "いんぺい"
+      ],
+      "meaning": "concealment, suppression, hiding"
+    },
+    {
+      "question": "自尊感情",
+      "answer": [
+        "じそんかんじょう"
+      ],
+      "meaning": "self-esteem"
+    },
+    {
+      "question": "自然選択",
+      "answer": [
+        "しぜんせんたく"
+      ],
+      "meaning": "natural selection"
+    },
+    {
+      "question": "自責",
+      "answer": [
+        "じせき"
+      ],
+      "meaning": "self-condemnation, self-reproach, self-accusation"
+    },
+    {
+      "question": "自信",
+      "answer": [
+        "じしん"
+      ],
+      "meaning": "self-confidence, confidence (in oneself); Confidence"
+    },
+    {
+      "question": "自傷行為",
+      "answer": [
+        "じしょうこうい"
+      ],
+      "meaning": "act of self-harm, self-injurious behavior, self-injurious behaviour; Self-harm"
+    },
+    {
+      "question": "自殺",
+      "answer": [
+        "じさつ"
+      ],
+      "meaning": "suicide; Suicide"
+    },
+    {
+      "question": "古皮質",
+      "answer": [
+        "こひしつ"
+      ],
+      "meaning": "paleocortex (palaeocortex), paleopallium"
+    },
+    {
+      "question": "自己分析",
+      "answer": [
+        "じこぶんせき"
+      ],
+      "meaning": "self-analysis, autoanalysis"
+    },
+    {
+      "question": "自己評価",
+      "answer": [
+        "じこひょうか"
+      ],
+      "meaning": "self-assessment, self-evaluation, self-rating, self-esteem; Self-assessment"
+    },
+    {
+      "question": "視差",
+      "answer": [
+        "しさ"
+      ],
+      "meaning": "parallax; Parallax"
+    },
+    {
+      "question": "自己像",
+      "answer": [
+        "じこぞう"
+      ],
+      "meaning": "self-image"
+    },
+    {
+      "question": "記憶錯誤",
+      "answer": [
+        "きおくさくご"
+      ],
+      "meaning": "paramnesia"
+    },
+    {
+      "question": "自己受容器",
+      "answer": [
+        "じこじゅようき"
+      ],
+      "meaning": "proprioceptor"
+    },
+    {
+      "question": "自己実現",
+      "answer": [
+        "じこじつげん"
+      ],
+      "meaning": "self-actualization, self-fulfillment, self-realization; Self-actualization"
+    },
+    {
+      "question": "自己効力感",
+      "answer": [
+        "じここうりょくかん"
+      ],
+      "meaning": "self-efficacy; Self-efficacy"
+    },
+    {
+      "question": "自己欺瞞",
+      "answer": [
+        "じこぎまん"
+      ],
+      "meaning": "self-deception, self-deceit"
+    },
+    {
+      "question": "自己概念",
+      "answer": [
+        "じこがいねん"
+      ],
+      "meaning": "self-concept, self-perspective, self-image"
+    },
+    {
+      "question": "自己意識",
+      "answer": [
+        "じこいしき"
+      ],
+      "meaning": "self-consciousness"
+    },
+    {
+      "question": "自己",
+      "answer": [
+        "じこ"
+      ],
+      "meaning": "self, oneself; Psychology of self"
+    },
+    {
+      "question": "愛国心",
+      "answer": [
+        "あいこくしん"
+      ],
+      "meaning": "patriotic feelings, patriotism; Patriotism"
+    },
+    {
+      "question": "耳石",
+      "answer": [
+        "じせき"
+      ],
+      "meaning": "otolith (part of inner ear), statolith, statoconium; Otolith"
+    },
+    {
+      "question": "耳殻",
+      "answer": [
+        "じかく"
+      ],
+      "meaning": "external ear, auricle"
+    },
+    {
+      "question": "時間知覚",
+      "answer": [
+        "じかんちかく"
+      ],
+      "meaning": "time perception, chronognosis"
+    },
+    {
+      "question": "時間効果",
+      "answer": [
+        "じかんこうか"
+      ],
+      "meaning": "time effect"
+    },
+    {
+      "question": "時価",
+      "answer": [
+        "じか"
+      ],
+      "meaning": "current value, price, market value"
+    },
+    {
+      "question": "持続性",
+      "answer": [
+        "じぞくせい"
+      ],
+      "meaning": "durability"
+    },
+    {
+      "question": "資源",
+      "answer": [
+        "しげん"
+      ],
+      "meaning": "resources; Resource"
+    },
+    {
+      "question": "試行錯誤",
+      "answer": [
+        "しこうさくご"
+      ],
+      "meaning": "trial and error"
+    },
+    {
+      "question": "視力",
+      "answer": [
+        "しりょく"
+      ],
+      "meaning": "eyesight; Visual acuity"
+    },
+    {
+      "question": "視野",
+      "answer": [
+        "しや"
+      ],
+      "meaning": "field of vision, view; one's outlook (e.g. on life), one's horizons; Field of view"
+    },
+    {
+      "question": "視床",
+      "answer": [
+        "ししょう"
+      ],
+      "meaning": "thalamus; Thalamus"
+    },
+    {
+      "question": "視細胞",
+      "answer": [
+        "しさいぼう"
+      ],
+      "meaning": "photoreceptor cell"
+    },
+    {
+      "question": "視紅",
+      "answer": [
+        "しこう"
+      ],
+      "meaning": "visual purple, rhodopsin"
+    },
+    {
+      "question": "固執",
+      "answer": [
+        "こしつ",
+        "こしゅう"
+      ],
+      "meaning": "sticking to (an opinion, theory, belief, etc.), clinging to, adherence, persistence, insistence"
+    },
+    {
+      "question": "視空間",
+      "answer": [
+        "しくうかん"
+      ],
+      "meaning": "visual space; visuospatial"
+    },
+    {
+      "question": "視感度",
+      "answer": [
+        "しかんど"
+      ],
+      "meaning": "luminous sensitivity"
+    },
+    {
+      "question": "視角",
+      "answer": [
+        "しかく"
+      ],
+      "meaning": "visual angle; Visual angle"
+    },
+    {
+      "question": "視覚野",
+      "answer": [
+        "しかくや"
+      ],
+      "meaning": "visual area (of the brain), visual cortex; Visual cortex"
+    },
+    {
+      "question": "遠近法",
+      "answer": [
+        "えんきんほう"
+      ],
+      "meaning": "perspective; Perspective (visual)"
+    },
+    {
+      "question": "視覚系",
+      "answer": [
+        "しかくけい"
+      ],
+      "meaning": "visual system, ophthalmencephalon"
+    },
+    {
+      "question": "視覚",
+      "answer": [
+        "しかく"
+      ],
+      "meaning": "sense of sight, vision; Visual perception"
+    },
+    {
+      "question": "幻影肢",
+      "answer": [
+        "げんえいし"
+      ],
+      "meaning": "phantom limb"
+    },
+    {
+      "question": "思春期",
+      "answer": [
+        "ししゅんき"
+      ],
+      "meaning": "puberty; Puberty"
+    },
+    {
+      "question": "現象学",
+      "answer": [
+        "げんしょうがく"
+      ],
+      "meaning": "phenomenology; Phenomenology (philosophy)"
+    },
+    {
+      "question": "恐怖症",
+      "answer": [
+        "きょうふしょう"
+      ],
+      "meaning": "morbid fear, phobia; Phobia"
+    },
+    {
+      "question": "音素",
+      "answer": [
+        "おんそ"
+      ],
+      "meaning": "phoneme; Phoneme"
+    },
+    {
+      "question": "音声学",
+      "answer": [
+        "おんせいがく"
+      ],
+      "meaning": "phonetics; Phonetics"
+    },
+    {
+      "question": "士気",
+      "answer": [
+        "しき"
+      ],
+      "meaning": "morale (of troops, team, etc.), esprit de corps; Morale"
+    },
+    {
+      "question": "音韻論",
+      "answer": [
+        "おんいんろん"
+      ],
+      "meaning": "phonemics, phonology; Phonology"
+    },
+    {
+      "question": "姿勢反射",
+      "answer": [
+        "しせいはんしゃ"
+      ],
+      "meaning": "postural reflex"
+    },
+    {
+      "question": "刺激閾",
+      "answer": [
+        "しげきいき"
+      ],
+      "meaning": "stimulus threshold, stimulus limen"
+    },
+    {
+      "question": "骨相学",
+      "answer": [
+        "こっそうがく"
+      ],
+      "meaning": "phrenology; Phrenology"
+    },
+    {
+      "question": "異食症",
+      "answer": [
+        "いしょくしょう"
+      ],
+      "meaning": "allotriophagy, pica; Pica (disorder)"
+    },
+    {
+      "question": "刺激",
+      "answer": [
+        "しげき"
+      ],
+      "meaning": "stimulus, impetus, incentive, encouragement, motivation, provocation, excitement, thrill"
+    },
+    {
+      "question": "仕事中毒",
+      "answer": [
+        "しごとちゅうどく"
+      ],
+      "meaning": "workaholism; Workaholic"
+    },
+    {
+      "question": "残留",
+      "answer": [
+        "ざんりゅう"
+      ],
+      "meaning": "staying behind, remaining, residual"
+    },
+    {
+      "question": "散布図",
+      "answer": [
+        "さんぷず"
+      ],
+      "meaning": "scatter diagram, scatterplot, scatter plot, scattergraph, scattergram; Scatter plot"
+    },
+    {
+      "question": "三半規管",
+      "answer": [
+        "さんはんきかん"
+      ],
+      "meaning": "semicircular canals; Semicircular canal"
+    },
+    {
+      "question": "音名",
+      "answer": [
+        "おんめい"
+      ],
+      "meaning": "note name, pitch name, letter notation"
+    },
+    {
+      "question": "錯視",
+      "answer": [
+        "さくし"
+      ],
+      "meaning": "optical illusion; Optical illusion"
+    },
+    {
+      "question": "偽薬",
+      "answer": [
+        "ぎやく"
+      ],
+      "meaning": "inactive placebo, placebo; Placebo"
+    },
+    {
+      "question": "可塑性",
+      "answer": [
+        "かそせい"
+      ],
+      "meaning": "plasticity"
+    },
+    {
+      "question": "作業負荷",
+      "answer": [
+        "さぎょうふか"
+      ],
+      "meaning": "workload"
+    },
+    {
+      "question": "快楽原則",
+      "answer": [
+        "かいらくげんそく"
+      ],
+      "meaning": "pleasure principle (psychology); Pleasure principle (psychology)"
+    },
+    {
+      "question": "作業記憶",
+      "answer": [
+        "さぎょうきおく"
+      ],
+      "meaning": "working memory"
+    },
+    {
+      "question": "作業環境",
+      "answer": [
+        "さぎょうかんきょう"
+      ],
+      "meaning": "work environment"
+    },
+    {
+      "question": "才能",
+      "answer": [
+        "さいのう"
+      ],
+      "meaning": "talent, ability"
+    },
+    {
+      "question": "橋",
+      "answer": [
+        "はし",
+        "きょう"
+      ],
+      "meaning": "bridge; Bridge; pons (pontes), pons Varolii, pontine, part of the brain stem (links the medulla oblongata and cerebellum with the midbrain)"
+    },
+    {
+      "question": "最大化",
+      "answer": [
+        "さいだいか"
+      ],
+      "meaning": "maximization, maximisation"
+    },
+    {
+      "question": "再生",
+      "answer": [
+        "さいせい"
+      ],
+      "meaning": "resuscitation, regeneration, restoration to life; reformation, rehabilitation; playback, regeneration (sound, etc.), view (of a video clip); reclamation, recovery; rebirth, reincarnation"
+    },
+    {
+      "question": "再構成",
+      "answer": [
+        "さいこうせい"
+      ],
+      "meaning": "reconstruction, reorganization, reorganisation, reconstitution, reconfiguration"
+    },
+    {
+      "question": "再帰",
+      "answer": [
+        "さいき"
+      ],
+      "meaning": "recurrence, recursion; reflective; Recursion"
+    },
+    {
+      "question": "語用論",
+      "answer": [
+        "ごようろん"
+      ],
+      "meaning": "pragmatics; Pragmatics"
+    },
+    {
+      "question": "痕跡",
+      "answer": [
+        "こんせき"
+      ],
+      "meaning": "trace, traces, vestige, vestiges"
+    },
+    {
+      "question": "昏迷",
+      "answer": [
+        "こんめい"
+      ],
+      "meaning": "stupefaction, stupor, unconsciousness, confusion"
+    },
+    {
+      "question": "婚姻",
+      "answer": [
+        "こんいん"
+      ],
+      "meaning": "marriage, matrimony"
+    },
+    {
+      "question": "黒胆汁質",
+      "answer": [
+        "こくたんじゅうしつ"
+      ],
+      "meaning": "melancholic temperament"
+    },
+    {
+      "question": "合理主義",
+      "answer": [
+        "ごうりしゅぎ"
+      ],
+      "meaning": "rationalism"
+    },
+    {
+      "question": "合理化",
+      "answer": [
+        "ごうりか"
+      ],
+      "meaning": "rationalization, rationalisation, rationalize, rationalise; Rationalization"
+    },
+    {
+      "question": "行動生物学",
+      "answer": [
+        "こうどうせいぶつがく"
+      ],
+      "meaning": "ethology"
+    },
+    {
+      "question": "行動学",
+      "answer": [
+        "こうどうがく"
+      ],
+      "meaning": "praxiology, ethology"
+    },
+    {
+      "question": "甲状腺",
+      "answer": [
+        "こうじょうせん"
+      ],
+      "meaning": "thyroid gland; Thyroid"
+    },
+    {
+      "question": "構造主義",
+      "answer": [
+        "こうぞうしゅぎ"
+      ],
+      "meaning": "structuralism; Structuralism"
+    },
+    {
+      "question": "構造記述",
+      "answer": [
+        "こうぞうきじゅつ"
+      ],
+      "meaning": "structural description"
+    },
+    {
+      "question": "構造",
+      "answer": [
+        "こうぞう"
+      ],
+      "meaning": "structure, construction, makeup, framework, organization, pattern"
+    },
+    {
+      "question": "構成体",
+      "answer": [
+        "こうせいたい"
+      ],
+      "meaning": "constituent"
+    },
+    {
+      "question": "校内暴力",
+      "answer": [
+        "こうないぼうりょく"
+      ],
+      "meaning": "school violence; School violence"
+    },
+    {
+      "question": "抗争",
+      "answer": [
+        "こうそう"
+      ],
+      "meaning": "dispute, resistance"
+    },
+    {
+      "question": "向性",
+      "answer": [
+        "こうせい"
+      ],
+      "meaning": "tropism"
+    },
+    {
+      "question": "効用",
+      "answer": [
+        "こうよう"
+      ],
+      "meaning": "use, utility, effect, benefit; Utility"
+    },
+    {
+      "question": "光子",
+      "answer": [
+        "こうし"
+      ],
+      "meaning": "photon; Photon"
+    },
+    {
+      "question": "語順",
+      "answer": [
+        "ごじゅん"
+      ],
+      "meaning": "word order; Word order"
+    },
+    {
+      "question": "語音",
+      "answer": [
+        "ごおん"
+      ],
+      "meaning": "sound of a word, sounds of speech, phoneme"
+    },
+    {
+      "question": "後成説",
+      "answer": [
+        "こうせいせつ"
+      ],
+      "meaning": "epigenesis (theory); Epigenesis (biology)"
+    },
+    {
+      "question": "後光効果",
+      "answer": [
+        "ごこうこうか"
+      ],
+      "meaning": "halo effect"
+    },
+    {
+      "question": "孤独",
+      "answer": [
+        "こどく"
+      ],
+      "meaning": "solitude, loneliness, isolation; Solitude"
+    },
+    {
+      "question": "固有色",
+      "answer": [
+        "こゆうしょく"
+      ],
+      "meaning": "intrinsic colour"
+    },
+    {
+      "question": "呼吸中枢",
+      "answer": [
+        "こきゅうちゅうすう"
+      ],
+      "meaning": "respiratory center, respiratory centre"
+    },
+    {
+      "question": "個体発生",
+      "answer": [
+        "こたいはっせい"
+      ],
+      "meaning": "ontogeny, ontogenesis"
+    },
+    {
+      "question": "個人主義",
+      "answer": [
+        "こじんしゅぎ"
+      ],
+      "meaning": "individualism; Individualism"
+    },
+    {
+      "question": "言語療法",
+      "answer": [
+        "げんごりょうほう"
+      ],
+      "meaning": "speech therapy"
+    },
+    {
+      "question": "言語野",
+      "answer": [
+        "げんごや"
+      ],
+      "meaning": "language area of the cortex, speech centre (center)"
+    },
+    {
+      "question": "確率",
+      "answer": [
+        "かくりつ"
+      ],
+      "meaning": "probability, likelihood, chances; Probability"
+    },
+    {
+      "question": "言語中枢",
+      "answer": [
+        "げんごちゅうすう"
+      ],
+      "meaning": "language center (brain), language centre"
+    },
+    {
+      "question": "言語心理学",
+      "answer": [
+        "げんごしんりがく"
+      ],
+      "meaning": "linguistic psychology, psycholinguistics (esp. from a psychological standpoint)"
+    },
+    {
+      "question": "言語行動",
+      "answer": [
+        "げんごこうどう"
+      ],
+      "meaning": "verbal behaviour, language behaviour; Verbal Behavior"
+    },
+    {
+      "question": "言語化",
+      "answer": [
+        "げんごか"
+      ],
+      "meaning": "verbalizing, putting into words"
+    },
+    {
+      "question": "言語音",
+      "answer": [
+        "げんごおん"
+      ],
+      "meaning": "speech sound"
+    },
+    {
+      "question": "過程",
+      "answer": [
+        "かてい"
+      ],
+      "meaning": "process, course, mechanism"
+    },
+    {
+      "question": "減法混色",
+      "answer": [
+        "げんぽうこんしょく"
+      ],
+      "meaning": "subtractive mixture colors"
+    },
+    {
+      "question": "幻肢",
+      "answer": [
+        "げんし"
+      ],
+      "meaning": "phantom limb; Phantom limb"
+    },
+    {
+      "question": "原型",
+      "answer": [
+        "げんけい"
+      ],
+      "meaning": "prototype, model, pattern, archetypal; Pattern (casting)"
+    },
+    {
+      "question": "検定",
+      "answer": [
+        "けんてい"
+      ],
+      "meaning": "official certification, official approval, inspection, verification; certification examination, licensing examination, proficiency test; hypothesis testing"
+    },
+    {
+      "question": "検索",
+      "answer": [
+        "けんさく"
+      ],
+      "meaning": "looking up (e.g. a word in a dictionary), retrieval (e.g. data), searching for, referring to"
+    },
+    {
+      "question": "検査",
+      "answer": [
+        "けんさ"
+      ],
+      "meaning": "inspection (e.g. customs, factory), examination, scan (e.g. MRI, PET, etc.)"
+    },
+    {
+      "question": "健忘",
+      "answer": [
+        "けんぼう"
+      ],
+      "meaning": "forgetfulness; Amnesia"
+    },
+    {
+      "question": "結晶性知能",
+      "answer": [
+        "けっしょうせいちのう"
+      ],
+      "meaning": "crystallized intelligence"
+    },
+    {
+      "question": "決定理論",
+      "answer": [
+        "けっていりろん"
+      ],
+      "meaning": "decision theory; Decision theory"
+    },
+    {
+      "question": "計量言語学",
+      "answer": [
+        "けいりょうげんごがく"
+      ],
+      "meaning": "computational linguistics"
+    },
+    {
+      "question": "計画",
+      "answer": [
+        "けいかく"
+      ],
+      "meaning": "plan, project, schedule, scheme, program, programme; Plan"
+    },
+    {
+      "question": "韻律",
+      "answer": [
+        "いんりつ"
+      ],
+      "meaning": "rhythm, metre (poet); Prosody"
+    },
+    {
+      "question": "系列化",
+      "answer": [
+        "けいれつか"
+      ],
+      "meaning": "putting in order, systemize, systemise"
+    },
+    {
+      "question": "訓練",
+      "answer": [
+        "くんれん"
+      ],
+      "meaning": "training, drill, practice, discipline; Training"
+    },
+    {
+      "question": "近接学",
+      "answer": [
+        "きんせつがく"
+      ],
+      "meaning": "proxemics"
+    },
+    {
+      "question": "緊張",
+      "answer": [
+        "きんちょう"
+      ],
+      "meaning": "tension, mental strain, nervousness"
+    },
+    {
+      "question": "禁断症状",
+      "answer": [
+        "きんだんしょうじょう"
+      ],
+      "meaning": "withdrawal symptoms, abstinence syndrome"
+    },
+    {
+      "question": "鏡文字",
+      "answer": [
+        "かがみもじ"
+      ],
+      "meaning": "mirror writing; Mirror writing"
+    },
+    {
+      "question": "教条主義",
+      "answer": [
+        "きょうじょうしゅぎ"
+      ],
+      "meaning": "dogmatism"
+    },
+    {
+      "question": "教師",
+      "answer": [
+        "きょうし"
+      ],
+      "meaning": "teacher (classroom)"
+    },
+    {
+      "question": "強迫神経症",
+      "answer": [
+        "きょうはくしんけいしょう"
+      ],
+      "meaning": "obsessional neurosis"
+    },
+    {
+      "question": "強化",
+      "answer": [
+        "きょうか"
+      ],
+      "meaning": "strengthening, intensifying, reinforcement, enhancement, solidification; Reinforcement"
+    },
+    {
+      "question": "共生",
+      "answer": [
+        "きょうせい"
+      ],
+      "meaning": "coexistence, living together; symbiosis; paragenesis; Symbiosis"
+    },
+    {
+      "question": "共感覚",
+      "answer": [
+        "きょうかんかく"
+      ],
+      "meaning": "synesthesia (synaesthesia); Synesthesia"
+    },
+    {
+      "question": "共感",
+      "answer": [
+        "きょうかん"
+      ],
+      "meaning": "sympathy, empathy, response; Empathy"
+    },
+    {
+      "question": "競争",
+      "answer": [
+        "きょうそう"
+      ],
+      "meaning": "competition, contest, rivalry, race; competition (between organisms or species)"
+    },
+    {
+      "question": "拒食症",
+      "answer": [
+        "きょしょくしょう"
+      ],
+      "meaning": "anorexia"
+    },
+    {
+      "question": "旧皮質",
+      "answer": [
+        "きゅうひしつ"
+      ],
+      "meaning": "archicortex, archipallium"
+    },
+    {
+      "question": "求心性神経",
+      "answer": [
+        "きゅうしんせいしんけい"
+      ],
+      "meaning": "afferent nerve, afferent neuron, afferent"
+    },
+    {
+      "question": "逆向抑制",
+      "answer": [
+        "ぎゃっこうよくせい"
+      ],
+      "meaning": "retroactive inhibition"
+    },
+    {
+      "question": "吃音",
+      "answer": [
+        "きつおん"
+      ],
+      "meaning": "stammering, stuttering, dysphemia"
+    },
+    {
+      "question": "技能",
+      "answer": [
+        "ぎのう"
+      ],
+      "meaning": "technical skill, ability, capacity"
+    },
+    {
+      "question": "儀礼",
+      "answer": [
+        "ぎれい"
+      ],
+      "meaning": "etiquette, courtesy; Yili (text)"
+    },
+    {
+      "question": "記号",
+      "answer": [
+        "きごう"
+      ],
+      "meaning": "symbol, code, sign, notation; Sign (semiotics)"
+    },
+    {
+      "question": "記憶増進",
+      "answer": [
+        "きおくぞうしん"
+      ],
+      "meaning": "hypermnesia"
+    },
+    {
+      "question": "記憶喪失",
+      "answer": [
+        "きおくそうしつ"
+      ],
+      "meaning": "loss of memory, amnesia"
+    },
+    {
+      "question": "規範",
+      "answer": [
+        "きはん"
+      ],
+      "meaning": "model, standard, pattern, norm, criterion, example; Norm (social)"
+    },
+    {
+      "question": "規制",
+      "answer": [
+        "きせい"
+      ],
+      "meaning": "regulation, (traffic) policing, control, restriction; Regulation"
+    },
+    {
+      "question": "確率変数",
+      "answer": [
+        "かくりつへんすう"
+      ],
+      "meaning": "stochastic variable, random variable"
+    },
+    {
+      "question": "帰国子女",
+      "answer": [
+        "きこくしじょ"
+      ],
+      "meaning": "child who has returned to his or her country, returnee; Kikokushijo"
+    },
+    {
+      "question": "危険率",
+      "answer": [
+        "きけんりつ"
+      ],
+      "meaning": "risk ratio, percentage of risk, hazard rate; significance level, level of significance"
+    },
+    {
+      "question": "眼振",
+      "answer": [
+        "がんしん"
+      ],
+      "meaning": "nystagmus (rapid involuntary eye movements)"
+    },
+    {
+      "question": "眼球",
+      "answer": [
+        "がんきゅう"
+      ],
+      "meaning": "eyeball"
+    },
+    {
+      "question": "関連痛",
+      "answer": [
+        "かんれんつう"
+      ],
+      "meaning": "referred pain; Referred pain"
+    },
+    {
+      "question": "環境",
+      "answer": [
+        "かんきょう"
+      ],
+      "meaning": "environment, circumstance"
+    },
+    {
+      "question": "感度",
+      "answer": [
+        "かんど"
+      ],
+      "meaning": "sensitivity (e.g. of a measuring instrument), reception (radio, TV, etc.); sensitivity (of film)"
+    },
+    {
+      "question": "感情障害",
+      "answer": [
+        "かんじょうしょうがい"
+      ],
+      "meaning": "emotional disorder"
+    },
+    {
+      "question": "可読性",
+      "answer": [
+        "かどくせい"
+      ],
+      "meaning": "readability, legibility; Readability"
+    },
+    {
+      "question": "感情移入",
+      "answer": [
+        "かんじょういにゅう"
+      ],
+      "meaning": "empathy"
+    },
+    {
+      "question": "感受性",
+      "answer": [
+        "かんじゅせい"
+      ],
+      "meaning": "sensitivity, susceptibility"
+    },
+    {
+      "question": "感覚論",
+      "answer": [
+        "かんかくろん"
+      ],
+      "meaning": "sensationalism"
+    },
+    {
+      "question": "感覚野",
+      "answer": [
+        "かんかくや"
+      ],
+      "meaning": "sensory area (of the cerebral cortex), sensorial area"
+    },
+    {
+      "question": "感覚点",
+      "answer": [
+        "かんかくてん"
+      ],
+      "meaning": "sense point"
+    },
+    {
+      "question": "感覚遮断",
+      "answer": [
+        "かんかくしゃだん"
+      ],
+      "meaning": "sensory deprivation; Sensory deprivation"
+    },
+    {
+      "question": "感覚器",
+      "answer": [
+        "かんかくき"
+      ],
+      "meaning": "sense organ; Sensory system"
+    },
+    {
+      "question": "感覚",
+      "answer": [
+        "かんかく"
+      ],
+      "meaning": "sense, sensation, feeling, intuition; Sense"
+    },
+    {
+      "question": "回想",
+      "answer": [
+        "かいそう"
+      ],
+      "meaning": "recollection, retrospection, reflection, reminiscence"
+    },
+    {
+      "question": "官能検査",
+      "answer": [
+        "かんのうけんさ"
+      ],
+      "meaning": "sensory evaluation; Sensory analysis"
+    },
+    {
+      "question": "葛藤",
+      "answer": [
+        "かっとう",
+        "つづらふじ"
+      ],
+      "meaning": "conflict, complication, troubles, discord; Chinese moonseed (Sinomenium acutum); complex inter-relationship (as in the struggle between two types of vine over one piece of land)"
+    },
+    {
+      "question": "学習理論",
+      "answer": [
+        "がくしゅうりろん"
+      ],
+      "meaning": "learning theory"
+    },
+    {
+      "question": "革新",
+      "answer": [
+        "かくしん"
+      ],
+      "meaning": "reform, innovation; Reform"
+    },
+    {
+      "question": "覚醒剤",
+      "answer": [
+        "かくせいざい"
+      ],
+      "meaning": "stimulant (e.g. psychoactive drugs like methamphetamine, ritalin, etc.); Stimulant"
+    },
+    {
+      "question": "確率分布",
+      "answer": [
+        "かくりつぶんぷ"
+      ],
+      "meaning": "probability distribution; Probability distribution"
+    },
+    {
+      "question": "回帰分析",
+      "answer": [
+        "かいきぶんせき"
+      ],
+      "meaning": "regression analysis; Regression analysis"
+    },
+    {
+      "question": "確率過程",
+      "answer": [
+        "かくりつかてい"
+      ],
+      "meaning": "stochastic process; Stochastic process"
+    },
+    {
+      "question": "拡大家族",
+      "answer": [
+        "かくだいかぞく"
+      ],
+      "meaning": "extended family"
+    },
+    {
+      "question": "拡張家族",
+      "answer": [
+        "かくちょうかぞく"
+      ],
+      "meaning": "extended family"
+    },
+    {
+      "question": "外傷体験",
+      "answer": [
+        "がいしょうたいけん"
+      ],
+      "meaning": "traumatic experience"
+    },
+    {
+      "question": "外向性",
+      "answer": [
+        "がいこうせい"
+      ],
+      "meaning": "extroversion"
+    },
+    {
+      "question": "階級",
+      "answer": [
+        "かいきゅう"
+      ],
+      "meaning": "(social) class; rank, grade"
+    },
+    {
+      "question": "界面",
+      "answer": [
+        "かいめん"
+      ],
+      "meaning": "interface; Interface (chemistry)"
+    },
+    {
+      "question": "改宗",
+      "answer": [
+        "かいしゅう"
+      ],
+      "meaning": "religious conversion; Religious conversion"
+    },
+    {
+      "question": "回帰",
+      "answer": [
+        "かいき"
+      ],
+      "meaning": "return (to), revolution, recurrence; regression"
+    },
+    {
+      "question": "過食症",
+      "answer": [
+        "かしょくしょう"
+      ],
+      "meaning": "binge eating, bulimarexia"
+    },
+    {
+      "question": "過誤",
+      "answer": [
+        "かご"
+      ],
+      "meaning": "mistake, fault"
+    },
+    {
+      "question": "課題",
+      "answer": [
+        "かだい"
+      ],
+      "meaning": "subject, theme, issue, matter; homework, assignment; task, challenge, problem, question"
+    },
+    {
+      "question": "科学的管理法",
+      "answer": [
+        "かがくてきかんりほう"
+      ],
+      "meaning": "scientific management; Scientific management"
+    },
+    {
+      "question": "科学革命",
+      "answer": [
+        "かがくかくめい"
+      ],
+      "meaning": "scientific revolution; Scientific revolution"
+    },
+    {
+      "question": "可逆性",
+      "answer": [
+        "かぎゃくせい"
+      ],
+      "meaning": "reversibility"
+    },
+    {
+      "question": "加齢",
+      "answer": [
+        "かれい"
+      ],
+      "meaning": "aging, ageing, adding to one's years"
+    },
+    {
+      "question": "加法混色",
+      "answer": [
+        "かほうこんしょく"
+      ],
+      "meaning": "additive mixture of colors, additive mixture of colours"
+    },
+    {
+      "question": "加重",
+      "answer": [
+        "かじゅう",
+        "かちょう"
+      ],
+      "meaning": "weighting (in averaging), aggravation"
+    },
+    {
+      "question": "価値",
+      "answer": [
+        "かち"
+      ],
+      "meaning": "value, worth, merit"
+    },
+    {
+      "question": "仮想現実",
+      "answer": [
+        "かそうげんじつ"
+      ],
+      "meaning": "VR, Virtual Reality"
+    },
+    {
+      "question": "仮説検定",
+      "answer": [
+        "かせつけんてい"
+      ],
+      "meaning": "hypothesis testing, hypothesis test; Statistical hypothesis testing"
+    },
+    {
+      "question": "下意識",
+      "answer": [
+        "かいしき"
+      ],
+      "meaning": "preconscious, unconscious, subconscious"
+    },
+    {
+      "question": "音節",
+      "answer": [
+        "おんせつ"
+      ],
+      "meaning": "syllable; Syllable"
+    },
+    {
+      "question": "音声認識",
+      "answer": [
+        "おんせいにんしき"
+      ],
+      "meaning": "voice recognition, speech recognition; Speech recognition"
+    },
+    {
+      "question": "音声合成",
+      "answer": [
+        "おんせいごうせい"
+      ],
+      "meaning": "speech synthesis, voice synthesis; Speech synthesis"
+    },
+    {
+      "question": "音声言語",
+      "answer": [
+        "おんせいげんご"
+      ],
+      "meaning": "spoken language; Spoken language"
+    },
+    {
+      "question": "音声",
+      "answer": [
+        "おんせい",
+        "おんじょう"
+      ],
+      "meaning": "voice, speech, sound of a voice; sound (e.g. of a TV); Speech"
+    },
+    {
+      "question": "音色",
+      "answer": [
+        "ねいろ",
+        "おんしょく"
+      ],
+      "meaning": "tone color, tone colour, tone quality, timbre; Timbre"
+    },
+    {
+      "question": "音色",
+      "answer": [
+        "ねいろ",
+        "おんしょく"
+      ],
+      "meaning": "tone color, tone colour, tone quality, timbre; Timbre"
+    },
+    {
+      "question": "音圧",
+      "answer": [
+        "おんあつ"
+      ],
+      "meaning": "sound pressure, acoustic pressure; Sound pressure"
+    },
+    {
+      "question": "音",
+      "answer": [
+        "おと",
+        "ね",
+        "おん"
+      ],
+      "meaning": "sound, noise, report; note; fame; Chinese-derived character reading; Sound"
+    },
+    {
+      "question": "温度感覚",
+      "answer": [
+        "おんどかんかく"
+      ],
+      "meaning": "temperature sense"
+    },
+    {
+      "question": "温覚",
+      "answer": [
+        "おんかく"
+      ],
+      "meaning": "sense of warmth"
+    },
+    {
+      "question": "厭世観",
+      "answer": [
+        "えんせいかん"
+      ],
+      "meaning": "pessimistic view of life, pessimism"
+    },
+    {
+      "question": "鋭敏性",
+      "answer": [
+        "えいびんせい"
+      ],
+      "meaning": "sensitivity"
+    },
+    {
+      "question": "隠喩",
+      "answer": [
+        "いんゆ"
+      ],
+      "meaning": "metaphor"
+    },
+    {
+      "question": "飲酒",
+      "answer": [
+        "いんしゅ"
+      ],
+      "meaning": "drinking alcohol (sake)"
+    },
+    {
+      "question": "育児語",
+      "answer": [
+        "いくじご"
+      ],
+      "meaning": "baby talk (used in talking to young children)"
+    },
+    {
+      "question": "遺伝子型",
+      "answer": [
+        "いでんしがた"
+      ],
+      "meaning": "genotype; Genotype"
+    },
+    {
+      "question": "移調",
+      "answer": [
+        "いちょう"
+      ],
+      "meaning": "transposition; Transposition (music)"
+    },
+    {
+      "question": "意味論",
+      "answer": [
+        "いみろん"
+      ],
+      "meaning": "semantics, the study of meaning; Semantics"
+    },
+    {
+      "question": "意味飽和",
+      "answer": [
+        "いみほうわ"
+      ],
+      "meaning": "semantic satiation"
+    },
+    {
+      "question": "意思",
+      "answer": [
+        "いし"
+      ],
+      "meaning": "intention, wish, purpose, mind (to do)"
+    },
+    {
+      "question": "意志",
+      "answer": [
+        "いし"
+      ],
+      "meaning": "will, volition, intention, intent, determination; Will (philosophy)"
+    },
+    {
+      "question": "意義素",
+      "answer": [
+        "いぎそ"
+      ],
+      "meaning": "sememe, semanteme, irreducible unit of meaning"
+    },
+    {
+      "question": "依存症",
+      "answer": [
+        "いぞんしょう",
+        "いそんしょう"
+      ],
+      "meaning": "dependence (on alcohol, drugs, etc.); Addiction"
+    },
+    {
+      "question": "暗黙知",
+      "answer": [
+        "あんもくち"
+      ],
+      "meaning": "tacit knowledge (knowledge management terminology); Tacit knowledge"
+    },
+    {
+      "question": "暗示",
+      "answer": [
+        "あんじ"
+      ],
+      "meaning": "hint, suggestion; Suggestion"
+    },
+    {
+      "question": "圧覚",
+      "answer": [
+        "あっかく"
+      ],
+      "meaning": "sense of pressure"
+    }
+  ]
+}
