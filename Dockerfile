@@ -14,9 +14,12 @@ RUN npm ci
 
 COPY ./src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./src/common/mongo_connect.js ./src/common/mongo_connect.js
+COPY ./resources/dictionaries ./resources/dictionaries
 COPY ./src/build ./src/build
+RUN service mongodb start && npm run buildpronunciation && npm run buildshiritori
+
 COPY ./resources ./resources
-RUN service mongodb start && npm run buildall
+RUN npm run buildquiz
 
 RUN mkdir latest_log data
 
