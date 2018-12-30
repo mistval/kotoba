@@ -14,7 +14,7 @@ const categoryFields = [
   {name: '用語 Decks', value: 'pasokon rikagaku igaku shinrigaku keizai houritsu kenchiku animals birds bugs fish plants vegetables'},
   {name: 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures countries'},
   {name: 'Japanese Station Name Decks', value: 'stations_full stations_tokyo stations_osaka stations_hokaido stations_nagoya (say **<prefix>quiz stations** to see the full list)'},
-  {name: 'Japanese Misc. Decks', value: 'hiragana katakana kirakira sao jptrivia common numbers hard haard insane yojijukugo kokuji onomato 擬音語 ranobe radicals kklc jouyou images jpdefs'},
+  {name: 'Japanese Misc. Decks', value: 'hiragana katakana kirakira sao jptrivia common numbers k33 hard haard insane yojijukugo kokuji onomato 擬音語 ranobe radicals kklc jouyou images jpdefs'},
   {name: 'Japanese Word Meaning Decks', value: 'N5m N4m N3m N2m N1m 10km 9km 8km 7km 6km 5km 4km 3km j2km 2km j1km 1km animalsm birdsm bugsm fishm plantsm vegetablesm hardm haardm commonm kokujim kklcm'},
   {name: 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams3 anagrams4 anagrams5 (up to anagrams10)\nejtrans'},
   {name: 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
