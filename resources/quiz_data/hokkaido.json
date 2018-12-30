@@ -359,27 +359,6 @@
       "meaning": "Ainosatosanjou"
     },
     {
-      "question": "北十二条西",
-      "answer": [
-        "きたじゅうにじょうにし"
-      ],
-      "meaning": "Kitajuunijounishi"
-    },
-    {
-      "question": "北十六条西",
-      "answer": [
-        "きたじゅうろくじょうにし"
-      ],
-      "meaning": "Kitajuurokujounishi"
-    },
-    {
-      "question": "北十八条西",
-      "answer": [
-        "きたじゅうはちじょうにし"
-      ],
-      "meaning": "Kitajuuhachijounishi"
-    },
-    {
       "question": "北二十一条西",
       "answer": [
         "きたにじゅういちじょうにし"
@@ -497,20 +476,6 @@
         "きたよんじゅうじょうにし"
       ],
       "meaning": "Kitayonjuujounishi"
-    },
-    {
-      "question": "北八条西",
-      "answer": [
-        "きたはちじょうにし"
-      ],
-      "meaning": "Kitahachijounishi"
-    },
-    {
-      "question": "北九条西",
-      "answer": [
-        "きたくじょうにし"
-      ],
-      "meaning": "Kitakujounishi"
     },
     {
       "question": "篠路十条",
@@ -1654,13 +1619,6 @@
       "meaning": "Nangoudoori"
     },
     {
-      "question": "南郷通",
-      "answer": [
-        "なんごうどおり"
-      ],
-      "meaning": "Nangoudoori"
-    },
-    {
       "question": "東札幌一条",
       "answer": [
         "ひがしさっぽろいちじょう"
@@ -1701,20 +1659,6 @@
         "へいわどおり"
       ],
       "meaning": "Heiwadoori"
-    },
-    {
-      "question": "平和通",
-      "answer": [
-        "へいわどおり"
-      ],
-      "meaning": "Heiwadoori"
-    },
-    {
-      "question": "本郷通",
-      "answer": [
-        "ほんごうどおり"
-      ],
-      "meaning": "Hongoudoori"
     },
     {
       "question": "本郷通",
@@ -4447,25 +4391,11 @@
       "meaning": "Tokiwachou"
     },
     {
-      "question": "豊川町 (ちょう)",
-      "answer": [
-        "とよかわちょう"
-      ],
-      "meaning": "Toyokawachou"
-    },
-    {
       "question": "のぞみ町 (ちょう)",
       "answer": [
         "のぞみちょう"
       ],
       "meaning": "Nozomichou"
-    },
-    {
-      "question": "船見町 (ちょう)",
-      "answer": [
-        "ふなみちょう"
-      ],
-      "meaning": "Funamichou"
     },
     {
       "question": "見山町 (ちょう)",
@@ -4529,13 +4459,6 @@
         "えともちょう"
       ],
       "meaning": "Etomochou"
-    },
-    {
-      "question": "海岸町 (ちょう)",
-      "answer": [
-        "かいがんちょう"
-      ],
-      "meaning": "Kaiganchou"
     },
     {
       "question": "港北町 (ちょう)",
@@ -4741,13 +4664,6 @@
       "meaning": "Kujouhigashi"
     },
     {
-      "question": "北三条西",
-      "answer": [
-        "きたさんじょうにし"
-      ],
-      "meaning": "Kitasanjounishi"
-    },
-    {
       "question": "北本町東",
       "answer": [
         "きたほんちょうひがし"
@@ -4816,34 +4732,6 @@
         "ひのでみなみ"
       ],
       "meaning": "Hinodeminami"
-    },
-    {
-      "question": "美園一条",
-      "answer": [
-        "みそのいちじょう"
-      ],
-      "meaning": "Misonoichijou"
-    },
-    {
-      "question": "美園二条",
-      "answer": [
-        "みそのにじょう"
-      ],
-      "meaning": "Misononijou"
-    },
-    {
-      "question": "美園三条",
-      "answer": [
-        "みそのさんじょう"
-      ],
-      "meaning": "Misonosanjou"
-    },
-    {
-      "question": "美園五条",
-      "answer": [
-        "みそのごじょう"
-      ],
-      "meaning": "Misonogojou"
     },
     {
       "question": "緑が丘",
@@ -5028,13 +4916,6 @@
       "meaning": "Ashibetsu (city)"
     },
     {
-      "question": "北一条東",
-      "answer": [
-        "きたいちじょうひがし"
-      ],
-      "meaning": "Kitaichijouhigashi"
-    },
-    {
       "question": "三笠市",
       "answer": [
         "みかさし"
@@ -5112,13 +4993,6 @@
       "meaning": "Sorachibutohigashisanjou"
     },
     {
-      "question": "西三条南",
-      "answer": [
-        "にしさんじょうみなみ"
-      ],
-      "meaning": "Nishisanjouminami"
-    },
-    {
       "question": "西五条南",
       "answer": [
         "にしごじょうみなみ"
@@ -5131,13 +5005,6 @@
         "ひがしにじょうきた"
       ],
       "meaning": "Higashinijoukita"
-    },
-    {
-      "question": "東三条南",
-      "answer": [
-        "ひがしさんじょうみなみ"
-      ],
-      "meaning": "Higashisanjouminami"
     },
     {
       "question": "吉野一条南",
@@ -5231,48 +5098,6 @@
       "meaning": "Nijoudoori"
     },
     {
-      "question": "二条西",
-      "answer": [
-        "にじょうにし"
-      ],
-      "meaning": "Nijounishi"
-    },
-    {
-      "question": "三条西",
-      "answer": [
-        "さんじょうにし"
-      ],
-      "meaning": "Sanjounishi"
-    },
-    {
-      "question": "五条西",
-      "answer": [
-        "ごじょうにし"
-      ],
-      "meaning": "Gojounishi"
-    },
-    {
-      "question": "六条西",
-      "answer": [
-        "ろくじょうにし"
-      ],
-      "meaning": "Rokujounishi"
-    },
-    {
-      "question": "八条西",
-      "answer": [
-        "はちじょうにし"
-      ],
-      "meaning": "Hachijounishi"
-    },
-    {
-      "question": "九条西",
-      "answer": [
-        "くじょうにし"
-      ],
-      "meaning": "Kujounishi"
-    },
-    {
       "question": "秋月一条",
       "answer": [
         "あきつきいちじょう"
@@ -5285,20 +5110,6 @@
         "あきつきさんじょう"
       ],
       "meaning": "Akitsukisanjou"
-    },
-    {
-      "question": "曙一条",
-      "answer": [
-        "あけぼのいちじょう"
-      ],
-      "meaning": "Akebonoichijou"
-    },
-    {
-      "question": "曙三条",
-      "answer": [
-        "あけぼのさんじょう"
-      ],
-      "meaning": "Akebonosanjou"
     },
     {
       "question": "曙北二条",
@@ -6183,13 +5994,6 @@
       "meaning": "Nishisanjou"
     },
     {
-      "question": "東二条北",
-      "answer": [
-        "ひがしにじょうきた"
-      ],
-      "meaning": "Higashinijoukita"
-    },
-    {
       "question": "名寄市",
       "answer": [
         "なよろし"
@@ -6232,13 +6036,6 @@
       "meaning": "Nishijuunijouminami"
     },
     {
-      "question": "西一条南",
-      "answer": [
-        "にしいちじょうみなみ"
-      ],
-      "meaning": "Nishiichijouminami"
-    },
-    {
       "question": "西三条北",
       "answer": [
         "にしさんじょうきた"
@@ -6258,13 +6055,6 @@
         "にしくじょうきた"
       ],
       "meaning": "Nishikujoukita"
-    },
-    {
-      "question": "東一条北",
-      "answer": [
-        "ひがしいちじょうきた"
-      ],
-      "meaning": "Higashiichijoukita"
     },
     {
       "question": "東一条南",
@@ -6321,13 +6111,6 @@
         "きたのひがしさんじょう"
       ],
       "meaning": "Kitanohigashisanjou"
-    },
-    {
-      "question": "南一条",
-      "answer": [
-        "みなみいちじょう"
-      ],
-      "meaning": "Minamiichijou"
     },
     {
       "question": "上川郡東神楽町 (ちょう)",
@@ -6393,55 +6176,6 @@
       "meaning": "Kitami (city)"
     },
     {
-      "question": "花月町 (ちょう)",
-      "answer": [
-        "かげつちょう"
-      ],
-      "meaning": "Kagetsuchou"
-    },
-    {
-      "question": "川沿町 (ちょう)",
-      "answer": [
-        "かわぞえちょう"
-      ],
-      "meaning": "Kawazoechou"
-    },
-    {
-      "question": "北十条東",
-      "answer": [
-        "きたじゅうじょうひがし"
-      ],
-      "meaning": "Kitajuujouhigashi"
-    },
-    {
-      "question": "北一条東",
-      "answer": [
-        "きたいちじょうひがし"
-      ],
-      "meaning": "Kitaichijouhigashi"
-    },
-    {
-      "question": "北二条東",
-      "answer": [
-        "きたにじょうひがし"
-      ],
-      "meaning": "Kitanijouhigashi"
-    },
-    {
-      "question": "北三条西",
-      "answer": [
-        "きたさんじょうにし"
-      ],
-      "meaning": "Kitasanjounishi"
-    },
-    {
-      "question": "北三条東",
-      "answer": [
-        "きたさんじょうひがし"
-      ],
-      "meaning": "Kitasanjouhigashi"
-    },
-    {
       "question": "高栄西町 (まち)",
       "answer": [
         "こうえいにしまち"
@@ -6475,13 +6209,6 @@
         "こうめいちょう"
       ],
       "meaning": "Koumeichou"
-    },
-    {
-      "question": "春光町 (ちょう)",
-      "answer": [
-        "しゅんこうちょう"
-      ],
-      "meaning": "Shunkouchou"
     },
     {
       "question": "清月町 (ちょう)",
@@ -6526,13 +6253,6 @@
       "meaning": "Nishitomichou"
     },
     {
-      "question": "柏陽町 (ちょう)",
-      "answer": [
-        "はくようちょう"
-      ],
-      "meaning": "Hakuyouchou"
-    },
-    {
       "question": "東相内町 (ちょう)",
       "answer": [
         "ひがしあいのないちょう"
@@ -6568,13 +6288,6 @@
       "meaning": "Misumichou"
     },
     {
-      "question": "緑ケ丘",
-      "answer": [
-        "みどりがおか"
-      ],
-      "meaning": "Midorigaoka"
-    },
-    {
       "question": "南仲町 (まち)",
       "answer": [
         "みなみなかまち"
@@ -6603,34 +6316,6 @@
       "meaning": "Abashiri (city)"
     },
     {
-      "question": "北十二条東",
-      "answer": [
-        "きたじゅうにじょうひがし"
-      ],
-      "meaning": "Kitajuunijouhigashi"
-    },
-    {
-      "question": "北一条東",
-      "answer": [
-        "きたいちじょうひがし"
-      ],
-      "meaning": "Kitaichijouhigashi"
-    },
-    {
-      "question": "北三条西",
-      "answer": [
-        "きたさんじょうにし"
-      ],
-      "meaning": "Kitasanjounishi"
-    },
-    {
-      "question": "北八条西",
-      "answer": [
-        "きたはちじょうにし"
-      ],
-      "meaning": "Kitahachijounishi"
-    },
-    {
       "question": "駒場北",
       "answer": [
         "こまばきた"
@@ -6650,41 +6335,6 @@
         "だいまち"
       ],
       "meaning": "Daimachi"
-    },
-    {
-      "question": "南十条西",
-      "answer": [
-        "みなみじゅうじょうにし"
-      ],
-      "meaning": "Minamijuujounishi"
-    },
-    {
-      "question": "南十一条西",
-      "answer": [
-        "みなみじゅういちじょうにし"
-      ],
-      "meaning": "Minamijuuichijounishi"
-    },
-    {
-      "question": "南五条西",
-      "answer": [
-        "みなみごじょうにし"
-      ],
-      "meaning": "Minamigojounishi"
-    },
-    {
-      "question": "南六条西",
-      "answer": [
-        "みなみろくじょうにし"
-      ],
-      "meaning": "Minamirokujounishi"
-    },
-    {
-      "question": "南六条東",
-      "answer": [
-        "みなみろくじょうひがし"
-      ],
-      "meaning": "Minamirokujouhigashi"
     },
     {
       "question": "南八条東",
@@ -6736,20 +6386,6 @@
       "meaning": "Inadachouhigashi"
     },
     {
-      "question": "大通北",
-      "answer": [
-        "おおどおりきた"
-      ],
-      "meaning": "Oodoorikita"
-    },
-    {
-      "question": "大通南",
-      "answer": [
-        "おおどおりみなみ"
-      ],
-      "meaning": "Oodooriminami"
-    },
-    {
       "question": "公園東町 (まち)",
       "answer": [
         "こうえんひがしまち"
@@ -6792,13 +6428,6 @@
       "meaning": "Nishijuujoukita"
     },
     {
-      "question": "西十条南",
-      "answer": [
-        "にしじゅうじょうみなみ"
-      ],
-      "meaning": "Nishijuujouminami"
-    },
-    {
       "question": "西十一条北",
       "answer": [
         "にしじゅういちじょうきた"
@@ -6811,20 +6440,6 @@
         "にしじゅういちじょうみなみ"
       ],
       "meaning": "Nishijuuichijouminami"
-    },
-    {
-      "question": "西十二条北",
-      "answer": [
-        "にしじゅうにじょうきた"
-      ],
-      "meaning": "Nishijuunijoukita"
-    },
-    {
-      "question": "西十二条南",
-      "answer": [
-        "にしじゅうにじょうみなみ"
-      ],
-      "meaning": "Nishijuunijouminami"
     },
     {
       "question": "西十三条北",
@@ -6904,13 +6519,6 @@
       "meaning": "Nishijuukujouminami"
     },
     {
-      "question": "西一条南",
-      "answer": [
-        "にしいちじょうみなみ"
-      ],
-      "meaning": "Nishiichijouminami"
-    },
-    {
       "question": "西二十条南",
       "answer": [
         "にしにじゅうじょうみなみ"
@@ -6960,34 +6568,6 @@
       "meaning": "Nishinijouminami"
     },
     {
-      "question": "西三条北",
-      "answer": [
-        "にしさんじょうきた"
-      ],
-      "meaning": "Nishisanjoukita"
-    },
-    {
-      "question": "西三条南",
-      "answer": [
-        "にしさんじょうみなみ"
-      ],
-      "meaning": "Nishisanjouminami"
-    },
-    {
-      "question": "西五条北",
-      "answer": [
-        "にしごじょうきた"
-      ],
-      "meaning": "Nishigojoukita"
-    },
-    {
-      "question": "西五条南",
-      "answer": [
-        "にしごじょうみなみ"
-      ],
-      "meaning": "Nishigojouminami"
-    },
-    {
       "question": "西六条北",
       "answer": [
         "にしろくじょうきた"
@@ -7014,13 +6594,6 @@
         "にしはちじょうみなみ"
       ],
       "meaning": "Nishihachijouminami"
-    },
-    {
-      "question": "西九条北",
-      "answer": [
-        "にしくじょうきた"
-      ],
-      "meaning": "Nishikujoukita"
     },
     {
       "question": "西九条南",
@@ -7079,27 +6652,6 @@
       "meaning": "Higashijuuyonjouminami"
     },
     {
-      "question": "東一条南",
-      "answer": [
-        "ひがしいちじょうみなみ"
-      ],
-      "meaning": "Higashiichijouminami"
-    },
-    {
-      "question": "東二条南",
-      "answer": [
-        "ひがしにじょうみなみ"
-      ],
-      "meaning": "Higashinijouminami"
-    },
-    {
-      "question": "東三条南",
-      "answer": [
-        "ひがしさんじょうみなみ"
-      ],
-      "meaning": "Higashisanjouminami"
-    },
-    {
       "question": "東五条南",
       "answer": [
         "ひがしごじょうみなみ"
@@ -7126,13 +6678,6 @@
         "ひがしくじょうみなみ"
       ],
       "meaning": "Higashikujouminami"
-    },
-    {
-      "question": "緑ケ丘",
-      "answer": [
-        "みどりがおか"
-      ],
-      "meaning": "Midorigaoka"
     },
     {
       "question": "緑ケ丘一条通",
@@ -7373,20 +6918,6 @@
       "meaning": "Kamikawagunshintokuchou"
     },
     {
-      "question": "西一条南",
-      "answer": [
-        "にしいちじょうみなみ"
-      ],
-      "meaning": "Nishiichijouminami"
-    },
-    {
-      "question": "西三条南",
-      "answer": [
-        "にしさんじょうみなみ"
-      ],
-      "meaning": "Nishisanjouminami"
-    },
-    {
       "question": "上川郡清水町 (ちょう)",
       "answer": [
         "かみかわぐんしみずちょう"
@@ -7399,13 +6930,6 @@
         "みかげひがしいちじょう"
       ],
       "meaning": "Mikagehigashiichijou"
-    },
-    {
-      "question": "南一条",
-      "answer": [
-        "みなみいちじょう"
-      ],
-      "meaning": "Minamiichijou"
     },
     {
       "question": "南九条",
@@ -7429,13 +6953,6 @@
       "meaning": "Nishinijou"
     },
     {
-      "question": "西三条南",
-      "answer": [
-        "にしさんじょうみなみ"
-      ],
-      "meaning": "Nishisanjouminami"
-    },
-    {
       "question": "西五条",
       "answer": [
         "にしごじょう"
@@ -7450,88 +6967,11 @@
       "meaning": "Higashijuuichijou"
     },
     {
-      "question": "東一条",
-      "answer": [
-        "ひがしいちじょう"
-      ],
-      "meaning": "Higashiichijou"
-    },
-    {
-      "question": "東一条南",
-      "answer": [
-        "ひがしいちじょうみなみ"
-      ],
-      "meaning": "Higashiichijouminami"
-    },
-    {
-      "question": "東二条",
-      "answer": [
-        "ひがしにじょう"
-      ],
-      "meaning": "Higashinijou"
-    },
-    {
-      "question": "東二条南",
-      "answer": [
-        "ひがしにじょうみなみ"
-      ],
-      "meaning": "Higashinijouminami"
-    },
-    {
-      "question": "東三条",
-      "answer": [
-        "ひがしさんじょう"
-      ],
-      "meaning": "Higashisanjou"
-    },
-    {
-      "question": "東三条南",
-      "answer": [
-        "ひがしさんじょうみなみ"
-      ],
-      "meaning": "Higashisanjouminami"
-    },
-    {
-      "question": "東五条",
-      "answer": [
-        "ひがしごじょう"
-      ],
-      "meaning": "Higashigojou"
-    },
-    {
-      "question": "東六条",
-      "answer": [
-        "ひがしろくじょう"
-      ],
-      "meaning": "Higashirokujou"
-    },
-    {
-      "question": "東八条",
-      "answer": [
-        "ひがしはちじょう"
-      ],
-      "meaning": "Higashihachijou"
-    },
-    {
       "question": "河西郡中札内村",
       "answer": [
         "かさいぐんなかさつないむら"
       ],
       "meaning": "Kasaigunnakasatsunaimura"
-    },
-    {
-      "question": "東一条北",
-      "answer": [
-        "ひがしいちじょうきた"
-      ],
-      "meaning": "Higashiichijoukita"
-    },
-    {
-      "question": "東三条北",
-      "answer": [
-        "ひがしさんじょうきた"
-      ],
-      "meaning": "Higashisanjoukita"
     },
     {
       "question": "河西郡更別村",
@@ -7912,13 +7352,6 @@
       "meaning": "Tottoriminami"
     },
     {
-      "question": "豊川町 (ちょう)",
-      "answer": [
-        "とよかわちょう"
-      ],
-      "meaning": "Toyokawachou"
-    },
-    {
       "question": "仲浜町 (ちょう)",
       "answer": [
         "なかはまちょう"
@@ -8031,13 +7464,6 @@
       "meaning": "Nishishoronishiichijoukita"
     },
     {
-      "question": "東一条南",
-      "answer": [
-        "ひがしいちじょうみなみ"
-      ],
-      "meaning": "Higashiichijouminami"
-    },
-    {
       "question": "留萌市",
       "answer": [
         "るもいし"
@@ -8064,13 +7490,6 @@
         "かいうんちょう"
       ],
       "meaning": "Kaiunchou"
-    },
-    {
-      "question": "見晴町 (ちょう)",
-      "answer": [
-        "みはらしちょう"
-      ],
-      "meaning": "Miharashichou"
     }
   ]
 }

@@ -625,13 +625,6 @@
       "meaning": "Yokohamashinakaku"
     },
     {
-      "question": "赤門町 (ちょう)",
-      "answer": [
-        "あかもんちょう"
-      ],
-      "meaning": "Akamonchou"
-    },
-    {
       "question": "伊勢佐木町 (ちょう)",
       "answer": [
         "いせざきちょう"
@@ -735,13 +728,6 @@
         "はつねちょう"
       ],
       "meaning": "Hatsunechou"
-    },
-    {
-      "question": "花咲町 (ちょう)",
-      "answer": [
-        "はなさきちょう"
-      ],
-      "meaning": "Hanasakichou"
     },
     {
       "question": "英町 (ちょう)",
@@ -2823,13 +2809,6 @@
       "meaning": "Daishihonchou"
     },
     {
-      "question": "台町 (まち)",
-      "answer": [
-        "だいまち"
-      ],
-      "meaning": "Daimachi"
-    },
-    {
       "question": "出来野",
       "answer": [
         "できの"
@@ -3782,13 +3761,6 @@
       "meaning": "Sagamidai"
     },
     {
-      "question": "桜台",
-      "answer": [
-        "さくらだい"
-      ],
-      "meaning": "Sakuradai"
-    },
-    {
       "question": "下溝",
       "answer": [
         "しもみぞ"
@@ -3836,13 +3808,6 @@
         "ぶんきょう"
       ],
       "meaning": "Bunkyou"
-    },
-    {
-      "question": "南台",
-      "answer": [
-        "みなみだい"
-      ],
-      "meaning": "Minamidai"
     },
     {
       "question": "若松",
@@ -3936,13 +3901,6 @@
       "meaning": "Oppamaminamichou"
     },
     {
-      "question": "鴨居",
-      "answer": [
-        "かもい"
-      ],
-      "meaning": "Kamoi"
-    },
-    {
       "question": "衣笠栄町 (ちょう)",
       "answer": [
         "きぬかささかえちょう"
@@ -3976,13 +3934,6 @@
         "くりはま"
       ],
       "meaning": "Kurihama"
-    },
-    {
-      "question": "汐入町 (ちょう)",
-      "answer": [
-        "しおいりちょう"
-      ],
-      "meaning": "Shioirichou"
     },
     {
       "question": "汐見台",
@@ -4200,13 +4151,6 @@
         "こなべしま"
       ],
       "meaning": "Konabeshima"
-    },
-    {
-      "question": "桜ケ丘",
-      "answer": [
-        "さくらがおか"
-      ],
-      "meaning": "Sakuragaoka"
     },
     {
       "question": "四之宮",
@@ -5119,13 +5063,6 @@
       "meaning": "Hadano (city)"
     },
     {
-      "question": "今泉台",
-      "answer": [
-        "いまいずみだい"
-      ],
-      "meaning": "Imaizumidai"
-    },
-    {
       "question": "上今川町 (ちょう)",
       "answer": [
         "かみいまがわちょう"
@@ -5609,25 +5546,11 @@
       "meaning": "Koinaba"
     },
     {
-      "question": "桜台",
-      "answer": [
-        "さくらだい"
-      ],
-      "meaning": "Sakuradai"
-    },
-    {
       "question": "三ノ宮",
       "answer": [
         "さんのみや"
       ],
       "meaning": "Sannomiya"
-    },
-    {
-      "question": "下落合",
-      "answer": [
-        "しもおちあい"
-      ],
-      "meaning": "Shimoochiai"
     },
     {
       "question": "下糟屋",
@@ -5805,20 +5728,6 @@
       "meaning": "Shindenjuku"
     },
     {
-      "question": "相武台",
-      "answer": [
-        "そうぶだい"
-      ],
-      "meaning": "Soubudai"
-    },
-    {
-      "question": "立野台",
-      "answer": [
-        "たつのだい"
-      ],
-      "meaning": "Tatsunodai"
-    },
-    {
       "question": "西栗原",
       "answer": [
         "にしくりはら"
@@ -5826,25 +5735,11 @@
       "meaning": "Nishikurihara"
     },
     {
-      "question": "ひばりが丘",
-      "answer": [
-        "ひばりがおか"
-      ],
-      "meaning": "Hibarigaoka"
-    },
-    {
       "question": "広野台",
       "answer": [
         "ひろのだい"
       ],
       "meaning": "Hironodai"
-    },
-    {
-      "question": "緑ケ丘",
-      "answer": [
-        "みどりがおか"
-      ],
-      "meaning": "Midorigaoka"
     },
     {
       "question": "南栗原",
@@ -5957,13 +5852,6 @@
         "てらおきた"
       ],
       "meaning": "Teraokita"
-    },
-    {
-      "question": "寺尾台",
-      "answer": [
-        "てらおだい"
-      ],
-      "meaning": "Teraodai"
     },
     {
       "question": "寺尾中",
