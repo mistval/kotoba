@@ -1,0 +1,397 @@
+{
+  "uniqueId": "okinawa",
+  "name": "Okinawa Place Name Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below Okinawa place name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "English",
+  "description": "Okinawa place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
+  "cards": [
+    {
+      "question": "那覇市",
+      "answer": [
+        "なはし"
+      ],
+      "meaning": "Nahashi"
+    },
+    {
+      "question": "安謝",
+      "answer": [
+        "あじゃ"
+      ],
+      "meaning": "Aja"
+    },
+    {
+      "question": "上之屋",
+      "answer": [
+        "うえのや"
+      ],
+      "meaning": "Uenoya"
+    },
+    {
+      "question": "具志",
+      "answer": [
+        "ぐし"
+      ],
+      "meaning": "Gushi"
+    },
+    {
+      "question": "識名",
+      "answer": [
+        "しきな"
+      ],
+      "meaning": "Shikina"
+    },
+    {
+      "question": "首里赤田町 (ちょう)",
+      "answer": [
+        "しゅりあかたちょう"
+      ],
+      "meaning": "Shuriakatachou"
+    },
+    {
+      "question": "首里赤平町 (ちょう)",
+      "answer": [
+        "しゅりあかひらちょう"
+      ],
+      "meaning": "Shuriakahirachou"
+    },
+    {
+      "question": "首里石嶺町 (ちょう)",
+      "answer": [
+        "しゅりいしみねちょう"
+      ],
+      "meaning": "Shuriishiminechou"
+    },
+    {
+      "question": "首里大名町 (ちょう)",
+      "answer": [
+        "しゅりおおなちょう"
+      ],
+      "meaning": "Shurioonachou"
+    },
+    {
+      "question": "首里金城町 (ちょう)",
+      "answer": [
+        "しゅりきんじょうちょう"
+      ],
+      "meaning": "Shurikinjouchou"
+    },
+    {
+      "question": "首里儀保町 (ちょう)",
+      "answer": [
+        "しゅりぎぼちょう"
+      ],
+      "meaning": "Shurigibochou"
+    },
+    {
+      "question": "首里崎山町 (ちょう)",
+      "answer": [
+        "しゅりさきやまちょう"
+      ],
+      "meaning": "Shurisakiyamachou"
+    },
+    {
+      "question": "首里寒川町 (ちょう)",
+      "answer": [
+        "しゅりさむかわちょう"
+      ],
+      "meaning": "Shurisamukawachou"
+    },
+    {
+      "question": "首里末吉町 (ちょう)",
+      "answer": [
+        "しゅりすえよしちょう"
+      ],
+      "meaning": "Shurisueyoshichou"
+    },
+    {
+      "question": "首里汀良町 (ちょう)",
+      "answer": [
+        "しゅりてらちょう"
+      ],
+      "meaning": "Shuriterachou"
+    },
+    {
+      "question": "首里鳥堀町 (ちょう)",
+      "answer": [
+        "しゅりとりほりちょう"
+      ],
+      "meaning": "Shuritorihorichou"
+    },
+    {
+      "question": "首里真和志町 (ちょう)",
+      "answer": [
+        "しゅりまわしちょう"
+      ],
+      "meaning": "Shurimawashichou"
+    },
+    {
+      "question": "首里山川町 (ちょう)",
+      "answer": [
+        "しゅりやまがわちょう"
+      ],
+      "meaning": "Shuriyamagawachou"
+    },
+    {
+      "question": "楚辺",
+      "answer": [
+        "そべ"
+      ],
+      "meaning": "Sobe"
+    },
+    {
+      "question": "壺屋",
+      "answer": [
+        "つぼや"
+      ],
+      "meaning": "Tsuboya"
+    },
+    {
+      "question": "繁多川",
+      "answer": [
+        "はんたがわ"
+      ],
+      "meaning": "Hantagawa"
+    },
+    {
+      "question": "真嘉比",
+      "answer": [
+        "まかび"
+      ],
+      "meaning": "Makabi"
+    },
+    {
+      "question": "糸満市",
+      "answer": [
+        "いとまんし"
+      ],
+      "meaning": "Itoman (city)"
+    },
+    {
+      "question": "潮崎町 (ちょう)",
+      "answer": [
+        "しおざきちょう"
+      ],
+      "meaning": "Shiozakichou"
+    },
+    {
+      "question": "佐敷",
+      "answer": [
+        "さしき"
+      ],
+      "meaning": "Sashiki"
+    },
+    {
+      "question": "島尻郡与那原町 (ちょう)",
+      "answer": [
+        "しまじりぐんよなばるちょう"
+      ],
+      "meaning": "Shimajirigun'yonabaruchou"
+    },
+    {
+      "question": "島尻郡南風原町 (ちょう)",
+      "answer": [
+        "しまじりぐんはえばるちょう"
+      ],
+      "meaning": "Shimajirigunhaebaruchou"
+    },
+    {
+      "question": "宜野湾市",
+      "answer": [
+        "ぎのわんし"
+      ],
+      "meaning": "Ginowan (city)"
+    },
+    {
+      "question": "赤道",
+      "answer": [
+        "あかみち"
+      ],
+      "meaning": "Akamichi"
+    },
+    {
+      "question": "宜野湾",
+      "answer": [
+        "ぎのわん"
+      ],
+      "meaning": "Ginowan"
+    },
+    {
+      "question": "志真志",
+      "answer": [
+        "しまし"
+      ],
+      "meaning": "Shimashi"
+    },
+    {
+      "question": "野嵩",
+      "answer": [
+        "のだけ"
+      ],
+      "meaning": "Nodake"
+    },
+    {
+      "question": "真栄原",
+      "answer": [
+        "まえはら"
+      ],
+      "meaning": "Maehara"
+    },
+    {
+      "question": "真志喜",
+      "answer": [
+        "ましき"
+      ],
+      "meaning": "Mashiki"
+    },
+    {
+      "question": "浦添市",
+      "answer": [
+        "うらそえし"
+      ],
+      "meaning": "Urasoe (city)"
+    },
+    {
+      "question": "安波茶",
+      "answer": [
+        "あはちゃ"
+      ],
+      "meaning": "Ahacha"
+    },
+    {
+      "question": "伊祖",
+      "answer": [
+        "いそ"
+      ],
+      "meaning": "Iso"
+    },
+    {
+      "question": "仲西",
+      "answer": [
+        "なかにし"
+      ],
+      "meaning": "Nakanishi"
+    },
+    {
+      "question": "牧港",
+      "answer": [
+        "まきみなと"
+      ],
+      "meaning": "Makiminato"
+    },
+    {
+      "question": "屋富祖",
+      "answer": [
+        "やふそ"
+      ],
+      "meaning": "Yafuso"
+    },
+    {
+      "question": "沖縄市",
+      "answer": [
+        "おきなわし"
+      ],
+      "meaning": "Okinawa (city)"
+    },
+    {
+      "question": "泡瀬",
+      "answer": [
+        "あわせ"
+      ],
+      "meaning": "Awase"
+    },
+    {
+      "question": "嘉間良",
+      "answer": [
+        "かまら"
+      ],
+      "meaning": "Kamara"
+    },
+    {
+      "question": "越来",
+      "answer": [
+        "ごえく"
+      ],
+      "meaning": "Goeku"
+    },
+    {
+      "question": "城前町 (ちょう)",
+      "answer": [
+        "しろまえちょう"
+      ],
+      "meaning": "Shiromaechou"
+    },
+    {
+      "question": "南桃原",
+      "answer": [
+        "みなみとうばる"
+      ],
+      "meaning": "Minamitoubaru"
+    },
+    {
+      "question": "室川",
+      "answer": [
+        "むろかわ"
+      ],
+      "meaning": "Murokawa"
+    },
+    {
+      "question": "喜仲",
+      "answer": [
+        "きなか"
+      ],
+      "meaning": "Kinaka"
+    },
+    {
+      "question": "中頭郡読谷村",
+      "answer": [
+        "なかがみぐんよみたんそん"
+      ],
+      "meaning": "Nakagamigun'yomitanson"
+    },
+    {
+      "question": "中頭郡北谷町 (ちょう)",
+      "answer": [
+        "なかがみぐんちゃたんちょう"
+      ],
+      "meaning": "Nakagamigunchatanchou"
+    },
+    {
+      "question": "中頭郡北中城村",
+      "answer": [
+        "なかがみぐんきたなかぐすくそん"
+      ],
+      "meaning": "Nakagamigunkitanakagusukuson"
+    },
+    {
+      "question": "中頭郡中城村",
+      "answer": [
+        "なかがみぐんなかぐすくそん"
+      ],
+      "meaning": "Nakagamigunnakagusukuson"
+    },
+    {
+      "question": "中頭郡西原町 (ちょう)",
+      "answer": [
+        "なかがみぐんにしはらちょう"
+      ],
+      "meaning": "Nakagamigunnishiharachou"
+    },
+    {
+      "question": "名護市",
+      "answer": [
+        "なごし"
+      ],
+      "meaning": "Nago (city)"
+    }
+  ]
+}
