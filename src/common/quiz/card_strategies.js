@@ -84,6 +84,7 @@ module.exports.CreateDictionaryLinkStrategy = {
   JISHO_ANSWER_WORD: card => `http://jisho.org/search/${encodeURIComponent(getAnswerToLink(card))}`,
   WEBSTER_ANSWER: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(getAnswerToLink(card))}`,
   WEBSTER_QUESTION: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(card.question)}`,
+  WIKIPEDIA_QUESTION_FIRST_TOKEN: card => `https://ja.wikipedia.org/wiki/${encodeURIComponent(card.question.split(' ')[0])}`,
   PROVIDED_ON_CARD: card => card.dictionaryLinkUri,
   NONE: () => '',
 };
@@ -94,6 +95,7 @@ module.exports.CreateAggregateDictionaryLinkStrategy = {
   JISHO_ANSWER_WORD: cards => createAggregateLink(cards.map(card => card.answer[0])),
   WEBSTER_ANSWER: () => '',
   WEBSTER_QUESTION: () => '',
+  WIKIPEDIA_QUESTION_FIRST_TOKEN: () => '',
   PROVIDED_ON_CARD: () => '',
   NONE: () => '',
 };

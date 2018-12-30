@@ -1,0 +1,2182 @@
+{
+  "uniqueId": "okayama",
+  "name": "Okayama Place Name Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below Okayama place name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "English",
+  "description": "Okayama place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
+  "cards": [
+    {
+      "question": "旭本町 (まち)",
+      "answer": [
+        "あさひほんまち"
+      ],
+      "meaning": "Asahihonmachi"
+    },
+    {
+      "question": "天瀬南町 (まち)",
+      "answer": [
+        "あませみなみまち"
+      ],
+      "meaning": "Amaseminamimachi"
+    },
+    {
+      "question": "伊島北町 (まち)",
+      "answer": [
+        "いしまきたまち"
+      ],
+      "meaning": "Ishimakitamachi"
+    },
+    {
+      "question": "伊島町 (ちょう)",
+      "answer": [
+        "いしまちょう"
+      ],
+      "meaning": "Ishimachou"
+    },
+    {
+      "question": "出石町 (ちょう)",
+      "answer": [
+        "いずしちょう"
+      ],
+      "meaning": "Izushichou"
+    },
+    {
+      "question": "いずみ町 (ちょう)",
+      "answer": [
+        "いずみちょう"
+      ],
+      "meaning": "Izumichou"
+    },
+    {
+      "question": "伊福町 (ちょう)",
+      "answer": [
+        "いふくちょう"
+      ],
+      "meaning": "Ifukuchou"
+    },
+    {
+      "question": "今村",
+      "answer": [
+        "いまむら"
+      ],
+      "meaning": "Imamura"
+    },
+    {
+      "question": "岩井",
+      "answer": [
+        "いわい"
+      ],
+      "meaning": "Iwai"
+    },
+    {
+      "question": "岩井宮裏",
+      "answer": [
+        "いわいみやうら"
+      ],
+      "meaning": "Iwaimiyaura"
+    },
+    {
+      "question": "内山下",
+      "answer": [
+        "うちさんげ"
+      ],
+      "meaning": "Uchisange"
+    },
+    {
+      "question": "絵図町 (ちょう)",
+      "answer": [
+        "えずちょう"
+      ],
+      "meaning": "Ezuchou"
+    },
+    {
+      "question": "大元駅前",
+      "answer": [
+        "おおもとえきまえ"
+      ],
+      "meaning": "Oomotoekimae"
+    },
+    {
+      "question": "大元上町 (まち)",
+      "answer": [
+        "おおもとかみまち"
+      ],
+      "meaning": "Oomotokamimachi"
+    },
+    {
+      "question": "奥田西町 (まち)",
+      "answer": [
+        "おくだにしまち"
+      ],
+      "meaning": "Okudanishimachi"
+    },
+    {
+      "question": "奥田本町 (まち)",
+      "answer": [
+        "おくだほんまち"
+      ],
+      "meaning": "Okudahonmachi"
+    },
+    {
+      "question": "奥田南町 (まち)",
+      "answer": [
+        "おくだみなみまち"
+      ],
+      "meaning": "Okudaminamimachi"
+    },
+    {
+      "question": "御舟入町 (ちょう)",
+      "answer": [
+        "おふないりちょう"
+      ],
+      "meaning": "Ofunairichou"
+    },
+    {
+      "question": "辛川市場",
+      "answer": [
+        "からかわいちば"
+      ],
+      "meaning": "Karakawaichiba"
+    },
+    {
+      "question": "川入",
+      "answer": [
+        "かわいり"
+      ],
+      "meaning": "Kawairi"
+    },
+    {
+      "question": "学南町 (ちょう)",
+      "answer": [
+        "がくなんちょう"
+      ],
+      "meaning": "Gakunanchou"
+    },
+    {
+      "question": "北長瀬表町 (まち)",
+      "answer": [
+        "きたながせおもてまち"
+      ],
+      "meaning": "Kitanagaseomotemachi"
+    },
+    {
+      "question": "北長瀬本町 (まち)",
+      "answer": [
+        "きたながせほんまち"
+      ],
+      "meaning": "Kitanagasehonmachi"
+    },
+    {
+      "question": "吉備津",
+      "answer": [
+        "きびつ"
+      ],
+      "meaning": "Kibitsu"
+    },
+    {
+      "question": "京橋町 (ちょう)",
+      "answer": [
+        "きょうばしちょう"
+      ],
+      "meaning": "Kyoubashichou"
+    },
+    {
+      "question": "京橋南町 (まち)",
+      "answer": [
+        "きょうばしみなみまち"
+      ],
+      "meaning": "Kyoubashiminamimachi"
+    },
+    {
+      "question": "京町 (まち)",
+      "answer": [
+        "きょうまち"
+      ],
+      "meaning": "Kyoumachi"
+    },
+    {
+      "question": "厚生町 (ちょう)",
+      "answer": [
+        "こうせいちょう"
+      ],
+      "meaning": "Kouseichou"
+    },
+    {
+      "question": "首部",
+      "answer": [
+        "こうべ"
+      ],
+      "meaning": "Koube"
+    },
+    {
+      "question": "国体町 (ちょう)",
+      "answer": [
+        "こくたいちょう"
+      ],
+      "meaning": "Kokutaichou"
+    },
+    {
+      "question": "佐山",
+      "answer": [
+        "さやま"
+      ],
+      "meaning": "Sayama"
+    },
+    {
+      "question": "鹿田町 (ちょう)",
+      "answer": [
+        "しかたちょう"
+      ],
+      "meaning": "Shikatachou"
+    },
+    {
+      "question": "鹿田本町 (まち)",
+      "answer": [
+        "しかたほんまち"
+      ],
+      "meaning": "Shikatahonmachi"
+    },
+    {
+      "question": "島田本町 (まち)",
+      "answer": [
+        "しまだほんまち"
+      ],
+      "meaning": "Shimadahonmachi"
+    },
+    {
+      "question": "下石井",
+      "answer": [
+        "しもいしい"
+      ],
+      "meaning": "Shimoishii"
+    },
+    {
+      "question": "下伊福",
+      "answer": [
+        "しもいふく"
+      ],
+      "meaning": "Shimoifuku"
+    },
+    {
+      "question": "下伊福上町 (まち)",
+      "answer": [
+        "しもいふくかみまち"
+      ],
+      "meaning": "Shimoifukukamimachi"
+    },
+    {
+      "question": "下伊福西町 (まち)",
+      "answer": [
+        "しもいふくにしまち"
+      ],
+      "meaning": "Shimoifukunishimachi"
+    },
+    {
+      "question": "下伊福本町 (まち)",
+      "answer": [
+        "しもいふくほんまち"
+      ],
+      "meaning": "Shimoifukuhonmachi"
+    },
+    {
+      "question": "下内田町 (ちょう)",
+      "answer": [
+        "しもうちだちょう"
+      ],
+      "meaning": "Shimouchidachou"
+    },
+    {
+      "question": "宿本町 (まち)",
+      "answer": [
+        "しゅくほんまち"
+      ],
+      "meaning": "Shukuhonmachi"
+    },
+    {
+      "question": "白石西新町 (まち)",
+      "answer": [
+        "しらいしにししんまち"
+      ],
+      "meaning": "Shiraishinishishinmachi"
+    },
+    {
+      "question": "白石東新町 (まち)",
+      "answer": [
+        "しらいしひがししんまち"
+      ],
+      "meaning": "Shiraishihigashishinmachi"
+    },
+    {
+      "question": "清輝橋",
+      "answer": [
+        "せいきばし"
+      ],
+      "meaning": "Seikibashi"
+    },
+    {
+      "question": "清輝本町 (まち)",
+      "answer": [
+        "せいきほんまち"
+      ],
+      "meaning": "Seikihonmachi"
+    },
+    {
+      "question": "清心町 (ちょう)",
+      "answer": [
+        "せいしんちょう"
+      ],
+      "meaning": "Seishinchou"
+    },
+    {
+      "question": "高柳西町 (まち)",
+      "answer": [
+        "たかやなぎにしまち"
+      ],
+      "meaning": "Takayanaginishimachi"
+    },
+    {
+      "question": "高柳東町 (まち)",
+      "answer": [
+        "たかやなぎひがしまち"
+      ],
+      "meaning": "Takayanagihigashimachi"
+    },
+    {
+      "question": "辰巳",
+      "answer": [
+        "たつみ"
+      ],
+      "meaning": "Tatsumi"
+    },
+    {
+      "question": "谷万成",
+      "answer": [
+        "たにまんなり"
+      ],
+      "meaning": "Tanimannari"
+    },
+    {
+      "question": "田益",
+      "answer": [
+        "たます"
+      ],
+      "meaning": "Tamasu"
+    },
+    {
+      "question": "大安寺中町 (まち)",
+      "answer": [
+        "だいあんじなかまち"
+      ],
+      "meaning": "Daianjinakamachi"
+    },
+    {
+      "question": "大安寺東町 (まち)",
+      "answer": [
+        "だいあんじひがしまち"
+      ],
+      "meaning": "Daianjihigashimachi"
+    },
+    {
+      "question": "大安寺南町 (まち)",
+      "answer": [
+        "だいあんじみなみまち"
+      ],
+      "meaning": "Daianjiminamimachi"
+    },
+    {
+      "question": "大供表町 (まち)",
+      "answer": [
+        "だいくおもてまち"
+      ],
+      "meaning": "Daikuomotemachi"
+    },
+    {
+      "question": "大供本町 (まち)",
+      "answer": [
+        "だいくほんまち"
+      ],
+      "meaning": "Daikuhonmachi"
+    },
+    {
+      "question": "津倉町 (ちょう)",
+      "answer": [
+        "つくらちょう"
+      ],
+      "meaning": "Tsukurachou"
+    },
+    {
+      "question": "津島京町 (まち)",
+      "answer": [
+        "つしまきょうまち"
+      ],
+      "meaning": "Tsushimakyoumachi"
+    },
+    {
+      "question": "津島笹が瀬",
+      "answer": [
+        "つしまささがせ"
+      ],
+      "meaning": "Tsushimasasagase"
+    },
+    {
+      "question": "津島新野",
+      "answer": [
+        "つしまにいの"
+      ],
+      "meaning": "Tsushimaniino"
+    },
+    {
+      "question": "津島西坂",
+      "answer": [
+        "つしまにしざか"
+      ],
+      "meaning": "Tsushimanishizaka"
+    },
+    {
+      "question": "津島東",
+      "answer": [
+        "つしまひがし"
+      ],
+      "meaning": "Tsushimahigashi"
+    },
+    {
+      "question": "津島福居",
+      "answer": [
+        "つしまふくい"
+      ],
+      "meaning": "Tsushimafukui"
+    },
+    {
+      "question": "津島本町 (まち)",
+      "answer": [
+        "つしまほんまち"
+      ],
+      "meaning": "Tsushimahonmachi"
+    },
+    {
+      "question": "津島南",
+      "answer": [
+        "つしまみなみ"
+      ],
+      "meaning": "Tsushimaminami"
+    },
+    {
+      "question": "津高台",
+      "answer": [
+        "つだかだい"
+      ],
+      "meaning": "Tsudakadai"
+    },
+    {
+      "question": "富町 (まち)",
+      "answer": [
+        "とみまち"
+      ],
+      "meaning": "Tomimachi"
+    },
+    {
+      "question": "中島田町 (ちょう)",
+      "answer": [
+        "なかしまだちょう"
+      ],
+      "meaning": "Nakashimadachou"
+    },
+    {
+      "question": "中仙道",
+      "answer": [
+        "なかせんどう"
+      ],
+      "meaning": "Nakasendou"
+    },
+    {
+      "question": "中撫川",
+      "answer": [
+        "なかなつかわ"
+      ],
+      "meaning": "Nakanatsukawa"
+    },
+    {
+      "question": "七日市西町 (まち)",
+      "answer": [
+        "なのかいちにしまち"
+      ],
+      "meaning": "Nanokaichinishimachi"
+    },
+    {
+      "question": "西辛川",
+      "answer": [
+        "にしからかわ"
+      ],
+      "meaning": "Nishikarakawa"
+    },
+    {
+      "question": "西崎本町 (まち)",
+      "answer": [
+        "にしざきほんまち"
+      ],
+      "meaning": "Nishizakihonmachi"
+    },
+    {
+      "question": "西島田町 (ちょう)",
+      "answer": [
+        "にししまだちょう"
+      ],
+      "meaning": "Nishishimadachou"
+    },
+    {
+      "question": "西長瀬",
+      "answer": [
+        "にしながせ"
+      ],
+      "meaning": "Nishinagase"
+    },
+    {
+      "question": "西花尻",
+      "answer": [
+        "にしはなじり"
+      ],
+      "meaning": "Nishihanajiri"
+    },
+    {
+      "question": "西古松",
+      "answer": [
+        "にしふるまつ"
+      ],
+      "meaning": "Nishifurumatsu"
+    },
+    {
+      "question": "西古松西町 (まち)",
+      "answer": [
+        "にしふるまつにしまち"
+      ],
+      "meaning": "Nishifurumatsunishimachi"
+    },
+    {
+      "question": "庭瀬",
+      "answer": [
+        "にわせ"
+      ],
+      "meaning": "Niwase"
+    },
+    {
+      "question": "野田屋町 (ちょう)",
+      "answer": [
+        "のだやちょう"
+      ],
+      "meaning": "Nodayachou"
+    },
+    {
+      "question": "野殿東町 (まち)",
+      "answer": [
+        "のどのひがしまち"
+      ],
+      "meaning": "Nodonohigashimachi"
+    },
+    {
+      "question": "延友",
+      "answer": [
+        "のぶとも"
+      ],
+      "meaning": "Nobutomo"
+    },
+    {
+      "question": "花尻みどり町 (まち)",
+      "answer": [
+        "はなじりみどりまち"
+      ],
+      "meaning": "Hanajirimidorimachi"
+    },
+    {
+      "question": "蕃山町 (ちょう)",
+      "answer": [
+        "ばんざんちょう"
+      ],
+      "meaning": "Banzanchou"
+    },
+    {
+      "question": "番町 (ちょう)",
+      "answer": [
+        "ばんちょう"
+      ],
+      "meaning": "Banchou"
+    },
+    {
+      "question": "東島田町 (ちょう)",
+      "answer": [
+        "ひがししまだちょう"
+      ],
+      "meaning": "Higashishimadachou"
+    },
+    {
+      "question": "東中央町 (ちょう)",
+      "answer": [
+        "ひがしちゅうおうちょう"
+      ],
+      "meaning": "Higashichuuouchou"
+    },
+    {
+      "question": "東花尻",
+      "answer": [
+        "ひがしはなじり"
+      ],
+      "meaning": "Higashihanajiri"
+    },
+    {
+      "question": "東古松",
+      "answer": [
+        "ひがしふるまつ"
+      ],
+      "meaning": "Higashifurumatsu"
+    },
+    {
+      "question": "東古松南町 (まち)",
+      "answer": [
+        "ひがしふるまつみなみまち"
+      ],
+      "meaning": "Higashifurumatsuminamimachi"
+    },
+    {
+      "question": "兵団",
+      "answer": [
+        "へいだん"
+      ],
+      "meaning": "Heidan"
+    },
+    {
+      "question": "法界院",
+      "answer": [
+        "ほうかいいん"
+      ],
+      "meaning": "Houkaiin"
+    },
+    {
+      "question": "奉還町 (ちょう)",
+      "answer": [
+        "ほうかんちょう"
+      ],
+      "meaning": "Houkanchou"
+    },
+    {
+      "question": "丸の内",
+      "answer": [
+        "まるのうち"
+      ],
+      "meaning": "Marunouchi"
+    },
+    {
+      "question": "万成西町 (まち)",
+      "answer": [
+        "まんなりにしまち"
+      ],
+      "meaning": "Mannarinishimachi"
+    },
+    {
+      "question": "万成東町 (まち)",
+      "answer": [
+        "まんなりひがしまち"
+      ],
+      "meaning": "Mannarihigashimachi"
+    },
+    {
+      "question": "三門西町 (まち)",
+      "answer": [
+        "みかどにしまち"
+      ],
+      "meaning": "Mikadonishimachi"
+    },
+    {
+      "question": "三門東町 (まち)",
+      "answer": [
+        "みかどひがしまち"
+      ],
+      "meaning": "Mikadohigashimachi"
+    },
+    {
+      "question": "牟佐",
+      "answer": [
+        "むさ"
+      ],
+      "meaning": "Musa"
+    },
+    {
+      "question": "矢坂西町 (まち)",
+      "answer": [
+        "やさかにしまち"
+      ],
+      "meaning": "Yasakanishimachi"
+    },
+    {
+      "question": "矢坂東町 (まち)",
+      "answer": [
+        "やさかひがしまち"
+      ],
+      "meaning": "Yasakahigashimachi"
+    },
+    {
+      "question": "弓之町 (ちょう)",
+      "answer": [
+        "ゆみのちょう"
+      ],
+      "meaning": "Yuminochou"
+    },
+    {
+      "question": "横井上",
+      "answer": [
+        "よこいかみ"
+      ],
+      "meaning": "Yokoikami"
+    },
+    {
+      "question": "吉宗",
+      "answer": [
+        "よしむね"
+      ],
+      "meaning": "Yoshimune"
+    },
+    {
+      "question": "赤坂台",
+      "answer": [
+        "あかさかだい"
+      ],
+      "meaning": "Akasakadai"
+    },
+    {
+      "question": "赤坂本町 (まち)",
+      "answer": [
+        "あかさかほんまち"
+      ],
+      "meaning": "Akasakahonmachi"
+    },
+    {
+      "question": "今在家",
+      "answer": [
+        "いまざいけ"
+      ],
+      "meaning": "Imazaike"
+    },
+    {
+      "question": "江並",
+      "answer": [
+        "えなみ"
+      ],
+      "meaning": "Enami"
+    },
+    {
+      "question": "乙多見",
+      "answer": [
+        "おたみ"
+      ],
+      "meaning": "Otami"
+    },
+    {
+      "question": "雄町 (まち)",
+      "answer": [
+        "おまち"
+      ],
+      "meaning": "Omachi"
+    },
+    {
+      "question": "門田文化町 (まち)",
+      "answer": [
+        "かどたぶんかまち"
+      ],
+      "meaning": "Kadotabunkamachi"
+    },
+    {
+      "question": "門田本町 (まち)",
+      "answer": [
+        "かどたほんまち"
+      ],
+      "meaning": "Kadotahonmachi"
+    },
+    {
+      "question": "門田屋敷",
+      "answer": [
+        "かどたやしき"
+      ],
+      "meaning": "Kadotayashiki"
+    },
+    {
+      "question": "兼基",
+      "answer": [
+        "かねもと"
+      ],
+      "meaning": "Kanemoto"
+    },
+    {
+      "question": "祇園",
+      "answer": [
+        "ぎおん"
+      ],
+      "meaning": "Gion (entertainment district in Kyoto)"
+    },
+    {
+      "question": "桑野",
+      "answer": [
+        "くわの"
+      ],
+      "meaning": "Kuwano"
+    },
+    {
+      "question": "国府市場",
+      "answer": [
+        "こくふいちば"
+      ],
+      "meaning": "Kokufuichiba"
+    },
+    {
+      "question": "さい東町 (まち)",
+      "answer": [
+        "さいひがしまち"
+      ],
+      "meaning": "Saihigashimachi"
+    },
+    {
+      "question": "桜橋",
+      "answer": [
+        "さくらばし"
+      ],
+      "meaning": "Sakurabashi"
+    },
+    {
+      "question": "四御神",
+      "answer": [
+        "しのごぜ"
+      ],
+      "meaning": "Shinogoze"
+    },
+    {
+      "question": "賞田",
+      "answer": [
+        "しょうだ"
+      ],
+      "meaning": "Shouda"
+    },
+    {
+      "question": "新京橋",
+      "answer": [
+        "しんきょうばし"
+      ],
+      "meaning": "Shinkyoubashi"
+    },
+    {
+      "question": "高島新屋敷",
+      "answer": [
+        "たかしましんやしき"
+      ],
+      "meaning": "Takashimashin'yashiki"
+    },
+    {
+      "question": "中納言町 (ちょう)",
+      "answer": [
+        "ちゅうなごんちょう"
+      ],
+      "meaning": "Chuunagonchou"
+    },
+    {
+      "question": "徳吉町 (ちょう)",
+      "answer": [
+        "とくよしちょう"
+      ],
+      "meaning": "Tokuyoshichou"
+    },
+    {
+      "question": "長岡",
+      "answer": [
+        "ながおか"
+      ],
+      "meaning": "Nagaoka"
+    },
+    {
+      "question": "原尾島",
+      "answer": [
+        "はらおしま"
+      ],
+      "meaning": "Haraoshima"
+    },
+    {
+      "question": "平井",
+      "answer": [
+        "ひらい"
+      ],
+      "meaning": "Hirai"
+    },
+    {
+      "question": "福泊",
+      "answer": [
+        "ふくどまり"
+      ],
+      "meaning": "Fukudomari"
+    },
+    {
+      "question": "藤原西町 (まち)",
+      "answer": [
+        "ふじわらにしまち"
+      ],
+      "meaning": "Fujiwaranishimachi"
+    },
+    {
+      "question": "藤原光町 (まち)",
+      "answer": [
+        "ふじわらひかりまち"
+      ],
+      "meaning": "Fujiwarahikarimachi"
+    },
+    {
+      "question": "海吉",
+      "answer": [
+        "みよし"
+      ],
+      "meaning": "Miyoshi"
+    },
+    {
+      "question": "大多羅町 (ちょう)",
+      "answer": [
+        "おおだらちょう"
+      ],
+      "meaning": "Oodarachou"
+    },
+    {
+      "question": "金岡西町 (まち)",
+      "answer": [
+        "かなおかにしまち"
+      ],
+      "meaning": "Kanaokanishimachi"
+    },
+    {
+      "question": "金岡東町 (まち)",
+      "answer": [
+        "かなおかひがしまち"
+      ],
+      "meaning": "Kanaokahigashimachi"
+    },
+    {
+      "question": "君津",
+      "answer": [
+        "きみつ"
+      ],
+      "meaning": "Kimitsu"
+    },
+    {
+      "question": "西大寺",
+      "answer": [
+        "さいだいじ"
+      ],
+      "meaning": "Saidaiji"
+    },
+    {
+      "question": "西大寺射越",
+      "answer": [
+        "さいだいじいこし"
+      ],
+      "meaning": "Saidaijiikoshi"
+    },
+    {
+      "question": "西大寺金岡",
+      "answer": [
+        "さいだいじかなおか"
+      ],
+      "meaning": "Saidaijikanaoka"
+    },
+    {
+      "question": "西大寺上",
+      "answer": [
+        "さいだいじかみ"
+      ],
+      "meaning": "Saidaijikami"
+    },
+    {
+      "question": "西大寺川口",
+      "answer": [
+        "さいだいじかわぐち"
+      ],
+      "meaning": "Saidaijikawaguchi"
+    },
+    {
+      "question": "西大寺新地",
+      "answer": [
+        "さいだいじしんじ"
+      ],
+      "meaning": "Saidaijishinji"
+    },
+    {
+      "question": "西大寺中",
+      "answer": [
+        "さいだいじなか"
+      ],
+      "meaning": "Saidaijinaka"
+    },
+    {
+      "question": "西大寺中野",
+      "answer": [
+        "さいだいじなかの"
+      ],
+      "meaning": "Saidaijinakano"
+    },
+    {
+      "question": "西大寺浜",
+      "answer": [
+        "さいだいじはま"
+      ],
+      "meaning": "Saidaijihama"
+    },
+    {
+      "question": "西大寺東",
+      "answer": [
+        "さいだいじひがし"
+      ],
+      "meaning": "Saidaijihigashi"
+    },
+    {
+      "question": "西大寺松崎",
+      "answer": [
+        "さいだいじまつざき"
+      ],
+      "meaning": "Saidaijimatsuzaki"
+    },
+    {
+      "question": "上道北方",
+      "answer": [
+        "じょうどうきたがた"
+      ],
+      "meaning": "Joudoukitagata"
+    },
+    {
+      "question": "東平島",
+      "answer": [
+        "ひがしひらじま"
+      ],
+      "meaning": "Higashihirajima"
+    },
+    {
+      "question": "益野町 (ちょう)",
+      "answer": [
+        "ますのちょう"
+      ],
+      "meaning": "Masunochou"
+    },
+    {
+      "question": "松新町 (ちょう)",
+      "answer": [
+        "まつしんちょう"
+      ],
+      "meaning": "Matsushinchou"
+    },
+    {
+      "question": "南古都",
+      "answer": [
+        "みなみこづ"
+      ],
+      "meaning": "Minamikodzu"
+    },
+    {
+      "question": "浦安西町 (まち)",
+      "answer": [
+        "うらやすにしまち"
+      ],
+      "meaning": "Urayasunishimachi"
+    },
+    {
+      "question": "浦安本町 (まち)",
+      "answer": [
+        "うらやすほんまち"
+      ],
+      "meaning": "Urayasuhonmachi"
+    },
+    {
+      "question": "浦安南町 (まち)",
+      "answer": [
+        "うらやすみなみまち"
+      ],
+      "meaning": "Urayasuminamimachi"
+    },
+    {
+      "question": "北浦",
+      "answer": [
+        "きたうら"
+      ],
+      "meaning": "Kitaura"
+    },
+    {
+      "question": "古新田",
+      "answer": [
+        "こしんでん"
+      ],
+      "meaning": "Koshinden"
+    },
+    {
+      "question": "築港栄町 (まち)",
+      "answer": [
+        "ちっこうさかえまち"
+      ],
+      "meaning": "Chikkousakaemachi"
+    },
+    {
+      "question": "築港新町 (まち)",
+      "answer": [
+        "ちっこうしんまち"
+      ],
+      "meaning": "Chikkoushinmachi"
+    },
+    {
+      "question": "築港ひかり町 (まち)",
+      "answer": [
+        "ちっこうひかりまち"
+      ],
+      "meaning": "Chikkouhikarimachi"
+    },
+    {
+      "question": "築港緑町 (まち)",
+      "answer": [
+        "ちっこうみどりまち"
+      ],
+      "meaning": "Chikkoumidorimachi"
+    },
+    {
+      "question": "築港元町 (まち)",
+      "answer": [
+        "ちっこうもとまち"
+      ],
+      "meaning": "Chikkoumotomachi"
+    },
+    {
+      "question": "当新田",
+      "answer": [
+        "とうしんでん"
+      ],
+      "meaning": "Toushinden"
+    },
+    {
+      "question": "富浜町 (ちょう)",
+      "answer": [
+        "とみはまちょう"
+      ],
+      "meaning": "Tomihamachou"
+    },
+    {
+      "question": "豊浜町 (ちょう)",
+      "answer": [
+        "とよはまちょう"
+      ],
+      "meaning": "Toyohamachou"
+    },
+    {
+      "question": "南輝",
+      "answer": [
+        "なんき"
+      ],
+      "meaning": "Nanki"
+    },
+    {
+      "question": "西高崎",
+      "answer": [
+        "にしたかさき"
+      ],
+      "meaning": "Nishitakasaki"
+    },
+    {
+      "question": "東畦",
+      "answer": [
+        "ひがしうね"
+      ],
+      "meaning": "Higashiune"
+    },
+    {
+      "question": "平福",
+      "answer": [
+        "ひらふく"
+      ],
+      "meaning": "Hirafuku"
+    },
+    {
+      "question": "福富中",
+      "answer": [
+        "ふくとみなか"
+      ],
+      "meaning": "Fukutominaka"
+    },
+    {
+      "question": "福富西",
+      "answer": [
+        "ふくとみにし"
+      ],
+      "meaning": "Fukutominishi"
+    },
+    {
+      "question": "福富東",
+      "answer": [
+        "ふくとみひがし"
+      ],
+      "meaning": "Fukutomihigashi"
+    },
+    {
+      "question": "福浜町 (ちょう)",
+      "answer": [
+        "ふくはまちょう"
+      ],
+      "meaning": "Fukuhamachou"
+    },
+    {
+      "question": "福浜西町 (まち)",
+      "answer": [
+        "ふくはまにしまち"
+      ],
+      "meaning": "Fukuhamanishimachi"
+    },
+    {
+      "question": "福吉町 (ちょう)",
+      "answer": [
+        "ふくよしちょう"
+      ],
+      "meaning": "Fukuyoshichou"
+    },
+    {
+      "question": "松浜町 (ちょう)",
+      "answer": [
+        "まつはまちょう"
+      ],
+      "meaning": "Matsuhamachou"
+    },
+    {
+      "question": "万倍",
+      "answer": [
+        "まんばい"
+      ],
+      "meaning": "Manbai"
+    },
+    {
+      "question": "三浜町 (ちょう)",
+      "answer": [
+        "みはまちょう"
+      ],
+      "meaning": "Mihamachou"
+    },
+    {
+      "question": "倉敷市",
+      "answer": [
+        "くらしきし"
+      ],
+      "meaning": "Kurashiki (city)"
+    },
+    {
+      "question": "阿知",
+      "answer": [
+        "あち"
+      ],
+      "meaning": "Achi"
+    },
+    {
+      "question": "天城台",
+      "answer": [
+        "あまきだい"
+      ],
+      "meaning": "Amakidai"
+    },
+    {
+      "question": "生坂",
+      "answer": [
+        "いくさか"
+      ],
+      "meaning": "Ikusaka"
+    },
+    {
+      "question": "石見町 (ちょう)",
+      "answer": [
+        "いわみちょう"
+      ],
+      "meaning": "Iwamichou"
+    },
+    {
+      "question": "沖新町 (まち)",
+      "answer": [
+        "おきしんまち"
+      ],
+      "meaning": "Okishinmachi"
+    },
+    {
+      "question": "帯高",
+      "answer": [
+        "おびたか"
+      ],
+      "meaning": "Obitaka"
+    },
+    {
+      "question": "加須山",
+      "answer": [
+        "かすやま"
+      ],
+      "meaning": "Kasuyama"
+    },
+    {
+      "question": "片島町 (ちょう)",
+      "answer": [
+        "かたしまちょう"
+      ],
+      "meaning": "Katashimachou"
+    },
+    {
+      "question": "上富井",
+      "answer": [
+        "かみとみい"
+      ],
+      "meaning": "Kamitomii"
+    },
+    {
+      "question": "川入",
+      "answer": [
+        "かわいり"
+      ],
+      "meaning": "Kawairi"
+    },
+    {
+      "question": "北畝",
+      "answer": [
+        "きたせ"
+      ],
+      "meaning": "Kitase"
+    },
+    {
+      "question": "栗坂",
+      "answer": [
+        "くりさか"
+      ],
+      "meaning": "Kurisaka"
+    },
+    {
+      "question": "児島赤崎",
+      "answer": [
+        "こじまあかさき"
+      ],
+      "meaning": "Kojimaakasaki"
+    },
+    {
+      "question": "児島味野",
+      "answer": [
+        "こじまあじの"
+      ],
+      "meaning": "Kojimaajino"
+    },
+    {
+      "question": "児島味野城",
+      "answer": [
+        "こじまあじのじょう"
+      ],
+      "meaning": "Kojimaajinojou"
+    },
+    {
+      "question": "児島阿津",
+      "answer": [
+        "こじまあつ"
+      ],
+      "meaning": "Kojimaatsu"
+    },
+    {
+      "question": "児島駅前",
+      "answer": [
+        "こじまえきまえ"
+      ],
+      "meaning": "Kojimaekimae"
+    },
+    {
+      "question": "児島小川",
+      "answer": [
+        "こじまおがわ"
+      ],
+      "meaning": "Kojimaogawa"
+    },
+    {
+      "question": "児島小川町 (ちょう)",
+      "answer": [
+        "こじまおがわちょう"
+      ],
+      "meaning": "Kojimaogawachou"
+    },
+    {
+      "question": "児島上の町 (ちょう)",
+      "answer": [
+        "こじまかみのちょう"
+      ],
+      "meaning": "Kojimakaminochou"
+    },
+    {
+      "question": "児島通生",
+      "answer": [
+        "こじまかよう"
+      ],
+      "meaning": "Kojimakayou"
+    },
+    {
+      "question": "児島唐琴",
+      "answer": [
+        "こじまからこと"
+      ],
+      "meaning": "Kojimakarakoto"
+    },
+    {
+      "question": "児島塩生",
+      "answer": [
+        "こじましおなす"
+      ],
+      "meaning": "Kojimashionasu"
+    },
+    {
+      "question": "児島下の町 (ちょう)",
+      "answer": [
+        "こじましものちょう"
+      ],
+      "meaning": "Kojimashimonochou"
+    },
+    {
+      "question": "児島田の口",
+      "answer": [
+        "こじまたのくち"
+      ],
+      "meaning": "Kojimatanokuchi"
+    },
+    {
+      "question": "児島稗田町 (ちょう)",
+      "answer": [
+        "こじまひえだちょう"
+      ],
+      "meaning": "Kojimahiedachou"
+    },
+    {
+      "question": "児島元浜町 (ちょう)",
+      "answer": [
+        "こじまもとはまちょう"
+      ],
+      "meaning": "Kojimamotohamachou"
+    },
+    {
+      "question": "児島柳田町 (ちょう)",
+      "answer": [
+        "こじまやないだちょう"
+      ],
+      "meaning": "Kojimayanaidachou"
+    },
+    {
+      "question": "菰池",
+      "answer": [
+        "こもいけ"
+      ],
+      "meaning": "Komoike"
+    },
+    {
+      "question": "笹沖",
+      "answer": [
+        "ささおき"
+      ],
+      "meaning": "Sasaoki"
+    },
+    {
+      "question": "四十瀬",
+      "answer": [
+        "しじゅうせ"
+      ],
+      "meaning": "Shijuuse"
+    },
+    {
+      "question": "下津井",
+      "answer": [
+        "しもつい"
+      ],
+      "meaning": "Shimotsui"
+    },
+    {
+      "question": "玉島阿賀崎",
+      "answer": [
+        "たましまあがさき"
+      ],
+      "meaning": "Tamashimaagasaki"
+    },
+    {
+      "question": "玉島上成",
+      "answer": [
+        "たましまうわなり"
+      ],
+      "meaning": "Tamashimauwanari"
+    },
+    {
+      "question": "玉島乙島",
+      "answer": [
+        "たましまおとしま"
+      ],
+      "meaning": "Tamashimaotoshima"
+    },
+    {
+      "question": "玉島柏島",
+      "answer": [
+        "たましまかしわじま"
+      ],
+      "meaning": "Tamashimakashiwajima"
+    },
+    {
+      "question": "玉島黒崎",
+      "answer": [
+        "たましまくろさき"
+      ],
+      "meaning": "Tamashimakurosaki"
+    },
+    {
+      "question": "玉島黒崎新町 (まち)",
+      "answer": [
+        "たましまくろさきしんまち"
+      ],
+      "meaning": "Tamashimakurosakishinmachi"
+    },
+    {
+      "question": "玉島爪崎",
+      "answer": [
+        "たましまつまさき"
+      ],
+      "meaning": "Tamashimatsumasaki"
+    },
+    {
+      "question": "玉島長尾",
+      "answer": [
+        "たましまながお"
+      ],
+      "meaning": "Tamashimanagao"
+    },
+    {
+      "question": "玉島八島",
+      "answer": [
+        "たましまやしま"
+      ],
+      "meaning": "Tamashimayashima"
+    },
+    {
+      "question": "玉島勇崎",
+      "answer": [
+        "たましまゆうざき"
+      ],
+      "meaning": "Tamashimayuuzaki"
+    },
+    {
+      "question": "粒浦",
+      "answer": [
+        "つぶうら"
+      ],
+      "meaning": "Tsubuura"
+    },
+    {
+      "question": "連島",
+      "answer": [
+        "つらじま"
+      ],
+      "meaning": "Tsurajima"
+    },
+    {
+      "question": "連島中央",
+      "answer": [
+        "つらじまちゅうおう"
+      ],
+      "meaning": "Tsurajimachuuou"
+    },
+    {
+      "question": "連島町亀島新田",
+      "answer": [
+        "つらじまちょうかめじましんでん"
+      ],
+      "meaning": "Tsurajimachoukamejimashinden"
+    },
+    {
+      "question": "連島町連島",
+      "answer": [
+        "つらじまちょうつらじま"
+      ],
+      "meaning": "Tsurajimachoutsurajima"
+    },
+    {
+      "question": "連島町鶴新田",
+      "answer": [
+        "つらじまちょうつるしんでん"
+      ],
+      "meaning": "Tsurajimachoutsurushinden"
+    },
+    {
+      "question": "連島町西之浦",
+      "answer": [
+        "つらじまちょうにしのうら"
+      ],
+      "meaning": "Tsurajimachounishinoura"
+    },
+    {
+      "question": "連島町矢柄",
+      "answer": [
+        "つらじまちょうやがら"
+      ],
+      "meaning": "Tsurajimachouyagara"
+    },
+    {
+      "question": "鶴形",
+      "answer": [
+        "つるがた"
+      ],
+      "meaning": "Tsurugata"
+    },
+    {
+      "question": "西阿知町 (ちょう)",
+      "answer": [
+        "にしあちちょう"
+      ],
+      "meaning": "Nishiachichou"
+    },
+    {
+      "question": "西阿知町新田",
+      "answer": [
+        "にしあちちょうしんでん"
+      ],
+      "meaning": "Nishiachichoushinden"
+    },
+    {
+      "question": "西阿知町西原",
+      "answer": [
+        "にしあちちょうにしばら"
+      ],
+      "meaning": "Nishiachichounishibara"
+    },
+    {
+      "question": "西岡",
+      "answer": [
+        "にしおか"
+      ],
+      "meaning": "Nishioka"
+    },
+    {
+      "question": "西富井",
+      "answer": [
+        "にしとみい"
+      ],
+      "meaning": "Nishitomii"
+    },
+    {
+      "question": "西中新田",
+      "answer": [
+        "にしなかしんでん"
+      ],
+      "meaning": "Nishinakashinden"
+    },
+    {
+      "question": "浜ノ茶屋",
+      "answer": [
+        "はまのちゃや"
+      ],
+      "meaning": "Hamanochaya"
+    },
+    {
+      "question": "白楽町 (ちょう)",
+      "answer": [
+        "ばくろちょう"
+      ],
+      "meaning": "Bakurochou"
+    },
+    {
+      "question": "東富井",
+      "answer": [
+        "ひがしとみい"
+      ],
+      "meaning": "Higashitomii"
+    },
+    {
+      "question": "広江",
+      "answer": [
+        "ひろえ"
+      ],
+      "meaning": "Hiroe"
+    },
+    {
+      "question": "福田町浦田",
+      "answer": [
+        "ふくだちょううらだ"
+      ],
+      "meaning": "Fukudachouurada"
+    },
+    {
+      "question": "福田町古新田",
+      "answer": [
+        "ふくだちょうこしんでん"
+      ],
+      "meaning": "Fukudachoukoshinden"
+    },
+    {
+      "question": "福田町福田",
+      "answer": [
+        "ふくだちょうふくだ"
+      ],
+      "meaning": "Fukudachoufukuda"
+    },
+    {
+      "question": "藤戸町天城",
+      "answer": [
+        "ふじとちょうあまき"
+      ],
+      "meaning": "Fujitochouamaki"
+    },
+    {
+      "question": "二日市",
+      "answer": [
+        "ふつかいち"
+      ],
+      "meaning": "Futsukaichi"
+    },
+    {
+      "question": "堀南",
+      "answer": [
+        "ほりなん"
+      ],
+      "meaning": "Horinan"
+    },
+    {
+      "question": "水島相生町 (ちょう)",
+      "answer": [
+        "みずしまあいおいちょう"
+      ],
+      "meaning": "Mizushimaaioichou"
+    },
+    {
+      "question": "水島高砂町 (ちょう)",
+      "answer": [
+        "みずしまたかさごちょう"
+      ],
+      "meaning": "Mizushimatakasagochou"
+    },
+    {
+      "question": "水島東川町 (ちょう)",
+      "answer": [
+        "みずしまひがしがわちょう"
+      ],
+      "meaning": "Mizushimahigashigawachou"
+    },
+    {
+      "question": "津山市",
+      "answer": [
+        "つやまし"
+      ],
+      "meaning": "Tsuyama (city)"
+    },
+    {
+      "question": "院庄",
+      "answer": [
+        "いんのしょう"
+      ],
+      "meaning": "Innoshou"
+    },
+    {
+      "question": "皿",
+      "answer": [
+        "さら"
+      ],
+      "meaning": "Sara"
+    },
+    {
+      "question": "志戸部",
+      "answer": [
+        "しとべ"
+      ],
+      "meaning": "Shitobe"
+    },
+    {
+      "question": "高野本郷",
+      "answer": [
+        "たかのほんごう"
+      ],
+      "meaning": "Takanohongou"
+    },
+    {
+      "question": "高野山西",
+      "answer": [
+        "たかのやまにし"
+      ],
+      "meaning": "Takanoyamanishi"
+    },
+    {
+      "question": "近長",
+      "answer": [
+        "ちかなが"
+      ],
+      "meaning": "Chikanaga"
+    },
+    {
+      "question": "東一宮",
+      "answer": [
+        "ひがしいちのみや"
+      ],
+      "meaning": "Higashiichinomiya"
+    },
+    {
+      "question": "平福",
+      "answer": [
+        "ひらふく"
+      ],
+      "meaning": "Hirafuku"
+    },
+    {
+      "question": "玉野市",
+      "answer": [
+        "たまのし"
+      ],
+      "meaning": "Tamano (city)"
+    },
+    {
+      "question": "宇野",
+      "answer": [
+        "うの"
+      ],
+      "meaning": "Uno"
+    },
+    {
+      "question": "槌ケ原",
+      "answer": [
+        "つちがはら"
+      ],
+      "meaning": "Tsuchigahara"
+    },
+    {
+      "question": "八浜町大崎",
+      "answer": [
+        "はちはまちょうおおさき"
+      ],
+      "meaning": "Hachihamachouoosaki"
+    },
+    {
+      "question": "八浜町波知",
+      "answer": [
+        "はちはまちょうはち"
+      ],
+      "meaning": "Hachihamachouhachi"
+    },
+    {
+      "question": "八浜町八浜",
+      "answer": [
+        "はちはまちょうはちはま"
+      ],
+      "meaning": "Hachihamachouhachihama"
+    },
+    {
+      "question": "八浜町見石",
+      "answer": [
+        "はちはまちょうみいし"
+      ],
+      "meaning": "Hachihamachoumiishi"
+    },
+    {
+      "question": "東紅陽台",
+      "answer": [
+        "ひがしこうようだい"
+      ],
+      "meaning": "Higashikouyoudai"
+    },
+    {
+      "question": "東田井地",
+      "answer": [
+        "ひがしたいじ"
+      ],
+      "meaning": "Higashitaiji"
+    },
+    {
+      "question": "東高崎",
+      "answer": [
+        "ひがしたかさき"
+      ],
+      "meaning": "Higashitakasaki"
+    },
+    {
+      "question": "笠岡市",
+      "answer": [
+        "かさおかし"
+      ],
+      "meaning": "Kasaoka (city)"
+    },
+    {
+      "question": "生江浜",
+      "answer": [
+        "おえはま"
+      ],
+      "meaning": "Oehama"
+    },
+    {
+      "question": "富岡",
+      "answer": [
+        "とみおか"
+      ],
+      "meaning": "Tomioka"
+    },
+    {
+      "question": "木之子町 (ちょう)",
+      "answer": [
+        "きのこちょう"
+      ],
+      "meaning": "Kinokochou"
+    },
+    {
+      "question": "笹賀町 (ちょう)",
+      "answer": [
+        "ささかちょう"
+      ],
+      "meaning": "Sasakachou"
+    },
+    {
+      "question": "下出部町 (ちょう)",
+      "answer": [
+        "しもいずえちょう"
+      ],
+      "meaning": "Shimoizuechou"
+    },
+    {
+      "question": "西江原町 (ちょう)",
+      "answer": [
+        "にしえばらちょう"
+      ],
+      "meaning": "Nishiebarachou"
+    },
+    {
+      "question": "東江原町 (ちょう)",
+      "answer": [
+        "ひがしえばらちょう"
+      ],
+      "meaning": "Higashiebarachou"
+    },
+    {
+      "question": "総社市",
+      "answer": [
+        "そうじゃし"
+      ],
+      "meaning": "Souja (city)"
+    },
+    {
+      "question": "井尻野",
+      "answer": [
+        "いじりの"
+      ],
+      "meaning": "Ijirino"
+    },
+    {
+      "question": "駅前",
+      "answer": [
+        "えきまえ"
+      ],
+      "meaning": "Ekimae"
+    },
+    {
+      "question": "金井戸",
+      "answer": [
+        "かないど"
+      ],
+      "meaning": "Kanaido"
+    },
+    {
+      "question": "真壁",
+      "answer": [
+        "まかべ"
+      ],
+      "meaning": "Makabe"
+    },
+    {
+      "question": "新見市",
+      "answer": [
+        "にいみし"
+      ],
+      "meaning": "Niimi (city)"
+    },
+    {
+      "question": "備前市",
+      "answer": [
+        "びぜんし"
+      ],
+      "meaning": "Bizen (city)"
+    },
+    {
+      "question": "浦伊部",
+      "answer": [
+        "うらいんべ"
+      ],
+      "meaning": "Urainbe"
+    },
+    {
+      "question": "香登西",
+      "answer": [
+        "かがとにし"
+      ],
+      "meaning": "Kagatonishi"
+    },
+    {
+      "question": "西片上",
+      "answer": [
+        "にしかたかみ"
+      ],
+      "meaning": "Nishikatakami"
+    },
+    {
+      "question": "東片上",
+      "answer": [
+        "ひがしかたかみ"
+      ],
+      "meaning": "Higashikatakami"
+    },
+    {
+      "question": "穂浪",
+      "answer": [
+        "ほなみ"
+      ],
+      "meaning": "Honami"
+    },
+    {
+      "question": "円光寺",
+      "answer": [
+        "えんこうじ"
+      ],
+      "meaning": "Enkouji"
+    },
+    {
+      "question": "桜が丘西",
+      "answer": [
+        "さくらがおかにし"
+      ],
+      "meaning": "Sakuragaokanishi"
+    },
+    {
+      "question": "桜が丘東",
+      "answer": [
+        "さくらがおかひがし"
+      ],
+      "meaning": "Sakuragaokahigashi"
+    },
+    {
+      "question": "下市",
+      "answer": [
+        "しもいち"
+      ],
+      "meaning": "Shimoichi"
+    },
+    {
+      "question": "周匝",
+      "answer": [
+        "すさい"
+      ],
+      "meaning": "Susai"
+    },
+    {
+      "question": "町苅田",
+      "answer": [
+        "まちかんだ"
+      ],
+      "meaning": "Machikanda"
+    },
+    {
+      "question": "下市瀬",
+      "answer": [
+        "しもいちせ"
+      ],
+      "meaning": "Shimoichise"
+    },
+    {
+      "question": "豊国原",
+      "answer": [
+        "とよくにはら"
+      ],
+      "meaning": "Toyokunihara"
+    },
+    {
+      "question": "和気郡和気町 (ちょう)",
+      "answer": [
+        "わけぐんわけちょう"
+      ],
+      "meaning": "Wakegunwakechou"
+    },
+    {
+      "question": "尺所",
+      "answer": [
+        "しゃくそ"
+      ],
+      "meaning": "Shakuso"
+    },
+    {
+      "question": "日室",
+      "answer": [
+        "ひむろ"
+      ],
+      "meaning": "Himuro"
+    },
+    {
+      "question": "都窪郡早島町 (ちょう)",
+      "answer": [
+        "つくぼぐんはやしまちょう"
+      ],
+      "meaning": "Tsukubogunhayashimachou"
+    },
+    {
+      "question": "前潟",
+      "answer": [
+        "まえがた"
+      ],
+      "meaning": "Maegata"
+    },
+    {
+      "question": "若宮",
+      "answer": [
+        "わかみや"
+      ],
+      "meaning": "Wakamiya"
+    },
+    {
+      "question": "浅口郡里庄町 (ちょう)",
+      "answer": [
+        "あさくちぐんさとしょうちょう"
+      ],
+      "meaning": "Asakuchigunsatoshouchou"
+    },
+    {
+      "question": "小田郡矢掛町 (ちょう)",
+      "answer": [
+        "おだぐんやかげちょう"
+      ],
+      "meaning": "Odagun'yakagechou"
+    },
+    {
+      "question": "苫田郡鏡野町 (ちょう)",
+      "answer": [
+        "とまたぐんかがみのちょう"
+      ],
+      "meaning": "Tomatagunkagaminochou"
+    },
+    {
+      "question": "勝田郡勝央町 (ちょう)",
+      "answer": [
+        "かつたぐんしょうおうちょう"
+      ],
+      "meaning": "Katsutagunshououchou"
+    },
+    {
+      "question": "岡",
+      "answer": [
+        "おか"
+      ],
+      "meaning": "Oka"
+    },
+    {
+      "question": "勝田郡奈義町 (ちょう)",
+      "answer": [
+        "かつたぐんなぎちょう"
+      ],
+      "meaning": "Katsutagunnagichou"
+    },
+    {
+      "question": "高円",
+      "answer": [
+        "こうえん"
+      ],
+      "meaning": "Kouen"
+    }
+  ]
+}
