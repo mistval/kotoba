@@ -79,21 +79,23 @@ function getAnswerToLink(card) {
 }
 
 module.exports.CreateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.question);},
-  JISHO_QUESTION_KANJI: card => {return `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`;},
-  JISHO_ANSWER_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(getAnswerToLink(card));},
-  WEBSTER_ANSWER: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(getAnswerToLink(card));},
-  WEBSTER_QUESTION: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.question);},
-  NONE: card => {return '';},
+  JISHO_QUESTION_WORD: card => `http://jisho.org/search/${encodeURIComponent(card.question)}`,
+  JISHO_QUESTION_KANJI: card => `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`,
+  JISHO_ANSWER_WORD: card => `http://jisho.org/search/${encodeURIComponent(getAnswerToLink(card))}`,
+  WEBSTER_ANSWER: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(getAnswerToLink(card))}`,
+  WEBSTER_QUESTION: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(card.question)}`,
+  PROVIDED_ON_CARD: card => card.dictionaryLinkUri,
+  NONE: () => '',
 };
 
 module.exports.CreateAggregateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: cards => {return createAggregateLink(cards.map(card => card.question));},
-  JISHO_QUESTION_KANJI: cards => {return createAggregateLink(cards.map(card => card.question), 'kanji');},
-  JISHO_ANSWER_WORD: cards => {return createAggregateLink(cards.map(card => card.answer[0]));},
-  WEBSTER_ANSWER: cards => {return '';},
-  WEBSTER_QUESTION: card => {return '';},
-  NONE: cards => {return '';},
+  JISHO_QUESTION_WORD: cards => createAggregateLink(cards.map(card => card.question)),
+  JISHO_QUESTION_KANJI: cards => createAggregateLink(cards.map(card => card.question), 'kanji'),
+  JISHO_ANSWER_WORD: cards => createAggregateLink(cards.map(card => card.answer[0])),
+  WEBSTER_ANSWER: () => '',
+  WEBSTER_QUESTION: () => '',
+  PROVIDED_ON_CARD: () => '',
+  NONE: () => '',
 };
 
 /* QUESTION CREATION STRATEGIES */

@@ -5,6 +5,7 @@ const globals = require('./../common/globals.js');
 
 const quizManager = reload('./../common/quiz/manager.js');
 const createHelpContent = reload('./../common/quiz/decks_content.js').createContent;
+const getAdvancedHelp = reload('./../common/quiz/decks_content.js').getAdvancedHelp;
 const constants = reload('./../common/constants.js');
 const { PublicError } = require('monochrome-bot');
 const NormalGameMode = reload('./../common/quiz/normal_mode.js');
@@ -1231,6 +1232,11 @@ module.exports = {
     // Help operation
     if (!suffixReplaced || suffixReplaced === 'help') {
       return showHelp(msg, isMastery, isConquest, masteryEnabled);
+    }
+
+    const advancedHelp = getAdvancedHelp(suffix);
+    if (advancedHelp) {
+      return msg.channel.createMessage(advancedHelp);
     }
 
     // Start operation

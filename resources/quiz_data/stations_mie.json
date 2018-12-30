@@ -1,0 +1,1851 @@
+{
+  "uniqueId": "stations_mie",
+  "name": "Mie Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Mie station names](https://mb.jorudan.co.jp/os/eki/menu_mie/)",
+  "cards": [
+    {
+      "question": "相賀",
+      "answer": [
+        "あいが"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aiga/"
+    },
+    {
+      "question": "青山町",
+      "answer": [
+        "あおやまちょう"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aoyamacho/"
+    },
+    {
+      "question": "暁学園前",
+      "answer": [
+        "あかつきがくえんまえ"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akatsukigakuen-mae/"
+    },
+    {
+      "question": "赤堀",
+      "answer": [
+        "あかほり"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akahori/"
+    },
+    {
+      "question": "赤目口",
+      "answer": [
+        "あかめぐち"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akameguchi/"
+    },
+    {
+      "question": "阿倉川",
+      "answer": [
+        "あくらがわ"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akuragawa/"
+    },
+    {
+      "question": "明野",
+      "answer": [
+        "あけの"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akeno/"
+    },
+    {
+      "question": "阿下喜",
+      "answer": [
+        "あげき"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ageki/"
+    },
+    {
+      "question": "阿漕",
+      "answer": [
+        "あこぎ"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akogi/"
+    },
+    {
+      "question": "朝日",
+      "answer": [
+        "あさひ"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahi_mie/"
+    },
+    {
+      "question": "朝熊",
+      "answer": [
+        "あさま"
+      ],
+      "meaning": "近鉄鳥羽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asama/"
+    },
+    {
+      "question": "あすなろう四日市",
+      "answer": [
+        "あすなろうよっかいち"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asunaro-yokkaichi/"
+    },
+    {
+      "question": "阿曽",
+      "answer": [
+        "あそ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aso_mie/"
+    },
+    {
+      "question": "新鹿",
+      "answer": [
+        "あたしか"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atashika/"
+    },
+    {
+      "question": "阿田和",
+      "answer": [
+        "あたわ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atawa/"
+    },
+    {
+      "question": "穴川",
+      "answer": [
+        "あながわ"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/anagawa_mie/"
+    },
+    {
+      "question": "穴太",
+      "answer": [
+        "あのう"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ano_mie/"
+    },
+    {
+      "question": "有井",
+      "answer": [
+        "ありい"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arii/"
+    },
+    {
+      "question": "在良",
+      "answer": [
+        "ありよし"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ariyoshi/"
+    },
+    {
+      "question": "家城",
+      "answer": [
+        "いえき"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ieki/"
+    },
+    {
+      "question": "伊賀上野",
+      "answer": [
+        "いがうえの"
+      ],
+      "meaning": "関西本線（西日本）、伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iga-ueno/"
+    },
+    {
+      "question": "伊賀神戸",
+      "answer": [
+        "いがかんべ"
+      ],
+      "meaning": "伊賀鉄道、近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iga-kambe/"
+    },
+    {
+      "question": "伊賀上津",
+      "answer": [
+        "いがこうづ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iga-kozu/"
+    },
+    {
+      "question": "池の浦",
+      "answer": [
+        "いけのうら"
+      ],
+      "meaning": "近鉄鳥羽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikenora/"
+    },
+    {
+      "question": "池の浦シーサイド",
+      "answer": [
+        "いけのうらしーさいど"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikeno-ura-seaside/"
+    },
+    {
+      "question": "一身田",
+      "answer": [
+        "いしんでん"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishinden/"
+    },
+    {
+      "question": "五十鈴ヶ丘",
+      "answer": [
+        "いすずがおか"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isuzugaoka/"
+    },
+    {
+      "question": "五十鈴川",
+      "answer": [
+        "いすずがわ"
+      ],
+      "meaning": "近鉄鳥羽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isuzugawa/"
+    },
+    {
+      "question": "伊勢朝日",
+      "answer": [
+        "いせあさひ"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-asahi/"
+    },
+    {
+      "question": "伊勢石橋",
+      "answer": [
+        "いせいしばし"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-ishibashi/"
+    },
+    {
+      "question": "伊勢上野",
+      "answer": [
+        "いせうえの"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-ueno/"
+    },
+    {
+      "question": "伊勢大井",
+      "answer": [
+        "いせおおい"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-oi/"
+    },
+    {
+      "question": "伊勢奥津",
+      "answer": [
+        "いせおきつ"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-okitsu/"
+    },
+    {
+      "question": "伊勢柏崎",
+      "answer": [
+        "いせかしわざき"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-kashiwazaki/"
+    },
+    {
+      "question": "伊勢鎌倉",
+      "answer": [
+        "いせかまくら"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-kamakura/"
+    },
+    {
+      "question": "伊勢川口",
+      "answer": [
+        "いせかわぐち"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-kawaguchi/"
+    },
+    {
+      "question": "伊勢川島",
+      "answer": [
+        "いせかわしま"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-kawashima/"
+    },
+    {
+      "question": "井関",
+      "answer": [
+        "いせぎ"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isegi/"
+    },
+    {
+      "question": "伊勢市",
+      "answer": [
+        "いせし"
+      ],
+      "meaning": "参宮線、近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iseshi/"
+    },
+    {
+      "question": "伊勢竹原",
+      "answer": [
+        "いせたけはら"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-takehara/?page=2"
+    },
+    {
+      "question": "伊勢中川",
+      "answer": [
+        "いせなかがわ"
+      ],
+      "meaning": "近鉄名古屋線、近鉄山田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-nakagawa/?page=2"
+    },
+    {
+      "question": "伊勢中原",
+      "answer": [
+        "いせなかはら"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-nakahara/?page=2"
+    },
+    {
+      "question": "伊勢八太",
+      "answer": [
+        "いせはた"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-hata/?page=2"
+    },
+    {
+      "question": "伊勢治田",
+      "answer": [
+        "いせはった"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-hatta/?page=2"
+    },
+    {
+      "question": "伊勢松本",
+      "answer": [
+        "いせまつもと"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-matsumoto/?page=2"
+    },
+    {
+      "question": "伊勢八知",
+      "answer": [
+        "いせやち"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-yachi/?page=2"
+    },
+    {
+      "question": "伊勢若松",
+      "answer": [
+        "いせわかまつ"
+      ],
+      "meaning": "近鉄名古屋線、近鉄鈴鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ise-wakamatsu/?page=2"
+    },
+    {
+      "question": "磯山",
+      "answer": [
+        "いそやま"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isoyama/?page=2"
+    },
+    {
+      "question": "井田川",
+      "answer": [
+        "いだがわ"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/idagawa/?page=2"
+    },
+    {
+      "question": "猪田道",
+      "answer": [
+        "いだみち"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/idamichi/?page=2"
+    },
+    {
+      "question": "一志",
+      "answer": [
+        "いちし"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichishi/?page=2"
+    },
+    {
+      "question": "市部",
+      "answer": [
+        "いちべ"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichibe/?page=2"
+    },
+    {
+      "question": "依那古",
+      "answer": [
+        "いなこ"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inako_mie/?page=2"
+    },
+    {
+      "question": "上野市",
+      "answer": [
+        "うえのし"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uenoshi/"
+    },
+    {
+      "question": "上林",
+      "answer": [
+        "うえばやし"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uebayashi/"
+    },
+    {
+      "question": "鵜方",
+      "answer": [
+        "うがた"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugata/"
+    },
+    {
+      "question": "宇治山田",
+      "answer": [
+        "うじやまだ"
+      ],
+      "meaning": "近鉄山田線、近鉄鳥羽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ujiyamada/"
+    },
+    {
+      "question": "内部",
+      "answer": [
+        "うつべ"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utsube/"
+    },
+    {
+      "question": "鵜殿",
+      "answer": [
+        "うどの"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/udono/"
+    },
+    {
+      "question": "馬道",
+      "answer": [
+        "うまみち"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umamichi/"
+    },
+    {
+      "question": "梅ヶ谷",
+      "answer": [
+        "うめがだに"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umegadani/"
+    },
+    {
+      "question": "梅戸井",
+      "answer": [
+        "うめどい"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umedoi/"
+    },
+    {
+      "question": "江戸橋",
+      "answer": [
+        "えどばし"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/edobashi/"
+    },
+    {
+      "question": "追分",
+      "answer": [
+        "おいわけ"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oiwake_mie/"
+    },
+    {
+      "question": "相可",
+      "answer": [
+        "おうか"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oka_mie/"
+    },
+    {
+      "question": "麻生田",
+      "answer": [
+        "おうだ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oda_mie/"
+    },
+    {
+      "question": "大泉",
+      "answer": [
+        "おおいずみ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oizumi_mie/"
+    },
+    {
+      "question": "大内山",
+      "answer": [
+        "おおうちやま"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/o-uchiyama/"
+    },
+    {
+      "question": "大曽根浦",
+      "answer": [
+        "おおそねうら"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osoneura/"
+    },
+    {
+      "question": "大泊",
+      "answer": [
+        "おおどまり"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/odomari/"
+    },
+    {
+      "question": "大羽根園",
+      "answer": [
+        "おおばねえん"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obane-en/"
+    },
+    {
+      "question": "大三",
+      "answer": [
+        "おおみつ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omitsu/"
+    },
+    {
+      "question": "大矢知",
+      "answer": [
+        "おおやち"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oyachi_mie/"
+    },
+    {
+      "question": "小古曽",
+      "answer": [
+        "おごそ"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogoso/"
+    },
+    {
+      "question": "小俣",
+      "answer": [
+        "おばた"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obata_mie/"
+    },
+    {
+      "question": "尾鷲",
+      "answer": [
+        "おわせ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/owase/"
+    },
+    {
+      "question": "加佐登",
+      "answer": [
+        "かさど"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasado/"
+    },
+    {
+      "question": "賢島",
+      "answer": [
+        "かしこじま"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashikojima/"
+    },
+    {
+      "question": "霞ヶ浦",
+      "answer": [
+        "かすみがうら"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasumigaura/"
+    },
+    {
+      "question": "賀田",
+      "answer": [
+        "かた"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kata/"
+    },
+    {
+      "question": "加太",
+      "answer": [
+        "かぶと"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kabuto_mie/"
+    },
+    {
+      "question": "上之郷",
+      "answer": [
+        "かみのごう"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaminogo/"
+    },
+    {
+      "question": "上ノ庄",
+      "answer": [
+        "かみのしょう"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaminosho/"
+    },
+    {
+      "question": "亀山",
+      "answer": [
+        "かめやま"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kameyama_mie/"
+    },
+    {
+      "question": "加茂",
+      "answer": [
+        "かも"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamo_mie/"
+    },
+    {
+      "question": "茅町",
+      "answer": [
+        "かやまち"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kayamachi/"
+    },
+    {
+      "question": "川合高岡",
+      "answer": [
+        "かわいたかおか"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaitakaoka/"
+    },
+    {
+      "question": "河芸",
+      "answer": [
+        "かわげ"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawage/"
+    },
+    {
+      "question": "川越富洲原",
+      "answer": [
+        "かわごえとみすはら"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawagoe-tomisuhara/"
+    },
+    {
+      "question": "川添",
+      "answer": [
+        "かわぞえ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawazoe/"
+    },
+    {
+      "question": "河曲",
+      "answer": [
+        "かわの"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawano/"
+    },
+    {
+      "question": "河原田",
+      "answer": [
+        "かわらだ"
+      ],
+      "meaning": "関西本線（東海）、伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawarada/"
+    },
+    {
+      "question": "川原町",
+      "answer": [
+        "かわらまち"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaramachi_mie/"
+    },
+    {
+      "question": "紀伊井田",
+      "answer": [
+        "きいいだ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kii-ida/"
+    },
+    {
+      "question": "紀伊市木",
+      "answer": [
+        "きいいちぎ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kii-ichigi/"
+    },
+    {
+      "question": "紀伊長島",
+      "answer": [
+        "きいながしま"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kii-nagashima/"
+    },
+    {
+      "question": "桔梗が丘",
+      "answer": [
+        "ききょうがおか"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kikyogaoka/"
+    },
+    {
+      "question": "北楠",
+      "answer": [
+        "きたくす"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitakusu/"
+    },
+    {
+      "question": "近鉄富田",
+      "answer": [
+        "きんてつとみだ"
+      ],
+      "meaning": "近鉄名古屋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-tomida/"
+    },
+    {
+      "question": "近鉄長島",
+      "answer": [
+        "きんてつながしま"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-nagashima/"
+    },
+    {
+      "question": "近鉄四日市",
+      "answer": [
+        "きんてつよっかいち"
+      ],
+      "meaning": "近鉄名古屋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-yokkaichi/"
+    },
+    {
+      "question": "九鬼",
+      "answer": [
+        "くき"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuki_mie/"
+    },
+    {
+      "question": "櫛田",
+      "answer": [
+        "くしだ"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kushida/"
+    },
+    {
+      "question": "楠",
+      "answer": [
+        "くす"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusu/"
+    },
+    {
+      "question": "沓掛",
+      "answer": [
+        "くつかけ"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kutsukake/"
+    },
+    {
+      "question": "熊野市",
+      "answer": [
+        "くまのし"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumanoshi/"
+    },
+    {
+      "question": "桑名",
+      "answer": [
+        "くわな"
+      ],
+      "meaning": "関西本線（東海）、近鉄名古屋線、養老鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuwana/"
+    },
+    {
+      "question": "桑町",
+      "answer": [
+        "くわまち"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuwamachi/"
+    },
+    {
+      "question": "漕代",
+      "answer": [
+        "こいしろ"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koishiro/"
+    },
+    {
+      "question": "神志山",
+      "answer": [
+        "こうしやま"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koshiyama/"
+    },
+    {
+      "question": "菰野",
+      "answer": [
+        "こもの"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komono/"
+    },
+    {
+      "question": "五知",
+      "answer": [
+        "ごち"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gochi/"
+    },
+    {
+      "question": "権現前",
+      "answer": [
+        "ごんげんまえ"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gongen-mae/"
+    },
+    {
+      "question": "斎宮",
+      "answer": [
+        "さいくう"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saiku/"
+    },
+    {
+      "question": "榊原温泉口",
+      "answer": [
+        "さかきばらおんせんぐち"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakakibara-onsenguchi/"
+    },
+    {
+      "question": "桜",
+      "answer": [
+        "さくら"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakura_mie/"
+    },
+    {
+      "question": "佐奈",
+      "answer": [
+        "さな"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sana/"
+    },
+    {
+      "question": "佐那具",
+      "answer": [
+        "さなぐ"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanagu/"
+    },
+    {
+      "question": "塩浜",
+      "answer": [
+        "しおはま"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiohama/"
+    },
+    {
+      "question": "四十九",
+      "answer": [
+        "しじゅく"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shijuku/"
+    },
+    {
+      "question": "志摩赤崎",
+      "answer": [
+        "しまあかさき"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shima-akasaki/"
+    },
+    {
+      "question": "志摩磯部",
+      "answer": [
+        "しまいそべ"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimaisobe/"
+    },
+    {
+      "question": "島ヶ原",
+      "answer": [
+        "しまがはら"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimagahara/"
+    },
+    {
+      "question": "志摩神明",
+      "answer": [
+        "しましんめい"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shima-shimmei/"
+    },
+    {
+      "question": "志摩横山",
+      "answer": [
+        "しまよこやま"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shima-yokoyama/"
+    },
+    {
+      "question": "下庄",
+      "answer": [
+        "しものしょう"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonosho/"
+    },
+    {
+      "question": "下野代",
+      "answer": [
+        "しものしろ"
+      ],
+      "meaning": "養老鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonoshiro/"
+    },
+    {
+      "question": "下深谷",
+      "answer": [
+        "しもふかや"
+      ],
+      "meaning": "養老鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimofukaya/"
+    },
+    {
+      "question": "白木",
+      "answer": [
+        "しらき"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiraki/"
+    },
+    {
+      "question": "白塚",
+      "answer": [
+        "しらつか"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiratsuka/"
+    },
+    {
+      "question": "白子",
+      "answer": [
+        "しろこ"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroko/"
+    },
+    {
+      "question": "新正",
+      "answer": [
+        "しんしょう"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinsho/"
+    },
+    {
+      "question": "新堂",
+      "answer": [
+        "しんどう"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shindo/"
+    },
+    {
+      "question": "鈴鹿",
+      "answer": [
+        "すずか"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzuka/"
+    },
+    {
+      "question": "鈴鹿サーキット稲生",
+      "answer": [
+        "すずかさーきっといのう"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzuka_circuit_ino/"
+    },
+    {
+      "question": "鈴鹿市",
+      "answer": [
+        "すずかし"
+      ],
+      "meaning": "近鉄鈴鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzukashi/"
+    },
+    {
+      "question": "関",
+      "answer": [
+        "せき"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seki_mie/"
+    },
+    {
+      "question": "関ノ宮",
+      "answer": [
+        "せきのみや"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekinomiya/"
+    },
+    {
+      "question": "楚原",
+      "answer": [
+        "そはら"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sohara_mie/"
+    },
+    {
+      "question": "高田本山",
+      "answer": [
+        "たかだほんざん"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takadahonzan/"
+    },
+    {
+      "question": "高茶屋",
+      "answer": [
+        "たかちゃや"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takachaya/"
+    },
+    {
+      "question": "高角",
+      "answer": [
+        "たかつの"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takatsuno/"
+    },
+    {
+      "question": "多気",
+      "answer": [
+        "たき"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taki_mie/"
+    },
+    {
+      "question": "滝原",
+      "answer": [
+        "たきはら"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takihara/"
+    },
+    {
+      "question": "多度",
+      "answer": [
+        "たど"
+      ],
+      "meaning": "養老鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tado/"
+    },
+    {
+      "question": "玉垣",
+      "answer": [
+        "たまがき"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamagaki/"
+    },
+    {
+      "question": "田丸",
+      "answer": [
+        "たまる"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamaru/"
+    },
+    {
+      "question": "大安",
+      "answer": [
+        "だいあん"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daian/"
+    },
+    {
+      "question": "千里",
+      "answer": [
+        "ちさと"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chisato_mie/"
+    },
+    {
+      "question": "千代崎",
+      "answer": [
+        "ちよざき"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyozaki/"
+    },
+    {
+      "question": "津",
+      "answer": [
+        "つ"
+      ],
+      "meaning": "JR線、近鉄名古屋線、伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsu/"
+    },
+    {
+      "question": "柘植",
+      "answer": [
+        "つげ"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuge/"
+    },
+    {
+      "question": "津新町",
+      "answer": [
+        "つしんまち"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsushimmachi/"
+    },
+    {
+      "question": "鼓ヶ浦",
+      "answer": [
+        "つづみがうら"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuzumigaura/"
+    },
+    {
+      "question": "東員",
+      "answer": [
+        "とういん"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toin/"
+    },
+    {
+      "question": "外城田",
+      "answer": [
+        "ときだ"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokida/"
+    },
+    {
+      "question": "徳田",
+      "answer": [
+        "とくだ"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokuda_mie/"
+    },
+    {
+      "question": "徳和",
+      "answer": [
+        "とくわ"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokuwa/"
+    },
+    {
+      "question": "栃原",
+      "answer": [
+        "とちはら"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tochihara/"
+    },
+    {
+      "question": "鳥羽",
+      "answer": [
+        "とば"
+      ],
+      "meaning": "参宮線、近鉄鳥羽線、近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toba/"
+    },
+    {
+      "question": "泊",
+      "answer": [
+        "とまり"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomari_mie/"
+    },
+    {
+      "question": "富田",
+      "answer": [
+        "とみだ"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomida_mie/"
+    },
+    {
+      "question": "富田浜",
+      "answer": [
+        "とみだはま"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomidahama/"
+    },
+    {
+      "question": "豊津上野",
+      "answer": [
+        "とよつうえの"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyotsu-ueno/"
+    },
+    {
+      "question": "中川原",
+      "answer": [
+        "なかがわら"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakagawara_mie/"
+    },
+    {
+      "question": "中菰野",
+      "answer": [
+        "なかこもの"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakakomono/"
+    },
+    {
+      "question": "中瀬古",
+      "answer": [
+        "なかせこ"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakaseko/"
+    },
+    {
+      "question": "中之郷",
+      "answer": [
+        "なかのごう"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanogo/"
+    },
+    {
+      "question": "長島",
+      "answer": [
+        "ながしま"
+      ],
+      "meaning": "関西本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagashima/"
+    },
+    {
+      "question": "長太ノ浦",
+      "answer": [
+        "なごのうら"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagono-ura/"
+    },
+    {
+      "question": "七和",
+      "answer": [
+        "ななわ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nanawa/"
+    },
+    {
+      "question": "名張",
+      "answer": [
+        "なばり"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nabari/"
+    },
+    {
+      "question": "新居",
+      "answer": [
+        "にい"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nii_mie/"
+    },
+    {
+      "question": "二木島",
+      "answer": [
+        "にぎしま"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nigishima/"
+    },
+    {
+      "question": "西青山",
+      "answer": [
+        "にしあおやま"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-aoyama/"
+    },
+    {
+      "question": "西大手",
+      "answer": [
+        "にしおおて"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishiote/"
+    },
+    {
+      "question": "西桑名",
+      "answer": [
+        "にしくわな"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kuwana/"
+    },
+    {
+      "question": "西野尻",
+      "answer": [
+        "にしのじり"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinojiri/"
+    },
+    {
+      "question": "西日野",
+      "answer": [
+        "にしひの"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-hino/"
+    },
+    {
+      "question": "西藤原",
+      "answer": [
+        "にしふじわら"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-fujiwara/"
+    },
+    {
+      "question": "西別所",
+      "answer": [
+        "にしべっしょ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-bessho/"
+    },
+    {
+      "question": "丹生川",
+      "answer": [
+        "にゅうがわ"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nyugawa_mie/"
+    },
+    {
+      "question": "波田須",
+      "answer": [
+        "はだす"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hadasu/"
+    },
+    {
+      "question": "播磨",
+      "answer": [
+        "はりま"
+      ],
+      "meaning": "養老鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima/"
+    },
+    {
+      "question": "東青山",
+      "answer": [
+        "ひがしあおやま"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-aoyama_mie/"
+    },
+    {
+      "question": "東一身田",
+      "answer": [
+        "ひがしいしんでん"
+      ],
+      "meaning": "伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-ishinden/"
+    },
+    {
+      "question": "東藤原",
+      "answer": [
+        "ひがしふじわら"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-fujiwara/"
+    },
+    {
+      "question": "東松阪",
+      "answer": [
+        "ひがしまつさか"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-matsusaka/"
+    },
+    {
+      "question": "久居",
+      "answer": [
+        "ひさい"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hisai/"
+    },
+    {
+      "question": "比津",
+      "answer": [
+        "ひつ"
+      ],
+      "meaning": "名松線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitsu/"
+    },
+    {
+      "question": "比土",
+      "answer": [
+        "ひど"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hido/"
+    },
+    {
+      "question": "日永",
+      "answer": [
+        "ひなが"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hinaga_mie/"
+    },
+    {
+      "question": "平田町",
+      "answer": [
+        "ひらたちょう"
+      ],
+      "meaning": "近鉄鈴鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiratacho/"
+    },
+    {
+      "question": "広小路",
+      "answer": [
+        "ひろこうじ"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirokoji_mie/"
+    },
+    {
+      "question": "二見浦",
+      "answer": [
+        "ふたみのうら"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futamino-ura/"
+    },
+    {
+      "question": "船津",
+      "answer": [
+        "ふなつ"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funatsu_kintetsu/"
+    },
+    {
+      "question": "船津",
+      "answer": [
+        "ふなつ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funatsu_mie/"
+    },
+    {
+      "question": "平津",
+      "answer": [
+        "へいづ"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heizu/"
+    },
+    {
+      "question": "北勢中央公園口",
+      "answer": [
+        "ほくせいちゅうおうこうえんぐち"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hokuseichuokoenguchi/"
+    },
+    {
+      "question": "星川",
+      "answer": [
+        "ほしかわ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshikawa_mie/"
+    },
+    {
+      "question": "保々",
+      "answer": [
+        "ほぼ"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hobo/"
+    },
+    {
+      "question": "益生",
+      "answer": [
+        "ますお"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/masuo_mie/"
+    },
+    {
+      "question": "松尾",
+      "answer": [
+        "まつお"
+      ],
+      "meaning": "近鉄志摩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuo_mie/"
+    },
+    {
+      "question": "松ヶ崎",
+      "answer": [
+        "まつがさき"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsugasaki_mie/"
+    },
+    {
+      "question": "松阪",
+      "answer": [
+        "まつさか"
+      ],
+      "meaning": "JR線、近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsusaka/"
+    },
+    {
+      "question": "松下",
+      "answer": [
+        "まつした"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsushita/"
+    },
+    {
+      "question": "丸山",
+      "answer": [
+        "まるやま"
+      ],
+      "meaning": "伊賀鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maruyama_mie/"
+    },
+    {
+      "question": "三木里",
+      "answer": [
+        "みきさと"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikisato/"
+    },
+    {
+      "question": "三里",
+      "answer": [
+        "みさと"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misato_mie/"
+    },
+    {
+      "question": "三瀬谷",
+      "answer": [
+        "みせだに"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misedani/"
+    },
+    {
+      "question": "箕田",
+      "answer": [
+        "みだ"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mida/"
+    },
+    {
+      "question": "三日市",
+      "answer": [
+        "みっかいち"
+      ],
+      "meaning": "近鉄鈴鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikkaichi/"
+    },
+    {
+      "question": "南が丘",
+      "answer": [
+        "みなみがおか"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-gaoka/"
+    },
+    {
+      "question": "南日永",
+      "answer": [
+        "みなみひなが"
+      ],
+      "meaning": "四日市あすなろう鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-hinaga/"
+    },
+    {
+      "question": "南四日市",
+      "answer": [
+        "みなみよっかいち"
+      ],
+      "meaning": "関西本線（東海）、伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yokkaichi/"
+    },
+    {
+      "question": "三野瀬",
+      "answer": [
+        "みのせ"
+      ],
+      "meaning": "紀勢本線・きのくに線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minose/"
+    },
+    {
+      "question": "美旗",
+      "answer": [
+        "みはた"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mihata/"
+    },
+    {
+      "question": "宮川",
+      "answer": [
+        "みやがわ"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyagawa/"
+    },
+    {
+      "question": "宮町",
+      "answer": [
+        "みやまち"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyamachi/"
+    },
+    {
+      "question": "海山道",
+      "answer": [
+        "みやまど"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyamado/"
+    },
+    {
+      "question": "明星",
+      "answer": [
+        "みょうじょう"
+      ],
+      "meaning": "近鉄山田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myojo/"
+    },
+    {
+      "question": "桃園",
+      "answer": [
+        "ももぞの"
+      ],
+      "meaning": "近鉄名古屋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momozono/"
+    },
+    {
+      "question": "柳",
+      "answer": [
+        "やなぎ"
+      ],
+      "meaning": "近鉄鈴鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanagi/"
+    },
+    {
+      "question": "山城",
+      "answer": [
+        "やまじょう"
+      ],
+      "meaning": "三岐鉄道三岐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamajo/"
+    },
+    {
+      "question": "山田上口",
+      "answer": [
+        "やまだかみぐち"
+      ],
+      "meaning": "参宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamadakamiguchi/"
+    },
+    {
+      "question": "湯の山温泉",
+      "answer": [
+        "ゆのやまおんせん"
+      ],
+      "meaning": "近鉄湯の山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunoyamaonsen/"
+    },
+    {
+      "question": "四日市",
+      "answer": [
+        "よっかいち"
+      ],
+      "meaning": "関西本線（東海）、伊勢鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokkaichi/"
+    },
+    {
+      "question": "蓮花寺",
+      "answer": [
+        "れんげじ"
+      ],
+      "meaning": "三岐鉄道北勢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rengeji/"
+    },
+    {
+      "question": "六軒",
+      "answer": [
+        "ろっけん"
+      ],
+      "meaning": "参宮線、紀勢本線（東海）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokken_mie/"
+    }
+  ]
+}

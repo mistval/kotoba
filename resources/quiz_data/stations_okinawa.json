@@ -1,0 +1,131 @@
+{
+  "uniqueId": "stations_okinawa",
+  "name": "Okinawa Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Okinawa station names](https://mb.jorudan.co.jp/os/eki/menu_oka/)",
+  "cards": [
+    {
+      "question": "赤嶺",
+      "answer": [
+        "あかみね"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akamine/"
+    },
+    {
+      "question": "安里",
+      "answer": [
+        "あさと"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asato/"
+    },
+    {
+      "question": "旭橋",
+      "answer": [
+        "あさひばし"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahibashi/"
+    },
+    {
+      "question": "奥武山公園",
+      "answer": [
+        "おうのやまこうえん"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onoyama_koen/"
+    },
+    {
+      "question": "小禄",
+      "answer": [
+        "おろく"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oroku/"
+    },
+    {
+      "question": "儀保",
+      "answer": [
+        "ぎぼ"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gibo/"
+    },
+    {
+      "question": "県庁前",
+      "answer": [
+        "けんちょうまえ"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kencho-mae_okinawa/"
+    },
+    {
+      "question": "首里",
+      "answer": [
+        "しゅり"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shuri/"
+    },
+    {
+      "question": "市立病院前",
+      "answer": [
+        "しりつびょういんまえ"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiritsu-byoin-mae_okinawa/"
+    },
+    {
+      "question": "壺川",
+      "answer": [
+        "つぼがわ"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsubogawa/"
+    },
+    {
+      "question": "那覇空港",
+      "answer": [
+        "なはくうこう"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naha-airport/"
+    },
+    {
+      "question": "古島",
+      "answer": [
+        "ふるじま"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furujima/"
+    },
+    {
+      "question": "牧志",
+      "answer": [
+        "まきし"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/makishi/"
+    },
+    {
+      "question": "美栄橋",
+      "answer": [
+        "みえばし"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miebashi/"
+    }
+  ]
+}
