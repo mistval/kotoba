@@ -1,6 +1,6 @@
 {
-  "uniqueId": "stations_aoyama",
-  "name": "Aoyama Stations Reading Quiz",
+  "uniqueId": "stations_aomori",
+  "name": "Aomori Stations Reading Quiz",
   "article": "a",
   "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
@@ -13,7 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Line(s)",
-  "description": "[Aoyama station names](https://mb.jorudan.co.jp/os/eki/menu_aoj/)",
+  "description": "[Aomori station names](https://mb.jorudan.co.jp/os/eki/menu_aoj/)",
   "cards": [
     {
       "question": "青森",
