@@ -1,8 +1,8 @@
 {
   "uniqueId": "ooita",
-  "name": "Ooita Place Name Quiz",
+  "name": "Oita Place Name Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below Ooita place name in Hiragana!",
+  "instructions": "Type the reading of the below Oita place name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -13,14 +13,14 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "English",
-  "description": "Ooita place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
+  "description": "Oita place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
   "cards": [
     {
       "question": "大分市",
       "answer": [
         "おおいたし"
       ],
-      "meaning": "Ooita City"
+      "meaning": "Oita City"
     },
     {
       "question": "明野北",

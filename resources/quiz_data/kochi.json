@@ -1,8 +1,8 @@
 {
   "uniqueId": "kouchi",
-  "name": "Kouchi Place Name Quiz",
+  "name": "Kochi Place Name Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below Kouchi place name in Hiragana!",
+  "instructions": "Type the reading of the below Kochi place name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -13,14 +13,14 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "English",
-  "description": "Kouchi place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
+  "description": "Kochi place names looked up in [ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)",
   "cards": [
     {
       "question": "高知市",
       "answer": [
         "こうちし"
       ],
-      "meaning": "Kouchi (city)"
+      "meaning": "Kochi (city)"
     },
     {
       "question": "朝倉西町 (まち)",
