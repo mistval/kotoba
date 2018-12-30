@@ -1,6 +1,6 @@
 {
   "uniqueId": "stations_hokaido",
-  "name": "Hokaido Stations Reading Quiz",
+  "name": "Hokkaido Stations Reading Quiz",
   "article": "a",
   "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
@@ -13,7 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Line(s)",
-  "description": "[Hokaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
+  "description": "[Hokkaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
   "cards": [
     {
       "question": "愛山",
