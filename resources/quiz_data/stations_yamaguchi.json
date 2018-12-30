@@ -1,0 +1,1227 @@
+{
+  "uniqueId": "stations_yamaguchi",
+  "name": "Yamaguchi Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Yamaguchi station names](https://mb.jorudan.co.jp/os/eki/menu_ubj/)",
+  "cards": [
+    {
+      "question": "阿川",
+      "answer": [
+        "あがわ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/agawa/"
+    },
+    {
+      "question": "厚狭",
+      "answer": [
+        "あさ"
+      ],
+      "meaning": "山陽本線、美祢線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asa/"
+    },
+    {
+      "question": "阿知須",
+      "answer": [
+        "あじす"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ajisu/"
+    },
+    {
+      "question": "厚保",
+      "answer": [
+        "あつ"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atsu/"
+    },
+    {
+      "question": "綾羅木",
+      "answer": [
+        "あやらぎ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ayaragi/"
+    },
+    {
+      "question": "飯井",
+      "answer": [
+        "いい"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ii/"
+    },
+    {
+      "question": "伊上",
+      "answer": [
+        "いがみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/igami/"
+    },
+    {
+      "question": "生野屋",
+      "answer": [
+        "いくのや"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikunoya/"
+    },
+    {
+      "question": "板持",
+      "answer": [
+        "いたもち"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itamochi/"
+    },
+    {
+      "question": "居能",
+      "answer": [
+        "いのう"
+      ],
+      "meaning": "宇部線、小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ino_yamaguchi/"
+    },
+    {
+      "question": "岩国",
+      "answer": [
+        "いわくに"
+      ],
+      "meaning": "山陽本線、岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakuni/"
+    },
+    {
+      "question": "岩倉",
+      "answer": [
+        "いわくら"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakura_yamaguchi/"
+    },
+    {
+      "question": "岩田",
+      "answer": [
+        "いわた"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwata_yamaguchi/"
+    },
+    {
+      "question": "岩鼻",
+      "answer": [
+        "いわはな"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwahana/"
+    },
+    {
+      "question": "宇賀本郷",
+      "answer": [
+        "うかほんごう"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ukahongo/"
+    },
+    {
+      "question": "宇田郷",
+      "answer": [
+        "うたごう"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utago/"
+    },
+    {
+      "question": "宇部",
+      "answer": [
+        "うべ"
+      ],
+      "meaning": "山陽本線、宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ube/"
+    },
+    {
+      "question": "宇部新川",
+      "answer": [
+        "うべしんかわ"
+      ],
+      "meaning": "宇部線、小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ubeshinkawa/"
+    },
+    {
+      "question": "宇部岬",
+      "answer": [
+        "うべみさき"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ubemisaki/"
+    },
+    {
+      "question": "梅ヶ峠",
+      "answer": [
+        "うめがとう"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umegato/"
+    },
+    {
+      "question": "江崎",
+      "answer": [
+        "えさき"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/esaki/"
+    },
+    {
+      "question": "大河内",
+      "answer": [
+        "おおかわち"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okawachi/"
+    },
+    {
+      "question": "大歳",
+      "answer": [
+        "おおとし"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otoshi/"
+    },
+    {
+      "question": "大畠",
+      "answer": [
+        "おおばたけ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obatake/"
+    },
+    {
+      "question": "小月",
+      "answer": [
+        "おづき"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ozuki/"
+    },
+    {
+      "question": "小野田",
+      "answer": [
+        "おのだ"
+      ],
+      "meaning": "山陽本線、小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onoda/"
+    },
+    {
+      "question": "小野田港",
+      "answer": [
+        "おのだこう"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onodako/"
+    },
+    {
+      "question": "於福",
+      "answer": [
+        "おふく"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ofuku/"
+    },
+    {
+      "question": "嘉川",
+      "answer": [
+        "かがわ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagawa_yamaguchi/"
+    },
+    {
+      "question": "梶栗郷台地",
+      "answer": [
+        "かじくりごうだいち"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kajikurigodaichi/"
+    },
+    {
+      "question": "勝間",
+      "answer": [
+        "かつま"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuma/"
+    },
+    {
+      "question": "上嘉川",
+      "answer": [
+        "かみかがわ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-kagawa/"
+    },
+    {
+      "question": "上郷",
+      "answer": [
+        "かみごう"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamigo/"
+    },
+    {
+      "question": "上山口",
+      "answer": [
+        "かみやまぐち"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-yamaguchi/"
+    },
+    {
+      "question": "川棚温泉",
+      "answer": [
+        "かわたなおんせん"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawatanaonsen/"
+    },
+    {
+      "question": "川西",
+      "answer": [
+        "かわにし"
+      ],
+      "meaning": "岩徳線、錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanishi_yamaguchi/"
+    },
+    {
+      "question": "河山",
+      "answer": [
+        "かわやま"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawayama/"
+    },
+    {
+      "question": "北河内",
+      "answer": [
+        "きたごうち"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-gochi_yamaguchi/"
+    },
+    {
+      "question": "木与",
+      "answer": [
+        "きよ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyo/"
+    },
+    {
+      "question": "岐波",
+      "answer": [
+        "きわ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiwa_yamaguchi/"
+    },
+    {
+      "question": "黄波戸",
+      "answer": [
+        "きわど"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiwado/"
+    },
+    {
+      "question": "欽明路",
+      "answer": [
+        "きんめいじ"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kimmeiji/"
+    },
+    {
+      "question": "玖珂",
+      "answer": [
+        "くが"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuga/"
+    },
+    {
+      "question": "草江",
+      "answer": [
+        "くさえ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusae/"
+    },
+    {
+      "question": "櫛ヶ浜",
+      "answer": [
+        "くしがはま"
+      ],
+      "meaning": "山陽本線、岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kushigahama/"
+    },
+    {
+      "question": "下松",
+      "answer": [
+        "くだまつ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kudamatsu_yamaguchi/"
+    },
+    {
+      "question": "黒井村",
+      "answer": [
+        "くろいむら"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuroimura/"
+    },
+    {
+      "question": "神代",
+      "answer": [
+        "こうじろ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kojiro_yamaguchi/"
+    },
+    {
+      "question": "小串",
+      "answer": [
+        "こぐし"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kogushi/"
+    },
+    {
+      "question": "越ヶ浜",
+      "answer": [
+        "こしがはま"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koshigahama/"
+    },
+    {
+      "question": "特牛",
+      "answer": [
+        "こっとい"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kottoi/"
+    },
+    {
+      "question": "厚東",
+      "answer": [
+        "ことう"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koto/"
+    },
+    {
+      "question": "琴芝",
+      "answer": [
+        "ことしば"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotoshiba/"
+    },
+    {
+      "question": "三見",
+      "answer": [
+        "さんみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sammi/"
+    },
+    {
+      "question": "重安",
+      "answer": [
+        "しげやす"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shigeyasu/"
+    },
+    {
+      "question": "篠目",
+      "answer": [
+        "しのめ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinome/"
+    },
+    {
+      "question": "渋木",
+      "answer": [
+        "しぶき"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shibuki/"
+    },
+    {
+      "question": "島田",
+      "answer": [
+        "しまた"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimata_yamaguchi/"
+    },
+    {
+      "question": "下関",
+      "answer": [
+        "しものせき"
+      ],
+      "meaning": "山陰本線、山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonoseki/"
+    },
+    {
+      "question": "守内かさ神",
+      "answer": [
+        "しゅうちかさがみ"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shuchikasagami/"
+    },
+    {
+      "question": "四郎ヶ原",
+      "answer": [
+        "しろうがはら"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirogahara/"
+    },
+    {
+      "question": "新岩国",
+      "answer": [
+        "しんいわくに"
+      ],
+      "meaning": "東海道・山陽新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-iwakuni/"
+    },
+    {
+      "question": "新下関",
+      "answer": [
+        "しんしものせき"
+      ],
+      "meaning": "山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-shimonoseki/"
+    },
+    {
+      "question": "新南陽",
+      "answer": [
+        "しんなんよう"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-nan-yo/"
+    },
+    {
+      "question": "新山口",
+      "answer": [
+        "しんやまぐち"
+      ],
+      "meaning": "山陽本線、宇部線、山口線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-yamaguchi/"
+    },
+    {
+      "question": "地福",
+      "answer": [
+        "じふく"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jifuku/"
+    },
+    {
+      "question": "周防久保",
+      "answer": [
+        "すおうくぼ"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suo-kubo/"
+    },
+    {
+      "question": "周防佐山",
+      "answer": [
+        "すおうさやま"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suo-sayama/"
+    },
+    {
+      "question": "周防下郷",
+      "answer": [
+        "すおうしもごう"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suo-shimogo/"
+    },
+    {
+      "question": "周防高森",
+      "answer": [
+        "すおうたかもり"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suo-takamori/"
+    },
+    {
+      "question": "周防花岡",
+      "answer": [
+        "すおうはなおか"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suo-hanaoka/"
+    },
+    {
+      "question": "須佐",
+      "answer": [
+        "すさ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/susa/"
+    },
+    {
+      "question": "雀田",
+      "answer": [
+        "すずめだ"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzumeda/"
+    },
+    {
+      "question": "清流新岩国",
+      "answer": [
+        "せいりゅうしんいわくに"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seiryu-shin-iwakuni/"
+    },
+    {
+      "question": "仙崎",
+      "answer": [
+        "せんざき"
+      ],
+      "meaning": "美祢線、山陰本線仙崎支線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senzaki/"
+    },
+    {
+      "question": "高水",
+      "answer": [
+        "たかみず"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamizu/"
+    },
+    {
+      "question": "滝部",
+      "answer": [
+        "たきべ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takibe/"
+    },
+    {
+      "question": "田布施",
+      "answer": [
+        "たぶせ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tabuse/"
+    },
+    {
+      "question": "玉江",
+      "answer": [
+        "たまえ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamae/"
+    },
+    {
+      "question": "大道",
+      "answer": [
+        "だいどう"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daido/"
+    },
+    {
+      "question": "長府",
+      "answer": [
+        "ちょうふ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chofu_yamaguchi/"
+    },
+    {
+      "question": "長門峡",
+      "answer": [
+        "ちょうもんきょう"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chomonkyo/"
+    },
+    {
+      "question": "通津",
+      "answer": [
+        "つづ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuzu/"
+    },
+    {
+      "question": "妻崎",
+      "answer": [
+        "つまざき"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsumazaki/"
+    },
+    {
+      "question": "常盤",
+      "answer": [
+        "ときわ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokiwa_yamaguchi/"
+    },
+    {
+      "question": "徳佐",
+      "answer": [
+        "とくさ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokusa/"
+    },
+    {
+      "question": "徳山",
+      "answer": [
+        "とくやま"
+      ],
+      "meaning": "山陽本線、岩徳線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokuyama/"
+    },
+    {
+      "question": "床波",
+      "answer": [
+        "とこなみ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokonami/"
+    },
+    {
+      "question": "富海",
+      "answer": [
+        "とのみ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonomi/"
+    },
+    {
+      "question": "長門粟野",
+      "answer": [
+        "ながとあわの"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-awano/"
+    },
+    {
+      "question": "長門大井",
+      "answer": [
+        "ながとおおい"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-oi/"
+    },
+    {
+      "question": "長門市",
+      "answer": [
+        "ながとし"
+      ],
+      "meaning": "山陰本線、美祢線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagatoshi/"
+    },
+    {
+      "question": "長門長沢",
+      "answer": [
+        "ながとながさわ"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-nagasawa/"
+    },
+    {
+      "question": "長門二見",
+      "answer": [
+        "ながとふたみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-futami/"
+    },
+    {
+      "question": "長門古市",
+      "answer": [
+        "ながとふるいち"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-furuichi/"
+    },
+    {
+      "question": "長門三隅",
+      "answer": [
+        "ながとみすみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-misumi/"
+    },
+    {
+      "question": "長門本山",
+      "answer": [
+        "ながともとやま"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-motoyama/"
+    },
+    {
+      "question": "長門湯本",
+      "answer": [
+        "ながとゆもと"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagato-yumoto/"
+    },
+    {
+      "question": "名草",
+      "answer": [
+        "なぐさ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagusa/"
+    },
+    {
+      "question": "南桑",
+      "answer": [
+        "なぐわ"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naguwa/"
+    },
+    {
+      "question": "奈古",
+      "answer": [
+        "なご"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nago/"
+    },
+    {
+      "question": "鍋倉",
+      "answer": [
+        "なべくら"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nabekura/"
+    },
+    {
+      "question": "西岩国",
+      "answer": [
+        "にしいわくに"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-iwakuni/"
+    },
+    {
+      "question": "錦町",
+      "answer": [
+        "にしきちょう"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishikicho/"
+    },
+    {
+      "question": "仁保",
+      "answer": [
+        "にほ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niho/"
+    },
+    {
+      "question": "仁保津",
+      "answer": [
+        "にほづ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nihozu/"
+    },
+    {
+      "question": "根笠",
+      "answer": [
+        "ねがさ"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/negasa/"
+    },
+    {
+      "question": "萩",
+      "answer": [
+        "はぎ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagi/"
+    },
+    {
+      "question": "柱野",
+      "answer": [
+        "はしらの"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashirano/"
+    },
+    {
+      "question": "幡生",
+      "answer": [
+        "はたぶ"
+      ],
+      "meaning": "山陰本線、山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatabu/"
+    },
+    {
+      "question": "埴生",
+      "answer": [
+        "はぶ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/habu/"
+    },
+    {
+      "question": "浜河内",
+      "answer": [
+        "はまごうち"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamagochi/"
+    },
+    {
+      "question": "光",
+      "answer": [
+        "ひかり"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikari/"
+    },
+    {
+      "question": "東新川",
+      "answer": [
+        "ひがししんかわ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-shinkawa_yamaguchi/"
+    },
+    {
+      "question": "東萩",
+      "answer": [
+        "ひがしはぎ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hagi/"
+    },
+    {
+      "question": "人丸",
+      "answer": [
+        "ひとまる"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitomaru/"
+    },
+    {
+      "question": "深溝",
+      "answer": [
+        "ふかみぞ"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukamizo/"
+    },
+    {
+      "question": "福江",
+      "answer": [
+        "ふくえ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukue/"
+    },
+    {
+      "question": "福川",
+      "answer": [
+        "ふくがわ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukugawa/"
+    },
+    {
+      "question": "藤生",
+      "answer": [
+        "ふじゅう"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuju/"
+    },
+    {
+      "question": "船平山",
+      "answer": [
+        "ふなひらやま"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funahirayama/"
+    },
+    {
+      "question": "戸田",
+      "answer": [
+        "へた"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heta_yamaguchi/"
+    },
+    {
+      "question": "防府",
+      "answer": [
+        "ほうふ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hofu/"
+    },
+    {
+      "question": "本由良",
+      "answer": [
+        "ほんゆら"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-yura/"
+    },
+    {
+      "question": "丸尾",
+      "answer": [
+        "まるお"
+      ],
+      "meaning": "宇部線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maruo/"
+    },
+    {
+      "question": "三谷",
+      "answer": [
+        "みたに"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitani_yamaguchi/"
+    },
+    {
+      "question": "南岩国",
+      "answer": [
+        "みなみいわくに"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-iwakuni/"
+    },
+    {
+      "question": "南大嶺",
+      "answer": [
+        "みなみおおみね"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-omine/"
+    },
+    {
+      "question": "南小野田",
+      "answer": [
+        "みなみおのだ"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-onoda/"
+    },
+    {
+      "question": "南河内",
+      "answer": [
+        "みなみごうち"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-gochi/"
+    },
+    {
+      "question": "南中川",
+      "answer": [
+        "みなみなかがわ"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-nakagawa/"
+    },
+    {
+      "question": "美祢",
+      "answer": [
+        "みね"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mine/"
+    },
+    {
+      "question": "宮野",
+      "answer": [
+        "みやの"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyano/"
+    },
+    {
+      "question": "椋野",
+      "answer": [
+        "むくの"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukuno/"
+    },
+    {
+      "question": "目出",
+      "answer": [
+        "めで"
+      ],
+      "meaning": "小野田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mede/"
+    },
+    {
+      "question": "安岡",
+      "answer": [
+        "やすおか"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasuoka/"
+    },
+    {
+      "question": "柳井",
+      "answer": [
+        "やない"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanai/"
+    },
+    {
+      "question": "柳井港",
+      "answer": [
+        "やないみなと"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanaiminato/"
+    },
+    {
+      "question": "柳瀬",
+      "answer": [
+        "やなぜ"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanaze/"
+    },
+    {
+      "question": "矢原",
+      "answer": [
+        "やばら"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yabara/"
+    },
+    {
+      "question": "山口",
+      "answer": [
+        "やまぐち"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamaguchi_yamaguchi/"
+    },
+    {
+      "question": "由宇",
+      "answer": [
+        "ゆう"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuu/"
+    },
+    {
+      "question": "行波",
+      "answer": [
+        "ゆかば"
+      ],
+      "meaning": "錦川鉄道錦川清流線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yukaba/"
+    },
+    {
+      "question": "湯玉",
+      "answer": [
+        "ゆたま"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yutama/"
+    },
+    {
+      "question": "湯田温泉",
+      "answer": [
+        "ゆだおんせん"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yudaonsen/"
+    },
+    {
+      "question": "湯ノ峠",
+      "answer": [
+        "ゆのとう"
+      ],
+      "meaning": "美祢線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunoto/"
+    },
+    {
+      "question": "吉見",
+      "answer": [
+        "よしみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshimi/"
+    },
+    {
+      "question": "四辻",
+      "answer": [
+        "よつつじ"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yotsutsuji/"
+    },
+    {
+      "question": "米川",
+      "answer": [
+        "よねかわ"
+      ],
+      "meaning": "岩徳線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yonekawa/"
+    },
+    {
+      "question": "和木",
+      "answer": [
+        "わき"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/waki/"
+    },
+    {
+      "question": "渡川",
+      "answer": [
+        "わたりがわ"
+      ],
+      "meaning": "山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watarigawa/"
+    }
+  ]
+}

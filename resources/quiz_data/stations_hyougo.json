@@ -1,0 +1,2947 @@
+{
+  "uniqueId": "stations_hyougo",
+  "name": "Hyougo Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Hyougo station names](https://mb.jorudan.co.jp/os/eki/menu_ukb/)",
+  "cards": [
+    {
+      "question": "相生",
+      "answer": [
+        "あいおい"
+      ],
+      "meaning": "東海道・山陽本線、赤穂線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aioi_hyogo/"
+    },
+    {
+      "question": "藍那",
+      "answer": [
+        "あいな"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aina/"
+    },
+    {
+      "question": "相野",
+      "answer": [
+        "あいの"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aino_hyogo/"
+    },
+    {
+      "question": "藍本",
+      "answer": [
+        "あいもと"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aimoto_hyogo/"
+    },
+    {
+      "question": "アイランド北口",
+      "answer": [
+        "あいらんどきたぐち"
+      ],
+      "meaning": "六甲ライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/island_kitaguchi/"
+    },
+    {
+      "question": "粟生",
+      "answer": [
+        "あお"
+      ],
+      "meaning": "加古川線、神戸電鉄粟生線、北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ao/"
+    },
+    {
+      "question": "青倉",
+      "answer": [
+        "あおくら"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aokura/"
+    },
+    {
+      "question": "青野ヶ原",
+      "answer": [
+        "あおのがはら"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aonogahara/"
+    },
+    {
+      "question": "明石",
+      "answer": [
+        "あかし"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akashi/"
+    },
+    {
+      "question": "英賀保",
+      "answer": [
+        "あがほ"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/agaho/"
+    },
+    {
+      "question": "朝霧",
+      "answer": [
+        "あさぎり"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asagiri_hyogo/"
+    },
+    {
+      "question": "芦屋",
+      "answer": [
+        "あしや"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiya_hanshin/"
+    },
+    {
+      "question": "芦屋",
+      "answer": [
+        "あしや"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiya_hyogo/"
+    },
+    {
+      "question": "芦屋川",
+      "answer": [
+        "あしやがわ"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiyagawa/"
+    },
+    {
+      "question": "網引",
+      "answer": [
+        "あびき"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abiki/"
+    },
+    {
+      "question": "網干",
+      "answer": [
+        "あぼし"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aboshi/"
+    },
+    {
+      "question": "尼崎",
+      "answer": [
+        "あまがさき"
+      ],
+      "meaning": "阪神本線、阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagasaki_hanshin/"
+    },
+    {
+      "question": "尼崎",
+      "answer": [
+        "あまがさき"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagasaki_hyogo/"
+    },
+    {
+      "question": "尼崎センタープール前",
+      "answer": [
+        "あまがさきせんたーぷーるまえ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagasaki_center-pool-mae/"
+    },
+    {
+      "question": "甘地",
+      "answer": [
+        "あまじ"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amaji/?page=2"
+    },
+    {
+      "question": "餘部",
+      "answer": [
+        "あまるべ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amarube/?page=2"
+    },
+    {
+      "question": "荒井",
+      "answer": [
+        "あらい"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arai_hyogo/?page=2"
+    },
+    {
+      "question": "有馬温泉",
+      "answer": [
+        "ありまおんせん"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arimaonsen_kobe/?page=2"
+    },
+    {
+      "question": "有馬温泉",
+      "answer": [
+        "ありまおんせん"
+      ],
+      "meaning": "六甲有馬ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arimaonsen_rope/?page=2"
+    },
+    {
+      "question": "有馬口",
+      "answer": [
+        "ありまぐち"
+      ],
+      "meaning": "神戸電鉄有馬線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arimaguchi/?page=2"
+    },
+    {
+      "question": "伊川谷",
+      "answer": [
+        "いかわだに"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikawadani/"
+    },
+    {
+      "question": "生野",
+      "answer": [
+        "いくの"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikuno_hyogo/"
+    },
+    {
+      "question": "居組",
+      "answer": [
+        "いぐみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/igumi/"
+    },
+    {
+      "question": "石井",
+      "answer": [
+        "いしい"
+      ],
+      "meaning": "智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishii_hyogo/"
+    },
+    {
+      "question": "石屋川",
+      "answer": [
+        "いしやがわ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishiyagawa/"
+    },
+    {
+      "question": "石生",
+      "answer": [
+        "いそう"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iso/"
+    },
+    {
+      "question": "伊丹",
+      "answer": [
+        "いたみ"
+      ],
+      "meaning": "阪急伊丹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itami_hankyu/"
+    },
+    {
+      "question": "伊丹",
+      "answer": [
+        "いたみ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itami_hyogo/"
+    },
+    {
+      "question": "板宿",
+      "answer": [
+        "いたやど"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itayado/"
+    },
+    {
+      "question": "市島",
+      "answer": [
+        "いちじま"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichijima/"
+    },
+    {
+      "question": "一の鳥居",
+      "answer": [
+        "いちのとりい"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichinotorii/"
+    },
+    {
+      "question": "市場",
+      "answer": [
+        "いちば"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichiba_kobe/"
+    },
+    {
+      "question": "市場",
+      "answer": [
+        "いちば"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichiba_hyogo/"
+    },
+    {
+      "question": "猪名寺",
+      "answer": [
+        "いなでら"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inadera/"
+    },
+    {
+      "question": "稲野",
+      "answer": [
+        "いなの"
+      ],
+      "meaning": "阪急伊丹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inano/"
+    },
+    {
+      "question": "伊保",
+      "answer": [
+        "いほ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iho/"
+    },
+    {
+      "question": "今津",
+      "answer": [
+        "いまづ"
+      ],
+      "meaning": "阪神本線、阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imazu_hyogo/"
+    },
+    {
+      "question": "医療センター",
+      "answer": [
+        "いりょうせんたー"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iryo_center/"
+    },
+    {
+      "question": "岩屋",
+      "answer": [
+        "いわや"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwaya_hyogo/"
+    },
+    {
+      "question": "魚崎",
+      "answer": [
+        "うおざき"
+      ],
+      "meaning": "阪神本線、六甲ライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uozaki/"
+    },
+    {
+      "question": "魚住",
+      "answer": [
+        "うおずみ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uozumi/"
+    },
+    {
+      "question": "鴬の森",
+      "answer": [
+        "うぐいすのもり"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uguisunomori/"
+    },
+    {
+      "question": "打出",
+      "answer": [
+        "うちで"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchide/"
+    },
+    {
+      "question": "ウッディタウン中央",
+      "answer": [
+        "うっでぃたうんちゅうおう"
+      ],
+      "meaning": "神戸電鉄公園都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/woody_town_chuo/"
+    },
+    {
+      "question": "有年",
+      "answer": [
+        "うね"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/une/"
+    },
+    {
+      "question": "畦野",
+      "answer": [
+        "うねの"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uneno/"
+    },
+    {
+      "question": "江井ヶ島",
+      "answer": [
+        "えいがしま"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/eigashima/"
+    },
+    {
+      "question": "江原",
+      "answer": [
+        "えばら"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebara/"
+    },
+    {
+      "question": "恵比須",
+      "answer": [
+        "えびす"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebisu_hyogo/"
+    },
+    {
+      "question": "王子公園",
+      "answer": [
+        "おうじこうえん"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ojikoen/"
+    },
+    {
+      "question": "大池",
+      "answer": [
+        "おおいけ"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oike/"
+    },
+    {
+      "question": "大石",
+      "answer": [
+        "おおいし"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oishi/"
+    },
+    {
+      "question": "太市",
+      "answer": [
+        "おおいち"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oichi/"
+    },
+    {
+      "question": "青木",
+      "answer": [
+        "おおぎ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogi_hyogo/"
+    },
+    {
+      "question": "大久保",
+      "answer": [
+        "おおくぼ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okubo_hyogo/"
+    },
+    {
+      "question": "大蔵谷",
+      "answer": [
+        "おおくらだに"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okuradani/"
+    },
+    {
+      "question": "大倉山",
+      "answer": [
+        "おおくらやま"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okurayama_hyogo/"
+    },
+    {
+      "question": "大塩",
+      "answer": [
+        "おおしお"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oshio_hyogo/"
+    },
+    {
+      "question": "大村",
+      "answer": [
+        "おおむら"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omura_hyogo/"
+    },
+    {
+      "question": "岡場",
+      "answer": [
+        "おかば"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okaba/"
+    },
+    {
+      "question": "岡本",
+      "answer": [
+        "おかもと"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okamoto_hyogo/"
+    },
+    {
+      "question": "長",
+      "answer": [
+        "おさ"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osa/"
+    },
+    {
+      "question": "押部谷",
+      "answer": [
+        "おしべだに"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oshibedani/"
+    },
+    {
+      "question": "小野",
+      "answer": [
+        "おの"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ono_hyogo/"
+    },
+    {
+      "question": "尾上の松",
+      "answer": [
+        "おのえのまつ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onoenomatsu/"
+    },
+    {
+      "question": "小野町",
+      "answer": [
+        "おのまち"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onomachi_hyogo/"
+    },
+    {
+      "question": "小林",
+      "answer": [
+        "おばやし"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obayashi_hyogo/"
+    },
+    {
+      "question": "柏原",
+      "answer": [
+        "かいばら"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaibara_hyogo/"
+    },
+    {
+      "question": "加古川",
+      "answer": [
+        "かこがわ"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakogawa/"
+    },
+    {
+      "question": "樫山",
+      "answer": [
+        "かしやま"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiyama/"
+    },
+    {
+      "question": "春日野道",
+      "answer": [
+        "かすがのみち"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasuganomichi_hankyu/"
+    },
+    {
+      "question": "春日野道",
+      "answer": [
+        "かすがのみち"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasuganomichi_hanshin/"
+    },
+    {
+      "question": "香住",
+      "answer": [
+        "かすみ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasumi/"
+    },
+    {
+      "question": "霞ヶ丘",
+      "answer": [
+        "かすみがおか"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasumigaoka_hyogo/"
+    },
+    {
+      "question": "上郡",
+      "answer": [
+        "かみごおり"
+      ],
+      "meaning": "山陽本線、智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamigori/"
+    },
+    {
+      "question": "上沢",
+      "answer": [
+        "かみさわ"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamisawa_hyogo/"
+    },
+    {
+      "question": "亀山",
+      "answer": [
+        "かめやま"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kameyama_hyogo/"
+    },
+    {
+      "question": "唐櫃台",
+      "answer": [
+        "からとだい"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karatodai/"
+    },
+    {
+      "question": "苅藻",
+      "answer": [
+        "かるも"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karumo/"
+    },
+    {
+      "question": "河合西",
+      "answer": [
+        "かわいにし"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawainishi/"
+    },
+    {
+      "question": "川西池田",
+      "answer": [
+        "かわにしいけだ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanishi-ikeda/"
+    },
+    {
+      "question": "川西能勢口",
+      "answer": [
+        "かわにしのせぐち"
+      ],
+      "meaning": "阪急宝塚線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanishi-noseguchi/"
+    },
+    {
+      "question": "神野",
+      "answer": [
+        "かんの"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanno/"
+    },
+    {
+      "question": "学園都市",
+      "answer": [
+        "がくえんとし"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakuentoshi/"
+    },
+    {
+      "question": "北伊丹",
+      "answer": [
+        "きたいたみ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-itami/"
+    },
+    {
+      "question": "北鈴蘭台",
+      "answer": [
+        "きたすずらんだい"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-suzurandai/"
+    },
+    {
+      "question": "北埠頭",
+      "answer": [
+        "きたふとう"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitafuto/"
+    },
+    {
+      "question": "木津",
+      "answer": [
+        "きづ"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kizu_hyogo/"
+    },
+    {
+      "question": "絹延橋",
+      "answer": [
+        "きぬのべばし"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinunobebashi/"
+    },
+    {
+      "question": "城崎温泉",
+      "answer": [
+        "きのさきおんせん"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinosakionsen/"
+    },
+    {
+      "question": "旧居留地・大丸前",
+      "answer": [
+        "きゅうきょりゅうちだいまるまえ"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyukyoryuchi-daimaru-mae/"
+    },
+    {
+      "question": "京口",
+      "answer": [
+        "きょうぐち"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyoguchi/"
+    },
+    {
+      "question": "清荒神",
+      "answer": [
+        "きよしこうじん"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyoshikojin/"
+    },
+    {
+      "question": "杭瀬",
+      "answer": [
+        "くいせ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuise/"
+    },
+    {
+      "question": "久下村",
+      "answer": [
+        "くげむら"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kugemura/"
+    },
+    {
+      "question": "草野",
+      "answer": [
+        "くさの"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusano_hyogo/"
+    },
+    {
+      "question": "久崎",
+      "answer": [
+        "くざき"
+      ],
+      "meaning": "智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuzaki/"
+    },
+    {
+      "question": "久寿川",
+      "answer": [
+        "くすがわ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusugawa/"
+    },
+    {
+      "question": "久谷",
+      "answer": [
+        "くたに"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kutani/"
+    },
+    {
+      "question": "苦楽園口",
+      "answer": [
+        "くらくえんぐち"
+      ],
+      "meaning": "阪急甲陽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurakuen-guchi/"
+    },
+    {
+      "question": "黒井",
+      "answer": [
+        "くろい"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuroi_hyogo/"
+    },
+    {
+      "question": "黒川",
+      "answer": [
+        "くろかわ"
+      ],
+      "meaning": "妙見の森ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurokawa_hyogo/"
+    },
+    {
+      "question": "黒田庄",
+      "answer": [
+        "くろだしょう"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurodasho/"
+    },
+    {
+      "question": "京コンピュータ前",
+      "answer": [
+        "けいこんぴゅーたまえ"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kei_computer-mae/"
+    },
+    {
+      "question": "県庁前",
+      "answer": [
+        "けんちょうまえ"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kencho-mae_hyogo/"
+    },
+    {
+      "question": "ケーブル山上",
+      "answer": [
+        "けーぶるさんじょう"
+      ],
+      "meaning": "妙見の森ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/cable_sanjo/"
+    },
+    {
+      "question": "玄武洞",
+      "answer": [
+        "げんぶどう"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gembudo/"
+    },
+    {
+      "question": "甲子園",
+      "answer": [
+        "こうしえん"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koshien/"
+    },
+    {
+      "question": "甲子園口",
+      "answer": [
+        "こうしえんぐち"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koshienguchi/"
+    },
+    {
+      "question": "高速神戸",
+      "answer": [
+        "こうそくこうべ"
+      ],
+      "meaning": "阪神本線、阪急神戸線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosoku-kobe/"
+    },
+    {
+      "question": "高速長田",
+      "answer": [
+        "こうそくながた"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosoku-nagata/"
+    },
+    {
+      "question": "上月",
+      "answer": [
+        "こうづき"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kozuki/"
+    },
+    {
+      "question": "甲東園",
+      "answer": [
+        "こうとうえん"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotoen/"
+    },
+    {
+      "question": "甲南山手",
+      "answer": [
+        "こうなんやまて"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konan-yamate/"
+    },
+    {
+      "question": "コウノトリの郷",
+      "answer": [
+        "こうのとりのさと"
+      ],
+      "meaning": "丹鉄宮舞・宮豊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kounotorinosato/"
+    },
+    {
+      "question": "河野原円心",
+      "answer": [
+        "こうのはらえんしん"
+      ],
+      "meaning": "智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konohara-enshin/"
+    },
+    {
+      "question": "神戸",
+      "answer": [
+        "こうべ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe_hyogo/"
+    },
+    {
+      "question": "神戸空港",
+      "answer": [
+        "こうべくうこう"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe-airport/"
+    },
+    {
+      "question": "神戸三宮",
+      "answer": [
+        "こうべさんのみや"
+      ],
+      "meaning": "阪急神戸線、神戸高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe-sannomiya_hankyu/"
+    },
+    {
+      "question": "神戸三宮",
+      "answer": [
+        "こうべさんのみや"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe-sannomiya_hanshin/"
+    },
+    {
+      "question": "甲陽園",
+      "answer": [
+        "こうようえん"
+      ],
+      "meaning": "阪急甲陽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koyoen/"
+    },
+    {
+      "question": "香呂",
+      "answer": [
+        "こうろ"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koro/"
+    },
+    {
+      "question": "香櫨園",
+      "answer": [
+        "こうろえん"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koroen/"
+    },
+    {
+      "question": "国府",
+      "answer": [
+        "こくふ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokufu_hyogo/"
+    },
+    {
+      "question": "苔縄",
+      "answer": [
+        "こけなわ"
+      ],
+      "meaning": "智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokenawa/"
+    },
+    {
+      "question": "木幡",
+      "answer": [
+        "こばた"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobata_hyogo/"
+    },
+    {
+      "question": "駒ヶ林",
+      "answer": [
+        "こまがばやし"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komagabayashi/"
+    },
+    {
+      "question": "五社",
+      "answer": [
+        "ごしゃ"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gosha/?page=2"
+    },
+    {
+      "question": "御着",
+      "answer": [
+        "ごちゃく"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gochaku/?page=2"
+    },
+    {
+      "question": "栄",
+      "answer": [
+        "さかえ"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakae_hyogo/"
+    },
+    {
+      "question": "逆瀬川",
+      "answer": [
+        "さかせがわ"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakasegawa/"
+    },
+    {
+      "question": "さくら夙川",
+      "answer": [
+        "さくらしゅくがわ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakura-shukugawa/"
+    },
+    {
+      "question": "坂越",
+      "answer": [
+        "さこし"
+      ],
+      "meaning": "東海道・山陽本線、赤穂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakoshi/"
+    },
+    {
+      "question": "笹部",
+      "answer": [
+        "ささべ"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasabe/"
+    },
+    {
+      "question": "篠山口",
+      "answer": [
+        "ささやまぐち"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasayamaguchi/"
+    },
+    {
+      "question": "佐津",
+      "answer": [
+        "さつ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/satsu/"
+    },
+    {
+      "question": "佐用",
+      "answer": [
+        "さよ"
+      ],
+      "meaning": "姫新線、智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sayo/"
+    },
+    {
+      "question": "三田",
+      "answer": [
+        "さんだ"
+      ],
+      "meaning": "福知山線、神戸電鉄三田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanda_hyogo/"
+    },
+    {
+      "question": "三田本町",
+      "answer": [
+        "さんだほんまち"
+      ],
+      "meaning": "神戸電鉄三田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sandahommachi/"
+    },
+    {
+      "question": "三ノ宮",
+      "answer": [
+        "さんのみや"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sannomiya_hyogo/"
+    },
+    {
+      "question": "三宮",
+      "answer": [
+        "さんのみや"
+      ],
+      "meaning": "神戸市営西神・山手線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sannomiya_kobe-kosoku/"
+    },
+    {
+      "question": "三宮・花時計前",
+      "answer": [
+        "さんのみやはなどけいまえ"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sannomiya-hanadokei-mae/"
+    },
+    {
+      "question": "山陽明石",
+      "answer": [
+        "さんようあかし"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-akashi/"
+    },
+    {
+      "question": "山陽網干",
+      "answer": [
+        "さんようあぼし"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-aboshi/"
+    },
+    {
+      "question": "山陽魚住",
+      "answer": [
+        "さんよううおずみ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-uozumi/"
+    },
+    {
+      "question": "山陽塩屋",
+      "answer": [
+        "さんようしおや"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-shioya/"
+    },
+    {
+      "question": "山陽須磨",
+      "answer": [
+        "さんようすま"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-suma/"
+    },
+    {
+      "question": "山陽曽根",
+      "answer": [
+        "さんようそね"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-sone/"
+    },
+    {
+      "question": "山陽垂水",
+      "answer": [
+        "さんようたるみ"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-tarumi/"
+    },
+    {
+      "question": "山陽天満",
+      "answer": [
+        "さんようてんま"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-temma/?page=2"
+    },
+    {
+      "question": "山陽姫路",
+      "answer": [
+        "さんようひめじ"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-himeji/?page=2"
+    },
+    {
+      "question": "塩屋",
+      "answer": [
+        "しおや"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shioya_hyogo/"
+    },
+    {
+      "question": "飾磨",
+      "answer": [
+        "しかま"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikama/"
+    },
+    {
+      "question": "志染",
+      "answer": [
+        "しじみ"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shijimi/"
+    },
+    {
+      "question": "柴山",
+      "answer": [
+        "しばやま"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shibayama/"
+    },
+    {
+      "question": "市民広場",
+      "answer": [
+        "しみんひろば"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiminhiroba/"
+    },
+    {
+      "question": "下滝",
+      "answer": [
+        "しもたき"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimotaki/"
+    },
+    {
+      "question": "夙川",
+      "answer": [
+        "しゅくがわ"
+      ],
+      "meaning": "阪急神戸線、阪急甲陽線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shukugawa/"
+    },
+    {
+      "question": "白浜の宮",
+      "answer": [
+        "しらはまのみや"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirahamanomiya/"
+    },
+    {
+      "question": "新伊丹",
+      "answer": [
+        "しんいたみ"
+      ],
+      "meaning": "阪急伊丹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-itami/"
+    },
+    {
+      "question": "新開地",
+      "answer": [
+        "しんかいち"
+      ],
+      "meaning": "阪神本線、阪急神戸線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkaichi/"
+    },
+    {
+      "question": "新神戸",
+      "answer": [
+        "しんこうべ"
+      ],
+      "meaning": "東海道・山陽新幹線、神戸市営西神・山手線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-kobe/"
+    },
+    {
+      "question": "新三田",
+      "answer": [
+        "しんさんだ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-sanda/"
+    },
+    {
+      "question": "新在家",
+      "answer": [
+        "しんざいけ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinzaike/"
+    },
+    {
+      "question": "神鉄道場",
+      "answer": [
+        "しんてつどうじょう"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shintetsudojo/"
+    },
+    {
+      "question": "神鉄六甲",
+      "answer": [
+        "しんてつろっこう"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shintetsurokko/"
+    },
+    {
+      "question": "新長田",
+      "answer": [
+        "しんながた"
+      ],
+      "meaning": "東海道・山陽本線、神戸市営西神・山手線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-nagata/"
+    },
+    {
+      "question": "新西脇",
+      "answer": [
+        "しんにしわき"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-nishiwaki/"
+    },
+    {
+      "question": "洲先",
+      "answer": [
+        "すざき"
+      ],
+      "meaning": "阪神武庫川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzaki/"
+    },
+    {
+      "question": "鈴蘭台",
+      "answer": [
+        "すずらんだい"
+      ],
+      "meaning": "神戸電鉄粟生線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzurandai/"
+    },
+    {
+      "question": "鈴蘭台西口",
+      "answer": [
+        "すずらんだいにしぐち"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzurandai-nishiguchi/"
+    },
+    {
+      "question": "須磨",
+      "answer": [
+        "すま"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suma/"
+    },
+    {
+      "question": "須磨浦公園",
+      "answer": [
+        "すまうらこうえん"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumaurakoen/"
+    },
+    {
+      "question": "須磨海浜公園",
+      "answer": [
+        "すまかいひんこうえん"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumakaihinkoen/"
+    },
+    {
+      "question": "須磨寺",
+      "answer": [
+        "すまでら"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumadera/"
+    },
+    {
+      "question": "住吉",
+      "answer": [
+        "すみよし"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_hanshin/"
+    },
+    {
+      "question": "住吉",
+      "answer": [
+        "すみよし"
+      ],
+      "meaning": "東海道・山陽本線、六甲ライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_hyogo/"
+    },
+    {
+      "question": "西神中央",
+      "answer": [
+        "せいしんちゅうおう"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seishinchuo/"
+    },
+    {
+      "question": "西神南",
+      "answer": [
+        "せいしんみなみ"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seishin-minami/"
+    },
+    {
+      "question": "摂津本山",
+      "answer": [
+        "せっつもとやま"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/settsu-motoyama/"
+    },
+    {
+      "question": "千本",
+      "answer": [
+        "せんぼん"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sembon/"
+    },
+    {
+      "question": "総合運動公園",
+      "answer": [
+        "そうごううんどうこうえん"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sogoundo-koen/"
+    },
+    {
+      "question": "曽根",
+      "answer": [
+        "そね"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sone_hyogo/"
+    },
+    {
+      "question": "園田",
+      "answer": [
+        "そのだ"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sonoda/"
+    },
+    {
+      "question": "田尾寺",
+      "answer": [
+        "たおじ"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taoji/"
+    },
+    {
+      "question": "高砂",
+      "answer": [
+        "たかさご"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takasago_hyogo/"
+    },
+    {
+      "question": "鷹取",
+      "answer": [
+        "たかとり"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takatori_hyogo/"
+    },
+    {
+      "question": "宝塚",
+      "answer": [
+        "たからづか"
+      ],
+      "meaning": "福知山線、阪急今津線、阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takarazuka/"
+    },
+    {
+      "question": "宝塚南口",
+      "answer": [
+        "たからづかみなみぐち"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takarazuka-minamiguchi/"
+    },
+    {
+      "question": "滝",
+      "answer": [
+        "たき"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taki_hyogo/"
+    },
+    {
+      "question": "滝野",
+      "answer": [
+        "たきの"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takino/"
+    },
+    {
+      "question": "滝の茶屋",
+      "answer": [
+        "たきのちゃや"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takinochaya/"
+    },
+    {
+      "question": "滝山",
+      "answer": [
+        "たきやま"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takiyama/"
+    },
+    {
+      "question": "竹田",
+      "answer": [
+        "たけだ"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takeda_hyogo/"
+    },
+    {
+      "question": "武田尾",
+      "answer": [
+        "たけだお"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takedao/"
+    },
+    {
+      "question": "竹野",
+      "answer": [
+        "たけの"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takeno/"
+    },
+    {
+      "question": "多田",
+      "answer": [
+        "ただ"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tada_hyogo/"
+    },
+    {
+      "question": "立花",
+      "answer": [
+        "たちばな"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachibana/"
+    },
+    {
+      "question": "竜野",
+      "answer": [
+        "たつの"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatsuno_hyogo/"
+    },
+    {
+      "question": "谷川",
+      "answer": [
+        "たにかわ"
+      ],
+      "meaning": "福知山線、加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanikawa/"
+    },
+    {
+      "question": "谷上",
+      "answer": [
+        "たにがみ"
+      ],
+      "meaning": "神戸市営西神・山手線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanigami/"
+    },
+    {
+      "question": "田原",
+      "answer": [
+        "たはら"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tahara/"
+    },
+    {
+      "question": "垂水",
+      "answer": [
+        "たるみ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tarumi_hyogo/"
+    },
+    {
+      "question": "丹波大山",
+      "answer": [
+        "たんばおおやま"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamba-oyama/"
+    },
+    {
+      "question": "丹波竹田",
+      "answer": [
+        "たんばたけだ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamba-takeda/?page=2"
+    },
+    {
+      "question": "大開",
+      "answer": [
+        "だいかい"
+      ],
+      "meaning": "山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daikai/?page=2"
+    },
+    {
+      "question": "大物",
+      "answer": [
+        "だいもつ"
+      ],
+      "meaning": "阪神本線、阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daimotsu/?page=2"
+    },
+    {
+      "question": "中央市場前",
+      "answer": [
+        "ちゅうおういちばまえ"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chuoichiba-mae/"
+    },
+    {
+      "question": "塚口",
+      "answer": [
+        "つかぐち"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukaguchi/"
+    },
+    {
+      "question": "月見山",
+      "answer": [
+        "つきみやま"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukimiyama/"
+    },
+    {
+      "question": "土山",
+      "answer": [
+        "つちやま"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuchiyama/"
+    },
+    {
+      "question": "鼓滝",
+      "answer": [
+        "つづみがたき"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuzumigataki/"
+    },
+    {
+      "question": "鶴居",
+      "answer": [
+        "つるい"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurui/"
+    },
+    {
+      "question": "手柄",
+      "answer": [
+        "てがら"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tegara/"
+    },
+    {
+      "question": "寺前",
+      "answer": [
+        "てらまえ"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/teramae/"
+    },
+    {
+      "question": "天和",
+      "answer": [
+        "てんわ"
+      ],
+      "meaning": "赤穂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenwa/"
+    },
+    {
+      "question": "出屋敷",
+      "answer": [
+        "でやしき"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/deyashiki/"
+    },
+    {
+      "question": "砥堀",
+      "answer": [
+        "とほり"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tohori/"
+    },
+    {
+      "question": "豊岡",
+      "answer": [
+        "とよおか"
+      ],
+      "meaning": "山陰本線、丹鉄宮舞・宮豊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyo-oka_hyogo/"
+    },
+    {
+      "question": "道場",
+      "answer": [
+        "どうじょう"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dojo/"
+    },
+    {
+      "question": "道場南口",
+      "answer": [
+        "どうじょうみなみぐち"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dojo-minamiguchi/"
+    },
+    {
+      "question": "中公園",
+      "answer": [
+        "なかこうえん"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakakoen/"
+    },
+    {
+      "question": "中埠頭",
+      "answer": [
+        "なかふとう"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakafuto_hyogo/"
+    },
+    {
+      "question": "中八木",
+      "answer": [
+        "なかやぎ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayagi/"
+    },
+    {
+      "question": "中山観音",
+      "answer": [
+        "なかやまかんのん"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayama-kannon/"
+    },
+    {
+      "question": "中山寺",
+      "answer": [
+        "なかやまでら"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayamadera/"
+    },
+    {
+      "question": "長田",
+      "answer": [
+        "ながた"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagata_kobe-shiei/"
+    },
+    {
+      "question": "長田",
+      "answer": [
+        "ながた"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagata_kobe-dentetsu/"
+    },
+    {
+      "question": "灘",
+      "answer": [
+        "なだ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nada/"
+    },
+    {
+      "question": "生瀬",
+      "answer": [
+        "なまぜ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/namaze/"
+    },
+    {
+      "question": "鳴尾",
+      "answer": [
+        "なるお"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruo/"
+    },
+    {
+      "question": "新井",
+      "answer": [
+        "にい"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nii_hyogo/"
+    },
+    {
+      "question": "新野",
+      "answer": [
+        "にいの"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niino_hyogo/"
+    },
+    {
+      "question": "仁川",
+      "answer": [
+        "にがわ"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nigawa/"
+    },
+    {
+      "question": "西相生",
+      "answer": [
+        "にしあいおい"
+      ],
+      "meaning": "東海道・山陽本線、赤穂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-aioi/"
+    },
+    {
+      "question": "西明石",
+      "answer": [
+        "にしあかし"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-akashi/"
+    },
+    {
+      "question": "西江井ヶ島",
+      "answer": [
+        "にしえいがしま"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-eigashima/"
+    },
+    {
+      "question": "西栗栖",
+      "answer": [
+        "にしくりす"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kurisu/"
+    },
+    {
+      "question": "西飾磨",
+      "answer": [
+        "にししかま"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishishikama/"
+    },
+    {
+      "question": "西新町",
+      "answer": [
+        "にししんまち"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-shimmachi/"
+    },
+    {
+      "question": "西鈴蘭台",
+      "answer": [
+        "にしすずらんだい"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-suzurandai/"
+    },
+    {
+      "question": "西代",
+      "answer": [
+        "にしだい"
+      ],
+      "meaning": "山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishidai_hyogo/"
+    },
+    {
+      "question": "西灘",
+      "answer": [
+        "にしなだ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinada/"
+    },
+    {
+      "question": "西宮",
+      "answer": [
+        "にしのみや"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hyogo/"
+    },
+    {
+      "question": "西宮",
+      "answer": [
+        "にしのみや"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hanshin/"
+    },
+    {
+      "question": "西宮北口",
+      "answer": [
+        "にしのみやきたぐち"
+      ],
+      "meaning": "阪急神戸線、阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya-kitaguchi/"
+    },
+    {
+      "question": "西宮名塩",
+      "answer": [
+        "にしのみやなじお"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiyanajio/"
+    },
+    {
+      "question": "西二見",
+      "answer": [
+        "にしふたみ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-futami/"
+    },
+    {
+      "question": "西舞子",
+      "answer": [
+        "にしまいこ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-maiko/"
+    },
+    {
+      "question": "西元町",
+      "answer": [
+        "にしもとまち"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-motomachi/"
+    },
+    {
+      "question": "西脇市",
+      "answer": [
+        "にしわきし"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishiwakishi/"
+    },
+    {
+      "question": "虹の駅",
+      "answer": [
+        "にじのえき"
+      ],
+      "meaning": "摩耶ロープウェーなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijinoeki/?page=2"
+    },
+    {
+      "question": "日生中央",
+      "answer": [
+        "にっせいちゅうおう"
+      ],
+      "meaning": "能勢電鉄日生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nisseichuo/?page=2"
+    },
+    {
+      "question": "仁豊野",
+      "answer": [
+        "にぶの"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nibuno/?page=2"
+    },
+    {
+      "question": "日本へそ公園",
+      "answer": [
+        "にほんへそこうえん"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nihon-hesokoen/?page=2"
+    },
+    {
+      "question": "二郎",
+      "answer": [
+        "にろう"
+      ],
+      "meaning": "神戸電鉄三田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niro/?page=2"
+    },
+    {
+      "question": "野里",
+      "answer": [
+        "のざと"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nozato/"
+    },
+    {
+      "question": "長谷",
+      "answer": [
+        "はせ"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hase_hyogo/"
+    },
+    {
+      "question": "葉多",
+      "answer": [
+        "はた"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hata_hyogo/"
+    },
+    {
+      "question": "花隈",
+      "answer": [
+        "はなくま"
+      ],
+      "meaning": "阪急神戸線、神戸高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanakuma/"
+    },
+    {
+      "question": "花山",
+      "answer": [
+        "はなやま"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanayama/"
+    },
+    {
+      "question": "浜坂",
+      "answer": [
+        "はまさか"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamasaka/"
+    },
+    {
+      "question": "浜の宮",
+      "answer": [
+        "はまのみや"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamanomiya/"
+    },
+    {
+      "question": "林崎松江海岸",
+      "answer": [
+        "はやしさきまつえかいがん"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hayashisakimatsuekaigan/"
+    },
+    {
+      "question": "はりま勝原",
+      "answer": [
+        "はりまかつはら"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-katsuhara/"
+    },
+    {
+      "question": "播磨下里",
+      "answer": [
+        "はりましもさと"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-shimosato/"
+    },
+    {
+      "question": "播磨新宮",
+      "answer": [
+        "はりましんぐう"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-shingu/"
+    },
+    {
+      "question": "播磨高岡",
+      "answer": [
+        "はりまたかおか"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-takaoka/"
+    },
+    {
+      "question": "播磨町",
+      "answer": [
+        "はりまちょう"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harimacho/"
+    },
+    {
+      "question": "播磨徳久",
+      "answer": [
+        "はりまとくさ"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-tokusa/"
+    },
+    {
+      "question": "播磨横田",
+      "answer": [
+        "はりまよこた"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-yokota/"
+    },
+    {
+      "question": "阪急塚口",
+      "answer": [
+        "はんきゅうつかぐち"
+      ],
+      "meaning": "阪急神戸線、阪急伊丹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hankyu-tsukaguchi/"
+    },
+    {
+      "question": "阪神国道",
+      "answer": [
+        "はんしんこくどう"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanshinkokudo/"
+    },
+    {
+      "question": "播州赤穂",
+      "answer": [
+        "ばんしゅうあこう"
+      ],
+      "meaning": "東海道・山陽本線、赤穂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/banshu-ako/"
+    },
+    {
+      "question": "比延",
+      "answer": [
+        "ひえ"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hie/"
+    },
+    {
+      "question": "日岡",
+      "answer": [
+        "ひおか"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hioka/"
+    },
+    {
+      "question": "東加古川",
+      "answer": [
+        "ひがしかこがわ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kakogawa/"
+    },
+    {
+      "question": "東須磨",
+      "answer": [
+        "ひがしすま"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-suma/"
+    },
+    {
+      "question": "東垂水",
+      "answer": [
+        "ひがしたるみ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-tarumi/"
+    },
+    {
+      "question": "東鳴尾",
+      "answer": [
+        "ひがしなるお"
+      ],
+      "meaning": "阪神武庫川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashinaruo/"
+    },
+    {
+      "question": "東觜崎",
+      "answer": [
+        "ひがしはしさき"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hashisaki/"
+    },
+    {
+      "question": "東姫路",
+      "answer": [
+        "ひがしひめじ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-himeji/"
+    },
+    {
+      "question": "東二見",
+      "answer": [
+        "ひがしふたみ"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-futami/"
+    },
+    {
+      "question": "人丸前",
+      "answer": [
+        "ひとまるまえ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitomaru-mae/"
+    },
+    {
+      "question": "雲雀丘花屋敷",
+      "answer": [
+        "ひばりがおかはなやしき"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hibarigaoka-hanayashiki/"
+    },
+    {
+      "question": "姫路",
+      "answer": [
+        "ひめじ"
+      ],
+      "meaning": "東海道・山陽本線、播但線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himeji/"
+    },
+    {
+      "question": "ひめじ別所",
+      "answer": [
+        "ひめじべっしょ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himejibessho/"
+    },
+    {
+      "question": "兵庫",
+      "answer": [
+        "ひょうご"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hyogo/"
+    },
+    {
+      "question": "鵯越",
+      "answer": [
+        "ひよどりごえ"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiyodorigoe/"
+    },
+    {
+      "question": "平野",
+      "answer": [
+        "ひらの"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirano_hyogo/"
+    },
+    {
+      "question": "平福",
+      "answer": [
+        "ひらふく"
+      ],
+      "meaning": "智頭急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirafuku/"
+    },
+    {
+      "question": "平松",
+      "answer": [
+        "ひらまつ"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiramatsu/"
+    },
+    {
+      "question": "広野",
+      "answer": [
+        "ひろの"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirono_hyogo/"
+    },
+    {
+      "question": "広野ゴルフ場前",
+      "answer": [
+        "ひろのごるふじょうまえ"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirono-golfjo-mae/"
+    },
+    {
+      "question": "広畑",
+      "answer": [
+        "ひろはた"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirohata/?page=2"
+    },
+    {
+      "question": "備前福河",
+      "answer": [
+        "びぜんふくかわ"
+      ],
+      "meaning": "赤穂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bizen-fukukawa/?page=2"
+    },
+    {
+      "question": "深江",
+      "answer": [
+        "ふかえ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukae_hyogo/"
+    },
+    {
+      "question": "福崎",
+      "answer": [
+        "ふくさき"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukusaki/"
+    },
+    {
+      "question": "藤江",
+      "answer": [
+        "ふじえ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujie/"
+    },
+    {
+      "question": "船町口",
+      "answer": [
+        "ふなまちぐち"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funamachiguchi/"
+    },
+    {
+      "question": "古市",
+      "answer": [
+        "ふるいち"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furuichi_hyogo/"
+    },
+    {
+      "question": "別府",
+      "answer": [
+        "べふ"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/befu_hyogo/"
+    },
+    {
+      "question": "北条町",
+      "answer": [
+        "ほうじょうまち"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hojomachi/"
+    },
+    {
+      "question": "宝殿",
+      "answer": [
+        "ほうでん"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoden/"
+    },
+    {
+      "question": "星の駅",
+      "answer": [
+        "ほしのえき"
+      ],
+      "meaning": "摩耶ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshinoeki/"
+    },
+    {
+      "question": "法華口",
+      "answer": [
+        "ほっけぐち"
+      ],
+      "meaning": "北条鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hokkeguchi/"
+    },
+    {
+      "question": "本黒田",
+      "answer": [
+        "ほんくろだ"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-kuroda/"
+    },
+    {
+      "question": "本竜野",
+      "answer": [
+        "ほんたつの"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-tatsuno/"
+    },
+    {
+      "question": "貿易センター",
+      "answer": [
+        "ぼうえきせんたー"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/boeki_center/"
+    },
+    {
+      "question": "舞子",
+      "answer": [
+        "まいこ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maiko/"
+    },
+    {
+      "question": "舞子公園",
+      "answer": [
+        "まいここうえん"
+      ],
+      "meaning": "阪神本線、山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maikokoen/"
+    },
+    {
+      "question": "的形",
+      "answer": [
+        "まとがた"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matogata/"
+    },
+    {
+      "question": "摩耶",
+      "answer": [
+        "まや"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maya/"
+    },
+    {
+      "question": "摩耶ケーブル",
+      "answer": [
+        "まやけーぶる"
+      ],
+      "meaning": "摩耶ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maya_cable/"
+    },
+    {
+      "question": "丸山",
+      "answer": [
+        "まるやま"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maruyama_hyogo/"
+    },
+    {
+      "question": "御影",
+      "answer": [
+        "みかげ"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikage_hankyu/"
+    },
+    {
+      "question": "御影",
+      "answer": [
+        "みかげ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikage_hanshin/"
+    },
+    {
+      "question": "三日月",
+      "answer": [
+        "みかづき"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikazuki/"
+    },
+    {
+      "question": "三木",
+      "answer": [
+        "みき"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miki_kobe/"
+    },
+    {
+      "question": "三木上の丸",
+      "answer": [
+        "みきうえのまる"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikiuenomaru/"
+    },
+    {
+      "question": "御崎公園",
+      "answer": [
+        "みさきこうえん"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misakikoen_hyogo/"
+    },
+    {
+      "question": "溝口",
+      "answer": [
+        "みぞぐち"
+      ],
+      "meaning": "播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mizoguchi/"
+    },
+    {
+      "question": "緑が丘",
+      "answer": [
+        "みどりがおか"
+      ],
+      "meaning": "神戸電鉄粟生線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/midorigaoka_hyogo/"
+    },
+    {
+      "question": "湊川",
+      "answer": [
+        "みなとがわ"
+      ],
+      "meaning": "神戸電鉄有馬線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minatogawa/"
+    },
+    {
+      "question": "湊川公園",
+      "answer": [
+        "みなとがわこうえん"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minatogawakoen/"
+    },
+    {
+      "question": "みなと元町",
+      "answer": [
+        "みなともとまち"
+      ],
+      "meaning": "神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minatomotomachi/"
+    },
+    {
+      "question": "南魚崎",
+      "answer": [
+        "みなみうおざき"
+      ],
+      "meaning": "六甲ライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-uozaki/"
+    },
+    {
+      "question": "南ウッディタウン",
+      "answer": [
+        "みなみうっでぃたうん"
+      ],
+      "meaning": "神戸電鉄公園都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami_woody_town/"
+    },
+    {
+      "question": "南公園",
+      "answer": [
+        "みなみこうえん"
+      ],
+      "meaning": "ポートライナー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-koen/"
+    },
+    {
+      "question": "南矢代",
+      "answer": [
+        "みなみやしろ"
+      ],
+      "meaning": "福知山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yashiro/"
+    },
+    {
+      "question": "箕谷",
+      "answer": [
+        "みのたに"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minotani/"
+    },
+    {
+      "question": "名谷",
+      "answer": [
+        "みょうだに"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myodani/"
+    },
+    {
+      "question": "妙法寺",
+      "answer": [
+        "みょうほうじ"
+      ],
+      "meaning": "神戸市営西神・山手線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myohoji_hyogo/"
+    },
+    {
+      "question": "武庫川",
+      "answer": [
+        "むこがわ"
+      ],
+      "meaning": "阪神本線、阪神武庫川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukogawa/"
+    },
+    {
+      "question": "武庫川団地前",
+      "answer": [
+        "むこがわだんちまえ"
+      ],
+      "meaning": "阪神武庫川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukogawadanchi-mae/"
+    },
+    {
+      "question": "武庫之荘",
+      "answer": [
+        "むこのそう"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukonoso/"
+    },
+    {
+      "question": "妻鹿",
+      "answer": [
+        "めが"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mega_hyogo/"
+    },
+    {
+      "question": "売布神社",
+      "answer": [
+        "めふじんじゃ"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mefujinja/"
+    },
+    {
+      "question": "元町",
+      "answer": [
+        "もとまち"
+      ],
+      "meaning": "東海道・山陽本線、阪神本線、山陽電鉄本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motomachi_hyogo/"
+    },
+    {
+      "question": "諸寄",
+      "answer": [
+        "もろよせ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moroyose/"
+    },
+    {
+      "question": "門戸厄神",
+      "answer": [
+        "もんどやくじん"
+      ],
+      "meaning": "阪急今津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mondoyakujin/"
+    },
+    {
+      "question": "八家",
+      "answer": [
+        "やか"
+      ],
+      "meaning": "山陽電鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yaka/"
+    },
+    {
+      "question": "厄神",
+      "answer": [
+        "やくじん"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakujin/"
+    },
+    {
+      "question": "社町",
+      "answer": [
+        "やしろちょう"
+      ],
+      "meaning": "加古川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashirocho/"
+    },
+    {
+      "question": "梁瀬",
+      "answer": [
+        "やなせ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanase/"
+    },
+    {
+      "question": "養父",
+      "answer": [
+        "やぶ"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yabu/"
+    },
+    {
+      "question": "山下",
+      "answer": [
+        "やました"
+      ],
+      "meaning": "能勢電鉄妙見線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamashita_hyogo/"
+    },
+    {
+      "question": "山の街",
+      "answer": [
+        "やまのまち"
+      ],
+      "meaning": "神戸電鉄有馬線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamanomachi/"
+    },
+    {
+      "question": "山本",
+      "answer": [
+        "やまもと"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamamoto_hyogo/"
+    },
+    {
+      "question": "夢前川",
+      "answer": [
+        "ゆめさきがわ"
+      ],
+      "meaning": "山陽電鉄網干線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yumesakigawa/"
+    },
+    {
+      "question": "八鹿",
+      "answer": [
+        "ようか"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoka/"
+    },
+    {
+      "question": "横山",
+      "answer": [
+        "よこやま"
+      ],
+      "meaning": "神戸電鉄三田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokoyama_hyogo/"
+    },
+    {
+      "question": "余部",
+      "answer": [
+        "よべ"
+      ],
+      "meaning": "姫新線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yobe/"
+    },
+    {
+      "question": "鎧",
+      "answer": [
+        "よろい"
+      ],
+      "meaning": "山陰本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoroi/"
+    },
+    {
+      "question": "六甲",
+      "answer": [
+        "ろっこう"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokko/"
+    },
+    {
+      "question": "六甲ケーブル下",
+      "answer": [
+        "ろっこうけーぶるした"
+      ],
+      "meaning": "六甲ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokko_cable_shita/"
+    },
+    {
+      "question": "六甲山上",
+      "answer": [
+        "ろっこうさんじょう"
+      ],
+      "meaning": "六甲ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokko_sanjo/"
+    },
+    {
+      "question": "六甲山頂",
+      "answer": [
+        "ろっこうさんちょう"
+      ],
+      "meaning": "六甲有馬ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokko_sancho/"
+    },
+    {
+      "question": "六甲道",
+      "answer": [
+        "ろっこうみち"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokkomichi/"
+    },
+    {
+      "question": "和田岬",
+      "answer": [
+        "わだみさき"
+      ],
+      "meaning": "和田岬線、神戸市営海岸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wadamisaki/"
+    },
+    {
+      "question": "和田山",
+      "answer": [
+        "わだやま"
+      ],
+      "meaning": "山陰本線、播但線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wadayama/"
+    }
+  ]
+}

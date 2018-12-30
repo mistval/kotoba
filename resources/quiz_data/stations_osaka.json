@@ -1,0 +1,3803 @@
+{
+  "uniqueId": "stations_osaka",
+  "name": "Osaka Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Osaka station names](https://mb.jorudan.co.jp/os/eki/menu_osa/)",
+  "cards": [
+    {
+      "question": "相川",
+      "answer": [
+        "あいかわ"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aikawa_osaka/"
+    },
+    {
+      "question": "浅香",
+      "answer": [
+        "あさか"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asaka_osaka/"
+    },
+    {
+      "question": "浅香山",
+      "answer": [
+        "あさかやま"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakayama/"
+    },
+    {
+      "question": "朝潮橋",
+      "answer": [
+        "あさしおばし"
+      ],
+      "meaning": "大阪メトロ中央線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asashiobashi/"
+    },
+    {
+      "question": "芦原町",
+      "answer": [
+        "あしはらちょう"
+      ],
+      "meaning": "南海汐見橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiharacho/"
+    },
+    {
+      "question": "芦原橋",
+      "answer": [
+        "あしはらばし"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiharabashi/"
+    },
+    {
+      "question": "安治川口",
+      "answer": [
+        "あじかわぐち"
+      ],
+      "meaning": "桜島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ajikawaguchi/"
+    },
+    {
+      "question": "我孫子町",
+      "answer": [
+        "あびこちょう"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abikocho/"
+    },
+    {
+      "question": "我孫子前",
+      "answer": [
+        "あびこまえ"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abiko-mae/"
+    },
+    {
+      "question": "我孫子道",
+      "answer": [
+        "あびこみち"
+      ],
+      "meaning": "阪堺電軌阪堺線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abikomichi/"
+    },
+    {
+      "question": "阿倍野",
+      "answer": [
+        "あべの"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abeno/"
+    },
+    {
+      "question": "天見",
+      "answer": [
+        "あまみ"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amami/"
+    },
+    {
+      "question": "綾ノ町",
+      "answer": [
+        "あやのちょう"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ayanocho/"
+    },
+    {
+      "question": "荒本",
+      "answer": [
+        "あらもと"
+      ],
+      "meaning": "近鉄けいはんな線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aramoto/"
+    },
+    {
+      "question": "阿波座",
+      "answer": [
+        "あわざ"
+      ],
+      "meaning": "大阪メトロ千日前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awaza/"
+    },
+    {
+      "question": "淡路",
+      "answer": [
+        "あわじ"
+      ],
+      "meaning": "阪急京都線、阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awaji/"
+    },
+    {
+      "question": "安堂",
+      "answer": [
+        "あんどう"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ando/"
+    },
+    {
+      "question": "安立町",
+      "answer": [
+        "あんりゅうまち"
+      ],
+      "meaning": "阪堺電軌阪堺線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/anryumachi/"
+    },
+    {
+      "question": "池田",
+      "answer": [
+        "いけだ"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikeda_osaka/"
+    },
+    {
+      "question": "石切",
+      "answer": [
+        "いしきり"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishikiri/"
+    },
+    {
+      "question": "石才",
+      "answer": [
+        "いしざい"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishizai/"
+    },
+    {
+      "question": "石津",
+      "answer": [
+        "いしづ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishizu_osaka/"
+    },
+    {
+      "question": "石津川",
+      "answer": [
+        "いしづがわ"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishizugawa/"
+    },
+    {
+      "question": "石津北",
+      "answer": [
+        "いしづきた"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishizu-kita/"
+    },
+    {
+      "question": "石橋",
+      "answer": [
+        "いしばし"
+      ],
+      "meaning": "阪急箕面線、阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishibashi_osaka/"
+    },
+    {
+      "question": "泉大津",
+      "answer": [
+        "いずみおおつ"
+      ],
+      "meaning": "南海本線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumiotsu/"
+    },
+    {
+      "question": "和泉大宮",
+      "answer": [
+        "いずみおおみや"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-omiya/"
+    },
+    {
+      "question": "泉ヶ丘",
+      "answer": [
+        "いずみがおか"
+      ],
+      "meaning": "泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumigaoka/"
+    },
+    {
+      "question": "泉佐野",
+      "answer": [
+        "いずみさの"
+      ],
+      "meaning": "南海本線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumisano/"
+    },
+    {
+      "question": "和泉砂川",
+      "answer": [
+        "いずみすながわ"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-sunagawa/"
+    },
+    {
+      "question": "和泉中央",
+      "answer": [
+        "いずみちゅうおう"
+      ],
+      "meaning": "泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-chuo_osaka/"
+    },
+    {
+      "question": "和泉鳥取",
+      "answer": [
+        "いずみとっとり"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-tottori/"
+    },
+    {
+      "question": "和泉橋本",
+      "answer": [
+        "いずみはしもと"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-hashimoto/"
+    },
+    {
+      "question": "和泉府中",
+      "answer": [
+        "いずみふちゅう"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-fuchu/"
+    },
+    {
+      "question": "井高野",
+      "answer": [
+        "いたかの"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itakano/"
+    },
+    {
+      "question": "井原里",
+      "answer": [
+        "いはらのさと"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iharanosato/"
+    },
+    {
+      "question": "茨木",
+      "answer": [
+        "いばらき"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ibaraki_osaka/"
+    },
+    {
+      "question": "茨木市",
+      "answer": [
+        "いばらきし"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ibarakishi/"
+    },
+    {
+      "question": "今池",
+      "answer": [
+        "いまいけ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imaike_osaka/?page=2"
+    },
+    {
+      "question": "今川",
+      "answer": [
+        "いまがわ"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imagawa_osaka/?page=2"
+    },
+    {
+      "question": "今里",
+      "answer": [
+        "いまざと"
+      ],
+      "meaning": "近鉄大阪線、近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imazato_kintetsu/?page=2"
+    },
+    {
+      "question": "今里",
+      "answer": [
+        "いまざと"
+      ],
+      "meaning": "大阪メトロ千日前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imazato_osaka_metro/?page=2"
+    },
+    {
+      "question": "今福鶴見",
+      "answer": [
+        "いまふくつるみ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imafuku-tsurumi/?page=2"
+    },
+    {
+      "question": "今船",
+      "answer": [
+        "いまふね"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imafune/?page=2"
+    },
+    {
+      "question": "今宮",
+      "answer": [
+        "いまみや"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imamiya/?page=2"
+    },
+    {
+      "question": "今宮戎",
+      "answer": [
+        "いまみやえびす"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imamiyaebisu/?page=2"
+    },
+    {
+      "question": "上野芝",
+      "answer": [
+        "うえのしば"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uenoshiba/"
+    },
+    {
+      "question": "宇野辺",
+      "answer": [
+        "うのべ"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unobe/"
+    },
+    {
+      "question": "梅田",
+      "answer": [
+        "うめだ"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umeda/"
+    },
+    {
+      "question": "恵我ノ荘",
+      "answer": [
+        "えがのしょう"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/eganosho/"
+    },
+    {
+      "question": "江坂",
+      "answer": [
+        "えさか"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/esaka/"
+    },
+    {
+      "question": "海老江",
+      "answer": [
+        "えびえ"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebie/"
+    },
+    {
+      "question": "恵美須町",
+      "answer": [
+        "えびすちょう"
+      ],
+      "meaning": "大阪メトロ堺筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebisucho_osaka/"
+    },
+    {
+      "question": "扇町",
+      "answer": [
+        "おうぎまち"
+      ],
+      "meaning": "大阪メトロ堺筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogimachi_osaka/"
+    },
+    {
+      "question": "大江橋",
+      "answer": [
+        "おおえばし"
+      ],
+      "meaning": "京阪本線、京阪中之島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oebashi/"
+    },
+    {
+      "question": "大阪",
+      "answer": [
+        "おおさか"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka/"
+    },
+    {
+      "question": "大阪阿部野橋",
+      "answer": [
+        "おおさかあべのばし"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka-abenobashi/"
+    },
+    {
+      "question": "大阪上本町",
+      "answer": [
+        "おおさかうえほんまち"
+      ],
+      "meaning": "近鉄大阪線、近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka-uehommachi/"
+    },
+    {
+      "question": "大阪教育大前",
+      "answer": [
+        "おおさかきょういくだいまえ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakakyoikudai-mae/"
+    },
+    {
+      "question": "大阪空港",
+      "answer": [
+        "おおさかくうこう"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka-airport_monorail/"
+    },
+    {
+      "question": "大阪港",
+      "answer": [
+        "おおさかこう"
+      ],
+      "meaning": "大阪メトロ中央線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakako/"
+    },
+    {
+      "question": "大阪狭山市",
+      "answer": [
+        "おおさかさやまし"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakasayamashi/"
+    },
+    {
+      "question": "大阪城北詰",
+      "answer": [
+        "おおさかじょうきたづめ"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakajokitazume/"
+    },
+    {
+      "question": "大阪城公園",
+      "answer": [
+        "おおさかじょうこうえん"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakajokoen/"
+    },
+    {
+      "question": "大阪天満宮",
+      "answer": [
+        "おおさかてんまんぐう"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osakatemmangu/"
+    },
+    {
+      "question": "大阪難波",
+      "answer": [
+        "おおさかなんば"
+      ],
+      "meaning": "近鉄奈良線、阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka-namba/"
+    },
+    {
+      "question": "大阪ビジネスパーク",
+      "answer": [
+        "おおさかびじねすぱーく"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osaka_business_park/"
+    },
+    {
+      "question": "大小路",
+      "answer": [
+        "おおしょうじ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oshoji/"
+    },
+    {
+      "question": "鳳",
+      "answer": [
+        "おおとり"
+      ],
+      "meaning": "阪和線、羽衣線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otori/"
+    },
+    {
+      "question": "大和田",
+      "answer": [
+        "おおわだ"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/owada_osaka/"
+    },
+    {
+      "question": "岡田浦",
+      "answer": [
+        "おかだうら"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okadaura/"
+    },
+    {
+      "question": "岡町",
+      "answer": [
+        "おかまち"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okamachi/"
+    },
+    {
+      "question": "尾崎",
+      "answer": [
+        "おざき"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ozaki/"
+    },
+    {
+      "question": "恩智",
+      "answer": [
+        "おんぢ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onji/?page=2"
+    },
+    {
+      "question": "貝塚",
+      "answer": [
+        "かいづか"
+      ],
+      "meaning": "南海本線、南海空港線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaizuka_osaka/"
+    },
+    {
+      "question": "貝塚市役所前",
+      "answer": [
+        "かいづかしやくしょまえ"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaizuka_shiyakushomae/"
+    },
+    {
+      "question": "加島",
+      "answer": [
+        "かしま"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashima_osaka/"
+    },
+    {
+      "question": "柏原",
+      "answer": [
+        "かしわら"
+      ],
+      "meaning": "関西本線（西日本）、近鉄道明寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiwara_osaka/"
+    },
+    {
+      "question": "柏原南口",
+      "answer": [
+        "かしわらみなみぐち"
+      ],
+      "meaning": "近鉄道明寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiwaraminamiguchi/"
+    },
+    {
+      "question": "堅下",
+      "answer": [
+        "かたしも"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katashimo/"
+    },
+    {
+      "question": "交野市",
+      "answer": [
+        "かたのし"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katanoshi/"
+    },
+    {
+      "question": "門真市",
+      "answer": [
+        "かどまし"
+      ],
+      "meaning": "京阪本線、大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kadomashi/"
+    },
+    {
+      "question": "門真南",
+      "answer": [
+        "かどまみなみ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kadoma-minami/"
+    },
+    {
+      "question": "加美",
+      "answer": [
+        "かみ"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami/"
+    },
+    {
+      "question": "上新庄",
+      "answer": [
+        "かみしんじょう"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamishinjo/"
+    },
+    {
+      "question": "神ノ木",
+      "answer": [
+        "かみのき"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaminoki/"
+    },
+    {
+      "question": "上ノ太子",
+      "answer": [
+        "かみのたいし"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaminotaishi/"
+    },
+    {
+      "question": "萱島",
+      "answer": [
+        "かやしま"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kayashima/"
+    },
+    {
+      "question": "河内天美",
+      "answer": [
+        "かわちあまみ"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-amami/"
+    },
+    {
+      "question": "河内磐船",
+      "answer": [
+        "かわちいわふね"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-iwafune/"
+    },
+    {
+      "question": "河内永和",
+      "answer": [
+        "かわちえいわ"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-eiwa/"
+    },
+    {
+      "question": "河内堅上",
+      "answer": [
+        "かわちかたかみ"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-katakami/"
+    },
+    {
+      "question": "河内国分",
+      "answer": [
+        "かわちこくぶ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-kokubu/"
+    },
+    {
+      "question": "河内小阪",
+      "answer": [
+        "かわちこさか"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-kosaka/"
+    },
+    {
+      "question": "河内長野",
+      "answer": [
+        "かわちながの"
+      ],
+      "meaning": "南海高野線、近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-nagano/?page=2"
+    },
+    {
+      "question": "河内花園",
+      "answer": [
+        "かわちはなぞの"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-hanazono/?page=2"
+    },
+    {
+      "question": "河内松原",
+      "answer": [
+        "かわちまつばら"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-matsubara/?page=2"
+    },
+    {
+      "question": "河内森",
+      "answer": [
+        "かわちもり"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachimori/?page=2"
+    },
+    {
+      "question": "河内山本",
+      "answer": [
+        "かわちやまもと"
+      ],
+      "meaning": "近鉄大阪線、近鉄信貴線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawachi-yamamoto/?page=2"
+    },
+    {
+      "question": "川西",
+      "answer": [
+        "かわにし"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanishi_osaka/?page=2"
+    },
+    {
+      "question": "関西空港",
+      "answer": [
+        "かんさいくうこう"
+      ],
+      "meaning": "関西空港線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kansai-airport/?page=2"
+    },
+    {
+      "question": "神崎川",
+      "answer": [
+        "かんざきがわ"
+      ],
+      "meaning": "阪急神戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanzakigawa/?page=2"
+    },
+    {
+      "question": "関大前",
+      "answer": [
+        "かんだいまえ"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kandai-mae/?page=2"
+    },
+    {
+      "question": "上牧",
+      "answer": [
+        "かんまき"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kammaki_osaka/?page=2"
+    },
+    {
+      "question": "蒲生四丁目",
+      "answer": [
+        "がもうよんちょうめ"
+      ],
+      "meaning": "大阪メトロ今里筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gamo_4-chome/?page=2"
+    },
+    {
+      "question": "私市",
+      "answer": [
+        "きさいち"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kisaichi/"
+    },
+    {
+      "question": "喜志",
+      "answer": [
+        "きし"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kishi_osaka/"
+    },
+    {
+      "question": "岸里",
+      "answer": [
+        "きしのさと"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kishinosato/"
+    },
+    {
+      "question": "岸里玉出",
+      "answer": [
+        "きしのさとたまで"
+      ],
+      "meaning": "南海本線、南海高野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kishinosato-tamade/"
+    },
+    {
+      "question": "岸辺",
+      "answer": [
+        "きしべ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kishibe/"
+    },
+    {
+      "question": "岸和田",
+      "answer": [
+        "きしわだ"
+      ],
+      "meaning": "南海本線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kishiwada/"
+    },
+    {
+      "question": "衣摺加美北",
+      "answer": [
+        "きずりかみきた"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kizuri-kamikita/"
+    },
+    {
+      "question": "北加賀屋",
+      "answer": [
+        "きたかがや"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kagaya/"
+    },
+    {
+      "question": "北信太",
+      "answer": [
+        "きたしのだ"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-shinoda/"
+    },
+    {
+      "question": "北新地",
+      "answer": [
+        "きたしんち"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-shinchi/"
+    },
+    {
+      "question": "北助松",
+      "answer": [
+        "きたすけまつ"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-sukematsu/"
+    },
+    {
+      "question": "北千里",
+      "answer": [
+        "きたせんり"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-senri/"
+    },
+    {
+      "question": "北巽",
+      "answer": [
+        "きたたつみ"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-tatsumi/"
+    },
+    {
+      "question": "北田辺",
+      "answer": [
+        "きたたなべ"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-tanabe/"
+    },
+    {
+      "question": "北天下茶屋",
+      "answer": [
+        "きたてんがちゃや"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-tengachaya/"
+    },
+    {
+      "question": "北野田",
+      "answer": [
+        "きたのだ"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitanoda/"
+    },
+    {
+      "question": "北花田",
+      "answer": [
+        "きたはなだ"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-hanada/"
+    },
+    {
+      "question": "北浜",
+      "answer": [
+        "きたはま"
+      ],
+      "meaning": "京阪本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitahama_osaka/"
+    },
+    {
+      "question": "北畠",
+      "answer": [
+        "きたばたけ"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitabatake/"
+    },
+    {
+      "question": "木津川",
+      "answer": [
+        "きづがわ"
+      ],
+      "meaning": "南海汐見橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kizugawa/"
+    },
+    {
+      "question": "伽羅橋",
+      "answer": [
+        "きゃらばし"
+      ],
+      "meaning": "南海高師浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyarabashi/?page=2"
+    },
+    {
+      "question": "久宝寺",
+      "answer": [
+        "きゅうほうじ"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyuhoji/?page=2"
+    },
+    {
+      "question": "久宝寺口",
+      "answer": [
+        "きゅうほうじぐち"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyuhojiguchi/?page=2"
+    },
+    {
+      "question": "孝子",
+      "answer": [
+        "きょうし"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyoshi/?page=2"
+    },
+    {
+      "question": "京橋",
+      "answer": [
+        "きょうばし"
+      ],
+      "meaning": "大阪環状線、京阪本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyobashi_osaka/?page=2"
+    },
+    {
+      "question": "喜連瓜破",
+      "answer": [
+        "きれうりわり"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kire-uriwari/?page=2"
+    },
+    {
+      "question": "近鉄日本橋",
+      "answer": [
+        "きんてつにっぽんばし"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-nippombashi/?page=2"
+    },
+    {
+      "question": "近鉄八尾",
+      "answer": [
+        "きんてつやお"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-yao/?page=2"
+    },
+    {
+      "question": "九条",
+      "answer": [
+        "くじょう"
+      ],
+      "meaning": "阪神なんば線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kujo_osaka/"
+    },
+    {
+      "question": "樟葉",
+      "answer": [
+        "くずは"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuzuha/"
+    },
+    {
+      "question": "柴島",
+      "answer": [
+        "くにじま"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kunijima/"
+    },
+    {
+      "question": "熊取",
+      "answer": [
+        "くまとり"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumatori/"
+    },
+    {
+      "question": "久米田",
+      "answer": [
+        "くめだ"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumeda/"
+    },
+    {
+      "question": "公園東口",
+      "answer": [
+        "こうえんひがしぐち"
+      ],
+      "meaning": "大阪モノレールなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koen-higashiguchi/"
+    },
+    {
+      "question": "光善寺",
+      "answer": [
+        "こうぜんじ"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kozenji/"
+    },
+    {
+      "question": "郡津",
+      "answer": [
+        "こうづ"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kozu_osaka/"
+    },
+    {
+      "question": "鴻池新田",
+      "answer": [
+        "こうのいけしんでん"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konoikeshinden/"
+    },
+    {
+      "question": "光風台",
+      "answer": [
+        "こうふうだい"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kofuudai_osaka/"
+    },
+    {
+      "question": "光明池",
+      "answer": [
+        "こうみょういけ"
+      ],
+      "meaning": "泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komyoike/"
+    },
+    {
+      "question": "香里園",
+      "answer": [
+        "こうりえん"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/korien/"
+    },
+    {
+      "question": "近義の里",
+      "answer": [
+        "こぎのさと"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koginosato/"
+    },
+    {
+      "question": "粉浜",
+      "answer": [
+        "こはま"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kohama/"
+    },
+    {
+      "question": "河堀口",
+      "answer": [
+        "こぼれぐち"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koboreguchi/"
+    },
+    {
+      "question": "駒ヶ谷",
+      "answer": [
+        "こまがたに"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komagatani/"
+    },
+    {
+      "question": "駒川中野",
+      "answer": [
+        "こまがわなかの"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komagawa-nakano/"
+    },
+    {
+      "question": "金剛",
+      "answer": [
+        "こんごう"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kongo/"
+    },
+    {
+      "question": "御殿山",
+      "answer": [
+        "ごてんやま"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goten-yama/"
+    },
+    {
+      "question": "御陵前",
+      "answer": [
+        "ごりょうまえ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goryo-mae/"
+    },
+    {
+      "question": "彩都西",
+      "answer": [
+        "さいとにし"
+      ],
+      "meaning": "大阪モノレールなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saito-nishi/"
+    },
+    {
+      "question": "堺",
+      "answer": [
+        "さかい"
+      ],
+      "meaning": "南海本線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakai/"
+    },
+    {
+      "question": "堺市",
+      "answer": [
+        "さかいし"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakaishi/"
+    },
+    {
+      "question": "堺筋本町",
+      "answer": [
+        "さかいすじほんまち"
+      ],
+      "meaning": "大阪メトロ中央線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakaisuji_hommachi/"
+    },
+    {
+      "question": "堺東",
+      "answer": [
+        "さかいひがし"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakaihigashi/"
+    },
+    {
+      "question": "桜井",
+      "answer": [
+        "さくらい"
+      ],
+      "meaning": "阪急箕面線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakurai_osaka/"
+    },
+    {
+      "question": "桜川",
+      "answer": [
+        "さくらがわ"
+      ],
+      "meaning": "阪神なんば線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakuragawa_osaka/"
+    },
+    {
+      "question": "桜島",
+      "answer": [
+        "さくらじま"
+      ],
+      "meaning": "桜島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakurajima/"
+    },
+    {
+      "question": "桜ノ宮",
+      "answer": [
+        "さくらのみや"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakuranomiya/"
+    },
+    {
+      "question": "狭山",
+      "answer": [
+        "さやま"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sayama/"
+    },
+    {
+      "question": "沢ノ町",
+      "answer": [
+        "さわのちょう"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawanocho/"
+    },
+    {
+      "question": "沢良宜",
+      "answer": [
+        "さわらぎ"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawaragi/"
+    },
+    {
+      "question": "汐ノ宮",
+      "answer": [
+        "しおのみや"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shionomiya/"
+    },
+    {
+      "question": "汐見橋",
+      "answer": [
+        "しおみばし"
+      ],
+      "meaning": "南海汐見橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiomibashi/"
+    },
+    {
+      "question": "志紀",
+      "answer": [
+        "しき"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiki_osaka/"
+    },
+    {
+      "question": "信貴山口",
+      "answer": [
+        "しぎさんぐち"
+      ],
+      "meaning": "近鉄信貴線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shigisanguchi/"
+    },
+    {
+      "question": "鴫野",
+      "answer": [
+        "しぎの"
+      ],
+      "meaning": "JR線、大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shigino/"
+    },
+    {
+      "question": "四条畷",
+      "answer": [
+        "しじょうなわて"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shijonawate/"
+    },
+    {
+      "question": "七道",
+      "answer": [
+        "しちどう"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shichido/"
+    },
+    {
+      "question": "四天王寺前夕陽ヶ丘",
+      "answer": [
+        "してんのうじまえゆうひがおか"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiten-nojimaeyuhigaoka/"
+    },
+    {
+      "question": "信太山",
+      "answer": [
+        "しのだやま"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinodayama/"
+    },
+    {
+      "question": "忍ヶ丘",
+      "answer": [
+        "しのぶがおか"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinobugaoka/"
+    },
+    {
+      "question": "柴原",
+      "answer": [
+        "しばはら"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shibahara/"
+    },
+    {
+      "question": "島本",
+      "answer": [
+        "しまもと"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimamoto/"
+    },
+    {
+      "question": "清水",
+      "answer": [
+        "しみず"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimizu_osaka/"
+    },
+    {
+      "question": "下新庄",
+      "answer": [
+        "しもしんじょう"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-shinjo/"
+    },
+    {
+      "question": "下松",
+      "answer": [
+        "しもまつ"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimomatsu_osaka/"
+    },
+    {
+      "question": "宿院",
+      "answer": [
+        "しゅくいん"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shukuin/"
+    },
+    {
+      "question": "俊徳道",
+      "answer": [
+        "しゅんとくみち"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shuntokumichi/"
+    },
+    {
+      "question": "少路",
+      "answer": [
+        "しょうじ"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shoji_osaka-kousoku/"
+    },
+    {
+      "question": "小路",
+      "answer": [
+        "しょうじ"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shoji_osaka_metro/"
+    },
+    {
+      "question": "正雀",
+      "answer": [
+        "しょうじゃく"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shojaku/"
+    },
+    {
+      "question": "聖天坂",
+      "answer": [
+        "しょうてんさか"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shotensaka/?page=2"
+    },
+    {
+      "question": "庄内",
+      "answer": [
+        "しょうない"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shonai_osaka/?page=2"
+    },
+    {
+      "question": "昭和町",
+      "answer": [
+        "しょうわちょう"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/showacho_osaka/?page=2"
+    },
+    {
+      "question": "白鷺",
+      "answer": [
+        "しらさぎ"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirasagi/?page=2"
+    },
+    {
+      "question": "新石切",
+      "answer": [
+        "しんいしきり"
+      ],
+      "meaning": "近鉄けいはんな線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-ishikiri/?page=2"
+    },
+    {
+      "question": "新今宮",
+      "answer": [
+        "しんいまみや"
+      ],
+      "meaning": "関西本線（西日本）、南海本線、南海高野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-imamiya/?page=2"
+    },
+    {
+      "question": "新今宮駅前",
+      "answer": [
+        "しんいまみやえきまえ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-imamiya-ekimae/?page=2"
+    },
+    {
+      "question": "新大阪",
+      "answer": [
+        "しんおおさか"
+      ],
+      "meaning": "東海道・山陽本線、大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-osaka/?page=2"
+    },
+    {
+      "question": "新金岡",
+      "answer": [
+        "しんかなおか"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkanaoka/?page=2"
+    },
+    {
+      "question": "新加美",
+      "answer": [
+        "しんかみ"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkami/?page=2"
+    },
+    {
+      "question": "新家",
+      "answer": [
+        "しんげ"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinge/?page=2"
+    },
+    {
+      "question": "心斎橋",
+      "answer": [
+        "しんさいばし"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinsaibashi/?page=2"
+    },
+    {
+      "question": "新深江",
+      "answer": [
+        "しんふかえ"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-fukae/?page=2"
+    },
+    {
+      "question": "新福島",
+      "answer": [
+        "しんふくしま"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-fukushima/?page=2"
+    },
+    {
+      "question": "神明町",
+      "answer": [
+        "しんめいちょう"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimmeicho/?page=2"
+    },
+    {
+      "question": "新森古市",
+      "answer": [
+        "しんもりふるいち"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinmori_furuichi/?page=2"
+    },
+    {
+      "question": "ＪＲ河内永和",
+      "answer": [
+        "じぇいあーるかわちえいわ"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-kawachi-eiwa/?page=2"
+    },
+    {
+      "question": "ＪＲ俊徳道",
+      "answer": [
+        "じぇいあーるしゅんとくみち"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-shintokumichi/?page=2"
+    },
+    {
+      "question": "ＪＲ総持寺",
+      "answer": [
+        "じぇいあーるそうじじ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-sojiji/?page=2"
+    },
+    {
+      "question": "ＪＲ長瀬",
+      "answer": [
+        "じぇいあーるながせ"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-nagase/?page=2"
+    },
+    {
+      "question": "ＪＲ難波",
+      "answer": [
+        "じぇいあーるなんば"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-namba/?page=3"
+    },
+    {
+      "question": "十三",
+      "answer": [
+        "じゅうそう"
+      ],
+      "meaning": "阪急神戸線、阪急京都線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/juso/?page=3"
+    },
+    {
+      "question": "吹田",
+      "answer": [
+        "すいた"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suita_hankyu/"
+    },
+    {
+      "question": "吹田",
+      "answer": [
+        "すいた"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suita_osaka/"
+    },
+    {
+      "question": "杉本町",
+      "answer": [
+        "すぎもとちょう"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugimotocho/"
+    },
+    {
+      "question": "住ノ江",
+      "answer": [
+        "すみのえ"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suminoe/"
+    },
+    {
+      "question": "住之江公園",
+      "answer": [
+        "すみのえこうえん"
+      ],
+      "meaning": "大阪メトロ四つ橋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suminoekoen/"
+    },
+    {
+      "question": "住道",
+      "answer": [
+        "すみのどう"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suminodo/"
+    },
+    {
+      "question": "住吉",
+      "answer": [
+        "すみよし"
+      ],
+      "meaning": "阪堺電軌阪堺線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_hankai/"
+    },
+    {
+      "question": "住吉大社",
+      "answer": [
+        "すみよしたいしゃ"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshitaisha/"
+    },
+    {
+      "question": "住吉鳥居前",
+      "answer": [
+        "すみよしとりいまえ"
+      ],
+      "meaning": "阪堺電軌阪堺線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshitorii-mae/"
+    },
+    {
+      "question": "住吉東",
+      "answer": [
+        "すみよしひがし"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi-higashi/"
+    },
+    {
+      "question": "諏訪ノ森",
+      "answer": [
+        "すわのもり"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suwanomori/"
+    },
+    {
+      "question": "瑞光四丁目",
+      "answer": [
+        "ずいこうよんちょうめ"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zuikoyonchome/"
+    },
+    {
+      "question": "関目",
+      "answer": [
+        "せきめ"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekime/"
+    },
+    {
+      "question": "関目成育",
+      "answer": [
+        "せきめせいいく"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekime_seiiku/"
+    },
+    {
+      "question": "関目高殿",
+      "answer": [
+        "せきめたかどの"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekimetakadono/"
+    },
+    {
+      "question": "清児",
+      "answer": [
+        "せちご"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sechigo/"
+    },
+    {
+      "question": "摂津",
+      "answer": [
+        "せっつ"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/settsu/"
+    },
+    {
+      "question": "摂津市",
+      "answer": [
+        "せっつし"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/settsushi/"
+    },
+    {
+      "question": "摂津富田",
+      "answer": [
+        "せっつとんだ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/settsu-tonda/"
+    },
+    {
+      "question": "千林",
+      "answer": [
+        "せんばやし"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sembayashi/"
+    },
+    {
+      "question": "千林大宮",
+      "answer": [
+        "せんばやしおおみや"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sembayashiomiya/"
+    },
+    {
+      "question": "千里丘",
+      "answer": [
+        "せんりおか"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senrioka/"
+    },
+    {
+      "question": "千里中央",
+      "answer": [
+        "せんりちゅうおう"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senrichuo/"
+    },
+    {
+      "question": "千里山",
+      "answer": [
+        "せんりやま"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senriyama/"
+    },
+    {
+      "question": "総持寺",
+      "answer": [
+        "そうじじ"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sojiji/"
+    },
+    {
+      "question": "崇禅寺",
+      "answer": [
+        "そうぜんじ"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sozenji/"
+    },
+    {
+      "question": "曽根",
+      "answer": [
+        "そね"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sone_osaka/"
+    },
+    {
+      "question": "太子橋今市",
+      "answer": [
+        "たいしばしいまいち"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taishibashi-imaichi/"
+    },
+    {
+      "question": "大正",
+      "answer": [
+        "たいしょう"
+      ],
+      "meaning": "関西本線（西日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taisho_osaka/"
+    },
+    {
+      "question": "高石",
+      "answer": [
+        "たかいし"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaishi/"
+    },
+    {
+      "question": "高井田",
+      "answer": [
+        "たかいだ"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaida_kansai_line/"
+    },
+    {
+      "question": "高井田",
+      "answer": [
+        "たかいだ"
+      ],
+      "meaning": "大阪メトロ中央線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaida_osaka_metro/"
+    },
+    {
+      "question": "高井田中央",
+      "answer": [
+        "たかいだちゅうおう"
+      ],
+      "meaning": "おおさか東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaidachuo/"
+    },
+    {
+      "question": "高師浜",
+      "answer": [
+        "たかしのはま"
+      ],
+      "meaning": "南海高師浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takashinohama/"
+    },
+    {
+      "question": "高須神社",
+      "answer": [
+        "たかすじんしゃ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takasujinsha/"
+    },
+    {
+      "question": "高槻",
+      "answer": [
+        "たかつき"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takatsuki_osaka/"
+    },
+    {
+      "question": "高槻市",
+      "answer": [
+        "たかつきし"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takatsukishi/"
+    },
+    {
+      "question": "高見ノ里",
+      "answer": [
+        "たかみのさと"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaminosato/"
+    },
+    {
+      "question": "高安",
+      "answer": [
+        "たかやす"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takayasu/"
+    },
+    {
+      "question": "高安山",
+      "answer": [
+        "たかやすやま"
+      ],
+      "meaning": "近鉄西信貴ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takayasuyama/"
+    },
+    {
+      "question": "高鷲",
+      "answer": [
+        "たかわし"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takawashi/"
+    },
+    {
+      "question": "滝井",
+      "answer": [
+        "たきい"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takii/"
+    },
+    {
+      "question": "滝谷",
+      "answer": [
+        "たきだに"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takidani_osaka/"
+    },
+    {
+      "question": "滝谷不動",
+      "answer": [
+        "たきだにふどう"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takidanifudo/"
+    },
+    {
+      "question": "蛸地蔵",
+      "answer": [
+        "たこじぞう"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takojizo/"
+    },
+    {
+      "question": "忠岡",
+      "answer": [
+        "ただおか"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tadaoka/"
+    },
+    {
+      "question": "多奈川",
+      "answer": [
+        "たながわ"
+      ],
+      "meaning": "南海多奈川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanagawa/"
+    },
+    {
+      "question": "田辺",
+      "answer": [
+        "たなべ"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanabe_osaka/?page=2"
+    },
+    {
+      "question": "谷町九丁目",
+      "answer": [
+        "たにまちきゅうちょうめ"
+      ],
+      "meaning": "大阪メトロ千日前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanimachikyuchome/?page=2"
+    },
+    {
+      "question": "谷町四丁目",
+      "answer": [
+        "たにまちよんちょうめ"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanimachiyonchome/?page=2"
+    },
+    {
+      "question": "谷町六丁目",
+      "answer": [
+        "たにまちろくちょうめ"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanimachirokuchome/?page=2"
+    },
+    {
+      "question": "玉川",
+      "answer": [
+        "たまがわ"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamagawa_osaka/?page=2"
+    },
+    {
+      "question": "玉造",
+      "answer": [
+        "たまつくり"
+      ],
+      "meaning": "大阪環状線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamatsukuri/?page=2"
+    },
+    {
+      "question": "玉出",
+      "answer": [
+        "たまで"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamade_osaka/?page=2"
+    },
+    {
+      "question": "樽井",
+      "answer": [
+        "たるい"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tarui_osaka/?page=2"
+    },
+    {
+      "question": "淡輪",
+      "answer": [
+        "たんのわ"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tan-nowa/?page=2"
+    },
+    {
+      "question": "大国町",
+      "answer": [
+        "だいこくちょう"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daikokucho/?page=2"
+    },
+    {
+      "question": "だいどう豊里",
+      "answer": [
+        "だいどうとよさと"
+      ],
+      "meaning": "大阪メトロ今里筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daido_toyosato/?page=2"
+    },
+    {
+      "question": "大日",
+      "answer": [
+        "だいにち"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dainichi/?page=2"
+    },
+    {
+      "question": "千鳥橋",
+      "answer": [
+        "ちどりばし"
+      ],
+      "meaning": "阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chidoribashi/"
+    },
+    {
+      "question": "千早口",
+      "answer": [
+        "ちはやぐち"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chihayaguchi/"
+    },
+    {
+      "question": "千船",
+      "answer": [
+        "ちぶね"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chibune/"
+    },
+    {
+      "question": "千代田",
+      "answer": [
+        "ちよだ"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyoda/"
+    },
+    {
+      "question": "塚西",
+      "answer": [
+        "つかにし"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukanishi/"
+    },
+    {
+      "question": "塚本",
+      "answer": [
+        "つかもと"
+      ],
+      "meaning": "東海道・山陽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukamoto/"
+    },
+    {
+      "question": "津久野",
+      "answer": [
+        "つくの"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukuno/"
+    },
+    {
+      "question": "津田",
+      "answer": [
+        "つだ"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuda/"
+    },
+    {
+      "question": "津守",
+      "answer": [
+        "つもり"
+      ],
+      "meaning": "南海汐見橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsumori/"
+    },
+    {
+      "question": "鶴ヶ丘",
+      "answer": [
+        "つるがおか"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurugaoka/"
+    },
+    {
+      "question": "鶴橋",
+      "answer": [
+        "つるはし"
+      ],
+      "meaning": "大阪環状線、近鉄大阪線、近鉄奈良線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuruhashi/"
+    },
+    {
+      "question": "鶴原",
+      "answer": [
+        "つるはら"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuruhara/"
+    },
+    {
+      "question": "鶴見緑地",
+      "answer": [
+        "つるみりょくち"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/turumi-ryokuchi/"
+    },
+    {
+      "question": "帝塚山",
+      "answer": [
+        "てづかやま"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tezukayama/"
+    },
+    {
+      "question": "帝塚山三丁目",
+      "answer": [
+        "てづかやまさんちょうめ"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tezukayamasanchome/"
+    },
+    {
+      "question": "帝塚山四丁目",
+      "answer": [
+        "てづかやまよんちょうめ"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tezukayamayonchome/"
+    },
+    {
+      "question": "寺田町",
+      "answer": [
+        "てらだちょう"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/teradacho/"
+    },
+    {
+      "question": "寺地町",
+      "answer": [
+        "てらぢちょう"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/terajicho/"
+    },
+    {
+      "question": "天下茶屋",
+      "answer": [
+        "てんがちゃや"
+      ],
+      "meaning": "南海本線、南海高野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tengachaya/"
+    },
+    {
+      "question": "天神ノ森",
+      "answer": [
+        "てんじんのもり"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenjin-nomori/"
+    },
+    {
+      "question": "天神橋筋六丁目",
+      "answer": [
+        "てんじんばしすじろくちょうめ"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenjimbashisujirokuchome/"
+    },
+    {
+      "question": "天王寺",
+      "answer": [
+        "てんのうじ"
+      ],
+      "meaning": "JR線、大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tennoji/"
+    },
+    {
+      "question": "天王寺駅前",
+      "answer": [
+        "てんのうじえきまえ"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tennojiekimae/"
+    },
+    {
+      "question": "天満",
+      "answer": [
+        "てんま"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/temma/"
+    },
+    {
+      "question": "天満橋",
+      "answer": [
+        "てんまばし"
+      ],
+      "meaning": "京阪本線、京阪中之島線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/temmabashi/"
+    },
+    {
+      "question": "出来島",
+      "answer": [
+        "できじま"
+      ],
+      "meaning": "阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dekijima/"
+    },
+    {
+      "question": "出戸",
+      "answer": [
+        "でと"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/deto/"
+    },
+    {
+      "question": "伝法",
+      "answer": [
+        "でんぽう"
+      ],
+      "meaning": "阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dempo/"
+    },
+    {
+      "question": "東部市場前",
+      "answer": [
+        "とうぶしじょうまえ"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobushijo-mae/"
+    },
+    {
+      "question": "栂・美木多",
+      "answer": [
+        "とがみきた"
+      ],
+      "meaning": "泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/togamikita/"
+    },
+    {
+      "question": "ときわ台",
+      "answer": [
+        "ときわだい"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokiwadai_osaka/"
+    },
+    {
+      "question": "徳庵",
+      "answer": [
+        "とくあん"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokuan/"
+    },
+    {
+      "question": "鳥取ノ荘",
+      "answer": [
+        "とっとりのしょう"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tottorinosho/"
+    },
+    {
+      "question": "富木",
+      "answer": [
+        "とのき"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonoki/"
+    },
+    {
+      "question": "豊川",
+      "answer": [
+        "とよかわ"
+      ],
+      "meaning": "大阪モノレールなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyokawa_osaka/"
+    },
+    {
+      "question": "豊津",
+      "answer": [
+        "とよつ"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyotsu_osaka/"
+    },
+    {
+      "question": "豊中",
+      "answer": [
+        "とよなか"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyonaka/"
+    },
+    {
+      "question": "トレードセンター前",
+      "answer": [
+        "とれーどせんたーまえ"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/trade_center_mae/"
+    },
+    {
+      "question": "富田",
+      "answer": [
+        "とんだ"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonda_osaka/"
+    },
+    {
+      "question": "富田林",
+      "answer": [
+        "とんだばやし"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tondabayashi/"
+    },
+    {
+      "question": "富田林西口",
+      "answer": [
+        "とんだばやしにしぐち"
+      ],
+      "meaning": "近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tondabayashi-nishiguchi/"
+    },
+    {
+      "question": "土居",
+      "answer": [
+        "どい"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/doi_osaka/"
+    },
+    {
+      "question": "動物園前",
+      "answer": [
+        "どうぶつえんまえ"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dobutsuen-mae/"
+    },
+    {
+      "question": "道明寺",
+      "answer": [
+        "どうみょうじ"
+      ],
+      "meaning": "近鉄南大阪線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/domyoji/"
+    },
+    {
+      "question": "ドーム前",
+      "answer": [
+        "どーむまえ"
+      ],
+      "meaning": "阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dome-mae/"
+    },
+    {
+      "question": "ドーム前千代崎",
+      "answer": [
+        "どーむまえちよざき"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dome-mae_chiyozaki/"
+    },
+    {
+      "question": "中崎町",
+      "answer": [
+        "なかざきちょう"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakazakicho/"
+    },
+    {
+      "question": "中津",
+      "answer": [
+        "なかつ"
+      ],
+      "meaning": "阪急神戸線、阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakatsu_hankyu/"
+    },
+    {
+      "question": "中津",
+      "answer": [
+        "なかつ"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakatsu_osaka_metro/"
+    },
+    {
+      "question": "中之島",
+      "answer": [
+        "なかのしま"
+      ],
+      "meaning": "京阪本線、京阪中之島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanoshima_osaka/"
+    },
+    {
+      "question": "中ふ頭",
+      "answer": [
+        "なかふとう"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakafuto_osaka/"
+    },
+    {
+      "question": "中百舌鳥",
+      "answer": [
+        "なかもず"
+      ],
+      "meaning": "南海高野線、泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakamozu_osaka/"
+    },
+    {
+      "question": "長居",
+      "answer": [
+        "ながい"
+      ],
+      "meaning": "阪和線、大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagai_osaka/"
+    },
+    {
+      "question": "長尾",
+      "answer": [
+        "ながお"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagao_osaka/"
+    },
+    {
+      "question": "長瀬",
+      "answer": [
+        "ながせ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagase_osaka/"
+    },
+    {
+      "question": "長田",
+      "answer": [
+        "ながた"
+      ],
+      "meaning": "近鉄けいはんな線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagata_osaka/"
+    },
+    {
+      "question": "長滝",
+      "answer": [
+        "ながたき"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagataki/"
+    },
+    {
+      "question": "長原",
+      "answer": [
+        "ながはら"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagahara_osaka/"
+    },
+    {
+      "question": "長堀橋",
+      "answer": [
+        "ながほりばし"
+      ],
+      "meaning": "大阪メトロ堺筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagahoribashi/"
+    },
+    {
+      "question": "名越",
+      "answer": [
+        "なごせ"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagose/"
+    },
+    {
+      "question": "なにわ橋",
+      "answer": [
+        "なにわばし"
+      ],
+      "meaning": "京阪本線、京阪中之島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naniwabashi/"
+    },
+    {
+      "question": "南海難波",
+      "answer": [
+        "なんかいなんば"
+      ],
+      "meaning": "南海本線、南海高野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nankai-namba/"
+    },
+    {
+      "question": "南港口",
+      "answer": [
+        "なんこうぐち"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nankoguchi/"
+    },
+    {
+      "question": "南港東",
+      "answer": [
+        "なんこうひがし"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nanko-higashi/"
+    },
+    {
+      "question": "西梅田",
+      "answer": [
+        "にしうめだ"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-umeda/"
+    },
+    {
+      "question": "西大橋",
+      "answer": [
+        "にしおおはし"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-ohashi/"
+    },
+    {
+      "question": "二色浜",
+      "answer": [
+        "にしきのはま"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishikinohama/"
+    },
+    {
+      "question": "西九条",
+      "answer": [
+        "にしくじょう"
+      ],
+      "meaning": "JR線、阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kujo/"
+    },
+    {
+      "question": "西三荘",
+      "answer": [
+        "にしさんそう"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishisanso/"
+    },
+    {
+      "question": "西田辺",
+      "answer": [
+        "にしたなべ"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-tanabe/"
+    },
+    {
+      "question": "西天下茶屋",
+      "answer": [
+        "にしてんがちゃや"
+      ],
+      "meaning": "南海汐見橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-tengachaya/"
+    },
+    {
+      "question": "西中島南方",
+      "answer": [
+        "にしなかじまみなみがた"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinakajimaminamigata/"
+    },
+    {
+      "question": "西長堀",
+      "answer": [
+        "にしながほり"
+      ],
+      "meaning": "大阪メトロ千日前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-nagahori/"
+    },
+    {
+      "question": "日本橋",
+      "answer": [
+        "にっぽんばし"
+      ],
+      "meaning": "大阪メトロ千日前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nippombashi_osaka/"
+    },
+    {
+      "question": "額田",
+      "answer": [
+        "ぬかた"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nukata_osaka/"
+    },
+    {
+      "question": "布忍",
+      "answer": [
+        "ぬのせ"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nunose/"
+    },
+    {
+      "question": "寝屋川市",
+      "answer": [
+        "ねやがわし"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/neyagawashi/"
+    },
+    {
+      "question": "野江",
+      "answer": [
+        "のえ"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noe/"
+    },
+    {
+      "question": "野江内代",
+      "answer": [
+        "のえうちんだい"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noeuchindai/"
+    },
+    {
+      "question": "野崎",
+      "answer": [
+        "のざき"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nozaki_osaka/"
+    },
+    {
+      "question": "野田",
+      "answer": [
+        "のだ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noda_hanshin/"
+    },
+    {
+      "question": "野田",
+      "answer": [
+        "のだ"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noda_osaka/"
+    },
+    {
+      "question": "野田阪神",
+      "answer": [
+        "のだはんしん"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nodahanshin/"
+    },
+    {
+      "question": "萩ノ茶屋",
+      "answer": [
+        "はぎのちゃや"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haginochaya/"
+    },
+    {
+      "question": "萩原天神",
+      "answer": [
+        "はぎはらてんじん"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagiharatenjin/"
+    },
+    {
+      "question": "羽倉崎",
+      "answer": [
+        "はぐらざき"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagurazaki/"
+    },
+    {
+      "question": "箱作",
+      "answer": [
+        "はこつくり"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakotsukuri/"
+    },
+    {
+      "question": "羽衣",
+      "answer": [
+        "はごろも"
+      ],
+      "meaning": "南海本線、南海高師浜線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagoromo/"
+    },
+    {
+      "question": "土師ノ里",
+      "answer": [
+        "はじのさと"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hajinosato/"
+    },
+    {
+      "question": "服部川",
+      "answer": [
+        "はっとりがわ"
+      ],
+      "meaning": "近鉄信貴線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hattorigawa/"
+    },
+    {
+      "question": "服部天神",
+      "answer": [
+        "はっとりてんじん"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hattori-tenjin/"
+    },
+    {
+      "question": "初芝",
+      "answer": [
+        "はつしば"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatsushiba/"
+    },
+    {
+      "question": "花園町",
+      "answer": [
+        "はなぞのちょう"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanazonocho/"
+    },
+    {
+      "question": "花田口",
+      "answer": [
+        "はなたぐち"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanataguchi/"
+    },
+    {
+      "question": "放出",
+      "answer": [
+        "はなてん"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanaten/"
+    },
+    {
+      "question": "浜寺駅前",
+      "answer": [
+        "はまでらえきまえ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamaderaekimae/"
+    },
+    {
+      "question": "浜寺公園",
+      "answer": [
+        "はまでらこうえん"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamaderakoen/"
+    },
+    {
+      "question": "針中野",
+      "answer": [
+        "はりなかの"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harinakano/"
+    },
+    {
+      "question": "春木",
+      "answer": [
+        "はるき"
+      ],
+      "meaning": "南海本線、南海空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haruki/"
+    },
+    {
+      "question": "阪急梅田",
+      "answer": [
+        "はんきゅううめだ"
+      ],
+      "meaning": "阪急神戸線、阪急京都線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hankyu-umeda/"
+    },
+    {
+      "question": "阪神梅田",
+      "answer": [
+        "はんしんうめだ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanshin-umeda/"
+    },
+    {
+      "question": "阪大病院前",
+      "answer": [
+        "はんだいびょういんまえ"
+      ],
+      "meaning": "大阪モノレールなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/handaibyoin-mae/"
+    },
+    {
+      "question": "万博記念公園",
+      "answer": [
+        "ばんぱくきねんこうえん"
+      ],
+      "meaning": "大阪モノレールなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bampakukinenkoen_osaka/"
+    },
+    {
+      "question": "東梅田",
+      "answer": [
+        "ひがしうめだ"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-umeda/"
+    },
+    {
+      "question": "東貝塚",
+      "answer": [
+        "ひがしかいづか"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kaizuka/"
+    },
+    {
+      "question": "東岸和田",
+      "answer": [
+        "ひがしきしわだ"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kishiwada/"
+    },
+    {
+      "question": "東粉浜",
+      "answer": [
+        "ひがしこはま"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kohama/"
+    },
+    {
+      "question": "東佐野",
+      "answer": [
+        "ひがしさの"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-sano/"
+    },
+    {
+      "question": "東玉出",
+      "answer": [
+        "ひがしたまで"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-tamade/"
+    },
+    {
+      "question": "東天下茶屋",
+      "answer": [
+        "ひがしてんがちゃや"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-tengachaya/"
+    },
+    {
+      "question": "東寝屋川",
+      "answer": [
+        "ひがしねやがわ"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-neyagawa/"
+    },
+    {
+      "question": "東羽衣",
+      "answer": [
+        "ひがしはごろも"
+      ],
+      "meaning": "羽衣線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hagoromo/"
+    },
+    {
+      "question": "東花園",
+      "answer": [
+        "ひがしはなぞの"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hanazono/"
+    },
+    {
+      "question": "東三国",
+      "answer": [
+        "ひがしみくに"
+      ],
+      "meaning": "大阪メトロ御堂筋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashimikuni/"
+    },
+    {
+      "question": "東湊",
+      "answer": [
+        "ひがしみなと"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashiminato/"
+    },
+    {
+      "question": "東淀川",
+      "answer": [
+        "ひがしよどがわ"
+      ],
+      "meaning": "東海道・山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yodogawa/"
+    },
+    {
+      "question": "肥後橋",
+      "answer": [
+        "ひごばし"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higobashi/"
+    },
+    {
+      "question": "日根野",
+      "answer": [
+        "ひねの"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hineno/"
+    },
+    {
+      "question": "姫島",
+      "answer": [
+        "ひめじま"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himejima/"
+    },
+    {
+      "question": "姫松",
+      "answer": [
+        "ひめまつ"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himematsu/"
+    },
+    {
+      "question": "瓢箪山",
+      "answer": [
+        "ひょうたんやま"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hyotan-yama_osaka/"
+    },
+    {
+      "question": "枚岡",
+      "answer": [
+        "ひらおか"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiraoka_osaka/"
+    },
+    {
+      "question": "枚方公園",
+      "answer": [
+        "ひらかたこうえん"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirakata-koen/"
+    },
+    {
+      "question": "枚方市",
+      "answer": [
+        "ひらかたし"
+      ],
+      "meaning": "京阪本線、京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirakatashi/?page=2"
+    },
+    {
+      "question": "平野",
+      "answer": [
+        "ひらの"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirano_osaka/?page=2"
+    },
+    {
+      "question": "平野",
+      "answer": [
+        "ひらの"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirano_osaka_metro/?page=2"
+    },
+    {
+      "question": "平林",
+      "answer": [
+        "ひらばやし"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirabayashi_osaka/?page=2"
+    },
+    {
+      "question": "美章園",
+      "answer": [
+        "びしょうえん"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bishoen/?page=2"
+    },
+    {
+      "question": "深井",
+      "answer": [
+        "ふかい"
+      ],
+      "meaning": "泉北高速鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukai/"
+    },
+    {
+      "question": "深江橋",
+      "answer": [
+        "ふかえばし"
+      ],
+      "meaning": "大阪メトロ中央線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukaebashi/"
+    },
+    {
+      "question": "福",
+      "answer": [
+        "ふく"
+      ],
+      "meaning": "阪神なんば線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuku/"
+    },
+    {
+      "question": "福島",
+      "answer": [
+        "ふくしま"
+      ],
+      "meaning": "関西本線（西日本）、阪神本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukushima_osaka/"
+    },
+    {
+      "question": "深日港",
+      "answer": [
+        "ふけこう"
+      ],
+      "meaning": "南海多奈川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukeko/"
+    },
+    {
+      "question": "深日町",
+      "answer": [
+        "ふけちょう"
+      ],
+      "meaning": "南海多奈川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukecho/"
+    },
+    {
+      "question": "藤井寺",
+      "answer": [
+        "ふじいでら"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujiidera/"
+    },
+    {
+      "question": "藤阪",
+      "answer": [
+        "ふじさか"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisaka/"
+    },
+    {
+      "question": "布施",
+      "answer": [
+        "ふせ"
+      ],
+      "meaning": "近鉄大阪線、近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuse/"
+    },
+    {
+      "question": "船尾",
+      "answer": [
+        "ふなお"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funao_osaka/"
+    },
+    {
+      "question": "文の里",
+      "answer": [
+        "ふみのさと"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuminosato/"
+    },
+    {
+      "question": "古市",
+      "answer": [
+        "ふるいち"
+      ],
+      "meaning": "近鉄南大阪線、近鉄長野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furuichi_osaka/"
+    },
+    {
+      "question": "古川橋",
+      "answer": [
+        "ふるかわばし"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furukawabashi/"
+    },
+    {
+      "question": "弁天町",
+      "answer": [
+        "べんてんちょう"
+      ],
+      "meaning": "関西本線（西日本）、大阪メトロ中央線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bentencho/"
+    },
+    {
+      "question": "法善寺",
+      "answer": [
+        "ほうぜんじ"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hozenji/"
+    },
+    {
+      "question": "星ヶ丘",
+      "answer": [
+        "ほしがおか"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshigaoka_osaka/"
+    },
+    {
+      "question": "星田",
+      "answer": [
+        "ほしだ"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshida/"
+    },
+    {
+      "question": "細井川",
+      "answer": [
+        "ほそいがわ"
+      ],
+      "meaning": "阪堺電軌阪堺線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hosoigawa/"
+    },
+    {
+      "question": "蛍池",
+      "answer": [
+        "ほたるがいけ"
+      ],
+      "meaning": "阪急宝塚線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hotarugaike/"
+    },
+    {
+      "question": "本町",
+      "answer": [
+        "ほんまち"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachi/"
+    },
+    {
+      "question": "ポートタウン西",
+      "answer": [
+        "ぽーとたうんにし"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/port_town_nishi/"
+    },
+    {
+      "question": "ポートタウン東",
+      "answer": [
+        "ぽーとたうんひがし"
+      ],
+      "meaning": "大阪メトロニュートラム",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/port_town_higashi/"
+    },
+    {
+      "question": "牧落",
+      "answer": [
+        "まきおち"
+      ],
+      "meaning": "阪急箕面線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/makiochi/"
+    },
+    {
+      "question": "牧野",
+      "answer": [
+        "まきの"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/makino_osaka/"
+    },
+    {
+      "question": "松田町",
+      "answer": [
+        "まつだちょう"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsudacho/"
+    },
+    {
+      "question": "松ノ浜",
+      "answer": [
+        "まつのはま"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsunohama/"
+    },
+    {
+      "question": "松虫",
+      "answer": [
+        "まつむし"
+      ],
+      "meaning": "阪堺電軌上町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsumushi/"
+    },
+    {
+      "question": "松屋町",
+      "answer": [
+        "まつやまち"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyamachi/"
+    },
+    {
+      "question": "美加の台",
+      "answer": [
+        "みかのだい"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikanodai/"
+    },
+    {
+      "question": "三ヶ山口",
+      "answer": [
+        "みかやまぐち"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikayamaguchi/"
+    },
+    {
+      "question": "三国",
+      "answer": [
+        "みくに"
+      ],
+      "meaning": "阪急宝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikuni_osaka/"
+    },
+    {
+      "question": "三国ヶ丘",
+      "answer": [
+        "みくにがおか"
+      ],
+      "meaning": "阪和線、南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikunigaoka_osaka/"
+    },
+    {
+      "question": "みさき公園",
+      "answer": [
+        "みさきこうえん"
+      ],
+      "meaning": "南海本線、南海多奈川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misakikoen_osaka/"
+    },
+    {
+      "question": "水間観音",
+      "answer": [
+        "みずまかんのん"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mizumakan-non/"
+    },
+    {
+      "question": "三日市町",
+      "answer": [
+        "みっかいちちょう"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikkaichicho/"
+    },
+    {
+      "question": "三ッ松",
+      "answer": [
+        "みつまつ"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsumatsu_osaka/"
+    },
+    {
+      "question": "御幣島",
+      "answer": [
+        "みてじま"
+      ],
+      "meaning": "ＪＲ東西線・学研都市線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitejima/"
+    },
+    {
+      "question": "弥刀",
+      "answer": [
+        "みと"
+      ],
+      "meaning": "近鉄大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mito_osaka/"
+    },
+    {
+      "question": "緑橋",
+      "answer": [
+        "みどりばし"
+      ],
+      "meaning": "大阪メトロ中央線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/midoribashi/"
+    },
+    {
+      "question": "水無瀬",
+      "answer": [
+        "みなせ"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minase/"
+    },
+    {
+      "question": "湊",
+      "answer": [
+        "みなと"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minato/"
+    },
+    {
+      "question": "南茨木",
+      "answer": [
+        "みなみいばらき"
+      ],
+      "meaning": "阪急京都線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-ibaraki/"
+    },
+    {
+      "question": "南方",
+      "answer": [
+        "みなみかた"
+      ],
+      "meaning": "阪急京都線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minamikata_osaka/"
+    },
+    {
+      "question": "南摂津",
+      "answer": [
+        "みなみせっつ"
+      ],
+      "meaning": "大阪モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-settsu/"
+    },
+    {
+      "question": "南千里",
+      "answer": [
+        "みなみせんり"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-senri/"
+    },
+    {
+      "question": "南巽",
+      "answer": [
+        "みなみたつみ"
+      ],
+      "meaning": "大阪メトロ千日前線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minamitatsumi/"
+    },
+    {
+      "question": "南田辺",
+      "answer": [
+        "みなみたなべ"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-tanabe/"
+    },
+    {
+      "question": "南森町",
+      "answer": [
+        "みなみもりまち"
+      ],
+      "meaning": "大阪メトロ谷町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-morimachi/"
+    },
+    {
+      "question": "箕面",
+      "answer": [
+        "みのお"
+      ],
+      "meaning": "阪急箕面線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mino-o/?page=2"
+    },
+    {
+      "question": "都島",
+      "answer": [
+        "みやこじま"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyakojima/?page=2"
+    },
+    {
+      "question": "宮之阪",
+      "answer": [
+        "みやのさか"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyanosaka_osaka/?page=2"
+    },
+    {
+      "question": "妙見口",
+      "answer": [
+        "みょうけんぐち"
+      ],
+      "meaning": "能勢電鉄妙見線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myoken-guchi/?page=2"
+    },
+    {
+      "question": "妙国寺前",
+      "answer": [
+        "みょうこくじまえ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myokokuji-mae/?page=2"
+    },
+    {
+      "question": "村野",
+      "answer": [
+        "むらの"
+      ],
+      "meaning": "京阪交野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/murano/"
+    },
+    {
+      "question": "百舌鳥",
+      "answer": [
+        "もず"
+      ],
+      "meaning": "阪和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mozu/"
+    },
+    {
+      "question": "百舌鳥八幡",
+      "answer": [
+        "もずはちまん"
+      ],
+      "meaning": "南海高野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mozuhachiman/"
+    },
+    {
+      "question": "桃谷",
+      "answer": [
+        "ももだに"
+      ],
+      "meaning": "大阪環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momodani/"
+    },
+    {
+      "question": "桃山台",
+      "answer": [
+        "ももやまだい"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momoyamadai/"
+    },
+    {
+      "question": "森",
+      "answer": [
+        "もり"
+      ],
+      "meaning": "水間鉄道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mori_osaka/"
+    },
+    {
+      "question": "守口",
+      "answer": [
+        "もりぐち"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moriguchi_osaka/"
+    },
+    {
+      "question": "守口市",
+      "answer": [
+        "もりぐちし"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moriguchishi/"
+    },
+    {
+      "question": "森小路",
+      "answer": [
+        "もりしょうじ"
+      ],
+      "meaning": "京阪本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/morishoji/"
+    },
+    {
+      "question": "森ノ宮",
+      "answer": [
+        "もりのみや"
+      ],
+      "meaning": "大阪環状線、大阪メトロ中央線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/morinomiya/"
+    },
+    {
+      "question": "八戸ノ里",
+      "answer": [
+        "やえのさと"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yaenosato/"
+    },
+    {
+      "question": "八尾",
+      "answer": [
+        "やお"
+      ],
+      "meaning": "関西本線（西日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yao/"
+    },
+    {
+      "question": "八尾南",
+      "answer": [
+        "やおみなみ"
+      ],
+      "meaning": "大阪メトロ谷町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yaominami/"
+    },
+    {
+      "question": "矢田",
+      "answer": [
+        "やた"
+      ],
+      "meaning": "近鉄南大阪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yata_osaka/"
+    },
+    {
+      "question": "山田",
+      "answer": [
+        "やまだ"
+      ],
+      "meaning": "阪急千里線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamada_osaka/"
+    },
+    {
+      "question": "大和川",
+      "answer": [
+        "やまとがわ"
+      ],
+      "meaning": "阪堺電軌阪堺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamatogawa/"
+    },
+    {
+      "question": "山中渓",
+      "answer": [
+        "やまなかだに"
+      ],
+      "meaning": "阪和線、関西空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamanakadani/"
+    },
+    {
+      "question": "横堤",
+      "answer": [
+        "よこづつみ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokozutsumi/"
+    },
+    {
+      "question": "吉田",
+      "answer": [
+        "よした"
+      ],
+      "meaning": "近鉄けいはんな線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshita_osaka/"
+    },
+    {
+      "question": "吉見ノ里",
+      "answer": [
+        "よしみのさと"
+      ],
+      "meaning": "南海本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshiminosato/"
+    },
+    {
+      "question": "四ツ橋",
+      "answer": [
+        "よつばし"
+      ],
+      "meaning": "大阪メトロ四つ橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yotsubashi/"
+    },
+    {
+      "question": "淀川",
+      "answer": [
+        "よどがわ"
+      ],
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yodogawa/"
+    },
+    {
+      "question": "淀屋橋",
+      "answer": [
+        "よどやばし"
+      ],
+      "meaning": "京阪本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yodoyabashi/"
+    },
+    {
+      "question": "緑地公園",
+      "answer": [
+        "りょくちこうえん"
+      ],
+      "meaning": "大阪メトロ御堂筋線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryokuchikoen/"
+    },
+    {
+      "question": "若江岩田",
+      "answer": [
+        "わかえいわた"
+      ],
+      "meaning": "近鉄奈良線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakaeiwata/"
+    },
+    {
+      "question": "渡辺橋",
+      "answer": [
+        "わたなべばし"
+      ],
+      "meaning": "京阪本線、京阪中之島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watanabebashi/"
+    }
+  ]
+}
