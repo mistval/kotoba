@@ -1,0 +1,2023 @@
+{
+  "uniqueId": "emperors",
+  "name": "Emperors/Shoguns Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Info",
+  "description": "Emperors, shoguns, and related characters.",
+  "cards": [
+    {
+      "question": "天忍穂耳尊",
+      "answer": [
+        "アメノオシホミミ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E5%BF%8D%E7%A9%82%E8%80%B3%E5%B0%8A"
+    },
+    {
+      "question": "瓊瓊杵尊",
+      "answer": [
+        "ににぎのみこと"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%93%8A%E7%93%8A%E6%9D%B5%E5%B0%8A"
+    },
+    {
+      "question": "彦火火出見尊",
+      "answer": [
+        "ひこほほでみのみこと"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BD%A6%E7%81%AB%E7%81%AB%E5%87%BA%E8%A6%8B%E5%B0%8A"
+    },
+    {
+      "question": "彦波瀲武盧茲草葺不合尊",
+      "answer": [
+        "ひこなぎさたけうがやふきあえずのみこと"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BD%A6%E6%B3%A2%E7%80%B2%E6%AD%A6%E7%9B%A7%E8%8C%B2%E8%8D%89%E8%91%BA%E4%B8%8D%E5%90%88%E5%B0%8A"
+    },
+    {
+      "question": "孝靈",
+      "answer": [
+        "こうれい"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E9%9D%88%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "彦坐王",
+      "answer": [
+        "ひこいますのみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BD%A6%E5%9D%90%E7%8E%8B"
+    },
+    {
+      "question": "應神",
+      "answer": [
+        "おうじん"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%87%89%E7%A5%9E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "稚野毛二派皇子",
+      "answer": [
+        "わかぬけふたまたのみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A8%9A%E9%87%8E%E6%AF%9B%E4%BA%8C%E6%B4%BE%E7%9A%87%E5%AD%90"
+    },
+    {
+      "question": "忍坂大中姫",
+      "answer": [
+        "おしさかのおおなかつひめ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BF%8D%E5%9D%82%E5%A4%A7%E4%B8%AD%E5%A7%AB"
+    },
+    {
+      "question": "意富富杼王",
+      "answer": [
+        "おおいらつこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%84%8F%E5%AF%8C%E5%AF%8C%E6%9D%BC%E7%8E%8B"
+    },
+    {
+      "question": "市辺押磐皇子",
+      "answer": [
+        "いちのへのおしはのみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B8%82%E8%BE%BA%E6%8A%BC%E7%A3%90%E7%9A%87%E5%AD%90"
+    },
+    {
+      "question": "乎非王",
+      "answer": [
+        "おいのおおきみ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B9%8E%E9%9D%9E%E7%8E%8B"
+    },
+    {
+      "question": "顯宗",
+      "answer": [
+        "けんぞう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%A1%AF%E5%AE%97%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "彦主人王",
+      "answer": [
+        "ひこうしのおう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BD%A6%E4%B8%BB%E4%BA%BA%E7%8E%8B"
+    },
+    {
+      "question": "手白香皇女",
+      "answer": [
+        "たしらかのひめみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%89%8B%E7%99%BD%E9%A6%99%E7%9A%87%E5%A5%B3"
+    },
+    {
+      "question": "繼體",
+      "answer": [
+        "けいたい"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%B9%BC%E9%AB%94%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "押坂彦人大兄皇子",
+      "answer": [
+        "おしさかのひこひとのおおえのみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%8A%BC%E5%9D%82%E5%BD%A6%E4%BA%BA%E5%A4%A7%E5%85%84%E7%9A%87%E5%AD%90"
+    },
+    {
+      "question": "茅渟王",
+      "answer": [
+        "ちぬのおおきみ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%8C%85%E6%B8%9F%E7%8E%8B"
+    },
+    {
+      "question": "齊明",
+      "answer": [
+        "こうぎょく"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%BD%8A%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "志貴皇子",
+      "answer": [
+        "しきのみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BF%97%E8%B2%B4%E7%9A%87%E5%AD%90"
+    },
+    {
+      "question": "高野新笠",
+      "answer": [
+        "たかののにいがさ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%AB%98%E9%87%8E%E6%96%B0%E7%AC%A0"
+    },
+    {
+      "question": "井上内親王",
+      "answer": [
+        "いのえないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BA%95%E4%B8%8A%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "圓融",
+      "answer": [
+        "えんゆう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%9C%93%E8%9E%8D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "三條",
+      "answer": [
+        "さんじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "一條",
+      "answer": [
+        "いちじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "禎子内親王",
+      "answer": [
+        "ていし ないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A6%8E%E5%AD%90%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "後一條",
+      "answer": [
+        "ごいちじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E4%B8%80%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後三條",
+      "answer": [
+        "ごさんじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E4%B8%89%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "二條",
+      "answer": [
+        "にじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BA%8C%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "六條",
+      "answer": [
+        "ろくじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%AD%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "四條",
+      "answer": [
+        "しじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%9B%9B%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "鎌倉将軍",
+      "answer": [
+        "かまくらしょうぐん"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%8E%8C%E5%80%89%E5%B0%86%E8%BB%8D"
+    },
+    {
+      "question": "後二條",
+      "answer": [
+        "ごにじょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E4%BA%8C%E6%A2%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後光嚴",
+      "answer": [
+        "ごこうごん"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%85%89%E5%9A%B4%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "龜山",
+      "answer": [
+        "かめやま"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%BE%9C%E5%B1%B1%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後龜山",
+      "answer": [
+        "ごかめやま"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E9%BE%9C%E5%B1%B1%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "伏見宮栄仁親王",
+      "answer": [
+        "ふしみのみやよしひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BC%8F%E8%A6%8B%E5%AE%AE%E6%A0%84%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "後圓融",
+      "answer": [
+        "ごえんゆう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%9C%93%E8%9E%8D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "南朝",
+      "answer": [
+        "なんちょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8D%97%E6%9C%9D"
+    },
+    {
+      "question": "北朝",
+      "answer": [
+        "ほくちょう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9C%9D"
+    },
+    {
+      "question": "伏見宮貞成親王",
+      "answer": [
+        "ふしみのみやさだふさしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BC%8F%E8%A6%8B%E5%AE%AE%E8%B2%9E%E6%88%90%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "誠仁親王",
+      "answer": [
+        "さねひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%AA%A0%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "靈元",
+      "answer": [
+        "れいげん"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%9D%88%E5%85%83%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "閑院宮直仁親王",
+      "answer": [
+        "かんいんのみやなおひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%96%91%E9%99%A2%E5%AE%AE%E7%9B%B4%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "櫻町",
+      "answer": [
+        "さくらまち"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%AB%BB%E7%94%BA%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後櫻町",
+      "answer": [
+        "ごさくらまち"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%AB%BB%E7%94%BA%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "勧修寺婧子",
+      "answer": [
+        "かじゅうじただこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8B%A7%E4%BF%AE%E5%AF%BA%E5%A9%A7%E5%AD%90"
+    },
+    {
+      "question": "欣子内親王",
+      "answer": [
+        "よしこないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%AC%A3%E5%AD%90%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "秋篠宮文仁親王",
+      "answer": [
+        "あきしののみやふみひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E7%AF%A0%E5%AE%AE%E6%96%87%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "愛子内親王",
+      "answer": [
+        "としのみやあいこないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%84%9B%E5%AD%90%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "眞子内親王",
+      "answer": [
+        "まこないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%9C%9E%E5%AD%90%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "佳子内親王",
+      "answer": [
+        "かこないしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BD%B3%E5%AD%90%E5%86%85%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "悠仁親王",
+      "answer": [
+        "ひさひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%82%A0%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "神武",
+      "answer": [
+        "じんむ"
+      ],
+      "meaning": "**在位期間**: 神武天皇元年1月1日 - 同76年3月11日(『日本書紀』)\n代1",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E6%AD%A6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "綏靖",
+      "answer": [
+        "すいぜい"
+      ],
+      "meaning": "**在位期間**: 綏靖天皇元年1月8日 - 同33年5月10日(『日本書紀』)\n代2",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%B6%8F%E9%9D%96%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "安寧",
+      "answer": [
+        "あんねい"
+      ],
+      "meaning": "**在位期間**: 綏靖天皇33年7月15日 - 安寧天皇38年12月6日(『日本書紀』)\n代3",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%AF%A7%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "懿徳",
+      "answer": [
+        "いとく"
+      ],
+      "meaning": "**在位期間**: 懿徳天皇元年2月4日 - 同34年9月8日(『日本書紀』)\n代4",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%87%BF%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝昭",
+      "answer": [
+        "こうしょう"
+      ],
+      "meaning": "**在位期間**: 孝昭天皇元年1月9日 - 同83年8月5日(『日本書紀』)\n代5",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E6%98%AD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝安",
+      "answer": [
+        "こうあん"
+      ],
+      "meaning": "**在位期間**: 孝安天皇元年1月7日 - 同102年1月9日(『日本書紀』)\n代6",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E5%AE%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝霊",
+      "answer": [
+        "こうれい",
+        "かうれい"
+      ],
+      "meaning": "**在位期間**: 孝霊天皇元年1月12日 - 同76年2月8日（『日本書紀』)\n代7",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25AD%259D%25E9%259C%258A%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "孝元",
+      "answer": [
+        "こうげん"
+      ],
+      "meaning": "**在位期間**: 孝元天皇元年1月14日 - 同57年9月2日(『日本書紀』）\n代8",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E5%85%83%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "開化",
+      "answer": [
+        "かいか"
+      ],
+      "meaning": "**在位期間**: 孝元天皇57年11月12日 - 開化天皇60年4月9日(『日本書紀』)\n代9",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%96%8B%E5%8C%96%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "崇神",
+      "answer": [
+        "すじん"
+      ],
+      "meaning": "**在位期間**: 崇神天皇元年1月13日 - 同68年12月5日(『日本書紀』)\n代10",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B4%87%E7%A5%9E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "垂仁",
+      "answer": [
+        "すいにん"
+      ],
+      "meaning": "**在位期間**: 垂仁天皇元年1月2日 - 同99年7月14日(『日本書紀』)\n代11",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%9E%82%E4%BB%81%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "景行",
+      "answer": [
+        "けいこう"
+      ],
+      "meaning": "**在位期間**: 景行天皇元年7月11日 - 同60年11月7日(『日本書紀』)\n代12",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%99%AF%E8%A1%8C%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "成務",
+      "answer": [
+        "せいむ"
+      ],
+      "meaning": "**在位期間**: 成務天皇元年1月5日 - 同60年6月11日(『日本書紀』)\n代13",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%88%90%E5%8B%99%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "仲哀",
+      "answer": [
+        "ちゅうあい"
+      ],
+      "meaning": "**在位期間**: 仲哀天皇元年1月11日 - 同9年2月6日(『日本書紀』)\n代14",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%B2%E5%93%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "応神",
+      "answer": [
+        "おうじん"
+      ],
+      "meaning": "**在位期間**: 応神天皇元年1月1日 - 同41年2月15日(『日本書紀』)\n代15",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BF%259C%25E7%25A5%259E%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "仁徳",
+      "answer": [
+        "にんとく"
+      ],
+      "meaning": "**在位期間**: 仁徳天皇元年1月3日 - 同87年1月16日(『日本書紀』)\n代16",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%81%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "履中",
+      "answer": [
+        "りちゅう"
+      ],
+      "meaning": "**在位期間**: 履中天皇元年2月1日 - 同6年3月15日(『日本書紀』)\n代17",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B1%A5%E4%B8%AD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "反正",
+      "answer": [
+        "はんぜい"
+      ],
+      "meaning": "**在位期間**: 反正天皇元年1月2日 - 同5年1月23日(『日本書紀』)\n代18",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8F%8D%E6%AD%A3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "允恭",
+      "answer": [
+        "いんぎょう"
+      ],
+      "meaning": "**在位期間**: 允恭天皇元年12月 - 同42年1月14日(『日本書紀』)\n代19",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%81%E6%81%AD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "安康",
+      "answer": [
+        "あんこう"
+      ],
+      "meaning": "**在位期間**: 允恭天皇42年12月14日 - 安康天皇3年8月9日(『日本書紀』)\n代20",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%BA%B7%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "雄略",
+      "answer": [
+        "ゆうりゃく"
+      ],
+      "meaning": "**在位期間**: 安康天皇3年11月13日 - 雄略天皇23年8月7日(『日本書紀』)\n代21",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%9B%84%E7%95%A5%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "清寧",
+      "answer": [
+        "せいねい"
+      ],
+      "meaning": "**在位期間**: 清寧天皇元年1月15日 - 同5年1月16日(『日本書紀』)\n代22",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%B8%85%E5%AF%A7%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "顕宗",
+      "answer": [
+        "けんぞう"
+      ],
+      "meaning": "**在位期間**: 顕宗天皇元年1月1日 - 同3年4月25日(『日本書紀』)\n代23",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E9%25A1%2595%25E5%25AE%2597%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "仁賢",
+      "answer": [
+        "にんけん"
+      ],
+      "meaning": "**在位期間**: 仁賢天皇元年1月5日 - 同11年8月8日(『日本書紀』)\n代24",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%81%E8%B3%A2%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "武烈",
+      "answer": [
+        "ぶれつ"
+      ],
+      "meaning": "**在位期間**: 仁賢天皇11年12月 - 武烈天皇8年12月8日(『日本書紀』)\n代25",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%83%88%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "継体",
+      "answer": [
+        "けいたい"
+      ],
+      "meaning": "**在位期間**: 継体天皇元年(507年?)2月4日 - 同25年(531年?)2月7日\n代26",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E7%25B6%2599%25E4%25BD%2593%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "安閑",
+      "answer": [
+        "あんかん"
+      ],
+      "meaning": "**在位期間**: 継体天皇25年(531年?)2月7日 - 安閑天皇2年(535年?)12月17日\n代27",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%89%E9%96%91%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "宣化",
+      "answer": [
+        "せんか"
+      ],
+      "meaning": "**在位期間**: 宣化天皇元年(535年?)12月 - 同4年(539年?)2月10日\n代28",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%A3%E5%8C%96%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "欽明",
+      "answer": [
+        "きんめい"
+      ],
+      "meaning": "**在位期間**: 宣化天皇4年(539年?)12月5日 - 欽明天皇32年(571年?)4月15日\n代29",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%AC%BD%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "敏達",
+      "answer": [
+        "びだつ"
+      ],
+      "meaning": "**在位期間**: 敏達天皇元年(572年?)4月3日 - 同14年(585年?)8月15日\n代30",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%95%8F%E9%81%94%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "用明",
+      "answer": [
+        "ようめい"
+      ],
+      "meaning": "**在位期間**: 敏達天皇14年(585年?)9月5日 - 用明天皇2年(587年?)4月9日\n代31",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%94%A8%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "崇峻",
+      "answer": [
+        "すしゅん"
+      ],
+      "meaning": "**在位期間**: 用明天皇2年(587年?)8月2日 - 崇峻天皇5年(592年)11月3日\n代32",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B4%87%E5%B3%BB%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "推古",
+      "answer": [
+        "すいこ"
+      ],
+      "meaning": "**在位期間**: 崇峻天皇5年(592年)12月8日 - 推古天皇36年(628年)3月7日\n代33",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%8E%A8%E5%8F%A4%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "舒明",
+      "answer": [
+        "じょめい"
+      ],
+      "meaning": "**在位期間**: 舒明天皇元年(629年)1月4日 - 舒明天皇13年(641年)10月9日\n代34",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%88%92%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "皇極",
+      "answer": [
+        "こうぎょく"
+      ],
+      "meaning": "**在位期間**: 皇極天皇元年(642年)1月15日 - 同4年(645年)6月14日\n代35",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%9A%87%E6%A5%B5%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝徳",
+      "answer": [
+        "こうとく"
+      ],
+      "meaning": "**在位期間**: 皇極天皇4年(645年)6月14日 - 白雉5年(654年)10月10日\n代36",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "斉明",
+      "answer": [
+        "さいめい"
+      ],
+      "meaning": "**在位期間**: 皇極天皇重祚。女帝。\n代37",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E6%2596%2589%25E6%2598%258E%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "天智",
+      "answer": [
+        "てんじ"
+      ],
+      "meaning": "**在位期間**: 天智天皇7年(668年)1月3日 - 同10年(671年)12月3日\n代38",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%99%BA%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "弘文",
+      "answer": [
+        "こうぶん"
+      ],
+      "meaning": "**在位期間**: 天智天皇10年671年12月5日 - 天武天皇元年(672年)7月23日\n代39",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BC%98%E6%96%87%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "天武",
+      "answer": [
+        "てんむ"
+      ],
+      "meaning": "**在位期間**: 天武天皇2年(673年)2月27日 - 朱鳥元年(686年)9月9日\n代40",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E6%AD%A6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "持統",
+      "answer": [
+        "じとう"
+      ],
+      "meaning": "**在位期間**: 持統天皇4年(690年)1月1日 - 持統天皇11年(697年)8月1日\n代41",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%8C%81%E7%B5%B1%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "文武",
+      "answer": [
+        "もんむ"
+      ],
+      "meaning": "**在位期間**: 文武天皇元年(697年)8月1日 - 慶雲4年(707年)6月15日\n代42",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%96%87%E6%AD%A6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "元明",
+      "answer": [
+        "げんめい"
+      ],
+      "meaning": "**在位期間**: 慶雲4年(707年)7月17日 - 和銅8年(715年)9月2日\n代43",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%83%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "元正",
+      "answer": [
+        "げんしょう"
+      ],
+      "meaning": "**在位期間**: 霊亀元年(715年)9月2日 - 養老8年(724年)2月4日\n代44",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%83%E6%AD%A3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "聖武",
+      "answer": [
+        "しょうむ"
+      ],
+      "meaning": "**在位期間**: 神亀元年(724年)2月4日 - 天平感宝元年(749年)7月2日\n代45",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%81%96%E6%AD%A6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝謙",
+      "answer": [
+        "こうけん"
+      ],
+      "meaning": "**在位期間**: 天平勝宝元年(749年)7月2日 - 天平宝字2年(758年)8月1日\n代46",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E8%AC%99%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "淳仁",
+      "answer": [
+        "じゅんにん"
+      ],
+      "meaning": "**在位期間**: 天平宝字2年(758年)8月1日 - 同8年(764年)10月9日\n代47",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%B7%B3%E4%BB%81%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "称徳",
+      "answer": [
+        "しょうとく"
+      ],
+      "meaning": "**在位期間**: 孝謙天皇重祚。女帝。\n代48",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A7%B0%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "光仁",
+      "answer": [
+        "こうにん"
+      ],
+      "meaning": "**在位期間**: 宝亀元年(770年)10月1日 - 天応元年(781年)4月3日\n代49",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%89%E4%BB%81%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "桓武",
+      "answer": [
+        "かんむ"
+      ],
+      "meaning": "**在位期間**: 天応元年(781年)4月3日 - 延暦25年(806年)3月17日\n代50",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%A1%93%E6%AD%A6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "平城",
+      "answer": [
+        "へいぜい"
+      ],
+      "meaning": "**在位期間**: 延暦25年(806年)3月17日 - 大同4年(809年)4月1日\n代51",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E5%9F%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "嵯峨",
+      "answer": [
+        "さが"
+      ],
+      "meaning": "**在位期間**: 大同4年(809年)4月1日 - 弘仁14年(823年)4月16日\n代52",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B5%AF%E5%B3%A8%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "淳和",
+      "answer": [
+        "じゅんな"
+      ],
+      "meaning": "**在位期間**: 弘仁14年(823年)4月16日 - 天長10年(833年2月28日\n代53",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%B7%B3%E5%92%8C%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "仁明",
+      "answer": [
+        "にんみょう"
+      ],
+      "meaning": "**在位期間**: 天長10年(833年)2月28日 - 嘉祥3年(850年)3月19日\n代54",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%81%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "文徳",
+      "answer": [
+        "もんとく"
+      ],
+      "meaning": "**在位期間**: 嘉祥3年(850年)3月19日 - 天安2年(858年)8月27日\n代55",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%96%87%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "清和",
+      "answer": [
+        "せいわ"
+      ],
+      "meaning": "**在位期間**: 天安2年(858年)11月7日 - 貞観18年(876年)11月29日\n代56",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%B8%85%E5%92%8C%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "陽成",
+      "answer": [
+        "ようぜい"
+      ],
+      "meaning": "**在位期間**: 貞観18年(876年)11月29日 - 元慶8年(884年)2月4日\n代57",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%99%BD%E6%88%90%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "光孝",
+      "answer": [
+        "こうこう"
+      ],
+      "meaning": "**在位期間**: 元慶8年(884年)2月5日 - 仁和3年(887年)8月26日\n代58",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%89%E5%AD%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "宇多",
+      "answer": [
+        "うだ"
+      ],
+      "meaning": "**在位期間**: 仁和3年(887年)8月26日 - 寛平9年(897年)7月3日\n代59",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%87%E5%A4%9A%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "醍醐",
+      "answer": [
+        "だいご"
+      ],
+      "meaning": "**在位期間**: 寛平9年(897年)7月3日 - 延長8年(930年)9月22日\n代60",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%86%8D%E9%86%90%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "朱雀",
+      "answer": [
+        "すざく"
+      ],
+      "meaning": "**在位期間**: 延長8年(930年)9月22日 - 天慶9年(946年)4月20日\n代61",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%9C%B1%E9%9B%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "村上",
+      "answer": [
+        "むらかみ"
+      ],
+      "meaning": "**在位期間**: 天慶9年(946年)4月20日 - 康保4年(967年)5月25日\n代62",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%B8%8A%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "冷泉",
+      "answer": [
+        "れいぜい"
+      ],
+      "meaning": "**在位期間**: 康保4年(967年)5月25日 - 安和2年(969年)8月13日\n代63",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%86%B7%E6%B3%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "円融",
+      "answer": [
+        "えんゆう",
+        "ゑんゆう"
+      ],
+      "meaning": "**在位期間**: 安和2年(969年)8月13日 - 永観2年(984年)8月27日\n代64",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%2586%2586%25E8%259E%258D%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "花山",
+      "answer": [
+        "かざん"
+      ],
+      "meaning": "**在位期間**: 永観2年(984年)8月27日 - 寛和2年(986年)6月23日\n代65",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%B1%B1%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "一条",
+      "answer": [
+        "いちじょう",
+        "いちでう"
+      ],
+      "meaning": "**在位期間**: 寛和2年(986年)6月23日 - 寛弘8年(1011年)6月13日\n代66",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "三条",
+      "answer": [
+        "さんじょう",
+        "さんでう"
+      ],
+      "meaning": "**在位期間**: 寛弘8年(1011年)6月13日 - 長和5年(1016年)1月29日\n代67",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E4%25B8%2589%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後一条",
+      "answer": [
+        "ごいちじょう",
+        "ごいちでう"
+      ],
+      "meaning": "**在位期間**: 長和5年(1016年)1月29日 - 長元9年(1036年)4月17日\n代68",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E4%25B8%2580%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後朱雀",
+      "answer": [
+        "ごすざく"
+      ],
+      "meaning": "**在位期間**: 長元9年(1036年)4月17日 - 寛徳2年(1045年)1月16日\n代69",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%9C%B1%E9%9B%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後冷泉",
+      "answer": [
+        "ごれいぜい"
+      ],
+      "meaning": "**在位期間**: 寛徳2年(1045年)1月16日 - 治暦4年(1068年)4月19日\n代70",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%86%B7%E6%B3%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後三条",
+      "answer": [
+        "ごさんじょう",
+        "ごさんでう"
+      ],
+      "meaning": "**在位期間**: 治暦4年(1068年)4月19日 - 延久4年(1072年)12月8日\n代71",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E4%25B8%2589%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "白河",
+      "answer": [
+        "しらかわ"
+      ],
+      "meaning": "**在位期間**: 延久4年(1072年)12月8日 - 応徳3年(1086年)11月26日\n代72",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%99%BD%E6%B2%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "堀河",
+      "answer": [
+        "ほりかわ"
+      ],
+      "meaning": "**在位期間**: 応徳3年(1086年)11月26日 - 嘉承2年(1107年)7月19日\n代73",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A0%80%E6%B2%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "鳥羽",
+      "answer": [
+        "とば"
+      ],
+      "meaning": "**在位期間**: 嘉承2年(1107年)7月19日 - 保安4年(1123年)1月28日\n代74",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E7%BE%BD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "崇徳",
+      "answer": [
+        "すとく"
+      ],
+      "meaning": "**在位期間**: 保安4年(1123年)1月28日 - 永治元年(1141年)12月7日\n代75",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B4%87%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "近衛",
+      "answer": [
+        "このえ",
+        "このゑ"
+      ],
+      "meaning": "**在位期間**: 永治元年(1141年)12月7日 - 久寿2年(1155年)7月23日\n代76",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E8%25BF%2591%25E8%25A1%259B%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後白河",
+      "answer": [
+        "ごしらかわ"
+      ],
+      "meaning": "**在位期間**: 久寿2年(1155年)7月24日 - 保元3年(1158年)8月11日\n代77",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E7%99%BD%E6%B2%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "二条",
+      "answer": [
+        "にじょう",
+        "にでう"
+      ],
+      "meaning": "**在位期間**: 保元3年(1158年)8月11日 - 永万元年(1165年)6月25日\n代78",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E4%25BA%258C%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "六条",
+      "answer": [
+        "ろくじょう",
+        "ろくでう"
+      ],
+      "meaning": "**在位期間**: 永万元年(1165年)6月25日 - 仁安3年(1168年)2月19日\n代79",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%2585%25AD%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "高倉",
+      "answer": [
+        "たかくら"
+      ],
+      "meaning": "**在位期間**: 仁安3年(1168年)2月19日 - 治承4年(1180年)2月21日\n代80",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%AB%98%E5%80%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "安徳",
+      "answer": [
+        "あんとく"
+      ],
+      "meaning": "**在位期間**: 治承4年(1180年)2月21日 - 寿永4年(1185年)3月24日\n代81",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%89%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後鳥羽",
+      "answer": [
+        "ごとば"
+      ],
+      "meaning": "**在位期間**: 寿永2年(1183年)8月20日 - 建久9年(1198年)1月11日\n代82",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E9%B3%A5%E7%BE%BD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "土御門",
+      "answer": [
+        "つちみかど"
+      ],
+      "meaning": "**在位期間**: 建久9年(1198年)1月11日 - 承元4年(1210年)11月25日\n代83",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E5%BE%A1%E9%96%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "順徳",
+      "answer": [
+        "じゅんとく"
+      ],
+      "meaning": "**在位期間**: 承元4年(1210年)11月25日 - 承久3年(1221年)4月20日\n代84",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%A0%86%E5%BE%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "仲恭",
+      "answer": [
+        "ちゅうきょう"
+      ],
+      "meaning": "**在位期間**: 承久3年(1221年)4月20日 - 同3年(1221年)7月9日\n代85",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%B2%E6%81%AD%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後堀河",
+      "answer": [
+        "ごほりかわ"
+      ],
+      "meaning": "**在位期間**: 承久3年(1221年)7月9日 - 貞永元年(1232年)10月4日\n代86",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%A0%80%E6%B2%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "四条",
+      "answer": [
+        "しじょう",
+        "しでう"
+      ],
+      "meaning": "**在位期間**: 貞永元年(1232年)10月4日 - 仁治3年(1242年)1月9日\n代87",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%259B%259B%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後嵯峨",
+      "answer": [
+        "ごさが"
+      ],
+      "meaning": "**在位期間**: 仁治3年(1242年)1月20日 - 寛元4年(1246年)1月29日\n代88",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%B5%AF%E5%B3%A8%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後深草",
+      "answer": [
+        "ごふかくさ"
+      ],
+      "meaning": "**在位期間**: 寛元4年(1246年)1月29日 - 正元元年(1259年)11月26日\n代89",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%B7%B1%E8%8D%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "亀山",
+      "answer": [
+        "かめやま"
+      ],
+      "meaning": "**在位期間**: 正元元年(1259年)11月26日 - 文永11年(1274年)1月26日\n代90",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E4%25BA%2580%25E5%25B1%25B1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後宇多",
+      "answer": [
+        "ごうだ"
+      ],
+      "meaning": "**在位期間**: 文永11年(1274年)1月26日 - 弘安10年(1287年)10月21日\n代91",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%AE%87%E5%A4%9A%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "伏見",
+      "answer": [
+        "ふしみ"
+      ],
+      "meaning": "**在位期間**: 弘安10年(1287年)10月21日 - 永仁6年(1298年)7月22日\n代92",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BC%8F%E8%A6%8B%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後伏見",
+      "answer": [
+        "ごふしみ"
+      ],
+      "meaning": "**在位期間**: 永仁6年(1298年)7月22日 - 正安3年(1301年)1月22日\n代93",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E4%BC%8F%E8%A6%8B%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後二条",
+      "answer": [
+        "ごにじょう",
+        "ごにでう"
+      ],
+      "meaning": "**在位期間**: 正安3年(1301年)1月22日 - 徳治3年(1308年)8月25日\n代94",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E4%25BA%258C%25E6%259D%25A1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "花園",
+      "answer": [
+        "はなぞの"
+      ],
+      "meaning": "**在位期間**: 延慶元年(1308年)8月26日 - 文保2年(1318年)2月26日\n代95",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E5%9C%92%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後醍醐",
+      "answer": [
+        "ごだいご"
+      ],
+      "meaning": "**在位期間**: 文保2年(1318年)2月26日 - 延元4年(1339年)8月15日\n代96(南1)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E9%86%8D%E9%86%90%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後村上",
+      "answer": [
+        "ごむらかみ"
+      ],
+      "meaning": "**在位期間**: 延元4年(1339年)8月15日 - 正平23年(1368年)3月11日\n代97(南2)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%9D%91%E4%B8%8A%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "長慶",
+      "answer": [
+        "ちょうけい"
+      ],
+      "meaning": "**在位期間**: 正平23年(1368年)3月11日 - 弘和3年(1383年)10月\n代98(南3)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%95%B7%E6%85%B6%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後亀山",
+      "answer": [
+        "ごかめやま"
+      ],
+      "meaning": "**在位期間**: 弘和3年(1383年)10月 - 元中9年(1392年)閏10月5日\n代99(南4)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E4%25BA%2580%25E5%25B1%25B1%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "光厳",
+      "answer": [
+        "こうごん"
+      ],
+      "meaning": "**在位期間**: 元徳3年(1331年)9月20日 - 正慶2年(1333年)5月25日\n代北1",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%89%E5%8E%B3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "光明",
+      "answer": [
+        "こうみょう"
+      ],
+      "meaning": "**在位期間**: 建武3年(1336年)8月15日 - 貞和4年(1348年)10月27日\n代北2",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%89%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "崇光",
+      "answer": [
+        "すこう"
+      ],
+      "meaning": "**在位期間**: 貞和4年(1348年)10月27日 - 観応2年(1351年)11月7日\n代北3",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%B4%87%E5%85%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後光厳",
+      "answer": [
+        "ごこうごん",
+        "ごくゎうごん"
+      ],
+      "meaning": "**在位期間**: 観応3年(1352年)8月17日 - 応安4年(1371年)3月23日\n代北4",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E5%2585%2589%25E5%258E%25B3%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後円融",
+      "answer": [
+        "ごえんゆう",
+        "ごゑんゆう"
+      ],
+      "meaning": "**在位期間**: 応安4年(1371年)3月23日 - 永徳2年(1382年)4月11日\n代北5",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E5%2586%2586%25E8%259E%258D%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後小松",
+      "answer": [
+        "ごこまつ"
+      ],
+      "meaning": "**在位期間**: 永徳2年(弘和2年)(1382年)4月11日(明徳3年(元中9年)(1392年)閏10月5日)南北朝統一) - 応永19年(1412年)8月29日\n代北6↓100",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%B0%8F%E6%9D%BE%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "称光",
+      "answer": [
+        "しょうこう"
+      ],
+      "meaning": "**在位期間**: 応永19年(1412年)8月29日 - 正長元年(1428年)7月20日\n代101",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A7%B0%E5%85%89%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後花園",
+      "answer": [
+        "ごはなぞの"
+      ],
+      "meaning": "**在位期間**: 正長元年(1428年)7月28日 - 寛正5年(1464年)7月19日\n代102",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E8%8A%B1%E5%9C%92%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後土御門",
+      "answer": [
+        "ごつちみかど"
+      ],
+      "meaning": "**在位期間**: 寛正5年(1464年)7月19日 - 明応9年(1500年)9月28日\n代103",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%9C%9F%E5%BE%A1%E9%96%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後柏原",
+      "answer": [
+        "ごかしわばら"
+      ],
+      "meaning": "**在位期間**: 明応9年(1500年)10月25日 - 大永6年(1526年)4月7日\n代104",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%9F%8F%E5%8E%9F%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後奈良",
+      "answer": [
+        "ごなら"
+      ],
+      "meaning": "**在位期間**: 大永6年(1526年)4月29日 -弘治3年 (1557年)9月5日\n代105",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%A5%88%E8%89%AF%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "正親町",
+      "answer": [
+        "おおぎまち"
+      ],
+      "meaning": "**在位期間**: 弘治3年(1557年)10月27日 - 天正14年(1586年)11月7日\n代106",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%AA%E7%94%BA%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後陽成",
+      "answer": [
+        "ごようぜい"
+      ],
+      "meaning": "**在位期間**: 天正14年(1586年)11月7日 - 慶長16年(1611年)3月27日\n代107",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E9%99%BD%E6%88%90%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後水尾",
+      "answer": [
+        "ごみずのお"
+      ],
+      "meaning": "**在位期間**: 慶長16年(1611年)3月27日 - 寛永6年(1629年)11月8日\n代108",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%B0%B4%E5%B0%BE%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "明正",
+      "answer": [
+        "めいしょう"
+      ],
+      "meaning": "**在位期間**: 寛永6年(1629年)11月8日 - 同20年(1643年)10月3日\n代109",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%AD%A3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後光明",
+      "answer": [
+        "ごこうみょう"
+      ],
+      "meaning": "**在位期間**: 寛永20年(1643年)10月3日 - 承応3年(1654年)9月20日\n代110",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E5%85%89%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後西",
+      "answer": [
+        "ごさい"
+      ],
+      "meaning": "**在位期間**: 承応3年(1654年)11月28日 - 寛文3年(1663年)1月26日\n代111",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E8%A5%BF%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "霊元",
+      "answer": [
+        "れいげん"
+      ],
+      "meaning": "**在位期間**: 寛文3年(1663年)1月26日 - 貞享4年(1687年)3月21日\n代112",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E9%259C%258A%25E5%2585%2583%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "東山",
+      "answer": [
+        "ひがしやま"
+      ],
+      "meaning": "**在位期間**: 貞享4年(1687年)3月21日 - 宝永6年(1709年)6月21日\n代113",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%9D%B1%E5%B1%B1%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "中御門",
+      "answer": [
+        "なかみかど"
+      ],
+      "meaning": "**在位期間**: 宝永6年(1709年)6月21日 - 享保20年(1735年)3月21日\n代114",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E5%BE%A1%E9%96%80%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "桜町",
+      "answer": [
+        "さくらまち"
+      ],
+      "meaning": "**在位期間**: 享保20年(1735年)3月21日 - 延享4年(1747年)5月2日\n代115",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E6%25A1%259C%25E7%2594%25BA%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "桃園",
+      "answer": [
+        "ももぞの"
+      ],
+      "meaning": "**在位期間**: 延享4年(1747年)5月2日 - 宝暦12年(1762年)7月12日\n代116",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%A1%83%E5%9C%92%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "後桜町",
+      "answer": [
+        "ごさくらまち"
+      ],
+      "meaning": "**在位期間**: 宝暦12年(1762年)7月27日 - 明和7年(1770年)11月24日\n代117",
+      "dictionaryLinkUri": "https://ja.wikipedia.org%2Fwiki%2F%25E5%25BE%258C%25E6%25A1%259C%25E7%2594%25BA%25E5%25A4%25A9%25E7%259A%2587"
+    },
+    {
+      "question": "後桃園",
+      "answer": [
+        "ごももぞの"
+      ],
+      "meaning": "**在位期間**: 明和7年(1770年)11月24日 - 安永8年(1779年)11月9日\n代118",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E6%A1%83%E5%9C%92%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "光格",
+      "answer": [
+        "こうかく"
+      ],
+      "meaning": "**在位期間**: 安永8年(1779年)11月25日 - 文化14年(1817年)3月22日\n代119",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%85%89%E6%A0%BC%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "仁孝",
+      "answer": [
+        "にんこう"
+      ],
+      "meaning": "**在位期間**: 文化14年(1817年)3月22日 -弘化3年 (1846年)2月6日\n代120",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%81%E5%AD%9D%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "孝明",
+      "answer": [
+        "こうめい"
+      ],
+      "meaning": "**在位期間**: 弘化3年(1846年)2月13日 - 慶応2年(1866年)12月25日\n代121",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AD%9D%E6%98%8E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "明治",
+      "answer": [
+        "めいじ"
+      ],
+      "meaning": "**在位期間**: 慶応3年(1867年)1月9日 - 明治45年(1912年)7月30日\n代122",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%98%8E%E6%B2%BB%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "大正",
+      "answer": [
+        "たいしょう"
+      ],
+      "meaning": "**在位期間**: 明治45年/大正元年(1912年)7月30日 - 大正15年(1926年)12月25日\n代123",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%AD%A3%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "昭和",
+      "answer": [
+        "しょうわ"
+      ],
+      "meaning": "**在位期間**: 大正15年/昭和元年(1926年)12月25日 - 昭和64年(1989年)1月7日\n代124",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%98%AD%E5%92%8C%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "今上",
+      "answer": [
+        "きんじょう"
+      ],
+      "meaning": "**在位期間**: 昭和64年(1989年)1月7日[表外参照 4] - 平成31年(2019年)4月30日 (予定)\n代125",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%BB%8A%E4%B8%8A%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "天照大神",
+      "answer": [
+        "あまてらすおおみかみ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%A4%A9%E7%85%A7%E5%A4%A7%E7%A5%9E"
+    },
+    {
+      "question": "日本武尊",
+      "answer": [
+        "やまとたける"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E6%AD%A6%E5%B0%8A"
+    },
+    {
+      "question": "神功皇后",
+      "answer": [
+        "じんぐうこうごう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%A5%9E%E5%8A%9F%E7%9A%87%E5%90%8E"
+    },
+    {
+      "question": "飯豊青皇女",
+      "answer": [
+        "いいとよあおのひめみこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%A3%AF%E8%B1%8A%E9%9D%92%E7%9A%87%E5%A5%B3"
+    },
+    {
+      "question": "聖徳太子",
+      "answer": [
+        "しょうとくたいし"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%81%96%E5%BE%B3%E5%A4%AA%E5%AD%90"
+    },
+    {
+      "question": "草壁皇子",
+      "answer": [
+        "くさかべのおうじ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%8D%89%E5%A3%81%E7%9A%87%E5%AD%90"
+    },
+    {
+      "question": "舎人親王",
+      "answer": [
+        "とねりしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%88%8E%E4%BA%BA%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "早良親王",
+      "answer": [
+        "さわらしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%97%A9%E8%89%AF%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "藤原多子",
+      "answer": [
+        "ふじわらのたし"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E5%A4%9A%E5%AD%90"
+    },
+    {
+      "question": "近衞",
+      "answer": [
+        "このえ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%BF%91%E8%A1%9E%E5%A4%A9%E7%9A%87"
+    },
+    {
+      "question": "守貞親王",
+      "answer": [
+        "もりさだしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%88%E8%B2%9E%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "宗尊親王",
+      "answer": [
+        "むねたかしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%97%E5%B0%8A%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "惟康親王",
+      "answer": [
+        "これやすしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%83%9F%E5%BA%B7%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "久明親王",
+      "answer": [
+        "ひさあきらしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B9%85%E6%98%8E%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "守邦親王",
+      "answer": [
+        "もりくにしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%88%E9%82%A6%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "護良親王",
+      "answer": [
+        "もりながしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%AD%B7%E8%89%AF%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "成良親王",
+      "answer": [
+        "なりながしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%88%90%E8%89%AF%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "閑院宮典仁親王",
+      "answer": [
+        "かんいんのみやすけひとしんのう"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%96%91%E9%99%A2%E5%AE%AE%E5%85%B8%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "皇太子徳仁親王",
+      "answer": [
+        "こうたいしなるひと"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%A4%AA%E5%AD%90%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "黒田清子",
+      "answer": [
+        "くろださやこ"
+      ],
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E9%BB%92%E7%94%B0%E6%B8%85%E5%AD%90"
+    },
+    {
+      "question": "源頼朝",
+      "answer": [
+        "みなもとのよりとも"
+      ],
+      "meaning": "**在位期間**: 1192年 – 1199年 （約6年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%BA%90%E9%A0%BC%E6%9C%9D"
+    },
+    {
+      "question": "源頼家",
+      "answer": [
+        "みなもとのよりいえ"
+      ],
+      "meaning": "**在位期間**: 1202年 – 1203年 （約1年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%BA%90%E9%A0%BC%E5%AE%B6"
+    },
+    {
+      "question": "源実朝",
+      "answer": [
+        "みなもとのさねとも"
+      ],
+      "meaning": "**在位期間**: 1203年 – 1219年 （約15年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%BA%90%E5%AE%9F%E6%9C%9D"
+    },
+    {
+      "question": "藤原頼経",
+      "answer": [
+        "ふじわらのよりつね"
+      ],
+      "meaning": "**在位期間**: 1226年 – 1244年 （約18年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E9%A0%BC%E7%B5%8C"
+    },
+    {
+      "question": "藤原頼嗣",
+      "answer": [
+        "ふじわらのよりつぐ"
+      ],
+      "meaning": "**在位期間**: 1244年 – 1252年 （約7年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%97%A4%E5%8E%9F%E9%A0%BC%E5%97%A3"
+    },
+    {
+      "question": "宗尊親王",
+      "answer": [
+        "むねたかしんのう"
+      ],
+      "meaning": "**在位期間**: 1252年 – 1266年 （約14年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%97%E5%B0%8A%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "惟康親王",
+      "answer": [
+        "これやすしんのう"
+      ],
+      "meaning": "**在位期間**: 1266年 – 1289年 （約23年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E6%83%9F%E5%BA%B7%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "久明親王",
+      "answer": [
+        "ひさあきらしんのう"
+      ],
+      "meaning": "**在位期間**: 1289年 – 1308年 （約18年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E4%B9%85%E6%98%8E%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "守邦親王",
+      "answer": [
+        "もりくにしんのう"
+      ],
+      "meaning": "**在位期間**: 1308年 – 1333年 （約24年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%AE%88%E9%82%A6%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "question": "北条時政",
+      "answer": [
+        "ほうじょうときまさ"
+      ],
+      "meaning": "**在位期間**: 1203年- 1205年 (1年 11か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E6%99%82%E6%94%BF"
+    },
+    {
+      "question": "北条義時",
+      "answer": [
+        "ほうじょうよしとき"
+      ],
+      "meaning": "**在位期間**: 1205 – 1224年 (18年 11か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E7%BE%A9%E6%99%82"
+    },
+    {
+      "question": "北条泰時",
+      "answer": [
+        "ほうじょうやすとき"
+      ],
+      "meaning": "**在位期間**: 1224年 – 1242年 (18年)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E6%B3%B0%E6%99%82"
+    },
+    {
+      "question": "北条経時",
+      "answer": [
+        "ほうじょうつねとき"
+      ],
+      "meaning": "**在位期間**: 1242年 – 1246年 (3年 9か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E7%B5%8C%E6%99%82"
+    },
+    {
+      "question": "北条時頼",
+      "answer": [
+        "ほうじょうときより"
+      ],
+      "meaning": "**在位期間**: 1246年 – 1256年 (10年 8か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E6%99%82%E9%A0%BC"
+    },
+    {
+      "question": "北条長時",
+      "answer": [
+        "ほうじょうながとき"
+      ],
+      "meaning": "**在位期間**: 1256年 – 1264年 (7年 7か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E9%95%B7%E6%99%82"
+    },
+    {
+      "question": "北条時宗",
+      "answer": [
+        "ほうじょうときむね"
+      ],
+      "meaning": "**在位期間**: 1268年 – 1284年 (16年 1か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E6%99%82%E5%AE%97"
+    },
+    {
+      "question": "北条貞時",
+      "answer": [
+        "ほうじょうさだとき"
+      ],
+      "meaning": "**在位期間**: 1284年 – 1301年 (17年 4か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E8%B2%9E%E6%99%82"
+    },
+    {
+      "question": "北条師時",
+      "answer": [
+        "ほうじょうもろとき"
+      ],
+      "meaning": "**在位期間**: 1301年 – 1311年 (10年 1か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E5%B8%AB%E6%99%82"
+    },
+    {
+      "question": "北条宗宣",
+      "answer": [
+        "ほうじょうむねのぶ"
+      ],
+      "meaning": "**在位期間**: 1311年 – 1312年 (8か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E5%AE%97%E5%AE%A3"
+    },
+    {
+      "question": "北条煕時",
+      "answer": [
+        "ほうじょうひろとき"
+      ],
+      "meaning": "**在位期間**: 1312年 – 1315年 (3年 1か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E7%85%95%E6%99%82"
+    },
+    {
+      "question": "北条基時",
+      "answer": [
+        "ほうじょうもととき"
+      ],
+      "meaning": "**在位期間**: 1315年 – 1316年 (1年)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E5%9F%BA%E6%99%82"
+    },
+    {
+      "question": "北条高時",
+      "answer": [
+        "ほうじょうたかとき"
+      ],
+      "meaning": "**在位期間**: 1316年 – 1326年 (9年 7か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E9%AB%98%E6%99%82"
+    },
+    {
+      "question": "北条貞顕",
+      "answer": [
+        "ほうじょうさだあき"
+      ],
+      "meaning": "**在位期間**: 1326年 – 同3月26日 (11日間)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E8%B2%9E%E9%A1%95"
+    },
+    {
+      "question": "北条守時",
+      "answer": [
+        "ほうじょうもりとき"
+      ],
+      "meaning": "**在位期間**: 1326年 – 1333年 (7年 1か月)",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%8C%97%E6%9D%A1%E5%AE%88%E6%99%82"
+    },
+    {
+      "question": "足利尊氏",
+      "answer": [
+        "あしかがたかうじ"
+      ],
+      "meaning": "**在位期間**: 1338年 – 1358年 （約19年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E5%B0%8A%E6%B0%8F"
+    },
+    {
+      "question": "足利義詮",
+      "answer": [
+        "あしかがよしあきら"
+      ],
+      "meaning": "**在位期間**: 1358年 – 1367年 （約9年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E8%A9%AE"
+    },
+    {
+      "question": "足利義満",
+      "answer": [
+        "あしかがよしみつ"
+      ],
+      "meaning": "**在位期間**: 1368年 – 1394年 （約26年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%BA%80"
+    },
+    {
+      "question": "足利義持",
+      "answer": [
+        "あしかがよしもち"
+      ],
+      "meaning": "**在位期間**: 1394年 – 1423年 （約28年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%8C%81"
+    },
+    {
+      "question": "足利義量",
+      "answer": [
+        "あしかがよしかず"
+      ],
+      "meaning": "**在位期間**: 1423年 – 1425年 （約2年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E9%87%8F"
+    },
+    {
+      "question": "足利義教",
+      "answer": [
+        "あしかがよしのり"
+      ],
+      "meaning": "**在位期間**: 1429年 – 1441年 （約12年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%95%99"
+    },
+    {
+      "question": "足利義勝",
+      "answer": [
+        "あしかがよしかつ"
+      ],
+      "meaning": "**在位期間**: 1442年 – 1443年 （約8ヶ月）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E5%8B%9D"
+    },
+    {
+      "question": "足利義政",
+      "answer": [
+        "あしかがよしまさ"
+      ],
+      "meaning": "**在位期間**: 1449年 – 1473年 （約24年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%94%BF"
+    },
+    {
+      "question": "足利義尚",
+      "answer": [
+        "あしかがよしひさ"
+      ],
+      "meaning": "**在位期間**: 1473年 – 1489年 （約15年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E5%B0%9A"
+    },
+    {
+      "question": "足利義材",
+      "answer": [
+        "あしかがよしき"
+      ],
+      "meaning": "**在位期間**: 1490年 – 1493年 （約3年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%9D%90"
+    },
+    {
+      "question": "足利義澄",
+      "answer": [
+        "あしかがよしずみ"
+      ],
+      "meaning": "**在位期間**: 1494年 – 1508年 （約13年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%BE%84"
+    },
+    {
+      "question": "足利義稙",
+      "answer": [
+        "あしかがよしたね"
+      ],
+      "meaning": "**在位期間**: 1508年 – 1521年 （約13年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E7%A8%99"
+    },
+    {
+      "question": "足利義晴",
+      "answer": [
+        "あしかがよしはる"
+      ],
+      "meaning": "**在位期間**: 1521年 – 1546年 （約25年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%99%B4"
+    },
+    {
+      "question": "足利義輝",
+      "answer": [
+        "あしかがよしてる"
+      ],
+      "meaning": "**在位期間**: 1546年 – 1565年 （約18年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E8%BC%9D"
+    },
+    {
+      "question": "足利義栄",
+      "answer": [
+        "あしかがよしひで"
+      ],
+      "meaning": "**在位期間**: 1568年 – 1568年 （約8ヶ月）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%A0%84"
+    },
+    {
+      "question": "足利義昭",
+      "answer": [
+        "あしかがよしあき"
+      ],
+      "meaning": "**在位期間**: 1568年 – 1573年 （約4年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E8%B6%B3%E5%88%A9%E7%BE%A9%E6%98%AD"
+    },
+    {
+      "question": "徳川家康",
+      "answer": [
+        "とくがわいえやす"
+      ],
+      "meaning": "**在位期間**: 1603年 – 1605年 （約2年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7"
+    },
+    {
+      "question": "徳川秀忠",
+      "answer": [
+        "とくがわひでただ"
+      ],
+      "meaning": "**在位期間**: 1605年 – 1623年 （約18年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E7%A7%80%E5%BF%A0"
+    },
+    {
+      "question": "徳川家光",
+      "answer": [
+        "とくがわいえみつ"
+      ],
+      "meaning": "**在位期間**: 1623年 – 1651年 （約27年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%85%89"
+    },
+    {
+      "question": "徳川家綱",
+      "answer": [
+        "とくがわいえつな"
+      ],
+      "meaning": "**在位期間**: 1651年 – 1680年 （約28年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E7%B6%B1"
+    },
+    {
+      "question": "徳川綱吉",
+      "answer": [
+        "とくがわつなよし"
+      ],
+      "meaning": "**在位期間**: 1680年 – 1709年 （約28年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E7%B6%B1%E5%90%89"
+    },
+    {
+      "question": "徳川家宣",
+      "answer": [
+        "とくがわいえのぶ"
+      ],
+      "meaning": "**在位期間**: 1709年 – 1712年 （約3年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%AE%A3"
+    },
+    {
+      "question": "徳川家継",
+      "answer": [
+        "とくがわいえつぐ"
+      ],
+      "meaning": "**在位期間**: 1713年 – 1716年 （約3年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E7%B6%99"
+    },
+    {
+      "question": "徳川吉宗",
+      "answer": [
+        "とくがわよしむね"
+      ],
+      "meaning": "**在位期間**: 1716年 – 1745年 （約29年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%90%89%E5%AE%97"
+    },
+    {
+      "question": "徳川家重",
+      "answer": [
+        "とくがわいえしげ"
+      ],
+      "meaning": "**在位期間**: 1745年 – 1760年 （約14年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E9%87%8D"
+    },
+    {
+      "question": "徳川家治",
+      "answer": [
+        "とくがわいえはる"
+      ],
+      "meaning": "**在位期間**: 1760年 – 1786年 （約26年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E6%B2%BB"
+    },
+    {
+      "question": "徳川家斉",
+      "answer": [
+        "とくがわいえなり"
+      ],
+      "meaning": "**在位期間**: 1787年 – 1837年 （約50年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E6%96%89"
+    },
+    {
+      "question": "徳川家慶",
+      "answer": [
+        "とくがわいえよし"
+      ],
+      "meaning": "**在位期間**: 1837年 – 1853年 （約16年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E6%85%B6"
+    },
+    {
+      "question": "徳川家定",
+      "answer": [
+        "とくがわいえさだ"
+      ],
+      "meaning": "**在位期間**: 1853年 – 1858年 （約4年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%AE%9A"
+    },
+    {
+      "question": "徳川家茂",
+      "answer": [
+        "とくがわいえもち"
+      ],
+      "meaning": "**在位期間**: 1858年 – 1866年 （約7年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E8%8C%82"
+    },
+    {
+      "question": "徳川慶喜",
+      "answer": [
+        "とくがわよしのぶ"
+      ],
+      "meaning": "**在位期間**: 1866年 – 1868年 （約1年）",
+      "dictionaryLinkUri": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%85%B6%E5%96%9C"
+    }
+  ]
+}
