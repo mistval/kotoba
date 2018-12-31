@@ -112,14 +112,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiya_hanshin/"
     },
     {
-      "question": "芦屋",
-      "answer": [
-        "あしや"
-      ],
-      "meaning": "東海道・山陽本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashiya_hyogo/"
-    },
-    {
       "question": "芦屋川",
       "answer": [
         "あしやがわ"
@@ -150,14 +142,6 @@
       ],
       "meaning": "阪神本線、阪神なんば線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagasaki_hanshin/"
-    },
-    {
-      "question": "尼崎",
-      "answer": [
-        "あまがさき"
-      ],
-      "meaning": "東海道・山陽本線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagasaki_hyogo/"
     },
     {
       "question": "尼崎センタープール前",
@@ -198,14 +182,6 @@
       ],
       "meaning": "神戸電鉄有馬線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arimaonsen_kobe/?page=2"
-    },
-    {
-      "question": "有馬温泉",
-      "answer": [
-        "ありまおんせん"
-      ],
-      "meaning": "六甲有馬ロープウェー",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arimaonsen_rope/?page=2"
     },
     {
       "question": "有馬口",
@@ -272,14 +248,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itami_hankyu/"
     },
     {
-      "question": "伊丹",
-      "answer": [
-        "いたみ"
-      ],
-      "meaning": "福知山線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itami_hyogo/"
-    },
-    {
       "question": "板宿",
       "answer": [
         "いたやど"
@@ -310,14 +278,6 @@
       ],
       "meaning": "神戸電鉄粟生線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichiba_kobe/"
-    },
-    {
-      "question": "市場",
-      "answer": [
-        "いちば"
-      ],
-      "meaning": "加古川線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichiba_hyogo/"
     },
     {
       "question": "猪名寺",
@@ -622,14 +582,6 @@
       ],
       "meaning": "阪急神戸線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasuganomichi_hankyu/"
-    },
-    {
-      "question": "春日野道",
-      "answer": [
-        "かすがのみち"
-      ],
-      "meaning": "阪神本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasuganomichi_hanshin/"
     },
     {
       "question": "香住",
@@ -1006,14 +958,6 @@
       ],
       "meaning": "阪急神戸線、神戸高速鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe-sannomiya_hankyu/"
-    },
-    {
-      "question": "神戸三宮",
-      "answer": [
-        "こうべさんのみや"
-      ],
-      "meaning": "阪神本線、山陽電鉄本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe-sannomiya_hanshin/"
     },
     {
       "question": "甲陽園",
@@ -1464,14 +1408,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_hanshin/"
     },
     {
-      "question": "住吉",
-      "answer": [
-        "すみよし"
-      ],
-      "meaning": "東海道・山陽本線、六甲ライナー",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_hyogo/"
-    },
-    {
       "question": "西神中央",
       "answer": [
         "せいしんちゅうおう"
@@ -1872,14 +1808,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagata_kobe-shiei/"
     },
     {
-      "question": "長田",
-      "answer": [
-        "ながた"
-      ],
-      "meaning": "神戸電鉄有馬線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagata_kobe-dentetsu/"
-    },
-    {
       "question": "灘",
       "answer": [
         "なだ"
@@ -2006,14 +1934,6 @@
       ],
       "meaning": "東海道・山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hyogo/"
-    },
-    {
-      "question": "西宮",
-      "answer": [
-        "にしのみや"
-      ],
-      "meaning": "阪神本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hanshin/"
     },
     {
       "question": "西宮北口",
@@ -2582,14 +2502,6 @@
       ],
       "meaning": "阪急神戸線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikage_hankyu/"
-    },
-    {
-      "question": "御影",
-      "answer": [
-        "みかげ"
-      ],
-      "meaning": "阪神本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikage_hanshin/"
     },
     {
       "question": "三日月",

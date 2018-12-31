@@ -64,14 +64,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arashiyama_keifuku/"
     },
     {
-      "question": "嵐山",
-      "answer": [
-        "あらしやま"
-      ],
-      "meaning": "阪急嵐山線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arashiyama_hankyu/"
-    },
-    {
       "question": "有栖川",
       "answer": [
         "ありすがわ"
@@ -160,14 +152,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uji_keihan/"
     },
     {
-      "question": "宇治",
-      "answer": [
-        "うじ"
-      ],
-      "meaning": "奈良線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uji_kyoto/"
-    },
-    {
       "question": "太秦",
       "answer": [
         "うずまさ"
@@ -230,14 +214,6 @@
       ],
       "meaning": "奈良線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obaku_kyoto/"
-    },
-    {
-      "question": "黄檗",
-      "answer": [
-        "おうばく"
-      ],
-      "meaning": "京阪宇治線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obaku_keihan/"
     },
     {
       "question": "大江",
@@ -760,14 +736,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komada/"
     },
     {
-      "question": "木幡",
-      "answer": [
-        "こわた"
-      ],
-      "meaning": "京阪宇治線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kowata_keihan/"
-    },
-    {
       "question": "五条",
       "answer": [
         "ごじょう"
@@ -790,14 +758,6 @@
       ],
       "meaning": "嵐電（京福）嵐山本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sai/"
-    },
-    {
-      "question": "西院",
-      "answer": [
-        "さいいん"
-      ],
-      "meaning": "阪急京都線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saiin/"
     },
     {
       "question": "嵯峨嵐山",
@@ -990,14 +950,6 @@
       ],
       "meaning": "京都地下鉄烏丸線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jujo_kyoto-shiei/"
-    },
-    {
-      "question": "十条",
-      "answer": [
-        "じゅうじょう"
-      ],
-      "meaning": "近鉄京都線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jujo_kintetsu/?page=2"
     },
     {
       "question": "城陽",
@@ -1902,14 +1854,6 @@
       ],
       "meaning": "京阪宇治線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokujizo_keihan/"
-    },
-    {
-      "question": "六地蔵",
-      "answer": [
-        "ろくじぞう"
-      ],
-      "meaning": "奈良線、京都地下鉄東西線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokujizo_kyoto/"
     },
     {
       "question": "ロープ比叡",

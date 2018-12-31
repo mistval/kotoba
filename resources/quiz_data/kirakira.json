@@ -4,7 +4,7 @@
   "article": "a",
   "instructions": "Type the reading of the kirakira name!",
   "questionCreationStrategy": "IMAGE",
-  "dictionaryLinkStrategy": "NONE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
   "cardPreprocessingStrategy": "NONE",
   "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
@@ -464,13 +464,6 @@
       "meaning": "『龍』の文字を全く読んでいない事が乾いた笑いを誘います。きっとご両親はFF好きなのでしょう。"
     },
     {
-      "question": "女神 (女)",
-      "answer": [
-        "まどか"
-      ],
-      "meaning": "魔法少女まどかマギカを捩った名前となります。元ネタを知らない方にとっては、ただ謎を残すだけの名前になっています。"
-    },
-    {
       "question": "嗣音羽 (女)",
       "answer": [
         "つぉねぱ"
@@ -756,13 +749,6 @@
         "まりおねっと"
       ],
       "meaning": "ご両親がBOOWYファンで、命名された様です。次女が生まれた時は『樹里絵都（じゅりえっと）』と名付けるようです。"
-    },
-    {
-      "question": "宇宙 (男)",
-      "answer": [
-        "あーす"
-      ],
-      "meaning": "英語で『Earth（アース）』は『地球』を意味します。宇宙ではありません。教養の大切さを気付かせてくれる名前です。"
     },
     {
       "question": "永久恋愛 (女)",
@@ -1057,13 +1043,6 @@
         "ぷう"
       ],
       "meaning": "ディズニーファンのご両親が命名した名前です。やはりPの文字の破壊力は凄いです。"
-    },
-    {
-      "question": "神 (男)",
-      "answer": [
-        "しはい"
-      ],
-      "meaning": "厨二病全開の名前です。中学生でもこの漢字で、この読みは想像の範囲外でしょう。"
     },
     {
       "question": "ポチ男 (男)",
