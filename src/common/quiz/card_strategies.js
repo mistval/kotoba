@@ -85,7 +85,7 @@ module.exports.CreateDictionaryLinkStrategy = {
   WEBSTER_ANSWER: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(getAnswerToLink(card))}`,
   WEBSTER_QUESTION: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(card.question)}`,
   WIKIPEDIA_QUESTION_FIRST_TOKEN: card => `https://ja.wikipedia.org/wiki/${encodeURIComponent(card.question.split(' ')[0])}`,
-  PROVIDED_ON_CARD: card => card.dictionaryLinkUri,
+  PROVIDED_ON_CARD: card => card.dictionaryLinkUri.replace('%2Fwiki%2F%25', '/wiki/%'), // HACK: For some reason a minority of questions get their URIs messed up during the build process
   NONE: () => '',
 };
 
