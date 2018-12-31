@@ -159,6 +159,16 @@ function writeFile(filePath, content) {
   });
 }
 
+function assertNoDuplicateCards(deckName, cards) {
+  const seen = {};
+  cards.filter(x => x).forEach((card) => {
+    if (seen[card.question]) {
+      throw new Error(`Duplicate question in ${deckName}: ${card.question}`);
+    }
+    seen[card.question] = true;
+  });
+}
+
 async function build() {
   console.log('Building quiz data');
 
@@ -176,6 +186,7 @@ async function build() {
 
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     deck.cardDiskArrayPath = diskArrayDirectory;
+    assertNoDuplicateCards(deckName, deck.cards);
 
     // We creates the arrays in sequence instead of in parallel
     // because that way there's less memory pressure.

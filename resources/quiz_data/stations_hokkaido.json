@@ -1,6 +1,6 @@
 {
   "uniqueId": "stations_hokaido",
-  "name": "Hokkaido Stations Reading Quiz",
+  "name": "Hokaido Stations Reading Quiz",
   "article": "a",
   "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
@@ -13,7 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Line(s)",
-  "description": "[Hokkaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
+  "description": "[Hokaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
   "cards": [
     {
       "question": "愛山",
@@ -1288,14 +1288,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotoni_sapporo/"
     },
     {
-      "question": "琴似",
-      "answer": [
-        "ことに"
-      ],
-      "meaning": "函館本線、快速エアポート",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotoni_hokkaido/"
-    },
-    {
       "question": "小幌",
       "answer": [
         "こぼろ"
@@ -1726,14 +1718,6 @@
       ],
       "meaning": "札幌地下鉄東西線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroishi_sapporo/?page=2"
-    },
-    {
-      "question": "白石",
-      "answer": [
-        "しろいし"
-      ],
-      "meaning": "函館本線、千歳線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroishi_hokkaido/?page=2"
     },
     {
       "question": "新旭川",
@@ -3238,14 +3222,6 @@
       ],
       "meaning": "札幌地下鉄南北線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiragishi_sapporo/?page=2"
-    },
-    {
-      "question": "平岸",
-      "answer": [
-        "ひらぎし"
-      ],
-      "meaning": "根室本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiragishi_hokkaido/?page=2"
     },
     {
       "question": "比羅夫",

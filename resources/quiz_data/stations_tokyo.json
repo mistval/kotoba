@@ -168,14 +168,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakusa/"
     },
     {
-      "question": "浅草",
-      "answer": [
-        "あさくさ"
-      ],
-      "meaning": "つくばエクスプレス",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakusa_tsukuba-exp/"
-    },
-    {
       "question": "浅草橋",
       "answer": [
         "あさくさばし"
@@ -3320,14 +3312,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tocho-mae/"
     },
     {
-      "question": "都庁前",
-      "answer": [
-        "とちょうまえ"
-      ],
-      "meaning": "都営大江戸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tocho-mae_orikaeshi/"
-    },
-    {
       "question": "都電雑司ヶ谷",
       "answer": [
         "とでんぞうしがや"
@@ -5222,14 +5206,6 @@
       ],
       "meaning": "東京メトロ東西線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/waseda_tokyo-metro/"
-    },
-    {
-      "question": "早稲田",
-      "answer": [
-        "わせだ"
-      ],
-      "meaning": "都電荒川線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/waseda_toden/"
     }
   ]
 }
