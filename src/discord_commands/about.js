@@ -32,6 +32,7 @@ Kotoba uses data from the following sources:
     - Merriam Webster Dictionary (https://www.merriam-webster.com)
     - Oxford Dictionary & Thesaurus (https://www.oxforddictionaries.com/)
     - Wiktionary (https://ja.wiktionary.org)
+    - Princeton WordNet (http://compling.hss.ntu.edu.sg/wnja/index.en.html)
 
 Many of the quiz decks come from https://github.com/darkgray1981/kanjiquizbot\`\`\``, null, msg);
   },
