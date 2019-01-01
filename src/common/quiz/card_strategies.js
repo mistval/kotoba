@@ -321,6 +321,10 @@ async function applyWebsterSynonyms(card) {
   
   card.answer = card.answer || [];
   card.answer = card.answer.concat(synsProcessed);
+
+  if (synsProcessed.length > 0) {
+    card.meaning += `\n[Merriam-Webster Thesaurus](https://www.merriam-webster.com/thesaurus/${card.question})`;
+  }
 }
 
 async function applyOxfordSynonyms(card) {
@@ -358,6 +362,10 @@ async function applyOxfordSynonyms(card) {
     
     card.answer = card.answer || [];
     card.answer = card.answer.concat(synsProcessed);
+
+    if (synsProcessed.length > 0) {
+      card.meaning += `\n[Oxford Thesaurus](https://en.oxforddictionaries.com/thesaurus/${card.question})`;
+    }
   } catch (err) {
     if (err.statusCode !== 404) {
       globals.logger.logFailure('QUIZ', `Error querying Oxford for ${card.question}`, err);
