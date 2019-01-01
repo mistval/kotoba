@@ -109,3 +109,7 @@ View the list of commands [here](http://kotobaweb.com/bot).
 ## Help
 
 [Support](https://discord.gg/f4Gkqku)
+
+## Third party licenses
+
+[Princeton University Japanese WordNet License](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
