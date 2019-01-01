@@ -185,10 +185,6 @@ class DeckCollection {
       card.answer = [card.answer];
     }
 
-    if (card.answer.length === 0 || card.answer[0] === '') {
-      return this.popUndisplayedCard(settings, gameMode);
-    }
-
     card.deckName = card.deckName || deck.name;
     card.deckId = card.deckId || deck.uniqueId;
     card.instructions = card.instructions || deck.instructions;

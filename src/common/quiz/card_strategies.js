@@ -1,10 +1,15 @@
 'use strict'
 const reload = require('require-reload')(require);
 const path = require('path');
+const globals = require('../globals.js');
+const request = require('request-promise');
 const renderText = reload('./../render_text.js').render;
 const convertToHiragana = reload('./../util/convert_to_hiragana.js');
 const shuffleArray = reload('./../util/shuffle_array.js');
 const forvoAudioCache = reload('./../forvo_cache.js');
+const retryPromise = reload('../util/retry_promise.js');
+const WEBSTER_CTH_API_KEY = reload('../../../config/api_keys.json').WEBSTER_CTH;
+const { OXFORD_APP_ID, OXFORD_API_KEY } =  reload('../../../config/api_keys.json');
 
 const URI_MAX_LENGTH = 2048;
 const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
@@ -278,8 +283,117 @@ async function updateWithForvoAudioUri(card) {
   return card;
 }
 
+function reduceArrays(arrs, reduced = []) {
+  if (Array.isArray(arrs)) {
+    arrs.forEach((arr) => {
+      reduceArrays(arr, reduced);
+    });
+  } else {
+    reduced.push(arrs);
+  }
+
+  return reduced;
+}
+
+async function applyWebsterSynonyms(card) {
+  const uri = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${card.question}?key=${WEBSTER_CTH_API_KEY}`;
+  const response = await retryPromise(() => request(uri, { json: true }));
+  if (response.length > 0) {
+    if (!response[0].meta) {
+      return;
+    }
+    const stem = response[0].meta.stems[0];
+    card.question = stem;
+  }
+
+  const syns = reduceArrays(response.map(entry => entry.meta.syns));
+  const synsProcessed = [];
+  syns.forEach((syn) => {
+    const parenIndex = syn.indexOf('(');
+    if (parenIndex !== -1) {
+      syn = syn.substr(0, parenIndex).trim();
+    }
+
+    if (synsProcessed.indexOf(syn) === -1 && syn !== card.question) {
+      synsProcessed.push(syn);
+    }
+  });
+  
+  card.answer = card.answer || [];
+  card.answer = card.answer.concat(synsProcessed);
+}
+
+async function applyOxfordSynonyms(card) {
+  try {
+    const requestOptions = {
+      uri: `https://od-api.oxforddictionaries.com/api/v1/entries/en/${card.question}/synonyms`,
+      headers: {
+        app_id: OXFORD_APP_ID,
+        app_key: OXFORD_API_KEY,
+      },
+      json: true,
+    };
+
+    let syns = [];
+    const response = await request(requestOptions);
+    const lexEntries = reduceArrays(response.results.map(result => result.lexicalEntries));
+    const entries = reduceArrays(lexEntries.map(lexEntry => lexEntry.entries));
+    const senses = reduceArrays(entries.map(entry => entry.senses));
+    syns = syns.concat(reduceArrays(senses.map(sense => sense.synonyms)).map(synInfo => synInfo.text));
+    const subSenses = reduceArrays(senses.map(sense => sense.subSenses).filter(x => x));
+    const synonymInfos = reduceArrays(subSenses.map(subSense => subSense.synonyms));
+    syns = syns.concat(synonymInfos.map(synonymInfo => synonymInfo.text));
+
+    const synsProcessed = [];
+    syns.forEach((syn) => {
+      const parenIndex = syn.indexOf('(');
+      if (parenIndex !== -1) {
+        syn = syn.substr(0, parenIndex).trim();
+      }
+
+      if (synsProcessed.indexOf(syn) === -1 && syn !== card.question) {
+        synsProcessed.push(syn);
+      }
+    });
+    
+    card.answer = card.answer || [];
+    card.answer = card.answer.concat(synsProcessed);
+  } catch (err) {
+    if (err.statusCode !== 404) {
+      globals.logger.logFailure('QUIZ', `Error querying Oxford for ${card.question}`, err);
+    }
+  }
+}
+
+async function updateWithThesaurusSynonyms(card) {
+  const THESAURUS_MISSES_KEY = 'thesaurus_misses';
+  const thesaurusMisses = await globals.persistence.getData(THESAURUS_MISSES_KEY);
+  if (thesaurusMisses[card.question]) {
+    return false;
+  }
+
+  await applyWebsterSynonyms(card);
+
+  if (card.answer.length === 0) {
+    await globals.persistence.editData(THESAURUS_MISSES_KEY, (data) => {
+      globals.logger.logFailure('QUIZ', `Thesaurus miss: ${card.question}`);
+      data[card.question] = true;
+      return data;
+    });
+    return false;
+  }
+
+  // The Oxford API free limit is meager compared to Webster's.
+  // So if no result is found on Webster, don't bother checking Oxford.
+  await applyOxfordSynonyms(card);
+
+  card.answer = card.answer.filter((x, i) => card.answer.indexOf(x) === i);
+  return card;
+}
+
 module.exports.CardPreprocessingStrategy = {
   BETTER_ENGLISH_DEFINITIONS: updateWithBetterEnglishDefinition,
+  THESAURUS_SYNONYMS: updateWithThesaurusSynonyms,
   RANDOMIZE_QUESTION_CHARACTERS: randomizeQuestionCharacters,
   FORVO_AUDIO: updateWithForvoAudioUri,
   NONE: card => Promise.resolve(card),
