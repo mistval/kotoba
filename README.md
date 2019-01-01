@@ -38,7 +38,10 @@ Also in the **config** directory, create a file called **api_keys.json**. It con
   "YOUTUBE": "",
   "GOOGLE_TRANSLATE": "",
   "AZURE_NEWS": "",
-  "FORVO": ""
+  "FORVO": "",
+  "WEBSTER_CTH": "",
+  "OXFORD_APP_ID": "",
+  "OXFORD_API_KEY": ""
 }
 ```
 
@@ -51,6 +54,8 @@ sudo docker-compose up
 The bot will take 5-10 minutes to build and then will come online.
 
 ## Installation and running for development
+
+Instructions below are for Ubuntu Linux. Last I checked, Kotoba does also run fine on Windows, but I may or may not be able to help you with that.
 
 You must have **cairo** and **pango** installed (for image rendering for the quiz and furigana commands). You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages). These must be installed before you run npm install. If you already ran npm install, just delete your node_modules, install cairo and pango, and npm install again.
 
