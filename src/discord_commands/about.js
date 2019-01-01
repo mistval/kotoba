@@ -26,9 +26,12 @@ Kotoba uses data from the following sources:
     - Google Translate (https://translate.google.com/)
     - KanjiVG (http://kanjivg.tagaini.net/)
     - Tanos (http://www.tanos.co.uk/)
-    - Youtube (you know where)
+    - Youtube (http://youtube.com)
     - Glosbe Dictionary (https://glosbe.com/)
     - Forvo (https://forvo.com/)
+    - Merriam Webster Dictionary (https://www.merriam-webster.com)
+    - Oxford Dictionary & Thesaurus (https://www.oxforddictionaries.com/)
+    - Wiktionary (https://ja.wiktionary.org)
 
 Many of the quiz decks come from https://github.com/darkgray1981/kanjiquizbot\`\`\``, null, msg);
   },
