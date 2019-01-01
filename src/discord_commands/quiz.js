@@ -141,12 +141,12 @@ function getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst(
     if (nextAnswerIndex === 1) {
       totalString += nextAnswer;
     } else {
-      totalString += `   ${nextAnswer}`;
+      totalString += `　${nextAnswer}`;
     }
   }
 
   if (nextAnswerIndex < answers.length) {
-    totalString += '  and more';
+    totalString += '　**and more**';
   }
 
   return totalString;
