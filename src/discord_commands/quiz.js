@@ -327,7 +327,7 @@ function sendSaveMementos(msg, saveMementos, extraContent) {
       title: 'Available Saves',
       description: saveMementos.map((memento, index) => {
         const date = new Date(memento.time);
-        const dateString = `${date.getDate() + 1}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
         return `${convertDatabaseFacingSaveIdToUserFacing(index)}: ${memento.quizType} (${dateString})`;
       }).join('\n'),
       footer: { icon_url: constants.FOOTER_ICON_URI, text: `Load the first save with: ${prefix}quiz load 1` },
