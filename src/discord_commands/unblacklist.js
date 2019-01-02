@@ -10,6 +10,7 @@ module.exports = {
   uniqueId: 'unblacklist',
   shortDescription: 'Unblacklist a user.',
   usageExample: '<prefix>unblacklist 52634605505',
+  hidden: true,
   action: async function action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage('Say \'!unblacklist [userId]\' to unblacklist a user.', false, 'Invalid syntax');
