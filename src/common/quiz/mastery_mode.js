@@ -1,19 +1,18 @@
-'use strict'
 const reload = require('require-reload')(require);
 const globals = require('./../globals.js');
 const SettingsOverride = reload('./settings_override.js');
 
-const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;
-const PERCENT_CORRECT_FOR_MASTERY = .75;
+const PERCENT_CORRECT_FOR_MASTERY = .76;
 
-const IndexTopForTimesCorrect = {
-  0: 12,
-  1: 24,
-  2: 36,
-  3: 48,
-  4: 60,
-  5: 90,
-  6: 130,
+const indexTopForStreakLength = {
+  0: 15,
+  1: 25,
+  2: 60,
+  3: 120,
+  4: 240,
+  5: 360,
+  6: 480,
+  length: 7,
 };
 
 function overrideDeckTitle(originalTitle) {
@@ -26,32 +25,39 @@ function calculatePercentCorrect(card) {
   return percentCorrect;
 }
 
-function recycleCard(card, upcomingCardsIndexArray, numDecks) {
-  if (calculatePercentCorrect(card) >= PERCENT_CORRECT_FOR_MASTERY) {
-    return false;
-  }
-
-  let numberOfLastXCorrect = 0;
-  for (let i = card.answerHistory.length - 1; i > card.answerHistory.length - 6; --i) {
+function calculateStreakLength(card) {
+  let streakLength = 0;
+  for (let i = card.answerHistory.length - 1; i >= 0; i -= 1) {
     if (card.answerHistory[i]) {
-      ++numberOfLastXCorrect;
+      ++streakLength;
     } else {
       break;
     }
   }
 
-  let indexTop = IndexTopForTimesCorrect[numberOfLastXCorrect];
-  if (!indexTop) {
-    indexTop = IndexTopForTimesCorrect[6] * (numberOfLastXCorrect - 5)
+  return streakLength;
+}
+
+function calculateIndexTop(streakLength) {
+  return indexTopForStreakLength[streakLength]
+    || indexTopForStreakLength[indexTopForStreakLength.length - 1] * (streakLength - indexTopForStreakLength.length + 2);
+}
+
+function recycleCard(card, upcomingCardsIndexArray, numDecks) {
+  if (calculatePercentCorrect(card) >= PERCENT_CORRECT_FOR_MASTERY) {
+    return false;
   }
 
-  let arraySize = upcomingCardsIndexArray.length;
-  let randomFactor = Math.random() * .70 + .30;
-  let newDistanceFromFront = Math.floor(indexTop * (numberOfLastXCorrect + 1) * randomFactor * 1 / numDecks);
+  const streakLength = calculateStreakLength(card);
+  const indexTop = calculateIndexTop(streakLength);
+
+  const arraySize = upcomingCardsIndexArray.length;
+  const randomFactor = Math.random() * .40 + .60;
+  const newDistanceFromFront = Math.floor(indexTop * randomFactor / numDecks);
   let index = arraySize - 1 - newDistanceFromFront;
 
   if (index < 0) {
-    index = arraySize - 1 - (newDistanceFromFront / 2);
+    index = arraySize - 1 - Math.floor(newDistanceFromFront / 2);
     if (index < 0) {
       if (card.answerHistory[card.answerHistory.length - 1]) {
         return false;
