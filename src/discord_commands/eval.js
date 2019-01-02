@@ -9,6 +9,7 @@ module.exports = {
   shortDescription: 'Evaluate arbitrary javascript code (use wisely).',
   usageExample: '<prefix>eval 4+5',
   uniqueId: 'eval',
+  hidden: true,
   action(bot, msg, suffix) {
     if (!suffix) {
       throw PublicError.createWithCustomPublicMessage(`Say **${msg.prefix}eval javascript_code_here** to evaluate code.`, false, 'No argument');

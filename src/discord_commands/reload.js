@@ -6,6 +6,7 @@ module.exports = {
   canBeChannelRestricted: false,
   botAdminOnly: true,
   uniqueId: 'reload',
+  hidden: true,
   action(bot, msg, suffix, monochrome) {
     try {
       monochrome.reload();

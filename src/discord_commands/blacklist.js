@@ -7,6 +7,7 @@ const { PublicError } = require('monochrome-bot');
 module.exports = {
   commandAliases: ['blacklist'],
   botAdminOnly: true,
+  hidden: true,
   uniqueId: 'blacklist',
   shortDescription: 'Blacklist a user.',
   usageExample: '<prefix>blacklist 52634605505 Abuse of bot features',

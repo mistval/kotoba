@@ -622,6 +622,10 @@ class QuizManager {
   hasQuizSession(locationId) {
     return !!state.quizManager.currentActionForLocationId[locationId];
   }
+
+  getInProcessLocations() {
+    return Object.keys(state.quizManager.sessionForLocationId);
+  }
 }
 
 module.exports = new QuizManager();

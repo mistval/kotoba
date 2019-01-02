@@ -667,7 +667,7 @@ class DiscordMessageSender {
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
     this.closeAudioConnection();
 
-    const description = 'I have to reboot for an update. I\'ll be back in 20 seconds :)\n再起動させていただきます。後２０秒で戻りますね :)';
+    const description = 'I have to reboot for an update. I\'ll be back in about one minute :)';
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
@@ -1160,6 +1160,26 @@ Associated commands:
 You can set default quiz settings by using the **<prefix>settings** command.
 `;
 
+function throwIfShutdownScheduled(channelId) {
+  if (globals.shutdownScheduled) {
+    state.scheduledShutdown.shutdownNotifyChannels.push(channelId);
+    throw PublicError.createWithCustomPublicMessage({
+        embed: {
+          title: 'Scheduled Update',
+          description: 'I\m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about three minutes.',
+          color: constants.EMBED_WARNING_COLOR,
+          footer: {
+            icon_url: constants.FOOTER_ICON_URI,
+            text: 'I\'m getting an update! Yay!',
+          },
+        },
+      },
+      false,
+      'Shutdown scheduled',
+    );
+  }
+}
+
 module.exports = {
   commandAliases: ['quiz', 'readingQuiz', 'starttest', 'startquiz', 'rt', 'rq', 'q'],
   aliasesForHelp: ['quiz', 'q'],
@@ -1176,7 +1196,6 @@ module.exports = {
   async action(bot, msg, suffix, monochrome, serverSettings) {
     let suffixReplaced = suffix.replace(/ *\+ */g, '+').replace(/ *-mc/g, '-mc').trim();
     suffixReplaced = suffixReplaced.toLowerCase();
-    const locationId = msg.channel.id;
     const messageSender = new DiscordMessageSender(bot, msg);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
@@ -1219,11 +1238,6 @@ module.exports = {
       return quizManager.saveQuiz(msg.channel.id, msg.author.id);
     }
 
-    // Load operation
-    if (suffixReplaced.startsWith('load')) {
-      return load(bot, msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
-    }
-
     // Stop operation
     if (suffixReplaced.startsWith('stop') || suffixReplaced.startsWith('end') || suffixReplaced.startsWith('endquiz') || suffixReplaced.startsWith('quit')) {
       return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
@@ -1237,6 +1251,13 @@ module.exports = {
     const advancedHelp = getAdvancedHelp(suffix);
     if (advancedHelp) {
       return msg.channel.createMessage(advancedHelp);
+    }
+
+    throwIfShutdownScheduled(msg.channel.id);
+
+    // Load operation
+    if (suffixReplaced.startsWith('load')) {
+      return load(bot, msg, suffixReplaced.split(' ')[1], messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
     }
 
     // Start operation
