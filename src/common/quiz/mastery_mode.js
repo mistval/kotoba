@@ -5,7 +5,7 @@ const SettingsOverride = reload('./settings_override.js');
 const PERCENT_CORRECT_FOR_MASTERY = .76;
 
 const indexTopForStreakLength = {
-  0: 15,
+  0: 13,
   1: 25,
   2: 60,
   3: 120,
