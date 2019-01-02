@@ -12,7 +12,7 @@ const categoryFields = [
   {name: 'JLPT Listening Decks (audio) (under construction)', value: 'LN3 LN2 LN1'},
   {name: 'Kanken Kanji Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
   {name: 'Listening Vocabulary Decks (audio)', value: 'lvN5 lvN4 lvN3 lvN2 lvN1 lv10k lv9k lv8k lv7k lv6k lv5k lv4k lv3k lvj2k lv2k lvj1k lv1k'},
-  {name: '用語 Decks', value: 'pasokon rikagaku igaku shinrigaku keizai houritsu kenchiku animals birds bugs fish plants vegetables'},
+  {name: '用語 Decks', value: 'pasokon rikagaku igaku shinrigaku keizai houritsu kenchiku nature animals birds bugs fish plants vegetables'},
   {name: 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures countries emperors'},
   {name: 'Japanese Place Name Decks', value: 'places_full tokyo osaka hokkaido aichi kanagawa (say **<prefix>quiz places** to see the rest)'},
   {name: 'Japanese Station Name Decks', value: 'stations_full stations_tokyo stations_osaka (say **<prefix>quiz stations** to see the rest)'},
