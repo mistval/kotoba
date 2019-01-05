@@ -67,10 +67,10 @@ fontHelper.availableFontSettings.forEach((key, index) => {
 });
 
 const fontDescriptionList = Object.keys(fontForIndex)
-  .map(index => `${index}. ${fontForIndex[index]} - ${fontHelper.descriptionForFontSetting[fontForIndex[index]]}`)
+  .map(index => `${index}. **${fontForIndex[index]}** - ${fontHelper.descriptionForFontSetting[fontForIndex[index]]}`)
   .join('\n');
 
-const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}`;
+const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
 
 module.exports = [
   {

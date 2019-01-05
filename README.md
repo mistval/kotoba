@@ -98,6 +98,15 @@ Finally, to start the bot run:
 npm start
 ```
 
+## Fonts
+
+Due to licensing restrictions on redistribution, some of the fonts that public Kotoba uses are not included in the Github repo. You should be able to find them by Googling. Fonts not in this repo include:
+
+* PopRumCute
+* CP_Revenge
+* Genkaimincho
+* kurobara-cinderella
+
 ## Commands
 
 View the list of commands [here](http://kotobaweb.com/bot).
@@ -111,5 +120,7 @@ View the list of commands [here](http://kotobaweb.com/bot).
 [Support](https://discord.gg/f4Gkqku)
 
 ## Third party licenses
+
+### Dictionaries
 
 [Princeton University Japanese WordNet License](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
