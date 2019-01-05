@@ -6,8 +6,12 @@ const descriptionForFontSetting = {
   'Noto Sans CJK JP': 'A commonly used web font',
   Meiryo: 'A commonly used print font',
   SetoFont: 'A cute handwritten font',
+  PopRumCute: 'Another cute handwritten font',
   KaiTi: 'A Chinese font',
   AoyagiKouzanFontT: 'A caligraphy brush font (kinda challenging)',
+  CP_Revenge: 'A cyberpunk font',
+  Genkaimincho: 'An apocalyptic font (recommend using a dark background color and light font color)',
+  'kurobara-cinderella': 'A mAaAaAaAagical font',
 };
 
 const realFontNames = Object.keys(descriptionForFontSetting);
