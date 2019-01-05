@@ -119,8 +119,23 @@ View the list of commands [here](http://kotobaweb.com/bot).
 
 [Support](https://discord.gg/f4Gkqku)
 
-## Third party licenses
+## Third party links
 
-### Dictionaries
+Data from the following third parties has been used in Kotoba.
 
-[Princeton University Japanese WordNet License](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
+[Jisho.org](https://jisho.org/about)
+[Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
+[KanjiVG](http://kanjivg.tagaini.net/)
+[Glosbe Dictionary](https://glosbe.com/)
+[Forvo](https://forvo.com/)
+[Merriam-Webster](https://www.merriam-webster.com)
+[Oxford Dictionaries](https://www.oxforddictionaries.com/)
+[Japanese Wiktionary](https://ja.wiktionary.org)
+[EDICT](http://www.edrdg.org/jmdict/edict.html)
+[ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)
+[Kanjimaji](https://github.com/maurimo/kanimaji)
+[Google Translate](https://translate.google.com/)
+[YouTube](https://www.youtube.com/)
+[Jonathan Waller's site](http://www.tanos.co.uk/)
+
+In addition various people have contributed quiz data and are credited in the relevant quiz descriptions.
