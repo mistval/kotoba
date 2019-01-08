@@ -10,7 +10,7 @@ const globals = require('./../globals.js');
 const LOGGER_TITLE = 'QUIZ';
 
 const INITIAL_DELAY_IN_MS = 5000;
-const REVEAL_INTERVAL_IN_MS = 8000;
+const REVEAL_INTERVAL_IN_MS = 10000;
 const MAX_SAVES_PER_USER = 5;
 const QUIZ_END_STATUS_ERROR = 1;
 

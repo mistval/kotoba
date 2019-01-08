@@ -12,6 +12,7 @@ const descriptionForFontSetting = {
   CP_Revenge: 'A cyberpunk font',
   Genkaimincho: 'An apocalyptic font (recommend using a dark background color and light font color)',
   'kurobara-cinderella': 'A mAaAaAaAagical font',
+  英椎楷書: 'Eikaishotai, a tidy calligraphy font',
 };
 
 const realFontNames = Object.keys(descriptionForFontSetting);
