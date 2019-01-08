@@ -410,9 +410,9 @@ module.exports.CardPreprocessingStrategy = {
 /* TIMING STRATEGIES */
 
 module.exports.AnswerTimeLimitStrategy = {
-  GRAMMAR: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
+  GRAMMAR: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs);}, // HACK TODO: This should be an override type thing
   JAPANESE_SETTINGS: settings => {return settings.answerTimeLimitInMs;},
-  WITH_HINT: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
+  WITH_HINT: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs);}, // HACK TODO: This should be an override type thing
 };
 
 module.exports.AdditionalAnswerWaitStrategy = {
