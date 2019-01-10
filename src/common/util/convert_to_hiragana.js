@@ -93,6 +93,9 @@ const lengthenerForChar = {
 };
 
 function convertCharToHiragana(previousChar, char) {
+  if (char >= '0' && char <= '9') {
+    return String.fromCharCode(char.charCodeAt(0) + 0xFEE0);
+  }
   if (char === 'ー') {
     if (!lengthenerForChar[previousChar]) {
       return char;
