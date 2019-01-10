@@ -294,7 +294,7 @@ class ShowAnswersAction extends Action {
 
     const inputAsInt = parseInt(input);
     if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
-      if (!Number.isNaN(inputAsInt)) {
+      if (!Number.isNaN(inputAsInt) && card.options) {
         input = `${inputAsInt}`;
       }
       session.answerAttempters.push(userId);
@@ -353,7 +353,7 @@ class AskQuestionAction extends Action {
 
     const inputAsInt = parseInt(input);
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
-      if (!Number.isNaN(inputAsInt)) {
+      if (!Number.isNaN(inputAsInt) && card.options) {
         input = `${inputAsInt}`;
       }
       session.answerAttempters.push(userId);
