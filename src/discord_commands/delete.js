@@ -20,6 +20,6 @@ module.exports = {
       throw PublicError.createWithCustomPublicMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.', false, 'No suffix');
     }
     const parts = suffix.split(' ');
-    return erisBot.deleteMessage(parts[0], parts[1]);
+    return bot.deleteMessage(parts[0], parts[1]);
   },
 };

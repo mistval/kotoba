@@ -4,7 +4,7 @@ const dictionaryQuery = reload('./../common/dictionary_query.js');
 
 module.exports = {
   name: 'Glosbe',
-  action: (erisBot, msg, monochrome) => {
+  action: (bot, msg, monochrome) => {
     if (!msg.content.startsWith('k!')) {
       return false;
     }

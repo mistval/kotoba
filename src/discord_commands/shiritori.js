@@ -342,7 +342,7 @@ module.exports = {
     'shiritori/answer_time_limit',
     'shiritori/bot_score_multiplier',
   ],
-  async action(erisBot, msg, suffix, monochrome, serverSettings) {
+  async action(bot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
     const suffixLowerCase = suffix.toLowerCase();
 
@@ -352,7 +352,7 @@ module.exports = {
 
     const { prefix } = msg;
     throwIfSessionInProgress(locationId, prefix);
-    const clientDelegate = new DiscordClientDelegate(erisBot, msg, monochrome.getLogger());
+    const clientDelegate = new DiscordClientDelegate(bot, msg, monochrome.getLogger());
 
     const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
@@ -369,7 +369,7 @@ module.exports = {
     };
 
     shiritoriManager.createGame(locationId, clientDelegate, settings);
-    shiritoriManager.addBotPlayer(locationId, erisBot.user.id);
+    shiritoriManager.addBotPlayer(locationId, bot.user.id);
     shiritoriManager.addRealPlayer(locationId, msg.author.id);
 
     await retryPromise(() => msg.channel.createMessage({
