@@ -1,7 +1,7 @@
-const { PublicError } = require('monochrome-bot');
 const reload = require('require-reload');
 const globals = require('../common/globals.js');
 const state = require('./../common/static_state.js');
+
 const retryPromise = reload('../common/util/retry_promise.js');
 const quizManager = reload('../common/quiz/manager.js');
 const { EMBED_WARNING_COLOR, FOOTER_ICON_URI } = reload('../common/constants.js');
@@ -22,7 +22,7 @@ function getChannelsFromChannelIds(bot, channelIds) {
   const dmChannels = channelIds
     .map(channelId => bot.privateChannels.get(channelId))
     .filter(x => x);
-  
+
   const guildChannels = channelIds.map((channelId) => {
     const guild = bot.guilds.get(bot.channelGuildMap[channelId]);
     if (guild) {
@@ -78,7 +78,7 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
         },
       },
     };
-  
+
     const promises = uniqueById(channels)
       .map(channel => retryPromise(() => channel.createMessage(message)));
 
@@ -126,19 +126,24 @@ module.exports = {
     globals.shutdownScheduled = true;
 
     let countdown = SHUTDOWN_WAIT_MS;
-    while (countdown >= 0) {
+    while (countdown > 0) {
       const currentInProgressChannels = getQuizInProgressChannels(bot);
-      if (countdown > 0) {
-        await sendCountdownMessageToChannels(currentInProgressChannels, countdown, logger);
-        logger.logSuccess(LOGGER_TITLE, `Countdown: ${countdown}.`);
-        await wait(NEXT_MESSAGE_DELAY_MS);
-      } else {
-        await sendShutdownMessageToChannels(initialInProgressChannels.concat(getNotifyRegisteredChannels(bot)), logger);
-        await quizManager.stopAllQuizzes();
-        logger.logSuccess(LOGGER_TITLE, `Countdown finished, quizzes stopped.`);
-      }
+
+      // eslint-disable-next-line no-await-in-loop
+      await sendCountdownMessageToChannels(currentInProgressChannels, countdown, logger);
+
+      logger.logSuccess(LOGGER_TITLE, `Countdown: ${countdown}.`);
+
+      // eslint-disable-next-line no-await-in-loop
+      await wait(NEXT_MESSAGE_DELAY_MS);
 
       countdown -= NEXT_MESSAGE_DELAY_MS;
     }
+
+    const channelsToNotify = initialInProgressChannels.concat(getNotifyRegisteredChannels(bot));
+    await sendShutdownMessageToChannels(channelsToNotify, logger);
+    await quizManager.stopAllQuizzes();
+
+    return logger.logSuccess(LOGGER_TITLE, 'Countdown finished, quizzes stopped.');
   },
 };
