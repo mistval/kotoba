@@ -7,7 +7,7 @@ module.exports = {
   commandAliases: ['endquiz', 'endtest', 'stop', 'quit', 'ｑｓ'],
   canBeChannelRestricted: false,
   uniqueId: 'stop',
-  action(erisBot, msg) {
+  action(bot, msg) {
     const locationId = msg.channel.id;
     const userId = msg.author.id;
 

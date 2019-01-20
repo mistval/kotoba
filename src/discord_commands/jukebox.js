@@ -25,7 +25,7 @@ module.exports = {
       });
     }
   },
-  action(erisBot, msg, suffix, monochrome) {
+  action(bot, msg, suffix, monochrome) {
     const logger = monochrome.getLogger();
 
     if (videoUris.length === 0) {

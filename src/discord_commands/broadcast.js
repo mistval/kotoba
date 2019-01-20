@@ -18,6 +18,6 @@ module.exports = {
     const spaceIndex = suffix.indexOf(' ');
     const channelId = suffix.substring(0, spaceIndex);
     const announcement = suffix.substring(spaceIndex + 1);
-    return erisBot.createMessage(channelId, announcement);
+    return bot.createMessage(channelId, announcement);
   },
 };
