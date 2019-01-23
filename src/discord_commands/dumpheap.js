@@ -29,12 +29,16 @@ module.exports = {
       outputFile = `${suffix}.heapsnapshot`;
     }
 
-    heapDump.writeSnapshot(outputFile, (err, filename) => {
-      if (err) {
-        msg.channel.createMessage(`Error creating heap dump: ${err}`);
-      } else {
-        msg.channel.createMessage(`Heap dump written to file: ${filename}. You can inspect it with Chrome developer tools.`);
-      }
+    return new Promise((fulfill, reject) => {
+      heapDump.writeSnapshot(outputFile, (err, filename) => {
+        if (err) {
+          msg.channel.createMessage(`Error creating heap dump: ${err}`)
+            .catch(() => {})
+            .then(() => reject(err));
+        } else {
+          fulfill(msg.channel.createMessage(`Heap dump written to file: ${filename}. You can inspect it with Chrome developer tools.`));
+        }
+      });
     });
   },
 };

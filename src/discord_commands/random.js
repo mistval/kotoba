@@ -18,7 +18,7 @@ function createJishoNotRespondingResponse() {
 
 async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navigationManager) {
   if (retriesRemaining <= 0) {
-    // It's not necessarily true that Jisho isn't responding, but if we fail to look up 5
+    // It's not necessarily true that Jisho isn't responding, but if we fail to look up X
     // random words in a row on Jisho, it's highly likely that the problem is on their end.
     logger.logFailure('RANDOM WORD', `Failed to get a random word ${NUMBER_OF_RETRIES} times`);
     return msg.channel.createMessage(createJishoNotRespondingResponse(), null, msg);

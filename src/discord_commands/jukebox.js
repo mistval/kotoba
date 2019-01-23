@@ -31,6 +31,7 @@ module.exports = {
     if (videoUris.length === 0) {
       throw PublicError.createWithCustomPublicMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.', true, 'Tracks not available');
     }
+
     const random = Math.floor(Math.random() * videoUris.length);
     const link = videoUris[random];
 
