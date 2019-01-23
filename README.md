@@ -145,7 +145,7 @@ In addition various people have contributed quiz data and are credited in the re
 The following other codebases were written in the course of this project:
 
 * **fpersist** - On disk persistence with safer writes. [GitHub](https://github.com/mistval/fpersist) [NPM](https://www.npmjs.com/package/fpersist)
-* **unofficial-jishi-api** - Encapsulates the official Jisho.org API and also provides kanji, example, and stroke diagram search. [GitHub](https://github.com/mistval/unofficial-jisho-api) [NPM](https://www.npmjs.com/package/unofficial-jisho-api)
+* **unofficial-jishi-api** - Encapsulates the official Jisho.org API and also provides kanji and example search. [GitHub](https://github.com/mistval/unofficial-jisho-api) [NPM](https://www.npmjs.com/package/unofficial-jisho-api)
 * **render-furigana** - Render Japanese text with furigana into a PNG buffer. [GitHub](https://github.com/mistval/render-furigana) [NPM](https://www.npmjs.com/package/render-furigana)
 * **monochrome** - A flexible node.js Discord bot core based on Eris. [GitHub](https://github.com/mistval/monochrome) [NPM](https://www.npmjs.com/package/monochrome)
 * **jp-verb-deconjugator** - Unconjugate conjugated Japanese verbs. [GitHub](https://github.com/mistval/jp-verb-deconjugator) [NPM](https://www.npmjs.com/package/jp-verbs)
