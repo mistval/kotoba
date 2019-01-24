@@ -1,4 +1,4 @@
-FROM node
+FROM node:10.15.0
 WORKDIR /var/app
 
 RUN apt-get update
