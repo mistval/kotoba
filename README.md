@@ -86,7 +86,10 @@ Also in the **config** directory, create a file called **api_keys.json**. It con
   "YOUTUBE": "",
   "GOOGLE_TRANSLATE": "",
   "AZURE_NEWS": "",
-  "FORVO": ""
+  "FORVO": "",
+  "WEBSTER_CTH": "",
+  "OXFORD_APP_ID": "",
+  "OXFORD_API_KEY": ""
 }
 ```
 
