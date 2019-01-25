@@ -1,5 +1,5 @@
 async function sendAndDelete(monochrome, channelId, content, deleteInMs) {
-  const bot = monochrome.getbot();
+  const bot = monochrome.getErisBot();
   const sentMessage = await bot.createMessage(channelId, content);
 
   setTimeout(async () => {
