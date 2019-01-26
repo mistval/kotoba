@@ -66,6 +66,11 @@ function createScoresNavigation(monochrome, msg, scoresPages) {
 
 function userNameForUserID(monochrome, userID) {
   const user = monochrome.getErisBot().users.get(userID);
+
+  if (!user) {
+    return 'Unknown User';
+  }
+
   return `${user.username}#${user.discriminator}`;
 }
 
@@ -74,9 +79,10 @@ async function sendScores(monochrome, msg) {
   const channelData = await persistence.getData(createKeyForChannel(msg.channel.id));
 
   const scoreForUserID = channelData.scores || {};
+  const nameForUserId = channelData.names || {};
   const sortedScores = Object.keys(scoreForUserID)
     .map(userID => ({
-      username: userNameForUserID(monochrome, userID),
+      username: nameForUserId[userID] || userNameForUserID(monochrome, userID),
       score: scoreForUserID[userID],
     }))
     .sort((a, b) => b.score - a.score);
@@ -204,6 +210,11 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
       dataCopy.scores[msg.author.id] = 0;
     }
 
+    if (!dataCopy.names) {
+      dataCopy.names = {};
+    }
+
+    dataCopy.names[msg.author.id] = `${msg.author.username}#${msg.author.discriminator}`;
     dataCopy.scores[msg.author.id] += acceptedResult.score;
     userScore = dataCopy.scores[msg.author.id];
 
@@ -233,8 +244,7 @@ function tryHandleMessage(monochrome, msg) {
       return handleAcceptedResult(monochrome, msg, acceptanceResult);
     }
     return handleRejectedResult(monochrome, msg, acceptanceResult);
-  })
-    .then(() => accepted);
+  }).then(() => accepted);
 }
 
 function sendDisabledMessage(monochrome, channelID) {
