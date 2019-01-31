@@ -5,6 +5,7 @@ const QuizManager = reload('./../common/quiz/manager.js');
 
 module.exports = {
   name: 'Quiz Answer',
+  suppressLogging: true,
   action: (bot, msg) => {
     if (!QuizManager.hasQuizSession(msg.channel.id)) {
       return false;
