@@ -449,7 +449,7 @@ class DiscordMessageSender {
       embed: {
         title: card.deckName,
         url: card.dictionaryLink,
-        description: `<@${answerersInOrder[0]}> guessed it first!`,
+        description: `<@${answerersInOrder[0]}> got it first!`,
         color: constants.EMBED_CORRECT_COLOR,
         fields,
       },
