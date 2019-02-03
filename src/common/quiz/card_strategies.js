@@ -39,8 +39,12 @@ function arrayToLowerCase(array) {
 
 /* COMPARE ANSWER STRATEGIES */
 
+function removeSpoilerTags(answerCandidate) {
+  return answerCandidate.replace(/\|\|/g, '');
+}
+
 function answerCompareConvertKana(card, answerCandidate) {
-  let convertedAnswerCandidate = convertToHiragana(answerCandidate);
+  let convertedAnswerCandidate = convertToHiragana(removeSpoilerTags(answerCandidate));
   let correctAnswersLowercase = arrayToLowerCase(card.answer);
   for (let i = 0; i < correctAnswersLowercase.length; ++i) {
     let correctAnswer = correctAnswersLowercase[i];
@@ -52,7 +56,7 @@ function answerCompareConvertKana(card, answerCandidate) {
 }
 
 function answerCompareStrict(card, answerCandidate) {
-  return arrayToLowerCase(card.answer).indexOf(answerCandidate);
+  return arrayToLowerCase(card.answer).indexOf(removeSpoilerTags(answerCandidate));
 }
 
 function createAggregateLink(queryParts, tag) {
