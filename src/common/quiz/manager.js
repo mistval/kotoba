@@ -292,7 +292,7 @@ class ShowAnswersAction extends Action {
       return false;
     }
 
-    const inputAsInt = parseInt(input);
+    const inputAsInt = parseInt(input.replace(/\|\|/g, ''));
     if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       if (!Number.isNaN(inputAsInt) && card.options) {
         input = `${inputAsInt}`;
@@ -351,7 +351,7 @@ class AskQuestionAction extends Action {
       timeLeft -= (new Date() - this.timeoutStartTime);
     }
 
-    const inputAsInt = parseInt(input);
+    const inputAsInt = parseInt(input.replace(/\|\|/g, ''));
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       if (!Number.isNaN(inputAsInt) && card.options) {
         input = `${inputAsInt}`;
