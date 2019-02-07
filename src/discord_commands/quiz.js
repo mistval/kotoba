@@ -271,7 +271,8 @@ function createAfterQuizMessage(canReview, prefix) {
   } else {
     index = 1 + Math.floor(Math.random() * (afterQuizMessages.length - 1));
   }
-  const afterQuizMessage = Object.assign({}, afterQuizMessages[index]);
+  const afterQuizMessage = { ...afterQuizMessages[index] };
+  afterQuizMessage.embed = { ...afterQuizMessage.embed };
   afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
   return afterQuizMessage;
 }
