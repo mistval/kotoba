@@ -252,14 +252,14 @@ const afterQuizMessages = [
     embed: {
       title: 'O, your lame friends don\'t use Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: '[Play on the web](http://kotobaweb.com/)',
+      description: '[Play on the web](https://kotobaweb.com/)',
     },
   },
   {
     embed: {
       title: 'Manual',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'For advanced quiz options, [visit me on the web](http://kotobaweb.com/bot/quiz).',
+      description: 'For advanced quiz options, [visit me on the web](https://kotobaweb.com/bot/quiz).',
     },
   },
 ];
@@ -1134,7 +1134,7 @@ function showHelp(msg, isMastery, isConquest, masteryEnabled) {
 const helpLongDescription = `
 See available quiz decks, or start a quiz.
 
-Below are some more advanced options. To see the rest, [Visit me on the web](http://kotobaweb.com/bot/quiz).
+Below are some more advanced options. To see the rest, [Visit me on the web](https://kotobaweb.com/bot/quiz).
 
 You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
 **<prefix>quiz N4 30 1 10**
