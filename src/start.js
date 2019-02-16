@@ -57,7 +57,6 @@ function createBot() {
         GUILD_MEMBER_REMOVE: true,
         GUILD_MEMBER_UPDATE: true,
         MESSAGE_UPDATE: true,
-        PRESENCE_UPDATE: true,
         TYPING_START: true,
       },
     },
