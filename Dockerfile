@@ -12,7 +12,7 @@ COPY ./src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./src/common/mongo_connect.js ./src/common/mongo_connect.js
 COPY ./resources/dictionaries ./resources/dictionaries
 COPY ./src/build ./src/build
-RUN service mongodb start && npm run buildpronunciation && npm run buildshiritori
+RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
 COPY ./fonts/opentype /usr/share/fonts/opentype
 COPY ./fonts/truetype /usr/share/fonts/truetype
