@@ -22,7 +22,6 @@ async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navi
       jishoNotRespondingResponse,
       false,
       `Failed to get a random word ${NUMBER_OF_RETRIES} times`,
-      err
     );
   }
 
