@@ -6,7 +6,7 @@ const erisVersionString = `Eris v${erisVersion}`;
 const nameString = 'K33#5261';
 
 function createPadding(length, longestLength) {
-  return new Array(longestLength - length + 1).join(' ');
+  return new Array((longestLength - length) + 1).join(' ');
 }
 
 module.exports = {
