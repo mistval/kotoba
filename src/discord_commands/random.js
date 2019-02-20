@@ -1,45 +1,51 @@
 const reload = require('require-reload')(require);
+const { PublicError } = require('monochrome-bot');
 
 const getRandomWord = reload('./../common/get_random_word.js');
 const jishoWordSearch = reload('./../common/jisho_word_search.js');
 const constants = reload('./../common/constants.js');
 const jishoSearch = reload('./../common/jisho_search.js');
 
-const NUMBER_OF_RETRIES = 10;
+const NUMBER_OF_RETRIES = 50;
 
-function createJishoNotRespondingResponse() {
-  return {
-    embed: {
-      title: 'Sorry, Jisho is not responding, please try again later.',
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
-  };
-}
+const jishoNotRespondingResponse = {
+  embed: {
+    title: 'Jisho',
+    description: 'Sorry, Jisho is not responding, please try again later.',
+    color: constants.EMBED_NEUTRAL_COLOR,
+  },
+};
 
 async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navigationManager) {
   if (retriesRemaining <= 0) {
-    // It's not necessarily true that Jisho isn't responding, but if we fail to look up X
-    // random words in a row on Jisho, it's highly likely that the problem is on their end.
-    logger.logFailure('RANDOM WORD', `Failed to get a random word ${NUMBER_OF_RETRIES} times`);
-    return msg.channel.createMessage(createJishoNotRespondingResponse(), null, msg);
-  }
-  const word = getRandomWord(suffix);
-  try {
-    const data = await jishoWordSearch(word);
-    if (!data.hasResults) {
-      return getRandomWordRecusive(suffix, msg, retriesRemaining - 1, logger);
-    }
-    return jishoSearch.createNavigationForJishoResults(
-      msg,
-      msg.author.username,
-      msg.author.id,
-      data,
-      navigationManager,
+    throw PublicError.createWithCustomPublicMessage(
+      jishoNotRespondingResponse,
+      false,
+      `Failed to get a random word ${NUMBER_OF_RETRIES} times`,
+      err
     );
+  }
+
+  const word = getRandomWord(suffix);
+
+  let jishoData;
+  try {
+    jishoData = await jishoWordSearch(word);
   } catch (err) {
-    logger.logFailure('RANDOM WORD', `Failed to find ${word}`);
+    throw PublicError.createWithCustomPublicMessage(jishoNotRespondingResponse, false, 'Jisho request error', err);
+  }
+
+  if (!jishoData.hasResults) {
     return getRandomWordRecusive(suffix, msg, retriesRemaining - 1, logger);
   }
+
+  return jishoSearch.createNavigationForJishoResults(
+    msg,
+    msg.author.username,
+    msg.author.id,
+    jishoData,
+    navigationManager,
+  );
 }
 
 module.exports = {
