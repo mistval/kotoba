@@ -1,12 +1,11 @@
-const reload = require('require-reload')(require);
 const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
 const path = require('path');
 const mkdirp = require('mkdirp');
-
-const apiKeys = reload('./../config/api_keys.json');
-const config = reload('./../config/config.json');
-const loadShiritoriForeverChannels = reload('./discord/shiritori_forever_helper.js').loadChannels;
+const performMigrations = require('./discord/persistence_migrations');
+const apiKeys = require('./../config/api_keys.json');
+const config = require('./../config/config.json');
+const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 
 function createBot() {
   mkdirp.sync(path.join(__dirname, '..', 'data'));
@@ -89,7 +88,15 @@ function saveGlobals(monochrome) {
 }
 
 const monochrome = createBot();
-checkApiKeys(monochrome);
-saveGlobals(monochrome);
-monochrome.connect();
-loadShiritoriForeverChannels(monochrome);
+
+performMigrations(monochrome).then(() => {
+  checkApiKeys(monochrome);
+  saveGlobals(monochrome);
+  monochrome.connect();
+  loadShiritoriForeverChannels(monochrome);
+}).catch((err) => {
+  monochrome.getLogger().logFailure('START', 'Error during start', err);
+  throw err;
+}).catch(() => {
+  process.exit(1);
+});

@@ -28,8 +28,12 @@ function createOkayResult(rows) {
 }
 
 async function getScores(serverId, deckNames) {
-  const data = await globals.persistence.getGlobalData();
   console.time('calculate scores');
+
+  const [quizScores, nameForUser] = await Promise.all([
+    globals.persistence.getData('quizScores'),
+    globals.persistence.getData('nameForUserId'),
+  ]);
 
   const didSpecifyDecks = deckNames.length > 0;
   const deckUniqueIds = [];
@@ -42,19 +46,10 @@ async function getScores(serverId, deckNames) {
     deckUniqueIds.push(uniqueIdForDeckName[deckName]);
   }
 
-  if (!data.quizScores) {
-    return createOkayResult([]);
-  }
-
-  if (!data.nameForUser) {
-    data.nameForUser = {};
-  }
-
   const aggregateRowForUser = {};
-  const databaseRows = data.quizScores;
 
-  for (let rowIndex = 0; rowIndex < databaseRows.length; rowIndex += 1) {
-    const databaseRow = databaseRows[rowIndex];
+  for (let rowIndex = 0; rowIndex < quizScores.length; rowIndex += 1) {
+    const databaseRow = quizScores[rowIndex];
 
     if (serverId && databaseRow.serverId !== serverId) {
       // NOOP
@@ -71,7 +66,7 @@ async function getScores(serverId, deckNames) {
         aggregateRowForUser[databaseRow.userId] = {
           userId: databaseRow.userId,
           score: Math.floor(databaseRow.score),
-          username: data.nameForUser[databaseRow.userId],
+          username: nameForUser[databaseRow.userId],
           deckId: databaseRow.deckId,
         };
       }
@@ -97,90 +92,87 @@ function getRows(allRows, userId, serverId) {
   return rowsForUser;
 }
 
-class QuizScoreStorageUtils {
-  static addScores(serverId, scoresForUserId, nameForUserId) {
-    assert(typeof serverId === 'string', 'serverId is not string');
-    assert(typeof scoresForUserId === 'object', 'scoresForUserId is not object');
-    assert(typeof nameForUserId === 'object', 'nameForUserId is not object');
+function updateScores(serverId, scoresForUserId) {
+  return globals.persistence.editData('quizScores', (quizScores) => {
+    const newQuizScores = Array.isArray(quizScores) ? quizScores.slice() : [];
 
-    return globals.persistence.editGlobalData((data) => {
-      if (!data.quizScores) {
-        // Hotspot. Don't want to copy.
-        // eslint-disable-next-line no-param-reassign
-        data.quizScores = [];
+    Object.keys(scoresForUserId).forEach((userId) => {
+      assert(typeof userId === 'string', 'userId is not string');
+      const rowsForUserAndServer = getRows(newQuizScores, userId, serverId);
+      const scoreForDeck = scoresForUserId[userId] || {};
+      const deckIds = Object.keys(scoreForDeck);
+
+      if (deckIds.length === 0) {
+        return;
       }
 
-      if (!data.nameForUser) {
-        // Hotspot. Don't want to copy.
-        // eslint-disable-next-line no-param-reassign
-        data.nameForUser = {};
-      }
-
-      Object.keys(scoresForUserId).forEach((userId) => {
-        assert(typeof userId === 'string', 'userId is not string');
-        const rowsForUserAndServer = getRows(data.quizScores, userId, serverId);
-        const scoreForDeck = scoresForUserId[userId] || {};
-        const deckIds = Object.keys(scoreForDeck);
-
-        if (deckIds.length === 0) {
-          return;
-        }
-
-        const foundMatchingRowForDeckId = {};
-        rowsForUserAndServer.forEach((row) => {
-          if (scoreForDeck[row.deckId]) {
-            if (foundMatchingRowForDeckId[row.deckId]) {
-              globals.logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
-            } else {
-              // Some (very few) people have NaN scores in the database because of a bug.
-              // So set them to 0 so that they can start increasing again.
-              if (!row.score) {
-                // eslint-disable-next-line no-param-reassign
-                row.score = 0;
-              }
-
-              assert(typeof scoreForDeck[row.deckId] === 'number', 'Score for a deck is not a number');
-
-              // eslint-disable-next-line no-param-reassign
-              row.score += scoreForDeck[row.deckId];
-              // eslint-disable-next-line no-param-reassign
-              row.score = Math.floor(row.score);
-              foundMatchingRowForDeckId[row.deckId] = true;
+      const foundMatchingRowForDeckId = {};
+      rowsForUserAndServer.forEach((row) => {
+        if (scoreForDeck[row.deckId]) {
+          if (foundMatchingRowForDeckId[row.deckId]) {
+            globals.logger.logFailure('SCORES', 'It looks like we already added that score. There should\'t be more than one matching row but there is...');
+          } else {
+            // Some (very few) people have NaN scores in the database because of a bug.
+            // So set them to 0 so that they can start increasing again.
+            if (!row.score) {
+              row.score = 0;
             }
+
+            assert(typeof scoreForDeck[row.deckId] === 'number', 'Score for a deck is not a number');
+
+            row.score += scoreForDeck[row.deckId];
+            row.score = Math.floor(row.score);
+            foundMatchingRowForDeckId[row.deckId] = true;
           }
-        });
-
-        deckIds.forEach((deckId) => {
-          if (!foundMatchingRowForDeckId[deckId]) {
-            const newRow = {
-              userId,
-              serverId,
-              deckId,
-              score: Math.floor(scoreForDeck[deckId]),
-            };
-            data.quizScores.push(newRow);
-          }
-        });
-
-        const name = nameForUserId[userId];
-
-        // Hotspot. Don't want to copy.
-        // eslint-disable-next-line no-param-reassign
-        data.nameForUser[userId] = name;
+        }
       });
 
+      deckIds.forEach((deckId) => {
+        if (!foundMatchingRowForDeckId[deckId]) {
+          const newRow = {
+            userId,
+            serverId,
+            deckId,
+            score: Math.floor(scoreForDeck[deckId]),
+          };
 
-      return data;
+          newQuizScores.push(newRow);
+        }
+      });
     });
-  }
 
-  static getGlobalScores(deckNames) {
-    return getScores(undefined, deckNames);
-  }
-
-  static getServerScores(serverId, deckNames) {
-    return getScores(serverId, deckNames);
-  }
+    return newQuizScores;
+  });
 }
 
-module.exports = QuizScoreStorageUtils;
+function updateNames(nameForUserId) {
+  return globals.persistence.editData(
+    'nameForUserId',
+    oldNameForUserId => ({ ...oldNameForUserId, ...nameForUserId }),
+  );
+}
+
+function addScores(serverId, scoresForUserId, nameForUserId) {
+  assert(typeof serverId === 'string', 'serverId is not string');
+  assert(typeof scoresForUserId === 'object', 'scoresForUserId is not object');
+  assert(typeof nameForUserId === 'object', 'nameForUserId is not object');
+
+  return Promise.all([
+    updateScores(serverId, scoresForUserId),
+    updateNames(nameForUserId),
+  ]);
+}
+
+function getGlobalScores(deckNames) {
+  return getScores(undefined, deckNames);
+}
+
+function getServerScores(serverId, deckNames) {
+  return getScores(serverId, deckNames);
+}
+
+module.exports = {
+  addScores,
+  getGlobalScores,
+  getServerScores,
+};
