@@ -113,7 +113,7 @@ module.exports.getSaveMementos = function(savingUser) {
     let rightFormatMementos = allMementos.filter(memento => memento.formatVersion === MEMENTO_VERSION);
 
     return deleteMementos(wrongFormatVersionMementos).then(() => {
-      return rightFormatMementos;
+      return rightFormatMementos.sort((a, b) => b.time - a.time);
     });
   });
 };
@@ -124,7 +124,7 @@ module.exports.save = function(saveData, savingUser, quizName, gameType) {
 
 module.exports.getRestorable = function(userId) {
   return globals.persistence.getDataForUser(userId).then(dbData => {
-    return dbData[QUIZ_SAVES_BACKUP_KEY];
+    return (dbData[QUIZ_SAVES_BACKUP_KEY] || []).reverse();
   });
 }
 
