@@ -513,7 +513,7 @@ class DiscordMessageSender {
       content.embed.fields.push({ name: 'Possible Answers', value: fieldValue });
     }
     if (question.bodyAsText) {
-      content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
+      content.embed.description = question.bodyAsText.substring(0, 2000); // This overwrites the quiz instructions.
     }
     if (question.bodyAsImageUri) {
       content.embed.image = { url: `${question.bodyAsImageUri}.png` };
