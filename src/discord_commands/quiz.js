@@ -340,8 +340,6 @@ function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraC
     embed.fields.push({
       name: 'Recycling bin',
       value: '(You can recover old saves from from here if you need to. Don\'t wait too long.)\n\n' + recyclingBinMementos.map((memento, index) => {
-        const date = new Date(memento.time);
-        const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
         return `${convertDatabaseFacingSaveIdToUserFacing(index + currentSaveMementos.length)}: ${memento.quizType} (${getTimeString(memento.time)})`;
       }).join('\n'),
     });
