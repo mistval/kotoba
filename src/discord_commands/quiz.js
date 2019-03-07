@@ -339,7 +339,7 @@ function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraC
   if (recyclingBinMementos.length > 0) {
     embed.fields.push({
       name: 'Recycling bin',
-      value: '(You can recover old saves from from here if you need to. Don\'t wait too long.)\n\n' + recyclingBinMementos.map((memento, index) => {
+      value: '(You can recover old saves from here if you need to. Don\'t wait too long.)\n\n' + recyclingBinMementos.map((memento, index) => {
         return `${convertDatabaseFacingSaveIdToUserFacing(index + currentSaveMementos.length)}: ${memento.quizType} (${getTimeString(memento.time)})`;
       }).join('\n'),
     });
