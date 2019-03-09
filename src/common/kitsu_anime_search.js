@@ -4,7 +4,7 @@ const Kitsu = require('kitsu');
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
-const { Navigation, NavigationChapter } = reload('monochrome-bot');
+const { Navigation } = reload('monochrome-bot');
 
 const api = new Kitsu();
 
