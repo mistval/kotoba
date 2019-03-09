@@ -3,24 +3,35 @@ const Kitsu = require('kitsu');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
-const { throwPublicErrorInfo } = reload('./util/errors.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
 const { Navigation, NavigationChapter } = reload('monochrome-bot');
 
 const api = new Kitsu();
 
-async function createAnimeResult(authorName, authorId, keyword, msg, navigationManager) {
-    const result = await api.get('anime', {
-        fields: {
-            anime: 'canonicalTitle,synopsis,posterImage,averageRating,favoritesCount'
-        },
-        filter: { text: keyword },
-        page: { limit: 5 }
-    });
+async function searchAnime(keyword) {
+    try {
+        const { data } = await api.get('anime', {
+            fields: {
+                anime: 'canonicalTitle,synopsis,posterImage,averageRating,favoritesCount'
+            },
+            filter: { text: keyword },
+            page: { limit: 5 }
+        });
+        return data;
+    } catch (error) {
+        return throwPublicErrorFatal('Kitsu Anime Search', 'Sorry, there is something wrong when searching Kitsu. Please try again later.', error.message);
+    }
+}
 
-    console.log(result);
+async function createAnimeResult(authorName, authorId, keyword, msg, navigationManager) {
+    const searchResults = await searchAnime(keyword);
+
+    if (searchResults.length === 0) {
+        return throwPublicErrorInfo('Kitsu Anime Search', `I didn't find any results for **${keyword}**.`, 'No results');
+    }
 
     const discordContent = []
-    for (item of result.data) {
+    for (item of searchResults) {
         const embed = {
             title: item.canonicalTitle,
             description: item.synopsis,
