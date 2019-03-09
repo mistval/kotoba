@@ -8,7 +8,7 @@ const { Navigation, NavigationChapter } = reload('monochrome-bot');
 
 const api = new Kitsu();
 
-async function createAnimeResult(authorId, keyword, msg, navigationManager) {
+async function createAnimeResult(authorName, authorId, keyword, msg, navigationManager) {
     const result = await api.get('anime', {
         fields: {
             anime: 'canonicalTitle,synopsis,posterImage,averageRating,favoritesCount'
@@ -24,11 +24,16 @@ async function createAnimeResult(authorId, keyword, msg, navigationManager) {
         const embed = {
             title: item.canonicalTitle,
             description: item.synopsis,
+            color: constants.EMBED_NEUTRAL_COLOR,
             fields: [
                 { name: 'Rating:', value: `:star: ${item.averageRating}`, inline: true },
                 { name: 'Favorites:', value: `:heart: ${item.favoritesCount}`, inline: true },
             ],
-            thumbnail: { url: item.posterImage.tiny }
+            thumbnail: { url: item.posterImage.tiny },
+            footer: { 
+                icon_url: constants.FOOTER_ICON_URI, 
+                text: `${authorName} can use the reaction buttons below to see more information!`
+            }
         }
 
         const trimmed = trimEmbed({ embed });
