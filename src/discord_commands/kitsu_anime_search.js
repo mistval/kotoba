@@ -12,18 +12,11 @@ module.exports = {
   shortDescription: 'Search Kitsu for anime data.',
   longDescription: 'Search Kitsu for anime data. This description should be longer, though...',
   usageExample: '<prefix>kitsu one piece',
-  action: async function action(bot, msg, suffix) {
+  action: async function action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       return throwPublicErrorInfo('Kitsu Anime', 'This feature is not yet implemented. \n--Alkh', 'WIP');
     }
 
-    let content = 'empty'
-    try {
-      content = await kitsuSearch.createAnimeResult(suffix);
-    } catch (error) {
-      return throwPublicErrorFatal('Kitsu Anime', error.message, error);
-    }
-
-    return msg.channel.createMessage(content);
+    return kitsuSearch.createAnimeResult(msg.author.id, suffix, msg, monochrome.getNavigationManager());
   },
 };
