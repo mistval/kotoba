@@ -17,6 +17,11 @@ module.exports = {
       return throwPublicErrorInfo('Kitsu Anime', 'This feature is not yet implemented. \n--Alkh', 'WIP');
     }
 
-    return kitsuSearch.createAnimeResult(msg.author.id, suffix, msg, monochrome.getNavigationManager());
+    return kitsuSearch.createAnimeResult(
+      msg.author.username,
+      msg.author.id, 
+      suffix, 
+      msg, 
+      monochrome.getNavigationManager());
   },
 };
