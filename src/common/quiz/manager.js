@@ -441,7 +441,7 @@ class AskQuestionAction extends Action {
         this.readyForAnswers_ = true;
         return card.createQuestion(card, session).then(question => {
           return retryPromise(() => Promise.resolve(session.getMessageSender().showQuestion(question)), 3).catch(err => {
-            globals.logger.logFailure(LOGGER_TITLE, 'Error showing question', err);
+            globals.logger.logFailure(LOGGER_TITLE, `Error showing question ${JSON.stringify(question)}`, err);
             throw err;
           });
         }).then(shownQuestionId => {

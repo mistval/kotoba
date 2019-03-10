@@ -10,7 +10,7 @@ const LOGGER_TITLE = 'QUIZ SAVE MANAGER';
 const SAVE_DATA_DIR = path.join(__dirname, '..', '..', '..', 'data', 'quiz_saves');
 const QUIZ_SAVES_KEY = 'QuizSaveDataFiles';
 const QUIZ_SAVES_BACKUP_KEY = 'QuizSavesBackup';
-const MAX_RESTORABLE_PER_USER = 10;
+const MAX_RESTORABLE_PER_USER = 5;
 
 try {
   fs.mkdirSync(SAVE_DATA_DIR);
@@ -79,16 +79,18 @@ module.exports.load = function(memento) {
       dbData[QUIZ_SAVES_KEY].splice(mementoIndex, 1);
       dbData[QUIZ_SAVES_BACKUP_KEY] = dbData[QUIZ_SAVES_BACKUP_KEY] || [];
       dbData[QUIZ_SAVES_BACKUP_KEY].push(memento);
-      if (dbData[QUIZ_SAVES_BACKUP_KEY].length > MAX_RESTORABLE_PER_USER) {
+
+      const promises = [];
+      while (dbData[QUIZ_SAVES_BACKUP_KEY].length > MAX_RESTORABLE_PER_USER) {
         let mementoToDelete = dbData[QUIZ_SAVES_BACKUP_KEY].shift();
-        return fs.unlinkAsync(path.join(SAVE_DATA_DIR, mementoToDelete.fileName)).then(() => {
-          return dbData;
-        }).catch(err => {
-          logger.logFailure(LOGGER_TITLE, 'No file found for that save. Deleting DB entry.', err);
-          return dbData;
-        });
+        promises.push(fs.unlinkAsync(path.join(SAVE_DATA_DIR, mementoToDelete.fileName)));
       }
-      return dbData;
+
+      return Promise.all(promises).catch(err => {
+        logger.logFailure(LOGGER_TITLE, 'No file found for a save. Deleting DB entry.', err);
+      }).then(() => {
+        return dbData;
+      });
     }).then(() => {
       return json;
     });
@@ -111,7 +113,7 @@ module.exports.getSaveMementos = function(savingUser) {
     let rightFormatMementos = allMementos.filter(memento => memento.formatVersion === MEMENTO_VERSION);
 
     return deleteMementos(wrongFormatVersionMementos).then(() => {
-      return rightFormatMementos;
+      return rightFormatMementos.sort((a, b) => b.time - a.time);
     });
   });
 };
@@ -122,16 +124,19 @@ module.exports.save = function(saveData, savingUser, quizName, gameType) {
 
 module.exports.getRestorable = function(userId) {
   return globals.persistence.getDataForUser(userId).then(dbData => {
-    return dbData[QUIZ_SAVES_BACKUP_KEY];
+    return (dbData[QUIZ_SAVES_BACKUP_KEY] || []).reverse();
   });
 }
 
 module.exports.restore = function(userId, mementoToRestore) {
   return globals.persistence.editDataForUser(userId, dbData => {
     if (!dbData[QUIZ_SAVES_BACKUP_KEY] || !dbData[QUIZ_SAVES_KEY]) {
-      return -1;
+      throw new Error('That memento is not in the recycling bin.');
     }
     let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_BACKUP_KEY], mementoToRestore);
+    if (mementoIndex === -1) {
+      throw new Error('That memento is not in the recycling bin.');
+    }
     dbData[QUIZ_SAVES_BACKUP_KEY].splice(mementoIndex, 1);
     dbData[QUIZ_SAVES_KEY].push(mementoToRestore);
     return dbData;

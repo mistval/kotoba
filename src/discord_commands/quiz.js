@@ -313,22 +313,39 @@ function convertUserFacingSaveIdToDatabaseFacing(saveId) {
   return saveId - 1;
 }
 
-function sendSaveMementos(msg, saveMementos, extraContent) {
+function getTimeString(timestamp) {
+  const date = new Date(timestamp);
+  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+}
+
+function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraContent) {
   const prefix = msg.prefix;
-  const content = {
-    content: extraContent,
-    embed: {
-      title: 'Available Saves',
-      description: saveMementos.map((memento, index) => {
-        const date = new Date(memento.time);
-        const dateString = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-        return `${convertDatabaseFacingSaveIdToUserFacing(index)}: ${memento.quizType} (${dateString})`;
-      }).join('\n'),
-      footer: { icon_url: constants.FOOTER_ICON_URI, text: `Load the first save with: ${prefix}quiz load 1` },
-      color: constants.EMBED_NEUTRAL_COLOR,
-    },
+  const embed = {
+    title: 'Available Saves',
+    footer: { icon_url: constants.FOOTER_ICON_URI, text: `Load the first save with: ${prefix}quiz load 1` },
+    color: constants.EMBED_NEUTRAL_COLOR,
+    fields: [],
   };
-  return msg.channel.createMessage(content, null, msg);
+
+  if (currentSaveMementos.length > 0) {
+    embed.fields.push({
+      name: 'Current saves',
+      value: currentSaveMementos.map((memento, index) => {
+        return `${convertDatabaseFacingSaveIdToUserFacing(index)}: ${memento.quizType} (${getTimeString(memento.time)})`;
+      }).join('\n'),
+    });
+  }
+
+  if (recyclingBinMementos.length > 0) {
+    embed.fields.push({
+      name: 'Recycling bin',
+      value: '(You can recover old saves from here if you need to. Don\'t wait too long.)\n\n' + recyclingBinMementos.map((memento, index) => {
+        return `${convertDatabaseFacingSaveIdToUserFacing(index + currentSaveMementos.length)}: ${memento.quizType} (${getTimeString(memento.time)})`;
+      }).join('\n'),
+    });
+  }
+
+  return msg.channel.createMessage({ content: extraContent, embed }, null, msg);
 }
 
 function createCorrectPercentageField(card) {
@@ -496,7 +513,7 @@ class DiscordMessageSender {
       content.embed.fields.push({ name: 'Possible Answers', value: fieldValue });
     }
     if (question.bodyAsText) {
-      content.embed.description = question.bodyAsText; // This overwrites the quiz instructions.
+      content.embed.description = question.bodyAsText.substring(0, 2000); // This overwrites the quiz instructions.
     }
     if (question.bodyAsImageUri) {
       content.embed.image = { url: `${question.bodyAsImageUri}.png` };
@@ -802,24 +819,30 @@ async function load(
   throwIfSessionInProgressAtLocation(msg.channel.id, prefix);
 
   const userId = msg.author.id;
-  const mementos = await saveManager.getSaveMementos(userId);
+  const [currentMementos, recyclingBinMementos] = await Promise.all([
+    (await saveManager.getSaveMementos(userId)) || [],
+    (await saveManager.getRestorable(userId)) || [],
+  ]);
 
-  if (!mementos || mementos.length === 0) {
+  if (currentMementos.length === 0 && recyclingBinMementos.length === 0) {
     return msg.channel.createMessage(createTitleOnlyEmbed(`I don't have any sessions I can load for you. Say ${prefix}quiz to start a new quiz.`), null, msg);
   }
+
   if (userFacingSaveId === undefined) {
-    if (mementos.length === 1) {
-      userFacingSaveId = 1;
-    } else {
-      return sendSaveMementos(msg, mementos);
-    }
+    return sendSaveMementos(msg, currentMementos, recyclingBinMementos);
   }
+
   const databaseFacingSaveId =
     convertUserFacingSaveIdToDatabaseFacing(parseInt(userFacingSaveId, 10));
 
-  const memento = mementos[databaseFacingSaveId];
-  if (!memento) {
-    return sendSaveMementos(msg, mementos, `I couldn't find save #${userFacingSaveId}. Here are the available saves.`);
+  let memento;
+  if (databaseFacingSaveId < currentMementos.length) {
+    memento = currentMementos[databaseFacingSaveId];
+  } else if (databaseFacingSaveId - currentMementos.length < recyclingBinMementos.length) {
+    memento = recyclingBinMementos[databaseFacingSaveId - currentMementos.length];
+    await saveManager.restore(userId, memento);
+  } else {
+    return sendSaveMementos(msg, currentMementos, recyclingBinMementos, `I couldn't find save #${userFacingSaveId}. Here are the available saves.`);
   }
 
   throwIfGameModeNotAllowed(isDm, memento, masteryModeEnabled, prefix);
