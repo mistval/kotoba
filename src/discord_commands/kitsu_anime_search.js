@@ -18,7 +18,7 @@ module.exports = {
       return throwPublicErrorInfo('Kitsu Anime Search', `Say **${prefix}kitsu [anime]** to search for anime on Kitsu.io. For example: **${prefix}kitsu Monster**. Say **${prefix}help kitsu** for more help.`, 'No suffix');
     }
 
-    return kitsuSearch.createAnimeResult(
+    return kitsuSearch.createNavigationForAnime(
       msg.author.username,
       msg.author.id, 
       suffix, 
