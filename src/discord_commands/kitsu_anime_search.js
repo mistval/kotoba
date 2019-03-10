@@ -5,7 +5,6 @@ const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['anime', 'a'],
-  aliasesForHelp: ['anime', 'a'],
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'kitsuanime92837',

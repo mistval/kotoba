@@ -1,10 +1,10 @@
 const reload = require('require-reload')(require);
 const Kitsu = require('kitsu');
+const { Navigation } = require('monochrome-bot');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
-const { Navigation } = reload('monochrome-bot');
 
 const api = new Kitsu();
 
@@ -21,15 +21,19 @@ async function searchAnime(keyword) {
     });
     return data;
   } catch (error) {
-    return throwPublicErrorFatal('Kitsu Anime Search', 'Sorry, there is something wrong when searching Kitsu. Please try again later.', error.message);
+    return throwPublicErrorFatal(
+      'Kitsu Anime Search', // A user-facing module/command title
+      'Sorry, there is something wrong when searching Kitsu. Please try again later.', // A user-facing description of what happened
+      'Error fetching from Kitsu', // A log-facing description
+      error, // The error that occured
+    );
   }
 }
 
 function formatAnimeData(animeData, callerName) {
-  const discordContent = [];
-  animeData.forEach((item) => {
+  return animeData.map((item, index) => {
     const embed = {
-      title: item.canonicalTitle,
+      title: `${item.canonicalTitle} (page ${index + 1} of ${animeData.length})`,
       description: item.synopsis,
       url: `${KITSU_PAGE_BASE_URI}${item.slug}`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -52,10 +56,8 @@ function formatAnimeData(animeData, callerName) {
       },
     };
 
-    const trimmed = trimEmbed({ embed });
-    discordContent.push(trimmed);
+    return trimEmbed({ embed });
   });
-  return discordContent;
 }
 
 async function createNavigationForAnime(authorName, authorId, keyword, msg, navigationManager) {
