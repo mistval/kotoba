@@ -69,15 +69,15 @@ function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
   if (!apiKeys.YOUTUBE) {
-    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./api_keys.json. The jukebox command will not work.');
+    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
   }
 
   if (!apiKeys.GOOGLE_TRANSLATE) {
-    logger.logFailure('TRANSLATE', 'No Google API key present in ./api_keys.json. The translate command will not work.');
+    logger.logFailure('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
   }
 
   if (!apiKeys.FORVO) {
-    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./api_keys.json. The pronounce command will not show audio files.');
+    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
   }
 }
 
