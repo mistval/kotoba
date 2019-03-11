@@ -23,7 +23,7 @@ async function searchAnime(keyword) {
   } catch (error) {
     return throwPublicErrorFatal(
       'Kitsu Anime Search', // A user-facing module/command title
-      'Sorry, there is something wrong when searching Kitsu. Please try again later.', // A user-facing description of what happened
+      'Sorry, Kitsu.io isn\'t responding. Please try again later.', // A user-facing description of what happened
       'Error fetching from Kitsu', // A log-facing description
       error, // The error that occured
     );
