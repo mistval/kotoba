@@ -154,10 +154,7 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
         {
           name: 'Allowed values',
           value: setting.allowedValuesDescription,
-        },
-        {
-          name: 'Can be changed by',
-          value: setting.userSetting ? 'Anyone' : 'Server admin',
+          inline: true,
         },
         {
           name: 'Current value',
@@ -167,6 +164,17 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
             msg.channel.id,
             msg.author.id,
           ),
+          inline: true,
+        },
+        {
+          name: 'Default value',
+          value: setting.defaultUserFacingValue,
+          inline: true,
+        },
+        {
+          name: 'Can be changed by',
+          value: setting.userSetting ? 'Anyone' : 'Server admin',
+          inline: true,
         },
       ],
       footer: {
