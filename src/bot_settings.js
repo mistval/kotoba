@@ -70,6 +70,16 @@ const fontDescriptionList = Object.keys(fontForIndex)
   .map(index => `${index}. **${fontForIndex[index]}** - ${fontHelper.descriptionForFontSetting[fontForIndex[index]]}`)
   .join('\n');
 
+const fontForFont = {};
+fontHelper.availableFontSettings.forEach((key) => {
+  fontForFont[key.toLowerCase()] = key;
+});
+
+const fontForInput = {
+  ...fontForIndex,
+  ...fontForFont,
+};
+
 const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
 
 module.exports = [
@@ -201,8 +211,8 @@ module.exports = [
         description: 'This setting controls the font used for text rendered for quizzes.',
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'quiz_font',
-        defaultUserFacingValue: '1',
-        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForIndex),
+        defaultUserFacingValue: 'Yu Mincho',
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForInput, true),
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.isMappable,
       },
@@ -241,8 +251,8 @@ module.exports = [
         description: 'This setting controls the font used for the furigana command.',
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'furigana_font',
-        defaultUserFacingValue: '1',
-        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForIndex),
+        defaultUserFacingValue: 'Yu Mincho',
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForInput, true),
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.isMappable,
       },
