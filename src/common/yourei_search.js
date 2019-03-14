@@ -1,7 +1,7 @@
 const reload = require('require-reload')(require);
 const request = require('request-promise');
 const cheerio = require('cheerio');
-const { Navigation } = require('monochrome-bot');
+const { Navigation, NavigationChapter } = require('monochrome-bot');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
@@ -9,6 +9,11 @@ const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js
 
 const YOUREI_BASE_URL = 'http://yourei.jp/';
 const SENTENCES_PER_FETCH = 20;
+
+const EXAMPLES_PER_PAGE = 4;
+const SENTENCES_EMOTE = '🇸';
+const FREQUENCY_EMOTE = '🇫';
+const USAGE_EMOTE = '🇺';
 
 function getExampleSentences($) {
     return $('#sentence-example-list').find('li').map((idx, item) => {
@@ -37,7 +42,7 @@ function getUsageExamples($) {
     }).toArray();
 }
 
-function getUsageFrequency($) {
+function getUsageFrequencies($) {
     return $('#next-freq-ngrams').find('a').map((idx, item) => {
         return $(item).text();
     }).toArray();
@@ -60,7 +65,7 @@ async function scrapeWebPage(keyword) {
             return {
                 data: {
                     sentences: getExampleSentences($),
-                    usageFrequency: getUsageFrequency($),
+                    usageFrequencies: getUsageFrequencies($),
                     usageExamples: getUsageExamples($),
                 },
                 meta: {
@@ -82,9 +87,56 @@ async function scrapeWebPage(keyword) {
         })
 }
 
+function createNavigationChapterForSentences(sentences) {
+    const content1 = {
+        embed: {
+            title: 'Examples page 1',
+            description: 'Word examples chapter scaffolding'
+        }
+    }
+
+    const content2 = {
+        embed: {
+            title: 'Examples page 2',
+            description: 'Word examples chapter scaffolding'
+        }
+    }
+
+    return NavigationChapter.fromContent([content1, content2]);
+}
+
+function createNavigationChapterForFrequency(usageFrequencies) {
+    const content = {
+        embed: {
+            title: 'Usage Frequency',
+            description: 'Word usage frequecy chapter scaffolding'
+        }
+    }
+
+    return NavigationChapter.fromContent([content]);
+}
+
+function createNavigationChapterForUsage(usageExamples) {
+    const content = {
+        embed: {
+            title: 'Usage Examples',
+            description: 'Word usage examples chapter scaffolding'
+        }
+    }
+
+    return NavigationChapter.fromContent([content]);
+}
+
 async function createNavigationForExamples(authorName, authorId, keyword, msg, navigationManager) {
     const result = await scrapeWebPage(keyword);
-    return msg.channel.createMessage(`${YOUREI_BASE_URL}${keyword} --${authorName}`);
+
+    const chapters = {}
+    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences();
+    chapters[FREQUENCY_EMOTE] = createNavigationChapterForFrequency();
+    chapters[USAGE_EMOTE] = createNavigationChapterForUsage();
+    
+    const navigation = new Navigation(authorId, true, SENTENCES_EMOTE, chapters);
+    return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 module.exports = {
