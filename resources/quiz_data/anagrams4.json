@@ -5,7 +5,7 @@
   "instructions": "Unscramable the below word!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WEBSTER_ANSWER",
-  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "answerTimeLimitStrategy": "ANAGRAMS",
   "cardPreprocessingStrategy": "RANDOMIZE_QUESTION_CHARACTERS",
   "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_ANSWER",
   "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
