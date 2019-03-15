@@ -81,7 +81,7 @@ async function scrapeWebPage(keyword) {
         })
         .catch((error) => {
             return throwPublicErrorFatal(
-                'Yourei', 
+                '用例.jp', 
                 'Sorry, yourei.jp isn\'t responding. Please try again later.', 
                 'Error fetching from yourei.jp',
                 error,
@@ -161,12 +161,16 @@ function createNavigationChapterForUsage(scrapeResult, authorName) {
 }
 
 async function createNavigationForExamples(authorName, authorId, keyword, msg, navigationManager) {
-    const result = await scrapeWebPage(keyword);
+    const searchResults = await scrapeWebPage(keyword);
+
+    if (searchResults.data.sentences.length === 0) {
+        return throwPublicErrorInfo('用例.jp', `I didn't find any results for **${keyword}**.`, 'No results');
+    }
 
     const chapters = {}
-    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result, authorName, false);
-    chapters[FULLCONTEXT_EMOTE] = createNavigationChapterForSentences(result, authorName, true);
-    chapters[USAGE_EMOTE] = createNavigationChapterForUsage(result, authorName);
+    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(searchResults, authorName, false);
+    chapters[FULLCONTEXT_EMOTE] = createNavigationChapterForSentences(searchResults, authorName, true);
+    chapters[USAGE_EMOTE] = createNavigationChapterForUsage(searchResults, authorName);
     
     const navigation = new Navigation(authorId, true, SENTENCES_EMOTE, chapters);
     return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
