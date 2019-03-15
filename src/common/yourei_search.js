@@ -5,6 +5,7 @@ const { Navigation, NavigationChapter } = require('monochrome-bot');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
+const highlight = reload('./util/sentence_highlighter.js')
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
 
 const YOUREI_BASE_URL = 'http://yourei.jp/';
@@ -73,7 +74,8 @@ async function scrapeWebPage(keyword) {
                     keyword
                 },
                 links: {
-                    next: getNextPageURI($)
+                    next: getNextPageURI($),
+                    self: targetURI
                 }
             }
         })
@@ -88,21 +90,29 @@ async function scrapeWebPage(keyword) {
 }
 
 function createNavigationChapterForSentences(sentences) {
-    const content1 = {
-        embed: {
-            title: 'Examples page 1',
-            description: 'Word examples chapter scaffolding'
+    const pages = [];
+    
+    const fields = sentences.map((sentence) => {
+        return {
+            value: `${sentence.full}\n-`,
+            name: sentence.source,
+            inline: false
         }
+    })
+
+    while(fields.length !== 0) {
+        const embed = {
+            title: 'Yourei',
+            color: constants.EMBED_NEUTRAL_COLOR,
+            fields: [],
+        }
+        for (let i = 0; i < EXAMPLES_PER_PAGE; i++) {
+            embed.fields.push(fields.pop());
+        }
+        pages.push(trimEmbed({ embed }));
     }
 
-    const content2 = {
-        embed: {
-            title: 'Examples page 2',
-            description: 'Word examples chapter scaffolding'
-        }
-    }
-
-    return NavigationChapter.fromContent([content1, content2]);
+    return NavigationChapter.fromContent(pages);
 }
 
 function createNavigationChapterForFrequency(usageFrequencies) {
@@ -131,7 +141,7 @@ async function createNavigationForExamples(authorName, authorId, keyword, msg, n
     const result = await scrapeWebPage(keyword);
 
     const chapters = {}
-    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences();
+    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result.data.sentences);
     chapters[FREQUENCY_EMOTE] = createNavigationChapterForFrequency();
     chapters[USAGE_EMOTE] = createNavigationChapterForUsage();
     
