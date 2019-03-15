@@ -5,7 +5,7 @@ const { Navigation, NavigationChapter } = require('monochrome-bot');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
-const highlight = reload('./util/sentence_highlighter.js')
+const highlighter = reload('./util/sentence_highlighter.js')
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
 
 const YOUREI_BASE_URL = 'http://yourei.jp/';
@@ -89,16 +89,25 @@ async function scrapeWebPage(keyword) {
         })
 }
 
-function createNavigationChapterForSentences(sentences) {
-    const pages = [];
-    
-    const fields = sentences.map((sentence) => {
+function formatSentenceData(sentences, keyword, showFullSentences = false) {
+    return sentences.map((sentence) => {
+        const highlighted = highlighter.highlight(
+            showFullSentences ? sentence.full : sentence.short, 
+            showFullSentences ? sentence.short: keyword);
         return {
-            value: `${sentence.full}\n-`,
-            name: sentence.source,
+            name: highlighted,
+            value: `-- ${sentence.source}`,
             inline: false
         }
-    })
+    });
+}
+
+function createNavigationChapterForSentences(scrapeResult, authorName) {
+    const pages = [];
+    const sentences = scrapeResult.data.sentences;
+    const keyword = scrapeResult.meta.keyword;
+    
+    const fields = formatSentenceData(sentences, keyword, true);
 
     while(fields.length !== 0) {
         const embed = {
@@ -141,7 +150,7 @@ async function createNavigationForExamples(authorName, authorId, keyword, msg, n
     const result = await scrapeWebPage(keyword);
 
     const chapters = {}
-    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result.data.sentences);
+    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result, authorName);
     chapters[FREQUENCY_EMOTE] = createNavigationChapterForFrequency();
     chapters[USAGE_EMOTE] = createNavigationChapterForUsage();
     
