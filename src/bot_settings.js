@@ -212,7 +212,10 @@ module.exports = [
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'quiz_font',
         defaultUserFacingValue: 'Yu Mincho',
-        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForInput, true),
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
+          fontForInput,
+          true,
+        ),
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.isMappable,
       },
@@ -252,7 +255,10 @@ module.exports = [
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'furigana_font',
         defaultUserFacingValue: 'Yu Mincho',
-        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(fontForInput, true),
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
+          fontForInput,
+          true,
+        ),
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.isMappable,
       },
