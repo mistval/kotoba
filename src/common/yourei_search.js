@@ -13,7 +13,7 @@ const SENTENCES_PER_FETCH = 20;
 
 const EXAMPLES_PER_PAGE = 4;
 const SENTENCES_EMOTE = '🇸';
-const FREQUENCY_EMOTE = '🇫';
+const FULLCONTEXT_EMOTE = '🇫';
 const USAGE_EMOTE = '🇺';
 
 function getExampleSentences($) {
@@ -102,23 +102,31 @@ function formatSentenceData(sentences, keyword, showFullSentences = false) {
     });
 }
 
-function createNavigationChapterForSentences(scrapeResult, authorName) {
+function createNavigationChapterForSentences(scrapeResult, authorName, showFullSentences) {
     const pages = [];
     const sentences = scrapeResult.data.sentences;
     const keyword = scrapeResult.meta.keyword;
     
-    const fields = formatSentenceData(sentences, keyword, true);
+    const fields = formatSentenceData(sentences, keyword, showFullSentences);
 
+    let pageNumber = 1;
+    const pageCount = Math.ceil(sentences.length / EXAMPLES_PER_PAGE);
     while(fields.length !== 0) {
         const embed = {
-            title: 'Yourei',
-            color: constants.EMBED_NEUTRAL_COLOR,
+            title: `${keyword} - 用例.jp Search Results ${showFullSentences ? '(whole context)' : ''} (page ${pageNumber} of ${pageCount})`,
+            url: scrapeResult.links.self,
             fields: [],
+            color: constants.EMBED_NEUTRAL_COLOR,
+            footer: {
+                icon_url: constants.FOOTER_ICON_URI,
+                text: `${authorName} can use the reaction buttons below to see more information!`,
+            }
         }
         for (let i = 0; i < EXAMPLES_PER_PAGE; i++) {
             embed.fields.push(fields.pop());
         }
         pages.push(trimEmbed({ embed }));
+        pageNumber++;
     }
 
     return NavigationChapter.fromContent(pages);
@@ -150,8 +158,8 @@ async function createNavigationForExamples(authorName, authorId, keyword, msg, n
     const result = await scrapeWebPage(keyword);
 
     const chapters = {}
-    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result, authorName);
-    chapters[FREQUENCY_EMOTE] = createNavigationChapterForFrequency();
+    chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result, authorName, false);
+    chapters[FULLCONTEXT_EMOTE] = createNavigationChapterForSentences(result, authorName, true);
     chapters[USAGE_EMOTE] = createNavigationChapterForUsage();
     
     const navigation = new Navigation(authorId, true, SENTENCES_EMOTE, chapters);
