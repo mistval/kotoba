@@ -5,7 +5,7 @@ const { Navigation, NavigationChapter } = require('monochrome-bot');
 
 const constants = reload('./constants.js');
 const trimEmbed = reload('./util/trim_embed.js');
-const highlighter = reload('./util/sentence_highlighter.js')
+const { highlighter, highlight } = reload('./util/sentence_highlighter.js')
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
 
 const YOUREI_BASE_URL = 'http://yourei.jp/';
@@ -91,7 +91,7 @@ async function scrapeWebPage(keyword) {
 
 function formatSentenceData(sentences, keyword, showFullSentences = false) {
     return sentences.map((sentence) => {
-        const highlighted = highlighter.highlight(
+        const highlighted = highlight(
             showFullSentences ? sentence.full : sentence.short, 
             showFullSentences ? sentence.short: keyword);
         return {
@@ -107,7 +107,7 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
     const sentences = scrapeResult.data.sentences;
     const keyword = scrapeResult.meta.keyword;
     
-    const fields = formatSentenceData(sentences, keyword, showFullSentences);
+    const fields = formatSentenceData(sentences, keyword, showFullSentences).reverse();
 
     let pageNumber = 1;
     const pageCount = Math.ceil(sentences.length / EXAMPLES_PER_PAGE);
@@ -132,26 +132,32 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
     return NavigationChapter.fromContent(pages);
 }
 
-function createNavigationChapterForFrequency(usageFrequencies) {
-    const content = {
-        embed: {
-            title: 'Usage Frequency',
-            description: 'Word usage frequecy chapter scaffolding'
+function createNavigationChapterForUsage(scrapeResult, authorName) {
+    const keyword = scrapeResult.meta.keyword;
+
+    const frequencyField = {
+        name: 'Most frequent usage:',
+        value: scrapeResult.data.usageFrequencies.join('\n'),
+        inline: false
+    };
+    const usageExampleField = {
+        name: `Usage examples:`,
+        value: scrapeResult.data.usageExamples.join('・'),
+        inline: false
+    };
+
+    embed = {
+        title: `${keyword} - 用例.jp Search Results`,
+        url: scrapeResult.links.self,
+        color: constants.EMBED_NEUTRAL_COLOR,
+        fields: [frequencyField, usageExampleField],
+        footer: {
+            icon_url: constants.FOOTER_ICON_URI,
+            text: `${authorName} can use the reaction buttons below to see more information!`,
         }
     }
 
-    return NavigationChapter.fromContent([content]);
-}
-
-function createNavigationChapterForUsage(usageExamples) {
-    const content = {
-        embed: {
-            title: 'Usage Examples',
-            description: 'Word usage examples chapter scaffolding'
-        }
-    }
-
-    return NavigationChapter.fromContent([content]);
+    return NavigationChapter.fromContent([trimEmbed({ embed })]);
 }
 
 async function createNavigationForExamples(authorName, authorId, keyword, msg, navigationManager) {
@@ -160,7 +166,7 @@ async function createNavigationForExamples(authorName, authorId, keyword, msg, n
     const chapters = {}
     chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(result, authorName, false);
     chapters[FULLCONTEXT_EMOTE] = createNavigationChapterForSentences(result, authorName, true);
-    chapters[USAGE_EMOTE] = createNavigationChapterForUsage();
+    chapters[USAGE_EMOTE] = createNavigationChapterForUsage(result, authorName);
     
     const navigation = new Navigation(authorId, true, SENTENCES_EMOTE, chapters);
     return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
