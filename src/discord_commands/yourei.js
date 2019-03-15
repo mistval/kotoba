@@ -18,11 +18,11 @@ module.exports = {
     }
 
     return youreiSearch.createNavigationForExamples(
-        msg.author.username,
-        msg.author.id,
-        suffix,
-        msg,
-        monochrome.getNavigationManager()
+      msg.author.username,
+      msg.author.id,
+      suffix,
+      msg,
+      monochrome.getNavigationManager(),
     );
   },
 };
