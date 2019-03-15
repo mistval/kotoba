@@ -16,7 +16,7 @@ const jishoNotRespondingResponse = {
   },
 };
 
-async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navigationManager) {
+async function getRandomWordRecursive(suffix, msg, retriesRemaining, logger, navigationManager) {
   if (retriesRemaining <= 0) {
     throw PublicError.createWithCustomPublicMessage(
       jishoNotRespondingResponse,
@@ -35,7 +35,7 @@ async function getRandomWordRecusive(suffix, msg, retriesRemaining, logger, navi
   }
 
   if (!jishoData.hasResults) {
-    return getRandomWordRecusive(suffix, msg, retriesRemaining - 1, logger);
+    return getRandomWordRecursive(suffix, msg, retriesRemaining - 1, logger, navigationManager);
   }
 
   return jishoSearch.createNavigationForJishoResults(
@@ -58,7 +58,7 @@ module.exports = {
   usageExample: '<prefix>random N3, <prefix>random 2k',
   action(bot, msg, suffix, monochrome) {
     const suffixLowerCase = suffix.toLowerCase();
-    return getRandomWordRecusive(
+    return getRandomWordRecursive(
       suffixLowerCase,
       msg,
       NUMBER_OF_RETRIES,
