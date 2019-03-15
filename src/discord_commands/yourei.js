@@ -10,7 +10,7 @@ module.exports = {
   uniqueId: 'yourei92435',
   shortDescription: 'Search 用例.jp for more example sentences.',
   longDescription: 'Search 用例.jp for more Japanese example sentences, including usage frequency, and usage examples. There are no translation, though.',
-  usageExample: '<prefix>anime Monster',
+  usageExample: '<prefix>yourei 少し',
   action: async function action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
