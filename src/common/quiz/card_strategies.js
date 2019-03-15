@@ -23,6 +23,7 @@ try {
 
 const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 28000;
 const DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS = 45000;
+const DEFAULT_ANAGRAMS_BASE_TIME_LIMIT_IN_MS = 20000;
 const NUMBER_OF_REVEALS_PER_CARD = 2;
 const FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL = .25;
 const ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS = 10000;
@@ -414,9 +415,10 @@ module.exports.CardPreprocessingStrategy = {
 /* TIMING STRATEGIES */
 
 module.exports.AnswerTimeLimitStrategy = {
-  GRAMMAR: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs);}, // HACK TODO: This should be an override type thing
-  JAPANESE_SETTINGS: settings => {return settings.answerTimeLimitInMs;},
-  WITH_HINT: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs);}, // HACK TODO: This should be an override type thing
+  ANAGRAMS: (settings, card) => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_ANAGRAMS_BASE_TIME_LIMIT_IN_MS + (Math.max(0, card.question.length - 5) * 2000), settings.answerTimeLimitInMs),
+  GRAMMAR: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
+  JAPANESE_SETTINGS: settings => settings.answerTimeLimitInMs,
+  WITH_HINT: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
 };
 
 module.exports.AdditionalAnswerWaitStrategy = {
@@ -425,6 +427,7 @@ module.exports.AdditionalAnswerWaitStrategy = {
 };
 
 module.exports.RevealsLeftStrategy = {
+  ANAGRAMS: () => 0,
   GRAMMAR: () => 0,
   JAPANESE_SETTINGS: () => 0,
   WITH_HINT: () => 2,
