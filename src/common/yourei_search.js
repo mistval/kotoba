@@ -8,7 +8,7 @@ const trimEmbed = reload('./util/trim_embed.js');
 const { highlighter, highlight } = reload('./util/sentence_highlighter.js')
 const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
 
-const YOUREI_BASE_URL = 'http://yourei.jp/';
+const YOUREI_BASE_URL = 'http://yourei.jp';
 const SENTENCES_PER_FETCH = 20;
 
 const EXAMPLES_PER_PAGE = 4;
@@ -50,11 +50,11 @@ function getUsageFrequencies($) {
 }
 
 function getNextPageURI($) {
-    return $('#sentence-next-pagenation-link').attr('href')
+    return encodeURI(`${YOUREI_BASE_URL}${$('#sentence-next-pagenation-link').attr('href')}`);
 }
 
 async function scrapeWebPage(keyword) {
-    const targetURI = encodeURI(`${YOUREI_BASE_URL}${keyword}`);
+    const targetURI = encodeURI(`${YOUREI_BASE_URL}/${keyword}`);
 
     const options = {
         uri: targetURI,
@@ -114,6 +114,7 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
     while(fields.length !== 0) {
         const embed = {
             title: `${keyword} - 用例.jp Search Results ${showFullSentences ? '(whole context)' : ''} (page ${pageNumber} of ${pageCount})`,
+            description: `Showing ${sentences.length} from ${scrapeResult.meta.count} sentences found. Visit [用例.jp](${scrapeResult.links.next}) to see more sentences.`,
             url: scrapeResult.links.self,
             fields: [],
             color: constants.EMBED_NEUTRAL_COLOR,
