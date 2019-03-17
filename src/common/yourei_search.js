@@ -46,7 +46,7 @@ function getUsageFrequencies($) {
 }
 
 function getNextPageURI($) {
-  return encodeURI(`${YOUREI_BASE_URL}${$('#sentence-next-pagenation-link').attr('href')}`);
+  return encodeURI(`${YOUREI_BASE_URL}${$('#sentence-next-pagenation-link').attr('href') || ''}`);
 }
 
 async function scrapeWebPage(keyword) {
@@ -120,7 +120,7 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
       },
     };
     for (let i = 0; i < EXAMPLES_PER_PAGE; i += 1) {
-      embed.fields.push(fields.pop());
+      if (fields.length !== 0) embed.fields.push(fields.pop());
     }
     pages.push(trimEmbed({ embed }));
     pageNumber += 1;
@@ -130,22 +130,26 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
 }
 
 function createNavigationChapterForUsage(scrapeResult, authorName) {
-  const { meta: { keyword } } = scrapeResult;
+  const {
+    data: { usageFrequencies, usageExamples },
+    meta: { keyword },
+    links: { self },
+  } = scrapeResult;
 
   const frequencyField = {
     name: 'Most frequent usage:',
-    value: scrapeResult.data.usageFrequencies.join('\n'),
+    value: usageFrequencies.length !== 0 ? usageFrequencies.join('\n') : '-',
     inline: false,
   };
   const usageExampleField = {
     name: 'Usage examples:',
-    value: scrapeResult.data.usageExamples.join('・'),
+    value: usageExamples.length !== 0 ? usageExamples.join('・') : '-',
     inline: false,
   };
 
   const embed = {
     title: `${keyword} - 用例.jp Search Results`,
-    url: scrapeResult.links.self,
+    url: self,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [frequencyField, usageExampleField],
     footer: {
