@@ -130,22 +130,26 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
 }
 
 function createNavigationChapterForUsage(scrapeResult, authorName) {
-  const { meta: { keyword } } = scrapeResult;
+  const {
+    data: { usageFrequencies, usageExamples },
+    meta: { keyword },
+    links: { self },
+  } = scrapeResult;
 
   const frequencyField = {
     name: 'Most frequent usage:',
-    value: scrapeResult.data.usageFrequencies.join('\n'),
+    value: usageFrequencies.length !== 0 ? usageFrequencies.join('\n') : '-',
     inline: false,
   };
   const usageExampleField = {
     name: 'Usage examples:',
-    value: scrapeResult.data.usageExamples.join('・'),
+    value: usageExamples.length !== 0 ? usageExamples.join('・') : '-',
     inline: false,
   };
 
   const embed = {
     title: `${keyword} - 用例.jp Search Results`,
-    url: scrapeResult.links.self,
+    url: self,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [frequencyField, usageExampleField],
     footer: {
