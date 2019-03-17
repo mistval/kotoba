@@ -46,7 +46,7 @@ function getUsageFrequencies($) {
 }
 
 function getNextPageURI($) {
-  return encodeURI(`${YOUREI_BASE_URL}${$('#sentence-next-pagenation-link').attr('href')}`);
+  return encodeURI(`${YOUREI_BASE_URL}${$('#sentence-next-pagenation-link').attr('href') || ''}`);
 }
 
 async function scrapeWebPage(keyword) {
@@ -120,7 +120,7 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
       },
     };
     for (let i = 0; i < EXAMPLES_PER_PAGE; i += 1) {
-      embed.fields.push(fields.pop());
+      if (fields.length !== 0) embed.fields.push(fields.pop());
     }
     pages.push(trimEmbed({ embed }));
     pageNumber += 1;
