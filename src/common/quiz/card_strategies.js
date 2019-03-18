@@ -256,20 +256,11 @@ function updateWithBetterEnglishDefinition(card) {
 }
 
 function randomizeQuestionCharacters(card) {
-  let newQuestion = shuffleArray(card.question.split('')).join('');
+  let newQuestion = card.question;
 
-  // If the new question is the same as the original one, swap one random character with one other.
-  if (newQuestion === card.question) {
-    let newQuestionCharArray = newQuestion.split('');
-    let randomIndex1 = Math.floor(Math.random() * newQuestionCharArray.length);
-    let randomIndex2 = Math.floor(Math.random() * (newQuestionCharArray.length - 1));
-    if (randomIndex2 >= randomIndex1) {
-      ++randomIndex2;
-    }
-    let temp = newQuestionCharArray[randomIndex1];
-    newQuestionCharArray[randomIndex1] = newQuestionCharArray[randomIndex2];
-    newQuestionCharArray[randomIndex2] = temp;
-    newQuestion = newQuestionCharArray.join('');
+  // In theory this loop could never terminate, but not realistically.
+  while (card.answer.indexOf(newQuestion) !== -1) {
+    newQuestion = shuffleArray(card.question.split('')).join('');
   }
 
   card.question = newQuestion;
