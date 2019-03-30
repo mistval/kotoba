@@ -61,7 +61,6 @@ const meaningDeckSourceDeckNames = [
   'common',
   'countries',
   'fish',
-  'haard',
   'hard',
   'kklc',
   'vegetables',
