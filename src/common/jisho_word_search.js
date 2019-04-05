@@ -118,8 +118,13 @@ function parseJishoResponse(jishoResponseBody, searchPhrase) {
     const jlptTags = jishoResponseItem.jlpt.map(tag => tag.replace('-', ' ').toUpperCase());
     const otherTags = jishoResponseItem.tags.map(formatTag);
 
+    if (jishoResponseItem.is_common) {
+      otherTags.unshift('Common');
+    }
+
     const resultMeanings = getMeanings(jishoResponseItem.senses);
     dictionaryEntries.push({
+      uri: `https://jisho.org/word/${encodeURIComponent(jishoResponseItem.slug)}`,
       wordsAndReadings: sortedWordsAndReadings,
       resultTags: jlptTags.concat(otherTags),
       resultMeanings,
