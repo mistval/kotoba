@@ -96,7 +96,16 @@ function sortWords(words, searchPhrase) {
   });
 }
 
-function formatTag(tag) {
+function formatJlptTags(jlptTags) {
+  return jlptTags
+    .map(tag => parseInt(tag.replace('jlpt-n', '')))
+    .sort()
+    .reverse()
+    .map(level => `JLPT N${level}`)
+    .slice(0, 1);
+}
+
+function formatOtherTag(tag) {
   return tag.replace(/wanikani(.*?)/, (match, g1) => `Wanikani ${g1}`);
 }
 
@@ -115,8 +124,8 @@ function parseJishoResponse(jishoResponseBody, searchPhrase) {
       readings: readingsForWord[word].filter(reading => !!reading),
     }));
 
-    const jlptTags = jishoResponseItem.jlpt.map(tag => tag.replace('-', ' ').toUpperCase());
-    const otherTags = jishoResponseItem.tags.map(formatTag);
+    const jlptTags = formatJlptTags(jishoResponseItem.jlpt);
+    const otherTags = jishoResponseItem.tags.map(formatOtherTag);
 
     if (jishoResponseItem.is_common) {
       otherTags.unshift('Common');
