@@ -19,7 +19,9 @@ function nextEntryFitsOnPage(linesSoFar, nextEntry) {
     return true;
   }
 
-  return linesSoFar + 1 + nextEntry.resultMeanings.length <= MAX_LINES_PER_BIG_PAGE;
+  const hasTags = nextEntry.resultTags.length > 0;
+  const numTagRows = hasTags ? 1 : 0;
+  return linesSoFar + 1 + nextEntry.resultMeanings.length + numTagRows <= MAX_LINES_PER_BIG_PAGE;
 }
 
 function getFieldNameForEntry(entry) {
@@ -50,10 +52,16 @@ function getLineForMeaning(meaning, meaningNumber) {
 }
 
 function getFieldValueForEntry(entry) {
-  return entry.resultMeanings.map((meaning, index) => {
+  const lines = entry.resultMeanings.map((meaning, index) => {
     const meaningNumber = index + 1;
     return getLineForMeaning(meaning, meaningNumber);
-  }).join('\n');
+  });
+
+  if (entry.resultTags.length > 0) {
+    lines.push(`**Tags**: ${entry.resultTags.join(', ')}`);
+  }
+
+  return lines.join('\n');
 }
 
 function getFieldForEntry(entry) {
@@ -87,7 +95,7 @@ function formatJishoDataBig(
     let nextEntry = dictionaryEntriesQueue.pop();
     let lines = 0;
     while (!!nextEntry && nextEntryFitsOnPage(lines, nextEntry)) {
-      lines += 1 + nextEntry.resultMeanings.length;
+      lines += 1 + nextEntry.resultMeanings.length + (nextEntry.resultTags.length > 0 ? 1 : 0);
       embed.fields.push(getFieldForEntry(nextEntry));
       nextEntry = dictionaryEntriesQueue.pop();
     }

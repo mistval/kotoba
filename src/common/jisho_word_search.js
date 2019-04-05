@@ -96,6 +96,10 @@ function sortWords(words, searchPhrase) {
   });
 }
 
+function formatTag(tag) {
+  return tag.replace(/wanikani(.*?)/, (match, g1) => `Wanikani ${g1}`);
+}
+
 // The jishoResponseBody is the full response body of the request.
 // A jishoResponseItem is one element of the jishoResponseBody.data array.
 function parseJishoResponse(jishoResponseBody, searchPhrase) {
@@ -111,10 +115,13 @@ function parseJishoResponse(jishoResponseBody, searchPhrase) {
       readings: readingsForWord[word].filter(reading => !!reading),
     }));
 
+    const jlptTags = jishoResponseItem.jlpt.map(tag => tag.replace('-', ' ').toUpperCase());
+    const otherTags = jishoResponseItem.tags.map(formatTag);
+
     const resultMeanings = getMeanings(jishoResponseItem.senses);
     dictionaryEntries.push({
       wordsAndReadings: sortedWordsAndReadings,
-      resultTags: jishoResponseItem.tags,
+      resultTags: jlptTags.concat(otherTags),
       resultMeanings,
     });
   });
