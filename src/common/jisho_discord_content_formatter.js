@@ -52,14 +52,16 @@ function getLineForMeaning(meaning, meaningNumber) {
 }
 
 function getFieldValueForEntry(entry) {
-  const lines = entry.resultMeanings.map((meaning, index) => {
-    const meaningNumber = index + 1;
-    return getLineForMeaning(meaning, meaningNumber);
-  });
+  const lines = [];
 
   if (entry.resultTags.length > 0) {
-    lines.push(`**Tags**: ${entry.resultTags.join(', ')}`);
+    lines.push(`\`${entry.resultTags.join(', ')}\``);
   }
+
+  lines.push(...entry.resultMeanings.map((meaning, index) => {
+    const meaningNumber = index + 1;
+    return getLineForMeaning(meaning, meaningNumber);
+  }));
 
   return lines.join('\n');
 }
