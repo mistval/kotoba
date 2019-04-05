@@ -31,7 +31,7 @@ Then create a directory in the root directory called **config** and a file insid
 }
 ```
 
-Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys as empty strings (some features won't work though), but you must create the file as shown below:
 
 ```json
 {
