@@ -2,6 +2,7 @@ const reload = require('require-reload')(require);
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
+const { Permissions } = require('monochrome-bot');
 
 const quizManager = reload('./../common/quiz/manager.js');
 const createHelpContent = reload('./../common/quiz/decks_content.js').createContent;
@@ -1205,6 +1206,7 @@ module.exports = {
   cooldown: 1,
   shortDescription: 'See how to start a quiz in this channel.',
   longDescription: helpLongDescription,
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',
