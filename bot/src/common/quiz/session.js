@@ -91,6 +91,10 @@ class SessionInformation {
     return session;
   }
 
+  getScoreScopeId() {
+    return this.scores_.scoreScopeId;
+  }
+
   requiresAudioConnection() {
     return this.deckCollection_.requiresAudioConnection();
   }
