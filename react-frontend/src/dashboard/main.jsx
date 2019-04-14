@@ -23,6 +23,19 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
   if (gameReports.length === 0) {
     return <span>No game reports. Try doing some quizzes on Discord.</span>;
   }
+
+  return (
+    <div style={styles.listDiv}>
+      { gameReports.map((report) => {
+        return (
+          <div className="py-1 d-flex justify-content-between" key={report._id}>
+              <a href={`/dashboard/reports/${report._id}`} style={styles.listAnchor}>{report.sessionName} in {report.discordServerName}</a>
+              <span>{report.startTime}</span>
+          </div>
+        );
+      }) }
+    </div>
+  );
 }
 
 function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {

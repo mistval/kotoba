@@ -21,7 +21,7 @@ routes.get(
       .find({ participants: req.user })
       .sort({ startTime: -1 })
       .limit(40)
-      .select('sessionName startTime')
+      .select('sessionName startTime discordServerName')
       .lean()
       .exec();
 
