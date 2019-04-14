@@ -6,6 +6,7 @@ const saveManager = reload('./pause_manager.js');
 const cardStrategies = reload('./card_strategies.js');
 const retryPromise = reload('./../util/retry_promise.js');
 const globals = require('./../globals.js');
+const sessionReportManager = require('./session_report_manager.js');
 
 const LOGGER_TITLE = 'QUIZ';
 
@@ -36,6 +37,7 @@ function closeSession(session, gameOver) {
 
   delete state.quizManager.sessionForLocationId[locationId];
   delete state.quizManager.currentActionForLocationId[locationId];
+
   return Promise.resolve(session.finalize(gameOver));
 }
 
@@ -51,6 +53,8 @@ async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFina
     }
     delete state.quizManager.currentActionForLocationId[locationId];
   }
+
+  sessionReportManager.notifyStopped(locationId, session.getScoresForUserPairs());
 
   try {
     await closeSession(session, true);
@@ -228,6 +232,9 @@ class ShowAnswersAction extends Action {
       let answersForUser = scores.getCurrentQuestionsAnswersForUser();
       let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
       let scoreLimit = scores.getScoreLimit();
+
+      sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, answerersInOrder);
+
       if (answerersInOrder.length > 0) {
         Promise.resolve(session.getMessageSender().outputQuestionScorers(
           currentCard,
@@ -316,6 +323,7 @@ class ShowWrongAnswerAction extends Action {
   do() {
     let session = this.getSession_();
     let currentCard = session.getCurrentCard();
+    sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, []);
     return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_)).catch(err => {
       let question = currentCard.question;
       globals.logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message for ' + question, err);
@@ -474,6 +482,9 @@ class StartAction extends Action {
     const description = session.getQuizDescription();
     const quizLength = session.getRemainingCardCount();
     const scoreLimit = session.getScores().getScoreLimit();
+
+    sessionReportManager.notifyStarting(session.getLocationId(), session.getScoreScopeId(), name);
+
     return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description, quizLength, scoreLimit)).catch(err => {
       globals.logger.logFailure(LOGGER_TITLE, 'Error showing quiz starting message', err);
     }).then(() => {
@@ -519,6 +530,7 @@ class SaveAction extends Action {
       let saveData = session.createSaveData();
       return saveManager.save(saveData, this.savingUserId_, session.getName(), session.getGameModeIdentifier());
     }).then(() => {
+      sessionReportManager.notifyStopped(locationId, session.getScoresForUserPairs());
       return session.getMessageSender().notifySaveSuccessful().catch(err => {
         globals.logger.logFailure(LOGGER_TITLE, 'Error sending quiz save message', err);
       });

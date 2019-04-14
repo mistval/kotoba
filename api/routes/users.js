@@ -16,8 +16,9 @@ routes.get(
   '/me/reports',
   checkAuth,
   async (req, res) => {
+    const allReports = await GameReportModel.find({});
     const reports = await GameReportModel
-      .find({ participants: req.user._id })
+      .find({ participants: req.user })
       .sort({ startTime: -1 })
       .limit(40)
       .select('sessionName startTime')

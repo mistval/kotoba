@@ -3,6 +3,7 @@ const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
 const { Permissions } = require('monochrome-bot');
+const quizReportManager = require('./../common/quiz/session_report_manager.js');
 
 const quizManager = reload('./../common/quiz/manager.js');
 const createHelpContent = reload('./../common/quiz/decks_content.js').createContent;
@@ -160,7 +161,7 @@ const IntermediateAnswerListElementStrategy = {
     getIntermediateAnswerLineForAnswersWithScorersAndPointsFirst,
 };
 
-function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description, prefix) {
+function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLink, description, prefix, reportUri) {
   const fields = [];
 
   if (scores.length > 0) {
@@ -204,6 +205,10 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
 
     const unansweredQuestionsString = unansweredQuestionsLines.join('\n');
     fields.push({ name: `Unanswered Questions (${unansweredQuestions.length})`, value: unansweredQuestionsString });
+  }
+  
+  if (reportUri) {
+    fields.push({ name: 'Game Report', value: `[View a detailed report for this game](${reportUri}) (and add missed questions to your custom decks)` });
   }
 
   const response = {
@@ -295,6 +300,7 @@ async function sendEndQuizMessages(
     aggregateLink,
     description,
     prefix,
+    await quizReportManager.getMostRecentReportUriForLocation(commanderMessage.channel.id),
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
