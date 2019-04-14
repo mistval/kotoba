@@ -1,0 +1,9 @@
+#kanjiHeaderImage {
+  opacity: .77;
+}
+
+@media screen and (max-width: 800px) {
+  #kanjiHeaderImage {
+    max-width: 300px;
+  }
+}

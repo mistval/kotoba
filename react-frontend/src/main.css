@@ -1,0 +1,21 @@
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .inline-block {
+   display: inline-block;
+ }
+
+.label-darker {
+  color: rgba(0, 0, 0, .65);
+}
+
+.submenu-nav-link.active {
+  border-color: #009688 !important;
+}
+
+.toc-item {
+  font-size: 13px;
+}
