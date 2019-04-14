@@ -1,0 +1,1109 @@
+{
+  "uniqueId": "ono-en",
+  "name": "Onomatopoeia Quiz",
+  "article": "an",
+  "instructions": "Guess the word!",
+  "questionCreationStrategy": "TEXT_WITH_HINT",
+  "dictionaryLinkStrategy": "JISHO_ANSWER_WORD",
+  "answerTimeLimitStrategy": "WITH_HINT",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "ANSWER_ONLY",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Comment",
+  "description": "[Data provided by Kuroda Haru#7034]",
+  "cards": [
+    {
+      "question": "easily, readily, quickly, flatly (refuse)",
+      "answer": [
+        "あっさり",
+        "アッサリ"
+      ]
+    },
+    {
+      "question": "contrary, opposite, inverse, reverse, back-to-front",
+      "answer": [
+        "あべこべ",
+        "アベコベ"
+      ]
+    },
+    {
+      "question": "uncertain, vague, ambiguous",
+      "answer": [
+        "あやふや",
+        "アヤフヤ"
+      ]
+    },
+    {
+      "question": "cheerfully, excitedly",
+      "answer": [
+        "いそいそ",
+        "イソイソ"
+      ]
+    },
+    {
+      "question": "itching to do something, impatient, sorely tempted, eager",
+      "answer": [
+        "うずうず",
+        "ウズウズ"
+      ]
+    },
+    {
+      "question": "carelessly, thoughtlessly, inadvertently",
+      "answer": [
+        "うっかり",
+        "ウッカリ"
+      ]
+    },
+    {
+      "question": "falling into a doze, dozing off, nodding off",
+      "answer": [
+        "うとうと",
+        "うとっと",
+        "ウトウト",
+        "ウトット"
+      ]
+    },
+    {
+      "question": "loiteringly, aimless wandering, restlessly",
+      "answer": [
+        "うろうろ",
+        "うそうそ",
+        "ウロウロ",
+        "ウソウソ"
+      ]
+    },
+    {
+      "question": "tedious, boring, being fed up with",
+      "answer": [
+        "うんざり",
+        "ウンザリ"
+      ]
+    },
+    {
+      "question": "timidly, nervously, hesitantly, trembling (with fear)",
+      "answer": [
+        "おどおど",
+        "オドオド"
+      ]
+    },
+    {
+      "question": "in confusion, in a fluster, in bewilderment, in a dither, in a panic, all shook up, helplessly",
+      "answer": [
+        "おろおろ",
+        "オロオロ"
+      ]
+    },
+    {
+      "question": "dry and rough, desiccated",
+      "answer": [
+        "かさかさ",
+        "カサカサ"
+      ]
+    },
+    {
+      "question": "rustling",
+      "answer": [
+        "がさがさ",
+        "ガサガサ"
+      ]
+    },
+    {
+      "question": "boisterously, roughly, briskly",
+      "answer": [
+        "がしがし",
+        "ガシガシ"
+      ]
+    },
+    {
+      "question": "rattling, clattering",
+      "answer": [
+        "がたがた",
+        "ガタガタ"
+      ]
+    },
+    {
+      "question": "ticktock",
+      "answer": [
+        "かちかち",
+        "こちこち",
+        "かちこち",
+        "カチカチ",
+        "コチコチ",
+        "カチコチ"
+      ]
+    },
+    {
+      "question": "feel disappointed, dejected, lose heart, feel emotionally drained, feel let down",
+      "answer": [
+        "がっかり",
+        "ガッカリ"
+      ]
+    },
+    {
+      "question": "heartbroken, crestfallen, dejected, disappointed",
+      "answer": [
+        "がっくり",
+        "ガックリ"
+      ]
+    },
+    {
+      "question": "firmly, solidly, sturdily, strongly, toughly",
+      "answer": [
+        "がっしり",
+        "ガッシリ"
+      ]
+    },
+    {
+      "question": "solid, robust, well-built",
+      "answer": [
+        "がっちり",
+        "ガッチリ"
+      ]
+    },
+    {
+      "question": "gulping down, guzzling",
+      "answer": [
+        "がぶがぶ",
+        "ガブガブ"
+      ]
+    },
+    {
+      "question": "noisily (crowd of people talking), clamorously, in a hubbub, jabberingly, chatteringly, buzzingly",
+      "answer": [
+        "がやがや",
+        "かやかや",
+        "ガヤガヤ",
+        "カヤカヤ"
+      ]
+    },
+    {
+      "question": "clanging",
+      "answer": [
+        "がらん",
+        "ガラン"
+      ]
+    },
+    {
+      "question": "sound of large bell, sound of scolding voice, (pounding of) headache, intense",
+      "answer": [
+        "がんがん",
+        "ガンガン"
+      ]
+    },
+    {
+      "question": "notches, serration, indentation, jaggies (stair-step artifacts in computer images)",
+      "answer": [
+        "ぎざぎざ",
+        "ギザギザ"
+      ]
+    },
+    {
+      "question": "tightly, densely packed, crammed",
+      "answer": [
+        "ぎっしり",
+        "ぎっちり",
+        "ギッシリ",
+        "ギッチリ"
+      ]
+    },
+    {
+      "question": "exactly, precisely, punctually, on the dot",
+      "answer": [
+        "きっちり",
+        "キッチリ"
+      ]
+    },
+    {
+      "question": "clearly, plainly, distinctly, decisively, flatly, definitely, resolutely",
+      "answer": [
+        "きっぱり",
+        "キッパリ"
+      ]
+    },
+    {
+      "question": "looking around restlessly",
+      "answer": [
+        "きょろきょろ",
+        "きょときょと",
+        "キョロキョロ",
+        "キョトキョト"
+      ]
+    },
+    {
+      "question": "glittering, sparkling, glistening, twinkling",
+      "answer": [
+        "きらきら",
+        "キラキラ"
+      ]
+    },
+    {
+      "question": "glaring, dazzling, blazing",
+      "answer": [
+        "ぎらぎら",
+        "ギラギラ"
+      ]
+    },
+    {
+      "question": "just barely, only just, at the very limit, at the last moment",
+      "answer": [
+        "ぎりぎり",
+        "ギリギリ"
+      ]
+    },
+    {
+      "question": "slowly, tardily, dawdling, lingering, hesitantly",
+      "answer": [
+        "ぐずぐず",
+        "グズグズ"
+      ]
+    },
+    {
+      "question": "exhausted, tired",
+      "answer": [
+        "ぐだぐだ",
+        "くたくた",
+        "ぐたぐた",
+        "グダグダ",
+        "クタクタ",
+        "グタグタ"
+      ]
+    },
+    {
+      "question": "distinctly (standing out), clearly, in sharp relief, boldly",
+      "answer": [
+        "くっきり",
+        "クッキリ"
+      ]
+    },
+    {
+      "question": "soundly (sleeping), fast (asleep)",
+      "answer": [
+        "ぐっすり",
+        "グッスリ"
+      ]
+    },
+    {
+      "question": "completely exhausted, dead tired, limp, senseless",
+      "answer": [
+        "ぐったり",
+        "ぐたり",
+        "グッタリ",
+        "グタリ"
+      ]
+    },
+    {
+      "question": "tediously, repetitively, insistently, ad nauseam, at great length",
+      "answer": [
+        "くどくど",
+        "クドクド"
+      ]
+    },
+    {
+      "question": "worrying about, moping, brooding over, fretting",
+      "answer": [
+        "くよくよ",
+        "クヨクヨ"
+      ]
+    },
+    {
+      "question": "wobbling, tottering, shaking, unstably, unsteadily",
+      "answer": [
+        "ぐらぐら",
+        "グラグラ"
+      ]
+    },
+    {
+      "question": "whirling, revolving, spinning, going round and round",
+      "answer": [
+        "くるくる",
+        "クルクル"
+      ]
+    },
+    {
+      "question": "(turning) round and round, in circles",
+      "answer": [
+        "ぐるぐる",
+        "グルグル"
+      ]
+    },
+    {
+      "question": "sneakily, secretly, stealthily",
+      "answer": [
+        "こそこそ",
+        "コソコソ"
+      ]
+    },
+    {
+      "question": "ticktock",
+      "answer": [
+        "かちかち",
+        "こちこち",
+        "かちこち",
+        "カチカチ",
+        "コチコチ",
+        "カチコチ"
+      ]
+    },
+    {
+      "question": "unflaggingly, steadily, untiringly, laboriously",
+      "answer": [
+        "こつこつ",
+        "コツコツ"
+      ]
+    },
+    {
+      "question": "stealthily, secretly",
+      "answer": [
+        "こっそり",
+        "コッソリ"
+      ]
+    },
+    {
+      "question": "lightly rolling (of a small and round thing)",
+      "answer": [
+        "ころころ",
+        "ころんころん",
+        "コロコロ",
+        "コロンコロン"
+      ]
+    },
+    {
+      "question": "thundering, purring, grumbling (e.g. stomach)",
+      "answer": [
+        "ごろごろ",
+        "ごろんごろん",
+        "ゴロゴロ",
+        "ゴロンゴロン"
+      ]
+    },
+    {
+      "question": "sound of rushing water, sound of pouring rain, white noise sound",
+      "answer": [
+        "ざあざあ",
+        "ザアザア"
+      ]
+    },
+    {
+      "question": "promptly, immediately, quickly, without delay",
+      "answer": [
+        "さっさ",
+        "サッサ"
+      ]
+    },
+    {
+      "question": "feeling refreshed, feeling relieved",
+      "answer": [
+        "さっぱり",
+        "サッパリ"
+      ]
+    },
+    {
+      "question": "rustling, murmuring",
+      "answer": [
+        "さらさら",
+        "サラサラ"
+      ]
+    },
+    {
+      "question": "rough (touch, voice, etc.), coarse, gritty, granular",
+      "answer": [
+        "ざらざら",
+        "ザラザラ"
+      ]
+    },
+    {
+      "question": "noisily (e.g. from many people talking), creating a commotion",
+      "answer": [
+        "ざわざわ",
+        "ザワザワ"
+      ]
+    },
+    {
+      "question": "deliberately, carefully, thoroughly, without rushing",
+      "answer": [
+        "じっくり",
+        "ジックリ"
+      ]
+    },
+    {
+      "question": "gently (raining), drizzling",
+      "answer": [
+        "しとしと",
+        "シトシト"
+      ]
+    },
+    {
+      "question": "often, again and again, frequently, repeatedly",
+      "answer": [
+        "しばしば",
+        "シバシバ"
+      ]
+    },
+    {
+      "question": "damp, humid, wet, clammy, muggy, soggy",
+      "answer": [
+        "じめじめ",
+        "ジメジメ"
+      ]
+    },
+    {
+      "question": "shabu-shabu, thinly sliced meat boiled quickly with vegetables, and dipped in sauce",
+      "answer": [
+        "しゃぶしゃぶ",
+        "シャブシャブ"
+      ]
+    },
+    {
+      "question": "splashing water sound, with a splash",
+      "answer": [
+        "じゃぶじゃぶ",
+        "ジャブジャブ"
+      ]
+    },
+    {
+      "question": "downheartedly, dejectedly, dispiritedly, despondently",
+      "answer": [
+        "しょんぼり",
+        "ションボリ"
+      ]
+    },
+    {
+      "question": "slowly (but steadily), gradually, bit-by-bit",
+      "answer": [
+        "じわじわ",
+        "ジワジワ"
+      ]
+    },
+    {
+      "question": "throbbing with pain",
+      "answer": [
+        "ずきずき",
+        "ズキズキ"
+      ]
+    },
+    {
+      "question": "all, completely, totally, entirely, thoroughly",
+      "answer": [
+        "すっかり",
+        "スッカリ"
+      ]
+    },
+    {
+      "question": "feeling refreshed, feeling fine, feeling clear-headed",
+      "answer": [
+        "すっきり",
+        "スッキリ"
+      ]
+    },
+    {
+      "question": "entirely, completely",
+      "answer": [
+        "すっぽり",
+        "ずっぽり",
+        "ずっぽし",
+        "スッポリ",
+        "ズッポリ",
+        "ズッポシ"
+      ]
+    },
+    {
+      "question": "decisively, decidedly, boldly, once and for all, unreservedly, frankly",
+      "answer": [
+        "ずばり",
+        "ズバリ"
+      ]
+    },
+    {
+      "question": "sleeping peacefully, sleeping quietly, sleeping soundly",
+      "answer": [
+        "すやすや",
+        "スヤスヤ"
+      ]
+    },
+    {
+      "question": "smoothly, easily, readily",
+      "answer": [
+        "すらすら",
+        "スラスラ"
+      ]
+    },
+    {
+      "question": "in a row",
+      "answer": [
+        "ずらり",
+        "ズラリ"
+      ]
+    },
+    {
+      "question": "dragging, trailing",
+      "answer": [
+        "ずるずる",
+        "ズルズル"
+      ]
+    },
+    {
+      "question": "restlessly, hurriedly, agitatedly, fidgeting",
+      "answer": [
+        "せかせか",
+        "セカセカ"
+      ]
+    },
+    {
+      "question": "shivering, feeling chilly",
+      "answer": [
+        "ぞくぞく",
+        "ゾクゾク"
+      ]
+    },
+    {
+      "question": "all, altogether, entirely, completely",
+      "answer": [
+        "そっくり",
+        "ソックリ"
+      ]
+    },
+    {
+      "question": "slowly, quietly, steadily, gradually, gingerly",
+      "answer": [
+        "そろそろ",
+        "そろっと",
+        "ソロソロ",
+        "ソロット"
+      ]
+    },
+    {
+      "question": "in a crowd, in droves, in a stream, in succession",
+      "answer": [
+        "ぞろぞろ",
+        "ゾロゾロ"
+      ]
+    },
+    {
+      "question": "restlessly, nervously, uneasily, in a fidget",
+      "answer": [
+        "そわそわ",
+        "ソワソワ"
+      ]
+    },
+    {
+      "question": "full, in plenty, ample",
+      "answer": [
+        "たっぷり",
+        "タップリ"
+      ]
+    },
+    {
+      "question": "loose (of clothing), baggy",
+      "answer": [
+        "だぶだぶ",
+        "ダブダブ"
+      ]
+    },
+    {
+      "question": "drop-by-drop, dripping, dribbling, in a trickle",
+      "answer": [
+        "たらたら",
+        "タラタラ"
+      ]
+    },
+    {
+      "question": "in drops, dripping, trickling, streaming, flowing",
+      "answer": [
+        "だらだら",
+        "ダラダラ"
+      ]
+    },
+    {
+      "question": "mismatched, odd, irregular",
+      "answer": [
+        "ちぐはぐ",
+        "チグハグ"
+      ]
+    },
+    {
+      "question": "prickling, stinging, biting",
+      "answer": [
+        "ちくり",
+        "チクリ"
+      ]
+    },
+    {
+      "question": "a tiny bit, just a smidgin, a wee bit, very slightly",
+      "answer": [
+        "ちょっぴり",
+        "ちょぴり",
+        "チョッピリ",
+        "チョピリ"
+      ]
+    },
+    {
+      "question": "falling lightly (e.g. snow, petals, confetti), fluttering",
+      "answer": [
+        "ちらちら",
+        "ちらっちらっ",
+        "チラチラ",
+        "チラッチラッ"
+      ]
+    },
+    {
+      "question": "fleeting (glimpse, glance, etc.)",
+      "answer": [
+        "ちらり",
+        "チラリ"
+      ]
+    },
+    {
+      "question": "deeply, keenly, severely, completely, utterly",
+      "answer": [
+        "つくづく",
+        "つくつく",
+        "ツクヅク",
+        "ツクツク"
+      ]
+    },
+    {
+      "question": "smooth, shiny, slick",
+      "answer": [
+        "つるつる",
+        "ツルツル"
+      ]
+    },
+    {
+      "question": "trudgingly, going long way at steady pace",
+      "answer": [
+        "てくてく",
+        "テクテク"
+      ]
+    },
+    {
+      "question": "thump-thump, bang-bang, pit-a-pat, pitapat, pitter-patter",
+      "answer": [
+        "どきどき",
+        "どきんどきん",
+        "ドキドキ",
+        "ドキンドキン"
+      ]
+    },
+    {
+      "question": "rapidly, one after the other",
+      "answer": [
+        "どしどし",
+        "ドシドシ"
+      ]
+    },
+    {
+      "question": "noisily (esp. the noise of heavy feet)",
+      "answer": [
+        "どたばた",
+        "ドタバタ"
+      ]
+    },
+    {
+      "question": "syrupy, muddled",
+      "answer": [
+        "どろどろ",
+        "ドロドロ"
+      ]
+    },
+    {
+      "question": "tap, rap-tap, tapping",
+      "answer": [
+        "とんとん",
+        "トントン"
+      ]
+    },
+    {
+      "question": "drumming (noise), beating, pounding, banging, booming, stamping",
+      "answer": [
+        "どんどん",
+        "ドンドン"
+      ]
+    },
+    {
+      "question": "with a friendly grin, smilingly",
+      "answer": [
+        "にこにこ",
+        "ニコニコ"
+      ]
+    },
+    {
+      "question": "smile sweetly, smile, grin",
+      "answer": [
+        "にっこり",
+        "にこり",
+        "ニッコリ",
+        "ニコリ"
+      ]
+    },
+    {
+      "question": "grinning, smirking",
+      "answer": [
+        "にやにや",
+        "ニヤニヤ"
+      ]
+    },
+    {
+      "question": "slimy, slippery, greasy, clammy, gooey",
+      "answer": [
+        "ぬるぬる",
+        "ヌルヌル"
+      ]
+    },
+    {
+      "question": "slowly, sluggishly",
+      "answer": [
+        "のろのろ",
+        "ノロノロ"
+      ]
+    },
+    {
+      "question": "carefree, at leisure",
+      "answer": [
+        "のんびり",
+        "ノンビリ"
+      ]
+    },
+    {
+      "question": "state of being dried out",
+      "answer": [
+        "ぱさぱさ",
+        "パサパサ"
+      ]
+    },
+    {
+      "question": "flapping, rattling (sound), noisily, clattering noise",
+      "answer": [
+        "ばたばた",
+        "バタバタ"
+      ]
+    },
+    {
+      "question": "crackling, cracking, snapping, popping, clicking",
+      "answer": [
+        "ぱちぱち",
+        "パチパチ"
+      ]
+    },
+    {
+      "question": "clearly, plainly, distinctly",
+      "answer": [
+        "はっきり",
+        "ハッキリ"
+      ]
+    },
+    {
+      "question": "to feel anxious, to feel nervous, to be kept in suspense, to feel excited, to feel thrilled",
+      "answer": [
+        "はらはら",
+        "ハラハラ"
+      ]
+    },
+    {
+      "question": "scattered, disperse, loose, disconnected, in pieces, in drops, rustling",
+      "answer": [
+        "ばらばら",
+        "バラバラ"
+      ]
+    },
+    {
+      "question": "tearing, ripping, scratching",
+      "answer": [
+        "ばりばり",
+        "バリバリ"
+      ]
+    },
+    {
+      "question": "with a glitter, with a sparkle",
+      "answer": [
+        "ぴかぴか",
+        "ピカピカ"
+      ]
+    },
+    {
+      "question": "being afraid of, being fearful, being timid, being nervous",
+      "answer": [
+        "びくびく",
+        "ビクビク"
+      ]
+    },
+    {
+      "question": "whisperingly",
+      "answer": [
+        "ひそひそ",
+        "ヒソヒソ"
+      ]
+    },
+    {
+      "question": "tightly, closely",
+      "answer": [
+        "ぴったり",
+        "ぴたり",
+        "ぴったし",
+        "ピッタリ",
+        "ピタリ",
+        "ピッタシ"
+      ]
+    },
+    {
+      "question": "to be surprised, to be amazed, to be frightened, to be astonished, to get startled, to jump",
+      "answer": [
+        "びっくり",
+        "ビックリ"
+      ]
+    },
+    {
+      "question": "wet through, drenched",
+      "answer": [
+        "びっしょり",
+        "ビッショリ"
+      ]
+    },
+    {
+      "question": "closely (packed, lined up, etc.), tightly, densely",
+      "answer": [
+        "びっしり",
+        "ビッシリ"
+      ]
+    },
+    {
+      "question": "quiet (place), still, silent, deserted",
+      "answer": [
+        "ひっそり",
+        "ヒッソリ"
+      ]
+    },
+    {
+      "question": "tightly, closely",
+      "answer": [
+        "ぴったり",
+        "ぴたり",
+        "ぴったし",
+        "ピッタリ",
+        "ピタリ",
+        "ピッタシ"
+      ]
+    },
+    {
+      "question": "hopping, skipping, lightly and repeatedly jumping",
+      "answer": [
+        "ぴょんぴょん",
+        "ピョンピョン"
+      ]
+    },
+    {
+      "question": "fluttering",
+      "answer": [
+        "ひらひら",
+        "ヒラヒラ"
+      ]
+    },
+    {
+      "question": "stinging, smarting, tingling, burning",
+      "answer": [
+        "ぴりぴり",
+        "ピリピリ"
+      ]
+    },
+    {
+      "question": "lively, energetic, full of life",
+      "answer": [
+        "ぴんぴん",
+        "ピンピン"
+      ]
+    },
+    {
+      "question": "too large (clothing), baggy, loose-fitting",
+      "answer": [
+        "ぶかぶか",
+        "ブカブカ"
+      ]
+    },
+    {
+      "question": "grunt, grumble, complaint, mutter",
+      "answer": [
+        "ぶつぶつ",
+        "ブツブツ"
+      ]
+    },
+    {
+      "question": "unsteady (e.g. on one's feet), staggering, reeling, tottering, dizzy",
+      "answer": [
+        "ふらふら",
+        "フラフラ"
+      ]
+    },
+    {
+      "question": "dangling heavily, swaying to and fro, swinging",
+      "answer": [
+        "ぶらぶら",
+        "ブラブラ"
+      ]
+    },
+    {
+      "question": "trembling (with fear, anger, etc.), shivering (with cold), shaking, quivering",
+      "answer": [
+        "ぶるぶる",
+        "ブルブル"
+      ]
+    },
+    {
+      "question": "lightly (floating, drifting, etc.), buoyantly",
+      "answer": [
+        "ふわふわ",
+        "フワフワ"
+      ]
+    },
+    {
+      "question": "smelling strongly, pungently",
+      "answer": [
+        "ぷんぷん",
+        "プンプン"
+      ]
+    },
+    {
+      "question": "gently, airily, fluffily",
+      "answer": [
+        "ふんわり",
+        "フンワリ"
+      ]
+    },
+    {
+      "question": "very hungry, starving, famished",
+      "answer": [
+        "ぺこぺこ",
+        "ペコペコ"
+      ]
+    },
+    {
+      "question": "sticky",
+      "answer": [
+        "べたべた",
+        "ベタベタ"
+      ]
+    },
+    {
+      "question": "completely exhausted, dead tired, knackered",
+      "answer": [
+        "へとへと",
+        "ヘトヘト"
+      ]
+    },
+    {
+      "question": "fluent, fluency",
+      "answer": [
+        "ぺらぺら",
+        "ペラペラ"
+      ]
+    },
+    {
+      "question": "licking",
+      "answer": [
+        "ぺろぺろ",
+        "ペロペロ"
+      ]
+    },
+    {
+      "question": "vacantly, blankly, absentmindedly",
+      "answer": [
+        "ぽかん",
+        "ぱかん",
+        "ポカン",
+        "パカン"
+      ]
+    },
+    {
+      "question": "dripping water",
+      "answer": [
+        "ぽたぽた",
+        "ポタポタ"
+      ]
+    },
+    {
+      "question": "carelessly, inattentively, absentmindedly, doing nothing",
+      "answer": [
+        "ぼやぼや",
+        "ボヤボヤ"
+      ]
+    },
+    {
+      "question": "worn-out, ragged, tattered, battered, scruffy",
+      "answer": [
+        "ぼろぼろ",
+        "ボロボロ"
+      ]
+    },
+    {
+      "question": "dimly, faintly, indistinctly, vaguely",
+      "answer": [
+        "ぼんやり",
+        "ボンヤリ"
+      ]
+    },
+    {
+      "question": "confused, flustered, at a loss",
+      "answer": [
+        "まごまご",
+        "マゴマゴ"
+      ]
+    },
+    {
+      "question": "feeling sick, feeling queasy, feeling nauseated",
+      "answer": [
+        "むかむか",
+        "ムカムカ"
+      ]
+    },
+    {
+      "question": "sullenly, taciturnly, morosely, gloomily, silently",
+      "answer": [
+        "むっつり",
+        "ムッツリ"
+      ]
+    },
+    {
+      "question": "remarkably, markedly, rapidly",
+      "answer": [
+        "めきめき",
+        "メキメキ"
+      ]
+    },
+    {
+      "question": "comfortable, easy, calm, relaxed",
+      "answer": [
+        "ゆったり",
+        "ユッタリ"
+      ]
+    },
+    {
+      "question": "totteringly, with tottering steps",
+      "answer": [
+        "よちよち",
+        "ヨチヨチ"
+      ]
+    },
+    {
+      "question": "tottering, staggering, faltering, reeling",
+      "answer": [
+        "よろよろ",
+        "ヨロヨロ"
+      ]
+    },
+    {
+      "question": "noisily, clamorously, boisterously",
+      "answer": [
+        "わいわい",
+        "ワイワイ"
+      ]
+    },
+    {
+      "question": "trembling, getting nervous, excited, thrilled",
+      "answer": [
+        "わくわく",
+        "ワクワク"
+      ]
+    }
+  ]
+}
