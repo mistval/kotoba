@@ -79,7 +79,7 @@ class DashboardHeader extends Component {
     if (this.state.username) {
       return (
         <header className="w-100 bg-light d-flex justify-content-center">
-          <img src={this.state.avatarUri} className="my-5" />
+          <img src={this.state.avatarUri} className="my-5 rounded-circle" />
           <div className="d-flex flex-column justify-content-center ml-4">
             <h2>{this.state.username}</h2>
             <a href="/api/logout">Logout</a>
