@@ -11,6 +11,7 @@
     "install": "^0.12.2",
     "js-file-download": "^0.4.5",
     "kotoba-common": "file:../common",
+    "moment": "^2.24.0",
     "npm": "^6.9.0",
     "prop-types": "^15.6.2",
     "query-string": "^5.1.1",
