@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 const styles = {
   newQuizDeckIcon: {
@@ -29,8 +30,8 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
       { gameReports.map((report) => {
         return (
           <div className="py-1 d-flex justify-content-between" key={report._id}>
-              <a href={`/dashboard/reports/${report._id}`} style={styles.listAnchor}>{report.sessionName} in {report.discordServerName}</a>
-              <span>{report.startTime}</span>
+              <a href={`/dashboard/reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
+              <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
           </div>
         );
       }) }
