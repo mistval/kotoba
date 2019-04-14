@@ -17,8 +17,8 @@ import ShiritoriGameJoin from '../shiritori/join';
 import Dashboard from '../dashboard';
 import CustomDeck from '../dashboard/custom_deck';
 import LogList from '../admin/logs/list';
-import LogView from '../admin/logs/log';
 import LogViewer from '../admin/logs/log';
+import GameReport from '../dashboard/reports';
 
 Analytics.init();
 
@@ -37,6 +37,7 @@ function render() {
           <Route exact path="/bot/quiz" component={BotQuizManual} />
           <Route exact path="/strokeorder" component={StrokeOrder} />
           <Route exact path="/dashboard/decks/:id" component={CustomDeck} />
+          <Route exact path="/dashboard/game_reports/:id" component={GameReport} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/kanjigame/create" component={KanjiGameCreate} />
           <Route exact path="/kanjigame/game" component={KanjiGameRoom} />

@@ -30,7 +30,7 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
       { gameReports.map((report) => {
         return (
           <div className="py-1 d-flex justify-content-between" key={report._id}>
-              <a href={`/dashboard/reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
+              <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
               <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
           </div>
         );
@@ -91,7 +91,7 @@ class LoggedInMain extends Component {
   }
 
   componentWillMount() {
-    axios.get('/api/users/me/reports').then((response) => {
+    axios.get('/api/users/me/game_reports').then((response) => {
       this.setState({
         gameReports: response.data,
         gameReportsErrorMessage: '',
