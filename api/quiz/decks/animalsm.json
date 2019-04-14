@@ -1,0 +1,895 @@
+{
+  "uniqueId": "animalsm",
+  "name": "Animals Meaning Quiz",
+  "article": "an",
+  "instructions": "Type the meaning of the word!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "commentFieldName": "Reading",
+  "forceMC": true,
+  "cards": [
+    {
+      "question": "海豹",
+      "answer": [
+        "true seal (animal), earless seal"
+      ],
+      "meaning": "あざらし, かいひょう"
+    },
+    {
+      "question": "浅蜊",
+      "answer": [
+        "Manila clam (Ruditapes philippinarum)"
+      ],
+      "meaning": "あさり"
+    },
+    {
+      "question": "海驢",
+      "answer": [
+        "eared seal (esp. the California sea lion, Zalophus californianus), sea lion"
+      ],
+      "meaning": "あしか, みち"
+    },
+    {
+      "question": "葦鹿",
+      "answer": [
+        "eared seal (esp. the California sea lion, Zalophus californianus), sea lion"
+      ],
+      "meaning": "あしか"
+    },
+    {
+      "question": "雨虎",
+      "answer": [
+        "sea hare (esp. species Aplysia kurodai)"
+      ],
+      "meaning": "あめふらし"
+    },
+    {
+      "question": "雨降",
+      "answer": [
+        "rainfall, rainy weather, sea hare (esp. species Aplysia kurodai)"
+      ],
+      "meaning": "あめふり, あめふらし"
+    },
+    {
+      "question": "洗熊",
+      "answer": [
+        "common raccoon (Procyon lotor)"
+      ],
+      "meaning": "あらいぐま"
+    },
+    {
+      "question": "浣熊",
+      "answer": [
+        "common raccoon (Procyon lotor)"
+      ],
+      "meaning": "あらいぐま"
+    },
+    {
+      "question": "蟻食",
+      "answer": [
+        "anteater"
+      ],
+      "meaning": "ありくい"
+    },
+    {
+      "question": "食蟻獣",
+      "answer": [
+        "anteater"
+      ],
+      "meaning": "ありくい"
+    },
+    {
+      "question": "鮑",
+      "answer": [
+        "abalone, ear shell"
+      ],
+      "meaning": "あわび"
+    },
+    {
+      "question": "鰒",
+      "answer": [
+        "puffer fish, blow fish, fugu, globefish, swellfish, abalone, ear shell"
+      ],
+      "meaning": "ふぐ, あわび"
+    },
+    {
+      "question": "石決明",
+      "answer": [
+        "abalone, ear shell, powdered abalone shell (used in Chinese medicine)"
+      ],
+      "meaning": "あわび, せっけつめい"
+    },
+    {
+      "question": "烏賊",
+      "answer": [
+        "cuttlefish, squid"
+      ],
+      "meaning": "いか"
+    },
+    {
+      "question": "磯巾着",
+      "answer": [
+        "sea anemone"
+      ],
+      "meaning": "いそぎんちゃく"
+    },
+    {
+      "question": "菟葵",
+      "answer": [
+        "sea anemone"
+      ],
+      "meaning": "いそぎんちゃく"
+    },
+    {
+      "question": "鼬",
+      "answer": [
+        "weasel (esp. the Japanese weasel, Mustela itatsi)"
+      ],
+      "meaning": "いたち"
+    },
+    {
+      "question": "鼬鼠",
+      "answer": [
+        "weasel (esp. the Japanese weasel, Mustela itatsi)"
+      ],
+      "meaning": "いたち"
+    },
+    {
+      "question": "一角",
+      "answer": [
+        "corner, section, point, part, a cut above the rest, superior, respectable, full-fledged, something uncommon"
+      ],
+      "meaning": "いっかく, ひとかど, いっかど"
+    },
+    {
+      "question": "稲子",
+      "answer": [
+        "rice grasshopper (of genus Oxya)"
+      ],
+      "meaning": "いなご"
+    },
+    {
+      "question": "蝗",
+      "answer": [
+        "rice grasshopper (of genus Oxya), rice pest, grasshopper, locust (of superfamily Acridoidea)"
+      ],
+      "meaning": "いなご, こう, いなむし, おおねむし, ばった"
+    },
+    {
+      "question": "猪",
+      "answer": [
+        "wild boar, beast (esp. one used for its meat, such as a boar or a deer), hog (esp. a wild boar, but also including the domesticated pig)"
+      ],
+      "meaning": "いのしし, しし, い"
+    },
+    {
+      "question": "井守",
+      "answer": [
+        "newt (esp. the Japanese fire belly newt, Cynops pyrrhogaster)"
+      ],
+      "meaning": "いもり"
+    },
+    {
+      "question": "海豚",
+      "answer": [
+        "dolphin (or other small toothed whales, such as porpoises, belugas, etc.)"
+      ],
+      "meaning": "いるか"
+    },
+    {
+      "question": "兎",
+      "answer": [
+        "rabbit, hare, coney, cony, lagomorph (esp. leporids)"
+      ],
+      "meaning": "うさぎ, う"
+    },
+    {
+      "question": "海胆",
+      "answer": [
+        "sea urchin"
+      ],
+      "meaning": "うに"
+    },
+    {
+      "question": "海栗",
+      "answer": [
+        "sea urchin"
+      ],
+      "meaning": "うに"
+    },
+    {
+      "question": "海牛",
+      "answer": [
+        "sea slug (various orthogastropod species, esp. of order Nudibranchia), nudibranch, sirenian (any aquatic mammal of order Sirenia, incl. manatees, and dugongs), sea cow"
+      ],
+      "meaning": "うみうし, かいぎゅう"
+    },
+    {
+      "question": "海蛍",
+      "answer": [
+        "sea firefly (Vargula hilgendorfii), seed shrimp"
+      ],
+      "meaning": "うみほたる"
+    },
+    {
+      "question": "襟巻蜥蜴",
+      "answer": [
+        "frilled lizard (Chlamydosaurus kingii), frill-necked lizard"
+      ],
+      "meaning": "えりまきとかげ"
+    },
+    {
+      "question": "鸚鵡貝",
+      "answer": [
+        "chambered nautilus (esp. species Nautilus pompilius)"
+      ],
+      "meaning": "おうむがい"
+    },
+    {
+      "question": "狼",
+      "answer": [
+        "wolf (Canis lupus)"
+      ],
+      "meaning": "おおかみ, おおかめ, おいぬ"
+    },
+    {
+      "question": "御玉杓子",
+      "answer": [
+        "ladle"
+      ],
+      "meaning": "おたまじゃくし"
+    },
+    {
+      "question": "膃肭臍",
+      "answer": [
+        "fur seal (esp. the northern fur seal, Callorhinus ursinus), Alaskan fur seal"
+      ],
+      "meaning": "おっとせい"
+    },
+    {
+      "question": "蛙",
+      "answer": [
+        "frog"
+      ],
+      "meaning": "かえる, かわず, かいる"
+    },
+    {
+      "question": "牡蠣",
+      "answer": [
+        "oyster, oyster shell"
+      ],
+      "meaning": "かき, ぼれい"
+    },
+    {
+      "question": "蝸牛",
+      "answer": [
+        "snail, Cochlea"
+      ],
+      "meaning": "かたつむり, かぎゅう, でんでんむし"
+    },
+    {
+      "question": "蟹",
+      "answer": [
+        "crab"
+      ],
+      "meaning": "かに"
+    },
+    {
+      "question": "河馬",
+      "answer": [
+        "hippopotamus (Hippopotamus amphibius)"
+      ],
+      "meaning": "かば, かわうま"
+    },
+    {
+      "question": "兜蝦",
+      "answer": [
+        "tadpole shrimp (Triopsidae spp.), shield shrimp"
+      ],
+      "meaning": "かぶとえび"
+    },
+    {
+      "question": "兜蟹",
+      "answer": [
+        "horseshoe crab"
+      ],
+      "meaning": "かぶとがに"
+    },
+    {
+      "question": "蝦蟇",
+      "answer": [
+        "toad (esp. the Japanese toad, Bufo japonicus)"
+      ],
+      "meaning": "がまがえる, がま, かま"
+    },
+    {
+      "question": "蟇",
+      "answer": [
+        "toad (esp. the Japanese toad, Bufo japonicus)"
+      ],
+      "meaning": "ひきがえる, ひき, がまがえる, がま, かま"
+    },
+    {
+      "question": "羚羊",
+      "answer": [
+        "antelope, serow, wild goat"
+      ],
+      "meaning": "れいよう, かもしか"
+    },
+    {
+      "question": "川獺",
+      "answer": [
+        "otter (Lutra lutra)"
+      ],
+      "meaning": "かわうそ"
+    },
+    {
+      "question": "狐",
+      "answer": [
+        "fox (esp. the red fox, Vulpes vulpes)"
+      ],
+      "meaning": "きつね, けつね, きつ"
+    },
+    {
+      "question": "麒麟",
+      "answer": [
+        "giraffe (Giraffa camelopardalis)"
+      ],
+      "meaning": "きりん"
+    },
+    {
+      "question": "鯨",
+      "answer": [
+        "whale (Cetacea spp.)"
+      ],
+      "meaning": "くじら"
+    },
+    {
+      "question": "水母",
+      "answer": [
+        "jellyfish"
+      ],
+      "meaning": "くらげ, すいぼ"
+    },
+    {
+      "question": "海月",
+      "answer": [
+        "jellyfish"
+      ],
+      "meaning": "くらげ"
+    },
+    {
+      "question": "蝙蝠",
+      "answer": [
+        "bat (Chiroptera spp.)"
+      ],
+      "meaning": "こうもり, かわほり, へんぷく"
+    },
+    {
+      "question": "犀",
+      "answer": [
+        "rhinoceros"
+      ],
+      "meaning": "さい"
+    },
+    {
+      "question": "栄螺",
+      "answer": [
+        "turban shell (any mollusc of the family Turbinidae, esp. the horned turban, Turbo cornutus)"
+      ],
+      "meaning": "さざえ, さざい"
+    },
+    {
+      "question": "拳螺",
+      "answer": [
+        "turban shell (any mollusc of the family Turbinidae, esp. the horned turban, Turbo cornutus)"
+      ],
+      "meaning": "さざえ"
+    },
+    {
+      "question": "真田虫",
+      "answer": [
+        "tapeworm"
+      ],
+      "meaning": "さなだむし"
+    },
+    {
+      "question": "条虫",
+      "answer": [
+        "cestode, tapeworm"
+      ],
+      "meaning": "じょうちゅう"
+    },
+    {
+      "question": "珊瑚",
+      "answer": [
+        "coral"
+      ],
+      "meaning": "さんご"
+    },
+    {
+      "question": "山椒魚",
+      "answer": [
+        "salamander"
+      ],
+      "meaning": "さんしょううお"
+    },
+    {
+      "question": "獅子",
+      "answer": [
+        "lion"
+      ],
+      "meaning": "しし"
+    },
+    {
+      "question": "蜆",
+      "answer": [
+        "basket clam (Corbiculidae spp.), freshwater clam, freshwater mussel"
+      ],
+      "meaning": "しじみ"
+    },
+    {
+      "question": "縞馬",
+      "answer": [
+        "zebra"
+      ],
+      "meaning": "しまうま"
+    },
+    {
+      "question": "斑馬",
+      "answer": [
+        "zebra, speckled horse"
+      ],
+      "meaning": "しまうま, まだらうま, はんば, ぶちうま"
+    },
+    {
+      "question": "蝦蛄",
+      "answer": [
+        "mantis shrimp (any marine crustacean of order Stomatopoda, esp. the species Oratosquilla oratoria)"
+      ],
+      "meaning": "しゃこ"
+    },
+    {
+      "question": "青竜蝦",
+      "answer": [
+        "mantis shrimp (any marine crustacean of order Stomatopoda, esp. the species Oratosquilla oratoria)"
+      ],
+      "meaning": "しゃこ"
+    },
+    {
+      "question": "鯱",
+      "answer": [
+        "orca (Orcinus orca), killer whale, grampus, mythical carp with the head of a lion and the body of a fish (auspicious protectors of well-being)"
+      ],
+      "meaning": "しゃち, しゃちほこ, しゃっちょこ, さちほこ"
+    },
+    {
+      "question": "儒艮",
+      "answer": [
+        "dugong (Dugong dugon), sea pig"
+      ],
+      "meaning": "じゅごん"
+    },
+    {
+      "question": "水牛",
+      "answer": [
+        "water buffalo (Bubalus bubalis), domestic Asian water buffalo"
+      ],
+      "meaning": "すいぎゅう"
+    },
+    {
+      "question": "鼈",
+      "answer": [
+        "Chinese soft-shelled turtle (Pelodiscus sinensis), soft-shelled turtle (Trionychidae)"
+      ],
+      "meaning": "すっぽん"
+    },
+    {
+      "question": "海象",
+      "answer": [
+        "walrus (Odobenus rosmarus), marine phenomenon"
+      ],
+      "meaning": "せいうち, かいぞう, かいしょう"
+    },
+    {
+      "question": "海馬",
+      "answer": [
+        "eared seal (esp. the California sea lion, Zalophus californianus), sea lion, seahorse, sea horse, Steller's sea lion, Northern sea lion, walrus (Odobenus rosmarus)"
+      ],
+      "meaning": "あしか, かいば, うみうま, とど, せいうち"
+    },
+    {
+      "question": "蛸",
+      "answer": [
+        "octopus"
+      ],
+      "meaning": "たこ"
+    },
+    {
+      "question": "章魚",
+      "answer": [
+        "octopus"
+      ],
+      "meaning": "たこ"
+    },
+    {
+      "question": "鮹",
+      "answer": [
+        "octopus"
+      ],
+      "meaning": "たこ"
+    },
+    {
+      "question": "壁蝨",
+      "answer": [
+        "tick (Acari spp.), mite"
+      ],
+      "meaning": "だに"
+    },
+    {
+      "question": "田螺",
+      "answer": [
+        "pond snail (Viviparidae spp.)"
+      ],
+      "meaning": "たにし"
+    },
+    {
+      "question": "団子虫",
+      "answer": [
+        "pillbug, pill bug, woodlouse, sowbug, sow bug, slater"
+      ],
+      "meaning": "だんごむし"
+    },
+    {
+      "question": "蜥蜴",
+      "answer": [
+        "lizard"
+      ],
+      "meaning": "とかげ, せきえき"
+    },
+    {
+      "question": "石竜子",
+      "answer": [
+        "lizard"
+      ],
+      "meaning": "とかげ"
+    },
+    {
+      "question": "馴鹿",
+      "answer": [
+        "reindeer (Rangifer tarandus)"
+      ],
+      "meaning": "となかい, じゅんろく"
+    },
+    {
+      "question": "虎",
+      "answer": [
+        "tiger (Panthera tigris)"
+      ],
+      "meaning": "とら"
+    },
+    {
+      "question": "樹懶",
+      "answer": [
+        "sloth (Sth. Am. tree-dwelling mammal)"
+      ],
+      "meaning": "なまけもの"
+    },
+    {
+      "question": "海鼠",
+      "answer": [
+        "sea cucumber (Holothuroidea spp.)"
+      ],
+      "meaning": "なまこ, かいそ, こ"
+    },
+    {
+      "question": "蛞蝓",
+      "answer": [
+        "slug"
+      ],
+      "meaning": "なめくじ"
+    },
+    {
+      "question": "鼠",
+      "answer": [
+        "mouse, rat"
+      ],
+      "meaning": "ねずみ, ねず"
+    },
+    {
+      "question": "獏",
+      "answer": [
+        "tapir (Tapirus spp.)"
+      ],
+      "meaning": "ばく"
+    },
+    {
+      "question": "貘",
+      "answer": [
+        "tapir (Tapirus spp.)"
+      ],
+      "meaning": "ばく"
+    },
+    {
+      "question": "波布",
+      "answer": [
+        "habu (Trimeresurus flavoviridis), yellow-spotted pit viper"
+      ],
+      "meaning": "はぶ"
+    },
+    {
+      "question": "飯匙倩",
+      "answer": [
+        "habu (Trimeresurus flavoviridis), yellow-spotted pit viper"
+      ],
+      "meaning": "はぶ"
+    },
+    {
+      "question": "蛤",
+      "answer": [
+        "frog, common orient clam (Meretrix lusoria)"
+      ],
+      "meaning": "かえる, はまぐり"
+    },
+    {
+      "question": "文蛤",
+      "answer": [
+        "common orient clam (Meretrix lusoria)"
+      ],
+      "meaning": "はまぐり"
+    },
+    {
+      "question": "蚌",
+      "answer": [
+        "common orient clam (Meretrix lusoria)"
+      ],
+      "meaning": "はまぐり"
+    },
+    {
+      "question": "蜩",
+      "answer": [
+        "evening cicada (Tanna japonensis)"
+      ],
+      "meaning": "ひぐらし"
+    },
+    {
+      "question": "茅蜩",
+      "answer": [
+        "evening cicada (Tanna japonensis)"
+      ],
+      "meaning": "ひぐらし"
+    },
+    {
+      "question": "海星",
+      "answer": [
+        "starfish, sea star, asteroid, any echinoderm of the class Asteroidea"
+      ],
+      "meaning": "ひとで"
+    },
+    {
+      "question": "人手",
+      "answer": [
+        "starfish, sea star, asteroid, any echinoderm of the class Asteroidea, someone else's hands, other hands"
+      ],
+      "meaning": "ひとで"
+    },
+    {
+      "question": "海盤車",
+      "answer": [
+        "starfish, sea star, asteroid, any echinoderm of the class Asteroidea"
+      ],
+      "meaning": "ひとで"
+    },
+    {
+      "question": "狒狒",
+      "answer": [
+        "baboon"
+      ],
+      "meaning": "ひひ"
+    },
+    {
+      "question": "豹",
+      "answer": [
+        "leopard (Panthera pardus), panther"
+      ],
+      "meaning": "ひょう"
+    },
+    {
+      "question": "蛭",
+      "answer": [
+        "leech"
+      ],
+      "meaning": "ひる"
+    },
+    {
+      "question": "富士壺",
+      "answer": [
+        "acorn barnacle (Balanomorpha spp.)"
+      ],
+      "meaning": "ふじつぼ"
+    },
+    {
+      "question": "船虫",
+      "answer": [
+        "wharf roach (species of isopod closely related to the sea slater; Ligia exotica)"
+      ],
+      "meaning": "ふなむし"
+    },
+    {
+      "question": "帆立貝",
+      "answer": [
+        "Japanese scallop (Patinopecten yessoensis), Yesso scallop"
+      ],
+      "meaning": "ほたてがい"
+    },
+    {
+      "question": "法螺貝",
+      "answer": [
+        "conch (esp. Charonia tritonis), trumpet shell"
+      ],
+      "meaning": "ほらがい"
+    },
+    {
+      "question": "吹螺",
+      "answer": [
+        "conch (esp. Charonia tritonis), trumpet shell"
+      ],
+      "meaning": "ほらがい"
+    },
+    {
+      "question": "梭尾螺",
+      "answer": [
+        "conch (esp. Charonia tritonis), trumpet shell"
+      ],
+      "meaning": "ほらがい"
+    },
+    {
+      "question": "蝮",
+      "answer": [
+        "pit viper (esp. the mamushi, Gloydius blomhoffi)"
+      ],
+      "meaning": "まむし, はみ, くちばみ, たじひ"
+    },
+    {
+      "question": "微塵子",
+      "answer": [
+        "water flea (Daphnia spp.)"
+      ],
+      "meaning": "みじんこ"
+    },
+    {
+      "question": "蚯蚓",
+      "answer": [
+        "earthworm"
+      ],
+      "meaning": "みみず, めめず, きゅういん"
+    },
+    {
+      "question": "百足",
+      "answer": [
+        "centipede"
+      ],
+      "meaning": "むかで, ひゃくそく"
+    },
+    {
+      "question": "蜈蚣",
+      "answer": [
+        "centipede"
+      ],
+      "meaning": "むかで"
+    },
+    {
+      "question": "土竜",
+      "answer": [
+        "mole (Talpidae spp., esp. the small Japanese mole, Mogera imaizumii)"
+      ],
+      "meaning": "もぐら, むぐらもち, むぐら, もぐらもち, どりゅう"
+    },
+    {
+      "question": "山羊",
+      "answer": [
+        "goat"
+      ],
+      "meaning": "やぎ"
+    },
+    {
+      "question": "野羊",
+      "answer": [
+        "goat"
+      ],
+      "meaning": "やぎ"
+    },
+    {
+      "question": "馬陸",
+      "answer": [
+        "millipede"
+      ],
+      "meaning": "やすで"
+    },
+    {
+      "question": "寄居虫",
+      "answer": [
+        "hermit crab"
+      ],
+      "meaning": "やどかり, ごうな, かみな"
+    },
+    {
+      "question": "山荒",
+      "answer": [
+        "porcupine (any mammal of suborder Hystricomorpha)"
+      ],
+      "meaning": "やまあらし"
+    },
+    {
+      "question": "豪猪",
+      "answer": [
+        "porcupine (any mammal of suborder Hystricomorpha)"
+      ],
+      "meaning": "やまあらし"
+    },
+    {
+      "question": "家守",
+      "answer": [
+        "gecko, house lizard"
+      ],
+      "meaning": "やもり"
+    },
+    {
+      "question": "駱駝",
+      "answer": [
+        "camel"
+      ],
+      "meaning": "らくだ"
+    },
+    {
+      "question": "海獺",
+      "answer": [
+        "sea otter (Enhydra lutris), sea lion"
+      ],
+      "meaning": "らっこ, うみうそ, うみおそ"
+    },
+    {
+      "question": "猟虎",
+      "answer": [
+        "sea otter (Enhydra lutris)"
+      ],
+      "meaning": "らっこ"
+    },
+    {
+      "question": "獺虎",
+      "answer": [
+        "sea otter (Enhydra lutris)"
+      ],
+      "meaning": "らっこ"
+    },
+    {
+      "question": "騾馬",
+      "answer": [
+        "mule"
+      ],
+      "meaning": "らば"
+    },
+    {
+      "question": "栗鼠",
+      "answer": [
+        "squirrel (any mammal of family Sciuridae)"
+      ],
+      "meaning": "りす"
+    },
+    {
+      "question": "驢馬",
+      "answer": [
+        "donkey, ass"
+      ],
+      "meaning": "ろば"
+    }
+  ]
+}
