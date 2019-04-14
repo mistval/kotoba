@@ -1,6 +1,7 @@
 const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
-const mongoConnection = require('./../mongodb.js').connection;
+const { CUSTOM_DECKS_DIR } = require('kotoba-node-common').constants;
+const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const assert = require('assert');
 const fs = require('fs');
@@ -9,10 +10,7 @@ const mkdirp = require('mkdirp');
 const rateLimit = require('express-slow-down');
 const { deckValidation } = require('kotoba-common');
 
-const CUSTOM_DECKS_DIR = path.join(__dirname, '..', '..', 'custom_decks');
 const MAX_DECKS_PER_USER = 100;
-
-mkdirp.sync(CUSTOM_DECKS_DIR);
 
 function filePathForShortName(shortName) {
   return path.join(CUSTOM_DECKS_DIR, `${shortName}.json`);

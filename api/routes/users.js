@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
-const mongoConnection = require('./../mongodb.js').connection;
+const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(mongoConnection);
 

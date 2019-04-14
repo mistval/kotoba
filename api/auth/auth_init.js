@@ -1,7 +1,7 @@
 const passport = require('passport');
 const authConfig = require('./../config.js').auth;
 const DiscordPassportStrategy = require('passport-discord').Strategy;
-const mongoConnection = require('./../mongodb.js').connection;
+const mongoConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);
 
 function initialize(app) {
