@@ -1,0 +1,13 @@
+version: '3'
+services:
+  kotobaweb-front:
+    build: ./react-frontend/
+    restart: always
+  kotobaweb-back:
+    build: ./api/
+    restart: always
+  nginx:
+    build: ./nginx
+    restart: always
+    ports:
+      - "80:80"
