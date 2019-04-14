@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
-const { CUSTOM_DECKS_DIR } = require('kotoba-node-common').constants;
+const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const assert = require('assert');
@@ -13,7 +13,7 @@ const { deckValidation } = require('kotoba-common');
 const MAX_DECKS_PER_USER = 100;
 
 function filePathForShortName(shortName) {
-  return path.join(CUSTOM_DECKS_DIR, `${shortName}.json`);
+  return path.join(CUSTOM_DECK_DIR, `${shortName}.json`);
 }
 
 async function checkShortNameUnique(req, res, next) {
@@ -131,7 +131,7 @@ const postPatchLimiter = rateLimit({
 
 function writeFullDeck(deck) {
   return new Promise((fulfill, reject) => {
-    const outPath = path.join(CUSTOM_DECKS_DIR, `${deck.shortName}.json`);
+    const outPath = filePathForShortName(deck.shortName);
     fs.writeFile(outPath, JSON.stringify(deck), (err) => {
       if (err) {
         console.warn(err);

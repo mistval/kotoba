@@ -4,7 +4,10 @@ const assert = require('assert');
 const request = require('request-promise');
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
+const path = require('path');
+const fs = require('fs');
 const { throwPublicErrorInfo } = require('../../common/util/errors.js');
+const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 
 const { PublicError } = require('monochrome-bot');
 const decksMetadata = reload('./../../../generated/quiz/decks.json');
@@ -254,6 +257,7 @@ function tryCreateDeckFromRawData(data, uri) {
     commentFieldName: 'Meaning',
     cards: createCardGetterFromInMemoryArray(cards),
   };
+
   validateDeckPropertiesValid(deck);
   return deck;
 }
@@ -314,7 +318,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
     } else {
       throwPublicErrorInfo('Quiz', 'Please visit [the web dashboard](http://kotobaweb.com/dashboard) to create custom quizzes.', 'trying to load new deck from pastebin');
     }
-  } else {
+  } else if (deckUri) {
     throwPublicErrorInfo('Quiz', 'Please visit [the web dashboard](http://kotobaweb.com/dashboard) to create custom quizzes.', 'trying to load new deck from pastebin');
   }
 
@@ -421,6 +425,46 @@ function createOutOfBoundsCardRangeStatus(decks) {
   return undefined;
 }
 
+async function getCustomDeckFromDisk(deckInfo) {
+  const deckPath = path.join(CUSTOM_DECK_DIR, `${deckInfo.deckNameOrUniqueId.toLowerCase()}.json`);
+
+  return new Promise((fulfill, reject) => {
+    fs.readFile(deckPath, 'utf8', (err, deckText) => {
+      if (err) {
+        return fulfill(undefined);
+      }
+
+      const deckRaw = JSON.parse(deckText);
+
+      const cards = deckRaw.cards.map(card => ({
+        question: card.question,
+        answer: card.answers,
+        meaning: card.comment,
+        questionCreationStrategy: card.questionCreationStrategy,
+      }));
+
+      const deck = {
+        isInternetDeck: true,
+        name: deckRaw.name,
+        shortName: deckRaw.shortName,
+        article: 'a',
+        dictionaryLinkStrategy: 'NONE',
+        answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
+        cardPreprocessingStrategy: 'NONE',
+        discordFinalAnswerListElementStrategy: 'QUESTION_AND_ANSWER_LINK_QUESTION',
+        scoreAnswerStrategy: 'ONE_ANSWER_ONE_POINT',
+        additionalAnswerWaitStrategy: 'JAPANESE_SETTINGS',
+        discordIntermediateAnswerListElementStrategy: 'CORRECT_ANSWERS',
+        answerCompareStrategy: 'CONVERT_KANA',
+        commentFieldName: 'Comment',
+        cards: createCardGetterFromInMemoryArray(cards),
+      };
+
+      fulfill(deck);
+    });
+  });
+}
+
 async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
   const decks = [];
 
@@ -429,7 +473,22 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
     decks.push(getDeckFromMemory(deckInfo));
   });
 
-  // For any decks not found in memory, try to get from internet.
+  // For any decks not found in memory, look for them as custom decks on disk.
+  const customDeckPromises = decks.map((deck, i) => {
+    if (deck) {
+      return undefined;
+    }
+
+    return getCustomDeckFromDisk(deckInfos[i]).then(customDeck => {
+      if (customDeck) {
+        decks[i] = customDeck;
+      }
+    });
+  }).filter(x => x);
+
+  await Promise.all(customDeckPromises);
+
+  // For any decks not found in memory or as custom decks on disk, try to get from internet.
   const promises = [];
   for (let i = 0; i < decks.length; i += 1) {
     const deck = decks[i];
