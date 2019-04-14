@@ -1,13 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
 const authInit = require('./auth/auth_init.js');
-const mongo = require('./mongodb.js');
 const session  = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const config = require('./config.js');
 const readline = require('readline');
 const rfs = require('rotating-file-stream');
 const moment = require('moment');
+const mongoConnection = require('kotoba-node-common').database.connection;
 
 const app = express();
 const server = require('http').Server(app);
@@ -57,7 +57,7 @@ app.use(morgan(formatLogLine, { stream: accessLogStream }));
 const sessionConfig = config.session;
 
 const sessionStore = new MongoStore({
-  mongooseConnection: mongo.connection,
+  mongooseConnection: mongoConnection,
 });
 
 app.use(

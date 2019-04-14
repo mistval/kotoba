@@ -30,6 +30,7 @@
     "disk-array": "^1.0.1",
     "html-entities": "1.2.1",
     "kitsu": "7.0.0",
+    "kotoba-node-common": "file:../node-common",
     "mkdirp": "0.5.1",
     "mongoose": "5.2.14",
     "monochrome-bot": "2.2.0",
