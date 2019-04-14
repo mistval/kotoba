@@ -24,6 +24,36 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
   );
 }
 
+function ScorerAvatar({ discordUser }) {
+  return <img src={avatarUriForAvatar(discordUser.avatar, discordUser.id)} key={discordUser.id} className="rounded-circle" width="32" height="32" />;
+}
+
+function ScorersCell({ scorers, participantForId }) {
+  const avatars = scorers
+    .map(scorer => participantForId[scorer].discordUser)
+    .map(dUser => <ScorerAvatar discordUser={dUser} key={dUser.id} />);
+
+  return (
+    <td>
+      <div class="d-flex flex-wrap">
+        { avatars }
+      </div>
+    </td>
+  );
+}
+
+function CardRow({card, participantForId}) {
+  console.log(card);
+  return (
+    <tr>
+      <td>{card.question}</td>
+      <td>{card.answers.join(', ')}</td>
+      <td>{card.comment}</td>
+      <ScorersCell scorers={card.correctAnswerers} participantForId={participantForId} />
+    </tr>
+  )
+}
+
 class ReportView extends Component {
   constructor() {
     super();
@@ -74,8 +104,13 @@ class ReportView extends Component {
     const firstParticipant = this.state.report.participants[0];
     const firstDiscordUser = firstParticipant.discordUser;
     const firstParticipantAvatarUri = avatarUriForAvatar(firstDiscordUser.avatar, firstDiscordUser.id);
-    const pointsForParticipantId = {};
 
+    const participantForId = {};
+    this.state.report.participants.forEach((participant) => {
+      participantForId[participant._id] = participant;
+    });
+
+    const pointsForParticipantId = {};
     this.state.report.scores.forEach(({ user, score }) => {
       pointsForParticipantId[user] = score;
     });
@@ -86,16 +121,34 @@ class ReportView extends Component {
         <main class="container">
           <div class="row">
             <div className="col-12">
-              <div className="d-flex flex-column align-items-center mt-5">
+              <div className="d-flex flex-column mt-5">
                 <h1>{this.state.report.sessionName}</h1>
                 <div className="d-flex align-items-center mt-2">
                   <img src={this.state.report.discordServerIconUri || firstParticipantAvatarUri} width="32" height="32" className="rounded-circle mr-3" />
                   <strong>{this.state.report.discordServerName}</strong>
                   { this.state.report.channelName || '' }
                 </div>
-                <div className="d-flex mt-5">
+                <div className="d-flex flex-wrap mt-5">
                   { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} />) }
                 </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Question</th>
+                      <th scope="col">Answers</th>
+                      <th scope="col">Comment</th>
+                      <th scope="col">Scorers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
