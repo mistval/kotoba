@@ -4,6 +4,7 @@ const assert = require('assert');
 const request = require('request-promise');
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
+const { throwPublicErrorInfo } = require('../../common/util/errors.js');
 
 const { PublicError } = require('monochrome-bot');
 const decksMetadata = reload('./../../../generated/quiz/decks.json');
@@ -310,7 +311,11 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
       deckUri = foundDatabaseEntry.uri;
       ({ uniqueId } = foundDatabaseEntry);
       author = foundDatabaseEntry.authorName;
+    } else {
+      throwPublicErrorInfo('Quiz', 'Please visit [the web dashboard](http://kotobaweb.com/dashboard) to create custom quizzes.', 'trying to load new deck from pastebin');
     }
+  } else {
+    throwPublicErrorInfo('Quiz', 'Please visit [the web dashboard](http://kotobaweb.com/dashboard) to create custom quizzes.', 'trying to load new deck from pastebin');
   }
 
   // If the given deck name is not a pastebin URI, and we didn't
