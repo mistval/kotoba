@@ -6,7 +6,7 @@ import './animations.css';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
-import ErrorStripe from './../../controls/error_stripe';
+import ErrorStripe from '../../controls/error_stripe';
 import { deckValidation } from 'kotoba-common';
 import { Editors } from 'react-data-grid-addons';
 

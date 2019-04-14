@@ -13,7 +13,7 @@ routes.get(
 );
 
 routes.get(
-  '/me/reports',
+  '/me/game_reports',
   checkAuth,
   async (req, res) => {
     const allReports = await GameReportModel.find({});
