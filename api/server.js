@@ -62,6 +62,9 @@ const sessionStore = new MongoStore({
 
 app.use(
   session({
+    cookie: {
+      maxAge: 365 * 24 * 60 * 60, // 1 year. Not really any need to expire sessions regularly.
+    },
     secret: sessionConfig.secret,
     store: sessionStore,
     resave: false,
