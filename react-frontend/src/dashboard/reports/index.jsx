@@ -2,18 +2,9 @@ import React, { Component, PureComponent } from 'react';
 import Header from './../header';
 import axios from 'axios';
 import defaultAvatar from '../../img/discord_default_avatar.png';
-import ErrorStripe from './../../controls/error_stripe';
+import NotificationStripe from '../../controls/notification_stripe';
 
 const trophies = ['🏆', '🥈', '🥉'];
-
-const styles = {
-  deckSelectorVisible: {
-  },
-  deckSelectorInvisible: {
-    height: '0px',
-    overflow: 'hidden',
-  },
-};
 
 function avatarUriForAvatar(avatar, userId) {
   return avatar ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}` : defaultAvatar;
@@ -108,7 +99,7 @@ class ReportView extends Component {
       this.setState({ report });
     } catch (err) {
       let errorMessage;
-      if (err.response.status === 404) {
+      if (err.response && err.response.status === 404) {
         errorMessage = 'Report not found. Check that your link is valid.';
       } else {
         errorMessage = err.message;
@@ -195,6 +186,7 @@ class ReportView extends Component {
   onAddToDeck = () => {
     this.setState({
       adding: true,
+      showStripeMessage: false,
     }, async () => {
       try {
         const deck = this.state.customDecks[this.state.selectedDeckIndex];
@@ -314,7 +306,7 @@ class ReportView extends Component {
                 <select className="custom-select mb-2 mt-5" defaultValue={-1} onChange={this.onSelectedDeckChanged}>
                   <option value={-1}>Choose a deck</option>
                   {
-                    this.state.customDecks.map((deck, i) => (
+                    (this.state.customDecks || []).map((deck, i) => (
                       <option key={deck._id} value={i}>{deck.name} ({deck.shortName})</option>
                     ))
                   }
@@ -324,7 +316,7 @@ class ReportView extends Component {
             </div>
           </div>
         </main>
-        <ErrorStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} />
+        <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />
       </>
     );
   }
