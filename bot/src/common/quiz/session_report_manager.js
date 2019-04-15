@@ -137,7 +137,7 @@ async function notifyStopped(locationId, scores) {
         endTime: Date.now(),
         participants: userModels,
         discordServerIconUri: guild ? guild.iconURL : undefined,
-        discordServerName: guild ? guild.name : 'DM',
+        discordServerName: guild ? guild.name : undefined,
         discordChannelName: guild ? guild.channels.get(locationId).name : 'DM',
         scores: scores.map(score => ({ user: userModelForId[score.userId], score: score.totalScore })),
         questions: report.cards.map((card) => ({

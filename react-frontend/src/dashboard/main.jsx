@@ -11,11 +11,23 @@ const styles = {
     maxHeight: '400px',
     overflow: 'auto',
   },
+  emptyIconDiv: {
+    width: '24px',
+    height: '24px',
+  }
 };
 
 function getServerIcon(report) {
-  let uri = report.discordServerIconUri || localStorage.getItem('avatarUri') || defaultAvatar;
-  return <img src={uri} height="24" width="24" class="rounded-circle mr-2" />;
+  let uri = report.discordServerIconUri;
+  if (!uri && !report.discordServerName) {
+    uri = localStorage.getItem('avatarUri') || defaultAvatar;
+  }
+
+  if (uri) {
+    return <img src={uri} height="24" width="24" class="rounded-circle mr-3" />;
+  }
+
+  return <div style={styles.emptyIconDiv} className="mr-3" />
 }
 
 function createGameReportsBody(gameReports, gameReportsErrorMessage) {
