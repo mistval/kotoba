@@ -299,7 +299,6 @@ class ReportView extends Component {
                 <h1>{this.state.report.sessionName}</h1>
                 <div className="d-flex align-items-center mb-5">
                   <span className="badge badge-primary">
-                    <strong>{this.state.report.discordServerName}</strong>
                     { this.state.report.serverName || 'DM' }
                   </span>
                 </div>
