@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const rateLimit = require('express-slow-down');
 const { deckValidation } = require('kotoba-common');
+const uuidv4 = require('uuid/v4');
 
 const MAX_DECKS_PER_USER = 100;
 
@@ -194,7 +195,7 @@ routes.post(
       shortName: req.body.shortName,
       cards: req.body.cards,
       ownerDiscordUser: req.user.discordUser,
-      uniqueId: `custom_${req.user._id}_${Date.now()}_${req.body.shortName}`,
+      uniqueId: uuidv4(),
     };
 
     deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
