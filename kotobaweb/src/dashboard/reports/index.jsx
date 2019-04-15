@@ -300,7 +300,7 @@ class ReportView extends Component {
                 <div className="d-flex align-items-center mb-5">
                   <span className="badge badge-primary">
                     <strong>{this.state.report.discordServerName}</strong>
-                    { this.state.report.channelName || '' }
+                    { this.state.report.serverName || 'DM' }
                   </span>
                 </div>
                 <div className="d-flex flex-wrap mt-5 justify-content-center">
