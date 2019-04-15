@@ -35,7 +35,7 @@ function ScorersCell({ scorers, participantForId }) {
 
   return (
     <td>
-      <div class="d-flex flex-wrap">
+      <div className="d-flex flex-wrap">
         { avatars }
       </div>
     </td>
@@ -118,20 +118,22 @@ class ReportView extends Component {
     return (
       <>
         <Header />
-        <main class="container">
-          <div class="row">
+        <main className="container">
+          <div className="row">
             <div className="col-12">
-              <div className="d-flex flex-column mt-5">
+              <div className="d-flex flex-column mt-5 align-items-center">
                 <h1>{this.state.report.sessionName}</h1>
-                <div className="d-flex align-items-center mt-2">
-                  <img src={this.state.report.discordServerIconUri || firstParticipantAvatarUri} width="32" height="32" className="rounded-circle mr-3" />
-                  <strong>{this.state.report.discordServerName}</strong>
-                  { this.state.report.channelName || '' }
+                <div className="d-flex align-items-center mb-5">
+                  <img src={this.state.report.discordServerIconUri || firstParticipantAvatarUri} width="32" height="32" className="rounded-circle mr-2" />
+                  <span class="badge badge-primary">
+                    <strong>{this.state.report.discordServerName}</strong>
+                    { this.state.report.channelName || '' }
+                  </span>
                 </div>
                 <div className="d-flex flex-wrap mt-5">
-                  { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} />) }
+                  { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} key={participant._id} />) }
                 </div>
-                <table class="table">
+                <table className="table mt-5">
                   <thead>
                     <tr>
                       <th scope="col">Question</th>
@@ -141,12 +143,7 @@ class ReportView extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
-                    { this.state.report.questions.map(card => <CardRow card={card} participantForId={participantForId} /> ) }
+                    { this.state.report.questions.map((card, i) => <CardRow card={card} participantForId={participantForId} key={i} /> ) }
                   </tbody>
                 </table>
               </div>
