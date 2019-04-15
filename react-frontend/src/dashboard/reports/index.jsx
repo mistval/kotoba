@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import Header from './../header';
 import axios from 'axios';
 import defaultAvatar from '../../img/discord_default_avatar.png';
@@ -17,21 +17,22 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
   return (
     <div className="d-flex flex-column align-items-center" key="id">
-      <img src={avatarUri} className="rounded-circle mb-2" />
+      <img src={avatarUri} className="rounded-circle mb-3" />
       {nameString}
       <span className="text-primary">{pointsString}</span>
     </div>
   );
 }
 
-function ScorerAvatar({ discordUser }) {
-  return <img src={avatarUriForAvatar(discordUser.avatar, discordUser.id)} key={discordUser.id} className="rounded-circle" width="32" height="32" />;
+function ScorerAvatarSmall({ discordUser }) {
+  const uri = avatarUriForAvatar(discordUser.avatar, discordUser.id);
+  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1" width="32" height="32" />;
 }
 
 function ScorersCell({ scorers, participantForId }) {
   const avatars = scorers
     .map(scorer => participantForId[scorer].discordUser)
-    .map(dUser => <ScorerAvatar discordUser={dUser} key={dUser.id} />);
+    .map(dUser => <ScorerAvatarSmall discordUser={dUser} key={dUser.id} />);
 
   return (
     <td>
@@ -42,16 +43,31 @@ function ScorersCell({ scorers, participantForId }) {
   );
 }
 
-function CardRow({card, participantForId}) {
-  console.log(card);
+function CardRow({card, participantForId, onCheck}) {
   return (
     <tr>
+      <td><input type="checkbox" onClick={onCheck} checked={card.checked} /></td>
       <td>{card.question}</td>
       <td>{card.answers.join(', ')}</td>
       <td>{card.comment}</td>
       <ScorersCell scorers={card.correctAnswerers} participantForId={participantForId} />
     </tr>
   )
+}
+
+class Questions extends PureComponent {
+  render() {
+    return this.props.cards.map((card, i) => {
+      return (
+        <CardRow
+          card={card}
+          participantForId={this.props.participantForId}
+          key={i}
+          onCheck={(ev) => this.props.onCardChecked(ev.target.checked, i)}
+        />
+      );
+    });
+  }
 }
 
 class ReportView extends Component {
@@ -62,6 +78,7 @@ class ReportView extends Component {
       showStripeMessage: false,
       stripeMessage: '',
       stripeMessageIsError: false,
+      checkAll: false,
     };
   }
 
@@ -94,6 +111,29 @@ class ReportView extends Component {
 
   componentWillUnmount() {
     console.log('y');
+  }
+
+  onCardChecked = (checked, index) => {
+    this.setState((state) => {
+      if (!checked) {
+        state.checkAll = false;
+      }
+      state.report.questions[index].checked = checked;
+      return state;
+    });
+  }
+
+  onCheckAll = (ev) => {
+    const checked = ev.target.checked;
+
+    this.setState((state) => {
+      state.checkAll = checked;
+      state.report.questions.forEach((question) => {
+        question.checked = checked;
+      });
+
+      return state;
+    });
   }
 
   render() {
@@ -136,6 +176,7 @@ class ReportView extends Component {
                 <table className="table mt-5">
                   <thead>
                     <tr>
+                      <th width="20px"><input type="checkbox" checked={this.state.checkAll} onClick={this.onCheckAll} /></th>
                       <th scope="col">Question</th>
                       <th scope="col">Answers</th>
                       <th scope="col">Comment</th>
@@ -143,7 +184,11 @@ class ReportView extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    { this.state.report.questions.map((card, i) => <CardRow card={card} participantForId={participantForId} key={i} /> ) }
+                    <Questions
+                      cards={this.state.report.questions}
+                      participantForId={participantForId}
+                      onCardChecked={this.onCardChecked}
+                    />
                   </tbody>
                 </table>
               </div>
