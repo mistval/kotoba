@@ -196,9 +196,45 @@ class ReportView extends Component {
       adding: true,
     }, async () => {
       try {
-        await axios.patch()
-      } catch (err) {
+        const deck = this.state.customDecks[this.state.selectedDeckIndex];
+        const request = {
+          appendCards: true,
+          cards: this.state.report.questions.filter(q => q.checked).map(q => ({
+            question: q.question,
+            answers: q.answers,
+            comment: q.comment,
+            instructions: q.instructions,
+            questionCreationStrategy: q.questionCreationStrategy,
+          })),
+        };
 
+        await axios.patch(`/api/decks/${deck._id}`, request);
+
+        this.setState({
+          stripeMessage: 'Questions added',
+          stripeMessageIsError: false,
+          showStripeMessage: true,
+        });
+      } catch (err) {
+        console.log(JSON.stringify(err, null, 2));
+        let errorMessage;
+        if (err.response && err.response.data) {
+          if (err.response.data.rejectedCard) {
+            errorMessage = <span>That deck already has this question: <strong>{err.response.data.rejectedCard.question}</strong>. No questions were added.</span>;
+          } else if (err.response.data.rejectionReason) {
+            errorMessage = err.response.data.rejectionReason;
+          } else {
+            errorMessage = 'Unknown error, please report';
+          }
+        } else {
+          errorMessage = err.message;
+        }
+
+        this.setState({
+          stripeMessage: errorMessage,
+          stripeMessageIsError: true,
+          showStripeMessage: true,
+        });
       }
 
       this.setState({
@@ -282,7 +318,7 @@ class ReportView extends Component {
                     ))
                   }
                 </select>
-                <button className="btn btn-primary mb-5" onClick={this.onAddToDeck} disabled={this.state.adding || this.state.selectedDeckIndex === -1}>Add selected questions to deck</button>
+                <button className="btn btn-primary mb-5" onClick={this.onAddToDeck} disabled={this.state.adding || this.state.selectedDeckIndex === -1 || !this.state.anySelected}>Add selected questions to deck</button>
               </div>
             </div>
           </div>

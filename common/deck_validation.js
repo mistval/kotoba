@@ -28,11 +28,12 @@ const allowedQuestionCreationStrategies = Object.keys(maxLengthForQuestionCreati
 
 const successValidationResult = { success: true };
 
-function createFailureValidationResult(rejectedLine, rejectionReason) {
+function createFailureValidationResult(rejectedLine, rejectionReason, card) {
   return {
     success: false,
     rejectedLine,
     rejectionReason,
+    rejectedCard: card,
   };
 }
 
@@ -96,35 +97,35 @@ function validateCards(cards) {
     }
 
     if (typeof card !== typeof {}) {
-      return createFailureValidationResult(cardIndex, 'Question is not an object. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Question is not an object. Please report this error.', card);
     }
 
     if (typeof card.questionCreationStrategy !== typeof '') {
-      return createFailureValidationResult(cardIndex, 'Question creation strategy is not a string. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Question creation strategy is not a string. Please report this error.', card);
     }
 
     if (!card.questionCreationStrategy) {
-      return createFailureValidationResult(cardIndex, 'No value for Render As. Render As must be either Image or Text.');
+      return createFailureValidationResult(cardIndex, 'No value for Render As. Render As must be either Image or Text.', card);
     }
 
     if (!allowedQuestionCreationStrategies.some(strat => strat === card.questionCreationStrategy)) {
-      return createFailureValidationResult(cardIndex, 'Invalid Render As strategy. It must be either Image or Text.');
+      return createFailureValidationResult(cardIndex, 'Invalid Render As strategy. It must be either Image or Text.', card);
     }
 
     if (typeof card.question !== typeof '') {
-      return createFailureValidationResult(cardIndex, 'Question is not a string. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Question is not a string. Please report this error.', card);
     }
 
     if (card.question.length < 1) {
-      return createFailureValidationResult(cardIndex, 'No question. Please add a question or clear out the row.');
+      return createFailureValidationResult(cardIndex, 'No question. Please add a question or clear out the row.', card);
     }
 
     if (card.questionCreationStrategy === 'IMAGE' && card.question.length > IMAGE_QUESTION_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `That question is too long to render as an image. Only questions ${IMAGE_QUESTION_MAX_LENGTH} characters long or shorter can be rendered as an image. Consider shortening the question or setting its Render As to 'Text'.`);
+      return createFailureValidationResult(cardIndex, `That question is too long to render as an image. Only questions ${IMAGE_QUESTION_MAX_LENGTH} characters long or shorter can be rendered as an image. Consider shortening the question or setting its Render As to 'Text'.`, card);
     }
 
     if (card.questionCreationStrategy === 'TEXT' && card.question.length > TEXT_QUESTION_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `That question is too long. Questions must be ${TEXT_QUESTION_MAX_LENGTH} characters long or shorter.`);
+      return createFailureValidationResult(cardIndex, `That question is too long. Questions must be ${TEXT_QUESTION_MAX_LENGTH} characters long or shorter.`, card);
     }
 
     if (card.questionCreationStrategy !== 'IMAGE' && card.questionCreationStrategy !== 'TEXT') {
@@ -132,38 +133,38 @@ function validateCards(cards) {
     }
 
     if (typeof card.answers !== typeof []) {
-      return createFailureValidationResult(cardIndex, 'Answers is not an array. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Answers is not an array. Please report this error.', card);
     }
 
     if (card.answers.length === 0) {
-      return createFailureValidationResult(cardIndex, 'No answers. Please add at least one answer or clear out the row. You can separate multiple answers with commas.');
+      return createFailureValidationResult(cardIndex, 'No answers. Please add at least one answer or clear out the row. You can separate multiple answers with commas.', card);
     }
 
     for (let answerIndex = 0; answerIndex < card.answers.length; answerIndex += 1) {
       if (typeof card.answers[answerIndex] !== typeof '') {
-        return createFailureValidationResult(cardIndex, 'One or more answers is not a string. Please report this error.');
+        return createFailureValidationResult(cardIndex, 'One or more answers is not a string. Please report this error.', card);
       }
     }
 
     const answersTotalLength = card.answers.reduce((sum, answer) => sum + answer.length, 0);
     if (answersTotalLength > ANSWERS_TOTAL_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `The answers are too long. All answers combined must be ${ANSWERS_TOTAL_MAX_LENGTH} characters long or fewer.`);
+      return createFailureValidationResult(cardIndex, `The answers are too long. All answers combined must be ${ANSWERS_TOTAL_MAX_LENGTH} characters long or fewer.`, card);
     }
 
     if (typeof card.comment !== typeof '') {
-      return createFailureValidationResult(cardIndex, 'Comment is not a string. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Comment is not a string. Please report this error.', card);
     }
 
     if (card.comment.length > COMMENT_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `Comment is too long. Comment must be ${COMMENT_MAX_LENGTH} characters or fewer.`);
+      return createFailureValidationResult(cardIndex, `Comment is too long. Comment must be ${COMMENT_MAX_LENGTH} characters or fewer.`, card);
     }
 
     if (typeof card.instructions !== typeof '') {
-      return createFailureValidationResult(cardIndex, 'Instructions is not a string. Please report this error.');
+      return createFailureValidationResult(cardIndex, 'Instructions is not a string. Please report this error.', card);
     }
 
     if (card.instructions.length > INSTRUCTIONS_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `Instructions is too long. Instructions must be ${COMMENT_MAX_LENGTH} characters or fewer.`);
+      return createFailureValidationResult(cardIndex, `Instructions is too long. Instructions must be ${COMMENT_MAX_LENGTH} characters or fewer.`, card);
     }
   }
 
@@ -180,7 +181,7 @@ function validateCards(cards) {
       }
 
       if (card1.question.trim() === card2.question.trim()) {
-        return createFailureValidationResult(card1Index, `Questions #${card1Index} and #${card2Index} have the same question. All questions must be unique.`);
+        return createFailureValidationResult(card1Index, `Questions #${card1Index} and #${card2Index} have the same question. All questions must be unique.`, card1);
       }
     }
   }
