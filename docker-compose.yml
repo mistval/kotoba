@@ -14,7 +14,7 @@ services:
   kotoba-web:
     build:
       context: .
-      dockerfile: ./react-frontend/Dockerfile
+      dockerfile: ./kotobaweb/Dockerfile
     restart: always
   kotoba-api:
     build:
