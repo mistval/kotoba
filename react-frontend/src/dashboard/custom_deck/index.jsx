@@ -6,7 +6,7 @@ import './animations.css';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
-import ErrorStripe from '../../controls/error_stripe';
+import NotificationStripe from '../../controls/notification_stripe';
 import { deckValidation } from 'kotoba-common';
 import { Editors } from 'react-data-grid-addons';
 
@@ -392,7 +392,7 @@ class EditDeck extends Component {
   render() {
     if (!this.state.gridDeck) {
       return (
-        <ErrorStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} />
+        <NotificationStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} isError={true} />
       );
     }
 
@@ -531,7 +531,7 @@ class EditDeck extends Component {
               </ol>
             </div>
           </div>
-          <ErrorStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} />
+          <NotificationStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} isError={true} />
         </main>
       </>
     )

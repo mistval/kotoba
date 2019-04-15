@@ -430,37 +430,48 @@ async function getCustomDeckFromDisk(deckInfo) {
 
   return new Promise((fulfill, reject) => {
     fs.readFile(deckPath, 'utf8', (err, deckText) => {
-      if (err) {
-        return fulfill(undefined);
+      try {
+        if (err) {
+          return fulfill(undefined);
+        }
+
+        const deckRaw = JSON.parse(deckText);
+
+        const cards = deckRaw.cards.map(card => {
+          if (!card) {
+            return card;
+          }
+
+          return {
+            question: card.question,
+            answer: card.answers,
+            meaning: card.comment,
+            questionCreationStrategy: card.questionCreationStrategy,
+            instructions: card.instructions,
+          };
+        });
+
+        const deck = {
+          isInternetDeck: true,
+          name: deckRaw.name,
+          shortName: deckRaw.shortName,
+          article: 'a',
+          dictionaryLinkStrategy: 'NONE',
+          answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
+          cardPreprocessingStrategy: 'NONE',
+          discordFinalAnswerListElementStrategy: 'QUESTION_AND_ANSWER_LINK_QUESTION',
+          scoreAnswerStrategy: 'ONE_ANSWER_ONE_POINT',
+          additionalAnswerWaitStrategy: 'JAPANESE_SETTINGS',
+          discordIntermediateAnswerListElementStrategy: 'CORRECT_ANSWERS',
+          answerCompareStrategy: 'CONVERT_KANA',
+          commentFieldName: 'Comment',
+          cards: createCardGetterFromInMemoryArray(cards),
+        };
+
+        fulfill(deck);
+      } catch (err) {
+        reject(err);
       }
-
-      const deckRaw = JSON.parse(deckText);
-
-      const cards = deckRaw.cards.map(card => ({
-        question: card.question,
-        answer: card.answers,
-        meaning: card.comment,
-        questionCreationStrategy: card.questionCreationStrategy,
-      }));
-
-      const deck = {
-        isInternetDeck: true,
-        name: deckRaw.name,
-        shortName: deckRaw.shortName,
-        article: 'a',
-        dictionaryLinkStrategy: 'NONE',
-        answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
-        cardPreprocessingStrategy: 'NONE',
-        discordFinalAnswerListElementStrategy: 'QUESTION_AND_ANSWER_LINK_QUESTION',
-        scoreAnswerStrategy: 'ONE_ANSWER_ONE_POINT',
-        additionalAnswerWaitStrategy: 'JAPANESE_SETTINGS',
-        discordIntermediateAnswerListElementStrategy: 'CORRECT_ANSWERS',
-        answerCompareStrategy: 'CONVERT_KANA',
-        commentFieldName: 'Comment',
-        cards: createCardGetterFromInMemoryArray(cards),
-      };
-
-      fulfill(deck);
     });
   });
 }
