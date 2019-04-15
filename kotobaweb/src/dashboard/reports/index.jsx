@@ -18,7 +18,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
   const avatarUri = avatarUriForAvatar(avatar, id);
 
   return (
-    <div className="d-flex flex-column align-items-center" key="id">
+    <div className="d-flex flex-column align-items-center mx-3 mb-3" key="id">
       <img src={avatarUri} className="rounded-circle mb-3" />
       {nameString}
       <span className="text-success">{pointsString}</span>
@@ -297,7 +297,7 @@ class ReportView extends Component {
                     { this.state.report.channelName || '' }
                   </span>
                 </div>
-                <div className="d-flex flex-wrap mt-5">
+                <div className="d-flex flex-wrap mt-5 justify-content-center">
                   { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} key={participant._id} />) }
                 </div>
                 <table className="table mt-5 table-bordered table-hover">

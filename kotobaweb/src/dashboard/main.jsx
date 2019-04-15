@@ -47,7 +47,7 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
     <div style={styles.listDiv}>
       { gameReports.map((report) => {
         return (
-          <div className="py-1 d-flex justify-content-between align-items-center" key={report._id}>
+          <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
             <div className="d-flex align-items-center">
               {getServerIcon(report)}
               <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
