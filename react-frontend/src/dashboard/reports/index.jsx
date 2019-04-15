@@ -3,6 +3,7 @@ import Header from './../header';
 import axios from 'axios';
 import defaultAvatar from '../../img/discord_default_avatar.png';
 import NotificationStripe from '../../controls/notification_stripe';
+import Analytics from '../../util/analytics';
 
 const trophies = ['🏆', '🥈', '🥉'];
 
@@ -153,6 +154,7 @@ class ReportView extends Component {
     this.loadReport();
     this.loadCustomDecks();
     this.loadUser();
+    Analytics.setPageView('/dashboard/reports');
   }
 
   onCardChecked = (index) => {

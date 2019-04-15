@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header';
 import Main from './main';
+import Analytics from '../util/analytics';
 
 class Dashboard extends Component {
   constructor() {
@@ -15,6 +16,10 @@ class Dashboard extends Component {
     this.setState({
       loggedIn: true,
     });
+  }
+
+  componentDidMount() {
+    Analytics.setPageView('/dashboard');
   }
 
   render() {

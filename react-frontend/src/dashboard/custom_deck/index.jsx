@@ -8,6 +8,7 @@ import download from 'js-file-download';
 import NotificationStripe from '../../controls/notification_stripe';
 import { deckValidation } from 'kotoba-common';
 import { Editors } from 'react-data-grid-addons';
+import Analytics from '../../util/analytics';
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -153,6 +154,7 @@ class EditDeck extends Component {
 
   componentDidMount() {
     this.loadDeck();
+    Analytics.setPageView('/dashboard/decks');
   }
 
   onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
