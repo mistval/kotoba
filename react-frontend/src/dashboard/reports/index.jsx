@@ -2,8 +2,18 @@ import React, { Component, PureComponent } from 'react';
 import Header from './../header';
 import axios from 'axios';
 import defaultAvatar from '../../img/discord_default_avatar.png';
+import ErrorStripe from './../../controls/error_stripe';
 
 const trophies = ['🏆', '🥈', '🥉'];
+
+const styles = {
+  deckSelectorVisible: {
+  },
+  deckSelectorInvisible: {
+    height: '0px',
+    overflow: 'hidden',
+  },
+};
 
 function avatarUriForAvatar(avatar, userId) {
   return avatar ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}` : defaultAvatar;
@@ -70,6 +80,9 @@ class Questions extends PureComponent {
   }
 }
 
+const loginErrorMessage = <span>You must be logged in to do that. <a href="/api/login" className="text-info">Login</a></span>;
+const noDecksErrorMessage = <span>You don't have any custom decks yet. <a href="/dashboard/decks/new" className="text-info">Create one</a></span>;
+
 class ReportView extends Component {
   constructor() {
     super();
@@ -79,6 +92,11 @@ class ReportView extends Component {
       stripeMessage: '',
       stripeMessageIsError: false,
       checkAll: false,
+      anySelected: false,
+      customDecks: undefined,
+      checkedLogin: false,
+      adding: false,
+      selectedDeckIndex: -1,
     };
   }
 
@@ -104,13 +122,28 @@ class ReportView extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log('x');
-    this.loadReport();
+  async loadCustomDecks() {
+    try {
+      const decks = (await axios.get('/api/users/me/decks')).data;
+      this.setState({
+        customDecks: decks,
+      });
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
+        // Not logged in, NOOP
+      } else {
+        this.setState({
+          showStripeMessage: true,
+          stripeMessage: err.message,
+          stripeMessageIsError: true,
+        });
+      }
+    }
   }
 
-  componentWillUnmount() {
-    console.log('y');
+  componentDidMount() {
+    this.loadReport();
+    this.loadCustomDecks();
   }
 
   onCardChecked = (index) => {
@@ -120,6 +153,12 @@ class ReportView extends Component {
         state.checkAll = false;
       }
       state.report.questions[index].checked = checked;
+      if (checked) {
+        state.anySelected = true;
+      } else {
+        state.anySelected = state.report.questions.some(q => q.checked);
+      }
+
       return state;
     });
   }
@@ -129,11 +168,49 @@ class ReportView extends Component {
 
     this.setState((state) => {
       state.checkAll = checked;
+      state.anySelected = checked;
       state.report.questions.forEach((question) => {
         question.checked = checked;
       });
 
       return state;
+    });
+  }
+
+  onStripeCloseClicked = () => {
+    this.setState({
+      showStripeMessage: false,
+    });
+  }
+
+  onAddRequsted = () => {
+    this.setState({
+      stripeMessage: this.state.customDecks ? noDecksErrorMessage : loginErrorMessage,
+      stripeMessageIsError: true,
+      showStripeMessage: true,
+    });
+  }
+
+  onAddToDeck = () => {
+    this.setState({
+      adding: true,
+    }, async () => {
+      try {
+        await axios.patch()
+      } catch (err) {
+
+      }
+
+      this.setState({
+        adding: false,
+      });
+    });
+  }
+
+  onSelectedDeckChanged = (ev) => {
+    console.log(ev.target.value);
+    this.setState({
+      selectedDeckIndex: parseInt(ev.target.value),
     });
   }
 
@@ -166,7 +243,7 @@ class ReportView extends Component {
                 <h1>{this.state.report.sessionName}</h1>
                 <div className="d-flex align-items-center mb-5">
                   <img src={this.state.report.discordServerIconUri || firstParticipantAvatarUri} width="32" height="32" className="rounded-circle mr-2" />
-                  <span class="badge badge-primary">
+                  <span className="badge badge-primary">
                     <strong>{this.state.report.discordServerName}</strong>
                     { this.state.report.channelName || '' }
                   </span>
@@ -177,7 +254,7 @@ class ReportView extends Component {
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th width="20px"><input type="checkbox" checked={this.state.checkAll} onClick={this.onCheckAll} /></th>
+                      <th width="20px"><input type="checkbox" checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
                       <th scope="col">Question</th>
                       <th scope="col">Answers</th>
                       <th scope="col">Comment</th>
@@ -193,12 +270,24 @@ class ReportView extends Component {
                   </tbody>
                 </table>
               </div>
-              <div class="col-12 p-0">
-                <button className="btn btn-primary">Add selected to custom deck</button>
+              <div className={`col-12 p-0${!this.state.customDecks || this.state.customDecks.length === 0 ? '' : ' d-none'}`}>
+                <button className="btn btn-primary" disabled={!this.state.anySelected} onClick={this.onAddRequsted}>Add selected questions to custom deck</button>
+              </div>
+              <div className={this.state.customDecks && this.state.customDecks.length > 0 ? '' : 'd-none'}>
+                <select className="custom-select mb-2 mt-5" defaultValue={-1} onChange={this.onSelectedDeckChanged}>
+                  <option value={-1}>Choose a deck</option>
+                  {
+                    this.state.customDecks.map((deck, i) => (
+                      <option key={deck._id} value={i}>{deck.name} ({deck.shortName})</option>
+                    ))
+                  }
+                </select>
+                <button className="btn btn-primary mb-5" onClick={this.onAddToDeck} disabled={this.state.adding || this.state.selectedDeckIndex === -1}>Add selected questions to deck</button>
               </div>
             </div>
           </div>
         </main>
+        <ErrorStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} />
       </>
     );
   }

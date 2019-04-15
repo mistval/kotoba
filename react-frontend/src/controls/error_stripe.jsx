@@ -26,9 +26,9 @@ function ErrorStripe(props) {
 
   return (
     <aside style={containerStyles} className="d-flex align-items-center bg-danger text-white p-1 pl-2">
-      <span><i class="material-icons mr-2">error_outline</i> {props.message}</span>
+      <div className="d-flex"><i className="material-icons mr-2">error_outline</i> {props.message}</div>
       <button type="button" className="btn btn-primary bmd-btn-icon" style={styles.closeButton} onClick={props.onClose}>
-        <i class="material-icons">close</i>
+        <i className="material-icons">close</i>
       </button>
     </aside>
   );
