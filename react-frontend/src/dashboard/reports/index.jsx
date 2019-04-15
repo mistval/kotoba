@@ -44,9 +44,13 @@ function ScorersCell({ scorers, participantForId }) {
   );
 }
 
-function CardRow({card, participantForId, onCheck}) {
+function CardRow({ card, participantForId, onCheck, selfUserId }) {
+  const rowClass = !selfUserId || card.correctAnswerers.indexOf(selfUserId) !== -1
+    ? ''
+    : 'alert alert-danger';
+
   return (
-    <tr onClick={onCheck}>
+    <tr onClick={onCheck} className={rowClass}>
       <td><input type="checkbox" checked={card.checked} disabled={!card.canCopyToCustomDeck} /></td>
       <td>{card.question}</td>
       <td>{card.answers.join(', ')}</td>
@@ -65,6 +69,7 @@ class Questions extends PureComponent {
           participantForId={this.props.participantForId}
           key={i}
           onCheck={(ev) => this.props.onCardChecked(i)}
+          selfUserId={this.props.selfUserId}
         />
       );
     });
@@ -88,7 +93,19 @@ class ReportView extends Component {
       checkedLogin: false,
       adding: false,
       selectedDeckIndex: -1,
+      selfUserId: '',
     };
+  }
+
+  async loadUser() {
+    try {
+      const user = (await axios.get('/api/users/me')).data;
+      this.setState({
+        selfUserId: user._id,
+      });
+    } catch (err) {
+      // NOOP
+    }
   }
 
   async loadReport() {
@@ -135,11 +152,13 @@ class ReportView extends Component {
   componentDidMount() {
     this.loadReport();
     this.loadCustomDecks();
+    this.loadUser();
   }
 
   onCardChecked = (index) => {
     this.setState((state) => {
-      const checked = !state.report.questions[index].checked;
+      const card = state.report.questions[index];
+      const checked = !card.checked && card.canCopyToCustomDeck;
       if (!checked) {
         state.checkAll = false;
       }
@@ -295,6 +314,7 @@ class ReportView extends Component {
                       cards={this.state.report.questions}
                       participantForId={participantForId}
                       onCardChecked={this.onCardChecked}
+                      selfUserId={this.state.selfUserId}
                     />
                   </tbody>
                 </table>
