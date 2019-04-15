@@ -19,6 +19,8 @@ const gameReportSchema = new mongoose.Schema({
     answers: { type: [String], required: true },
     comment: { type: String, default: '' },
     canCopyToCustomDeck: { type: Boolean, default: false },
+    questionCreationStrategy: { type: String, required: true },
+    instructions: { type: String, required: true },
     linkQuestion: { type: Boolean, required: true },
     uri: { type: String, default: '' },
     correctAnswerers: [{ type: [mongoose.Schema.Types.ObjectId], required: true, ref: 'User' }],
