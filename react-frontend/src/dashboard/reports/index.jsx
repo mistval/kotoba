@@ -236,7 +236,7 @@ class ReportView extends Component {
           } else if (err.response.data.rejectionReason) {
             errorMessage = err.response.data.rejectionReason;
           } else {
-            errorMessage = 'Unknown error, please report';
+            errorMessage = `Error, please report: ${err.message}`;
           }
         } else {
           errorMessage = err.message;
@@ -264,7 +264,7 @@ class ReportView extends Component {
 
   render() {
     if (!this.state.report) {
-      return null;
+      return <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />;
     }
 
     const firstParticipant = this.state.report.participants[0];
