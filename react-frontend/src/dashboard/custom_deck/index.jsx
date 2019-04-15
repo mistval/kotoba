@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReactDataGrid from 'react-data-grid';
 import Header from '../header';
-import './animations.css';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
@@ -110,10 +109,9 @@ class EditDeck extends Component {
     super();
     this.state = {
       gridDeck: undefined,
-      flashSuccess: false,
-      flashSuccessMessage: '',
-      showError: false,
-      errorMessage: '',
+      showStripe: false,
+      stripeIsError: false,
+      stripeMessage: '',
       saving: false,
       defaultInstructions: 'Type the reading of the word in hiragana!',
     };
@@ -138,16 +136,17 @@ class EditDeck extends Component {
 
       this.setState({ gridDeck });
     } catch (err) {
-      let errorMessage;
+      let stripeMessage;
       if (err.response.status === 404) {
-        errorMessage = 'Deck not found. Check that your link is valid and that the deck has not been deleted by its owner.';
+        stripeMessage = 'Deck not found. Check that your link is valid and that the deck has not been deleted by its owner.';
       } else {
         return this.handleApiError(err);
       }
 
       this.setState({
-        showError: true,
-        errorMessage,
+        showStripe: true,
+        stripeMessage,
+        stripeIsError: true,
       });
     }
   }
@@ -203,21 +202,22 @@ class EditDeck extends Component {
   handleValidationError(validationErrorInfo) {
     const { rejectedLine, rejectionReason } = validationErrorInfo;
 
-    let errorMessage = '';
+    let stripeMessage = '';
     if (rejectedLine !== deckValidation.NON_LINE_ERROR_LINE) {
-      errorMessage += `Question #${rejectedLine} -- `;
+      stripeMessage += `Question #${rejectedLine} -- `;
     }
 
-    errorMessage += rejectionReason;
+    stripeMessage += rejectionReason;
 
     this.setState({
-      showError: true,
-      errorMessage,
+      stripeIsError: true,
+      showStripe: true,
+      stripeMessage,
     });
   }
 
   handleApiError(err) {
-    let errorMessage = '';
+    let stripeMessage = '';
 
     if (err.response) {
       const { response } = err;
@@ -228,21 +228,22 @@ class EditDeck extends Component {
 
       const responseBody = response.data;
       if (response.status === 413) {
-        errorMessage = 'Your deck is too big. There is a limit of 5,000 questions and also an overall combined size limit in megabytes. Make sure your CSV size is smaller than approx 2 MB.';
+        stripeMessage = 'Your deck is too big. There is a limit of 5,000 questions and also an overall combined size limit in megabytes. Make sure your CSV size is smaller than approx 2 MB.';
       } else if (responseBody.errorType === deckValidation.DECK_VALIDATION_ERROR_TYPE) {
         return this.handleValidationError(responseBody);
       } else if (responseBody.message) {
-        errorMessage = responseBody.message;
+        stripeMessage = responseBody.message;
       } else {
-        errorMessage = `Error. Please report this. Error: ${err.message}`;
+        stripeMessage = `Error. Please report this. Error: ${err.message}`;
       }
     } else {
-      errorMessage = `Error. Please report this. Error: ${err.message}`;
+      stripeMessage = `Error. Please report this. Error: ${err.message}`;
     }
 
     this.setState({
-      showError: true,
-      errorMessage,
+      showStripe: true,
+      stripeIsError: true,
+      stripeMessage,
     });
   }
 
@@ -260,7 +261,8 @@ class EditDeck extends Component {
 
     this.setState({
       saving: true,
-      showError: false,
+      showStripe: false,
+      stripeIsError: true,
     });
 
     try {
@@ -274,7 +276,11 @@ class EditDeck extends Component {
         await axios.patch(`/api/decks/${this.state.gridDeck._id}`, saveDeck);
       }
 
-      this.flashSuccess('Saved');
+      this.setState({
+        showStripe: true,
+        stripeIsError: false,
+        stripeMessage: <span>Saved. You can load this deck on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong>.</span>,
+      })
     } catch (err) {
       this.handleApiError(err);
     }
@@ -310,8 +316,9 @@ class EditDeck extends Component {
     csvStringify(exportRows, (err, output) => {
       if (err) {
         this.setState({
-          showError: true,
-          errorMessage: `There was an error exporting your deck. Please report this: ${err.message}`,
+          showStripe: true,
+          stripeIsError: true,
+          stripeMessage: `There was an error exporting your deck. Please report this: ${err.message}`,
         });
 
         return;
@@ -336,8 +343,9 @@ class EditDeck extends Component {
       csvParse(str, (err, rows) => {
         if (err) {
           this.setState({
-            showError: true,
-            errorMessage: `There was an error importing your deck: ${err.message}`,
+            showStripe: true,
+            stripeIsError: true,
+            stripeMessage: `There was an error importing your deck: ${err.message}`,
           });
 
           return;
@@ -370,29 +378,14 @@ class EditDeck extends Component {
 
   onErrorCloseClicked = () => {
     this.setState({
-      showError: false,
+      showStripe: false,
     });
-  }
-
-  flashSuccess(message) {
-    clearTimeout(this.flashTimeout);
-
-    this.setState({
-      flashSuccess: true,
-      flashSuccessMessage: message,
-    });
-
-    this.flashTimeout = setTimeout(() => {
-      this.setState({
-        flashSuccess: false,
-      });
-    }, 1500);
   }
 
   render() {
     if (!this.state.gridDeck) {
       return (
-        <NotificationStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} isError={true} />
+        <NotificationStripe show={this.state.showStripe} message={this.state.stripeMessage} onClose={this.onErrorCloseClicked} isError={this.state.stripeIsError} />
       );
     }
 
@@ -421,12 +414,7 @@ class EditDeck extends Component {
         </div>
         <main className="container-fluid p-5">
           <div className="row">
-            <div className="col-xl-1 col-md-2 d-flex justify-content-center align-items-end">
-              <div className={ this.state.flashSuccess ? '' : 'fadeOut' }>
-                <span className="text-success m-3">{this.state.flashSuccessMessage}</span>
-              </div>
-            </div>
-            <div className="col-md-3">
+            <div className="col-md-3 offset-md-1">
               <div className="form-group">
                 <label className="bmd-label-floating" htmlFor="fullDeckName">Full deck name</label>
                 <input
@@ -531,7 +519,7 @@ class EditDeck extends Component {
               </ol>
             </div>
           </div>
-          <NotificationStripe show={this.state.showError} message={this.state.errorMessage} onClose={this.onErrorCloseClicked} isError={true} />
+          <NotificationStripe show={this.state.showStripe} message={this.state.stripeMessage} onClose={this.onErrorCloseClicked} isError={this.state.stripeIsError} />
         </main>
       </>
     )
