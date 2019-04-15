@@ -124,8 +124,8 @@ class EditDeck extends Component {
     if (deckId === 'new') {
       return this.setState({
         gridDeck: {
-          name: `${localStorage.getItem('username')}'s New Deck`,
-          shortName: 'new_deck',
+          name: `${localStorage.getItem('username')}'s New Quiz`,
+          shortName: 'new_quiz',
           cards: [sampleRow],
         }
       });
