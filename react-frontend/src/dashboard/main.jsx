@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import defaultAvatar from '../img/discord_default_avatar.png';
 
 const styles = {
   newQuizDeckIcon: {
@@ -11,6 +12,11 @@ const styles = {
     overflow: 'auto',
   },
 };
+
+function getServerIcon(report) {
+  let uri = report.discordServerIconUri || localStorage.getItem('avatarUri') || defaultAvatar;
+  return <img src={uri} height="24" width="24" class="rounded-circle mr-2" />;
+}
 
 function createGameReportsBody(gameReports, gameReportsErrorMessage) {
   if (gameReportsErrorMessage) {
@@ -29,9 +35,12 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
     <div style={styles.listDiv}>
       { gameReports.map((report) => {
         return (
-          <div className="py-1 d-flex justify-content-between" key={report._id}>
+          <div className="py-1 d-flex justify-content-between align-items-center" key={report._id}>
+            <div className="d-flex align-items-center">
+              {getServerIcon(report)}
               <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
-              <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
+            </div>
+            <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
           </div>
         );
       }) }
