@@ -236,7 +236,7 @@ class ReportView extends Component {
           } else if (err.response.data.rejectionReason) {
             errorMessage = err.response.data.rejectionReason;
           } else {
-            errorMessage = `Error, please report: ${err.message}`;
+            errorMessage = err.message;
           }
         } else {
           errorMessage = err.message;
