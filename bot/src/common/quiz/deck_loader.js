@@ -494,6 +494,8 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
       if (customDeck) {
         decks[i] = customDeck;
       }
+    }).catch(err => {
+      globals.logger.logFailure('DECK LOADER', 'Error while loading custom deck', err);
     });
   }).filter(x => x);
 
