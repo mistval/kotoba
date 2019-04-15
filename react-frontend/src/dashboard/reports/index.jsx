@@ -285,7 +285,7 @@ class ReportView extends Component {
                     <tr>
                       <th width="20px"><input type="checkbox" checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
                       <th scope="col">Question</th>
-                      <th scope="col">Answers</th>
+                      <th scope="col" width="200px">Answers</th>
                       <th scope="col">Comment</th>
                       <th scope="col">Scorers</th>
                     </tr>
