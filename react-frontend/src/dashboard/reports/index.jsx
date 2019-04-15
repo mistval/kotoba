@@ -19,7 +19,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
     <div className="d-flex flex-column align-items-center" key="id">
       <img src={avatarUri} className="rounded-circle mb-3" />
       {nameString}
-      <span className="text-primary">{pointsString}</span>
+      <span className="text-success">{pointsString}</span>
     </div>
   );
 }
@@ -192,6 +192,9 @@ class ReportView extends Component {
                     />
                   </tbody>
                 </table>
+              </div>
+              <div class="col-12 p-0">
+                <button className="btn btn-primary">Add selected to custom deck</button>
               </div>
             </div>
           </div>
