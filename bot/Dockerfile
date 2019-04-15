@@ -1,28 +1,36 @@
 FROM node:10.15.0
-WORKDIR /var/app
 
 RUN apt-get update
 RUN apt-get -y install ffmpeg build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev mongodb
 
-COPY ./package.json .
-COPY ./package-lock.json .
-RUN npm ci
+WORKDIR /var
+COPY ./node-common ./node-common
 
-COPY ./src/common/pronunciation_db.js ./src/common/pronunciation_db.js
-COPY ./src/common/mongo_connect.js ./src/common/mongo_connect.js
-COPY ./resources/dictionaries ./resources/dictionaries
-COPY ./src/build ./src/build
+WORKDIR /var/node-common
+RUN npm link
+
+WORKDIR /var/app
+
+COPY ./bot/package.json .
+COPY ./bot/package-lock.json .
+RUN npm ci
+RUN npm link kotoba-node-common
+
+COPY ./bot/src/common/pronunciation_db.js ./src/common/pronunciation_db.js
+COPY ./bot/src/common/mongo_connect.js ./src/common/mongo_connect.js
+COPY ./bot/resources/dictionaries ./resources/dictionaries
+COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
-COPY ./fonts/opentype /usr/share/fonts/opentype
-COPY ./fonts/truetype /usr/share/fonts/truetype
+COPY ./bot/fonts/opentype /usr/share/fonts/opentype
+COPY ./bot/fonts/truetype /usr/share/fonts/truetype
 
-COPY ./resources ./resources
+COPY ./bot/resources ./resources
 RUN npm run buildquiz
 
 RUN mkdir latest_log data
 
-COPY ./start.sh ./start.sh
-COPY ./src ./src
+COPY ./bot/start.sh ./start.sh
+COPY ./bot/src ./src
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]
