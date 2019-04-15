@@ -530,7 +530,7 @@ class SaveAction extends Action {
       let saveData = session.createSaveData();
       return saveManager.save(saveData, this.savingUserId_, session.getName(), session.getGameModeIdentifier());
     }).then(() => {
-      sessionReportManager.notifyStopped(locationId, session.getScoresForUserPairs());
+      sessionReportManager.notifyStopped(session.getLocationId(), session.getScoresForUserPairs());
       return session.getMessageSender().notifySaveSuccessful().catch(err => {
         globals.logger.logFailure(LOGGER_TITLE, 'Error sending quiz save message', err);
       });
