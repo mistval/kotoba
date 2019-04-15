@@ -56,7 +56,7 @@ function ScorersCell({ scorers, participantForId }) {
 function CardRow({card, participantForId, onCheck}) {
   return (
     <tr onClick={onCheck}>
-      <td><input type="checkbox" checked={card.checked} /></td>
+      <td><input type="checkbox" checked={card.checked} disabled={!card.canCopyToCustomDeck} /></td>
       <td>{card.question}</td>
       <td>{card.answers.join(', ')}</td>
       <td>{card.comment}</td>
@@ -170,7 +170,8 @@ class ReportView extends Component {
       state.checkAll = checked;
       state.anySelected = checked;
       state.report.questions.forEach((question) => {
-        question.checked = checked;
+        console.log(JSON.stringify(question));
+        question.checked = checked && question.canCopyToCustomDeck;
       });
 
       return state;

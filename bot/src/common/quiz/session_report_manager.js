@@ -47,6 +47,8 @@ function notifyAnswered(locationId, card, answerers) {
     uri: card.dictionaryLink,
     linkQuestion: card.dictionaryLinkStrategy.indexOf('QUESTION') !== -1, // Epic hack...
     answererDiscordIds: answerers,
+    questionCreationStrategy: card.questionCreationStrategy === 'IMAGE' ? 'IMAGE' : 'TEXT', // ..... epic hack
+    instructions: card.instructions,
     canCopyToCustomDeck: calculateCanCopyToCustomDeck(card),
   };
 
@@ -126,6 +128,8 @@ async function notifyStopped(locationId, scores) {
         answers: card.answers,
         comment: card.comment,
         linkQuestion: card.linkQuestion,
+        questionCreationStrategy: card.questionCreationStrategy,
+        instructions: card.instructions,
         uri: card.uri,
         correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),
         canCopyToCustomDeck: card.canCopyToCustomDeck,
@@ -157,7 +161,7 @@ async function getMostRecentReportUriForLocation(locationId) {
   
   const reportId = mostRecentReportIdForLocationId[locationId];
   if (reportId) {
-    return `https://kotobaweb.com/game_reports/${mostRecentReportIdForLocationId[locationId]}`;
+    return `https://kotobaweb.com/dashboard/game_reports/${mostRecentReportIdForLocationId[locationId]}`;
   }
 }
 
