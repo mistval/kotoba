@@ -290,7 +290,6 @@ class ReportView extends Component {
               <div className="d-flex flex-column mt-5 align-items-center">
                 <h1>{this.state.report.sessionName}</h1>
                 <div className="d-flex align-items-center mb-5">
-                  <img src={this.state.report.discordServerIconUri || firstParticipantAvatarUri} width="32" height="32" className="rounded-circle mr-2" />
                   <span className="badge badge-primary">
                     <strong>{this.state.report.discordServerName}</strong>
                     { this.state.report.channelName || '' }
@@ -336,6 +335,17 @@ class ReportView extends Component {
             </div>
           </div>
         </main>
+        <aside className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Pro tips</h2>
+              <ul>
+                <li>If a question cannot be checked off and added to a deck, that means its question type is not yet supported for custom decks.</li>
+                <li>If you need help, need to report a bug, or make a suggestion, visit me in <a href="https://discord.gg/zkAKbyJ">my lair</a>.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
         <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />
       </>
     );
