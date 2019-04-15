@@ -67,7 +67,7 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
         { quizDecksSorted.map((deck) => {
           return (
             <div className="py-1" key={deck._id}>
-               <a href={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>{deck.name}</a>
+               <a href={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>{deck.name} ({deck.shortName})</a>
             </div>
           );
         }) }
