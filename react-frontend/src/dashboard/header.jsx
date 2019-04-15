@@ -66,8 +66,8 @@ class DashboardHeader extends Component {
   render() {
     if (this.state.apiErrored) {
       return (
-        <header className="d-flex flex-column align-items-center mt-5">
-          <p>Discord users can login via Discord to manage Kotoba bot. Support for website users is planned.</p>
+        <header className="d-flex bg-light flex-column align-items-center py-5">
+          <p>Discord users can login via Discord to manage Kotoba bot.</p>
           <DiscordLoginButton />
           <div className="alert alert-danger mt-3" role="alert">
             <strong>Oh snap!</strong> There was a problem communicating with the login server. Retrying. Error: {this.state.apiErrorMessage}
@@ -77,6 +77,17 @@ class DashboardHeader extends Component {
     }
 
     if (this.state.username) {
+      if (this.props.mini) {
+        return (
+          <header className="w-100 d-flex justify-content-end">
+            <div className="m-3">
+              <img src={this.state.avatarUri} className="rounded-circle mr-2" width="32" height="32" />
+              <a href="/api/logout">Logout</a>
+            </div>
+          </header>
+        );
+      }
+
       return (
         <header className="w-100 bg-light d-flex justify-content-center">
           <img src={this.state.avatarUri} className="my-5 rounded-circle" />
@@ -89,8 +100,8 @@ class DashboardHeader extends Component {
     }
 
     return (
-      <header className="d-flex flex-column align-items-center mt-5">
-        <p>Discord users can login via Discord to manage Kotoba bot. Support for website users is planned.</p>
+      <header className="d-flex bg-light flex-column align-items-center py-5">
+        <p>Discord users can login via Discord to manage Kotoba bot.</p>
         <DiscordLoginButton />
       </header>
     );
