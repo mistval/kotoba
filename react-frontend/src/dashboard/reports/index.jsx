@@ -26,7 +26,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
 function ScorerAvatarSmall({ discordUser }) {
   const uri = avatarUriForAvatar(discordUser.avatar, discordUser.id);
-  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1" width="32" height="32" />;
+  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1" width="24" height="24" />;
 }
 
 function ScorersCell({ scorers, participantForId }) {
@@ -45,8 +45,8 @@ function ScorersCell({ scorers, participantForId }) {
 
 function CardRow({card, participantForId, onCheck}) {
   return (
-    <tr>
-      <td><input type="checkbox" onClick={onCheck} checked={card.checked} /></td>
+    <tr onClick={onCheck}>
+      <td><input type="checkbox" checked={card.checked} /></td>
       <td>{card.question}</td>
       <td>{card.answers.join(', ')}</td>
       <td>{card.comment}</td>
@@ -63,7 +63,7 @@ class Questions extends PureComponent {
           card={card}
           participantForId={this.props.participantForId}
           key={i}
-          onCheck={(ev) => this.props.onCardChecked(ev.target.checked, i)}
+          onCheck={(ev) => this.props.onCardChecked(i)}
         />
       );
     });
@@ -113,8 +113,9 @@ class ReportView extends Component {
     console.log('y');
   }
 
-  onCardChecked = (checked, index) => {
+  onCardChecked = (index) => {
     this.setState((state) => {
+      const checked = !state.report.questions[index].checked;
       if (!checked) {
         state.checkAll = false;
       }
@@ -173,7 +174,7 @@ class ReportView extends Component {
                 <div className="d-flex flex-wrap mt-5">
                   { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} key={participant._id} />) }
                 </div>
-                <table className="table mt-5">
+                <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
                       <th width="20px"><input type="checkbox" checked={this.state.checkAll} onClick={this.onCheckAll} /></th>
