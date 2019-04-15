@@ -1,13 +1,33 @@
 version: '3'
 services:
-  kotobaweb-front:
-    build: ./react-frontend/
+  kotoba-bot:
+    build:
+      context: .
+      dockerfile: ./bot/Dockerfile
     restart: always
-  kotobaweb-back:
-    build: ./api/
+    environment: 
+      MONGO_HOST: 'mongo_readwrite:27017'
+    volumes:
+      - ./bot/data:/var/app/data
+      - ./bot/latest_log:/var/app/latest_log
+      - ./bot/config:/var/app/config
+  kotoba-web:
+    build:
+      context: .
+      dockerfile: ./react-frontend/Dockerfile
+    restart: always
+  kotoba-api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    restart: always
+    environment: 
+      MONGO_HOST: 'mongo_readwrite:27017'
+  mongo_readwrite:
+    image: mongo
     restart: always
   nginx:
     build: ./nginx
     restart: always
     ports:
-      - "80:80"
+      - '80:80'

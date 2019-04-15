@@ -1,10 +1,19 @@
 FROM node:alpine as reactBuilder
-WORKDIR '/var/app'
-COPY ./package.json .
-RUN npm install
-COPY . .
+
+WORKDIR /var
+COPY ./common ./common
+
+WORKDIR /var/common
+RUN npm link
+
+WORKDIR /var/app
+
+COPY ./react-frontend .
+RUN npm ci
+RUN npm link kotoba-common
+
 RUN npm run build
 
 FROM nginx
 COPY --from=reactBuilder /var/app/build /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./react-frontend/nginx.conf /etc/nginx/conf.d/default.conf
