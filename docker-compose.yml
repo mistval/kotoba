@@ -11,6 +11,7 @@ services:
       - ./bot/data:/var/app/data
       - ./bot/latest_log:/var/app/latest_log
       - ./bot/config:/var/app/config
+      - ./shared_data:/var/shared_data
   kotoba-web:
     build:
       context: .
@@ -23,9 +24,13 @@ services:
     restart: always
     environment: 
       MONGO_HOST: 'mongo_readwrite:27017'
+    volumes:
+      - ./shared_data:/var/shared_data
   mongo_readwrite:
     image: mongo
     restart: always
+    volumes:
+      - ./mongo_readwrite_data:/data/db
   nginx:
     build: ./nginx
     restart: always
