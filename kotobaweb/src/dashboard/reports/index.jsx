@@ -80,6 +80,16 @@ class Questions extends PureComponent {
 const loginErrorMessage = <span>You must be logged in to do that. <a href="/api/login" className="text-info">Login</a></span>;
 const noDecksErrorMessage = <span>You don't have any custom decks yet. <a href="/dashboard/decks/new" className="text-info">Create one</a></span>;
 
+function getParticipantsAsScorerElements(participants, pointsForParticipantId) {
+  return participants.sort((p2, p1) => pointsForParticipantId[p1._id] - pointsForParticipantId[p2._id]).map((p, i) => (
+    <Scorer
+      {...p.discordUser}
+      index={i}
+      points={pointsForParticipantId[p._id]}
+      key={p._id} />
+  ));
+}
+
 class ReportView extends Component {
   constructor() {
     super();
@@ -269,10 +279,6 @@ class ReportView extends Component {
       return <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />;
     }
 
-    const firstParticipant = this.state.report.participants[0];
-    const firstDiscordUser = firstParticipant.discordUser;
-    const firstParticipantAvatarUri = avatarUriForAvatar(firstDiscordUser.avatar, firstDiscordUser.id);
-
     const participantForId = {};
     this.state.report.participants.forEach((participant) => {
       participantForId[participant._id] = participant;
@@ -298,7 +304,7 @@ class ReportView extends Component {
                   </span>
                 </div>
                 <div className="d-flex flex-wrap mt-5 justify-content-center">
-                  { this.state.report.participants.map((participant, i) => <Scorer {...participant.discordUser} index={i} points={pointsForParticipantId[participant._id]} key={participant._id} />) }
+                  { getParticipantsAsScorerElements(this.state.report.participants, pointsForParticipantId) }
                 </div>
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
