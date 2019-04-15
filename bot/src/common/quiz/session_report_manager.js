@@ -104,6 +104,7 @@ async function notifyStopped(locationId, scores) {
 
     if (report.cards.length === 0) {
       delete pendingReportForLocationId[locationId];
+      delete mostRecentReportIdForLocationId[locationId];
       return;
     }
 

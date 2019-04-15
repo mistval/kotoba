@@ -165,7 +165,7 @@ module.exports = [
         allowedValuesDescription: 'Either **enabled** or **disabled**',
         uniqueId: 'quiz/japanese/internet_decks_enabled',
         userSetting: false,
-        defaultUserFacingValue: 'Disabled',
+        defaultUserFacingValue: 'Enabled',
         convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,

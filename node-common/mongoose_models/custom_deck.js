@@ -5,6 +5,7 @@ const customDeckSchema = new mongoose.Schema({
   name: { type: String, required: true },
   shortName: { type: String, required: true, index: true },
   lastModified: { type: Date, required: true },
+  uniqueId: { type: String, required: true, index: true },
 });
 
 function create(connection) {

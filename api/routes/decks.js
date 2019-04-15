@@ -80,8 +80,7 @@ function attachDeckFull(req, res, next) {
   assert(req.deckMeta, 'No deck meta attached');
   fs.readFile(filePathForShortName(req.deckMeta.shortName), 'utf8', (err, data) => {
     if (err) {
-      console.warn(err);
-      throw err;
+      return res.status(500).send({ message: 'Could not find the file for that deck. Please report this error.' });
     }
 
     req.deck = JSON.parse(data);
@@ -159,6 +158,7 @@ routes.patch(
     req.deck.name = req.body.name || req.deck.name;
     req.deck.shortName = req.body.shortName || req.deck.shortName;
     req.deck._id = req.deckMeta._id;
+    req.deck.ownerDiscordUser = req.user.discordUser;
 
     if (req.body.appendCards) {
       req.deck.cards = req.deck.cards.concat(req.body.cards);
@@ -188,19 +188,13 @@ routes.post(
   checkShortNameUnique,
   checkHas100DecksOrFewer,
   async (req, res) => {
-    const deckMeta = new CustomDeckModel({
-      owner: req.user._id,
-      name: req.body.name,
-      shortName: req.body.shortName,
-      lastModified: Date.now(),
-    });
-
     let deckFull = {
       owner: req.user._id,
-      ownerDiscordId: req.user.discordUser.id,
       name: req.body.name,
       shortName: req.body.shortName,
       cards: req.body.cards,
+      ownerDiscordUser: req.user.discordUser,
+      uniqueId: `custom_${req.user._id}_${Date.now()}_${req.body.shortName}`,
     };
 
     deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
@@ -212,6 +206,14 @@ routes.post(
         ...validationResult,
       });
     }
+
+    const deckMeta = new CustomDeckModel({
+      owner: req.user._id,
+      name: deckFull.name,
+      shortName: deckFull.shortName,
+      lastModified: Date.now(),
+      uniqueId: deckFull.uniqueId,
+    });
 
     await deckMeta.save();
 
