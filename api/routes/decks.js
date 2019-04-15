@@ -159,7 +159,12 @@ routes.patch(
     req.deck.name = req.body.name || req.deck.name;
     req.deck.shortName = req.body.shortName || req.deck.shortName;
     req.deck._id = req.deckMeta._id;
-    req.deck.cards = req.body.cards || req.deck.cards;
+
+    if (req.body.appendCards) {
+      req.deck.cards = req.deck.cards.concat(req.body.cards);
+    } else {
+      req.deck.cards = req.body.cards || req.deck.cards;
+    }
 
     req.deck = deckValidation.sanitizeDeckPreValidation(req.deck);
     const validationResult = deckValidation.validateDeck(req.deck);
