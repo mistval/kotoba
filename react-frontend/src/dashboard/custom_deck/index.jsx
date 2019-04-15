@@ -234,10 +234,10 @@ class EditDeck extends Component {
       } else if (responseBody.message) {
         stripeMessage = responseBody.message;
       } else {
-        stripeMessage = `Error. Please report this. Error: ${err.message}`;
+        stripeMessage = err.message;
       }
     } else {
-      stripeMessage = `Error. Please report this. Error: ${err.message}`;
+      stripeMessage = err.message;
     }
 
     this.setState({
