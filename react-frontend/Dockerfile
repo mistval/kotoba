@@ -3,15 +3,9 @@ FROM node:alpine as reactBuilder
 WORKDIR /var
 COPY ./common ./common
 
-WORKDIR /var/common
-RUN npm link
-
 WORKDIR /var/app
-
 COPY ./react-frontend .
 RUN npm ci
-RUN npm link kotoba-common
-
 RUN npm run build
 
 FROM nginx

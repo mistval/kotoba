@@ -6,15 +6,11 @@ RUN apt-get -y install ffmpeg build-essential libcairo2-dev libpango1.0-dev libj
 WORKDIR /var
 COPY ./node-common ./node-common
 
-WORKDIR /var/node-common
-RUN npm link
-
 WORKDIR /var/app
 
 COPY ./bot/package.json .
 COPY ./bot/package-lock.json .
 RUN npm ci
-RUN npm link kotoba-node-common
 
 COPY ./bot/src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./bot/src/common/mongo_connect.js ./src/common/mongo_connect.js
