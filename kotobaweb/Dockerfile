@@ -4,10 +4,10 @@ WORKDIR /var
 COPY ./common ./common
 
 WORKDIR /var/app
-COPY ./react-frontend .
+COPY ./kotobaweb .
 RUN npm ci
 RUN npm run build
 
 FROM nginx
 COPY --from=reactBuilder /var/app/build /usr/share/nginx/html
-COPY ./react-frontend/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./kotobaweb/nginx.conf /etc/nginx/conf.d/default.conf

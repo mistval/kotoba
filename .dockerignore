@@ -19,12 +19,12 @@ bot/docker-compose.yml
 
 nginx_windows_dev
 
-react-frontend/node_modules
-react-frontend/.dockerignore
-react-frontend/.eslintignore
-react-frontend/.eslintrc.js
-react-frontend/.gitignore
-react-frontend/Dockerfile
+kotobaweb/node_modules
+kotobaweb/.dockerignore
+kotobaweb/.eslintignore
+kotobaweb/.eslintrc.js
+kotobaweb/.gitignore
+kotobaweb/Dockerfile
 
 save_data
 shared_data
