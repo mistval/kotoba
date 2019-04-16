@@ -45,6 +45,22 @@ const commands = [
     ],
   ),
   new Command(
+    'anime',
+    'a',
+    'Search kitsu.io for information about an anime.',
+    [
+      new Example('anime', 'sword art online', 'kanime.png'),
+    ],
+  ),
+  new Command(
+    'yourei',
+    'y',
+    'Search yourei.jp for example sentences containing a word or phrase.',
+    [
+      new Example('yourei', '瞬間', 'kyourei.png'),
+    ],
+  ),
+  new Command(
     'strokeorder',
     's',
     'Search for stroke order gifs and diagrams for kanji. You can look up many kanji at a time and use reactions to navigate between results.',
