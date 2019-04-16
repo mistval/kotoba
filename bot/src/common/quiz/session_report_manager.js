@@ -6,9 +6,6 @@ const globals = require('./../globals.js');
 const LOGGER_TITLE = 'SESSION REPORT MANAGER';
 
 const pendingReportForLocationId = {};
-const mostRecentReportIdForLocationId = {};
-
-let finishUpdatingDb = Promise.resolve();
 
 function calculateCanCopyToCustomDeck(card) {
   if (card.answerTimeLimitStrategy === 'ANAGRAMS') {
@@ -102,68 +99,10 @@ async function notifyStopped(locationId, scores) {
       return;
     }
 
-    if (report.cards.length === 0) {
-      delete pendingReportForLocationId[locationId];
-      delete mostRecentReportIdForLocationId[locationId];
-      return;
-    }
-
-    delete pendingReportForLocationId[locationId];
-    const allAnswererDiscordIdsNonUnique = report.cards
-      .map(card => card.answererDiscordIds)
-      .reduce((allIds, x) => allIds.concat(x), []);
-    
-    if (allAnswererDiscordIdsNonUnique.length === 0) {
-      delete pendingReportForLocationId[locationId];
-      return;
-    }
-    
-    const allAnswererDiscordIds = allAnswererDiscordIdsNonUnique.filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
-    const registerUserPromises = allAnswererDiscordIds.map(id => {
-      const user = globals.monochrome.getErisBot().users.get(id);
-      return registerUser(user);
-    });
-
-    const generateReportPromise = Promise.all(registerUserPromises).then((userModels) => {
-      const userModelForId = {};
-      allAnswererDiscordIdsNonUnique.forEach(id => {
-        userModelForId[id] = userModels.find(userModel => userModel.discordUser.id === id);
-      });
-
-      const guild = globals.monochrome.getErisBot().guilds.get(report.serverId);
-
-      const reportModel = new GameReportModel({
-        sessionName: report.quizName,
-        startTime: report.startTime,
-        endTime: Date.now(),
-        participants: userModels,
-        discordServerIconUri: guild ? guild.iconURL : undefined,
-        discordServerName: guild ? guild.name : undefined,
-        discordChannelName: guild ? guild.channels.get(locationId).name : 'DM',
-        scores: scores.map(score => ({ user: userModelForId[score.userId], score: score.totalScore })),
-        questions: report.cards.map((card) => ({
-          question: card.question,
-          answers: card.answers,
-          comment: card.comment,
-          linkQuestion: card.linkQuestion,
-          questionCreationStrategy: card.questionCreationStrategy,
-          instructions: card.instructions,
-          uri: card.uri,
-          correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),
-          canCopyToCustomDeck: card.canCopyToCustomDeck,
-        }))
-      });
-
-      return reportModel.save().then(() => {
-        mostRecentReportIdForLocationId[locationId] = reportModel._id;
-      });
-    });
-
-    finishUpdatingDb = Promise.all([finishUpdatingDb, registerUserPromises, generateReportPromise]);
+    report.scores = scores;
   } catch (err) {
     globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
     delete pendingReportForLocationId[locationId];
-    delete mostRecentReportIdForLocationId[locationId];
   }
 }
 
@@ -179,12 +118,65 @@ function registerUserInfoFromMsg(msg) {
   };
 }
 
-async function getMostRecentReportUriForLocation(locationId) {
-  await finishUpdatingDb;
-  
-  const reportId = mostRecentReportIdForLocationId[locationId];
-  if (reportId) {
-    return `https://kotobaweb.com/dashboard/game_reports/${mostRecentReportIdForLocationId[locationId]}`;
+async function getReportUriForLocation(locationId) {
+  try {
+    const report = pendingReportForLocationId[locationId];
+    delete pendingReportForLocationId[locationId];
+    if (!report || report.cards.length === 0) {
+      return;
+    }
+
+    const allAnswererDiscordIdsNonUnique = report.cards
+      .map(card => card.answererDiscordIds)
+      .reduce((allIds, x) => allIds.concat(x), []);
+    
+    if (allAnswererDiscordIdsNonUnique.length === 0) {
+      delete pendingReportForLocationId[locationId];
+      return;
+    }
+    
+    const allAnswererDiscordIdsUnique = allAnswererDiscordIdsNonUnique.filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
+    const registerUserPromises = allAnswererDiscordIdsUnique.map(id => {
+      const user = globals.monochrome.getErisBot().users.get(id);
+      return registerUser(user);
+    });
+
+    const userModels = await Promise.all(registerUserPromises);
+
+    const userModelForId = {};
+    allAnswererDiscordIdsNonUnique.forEach(id => {
+      userModelForId[id] = userModels.find(userModel => userModel.discordUser.id === id);
+    });
+
+    const guild = globals.monochrome.getErisBot().guilds.get(report.serverId);
+
+    const reportModel = new GameReportModel({
+      sessionName: report.quizName,
+      startTime: report.startTime,
+      endTime: Date.now(),
+      participants: userModels,
+      discordServerIconUri: guild ? guild.iconURL : undefined,
+      discordServerName: guild ? guild.name : undefined,
+      discordChannelName: guild ? guild.channels.get(locationId).name : 'DM',
+      scores: report.scores.map(score => ({ user: userModelForId[score.userId], score: score.totalScore })),
+      questions: report.cards.map((card) => ({
+        question: card.question,
+        answers: card.answers,
+        comment: card.comment,
+        linkQuestion: card.linkQuestion,
+        questionCreationStrategy: card.questionCreationStrategy,
+        instructions: card.instructions,
+        uri: card.uri,
+        correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),
+        canCopyToCustomDeck: card.canCopyToCustomDeck,
+      }))
+    });
+
+    await reportModel.save();
+    return `https://kotobaweb.com/dashboard/game_reports/${reportModel._id}`;
+  } catch (err) {
+    globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
+    delete pendingReportForLocationId[locationId];
   }
 }
 
@@ -193,5 +185,5 @@ module.exports = {
   notifyAnswered,
   notifyStopped,
   registerUserInfoFromMsg,
-  getMostRecentReportUriForLocation,
+  getReportUriForLocation,
 };

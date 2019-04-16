@@ -300,7 +300,7 @@ async function sendEndQuizMessages(
     aggregateLink,
     description,
     prefix,
-    await quizReportManager.getMostRecentReportUriForLocation(commanderMessage.channel.id),
+    await quizReportManager.getReportUriForLocation(commanderMessage.channel.id),
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
