@@ -1,6 +1,7 @@
 const routes = require('express').Router();
 const nodemailer = require('nodemailer');
 const config = require('./../config.js').mail;
+const rateLimit = require('express-slow-down');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -10,7 +11,13 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-routes.post('/', async (req, res, next) => {
+const limiter = rateLimit({
+  windowMs: 3 * 60 * 1000, // 3 minutes seconds
+  delayAfter: 2,
+  delayMs: 3 * 60 * 1000, // 3 minutes
+});
+
+routes.post('/', limiter, async (req, res, next) => {
   const { email, message } = req.body;
 
   const mailOptions = {
