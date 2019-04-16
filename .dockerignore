@@ -13,6 +13,7 @@ bot/.dockerignore
 bot/.eslintignore
 bot/.eslintrc.js
 bot/.gitignore
+bot/config
 bot/Dockerfile
 bot/data
 bot/docker-compose.yml
