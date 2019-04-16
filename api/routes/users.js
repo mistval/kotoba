@@ -16,7 +16,6 @@ routes.get(
   '/me/game_reports',
   checkAuth,
   async (req, res) => {
-    const allReports = await GameReportModel.find({});
     const reports = await GameReportModel
       .find({ participants: req.user })
       .sort({ startTime: -1 })
