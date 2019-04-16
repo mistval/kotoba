@@ -369,6 +369,12 @@ async function applyOxfordSynonyms(card) {
   }
 }
 
+function errorDelay() {
+  return new Promise((fulfill) => {
+    setTimeout(() => fulfill(), 4000);
+  });
+}
+
 async function updateWithThesaurusSynonyms(card) {
   const THESAURUS_MISSES_KEY = 'thesaurus_misses';
   const thesaurusMisses = await globals.persistence.getData(THESAURUS_MISSES_KEY);
@@ -376,7 +382,13 @@ async function updateWithThesaurusSynonyms(card) {
     return false;
   }
 
-  await applyWebsterSynonyms(card);
+  try {
+    await applyWebsterSynonyms(card);
+  } catch (err) {
+    // hack to prevent the quiz manager from retrying too quickly
+    await errorDelay();
+    throw err;
+  }
 
   if (card.answer.length === 0) {
     await globals.persistence.editData(THESAURUS_MISSES_KEY, (data) => {
