@@ -106,18 +106,6 @@ async function notifyStopped(locationId, scores) {
   }
 }
 
-function registerUserInfoFromMsg(msg) {
-  if (usersToRegister[msg.author.id]) {
-    return;
-  }
-
-  usersToRegister[msg.author.id] = {
-    username: msg.author.username,
-    discriminator: msg.author.discriminator,
-    avatar: msg.author.avatar,
-  };
-}
-
 async function getReportUriForLocation(locationId) {
   try {
     const report = pendingReportForLocationId[locationId];
@@ -184,6 +172,5 @@ module.exports = {
   notifyStarting,
   notifyAnswered,
   notifyStopped,
-  registerUserInfoFromMsg,
   getReportUriForLocation,
 };
