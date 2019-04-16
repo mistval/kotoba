@@ -19,7 +19,7 @@ function calculateCanCopyToCustomDeck(card) {
     return false;
   }
 
-  if (card.questionCreationStrategy === 'IMAGE_URI') {
+  if (card.questionCreationStrategy === 'IMAGE_URI' || card.questionCreationStrategy === 'FORVO_AUDIO_FILE') {
     return false;
   }
 
@@ -53,7 +53,7 @@ function notifyAnswered(locationId, card, answerers) {
     }
 
     const reportCard = {
-      question: card.question,
+      question: card.question.replace('/var/app/', ''), // hack...
       answers: card.answer,
       comment: card.meaning,
       uri: card.dictionaryLink,
