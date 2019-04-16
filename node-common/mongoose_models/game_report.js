@@ -7,7 +7,7 @@ const scoreType = {
 
 const gameReportSchema = new mongoose.Schema({
   sessionName: { type: String, required: true },
-  startTime: { type: Date, required: true, index: true },
+  startTime: { type: Date, required: true, index: true, expires: 60 * 24 * 60 * 60 * 1000 },
   endTime: { type: Date, required: true },
   participants: { type: [{ type:  mongoose.Schema.Types.ObjectId, required: true, ref: 'User', index: true }], required: true, index: true },
   discordServerIconUri: { type: String },
