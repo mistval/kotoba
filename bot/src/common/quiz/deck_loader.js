@@ -317,7 +317,7 @@ async function getDeckFromInternet(deckInformation, invokerUserId, invokerUserNa
       deckUri = foundDatabaseEntry.uri;
       ({ uniqueId } = foundDatabaseEntry);
       author = foundDatabaseEntry.authorName;
-    } else {
+    } else if (deckUri) {
       throwPublicErrorInfo('Quiz', 'Please visit [the web dashboard](https://kotobaweb.com/dashboard) to create custom quizzes.', 'trying to load new deck from pastebin');
     }
   } else if (deckUri) {
