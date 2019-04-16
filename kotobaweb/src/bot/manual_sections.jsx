@@ -19,6 +19,13 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
+  'Custom Decks',
+  (
+    <p>You can create custom decks and import/export them from CSV in the <a href="/dashboard">the dashboard</a>.</p>
+  ),
+));
+
+manualSections.push(new ManualSection(
   'Score Limit',
   (<p>The score limit of a quiz can be configured by specifying a number after the quiz name. For example: <span className="example">k!quiz N1 20</span> for a JLPT N1 quiz with a score limit of 20. Note that this does not apply to conquest or inferno mode quizzes (because they do not have a score limit). For those, the first number after the deck name is the question delay. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
 ));
@@ -76,34 +83,6 @@ manualSections.push(new ManualSection(
 manualSections.push(new ManualSection(
   'No Race Mode',
   (<p>By default, after a player gets a question correct, the timeout ends (almost) immediately and the bot moves on to the next question. If you would like to disable this, you can use the <b>norace</b> option. For example: <span className="example">k!quiz LN1 norace</span>. This is especially nice if you want to play listening quizzes with multiple people, so that everyone gets a chance to hear the whole audio track and answer.</p>),
-));
-
-manualSections.push(new ManualSection(
-  'Importing Custom Decks',
-  (
-    <div>
-      <p>I can import decks that you upload to <a href="http://pastebin.com">pastebin.com</a>.</p>
-      <p>To use such a deck in a server, that server must have internet decks enabled. If you are a server admin, you can enable internet decks with <span className="example">k!settings quiz/japanese/internet_decks_enabled true</span>. Understand that someone may put explicit content in a deck and use it in your server.</p>
-      <p>Here is an example of a deck with three questions:</p>
-      <div className="pl-4 mb-4">
-        <code className="text-primary">
-          FULL NAME: My Easy Deck!<br />
-          SHORT NAME: myeasy<br />
-          INSTRUCTIONS: Type the reading of the Kanji in Hiragana!<br />
-          QUESTION TYPE: Image<br />
-          <br />
-          --QuestionsStart--<br />
-          犬,いぬ,dog<br />
-          1日,いちにち/ついたち,first of the month/one day<br />
-          太陽,たいよう
-        </code>
-      </div>
-      <p>After putting that on <a href="https://pastebin.com/Lu9SUGxY">pastebin</a>, you can take your pastebin link and say <span className="example">k!quiz pastebin.com/xxxxx</span>. After I load the deck successfully the first time, you can use your deck&#39;s short name instead: <span className="example">k!quiz myeasy</span>. If there is an error loading it, I will tell you what is wrong and you can fix it and make a new pastebin paste (do not edit the old one, make a new one) and try again.</p>
-      <p>The <b>QUESTION TYPE</b> can be either <b>Image</b> or <b>Text</b>, depending on if you want your question to be shown as a rendered image or just plain text. Image questions must be 10 characters or fewer. Text questions can be up to 300 characters long.</p>
-      <p>You can delete your decks with <span className="example">k!quiz delete deckname</span>. If you want to edit your deck, you must delete it and recreate it with a new pastebin paste.</p>
-      <p>Programs like Excel and Google Sheets can export to CSV format (comma separated values) so it might be easier to create your list of questions in a program like that and export to CSV.</p>
-    </div>
-  ),
 ));
 
 export default manualSections;
