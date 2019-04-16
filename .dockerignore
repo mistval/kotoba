@@ -17,6 +17,7 @@ bot/config
 bot/Dockerfile
 bot/data
 bot/docker-compose.yml
+bot/latest_log
 
 nginx_windows_dev
 
