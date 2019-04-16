@@ -26,8 +26,7 @@ kotobaweb/.eslintrc.js
 kotobaweb/.gitignore
 kotobaweb/Dockerfile
 
-save_data
-shared_data
+user_data
 .gitignore
 docker-compose.yml
 link.sh
