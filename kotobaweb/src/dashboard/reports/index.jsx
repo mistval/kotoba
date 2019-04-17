@@ -28,7 +28,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
 function ScorerAvatarSmall({ discordUser }) {
   const uri = avatarUriForAvatar(discordUser.avatar, discordUser.id);
-  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1" width="24" height="24" />;
+  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1 mb-1" width="24" height="24" />;
 }
 
 function ScorersCell({ scorers, participantForId }) {
@@ -308,11 +308,11 @@ class ReportView extends Component {
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th width="20px"><input type="checkbox" checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
-                      <th scope="col">Question</th>
-                      <th scope="col" width="200px">Answers</th>
-                      <th scope="col">Comment</th>
-                      <th scope="col">Scorers</th>
+                      <th width="5%"><input type="checkbox" checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
+                      <th scope="col" width="25%">Question</th>
+                      <th scope="col" width="30%">Answers</th>
+                      <th scope="col" width="25%">Comment</th>
+                      <th scope="col" width="15%">Scorers</th>
                     </tr>
                   </thead>
                   <tbody>
