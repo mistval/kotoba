@@ -308,7 +308,7 @@ class ReportView extends Component {
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th width="5%"><input type="checkbox" checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
+                      <th width="5%"><input type="checkbox" disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)} checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
                       <th scope="col" width="25%">Question</th>
                       <th scope="col" width="30%">Answers</th>
                       <th scope="col" width="25%">Comment</th>
