@@ -46,7 +46,8 @@ function ScorersCell({ scorers, participantForId }) {
 }
 
 function CardRow({ card, participantForId, onCheck, selfUserId }) {
-  const rowClass = !selfUserId || card.correctAnswerers.indexOf(selfUserId) !== -1
+  const selfWasInGame = !!participantForId[selfUserId];
+  const rowClass = !selfWasInGame || card.correctAnswerers.indexOf(selfUserId) !== -1
     ? ''
     : 'alert alert-danger';
 
@@ -308,9 +309,9 @@ class ReportView extends Component {
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th width="5%"><input type="checkbox" disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)} checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
-                      <th scope="col" width="25%">Question</th>
-                      <th scope="col" width="30%">Answers</th>
+                      <th width="2%"><input type="checkbox" disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)} checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
+                      <th scope="col" width="30%">Question</th>
+                      <th scope="col" width="28%">Answers</th>
                       <th scope="col" width="25%">Comment</th>
                       <th scope="col" width="15%">Scorers</th>
                     </tr>
