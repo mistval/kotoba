@@ -7,6 +7,12 @@ import Analytics from '../../util/analytics';
 
 const trophies = ['🏆', '🥈', '🥉'];
 
+const styles = {
+  scorer: {
+    minWidth: '180px',
+  },
+};
+
 function avatarUriForAvatar(avatar, userId) {
   return avatar ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}` : defaultAvatar;
 }
@@ -18,7 +24,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
   const avatarUri = avatarUriForAvatar(avatar, id);
 
   return (
-    <div className="d-flex flex-column align-items-center mx-3 mb-3" key="id">
+    <div className="d-flex flex-column align-items-center mx-2 mb-3" style={styles.scorer} key="id">
       <img src={avatarUri} className="rounded-circle mb-3" />
       {nameString}
       <span className="text-success">{pointsString}</span>
