@@ -106,7 +106,13 @@ async function notifyStopped(locationId, scores) {
   }
 }
 
-async function getReportUriForLocation(locationId) {
+function timeout() {
+  return new Promise((fulfill, reject) => {
+    setTimeout(fulfill, 5000);
+  });
+}
+
+async function processPendingReportForLocation(locationId) {
   try {
     const report = pendingReportForLocationId[locationId];
     delete pendingReportForLocationId[locationId];
@@ -119,11 +125,12 @@ async function getReportUriForLocation(locationId) {
       .reduce((allIds, x) => allIds.concat(x), []);
     
     if (allAnswererDiscordIdsNonUnique.length === 0) {
-      delete pendingReportForLocationId[locationId];
       return;
     }
     
-    const allAnswererDiscordIdsUnique = allAnswererDiscordIdsNonUnique.filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
+    const allAnswererDiscordIdsUnique = allAnswererDiscordIdsNonUnique
+      .filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
+
     const registerUserPromises = allAnswererDiscordIdsUnique.map(id => {
       const user = globals.monochrome.getErisBot().users.get(id);
       return registerUser(user);
@@ -166,6 +173,10 @@ async function getReportUriForLocation(locationId) {
     globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
     delete pendingReportForLocationId[locationId];
   }
+}
+
+async function getReportUriForLocation(locationId) {
+  return Promise.race([processPendingReportForLocation(locationId), timeout()]);
 }
 
 module.exports = {
