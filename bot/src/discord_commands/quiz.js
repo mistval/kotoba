@@ -208,7 +208,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
   }
   
   if (reportUri) {
-    fields.push({ name: 'Game Report', value: `[View a detailed report for this game](${reportUri}) (and add missed questions to your custom decks)` });
+    fields.push({ name: 'Game Report', value: `[View a report for this game](${reportUri}) (and add missed questions to your custom decks)` });
   }
 
   const response = {
@@ -542,9 +542,27 @@ class DiscordMessageSender {
     return this.bot.editMessage(this.commanderMessage.channel.id, questionId, content, uploadInformation);
   }
 
-  notifySaveSuccessful() {
+  async notifySaveSuccessful() {
     this.closeAudioConnection();
-    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`The quiz has been saved and paused! Say '${this.commanderMessage.prefix}quiz load' later to start it again.`));
+
+    const reportUri = await quizReportManager.getReportUriForLocation(this.commanderMessage.channel.id);
+
+    const fields = [];
+    if (reportUri) {
+      fields.push({
+        name: 'Game Report',
+        value: `[View a report for this game](${reportUri}) (and add missed questions to your custom decks)`,
+      });
+    }
+
+    const embed = {
+      title: 'Saved',
+      description: `The quiz has been saved and paused! Say **${this.commanderMessage.prefix}quiz load** later to start it again.`,
+      color: constants.EMBED_NEUTRAL_COLOR,
+      fields,
+    };
+
+    return this.commanderMessage.channel.createMessage({ embed });
   }
 
   notifySaveFailedNoSpace(maxSaves) {
