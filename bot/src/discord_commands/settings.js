@@ -1,4 +1,5 @@
 const reload = require('require-reload')(require);
+const { PublicError } = require('monochrome-bot');
 
 const Hook = reload('./../discord_message_processors/user_and_channel_hook.js');
 const state = require('./../unreloadable_data.js');
@@ -114,12 +115,17 @@ function createFieldsForChildren(children) {
   return fields;
 }
 
-function createContentForRoot(children, iconUri) {
+function createContentForRoot(children, iconUri, prefix) {
+  const fieldForReset = {
+    name: 'Reset',
+    value: `Say **${prefix}settings resetme** to reset all your user settings.\nSay **${prefix}settings resetserver** to reset all server and channel settings in this server (except for command prefix).\n*You will not be asked for confirmation.*`,
+  };
+
   return {
     embed: {
       title: 'Settings',
       description: CATEGORY_DESCRIPTION,
-      fields: createFieldsForChildren(children),
+      fields: [...createFieldsForChildren(children), fieldForReset],
       color: EMBED_COLOR,
       footer: {
         icon_url: iconUri,
@@ -624,7 +630,8 @@ function handleCategoryViewMsg(hook, monochrome, msg, category) {
 function showRoot(monochrome, msg) {
   const settingsTree = monochrome.getSettings().getRawSettingsTree();
   const iconUri = monochrome.getSettingsIconUri();
-  const rootContent = createContentForRoot(settingsTree, iconUri);
+  const prefix = monochrome.getPersistence().getPrimaryPrefixForMessage(msg);
+  const rootContent = createContentForRoot(settingsTree, iconUri, prefix);
   const hook = Hook.registerHook(
     msg.author.id,
     msg.channel.id,
@@ -702,6 +709,37 @@ function shortcut(monochrome, msg, suffix) {
   return tryPromptForSettingLocation(undefined, msg, monochrome, setting, value);
 }
 
+async function resetUserSettings(monochrome, msg) {
+  const settings = monochrome.getSettings();
+  await settings.resetUserSettings(msg.author.id);
+  return msg.channel.createMessage({
+    embed: {
+      title: 'Settings reset',
+      description: 'Your user settings have been reset.',
+      color: EMBED_COLOR,
+    },
+  });
+}
+
+async function resetServerSettings(monochrome, msg) {
+  const userIsAdmin = monochrome.userIsServerAdmin(msg);
+  if (!userIsAdmin) {
+    throw PublicError.createWithCustomPublicMessage('You must be a server admin to do that.', true, 'Not server admin');
+  }
+
+  const settings = monochrome.getSettings();
+  const serverId = msg.channel.guild ? msg.channel.guild.id : msg.channel.id;
+  await settings.resetServerAndChannelSettings(serverId);
+
+  return msg.channel.createMessage({
+    embed: {
+      title: 'Settings reset',
+      description: 'This server\'s server and channel settings have been reset (except for command prefix).',
+      color: EMBED_COLOR,
+    },
+  });
+}
+
 module.exports = {
   commandAliases: ALIASES,
   uniqueId: 'settings',
@@ -710,6 +748,13 @@ module.exports = {
   longDescription: HELP_LONG_DESCRIPTION,
   action(bot, msg, suffix, monochrome) {
     clearStateForMsg(msg);
+
+    if (suffix === 'resetme') {
+      return resetUserSettings(monochrome, msg);
+    } else if (suffix === 'resetserver') {
+      return resetServerSettings(monochrome, msg);
+    }
+
     if (suffix) {
       return shortcut(monochrome, msg, suffix);
     }
