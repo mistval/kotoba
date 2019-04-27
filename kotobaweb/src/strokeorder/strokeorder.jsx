@@ -13,7 +13,7 @@ function uriForKanji(kanji) {
   const fileName = `${fileCode}_anim.gif`;
 
   if (availableKanjiFiles[fileName]) {
-    return `https://raw.githubusercontent.com/mistval/kotoba/master/resources/images/kanjianimations/${fileName}`;
+    return `https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/${fileName}`;
   }
 
   return undefined;
