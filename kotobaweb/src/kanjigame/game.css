@@ -1,0 +1,65 @@
+.kanjiEventBox {
+  bottom: 271px;
+}
+
+@media only screen and (max-width: 768px) {
+  #eventBox {
+    bottom: 211px;
+  }
+}
+
+#rightPanelContainer {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  top: 58px;
+  width: 300px;
+  z-index: 1031;
+  transform: translateX(0px);
+  transition: transform 200ms ease-in;
+  overflow-y: auto;
+}
+
+#rightPanelContainer.slideIn {
+  transform: translateX(0px);
+}
+
+#rightPanelContainer.slideOut {
+  transform: translateX(300px);
+}
+
+#eventBoxContainer {
+  overflow-y: auto;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+#rightPanelCloseButtonContainer {
+  z-index: 1032;
+  position: fixed;
+  right: 9px;
+  top: 61px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+#questionImage {
+  height: 110px;
+  max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #questionImage {
+    height: 50px;
+    margin-bottom: -20px;
+  }
+}
+
+.correct-icon {
+  color: green;
+}
+
+.incorrect-icon {
+  color: red;
+}

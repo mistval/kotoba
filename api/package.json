@@ -1,0 +1,44 @@
+{
+  "name": "kotoba-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js",
+    "startdev_win": "set PORT=3000 && node ./server.js",
+    "startdev_nix": "export PORT=3000 && node ./server.js",
+    "lint": "./node_modules/eslint/bin/eslint.js .",
+    "lintfix": "./node_modules/eslint/bin/eslint.js --fix .",
+    "buildquiz": "node ./build/build_quiz_decks.js",
+    "buildshiritori": "node ./node_modules/shiritori/src/build.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "canvas": "^1.6.12",
+    "connect-mongo": "^2.0.3",
+    "debug": "~2.6.9",
+    "disk-array": "^1.0.1",
+    "express": "~4.16.0",
+    "express-session": "^1.16.0",
+    "express-slow-down": "^1.3.1",
+    "kotoba-common": "file:../common",
+    "kotoba-node-common": "file:../node-common",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.24.0",
+    "monochrome-bot": "^1.1.0",
+    "morgan": "~1.9.0",
+    "nodemailer": "^4.6.8",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "request-promise": "^4.2.2",
+    "require-reload": "^0.2.2",
+    "rotating-file-stream": "^1.4.0",
+    "shiritori": "git+https://github.com/mistval/shiritori.git",
+    "socket.io": "^2.1.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
