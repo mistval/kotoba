@@ -3,9 +3,11 @@ const reload = require('require-reload')(require);
 const jishoWordSearch = reload('./jisho_word_search.js');
 const kanjiContentCreator = reload('./kanji_search_content_creator.js');
 const strokeOrderContentCreator = reload('./stroke_order_content_creator.js');
-const examplesContentCreator = reload('./examples_content_creator.js');
 const constants = reload('./constants.js');
 const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.js');
+const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
+const addPaginationFooter = require('./../discord/add_pagination_footer.js');
+
 const {
   NavigationChapter,
   Navigation,
@@ -97,32 +99,17 @@ class KanjiDataSource {
 }
 
 class ExamplesSource {
-  constructor(authorName, word, isStandalone) {
+  constructor(authorName, word) {
     this.word = word;
     this.authorName = authorName;
-    this.isStandalone = isStandalone;
   }
 
   prepareData() {
-    return examplesContentCreator.createContent(this.word);
+    return createExampleSearchPages(this.word);
   }
 
-  getPageFromPreparedData(arg, pageIndex) {
-    let content = arg.toDiscordBotContent(pageIndex);
-    if (!content) {
-      return undefined;
-    }
-
-    let showPageArrows = false;
-    if (content.pages > 1 || !this.isStandalone) {
-      content = addFooter(this.authorName, content);
-      showPageArrows = true;
-    }
-
-    const page = content;
-    page.showPageArrows = showPageArrows;
-
-    return page;
+  getPageFromPreparedData(pages, pageIndex) {
+    return pages[pageIndex];
   }
 }
 
@@ -188,25 +175,11 @@ function createNavigationChapterInformationForStrokeOrder(authorName, word, isSt
   return new NavigationChapterInformation(navigationChapter, hasMultiplePages, hasAnyPages);
 }
 
-function createNavigationChapterInformationForExamples(authorName, word, isStandalone) {
-  const navigationChapter = new NavigationChapter(new ExamplesSource(
-    authorName,
-    word,
-    isStandalone,
-  ));
+function createNavigationChapterInformationForExamples(authorName, word) {
+  const examplesSource = new ExamplesSource(authorName, word);
+  const navigationChapter = new NavigationChapter(examplesSource);
 
-  return new NavigationChapterInformation(navigationChapter);
-}
-
-function createNavigationForExamples(msg, authorName, authorId, word, navigationManager) {
-  const navigationChapterInformation =
-    createNavigationChapterInformationForExamples(authorName, word, true);
-
-  const chapterForEmojiName = {};
-  chapterForEmojiName[EXAMPLES_EMOTE] = navigationChapterInformation.navigationChapter;
-  const navigation = new Navigation(authorId, true, EXAMPLES_EMOTE, chapterForEmojiName);
-
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+  return navigationChapter;
 }
 
 function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, navigationManager) {
@@ -293,8 +266,7 @@ function createNavigationForJishoResults(
   const examplesNavigationChapter = createNavigationChapterInformationForExamples(
     authorName,
     word,
-    false,
-  ).navigationChapter;
+  );
   chapterForEmojiName[EXAMPLES_EMOTE] = examplesNavigationChapter;
 
   const navigation = new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
@@ -336,7 +308,6 @@ module.exports = {
   createNavigationForJishoResults,
   createNavigationForKanji,
   createNavigationForStrokeOrder,
-  createNavigationForExamples,
   createSmallResultForWord,
   createOnePageBigResultForWord,
 };
