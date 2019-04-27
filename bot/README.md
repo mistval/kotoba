@@ -1,6 +1,6 @@
 [![Discord Bots](https://discordbots.org/api/widget/251239170058616833.png)](https://discordbots.org/bot/251239170058616833)
 
-# Kotoba
+# Kotoba Discord Bot
 
 A Discord bot for helping with Japanese learning.
 
