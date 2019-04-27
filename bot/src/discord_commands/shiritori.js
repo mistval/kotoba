@@ -337,7 +337,11 @@ module.exports = {
   uniqueId: 'shiritori43953',
   shortDescription: 'Start a game of shiritori in this channel.',
   longDescription: 'Start a game of shiritori in this channel. **<prefix>shiritori hardcore** starts a game in hardcore mode, which means you get kicked out if you give an invalid answer. Some timing settings can be configured in **<prefix>settings shiritori**',
-  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages, Permissions.addReactions],
+  requiredBotPermissions: [
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+    Permissions.addReactions,
+  ],
   requiredSettings: [
     'shiritori/bot_turn_minimum_wait',
     'shiritori/bot_turn_maximum_wait',
