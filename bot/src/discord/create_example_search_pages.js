@@ -13,7 +13,7 @@ function createPagesForExamplesData(examplesData) {
     return [{
       embed: {
         url: examplesData.uri,
-        title: 'Jisho examples',
+        title: 'Jisho Example Search',
         description: `I didn't find any example results for [${examplesData.query}](${examplesData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
@@ -50,7 +50,7 @@ async function createPages(word) {
   try {
     examplesData = await jishoApi.searchForExamples(word);
   } catch (err) {
-    return throwPublicErrorFatal('Examples', 'Jisho is not responding. Please try again later.', 'Jisho fetch fail', err);
+    return throwPublicErrorFatal('Jisho Example Search', 'Jisho is not responding. Please try again later.', 'Jisho fetch fail', err);
   }
 
   return createPagesForExamplesData(examplesData);
