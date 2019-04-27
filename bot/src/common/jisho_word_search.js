@@ -98,7 +98,7 @@ function sortWords(words, searchPhrase) {
 
 function formatJlptTags(jlptTags) {
   return jlptTags
-    .map(tag => parseInt(tag.replace('jlpt-n', '')))
+    .map(tag => parseInt(tag.replace('jlpt-n', ''), 10))
     .sort()
     .reverse()
     .map(level => `JLPT N${level}`)

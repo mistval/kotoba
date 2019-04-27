@@ -6,7 +6,6 @@ const strokeOrderContentCreator = reload('./stroke_order_content_creator.js');
 const constants = reload('./constants.js');
 const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
-const addPaginationFooter = require('./../discord/add_pagination_footer.js');
 
 const {
   NavigationChapter,
@@ -108,6 +107,7 @@ class ExamplesSource {
     return createExampleSearchPages(this.word);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   getPageFromPreparedData(pages, pageIndex) {
     return pages[pageIndex];
   }

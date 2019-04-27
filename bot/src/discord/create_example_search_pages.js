@@ -13,20 +13,18 @@ function createPagesForExamplesData(examplesData) {
     return [{
       embed: {
         url: examplesData.uri,
-        title: `Jisho examples`,
+        title: 'Jisho examples',
         description: `I didn't find any example results for [${examplesData.query}](${examplesData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     }];
   }
 
-  const shortExamples = examplesData.results.filter(
-    result => result.kanji.length < LONG_CUTOFF_IN_CHARS,
-  );
+  const shortExamples = examplesData.results.filter(result =>
+    result.kanji.length < LONG_CUTOFF_IN_CHARS);
 
-  const longExamples = examplesData.results.filter(
-    result => result.kanji.length >= LONG_CUTOFF_IN_CHARS,
-  );
+  const longExamples = examplesData.results.filter(result =>
+    result.kanji.length >= LONG_CUTOFF_IN_CHARS);
 
   const sortedExamples = shortExamples.concat(longExamples);
   const chunkedExamples = ArrayUtil.chunk(sortedExamples, MAX_RESULTS_PER_PAGE);
