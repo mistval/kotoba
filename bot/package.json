@@ -25,7 +25,7 @@
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
     "bluebird": "3.5.1",
-    "canvas": "^1.6.7",
+    "canvas": "1.6.7",
     "cheerio": "^1.0.0-rc.2",
     "disk-array": "^1.0.1",
     "html-entities": "1.2.1",
