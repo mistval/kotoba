@@ -41,7 +41,9 @@ module.exports = {
 
 ### Production (Docker)
 
-To deploy for production, use **docker-compose**. In the directory above this one (the root directory of the repo) run `docker-compose up kotoba-api mongo-readwrite`.
+First make sure you have followed the **Configuration** instructions above and also for [the React frontend](https://github.com/mistval/kotoba/tree/master/kotobaweb).
+
+To deploy for production, use **docker-compose**. In the directory above this one (the root directory of the repo) run `docker-compose up nginx kotoba-api kotoba-web mongo-readwrite`. You *can* omit **kotoba-web** if you don't want to launch the React frontend, but there's not much use in running the API without it.
 
 ### Development
 
