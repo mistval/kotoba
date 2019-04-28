@@ -1,11 +1,13 @@
 const constants = require('./../common/constants.js');
 
 function addPaginationFooter(pages, authorName) {
-  if (pages.length <= 1) {
-    return pages;
+  let sanitizedPages = pages;
+  const single = !Array.isArray(pages);
+  if (single) {
+    sanitizedPages = [pages];
   }
 
-  const pageCopies = pages.map(page => ({
+  const pageCopies = sanitizedPages.map(page => ({
     ...page,
     embed: {
       ...page.embed,
@@ -15,6 +17,10 @@ function addPaginationFooter(pages, authorName) {
       },
     },
   }));
+
+  if (single) {
+    return pageCopies[0];
+  }
 
   return pageCopies;
 }

@@ -1,11 +1,12 @@
 const reload = require('require-reload')(require);
 
 const jishoWordSearch = reload('./jisho_word_search.js');
-const kanjiContentCreator = reload('./kanji_search_content_creator.js');
 const strokeOrderContentCreator = reload('./stroke_order_content_creator.js');
 const constants = reload('./constants.js');
 const JishoDiscordContentFormatter = reload('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
+const addPaginationFooter = require('./../discord/add_pagination_footer.js');
+const createKanjiSearchNavigationChapter = require('./../discord/create_kanji_search_navigation_chapter.js');
 
 const {
   NavigationChapter,
@@ -69,42 +70,14 @@ class StrokeOrderDataSource {
   }
 }
 
-class KanjiDataSource {
-  constructor(authorName, kanjis, isStandalone, hasMultiplePages, prefix) {
-    this.kanjis = kanjis;
-    this.authorName = authorName;
-    this.isStandalone = isStandalone;
-    this.hasMultiplePages = hasMultiplePages;
-    this.prefix = prefix;
-  }
-
-  // Nothing to do here, but we need the method due to
-  // interface contract.
-  // eslint-disable-next-line class-methods-use-this
-  prepareData() {
-  }
-
-  async getPageFromPreparedData(arg, pageIndex) {
-    if (pageIndex < this.kanjis.length) {
-      const content = await kanjiContentCreator.createContent(this.kanjis[pageIndex], this.prefix);
-      if (this.hasMultiplePages || !this.isStandalone) {
-        return addFooter(this.authorName, content);
-      }
-      return content;
-    }
-
-    return undefined;
-  }
-}
-
 class ExamplesSource {
   constructor(authorName, word) {
     this.word = word;
     this.authorName = authorName;
   }
 
-  prepareData() {
-    return createExampleSearchPages(this.word);
+  async prepareData() {
+    return addPaginationFooter(await createExampleSearchPages(this.word), this.authorName);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -121,32 +94,15 @@ function removeDuplicates(array) {
   return array.filter((element, i) => array.indexOf(element) === i);
 }
 
-function createNavigationChapterInformationForKanji(authorName, word, isStandalone, prefix) {
-  const kanjis = removeDuplicates(word.match(KANJI_REGEX));
-  const pageCount = kanjis ? kanjis.length : 0;
-  const hasMultiplePages = pageCount > 1;
-  const hasAnyPages = pageCount > 0;
-  let navigationChapter;
+function createNavigationChapterInformationForKanji(authorName, word, prefix) {
+  const { navigationChapter, pageCount, hasResult } = createKanjiSearchNavigationChapter(
+    word,
+    authorName,
+    prefix,
+    true,
+  );
 
-  if (kanjis && kanjis.length > 0) {
-    navigationChapter = new NavigationChapter(new KanjiDataSource(
-      authorName,
-      kanjis,
-      isStandalone,
-      hasMultiplePages,
-      prefix,
-    ));
-  } else if (isStandalone) {
-    navigationChapter = new NavigationChapter(new KanjiDataSource(
-      authorName,
-      word,
-      isStandalone,
-      hasMultiplePages,
-      prefix,
-    ));
-  }
-
-  return new NavigationChapterInformation(navigationChapter, hasMultiplePages, hasAnyPages);
+  return new NavigationChapterInformation(navigationChapter, pageCount.length > 1, hasResult);
 }
 
 function createNavigationChapterInformationForStrokeOrder(authorName, word, isStandalone) {
@@ -202,27 +158,6 @@ function createNavigationForStrokeOrder(msg, authorName, authorId, kanji, naviga
   return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
-function createNavigationForKanji(msg, authorName, authorId, kanji, navigationManager) {
-  const navigationChapterInformation = createNavigationChapterInformationForKanji(
-    authorName,
-    kanji,
-    true,
-    msg.prefix,
-  );
-
-  const chapterForEmojiName = {};
-  chapterForEmojiName[KANJI_EMOTE] = navigationChapterInformation.navigationChapter;
-
-  const navigation = new Navigation(
-    authorId,
-    navigationChapterInformation.hasMultiplePages,
-    KANJI_EMOTE,
-    chapterForEmojiName,
-  );
-
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
-}
-
 function createNavigationForJishoResults(
   msg,
   authorName,
@@ -245,7 +180,6 @@ function createNavigationForJishoResults(
   const kanjiNavigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     word,
-    false,
     msg.prefix,
   );
   if (kanjiNavigationChapterInformation.hasAnyPages) {
@@ -306,7 +240,6 @@ async function createSmallResultForWord(msg, word) {
 module.exports = {
   createNavigationForWord,
   createNavigationForJishoResults,
-  createNavigationForKanji,
   createNavigationForStrokeOrder,
   createSmallResultForWord,
   createOnePageBigResultForWord,

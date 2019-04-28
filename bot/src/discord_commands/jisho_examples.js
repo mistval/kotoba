@@ -16,9 +16,12 @@ module.exports = {
       return throwPublicErrorInfo('Examples', `Say **${prefix}examples [text]** to search for examples. For example: **${prefix}examples 瞬間**`, 'No suffix');
     }
 
-    const pages = await createExampleSearchPages(suffix);
-    const pagesWithFooter = addPaginationFooter(pages, msg.author.username);
-    const navigation = Navigation.fromOneDimensionalContents(msg.author.id, pagesWithFooter);
+    let pages = await createExampleSearchPages(suffix);
+    if (pages.length > 1) {
+      pages = addPaginationFooter(pages, msg.author.username);
+    }
+
+    const navigation = Navigation.fromOneDimensionalContents(msg.author.id, pages);
 
     return monochrome.getNavigationManager().show(
       navigation,
