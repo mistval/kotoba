@@ -85,7 +85,7 @@ async function sendScores(monochrome, msg) {
       username: nameForUserId[userID] || userNameForUserID(monochrome, userID),
       score: scoreForUserID[userID],
     }))
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => a.score - b.score);
 
   if (sortedScores.length === 0) {
     return msg.channel.createMessage('There aren\'t any Shiritori Forever scores in this channel yet. Maybe Shiritori Forever is not enabled here, or no one has played yet.');
