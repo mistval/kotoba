@@ -115,7 +115,7 @@ module.exports = {
   botAdminOnly: true,
   uniqueId: 'schedule_reboot',
   hidden: true,
-  action: async function action(bot, msg, suffix, monochrome) {
+  async action(bot, msg, suffix, monochrome) {
     if (globals.shutdownScheduled) {
       return msg.channel.createMessage('Already scheduled to shutdown');
     }
