@@ -2,6 +2,7 @@
 
 const kitsuSearch = require('./../common/kitsu_anime_search.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const constants = require('./../common/constants.js');
 
 module.exports = {
   commandAliases: ['anime', 'a'],
@@ -17,12 +18,17 @@ module.exports = {
       return throwPublicErrorInfo('Kitsu Anime Search', `Say **${prefix}a [anime]** to search for anime on Kitsu.io. For example: **${prefix}a Monster**. Say **${prefix}help anime** for more help.`, 'No suffix');
     }
 
-    return kitsuSearch.createNavigationForAnime(
+    const navigation = await kitsuSearch.createNavigationForAnime(
       msg.author.username,
       msg.author.id,
       suffix,
+    );
+
+    return monochrome.getNavigationManager().show(
+      navigation,
+      constants.NAVIGATION_EXPIRATION_TIME,
+      msg.channel,
       msg,
-      monochrome.getNavigationManager(),
     );
   },
 };
