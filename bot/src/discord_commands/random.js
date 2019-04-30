@@ -1,10 +1,8 @@
-const reload = require('require-reload')(require);
 const { PublicError } = require('monochrome-bot');
-
-const getRandomWord = reload('./../common/get_random_word.js');
-const jishoWordSearch = reload('./../common/jisho_word_search.js');
-const constants = reload('./../common/constants.js');
-const jishoSearch = reload('./../common/jisho_search.js');
+const getRandomWord = require('./../common/get_random_word.js');
+const jishoWordSearch = require('./../common/jisho_word_search.js');
+const constants = require('./../common/constants.js');
+const jishoSearch = require('./../common/jisho_search.js');
 
 const NUMBER_OF_RETRIES = 50;
 
@@ -16,7 +14,9 @@ const jishoNotRespondingResponse = {
   },
 };
 
-async function getRandomWordRecursive(suffix, msg, retriesRemaining, logger, navigationManager) {
+async function getRandomWordRecursive(suffix, msg, retriesRemaining, monochrome) {
+  const navigationManager = monochrome.getNavigationManager();
+
   if (retriesRemaining <= 0) {
     throw PublicError.createWithCustomPublicMessage(
       jishoNotRespondingResponse,
@@ -35,16 +35,17 @@ async function getRandomWordRecursive(suffix, msg, retriesRemaining, logger, nav
   }
 
   if (!jishoData.hasResults) {
-    return getRandomWordRecursive(suffix, msg, retriesRemaining - 1, logger, navigationManager);
+    return getRandomWordRecursive(suffix, msg, retriesRemaining - 1, monochrome);
   }
 
-  return jishoSearch.createNavigationForJishoResults(
+  const navigation = jishoSearch.createNavigationForJishoResults(
     msg,
     msg.author.username,
     msg.author.id,
     jishoData,
-    navigationManager,
   );
+
+  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
 module.exports = {
@@ -62,8 +63,7 @@ module.exports = {
       suffixLowerCase,
       msg,
       NUMBER_OF_RETRIES,
-      monochrome.getLogger(),
-      monochrome.getNavigationManager(),
+      monochrome,
     );
   },
 };
