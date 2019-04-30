@@ -3,7 +3,7 @@ module.exports = {
   canBeChannelRestricted: false,
   botAdminOnly: true,
   uniqueId: 'shutdown',
-  action: async function action(bot, msg) {
+  async action(bot, msg) {
     await msg.channel.createMessage('Shutting down!');
     process.exit(0);
   },

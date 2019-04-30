@@ -134,7 +134,7 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: '<prefix>translate 吾輩は猫である',
-  action: async function action(bot, msg, suffix) {
+  async action(bot, msg, suffix) {
     const spaceIndex = msg.cleanContent.indexOf(' ');
     const cleanContent = msg.cleanContent.substring(spaceIndex + 1).trim();
     const languageCodes = getLanguageCodesFromExtension(msg.extension);

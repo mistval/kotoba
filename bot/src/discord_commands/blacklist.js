@@ -11,7 +11,7 @@ module.exports = {
   uniqueId: 'blacklist',
   shortDescription: 'Blacklist a user.',
   usageExample: '<prefix>blacklist 52634605505 Abuse of bot features',
-  action: async function action(bot, msg, suffix, monochrome) {
+  async action(bot, msg, suffix, monochrome) {
     if (!suffix || suffix.indexOf(' ') === -1) {
       throw PublicError.createWithCustomPublicMessage('Say \'!blacklist [userId] [reason]\' to blacklist a user.', false, 'Invalid syntax');
     }
