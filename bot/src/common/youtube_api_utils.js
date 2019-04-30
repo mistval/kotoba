@@ -17,6 +17,9 @@ async function getAllLinksInPlaylist(playlistId) {
   let pageToken;
 
   do {
+    // We need to make the requests in sequence
+    // because each one returns a token for the next page.
+    // eslint-disable-next-line no-await-in-loop
     const data = await request({
       uri: 'https://www.googleapis.com/youtube/v3/playlistItems',
       qs: {
