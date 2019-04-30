@@ -1,6 +1,6 @@
 
 
-const kitsuSearch = require('./../common/kitsu_anime_search.js');
+const createAnimeSearchNavigation = require('./../discord/create_anime_search_navigation.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
 
@@ -18,7 +18,7 @@ module.exports = {
       return throwPublicErrorInfo('Kitsu Anime Search', `Say **${prefix}a [anime]** to search for anime on Kitsu.io. For example: **${prefix}a Monster**. Say **${prefix}help anime** for more help.`, 'No suffix');
     }
 
-    const navigation = await kitsuSearch.createNavigationForAnime(
+    const navigation = await createAnimeSearchNavigation(
       msg.author.username,
       msg.author.id,
       suffix,
