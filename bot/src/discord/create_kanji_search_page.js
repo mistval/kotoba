@@ -118,14 +118,14 @@ function getDescriptionString(kanjiData) {
 
 function createPageForKanjiData(kanjiData, prefix) {
   if (!kanjiData.found) {
-    return [{
+    return {
       embed: {
         url: kanjiData.uri,
         title: 'Jisho Kanji Search',
         description: `I didn't find any results for [${kanjiData.query}](${kanjiData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
-    }];
+    };
   }
 
   let embedFields = [

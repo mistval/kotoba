@@ -8,6 +8,11 @@ const jishoApi = new UnofficialJishoApi();
 const MAX_RESULTS_PER_PAGE = 4;
 const LONG_CUTOFF_IN_CHARS = 22;
 
+function createPageTitle(query, pageIndex, pageCount) {
+  const pageString = pageCount > 1 ? ` (page ${pageIndex + 1} of ${pageCount})` : '';
+  return `Example results for ${query}${pageString}`;
+}
+
 function createPagesForExamplesData(examplesData) {
   if (!examplesData.found) {
     return [{
@@ -32,7 +37,7 @@ function createPagesForExamplesData(examplesData) {
   const pages = chunkedExamples.map((examples, pageIndex) => ({
     embed: {
       url: examplesData.uri,
-      title: `Example results for ${examplesData.query} (page ${pageIndex + 1} of ${chunkedExamples.length})`,
+      title: createPageTitle(examplesData.query, pageIndex, chunkedExamples.length),
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: examples.map(example => ({
         name: example.kanji,
