@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
 
-const ScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
-const constants = reload('./../common/constants.js');
+
+const ScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
+const constants = require('./../common/constants.js');
 const { Navigation } = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;

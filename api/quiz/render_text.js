@@ -1,5 +1,5 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const Canvas = require('canvas');
 
 const TOP_PADDING_IN_PIXELS = 6;

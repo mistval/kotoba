@@ -1,8 +1,8 @@
 
-const reload = require('require-reload')(require);
+
 const request = require('request-promise');
 
-const API_KEY = reload('./../../config/api_keys.json').YOUTUBE;
+const API_KEY = require('./../../config/api_keys.json').YOUTUBE;
 
 function hasApiKey() {
   return !!API_KEY;

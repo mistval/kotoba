@@ -1,8 +1,8 @@
-const reload = require('require-reload')(require);
+
 const { PublicError } = require('monochrome-bot');
 
-const YoutubeApi = reload('./../common/youtube_api_utils.js');
-const retryPromise = reload('./../common/util/retry_promise.js');
+const YoutubeApi = require('./../common/youtube_api_utils.js');
+const retryPromise = require('./../common/util/retry_promise.js');
 
 let videoUris = [];
 

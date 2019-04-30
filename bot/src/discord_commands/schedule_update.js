@@ -1,10 +1,9 @@
-const reload = require('require-reload');
 const globals = require('../common/globals.js');
 const state = require('./../common/static_state.js');
 
-const retryPromise = reload('../common/util/retry_promise.js');
-const quizManager = reload('../common/quiz/manager.js');
-const { EMBED_WARNING_COLOR, FOOTER_ICON_URI } = reload('../common/constants.js');
+const retryPromise = require('../common/util/retry_promise.js');
+const quizManager = require('../common/quiz/manager.js');
+const { EMBED_WARNING_COLOR, FOOTER_ICON_URI } = require('../common/constants.js');
 
 const LOGGER_TITLE = 'SHUTDOWN WARNING';
 const SHUTDOWN_WAIT_SECONDS = 120;

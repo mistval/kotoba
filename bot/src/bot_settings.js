@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
+
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 
-const fontHelper = reload('./common/font_helper.js');
+const fontHelper = require('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
 
 function isInRange(min, max, value) {

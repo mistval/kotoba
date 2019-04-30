@@ -1,14 +1,14 @@
-const reload = require('require-reload')(require);
+
 const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 
-const sendAndDelete = reload('./util/send_and_delete.js');
+const sendAndDelete = require('./util/send_and_delete.js');
 const { Navigation } = require('monochrome-bot');
 
-const constants = reload('./../common/constants.js');
-const retryPromise = reload('./../common/util/retry_promise.js');
+const constants = require('./../common/constants.js');
+const retryPromise = require('./../common/util/retry_promise.js');
 
 const japaneseGameStrategy = shiritoriManager.strategies.japanese;
 

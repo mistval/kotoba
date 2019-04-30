@@ -1,6 +1,6 @@
-const reload = require('require-reload')(require);
-const glosbe = reload('./../common/glosbe_word_search.js');
-const dictionaryQuery = reload('./../common/dictionary_query.js');
+
+const glosbe = require('./../common/glosbe_word_search.js');
+const dictionaryQuery = require('./../common/dictionary_query.js');
 
 module.exports = {
   name: 'Glosbe',

@@ -1,5 +1,5 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const constants = require('./../constants.js');
 
 const categoryFields = [

@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
+
 const { PublicError } = require('monochrome-bot');
 
-const Hook = reload('./../discord_message_processors/user_and_channel_hook.js');
+const Hook = require('./../discord_message_processors/user_and_channel_hook.js');
 const state = require('./../unreloadable_data.js');
 
 // CONFIG START

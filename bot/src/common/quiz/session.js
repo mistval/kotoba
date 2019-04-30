@@ -1,14 +1,14 @@
-const reload = require('require-reload')(require);
+
 const globals = require('./../globals.js');
-const Scores = reload('./scores.js');
+const Scores = require('./scores.js');
 const state = require('./../static_state.js');
-const cardStrategies = reload('./card_strategies.js');
-const DeckCollection = reload('./deck_collection.js');
-const deckLoader = reload('./deck_loader.js');
+const cardStrategies = require('./card_strategies.js');
+const DeckCollection = require('./deck_collection.js');
+const deckLoader = require('./deck_loader.js');
 const gameModes = [
-  reload('./normal_mode.js'),
-  reload('./mastery_mode.js'),
-  reload('./conquest_mode.js'),
+  require('./normal_mode.js'),
+  require('./mastery_mode.js'),
+  require('./conquest_mode.js'),
 ];
 
 const LOGGER_TITLE = 'QUIZ';

@@ -1,9 +1,9 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const request = require('request-promise');
-const DictionaryResponseData = reload('./dictionary_response_data.js');
-const WordMeaning = reload('./word_meaning.js');
-const DictionaryResult = reload('./dictionary_result.js');
+const DictionaryResponseData = require('./dictionary_response_data.js');
+const WordMeaning = require('./word_meaning.js');
+const DictionaryResult = require('./dictionary_result.js');
 const PublicError = require('monochrome-bot').PublicError;
 
 const prettyLanguageForLanguageCode = require('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;

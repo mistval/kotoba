@@ -1,9 +1,5 @@
-'use strict'
-const reload = require('require-reload')(require);
 const globals = require('./../globals.js');
 const SettingsOverride = require('./settings_override.js');
-
-const TIMES_CORRECT_BASE_REINSERTION_INDEX_MODIFIER = 12;
 
 function overrideDeckTitle(originalTitle) {
   return originalTitle + ' (Inferno Mode)';

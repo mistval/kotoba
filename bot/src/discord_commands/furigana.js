@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
 
-const textRenderer = reload('./../common/render_text.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+
+const textRenderer = require('./../common/render_text.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const { PublicError } = require('monochrome-bot');
 
 module.exports = {

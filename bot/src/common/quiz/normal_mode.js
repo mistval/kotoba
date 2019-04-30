@@ -1,6 +1,6 @@
 'use strict'
-const reload = require('require-reload')(require);
-const SettingsOverride = reload('./settings_override.js');
+
+const SettingsOverride = require('./settings_override.js');
 
 function parseUserOverrides(settingsOverrides) {
   let userScoreLimitOverride = settingsOverrides[0];

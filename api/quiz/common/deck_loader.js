@@ -1,4 +1,4 @@
-const reload = require('require-reload')(require);
+
 const state = require('./../static_state.js');
 const assert = require('assert');
 const request = require('request-promise');
@@ -10,9 +10,7 @@ const decksMetadata = require('./../../generated/quiz/decks.json');
 const cardStrategies = require('./card_strategies.js');
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
-const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
-const MAX_DECKS_PER_USER = 100;
 const CACHE_SIZE_IN_PAGES = 1000;
 
 const DeckRequestStatus = {

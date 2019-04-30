@@ -1,10 +1,10 @@
-const reload = require('require-reload')(require);
+
 const Kitsu = require('kitsu');
 const { Navigation } = require('monochrome-bot');
 
-const constants = reload('./constants.js');
-const trimEmbed = reload('./util/trim_embed.js');
-const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
+const constants = require('./constants.js');
+const trimEmbed = require('./util/trim_embed.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./util/errors.js');
 
 const api = new Kitsu();
 

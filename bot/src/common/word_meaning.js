@@ -5,7 +5,7 @@
  * feature may be removed from the bot.
  */
 
-const reload = require('require-reload')(require);
+
 const assert = require('assert');
 
 function cleanMeaning(str) {

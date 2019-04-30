@@ -1,16 +1,16 @@
 const assert = require('assert');
-const reload = require('require-reload')(require);
+
 const { Permissions } = require('monochrome-bot');
 
 const shiritoriManager = require('shiritori');
 
 const { REJECTION_REASON } = shiritoriManager;
-const constants = reload('./../common/constants.js');
-const errors = reload('./../common/util/errors.js');
-const retryPromise = reload('./../common/util/retry_promise.js');
+const constants = require('./../common/constants.js');
+const errors = require('./../common/util/errors.js');
+const retryPromise = require('./../common/util/retry_promise.js');
 
 // Piggyback on the quiz scores for now.
-const quizScoreStorageUtils = reload('./../common/quiz/score_storage_utils.js');
+const quizScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';

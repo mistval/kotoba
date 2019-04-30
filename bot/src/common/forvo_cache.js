@@ -1,7 +1,7 @@
 const globals = require('./globals.js');
-const reload = require('require-reload')(require);
 
-const forvoSearch = reload('./forvo_search.js');
+
+const forvoSearch = require('./forvo_search.js');
 
 const LOGGER_TITLE = 'FORVO CACHE';
 

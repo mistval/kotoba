@@ -1,4 +1,4 @@
-const reload = require('require-reload')(require);
+
 const state = require('./../static_state.js');
 const assert = require('assert');
 const request = require('request-promise');
@@ -12,8 +12,8 @@ const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 
 const { PublicError } = require('monochrome-bot');
-const decksMetadata = reload('./../../../generated/quiz/decks.json');
-const cardStrategies = reload('./card_strategies.js');
+const decksMetadata = require('./../../../generated/quiz/decks.json');
+const cardStrategies = require('./card_strategies.js');
 
 const LOGGER_TITLE = 'QUIZ DECK LOADER';
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;

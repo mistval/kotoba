@@ -1,6 +1,6 @@
-const reload = require('require-reload')(require);
+
 const globals = require('./../globals.js');
-const SettingsOverride = reload('./settings_override.js');
+const SettingsOverride = require('./settings_override.js');
 
 const PERCENT_CORRECT_FOR_MASTERY = .76;
 

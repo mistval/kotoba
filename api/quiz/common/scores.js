@@ -1,4 +1,4 @@
-const reload = require('require-reload')(require);
+
 
 const ScoreStorageUtils = require('./score_storage_utils.js');
 const mapObjectValue = require('./../util/map_object_value.js');

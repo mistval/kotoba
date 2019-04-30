@@ -1,8 +1,8 @@
-const reload = require('require-reload')(require);
 
-const convertToHiragana = reload('./util/convert_to_hiragana.js');
-const searchForvo = reload('./forvo_search.js');
-const pronounceDb = reload('./pronunciation_db.js');
+
+const convertToHiragana = require('./util/convert_to_hiragana.js');
+const searchForvo = require('./forvo_search.js');
+const pronounceDb = require('./pronunciation_db.js');
 
 function convertIndexStringToTrueFalse(wordLength, indexString) {
   if (!indexString) {
