@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
-
-const jishoSearch = reload('./../common/jisho_search.js');
-const errors = reload('./../common/util/errors.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const createStrokeOrderNavigationChapter = require('./../discord/create_stroke_order_search_navigation_chapter.js');
+const { Navigation } = require('monochrome-bot');
+const constants = require('./../common/constants.js');
 
 module.exports = {
   commandAliases: ['strokeorder', 's', 'so'],
@@ -14,15 +14,26 @@ module.exports = {
   action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
-      return errors.throwPublicErrorInfo('Stroke order', `Say **${prefix}strokeorder [kanji]** to search for stroke order information. For example: **${prefix}strokeorder 瞬間**. Say **${prefix}help strokeorder** for more help.`, 'No suffix');
+      return throwPublicErrorInfo('Stroke Order Search', `Say **${prefix}strokeorder [kanji]** to search for stroke order information. For example: **${prefix}strokeorder 瞬間**. Say **${prefix}help strokeorder** for more help.`, 'No suffix');
     }
 
-    return jishoSearch.createNavigationForStrokeOrder(
-      msg,
-      msg.author.username,
-      msg.author.id,
+    const { navigationChapter, pageCount } = createStrokeOrderNavigationChapter(
       suffix,
-      monochrome.getNavigationManager(),
+      msg.author.username,
+      false,
+    );
+
+    const navigation = Navigation.fromOneNavigationChapter(
+      msg.author.id,
+      navigationChapter,
+      pageCount > 1,
+    );
+
+    return monochrome.getNavigationManager().show(
+      navigation,
+      constants.NAVIGATION_EXPIRATION_TIME,
+      msg.channel,
+      msg,
     );
   },
 };
