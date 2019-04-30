@@ -60,7 +60,7 @@ function formatAnimeData(animeData, callerName) {
   });
 }
 
-async function createNavigationForAnime(authorName, authorId, keyword, msg, navigationManager) {
+async function createNavigationForAnime(authorName, authorId, keyword) {
   const searchResults = await searchAnime(keyword);
 
   if (searchResults.length === 0) {
@@ -69,7 +69,8 @@ async function createNavigationForAnime(authorName, authorId, keyword, msg, navi
 
   const discordContent = formatAnimeData(searchResults, authorName);
   const navigation = Navigation.fromOneDimensionalContents(authorId, discordContent);
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+
+  return navigation;
 }
 
 module.exports = {
