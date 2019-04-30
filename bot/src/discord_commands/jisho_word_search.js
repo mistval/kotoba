@@ -1,4 +1,4 @@
-const jishoSearch = require('./../common/jisho_search.js');
+const jishoSearch = require('./../discord/jisho_search.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
 

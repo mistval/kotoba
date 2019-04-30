@@ -1,7 +1,5 @@
-const reload = require('require-reload')(require);
-
-const jishoSearch = reload('./../common/jisho_search.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+const jishoSearch = require('./../discord/jisho_search.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['jn'],

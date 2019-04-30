@@ -3,9 +3,9 @@
 
 const reload = require('require-reload')(require);
 
-const constants = reload('./constants.js');
-const { throwPublicErrorInfo } = reload('./util/errors.js');
-const trimEmbed = reload('./util/trim_embed.js');
+const constants = reload('./../common/constants.js');
+const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+const trimEmbed = reload('./../common/util/trim_embed.js');
 
 const MAX_LINES_PER_BIG_PAGE = 11;
 const MAX_MEANINGS_SMALL = 3;

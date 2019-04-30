@@ -1,5 +1,5 @@
 const { NavigationChapter, Navigation } = require('monochrome-bot');
-const jishoWordSearch = require('./jisho_word_search.js');
+const jishoWordSearch = require('./../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
 const addPaginationFooter = require('./../discord/add_pagination_footer.js');

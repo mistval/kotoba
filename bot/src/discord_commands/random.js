@@ -2,7 +2,7 @@ const { PublicError } = require('monochrome-bot');
 const getRandomWord = require('./../common/get_random_word.js');
 const jishoWordSearch = require('./../common/jisho_word_search.js');
 const constants = require('./../common/constants.js');
-const jishoSearch = require('./../common/jisho_search.js');
+const jishoSearch = require('./../discord/jisho_search.js');
 
 const NUMBER_OF_RETRIES = 50;
 
