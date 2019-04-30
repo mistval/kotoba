@@ -1,6 +1,5 @@
 const { NavigationChapter, Navigation } = require('monochrome-bot');
 const jishoWordSearch = require('./jisho_word_search.js');
-const constants = require('./constants.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
 const addPaginationFooter = require('./../discord/add_pagination_footer.js');
@@ -70,8 +69,11 @@ function createNavigationForJishoResults(
   authorName,
   authorId,
   crossPlatformResponseData,
-  navigationManager,
 ) {
+  const chapterForEmojiName = {};
+
+  /* Create the Jisho (J) chapter */
+
   const word = crossPlatformResponseData.searchPhrase;
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,
@@ -81,40 +83,49 @@ function createNavigationForJishoResults(
   );
 
   const jishoNavigationChapter = NavigationChapter.fromContent(discordContents);
-  const chapterForEmojiName = {};
   chapterForEmojiName[JISHO_EMOTE] = jishoNavigationChapter;
+
+  /* Create the Kanji (K) chapter */
 
   const kanjiNavigationChapterInformation = createNavigationChapterInformationForKanji(
     authorName,
     word,
     msg.prefix,
   );
+
   if (kanjiNavigationChapterInformation.hasAnyPages) {
     chapterForEmojiName[KANJI_EMOTE] =
       kanjiNavigationChapterInformation.navigationChapter;
   }
+
+  /* Create the stroke order (S) chapter */
 
   const strokeOrderNavigationChapterInformation = createNavigationChapterInformationForStrokeOrder(
     authorName,
     word,
     false,
   );
+
   if (strokeOrderNavigationChapterInformation.hasAnyPages) {
     chapterForEmojiName[STROKE_ORDER_EMOTE] =
       strokeOrderNavigationChapterInformation.navigationChapter;
   }
 
+  /* Create the examples (E) chapter */
+
   const examplesNavigationChapter = createNavigationChapterInformationForExamples(
     authorName,
     word,
   );
+
   chapterForEmojiName[EXAMPLES_EMOTE] = examplesNavigationChapter;
 
-  const navigation = new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+  /* Create the navigation. */
+
+  return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
 }
 
-async function createOnePageBigResultForWord(msg, word) {
+async function createOnePageBigResultForWord(word) {
   const crossPlatformResponseData = await jishoWordSearch(word);
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     crossPlatformResponseData,
@@ -122,26 +133,25 @@ async function createOnePageBigResultForWord(msg, word) {
   );
 
   const response = discordContents[0];
-  return msg.channel.createMessage(response, null, msg);
+  return response;
 }
 
-async function createNavigationForWord(authorName, authorId, word, msg, navigationManager) {
+async function createNavigationForWord(authorName, authorId, word, msg) {
   const crossPlatformResponseData = await jishoWordSearch(word);
   return createNavigationForJishoResults(
     msg,
     authorName,
     authorId,
     crossPlatformResponseData,
-    navigationManager,
   );
 }
 
-async function createSmallResultForWord(msg, word) {
+async function createSmallResultForWord(word) {
   const crossPlatformResponseData = await jishoWordSearch(word);
   const discordContent =
     JishoDiscordContentFormatter.formatJishoDataSmall(crossPlatformResponseData);
 
-  return msg.channel.createMessage(discordContent, null, msg);
+  return discordContent;
 }
 
 module.exports = {

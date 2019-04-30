@@ -17,6 +17,7 @@ module.exports = {
       return throwPublicErrorInfo('Jisho', `Say **${prefix}jn [word]** to search for words on Jisho.org. For example: **${prefix}jn 瞬間**. Say **${prefix}help jisho** for more help.`, 'No suffix');
     }
 
-    return jishoSearch.createOnePageBigResultForWord(msg, suffix);
+    const result = await jishoSearch.createOnePageBigResultForWord(suffix);
+    return msg.channel.createMessage(result, null, msg);
   },
 };

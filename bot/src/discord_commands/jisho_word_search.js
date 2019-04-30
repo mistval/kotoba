@@ -1,7 +1,6 @@
-const reload = require('require-reload')(require);
-
-const jishoSearch = reload('./../common/jisho_search.js');
-const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./../common/util/errors.js');
+const jishoSearch = require('./../common/jisho_search.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
+const constants = require('./../common/constants.js');
 
 module.exports = {
   commandAliases: ['jisho', 'j', 'en', 'ja', 'jp', 'ja-en', 'jp-en', 'en-jp', 'en-ja'],
@@ -33,15 +32,23 @@ module.exports = {
     const searchTerm = suffix.replace(/--small/g, '').replace(/--big/g, '');
 
     if (big) {
-      return jishoSearch.createNavigationForWord(
+      const navigation = await jishoSearch.createNavigationForWord(
         msg.author.username,
         msg.author.id,
         searchTerm,
         msg,
         monochrome.getNavigationManager(),
       );
+
+      return monochrome.getNavigationManager().show(
+        navigation,
+        constants.NAVIGATION_EXPIRATION_TIME,
+        msg.channel,
+        msg,
+      );
     }
 
-    return jishoSearch.createSmallResultForWord(msg, searchTerm);
+    const result = await jishoSearch.createSmallResultForWord(searchTerm);
+    return msg.channel.createMessage(result, null, msg);
   },
 };
