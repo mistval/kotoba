@@ -1,4 +1,4 @@
-const reload = require('require-reload')(require);
+
 const assert = require('assert');
 const globals = require('./../globals.js');
 

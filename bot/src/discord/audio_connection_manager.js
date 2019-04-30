@@ -1,9 +1,9 @@
 const assert = require('assert');
 const globals = require('./../common/globals.js');
-const reload = require('require-reload')(require);
 
-const constants = reload('./../common/constants.js');
-const { throwPublicErrorFatal } = reload('./../common/util/errors.js');
+
+const constants = require('./../common/constants.js');
+const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
 const VOICE_CHANNEL_TYPE = 2;
 const EMBED_TITLE = 'Audio';

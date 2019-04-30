@@ -1,5 +1,5 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const SettingsOverride = require('./settings_override.js');
 
 function parseUserOverrides(settingsOverrides) {

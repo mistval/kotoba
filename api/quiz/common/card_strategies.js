@@ -1,5 +1,3 @@
-'use strict'
-const reload = require('require-reload')(require);
 const path = require('path');
 const renderText = require('./../render_text.js').render;
 const convertToHiragana = require('./../util/convert_to_hiragana.js');

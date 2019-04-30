@@ -5,9 +5,9 @@
  * feature may be removed from the bot.
  */
 
-const reload = require('require-reload')(require);
-const prettyLanguageForLanguageCode = reload('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
-const DictionaryResponseData = reload('./dictionary_response_data.js');
+
+const prettyLanguageForLanguageCode = require('./language_code_maps.js').prettyLanguageForGlosbeLanguageCode;
+const DictionaryResponseData = require('./dictionary_response_data.js');
 const PublicError = require('monochrome-bot').PublicError;
 
 function getHelp(langStr, fromLanguage, toLanguage) {

@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
 
-const kitsuSearch = reload('./../common/kitsu_anime_search.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+
+const kitsuSearch = require('./../common/kitsu_anime_search.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['anime', 'a'],

@@ -1,4 +1,4 @@
-const reload = require('require-reload')(require);
+
 const globals = require('./../globals.js');
 const Scores = require('./scores.js');
 const state = require('./../static_state.js');

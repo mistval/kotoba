@@ -1,7 +1,7 @@
 const { EMBED_NEUTRAL_COLOR } = require('./../common/constants.js');
-const reload = require('require-reload')(require);
 
-const shiritoriForeverHelper = reload('./../discord/shiritori_forever_helper');
+
+const shiritoriForeverHelper = require('./../discord/shiritori_forever_helper');
 
 function createInstructions(prefix) {
   const INSTRUCTIONS_DESCRIPTION = `

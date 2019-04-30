@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
+
 const UnofficialJishoApi = require('unofficial-jisho-api');
 
-const errors = reload('./util/errors.js');
+const errors = require('./util/errors.js');
 
 const jishoApi = new UnofficialJishoApi();
 

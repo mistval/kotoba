@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
 
-const youreiSearch = reload('./../common/yourei_search.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+
+const youreiSearch = require('./../common/yourei_search.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['yourei', 'y'],

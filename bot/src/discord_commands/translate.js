@@ -1,9 +1,9 @@
-const reload = require('require-reload')(require);
+
 const assert = require('assert');
 const constants = require('./../common/constants.js');
 
-const googleTranslate = reload('./../common/google_translate_utils.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
+const googleTranslate = require('./../common/google_translate_utils.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 
 function createLongDescription() {
   const supportedLanguageString = Object.keys(googleTranslate.languageNameForLanguageCode)

@@ -1,6 +1,6 @@
-const reload = require('require-reload')(require);
 
-const quizManager = reload('./../common/quiz/manager.js');
+
+const quizManager = require('./../common/quiz/manager.js');
 const shiritoriManager = require('shiritori');
 
 module.exports = {

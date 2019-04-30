@@ -1,12 +1,12 @@
-const reload = require('require-reload')(require);
+
 const request = require('request-promise');
 const cheerio = require('cheerio');
 const { Navigation, NavigationChapter } = require('monochrome-bot');
 
-const constants = reload('./constants.js');
-const trimEmbed = reload('./util/trim_embed.js');
-const { highlight } = reload('./util/sentence_highlighter.js');
-const { throwPublicErrorInfo, throwPublicErrorFatal } = reload('./util/errors.js');
+const constants = require('./constants.js');
+const trimEmbed = require('./util/trim_embed.js');
+const { highlight } = require('./util/sentence_highlighter.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./util/errors.js');
 
 const YOUREI_BASE_URL = 'http://yourei.jp';
 const SENTENCES_PER_FETCH = 20;

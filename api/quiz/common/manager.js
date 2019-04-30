@@ -1,5 +1,5 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const state = require('./../static_state.js');
 const assert = require('assert');
 const saveManager = require('./pause_manager.js');

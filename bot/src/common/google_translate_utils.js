@@ -1,14 +1,14 @@
-const reload = require('require-reload')(require);
+
 const request = require('request-promise');
 const assert = require('assert');
 const htmlEntitiesModule = require('html-entities');
 
 const htmlEntities = new htmlEntitiesModule.XmlEntities();
 
-const { throwPublicErrorFatal } = reload('./util/errors.js');
-const { languageNameForGoogleLanguageCode } = reload('./language_code_maps.js');
+const { throwPublicErrorFatal } = require('./util/errors.js');
+const { languageNameForGoogleLanguageCode } = require('./language_code_maps.js');
 
-const API_KEY = reload('./../../config/api_keys.json').GOOGLE_TRANSLATE;
+const API_KEY = require('./../../config/api_keys.json').GOOGLE_TRANSLATE;
 
 const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2';
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';

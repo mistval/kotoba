@@ -1,22 +1,22 @@
 'use strict'
-const reload = require('require-reload')(require);
+
 const path = require('path');
 const globals = require('../globals.js');
 const request = require('request-promise');
-const renderText = reload('./../render_text.js').render;
-const convertToHiragana = reload('./../util/convert_to_hiragana.js');
-const shuffleArray = reload('./../util/shuffle_array.js');
-const forvoAudioCache = reload('./../forvo_cache.js');
-const retryPromise = reload('../util/retry_promise.js');
-const WEBSTER_CTH_API_KEY = reload('../../../config/api_keys.json').WEBSTER_CTH;
-const { OXFORD_APP_ID, OXFORD_API_KEY } =  reload('../../../config/api_keys.json');
+const renderText = require('./../render_text.js').render;
+const convertToHiragana = require('./../util/convert_to_hiragana.js');
+const shuffleArray = require('./../util/shuffle_array.js');
+const forvoAudioCache = require('./../forvo_cache.js');
+const retryPromise = require('../util/retry_promise.js');
+const WEBSTER_CTH_API_KEY = require('../../../config/api_keys.json').WEBSTER_CTH;
+const { OXFORD_APP_ID, OXFORD_API_KEY } =  require('../../../config/api_keys.json');
 
 const URI_MAX_LENGTH = 2048;
 const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
 
 let BetterEnglishDefinitions;
 try {
-  BetterEnglishDefinitions = reload('./../BetterEnglishDefinitions.js');
+  BetterEnglishDefinitions = require('./../BetterEnglishDefinitions.js');
 } catch (err) {
   // The better english definitions are not available in the public repo. The crappy definitions will be used.
 }

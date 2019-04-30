@@ -1,8 +1,8 @@
-const reload = require('require-reload')(require);
 
-const getPronounceInfo = reload('./../common/get_pronounce_info.js');
-const { throwPublicErrorInfo } = reload('./../common/util/errors.js');
-const constants = reload('./../common/constants.js');
+
+const getPronounceInfo = require('./../common/get_pronounce_info.js');
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const constants = require('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,

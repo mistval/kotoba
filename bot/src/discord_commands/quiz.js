@@ -1,25 +1,25 @@
-const reload = require('require-reload')(require);
+
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
 const { Permissions } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 
-const quizManager = reload('./../common/quiz/manager.js');
-const createHelpContent = reload('./../common/quiz/decks_content.js').createContent;
-const getAdvancedHelp = reload('./../common/quiz/decks_content.js').getAdvancedHelp;
-const constants = reload('./../common/constants.js');
+const quizManager = require('./../common/quiz/manager.js');
+const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
+const getAdvancedHelp = require('./../common/quiz/decks_content.js').getAdvancedHelp;
+const constants = require('./../common/constants.js');
 const { PublicError } = require('monochrome-bot');
-const NormalGameMode = reload('./../common/quiz/normal_mode.js');
-const MasteryGameMode = reload('./../common/quiz/mastery_mode.js');
-const ConquestGameMode = reload('./../common/quiz/conquest_mode.js');
-const ReviewGameMode = reload('./../common/quiz/review_mode.js');
-const saveManager = reload('./../common/quiz/pause_manager.js');
-const deckLoader = reload('./../common/quiz/deck_loader.js');
-const DeckCollection = reload('./../common/quiz/deck_collection.js');
-const Session = reload('./../common/quiz/session.js');
-const trimEmbed = reload('./../common/util/trim_embed.js');
-const audioConnectionManager = reload('./../discord/audio_connection_manager.js');
+const NormalGameMode = require('./../common/quiz/normal_mode.js');
+const MasteryGameMode = require('./../common/quiz/mastery_mode.js');
+const ConquestGameMode = require('./../common/quiz/conquest_mode.js');
+const ReviewGameMode = require('./../common/quiz/review_mode.js');
+const saveManager = require('./../common/quiz/pause_manager.js');
+const deckLoader = require('./../common/quiz/deck_loader.js');
+const DeckCollection = require('./../common/quiz/deck_collection.js');
+const Session = require('./../common/quiz/session.js');
+const trimEmbed = require('./../common/util/trim_embed.js');
+const audioConnectionManager = require('./../discord/audio_connection_manager.js');
 
 const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;

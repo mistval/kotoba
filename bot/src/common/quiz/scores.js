@@ -1,7 +1,7 @@
-const reload = require('require-reload')(require);
 
-const ScoreStorageUtils = reload('./score_storage_utils.js');
-const mapObjectValue = reload('./../util/map_object_value.js');
+
+const ScoreStorageUtils = require('./score_storage_utils.js');
+const mapObjectValue = require('./../util/map_object_value.js');
 
 class Scores {
   constructor() {

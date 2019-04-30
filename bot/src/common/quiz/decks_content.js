@@ -1,6 +1,6 @@
 'use strict'
-const reload = require('require-reload')(require);
-const constants = reload('./../constants.js');
+
+const constants = require('./../constants.js');
 
 const stationsList = ["stations_full","stations_tokyo","stations_osaka","stations_hokkaido","stations_fukuoka","stations_kyoto","stations_yamanashi","stations_nagano","stations_niigata","stations_aomori","stations_iwate","stations_miyagi","stations_akita","stations_fukushima","stations_yamagata","stations_toyama","stations_ishikawa","stations_fukui","stations_kanagawa","stations_chiba","stations_saitama","stations_ibaraki","stations_gunma","stations_okayama","stations_hiroshima","stations_tottori","stations_shimane","stations_yamaguchi","stations_hyougo","stations_shiga","stations_nara","stations_wakayama","stations_shizuoka","stations_gifu","stations_mie","stations_saga","stations_nagasaki","stations_kumamoto","stations_oita","stations_miyazaki","stations_kagoshima","stations_tokushima","stations_kagawa","stations_ehime","stations_kochi","stations_okinawa"];
 const placesList = ["places_full","tokyo","kanagawa","saitama","chiba","ibaraki","tochigi","gunma","osaka","hyogo","kyoto","shiga","nara","wakayama","hokkaido","aomori","iwate","miyagi","akita","yamagata","fukushima","toyama","ishikawa","fukui","niigata","nagano","yamanashi","aichi","gifu","shizuoka","mie","tottori","shimane","okayama","hiroshima","yamaguchi","tokushima","kagawa","ehime","kochi","fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","okinawa"];

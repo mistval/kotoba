@@ -1,9 +1,9 @@
-const reload = require('require-reload')(require);
+
 const assert = require('assert');
 
-const cardStrategies = reload('./card_strategies.js');
-const deckLoader = reload('./deck_loader.js');
-const shuffleArray = reload('./../util/shuffle_array.js');
+const cardStrategies = require('./card_strategies.js');
+const deckLoader = require('./deck_loader.js');
+const shuffleArray = require('./../util/shuffle_array.js');
 
 const NUM_OPTIONS_FOR_MC = 5;
 

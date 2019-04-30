@@ -1,9 +1,9 @@
 
-const reload = require('require-reload')(require);
+
 const Canvas = require('canvas');
 const renderFurigana = require('render-furigana');
 
-const fontHelper = reload('./font_helper.js');
+const fontHelper = require('./font_helper.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
