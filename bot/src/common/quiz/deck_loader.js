@@ -454,6 +454,10 @@ async function getCustomDeckFromDisk(deckInfo) {
     }
   }
 
+  if (!deckRaw) {
+    return deckRaw;
+  }
+
   const cards = deckRaw.cards.map(card => {
     if (!card) {
       return card;
