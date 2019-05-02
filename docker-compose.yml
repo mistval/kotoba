@@ -27,7 +27,7 @@ services:
     volumes:
       - ./user_data/shared_data:/var/shared_data
   mongo_readwrite:
-    image: mongo
+    image: mongo:4.0.9
     restart: always
     volumes:
       - ./user_data/mongo_readwrite_data:/data/db
