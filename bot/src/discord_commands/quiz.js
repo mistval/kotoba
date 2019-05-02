@@ -328,8 +328,8 @@ function getTimeString(timestamp) {
 function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraContent) {
   const prefix = msg.prefix;
   const embed = {
-    title: 'Available Saves',
-    footer: { icon_url: constants.FOOTER_ICON_URI, text: `Load the first save with: ${prefix}quiz load 1` },
+    title: 'Loading',
+    description: `You can load a save by using this command again with the number of the save you want (listed below). For example **${prefix}quiz load 1**.`,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [],
   };
