@@ -1,19 +1,3 @@
-
-module.exports.prettyLanguageForGlosbeLanguageCode = {
-  en: 'English',
-  de: 'German',
-  ja: 'Japanese',
-  fr: 'French',
-  es: 'Spanish',
-  ru: 'Russian',
-  zh: 'Chinese',
-  it: 'Italian',
-  ar: 'Arabic',
-  pl: 'Polish',
-  eng: 'English',
-  jpn: 'Japanese',
-};
-
 module.exports.languageNameForGoogleLanguageCode = {
   af: 'Afrikaans',
   ga: 'Irish',
