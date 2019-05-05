@@ -30,7 +30,6 @@ Data from the following third parties has been used in Kotoba.
 [Jisho.org](https://jisho.org/about)  
 [Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)  
 [KanjiVG](http://kanjivg.tagaini.net/)  
-[Glosbe Dictionary](https://glosbe.com/)  
 [Forvo](https://forvo.com/)  
 [Merriam-Webster](https://www.merriam-webster.com)  
 [Oxford Dictionaries](https://www.oxforddictionaries.com/)  

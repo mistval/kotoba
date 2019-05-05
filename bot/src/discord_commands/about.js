@@ -37,7 +37,6 @@ Kotoba uses data from the following sources:
     - KanjiVG (http://kanjivg.tagaini.net/)
     - Tanos (http://www.tanos.co.uk/)
     - Youtube (http://youtube.com)
-    - Glosbe Dictionary (https://glosbe.com/)
     - Forvo (https://forvo.com/)
     - Merriam Webster Dictionary (https://www.merriam-webster.com)
     - Oxford Dictionary & Thesaurus (https://www.oxforddictionaries.com/)
