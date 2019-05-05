@@ -225,7 +225,6 @@ class ShowAnswersAction extends Action {
       const session = this.getSession_();
       const currentCard = session.getCurrentCard();
 
-      session.markCurrentCardAnswered();
       let scores = session.getScores();
       let answerersInOrder = scores.getCurrentQuestionAnswerersInOrder();
       let scoresForUser = scores.getAggregateScoreForUser();
@@ -236,6 +235,7 @@ class ShowAnswersAction extends Action {
       sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, answerersInOrder);
 
       if (answerersInOrder.length > 0) {
+        session.markCurrentCardAnswered();
         Promise.resolve(session.getMessageSender().outputQuestionScorers(
           currentCard,
           answerersInOrder,
@@ -247,6 +247,7 @@ class ShowAnswersAction extends Action {
           globals.logger.logFailure(LOGGER_TITLE, 'Failed to output the scoreboard.', err);
         });
       } else {
+        session.markCurrentCardUnanswered();
         Promise.resolve(session.getMessageSender().showWrongAnswer(
           currentCard,
           false,
@@ -414,7 +415,6 @@ class AskQuestionAction extends Action {
     try {
       if (this.fulfill_) {
         let session = this.getSession_();
-        session.markCurrentCardUnanswered();
         this.fulfill_(new ShowWrongAnswerAction(session, true));
       }
     } catch (err) {
@@ -457,7 +457,6 @@ class AskQuestionAction extends Action {
           this.timeoutStartTime = new Date();
           let timer = setTimeout(() => {
             try {
-              session.markCurrentCardUnanswered();
               fulfill(new ShowWrongAnswerAction(session, false));
             } catch(err) {
               reject(err);
