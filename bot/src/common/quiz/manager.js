@@ -325,6 +325,7 @@ class ShowWrongAnswerAction extends Action {
     let session = this.getSession_();
     let currentCard = session.getCurrentCard();
     sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, []);
+    session.markCurrentCardUnanswered();
     return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_)).catch(err => {
       let question = currentCard.question;
       globals.logger.logFailure(LOGGER_TITLE, 'Failed to show timeout message for ' + question, err);
