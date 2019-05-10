@@ -14,202 +14,1410 @@
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Meaning",
   "cards": [
-    {"question":"駅","answer":["えき"],"meaning":"station"},
-    {"meaning":"afterwards","question":"後","answer":["あと","ご","のち"]},
-    {"meaning":"rain","question":"雨","answer":["あめ"]},
-    {"meaning":"to go","question":"行く","answer":["いく","ゆく"]},
-    {"meaning":"one","question":"一","answer":["いち"]},
-    {"meaning":"first of the month","question":"一日","answer":["いちにち","ついたち"]},
-    {"meaning":"five days, fifth day","question":"五日","answer":["いつか"]},
-    {"meaning":"five","question":"五つ","answer":["いつつ"]},
-    {"meaning":"now","question":"今","answer":["いま"]},
-    {"meaning":"to put in","question":"入れる","answer":["いれる"]},
-    {"meaning":"on top of","question":"上","answer":["うえ","かみ","じょう"]},
-    {"meaning":"behind","question":"後ろ","answer":["うしろ"]},
-    {"meaning":"to be born","question":"生まれる","answer":["うまれる"]},
-    {"meaning":"big","question":"大きい","answer":["おおきい"]},
-    {"meaning":"big","question":"大きな","answer":["おおきな"]},
-    {"meaning":"(honorable) mother","question":"お母さん","answer":["おかあさん"]},
-    {"meaning":"money","question":"お金","answer":["おかね"]},
-    {"meaning":"(honorable) father","question":"お父さん","answer":["おとうさん"]},
-    {"meaning":"Man","question":"男","answer":["おとこ"]},
-    {"meaning":"Boy","question":"男の子","answer":["おとこのこ"]},
-    {"meaning":"Adult","question":"大人","answer":["おとな"]},
-    {"meaning":"Woman","question":"女","answer":["おんな"]},
-    {"meaning":"Girl","question":"女の子","answer":["おんなのこ"]},
-    {"meaning":"foreign country","question":"外国","answer":["がいこく"]},
-    {"meaning":"Foreigner","question":"外国人","answer":["がいこくじん"]},
-    {"meaning":"to write","question":"書く","answer":["かく"]},
-    {"meaning":"Student","question":"学生","answer":["がくせい"]},
-    {"meaning":"School","question":"学校","answer":["がっこう"]},
-    {"meaning":"River","question":"川","answer":["かわ"]},
-    {"meaning":"tree, wood","question":"木","answer":["き"]},
-    {"meaning":"to hear, to listen to, to ask","question":"聞く","answer":["きく"]},
-    {"meaning":"North","question":"北","answer":["きた"]},
-    {"meaning":"Nine","question":"九","answer":["きゅう","く"]},
-    {"meaning":"Today","question":"今日","answer":["きょう"]},
-    {"meaning":"Country","question":"国","answer":["くに"]},
-    {"meaning":"to come","question":"来る","answer":["くる","きたる"]},
-    {"meaning":"car, vehicle","question":"車","answer":["くるま"]},
-    {"meaning":"Five","question":"五","answer":["ご"]},
-    {"meaning":"afternoon","question":"午後","answer":["ごご"]},
-    {"meaning":"nine days, ninth day","question":"九日","answer":["ここのか"]},
-    {"meaning":"Nine","question":"九つ","answer":["ここのつ"]},
-    {"meaning":"morning","question":"午前","answer":["ごぜん"]},
-    {"meaning":"this year","question":"今年","answer":["ことし"]},
-    {"meaning":"this month","question":"今月","answer":["こんげつ"]},
-    {"meaning":"the future, previous","question":"先","answer":["さき"]},
-    {"meaning":"year after next","question":"さ来年","answer":["さらいねん"]},
-    {"meaning":"Three","question":"三","answer":["さん"]},
-    {"meaning":"Four","question":"四","answer":["し","よん"]},
-    {"meaning":"Time","question":"時間","answer":["じかん"]},
-    {"meaning":"Below","question":"下","answer":["した","げ","しも"]},
-    {"meaning":"Seven","question":"七","answer":["しち","なな"]},
-    {"meaning":"Ten","question":"十","answer":["じゅう","とお"]},
-    {"meaning":"White","question":"白","answer":["しろ"]},
-    {"meaning":"White","question":"白い","answer":["しろい"]},
-    {"meaning":"Thousand","question":"千","answer":["せん"]},
-    {"meaning":"last month","question":"先月","answer":["せんげつ"]},
-    {"meaning":"teacher, doctor","question":"先生","answer":["せんせい"]},
-    {"meaning":"Outside","question":"外","answer":["そと","ほか"]},
-    {"meaning":"university","question":"大学","answer":["だいがく"]},
-    {"meaning":"tall, expensive","question":"高い","answer":["たかい"]},
-    {"meaning":"to put out","question":"出す","answer":["だす"]},
-    {"meaning":"to eat","question":"食べる","answer":["たべる"]},
-    {"meaning":"little","question":"小さい","answer":["ちいさい"]},
-    {"meaning":"little","question":"小さな","answer":["ちいさな"]},
-    {"meaning":"to go out","question":"出かける","answer":["でかける"]},
-    {"meaning":"to appear, to leave","question":"出る","answer":["でる"]},
-    {"meaning":"weather","question":"天気","answer":["てんき"]},
-    {"meaning":"electricity, electric light","question":"電気","answer":["でんき"]},
-    {"meaning":"electric train","question":"電車","answer":["でんしゃ"]},
-    {"meaning":"telephone","question":"電話","answer":["でんわ"]},
-    {"meaning":"ten days, the tenth day","question":"十日","answer":["とおか"]},
-    {"meaning":"sometimes","question":"時々","answer":["ときどき"]},
-    {"meaning":"year","question":"年","answer":["とし","ねん"]},
-    {"meaning":"middle","question":"中","answer":["なか","ちゅう"]},
-    {"meaning":"long","question":"長い","answer":["ながい"]},
-    {"meaning":"seven","question":"七つ","answer":["ななつ"]},
-    {"meaning":"seven days, the seventh day","question":"七日","answer":["なのか"]},
-    {"meaning":"name","question":"名前","answer":["なまえ"]},
-    {"meaning":"what","question":"何","answer":["なん","なに"]},
-    {"meaning":"two","question":"二","answer":["に"]},
-    {"meaning":"west","question":"西","answer":["にし"]},
-    {"meaning":"to enter, to contain","question":"入る","answer":["はいる","いる"]},
-    {"meaning":"eight","question":"八","answer":["はち"]},
-    {"meaning":"twenty days, twentieth","question":"二十日","answer":["はつか"]},
-    {"meaning":"talk, story","question":"話","answer":["はなし"]},
-    {"meaning":"to speak","question":"話す","answer":["はなす"]},
-    {"meaning":"half","question":"半","answer":["はん"]},
-    {"meaning":"east","question":"東","answer":["ひがし","あずま"]},
-    {"meaning":"left hand side","question":"左","answer":["ひだり"]},
-    {"meaning":"person","question":"人","answer":["ひと"]},
-    {"meaning":"one","question":"一つ","answer":["ひとつ"]},
-    {"meaning":"one month, January","question":"一月","answer":["ひとつき","いちがつ"]},
-    {"meaning":"one person","question":"一人","answer":["ひとり"]},
-    {"meaning":"hundred","question":"百","answer":["ひゃく"]},
-    {"meaning":"two","question":"二つ","answer":["ふたつ"]},
-    {"meaning":"two people","question":"二人","answer":["ふたり"]},
-    {"meaning":"two days, second day of the month","question":"二日","answer":["ふつか"]},
-    {"meaning":"book","question":"本","answer":["ほん"]},
-    {"question":"飲む","answer":["のむ"],"meaning":"to drink; to gulp; to swallow; to take (medicine), to smoke (tobacco), to engulf; to overwhelm, to keep down; to suppress, to accept (e.g. demand, condition), to make light of; to conceal"},
-    {"meaning":"every day","question":"毎日","answer":["まいにち"]},
-    {"question":"飲み物","answer":["のみもの"],"meaning":"drink; beverage"},
-    {"meaning":"before","question":"前","answer":["まえ"]},
-    {"question":"食べ物","answer":["たべもの"],"meaning":"food"},
-    {"meaning":"ten thousand","question":"万","answer":["まん"]},
-    {"meaning":"right side","question":"右","answer":["みぎ"]},
-    {"meaning":"water","question":"水","answer":["みず"]},
-    {"meaning":"to show","question":"見せる","answer":["みせる"]},
-    {"meaning":"three days, third day of the month","question":"三日","answer":["みっか"]},
-    {"meaning":"three","question":"三つ","answer":["みっつ"]},
-    {"meaning":"south","question":"南","answer":["みなみ"]},
-    {"meaning":"to see, to watch","question":"見る","answer":["みる"]},
-    {"meaning":"six days, sixth day of the month","question":"六日","answer":["むいか"]},
-    {"meaning":"six","question":"六つ","answer":["むっつ"]},
-    {"meaning":"rest, holiday","question":"休み","answer":["やすみ"]},
-    {"meaning":"to rest","question":"休む","answer":["やすむ"]},
-    {"meaning":"eight","question":"八つ","answer":["やっつ"]},
-    {"meaning":"mountain","question":"山","answer":["やま"]},
-    {"meaning":"eight days, eighth day of the month","question":"八日","answer":["ようか"]},
-    {"meaning":"four days, fouth day of the month","question":"四日","answer":["よっか"]},
-    {"meaning":"four","question":"四つ","answer":["よっつ"]},
-    {"meaning":"to read","question":"読む","answer":["よむ"]},
-    {"meaning":"next month","question":"来月","answer":["らいげつ"]},
-    {"meaning":"next year","question":"来年","answer":["らいねん"]},
-    {"meaning":"six","question":"六","answer":["ろく"]},
-    {"question":"お兄さん","answer":["おにいさん"],"meaning":"older brother; elder brother, (vocative) young man; buddy; fella; laddie"},
-    {"question":"お姉さん","answer":["おねえさん"],"meaning":"elder sister, (vocative) young lady, miss (referring to a waitress, etc.), ma'am (used by geisha to refer to their superiors), older girl (no relation)"},
-    {"question":"お手洗い","answer":["おてあらい"],"meaning":"toilet; restroom; lavatory; bathroom"},
-    {"question":"お茶","answer":["おちゃ"],"meaning":"tea (usu. green), tea break (at work), tea ceremony"},
-    {"question":"風","answer":["かぜ","ふう"],"meaning":"wind; breeze; draught; draft, manner; behaviour; behavior, cold; influenza, method; manner; way; style, appearance; air, tendency, folk song (genre of the Shi Jing), wind (one of the five elements)"},
-    {"question":"乗る","answer":["のる"],"meaning":"to get on (train, plane, bus, ship, etc.); to get in; to board; to take; to embark, to get on (e.g. a footstool); to step on; to jump on; to sit on; to mount, to reach; to go over; to pass, to follow; to stay (on track); to go with (the times, etc.), to take part; to participate; to join, to get into the swing (and sing, dance, etc.), to be deceived; to be taken in, to be carried; to be spread; to be scattered, to stick; to attach; to take; to go on"},
-    {"question":"仕事","answer":["しごと"],"meaning":"work; job; business; occupation; employment; vocation; task, work"},
-    {"question":"雪","answer":["ゆき"],"meaning":"snow"},
-    {"question":"元気","answer":["げんき"],"meaning":"lively; full of spirit; energetic; vigorous; vital; spirited, healthy; well; fit; in good health"},
-    {"question":"兄","answer":["あに"],"meaning":"elder brother; older brother"},
-    {"question":"冬","answer":["ふゆ"],"meaning":"winter"},
-    {"question":"初めて","answer":["はじめて"],"meaning":"for the first time, only after ... is it ...; only when ... do you ..."},
-    {"question":"友達","answer":["ともだち"],"meaning":"friend; companion"},
-    {"question":"取る","answer":["とる"],"meaning":"to take; to pick up; to harvest; to earn; to win; to choose, to steal, to eat; to have (a meal), to remove (one's glasses, etc.), to compete (in sumo, cards, etc.); to play"},
-    {"question":"口","answer":["くち"],"meaning":"mouth, opening; hole; gap; orifice, mouth (of a bottle); spout; nozzle; mouthpiece, gate; door; entrance; exit, speaking; speech; talk (i.e. gossip), taste; palate, mouth (to feed), opening (i.e. vacancy); available position, invitation; summons, kind; sort; type, opening (i.e. beginning), counter for mouthfuls, shares (of money), and swords, mouth; speech, counter for people or implements"},
-    {"question":"難しい","answer":["むずかしい"],"meaning":"difficult; hard; troublesome; complicated; serious (disease, problem, etc.), fussy; particular; fastidious; hard to please; displeased, gloomy; glum; sullen; serious (look), dirty; unclean; filthy; detestable, unpleasant; uncomfortable; creepy; spooky"},
-    {"question":"土曜日","answer":["どようび"],"meaning":"Saturday"},
-    {"question":"売る","answer":["うる"],"meaning":"to sell"},
-    {"question":"夏","answer":["なつ"],"meaning":"summer"},
-    {"question":"閉まる","answer":["しまる"],"meaning":"to be shut; to close; to be closed, to be locked, to tighten; to be tightened, to become sober; to become tense"},
-    {"question":"好き","answer":["すき"],"meaning":"liking; fondness; love"},
-    {"question":"妹","answer":["いもうと"],"meaning":"younger sister, darling (only of a woman); dear; honey; my betrothed, one's sister, friend"},
-    {"question":"金曜日","answer":["きんようび"],"meaning":"Friday"},
-    {"question":"部屋","answer":["へや"],"meaning":"room; chamber, apartment; flat; pad, stable"},
-    {"question":"子","answer":["こ"],"meaning":"child, young (animal), young woman; young geisha, offshoot, interest, new shares, player who is not a dealer (in cards, mahjong, etc.)"},
-    {"question":"安い","answer":["やすい"],"meaning":"cheap; inexpensive, calm; peaceful; quiet"},
-    {"question":"家","answer":["いえ","うち"],"meaning":"house; residence; dwelling, family; household, lineage; family name, house; home (one's own), (one's) family; (one's) household"},
-    {"question":"寒い","answer":["さむい"],"meaning":"cold (e.g. weather), uninteresting (esp. joke); lame; dull; weak; corny"},
-    {"question":"少し","answer":["すこし"],"meaning":"small quantity; little; few; something, little while, short distance"},
-    {"question":"遠い","answer":["とおい"],"meaning":"far; distant"},
-    {"question":"帰る","answer":["かえる"],"meaning":"to return; to come home; to go home; to go back, to leave, to get home; to get to home plate"},
-    {"question":"店","answer":["みせ"],"meaning":"store; shop; establishment; restaurant"},
-    {"question":"道","answer":["みち"],"meaning":"road; street; way; path; course; route; lane, distance; ways (e.g. \"a long ways\"), the way (of proper conduct, etc.); one's way; morals, teachings (esp. Confucian or Buddhist); dogma, field (of medicine, etc.); subject, way; method; means"},
-    {"question":"忘れる","answer":["わすれる"],"meaning":"to forget; to leave carelessly; to be forgetful of; to forget about; to forget (an article)"},
-    {"question":"忙しい","answer":["いそがしい"],"meaning":"busy; occupied; hectic, restless; hurried; fidgety"},
-    {"question":"遅い","answer":["おそい"],"meaning":"slow, late (e.g. \"late at night\"), too late, dull; stupid"},
-    {"question":"手","answer":["て"],"meaning":"hand; arm, forepaw; foreleg, handle, hand; worker; help, trouble; care; effort, means; way; trick; move; technique; workmanship, hand; handwriting, kind; type; sort, one's hands; one's possession, ability to cope, hand (of cards), direction, move (in go, shogi, etc.)"},
-    {"question":"走る","answer":["はしる"],"meaning":"to run, to travel (movement of vehicles); to drive, to hurry to, to retreat (from battle); to take flight, to run away from home, to elope, to tend heavily toward, to flash; to streak; to shoot through (e.g. pain)"},
-    {"question":"赤ちゃん","answer":["あかちゃん"],"meaning":"baby; infant"},
-    {"question":"買う","answer":["かう"],"meaning":"to buy; to purchase, to value; to have a high opinion, to stir; to provoke"},
-    {"question":"日曜日","answer":["にちようび"],"meaning":"Sunday"},
-    {"question":"言葉","answer":["ことば"],"meaning":"language; dialect, word; words; phrase; term; expression; remark, speech; (manner of) speaking"},
-    {"question":"映画","answer":["えいが"],"meaning":"movie; film"},
-    {"question":"春","answer":["はる"],"meaning":"spring; springtime, New Year, prime (of one's life, etc.), adolescence; puberty, sexuality"},
-    {"question":"時","answer":["とき"],"meaning":"time; hour; moment, occasion; case, chance; opportunity; season, the times; the age; the day, tense"},
-    {"question":"月","answer":["つき","げつ"],"meaning":"moon, month, month (of the year); used after number or question word (e.g. nan or nani), Monday"},
-    {"question":"言う","answer":["いう","ゆう"],"meaning":"to say; to utter; to declare, to name; to call, to go (e.g. \"the alarm went ping\"); to make a noise"},
-    {"question":"木曜日","answer":["もくようび"],"meaning":"Thursday"},
-    {"question":"覚える","answer":["おぼえる"],"meaning":"to memorize; to memorise; to commit to memory; to learn by heart; to bear in mind; to remember, to learn; to pick up; to acquire, to feel, to think; to regard"},
-    {"question":"見える","answer":["みえる"],"meaning":"to be seen; to be in sight, to look; to seem; to appear, to come, to have an audience; to meet; to see, to face (an enemy); to confront, to serve (esp. as one's wife)"},
-    {"question":"歌","answer":["うた"],"meaning":"song, classical Japanese poetry (esp. tanka), modern poetry"},
-    {"question":"歌う","answer":["うたう"],"meaning":"to sing, to sing (one's praises in a poem, etc.); to compose a poem; to recite a poem"},
-    {"question":"止まる","answer":["とまる"],"meaning":"to stop (moving); to come to a stop, to stop (doing, working, being supplied); to come to a halt; to cease; to be stopped; to be suspended, to alight; to perch on, to remain; to abide; to stay (in the one place), to be limited to; to be confined to, to cease; to stop; to be over"},
-    {"question":"歩く","answer":["あるく"],"meaning":"to walk"},
-    {"question":"英語","answer":["えいご"],"meaning":"English (language)"},
-    {"question":"母","answer":["はは"],"meaning":"mother"},
-    {"question":"水曜日","answer":["すいようび"],"meaning":"Wednesday"},
-    {"question":"洗う","answer":["あらう"],"meaning":"to wash; to cleanse; to rinse, to inquire into; investigate, to purify (one's heart), to lave (e.g. shore); to wash over (e.g. deck); to sweep"},
-    {"question":"海","answer":["うみ"],"meaning":"sea; ocean; waters"},
-    {"question":"消える","answer":["きえる"],"meaning":"to go out; to vanish; to disappear"},
-    {"question":"消す","answer":["けす"],"meaning":"to erase; to delete; to cross out, to turn off power, to extinguish; to put out, to bump off"},
-    {"question":"肉","answer":["にく"],"meaning":"flesh, meat, the physical body (as opposed to the spirit), thickness, ink pad"},
-    {"question":"火曜日","answer":["かようび"],"meaning":"Tuesday"},
-    {"question":"父","answer":["ちち"],"meaning":"father"},
-    {"question":"犬","answer":["いぬ"],"meaning":"dog (Canis (lupus) familiaris), snoop (i.e. a detective, a spy, etc.), loser; asshole, counterfeit; inferior; useless; wasteful"},
-    {"question":"猫","answer":["ねこ"],"meaning":"cat, shamisen, geisha, wheelbarrow, clay bed-warmer, bottom; submissive partner of a homosexual relationship, cat"},
-    {"question":"生きる","answer":["いきる"],"meaning":"to live; to exist, to make a living; to subsist, to be in effect; to be in use; to function, to come to life; to be enlivened, to be safe (in baseball, go, etc.)"},
-    {"question":"生徒","answer":["せいと"],"meaning":"pupil"},
-    {"question":"目","answer":["め","もく"],"meaning":"eye; eyeball, eyesight; sight; vision, look; stare; glance, an experience, viewpoint, stitch; texture; weave, ordinal number suffix, somewhat; -ish, order, item (of a budget revision, etc.), counter for go pieces; counter for surrounded positions (in go)"},
-    {"question":"耳","answer":["みみ"],"meaning":"ear, hearing, edge; crust, selvedge (non-fray machined edge of fabrics); selvage"},
-    {"question":"私","answer":["わたし","わたくし"],"meaning":"I; me"},
-    {"question":"答える","answer":["こたえる"],"meaning":"to answer; to reply"},
-    {"question":"窓","answer":["まど"],"meaning":"window"}
+    {
+      "question": "駅",
+      "answer": [
+        "えき"
+      ],
+      "meaning": "station"
+    },
+    {
+      "meaning": "afterwards",
+      "question": "後",
+      "answer": [
+        "あと",
+        "ご",
+        "のち"
+      ]
+    },
+    {
+      "meaning": "rain",
+      "question": "雨",
+      "answer": [
+        "あめ"
+      ]
+    },
+    {
+      "meaning": "to go",
+      "question": "行く",
+      "answer": [
+        "いく",
+        "ゆく"
+      ]
+    },
+    {
+      "meaning": "one",
+      "question": "一",
+      "answer": [
+        "いち"
+      ]
+    },
+    {
+      "meaning": "first of the month",
+      "question": "一日",
+      "answer": [
+        "いちにち",
+        "ついたち"
+      ]
+    },
+    {
+      "meaning": "five days, fifth day",
+      "question": "五日",
+      "answer": [
+        "いつか"
+      ]
+    },
+    {
+      "meaning": "five",
+      "question": "五つ",
+      "answer": [
+        "いつつ"
+      ]
+    },
+    {
+      "meaning": "now",
+      "question": "今",
+      "answer": [
+        "いま"
+      ]
+    },
+    {
+      "meaning": "to put in",
+      "question": "入れる",
+      "answer": [
+        "いれる"
+      ]
+    },
+    {
+      "meaning": "on top of",
+      "question": "上",
+      "answer": [
+        "うえ",
+        "かみ",
+        "じょう"
+      ]
+    },
+    {
+      "meaning": "behind",
+      "question": "後ろ",
+      "answer": [
+        "うしろ"
+      ]
+    },
+    {
+      "meaning": "to be born",
+      "question": "生まれる",
+      "answer": [
+        "うまれる"
+      ]
+    },
+    {
+      "meaning": "big",
+      "question": "大きい",
+      "answer": [
+        "おおきい"
+      ]
+    },
+    {
+      "meaning": "big",
+      "question": "大きな",
+      "answer": [
+        "おおきな"
+      ]
+    },
+    {
+      "meaning": "(honorable) mother",
+      "question": "お母さん",
+      "answer": [
+        "おかあさん"
+      ]
+    },
+    {
+      "meaning": "money",
+      "question": "お金",
+      "answer": [
+        "おかね"
+      ]
+    },
+    {
+      "meaning": "(honorable) father",
+      "question": "お父さん",
+      "answer": [
+        "おとうさん"
+      ]
+    },
+    {
+      "meaning": "Man",
+      "question": "男",
+      "answer": [
+        "おとこ"
+      ]
+    },
+    {
+      "meaning": "Boy",
+      "question": "男の子",
+      "answer": [
+        "おとこのこ"
+      ]
+    },
+    {
+      "meaning": "Adult",
+      "question": "大人",
+      "answer": [
+        "おとな"
+      ]
+    },
+    {
+      "meaning": "Woman",
+      "question": "女",
+      "answer": [
+        "おんな"
+      ]
+    },
+    {
+      "meaning": "Girl",
+      "question": "女の子",
+      "answer": [
+        "おんなのこ"
+      ]
+    },
+    {
+      "meaning": "foreign country",
+      "question": "外国",
+      "answer": [
+        "がいこく"
+      ]
+    },
+    {
+      "meaning": "Foreigner",
+      "question": "外国人",
+      "answer": [
+        "がいこくじん"
+      ]
+    },
+    {
+      "meaning": "to write",
+      "question": "書く",
+      "answer": [
+        "かく"
+      ]
+    },
+    {
+      "meaning": "Student",
+      "question": "学生",
+      "answer": [
+        "がくせい"
+      ]
+    },
+    {
+      "meaning": "School",
+      "question": "学校",
+      "answer": [
+        "がっこう"
+      ]
+    },
+    {
+      "meaning": "River",
+      "question": "川",
+      "answer": [
+        "かわ"
+      ]
+    },
+    {
+      "meaning": "tree, wood",
+      "question": "木",
+      "answer": [
+        "き"
+      ]
+    },
+    {
+      "meaning": "to hear, to listen to, to ask",
+      "question": "聞く",
+      "answer": [
+        "きく"
+      ]
+    },
+    {
+      "meaning": "North",
+      "question": "北",
+      "answer": [
+        "きた"
+      ]
+    },
+    {
+      "meaning": "Nine",
+      "question": "九",
+      "answer": [
+        "きゅう",
+        "く"
+      ]
+    },
+    {
+      "meaning": "Today",
+      "question": "今日",
+      "answer": [
+        "きょう"
+      ]
+    },
+    {
+      "meaning": "Country",
+      "question": "国",
+      "answer": [
+        "くに"
+      ]
+    },
+    {
+      "meaning": "to come",
+      "question": "来る",
+      "answer": [
+        "くる",
+        "きたる"
+      ]
+    },
+    {
+      "meaning": "car, vehicle",
+      "question": "車",
+      "answer": [
+        "くるま"
+      ]
+    },
+    {
+      "meaning": "Five",
+      "question": "五",
+      "answer": [
+        "ご"
+      ]
+    },
+    {
+      "meaning": "afternoon",
+      "question": "午後",
+      "answer": [
+        "ごご"
+      ]
+    },
+    {
+      "meaning": "nine days, ninth day",
+      "question": "九日",
+      "answer": [
+        "ここのか"
+      ]
+    },
+    {
+      "meaning": "Nine",
+      "question": "九つ",
+      "answer": [
+        "ここのつ"
+      ]
+    },
+    {
+      "meaning": "morning",
+      "question": "午前",
+      "answer": [
+        "ごぜん"
+      ]
+    },
+    {
+      "meaning": "this year",
+      "question": "今年",
+      "answer": [
+        "ことし"
+      ]
+    },
+    {
+      "meaning": "this month",
+      "question": "今月",
+      "answer": [
+        "こんげつ"
+      ]
+    },
+    {
+      "meaning": "the future, previous",
+      "question": "先",
+      "answer": [
+        "さき"
+      ]
+    },
+    {
+      "meaning": "year after next",
+      "question": "さ来年",
+      "answer": [
+        "さらいねん"
+      ]
+    },
+    {
+      "meaning": "Three",
+      "question": "三",
+      "answer": [
+        "さん"
+      ]
+    },
+    {
+      "meaning": "Four",
+      "question": "四",
+      "answer": [
+        "し",
+        "よん"
+      ]
+    },
+    {
+      "meaning": "Time",
+      "question": "時間",
+      "answer": [
+        "じかん"
+      ]
+    },
+    {
+      "meaning": "Below",
+      "question": "下",
+      "answer": [
+        "した",
+        "げ",
+        "しも"
+      ]
+    },
+    {
+      "meaning": "Seven",
+      "question": "七",
+      "answer": [
+        "しち",
+        "なな"
+      ]
+    },
+    {
+      "meaning": "Ten",
+      "question": "十",
+      "answer": [
+        "じゅう",
+        "とお"
+      ]
+    },
+    {
+      "meaning": "White",
+      "question": "白",
+      "answer": [
+        "しろ"
+      ]
+    },
+    {
+      "meaning": "White",
+      "question": "白い",
+      "answer": [
+        "しろい"
+      ]
+    },
+    {
+      "meaning": "Thousand",
+      "question": "千",
+      "answer": [
+        "せん"
+      ]
+    },
+    {
+      "meaning": "last month",
+      "question": "先月",
+      "answer": [
+        "せんげつ"
+      ]
+    },
+    {
+      "meaning": "teacher, doctor",
+      "question": "先生",
+      "answer": [
+        "せんせい"
+      ]
+    },
+    {
+      "meaning": "Outside",
+      "question": "外",
+      "answer": [
+        "そと",
+        "ほか"
+      ]
+    },
+    {
+      "meaning": "university",
+      "question": "大学",
+      "answer": [
+        "だいがく"
+      ]
+    },
+    {
+      "meaning": "tall, expensive",
+      "question": "高い",
+      "answer": [
+        "たかい"
+      ]
+    },
+    {
+      "meaning": "to put out",
+      "question": "出す",
+      "answer": [
+        "だす"
+      ]
+    },
+    {
+      "meaning": "to eat",
+      "question": "食べる",
+      "answer": [
+        "たべる"
+      ]
+    },
+    {
+      "meaning": "little",
+      "question": "小さい",
+      "answer": [
+        "ちいさい"
+      ]
+    },
+    {
+      "meaning": "little",
+      "question": "小さな",
+      "answer": [
+        "ちいさな"
+      ]
+    },
+    {
+      "meaning": "to go out",
+      "question": "出かける",
+      "answer": [
+        "でかける"
+      ]
+    },
+    {
+      "meaning": "to appear, to leave",
+      "question": "出る",
+      "answer": [
+        "でる"
+      ]
+    },
+    {
+      "meaning": "weather",
+      "question": "天気",
+      "answer": [
+        "てんき"
+      ]
+    },
+    {
+      "meaning": "electricity, electric light",
+      "question": "電気",
+      "answer": [
+        "でんき"
+      ]
+    },
+    {
+      "meaning": "electric train",
+      "question": "電車",
+      "answer": [
+        "でんしゃ"
+      ]
+    },
+    {
+      "meaning": "telephone",
+      "question": "電話",
+      "answer": [
+        "でんわ"
+      ]
+    },
+    {
+      "meaning": "ten days, the tenth day",
+      "question": "十日",
+      "answer": [
+        "とおか"
+      ]
+    },
+    {
+      "meaning": "sometimes",
+      "question": "時々",
+      "answer": [
+        "ときどき"
+      ]
+    },
+    {
+      "meaning": "year",
+      "question": "年",
+      "answer": [
+        "とし",
+        "ねん"
+      ]
+    },
+    {
+      "meaning": "middle",
+      "question": "中",
+      "answer": [
+        "なか",
+        "ちゅう"
+      ]
+    },
+    {
+      "meaning": "long",
+      "question": "長い",
+      "answer": [
+        "ながい"
+      ]
+    },
+    {
+      "meaning": "seven",
+      "question": "七つ",
+      "answer": [
+        "ななつ"
+      ]
+    },
+    {
+      "meaning": "seven days, the seventh day",
+      "question": "七日",
+      "answer": [
+        "なのか"
+      ]
+    },
+    {
+      "meaning": "name",
+      "question": "名前",
+      "answer": [
+        "なまえ"
+      ]
+    },
+    {
+      "meaning": "what",
+      "question": "何",
+      "answer": [
+        "なん",
+        "なに"
+      ]
+    },
+    {
+      "meaning": "two",
+      "question": "二",
+      "answer": [
+        "に"
+      ]
+    },
+    {
+      "meaning": "west",
+      "question": "西",
+      "answer": [
+        "にし"
+      ]
+    },
+    {
+      "meaning": "to enter, to contain",
+      "question": "入る",
+      "answer": [
+        "はいる",
+        "いる"
+      ]
+    },
+    {
+      "meaning": "eight",
+      "question": "八",
+      "answer": [
+        "はち"
+      ]
+    },
+    {
+      "meaning": "twenty days, twentieth",
+      "question": "二十日",
+      "answer": [
+        "はつか"
+      ]
+    },
+    {
+      "meaning": "talk, story",
+      "question": "話",
+      "answer": [
+        "はなし"
+      ]
+    },
+    {
+      "meaning": "to speak",
+      "question": "話す",
+      "answer": [
+        "はなす"
+      ]
+    },
+    {
+      "meaning": "half",
+      "question": "半",
+      "answer": [
+        "はん"
+      ]
+    },
+    {
+      "meaning": "east",
+      "question": "東",
+      "answer": [
+        "ひがし",
+        "あずま"
+      ]
+    },
+    {
+      "meaning": "left hand side",
+      "question": "左",
+      "answer": [
+        "ひだり"
+      ]
+    },
+    {
+      "meaning": "person",
+      "question": "人",
+      "answer": [
+        "ひと"
+      ]
+    },
+    {
+      "meaning": "one",
+      "question": "一つ",
+      "answer": [
+        "ひとつ"
+      ]
+    },
+    {
+      "meaning": "one month, January",
+      "question": "一月",
+      "answer": [
+        "ひとつき",
+        "いちがつ"
+      ]
+    },
+    {
+      "meaning": "one person",
+      "question": "一人",
+      "answer": [
+        "ひとり"
+      ]
+    },
+    {
+      "meaning": "hundred",
+      "question": "百",
+      "answer": [
+        "ひゃく"
+      ]
+    },
+    {
+      "meaning": "two",
+      "question": "二つ",
+      "answer": [
+        "ふたつ"
+      ]
+    },
+    {
+      "meaning": "two people",
+      "question": "二人",
+      "answer": [
+        "ふたり"
+      ]
+    },
+    {
+      "meaning": "two days, second day of the month",
+      "question": "二日",
+      "answer": [
+        "ふつか"
+      ]
+    },
+    {
+      "meaning": "book",
+      "question": "本",
+      "answer": [
+        "ほん"
+      ]
+    },
+    {
+      "question": "飲む",
+      "answer": [
+        "のむ"
+      ],
+      "meaning": "to drink; to gulp; to swallow; to take (medicine), to smoke (tobacco), to engulf; to overwhelm, to keep down; to suppress, to accept (e.g. demand, condition), to make light of; to conceal"
+    },
+    {
+      "meaning": "every day",
+      "question": "毎日",
+      "answer": [
+        "まいにち"
+      ]
+    },
+    {
+      "question": "飲み物",
+      "answer": [
+        "のみもの"
+      ],
+      "meaning": "drink; beverage"
+    },
+    {
+      "meaning": "before",
+      "question": "前",
+      "answer": [
+        "まえ"
+      ]
+    },
+    {
+      "question": "食べ物",
+      "answer": [
+        "たべもの"
+      ],
+      "meaning": "food"
+    },
+    {
+      "meaning": "ten thousand",
+      "question": "万",
+      "answer": [
+        "まん"
+      ]
+    },
+    {
+      "meaning": "right side",
+      "question": "右",
+      "answer": [
+        "みぎ"
+      ]
+    },
+    {
+      "meaning": "water",
+      "question": "水",
+      "answer": [
+        "みず"
+      ]
+    },
+    {
+      "meaning": "to show",
+      "question": "見せる",
+      "answer": [
+        "みせる"
+      ]
+    },
+    {
+      "meaning": "three days, third day of the month",
+      "question": "三日",
+      "answer": [
+        "みっか"
+      ]
+    },
+    {
+      "meaning": "three",
+      "question": "三つ",
+      "answer": [
+        "みっつ"
+      ]
+    },
+    {
+      "meaning": "south",
+      "question": "南",
+      "answer": [
+        "みなみ"
+      ]
+    },
+    {
+      "meaning": "to see, to watch",
+      "question": "見る",
+      "answer": [
+        "みる"
+      ]
+    },
+    {
+      "meaning": "six days, sixth day of the month",
+      "question": "六日",
+      "answer": [
+        "むいか"
+      ]
+    },
+    {
+      "meaning": "six",
+      "question": "六つ",
+      "answer": [
+        "むっつ"
+      ]
+    },
+    {
+      "meaning": "rest, holiday",
+      "question": "休み",
+      "answer": [
+        "やすみ"
+      ]
+    },
+    {
+      "meaning": "to rest",
+      "question": "休む",
+      "answer": [
+        "やすむ"
+      ]
+    },
+    {
+      "meaning": "eight",
+      "question": "八つ",
+      "answer": [
+        "やっつ"
+      ]
+    },
+    {
+      "meaning": "mountain",
+      "question": "山",
+      "answer": [
+        "やま"
+      ]
+    },
+    {
+      "meaning": "eight days, eighth day of the month",
+      "question": "八日",
+      "answer": [
+        "ようか"
+      ]
+    },
+    {
+      "meaning": "four days, fouth day of the month",
+      "question": "四日",
+      "answer": [
+        "よっか"
+      ]
+    },
+    {
+      "meaning": "four",
+      "question": "四つ",
+      "answer": [
+        "よっつ"
+      ]
+    },
+    {
+      "meaning": "to read",
+      "question": "読む",
+      "answer": [
+        "よむ"
+      ]
+    },
+    {
+      "meaning": "next month",
+      "question": "来月",
+      "answer": [
+        "らいげつ"
+      ]
+    },
+    {
+      "meaning": "next year",
+      "question": "来年",
+      "answer": [
+        "らいねん"
+      ]
+    },
+    {
+      "meaning": "six",
+      "question": "六",
+      "answer": [
+        "ろく"
+      ]
+    },
+    {
+      "question": "お兄さん",
+      "answer": [
+        "おにいさん"
+      ],
+      "meaning": "older brother; elder brother, (vocative) young man; buddy; fella; laddie"
+    },
+    {
+      "question": "お姉さん",
+      "answer": [
+        "おねえさん"
+      ],
+      "meaning": "elder sister, (vocative) young lady, miss (referring to a waitress, etc.), ma'am (used by geisha to refer to their superiors), older girl (no relation)"
+    },
+    {
+      "question": "お手洗い",
+      "answer": [
+        "おてあらい"
+      ],
+      "meaning": "toilet; restroom; lavatory; bathroom"
+    },
+    {
+      "question": "お茶",
+      "answer": [
+        "おちゃ"
+      ],
+      "meaning": "tea (usu. green), tea break (at work), tea ceremony"
+    },
+    {
+      "question": "風",
+      "answer": [
+        "かぜ",
+        "ふう"
+      ],
+      "meaning": "wind; breeze; draught; draft, manner; behaviour; behavior, cold; influenza, method; manner; way; style, appearance; air, tendency, folk song (genre of the Shi Jing), wind (one of the five elements)"
+    },
+    {
+      "question": "乗る",
+      "answer": [
+        "のる"
+      ],
+      "meaning": "to get on (train, plane, bus, ship, etc.); to get in; to board; to take; to embark, to get on (e.g. a footstool); to step on; to jump on; to sit on; to mount, to reach; to go over; to pass, to follow; to stay (on track); to go with (the times, etc.), to take part; to participate; to join, to get into the swing (and sing, dance, etc.), to be deceived; to be taken in, to be carried; to be spread; to be scattered, to stick; to attach; to take; to go on"
+    },
+    {
+      "question": "仕事",
+      "answer": [
+        "しごと"
+      ],
+      "meaning": "work; job; business; occupation; employment; vocation; task, work"
+    },
+    {
+      "question": "雪",
+      "answer": [
+        "ゆき"
+      ],
+      "meaning": "snow"
+    },
+    {
+      "question": "元気",
+      "answer": [
+        "げんき"
+      ],
+      "meaning": "lively; full of spirit; energetic; vigorous; vital; spirited, healthy; well; fit; in good health"
+    },
+    {
+      "question": "兄",
+      "answer": [
+        "あに"
+      ],
+      "meaning": "elder brother; older brother"
+    },
+    {
+      "question": "冬",
+      "answer": [
+        "ふゆ"
+      ],
+      "meaning": "winter"
+    },
+    {
+      "question": "初めて",
+      "answer": [
+        "はじめて"
+      ],
+      "meaning": "for the first time, only after ... is it ...; only when ... do you ..."
+    },
+    {
+      "question": "友達",
+      "answer": [
+        "ともだち"
+      ],
+      "meaning": "friend; companion"
+    },
+    {
+      "question": "取る",
+      "answer": [
+        "とる"
+      ],
+      "meaning": "to take; to pick up; to harvest; to earn; to win; to choose, to steal, to eat; to have (a meal), to remove (one's glasses, etc.), to compete (in sumo, cards, etc.); to play"
+    },
+    {
+      "question": "口",
+      "answer": [
+        "くち"
+      ],
+      "meaning": "mouth, opening; hole; gap; orifice, mouth (of a bottle); spout; nozzle; mouthpiece, gate; door; entrance; exit, speaking; speech; talk (i.e. gossip), taste; palate, mouth (to feed), opening (i.e. vacancy); available position, invitation; summons, kind; sort; type, opening (i.e. beginning), counter for mouthfuls, shares (of money), and swords, mouth; speech, counter for people or implements"
+    },
+    {
+      "question": "難しい",
+      "answer": [
+        "むずかしい"
+      ],
+      "meaning": "difficult; hard; troublesome; complicated; serious (disease, problem, etc.), fussy; particular; fastidious; hard to please; displeased, gloomy; glum; sullen; serious (look), dirty; unclean; filthy; detestable, unpleasant; uncomfortable; creepy; spooky"
+    },
+    {
+      "question": "土曜日",
+      "answer": [
+        "どようび"
+      ],
+      "meaning": "Saturday"
+    },
+    {
+      "question": "売る",
+      "answer": [
+        "うる"
+      ],
+      "meaning": "to sell"
+    },
+    {
+      "question": "夏",
+      "answer": [
+        "なつ"
+      ],
+      "meaning": "summer"
+    },
+    {
+      "question": "閉まる",
+      "answer": [
+        "しまる"
+      ],
+      "meaning": "to be shut; to close; to be closed, to be locked, to tighten; to be tightened, to become sober; to become tense"
+    },
+    {
+      "question": "好き",
+      "answer": [
+        "すき"
+      ],
+      "meaning": "liking; fondness; love"
+    },
+    {
+      "question": "妹",
+      "answer": [
+        "いもうと"
+      ],
+      "meaning": "younger sister, darling (only of a woman); dear; honey; my betrothed, one's sister, friend"
+    },
+    {
+      "question": "金曜日",
+      "answer": [
+        "きんようび"
+      ],
+      "meaning": "Friday"
+    },
+    {
+      "question": "部屋",
+      "answer": [
+        "へや"
+      ],
+      "meaning": "room; chamber, apartment; flat; pad, stable"
+    },
+    {
+      "question": "子",
+      "answer": [
+        "こ"
+      ],
+      "meaning": "child, young (animal), young woman; young geisha, offshoot, interest, new shares, player who is not a dealer (in cards, mahjong, etc.)"
+    },
+    {
+      "question": "安い",
+      "answer": [
+        "やすい"
+      ],
+      "meaning": "cheap; inexpensive, calm; peaceful; quiet"
+    },
+    {
+      "question": "家",
+      "answer": [
+        "いえ",
+        "うち"
+      ],
+      "meaning": "house; residence; dwelling, family; household, lineage; family name, house; home (one's own), (one's) family; (one's) household"
+    },
+    {
+      "question": "寒い",
+      "answer": [
+        "さむい"
+      ],
+      "meaning": "cold (e.g. weather), uninteresting (esp. joke); lame; dull; weak; corny"
+    },
+    {
+      "question": "少し",
+      "answer": [
+        "すこし"
+      ],
+      "meaning": "small quantity; little; few; something, little while, short distance"
+    },
+    {
+      "question": "遠い",
+      "answer": [
+        "とおい"
+      ],
+      "meaning": "far; distant"
+    },
+    {
+      "question": "帰る",
+      "answer": [
+        "かえる"
+      ],
+      "meaning": "to return; to come home; to go home; to go back, to leave, to get home; to get to home plate"
+    },
+    {
+      "question": "店",
+      "answer": [
+        "みせ"
+      ],
+      "meaning": "store; shop; establishment; restaurant"
+    },
+    {
+      "question": "道",
+      "answer": [
+        "みち"
+      ],
+      "meaning": "road; street; way; path; course; route; lane, distance; ways (e.g. \"a long ways\"), the way (of proper conduct, etc.); one's way; morals, teachings (esp. Confucian or Buddhist); dogma, field (of medicine, etc.); subject, way; method; means"
+    },
+    {
+      "question": "忘れる",
+      "answer": [
+        "わすれる"
+      ],
+      "meaning": "to forget; to leave carelessly; to be forgetful of; to forget about; to forget (an article)"
+    },
+    {
+      "question": "忙しい",
+      "answer": [
+        "いそがしい"
+      ],
+      "meaning": "busy; occupied; hectic, restless; hurried; fidgety"
+    },
+    {
+      "question": "遅い",
+      "answer": [
+        "おそい"
+      ],
+      "meaning": "slow, late (e.g. \"late at night\"), too late, dull; stupid"
+    },
+    {
+      "question": "手",
+      "answer": [
+        "て"
+      ],
+      "meaning": "hand; arm, forepaw; foreleg, handle, hand; worker; help, trouble; care; effort, means; way; trick; move; technique; workmanship, hand; handwriting, kind; type; sort, one's hands; one's possession, ability to cope, hand (of cards), direction, move (in go, shogi, etc.)"
+    },
+    {
+      "question": "走る",
+      "answer": [
+        "はしる"
+      ],
+      "meaning": "to run, to travel (movement of vehicles); to drive, to hurry to, to retreat (from battle); to take flight, to run away from home, to elope, to tend heavily toward, to flash; to streak; to shoot through (e.g. pain)"
+    },
+    {
+      "question": "赤ちゃん",
+      "answer": [
+        "あかちゃん"
+      ],
+      "meaning": "baby; infant"
+    },
+    {
+      "question": "買う",
+      "answer": [
+        "かう"
+      ],
+      "meaning": "to buy; to purchase, to value; to have a high opinion, to stir; to provoke"
+    },
+    {
+      "question": "日曜日",
+      "answer": [
+        "にちようび"
+      ],
+      "meaning": "Sunday"
+    },
+    {
+      "question": "言葉",
+      "answer": [
+        "ことば"
+      ],
+      "meaning": "language; dialect, word; words; phrase; term; expression; remark, speech; (manner of) speaking"
+    },
+    {
+      "question": "映画",
+      "answer": [
+        "えいが"
+      ],
+      "meaning": "movie; film"
+    },
+    {
+      "question": "春",
+      "answer": [
+        "はる"
+      ],
+      "meaning": "spring; springtime, New Year, prime (of one's life, etc.), adolescence; puberty, sexuality"
+    },
+    {
+      "question": "時",
+      "answer": [
+        "とき"
+      ],
+      "meaning": "time; hour; moment, occasion; case, chance; opportunity; season, the times; the age; the day, tense"
+    },
+    {
+      "question": "月",
+      "answer": [
+        "つき",
+        "げつ"
+      ],
+      "meaning": "moon, month, month (of the year); used after number or question word (e.g. nan or nani), Monday"
+    },
+    {
+      "question": "言う",
+      "answer": [
+        "いう",
+        "ゆう"
+      ],
+      "meaning": "to say; to utter; to declare, to name; to call, to go (e.g. \"the alarm went ping\"); to make a noise"
+    },
+    {
+      "question": "木曜日",
+      "answer": [
+        "もくようび"
+      ],
+      "meaning": "Thursday"
+    },
+    {
+      "question": "覚える",
+      "answer": [
+        "おぼえる"
+      ],
+      "meaning": "to memorize; to memorise; to commit to memory; to learn by heart; to bear in mind; to remember, to learn; to pick up; to acquire, to feel, to think; to regard"
+    },
+    {
+      "question": "見える",
+      "answer": [
+        "みえる"
+      ],
+      "meaning": "to be seen; to be in sight, to look; to seem; to appear, to come, to have an audience; to meet; to see, to face (an enemy); to confront, to serve (esp. as one's wife)"
+    },
+    {
+      "question": "歌",
+      "answer": [
+        "うた"
+      ],
+      "meaning": "song, classical Japanese poetry (esp. tanka), modern poetry"
+    },
+    {
+      "question": "歌う",
+      "answer": [
+        "うたう"
+      ],
+      "meaning": "to sing, to sing (one's praises in a poem, etc.); to compose a poem; to recite a poem"
+    },
+    {
+      "question": "止まる",
+      "answer": [
+        "とまる"
+      ],
+      "meaning": "to stop (moving); to come to a stop, to stop (doing, working, being supplied); to come to a halt; to cease; to be stopped; to be suspended, to alight; to perch on, to remain; to abide; to stay (in the one place), to be limited to; to be confined to, to cease; to stop; to be over"
+    },
+    {
+      "question": "歩く",
+      "answer": [
+        "あるく"
+      ],
+      "meaning": "to walk"
+    },
+    {
+      "question": "英語",
+      "answer": [
+        "えいご"
+      ],
+      "meaning": "English (language)"
+    },
+    {
+      "question": "母",
+      "answer": [
+        "はは"
+      ],
+      "meaning": "mother"
+    },
+    {
+      "question": "水曜日",
+      "answer": [
+        "すいようび"
+      ],
+      "meaning": "Wednesday"
+    },
+    {
+      "question": "洗う",
+      "answer": [
+        "あらう"
+      ],
+      "meaning": "to wash; to cleanse; to rinse, to inquire into; investigate, to purify (one's heart), to lave (e.g. shore); to wash over (e.g. deck); to sweep"
+    },
+    {
+      "question": "海",
+      "answer": [
+        "うみ"
+      ],
+      "meaning": "sea; ocean; waters"
+    },
+    {
+      "question": "消える",
+      "answer": [
+        "きえる"
+      ],
+      "meaning": "to go out; to vanish; to disappear"
+    },
+    {
+      "question": "消す",
+      "answer": [
+        "けす"
+      ],
+      "meaning": "to erase; to delete; to cross out, to turn off power, to extinguish; to put out, to bump off"
+    },
+    {
+      "question": "肉",
+      "answer": [
+        "にく"
+      ],
+      "meaning": "flesh, meat, the physical body (as opposed to the spirit), thickness, ink pad"
+    },
+    {
+      "question": "火曜日",
+      "answer": [
+        "かようび"
+      ],
+      "meaning": "Tuesday"
+    },
+    {
+      "question": "父",
+      "answer": [
+        "ちち"
+      ],
+      "meaning": "father"
+    },
+    {
+      "question": "犬",
+      "answer": [
+        "いぬ"
+      ],
+      "meaning": "dog (Canis (lupus) familiaris), snoop (i.e. a detective, a spy, etc.), loser; asshole, counterfeit; inferior; useless; wasteful"
+    },
+    {
+      "question": "猫",
+      "answer": [
+        "ねこ"
+      ],
+      "meaning": "cat, shamisen, geisha, wheelbarrow, clay bed-warmer, bottom; submissive partner of a homosexual relationship, cat"
+    },
+    {
+      "question": "生きる",
+      "answer": [
+        "いきる"
+      ],
+      "meaning": "to live; to exist, to make a living; to subsist, to be in effect; to be in use; to function, to come to life; to be enlivened, to be safe (in baseball, go, etc.)"
+    },
+    {
+      "question": "生徒",
+      "answer": [
+        "せいと"
+      ],
+      "meaning": "pupil"
+    },
+    {
+      "question": "目",
+      "answer": [
+        "め",
+        "もく"
+      ],
+      "meaning": "eye; eyeball, eyesight; sight; vision, look; stare; glance, an experience, viewpoint, stitch; texture; weave, ordinal number suffix, somewhat; -ish, order, item (of a budget revision, etc.), counter for go pieces; counter for surrounded positions (in go)"
+    },
+    {
+      "question": "耳",
+      "answer": [
+        "みみ"
+      ],
+      "meaning": "ear, hearing, edge; crust, selvedge (non-fray machined edge of fabrics); selvage"
+    },
+    {
+      "question": "私",
+      "answer": [
+        "わたし",
+        "わたくし"
+      ],
+      "meaning": "I; me"
+    },
+    {
+      "question": "答える",
+      "answer": [
+        "こたえる"
+      ],
+      "meaning": "to answer; to reply"
+    },
+    {
+      "question": "窓",
+      "answer": [
+        "まど"
+      ],
+      "meaning": "window"
+    }
   ]
 }
