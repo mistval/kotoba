@@ -38,7 +38,7 @@ function createFailureValidationResult(rejectedLine, rejectionReason, card) {
 }
 
 function sanitizeDeckPreValidation(deck) {
-  if (!deck || typeof deck.cards !== typeof []) {
+  if (!deck || !Array.isArray(deck.cards)) {
     return deck;
   }
 
@@ -132,18 +132,12 @@ function validateCards(cards) {
       throw new Error('Unexpected question creation strategy');
     }
 
-    if (typeof card.answers !== typeof []) {
+    if (!Array.isArray(card.answers)) {
       return createFailureValidationResult(cardIndex, 'Answers is not an array. Please report this error.', card);
     }
 
     if (card.answers.length === 0) {
       return createFailureValidationResult(cardIndex, 'No answers. Please add at least one answer or clear out the row. You can separate multiple answers with commas.', card);
-    }
-
-    for (let answerIndex = 0; answerIndex < card.answers.length; answerIndex += 1) {
-      if (typeof card.answers[answerIndex] !== typeof '') {
-        return createFailureValidationResult(cardIndex, 'One or more answers is not a string. Please report this error.', card);
-      }
     }
 
     const answersTotalLength = card.answers.reduce((sum, answer) => sum + answer.length, 0);
@@ -214,7 +208,7 @@ function validateDeck(deck) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, `The deck's short name must contain only letters, numbers, and underscores.`);
   }
 
-  if (typeof deck.cards !== typeof []) {
+  if (!Array.isArray(deck.cards)) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Cards is not an array. Please report this error.');
   }
 
