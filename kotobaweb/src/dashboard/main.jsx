@@ -144,7 +144,7 @@ class LoggedInMain extends Component {
           <div className="col-md-6 mb-4">
             <div className="card">
               <div className="card-block-title">
-                <h5 className="card-title">My Game Reports</h5>
+                <h5 className="card-title">Session Reports</h5>
               </div>
               <div className="card-body">
                 { createGameReportsBody(this.state.gameReports, this.state.gameReportsErrorMessage) }
@@ -154,7 +154,7 @@ class LoggedInMain extends Component {
           <div className="col-md-6">
             <div className="card">
               <div className="card-block-title d-flex justify-content-between">
-                <h5 className="card-title">My Quiz Decks</h5>
+                <h5 className="card-title">Custom Quiz Decks</h5>
               </div>
               <div className="card-body">
                  { createCustomDecksBody(this.state.quizDecks, this.state.quizDecksErrorMessage) }
