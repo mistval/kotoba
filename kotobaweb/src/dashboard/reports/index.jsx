@@ -25,7 +25,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
   return (
     <div className="d-flex flex-column align-items-center mx-2 mb-3" style={styles.scorer} key="id">
-      <img src={avatarUri} className="rounded-circle mb-3" />
+      <img src={avatarUri} className="rounded-circle mb-3" height="128" width="128" />
       {nameString}
       <span className="text-success">{pointsString}</span>
     </div>
