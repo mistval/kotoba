@@ -9,7 +9,7 @@ module.exports = {
     const sessionInfo = quizManager.getActiveSessionInformation();
     const output = sessionInfo.map((info) => {
       const ownerUserName = bot.users.get(info.ownerId).username;
-      const guild = bot.guilds.get(info.locationId);
+      const guild = bot.guilds.get(info.scoreScopeId);
       const guildName = guild ? guild.name : 'DM';
       const { quizName } = info;
 
