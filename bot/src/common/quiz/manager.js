@@ -638,6 +638,15 @@ class QuizManager {
   getInProcessLocations() {
     return Object.keys(state.quizManager.sessionForLocationId);
   }
+
+  getActiveSessionInformation() {
+    const sessions = Object.values(state.quizManager.sessionForLocationId);
+    return sessions.map((session) => ({
+      locationId: session.getLocationId(),
+      quizName: session.getQuizName(),
+      ownerId: session.getOwnerId(),
+    }));
+  }
 }
 
 module.exports = new QuizManager();
