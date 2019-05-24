@@ -645,6 +645,7 @@ class QuizManager {
       locationId: session.getLocationId(),
       quizName: session.getQuizName(),
       ownerId: session.getOwnerId(),
+      scoreScopeId: session.getScoreScopeId(),
     }));
   }
 }
