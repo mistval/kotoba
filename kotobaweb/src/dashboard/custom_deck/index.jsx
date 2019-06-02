@@ -38,7 +38,7 @@ const styles = {
 };
 
 const columns = [
-  { key: 'index', name: '#', width: 60 },
+  { key: 'index', name: '#', width: 62 },
   { key: 'question', name: 'Question', editable: true },
   { key: 'answers', name: 'Answers', editable: true },
   { key: 'comment', name: 'Comment', editable: true },
@@ -483,7 +483,7 @@ class EditDeck extends Component {
               <ReactDataGrid
                 columns={columns}
                 rowGetter={i => this.state.gridDeck.cards[i] || createEmptyRow(i) }
-                rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 5000)}
+                rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 20000)}
                 minHeight={900}
                 enableCellSelect={true}
                 onGridRowsUpdated={this.onGridRowsUpdated}
