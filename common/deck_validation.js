@@ -162,21 +162,19 @@ function validateCards(cards) {
     }
   }
 
-  for (let card1Index = 0; card1Index < cards.length; card1Index += 1) {
-    const card1 = cards[card1Index];
-    if (!card1) {
+  const indexForQuestion = {};
+
+  for (let cardIndex = 0; cardIndex < cards.length; cardIndex += 1) {
+    const card = cards[cardIndex];
+    if (!card) {
       continue;
     }
 
-    for (let card2Index = card1Index + 1; card2Index < cards.length; card2Index += 1) {
-      const card2 = cards[card2Index];
-      if (!card2) {
-        continue;
-      }
-
-      if (card1.question.trim() === card2.question.trim()) {
-        return createFailureValidationResult(card1Index, `Questions #${card1Index} and #${card2Index} have the same question. All questions must be unique.`, card1);
-      }
+    const existingIndex = indexForQuestion[card.question];
+    if (existingIndex === undefined) {
+      indexForQuestion[card.question] = cardIndex;
+    } else {
+      return createFailureValidationResult(cardIndex, `Questions #${existingIndex} and #${cardIndex} have the same question. All questions must be unique.`, card);
     }
   }
 
