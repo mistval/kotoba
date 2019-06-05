@@ -3,7 +3,7 @@ const assert = require('assert');
 
 const cardStrategies = require('./card_strategies.js');
 const deckLoader = require('./deck_loader.js');
-const shuffleArray = require('./../util/shuffle_array.js');
+const shuffleArray = require('./../util/array.js').shuffle;
 
 const NUM_OPTIONS_FOR_MC = 5;
 
