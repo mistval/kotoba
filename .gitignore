@@ -2,3 +2,5 @@ nginx_windows_dev
 user_data
 backup_out
 gsutil_volume
+config.js
+shared_data

@@ -1,8 +1,10 @@
 const passport = require('passport');
-const authConfig = require('./../config.js').auth;
+const config = require('./../../config.js').api;
 const DiscordPassportStrategy = require('passport-discord').Strategy;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);
+
+const authConfig = config.auth;
 
 function initialize(app) {
   passport.serializeUser(async (discordUser, done) => {
@@ -35,7 +37,7 @@ function initialize(app) {
   const strategy = new DiscordPassportStrategy({
     clientID: authConfig.discord.clientId,
     clientSecret: authConfig.discord.clientSecret,
-    callbackURL: authConfig.discord.callbackUrl,
+    callbackURL: `${config.domain}/api/login/callback`,
     scope: scopes,
   },
   (accessToken, refreshToken, profile, done) => {
@@ -54,7 +56,7 @@ function initialize(app) {
   );
 
   app.get(
-    authConfig.discord.callbackRoute,
+    '/api/login/callback',
     passport.authenticate('discord'),
     async (req, res) => {
       res.redirect('/dashboard');

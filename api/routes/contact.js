@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const nodemailer = require('nodemailer');
-const config = require('./../config.js').mail;
+const config = require('./../../config.js').api.mail;
 const rateLimit = require('express-slow-down');
 
 const transporter = nodemailer.createTransport({
@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const limiter = rateLimit({
-  windowMs: 3 * 60 * 1000, // 3 minutes seconds
+  windowMs: 3 * 60 * 1000, // 3 minutes
   delayAfter: 2,
   delayMs: 3 * 60 * 1000, // 3 minutes
 });

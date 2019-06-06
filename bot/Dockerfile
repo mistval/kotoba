@@ -28,5 +28,8 @@ RUN mkdir latest_log data
 
 COPY ./bot/start.sh ./start.sh
 COPY ./bot/src ./src
+
+COPY ./config.js ./..
+
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]

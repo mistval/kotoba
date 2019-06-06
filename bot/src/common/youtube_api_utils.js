@@ -2,7 +2,7 @@
 
 const request = require('request-promise');
 
-const API_KEY = require('./../../config/api_keys.json').YOUTUBE;
+const API_KEY = require('./../../../config.js').bot.apiKeys.youtube;
 
 function hasApiKey() {
   return !!API_KEY;

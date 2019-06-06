@@ -1,8 +1,12 @@
 const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
-const loggingConfig = require('./../config.js').logging;
 const fs = require('fs');
 const path = require('path');
+const mkdirp = require('mkdirp').sync;
+
+const logDir = path.join(__dirname, '..', 'access_logs');
+
+mkdirp(logDir);
 
 function checkIsAdmin(req, res, next) {
   if (!req.user.admin) {
@@ -14,7 +18,7 @@ function checkIsAdmin(req, res, next) {
 
 function getLogFileNames() {
   return new Promise((fulfill, reject) => {
-    fs.readdir(loggingConfig.logFilePath, (err, files) => {
+    fs.readdir(logDir, (err, files) => {
       if (err) {
         return reject(err);
       }
@@ -28,7 +32,7 @@ async function readLogFile(fileIndex) {
   const fileNames = await getLogFileNames();
 
   return new Promise((fulfill, reject) => {
-    const filePath = path.join(loggingConfig.logFilePath, fileNames[fileIndex]);
+    const filePath = path.join(logDir, fileNames[fileIndex]);
     fs.readFile(filePath, 'utf8', (err, text) => {
       if (err) {
         return reject(err);

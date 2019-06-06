@@ -5,6 +5,7 @@ COPY ./common ./common
 
 WORKDIR /var/app
 COPY ./kotobaweb .
+COPY ./config.js ./..
 RUN npm ci
 RUN npm run build
 
