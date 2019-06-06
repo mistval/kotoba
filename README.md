@@ -23,7 +23,7 @@ After cloning the repo, fill out [config_sample.js](https://github.com/mistval/k
 
 After following the configuration instructions:
 
-```
+```sh
 sudo apt install docker docker-compose
 docker-compose up kotoba-bot mongo_readwrite
 ```
@@ -34,7 +34,7 @@ The bot will take some time to build and should then come online. Note that it w
 
 ### Discord bot
 
-```
+```sh
 cd ./bot
 npm start
 ```
@@ -49,19 +49,19 @@ The bot will start and come online. Some commands won't work. There are addition
     1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
     2. Install CJK fonts. Most of the fonts Kotoba uses are provided [here](https://github.com/mistval/kotoba/tree/master/bot/fonts).
 * Pronunciation command
-    1. Install **MongoDB** and start it on port 27017 (the default port). **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
     2. In the ./bot directory, run `npm run buildpronunciation`.
 * Shiritori command
-    1. Install **MongoDB** and start it on port 27017 (the default port). **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
     2. In the ./bot directory, run `npm run shiritori`.
 
 ### KotobaWeb
 
 1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
 2. Install CJK fonts. Most of the fonts Kotoba uses are provided [here](https://github.com/mistval/kotoba/tree/master/bot/fonts).
-3. Install **MongoDB** and start it on port 27017 (the default port). **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+3. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
-```
+```sh
 cd ./api
 npm run buildall
 npm startdev_nix # Or on Windows: npm startdev_win
