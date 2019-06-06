@@ -1,7 +1,7 @@
 
 const request = require('request-promise');
 
-const API_KEY = require('./../../config/api_keys.json').FORVO;
+const API_KEY = require('./../../../config.js').bot.apiKeys.forvo;
 
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
 const preferredLanguageNames = ['Japanese', 'English'];

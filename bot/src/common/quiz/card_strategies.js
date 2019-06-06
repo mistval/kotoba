@@ -8,8 +8,9 @@ const convertToHiragana = require('./../util/convert_to_hiragana.js');
 const shuffleArray = require('./../util/array.js').shuffle;
 const forvoAudioCache = require('./../forvo_cache.js');
 const retryPromise = require('../util/retry_promise.js');
-const WEBSTER_CTH_API_KEY = require('../../../config/api_keys.json').WEBSTER_CTH;
-const { OXFORD_APP_ID, OXFORD_API_KEY } =  require('../../../config/api_keys.json');
+const WEBSTER_CTH_API_KEY = require('../../../../config.js').bot.apiKeys.websterCth;
+const OXFORD_APP_ID = require('../../../../config.js').bot.apiKeys.oxfordAppId;
+const OXFORD_API_KEY = require('../../../../config.js').bot.apiKeys.oxfordApiKey;
 
 const URI_MAX_LENGTH = 2048;
 const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');

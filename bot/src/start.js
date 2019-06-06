@@ -3,9 +3,10 @@ const globals = require('./common/globals.js');
 const path = require('path');
 const mkdirp = require('mkdirp');
 const performMigrations = require('./discord/persistence_migrations');
-const apiKeys = require('./../config/api_keys.json');
-const config = require('./../config/config.json');
+const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
+
+const apiKeys = config.apiKeys;
 
 function createBot() {
   mkdirp.sync(path.join(__dirname, '..', 'data'));
@@ -68,15 +69,15 @@ function createBot() {
 function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
-  if (!apiKeys.YOUTUBE) {
+  if (!apiKeys.youtube) {
     logger.logFailure('YOUTUBE', 'No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
   }
 
-  if (!apiKeys.GOOGLE_TRANSLATE) {
+  if (!apiKeys.googleTranslate) {
     logger.logFailure('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
   }
 
-  if (!apiKeys.FORVO) {
+  if (!apiKeys.forvo) {
     logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
   }
 }

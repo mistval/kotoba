@@ -28,8 +28,8 @@
     "yup": "^0.26.6"
   },
   "scripts": {
-    "start": "set PORT=3001 && react-scripts start",
-    "build": "react-scripts build",
+    "start": "node ./scripts/copy_config.js && set PORT=3001 && react-scripts start",
+    "build": "node ./scripts/copy_config.js && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx",

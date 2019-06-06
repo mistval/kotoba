@@ -3,11 +3,12 @@ const morgan = require('morgan');
 const authInit = require('./auth/auth_init.js');
 const session  = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-const config = require('./config.js');
+const sessionConfig = require('./../config.js').api.session;
 const readline = require('readline');
 const rfs = require('rotating-file-stream');
 const moment = require('moment');
 const mongoConnection = require('kotoba-node-common').database.connection;
+const path = require('path');
 
 const app = express();
 const server = require('http').Server(app);
@@ -20,13 +21,11 @@ server.listen(process.env.PORT || 80);
 
 /* Set up logging */
 
-const loggingConfig = config.logging;
-
 const accessLogStream = rfs(
   'access.log',
   {
     interval: '1d',
-    path: loggingConfig.logFilePath,
+    path: path.join(__dirname, 'access_logs'),
   },
 );
 
@@ -53,8 +52,6 @@ function formatLogLine(tokens, req, res) {
 app.use(morgan(formatLogLine, { stream: accessLogStream }));
 
 /* Set up sessions */
-
-const sessionConfig = config.session;
 
 const sessionStore = new MongoStore({
   mongooseConnection: mongoConnection,

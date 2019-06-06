@@ -63,10 +63,5 @@ generated
 # Persisted data
 data
 
-# Sensitive
-config.json
-api_keys.json
-keys.txt
-
 # IDE-specific
 .vscode
