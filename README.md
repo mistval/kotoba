@@ -25,7 +25,7 @@ After following the configuration instructions:
 
 ```sh
 sudo apt install docker docker-compose
-docker-compose up kotoba-bot mongo_readwrite
+sudo docker-compose up kotoba-bot mongo_readwrite
 ```
 
 The bot will take some time to build and should then come online. Note that it will be missing some fonts and features that are not in this repo. These instructions are for Ubuntu Linux.
@@ -53,7 +53,7 @@ The bot will start and come online. Some commands won't work. There are addition
     2. In the ./bot directory, run `npm run buildpronunciation`.
 * Shiritori command
     1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
-    2. In the ./bot directory, run `npm run shiritori`.
+    2. In the ./bot directory, run `npm run buildshiritori`.
 
 ### KotobaWeb
 
