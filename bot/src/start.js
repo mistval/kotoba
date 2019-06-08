@@ -6,7 +6,7 @@ const performMigrations = require('./discord/persistence_migrations');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 
-const apiKeys = config.apiKeys;
+const { apiKeys } = config;
 
 function createBot() {
   mkdirp.sync(path.join(__dirname, '..', 'data'));

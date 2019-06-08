@@ -65,3 +65,6 @@ data
 
 # IDE-specific
 .vscode
+
+# Private config
+src/build/gcloud_key.json
