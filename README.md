@@ -36,6 +36,7 @@ The bot will take some time to build and should then come online. Note that it w
 
 ```sh
 cd ./bot
+npm install
 npm start
 ```
 
@@ -63,10 +64,12 @@ The bot will start and come online. Some commands won't work. There are addition
 
 ```sh
 cd ./api
+npm install
 npm run buildall
 npm run startdev_nix # Or on Windows: npm run startdev_win
 
 cd ../kotobaweb
+npm install
 npm start
 ```
 
