@@ -501,6 +501,9 @@ class EditDeck extends Component {
                   If you need to do more advanced operations such as mass selection or copy and pasting, you can export as CSV, make changes in Excel, Google Sheets, etc, and import the CSV back.
                 </li>
                 <li>
+                  You can get my built-in decks in CSV format <a href="https://storage.googleapis.com/kotoba_public_quiz_data/index.html">here</a> and import them into this editor.
+                </li>
+                <li>
                   Refrain from moving a question to a different row. Save data depends on the question #, so moving a question can mess up people's save data. It is okay to have empty rows, they will be skipped by the bot.
                 </li>
                 <li>
