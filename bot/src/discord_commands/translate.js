@@ -67,6 +67,10 @@ async function coerceLanguageCodes(languageCodes, text) {
   coercedLanguageCodeFrom = googleTranslate.toLanguageCode(coercedLanguageCodeFrom);
   coercedLanguageCodeTo = googleTranslate.toLanguageCode(coercedLanguageCodeTo);
 
+  if (coercedLanguageCodeFrom && coercedLanguageCodeFrom === coercedLanguageCodeTo) {
+    return throwPublicError('You can\'t translate from a language into the same language >.>', 'Same language');
+  }
+
   if (!coercedLanguageCodeTo) {
     const detectedLanguageCode = await googleTranslate.detectLanguage(text);
     let coercedDetectedLanguageCode = detectedLanguageCode;
