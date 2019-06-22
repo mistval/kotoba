@@ -17,7 +17,7 @@ RUN mv ./fonts/opentype/* /usr/share/fonts/opentype
 
 RUN npm ci
 RUN npm run buildquiz
-RUN service mongodb start && npm run buildshiritori
+RUN service mongodb start ; npm run buildshiritori
 
 COPY ./config.js ./..
 
