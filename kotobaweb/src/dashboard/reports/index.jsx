@@ -97,6 +97,22 @@ function getParticipantsAsScorerElements(participants, pointsForParticipantId) {
   ));
 }
 
+function getUniqueCards(cards) {
+  const questionsSeen = {};
+  const uniqueCards = [];
+
+  for (let i = 0; i < cards.length; i += 1) {
+    const card = cards[i];
+
+    if (!questionsSeen[card.question]) {
+      uniqueCards.push(card);
+      questionsSeen[card.question] = true;
+    }
+  }
+
+  return uniqueCards;
+}
+
 class ReportView extends Component {
   constructor() {
     super();
@@ -230,13 +246,13 @@ class ReportView extends Component {
         const deck = this.state.customDecks[this.state.selectedDeckIndex];
         const request = {
           appendCards: true,
-          cards: this.state.report.questions.filter(q => q.checked).map(q => ({
+          cards: getUniqueCards(this.state.report.questions.filter(q => q.checked).map(q => ({
             question: q.question,
             answers: q.answers,
             comment: q.comment,
             instructions: q.instructions,
             questionCreationStrategy: q.questionCreationStrategy,
-          })),
+          }))),
         };
 
         await axios.patch(`/api/decks/${deck._id}`, request);
