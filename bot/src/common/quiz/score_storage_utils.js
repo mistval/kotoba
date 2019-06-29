@@ -24,22 +24,26 @@ Object.keys(decksMetadata).forEach((deckName) => {
 
 uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
-async function updateUserGlobalTotalScore(userId, score, userName) {
+function updateUserGlobalTotalScore(userId, score, userName) {
   if (Math.floor(score) === 0) {
     return;
   }
 
   assert(typeof userId === typeof '', 'Bad userId');
 
-  let userGlobalTotalScore = await UserGlobalTotalScoreModel.findOne({ userId });
-  if (!userGlobalTotalScore) {
-    userGlobalTotalScore = new UserGlobalTotalScoreModel({ userId, score: 0 });
-  }
-
-  userGlobalTotalScore.score = Math.floor(userGlobalTotalScore.score + score);
-  userGlobalTotalScore.lastKnownUsername = userName;
-
-  return userGlobalTotalScore.save();
+  return UserGlobalTotalScoreModel.findOneAndUpdate(
+    { userId },
+    {
+      $set: {
+        userId,
+        lastKnownUsername: userName,
+      },
+      $inc: {
+        score: Math.floor(score),
+      },
+    },
+    { upsert: true },
+  );
 }
 
 async function updateUserServerTotalScore(userId, serverId, score, userName) {
@@ -50,18 +54,23 @@ async function updateUserServerTotalScore(userId, serverId, score, userName) {
   assert(typeof userId === typeof '', 'Bad userId');
   assert(typeof serverId === typeof '', 'Bad serverId');
 
-  let userServerTotalScore = await UserServerTotalScoreModel.findOne({ userId, serverId });
-  if (!userServerTotalScore) {
-    userServerTotalScore = new UserServerTotalScoreModel({ userId, serverId, score: 0 });
-  }
-
-  userServerTotalScore.score = Math.floor(userServerTotalScore.score + score);
-  userServerTotalScore.lastKnownUsername = userName;
-
-  return userServerTotalScore.save();
+  return UserServerTotalScoreModel.findOneAndUpdate(
+    { userId, serverId },
+    {
+      $set: {
+        serverId,
+        userId,
+        lastKnownUsername: userName,
+      },
+      $inc: {
+        score: Math.floor(score),
+      },
+    },
+    { upsert: true },
+  );
 }
 
-async function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) {
+function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) {
   if (Math.floor(score) === 0) {
     return;
   }
@@ -69,15 +78,20 @@ async function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) 
   assert(typeof userId === typeof '', 'Bad userId');
   assert(typeof deckUniqueId === typeof '', 'Bad deckUniqueId');
 
-  let userGlobalDeckScore = await UserGlobalDeckScoreModel.findOne({ userId, deckUniqueId });
-  if (!userGlobalDeckScore) {
-    userGlobalDeckScore = new UserGlobalDeckScoreModel({ userId, deckUniqueId, score: 0 });
-  }
-
-  userGlobalDeckScore.score = Math.floor(userGlobalDeckScore.score + score);
-  userGlobalDeckScore.lastKnownUsername = userName;
-
-  return userGlobalDeckScore.save();
+  return UserGlobalDeckScoreModel.findOneAndUpdate(
+    { userId, deckUniqueId },
+    {
+      $set: {
+        userId,
+        deckUniqueId,
+        lastKnownUsername: userName,
+      },
+      $inc: {
+        score: Math.floor(score),
+      },
+    },
+    { upsert: true },
+  );
 }
 
 async function updateUserServerDeckScore(userId, serverId, deckUniqueId, score, userName) {
@@ -89,15 +103,21 @@ async function updateUserServerDeckScore(userId, serverId, deckUniqueId, score, 
   assert(typeof serverId === typeof '', 'Bad serverId');
   assert(typeof deckUniqueId === typeof '', 'Bad deckUniqueId');
 
-  let userServerDeckScore = await UserServerDeckScoreModel.findOne({ userId, serverId, deckUniqueId });
-  if (!userServerDeckScore) {
-    userServerDeckScore = new UserServerDeckScoreModel({ userId, serverId, deckUniqueId, score: 0 });
-  }
-
-  userServerDeckScore.score = Math.floor(userServerDeckScore.score + score);
-  userServerDeckScore.lastKnownUsername = userName;
-
-  return userServerDeckScore.save();
+  return UserServerDeckScoreModel.findOneAndUpdate(
+    { userId, serverId, deckUniqueId },
+    {
+      $set: {
+        userId,
+        serverId,
+        deckUniqueId,
+        lastKnownUsername: userName,
+      },
+      $inc: {
+        score: Math.floor(score),
+      },
+    },
+    { upsert: true },
+  );
 }
 
 /* MONGO MIGRATION CODE START */
@@ -131,10 +151,10 @@ async function migrateRowToMongo(row, nameForUserId) {
 
 async function migrateScoresToMongo(quizScores, nameForUserId) {
   await Promise.all([
-    UserGlobalTotalScoreModel.remove({}),
-    UserServerTotalScoreModel.remove({}),
-    UserGlobalDeckScoreModel.remove({}),
-    UserServerDeckScoreModel.remove({}),
+    UserGlobalTotalScoreModel.deleteMany({}),
+    UserServerTotalScoreModel.deleteMany({}),
+    UserGlobalDeckScoreModel.deleteMany({}),
+    UserServerDeckScoreModel.deleteMany({}),
   ]);
 
   for (let rowIndex = 0; rowIndex < quizScores.length; rowIndex += 1) {
