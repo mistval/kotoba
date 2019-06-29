@@ -2,7 +2,7 @@
 
 const ScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
 const constants = require('./../common/constants.js');
-const { Navigation } = require('monochrome-bot');
+const { Navigation, PublicError, NavigationChapter } = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
 
@@ -42,77 +42,17 @@ const deckNamesForGroupAlias = {
 
 function createFieldForScorer(index, username, score) {
   return {
-    name: `${(index + 1).toString()}) ${username}`,
-    value: `${score.toString()} points`,
+    name: `${index + 1}) ${username}`,
+    value: `${addCommasToNumber(score)} points`,
     inline: true,
   };
 }
 
-function createScoreTotalString(scores) {
-  let scoreTotal = 0;
-  const users = {};
-  scores.forEach((score) => {
-    scoreTotal += score.score;
-    users[score.username] = true;
-  });
-
-  const usersTotal = Object.keys(users).length;
-  const scoreTotalString = scoreTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-  return `${scoreTotalString} points have been scored by ${usersTotal} players.`;
+function addCommasToNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-function sendScores(msg, scores, title, description, footer, navigationManager, prefix) {
-  const navigationContents = [];
-  const numPages = Math.max(Math.ceil(scores.length / MAX_SCORERS_PER_PAGE), 1);
-
-  const sortedScores = scores.sort((a, b) => b.score - a.score);
-
-  for (let pageIndex = 0; pageIndex < numPages; pageIndex += 1) {
-    const elementStartIndex = pageIndex * MAX_SCORERS_PER_PAGE;
-    const elementEndIndex = Math.min(
-      ((pageIndex + 1) * MAX_SCORERS_PER_PAGE) - 1,
-      sortedScores.length - 1,
-    );
-
-    const content = {
-      embed: {
-        title,
-        description: `${description}\n${createScoreTotalString(scores)}\nSay **${prefix}help lb** for help viewing leaderboards.`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-        fields: [],
-        footer,
-      },
-    };
-
-    for (let i = elementStartIndex; i <= elementEndIndex; i += 1) {
-      const username = sortedScores[i].username || '<Name Unknown>';
-      const { score } = sortedScores[i];
-      content.embed.fields.push(createFieldForScorer(i, username, score));
-    }
-
-    const commandInvokersIndex = sortedScores.findIndex(row => row.userId === msg.author.id);
-
-    if (commandInvokersIndex !== -1) {
-      const commandInvokersRow = sortedScores[commandInvokersIndex];
-
-      if (commandInvokersIndex < elementStartIndex || commandInvokersIndex > elementEndIndex) {
-        content.embed.fields.push(createFieldForScorer(
-          commandInvokersIndex,
-          commandInvokersRow.username,
-          commandInvokersRow.score,
-        ));
-      }
-    }
-
-    navigationContents.push(content);
-  }
-
-  const authorId = msg.author.id;
-  const navigation = Navigation.fromOneDimensionalContents(authorId, navigationContents);
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
-}
-
-function notifyDeckNotFound(msg, deckName) {
+function notifyDeckNotFound(deckName) {
   const content = {
     embed: {
       title: 'Leaderboard',
@@ -121,11 +61,11 @@ function notifyDeckNotFound(msg, deckName) {
     },
   };
 
-  return msg.channel.createMessage(content);
+  throw PublicError.createWithCustomPublicMessage(content, false, 'No such deck found');
 }
 
-function getDeckNamesArray(deckNamesString) {
-  const deckNamesStringTrimmed = deckNamesString.trim();
+function getDeckNames(argumentString) {
+  const deckNamesStringTrimmed = argumentString.trim();
   const didSpecifyDecks = !!deckNamesStringTrimmed;
   if (!didSpecifyDecks) {
     return [];
@@ -144,28 +84,98 @@ function getDeckNamesArray(deckNamesString) {
     }
   }
 
-  return deckNamesArrayUnaliased;
+  return deckNamesArrayUnaliased.filter((e, i) => deckNamesArrayUnaliased.indexOf(e) === i);
 }
 
-function getDeckNamesTitlePart(deckNamesArray) {
-  let deckNamesTitlePart = '';
-  if (deckNamesArray.length > 0) {
-    deckNamesTitlePart = deckNamesArray.slice(0, 5).join(', ');
-    if (deckNamesArray.length > 5) {
-      deckNamesTitlePart += ', ...';
-    }
+function createFooter(isGlobal, deckNames, prefix) {
+  let text = '';
 
-    deckNamesTitlePart = ` (${deckNamesTitlePart})`;
+  if (isGlobal) {
+    if (deckNames.length === 0) {
+      text = `Say '${prefix}lb global deckname' to see a global deck leaderboard. For example: k!lb global N5.`;
+    } else if (deckNames.length === 1) {
+      text = `You can combine deck leaderboards using the + symbol. Like this: k!lb global N1+N2+N3.`;
+    } else {
+      text = `Say 'k!help lb' for help viewing leaderboards.`;
+    }
+  } else {
+    text = `Say '${prefix}lb global' to see the global leaderboard.`;
   }
 
-  return deckNamesTitlePart;
-}
-
-function createFooter(text) {
   return {
     text,
     icon_url: constants.FOOTER_ICON_URI,
   };
+}
+
+function createDescription(numUsers, totalScore, isGlobal, prefix) {
+  let description = '';
+  if (isGlobal) {
+    description += 'The top scorers in the whole wide world.\n';
+  } else {
+    description += 'The top scorers in this server.\n';
+  }
+
+  description += `${addCommasToNumber(totalScore)} points have been scored by ${addCommasToNumber(numUsers)} players.\n`;
+  description += `Say **${prefix}help lb** for help viewing leaderboards.`;
+
+  return description;
+}
+
+function createTitle(deckNamesArray, serverName) {
+  let deckNamesString = '';
+  if (deckNamesArray.length > 5) {
+    deckNamesString = ` (${deckNamesArray.slice(0, 5).join(', ')}, ...)`;
+  } else if (deckNamesArray.length > 0) {
+    deckNamesString = ` (${deckNamesArray.join(', ')})`;
+  }
+
+  if (serverName) {
+    return `Server Leaderboard for **${serverName}**${deckNamesString}`;
+  }
+
+  return `Global Leaderboard${deckNamesString}`;
+}
+
+function createScorerFields(startIndex, records) {
+  return records.map((record, index) =>
+    createFieldForScorer(startIndex + index, record.lastKnownUsername, record.score));
+}
+
+class ScoresDataSource {
+  constructor(numUsers, totalScore, deckNames, isGlobal, scoreQuery, msg) {
+    this.numUsers = numUsers;
+    this.totalScore = totalScore;
+    this.deckNames = deckNames;
+    this.isGlobal = isGlobal;
+    this.scoreQuery = scoreQuery;
+    this.msg = msg;
+  }
+
+  prepareData() {
+    // NOOP
+  }
+
+  async getPageFromPreparedData(_, pageIndex) {
+    const startIndex = pageIndex * MAX_SCORERS_PER_PAGE;
+    const endIndex = startIndex + MAX_SCORERS_PER_PAGE;
+
+    if (startIndex > 0 && startIndex >= this.numUsers) {
+      return undefined;
+    }
+
+    const scores = await this.scoreQuery.getScores(startIndex, endIndex);
+
+    return {
+      embed: {
+        color: constants.EMBED_NEUTRAL_COLOR,
+        title: createTitle(this.deckNames, this.isGlobal ? undefined : this.msg.channel.guild.name),
+        description: createDescription(this.numUsers, this.totalScore, this.isGlobal, this.msg.prefix),
+        fields: createScorerFields(startIndex, scores),
+        footer: createFooter(this.isGlobal, this.deckNames, this.msg.prefix),
+      },
+    }
+  }
 }
 
 module.exports = {
@@ -176,52 +186,50 @@ module.exports = {
   shortDescription: 'View leaderboards for quiz and/or shiritori',
   longDescription: 'View leaderboards for quiz and/or shiritori. I keep track of scores per server and per deck. Here are some example commands:\n\n**<prefix>lb** - View all quiz scores in this server\n**<prefix>lb shiritori** - View shiritori scores in this server\n**<prefix>lb global** - View all quiz scores globally\n**<prefix>lb global N1** - View the global leaderboard for the N1 quiz deck\n**<prefix>lb global N1+N2+N3** - View the combined global leaderboard for the N1, N2, and N3 decks.\n\nThere are also three deck groups that you can view easily like this:\n\n**<prefix>lb anagrams**\n**<prefix>lb jlpt**\n**<prefix>lb kanken**',
   async action(bot, msg, suffix, monochrome) {
-    let title = '';
-    let footer = {};
-    let description = '';
-    let scoresResult;
-
     let suffixReplaced = suffix.toLowerCase();
     const isGlobal = suffixReplaced.indexOf('global') !== -1 || !msg.channel.guild;
     suffixReplaced = suffixReplaced.replace(/global/g, '');
+    const deckNamesArray = getDeckNames(suffixReplaced);
 
-    const deckNamesArray = getDeckNamesArray(suffixReplaced);
-    const didSpecifyDecks = deckNamesArray.length > 0;
-    const deckNamesTitlePart = getDeckNamesTitlePart(deckNamesArray);
+    let scoreQuery;
 
-    const { prefix } = msg;
-    if (isGlobal) {
-      title = `Global leaderboard${deckNamesTitlePart}`;
-      description = 'The top scorers in the whole wide world.';
-
-      if (!didSpecifyDecks) {
-        footer = createFooter(`Say '${prefix}lb global deckname' to see the global leaderboard for a deck.`);
+    try {
+      if (isGlobal) {
+        scoreQuery = await ScoreStorageUtils.getGlobalScores(deckNamesArray);
+      } else {
+        scoreQuery = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckNamesArray);
+      }
+    } catch (err) {
+      if (err.code === ScoreStorageUtils.DECK_NOT_FOUND_ERROR_CODE) {
+        return notifyDeckNotFound(err.notFoundName);
       }
 
-      scoresResult = await ScoreStorageUtils.getGlobalScores(deckNamesArray);
-    } else {
-      title = `Server leaderboard for **${msg.channel.guild.name}** ${deckNamesTitlePart}`;
-      description = 'The top scorers in this server.';
-      footer = createFooter(`Say '${prefix}lb global' to see the global leaderboard. Say '${prefix}lb deckname' to see a deck leaderboard.`);
-      scoresResult = await ScoreStorageUtils.getServerScores(msg.channel.guild.id, deckNamesArray);
+      throw err;
     }
 
-    if (scoresResult.unfoundDeckName !== undefined) {
-      return notifyDeckNotFound(msg, scoresResult.unfoundDeckName);
-    }
+    const [numUsers, totalScore] = await Promise.all([
+      scoreQuery.countUsers(),
+      scoreQuery.countTotalScore(),
+    ]);
 
-    if (!footer.text) {
-      footer = createFooter(`You can mix any decks by using the + symbol. For example: ${prefix}lb N5+N4+N3`);
-    }
-
-    return sendScores(
+    const showArrows = numUsers > MAX_SCORERS_PER_PAGE;
+    const navigationDataSource = new ScoresDataSource(
+      numUsers,
+      totalScore,
+      deckNamesArray,
+      isGlobal,
+      scoreQuery,
       msg,
-      scoresResult.rows,
-      title,
-      description,
-      footer,
-      monochrome.getNavigationManager(),
-      prefix,
+    );
+
+    const navigationChapter = new NavigationChapter(navigationDataSource);
+    const navigation = Navigation.fromOneNavigationChapter(msg.author.id, navigationChapter, showArrows);
+
+    return monochrome.getNavigationManager().show(
+      navigation,
+      constants.NAVIGATION_EXPIRATION_TIME,
+      msg.channel,
+      msg,
     );
   },
 };
