@@ -398,7 +398,10 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
     let totalUserScore = 0;
 
     Object.entries(scoreForDeck).forEach(([deckId, score]) => {
-      totalUserScore += score;
+      if (deckId !== SHIRITORI_DECK_ID) {
+        totalUserScore += score;
+      }
+
       promises.push(updateUserGlobalDeckScore(userId, deckId, score, username));
 
       if (serverId) {
@@ -406,12 +409,10 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
       }
     });
 
-    if (deckId !== SHIRITORI_DECK_ID) {
-      promises.push(updateUserGlobalTotalScore(userId, totalUserScore, username));
+    promises.push(updateUserGlobalTotalScore(userId, totalUserScore, username));
 
-      if (serverId) {
-        promises.push(updateUserServerTotalScore(userId, serverId, totalUserScore, username));
-      }
+    if (serverId) {
+      promises.push(updateUserServerTotalScore(userId, serverId, totalUserScore, username));
     }
   });
 
