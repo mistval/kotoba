@@ -443,6 +443,10 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
   const promises = [];
 
   Object.entries(scoresForUserId).forEach(([userId, scoreForDeck]) => {
+    if (!scoreForDeck) {
+      return;
+    }
+
     const username = usernameForUserId[userId];
     let totalUserScore = 0;
 
