@@ -1,6 +1,5 @@
 
 const assert = require('assert');
-const globals = require('./../globals.js');
 const dbConnection = require('kotoba-node-common').database.connection;
 const scoreModels = require('kotoba-node-common').models.scores;
 const { createCustomDeckModel } = require('kotoba-node-common').models;
