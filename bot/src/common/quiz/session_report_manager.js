@@ -139,11 +139,15 @@ async function processPendingReportForLocation(locationId) {
     const userModels = await Promise.all(registerUserPromises);
 
     const userModelForId = {};
-    allAnswererDiscordIdsNonUnique.forEach(id => {
+    allAnswererDiscordIdsUnique.forEach(id => {
       userModelForId[id] = userModels.find(userModel => userModel.discordUser.id === id);
     });
 
     const guild = globals.monochrome.getErisBot().guilds.get(report.serverId);
+    const scores = report.scores.map(score => ({
+      user: userModelForId[score.userId],
+      score: score.totalScore,
+    })).filter(scoreInfo => scoreInfo.user);
 
     const reportModel = new GameReportModel({
       sessionName: report.quizName,
@@ -153,7 +157,7 @@ async function processPendingReportForLocation(locationId) {
       discordServerIconUri: guild ? guild.iconURL : undefined,
       discordServerName: guild ? guild.name : undefined,
       discordChannelName: guild ? guild.channels.get(locationId).name : 'DM',
-      scores: report.scores.map(score => ({ user: userModelForId[score.userId], score: score.totalScore })),
+      scores,
       questions: report.cards.map((card) => ({
         question: card.question,
         answers: card.answers,
