@@ -21,7 +21,7 @@ manualSections.push(new ManualSection(
 manualSections.push(new ManualSection(
   'Custom Decks',
   (
-    <p>You can create custom decks and import/export them from CSV in the <a href="/dashboard">the dashboard</a>.</p>
+    <p>You can create custom decks and import/export them from CSV in <a href="/dashboard">the dashboard</a>.</p>
   ),
 ));
 
