@@ -169,10 +169,17 @@ setTimeout(() => {
     globals.persistence.getData('quizScores'),
     globals.persistence.getData('nameForUserId'),
   ]).then(([quizScores, nameForUserId]) => {
-    if (quizScores) {
+    if (Array.isArray(quizScores)) {
       globals.logger.logSuccess('SCORES', 'Migrating scores to Mongo');
       return migrateScoresToMongo(quizScores, nameForUserId);
+    } else {
+      globals.logger.logSuccess('SCORES', 'No scores present in monochrome persistence. Skipping migration.');
     }
+  }).then(() => {
+    return Promise.all([
+      globals.persistence.deleteData('quizScores'),
+      globals.persistence.deleteData('nameForUserId'),
+    ]);
   }).then(() => {
     globals.logger.logSuccess('SCORES', 'Score migration complete.');
   }).catch((err) => {
@@ -208,6 +215,18 @@ class GlobalTotalScoreQuery {
       .lean()
       .exec();
   }
+
+  async getUserRankAndScore(userId) {
+    const userRecord = await UserGlobalTotalScoreModel.findOne({ userId });
+    if (!userRecord) {
+      return undefined;
+    }
+
+    const { score } = userRecord;
+    const numHigherScorers = await UserGlobalTotalScoreModel.countDocuments({ score: { $gt: score } });
+
+    return { rank: numHigherScorers, score };
+  }
 }
 
 class GlobalDeckScoreQuery {
@@ -224,13 +243,14 @@ class GlobalDeckScoreQuery {
 
   async countTotalScore() {
     const aggregate = await UserGlobalDeckScoreModel.aggregate([{
-      $match: { deckUniqueId: { $in: this.deckUniqueIds }},
-    }, {
-      $group: {
-        _id: null,
-        total: { $sum: '$score' },
-      },
-    }]);
+        $match: { deckUniqueId: { $in: this.deckUniqueIds }},
+      }, {
+        $group: {
+          _id: null,
+          total: { $sum: '$score' },
+        },
+      }],
+    );
 
     return aggregate[0] ? aggregate[0].total : 0;
   }
@@ -251,8 +271,45 @@ class GlobalDeckScoreQuery {
       }, {
         $limit: endIndex - startIndex,
       }, {
-        $project: { _id: 0 },
-      }]);
+        $project: {
+          _id: 0,
+        },
+      }],
+    );
+  }
+
+  async getUserRankAndScore(userId) {
+    const scoreAggregate = await UserGlobalDeckScoreModel.aggregate([{
+        $match: { deckUniqueId: { $in: this.deckUniqueIds }, userId },
+      }, {
+        $group: {
+          _id: null,
+          score: { $sum: '$score' },
+        },
+      }],
+    );
+
+    if (!scoreAggregate[0]) {
+      return undefined;
+    }
+
+    const { score } = scoreAggregate[0];
+
+    const higherScorersAggregate = await UserGlobalDeckScoreModel.aggregate([{
+        $match: { deckUniqueId: { $in: this.deckUniqueIds }},
+      }, {
+        $group: {
+          _id: '$userId',
+          score: { $sum: '$score' },
+        },
+      }, {
+        $match: { score: { $gt: score } },
+      }, {
+        $count: 'count',
+      }],
+    );
+
+    return { rank: higherScorersAggregate[0].count, score };
   }
 }
 
@@ -293,7 +350,30 @@ class ServerTotalScoreQuery {
         $skip: startIndex,
       }, {
         $limit: endIndex - startIndex,
+      }, {
+        $project: {
+          _id: 0,
+        },
       }]);
+  }
+
+  async getUserRankAndScore(userId) {
+    const userRecord = await UserServerTotalScoreModel.findOne({
+      userId,
+      serverId: this.serverId
+    });
+
+    if (!userRecord) {
+      return undefined;
+    }
+
+    const { score } = userRecord;
+    const numHigherScorers = await UserServerTotalScoreModel.countDocuments({
+      score: { $gt: score },
+      serverId: this.serverId,
+    });
+
+    return { rank: numHigherScorers, score };
   }
 }
 
@@ -339,8 +419,44 @@ class ServerDeckScoreQuery {
       }, {
         $limit: endIndex - startIndex,
       }, {
-        $project: { _id: 0 },
+        $project: {
+          _id: 0,
+        },
       }]);
+  }
+
+  async getUserRankAndScore(userId) {
+    const scoreAggregate = await UserServerDeckScoreModel.aggregate([{
+        $match: { deckUniqueId: { $in: this.deckUniqueIds }, serverId: this.serverId, userId },
+      }, {
+        $group: {
+          _id: null,
+          score: { $sum: '$score' },
+        },
+      }],
+    );
+
+    if (!scoreAggregate[0]) {
+      return undefined;
+    }
+
+    const { score } = scoreAggregate[0];
+
+    const higherScorersAggregate = await UserServerDeckScoreModel.aggregate([{
+        $match: { deckUniqueId: { $in: this.deckUniqueIds }, serverId: this.serverId },
+      }, {
+        $group: {
+          _id: '$userId',
+          score: { $sum: '$score' },
+        },
+      }, {
+        $match: { score: { $gt: score } },
+      }, {
+        $count: 'count',
+      }],
+    );
+
+    return { rank: higherScorersAggregate[0].count, score };
   }
 }
 
