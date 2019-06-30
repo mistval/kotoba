@@ -308,7 +308,9 @@ class GlobalDeckScoreQuery {
       }],
     );
 
-    return { rank: higherScorersAggregate[0].count, score };
+    const rank = higherScorersAggregate[0] ? higherScorersAggregate[0].count : 0;
+
+    return { rank, score };
   }
 }
 
@@ -455,7 +457,9 @@ class ServerDeckScoreQuery {
       }],
     );
 
-    return { rank: higherScorersAggregate[0].count, score };
+    const rank = higherScorersAggregate[0] ? higherScorersAggregate[0].count : 0;
+
+    return { rank, score };
   }
 }
 
