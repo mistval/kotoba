@@ -39,16 +39,16 @@ const deckNamesForGroupAlias = {
   ],
 };
 
+function addCommasToNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+
 function createFieldForScorer(index, username, score) {
   return {
     name: `${index + 1}) ${username}`,
     value: `${addCommasToNumber(score)} points`,
     inline: true,
   };
-}
-
-function addCommasToNumber(num) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function notifyDeckNotFound(deckName) {
@@ -93,9 +93,9 @@ function createFooter(isGlobal, deckNames, prefix) {
     if (deckNames.length === 0) {
       text = `Say '${prefix}lb global deckname' to see a global deck leaderboard. For example: k!lb global N5.`;
     } else if (deckNames.length === 1) {
-      text = `You can combine deck leaderboards using the + symbol. Like this: k!lb global N1+N2+N3.`;
+      text = `You can combine deck leaderboards using the + symbol. Like this: ${prefix}lb global N1+N2+N3.`;
     } else {
-      text = `Say 'k!help lb' for help viewing leaderboards.`;
+      text = `Say '${prefix}help lb' for help viewing leaderboards.`;
     }
   } else {
     text = `Say '${prefix}lb global' to see the global leaderboard.`;
@@ -148,7 +148,7 @@ function createScorerFields(startIndex, records, userRank, userScore, userName) 
     fields.push(createFieldForScorer(userRank, userName, userScore));
   }
 
-  return fields
+  return fields;
 }
 
 class ScoresDataSource {
@@ -193,7 +193,7 @@ class ScoresDataSource {
         fields: createScorerFields(startIndex, scores, userRank, userScore, username),
         footer: createFooter(this.isGlobal, this.deckNames, this.msg.prefix),
       },
-    }
+    };
   }
 }
 
@@ -237,7 +237,11 @@ module.exports = {
     );
 
     const navigationChapter = new NavigationChapter(navigationDataSource);
-    const navigation = Navigation.fromOneNavigationChapter(msg.author.id, navigationChapter, showArrows);
+    const navigation = Navigation.fromOneNavigationChapter(
+      msg.author.id,
+      navigationChapter,
+      showArrows,
+    );
 
     return monochrome.getNavigationManager().show(
       navigation,
