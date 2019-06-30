@@ -159,7 +159,6 @@ async function migrateScoresToMongo(quizScores, nameForUserId) {
 
   for (let rowIndex = 0; rowIndex < quizScores.length; rowIndex += 1) {
     const databaseRow = quizScores[rowIndex];
-    console.log(`Migrating row ${rowIndex} of ${quizScores.length}`);
     await migrateRowToMongo(databaseRow, nameForUserId);
   }
 }
