@@ -8,7 +8,6 @@ const MAX_SCORERS_PER_PAGE = 20;
 
 const deckNamesForGroupAlias = {
   anagrams: [
-    'anagrams3',
     'anagrams4',
     'anagrams5',
     'anagrams6',
@@ -137,19 +136,30 @@ function createTitle(deckNamesArray, serverName) {
   return `Global Leaderboard${deckNamesString}`;
 }
 
-function createScorerFields(startIndex, records) {
-  return records.map((record, index) =>
+function userRankIsInRange(startIndex, records, userRank) {
+  return startIndex <= userRank && startIndex + records.length > userRank;
+}
+
+function createScorerFields(startIndex, records, userRank, userScore, userName) {
+  const fields = records.map((record, index) =>
     createFieldForScorer(startIndex + index, record.lastKnownUsername, record.score));
+
+  if (userRank !== undefined && !userRankIsInRange(startIndex, records, userRank)) {
+    fields.push(createFieldForScorer(userRank, userName, userScore));
+  }
+
+  return fields
 }
 
 class ScoresDataSource {
-  constructor(numUsers, totalScore, deckNames, isGlobal, scoreQuery, msg) {
-    this.numUsers = numUsers;
-    this.totalScore = totalScore;
+  constructor(deckNames, isGlobal, scoreQuery, msg) {
     this.deckNames = deckNames;
     this.isGlobal = isGlobal;
     this.scoreQuery = scoreQuery;
     this.msg = msg;
+    this.getUserRankAndScorePromise = scoreQuery.getUserRankAndScore(msg.author.id);
+    this.getNumUsersPromise = scoreQuery.countUsers();
+    this.getTotalScorePromise = scoreQuery.countTotalScore();
   }
 
   prepareData() {
@@ -159,19 +169,28 @@ class ScoresDataSource {
   async getPageFromPreparedData(_, pageIndex) {
     const startIndex = pageIndex * MAX_SCORERS_PER_PAGE;
     const endIndex = startIndex + MAX_SCORERS_PER_PAGE;
+    const username = `${this.msg.author.username}#${this.msg.author.discriminator}`;
 
     if (startIndex > 0 && startIndex >= this.numUsers) {
       return undefined;
     }
 
-    const scores = await this.scoreQuery.getScores(startIndex, endIndex);
+    const [scores, numUsers, totalScore, userRankAndScore] = await Promise.all([
+      this.scoreQuery.getScores(startIndex, endIndex),
+      this.getNumUsersPromise,
+      this.getTotalScorePromise,
+      this.getUserRankAndScorePromise,
+    ]);
+
+    const userRank = (userRankAndScore || {}).rank;
+    const userScore = (userRankAndScore || {}).score;
 
     return {
       embed: {
         color: constants.EMBED_NEUTRAL_COLOR,
         title: createTitle(this.deckNames, this.isGlobal ? undefined : this.msg.channel.guild.name),
-        description: createDescription(this.numUsers, this.totalScore, this.isGlobal, this.msg.prefix),
-        fields: createScorerFields(startIndex, scores),
+        description: createDescription(numUsers, totalScore, this.isGlobal, this.msg.prefix),
+        fields: createScorerFields(startIndex, scores, userRank, userScore, username),
         footer: createFooter(this.isGlobal, this.deckNames, this.msg.prefix),
       },
     }
@@ -207,15 +226,10 @@ module.exports = {
       throw err;
     }
 
-    const [numUsers, totalScore] = await Promise.all([
-      scoreQuery.countUsers(),
-      scoreQuery.countTotalScore(),
-    ]);
+    const numUsers = await scoreQuery.countUsers();
 
     const showArrows = numUsers > MAX_SCORERS_PER_PAGE;
     const navigationDataSource = new ScoresDataSource(
-      numUsers,
-      totalScore,
       deckNamesArray,
       isGlobal,
       scoreQuery,
