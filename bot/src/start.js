@@ -2,7 +2,6 @@ const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
 const path = require('path');
 const mkdirp = require('mkdirp');
-const performMigrations = require('./discord/persistence_migrations');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 
@@ -90,14 +89,7 @@ function saveGlobals(monochrome) {
 
 const monochrome = createBot();
 
-performMigrations(monochrome).then(() => {
-  checkApiKeys(monochrome);
-  saveGlobals(monochrome);
-  monochrome.connect();
-  loadShiritoriForeverChannels(monochrome);
-}).catch((err) => {
-  monochrome.getLogger().logFailure('START', 'Error during start', err);
-  throw err;
-}).catch(() => {
-  process.exit(1);
-});
+checkApiKeys(monochrome);
+saveGlobals(monochrome);
+monochrome.connect();
+loadShiritoriForeverChannels(monochrome);
