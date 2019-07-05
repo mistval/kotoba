@@ -491,7 +491,7 @@ async function getCustomDeckFromDisk(deckInfo) {
     cards: createCardGetterFromInMemoryArray(cards),
   };
 
-  return deck;
+  return shallowCopyDeckAndAddModifiers(deck, deckInfo);
 }
 
 async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
