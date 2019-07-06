@@ -123,7 +123,7 @@ module.exports = [
         description: 'This setting controls how long I will wait (in seconds) after a timed out question before showing a new one. By setting this higher, players get more time to view and consider the correct answer.',
         allowedValuesDescription: 'A number between 0 and 120',
         uniqueId: 'quiz/japanese/new_question_delay_after_unanswered',
-        defaultUserFacingValue: '3.75',
+        defaultUserFacingValue: '3.25',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0, 120),
