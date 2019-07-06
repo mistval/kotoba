@@ -1,7 +1,8 @@
 const dbConnection = require('kotoba-node-common').database.connection;
-const UserModel = require('kotoba-node-common').models.createUserModel(dbConnection);
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
 const globals = require('./../globals.js');
+const updateDbFromUser = require('../../discord/db_helpers/update_from_user.js');
+const updateDbFromGuild = require('../../discord/db_helpers/update_from_guild.js');
 
 const LOGGER_TITLE = 'SESSION REPORT MANAGER';
 
@@ -68,27 +69,12 @@ function notifyAnswered(locationId, card, answerers) {
   }
 }
 
-async function registerUser(user) {
+function registerUser(user) {
   if (!user) {
     return;
   }
 
-  let userModel;
-  const registeredUserModel = await UserModel.findOne({ 'discordUser.id': user.id });
-
-  if (registeredUserModel) {
-    userModel = registeredUserModel;
-  } else {
-    userModel = new UserModel({ discordUser: {}, admin: false });
-  }
-
-  userModel.discordUser.username = user.username;
-  userModel.discordUser.discriminator = user.discriminator;
-  userModel.discordUser.id = user.id;
-  userModel.discordUser.avatar = user.avatar;
-
-  await userModel.save();
-  return userModel;
+  return updateDbFromUser(user);
 }
 
 async function notifyStopped(locationId, scores) {
@@ -112,10 +98,13 @@ function timeout() {
   });
 }
 
-async function processPendingReportForLocation(locationId) {
+async function processPendingReportForLocation(channel) {
   try {
-    const report = pendingReportForLocationId[locationId];
-    delete pendingReportForLocationId[locationId];
+    const bot = globals.monochrome.getErisBot();
+    const guild = channel.guild;
+
+    const report = pendingReportForLocationId[channel.id];
+    delete pendingReportForLocationId[channel.id];
     if (!report || report.cards.length === 0) {
       return;
     }
@@ -132,9 +121,14 @@ async function processPendingReportForLocation(locationId) {
       .filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
 
     const registerUserPromises = allAnswererDiscordIdsUnique.map(id => {
-      const user = globals.monochrome.getErisBot().users.get(id);
+      const user = bot.users.get(id);
       return registerUser(user);
     });
+
+    if (guild) {
+      const allPromises = [...registerUserPromises, updateDbFromGuild(guild)];
+      await Promise.all(allPromises);
+    }
 
     const userModels = await Promise.all(registerUserPromises);
 
@@ -143,7 +137,6 @@ async function processPendingReportForLocation(locationId) {
       userModelForId[id] = userModels.find(userModel => userModel.discordUser.id === id);
     });
 
-    const guild = globals.monochrome.getErisBot().guilds.get(report.serverId);
     const scores = report.scores.map(score => ({
       user: userModelForId[score.userId],
       score: score.totalScore,
@@ -156,7 +149,7 @@ async function processPendingReportForLocation(locationId) {
       participants: userModels,
       discordServerIconUri: guild ? guild.iconURL : undefined,
       discordServerName: guild ? guild.name : undefined,
-      discordChannelName: guild ? guild.channels.get(locationId).name : 'DM',
+      discordChannelName: guild ? guild.channels.get(channel.id).name : 'DM',
       scores,
       questions: report.cards.map((card) => ({
         question: card.question,
@@ -175,12 +168,12 @@ async function processPendingReportForLocation(locationId) {
     return `https://kotobaweb.com/dashboard/game_reports/${reportModel._id}`;
   } catch (err) {
     globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
-    delete pendingReportForLocationId[locationId];
+    delete pendingReportForLocationId[channel.id];
   }
 }
 
-async function getReportUriForLocation(locationId) {
-  return Promise.race([processPendingReportForLocation(locationId), timeout()]);
+async function getReportUriForLocation(channel) {
+  return Promise.race([processPendingReportForLocation(channel), timeout()]);
 }
 
 module.exports = {

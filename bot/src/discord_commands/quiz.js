@@ -300,7 +300,7 @@ async function sendEndQuizMessages(
     aggregateLink,
     description,
     prefix,
-    await quizReportManager.getReportUriForLocation(commanderMessage.channel.id),
+    await quizReportManager.getReportUriForLocation(commanderMessage.channel),
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
@@ -545,7 +545,7 @@ class DiscordMessageSender {
   async notifySaveSuccessful() {
     this.closeAudioConnection();
 
-    const reportUri = await quizReportManager.getReportUriForLocation(this.commanderMessage.channel.id);
+    const reportUri = await quizReportManager.getReportUriForLocation(this.commanderMessage.channel);
 
     const fields = [];
     if (reportUri) {
