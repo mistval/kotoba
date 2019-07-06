@@ -39,10 +39,7 @@ const MEANING_DECK_COMMENT_FIELD_NAME = 'Reading';
 
 const meaningDeckSourceDeckNames = [
   'n1',
-  'n2',
   'n3',
-  'n4',
-  'n5',
   '1k',
   'j1k',
   '2k',
