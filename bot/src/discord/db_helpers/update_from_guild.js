@@ -11,7 +11,7 @@ async function updateDbFromGuild(guild) {
 
   if (guildRecord.icon !== guild.icon) {
     try {
-      const iconBytes = await request(guild.iconURL, { encoding: null });
+      const iconBytes = await request({ encoding: null, uri: guild.iconURL });
       guildRecord.iconBytes = iconBytes;
       guildRecord.icon = guild.icon;
     } catch (err) {
