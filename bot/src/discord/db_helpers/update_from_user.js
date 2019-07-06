@@ -12,7 +12,7 @@ async function updateDbFromUser(user, admin = false) {
 
   if (userRecord.discordUser.avatar !== user.avatar) {
     try {
-      userRecord.discordUser.avatarBytes = await request(user.staticAvatarURL);
+      userRecord.discordUser.avatarBytes = await request({ encoding: null, uri: user.staticAvatarURL });
       userRecord.discordUser.avatar = user.avatar;
     } catch (err) {
       globals.logger.logFailure('DATABASE', 'Couldn\'t download avatar for user', err);
