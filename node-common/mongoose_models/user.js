@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const DiscordAccountSchema = new mongoose.Schema({
   username: { type: String, required: true },
   discriminator: { type: String, required: true },
-  avatar: { type: String, default: '' },
+  avatar: { type: String },
+  avatarBytes: { type: Buffer },
   id: { type: String, required: true, index: true },
   email: { type: String, required: false },
 });
