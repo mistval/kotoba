@@ -10,7 +10,7 @@ async function updateDbFromUser(user, admin = false) {
     userRecord = new UserModel({ discordUser: { id: user.id }, admin });
   }
 
-  if (userRecord.discordUser.avatar !== user.avatar) {
+  if (userRecord.discordUser.avatar !== user.avatar && user.avatar) {
     try {
       userRecord.discordUser.avatarBytes = await request({ encoding: null, uri: user.staticAvatarURL });
       userRecord.discordUser.avatar = user.avatar;

@@ -9,7 +9,7 @@ async function updateDbFromGuild(guild) {
     guildRecord = new GuildModel({ id: guild.id });
   }
 
-  if (guildRecord.icon !== guild.icon) {
+  if (guildRecord.icon !== guild.icon && guild.icon) {
     try {
       const iconBytes = await request({ encoding: null, uri: guild.iconURL });
       guildRecord.iconBytes = iconBytes;
