@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
+const mongoose = require('mongoose');
 const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
@@ -45,7 +46,14 @@ async function checkHas100DecksOrFewer(req, res, next) {
 
 function createAttachDeckMeta(lean) {
   return async (req, res, next) => {
-    let query = CustomDeckModel.findById(req.params.id);
+    let id;
+    try {
+      id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+    } catch (err) {
+      return res.status(404).send();
+    }
+
+    let query = CustomDeckModel.findById(id);
 
     if (lean) {
       query = query.lean();
