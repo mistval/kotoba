@@ -24,7 +24,7 @@ Object.keys(decksMetadata).forEach((deckName) => {
 uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
 function updateUserGlobalTotalScore(userId, score, userName) {
-  if (Math.floor(score) === 0) {
+  if (Math.floor(score) <= 0) {
     return;
   }
 
@@ -46,7 +46,7 @@ function updateUserGlobalTotalScore(userId, score, userName) {
 }
 
 async function updateUserServerTotalScore(userId, serverId, score, userName) {
-  if (Math.floor(score) === 0) {
+  if (Math.floor(score) <= 0) {
     return;
   }
 
@@ -70,7 +70,7 @@ async function updateUserServerTotalScore(userId, serverId, score, userName) {
 }
 
 function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) {
-  if (Math.floor(score) === 0) {
+  if (Math.floor(score) <= 0) {
     return;
   }
 
@@ -94,7 +94,7 @@ function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) {
 }
 
 async function updateUserServerDeckScore(userId, serverId, deckUniqueId, score, userName) {
-  if (Math.floor(score) === 0) {
+  if (Math.floor(score) <= 0) {
     return;
   }
 
@@ -451,6 +451,9 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
     let totalUserScore = 0;
 
     Object.entries(scoreForDeck).forEach(([deckId, score]) => {
+      assert(typeof score === typeof 1, 'Score isn\'t a number');
+      assert(score >= 0, 'Score is negative');
+
       if (deckId !== SHIRITORI_DECK_ID) {
         totalUserScore += score;
       }
