@@ -9,6 +9,7 @@ import NotificationStripe from '../../controls/notification_stripe';
 import { deckValidation } from 'kotoba-common';
 import { Editors } from 'react-data-grid-addons';
 import Analytics from '../../util/analytics';
+import assert from 'assert';
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -46,7 +47,7 @@ const columns = [
   { key: 'questionCreationStrategy', name: 'Render as', editor: RenderAsEditor, editable: true, width: 110 },
 ];
 
-const sampleRow = {
+const sampleGridCard = {
   index: 0,
   question: '明日',
   answers: 'あした,あす',
@@ -55,7 +56,7 @@ const sampleRow = {
   questionCreationStrategy: upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]),
 };
 
-const emptyRow = {
+const emptyGridCard = {
   question: '',
   answers: '',
   comment: '',
@@ -63,24 +64,27 @@ const emptyRow = {
   questionCreationStrategy: '',
 };
 
-function createEmptyRow(index) {
-  return { ...emptyRow, index };
+function createEmptyGridCard(index) {
+  return { ...emptyGridCard, index };
 }
 
 function gridCardsToApiCards(gridCards) {
   const cards = gridCards.map((gridCard) => {
-    const copy = { ...gridCard };
-    delete copy.index;
-
-    if (Object.values(copy).every(v => !v)) {
+    if (isEmptyGridCard(gridCard)) {
       return null;
     }
+    const apiCard = {
+      question: gridCard.question,
+      answers: gridCard.answers.replace(/、/g, ',').split(','),
+      comment: gridCard.comment,
+      instructions: gridCard.instructions,
+      questionCreationStrategy: gridCard.questionCreationStrategy.toUpperCase(),
+    };
 
-    copy.answers = copy.answers.replace(/、/g, ',').split(',');
-    copy.questionCreationStrategy = copy.questionCreationStrategy.toUpperCase();
-    return copy;
+    return apiCard;
   });
 
+  // Remove null cards from the end.
   while (cards.length > 0 && !cards[cards.length - 1]) {
     cards.pop();
   }
@@ -91,17 +95,24 @@ function gridCardsToApiCards(gridCards) {
 function apiCardsToGridCards(apiCards) {
   return apiCards.map((apiCard, index) => {
     if (apiCard === null) {
-      return createEmptyRow(index);
+      return createEmptyGridCard(index);
     }
 
-    const copy = { ...apiCard, index };
-    copy.answers = copy.answers.join(',');
-    copy.questionCreationStrategy = upperCaseFirstCharOnly(copy.questionCreationStrategy);
-    return copy;
+    const gridCard = {
+      index,
+      question: apiCard.question,
+      answers: apiCard.answers.join(','),
+      comment: apiCard.comment,
+      instructions: apiCard.instructions,
+      questionCreationStrategy: upperCaseFirstCharOnly(apiCard.questionCreationStrategy),
+    };
+
+    return gridCard;
   });
 }
 
-function isEmptyRow(row) {
+function isEmptyGridCard(row) {
+  assert(Object.keys(row).length === 6, 'Unexpected number of row properties'); // All the below properties plus index and questionCreationStrategy
   return !row.question && !row.answers && !row.comment && !row.instructions;
 }
 
@@ -126,29 +137,23 @@ class EditDeck extends Component {
         gridDeck: {
           name: `${localStorage.getItem('username')}'s New Quiz`,
           shortName: 'new_quiz',
-          cards: [sampleRow],
+          cards: [{ ...sampleGridCard }],
         }
       });
     }
 
     try {
       const apiDeck = (await axios.get(`/api/decks/${deckId}`)).data;
-      const gridDeck = { ...apiDeck, cards: apiCardsToGridCards(apiDeck.cards) };
+      const gridDeck = {
+        _id: apiDeck._id,
+        name: apiDeck.name,
+        shortName: apiDeck.shortName,
+        cards: apiCardsToGridCards(apiDeck.cards),
+      };
 
       this.setState({ gridDeck });
     } catch (err) {
-      let stripeMessage;
-      if (err.response.status === 404) {
-        stripeMessage = 'Deck not found. Check that your link is valid and that the deck has not been deleted by its owner.';
-      } else {
-        return this.handleApiError(err);
-      }
-
-      this.setState({
-        showStripe: true,
-        stripeMessage,
-        stripeIsError: true,
-      });
+      return this.handleError(err);
     }
   }
 
@@ -159,14 +164,14 @@ class EditDeck extends Component {
 
   onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
     this.setState((state) => {
-      const isNewRow = state.gridDeck.cards.length <= fromRow || isEmptyRow(state.gridDeck.cards[fromRow]);
+      const isNewRow = state.gridDeck.cards.length <= fromRow || isEmptyGridCard(state.gridDeck.cards[fromRow]);
       while (state.gridDeck.cards.length < fromRow + 1) {
-        const row = createEmptyRow(state.gridDeck.cards.length);
+        const row = createEmptyGridCard(state.gridDeck.cards.length);
         state.gridDeck.cards.push(row);
       }
 
       const updatedRow = { ...state.gridDeck.cards[fromRow], ...updated };
-      if (isNewRow && !isEmptyRow(updatedRow)) {
+      if (isNewRow && !isEmptyGridCard(updatedRow)) {
         if (!updatedRow.instructions) {
           updatedRow.instructions = state.defaultInstructions.trim();
         }
@@ -175,7 +180,7 @@ class EditDeck extends Component {
         }
       }
 
-      if (isEmptyRow(updatedRow)) {
+      if (isEmptyGridCard(updatedRow)) {
         updatedRow.questionCreationStrategy = '';
       }
 
@@ -218,7 +223,7 @@ class EditDeck extends Component {
     });
   }
 
-  handleApiError(err) {
+  handleError(err) {
     let stripeMessage = '';
 
     if (err.response) {
@@ -229,8 +234,10 @@ class EditDeck extends Component {
       }
 
       const responseBody = response.data;
-      if (response.status === 413) {
-        stripeMessage = 'Your deck is too big. There is a limit of 5,000 questions and also an overall combined size limit in megabytes. Make sure your CSV size is smaller than approx 2 MB.';
+      if (response.status === 404) {
+        stripeMessage = 'Deck not found. Check that your link is valid and that the deck has not been deleted by its owner.';
+      } else if (response.status === 413) {
+        stripeMessage = 'Your deck is too big. There is a limit of 20,000 questions and also an overall combined size limit in megabytes. Make sure your CSV size is smaller than approx 2 MB.';
       } else if (responseBody.errorType === deckValidation.DECK_VALIDATION_ERROR_TYPE) {
         return this.handleValidationError(responseBody);
       } else if (responseBody.message) {
@@ -251,7 +258,8 @@ class EditDeck extends Component {
 
   onSave = async () => {
     const saveDeck = deckValidation.sanitizeDeckPreValidation({
-      ...this.state.gridDeck,
+      name: this.state.gridDeck.name,
+      shortName: this.state.gridDeck.shortName,
       cards: gridCardsToApiCards(this.state.gridDeck.cards),
     });
 
@@ -264,7 +272,6 @@ class EditDeck extends Component {
     this.setState({
       saving: true,
       showStripe: false,
-      stripeIsError: true,
     });
 
     try {
@@ -282,9 +289,9 @@ class EditDeck extends Component {
         showStripe: true,
         stripeIsError: false,
         stripeMessage: <span>Saved. You can load this deck on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong>.</span>,
-      })
+      });
     } catch (err) {
-      this.handleApiError(err);
+      this.handleError(err);
     }
 
     this.setState({
@@ -304,16 +311,17 @@ class EditDeck extends Component {
       if (err.response && err.response.status === 404) {
         window.location = '/dashboard';
       } else {
-        this.handleApiError(err);
+        this.handleError(err);
       }
     }
   }
 
   onExport = () => {
-    const exportRows = [['Question', 'Answers', 'Comment', 'Instructions', 'Render as']].concat(this.state.gridDeck.cards.map(q => {
-      const row = [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy];
-      return row;
-    }));
+    const exportCardRows = this.state.gridDeck.cards.map(q =>
+      [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy]);
+
+    const exportHeaderRow = ['Question', 'Answers', 'Comment', 'Instructions', 'Render as'];
+    const exportRows = [exportHeaderRow].concat(exportCardRows);
 
     csvStringify(exportRows, (err, output) => {
       if (err) {
@@ -354,9 +362,9 @@ class EditDeck extends Component {
         }
 
         this.setState((state) => {
-          state.gridDeck.cards = rows.slice(1).map((row, i) => {
+          state.gridDeck.cards = rows.slice(1).map((row, index) => {
             const newRow = {
-              index: i,
+              index,
               question: row[0] ? row[0].trim() : '',
               answers: row[1] ? row[1].trim() : '',
               comment: row[2] ? row[2].trim() : '',
@@ -364,7 +372,7 @@ class EditDeck extends Component {
               questionCreationStrategy: row[4] ? row[4].trim() : '',
             };
 
-            if (!isEmptyRow(newRow)) {
+            if (!isEmptyGridCard(newRow)) {
               newRow.questionCreationStrategy = newRow.questionCreationStrategy || 'Image';
               newRow.instructions = newRow.instructions || state.defaultInstructions;
             }
@@ -482,7 +490,7 @@ class EditDeck extends Component {
             <div className="col-xl-11 col-md-10">
               <ReactDataGrid
                 columns={columns}
-                rowGetter={i => this.state.gridDeck.cards[i] || createEmptyRow(i) }
+                rowGetter={i => this.state.gridDeck.cards[i] || createEmptyGridCard(i) }
                 rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 20000)}
                 minHeight={900}
                 enableCellSelect={true}
