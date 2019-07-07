@@ -60,6 +60,7 @@ function notifyAnswered(locationId, card, answerers) {
       questionCreationStrategy: card.questionCreationStrategy === 'IMAGE' ? 'IMAGE' : 'TEXT', // ..... epic hack
       instructions: card.instructions,
       canCopyToCustomDeck: calculateCanCopyToCustomDeck(card),
+      deckUniqueId: card.deckId,
     };
 
     report.cards.push(reportCard);
@@ -152,16 +153,9 @@ async function processPendingReportForLocation(channel) {
       discordChannelName: guild ? guild.channels.get(channel.id).name : 'DM',
       scores,
       questions: report.cards.map((card) => ({
-        question: card.question,
-        answers: card.answers,
-        comment: card.comment,
-        linkQuestion: card.linkQuestion,
-        questionCreationStrategy: card.questionCreationStrategy,
-        instructions: card.instructions,
-        uri: card.uri,
+        ...card,
         correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),
-        canCopyToCustomDeck: card.canCopyToCustomDeck,
-      }))
+      })),
     });
 
     await reportModel.save();
