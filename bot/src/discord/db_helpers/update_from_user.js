@@ -10,9 +10,14 @@ async function updateDbFromUser(user, admin = false) {
     userRecord = new UserModel({ discordUser: { id: user.id }, admin });
   }
 
-  if (userRecord.discordUser.avatar !== user.avatar && user.avatar) {
+  const recordHasAvatarBytes = !!userRecord.discordUser.avatarBytes;
+  const avatarHasChanged = userRecord.discordUser.avatar !== user.avatar;
+  if (user.avatar && (!recordHasAvatarBytes || avatarHasChanged)) {
     try {
-      userRecord.discordUser.avatarBytes = await request({ encoding: null, uri: user.staticAvatarURL });
+      userRecord.discordUser.avatarBytes = await request({
+        encoding: null,
+        uri: user.staticAvatarURL,
+      });
       userRecord.discordUser.avatar = user.avatar;
     } catch (err) {
       globals.logger.logFailure('DATABASE', 'Couldn\'t download avatar for user', err);
@@ -21,7 +26,7 @@ async function updateDbFromUser(user, admin = false) {
 
   userRecord.discordUser.username = user.username;
   userRecord.discordUser.discriminator = user.discriminator;
-  
+
   return userRecord.save();
 }
 

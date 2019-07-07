@@ -24,7 +24,7 @@ async function updateDbFromGuild(guild) {
   guildRecord.memberCount = guild.memberCount;
   guildRecord.name = guild.name;
   guildRecord.ownerId = guild.ownerID;
-  
+
   return guildRecord.save();
 }
 
