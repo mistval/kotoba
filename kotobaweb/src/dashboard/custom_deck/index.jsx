@@ -162,35 +162,42 @@ class EditDeck extends Component {
     Analytics.setPageView('/dashboard/decks');
   }
 
-  onGridRowsUpdated = ({ fromRow, toRow, updated }) => {
+  onGridRowsUpdated = ({ fromRow: gridCardIndex, toRow, updated }) => {
     this.setState((state) => {
-      const isNewRow = state.gridDeck.cards.length <= fromRow || isEmptyGridCard(state.gridDeck.cards[fromRow]);
-      while (state.gridDeck.cards.length < fromRow + 1) {
+      // Push empty cards to fill the space up to this one
+      while (state.gridDeck.cards.length < gridCardIndex + 1) {
         const row = createEmptyGridCard(state.gridDeck.cards.length);
         state.gridDeck.cards.push(row);
       }
 
-      const updatedRow = { ...state.gridDeck.cards[fromRow], ...updated };
-      if (isNewRow && !isEmptyGridCard(updatedRow)) {
-        if (!updatedRow.instructions) {
-          updatedRow.instructions = state.defaultInstructions.trim();
+      const gridCard = state.gridDeck.cards[gridCardIndex];
+      const isNewGridCard = isEmptyGridCard(gridCard);
+
+      if (updated.instructions !== undefined) {
+        state.defaultInstructions = updated.instructions;
+      }
+
+      const updatedGridCard = { ...gridCard, ...updated };
+      if (isNewGridCard && !isEmptyGridCard(updatedGridCard)) {
+        if (!updatedGridCard.instructions) {
+          updatedGridCard.instructions = state.defaultInstructions.trim();
         }
-        if (!updatedRow.questionCreationStrategy) {
-          updatedRow.questionCreationStrategy = upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]);
+        if (!updatedGridCard.questionCreationStrategy) {
+          updatedGridCard.questionCreationStrategy = upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]);
         }
       }
 
-      if (isEmptyGridCard(updatedRow)) {
-        updatedRow.questionCreationStrategy = '';
+      if (isEmptyGridCard(updatedGridCard)) {
+        updatedGridCard.questionCreationStrategy = '';
       }
 
-      Object.keys(updatedRow).forEach(key => {
-        if (typeof updatedRow[key] === typeof '') {
-          updatedRow[key] = updatedRow[key].trim();
+      Object.keys(updatedGridCard).forEach(key => {
+        if (typeof updatedGridCard[key] === typeof '') {
+          updatedGridCard[key] = updatedGridCard[key].trim();
         }
       });
 
-      state.gridDeck.cards[fromRow] = updatedRow;
+      state.gridDeck.cards[gridCardIndex] = updatedGridCard;
 
       return state;
     });
@@ -200,7 +207,6 @@ class EditDeck extends Component {
     this.setState((state) => {
       state.gridDeck.name = this.fullNameField.value;
       state.gridDeck.shortName = this.shortNameField.value.toLowerCase();
-      state.defaultInstructions = this.defaultInstructionsField.value;
 
       return state;
     });
@@ -454,21 +460,6 @@ class EditDeck extends Component {
                   required
                 />
                 <span className="bmd-help">Load on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="form-group">
-                <label className="bmd-label-floating" htmlFor="defaultInstructions">Default instructions</label>
-                <input
-                  autoComplete="off"
-                  onChange={this.onMetadataChange}
-                  name="defaultInstructions"
-                  className="form-control"
-                  value={this.state.defaultInstructions}
-                  ref={(el) => { this.defaultInstructionsField = el; }}
-                  maxLength={deckValidation.INSTRUCTIONS_MAX_LENGTH}
-                />
-                <span className="bmd-help">New questions you add will automatically be given these instructions.</span>
               </div>
             </div>
           </div>
