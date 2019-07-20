@@ -30,7 +30,7 @@
     "canvas": "1.6.7",
     "cheerio": "^1.0.0-rc.2",
     "disk-array": "^1.0.1",
-    "edict-index": "0.0.0",
+    "edict-index": "git+https://github.com/mistval/edict-index.git",
     "html-entities": "1.2.1",
     "kitsu": "7.0.0",
     "kotoba-node-common": "file:../node-common",
