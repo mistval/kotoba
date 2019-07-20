@@ -76,7 +76,7 @@ module.exports = {
 
     const hispadicIndex = await awaitHispadicIndex;
     const allResults = hispadicIndex.search(suffix, MAX_RESULTS);
-    const qualityResults = allResults.filter(r => r.matchQuality > 0);
+    const qualityResults = allResults.filter(r => r.matchType > 1);
     const results = qualityResults.length > 0 ? qualityResults : allResults;
 
     if (results.length === 0) {
