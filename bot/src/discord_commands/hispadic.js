@@ -71,11 +71,13 @@ module.exports = {
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
-      return throwPublicErrorInfo('Español', `Use ${prefix}español [palabra] para buscar una palabra. Por ejemplo: ${prefix}español 瞬間`, 'No suffix');
+      return throwPublicErrorInfo('Español', `Usa ${prefix}español [palabra] para buscar una palabra. Por ejemplo: ${prefix}español 瞬間`, 'No suffix');
     }
 
     const hispadicIndex = await awaitHispadicIndex;
-    const results = hispadicIndex.search(suffix, MAX_RESULTS);
+    const allResults = hispadicIndex.search(suffix, MAX_RESULTS);
+    const qualityResults = allResults.filter(r => r.matchQuality > 0);
+    const results = qualityResults.length > 0 ? qualityResults : allResults;
 
     if (results.length === 0) {
       return throwPublicErrorInfo('Español', `No encontré ningún resultado para **${suffix}**.`, 'No results');
