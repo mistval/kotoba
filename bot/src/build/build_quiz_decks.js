@@ -1,7 +1,6 @@
 const diskArray = require('disk-array');
 const fs = require('fs');
 const path = require('path');
-const mkdirp = require('mkdirp');
 
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO = 'Listening Vocabulary Quiz';
@@ -168,7 +167,7 @@ function assertNoDuplicateCards(deckName, cards) {
 async function build() {
   console.log('Building quiz data');
 
-  mkdirp.sync(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
+  fs.mkdirSync(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'), { recursive: true });
 
   let deckDataForDeckName = {};
 
