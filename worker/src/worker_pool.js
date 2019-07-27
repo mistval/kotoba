@@ -6,6 +6,7 @@ const SUCCESS_CODE = 0;
 class WorkerPool {
   constructor(numWorkers, workerJobsPath) {
     this.idleQueue = [];
+    this.dispatchQueue = [];
     this.workerJobsPath = workerJobsPath;
     for (let i = 0; i < numWorkers; i += 1) {
       const worker = new Worker(__filename, { workerData: workerJobsPath });
@@ -23,32 +24,47 @@ class WorkerPool {
     }
   }
 
-  dispatch(jobName, data) {
-    return new Promise((fulfill, reject) => {
-      const idleWorker = this.idleQueue.shift();
-      if (!idleWorker) {
-        return reject('No available workers');
+  dispatchNext() {
+    const worker = this.idleQueue.shift();
+    if (!worker) {
+      return;
+    }
+
+    const nextJob = this.dispatchQueue.shift();
+    if (!nextJob) {
+      return;
+    }
+
+    worker.once('message', (message) => {
+      this.returnWorkerToIdle(worker);
+
+      if (message.code === ERROR_CODE) {
+        return nextJob.reject(message.error);
       }
 
-      idleWorker.once('message', (message) => {
-        this.idleQueue.push(idleWorker);
+      nextJob.fulfill(message.result);
+    });
 
-        if (message.code === ERROR_CODE) {
-          return reject(message.error);
-        }
+    worker.once('error', (err) => {
+      nextJob.reject(err);
+    });
 
-        fulfill(message.result);
-      });
+    worker.once('exit', (code) => {
+      nextJob.reject(`Worker exited with code: ${code}`);
+    });
 
-      idleWorker.once('error', (err) => {
-        reject(err);
-      });
+    worker.postMessage({ jobName: nextJob.jobName, jobArgument: nextJob.jobArgument });
+  }
 
-      idleWorker.once('exit', (code) => {
-        reject(`Worker exited with code: ${code}`);
-      });
+  returnWorkerToIdle(worker) {
+    this.idleQueue.push(worker);
+    this.dispatchNext();
+  }
 
-      idleWorker.postMessage({ jobName, jobArgument: data });
+  dispatch(jobName, jobArgument) {
+    return new Promise((fulfill, reject) => {
+      this.dispatchQueue.push({ jobName, jobArgument, fulfill, reject });
+      this.dispatchNext();
     });
   }
 }
