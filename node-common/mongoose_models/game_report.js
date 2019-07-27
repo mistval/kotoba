@@ -11,7 +11,7 @@ const gameReportSchema = new mongoose.Schema({
   sessionName: { type: String, required: true },
   startTime: { type: Date, required: true, index: true, expires: SIXTY_DAYS },
   endTime: { type: Date, required: true },
-  participants: { type: [{ type:  mongoose.Schema.Types.ObjectId, required: true, ref: 'User', index: true }], required: true, index: true },
+  participants: { type: [{ type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User', index: true }], required: true, index: true },
   discordServerIconUri: { type: String },
   discordServerName: { type: String },
   discordChannelName: { type: String, required: true },
