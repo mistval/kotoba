@@ -83,7 +83,7 @@ if (!isMainThread) {
       const jobResult = await jobs[jobName](jobArgument);
       parentPort.postMessage({ code: SUCCESS_CODE, result: jobResult});
     } catch (err) {
-      parentPort.postMessage({ code: ERROR_CODE, error: err });
+      parentPort.postMessage({ code: ERROR_CODE, error: err.toString() });
     }
   });
 }

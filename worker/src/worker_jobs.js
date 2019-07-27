@@ -1,3 +1,5 @@
+const calculateStats = require('./quizstats/calculate_stats.js');
+
 module.exports = {
-  'say something': () => 'Hello wassup',
+  calculateStats,
 };
