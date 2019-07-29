@@ -1,8 +1,6 @@
-'use strict'
-
 const path = require('path');
 const globals = require('../globals.js');
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const renderText = require('./../render_text.js').render;
 const convertToHiragana = require('./../util/convert_to_hiragana.js');
 const shuffleArray = require('./../util/array.js').shuffle;
@@ -294,16 +292,16 @@ function reduceArrays(arrs, reduced = []) {
 
 async function applyWebsterSynonyms(card) {
   const uri = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${card.question}?key=${WEBSTER_CTH_API_KEY}`;
-  const response = await retryPromise(() => request(uri, { json: true }));
-  if (response.length > 0) {
-    if (!response[0].meta) {
+  const response = await retryPromise(() => axios.get(uri));
+  if (response.data.length > 0) {
+    if (!response.data[0].meta) {
       return;
     }
-    const stem = response[0].meta.stems[0];
+    const stem = response.data[0].meta.stems[0];
     card.question = stem;
   }
 
-  const syns = reduceArrays(response.map(entry => entry.meta.syns));
+  const syns = reduceArrays(response.data.map(entry => entry.meta.syns));
   const synsProcessed = [];
   syns.forEach((syn) => {
     const parenIndex = syn.indexOf('(');
@@ -326,18 +324,16 @@ async function applyWebsterSynonyms(card) {
 
 async function applyOxfordSynonyms(card) {
   try {
-    const requestOptions = {
-      uri: `https://od-api.oxforddictionaries.com/api/v1/entries/en/${card.question}/synonyms`,
-      headers: {
-        app_id: OXFORD_APP_ID,
-        app_key: OXFORD_API_KEY,
-      },
-      json: true,
-    };
-
     let syns = [];
-    const response = await request(requestOptions);
-    const lexEntries = reduceArrays(response.results.map(result => result.lexicalEntries));
+    const response = await axios.get(
+      `https://od-api.oxforddictionaries.com/api/v1/entries/en/${card.question}/synonyms`,
+      {
+        headers: {
+          app_id: OXFORD_APP_ID,
+          app_key: OXFORD_API_KEY,
+      },
+    });
+    const lexEntries = reduceArrays(response.data.results.map(result => result.lexicalEntries));
     const entries = reduceArrays(lexEntries.map(lexEntry => lexEntry.entries));
     const senses = reduceArrays(entries.map(entry => entry.senses));
     syns = syns.concat(reduceArrays(senses.map(sense => sense.synonyms)).map(synInfo => synInfo.text));
@@ -364,7 +360,7 @@ async function applyOxfordSynonyms(card) {
       card.meaning += `\n[Oxford Thesaurus](https://en.oxforddictionaries.com/thesaurus/${card.question})`;
     }
   } catch (err) {
-    if (err.statusCode !== 404) {
+    if (err.response.status !== 404) {
       globals.logger.logFailure('QUIZ', `Error querying Oxford for ${card.question}`, err);
     }
   }

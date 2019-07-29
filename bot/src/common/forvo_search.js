@@ -1,5 +1,4 @@
-
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 
 const API_KEY = require('./../../../config.js').bot.apiKeys.forvo;
 
@@ -62,13 +61,8 @@ function parseResponse(responseJson, query) {
 
 async function search(query) {
   try {
-    const responseJson = await request({
-      uri: getApiUriForQuery(query),
-      json: true,
-      timeout: 10000,
-    });
-
-    return parseResponse(responseJson, query);
+    const response = await axios.get(getApiUriForQuery(query));
+    return parseResponse(response.data, query);
   } catch (e) {
     return rethrowError(e);
   }

@@ -1,6 +1,4 @@
-
-
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 
 const API_KEY = require('./../../../config.js').bot.apiKeys.youtube;
 
@@ -20,26 +18,25 @@ async function getAllLinksInPlaylist(playlistId) {
     // We need to make the requests in sequence
     // because each one returns a token for the next page.
     // eslint-disable-next-line no-await-in-loop
-    const data = await request({
-      uri: 'https://www.googleapis.com/youtube/v3/playlistItems',
-      qs: {
-        maxResults: 50,
-        part: 'contentDetails,snippet',
-        playlistId,
-        key: API_KEY,
-        pageToken,
-      },
-      json: true,
-      timeout: 10000,
-    });
 
-    data.items.forEach((item) => {
+    const params = {
+      maxResults: 50,
+      part: 'contentDetails,snippet',
+      playlistId,
+      key: API_KEY,
+      pageToken,
+    };
+
+    const url = `https://www.googleapis.com/youtube/v3/playlistItems`;
+    const response = await axios.get(url, { params });
+
+    response.data.items.forEach((item) => {
       if (item.snippet.title !== 'Private video' && item.snippet.title !== 'Deleted video') {
         links.push(`https://www.youtube.com/watch?v=${item.contentDetails.videoId}`);
       }
     });
 
-    pageToken = data.nextPageToken;
+    pageToken = response.data.nextPageToken;
   } while (pageToken);
 
   return links;

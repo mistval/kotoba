@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios').create({ timeout: 10000 });
 const fs = require('fs').promises;
 const path = require('path');
 const AdmZip = require('adm-zip');
