@@ -1,6 +1,6 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GuildModel = require('kotoba-node-common').models.createGuildModel(dbConnection);
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const globals = require('./../../common/globals.js');
 
 async function updateDbFromGuild(guild) {
@@ -11,8 +11,8 @@ async function updateDbFromGuild(guild) {
 
   if (guildRecord.icon !== guild.icon && guild.icon) {
     try {
-      const iconBytes = await request({ encoding: null, uri: guild.iconURL });
-      guildRecord.iconBytes = iconBytes;
+      const response = await axios.get(guild.iconURL, { responseType: 'arraybuffer' });
+      guildRecord.iconBytes = Buffer.from(response.data);
       guildRecord.icon = guild.icon;
     } catch (err) {
       globals.logger.logFailure('DATABASE', 'Couldn\'t download icon for guild', err);

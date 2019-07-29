@@ -1,4 +1,4 @@
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const constants = require('./../common/constants.js');
 const UnofficialJishoApi = require('unofficial-jisho-api');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
@@ -96,7 +96,7 @@ async function getStrokeOrderGifUri(kanji) {
   // We only need to know if it's available.
   // We don't need to download it.
   try {
-    await request(animationUri);
+    await axios.get(animationUri);
     return animationUri;
   } catch (err) {
     return '';
