@@ -1,9 +1,9 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
+const fs = require('fs');
 
 const CUSTOM_DECK_DIR = path.join(__dirname, '..', 'shared_data', 'custom_decks');
 
-mkdirp.sync(CUSTOM_DECK_DIR);
+fs.mkdirSync(CUSTOM_DECK_DIR, { recursive: true });
 
 module.exports = {
   CUSTOM_DECK_DIR,
