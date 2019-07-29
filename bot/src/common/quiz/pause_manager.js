@@ -1,7 +1,6 @@
-const Promise = require('bluebird');
-const fs = Promise.promisifyAll(require('fs'));
+const fs = require('fs').promises;
+const { mkdirSync } = require('fs');
 const globals = require('./../globals.js');
-const { logger } = require('./../globals.js');
 const path = require('path');
 
 const MEMENTO_VERSION = 'v1';
@@ -12,10 +11,7 @@ const QUIZ_SAVES_KEY = 'QuizSaveDataFiles';
 const QUIZ_SAVES_BACKUP_KEY = 'QuizSavesBackup';
 const MAX_RESTORABLE_PER_USER = 5;
 
-try {
-  fs.mkdirSync(SAVE_DATA_DIR);
-} catch (err) {
-}
+mkdirSync(SAVE_DATA_DIR, { recursive: true });
 
 function createQuizSaveMemento(time, fileName, quizName, userId, gameType) {
   return {
@@ -32,7 +28,7 @@ function save(saveData, savingUser, quizName, gameType) {
   let now = Date.now();
   let fileName = savingUser + '_' + now;
   let json = JSON.stringify(saveData);
-  return fs.writeFileAsync(path.join(SAVE_DATA_DIR, fileName), json).then(() => {
+  return fs.writeFile(path.join(SAVE_DATA_DIR, fileName), json).then(() => {
     return globals.persistence.editDataForUser(savingUser, data => {
       if (!data[QUIZ_SAVES_KEY]) {
         data[QUIZ_SAVES_KEY] = [];
@@ -54,9 +50,9 @@ function deleteMemento(memento) {
       .filter(otherMemento => otherMemento.time + otherMemento.userId !== memento.time + memento.userId);
     return data;
   });
-  let deleteFile = fs.unlinkAsync(path.join(SAVE_DATA_DIR, memento.fileName)).catch(() => {});
+  let deleteFile = fs.unlink(path.join(SAVE_DATA_DIR, memento.fileName)).catch(() => {});
   return Promise.all([deleteFromDb, deleteFile]).then(() => {
-    logger.logSuccess(LOGGER_TITLE, 'Automatically deleted a non-compatible save.');
+    globals.logger.logSuccess(LOGGER_TITLE, 'Automatically deleted a non-compatible save.');
   });
 }
 
@@ -72,7 +68,7 @@ function deleteMementos(mementos) {
 }
 
 module.exports.load = function(memento) {
-  return fs.readFileAsync(path.join(SAVE_DATA_DIR, memento.fileName), 'utf8').then(data => {
+  return fs.readFile(path.join(SAVE_DATA_DIR, memento.fileName), 'utf8').then(data => {
     let json = JSON.parse(data);
     return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
@@ -83,11 +79,11 @@ module.exports.load = function(memento) {
       const promises = [];
       while (dbData[QUIZ_SAVES_BACKUP_KEY].length > MAX_RESTORABLE_PER_USER) {
         let mementoToDelete = dbData[QUIZ_SAVES_BACKUP_KEY].shift();
-        promises.push(fs.unlinkAsync(path.join(SAVE_DATA_DIR, mementoToDelete.fileName)));
+        promises.push(fs.unlink(path.join(SAVE_DATA_DIR, mementoToDelete.fileName)));
       }
 
       return Promise.all(promises).catch(err => {
-        logger.logFailure(LOGGER_TITLE, 'No file found for a save. Deleting DB entry.', err);
+        globals.logger.logFailure(LOGGER_TITLE, 'No file found for a save. Deleting DB entry.', err);
       }).then(() => {
         return dbData;
       });
@@ -95,7 +91,7 @@ module.exports.load = function(memento) {
       return json;
     });
   }).catch(err => {
-    logger.logFailure(LOGGER_TITLE, 'Failed to load file ' + memento.fileName);
+    globals.logger.logFailure(LOGGER_TITLE, 'Failed to load file ' + memento.fileName);
     return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
       dbData[QUIZ_SAVES_KEY].splice(mementoIndex, 1);
