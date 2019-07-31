@@ -1,7 +1,6 @@
 const diskArray = require('disk-array');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
-const mkdirp = require('mkdirp');
 
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_FROM = 'Reading Quiz';
 const LISTENING_VOCAB_DECK_NAME_REPLACE_STRING_TO = 'Listening Vocabulary Quiz';
@@ -144,17 +143,6 @@ async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sou
   return deckDataForDeckNameCopy;
 }
 
-function writeFile(filePath, content) {
-  return new Promise((fulfill, reject) => {
-    fs.writeFile(filePath, content, (err) => {
-      if (err) {
-        return reject(err);
-      }
-      return fulfill();
-    });
-  });
-}
-
 function assertNoDuplicateCards(deckName, cards) {
   const seen = {};
   cards.filter(x => x).forEach((card) => {
@@ -168,24 +156,27 @@ function assertNoDuplicateCards(deckName, cards) {
 async function build() {
   console.log('Building quiz data');
 
-  mkdirp.sync(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks'));
+  const decksOutputPath = path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks');
+  await fs.mkdir(decksOutputPath, { recursive: true });
 
   let deckDataForDeckName = {};
 
   // Build disk arrays for the quiz decks
-  const quizDeckFileNames = fs.readdirSync(getPathForQuizDeckFile());
+  const quizDeckFileNames = await fs.readdir(getPathForQuizDeckFile());
   for (let i = 0; i < quizDeckFileNames.length; i += 1) {
     const fileName = quizDeckFileNames[i];
     const deckName = fileName.replace('.json', '');
-    const deckString = fs.readFileSync(getPathForQuizDeckFile(fileName), 'utf8');
+
+    // We creates the arrays in sequence instead of in parallel
+    // because that way there's less memory pressure.
+    // eslint-disable-next-line no-await-in-loop
+    const deckString = await fs.readFile(getPathForQuizDeckFile(fileName), 'utf8');
     const deck = JSON.parse(deckString);
 
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     deck.cardDiskArrayPath = diskArrayDirectory;
     assertNoDuplicateCards(deckName, deck.cards);
 
-    // We creates the arrays in sequence instead of in parallel
-    // because that way there's less memory pressure.
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
     // eslint-disable-next-line no-await-in-loop
@@ -198,7 +189,7 @@ async function build() {
   }
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
-  await writeFile(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks.json'), deckDataString);
+  await fs.writeFile(path.join(__dirname, '..', '..', 'generated', 'quiz', 'decks.json'), deckDataString);
 }
 
 if (require.main === module) {

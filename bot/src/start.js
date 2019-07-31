@@ -1,14 +1,14 @@
 const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
 const path = require('path');
-const mkdirp = require('mkdirp');
+const fs = require('fs');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 
 const { apiKeys } = config;
 
 function createBot() {
-  mkdirp.sync(path.join(__dirname, '..', 'data'));
+  fs.mkdirSync(path.join(__dirname, '..', 'data'), { recursive: true });
 
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
