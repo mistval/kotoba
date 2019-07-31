@@ -15,10 +15,6 @@ async function getAllLinksInPlaylist(playlistId) {
   let pageToken;
 
   do {
-    // We need to make the requests in sequence
-    // because each one returns a token for the next page.
-    // eslint-disable-next-line no-await-in-loop
-
     const params = {
       maxResults: 50,
       part: 'contentDetails,snippet',
@@ -27,7 +23,11 @@ async function getAllLinksInPlaylist(playlistId) {
       pageToken,
     };
 
-    const url = `https://www.googleapis.com/youtube/v3/playlistItems`;
+    const url = 'https://www.googleapis.com/youtube/v3/playlistItems';
+
+    // We need to make the requests in sequence
+    // because each one returns a token for the next page.
+    // eslint-disable-next-line no-await-in-loop
     const response = await axios.get(url, { params });
 
     response.data.items.forEach((item) => {

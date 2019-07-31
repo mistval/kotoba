@@ -74,7 +74,7 @@ async function scrapeWebPage(keyword) {
       '用例.jp',
       'Sorry, yourei.jp isn\'t responding. Please try again later.',
       'Error fetching from yourei.jp',
-      error,
+      err,
     );
   }
 }
