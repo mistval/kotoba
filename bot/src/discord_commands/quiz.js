@@ -2,6 +2,7 @@
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
+const sendStats = require('./../discord/quiz_stats.js');
 const { Permissions } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 
@@ -1274,6 +1275,10 @@ module.exports = {
         throw PublicError.createWithCustomPublicMessage(message, false, 'No deck name provided');
       }
       return deleteInternetDeck(msg, suffixReplaced.split(' ')[1], msg.author.id);
+    }
+
+    if (suffixReplaced === 'stats') {
+      return sendStats(msg);
     }
 
     // Save operation
