@@ -142,7 +142,7 @@ async function calculateStats(userId) {
   }
 
   const stats = {
-    mostRecentlyProcessedReportId: gameReports[0]._id.toString(),
+    mostRecentlyProcessedReportId: gameReports[gameReports.length - 1]._id.toString(),
     dailyStats: [],
   };
 
