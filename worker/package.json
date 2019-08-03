@@ -4,7 +4,7 @@
   "description": "A worker cluster for CPU intensive operations.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node --experimental-worker ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "@polka/send-type": "^0.5.2",
     "kotoba-node-common": "file:../node-common",
-    "polka": "^0.5.2"
+    "polka": "^0.5.2",
+    "wrecker": "^1.0.3"
   }
 }
