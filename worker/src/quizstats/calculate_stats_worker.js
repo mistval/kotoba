@@ -12,7 +12,7 @@ function createEmptyDay(dateInt) {
     questionsSeen: 0,
     questionsAnswered: 0,
     percentCorrect: 0,
-  }
+  };
 }
 
 function addEmptyDays(dailyStats, untilAndIncluding) {
@@ -66,7 +66,7 @@ function calculateWMA(dailyValues) {
     }
 
     const wmaPeriod = Math.min(WMA_PERIOD, dailyIndex + 1);
-    let periodIndex = dailyIndex - wmaPeriod + 1;
+    let periodIndex = (dailyIndex - wmaPeriod) + 1;
     let periodMultiplier = wmaPeriod - (dailyIndex - periodIndex);
     let wmaNumerator = 0;
     let wmaDenominator = 0;
@@ -78,14 +78,20 @@ function calculateWMA(dailyValues) {
   });
 }
 
-function addAggregateStats(stats) {
-  stats.questionsAnsweredPerDeck = {};
-  stats.questionsSeenPerDeck = {};
-  stats.percentCorrectPerDeckWMA = {};
+function addAggregateStats(statsIn) {
+  const stats = {
+    ...statsIn,
+    questionsAnsweredPerDeck: {},
+    questionsSeenPerDeck: {},
+    percentCorrectPerDeckWMA: {},
+  };
 
   // Loop over the stats for each day
-  stats.dailyStats.forEach((dailyStats) => {
-    dailyStats.percentCorrectPerDeck = {};
+  stats.dailyStats = stats.dailyStats.map((dailyStatsIn) => {
+    const dailyStats = {
+      ...dailyStatsIn,
+      percentCorrectPerDeck: {},
+    };
 
     // Loop over each deck in the stats for this day
     Object.keys(dailyStats.questionsSeenPerDeck).forEach((deckUniqueId) => {
@@ -114,6 +120,8 @@ function addAggregateStats(stats) {
     } else {
       dailyStats.percentCorrect = (dailyStats.questionsAnswered / dailyStats.questionsSeen) * 100;
     }
+
+    return dailyStats;
   });
 
   // Calculate percent correct WMA
