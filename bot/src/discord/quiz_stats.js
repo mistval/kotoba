@@ -42,6 +42,7 @@ async function sendStats(msg) {
 
   await msg.channel.createMessage({
     embed: {
+      description: ':purple_heart: = Answered correctly.\n:large_orange_diamond: = Seen but not answered.',
       title: `Points per day (answered and unanswered) since ${firstDayStr}`,
       color: constants.EMBED_NEUTRAL_COLOR,
       image: {

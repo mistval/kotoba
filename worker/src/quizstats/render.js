@@ -265,7 +265,7 @@ const stackedBarChartSpec = {
 
 async function renderPointsPerDayChart(stats) {
   const spec = { ...stackedBarChartSpec };
-  spec.width = stats.dailyStats.length * 18;
+  spec.width = stats.dailyStats.length * 16;
   spec.data = [...spec.data];
   spec.data[0] = { ...spec.data[0] };
 
@@ -275,8 +275,8 @@ async function renderPointsPerDayChart(stats) {
     const numSeen = dailyStats.questionsSeen;
     const daysAgo = stats.dailyStats.length - i;
 
-    values.push({ x: daysAgo, y: numCorrect, c: 0 });
-    values.push({ x: daysAgo, y: numSeen - numCorrect, c: 1 });
+    values.push({ x: daysAgo, y: numCorrect, c: 'Answered' });
+    values.push({ x: daysAgo, y: numSeen - numCorrect, c: 'Seen' });
   });
 
   spec.data[0].values = values;
@@ -406,7 +406,7 @@ const percentCorrectChartSpec = {
 
 async function renderPercentCorrectWMAChart(stats) {
   const spec = { ...percentCorrectChartSpec };
-  spec.width = stats.percentCorrectWMA.length * 18;
+  spec.width = stats.percentCorrectWMA.length * 16;
   spec.data = [...spec.data];
   spec.data[0] = { ...spec.data[0] };
   spec.scales = [...spec.scales];
