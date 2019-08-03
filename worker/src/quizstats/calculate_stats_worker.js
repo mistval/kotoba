@@ -7,7 +7,7 @@ async function calculateStats(userId) {
     .sort({ startTime: -1 })
     .lean()
     .exec();
-  
+
   return { len: gameReports.length };
 }
 
