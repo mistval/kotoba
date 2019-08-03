@@ -2,7 +2,7 @@ const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
 
 const MS_PER_DAY = 86400000;
-const WMA_PERIOD = 7;
+const WMA_PERIOD = 5;
 
 function createEmptyDay(dateInt) {
   return {
