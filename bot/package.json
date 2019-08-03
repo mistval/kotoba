@@ -26,7 +26,6 @@
   "dependencies": {
     "adm-zip": "^0.4.13",
     "axios": "^0.19.0",
-    "bluebird": "3.5.1",
     "canvas": "1.6.7",
     "cheerio": "^1.0.0-rc.2",
     "disk-array": "^1.0.1",
@@ -35,12 +34,10 @@
     "kitsu": "7.0.0",
     "kotoba-node-common": "file:../node-common",
     "mongoose": "5.2.14",
-    "monochrome-bot": "^2.3.5",
+    "monochrome-bot": "^2.3.7",
     "render-furigana": "^1.0.6",
-    "request": "2.88.0",
-    "request-promise": "4.2.2",
-    "shiritori": "1.0.1",
-    "unofficial-jisho-api": "^1.1.1"
+    "shiritori": "^2.0.4",
+    "unofficial-jisho-api": "^2.0.1"
   },
   "devDependencies": {
     "@google-cloud/storage": "^2.5.0",

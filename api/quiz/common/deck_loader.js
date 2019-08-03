@@ -1,7 +1,7 @@
 
 const state = require('./../static_state.js');
 const assert = require('assert');
-const request = require('request-promise');
+const axios = require('axios');
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 

@@ -1,7 +1,6 @@
-
 const state = require('./../static_state.js');
 const assert = require('assert');
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 const path = require('path');
@@ -273,13 +272,12 @@ INSTRUCTIONS: fgrg
 犬,f,
 1日,いちにち/ついたち,first of the month/one day
 太陽,たいよう`; */
-  return request({
-    uri: pastebinUri,
-    json: false,
-    timeout: 10000,
-  }).catch((err) => {
+  try {
+    const response = await axios.get(pastebinUri);
+    return response.data;
+  } catch (err) {
     throw PublicError.createWithCustomPublicMessage('There was an error downloading the deck from that URI. Check that the URI is correct and try again.', false, 'Pastebin fetch error', err);
-  });
+  }
 }
 
 function countRowsForUserId(data, userId) {

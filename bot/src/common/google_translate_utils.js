@@ -1,5 +1,4 @@
-
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const assert = require('assert');
 const htmlEntitiesModule = require('html-entities');
 
@@ -71,17 +70,13 @@ function languageIsChinese(input) {
 
 async function detectLanguage(text) {
   try {
-    const detectionResult = await request({
-      uri: DETECTION_API,
-      qs: {
-        q: text,
-        key: API_KEY,
-      },
-      json: true,
-      timeout: 10000,
-    });
+    const params = {
+      q: text,
+      key: API_KEY,
+    };
 
-    return detectionResult.data.detections[0][0].language;
+    const response = await axios.get(DETECTION_API, { params });
+    return response.data.data.detections[0][0].language;
   } catch (err) {
     return throwNotRespondingError(err);
   }
@@ -93,18 +88,15 @@ async function translate(sourceLanguage, targetLanguage, text) {
   assert(sourceLanguageCode && targetLanguageCode, 'Invalid sourceLanguage or targetLanguage');
 
   try {
-    const responseBody = await request({
-      uri: TRANSLATE_API,
-      qs: {
-        source: sourceLanguageCode,
-        target: targetLanguageCode,
-        q: text,
-        key: API_KEY,
-      },
-      json: true,
-      timeout: 10000,
-    });
+    const params = {
+      source: sourceLanguageCode,
+      target: targetLanguageCode,
+      q: text,
+      key: API_KEY,
+    };
 
+    const response = await axios.get(TRANSLATE_API, { params });
+    const responseBody = response.data;
     const resultText = htmlEntities.decode(responseBody.data.translations[0].translatedText);
     const uri = `https://translate.google.com/#${sourceLanguageCode}/${targetLanguageCode}/${encodeURIComponent(text)}`;
 
