@@ -1,5 +1,4 @@
-
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const cheerio = require('cheerio');
 const { Navigation, NavigationChapter } = require('monochrome-bot');
 
@@ -52,13 +51,10 @@ function getNextPageURI($) {
 async function scrapeWebPage(keyword) {
   const targetURI = encodeURI(`${YOUREI_BASE_URL}/${keyword}`);
 
-  const options = {
-    uri: targetURI,
-    transform: body => cheerio.load(body),
-  };
-
-  return request(options)
-    .then($ => ({
+  try {
+    const response = await axios.get(targetURI);
+    const $ = cheerio.load(response.data);
+    return {
       data: {
         sentences: getExampleSentences($),
         usageFrequencies: getUsageFrequencies($),
@@ -72,13 +68,15 @@ async function scrapeWebPage(keyword) {
         next: getNextPageURI($),
         self: targetURI,
       },
-    }))
-    .catch(error => throwPublicErrorFatal(
+    };
+  } catch (err) {
+    return throwPublicErrorFatal(
       '用例.jp',
       'Sorry, yourei.jp isn\'t responding. Please try again later.',
       'Error fetching from yourei.jp',
-      error,
-    ));
+      err,
+    );
+  }
 }
 
 function formatSentenceData(sentences, keyword, showFullSentences = false) {

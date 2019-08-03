@@ -1,6 +1,6 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(dbConnection);
-const request = require('request-promise');
+const axios = require('axios').create({ timeout: 10000 });
 const globals = require('./../../common/globals.js');
 
 async function updateDbFromUser(user, admin = false) {
@@ -14,10 +14,8 @@ async function updateDbFromUser(user, admin = false) {
   const avatarHasChanged = userRecord.discordUser.avatar !== user.avatar;
   if (user.avatar && (!recordHasAvatarBytes || avatarHasChanged)) {
     try {
-      userRecord.discordUser.avatarBytes = await request({
-        encoding: null,
-        uri: user.staticAvatarURL,
-      });
+      const response = await axios.get(user.staticAvatarURL, { responseType: 'arraybuffer' });
+      userRecord.discordUser.avatarBytes = Buffer.from(response.data);
       userRecord.discordUser.avatar = user.avatar;
     } catch (err) {
       globals.logger.logFailure('DATABASE', 'Couldn\'t download avatar for user', err);
