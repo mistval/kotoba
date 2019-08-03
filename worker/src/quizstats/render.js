@@ -169,7 +169,9 @@ async function renderDeckPieChart(stats) {
       points,
     })).sort((a, b) => b.points - a.points);
 
-  return renderSpecToBuffer(spec);
+  const buf = await renderSpecToBuffer(spec);
+
+  return buf;
 }
 
 // https://vega.github.io/vega/examples/stacked-bar-chart/
