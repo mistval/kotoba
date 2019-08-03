@@ -1,5 +1,6 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
+const render = require('./render.js');
 
 const cachedStatsForUserId = {};
 
@@ -24,6 +25,10 @@ async function calculateStats(workerPool, userId) {
   }
 
   const stats = await workerPool.doWork('calculateStats', userId);
+
+  // TODO: Canvas doesn't support worker threads, RIP
+  stats.charts = await render(stats);
+
   cachedStatsForUserId[userId] = stats;
 
   return stats;
