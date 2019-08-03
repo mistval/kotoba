@@ -1,36 +1,37 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
 
+const MS_PER_DAY = 86400000;
+
+function addEmptyDays(dailyStats, untilAndIncluding) {
+  const hasPreviousDays = dailyStats.length !== 0;
+  if (hasPreviousDays) {
+    const previousDay = dailyStats[dailyStats.length - 1];
+    const numEmptyDays = ((untilAndIncluding - previousDay.dateInt) / MS_PER_DAY);
+    for (let i = 0; i < numEmptyDays; i += 1) {
+      dailyStats.push({
+        dateInt: previousDay.dateInt + (MS_PER_DAY * (i + 1)),
+        questionsAnsweredPerDeck: {},
+        questionsSeenPerDeck: {},
+      });
+    }
+  } else {
+    dailyStats.push({
+      dateInt: untilAndIncluding,
+      questionsAnsweredPerDeck: {},
+      questionsSeenPerDeck: {},
+    });
+  }
+}
+
 function addGameReport(userId, stats, gameReport) {
   if (!gameReport.questions[0].deckUniqueId) {
     // This game report doesn't have the information necessary. It's too old.
     return;
   }
 
-  const dateInt = gameReport.startTime - (gameReport.startTime % 86400000);
-  const hasPreviousDays = stats.dailyStats.length !== 0;
-  const isNewDay = !hasPreviousDays
-    || stats.dailyStats[stats.dailyStats.length - 1].dateInt !== dateInt;
-  
-  if (isNewDay) {
-    if (hasPreviousDays) {
-      const previousDay = stats.dailyStats[stats.dailyStats.length - 1];
-      const numEmptyDays = ((dateInt - previousDay.dateInt) / 86400000 - 1);
-      for (let i = 0; i < numEmptyDays; i += 1) {
-        stats.dailyStats.push({
-          dateInt: previousDay.dateInt + (86400000 * (i + 1)),
-          questionsAnsweredPerDeck: {},
-          questionsSeenPerDeck: {},
-        });
-      }
-    }
-
-    stats.dailyStats.push({
-      dateInt,
-      questionsAnsweredPerDeck: {},
-      questionsSeenPerDeck: {},
-    });
-  }
+  const dateInt = gameReport.startTime - (gameReport.startTime % MS_PER_DAY);
+  addEmptyDays(stats.dailyStats, dateInt);
 
   const dailyStats = stats.dailyStats[stats.dailyStats.length - 1];
 
@@ -78,7 +79,7 @@ async function calculateStats(userId) {
   const d = Date.now();
   const gameReports = await GameReportModel
     .find({ participants: userId })
-    .sort({ startTime: -1 })
+    .sort({ startTime: 1 })
     .lean()
     .exec();
 
@@ -96,6 +97,7 @@ async function calculateStats(userId) {
   });
 
   addAggregateStats(stats);
+  addEmptyDays(stats.dailyStats, Date.now() - (Date.now() % MS_PER_DAY));
 
   stats.timeMs = Date.now() - d;
 
