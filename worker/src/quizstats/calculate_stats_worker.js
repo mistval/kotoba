@@ -130,7 +130,6 @@ function addAggregateStats(stats) {
 }
 
 async function calculateStats(userId) {
-  const processingTimeStart = Date.now();
   const gameReports = await GameReportModel
     .find({ participants: userId })
     .sort({ startTime: 1 })
@@ -152,8 +151,6 @@ async function calculateStats(userId) {
 
   addEmptyDays(stats.dailyStats, Date.now() - (Date.now() % MS_PER_DAY));
   addAggregateStats(stats);
-
-  stats.processingTimeMs = Date.now() - processingTimeStart;
 
   return stats;
 }
