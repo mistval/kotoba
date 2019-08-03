@@ -15,8 +15,8 @@ async function calculateStats(workerPool, userId) {
       .lean()
       .exec();
 
-    const canUseCachedStats = mostRecentlyProcessedReport
-      && mostRecentlyProcessedReport._id === cachedStats.mostRecentlyProcessedReportId;
+    const canUseCachedStats = mostRecentlyProcessedReport.length > 0
+      && mostRecentlyProcessedReport[0]._id.toString() === cachedStats.mostRecentlyProcessedReportId;
 
     if (canUseCachedStats) {
       return cachedStats;
