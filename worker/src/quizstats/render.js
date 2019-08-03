@@ -224,7 +224,7 @@ const stackedBarChartSpec = {
     {
       name: 'color',
       type: 'ordinal',
-      range: 'category',
+      range: ['#8053ef', '#efb953'],
       domain: { data: 'table', field: 'c' },
     },
   ],
@@ -353,7 +353,7 @@ const percentCorrectChartSpec = {
     {
       name: 'color',
       type: 'ordinal',
-      range: 'category',
+      range: ['#8053ef'],
       domain: { data: 'table', field: 'c' },
     },
   ],
@@ -407,6 +407,12 @@ async function renderPercentCorrectWMAChart(stats) {
   spec.width = stats.percentCorrectWMA.length * 18;
   spec.data = [...spec.data];
   spec.data[0] = { ...spec.data[0] };
+  spec.scales = [...spec.scales];
+  spec.scales[1] = { ...spec.scales[1] };
+
+  const min = stats.percentCorrectWMA.reduce((a, w) => Math.min(a, w), 100);
+  spec.scales[1].domainMin = Math.ceil(min - 5);
+  spec.scales[1].domainMax = 100;
   spec.data[0].values = stats.percentCorrectWMA.map((wma, i) => {
     const daysAgo = stats.dailyStats.length - i;
     return {
