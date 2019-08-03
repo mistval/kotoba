@@ -7,11 +7,14 @@ services:
     restart: always
     environment: 
       MONGO_HOST: 'mongo_readwrite:27017'
+      WORKER_HOST: 'kotoba-worker'
     volumes:
       - ./user_data/bot:/var/app/data
       - ./bot/latest_log:/var/app/latest_log
       - ./bot/config:/var/app/config
       - ./user_data/shared_data:/var/shared_data
+    depends_on:
+      - mongo_readwrite
   kotoba-web:
     build:
       context: .
@@ -26,6 +29,17 @@ services:
       MONGO_HOST: 'mongo_readwrite:27017'
     volumes:
       - ./user_data/shared_data:/var/shared_data
+    depends_on:
+      - mongo_readwrite
+  kotoba-worker:
+    build:
+      context: .
+      dockerfile: ./worker/Dockerfile
+    restart: always
+    environment: 
+      MONGO_HOST: 'mongo_readwrite:27017'
+    depends_on:
+      - mongo_readwrite
   mongo_readwrite:
     image: mongo:4.0.9
     restart: always
