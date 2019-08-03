@@ -8,7 +8,7 @@ async function calculateStats(workerPool, userId) {
   const cachedStats = cachedStatsForUserId[userId];
 
   if (cachedStats) {
-    const mostRecentlyProcessedReport = await GameReportModel
+    const mostRecentReport = await GameReportModel
       .find({ participants: userId })
       .sort({ startTime: -1 })
       .limit(1)
@@ -16,8 +16,8 @@ async function calculateStats(workerPool, userId) {
       .lean()
       .exec();
 
-    const canUseCachedStats = mostRecentlyProcessedReport.length > 0
-      && mostRecentlyProcessedReport[0]._id.toString() === cachedStats.mostRecentlyProcessedReportId;
+    const canUseCachedStats = mostRecentReport.length > 0
+      && mostRecentReport[0]._id.toString() === cachedStats.mostRecentlyProcessedReportId;
 
     if (canUseCachedStats) {
       return cachedStats;
