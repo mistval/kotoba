@@ -24,12 +24,17 @@ async function calculateStats(workerPool, userId) {
     }
   }
 
+  console.time('Calculate quiz stats');
+
   const stats = await workerPool.doWork('calculateStats', userId);
 
   // TODO: Canvas doesn't support worker threads, RIP
+  // https://github.com/Automattic/node-canvas/issues/1394
   stats.charts = await render(stats);
 
   cachedStatsForUserId[userId] = stats;
+
+  console.timeEnd('Calculate quiz stats');
 
   return stats;
 }
