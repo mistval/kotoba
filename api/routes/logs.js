@@ -2,11 +2,10 @@ const routes = require('express').Router();
 const checkAuth = require('./../auth/check_auth.js');
 const fs = require('fs');
 const path = require('path');
-const mkdirp = require('mkdirp').sync;
 
 const logDir = path.join(__dirname, '..', 'access_logs');
 
-mkdirp(logDir);
+fs.mkdirSync(logDir, { recursive: true });
 
 function checkIsAdmin(req, res, next) {
   if (!req.user.admin) {
