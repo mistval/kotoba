@@ -135,6 +135,8 @@ function addAggregateStats(statsIn) {
 
     stats.percentCorrectPerDeckWMA[deckUniqueId] = calculateWMA(dailyPercentCorrect);
   });
+
+  return stats;
 }
 
 async function calculateStats(userId) {
@@ -148,7 +150,7 @@ async function calculateStats(userId) {
     return undefined;
   }
 
-  const stats = {
+  let stats = {
     mostRecentlyProcessedReportId: gameReports[gameReports.length - 1]._id.toString(),
     dailyStats: [],
   };
@@ -158,7 +160,7 @@ async function calculateStats(userId) {
   });
 
   addEmptyDays(stats.dailyStats, Date.now() - (Date.now() % MS_PER_DAY));
-  addAggregateStats(stats);
+  stats = addAggregateStats(stats);
 
   return stats;
 }

@@ -10,12 +10,10 @@ const WORKER_JOBS_PATH = path.join(__dirname, 'worker_jobs.js');
 const workerPool = new WorkerPool(WORKER_JOBS_PATH);
 
 polka().get('/users/:userId/quizstats', async (req, res) => {
-  try {
-    const result = await calculateStats(workerPool, req.params.userId);
-    return send(res, 200, result);
-  } catch (err) {
-    return send(res, 500, err.message);
-  }
+  // try {
+  const result = await calculateStats(workerPool, req.params.userId);
+  return send(res, 200, result);
+  // }
 }).listen(PORT, (err) => {
   if (err) {
     console.warn('Error starting');
