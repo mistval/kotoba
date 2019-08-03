@@ -1,7 +1,11 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
 
-async function calculateStats({ userId, cachedStats }) {
+const cachedStatsForUserId = {};
+
+async function calculateStats(workerPool, userId) {
+  const cachedStats = cachedStatsForUserId[userId];
+  
   if (cachedStats) {
     const mostRecentlyProcessedReport = await GameReportModel
       .find({ participants: userId })
@@ -19,13 +23,10 @@ async function calculateStats({ userId, cachedStats }) {
     }
   }
 
-  const gameReports = await GameReportModel
-    .find({ participants: userId })
-    .sort({ startTime: -1 })
-    .lean()
-    .exec();
-  
-  return { len: gameReports.length };
+  const stats = await workerPool.doWork('calculateStats', userId);
+  cachedStatsForUserId[userId] = stats;
+
+  return stats;
 }
 
 module.exports = calculateStats;
