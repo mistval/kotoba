@@ -14,6 +14,7 @@ polka().get('/users/:userId/quizstats', async (req, res) => {
     const result = await calculateStats(workerPool, req.params.userId);
     return send(res, 200, result);
   } catch (err) {
+    throw err;
     return send(res, 500, err.message);
   }
 }).listen(PORT, (err) => {
