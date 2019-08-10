@@ -5,6 +5,8 @@ RUN apt-get -y install ffmpeg build-essential libcairo2-dev libpango1.0-dev libj
 
 WORKDIR /var
 COPY ./node-common ./node-common
+WORKDIR /var/node-common
+RUN npm ci
 
 WORKDIR /var/app
 

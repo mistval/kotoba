@@ -7,6 +7,9 @@ WORKDIR /var
 COPY ./node-common ./node-common
 COPY ./common ./common
 
+WORKDIR /var/node-common
+RUN npm ci
+
 WORKDIR /var/app
 
 COPY ./api .
