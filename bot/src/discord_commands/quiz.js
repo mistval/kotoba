@@ -269,6 +269,13 @@ const afterQuizMessages = [
       description: 'For advanced quiz options, [visit me on the web](https://kotobaweb.com/bot/quiz).',
     },
   },
+  {
+    embed: {
+      title: 'Stats',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'Say **<prefix>quiz stats** to see your stats for the past 30 days.',
+    },
+  },
 ];
 
 function createAfterQuizMessage(canReview, prefix) {
