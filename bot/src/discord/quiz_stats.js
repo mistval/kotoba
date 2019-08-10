@@ -4,13 +4,26 @@ const moment = require('moment');
 
 const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
 
-async function sendStats(msg) {
-  const stats = (await axios.get(`http://${WORKER_HOST}/users/${msg.author.id}/quizstats`)).data;
-  if (!stats) {
+async function sendStats(msg, requestedUserId) {
+  let userId = msg.author.id;
+
+  // Lemme look at other user's stats for testing
+  if (requestedUserId && msg.author.id === '243703909166612480') {
+    userId = requestedUserId;
+  }
+
+  let stats;
+  try {
+    stats = (await axios.get(`http://${WORKER_HOST}/users/${userId}/quizstats`)).data;
+  } catch (err) {
+    if (!err.response || err.response.status !== 404) {
+      throw err;
+    }
+
     return msg.channel.createMessage({
       embed: {
         title: 'Quiz Stats',
-        description: 'I don\'t have any stats for you. Do some quizzes and try again!',
+        description: 'I don\'t have any stats for you in the past 30 days. Do some quizzes and try again!',
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     });

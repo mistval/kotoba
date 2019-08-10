@@ -1277,8 +1277,8 @@ module.exports = {
       return deleteInternetDeck(msg, suffixReplaced.split(' ')[1], msg.author.id);
     }
 
-    if (suffixReplaced === 'stats') {
-      return sendStats(msg);
+    if (suffixReplaced.startsWith('stats')) {
+      return sendStats(msg, suffixReplaced.substring('stats'.length).trim());
     }
 
     // Save operation
