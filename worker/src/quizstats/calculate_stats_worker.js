@@ -4,6 +4,7 @@ const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckMod
 
 const MS_PER_DAY = 86400000;
 const WMA_PERIOD = 5;
+const OLDEST_REPORT = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 async function getShortNameForUniqueId(uniqueId) {
   const customDeck = await CustomDeckModel.findOne({ uniqueId });
@@ -170,7 +171,7 @@ async function addAggregateStats(statsIn) {
 
 async function calculateStats(userId) {
   const gameReports = await GameReportModel
-    .find({ participants: userId })
+    .find({ participants: userId, startTime: { $gt: Date.now() - OLDEST_REPORT } })
     .sort({ startTime: 1 })
     .lean()
     .exec();
