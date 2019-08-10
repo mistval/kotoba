@@ -1,5 +1,7 @@
 const Vega = require('vega');
 
+const CHART_BG_COLOR = '#34363c';
+
 async function renderSpecToBuffer(spec) {
   const view = new Vega.View(Vega.parse(spec)).renderer('none').initialize();
   const canvas = await view.toCanvas();
@@ -14,7 +16,7 @@ const deckPieChartSpec = {
   width: 300,
   height: 300,
   autosize: 'pad',
-  background: '#36393f',
+  background: CHART_BG_COLOR,
   signals: [
     { name: 'startAngle', value: 0 },
     { name: 'endAngle', value: 6.29 },
@@ -180,7 +182,7 @@ const stackedBarChartSpec = {
   width: 500,
   height: 200,
   padding: 5,
-  background: '#36393f',
+  background: CHART_BG_COLOR,
 
   data: [
     {
@@ -296,7 +298,7 @@ const percentCorrectChartSpec = {
     text: 'Percent Correct (5 day WMA)',
     color: '#ffffff',
   },
-  background: '#36393f',
+  background: CHART_BG_COLOR,
 
   signals: [
     {
