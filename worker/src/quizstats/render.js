@@ -165,7 +165,7 @@ async function renderDeckPieChart(stats) {
   spec.data[0] = { ...spec.data[0] };
   spec.data[0].values = Object.entries(stats.questionsAnsweredPerDeck)
     .map(([deckId, points]) => ({
-      deckId,
+      deckId: stats.deckShortNameForUniqueId[deckId],
       points,
     })).sort((a, b) => b.points - a.points);
 

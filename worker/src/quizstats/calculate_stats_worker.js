@@ -1,8 +1,30 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
+const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(dbConnection);
 
 const MS_PER_DAY = 86400000;
 const WMA_PERIOD = 5;
+
+async function getShortNameForUniqueId(uniqueId) {
+  const customDeck = await CustomDeckModel.findOne({ uniqueId });
+  if (customDeck) {
+    return customDeck.shortName;
+  }
+
+  return uniqueId;
+}
+
+async function getShortNamesForUniqueIds(uniqueIds) {
+  const shortNamePromises = uniqueIds.map(uniqueId => getShortNameForUniqueId(uniqueId));
+  const shortNames = await Promise.all(shortNamePromises);
+
+  const shortNameForUniqueId = {};
+  uniqueIds.forEach((uniqueId, i) => {
+    shortNameForUniqueId[uniqueId] = shortNames[i];
+  });
+
+  return shortNameForUniqueId;
+}
 
 function createEmptyDay(dateInt) {
   return {
@@ -78,13 +100,15 @@ function calculateWMA(dailyValues) {
   });
 }
 
-function addAggregateStats(statsIn) {
+async function addAggregateStats(statsIn) {
   const stats = {
     ...statsIn,
     questionsAnsweredPerDeck: {},
     questionsSeenPerDeck: {},
     percentCorrectPerDeckWMA: {},
   };
+
+  const allSeenDeckUniqueIds = {};
 
   // Loop over the stats for each day
   stats.dailyStats = stats.dailyStats.map((dailyStatsIn) => {
@@ -103,6 +127,7 @@ function addAggregateStats(statsIn) {
         stats.questionsAnsweredPerDeck[deckUniqueId] = 0;
       }
 
+      allSeenDeckUniqueIds[deckUniqueId] = true;
       const questionsSeen = dailyStats.questionsSeenPerDeck[deckUniqueId];
       const questionsAnswered = dailyStats.questionsAnsweredPerDeck[deckUniqueId] || 0;
 
@@ -136,6 +161,10 @@ function addAggregateStats(statsIn) {
     stats.percentCorrectPerDeckWMA[deckUniqueId] = calculateWMA(dailyPercentCorrect);
   });
 
+  stats.deckShortNameForUniqueId = await getShortNamesForUniqueIds(
+    Object.keys(allSeenDeckUniqueIds),
+  );
+
   return stats;
 }
 
@@ -160,7 +189,7 @@ async function calculateStats(userId) {
   });
 
   addEmptyDays(stats.dailyStats, Date.now() - (Date.now() % MS_PER_DAY));
-  stats = addAggregateStats(stats);
+  stats = await addAggregateStats(stats);
 
   return stats;
 }
