@@ -14,6 +14,7 @@ In addition to the three main projects there are a few other directories:
 * [/node-common](https://github.com/mistval/kotoba/tree/master/node-common) - Common code that is intended to be shared between node processes but not browser.
 * [/nginx](https://github.com/mistval/kotoba/tree/master/nginx) - An nginx configuration for proxying HTTP requests to the [frontend](https://github.com/mistval/kotoba/tree/master/kotobaweb) and [API](https://github.com/mistval/kotoba/tree/master/api).
 * [/backup](https://github.com/mistval/kotoba/tree/master/backup) - Tools for backing up user data to Google Cloud Storage.
+* [/worker](https://github.com/mistval/kotoba/tree/master/worker) - A worker process for doing some heavy lifting for other processes whose event loops should not be blocked.
 
 ## Configuration
 
@@ -25,7 +26,7 @@ After following the configuration instructions:
 
 ```sh
 sudo apt install docker docker-compose
-sudo docker-compose up kotoba-bot mongo_readwrite
+sudo docker-compose up kotoba-bot kotoba-worker mongo_readwrite
 ```
 
 The bot will take some time to build and should then come online. Note that it will be missing some fonts and features that are not in this repo. These instructions are for Ubuntu Linux.
@@ -107,6 +108,16 @@ http {
         }
     }
 }
+```
+
+### Worker process
+
+The worker process handles some heavy lifting so that the event loop doesn't have to block in the bot or API. The bot and API communicate with it via HTTP. It doesn't do much at the moment, and most features work without it, so you can probably ignore it until you're working with a feature that requires it and you notice that HTTP requests to it are failing.
+
+```
+cd ./worker
+npm install
+npm start
 ```
 
 ## Help
