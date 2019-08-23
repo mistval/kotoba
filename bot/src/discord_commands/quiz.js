@@ -1089,7 +1089,7 @@ async function startNewQuiz(
     suffixReplaced = suffixReplaced.replace(replacementKey, mixtureReplacements[replacementKey]);
   });
 
-  const parts = suffixReplaced.split(' ');
+  const parts = suffixReplaced.split(' ').filter(x => x);
   const deckNames = parts.shift().split('+').filter(deckName => !!deckName);
   const args = parts;
   const invokerId = msg.author.id;
