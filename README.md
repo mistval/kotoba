@@ -48,10 +48,8 @@ The bot will start and come online. Some commands won't work. There are addition
 * Quiz command
     1. In the ./bot directory, run `npm run buildquiz`.
     2. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
-    3. Install CJK fonts. Most of the fonts Kotoba uses are provided [here](https://github.com/mistval/kotoba/tree/master/bot/fonts).
 * Furigana command
     1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
-    2. Install CJK fonts. Most of the fonts Kotoba uses are provided [here](https://github.com/mistval/kotoba/tree/master/bot/fonts).
 * Pronunciation command
     1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
     2. In the ./bot directory, run `npm run buildpronunciation`.
@@ -62,8 +60,7 @@ The bot will start and come online. Some commands won't work. There are addition
 ### KotobaWeb
 
 1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
-2. Install CJK fonts. Most of the fonts Kotoba uses are provided [here](https://github.com/mistval/kotoba/tree/master/bot/fonts).
-3. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+2. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
 ```sh
 cd ./api

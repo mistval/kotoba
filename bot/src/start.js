@@ -4,8 +4,10 @@ const path = require('path');
 const fs = require('fs');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
+const canvasInit = require('./common/canvas_init.js');
 
 const { apiKeys } = config;
+canvasInit();
 
 function createBot() {
   fs.mkdirSync(path.join(__dirname, '..', 'data'), { recursive: true });

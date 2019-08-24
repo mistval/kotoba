@@ -20,9 +20,6 @@ COPY ./bot/resources/dictionaries ./resources/dictionaries
 COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
-COPY ./bot/fonts/opentype /usr/share/fonts/opentype
-COPY ./bot/fonts/truetype /usr/share/fonts/truetype
-
 COPY ./bot/resources ./resources
 RUN npm run buildquiz
 

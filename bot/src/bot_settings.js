@@ -1,7 +1,7 @@
 
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 
-const fontHelper = require('./common/font_helper.js');
+const FontHelper = require('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
 
 function isInRange(min, max, value) {
@@ -61,24 +61,15 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
-const fontForIndex = {};
-fontHelper.availableFontSettings.forEach((key, index) => {
-  fontForIndex[index + 1] = key;
-});
-
-const fontDescriptionList = Object.keys(fontForIndex)
-  .map(index => `${index}. **${fontForIndex[index]}** - ${fontHelper.descriptionForFontSetting[fontForIndex[index]]}`)
+const fontDescriptionList = FontHelper.allFonts
+  .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`)
   .join('\n');
 
-const fontForFont = {};
-fontHelper.availableFontSettings.forEach((key) => {
-  fontForFont[key.toLowerCase()] = key;
+const fontForInput = {};
+FontHelper.allFonts.forEach((fontInfo, index) => {
+  fontForInput[index + 1] = fontInfo.fontFamily;
+  fontForInput[fontInfo.fontFamily] = fontInfo.fontFamily;
 });
-
-const fontForInput = {
-  ...fontForIndex,
-  ...fontForFont,
-};
 
 const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
 
@@ -211,7 +202,7 @@ module.exports = [
         description: 'This setting controls the font used for text rendered for quizzes.',
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'quiz_font',
-        defaultUserFacingValue: 'Yu Mincho',
+        defaultUserFacingValue: 'Noto Sans CJK',
         convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
           fontForInput,
           true,

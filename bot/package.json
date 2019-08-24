@@ -30,6 +30,7 @@
     "cheerio": "1.0.0-rc.2",
     "disk-array": "^1.0.1",
     "edict-index": "^0.0.2",
+    "glob": "^7.1.4",
     "html-entities": "1.2.1",
     "kitsu": "7.0.0",
     "kotoba-node-common": "file:../node-common",
