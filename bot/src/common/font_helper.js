@@ -1,43 +1,52 @@
+const glob = require('glob');
+const path = require('path');
+
 const RANDOM_FONT_SETTING = 'Random';
 
-// List the real fonts here (as opposed to the meta fonts [as of now only 'Random'])
-const descriptionForFontSetting = {
-  'Yu Mincho': 'An elegant font',
-  'Noto Sans CJK JP': 'A commonly used web font',
-  Meiryo: 'A commonly used print font',
-  SetoFont: 'A cute handwritten font',
-  PopRumCute: 'Another cute handwritten font',
-  KaiTi: 'A Chinese font',
-  AoyagiKouzanFontT: 'A caligraphy brush font (kinda challenging)',
-  CP_Revenge: 'A cyberpunk font',
-  Genkaimincho: 'An apocalyptic font (recommend using a dark background color and light font color)',
-  'kurobara-cinderella': 'A mAaAaAaAagical font',
-  英椎楷書: 'Eikaishotai, a tidy calligraphy font',
-};
+const fontMetaFilePaths = glob.sync(`${__dirname}/../../fonts/**/meta.json`);
+const installedFonts = [];
 
-const realFontNames = Object.keys(descriptionForFontSetting);
+fontMetaFilePaths.forEach((metaPath) => {
+  const meta = require(metaPath);
+  const dir = path.dirname(metaPath);
+  const fontFilePath = glob.sync(`${dir}/*.{otf,ttf,ttc}`)[0];
+  installedFonts.push({
+    filePath: fontFilePath,
+    fontFamily: meta.fontFamily,
+    order: meta.order,
+    description: meta.description,
+  });
+});
 
-// Add in the meta fonts
-descriptionForFontSetting[RANDOM_FONT_SETTING] = 'Cycle through fonts randomly';
+installedFonts.sort((a, b) => a.order - b.order);
+
+const allFonts = installedFonts.slice();
+allFonts.push({
+  fontFamily: RANDOM_FONT_SETTING,
+  order: 1000,
+  description: 'Cycle through fonts randomly',
+});
 
 function getRandomFont() {
-  const randomIndex = Math.floor(Math.random() * realFontNames.length);
-  return realFontNames[randomIndex];
+  const randomIndex = Math.floor(Math.random() * installedFonts.length);
+  return installedFonts[randomIndex].fontFamily;
 }
 
 function getFontNameForFontSetting(fontSetting = realFontNames[0]) {
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
-  if (realFontNames.indexOf(fontSetting) === -1) {
-    return realFontNames[0];
+
+  const fontInfo = installedFonts.find(fontInfo => fontInfo.fontFamily === fontSetting);
+  if (!fontInfo) {
+    return installedFonts[0].fontFamily;
   }
 
-  return fontSetting;
+  return fontInfo.fontFamily;
 }
 
 module.exports = {
-  availableFontSettings: Object.keys(descriptionForFontSetting),
-  descriptionForFontSetting,
+  installedFonts,
+  allFonts,
   getFontNameForFontSetting,
 };
