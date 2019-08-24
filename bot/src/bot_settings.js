@@ -245,7 +245,7 @@ module.exports = [
         description: 'This setting controls the font used for the furigana command.',
         allowedValuesDescription: availableFontsAllowedValuesString,
         uniqueId: 'furigana_font',
-        defaultUserFacingValue: 'Yu Mincho',
+        defaultUserFacingValue: 'Noto Sans CJK',
         convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
           fontForInput,
           true,
