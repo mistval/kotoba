@@ -68,7 +68,7 @@ const fontDescriptionList = FontHelper.allFonts
 const fontForInput = {};
 FontHelper.allFonts.forEach((fontInfo, index) => {
   fontForInput[index + 1] = fontInfo.fontFamily;
-  fontForInput[fontInfo.fontFamily] = fontInfo.fontFamily;
+  fontForInput[fontInfo.fontFamily.toLowerCase()] = fontInfo.fontFamily;
 });
 
 const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
