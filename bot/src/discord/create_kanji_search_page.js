@@ -150,7 +150,7 @@ function createPageForKanjiData(kanjiData, prefix) {
 
   const unicodeString = kanjiData.query.codePointAt(0).toString(10);
   const fileName = `${unicodeString}.png`;
-  const thumbnailInfo = { url: `https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjipngs/${fileName}` };
+  const thumbnailInfo = { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/pngs/${fileName}` };
 
   return {
     embed: {
