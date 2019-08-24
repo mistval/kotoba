@@ -148,7 +148,7 @@ function createPageForKanjiData(kanjiData, prefix) {
     embedFields.push({ name: 'Examples', inline: true, value: examplesStr });
   }
 
-  const unicodeString = kanjiData.query.codePointAt(0).toString(10);
+  const unicodeString = kanjiData.query.codePointAt(0).toString(16);
   const fileName = `${unicodeString}.png`;
   const thumbnailInfo = { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/pngs/${fileName}` };
 
