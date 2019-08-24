@@ -25,6 +25,7 @@ RUN npm run buildquiz
 
 RUN mkdir latest_log data
 
+COPY ./bot/fonts ./fonts
 COPY ./bot/start.sh ./start.sh
 COPY ./bot/src ./src
 
