@@ -33,7 +33,7 @@ The bot will take some time to build and should then come online. Note that it w
 
 ## Developing
 
-**Node v10 is recommended, at least v10.12.0. v11+ may not be able to build the native modules that Kotoba uses.**
+**Node v12 is recommended**
 
 ### Discord bot
 
