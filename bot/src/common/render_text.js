@@ -12,7 +12,6 @@ const BASE_RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 
 function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 96, fontSetting = 'Yu Mincho') {
-  console.time('r');
   const fontFamily = fontHelper.getFontFamilyForFontSetting(fontSetting);
   const coercedFont = fontHelper.coerceFontFamilyForString(fontFamily, text);
 
@@ -44,7 +43,6 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
 
   const bufferOptions = { compressionLevel: 9, filters: canvas.PNG_FILTER_NONE };
   const buffer = canvas.toBuffer('image/png', bufferOptions);
-  console.timeEnd('r');
   return buffer;
 }
 
