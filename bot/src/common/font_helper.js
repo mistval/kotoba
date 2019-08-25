@@ -69,7 +69,7 @@ function getRandomFont() {
   return installedFonts[randomIndex].fontFamily;
 }
 
-function getFontNameForFontSetting(fontSetting = realFontNames[0]) {
+function getFontFamilyForFontSetting(fontSetting = realFontNames[0]) {
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
@@ -82,35 +82,35 @@ function getFontNameForFontSetting(fontSetting = realFontNames[0]) {
   return fontInfo.fontFamily;
 }
 
-function fontSupportsCharacter(font, char) {
+function fontFamilySupportsCharacter(fontFamily, char) {
   if (!supportedCharactersForFont) {
     throw new Error('No supported character map found. Please run: npm run buildfontcharactermap');
   }
-  return supportedCharactersForFont[font] && supportedCharactersForFont[font][char];
+  return supportedCharactersForFont[fontFamily] && supportedCharactersForFont[fontFamily][char];
 }
 
-function fontSupportsString(font, str) {
-  return str.split('').every(c => fontSupportsCharacter(font, c));
+function fontFamilySupportsString(fontFamily, str) {
+  return str.split('').every(c => fontFamilySupportsCharacter(fontFamily, c));
 }
 
-function coerceFontForString(font, str) {
-  if (fontSupportsString(font, str)) {
-    return font;
+function coerceFontFamilyForString(fontFamily, str) {
+  if (fontFamilySupportsString(fontFamily, str)) {
+    return fontFamily;
   }
 
-  const supportedFontInfo = installedFonts.find(f => fontSupportsString(f.fontFamily, str));
+  const supportedFontInfo = installedFonts.find(f => fontFamilySupportsString(f.fontFamily, str));
   if (supportedFontInfo) {
-    return supportedFontInfo;
+    return supportedFontInfo.fontFamily;
   }
 
-  return installedFonts[0];
+  return installedFonts[0].fontFamily;
 }
 
 module.exports = {
   installedFonts,
   allFonts,
-  getFontNameForFontSetting,
-  coerceFontForString,
+  getFontFamilyForFontSetting,
+  coerceFontFamilyForString,
   buildSupportedCharactersForFontMap,
   SUPPORTED_CHARACTERS_MAP_DIR_PATH,
   SUPPORTED_CHARACTERS_MAP_PATH,
