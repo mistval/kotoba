@@ -47,6 +47,7 @@ The bot will start and come online. Some commands won't work. There are addition
 
 * Quiz command
     1. In the ./bot directory, run `npm run buildquiz`.
+    2. In the ./bot directory, run `npm run buildfontcharactermap`.
 * Pronunciation command
     1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
     2. In the ./bot directory, run `npm run buildpronunciation`.
