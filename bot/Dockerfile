@@ -20,6 +20,9 @@ COPY ./bot/resources/dictionaries ./resources/dictionaries
 COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
+COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js
+RUN npm run buildfontcharactermap
+
 COPY ./bot/resources ./resources
 RUN npm run buildquiz
 

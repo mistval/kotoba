@@ -10,7 +10,8 @@
     "buildall": "node ./src/build/buildall.js",
     "buildshiritori": "node ./src/build/build_shiritori_data.js",
     "buildpronunciation": "node ./src/build/build_pronunciation_data.js",
-    "buildquiz": "node ./src/build/build_quiz_decks.js"
+    "buildquiz": "node ./src/build/build_quiz_decks.js",
+    "buildfontcharactermap": "node ./src/build/build_font_character_map.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "cheerio": "1.0.0-rc.2",
     "disk-array": "^1.0.1",
     "edict-index": "^0.0.2",
+    "fontkit": "^1.8.0",
     "glob": "^7.1.4",
     "html-entities": "1.2.1",
     "kitsu": "7.0.0",
