@@ -37,7 +37,7 @@ function buildSupportedCharactersForFontMap() {
 
     // font.characterSet contains code points that the font doesn't actually support.
     // Not 100% sure how fonts work in this respect, but this is the only reliable
-    // way I could find to figure out which fonts are actually supported.
+    // way I could find to figure out which characters are actually supported.
     fontKitFonts.forEach((font) => {
       font.characterSet.forEach((char) => {
         const glyph = font.glyphForCodePoint(char);
