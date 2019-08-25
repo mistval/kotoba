@@ -13,8 +13,8 @@ const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_
 
 function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 96, fontSetting = 'Yu Mincho') {
   console.time('r');
-  const font = fontHelper.getFontNameForFontSetting(fontSetting);
-  const coercedFont = fontHelper.coerceFontForString(font, text);
+  const fontFamily = fontHelper.getFontFamilyForFontSetting(fontSetting);
+  const coercedFont = fontHelper.coerceFontFamilyForString(fontFamily, text);
 
   const canvas = Canvas.createCanvas(0, 0);
   const ctx = canvas.getContext('2d');
@@ -49,7 +49,7 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
 }
 
 function renderJapaneseWithFurigana(text, mainFontSize, textColor, backgroundColor, fontSetting) {
-  const font = fontHelper.getFontNameForFontSetting(fontSetting);
+  const font = fontHelper.getFontFamilyForFontSetting(fontSetting);
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
   const kanjiFont = `${mainFontSizeDivisibleBy2}px ${font}`;
