@@ -1,6 +1,10 @@
 const glob = require('glob');
 const path = require('path');
+const FontKit = require('fontkit');
+let supportedCharactersForFont;
 
+const SUPPORTED_CHARACTERS_MAP_DIR_PATH = path.join(__dirname, '..', '..', 'generated');
+const SUPPORTED_CHARACTERS_MAP_PATH = path.join(SUPPORTED_CHARACTERS_MAP_DIR_PATH, 'supported_chars_for_font.json');
 const RANDOM_FONT_SETTING = 'Random';
 
 const fontMetaFilePaths = glob.sync(`${__dirname}/../../fonts/**/meta.json`);
@@ -17,6 +21,39 @@ fontMetaFilePaths.forEach((metaPath) => {
     description: meta.description,
   });
 });
+
+try {
+  supportedCharactersForFont = require(SUPPORTED_CHARACTERS_MAP_PATH);
+} catch (err) {
+  // Might not exist, might not be needed. If it's needed, will error.
+}
+
+function buildSupportedCharactersForFontMap() {
+  const supportedCharactersForFont = {};
+  installedFonts.forEach((fontInfo) => {
+    const fontKitFont = FontKit.openSync(fontInfo.filePath);
+    const fontKitFonts = fontKitFont.fonts || [fontKitFont];
+    supportedCharactersForFont[fontInfo.fontFamily] = {};
+
+    // font.characterSet contains code points that the font doesn't actually support.
+    // Not 100% sure how fonts work in this respect, but this is the only reliable
+    // way I could find to figure out which fonts are actually supported.
+    fontKitFonts.forEach((font) => {
+      font.characterSet.forEach((char) => {
+        const glyph = font.glyphForCodePoint(char);
+        try {
+          const fontSupportsCharacter = Number.isFinite(glyph.path.bbox.height);
+          if (fontSupportsCharacter) {
+            supportedCharactersForFont[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
+          }
+        } catch (err) {
+        }
+      });
+    });
+  });
+
+  return supportedCharactersForFont;
+}
 
 installedFonts.sort((a, b) => a.order - b.order);
 
@@ -45,8 +82,36 @@ function getFontNameForFontSetting(fontSetting = realFontNames[0]) {
   return fontInfo.fontFamily;
 }
 
+function fontSupportsCharacter(font, char) {
+  if (!supportedCharactersForFont) {
+    throw new Error('No supported character map found. Please run: npm run buildfontcharactermap');
+  }
+  return supportedCharactersForFont[font] && supportedCharactersForFont[font][char];
+}
+
+function fontSupportsString(font, str) {
+  return str.split('').every(c => fontSupportsCharacter(font, c));
+}
+
+function coerceFontForString(font, str) {
+  if (fontSupportsString(font, str)) {
+    return font;
+  }
+
+  const supportedFontInfo = installedFonts.find(f => fontSupportsString(f.fontFamily, str));
+  if (supportedFontInfo) {
+    return supportedFontInfo;
+  }
+
+  return installedFonts[0];
+}
+
 module.exports = {
   installedFonts,
   allFonts,
   getFontNameForFontSetting,
+  coerceFontForString,
+  buildSupportedCharactersForFontMap,
+  SUPPORTED_CHARACTERS_MAP_DIR_PATH,
+  SUPPORTED_CHARACTERS_MAP_PATH,
 };
