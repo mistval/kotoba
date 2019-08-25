@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const FontKit = require('fontkit');
+
 let supportedCharactersForFont;
 
 const SUPPORTED_CHARACTERS_MAP_DIR_PATH = path.join(__dirname, '..', '..', 'generated');
@@ -11,6 +12,7 @@ const fontMetaFilePaths = glob.sync(`${__dirname}/../../fonts/**/meta.json`);
 const installedFonts = [];
 
 fontMetaFilePaths.forEach((metaPath) => {
+  // eslint-disable-next-line global-require,import/no-dynamic-require
   const meta = require(metaPath);
   const dir = path.dirname(metaPath);
   const fontFilePath = glob.sync(`${dir}/*.{otf,ttf,ttc}`)[0];
@@ -23,17 +25,18 @@ fontMetaFilePaths.forEach((metaPath) => {
 });
 
 try {
+  // eslint-disable-next-line global-require,import/no-dynamic-require
   supportedCharactersForFont = require(SUPPORTED_CHARACTERS_MAP_PATH);
 } catch (err) {
   // Might not exist, might not be needed. If it's needed, will error.
 }
 
 function buildSupportedCharactersForFontMap() {
-  const supportedCharactersForFont = {};
+  const supportedCharactersForFontInner = {};
   installedFonts.forEach((fontInfo) => {
     const fontKitFont = FontKit.openSync(fontInfo.filePath);
     const fontKitFonts = fontKitFont.fonts || [fontKitFont];
-    supportedCharactersForFont[fontInfo.fontFamily] = {};
+    supportedCharactersForFontInner[fontInfo.fontFamily] = {};
 
     // font.characterSet contains code points that the font doesn't actually support.
     // Not 100% sure how fonts work in this respect, but this is the only reliable
@@ -44,15 +47,17 @@ function buildSupportedCharactersForFontMap() {
         try {
           const fontSupportsCharacter = Number.isFinite(glyph.path.bbox.height);
           if (fontSupportsCharacter) {
-            supportedCharactersForFont[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
+            supportedCharactersForFontInner[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
           }
         } catch (err) {
+          // NOOP. Some of the properties on glyph are getters that error
+          // if the glyph isn't supported. Catch those errors and skip the glyph.
         }
       });
     });
   });
 
-  return supportedCharactersForFont;
+  return supportedCharactersForFontInner;
 }
 
 installedFonts.sort((a, b) => a.order - b.order);
@@ -69,12 +74,12 @@ function getRandomFont() {
   return installedFonts[randomIndex].fontFamily;
 }
 
-function getFontFamilyForFontSetting(fontSetting = realFontNames[0]) {
+function getFontFamilyForFontSetting(fontSetting) {
   if (fontSetting === RANDOM_FONT_SETTING) {
     return getRandomFont();
   }
 
-  const fontInfo = installedFonts.find(fontInfo => fontInfo.fontFamily === fontSetting);
+  const fontInfo = installedFonts.find(info => info.fontFamily === fontSetting);
   if (!fontInfo) {
     return installedFonts[0].fontFamily;
   }
