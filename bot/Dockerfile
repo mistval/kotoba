@@ -20,6 +20,7 @@ COPY ./bot/resources/dictionaries ./resources/dictionaries
 COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
+COPY ./bot/fonts ./fonts
 COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js
 RUN npm run buildfontcharactermap
 
@@ -28,7 +29,6 @@ RUN npm run buildquiz
 
 RUN mkdir latest_log data
 
-COPY ./bot/fonts ./fonts
 COPY ./bot/start.sh ./start.sh
 COPY ./bot/src ./src
 
