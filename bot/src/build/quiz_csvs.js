@@ -83,20 +83,20 @@ async function go() {
       card.question,
       card.answer.join(', '),
       card.meaning,
-      deck.instructions,
     ]);
 
     cardsAsRows.unshift(['Question', 'Answers', 'Comment', 'Instructions']);
 
-    const csvStr = csvStringify(cardsAsRows);
-    const csvFileName = fileName.replace('.json', '.csv');
+    const csvStr = csvStringify(cardsAsRows, { delimiter: '\t' });
+    const csvFileName = fileName.replace('.json', '.tsv');
     const storageFile = storageBucket.file(csvFileName);
 
     console.log(`Uploading ${csvFileName}`);
 
     // This needs to happen sequentially or RAM usage will be crazy
     // eslint-disable-next-line no-await-in-loop
-    await storageFile.save(csvStr, { resumable: false, contentType: 'auto' });
+    fs.mkdirSync('./output', { recursive: true });
+    fs.writeFileSync('./output/' + csvFileName, csvStr);
   }
 
   const indexFile = storageBucket.file('index.html');
