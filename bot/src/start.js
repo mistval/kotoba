@@ -5,23 +5,9 @@ const fs = require('fs');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const canvasInit = require('./common/canvas_init.js');
-const Bunyan = require('bunyan');
 
 const { apiKeys } = config;
 canvasInit();
-
-function createLogger() {
-  const logger = Bunyan.createLogger({
-    // The JSON payload of the log as it appears in Stackdriver Logging
-    // will contain "name": "my-service"
-    name: 'kotoba-bot',
-    streams: [
-      {stream: process.stdout, level: 'trace'},
-    ],
-  });
-
-  return logger;
-}
 
 function createBot() {
   fs.mkdirSync(path.join(__dirname, '..', 'data'), { recursive: true });
@@ -29,13 +15,14 @@ function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
+  const logDirectoryPath = path.join(__dirname, '..', 'data', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
   const options = {
     prefixes: ['k!'],
-    logger: createLogger(),
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
+    logDirectoryPath,
     settingsFilePath,
     persistenceDirectoryPath,
     useANSIColorsInLogFiles: true,
@@ -84,15 +71,15 @@ function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
   if (!apiKeys.youtube) {
-    logger.error('No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
+    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
   }
 
   if (!apiKeys.googleTranslate) {
-    logger.error('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
+    logger.logFailure('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
   }
 
   if (!apiKeys.forvo) {
-    logger.error('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
+    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
   }
 }
 
