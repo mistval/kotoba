@@ -5,9 +5,29 @@ const fs = require('fs');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const canvasInit = require('./common/canvas_init.js');
+const Bunyan = require('bunyan');
+const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
+
+const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
 
 const { apiKeys } = config;
+
 canvasInit();
+
+function createLogger() {
+  // Use Bunyan logger connected to StackDriver if GCP credentials are present.
+  if (fs.existsSync(GCLOUD_KEY_PATH)) {
+    const stackDriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
+    return Bunyan.createLogger({
+      name: 'kotoba-bot',
+      streams: [
+        stackDriverConnection.stream('debug'),
+      ],
+    });
+  }
+
+  return undefined; // Use default console logger
+}
 
 function createBot() {
   fs.mkdirSync(path.join(__dirname, '..', 'data'), { recursive: true });
@@ -21,6 +41,7 @@ function createBot() {
     prefixes: ['k!'],
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
+    logger: createLogger(),
     settingsFilePath,
     persistenceDirectoryPath,
     useANSIColorsInLogFiles: true,
