@@ -15,14 +15,12 @@ function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
-  const logDirectoryPath = path.join(__dirname, '..', 'data', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
   const options = {
     prefixes: ['k!'],
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
-    logDirectoryPath,
     settingsFilePath,
     persistenceDirectoryPath,
     useANSIColorsInLogFiles: true,
@@ -71,15 +69,24 @@ function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
   if (!apiKeys.youtube) {
-    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
+    logger.warn({
+      event: 'YOUTUBE KEY MISSING',
+      msg: 'No Youtube API key present in config.json. The jukebox command will not work.'
+    });
   }
 
   if (!apiKeys.googleTranslate) {
-    logger.logFailure('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
+    logger.warn({
+      event: 'GOOGLE TRANSLATE KEY MISSING',
+      msg: 'No Google API key present in config.json. The translate command will not work.'
+    });
   }
 
   if (!apiKeys.forvo) {
-    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
+    logger.warn({
+      event: 'FORVO KEY MISSING',
+      msg: 'No Forvo API key present in config.json. The pronounce command will not show audio files.'
+    });
   }
 }
 
