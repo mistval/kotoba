@@ -8,6 +8,7 @@ services:
     environment: 
       MONGO_HOST: 'mongo_readwrite:27017'
       WORKER_HOST: 'kotoba-worker'
+      FORCE_COLOR: '1'
     volumes:
       - ./user_data/bot:/var/app/data
       - ./user_data/shared_data:/var/shared_data
