@@ -21,13 +21,12 @@ function createLogger() {
   // Use Bunyan logger connected to StackDriver if GCP credentials are present.
   if (hasGCloudKey) {
     const consoleLogger = new ConsoleLogger();
-    const consoleLogStream = consoleLogger.createStream('info');
-    const stackdriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
+    const stackDriverLogger = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
     return Bunyan.createLogger({
       name: 'kotoba-bot',
       streams: [
-        stackdriverConnection.stream('debug'),
-        consoleLogStream,
+        stackDriverLogger.stream('debug'),
+        consoleLogger.stream('info'),
       ],
     });
   }
