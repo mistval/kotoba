@@ -8,7 +8,7 @@ const canvasInit = require('./common/canvas_init.js');
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 
-const ConsoleLogger = Monochrome.ConsoleLogger;
+const { ConsoleLogger } = Monochrome;
 
 const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
 const hasGCloudKey = fs.existsSync(GCLOUD_KEY_PATH);
@@ -97,21 +97,21 @@ function checkApiKeys(monochrome) {
   if (!apiKeys.youtube) {
     logger.warn({
       event: 'YOUTUBE KEY MISSING',
-      detail: 'No Youtube API key present in config.js. The jukebox command will not work.'
+      detail: 'No Youtube API key present in config.js. The jukebox command will not work.',
     });
   }
 
   if (!apiKeys.googleTranslate) {
     logger.warn({
       event: 'GOOGLE TRANSLATE KEY MISSING',
-      detail: 'No Google API key present in config.js. The translate command will not work.'
+      detail: 'No Google API key present in config.js. The translate command will not work.',
     });
   }
 
   if (!apiKeys.forvo) {
     logger.warn({
       event: 'FORVO KEY MISSING',
-      detail: 'No Forvo API key present in config.js. The pronounce command will not show audio files.'
+      detail: 'No Forvo API key present in config.js. The pronounce command will not show audio files.',
     });
   }
 
