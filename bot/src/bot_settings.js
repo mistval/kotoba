@@ -12,7 +12,7 @@ function validateRGBColor(input) {
   const MIN = 0;
   const MAX = 255;
 
-  const regex = /rgb\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})\)/i;
+  const regex = /rgb\([ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})[ ]{0,}\)/i;
   const regexResult = regex.exec(input);
 
   if (!regexResult) {
@@ -32,7 +32,7 @@ function validateRGBAColor(input) {
   const A_MIN = 0;
   const A_MAX = 1;
 
-  const regex = /rgba\(([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]*\.[0-9]+|[0-9]+)\)/i;
+  const regex = /rgba\([ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]*\.[0-9]+|[0-9]+)[ ]{0,}\)/i;
   const regexResult = regex.exec(input);
 
   if (!regexResult) {
