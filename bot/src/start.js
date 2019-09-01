@@ -8,6 +8,8 @@ const canvasInit = require('./common/canvas_init.js');
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 
+const ConsoleLogger = Monochrome.ConsoleLogger;
+
 const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
 
 const { apiKeys } = config;
@@ -17,11 +19,14 @@ canvasInit();
 function createLogger() {
   // Use Bunyan logger connected to StackDriver if GCP credentials are present.
   if (fs.existsSync(GCLOUD_KEY_PATH)) {
+    const consoleLogger = new ConsoleLogger();
+    const consoleLogStream = consoleLogger.createStream('info');
     const stackDriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
     return Bunyan.createLogger({
       name: 'kotoba-bot',
       streams: [
         stackDriverConnection.stream('debug'),
+        consoleLogStream,
       ],
     });
   }
