@@ -4,8 +4,6 @@ const globals = require('./../globals.js');
 const updateDbFromUser = require('../../discord/db_helpers/update_from_user.js');
 const updateDbFromGuild = require('../../discord/db_helpers/update_from_guild.js');
 
-const LOGGER_TITLE = 'SESSION REPORT MANAGER';
-
 const pendingReportForLocationId = {};
 
 function calculateCanCopyToCustomDeck(card) {
@@ -31,13 +29,19 @@ function calculateCanCopyToCustomDeck(card) {
 function notifyStarting(locationId, serverId, quizName) {
   try {
     if (pendingReportForLocationId[locationId]) {
-      globals.logger.logFailure(LOGGER_TITLE, `There was already a report pending at ${locationId}. Weird.`);
+      globals.logger.warn({
+        event: 'PENDING REPORT ALREADY EXISTS',
+        detail: locationId,
+      });
     }
   
     const report = { quizName, cards: [], startTime: Date.now(), serverId };
     pendingReportForLocationId[locationId] = report;
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Error starting', err);
+    globals.logger.error({
+      event: 'ERROR STARTING SESSION REPORT',
+      err,
+    });
     delete pendingReportForLocationId[locationId];
   }
 }
@@ -46,7 +50,10 @@ function notifyAnswered(locationId, card, answerers) {
   try {
     const report = pendingReportForLocationId[locationId];
     if (!report) {
-      globals.logger.logFailure('Quiz', `Got an answered event at ${locationId}, but no pending report. Weird.`);
+      globals.logger.warn({
+        event: 'ANSWER RECEIVED BUT NOT PENDING REPORT',
+        detail: locationId,
+      });
       return;
     }
 
@@ -65,7 +72,10 @@ function notifyAnswered(locationId, card, answerers) {
 
     report.cards.push(reportCard);
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Error recording answer', err);
+    globals.logger.error({
+      event: 'ERROR ADDING ANSWER TO SESSION REPORT',
+      err,
+    });
     delete pendingReportForLocationId[locationId];
   }
 }
@@ -82,13 +92,19 @@ async function notifyStopped(locationId, scores) {
   try {
     const report = pendingReportForLocationId[locationId];
     if (!report) {
-      globals.logger.logFailure('Quiz', `Got a stopped event at ${locationId}, but no pending report. Weird.`);
+      globals.logger.warn({
+        event: 'STOP EVENT RECEIVED BUT NO PENDING REPORT',
+        detail: locationId,
+      });
       return;
     }
 
     report.scores = scores;
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
+    globals.logger.error({
+      event: 'ERROR STOPPING AND FINISHING REPORT',
+      err,
+    });
     delete pendingReportForLocationId[locationId];
   }
 }
@@ -161,7 +177,10 @@ async function processPendingReportForLocation(channel) {
     await reportModel.save();
     return `https://kotobaweb.com/dashboard/game_reports/${reportModel._id}`;
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Error stopping and finishing report', err);
+    globals.logger.error({
+      event: 'ERROR STOPPING AND FINISHING REPORT',
+      err,
+    });
     delete pendingReportForLocationId[channel.id];
   }
 }

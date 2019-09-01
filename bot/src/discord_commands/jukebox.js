@@ -22,9 +22,14 @@ module.exports = {
       try {
         const links = await retryPromise(() => YoutubeApi.getAllLinksInPlaylist(PLAYLIST_ID), 5);
         videoUris = links;
-        logger.logSuccess('YOUTUBE', 'Track URIs loaded');
+        logger.info({
+          event: 'YOUTUBE TRACKS LOADED',
+        });
       } catch (err) {
-        logger.logFailure('YOUTUBE', 'Failed to load playlist.', err);
+        logger.error({
+          event: 'FAILED TO LOAD YOUTUBE TRACKS',
+          err,
+        });
       }
     }
   },
@@ -38,7 +43,11 @@ module.exports = {
     const random = Math.floor(Math.random() * videoUris.length);
     const link = videoUris[random];
 
-    logger.logSuccess('YOUTUBE', `Sending link: ${link}`);
+    logger.info({
+      event: 'SENDING YOUTUBE LINK',
+      detail: link,
+    });
+
     return msg.channel.createMessage(link, null, msg);
   },
 };

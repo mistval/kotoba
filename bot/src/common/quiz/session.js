@@ -11,8 +11,6 @@ const gameModes = [
   require('./conquest_mode.js'),
 ];
 
-const LOGGER_TITLE = 'QUIZ';
-
 function createReviewDeck(unansweredCards) {
   return deckLoader.createReviewDeck(unansweredCards);
 }
@@ -42,7 +40,10 @@ function updateReviewDecks(locationId, sessionInformation) {
 
     return reviewDeckCreated;
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Error updating review deck', err);
+    globals.logger.error({
+      event: 'ERROR UPDATING REVIEW DECK',
+      err,
+    });
     return false;
   }
 }
@@ -136,7 +137,10 @@ class SessionInformation {
         }
       }
     } catch (err) {
-      globals.logger.logFailure(LOGGER_TITLE, 'Error creating aggregated unanswered cards link', err);
+      globals.logger.error({
+        event: 'ERROR CREATING AGGREGATED CARD LINK',
+        err,
+      });
       return '';
     }
   }

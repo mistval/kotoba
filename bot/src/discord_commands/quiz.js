@@ -22,7 +22,6 @@ const Session = require('./../common/quiz/session.js');
 const trimEmbed = require('./../common/util/trim_embed.js');
 const audioConnectionManager = require('./../discord/audio_connection_manager.js');
 
-const LOGGER_TITLE = 'QUIZ';
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
@@ -888,7 +887,6 @@ async function load(
     messageSender,
   );
 
-  logger.logSuccess(LOGGER_TITLE, 'Loading save data');
   try {
     if (session.requiresAudioConnection()) {
       await audioConnectionManager.openConnectionFromMessage(bot, msg);
@@ -908,7 +906,10 @@ async function load(
 
     return undefined;
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error with loaded save', err);
+    logger.error({
+      event: 'ERROR IN SAVED SESSION',
+      err,
+    });
     await saveManager.restore(msg.author.id, memento);
     return msg.channel.createMessage(`Looks like there was an error, sorry about that. I have attempted to restore your save data to its previous state, you can try to load it again with **${prefix}quiz load**. The error has been logged and will be addressed.`);
   }

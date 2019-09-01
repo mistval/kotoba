@@ -14,7 +14,6 @@ const { PublicError } = require('monochrome-bot');
 const decksMetadata = require('./../../../generated/quiz/decks.json');
 const cardStrategies = require('./card_strategies.js');
 
-const LOGGER_TITLE = 'QUIZ DECK LOADER';
 const PASTEBIN_REGEX = /pastebin\.com\/(?:raw\/)?(.*)/;
 const QUESTIONS_START_IDENTIFIER = '--QuestionsStart--';
 const MAX_DECKS_PER_USER = 100;
@@ -96,13 +95,20 @@ async function loadDecks() {
       state.quizDecksLoader.quizDeckForName[deckName] = deck;
       state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
     } catch (err) {
-      globals.logger.logFailure(LOGGER_TITLE, `Error loading deck ${deckName}`, err);
+      globals.logger.error({
+        event: 'ERROR LOADING DECK',
+        detail: deckName,
+        err,
+      });
     }
   }
 }
 
 loadDecks().catch(err => {
-  globals.logger.logFailure(LOGGER_TITLE, `Error loading decks`, err);
+  globals.logger.error({
+    event: 'ERROR LOADING DECKS',
+    err,
+  });
 });
 
 function createAllDecksFoundStatus(decks) {
@@ -511,7 +517,10 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
         decks[i] = customDeck;
       }
     }).catch(err => {
-      globals.logger.logFailure('DECK LOADER', 'Error while loading custom deck', err);
+      globals.logger.error({
+        event: 'ERROR LOADING CUSTOM DECK',
+        err,
+      });
     });
   }).filter(x => x);
 

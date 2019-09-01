@@ -7,7 +7,10 @@ async function sendAndDelete(monochrome, channelId, content, deleteInMs) {
       await sentMessage.delete();
     } catch (err) {
       const logger = monochrome.getLogger();
-      logger.logFailure('DELAYED DELETE', 'Error deleting message', err);
+      logger.warn({
+        event: 'ERROR DELETING OWN MESSAGE AFTER DELAY',
+        err,
+      });
     }
   }, deleteInMs);
 

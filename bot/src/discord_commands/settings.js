@@ -473,7 +473,10 @@ async function tryApplyNewSetting(
   for (let i = 0; i < setResults.length; i += 1) {
     const result = setResults[i];
     if (!result.accepted) {
-      monochrome.getLogger().logFailure('SETTINGS', `Unexpected setting update rejection. Reason: ${result.reason}`);
+      monochrome.getLogger().error({
+        event: 'UNEXPECTED SETTING UPDATE REJECTION',
+        detail: result.reason,
+      });
       return msg.channel.createMessage('There was an error updating that setting. Sorry. I\'ll look into it!', null, msg);
     }
   }

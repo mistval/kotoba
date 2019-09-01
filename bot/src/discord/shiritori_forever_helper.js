@@ -14,7 +14,6 @@ const japaneseGameStrategy = shiritoriManager.strategies.japanese;
 
 const SHIRITORI_CHANNELS_LIST_KEY = 'shiritoriForeverDiscordChannels';
 const CHANNEL_SHIRITORI_KEY_PREFIX = 'shiritoriChannelDiscord_';
-const LOGGER_TITLE = 'SHIRITORI FOREVER';
 const DELETE_MESSAGE_TIMEOUT_MS = 60000;
 
 if (!state.shiritoriChannels) {
@@ -36,7 +35,10 @@ async function loadChannels(monochrome) {
       .getData(SHIRITORI_CHANNELS_LIST_KEY);
   } catch (err) {
     const logger = monochrome.getLogger();
-    logger.logFailure(LOGGER_TITLE, 'Error loading channels', err);
+    logger.error({
+      event: 'ERROR LOADING SHIRITORI CHANNELS',
+      err,
+    });
   }
 }
 
@@ -326,7 +328,10 @@ async function handleEnabledChanged(channelID, newInternalValue) {
       }
     }
   } catch (err) {
-    monochrome.getLogger().logFailure(LOGGER_TITLE, 'Error sending shiritoriforever enabled/disabled messages or first word', err);
+    monochrome.getLogger().error({
+      event: 'SHIRITORI FOREVER ERROR',
+      err,
+    });
   }
 }
 
