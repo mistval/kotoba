@@ -5,7 +5,6 @@ const path = require('path');
 
 const MEMENTO_VERSION = 'v1';
 
-const LOGGER_TITLE = 'QUIZ SAVE MANAGER';
 const SAVE_DATA_DIR = path.join(__dirname, '..', '..', '..', 'data', 'quiz_saves');
 const QUIZ_SAVES_KEY = 'QuizSaveDataFiles';
 const QUIZ_SAVES_BACKUP_KEY = 'QuizSavesBackup';
@@ -52,7 +51,9 @@ function deleteMemento(memento) {
   });
   let deleteFile = fs.unlink(path.join(SAVE_DATA_DIR, memento.fileName)).catch(() => {});
   return Promise.all([deleteFromDb, deleteFile]).then(() => {
-    globals.logger.logSuccess(LOGGER_TITLE, 'Automatically deleted a non-compatible save.');
+    globals.logger.info({
+      event: 'AUTO DELETED NON-COMPATIBLE SAVE'
+    });
   });
 }
 
@@ -83,7 +84,10 @@ module.exports.load = function(memento) {
       }
 
       return Promise.all(promises).catch(err => {
-        globals.logger.logFailure(LOGGER_TITLE, 'No file found for a save. Deleting DB entry.', err);
+        globals.logger.error({
+          event: 'FILE FOR SAVE NOT FOUND',
+          err,
+        });
       }).then(() => {
         return dbData;
       });
@@ -91,7 +95,11 @@ module.exports.load = function(memento) {
       return json;
     });
   }).catch(err => {
-    globals.logger.logFailure(LOGGER_TITLE, 'Failed to load file ' + memento.fileName);
+    globals.logger.error({
+      event: 'FAILED TO LOAD FILE',
+      detail: memento.fileName,
+      err,
+    });
     return globals.persistence.editDataForUser(memento.userId, dbData => {
       let mementoIndex = getIndexOfMemento(dbData[QUIZ_SAVES_KEY], memento);
       dbData[QUIZ_SAVES_KEY].splice(mementoIndex, 1);
