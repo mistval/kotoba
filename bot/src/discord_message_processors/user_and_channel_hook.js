@@ -63,6 +63,7 @@ class Hook {
 */
 module.exports = {
   name: 'Followup Message',
+  priority: 1000,
   action(bot, msg, monochrome) {
     const hookIdentifier = createHookIdentifier(msg.author.id, msg.channel.id);
     const correspondingHook = unreloadableDataStore.hookForUserAndChannel[hookIdentifier];
