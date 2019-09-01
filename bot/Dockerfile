@@ -27,7 +27,7 @@ RUN npm run buildfontcharactermap
 COPY ./bot/resources ./resources
 RUN npm run buildquiz
 
-RUN mkdir latest_log data
+RUN mkdir data
 
 COPY ./bot/start.sh ./start.sh
 COPY ./bot/src ./src
