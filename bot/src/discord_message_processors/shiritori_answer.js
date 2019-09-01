@@ -2,7 +2,7 @@ const shiritoriManager = require('shiritori');
 
 module.exports = {
   name: 'Shiritori Answer',
-  suppressLogging: true,
+  logLevel: 'debug',
   action: (bot, msg) => {
     const locationId = msg.channel.id;
     if (!shiritoriManager.gameExists(locationId)) {

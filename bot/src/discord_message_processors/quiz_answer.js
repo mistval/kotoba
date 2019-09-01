@@ -2,7 +2,7 @@ const QuizManager = require('./../common/quiz/manager.js');
 
 module.exports = {
   name: 'Quiz Answer',
-  suppressLogging: true,
+  logLevel: 'debug',
   action: (bot, msg) => {
     if (!QuizManager.hasQuizSession(msg.channel.id)) {
       return false;
