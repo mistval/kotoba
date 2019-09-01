@@ -61,7 +61,10 @@ async function getPronounceInfo(queryWord, logger) {
         result.entries = [{ forvoData, hasPitchData: false }];
       }
     } catch (err) {
-      logger.logFailure('PRONOUNCE', 'Failed to get forvo data', err);
+      logger.error({
+        event: 'FAILED TO QUERY FORVO',
+        err,
+      });
     }
   }
 

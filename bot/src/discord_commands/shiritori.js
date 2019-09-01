@@ -14,7 +14,6 @@ const quizScoreStorageUtils = require('./../common/quiz/score_storage_utils.js')
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
-const LOGGER_TITLE = 'SHIRITORI';
 
 function throwIfSessionInProgress(locationId, prefix) {
   if (shiritoriManager.gameExists(locationId)) {
@@ -151,7 +150,10 @@ class DiscordClientDelegate {
     } else if (reason === shiritoriManager.EndGameReason.NO_PLAYERS) {
       description = 'There are no players left, so I stopped.';
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
-      this.logger.logFailure(LOGGER_TITLE, 'Error', args);
+      this.logger.error({
+        event: 'ERROR',
+        args,
+      });
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
       assert(false, 'Unknown stop reason');
@@ -256,7 +258,10 @@ class DiscordClientDelegate {
 
     if (playerId === this.bot.user.id) {
       return this.bot.sendChannelTyping(this.commanderMessage.channel.id).catch((err) => {
-        this.logger.logFailure(LOGGER_TITLE, 'Failed to send typing', err);
+        this.logger.warn({
+          event: 'FAILED TO SEND TYPING',
+          err,
+        });
       });
     }
 
@@ -316,7 +321,10 @@ class DiscordClientDelegate {
   }
 
   onNonFatalError(err) {
-    this.logger.logFailure(LOGGER_TITLE, 'Non fatal error', err);
+    this.logger.warn({
+      event: 'SHIRITORI NON-FATAL ERROR',
+      err,
+    });
   }
 }
 

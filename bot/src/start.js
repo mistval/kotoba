@@ -5,9 +5,35 @@ const fs = require('fs');
 const config = require('./../../config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const canvasInit = require('./common/canvas_init.js');
+const Bunyan = require('bunyan');
+const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
+
+const ConsoleLogger = Monochrome.ConsoleLogger;
+
+const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
+const hasGCloudKey = fs.existsSync(GCLOUD_KEY_PATH);
 
 const { apiKeys } = config;
+
 canvasInit();
+
+function createLogger() {
+  // Use Bunyan logger connected to StackDriver if GCP credentials are present.
+  if (hasGCloudKey) {
+    const consoleLogger = new ConsoleLogger();
+    const consoleLogStream = consoleLogger.createStream('info');
+    const stackdriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
+    return Bunyan.createLogger({
+      name: 'kotoba-bot',
+      streams: [
+        stackdriverConnection.stream('debug'),
+        consoleLogStream,
+      ],
+    });
+  }
+
+  return undefined; // Use default console logger
+}
 
 function createBot() {
   fs.mkdirSync(path.join(__dirname, '..', 'data'), { recursive: true });
@@ -15,14 +41,13 @@ function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
-  const logDirectoryPath = path.join(__dirname, '..', 'data', 'logs');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
   const options = {
     prefixes: ['k!'],
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
-    logDirectoryPath,
+    logger: createLogger(),
     settingsFilePath,
     persistenceDirectoryPath,
     useANSIColorsInLogFiles: true,
@@ -71,15 +96,31 @@ function checkApiKeys(monochrome) {
   const logger = monochrome.getLogger();
 
   if (!apiKeys.youtube) {
-    logger.logFailure('YOUTUBE', 'No Youtube API key present in ./config/api_keys.json. The jukebox command will not work.');
+    logger.warn({
+      event: 'YOUTUBE KEY MISSING',
+      detail: 'No Youtube API key present in config.js. The jukebox command will not work.'
+    });
   }
 
   if (!apiKeys.googleTranslate) {
-    logger.logFailure('TRANSLATE', 'No Google API key present in ./config/api_keys.json. The translate command will not work.');
+    logger.warn({
+      event: 'GOOGLE TRANSLATE KEY MISSING',
+      detail: 'No Google API key present in config.js. The translate command will not work.'
+    });
   }
 
   if (!apiKeys.forvo) {
-    logger.logFailure('PRONOUNCE', 'No Forvo API key present in ./config/api_keys.json. The pronounce command will not show audio files.');
+    logger.warn({
+      event: 'FORVO KEY MISSING',
+      detail: 'No Forvo API key present in config.js. The pronounce command will not show audio files.'
+    });
+  }
+
+  if (!hasGCloudKey) {
+    logger.warn({
+      event: 'GOOGLE CLOUD CREDENTIALS MISSING',
+      detail: `No Google Cloud service account credentials found at ${GCLOUD_KEY_PATH}. Logs won't be sent to Stackdriver.`,
+    });
   }
 }
 

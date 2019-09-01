@@ -33,16 +33,28 @@ function closeConnection(bot, serverId) {
 
 function subscribeEvents(voiceConnection) {
   voiceConnection.on('warn', (message) => {
-    globals.logger.logFailure('VOICE', `Warning: ${message}`);
+    globals.logger.warn({
+      event: 'VOICE WARNING',
+      detail: message,
+    });
   });
   voiceConnection.on('error', (message) => {
-    globals.logger.logFailure('VOICE', `Error: ${message}`);
+    globals.logger.error({
+      event: 'VOICE ERROR',
+      detail: message,
+    });
   });
   voiceConnection.on('connect', () => {
-    globals.logger.logSuccess('VOICE', 'Connected');
+    globals.logger.info({
+      event: 'VOICE CONNECT',
+      detail: voiceConnection.id,
+    });
   });
   voiceConnection.on('disconnect', () => {
-    globals.logger.logFailure('VOICE', 'Disconnected');
+    globals.logger.info({
+      event: 'VOICE DISCONNECT',
+      detail: voiceConnection.id,
+    });
   });
 }
 

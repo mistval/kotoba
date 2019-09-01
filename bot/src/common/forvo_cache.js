@@ -1,16 +1,15 @@
 const globals = require('./globals.js');
-
-
 const forvoSearch = require('./forvo_search.js');
-
-const LOGGER_TITLE = 'FORVO CACHE';
 
 async function getPronunciationClipsForWord(word) {
   let forvoResponseData;
   try {
     forvoResponseData = await forvoSearch(word);
   } catch (err) {
-    globals.logger.logFailure(LOGGER_TITLE, 'Failed to query forvo', err);
+    globals.logger.error({
+      event: 'FAILED TO QUERY FORVO',
+      err,
+    });
     return [];
   }
 

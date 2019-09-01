@@ -9,7 +9,11 @@ async function retryPromise(promiseFactory, retryCount = 3) {
       // eslint-disable-next-line no-await-in-loop
       return await promiseFactory();
     } catch (err) {
-      globals.logger.logFailure('UTIL', 'Promise failed, but there are still retries left. Retrying.', err);
+      globals.logger.warn({
+        event: 'ERROR',
+        detail: 'Promise failed, but there are still retries left. Retrying.',
+        err,
+      });
       retriesLeft -= 1;
       if (retriesLeft <= 0) {
         throw err;

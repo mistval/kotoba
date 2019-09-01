@@ -1,10 +1,10 @@
 
 
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 const constants = require('./../constants.js');
 
-function throwPublicError(sourceCommandName, publicMessage, logMessage, embedColor, err) {
+function throwPublicError(sourceCommandName, publicMessage, logDescription, embedColor, err) {
   const errorContent = {
     embed: {
       title: sourceCommandName,
@@ -13,7 +13,11 @@ function throwPublicError(sourceCommandName, publicMessage, logMessage, embedCol
     },
   };
 
-  throw PublicError.createWithCustomPublicMessage(errorContent, false, logMessage, err);
+  throw new FulfillmentError({
+    publicMessage: errorContent,
+    logDescription,
+    err,
+  });
 }
 
 function throwPublicErrorInfo(sourceCommandName, publicMessage, logMessage) {
