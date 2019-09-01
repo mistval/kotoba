@@ -11,6 +11,7 @@ const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const ConsoleLogger = Monochrome.ConsoleLogger;
 
 const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
+const hasGCloudKey = fs.existsSync(GCLOUD_KEY_PATH);
 
 const { apiKeys } = config;
 
@@ -18,14 +19,14 @@ canvasInit();
 
 function createLogger() {
   // Use Bunyan logger connected to StackDriver if GCP credentials are present.
-  if (fs.existsSync(GCLOUD_KEY_PATH)) {
+  if (hasGCloudKey) {
     const consoleLogger = new ConsoleLogger();
     const consoleLogStream = consoleLogger.createStream('info');
-    const stackDriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
+    const stackdriverConnection = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
     return Bunyan.createLogger({
       name: 'kotoba-bot',
       streams: [
-        stackDriverConnection.stream('debug'),
+        stackdriverConnection.stream('debug'),
         consoleLogStream,
       ],
     });
@@ -97,21 +98,28 @@ function checkApiKeys(monochrome) {
   if (!apiKeys.youtube) {
     logger.warn({
       event: 'YOUTUBE KEY MISSING',
-      msg: 'No Youtube API key present in config.json. The jukebox command will not work.'
+      detail: 'No Youtube API key present in config.js. The jukebox command will not work.'
     });
   }
 
   if (!apiKeys.googleTranslate) {
     logger.warn({
       event: 'GOOGLE TRANSLATE KEY MISSING',
-      msg: 'No Google API key present in config.json. The translate command will not work.'
+      detail: 'No Google API key present in config.js. The translate command will not work.'
     });
   }
 
   if (!apiKeys.forvo) {
     logger.warn({
       event: 'FORVO KEY MISSING',
-      msg: 'No Forvo API key present in config.json. The pronounce command will not show audio files.'
+      detail: 'No Forvo API key present in config.js. The pronounce command will not show audio files.'
+    });
+  }
+
+  if (!hasGCloudKey) {
+    logger.warn({
+      event: 'GOOGLE CLOUD CREDENTIALS MISSING',
+      detail: `No Google Cloud service account credentials found at ${GCLOUD_KEY_PATH}. Logs won't be sent to Stackdriver.`,
     });
   }
 }
