@@ -10,8 +10,6 @@ services:
       WORKER_HOST: 'kotoba-worker'
     volumes:
       - ./user_data/bot:/var/app/data
-      - ./bot/latest_log:/var/app/latest_log
-      - ./bot/config:/var/app/config
       - ./user_data/shared_data:/var/shared_data
     depends_on:
       - mongo_readwrite
