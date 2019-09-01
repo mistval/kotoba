@@ -5,7 +5,6 @@ const retryPromise = require('../common/util/retry_promise.js');
 const quizManager = require('../common/quiz/manager.js');
 const { EMBED_WARNING_COLOR, FOOTER_ICON_URI } = require('../common/constants.js');
 
-const LOGGER_TITLE = 'SHUTDOWN WARNING';
 const SHUTDOWN_WAIT_SECONDS = 120;
 const SHUTDOWN_WAIT_MS = SHUTDOWN_WAIT_SECONDS * 1000;
 const SHUTDOWN_MESSAGE_COUNT = 4;
@@ -83,7 +82,10 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
 
     await Promise.all(promises);
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error sending countdown message.', err);
+    logger.error({
+      event: 'ERROR SENDING COUNTDOWN MESSAGE',
+      err,
+    });
   }
 }
 
@@ -106,7 +108,10 @@ async function sendShutdownMessageToChannels(channels, logger) {
 
     await Promise.all(promises);
   } catch (err) {
-    logger.logFailure(LOGGER_TITLE, 'Error sending shutdown message.', err);
+    logger.error({
+      event: 'ERROR SENDING SHUTDOWN MESSAGE',
+      err,
+    });
   }
 }
 
@@ -131,7 +136,10 @@ module.exports = {
       // eslint-disable-next-line no-await-in-loop
       await sendCountdownMessageToChannels(currentInProgressChannels, countdown, logger);
 
-      logger.logSuccess(LOGGER_TITLE, `Countdown: ${countdown}.`);
+      logger.info({
+        event: 'COUNTDOWN',
+        detail: countdown,
+      });
 
       // eslint-disable-next-line no-await-in-loop
       await wait(NEXT_MESSAGE_DELAY_MS);
@@ -143,6 +151,8 @@ module.exports = {
     await sendShutdownMessageToChannels(channelsToNotify, logger);
     await quizManager.stopAllQuizzes();
 
-    return logger.logSuccess(LOGGER_TITLE, 'Countdown finished, quizzes stopped.');
+    return logger.info({
+      event: 'COUNTDOWN FINISHED. QUIZZES STOPPED.',
+    });
   },
 };

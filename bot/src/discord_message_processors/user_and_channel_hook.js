@@ -42,7 +42,10 @@ class Hook {
           this.unregister();
           timeoutCallback();
         } catch (err) {
-          this.logger.logFailure('CORE', 'Hook expiration callback threw error', err);
+          this.logger.error({
+            event: 'HOOK EXPIRATION CALLBACK ERRORED',
+            err,
+          });
         }
       },
       expiration,

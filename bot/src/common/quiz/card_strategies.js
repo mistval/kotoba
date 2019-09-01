@@ -361,7 +361,10 @@ async function applyOxfordSynonyms(card) {
     }
   } catch (err) {
     if (err.response.status !== 404) {
-      globals.logger.logFailure('QUIZ', `Error querying Oxford for ${card.question}`, err);
+      globals.logger.error({
+        event: 'FAILED TO QUERY OXFORD',
+        err,
+      });
     }
   }
 }
@@ -389,7 +392,11 @@ async function updateWithThesaurusSynonyms(card) {
 
   if (card.answer.length === 0) {
     await globals.persistence.editData(THESAURUS_MISSES_KEY, (data) => {
-      globals.logger.logFailure('QUIZ', `Thesaurus miss: ${card.question}`);
+      globals.logger.warn({
+        event: 'THESAURUS MISS',
+        detail: card.question,
+      });
+
       data[card.question] = true;
       return data;
     });

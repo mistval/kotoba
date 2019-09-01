@@ -9,7 +9,6 @@ const {
 } = require('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 6;
-const LOGGER_TITLE = 'PRONOUNCE';
 
 const smallKatakana = ['ァ', 'ィ', 'ゥ', 'ェ', 'ォ', 'ャ', 'ュ', 'ョ', 'ッ'];
 
@@ -175,7 +174,11 @@ class PronunciationDataSource {
       try {
         forvoData = await entry.getAudioClips();
       } catch (err) {
-        this.logger.logFailure(LOGGER_TITLE, `Error getting forvo info for ${word}`, err);
+        this.logger.error({
+          event: 'FAILED TO GET FORVO AUDIO CLIPS',
+          detail: word,
+          err,
+        });
       }
     }
 
