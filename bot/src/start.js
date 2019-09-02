@@ -41,6 +41,7 @@ function createBot() {
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
+  const storage = new Monochrome.Plugins.FPersist(persistenceDirectoryPath);
 
   const options = {
     prefixes: ['k!'],
@@ -48,7 +49,7 @@ function createBot() {
     messageProcessorsDirectoryPath,
     logger: createLogger(),
     settingsFilePath,
-    persistenceDirectoryPath,
+    storage,
     useANSIColorsInLogFiles: true,
     serverAdminRoleName: 'kotoba',
     genericErrorMessage: 'Sorry, there was an error with that command. It has been logged and will be addressed.',
