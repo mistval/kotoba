@@ -7,6 +7,7 @@ const DiscordAccountSchema = new mongoose.Schema({
   avatarBytes: { type: Buffer },
   id: { type: String, required: true, index: true },
   email: { type: String, required: false },
+  _id: false,
 });
 
 const UserSchema = new mongoose.Schema({

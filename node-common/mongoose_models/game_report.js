@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const SIXTY_DAYS = 60 * 24 * 60 * 60;
 
 const scoreType = {
+  _id: false,
   user: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
   score: { type: Number, required: true },
 };
@@ -17,6 +18,7 @@ const gameReportSchema = new mongoose.Schema({
   discordChannelName: { type: String, required: true },
   scores: { type: [scoreType], required: true },
   questions: [{
+    _id: false,
     deckUniqueId: { type: String, required: true },
     question: { type: String, required: true },
     answers: { type: [String], required: true },
