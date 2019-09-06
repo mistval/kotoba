@@ -1,4 +1,4 @@
-FROM node:12.7.0
+FROM node:12.10.0
 
 WORKDIR /var
 COPY ./node-common ./node-common
