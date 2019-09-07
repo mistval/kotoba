@@ -143,9 +143,9 @@ async function createWordIdentificationDeck(deckDataForDeckName, sourceDeck, sou
   return deckDataForDeckNameCopy;
 }
 
-function assertNoDuplicateCards(deckName, cards) {
+function assertNoDuplicateCards(deckName, deck) {
   const seen = {};
-  cards.filter(x => x).forEach((card) => {
+  deck.cards.filter(x => x).forEach((card) => {
     if (seen[card.question]) {
       throw new Error(`Duplicate question in ${deckName}: ${card.question}`);
     }
@@ -157,6 +157,15 @@ function assertHasAnswer(deckName, card) {
   if (card && card.answer.filter(x => x).length === 0) {
     throw new Error(`Question: ${card.question} in deck: ${deckName} has no answer.`);
   }
+}
+
+function assertNoAnswerlessQuestions(deckName, deck) {
+  if (deck.cardPreprocessingStrategy === 'THESAURUS_SYNONYMS') {
+    // The answers get added during preprocessing.
+    return;
+  }
+
+  deck.cards.forEach(card => assertHasAnswer(deckName, card));
 }
 
 async function build() {
@@ -181,11 +190,8 @@ async function build() {
 
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     deck.cardDiskArrayPath = diskArrayDirectory;
-    assertNoDuplicateCards(deckName, deck.cards);
-
-    deck.cards.forEach((card) => {
-      assertHasAnswer(deckName, card);
-    });
+    assertNoDuplicateCards(deckName, deck);
+    assertNoAnswerlessQuestions(deckName, deck);
 
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
