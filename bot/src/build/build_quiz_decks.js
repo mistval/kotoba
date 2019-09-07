@@ -153,6 +153,12 @@ function assertNoDuplicateCards(deckName, cards) {
   });
 }
 
+function assertHasAnswer(deckName, card) {
+  if (card && card.answer.filter(x => x).length === 0) {
+    throw new Error(`Question: ${card.question} in deck: ${deckName} has no answer.`);
+  }
+}
+
 async function build() {
   console.log('Building quiz data');
 
@@ -176,6 +182,10 @@ async function build() {
     const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
     deck.cardDiskArrayPath = diskArrayDirectory;
     assertNoDuplicateCards(deckName, deck.cards);
+
+    deck.cards.forEach((card) => {
+      assertHasAnswer(deckName, card);
+    });
 
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
