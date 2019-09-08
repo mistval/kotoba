@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 /**
 * Send a message as the bot.
@@ -13,7 +13,10 @@ module.exports = {
   uniqueId: 'broadcast',
   action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
-      throw PublicError.createWithCustomPublicMessage('Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.', false, 'invalid syntax');
+      throw new FulfillmentError({
+        publicMessage: 'Say \'}broadcast [channel_id] [announcement]\' to broadcast a message.',
+        logDescription: 'Invalid sytax',
+      });
     }
     const spaceIndex = suffix.indexOf(' ');
     const channelId = suffix.substring(0, spaceIndex);

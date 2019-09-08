@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 /**
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
@@ -12,7 +12,10 @@ module.exports = {
   hidden: true,
   action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage(`Say **${msg.prefix}eval javascript_code_here** to evaluate code.`, false, 'No argument');
+      throw new FulfillmentError({
+        publicMessage: `Say **${msg.prefix}eval javascript_code_here** to evaluate code.`,
+        logDescription: 'No argument',
+      });
     }
 
     // eslint-disable-next-line no-eval

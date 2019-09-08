@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 const getRandomWord = require('./../common/get_random_word.js');
 const jishoWordSearch = require('./../common/jisho_word_search.js');
 const constants = require('./../common/constants.js');
@@ -18,11 +18,11 @@ async function getRandomWordRecursive(suffix, msg, retriesRemaining, monochrome)
   const navigationManager = monochrome.getNavigationManager();
 
   if (retriesRemaining <= 0) {
-    throw PublicError.createWithCustomPublicMessage(
-      jishoNotRespondingResponse,
-      false,
-      `Failed to get a random word ${NUMBER_OF_RETRIES} times`,
-    );
+    throw new FulfillmentError({
+      publicMessage: jishoNotRespondingResponse,
+      logDescription: `Failed to get a random word ${NUMBER_OF_RETRIES} times`,
+      logLevel: 'error',
+    });
   }
 
   const word = getRandomWord(suffix);
@@ -31,7 +31,11 @@ async function getRandomWordRecursive(suffix, msg, retriesRemaining, monochrome)
   try {
     jishoData = await jishoWordSearch(word);
   } catch (err) {
-    throw PublicError.createWithCustomPublicMessage(jishoNotRespondingResponse, false, 'Jisho request error', err);
+    throw new FulfillmentError({
+      publicMessage: jishoNotRespondingResponse,
+      logDescription: 'Jisho request error',
+      err,
+    });
   }
 
   if (!jishoData.hasResults) {

@@ -2,7 +2,7 @@
 
 const ScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
 const constants = require('./../common/constants.js');
-const { Navigation, PublicError, NavigationChapter } = require('monochrome-bot');
+const { Navigation, FulfillmentError, NavigationChapter } = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
 
@@ -60,7 +60,10 @@ function notifyDeckNotFound(deckName) {
     },
   };
 
-  throw PublicError.createWithCustomPublicMessage(content, false, 'No such deck found');
+  throw new FulfillmentError({
+    publicMessage: content,
+    logDescription: 'No such deck found',
+  });
 }
 
 function getDeckNames(argumentString) {

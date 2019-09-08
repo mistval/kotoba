@@ -10,7 +10,7 @@ const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
 const getAdvancedHelp = require('./../common/quiz/decks_content.js').getAdvancedHelp;
 const constants = require('./../common/constants.js');
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
 const MasteryGameMode = require('./../common/quiz/mastery_mode.js');
 const ConquestGameMode = require('./../common/quiz/conquest_mode.js');
@@ -805,7 +805,11 @@ function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, pre
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
-    throw PublicError.createWithCustomPublicMessage(message, false, 'Internet decks disabled');
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Internet decks disabled',
+    });
   }
 }
 
@@ -822,7 +826,11 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix) {
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
-    throw PublicError.createWithCustomPublicMessage(message, false, 'Game mode disabled');
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Game mode disable',
+    });
   }
 }
 
@@ -835,7 +843,11 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
-    throw PublicError.createWithCustomPublicMessage(message, false, 'Session in progress');
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Session in progress',
+    });
   }
 }
 
@@ -1044,8 +1056,13 @@ function getReviewDeckOrThrow(deck, prefix) {
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
-    throw PublicError.createWithCustomPublicMessage(message, false, 'Review deck not found');
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Review deck not found',
+    });
   }
+
   return deck;
 }
 
@@ -1224,20 +1241,22 @@ You can set default quiz settings by using the **<prefix>settings** command.
 function throwIfShutdownScheduled(channelId) {
   if (globals.shutdownScheduled) {
     state.scheduledShutdown.shutdownNotifyChannels.push(channelId);
-    throw PublicError.createWithCustomPublicMessage({
-        embed: {
-          title: 'Scheduled Update',
-          description: 'I\'m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about three minutes.',
-          color: constants.EMBED_WARNING_COLOR,
-          footer: {
-            icon_url: constants.FOOTER_ICON_URI,
-            text: 'I\'m getting an update! Yay!',
-          },
+    const messageContent = {
+      embed: {
+        title: 'Scheduled Update',
+        description: 'I\'m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about three minutes.',
+        color: constants.EMBED_WARNING_COLOR,
+        footer: {
+          icon_url: constants.FOOTER_ICON_URI,
+          text: 'I\'m getting an update! Yay!',
         },
       },
-      false,
-      'Shutdown scheduled',
-    );
+    };
+
+    throw new FulfillmentError({
+      publicMessage: messageContent,
+      logDescription: 'Shutdown scheduled',
+    });
   }
 }
 
@@ -1290,7 +1309,10 @@ module.exports = {
       const searchTerm = suffixReplaced.split(' ')[1];
       if (!searchTerm) {
         const message = 'Say **k!quiz delete deckname** to delete a custom quiz deck.';
-        throw PublicError.createWithCustomPublicMessage(message, false, 'No deck name provided');
+        throw new FulfillmentError({
+          publicMessage: message,
+          logDescription: 'No deck name provided',
+        });
       }
       return deleteInternetDeck(msg, suffixReplaced.split(' ')[1], msg.author.id);
     }

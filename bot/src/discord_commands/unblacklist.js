@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 /**
 * Blacklist a user with a reason
@@ -13,8 +13,12 @@ module.exports = {
   hidden: true,
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('Say \'!unblacklist [userId]\' to unblacklist a user.', false, 'Invalid syntax');
+      throw new FulfillmentError({
+        publicMessage: 'Say \'!unblacklist [userId]\' to unblacklist a user.',
+        logDescription: 'Invalid syntax',
+      });
     }
+
     const userId = suffix;
     const blacklist = monochrome.getBlacklist();
     await blacklist.unblacklistUser(bot, userId);

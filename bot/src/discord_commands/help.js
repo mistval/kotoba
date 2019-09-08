@@ -1,4 +1,4 @@
-const { PublicError, Navigation } = require('monochrome-bot');
+const { FulfillmentError, Navigation } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 // Configuration start
@@ -162,7 +162,10 @@ async function showGeneralHelp(monochrome, msg, paginate) {
     );
   }
 
-  throw PublicError.createWithCustomPublicMessage('There are no commands to show help for. Perhaps the server admins disabled all my commands in this channel.', false, 'No commands to display');
+  throw new FulfillmentError({
+    publicMessage: 'There are no commands to show help for. Perhaps the server admins disabled all my commands in this channel.',
+    logDescription: 'No commands to display',
+  });
 }
 
 function showAdvancedHelp(monochrome, msg, targetAlias) {
