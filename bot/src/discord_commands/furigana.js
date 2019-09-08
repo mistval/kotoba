@@ -2,7 +2,7 @@
 
 const textRenderer = require('./../common/render_text.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['furigana', 'furi', 'f'],
@@ -23,7 +23,11 @@ module.exports = {
     }
 
     if (suffix.length > 200) {
-      throw PublicError.createWithCustomPublicMessage('Two hundred characters or fewer please :)', true, 'Too long');
+      throw new FulfillmentError({
+        publicMessage: 'Two hundred characters or fewer please :)',
+        autoDeletePublicMessage: true,
+        logDescription: 'Too long',
+      });
     }
 
     const buffer = await textRenderer.renderJapaneseWithFurigana(

@@ -10,7 +10,7 @@ const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 const decksMetadata = require('./../../../generated/quiz/decks.json');
 const cardStrategies = require('./card_strategies.js');
 
@@ -145,7 +145,10 @@ function getDeckFromMemory(deckInformation) {
 }
 
 function throwParsePublicError(errorReason, lineIndex, uri) {
-  throw PublicError.createWithCustomPublicMessage(`Error parsing deck data at <${uri}> line ${lineIndex + 1}: ${errorReason}`, false, 'Community deck validation error');
+  throw new FulfillmentError({
+    publicMessage: `Error parsing deck data at <${uri}> line ${lineIndex + 1}: ${errorReason}`,
+    logDescription: 'Community deck validation error',
+  });
 }
 
 function tryCreateDeckFromRawData(data, uri) {
@@ -282,7 +285,11 @@ INSTRUCTIONS: fgrg
     const response = await axios.get(pastebinUri);
     return response.data;
   } catch (err) {
-    throw PublicError.createWithCustomPublicMessage('There was an error downloading the deck from that URI. Check that the URI is correct and try again.', false, 'Pastebin fetch error', err);
+    throw new FulfillmentError({
+      publicMessage: 'There was an error downloading the deck from that URI. Check that the URI is correct and try again.',
+      logDescription: 'Pastebin fetch error',
+      err,
+    });
   }
 }
 

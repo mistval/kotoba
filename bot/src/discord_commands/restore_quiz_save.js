@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 const pauseManager = require('./../common/quiz/pause_manager.js');
 const constants = require('./../common/constants.js');
 
@@ -12,7 +12,10 @@ module.exports = {
   uniqueId: 'restoresave',
   async action(bot, msg, suffix) {
     if (!suffix) {
-      throw PublicError.createWithCustomPublicMessage('You need to provide a user ID and index to restore.', false, 'No suffix');
+      throw new FulfillmentError({
+        publicMessage: 'You need to provide a user ID and index to restore.',
+        logDescription: 'No suffix',
+      });
     }
 
     const [userId, saveIndex] = suffix.split(' ');

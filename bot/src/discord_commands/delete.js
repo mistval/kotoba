@@ -1,4 +1,4 @@
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 /**
 * Delete a message (if the bot has moderator powers it can delete the messages of others.
@@ -17,7 +17,10 @@ module.exports = {
   uniqueId: 'delete',
   action(bot, msg, suffix) {
     if (!suffix || suffix.indexOf(' ') === -1) {
-      throw PublicError.createWithCustomPublicMessage('Say \'}delete [channel_id] [message_id]\' to delete a message.', false, 'No suffix');
+      throw new FulfillmentError({
+        publicMessage: 'Say \'}delete [channel_id] [message_id]\' to delete a message.',
+        logDescription: 'No suffix',
+      });
     }
     const parts = suffix.split(' ');
     return bot.deleteMessage(parts[0], parts[1]);

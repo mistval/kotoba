@@ -1,5 +1,5 @@
 
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['reload'],
@@ -13,7 +13,10 @@ module.exports = {
       return msg.channel.createMessage('Reloaded!');
     } catch (err) {
       const errorMessage = 'There was an unhandled error while reloading. Monochrome will continue to run, but may be in a bad state. You should restart it as soon as possible. Check the logs for more details.';
-      throw PublicError.createWithCustomPublicMessage(errorMessage, false, undefined, err);
+      throw new FulfillmentError({
+        publicMessage: errorMessage,
+        err,
+      });
     }
   },
 };

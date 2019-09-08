@@ -1,5 +1,5 @@
 
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 const Hook = require('./../discord_message_processors/user_and_channel_hook.js');
 const state = require('./../unreloadable_data.js');
@@ -727,7 +727,10 @@ async function resetUserSettings(monochrome, msg) {
 async function resetServerSettings(monochrome, msg) {
   const userIsAdmin = monochrome.userIsServerAdmin(msg);
   if (!userIsAdmin) {
-    throw PublicError.createWithCustomPublicMessage('You must be a server admin to do that.', true, 'Not server admin');
+    throw new FulfillmentError({
+      publicMessage: 'You must be a server admin to do that.',
+      logDescription: 'Not server admin',
+    });
   }
 
   const settings = monochrome.getSettings();

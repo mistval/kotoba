@@ -1,5 +1,5 @@
 
-const { PublicError } = require('monochrome-bot');
+const { FulfillmentError } = require('monochrome-bot');
 
 const YoutubeApi = require('./../common/youtube_api_utils.js');
 const retryPromise = require('./../common/util/retry_promise.js');
@@ -37,7 +37,11 @@ module.exports = {
     const logger = monochrome.getLogger();
 
     if (videoUris.length === 0) {
-      throw PublicError.createWithCustomPublicMessage('No tracks available. Maybe they just have not loaded yet. Try again soon.', true, 'Tracks not available');
+      throw new FulfillmentError({
+        publicMessage: 'No tracks available. Maybe they just have not loaded yet. Try again soon.',
+        autoDeletePublicMessage: true,
+        logDescription: 'Tracks not available',
+      });
     }
 
     const random = Math.floor(Math.random() * videoUris.length);
