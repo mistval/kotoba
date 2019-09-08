@@ -161,7 +161,7 @@ function assertHasAnswer(deckName, card) {
 
 function assertNoEmptyAnswers(deckName, deck) {
   deck.cards.forEach((card) => {
-    if (card && card.answer.some(a => !a)) {
+    if (card && card.answer.some(a => !a.trim())) {
       throw new Error(`Question: ${card.question} in deck: ${deckName} has a falsy answer`);
     }
   });
