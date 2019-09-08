@@ -159,6 +159,14 @@ function assertHasAnswer(deckName, card) {
   }
 }
 
+function assertNoEmptyAnswers(deckName, deck) {
+  deck.cards.forEach((card) => {
+    if (card && card.answer.some(a => !a)) {
+      throw new Error(`Question: ${card.question} in deck: ${deckName} has a falsy answer`);
+    }
+  });
+}
+
 function assertNoAnswerlessQuestions(deckName, deck) {
   if (deck.cardPreprocessingStrategy === 'THESAURUS_SYNONYMS') {
     // The answers get added during preprocessing.
@@ -192,6 +200,7 @@ async function build() {
     deck.cardDiskArrayPath = diskArrayDirectory;
     assertNoDuplicateCards(deckName, deck);
     assertNoAnswerlessQuestions(deckName, deck);
+    assertNoEmptyAnswers(deckName, deck);
 
     // eslint-disable-next-line no-await-in-loop
     await diskArray.create(deck.cards, diskArrayDirectory);
