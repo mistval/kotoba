@@ -83,6 +83,11 @@ function getFinalAnswerLineForForvoAudioLink(card) {
   return `[${answer}](${uri})`;
 }
 
+function getFinalAnswerLineForHentaiganaComment(card) {
+  const answer = card.answer[0];
+  return `${card.meaning} (${card.answer.join(', ')})`;
+}
+
 const FinalAnswerListElementStrategy = {
   QUESTION_AND_ANSWER_LINK_QUESTION: getFinalAnswerLineForQuestionAndAnswerLinkQuestion,
   QUESTION_AND_ANSWER_LINK_ANSWER: getFinalAnswerLineForQuestionAndAnswerLinkAnswer,
@@ -91,6 +96,7 @@ const FinalAnswerListElementStrategy = {
   QUESTION_ONLY: getFinalAnswerLineForQuestionOnly,
   JPTEST_FOR_YOU_AUDIO_LINK: getFinalAnswerLineForJpTestAudio,
   FORVO_AUDIO_LINK: getFinalAnswerLineForForvoAudioLink,
+  HENTAIGANA_COMMENT: getFinalAnswerLineForHentaiganaComment,
 };
 
 function truncateIntermediateAnswerString(str) {
@@ -178,6 +184,10 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
   if (unansweredQuestions.length > 0) {
     const unansweredQuestionsLines = unansweredQuestions.map(card =>
       FinalAnswerListElementStrategy[card.discordFinalAnswerListElementStrategy](card));
+
+    if (unansweredQuestions.some(card => card.discordFinalAnswerListElementStrategy === 'HENTAIGANA_COMMENT')) {
+      unansweredQuestionsLines.unshift('(Discord fonts can\'t display the actual hentaigana character)');
+    }
 
     let unansweredQuestionsCharacters = 0;
     const separator = '\n';

@@ -94,18 +94,30 @@ function fontFamilySupportsCharacter(fontFamily, char) {
   return supportedCharactersForFont[fontFamily] && supportedCharactersForFont[fontFamily][char];
 }
 
-function fontFamilySupportsString(fontFamily, str) {
-  return str.split('').every(c => fontFamilySupportsCharacter(fontFamily, c));
+function fontFamilySupportsChars(fontFamily, chars) {
+  return chars.every(c => fontFamilySupportsCharacter(fontFamily, c));
 }
 
 function coerceFontFamilyForString(fontFamily, str) {
-  if (fontFamilySupportsString(fontFamily, str)) {
+  const chars = Array.from(str);
+  if (fontFamilySupportsChars(fontFamily, chars)) {
     return fontFamily;
   }
 
-  const supportedFontInfo = installedFonts.find(f => fontFamilySupportsString(f.fontFamily, str));
+  const supportedFontInfo = installedFonts.find(f => fontFamilySupportsChars(f.fontFamily, chars));
   if (supportedFontInfo) {
     return supportedFontInfo.fontFamily;
+  }
+
+  // I can't find a consistent way of figuring out which characters
+  // are supported by each font. I think fontkit might have some bugs.
+  // The hacks in buildSupportedCharactersForFontMap() work for most cases,
+  // but they make us think BabelStone doesn't support Hentaigana, though it does.
+  // Since BabelStone supports the most characters of any font, use it as the
+  // fallback font if we have it.
+  const babelStone = installedFonts.find(f => f.fontFamily === 'BabelStone Han');
+  if (babelStone) {
+    return babelStone.fontFamily;
   }
 
   return installedFonts[0].fontFamily;
