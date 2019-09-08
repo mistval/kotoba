@@ -540,7 +540,7 @@ class DiscordMessageSender {
       content.embed.description = question.bodyAsText.substring(0, 2000); // This overwrites the quiz instructions.
     }
     if (question.bodyAsImageUri) {
-      content.embed.image = { url: `${question.bodyAsImageUri}.png` };
+      content.embed.image = { url: question.bodyAsImageUri };
     }
     if (question.bodyAsAudioUri) {
       const serverId = this.commanderMessage.channel.guild.id;
