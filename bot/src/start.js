@@ -25,7 +25,7 @@ function createLogger() {
     return Bunyan.createLogger({
       name: 'kotoba-bot',
       streams: [
-        stackDriverLogger.stream('debug'),
+        stackDriverLogger.stream('info'),
         consoleLogger.stream('info'),
       ],
     });
