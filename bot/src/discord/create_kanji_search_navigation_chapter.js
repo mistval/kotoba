@@ -3,6 +3,7 @@ const extractKanji = require('../common/util/extract_kanji.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
 const addPaginationFooter = require('./add_pagination_footer.js');
 const jishoKanjiSearch = require('./../common/jisho_kanji_search.js');
+const constants = require('./../common/constants.js');
 
 class KanjiNavigationDataSource {
   constructor(kanjis, authorName, commandPrefix, forceNavigationFooter) {
@@ -50,6 +51,22 @@ async function createKanjiSearchNavigationChapter(
   let kanji = extractKanji(searchQuery);
   if (kanji.length === 0) {
     kanji = await jishoKanjiSearch(searchQuery);
+  }
+
+  if (kanji.length === 0) {
+    const pages = [{
+      embed: {
+        title: 'Jisho Kanji Search',
+        description: `I didn't find any results for ${searchQuery}`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    }];
+
+    return {
+      navigationChapter: NavigationChapter.fromContent(pages),
+      pageCount: 1,
+      hasResult: false,
+    }
   }
 
   const dataSource = new KanjiNavigationDataSource(
