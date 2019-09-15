@@ -1,0 +1,1283 @@
+{
+  "uniqueId": "stations_kumamoto",
+  "name": "Kumamoto Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Kumamoto station names](https://mb.jorudan.co.jp/os/eki/menu_kmj/)",
+  "cards": [
+    {
+      "question": "赤瀬",
+      "answer": [
+        "あかせ"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akase/"
+    },
+    {
+      "question": "赤水",
+      "answer": [
+        "あかみず"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akamizu/"
+    },
+    {
+      "question": "阿蘇",
+      "answer": [
+        "あそ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aso_kumamoto/"
+    },
+    {
+      "question": "阿蘇山西",
+      "answer": [
+        "あそさんにし"
+      ],
+      "meaning": "阿蘇山ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asosannishi/"
+    },
+    {
+      "question": "阿蘇下田",
+      "answer": [
+        "あそしもだ"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asoshimoda/"
+    },
+    {
+      "question": "阿蘇白川",
+      "answer": [
+        "あそしらかわ"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asoshirakawa/"
+    },
+    {
+      "question": "荒尾",
+      "answer": [
+        "あらお"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arao_kumamoto/"
+    },
+    {
+      "question": "有佐",
+      "answer": [
+        "ありさ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arisa/"
+    },
+    {
+      "question": "池田",
+      "answer": [
+        "いけだ"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikeda_kumamoto/"
+    },
+    {
+      "question": "いこいの村",
+      "answer": [
+        "いこいのむら"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikoinomura/"
+    },
+    {
+      "question": "石打ダム",
+      "answer": [
+        "いしうちだむ"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishiuchi-dam/"
+    },
+    {
+      "question": "市ノ川",
+      "answer": [
+        "いちのかわ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichinokawa/"
+    },
+    {
+      "question": "一武",
+      "answer": [
+        "いちぶ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichibu_kumamoto/"
+    },
+    {
+      "question": "一勝地",
+      "answer": [
+        "いっしょうち"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isshochi/"
+    },
+    {
+      "question": "植木",
+      "answer": [
+        "うえき"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ueki/"
+    },
+    {
+      "question": "打越",
+      "answer": [
+        "うちごし"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchigoshi/"
+    },
+    {
+      "question": "内牧",
+      "answer": [
+        "うちのまき"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchinomaki/"
+    },
+    {
+      "question": "宇土",
+      "answer": [
+        "うと"
+      ],
+      "meaning": "鹿児島本線、三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uto_kumamoto/"
+    },
+    {
+      "question": "海浦",
+      "answer": [
+        "うみのうら"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umino-ura/"
+    },
+    {
+      "question": "蔚山町",
+      "answer": [
+        "うるさんまち"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urusammachi/"
+    },
+    {
+      "question": "網田",
+      "answer": [
+        "おうだ"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oda_kumamoto/"
+    },
+    {
+      "question": "大野下",
+      "answer": [
+        "おおのしも"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onoshimo/"
+    },
+    {
+      "question": "おかどめ幸福",
+      "answer": [
+        "おかどめこうふく"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okadomekofuku/"
+    },
+    {
+      "question": "小川",
+      "answer": [
+        "おがわ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogawa_kumamoto/"
+    },
+    {
+      "question": "大畑",
+      "answer": [
+        "おこば"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okoba_kumamoto/"
+    },
+    {
+      "question": "海路",
+      "answer": [
+        "かいじ"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaiji/"
+    },
+    {
+      "question": "火口西",
+      "answer": [
+        "かこうにし"
+      ],
+      "meaning": "阿蘇山ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakounishi/"
+    },
+    {
+      "question": "加勢",
+      "answer": [
+        "かせ"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kase_kumamoto/"
+    },
+    {
+      "question": "鎌瀬",
+      "answer": [
+        "かませ"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamase/"
+    },
+    {
+      "question": "上熊本",
+      "answer": [
+        "かみくまもと"
+      ],
+      "meaning": "鹿児島本線、熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-kumamoto/"
+    },
+    {
+      "question": "上熊本駅前",
+      "answer": [
+        "かみくまもとえきまえ"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamikumamotoekimae/"
+    },
+    {
+      "question": "上田浦",
+      "answer": [
+        "かみたのうら"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-tano-ura/"
+    },
+    {
+      "question": "亀井",
+      "answer": [
+        "かめい"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamei/"
+    },
+    {
+      "question": "辛島町",
+      "answer": [
+        "からしまちょう"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karashimacho/"
+    },
+    {
+      "question": "川尻",
+      "answer": [
+        "かわしり"
+      ],
+      "meaning": "鹿児島本線、三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawashiri_kumamoto/"
+    },
+    {
+      "question": "川村",
+      "answer": [
+        "かわむら"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawamura_kumamoto/"
+    },
+    {
+      "question": "河原町",
+      "answer": [
+        "かわらまち"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaramachi_kumamoto/"
+    },
+    {
+      "question": "韓々坂",
+      "answer": [
+        "かんかんざか"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kankanzaka/"
+    },
+    {
+      "question": "北熊本",
+      "answer": [
+        "きたくまもと"
+      ],
+      "meaning": "熊本電鉄菊池線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kumamoto/"
+    },
+    {
+      "question": "木上",
+      "answer": [
+        "きのえ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinoe/"
+    },
+    {
+      "question": "球泉洞",
+      "answer": [
+        "きゅうせんどう"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyusendo/"
+    },
+    {
+      "question": "祇園橋",
+      "answer": [
+        "ぎおんばし"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gion-bashi/"
+    },
+    {
+      "question": "九品寺交差点",
+      "answer": [
+        "くほんじこうさてん"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuhonjikosaten/"
+    },
+    {
+      "question": "熊本",
+      "answer": [
+        "くまもと"
+      ],
+      "meaning": "鹿児島本線、豊肥本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumamoto/"
+    },
+    {
+      "question": "熊本駅前",
+      "answer": [
+        "くまもとえきまえ"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumamoto_station/"
+    },
+    {
+      "question": "熊本高専前",
+      "answer": [
+        "くまもとこうせんまえ"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumamotokosen-mae/"
+    },
+    {
+      "question": "熊本城・市役所前",
+      "answer": [
+        "くまもとじょうしやくしょまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumamoto_castle-city_hall/"
+    },
+    {
+      "question": "黒石",
+      "answer": [
+        "くろいし"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuroishi_kumamoto/"
+    },
+    {
+      "question": "黒髪町",
+      "answer": [
+        "くろかみまち"
+      ],
+      "meaning": "熊本電鉄藤崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurokamimachi/"
+    },
+    {
+      "question": "神水・市民病院前",
+      "answer": [
+        "くわみずしみんびょういんまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuwamizu_shimin_byoin-mae/"
+    },
+    {
+      "question": "慶徳校前",
+      "answer": [
+        "けいとくこうまえ"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keitokuko-mae/"
+    },
+    {
+      "question": "健軍交番前",
+      "answer": [
+        "けんぐんこうばんまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kengunkoban-mae/"
+    },
+    {
+      "question": "健軍校前",
+      "answer": [
+        "けんぐんこうまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kengunko-mae/"
+    },
+    {
+      "question": "健軍町",
+      "answer": [
+        "けんぐんまち"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kengummachi/"
+    },
+    {
+      "question": "県立体育館前",
+      "answer": [
+        "けんりつたいいくかんまえ"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenritsutaiikukan-mae/"
+    },
+    {
+      "question": "交通局前",
+      "answer": [
+        "こうつうきょくまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotsukyoku-mae_kumamoto/"
+    },
+    {
+      "question": "公立病院前",
+      "answer": [
+        "こうりつびょういんまえ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koritsubyoin-mae/"
+    },
+    {
+      "question": "国府",
+      "answer": [
+        "こくぶ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokubu_kumamoto/"
+    },
+    {
+      "question": "木葉",
+      "answer": [
+        "このは"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konoha/"
+    },
+    {
+      "question": "呉服町",
+      "answer": [
+        "ごふくまち"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gofukumachi_kumamoto/"
+    },
+    {
+      "question": "再春荘前",
+      "answer": [
+        "さいしゅんそうまえ"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saishunso-mae/"
+    },
+    {
+      "question": "坂本",
+      "answer": [
+        "さかもと"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakamoto_kumamoto/"
+    },
+    {
+      "question": "相良藩願成寺",
+      "answer": [
+        "さがらはんがんじょうじ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sagarahanganjoji/"
+    },
+    {
+      "question": "佐敷",
+      "answer": [
+        "さしき"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sashiki/"
+    },
+    {
+      "question": "三里木",
+      "answer": [
+        "さんりぎ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanrigi/"
+    },
+    {
+      "question": "商業高校前",
+      "answer": [
+        "しょうぎょうこうこうまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shogyokoko-mae/"
+    },
+    {
+      "question": "市立体育館前",
+      "answer": [
+        "しりつたいいくかんまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiritsutaiikukan-mae/"
+    },
+    {
+      "question": "白石",
+      "answer": [
+        "しろいし"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroishi_kumamoto/"
+    },
+    {
+      "question": "新水前寺",
+      "answer": [
+        "しんすいぜんじ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-suizenji/"
+    },
+    {
+      "question": "新水前寺駅前",
+      "answer": [
+        "しんすいぜんじえきまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinsuizenji_station/"
+    },
+    {
+      "question": "新須屋",
+      "answer": [
+        "しんすや"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinsuya/"
+    },
+    {
+      "question": "新玉名",
+      "answer": [
+        "しんたまな"
+      ],
+      "meaning": "九州新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-tamana/"
+    },
+    {
+      "question": "新鶴羽",
+      "answer": [
+        "しんつるば"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-tsuruba/"
+    },
+    {
+      "question": "新町",
+      "answer": [
+        "しんまち"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimmachi_kumamoto/"
+    },
+    {
+      "question": "新水俣",
+      "answer": [
+        "しんみなまた"
+      ],
+      "meaning": "九州新幹線、肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-minamata/"
+    },
+    {
+      "question": "新八代",
+      "answer": [
+        "しんやつしろ"
+      ],
+      "meaning": "鹿児島本線、九州新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-yatsushiro/"
+    },
+    {
+      "question": "水前寺",
+      "answer": [
+        "すいぜんじ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suizenji/"
+    },
+    {
+      "question": "水前寺公園",
+      "answer": [
+        "すいぜんじこうえん"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suizenji_park/"
+    },
+    {
+      "question": "水道町",
+      "answer": [
+        "すいどうちょう"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suidocho/"
+    },
+    {
+      "question": "杉塘",
+      "answer": [
+        "すぎども"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugidomo/"
+    },
+    {
+      "question": "住吉",
+      "answer": [
+        "すみよし"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshi_kumamoto/"
+    },
+    {
+      "question": "須屋",
+      "answer": [
+        "すや"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suya/"
+    },
+    {
+      "question": "瀬田",
+      "answer": [
+        "せた"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seta_kumamoto/"
+    },
+    {
+      "question": "瀬戸石",
+      "answer": [
+        "せといし"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/setoishi/"
+    },
+    {
+      "question": "千丁",
+      "answer": [
+        "せんちょう"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sencho/"
+    },
+    {
+      "question": "洗馬橋",
+      "answer": [
+        "せんばばし"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sembabashi/"
+    },
+    {
+      "question": "崇城大学前",
+      "answer": [
+        "そうじょうだいがくまえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sojodaigaku-mae/"
+    },
+    {
+      "question": "高森",
+      "answer": [
+        "たかもり"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamori/"
+    },
+    {
+      "question": "滝水",
+      "answer": [
+        "たきみず"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takimizu/"
+    },
+    {
+      "question": "田崎橋",
+      "answer": [
+        "たさきばし"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tasakibashi/"
+    },
+    {
+      "question": "竜田口",
+      "answer": [
+        "たつたぐち"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatsutaguchi/"
+    },
+    {
+      "question": "立野",
+      "answer": [
+        "たての"
+      ],
+      "meaning": "豊肥本線、南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tateno_kumamoto/"
+    },
+    {
+      "question": "たのうら御立岬公園",
+      "answer": [
+        "たのうらおたちみさきこうえん"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanouraotachimisaki-koen/"
+    },
+    {
+      "question": "田原坂",
+      "answer": [
+        "たばるざか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tabaruzaka/"
+    },
+    {
+      "question": "玉名",
+      "answer": [
+        "たまな"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamana/"
+    },
+    {
+      "question": "多良木",
+      "answer": [
+        "たらぎ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taragi/"
+    },
+    {
+      "question": "段山町",
+      "answer": [
+        "だにやままち"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daniyamamachi/"
+    },
+    {
+      "question": "段",
+      "answer": [
+        "だん"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dan/"
+    },
+    {
+      "question": "長陽",
+      "answer": [
+        "ちょうよう"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/choyo/"
+    },
+    {
+      "question": "津奈木",
+      "answer": [
+        "つなぎ"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsunagi/"
+    },
+    {
+      "question": "坪井川公園",
+      "answer": [
+        "つぼいがわこうえん"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuboigawakoen/"
+    },
+    {
+      "question": "東海学園前",
+      "answer": [
+        "とうかいがくえんまえ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokaigakuen-mae/"
+    },
+    {
+      "question": "通町筋",
+      "answer": [
+        "とおりちょうすじ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/torichosuji/"
+    },
+    {
+      "question": "富合",
+      "answer": [
+        "とみあい"
+      ],
+      "meaning": "鹿児島本線、三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomiai/"
+    },
+    {
+      "question": "動植物園入口",
+      "answer": [
+        "どうしょくぶつえんいりぐち"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zoological_and_botanical_gardens_entrance/"
+    },
+    {
+      "question": "中松",
+      "answer": [
+        "なかまつ"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakamatsu/"
+    },
+    {
+      "question": "長洲",
+      "answer": [
+        "ながす"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagasu/"
+    },
+    {
+      "question": "波野",
+      "answer": [
+        "なみの"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/namino/"
+    },
+    {
+      "question": "那良口",
+      "answer": [
+        "ならぐち"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naraguchi/"
+    },
+    {
+      "question": "西辛島町",
+      "answer": [
+        "にしからしまちょう"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-karashimacho/"
+    },
+    {
+      "question": "西熊本",
+      "answer": [
+        "にしくまもと"
+      ],
+      "meaning": "鹿児島本線、三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kumamoto/"
+    },
+    {
+      "question": "西里",
+      "answer": [
+        "にしさと"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishisato/"
+    },
+    {
+      "question": "西人吉",
+      "answer": [
+        "にしひとよし"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-hitoyoshi/"
+    },
+    {
+      "question": "二本木口",
+      "answer": [
+        "にほんぎぐち"
+      ],
+      "meaning": "熊本市電Ａ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nihongiguchi/"
+    },
+    {
+      "question": "葉木",
+      "answer": [
+        "はき"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haki/"
+    },
+    {
+      "question": "白水高原",
+      "answer": [
+        "はくすいこうげん"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakusuikogen/"
+    },
+    {
+      "question": "八景水谷",
+      "answer": [
+        "はけのみや"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakenomiya/"
+    },
+    {
+      "question": "波多浦",
+      "answer": [
+        "はたうら"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hataura/"
+    },
+    {
+      "question": "八丁馬場",
+      "answer": [
+        "はっちょうばば"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hacchobaba/"
+    },
+    {
+      "question": "花畑町",
+      "answer": [
+        "はなばたちょう"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanabatacho/"
+    },
+    {
+      "question": "原水",
+      "answer": [
+        "はらみず"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haramizu/"
+    },
+    {
+      "question": "光の森",
+      "answer": [
+        "ひかりのもり"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikari-no-mori/"
+    },
+    {
+      "question": "東多良木",
+      "answer": [
+        "ひがしたらぎ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-taragi/"
+    },
+    {
+      "question": "東免田",
+      "answer": [
+        "ひがしめんだ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-menda/"
+    },
+    {
+      "question": "肥後伊倉",
+      "answer": [
+        "ひごいくら"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-ikura/"
+    },
+    {
+      "question": "肥後大津",
+      "answer": [
+        "ひごおおづ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-ozu/"
+    },
+    {
+      "question": "肥後高田",
+      "answer": [
+        "ひごこうだ"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-koda/"
+    },
+    {
+      "question": "肥後田浦",
+      "answer": [
+        "ひごたのうら"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-tano-ura/"
+    },
+    {
+      "question": "肥後長浜",
+      "answer": [
+        "ひごながはま"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-nagahama/"
+    },
+    {
+      "question": "肥後西村",
+      "answer": [
+        "ひごにしのむら"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-nishinomura/"
+    },
+    {
+      "question": "肥後二見",
+      "answer": [
+        "ひごふたみ"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higo-futami/"
+    },
+    {
+      "question": "人吉",
+      "answer": [
+        "ひとよし"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitoyoshi/"
+    },
+    {
+      "question": "人吉温泉",
+      "answer": [
+        "ひとよしおんせん"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitoyoshionsen/"
+    },
+    {
+      "question": "日奈久温泉",
+      "answer": [
+        "ひなぐおんせん"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hinaguonsen/"
+    },
+    {
+      "question": "袋",
+      "answer": [
+        "ふくろ"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuro/"
+    },
+    {
+      "question": "藤崎宮前",
+      "answer": [
+        "ふじさきぐうまえ"
+      ],
+      "meaning": "熊本電鉄藤崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisakigu-mae/"
+    },
+    {
+      "question": "平成",
+      "answer": [
+        "へいせい"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heisei_kumamoto/"
+    },
+    {
+      "question": "堀川",
+      "answer": [
+        "ほりかわ"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horikawa/"
+    },
+    {
+      "question": "本妙寺入口",
+      "answer": [
+        "ほんみょうじいりぐち"
+      ],
+      "meaning": "熊本市電Ｂ系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/honmyoji_temple_entrance/"
+    },
+    {
+      "question": "松橋",
+      "answer": [
+        "まつばせ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsubase/"
+    },
+    {
+      "question": "三角",
+      "answer": [
+        "みすみ"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misumi/"
+    },
+    {
+      "question": "味噌天神前",
+      "answer": [
+        "みそてんじんまえ"
+      ],
+      "meaning": "熊本市電Ａ系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misotenjin-mae/"
+    },
+    {
+      "question": "三ツ石",
+      "answer": [
+        "みついし"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsuishi_kumamoto/"
+    },
+    {
+      "question": "緑川",
+      "answer": [
+        "みどりかわ"
+      ],
+      "meaning": "三角線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/midorikawa/"
+    },
+    {
+      "question": "水俣",
+      "answer": [
+        "みなまた"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minamata/"
+    },
+    {
+      "question": "南阿蘇白川水源",
+      "answer": [
+        "みなみあそしらかわすいげん"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-asoshirakawasuigen/"
+    },
+    {
+      "question": "南荒尾",
+      "answer": [
+        "みなみあらお"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-arao/"
+    },
+    {
+      "question": "南熊本",
+      "answer": [
+        "みなみくまもと"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kumamoto/"
+    },
+    {
+      "question": "見晴台",
+      "answer": [
+        "みはらしだい"
+      ],
+      "meaning": "南阿蘇鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miharashidai/"
+    },
+    {
+      "question": "宮地",
+      "answer": [
+        "みやじ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyaji/"
+    },
+    {
+      "question": "御代志",
+      "answer": [
+        "みよし"
+      ],
+      "meaning": "熊本電鉄菊池線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyoshi_kumamoto/"
+    },
+    {
+      "question": "武蔵塚",
+      "answer": [
+        "むさしづか"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/musashizuka/"
+    },
+    {
+      "question": "矢岳",
+      "answer": [
+        "やたけ"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yatake/"
+    },
+    {
+      "question": "八代",
+      "answer": [
+        "やつしろ"
+      ],
+      "meaning": "鹿児島本線、肥薩線、肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yatsushiro/"
+    },
+    {
+      "question": "湯浦",
+      "answer": [
+        "ゆのうら"
+      ],
+      "meaning": "肥薩おれんじ鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuno-ura/"
+    },
+    {
+      "question": "湯前",
+      "answer": [
+        "ゆのまえ"
+      ],
+      "meaning": "くま川鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunomae/"
+    },
+    {
+      "question": "吉尾",
+      "answer": [
+        "よしお"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshio/"
+    },
+    {
+      "question": "渡",
+      "answer": [
+        "わたり"
+      ],
+      "meaning": "肥薩線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watari_kumamoto/"
+    }
+  ]
+}

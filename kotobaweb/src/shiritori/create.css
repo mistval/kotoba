@@ -1,0 +1,13 @@
+.card-block-title {
+  background-color: #336699;
+  color: white;
+  padding: 15px 20px 15px 20px;
+}
+
+.card-block-title h5 {
+  margin: 0px;
+}
+
+#createShiritoriGameContainer {
+  max-width: 1100px;
+}

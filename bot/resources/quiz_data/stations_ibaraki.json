@@ -1,0 +1,1051 @@
+{
+  "uniqueId": "stations_ibaraki",
+  "name": "Ibaraki Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Ibaraki station names](https://mb.jorudan.co.jp/os/eki/menu_imt/)",
+  "cards": [
+    {
+      "question": "赤塚",
+      "answer": [
+        "あかつか"
+      ],
+      "meaning": "常磐線、水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akatsuka_ibaraki/"
+    },
+    {
+      "question": "阿字ヶ浦",
+      "answer": [
+        "あじがうら"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ajigaura/"
+    },
+    {
+      "question": "荒川沖",
+      "answer": [
+        "あらかわおき"
+      ],
+      "meaning": "上野東京ライン、常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arakawaoki/"
+    },
+    {
+      "question": "石岡",
+      "answer": [
+        "いしおか"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishioka/"
+    },
+    {
+      "question": "石下",
+      "answer": [
+        "いしげ"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishige/"
+    },
+    {
+      "question": "磯崎",
+      "answer": [
+        "いそざき"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isozaki/"
+    },
+    {
+      "question": "磯原",
+      "answer": [
+        "いそはら"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isohara/"
+    },
+    {
+      "question": "潮来",
+      "answer": [
+        "いたこ"
+      ],
+      "meaning": "鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itako/"
+    },
+    {
+      "question": "稲田",
+      "answer": [
+        "いなだ"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inada/"
+    },
+    {
+      "question": "稲戸井",
+      "answer": [
+        "いなとい"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inatoi/"
+    },
+    {
+      "question": "入地",
+      "answer": [
+        "いれじ"
+      ],
+      "meaning": "関鉄竜ヶ崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ireji/"
+    },
+    {
+      "question": "岩瀬",
+      "answer": [
+        "いわせ"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwase/"
+    },
+    {
+      "question": "岩間",
+      "answer": [
+        "いわま"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwama/"
+    },
+    {
+      "question": "牛久",
+      "answer": [
+        "うしく"
+      ],
+      "meaning": "上野東京ライン、常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushiku/"
+    },
+    {
+      "question": "内原",
+      "answer": [
+        "うちはら"
+      ],
+      "meaning": "常磐線、水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchihara/"
+    },
+    {
+      "question": "瓜連",
+      "answer": [
+        "うりづら"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urizura/"
+    },
+    {
+      "question": "大洗",
+      "answer": [
+        "おおあらい"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oarai/"
+    },
+    {
+      "question": "大田郷",
+      "answer": [
+        "おおたごう"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otago/"
+    },
+    {
+      "question": "大津港",
+      "answer": [
+        "おおつこう"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otsuko/"
+    },
+    {
+      "question": "大甕",
+      "answer": [
+        "おおみか"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omika/"
+    },
+    {
+      "question": "小木津",
+      "answer": [
+        "おぎつ"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogitsu/"
+    },
+    {
+      "question": "小田林",
+      "answer": [
+        "おたばやし"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otabayashi/"
+    },
+    {
+      "question": "折本",
+      "answer": [
+        "おりもと"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/orimoto/"
+    },
+    {
+      "question": "偕楽園",
+      "answer": [
+        "かいらくえん"
+      ],
+      "meaning": "常磐線、水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kairakuen/"
+    },
+    {
+      "question": "笠間",
+      "answer": [
+        "かさま"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasama/"
+    },
+    {
+      "question": "鹿島旭",
+      "answer": [
+        "かしまあさひ"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashima-asahi/"
+    },
+    {
+      "question": "鹿島大野",
+      "answer": [
+        "かしまおおの"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashima-ono/"
+    },
+    {
+      "question": "鹿島サッカースタジアム",
+      "answer": [
+        "かしまさっかーすたじあむ"
+      ],
+      "meaning": "鹿島線、鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashima-soccer_stadium/"
+    },
+    {
+      "question": "鹿島神宮",
+      "answer": [
+        "かしまじんぐう"
+      ],
+      "meaning": "鹿島線、鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashimajingu/"
+    },
+    {
+      "question": "鹿島灘",
+      "answer": [
+        "かしまなだ"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashimanada/"
+    },
+    {
+      "question": "勝田",
+      "answer": [
+        "かつた"
+      ],
+      "meaning": "常磐線、水戸線、ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuta/"
+    },
+    {
+      "question": "金上",
+      "answer": [
+        "かねあげ"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaneage/"
+    },
+    {
+      "question": "上小川",
+      "answer": [
+        "かみおがわ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-ogawa/"
+    },
+    {
+      "question": "上菅谷",
+      "answer": [
+        "かみすがや"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-sugaya/"
+    },
+    {
+      "question": "河合",
+      "answer": [
+        "かわい"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawai_ibaraki/"
+    },
+    {
+      "question": "川島",
+      "answer": [
+        "かわしま"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawashima/"
+    },
+    {
+      "question": "神立",
+      "answer": [
+        "かんだつ"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kandatsu/"
+    },
+    {
+      "question": "北浦湖畔",
+      "answer": [
+        "きたうらこはん"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitaurakohan/"
+    },
+    {
+      "question": "北水海道",
+      "answer": [
+        "きたみつかいどう"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-mitsukaido/"
+    },
+    {
+      "question": "黒子",
+      "answer": [
+        "くろご"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurogo_ibaraki/"
+    },
+    {
+      "question": "研究学園",
+      "answer": [
+        "けんきゅうがくえん"
+      ],
+      "meaning": "つくばエクスプレス",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenkyugakuen/"
+    },
+    {
+      "question": "荒野台",
+      "answer": [
+        "こうやだい"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koyadai/"
+    },
+    {
+      "question": "古河",
+      "answer": [
+        "こが"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koga_ibaraki/"
+    },
+    {
+      "question": "小絹",
+      "answer": [
+        "こきぬ"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokinu/"
+    },
+    {
+      "question": "後台",
+      "answer": [
+        "ごだい"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/godai/"
+    },
+    {
+      "question": "西金",
+      "answer": [
+        "さいがね"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saigane/"
+    },
+    {
+      "question": "佐貫",
+      "answer": [
+        "さぬき"
+      ],
+      "meaning": "JR線、関鉄竜ヶ崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanuki/"
+    },
+    {
+      "question": "佐和",
+      "answer": [
+        "さわ"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawa_ibaraki/"
+    },
+    {
+      "question": "宍戸",
+      "answer": [
+        "ししど"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shishido/"
+    },
+    {
+      "question": "静",
+      "answer": [
+        "しず"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizu_ibaraki/"
+    },
+    {
+      "question": "下小川",
+      "answer": [
+        "しもおがわ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-ogawa/"
+    },
+    {
+      "question": "下菅谷",
+      "answer": [
+        "しもすがや"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-sugaya/"
+    },
+    {
+      "question": "下館",
+      "answer": [
+        "しもだて"
+      ],
+      "meaning": "水戸線、関鉄常総線、真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimodate/"
+    },
+    {
+      "question": "下館二高前",
+      "answer": [
+        "しもだてにこうまえ"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimodateniko-mae/"
+    },
+    {
+      "question": "下妻",
+      "answer": [
+        "しもつま"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimotsuma/"
+    },
+    {
+      "question": "下野宮",
+      "answer": [
+        "しものみや"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonomiya/"
+    },
+    {
+      "question": "新取手",
+      "answer": [
+        "しんとりで"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-toride/"
+    },
+    {
+      "question": "新鉾田",
+      "answer": [
+        "しんほこた"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-hokota/"
+    },
+    {
+      "question": "新守谷",
+      "answer": [
+        "しんもりや"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-moriya/"
+    },
+    {
+      "question": "十王",
+      "answer": [
+        "じゅうおう"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/juo/"
+    },
+    {
+      "question": "宗道",
+      "answer": [
+        "そうどう"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sodo/"
+    },
+    {
+      "question": "大洋",
+      "answer": [
+        "たいよう"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taiyo/"
+    },
+    {
+      "question": "高田の鉄橋",
+      "answer": [
+        "たかだのてっきょう"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takadano-tekkyo/"
+    },
+    {
+      "question": "高萩",
+      "answer": [
+        "たかはぎ"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takahagi/"
+    },
+    {
+      "question": "高浜",
+      "answer": [
+        "たかはま"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takahama_ibaraki/"
+    },
+    {
+      "question": "玉川村",
+      "answer": [
+        "たまがわむら"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamagawamura/"
+    },
+    {
+      "question": "玉戸",
+      "answer": [
+        "たまど"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamado/"
+    },
+    {
+      "question": "玉村",
+      "answer": [
+        "たまむら"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamamura/"
+    },
+    {
+      "question": "大宝",
+      "answer": [
+        "だいほう"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daiho/"
+    },
+    {
+      "question": "筑波山頂",
+      "answer": [
+        "つくばさんちょう"
+      ],
+      "meaning": "筑波山ケーブルカー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukuba_sancho/"
+    },
+    {
+      "question": "土浦",
+      "answer": [
+        "つちうら"
+      ],
+      "meaning": "上野東京ライン、常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuchiura/"
+    },
+    {
+      "question": "つつじヶ丘",
+      "answer": [
+        "つつじがおか"
+      ],
+      "meaning": "筑波山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsutsujigaoka_ibaraki/"
+    },
+    {
+      "question": "常澄",
+      "answer": [
+        "つねずみ"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsunezumi/"
+    },
+    {
+      "question": "寺原",
+      "answer": [
+        "てらはら"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/terahara/"
+    },
+    {
+      "question": "東海",
+      "answer": [
+        "とうかい"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokai/"
+    },
+    {
+      "question": "戸頭",
+      "answer": [
+        "とがしら"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/togashira/"
+    },
+    {
+      "question": "徳宿",
+      "answer": [
+        "とくしゅく"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokushuku/"
+    },
+    {
+      "question": "殿山",
+      "answer": [
+        "とのやま"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonoyama/"
+    },
+    {
+      "question": "騰波ノ江",
+      "answer": [
+        "とばのえ"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobanoe/"
+    },
+    {
+      "question": "友部",
+      "answer": [
+        "ともべ"
+      ],
+      "meaning": "常磐線、水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomobe/"
+    },
+    {
+      "question": "取手",
+      "answer": [
+        "とりで"
+      ],
+      "meaning": "JR線、東京メトロ千代田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toride/"
+    },
+    {
+      "question": "中菅谷",
+      "answer": [
+        "なかすがや"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka-sugaya/"
+    },
+    {
+      "question": "中妻",
+      "answer": [
+        "なかつま"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakatsuma/"
+    },
+    {
+      "question": "中根",
+      "answer": [
+        "なかね"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakane/"
+    },
+    {
+      "question": "中舟生",
+      "answer": [
+        "なかふにゅう"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka-funyu/"
+    },
+    {
+      "question": "那珂湊",
+      "answer": [
+        "なかみなと"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakaminato/"
+    },
+    {
+      "question": "新治",
+      "answer": [
+        "にいはり"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niihari/"
+    },
+    {
+      "question": "西取手",
+      "answer": [
+        "にしとりで"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-toride/"
+    },
+    {
+      "question": "日工前",
+      "answer": [
+        "にっこうまえ"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nikkomae/"
+    },
+    {
+      "question": "女体山",
+      "answer": [
+        "にょたいさん"
+      ],
+      "meaning": "筑波山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nyotaisan/"
+    },
+    {
+      "question": "額田",
+      "answer": [
+        "ぬかだ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nukada_ibaraki/"
+    },
+    {
+      "question": "野上原",
+      "answer": [
+        "のがみはら"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nogamihara/"
+    },
+    {
+      "question": "延方",
+      "answer": [
+        "のぶかた"
+      ],
+      "meaning": "鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nobukata/"
+    },
+    {
+      "question": "羽黒",
+      "answer": [
+        "はぐろ"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haguro_ibaraki/"
+    },
+    {
+      "question": "羽鳥",
+      "answer": [
+        "はとり"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatori/"
+    },
+    {
+      "question": "はまなす公園前",
+      "answer": [
+        "はまなすこうえんまえ"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamanasukoen-mae/"
+    },
+    {
+      "question": "万博記念公園",
+      "answer": [
+        "ばんぱくきねんこうえん"
+      ],
+      "meaning": "つくばエクスプレス",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bampakukinenkoen_ibaraki/"
+    },
+    {
+      "question": "東水戸",
+      "answer": [
+        "ひがしみと"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-mito/"
+    },
+    {
+      "question": "東結城",
+      "answer": [
+        "ひがしゆうき"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yuki/"
+    },
+    {
+      "question": "日立",
+      "answer": [
+        "ひたち"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi/"
+    },
+    {
+      "question": "常陸青柳",
+      "answer": [
+        "ひたちあおやぎ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-aoyagi/"
+    },
+    {
+      "question": "常陸太田",
+      "answer": [
+        "ひたちおおた"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-ota/"
+    },
+    {
+      "question": "常陸大宮",
+      "answer": [
+        "ひたちおおみや"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-omiya/"
+    },
+    {
+      "question": "常陸鴻巣",
+      "answer": [
+        "ひたちこうのす"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-konosu/"
+    },
+    {
+      "question": "常陸多賀",
+      "answer": [
+        "ひたちたが"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-taga/"
+    },
+    {
+      "question": "常陸大子",
+      "answer": [
+        "ひたちだいご"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-daigo/"
+    },
+    {
+      "question": "常陸津田",
+      "answer": [
+        "ひたちつだ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachi-tsuda/"
+    },
+    {
+      "question": "ひたち野うしく",
+      "answer": [
+        "ひたちのうしく"
+      ],
+      "meaning": "上野東京ライン、常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachino-ushiku/"
+    },
+    {
+      "question": "涸沼",
+      "answer": [
+        "ひぬま"
+      ],
+      "meaning": "鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hinuma/"
+    },
+    {
+      "question": "平磯",
+      "answer": [
+        "ひらいそ"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiraiso/"
+    },
+    {
+      "question": "福原",
+      "answer": [
+        "ふくはら"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuhara/"
+    },
+    {
+      "question": "袋田",
+      "answer": [
+        "ふくろだ"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuroda/"
+    },
+    {
+      "question": "藤代",
+      "answer": [
+        "ふじしろ"
+      ],
+      "meaning": "上野東京ライン、常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujishiro/"
+    },
+    {
+      "question": "水海道",
+      "answer": [
+        "みつかいどう"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsukaido/"
+    },
+    {
+      "question": "三妻",
+      "answer": [
+        "みつま"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsuma/"
+    },
+    {
+      "question": "水戸",
+      "answer": [
+        "みと"
+      ],
+      "meaning": "JR線、鹿島臨海鉄道大洗鹿島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mito_ibaraki/"
+    },
+    {
+      "question": "南石下",
+      "answer": [
+        "みなみいしげ"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-ishige/"
+    },
+    {
+      "question": "南酒出",
+      "answer": [
+        "みなみさかいで"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-sakaide/"
+    },
+    {
+      "question": "南中郷",
+      "answer": [
+        "みなみなかごう"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-nakago/"
+    },
+    {
+      "question": "南守谷",
+      "answer": [
+        "みなみもりや"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-moriya/"
+    },
+    {
+      "question": "宮脇",
+      "answer": [
+        "みやわき"
+      ],
+      "meaning": "筑波山ケーブルカー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyawaki/"
+    },
+    {
+      "question": "みらい平",
+      "answer": [
+        "みらいだいら"
+      ],
+      "meaning": "つくばエクスプレス",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miraidaira/"
+    },
+    {
+      "question": "守谷",
+      "answer": [
+        "もりや"
+      ],
+      "meaning": "関鉄常総線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moriya/"
+    },
+    {
+      "question": "谷河原",
+      "answer": [
+        "やがわら"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yagawara/"
+    },
+    {
+      "question": "山方宿",
+      "answer": [
+        "やまがたじゅく"
+      ],
+      "meaning": "水郡線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamagatajuku/"
+    },
+    {
+      "question": "大和",
+      "answer": [
+        "やまと"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamato_ibaraki/"
+    },
+    {
+      "question": "結城",
+      "answer": [
+        "ゆうき"
+      ],
+      "meaning": "水戸線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuki_ibaraki/"
+    },
+    {
+      "question": "ゆめみ野",
+      "answer": [
+        "ゆみめの"
+      ],
+      "meaning": "関鉄常総線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yumemino/"
+    },
+    {
+      "question": "竜ヶ崎",
+      "answer": [
+        "りゅうがさき"
+      ],
+      "meaning": "関鉄竜ヶ崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryugasaki/"
+    }
+  ]
+}

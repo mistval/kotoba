@@ -1,0 +1,10 @@
+#shiritoriHeaderImage {
+  opacity: .77;
+  max-width: 200px;
+}
+
+@media screen and (max-width: 800px) {
+  #shiritoriHeaderImage {
+    max-width: 300px;
+  }
+}

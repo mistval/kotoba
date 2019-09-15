@@ -1,0 +1,7741 @@
+{
+  "uniqueId": "anagrams4",
+  "name": "Anagrams Length 4 Quiz",
+  "article": "an",
+  "instructions": "Unscramable the below word!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "WEBSTER_ANSWER",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "RANDOMIZE_QUESTION_CHARACTERS",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_ANSWER",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "STRICT",
+  "commentFieldName": "Comment",
+  "forceNoMC": true,
+  "cards": [
+    {
+      "question": "abbe",
+      "answer": [
+        "abbe"
+      ]
+    },
+    {
+      "question": "abed",
+      "answer": [
+        "abed"
+      ]
+    },
+    {
+      "question": "abet",
+      "answer": [
+        "abet"
+      ]
+    },
+    {
+      "question": "able",
+      "answer": [
+        "able"
+      ]
+    },
+    {
+      "question": "ache",
+      "answer": [
+        "ache"
+      ]
+    },
+    {
+      "question": "acid",
+      "answer": [
+        "acid"
+      ]
+    },
+    {
+      "question": "acne",
+      "answer": [
+        "acne"
+      ]
+    },
+    {
+      "question": "acre",
+      "answer": [
+        "acre"
+      ]
+    },
+    {
+      "question": "aery",
+      "answer": [
+        "aery"
+      ]
+    },
+    {
+      "question": "afar",
+      "answer": [
+        "afar"
+      ]
+    },
+    {
+      "question": "aged",
+      "answer": [
+        "aged"
+      ]
+    },
+    {
+      "question": "aide",
+      "answer": [
+        "aide"
+      ]
+    },
+    {
+      "question": "akin",
+      "answer": [
+        "akin"
+      ]
+    },
+    {
+      "question": "alas",
+      "answer": [
+        "alas"
+      ]
+    },
+    {
+      "question": "alga",
+      "answer": [
+        "alga"
+      ]
+    },
+    {
+      "question": "ally",
+      "answer": [
+        "ally"
+      ]
+    },
+    {
+      "question": "alms",
+      "answer": [
+        "alms"
+      ]
+    },
+    {
+      "question": "also",
+      "answer": [
+        "also"
+      ]
+    },
+    {
+      "question": "alto",
+      "answer": [
+        "alto"
+      ]
+    },
+    {
+      "question": "amen",
+      "answer": [
+        "amen"
+      ]
+    },
+    {
+      "question": "amid",
+      "answer": [
+        "amid"
+      ]
+    },
+    {
+      "question": "anew",
+      "answer": [
+        "anew"
+      ]
+    },
+    {
+      "question": "ante",
+      "answer": [
+        "ante"
+      ]
+    },
+    {
+      "question": "apex",
+      "answer": [
+        "apex"
+      ]
+    },
+    {
+      "question": "arch",
+      "answer": [
+        "arch"
+      ]
+    },
+    {
+      "question": "area",
+      "answer": [
+        "area"
+      ]
+    },
+    {
+      "question": "aria",
+      "answer": [
+        "aria"
+      ]
+    },
+    {
+      "question": "arid",
+      "answer": [
+        "arid"
+      ]
+    },
+    {
+      "question": "army",
+      "answer": [
+        "army"
+      ]
+    },
+    {
+      "question": "arty",
+      "answer": [
+        "arty"
+      ]
+    },
+    {
+      "question": "atom",
+      "answer": [
+        "atom"
+      ]
+    },
+    {
+      "question": "auld",
+      "answer": [
+        "auld"
+      ]
+    },
+    {
+      "question": "aunt",
+      "answer": [
+        "aunt"
+      ]
+    },
+    {
+      "question": "aura",
+      "answer": [
+        "aura"
+      ]
+    },
+    {
+      "question": "auto",
+      "answer": [
+        "auto"
+      ]
+    },
+    {
+      "question": "avid",
+      "answer": [
+        "avid"
+      ]
+    },
+    {
+      "question": "away",
+      "answer": [
+        "away"
+      ]
+    },
+    {
+      "question": "awry",
+      "answer": [
+        "awry"
+      ]
+    },
+    {
+      "question": "axis",
+      "answer": [
+        "axis"
+      ]
+    },
+    {
+      "question": "babe",
+      "answer": [
+        "babe"
+      ]
+    },
+    {
+      "question": "baby",
+      "answer": [
+        "baby"
+      ]
+    },
+    {
+      "question": "back",
+      "answer": [
+        "back"
+      ]
+    },
+    {
+      "question": "bade",
+      "answer": [
+        "bade"
+      ]
+    },
+    {
+      "question": "baht",
+      "answer": [
+        "baht"
+      ]
+    },
+    {
+      "question": "bait",
+      "answer": [
+        "bait"
+      ]
+    },
+    {
+      "question": "bake",
+      "answer": [
+        "bake"
+      ]
+    },
+    {
+      "question": "bald",
+      "answer": [
+        "bald"
+      ]
+    },
+    {
+      "question": "bale",
+      "answer": [
+        "bale"
+      ]
+    },
+    {
+      "question": "balk",
+      "answer": [
+        "balk"
+      ]
+    },
+    {
+      "question": "ball",
+      "answer": [
+        "ball"
+      ]
+    },
+    {
+      "question": "balm",
+      "answer": [
+        "balm"
+      ]
+    },
+    {
+      "question": "band",
+      "answer": [
+        "band"
+      ]
+    },
+    {
+      "question": "bane",
+      "answer": [
+        "bane"
+      ]
+    },
+    {
+      "question": "bang",
+      "answer": [
+        "bang"
+      ]
+    },
+    {
+      "question": "bank",
+      "answer": [
+        "bank"
+      ]
+    },
+    {
+      "question": "bard",
+      "answer": [
+        "bard"
+      ]
+    },
+    {
+      "question": "bare",
+      "answer": [
+        "bare"
+      ]
+    },
+    {
+      "question": "bark",
+      "answer": [
+        "bark"
+      ]
+    },
+    {
+      "question": "barn",
+      "answer": [
+        "barn"
+      ]
+    },
+    {
+      "question": "base",
+      "answer": [
+        "base"
+      ]
+    },
+    {
+      "question": "bash",
+      "answer": [
+        "bash"
+      ]
+    },
+    {
+      "question": "bask",
+      "answer": [
+        "bask"
+      ]
+    },
+    {
+      "question": "bast",
+      "answer": [
+        "bast"
+      ]
+    },
+    {
+      "question": "bate",
+      "answer": [
+        "bate"
+      ]
+    },
+    {
+      "question": "bath",
+      "answer": [
+        "bath"
+      ]
+    },
+    {
+      "question": "bead",
+      "answer": [
+        "bead"
+      ]
+    },
+    {
+      "question": "beak",
+      "answer": [
+        "beak"
+      ]
+    },
+    {
+      "question": "beam",
+      "answer": [
+        "beam"
+      ]
+    },
+    {
+      "question": "bean",
+      "answer": [
+        "bean"
+      ]
+    },
+    {
+      "question": "bear",
+      "answer": [
+        "bear"
+      ]
+    },
+    {
+      "question": "beat",
+      "answer": [
+        "beat"
+      ]
+    },
+    {
+      "question": "beef",
+      "answer": [
+        "beef"
+      ]
+    },
+    {
+      "question": "been",
+      "answer": [
+        "been"
+      ]
+    },
+    {
+      "question": "beer",
+      "answer": [
+        "beer"
+      ]
+    },
+    {
+      "question": "beet",
+      "answer": [
+        "beet"
+      ]
+    },
+    {
+      "question": "bell",
+      "answer": [
+        "bell"
+      ]
+    },
+    {
+      "question": "belt",
+      "answer": [
+        "belt"
+      ]
+    },
+    {
+      "question": "bend",
+      "answer": [
+        "bend"
+      ]
+    },
+    {
+      "question": "bent",
+      "answer": [
+        "bent"
+      ]
+    },
+    {
+      "question": "best",
+      "answer": [
+        "best"
+      ]
+    },
+    {
+      "question": "bias",
+      "answer": [
+        "bias"
+      ]
+    },
+    {
+      "question": "bike",
+      "answer": [
+        "bike"
+      ]
+    },
+    {
+      "question": "bile",
+      "answer": [
+        "bile"
+      ]
+    },
+    {
+      "question": "bill",
+      "answer": [
+        "bill"
+      ]
+    },
+    {
+      "question": "bind",
+      "answer": [
+        "bind"
+      ]
+    },
+    {
+      "question": "bird",
+      "answer": [
+        "bird"
+      ]
+    },
+    {
+      "question": "bite",
+      "answer": [
+        "bite"
+      ]
+    },
+    {
+      "question": "bloc",
+      "answer": [
+        "bloc"
+      ]
+    },
+    {
+      "question": "blot",
+      "answer": [
+        "blot"
+      ]
+    },
+    {
+      "question": "blow",
+      "answer": [
+        "blow"
+      ]
+    },
+    {
+      "question": "blue",
+      "answer": [
+        "blue"
+      ]
+    },
+    {
+      "question": "boat",
+      "answer": [
+        "boat"
+      ]
+    },
+    {
+      "question": "bode",
+      "answer": [
+        "bode"
+      ]
+    },
+    {
+      "question": "body",
+      "answer": [
+        "body"
+      ]
+    },
+    {
+      "question": "boil",
+      "answer": [
+        "boil"
+      ]
+    },
+    {
+      "question": "bold",
+      "answer": [
+        "bold"
+      ]
+    },
+    {
+      "question": "bole",
+      "answer": [
+        "bole"
+      ]
+    },
+    {
+      "question": "bolt",
+      "answer": [
+        "bolt"
+      ]
+    },
+    {
+      "question": "bomb",
+      "answer": [
+        "bomb"
+      ]
+    },
+    {
+      "question": "bond",
+      "answer": [
+        "bond"
+      ]
+    },
+    {
+      "question": "bone",
+      "answer": [
+        "bone"
+      ]
+    },
+    {
+      "question": "bony",
+      "answer": [
+        "bony"
+      ]
+    },
+    {
+      "question": "book",
+      "answer": [
+        "book"
+      ]
+    },
+    {
+      "question": "boom",
+      "answer": [
+        "boom"
+      ]
+    },
+    {
+      "question": "boon",
+      "answer": [
+        "boon"
+      ]
+    },
+    {
+      "question": "boot",
+      "answer": [
+        "boot"
+      ]
+    },
+    {
+      "question": "bore",
+      "answer": [
+        "bore"
+      ]
+    },
+    {
+      "question": "born",
+      "answer": [
+        "born"
+      ]
+    },
+    {
+      "question": "boss",
+      "answer": [
+        "boss"
+      ]
+    },
+    {
+      "question": "both",
+      "answer": [
+        "both"
+      ]
+    },
+    {
+      "question": "bout",
+      "answer": [
+        "bout"
+      ]
+    },
+    {
+      "question": "bowl",
+      "answer": [
+        "bowl"
+      ]
+    },
+    {
+      "question": "brad",
+      "answer": [
+        "brad"
+      ]
+    },
+    {
+      "question": "brae",
+      "answer": [
+        "brae"
+      ]
+    },
+    {
+      "question": "brag",
+      "answer": [
+        "brag"
+      ]
+    },
+    {
+      "question": "bran",
+      "answer": [
+        "bran"
+      ]
+    },
+    {
+      "question": "brim",
+      "answer": [
+        "brim"
+      ]
+    },
+    {
+      "question": "brow",
+      "answer": [
+        "brow"
+      ]
+    },
+    {
+      "question": "buck",
+      "answer": [
+        "buck"
+      ]
+    },
+    {
+      "question": "buff",
+      "answer": [
+        "buff"
+      ]
+    },
+    {
+      "question": "bulb",
+      "answer": [
+        "bulb"
+      ]
+    },
+    {
+      "question": "bulk",
+      "answer": [
+        "bulk"
+      ]
+    },
+    {
+      "question": "bull",
+      "answer": [
+        "bull"
+      ]
+    },
+    {
+      "question": "bump",
+      "answer": [
+        "bump"
+      ]
+    },
+    {
+      "question": "bunk",
+      "answer": [
+        "bunk"
+      ]
+    },
+    {
+      "question": "burn",
+      "answer": [
+        "burn"
+      ]
+    },
+    {
+      "question": "bury",
+      "answer": [
+        "bury"
+      ]
+    },
+    {
+      "question": "bush",
+      "answer": [
+        "bush"
+      ]
+    },
+    {
+      "question": "bust",
+      "answer": [
+        "bust"
+      ]
+    },
+    {
+      "question": "busy",
+      "answer": [
+        "busy"
+      ]
+    },
+    {
+      "question": "buzz",
+      "answer": [
+        "buzz"
+      ]
+    },
+    {
+      "question": "cafe",
+      "answer": [
+        "cafe"
+      ]
+    },
+    {
+      "question": "cage",
+      "answer": [
+        "cage"
+      ]
+    },
+    {
+      "question": "cake",
+      "answer": [
+        "cake"
+      ]
+    },
+    {
+      "question": "calf",
+      "answer": [
+        "calf"
+      ]
+    },
+    {
+      "question": "calk",
+      "answer": [
+        "calk"
+      ]
+    },
+    {
+      "question": "call",
+      "answer": [
+        "call"
+      ]
+    },
+    {
+      "question": "calm",
+      "answer": [
+        "calm"
+      ]
+    },
+    {
+      "question": "camp",
+      "answer": [
+        "camp"
+      ]
+    },
+    {
+      "question": "cane",
+      "answer": [
+        "cane"
+      ]
+    },
+    {
+      "question": "cant",
+      "answer": [
+        "cant"
+      ]
+    },
+    {
+      "question": "cape",
+      "answer": [
+        "cape"
+      ]
+    },
+    {
+      "question": "card",
+      "answer": [
+        "card"
+      ]
+    },
+    {
+      "question": "care",
+      "answer": [
+        "care"
+      ]
+    },
+    {
+      "question": "carp",
+      "answer": [
+        "carp"
+      ]
+    },
+    {
+      "question": "cart",
+      "answer": [
+        "cart"
+      ]
+    },
+    {
+      "question": "case",
+      "answer": [
+        "case"
+      ]
+    },
+    {
+      "question": "cash",
+      "answer": [
+        "cash"
+      ]
+    },
+    {
+      "question": "cask",
+      "answer": [
+        "cask"
+      ]
+    },
+    {
+      "question": "cast",
+      "answer": [
+        "cast"
+      ]
+    },
+    {
+      "question": "cave",
+      "answer": [
+        "cave"
+      ]
+    },
+    {
+      "question": "cell",
+      "answer": [
+        "cell"
+      ]
+    },
+    {
+      "question": "cent",
+      "answer": [
+        "cent"
+      ]
+    },
+    {
+      "question": "chap",
+      "answer": [
+        "chap"
+      ]
+    },
+    {
+      "question": "char",
+      "answer": [
+        "char"
+      ]
+    },
+    {
+      "question": "chat",
+      "answer": [
+        "chat"
+      ]
+    },
+    {
+      "question": "chef",
+      "answer": [
+        "chef"
+      ]
+    },
+    {
+      "question": "chew",
+      "answer": [
+        "chew"
+      ]
+    },
+    {
+      "question": "chic",
+      "answer": [
+        "chic"
+      ]
+    },
+    {
+      "question": "chin",
+      "answer": [
+        "chin"
+      ]
+    },
+    {
+      "question": "chip",
+      "answer": [
+        "chip"
+      ]
+    },
+    {
+      "question": "chit",
+      "answer": [
+        "chit"
+      ]
+    },
+    {
+      "question": "chop",
+      "answer": [
+        "chop"
+      ]
+    },
+    {
+      "question": "chum",
+      "answer": [
+        "chum"
+      ]
+    },
+    {
+      "question": "cite",
+      "answer": [
+        "cite"
+      ]
+    },
+    {
+      "question": "city",
+      "answer": [
+        "city"
+      ]
+    },
+    {
+      "question": "clam",
+      "answer": [
+        "clam"
+      ]
+    },
+    {
+      "question": "clan",
+      "answer": [
+        "clan"
+      ]
+    },
+    {
+      "question": "clap",
+      "answer": [
+        "clap"
+      ]
+    },
+    {
+      "question": "clay",
+      "answer": [
+        "clay"
+      ]
+    },
+    {
+      "question": "clip",
+      "answer": [
+        "clip"
+      ]
+    },
+    {
+      "question": "clod",
+      "answer": [
+        "clod"
+      ]
+    },
+    {
+      "question": "clog",
+      "answer": [
+        "clog"
+      ]
+    },
+    {
+      "question": "clot",
+      "answer": [
+        "clot"
+      ]
+    },
+    {
+      "question": "club",
+      "answer": [
+        "club"
+      ]
+    },
+    {
+      "question": "clue",
+      "answer": [
+        "clue"
+      ]
+    },
+    {
+      "question": "coal",
+      "answer": [
+        "coal"
+      ]
+    },
+    {
+      "question": "coat",
+      "answer": [
+        "coat"
+      ]
+    },
+    {
+      "question": "coax",
+      "answer": [
+        "coax"
+      ]
+    },
+    {
+      "question": "code",
+      "answer": [
+        "code"
+      ]
+    },
+    {
+      "question": "coil",
+      "answer": [
+        "coil"
+      ]
+    },
+    {
+      "question": "coin",
+      "answer": [
+        "coin"
+      ]
+    },
+    {
+      "question": "coke",
+      "answer": [
+        "coke"
+      ]
+    },
+    {
+      "question": "cola",
+      "answer": [
+        "cola"
+      ]
+    },
+    {
+      "question": "cold",
+      "answer": [
+        "cold"
+      ]
+    },
+    {
+      "question": "colt",
+      "answer": [
+        "colt"
+      ]
+    },
+    {
+      "question": "coma",
+      "answer": [
+        "coma"
+      ]
+    },
+    {
+      "question": "comb",
+      "answer": [
+        "comb"
+      ]
+    },
+    {
+      "question": "come",
+      "answer": [
+        "come"
+      ]
+    },
+    {
+      "question": "cone",
+      "answer": [
+        "cone"
+      ]
+    },
+    {
+      "question": "cook",
+      "answer": [
+        "cook"
+      ]
+    },
+    {
+      "question": "cool",
+      "answer": [
+        "cool"
+      ]
+    },
+    {
+      "question": "coop",
+      "answer": [
+        "coop"
+      ]
+    },
+    {
+      "question": "cope",
+      "answer": [
+        "cope"
+      ]
+    },
+    {
+      "question": "copy",
+      "answer": [
+        "copy"
+      ]
+    },
+    {
+      "question": "cord",
+      "answer": [
+        "cord"
+      ]
+    },
+    {
+      "question": "core",
+      "answer": [
+        "core"
+      ]
+    },
+    {
+      "question": "cork",
+      "answer": [
+        "cork"
+      ]
+    },
+    {
+      "question": "corn",
+      "answer": [
+        "corn"
+      ]
+    },
+    {
+      "question": "cost",
+      "answer": [
+        "cost"
+      ]
+    },
+    {
+      "question": "cove",
+      "answer": [
+        "cove"
+      ]
+    },
+    {
+      "question": "cozy",
+      "answer": [
+        "cozy"
+      ]
+    },
+    {
+      "question": "crab",
+      "answer": [
+        "crab"
+      ]
+    },
+    {
+      "question": "crew",
+      "answer": [
+        "crew"
+      ]
+    },
+    {
+      "question": "crib",
+      "answer": [
+        "crib"
+      ]
+    },
+    {
+      "question": "crop",
+      "answer": [
+        "crop"
+      ]
+    },
+    {
+      "question": "crow",
+      "answer": [
+        "crow"
+      ]
+    },
+    {
+      "question": "crux",
+      "answer": [
+        "crux"
+      ]
+    },
+    {
+      "question": "cube",
+      "answer": [
+        "cube"
+      ]
+    },
+    {
+      "question": "cuff",
+      "answer": [
+        "cuff"
+      ]
+    },
+    {
+      "question": "cull",
+      "answer": [
+        "cull"
+      ]
+    },
+    {
+      "question": "cult",
+      "answer": [
+        "cult"
+      ]
+    },
+    {
+      "question": "curb",
+      "answer": [
+        "curb"
+      ]
+    },
+    {
+      "question": "cure",
+      "answer": [
+        "cure"
+      ]
+    },
+    {
+      "question": "curl",
+      "answer": [
+        "curl"
+      ]
+    },
+    {
+      "question": "curt",
+      "answer": [
+        "curt"
+      ]
+    },
+    {
+      "question": "cute",
+      "answer": [
+        "cute"
+      ]
+    },
+    {
+      "question": "czar",
+      "answer": [
+        "czar"
+      ]
+    },
+    {
+      "question": "daft",
+      "answer": [
+        "daft"
+      ]
+    },
+    {
+      "question": "dale",
+      "answer": [
+        "dale"
+      ]
+    },
+    {
+      "question": "damn",
+      "answer": [
+        "damn"
+      ]
+    },
+    {
+      "question": "damp",
+      "answer": [
+        "damp"
+      ]
+    },
+    {
+      "question": "dare",
+      "answer": [
+        "dare"
+      ]
+    },
+    {
+      "question": "dark",
+      "answer": [
+        "dark"
+      ]
+    },
+    {
+      "question": "darn",
+      "answer": [
+        "darn"
+      ]
+    },
+    {
+      "question": "dart",
+      "answer": [
+        "dart"
+      ]
+    },
+    {
+      "question": "dash",
+      "answer": [
+        "dash"
+      ]
+    },
+    {
+      "question": "data",
+      "answer": [
+        "data"
+      ]
+    },
+    {
+      "question": "date",
+      "answer": [
+        "date"
+      ]
+    },
+    {
+      "question": "daub",
+      "answer": [
+        "daub"
+      ]
+    },
+    {
+      "question": "dawn",
+      "answer": [
+        "dawn"
+      ]
+    },
+    {
+      "question": "daze",
+      "answer": [
+        "daze"
+      ]
+    },
+    {
+      "question": "dead",
+      "answer": [
+        "dead"
+      ]
+    },
+    {
+      "question": "deaf",
+      "answer": [
+        "deaf"
+      ]
+    },
+    {
+      "question": "deal",
+      "answer": [
+        "deal"
+      ]
+    },
+    {
+      "question": "dean",
+      "answer": [
+        "dean"
+      ]
+    },
+    {
+      "question": "dear",
+      "answer": [
+        "dear"
+      ]
+    },
+    {
+      "question": "debt",
+      "answer": [
+        "debt"
+      ]
+    },
+    {
+      "question": "deck",
+      "answer": [
+        "deck"
+      ]
+    },
+    {
+      "question": "deed",
+      "answer": [
+        "deed"
+      ]
+    },
+    {
+      "question": "deem",
+      "answer": [
+        "deem"
+      ]
+    },
+    {
+      "question": "deep",
+      "answer": [
+        "deep"
+      ]
+    },
+    {
+      "question": "deer",
+      "answer": [
+        "deer"
+      ]
+    },
+    {
+      "question": "deft",
+      "answer": [
+        "deft"
+      ]
+    },
+    {
+      "question": "defy",
+      "answer": [
+        "defy"
+      ]
+    },
+    {
+      "question": "dent",
+      "answer": [
+        "dent"
+      ]
+    },
+    {
+      "question": "deny",
+      "answer": [
+        "deny"
+      ]
+    },
+    {
+      "question": "desk",
+      "answer": [
+        "desk"
+      ]
+    },
+    {
+      "question": "dial",
+      "answer": [
+        "dial"
+      ]
+    },
+    {
+      "question": "dice",
+      "answer": [
+        "dice"
+      ]
+    },
+    {
+      "question": "diet",
+      "answer": [
+        "diet"
+      ]
+    },
+    {
+      "question": "dike",
+      "answer": [
+        "dike"
+      ]
+    },
+    {
+      "question": "dime",
+      "answer": [
+        "dime"
+      ]
+    },
+    {
+      "question": "dine",
+      "answer": [
+        "dine"
+      ]
+    },
+    {
+      "question": "dire",
+      "answer": [
+        "dire"
+      ]
+    },
+    {
+      "question": "dirt",
+      "answer": [
+        "dirt"
+      ]
+    },
+    {
+      "question": "dish",
+      "answer": [
+        "dish"
+      ]
+    },
+    {
+      "question": "disk",
+      "answer": [
+        "disk"
+      ]
+    },
+    {
+      "question": "diva",
+      "answer": [
+        "diva"
+      ]
+    },
+    {
+      "question": "dive",
+      "answer": [
+        "dive"
+      ]
+    },
+    {
+      "question": "dock",
+      "answer": [
+        "dock"
+      ]
+    },
+    {
+      "question": "doll",
+      "answer": [
+        "doll"
+      ]
+    },
+    {
+      "question": "dome",
+      "answer": [
+        "dome"
+      ]
+    },
+    {
+      "question": "done",
+      "answer": [
+        "done"
+      ]
+    },
+    {
+      "question": "doom",
+      "answer": [
+        "doom"
+      ]
+    },
+    {
+      "question": "door",
+      "answer": [
+        "door"
+      ]
+    },
+    {
+      "question": "dope",
+      "answer": [
+        "dope"
+      ]
+    },
+    {
+      "question": "dose",
+      "answer": [
+        "dose"
+      ]
+    },
+    {
+      "question": "dour",
+      "answer": [
+        "dour"
+      ]
+    },
+    {
+      "question": "dove",
+      "answer": [
+        "dove"
+      ]
+    },
+    {
+      "question": "down",
+      "answer": [
+        "down"
+      ]
+    },
+    {
+      "question": "doze",
+      "answer": [
+        "doze"
+      ]
+    },
+    {
+      "question": "drab",
+      "answer": [
+        "drab"
+      ]
+    },
+    {
+      "question": "drag",
+      "answer": [
+        "drag"
+      ]
+    },
+    {
+      "question": "draw",
+      "answer": [
+        "draw"
+      ]
+    },
+    {
+      "question": "dray",
+      "answer": [
+        "dray"
+      ]
+    },
+    {
+      "question": "drip",
+      "answer": [
+        "drip"
+      ]
+    },
+    {
+      "question": "drop",
+      "answer": [
+        "drop"
+      ]
+    },
+    {
+      "question": "drug",
+      "answer": [
+        "drug"
+      ]
+    },
+    {
+      "question": "drum",
+      "answer": [
+        "drum"
+      ]
+    },
+    {
+      "question": "dual",
+      "answer": [
+        "dual"
+      ]
+    },
+    {
+      "question": "duck",
+      "answer": [
+        "duck"
+      ]
+    },
+    {
+      "question": "duct",
+      "answer": [
+        "duct"
+      ]
+    },
+    {
+      "question": "duel",
+      "answer": [
+        "duel"
+      ]
+    },
+    {
+      "question": "duet",
+      "answer": [
+        "duet"
+      ]
+    },
+    {
+      "question": "duke",
+      "answer": [
+        "duke"
+      ]
+    },
+    {
+      "question": "dull",
+      "answer": [
+        "dull"
+      ]
+    },
+    {
+      "question": "dumb",
+      "answer": [
+        "dumb"
+      ]
+    },
+    {
+      "question": "dump",
+      "answer": [
+        "dump"
+      ]
+    },
+    {
+      "question": "dune",
+      "answer": [
+        "dune"
+      ]
+    },
+    {
+      "question": "dung",
+      "answer": [
+        "dung"
+      ]
+    },
+    {
+      "question": "dusk",
+      "answer": [
+        "dusk"
+      ]
+    },
+    {
+      "question": "dust",
+      "answer": [
+        "dust"
+      ]
+    },
+    {
+      "question": "duty",
+      "answer": [
+        "duty"
+      ]
+    },
+    {
+      "question": "each",
+      "answer": [
+        "each"
+      ]
+    },
+    {
+      "question": "earl",
+      "answer": [
+        "earl"
+      ]
+    },
+    {
+      "question": "earn",
+      "answer": [
+        "earn"
+      ]
+    },
+    {
+      "question": "ease",
+      "answer": [
+        "ease"
+      ]
+    },
+    {
+      "question": "east",
+      "answer": [
+        "east"
+      ]
+    },
+    {
+      "question": "easy",
+      "answer": [
+        "easy"
+      ]
+    },
+    {
+      "question": "echo",
+      "answer": [
+        "echo"
+      ]
+    },
+    {
+      "question": "eddy",
+      "answer": [
+        "eddy"
+      ]
+    },
+    {
+      "question": "edge",
+      "answer": [
+        "edge"
+      ]
+    },
+    {
+      "question": "edit",
+      "answer": [
+        "edit"
+      ]
+    },
+    {
+      "question": "elan",
+      "answer": [
+        "elan"
+      ]
+    },
+    {
+      "question": "else",
+      "answer": [
+        "else"
+      ]
+    },
+    {
+      "question": "emit",
+      "answer": [
+        "emit"
+      ]
+    },
+    {
+      "question": "envy",
+      "answer": [
+        "envy"
+      ]
+    },
+    {
+      "question": "epic",
+      "answer": [
+        "epic"
+      ]
+    },
+    {
+      "question": "erst",
+      "answer": [
+        "erst"
+      ]
+    },
+    {
+      "question": "etch",
+      "answer": [
+        "etch"
+      ]
+    },
+    {
+      "question": "even",
+      "answer": [
+        "even"
+      ]
+    },
+    {
+      "question": "ever",
+      "answer": [
+        "ever"
+      ]
+    },
+    {
+      "question": "evil",
+      "answer": [
+        "evil"
+      ]
+    },
+    {
+      "question": "ewer",
+      "answer": [
+        "ewer"
+      ]
+    },
+    {
+      "question": "exit",
+      "answer": [
+        "exit"
+      ]
+    },
+    {
+      "question": "face",
+      "answer": [
+        "face"
+      ]
+    },
+    {
+      "question": "fact",
+      "answer": [
+        "fact"
+      ]
+    },
+    {
+      "question": "fade",
+      "answer": [
+        "fade"
+      ]
+    },
+    {
+      "question": "fail",
+      "answer": [
+        "fail"
+      ]
+    },
+    {
+      "question": "fair",
+      "answer": [
+        "fair"
+      ]
+    },
+    {
+      "question": "fake",
+      "answer": [
+        "fake"
+      ]
+    },
+    {
+      "question": "fall",
+      "answer": [
+        "fall"
+      ]
+    },
+    {
+      "question": "fame",
+      "answer": [
+        "fame"
+      ]
+    },
+    {
+      "question": "fare",
+      "answer": [
+        "fare"
+      ]
+    },
+    {
+      "question": "farm",
+      "answer": [
+        "farm"
+      ]
+    },
+    {
+      "question": "fast",
+      "answer": [
+        "fast"
+      ]
+    },
+    {
+      "question": "fate",
+      "answer": [
+        "fate"
+      ]
+    },
+    {
+      "question": "fawn",
+      "answer": [
+        "fawn"
+      ]
+    },
+    {
+      "question": "fear",
+      "answer": [
+        "fear"
+      ]
+    },
+    {
+      "question": "feat",
+      "answer": [
+        "feat"
+      ]
+    },
+    {
+      "question": "feed",
+      "answer": [
+        "feed"
+      ]
+    },
+    {
+      "question": "feel",
+      "answer": [
+        "feel"
+      ]
+    },
+    {
+      "question": "felt",
+      "answer": [
+        "felt"
+      ]
+    },
+    {
+      "question": "fern",
+      "answer": [
+        "fern"
+      ]
+    },
+    {
+      "question": "feud",
+      "answer": [
+        "feud"
+      ]
+    },
+    {
+      "question": "fiat",
+      "answer": [
+        "fiat"
+      ]
+    },
+    {
+      "question": "file",
+      "answer": [
+        "file"
+      ]
+    },
+    {
+      "question": "fill",
+      "answer": [
+        "fill"
+      ]
+    },
+    {
+      "question": "film",
+      "answer": [
+        "film"
+      ]
+    },
+    {
+      "question": "find",
+      "answer": [
+        "find"
+      ]
+    },
+    {
+      "question": "fine",
+      "answer": [
+        "fine"
+      ]
+    },
+    {
+      "question": "fire",
+      "answer": [
+        "fire"
+      ]
+    },
+    {
+      "question": "firm",
+      "answer": [
+        "firm"
+      ]
+    },
+    {
+      "question": "fish",
+      "answer": [
+        "fish"
+      ]
+    },
+    {
+      "question": "fist",
+      "answer": [
+        "fist"
+      ]
+    },
+    {
+      "question": "five",
+      "answer": [
+        "five"
+      ]
+    },
+    {
+      "question": "flag",
+      "answer": [
+        "flag"
+      ]
+    },
+    {
+      "question": "flap",
+      "answer": [
+        "flap"
+      ]
+    },
+    {
+      "question": "flat",
+      "answer": [
+        "flat"
+      ]
+    },
+    {
+      "question": "flaw",
+      "answer": [
+        "flaw"
+      ]
+    },
+    {
+      "question": "flea",
+      "answer": [
+        "flea"
+      ]
+    },
+    {
+      "question": "flee",
+      "answer": [
+        "flee"
+      ]
+    },
+    {
+      "question": "flex",
+      "answer": [
+        "flex"
+      ]
+    },
+    {
+      "question": "flip",
+      "answer": [
+        "flip"
+      ]
+    },
+    {
+      "question": "flit",
+      "answer": [
+        "flit"
+      ]
+    },
+    {
+      "question": "flog",
+      "answer": [
+        "flog"
+      ]
+    },
+    {
+      "question": "flop",
+      "answer": [
+        "flop"
+      ]
+    },
+    {
+      "question": "flow",
+      "answer": [
+        "flow"
+      ]
+    },
+    {
+      "question": "flue",
+      "answer": [
+        "flue"
+      ]
+    },
+    {
+      "question": "flux",
+      "answer": [
+        "flux"
+      ]
+    },
+    {
+      "question": "foal",
+      "answer": [
+        "foal"
+      ]
+    },
+    {
+      "question": "foam",
+      "answer": [
+        "foam"
+      ]
+    },
+    {
+      "question": "fold",
+      "answer": [
+        "fold"
+      ]
+    },
+    {
+      "question": "folk",
+      "answer": [
+        "folk"
+      ]
+    },
+    {
+      "question": "fond",
+      "answer": [
+        "fond"
+      ]
+    },
+    {
+      "question": "food",
+      "answer": [
+        "food"
+      ]
+    },
+    {
+      "question": "fool",
+      "answer": [
+        "fool"
+      ]
+    },
+    {
+      "question": "foot",
+      "answer": [
+        "foot"
+      ]
+    },
+    {
+      "question": "fore",
+      "answer": [
+        "fore"
+      ]
+    },
+    {
+      "question": "fork",
+      "answer": [
+        "fork"
+      ]
+    },
+    {
+      "question": "form",
+      "answer": [
+        "form"
+      ]
+    },
+    {
+      "question": "fort",
+      "answer": [
+        "fort"
+      ]
+    },
+    {
+      "question": "foul",
+      "answer": [
+        "foul"
+      ]
+    },
+    {
+      "question": "four",
+      "answer": [
+        "four"
+      ]
+    },
+    {
+      "question": "fowl",
+      "answer": [
+        "fowl"
+      ]
+    },
+    {
+      "question": "fray",
+      "answer": [
+        "fray"
+      ]
+    },
+    {
+      "question": "free",
+      "answer": [
+        "free"
+      ]
+    },
+    {
+      "question": "fret",
+      "answer": [
+        "fret"
+      ]
+    },
+    {
+      "question": "frog",
+      "answer": [
+        "frog"
+      ]
+    },
+    {
+      "question": "from",
+      "answer": [
+        "from"
+      ]
+    },
+    {
+      "question": "fuel",
+      "answer": [
+        "fuel"
+      ]
+    },
+    {
+      "question": "full",
+      "answer": [
+        "full"
+      ]
+    },
+    {
+      "question": "fume",
+      "answer": [
+        "fume"
+      ]
+    },
+    {
+      "question": "fund",
+      "answer": [
+        "fund"
+      ]
+    },
+    {
+      "question": "funk",
+      "answer": [
+        "funk"
+      ]
+    },
+    {
+      "question": "fury",
+      "answer": [
+        "fury"
+      ]
+    },
+    {
+      "question": "fuse",
+      "answer": [
+        "fuse"
+      ]
+    },
+    {
+      "question": "fuss",
+      "answer": [
+        "fuss"
+      ]
+    },
+    {
+      "question": "gain",
+      "answer": [
+        "gain"
+      ]
+    },
+    {
+      "question": "gala",
+      "answer": [
+        "gala"
+      ]
+    },
+    {
+      "question": "gall",
+      "answer": [
+        "gall"
+      ]
+    },
+    {
+      "question": "game",
+      "answer": [
+        "game"
+      ]
+    },
+    {
+      "question": "gang",
+      "answer": [
+        "gang"
+      ]
+    },
+    {
+      "question": "gaol",
+      "answer": [
+        "gaol"
+      ]
+    },
+    {
+      "question": "gape",
+      "answer": [
+        "gape"
+      ]
+    },
+    {
+      "question": "garb",
+      "answer": [
+        "garb"
+      ]
+    },
+    {
+      "question": "gasp",
+      "answer": [
+        "gasp"
+      ]
+    },
+    {
+      "question": "gate",
+      "answer": [
+        "gate"
+      ]
+    },
+    {
+      "question": "gaze",
+      "answer": [
+        "gaze"
+      ]
+    },
+    {
+      "question": "gear",
+      "answer": [
+        "gear"
+      ]
+    },
+    {
+      "question": "gene",
+      "answer": [
+        "gene"
+      ]
+    },
+    {
+      "question": "germ",
+      "answer": [
+        "germ"
+      ]
+    },
+    {
+      "question": "gift",
+      "answer": [
+        "gift"
+      ]
+    },
+    {
+      "question": "gild",
+      "answer": [
+        "gild"
+      ]
+    },
+    {
+      "question": "gill",
+      "answer": [
+        "gill"
+      ]
+    },
+    {
+      "question": "gilt",
+      "answer": [
+        "gilt"
+      ]
+    },
+    {
+      "question": "gird",
+      "answer": [
+        "gird"
+      ]
+    },
+    {
+      "question": "girl",
+      "answer": [
+        "girl"
+      ]
+    },
+    {
+      "question": "give",
+      "answer": [
+        "give"
+      ]
+    },
+    {
+      "question": "glad",
+      "answer": [
+        "glad"
+      ]
+    },
+    {
+      "question": "glee",
+      "answer": [
+        "glee"
+      ]
+    },
+    {
+      "question": "glib",
+      "answer": [
+        "glib"
+      ]
+    },
+    {
+      "question": "glow",
+      "answer": [
+        "glow"
+      ]
+    },
+    {
+      "question": "glue",
+      "answer": [
+        "glue"
+      ]
+    },
+    {
+      "question": "glum",
+      "answer": [
+        "glum"
+      ]
+    },
+    {
+      "question": "glut",
+      "answer": [
+        "glut"
+      ]
+    },
+    {
+      "question": "gnaw",
+      "answer": [
+        "gnaw"
+      ]
+    },
+    {
+      "question": "goad",
+      "answer": [
+        "goad"
+      ]
+    },
+    {
+      "question": "goal",
+      "answer": [
+        "goal"
+      ]
+    },
+    {
+      "question": "goat",
+      "answer": [
+        "goat"
+      ]
+    },
+    {
+      "question": "gold",
+      "answer": [
+        "gold"
+      ]
+    },
+    {
+      "question": "golf",
+      "answer": [
+        "golf"
+      ]
+    },
+    {
+      "question": "gone",
+      "answer": [
+        "gone"
+      ]
+    },
+    {
+      "question": "good",
+      "answer": [
+        "good"
+      ]
+    },
+    {
+      "question": "gory",
+      "answer": [
+        "gory"
+      ]
+    },
+    {
+      "question": "gown",
+      "answer": [
+        "gown"
+      ]
+    },
+    {
+      "question": "grab",
+      "answer": [
+        "grab"
+      ]
+    },
+    {
+      "question": "gram",
+      "answer": [
+        "gram"
+      ]
+    },
+    {
+      "question": "gray",
+      "answer": [
+        "gray"
+      ]
+    },
+    {
+      "question": "grid",
+      "answer": [
+        "grid"
+      ]
+    },
+    {
+      "question": "grim",
+      "answer": [
+        "grim"
+      ]
+    },
+    {
+      "question": "grin",
+      "answer": [
+        "grin"
+      ]
+    },
+    {
+      "question": "grip",
+      "answer": [
+        "grip"
+      ]
+    },
+    {
+      "question": "grit",
+      "answer": [
+        "grit"
+      ]
+    },
+    {
+      "question": "grow",
+      "answer": [
+        "grow"
+      ]
+    },
+    {
+      "question": "gulf",
+      "answer": [
+        "gulf"
+      ]
+    },
+    {
+      "question": "gull",
+      "answer": [
+        "gull"
+      ]
+    },
+    {
+      "question": "gulp",
+      "answer": [
+        "gulp"
+      ]
+    },
+    {
+      "question": "gust",
+      "answer": [
+        "gust"
+      ]
+    },
+    {
+      "question": "hack",
+      "answer": [
+        "hack"
+      ]
+    },
+    {
+      "question": "hail",
+      "answer": [
+        "hail"
+      ]
+    },
+    {
+      "question": "hair",
+      "answer": [
+        "hair"
+      ]
+    },
+    {
+      "question": "hale",
+      "answer": [
+        "hale"
+      ]
+    },
+    {
+      "question": "half",
+      "answer": [
+        "half"
+      ]
+    },
+    {
+      "question": "hall",
+      "answer": [
+        "hall"
+      ]
+    },
+    {
+      "question": "halo",
+      "answer": [
+        "halo"
+      ]
+    },
+    {
+      "question": "halt",
+      "answer": [
+        "halt"
+      ]
+    },
+    {
+      "question": "hand",
+      "answer": [
+        "hand"
+      ]
+    },
+    {
+      "question": "hang",
+      "answer": [
+        "hang"
+      ]
+    },
+    {
+      "question": "hard",
+      "answer": [
+        "hard"
+      ]
+    },
+    {
+      "question": "hare",
+      "answer": [
+        "hare"
+      ]
+    },
+    {
+      "question": "hark",
+      "answer": [
+        "hark"
+      ]
+    },
+    {
+      "question": "harm",
+      "answer": [
+        "harm"
+      ]
+    },
+    {
+      "question": "harp",
+      "answer": [
+        "harp"
+      ]
+    },
+    {
+      "question": "hate",
+      "answer": [
+        "hate"
+      ]
+    },
+    {
+      "question": "haul",
+      "answer": [
+        "haul"
+      ]
+    },
+    {
+      "question": "have",
+      "answer": [
+        "have"
+      ]
+    },
+    {
+      "question": "hawk",
+      "answer": [
+        "hawk"
+      ]
+    },
+    {
+      "question": "haze",
+      "answer": [
+        "haze"
+      ]
+    },
+    {
+      "question": "hazy",
+      "answer": [
+        "hazy"
+      ]
+    },
+    {
+      "question": "head",
+      "answer": [
+        "head"
+      ]
+    },
+    {
+      "question": "heal",
+      "answer": [
+        "heal"
+      ]
+    },
+    {
+      "question": "heap",
+      "answer": [
+        "heap"
+      ]
+    },
+    {
+      "question": "hear",
+      "answer": [
+        "hear"
+      ]
+    },
+    {
+      "question": "heat",
+      "answer": [
+        "heat"
+      ]
+    },
+    {
+      "question": "heed",
+      "answer": [
+        "heed"
+      ]
+    },
+    {
+      "question": "heel",
+      "answer": [
+        "heel"
+      ]
+    },
+    {
+      "question": "heir",
+      "answer": [
+        "heir"
+      ]
+    },
+    {
+      "question": "hell",
+      "answer": [
+        "hell"
+      ]
+    },
+    {
+      "question": "helm",
+      "answer": [
+        "helm"
+      ]
+    },
+    {
+      "question": "help",
+      "answer": [
+        "help"
+      ]
+    },
+    {
+      "question": "herb",
+      "answer": [
+        "herb"
+      ]
+    },
+    {
+      "question": "herd",
+      "answer": [
+        "herd"
+      ]
+    },
+    {
+      "question": "here",
+      "answer": [
+        "here"
+      ]
+    },
+    {
+      "question": "hero",
+      "answer": [
+        "hero"
+      ]
+    },
+    {
+      "question": "hers",
+      "answer": [
+        "hers"
+      ]
+    },
+    {
+      "question": "hide",
+      "answer": [
+        "hide"
+      ]
+    },
+    {
+      "question": "high",
+      "answer": [
+        "high"
+      ]
+    },
+    {
+      "question": "hike",
+      "answer": [
+        "hike"
+      ]
+    },
+    {
+      "question": "hill",
+      "answer": [
+        "hill"
+      ]
+    },
+    {
+      "question": "hind",
+      "answer": [
+        "hind"
+      ]
+    },
+    {
+      "question": "hint",
+      "answer": [
+        "hint"
+      ]
+    },
+    {
+      "question": "hire",
+      "answer": [
+        "hire"
+      ]
+    },
+    {
+      "question": "hiss",
+      "answer": [
+        "hiss"
+      ]
+    },
+    {
+      "question": "hive",
+      "answer": [
+        "hive"
+      ]
+    },
+    {
+      "question": "hoax",
+      "answer": [
+        "hoax"
+      ]
+    },
+    {
+      "question": "hold",
+      "answer": [
+        "hold"
+      ]
+    },
+    {
+      "question": "hole",
+      "answer": [
+        "hole"
+      ]
+    },
+    {
+      "question": "holy",
+      "answer": [
+        "holy"
+      ]
+    },
+    {
+      "question": "home",
+      "answer": [
+        "home"
+      ]
+    },
+    {
+      "question": "hone",
+      "answer": [
+        "hone"
+      ]
+    },
+    {
+      "question": "honk",
+      "answer": [
+        "honk"
+      ]
+    },
+    {
+      "question": "hood",
+      "answer": [
+        "hood"
+      ]
+    },
+    {
+      "question": "hoof",
+      "answer": [
+        "hoof"
+      ]
+    },
+    {
+      "question": "hook",
+      "answer": [
+        "hook"
+      ]
+    },
+    {
+      "question": "hoot",
+      "answer": [
+        "hoot"
+      ]
+    },
+    {
+      "question": "hope",
+      "answer": [
+        "hope"
+      ]
+    },
+    {
+      "question": "horn",
+      "answer": [
+        "horn"
+      ]
+    },
+    {
+      "question": "hose",
+      "answer": [
+        "hose"
+      ]
+    },
+    {
+      "question": "host",
+      "answer": [
+        "host"
+      ]
+    },
+    {
+      "question": "hour",
+      "answer": [
+        "hour"
+      ]
+    },
+    {
+      "question": "howl",
+      "answer": [
+        "howl"
+      ]
+    },
+    {
+      "question": "huge",
+      "answer": [
+        "huge"
+      ]
+    },
+    {
+      "question": "hula",
+      "answer": [
+        "hula"
+      ]
+    },
+    {
+      "question": "hulk",
+      "answer": [
+        "hulk"
+      ]
+    },
+    {
+      "question": "hull",
+      "answer": [
+        "hull"
+      ]
+    },
+    {
+      "question": "hump",
+      "answer": [
+        "hump"
+      ]
+    },
+    {
+      "question": "hunt",
+      "answer": [
+        "hunt"
+      ]
+    },
+    {
+      "question": "hurl",
+      "answer": [
+        "hurl"
+      ]
+    },
+    {
+      "question": "hurt",
+      "answer": [
+        "hurt"
+      ]
+    },
+    {
+      "question": "hush",
+      "answer": [
+        "hush"
+      ]
+    },
+    {
+      "question": "husk",
+      "answer": [
+        "husk"
+      ]
+    },
+    {
+      "question": "hymn",
+      "answer": [
+        "hymn"
+      ]
+    },
+    {
+      "question": "hype",
+      "answer": [
+        "hype"
+      ]
+    },
+    {
+      "question": "icon",
+      "answer": [
+        "icon"
+      ]
+    },
+    {
+      "question": "idea",
+      "answer": [
+        "idea"
+      ]
+    },
+    {
+      "question": "idem",
+      "answer": [
+        "idem"
+      ]
+    },
+    {
+      "question": "ides",
+      "answer": [
+        "ides"
+      ]
+    },
+    {
+      "question": "idle",
+      "answer": [
+        "idle"
+      ]
+    },
+    {
+      "question": "idly",
+      "answer": [
+        "idly"
+      ]
+    },
+    {
+      "question": "idol",
+      "answer": [
+        "idol"
+      ]
+    },
+    {
+      "question": "inch",
+      "answer": [
+        "inch"
+      ]
+    },
+    {
+      "question": "into",
+      "answer": [
+        "into"
+      ]
+    },
+    {
+      "question": "iris",
+      "answer": [
+        "iris"
+      ]
+    },
+    {
+      "question": "iron",
+      "answer": [
+        "iron"
+      ]
+    },
+    {
+      "question": "isle",
+      "answer": [
+        "isle"
+      ]
+    },
+    {
+      "question": "itch",
+      "answer": [
+        "itch"
+      ]
+    },
+    {
+      "question": "item",
+      "answer": [
+        "item"
+      ]
+    },
+    {
+      "question": "jack",
+      "answer": [
+        "jack"
+      ]
+    },
+    {
+      "question": "jail",
+      "answer": [
+        "jail"
+      ]
+    },
+    {
+      "question": "jazz",
+      "answer": [
+        "jazz"
+      ]
+    },
+    {
+      "question": "jeep",
+      "answer": [
+        "jeep"
+      ]
+    },
+    {
+      "question": "jeer",
+      "answer": [
+        "jeer"
+      ]
+    },
+    {
+      "question": "jerk",
+      "answer": [
+        "jerk"
+      ]
+    },
+    {
+      "question": "jest",
+      "answer": [
+        "jest"
+      ]
+    },
+    {
+      "question": "join",
+      "answer": [
+        "join"
+      ]
+    },
+    {
+      "question": "joke",
+      "answer": [
+        "joke"
+      ]
+    },
+    {
+      "question": "jolt",
+      "answer": [
+        "jolt"
+      ]
+    },
+    {
+      "question": "july",
+      "answer": [
+        "july"
+      ]
+    },
+    {
+      "question": "jump",
+      "answer": [
+        "jump"
+      ]
+    },
+    {
+      "question": "june",
+      "answer": [
+        "june"
+      ]
+    },
+    {
+      "question": "junk",
+      "answer": [
+        "junk"
+      ]
+    },
+    {
+      "question": "jury",
+      "answer": [
+        "jury"
+      ]
+    },
+    {
+      "question": "just",
+      "answer": [
+        "just"
+      ]
+    },
+    {
+      "question": "kale",
+      "answer": [
+        "kale"
+      ]
+    },
+    {
+      "question": "keel",
+      "answer": [
+        "keel"
+      ]
+    },
+    {
+      "question": "keen",
+      "answer": [
+        "keen"
+      ]
+    },
+    {
+      "question": "keep",
+      "answer": [
+        "keep"
+      ]
+    },
+    {
+      "question": "kepi",
+      "answer": [
+        "kepi"
+      ]
+    },
+    {
+      "question": "kick",
+      "answer": [
+        "kick"
+      ]
+    },
+    {
+      "question": "kill",
+      "answer": [
+        "kill"
+      ]
+    },
+    {
+      "question": "kiln",
+      "answer": [
+        "kiln"
+      ]
+    },
+    {
+      "question": "kilo",
+      "answer": [
+        "kilo"
+      ]
+    },
+    {
+      "question": "kind",
+      "answer": [
+        "kind"
+      ]
+    },
+    {
+      "question": "king",
+      "answer": [
+        "king"
+      ]
+    },
+    {
+      "question": "kiss",
+      "answer": [
+        "kiss"
+      ]
+    },
+    {
+      "question": "kite",
+      "answer": [
+        "kite"
+      ]
+    },
+    {
+      "question": "kiwi",
+      "answer": [
+        "kiwi"
+      ]
+    },
+    {
+      "question": "knee",
+      "answer": [
+        "knee"
+      ]
+    },
+    {
+      "question": "knit",
+      "answer": [
+        "knit"
+      ]
+    },
+    {
+      "question": "knob",
+      "answer": [
+        "knob"
+      ]
+    },
+    {
+      "question": "knot",
+      "answer": [
+        "knot"
+      ]
+    },
+    {
+      "question": "know",
+      "answer": [
+        "know"
+      ]
+    },
+    {
+      "question": "lace",
+      "answer": [
+        "lace"
+      ]
+    },
+    {
+      "question": "lack",
+      "answer": [
+        "lack"
+      ]
+    },
+    {
+      "question": "lady",
+      "answer": [
+        "lady"
+      ]
+    },
+    {
+      "question": "laid",
+      "answer": [
+        "laid"
+      ]
+    },
+    {
+      "question": "lain",
+      "answer": [
+        "lain"
+      ]
+    },
+    {
+      "question": "lair",
+      "answer": [
+        "lair"
+      ]
+    },
+    {
+      "question": "lake",
+      "answer": [
+        "lake"
+      ]
+    },
+    {
+      "question": "lama",
+      "answer": [
+        "lama"
+      ]
+    },
+    {
+      "question": "lamb",
+      "answer": [
+        "lamb"
+      ]
+    },
+    {
+      "question": "lame",
+      "answer": [
+        "lame"
+      ]
+    },
+    {
+      "question": "lamp",
+      "answer": [
+        "lamp"
+      ]
+    },
+    {
+      "question": "land",
+      "answer": [
+        "land"
+      ]
+    },
+    {
+      "question": "lane",
+      "answer": [
+        "lane"
+      ]
+    },
+    {
+      "question": "lark",
+      "answer": [
+        "lark"
+      ]
+    },
+    {
+      "question": "lash",
+      "answer": [
+        "lash"
+      ]
+    },
+    {
+      "question": "last",
+      "answer": [
+        "last"
+      ]
+    },
+    {
+      "question": "late",
+      "answer": [
+        "late"
+      ]
+    },
+    {
+      "question": "lath",
+      "answer": [
+        "lath"
+      ]
+    },
+    {
+      "question": "laud",
+      "answer": [
+        "laud"
+      ]
+    },
+    {
+      "question": "lava",
+      "answer": [
+        "lava"
+      ]
+    },
+    {
+      "question": "lave",
+      "answer": [
+        "lave"
+      ]
+    },
+    {
+      "question": "lawn",
+      "answer": [
+        "lawn"
+      ]
+    },
+    {
+      "question": "laze",
+      "answer": [
+        "laze"
+      ]
+    },
+    {
+      "question": "lazy",
+      "answer": [
+        "lazy"
+      ]
+    },
+    {
+      "question": "lead",
+      "answer": [
+        "lead"
+      ]
+    },
+    {
+      "question": "leaf",
+      "answer": [
+        "leaf"
+      ]
+    },
+    {
+      "question": "leak",
+      "answer": [
+        "leak"
+      ]
+    },
+    {
+      "question": "lean",
+      "answer": [
+        "lean"
+      ]
+    },
+    {
+      "question": "leap",
+      "answer": [
+        "leap"
+      ]
+    },
+    {
+      "question": "leek",
+      "answer": [
+        "leek"
+      ]
+    },
+    {
+      "question": "leer",
+      "answer": [
+        "leer"
+      ]
+    },
+    {
+      "question": "lees",
+      "answer": [
+        "lees"
+      ]
+    },
+    {
+      "question": "left",
+      "answer": [
+        "left"
+      ]
+    },
+    {
+      "question": "lend",
+      "answer": [
+        "lend"
+      ]
+    },
+    {
+      "question": "lens",
+      "answer": [
+        "lens"
+      ]
+    },
+    {
+      "question": "less",
+      "answer": [
+        "less"
+      ]
+    },
+    {
+      "question": "lest",
+      "answer": [
+        "lest"
+      ]
+    },
+    {
+      "question": "levy",
+      "answer": [
+        "levy"
+      ]
+    },
+    {
+      "question": "lewd",
+      "answer": [
+        "lewd"
+      ]
+    },
+    {
+      "question": "liar",
+      "answer": [
+        "liar"
+      ]
+    },
+    {
+      "question": "lick",
+      "answer": [
+        "lick"
+      ]
+    },
+    {
+      "question": "lido",
+      "answer": [
+        "lido"
+      ]
+    },
+    {
+      "question": "lied",
+      "answer": [
+        "lied"
+      ]
+    },
+    {
+      "question": "lief",
+      "answer": [
+        "lief"
+      ]
+    },
+    {
+      "question": "lien",
+      "answer": [
+        "lien"
+      ]
+    },
+    {
+      "question": "life",
+      "answer": [
+        "life"
+      ]
+    },
+    {
+      "question": "lift",
+      "answer": [
+        "lift"
+      ]
+    },
+    {
+      "question": "like",
+      "answer": [
+        "like"
+      ]
+    },
+    {
+      "question": "lilt",
+      "answer": [
+        "lilt"
+      ]
+    },
+    {
+      "question": "lily",
+      "answer": [
+        "lily"
+      ]
+    },
+    {
+      "question": "limb",
+      "answer": [
+        "limb"
+      ]
+    },
+    {
+      "question": "lime",
+      "answer": [
+        "lime"
+      ]
+    },
+    {
+      "question": "limp",
+      "answer": [
+        "limp"
+      ]
+    },
+    {
+      "question": "line",
+      "answer": [
+        "line"
+      ]
+    },
+    {
+      "question": "link",
+      "answer": [
+        "link"
+      ]
+    },
+    {
+      "question": "lion",
+      "answer": [
+        "lion"
+      ]
+    },
+    {
+      "question": "lira",
+      "answer": [
+        "lira"
+      ]
+    },
+    {
+      "question": "lisp",
+      "answer": [
+        "lisp"
+      ]
+    },
+    {
+      "question": "list",
+      "answer": [
+        "list"
+      ]
+    },
+    {
+      "question": "live",
+      "answer": [
+        "live"
+      ]
+    },
+    {
+      "question": "load",
+      "answer": [
+        "load"
+      ]
+    },
+    {
+      "question": "loaf",
+      "answer": [
+        "loaf"
+      ]
+    },
+    {
+      "question": "loan",
+      "answer": [
+        "loan"
+      ]
+    },
+    {
+      "question": "lobe",
+      "answer": [
+        "lobe"
+      ]
+    },
+    {
+      "question": "lock",
+      "answer": [
+        "lock"
+      ]
+    },
+    {
+      "question": "loft",
+      "answer": [
+        "loft"
+      ]
+    },
+    {
+      "question": "logo",
+      "answer": [
+        "logo"
+      ]
+    },
+    {
+      "question": "loin",
+      "answer": [
+        "loin"
+      ]
+    },
+    {
+      "question": "lone",
+      "answer": [
+        "lone"
+      ]
+    },
+    {
+      "question": "long",
+      "answer": [
+        "long"
+      ]
+    },
+    {
+      "question": "look",
+      "answer": [
+        "look"
+      ]
+    },
+    {
+      "question": "loom",
+      "answer": [
+        "loom"
+      ]
+    },
+    {
+      "question": "loop",
+      "answer": [
+        "loop"
+      ]
+    },
+    {
+      "question": "loot",
+      "answer": [
+        "loot"
+      ]
+    },
+    {
+      "question": "lope",
+      "answer": [
+        "lope"
+      ]
+    },
+    {
+      "question": "lord",
+      "answer": [
+        "lord"
+      ]
+    },
+    {
+      "question": "lore",
+      "answer": [
+        "lore"
+      ]
+    },
+    {
+      "question": "lose",
+      "answer": [
+        "lose"
+      ]
+    },
+    {
+      "question": "loss",
+      "answer": [
+        "loss"
+      ]
+    },
+    {
+      "question": "lost",
+      "answer": [
+        "lost"
+      ]
+    },
+    {
+      "question": "loud",
+      "answer": [
+        "loud"
+      ]
+    },
+    {
+      "question": "love",
+      "answer": [
+        "love"
+      ]
+    },
+    {
+      "question": "luck",
+      "answer": [
+        "luck"
+      ]
+    },
+    {
+      "question": "lull",
+      "answer": [
+        "lull"
+      ]
+    },
+    {
+      "question": "lump",
+      "answer": [
+        "lump"
+      ]
+    },
+    {
+      "question": "lung",
+      "answer": [
+        "lung"
+      ]
+    },
+    {
+      "question": "lure",
+      "answer": [
+        "lure"
+      ]
+    },
+    {
+      "question": "lush",
+      "answer": [
+        "lush"
+      ]
+    },
+    {
+      "question": "lynx",
+      "answer": [
+        "lynx"
+      ]
+    },
+    {
+      "question": "lyre",
+      "answer": [
+        "lyre"
+      ]
+    },
+    {
+      "question": "maid",
+      "answer": [
+        "maid"
+      ]
+    },
+    {
+      "question": "mail",
+      "answer": [
+        "mail"
+      ]
+    },
+    {
+      "question": "main",
+      "answer": [
+        "main"
+      ]
+    },
+    {
+      "question": "make",
+      "answer": [
+        "make"
+      ]
+    },
+    {
+      "question": "male",
+      "answer": [
+        "male"
+      ]
+    },
+    {
+      "question": "malt",
+      "answer": [
+        "malt"
+      ]
+    },
+    {
+      "question": "mama",
+      "answer": [
+        "mama"
+      ]
+    },
+    {
+      "question": "mane",
+      "answer": [
+        "mane"
+      ]
+    },
+    {
+      "question": "many",
+      "answer": [
+        "many"
+      ]
+    },
+    {
+      "question": "mare",
+      "answer": [
+        "mare"
+      ]
+    },
+    {
+      "question": "mark",
+      "answer": [
+        "mark"
+      ]
+    },
+    {
+      "question": "mart",
+      "answer": [
+        "mart"
+      ]
+    },
+    {
+      "question": "mash",
+      "answer": [
+        "mash"
+      ]
+    },
+    {
+      "question": "mask",
+      "answer": [
+        "mask"
+      ]
+    },
+    {
+      "question": "mass",
+      "answer": [
+        "mass"
+      ]
+    },
+    {
+      "question": "mast",
+      "answer": [
+        "mast"
+      ]
+    },
+    {
+      "question": "mate",
+      "answer": [
+        "mate"
+      ]
+    },
+    {
+      "question": "meal",
+      "answer": [
+        "meal"
+      ]
+    },
+    {
+      "question": "mean",
+      "answer": [
+        "mean"
+      ]
+    },
+    {
+      "question": "meat",
+      "answer": [
+        "meat"
+      ]
+    },
+    {
+      "question": "meed",
+      "answer": [
+        "meed"
+      ]
+    },
+    {
+      "question": "meek",
+      "answer": [
+        "meek"
+      ]
+    },
+    {
+      "question": "meet",
+      "answer": [
+        "meet"
+      ]
+    },
+    {
+      "question": "melt",
+      "answer": [
+        "melt"
+      ]
+    },
+    {
+      "question": "memo",
+      "answer": [
+        "memo"
+      ]
+    },
+    {
+      "question": "mend",
+      "answer": [
+        "mend"
+      ]
+    },
+    {
+      "question": "menu",
+      "answer": [
+        "menu"
+      ]
+    },
+    {
+      "question": "mere",
+      "answer": [
+        "mere"
+      ]
+    },
+    {
+      "question": "mesa",
+      "answer": [
+        "mesa"
+      ]
+    },
+    {
+      "question": "mess",
+      "answer": [
+        "mess"
+      ]
+    },
+    {
+      "question": "mete",
+      "answer": [
+        "mete"
+      ]
+    },
+    {
+      "question": "mien",
+      "answer": [
+        "mien"
+      ]
+    },
+    {
+      "question": "mild",
+      "answer": [
+        "mild"
+      ]
+    },
+    {
+      "question": "mile",
+      "answer": [
+        "mile"
+      ]
+    },
+    {
+      "question": "milk",
+      "answer": [
+        "milk"
+      ]
+    },
+    {
+      "question": "mill",
+      "answer": [
+        "mill"
+      ]
+    },
+    {
+      "question": "mind",
+      "answer": [
+        "mind"
+      ]
+    },
+    {
+      "question": "mine",
+      "answer": [
+        "mine"
+      ]
+    },
+    {
+      "question": "mini",
+      "answer": [
+        "mini"
+      ]
+    },
+    {
+      "question": "miss",
+      "answer": [
+        "miss"
+      ]
+    },
+    {
+      "question": "mist",
+      "answer": [
+        "mist"
+      ]
+    },
+    {
+      "question": "mite",
+      "answer": [
+        "mite"
+      ]
+    },
+    {
+      "question": "moan",
+      "answer": [
+        "moan"
+      ]
+    },
+    {
+      "question": "moat",
+      "answer": [
+        "moat"
+      ]
+    },
+    {
+      "question": "mock",
+      "answer": [
+        "mock"
+      ]
+    },
+    {
+      "question": "mode",
+      "answer": [
+        "mode"
+      ]
+    },
+    {
+      "question": "mold",
+      "answer": [
+        "mold"
+      ]
+    },
+    {
+      "question": "mole",
+      "answer": [
+        "mole"
+      ]
+    },
+    {
+      "question": "monk",
+      "answer": [
+        "monk"
+      ]
+    },
+    {
+      "question": "mood",
+      "answer": [
+        "mood"
+      ]
+    },
+    {
+      "question": "moon",
+      "answer": [
+        "moon"
+      ]
+    },
+    {
+      "question": "moor",
+      "answer": [
+        "moor"
+      ]
+    },
+    {
+      "question": "moot",
+      "answer": [
+        "moot"
+      ]
+    },
+    {
+      "question": "mope",
+      "answer": [
+        "mope"
+      ]
+    },
+    {
+      "question": "more",
+      "answer": [
+        "more"
+      ]
+    },
+    {
+      "question": "morn",
+      "answer": [
+        "morn"
+      ]
+    },
+    {
+      "question": "moss",
+      "answer": [
+        "moss"
+      ]
+    },
+    {
+      "question": "most",
+      "answer": [
+        "most"
+      ]
+    },
+    {
+      "question": "mote",
+      "answer": [
+        "mote"
+      ]
+    },
+    {
+      "question": "move",
+      "answer": [
+        "move"
+      ]
+    },
+    {
+      "question": "much",
+      "answer": [
+        "much"
+      ]
+    },
+    {
+      "question": "muck",
+      "answer": [
+        "muck"
+      ]
+    },
+    {
+      "question": "mule",
+      "answer": [
+        "mule"
+      ]
+    },
+    {
+      "question": "mull",
+      "answer": [
+        "mull"
+      ]
+    },
+    {
+      "question": "muse",
+      "answer": [
+        "muse"
+      ]
+    },
+    {
+      "question": "must",
+      "answer": [
+        "must"
+      ]
+    },
+    {
+      "question": "mute",
+      "answer": [
+        "mute"
+      ]
+    },
+    {
+      "question": "myna",
+      "answer": [
+        "myna"
+      ]
+    },
+    {
+      "question": "myth",
+      "answer": [
+        "myth"
+      ]
+    },
+    {
+      "question": "nail",
+      "answer": [
+        "nail"
+      ]
+    },
+    {
+      "question": "name",
+      "answer": [
+        "name"
+      ]
+    },
+    {
+      "question": "nape",
+      "answer": [
+        "nape"
+      ]
+    },
+    {
+      "question": "nard",
+      "answer": [
+        "nard"
+      ]
+    },
+    {
+      "question": "nave",
+      "answer": [
+        "nave"
+      ]
+    },
+    {
+      "question": "navy",
+      "answer": [
+        "navy"
+      ]
+    },
+    {
+      "question": "neap",
+      "answer": [
+        "neap"
+      ]
+    },
+    {
+      "question": "near",
+      "answer": [
+        "near"
+      ]
+    },
+    {
+      "question": "neat",
+      "answer": [
+        "neat"
+      ]
+    },
+    {
+      "question": "neck",
+      "answer": [
+        "neck"
+      ]
+    },
+    {
+      "question": "need",
+      "answer": [
+        "need"
+      ]
+    },
+    {
+      "question": "neon",
+      "answer": [
+        "neon"
+      ]
+    },
+    {
+      "question": "nest",
+      "answer": [
+        "nest"
+      ]
+    },
+    {
+      "question": "news",
+      "answer": [
+        "news"
+      ]
+    },
+    {
+      "question": "next",
+      "answer": [
+        "next"
+      ]
+    },
+    {
+      "question": "nice",
+      "answer": [
+        "nice"
+      ]
+    },
+    {
+      "question": "nick",
+      "answer": [
+        "nick"
+      ]
+    },
+    {
+      "question": "nine",
+      "answer": [
+        "nine"
+      ]
+    },
+    {
+      "question": "node",
+      "answer": [
+        "node"
+      ]
+    },
+    {
+      "question": "noel",
+      "answer": [
+        "noel"
+      ]
+    },
+    {
+      "question": "none",
+      "answer": [
+        "none"
+      ]
+    },
+    {
+      "question": "nook",
+      "answer": [
+        "nook"
+      ]
+    },
+    {
+      "question": "noon",
+      "answer": [
+        "noon"
+      ]
+    },
+    {
+      "question": "norm",
+      "answer": [
+        "norm"
+      ]
+    },
+    {
+      "question": "nose",
+      "answer": [
+        "nose"
+      ]
+    },
+    {
+      "question": "note",
+      "answer": [
+        "note"
+      ]
+    },
+    {
+      "question": "noun",
+      "answer": [
+        "noun"
+      ]
+    },
+    {
+      "question": "null",
+      "answer": [
+        "null"
+      ]
+    },
+    {
+      "question": "numb",
+      "answer": [
+        "numb"
+      ]
+    },
+    {
+      "question": "nuts",
+      "answer": [
+        "nuts"
+      ]
+    },
+    {
+      "question": "oath",
+      "answer": [
+        "oath"
+      ]
+    },
+    {
+      "question": "obey",
+      "answer": [
+        "obey"
+      ]
+    },
+    {
+      "question": "odor",
+      "answer": [
+        "odor"
+      ]
+    },
+    {
+      "question": "oily",
+      "answer": [
+        "oily"
+      ]
+    },
+    {
+      "question": "omen",
+      "answer": [
+        "omen"
+      ]
+    },
+    {
+      "question": "omit",
+      "answer": [
+        "omit"
+      ]
+    },
+    {
+      "question": "once",
+      "answer": [
+        "once"
+      ]
+    },
+    {
+      "question": "only",
+      "answer": [
+        "only"
+      ]
+    },
+    {
+      "question": "onto",
+      "answer": [
+        "onto"
+      ]
+    },
+    {
+      "question": "onus",
+      "answer": [
+        "onus"
+      ]
+    },
+    {
+      "question": "ooze",
+      "answer": [
+        "ooze"
+      ]
+    },
+    {
+      "question": "open",
+      "answer": [
+        "open"
+      ]
+    },
+    {
+      "question": "opus",
+      "answer": [
+        "opus"
+      ]
+    },
+    {
+      "question": "oral",
+      "answer": [
+        "oral"
+      ]
+    },
+    {
+      "question": "ours",
+      "answer": [
+        "ours"
+      ]
+    },
+    {
+      "question": "oust",
+      "answer": [
+        "oust"
+      ]
+    },
+    {
+      "question": "oval",
+      "answer": [
+        "oval"
+      ]
+    },
+    {
+      "question": "oven",
+      "answer": [
+        "oven"
+      ]
+    },
+    {
+      "question": "over",
+      "answer": [
+        "over"
+      ]
+    },
+    {
+      "question": "pace",
+      "answer": [
+        "pace"
+      ]
+    },
+    {
+      "question": "pack",
+      "answer": [
+        "pack"
+      ]
+    },
+    {
+      "question": "pact",
+      "answer": [
+        "pact"
+      ]
+    },
+    {
+      "question": "page",
+      "answer": [
+        "page"
+      ]
+    },
+    {
+      "question": "paid",
+      "answer": [
+        "paid"
+      ]
+    },
+    {
+      "question": "pail",
+      "answer": [
+        "pail"
+      ]
+    },
+    {
+      "question": "pain",
+      "answer": [
+        "pain"
+      ]
+    },
+    {
+      "question": "pair",
+      "answer": [
+        "pair"
+      ]
+    },
+    {
+      "question": "pale",
+      "answer": [
+        "pale"
+      ]
+    },
+    {
+      "question": "pall",
+      "answer": [
+        "pall"
+      ]
+    },
+    {
+      "question": "palm",
+      "answer": [
+        "palm"
+      ]
+    },
+    {
+      "question": "pane",
+      "answer": [
+        "pane"
+      ]
+    },
+    {
+      "question": "pang",
+      "answer": [
+        "pang"
+      ]
+    },
+    {
+      "question": "pant",
+      "answer": [
+        "pant"
+      ]
+    },
+    {
+      "question": "papa",
+      "answer": [
+        "papa"
+      ]
+    },
+    {
+      "question": "pare",
+      "answer": [
+        "pare"
+      ]
+    },
+    {
+      "question": "park",
+      "answer": [
+        "park"
+      ]
+    },
+    {
+      "question": "part",
+      "answer": [
+        "part"
+      ]
+    },
+    {
+      "question": "pass",
+      "answer": [
+        "pass"
+      ]
+    },
+    {
+      "question": "past",
+      "answer": [
+        "past"
+      ]
+    },
+    {
+      "question": "pate",
+      "answer": [
+        "pate"
+      ]
+    },
+    {
+      "question": "path",
+      "answer": [
+        "path"
+      ]
+    },
+    {
+      "question": "pave",
+      "answer": [
+        "pave"
+      ]
+    },
+    {
+      "question": "pawn",
+      "answer": [
+        "pawn"
+      ]
+    },
+    {
+      "question": "peak",
+      "answer": [
+        "peak"
+      ]
+    },
+    {
+      "question": "peal",
+      "answer": [
+        "peal"
+      ]
+    },
+    {
+      "question": "pear",
+      "answer": [
+        "pear"
+      ]
+    },
+    {
+      "question": "peat",
+      "answer": [
+        "peat"
+      ]
+    },
+    {
+      "question": "peck",
+      "answer": [
+        "peck"
+      ]
+    },
+    {
+      "question": "peek",
+      "answer": [
+        "peek"
+      ]
+    },
+    {
+      "question": "peel",
+      "answer": [
+        "peel"
+      ]
+    },
+    {
+      "question": "peep",
+      "answer": [
+        "peep"
+      ]
+    },
+    {
+      "question": "peer",
+      "answer": [
+        "peer"
+      ]
+    },
+    {
+      "question": "pelt",
+      "answer": [
+        "pelt"
+      ]
+    },
+    {
+      "question": "peon",
+      "answer": [
+        "peon"
+      ]
+    },
+    {
+      "question": "perk",
+      "answer": [
+        "perk"
+      ]
+    },
+    {
+      "question": "pert",
+      "answer": [
+        "pert"
+      ]
+    },
+    {
+      "question": "peso",
+      "answer": [
+        "peso"
+      ]
+    },
+    {
+      "question": "pest",
+      "answer": [
+        "pest"
+      ]
+    },
+    {
+      "question": "pice",
+      "answer": [
+        "pice"
+      ]
+    },
+    {
+      "question": "pick",
+      "answer": [
+        "pick"
+      ]
+    },
+    {
+      "question": "pier",
+      "answer": [
+        "pier"
+      ]
+    },
+    {
+      "question": "pike",
+      "answer": [
+        "pike"
+      ]
+    },
+    {
+      "question": "pile",
+      "answer": [
+        "pile"
+      ]
+    },
+    {
+      "question": "pill",
+      "answer": [
+        "pill"
+      ]
+    },
+    {
+      "question": "pimp",
+      "answer": [
+        "pimp"
+      ]
+    },
+    {
+      "question": "pine",
+      "answer": [
+        "pine"
+      ]
+    },
+    {
+      "question": "pink",
+      "answer": [
+        "pink"
+      ]
+    },
+    {
+      "question": "pint",
+      "answer": [
+        "pint"
+      ]
+    },
+    {
+      "question": "pipe",
+      "answer": [
+        "pipe"
+      ]
+    },
+    {
+      "question": "piss",
+      "answer": [
+        "piss"
+      ]
+    },
+    {
+      "question": "pity",
+      "answer": [
+        "pity"
+      ]
+    },
+    {
+      "question": "plan",
+      "answer": [
+        "plan"
+      ]
+    },
+    {
+      "question": "play",
+      "answer": [
+        "play"
+      ]
+    },
+    {
+      "question": "plea",
+      "answer": [
+        "plea"
+      ]
+    },
+    {
+      "question": "plod",
+      "answer": [
+        "plod"
+      ]
+    },
+    {
+      "question": "plot",
+      "answer": [
+        "plot"
+      ]
+    },
+    {
+      "question": "plow",
+      "answer": [
+        "plow"
+      ]
+    },
+    {
+      "question": "plug",
+      "answer": [
+        "plug"
+      ]
+    },
+    {
+      "question": "plum",
+      "answer": [
+        "plum"
+      ]
+    },
+    {
+      "question": "plus",
+      "answer": [
+        "plus"
+      ]
+    },
+    {
+      "question": "poem",
+      "answer": [
+        "poem"
+      ]
+    },
+    {
+      "question": "poet",
+      "answer": [
+        "poet"
+      ]
+    },
+    {
+      "question": "poke",
+      "answer": [
+        "poke"
+      ]
+    },
+    {
+      "question": "pole",
+      "answer": [
+        "pole"
+      ]
+    },
+    {
+      "question": "poll",
+      "answer": [
+        "poll"
+      ]
+    },
+    {
+      "question": "polo",
+      "answer": [
+        "polo"
+      ]
+    },
+    {
+      "question": "pomp",
+      "answer": [
+        "pomp"
+      ]
+    },
+    {
+      "question": "pond",
+      "answer": [
+        "pond"
+      ]
+    },
+    {
+      "question": "pone",
+      "answer": [
+        "pone"
+      ]
+    },
+    {
+      "question": "pony",
+      "answer": [
+        "pony"
+      ]
+    },
+    {
+      "question": "pool",
+      "answer": [
+        "pool"
+      ]
+    },
+    {
+      "question": "poor",
+      "answer": [
+        "poor"
+      ]
+    },
+    {
+      "question": "pope",
+      "answer": [
+        "pope"
+      ]
+    },
+    {
+      "question": "pore",
+      "answer": [
+        "pore"
+      ]
+    },
+    {
+      "question": "pork",
+      "answer": [
+        "pork"
+      ]
+    },
+    {
+      "question": "port",
+      "answer": [
+        "port"
+      ]
+    },
+    {
+      "question": "pose",
+      "answer": [
+        "pose"
+      ]
+    },
+    {
+      "question": "posh",
+      "answer": [
+        "posh"
+      ]
+    },
+    {
+      "question": "post",
+      "answer": [
+        "post"
+      ]
+    },
+    {
+      "question": "pour",
+      "answer": [
+        "pour"
+      ]
+    },
+    {
+      "question": "pout",
+      "answer": [
+        "pout"
+      ]
+    },
+    {
+      "question": "pram",
+      "answer": [
+        "pram"
+      ]
+    },
+    {
+      "question": "pray",
+      "answer": [
+        "pray"
+      ]
+    },
+    {
+      "question": "prey",
+      "answer": [
+        "prey"
+      ]
+    },
+    {
+      "question": "prig",
+      "answer": [
+        "prig"
+      ]
+    },
+    {
+      "question": "prim",
+      "answer": [
+        "prim"
+      ]
+    },
+    {
+      "question": "prod",
+      "answer": [
+        "prod"
+      ]
+    },
+    {
+      "question": "prom",
+      "answer": [
+        "prom"
+      ]
+    },
+    {
+      "question": "prop",
+      "answer": [
+        "prop"
+      ]
+    },
+    {
+      "question": "puff",
+      "answer": [
+        "puff"
+      ]
+    },
+    {
+      "question": "pull",
+      "answer": [
+        "pull"
+      ]
+    },
+    {
+      "question": "pulp",
+      "answer": [
+        "pulp"
+      ]
+    },
+    {
+      "question": "pump",
+      "answer": [
+        "pump"
+      ]
+    },
+    {
+      "question": "punk",
+      "answer": [
+        "punk"
+      ]
+    },
+    {
+      "question": "pure",
+      "answer": [
+        "pure"
+      ]
+    },
+    {
+      "question": "purr",
+      "answer": [
+        "purr"
+      ]
+    },
+    {
+      "question": "push",
+      "answer": [
+        "push"
+      ]
+    },
+    {
+      "question": "putt",
+      "answer": [
+        "putt"
+      ]
+    },
+    {
+      "question": "pyre",
+      "answer": [
+        "pyre"
+      ]
+    },
+    {
+      "question": "quay",
+      "answer": [
+        "quay"
+      ]
+    },
+    {
+      "question": "quid",
+      "answer": [
+        "quid"
+      ]
+    },
+    {
+      "question": "quip",
+      "answer": [
+        "quip"
+      ]
+    },
+    {
+      "question": "quit",
+      "answer": [
+        "quit"
+      ]
+    },
+    {
+      "question": "quiz",
+      "answer": [
+        "quiz"
+      ]
+    },
+    {
+      "question": "race",
+      "answer": [
+        "race"
+      ]
+    },
+    {
+      "question": "rack",
+      "answer": [
+        "rack"
+      ]
+    },
+    {
+      "question": "rage",
+      "answer": [
+        "rage"
+      ]
+    },
+    {
+      "question": "raid",
+      "answer": [
+        "raid"
+      ]
+    },
+    {
+      "question": "rail",
+      "answer": [
+        "rail"
+      ]
+    },
+    {
+      "question": "rain",
+      "answer": [
+        "rain"
+      ]
+    },
+    {
+      "question": "rake",
+      "answer": [
+        "rake"
+      ]
+    },
+    {
+      "question": "ramp",
+      "answer": [
+        "ramp"
+      ]
+    },
+    {
+      "question": "rand",
+      "answer": [
+        "rand"
+      ]
+    },
+    {
+      "question": "rani",
+      "answer": [
+        "rani"
+      ]
+    },
+    {
+      "question": "rank",
+      "answer": [
+        "rank"
+      ]
+    },
+    {
+      "question": "rant",
+      "answer": [
+        "rant"
+      ]
+    },
+    {
+      "question": "rapt",
+      "answer": [
+        "rapt"
+      ]
+    },
+    {
+      "question": "rare",
+      "answer": [
+        "rare"
+      ]
+    },
+    {
+      "question": "rash",
+      "answer": [
+        "rash"
+      ]
+    },
+    {
+      "question": "rasp",
+      "answer": [
+        "rasp"
+      ]
+    },
+    {
+      "question": "rate",
+      "answer": [
+        "rate"
+      ]
+    },
+    {
+      "question": "raze",
+      "answer": [
+        "raze"
+      ]
+    },
+    {
+      "question": "read",
+      "answer": [
+        "read"
+      ]
+    },
+    {
+      "question": "real",
+      "answer": [
+        "real"
+      ]
+    },
+    {
+      "question": "ream",
+      "answer": [
+        "ream"
+      ]
+    },
+    {
+      "question": "reap",
+      "answer": [
+        "reap"
+      ]
+    },
+    {
+      "question": "rear",
+      "answer": [
+        "rear"
+      ]
+    },
+    {
+      "question": "reed",
+      "answer": [
+        "reed"
+      ]
+    },
+    {
+      "question": "reef",
+      "answer": [
+        "reef"
+      ]
+    },
+    {
+      "question": "reel",
+      "answer": [
+        "reel"
+      ]
+    },
+    {
+      "question": "rein",
+      "answer": [
+        "rein"
+      ]
+    },
+    {
+      "question": "rely",
+      "answer": [
+        "rely"
+      ]
+    },
+    {
+      "question": "rent",
+      "answer": [
+        "rent"
+      ]
+    },
+    {
+      "question": "rest",
+      "answer": [
+        "rest"
+      ]
+    },
+    {
+      "question": "rial",
+      "answer": [
+        "rial"
+      ]
+    },
+    {
+      "question": "rice",
+      "answer": [
+        "rice"
+      ]
+    },
+    {
+      "question": "rich",
+      "answer": [
+        "rich"
+      ]
+    },
+    {
+      "question": "ride",
+      "answer": [
+        "ride"
+      ]
+    },
+    {
+      "question": "rife",
+      "answer": [
+        "rife"
+      ]
+    },
+    {
+      "question": "rift",
+      "answer": [
+        "rift"
+      ]
+    },
+    {
+      "question": "rind",
+      "answer": [
+        "rind"
+      ]
+    },
+    {
+      "question": "ring",
+      "answer": [
+        "ring"
+      ]
+    },
+    {
+      "question": "rink",
+      "answer": [
+        "rink"
+      ]
+    },
+    {
+      "question": "riot",
+      "answer": [
+        "riot"
+      ]
+    },
+    {
+      "question": "ripe",
+      "answer": [
+        "ripe"
+      ]
+    },
+    {
+      "question": "rise",
+      "answer": [
+        "rise"
+      ]
+    },
+    {
+      "question": "risk",
+      "answer": [
+        "risk"
+      ]
+    },
+    {
+      "question": "rite",
+      "answer": [
+        "rite"
+      ]
+    },
+    {
+      "question": "road",
+      "answer": [
+        "road"
+      ]
+    },
+    {
+      "question": "roam",
+      "answer": [
+        "roam"
+      ]
+    },
+    {
+      "question": "roar",
+      "answer": [
+        "roar"
+      ]
+    },
+    {
+      "question": "robe",
+      "answer": [
+        "robe"
+      ]
+    },
+    {
+      "question": "rock",
+      "answer": [
+        "rock"
+      ]
+    },
+    {
+      "question": "role",
+      "answer": [
+        "role"
+      ]
+    },
+    {
+      "question": "roll",
+      "answer": [
+        "roll"
+      ]
+    },
+    {
+      "question": "romp",
+      "answer": [
+        "romp"
+      ]
+    },
+    {
+      "question": "rood",
+      "answer": [
+        "rood"
+      ]
+    },
+    {
+      "question": "roof",
+      "answer": [
+        "roof"
+      ]
+    },
+    {
+      "question": "room",
+      "answer": [
+        "room"
+      ]
+    },
+    {
+      "question": "root",
+      "answer": [
+        "root"
+      ]
+    },
+    {
+      "question": "rope",
+      "answer": [
+        "rope"
+      ]
+    },
+    {
+      "question": "rose",
+      "answer": [
+        "rose"
+      ]
+    },
+    {
+      "question": "rosy",
+      "answer": [
+        "rosy"
+      ]
+    },
+    {
+      "question": "rout",
+      "answer": [
+        "rout"
+      ]
+    },
+    {
+      "question": "rove",
+      "answer": [
+        "rove"
+      ]
+    },
+    {
+      "question": "ruby",
+      "answer": [
+        "ruby"
+      ]
+    },
+    {
+      "question": "rude",
+      "answer": [
+        "rude"
+      ]
+    },
+    {
+      "question": "ruin",
+      "answer": [
+        "ruin"
+      ]
+    },
+    {
+      "question": "rule",
+      "answer": [
+        "rule"
+      ]
+    },
+    {
+      "question": "rump",
+      "answer": [
+        "rump"
+      ]
+    },
+    {
+      "question": "rung",
+      "answer": [
+        "rung"
+      ]
+    },
+    {
+      "question": "runt",
+      "answer": [
+        "runt"
+      ]
+    },
+    {
+      "question": "ruse",
+      "answer": [
+        "ruse"
+      ]
+    },
+    {
+      "question": "rush",
+      "answer": [
+        "rush"
+      ]
+    },
+    {
+      "question": "rust",
+      "answer": [
+        "rust"
+      ]
+    },
+    {
+      "question": "sack",
+      "answer": [
+        "sack"
+      ]
+    },
+    {
+      "question": "safe",
+      "answer": [
+        "safe"
+      ]
+    },
+    {
+      "question": "saga",
+      "answer": [
+        "saga"
+      ]
+    },
+    {
+      "question": "sage",
+      "answer": [
+        "sage"
+      ]
+    },
+    {
+      "question": "sail",
+      "answer": [
+        "sail"
+      ]
+    },
+    {
+      "question": "sake",
+      "answer": [
+        "sake"
+      ]
+    },
+    {
+      "question": "sale",
+      "answer": [
+        "sale"
+      ]
+    },
+    {
+      "question": "salt",
+      "answer": [
+        "salt"
+      ]
+    },
+    {
+      "question": "same",
+      "answer": [
+        "same"
+      ]
+    },
+    {
+      "question": "sand",
+      "answer": [
+        "sand"
+      ]
+    },
+    {
+      "question": "sane",
+      "answer": [
+        "sane"
+      ]
+    },
+    {
+      "question": "sang",
+      "answer": [
+        "sang"
+      ]
+    },
+    {
+      "question": "sate",
+      "answer": [
+        "sate"
+      ]
+    },
+    {
+      "question": "save",
+      "answer": [
+        "save"
+      ]
+    },
+    {
+      "question": "scar",
+      "answer": [
+        "scar"
+      ]
+    },
+    {
+      "question": "scum",
+      "answer": [
+        "scum"
+      ]
+    },
+    {
+      "question": "seal",
+      "answer": [
+        "seal"
+      ]
+    },
+    {
+      "question": "seam",
+      "answer": [
+        "seam"
+      ]
+    },
+    {
+      "question": "sear",
+      "answer": [
+        "sear"
+      ]
+    },
+    {
+      "question": "seat",
+      "answer": [
+        "seat"
+      ]
+    },
+    {
+      "question": "sect",
+      "answer": [
+        "sect"
+      ]
+    },
+    {
+      "question": "seed",
+      "answer": [
+        "seed"
+      ]
+    },
+    {
+      "question": "seek",
+      "answer": [
+        "seek"
+      ]
+    },
+    {
+      "question": "seem",
+      "answer": [
+        "seem"
+      ]
+    },
+    {
+      "question": "seep",
+      "answer": [
+        "seep"
+      ]
+    },
+    {
+      "question": "self",
+      "answer": [
+        "self"
+      ]
+    },
+    {
+      "question": "sell",
+      "answer": [
+        "sell"
+      ]
+    },
+    {
+      "question": "send",
+      "answer": [
+        "send"
+      ]
+    },
+    {
+      "question": "sent",
+      "answer": [
+        "sent"
+      ]
+    },
+    {
+      "question": "sera",
+      "answer": [
+        "sera"
+      ]
+    },
+    {
+      "question": "shad",
+      "answer": [
+        "shad"
+      ]
+    },
+    {
+      "question": "sham",
+      "answer": [
+        "sham"
+      ]
+    },
+    {
+      "question": "shed",
+      "answer": [
+        "shed"
+      ]
+    },
+    {
+      "question": "shin",
+      "answer": [
+        "shin"
+      ]
+    },
+    {
+      "question": "ship",
+      "answer": [
+        "ship"
+      ]
+    },
+    {
+      "question": "shoe",
+      "answer": [
+        "shoe"
+      ]
+    },
+    {
+      "question": "shop",
+      "answer": [
+        "shop"
+      ]
+    },
+    {
+      "question": "shot",
+      "answer": [
+        "shot"
+      ]
+    },
+    {
+      "question": "show",
+      "answer": [
+        "show"
+      ]
+    },
+    {
+      "question": "shun",
+      "answer": [
+        "shun"
+      ]
+    },
+    {
+      "question": "shut",
+      "answer": [
+        "shut"
+      ]
+    },
+    {
+      "question": "sick",
+      "answer": [
+        "sick"
+      ]
+    },
+    {
+      "question": "side",
+      "answer": [
+        "side"
+      ]
+    },
+    {
+      "question": "sift",
+      "answer": [
+        "sift"
+      ]
+    },
+    {
+      "question": "sigh",
+      "answer": [
+        "sigh"
+      ]
+    },
+    {
+      "question": "sign",
+      "answer": [
+        "sign"
+      ]
+    },
+    {
+      "question": "silk",
+      "answer": [
+        "silk"
+      ]
+    },
+    {
+      "question": "silo",
+      "answer": [
+        "silo"
+      ]
+    },
+    {
+      "question": "silt",
+      "answer": [
+        "silt"
+      ]
+    },
+    {
+      "question": "sing",
+      "answer": [
+        "sing"
+      ]
+    },
+    {
+      "question": "sink",
+      "answer": [
+        "sink"
+      ]
+    },
+    {
+      "question": "sire",
+      "answer": [
+        "sire"
+      ]
+    },
+    {
+      "question": "site",
+      "answer": [
+        "site"
+      ]
+    },
+    {
+      "question": "size",
+      "answer": [
+        "size"
+      ]
+    },
+    {
+      "question": "skid",
+      "answer": [
+        "skid"
+      ]
+    },
+    {
+      "question": "skim",
+      "answer": [
+        "skim"
+      ]
+    },
+    {
+      "question": "skin",
+      "answer": [
+        "skin"
+      ]
+    },
+    {
+      "question": "skip",
+      "answer": [
+        "skip"
+      ]
+    },
+    {
+      "question": "slab",
+      "answer": [
+        "slab"
+      ]
+    },
+    {
+      "question": "slam",
+      "answer": [
+        "slam"
+      ]
+    },
+    {
+      "question": "slap",
+      "answer": [
+        "slap"
+      ]
+    },
+    {
+      "question": "slat",
+      "answer": [
+        "slat"
+      ]
+    },
+    {
+      "question": "slay",
+      "answer": [
+        "slay"
+      ]
+    },
+    {
+      "question": "sled",
+      "answer": [
+        "sled"
+      ]
+    },
+    {
+      "question": "slim",
+      "answer": [
+        "slim"
+      ]
+    },
+    {
+      "question": "slip",
+      "answer": [
+        "slip"
+      ]
+    },
+    {
+      "question": "slit",
+      "answer": [
+        "slit"
+      ]
+    },
+    {
+      "question": "sloe",
+      "answer": [
+        "sloe"
+      ]
+    },
+    {
+      "question": "slot",
+      "answer": [
+        "slot"
+      ]
+    },
+    {
+      "question": "slow",
+      "answer": [
+        "slow"
+      ]
+    },
+    {
+      "question": "slug",
+      "answer": [
+        "slug"
+      ]
+    },
+    {
+      "question": "slur",
+      "answer": [
+        "slur"
+      ]
+    },
+    {
+      "question": "smog",
+      "answer": [
+        "smog"
+      ]
+    },
+    {
+      "question": "smug",
+      "answer": [
+        "smug"
+      ]
+    },
+    {
+      "question": "snag",
+      "answer": [
+        "snag"
+      ]
+    },
+    {
+      "question": "snap",
+      "answer": [
+        "snap"
+      ]
+    },
+    {
+      "question": "snip",
+      "answer": [
+        "snip"
+      ]
+    },
+    {
+      "question": "snob",
+      "answer": [
+        "snob"
+      ]
+    },
+    {
+      "question": "snow",
+      "answer": [
+        "snow"
+      ]
+    },
+    {
+      "question": "snub",
+      "answer": [
+        "snub"
+      ]
+    },
+    {
+      "question": "snug",
+      "answer": [
+        "snug"
+      ]
+    },
+    {
+      "question": "soak",
+      "answer": [
+        "soak"
+      ]
+    },
+    {
+      "question": "soap",
+      "answer": [
+        "soap"
+      ]
+    },
+    {
+      "question": "soar",
+      "answer": [
+        "soar"
+      ]
+    },
+    {
+      "question": "sock",
+      "answer": [
+        "sock"
+      ]
+    },
+    {
+      "question": "soda",
+      "answer": [
+        "soda"
+      ]
+    },
+    {
+      "question": "sofa",
+      "answer": [
+        "sofa"
+      ]
+    },
+    {
+      "question": "soft",
+      "answer": [
+        "soft"
+      ]
+    },
+    {
+      "question": "soil",
+      "answer": [
+        "soil"
+      ]
+    },
+    {
+      "question": "sole",
+      "answer": [
+        "sole"
+      ]
+    },
+    {
+      "question": "solo",
+      "answer": [
+        "solo"
+      ]
+    },
+    {
+      "question": "some",
+      "answer": [
+        "some"
+      ]
+    },
+    {
+      "question": "song",
+      "answer": [
+        "song"
+      ]
+    },
+    {
+      "question": "soon",
+      "answer": [
+        "soon"
+      ]
+    },
+    {
+      "question": "soot",
+      "answer": [
+        "soot"
+      ]
+    },
+    {
+      "question": "sore",
+      "answer": [
+        "sore"
+      ]
+    },
+    {
+      "question": "sort",
+      "answer": [
+        "sort"
+      ]
+    },
+    {
+      "question": "soul",
+      "answer": [
+        "soul"
+      ]
+    },
+    {
+      "question": "soup",
+      "answer": [
+        "soup"
+      ]
+    },
+    {
+      "question": "sour",
+      "answer": [
+        "sour"
+      ]
+    },
+    {
+      "question": "span",
+      "answer": [
+        "span"
+      ]
+    },
+    {
+      "question": "spar",
+      "answer": [
+        "spar"
+      ]
+    },
+    {
+      "question": "spat",
+      "answer": [
+        "spat"
+      ]
+    },
+    {
+      "question": "spin",
+      "answer": [
+        "spin"
+      ]
+    },
+    {
+      "question": "spit",
+      "answer": [
+        "spit"
+      ]
+    },
+    {
+      "question": "spot",
+      "answer": [
+        "spot"
+      ]
+    },
+    {
+      "question": "spur",
+      "answer": [
+        "spur"
+      ]
+    },
+    {
+      "question": "stab",
+      "answer": [
+        "stab"
+      ]
+    },
+    {
+      "question": "stag",
+      "answer": [
+        "stag"
+      ]
+    },
+    {
+      "question": "star",
+      "answer": [
+        "star"
+      ]
+    },
+    {
+      "question": "stay",
+      "answer": [
+        "stay"
+      ]
+    },
+    {
+      "question": "stem",
+      "answer": [
+        "stem"
+      ]
+    },
+    {
+      "question": "step",
+      "answer": [
+        "step"
+      ]
+    },
+    {
+      "question": "stew",
+      "answer": [
+        "stew"
+      ]
+    },
+    {
+      "question": "stir",
+      "answer": [
+        "stir"
+      ]
+    },
+    {
+      "question": "stop",
+      "answer": [
+        "stop"
+      ]
+    },
+    {
+      "question": "stow",
+      "answer": [
+        "stow"
+      ]
+    },
+    {
+      "question": "stub",
+      "answer": [
+        "stub"
+      ]
+    },
+    {
+      "question": "stud",
+      "answer": [
+        "stud"
+      ]
+    },
+    {
+      "question": "stun",
+      "answer": [
+        "stun"
+      ]
+    },
+    {
+      "question": "such",
+      "answer": [
+        "such"
+      ]
+    },
+    {
+      "question": "suit",
+      "answer": [
+        "suit"
+      ]
+    },
+    {
+      "question": "sulk",
+      "answer": [
+        "sulk"
+      ]
+    },
+    {
+      "question": "sung",
+      "answer": [
+        "sung"
+      ]
+    },
+    {
+      "question": "sunk",
+      "answer": [
+        "sunk"
+      ]
+    },
+    {
+      "question": "sure",
+      "answer": [
+        "sure"
+      ]
+    },
+    {
+      "question": "surf",
+      "answer": [
+        "surf"
+      ]
+    },
+    {
+      "question": "swan",
+      "answer": [
+        "swan"
+      ]
+    },
+    {
+      "question": "swap",
+      "answer": [
+        "swap"
+      ]
+    },
+    {
+      "question": "sway",
+      "answer": [
+        "sway"
+      ]
+    },
+    {
+      "question": "swim",
+      "answer": [
+        "swim"
+      ]
+    },
+    {
+      "question": "tact",
+      "answer": [
+        "tact"
+      ]
+    },
+    {
+      "question": "tail",
+      "answer": [
+        "tail"
+      ]
+    },
+    {
+      "question": "take",
+      "answer": [
+        "take"
+      ]
+    },
+    {
+      "question": "tale",
+      "answer": [
+        "tale"
+      ]
+    },
+    {
+      "question": "talk",
+      "answer": [
+        "talk"
+      ]
+    },
+    {
+      "question": "tall",
+      "answer": [
+        "tall"
+      ]
+    },
+    {
+      "question": "tame",
+      "answer": [
+        "tame"
+      ]
+    },
+    {
+      "question": "tank",
+      "answer": [
+        "tank"
+      ]
+    },
+    {
+      "question": "tape",
+      "answer": [
+        "tape"
+      ]
+    },
+    {
+      "question": "taps",
+      "answer": [
+        "taps"
+      ]
+    },
+    {
+      "question": "tare",
+      "answer": [
+        "tare"
+      ]
+    },
+    {
+      "question": "tarn",
+      "answer": [
+        "tarn"
+      ]
+    },
+    {
+      "question": "tart",
+      "answer": [
+        "tart"
+      ]
+    },
+    {
+      "question": "task",
+      "answer": [
+        "task"
+      ]
+    },
+    {
+      "question": "taut",
+      "answer": [
+        "taut"
+      ]
+    },
+    {
+      "question": "taxi",
+      "answer": [
+        "taxi"
+      ]
+    },
+    {
+      "question": "teak",
+      "answer": [
+        "teak"
+      ]
+    },
+    {
+      "question": "teal",
+      "answer": [
+        "teal"
+      ]
+    },
+    {
+      "question": "team",
+      "answer": [
+        "team"
+      ]
+    },
+    {
+      "question": "tear",
+      "answer": [
+        "tear"
+      ]
+    },
+    {
+      "question": "teem",
+      "answer": [
+        "teem"
+      ]
+    },
+    {
+      "question": "teen",
+      "answer": [
+        "teen"
+      ]
+    },
+    {
+      "question": "tell",
+      "answer": [
+        "tell"
+      ]
+    },
+    {
+      "question": "tend",
+      "answer": [
+        "tend"
+      ]
+    },
+    {
+      "question": "tent",
+      "answer": [
+        "tent"
+      ]
+    },
+    {
+      "question": "term",
+      "answer": [
+        "term"
+      ]
+    },
+    {
+      "question": "tern",
+      "answer": [
+        "tern"
+      ]
+    },
+    {
+      "question": "test",
+      "answer": [
+        "test"
+      ]
+    },
+    {
+      "question": "text",
+      "answer": [
+        "text"
+      ]
+    },
+    {
+      "question": "than",
+      "answer": [
+        "than"
+      ]
+    },
+    {
+      "question": "that",
+      "answer": [
+        "that"
+      ]
+    },
+    {
+      "question": "thaw",
+      "answer": [
+        "thaw"
+      ]
+    },
+    {
+      "question": "thee",
+      "answer": [
+        "thee"
+      ]
+    },
+    {
+      "question": "them",
+      "answer": [
+        "them"
+      ]
+    },
+    {
+      "question": "then",
+      "answer": [
+        "then"
+      ]
+    },
+    {
+      "question": "thew",
+      "answer": [
+        "thew"
+      ]
+    },
+    {
+      "question": "they",
+      "answer": [
+        "they"
+      ]
+    },
+    {
+      "question": "thin",
+      "answer": [
+        "thin"
+      ]
+    },
+    {
+      "question": "this",
+      "answer": [
+        "this"
+      ]
+    },
+    {
+      "question": "thou",
+      "answer": [
+        "thou"
+      ]
+    },
+    {
+      "question": "thud",
+      "answer": [
+        "thud"
+      ]
+    },
+    {
+      "question": "thug",
+      "answer": [
+        "thug"
+      ]
+    },
+    {
+      "question": "thus",
+      "answer": [
+        "thus"
+      ]
+    },
+    {
+      "question": "tick",
+      "answer": [
+        "tick"
+      ]
+    },
+    {
+      "question": "tide",
+      "answer": [
+        "tide"
+      ]
+    },
+    {
+      "question": "tidy",
+      "answer": [
+        "tidy"
+      ]
+    },
+    {
+      "question": "tier",
+      "answer": [
+        "tier"
+      ]
+    },
+    {
+      "question": "tile",
+      "answer": [
+        "tile"
+      ]
+    },
+    {
+      "question": "till",
+      "answer": [
+        "till"
+      ]
+    },
+    {
+      "question": "time",
+      "answer": [
+        "time"
+      ]
+    },
+    {
+      "question": "tint",
+      "answer": [
+        "tint"
+      ]
+    },
+    {
+      "question": "tiny",
+      "answer": [
+        "tiny"
+      ]
+    },
+    {
+      "question": "tire",
+      "answer": [
+        "tire"
+      ]
+    },
+    {
+      "question": "toad",
+      "answer": [
+        "toad"
+      ]
+    },
+    {
+      "question": "toga",
+      "answer": [
+        "toga"
+      ]
+    },
+    {
+      "question": "toil",
+      "answer": [
+        "toil"
+      ]
+    },
+    {
+      "question": "toll",
+      "answer": [
+        "toll"
+      ]
+    },
+    {
+      "question": "tomb",
+      "answer": [
+        "tomb"
+      ]
+    },
+    {
+      "question": "tome",
+      "answer": [
+        "tome"
+      ]
+    },
+    {
+      "question": "tone",
+      "answer": [
+        "tone"
+      ]
+    },
+    {
+      "question": "tool",
+      "answer": [
+        "tool"
+      ]
+    },
+    {
+      "question": "tope",
+      "answer": [
+        "tope"
+      ]
+    },
+    {
+      "question": "tops",
+      "answer": [
+        "tops"
+      ]
+    },
+    {
+      "question": "toss",
+      "answer": [
+        "toss"
+      ]
+    },
+    {
+      "question": "tour",
+      "answer": [
+        "tour"
+      ]
+    },
+    {
+      "question": "tout",
+      "answer": [
+        "tout"
+      ]
+    },
+    {
+      "question": "town",
+      "answer": [
+        "town"
+      ]
+    },
+    {
+      "question": "tram",
+      "answer": [
+        "tram"
+      ]
+    },
+    {
+      "question": "trap",
+      "answer": [
+        "trap"
+      ]
+    },
+    {
+      "question": "tray",
+      "answer": [
+        "tray"
+      ]
+    },
+    {
+      "question": "tree",
+      "answer": [
+        "tree"
+      ]
+    },
+    {
+      "question": "trek",
+      "answer": [
+        "trek"
+      ]
+    },
+    {
+      "question": "trig",
+      "answer": [
+        "trig"
+      ]
+    },
+    {
+      "question": "trim",
+      "answer": [
+        "trim"
+      ]
+    },
+    {
+      "question": "trio",
+      "answer": [
+        "trio"
+      ]
+    },
+    {
+      "question": "trip",
+      "answer": [
+        "trip"
+      ]
+    },
+    {
+      "question": "true",
+      "answer": [
+        "true"
+      ]
+    },
+    {
+      "question": "tsar",
+      "answer": [
+        "tsar"
+      ]
+    },
+    {
+      "question": "tube",
+      "answer": [
+        "tube"
+      ]
+    },
+    {
+      "question": "tuck",
+      "answer": [
+        "tuck"
+      ]
+    },
+    {
+      "question": "tuna",
+      "answer": [
+        "tuna"
+      ]
+    },
+    {
+      "question": "tune",
+      "answer": [
+        "tune"
+      ]
+    },
+    {
+      "question": "turf",
+      "answer": [
+        "turf"
+      ]
+    },
+    {
+      "question": "turn",
+      "answer": [
+        "turn"
+      ]
+    },
+    {
+      "question": "twig",
+      "answer": [
+        "twig"
+      ]
+    },
+    {
+      "question": "twin",
+      "answer": [
+        "twin"
+      ]
+    },
+    {
+      "question": "type",
+      "answer": [
+        "type"
+      ]
+    },
+    {
+      "question": "ugly",
+      "answer": [
+        "ugly"
+      ]
+    },
+    {
+      "question": "undo",
+      "answer": [
+        "undo"
+      ]
+    },
+    {
+      "question": "unit",
+      "answer": [
+        "unit"
+      ]
+    },
+    {
+      "question": "upon",
+      "answer": [
+        "upon"
+      ]
+    },
+    {
+      "question": "urge",
+      "answer": [
+        "urge"
+      ]
+    },
+    {
+      "question": "used",
+      "answer": [
+        "used"
+      ]
+    },
+    {
+      "question": "vain",
+      "answer": [
+        "vain"
+      ]
+    },
+    {
+      "question": "vale",
+      "answer": [
+        "vale"
+      ]
+    },
+    {
+      "question": "vane",
+      "answer": [
+        "vane"
+      ]
+    },
+    {
+      "question": "vary",
+      "answer": [
+        "vary"
+      ]
+    },
+    {
+      "question": "vase",
+      "answer": [
+        "vase"
+      ]
+    },
+    {
+      "question": "vast",
+      "answer": [
+        "vast"
+      ]
+    },
+    {
+      "question": "veal",
+      "answer": [
+        "veal"
+      ]
+    },
+    {
+      "question": "veer",
+      "answer": [
+        "veer"
+      ]
+    },
+    {
+      "question": "veil",
+      "answer": [
+        "veil"
+      ]
+    },
+    {
+      "question": "vein",
+      "answer": [
+        "vein"
+      ]
+    },
+    {
+      "question": "verb",
+      "answer": [
+        "verb"
+      ]
+    },
+    {
+      "question": "very",
+      "answer": [
+        "very"
+      ]
+    },
+    {
+      "question": "vest",
+      "answer": [
+        "vest"
+      ]
+    },
+    {
+      "question": "veto",
+      "answer": [
+        "veto"
+      ]
+    },
+    {
+      "question": "vice",
+      "answer": [
+        "vice"
+      ]
+    },
+    {
+      "question": "vide",
+      "answer": [
+        "vide"
+      ]
+    },
+    {
+      "question": "view",
+      "answer": [
+        "view"
+      ]
+    },
+    {
+      "question": "vile",
+      "answer": [
+        "vile"
+      ]
+    },
+    {
+      "question": "vine",
+      "answer": [
+        "vine"
+      ]
+    },
+    {
+      "question": "visa",
+      "answer": [
+        "visa"
+      ]
+    },
+    {
+      "question": "void",
+      "answer": [
+        "void"
+      ]
+    },
+    {
+      "question": "vole",
+      "answer": [
+        "vole"
+      ]
+    },
+    {
+      "question": "vote",
+      "answer": [
+        "vote"
+      ]
+    },
+    {
+      "question": "wade",
+      "answer": [
+        "wade"
+      ]
+    },
+    {
+      "question": "waft",
+      "answer": [
+        "waft"
+      ]
+    },
+    {
+      "question": "wage",
+      "answer": [
+        "wage"
+      ]
+    },
+    {
+      "question": "wail",
+      "answer": [
+        "wail"
+      ]
+    },
+    {
+      "question": "wait",
+      "answer": [
+        "wait"
+      ]
+    },
+    {
+      "question": "wake",
+      "answer": [
+        "wake"
+      ]
+    },
+    {
+      "question": "walk",
+      "answer": [
+        "walk"
+      ]
+    },
+    {
+      "question": "wall",
+      "answer": [
+        "wall"
+      ]
+    },
+    {
+      "question": "wand",
+      "answer": [
+        "wand"
+      ]
+    },
+    {
+      "question": "wane",
+      "answer": [
+        "wane"
+      ]
+    },
+    {
+      "question": "want",
+      "answer": [
+        "want"
+      ]
+    },
+    {
+      "question": "ward",
+      "answer": [
+        "ward"
+      ]
+    },
+    {
+      "question": "ware",
+      "answer": [
+        "ware"
+      ]
+    },
+    {
+      "question": "warm",
+      "answer": [
+        "warm"
+      ]
+    },
+    {
+      "question": "warn",
+      "answer": [
+        "warn"
+      ]
+    },
+    {
+      "question": "warp",
+      "answer": [
+        "warp"
+      ]
+    },
+    {
+      "question": "wart",
+      "answer": [
+        "wart"
+      ]
+    },
+    {
+      "question": "wary",
+      "answer": [
+        "wary"
+      ]
+    },
+    {
+      "question": "wash",
+      "answer": [
+        "wash"
+      ]
+    },
+    {
+      "question": "wasp",
+      "answer": [
+        "wasp"
+      ]
+    },
+    {
+      "question": "watt",
+      "answer": [
+        "watt"
+      ]
+    },
+    {
+      "question": "wave",
+      "answer": [
+        "wave"
+      ]
+    },
+    {
+      "question": "weak",
+      "answer": [
+        "weak"
+      ]
+    },
+    {
+      "question": "wean",
+      "answer": [
+        "wean"
+      ]
+    },
+    {
+      "question": "wear",
+      "answer": [
+        "wear"
+      ]
+    },
+    {
+      "question": "weed",
+      "answer": [
+        "weed"
+      ]
+    },
+    {
+      "question": "week",
+      "answer": [
+        "week"
+      ]
+    },
+    {
+      "question": "weep",
+      "answer": [
+        "weep"
+      ]
+    },
+    {
+      "question": "weir",
+      "answer": [
+        "weir"
+      ]
+    },
+    {
+      "question": "weld",
+      "answer": [
+        "weld"
+      ]
+    },
+    {
+      "question": "well",
+      "answer": [
+        "well"
+      ]
+    },
+    {
+      "question": "were",
+      "answer": [
+        "were"
+      ]
+    },
+    {
+      "question": "west",
+      "answer": [
+        "west"
+      ]
+    },
+    {
+      "question": "what",
+      "answer": [
+        "what"
+      ]
+    },
+    {
+      "question": "when",
+      "answer": [
+        "when"
+      ]
+    },
+    {
+      "question": "whet",
+      "answer": [
+        "whet"
+      ]
+    },
+    {
+      "question": "whim",
+      "answer": [
+        "whim"
+      ]
+    },
+    {
+      "question": "whip",
+      "answer": [
+        "whip"
+      ]
+    },
+    {
+      "question": "whit",
+      "answer": [
+        "whit"
+      ]
+    },
+    {
+      "question": "whom",
+      "answer": [
+        "whom"
+      ]
+    },
+    {
+      "question": "wide",
+      "answer": [
+        "wide"
+      ]
+    },
+    {
+      "question": "wife",
+      "answer": [
+        "wife"
+      ]
+    },
+    {
+      "question": "wild",
+      "answer": [
+        "wild"
+      ]
+    },
+    {
+      "question": "will",
+      "answer": [
+        "will"
+      ]
+    },
+    {
+      "question": "wind",
+      "answer": [
+        "wind"
+      ]
+    },
+    {
+      "question": "wine",
+      "answer": [
+        "wine"
+      ]
+    },
+    {
+      "question": "wing",
+      "answer": [
+        "wing"
+      ]
+    },
+    {
+      "question": "wink",
+      "answer": [
+        "wink"
+      ]
+    },
+    {
+      "question": "wipe",
+      "answer": [
+        "wipe"
+      ]
+    },
+    {
+      "question": "wire",
+      "answer": [
+        "wire"
+      ]
+    },
+    {
+      "question": "wise",
+      "answer": [
+        "wise"
+      ]
+    },
+    {
+      "question": "wish",
+      "answer": [
+        "wish"
+      ]
+    },
+    {
+      "question": "with",
+      "answer": [
+        "with"
+      ]
+    },
+    {
+      "question": "wive",
+      "answer": [
+        "wive"
+      ]
+    },
+    {
+      "question": "wolf",
+      "answer": [
+        "wolf"
+      ]
+    },
+    {
+      "question": "womb",
+      "answer": [
+        "womb"
+      ]
+    },
+    {
+      "question": "wont",
+      "answer": [
+        "wont"
+      ]
+    },
+    {
+      "question": "wood",
+      "answer": [
+        "wood"
+      ]
+    },
+    {
+      "question": "wool",
+      "answer": [
+        "wool"
+      ]
+    },
+    {
+      "question": "word",
+      "answer": [
+        "word"
+      ]
+    },
+    {
+      "question": "work",
+      "answer": [
+        "work"
+      ]
+    },
+    {
+      "question": "worm",
+      "answer": [
+        "worm"
+      ]
+    },
+    {
+      "question": "worn",
+      "answer": [
+        "worn"
+      ]
+    },
+    {
+      "question": "wrap",
+      "answer": [
+        "wrap"
+      ]
+    },
+    {
+      "question": "writ",
+      "answer": [
+        "writ"
+      ]
+    },
+    {
+      "question": "yard",
+      "answer": [
+        "yard"
+      ]
+    },
+    {
+      "question": "yarn",
+      "answer": [
+        "yarn"
+      ]
+    },
+    {
+      "question": "yawn",
+      "answer": [
+        "yawn"
+      ]
+    },
+    {
+      "question": "yaws",
+      "answer": [
+        "yaws"
+      ]
+    },
+    {
+      "question": "yeah",
+      "answer": [
+        "yeah"
+      ]
+    },
+    {
+      "question": "year",
+      "answer": [
+        "year"
+      ]
+    },
+    {
+      "question": "yell",
+      "answer": [
+        "yell"
+      ]
+    },
+    {
+      "question": "yoga",
+      "answer": [
+        "yoga"
+      ]
+    },
+    {
+      "question": "yoke",
+      "answer": [
+        "yoke"
+      ]
+    },
+    {
+      "question": "yolk",
+      "answer": [
+        "yolk"
+      ]
+    },
+    {
+      "question": "your",
+      "answer": [
+        "your"
+      ]
+    },
+    {
+      "question": "zeal",
+      "answer": [
+        "zeal"
+      ]
+    },
+    {
+      "question": "zero",
+      "answer": [
+        "zero"
+      ]
+    },
+    {
+      "question": "zest",
+      "answer": [
+        "zest"
+      ]
+    },
+    {
+      "question": "zinc",
+      "answer": [
+        "zinc"
+      ]
+    },
+    {
+      "question": "zone",
+      "answer": [
+        "zone"
+      ]
+    },
+    {
+      "question": "lots",
+      "answer": [
+        "lots"
+      ]
+    },
+    {
+      "question": "okay",
+      "answer": [
+        "okay"
+      ]
+    },
+    {
+      "question": "user",
+      "answer": [
+        "user"
+      ]
+    },
+    {
+      "question": "math",
+      "answer": [
+        "math"
+      ]
+    },
+    {
+      "question": "mall",
+      "answer": [
+        "mall"
+      ]
+    },
+    {
+      "question": "odds",
+      "answer": [
+        "odds"
+      ]
+    },
+    {
+      "question": "scan",
+      "answer": [
+        "scan"
+      ]
+    },
+    {
+      "question": "exam",
+      "answer": [
+        "exam"
+      ]
+    },
+    {
+      "question": "coup",
+      "answer": [
+        "coup"
+      ]
+    },
+    {
+      "question": "atop",
+      "answer": [
+        "atop"
+      ]
+    },
+    {
+      "question": "disc",
+      "answer": [
+        "disc"
+      ]
+    }
+  ]
+}

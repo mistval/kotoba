@@ -1,0 +1,1179 @@
+{
+  "uniqueId": "stations_ehime",
+  "name": "Ehime Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Ehime station names](https://mb.jorudan.co.jp/os/eki/menu_myj/)",
+  "cards": [
+    {
+      "question": "愛大医学部南口",
+      "answer": [
+        "あいだいいがくぶみなみぐち"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aidai_igakubu-minamiguchi/"
+    },
+    {
+      "question": "赤星",
+      "answer": [
+        "あかぼし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akaboshi/"
+    },
+    {
+      "question": "浅海",
+      "answer": [
+        "あさなみ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asanami/"
+    },
+    {
+      "question": "粟井",
+      "answer": [
+        "あわい"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awai/"
+    },
+    {
+      "question": "五十崎",
+      "answer": [
+        "いかざき"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikazaki/"
+    },
+    {
+      "question": "石鎚山",
+      "answer": [
+        "いしづちやま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishizuchiyama/"
+    },
+    {
+      "question": "石手川公園",
+      "answer": [
+        "いしてがわこうえん"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishitegawakoen/"
+    },
+    {
+      "question": "出目",
+      "answer": [
+        "いずめ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izume/"
+    },
+    {
+      "question": "市坪",
+      "answer": [
+        "いちつぼ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichitsubo/"
+    },
+    {
+      "question": "今治",
+      "answer": [
+        "いまばり"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imabari/"
+    },
+    {
+      "question": "伊予出石",
+      "answer": [
+        "いよいずし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-izushi/"
+    },
+    {
+      "question": "伊予石城",
+      "answer": [
+        "いよいわき"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-iwaki/"
+    },
+    {
+      "question": "伊予大洲",
+      "answer": [
+        "いよおおず"
+      ],
+      "meaning": "予讃線、内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-ozu/"
+    },
+    {
+      "question": "伊予大平",
+      "answer": [
+        "いよおおひら"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-ohira/"
+    },
+    {
+      "question": "伊予上灘",
+      "answer": [
+        "いよかみなだ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-kaminada/"
+    },
+    {
+      "question": "伊予亀岡",
+      "answer": [
+        "いよかめおか"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-kameoka/"
+    },
+    {
+      "question": "伊予小松",
+      "answer": [
+        "いよこまつ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-komatsu/"
+    },
+    {
+      "question": "伊予西条",
+      "answer": [
+        "いよさいじょう"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-saijo/"
+    },
+    {
+      "question": "伊予桜井",
+      "answer": [
+        "いよさくらい"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-sakurai/"
+    },
+    {
+      "question": "伊予寒川",
+      "answer": [
+        "いよさんがわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-sangawa/"
+    },
+    {
+      "question": "伊予市",
+      "answer": [
+        "いよし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyoshi/"
+    },
+    {
+      "question": "伊予白滝",
+      "answer": [
+        "いよしらたき"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-shirataki/"
+    },
+    {
+      "question": "伊予立川",
+      "answer": [
+        "いよたちかわ"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-tachikawa/"
+    },
+    {
+      "question": "いよ立花",
+      "answer": [
+        "いよたちばな"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyotachibana/"
+    },
+    {
+      "question": "伊予富田",
+      "answer": [
+        "いよとみた"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-tomita/?page=2"
+    },
+    {
+      "question": "伊予土居",
+      "answer": [
+        "いよどい"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-doi/?page=2"
+    },
+    {
+      "question": "伊予中山",
+      "answer": [
+        "いよなかやま"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-nakayama/?page=2"
+    },
+    {
+      "question": "伊予長浜",
+      "answer": [
+        "いよながはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-nagahama/?page=2"
+    },
+    {
+      "question": "伊予氷見",
+      "answer": [
+        "いよひみ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-himi/?page=2"
+    },
+    {
+      "question": "伊予平野",
+      "answer": [
+        "いよひらの"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-hirano/?page=2"
+    },
+    {
+      "question": "伊予北条",
+      "answer": [
+        "いよほうじょう"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-hojo/?page=2"
+    },
+    {
+      "question": "伊予三島",
+      "answer": [
+        "いよみしま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-mishima/?page=2"
+    },
+    {
+      "question": "伊予宮野下",
+      "answer": [
+        "いよみやのした"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-miyanoshita/?page=2"
+    },
+    {
+      "question": "伊予三芳",
+      "answer": [
+        "いよみよし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-miyoshi/?page=2"
+    },
+    {
+      "question": "伊予横田",
+      "answer": [
+        "いよよこた"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-yokota/?page=2"
+    },
+    {
+      "question": "伊予吉田",
+      "answer": [
+        "いよよしだ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-yoshida/?page=2"
+    },
+    {
+      "question": "伊予和気",
+      "answer": [
+        "いよわけ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyo-wake/?page=2"
+    },
+    {
+      "question": "牛渕",
+      "answer": [
+        "うしぶち"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushibuchi/"
+    },
+    {
+      "question": "牛渕団地前",
+      "answer": [
+        "うしぶちだんちまえ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushibuchi-danchi-mae/"
+    },
+    {
+      "question": "内子",
+      "answer": [
+        "うちこ"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchiko/"
+    },
+    {
+      "question": "卯之町",
+      "answer": [
+        "うのまち"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unomachi/"
+    },
+    {
+      "question": "梅本",
+      "answer": [
+        "うめのもと"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umenomoto/"
+    },
+    {
+      "question": "宇和島",
+      "answer": [
+        "うわじま"
+      ],
+      "meaning": "予讃線、予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uwajima/"
+    },
+    {
+      "question": "大内",
+      "answer": [
+        "おおうち"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/o-uchi/"
+    },
+    {
+      "question": "大浦",
+      "answer": [
+        "おおうら"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/o-ura_ehime/"
+    },
+    {
+      "question": "大街道",
+      "answer": [
+        "おおかいどう"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okaido/"
+    },
+    {
+      "question": "大手町",
+      "answer": [
+        "おおてまち"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otemachi_ehime/"
+    },
+    {
+      "question": "大手町駅前",
+      "answer": [
+        "おおてまちえきまえ"
+      ],
+      "meaning": "伊予鉄道ＪＲ松山駅前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otemachiekimae/"
+    },
+    {
+      "question": "大西",
+      "answer": [
+        "おおにし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onishi/"
+    },
+    {
+      "question": "岡田",
+      "answer": [
+        "おかだ"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okada_ehime/"
+    },
+    {
+      "question": "勝山町",
+      "answer": [
+        "かつやまちょう"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuyamacho/"
+    },
+    {
+      "question": "鎌田",
+      "answer": [
+        "かまた"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamata_ehime/"
+    },
+    {
+      "question": "上一万",
+      "answer": [
+        "かみいちまん"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamiichiman/"
+    },
+    {
+      "question": "上宇和",
+      "answer": [
+        "かみうわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-uwa/"
+    },
+    {
+      "question": "萱町六丁目",
+      "answer": [
+        "かやまちろくちょうめ"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kayamachirokuchome/"
+    },
+    {
+      "question": "川之江",
+      "answer": [
+        "かわのえ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanoe/"
+    },
+    {
+      "question": "菊間",
+      "answer": [
+        "きくま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kikuma/"
+    },
+    {
+      "question": "北伊予",
+      "answer": [
+        "きたいよ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-iyo/"
+    },
+    {
+      "question": "北宇和島",
+      "answer": [
+        "きたうわじま"
+      ],
+      "meaning": "予讃線、予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-uwajima/"
+    },
+    {
+      "question": "北久米",
+      "answer": [
+        "きたくめ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kume/"
+    },
+    {
+      "question": "喜多灘",
+      "answer": [
+        "きたなだ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitanada/"
+    },
+    {
+      "question": "喜多山",
+      "answer": [
+        "きたやま"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitayama_ehime/"
+    },
+    {
+      "question": "衣山",
+      "answer": [
+        "きぬやま"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinuyama/"
+    },
+    {
+      "question": "木屋町",
+      "answer": [
+        "きやちょう"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyacho/"
+    },
+    {
+      "question": "串",
+      "answer": [
+        "くし"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kushi/"
+    },
+    {
+      "question": "久米",
+      "answer": [
+        "くめ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kume/"
+    },
+    {
+      "question": "郡中",
+      "answer": [
+        "ぐんちゅう"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gunchu/"
+    },
+    {
+      "question": "郡中港",
+      "answer": [
+        "ぐんちゅうこう"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gunchuko/"
+    },
+    {
+      "question": "警察署前",
+      "answer": [
+        "けいさつしょまえ"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keisatsusho-mae/"
+    },
+    {
+      "question": "県庁前",
+      "answer": [
+        "けんちょうまえ"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kencho-mae_ehime/"
+    },
+    {
+      "question": "古泉",
+      "answer": [
+        "こいずみ"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koizumi_ehime/"
+    },
+    {
+      "question": "高野川",
+      "answer": [
+        "こうのかわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konokawa/"
+    },
+    {
+      "question": "光洋台",
+      "answer": [
+        "こうようだい"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koyodai/"
+    },
+    {
+      "question": "古町",
+      "answer": [
+        "こまち"
+      ],
+      "meaning": "伊予鉄道高浜線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komachi_ehime/"
+    },
+    {
+      "question": "五郎",
+      "answer": [
+        "ごろう"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goro/"
+    },
+    {
+      "question": "清水町",
+      "answer": [
+        "しみずまち"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimizumachi/"
+    },
+    {
+      "question": "下宇和",
+      "answer": [
+        "しもうわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-uwa/"
+    },
+    {
+      "question": "下灘",
+      "answer": [
+        "しもなだ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonada/"
+    },
+    {
+      "question": "市役所前",
+      "answer": [
+        "しやくしょまえ"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_ehime/"
+    },
+    {
+      "question": "新川",
+      "answer": [
+        "しんかわ"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkawa_ehime/"
+    },
+    {
+      "question": "ＪＲ松山駅前",
+      "answer": [
+        "じぇいあーるまつやまえきまえ"
+      ],
+      "meaning": "伊予鉄道ＪＲ松山駅前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-matsuyamaekimae/"
+    },
+    {
+      "question": "地蔵町",
+      "answer": [
+        "じぞうまち"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jizomachi/"
+    },
+    {
+      "question": "関川",
+      "answer": [
+        "せきがわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekigawa/"
+    },
+    {
+      "question": "赤十字病院前",
+      "answer": [
+        "せきじゅうじびょういんまえ"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sekijujibyoin-mae/"
+    },
+    {
+      "question": "千丈",
+      "answer": [
+        "せんじょう"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senjo/"
+    },
+    {
+      "question": "高砂町",
+      "answer": [
+        "たかさごちょう"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takasagocho/"
+    },
+    {
+      "question": "鷹ノ子",
+      "answer": [
+        "たかのこ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takanoko/"
+    },
+    {
+      "question": "高浜",
+      "answer": [
+        "たかはま"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takahama_ehime/"
+    },
+    {
+      "question": "高光",
+      "answer": [
+        "たかみつ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamitsu/"
+    },
+    {
+      "question": "多喜浜",
+      "answer": [
+        "たきはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takihama/"
+    },
+    {
+      "question": "立間",
+      "answer": [
+        "たちま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachima/"
+    },
+    {
+      "question": "田窪",
+      "answer": [
+        "たのくぼ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanokubo/"
+    },
+    {
+      "question": "玉之江",
+      "answer": [
+        "たまのえ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamanoe/"
+    },
+    {
+      "question": "近永",
+      "answer": [
+        "ちかなが"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikanaga/"
+    },
+    {
+      "question": "鉄砲町",
+      "answer": [
+        "てっぽうちょう"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/teppocho/"
+    },
+    {
+      "question": "鳥ノ木",
+      "answer": [
+        "とりのき"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/torinoki/"
+    },
+    {
+      "question": "土居田",
+      "answer": [
+        "どいだ"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/doida/"
+    },
+    {
+      "question": "道後温泉",
+      "answer": [
+        "どうごおんせん"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dogo-onsen/"
+    },
+    {
+      "question": "道後公園",
+      "answer": [
+        "どうごこうえん"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dogokoen/"
+    },
+    {
+      "question": "土橋",
+      "answer": [
+        "どばし"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dobashi_ehime/"
+    },
+    {
+      "question": "中萩",
+      "answer": [
+        "なかはぎ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakahagi/"
+    },
+    {
+      "question": "波方",
+      "answer": [
+        "なみかた"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/namikata/"
+    },
+    {
+      "question": "新居浜",
+      "answer": [
+        "にいはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niihama/"
+    },
+    {
+      "question": "新谷",
+      "answer": [
+        "にいや"
+      ],
+      "meaning": "内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niiya/"
+    },
+    {
+      "question": "西大洲",
+      "answer": [
+        "にしおおず"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-ozu/"
+    },
+    {
+      "question": "西衣山",
+      "answer": [
+        "にしきぬやま"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kinuyama/"
+    },
+    {
+      "question": "西堀端",
+      "answer": [
+        "にしほりばた"
+      ],
+      "meaning": "伊予鉄道ＪＲ松山駅前線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishihoribata/"
+    },
+    {
+      "question": "壬生川",
+      "answer": [
+        "にゅうがわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nyugawa_ehime/"
+    },
+    {
+      "question": "波止浜",
+      "answer": [
+        "はしはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashihama/"
+    },
+    {
+      "question": "八多喜",
+      "answer": [
+        "はたき"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hataki/"
+    },
+    {
+      "question": "春賀",
+      "answer": [
+        "はるか"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haruka/"
+    },
+    {
+      "question": "梅津寺",
+      "answer": [
+        "ばいしんじ"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/baishinji/"
+    },
+    {
+      "question": "平井",
+      "answer": [
+        "ひらい"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirai_ehime/"
+    },
+    {
+      "question": "深田",
+      "answer": [
+        "ふかた"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukata/"
+    },
+    {
+      "question": "福音寺",
+      "answer": [
+        "ふくおんじ"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuonji/"
+    },
+    {
+      "question": "双岩",
+      "answer": [
+        "ふたいわ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futaiwa/"
+    },
+    {
+      "question": "二名",
+      "answer": [
+        "ふたな"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futana/"
+    },
+    {
+      "question": "平和通一丁目",
+      "answer": [
+        "へいわどおりいっちょうめ"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heiwadori-icchome/"
+    },
+    {
+      "question": "堀江",
+      "answer": [
+        "ほりえ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horie/"
+    },
+    {
+      "question": "本町一丁目",
+      "answer": [
+        "ほんまちいっちょうめ"
+      ],
+      "meaning": "伊予鉄道本町線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachiicchome/"
+    },
+    {
+      "question": "本町五丁目",
+      "answer": [
+        "ほんまちごちょうめ"
+      ],
+      "meaning": "伊予鉄道本町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachigochome/"
+    },
+    {
+      "question": "本町三丁目",
+      "answer": [
+        "ほんまちさんちょうめ"
+      ],
+      "meaning": "伊予鉄道本町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachisanchome/"
+    },
+    {
+      "question": "本町四丁目",
+      "answer": [
+        "ほんまちよんちょうめ"
+      ],
+      "meaning": "伊予鉄道本町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachiyonchome/"
+    },
+    {
+      "question": "本町六丁目",
+      "answer": [
+        "ほんまちろくちょうめ"
+      ],
+      "meaning": "伊予鉄道本町線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachirokuchome/"
+    },
+    {
+      "question": "松前",
+      "answer": [
+        "まさき"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/masaki_ehime/"
+    },
+    {
+      "question": "真土",
+      "answer": [
+        "まつち"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuchi/"
+    },
+    {
+      "question": "松丸",
+      "answer": [
+        "まつまる"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsumaru/"
+    },
+    {
+      "question": "松山",
+      "answer": [
+        "まつやま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyama_ehime/"
+    },
+    {
+      "question": "松山市",
+      "answer": [
+        "まつやまし"
+      ],
+      "meaning": "伊予鉄道高浜線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyamashi/"
+    },
+    {
+      "question": "松山市駅",
+      "answer": [
+        "まつやましえき"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyamashieki/"
+    },
+    {
+      "question": "三津",
+      "answer": [
+        "みつ"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsu/"
+    },
+    {
+      "question": "三津浜",
+      "answer": [
+        "みつはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsuhama/"
+    },
+    {
+      "question": "港山",
+      "answer": [
+        "みなとやま"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minatoyama/"
+    },
+    {
+      "question": "南堀端",
+      "answer": [
+        "みなみほりばた"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-horibata/"
+    },
+    {
+      "question": "南町",
+      "answer": [
+        "みなみまち"
+      ],
+      "meaning": "伊予鉄道松山市駅線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minamimachi/"
+    },
+    {
+      "question": "見奈良",
+      "answer": [
+        "みなら"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minara/"
+    },
+    {
+      "question": "宮田町",
+      "answer": [
+        "みやたちょう"
+      ],
+      "meaning": "伊予鉄道環状線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyatacho/"
+    },
+    {
+      "question": "向井原",
+      "answer": [
+        "むかいばら"
+      ],
+      "meaning": "予讃線、内子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukaibara/"
+    },
+    {
+      "question": "務田",
+      "answer": [
+        "むでん"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/muden/"
+    },
+    {
+      "question": "柳原",
+      "answer": [
+        "やなぎはら"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanagihara_ehime/"
+    },
+    {
+      "question": "山西",
+      "answer": [
+        "やまにし"
+      ],
+      "meaning": "伊予鉄道高浜線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamanishi/"
+    },
+    {
+      "question": "八幡浜",
+      "answer": [
+        "やわたはま"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yawatahama/"
+    },
+    {
+      "question": "余戸",
+      "answer": [
+        "ようご"
+      ],
+      "meaning": "伊予鉄道郡中線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yogo_ehime/"
+    },
+    {
+      "question": "横河原",
+      "answer": [
+        "よこがわら"
+      ],
+      "meaning": "伊予鉄道横河原線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokogawara/"
+    },
+    {
+      "question": "吉野生",
+      "answer": [
+        "よしのぶ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshinobu/"
+    }
+  ]
+}

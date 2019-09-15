@@ -1,0 +1,4253 @@
+{
+  "uniqueId": "JLPT N4m",
+  "name": "JLPT N4 Meaning Quiz",
+  "article": "a",
+  "instructions": "Choose the number of the most correct meaning!",
+  "description": "JLPT vocabulary compiled from [jlptstudy.net](https://jlptstudy.net/)",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "STRICT",
+  "commentFieldName": "Reading",
+  "forceMC": true,
+  "cards": [
+    {
+      "question": "あ",
+      "answer": [
+        "Ah"
+      ]
+    },
+    {
+      "question": "ああ",
+      "answer": [
+        "like that, that way"
+      ]
+    },
+    {
+      "question": "あいさつ・する",
+      "answer": [
+        "greeting"
+      ]
+    },
+    {
+      "question": "間",
+      "answer": [
+        "space, interval"
+      ],
+      "comment": "あいだ"
+    },
+    {
+      "question": "合う",
+      "answer": [
+        "to fit, to match"
+      ],
+      "comment": "あう"
+    },
+    {
+      "question": "あかちゃん",
+      "answer": [
+        "baby, infant"
+      ]
+    },
+    {
+      "question": "上がる",
+      "answer": [
+        "to rise, to go up"
+      ],
+      "comment": "あがる"
+    },
+    {
+      "question": "赤ん坊 (あかんぼう)",
+      "answer": [
+        "baby"
+      ]
+    },
+    {
+      "question": "空く",
+      "answer": [
+        "to open, to become empty"
+      ],
+      "comment": "あく"
+    },
+    {
+      "question": "アクセサリー",
+      "answer": [
+        "accessory"
+      ]
+    },
+    {
+      "question": "あげる",
+      "answer": [
+        "to give"
+      ]
+    },
+    {
+      "question": "浅い (あさい)",
+      "answer": [
+        "shallow, superficial"
+      ]
+    },
+    {
+      "question": "味",
+      "answer": [
+        "flavor, taste"
+      ],
+      "comment": "あじ"
+    },
+    {
+      "question": "アジア",
+      "answer": [
+        "Asia"
+      ]
+    },
+    {
+      "question": "明日",
+      "answer": [
+        "tomorrow"
+      ],
+      "comment": "あす"
+    },
+    {
+      "question": "遊び (あそび)",
+      "answer": [
+        "play"
+      ]
+    },
+    {
+      "question": "集る",
+      "answer": [
+        "to gather, to collect"
+      ],
+      "comment": "あつまる"
+    },
+    {
+      "question": "集める",
+      "answer": [
+        "to collect, to assemble"
+      ],
+      "comment": "あつめる"
+    },
+    {
+      "question": "アナウンサー",
+      "answer": [
+        "announcer"
+      ]
+    },
+    {
+      "question": "アフリカ",
+      "answer": [
+        "Africa"
+      ]
+    },
+    {
+      "question": "アメリカ",
+      "answer": [
+        "America"
+      ]
+    },
+    {
+      "question": "謝る (あやまる)",
+      "answer": [
+        "to apologize"
+      ]
+    },
+    {
+      "question": "アルコール",
+      "answer": [
+        "alcohol"
+      ]
+    },
+    {
+      "question": "アルバイト",
+      "answer": [
+        "part-time job"
+      ]
+    },
+    {
+      "question": "安心",
+      "answer": [
+        "peace of mind, relief"
+      ],
+      "comment": "あんしん"
+    },
+    {
+      "question": "安全 (あんぜん)",
+      "answer": [
+        "safety, security"
+      ]
+    },
+    {
+      "question": "あんな",
+      "answer": [
+        "such, like that"
+      ]
+    },
+    {
+      "question": "案内 (あんない・する)",
+      "answer": [
+        "information, guidance"
+      ]
+    },
+    {
+      "question": "以下",
+      "answer": [
+        "less than, below"
+      ],
+      "comment": "いか"
+    },
+    {
+      "question": "以外",
+      "answer": [
+        "with the exception of, excepting"
+      ],
+      "comment": "いがい"
+    },
+    {
+      "question": "医学",
+      "answer": [
+        "medical science"
+      ],
+      "comment": "いがく"
+    },
+    {
+      "question": "生きる",
+      "answer": [
+        "to live, to exist"
+      ],
+      "comment": "いきる"
+    },
+    {
+      "question": "いくら～ても",
+      "answer": [
+        "however much one may ～"
+      ]
+    },
+    {
+      "question": "意見",
+      "answer": [
+        "opinion, view"
+      ],
+      "comment": "いけん"
+    },
+    {
+      "question": "石 (いし)",
+      "answer": [
+        "stone"
+      ]
+    },
+    {
+      "question": "いじめる",
+      "answer": [
+        "to tease, to torment"
+      ]
+    },
+    {
+      "question": "以上",
+      "answer": [
+        "more than, this is all"
+      ],
+      "comment": "いじょう"
+    },
+    {
+      "question": "急ぐ",
+      "answer": [
+        "to hurry, to rush"
+      ],
+      "comment": "いそぐ"
+    },
+    {
+      "question": "致す (いたす)",
+      "answer": [
+        "(hum) to do"
+      ]
+    },
+    {
+      "question": "いただく",
+      "answer": [
+        "to receive, to take food or drink (hum)"
+      ]
+    },
+    {
+      "question": "一度",
+      "answer": [
+        "once, one time"
+      ],
+      "comment": "いちど"
+    },
+    {
+      "question": "一生懸命 (いっしょうけんめい)",
+      "answer": [
+        "as well as one can, with utmost effort"
+      ]
+    },
+    {
+      "question": "いっぱい",
+      "answer": [
+        "full, to the utmost"
+      ]
+    },
+    {
+      "question": "糸 (いと)",
+      "answer": [
+        "thread"
+      ]
+    },
+    {
+      "question": "以内 (いない)",
+      "answer": [
+        "within, inside of"
+      ]
+    },
+    {
+      "question": "田舎 (いなか)",
+      "answer": [
+        "rural, countryside"
+      ]
+    },
+    {
+      "question": "祈る (いのる)",
+      "answer": [
+        "to pray, to wish"
+      ]
+    },
+    {
+      "question": "いらっしゃる",
+      "answer": [
+        "(hon) to be, to come, to go"
+      ]
+    },
+    {
+      "question": "～員",
+      "answer": [
+        "member of ～"
+      ],
+      "comment": "～いん"
+    },
+    {
+      "question": "植える (うえる)",
+      "answer": [
+        "to plant, to grow"
+      ]
+    },
+    {
+      "question": "うかがう",
+      "answer": [
+        "to visit"
+      ]
+    },
+    {
+      "question": "受付 (うけつけ)",
+      "answer": [
+        "reception (desk), information ガス"
+      ]
+    },
+    {
+      "question": "受ける (うける)",
+      "answer": [
+        "to take (lesson, test), to undergo"
+      ]
+    },
+    {
+      "question": "動く",
+      "answer": [
+        "to move"
+      ],
+      "comment": "うごく"
+    },
+    {
+      "question": "うそ",
+      "answer": [
+        "lie"
+      ]
+    },
+    {
+      "question": "うち",
+      "answer": [
+        "within"
+      ]
+    },
+    {
+      "question": "打つ (うつ)",
+      "answer": [
+        "to hit, to strike"
+      ]
+    },
+    {
+      "question": "美しい (うつくしい)",
+      "answer": [
+        "beautiful, lovely"
+      ]
+    },
+    {
+      "question": "写す",
+      "answer": [
+        "copy, to photograph, to film"
+      ],
+      "comment": "うつす"
+    },
+    {
+      "question": "移る (うつる)",
+      "answer": [
+        "to move (house), to transfer (department)"
+      ]
+    },
+    {
+      "question": "腕 (うで)",
+      "answer": [
+        "arm"
+      ]
+    },
+    {
+      "question": "うまい",
+      "answer": [
+        "delicious"
+      ]
+    },
+    {
+      "question": "裏 (うら)",
+      "answer": [
+        "reverse side, wrong side, back"
+      ]
+    },
+    {
+      "question": "売り場",
+      "answer": [
+        "place where things are sold"
+      ],
+      "comment": "うりば"
+    },
+    {
+      "question": "うれしい",
+      "answer": [
+        "happy, glad"
+      ]
+    },
+    {
+      "question": "うん",
+      "answer": [
+        "yes (informal), alright"
+      ]
+    },
+    {
+      "question": "運転手",
+      "answer": [
+        "driver, chauffeur"
+      ],
+      "comment": "うんてんしゅ"
+    },
+    {
+      "question": "運転",
+      "answer": [
+        "driving"
+      ],
+      "comment": "うんてん・する"
+    },
+    {
+      "question": "運動",
+      "answer": [
+        "exercise"
+      ],
+      "comment": "うんどう・する"
+    },
+    {
+      "question": "エスカレーター",
+      "answer": [
+        "escalator"
+      ]
+    },
+    {
+      "question": "枝 (えだ)",
+      "answer": [
+        "branch, twig"
+      ]
+    },
+    {
+      "question": "選ぶ (えらぶ)",
+      "answer": [
+        "to choose, to select"
+      ]
+    },
+    {
+      "question": "遠慮 (えんりょ・する)",
+      "answer": [
+        "restraint, reserve"
+      ]
+    },
+    {
+      "question": "おいでになる",
+      "answer": [
+        "(hon)to be"
+      ]
+    },
+    {
+      "question": "お祝い (おいわい)",
+      "answer": [
+        "congratulation, celebration"
+      ]
+    },
+    {
+      "question": "オートバイ",
+      "answer": [
+        "motorcycle (lit: auto-bi(ke))"
+      ]
+    },
+    {
+      "question": "オーバー",
+      "answer": [
+        "overcoat"
+      ]
+    },
+    {
+      "question": "おかげ",
+      "answer": [
+        "thanks or owing to"
+      ]
+    },
+    {
+      "question": "おかしい",
+      "answer": [
+        "strange, funny"
+      ]
+    },
+    {
+      "question": "～おき",
+      "answer": [
+        "after every ～"
+      ]
+    },
+    {
+      "question": "億 (おく)",
+      "answer": [
+        "100,000,000, hundred million"
+      ]
+    },
+    {
+      "question": "屋上",
+      "answer": [
+        "rooftop"
+      ],
+      "comment": "おくじょう"
+    },
+    {
+      "question": "贈り物 (おくりもの)",
+      "answer": [
+        "present, gift"
+      ]
+    },
+    {
+      "question": "送る",
+      "answer": [
+        "to send (a thing), to dispatch"
+      ],
+      "comment": "おくる"
+    },
+    {
+      "question": "遅れる (おくれる)",
+      "answer": [
+        "to be late, to be delayed"
+      ]
+    },
+    {
+      "question": "お子さん",
+      "answer": [
+        "(someone else's) child"
+      ],
+      "comment": "おこさん"
+    },
+    {
+      "question": "起こす",
+      "answer": [
+        "to wake someone"
+      ],
+      "comment": "おこす"
+    },
+    {
+      "question": "行う",
+      "answer": [
+        "to perform, to do, to carry out"
+      ],
+      "comment": "おこなう"
+    },
+    {
+      "question": "怒る (おこる)",
+      "answer": [
+        "to get angry, to be angry"
+      ]
+    },
+    {
+      "question": "押し入れ (おしいれ)",
+      "answer": [
+        "closet"
+      ]
+    },
+    {
+      "question": "お嬢さん (おじょうさん)",
+      "answer": [
+        "(1) (hon) daughter, (2) young lady"
+      ]
+    },
+    {
+      "question": "お宅 (おたく)",
+      "answer": [
+        "(pol) your house, your home"
+      ]
+    },
+    {
+      "question": "落ちる (おちる)",
+      "answer": [
+        "to fall, to drop"
+      ]
+    },
+    {
+      "question": "おっしゃる",
+      "answer": [
+        "(hon) to say, to speak"
+      ]
+    },
+    {
+      "question": "夫 (おっと)",
+      "answer": [
+        "husband"
+      ]
+    },
+    {
+      "question": "おつり",
+      "answer": [
+        "change (money), balance"
+      ]
+    },
+    {
+      "question": "音",
+      "answer": [
+        "sound, note"
+      ],
+      "comment": "おと"
+    },
+    {
+      "question": "落す (おとす)",
+      "answer": [
+        "to drop, to lose"
+      ]
+    },
+    {
+      "question": "踊り (おどり)",
+      "answer": [
+        "dance"
+      ]
+    },
+    {
+      "question": "踊る (おどる)",
+      "answer": [
+        "to dance"
+      ]
+    },
+    {
+      "question": "驚く (おどろく)",
+      "answer": [
+        "to be surprised, to be astonished"
+      ]
+    },
+    {
+      "question": "お祭り (おまつり)",
+      "answer": [
+        "festival"
+      ]
+    },
+    {
+      "question": "お見舞い (おみまい)",
+      "answer": [
+        "calling on someone who is ill, enquiry"
+      ]
+    },
+    {
+      "question": "お土産",
+      "answer": [
+        "souvenir"
+      ],
+      "comment": "おみやげ"
+    },
+    {
+      "question": "思い出す",
+      "answer": [
+        "to recall, to remember"
+      ],
+      "comment": "おもいだす"
+    },
+    {
+      "question": "思う",
+      "answer": [
+        "to think, to feel"
+      ],
+      "comment": "おもう"
+    },
+    {
+      "question": "おもちゃ",
+      "answer": [
+        "toy"
+      ]
+    },
+    {
+      "question": "表 (おもて)",
+      "answer": [
+        "the front, surface, exterior"
+      ]
+    },
+    {
+      "question": "親",
+      "answer": [
+        "parents"
+      ],
+      "comment": "おや"
+    },
+    {
+      "question": "下りる",
+      "answer": [
+        "to descend a mountain, to (descend) go down stairs"
+      ],
+      "comment": "おりる"
+    },
+    {
+      "question": "おる",
+      "answer": [
+        "to be (polite version of いる)"
+      ]
+    },
+    {
+      "question": "折る (おる)",
+      "answer": [
+        "to break, to fold, to pick a flower"
+      ]
+    },
+    {
+      "question": "お礼 (おれい)",
+      "answer": [
+        "thanking, expression of gratitude"
+      ]
+    },
+    {
+      "question": "折れる (おれる)",
+      "answer": [
+        "to break, to be folded, to give in, to turn (a corner)"
+      ]
+    },
+    {
+      "question": "終わり",
+      "answer": [
+        "the end"
+      ],
+      "comment": "おわり"
+    },
+    {
+      "question": "～おわる",
+      "answer": [
+        "end of ～"
+      ]
+    },
+    {
+      "question": "～家",
+      "answer": [
+        "professional ～"
+      ],
+      "comment": "～か"
+    },
+    {
+      "question": "カーテン",
+      "answer": [
+        "curtain"
+      ]
+    },
+    {
+      "question": "～会",
+      "answer": [
+        "～ meeting"
+      ],
+      "comment": "～かい"
+    },
+    {
+      "question": "海岸 (かいがん)",
+      "answer": [
+        "coast, beach"
+      ]
+    },
+    {
+      "question": "会議 (かいぎ)",
+      "answer": [
+        "meeting, conference"
+      ]
+    },
+    {
+      "question": "会議室 (かいぎしつ)",
+      "answer": [
+        "conference room"
+      ]
+    },
+    {
+      "question": "会場",
+      "answer": [
+        "assembly hall, meeting place, the grounds"
+      ],
+      "comment": "かいじょう"
+    },
+    {
+      "question": "会話",
+      "answer": [
+        "conversation"
+      ],
+      "comment": "かいわ"
+    },
+    {
+      "question": "帰り",
+      "answer": [
+        "return, coming back"
+      ],
+      "comment": "かえり"
+    },
+    {
+      "question": "変える (かえる)",
+      "answer": [
+        "to change, to alter, to vary"
+      ]
+    },
+    {
+      "question": "科学 (かがく)",
+      "answer": [
+        "science"
+      ]
+    },
+    {
+      "question": "鏡 (かがみ)",
+      "answer": [
+        "mirror"
+      ]
+    },
+    {
+      "question": "～学部 (～がくぶ)",
+      "answer": [
+        "department of a university"
+      ]
+    },
+    {
+      "question": "掛ける (かける)",
+      "answer": [
+        "to hang, to put on (eg wall)"
+      ]
+    },
+    {
+      "question": "かける",
+      "answer": [
+        "to sit down"
+      ]
+    },
+    {
+      "question": "飾る (かざる)",
+      "answer": [
+        "to decorate, to ornament, to adorn"
+      ]
+    },
+    {
+      "question": "火事",
+      "answer": [
+        "fire"
+      ],
+      "comment": "かじ"
+    },
+    {
+      "question": "ガス",
+      "answer": [
+        "gas"
+      ]
+    },
+    {
+      "question": "ガソリン",
+      "answer": [
+        "gasoline, petrol"
+      ]
+    },
+    {
+      "question": "ガソリンスタンド",
+      "answer": [
+        "gasoline stand, gas station, petrol station"
+      ]
+    },
+    {
+      "question": "方",
+      "answer": [
+        "way of doing"
+      ],
+      "comment": "かた"
+    },
+    {
+      "question": "堅/硬/固い (かたい)",
+      "answer": [
+        "solid, hard, firm"
+      ]
+    },
+    {
+      "question": "形 (かたち)",
+      "answer": [
+        "shape"
+      ]
+    },
+    {
+      "question": "片付ける (かたづける)",
+      "answer": [
+        "to tidy up, to put in order, to put away"
+      ]
+    },
+    {
+      "question": "課長 (かちょう)",
+      "answer": [
+        "section manager"
+      ]
+    },
+    {
+      "question": "勝つ (かつ)",
+      "answer": [
+        "to win, to gain victory"
+      ]
+    },
+    {
+      "question": "かっこう",
+      "answer": [
+        "appearance, manner"
+      ]
+    },
+    {
+      "question": "家内 (かない)",
+      "answer": [
+        "housewife"
+      ]
+    },
+    {
+      "question": "悲しい (かなしい)",
+      "answer": [
+        "sad, sorrowful"
+      ]
+    },
+    {
+      "question": "必ず (かならず)",
+      "answer": [
+        "certainly, necessarily, invariably"
+      ]
+    },
+    {
+      "question": "お・金持ち",
+      "answer": [
+        "rich man"
+      ],
+      "comment": "かねもち/おかねもち"
+    },
+    {
+      "question": "彼女 (かのじょ)",
+      "answer": [
+        "she, girl-friend"
+      ]
+    },
+    {
+      "question": "壁 (かべ)",
+      "answer": [
+        "wall"
+      ]
+    },
+    {
+      "question": "かまう",
+      "answer": [
+        "to mind, to care about"
+      ]
+    },
+    {
+      "question": "髪 (かみ)",
+      "answer": [
+        "hair"
+      ]
+    },
+    {
+      "question": "噛む (かむ)",
+      "answer": [
+        "to bite, to chew"
+      ]
+    },
+    {
+      "question": "通う",
+      "answer": [
+        "(1) to go back and forth, (2) to commute"
+      ],
+      "comment": "かよう"
+    },
+    {
+      "question": "ガラス",
+      "answer": [
+        "glass, pane"
+      ]
+    },
+    {
+      "question": "彼 (かれ)",
+      "answer": [
+        "he, boyfriend"
+      ]
+    },
+    {
+      "question": "彼ら (かれら)",
+      "answer": [
+        "they (usually male)"
+      ]
+    },
+    {
+      "question": "乾く (かわく)",
+      "answer": [
+        "to get dry"
+      ]
+    },
+    {
+      "question": "代わり",
+      "answer": [
+        "substitute, alternate"
+      ],
+      "comment": "かわり"
+    },
+    {
+      "question": "変わる (かわる)",
+      "answer": [
+        "to change, to be transformed, to vary"
+      ]
+    },
+    {
+      "question": "考える",
+      "answer": [
+        "to consider"
+      ],
+      "comment": "かんがえる"
+    },
+    {
+      "question": "関係 (かんけい)",
+      "answer": [
+        "relation, connection"
+      ]
+    },
+    {
+      "question": "看護婦 (かんごふ)",
+      "answer": [
+        "(female) nurse"
+      ]
+    },
+    {
+      "question": "簡単 (かんたん)",
+      "answer": [
+        "simple"
+      ]
+    },
+    {
+      "question": "頑張る (がんばる)",
+      "answer": [
+        "to try one's best, to persist"
+      ]
+    },
+    {
+      "question": "気",
+      "answer": [
+        "spirit, mood"
+      ],
+      "comment": "き"
+    },
+    {
+      "question": "機会 (きかい)",
+      "answer": [
+        "chance, opportunity"
+      ]
+    },
+    {
+      "question": "危険 (きけん)",
+      "answer": [
+        "danger, peril, hazard"
+      ]
+    },
+    {
+      "question": "聞こえる",
+      "answer": [
+        "to be heard, to be audible"
+      ],
+      "comment": "きこえる"
+    },
+    {
+      "question": "汽車 (きしゃ)",
+      "answer": [
+        "train (steam)"
+      ]
+    },
+    {
+      "question": "技術 (ぎじゅつ)",
+      "answer": [
+        "art, technique, technology, skill"
+      ]
+    },
+    {
+      "question": "季節 (きせつ)",
+      "answer": [
+        "season"
+      ]
+    },
+    {
+      "question": "規則 (きそく)",
+      "answer": [
+        "rule, regulations"
+      ]
+    },
+    {
+      "question": "きっと",
+      "answer": [
+        "surely, definitely"
+      ]
+    },
+    {
+      "question": "絹 (きぬ)",
+      "answer": [
+        "silk"
+      ]
+    },
+    {
+      "question": "厳しい (きびしい)",
+      "answer": [
+        "strict"
+      ]
+    },
+    {
+      "question": "気分",
+      "answer": [
+        "feeling, mood"
+      ],
+      "comment": "きぶん"
+    },
+    {
+      "question": "決る (きまる)",
+      "answer": [
+        "to be decided, to be settled"
+      ]
+    },
+    {
+      "question": "君 (きみ)",
+      "answer": [
+        "You (masculine term for female)"
+      ]
+    },
+    {
+      "question": "決める (きめる)",
+      "answer": [
+        "to decide"
+      ]
+    },
+    {
+      "question": "気持ち",
+      "answer": [
+        "feeling, sensation, mood"
+      ],
+      "comment": "きもち"
+    },
+    {
+      "question": "着物",
+      "answer": [
+        "kimono"
+      ],
+      "comment": "きもの"
+    },
+    {
+      "question": "客 (きゃく)",
+      "answer": [
+        "guest, customer"
+      ]
+    },
+    {
+      "question": "急",
+      "answer": [
+        "(1) urgent, sudden, (2) steep"
+      ],
+      "comment": "きゅう"
+    },
+    {
+      "question": "急行",
+      "answer": [
+        "express (eg train that bypasses stations)"
+      ],
+      "comment": "きゅうこう"
+    },
+    {
+      "question": "教育 (きょういく)",
+      "answer": [
+        "training, education"
+      ]
+    },
+    {
+      "question": "教会",
+      "answer": [
+        "church"
+      ],
+      "comment": "きょうかい"
+    },
+    {
+      "question": "競争 (きょうそう)",
+      "answer": [
+        "competition, contest"
+      ]
+    },
+    {
+      "question": "興味 (きょうみ)",
+      "answer": [
+        "interest (in something)"
+      ]
+    },
+    {
+      "question": "近所",
+      "answer": [
+        "neighbourhood"
+      ],
+      "comment": "きんじょ"
+    },
+    {
+      "question": "～区",
+      "answer": [
+        "district ～"
+      ],
+      "comment": "～く"
+    },
+    {
+      "question": "具合 (ぐあい)",
+      "answer": [
+        "condition, state, health"
+      ]
+    },
+    {
+      "question": "空気",
+      "answer": [
+        "air, atmosphere"
+      ],
+      "comment": "くうき"
+    },
+    {
+      "question": "空港 (くうこう)",
+      "answer": [
+        "airport"
+      ]
+    },
+    {
+      "question": "草 (くさ)",
+      "answer": [
+        "grass"
+      ]
+    },
+    {
+      "question": "くださる",
+      "answer": [
+        "(hon) to give, to confer"
+      ]
+    },
+    {
+      "question": "首",
+      "answer": [
+        "neck"
+      ],
+      "comment": "くび"
+    },
+    {
+      "question": "雲 (くも)",
+      "answer": [
+        "cloud"
+      ]
+    },
+    {
+      "question": "比べる (くらべる)",
+      "answer": [
+        "to compare"
+      ]
+    },
+    {
+      "question": "くれる",
+      "answer": [
+        "to give, to do for"
+      ]
+    },
+    {
+      "question": "暮れる (くれる)",
+      "answer": [
+        "to get dark, to come to an end"
+      ]
+    },
+    {
+      "question": "～君 (～くん)",
+      "answer": [
+        "Mr (junior) ～, master ～"
+      ]
+    },
+    {
+      "question": "毛 (け)",
+      "answer": [
+        "hair"
+      ]
+    },
+    {
+      "question": "計画",
+      "answer": [
+        "plan, project, schedule"
+      ],
+      "comment": "けいかく・する"
+    },
+    {
+      "question": "経験 (けいけん・する)",
+      "answer": [
+        "experience"
+      ]
+    },
+    {
+      "question": "経済 (けいざい)",
+      "answer": [
+        "economics, finance, economy"
+      ]
+    },
+    {
+      "question": "警察 (けいさつ)",
+      "answer": [
+        "police"
+      ]
+    },
+    {
+      "question": "けが・する",
+      "answer": [
+        "injury (to animate object), hurt"
+      ]
+    },
+    {
+      "question": "ケーキ",
+      "answer": [
+        "cake"
+      ]
+    },
+    {
+      "question": "景色 (けしき)",
+      "answer": [
+        "scenery, scene, landscape"
+      ]
+    },
+    {
+      "question": "消しゴム (けしゴム)",
+      "answer": [
+        "eraser"
+      ]
+    },
+    {
+      "question": "下宿 (げしゅく)",
+      "answer": [
+        "boarding, lodging, boarding house"
+      ]
+    },
+    {
+      "question": "決して (けっして)",
+      "answer": [
+        "never"
+      ]
+    },
+    {
+      "question": "けれど/けれども",
+      "answer": [
+        "but, however"
+      ]
+    },
+    {
+      "question": "～軒 (～けん)",
+      "answer": [
+        "counter for houses"
+      ]
+    },
+    {
+      "question": "原因 (げんいん)",
+      "answer": [
+        "cause, origin, source"
+      ]
+    },
+    {
+      "question": "けんか・する",
+      "answer": [
+        "quarrel"
+      ]
+    },
+    {
+      "question": "玄関 (げんかん)",
+      "answer": [
+        "entrance way (in Japanese house)"
+      ]
+    },
+    {
+      "question": "研究",
+      "answer": [
+        "study, research, investigation"
+      ],
+      "comment": "けんきゅう"
+    },
+    {
+      "question": "研究室",
+      "answer": [
+        "study room, laboratory"
+      ],
+      "comment": "けんきゅうしつ"
+    },
+    {
+      "question": "見物",
+      "answer": [
+        "a sight, an attraction"
+      ],
+      "comment": "けんぶつ"
+    },
+    {
+      "question": "子",
+      "answer": [
+        "child"
+      ],
+      "comment": "こ"
+    },
+    {
+      "question": "御～ (ご～)",
+      "answer": [
+        "honourable ～"
+      ]
+    },
+    {
+      "question": "こう",
+      "answer": [
+        "like this, this way"
+      ]
+    },
+    {
+      "question": "郊外 (こうがい)",
+      "answer": [
+        "suburb, outskirts"
+      ]
+    },
+    {
+      "question": "講義 (こうぎ)",
+      "answer": [
+        "lecture"
+      ]
+    },
+    {
+      "question": "工業",
+      "answer": [
+        "(manufacturing) industry"
+      ],
+      "comment": "こうぎょう"
+    },
+    {
+      "question": "高校/高等学校 (こうこう/こうとうがっこう)",
+      "answer": [
+        "high school/senior high school"
+      ]
+    },
+    {
+      "question": "高校生",
+      "answer": [
+        "high school student"
+      ],
+      "comment": "こうこうせい"
+    },
+    {
+      "question": "工場",
+      "answer": [
+        "factory"
+      ],
+      "comment": "こうじょう"
+    },
+    {
+      "question": "校長",
+      "answer": [
+        "principal, headmaster"
+      ],
+      "comment": "こうちょう"
+    },
+    {
+      "question": "交通 (こうつう)",
+      "answer": [
+        "traffic, transportation"
+      ]
+    },
+    {
+      "question": "講堂 (こうどう)",
+      "answer": [
+        "auditorium"
+      ]
+    },
+    {
+      "question": "公務員 (こうむいん)",
+      "answer": [
+        "government worker, public servant"
+      ]
+    },
+    {
+      "question": "国際 (こくさい)",
+      "answer": [
+        "international"
+      ]
+    },
+    {
+      "question": "心",
+      "answer": [
+        "core, heart"
+      ],
+      "comment": "こころ"
+    },
+    {
+      "question": "～ございます",
+      "answer": [
+        "to be (polite), to exist"
+      ]
+    },
+    {
+      "question": "ご主人",
+      "answer": [
+        "your husband, her husband"
+      ],
+      "comment": "ごしゅじん"
+    },
+    {
+      "question": "故障 (こしょう・する)",
+      "answer": [
+        "break-down"
+      ]
+    },
+    {
+      "question": "ご存じ (ごぞんじ)",
+      "answer": [
+        "knowing, acquaintance"
+      ]
+    },
+    {
+      "question": "答",
+      "answer": [
+        "answer, response"
+      ],
+      "comment": "こたえ"
+    },
+    {
+      "question": "ごちそう",
+      "answer": [
+        "feast, treating (someone)"
+      ]
+    },
+    {
+      "question": "こっち",
+      "answer": [
+        "(1) this person, (2) this direction, (3) this side, (4) thereafter"
+      ]
+    },
+    {
+      "question": "こと",
+      "answer": [
+        "thing, matter, fact"
+      ]
+    },
+    {
+      "question": "小鳥",
+      "answer": [
+        "small bird"
+      ],
+      "comment": "ことり"
+    },
+    {
+      "question": "このあいだ",
+      "answer": [
+        "the other day, recently"
+      ]
+    },
+    {
+      "question": "このごろ",
+      "answer": [
+        "these days, nowadays"
+      ]
+    },
+    {
+      "question": "細かい (こまかい)",
+      "answer": [
+        "(1) small, (2) fine, minute"
+      ]
+    },
+    {
+      "question": "ごみ",
+      "answer": [
+        "rubbish, trash, garbage"
+      ]
+    },
+    {
+      "question": "込む (こむ)",
+      "answer": [
+        "to be crowded"
+      ]
+    },
+    {
+      "question": "米 (こめ)",
+      "answer": [
+        "uncooked rice"
+      ]
+    },
+    {
+      "question": "ごらんになる",
+      "answer": [
+        "(hon) to see"
+      ]
+    },
+    {
+      "question": "これから",
+      "answer": [
+        "after this"
+      ]
+    },
+    {
+      "question": "怖い (こわい)",
+      "answer": [
+        "scary, frightening"
+      ]
+    },
+    {
+      "question": "壊す (こわす)",
+      "answer": [
+        "to break, to break down"
+      ]
+    },
+    {
+      "question": "壊れる (こわれる)",
+      "answer": [
+        "to be broken, to break"
+      ]
+    },
+    {
+      "question": "コンサート",
+      "answer": [
+        "concert"
+      ]
+    },
+    {
+      "question": "今度",
+      "answer": [
+        "now, next time"
+      ],
+      "comment": "こんど"
+    },
+    {
+      "question": "コンピュータ/コンピューター",
+      "answer": [
+        "computer"
+      ]
+    },
+    {
+      "question": "今夜",
+      "answer": [
+        "this evening, tonight"
+      ],
+      "comment": "こんや"
+    },
+    {
+      "question": "最近 (さいきん)",
+      "answer": [
+        "latest, most recent, nowadays"
+      ]
+    },
+    {
+      "question": "最後 (さいご)",
+      "answer": [
+        "last, end, conclusion"
+      ]
+    },
+    {
+      "question": "最初 (さいしょ)",
+      "answer": [
+        "beginning, first"
+      ]
+    },
+    {
+      "question": "坂 (さか)",
+      "answer": [
+        "slope, hill"
+      ]
+    },
+    {
+      "question": "探す (さがす)",
+      "answer": [
+        "to search, to seek, to look for"
+      ]
+    },
+    {
+      "question": "下る",
+      "answer": [
+        "to get down, to descend"
+      ],
+      "comment": "さがる"
+    },
+    {
+      "question": "盛ん (さかん)",
+      "answer": [
+        "popularity, prosperous"
+      ]
+    },
+    {
+      "question": "下げる",
+      "answer": [
+        "to hang, to lower, to move back"
+      ],
+      "comment": "さげる"
+    },
+    {
+      "question": "差し上げる (さしあげる)",
+      "answer": [
+        "(polite) to give, to offer"
+      ]
+    },
+    {
+      "question": "さっき",
+      "answer": [
+        "some time ago"
+      ]
+    },
+    {
+      "question": "寂しい (さびしい)",
+      "answer": [
+        "lonely, lonesome"
+      ]
+    },
+    {
+      "question": "～様 (～さま)",
+      "answer": [
+        "Mr or Mrs ～"
+      ]
+    },
+    {
+      "question": "さ来月",
+      "answer": [
+        "the month after next"
+      ],
+      "comment": "さらいげつ"
+    },
+    {
+      "question": "さ来週",
+      "answer": [
+        "the week after next"
+      ],
+      "comment": "さらいしゅう"
+    },
+    {
+      "question": "サラダ",
+      "answer": [
+        "salad"
+      ]
+    },
+    {
+      "question": "騒ぐ (さわぐ)",
+      "answer": [
+        "to make noise, to clamor, to be excited"
+      ]
+    },
+    {
+      "question": "触る (さわる)",
+      "answer": [
+        "to touch, to feel"
+      ]
+    },
+    {
+      "question": "産業",
+      "answer": [
+        "industry"
+      ],
+      "comment": "さんぎょう"
+    },
+    {
+      "question": "サンダル",
+      "answer": [
+        "sandal"
+      ]
+    },
+    {
+      "question": "サンドイッチ",
+      "answer": [
+        "sandwich"
+      ]
+    },
+    {
+      "question": "残念 (ざんねん)",
+      "answer": [
+        "bad luck, disappointment"
+      ]
+    },
+    {
+      "question": "市",
+      "answer": [
+        "city"
+      ],
+      "comment": "し"
+    },
+    {
+      "question": "字",
+      "answer": [
+        "character, hand-writing"
+      ],
+      "comment": "じ"
+    },
+    {
+      "question": "試合",
+      "answer": [
+        "match, game, contest"
+      ],
+      "comment": "しあい"
+    },
+    {
+      "question": "仕方",
+      "answer": [
+        "way, method"
+      ],
+      "comment": "しかた"
+    },
+    {
+      "question": "しかる",
+      "answer": [
+        "to scold"
+      ]
+    },
+    {
+      "question": "～式 (～しき)",
+      "answer": [
+        "ceremony"
+      ]
+    },
+    {
+      "question": "試験",
+      "answer": [
+        "examination, test, study"
+      ],
+      "comment": "しけん"
+    },
+    {
+      "question": "事故 (じこ)",
+      "answer": [
+        "accident"
+      ]
+    },
+    {
+      "question": "地震 (じしん)",
+      "answer": [
+        "earthquake"
+      ]
+    },
+    {
+      "question": "時代",
+      "answer": [
+        "period, epoch, era"
+      ],
+      "comment": "じだい"
+    },
+    {
+      "question": "下着",
+      "answer": [
+        "underwear"
+      ],
+      "comment": "したぎ"
+    },
+    {
+      "question": "支度 (したく・する)",
+      "answer": [
+        "preparation"
+      ]
+    },
+    {
+      "question": "しっかり",
+      "answer": [
+        "firmly, tightly, steady"
+      ]
+    },
+    {
+      "question": "失敗 (しっぱい)",
+      "answer": [
+        "failure, mistake, blunder"
+      ]
+    },
+    {
+      "question": "失礼 (しつれい)",
+      "answer": [
+        "(1) discourtesy, impoliteness, (2) Excuse me, Goodbye"
+      ]
+    },
+    {
+      "question": "辞典 (じてん)",
+      "answer": [
+        "dictionary"
+      ]
+    },
+    {
+      "question": "品物",
+      "answer": [
+        "goods"
+      ],
+      "comment": "しなもの"
+    },
+    {
+      "question": "しばらく",
+      "answer": [
+        "little while"
+      ]
+    },
+    {
+      "question": "島 (しま)",
+      "answer": [
+        "island"
+      ]
+    },
+    {
+      "question": "（～て）しまう",
+      "answer": [
+        "to end up ～"
+      ]
+    },
+    {
+      "question": "市民",
+      "answer": [
+        "citizen"
+      ],
+      "comment": "しみん"
+    },
+    {
+      "question": "事務所 (じむしょ)",
+      "answer": [
+        "office"
+      ]
+    },
+    {
+      "question": "社会",
+      "answer": [
+        "society, public"
+      ],
+      "comment": "しゃかい"
+    },
+    {
+      "question": "社長",
+      "answer": [
+        "company president, manager, director"
+      ],
+      "comment": "しゃちょう"
+    },
+    {
+      "question": "じゃま",
+      "answer": [
+        "hindrance, intrusion"
+      ]
+    },
+    {
+      "question": "ジャム",
+      "answer": [
+        "jam"
+      ]
+    },
+    {
+      "question": "自由 (じゆう)",
+      "answer": [
+        "freedom"
+      ]
+    },
+    {
+      "question": "習慣 (しゅうかん)",
+      "answer": [
+        "custom, habit, manners"
+      ]
+    },
+    {
+      "question": "住所",
+      "answer": [
+        "address (eg of house), residence, domicile"
+      ],
+      "comment": "じゅうしょ"
+    },
+    {
+      "question": "柔道 (じゅうどう)",
+      "answer": [
+        "judo"
+      ]
+    },
+    {
+      "question": "十分",
+      "answer": [
+        "enough , sufficient"
+      ],
+      "comment": "じゅうぶん"
+    },
+    {
+      "question": "出席 (しゅっせき・する)",
+      "answer": [
+        "attendance, presence"
+      ]
+    },
+    {
+      "question": "出発",
+      "answer": [
+        "departure"
+      ],
+      "comment": "しゅっぱつ・する"
+    },
+    {
+      "question": "趣味 (しゅみ)",
+      "answer": [
+        "hobby"
+      ]
+    },
+    {
+      "question": "準備 (じゅんび・する)",
+      "answer": [
+        "prepare"
+      ]
+    },
+    {
+      "question": "紹介 (しょうかい)",
+      "answer": [
+        "introduction"
+      ]
+    },
+    {
+      "question": "正月",
+      "answer": [
+        "New Year, New Year's Day"
+      ],
+      "comment": "しょうがつ"
+    },
+    {
+      "question": "小学校",
+      "answer": [
+        "primary school, elementary school"
+      ],
+      "comment": "しょうがっこう"
+    },
+    {
+      "question": "小説",
+      "answer": [
+        "novel, story"
+      ],
+      "comment": "しょうせつ"
+    },
+    {
+      "question": "招待 (しょうたい・する)",
+      "answer": [
+        "invitation"
+      ]
+    },
+    {
+      "question": "承知 (しょうち・する)",
+      "answer": [
+        "consent, acceptance"
+      ]
+    },
+    {
+      "question": "将来 (しょうらい)",
+      "answer": [
+        "future, prospects"
+      ]
+    },
+    {
+      "question": "食事",
+      "answer": [
+        "meal"
+      ],
+      "comment": "しょくじ・する"
+    },
+    {
+      "question": "食料品",
+      "answer": [
+        "foodstuff, groceries"
+      ],
+      "comment": "しょくりょうひん"
+    },
+    {
+      "question": "女性 (じょせい)",
+      "answer": [
+        "woman"
+      ]
+    },
+    {
+      "question": "知らせる",
+      "answer": [
+        "to notify, to advise"
+      ],
+      "comment": "しらせる"
+    },
+    {
+      "question": "調べる (しらべる)",
+      "answer": [
+        "to investigate, to check up"
+      ]
+    },
+    {
+      "question": "人口",
+      "answer": [
+        "population"
+      ],
+      "comment": "じんこう"
+    },
+    {
+      "question": "神社 (じんじゃ)",
+      "answer": [
+        "Shinto shrine"
+      ]
+    },
+    {
+      "question": "親切",
+      "answer": [
+        "kindness, gentleness"
+      ],
+      "comment": "しんせつ"
+    },
+    {
+      "question": "心配 (しんぱい・する)",
+      "answer": [
+        "worry, concern"
+      ]
+    },
+    {
+      "question": "新聞社",
+      "answer": [
+        "newspaper company"
+      ],
+      "comment": "しんぶんしゃ"
+    },
+    {
+      "question": "水泳 (すいえい)",
+      "answer": [
+        "swimming"
+      ]
+    },
+    {
+      "question": "水道",
+      "answer": [
+        "water service, water supply"
+      ],
+      "comment": "すいどう"
+    },
+    {
+      "question": "ずいぶん",
+      "answer": [
+        "extremely"
+      ]
+    },
+    {
+      "question": "数学 (すうがく)",
+      "answer": [
+        "mathematics, arithmetic"
+      ]
+    },
+    {
+      "question": "スーツ",
+      "answer": [
+        "suit"
+      ]
+    },
+    {
+      "question": "スーツケース",
+      "answer": [
+        "suitcase"
+      ]
+    },
+    {
+      "question": "スーパー（マーケット）",
+      "answer": [
+        "super (market)"
+      ]
+    },
+    {
+      "question": "過ぎる (すぎる)",
+      "answer": [
+        "to exceed, to go beyond"
+      ]
+    },
+    {
+      "question": "すく",
+      "answer": [
+        "to become empty"
+      ]
+    },
+    {
+      "question": "スクリーン",
+      "answer": [
+        "screen"
+      ]
+    },
+    {
+      "question": "凄い (すごい)",
+      "answer": [
+        "terrific, amazing, to a great extent"
+      ]
+    },
+    {
+      "question": "進む",
+      "answer": [
+        "to make progress, to advance, to proceed"
+      ],
+      "comment": "すすむ"
+    },
+    {
+      "question": "すっかり",
+      "answer": [
+        "all, completely, thoroughly"
+      ]
+    },
+    {
+      "question": "ずっと",
+      "answer": [
+        "straight, quickly, all of a sudden"
+      ]
+    },
+    {
+      "question": "ステーキ",
+      "answer": [
+        "steak"
+      ]
+    },
+    {
+      "question": "ステレオ",
+      "answer": [
+        "stereo"
+      ]
+    },
+    {
+      "question": "捨てる (すてる)",
+      "answer": [
+        "to throw away"
+      ]
+    },
+    {
+      "question": "砂 (すな)",
+      "answer": [
+        "sand"
+      ]
+    },
+    {
+      "question": "すばらしい",
+      "answer": [
+        "wonderful, splendid"
+      ]
+    },
+    {
+      "question": "滑る (すべる)",
+      "answer": [
+        "to slide, to slip"
+      ]
+    },
+    {
+      "question": "隅 (すみ)",
+      "answer": [
+        "corner, nook"
+      ]
+    },
+    {
+      "question": "済む (すむ)",
+      "answer": [
+        "to finish, to end"
+      ]
+    },
+    {
+      "question": "すり",
+      "answer": [
+        "pickpocket"
+      ]
+    },
+    {
+      "question": "すると",
+      "answer": [
+        "and, then"
+      ]
+    },
+    {
+      "question": "～製 (～せい)",
+      "answer": [
+        "made in　～"
+      ]
+    },
+    {
+      "question": "生活 (せいかつ・する)",
+      "answer": [
+        "living, life (one's daily existence), livelihood"
+      ]
+    },
+    {
+      "question": "生産",
+      "answer": [
+        "production, manufacture"
+      ],
+      "comment": "せいさん・する"
+    },
+    {
+      "question": "政治 (せいじ)",
+      "answer": [
+        "politics, government"
+      ]
+    },
+    {
+      "question": "西洋",
+      "answer": [
+        "the west, Western countries"
+      ],
+      "comment": "せいよう"
+    },
+    {
+      "question": "世界",
+      "answer": [
+        "the world"
+      ],
+      "comment": "せかい"
+    },
+    {
+      "question": "席 (せき)",
+      "answer": [
+        "seat"
+      ]
+    },
+    {
+      "question": "説明",
+      "answer": [
+        "explanation"
+      ],
+      "comment": "せつめい"
+    },
+    {
+      "question": "背中 (せなか)",
+      "answer": [
+        "back (of body)"
+      ]
+    },
+    {
+      "question": "ぜひ",
+      "answer": [
+        "certainly, without fail"
+      ]
+    },
+    {
+      "question": "世話",
+      "answer": [
+        "looking after, help"
+      ],
+      "comment": "せわ・する"
+    },
+    {
+      "question": "線 (せん)",
+      "answer": [
+        "line, wire"
+      ]
+    },
+    {
+      "question": "ぜんぜん",
+      "answer": [
+        "wholly, entirely"
+      ]
+    },
+    {
+      "question": "戦争 (せんそう)",
+      "answer": [
+        "war"
+      ]
+    },
+    {
+      "question": "先輩 (せんぱい)",
+      "answer": [
+        "senior, superior, elder"
+      ]
+    },
+    {
+      "question": "専門 (せんもん)",
+      "answer": [
+        "speciality, study major"
+      ]
+    },
+    {
+      "question": "そう",
+      "answer": [
+        "really"
+      ]
+    },
+    {
+      "question": "相談 (そうだん・する)",
+      "answer": [
+        "consultation, discussion"
+      ]
+    },
+    {
+      "question": "育てる (そだてる)",
+      "answer": [
+        "to raise, to rear, to bring up"
+      ]
+    },
+    {
+      "question": "卒業 (そつぎょう)",
+      "answer": [
+        "graduation"
+      ]
+    },
+    {
+      "question": "祖父 (そふ)",
+      "answer": [
+        "grandfather"
+      ]
+    },
+    {
+      "question": "ソフト",
+      "answer": [
+        "soft"
+      ]
+    },
+    {
+      "question": "祖母 (そぼ)",
+      "answer": [
+        "grandmother"
+      ]
+    },
+    {
+      "question": "それで",
+      "answer": [
+        "and, thereupon, because of that"
+      ]
+    },
+    {
+      "question": "それに",
+      "answer": [
+        "besides, moreover"
+      ]
+    },
+    {
+      "question": "それほど",
+      "answer": [
+        "to that degree, extent"
+      ]
+    },
+    {
+      "question": "そろそろ",
+      "answer": [
+        "gradually, steadily, soon"
+      ]
+    },
+    {
+      "question": "そんな",
+      "answer": [
+        "such, like that, that sort of"
+      ]
+    },
+    {
+      "question": "そんなに",
+      "answer": [
+        "so much, like that"
+      ]
+    },
+    {
+      "question": "～代",
+      "answer": [
+        "～ age/period"
+      ],
+      "comment": "～だい"
+    },
+    {
+      "question": "退院 (たいいん・する)",
+      "answer": [
+        "leaving hospital"
+      ]
+    },
+    {
+      "question": "大学生",
+      "answer": [
+        "college student, university student"
+      ],
+      "comment": "だいがくせい"
+    },
+    {
+      "question": "大事",
+      "answer": [
+        "important, valuable, serious matter"
+      ],
+      "comment": "だいじ"
+    },
+    {
+      "question": "大体",
+      "answer": [
+        "generally, substantially"
+      ],
+      "comment": "だいたい"
+    },
+    {
+      "question": "たいてい",
+      "answer": [
+        "generally, usually"
+      ]
+    },
+    {
+      "question": "タイプ",
+      "answer": [
+        "type, style"
+      ]
+    },
+    {
+      "question": "大分",
+      "answer": [
+        "considerably, greatly, a lot"
+      ],
+      "comment": "だいぶ"
+    },
+    {
+      "question": "台風",
+      "answer": [
+        "typhoon"
+      ],
+      "comment": "たいふう"
+    },
+    {
+      "question": "倒れる (たおれる)",
+      "answer": [
+        "to collapse, to break down"
+      ]
+    },
+    {
+      "question": "だから",
+      "answer": [
+        "so, therefore"
+      ]
+    },
+    {
+      "question": "確か (たしか)",
+      "answer": [
+        "certain, sure, definite"
+      ]
+    },
+    {
+      "question": "足す",
+      "answer": [
+        "to add (numbers), to do (eg. one's business)"
+      ],
+      "comment": "たす"
+    },
+    {
+      "question": "～だす",
+      "answer": [
+        "start to ～"
+      ]
+    },
+    {
+      "question": "訪ねる (たずねる)",
+      "answer": [
+        "to visit"
+      ]
+    },
+    {
+      "question": "尋ねる (たずねる)",
+      "answer": [
+        "to ask"
+      ]
+    },
+    {
+      "question": "正しい",
+      "answer": [
+        "right, just, correct"
+      ],
+      "comment": "ただしい"
+    },
+    {
+      "question": "畳 (たたみ)",
+      "answer": [
+        "tatami mat (Japanese straw mat)"
+      ]
+    },
+    {
+      "question": "建て",
+      "answer": [
+        "two storied, separate housing"
+      ],
+      "comment": "～だて"
+    },
+    {
+      "question": "立てる",
+      "answer": [
+        "to stand (something) up, to erect (something)"
+      ],
+      "comment": "たてる"
+    },
+    {
+      "question": "建てる",
+      "answer": [
+        "to build, to construct"
+      ],
+      "comment": "たてる"
+    },
+    {
+      "question": "例えば (たとえば)",
+      "answer": [
+        "for example, eg."
+      ]
+    },
+    {
+      "question": "棚 (たな)",
+      "answer": [
+        "shelves, rack"
+      ]
+    },
+    {
+      "question": "楽む",
+      "answer": [
+        "to enjoy oneself"
+      ],
+      "comment": "たのしむ"
+    },
+    {
+      "question": "楽しみ",
+      "answer": [
+        "pleasure, joy"
+      ],
+      "comment": "たのしみ"
+    },
+    {
+      "question": "たまに",
+      "answer": [
+        "occasionally, once in a while"
+      ]
+    },
+    {
+      "question": "為 (ため)",
+      "answer": [
+        "good, advantage, in order to"
+      ]
+    },
+    {
+      "question": "だめ",
+      "answer": [
+        "useless, no good, hopeless"
+      ]
+    },
+    {
+      "question": "足りる",
+      "answer": [
+        "to be sufficient, to be enough"
+      ],
+      "comment": "たりる"
+    },
+    {
+      "question": "男性 (だんせい)",
+      "answer": [
+        "male, man"
+      ]
+    },
+    {
+      "question": "暖房 (だんぼう)",
+      "answer": [
+        "heating"
+      ]
+    },
+    {
+      "question": "血 (ち)",
+      "answer": [
+        "blood"
+      ]
+    },
+    {
+      "question": "チェック・する",
+      "answer": [
+        "check"
+      ]
+    },
+    {
+      "question": "力",
+      "answer": [
+        "strength, power"
+      ],
+      "comment": "ちから"
+    },
+    {
+      "question": "ちっとも",
+      "answer": [
+        "not at all (neg. verb)"
+      ]
+    },
+    {
+      "question": "～ちゃん",
+      "answer": [
+        "suffix for familiar (female) person"
+      ]
+    },
+    {
+      "question": "注意",
+      "answer": [
+        "caution, being careful, attention (heed)"
+      ],
+      "comment": "ちゅうい"
+    },
+    {
+      "question": "中学校",
+      "answer": [
+        "junior high school, middle school pupil"
+      ],
+      "comment": "ちゅうがっこう"
+    },
+    {
+      "question": "注射 (ちゅうしゃ)",
+      "answer": [
+        "injection"
+      ]
+    },
+    {
+      "question": "駐車場 (ちゅうしゃじょう)",
+      "answer": [
+        "parking lot, parking place"
+      ]
+    },
+    {
+      "question": "～町",
+      "answer": [
+        "～ of the town"
+      ],
+      "comment": "～ちょう"
+    },
+    {
+      "question": "地理",
+      "answer": [
+        "geography"
+      ],
+      "comment": "ちり"
+    },
+    {
+      "question": "～（に）ついて",
+      "answer": [
+        "about, concerning, regarding"
+      ]
+    },
+    {
+      "question": "捕まえる (つかまえる)",
+      "answer": [
+        "to catch, to arrest, to seize"
+      ]
+    },
+    {
+      "question": "つき",
+      "answer": [
+        "moon"
+      ]
+    },
+    {
+      "question": "～月",
+      "answer": [
+        "month"
+      ],
+      "comment": "～つき"
+    },
+    {
+      "question": "点く (つく)",
+      "answer": [
+        "to be started, to be switched on"
+      ]
+    },
+    {
+      "question": "つける",
+      "answer": [
+        "to take"
+      ]
+    },
+    {
+      "question": "漬ける (つける)",
+      "answer": [
+        "to soak, to moisten, to pickle"
+      ]
+    },
+    {
+      "question": "都合",
+      "answer": [
+        "circumstances, condition, convenience"
+      ],
+      "comment": "つごう"
+    },
+    {
+      "question": "伝える (つたえる)",
+      "answer": [
+        "to tell, to report"
+      ]
+    },
+    {
+      "question": "続く (つづく)",
+      "answer": [
+        "to be continued"
+      ]
+    },
+    {
+      "question": "～続ける (～つづける)",
+      "answer": [
+        "to continue doing ～"
+      ]
+    },
+    {
+      "question": "続ける (つづける)",
+      "answer": [
+        "to continue, to keep up, to keep on"
+      ]
+    },
+    {
+      "question": "包む (つつむ)",
+      "answer": [
+        "wrap, pack"
+      ]
+    },
+    {
+      "question": "妻 (つま)",
+      "answer": [
+        "(hum) wife"
+      ]
+    },
+    {
+      "question": "つもり",
+      "answer": [
+        "intention, plan"
+      ]
+    },
+    {
+      "question": "釣る (つる)",
+      "answer": [
+        "to fish"
+      ]
+    },
+    {
+      "question": "連れる (つれる)",
+      "answer": [
+        "to lead, to take (a person)"
+      ]
+    },
+    {
+      "question": "丁寧 (ていねい)",
+      "answer": [
+        "polite, courteous"
+      ]
+    },
+    {
+      "question": "テキスト",
+      "answer": [
+        "(1)text, (2)text book"
+      ]
+    },
+    {
+      "question": "適当 (てきとう)",
+      "answer": [
+        "fitness, suitability"
+      ]
+    },
+    {
+      "question": "できる",
+      "answer": [
+        "to be able to do"
+      ]
+    },
+    {
+      "question": "できるだけ",
+      "answer": [
+        "if at all possible, as much as possible"
+      ]
+    },
+    {
+      "question": "手伝う (てつだう)",
+      "answer": [
+        "to help, to assist, to take part in"
+      ]
+    },
+    {
+      "question": "テニス",
+      "answer": [
+        "tennis"
+      ]
+    },
+    {
+      "question": "手袋 (てぶくろ)",
+      "answer": [
+        "glove"
+      ]
+    },
+    {
+      "question": "寺 (てら)",
+      "answer": [
+        "temple"
+      ]
+    },
+    {
+      "question": "点 (てん)",
+      "answer": [
+        "spot, mark, point, dot"
+      ]
+    },
+    {
+      "question": "店員",
+      "answer": [
+        "shop assistant, employee, clerk, salesperson"
+      ],
+      "comment": "てんいん"
+    },
+    {
+      "question": "天気予報 (てんきよほう)",
+      "answer": [
+        "weather forecast, weather report"
+      ]
+    },
+    {
+      "question": "電灯 (でんとう)",
+      "answer": [
+        "electric light"
+      ]
+    },
+    {
+      "question": "電報 (でんぽう)",
+      "answer": [
+        "telegram"
+      ]
+    },
+    {
+      "question": "展覧会 (てんらんかい)",
+      "answer": [
+        "exhibition"
+      ]
+    },
+    {
+      "question": "都",
+      "answer": [
+        "metroplitan, municipal"
+      ],
+      "comment": "と"
+    },
+    {
+      "question": "道具 (どうぐ)",
+      "answer": [
+        "tool, means"
+      ]
+    },
+    {
+      "question": "とうとう",
+      "answer": [
+        "finally, at last"
+      ]
+    },
+    {
+      "question": "動物園 (どうぶつえん)",
+      "answer": [
+        "zoo"
+      ]
+    },
+    {
+      "question": "遠く",
+      "answer": [
+        "far away, distant"
+      ],
+      "comment": "とおく"
+    },
+    {
+      "question": "通り",
+      "answer": [
+        "～ Street, ～ Avenue"
+      ],
+      "comment": "とおり"
+    },
+    {
+      "question": "通る",
+      "answer": [
+        "to pass (by), to go through"
+      ],
+      "comment": "とおる"
+    },
+    {
+      "question": "特に",
+      "answer": [
+        "particularly, especially"
+      ],
+      "comment": "とくに"
+    },
+    {
+      "question": "特別",
+      "answer": [
+        "special"
+      ],
+      "comment": "とくべつ"
+    },
+    {
+      "question": "とこや",
+      "answer": [
+        "barber"
+      ]
+    },
+    {
+      "question": "途中 (とちゅう)",
+      "answer": [
+        "on the way, en route, midway"
+      ]
+    },
+    {
+      "question": "特急",
+      "answer": [
+        "limited express (train, faster than an express)"
+      ],
+      "comment": "とっきゅう"
+    },
+    {
+      "question": "届ける (とどける)",
+      "answer": [
+        "to reach"
+      ]
+    },
+    {
+      "question": "泊まる (とまる)",
+      "answer": [
+        "to stay at (eg. hotel)"
+      ]
+    },
+    {
+      "question": "止める",
+      "answer": [
+        "to stop (something)"
+      ],
+      "comment": "とめる"
+    },
+    {
+      "question": "取り替える (とりかえる)",
+      "answer": [
+        "to exchange, to replace"
+      ]
+    },
+    {
+      "question": "泥棒 (どろぼう)",
+      "answer": [
+        "thief, burglar, robber"
+      ]
+    },
+    {
+      "question": "どんどん",
+      "answer": [
+        "steadily, little by little"
+      ]
+    },
+    {
+      "question": "直す (なおす)",
+      "answer": [
+        "to fix, to repair"
+      ]
+    },
+    {
+      "question": "直る (なおる)",
+      "answer": [
+        "to be fixed, to be repaired"
+      ]
+    },
+    {
+      "question": "治る (なおる)",
+      "answer": [
+        "to be cured, to heal"
+      ]
+    },
+    {
+      "question": "中々",
+      "answer": [
+        "very, considerably, quite"
+      ],
+      "comment": "なかなか"
+    },
+    {
+      "question": "泣く (なく)",
+      "answer": [
+        "to cry, to weep"
+      ]
+    },
+    {
+      "question": "無くなる (なくなる)",
+      "answer": [
+        "to disappear, to get lost"
+      ]
+    },
+    {
+      "question": "亡くなる (なくなる)",
+      "answer": [
+        "to die"
+      ]
+    },
+    {
+      "question": "投げる (なげる)",
+      "answer": [
+        "to throw, to cast away"
+      ]
+    },
+    {
+      "question": "なさる",
+      "answer": [
+        "(hon) to do"
+      ]
+    },
+    {
+      "question": "鳴る (なる)",
+      "answer": [
+        "to sound, to ring, to resound"
+      ]
+    },
+    {
+      "question": "なるべく",
+      "answer": [
+        "as much as possible"
+      ]
+    },
+    {
+      "question": "なるほど",
+      "answer": [
+        "I see, now I understand"
+      ]
+    },
+    {
+      "question": "慣れる (なれる)",
+      "answer": [
+        "to grow accustomed to"
+      ]
+    },
+    {
+      "question": "におい",
+      "answer": [
+        "odour, scent, smell"
+      ]
+    },
+    {
+      "question": "苦い (にがい)",
+      "answer": [
+        "bitter"
+      ]
+    },
+    {
+      "question": "～にくい",
+      "answer": [
+        "difficult to do ～"
+      ]
+    },
+    {
+      "question": "逃げる (にげる)",
+      "answer": [
+        "to escape, to run away"
+      ]
+    },
+    {
+      "question": "日記 (にっき)",
+      "answer": [
+        "diary, journal"
+      ]
+    },
+    {
+      "question": "入院",
+      "answer": [
+        "hospitalization"
+      ],
+      "comment": "にゅういん・する"
+    },
+    {
+      "question": "入学",
+      "answer": [
+        "entry to school or university, matriculation"
+      ],
+      "comment": "にゅうがく・する"
+    },
+    {
+      "question": "似る (にる)",
+      "answer": [
+        "to resemble, to be similar"
+      ]
+    },
+    {
+      "question": "人形 (にんぎょう)",
+      "answer": [
+        "doll, puppet, figure"
+      ]
+    },
+    {
+      "question": "盗む (ぬすむ)",
+      "answer": [
+        "to steal"
+      ]
+    },
+    {
+      "question": "塗る (ぬる)",
+      "answer": [
+        "to paint, to plaster"
+      ]
+    },
+    {
+      "question": "ぬれる",
+      "answer": [
+        "to get wet"
+      ]
+    },
+    {
+      "question": "ねだん",
+      "answer": [
+        "price, cost"
+      ]
+    },
+    {
+      "question": "熱 (ねつ)",
+      "answer": [
+        "fever, temperature"
+      ]
+    },
+    {
+      "question": "ねっしん",
+      "answer": [
+        "zeal, enthusiasm"
+      ]
+    },
+    {
+      "question": "寝坊 (ねぼう)",
+      "answer": [
+        "sleeping in late"
+      ]
+    },
+    {
+      "question": "眠い (ねむい)",
+      "answer": [
+        "sleepy, drowsy"
+      ]
+    },
+    {
+      "question": "眠る (ねむる)",
+      "answer": [
+        "to sleep"
+      ]
+    },
+    {
+      "question": "残る (のこる)",
+      "answer": [
+        "to remain, to be left"
+      ]
+    },
+    {
+      "question": "のど",
+      "answer": [
+        "throat"
+      ]
+    },
+    {
+      "question": "乗り換える (のりかえる)",
+      "answer": [
+        "to transfer (trains), to change (bus, train)"
+      ]
+    },
+    {
+      "question": "乗り物",
+      "answer": [
+        "vehicle"
+      ],
+      "comment": "のりもの"
+    },
+    {
+      "question": "葉 (は)",
+      "answer": [
+        "leaf"
+      ]
+    },
+    {
+      "question": "場合",
+      "answer": [
+        "case, situation"
+      ],
+      "comment": "ばあい"
+    },
+    {
+      "question": "パート（タイム）",
+      "answer": [
+        "part time (esp female part time employees)"
+      ]
+    },
+    {
+      "question": "倍 (ばい)",
+      "answer": [
+        "twice, double"
+      ]
+    },
+    {
+      "question": "拝見 (はいけん・する)",
+      "answer": [
+        "(hum) (pol) seeing, look at"
+      ]
+    },
+    {
+      "question": "歯医者 (はいしゃ)",
+      "answer": [
+        "dentist"
+      ]
+    },
+    {
+      "question": "～ばかり",
+      "answer": [
+        "just did ～, only"
+      ]
+    },
+    {
+      "question": "運ぶ",
+      "answer": [
+        "to transport, to carry"
+      ],
+      "comment": "はこぶ"
+    },
+    {
+      "question": "～始める",
+      "answer": [
+        "to start doing　～, the beginning of ～"
+      ],
+      "comment": "～はじめる"
+    },
+    {
+      "question": "始める",
+      "answer": [
+        "to start, to begin"
+      ],
+      "comment": "はじめる"
+    },
+    {
+      "question": "場所",
+      "answer": [
+        "place, location"
+      ],
+      "comment": "ばしょ"
+    },
+    {
+      "question": "はず",
+      "answer": [
+        "it should be so"
+      ]
+    },
+    {
+      "question": "恥ずかしい (はずかしい)",
+      "answer": [
+        "shy, ashamed, embarrassed"
+      ]
+    },
+    {
+      "question": "パソコン",
+      "answer": [
+        "(personal) computer"
+      ]
+    },
+    {
+      "question": "発音",
+      "answer": [
+        "pronunciation"
+      ],
+      "comment": "はつおん"
+    },
+    {
+      "question": "はっきり",
+      "answer": [
+        "clearly, plainly, distinctly"
+      ]
+    },
+    {
+      "question": "花見",
+      "answer": [
+        "cherry-blossom viewing, flower viewing"
+      ],
+      "comment": "はなみ"
+    },
+    {
+      "question": "パパ",
+      "answer": [
+        "papa, father"
+      ]
+    },
+    {
+      "question": "林",
+      "answer": [
+        "woods, forester"
+      ],
+      "comment": "はやし"
+    },
+    {
+      "question": "払う (はらう)",
+      "answer": [
+        "to pay"
+      ]
+    },
+    {
+      "question": "番組 (ばんぐみ)",
+      "answer": [
+        "program (eg. TV)"
+      ]
+    },
+    {
+      "question": "反対 (はんたい)",
+      "answer": [
+        "oppose, opposition, resistance"
+      ]
+    },
+    {
+      "question": "ハンバーグ",
+      "answer": [
+        "hamburger (meat, no bun)"
+      ]
+    },
+    {
+      "question": "日",
+      "answer": [
+        "sun, sunshine, day"
+      ],
+      "comment": "ひ"
+    },
+    {
+      "question": "火",
+      "answer": [
+        "fire, flame, blaze"
+      ],
+      "comment": "ひ"
+    },
+    {
+      "question": "ピアノ",
+      "answer": [
+        "piano"
+      ]
+    },
+    {
+      "question": "冷える (ひえる)",
+      "answer": [
+        "to grow cold, to get chilly, to cool down"
+      ]
+    },
+    {
+      "question": "光る",
+      "answer": [
+        "to shine, to glitter"
+      ],
+      "comment": "ひかる"
+    },
+    {
+      "question": "光",
+      "answer": [
+        "light"
+      ],
+      "comment": "ひかり"
+    },
+    {
+      "question": "引き出し",
+      "answer": [
+        "drawer, drawing out"
+      ],
+      "comment": "ひきだし"
+    },
+    {
+      "question": "ひげ",
+      "answer": [
+        "beard"
+      ]
+    },
+    {
+      "question": "飛行場 (ひこうじょう)",
+      "answer": [
+        "airport"
+      ]
+    },
+    {
+      "question": "久しぶり (ひさしぶり)",
+      "answer": [
+        "after a long time"
+      ]
+    },
+    {
+      "question": "美術館 (びじゅつかん)",
+      "answer": [
+        "art gallery, art museum"
+      ]
+    },
+    {
+      "question": "非常に (ひじょうに)",
+      "answer": [
+        "very, extremely, exceedingly"
+      ]
+    },
+    {
+      "question": "びっくりする",
+      "answer": [
+        "to be surprised"
+      ]
+    },
+    {
+      "question": "引っ越す (ひっこす)",
+      "answer": [
+        "to move, to change residence"
+      ]
+    },
+    {
+      "question": "必要 (ひつよう)",
+      "answer": [
+        "necessary, essential"
+      ]
+    },
+    {
+      "question": "ひどい",
+      "answer": [
+        "cruel, awful"
+      ]
+    },
+    {
+      "question": "開く",
+      "answer": [
+        "to open (eg. a festival)"
+      ],
+      "comment": "ひらく"
+    },
+    {
+      "question": "ビル",
+      "answer": [
+        "(abbr) building, bill"
+      ]
+    },
+    {
+      "question": "昼間",
+      "answer": [
+        "daytime, during the day"
+      ],
+      "comment": "ひるま"
+    },
+    {
+      "question": "昼休み",
+      "answer": [
+        "lunch break, noon recess, noon rest period"
+      ],
+      "comment": "ひるやすみ"
+    },
+    {
+      "question": "拾う (ひろう)",
+      "answer": [
+        "to pick up, to find, to gather"
+      ]
+    },
+    {
+      "question": "ファックス",
+      "answer": [
+        "fax"
+      ]
+    },
+    {
+      "question": "増える (ふえる)",
+      "answer": [
+        "to increase, to multiply"
+      ]
+    },
+    {
+      "question": "深い (ふかい)",
+      "answer": [
+        "deep, profound, thick"
+      ]
+    },
+    {
+      "question": "複雑 (ふくざつ)",
+      "answer": [
+        "complexity, complication"
+      ]
+    },
+    {
+      "question": "復習 (ふくしゅう)",
+      "answer": [
+        "review, revision"
+      ]
+    },
+    {
+      "question": "部長 (ぶちょう)",
+      "answer": [
+        "head of a section"
+      ]
+    },
+    {
+      "question": "普通 (ふつう)",
+      "answer": [
+        "(1) generally, ordinarily, usually, (2) train that stops at every station"
+      ]
+    },
+    {
+      "question": "ぶどう",
+      "answer": [
+        "grapes"
+      ]
+    },
+    {
+      "question": "太る",
+      "answer": [
+        "to grow fat (stout, plump), to become fat"
+      ],
+      "comment": "ふとる"
+    },
+    {
+      "question": "布団 (ふとん)",
+      "answer": [
+        "bedding (Japanese style), futon"
+      ]
+    },
+    {
+      "question": "舟 (ふね)",
+      "answer": [
+        "ship, boat"
+      ]
+    },
+    {
+      "question": "不便",
+      "answer": [
+        "inconvenience"
+      ],
+      "comment": "ふべん"
+    },
+    {
+      "question": "踏む (ふむ)",
+      "answer": [
+        "to step on, to tread on"
+      ]
+    },
+    {
+      "question": "プレゼント",
+      "answer": [
+        "present, gift"
+      ]
+    },
+    {
+      "question": "文化 (ぶんか)",
+      "answer": [
+        "culture, civilization"
+      ]
+    },
+    {
+      "question": "文学",
+      "answer": [
+        "literature"
+      ],
+      "comment": "ぶんがく"
+    },
+    {
+      "question": "文法 (ぶんぽう)",
+      "answer": [
+        "grammar"
+      ]
+    },
+    {
+      "question": "別",
+      "answer": [
+        "distinction, different"
+      ],
+      "comment": "べつ"
+    },
+    {
+      "question": "ベル",
+      "answer": [
+        "bell"
+      ]
+    },
+    {
+      "question": "変 (へん)",
+      "answer": [
+        "strange, odd, peculiar"
+      ]
+    },
+    {
+      "question": "返事 (へんじ)",
+      "answer": [
+        "reply, answer"
+      ]
+    },
+    {
+      "question": "貿易 (ぼうえき)",
+      "answer": [
+        "trade (foreign)"
+      ]
+    },
+    {
+      "question": "放送 (ほうそう・する)",
+      "answer": [
+        "broadcast, broadcasting"
+      ]
+    },
+    {
+      "question": "法律 (ほうりつ)",
+      "answer": [
+        "law"
+      ]
+    },
+    {
+      "question": "僕 (ぼく)",
+      "answer": [
+        "(male) I, manservant"
+      ]
+    },
+    {
+      "question": "星 (ほし)",
+      "answer": [
+        "star"
+      ]
+    },
+    {
+      "question": "ほど",
+      "answer": [
+        "degree, extent"
+      ]
+    },
+    {
+      "question": "ほとんど",
+      "answer": [
+        "mostly, almost"
+      ]
+    },
+    {
+      "question": "ほめる",
+      "answer": [
+        "to praise"
+      ]
+    },
+    {
+      "question": "翻訳 (ほんやく)",
+      "answer": [
+        "translation (written)"
+      ]
+    },
+    {
+      "question": "参る (まいる)",
+      "answer": [
+        "(1) (hum) to go, to come"
+      ]
+    },
+    {
+      "question": "負ける (まける)",
+      "answer": [
+        "to lose, to be defeated"
+      ]
+    },
+    {
+      "question": "まじめ",
+      "answer": [
+        "diligent, serious"
+      ]
+    },
+    {
+      "question": "まず",
+      "answer": [
+        "first (of all), to start with"
+      ]
+    },
+    {
+      "question": "または",
+      "answer": [
+        "or, otherwise"
+      ]
+    },
+    {
+      "question": "間違える (まちがえる)",
+      "answer": [
+        "to err, to make a mistake"
+      ]
+    },
+    {
+      "question": "間に合う",
+      "answer": [
+        "(1) to be in time for"
+      ],
+      "comment": "まにあう"
+    },
+    {
+      "question": "～まま",
+      "answer": [
+        "as it is"
+      ]
+    },
+    {
+      "question": "周り (まわり)",
+      "answer": [
+        "surroundings, circulation"
+      ]
+    },
+    {
+      "question": "回る",
+      "answer": [
+        "to go around, to revolve"
+      ],
+      "comment": "まわる"
+    },
+    {
+      "question": "漫画 (まんが)",
+      "answer": [
+        "comic, cartoon"
+      ]
+    },
+    {
+      "question": "真中",
+      "answer": [
+        "middle, centre"
+      ],
+      "comment": "まんなか"
+    },
+    {
+      "question": "見える",
+      "answer": [
+        "to be seen, to be in sight"
+      ],
+      "comment": "みえる"
+    },
+    {
+      "question": "湖 (みずうみ)",
+      "answer": [
+        "lake"
+      ]
+    },
+    {
+      "question": "味噌 (みそ)",
+      "answer": [
+        "miso, bean paste"
+      ]
+    },
+    {
+      "question": "見つかる",
+      "answer": [
+        "(uk) to be found, to be discovered"
+      ],
+      "comment": "みつかる"
+    },
+    {
+      "question": "見つける",
+      "answer": [
+        "to discover, to find"
+      ],
+      "comment": "みつける"
+    },
+    {
+      "question": "皆 (みな)",
+      "answer": [
+        "everyone, everybody"
+      ]
+    },
+    {
+      "question": "港 (みなと)",
+      "answer": [
+        "harbour, port"
+      ]
+    },
+    {
+      "question": "迎える (むかえる)",
+      "answer": [
+        "to go out to meet"
+      ]
+    },
+    {
+      "question": "向かう (むかう)",
+      "answer": [
+        "to face, to go towards"
+      ]
+    },
+    {
+      "question": "昔 (むかし)",
+      "answer": [
+        "olden days, former"
+      ]
+    },
+    {
+      "question": "虫 (むし)",
+      "answer": [
+        "insect"
+      ]
+    },
+    {
+      "question": "息子 (むすこ)",
+      "answer": [
+        "(hum) son"
+      ]
+    },
+    {
+      "question": "娘 (むすめ)",
+      "answer": [
+        "(hum) daughter"
+      ]
+    },
+    {
+      "question": "無理 (むり)",
+      "answer": [
+        "unreasonable, impossible"
+      ]
+    },
+    {
+      "question": "～目",
+      "answer": [
+        "number ～ sequence, ～nd/th"
+      ],
+      "comment": "～め"
+    },
+    {
+      "question": "召し上がる (めしあがる)",
+      "answer": [
+        "(pol) to eat"
+      ]
+    },
+    {
+      "question": "珍しい (めずらしい)",
+      "answer": [
+        "unusual, rare"
+      ]
+    },
+    {
+      "question": "申し上げる (もうしあげる)",
+      "answer": [
+        "to say, to tell"
+      ]
+    },
+    {
+      "question": "申す (もうす)",
+      "answer": [
+        "(hum) to be called, to say"
+      ]
+    },
+    {
+      "question": "もうすぐ",
+      "answer": [
+        "soon, very soon"
+      ]
+    },
+    {
+      "question": "もし",
+      "answer": [
+        "if"
+      ]
+    },
+    {
+      "question": "もちろん",
+      "answer": [
+        "certainly, of course"
+      ]
+    },
+    {
+      "question": "もっとも",
+      "answer": [
+        "most, extremely"
+      ]
+    },
+    {
+      "question": "戻る (もどる)",
+      "answer": [
+        "to turn back, to return"
+      ]
+    },
+    {
+      "question": "木綿 (もめん)",
+      "answer": [
+        "cotton"
+      ]
+    },
+    {
+      "question": "もらう",
+      "answer": [
+        "to receive"
+      ]
+    },
+    {
+      "question": "森",
+      "answer": [
+        "forest"
+      ],
+      "comment": "もり"
+    },
+    {
+      "question": "焼く (やく)",
+      "answer": [
+        "to bake, to grill"
+      ]
+    },
+    {
+      "question": "役に立つ (やくにたつ)",
+      "answer": [
+        "to be helpful, to be useful"
+      ]
+    },
+    {
+      "question": "約束 (やくそく)",
+      "answer": [
+        "arrangement, promise"
+      ]
+    },
+    {
+      "question": "焼ける (やける)",
+      "answer": [
+        "to burn, to be roasted, to be sunburnt"
+      ]
+    },
+    {
+      "question": "優しい (やさしい)",
+      "answer": [
+        "kind, gentle"
+      ]
+    },
+    {
+      "question": "～やすい",
+      "answer": [
+        "easy to do ～"
+      ]
+    },
+    {
+      "question": "やせる",
+      "answer": [
+        "to become thin, to lose weight"
+      ]
+    },
+    {
+      "question": "やっと",
+      "answer": [
+        "at last, at length"
+      ]
+    },
+    {
+      "question": "やはり/やっぱり",
+      "answer": [
+        "as I thought, absolutely"
+      ]
+    },
+    {
+      "question": "やむ",
+      "answer": [
+        "to cease, to stop"
+      ]
+    },
+    {
+      "question": "やる",
+      "answer": [
+        "(col)to do"
+      ]
+    },
+    {
+      "question": "柔らかい (やわらかい)",
+      "answer": [
+        "soft, tender"
+      ]
+    },
+    {
+      "question": "湯 (ゆ)",
+      "answer": [
+        "hot water"
+      ]
+    },
+    {
+      "question": "夕飯",
+      "answer": [
+        "evening meal"
+      ],
+      "comment": "ゆうはん"
+    },
+    {
+      "question": "輸出 (ゆしゅつ・する)",
+      "answer": [
+        "export"
+      ]
+    },
+    {
+      "question": "輸入 (ゆにゅう・する)",
+      "answer": [
+        "import"
+      ]
+    },
+    {
+      "question": "指 (ゆび)",
+      "answer": [
+        "finger"
+      ]
+    },
+    {
+      "question": "指輪 (ゆびわ)",
+      "answer": [
+        "(finger) ring"
+      ]
+    },
+    {
+      "question": "夢 (ゆめ)",
+      "answer": [
+        "dream"
+      ]
+    },
+    {
+      "question": "揺れる (ゆれる)",
+      "answer": [
+        "to shake, to sway"
+      ]
+    },
+    {
+      "question": "様 (よう)",
+      "answer": [
+        "way, manner, kind"
+      ]
+    },
+    {
+      "question": "用",
+      "answer": [
+        "task, business, use"
+      ],
+      "comment": "よう"
+    },
+    {
+      "question": "用意",
+      "answer": [
+        "preparation"
+      ],
+      "comment": "ようい"
+    },
+    {
+      "question": "用事",
+      "answer": [
+        "tasks, chores"
+      ],
+      "comment": "ようじ"
+    },
+    {
+      "question": "汚れる (よごれる)",
+      "answer": [
+        "to get dirty, to become dirty"
+      ]
+    },
+    {
+      "question": "予習 (よしゅう)",
+      "answer": [
+        "preparation for a lesson"
+      ]
+    },
+    {
+      "question": "予定 (よてい)",
+      "answer": [
+        "plans, arrangement, schedule"
+      ]
+    },
+    {
+      "question": "予約 (よやく)",
+      "answer": [
+        "reservation, booking"
+      ]
+    },
+    {
+      "question": "寄る (よる)",
+      "answer": [
+        "to visit, to drop in"
+      ]
+    },
+    {
+      "question": "（～に）よると",
+      "answer": [
+        "according to ～"
+      ]
+    },
+    {
+      "question": "喜ぶ (よろこぶ)",
+      "answer": [
+        "to be delighted, to be glad"
+      ]
+    },
+    {
+      "question": "よろしい",
+      "answer": [
+        "(hon) good, OK, all right"
+      ]
+    },
+    {
+      "question": "理由 (りゆう)",
+      "answer": [
+        "reason, pretext, motive"
+      ]
+    },
+    {
+      "question": "利用 (りよう)",
+      "answer": [
+        "use, utilization"
+      ]
+    },
+    {
+      "question": "両方 (りょうほう)",
+      "answer": [
+        "both sides, both parties"
+      ]
+    },
+    {
+      "question": "旅館",
+      "answer": [
+        "Japanese hotel, inn"
+      ],
+      "comment": "りょかん"
+    },
+    {
+      "question": "留守 (るす)",
+      "answer": [
+        "absence, being away from home"
+      ]
+    },
+    {
+      "question": "冷房 (れいぼう)",
+      "answer": [
+        "cooling, air conditioning"
+      ]
+    },
+    {
+      "question": "歴史 (れきし)",
+      "answer": [
+        "history"
+      ]
+    },
+    {
+      "question": "レジ",
+      "answer": [
+        "register"
+      ]
+    },
+    {
+      "question": "レポート/リポート",
+      "answer": [
+        "report, essay, assignment (aus)"
+      ]
+    },
+    {
+      "question": "連絡 (れんらく)",
+      "answer": [
+        "communication, contact, connection"
+      ]
+    },
+    {
+      "question": "ワープロ",
+      "answer": [
+        "word processor"
+      ]
+    },
+    {
+      "question": "沸かす (わかす)",
+      "answer": [
+        "to boil, to heat"
+      ]
+    },
+    {
+      "question": "別れる",
+      "answer": [
+        "to be divided, to part from, to separate"
+      ],
+      "comment": "わかれる"
+    },
+    {
+      "question": "沸く (わく)",
+      "answer": [
+        "to boil, to grow hot, to get excited"
+      ]
+    },
+    {
+      "question": "訳 (わけ)",
+      "answer": [
+        "meaning, reason"
+      ]
+    },
+    {
+      "question": "忘れ物 (わすれもの)",
+      "answer": [
+        "lost article, something forgotten"
+      ]
+    },
+    {
+      "question": "笑う (わらう)",
+      "answer": [
+        "to laugh, to smile"
+      ]
+    },
+    {
+      "question": "割合 (わりあい)",
+      "answer": [
+        "rate, ratio, percentage"
+      ]
+    },
+    {
+      "question": "割れる (われる)",
+      "answer": [
+        "to break"
+      ]
+    }
+  ]
+}

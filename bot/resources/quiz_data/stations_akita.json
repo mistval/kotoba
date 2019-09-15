@@ -1,0 +1,1171 @@
+{
+  "uniqueId": "stations_akita",
+  "name": "Akita Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Akita station names](https://mb.jorudan.co.jp/os/eki/menu_axt/)",
+  "cards": [
+    {
+      "question": "合川",
+      "answer": [
+        "あいかわ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aikawa_akita/"
+    },
+    {
+      "question": "相野々",
+      "answer": [
+        "あいのの"
+      ],
+      "meaning": "北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ainono/"
+    },
+    {
+      "question": "秋田",
+      "answer": [
+        "あきた"
+      ],
+      "meaning": "奥羽本線、羽越本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akita/"
+    },
+    {
+      "question": "あきた白神",
+      "answer": [
+        "あきたしらかみ"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akitashirakami/"
+    },
+    {
+      "question": "阿仁合",
+      "answer": [
+        "あにあい"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aniai/"
+    },
+    {
+      "question": "阿仁前田",
+      "answer": [
+        "あにまえだ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/animaeda/"
+    },
+    {
+      "question": "阿仁マタギ",
+      "answer": [
+        "あにまたぎ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/animatagi/"
+    },
+    {
+      "question": "鮎川",
+      "answer": [
+        "あゆかわ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ayukawa_akita/"
+    },
+    {
+      "question": "荒瀬",
+      "answer": [
+        "あらせ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arase/"
+    },
+    {
+      "question": "新屋",
+      "answer": [
+        "あらや"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/araya_akita/"
+    },
+    {
+      "question": "飯詰",
+      "answer": [
+        "いいづめ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iizume/"
+    },
+    {
+      "question": "井川さくら",
+      "answer": [
+        "いかわさくら"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikawasakura/"
+    },
+    {
+      "question": "岩城みなと",
+      "answer": [
+        "いわきみなと"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakiminato/"
+    },
+    {
+      "question": "岩館",
+      "answer": [
+        "いわだて"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwadate/"
+    },
+    {
+      "question": "岩野目",
+      "answer": [
+        "いわのめ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwanome/"
+    },
+    {
+      "question": "院内",
+      "answer": [
+        "いんない"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/innai/"
+    },
+    {
+      "question": "鶯野",
+      "answer": [
+        "うぐいすの"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uguisuno/"
+    },
+    {
+      "question": "羽後飯塚",
+      "answer": [
+        "うごいいづか"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-iizuka/"
+    },
+    {
+      "question": "羽後岩谷",
+      "answer": [
+        "うごいわや"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-iwaya/"
+    },
+    {
+      "question": "羽後牛島",
+      "answer": [
+        "うごうしじま"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-ushijima/"
+    },
+    {
+      "question": "羽後太田",
+      "answer": [
+        "うごおおた"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-ota/"
+    },
+    {
+      "question": "羽後亀田",
+      "answer": [
+        "うごかめだ"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-kameda/"
+    },
+    {
+      "question": "羽後境",
+      "answer": [
+        "うごさかい"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-sakai/"
+    },
+    {
+      "question": "羽後中里",
+      "answer": [
+        "うごなかざと"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-nakazato/"
+    },
+    {
+      "question": "羽後長戸呂",
+      "answer": [
+        "うごながとろ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-nagatoro/"
+    },
+    {
+      "question": "羽後長野",
+      "answer": [
+        "うごながの"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-nagano/"
+    },
+    {
+      "question": "羽後本荘",
+      "answer": [
+        "うごほんじょう"
+      ],
+      "meaning": "羽越本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-honjo/"
+    },
+    {
+      "question": "羽後四ッ屋",
+      "answer": [
+        "うごよつや"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ugo-yotsuya/"
+    },
+    {
+      "question": "追分",
+      "answer": [
+        "おいわけ"
+      ],
+      "meaning": "奥羽本線、男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oiwake_akita/"
+    },
+    {
+      "question": "扇田",
+      "answer": [
+        "おうぎた"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogita/"
+    },
+    {
+      "question": "大久保",
+      "answer": [
+        "おおくぼ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okubo_akita/"
+    },
+    {
+      "question": "大滝温泉",
+      "answer": [
+        "おおたきおんせん"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otakionsen/"
+    },
+    {
+      "question": "大館",
+      "answer": [
+        "おおだて"
+      ],
+      "meaning": "奥羽本線、花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/odate/"
+    },
+    {
+      "question": "大野台",
+      "answer": [
+        "おおのだい"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onodai/"
+    },
+    {
+      "question": "大張野",
+      "answer": [
+        "おおばりの"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obarino/"
+    },
+    {
+      "question": "大曲",
+      "answer": [
+        "おおまがり"
+      ],
+      "meaning": "田沢湖線、奥羽本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omagari_akita/"
+    },
+    {
+      "question": "笑内",
+      "answer": [
+        "おかしない"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okashinai/"
+    },
+    {
+      "question": "男鹿",
+      "answer": [
+        "おが"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oga_akita/"
+    },
+    {
+      "question": "小ヶ田",
+      "answer": [
+        "おがた"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogata_akita/"
+    },
+    {
+      "question": "奥阿仁",
+      "answer": [
+        "おくあに"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okuani/"
+    },
+    {
+      "question": "折渡",
+      "answer": [
+        "おりわたり"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oriwatari/"
+    },
+    {
+      "question": "角館",
+      "answer": [
+        "かくのだて"
+      ],
+      "meaning": "田沢湖線、秋田新幹線、秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakunodate/"
+    },
+    {
+      "question": "桂瀬",
+      "answer": [
+        "かつらせ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsurase/"
+    },
+    {
+      "question": "桂根",
+      "answer": [
+        "かつらね"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsurane/"
+    },
+    {
+      "question": "鹿角花輪",
+      "answer": [
+        "かづのはなわ"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kazuno-hanawa/"
+    },
+    {
+      "question": "鹿渡",
+      "answer": [
+        "かど"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kado/"
+    },
+    {
+      "question": "上飯島",
+      "answer": [
+        "かみいいじま"
+      ],
+      "meaning": "奥羽本線、男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-iijima/"
+    },
+    {
+      "question": "上杉",
+      "answer": [
+        "かみすぎ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamisugi_akita/"
+    },
+    {
+      "question": "上浜",
+      "answer": [
+        "かみはま"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamihama/"
+    },
+    {
+      "question": "上桧木内",
+      "answer": [
+        "かみひのきない"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-hinokinai/"
+    },
+    {
+      "question": "上二田",
+      "answer": [
+        "かみふただ"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-futada/"
+    },
+    {
+      "question": "上湯沢",
+      "answer": [
+        "かみゆざわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-yuzawa/"
+    },
+    {
+      "question": "萱草",
+      "answer": [
+        "かやくさ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kayakusa/"
+    },
+    {
+      "question": "刈和野",
+      "answer": [
+        "かりわの"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kariwano/"
+    },
+    {
+      "question": "川辺",
+      "answer": [
+        "かわべ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawabe_akita/"
+    },
+    {
+      "question": "象潟",
+      "answer": [
+        "きさかた"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kisakata/"
+    },
+    {
+      "question": "北大曲",
+      "answer": [
+        "きたおおまがり"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-omagari/"
+    },
+    {
+      "question": "北金岡",
+      "answer": [
+        "きたかなおか"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kanaoka/"
+    },
+    {
+      "question": "北能代",
+      "answer": [
+        "きたのしろ"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-noshiro/"
+    },
+    {
+      "question": "久保田",
+      "answer": [
+        "くぼた"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubota_akita/"
+    },
+    {
+      "question": "黒沢",
+      "answer": [
+        "くろさわ"
+      ],
+      "meaning": "北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurosawa_akita/"
+    },
+    {
+      "question": "鯉川",
+      "answer": [
+        "こいかわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koikawa_akita/"
+    },
+    {
+      "question": "小砂川",
+      "answer": [
+        "こさがわ"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosagawa/"
+    },
+    {
+      "question": "金浦",
+      "answer": [
+        "このうら"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kono-ura/"
+    },
+    {
+      "question": "小渕",
+      "answer": [
+        "こぶち"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobuchi_akita/"
+    },
+    {
+      "question": "小松川",
+      "answer": [
+        "こまつかわ"
+      ],
+      "meaning": "北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komatsukawa/"
+    },
+    {
+      "question": "子吉",
+      "answer": [
+        "こよし"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koyoshi/"
+    },
+    {
+      "question": "後三年",
+      "answer": [
+        "ごさんねん"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gosannen/"
+    },
+    {
+      "question": "西明寺",
+      "answer": [
+        "さいみょうじ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saimyoji/"
+    },
+    {
+      "question": "刺巻",
+      "answer": [
+        "さしまき"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sashimaki/"
+    },
+    {
+      "question": "左通",
+      "answer": [
+        "さどおり"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sadori/"
+    },
+    {
+      "question": "沢尻",
+      "answer": [
+        "さわじり"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawajiri/"
+    },
+    {
+      "question": "沢目",
+      "answer": [
+        "さわめ"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawame/"
+    },
+    {
+      "question": "柴平",
+      "answer": [
+        "しばひら"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shibahira/"
+    },
+    {
+      "question": "下川沿",
+      "answer": [
+        "しもかわぞい"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-kawazoi/"
+    },
+    {
+      "question": "下浜",
+      "answer": [
+        "しもはま"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimohama/"
+    },
+    {
+      "question": "下湯沢",
+      "answer": [
+        "しもゆざわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-yuzawa/"
+    },
+    {
+      "question": "生田",
+      "answer": [
+        "しょうでん"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shoden_akita/"
+    },
+    {
+      "question": "白沢",
+      "answer": [
+        "しらさわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirasawa_akita/"
+    },
+    {
+      "question": "十二所",
+      "answer": [
+        "じゅうにしょ"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/junisho/"
+    },
+    {
+      "question": "十文字",
+      "answer": [
+        "じゅうもんじ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jumonji/"
+    },
+    {
+      "question": "神宮寺",
+      "answer": [
+        "じんぐうじ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jinguji/"
+    },
+    {
+      "question": "神代",
+      "answer": [
+        "じんだい"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jindai_akita/"
+    },
+    {
+      "question": "陣場",
+      "answer": [
+        "じんば"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jimba/"
+    },
+    {
+      "question": "末広",
+      "answer": [
+        "すえひろ"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suehiro/"
+    },
+    {
+      "question": "鷹ノ巣",
+      "answer": [
+        "たかのす"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takanosu_ou_line/"
+    },
+    {
+      "question": "鷹巣",
+      "answer": [
+        "たかのす"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takanosu_akita-nairiku/"
+    },
+    {
+      "question": "滝ノ間",
+      "answer": [
+        "たきのま"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takinoma/"
+    },
+    {
+      "question": "田沢湖",
+      "answer": [
+        "たざわこ"
+      ],
+      "meaning": "田沢湖線、秋田新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tazawako/"
+    },
+    {
+      "question": "醍醐",
+      "answer": [
+        "だいご"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daigo_akita/"
+    },
+    {
+      "question": "土崎",
+      "answer": [
+        "つちざき"
+      ],
+      "meaning": "奥羽本線、男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuchizaki/"
+    },
+    {
+      "question": "鶴形",
+      "answer": [
+        "つるがた"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurugata/"
+    },
+    {
+      "question": "天王",
+      "answer": [
+        "てんのう"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenno_akita/"
+    },
+    {
+      "question": "出戸浜",
+      "answer": [
+        "でとはま"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/detohama/"
+    },
+    {
+      "question": "戸沢",
+      "answer": [
+        "とざわ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tozawa/"
+    },
+    {
+      "question": "富根",
+      "answer": [
+        "とみね"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomine/"
+    },
+    {
+      "question": "鳥形",
+      "answer": [
+        "とりがた"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/torigata/"
+    },
+    {
+      "question": "十和田南",
+      "answer": [
+        "とわだみなみ"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/towadaminami/"
+    },
+    {
+      "question": "土深井",
+      "answer": [
+        "どぶかい"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dobukai/"
+    },
+    {
+      "question": "仁賀保",
+      "answer": [
+        "にかほ"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nikaho/"
+    },
+    {
+      "question": "西鷹巣",
+      "answer": [
+        "にしたかのす"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-takanosu/"
+    },
+    {
+      "question": "西滝沢",
+      "answer": [
+        "にしたきさわ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-takisawa/"
+    },
+    {
+      "question": "西目",
+      "answer": [
+        "にしめ"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishime/"
+    },
+    {
+      "question": "糠沢",
+      "answer": [
+        "ぬかざわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nukazawa/"
+    },
+    {
+      "question": "能代",
+      "answer": [
+        "のしろ"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noshiro/"
+    },
+    {
+      "question": "羽立",
+      "answer": [
+        "はだち"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hadachi/"
+    },
+    {
+      "question": "八幡平",
+      "answer": [
+        "はちまんたい"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachimantai/"
+    },
+    {
+      "question": "八森",
+      "answer": [
+        "はちもり"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachimori/"
+    },
+    {
+      "question": "八郎潟",
+      "answer": [
+        "はちろうがた"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachirogata/"
+    },
+    {
+      "question": "早口",
+      "answer": [
+        "はやぐち"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hayaguchi/"
+    },
+    {
+      "question": "東大館",
+      "answer": [
+        "ひがしおおだて"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-odate/"
+    },
+    {
+      "question": "東能代",
+      "answer": [
+        "ひがしのしろ"
+      ],
+      "meaning": "奥羽本線、五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-noshiro/"
+    },
+    {
+      "question": "東八森",
+      "answer": [
+        "ひがしはちもり"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hachimori/"
+    },
+    {
+      "question": "比立内",
+      "answer": [
+        "ひたちない"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachinai/"
+    },
+    {
+      "question": "平石",
+      "answer": [
+        "ひらいし"
+      ],
+      "meaning": "北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiraishi/"
+    },
+    {
+      "question": "二田",
+      "answer": [
+        "ふただ"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futada/"
+    },
+    {
+      "question": "二ッ井",
+      "answer": [
+        "ふたつい"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futatsui/"
+    },
+    {
+      "question": "船越",
+      "answer": [
+        "ふなこし"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funakoshi/"
+    },
+    {
+      "question": "前郷",
+      "answer": [
+        "まえごう"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maego/"
+    },
+    {
+      "question": "前田南",
+      "answer": [
+        "まえだみなみ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maeda-minami/"
+    },
+    {
+      "question": "前山",
+      "answer": [
+        "まえやま"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maeyama/"
+    },
+    {
+      "question": "曲沢",
+      "answer": [
+        "まがりさわ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/magarisawa/"
+    },
+    {
+      "question": "松葉",
+      "answer": [
+        "まつば"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuba/"
+    },
+    {
+      "question": "道川",
+      "answer": [
+        "みちかわ"
+      ],
+      "meaning": "羽越本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/michikawa/"
+    },
+    {
+      "question": "三関",
+      "answer": [
+        "みつせき"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsuseki/"
+    },
+    {
+      "question": "峰吉川",
+      "answer": [
+        "みねよしかわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mineyoshikawa/"
+    },
+    {
+      "question": "向能代",
+      "answer": [
+        "むかいのしろ"
+      ],
+      "meaning": "五能線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukai-noshiro/"
+    },
+    {
+      "question": "森岳",
+      "answer": [
+        "もりたけ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moritake/"
+    },
+    {
+      "question": "薬師堂",
+      "answer": [
+        "やくしどう"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakushido_akita/"
+    },
+    {
+      "question": "矢島",
+      "answer": [
+        "やしま"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashima_akita/"
+    },
+    {
+      "question": "八津",
+      "answer": [
+        "やつ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yatsu_akita/"
+    },
+    {
+      "question": "柳田",
+      "answer": [
+        "やなぎた"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanagita/"
+    },
+    {
+      "question": "矢美津",
+      "answer": [
+        "やびつ"
+      ],
+      "meaning": "北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yabitsu/"
+    },
+    {
+      "question": "鑓見内",
+      "answer": [
+        "やりみない"
+      ],
+      "meaning": "田沢湖線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yariminai/"
+    },
+    {
+      "question": "湯沢",
+      "answer": [
+        "ゆざわ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuzawa/"
+    },
+    {
+      "question": "湯瀬温泉",
+      "answer": [
+        "ゆぜおんせん"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuzeonsen/"
+    },
+    {
+      "question": "横手",
+      "answer": [
+        "よこて"
+      ],
+      "meaning": "奥羽本線、北上線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokote/"
+    },
+    {
+      "question": "横堀",
+      "answer": [
+        "よこぼり"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokobori/"
+    },
+    {
+      "question": "吉沢",
+      "answer": [
+        "よしざわ"
+      ],
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshizawa/"
+    },
+    {
+      "question": "四ッ小屋",
+      "answer": [
+        "よつごや"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yotsugoya/"
+    },
+    {
+      "question": "米内沢",
+      "answer": [
+        "よないざわ"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yonaizawa/"
+    },
+    {
+      "question": "陸中大里",
+      "answer": [
+        "りくちゅうおおさと"
+      ],
+      "meaning": "花輪線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuchu-osato/"
+    },
+    {
+      "question": "脇本",
+      "answer": [
+        "わきもと"
+      ],
+      "meaning": "男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakimoto/"
+    },
+    {
+      "question": "和田",
+      "answer": [
+        "わだ"
+      ],
+      "meaning": "奥羽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wada/"
+    }
+  ]
+}

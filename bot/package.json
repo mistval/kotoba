@@ -1,0 +1,55 @@
+{
+  "name": "kotoba",
+  "version": "1.0.0",
+  "description": "A Discord bot for learning Japanese",
+  "main": "./src/start.js",
+  "scripts": {
+    "start": "node --max_old_space_size=2000 .",
+    "lint": "./node_modules/.bin/eslint ./src/",
+    "lintfix": "./node_modules/.bin/eslint --fix ./src/",
+    "buildall": "node ./src/build/buildall.js",
+    "buildshiritori": "node ./src/build/build_shiritori_data.js",
+    "buildpronunciation": "node ./src/build/build_pronunciation_data.js",
+    "buildquiz": "node ./src/build/build_quiz_decks.js",
+    "buildfontcharactermap": "node --max_old_space_size=500 ./src/build/build_font_character_map.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistval/kotoba.git"
+  },
+  "keywords": [],
+  "author": "mistval",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mistval/kotoba/issues"
+  },
+  "homepage": "https://github.com/mistval/kotoba#readme",
+  "dependencies": {
+    "@google-cloud/logging-bunyan": "^1.2.2",
+    "adm-zip": "0.4.13",
+    "axios": "0.19.0",
+    "bunyan": "^1.8.12",
+    "canvas": "^2.6.0",
+    "cheerio": "1.0.0-rc.2",
+    "disk-array": "^1.0.1",
+    "edict-index": "^0.0.2",
+    "fontkit": "^1.8.0",
+    "glob": "^7.1.4",
+    "html-entities": "1.2.1",
+    "kitsu": "7.0.0",
+    "kotoba-node-common": "file:../node-common",
+    "moment": "2.24.0",
+    "mongoose": "5.5.15",
+    "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
+    "render-furigana": "^2.0.1",
+    "shiritori": "^2.0.4",
+    "unofficial-jisho-api": "^2.0.1"
+  },
+  "devDependencies": {
+    "@google-cloud/storage": "^2.5.0",
+    "csv-stringify": "^5.3.0",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0"
+  }
+}

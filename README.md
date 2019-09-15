@@ -2,121 +2,118 @@
 
 # Kotoba
 
-A Discord bot for helping with language learning (especially Japanese)
+Kotoba is a project with several semi-independent pieces. Those are:
 
-Runs on [monochrome bot framework](https://github.com/mistval/monochrome)
+* [Kotoba Discord Bot](https://github.com/mistval/kotoba/tree/master/bot)
+* [Kotobaweb.com frontend (React)](https://github.com/mistval/kotoba/tree/master/kotobaweb)
+* [Kotobaweb API (Express)](https://github.com/mistval/kotoba/tree/master/api)
 
-## Help Wanted
+In addition to the three main projects there are a few other directories:
 
-I'd love to get help from other developers, and there is plenty to do. If you're interested, let me know, you can contact me in my [Discord server](https://discord.gg/f4Gkqku). New code should be written using AirBnB style guidelines and functional coding styles should be preferred. New code should be as platform-independent (that is, Discord-independent) as possible, and the platform-independent code should live in ./src/common while Discord code should live in ./src/discord_* directories. (Older code is being incrementally brought up to these standards)
+* [/common](https://github.com/mistval/kotoba/tree/master/common) - Common code that is intended to be shared between node processes and browser.
+* [/node-common](https://github.com/mistval/kotoba/tree/master/node-common) - Common code that is intended to be shared between node processes but not browser.
+* [/nginx](https://github.com/mistval/kotoba/tree/master/nginx) - An nginx configuration for proxying HTTP requests to the [frontend](https://github.com/mistval/kotoba/tree/master/kotobaweb) and [API](https://github.com/mistval/kotoba/tree/master/api).
+* [/backup](https://github.com/mistval/kotoba/tree/master/backup) - Tools for backing up user data to Google Cloud Storage.
+* [/worker](https://github.com/mistval/kotoba/tree/master/worker) - A worker process for doing some heavy lifting for other processes whose event loops should not be blocked.
 
-## Installation and running for production (docker)
+## Configuration
 
-Installation instructions below are for Ubuntu Linux.
+After cloning the repo, fill out [config_sample.js](https://github.com/mistval/kotoba/blob/master/config_sample.js) and rename it to **config.js**. You only have to fill out the sections for the components you want to run. For example if you're only going to run the bot, you only have to fill out the **bot** section.
 
-Run:
+## Self-hosting the bot
 
-```
+After following the configuration instructions:
+
+```sh
 sudo apt install docker docker-compose
-git clone https://github.com/mistval/kotoba.git
-cd kotoba
+sudo docker-compose up kotoba-bot kotoba-worker mongo_readwrite
 ```
 
-Then create a directory in the root directory called **config** and a file inside of it called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
+The bot will take some time to build and should then come online. Note that it will be missing some fonts and features that are not in this repo. These instructions are for Ubuntu Linux.
 
-```json
-{
-  "botToken": "your_bot_token_here",
-  "botAdminIds": ["your_user_id_here"]
-}
-```
+## Developing
 
-Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
+**Node v12 is recommended**
 
-```json
-{
-  "YOUTUBE": "",
-  "GOOGLE_TRANSLATE": "",
-  "AZURE_NEWS": "",
-  "FORVO": "",
-  "WEBSTER_CTH": "",
-  "OXFORD_APP_ID": "",
-  "OXFORD_API_KEY": ""
-}
-```
+### Discord bot
 
-Run:
-
-```
-sudo docker-compose up
-```
-
-The bot will take 5-10 minutes to build and then will come online.
-
-## Installation and running for development
-
-Instructions below are for Ubuntu Linux. Last I checked, Kotoba does also run fine on Windows, but I may or may not be able to help you with that.
-
-You must have **cairo** and **pango** installed (for image rendering for the quiz and furigana commands). You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages). These must be installed before you run npm install. If you already ran npm install, just delete your node_modules, install cairo and pango, and npm install again.
-
-You must also have **MongoDB** installed and listening on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
-
-After you've installed those run:
-
-```
-git clone https://github.com/mistval/kotoba.git
-cd kotoba
+```sh
+cd ./bot
 npm install
-npm run buildall
-```
-
-Then create a directory in the root directory called **config** and a file inside of it called **config.json**. It contains your bot token and bot admin IDs. It should look like this:
-
-```json
-{
-  "botToken": "your_bot_token_here",
-  "botAdminIds": ["your_user_id_here"]
-}
-```
-
-Also in the **config** directory, create a file called **api_keys.json**. It contains your API keys for external services. You can leave the keys blank, but you must create the file as shown below:
-
-```json
-{
-  "YOUTUBE": "",
-  "GOOGLE_TRANSLATE": "",
-  "AZURE_NEWS": "",
-  "FORVO": "",
-  "WEBSTER_CTH": "",
-  "OXFORD_APP_ID": "",
-  "OXFORD_API_KEY": ""
-}
-```
-
-You should also install the fonts in the /fonts directory. If you don't do this, the quiz and furigana commands might not use the fonts they are configured to use (and if you don't have any CJK fonts installed, they might just show boxes instead of Japanese characters).
-
-Finally, to start the bot run:
-
-```
 npm start
 ```
 
-## Fonts
+The bot will start and come online. Some commands won't work. There are additional steps required to make certain commands work:
 
-Due to licensing restrictions on redistribution, some of the fonts that public Kotoba uses are not included in the Github repo. You should be able to find them by Googling. Fonts not in this repo include:
+* Quiz command
+    1. In the ./bot directory, run `npm run buildquiz`.
+    2. In the ./bot directory, run `npm run buildfontcharactermap`.
+* Pronunciation command
+    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+    2. In the ./bot directory, run `npm run buildpronunciation`.
+* Shiritori command
+    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+    2. In the ./bot directory, run `npm run buildshiritori`.
 
-* PopRumCute
-* CP_Revenge
-* Genkaimincho
-* kurobara-cinderella
+### KotobaWeb
 
-## Commands
+1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
+2. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
 
-View the list of commands [here](http://kotobaweb.com/bot).
+```sh
+cd ./api
+npm install
+npm run buildall
+npm run startdev_nix # Or on Windows: npm run startdev_win
 
-## Public bot
+cd ../kotobaweb
+npm install
+npm start
+```
 
-[The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) has a few things that aren't here.
+The API will start on port 3000 and the React dev server will start on port 3001. You'll need to setup a reverse proxy server to forward to them appropriately. You can use nginx with a configuration like this:
+
+```
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen 80;
+
+        location /api {
+            client_max_body_size 4M;
+            proxy_pass http://localhost:3000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $host;
+        }
+
+        location / {
+            proxy_pass http://localhost:3001;
+        }
+    }
+}
+```
+
+### Worker process
+
+The worker process handles some heavy lifting so that the event loop doesn't have to block in the bot or API. The bot and API communicate with it via HTTP. It doesn't do much at the moment, and most features work without it, so you can probably ignore it until you're working with a feature that requires it and you notice that HTTP requests to it are failing.
+
+```
+cd ./worker
+npm install
+npm start
+```
 
 ## Help
 
@@ -126,20 +123,19 @@ View the list of commands [here](http://kotobaweb.com/bot).
 
 Data from the following third parties has been used in Kotoba.
 
-[Jisho.org](https://jisho.org/about)
-[Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
-[KanjiVG](http://kanjivg.tagaini.net/)
-[Glosbe Dictionary](https://glosbe.com/)
-[Forvo](https://forvo.com/)
-[Merriam-Webster](https://www.merriam-webster.com)
-[Oxford Dictionaries](https://www.oxforddictionaries.com/)
-[Japanese Wiktionary](https://ja.wiktionary.org)
-[EDICT](http://www.edrdg.org/jmdict/edict.html)
-[ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)
-[Kanjimaji](https://github.com/maurimo/kanimaji)
-[Google Translate](https://translate.google.com/)
-[YouTube](https://www.youtube.com/)
-[Jonathan Waller's site](http://www.tanos.co.uk/)
+[Jisho.org](https://jisho.org/about)  
+[Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)  
+[KanjiVG](http://kanjivg.tagaini.net/)  
+[Forvo](https://forvo.com/)  
+[Merriam-Webster](https://www.merriam-webster.com)  
+[Oxford Dictionaries](https://www.oxforddictionaries.com/)  
+[Japanese Wiktionary](https://ja.wiktionary.org)  
+[EDICT](http://www.edrdg.org/jmdict/edict.html)  
+[ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)  
+[Kanjimaji](https://github.com/maurimo/kanimaji)  
+[Google Translate](https://translate.google.com/)  
+[YouTube](https://www.youtube.com/)  
+[Jonathan Waller's site](http://www.tanos.co.uk/)  
 
 In addition various people have contributed quiz data and are credited in the relevant quiz descriptions.
 

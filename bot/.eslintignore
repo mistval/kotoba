@@ -1,0 +1,5 @@
+# These modules are a mess and need more work than I can give them right now
+# They should be refactored and re-added to style checks before being changed
+# in any major way.
+src/discord_commands/quiz.js
+src/common/quiz

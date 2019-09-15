@@ -1,0 +1,699 @@
+{
+  "uniqueId": "stations_oita",
+  "name": "Oita Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Oita station names](https://mb.jorudan.co.jp/os/eki/menu_oit/)",
+  "cards": [
+    {
+      "question": "朝地",
+      "answer": [
+        "あさじ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asaji/"
+    },
+    {
+      "question": "浅海井",
+      "answer": [
+        "あざむい"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azamui/"
+    },
+    {
+      "question": "天ヶ瀬",
+      "answer": [
+        "あまがせ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagase/"
+    },
+    {
+      "question": "天津",
+      "answer": [
+        "あまつ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amatsu/"
+    },
+    {
+      "question": "犬飼",
+      "answer": [
+        "いぬかい"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inukai/"
+    },
+    {
+      "question": "今津",
+      "answer": [
+        "いまづ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imazu_oita/"
+    },
+    {
+      "question": "今山",
+      "answer": [
+        "いまやま"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imayama/"
+    },
+    {
+      "question": "宇佐",
+      "answer": [
+        "うさ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/usa/"
+    },
+    {
+      "question": "臼杵",
+      "answer": [
+        "うすき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/usuki_oita/"
+    },
+    {
+      "question": "恵良",
+      "answer": [
+        "えら"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/era/"
+    },
+    {
+      "question": "大分",
+      "answer": [
+        "おおいた"
+      ],
+      "meaning": "日豊本線、久大本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oita/"
+    },
+    {
+      "question": "大分大学前",
+      "answer": [
+        "おおいただいがくまえ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oitadaigaku-mae/"
+    },
+    {
+      "question": "大神",
+      "answer": [
+        "おおが"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oga_oita/"
+    },
+    {
+      "question": "大在",
+      "answer": [
+        "おおざい"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ozai/"
+    },
+    {
+      "question": "大鶴",
+      "answer": [
+        "おおつる"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otsuru/"
+    },
+    {
+      "question": "緒方",
+      "answer": [
+        "おがた"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogata_oita/"
+    },
+    {
+      "question": "鬼瀬",
+      "answer": [
+        "おにがせ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onigase/"
+    },
+    {
+      "question": "小野屋",
+      "answer": [
+        "おのや"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onoya/"
+    },
+    {
+      "question": "海崎",
+      "answer": [
+        "かいざき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaizaki/"
+    },
+    {
+      "question": "賀来",
+      "answer": [
+        "かく"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaku/"
+    },
+    {
+      "question": "上臼杵",
+      "answer": [
+        "かみうすき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-usuki/"
+    },
+    {
+      "question": "上岡",
+      "answer": [
+        "かみおか"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamioka/"
+    },
+    {
+      "question": "亀川",
+      "answer": [
+        "かめがわ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamegawa/"
+    },
+    {
+      "question": "狩生",
+      "answer": [
+        "かりう"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kariu/"
+    },
+    {
+      "question": "北山田",
+      "answer": [
+        "きたやまだ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-yamada_oita/"
+    },
+    {
+      "question": "杵築",
+      "answer": [
+        "きつき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitsuki/"
+    },
+    {
+      "question": "熊崎",
+      "answer": [
+        "くまさき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumasaki/"
+    },
+    {
+      "question": "幸崎",
+      "answer": [
+        "こうざき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kozaki_oita/"
+    },
+    {
+      "question": "佐伯",
+      "answer": [
+        "さいき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saiki/"
+    },
+    {
+      "question": "坂ノ市",
+      "answer": [
+        "さかのいち"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakanoichi/"
+    },
+    {
+      "question": "佐志生",
+      "answer": [
+        "さしう"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sashiu/"
+    },
+    {
+      "question": "敷戸",
+      "answer": [
+        "しきど"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikido/"
+    },
+    {
+      "question": "重岡",
+      "answer": [
+        "しげおか"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shigeoka/"
+    },
+    {
+      "question": "下ノ江",
+      "answer": [
+        "したのえ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shitanoe/"
+    },
+    {
+      "question": "庄内",
+      "answer": [
+        "しょうない"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shonai_oita/"
+    },
+    {
+      "question": "菅尾",
+      "answer": [
+        "すがお"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugao/"
+    },
+    {
+      "question": "杉河内",
+      "answer": [
+        "すぎかわち"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugikawachi/"
+    },
+    {
+      "question": "宗太郎",
+      "answer": [
+        "そうたろう"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sotaro/"
+    },
+    {
+      "question": "高城",
+      "answer": [
+        "たかじょう"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takajo/"
+    },
+    {
+      "question": "滝尾",
+      "answer": [
+        "たきお"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takio/"
+    },
+    {
+      "question": "竹中",
+      "answer": [
+        "たけなか"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takenaka/"
+    },
+    {
+      "question": "立石",
+      "answer": [
+        "たていし"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tateishi_oita/"
+    },
+    {
+      "question": "玉来",
+      "answer": [
+        "たまらい"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamarai/"
+    },
+    {
+      "question": "津久見",
+      "answer": [
+        "つくみ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukumi/"
+    },
+    {
+      "question": "鶴崎",
+      "answer": [
+        "つるさき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurusaki/"
+    },
+    {
+      "question": "光岡",
+      "answer": [
+        "てるおか"
+      ],
+      "meaning": "久大本線、日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/teruoka/"
+    },
+    {
+      "question": "天神山",
+      "answer": [
+        "てんじんやま"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenjin-yama/"
+    },
+    {
+      "question": "直川",
+      "answer": [
+        "なおかわ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naokawa/"
+    },
+    {
+      "question": "直見",
+      "answer": [
+        "なおみ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naomi/"
+    },
+    {
+      "question": "中津",
+      "answer": [
+        "なかつ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakatsu_oita/"
+    },
+    {
+      "question": "中判田",
+      "answer": [
+        "なかはんだ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka-handa/"
+    },
+    {
+      "question": "中山香",
+      "answer": [
+        "なかやまが"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayamaga/"
+    },
+    {
+      "question": "西大分",
+      "answer": [
+        "にしおおいた"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-oita/"
+    },
+    {
+      "question": "西屋敷",
+      "answer": [
+        "にしやしき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-yashiki/"
+    },
+    {
+      "question": "野矢",
+      "answer": [
+        "のや"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noya/"
+    },
+    {
+      "question": "東中津",
+      "answer": [
+        "ひがしなかつ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-nakatsu/"
+    },
+    {
+      "question": "東別府",
+      "answer": [
+        "ひがしべっぷ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-beppu/"
+    },
+    {
+      "question": "引治",
+      "answer": [
+        "ひきじ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikiji/"
+    },
+    {
+      "question": "日代",
+      "answer": [
+        "ひしろ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hishiro/"
+    },
+    {
+      "question": "日出",
+      "answer": [
+        "ひじ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiji/"
+    },
+    {
+      "question": "日田",
+      "answer": [
+        "ひた"
+      ],
+      "meaning": "久大本線、日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hita/"
+    },
+    {
+      "question": "古国府",
+      "answer": [
+        "ふるごう"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furugo/"
+    },
+    {
+      "question": "豊前善光寺",
+      "answer": [
+        "ぶぜんぜんこうじ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-zenkoji/"
+    },
+    {
+      "question": "豊前長洲",
+      "answer": [
+        "ぶぜんながす"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-nagasu/"
+    },
+    {
+      "question": "豊後荻",
+      "answer": [
+        "ぶんごおぎ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-ogi/"
+    },
+    {
+      "question": "豊後清川",
+      "answer": [
+        "ぶんごきよかわ"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-kiyokawa/"
+    },
+    {
+      "question": "豊後国分",
+      "answer": [
+        "ぶんごこくぶ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-kokubu/"
+    },
+    {
+      "question": "豊後竹田",
+      "answer": [
+        "ぶんごたけた"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-taketa/"
+    },
+    {
+      "question": "豊後豊岡",
+      "answer": [
+        "ぶんごとよおか"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-toyo-oka/"
+    },
+    {
+      "question": "豊後中川",
+      "answer": [
+        "ぶんごなかがわ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-nakagawa/"
+    },
+    {
+      "question": "豊後中村",
+      "answer": [
+        "ぶんごなかむら"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-nakamura/"
+    },
+    {
+      "question": "豊後三芳",
+      "answer": [
+        "ぶんごみよし"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-miyoshi/"
+    },
+    {
+      "question": "豊後森",
+      "answer": [
+        "ぶんごもり"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bungo-mori/"
+    },
+    {
+      "question": "別府",
+      "answer": [
+        "べっぷ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/beppu_oita/"
+    },
+    {
+      "question": "別府大学",
+      "answer": [
+        "べっぷだいがく"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/beppudaigaku/"
+    },
+    {
+      "question": "牧",
+      "answer": [
+        "まき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maki_oita/"
+    },
+    {
+      "question": "三重町",
+      "answer": [
+        "みえまち"
+      ],
+      "meaning": "豊肥本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miemachi/"
+    },
+    {
+      "question": "南大分",
+      "answer": [
+        "みなみおおいた"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-oita/"
+    },
+    {
+      "question": "南由布",
+      "answer": [
+        "みなみゆふ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yufu/"
+    },
+    {
+      "question": "向之原",
+      "answer": [
+        "むかいのはる"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mukainoharu/"
+    },
+    {
+      "question": "柳ヶ浦",
+      "answer": [
+        "やなぎがうら"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanagigaura/"
+    },
+    {
+      "question": "湯平",
+      "answer": [
+        "ゆのひら"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunohira/"
+    },
+    {
+      "question": "由布院",
+      "answer": [
+        "ゆふいん"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yufuin/"
+    },
+    {
+      "question": "夜明",
+      "answer": [
+        "よあけ"
+      ],
+      "meaning": "久大本線、日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoake/"
+    },
+    {
+      "question": "暘谷",
+      "answer": [
+        "ようこく"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokoku/"
+    }
+  ]
+}

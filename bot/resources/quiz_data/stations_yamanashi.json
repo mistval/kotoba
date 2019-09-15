@@ -1,0 +1,627 @@
+{
+  "uniqueId": "stations_yamanashi",
+  "name": "Yamanashi Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Yamanashi station names](https://mb.jorudan.co.jp/os/eki/menu_kfu/)",
+  "cards": [
+    {
+      "question": "赤坂",
+      "answer": [
+        "あかさか"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akasaka_yamanashi/"
+    },
+    {
+      "question": "芦川",
+      "answer": [
+        "あしがわ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashigawa_yamanashi/"
+    },
+    {
+      "question": "穴山",
+      "answer": [
+        "あなやま"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/anayama/"
+    },
+    {
+      "question": "石和温泉",
+      "answer": [
+        "いさわおんせん"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isawaonsen/"
+    },
+    {
+      "question": "市川大門",
+      "answer": [
+        "いちかわだいもん"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichikawadaimon/"
+    },
+    {
+      "question": "市川本町",
+      "answer": [
+        "いちかわほんまち"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichikawahommachi/"
+    },
+    {
+      "question": "市ノ瀬",
+      "answer": [
+        "いちのせ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichinose/"
+    },
+    {
+      "question": "井出",
+      "answer": [
+        "いで"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ide/"
+    },
+    {
+      "question": "上野原",
+      "answer": [
+        "うえのはら"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uenohara/"
+    },
+    {
+      "question": "内船",
+      "answer": [
+        "うつぶな"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utsubuna/"
+    },
+    {
+      "question": "塩山",
+      "answer": [
+        "えんざん"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/enzan/"
+    },
+    {
+      "question": "大月",
+      "answer": [
+        "おおつき"
+      ],
+      "meaning": "中央本線（東日本）、富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otsuki/"
+    },
+    {
+      "question": "奥之院",
+      "answer": [
+        "おくのいん"
+      ],
+      "meaning": "身延山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okunoin/"
+    },
+    {
+      "question": "落居",
+      "answer": [
+        "おちい"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ochii/"
+    },
+    {
+      "question": "甲斐岩間",
+      "answer": [
+        "かいいわま"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-iwama/"
+    },
+    {
+      "question": "甲斐上野",
+      "answer": [
+        "かいうえの"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-ueno/"
+    },
+    {
+      "question": "甲斐大泉",
+      "answer": [
+        "かいおおいずみ"
+      ],
+      "meaning": "小海線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-oizumi/"
+    },
+    {
+      "question": "甲斐大島",
+      "answer": [
+        "かいおおしま"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-oshima/"
+    },
+    {
+      "question": "甲斐小泉",
+      "answer": [
+        "かいこいずみ"
+      ],
+      "meaning": "小海線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-koizumi/"
+    },
+    {
+      "question": "甲斐住吉",
+      "answer": [
+        "かいすみよし"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-sumiyoshi/"
+    },
+    {
+      "question": "甲斐常葉",
+      "answer": [
+        "かいときわ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-tokiwa/"
+    },
+    {
+      "question": "甲斐大和",
+      "answer": [
+        "かいやまと"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kai-yamato/"
+    },
+    {
+      "question": "鰍沢口",
+      "answer": [
+        "かじかざわぐち"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kajikazawaguchi/"
+    },
+    {
+      "question": "春日居町",
+      "answer": [
+        "かすがいちょう"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasugaicho/"
+    },
+    {
+      "question": "禾生",
+      "answer": [
+        "かせい"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasei/"
+    },
+    {
+      "question": "勝沼ぶどう郷",
+      "answer": [
+        "かつぬまぶどうきょう"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsunumabudokyo/"
+    },
+    {
+      "question": "金手",
+      "answer": [
+        "かねんて"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanente/"
+    },
+    {
+      "question": "上大月",
+      "answer": [
+        "かみおおつき"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-otsuki/"
+    },
+    {
+      "question": "河口湖",
+      "answer": [
+        "かわぐちこ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaguchiko/"
+    },
+    {
+      "question": "清里",
+      "answer": [
+        "きよさと"
+      ],
+      "meaning": "小海線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyosato/"
+    },
+    {
+      "question": "久遠寺",
+      "answer": [
+        "くおんじ"
+      ],
+      "meaning": "身延山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuonji/"
+    },
+    {
+      "question": "久那土",
+      "answer": [
+        "くなど"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kunado/"
+    },
+    {
+      "question": "月江寺",
+      "answer": [
+        "げっこうじ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gekkoji/"
+    },
+    {
+      "question": "小井川",
+      "answer": [
+        "こいかわ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koikawa_yamanashi/"
+    },
+    {
+      "question": "甲府",
+      "answer": [
+        "こうふ"
+      ],
+      "meaning": "中央本線（東日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kofu/"
+    },
+    {
+      "question": "国母",
+      "answer": [
+        "こくぼ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokubo/"
+    },
+    {
+      "question": "寿",
+      "answer": [
+        "ことぶき"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotobuki/"
+    },
+    {
+      "question": "小淵沢",
+      "answer": [
+        "こぶちざわ"
+      ],
+      "meaning": "中央本線（東日本）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobuchizawa/"
+    },
+    {
+      "question": "酒折",
+      "answer": [
+        "さかおり"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakaori/"
+    },
+    {
+      "question": "笹子",
+      "answer": [
+        "ささご"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasago/"
+    },
+    {
+      "question": "猿橋",
+      "answer": [
+        "さるはし"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saruhashi/"
+    },
+    {
+      "question": "塩崎",
+      "answer": [
+        "しおざき"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiozaki/"
+    },
+    {
+      "question": "四方津",
+      "answer": [
+        "しおつ"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiotsu/"
+    },
+    {
+      "question": "塩之沢",
+      "answer": [
+        "しおのさわ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shionosawa/"
+    },
+    {
+      "question": "下部温泉",
+      "answer": [
+        "しもべおんせん"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimobe-onsen/"
+    },
+    {
+      "question": "下吉田",
+      "answer": [
+        "しもよしだ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-yoshida/"
+    },
+    {
+      "question": "新府",
+      "answer": [
+        "しんぷ"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimpu/"
+    },
+    {
+      "question": "常永",
+      "answer": [
+        "じょうえい"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/joei/"
+    },
+    {
+      "question": "仙娥滝",
+      "answer": [
+        "せんがたき"
+      ],
+      "meaning": "昇仙峡ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sengataki/"
+    },
+    {
+      "question": "善光寺",
+      "answer": [
+        "ぜんこうじ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zenkoji/"
+    },
+    {
+      "question": "田野倉",
+      "answer": [
+        "たのくら"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanokura/"
+    },
+    {
+      "question": "都留市",
+      "answer": [
+        "つるし"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurushi/"
+    },
+    {
+      "question": "都留文科大学前",
+      "answer": [
+        "つるぶんかだいがくまえ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurubunkadaigakumae/"
+    },
+    {
+      "question": "十日市場",
+      "answer": [
+        "とおかいちば"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokaichiba_yamanashi/"
+    },
+    {
+      "question": "十島",
+      "answer": [
+        "とおしま"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toshima_yamanashi/"
+    },
+    {
+      "question": "鳥沢",
+      "answer": [
+        "とりさわ"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/torisawa/"
+    },
+    {
+      "question": "長坂",
+      "answer": [
+        "ながさか"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagasaka/"
+    },
+    {
+      "question": "韮崎",
+      "answer": [
+        "にらさき"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nirasaki/"
+    },
+    {
+      "question": "波高島",
+      "answer": [
+        "はだかじま"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hadakajima/"
+    },
+    {
+      "question": "初狩",
+      "answer": [
+        "はつかり"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatsukari/"
+    },
+    {
+      "question": "パノラマ台",
+      "answer": [
+        "ぱのらまだい"
+      ],
+      "meaning": "昇仙峡ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/panorama-dai/"
+    },
+    {
+      "question": "東桂",
+      "answer": [
+        "ひがしかつら"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-katsura/"
+    },
+    {
+      "question": "東花輪",
+      "answer": [
+        "ひがしはなわ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hanawa/"
+    },
+    {
+      "question": "東山梨",
+      "answer": [
+        "ひがしやまなし"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yamanashi/"
+    },
+    {
+      "question": "日野春",
+      "answer": [
+        "ひのはる"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hinoharu/"
+    },
+    {
+      "question": "富士急ハイランド",
+      "answer": [
+        "ふじきゅうはいらんど"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujikyu-highland/"
+    },
+    {
+      "question": "富士山",
+      "answer": [
+        "ふじさん"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisan/"
+    },
+    {
+      "question": "三つ峠",
+      "answer": [
+        "みつとうげ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsutoge/"
+    },
+    {
+      "question": "南甲府",
+      "answer": [
+        "みなみこうふ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kofu/"
+    },
+    {
+      "question": "身延",
+      "answer": [
+        "みのぶ"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minobu/"
+    },
+    {
+      "question": "梁川",
+      "answer": [
+        "やながわ"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanagawa_yamanashi/"
+    },
+    {
+      "question": "山梨市",
+      "answer": [
+        "やまなしし"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamanashishi/"
+    },
+    {
+      "question": "谷村町",
+      "answer": [
+        "やむらまち"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamuramachi/"
+    },
+    {
+      "question": "葭池温泉前",
+      "answer": [
+        "よしいけおんせんまえ"
+      ],
+      "meaning": "富士急行線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshiikeonsen-mae/"
+    },
+    {
+      "question": "寄畑",
+      "answer": [
+        "よりはた"
+      ],
+      "meaning": "身延線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yorihata/"
+    },
+    {
+      "question": "竜王",
+      "answer": [
+        "りゅうおう"
+      ],
+      "meaning": "中央本線（東日本）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryuo/"
+    }
+  ]
+}

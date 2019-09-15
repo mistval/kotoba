@@ -1,0 +1,639 @@
+{
+  "uniqueId": "plants",
+  "name": "Plants Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below plant name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "commentFieldName": "Meaning",
+  "description": "[Data provided by okami#3845]",
+  "cards": [
+    {
+      "question": "赤松",
+      "answer": [
+        "あかまつ"
+      ],
+      "meaning": "Japanese red pine (Pinus densiflora), Japanese umbrella pine, tanyosho pine"
+    },
+    {
+      "question": "朝顔",
+      "answer": [
+        "あさがお"
+      ],
+      "meaning": "Japanese morning glory (Ipomoea nil, Pharbitis nil)"
+    },
+    {
+      "question": "紫陽花",
+      "answer": [
+        "あじさい"
+      ],
+      "meaning": "bigleaf hydrangea (Hydrangea macrophylla), French hydrangea"
+    },
+    {
+      "question": "菖蒲",
+      "answer": [
+        "しょうぶ",
+        "そうぶ",
+        "あやめ"
+      ],
+      "meaning": "sweet flag (Acorus calamus), calamus, iris (flower)"
+    },
+    {
+      "question": "文目",
+      "answer": [
+        "あやめ"
+      ],
+      "meaning": "pattern, design, distinction"
+    },
+    {
+      "question": "銀杏",
+      "answer": [
+        "いちょう",
+        "ぎんなん"
+      ],
+      "meaning": "ginkgo (Ginkgo biloba), gingko, maidenhair tree, ginkgo nut, gingko nut"
+    },
+    {
+      "question": "公孫樹",
+      "answer": [
+        "いちょう",
+        "こうそんじゅ"
+      ],
+      "meaning": "ginkgo (Ginkgo biloba), gingko, maidenhair tree"
+    },
+    {
+      "question": "鴨脚樹",
+      "answer": [
+        "いちょう"
+      ],
+      "meaning": "ginkgo (Ginkgo biloba), gingko, maidenhair tree"
+    },
+    {
+      "question": "大葉子",
+      "answer": [
+        "おおばこ",
+        "おんばこ",
+        "おばこ"
+      ],
+      "meaning": "plantain (esp. Asian plantain, Plantago asiatica)"
+    },
+    {
+      "question": "弟切草",
+      "answer": [
+        "おとぎりそう"
+      ],
+      "meaning": "Hypericum erectum (species of St. John's wort)"
+    },
+    {
+      "question": "鬼胡桃",
+      "answer": [
+        "おにぐるみ"
+      ],
+      "meaning": "Manchurian walnut (Juglans mandshurica)"
+    },
+    {
+      "question": "橄欖",
+      "answer": [
+        "かんらん"
+      ],
+      "meaning": "Chinese white olive (Canarium album)"
+    },
+    {
+      "question": "槭樹",
+      "answer": [
+        "かえで"
+      ],
+      "meaning": "maple (tree) (Acer spp.)"
+    },
+    {
+      "question": "楓",
+      "answer": [
+        "かえで",
+        "かえるで",
+        "ふう"
+      ],
+      "meaning": "maple (tree) (Acer spp.), Formosan sweetgum (Liquidambar formosana)"
+    },
+    {
+      "question": "燕子花",
+      "answer": [
+        "かきつばた"
+      ],
+      "meaning": "rabbitear iris (Iris laevigata)"
+    },
+    {
+      "question": "杜若",
+      "answer": [
+        "かきつばた"
+      ],
+      "meaning": "rabbitear iris (Iris laevigata)"
+    },
+    {
+      "question": "桂",
+      "answer": [
+        "かつら",
+        "けい"
+      ],
+      "meaning": "katsura (Cercidiphyllum japonicum), Japanese Judas tree, knight"
+    },
+    {
+      "question": "桔梗",
+      "answer": [
+        "ききょう"
+      ],
+      "meaning": "Chinese bellflower, Platycodon grandiflorum"
+    },
+    {
+      "question": "菊",
+      "answer": [
+        "きく"
+      ],
+      "meaning": "chrysanthemum (Chrysanthemum morifolium)"
+    },
+    {
+      "question": "金木犀",
+      "answer": [
+        "きんもくせい"
+      ],
+      "meaning": "fragrant olive (Osmanthus fragrans var. aurantiacus)"
+    },
+    {
+      "question": "樟",
+      "answer": [
+        "くすのき",
+        "くす"
+      ],
+      "meaning": "camphor tree (Cinnamomum camphora), camphorwood, camphor laurel"
+    },
+    {
+      "question": "楠",
+      "answer": [
+        "くすのき",
+        "くす"
+      ],
+      "meaning": "camphor tree (Cinnamomum camphora), camphorwood, camphor laurel"
+    },
+    {
+      "question": "梔子",
+      "answer": [
+        "くちなし",
+        "しし"
+      ],
+      "meaning": "Cape jasmine (Gardenia jasminoides), Cape jessamine, gardenia"
+    },
+    {
+      "question": "橡",
+      "answer": [
+        "どんぐり",
+        "とちのき",
+        "とち",
+        "つるばみ",
+        "くぬぎ",
+        "くのぎ"
+      ],
+      "meaning": "acorn, Japanese horse chestnut (Aesculus turbinata), sawtooth oak (Quercus acutissima)"
+    },
+    {
+      "question": "椚",
+      "answer": [
+        "くぬぎ",
+        "くのぎ"
+      ],
+      "meaning": "sawtooth oak (Quercus acutissima)"
+    },
+    {
+      "question": "櫟",
+      "answer": [
+        "くぬぎ",
+        "くのぎ",
+        "いちい"
+      ],
+      "meaning": "sawtooth oak (Quercus acutissima), Quercus gilva (species of oak)"
+    },
+    {
+      "question": "黒松",
+      "answer": [
+        "くろまつ"
+      ],
+      "meaning": "black pine (Pinus thunbergii), Japanese black pine"
+    },
+    {
+      "question": "黒百合",
+      "answer": [
+        "くろゆり"
+      ],
+      "meaning": "black lily (Fritillaria camtschatcensis), Kamchatka lily, Kamchatka fritillary"
+    },
+    {
+      "question": "桑",
+      "answer": [
+        "くわ"
+      ],
+      "meaning": "mulberry (tree)"
+    },
+    {
+      "question": "月桂樹",
+      "answer": [
+        "げっけいじゅ"
+      ],
+      "meaning": "bay laurel (Laurus nobilis), bay tree, sweet bay, laurel tree"
+    },
+    {
+      "question": "欅",
+      "answer": [
+        "けやき"
+      ],
+      "meaning": "Japanese zelkova (species of elm-like tree, Zelkowa serrata)"
+    },
+    {
+      "question": "秋桜",
+      "answer": [
+        "あきざくら"
+      ],
+      "meaning": "cosmos (flower)"
+    },
+    {
+      "question": "榊",
+      "answer": [
+        "さかき"
+      ],
+      "meaning": "sakaki (species of evergreen sacred to Shinto, Cleyera japonica)"
+    },
+    {
+      "question": "桜",
+      "answer": [
+        "さくら"
+      ],
+      "meaning": "cherry tree, cherry blossom"
+    },
+    {
+      "question": "山茶花",
+      "answer": [
+        "さざんか",
+        "さんざか",
+        "さんさか",
+        "さんちゃか"
+      ],
+      "meaning": "sasanqua (Camellia sasanqua)"
+    },
+    {
+      "question": "百日紅",
+      "answer": [
+        "さるすべり",
+        "ひゃくじつこう"
+      ],
+      "meaning": "crape myrtle (Lagerstroemia indica)"
+    },
+    {
+      "question": "石楠花",
+      "answer": [
+        "しゃくなげ"
+      ],
+      "meaning": "rhododendron"
+    },
+    {
+      "question": "石南花",
+      "answer": [
+        "しゃくなげ"
+      ],
+      "meaning": "rhododendron"
+    },
+    {
+      "question": "水仙",
+      "answer": [
+        "すいせん"
+      ],
+      "meaning": "daffodil (esp. Narcissus tazetta var. chinensis), narcissus"
+    },
+    {
+      "question": "杉",
+      "answer": [
+        "すぎ"
+      ],
+      "meaning": "Japanese cedar (Cryptomeria japonica)"
+    },
+    {
+      "question": "鈴蘭",
+      "answer": [
+        "すずらん"
+      ],
+      "meaning": "lily of the valley (Convallaria keiskei)"
+    },
+    {
+      "question": "菫",
+      "answer": [
+        "すみれ"
+      ],
+      "meaning": "violet (any flower of genus Viola, esp. the Fuji dawn, Viola mandshurica)"
+    },
+    {
+      "question": "染井吉野",
+      "answer": [
+        "そめいよしの"
+      ],
+      "meaning": "Yoshino cherry (Prunus yedoensis)"
+    },
+    {
+      "question": "蒲公英",
+      "answer": [
+        "たんぽぽ",
+        "ほこうえい"
+      ],
+      "meaning": "dandelion (esp. species Taraxacum platycarpum)"
+    },
+    {
+      "question": "躑躅",
+      "answer": [
+        "つつじ"
+      ],
+      "meaning": "azalea (Rhododendron spp.)"
+    },
+    {
+      "question": "椿",
+      "answer": [
+        "つばき"
+      ],
+      "meaning": "common camellia, Camellia japonica"
+    },
+    {
+      "question": "薺",
+      "answer": [
+        "なずな"
+      ],
+      "meaning": "shepherd's purse (Capsella bursa-pastoris)"
+    },
+    {
+      "question": "棗",
+      "answer": [
+        "なつめ"
+      ],
+      "meaning": "jujube (Ziziphus jujube), Chinese date, red date"
+    },
+    {
+      "question": "撫子",
+      "answer": [
+        "なでしこ"
+      ],
+      "meaning": "pink (any flower of genus Dianthus, esp. the fringed pink, Dianthus superbus)"
+    },
+    {
+      "question": "瞿麦",
+      "answer": [
+        "なでしこ"
+      ],
+      "meaning": "pink (any flower of genus Dianthus, esp. the fringed pink, Dianthus superbus)"
+    },
+    {
+      "question": "庭漆",
+      "answer": [
+        "にわうるし"
+      ],
+      "meaning": "tree of heaven (Ailanthus altissima)"
+    },
+    {
+      "question": "野薔薇",
+      "answer": [
+        "のいばら",
+        "のばら"
+      ],
+      "meaning": "multiflora rose (Rosa multiflora), wild rose"
+    },
+    {
+      "question": "繁縷",
+      "answer": [
+        "はこべ",
+        "はこべら"
+      ],
+      "meaning": "chickweed, stitchwort (Stellaria sp.)"
+    },
+    {
+      "question": "蓮",
+      "answer": [
+        "はす",
+        "はちす"
+      ],
+      "meaning": "sacred lotus (Nelumbo nucifera), Indian lotus, lotus"
+    },
+    {
+      "question": "花水木",
+      "answer": [
+        "はなみずき"
+      ],
+      "meaning": "flowering dogwood (Cornus florida)"
+    },
+    {
+      "question": "薔薇",
+      "answer": [
+        "ばら",
+        "しょうび",
+        "そうび"
+      ],
+      "meaning": "rose"
+    },
+    {
+      "question": "柊",
+      "answer": [
+        "ひいらぎ",
+        "ひらぎ"
+      ],
+      "meaning": "holly olive (Osmanthus heterophyllus), false holly"
+    },
+    {
+      "question": "疼木",
+      "answer": [
+        "ひいらぎ"
+      ],
+      "meaning": "holly olive (Osmanthus heterophyllus), false holly"
+    },
+    {
+      "question": "彼岸花",
+      "answer": [
+        "ひがんばな"
+      ],
+      "meaning": "red spider lily (Lycoris radiata), cluster amaryllis"
+    },
+    {
+      "question": "雛芥子",
+      "answer": [
+        "ひなげし"
+      ],
+      "meaning": "red poppy (Papaver rhoeas), common poppy, coquelicot"
+    },
+    {
+      "question": "檜",
+      "answer": [
+        "ひのき",
+        "ひ"
+      ],
+      "meaning": "hinoki cypress (Chamaecyparis obtusa), Japanese cypress"
+    },
+    {
+      "question": "桧",
+      "answer": [
+        "ひのき",
+        "ひ"
+      ],
+      "meaning": "hinoki cypress (Chamaecyparis obtusa), Japanese cypress"
+    },
+    {
+      "question": "向日葵",
+      "answer": [
+        "ひまわり"
+      ],
+      "meaning": "sunflower (Helianthus annuus)"
+    },
+    {
+      "question": "風信子",
+      "answer": [
+        "ふうしんし"
+      ],
+      "meaning": "hyacinth (Hyacinthus orientalis)"
+    },
+    {
+      "question": "昼顔",
+      "answer": [
+        "ひるがお"
+      ],
+      "meaning": "Japanese bindweed (Calystegia japonica)"
+    },
+    {
+      "question": "藤",
+      "answer": [
+        "ふじ"
+      ],
+      "meaning": "wisteria (esp. Japanese wisteria, Wisteria floribunda), wistaria"
+    },
+    {
+      "question": "山毛欅",
+      "answer": [
+        "ぶな"
+      ],
+      "meaning": "Japanese beech (Fagus crenata), Siebold's beech"
+    },
+    {
+      "question": "椈",
+      "answer": [
+        "ぶな"
+      ],
+      "meaning": "Japanese beech (Fagus crenata), Siebold's beech"
+    },
+    {
+      "question": "紅花",
+      "answer": [
+        "べにばな",
+        "こうか"
+      ],
+      "meaning": "safflower, dyer's safflower, Carthamus tinctorius"
+    },
+    {
+      "question": "鳳仙花",
+      "answer": [
+        "ほうせんか"
+      ],
+      "meaning": "(garden) balsam, Impatiens balsamina"
+    },
+    {
+      "question": "鬼灯",
+      "answer": [
+        "ほおずき",
+        "ほおづき",
+        "ほうずき"
+      ],
+      "meaning": "ground cherry (Physalis alkekengi var. franchetii), husk tomato, Chinese lantern plant"
+    },
+    {
+      "question": "酸漿",
+      "answer": [
+        "ほおずき",
+        "ほおづき",
+        "ほうずき",
+        "ぬかずき",
+        "かがち"
+      ],
+      "meaning": "ground cherry (Physalis alkekengi var. franchetii), husk tomato, Chinese lantern plant"
+    },
+    {
+      "question": "牡丹",
+      "answer": [
+        "ぼたん"
+      ],
+      "meaning": "tree peony (Paeonia suffruticosa), moutan"
+    },
+    {
+      "question": "木槿",
+      "answer": [
+        "むくげ",
+        "もくげ"
+      ],
+      "meaning": "rose of Sharon (Hibiscus syriacus)"
+    },
+    {
+      "question": "樅",
+      "answer": [
+        "もみ"
+      ],
+      "meaning": "Japanese fir (Abies firma), momi fir"
+    },
+    {
+      "question": "山吹",
+      "answer": [
+        "やまぶき"
+      ],
+      "meaning": "kerria (Kerria japonica), Japanese yellow rose"
+    },
+    {
+      "question": "夕顔",
+      "answer": [
+        "ゆうがお"
+      ],
+      "meaning": "bottle gourd (Lagenaria siceraria, esp. Lagenaria siceraria var. hispida)"
+    },
+    {
+      "question": "百合",
+      "answer": [
+        "ゆり",
+        "ゆる"
+      ],
+      "meaning": "lily (Lilium spp.)"
+    },
+    {
+      "question": "夜顔",
+      "answer": [
+        "よるがお"
+      ],
+      "meaning": "moonflower (Ipomoea alba)"
+    },
+    {
+      "question": "蘭",
+      "answer": [
+        "らん",
+        "あららぎ",
+        "らに"
+      ],
+      "meaning": "orchid, Japanese yew (Taxus cuspidata), thoroughwort (species of boneset, Eupatorium fortunei)"
+    },
+    {
+      "question": "竜胆",
+      "answer": [
+        "りんどう",
+        "りゅうたん"
+      ],
+      "meaning": "gentian (Gentiana scabra var. buergeri), autumn bellflower"
+    },
+    {
+      "question": "蓮華草",
+      "answer": [
+        "れんげそう"
+      ],
+      "meaning": "Chinese milk vetch (Astragalus sinicus)"
+    }
+  ]
+}

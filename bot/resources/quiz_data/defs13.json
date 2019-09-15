@@ -1,0 +1,6018 @@
+{
+  "uniqueId": "english definitions 13",
+  "name": "English Vocabulary Quiz",
+  "article": "an",
+  "instructions": "Guess the word!",
+  "questionCreationStrategy": "TEXT_WITH_HINT",
+  "dictionaryLinkStrategy": "WEBSTER_ANSWER",
+  "answerTimeLimitStrategy": "WITH_HINT",
+  "cardPreprocessingStrategy": "BETTER_ENGLISH_DEFINITIONS",
+  "discordFinalAnswerListElementStrategy": "ANSWER_ONLY",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "STRICT",
+  "commentFieldName": "Comment",
+  "cards": [
+    {
+      "question": "any of numerous agile ruminants related to sheep but having a beard and straight horns  ",
+      "answer": [
+        "goat"
+      ]
+    },
+    {
+      "question": "an insignificant sum of money",
+      "answer": [
+        "peanuts"
+      ]
+    },
+    {
+      "question": "the proprietor of a newspaper  ",
+      "answer": [
+        "publisher"
+      ]
+    },
+    {
+      "question": "in a steep manner",
+      "answer": [
+        "steeply"
+      ]
+    },
+    {
+      "question": "a small metal cap to protect the finger while sewing",
+      "answer": [
+        "thimble"
+      ]
+    },
+    {
+      "question": "a woman waiter  ",
+      "answer": [
+        "waitress"
+      ]
+    },
+    {
+      "question": "wearing boots  ",
+      "answer": [
+        "booted"
+      ]
+    },
+    {
+      "question": "(of handwriting, print, etc.) not legible",
+      "answer": [
+        "illegible"
+      ]
+    },
+    {
+      "question": "brace consisting of a bar or rod used to resist longitudinal compression  ",
+      "answer": [
+        "strut"
+      ]
+    },
+    {
+      "question": "a tapering point  ",
+      "answer": [
+        "acumen"
+      ]
+    },
+    {
+      "question": "a very large pot that is used for boiling  ",
+      "answer": [
+        "caldron"
+      ]
+    },
+    {
+      "question": "exhibiting biological specialization",
+      "answer": [
+        "differentiated"
+      ]
+    },
+    {
+      "question": "the trait of feeling no fear  ",
+      "answer": [
+        "fearlessness"
+      ]
+    },
+    {
+      "question": "abounding in small stones",
+      "answer": [
+        "gravelly"
+      ]
+    },
+    {
+      "question": "very pleasantly inviting",
+      "answer": [
+        "tantalizing"
+      ]
+    },
+    {
+      "question": "a disposition to be distant and unsympathetic in manner  ",
+      "answer": [
+        "aloofness"
+      ]
+    },
+    {
+      "question": "heat by a natural force",
+      "answer": [
+        "broil"
+      ]
+    },
+    {
+      "question": "patient endurance especially of pain or distress  ",
+      "answer": [
+        "sufferance"
+      ]
+    },
+    {
+      "question": "with taste",
+      "answer": [
+        "tastefully"
+      ]
+    },
+    {
+      "question": "a large mass of ice floating at sea",
+      "answer": [
+        "iceberg"
+      ]
+    },
+    {
+      "question": "someone who acts as if possessed by a demon  ",
+      "answer": [
+        "demoniac"
+      ]
+    },
+    {
+      "question": "ceasing to exist",
+      "answer": [
+        "disappearance"
+      ]
+    },
+    {
+      "question": "not politic",
+      "answer": [
+        "impolitic"
+      ]
+    },
+    {
+      "question": "lay spawn",
+      "answer": [
+        "spawn"
+      ]
+    },
+    {
+      "question": "draw a harrow over (land)  ",
+      "answer": [
+        "harrow"
+      ]
+    },
+    {
+      "question": "immaculately clean and unused",
+      "answer": [
+        "pristine"
+      ]
+    },
+    {
+      "question": "an act of explaining that serves to clear up and cast light on  ",
+      "answer": [
+        "elucidation"
+      ]
+    },
+    {
+      "question": "two words that can be interchanged in a context are said to be synonymous relative to that context  ",
+      "answer": [
+        "synonym"
+      ]
+    },
+    {
+      "question": "protective outer layer of seeds of flowering plants  ",
+      "answer": [
+        "testa"
+      ]
+    },
+    {
+      "question": "arm in advance of a confrontation  ",
+      "answer": [
+        "forearm"
+      ]
+    },
+    {
+      "question": "producing no result or effect",
+      "answer": [
+        "futile"
+      ]
+    },
+    {
+      "question": "a person who comes to a country where they were not born in order to settle there  ",
+      "answer": [
+        "immigrant"
+      ]
+    },
+    {
+      "question": "the keeper of a public house  ",
+      "answer": [
+        "publican"
+      ]
+    },
+    {
+      "question": "concern with worldly affairs to the neglect of spiritual needs",
+      "answer": [
+        "worldliness"
+      ]
+    },
+    {
+      "question": "the business of a butcher  ",
+      "answer": [
+        "butchery"
+      ]
+    },
+    {
+      "question": "a hole through which buttons are pushed  ",
+      "answer": [
+        "buttonhole"
+      ]
+    },
+    {
+      "question": "enclosed in a case  ",
+      "answer": [
+        "cased"
+      ]
+    },
+    {
+      "question": "in an inextricable manner",
+      "answer": [
+        "inextricably"
+      ]
+    },
+    {
+      "question": "having a play of lustrous rainbow colors",
+      "answer": [
+        "iridescent"
+      ]
+    },
+    {
+      "question": "in the state that someone is in between puberty and adulthood  ",
+      "answer": [
+        "adolescence"
+      ]
+    },
+    {
+      "question": "support with evidence or authority or make more certain or confirm",
+      "answer": [
+        "corroborate"
+      ]
+    },
+    {
+      "question": "deprived of your rightful heritage  ",
+      "answer": [
+        "disinherited"
+      ]
+    },
+    {
+      "question": "lacking sensitivity or the capacity for deep feeling  ",
+      "answer": [
+        "soulless"
+      ]
+    },
+    {
+      "question": "the act of abandoning a party for cause  ",
+      "answer": [
+        "apostasy"
+      ]
+    },
+    {
+      "question": "fill to excess so that function is impaired",
+      "answer": [
+        "clog"
+      ]
+    },
+    {
+      "question": "affected with palsy or uncontrollable tremor",
+      "answer": [
+        "palsied"
+      ]
+    },
+    {
+      "question": "used of decisions and contracts  ",
+      "answer": [
+        "indissoluble"
+      ]
+    },
+    {
+      "question": "a manner of speaking that is natural to native speakers of a language  ",
+      "answer": [
+        "parlance"
+      ]
+    },
+    {
+      "question": "set used to broadcast radio or tv signals  ",
+      "answer": [
+        "transmitter"
+      ]
+    },
+    {
+      "question": "wasting time  ",
+      "answer": [
+        "dilatory"
+      ]
+    },
+    {
+      "question": "impede the movement of (an opponent or a ball)",
+      "answer": [
+        "parry"
+      ]
+    },
+    {
+      "question": "a tavern where ale is sold  ",
+      "answer": [
+        "alehouse"
+      ]
+    },
+    {
+      "question": "cover with tar or asphalt",
+      "answer": [
+        "asphalt"
+      ]
+    },
+    {
+      "question": "a mechanical device consisting of bars at either end of a vehicle to absorb shock and prevent serious damage  ",
+      "answer": [
+        "bumper"
+      ]
+    },
+    {
+      "question": "gradually decreasing until little remains  ",
+      "answer": [
+        "dwindling"
+      ]
+    },
+    {
+      "question": "not tractable",
+      "answer": [
+        "intractable"
+      ]
+    },
+    {
+      "question": "a minor parish official who serves a ceremonial function  ",
+      "answer": [
+        "beadle"
+      ]
+    },
+    {
+      "question": "the act of demolishing  ",
+      "answer": [
+        "demolition"
+      ]
+    },
+    {
+      "question": "hunting ducks  ",
+      "answer": [
+        "ducking"
+      ]
+    },
+    {
+      "question": "advance beyond the usual limit  ",
+      "answer": [
+        "encroach"
+      ]
+    },
+    {
+      "question": "in the manner of someone who is very hungry",
+      "answer": [
+        "hungrily"
+      ]
+    },
+    {
+      "question": "not permitting extrication",
+      "answer": [
+        "inextricable"
+      ]
+    },
+    {
+      "question": "give off a shimmering reflection, as of silk  ",
+      "answer": [
+        "shimmer"
+      ]
+    },
+    {
+      "question": "machine tool for shaping metal or wood",
+      "answer": [
+        "lathe"
+      ]
+    },
+    {
+      "question": "American hakes  ",
+      "answer": [
+        "ling"
+      ]
+    },
+    {
+      "question": "aromatic acid-tasting pear-shaped fruit used in preserves  ",
+      "answer": [
+        "quince"
+      ]
+    },
+    {
+      "question": "of or relating to or involving a sacrament  ",
+      "answer": [
+        "sacramental"
+      ]
+    },
+    {
+      "question": "powerfully persuasive",
+      "answer": [
+        "cogent"
+      ]
+    },
+    {
+      "question": "(poetic) occurring in the dark or night",
+      "answer": [
+        "darkling"
+      ]
+    },
+    {
+      "question": "any green goods that are good to eat",
+      "answer": [
+        "eater"
+      ]
+    },
+    {
+      "question": "too improbable to admit of belief",
+      "answer": [
+        "improbable"
+      ]
+    },
+    {
+      "question": "sad beyond comforting",
+      "answer": [
+        "inconsolable"
+      ]
+    },
+    {
+      "question": "running or extending in the direction of the length of a thing",
+      "answer": [
+        "lengthwise"
+      ]
+    },
+    {
+      "question": "of or secreting or covered with or resembling mucus",
+      "answer": [
+        "mucous"
+      ]
+    },
+    {
+      "question": "(economics) the ratio of the quantity and quality of units produced to the labor per unit of time  ",
+      "answer": [
+        "productivity"
+      ]
+    },
+    {
+      "question": "shield consisting of an arrangement of metal mesh or plates designed to protect electronic equipment from ambient electromagnetic interference  ",
+      "answer": [
+        "shielding"
+      ]
+    },
+    {
+      "question": "attempting to justify or defend in speech or writing  ",
+      "answer": [
+        "defensive"
+      ]
+    },
+    {
+      "question": "in a jaunty fashionable manner",
+      "answer": [
+        "jauntily"
+      ]
+    },
+    {
+      "question": "having pillars",
+      "answer": [
+        "pillared"
+      ]
+    },
+    {
+      "question": "having or denoting a high range",
+      "answer": [
+        "soprano"
+      ]
+    },
+    {
+      "question": "someone who maintains and audits business accounts  ",
+      "answer": [
+        "accountant"
+      ]
+    },
+    {
+      "question": "compress or concentrate",
+      "answer": [
+        "condense"
+      ]
+    },
+    {
+      "question": "an expert in the science of economics  ",
+      "answer": [
+        "economist"
+      ]
+    },
+    {
+      "question": "the quality of being bland and gracious or ingratiating in manner  ",
+      "answer": [
+        "suavity"
+      ]
+    },
+    {
+      "question": "in a charitable manner",
+      "answer": [
+        "charitably"
+      ]
+    },
+    {
+      "question": "analyze (chemical substances)  ",
+      "answer": [
+        "assay"
+      ]
+    },
+    {
+      "question": "a chronic emphysema of the horse that causes difficult expiration and heaving of the flanks  ",
+      "answer": [
+        "heaves"
+      ]
+    },
+    {
+      "question": "the feeling you have when you have hope  ",
+      "answer": [
+        "hopefulness"
+      ]
+    },
+    {
+      "question": "handgrip formed by the raised front part of a saddle  ",
+      "answer": [
+        "pommel"
+      ]
+    },
+    {
+      "question": "adapted to social or economic change",
+      "answer": [
+        "reconstructed"
+      ]
+    },
+    {
+      "question": "sticking out",
+      "answer": [
+        "obtrusive"
+      ]
+    },
+    {
+      "question": "a university student who has not yet received a first degree  ",
+      "answer": [
+        "undergraduate"
+      ]
+    },
+    {
+      "question": "prepare (students) hastily for an impending exam  ",
+      "answer": [
+        "cram"
+      ]
+    },
+    {
+      "question": "large Australian flightless bird similar to the ostrich but smaller  ",
+      "answer": [
+        "emu"
+      ]
+    },
+    {
+      "question": "a woman entrusted with the care and supervision of a child (especially in a private home)  ",
+      "answer": [
+        "governess"
+      ]
+    },
+    {
+      "question": "in an irretrievable manner",
+      "answer": [
+        "irretrievably"
+      ]
+    },
+    {
+      "question": "rolled up and secured",
+      "answer": [
+        "furled"
+      ]
+    },
+    {
+      "question": "drive (a team of dogs or a dogsled)  ",
+      "answer": [
+        "mush"
+      ]
+    },
+    {
+      "question": "an entrenched stronghold or refuge  ",
+      "answer": [
+        "redoubt"
+      ]
+    },
+    {
+      "question": "marked by changeable fortune",
+      "answer": [
+        "checkered"
+      ]
+    },
+    {
+      "question": "toward or in the lower or central part of town  ",
+      "answer": [
+        "downtown"
+      ]
+    },
+    {
+      "question": "extricate from entanglement",
+      "answer": [
+        "disentangle"
+      ]
+    },
+    {
+      "question": "spear with a harpoon",
+      "answer": [
+        "harpoon"
+      ]
+    },
+    {
+      "question": "of girls or women who are eligible to marry  ",
+      "answer": [
+        "marriageable"
+      ]
+    },
+    {
+      "question": "failure of a plan  ",
+      "answer": [
+        "miscarriage"
+      ]
+    },
+    {
+      "question": "take something as preexisting and given  ",
+      "answer": [
+        "premise"
+      ]
+    },
+    {
+      "question": "experiencing or expressing gladness or joy",
+      "answer": [
+        "gladsome"
+      ]
+    },
+    {
+      "question": "a heavy rain  ",
+      "answer": [
+        "downpour"
+      ]
+    },
+    {
+      "question": "be extremely bad in quality or in one's performance",
+      "answer": [
+        "stink"
+      ]
+    },
+    {
+      "question": "in a nice way",
+      "answer": [
+        "nicely"
+      ]
+    },
+    {
+      "question": "lacking power  ",
+      "answer": [
+        "powerless"
+      ]
+    },
+    {
+      "question": "not cleaned with or as if with soap and water",
+      "answer": [
+        "unwashed"
+      ]
+    },
+    {
+      "question": "cause to move faster",
+      "answer": [
+        "accelerate"
+      ]
+    },
+    {
+      "question": "the quality of being kind and gentle  ",
+      "answer": [
+        "benignity"
+      ]
+    },
+    {
+      "question": "(medicine) someone who gives blood or tissue or an organ to be used in another person (the host)  ",
+      "answer": [
+        "donor"
+      ]
+    },
+    {
+      "question": "made slick by e.g. ice or grease",
+      "answer": [
+        "slick"
+      ]
+    },
+    {
+      "question": "suffered or done by one person as a substitute for another",
+      "answer": [
+        "vicarious"
+      ]
+    },
+    {
+      "question": "the quality of lacking general approval or acceptance  ",
+      "answer": [
+        "unpopularity"
+      ]
+    },
+    {
+      "question": "(law) an affidavit attached to a statement confirming the truth of that statement  ",
+      "answer": [
+        "verification"
+      ]
+    },
+    {
+      "question": "payment of a debt or obligation  ",
+      "answer": [
+        "repayment"
+      ]
+    },
+    {
+      "question": "container for coal",
+      "answer": [
+        "scuttle"
+      ]
+    },
+    {
+      "question": "your friends and acquaintances",
+      "answer": [
+        "kith"
+      ]
+    },
+    {
+      "question": "tough elastic tissue",
+      "answer": [
+        "cartilage"
+      ]
+    },
+    {
+      "question": "a little bit at a time",
+      "answer": [
+        "piecemeal"
+      ]
+    },
+    {
+      "question": "the infliction of extremely painful punishment or suffering  ",
+      "answer": [
+        "crucifixion"
+      ]
+    },
+    {
+      "question": "an exclamation of protest or remonstrance or reproof  ",
+      "answer": [
+        "expostulation"
+      ]
+    },
+    {
+      "question": "standing or position on a scale  ",
+      "answer": [
+        "rating"
+      ]
+    },
+    {
+      "question": "advocating or following the socialist principles",
+      "answer": [
+        "socialistic"
+      ]
+    },
+    {
+      "question": "coat with stucco",
+      "answer": [
+        "stucco"
+      ]
+    },
+    {
+      "question": "(physiology) moving of a body part away from the central axis of the body  ",
+      "answer": [
+        "abduction"
+      ]
+    },
+    {
+      "question": "showing the wearing effects of overwork or care or suffering",
+      "answer": [
+        "careworn"
+      ]
+    },
+    {
+      "question": "adult male swan  ",
+      "answer": [
+        "cob"
+      ]
+    },
+    {
+      "question": "eating to excess (personified as one of the deadly sins)  ",
+      "answer": [
+        "gluttony"
+      ]
+    },
+    {
+      "question": "make sick or ill",
+      "answer": [
+        "sicken"
+      ]
+    },
+    {
+      "question": "in a typical manner",
+      "answer": [
+        "typically"
+      ]
+    },
+    {
+      "question": "a diacritical mark (U-shaped) placed over a vowel to indicate a short sound  ",
+      "answer": [
+        "breve"
+      ]
+    },
+    {
+      "question": "the power to foresee the future  ",
+      "answer": [
+        "prescience"
+      ]
+    },
+    {
+      "question": "resembling a pyramid  ",
+      "answer": [
+        "pyramidal"
+      ]
+    },
+    {
+      "question": "an animal especially a mammal having four limbs specialized for walking  ",
+      "answer": [
+        "quadruped"
+      ]
+    },
+    {
+      "question": "coarse fabric used for bags or sacks  ",
+      "answer": [
+        "sacking"
+      ]
+    },
+    {
+      "question": "not restricted or modified in meaning",
+      "answer": [
+        "unrestricted"
+      ]
+    },
+    {
+      "question": "preventing entry or exit or a course of action",
+      "answer": [
+        "barricaded"
+      ]
+    },
+    {
+      "question": "cylindrical green fruit with thin green rind and white flesh eaten as a vegetable",
+      "answer": [
+        "cucumber"
+      ]
+    },
+    {
+      "question": "the quality of being united into one  ",
+      "answer": [
+        "oneness"
+      ]
+    },
+    {
+      "question": "the quality of being usable  ",
+      "answer": [
+        "practicability"
+      ]
+    },
+    {
+      "question": "rub soap all over, usually with the purpose of cleaning  ",
+      "answer": [
+        "soap"
+      ]
+    },
+    {
+      "question": "having or arising from a benefice",
+      "answer": [
+        "beneficiary"
+      ]
+    },
+    {
+      "question": "one of a pair of heavy flat disk-shaped stones that are rotated against one another to grind the grain  ",
+      "answer": [
+        "millstone"
+      ]
+    },
+    {
+      "question": "the state of actually existing objectively",
+      "answer": [
+        "actuality"
+      ]
+    },
+    {
+      "question": "of a region of the United States generally including Washington",
+      "answer": [
+        "northwestern"
+      ]
+    },
+    {
+      "question": "greatness of magnitude  ",
+      "answer": [
+        "amplitude"
+      ]
+    },
+    {
+      "question": "be exposed",
+      "answer": [
+        "bask"
+      ]
+    },
+    {
+      "question": "a riblike part of a plant or animal (such as a middle rib of a leaf or a thickened vein of an insect wing)  ",
+      "answer": [
+        "costa"
+      ]
+    },
+    {
+      "question": "having joints or jointed segments",
+      "answer": [
+        "jointed"
+      ]
+    },
+    {
+      "question": "run faster than",
+      "answer": [
+        "outrun"
+      ]
+    },
+    {
+      "question": "action that makes a problem or a disease (or its symptoms) worse",
+      "answer": [
+        "aggravation"
+      ]
+    },
+    {
+      "question": "sing carols",
+      "answer": [
+        "carol"
+      ]
+    },
+    {
+      "question": "set afire",
+      "answer": [
+        "ignited"
+      ]
+    },
+    {
+      "question": "make a clank",
+      "answer": [
+        "clank"
+      ]
+    },
+    {
+      "question": "form a circle around",
+      "answer": [
+        "encircle"
+      ]
+    },
+    {
+      "question": "a metallic element having four allotropic forms",
+      "answer": [
+        "antimony"
+      ]
+    },
+    {
+      "question": "medieval body armor that covers the chest and back  ",
+      "answer": [
+        "cuirass"
+      ]
+    },
+    {
+      "question": "of a pale to moderate greyish violet color  ",
+      "answer": [
+        "mauve"
+      ]
+    },
+    {
+      "question": "the quality of concentrating on one central objective",
+      "answer": [
+        "singleness"
+      ]
+    },
+    {
+      "question": "any of several low composite herbs of the genera Artemisia or Seriphidium  ",
+      "answer": [
+        "wormwood"
+      ]
+    },
+    {
+      "question": "the type of environment in which an organism or group normally lives or occurs",
+      "answer": [
+        "habitat"
+      ]
+    },
+    {
+      "question": "make a smudge on",
+      "answer": [
+        "smear"
+      ]
+    },
+    {
+      "question": "in a startling manner",
+      "answer": [
+        "startlingly"
+      ]
+    },
+    {
+      "question": "conveying information to the muscles from the CNS",
+      "answer": [
+        "centrifugal"
+      ]
+    },
+    {
+      "question": "general acceptance or use",
+      "answer": [
+        "currency"
+      ]
+    },
+    {
+      "question": "draw back, as with fear or pain",
+      "answer": [
+        "flinch"
+      ]
+    },
+    {
+      "question": "someone who collects things that have been discarded by others  ",
+      "answer": [
+        "magpie"
+      ]
+    },
+    {
+      "question": "capable of meeting financial obligations  ",
+      "answer": [
+        "solvent"
+      ]
+    },
+    {
+      "question": "produced by the action of water  ",
+      "answer": [
+        "aqueous"
+      ]
+    },
+    {
+      "question": "a chest especially for storing valuables  ",
+      "answer": [
+        "coffer"
+      ]
+    },
+    {
+      "question": "a concise reference book providing specific information about a subject or location  ",
+      "answer": [
+        "handbook"
+      ]
+    },
+    {
+      "question": "wetness in the atmosphere  ",
+      "answer": [
+        "humidity"
+      ]
+    },
+    {
+      "question": "detach the affections of  ",
+      "answer": [
+        "wean"
+      ]
+    },
+    {
+      "question": "deep-sea fish with a large head and body and long tapering tail  ",
+      "answer": [
+        "grenadier"
+      ]
+    },
+    {
+      "question": "any thallophytic plant of the division Lichenes",
+      "answer": [
+        "lichen"
+      ]
+    },
+    {
+      "question": "descent of the uterus into the pelvic cavity that occurs late in pregnancy",
+      "answer": [
+        "lightening"
+      ]
+    },
+    {
+      "question": "used to refer to cited works  ",
+      "answer": [
+        "passim"
+      ]
+    },
+    {
+      "question": "raise trivial objections  ",
+      "answer": [
+        "cavil"
+      ]
+    },
+    {
+      "question": "logical and orderly and consistent relation of parts  ",
+      "answer": [
+        "coherence"
+      ]
+    },
+    {
+      "question": "either of two folds of skin that can be moved to cover or open the eye",
+      "answer": [
+        "eyelid"
+      ]
+    },
+    {
+      "question": "elegant and stylish",
+      "answer": [
+        "chic"
+      ]
+    },
+    {
+      "question": "sewing consisting of pieces of different materials sewn together in a pattern  ",
+      "answer": [
+        "patchwork"
+      ]
+    },
+    {
+      "question": "write a script for",
+      "answer": [
+        "script"
+      ]
+    },
+    {
+      "question": "obviously contrived to charm",
+      "answer": [
+        "cute"
+      ]
+    },
+    {
+      "question": "the act of swindling by some fraudulent scheme",
+      "answer": [
+        "swindle"
+      ]
+    },
+    {
+      "question": "complain",
+      "answer": [
+        "gripe"
+      ]
+    },
+    {
+      "question": "refined sensitivity to pleasurable or painful impressions",
+      "answer": [
+        "sensibility"
+      ]
+    },
+    {
+      "question": "a group of men who escort and protect some important person  ",
+      "answer": [
+        "bodyguard"
+      ]
+    },
+    {
+      "question": "serving to set in motion",
+      "answer": [
+        "inaugural"
+      ]
+    },
+    {
+      "question": "make the chemically affected part of (a negative) denser or more opaque in order produce a stronger contrast between light and dark  ",
+      "answer": [
+        "intensify"
+      ]
+    },
+    {
+      "question": "the occupation of taking and printing photographs or making movies  ",
+      "answer": [
+        "photography"
+      ]
+    },
+    {
+      "question": "exalted to an ideal perfection or excellence  ",
+      "answer": [
+        "idealized"
+      ]
+    },
+    {
+      "question": "of or relating to the state of marriage",
+      "answer": [
+        "marital"
+      ]
+    },
+    {
+      "question": "a machine for sorting things (such as punched cards or letters) into classes  ",
+      "answer": [
+        "sorter"
+      ]
+    },
+    {
+      "question": "hostile or indifferent to religion  ",
+      "answer": [
+        "irreligious"
+      ]
+    },
+    {
+      "question": "any of several trees of the genus Populus having leaves on flattened stalks so that they flutter in the lightest wind  ",
+      "answer": [
+        "aspen"
+      ]
+    },
+    {
+      "question": "one having charge of buildings or grounds or animals  ",
+      "answer": [
+        "custodian"
+      ]
+    },
+    {
+      "question": "close or secure with or as if with a stopper",
+      "answer": [
+        "stopper"
+      ]
+    },
+    {
+      "question": "changing to a lighter color  ",
+      "answer": [
+        "whitening"
+      ]
+    },
+    {
+      "question": "an assistant to a bishop  ",
+      "answer": [
+        "coadjutor"
+      ]
+    },
+    {
+      "question": "surgically remove (an organ)  ",
+      "answer": [
+        "extirpate"
+      ]
+    },
+    {
+      "question": "a large commercial ship (especially one that carries passengers on a regular schedule)  ",
+      "answer": [
+        "liner"
+      ]
+    },
+    {
+      "question": "of or relating to the buttocks  ",
+      "answer": [
+        "natal"
+      ]
+    },
+    {
+      "question": "starchy banana-like fruit",
+      "answer": [
+        "plantain"
+      ]
+    },
+    {
+      "question": "prescribed or authorized by or punishable under a statute",
+      "answer": [
+        "statutory"
+      ]
+    },
+    {
+      "question": "a receptacle where waste can be discarded",
+      "answer": [
+        "garbage"
+      ]
+    },
+    {
+      "question": "not evidencing any purpose or goal  ",
+      "answer": [
+        "purposeless"
+      ]
+    },
+    {
+      "question": "lacking or characterized by lack of ambition or initiative",
+      "answer": [
+        "shiftless"
+      ]
+    },
+    {
+      "question": "of or resembling or typical of a college or college students",
+      "answer": [
+        "collegiate"
+      ]
+    },
+    {
+      "question": "a small pocketknife",
+      "answer": [
+        "penknife"
+      ]
+    },
+    {
+      "question": "having accumulated rust",
+      "answer": [
+        "rusted"
+      ]
+    },
+    {
+      "question": "one behind the other",
+      "answer": [
+        "tandem"
+      ]
+    },
+    {
+      "question": "a printmaker who prints from an engraved printing plate  ",
+      "answer": [
+        "engraver"
+      ]
+    },
+    {
+      "question": "a dental appliance that holds teeth (or a prosthesis) in position after orthodontic treatment  ",
+      "answer": [
+        "retainer"
+      ]
+    },
+    {
+      "question": "esteem lightly  ",
+      "answer": [
+        "undervalue"
+      ]
+    },
+    {
+      "question": "being of questionable authenticity  ",
+      "answer": [
+        "apocryphal"
+      ]
+    },
+    {
+      "question": "the final resolution of the main complication of a literary or dramatic work  ",
+      "answer": [
+        "denouement"
+      ]
+    },
+    {
+      "question": "a form of baptism in which part or all of a person's body is submerged  ",
+      "answer": [
+        "immersion"
+      ]
+    },
+    {
+      "question": "the husband of your mother by a subsequent marriage  ",
+      "answer": [
+        "stepfather"
+      ]
+    },
+    {
+      "question": "treated with contempt",
+      "answer": [
+        "desecrated"
+      ]
+    },
+    {
+      "question": "meat (especially beef) cut in strips and dried in the sun  ",
+      "answer": [
+        "jerky"
+      ]
+    },
+    {
+      "question": "get the better of",
+      "answer": [
+        "outdo"
+      ]
+    },
+    {
+      "question": "of or infected by rabies  ",
+      "answer": [
+        "rabid"
+      ]
+    },
+    {
+      "question": "deserving regret",
+      "answer": [
+        "regrettable"
+      ]
+    },
+    {
+      "question": "a person whose occupation is making and altering garments  ",
+      "answer": [
+        "tailor"
+      ]
+    },
+    {
+      "question": "free from admixture",
+      "answer": [
+        "unalloyed"
+      ]
+    },
+    {
+      "question": "diminished or moderated",
+      "answer": [
+        "bated"
+      ]
+    },
+    {
+      "question": "round red root vegetable  ",
+      "answer": [
+        "beet"
+      ]
+    },
+    {
+      "question": "swell out or bulge out  ",
+      "answer": [
+        "belly"
+      ]
+    },
+    {
+      "question": "used of animals that move seasonally",
+      "answer": [
+        "migratory"
+      ]
+    },
+    {
+      "question": "the doctrine of an absolute being  ",
+      "answer": [
+        "absolutism"
+      ]
+    },
+    {
+      "question": "the combination of two or more commercial companies  ",
+      "answer": [
+        "amalgamation"
+      ]
+    },
+    {
+      "question": "ingestion of liquid food with a spoon or by drinking  ",
+      "answer": [
+        "supping"
+      ]
+    },
+    {
+      "question": "not officially established",
+      "answer": [
+        "unofficial"
+      ]
+    },
+    {
+      "question": "impervious to pleas, persuasion, requests, reason",
+      "answer": [
+        "adamant"
+      ]
+    },
+    {
+      "question": "of or relating to cats",
+      "answer": [
+        "feline"
+      ]
+    },
+    {
+      "question": "make into a raft",
+      "answer": [
+        "raft"
+      ]
+    },
+    {
+      "question": "collect discarded or refused material",
+      "answer": [
+        "salvage"
+      ]
+    },
+    {
+      "question": "large mostly Old World wading birds typically having white-and-black plumage  ",
+      "answer": [
+        "stork"
+      ]
+    },
+    {
+      "question": "indulge (one's appetite) to satiety  ",
+      "answer": [
+        "surfeit"
+      ]
+    },
+    {
+      "question": "not composed of measured syllables",
+      "answer": [
+        "unmeasured"
+      ]
+    },
+    {
+      "question": "a small rectangular block used in playing the game of dominoes",
+      "answer": [
+        "domino"
+      ]
+    },
+    {
+      "question": "a celebrity who is an inspiration to others",
+      "answer": [
+        "luminary"
+      ]
+    },
+    {
+      "question": "cooked too long but still edible  ",
+      "answer": [
+        "overdone"
+      ]
+    },
+    {
+      "question": "having rays or ray-like parts as in the flower heads of daisies  ",
+      "answer": [
+        "radiate"
+      ]
+    },
+    {
+      "question": "give a spurt of fuel to",
+      "answer": [
+        "goose"
+      ]
+    },
+    {
+      "question": "a side-by-side position  ",
+      "answer": [
+        "juxtaposition"
+      ]
+    },
+    {
+      "question": "as if striking with slashing blows",
+      "answer": [
+        "slashing"
+      ]
+    },
+    {
+      "question": "an incrustation that forms on the teeth and gums  ",
+      "answer": [
+        "tartar"
+      ]
+    },
+    {
+      "question": "an impulsive scatterbrained manner  ",
+      "answer": [
+        "giddiness"
+      ]
+    },
+    {
+      "question": "utter the characteristic sound of owls  ",
+      "answer": [
+        "hoot"
+      ]
+    },
+    {
+      "question": "any of a large group of nitrogenous organic compounds that are essential constituents of living cells",
+      "answer": [
+        "protein"
+      ]
+    },
+    {
+      "question": "marked by lively action",
+      "answer": [
+        "bouncing"
+      ]
+    },
+    {
+      "question": "resembling an oracle in obscurity of thought",
+      "answer": [
+        "enigmatic"
+      ]
+    },
+    {
+      "question": "a small hole in a fortified wall",
+      "answer": [
+        "loophole"
+      ]
+    },
+    {
+      "question": "a contagious disease characterized by purulent skin eruptions that may leave pock marks  ",
+      "answer": [
+        "pox"
+      ]
+    },
+    {
+      "question": "of or relating to rent",
+      "answer": [
+        "rental"
+      ]
+    },
+    {
+      "question": "(used of plants as well as animals) feeding on animals",
+      "answer": [
+        "carnivorous"
+      ]
+    },
+    {
+      "question": "having or showing profound knowledge",
+      "answer": [
+        "erudite"
+      ]
+    },
+    {
+      "question": "a summons that commands the appearance of a party at a proceeding  ",
+      "answer": [
+        "citation"
+      ]
+    },
+    {
+      "question": "containing seeds of later development",
+      "answer": [
+        "germinal"
+      ]
+    },
+    {
+      "question": "a narrative telling the adventures of a hero or a family",
+      "answer": [
+        "saga"
+      ]
+    },
+    {
+      "question": "any of several large humped bovids having shaggy manes and large heads and short horns  ",
+      "answer": [
+        "bison"
+      ]
+    },
+    {
+      "question": "an infection of the intestines marked by severe diarrhea  ",
+      "answer": [
+        "dysentery"
+      ]
+    },
+    {
+      "question": "100 fen equal 1 yuan in China  ",
+      "answer": [
+        "fen"
+      ]
+    },
+    {
+      "question": "any of numerous perennial bulbous herbs having linear or broadly lanceolate leaves and usually a single showy flower  ",
+      "answer": [
+        "tulip"
+      ]
+    },
+    {
+      "question": "the act of singing a quiet song to lull a child to sleep  ",
+      "answer": [
+        "lullaby"
+      ]
+    },
+    {
+      "question": "resembling a reed in being upright and slender  ",
+      "answer": [
+        "reedy"
+      ]
+    },
+    {
+      "question": "without defense",
+      "answer": [
+        "defenseless"
+      ]
+    },
+    {
+      "question": "grow worse",
+      "answer": [
+        "devolve"
+      ]
+    },
+    {
+      "question": "the state or quality of being lodged or fixed even temporarily",
+      "answer": [
+        "lodgment"
+      ]
+    },
+    {
+      "question": "a state of disorder involving group violence  ",
+      "answer": [
+        "rioting"
+      ]
+    },
+    {
+      "question": "coil in which voltage is induced by motion through a magnetic field  ",
+      "answer": [
+        "armature"
+      ]
+    },
+    {
+      "question": "the county courts of England (replaced in 1971 by Crown courts)  ",
+      "answer": [
+        "assizes"
+      ]
+    },
+    {
+      "question": "arranged in a sequence of grades or ranks",
+      "answer": [
+        "graded"
+      ]
+    },
+    {
+      "question": "a lucid state of mind",
+      "answer": [
+        "lucidity"
+      ]
+    },
+    {
+      "question": "separating the notes",
+      "answer": [
+        "staccato"
+      ]
+    },
+    {
+      "question": "deposited or arranged in horizontal layers",
+      "answer": [
+        "stratified"
+      ]
+    },
+    {
+      "question": "beyond doubt or reproach",
+      "answer": [
+        "unimpeachable"
+      ]
+    },
+    {
+      "question": "an arrangement of parts or elements",
+      "answer": [
+        "configuration"
+      ]
+    },
+    {
+      "question": "the government of the Roman Catholic Church  ",
+      "answer": [
+        "papacy"
+      ]
+    },
+    {
+      "question": "of or relating to or near the abdomen",
+      "answer": [
+        "abdominal"
+      ]
+    },
+    {
+      "question": "a former copper coin of Pakistan and India  ",
+      "answer": [
+        "anna"
+      ]
+    },
+    {
+      "question": "a group or class of persons enjoying superior intellectual or social or economic status  ",
+      "answer": [
+        "elite"
+      ]
+    },
+    {
+      "question": "the articulation of speech regarded from the point of view of its intelligibility to the audience  ",
+      "answer": [
+        "enunciation"
+      ]
+    },
+    {
+      "question": "someone who intervenes with authorities for a person in trouble (usually using underhand or illegal methods for a fee)  ",
+      "answer": [
+        "fixer"
+      ]
+    },
+    {
+      "question": "having a daily cycle or occurring every day",
+      "answer": [
+        "diurnal"
+      ]
+    },
+    {
+      "question": "a female sorcerer or magician  ",
+      "answer": [
+        "enchantress"
+      ]
+    },
+    {
+      "question": "small swift graceful antelope of Africa and Asia having lustrous eyes  ",
+      "answer": [
+        "gazelle"
+      ]
+    },
+    {
+      "question": "relating to or involving the stomach",
+      "answer": [
+        "gastric"
+      ]
+    },
+    {
+      "question": "rebuking a person harshly  ",
+      "answer": [
+        "chiding"
+      ]
+    },
+    {
+      "question": "in a manner or to a degree that could not be doubted",
+      "answer": [
+        "indubitably"
+      ]
+    },
+    {
+      "question": "impossible to remedy or correct or redress",
+      "answer": [
+        "irremediable"
+      ]
+    },
+    {
+      "question": "cut with a blade or mower",
+      "answer": [
+        "mow"
+      ]
+    },
+    {
+      "question": "a tray or stand for writing implements and containers for ink  ",
+      "answer": [
+        "inkstand"
+      ]
+    },
+    {
+      "question": "having inner resources",
+      "answer": [
+        "resourceful"
+      ]
+    },
+    {
+      "question": "(folklore) a corpse that rises at night to drink the blood of the living  ",
+      "answer": [
+        "vampire"
+      ]
+    },
+    {
+      "question": "prop up with a pillow or bolster  ",
+      "answer": [
+        "bolster"
+      ]
+    },
+    {
+      "question": "relating to or composed for an orchestra",
+      "answer": [
+        "orchestral"
+      ]
+    },
+    {
+      "question": "dark green leaves",
+      "answer": [
+        "spinach"
+      ]
+    },
+    {
+      "question": "someone who is morally reprehensible",
+      "answer": [
+        "cad"
+      ]
+    },
+    {
+      "question": "out of a sense of duty",
+      "answer": [
+        "dutifully"
+      ]
+    },
+    {
+      "question": "win easily",
+      "answer": [
+        "romp"
+      ]
+    },
+    {
+      "question": "lighted only by stars",
+      "answer": [
+        "starlit"
+      ]
+    },
+    {
+      "question": "of or relating to congress",
+      "answer": [
+        "congressional"
+      ]
+    },
+    {
+      "question": "stab with a poniard  ",
+      "answer": [
+        "poniard"
+      ]
+    },
+    {
+      "question": "an ancestor in the direct line  ",
+      "answer": [
+        "progenitor"
+      ]
+    },
+    {
+      "question": "a homeless child especially one forsaken or orphaned",
+      "answer": [
+        "waif"
+      ]
+    },
+    {
+      "question": "constituting a disadvantage  ",
+      "answer": [
+        "disadvantageous"
+      ]
+    },
+    {
+      "question": "an expert manner of speaking involving control of voice and gesture  ",
+      "answer": [
+        "elocution"
+      ]
+    },
+    {
+      "question": "in a wicked and shameful manner",
+      "answer": [
+        "foully"
+      ]
+    },
+    {
+      "question": "the quality of giving pleasure",
+      "answer": [
+        "pleasantness"
+      ]
+    },
+    {
+      "question": "a woman poet  ",
+      "answer": [
+        "poetess"
+      ]
+    },
+    {
+      "question": "arachnid of warm dry regions having a long segmented tail ending in a venomous stinger  ",
+      "answer": [
+        "scorpion"
+      ]
+    },
+    {
+      "question": "(of movements) light and confidently active",
+      "answer": [
+        "springy"
+      ]
+    },
+    {
+      "question": "burn superficially or lightly",
+      "answer": [
+        "singe"
+      ]
+    },
+    {
+      "question": "consisting of segments held together by joints  ",
+      "answer": [
+        "articulated"
+      ]
+    },
+    {
+      "question": "belittle",
+      "answer": [
+        "deprecate"
+      ]
+    },
+    {
+      "question": "any age prior to the legal age  ",
+      "answer": [
+        "minority"
+      ]
+    },
+    {
+      "question": "the grouping of musical phrases in a melodic line  ",
+      "answer": [
+        "phrasing"
+      ]
+    },
+    {
+      "question": "someone who imports or exports without paying duties  ",
+      "answer": [
+        "smuggler"
+      ]
+    },
+    {
+      "question": "laugh nervously",
+      "answer": [
+        "giggle"
+      ]
+    },
+    {
+      "question": "the act of eating lunch  ",
+      "answer": [
+        "lunching"
+      ]
+    },
+    {
+      "question": "utter indistinctly  ",
+      "answer": [
+        "slur"
+      ]
+    },
+    {
+      "question": "a consistency of low viscosity",
+      "answer": [
+        "thinness"
+      ]
+    },
+    {
+      "question": "sign as evidence of legal transfer",
+      "answer": [
+        "endorse"
+      ]
+    },
+    {
+      "question": "the 13th letter of the Hebrew alphabet  ",
+      "answer": [
+        "mem"
+      ]
+    },
+    {
+      "question": "pertaining to or producing electric current by chemical action",
+      "answer": [
+        "voltaic"
+      ]
+    },
+    {
+      "question": "back and sides of a hog salted and dried or smoked",
+      "answer": [
+        "bacon"
+      ]
+    },
+    {
+      "question": "young bird especially of domestic fowl  ",
+      "answer": [
+        "chick"
+      ]
+    },
+    {
+      "question": "move without being stable, as if threatening to fall",
+      "answer": [
+        "totter"
+      ]
+    },
+    {
+      "question": "not fully prepared  ",
+      "answer": [
+        "unripe"
+      ]
+    },
+    {
+      "question": "within the realm of possibility",
+      "answer": [
+        "conceivably"
+      ]
+    },
+    {
+      "question": "showing unfeeling resistance to tender feelings",
+      "answer": [
+        "flinty"
+      ]
+    },
+    {
+      "question": "tending to promote or preserve health",
+      "answer": [
+        "hygienic"
+      ]
+    },
+    {
+      "question": "eat intermittently",
+      "answer": [
+        "nibble"
+      ]
+    },
+    {
+      "question": "to an extravagant or immoderate degree",
+      "answer": [
+        "outrageously"
+      ]
+    },
+    {
+      "question": "completely acceptable",
+      "answer": [
+        "unexceptionable"
+      ]
+    },
+    {
+      "question": "of or relating to stonemasons or masonry",
+      "answer": [
+        "masonic"
+      ]
+    },
+    {
+      "question": "a statement that is added to or revises or improves a proposal or document (a bill or constitution etc.)  ",
+      "answer": [
+        "amendment"
+      ]
+    },
+    {
+      "question": "fruit of the oak tree: a smooth thin-walled nut in a woody cup-shaped base  ",
+      "answer": [
+        "acorn"
+      ]
+    },
+    {
+      "question": "promote somebody by brevet, in the military  ",
+      "answer": [
+        "brevet"
+      ]
+    },
+    {
+      "question": "the wife of a duke or a woman holding ducal title in her own right  ",
+      "answer": [
+        "duchess"
+      ]
+    },
+    {
+      "question": "the lowermost sail on the mainmast  ",
+      "answer": [
+        "mainsail"
+      ]
+    },
+    {
+      "question": "either one of the two external openings to the nasal cavity in the nose  ",
+      "answer": [
+        "nostril"
+      ]
+    },
+    {
+      "question": "(British usage) kerosine  ",
+      "answer": [
+        "paraffin"
+      ]
+    },
+    {
+      "question": "exhibiting spectral colors formed by refraction of light through a prism",
+      "answer": [
+        "prismatic"
+      ]
+    },
+    {
+      "question": "one of a number of uniform projections on a gear  ",
+      "answer": [
+        "tooth"
+      ]
+    },
+    {
+      "question": "a seal on a letter  ",
+      "answer": [
+        "cachet"
+      ]
+    },
+    {
+      "question": "work together in harmony  ",
+      "answer": [
+        "mesh"
+      ]
+    },
+    {
+      "question": "opening in the rear of the barrel of a gun where bullets can be loaded  ",
+      "answer": [
+        "breech"
+      ]
+    },
+    {
+      "question": "the act of causing disorder  ",
+      "answer": [
+        "disruption"
+      ]
+    },
+    {
+      "question": "a stupid person",
+      "answer": [
+        "dunce"
+      ]
+    },
+    {
+      "question": "not produced by natural forces",
+      "answer": [
+        "factitious"
+      ]
+    },
+    {
+      "question": "utter with a gurgling sound",
+      "answer": [
+        "gurgle"
+      ]
+    },
+    {
+      "question": "by means of language",
+      "answer": [
+        "verbally"
+      ]
+    },
+    {
+      "question": "throw a steer by seizing the horns and twisting the neck, as in a rodeo  ",
+      "answer": [
+        "bulldog"
+      ]
+    },
+    {
+      "question": "characterized by anger",
+      "answer": [
+        "choleric"
+      ]
+    },
+    {
+      "question": "in a disagreeable manner",
+      "answer": [
+        "disagreeably"
+      ]
+    },
+    {
+      "question": "in a grudging manner",
+      "answer": [
+        "grudgingly"
+      ]
+    },
+    {
+      "question": "make simpler or easier or reduce in complexity or extent",
+      "answer": [
+        "simplify"
+      ]
+    },
+    {
+      "question": "deserving to be admitted",
+      "answer": [
+        "admissible"
+      ]
+    },
+    {
+      "question": "a woman who cohabits with an important man  ",
+      "answer": [
+        "concubine"
+      ]
+    },
+    {
+      "question": "having your composure disturbed",
+      "answer": [
+        "discomposed"
+      ]
+    },
+    {
+      "question": "a dissenting clique  ",
+      "answer": [
+        "faction"
+      ]
+    },
+    {
+      "question": "a fabric used for suits  ",
+      "answer": [
+        "suiting"
+      ]
+    },
+    {
+      "question": "attach or become attached to a stem word",
+      "answer": [
+        "affix"
+      ]
+    },
+    {
+      "question": "be heavier than  ",
+      "answer": [
+        "outweigh"
+      ]
+    },
+    {
+      "question": "concise and full of meaning",
+      "answer": [
+        "pithy"
+      ]
+    },
+    {
+      "question": "the act of trimming a plant  ",
+      "answer": [
+        "pruning"
+      ]
+    },
+    {
+      "question": "large drinking vessel with one handle  ",
+      "answer": [
+        "tankard"
+      ]
+    },
+    {
+      "question": "the personal outfit of a bride",
+      "answer": [
+        "trousseau"
+      ]
+    },
+    {
+      "question": "a person who swindles you by means of deception or fraud  ",
+      "answer": [
+        "swindler"
+      ]
+    },
+    {
+      "question": "constituting a tube",
+      "answer": [
+        "tubular"
+      ]
+    },
+    {
+      "question": "in an appealing manner",
+      "answer": [
+        "appealingly"
+      ]
+    },
+    {
+      "question": "of or characteristic of a dictator",
+      "answer": [
+        "dictatorial"
+      ]
+    },
+    {
+      "question": "a reeling sensation",
+      "answer": [
+        "dizziness"
+      ]
+    },
+    {
+      "question": "situated at the farthest possible point from a center  ",
+      "answer": [
+        "outermost"
+      ]
+    },
+    {
+      "question": "in a tragic manner",
+      "answer": [
+        "tragically"
+      ]
+    },
+    {
+      "question": "a piece of armor plate (with eye slits) fixed or hinged to a medieval helmet to protect the face  ",
+      "answer": [
+        "visor"
+      ]
+    },
+    {
+      "question": "like the light sharp ringing sound of glasses being tapped  ",
+      "answer": [
+        "clinking"
+      ]
+    },
+    {
+      "question": "having spots or patches of color  ",
+      "answer": [
+        "dappled"
+      ]
+    },
+    {
+      "question": "money granted (by a university or foundation or other agency) for advanced study or research  ",
+      "answer": [
+        "fellowship"
+      ]
+    },
+    {
+      "question": "the quality of being so overabundant that prices fall  ",
+      "answer": [
+        "glut"
+      ]
+    },
+    {
+      "question": "exonerate by means of a perfunctory investigation or through biased presentation of data  ",
+      "answer": [
+        "whitewash"
+      ]
+    },
+    {
+      "question": "an ancient unit of length based on the length of the forearm  ",
+      "answer": [
+        "cubit"
+      ]
+    },
+    {
+      "question": "in an indelible manner",
+      "answer": [
+        "indelibly"
+      ]
+    },
+    {
+      "question": "a rhythmic group of eight lines of verse  ",
+      "answer": [
+        "octave"
+      ]
+    },
+    {
+      "question": "optical device having a triangular shape and made of glass or quartz",
+      "answer": [
+        "prism"
+      ]
+    },
+    {
+      "question": "(Middle Ages) an attendant and shield bearer to a knight",
+      "answer": [
+        "esquire"
+      ]
+    },
+    {
+      "question": "marked by harshly abusive criticism",
+      "answer": [
+        "scathing"
+      ]
+    },
+    {
+      "question": "the basic unit of money in Ecuador",
+      "answer": [
+        "sucre"
+      ]
+    },
+    {
+      "question": "without official authorization",
+      "answer": [
+        "unauthorized"
+      ]
+    },
+    {
+      "question": "in the way and hindering progress",
+      "answer": [
+        "underfoot"
+      ]
+    },
+    {
+      "question": "of or relating to heraldry or heraldic arms",
+      "answer": [
+        "armorial"
+      ]
+    },
+    {
+      "question": "a passage with access only at one end  ",
+      "answer": [
+        "cul"
+      ]
+    },
+    {
+      "question": "the beneficiary of a pension fund  ",
+      "answer": [
+        "pensioner"
+      ]
+    },
+    {
+      "question": "cut drastically",
+      "answer": [
+        "slash"
+      ]
+    },
+    {
+      "question": "someone who torments  ",
+      "answer": [
+        "tormentor"
+      ]
+    },
+    {
+      "question": "confined to and understandable by only an enlightened inner circle",
+      "answer": [
+        "esoteric"
+      ]
+    },
+    {
+      "question": "a laminated metamorphic rock similar to granite  ",
+      "answer": [
+        "gneiss"
+      ]
+    },
+    {
+      "question": "of or relating to heraldry  ",
+      "answer": [
+        "heraldic"
+      ]
+    },
+    {
+      "question": "an indecent or improper act  ",
+      "answer": [
+        "indecency"
+      ]
+    },
+    {
+      "question": "organized again",
+      "answer": [
+        "reorganized"
+      ]
+    },
+    {
+      "question": "in a sturdy manner",
+      "answer": [
+        "sturdily"
+      ]
+    },
+    {
+      "question": "a coming into being  ",
+      "answer": [
+        "genesis"
+      ]
+    },
+    {
+      "question": "without rigidity",
+      "answer": [
+        "limply"
+      ]
+    },
+    {
+      "question": "expecting the worst possible outcome  ",
+      "answer": [
+        "pessimistic"
+      ]
+    },
+    {
+      "question": "the innermost light-sensitive membrane covering the back wall of the eyeball",
+      "answer": [
+        "retina"
+      ]
+    },
+    {
+      "question": "bound fast especially having the arms restrained  ",
+      "answer": [
+        "pinioned"
+      ]
+    },
+    {
+      "question": "blow hard",
+      "answer": [
+        "bluster"
+      ]
+    },
+    {
+      "question": "an exciting and mysterious quality (as of a heroic time or adventure)  ",
+      "answer": [
+        "romanticism"
+      ]
+    },
+    {
+      "question": "wearing a blindfold  ",
+      "answer": [
+        "blindfold"
+      ]
+    },
+    {
+      "question": "(parliamentary procedure) someone who makes a formal motion  ",
+      "answer": [
+        "proposer"
+      ]
+    },
+    {
+      "question": "arising from or characterized by prudence especially in business matters",
+      "answer": [
+        "prudential"
+      ]
+    },
+    {
+      "question": "the peak of a hill",
+      "answer": [
+        "hilltop"
+      ]
+    },
+    {
+      "question": "a strange attitude or habit  ",
+      "answer": [
+        "oddity"
+      ]
+    },
+    {
+      "question": "cover by spraying with a liquid",
+      "answer": [
+        "spray"
+      ]
+    },
+    {
+      "question": "the basic unit of money in Japan",
+      "answer": [
+        "yen"
+      ]
+    },
+    {
+      "question": "small rough-haired breed of terrier from Scotland  ",
+      "answer": [
+        "cairn"
+      ]
+    },
+    {
+      "question": "turn red or redder",
+      "answer": [
+        "redden"
+      ]
+    },
+    {
+      "question": "become scorched or singed under intense heat or dry conditions",
+      "answer": [
+        "scorch"
+      ]
+    },
+    {
+      "question": "a prejudiced person who is intolerant of any opinions differing from his own  ",
+      "answer": [
+        "bigot"
+      ]
+    },
+    {
+      "question": "an area adjacent to farm buildings  ",
+      "answer": [
+        "farmyard"
+      ]
+    },
+    {
+      "question": "material applied to the outside of a building to make it weatherproof  ",
+      "answer": [
+        "siding"
+      ]
+    },
+    {
+      "question": "speak of in an irreverent or impious manner",
+      "answer": [
+        "blaspheme"
+      ]
+    },
+    {
+      "question": "be agitated",
+      "answer": [
+        "churn"
+      ]
+    },
+    {
+      "question": "lingerie consisting of a loose dress designed to be worn in bed by women  ",
+      "answer": [
+        "nightgown"
+      ]
+    },
+    {
+      "question": "in an indiscriminate manner",
+      "answer": [
+        "promiscuously"
+      ]
+    },
+    {
+      "question": "lacking significance or liveliness or spirit or zest",
+      "answer": [
+        "vapid"
+      ]
+    },
+    {
+      "question": "shortening something by omitting parts of it  ",
+      "answer": [
+        "abbreviation"
+      ]
+    },
+    {
+      "question": "providing privacy or seclusion",
+      "answer": [
+        "cloistered"
+      ]
+    },
+    {
+      "question": "lens used to concentrate light on an object  ",
+      "answer": [
+        "condenser"
+      ]
+    },
+    {
+      "question": "(formerly) a cavalryman armed with a lance  ",
+      "answer": [
+        "lancer"
+      ]
+    },
+    {
+      "question": "able to take in large quantities of moisture",
+      "answer": [
+        "thirsty"
+      ]
+    },
+    {
+      "question": "squeeze or press together",
+      "answer": [
+        "compress"
+      ]
+    },
+    {
+      "question": "narrow-minded about cherished opinions  ",
+      "answer": [
+        "illiberal"
+      ]
+    },
+    {
+      "question": "in an intuitive manner",
+      "answer": [
+        "intuitively"
+      ]
+    },
+    {
+      "question": "plot upon a graph  ",
+      "answer": [
+        "graph"
+      ]
+    },
+    {
+      "question": "woodlands in full leaf",
+      "answer": [
+        "greenwood"
+      ]
+    },
+    {
+      "question": "separate (experiences) from the emotions relating to them  ",
+      "answer": [
+        "isolate"
+      ]
+    },
+    {
+      "question": "a maker of laws",
+      "answer": [
+        "lawgiver"
+      ]
+    },
+    {
+      "question": "concerned with topography",
+      "answer": [
+        "topographical"
+      ]
+    },
+    {
+      "question": "female sheep  ",
+      "answer": [
+        "ewe"
+      ]
+    },
+    {
+      "question": "fasten with a bight  ",
+      "answer": [
+        "bight"
+      ]
+    },
+    {
+      "question": "abounding in or given to pompous or aphoristic moralizing",
+      "answer": [
+        "sententious"
+      ]
+    },
+    {
+      "question": "engaging in or ready for combat  ",
+      "answer": [
+        "combatant"
+      ]
+    },
+    {
+      "question": "someone who dives (into water)  ",
+      "answer": [
+        "diver"
+      ]
+    },
+    {
+      "question": "having or resembling repeated square indentations like those in a battlement",
+      "answer": [
+        "embattled"
+      ]
+    },
+    {
+      "question": "the systematic use of spies to get military or political secrets  ",
+      "answer": [
+        "espionage"
+      ]
+    },
+    {
+      "question": "bird with strong claws and a stiff tail adapted for climbing and a hard chisel-like bill for boring into wood for insects  ",
+      "answer": [
+        "woodpecker"
+      ]
+    },
+    {
+      "question": "formed or conceived by the imagination",
+      "answer": [
+        "fabricated"
+      ]
+    },
+    {
+      "question": "not inclined to ask questions  ",
+      "answer": [
+        "unquestioning"
+      ]
+    },
+    {
+      "question": "lacking order or methodical arrangement or function",
+      "answer": [
+        "disorganized"
+      ]
+    },
+    {
+      "question": "an act or expression of criticism and censure",
+      "answer": [
+        "rebuke"
+      ]
+    },
+    {
+      "question": "someone who lends money at excessive rates of interest  ",
+      "answer": [
+        "usurer"
+      ]
+    },
+    {
+      "question": "a rite or body of rites prescribed for public worship  ",
+      "answer": [
+        "liturgy"
+      ]
+    },
+    {
+      "question": "a sponsor who books and stages public entertainments  ",
+      "answer": [
+        "showman"
+      ]
+    },
+    {
+      "question": "fine parchment prepared from the skin of a young animal e.g. a calf or lamb  ",
+      "answer": [
+        "vellum"
+      ]
+    },
+    {
+      "question": "the campaign of a candidate to be elected  ",
+      "answer": [
+        "campaigning"
+      ]
+    },
+    {
+      "question": "done with or working with others for a common purpose or benefit",
+      "answer": [
+        "cooperative"
+      ]
+    },
+    {
+      "question": "artfully persuasive in speech",
+      "answer": [
+        "glib"
+      ]
+    },
+    {
+      "question": "not embarrassed",
+      "answer": [
+        "unabashed"
+      ]
+    },
+    {
+      "question": "the official act of consigning a person to confinement (as in a prison or mental hospital)  ",
+      "answer": [
+        "commitment"
+      ]
+    },
+    {
+      "question": "the study and classification of human societies  ",
+      "answer": [
+        "sociology"
+      ]
+    },
+    {
+      "question": "the act of subverting",
+      "answer": [
+        "subversion"
+      ]
+    },
+    {
+      "question": "an ornamental flower garden",
+      "answer": [
+        "parterre"
+      ]
+    },
+    {
+      "question": "casual or ephemeral as if taking place on board a ship",
+      "answer": [
+        "shipboard"
+      ]
+    },
+    {
+      "question": "sharpen by rubbing, as on a whetstone  ",
+      "answer": [
+        "whet"
+      ]
+    },
+    {
+      "question": "marked by foolish or unreasoning fondness",
+      "answer": [
+        "enamored"
+      ]
+    },
+    {
+      "question": "used of persons or behavior",
+      "answer": [
+        "inclement"
+      ]
+    },
+    {
+      "question": "the trait of being painstaking and careful  ",
+      "answer": [
+        "conscientiousness"
+      ]
+    },
+    {
+      "question": "build (a road) from logs laid side by side  ",
+      "answer": [
+        "corduroy"
+      ]
+    },
+    {
+      "question": "a nonmetallic element belonging to the halogens",
+      "answer": [
+        "iodine"
+      ]
+    },
+    {
+      "question": "in a considerate manner",
+      "answer": [
+        "considerately"
+      ]
+    },
+    {
+      "question": "without a flaw",
+      "answer": [
+        "flawless"
+      ]
+    },
+    {
+      "question": "a narrow gorge with a stream running through it  ",
+      "answer": [
+        "gulch"
+      ]
+    },
+    {
+      "question": "not buried  ",
+      "answer": [
+        "unburied"
+      ]
+    },
+    {
+      "question": "without giving a name",
+      "answer": [
+        "anonymously"
+      ]
+    },
+    {
+      "question": "an act of appearing or becoming visible unexpectedly",
+      "answer": [
+        "apparition"
+      ]
+    },
+    {
+      "question": "endow with a benefice  ",
+      "answer": [
+        "benefice"
+      ]
+    },
+    {
+      "question": "a sport that involves exercises intended to display strength and balance and agility  ",
+      "answer": [
+        "gymnastics"
+      ]
+    },
+    {
+      "question": "kill a large number of people indiscriminately",
+      "answer": [
+        "massacre"
+      ]
+    },
+    {
+      "question": "of or relating to a marriage partner  ",
+      "answer": [
+        "mated"
+      ]
+    },
+    {
+      "question": "(pathology) causing no symptoms",
+      "answer": [
+        "quiescent"
+      ]
+    },
+    {
+      "question": "bearing or marked with a label or tag",
+      "answer": [
+        "labeled"
+      ]
+    },
+    {
+      "question": "structure consisting of the part of a ship above the main deck  ",
+      "answer": [
+        "superstructure"
+      ]
+    },
+    {
+      "question": "in an irritable manner",
+      "answer": [
+        "irritably"
+      ]
+    },
+    {
+      "question": "a sign posted in a public place as an advertisement",
+      "answer": [
+        "poster"
+      ]
+    },
+    {
+      "question": "containing or of the nature of alcohol",
+      "answer": [
+        "spirituous"
+      ]
+    },
+    {
+      "question": "north temperate shrubs or trees having toothed leaves and conelike fruit",
+      "answer": [
+        "alder"
+      ]
+    },
+    {
+      "question": "someone who guards an entrance  ",
+      "answer": [
+        "doorkeeper"
+      ]
+    },
+    {
+      "question": "massive thick-skinned herbivorous animal living in or around rivers of tropical Africa  ",
+      "answer": [
+        "hippopotamus"
+      ]
+    },
+    {
+      "question": "the official announcement of a new law or ordinance whereby the law or ordinance is put into effect  ",
+      "answer": [
+        "promulgation"
+      ]
+    },
+    {
+      "question": "destroy completely",
+      "answer": [
+        "subvert"
+      ]
+    },
+    {
+      "question": "(British informal) summarized or abridged",
+      "answer": [
+        "potted"
+      ]
+    },
+    {
+      "question": "the quality of being worthy of desiring  ",
+      "answer": [
+        "desirability"
+      ]
+    },
+    {
+      "question": "a personal attendant of the British royal family  ",
+      "answer": [
+        "equerry"
+      ]
+    },
+    {
+      "question": "(Old Testament) large basin used by a priest in an ancient Jewish temple to perform ritual ablutions  ",
+      "answer": [
+        "laver"
+      ]
+    },
+    {
+      "question": "in an aggressive manner",
+      "answer": [
+        "offensively"
+      ]
+    },
+    {
+      "question": "exonerate by means of an alibi  ",
+      "answer": [
+        "alibi"
+      ]
+    },
+    {
+      "question": "become smaller or lose substance",
+      "answer": [
+        "dwindle"
+      ]
+    },
+    {
+      "question": "cotton or linen fabric with the nap raised on one side",
+      "answer": [
+        "lint"
+      ]
+    },
+    {
+      "question": "a book regarded as authoritative in its field  ",
+      "answer": [
+        "bible"
+      ]
+    },
+    {
+      "question": "colloquial American term for a town",
+      "answer": [
+        "burg"
+      ]
+    },
+    {
+      "question": "a common nonmetallic element belonging to the halogens",
+      "answer": [
+        "chlorine"
+      ]
+    },
+    {
+      "question": "the most typical example or representative of a type  ",
+      "answer": [
+        "quintessence"
+      ]
+    },
+    {
+      "question": "having corresponding sounds especially terminal sounds",
+      "answer": [
+        "rhymed"
+      ]
+    },
+    {
+      "question": "made without leavening",
+      "answer": [
+        "unleavened"
+      ]
+    },
+    {
+      "question": "liquor distilled from fermented molasses  ",
+      "answer": [
+        "rum"
+      ]
+    },
+    {
+      "question": "of or relating to animals or animal groups",
+      "answer": [
+        "zoological"
+      ]
+    },
+    {
+      "question": "a sorcerer or magician  ",
+      "answer": [
+        "enchanter"
+      ]
+    },
+    {
+      "question": "a small sofa  ",
+      "answer": [
+        "settee"
+      ]
+    },
+    {
+      "question": "removing by cutting off or clipping  ",
+      "answer": [
+        "shearing"
+      ]
+    },
+    {
+      "question": "make a sad face and thrust out one's lower lip",
+      "answer": [
+        "pout"
+      ]
+    },
+    {
+      "question": "incapable of being conceived or considered  ",
+      "answer": [
+        "unthinkable"
+      ]
+    },
+    {
+      "question": "small terrestrial viper common in northern Eurasia  ",
+      "answer": [
+        "adder"
+      ]
+    },
+    {
+      "question": "delight greatly in",
+      "answer": [
+        "wallow"
+      ]
+    },
+    {
+      "question": "hit lightly",
+      "answer": [
+        "dab"
+      ]
+    },
+    {
+      "question": "(of market animals) made ready for market  ",
+      "answer": [
+        "fattened"
+      ]
+    },
+    {
+      "question": "the lawyers acting for the state to put the case against the defendant  ",
+      "answer": [
+        "prosecution"
+      ]
+    },
+    {
+      "question": "the act of adjusting again (to changed circumstances)  ",
+      "answer": [
+        "readjustment"
+      ]
+    },
+    {
+      "question": "an informal conversation  ",
+      "answer": [
+        "chat"
+      ]
+    },
+    {
+      "question": "decorated metal band worn around the head  ",
+      "answer": [
+        "circlet"
+      ]
+    },
+    {
+      "question": "someone who makes copies illegally  ",
+      "answer": [
+        "forger"
+      ]
+    },
+    {
+      "question": "involving and relating to the mutual relations of states especially of the United States",
+      "answer": [
+        "interstate"
+      ]
+    },
+    {
+      "question": "management that is careless or inefficient",
+      "answer": [
+        "mismanagement"
+      ]
+    },
+    {
+      "question": "strangeness as a consequence of being old fashioned",
+      "answer": [
+        "quaintness"
+      ]
+    },
+    {
+      "question": "the quality of being complete and indiscriminate",
+      "answer": [
+        "totality"
+      ]
+    },
+    {
+      "question": "a disorder of the central nervous system characterized by loss of consciousness and convulsions  ",
+      "answer": [
+        "epilepsy"
+      ]
+    },
+    {
+      "question": "a formal ecclesiastical curse accompanied by excommunication  ",
+      "answer": [
+        "anathema"
+      ]
+    },
+    {
+      "question": "congealed into jelly",
+      "answer": [
+        "congealed"
+      ]
+    },
+    {
+      "question": "play a game in which players hit a wooden ball through a series of hoops   ",
+      "answer": [
+        "croquet"
+      ]
+    },
+    {
+      "question": "the feeling of being intimidated",
+      "answer": [
+        "intimidation"
+      ]
+    },
+    {
+      "question": "either of two punctuation marks (or) used to enclose textual material  ",
+      "answer": [
+        "parenthesis"
+      ]
+    },
+    {
+      "question": "a mournful poem",
+      "answer": [
+        "elegy"
+      ]
+    },
+    {
+      "question": "a Tibetan or Mongolian priest of Lamaism  ",
+      "answer": [
+        "lama"
+      ]
+    },
+    {
+      "question": "(fencing) a second thrust made on the same lunge (as when your opponent fails to riposte)  ",
+      "answer": [
+        "remise"
+      ]
+    },
+    {
+      "question": "an aromatic gum resin obtained from various Arabian or East African trees",
+      "answer": [
+        "frankincense"
+      ]
+    },
+    {
+      "question": "(of a liquid) agitated vigorously",
+      "answer": [
+        "churning"
+      ]
+    },
+    {
+      "question": "a skilled worker who practices some trade or handicraft  ",
+      "answer": [
+        "craftsman"
+      ]
+    },
+    {
+      "question": "the owner or manager of a brewery  ",
+      "answer": [
+        "brewer"
+      ]
+    },
+    {
+      "question": "of or relating to or produced by evolution",
+      "answer": [
+        "evolutionary"
+      ]
+    },
+    {
+      "question": "give birth to a litter of animals  ",
+      "answer": [
+        "litter"
+      ]
+    },
+    {
+      "question": "the act of contributing to the funds of a church or charity",
+      "answer": [
+        "oblation"
+      ]
+    },
+    {
+      "question": "having been put right  ",
+      "answer": [
+        "rectified"
+      ]
+    },
+    {
+      "question": "misleading by means of pleasant or alluring methods",
+      "answer": [
+        "beguiling"
+      ]
+    },
+    {
+      "question": "the main house on a ranch or large estate  ",
+      "answer": [
+        "hacienda"
+      ]
+    },
+    {
+      "question": "an indifference to pleasure or pain  ",
+      "answer": [
+        "stoicism"
+      ]
+    },
+    {
+      "question": "very drunk  ",
+      "answer": [
+        "besotted"
+      ]
+    },
+    {
+      "question": "the syllable naming the fifth (dominant) note of any musical scale in solmization  ",
+      "answer": [
+        "sol"
+      ]
+    },
+    {
+      "question": "experiencing intense pain especially mental pain",
+      "answer": [
+        "anguished"
+      ]
+    },
+    {
+      "question": "caused to hear poorly or not at all  ",
+      "answer": [
+        "deafened"
+      ]
+    },
+    {
+      "question": "any of several small tropical Asian lizards capable of gliding by spreading winglike membranes on each side of the body  ",
+      "answer": [
+        "dragon"
+      ]
+    },
+    {
+      "question": "presumptuously arrogant",
+      "answer": [
+        "overweening"
+      ]
+    },
+    {
+      "question": "a variety show with topical sketches and songs and dancing and comedians  ",
+      "answer": [
+        "revue"
+      ]
+    },
+    {
+      "question": "a center of activity or interest or commerce or transportation",
+      "answer": [
+        "hub"
+      ]
+    },
+    {
+      "question": "feeling or showing extreme anger",
+      "answer": [
+        "irate"
+      ]
+    },
+    {
+      "question": "the residence of a clergyman (especially a Presbyterian clergyman)  ",
+      "answer": [
+        "manse"
+      ]
+    },
+    {
+      "question": "partial or total lack of sensation in a part of the body",
+      "answer": [
+        "numbness"
+      ]
+    },
+    {
+      "question": "relatively large rodents with sharp erectile bristles mingled with the fur  ",
+      "answer": [
+        "porcupine"
+      ]
+    },
+    {
+      "question": "large pure white wild swan of western North America having a sonorous cry  ",
+      "answer": [
+        "trumpeter"
+      ]
+    },
+    {
+      "question": "take in nourishment  ",
+      "answer": [
+        "victual"
+      ]
+    },
+    {
+      "question": "transport in a wheelbarrow  ",
+      "answer": [
+        "wheelbarrow"
+      ]
+    },
+    {
+      "question": "tending or intended to correct or counteract or restore to a normal condition",
+      "answer": [
+        "corrective"
+      ]
+    },
+    {
+      "question": "submerge or plunge suddenly  ",
+      "answer": [
+        "duck"
+      ]
+    },
+    {
+      "question": "the ordinal number of forty in counting order  ",
+      "answer": [
+        "fortieth"
+      ]
+    },
+    {
+      "question": "a dense elaborate spider web that is more efficient than the orb web  ",
+      "answer": [
+        "cobweb"
+      ]
+    },
+    {
+      "question": "something that agitates and arouses",
+      "answer": [
+        "excitation"
+      ]
+    },
+    {
+      "question": "a vessel (usually a pot or vat) used for steeping  ",
+      "answer": [
+        "steeper"
+      ]
+    },
+    {
+      "question": "come together, usually for a purpose",
+      "answer": [
+        "congregate"
+      ]
+    },
+    {
+      "question": "being or serving as an illustration of a type",
+      "answer": [
+        "emblematic"
+      ]
+    },
+    {
+      "question": "the act of contaminating or polluting",
+      "answer": [
+        "contamination"
+      ]
+    },
+    {
+      "question": "in a poetic manner",
+      "answer": [
+        "poetically"
+      ]
+    },
+    {
+      "question": "American musteline mammal typically ejecting an intensely malodorous fluid when startled",
+      "answer": [
+        "skunk"
+      ]
+    },
+    {
+      "question": "fraudulent",
+      "answer": [
+        "bogus"
+      ]
+    },
+    {
+      "question": "bring up a topic for discussion  ",
+      "answer": [
+        "broach"
+      ]
+    },
+    {
+      "question": "a person who uses flattery  ",
+      "answer": [
+        "flatterer"
+      ]
+    },
+    {
+      "question": "covered with a dense coat of fine silky hairs",
+      "answer": [
+        "furred"
+      ]
+    },
+    {
+      "question": "someone (especially a child) who learns (as from a teacher) or takes up knowledge or beliefs  ",
+      "answer": [
+        "learner"
+      ]
+    },
+    {
+      "question": "a habitual or characteristic mental attitude that determines how you will interpret and respond to situations  ",
+      "answer": [
+        "mentality"
+      ]
+    },
+    {
+      "question": "a person who is physically weak and ineffectual  ",
+      "answer": [
+        "weakling"
+      ]
+    },
+    {
+      "question": "colloquial British abbreviation",
+      "answer": [
+        "choc"
+      ]
+    },
+    {
+      "question": "the act of cleaving or splitting  ",
+      "answer": [
+        "cleavage"
+      ]
+    },
+    {
+      "question": "gently and sweetly  ",
+      "answer": [
+        "dolce"
+      ]
+    },
+    {
+      "question": "rushing about hastily in an undignified way  ",
+      "answer": [
+        "scamper"
+      ]
+    },
+    {
+      "question": "lessen, diminish, or curtail",
+      "answer": [
+        "abridge"
+      ]
+    },
+    {
+      "question": "relating to or involving arithmetic",
+      "answer": [
+        "arithmetical"
+      ]
+    },
+    {
+      "question": "(psychology) transfer of a response learned to one stimulus to a similar stimulus  ",
+      "answer": [
+        "generalization"
+      ]
+    },
+    {
+      "question": "a person who drinks alcoholic beverages (especially to excess)  ",
+      "answer": [
+        "drinker"
+      ]
+    },
+    {
+      "question": "instructed and encouraged in moral, intellectual, and spiritual improvement  ",
+      "answer": [
+        "edified"
+      ]
+    },
+    {
+      "question": "partially melted snow  ",
+      "answer": [
+        "slush"
+      ]
+    },
+    {
+      "question": "moisten with fine drops",
+      "answer": [
+        "drizzle"
+      ]
+    },
+    {
+      "question": "of or relating to a magistrate",
+      "answer": [
+        "magisterial"
+      ]
+    },
+    {
+      "question": "wood that is floating or that has been washed ashore  ",
+      "answer": [
+        "driftwood"
+      ]
+    },
+    {
+      "question": "jump about playfully  ",
+      "answer": [
+        "caper"
+      ]
+    },
+    {
+      "question": "inability of a part or organ to function properly  ",
+      "answer": [
+        "incompetence"
+      ]
+    },
+    {
+      "question": "drawn toward a center or brought under the control of a central authority",
+      "answer": [
+        "centralized"
+      ]
+    },
+    {
+      "question": "(of devices and processes) protected by patent",
+      "answer": [
+        "patented"
+      ]
+    },
+    {
+      "question": "write carelessly  ",
+      "answer": [
+        "scribble"
+      ]
+    },
+    {
+      "question": "utter a high-pitched cry, characteristic of pigs  ",
+      "answer": [
+        "squeal"
+      ]
+    },
+    {
+      "question": "a card game in which cards face up on the table are taken with eligible cards in the hand  ",
+      "answer": [
+        "casino"
+      ]
+    },
+    {
+      "question": "common gregarious Old World bird about the size and color of the American crow  ",
+      "answer": [
+        "rook"
+      ]
+    },
+    {
+      "question": "one of a number of large stone statues with the body of a lion and the head of a man that were built by the ancient Egyptians  ",
+      "answer": [
+        "sphinx"
+      ]
+    },
+    {
+      "question": "difficult or impossible to extinguish",
+      "answer": [
+        "inextinguishable"
+      ]
+    },
+    {
+      "question": "an attractive combination of good health and happiness",
+      "answer": [
+        "radiance"
+      ]
+    },
+    {
+      "question": "restore to the previous state or rank  ",
+      "answer": [
+        "reinstate"
+      ]
+    },
+    {
+      "question": "engage without restraint in an activity and indulge, as when shopping  ",
+      "answer": [
+        "spree"
+      ]
+    },
+    {
+      "question": "all the numbers that end in -teen  ",
+      "answer": [
+        "teens"
+      ]
+    },
+    {
+      "question": "associated by chance and not an integral part",
+      "answer": [
+        "adventitious"
+      ]
+    },
+    {
+      "question": "an improvement that adds to the value of a property or facility  ",
+      "answer": [
+        "betterment"
+      ]
+    },
+    {
+      "question": "a spar projecting from the bow of a vessel  ",
+      "answer": [
+        "bowsprit"
+      ]
+    },
+    {
+      "question": "a longing to return home  ",
+      "answer": [
+        "homesickness"
+      ]
+    },
+    {
+      "question": "a jeweled headdress worn by women on formal occasions  ",
+      "answer": [
+        "tiara"
+      ]
+    },
+    {
+      "question": "a statistical relation between two or more variables such that systematic changes in the value of one variable are accompanied by systematic changes in the other  ",
+      "answer": [
+        "correlation"
+      ]
+    },
+    {
+      "question": "in a graphic way",
+      "answer": [
+        "graphically"
+      ]
+    },
+    {
+      "question": "movement or space for movement",
+      "answer": [
+        "looseness"
+      ]
+    },
+    {
+      "question": "a favorite saying of a sect or political group  ",
+      "answer": [
+        "motto"
+      ]
+    },
+    {
+      "question": "(logic) an inference that follows directly from the proof of another proposition  ",
+      "answer": [
+        "corollary"
+      ]
+    },
+    {
+      "question": "hats for women",
+      "answer": [
+        "millinery"
+      ]
+    },
+    {
+      "question": "someone who tries to persuade or induce or lead on  ",
+      "answer": [
+        "persuader"
+      ]
+    },
+    {
+      "question": "waterproofed canvas  ",
+      "answer": [
+        "tarpaulin"
+      ]
+    },
+    {
+      "question": "(architecture) a vaulted structure",
+      "answer": [
+        "vaulting"
+      ]
+    },
+    {
+      "question": "a farm implement used to break up the surface of the soil (for aeration and weed control and conservation of moisture)  ",
+      "answer": [
+        "cultivator"
+      ]
+    },
+    {
+      "question": "a short passage added at the end of a literary work",
+      "answer": [
+        "epilogue"
+      ]
+    },
+    {
+      "question": "not provident",
+      "answer": [
+        "improvident"
+      ]
+    },
+    {
+      "question": "unfermented or fermenting malt  ",
+      "answer": [
+        "wort"
+      ]
+    },
+    {
+      "question": "a fisherman who uses a hook and line  ",
+      "answer": [
+        "angler"
+      ]
+    },
+    {
+      "question": "expressing one thing in terms normally denoting another",
+      "answer": [
+        "metaphorical"
+      ]
+    },
+    {
+      "question": "tending to find and call attention to faults",
+      "answer": [
+        "captious"
+      ]
+    },
+    {
+      "question": "to cause to do through pressure or necessity, by physical, moral or intellectual means :\"She forced him to take a job in the city\"",
+      "answer": [
+        "coerce"
+      ]
+    },
+    {
+      "question": "not of a Christian faith  ",
+      "answer": [
+        "unchristian"
+      ]
+    },
+    {
+      "question": "without a basis in reason or fact",
+      "answer": [
+        "baseless"
+      ]
+    },
+    {
+      "question": "following the teachings or manifesting the qualities or spirit of Jesus Christ  ",
+      "answer": [
+        "christian"
+      ]
+    },
+    {
+      "question": "be a part or attribute of  ",
+      "answer": [
+        "pertain"
+      ]
+    },
+    {
+      "question": "an anthropoid ape of the genus Proconsul  ",
+      "answer": [
+        "proconsul"
+      ]
+    },
+    {
+      "question": "cause an emotional pain, as if by stinging",
+      "answer": [
+        "sting"
+      ]
+    },
+    {
+      "question": "in a serial manner",
+      "answer": [
+        "serially"
+      ]
+    },
+    {
+      "question": "embellish by sewing in straight lines crossing each other diagonally",
+      "answer": [
+        "smock"
+      ]
+    },
+    {
+      "question": "classify or group  ",
+      "answer": [
+        "bracket"
+      ]
+    },
+    {
+      "question": "enclose in a capsule  ",
+      "answer": [
+        "capsule"
+      ]
+    },
+    {
+      "question": "a sudden outburst (as of protest)  ",
+      "answer": [
+        "furor"
+      ]
+    },
+    {
+      "question": "of or associated with or bearing a title signifying nobility",
+      "answer": [
+        "titular"
+      ]
+    },
+    {
+      "question": "of or relating to or containing basalt",
+      "answer": [
+        "basaltic"
+      ]
+    },
+    {
+      "question": "small hardy range horse of the western plains descended from horses brought by the Spanish  ",
+      "answer": [
+        "mustang"
+      ]
+    },
+    {
+      "question": "lacking love and generosity",
+      "answer": [
+        "uncharitable"
+      ]
+    },
+    {
+      "question": "resembling or containing bitumen",
+      "answer": [
+        "bituminous"
+      ]
+    },
+    {
+      "question": "a linguist who specializes in the study of grammar and syntax  ",
+      "answer": [
+        "grammarian"
+      ]
+    },
+    {
+      "question": "loiter about, with no apparent aim  ",
+      "answer": [
+        "prowl"
+      ]
+    },
+    {
+      "question": "roll into a ball  ",
+      "answer": [
+        "clue"
+      ]
+    },
+    {
+      "question": "a depressing restraint",
+      "answer": [
+        "damper"
+      ]
+    },
+    {
+      "question": "familiarize (someone) with new surroundings or circumstances",
+      "answer": [
+        "orient"
+      ]
+    },
+    {
+      "question": "the male organ of copulation (`member' is a euphemism)  ",
+      "answer": [
+        "penis"
+      ]
+    },
+    {
+      "question": "ruinously destructive and wasting",
+      "answer": [
+        "ravaging"
+      ]
+    },
+    {
+      "question": "soak in a special solution to soften and remove chemicals used in previous treatments",
+      "answer": [
+        "bate"
+      ]
+    },
+    {
+      "question": "make stronger or defensible",
+      "answer": [
+        "buttress"
+      ]
+    },
+    {
+      "question": "a property characteristic of a child  ",
+      "answer": [
+        "childishness"
+      ]
+    },
+    {
+      "question": "the range within which a voice can be heard",
+      "answer": [
+        "earshot"
+      ]
+    },
+    {
+      "question": "a walk of flagstones",
+      "answer": [
+        "flagging"
+      ]
+    },
+    {
+      "question": "a performer who juggles objects and performs tricks of manual dexterity  ",
+      "answer": [
+        "juggler"
+      ]
+    },
+    {
+      "question": "a preserve made of the pulp and rind of citrus fruits  ",
+      "answer": [
+        "marmalade"
+      ]
+    },
+    {
+      "question": "altered in volume as well as tone or pitch  ",
+      "answer": [
+        "modulated"
+      ]
+    },
+    {
+      "question": "any of various small insectivorous birds of the northern hemisphere that climb up a tree trunk supporting themselves on stiff tail feathers and their feet  ",
+      "answer": [
+        "creeper"
+      ]
+    },
+    {
+      "question": "in an inexorable manner",
+      "answer": [
+        "inexorably"
+      ]
+    },
+    {
+      "question": "relating to or containing or caused by mercury",
+      "answer": [
+        "mercurial"
+      ]
+    },
+    {
+      "question": "in a radiant manner",
+      "answer": [
+        "radiantly"
+      ]
+    },
+    {
+      "question": "lacking help  ",
+      "answer": [
+        "unassisted"
+      ]
+    },
+    {
+      "question": "obsolete terms for legal insanity  ",
+      "answer": [
+        "lunacy"
+      ]
+    },
+    {
+      "question": "full of seeds",
+      "answer": [
+        "seedy"
+      ]
+    },
+    {
+      "question": "not consistent with the methods or principles of science",
+      "answer": [
+        "unscientific"
+      ]
+    },
+    {
+      "question": "the act (by someone having the authority) of annulling something previously done",
+      "answer": [
+        "revocation"
+      ]
+    },
+    {
+      "question": "a quaint and amusing jest  ",
+      "answer": [
+        "drollery"
+      ]
+    },
+    {
+      "question": "the act of glorifying (as in worship)",
+      "answer": [
+        "glorification"
+      ]
+    },
+    {
+      "question": "of a region of the United States generally including New Mexico",
+      "answer": [
+        "southwestern"
+      ]
+    },
+    {
+      "question": "surrendered as a penalty  ",
+      "answer": [
+        "confiscate"
+      ]
+    },
+    {
+      "question": "the quality of making a strong or vivid impression on the mind  ",
+      "answer": [
+        "impressiveness"
+      ]
+    },
+    {
+      "question": "running at a jog trot as a form of cardiopulmonary exercise  ",
+      "answer": [
+        "jogging"
+      ]
+    },
+    {
+      "question": "a unit of length of thread or yarn  ",
+      "answer": [
+        "lea"
+      ]
+    },
+    {
+      "question": "male cat  ",
+      "answer": [
+        "tom"
+      ]
+    },
+    {
+      "question": "the staff on which wool or flax is wound before spinning  ",
+      "answer": [
+        "distaff"
+      ]
+    },
+    {
+      "question": "a clothing fabric in a plaid weave  ",
+      "answer": [
+        "gingham"
+      ]
+    },
+    {
+      "question": "(of linens or clothes) smoothed with a hot iron  ",
+      "answer": [
+        "ironed"
+      ]
+    },
+    {
+      "question": "remove with or as if with a ladle",
+      "answer": [
+        "ladle"
+      ]
+    },
+    {
+      "question": "showing a sense of shame  ",
+      "answer": [
+        "shamefaced"
+      ]
+    },
+    {
+      "question": "a superfluous ornament  ",
+      "answer": [
+        "embellishment"
+      ]
+    },
+    {
+      "question": "charge (a public official) with an offense or misdemeanor committed while in office",
+      "answer": [
+        "impeach"
+      ]
+    },
+    {
+      "question": "imitating the mannerisms of another person  ",
+      "answer": [
+        "impersonation"
+      ]
+    },
+    {
+      "question": "a burial vault (usually for some famous person)  ",
+      "answer": [
+        "repository"
+      ]
+    },
+    {
+      "question": "not set afire or burning",
+      "answer": [
+        "unlighted"
+      ]
+    },
+    {
+      "question": "on, to, or at the top  ",
+      "answer": [
+        "atop"
+      ]
+    },
+    {
+      "question": "a low heavy horse cart without sides",
+      "answer": [
+        "dray"
+      ]
+    },
+    {
+      "question": "the position of editor  ",
+      "answer": [
+        "editorship"
+      ]
+    },
+    {
+      "question": "a large metal or pottery vessel with a handle and spout",
+      "answer": [
+        "flagon"
+      ]
+    },
+    {
+      "question": "marked by defiant disregard for danger or consequences",
+      "answer": [
+        "foolhardy"
+      ]
+    },
+    {
+      "question": "a quarry worker who splits off blocks of stone  ",
+      "answer": [
+        "breaker"
+      ]
+    },
+    {
+      "question": "a cgs unit of work or energy",
+      "answer": [
+        "erg"
+      ]
+    },
+    {
+      "question": "position comfortably",
+      "answer": [
+        "nestle"
+      ]
+    },
+    {
+      "question": "provide with choice or abundant food or drink",
+      "answer": [
+        "regale"
+      ]
+    },
+    {
+      "question": "a nap in the early afternoon (especially in hot countries)  ",
+      "answer": [
+        "siesta"
+      ]
+    },
+    {
+      "question": "ask for humbly or earnestly, as in prayer",
+      "answer": [
+        "supplicate"
+      ]
+    },
+    {
+      "question": "train on a trellis, as of a vine  ",
+      "answer": [
+        "trellis"
+      ]
+    },
+    {
+      "question": "the act of applying oil or an oily liquid  ",
+      "answer": [
+        "anointing"
+      ]
+    },
+    {
+      "question": "swift-footed terrestrial plover-like bird of southern Asia and Africa",
+      "answer": [
+        "courser"
+      ]
+    },
+    {
+      "question": "an award (as for meritorious service) given without claim or obligation  ",
+      "answer": [
+        "gratuity"
+      ]
+    },
+    {
+      "question": "difficult to handle or use especially because of size or weight",
+      "answer": [
+        "cumbersome"
+      ]
+    },
+    {
+      "question": "relating to or consisting of or derived from documents  ",
+      "answer": [
+        "documentary"
+      ]
+    },
+    {
+      "question": "in an inarticulate manner",
+      "answer": [
+        "dumbly"
+      ]
+    },
+    {
+      "question": "the mistake of incurring liability or blame  ",
+      "answer": [
+        "incursion"
+      ]
+    },
+    {
+      "question": "conformity with some esthetic standard of correctness or propriety",
+      "answer": [
+        "justness"
+      ]
+    },
+    {
+      "question": "a book prepared for use in schools or colleges",
+      "answer": [
+        "textbook"
+      ]
+    },
+    {
+      "question": "extravagant self-praise  ",
+      "answer": [
+        "vaunt"
+      ]
+    },
+    {
+      "question": "a beef steak usually cooked by broiling  ",
+      "answer": [
+        "beefsteak"
+      ]
+    },
+    {
+      "question": "forming or capable of forming or molding or fashioning",
+      "answer": [
+        "formative"
+      ]
+    },
+    {
+      "question": "make a thrusting forward movement  ",
+      "answer": [
+        "lunge"
+      ]
+    },
+    {
+      "question": "lacking pretension or affectation",
+      "answer": [
+        "unpretentious"
+      ]
+    },
+    {
+      "question": "expressing or manifesting disapproval  ",
+      "answer": [
+        "disapproving"
+      ]
+    },
+    {
+      "question": "a set sequence of steps, part of larger computer program  ",
+      "answer": [
+        "routine"
+      ]
+    },
+    {
+      "question": "add to the end  ",
+      "answer": [
+        "subjoin"
+      ]
+    },
+    {
+      "question": "the act of endorsing",
+      "answer": [
+        "endorsement"
+      ]
+    },
+    {
+      "question": "not genuine or real",
+      "answer": [
+        "fake"
+      ]
+    },
+    {
+      "question": "(of a glance) sidelong and slyly lascivious",
+      "answer": [
+        "leering"
+      ]
+    },
+    {
+      "question": "act in order to achieve a certain goal",
+      "answer": [
+        "maneuver"
+      ]
+    },
+    {
+      "question": "the wool of the Kashmir goat  ",
+      "answer": [
+        "cashmere"
+      ]
+    },
+    {
+      "question": "lawfulness by virtue of being authorized or in accordance with law  ",
+      "answer": [
+        "legitimacy"
+      ]
+    },
+    {
+      "question": "intellectual depth",
+      "answer": [
+        "profundity"
+      ]
+    },
+    {
+      "question": "someone who settles on land without right or title  ",
+      "answer": [
+        "squatter"
+      ]
+    },
+    {
+      "question": "tropical American tree producing cacao beans  ",
+      "answer": [
+        "cacao"
+      ]
+    },
+    {
+      "question": "(Jungian psychology) the inner self (not the external persona) that is in touch with the unconscious  ",
+      "answer": [
+        "anima"
+      ]
+    },
+    {
+      "question": "a political theory favoring unlimited authority by a single individual  ",
+      "answer": [
+        "autocracy"
+      ]
+    },
+    {
+      "question": "the cutting of or into body tissues or organs (especially by a surgeon as part of an operation)  ",
+      "answer": [
+        "incision"
+      ]
+    },
+    {
+      "question": "of relatively low or level country  ",
+      "answer": [
+        "lowland"
+      ]
+    },
+    {
+      "question": "according to tradition",
+      "answer": [
+        "traditionally"
+      ]
+    },
+    {
+      "question": "the quality of being advisable",
+      "answer": [
+        "advisability"
+      ]
+    },
+    {
+      "question": "a figure of a man used as a supporting column  ",
+      "answer": [
+        "atlas"
+      ]
+    },
+    {
+      "question": "determined by geography",
+      "answer": [
+        "geographic"
+      ]
+    },
+    {
+      "question": "a movable top or cover (hinged or separate) for closing the opening at the top of a box, chest, jar, pan, etc.",
+      "answer": [
+        "lid"
+      ]
+    },
+    {
+      "question": "act of marshaling and organizing and making ready for use or action",
+      "answer": [
+        "mobilization"
+      ]
+    },
+    {
+      "question": "rendered motionless for lack of wind  ",
+      "answer": [
+        "becalmed"
+      ]
+    },
+    {
+      "question": "infect with a canker  ",
+      "answer": [
+        "canker"
+      ]
+    },
+    {
+      "question": "secret agreement  ",
+      "answer": [
+        "collusion"
+      ]
+    },
+    {
+      "question": "a stock or supply of foods  ",
+      "answer": [
+        "commissariat"
+      ]
+    },
+    {
+      "question": "crouch or curl up",
+      "answer": [
+        "huddle"
+      ]
+    },
+    {
+      "question": "the act of pouring a liquid offering (especially wine) as a religious ceremony  ",
+      "answer": [
+        "libation"
+      ]
+    },
+    {
+      "question": "overfull as with blood  ",
+      "answer": [
+        "congested"
+      ]
+    },
+    {
+      "question": "used of conduct",
+      "answer": [
+        "debasing"
+      ]
+    },
+    {
+      "question": "give up, such as power, as of monarchs and emperors, or duties and obligations",
+      "answer": [
+        "abdicate"
+      ]
+    },
+    {
+      "question": "the property possessed by a line or surface that is curved and not angular  ",
+      "answer": [
+        "roundness"
+      ]
+    },
+    {
+      "question": "a barge carrying bulk materials in an open hold  ",
+      "answer": [
+        "scow"
+      ]
+    },
+    {
+      "question": "make a travesty of  ",
+      "answer": [
+        "travesty"
+      ]
+    },
+    {
+      "question": "position on a scale in relation to others in a sport  ",
+      "answer": [
+        "ranking"
+      ]
+    },
+    {
+      "question": "enter into someone's consciousness",
+      "answer": [
+        "register"
+      ]
+    },
+    {
+      "question": "in the state of development between puberty and maturity",
+      "answer": [
+        "adolescent"
+      ]
+    },
+    {
+      "question": "a woman benefactor  ",
+      "answer": [
+        "benefactress"
+      ]
+    },
+    {
+      "question": "failing in what duty requires",
+      "answer": [
+        "derelict"
+      ]
+    },
+    {
+      "question": "an invasion or hostile attack  ",
+      "answer": [
+        "inroad"
+      ]
+    },
+    {
+      "question": "find the solution to (a problem or question) or understand the meaning of",
+      "answer": [
+        "solve"
+      ]
+    },
+    {
+      "question": "lost temporarily",
+      "answer": [
+        "mislaid"
+      ]
+    },
+    {
+      "question": "any of various small mouselike rodents of the family Cricetidae (especially of genus Microtus) having a stout short-tailed body and inconspicuous ears and inhabiting fields or meadows  ",
+      "answer": [
+        "vole"
+      ]
+    },
+    {
+      "question": "of a moderate purple color  ",
+      "answer": [
+        "amethyst"
+      ]
+    },
+    {
+      "question": "matching point for point",
+      "answer": [
+        "coincident"
+      ]
+    },
+    {
+      "question": "the entire scale of musical notes  ",
+      "answer": [
+        "gamut"
+      ]
+    },
+    {
+      "question": "in a harmless manner",
+      "answer": [
+        "harmlessly"
+      ]
+    },
+    {
+      "question": "a ritual recitation of words or sounds believed to have a magical effect  ",
+      "answer": [
+        "incantation"
+      ]
+    },
+    {
+      "question": "holds a license (degree) from a (European) university  ",
+      "answer": [
+        "licentiate"
+      ]
+    },
+    {
+      "question": "a substantial amount",
+      "answer": [
+        "chunk"
+      ]
+    },
+    {
+      "question": "affording reasonable grounds for belief or acceptance",
+      "answer": [
+        "presumptive"
+      ]
+    },
+    {
+      "question": "a scientist trained in psychology  ",
+      "answer": [
+        "psychologist"
+      ]
+    },
+    {
+      "question": "eject from the premises",
+      "answer": [
+        "bounce"
+      ]
+    },
+    {
+      "question": " being born or beginning",
+      "answer": [
+        "nascent"
+      ]
+    },
+    {
+      "question": "not having a coat of paint or badly in need of a fresh coat",
+      "answer": [
+        "unpainted"
+      ]
+    },
+    {
+      "question": "a political orientation of a people or a government to maintain a strong military force and to be prepared to use it aggressively to defend or promote national interests  ",
+      "answer": [
+        "militarism"
+      ]
+    },
+    {
+      "question": "large sweet fleshy tropical fruit with a terminal tuft of stiff leaves",
+      "answer": [
+        "pineapple"
+      ]
+    },
+    {
+      "question": "the action of making broader",
+      "answer": [
+        "broadening"
+      ]
+    },
+    {
+      "question": "someone who has or gives or receives a part or a share  ",
+      "answer": [
+        "partaker"
+      ]
+    },
+    {
+      "question": "a barrister or solicitor who serves as part-time judge in towns or boroughs  ",
+      "answer": [
+        "recorder"
+      ]
+    },
+    {
+      "question": "whip with or as if with a wire whisk",
+      "answer": [
+        "whisk"
+      ]
+    },
+    {
+      "question": "provided with a floor  ",
+      "answer": [
+        "floored"
+      ]
+    },
+    {
+      "question": "of or relating to the scientific study of speech sounds",
+      "answer": [
+        "phonetic"
+      ]
+    },
+    {
+      "question": "an organism (person or animal) that sits  ",
+      "answer": [
+        "sitter"
+      ]
+    },
+    {
+      "question": "statements affirming or denying certain matters of fact that you are prepared to prove  ",
+      "answer": [
+        "allegation"
+      ]
+    },
+    {
+      "question": "an illegal pitching motion while runners are on base  ",
+      "answer": [
+        "balk"
+      ]
+    },
+    {
+      "question": "an extension at the end and at right angles to the main building  ",
+      "answer": [
+        "ell"
+      ]
+    },
+    {
+      "question": "resembling sculpture",
+      "answer": [
+        "modeled"
+      ]
+    },
+    {
+      "question": "the position of professor",
+      "answer": [
+        "professorship"
+      ]
+    },
+    {
+      "question": "an elaborate analytical or explanatory essay or discussion  ",
+      "answer": [
+        "disquisition"
+      ]
+    },
+    {
+      "question": "make chemically neutral",
+      "answer": [
+        "neutralize"
+      ]
+    },
+    {
+      "question": "(theology) being determined in advance",
+      "answer": [
+        "predestination"
+      ]
+    },
+    {
+      "question": "deductive reasoning in which a conclusion is derived from two premises  ",
+      "answer": [
+        "syllogism"
+      ]
+    },
+    {
+      "question": "without due formalities",
+      "answer": [
+        "unceremonious"
+      ]
+    },
+    {
+      "question": "screw thread on a gear with the teeth of a worm wheel or rack  ",
+      "answer": [
+        "worm"
+      ]
+    },
+    {
+      "question": "(of soil) soft and watery",
+      "answer": [
+        "boggy"
+      ]
+    },
+    {
+      "question": "a headlike protuberance on an organ or structure",
+      "answer": [
+        "caput"
+      ]
+    },
+    {
+      "question": "look down on with disdain",
+      "answer": [
+        "contemn"
+      ]
+    },
+    {
+      "question": "the work of using heat to smooth washed clothes in order to remove any wrinkles  ",
+      "answer": [
+        "ironing"
+      ]
+    },
+    {
+      "question": "the political orientation of those who hold that a republic is the best form of government  ",
+      "answer": [
+        "republicanism"
+      ]
+    },
+    {
+      "question": "in a righteous manner",
+      "answer": [
+        "righteously"
+      ]
+    },
+    {
+      "question": "a female tiger  ",
+      "answer": [
+        "tigress"
+      ]
+    },
+    {
+      "question": "the highest level or degree attainable",
+      "answer": [
+        "acme"
+      ]
+    },
+    {
+      "question": "morally obligatory",
+      "answer": [
+        "bounden"
+      ]
+    },
+    {
+      "question": "apparent validity  ",
+      "answer": [
+        "plausibility"
+      ]
+    },
+    {
+      "question": "having characteristics associated with women and considered undesirable in men",
+      "answer": [
+        "womanish"
+      ]
+    },
+    {
+      "question": "the trait of being rude and impertinent",
+      "answer": [
+        "crust"
+      ]
+    },
+    {
+      "question": "beautiful carriage  ",
+      "answer": [
+        "gracefulness"
+      ]
+    },
+    {
+      "question": "narcotic consisting of an alcohol solution of opium or any preparation in which opium is the main ingredient  ",
+      "answer": [
+        "laudanum"
+      ]
+    },
+    {
+      "question": "in a monotonous manner",
+      "answer": [
+        "monotonously"
+      ]
+    },
+    {
+      "question": "enclose with a dike",
+      "answer": [
+        "dike"
+      ]
+    },
+    {
+      "question": "of a region of the United States generally including the New England states",
+      "answer": [
+        "northeastern"
+      ]
+    },
+    {
+      "question": "in a wrathful manner",
+      "answer": [
+        "wrathfully"
+      ]
+    },
+    {
+      "question": "showing firm determination or purpose",
+      "answer": [
+        "resolutely"
+      ]
+    },
+    {
+      "question": "coils of worsted yarn  ",
+      "answer": [
+        "skein"
+      ]
+    },
+    {
+      "question": "the ability to change (or be changed) to fit changed circumstances  ",
+      "answer": [
+        "adaptability"
+      ]
+    },
+    {
+      "question": "process fast and efficiently",
+      "answer": [
+        "expedite"
+      ]
+    },
+    {
+      "question": "be at or take the helm of",
+      "answer": [
+        "helm"
+      ]
+    },
+    {
+      "question": "idyllically calm and peaceful",
+      "answer": [
+        "halcyon"
+      ]
+    },
+    {
+      "question": "take part in a riot",
+      "answer": [
+        "riot"
+      ]
+    },
+    {
+      "question": "(law) the intentional destruction of a document or an alteration of it that destroys its value as evidence  ",
+      "answer": [
+        "spoliation"
+      ]
+    },
+    {
+      "question": "the trail left by a person or an animal",
+      "answer": [
+        "spoor"
+      ]
+    },
+    {
+      "question": "laugh loudly and harshly  ",
+      "answer": [
+        "bray"
+      ]
+    },
+    {
+      "question": "hamper the action or progress of",
+      "answer": [
+        "hobble"
+      ]
+    },
+    {
+      "question": "not prominent or readily noticeable",
+      "answer": [
+        "inconspicuous"
+      ]
+    },
+    {
+      "question": "dance a quick dance with leaping and kicking motions  ",
+      "answer": [
+        "jig"
+      ]
+    },
+    {
+      "question": "small slender fish (to 8 inches) with body covered by bony plates",
+      "answer": [
+        "poacher"
+      ]
+    },
+    {
+      "question": "living or growing above the timber line",
+      "answer": [
+        "alpine"
+      ]
+    },
+    {
+      "question": "any of various rough thorny shrubs or vines  ",
+      "answer": [
+        "bramble"
+      ]
+    },
+    {
+      "question": "the act of singing popular songs in a sentimental manner  ",
+      "answer": [
+        "crooning"
+      ]
+    },
+    {
+      "question": "the activity of representing something by a special system of marks or characters  ",
+      "answer": [
+        "notation"
+      ]
+    },
+    {
+      "question": "rickettsial disease transmitted by body lice and characterized by skin rash and high fever  ",
+      "answer": [
+        "typhus"
+      ]
+    },
+    {
+      "question": "abounding with or resembling weeds",
+      "answer": [
+        "weedy"
+      ]
+    },
+    {
+      "question": "generator consisting of a coil (the armature) that rotates between the poles of an electromagnet (the field magnet) causing a current to flow in the armature  ",
+      "answer": [
+        "dynamo"
+      ]
+    },
+    {
+      "question": "a critical study (as of a writer's work)  ",
+      "answer": [
+        "examen"
+      ]
+    },
+    {
+      "question": "covered with beads of liquid",
+      "answer": [
+        "beaded"
+      ]
+    },
+    {
+      "question": "a long cigar with blunt ends  ",
+      "answer": [
+        "corona"
+      ]
+    },
+    {
+      "question": "a person who dispenses  ",
+      "answer": [
+        "dispenser"
+      ]
+    },
+    {
+      "question": "a woman who is engaged to be married  ",
+      "answer": [
+        "fiancee"
+      ]
+    },
+    {
+      "question": "in a musical manner",
+      "answer": [
+        "musically"
+      ]
+    },
+    {
+      "question": "(genetics) a segment of DNA that is involved in producing a polypeptide chain",
+      "answer": [
+        "gene"
+      ]
+    },
+    {
+      "question": "perform a stunt or stunts  ",
+      "answer": [
+        "stunt"
+      ]
+    },
+    {
+      "question": "small carnivorous mammal with short legs and elongated body and neck  ",
+      "answer": [
+        "weasel"
+      ]
+    },
+    {
+      "question": "of or relating to or determined by sociology",
+      "answer": [
+        "sociological"
+      ]
+    },
+    {
+      "question": "extreme hostility",
+      "answer": [
+        "virulence"
+      ]
+    },
+    {
+      "question": "a complaint uttered in a plaintive whining way  ",
+      "answer": [
+        "whimper"
+      ]
+    },
+    {
+      "question": "tenure by which land is held in fee simple or for life  ",
+      "answer": [
+        "freehold"
+      ]
+    },
+    {
+      "question": "the act of mastering or subordinating someone  ",
+      "answer": [
+        "mastery"
+      ]
+    },
+    {
+      "question": "firearm that is a double-barreled smoothbore shoulder weapon for firing shot at short ranges  ",
+      "answer": [
+        "shotgun"
+      ]
+    },
+    {
+      "question": "a confident assertive person who acts as instigator  ",
+      "answer": [
+        "aggressor"
+      ]
+    },
+    {
+      "question": "no longer sufficient",
+      "answer": [
+        "depleted"
+      ]
+    },
+    {
+      "question": "care for one's external appearance",
+      "answer": [
+        "groom"
+      ]
+    },
+    {
+      "question": "a common white or colorless mineral (hydrated calcium sulphate) used to make cements and plasters (especially plaster of Paris)  ",
+      "answer": [
+        "gypsum"
+      ]
+    },
+    {
+      "question": "a large cask especially one holding 63 gals  ",
+      "answer": [
+        "hogshead"
+      ]
+    },
+    {
+      "question": "of or relating to or dealing with philology  ",
+      "answer": [
+        "philological"
+      ]
+    },
+    {
+      "question": "skill in sailing  ",
+      "answer": [
+        "seamanship"
+      ]
+    },
+    {
+      "question": "a crane for moving material with dispatch as in loading and unloading ships  ",
+      "answer": [
+        "transporter"
+      ]
+    },
+    {
+      "question": "of or relating to a cadaver or corpse",
+      "answer": [
+        "cadaverous"
+      ]
+    },
+    {
+      "question": "musteline mammal of northern Eurasia  ",
+      "answer": [
+        "glutton"
+      ]
+    },
+    {
+      "question": "having a feeling of home",
+      "answer": [
+        "homelike"
+      ]
+    },
+    {
+      "question": "of or relating to or inside the intestines",
+      "answer": [
+        "intestinal"
+      ]
+    },
+    {
+      "question": "the act of ending something",
+      "answer": [
+        "termination"
+      ]
+    },
+    {
+      "question": "abnormally distended especially by fluids or gas",
+      "answer": [
+        "puffy"
+      ]
+    },
+    {
+      "question": "a person disposed to take a favorable view of things  ",
+      "answer": [
+        "optimist"
+      ]
+    },
+    {
+      "question": "make impure",
+      "answer": [
+        "pollute"
+      ]
+    },
+    {
+      "question": "suggestive of a thyroid disorder",
+      "answer": [
+        "thyroid"
+      ]
+    },
+    {
+      "question": "attach a suffix to",
+      "answer": [
+        "suffix"
+      ]
+    },
+    {
+      "question": "not cut",
+      "answer": [
+        "uncut"
+      ]
+    },
+    {
+      "question": "relating to an equinox (when the lengths of night and day are equal)  ",
+      "answer": [
+        "equinoctial"
+      ]
+    },
+    {
+      "question": "of or relating to walls",
+      "answer": [
+        "mural"
+      ]
+    },
+    {
+      "question": "seating on the main floor between the orchestra and the parquet circle  ",
+      "answer": [
+        "parquet"
+      ]
+    },
+    {
+      "question": "lacking a sense of responsibility  ",
+      "answer": [
+        "unreliable"
+      ]
+    },
+    {
+      "question": "in an expectant manner",
+      "answer": [
+        "expectantly"
+      ]
+    },
+    {
+      "question": "protesting  ",
+      "answer": [
+        "protestant"
+      ]
+    },
+    {
+      "question": "in the manner of something that has become a byword",
+      "answer": [
+        "proverbially"
+      ]
+    },
+    {
+      "question": "an Italian courtesy title for an unmarried woman",
+      "answer": [
+        "signorina"
+      ]
+    },
+    {
+      "question": "large metal container in which coal or charcoal is burned",
+      "answer": [
+        "brazier"
+      ]
+    },
+    {
+      "question": "detailed critical analysis or examination one part at a time (as of a literary work)  ",
+      "answer": [
+        "dissection"
+      ]
+    },
+    {
+      "question": "markedly effective as if by emotional pressure",
+      "answer": [
+        "impelling"
+      ]
+    },
+    {
+      "question": "manual stimulation of the genital organs (of yourself or another) for sexual pleasure  ",
+      "answer": [
+        "masturbation"
+      ]
+    },
+    {
+      "question": "worthless or oversimplified ideas  ",
+      "answer": [
+        "pap"
+      ]
+    },
+    {
+      "question": "a slight or superficial understanding of a subject  ",
+      "answer": [
+        "smattering"
+      ]
+    },
+    {
+      "question": "unwelcome and unwanted",
+      "answer": [
+        "uninvited"
+      ]
+    },
+    {
+      "question": "fishing with a hook and line (and usually a pole)  ",
+      "answer": [
+        "angling"
+      ]
+    },
+    {
+      "question": "acute abdominal pain (especially in infants)  ",
+      "answer": [
+        "colic"
+      ]
+    },
+    {
+      "question": "toward the bottom of a hill",
+      "answer": [
+        "downhill"
+      ]
+    },
+    {
+      "question": "an Italian title of respect for a man",
+      "answer": [
+        "signore"
+      ]
+    },
+    {
+      "question": "the act of describing distinctive characteristics or essential features",
+      "answer": [
+        "characterization"
+      ]
+    },
+    {
+      "question": "extreme mental retardation  ",
+      "answer": [
+        "idiocy"
+      ]
+    },
+    {
+      "question": "a disrespectful act  ",
+      "answer": [
+        "irreverence"
+      ]
+    },
+    {
+      "question": "used incorrectly or carelessly or for an improper purpose",
+      "answer": [
+        "misused"
+      ]
+    },
+    {
+      "question": "a musical composition for four performers  ",
+      "answer": [
+        "quartet"
+      ]
+    },
+    {
+      "question": "emotionally upset",
+      "answer": [
+        "unstrung"
+      ]
+    },
+    {
+      "question": "habitually disposed to disobedience and opposition  ",
+      "answer": [
+        "froward"
+      ]
+    },
+    {
+      "question": "reduce (a sail) by taking in a reef  ",
+      "answer": [
+        "reef"
+      ]
+    },
+    {
+      "question": "free from physical or moral spots or stains",
+      "answer": [
+        "unblemished"
+      ]
+    },
+    {
+      "question": "a musician who is a consummate master of technique and artistry  ",
+      "answer": [
+        "virtuoso"
+      ]
+    },
+    {
+      "question": "characteristic of acting or a stage performance",
+      "answer": [
+        "histrionic"
+      ]
+    },
+    {
+      "question": "a sudden outburst of cheers",
+      "answer": [
+        "salvo"
+      ]
+    },
+    {
+      "question": "a woman chaperon  ",
+      "answer": [
+        "duenna"
+      ]
+    },
+    {
+      "question": "the office of admiral  ",
+      "answer": [
+        "admiralty"
+      ]
+    },
+    {
+      "question": "a horse-drawn carriage having four wheels",
+      "answer": [
+        "barouche"
+      ]
+    },
+    {
+      "question": "sew together loosely, with large stitches",
+      "answer": [
+        "baste"
+      ]
+    },
+    {
+      "question": "in a decent and morally reputable manner",
+      "answer": [
+        "respectably"
+      ]
+    },
+    {
+      "question": "the property of being bent or deflected  ",
+      "answer": [
+        "deflection"
+      ]
+    },
+    {
+      "question": "a protective headgear made of hard material to resist blows  ",
+      "answer": [
+        "helmet"
+      ]
+    },
+    {
+      "question": "like the discordant ringing of nonmusical metallic objects striking together",
+      "answer": [
+        "jangling"
+      ]
+    },
+    {
+      "question": "a man who takes advantage of women  ",
+      "answer": [
+        "seducer"
+      ]
+    },
+    {
+      "question": "become coke",
+      "answer": [
+        "coke"
+      ]
+    },
+    {
+      "question": "elevated open grassland in southern Africa  ",
+      "answer": [
+        "veld"
+      ]
+    },
+    {
+      "question": "depression resulting from an undermining of your morale  ",
+      "answer": [
+        "demoralization"
+      ]
+    },
+    {
+      "question": "the body of enfranchised citizens",
+      "answer": [
+        "electorate"
+      ]
+    },
+    {
+      "question": "a complete and impressive array  ",
+      "answer": [
+        "panoply"
+      ]
+    },
+    {
+      "question": "relating to the use of or having the nature of an interrogation  ",
+      "answer": [
+        "interrogative"
+      ]
+    },
+    {
+      "question": "make a characteristic sound, of a horse  ",
+      "answer": [
+        "neigh"
+      ]
+    },
+    {
+      "question": "beat through cleverness and wit",
+      "answer": [
+        "outwit"
+      ]
+    },
+    {
+      "question": "a mutual promise of a couple not to date anyone else",
+      "answer": [
+        "pinning"
+      ]
+    },
+    {
+      "question": "a detailed and documented treatise on a particular subject  ",
+      "answer": [
+        "monograph"
+      ]
+    },
+    {
+      "question": "the internal supporting structure that gives an artifact its shape",
+      "answer": [
+        "skeleton"
+      ]
+    },
+    {
+      "question": "cause to lose courage",
+      "answer": [
+        "daunt"
+      ]
+    },
+    {
+      "question": "(law) the unlawful act of capturing and carrying away a person against their will and holding them in false imprisonment  ",
+      "answer": [
+        "kidnapping"
+      ]
+    },
+    {
+      "question": "(pathology) a firm abnormal elevated blemish on the skin",
+      "answer": [
+        "wart"
+      ]
+    },
+    {
+      "question": "the act of showing affection  ",
+      "answer": [
+        "endearment"
+      ]
+    },
+    {
+      "question": "give out (breath or an odor)",
+      "answer": [
+        "exhale"
+      ]
+    },
+    {
+      "question": "a supplement to a will",
+      "answer": [
+        "codicil"
+      ]
+    },
+    {
+      "question": "immediately after this",
+      "answer": [
+        "hereupon"
+      ]
+    },
+    {
+      "question": "sing and play for somebody",
+      "answer": [
+        "serenade"
+      ]
+    },
+    {
+      "question": "convert to compost",
+      "answer": [
+        "compost"
+      ]
+    },
+    {
+      "question": "having the back and shoulders rounded",
+      "answer": [
+        "hunched"
+      ]
+    },
+    {
+      "question": "proceed or issue forth, as from a source",
+      "answer": [
+        "emanate"
+      ]
+    },
+    {
+      "question": "in an inaccurate manner",
+      "answer": [
+        "incorrectly"
+      ]
+    },
+    {
+      "question": "a stately piece of music composed for dancing the minuet",
+      "answer": [
+        "minuet"
+      ]
+    },
+    {
+      "question": "one who agitates",
+      "answer": [
+        "agitator"
+      ]
+    },
+    {
+      "question": "the act of pairing a male and female for reproductive purposes",
+      "answer": [
+        "coupling"
+      ]
+    },
+    {
+      "question": "of an optical system (e.g. eye or opera glasses) adjusted to produce a clear image  ",
+      "answer": [
+        "focused"
+      ]
+    },
+    {
+      "question": "a building occupied by a state legislature  ",
+      "answer": [
+        "capitol"
+      ]
+    },
+    {
+      "question": "characteristic of Cockneys or their dialect",
+      "answer": [
+        "cockney"
+      ]
+    },
+    {
+      "question": "speak with a lisp  ",
+      "answer": [
+        "lisp"
+      ]
+    },
+    {
+      "question": "the act of joining together as one",
+      "answer": [
+        "merging"
+      ]
+    },
+    {
+      "question": "occurring at or dependent on a particular season",
+      "answer": [
+        "seasonal"
+      ]
+    },
+    {
+      "question": "tie with a tether",
+      "answer": [
+        "tether"
+      ]
+    },
+    {
+      "question": "a plant where beer is brewed by fermentation  ",
+      "answer": [
+        "brewery"
+      ]
+    },
+    {
+      "question": "(ancient Rome) a professional combatant or a captive who entertained the public by engaging in mortal combat  ",
+      "answer": [
+        "gladiator"
+      ]
+    },
+    {
+      "question": "made grainy or formed into granules",
+      "answer": [
+        "granulated"
+      ]
+    },
+    {
+      "question": "carelessly failing to exercise proper caution",
+      "answer": [
+        "incautious"
+      ]
+    },
+    {
+      "question": "a somewhat flat reddish-orange loose skinned citrus of China  ",
+      "answer": [
+        "mandarin"
+      ]
+    },
+    {
+      "question": "part of the perianth that is usually brightly colored  ",
+      "answer": [
+        "petal"
+      ]
+    },
+    {
+      "question": "not carefully reworked or perfected or made smooth by polishing",
+      "answer": [
+        "unpolished"
+      ]
+    },
+    {
+      "question": "a large fleet  ",
+      "answer": [
+        "armada"
+      ]
+    },
+    {
+      "question": "the enclosing frame around a door or window opening",
+      "answer": [
+        "casing"
+      ]
+    },
+    {
+      "question": "a political theory favoring collectivism in a classless society  ",
+      "answer": [
+        "communism"
+      ]
+    },
+    {
+      "question": "having a sophisticated charm",
+      "answer": [
+        "debonair"
+      ]
+    },
+    {
+      "question": "to an inconceivable degree",
+      "answer": [
+        "inconceivably"
+      ]
+    },
+    {
+      "question": "befitting a woman of good breeding",
+      "answer": [
+        "ladylike"
+      ]
+    },
+    {
+      "question": "without profit or reward",
+      "answer": [
+        "profitless"
+      ]
+    },
+    {
+      "question": "the quality of being without practical use  ",
+      "answer": [
+        "worthlessness"
+      ]
+    },
+    {
+      "question": "free from obscurity and easy to understand",
+      "answer": [
+        "clarity"
+      ]
+    },
+    {
+      "question": "brought into equipoise by means of a weight or force that offsets another  ",
+      "answer": [
+        "counterbalanced"
+      ]
+    },
+    {
+      "question": "showing frivolous or superficial interest",
+      "answer": [
+        "dilettante"
+      ]
+    },
+    {
+      "question": "change into a vapor",
+      "answer": [
+        "evaporate"
+      ]
+    },
+    {
+      "question": "in a metaphorical manner",
+      "answer": [
+        "metaphorically"
+      ]
+    },
+    {
+      "question": "a state or territory partly controlled by (but not a possession of) a stronger state but autonomous in internal affairs",
+      "answer": [
+        "protectorate"
+      ]
+    },
+    {
+      "question": "dressed in a uniform",
+      "answer": [
+        "uniformed"
+      ]
+    },
+    {
+      "question": "showing unselfish concern for the welfare of others  ",
+      "answer": [
+        "altruistic"
+      ]
+    },
+    {
+      "question": "a plant with a weak stem that derives support from climbing, twining, or creeping along a surface  ",
+      "answer": [
+        "vine"
+      ]
+    },
+    {
+      "question": "unaged colorless liquor originating in Russia  ",
+      "answer": [
+        "vodka"
+      ]
+    },
+    {
+      "question": "dress with a corset  ",
+      "answer": [
+        "corset"
+      ]
+    },
+    {
+      "question": "a signal to get up in the morning",
+      "answer": [
+        "reveille"
+      ]
+    },
+    {
+      "question": "hunt fowl in the forest  ",
+      "answer": [
+        "fowl"
+      ]
+    },
+    {
+      "question": "showing little if any change",
+      "answer": [
+        "static"
+      ]
+    },
+    {
+      "question": "early testing stage of a software or hardware product",
+      "answer": [
+        "alpha"
+      ]
+    },
+    {
+      "question": "the ability to read and write  ",
+      "answer": [
+        "literacy"
+      ]
+    },
+    {
+      "question": "in a morbid manner or to a morbid degree",
+      "answer": [
+        "morbidly"
+      ]
+    },
+    {
+      "question": "hypothetical remedy for all ills or diseases",
+      "answer": [
+        "panacea"
+      ]
+    },
+    {
+      "question": "communicating at a distance by electric transmission over wire  ",
+      "answer": [
+        "telegraphy"
+      ]
+    },
+    {
+      "question": "imprisonment (especially for a long time)  ",
+      "answer": [
+        "durance"
+      ]
+    },
+    {
+      "question": "the person who steers a ship  ",
+      "answer": [
+        "helmsman"
+      ]
+    },
+    {
+      "question": "in a hysterical manner",
+      "answer": [
+        "hysterically"
+      ]
+    },
+    {
+      "question": "a person who expects the worst  ",
+      "answer": [
+        "pessimist"
+      ]
+    },
+    {
+      "question": "a musical composition of 3 or 4 movements of contrasting forms  ",
+      "answer": [
+        "sonata"
+      ]
+    },
+    {
+      "question": "a silky-coated sheepdog with a long ruff and long narrow head developed in Scotland  ",
+      "answer": [
+        "collie"
+      ]
+    },
+    {
+      "question": "a lack of politeness",
+      "answer": [
+        "discourtesy"
+      ]
+    },
+    {
+      "question": "the act of emerging  ",
+      "answer": [
+        "emergence"
+      ]
+    },
+    {
+      "question": "the state of not being ripe  ",
+      "answer": [
+        "greenness"
+      ]
+    },
+    {
+      "question": "have a bowel movement",
+      "answer": [
+        "stool"
+      ]
+    },
+    {
+      "question": "not subject to a condition",
+      "answer": [
+        "unconditionally"
+      ]
+    },
+    {
+      "question": "something won (especially money)  ",
+      "answer": [
+        "winnings"
+      ]
+    },
+    {
+      "question": "any of several small active brown birds of the northern hemisphere with short upright tails",
+      "answer": [
+        "wren"
+      ]
+    },
+    {
+      "question": "grain ground into flour  ",
+      "answer": [
+        "buckwheat"
+      ]
+    },
+    {
+      "question": "in a quizzical and questioning manner",
+      "answer": [
+        "questioningly"
+      ]
+    },
+    {
+      "question": "subject to bitter verbal abuse  ",
+      "answer": [
+        "vitriol"
+      ]
+    },
+    {
+      "question": "one of two basic subdivisions of a tribe  ",
+      "answer": [
+        "moiety"
+      ]
+    },
+    {
+      "question": "(usually followed by `to') not affected by a given influence",
+      "answer": [
+        "immune"
+      ]
+    },
+    {
+      "question": "a state of extreme poverty or destitution",
+      "answer": [
+        "indigence"
+      ]
+    },
+    {
+      "question": "calculated to please or gain favor",
+      "answer": [
+        "ingratiating"
+      ]
+    },
+    {
+      "question": "visible",
+      "answer": [
+        "ocular"
+      ]
+    },
+    {
+      "question": "a float supporting a seaplane  ",
+      "answer": [
+        "pontoon"
+      ]
+    },
+    {
+      "question": "powdery starch from certain sago palms",
+      "answer": [
+        "sago"
+      ]
+    },
+    {
+      "question": "tenants of an estate considered as a group  ",
+      "answer": [
+        "tenantry"
+      ]
+    },
+    {
+      "question": "a concluding action  ",
+      "answer": [
+        "completion"
+      ]
+    }
+  ]
+}

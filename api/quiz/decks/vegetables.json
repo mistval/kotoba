@@ -1,0 +1,755 @@
+{
+  "uniqueId": "vegetables",
+  "name": "Vegetables & Fruit Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below fruit or vegetable name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "commentFieldName": "Meaning",
+  "description": "[Data provided by okami#3845]",
+  "cards": [
+    {
+      "question": "通草",
+      "answer": [
+        "あけび"
+      ],
+      "meaning": "chocolate-vine (Akebia quinata), fiveleaf, fiveleaf akebia"
+    },
+    {
+      "question": "木通",
+      "answer": [
+        "あけび"
+      ],
+      "meaning": "chocolate-vine (Akebia quinata), fiveleaf, fiveleaf akebia"
+    },
+    {
+      "question": "鰐梨",
+      "answer": [
+        "わになし"
+      ],
+      "meaning": "avocado (Persea americana), alligator pear"
+    },
+    {
+      "question": "杏",
+      "answer": [
+        "あんず"
+      ],
+      "meaning": "apricot (Prunus armeniaca)"
+    },
+    {
+      "question": "杏子",
+      "answer": [
+        "あんず"
+      ],
+      "meaning": "apricot (Prunus armeniaca)"
+    },
+    {
+      "question": "苺",
+      "answer": [
+        "いちご"
+      ],
+      "meaning": "strawberry (esp. the garden strawberry, Fragaria x ananassa)"
+    },
+    {
+      "question": "無花果",
+      "answer": [
+        "いちじく",
+        "いちぢく",
+        "いちじゅく",
+        "むかか"
+      ],
+      "meaning": "common fig (Ficus carica), fig, fig tree"
+    },
+    {
+      "question": "梅",
+      "answer": [
+        "うめ",
+        "むめ"
+      ],
+      "meaning": "Japanese apricot (Prunus mume), Chinese plum"
+    },
+    {
+      "question": "柿",
+      "answer": [
+        "かき",
+        "こけら"
+      ],
+      "meaning": "kaki, Japanese persimmon (Diospyros kaki), chopped wood, wood chips"
+    },
+    {
+      "question": "巨峰",
+      "answer": [
+        "きょほう"
+      ],
+      "meaning": "gigantic peak"
+    },
+    {
+      "question": "金柑",
+      "answer": [
+        "きんかん"
+      ],
+      "meaning": "kumquat (Fortunella spp.), cumquat"
+    },
+    {
+      "question": "栗",
+      "answer": [
+        "くり"
+      ],
+      "meaning": "Japanese chestnut (Castanea crenata)"
+    },
+    {
+      "question": "桜桃",
+      "answer": [
+        "さくらんぼ",
+        "さくらんぼう",
+        "おうとう",
+        "ゆすらうめ",
+        "ゆすら"
+      ],
+      "meaning": "cherry fruit (esp. sweet cherry, Prunus avium), cherry (tree; esp. sweet cherry or Nanking cherry), Nanking cherry (Prunus tomentosa), downy cherry"
+    },
+    {
+      "question": "石榴",
+      "answer": [
+        "ざくろ",
+        "せきりゅう",
+        "じゃくろ"
+      ],
+      "meaning": "pomegranate (Punica granatum)"
+    },
+    {
+      "question": "李",
+      "answer": [
+        "すもも"
+      ],
+      "meaning": "Japanese plum (Prunus salicina), Chinese plum"
+    },
+    {
+      "question": "梨",
+      "answer": [
+        "なし"
+      ],
+      "meaning": "nashi (Pyrus pyrifolia, esp. var. culta), Japanese pear, Asian pear, sand pear, apple pear"
+    },
+    {
+      "question": "鳳梨",
+      "answer": [
+        "ほうり"
+      ],
+      "meaning": "pineapple"
+    },
+    {
+      "question": "八朔",
+      "answer": [
+        "はっさく"
+      ],
+      "meaning": "Hassaku orange (Citrus hassaku)"
+    },
+    {
+      "question": "甘蕉",
+      "answer": [
+        "かんしょう"
+      ],
+      "meaning": "banana"
+    },
+    {
+      "question": "実芭蕉",
+      "answer": [
+        "みばしょう"
+      ],
+      "meaning": "banana"
+    },
+    {
+      "question": "木瓜",
+      "answer": [
+        "ぼけ",
+        "ぼっか",
+        "もけ",
+        "もっこう",
+        "もこう"
+      ],
+      "meaning": "Japanese quince (Chaenomeles speciosa), flowering quince, family crest based on a japonica flower"
+    },
+    {
+      "question": "枇杷",
+      "answer": [
+        "びわ"
+      ],
+      "meaning": "loquat (Eriobotrya japonica), Japanese medlar"
+    },
+    {
+      "question": "葡萄",
+      "answer": [
+        "ぶどう",
+        "えび"
+      ],
+      "meaning": "grape, grapevine"
+    },
+    {
+      "question": "蜜柑",
+      "answer": [
+        "みかん"
+      ],
+      "meaning": "mandarin orange (esp. the satsuma mandarin, Citrus unshiu)"
+    },
+    {
+      "question": "桃",
+      "answer": [
+        "もも"
+      ],
+      "meaning": "peach (Prunus persica)"
+    },
+    {
+      "question": "柚子",
+      "answer": [
+        "ゆず"
+      ],
+      "meaning": "yuzu (Citrus ichangensis x C. reticulata)"
+    },
+    {
+      "question": "茘枝",
+      "answer": [
+        "れいし"
+      ],
+      "meaning": "litchi (Nephelium litchi), lychee, lichee, litchi nut"
+    },
+    {
+      "question": "林檎",
+      "answer": [
+        "りんご",
+        "りゅうごう",
+        "りんきん",
+        "りんき"
+      ],
+      "meaning": "apple (fruit)"
+    },
+    {
+      "question": "檸檬",
+      "answer": [
+        "れもん"
+      ],
+      "meaning": "lemon"
+    },
+    {
+      "question": "小豆",
+      "answer": [
+        "あずき",
+        "しょうず"
+      ],
+      "meaning": "adzuki bean (Vigna angularis)"
+    },
+    {
+      "question": "隠元豆",
+      "answer": [
+        "いんげんまめ"
+      ],
+      "meaning": "common bean (Phaseolus vulgaris), kidney bean, navy bean, wax bean, green bean, string bean, French bean"
+    },
+    {
+      "question": "榎茸",
+      "answer": [
+        "えのきたけ",
+        "えのきだけ"
+      ],
+      "meaning": "enoki mushroom (Flammulina velutipes), winter mushroom, velvet shank, enokitake, enokidake"
+    },
+    {
+      "question": "蕪",
+      "answer": [
+        "かぶ",
+        "かぶら",
+        "かぶな"
+      ],
+      "meaning": "turnip (Brassica rapa)"
+    },
+    {
+      "question": "南瓜",
+      "answer": [
+        "かぼちゃ",
+        "ぼうぶら",
+        "なんか"
+      ],
+      "meaning": "pumpkin (Cucurbita sp.), squash"
+    },
+    {
+      "question": "花椰菜",
+      "answer": [
+        "はなやさい"
+      ],
+      "meaning": "cauliflower"
+    },
+    {
+      "question": "木耳",
+      "answer": [
+        "きくらげ"
+      ],
+      "meaning": "cloud ear mushroom (Auricularia auricula-judae), wood ear mushroom, Jew's ear mushroom"
+    },
+    {
+      "question": "甘藍",
+      "answer": [
+        "かんらん"
+      ],
+      "meaning": "cabbage"
+    },
+    {
+      "question": "胡瓜",
+      "answer": [
+        "きゅうり"
+      ],
+      "meaning": "cucumber (Cucumis sativus)"
+    },
+    {
+      "question": "青豌豆",
+      "answer": [
+        "あおえんどう"
+      ],
+      "meaning": "green peas"
+    },
+    {
+      "question": "慈姑",
+      "answer": [
+        "くわい"
+      ],
+      "meaning": "Sagittaria trifolia var. edulis (edible variant of threeleaf arrowhead)"
+    },
+    {
+      "question": "苦瓜",
+      "answer": [
+        "にがうり"
+      ],
+      "meaning": "bitter melon (Momordica charantia), bitter gourd"
+    },
+    {
+      "question": "胡椒",
+      "answer": [
+        "こしょう"
+      ],
+      "meaning": "pepper"
+    },
+    {
+      "question": "牛蒡",
+      "answer": [
+        "ごぼう",
+        "ごんぼ",
+        "うまふぶき"
+      ],
+      "meaning": "great burdock (Arctium lappa)"
+    },
+    {
+      "question": "胡麻",
+      "answer": [
+        "ごま"
+      ],
+      "meaning": "sesame seeds"
+    },
+    {
+      "question": "薩摩芋",
+      "answer": [
+        "さつまいも"
+      ],
+      "meaning": "sweet potato (Ipomoea batatas)"
+    },
+    {
+      "question": "甘藷",
+      "answer": [
+        "さつまいも",
+        "かんしょ"
+      ],
+      "meaning": "sweet potato (Ipomoea batatas), sweet potato"
+    },
+    {
+      "question": "里芋",
+      "answer": [
+        "さといも"
+      ],
+      "meaning": "taro (Colocasia esculenta), dasheen, eddo"
+    },
+    {
+      "question": "莢隠元",
+      "answer": [
+        "さやいんげん"
+      ],
+      "meaning": "French beans, string beans"
+    },
+    {
+      "question": "莢豌豆",
+      "answer": [
+        "さやえんどう"
+      ],
+      "meaning": "peas, garden peas, field peas"
+    },
+    {
+      "question": "山椒",
+      "answer": [
+        "さんしょう",
+        "さんしょ"
+      ],
+      "meaning": "Japanese pepper (species of Sichuan pepper, Zanthoxylum piperitum), Japanese prickly ash"
+    },
+    {
+      "question": "椎茸",
+      "answer": [
+        "しいたけ"
+      ],
+      "meaning": "shiitake mushroom (Lentinula edodes)"
+    },
+    {
+      "question": "香蕈",
+      "answer": [
+        "しいたけ"
+      ],
+      "meaning": "shiitake mushroom (Lentinula edodes)"
+    },
+    {
+      "question": "紫蘇",
+      "answer": [
+        "しそ",
+        "ちそ"
+      ],
+      "meaning": "shiso (Perilla frutescens var. crispa), perilla, beefsteak plant"
+    },
+    {
+      "question": "自然薯",
+      "answer": [
+        "じねんじょ"
+      ],
+      "meaning": "Japanese yam (Dioscorea japonica)"
+    },
+    {
+      "question": "湿地",
+      "answer": [
+        "しっち",
+        "しめじ"
+      ],
+      "meaning": "wetland, wetlands, Lyophyllum shimeji (species of edible mushroom)"
+    },
+    {
+      "question": "生姜",
+      "answer": [
+        "しょうが",
+        "しょうきょう"
+      ],
+      "meaning": "ginger (Zingiber officinale), dried ginger root (trad. medicine)"
+    },
+    {
+      "question": "西瓜",
+      "answer": [
+        "すいか"
+      ],
+      "meaning": "watermelon (Citrullus lanatus)"
+    },
+    {
+      "question": "薇",
+      "answer": [
+        "ぜんまい"
+      ],
+      "meaning": "royal fern (Osmunda japonica), flowering fern, osmund, fiddlehead fern"
+    },
+    {
+      "question": "空豆",
+      "answer": [
+        "そらまめ"
+      ],
+      "meaning": "broad bean (Vicia faba), horse bean, fava bean"
+    },
+    {
+      "question": "蚕豆",
+      "answer": [
+        "そらまめ"
+      ],
+      "meaning": "broad bean (Vicia faba), horse bean, fava bean"
+    },
+    {
+      "question": "大根",
+      "answer": [
+        "だいこん",
+        "だいこ",
+        "おおね"
+      ],
+      "meaning": "daikon (variety of large white Oriental radish, Raphanus sativus var. longipinnatus), root, source, origin, basis"
+    },
+    {
+      "question": "大豆",
+      "answer": [
+        "だいず"
+      ],
+      "meaning": "soya bean (Glycine max), soybean, soy"
+    },
+    {
+      "question": "筍",
+      "answer": [
+        "たけのこ",
+        "たかんな",
+        "たかむな",
+        "たこうな"
+      ],
+      "meaning": "bamboo shoot"
+    },
+    {
+      "question": "笋",
+      "answer": [
+        "たけのこ",
+        "たかんな",
+        "たかむな",
+        "たこうな"
+      ],
+      "meaning": "bamboo shoot"
+    },
+    {
+      "question": "玉葱",
+      "answer": [
+        "たまねぎ"
+      ],
+      "meaning": "onion (Allium cepa)"
+    },
+    {
+      "question": "青梗菜",
+      "answer": [
+        "チンゲンサイ",
+        "ちんげんさい",
+        "チンゲンさい"
+      ],
+      "meaning": "bok-choy (Brassica rapa var. chinensis), Chinese cabbage, bok choi, pak choi"
+    },
+    {
+      "question": "唐辛子",
+      "answer": [
+        "とうがらし",
+        "とんがらし"
+      ],
+      "meaning": "capsicum (Capsicum annuum, esp. the cultivated chili peppers), chili pepper (chile, chilli), cayenne, red pepper, Chili pepper"
+    },
+    {
+      "question": "蕃椒",
+      "answer": [
+        "とうがらし",
+        "ばんしょう"
+      ],
+      "meaning": "capsicum (Capsicum annuum, esp. the cultivated chili peppers), chili pepper (chile, chilli), cayenne, red pepper"
+    },
+    {
+      "question": "冬瓜",
+      "answer": [
+        "とうがん",
+        "とうが"
+      ],
+      "meaning": "wax gourd (Benincasa hispida), ash gourd, white gourd, winter melon"
+    },
+    {
+      "question": "玉蜀黍",
+      "answer": [
+        "とうもろこし"
+      ],
+      "meaning": "corn (Zea mays), maize"
+    },
+    {
+      "question": "蕃茄",
+      "answer": [
+        "ばんか"
+      ],
+      "meaning": "tomato (Solanum lycopersicum)"
+    },
+    {
+      "question": "赤茄子",
+      "answer": [
+        "あかなす"
+      ],
+      "meaning": "Chinese scarlet eggplant (Solanum integrifolium), tomato-fruit eggplant"
+    },
+    {
+      "question": "茄子",
+      "answer": [
+        "なす",
+        "なすび"
+      ],
+      "meaning": "eggplant (Solanum melongena), aubergine"
+    },
+    {
+      "question": "韮",
+      "answer": [
+        "にら",
+        "みら",
+        "かみら"
+      ],
+      "meaning": "Chinese chive, garlic chive (Allium tuberosum)"
+    },
+    {
+      "question": "人参",
+      "answer": [
+        "にんじん"
+      ],
+      "meaning": "carrot (Daucus carota)"
+    },
+    {
+      "question": "胡蘿蔔",
+      "answer": [
+        "こらふ"
+      ],
+      "meaning": "carrot"
+    },
+    {
+      "question": "大蒜",
+      "answer": [
+        "にんにく"
+      ],
+      "meaning": "garlic (Allium sativum)"
+    },
+    {
+      "question": "葫",
+      "answer": [
+        "にんにく",
+        "ひる"
+      ],
+      "meaning": "garlic (Allium sativum), strong-smelling edible plant (esp. perennials of the family Liliaceae, e.g. Welsh onion, garlic, wild rocambole, etc.)"
+    },
+    {
+      "question": "葱",
+      "answer": [
+        "ねぎ",
+        "き"
+      ],
+      "meaning": "Welsh onion (species of scallion, Allium fistulosum), green onion, spring onion"
+    },
+    {
+      "question": "白菜",
+      "answer": [
+        "はくさい"
+      ],
+      "meaning": "Chinese cabbage (Brassica campestris var. amplexicaulis), white rape, bok choy, pak choi"
+    },
+    {
+      "question": "和蘭芹",
+      "answer": [
+        "オランダぜり",
+        "おらんだぜり"
+      ],
+      "meaning": "parsley (Petroselinum crispum)"
+    },
+    {
+      "question": "馬鈴薯",
+      "answer": [
+        "ばれいしょ"
+      ],
+      "meaning": "potato (Solanum tuberosum)"
+    },
+    {
+      "question": "葫蘆",
+      "answer": [
+        "ころ"
+      ],
+      "meaning": "calabash (Lagenaria siceraria)"
+    },
+    {
+      "question": "瓢箪",
+      "answer": [
+        "ひょうたん"
+      ],
+      "meaning": "gourd, calabash (Lagenaria siceraria var. gourda)"
+    },
+    {
+      "question": "蕗",
+      "answer": [
+        "ふき",
+        "ふふき"
+      ],
+      "meaning": "giant butterbur (Petasites japonicus), Japanese sweet coltsfoot"
+    },
+    {
+      "question": "糸瓜",
+      "answer": [
+        "へちま"
+      ],
+      "meaning": "sponge gourd (Luffa aegyptiaca), Egyptian cucumber, Vietnamese luffa, dishrag gourd"
+    },
+    {
+      "question": "天糸瓜",
+      "answer": [
+        "へちま"
+      ],
+      "meaning": "sponge gourd (Luffa aegyptiaca), Egyptian cucumber, Vietnamese luffa, dishrag gourd"
+    },
+    {
+      "question": "菠薐草",
+      "answer": [
+        "ほうれんそう"
+      ],
+      "meaning": "spinach"
+    },
+    {
+      "question": "法蓮草",
+      "answer": [
+        "ほうれんそう"
+      ],
+      "meaning": "spinach"
+    },
+    {
+      "question": "鳳蓮草",
+      "answer": [
+        "ほうれんそう"
+      ],
+      "meaning": "spinach"
+    },
+    {
+      "question": "豆",
+      "answer": [
+        "まめ"
+      ],
+      "meaning": "legume (esp. edible legumes or their seeds, such as beans, peas, pulses, etc.), beans, peas"
+    },
+    {
+      "question": "茗荷",
+      "answer": [
+        "みょうが"
+      ],
+      "meaning": "Japanese ginger (Zingiber mioga)"
+    },
+    {
+      "question": "辣韮",
+      "answer": [
+        "らっきょう",
+        "らっきょ"
+      ],
+      "meaning": "Japanese leek (Allium chinense), Chinese onion"
+    },
+    {
+      "question": "薤",
+      "answer": [
+        "らっきょう",
+        "らっきょ"
+      ],
+      "meaning": "Japanese leek (Allium chinense), Chinese onion"
+    },
+    {
+      "question": "萵苣",
+      "answer": [
+        "ちしゃ",
+        "ちさ"
+      ],
+      "meaning": "lettuce"
+    },
+    {
+      "question": "蓮根",
+      "answer": [
+        "れんこん",
+        "はすね"
+      ],
+      "meaning": "lotus root"
+    },
+    {
+      "question": "山葵",
+      "answer": [
+        "わさび"
+      ],
+      "meaning": "wasabi (Wasabia japonica)"
+    }
+  ]
+}

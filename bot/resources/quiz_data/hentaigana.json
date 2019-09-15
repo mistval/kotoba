@@ -1,0 +1,2334 @@
+{
+  "uniqueId": "hentaigana",
+  "name": "Hentaigana Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading in hiragana or romaji!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "HENTAIGANA_COMMENT",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Origin character",
+  "cards": [
+    {
+      "question": "𛀂",
+      "answer": [
+        "あ",
+        "a"
+      ],
+      "meaning": "安"
+    },
+    {
+      "question": "𛀅",
+      "answer": [
+        "あ",
+        "a",
+        "を",
+        "wo"
+      ],
+      "meaning": "惡"
+    },
+    {
+      "question": "𛀃",
+      "answer": [
+        "あ",
+        "a"
+      ],
+      "meaning": "愛"
+    },
+    {
+      "question": "𛀄",
+      "answer": [
+        "あ",
+        "a"
+      ],
+      "meaning": "阿"
+    },
+    {
+      "question": "𛀆",
+      "answer": [
+        "い",
+        "i",
+        "yi"
+      ],
+      "meaning": "以"
+    },
+    {
+      "question": "𛀇",
+      "answer": [
+        "い",
+        "i"
+      ],
+      "meaning": "伊"
+    },
+    {
+      "question": "𛀈",
+      "answer": [
+        "い",
+        "i"
+      ],
+      "meaning": "意"
+    },
+    {
+      "question": "𛀉",
+      "answer": [
+        "い",
+        "i"
+      ],
+      "meaning": "移"
+    },
+    {
+      "question": "𛀊",
+      "answer": [
+        "う",
+        "u"
+      ],
+      "meaning": "宇"
+    },
+    {
+      "question": "𛀋",
+      "answer": [
+        "う",
+        "u"
+      ],
+      "meaning": "宇"
+    },
+    {
+      "question": "𛀌",
+      "answer": [
+        "う",
+        "u"
+      ],
+      "meaning": "憂"
+    },
+    {
+      "question": "𛀍",
+      "answer": [
+        "う",
+        "u"
+      ],
+      "meaning": "有"
+    },
+    {
+      "question": "𛀎",
+      "answer": [
+        "う",
+        "u"
+      ],
+      "meaning": "雲"
+    },
+    {
+      "question": "𛀁",
+      "answer": [
+        "え",
+        "e",
+        "ye"
+      ],
+      "meaning": "江"
+    },
+    {
+      "question": "𛀏",
+      "answer": [
+        "え",
+        "e"
+      ],
+      "meaning": "盈"
+    },
+    {
+      "question": "𛀐",
+      "answer": [
+        "え",
+        "e"
+      ],
+      "meaning": "縁"
+    },
+    {
+      "question": "𛀑",
+      "answer": [
+        "え",
+        "e"
+      ],
+      "meaning": "衣"
+    },
+    {
+      "question": "𛀒",
+      "answer": [
+        "え",
+        "e"
+      ],
+      "meaning": "衣"
+    },
+    {
+      "question": "𛀓",
+      "answer": [
+        "え",
+        "e"
+      ],
+      "meaning": "要"
+    },
+    {
+      "question": "𛀔",
+      "answer": [
+        "お",
+        "o"
+      ],
+      "meaning": "於"
+    },
+    {
+      "question": "𛀕",
+      "answer": [
+        "お",
+        "o"
+      ],
+      "meaning": "於"
+    },
+    {
+      "question": "𛀖",
+      "answer": [
+        "お",
+        "o"
+      ],
+      "meaning": "隱"
+    },
+    {
+      "question": "𛀗",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "佳"
+    },
+    {
+      "question": "𛀘",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "加"
+    },
+    {
+      "question": "𛀙",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "可"
+    },
+    {
+      "question": "𛀚",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "可"
+    },
+    {
+      "question": "𛀛",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "嘉"
+    },
+    {
+      "question": "𛀢",
+      "answer": [
+        "か",
+        "ka",
+        "け",
+        "ke"
+      ],
+      "meaning": "家"
+    },
+    {
+      "question": "𛀜",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "我"
+    },
+    {
+      "question": "𛀝",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "歟"
+    },
+    {
+      "question": "𛀞",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "賀"
+    },
+    {
+      "question": "𛀟",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "閑"
+    },
+    {
+      "question": "𛀠",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "香"
+    },
+    {
+      "question": "𛀡",
+      "answer": [
+        "か",
+        "ka"
+      ],
+      "meaning": "駕"
+    },
+    {
+      "question": "𛀣",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "喜"
+    },
+    {
+      "question": "𛀤",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "幾"
+    },
+    {
+      "question": "𛀥",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "幾"
+    },
+    {
+      "question": "𛀦",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "支"
+    },
+    {
+      "question": "𛀻",
+      "answer": [
+        "き",
+        "ki",
+        "こ",
+        "ko"
+      ],
+      "meaning": "期"
+    },
+    {
+      "question": "𛀧",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "木"
+    },
+    {
+      "question": "𛀨",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "祈"
+    },
+    {
+      "question": "𛀩",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "貴"
+    },
+    {
+      "question": "𛀪",
+      "answer": [
+        "き",
+        "ki"
+      ],
+      "meaning": "起"
+    },
+    {
+      "question": "𛀫",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "久"
+    },
+    {
+      "question": "𛀬",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "久"
+    },
+    {
+      "question": "𛀭",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "九"
+    },
+    {
+      "question": "𛀮",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "供"
+    },
+    {
+      "question": "𛀯",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "倶"
+    },
+    {
+      "question": "𛀰",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "具"
+    },
+    {
+      "question": "𛀱",
+      "answer": [
+        "く",
+        "ku"
+      ],
+      "meaning": "求"
+    },
+    {
+      "question": "𛀳",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "介"
+    },
+    {
+      "question": "𛀲",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "介"
+    },
+    {
+      "question": "𛀴",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "希"
+    },
+    {
+      "question": "𛀵",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "氣"
+    },
+    {
+      "question": "𛀶",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "計"
+    },
+    {
+      "question": "𛀷",
+      "answer": [
+        "け",
+        "ke"
+      ],
+      "meaning": "遣"
+    },
+    {
+      "question": "𛀸",
+      "answer": [
+        "こ",
+        "ko"
+      ],
+      "meaning": "古"
+    },
+    {
+      "question": "𛂘",
+      "answer": [
+        "こ",
+        "ko",
+        "ね",
+        "ne"
+      ],
+      "meaning": "子"
+    },
+    {
+      "question": "𛀹",
+      "answer": [
+        "こ",
+        "ko"
+      ],
+      "meaning": "故"
+    },
+    {
+      "question": "𛀺",
+      "answer": [
+        "こ",
+        "ko"
+      ],
+      "meaning": "許"
+    },
+    {
+      "question": "𛀼",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "乍"
+    },
+    {
+      "question": "𛀽",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "佐"
+    },
+    {
+      "question": "𛀾",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "佐"
+    },
+    {
+      "question": "𛀿",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "左"
+    },
+    {
+      "question": "𛁀",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "差"
+    },
+    {
+      "question": "𛁁",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "散"
+    },
+    {
+      "question": "𛁂",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "斜"
+    },
+    {
+      "question": "𛁃",
+      "answer": [
+        "さ",
+        "sa"
+      ],
+      "meaning": "沙"
+    },
+    {
+      "question": "𛁄",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "之"
+    },
+    {
+      "question": "𛁅",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "之"
+    },
+    {
+      "question": "𛁆",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "事"
+    },
+    {
+      "question": "𛁇",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "四"
+    },
+    {
+      "question": "𛁈",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "志"
+    },
+    {
+      "question": "𛁉",
+      "answer": [
+        "し",
+        "si"
+      ],
+      "meaning": "新"
+    },
+    {
+      "question": "𛁊",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "受"
+    },
+    {
+      "question": "𛁋",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "壽"
+    },
+    {
+      "question": "𛁌",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "數"
+    },
+    {
+      "question": "𛁍",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "數"
+    },
+    {
+      "question": "𛁎",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "春"
+    },
+    {
+      "question": "𛁏",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "春"
+    },
+    {
+      "question": "𛁐",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "須"
+    },
+    {
+      "question": "𛁑",
+      "answer": [
+        "す",
+        "su"
+      ],
+      "meaning": "須"
+    },
+    {
+      "question": "𛁒",
+      "answer": [
+        "せ",
+        "se"
+      ],
+      "meaning": "世"
+    },
+    {
+      "question": "𛁓",
+      "answer": [
+        "せ",
+        "se"
+      ],
+      "meaning": "世"
+    },
+    {
+      "question": "𛁔",
+      "answer": [
+        "せ",
+        "se"
+      ],
+      "meaning": "世"
+    },
+    {
+      "question": "𛁕",
+      "answer": [
+        "せ",
+        "se"
+      ],
+      "meaning": "勢"
+    },
+    {
+      "question": "𛁖",
+      "answer": [
+        "せ",
+        "se"
+      ],
+      "meaning": "聲"
+    },
+    {
+      "question": "𛁗",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "所"
+    },
+    {
+      "question": "𛁘",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "所"
+    },
+    {
+      "question": "𛁙",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "曾"
+    },
+    {
+      "question": "𛁚",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "曾"
+    },
+    {
+      "question": "𛁛",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "楚"
+    },
+    {
+      "question": "𛁜",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "蘇"
+    },
+    {
+      "question": "𛁝",
+      "answer": [
+        "そ",
+        "so"
+      ],
+      "meaning": "處"
+    },
+    {
+      "question": "𛁞",
+      "answer": [
+        "た",
+        "ta"
+      ],
+      "meaning": "堂"
+    },
+    {
+      "question": "𛁟",
+      "answer": [
+        "た",
+        "ta"
+      ],
+      "meaning": "多"
+    },
+    {
+      "question": "𛁠",
+      "answer": [
+        "た",
+        "ta"
+      ],
+      "meaning": "多"
+    },
+    {
+      "question": "𛁡",
+      "answer": [
+        "た",
+        "ta"
+      ],
+      "meaning": "當"
+    },
+    {
+      "question": "𛁢",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "千"
+    },
+    {
+      "question": "𛁣",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "地"
+    },
+    {
+      "question": "𛁤",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "智"
+    },
+    {
+      "question": "𛁥",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "知"
+    },
+    {
+      "question": "𛁦",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "知"
+    },
+    {
+      "question": "𛁧",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "致"
+    },
+    {
+      "question": "𛁨",
+      "answer": [
+        "ち",
+        "ti"
+      ],
+      "meaning": "遲"
+    },
+    {
+      "question": "𛁩",
+      "answer": [
+        "つ",
+        "tu"
+      ],
+      "meaning": "川"
+    },
+    {
+      "question": "𛁪",
+      "answer": [
+        "つ",
+        "tu"
+      ],
+      "meaning": "川"
+    },
+    {
+      "question": "𛁫",
+      "answer": [
+        "つ",
+        "tu"
+      ],
+      "meaning": "津"
+    },
+    {
+      "question": "𛁬",
+      "answer": [
+        "つ",
+        "tu"
+      ],
+      "meaning": "都"
+    },
+    {
+      "question": "𛁭",
+      "answer": [
+        "つ",
+        "tu",
+        "と",
+        "to"
+      ],
+      "meaning": "徒"
+    },
+    {
+      "question": "𛁮",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "亭"
+    },
+    {
+      "question": "𛁯",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "低"
+    },
+    {
+      "question": "𛁰",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "傳"
+    },
+    {
+      "question": "𛁱",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "天"
+    },
+    {
+      "question": "𛁲",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "天"
+    },
+    {
+      "question": "𛁳",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "天"
+    },
+    {
+      "question": "𛁴",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "帝"
+    },
+    {
+      "question": "𛁵",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "弖"
+    },
+    {
+      "question": "𛁶",
+      "answer": [
+        "て",
+        "te"
+      ],
+      "meaning": "轉"
+    },
+    {
+      "question": "𛂎",
+      "answer": [
+        "て",
+        "te",
+        "に",
+        "ni"
+      ],
+      "meaning": "而"
+    },
+    {
+      "question": "𛁷",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "土"
+    },
+    {
+      "question": "𛁸",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "度"
+    },
+    {
+      "question": "𛁹",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "東"
+    },
+    {
+      "question": "𛁺",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "登"
+    },
+    {
+      "question": "𛁻",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "登"
+    },
+    {
+      "question": "𛁼",
+      "answer": [
+        "と",
+        "to"
+      ],
+      "meaning": "砥"
+    },
+    {
+      "question": "𛁽",
+      "answer": [
+        "と",
+        "to",
+        "ら",
+        "ra"
+      ],
+      "meaning": "等"
+    },
+    {
+      "question": "𛁾",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "南"
+    },
+    {
+      "question": "𛁿",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "名"
+    },
+    {
+      "question": "𛂀",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "奈"
+    },
+    {
+      "question": "𛂁",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "奈"
+    },
+    {
+      "question": "𛂂",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "奈"
+    },
+    {
+      "question": "𛂃",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "菜"
+    },
+    {
+      "question": "𛂄",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "那"
+    },
+    {
+      "question": "𛂅",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "那"
+    },
+    {
+      "question": "𛂆",
+      "answer": [
+        "な",
+        "na"
+      ],
+      "meaning": "難"
+    },
+    {
+      "question": "𛂇",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "丹"
+    },
+    {
+      "question": "𛂈",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "二"
+    },
+    {
+      "question": "𛂉",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "仁"
+    },
+    {
+      "question": "𛂊",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "兒"
+    },
+    {
+      "question": "𛂋",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "爾"
+    },
+    {
+      "question": "𛂌",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "爾"
+    },
+    {
+      "question": "𛂍",
+      "answer": [
+        "に",
+        "ni"
+      ],
+      "meaning": "耳"
+    },
+    {
+      "question": "𛂏",
+      "answer": [
+        "ぬ",
+        "nu"
+      ],
+      "meaning": "努"
+    },
+    {
+      "question": "𛂐",
+      "answer": [
+        "ぬ",
+        "nu"
+      ],
+      "meaning": "奴"
+    },
+    {
+      "question": "𛂑",
+      "answer": [
+        "ぬ",
+        "nu"
+      ],
+      "meaning": "怒"
+    },
+    {
+      "question": "𛂒",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "年"
+    },
+    {
+      "question": "𛂓",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "年"
+    },
+    {
+      "question": "𛂔",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "年"
+    },
+    {
+      "question": "𛂕",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "根"
+    },
+    {
+      "question": "𛂖",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "熱"
+    },
+    {
+      "question": "𛂗",
+      "answer": [
+        "ね",
+        "ne"
+      ],
+      "meaning": "禰"
+    },
+    {
+      "question": "𛂙",
+      "answer": [
+        "の",
+        "no"
+      ],
+      "meaning": "乃"
+    },
+    {
+      "question": "𛂚",
+      "answer": [
+        "の",
+        "no"
+      ],
+      "meaning": "濃"
+    },
+    {
+      "question": "𛂛",
+      "answer": [
+        "の",
+        "no"
+      ],
+      "meaning": "能"
+    },
+    {
+      "question": "𛂜",
+      "answer": [
+        "の",
+        "no"
+      ],
+      "meaning": "能"
+    },
+    {
+      "question": "𛂝",
+      "answer": [
+        "の",
+        "no"
+      ],
+      "meaning": "農"
+    },
+    {
+      "question": "𛂞",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "八"
+    },
+    {
+      "question": "𛂟",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "半"
+    },
+    {
+      "question": "𛂠",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "婆"
+    },
+    {
+      "question": "𛂡",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "波"
+    },
+    {
+      "question": "𛂢",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "盤"
+    },
+    {
+      "question": "𛂣",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "盤"
+    },
+    {
+      "question": "𛂤",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "破"
+    },
+    {
+      "question": "𛂥",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "者"
+    },
+    {
+      "question": "𛂦",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "者"
+    },
+    {
+      "question": "𛂧",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "葉"
+    },
+    {
+      "question": "𛂨",
+      "answer": [
+        "は",
+        "ha"
+      ],
+      "meaning": "頗"
+    },
+    {
+      "question": "𛂩",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "悲"
+    },
+    {
+      "question": "𛂪",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "日"
+    },
+    {
+      "question": "𛂫",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "比"
+    },
+    {
+      "question": "𛂬",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "避"
+    },
+    {
+      "question": "𛂭",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "非"
+    },
+    {
+      "question": "𛂮",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "飛"
+    },
+    {
+      "question": "𛂯",
+      "answer": [
+        "ひ",
+        "hi"
+      ],
+      "meaning": "飛"
+    },
+    {
+      "question": "𛂰",
+      "answer": [
+        "ふ",
+        "hu"
+      ],
+      "meaning": "不"
+    },
+    {
+      "question": "𛂱",
+      "answer": [
+        "ふ",
+        "hu"
+      ],
+      "meaning": "婦"
+    },
+    {
+      "question": "𛂲",
+      "answer": [
+        "ふ",
+        "hu"
+      ],
+      "meaning": "布"
+    },
+    {
+      "question": "𛂳",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "倍"
+    },
+    {
+      "question": "𛂴",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "弊"
+    },
+    {
+      "question": "𛂵",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "弊"
+    },
+    {
+      "question": "𛂶",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "遍"
+    },
+    {
+      "question": "𛂷",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "邊"
+    },
+    {
+      "question": "𛂸",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "邊"
+    },
+    {
+      "question": "𛂹",
+      "answer": [
+        "へ",
+        "he"
+      ],
+      "meaning": "部"
+    },
+    {
+      "question": "𛂺",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "保"
+    },
+    {
+      "question": "𛂻",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "保"
+    },
+    {
+      "question": "𛂼",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "報"
+    },
+    {
+      "question": "𛂽",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "奉"
+    },
+    {
+      "question": "𛂾",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "寶"
+    },
+    {
+      "question": "𛂿",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "本"
+    },
+    {
+      "question": "𛃀",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "本"
+    },
+    {
+      "question": "𛃁",
+      "answer": [
+        "ほ",
+        "ho"
+      ],
+      "meaning": "豊"
+    },
+    {
+      "question": "𛃂",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "万"
+    },
+    {
+      "question": "𛃃",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "末"
+    },
+    {
+      "question": "𛃄",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "末"
+    },
+    {
+      "question": "𛃅",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "滿"
+    },
+    {
+      "question": "𛃆",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "滿"
+    },
+    {
+      "question": "𛃇",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "萬"
+    },
+    {
+      "question": "𛃈",
+      "answer": [
+        "ま",
+        "ma"
+      ],
+      "meaning": "麻"
+    },
+    {
+      "question": "𛃖",
+      "answer": [
+        "ま",
+        "ma",
+        "め",
+        "me"
+      ],
+      "meaning": "馬"
+    },
+    {
+      "question": "𛃉",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "三"
+    },
+    {
+      "question": "𛃊",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "微"
+    },
+    {
+      "question": "𛃋",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "美"
+    },
+    {
+      "question": "𛃌",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "美"
+    },
+    {
+      "question": "𛃍",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "美"
+    },
+    {
+      "question": "𛃎",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "見"
+    },
+    {
+      "question": "𛃏",
+      "answer": [
+        "み",
+        "mi"
+      ],
+      "meaning": "身"
+    },
+    {
+      "question": "𛃐",
+      "answer": [
+        "む",
+        "mu"
+      ],
+      "meaning": "武"
+    },
+    {
+      "question": "𛃑",
+      "answer": [
+        "む",
+        "mu"
+      ],
+      "meaning": "無"
+    },
+    {
+      "question": "𛃒",
+      "answer": [
+        "む",
+        "mu"
+      ],
+      "meaning": "牟"
+    },
+    {
+      "question": "𛃓",
+      "answer": [
+        "む",
+        "mu"
+      ],
+      "meaning": "舞"
+    },
+    {
+      "question": "𛄝",
+      "answer": [
+        "む",
+        "mu",
+        "も",
+        "mo",
+        "ん",
+        "n"
+      ],
+      "meaning": "无"
+    },
+    {
+      "question": "𛄞",
+      "answer": [
+        "む",
+        "mu",
+        "も",
+        "mo",
+        "ん",
+        "n"
+      ],
+      "meaning": "无"
+    },
+    {
+      "question": "𛃔",
+      "answer": [
+        "め",
+        "me"
+      ],
+      "meaning": "免"
+    },
+    {
+      "question": "𛃕",
+      "answer": [
+        "め",
+        "me"
+      ],
+      "meaning": "面"
+    },
+    {
+      "question": "𛃗",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "母"
+    },
+    {
+      "question": "𛃘",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "毛"
+    },
+    {
+      "question": "𛃙",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "毛"
+    },
+    {
+      "question": "𛃚",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "毛"
+    },
+    {
+      "question": "𛃛",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "茂"
+    },
+    {
+      "question": "𛃜",
+      "answer": [
+        "も",
+        "mo"
+      ],
+      "meaning": "裳"
+    },
+    {
+      "question": "𛃝",
+      "answer": [
+        "や",
+        "ya"
+      ],
+      "meaning": "也"
+    },
+    {
+      "question": "𛃞",
+      "answer": [
+        "や",
+        "ya"
+      ],
+      "meaning": "也"
+    },
+    {
+      "question": "𛃟",
+      "answer": [
+        "や",
+        "ya"
+      ],
+      "meaning": "屋"
+    },
+    {
+      "question": "𛃠",
+      "answer": [
+        "や",
+        "ya"
+      ],
+      "meaning": "耶"
+    },
+    {
+      "question": "𛃡",
+      "answer": [
+        "や",
+        "ya"
+      ],
+      "meaning": "耶"
+    },
+    {
+      "question": "𛃢",
+      "answer": [
+        "や",
+        "ya",
+        "よ",
+        "yo"
+      ],
+      "meaning": "夜"
+    },
+    {
+      "question": "𛃣",
+      "answer": [
+        "ゆ",
+        "yu"
+      ],
+      "meaning": "游"
+    },
+    {
+      "question": "𛃤",
+      "answer": [
+        "ゆ",
+        "yu"
+      ],
+      "meaning": "由"
+    },
+    {
+      "question": "𛃥",
+      "answer": [
+        "ゆ",
+        "yu"
+      ],
+      "meaning": "由"
+    },
+    {
+      "question": "𛃦",
+      "answer": [
+        "ゆ",
+        "yu"
+      ],
+      "meaning": "遊"
+    },
+    {
+      "question": "𛃧",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "代"
+    },
+    {
+      "question": "𛃨",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "余"
+    },
+    {
+      "question": "𛃩",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "與"
+    },
+    {
+      "question": "𛃪",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "與"
+    },
+    {
+      "question": "𛃫",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "與"
+    },
+    {
+      "question": "𛃬",
+      "answer": [
+        "よ",
+        "yo"
+      ],
+      "meaning": "餘"
+    },
+    {
+      "question": "𛃭",
+      "answer": [
+        "ら",
+        "ra"
+      ],
+      "meaning": "羅"
+    },
+    {
+      "question": "𛃮",
+      "answer": [
+        "ら",
+        "ra"
+      ],
+      "meaning": "良"
+    },
+    {
+      "question": "𛃯",
+      "answer": [
+        "ら",
+        "ra"
+      ],
+      "meaning": "良"
+    },
+    {
+      "question": "𛃰",
+      "answer": [
+        "ら",
+        "ra"
+      ],
+      "meaning": "良"
+    },
+    {
+      "question": "𛃱",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "利"
+    },
+    {
+      "question": "𛃲",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "利"
+    },
+    {
+      "question": "𛃳",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "李"
+    },
+    {
+      "question": "𛃴",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "梨"
+    },
+    {
+      "question": "𛃵",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "理"
+    },
+    {
+      "question": "𛃶",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "里"
+    },
+    {
+      "question": "𛃷",
+      "answer": [
+        "り",
+        "ri"
+      ],
+      "meaning": "離"
+    },
+    {
+      "question": "𛃸",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "流"
+    },
+    {
+      "question": "𛃹",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "留"
+    },
+    {
+      "question": "𛃺",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "留"
+    },
+    {
+      "question": "𛃻",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "留"
+    },
+    {
+      "question": "𛃼",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "累"
+    },
+    {
+      "question": "𛃽",
+      "answer": [
+        "る",
+        "ru"
+      ],
+      "meaning": "類"
+    },
+    {
+      "question": "𛃾",
+      "answer": [
+        "れ",
+        "re"
+      ],
+      "meaning": "禮"
+    },
+    {
+      "question": "𛃿",
+      "answer": [
+        "れ",
+        "re"
+      ],
+      "meaning": "禮"
+    },
+    {
+      "question": "𛄀",
+      "answer": [
+        "れ",
+        "re"
+      ],
+      "meaning": "連"
+    },
+    {
+      "question": "𛄁",
+      "answer": [
+        "れ",
+        "re"
+      ],
+      "meaning": "麗"
+    },
+    {
+      "question": "𛄂",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "呂"
+    },
+    {
+      "question": "𛄃",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "呂"
+    },
+    {
+      "question": "𛄄",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "婁"
+    },
+    {
+      "question": "𛄅",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "樓"
+    },
+    {
+      "question": "𛄆",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "路"
+    },
+    {
+      "question": "𛄇",
+      "answer": [
+        "ろ",
+        "ro"
+      ],
+      "meaning": "露"
+    },
+    {
+      "question": "𛄈",
+      "answer": [
+        "わ",
+        "wa"
+      ],
+      "meaning": "倭"
+    },
+    {
+      "question": "𛄉",
+      "answer": [
+        "わ",
+        "wa"
+      ],
+      "meaning": "和"
+    },
+    {
+      "question": "𛄊",
+      "answer": [
+        "わ",
+        "wa"
+      ],
+      "meaning": "和"
+    },
+    {
+      "question": "𛄋",
+      "answer": [
+        "わ",
+        "wa"
+      ],
+      "meaning": "王"
+    },
+    {
+      "question": "𛄌",
+      "answer": [
+        "わ",
+        "wa"
+      ],
+      "meaning": "王"
+    },
+    {
+      "question": "𛄍",
+      "answer": [
+        "ゐ",
+        "wi"
+      ],
+      "meaning": "井"
+    },
+    {
+      "question": "𛄎",
+      "answer": [
+        "ゐ",
+        "wi"
+      ],
+      "meaning": "井"
+    },
+    {
+      "question": "𛄏",
+      "answer": [
+        "ゐ",
+        "wi"
+      ],
+      "meaning": "居"
+    },
+    {
+      "question": "𛄐",
+      "answer": [
+        "ゐ",
+        "wi"
+      ],
+      "meaning": "爲"
+    },
+    {
+      "question": "𛄑",
+      "answer": [
+        "ゐ",
+        "wi"
+      ],
+      "meaning": "遺"
+    },
+    {
+      "question": "𛄒",
+      "answer": [
+        "ゑ",
+        "we"
+      ],
+      "meaning": "惠"
+    },
+    {
+      "question": "𛄓",
+      "answer": [
+        "ゑ",
+        "we"
+      ],
+      "meaning": "衞"
+    },
+    {
+      "question": "𛄔",
+      "answer": [
+        "ゑ",
+        "we"
+      ],
+      "meaning": "衞"
+    },
+    {
+      "question": "𛄕",
+      "answer": [
+        "ゑ",
+        "we"
+      ],
+      "meaning": "衞"
+    },
+    {
+      "question": "𛄖",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "乎"
+    },
+    {
+      "question": "𛄗",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "乎"
+    },
+    {
+      "question": "𛄘",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "尾"
+    },
+    {
+      "question": "𛄙",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "緒"
+    },
+    {
+      "question": "𛄚",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "越"
+    },
+    {
+      "question": "𛄛",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "遠"
+    },
+    {
+      "question": "𛄜",
+      "answer": [
+        "を",
+        "wo"
+      ],
+      "meaning": "遠"
+    }
+  ]
+}

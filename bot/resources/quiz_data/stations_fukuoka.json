@@ -1,0 +1,2723 @@
+{
+  "uniqueId": "stations_fukuoka",
+  "name": "Fukuoka Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Fukuoka station names](https://mb.jorudan.co.jp/os/eki/menu_fuk/)",
+  "cards": [
+    {
+      "question": "赤",
+      "answer": [
+        "あか"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aka/"
+    },
+    {
+      "question": "赤池",
+      "answer": [
+        "あかいけ"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akaike_fukuoka/"
+    },
+    {
+      "question": "赤坂",
+      "answer": [
+        "あかさか"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akasaka_fukuoka/"
+    },
+    {
+      "question": "赤間",
+      "answer": [
+        "あかま"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akama/"
+    },
+    {
+      "question": "朝倉街道",
+      "answer": [
+        "あさくらがいどう"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakuragaido/"
+    },
+    {
+      "question": "味坂",
+      "answer": [
+        "あじさか"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ajisaka/"
+    },
+    {
+      "question": "穴生",
+      "answer": [
+        "あのお"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ano_fukuoka/"
+    },
+    {
+      "question": "安部山公園",
+      "answer": [
+        "あべやまこうえん"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abeyamakoen/"
+    },
+    {
+      "question": "甘木",
+      "answer": [
+        "あまぎ"
+      ],
+      "meaning": "甘木鉄道、西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagi/"
+    },
+    {
+      "question": "荒木",
+      "answer": [
+        "あらき"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/araki_fukuoka/"
+    },
+    {
+      "question": "飯塚",
+      "answer": [
+        "いいづか"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iizuka/"
+    },
+    {
+      "question": "伊賀",
+      "answer": [
+        "いが"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iga/"
+    },
+    {
+      "question": "一貴山",
+      "answer": [
+        "いきさん"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikisan/"
+    },
+    {
+      "question": "池尻",
+      "answer": [
+        "いけじり"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikejiri/"
+    },
+    {
+      "question": "石田",
+      "answer": [
+        "いしだ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishida_fukuoka/"
+    },
+    {
+      "question": "石原町",
+      "answer": [
+        "いしはらまち"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishiharamachi/"
+    },
+    {
+      "question": "井尻",
+      "answer": [
+        "いじり"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ijiri/"
+    },
+    {
+      "question": "市場",
+      "answer": [
+        "いちば"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichiba_fukuoka/"
+    },
+    {
+      "question": "一本松",
+      "answer": [
+        "いっぽんまつ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ippommatsu_fukuoka/"
+    },
+    {
+      "question": "出光美術館",
+      "answer": [
+        "いでみつびじゅつかん"
+      ],
+      "meaning": "門司港レトロ観光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/idemitsubijutsukan/"
+    },
+    {
+      "question": "糸田",
+      "answer": [
+        "いとだ"
+      ],
+      "meaning": "平成筑豊鉄道糸田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itoda/"
+    },
+    {
+      "question": "犬塚",
+      "answer": [
+        "いぬづか"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inuzuka/"
+    },
+    {
+      "question": "今池",
+      "answer": [
+        "いまいけ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imaike_fukuoka/"
+    },
+    {
+      "question": "今川河童",
+      "answer": [
+        "いまがわかっぱ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imagawakappa/"
+    },
+    {
+      "question": "今隈",
+      "answer": [
+        "いまぐま"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imaguma/"
+    },
+    {
+      "question": "今宿",
+      "answer": [
+        "いまじゅく"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imajuku/"
+    },
+    {
+      "question": "内田",
+      "answer": [
+        "うちだ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uchida/"
+    },
+    {
+      "question": "宇島",
+      "answer": [
+        "うのしま"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unoshima/"
+    },
+    {
+      "question": "宇美",
+      "answer": [
+        "うみ"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umi/"
+    },
+    {
+      "question": "海ノ中道",
+      "answer": [
+        "うみのなかみち"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uminonakamichi/"
+    },
+    {
+      "question": "梅林",
+      "answer": [
+        "うめばやし"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umebayashi/"
+    },
+    {
+      "question": "浦田",
+      "answer": [
+        "うらた"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urata_fukuoka/"
+    },
+    {
+      "question": "永犬丸",
+      "answer": [
+        "えいのまる"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/einomaru/"
+    },
+    {
+      "question": "枝光",
+      "answer": [
+        "えだみつ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/edamitsu/"
+    },
+    {
+      "question": "江の浦",
+      "answer": [
+        "えのうら"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/eno-ura/"
+    },
+    {
+      "question": "海老津",
+      "answer": [
+        "えびつ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebitsu/"
+    },
+    {
+      "question": "大板井",
+      "answer": [
+        "おおいたい"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oitai/"
+    },
+    {
+      "question": "大城",
+      "answer": [
+        "おおき"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oki/"
+    },
+    {
+      "question": "大堰",
+      "answer": [
+        "おおぜき"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ozeki_fukuoka/"
+    },
+    {
+      "question": "大野城",
+      "answer": [
+        "おおのじょう"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onojo/"
+    },
+    {
+      "question": "大橋",
+      "answer": [
+        "おおはし"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohashi_fukuoka/"
+    },
+    {
+      "question": "大保",
+      "answer": [
+        "おおほ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oho/"
+    },
+    {
+      "question": "大濠公園",
+      "answer": [
+        "おおほりこうえん"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohorikoen/"
+    },
+    {
+      "question": "大溝",
+      "answer": [
+        "おおみぞ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omizo/"
+    },
+    {
+      "question": "大牟田",
+      "answer": [
+        "おおむた"
+      ],
+      "meaning": "鹿児島本線、西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omuta/"
+    },
+    {
+      "question": "大藪",
+      "answer": [
+        "おおやぶ"
+      ],
+      "meaning": "平成筑豊鉄道糸田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oyabu/"
+    },
+    {
+      "question": "奥洞海",
+      "answer": [
+        "おくどうかい"
+      ],
+      "meaning": "筑豊本線（若松線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oku-dokai/"
+    },
+    {
+      "question": "小郡",
+      "answer": [
+        "おごおり"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogori_fukuoka/"
+    },
+    {
+      "question": "小波瀬西工大前",
+      "answer": [
+        "おばせにしこうだいまえ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/obase_nishikodai-mae/"
+    },
+    {
+      "question": "折尾",
+      "answer": [
+        "おりお"
+      ],
+      "meaning": "鹿児島本線、福北ゆたか線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/orio/"
+    },
+    {
+      "question": "遠賀川",
+      "answer": [
+        "おんががわ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ongagawa/"
+    },
+    {
+      "question": "遠賀野",
+      "answer": [
+        "おんがの"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ongano/"
+    },
+    {
+      "question": "貝塚",
+      "answer": [
+        "かいづか"
+      ],
+      "meaning": "福岡地下鉄箱崎線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaizuka_fukuoka/"
+    },
+    {
+      "question": "柿下温泉口",
+      "answer": [
+        "かきしたおんせんぐち"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakishita-onsenguchi/"
+    },
+    {
+      "question": "香椎",
+      "answer": [
+        "かしい"
+      ],
+      "meaning": "鹿児島本線、香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashii/"
+    },
+    {
+      "question": "香椎花園前",
+      "answer": [
+        "かしいかえんまえ"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashii-kaenmae/"
+    },
+    {
+      "question": "香椎神宮",
+      "answer": [
+        "かしいじんぐう"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiijingu/"
+    },
+    {
+      "question": "香椎宮前",
+      "answer": [
+        "かしいみやまえ"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashii-miyamae/"
+    },
+    {
+      "question": "春日",
+      "answer": [
+        "かすが"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasuga_fukuoka/"
+    },
+    {
+      "question": "春日原",
+      "answer": [
+        "かすがばる"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasugabaru/"
+    },
+    {
+      "question": "片野",
+      "answer": [
+        "かたの"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katano/"
+    },
+    {
+      "question": "勝野",
+      "answer": [
+        "かつの"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuno/"
+    },
+    {
+      "question": "門松",
+      "answer": [
+        "かどまつ"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kadomatsu/"
+    },
+    {
+      "question": "金田",
+      "answer": [
+        "かなだ"
+      ],
+      "meaning": "平成筑豊鉄道伊田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanada/"
+    },
+    {
+      "question": "金山",
+      "answer": [
+        "かなやま"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanayama_fukuoka/"
+    },
+    {
+      "question": "金島",
+      "answer": [
+        "かねしま"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaneshima_fukuoka/"
+    },
+    {
+      "question": "加布里",
+      "answer": [
+        "かふり"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kafuri/"
+    },
+    {
+      "question": "蒲池",
+      "answer": [
+        "かまち"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamachi_fukuoka/"
+    },
+    {
+      "question": "上伊田",
+      "answer": [
+        "かみいた"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-ita/"
+    },
+    {
+      "question": "上浦",
+      "answer": [
+        "かみうら"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamiura/"
+    },
+    {
+      "question": "上金田",
+      "answer": [
+        "かみかなだ"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-kanada/"
+    },
+    {
+      "question": "上穂波",
+      "answer": [
+        "かみほなみ"
+      ],
+      "meaning": "筑豊本線（原田線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-honami/"
+    },
+    {
+      "question": "上三緒",
+      "answer": [
+        "かみみお"
+      ],
+      "meaning": "後藤寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-mio/?page=2"
+    },
+    {
+      "question": "賀茂",
+      "answer": [
+        "かも"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamo_fukuoka/?page=2"
+    },
+    {
+      "question": "香春",
+      "answer": [
+        "かわら"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawara/?page=2"
+    },
+    {
+      "question": "香春口三萩野",
+      "answer": [
+        "かわらぐちみはぎの"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaraguchi_mihagino/?page=2"
+    },
+    {
+      "question": "苅田",
+      "answer": [
+        "かんだ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanda_fukuoka/?page=2"
+    },
+    {
+      "question": "関門海峡めかり",
+      "answer": [
+        "かんもんかいきょうめかり"
+      ],
+      "meaning": "門司港レトロ観光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanmonkaikyo_mekari/?page=2"
+    },
+    {
+      "question": "歓遊舎ひこさん",
+      "answer": [
+        "かんゆうしゃひこさん"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kan-yusha-hikosan/?page=2"
+    },
+    {
+      "question": "学校前",
+      "answer": [
+        "がっこうまえ"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakko-mae_fukuoka/?page=2"
+    },
+    {
+      "question": "感田",
+      "answer": [
+        "がんだ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ganda/?page=2"
+    },
+    {
+      "question": "雁ノ巣",
+      "answer": [
+        "がんのす"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gannosu/?page=2"
+    },
+    {
+      "question": "企救丘",
+      "answer": [
+        "きくがおか"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kikugaoka/"
+    },
+    {
+      "question": "北方",
+      "answer": [
+        "きたがた"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitagata_fukuoka/"
+    },
+    {
+      "question": "北野",
+      "answer": [
+        "きたの"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitano_fukuoka/"
+    },
+    {
+      "question": "城戸南蔵院前",
+      "answer": [
+        "きどなんぞういんまえ"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kidonanzoin-mae/"
+    },
+    {
+      "question": "希望が丘高校前",
+      "answer": [
+        "きぼうがおかこうこうまえ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kibogaokakoko-mae/"
+    },
+    {
+      "question": "九産大前",
+      "answer": [
+        "きゅうさんだいまえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyusandai-mae/"
+    },
+    {
+      "question": "九州工大前",
+      "answer": [
+        "きゅうしゅうこうだいまえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyushukodai-mae/"
+    },
+    {
+      "question": "九州鉄道記念館",
+      "answer": [
+        "きゅうしゅうてつどうきねんかん"
+      ],
+      "meaning": "門司港レトロ観光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyushutetsudo-kinenkan/"
+    },
+    {
+      "question": "九大学研都市",
+      "answer": [
+        "きゅうだいがっけんとし"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyudai-gakkentoshi/"
+    },
+    {
+      "question": "教育大前",
+      "answer": [
+        "きょういくだいまえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyoikudai-mae/"
+    },
+    {
+      "question": "祇園",
+      "answer": [
+        "ぎおん"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gion_fukuoka/"
+    },
+    {
+      "question": "銀水",
+      "answer": [
+        "ぎんすい"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ginsui/"
+    },
+    {
+      "question": "朽網",
+      "answer": [
+        "くさみ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusami/"
+    },
+    {
+      "question": "櫛原",
+      "answer": [
+        "くしわら"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kushiwara/"
+    },
+    {
+      "question": "楠橋",
+      "answer": [
+        "くすばし"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusubashi/"
+    },
+    {
+      "question": "熊西",
+      "answer": [
+        "くまにし"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumanishi/"
+    },
+    {
+      "question": "鞍手",
+      "answer": [
+        "くらて"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurate/"
+    },
+    {
+      "question": "倉永",
+      "answer": [
+        "くらなが"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuranaga/"
+    },
+    {
+      "question": "久留米",
+      "answer": [
+        "くるめ"
+      ],
+      "meaning": "鹿児島本線、久大本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurume/"
+    },
+    {
+      "question": "久留米高校前",
+      "answer": [
+        "くるめこうこうまえ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurumekoko-mae/"
+    },
+    {
+      "question": "久留米大学前",
+      "answer": [
+        "くるめだいがくまえ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurumedaigaku-mae/"
+    },
+    {
+      "question": "九郎原",
+      "answer": [
+        "くろうばる"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurobaru/"
+    },
+    {
+      "question": "黒崎",
+      "answer": [
+        "くろさき"
+      ],
+      "meaning": "鹿児島本線、福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurosaki/"
+    },
+    {
+      "question": "黒崎駅前",
+      "answer": [
+        "くろさきえきまえ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurosakiekimae/"
+    },
+    {
+      "question": "桂川",
+      "answer": [
+        "けいせん"
+      ],
+      "meaning": "筑豊本線（原田線）など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keisen_fukuoka/"
+    },
+    {
+      "question": "競馬場前",
+      "answer": [
+        "けいばじょうまえ"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keibajo-mae_fukuoka/"
+    },
+    {
+      "question": "源じいの森",
+      "answer": [
+        "げんじいのもり"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/genjiinomori/"
+    },
+    {
+      "question": "古賀",
+      "answer": [
+        "こが"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koga_fukuoka/"
+    },
+    {
+      "question": "古賀茶屋",
+      "answer": [
+        "こがんちゃや"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koganchaya/"
+    },
+    {
+      "question": "小倉",
+      "answer": [
+        "こくら"
+      ],
+      "meaning": "JR線、北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokura_fukuoka/"
+    },
+    {
+      "question": "小竹",
+      "answer": [
+        "こたけ"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotake/"
+    },
+    {
+      "question": "小森江",
+      "answer": [
+        "こもりえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komorie/"
+    },
+    {
+      "question": "木屋瀬",
+      "answer": [
+        "こやのせ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koyanose/"
+    },
+    {
+      "question": "呉服町",
+      "answer": [
+        "ごふくまち"
+      ],
+      "meaning": "福岡地下鉄箱崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gofukumachi_fukuoka/"
+    },
+    {
+      "question": "五郎丸",
+      "answer": [
+        "ごろうまる"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goromaru/"
+    },
+    {
+      "question": "犀川",
+      "answer": [
+        "さいがわ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saigawa/"
+    },
+    {
+      "question": "西戸崎",
+      "answer": [
+        "さいとざき"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saitozaki/"
+    },
+    {
+      "question": "採銅所",
+      "answer": [
+        "さいどうしょ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saidosho/"
+    },
+    {
+      "question": "酒殿",
+      "answer": [
+        "さかど"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakado_fukuoka/"
+    },
+    {
+      "question": "崎山",
+      "answer": [
+        "さきやま"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakiyama/"
+    },
+    {
+      "question": "桜坂",
+      "answer": [
+        "さくらざか"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakurazaka/"
+    },
+    {
+      "question": "桜台",
+      "answer": [
+        "さくらだい"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakuradai_fukuoka/"
+    },
+    {
+      "question": "篠栗",
+      "answer": [
+        "ささぐり"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasaguri/"
+    },
+    {
+      "question": "笹原",
+      "answer": [
+        "ささばる"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasabaru/"
+    },
+    {
+      "question": "三ヶ森",
+      "answer": [
+        "さんがもり"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sangamori/"
+    },
+    {
+      "question": "山上",
+      "answer": [
+        "さんじょう"
+      ],
+      "meaning": "皿倉山ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanjo_sarakurayama/"
+    },
+    {
+      "question": "山麓",
+      "answer": [
+        "さんろく"
+      ],
+      "meaning": "皿倉山ケーブル",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanroku_sarakurayama/"
+    },
+    {
+      "question": "雑餉隈",
+      "answer": [
+        "ざっしょのくま"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zasshonokuma/"
+    },
+    {
+      "question": "志井",
+      "answer": [
+        "しい"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shii_fukuoka/"
+    },
+    {
+      "question": "志井公園",
+      "answer": [
+        "しいこうえん"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiikoen/"
+    },
+    {
+      "question": "椎田",
+      "answer": [
+        "しいだ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiida/"
+    },
+    {
+      "question": "塩塚",
+      "answer": [
+        "しおつか"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiotsuka/"
+    },
+    {
+      "question": "鹿家",
+      "answer": [
+        "しかか"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikaka/"
+    },
+    {
+      "question": "試験場前",
+      "answer": [
+        "しけんじょうまえ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikenjo-mae/"
+    },
+    {
+      "question": "下伊田",
+      "answer": [
+        "しもいた"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-ita/"
+    },
+    {
+      "question": "下大利",
+      "answer": [
+        "しもおおり"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-ori/"
+    },
+    {
+      "question": "下鴨生",
+      "answer": [
+        "しもかもお"
+      ],
+      "meaning": "後藤寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-kamo-o/"
+    },
+    {
+      "question": "下曽根",
+      "answer": [
+        "しもそね"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-sone/"
+    },
+    {
+      "question": "下山門",
+      "answer": [
+        "しもやまと"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimoyamato/"
+    },
+    {
+      "question": "白木原",
+      "answer": [
+        "しらきばる"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirakibaru/"
+    },
+    {
+      "question": "新飯塚",
+      "answer": [
+        "しんいいづか"
+      ],
+      "meaning": "福北ゆたか線、後藤寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-iizuka/"
+    },
+    {
+      "question": "新大牟田",
+      "answer": [
+        "しんおおむた"
+      ],
+      "meaning": "九州新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-omuta/"
+    },
+    {
+      "question": "新宮中央",
+      "answer": [
+        "しんぐうちゅうおう"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinguchuo/"
+    },
+    {
+      "question": "新木屋瀬",
+      "answer": [
+        "しんこやのせ"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-koyanose/"
+    },
+    {
+      "question": "新栄町",
+      "answer": [
+        "しんさかえまち"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-sakaemachi_fukuoka/"
+    },
+    {
+      "question": "新田原",
+      "answer": [
+        "しんでんばる"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shindembaru/"
+    },
+    {
+      "question": "新豊津",
+      "answer": [
+        "しんとよつ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-toyotsu/?page=2"
+    },
+    {
+      "question": "新入",
+      "answer": [
+        "しんにゅう"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinnyu/?page=2"
+    },
+    {
+      "question": "新原",
+      "answer": [
+        "しんばる"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimbaru/?page=2"
+    },
+    {
+      "question": "城野",
+      "answer": [
+        "じょうの"
+      ],
+      "meaning": "日豊本線、日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jono_fukuoka/?page=2"
+    },
+    {
+      "question": "次郎丸",
+      "answer": [
+        "じろうまる"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jiromaru/?page=2"
+    },
+    {
+      "question": "陣原",
+      "answer": [
+        "じんのはる"
+      ],
+      "meaning": "鹿児島本線、福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jinnoharu/?page=2"
+    },
+    {
+      "question": "須恵",
+      "answer": [
+        "すえ"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sue_fukuoka/"
+    },
+    {
+      "question": "須恵中央",
+      "answer": [
+        "すえちゅうおう"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suechuo/"
+    },
+    {
+      "question": "周船寺",
+      "answer": [
+        "すせんじ"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/susenji/"
+    },
+    {
+      "question": "瀬高",
+      "answer": [
+        "せたか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/setaka/"
+    },
+    {
+      "question": "善導寺",
+      "answer": [
+        "ぜんどうじ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zendoji/"
+    },
+    {
+      "question": "添田",
+      "answer": [
+        "そえだ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/soeda/"
+    },
+    {
+      "question": "高田",
+      "answer": [
+        "たかた"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takata_fukuoka/"
+    },
+    {
+      "question": "高宮",
+      "answer": [
+        "たかみや"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamiya_fukuoka/"
+    },
+    {
+      "question": "田川伊田",
+      "answer": [
+        "たがわいた"
+      ],
+      "meaning": "日田彦山線、平成筑豊鉄道田川線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tagawaita/"
+    },
+    {
+      "question": "田川後藤寺",
+      "answer": [
+        "たがわごとうじ"
+      ],
+      "meaning": "日田彦山線、後藤寺線、平成筑豊鉄道糸田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tagawagotoji/"
+    },
+    {
+      "question": "田川市立病院",
+      "answer": [
+        "たがわしりつびょういん"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tagawashiritsubyoin/"
+    },
+    {
+      "question": "竹下",
+      "answer": [
+        "たけした"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takeshita/"
+    },
+    {
+      "question": "太刀洗",
+      "answer": [
+        "たちあらい"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachiarai/"
+    },
+    {
+      "question": "田主丸",
+      "answer": [
+        "たぬしまる"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanushimaru/"
+    },
+    {
+      "question": "旦過",
+      "answer": [
+        "たんが"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanga/"
+    },
+    {
+      "question": "大行司",
+      "answer": [
+        "だいぎょうじ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daigyoji/"
+    },
+    {
+      "question": "大善寺",
+      "answer": [
+        "だいぜんじ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daizenji/"
+    },
+    {
+      "question": "大入",
+      "answer": [
+        "だいにゅう"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dainyu/"
+    },
+    {
+      "question": "太宰府",
+      "answer": [
+        "だざいふ"
+      ],
+      "meaning": "西鉄太宰府線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dazaifu/"
+    },
+    {
+      "question": "筑後大石",
+      "answer": [
+        "ちくごおおいし"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikugo-oishi/"
+    },
+    {
+      "question": "筑後草野",
+      "answer": [
+        "ちくごくさの"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikugo-kusano/"
+    },
+    {
+      "question": "筑後船小屋",
+      "answer": [
+        "ちくごふなごや"
+      ],
+      "meaning": "鹿児島本線、九州新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikugo-funagoya/"
+    },
+    {
+      "question": "筑後吉井",
+      "answer": [
+        "ちくごよしい"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikugo-yoshii/"
+    },
+    {
+      "question": "筑紫",
+      "answer": [
+        "ちくし"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikushi/"
+    },
+    {
+      "question": "筑前岩屋",
+      "answer": [
+        "ちくぜんいわや"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-iwaya/"
+    },
+    {
+      "question": "筑前植木",
+      "answer": [
+        "ちくぜんうえき"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-ueki/"
+    },
+    {
+      "question": "筑前内野",
+      "answer": [
+        "ちくぜんうちの"
+      ],
+      "meaning": "筑豊本線（原田線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-uchino/"
+    },
+    {
+      "question": "筑前庄内",
+      "answer": [
+        "ちくぜんしょうない"
+      ],
+      "meaning": "後藤寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-shonai/"
+    },
+    {
+      "question": "筑前大分",
+      "answer": [
+        "ちくぜんだいぶ"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-daibu/"
+    },
+    {
+      "question": "筑前垣生",
+      "answer": [
+        "ちくぜんはぶ"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-habu/"
+    },
+    {
+      "question": "筑前深江",
+      "answer": [
+        "ちくぜんふかえ"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-fukae/"
+    },
+    {
+      "question": "筑前前原",
+      "answer": [
+        "ちくぜんまえばる"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-maebaru/"
+    },
+    {
+      "question": "筑前山家",
+      "answer": [
+        "ちくぜんやまえ"
+      ],
+      "meaning": "筑豊本線（原田線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-yamae/"
+    },
+    {
+      "question": "筑前山手",
+      "answer": [
+        "ちくぜんやまて"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-yamate/"
+    },
+    {
+      "question": "筑豊香月",
+      "answer": [
+        "ちくほうかつき"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuho-katsuki/"
+    },
+    {
+      "question": "筑豊中間",
+      "answer": [
+        "ちくほうなかま"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuho-nakama/"
+    },
+    {
+      "question": "筑豊直方",
+      "answer": [
+        "ちくほうのおがた"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuho-nogata/"
+    },
+    {
+      "question": "千鳥",
+      "answer": [
+        "ちどり"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chidori/"
+    },
+    {
+      "question": "千早",
+      "answer": [
+        "ちはや"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chihaya/"
+    },
+    {
+      "question": "茶山",
+      "answer": [
+        "ちゃやま"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chayama_fukuoka/?page=2"
+    },
+    {
+      "question": "長者原",
+      "answer": [
+        "ちょうじゃばる"
+      ],
+      "meaning": "福北ゆたか線、香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chojabaru/?page=2"
+    },
+    {
+      "question": "千代県庁口",
+      "answer": [
+        "ちよけんちょうぐち"
+      ],
+      "meaning": "福岡地下鉄箱崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyokenchoguchi/?page=2"
+    },
+    {
+      "question": "築城",
+      "answer": [
+        "ついき"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuiki/"
+    },
+    {
+      "question": "津古",
+      "answer": [
+        "つこ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuko/"
+    },
+    {
+      "question": "津福",
+      "answer": [
+        "つぶく"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsubuku/"
+    },
+    {
+      "question": "天神",
+      "answer": [
+        "てんじん"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenjin/"
+    },
+    {
+      "question": "天神南",
+      "answer": [
+        "てんじんみなみ"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenjinminami/"
+    },
+    {
+      "question": "天道",
+      "answer": [
+        "てんとう"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tento/"
+    },
+    {
+      "question": "天拝山",
+      "answer": [
+        "てんぱいざん"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tempaizan/"
+    },
+    {
+      "question": "東郷",
+      "answer": [
+        "とうごう"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/togo/"
+    },
+    {
+      "question": "唐人町",
+      "answer": [
+        "とうじんまち"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tojimmachi/"
+    },
+    {
+      "question": "唐の原",
+      "answer": [
+        "とうのはる"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonoharu/"
+    },
+    {
+      "question": "通谷",
+      "answer": [
+        "とおりたに"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toritani/"
+    },
+    {
+      "question": "徳益",
+      "answer": [
+        "とくます"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokumasu/"
+    },
+    {
+      "question": "徳力嵐山口",
+      "answer": [
+        "とくりきあらしやまぐち"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokurikiarashiyamaguchi/"
+    },
+    {
+      "question": "徳力公団前",
+      "answer": [
+        "とくりきこうだんまえ"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokurikikodan-mae/"
+    },
+    {
+      "question": "戸畑",
+      "answer": [
+        "とばた"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobata/"
+    },
+    {
+      "question": "都府楼前",
+      "answer": [
+        "とふろうまえ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tofuro-mae/"
+    },
+    {
+      "question": "都府楼南",
+      "answer": [
+        "とふろうみなみ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tofuro-minami/"
+    },
+    {
+      "question": "豊津",
+      "answer": [
+        "とよつ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyotsu_fukuoka/"
+    },
+    {
+      "question": "土井",
+      "answer": [
+        "どい"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/doi_fukuoka/"
+    },
+    {
+      "question": "中泉",
+      "answer": [
+        "なかいずみ"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakaizumi/"
+    },
+    {
+      "question": "中洲川端",
+      "answer": [
+        "なかすかわばた"
+      ],
+      "meaning": "福岡地下鉄空港線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakasukawabata/"
+    },
+    {
+      "question": "中間",
+      "answer": [
+        "なかま"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakama/"
+    },
+    {
+      "question": "名島",
+      "answer": [
+        "なじま"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/najima/"
+    },
+    {
+      "question": "奈多",
+      "answer": [
+        "なた"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nata/"
+    },
+    {
+      "question": "七隈",
+      "answer": [
+        "ななくま"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nanakuma/"
+    },
+    {
+      "question": "鯰田",
+      "answer": [
+        "なまずた"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/namazuta/"
+    },
+    {
+      "question": "西黒崎",
+      "answer": [
+        "にしくろさき"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kurosaki/"
+    },
+    {
+      "question": "西小倉",
+      "answer": [
+        "にしこくら"
+      ],
+      "meaning": "鹿児島本線、日豊本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-kokura/"
+    },
+    {
+      "question": "西新",
+      "answer": [
+        "にしじん"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishijin/"
+    },
+    {
+      "question": "西添田",
+      "answer": [
+        "にしそえだ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-soeda/"
+    },
+    {
+      "question": "西太刀洗",
+      "answer": [
+        "にしたちあらい"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-tachiarai/"
+    },
+    {
+      "question": "西鉄小郡",
+      "answer": [
+        "にしてつおごおり"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-ogori/"
+    },
+    {
+      "question": "西鉄香椎",
+      "answer": [
+        "にしてつかしい"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-kashii/"
+    },
+    {
+      "question": "西鉄銀水",
+      "answer": [
+        "にしてつぎんすい"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-ginsui/"
+    },
+    {
+      "question": "西鉄久留米",
+      "answer": [
+        "にしてつくるめ"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-kurume/"
+    },
+    {
+      "question": "西鉄五条",
+      "answer": [
+        "にしてつごじょう"
+      ],
+      "meaning": "西鉄太宰府線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-gojo/"
+    },
+    {
+      "question": "西鉄新宮",
+      "answer": [
+        "にしてつしんぐう"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-shingu/"
+    },
+    {
+      "question": "西鉄千早",
+      "answer": [
+        "にしてつちはや"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-chihaya/"
+    },
+    {
+      "question": "西鉄中島",
+      "answer": [
+        "にしてつなかしま"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-nakashima/"
+    },
+    {
+      "question": "西鉄平尾",
+      "answer": [
+        "にしてつひらお"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-hirao/"
+    },
+    {
+      "question": "西鉄福岡",
+      "answer": [
+        "にしてつふくおか"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-fukuoka/"
+    },
+    {
+      "question": "西鉄二日市",
+      "answer": [
+        "にしてつふつかいち"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-futsukaichi/"
+    },
+    {
+      "question": "西鉄柳川",
+      "answer": [
+        "にしてつやながわ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-yanagawa/"
+    },
+    {
+      "question": "西鉄渡瀬",
+      "answer": [
+        "にしてつわたぜ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishitetsu-wataze/"
+    },
+    {
+      "question": "西牟田",
+      "answer": [
+        "にしむた"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishimuta/"
+    },
+    {
+      "question": "西山",
+      "answer": [
+        "にしやま"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishiyama_fukuoka/"
+    },
+    {
+      "question": "直方",
+      "answer": [
+        "のおがた"
+      ],
+      "meaning": "福北ゆたか線、平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nogata_fukuoka/"
+    },
+    {
+      "question": "野芥",
+      "answer": [
+        "のけ"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/noke/"
+    },
+    {
+      "question": "ノーフォーク広場",
+      "answer": [
+        "のーふぉーくひろば"
+      ],
+      "meaning": "門司港レトロ観光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/norfork_hiroba/"
+    },
+    {
+      "question": "羽犬塚",
+      "answer": [
+        "はいぬづか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hainuzuka/"
+    },
+    {
+      "question": "博多",
+      "answer": [
+        "はかた"
+      ],
+      "meaning": "JR線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakata/"
+    },
+    {
+      "question": "博多南",
+      "answer": [
+        "はかたみなみ"
+      ],
+      "meaning": "博多南線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakataminami/"
+    },
+    {
+      "question": "萩原",
+      "answer": [
+        "はぎわら"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagiwara_fukuoka/"
+    },
+    {
+      "question": "箱崎",
+      "answer": [
+        "はこざき"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakozaki/"
+    },
+    {
+      "question": "箱崎九大前",
+      "answer": [
+        "はこざききゅうだいまえ"
+      ],
+      "meaning": "福岡地下鉄箱崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakozakikyudai-mae/"
+    },
+    {
+      "question": "箱崎宮前",
+      "answer": [
+        "はこざきみやまえ"
+      ],
+      "meaning": "福岡地下鉄箱崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakozakimiya-mae/"
+    },
+    {
+      "question": "橋本",
+      "answer": [
+        "はしもと"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashimoto_fukuoka/"
+    },
+    {
+      "question": "波多江",
+      "answer": [
+        "はたえ"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatae/"
+    },
+    {
+      "question": "端間",
+      "answer": [
+        "はたま"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatama/"
+    },
+    {
+      "question": "八丁牟田",
+      "answer": [
+        "はっちょうむた"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatchomuta/"
+    },
+    {
+      "question": "花畑",
+      "answer": [
+        "はなばたけ"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanabatake/"
+    },
+    {
+      "question": "原田",
+      "answer": [
+        "はるだ"
+      ],
+      "meaning": "鹿児島本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haruda_fukuoka/"
+    },
+    {
+      "question": "原町",
+      "answer": [
+        "はるまち"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harumachi/"
+    },
+    {
+      "question": "東甘木",
+      "answer": [
+        "ひがしあまぎ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-amagi/"
+    },
+    {
+      "question": "東犀川三四郎",
+      "answer": [
+        "ひがしさいがわさんしろう"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-saigawasanshiro/"
+    },
+    {
+      "question": "東中間",
+      "answer": [
+        "ひがしなかま"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-nakama/"
+    },
+    {
+      "question": "東比恵",
+      "answer": [
+        "ひがしひえ"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-hie/"
+    },
+    {
+      "question": "東福間",
+      "answer": [
+        "ひがしふくま"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-fukuma/"
+    },
+    {
+      "question": "東水巻",
+      "answer": [
+        "ひがしみずまき"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-mizumaki/"
+    },
+    {
+      "question": "彦山",
+      "answer": [
+        "ひこさん"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikosan/"
+    },
+    {
+      "question": "人見",
+      "answer": [
+        "ひとみ"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitomi/"
+    },
+    {
+      "question": "開",
+      "answer": [
+        "ひらき"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiraki/"
+    },
+    {
+      "question": "福岡空港",
+      "answer": [
+        "ふくおかくうこう"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuoka-airport/"
+    },
+    {
+      "question": "福大前",
+      "answer": [
+        "ふくだいまえ"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukudaimae/"
+    },
+    {
+      "question": "福間",
+      "answer": [
+        "ふくま"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuma/"
+    },
+    {
+      "question": "福吉",
+      "answer": [
+        "ふくよし"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuyoshi/"
+    },
+    {
+      "question": "藤崎",
+      "answer": [
+        "ふじさき"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisaki_fukuoka/"
+    },
+    {
+      "question": "藤棚",
+      "answer": [
+        "ふじたな"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujitana/"
+    },
+    {
+      "question": "藤ノ木",
+      "answer": [
+        "ふじのき"
+      ],
+      "meaning": "筑豊本線（若松線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujinoki/"
+    },
+    {
+      "question": "二島",
+      "answer": [
+        "ふたじま"
+      ],
+      "meaning": "筑豊本線（若松線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futajima/"
+    },
+    {
+      "question": "福工大前",
+      "answer": [
+        "ふっこうだいまえ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukko-daimae/"
+    },
+    {
+      "question": "二日市",
+      "answer": [
+        "ふつかいち"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futsukaichi/"
+    },
+    {
+      "question": "船尾",
+      "answer": [
+        "ふなお"
+      ],
+      "meaning": "後藤寺線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funao_fukuoka/"
+    },
+    {
+      "question": "ふれあい生力",
+      "answer": [
+        "ふれあいしょうりき"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fureaishoriki/"
+    },
+    {
+      "question": "豊前大熊",
+      "answer": [
+        "ぶぜんおおくま"
+      ],
+      "meaning": "平成筑豊鉄道糸田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-okuma/"
+    },
+    {
+      "question": "豊前川崎",
+      "answer": [
+        "ぶぜんかわさき"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-kawasaki/"
+    },
+    {
+      "question": "豊前松江",
+      "answer": [
+        "ぶぜんしょうえ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-shoe/"
+    },
+    {
+      "question": "豊前桝田",
+      "answer": [
+        "ぶぜんますだ"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/buzen-masuda/"
+    },
+    {
+      "question": "平和通",
+      "answer": [
+        "へいわどおり"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heiwadori/"
+    },
+    {
+      "question": "別府",
+      "answer": [
+        "べふ"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/befu/"
+    },
+    {
+      "question": "宝珠山",
+      "answer": [
+        "ほうしゅやま"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshuyama/"
+    },
+    {
+      "question": "糒",
+      "answer": [
+        "ほしい"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshii/"
+    },
+    {
+      "question": "本郷",
+      "answer": [
+        "ほんごう"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hongo_fukuoka/"
+    },
+    {
+      "question": "本城",
+      "answer": [
+        "ほんじょう"
+      ],
+      "meaning": "筑豊本線（若松線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/honjo_fukuoka/"
+    },
+    {
+      "question": "馬出九大病院前",
+      "answer": [
+        "まいだしきゅうだいびょういんまえ"
+      ],
+      "meaning": "福岡地下鉄箱崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maidashikyudaibyoin-mae/"
+    },
+    {
+      "question": "舞松原",
+      "answer": [
+        "まいまつばら"
+      ],
+      "meaning": "香椎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maimatsubara/"
+    },
+    {
+      "question": "勾金",
+      "answer": [
+        "まがりかね"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/magarikane/"
+    },
+    {
+      "question": "馬田",
+      "answer": [
+        "まだ"
+      ],
+      "meaning": "西鉄甘木線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mada/"
+    },
+    {
+      "question": "松崎",
+      "answer": [
+        "まつざき"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuzaki_fukuoka/"
+    },
+    {
+      "question": "松山",
+      "answer": [
+        "まつやま"
+      ],
+      "meaning": "平成筑豊鉄道糸田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyama_fukuoka/"
+    },
+    {
+      "question": "御井",
+      "answer": [
+        "みい"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mii/"
+    },
+    {
+      "question": "三国が丘",
+      "answer": [
+        "みくにがおか"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikunigaoka_fukuoka/"
+    },
+    {
+      "question": "三毛門",
+      "answer": [
+        "みけかど"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikekado/"
+    },
+    {
+      "question": "美咲が丘",
+      "answer": [
+        "みさきがおか"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misakigaoka/"
+    },
+    {
+      "question": "水城",
+      "answer": [
+        "みずき"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mizuki_fukuoka/"
+    },
+    {
+      "question": "三潴",
+      "answer": [
+        "みずま"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mizuma_fukuoka/"
+    },
+    {
+      "question": "水巻",
+      "answer": [
+        "みずまき"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mizumaki/"
+    },
+    {
+      "question": "三沢",
+      "answer": [
+        "みつさわ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsusawa_fukuoka/"
+    },
+    {
+      "question": "三苫",
+      "answer": [
+        "みとま"
+      ],
+      "meaning": "西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitoma/"
+    },
+    {
+      "question": "南久留米",
+      "answer": [
+        "みなみくるめ"
+      ],
+      "meaning": "久大本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kurume/"
+    },
+    {
+      "question": "南小倉",
+      "answer": [
+        "みなみこくら"
+      ],
+      "meaning": "日豊本線、日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kokura/"
+    },
+    {
+      "question": "南瀬高",
+      "answer": [
+        "みなみせたか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-setaka/"
+    },
+    {
+      "question": "南直方御殿口",
+      "answer": [
+        "みなみのおがたごてんぐち"
+      ],
+      "meaning": "平成筑豊鉄道伊田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-nogata-gotenguchi/"
+    },
+    {
+      "question": "南福岡",
+      "answer": [
+        "みなみふくおか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-fukuoka/"
+    },
+    {
+      "question": "南行橋",
+      "answer": [
+        "みなみゆくはし"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yukuhashi/"
+    },
+    {
+      "question": "美夜古泉",
+      "answer": [
+        "みやこいずみ"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyakoizumi/"
+    },
+    {
+      "question": "宮の陣",
+      "answer": [
+        "みやのじん"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyanojin/"
+    },
+    {
+      "question": "紫",
+      "answer": [
+        "むらさき"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/murasaki/"
+    },
+    {
+      "question": "室見",
+      "answer": [
+        "むろみ"
+      ],
+      "meaning": "福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/muromi/"
+    },
+    {
+      "question": "姪浜",
+      "answer": [
+        "めいのはま"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meinohama/"
+    },
+    {
+      "question": "門司",
+      "answer": [
+        "もじ"
+      ],
+      "meaning": "山陽本線、鹿児島本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moji/"
+    },
+    {
+      "question": "門司港",
+      "answer": [
+        "もじこう"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mojiko/"
+    },
+    {
+      "question": "森下",
+      "answer": [
+        "もりした"
+      ],
+      "meaning": "筑豊電気鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/morishita_fukuoka/"
+    },
+    {
+      "question": "守恒",
+      "answer": [
+        "もりつね"
+      ],
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moritsune/"
+    },
+    {
+      "question": "矢加部",
+      "answer": [
+        "やかべ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakabe/"
+    },
+    {
+      "question": "薬院",
+      "answer": [
+        "やくいん"
+      ],
+      "meaning": "西鉄天神大牟田線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakuin/"
+    },
+    {
+      "question": "薬院大通",
+      "answer": [
+        "やくいんおおどおり"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakuin-odori/"
+    },
+    {
+      "question": "安武",
+      "answer": [
+        "やすたけ"
+      ],
+      "meaning": "西鉄天神大牟田線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasutake/"
+    },
+    {
+      "question": "八幡",
+      "answer": [
+        "やはた"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yahata_fukuoka/"
+    },
+    {
+      "question": "山隈",
+      "answer": [
+        "やまぐま"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamaguma/"
+    },
+    {
+      "question": "行橋",
+      "answer": [
+        "ゆくはし"
+      ],
+      "meaning": "日豊本線、平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yukuhashi/"
+    },
+    {
+      "question": "柚須",
+      "answer": [
+        "ゆす"
+      ],
+      "meaning": "福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yusu/"
+    },
+    {
+      "question": "油須原",
+      "answer": [
+        "ゆすばる"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yusubaru/"
+    },
+    {
+      "question": "吉塚",
+      "answer": [
+        "よしづか"
+      ],
+      "meaning": "鹿児島本線、福北ゆたか線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshizuka/"
+    },
+    {
+      "question": "吉富",
+      "answer": [
+        "よしとみ"
+      ],
+      "meaning": "日豊本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshitomi_fukuoka/"
+    },
+    {
+      "question": "吉野",
+      "answer": [
+        "よしの"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshino_fukuoka/"
+    },
+    {
+      "question": "呼野",
+      "answer": [
+        "よぶの"
+      ],
+      "meaning": "日田彦山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yobuno/"
+    },
+    {
+      "question": "六本松",
+      "answer": [
+        "ろっぽんまつ"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ropponmatsu/"
+    },
+    {
+      "question": "若松",
+      "answer": [
+        "わかまつ"
+      ],
+      "meaning": "筑豊本線（若松線）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakamatsu/"
+    },
+    {
+      "question": "和白",
+      "answer": [
+        "わじろ"
+      ],
+      "meaning": "香椎線、西鉄貝塚線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wajiro/"
+    },
+    {
+      "question": "渡瀬",
+      "answer": [
+        "わたぜ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wataze_fukuoka/"
+    },
+    {
+      "question": "渡辺通",
+      "answer": [
+        "わたなべどおり"
+      ],
+      "meaning": "福岡地下鉄七隈線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watanabe-dori/"
+    }
+  ]
+}
