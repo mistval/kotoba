@@ -66,7 +66,7 @@ async function createKanjiSearchNavigationChapter(
       navigationChapter: NavigationChapter.fromContent(pages),
       pageCount: 1,
       hasResult: false,
-    }
+    };
   }
 
   const dataSource = new KanjiNavigationDataSource(
