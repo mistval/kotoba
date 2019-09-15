@@ -1,0 +1,635 @@
+{
+  "uniqueId": "stations_saga",
+  "name": "Saga Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Saga station names](https://mb.jorudan.co.jp/os/eki/menu_hsg/)",
+  "cards": [
+    {
+      "question": "有田",
+      "answer": [
+        "ありた"
+      ],
+      "meaning": "佐世保線、松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arita/"
+    },
+    {
+      "question": "伊賀屋",
+      "answer": [
+        "いがや"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/igaya/"
+    },
+    {
+      "question": "伊万里",
+      "answer": [
+        "いまり"
+      ],
+      "meaning": "筑肥線（伊万里）、松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imari/"
+    },
+    {
+      "question": "岩屋",
+      "answer": [
+        "いわや"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwaya_saga/"
+    },
+    {
+      "question": "牛津",
+      "answer": [
+        "うしづ"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushizu/"
+    },
+    {
+      "question": "浦ノ崎",
+      "answer": [
+        "うらのさき"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uranosaki/"
+    },
+    {
+      "question": "相知",
+      "answer": [
+        "おうち"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ochi/"
+    },
+    {
+      "question": "大川野",
+      "answer": [
+        "おおかわの"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okawano/"
+    },
+    {
+      "question": "大木",
+      "answer": [
+        "おおぎ"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogi_matsuura/"
+    },
+    {
+      "question": "大町",
+      "answer": [
+        "おおまち"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omachi_saga/"
+    },
+    {
+      "question": "小城",
+      "answer": [
+        "おぎ"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogi_saga/"
+    },
+    {
+      "question": "鬼塚",
+      "answer": [
+        "おにづか"
+      ],
+      "meaning": "筑肥線（伊万里）、唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onizuka/"
+    },
+    {
+      "question": "金石原",
+      "answer": [
+        "かないしはら"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanaishihara/"
+    },
+    {
+      "question": "金武",
+      "answer": [
+        "かなたけ"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanatake/"
+    },
+    {
+      "question": "上有田",
+      "answer": [
+        "かみありた"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-arita/"
+    },
+    {
+      "question": "上伊万里",
+      "answer": [
+        "かみいまり"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-imari/"
+    },
+    {
+      "question": "唐津",
+      "answer": [
+        "からつ"
+      ],
+      "meaning": "JR線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karatsu/"
+    },
+    {
+      "question": "川東",
+      "answer": [
+        "かわひがし"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawahigashi_saga/"
+    },
+    {
+      "question": "神埼",
+      "answer": [
+        "かんざき"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanzaki_saga/"
+    },
+    {
+      "question": "北方",
+      "answer": [
+        "きたがた"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitagata_saga/"
+    },
+    {
+      "question": "基山",
+      "answer": [
+        "きやま"
+      ],
+      "meaning": "鹿児島本線、甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyama_saga/"
+    },
+    {
+      "question": "厳木",
+      "answer": [
+        "きゅうらぎ"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyuragi/"
+    },
+    {
+      "question": "楠久",
+      "answer": [
+        "くすく"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusuku/"
+    },
+    {
+      "question": "久原",
+      "answer": [
+        "くばら"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubara/"
+    },
+    {
+      "question": "久保田",
+      "answer": [
+        "くぼた"
+      ],
+      "meaning": "長崎本線、佐世保線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubota_saga/"
+    },
+    {
+      "question": "黒川",
+      "answer": [
+        "くろごう"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurogo_saga/"
+    },
+    {
+      "question": "けやき台",
+      "answer": [
+        "けやきだい"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keyakidai/"
+    },
+    {
+      "question": "駒鳴",
+      "answer": [
+        "こまなき"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komanaki/"
+    },
+    {
+      "question": "佐賀",
+      "answer": [
+        "さが"
+      ],
+      "meaning": "長崎本線、佐世保線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saga/"
+    },
+    {
+      "question": "里",
+      "answer": [
+        "さと"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sato/"
+    },
+    {
+      "question": "佐里",
+      "answer": [
+        "さり"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sari/"
+    },
+    {
+      "question": "新鳥栖",
+      "answer": [
+        "しんとす"
+      ],
+      "meaning": "長崎本線、佐世保線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-tosu/"
+    },
+    {
+      "question": "蔵宿",
+      "answer": [
+        "ぞうしゅく"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zoshuku/"
+    },
+    {
+      "question": "高橋",
+      "answer": [
+        "たかはし"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takahashi/"
+    },
+    {
+      "question": "多久",
+      "answer": [
+        "たく"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taku/"
+    },
+    {
+      "question": "武雄温泉",
+      "answer": [
+        "たけおおんせん"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takeo-onsen/"
+    },
+    {
+      "question": "田代",
+      "answer": [
+        "たしろ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tashiro/"
+    },
+    {
+      "question": "立野",
+      "answer": [
+        "たての"
+      ],
+      "meaning": "甘木鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tateno_saga/"
+    },
+    {
+      "question": "多良",
+      "answer": [
+        "たら"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tara/"
+    },
+    {
+      "question": "鳥栖",
+      "answer": [
+        "とす"
+      ],
+      "meaning": "鹿児島本線、長崎本線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosu/"
+    },
+    {
+      "question": "中多久",
+      "answer": [
+        "なかたく"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka-taku/"
+    },
+    {
+      "question": "中原",
+      "answer": [
+        "なかばる"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakabaru/"
+    },
+    {
+      "question": "永尾",
+      "answer": [
+        "ながお"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagao_saga/"
+    },
+    {
+      "question": "鍋島",
+      "answer": [
+        "なべしま"
+      ],
+      "meaning": "長崎本線、佐世保線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nabeshima/"
+    },
+    {
+      "question": "鳴石",
+      "answer": [
+        "なるいし"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruishi/"
+    },
+    {
+      "question": "西有田",
+      "answer": [
+        "にしありた"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-arita/"
+    },
+    {
+      "question": "西相知",
+      "answer": [
+        "にしおうち"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-ochi/"
+    },
+    {
+      "question": "西唐津",
+      "answer": [
+        "にしからつ"
+      ],
+      "meaning": "唐津線、筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-karatsu/"
+    },
+    {
+      "question": "虹ノ松原",
+      "answer": [
+        "にじのまつばら"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijinomatsubara/"
+    },
+    {
+      "question": "波瀬",
+      "answer": [
+        "はぜ"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haze/"
+    },
+    {
+      "question": "浜崎",
+      "answer": [
+        "はまさき"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamasaki/"
+    },
+    {
+      "question": "東唐津",
+      "answer": [
+        "ひがしからつ"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-karatsu/"
+    },
+    {
+      "question": "東多久",
+      "answer": [
+        "ひがしたく"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-taku/"
+    },
+    {
+      "question": "東山代",
+      "answer": [
+        "ひがしやましろ"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yamashiro/"
+    },
+    {
+      "question": "肥前旭",
+      "answer": [
+        "ひぜんあさひ"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-asahi/"
+    },
+    {
+      "question": "肥前飯田",
+      "answer": [
+        "ひぜんいいだ"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-iida/"
+    },
+    {
+      "question": "肥前大浦",
+      "answer": [
+        "ひぜんおおうら"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-o-ura/"
+    },
+    {
+      "question": "肥前鹿島",
+      "answer": [
+        "ひぜんかしま"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-kashima/"
+    },
+    {
+      "question": "肥前久保",
+      "answer": [
+        "ひぜんくぼ"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-kubo/"
+    },
+    {
+      "question": "肥前白石",
+      "answer": [
+        "ひぜんしろいし"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-shiroishi/"
+    },
+    {
+      "question": "肥前長野",
+      "answer": [
+        "ひぜんながの"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-nagano/"
+    },
+    {
+      "question": "肥前七浦",
+      "answer": [
+        "ひぜんななうら"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-nanaura/"
+    },
+    {
+      "question": "肥前浜",
+      "answer": [
+        "ひぜんはま"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-hama/"
+    },
+    {
+      "question": "肥前麓",
+      "answer": [
+        "ひぜんふもと"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-fumoto/"
+    },
+    {
+      "question": "肥前山口",
+      "answer": [
+        "ひぜんやまぐち"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-yamaguchi/"
+    },
+    {
+      "question": "肥前竜王",
+      "answer": [
+        "ひぜんりゅうおう"
+      ],
+      "meaning": "長崎本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-ryuo/"
+    },
+    {
+      "question": "福島口",
+      "answer": [
+        "ふくしまぐち"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukushimaguchi/"
+    },
+    {
+      "question": "本牟田部",
+      "answer": [
+        "ほんむたべ"
+      ],
+      "meaning": "唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-mutabe/"
+    },
+    {
+      "question": "三代橋",
+      "answer": [
+        "みだいばし"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/midaibashi/"
+    },
+    {
+      "question": "三間坂",
+      "answer": [
+        "みまさか"
+      ],
+      "meaning": "佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mimasaka/"
+    },
+    {
+      "question": "夫婦石",
+      "answer": [
+        "めおといし"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meotoishi/"
+    },
+    {
+      "question": "桃川",
+      "answer": [
+        "もものかわ"
+      ],
+      "meaning": "筑肥線（伊万里）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momonokawa/"
+    },
+    {
+      "question": "山谷",
+      "answer": [
+        "やまだに"
+      ],
+      "meaning": "松浦鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamadani/"
+    },
+    {
+      "question": "山本",
+      "answer": [
+        "やまもと"
+      ],
+      "meaning": "筑肥線（伊万里）、唐津線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamamoto_saga/"
+    },
+    {
+      "question": "弥生が丘",
+      "answer": [
+        "やよいがおか"
+      ],
+      "meaning": "鹿児島本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yayoigaoka/"
+    },
+    {
+      "question": "吉野ヶ里公園",
+      "answer": [
+        "よしのがりこうえん"
+      ],
+      "meaning": "長崎本線、佐世保線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshinogarikoen/"
+    },
+    {
+      "question": "和多田",
+      "answer": [
+        "わただ"
+      ],
+      "meaning": "筑肥線、福岡地下鉄空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watada/"
+    }
+  ]
+}

@@ -1,0 +1,7816 @@
+{
+  "uniqueId": "anagrams9",
+  "name": "Anagrams Length 9 Quiz",
+  "article": "an",
+  "instructions": "Unscramble the below word!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "WEBSTER_ANSWER",
+  "answerTimeLimitStrategy": "ANAGRAMS",
+  "cardPreprocessingStrategy": "RANDOMIZE_QUESTION_CHARACTERS",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_ANSWER",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "STRICT",
+  "commentFieldName": "Comment",
+  "forceNoMC": true,
+  "cards": [
+    {
+      "question": "abdominal",
+      "answer": [
+        "abdominal"
+      ]
+    },
+    {
+      "question": "abhorrent",
+      "answer": [
+        "abhorrent",
+        "earthborn"
+      ]
+    },
+    {
+      "question": "abolition",
+      "answer": [
+        "abolition"
+      ]
+    },
+    {
+      "question": "absurdity",
+      "answer": [
+        "absurdity"
+      ]
+    },
+    {
+      "question": "abundance",
+      "answer": [
+        "abundance"
+      ]
+    },
+    {
+      "question": "accession",
+      "answer": [
+        "accession"
+      ]
+    },
+    {
+      "question": "accessory",
+      "answer": [
+        "accessory"
+      ]
+    },
+    {
+      "question": "accompany",
+      "answer": [
+        "accompany"
+      ]
+    },
+    {
+      "question": "according",
+      "answer": [
+        "according"
+      ]
+    },
+    {
+      "question": "acquittal",
+      "answer": [
+        "acquittal"
+      ]
+    },
+    {
+      "question": "actuality",
+      "answer": [
+        "actuality"
+      ]
+    },
+    {
+      "question": "addictive",
+      "answer": [
+        "addictive"
+      ]
+    },
+    {
+      "question": "adherence",
+      "answer": [
+        "adherence"
+      ]
+    },
+    {
+      "question": "adjective",
+      "answer": [
+        "adjective"
+      ]
+    },
+    {
+      "question": "adjoining",
+      "answer": [
+        "adjoining"
+      ]
+    },
+    {
+      "question": "admirable",
+      "answer": [
+        "admirable"
+      ]
+    },
+    {
+      "question": "admission",
+      "answer": [
+        "admission"
+      ]
+    },
+    {
+      "question": "adoration",
+      "answer": [
+        "adoration"
+      ]
+    },
+    {
+      "question": "adornment",
+      "answer": [
+        "adornment"
+      ]
+    },
+    {
+      "question": "advantage",
+      "answer": [
+        "advantage"
+      ]
+    },
+    {
+      "question": "adventure",
+      "answer": [
+        "adventure"
+      ]
+    },
+    {
+      "question": "adversary",
+      "answer": [
+        "adversary"
+      ]
+    },
+    {
+      "question": "adversity",
+      "answer": [
+        "adversity"
+      ]
+    },
+    {
+      "question": "advertise",
+      "answer": [
+        "advertise"
+      ]
+    },
+    {
+      "question": "affection",
+      "answer": [
+        "affection"
+      ]
+    },
+    {
+      "question": "affidavit",
+      "answer": [
+        "affidavit"
+      ]
+    },
+    {
+      "question": "affiliate",
+      "answer": [
+        "affiliate"
+      ]
+    },
+    {
+      "question": "affluence",
+      "answer": [
+        "affluence"
+      ]
+    },
+    {
+      "question": "aftercare",
+      "answer": [
+        "aftercare"
+      ]
+    },
+    {
+      "question": "aftermath",
+      "answer": [
+        "aftermath"
+      ]
+    },
+    {
+      "question": "afternoon",
+      "answer": [
+        "afternoon"
+      ]
+    },
+    {
+      "question": "afterward",
+      "answer": [
+        "afterward"
+      ]
+    },
+    {
+      "question": "aggravate",
+      "answer": [
+        "aggravate"
+      ]
+    },
+    {
+      "question": "aggregate",
+      "answer": [
+        "aggregate"
+      ]
+    },
+    {
+      "question": "aggressor",
+      "answer": [
+        "aggressor"
+      ]
+    },
+    {
+      "question": "aggrieved",
+      "answer": [
+        "aggrieved"
+      ]
+    },
+    {
+      "question": "agonizing",
+      "answer": [
+        "agonizing"
+      ]
+    },
+    {
+      "question": "agreeable",
+      "answer": [
+        "agreeable"
+      ]
+    },
+    {
+      "question": "agreement",
+      "answer": [
+        "agreement"
+      ]
+    },
+    {
+      "question": "alcoholic",
+      "answer": [
+        "alcoholic"
+      ]
+    },
+    {
+      "question": "alignment",
+      "answer": [
+        "lamenting",
+        "alignment"
+      ]
+    },
+    {
+      "question": "alleviate",
+      "answer": [
+        "alleviate"
+      ]
+    },
+    {
+      "question": "alligator",
+      "answer": [
+        "alligator"
+      ]
+    },
+    {
+      "question": "allotment",
+      "answer": [
+        "allotment"
+      ]
+    },
+    {
+      "question": "allowance",
+      "answer": [
+        "allowance"
+      ]
+    },
+    {
+      "question": "alongside",
+      "answer": [
+        "alongside"
+      ]
+    },
+    {
+      "question": "alternate",
+      "answer": [
+        "alternate"
+      ]
+    },
+    {
+      "question": "amazement",
+      "answer": [
+        "amazement"
+      ]
+    },
+    {
+      "question": "ambitious",
+      "answer": [
+        "ambitious"
+      ]
+    },
+    {
+      "question": "ambulance",
+      "answer": [
+        "ambulance"
+      ]
+    },
+    {
+      "question": "amendment",
+      "answer": [
+        "amendment"
+      ]
+    },
+    {
+      "question": "amphibian",
+      "answer": [
+        "amphibian"
+      ]
+    },
+    {
+      "question": "amusement",
+      "answer": [
+        "amusement"
+      ]
+    },
+    {
+      "question": "analogous",
+      "answer": [
+        "analogous"
+      ]
+    },
+    {
+      "question": "anarchist",
+      "answer": [
+        "anarchist"
+      ]
+    },
+    {
+      "question": "anchorage",
+      "answer": [
+        "anchorage"
+      ]
+    },
+    {
+      "question": "ancillary",
+      "answer": [
+        "ancillary"
+      ]
+    },
+    {
+      "question": "animation",
+      "answer": [
+        "animation"
+      ]
+    },
+    {
+      "question": "animosity",
+      "answer": [
+        "animosity"
+      ]
+    },
+    {
+      "question": "announcer",
+      "answer": [
+        "announcer"
+      ]
+    },
+    {
+      "question": "annoyance",
+      "answer": [
+        "annoyance"
+      ]
+    },
+    {
+      "question": "anonymous",
+      "answer": [
+        "anonymous"
+      ]
+    },
+    {
+      "question": "antarctic",
+      "answer": [
+        "antarctic"
+      ]
+    },
+    {
+      "question": "antipathy",
+      "answer": [
+        "antipathy"
+      ]
+    },
+    {
+      "question": "antiquity",
+      "answer": [
+        "antiquity"
+      ]
+    },
+    {
+      "question": "apartment",
+      "answer": [
+        "apartment"
+      ]
+    },
+    {
+      "question": "apologize",
+      "answer": [
+        "apologize"
+      ]
+    },
+    {
+      "question": "appalling",
+      "answer": [
+        "appalling"
+      ]
+    },
+    {
+      "question": "apparatus",
+      "answer": [
+        "apparatus"
+      ]
+    },
+    {
+      "question": "appetizer",
+      "answer": [
+        "appetizer"
+      ]
+    },
+    {
+      "question": "appliance",
+      "answer": [
+        "appliance"
+      ]
+    },
+    {
+      "question": "applicant",
+      "answer": [
+        "applicant"
+      ]
+    },
+    {
+      "question": "apprehend",
+      "answer": [
+        "apprehend"
+      ]
+    },
+    {
+      "question": "architect",
+      "answer": [
+        "architect"
+      ]
+    },
+    {
+      "question": "armistice",
+      "answer": [
+        "armistice"
+      ]
+    },
+    {
+      "question": "arthritis",
+      "answer": [
+        "arthritis"
+      ]
+    },
+    {
+      "question": "artillery",
+      "answer": [
+        "artillery"
+      ]
+    },
+    {
+      "question": "ascertain",
+      "answer": [
+        "cartesian",
+        "sectarian",
+        "ascertain"
+      ]
+    },
+    {
+      "question": "asparagus",
+      "answer": [
+        "asparagus"
+      ]
+    },
+    {
+      "question": "assertion",
+      "answer": [
+        "assertion"
+      ]
+    },
+    {
+      "question": "assertive",
+      "answer": [
+        "assertive"
+      ]
+    },
+    {
+      "question": "assistant",
+      "answer": [
+        "assistant"
+      ]
+    },
+    {
+      "question": "associate",
+      "answer": [
+        "associate"
+      ]
+    },
+    {
+      "question": "assurance",
+      "answer": [
+        "assurance"
+      ]
+    },
+    {
+      "question": "astronaut",
+      "answer": [
+        "astronaut"
+      ]
+    },
+    {
+      "question": "astronomy",
+      "answer": [
+        "astronomy"
+      ]
+    },
+    {
+      "question": "athletics",
+      "answer": [
+        "athletics"
+      ]
+    },
+    {
+      "question": "attempted",
+      "answer": [
+        "attempted"
+      ]
+    },
+    {
+      "question": "attendant",
+      "answer": [
+        "attendant"
+      ]
+    },
+    {
+      "question": "attention",
+      "answer": [
+        "attention"
+      ]
+    },
+    {
+      "question": "attribute",
+      "answer": [
+        "attribute"
+      ]
+    },
+    {
+      "question": "attrition",
+      "answer": [
+        "attrition",
+        "titration"
+      ]
+    },
+    {
+      "question": "audacious",
+      "answer": [
+        "audacious"
+      ]
+    },
+    {
+      "question": "austerity",
+      "answer": [
+        "austerity"
+      ]
+    },
+    {
+      "question": "authority",
+      "answer": [
+        "authority"
+      ]
+    },
+    {
+      "question": "authorize",
+      "answer": [
+        "authorize"
+      ]
+    },
+    {
+      "question": "autograph",
+      "answer": [
+        "autograph"
+      ]
+    },
+    {
+      "question": "automatic",
+      "answer": [
+        "automatic"
+      ]
+    },
+    {
+      "question": "auxiliary",
+      "answer": [
+        "auxiliary"
+      ]
+    },
+    {
+      "question": "available",
+      "answer": [
+        "available"
+      ]
+    },
+    {
+      "question": "avalanche",
+      "answer": [
+        "avalanche"
+      ]
+    },
+    {
+      "question": "avoidance",
+      "answer": [
+        "avoidance"
+      ]
+    },
+    {
+      "question": "awakening",
+      "answer": [
+        "awakening"
+      ]
+    },
+    {
+      "question": "awareness",
+      "answer": [
+        "awareness"
+      ]
+    },
+    {
+      "question": "badminton",
+      "answer": [
+        "badminton"
+      ]
+    },
+    {
+      "question": "ballpoint",
+      "answer": [
+        "ballpoint"
+      ]
+    },
+    {
+      "question": "barbarian",
+      "answer": [
+        "barbarian"
+      ]
+    },
+    {
+      "question": "barbarism",
+      "answer": [
+        "barbarism"
+      ]
+    },
+    {
+      "question": "barometer",
+      "answer": [
+        "barometer"
+      ]
+    },
+    {
+      "question": "barricade",
+      "answer": [
+        "barricade"
+      ]
+    },
+    {
+      "question": "basically",
+      "answer": [
+        "basically"
+      ]
+    },
+    {
+      "question": "battalion",
+      "answer": [
+        "battalion"
+      ]
+    },
+    {
+      "question": "beautiful",
+      "answer": [
+        "beautiful"
+      ]
+    },
+    {
+      "question": "beefsteak",
+      "answer": [
+        "beefsteak"
+      ]
+    },
+    {
+      "question": "beginning",
+      "answer": [
+        "beginning"
+      ]
+    },
+    {
+      "question": "belonging",
+      "answer": [
+        "belonging"
+      ]
+    },
+    {
+      "question": "benchmark",
+      "answer": [
+        "benchmark"
+      ]
+    },
+    {
+      "question": "bilateral",
+      "answer": [
+        "bilateral"
+      ]
+    },
+    {
+      "question": "bilingual",
+      "answer": [
+        "bilingual"
+      ]
+    },
+    {
+      "question": "billboard",
+      "answer": [
+        "billboard",
+        "broadbill"
+      ]
+    },
+    {
+      "question": "billiards",
+      "answer": [
+        "billiards"
+      ]
+    },
+    {
+      "question": "bimonthly",
+      "answer": [
+        "bimonthly"
+      ]
+    },
+    {
+      "question": "binocular",
+      "answer": [
+        "binocular",
+        "colubrina"
+      ]
+    },
+    {
+      "question": "biography",
+      "answer": [
+        "biography"
+      ]
+    },
+    {
+      "question": "biologist",
+      "answer": [
+        "biologist"
+      ]
+    },
+    {
+      "question": "blasphemy",
+      "answer": [
+        "blasphemy"
+      ]
+    },
+    {
+      "question": "blueberry",
+      "answer": [
+        "blueberry"
+      ]
+    },
+    {
+      "question": "blueprint",
+      "answer": [
+        "blueprint"
+      ]
+    },
+    {
+      "question": "boardroom",
+      "answer": [
+        "boardroom"
+      ]
+    },
+    {
+      "question": "bodyguard",
+      "answer": [
+        "bodyguard"
+      ]
+    },
+    {
+      "question": "bookshelf",
+      "answer": [
+        "bookshelf"
+      ]
+    },
+    {
+      "question": "bookstore",
+      "answer": [
+        "bookstore"
+      ]
+    },
+    {
+      "question": "borrowing",
+      "answer": [
+        "borrowing"
+      ]
+    },
+    {
+      "question": "botanical",
+      "answer": [
+        "botanical"
+      ]
+    },
+    {
+      "question": "boulevard",
+      "answer": [
+        "boulevard"
+      ]
+    },
+    {
+      "question": "bountiful",
+      "answer": [
+        "bountiful"
+      ]
+    },
+    {
+      "question": "bourgeois",
+      "answer": [
+        "bourgeois"
+      ]
+    },
+    {
+      "question": "boyfriend",
+      "answer": [
+        "boyfriend"
+      ]
+    },
+    {
+      "question": "breakdown",
+      "answer": [
+        "breakdown"
+      ]
+    },
+    {
+      "question": "breakfast",
+      "answer": [
+        "breakfast"
+      ]
+    },
+    {
+      "question": "breathing",
+      "answer": [
+        "breathing"
+      ]
+    },
+    {
+      "question": "briefcase",
+      "answer": [
+        "briefcase"
+      ]
+    },
+    {
+      "question": "brilliant",
+      "answer": [
+        "brilliant"
+      ]
+    },
+    {
+      "question": "broadcast",
+      "answer": [
+        "broadcast"
+      ]
+    },
+    {
+      "question": "brutality",
+      "answer": [
+        "brutality"
+      ]
+    },
+    {
+      "question": "bulldozer",
+      "answer": [
+        "bulldozer"
+      ]
+    },
+    {
+      "question": "butterfly",
+      "answer": [
+        "butterfly"
+      ]
+    },
+    {
+      "question": "cafeteria",
+      "answer": [
+        "cafeteria"
+      ]
+    },
+    {
+      "question": "calculate",
+      "answer": [
+        "calculate"
+      ]
+    },
+    {
+      "question": "calibrate",
+      "answer": [
+        "bacterial",
+        "calibrate"
+      ]
+    },
+    {
+      "question": "cameraman",
+      "answer": [
+        "cameraman"
+      ]
+    },
+    {
+      "question": "candidate",
+      "answer": [
+        "candidate"
+      ]
+    },
+    {
+      "question": "captivate",
+      "answer": [
+        "captivate"
+      ]
+    },
+    {
+      "question": "cardboard",
+      "answer": [
+        "cardboard"
+      ]
+    },
+    {
+      "question": "carefully",
+      "answer": [
+        "carefully"
+      ]
+    },
+    {
+      "question": "caretaker",
+      "answer": [
+        "caretaker"
+      ]
+    },
+    {
+      "question": "carpenter",
+      "answer": [
+        "carpenter"
+      ]
+    },
+    {
+      "question": "cartridge",
+      "answer": [
+        "cartridge"
+      ]
+    },
+    {
+      "question": "casserole",
+      "answer": [
+        "casserole"
+      ]
+    },
+    {
+      "question": "cataclysm",
+      "answer": [
+        "cataclysm"
+      ]
+    },
+    {
+      "question": "catechism",
+      "answer": [
+        "schematic",
+        "catechism"
+      ]
+    },
+    {
+      "question": "cathedral",
+      "answer": [
+        "cathedral"
+      ]
+    },
+    {
+      "question": "ceaseless",
+      "answer": [
+        "ceaseless"
+      ]
+    },
+    {
+      "question": "celebrate",
+      "answer": [
+        "celebrate"
+      ]
+    },
+    {
+      "question": "celestial",
+      "answer": [
+        "celestial"
+      ]
+    },
+    {
+      "question": "certainly",
+      "answer": [
+        "certainly"
+      ]
+    },
+    {
+      "question": "certainty",
+      "answer": [
+        "certainty"
+      ]
+    },
+    {
+      "question": "certitude",
+      "answer": [
+        "certitude",
+        "rectitude"
+      ]
+    },
+    {
+      "question": "cessation",
+      "answer": [
+        "cessation"
+      ]
+    },
+    {
+      "question": "challenge",
+      "answer": [
+        "challenge"
+      ]
+    },
+    {
+      "question": "champagne",
+      "answer": [
+        "champagne"
+      ]
+    },
+    {
+      "question": "character",
+      "answer": [
+        "character"
+      ]
+    },
+    {
+      "question": "charlatan",
+      "answer": [
+        "charlatan"
+      ]
+    },
+    {
+      "question": "chauffeur",
+      "answer": [
+        "chauffeur"
+      ]
+    },
+    {
+      "question": "cheapness",
+      "answer": [
+        "cheapness"
+      ]
+    },
+    {
+      "question": "chemistry",
+      "answer": [
+        "chemistry"
+      ]
+    },
+    {
+      "question": "childhood",
+      "answer": [
+        "childhood"
+      ]
+    },
+    {
+      "question": "childless",
+      "answer": [
+        "childless"
+      ]
+    },
+    {
+      "question": "chocolate",
+      "answer": [
+        "chocolate"
+      ]
+    },
+    {
+      "question": "christian",
+      "answer": [
+        "christian"
+      ]
+    },
+    {
+      "question": "christmas",
+      "answer": [
+        "christmas"
+      ]
+    },
+    {
+      "question": "chronicle",
+      "answer": [
+        "chronicle"
+      ]
+    },
+    {
+      "question": "cigarette",
+      "answer": [
+        "cigarette"
+      ]
+    },
+    {
+      "question": "circulate",
+      "answer": [
+        "circulate"
+      ]
+    },
+    {
+      "question": "classical",
+      "answer": [
+        "classical"
+      ]
+    },
+    {
+      "question": "classmate",
+      "answer": [
+        "classmate"
+      ]
+    },
+    {
+      "question": "classroom",
+      "answer": [
+        "classroom"
+      ]
+    },
+    {
+      "question": "clearance",
+      "answer": [
+        "clearance"
+      ]
+    },
+    {
+      "question": "clearness",
+      "answer": [
+        "clearness"
+      ]
+    },
+    {
+      "question": "clergyman",
+      "answer": [
+        "clergyman"
+      ]
+    },
+    {
+      "question": "clientele",
+      "answer": [
+        "clientele"
+      ]
+    },
+    {
+      "question": "cloakroom",
+      "answer": [
+        "cloakroom"
+      ]
+    },
+    {
+      "question": "clockwise",
+      "answer": [
+        "clockwise"
+      ]
+    },
+    {
+      "question": "clockwork",
+      "answer": [
+        "clockwork"
+      ]
+    },
+    {
+      "question": "coastline",
+      "answer": [
+        "sectional",
+        "coastline"
+      ]
+    },
+    {
+      "question": "coffeepot",
+      "answer": [
+        "coffeepot"
+      ]
+    },
+    {
+      "question": "cognition",
+      "answer": [
+        "incognito",
+        "cognition"
+      ]
+    },
+    {
+      "question": "cognitive",
+      "answer": [
+        "cognitive"
+      ]
+    },
+    {
+      "question": "coherence",
+      "answer": [
+        "coherence"
+      ]
+    },
+    {
+      "question": "colleague",
+      "answer": [
+        "colleague"
+      ]
+    },
+    {
+      "question": "collector",
+      "answer": [
+        "collector"
+      ]
+    },
+    {
+      "question": "collision",
+      "answer": [
+        "collision"
+      ]
+    },
+    {
+      "question": "collusion",
+      "answer": [
+        "collusion"
+      ]
+    },
+    {
+      "question": "columnist",
+      "answer": [
+        "columnist"
+      ]
+    },
+    {
+      "question": "commander",
+      "answer": [
+        "commander"
+      ]
+    },
+    {
+      "question": "committee",
+      "answer": [
+        "committee"
+      ]
+    },
+    {
+      "question": "commodity",
+      "answer": [
+        "commodity"
+      ]
+    },
+    {
+      "question": "communism",
+      "answer": [
+        "communism"
+      ]
+    },
+    {
+      "question": "communist",
+      "answer": [
+        "communist"
+      ]
+    },
+    {
+      "question": "community",
+      "answer": [
+        "community"
+      ]
+    },
+    {
+      "question": "companion",
+      "answer": [
+        "companion"
+      ]
+    },
+    {
+      "question": "competent",
+      "answer": [
+        "competent"
+      ]
+    },
+    {
+      "question": "competing",
+      "answer": [
+        "competing"
+      ]
+    },
+    {
+      "question": "complaint",
+      "answer": [
+        "compliant",
+        "complaint"
+      ]
+    },
+    {
+      "question": "component",
+      "answer": [
+        "component"
+      ]
+    },
+    {
+      "question": "composure",
+      "answer": [
+        "composure"
+      ]
+    },
+    {
+      "question": "computing",
+      "answer": [
+        "computing"
+      ]
+    },
+    {
+      "question": "conceited",
+      "answer": [
+        "conceited"
+      ]
+    },
+    {
+      "question": "concerned",
+      "answer": [
+        "concerned"
+      ]
+    },
+    {
+      "question": "concerted",
+      "answer": [
+        "concerted"
+      ]
+    },
+    {
+      "question": "condition",
+      "answer": [
+        "condition"
+      ]
+    },
+    {
+      "question": "conductor",
+      "answer": [
+        "conductor"
+      ]
+    },
+    {
+      "question": "confident",
+      "answer": [
+        "confident"
+      ]
+    },
+    {
+      "question": "confusing",
+      "answer": [
+        "confusing"
+      ]
+    },
+    {
+      "question": "confusion",
+      "answer": [
+        "confusion"
+      ]
+    },
+    {
+      "question": "congenial",
+      "answer": [
+        "congenial"
+      ]
+    },
+    {
+      "question": "connected",
+      "answer": [
+        "connected"
+      ]
+    },
+    {
+      "question": "connector",
+      "answer": [
+        "connector"
+      ]
+    },
+    {
+      "question": "conqueror",
+      "answer": [
+        "conqueror"
+      ]
+    },
+    {
+      "question": "conscious",
+      "answer": [
+        "conscious"
+      ]
+    },
+    {
+      "question": "consensus",
+      "answer": [
+        "consensus"
+      ]
+    },
+    {
+      "question": "consonant",
+      "answer": [
+        "consonant"
+      ]
+    },
+    {
+      "question": "constable",
+      "answer": [
+        "constable"
+      ]
+    },
+    {
+      "question": "constrain",
+      "answer": [
+        "nonracist",
+        "transonic",
+        "constrain"
+      ]
+    },
+    {
+      "question": "constrict",
+      "answer": [
+        "constrict"
+      ]
+    },
+    {
+      "question": "construct",
+      "answer": [
+        "construct"
+      ]
+    },
+    {
+      "question": "consulate",
+      "answer": [
+        "consulate"
+      ]
+    },
+    {
+      "question": "contagion",
+      "answer": [
+        "cognation",
+        "contagion"
+      ]
+    },
+    {
+      "question": "container",
+      "answer": [
+        "container",
+        "crenation"
+      ]
+    },
+    {
+      "question": "contender",
+      "answer": [
+        "contender"
+      ]
+    },
+    {
+      "question": "continent",
+      "answer": [
+        "continent"
+      ]
+    },
+    {
+      "question": "continual",
+      "answer": [
+        "continual",
+        "inoculant"
+      ]
+    },
+    {
+      "question": "continuum",
+      "answer": [
+        "continuum"
+      ]
+    },
+    {
+      "question": "conundrum",
+      "answer": [
+        "conundrum"
+      ]
+    },
+    {
+      "question": "convinced",
+      "answer": [
+        "convinced"
+      ]
+    },
+    {
+      "question": "cooperate",
+      "answer": [
+        "cooperate"
+      ]
+    },
+    {
+      "question": "copyright",
+      "answer": [
+        "copyright"
+      ]
+    },
+    {
+      "question": "corollary",
+      "answer": [
+        "corollary"
+      ]
+    },
+    {
+      "question": "corporate",
+      "answer": [
+        "corporate"
+      ]
+    },
+    {
+      "question": "correctly",
+      "answer": [
+        "correctly"
+      ]
+    },
+    {
+      "question": "corrosive",
+      "answer": [
+        "corrosive"
+      ]
+    },
+    {
+      "question": "councilor",
+      "answer": [
+        "councilor"
+      ]
+    },
+    {
+      "question": "counselor",
+      "answer": [
+        "counselor"
+      ]
+    },
+    {
+      "question": "countdown",
+      "answer": [
+        "countdown"
+      ]
+    },
+    {
+      "question": "countless",
+      "answer": [
+        "countless"
+      ]
+    },
+    {
+      "question": "courteous",
+      "answer": [
+        "courteous",
+        "outsource"
+      ]
+    },
+    {
+      "question": "courtroom",
+      "answer": [
+        "courtroom"
+      ]
+    },
+    {
+      "question": "courtship",
+      "answer": [
+        "courtship"
+      ]
+    },
+    {
+      "question": "cowardice",
+      "answer": [
+        "cowardice"
+      ]
+    },
+    {
+      "question": "crackdown",
+      "answer": [
+        "crackdown"
+      ]
+    },
+    {
+      "question": "craftsman",
+      "answer": [
+        "craftsman"
+      ]
+    },
+    {
+      "question": "criterion",
+      "answer": [
+        "criterion"
+      ]
+    },
+    {
+      "question": "criticism",
+      "answer": [
+        "criticism"
+      ]
+    },
+    {
+      "question": "criticize",
+      "answer": [
+        "criticize"
+      ]
+    },
+    {
+      "question": "crocodile",
+      "answer": [
+        "crocodile"
+      ]
+    },
+    {
+      "question": "crossroad",
+      "answer": [
+        "crossroad"
+      ]
+    },
+    {
+      "question": "crosswalk",
+      "answer": [
+        "classwork",
+        "crosswalk"
+      ]
+    },
+    {
+      "question": "crossword",
+      "answer": [
+        "crossword"
+      ]
+    },
+    {
+      "question": "culminate",
+      "answer": [
+        "culminate"
+      ]
+    },
+    {
+      "question": "cultivate",
+      "answer": [
+        "cultivate"
+      ]
+    },
+    {
+      "question": "curiosity",
+      "answer": [
+        "curiosity"
+      ]
+    },
+    {
+      "question": "curiously",
+      "answer": [
+        "curiously"
+      ]
+    },
+    {
+      "question": "currently",
+      "answer": [
+        "currently"
+      ]
+    },
+    {
+      "question": "custodian",
+      "answer": [
+        "custodian"
+      ]
+    },
+    {
+      "question": "dangerous",
+      "answer": [
+        "dangerous"
+      ]
+    },
+    {
+      "question": "deafening",
+      "answer": [
+        "deafening"
+      ]
+    },
+    {
+      "question": "debatable",
+      "answer": [
+        "debatable"
+      ]
+    },
+    {
+      "question": "decadence",
+      "answer": [
+        "decadence"
+      ]
+    },
+    {
+      "question": "deceitful",
+      "answer": [
+        "deceitful"
+      ]
+    },
+    {
+      "question": "deception",
+      "answer": [
+        "deception"
+      ]
+    },
+    {
+      "question": "deceptive",
+      "answer": [
+        "deceptive"
+      ]
+    },
+    {
+      "question": "decidedly",
+      "answer": [
+        "decidedly"
+      ]
+    },
+    {
+      "question": "dedicated",
+      "answer": [
+        "dedicated"
+      ]
+    },
+    {
+      "question": "deduction",
+      "answer": [
+        "deduction"
+      ]
+    },
+    {
+      "question": "defection",
+      "answer": [
+        "defection"
+      ]
+    },
+    {
+      "question": "defendant",
+      "answer": [
+        "defendant"
+      ]
+    },
+    {
+      "question": "defensive",
+      "answer": [
+        "defensive"
+      ]
+    },
+    {
+      "question": "deference",
+      "answer": [
+        "deference"
+      ]
+    },
+    {
+      "question": "deficient",
+      "answer": [
+        "deficient"
+      ]
+    },
+    {
+      "question": "delicious",
+      "answer": [
+        "delicious"
+      ]
+    },
+    {
+      "question": "delighted",
+      "answer": [
+        "delighted"
+      ]
+    },
+    {
+      "question": "delirious",
+      "answer": [
+        "delirious"
+      ]
+    },
+    {
+      "question": "democracy",
+      "answer": [
+        "democracy"
+      ]
+    },
+    {
+      "question": "departure",
+      "answer": [
+        "departure"
+      ]
+    },
+    {
+      "question": "dependent",
+      "answer": [
+        "dependent"
+      ]
+    },
+    {
+      "question": "depletion",
+      "answer": [
+        "depletion",
+        "diplotene"
+      ]
+    },
+    {
+      "question": "depressed",
+      "answer": [
+        "depressed"
+      ]
+    },
+    {
+      "question": "deserving",
+      "answer": [
+        "deserving"
+      ]
+    },
+    {
+      "question": "desirable",
+      "answer": [
+        "desirable"
+      ]
+    },
+    {
+      "question": "desperate",
+      "answer": [
+        "desperate"
+      ]
+    },
+    {
+      "question": "destitute",
+      "answer": [
+        "destitute"
+      ]
+    },
+    {
+      "question": "destroyer",
+      "answer": [
+        "destroyer"
+      ]
+    },
+    {
+      "question": "detection",
+      "answer": [
+        "detection"
+      ]
+    },
+    {
+      "question": "detective",
+      "answer": [
+        "detective"
+      ]
+    },
+    {
+      "question": "detention",
+      "answer": [
+        "detention"
+      ]
+    },
+    {
+      "question": "detergent",
+      "answer": [
+        "detergent"
+      ]
+    },
+    {
+      "question": "determine",
+      "answer": [
+        "determine"
+      ]
+    },
+    {
+      "question": "deterrent",
+      "answer": [
+        "deterrent"
+      ]
+    },
+    {
+      "question": "detriment",
+      "answer": [
+        "detriment"
+      ]
+    },
+    {
+      "question": "developed",
+      "answer": [
+        "developed"
+      ]
+    },
+    {
+      "question": "developer",
+      "answer": [
+        "developer",
+        "redevelop"
+      ]
+    },
+    {
+      "question": "dexterity",
+      "answer": [
+        "dexterity"
+      ]
+    },
+    {
+      "question": "diagnosis",
+      "answer": [
+        "diagnosis"
+      ]
+    },
+    {
+      "question": "dialectic",
+      "answer": [
+        "dialectic"
+      ]
+    },
+    {
+      "question": "dichotomy",
+      "answer": [
+        "dichotomy"
+      ]
+    },
+    {
+      "question": "dictation",
+      "answer": [
+        "dictation"
+      ]
+    },
+    {
+      "question": "different",
+      "answer": [
+        "different"
+      ]
+    },
+    {
+      "question": "difficult",
+      "answer": [
+        "difficult"
+      ]
+    },
+    {
+      "question": "diffident",
+      "answer": [
+        "diffident"
+      ]
+    },
+    {
+      "question": "digestion",
+      "answer": [
+        "digestion"
+      ]
+    },
+    {
+      "question": "digestive",
+      "answer": [
+        "digestive"
+      ]
+    },
+    {
+      "question": "diligence",
+      "answer": [
+        "ceilinged",
+        "diligence"
+      ]
+    },
+    {
+      "question": "dimension",
+      "answer": [
+        "dimension"
+      ]
+    },
+    {
+      "question": "diplomacy",
+      "answer": [
+        "diplomacy"
+      ]
+    },
+    {
+      "question": "direction",
+      "answer": [
+        "direction"
+      ]
+    },
+    {
+      "question": "directive",
+      "answer": [
+        "directive"
+      ]
+    },
+    {
+      "question": "disappear",
+      "answer": [
+        "disappear"
+      ]
+    },
+    {
+      "question": "disbelief",
+      "answer": [
+        "disbelief"
+      ]
+    },
+    {
+      "question": "discharge",
+      "answer": [
+        "discharge"
+      ]
+    },
+    {
+      "question": "discourse",
+      "answer": [
+        "discourse"
+      ]
+    },
+    {
+      "question": "discovery",
+      "answer": [
+        "discovery"
+      ]
+    },
+    {
+      "question": "disfigure",
+      "answer": [
+        "disfigure"
+      ]
+    },
+    {
+      "question": "disgusted",
+      "answer": [
+        "disgusted"
+      ]
+    },
+    {
+      "question": "dishonest",
+      "answer": [
+        "dishonest"
+      ]
+    },
+    {
+      "question": "dishwater",
+      "answer": [
+        "dishwater"
+      ]
+    },
+    {
+      "question": "dismantle",
+      "answer": [
+        "dismantle"
+      ]
+    },
+    {
+      "question": "dismissal",
+      "answer": [
+        "dismissal"
+      ]
+    },
+    {
+      "question": "disparage",
+      "answer": [
+        "disparage"
+      ]
+    },
+    {
+      "question": "disparate",
+      "answer": [
+        "disparate"
+      ]
+    },
+    {
+      "question": "disparity",
+      "answer": [
+        "disparity"
+      ]
+    },
+    {
+      "question": "displease",
+      "answer": [
+        "displease"
+      ]
+    },
+    {
+      "question": "dissident",
+      "answer": [
+        "dissident"
+      ]
+    },
+    {
+      "question": "dissipate",
+      "answer": [
+        "dissipate"
+      ]
+    },
+    {
+      "question": "distorted",
+      "answer": [
+        "distorted"
+      ]
+    },
+    {
+      "question": "disturbed",
+      "answer": [
+        "disturbed"
+      ]
+    },
+    {
+      "question": "divergent",
+      "answer": [
+        "divergent"
+      ]
+    },
+    {
+      "question": "diversify",
+      "answer": [
+        "diversify"
+      ]
+    },
+    {
+      "question": "diversity",
+      "answer": [
+        "diversity"
+      ]
+    },
+    {
+      "question": "doctorate",
+      "answer": [
+        "doctorate"
+      ]
+    },
+    {
+      "question": "dormitory",
+      "answer": [
+        "dormitory"
+      ]
+    },
+    {
+      "question": "doubtless",
+      "answer": [
+        "doubtless"
+      ]
+    },
+    {
+      "question": "downright",
+      "answer": [
+        "downright"
+      ]
+    },
+    {
+      "question": "drugstore",
+      "answer": [
+        "drugstore"
+      ]
+    },
+    {
+      "question": "duplicate",
+      "answer": [
+        "duplicate"
+      ]
+    },
+    {
+      "question": "eagerness",
+      "answer": [
+        "eagerness"
+      ]
+    },
+    {
+      "question": "earnestly",
+      "answer": [
+        "earnestly"
+      ]
+    },
+    {
+      "question": "earthworm",
+      "answer": [
+        "earthworm"
+      ]
+    },
+    {
+      "question": "easygoing",
+      "answer": [
+        "easygoing"
+      ]
+    },
+    {
+      "question": "eavesdrop",
+      "answer": [
+        "eavesdrop"
+      ]
+    },
+    {
+      "question": "eccentric",
+      "answer": [
+        "eccentric"
+      ]
+    },
+    {
+      "question": "economics",
+      "answer": [
+        "economics"
+      ]
+    },
+    {
+      "question": "economist",
+      "answer": [
+        "economist"
+      ]
+    },
+    {
+      "question": "economize",
+      "answer": [
+        "economize"
+      ]
+    },
+    {
+      "question": "editorial",
+      "answer": [
+        "editorial"
+      ]
+    },
+    {
+      "question": "education",
+      "answer": [
+        "education",
+        "noctuidae"
+      ]
+    },
+    {
+      "question": "effective",
+      "answer": [
+        "effective"
+      ]
+    },
+    {
+      "question": "efficient",
+      "answer": [
+        "efficient"
+      ]
+    },
+    {
+      "question": "egotistic",
+      "answer": [
+        "egotistic"
+      ]
+    },
+    {
+      "question": "eightieth",
+      "answer": [
+        "eightieth"
+      ]
+    },
+    {
+      "question": "elaborate",
+      "answer": [
+        "elaborate"
+      ]
+    },
+    {
+      "question": "electrify",
+      "answer": [
+        "electrify"
+      ]
+    },
+    {
+      "question": "elemental",
+      "answer": [
+        "elemental"
+      ]
+    },
+    {
+      "question": "eliminate",
+      "answer": [
+        "eliminate"
+      ]
+    },
+    {
+      "question": "elsewhere",
+      "answer": [
+        "elsewhere"
+      ]
+    },
+    {
+      "question": "elucidate",
+      "answer": [
+        "elucidate"
+      ]
+    },
+    {
+      "question": "embarrass",
+      "answer": [
+        "embarrass"
+      ]
+    },
+    {
+      "question": "embellish",
+      "answer": [
+        "embellish"
+      ]
+    },
+    {
+      "question": "embryonic",
+      "answer": [
+        "embryonic"
+      ]
+    },
+    {
+      "question": "emergence",
+      "answer": [
+        "emergence"
+      ]
+    },
+    {
+      "question": "emergency",
+      "answer": [
+        "emergency"
+      ]
+    },
+    {
+      "question": "emotional",
+      "answer": [
+        "emotional"
+      ]
+    },
+    {
+      "question": "emphasize",
+      "answer": [
+        "emphasize"
+      ]
+    },
+    {
+      "question": "empirical",
+      "answer": [
+        "empirical"
+      ]
+    },
+    {
+      "question": "enactment",
+      "answer": [
+        "enactment"
+      ]
+    },
+    {
+      "question": "enclosure",
+      "answer": [
+        "enclosure"
+      ]
+    },
+    {
+      "question": "encompass",
+      "answer": [
+        "encompass"
+      ]
+    },
+    {
+      "question": "encounter",
+      "answer": [
+        "encounter"
+      ]
+    },
+    {
+      "question": "encourage",
+      "answer": [
+        "encourage"
+      ]
+    },
+    {
+      "question": "endurance",
+      "answer": [
+        "endurance"
+      ]
+    },
+    {
+      "question": "energetic",
+      "answer": [
+        "energetic"
+      ]
+    },
+    {
+      "question": "enigmatic",
+      "answer": [
+        "enigmatic"
+      ]
+    },
+    {
+      "question": "enjoyable",
+      "answer": [
+        "enjoyable"
+      ]
+    },
+    {
+      "question": "enjoyment",
+      "answer": [
+        "enjoyment"
+      ]
+    },
+    {
+      "question": "enlighten",
+      "answer": [
+        "enlighten"
+      ]
+    },
+    {
+      "question": "entertain",
+      "answer": [
+        "entertain"
+      ]
+    },
+    {
+      "question": "entourage",
+      "answer": [
+        "entourage"
+      ]
+    },
+    {
+      "question": "enunciate",
+      "answer": [
+        "enunciate"
+      ]
+    },
+    {
+      "question": "ephemeral",
+      "answer": [
+        "ephemeral"
+      ]
+    },
+    {
+      "question": "epicenter",
+      "answer": [
+        "epicenter",
+        "epicentre"
+      ]
+    },
+    {
+      "question": "epitomize",
+      "answer": [
+        "epitomize"
+      ]
+    },
+    {
+      "question": "equipment",
+      "answer": [
+        "equipment"
+      ]
+    },
+    {
+      "question": "eradicate",
+      "answer": [
+        "eradicate"
+      ]
+    },
+    {
+      "question": "erroneous",
+      "answer": [
+        "erroneous"
+      ]
+    },
+    {
+      "question": "escalator",
+      "answer": [
+        "escalator"
+      ]
+    },
+    {
+      "question": "esophagus",
+      "answer": [
+        "esophagus"
+      ]
+    },
+    {
+      "question": "espionage",
+      "answer": [
+        "espionage"
+      ]
+    },
+    {
+      "question": "essential",
+      "answer": [
+        "essential"
+      ]
+    },
+    {
+      "question": "establish",
+      "answer": [
+        "establish"
+      ]
+    },
+    {
+      "question": "eternally",
+      "answer": [
+        "eternally"
+      ]
+    },
+    {
+      "question": "euphemism",
+      "answer": [
+        "euphemism"
+      ]
+    },
+    {
+      "question": "evaporate",
+      "answer": [
+        "evaporate"
+      ]
+    },
+    {
+      "question": "evergreen",
+      "answer": [
+        "evergreen"
+      ]
+    },
+    {
+      "question": "everybody",
+      "answer": [
+        "everybody"
+      ]
+    },
+    {
+      "question": "evidently",
+      "answer": [
+        "evidently"
+      ]
+    },
+    {
+      "question": "evocative",
+      "answer": [
+        "evocative"
+      ]
+    },
+    {
+      "question": "evolution",
+      "answer": [
+        "evolution"
+      ]
+    },
+    {
+      "question": "exceeding",
+      "answer": [
+        "exceeding"
+      ]
+    },
+    {
+      "question": "excellent",
+      "answer": [
+        "excellent"
+      ]
+    },
+    {
+      "question": "exception",
+      "answer": [
+        "exception"
+      ]
+    },
+    {
+      "question": "excessive",
+      "answer": [
+        "excessive"
+      ]
+    },
+    {
+      "question": "exchequer",
+      "answer": [
+        "exchequer"
+      ]
+    },
+    {
+      "question": "exclusion",
+      "answer": [
+        "exclusion"
+      ]
+    },
+    {
+      "question": "exclusive",
+      "answer": [
+        "exclusive"
+      ]
+    },
+    {
+      "question": "excursion",
+      "answer": [
+        "excursion"
+      ]
+    },
+    {
+      "question": "execution",
+      "answer": [
+        "execution"
+      ]
+    },
+    {
+      "question": "executive",
+      "answer": [
+        "executive"
+      ]
+    },
+    {
+      "question": "exemplary",
+      "answer": [
+        "exemplary"
+      ]
+    },
+    {
+      "question": "exemplify",
+      "answer": [
+        "exemplify"
+      ]
+    },
+    {
+      "question": "exemption",
+      "answer": [
+        "exemption"
+      ]
+    },
+    {
+      "question": "exhausted",
+      "answer": [
+        "exhausted"
+      ]
+    },
+    {
+      "question": "existence",
+      "answer": [
+        "existence"
+      ]
+    },
+    {
+      "question": "expansion",
+      "answer": [
+        "expansion"
+      ]
+    },
+    {
+      "question": "expectant",
+      "answer": [
+        "expectant"
+      ]
+    },
+    {
+      "question": "expedient",
+      "answer": [
+        "expedient"
+      ]
+    },
+    {
+      "question": "expensive",
+      "answer": [
+        "expensive"
+      ]
+    },
+    {
+      "question": "expertise",
+      "answer": [
+        "expertise"
+      ]
+    },
+    {
+      "question": "explosion",
+      "answer": [
+        "explosion"
+      ]
+    },
+    {
+      "question": "explosive",
+      "answer": [
+        "explosive"
+      ]
+    },
+    {
+      "question": "expressly",
+      "answer": [
+        "expressly"
+      ]
+    },
+    {
+      "question": "expulsion",
+      "answer": [
+        "expulsion"
+      ]
+    },
+    {
+      "question": "exquisite",
+      "answer": [
+        "exquisite"
+      ]
+    },
+    {
+      "question": "extension",
+      "answer": [
+        "extension"
+      ]
+    },
+    {
+      "question": "extensive",
+      "answer": [
+        "extensive"
+      ]
+    },
+    {
+      "question": "extradite",
+      "answer": [
+        "extradite"
+      ]
+    },
+    {
+      "question": "extremely",
+      "answer": [
+        "extremely"
+      ]
+    },
+    {
+      "question": "extremist",
+      "answer": [
+        "extremist"
+      ]
+    },
+    {
+      "question": "extricate",
+      "answer": [
+        "extricate"
+      ]
+    },
+    {
+      "question": "extrovert",
+      "answer": [
+        "extrovert"
+      ]
+    },
+    {
+      "question": "exuberant",
+      "answer": [
+        "exuberant"
+      ]
+    },
+    {
+      "question": "fabricate",
+      "answer": [
+        "fabricate"
+      ]
+    },
+    {
+      "question": "facetious",
+      "answer": [
+        "facetious"
+      ]
+    },
+    {
+      "question": "facsimile",
+      "answer": [
+        "facsimile"
+      ]
+    },
+    {
+      "question": "faithless",
+      "answer": [
+        "faithless"
+      ]
+    },
+    {
+      "question": "falsehood",
+      "answer": [
+        "falsehood"
+      ]
+    },
+    {
+      "question": "fantastic",
+      "answer": [
+        "fantastic"
+      ]
+    },
+    {
+      "question": "farmhouse",
+      "answer": [
+        "farmhouse"
+      ]
+    },
+    {
+      "question": "fascinate",
+      "answer": [
+        "fascinate"
+      ]
+    },
+    {
+      "question": "faultless",
+      "answer": [
+        "faultless"
+      ]
+    },
+    {
+      "question": "favorable",
+      "answer": [
+        "favorable"
+      ]
+    },
+    {
+      "question": "ferocious",
+      "answer": [
+        "ferocious"
+      ]
+    },
+    {
+      "question": "feudalism",
+      "answer": [
+        "feudalism"
+      ]
+    },
+    {
+      "question": "fictional",
+      "answer": [
+        "fictional",
+        "cliftonia"
+      ]
+    },
+    {
+      "question": "fifteenth",
+      "answer": [
+        "fifteenth"
+      ]
+    },
+    {
+      "question": "financial",
+      "answer": [
+        "financial"
+      ]
+    },
+    {
+      "question": "financier",
+      "answer": [
+        "financier"
+      ]
+    },
+    {
+      "question": "fingertip",
+      "answer": [
+        "fingertip"
+      ]
+    },
+    {
+      "question": "finishing",
+      "answer": [
+        "finishing"
+      ]
+    },
+    {
+      "question": "fireplace",
+      "answer": [
+        "fireplace"
+      ]
+    },
+    {
+      "question": "fireproof",
+      "answer": [
+        "fireproof"
+      ]
+    },
+    {
+      "question": "fisherman",
+      "answer": [
+        "fisherman"
+      ]
+    },
+    {
+      "question": "fledgling",
+      "answer": [
+        "fledgling"
+      ]
+    },
+    {
+      "question": "flowering",
+      "answer": [
+        "flowering"
+      ]
+    },
+    {
+      "question": "fluctuate",
+      "answer": [
+        "fluctuate"
+      ]
+    },
+    {
+      "question": "following",
+      "answer": [
+        "following"
+      ]
+    },
+    {
+      "question": "foolhardy",
+      "answer": [
+        "foolhardy"
+      ]
+    },
+    {
+      "question": "foolproof",
+      "answer": [
+        "foolproof"
+      ]
+    },
+    {
+      "question": "footprint",
+      "answer": [
+        "footprint"
+      ]
+    },
+    {
+      "question": "forbidden",
+      "answer": [
+        "forbidden"
+      ]
+    },
+    {
+      "question": "foreclose",
+      "answer": [
+        "foreclose"
+      ]
+    },
+    {
+      "question": "foreigner",
+      "answer": [
+        "foreigner"
+      ]
+    },
+    {
+      "question": "foresight",
+      "answer": [
+        "foresight"
+      ]
+    },
+    {
+      "question": "forestall",
+      "answer": [
+        "forestall"
+      ]
+    },
+    {
+      "question": "forgetful",
+      "answer": [
+        "forgetful"
+      ]
+    },
+    {
+      "question": "formality",
+      "answer": [
+        "formality"
+      ]
+    },
+    {
+      "question": "formation",
+      "answer": [
+        "formation"
+      ]
+    },
+    {
+      "question": "formulate",
+      "answer": [
+        "formulate"
+      ]
+    },
+    {
+      "question": "fortitude",
+      "answer": [
+        "fortitude"
+      ]
+    },
+    {
+      "question": "fortnight",
+      "answer": [
+        "fortnight"
+      ]
+    },
+    {
+      "question": "fortunate",
+      "answer": [
+        "fortunate"
+      ]
+    },
+    {
+      "question": "framework",
+      "answer": [
+        "framework"
+      ]
+    },
+    {
+      "question": "franchise",
+      "answer": [
+        "franchise"
+      ]
+    },
+    {
+      "question": "fraternal",
+      "answer": [
+        "fraternal"
+      ]
+    },
+    {
+      "question": "frequency",
+      "answer": [
+        "frequency"
+      ]
+    },
+    {
+      "question": "frightful",
+      "answer": [
+        "frightful"
+      ]
+    },
+    {
+      "question": "frivolous",
+      "answer": [
+        "frivolous"
+      ]
+    },
+    {
+      "question": "frugality",
+      "answer": [
+        "frugality"
+      ]
+    },
+    {
+      "question": "fruitless",
+      "answer": [
+        "fruitless"
+      ]
+    },
+    {
+      "question": "frustrate",
+      "answer": [
+        "frustrate"
+      ]
+    },
+    {
+      "question": "furnished",
+      "answer": [
+        "furnished"
+      ]
+    },
+    {
+      "question": "furniture",
+      "answer": [
+        "furniture"
+      ]
+    },
+    {
+      "question": "galvanize",
+      "answer": [
+        "galvanize"
+      ]
+    },
+    {
+      "question": "gardening",
+      "answer": [
+        "gardening"
+      ]
+    },
+    {
+      "question": "gathering",
+      "answer": [
+        "gathering"
+      ]
+    },
+    {
+      "question": "genealogy",
+      "answer": [
+        "genealogy"
+      ]
+    },
+    {
+      "question": "generally",
+      "answer": [
+        "generally"
+      ]
+    },
+    {
+      "question": "generator",
+      "answer": [
+        "generator"
+      ]
+    },
+    {
+      "question": "gentleman",
+      "answer": [
+        "gentleman"
+      ]
+    },
+    {
+      "question": "geography",
+      "answer": [
+        "geography"
+      ]
+    },
+    {
+      "question": "geometric",
+      "answer": [
+        "geometric"
+      ]
+    },
+    {
+      "question": "germinate",
+      "answer": [
+        "germanite",
+        "germinate"
+      ]
+    },
+    {
+      "question": "glamorous",
+      "answer": [
+        "glamorous"
+      ]
+    },
+    {
+      "question": "godmother",
+      "answer": [
+        "godmother"
+      ]
+    },
+    {
+      "question": "goldsmith",
+      "answer": [
+        "goldsmith"
+      ]
+    },
+    {
+      "question": "gradually",
+      "answer": [
+        "gradually"
+      ]
+    },
+    {
+      "question": "grandiose",
+      "answer": [
+        "grandiose",
+        "organised"
+      ]
+    },
+    {
+      "question": "gratitude",
+      "answer": [
+        "gratitude"
+      ]
+    },
+    {
+      "question": "graveyard",
+      "answer": [
+        "graveyard"
+      ]
+    },
+    {
+      "question": "greatness",
+      "answer": [
+        "greatness"
+      ]
+    },
+    {
+      "question": "greyhound",
+      "answer": [
+        "greyhound"
+      ]
+    },
+    {
+      "question": "grievance",
+      "answer": [
+        "grievance"
+      ]
+    },
+    {
+      "question": "grotesque",
+      "answer": [
+        "grotesque"
+      ]
+    },
+    {
+      "question": "guarantee",
+      "answer": [
+        "guarantee"
+      ]
+    },
+    {
+      "question": "guidebook",
+      "answer": [
+        "guidebook"
+      ]
+    },
+    {
+      "question": "guideline",
+      "answer": [
+        "guideline"
+      ]
+    },
+    {
+      "question": "guiltless",
+      "answer": [
+        "guiltless"
+      ]
+    },
+    {
+      "question": "guitarist",
+      "answer": [
+        "guitarist"
+      ]
+    },
+    {
+      "question": "gunpowder",
+      "answer": [
+        "gunpowder"
+      ]
+    },
+    {
+      "question": "hackneyed",
+      "answer": [
+        "hackneyed"
+      ]
+    },
+    {
+      "question": "hairbrush",
+      "answer": [
+        "hairbrush"
+      ]
+    },
+    {
+      "question": "hamburger",
+      "answer": [
+        "hamburger"
+      ]
+    },
+    {
+      "question": "handiwork",
+      "answer": [
+        "handiwork"
+      ]
+    },
+    {
+      "question": "handshake",
+      "answer": [
+        "handshake"
+      ]
+    },
+    {
+      "question": "haphazard",
+      "answer": [
+        "haphazard"
+      ]
+    },
+    {
+      "question": "happening",
+      "answer": [
+        "happening"
+      ]
+    },
+    {
+      "question": "happiness",
+      "answer": [
+        "happiness"
+      ]
+    },
+    {
+      "question": "harmonica",
+      "answer": [
+        "harmonica"
+      ]
+    },
+    {
+      "question": "harrowing",
+      "answer": [
+        "harrowing"
+      ]
+    },
+    {
+      "question": "hazardous",
+      "answer": [
+        "hazardous"
+      ]
+    },
+    {
+      "question": "headdress",
+      "answer": [
+        "headdress"
+      ]
+    },
+    {
+      "question": "headlight",
+      "answer": [
+        "headlight"
+      ]
+    },
+    {
+      "question": "headphone",
+      "answer": [
+        "headphone"
+      ]
+    },
+    {
+      "question": "heartache",
+      "answer": [
+        "heartache"
+      ]
+    },
+    {
+      "question": "heartless",
+      "answer": [
+        "heartless"
+      ]
+    },
+    {
+      "question": "hepatitis",
+      "answer": [
+        "hepatitis"
+      ]
+    },
+    {
+      "question": "hereafter",
+      "answer": [
+        "hereafter"
+      ]
+    },
+    {
+      "question": "highlight",
+      "answer": [
+        "highlight"
+      ]
+    },
+    {
+      "question": "hilarious",
+      "answer": [
+        "hilarious"
+      ]
+    },
+    {
+      "question": "hindrance",
+      "answer": [
+        "hindrance"
+      ]
+    },
+    {
+      "question": "hindsight",
+      "answer": [
+        "hindsight"
+      ]
+    },
+    {
+      "question": "historian",
+      "answer": [
+        "historian"
+      ]
+    },
+    {
+      "question": "hitchhike",
+      "answer": [
+        "hitchhike"
+      ]
+    },
+    {
+      "question": "holocaust",
+      "answer": [
+        "holocaust"
+      ]
+    },
+    {
+      "question": "homestead",
+      "answer": [
+        "homestead"
+      ]
+    },
+    {
+      "question": "honeymoon",
+      "answer": [
+        "honeymoon"
+      ]
+    },
+    {
+      "question": "honorable",
+      "answer": [
+        "honorable"
+      ]
+    },
+    {
+      "question": "hopefully",
+      "answer": [
+        "hopefully"
+      ]
+    },
+    {
+      "question": "horoscope",
+      "answer": [
+        "horoscope"
+      ]
+    },
+    {
+      "question": "horseback",
+      "answer": [
+        "horseback"
+      ]
+    },
+    {
+      "question": "horseshoe",
+      "answer": [
+        "horseshoe"
+      ]
+    },
+    {
+      "question": "hostility",
+      "answer": [
+        "hostility"
+      ]
+    },
+    {
+      "question": "household",
+      "answer": [
+        "household"
+      ]
+    },
+    {
+      "question": "housewife",
+      "answer": [
+        "housewife"
+      ]
+    },
+    {
+      "question": "housework",
+      "answer": [
+        "housework",
+        "workhouse"
+      ]
+    },
+    {
+      "question": "hundredth",
+      "answer": [
+        "hundredth"
+      ]
+    },
+    {
+      "question": "hurricane",
+      "answer": [
+        "hurricane"
+      ]
+    },
+    {
+      "question": "hyperbole",
+      "answer": [
+        "hyperbole"
+      ]
+    },
+    {
+      "question": "hypocrite",
+      "answer": [
+        "hypocrite"
+      ]
+    },
+    {
+      "question": "identical",
+      "answer": [
+        "identical"
+      ]
+    },
+    {
+      "question": "ignorance",
+      "answer": [
+        "ignorance"
+      ]
+    },
+    {
+      "question": "illogical",
+      "answer": [
+        "illogical"
+      ]
+    },
+    {
+      "question": "imaginary",
+      "answer": [
+        "imaginary"
+      ]
+    },
+    {
+      "question": "imitation",
+      "answer": [
+        "imitation"
+      ]
+    },
+    {
+      "question": "immediate",
+      "answer": [
+        "immediate"
+      ]
+    },
+    {
+      "question": "immensely",
+      "answer": [
+        "immensely"
+      ]
+    },
+    {
+      "question": "immigrant",
+      "answer": [
+        "immigrant"
+      ]
+    },
+    {
+      "question": "immovable",
+      "answer": [
+        "immovable"
+      ]
+    },
+    {
+      "question": "impassive",
+      "answer": [
+        "impassive"
+      ]
+    },
+    {
+      "question": "impatient",
+      "answer": [
+        "impatient"
+      ]
+    },
+    {
+      "question": "impending",
+      "answer": [
+        "impending"
+      ]
+    },
+    {
+      "question": "imperfect",
+      "answer": [
+        "imperfect"
+      ]
+    },
+    {
+      "question": "impetuous",
+      "answer": [
+        "impetuous"
+      ]
+    },
+    {
+      "question": "implement",
+      "answer": [
+        "implement"
+      ]
+    },
+    {
+      "question": "implicate",
+      "answer": [
+        "implicate"
+      ]
+    },
+    {
+      "question": "important",
+      "answer": [
+        "important"
+      ]
+    },
+    {
+      "question": "impromptu",
+      "answer": [
+        "impromptu"
+      ]
+    },
+    {
+      "question": "improvise",
+      "answer": [
+        "improvise"
+      ]
+    },
+    {
+      "question": "imprudent",
+      "answer": [
+        "imprudent"
+      ]
+    },
+    {
+      "question": "inability",
+      "answer": [
+        "inability"
+      ]
+    },
+    {
+      "question": "inaugural",
+      "answer": [
+        "inaugural"
+      ]
+    },
+    {
+      "question": "incapable",
+      "answer": [
+        "incapable"
+      ]
+    },
+    {
+      "question": "incentive",
+      "answer": [
+        "incentive"
+      ]
+    },
+    {
+      "question": "inception",
+      "answer": [
+        "inception"
+      ]
+    },
+    {
+      "question": "incessant",
+      "answer": [
+        "incessant"
+      ]
+    },
+    {
+      "question": "incidence",
+      "answer": [
+        "incidence"
+      ]
+    },
+    {
+      "question": "including",
+      "answer": [
+        "including"
+      ]
+    },
+    {
+      "question": "inclusion",
+      "answer": [
+        "inclusion"
+      ]
+    },
+    {
+      "question": "inclusive",
+      "answer": [
+        "inclusive"
+      ]
+    },
+    {
+      "question": "incognito",
+      "answer": [
+        "incognito",
+        "cognition"
+      ]
+    },
+    {
+      "question": "incorrect",
+      "answer": [
+        "incorrect"
+      ]
+    },
+    {
+      "question": "incumbent",
+      "answer": [
+        "incumbent"
+      ]
+    },
+    {
+      "question": "incursion",
+      "answer": [
+        "incursion"
+      ]
+    },
+    {
+      "question": "indelible",
+      "answer": [
+        "indelible"
+      ]
+    },
+    {
+      "question": "indemnity",
+      "answer": [
+        "indemnity"
+      ]
+    },
+    {
+      "question": "indicator",
+      "answer": [
+        "indicator"
+      ]
+    },
+    {
+      "question": "indignant",
+      "answer": [
+        "indignant"
+      ]
+    },
+    {
+      "question": "indignity",
+      "answer": [
+        "indignity"
+      ]
+    },
+    {
+      "question": "induction",
+      "answer": [
+        "induction"
+      ]
+    },
+    {
+      "question": "infection",
+      "answer": [
+        "infection"
+      ]
+    },
+    {
+      "question": "inference",
+      "answer": [
+        "inference"
+      ]
+    },
+    {
+      "question": "infirmity",
+      "answer": [
+        "infirmity"
+      ]
+    },
+    {
+      "question": "inflation",
+      "answer": [
+        "inflation"
+      ]
+    },
+    {
+      "question": "influence",
+      "answer": [
+        "influence"
+      ]
+    },
+    {
+      "question": "influenza",
+      "answer": [
+        "influenza"
+      ]
+    },
+    {
+      "question": "informant",
+      "answer": [
+        "informant"
+      ]
+    },
+    {
+      "question": "infuriate",
+      "answer": [
+        "infuriate"
+      ]
+    },
+    {
+      "question": "ingenious",
+      "answer": [
+        "ingenious"
+      ]
+    },
+    {
+      "question": "ingenuity",
+      "answer": [
+        "ingenuity"
+      ]
+    },
+    {
+      "question": "initially",
+      "answer": [
+        "initially"
+      ]
+    },
+    {
+      "question": "injection",
+      "answer": [
+        "injection"
+      ]
+    },
+    {
+      "question": "injurious",
+      "answer": [
+        "injurious"
+      ]
+    },
+    {
+      "question": "injustice",
+      "answer": [
+        "injustice"
+      ]
+    },
+    {
+      "question": "innermost",
+      "answer": [
+        "innermost"
+      ]
+    },
+    {
+      "question": "innocence",
+      "answer": [
+        "innocence"
+      ]
+    },
+    {
+      "question": "innocuous",
+      "answer": [
+        "innocuous"
+      ]
+    },
+    {
+      "question": "insidious",
+      "answer": [
+        "insidious"
+      ]
+    },
+    {
+      "question": "insincere",
+      "answer": [
+        "insincere"
+      ]
+    },
+    {
+      "question": "insinuate",
+      "answer": [
+        "insinuate"
+      ]
+    },
+    {
+      "question": "insistent",
+      "answer": [
+        "insistent"
+      ]
+    },
+    {
+      "question": "insolvent",
+      "answer": [
+        "insolvent"
+      ]
+    },
+    {
+      "question": "inspector",
+      "answer": [
+        "inspector"
+      ]
+    },
+    {
+      "question": "inspiring",
+      "answer": [
+        "inspiring"
+      ]
+    },
+    {
+      "question": "instanter",
+      "answer": [
+        "transient",
+        "instanter"
+      ]
+    },
+    {
+      "question": "instantly",
+      "answer": [
+        "instantly"
+      ]
+    },
+    {
+      "question": "instigate",
+      "answer": [
+        "instigate"
+      ]
+    },
+    {
+      "question": "institute",
+      "answer": [
+        "institute"
+      ]
+    },
+    {
+      "question": "insulting",
+      "answer": [
+        "insulting"
+      ]
+    },
+    {
+      "question": "insurance",
+      "answer": [
+        "insurance"
+      ]
+    },
+    {
+      "question": "insurgent",
+      "answer": [
+        "insurgent"
+      ]
+    },
+    {
+      "question": "intellect",
+      "answer": [
+        "intellect"
+      ]
+    },
+    {
+      "question": "intensify",
+      "answer": [
+        "intensify"
+      ]
+    },
+    {
+      "question": "intensity",
+      "answer": [
+        "intensity"
+      ]
+    },
+    {
+      "question": "intensive",
+      "answer": [
+        "intensive"
+      ]
+    },
+    {
+      "question": "intention",
+      "answer": [
+        "intention"
+      ]
+    },
+    {
+      "question": "interfere",
+      "answer": [
+        "interfere"
+      ]
+    },
+    {
+      "question": "interlock",
+      "answer": [
+        "interlock"
+      ]
+    },
+    {
+      "question": "interlude",
+      "answer": [
+        "interlude"
+      ]
+    },
+    {
+      "question": "interpret",
+      "answer": [
+        "interpret"
+      ]
+    },
+    {
+      "question": "interrupt",
+      "answer": [
+        "interrupt"
+      ]
+    },
+    {
+      "question": "interview",
+      "answer": [
+        "interview"
+      ]
+    },
+    {
+      "question": "intestine",
+      "answer": [
+        "intestine"
+      ]
+    },
+    {
+      "question": "intricacy",
+      "answer": [
+        "intricacy"
+      ]
+    },
+    {
+      "question": "intrinsic",
+      "answer": [
+        "intrinsic"
+      ]
+    },
+    {
+      "question": "introduce",
+      "answer": [
+        "reduction",
+        "introduce"
+      ]
+    },
+    {
+      "question": "intuitive",
+      "answer": [
+        "intuitive"
+      ]
+    },
+    {
+      "question": "invention",
+      "answer": [
+        "invention"
+      ]
+    },
+    {
+      "question": "inventory",
+      "answer": [
+        "inventory"
+      ]
+    },
+    {
+      "question": "invisible",
+      "answer": [
+        "invisible"
+      ]
+    },
+    {
+      "question": "irregular",
+      "answer": [
+        "irregular"
+      ]
+    },
+    {
+      "question": "isolation",
+      "answer": [
+        "isolation"
+      ]
+    },
+    {
+      "question": "itinerant",
+      "answer": [
+        "itinerant"
+      ]
+    },
+    {
+      "question": "itinerary",
+      "answer": [
+        "itinerary"
+      ]
+    },
+    {
+      "question": "jealously",
+      "answer": [
+        "jealously"
+      ]
+    },
+    {
+      "question": "judiciary",
+      "answer": [
+        "judiciary"
+      ]
+    },
+    {
+      "question": "judicious",
+      "answer": [
+        "judicious"
+      ]
+    },
+    {
+      "question": "kilometer",
+      "answer": [
+        "kilometer",
+        "kilometre"
+      ]
+    },
+    {
+      "question": "knowledge",
+      "answer": [
+        "knowledge"
+      ]
+    },
+    {
+      "question": "laborious",
+      "answer": [
+        "laborious"
+      ]
+    },
+    {
+      "question": "labyrinth",
+      "answer": [
+        "labyrinth"
+      ]
+    },
+    {
+      "question": "landscape",
+      "answer": [
+        "landscape"
+      ]
+    },
+    {
+      "question": "laughable",
+      "answer": [
+        "laughable"
+      ]
+    },
+    {
+      "question": "lawmaking",
+      "answer": [
+        "lawmaking"
+      ]
+    },
+    {
+      "question": "leisurely",
+      "answer": [
+        "leisurely"
+      ]
+    },
+    {
+      "question": "lethargic",
+      "answer": [
+        "lethargic"
+      ]
+    },
+    {
+      "question": "liability",
+      "answer": [
+        "liability"
+      ]
+    },
+    {
+      "question": "librarian",
+      "answer": [
+        "librarian"
+      ]
+    },
+    {
+      "question": "lifestyle",
+      "answer": [
+        "lifestyle"
+      ]
+    },
+    {
+      "question": "lightning",
+      "answer": [
+        "lightning"
+      ]
+    },
+    {
+      "question": "limestone",
+      "answer": [
+        "limestone",
+        "milestone"
+      ]
+    },
+    {
+      "question": "liquidate",
+      "answer": [
+        "liquidate"
+      ]
+    },
+    {
+      "question": "liquidity",
+      "answer": [
+        "liquidity"
+      ]
+    },
+    {
+      "question": "literally",
+      "answer": [
+        "literally"
+      ]
+    },
+    {
+      "question": "livestock",
+      "answer": [
+        "livestock"
+      ]
+    },
+    {
+      "question": "longevity",
+      "answer": [
+        "longevity"
+      ]
+    },
+    {
+      "question": "longitude",
+      "answer": [
+        "longitude"
+      ]
+    },
+    {
+      "question": "lubricate",
+      "answer": [
+        "lubricate"
+      ]
+    },
+    {
+      "question": "lucrative",
+      "answer": [
+        "lucrative",
+        "victualer"
+      ]
+    },
+    {
+      "question": "ludicrous",
+      "answer": [
+        "ludicrous"
+      ]
+    },
+    {
+      "question": "lunchtime",
+      "answer": [
+        "lunchtime"
+      ]
+    },
+    {
+      "question": "luxurious",
+      "answer": [
+        "luxurious"
+      ]
+    },
+    {
+      "question": "machinery",
+      "answer": [
+        "machinery"
+      ]
+    },
+    {
+      "question": "magnitude",
+      "answer": [
+        "magnitude"
+      ]
+    },
+    {
+      "question": "mainframe",
+      "answer": [
+        "mainframe"
+      ]
+    },
+    {
+      "question": "makeshift",
+      "answer": [
+        "makeshift"
+      ]
+    },
+    {
+      "question": "malicious",
+      "answer": [
+        "malicious"
+      ]
+    },
+    {
+      "question": "malignant",
+      "answer": [
+        "malignant"
+      ]
+    },
+    {
+      "question": "mandatory",
+      "answer": [
+        "damnatory",
+        "mandatory"
+      ]
+    },
+    {
+      "question": "manifesto",
+      "answer": [
+        "manifesto"
+      ]
+    },
+    {
+      "question": "mannerism",
+      "answer": [
+        "mannerism"
+      ]
+    },
+    {
+      "question": "margarine",
+      "answer": [
+        "margarine"
+      ]
+    },
+    {
+      "question": "marijuana",
+      "answer": [
+        "marijuana"
+      ]
+    },
+    {
+      "question": "marketing",
+      "answer": [
+        "marketing"
+      ]
+    },
+    {
+      "question": "marvelous",
+      "answer": [
+        "marvelous"
+      ]
+    },
+    {
+      "question": "masculine",
+      "answer": [
+        "masculine"
+      ]
+    },
+    {
+      "question": "maternity",
+      "answer": [
+        "maternity"
+      ]
+    },
+    {
+      "question": "matrimony",
+      "answer": [
+        "matrimony"
+      ]
+    },
+    {
+      "question": "meanwhile",
+      "answer": [
+        "meanwhile"
+      ]
+    },
+    {
+      "question": "mechanics",
+      "answer": [
+        "mechanics",
+        "mischance"
+      ]
+    },
+    {
+      "question": "mechanism",
+      "answer": [
+        "mechanism"
+      ]
+    },
+    {
+      "question": "mediation",
+      "answer": [
+        "mediation"
+      ]
+    },
+    {
+      "question": "menopause",
+      "answer": [
+        "menopause"
+      ]
+    },
+    {
+      "question": "mentality",
+      "answer": [
+        "mentality"
+      ]
+    },
+    {
+      "question": "mercenary",
+      "answer": [
+        "mercenary"
+      ]
+    },
+    {
+      "question": "merriment",
+      "answer": [
+        "merriment"
+      ]
+    },
+    {
+      "question": "messenger",
+      "answer": [
+        "messenger"
+      ]
+    },
+    {
+      "question": "microwave",
+      "answer": [
+        "microwave"
+      ]
+    },
+    {
+      "question": "middleman",
+      "answer": [
+        "middleman"
+      ]
+    },
+    {
+      "question": "midsummer",
+      "answer": [
+        "midsummer"
+      ]
+    },
+    {
+      "question": "milestone",
+      "answer": [
+        "limestone",
+        "milestone"
+      ]
+    },
+    {
+      "question": "millionth",
+      "answer": [
+        "millionth"
+      ]
+    },
+    {
+      "question": "millstone",
+      "answer": [
+        "millstone"
+      ]
+    },
+    {
+      "question": "miniature",
+      "answer": [
+        "miniature"
+      ]
+    },
+    {
+      "question": "mischance",
+      "answer": [
+        "mechanics",
+        "mischance"
+      ]
+    },
+    {
+      "question": "misdirect",
+      "answer": [
+        "misdirect"
+      ]
+    },
+    {
+      "question": "miserable",
+      "answer": [
+        "miserable",
+        "marbleise"
+      ]
+    },
+    {
+      "question": "misgiving",
+      "answer": [
+        "misgiving"
+      ]
+    },
+    {
+      "question": "misguided",
+      "answer": [
+        "misguided"
+      ]
+    },
+    {
+      "question": "missioner",
+      "answer": [
+        "missioner",
+        "remission"
+      ]
+    },
+    {
+      "question": "modernism",
+      "answer": [
+        "modernism"
+      ]
+    },
+    {
+      "question": "modernist",
+      "answer": [
+        "modernist"
+      ]
+    },
+    {
+      "question": "modernize",
+      "answer": [
+        "modernize"
+      ]
+    },
+    {
+      "question": "molecular",
+      "answer": [
+        "molecular"
+      ]
+    },
+    {
+      "question": "momentary",
+      "answer": [
+        "momentary"
+      ]
+    },
+    {
+      "question": "momentous",
+      "answer": [
+        "momentous"
+      ]
+    },
+    {
+      "question": "monastery",
+      "answer": [
+        "monastery"
+      ]
+    },
+    {
+      "question": "monologue",
+      "answer": [
+        "monologue"
+      ]
+    },
+    {
+      "question": "monstrous",
+      "answer": [
+        "monstrous"
+      ]
+    },
+    {
+      "question": "moonlight",
+      "answer": [
+        "moonlight"
+      ]
+    },
+    {
+      "question": "mortality",
+      "answer": [
+        "mortality"
+      ]
+    },
+    {
+      "question": "motorbike",
+      "answer": [
+        "motorbike"
+      ]
+    },
+    {
+      "question": "motorboat",
+      "answer": [
+        "motorboat"
+      ]
+    },
+    {
+      "question": "moustache",
+      "answer": [
+        "moustache"
+      ]
+    },
+    {
+      "question": "multitude",
+      "answer": [
+        "multitude"
+      ]
+    },
+    {
+      "question": "municipal",
+      "answer": [
+        "municipal"
+      ]
+    },
+    {
+      "question": "mythology",
+      "answer": [
+        "mythology"
+      ]
+    },
+    {
+      "question": "narcissus",
+      "answer": [
+        "narcissus"
+      ]
+    },
+    {
+      "question": "narration",
+      "answer": [
+        "narration"
+      ]
+    },
+    {
+      "question": "narrative",
+      "answer": [
+        "narrative"
+      ]
+    },
+    {
+      "question": "naturally",
+      "answer": [
+        "naturally"
+      ]
+    },
+    {
+      "question": "navigator",
+      "answer": [
+        "navigator"
+      ]
+    },
+    {
+      "question": "necessary",
+      "answer": [
+        "necessary"
+      ]
+    },
+    {
+      "question": "necessity",
+      "answer": [
+        "necessity"
+      ]
+    },
+    {
+      "question": "negotiate",
+      "answer": [
+        "negotiate"
+      ]
+    },
+    {
+      "question": "newsagent",
+      "answer": [
+        "newsagent"
+      ]
+    },
+    {
+      "question": "newspaper",
+      "answer": [
+        "newspaper"
+      ]
+    },
+    {
+      "question": "nightclub",
+      "answer": [
+        "nightclub"
+      ]
+    },
+    {
+      "question": "nightgown",
+      "answer": [
+        "nightgown"
+      ]
+    },
+    {
+      "question": "nightmare",
+      "answer": [
+        "nightmare"
+      ]
+    },
+    {
+      "question": "ninetieth",
+      "answer": [
+        "ninetieth"
+      ]
+    },
+    {
+      "question": "nocturnal",
+      "answer": [
+        "nocturnal"
+      ]
+    },
+    {
+      "question": "noiseless",
+      "answer": [
+        "noiseless"
+      ]
+    },
+    {
+      "question": "northeast",
+      "answer": [
+        "northeast"
+      ]
+    },
+    {
+      "question": "northwest",
+      "answer": [
+        "northwest"
+      ]
+    },
+    {
+      "question": "nostalgia",
+      "answer": [
+        "analogist",
+        "nostalgia"
+      ]
+    },
+    {
+      "question": "notorious",
+      "answer": [
+        "notorious"
+      ]
+    },
+    {
+      "question": "nutrition",
+      "answer": [
+        "nutrition"
+      ]
+    },
+    {
+      "question": "obedience",
+      "answer": [
+        "obedience"
+      ]
+    },
+    {
+      "question": "objection",
+      "answer": [
+        "objection"
+      ]
+    },
+    {
+      "question": "objective",
+      "answer": [
+        "objective"
+      ]
+    },
+    {
+      "question": "oblivious",
+      "answer": [
+        "oblivious"
+      ]
+    },
+    {
+      "question": "obnoxious",
+      "answer": [
+        "obnoxious"
+      ]
+    },
+    {
+      "question": "obscenity",
+      "answer": [
+        "obscenity"
+      ]
+    },
+    {
+      "question": "observant",
+      "answer": [
+        "observant"
+      ]
+    },
+    {
+      "question": "obsession",
+      "answer": [
+        "obsession"
+      ]
+    },
+    {
+      "question": "obsessive",
+      "answer": [
+        "obsessive"
+      ]
+    },
+    {
+      "question": "obstinate",
+      "answer": [
+        "obstinate"
+      ]
+    },
+    {
+      "question": "obtrusive",
+      "answer": [
+        "obtrusive"
+      ]
+    },
+    {
+      "question": "obviously",
+      "answer": [
+        "obviously"
+      ]
+    },
+    {
+      "question": "offensive",
+      "answer": [
+        "offensive"
+      ]
+    },
+    {
+      "question": "offspring",
+      "answer": [
+        "offspring"
+      ]
+    },
+    {
+      "question": "onslaught",
+      "answer": [
+        "onslaught"
+      ]
+    },
+    {
+      "question": "operating",
+      "answer": [
+        "operating"
+      ]
+    },
+    {
+      "question": "operation",
+      "answer": [
+        "operation"
+      ]
+    },
+    {
+      "question": "operative",
+      "answer": [
+        "operative",
+        "evaporite"
+      ]
+    },
+    {
+      "question": "opportune",
+      "answer": [
+        "opportune"
+      ]
+    },
+    {
+      "question": "orchestra",
+      "answer": [
+        "carothers",
+        "carthorse",
+        "orchestra"
+      ]
+    },
+    {
+      "question": "ordinance",
+      "answer": [
+        "ordinance"
+      ]
+    },
+    {
+      "question": "organized",
+      "answer": [
+        "organized"
+      ]
+    },
+    {
+      "question": "organizer",
+      "answer": [
+        "organizer"
+      ]
+    },
+    {
+      "question": "originate",
+      "answer": [
+        "originate"
+      ]
+    },
+    {
+      "question": "orthodoxy",
+      "answer": [
+        "orthodoxy"
+      ]
+    },
+    {
+      "question": "oscillate",
+      "answer": [
+        "oscillate"
+      ]
+    },
+    {
+      "question": "ostracism",
+      "answer": [
+        "castroism",
+        "ostracism"
+      ]
+    },
+    {
+      "question": "otherwise",
+      "answer": [
+        "otherwise"
+      ]
+    },
+    {
+      "question": "ourselves",
+      "answer": [
+        "ourselves"
+      ]
+    },
+    {
+      "question": "outnumber",
+      "answer": [
+        "outnumber"
+      ]
+    },
+    {
+      "question": "outspoken",
+      "answer": [
+        "outspoken"
+      ]
+    },
+    {
+      "question": "overblown",
+      "answer": [
+        "overblown"
+      ]
+    },
+    {
+      "question": "overcrowd",
+      "answer": [
+        "overcrowd"
+      ]
+    },
+    {
+      "question": "overgrown",
+      "answer": [
+        "overgrown"
+      ]
+    },
+    {
+      "question": "overnight",
+      "answer": [
+        "overnight"
+      ]
+    },
+    {
+      "question": "oversight",
+      "answer": [
+        "oversight"
+      ]
+    },
+    {
+      "question": "oversleep",
+      "answer": [
+        "sleepover",
+        "oversleep"
+      ]
+    },
+    {
+      "question": "overstate",
+      "answer": [
+        "overstate"
+      ]
+    },
+    {
+      "question": "overthrow",
+      "answer": [
+        "overthrow"
+      ]
+    },
+    {
+      "question": "overwhelm",
+      "answer": [
+        "overwhelm"
+      ]
+    },
+    {
+      "question": "ownership",
+      "answer": [
+        "ownership",
+        "shipowner"
+      ]
+    },
+    {
+      "question": "packaging",
+      "answer": [
+        "packaging"
+      ]
+    },
+    {
+      "question": "painfully",
+      "answer": [
+        "painfully"
+      ]
+    },
+    {
+      "question": "palatable",
+      "answer": [
+        "palatable"
+      ]
+    },
+    {
+      "question": "panhandle",
+      "answer": [
+        "panhandle"
+      ]
+    },
+    {
+      "question": "paperback",
+      "answer": [
+        "paperback"
+      ]
+    },
+    {
+      "question": "paragraph",
+      "answer": [
+        "paragraph"
+      ]
+    },
+    {
+      "question": "paralysis",
+      "answer": [
+        "paralysis"
+      ]
+    },
+    {
+      "question": "parameter",
+      "answer": [
+        "parameter"
+      ]
+    },
+    {
+      "question": "paramount",
+      "answer": [
+        "paramount"
+      ]
+    },
+    {
+      "question": "parochial",
+      "answer": [
+        "parochial"
+      ]
+    },
+    {
+      "question": "partially",
+      "answer": [
+        "partially"
+      ]
+    },
+    {
+      "question": "partition",
+      "answer": [
+        "partition"
+      ]
+    },
+    {
+      "question": "passenger",
+      "answer": [
+        "passenger"
+      ]
+    },
+    {
+      "question": "pathology",
+      "answer": [
+        "pathology"
+      ]
+    },
+    {
+      "question": "patiently",
+      "answer": [
+        "patiently"
+      ]
+    },
+    {
+      "question": "patriarch",
+      "answer": [
+        "patriarch"
+      ]
+    },
+    {
+      "question": "patrician",
+      "answer": [
+        "patrician"
+      ]
+    },
+    {
+      "question": "patriotic",
+      "answer": [
+        "patriotic"
+      ]
+    },
+    {
+      "question": "patronage",
+      "answer": [
+        "patronage"
+      ]
+    },
+    {
+      "question": "patronize",
+      "answer": [
+        "patronize"
+      ]
+    },
+    {
+      "question": "peacetime",
+      "answer": [
+        "peacetime"
+      ]
+    },
+    {
+      "question": "penetrate",
+      "answer": [
+        "penetrate"
+      ]
+    },
+    {
+      "question": "peninsula",
+      "answer": [
+        "peninsula"
+      ]
+    },
+    {
+      "question": "penniless",
+      "answer": [
+        "penniless"
+      ]
+    },
+    {
+      "question": "pensioner",
+      "answer": [
+        "pensioner"
+      ]
+    },
+    {
+      "question": "perennial",
+      "answer": [
+        "perennial"
+      ]
+    },
+    {
+      "question": "perfectly",
+      "answer": [
+        "perfectly"
+      ]
+    },
+    {
+      "question": "performer",
+      "answer": [
+        "performer"
+      ]
+    },
+    {
+      "question": "perimeter",
+      "answer": [
+        "perimeter"
+      ]
+    },
+    {
+      "question": "periphery",
+      "answer": [
+        "periphery"
+      ]
+    },
+    {
+      "question": "periscope",
+      "answer": [
+        "periscope"
+      ]
+    },
+    {
+      "question": "permanent",
+      "answer": [
+        "permanent"
+      ]
+    },
+    {
+      "question": "perpetual",
+      "answer": [
+        "perpetual"
+      ]
+    },
+    {
+      "question": "persevere",
+      "answer": [
+        "persevere"
+      ]
+    },
+    {
+      "question": "persimmon",
+      "answer": [
+        "persimmon"
+      ]
+    },
+    {
+      "question": "personnel",
+      "answer": [
+        "personnel"
+      ]
+    },
+    {
+      "question": "pertinent",
+      "answer": [
+        "pertinent"
+      ]
+    },
+    {
+      "question": "pervasive",
+      "answer": [
+        "pervasive"
+      ]
+    },
+    {
+      "question": "pessimism",
+      "answer": [
+        "pessimism"
+      ]
+    },
+    {
+      "question": "pessimist",
+      "answer": [
+        "pessimist"
+      ]
+    },
+    {
+      "question": "pesticide",
+      "answer": [
+        "pesticide"
+      ]
+    },
+    {
+      "question": "petroleum",
+      "answer": [
+        "petroleum"
+      ]
+    },
+    {
+      "question": "petticoat",
+      "answer": [
+        "petticoat"
+      ]
+    },
+    {
+      "question": "photocopy",
+      "answer": [
+        "photocopy"
+      ]
+    },
+    {
+      "question": "physician",
+      "answer": [
+        "physician"
+      ]
+    },
+    {
+      "question": "physicist",
+      "answer": [
+        "physicist"
+      ]
+    },
+    {
+      "question": "piecemeal",
+      "answer": [
+        "piecemeal"
+      ]
+    },
+    {
+      "question": "pineapple",
+      "answer": [
+        "pineapple"
+      ]
+    },
+    {
+      "question": "plaintive",
+      "answer": [
+        "plaintive"
+      ]
+    },
+    {
+      "question": "planetary",
+      "answer": [
+        "planetary"
+      ]
+    },
+    {
+      "question": "plausible",
+      "answer": [
+        "plausible"
+      ]
+    },
+    {
+      "question": "plaything",
+      "answer": [
+        "plaything"
+      ]
+    },
+    {
+      "question": "plentiful",
+      "answer": [
+        "plentiful"
+      ]
+    },
+    {
+      "question": "pneumonia",
+      "answer": [
+        "pneumonia"
+      ]
+    },
+    {
+      "question": "pointless",
+      "answer": [
+        "pointless"
+      ]
+    },
+    {
+      "question": "poisoning",
+      "answer": [
+        "poisoning"
+      ]
+    },
+    {
+      "question": "poisonous",
+      "answer": [
+        "poisonous"
+      ]
+    },
+    {
+      "question": "policeman",
+      "answer": [
+        "policeman"
+      ]
+    },
+    {
+      "question": "political",
+      "answer": [
+        "political"
+      ]
+    },
+    {
+      "question": "pollutant",
+      "answer": [
+        "pollutant"
+      ]
+    },
+    {
+      "question": "pollution",
+      "answer": [
+        "pollution"
+      ]
+    },
+    {
+      "question": "ponderous",
+      "answer": [
+        "ponderous"
+      ]
+    },
+    {
+      "question": "popularly",
+      "answer": [
+        "popularly"
+      ]
+    },
+    {
+      "question": "porcelain",
+      "answer": [
+        "porcelain"
+      ]
+    },
+    {
+      "question": "possessed",
+      "answer": [
+        "possessed"
+      ]
+    },
+    {
+      "question": "posterity",
+      "answer": [
+        "posterity"
+      ]
+    },
+    {
+      "question": "postulate",
+      "answer": [
+        "postulate"
+      ]
+    },
+    {
+      "question": "potassium",
+      "answer": [
+        "potassium"
+      ]
+    },
+    {
+      "question": "potential",
+      "answer": [
+        "potential"
+      ]
+    },
+    {
+      "question": "powerless",
+      "answer": [
+        "powerless"
+      ]
+    },
+    {
+      "question": "practical",
+      "answer": [
+        "practical"
+      ]
+    },
+    {
+      "question": "precedent",
+      "answer": [
+        "precedent"
+      ]
+    },
+    {
+      "question": "precipice",
+      "answer": [
+        "precipice"
+      ]
+    },
+    {
+      "question": "precisely",
+      "answer": [
+        "precisely"
+      ]
+    },
+    {
+      "question": "precision",
+      "answer": [
+        "precision"
+      ]
+    },
+    {
+      "question": "precursor",
+      "answer": [
+        "precursor"
+      ]
+    },
+    {
+      "question": "predatory",
+      "answer": [
+        "portrayed",
+        "predatory"
+      ]
+    },
+    {
+      "question": "predicate",
+      "answer": [
+        "predicate"
+      ]
+    },
+    {
+      "question": "pregnancy",
+      "answer": [
+        "pregnancy"
+      ]
+    },
+    {
+      "question": "prejudice",
+      "answer": [
+        "prejudice"
+      ]
+    },
+    {
+      "question": "premature",
+      "answer": [
+        "premature"
+      ]
+    },
+    {
+      "question": "preoccupy",
+      "answer": [
+        "preoccupy"
+      ]
+    },
+    {
+      "question": "preschool",
+      "answer": [
+        "preschool"
+      ]
+    },
+    {
+      "question": "prescribe",
+      "answer": [
+        "prescribe"
+      ]
+    },
+    {
+      "question": "presently",
+      "answer": [
+        "presently"
+      ]
+    },
+    {
+      "question": "president",
+      "answer": [
+        "president"
+      ]
+    },
+    {
+      "question": "prevalent",
+      "answer": [
+        "prevalent"
+      ]
+    },
+    {
+      "question": "priceless",
+      "answer": [
+        "priceless"
+      ]
+    },
+    {
+      "question": "primarily",
+      "answer": [
+        "primarily"
+      ]
+    },
+    {
+      "question": "primitive",
+      "answer": [
+        "primitive"
+      ]
+    },
+    {
+      "question": "principal",
+      "answer": [
+        "principal"
+      ]
+    },
+    {
+      "question": "principle",
+      "answer": [
+        "principle"
+      ]
+    },
+    {
+      "question": "privately",
+      "answer": [
+        "privately"
+      ]
+    },
+    {
+      "question": "privilege",
+      "answer": [
+        "privilege"
+      ]
+    },
+    {
+      "question": "probation",
+      "answer": [
+        "probation"
+      ]
+    },
+    {
+      "question": "procedure",
+      "answer": [
+        "procedure",
+        "reproduce"
+      ]
+    },
+    {
+      "question": "professor",
+      "answer": [
+        "professor"
+      ]
+    },
+    {
+      "question": "profusion",
+      "answer": [
+        "profusion"
+      ]
+    },
+    {
+      "question": "prognosis",
+      "answer": [
+        "prognosis"
+      ]
+    },
+    {
+      "question": "projector",
+      "answer": [
+        "projector"
+      ]
+    },
+    {
+      "question": "promenade",
+      "answer": [
+        "promenade"
+      ]
+    },
+    {
+      "question": "prominent",
+      "answer": [
+        "prominent"
+      ]
+    },
+    {
+      "question": "promising",
+      "answer": [
+        "promising"
+      ]
+    },
+    {
+      "question": "promotion",
+      "answer": [
+        "promotion"
+      ]
+    },
+    {
+      "question": "pronounce",
+      "answer": [
+        "pronounce"
+      ]
+    },
+    {
+      "question": "propagate",
+      "answer": [
+        "propagate"
+      ]
+    },
+    {
+      "question": "propeller",
+      "answer": [
+        "propeller"
+      ]
+    },
+    {
+      "question": "proponent",
+      "answer": [
+        "proponent"
+      ]
+    },
+    {
+      "question": "propriety",
+      "answer": [
+        "propriety"
+      ]
+    },
+    {
+      "question": "proscribe",
+      "answer": [
+        "proscribe"
+      ]
+    },
+    {
+      "question": "prostrate",
+      "answer": [
+        "prostrate"
+      ]
+    },
+    {
+      "question": "protector",
+      "answer": [
+        "protector"
+      ]
+    },
+    {
+      "question": "prototype",
+      "answer": [
+        "prototype"
+      ]
+    },
+    {
+      "question": "providing",
+      "answer": [
+        "providing"
+      ]
+    },
+    {
+      "question": "provision",
+      "answer": [
+        "provision"
+      ]
+    },
+    {
+      "question": "proximity",
+      "answer": [
+        "proximity"
+      ]
+    },
+    {
+      "question": "pseudonym",
+      "answer": [
+        "pseudonym"
+      ]
+    },
+    {
+      "question": "publicity",
+      "answer": [
+        "publicity"
+      ]
+    },
+    {
+      "question": "publicize",
+      "answer": [
+        "publicize"
+      ]
+    },
+    {
+      "question": "publisher",
+      "answer": [
+        "publisher",
+        "republish"
+      ]
+    },
+    {
+      "question": "punctuate",
+      "answer": [
+        "punctuate"
+      ]
+    },
+    {
+      "question": "quadruple",
+      "answer": [
+        "quadruple"
+      ]
+    },
+    {
+      "question": "qualified",
+      "answer": [
+        "qualified"
+      ]
+    },
+    {
+      "question": "quietness",
+      "answer": [
+        "quietness"
+      ]
+    },
+    {
+      "question": "quotation",
+      "answer": [
+        "quotation"
+      ]
+    },
+    {
+      "question": "raspberry",
+      "answer": [
+        "raspberry"
+      ]
+    },
+    {
+      "question": "rationale",
+      "answer": [
+        "alienator",
+        "rationale"
+      ]
+    },
+    {
+      "question": "realistic",
+      "answer": [
+        "eristical",
+        "realistic"
+      ]
+    },
+    {
+      "question": "rearrange",
+      "answer": [
+        "rearrange"
+      ]
+    },
+    {
+      "question": "reasoning",
+      "answer": [
+        "reasoning"
+      ]
+    },
+    {
+      "question": "rebellion",
+      "answer": [
+        "rebellion"
+      ]
+    },
+    {
+      "question": "recapture",
+      "answer": [
+        "recapture"
+      ]
+    },
+    {
+      "question": "reception",
+      "answer": [
+        "reception"
+      ]
+    },
+    {
+      "question": "receptive",
+      "answer": [
+        "receptive"
+      ]
+    },
+    {
+      "question": "recession",
+      "answer": [
+        "recession"
+      ]
+    },
+    {
+      "question": "recognize",
+      "answer": [
+        "recognize"
+      ]
+    },
+    {
+      "question": "recollect",
+      "answer": [
+        "recollect"
+      ]
+    },
+    {
+      "question": "recommend",
+      "answer": [
+        "recommend"
+      ]
+    },
+    {
+      "question": "reconcile",
+      "answer": [
+        "reconcile"
+      ]
+    },
+    {
+      "question": "recording",
+      "answer": [
+        "recording"
+      ]
+    },
+    {
+      "question": "rectangle",
+      "answer": [
+        "rectangle"
+      ]
+    },
+    {
+      "question": "rectitude",
+      "answer": [
+        "certitude",
+        "rectitude"
+      ]
+    },
+    {
+      "question": "recurrent",
+      "answer": [
+        "recurrent"
+      ]
+    },
+    {
+      "question": "reduction",
+      "answer": [
+        "reduction",
+        "introduce"
+      ]
+    },
+    {
+      "question": "reference",
+      "answer": [
+        "reference"
+      ]
+    },
+    {
+      "question": "refurbish",
+      "answer": [
+        "refurbish"
+      ]
+    },
+    {
+      "question": "regarding",
+      "answer": [
+        "regarding"
+      ]
+    },
+    {
+      "question": "regularly",
+      "answer": [
+        "regularly"
+      ]
+    },
+    {
+      "question": "regulator",
+      "answer": [
+        "regulator"
+      ]
+    },
+    {
+      "question": "rehearsal",
+      "answer": [
+        "rehearsal"
+      ]
+    },
+    {
+      "question": "reimburse",
+      "answer": [
+        "reimburse"
+      ]
+    },
+    {
+      "question": "reinforce",
+      "answer": [
+        "reinforce"
+      ]
+    },
+    {
+      "question": "reinstate",
+      "answer": [
+        "reinstate"
+      ]
+    },
+    {
+      "question": "reiterate",
+      "answer": [
+        "reiterate"
+      ]
+    },
+    {
+      "question": "rejection",
+      "answer": [
+        "rejection"
+      ]
+    },
+    {
+      "question": "rejoinder",
+      "answer": [
+        "rejoinder"
+      ]
+    },
+    {
+      "question": "religious",
+      "answer": [
+        "religious"
+      ]
+    },
+    {
+      "question": "reluctant",
+      "answer": [
+        "reluctant"
+      ]
+    },
+    {
+      "question": "remainder",
+      "answer": [
+        "remainder"
+      ]
+    },
+    {
+      "question": "reminisce",
+      "answer": [
+        "reminisce"
+      ]
+    },
+    {
+      "question": "remission",
+      "answer": [
+        "missioner",
+        "remission"
+      ]
+    },
+    {
+      "question": "rendition",
+      "answer": [
+        "rendition"
+      ]
+    },
+    {
+      "question": "renewable",
+      "answer": [
+        "renewable"
+      ]
+    },
+    {
+      "question": "repellent",
+      "answer": [
+        "repellent"
+      ]
+    },
+    {
+      "question": "replenish",
+      "answer": [
+        "replenish"
+      ]
+    },
+    {
+      "question": "replicate",
+      "answer": [
+        "replicate"
+      ]
+    },
+    {
+      "question": "represent",
+      "answer": [
+        "presenter",
+        "represent"
+      ]
+    },
+    {
+      "question": "reprimand",
+      "answer": [
+        "reprimand"
+      ]
+    },
+    {
+      "question": "reproduce",
+      "answer": [
+        "procedure",
+        "reproduce"
+      ]
+    },
+    {
+      "question": "repudiate",
+      "answer": [
+        "repudiate"
+      ]
+    },
+    {
+      "question": "requisite",
+      "answer": [
+        "requisite"
+      ]
+    },
+    {
+      "question": "reservoir",
+      "answer": [
+        "reservoir"
+      ]
+    },
+    {
+      "question": "residence",
+      "answer": [
+        "residence"
+      ]
+    },
+    {
+      "question": "resilient",
+      "answer": [
+        "resilient"
+      ]
+    },
+    {
+      "question": "resistant",
+      "answer": [
+        "resistant"
+      ]
+    },
+    {
+      "question": "resonance",
+      "answer": [
+        "resonance"
+      ]
+    },
+    {
+      "question": "restraint",
+      "answer": [
+        "restraint"
+      ]
+    },
+    {
+      "question": "resurrect",
+      "answer": [
+        "resurrect"
+      ]
+    },
+    {
+      "question": "retaliate",
+      "answer": [
+        "aliterate",
+        "elettaria",
+        "retaliate"
+      ]
+    },
+    {
+      "question": "retention",
+      "answer": [
+        "retention"
+      ]
+    },
+    {
+      "question": "retrieval",
+      "answer": [
+        "retrieval"
+      ]
+    },
+    {
+      "question": "revealing",
+      "answer": [
+        "revealing"
+      ]
+    },
+    {
+      "question": "reverence",
+      "answer": [
+        "reverence"
+      ]
+    },
+    {
+      "question": "revulsion",
+      "answer": [
+        "revulsion"
+      ]
+    },
+    {
+      "question": "righteous",
+      "answer": [
+        "righteous"
+      ]
+    },
+    {
+      "question": "riverside",
+      "answer": [
+        "riverside"
+      ]
+    },
+    {
+      "question": "sacrifice",
+      "answer": [
+        "sacrifice"
+      ]
+    },
+    {
+      "question": "safeguard",
+      "answer": [
+        "safeguard"
+      ]
+    },
+    {
+      "question": "sagacious",
+      "answer": [
+        "sagacious"
+      ]
+    },
+    {
+      "question": "salvation",
+      "answer": [
+        "salvation"
+      ]
+    },
+    {
+      "question": "sanctuary",
+      "answer": [
+        "sanctuary"
+      ]
+    },
+    {
+      "question": "sandstone",
+      "answer": [
+        "sandstone"
+      ]
+    },
+    {
+      "question": "satellite",
+      "answer": [
+        "satellite"
+      ]
+    },
+    {
+      "question": "satisfied",
+      "answer": [
+        "satisfied"
+      ]
+    },
+    {
+      "question": "scapegoat",
+      "answer": [
+        "scapegoat"
+      ]
+    },
+    {
+      "question": "schematic",
+      "answer": [
+        "schematic",
+        "catechism"
+      ]
+    },
+    {
+      "question": "scholarly",
+      "answer": [
+        "scholarly"
+      ]
+    },
+    {
+      "question": "schoolboy",
+      "answer": [
+        "schoolboy"
+      ]
+    },
+    {
+      "question": "schooling",
+      "answer": [
+        "schooling"
+      ]
+    },
+    {
+      "question": "scientist",
+      "answer": [
+        "scientist"
+      ]
+    },
+    {
+      "question": "screaming",
+      "answer": [
+        "screaming"
+      ]
+    },
+    {
+      "question": "scripture",
+      "answer": [
+        "scripture"
+      ]
+    },
+    {
+      "question": "sculpture",
+      "answer": [
+        "sculpture"
+      ]
+    },
+    {
+      "question": "searching",
+      "answer": [
+        "searching"
+      ]
+    },
+    {
+      "question": "seasoning",
+      "answer": [
+        "seasoning"
+      ]
+    },
+    {
+      "question": "secession",
+      "answer": [
+        "secession"
+      ]
+    },
+    {
+      "question": "secondary",
+      "answer": [
+        "secondary"
+      ]
+    },
+    {
+      "question": "secretary",
+      "answer": [
+        "secretary"
+      ]
+    },
+    {
+      "question": "secretive",
+      "answer": [
+        "secretive"
+      ]
+    },
+    {
+      "question": "sectarian",
+      "answer": [
+        "cartesian",
+        "sectarian",
+        "ascertain"
+      ]
+    },
+    {
+      "question": "sectional",
+      "answer": [
+        "sectional",
+        "coastline"
+      ]
+    },
+    {
+      "question": "sedentary",
+      "answer": [
+        "sedentary"
+      ]
+    },
+    {
+      "question": "seductive",
+      "answer": [
+        "seductive"
+      ]
+    },
+    {
+      "question": "seemingly",
+      "answer": [
+        "seemingly"
+      ]
+    },
+    {
+      "question": "segregate",
+      "answer": [
+        "segregate"
+      ]
+    },
+    {
+      "question": "selection",
+      "answer": [
+        "selection"
+      ]
+    },
+    {
+      "question": "selective",
+      "answer": [
+        "selective"
+      ]
+    },
+    {
+      "question": "semblance",
+      "answer": [
+        "semblance"
+      ]
+    },
+    {
+      "question": "semifinal",
+      "answer": [
+        "semifinal"
+      ]
+    },
+    {
+      "question": "seniority",
+      "answer": [
+        "seniority"
+      ]
+    },
+    {
+      "question": "sensation",
+      "answer": [
+        "sensation"
+      ]
+    },
+    {
+      "question": "senseless",
+      "answer": [
+        "senseless"
+      ]
+    },
+    {
+      "question": "sensitive",
+      "answer": [
+        "sensitive"
+      ]
+    },
+    {
+      "question": "sentiment",
+      "answer": [
+        "sentiment"
+      ]
+    },
+    {
+      "question": "separable",
+      "answer": [
+        "separable"
+      ]
+    },
+    {
+      "question": "september",
+      "answer": [
+        "september"
+      ]
+    },
+    {
+      "question": "sequester",
+      "answer": [
+        "sequester"
+      ]
+    },
+    {
+      "question": "seriously",
+      "answer": [
+        "seriously"
+      ]
+    },
+    {
+      "question": "seventeen",
+      "answer": [
+        "seventeen"
+      ]
+    },
+    {
+      "question": "sexuality",
+      "answer": [
+        "sexuality"
+      ]
+    },
+    {
+      "question": "sharpness",
+      "answer": [
+        "sharpness"
+      ]
+    },
+    {
+      "question": "shipwreck",
+      "answer": [
+        "shipwreck"
+      ]
+    },
+    {
+      "question": "shoemaker",
+      "answer": [
+        "shoemaker"
+      ]
+    },
+    {
+      "question": "shorthand",
+      "answer": [
+        "shorthand"
+      ]
+    },
+    {
+      "question": "signature",
+      "answer": [
+        "signature"
+      ]
+    },
+    {
+      "question": "similarly",
+      "answer": [
+        "similarly"
+      ]
+    },
+    {
+      "question": "sincerely",
+      "answer": [
+        "sincerely"
+      ]
+    },
+    {
+      "question": "sincerity",
+      "answer": [
+        "sincerity"
+      ]
+    },
+    {
+      "question": "situation",
+      "answer": [
+        "situation"
+      ]
+    },
+    {
+      "question": "sixteenth",
+      "answer": [
+        "sixteenth"
+      ]
+    },
+    {
+      "question": "skeptical",
+      "answer": [
+        "skeptical"
+      ]
+    },
+    {
+      "question": "slapstick",
+      "answer": [
+        "slapstick"
+      ]
+    },
+    {
+      "question": "sleepless",
+      "answer": [
+        "sleepless"
+      ]
+    },
+    {
+      "question": "snowflake",
+      "answer": [
+        "snowflake"
+      ]
+    },
+    {
+      "question": "snowstorm",
+      "answer": [
+        "snowstorm"
+      ]
+    },
+    {
+      "question": "socialism",
+      "answer": [
+        "socialism"
+      ]
+    },
+    {
+      "question": "socialist",
+      "answer": [
+        "socialist"
+      ]
+    },
+    {
+      "question": "sociology",
+      "answer": [
+        "sociology"
+      ]
+    },
+    {
+      "question": "solemnity",
+      "answer": [
+        "solemnity"
+      ]
+    },
+    {
+      "question": "solicitor",
+      "answer": [
+        "solicitor"
+      ]
+    },
+    {
+      "question": "something",
+      "answer": [
+        "something"
+      ]
+    },
+    {
+      "question": "sometimes",
+      "answer": [
+        "sometimes"
+      ]
+    },
+    {
+      "question": "somewhere",
+      "answer": [
+        "somewhere"
+      ]
+    },
+    {
+      "question": "sophomore",
+      "answer": [
+        "sophomore"
+      ]
+    },
+    {
+      "question": "sorrowful",
+      "answer": [
+        "sorrowful"
+      ]
+    },
+    {
+      "question": "southeast",
+      "answer": [
+        "southeast"
+      ]
+    },
+    {
+      "question": "southwest",
+      "answer": [
+        "southwest"
+      ]
+    },
+    {
+      "question": "spaceship",
+      "answer": [
+        "spaceship"
+      ]
+    },
+    {
+      "question": "spaghetti",
+      "answer": [
+        "spaghetti"
+      ]
+    },
+    {
+      "question": "sparkling",
+      "answer": [
+        "sparkling"
+      ]
+    },
+    {
+      "question": "spearhead",
+      "answer": [
+        "spearhead"
+      ]
+    },
+    {
+      "question": "specially",
+      "answer": [
+        "specially"
+      ]
+    },
+    {
+      "question": "spectacle",
+      "answer": [
+        "spectacle"
+      ]
+    },
+    {
+      "question": "spectator",
+      "answer": [
+        "spectator"
+      ]
+    },
+    {
+      "question": "spiritual",
+      "answer": [
+        "spiritual"
+      ]
+    },
+    {
+      "question": "spokesman",
+      "answer": [
+        "spokesman"
+      ]
+    },
+    {
+      "question": "sportsman",
+      "answer": [
+        "sportsman"
+      ]
+    },
+    {
+      "question": "sprightly",
+      "answer": [
+        "sprightly"
+      ]
+    },
+    {
+      "question": "squeamish",
+      "answer": [
+        "squeamish"
+      ]
+    },
+    {
+      "question": "stability",
+      "answer": [
+        "stability"
+      ]
+    },
+    {
+      "question": "staircase",
+      "answer": [
+        "staircase"
+      ]
+    },
+    {
+      "question": "stalemate",
+      "answer": [
+        "stalemate"
+      ]
+    },
+    {
+      "question": "startling",
+      "answer": [
+        "startling"
+      ]
+    },
+    {
+      "question": "statement",
+      "answer": [
+        "statement",
+        "testament"
+      ]
+    },
+    {
+      "question": "statesman",
+      "answer": [
+        "statesman"
+      ]
+    },
+    {
+      "question": "statutory",
+      "answer": [
+        "statutory"
+      ]
+    },
+    {
+      "question": "steadfast",
+      "answer": [
+        "steadfast"
+      ]
+    },
+    {
+      "question": "steamboat",
+      "answer": [
+        "steamboat"
+      ]
+    },
+    {
+      "question": "steamship",
+      "answer": [
+        "steamship"
+      ]
+    },
+    {
+      "question": "sterilize",
+      "answer": [
+        "sterilize"
+      ]
+    },
+    {
+      "question": "stillness",
+      "answer": [
+        "stillness"
+      ]
+    },
+    {
+      "question": "stimulant",
+      "answer": [
+        "stimulant"
+      ]
+    },
+    {
+      "question": "stimulate",
+      "answer": [
+        "stimulate"
+      ]
+    },
+    {
+      "question": "stipulate",
+      "answer": [
+        "stipulate"
+      ]
+    },
+    {
+      "question": "stockpile",
+      "answer": [
+        "stockpile"
+      ]
+    },
+    {
+      "question": "strangely",
+      "answer": [
+        "strangely"
+      ]
+    },
+    {
+      "question": "streetcar",
+      "answer": [
+        "streetcar"
+      ]
+    },
+    {
+      "question": "strenuous",
+      "answer": [
+        "strenuous"
+      ]
+    },
+    {
+      "question": "stricture",
+      "answer": [
+        "stricture"
+      ]
+    },
+    {
+      "question": "stringent",
+      "answer": [
+        "stringent"
+      ]
+    },
+    {
+      "question": "structure",
+      "answer": [
+        "structure"
+      ]
+    },
+    {
+      "question": "stupidity",
+      "answer": [
+        "stupidity"
+      ]
+    },
+    {
+      "question": "stylistic",
+      "answer": [
+        "stylistic"
+      ]
+    },
+    {
+      "question": "subdivide",
+      "answer": [
+        "subdivide"
+      ]
+    },
+    {
+      "question": "subjugate",
+      "answer": [
+        "subjugate"
+      ]
+    },
+    {
+      "question": "submarine",
+      "answer": [
+        "submarine"
+      ]
+    },
+    {
+      "question": "subscribe",
+      "answer": [
+        "subscribe"
+      ]
+    },
+    {
+      "question": "subsidize",
+      "answer": [
+        "subsidize"
+      ]
+    },
+    {
+      "question": "substance",
+      "answer": [
+        "substance"
+      ]
+    },
+    {
+      "question": "successor",
+      "answer": [
+        "successor"
+      ]
+    },
+    {
+      "question": "succulent",
+      "answer": [
+        "succulent"
+      ]
+    },
+    {
+      "question": "suffering",
+      "answer": [
+        "suffering"
+      ]
+    },
+    {
+      "question": "suffocate",
+      "answer": [
+        "suffocate"
+      ]
+    },
+    {
+      "question": "summarize",
+      "answer": [
+        "summarize"
+      ]
+    },
+    {
+      "question": "sumptuous",
+      "answer": [
+        "sumptuous"
+      ]
+    },
+    {
+      "question": "sunflower",
+      "answer": [
+        "sunflower"
+      ]
+    },
+    {
+      "question": "supersede",
+      "answer": [
+        "supersede"
+      ]
+    },
+    {
+      "question": "superstar",
+      "answer": [
+        "superstar"
+      ]
+    },
+    {
+      "question": "supervise",
+      "answer": [
+        "supervise"
+      ]
+    },
+    {
+      "question": "supporter",
+      "answer": [
+        "supporter"
+      ]
+    },
+    {
+      "question": "supremacy",
+      "answer": [
+        "supremacy"
+      ]
+    },
+    {
+      "question": "surcharge",
+      "answer": [
+        "surcharge"
+      ]
+    },
+    {
+      "question": "surprised",
+      "answer": [
+        "surprised"
+      ]
+    },
+    {
+      "question": "surrender",
+      "answer": [
+        "surrender"
+      ]
+    },
+    {
+      "question": "surrogate",
+      "answer": [
+        "surrogate"
+      ]
+    },
+    {
+      "question": "suspender",
+      "answer": [
+        "unpressed",
+        "suspender",
+        "resuspend"
+      ]
+    },
+    {
+      "question": "suspicion",
+      "answer": [
+        "suspicion"
+      ]
+    },
+    {
+      "question": "sweetness",
+      "answer": [
+        "sweetness"
+      ]
+    },
+    {
+      "question": "symbolize",
+      "answer": [
+        "symbolize"
+      ]
+    },
+    {
+      "question": "symposium",
+      "answer": [
+        "symposium"
+      ]
+    },
+    {
+      "question": "synthesis",
+      "answer": [
+        "synthesis"
+      ]
+    },
+    {
+      "question": "synthetic",
+      "answer": [
+        "synthetic"
+      ]
+    },
+    {
+      "question": "talkative",
+      "answer": [
+        "talkative"
+      ]
+    },
+    {
+      "question": "tantalize",
+      "answer": [
+        "tantalize"
+      ]
+    },
+    {
+      "question": "tasteless",
+      "answer": [
+        "stateless",
+        "tasteless"
+      ]
+    },
+    {
+      "question": "technical",
+      "answer": [
+        "technical"
+      ]
+    },
+    {
+      "question": "technique",
+      "answer": [
+        "technique"
+      ]
+    },
+    {
+      "question": "telegraph",
+      "answer": [
+        "telegraph"
+      ]
+    },
+    {
+      "question": "telephone",
+      "answer": [
+        "telephone"
+      ]
+    },
+    {
+      "question": "telescope",
+      "answer": [
+        "telescope"
+      ]
+    },
+    {
+      "question": "temperate",
+      "answer": [
+        "temperate"
+      ]
+    },
+    {
+      "question": "temporary",
+      "answer": [
+        "temporary"
+      ]
+    },
+    {
+      "question": "tenacious",
+      "answer": [
+        "tenacious"
+      ]
+    },
+    {
+      "question": "tentative",
+      "answer": [
+        "attentive",
+        "tentative"
+      ]
+    },
+    {
+      "question": "terminate",
+      "answer": [
+        "terminate"
+      ]
+    },
+    {
+      "question": "territory",
+      "answer": [
+        "territory"
+      ]
+    },
+    {
+      "question": "terrorist",
+      "answer": [
+        "terrorist"
+      ]
+    },
+    {
+      "question": "testament",
+      "answer": [
+        "statement",
+        "testament"
+      ]
+    },
+    {
+      "question": "therefore",
+      "answer": [
+        "therefore"
+      ]
+    },
+    {
+      "question": "thesaurus",
+      "answer": [
+        "thesaurus"
+      ]
+    },
+    {
+      "question": "thickness",
+      "answer": [
+        "thickness"
+      ]
+    },
+    {
+      "question": "thirtieth",
+      "answer": [
+        "thirtieth"
+      ]
+    },
+    {
+      "question": "threshold",
+      "answer": [
+        "threshold"
+      ]
+    },
+    {
+      "question": "thrilling",
+      "answer": [
+        "thrilling"
+      ]
+    },
+    {
+      "question": "timetable",
+      "answer": [
+        "timetable"
+      ]
+    },
+    {
+      "question": "tolerable",
+      "answer": [
+        "tolerable"
+      ]
+    },
+    {
+      "question": "tolerance",
+      "answer": [
+        "tolerance"
+      ]
+    },
+    {
+      "question": "toothache",
+      "answer": [
+        "toothache"
+      ]
+    },
+    {
+      "question": "toothless",
+      "answer": [
+        "toothless"
+      ]
+    },
+    {
+      "question": "toothpick",
+      "answer": [
+        "toothpick"
+      ]
+    },
+    {
+      "question": "tradesman",
+      "answer": [
+        "tradesman"
+      ]
+    },
+    {
+      "question": "tradition",
+      "answer": [
+        "tradition"
+      ]
+    },
+    {
+      "question": "transcend",
+      "answer": [
+        "transcend"
+      ]
+    },
+    {
+      "question": "transform",
+      "answer": [
+        "transform"
+      ]
+    },
+    {
+      "question": "transient",
+      "answer": [
+        "transient",
+        "instanter"
+      ]
+    },
+    {
+      "question": "translate",
+      "answer": [
+        "translate"
+      ]
+    },
+    {
+      "question": "transonic",
+      "answer": [
+        "nonracist",
+        "transonic",
+        "constrain"
+      ]
+    },
+    {
+      "question": "transport",
+      "answer": [
+        "transport"
+      ]
+    },
+    {
+      "question": "traveling",
+      "answer": [
+        "traveling"
+      ]
+    },
+    {
+      "question": "treachery",
+      "answer": [
+        "treachery"
+      ]
+    },
+    {
+      "question": "treasurer",
+      "answer": [
+        "treasurer"
+      ]
+    },
+    {
+      "question": "treatment",
+      "answer": [
+        "treatment"
+      ]
+    },
+    {
+      "question": "tremulous",
+      "answer": [
+        "tremulous"
+      ]
+    },
+    {
+      "question": "turbulent",
+      "answer": [
+        "turbulent"
+      ]
+    },
+    {
+      "question": "twentieth",
+      "answer": [
+        "twentieth"
+      ]
+    },
+    {
+      "question": "typically",
+      "answer": [
+        "typically"
+      ]
+    },
+    {
+      "question": "ultimatum",
+      "answer": [
+        "ultimatum"
+      ]
+    },
+    {
+      "question": "unanimous",
+      "answer": [
+        "unanimous"
+      ]
+    },
+    {
+      "question": "uncertain",
+      "answer": [
+        "runcinate",
+        "uncertain"
+      ]
+    },
+    {
+      "question": "unchanged",
+      "answer": [
+        "unchanged"
+      ]
+    },
+    {
+      "question": "underline",
+      "answer": [
+        "underline"
+      ]
+    },
+    {
+      "question": "undermine",
+      "answer": [
+        "undermine"
+      ]
+    },
+    {
+      "question": "underside",
+      "answer": [
+        "undesired",
+        "underside"
+      ]
+    },
+    {
+      "question": "undertake",
+      "answer": [
+        "undertake"
+      ]
+    },
+    {
+      "question": "underwear",
+      "answer": [
+        "underwear"
+      ]
+    },
+    {
+      "question": "undoubted",
+      "answer": [
+        "undoubted"
+      ]
+    },
+    {
+      "question": "unhealthy",
+      "answer": [
+        "unhealthy"
+      ]
+    },
+    {
+      "question": "universal",
+      "answer": [
+        "universal"
+      ]
+    },
+    {
+      "question": "unlimited",
+      "answer": [
+        "unlimited"
+      ]
+    },
+    {
+      "question": "unmarried",
+      "answer": [
+        "unmarried"
+      ]
+    },
+    {
+      "question": "unnatural",
+      "answer": [
+        "unnatural"
+      ]
+    },
+    {
+      "question": "unnoticed",
+      "answer": [
+        "continued",
+        "unnoticed"
+      ]
+    },
+    {
+      "question": "unpopular",
+      "answer": [
+        "unpopular"
+      ]
+    },
+    {
+      "question": "unscathed",
+      "answer": [
+        "unscathed"
+      ]
+    },
+    {
+      "question": "unselfish",
+      "answer": [
+        "unselfish"
+      ]
+    },
+    {
+      "question": "unskilled",
+      "answer": [
+        "unskilled"
+      ]
+    },
+    {
+      "question": "untenable",
+      "answer": [
+        "untenable"
+      ]
+    },
+    {
+      "question": "untouched",
+      "answer": [
+        "untouched"
+      ]
+    },
+    {
+      "question": "unusually",
+      "answer": [
+        "unusually"
+      ]
+    },
+    {
+      "question": "unwelcome",
+      "answer": [
+        "unwelcome"
+      ]
+    },
+    {
+      "question": "unwilling",
+      "answer": [
+        "unwilling"
+      ]
+    },
+    {
+      "question": "utterance",
+      "answer": [
+        "utterance"
+      ]
+    },
+    {
+      "question": "valuation",
+      "answer": [
+        "valuation"
+      ]
+    },
+    {
+      "question": "valueless",
+      "answer": [
+        "valueless"
+      ]
+    },
+    {
+      "question": "vandalism",
+      "answer": [
+        "vandalism"
+      ]
+    },
+    {
+      "question": "variation",
+      "answer": [
+        "variation"
+      ]
+    },
+    {
+      "question": "variously",
+      "answer": [
+        "variously"
+      ]
+    },
+    {
+      "question": "vegetable",
+      "answer": [
+        "vegetable"
+      ]
+    },
+    {
+      "question": "venerable",
+      "answer": [
+        "venerable"
+      ]
+    },
+    {
+      "question": "vengeance",
+      "answer": [
+        "vengeance"
+      ]
+    },
+    {
+      "question": "ventilate",
+      "answer": [
+        "ventilate"
+      ]
+    },
+    {
+      "question": "veritable",
+      "answer": [
+        "avertible",
+        "veritable"
+      ]
+    },
+    {
+      "question": "versatile",
+      "answer": [
+        "versatile"
+      ]
+    },
+    {
+      "question": "victualer",
+      "answer": [
+        "lucrative",
+        "victualer"
+      ]
+    },
+    {
+      "question": "videotape",
+      "answer": [
+        "videotape"
+      ]
+    },
+    {
+      "question": "viewpoint",
+      "answer": [
+        "viewpoint"
+      ]
+    },
+    {
+      "question": "vindicate",
+      "answer": [
+        "vindicate"
+      ]
+    },
+    {
+      "question": "violation",
+      "answer": [
+        "violation"
+      ]
+    },
+    {
+      "question": "violently",
+      "answer": [
+        "violently"
+      ]
+    },
+    {
+      "question": "violinist",
+      "answer": [
+        "violinist"
+      ]
+    },
+    {
+      "question": "virtually",
+      "answer": [
+        "virtually"
+      ]
+    },
+    {
+      "question": "visionary",
+      "answer": [
+        "visionary"
+      ]
+    },
+    {
+      "question": "visualize",
+      "answer": [
+        "visualize"
+      ]
+    },
+    {
+      "question": "vivacious",
+      "answer": [
+        "vivacious"
+      ]
+    },
+    {
+      "question": "voluntary",
+      "answer": [
+        "voluntary"
+      ]
+    },
+    {
+      "question": "volunteer",
+      "answer": [
+        "volunteer"
+      ]
+    },
+    {
+      "question": "vulgarity",
+      "answer": [
+        "vulgarity"
+      ]
+    },
+    {
+      "question": "waistcoat",
+      "answer": [
+        "waistcoat"
+      ]
+    },
+    {
+      "question": "wallpaper",
+      "answer": [
+        "wallpaper"
+      ]
+    },
+    {
+      "question": "washcloth",
+      "answer": [
+        "washcloth"
+      ]
+    },
+    {
+      "question": "waterfall",
+      "answer": [
+        "waterfall"
+      ]
+    },
+    {
+      "question": "watershed",
+      "answer": [
+        "watershed"
+      ]
+    },
+    {
+      "question": "wednesday",
+      "answer": [
+        "wednesday"
+      ]
+    },
+    {
+      "question": "whichever",
+      "answer": [
+        "whichever"
+      ]
+    },
+    {
+      "question": "whimsical",
+      "answer": [
+        "whimsical"
+      ]
+    },
+    {
+      "question": "whirlpool",
+      "answer": [
+        "whirlpool"
+      ]
+    },
+    {
+      "question": "whirlwind",
+      "answer": [
+        "whirlwind"
+      ]
+    },
+    {
+      "question": "whiteness",
+      "answer": [
+        "whiteness"
+      ]
+    },
+    {
+      "question": "whitewash",
+      "answer": [
+        "whitewash"
+      ]
+    },
+    {
+      "question": "wholesale",
+      "answer": [
+        "wholesale"
+      ]
+    },
+    {
+      "question": "wholesome",
+      "answer": [
+        "wholesome"
+      ]
+    },
+    {
+      "question": "willingly",
+      "answer": [
+        "willingly"
+      ]
+    },
+    {
+      "question": "wineglass",
+      "answer": [
+        "wineglass"
+      ]
+    },
+    {
+      "question": "withdrawn",
+      "answer": [
+        "withdrawn"
+      ]
+    },
+    {
+      "question": "withstand",
+      "answer": [
+        "withstand"
+      ]
+    },
+    {
+      "question": "wonderful",
+      "answer": [
+        "wonderful"
+      ]
+    },
+    {
+      "question": "workhouse",
+      "answer": [
+        "housework",
+        "workhouse"
+      ]
+    },
+    {
+      "question": "worldwide",
+      "answer": [
+        "worldwide"
+      ]
+    },
+    {
+      "question": "worthless",
+      "answer": [
+        "worthless"
+      ]
+    },
+    {
+      "question": "wrestling",
+      "answer": [
+        "wrestling"
+      ]
+    },
+    {
+      "question": "yesterday",
+      "answer": [
+        "yesterday"
+      ]
+    },
+    {
+      "question": "youngster",
+      "answer": [
+        "youngster"
+      ]
+    },
+    {
+      "question": "long-term",
+      "answer": [
+        "long-term"
+      ]
+    },
+    {
+      "question": "increased",
+      "answer": [
+        "increased"
+      ]
+    },
+    {
+      "question": "remaining",
+      "answer": [
+        "remaining"
+      ]
+    },
+    {
+      "question": "coalition",
+      "answer": [
+        "coalition"
+      ]
+    },
+    {
+      "question": "so-called",
+      "answer": [
+        "so-called"
+      ]
+    },
+    {
+      "question": "terrorism",
+      "answer": [
+        "terrorism"
+      ]
+    },
+    {
+      "question": "testimony",
+      "answer": [
+        "testimony"
+      ]
+    },
+    {
+      "question": "strategic",
+      "answer": [
+        "strategic"
+      ]
+    },
+    {
+      "question": "celebrity",
+      "answer": [
+        "celebrity"
+      ]
+    },
+    {
+      "question": "depending",
+      "answer": [
+        "depending"
+      ]
+    },
+    {
+      "question": "continued",
+      "answer": [
+        "continued",
+        "unnoticed"
+      ]
+    },
+    {
+      "question": "integrate",
+      "answer": [
+        "argentite",
+        "integrate"
+      ]
+    },
+    {
+      "question": "integrity",
+      "answer": [
+        "integrity"
+      ]
+    },
+    {
+      "question": "estimated",
+      "answer": [
+        "estimated"
+      ]
+    },
+    {
+      "question": "radiation",
+      "answer": [
+        "radiation"
+      ]
+    },
+    {
+      "question": "portfolio",
+      "answer": [
+        "portfolio"
+      ]
+    },
+    {
+      "question": "nonprofit",
+      "answer": [
+        "nonprofit"
+      ]
+    },
+    {
+      "question": "reporting",
+      "answer": [
+        "reporting"
+      ]
+    },
+    {
+      "question": "therapist",
+      "answer": [
+        "therapist"
+      ]
+    },
+    {
+      "question": "recipient",
+      "answer": [
+        "recipient"
+      ]
+    },
+    {
+      "question": "full-time",
+      "answer": [
+        "full-time"
+      ]
+    },
+    {
+      "question": "workplace",
+      "answer": [
+        "workplace"
+      ]
+    },
+    {
+      "question": "touchdown",
+      "answer": [
+        "touchdown"
+      ]
+    },
+    {
+      "question": "aesthetic",
+      "answer": [
+        "aesthetic"
+      ]
+    },
+    {
+      "question": "placement",
+      "answer": [
+        "placement"
+      ]
+    },
+    {
+      "question": "migration",
+      "answer": [
+        "migration"
+      ]
+    },
+    {
+      "question": "perceived",
+      "answer": [
+        "perceived"
+      ]
+    },
+    {
+      "question": "ecosystem",
+      "answer": [
+        "ecosystem"
+      ]
+    },
+    {
+      "question": "specialty",
+      "answer": [
+        "specialty"
+      ]
+    },
+    {
+      "question": "high-tech",
+      "answer": [
+        "high-tech"
+      ]
+    },
+    {
+      "question": "processor",
+      "answer": [
+        "processor"
+      ]
+    },
+    {
+      "question": "allegedly",
+      "answer": [
+        "allegedly"
+      ]
+    },
+    {
+      "question": "screening",
+      "answer": [
+        "screening"
+      ]
+    },
+    {
+      "question": "routinely",
+      "answer": [
+        "routinely"
+      ]
+    },
+    {
+      "question": "one-third",
+      "answer": [
+        "one-third"
+      ]
+    },
+    {
+      "question": "speculate",
+      "answer": [
+        "speculate"
+      ]
+    },
+    {
+      "question": "warehouse",
+      "answer": [
+        "warehouse"
+      ]
+    },
+    {
+      "question": "plaintiff",
+      "answer": [
+        "plaintiff"
+      ]
+    }
+  ]
+}

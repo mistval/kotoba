@@ -1,0 +1,1323 @@
+{
+  "uniqueId": "stations_kochi",
+  "name": "Kochi Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Kochi station names](https://mb.jorudan.co.jp/os/eki/menu_kcz/)",
+  "cards": [
+    {
+      "question": "赤野",
+      "answer": [
+        "あかの"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akano/"
+    },
+    {
+      "question": "安芸",
+      "answer": [
+        "あき"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aki/"
+    },
+    {
+      "question": "曙町",
+      "answer": [
+        "あけぼのちょう"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akebonocho/"
+    },
+    {
+      "question": "曙町東町",
+      "answer": [
+        "あけぼのちょうひがしまち"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akebonocho-higashimachi/"
+    },
+    {
+      "question": "朝倉",
+      "answer": [
+        "あさくら"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakura_kochi/"
+    },
+    {
+      "question": "朝倉駅前",
+      "answer": [
+        "あさくらえきまえ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakuraekimae/"
+    },
+    {
+      "question": "朝倉神社前",
+      "answer": [
+        "あさくらじんじゃまえ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakurajinja-mae/"
+    },
+    {
+      "question": "旭",
+      "answer": [
+        "あさひ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahi_kochi/"
+    },
+    {
+      "question": "旭駅前通",
+      "answer": [
+        "あさひえきまえどおり"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahiekimaedori/"
+    },
+    {
+      "question": "旭町一丁目",
+      "answer": [
+        "あさひまちいっちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahimachi_1-chome/"
+    },
+    {
+      "question": "旭町三丁目",
+      "answer": [
+        "あさひまちさんちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahimachi_3-chome/"
+    },
+    {
+      "question": "吾桑",
+      "answer": [
+        "あそう"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aso_kochi/"
+    },
+    {
+      "question": "薊野",
+      "answer": [
+        "あぞうの"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azono/"
+    },
+    {
+      "question": "穴内",
+      "answer": [
+        "あなない"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ananai/"
+    },
+    {
+      "question": "有井川",
+      "answer": [
+        "ありいがわ"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ariigawa/"
+    },
+    {
+      "question": "有岡",
+      "answer": [
+        "ありおか"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arioka/"
+    },
+    {
+      "question": "安和",
+      "answer": [
+        "あわ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awa/"
+    },
+    {
+      "question": "家地川",
+      "answer": [
+        "いえぢがわ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iejigawa/"
+    },
+    {
+      "question": "伊尾木",
+      "answer": [
+        "いおき"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ioki/"
+    },
+    {
+      "question": "一条橋",
+      "answer": [
+        "いちじょうばし"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichijobashi/"
+    },
+    {
+      "question": "伊野",
+      "answer": [
+        "いの"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ino_kochi/"
+    },
+    {
+      "question": "伊野駅前",
+      "answer": [
+        "いのえきまえ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inoekimae/"
+    },
+    {
+      "question": "伊野商業前",
+      "answer": [
+        "いのしょうぎょうまえ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inoshogyo-mae/"
+    },
+    {
+      "question": "伊与喜",
+      "answer": [
+        "いよき"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iyoki/"
+    },
+    {
+      "question": "入明",
+      "answer": [
+        "いりあけ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iriake/"
+    },
+    {
+      "question": "浮鞭",
+      "answer": [
+        "うきぶち"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ukibuchi/"
+    },
+    {
+      "question": "宇治団地前",
+      "answer": [
+        "うじだんちまえ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ujidanchi-mae/"
+    },
+    {
+      "question": "打井川",
+      "answer": [
+        "うついがわ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utsuigawa/"
+    },
+    {
+      "question": "海の王迎",
+      "answer": [
+        "うみのおうむかえ"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umi-no-omukae/"
+    },
+    {
+      "question": "梅の辻",
+      "answer": [
+        "うめのつじ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umenotsuji/"
+    },
+    {
+      "question": "江川崎",
+      "answer": [
+        "えかわさき"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ekawasaki/"
+    },
+    {
+      "question": "枝川",
+      "answer": [
+        "えだがわ"
+      ],
+      "meaning": "土讃線、とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/edagawa/"
+    },
+    {
+      "question": "襟野々",
+      "answer": [
+        "えりのの"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/erinono/"
+    },
+    {
+      "question": "円行寺口",
+      "answer": [
+        "えんぎょうじぐち"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/engyojiguchi/"
+    },
+    {
+      "question": "大杉",
+      "answer": [
+        "おおすぎ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osugi/"
+    },
+    {
+      "question": "大田口",
+      "answer": [
+        "おおたぐち"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otaguchi/"
+    },
+    {
+      "question": "多ノ郷",
+      "answer": [
+        "おおのごう"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onogo/"
+    },
+    {
+      "question": "大橋通",
+      "answer": [
+        "おおはしどおり"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohashidori/"
+    },
+    {
+      "question": "大間",
+      "answer": [
+        "おおま"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oma/"
+    },
+    {
+      "question": "岡花",
+      "answer": [
+        "おかばな"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okabana/"
+    },
+    {
+      "question": "小村神社前",
+      "answer": [
+        "おむらじんじゃまえ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omurajinjya-mae/"
+    },
+    {
+      "question": "荷稲",
+      "answer": [
+        "かいな"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaina/"
+    },
+    {
+      "question": "香我美",
+      "answer": [
+        "かがみ"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagami/"
+    },
+    {
+      "question": "鏡川橋",
+      "answer": [
+        "かがみがわばし"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagamigawabashi/"
+    },
+    {
+      "question": "角茂谷",
+      "answer": [
+        "かくもだに"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakumodani/"
+    },
+    {
+      "question": "影野",
+      "answer": [
+        "かげの"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kageno/"
+    },
+    {
+      "question": "鹿児",
+      "answer": [
+        "かこ"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kako/"
+    },
+    {
+      "question": "葛島橋東詰",
+      "answer": [
+        "かずらしまばしひがしづめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kazurashimabashi-higashizume/"
+    },
+    {
+      "question": "上町一丁目",
+      "answer": [
+        "かみまちいっちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamimachi_1-chome/"
+    },
+    {
+      "question": "上町五丁目",
+      "answer": [
+        "かみまちごちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamimachi_5-chome/"
+    },
+    {
+      "question": "上町二丁目",
+      "answer": [
+        "かみまちにちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamimachi_2-chome/"
+    },
+    {
+      "question": "上町四丁目",
+      "answer": [
+        "かみまちよんちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamimachi_4-chome/"
+    },
+    {
+      "question": "鴨部",
+      "answer": [
+        "かもべ"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamobe/"
+    },
+    {
+      "question": "甲浦",
+      "answer": [
+        "かんのうら"
+      ],
+      "meaning": "阿佐海岸鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanno-ura/"
+    },
+    {
+      "question": "北内",
+      "answer": [
+        "きたうち"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitauchi/"
+    },
+    {
+      "question": "北浦",
+      "answer": [
+        "きたうら"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitaura_kochi/"
+    },
+    {
+      "question": "北山",
+      "answer": [
+        "きたやま"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitayama_kochi/"
+    },
+    {
+      "question": "球場前",
+      "answer": [
+        "きゅうじょうまえ"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyujo-mae_kochi/"
+    },
+    {
+      "question": "日下",
+      "answer": [
+        "くさか"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusaka/"
+    },
+    {
+      "question": "国見",
+      "answer": [
+        "くにみ"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kunimi_kochi/"
+    },
+    {
+      "question": "窪川",
+      "answer": [
+        "くぼかわ"
+      ],
+      "meaning": "土讃線、土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubokawa/"
+    },
+    {
+      "question": "具同",
+      "answer": [
+        "ぐどう"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gudo/"
+    },
+    {
+      "question": "グランド通",
+      "answer": [
+        "ぐらんどどおり"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gurando_dori/"
+    },
+    {
+      "question": "介良通",
+      "answer": [
+        "けらどおり"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keradori/"
+    },
+    {
+      "question": "県庁前",
+      "answer": [
+        "けんちょうまえ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kencho-mae_kochi/"
+    },
+    {
+      "question": "県立美術館通",
+      "answer": [
+        "けんりつびじゅつかんどおり"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenritsu_bijutsukan-dori/"
+    },
+    {
+      "question": "工業団地",
+      "answer": [
+        "こうぎょうだんち"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kogyodanchi/"
+    },
+    {
+      "question": "高知",
+      "answer": [
+        "こうち"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kochi_kochi/"
+    },
+    {
+      "question": "高知駅前",
+      "answer": [
+        "こうちえきまえ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kochiekimae/"
+    },
+    {
+      "question": "高知商業前",
+      "answer": [
+        "こうちしょうぎょうまえ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kochi-shogyomae/"
+    },
+    {
+      "question": "高知城前",
+      "answer": [
+        "こうちじょうまえ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kochijo-mae/"
+    },
+    {
+      "question": "高知橋",
+      "answer": [
+        "こうちばし"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kochibashi/"
+    },
+    {
+      "question": "咥内",
+      "answer": [
+        "こうない"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konai/"
+    },
+    {
+      "question": "小篭通",
+      "answer": [
+        "こごめどおり"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kogomedori/"
+    },
+    {
+      "question": "古津賀",
+      "answer": [
+        "こつか"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotsuka/"
+    },
+    {
+      "question": "後免",
+      "answer": [
+        "ごめん"
+      ],
+      "meaning": "土讃線、土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomen/"
+    },
+    {
+      "question": "ごめん中町",
+      "answer": [
+        "ごめんなかまち"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomen_nakamachi/"
+    },
+    {
+      "question": "ごめん西町",
+      "answer": [
+        "ごめんにしまち"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomen_nishimachi/"
+    },
+    {
+      "question": "ごめん東町",
+      "answer": [
+        "ごめんひがしまち"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomen_higashimachi/"
+    },
+    {
+      "question": "後免町",
+      "answer": [
+        "ごめんまち"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomen-machi_tosa/"
+    },
+    {
+      "question": "ごめん町",
+      "answer": [
+        "ごめんまち"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gomemmachi_tosaden/"
+    },
+    {
+      "question": "菜園場町",
+      "answer": [
+        "さえんばちょう"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saembacho/"
+    },
+    {
+      "question": "佐川",
+      "answer": [
+        "さかわ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakawa/"
+    },
+    {
+      "question": "佐賀公園",
+      "answer": [
+        "さがこうえん"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sagakoen/"
+    },
+    {
+      "question": "桟橋車庫前",
+      "answer": [
+        "さんばししゃこまえ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanbashishako-mae/"
+    },
+    {
+      "question": "桟橋通一丁目",
+      "answer": [
+        "さんばしどおりいっちょうめ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambashidori_1-chome/"
+    },
+    {
+      "question": "桟橋通五丁目",
+      "answer": [
+        "さんばしどおりごちょうめ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambashidori_5-chome/"
+    },
+    {
+      "question": "桟橋通三丁目",
+      "answer": [
+        "さんばしどおりさんちょうめ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambashidori_3-chome/"
+    },
+    {
+      "question": "桟橋通二丁目",
+      "answer": [
+        "さんばしどおりにちょうめ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambashidori_2-chome/"
+    },
+    {
+      "question": "桟橋通四丁目",
+      "answer": [
+        "さんばしどおりよんちょうめ"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambashidori_4-chome/"
+    },
+    {
+      "question": "繁藤",
+      "answer": [
+        "しげとう"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shigeto/"
+    },
+    {
+      "question": "篠原",
+      "answer": [
+        "しのはら"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinohara_kochi/"
+    },
+    {
+      "question": "下山",
+      "answer": [
+        "しもやま"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimoyama_kochi/"
+    },
+    {
+      "question": "新改",
+      "answer": [
+        "しんがい"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shingai/"
+    },
+    {
+      "question": "新木",
+      "answer": [
+        "しんぎ"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shingi_kochi/"
+    },
+    {
+      "question": "宿毛",
+      "answer": [
+        "すくも"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sukumo/"
+    },
+    {
+      "question": "須崎",
+      "answer": [
+        "すさき"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/susaki/"
+    },
+    {
+      "question": "住吉通",
+      "answer": [
+        "すみよしどおり"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshidori/"
+    },
+    {
+      "question": "清和学園前",
+      "answer": [
+        "せいわがくえんまえ"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seiwagakuen-mae/"
+    },
+    {
+      "question": "高須",
+      "answer": [
+        "たかす"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takasu_kochi/"
+    },
+    {
+      "question": "立田",
+      "answer": [
+        "たてだ"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tateda/"
+    },
+    {
+      "question": "田野",
+      "answer": [
+        "たの"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tano_kochi/"
+    },
+    {
+      "question": "田辺島通",
+      "answer": [
+        "たべしまどおり"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tabeshimadori/"
+    },
+    {
+      "question": "知寄町",
+      "answer": [
+        "ちよりちょう"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyoricho/"
+    },
+    {
+      "question": "知寄町一丁目",
+      "answer": [
+        "ちよりちょういっちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyoricho_1-chome/"
+    },
+    {
+      "question": "知寄町三丁目",
+      "answer": [
+        "ちよりちょうさんちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyoricho_3-chome/"
+    },
+    {
+      "question": "知寄町二丁目",
+      "answer": [
+        "ちよりちょうにちょうめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiyoricho_2-chome/"
+    },
+    {
+      "question": "唐浜",
+      "answer": [
+        "とうのはま"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tonohama/"
+    },
+    {
+      "question": "十川",
+      "answer": [
+        "とおかわ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokawa_kochi/"
+    },
+    {
+      "question": "斗賀野",
+      "answer": [
+        "とがの"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/togano/"
+    },
+    {
+      "question": "土佐穴内",
+      "answer": [
+        "とさあなない"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-ananai/"
+    },
+    {
+      "question": "土佐一宮",
+      "answer": [
+        "とさいっく"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-ikku/"
+    },
+    {
+      "question": "土佐入野",
+      "answer": [
+        "とさいりの"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-irino/"
+    },
+    {
+      "question": "土佐岩原",
+      "answer": [
+        "とさいわはら"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-iwahara/"
+    },
+    {
+      "question": "土佐大津",
+      "answer": [
+        "とさおおつ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-otsu/"
+    },
+    {
+      "question": "土佐上川口",
+      "answer": [
+        "とさかみかわぐち"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-kamikawaguchi/"
+    },
+    {
+      "question": "土佐加茂",
+      "answer": [
+        "とさかも"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosakamo/"
+    },
+    {
+      "question": "土佐北川",
+      "answer": [
+        "とさきたがわ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-kitagawa/"
+    },
+    {
+      "question": "土佐久礼",
+      "answer": [
+        "とさくれ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-kure/"
+    },
+    {
+      "question": "土佐佐賀",
+      "answer": [
+        "とささが"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-saga/"
+    },
+    {
+      "question": "土佐昭和",
+      "answer": [
+        "とさしょうわ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-showa/"
+    },
+    {
+      "question": "土佐白浜",
+      "answer": [
+        "とさしらはま"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-shirahama/"
+    },
+    {
+      "question": "土佐新荘",
+      "answer": [
+        "とさしんじょう"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-shinjo/"
+    },
+    {
+      "question": "土佐大正",
+      "answer": [
+        "とさたいしょう"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-taisho/"
+    },
+    {
+      "question": "土佐長岡",
+      "answer": [
+        "とさながおか"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-nagaoka/"
+    },
+    {
+      "question": "土佐山田",
+      "answer": [
+        "とさやまだ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosa-yamada/"
+    },
+    {
+      "question": "豊永",
+      "answer": [
+        "とよなが"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyonaga/"
+    },
+    {
+      "question": "中村",
+      "answer": [
+        "なかむら"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakamura/"
+    },
+    {
+      "question": "中山",
+      "answer": [
+        "なかやま"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayama_kochi/"
+    },
+    {
+      "question": "長崎",
+      "answer": [
+        "ながさき"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagasaki_kochi/"
+    },
+    {
+      "question": "奈半利",
+      "answer": [
+        "なはり"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nahari/"
+    },
+    {
+      "question": "鳴谷",
+      "answer": [
+        "なるたに"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/narutani/"
+    },
+    {
+      "question": "仁井田",
+      "answer": [
+        "にいだ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niida_kochi/"
+    },
+    {
+      "question": "西大方",
+      "answer": [
+        "にしおおがた"
+      ],
+      "meaning": "土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-ogata/"
+    },
+    {
+      "question": "西ヶ方",
+      "answer": [
+        "にしがほう"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishigaho/"
+    },
+    {
+      "question": "西佐川",
+      "answer": [
+        "にしさかわ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-sakawa/"
+    },
+    {
+      "question": "西高須",
+      "answer": [
+        "にしたかす"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-takasu/"
+    },
+    {
+      "question": "西分",
+      "answer": [
+        "にしぶん"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishibun/"
+    },
+    {
+      "question": "布師田",
+      "answer": [
+        "ぬのしだ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nunoshida/"
+    },
+    {
+      "question": "波川",
+      "answer": [
+        "はかわ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakawa/"
+    },
+    {
+      "question": "半家",
+      "answer": [
+        "はげ"
+      ],
+      "meaning": "予土線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hage/"
+    },
+    {
+      "question": "蓮池町通",
+      "answer": [
+        "はすいけまちどおり"
+      ],
+      "meaning": "とさでん桟橋線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hasuikemachidori/"
+    },
+    {
+      "question": "はりまや橋",
+      "answer": [
+        "はりまやばし"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harimayabashi/"
+    },
+    {
+      "question": "東工業前",
+      "answer": [
+        "ひがしこうぎょうまえ"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashikogyo-mae/"
+    },
+    {
+      "question": "東新木",
+      "answer": [
+        "ひがししんぎ"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-shingi/"
+    },
+    {
+      "question": "東宿毛",
+      "answer": [
+        "ひがしすくも"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashisukumo/"
+    },
+    {
+      "question": "平田",
+      "answer": [
+        "ひらた"
+      ],
+      "meaning": "土佐くろしお鉄道中村線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirata_kochi/"
+    },
+    {
+      "question": "舟戸",
+      "answer": [
+        "ふなと"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funato_kochi/"
+    },
+    {
+      "question": "宝永町",
+      "answer": [
+        "ほうえいちょう"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoeicho/"
+    },
+    {
+      "question": "蛍橋",
+      "answer": [
+        "ほたるばし"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hotarubashi/"
+    },
+    {
+      "question": "堀詰",
+      "answer": [
+        "ほりづめ"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horizume/"
+    },
+    {
+      "question": "枡形",
+      "answer": [
+        "ますがた"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/masugata/"
+    },
+    {
+      "question": "宮の奥",
+      "answer": [
+        "みやのおく"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyano-oku/"
+    },
+    {
+      "question": "明見橋",
+      "answer": [
+        "みょうけんばし"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myokembashi/"
+    },
+    {
+      "question": "文珠通",
+      "answer": [
+        "もんじゅどおり"
+      ],
+      "meaning": "とさでん伊野線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/monjudori/"
+    },
+    {
+      "question": "八代通",
+      "answer": [
+        "やしろどおり"
+      ],
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashirodori/"
+    },
+    {
+      "question": "夜須",
+      "answer": [
+        "やす"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasu_kochi/"
+    },
+    {
+      "question": "安田",
+      "answer": [
+        "やすだ"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasuda_kochi/"
+    },
+    {
+      "question": "山田西町",
+      "answer": [
+        "やまだにしまち"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamadanishimachi/"
+    },
+    {
+      "question": "領石通",
+      "answer": [
+        "りょうせきどおり"
+      ],
+      "meaning": "とさでん後免線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryosekidori/"
+    },
+    {
+      "question": "六反地",
+      "answer": [
+        "ろくたんじ"
+      ],
+      "meaning": "土讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokutanji/"
+    },
+    {
+      "question": "若井",
+      "answer": [
+        "わかい"
+      ],
+      "meaning": "予土線、土佐くろしお鉄道中村線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakai/"
+    },
+    {
+      "question": "和食",
+      "answer": [
+        "わじき"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wajiki/"
+    }
+  ]
+}

@@ -1,0 +1,5318 @@
+{
+  "uniqueId": "cities",
+  "name": "Cities Reading Quiz",
+  "article": "a",
+  "instructions": "Type the name of the below city in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Comment",
+  "description": "Cities in Japan [Data provided by ESPAlchemist#7091, edited by... me]",
+  "cards": [
+    {
+      "question": "名古屋",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 2,283,289",
+      "answer": [
+        "なごや"
+      ]
+    },
+    {
+      "question": "豊橋",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 377,045",
+      "answer": [
+        "とよはし"
+      ]
+    },
+    {
+      "question": "岡崎",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 371,380",
+      "answer": [
+        "おかざき"
+      ]
+    },
+    {
+      "question": "一宮",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 375,939",
+      "answer": [
+        "いちのみや"
+      ]
+    },
+    {
+      "question": "瀬戸",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 132,311",
+      "answer": [
+        "せと"
+      ]
+    },
+    {
+      "question": "半田",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 117,927",
+      "answer": [
+        "はんだ"
+      ]
+    },
+    {
+      "question": "春日井",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 300,713",
+      "answer": [
+        "かすがい"
+      ]
+    },
+    {
+      "question": "豊川",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 161,595",
+      "answer": [
+        "とよかわ"
+      ]
+    },
+    {
+      "question": "津島",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 65,646",
+      "answer": [
+        "つしま"
+      ]
+    },
+    {
+      "question": "碧南",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 73,024",
+      "answer": [
+        "へきなん"
+      ]
+    },
+    {
+      "question": "刈谷",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 145,117",
+      "answer": [
+        "かりや"
+      ]
+    },
+    {
+      "question": "豊田",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 420,286",
+      "answer": [
+        "とよた"
+      ]
+    },
+    {
+      "question": "安城",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 176,046",
+      "answer": [
+        "あんじょう"
+      ]
+    },
+    {
+      "question": "西尾",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 106,643",
+      "answer": [
+        "にしお"
+      ]
+    },
+    {
+      "question": "蒲郡",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 82,264",
+      "answer": [
+        "がまごおり"
+      ]
+    },
+    {
+      "question": "犬山",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 75,304",
+      "answer": [
+        "いぬやま"
+      ]
+    },
+    {
+      "question": "常滑",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 52,837",
+      "answer": [
+        "とこなめ"
+      ]
+    },
+    {
+      "question": "江南",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 100,064",
+      "answer": [
+        "こうなん"
+      ]
+    },
+    {
+      "question": "小牧",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 149,060",
+      "answer": [
+        "こまき"
+      ]
+    },
+    {
+      "question": "稲沢",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 137,475",
+      "answer": [
+        "いなざわ"
+      ]
+    },
+    {
+      "question": "東海",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 106,708",
+      "answer": [
+        "とうかい"
+      ]
+    },
+    {
+      "question": "大府",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 83,097",
+      "answer": [
+        "おおぶ"
+      ]
+    },
+    {
+      "question": "知多",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 84,782",
+      "answer": [
+        "ちた"
+      ]
+    },
+    {
+      "question": "知立",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 68,216",
+      "answer": [
+        "ちりゅう"
+      ]
+    },
+    {
+      "question": "尾張旭",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 79,197",
+      "answer": [
+        "おわりあさひ"
+      ]
+    },
+    {
+      "question": "高浜",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 43,467",
+      "answer": [
+        "たかはま"
+      ]
+    },
+    {
+      "question": "岩倉",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 48,042",
+      "answer": [
+        "いわくら"
+      ]
+    },
+    {
+      "question": "豊明",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 69,124",
+      "answer": [
+        "とよあけ"
+      ]
+    },
+    {
+      "question": "日進",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 80,921",
+      "answer": [
+        "にっしん"
+      ]
+    },
+    {
+      "question": "田原",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 66,698",
+      "answer": [
+        "たはら"
+      ]
+    },
+    {
+      "question": "清須",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 56,635",
+      "answer": [
+        "きよす"
+      ]
+    },
+    {
+      "question": "新城",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 51,326",
+      "answer": [
+        "しんしろ"
+      ]
+    },
+    {
+      "question": "弥富",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 43,145",
+      "answer": [
+        "やとみ"
+      ]
+    },
+    {
+      "question": "長久手",
+      "meaning": "**Prefecture**: Aichi\n**Population**: 57,764",
+      "answer": [
+        "ながくて"
+      ]
+    },
+    {
+      "question": "秋田",
+      "meaning": "**Prefecture**: Akita\n**Population**: 329,287",
+      "answer": [
+        "あきた"
+      ]
+    },
+    {
+      "question": "大館",
+      "meaning": "**Prefecture**: Akita\n**Population**: 80,587",
+      "answer": [
+        "おおだて"
+      ]
+    },
+    {
+      "question": "鹿角",
+      "meaning": "**Prefecture**: Akita\n**Population**: 35,543",
+      "answer": [
+        "かづの"
+      ]
+    },
+    {
+      "question": "大仙",
+      "meaning": "**Prefecture**: Akita\n**Population**: 91,143",
+      "answer": [
+        "だいせん"
+      ]
+    },
+    {
+      "question": "潟上",
+      "meaning": "**Prefecture**: Akita\n**Population**: 35,460",
+      "answer": [
+        "かたがみ"
+      ]
+    },
+    {
+      "question": "北秋田",
+      "meaning": "**Prefecture**: Akita\n**Population**: 38,543",
+      "answer": [
+        "きたあきた"
+      ]
+    },
+    {
+      "question": "男鹿",
+      "meaning": "**Prefecture**: Akita\n**Population**: 34,194",
+      "answer": [
+        "おが"
+      ]
+    },
+    {
+      "question": "由利本荘",
+      "meaning": "**Prefecture**: Akita\n**Population**: 87,525",
+      "answer": [
+        "ゆりほんじょう"
+      ]
+    },
+    {
+      "question": "湯沢",
+      "meaning": "**Prefecture**: Akita\n**Population**: 53,588",
+      "answer": [
+        "ゆざわ"
+      ]
+    },
+    {
+      "question": "仙北",
+      "meaning": "**Prefecture**: Akita\n**Population**: 30,885",
+      "answer": [
+        "せんぼく"
+      ]
+    },
+    {
+      "question": "横手",
+      "meaning": "**Prefecture**: Akita\n**Population**: 101,234",
+      "answer": [
+        "よこて"
+      ]
+    },
+    {
+      "question": "能代",
+      "meaning": "**Prefecture**: Akita\n**Population**: 61,295",
+      "answer": [
+        "のしろ"
+      ]
+    },
+    {
+      "question": "八戸",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 241,613",
+      "answer": [
+        "はちのへ"
+      ]
+    },
+    {
+      "question": "黒石",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 37,585",
+      "answer": [
+        "くろいし"
+      ]
+    },
+    {
+      "question": "三沢",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 42,535",
+      "answer": [
+        "みさわ"
+      ]
+    },
+    {
+      "question": "十和田",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 66,834",
+      "answer": [
+        "とわだ"
+      ]
+    },
+    {
+      "question": "五所川原",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 60,788",
+      "answer": [
+        "ごしょがわら"
+      ]
+    },
+    {
+      "question": "青森",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 305,884",
+      "answer": [
+        "あおもり"
+      ]
+    },
+    {
+      "question": "平川",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 34,638",
+      "answer": [
+        "ひらかわ"
+      ]
+    },
+    {
+      "question": "弘前",
+      "meaning": "**Prefecture**: Aomori\n**Population**: 185,865",
+      "answer": [
+        "ひろさき"
+      ]
+    },
+    {
+      "question": "千葉",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 938,695",
+      "answer": [
+        "ちば"
+      ]
+    },
+    {
+      "question": "銚子",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 72,348",
+      "answer": [
+        "ちょうし"
+      ]
+    },
+    {
+      "question": "市川",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 470,149",
+      "answer": [
+        "いちかわ"
+      ]
+    },
+    {
+      "question": "船橋",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 586,762",
+      "answer": [
+        "ふなばし"
+      ]
+    },
+    {
+      "question": "館山",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 49,987",
+      "answer": [
+        "たてやま"
+      ]
+    },
+    {
+      "question": "木更津",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 123,743",
+      "answer": [
+        "きさらづ"
+      ]
+    },
+    {
+      "question": "松戸",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 477,603",
+      "answer": [
+        "まつど"
+      ]
+    },
+    {
+      "question": "野田",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 153,422",
+      "answer": [
+        "のだ"
+      ]
+    },
+    {
+      "question": "茂原",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 93,032",
+      "answer": [
+        "もばら"
+      ]
+    },
+    {
+      "question": "成田",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 124,773",
+      "answer": [
+        "なりた"
+      ]
+    },
+    {
+      "question": "佐倉",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 171,472",
+      "answer": [
+        "さくら"
+      ]
+    },
+    {
+      "question": "東金",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 61,591",
+      "answer": [
+        "とうがね"
+      ]
+    },
+    {
+      "question": "習志野",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 159,758",
+      "answer": [
+        "ならしの"
+      ]
+    },
+    {
+      "question": "柏",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 389,036",
+      "answer": [
+        "かしわ"
+      ]
+    },
+    {
+      "question": "勝浦",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 21,413",
+      "answer": [
+        "かつうら"
+      ]
+    },
+    {
+      "question": "市原",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 279,591",
+      "answer": [
+        "いちはら"
+      ]
+    },
+    {
+      "question": "流山",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 156,686",
+      "answer": [
+        "ながれやま"
+      ]
+    },
+    {
+      "question": "八千代",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 184,655",
+      "answer": [
+        "やちよ"
+      ]
+    },
+    {
+      "question": "我孫子",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 133,533",
+      "answer": [
+        "あびこ"
+      ]
+    },
+    {
+      "question": "鎌ヶ谷",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 104,564",
+      "answer": [
+        "かまがや"
+      ]
+    },
+    {
+      "question": "君津",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 89,350",
+      "answer": [
+        "きみつ"
+      ]
+    },
+    {
+      "question": "富津",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 48,973",
+      "answer": [
+        "ふっつ"
+      ]
+    },
+    {
+      "question": "浦安",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 159,312",
+      "answer": [
+        "うらやす"
+      ]
+    },
+    {
+      "question": "四街道",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 85,738",
+      "answer": [
+        "よつかいどう"
+      ]
+    },
+    {
+      "question": "袖ヶ浦",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 59,443",
+      "answer": [
+        "そでがうら"
+      ]
+    },
+    {
+      "question": "八街",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 75,369",
+      "answer": [
+        "やちまた"
+      ]
+    },
+    {
+      "question": "印西",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 60,280",
+      "answer": [
+        "いんざい"
+      ]
+    },
+    {
+      "question": "白井",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 57,151",
+      "answer": [
+        "しろい"
+      ]
+    },
+    {
+      "question": "富里",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 51,590",
+      "answer": [
+        "とみさと"
+      ]
+    },
+    {
+      "question": "鴨川",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 35,792",
+      "answer": [
+        "かもがわ"
+      ]
+    },
+    {
+      "question": "旭",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 69,971",
+      "answer": [
+        "あさひ"
+      ]
+    },
+    {
+      "question": "匝瑳",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 41,361",
+      "answer": [
+        "そうさ"
+      ]
+    },
+    {
+      "question": "香取",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 85,193",
+      "answer": [
+        "かとり"
+      ]
+    },
+    {
+      "question": "山武",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 57,806",
+      "answer": [
+        "さんむ"
+      ]
+    },
+    {
+      "question": "大網白里",
+      "meaning": "**Prefecture**: Chiba\n**Population**: 51,176",
+      "answer": [
+        "おおあみしらさと"
+      ]
+    },
+    {
+      "question": "松山",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 515,068",
+      "answer": [
+        "まつやま"
+      ]
+    },
+    {
+      "question": "新居浜",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 123,329",
+      "answer": [
+        "にいはま"
+      ]
+    },
+    {
+      "question": "西条",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 112,543",
+      "answer": [
+        "さいじょう"
+      ]
+    },
+    {
+      "question": "大洲",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 49,543",
+      "answer": [
+        "おおず"
+      ]
+    },
+    {
+      "question": "今治",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 170,986",
+      "answer": [
+        "いまばり"
+      ]
+    },
+    {
+      "question": "八幡浜",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 40,010",
+      "answer": [
+        "やわたはま"
+      ]
+    },
+    {
+      "question": "伊予",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 38,890",
+      "answer": [
+        "いよ"
+      ]
+    },
+    {
+      "question": "宇和島",
+      "meaning": "**Prefecture**: Ehime\n**Population**: 86,819",
+      "answer": [
+        "うわじま"
+      ]
+    },
+    {
+      "question": "福井",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 268,574",
+      "answer": [
+        "ふくい"
+      ]
+    },
+    {
+      "question": "敦賀",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 68,188",
+      "answer": [
+        "つるが"
+      ]
+    },
+    {
+      "question": "小浜",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 31,486",
+      "answer": [
+        "おばま"
+      ]
+    },
+    {
+      "question": "大野",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 36,763",
+      "answer": [
+        "おおの"
+      ]
+    },
+    {
+      "question": "勝山",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 26,333",
+      "answer": [
+        "かつやま"
+      ]
+    },
+    {
+      "question": "鯖江",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 67,430",
+      "answer": [
+        "さばえ"
+      ]
+    },
+    {
+      "question": "越前",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 87,116",
+      "answer": [
+        "えちぜん"
+      ]
+    },
+    {
+      "question": "坂井",
+      "meaning": "**Prefecture**: Fukui\n**Population**: 92,420",
+      "answer": [
+        "さかい"
+      ]
+    },
+    {
+      "question": "福岡",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 1,581,527",
+      "answer": [
+        "ふくおか"
+      ]
+    },
+    {
+      "question": "久留米",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 305,147",
+      "answer": [
+        "くるめ"
+      ]
+    },
+    {
+      "question": "大牟田",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 127,474",
+      "answer": [
+        "おおむた"
+      ]
+    },
+    {
+      "question": "直方",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 57,319",
+      "answer": [
+        "のおがた"
+      ]
+    },
+    {
+      "question": "田川",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 50,484",
+      "answer": [
+        "たがわ"
+      ]
+    },
+    {
+      "question": "柳川",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 72,798",
+      "answer": [
+        "やながわ"
+      ]
+    },
+    {
+      "question": "八女",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 42,241",
+      "answer": [
+        "やめ"
+      ]
+    },
+    {
+      "question": "筑後",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 48,281",
+      "answer": [
+        "ちくご"
+      ]
+    },
+    {
+      "question": "大川",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 38,266",
+      "answer": [
+        "おおかわ"
+      ]
+    },
+    {
+      "question": "行橋",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 70,064",
+      "answer": [
+        "ゆくはし"
+      ]
+    },
+    {
+      "question": "豊前",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 27,578",
+      "answer": [
+        "ぶぜん"
+      ]
+    },
+    {
+      "question": "那珂川",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 50,004",
+      "answer": [
+        "なかがわ"
+      ]
+    },
+    {
+      "question": "中間",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 45,549",
+      "answer": [
+        "なかま"
+      ]
+    },
+    {
+      "question": "北九州",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 986,998",
+      "answer": [
+        "きたきゅうしゅう"
+      ]
+    },
+    {
+      "question": "小郡",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 58,460",
+      "answer": [
+        "おごおり"
+      ]
+    },
+    {
+      "question": "筑紫野",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 98,914",
+      "answer": [
+        "ちくしの"
+      ]
+    },
+    {
+      "question": "春日",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 107,845",
+      "answer": [
+        "かすが"
+      ]
+    },
+    {
+      "question": "大野城",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 94,037",
+      "answer": [
+        "おおのじょう"
+      ]
+    },
+    {
+      "question": "宗像",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 94,877",
+      "answer": [
+        "むなかた"
+      ]
+    },
+    {
+      "question": "太宰府",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 68,561",
+      "answer": [
+        "だざいふ"
+      ]
+    },
+    {
+      "question": "古賀",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 57,084",
+      "answer": [
+        "こが"
+      ]
+    },
+    {
+      "question": "福津",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 55,123",
+      "answer": [
+        "ふくつ"
+      ]
+    },
+    {
+      "question": "朝倉",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 57,881",
+      "answer": [
+        "あさくら"
+      ]
+    },
+    {
+      "question": "飯塚",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 132,208",
+      "answer": [
+        "いいづか"
+      ]
+    },
+    {
+      "question": "糸島",
+      "meaning": "**Prefecture**: Fukuoka\n**Population**: 100,304",
+      "answer": [
+        "いとしま"
+      ]
+    },
+    {
+      "question": "会津若松",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 129,388",
+      "answer": [
+        "あいづわかまつ"
+      ]
+    },
+    {
+      "question": "福島",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 289,355",
+      "answer": [
+        "ふくしま"
+      ]
+    },
+    {
+      "question": "郡山",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 339,395",
+      "answer": [
+        "こおりやま"
+      ]
+    },
+    {
+      "question": "須賀川",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 80,336",
+      "answer": [
+        "すかがわ"
+      ]
+    },
+    {
+      "question": "相馬",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 38,543",
+      "answer": [
+        "そうま"
+      ]
+    },
+    {
+      "question": "田村",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 42,221",
+      "answer": [
+        "たむら"
+      ]
+    },
+    {
+      "question": "白河",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 65,665",
+      "answer": [
+        "しらかわ"
+      ]
+    },
+    {
+      "question": "二本松",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 61,698",
+      "answer": [
+        "にほんまつ"
+      ]
+    },
+    {
+      "question": "伊達",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 67,487",
+      "answer": [
+        "だて"
+      ]
+    },
+    {
+      "question": "喜多方",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 54,684",
+      "answer": [
+        "きたかた"
+      ]
+    },
+    {
+      "question": "本宮",
+      "meaning": "**Prefecture**: Fukushima\n**Population**: 31,737",
+      "answer": [
+        "もとみや"
+      ]
+    },
+    {
+      "question": "岐阜",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 412,779",
+      "answer": [
+        "ぎふ"
+      ]
+    },
+    {
+      "question": "大垣",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 163,047",
+      "answer": [
+        "おおがき"
+      ]
+    },
+    {
+      "question": "高山市",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 94,879",
+      "answer": [
+        "こうやまいち"
+      ]
+    },
+    {
+      "question": "多治見",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 114,866",
+      "answer": [
+        "たじみ"
+      ]
+    },
+    {
+      "question": "関",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 92,896",
+      "answer": [
+        "せき"
+      ]
+    },
+    {
+      "question": "中津川",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 83,116",
+      "answer": [
+        "なかつがわ"
+      ]
+    },
+    {
+      "question": "美濃",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 22,912",
+      "answer": [
+        "みの"
+      ]
+    },
+    {
+      "question": "瑞浪",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 41,556",
+      "answer": [
+        "みずなみ"
+      ]
+    },
+    {
+      "question": "羽島",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 67,167",
+      "answer": [
+        "はしま"
+      ]
+    },
+    {
+      "question": "美濃加茂",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 53,988",
+      "answer": [
+        "みのかも"
+      ]
+    },
+    {
+      "question": "土岐",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 61,393",
+      "answer": [
+        "とき"
+      ]
+    },
+    {
+      "question": "各務原",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 145,126",
+      "answer": [
+        "かかみがはら"
+      ]
+    },
+    {
+      "question": "可児",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 99,318",
+      "answer": [
+        "かに"
+      ]
+    },
+    {
+      "question": "山県",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 29,857",
+      "answer": [
+        "やまがた"
+      ]
+    },
+    {
+      "question": "瑞穂",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 51,230",
+      "answer": [
+        "みずほ"
+      ]
+    },
+    {
+      "question": "飛騨",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 28,112",
+      "answer": [
+        "ひだ"
+      ]
+    },
+    {
+      "question": "本巣",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 34,729",
+      "answer": [
+        "もとす"
+      ]
+    },
+    {
+      "question": "郡上",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 46,338",
+      "answer": [
+        "ぐじょう"
+      ]
+    },
+    {
+      "question": "下呂",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 37,455",
+      "answer": [
+        "げろ"
+      ]
+    },
+    {
+      "question": "恵那",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 54,844",
+      "answer": [
+        "えな"
+      ]
+    },
+    {
+      "question": "海津",
+      "meaning": "**Prefecture**: Gifu\n**Population**: 38,532",
+      "answer": [
+        "かいづ"
+      ]
+    },
+    {
+      "question": "前橋",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 318,058",
+      "answer": [
+        "まえばし"
+      ]
+    },
+    {
+      "question": "高崎",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 341,838",
+      "answer": [
+        "たかさき"
+      ]
+    },
+    {
+      "question": "桐生",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 124,892",
+      "answer": [
+        "きりゅう"
+      ]
+    },
+    {
+      "question": "伊勢崎",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 204,240",
+      "answer": [
+        "いせさき"
+      ]
+    },
+    {
+      "question": "太田",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 214,049",
+      "answer": [
+        "おおた"
+      ]
+    },
+    {
+      "question": "沼田",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 52,319",
+      "answer": [
+        "ぬまた"
+      ]
+    },
+    {
+      "question": "館林",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 79,023",
+      "answer": [
+        "たてばやし"
+      ]
+    },
+    {
+      "question": "藤岡",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 68,710",
+      "answer": [
+        "ふじおか"
+      ]
+    },
+    {
+      "question": "渋川",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 86,134",
+      "answer": [
+        "しぶかわ"
+      ]
+    },
+    {
+      "question": "安中",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 62,270",
+      "answer": [
+        "あんなか"
+      ]
+    },
+    {
+      "question": "富岡",
+      "meaning": "**Prefecture**: Gunma\n**Population**: 53,332",
+      "answer": [
+        "とみおか"
+      ]
+    },
+    {
+      "question": "広島",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 1,163,806",
+      "answer": [
+        "ひろしま"
+      ]
+    },
+    {
+      "question": "尾道",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 148,085",
+      "answer": [
+        "おのみち"
+      ]
+    },
+    {
+      "question": "呉",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 246,118",
+      "answer": [
+        "くれ"
+      ]
+    },
+    {
+      "question": "福山",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 461,368",
+      "answer": [
+        "ふくやま"
+      ]
+    },
+    {
+      "question": "三原",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 103,209",
+      "answer": [
+        "みはら"
+      ]
+    },
+    {
+      "question": "府中",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 44,212",
+      "answer": [
+        "ふちゅう"
+      ]
+    },
+    {
+      "question": "三次",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 58,264",
+      "answer": [
+        "みよし"
+      ]
+    },
+    {
+      "question": "庄原",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 41,747",
+      "answer": [
+        "しょうばら"
+      ]
+    },
+    {
+      "question": "大竹",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 29,665",
+      "answer": [
+        "おおたけ"
+      ]
+    },
+    {
+      "question": "竹原",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 29,803",
+      "answer": [
+        "たけはら"
+      ]
+    },
+    {
+      "question": "東広島",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 187,711",
+      "answer": [
+        "ひがしひろしま"
+      ]
+    },
+    {
+      "question": "廿日市",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 115,184",
+      "answer": [
+        "はつかいち"
+      ]
+    },
+    {
+      "question": "江田島",
+      "meaning": "**Prefecture**: Hiroshima\n**Population**: 28,601",
+      "answer": [
+        "えたじま"
+      ]
+    },
+    {
+      "question": "札幌",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 1,918,096",
+      "answer": [
+        "さっぽろ"
+      ]
+    },
+    {
+      "question": "函館",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 277,056",
+      "answer": [
+        "はこだて"
+      ]
+    },
+    {
+      "question": "小樽",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 130,255",
+      "answer": [
+        "おたる"
+      ]
+    },
+    {
+      "question": "旭川",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 350,511",
+      "answer": [
+        "あさひかわ"
+      ]
+    },
+    {
+      "question": "室蘭",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 93,078",
+      "answer": [
+        "むろらん"
+      ]
+    },
+    {
+      "question": "帯広",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 168,188",
+      "answer": [
+        "おびひろ"
+      ]
+    },
+    {
+      "question": "夕張",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 10,471",
+      "answer": [
+        "ゆうばり"
+      ]
+    },
+    {
+      "question": "岩見沢",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 89,023",
+      "answer": [
+        "いわみざわ"
+      ]
+    },
+    {
+      "question": "網走",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 38,548",
+      "answer": [
+        "あばしり"
+      ]
+    },
+    {
+      "question": "留萌",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 24,036",
+      "answer": [
+        "るもい"
+      ]
+    },
+    {
+      "question": "苫小牧",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 173,761",
+      "answer": [
+        "とまこまい"
+      ]
+    },
+    {
+      "question": "稚内",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 37,911",
+      "answer": [
+        "わっかない"
+      ]
+    },
+    {
+      "question": "美唄",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 25,312",
+      "answer": [
+        "びばい"
+      ]
+    },
+    {
+      "question": "芦別",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 16,465",
+      "answer": [
+        "あしべつ"
+      ]
+    },
+    {
+      "question": "江別",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 120,940",
+      "answer": [
+        "えべつ"
+      ]
+    },
+    {
+      "question": "赤平",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 12,234",
+      "answer": [
+        "あかびら"
+      ]
+    },
+    {
+      "question": "紋別",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 24,293",
+      "answer": [
+        "もんべつ"
+      ]
+    },
+    {
+      "question": "三笠",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 10,070",
+      "answer": [
+        "みかさ"
+      ]
+    },
+    {
+      "question": "根室",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 28,923",
+      "answer": [
+        "ねむろ"
+      ]
+    },
+    {
+      "question": "千歳",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 94,124",
+      "answer": [
+        "ちとせ"
+      ]
+    },
+    {
+      "question": "滝川",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 42,815",
+      "answer": [
+        "たきかわ"
+      ]
+    },
+    {
+      "question": "砂川",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 18,740",
+      "answer": [
+        "すながわ"
+      ]
+    },
+    {
+      "question": "歌志内",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 4,259",
+      "answer": [
+        "うたしない"
+      ]
+    },
+    {
+      "question": "深川",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 23,215",
+      "answer": [
+        "ふかがわ"
+      ]
+    },
+    {
+      "question": "富良野",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 23,890",
+      "answer": [
+        "ふらの"
+      ]
+    },
+    {
+      "question": "登別",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 51,474",
+      "answer": [
+        "のぼりべつ"
+      ]
+    },
+    {
+      "question": "恵庭",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 68,754",
+      "answer": [
+        "えにわ"
+      ]
+    },
+    {
+      "question": "北広島",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 60,291",
+      "answer": [
+        "きたひろしま"
+      ]
+    },
+    {
+      "question": "石狩",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 60,616",
+      "answer": [
+        "いしかり"
+      ]
+    },
+    {
+      "question": "士別",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 21,640",
+      "answer": [
+        "しべつ"
+      ]
+    },
+    {
+      "question": "釧路",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 182,263",
+      "answer": [
+        "くしろ"
+      ]
+    },
+    {
+      "question": "北斗",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 48,779",
+      "answer": [
+        "ほくと"
+      ]
+    },
+    {
+      "question": "北見",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 124,291",
+      "answer": [
+        "きたみ"
+      ]
+    },
+    {
+      "question": "名寄",
+      "meaning": "**Prefecture**: Hokkaidō\n**Population**: 29,869",
+      "answer": [
+        "なよろ"
+      ]
+    },
+    {
+      "question": "神戸",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 1,530,847",
+      "answer": [
+        "こうべ"
+      ]
+    },
+    {
+      "question": "姫路",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 536,170",
+      "answer": [
+        "ひめじ"
+      ]
+    },
+    {
+      "question": "尼崎",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 461,202",
+      "answer": [
+        "あまがさき"
+      ]
+    },
+    {
+      "question": "明石",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 292,162",
+      "answer": [
+        "あかし"
+      ]
+    },
+    {
+      "question": "西宮",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 477,056",
+      "answer": [
+        "にしのみや"
+      ]
+    },
+    {
+      "question": "芦屋",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 92,828",
+      "answer": [
+        "あしや"
+      ]
+    },
+    {
+      "question": "伊丹",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 194,488",
+      "answer": [
+        "いたみ"
+      ]
+    },
+    {
+      "question": "相生",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 31,973",
+      "answer": [
+        "あいおい"
+      ]
+    },
+    {
+      "question": "豊岡",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 87,555",
+      "answer": [
+        "とよおか"
+      ]
+    },
+    {
+      "question": "加古川",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 267,631",
+      "answer": [
+        "かこがわ"
+      ]
+    },
+    {
+      "question": "赤穂",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 51,277",
+      "answer": [
+        "あこう"
+      ]
+    },
+    {
+      "question": "宝塚",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 222,071",
+      "answer": [
+        "たからづか"
+      ]
+    },
+    {
+      "question": "三木",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 83,244",
+      "answer": [
+        "みき"
+      ]
+    },
+    {
+      "question": "高砂",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 94,198",
+      "answer": [
+        "たかさご"
+      ]
+    },
+    {
+      "question": "川西",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 157,461",
+      "answer": [
+        "かわにし"
+      ]
+    },
+    {
+      "question": "小野市",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 49,664",
+      "answer": [
+        "おのいち"
+      ]
+    },
+    {
+      "question": "三田",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 113,600",
+      "answer": [
+        "さんだ"
+      ]
+    },
+    {
+      "question": "加西",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 48,435",
+      "answer": [
+        "かさい"
+      ]
+    },
+    {
+      "question": "篠山",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 44,345",
+      "answer": [
+        "ささやま"
+      ]
+    },
+    {
+      "question": "養父",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 27,428",
+      "answer": [
+        "やぶ"
+      ]
+    },
+    {
+      "question": "丹波市",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 69,233",
+      "answer": [
+        "たんばいち"
+      ]
+    },
+    {
+      "question": "朝来",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 34,084",
+      "answer": [
+        "あさご"
+      ]
+    },
+    {
+      "question": "淡路",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 47,849",
+      "answer": [
+        "あわじ"
+      ]
+    },
+    {
+      "question": "宍粟",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 42,302",
+      "answer": [
+        "しそう"
+      ]
+    },
+    {
+      "question": "西脇",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 43,126",
+      "answer": [
+        "にしわき"
+      ]
+    },
+    {
+      "question": "洲本",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 48,631",
+      "answer": [
+        "すもと"
+      ]
+    },
+    {
+      "question": "加東",
+      "meaning": "**Prefecture**: Hyōgo\n**Population**: 39,935",
+      "answer": [
+        "かとう"
+      ]
+    },
+    {
+      "question": "水戸",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 264,062",
+      "answer": [
+        "みと"
+      ]
+    },
+    {
+      "question": "日立",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 195,844",
+      "answer": [
+        "ひたち"
+      ]
+    },
+    {
+      "question": "土浦",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 143,986",
+      "answer": [
+        "つちうら"
+      ]
+    },
+    {
+      "question": "結城",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 52,065",
+      "answer": [
+        "ゆうき"
+      ]
+    },
+    {
+      "question": "龍ヶ崎",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 79,295",
+      "answer": [
+        "りゅうがさき"
+      ]
+    },
+    {
+      "question": "下妻",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 45,918",
+      "answer": [
+        "しもつま"
+      ]
+    },
+    {
+      "question": "常陸太田",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 58,461",
+      "answer": [
+        "ひたちおおた"
+      ]
+    },
+    {
+      "question": "高萩",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 32,031",
+      "answer": [
+        "たかはぎ"
+      ]
+    },
+    {
+      "question": "北茨城",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 48,437",
+      "answer": [
+        "きたいばらき"
+      ]
+    },
+    {
+      "question": "取手",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 109,953",
+      "answer": [
+        "とりで"
+      ]
+    },
+    {
+      "question": "牛久",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 79,254",
+      "answer": [
+        "うしく"
+      ]
+    },
+    {
+      "question": "鹿嶋",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 65,193",
+      "answer": [
+        "かしま"
+      ]
+    },
+    {
+      "question": "潮来",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 31,103",
+      "answer": [
+        "いたこ"
+      ]
+    },
+    {
+      "question": "守谷",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 57,793",
+      "answer": [
+        "もりや"
+      ]
+    },
+    {
+      "question": "那珂",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 54,618",
+      "answer": [
+        "なか"
+      ]
+    },
+    {
+      "question": "坂東",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 57,128",
+      "answer": [
+        "ばんどう"
+      ]
+    },
+    {
+      "question": "稲敷",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 48,125",
+      "answer": [
+        "いなしき"
+      ]
+    },
+    {
+      "question": "神栖",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 93,538",
+      "answer": [
+        "かみす"
+      ]
+    },
+    {
+      "question": "行方",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 39,117",
+      "answer": [
+        "なめがた"
+      ]
+    },
+    {
+      "question": "古河",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 144,392",
+      "answer": [
+        "こが"
+      ]
+    },
+    {
+      "question": "石岡",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 80,502",
+      "answer": [
+        "いしおか"
+      ]
+    },
+    {
+      "question": "桜川",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 47,480",
+      "answer": [
+        "さくらがわ"
+      ]
+    },
+    {
+      "question": "鉾田",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 50,869",
+      "answer": [
+        "ほこた"
+      ]
+    },
+    {
+      "question": "笠間",
+      "meaning": "**Prefecture**: Ibaraki\n**Population**: 80,646",
+      "answer": [
+        "かさま"
+      ]
+    },
+    {
+      "question": "金沢",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 455,595",
+      "answer": [
+        "かなざわ"
+      ]
+    },
+    {
+      "question": "野々市",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 51,976",
+      "answer": [
+        "ののいち"
+      ]
+    },
+    {
+      "question": "七尾",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 60,140",
+      "answer": [
+        "ななお"
+      ]
+    },
+    {
+      "question": "小松",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 109,285",
+      "answer": [
+        "こまつ"
+      ]
+    },
+    {
+      "question": "珠洲",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 17,111",
+      "answer": [
+        "すず"
+      ]
+    },
+    {
+      "question": "羽咋",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 23,963",
+      "answer": [
+        "はくい"
+      ]
+    },
+    {
+      "question": "白山",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 110,563",
+      "answer": [
+        "はくさん"
+      ]
+    },
+    {
+      "question": "能美",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 48,106",
+      "answer": [
+        "のみ"
+      ]
+    },
+    {
+      "question": "加賀",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 73,745",
+      "answer": [
+        "かが"
+      ]
+    },
+    {
+      "question": "輪島",
+      "meaning": "**Prefecture**: Ishikawa\n**Population**: 31,532",
+      "answer": [
+        "わじま"
+      ]
+    },
+    {
+      "question": "盛岡",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 299,746",
+      "answer": [
+        "もりおか"
+      ]
+    },
+    {
+      "question": "釜石",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 41,348",
+      "answer": [
+        "かまいし"
+      ]
+    },
+    {
+      "question": "大船渡",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 42,119",
+      "answer": [
+        "おおふなと"
+      ]
+    },
+    {
+      "question": "陸前高田",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 23,961",
+      "answer": [
+        "りくぜんたかた"
+      ]
+    },
+    {
+      "question": "北上",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 94,806",
+      "answer": [
+        "きたかみ"
+      ]
+    },
+    {
+      "question": "宮古",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 58,342",
+      "answer": [
+        "みやこ"
+      ]
+    },
+    {
+      "question": "八幡平",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 29,993",
+      "answer": [
+        "はちまんたい"
+      ]
+    },
+    {
+      "question": "一関",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 123,155",
+      "answer": [
+        "いちのせき"
+      ]
+    },
+    {
+      "question": "遠野",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 30,587",
+      "answer": [
+        "とおの"
+      ]
+    },
+    {
+      "question": "花巻",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 103,718",
+      "answer": [
+        "はなまき"
+      ]
+    },
+    {
+      "question": "二戸",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 30,685",
+      "answer": [
+        "にのへ"
+      ]
+    },
+    {
+      "question": "奥州",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 128,273",
+      "answer": [
+        "おうしゅう"
+      ]
+    },
+    {
+      "question": "久慈",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 37,824",
+      "answer": [
+        "くじ"
+      ]
+    },
+    {
+      "question": "滝沢",
+      "meaning": "**Prefecture**: Iwate\n**Population**: 55,153",
+      "answer": [
+        "たきざわ"
+      ]
+    },
+    {
+      "question": "高松",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 418,557",
+      "answer": [
+        "たかまつ"
+      ]
+    },
+    {
+      "question": "丸亀",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 110,550",
+      "answer": [
+        "まるがめ"
+      ]
+    },
+    {
+      "question": "坂出",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 56,501",
+      "answer": [
+        "さかいで"
+      ]
+    },
+    {
+      "question": "善通寺",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 35,180",
+      "answer": [
+        "ぜんつうじ"
+      ]
+    },
+    {
+      "question": "観音寺",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 64,020",
+      "answer": [
+        "かんおんじ"
+      ]
+    },
+    {
+      "question": "三豊",
+      "meaning": "**Prefecture**: Kagawa\n**Population**: 69,997",
+      "answer": [
+        "みとよ"
+      ]
+    },
+    {
+      "question": "鹿児島",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 605,196",
+      "answer": [
+        "かごしま"
+      ]
+    },
+    {
+      "question": "鹿屋",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 105,673",
+      "answer": [
+        "かのや"
+      ]
+    },
+    {
+      "question": "枕崎",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 24,400",
+      "answer": [
+        "まくらざき"
+      ]
+    },
+    {
+      "question": "阿久根",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 24,166",
+      "answer": [
+        "あくね"
+      ]
+    },
+    {
+      "question": "出水",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 56,851",
+      "answer": [
+        "いずみ"
+      ]
+    },
+    {
+      "question": "指宿",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 45,455",
+      "answer": [
+        "いぶすき"
+      ]
+    },
+    {
+      "question": "西之表",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 17,666",
+      "answer": [
+        "にしのおもて"
+      ]
+    },
+    {
+      "question": "垂水",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 18,078",
+      "answer": [
+        "たるみず"
+      ]
+    },
+    {
+      "question": "日置",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 51,472",
+      "answer": [
+        "ひおき"
+      ]
+    },
+    {
+      "question": "曽於",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 41,179",
+      "answer": [
+        "そお"
+      ]
+    },
+    {
+      "question": "いちき串木野",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 32,079",
+      "answer": [
+        "いちきくしきのし"
+      ]
+    },
+    {
+      "question": "霧島",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 127,726",
+      "answer": [
+        "きりしま"
+      ]
+    },
+    {
+      "question": "志布志",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 34,105",
+      "answer": [
+        "しぶし"
+      ]
+    },
+    {
+      "question": "奄美",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 48,116",
+      "answer": [
+        "あまみ"
+      ]
+    },
+    {
+      "question": "伊佐市",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 30,070",
+      "answer": [
+        "いさいち"
+      ]
+    },
+    {
+      "question": "姶良",
+      "meaning": "**Prefecture**: Kagoshima\n**Population**: 74,611",
+      "answer": [
+        "あいら"
+      ]
+    },
+    {
+      "question": "横浜",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 3,697,894",
+      "answer": [
+        "よこはま"
+      ]
+    },
+    {
+      "question": "横須賀",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 421,397",
+      "answer": [
+        "よこすか"
+      ]
+    },
+    {
+      "question": "川崎",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 1,373,630",
+      "answer": [
+        "かわさき"
+      ]
+    },
+    {
+      "question": "平塚",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 260,419",
+      "answer": [
+        "ひらつか"
+      ]
+    },
+    {
+      "question": "鎌倉",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 173,588",
+      "answer": [
+        "かまくら"
+      ]
+    },
+    {
+      "question": "藤沢",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 402,628",
+      "answer": [
+        "ふじさわ"
+      ]
+    },
+    {
+      "question": "小田原",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 198,841",
+      "answer": [
+        "おだわら"
+      ]
+    },
+    {
+      "question": "茅ヶ崎",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 231,005",
+      "answer": [
+        "ちがさき"
+      ]
+    },
+    {
+      "question": "逗子",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 58,654",
+      "answer": [
+        "ずし"
+      ]
+    },
+    {
+      "question": "相模原",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 706,342",
+      "answer": [
+        "さがみはら"
+      ]
+    },
+    {
+      "question": "三浦",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 49,371",
+      "answer": [
+        "みうら"
+      ]
+    },
+    {
+      "question": "秦野",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 169,201",
+      "answer": [
+        "はだの"
+      ]
+    },
+    {
+      "question": "厚木",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 225,163",
+      "answer": [
+        "あつぎ"
+      ]
+    },
+    {
+      "question": "大和",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 223,127",
+      "answer": [
+        "やまと"
+      ]
+    },
+    {
+      "question": "伊勢原",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 100,779",
+      "answer": [
+        "いせはら"
+      ]
+    },
+    {
+      "question": "海老名",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 126,035",
+      "answer": [
+        "えびな"
+      ]
+    },
+    {
+      "question": "座間",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 127,582",
+      "answer": [
+        "ざま"
+      ]
+    },
+    {
+      "question": "南足柄",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 44,285",
+      "answer": [
+        "みなみあしがら"
+      ]
+    },
+    {
+      "question": "綾瀬",
+      "meaning": "**Prefecture**: Kanagawa\n**Population**: 82,083",
+      "answer": [
+        "あやせ"
+      ]
+    },
+    {
+      "question": "高知",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 342,944",
+      "answer": [
+        "こうち"
+      ]
+    },
+    {
+      "question": "宿毛",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 23,771",
+      "answer": [
+        "すくも"
+      ]
+    },
+    {
+      "question": "安芸",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 20,555",
+      "answer": [
+        "あき"
+      ]
+    },
+    {
+      "question": "土佐清水",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 17,421",
+      "answer": [
+        "とさしみず"
+      ]
+    },
+    {
+      "question": "須崎",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 25,679",
+      "answer": [
+        "すさき"
+      ]
+    },
+    {
+      "question": "土佐",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 29,726",
+      "answer": [
+        "とさ"
+      ]
+    },
+    {
+      "question": "室戸",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 17,683",
+      "answer": [
+        "むろと"
+      ]
+    },
+    {
+      "question": "南国",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 50,315",
+      "answer": [
+        "なんこく"
+      ]
+    },
+    {
+      "question": "四万十",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 37,182",
+      "answer": [
+        "しまんと"
+      ]
+    },
+    {
+      "question": "香美",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 29,144",
+      "answer": [
+        "かみ"
+      ]
+    },
+    {
+      "question": "香南",
+      "meaning": "**Prefecture**: Kōchi\n**Population**: 34,084",
+      "answer": [
+        "こうなん"
+      ]
+    },
+    {
+      "question": "熊本",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 670,348",
+      "answer": [
+        "くまもと"
+      ]
+    },
+    {
+      "question": "八代",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 134,491",
+      "answer": [
+        "やつしろ"
+      ]
+    },
+    {
+      "question": "人吉",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 36,556",
+      "answer": [
+        "ひとよし"
+      ]
+    },
+    {
+      "question": "荒尾",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 55,505",
+      "answer": [
+        "あらお"
+      ]
+    },
+    {
+      "question": "水俣",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 28,123",
+      "answer": [
+        "みなまた"
+      ]
+    },
+    {
+      "question": "玉名",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 70,747",
+      "answer": [
+        "たまな"
+      ]
+    },
+    {
+      "question": "山鹿",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 56,741",
+      "answer": [
+        "やまが"
+      ]
+    },
+    {
+      "question": "菊池",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 51,471",
+      "answer": [
+        "きくち"
+      ]
+    },
+    {
+      "question": "宇土",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 37,897",
+      "answer": [
+        "うと"
+      ]
+    },
+    {
+      "question": "宇城",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 62,718",
+      "answer": [
+        "うき"
+      ]
+    },
+    {
+      "question": "阿蘇",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 29,149",
+      "answer": [
+        "あそ"
+      ]
+    },
+    {
+      "question": "合志",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 53,490",
+      "answer": [
+        "こうし"
+      ]
+    },
+    {
+      "question": "天草",
+      "meaning": "**Prefecture**: Kumamoto\n**Population**: 93,047",
+      "answer": [
+        "あまくさ"
+      ]
+    },
+    {
+      "question": "京都",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 1,474,570",
+      "answer": [
+        "きょうと"
+      ]
+    },
+    {
+      "question": "福知山",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 80,836",
+      "answer": [
+        "ふくちやま"
+      ]
+    },
+    {
+      "question": "舞鶴",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 90,461",
+      "answer": [
+        "まいづる"
+      ]
+    },
+    {
+      "question": "綾部",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 37,081",
+      "answer": [
+        "あやべ"
+      ]
+    },
+    {
+      "question": "宇治",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 191,297",
+      "answer": [
+        "うじ"
+      ]
+    },
+    {
+      "question": "宮津",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 20,565",
+      "answer": [
+        "みやづ"
+      ]
+    },
+    {
+      "question": "亀岡",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 93,641",
+      "answer": [
+        "かめおか"
+      ]
+    },
+    {
+      "question": "城陽",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 80,795",
+      "answer": [
+        "じょうよう"
+      ]
+    },
+    {
+      "question": "向日",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 55,137",
+      "answer": [
+        "むこう"
+      ]
+    },
+    {
+      "question": "長岡京",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 79,031",
+      "answer": [
+        "ながおかきょう"
+      ]
+    },
+    {
+      "question": "八幡",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 73,822",
+      "answer": [
+        "やわた"
+      ]
+    },
+    {
+      "question": "京田辺",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 65,211",
+      "answer": [
+        "きょうたなべ"
+      ]
+    },
+    {
+      "question": "京丹後",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 60,980",
+      "answer": [
+        "きょうたんご"
+      ]
+    },
+    {
+      "question": "木津川",
+      "meaning": "**Prefecture**: Kyoto\n**Population**: 66,783",
+      "answer": [
+        "きずがわ"
+      ]
+    },
+    {
+      "question": "四日市",
+      "meaning": "**Prefecture**: Mie\n**Population**: 306,584",
+      "answer": [
+        "よっかいち"
+      ]
+    },
+    {
+      "question": "松阪",
+      "meaning": "**Prefecture**: Mie\n**Population**: 169,571",
+      "answer": [
+        "まつさか"
+      ]
+    },
+    {
+      "question": "桑名",
+      "meaning": "**Prefecture**: Mie\n**Population**: 140,816",
+      "answer": [
+        "くわな"
+      ]
+    },
+    {
+      "question": "鈴鹿",
+      "meaning": "**Prefecture**: Mie\n**Population**: 197,437",
+      "answer": [
+        "すずか"
+      ]
+    },
+    {
+      "question": "名張",
+      "meaning": "**Prefecture**: Mie\n**Population**: 81,184",
+      "answer": [
+        "なばり"
+      ]
+    },
+    {
+      "question": "尾鷲",
+      "meaning": "**Prefecture**: Mie\n**Population**: 21,272",
+      "answer": [
+        "おわせ"
+      ]
+    },
+    {
+      "question": "亀山",
+      "meaning": "**Prefecture**: Mie\n**Population**: 50,304",
+      "answer": [
+        "かめやま"
+      ]
+    },
+    {
+      "question": "鳥羽",
+      "meaning": "**Prefecture**: Mie\n**Population**: 22,286",
+      "answer": [
+        "とば"
+      ]
+    },
+    {
+      "question": "志摩",
+      "meaning": "**Prefecture**: Mie\n**Population**: 56,758",
+      "answer": [
+        "しま"
+      ]
+    },
+    {
+      "question": "伊賀",
+      "meaning": "**Prefecture**: Mie\n**Population**: 99,662",
+      "answer": [
+        "いが"
+      ]
+    },
+    {
+      "question": "伊勢",
+      "meaning": "**Prefecture**: Mie\n**Population**: 133,547",
+      "answer": [
+        "いせ"
+      ]
+    },
+    {
+      "question": "熊野",
+      "meaning": "**Prefecture**: Mie\n**Population**: 20,477",
+      "answer": [
+        "くまの"
+      ]
+    },
+    {
+      "question": "津",
+      "meaning": "**Prefecture**: Mie\n**Population**: 289,215",
+      "answer": [
+        "つ"
+      ]
+    },
+    {
+      "question": "仙台",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 1,029,552",
+      "answer": [
+        "せんだい"
+      ]
+    },
+    {
+      "question": "石巻",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 163,840",
+      "answer": [
+        "いしのまき"
+      ]
+    },
+    {
+      "question": "塩竈",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 58,057",
+      "answer": [
+        "しおがま"
+      ]
+    },
+    {
+      "question": "白石",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 38,629",
+      "answer": [
+        "しろいし"
+      ]
+    },
+    {
+      "question": "名取",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 69,610",
+      "answer": [
+        "なとり"
+      ]
+    },
+    {
+      "question": "角田",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 32,559",
+      "answer": [
+        "かくだ"
+      ]
+    },
+    {
+      "question": "多賀城",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 63,200",
+      "answer": [
+        "たがじょう"
+      ]
+    },
+    {
+      "question": "岩沼",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 44,595",
+      "answer": [
+        "いわぬま"
+      ]
+    },
+    {
+      "question": "登米",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 86,940",
+      "answer": [
+        "とめ"
+      ]
+    },
+    {
+      "question": "栗原",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 77,862",
+      "answer": [
+        "くりはら"
+      ]
+    },
+    {
+      "question": "東松島",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 43,238",
+      "answer": [
+        "ひがしまつしま"
+      ]
+    },
+    {
+      "question": "気仙沼",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 64,578",
+      "answer": [
+        "けせんぬま"
+      ]
+    },
+    {
+      "question": "大崎",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 137,164",
+      "answer": [
+        "おおさき"
+      ]
+    },
+    {
+      "question": "富谷",
+      "meaning": "**Prefecture**: Miyagi\n**Population**: 52,491",
+      "answer": [
+        "とみや"
+      ]
+    },
+    {
+      "question": "宮崎",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 369,473",
+      "answer": [
+        "みやざき"
+      ]
+    },
+    {
+      "question": "都城",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 169,384",
+      "answer": [
+        "みやこのじょう"
+      ]
+    },
+    {
+      "question": "延岡",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 132,480",
+      "answer": [
+        "のべおか"
+      ]
+    },
+    {
+      "question": "日南",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 43,264",
+      "answer": [
+        "にちなん"
+      ]
+    },
+    {
+      "question": "小林",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 40,514",
+      "answer": [
+        "こばやし"
+      ]
+    },
+    {
+      "question": "日向",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 63,066",
+      "answer": [
+        "ひゅうが"
+      ]
+    },
+    {
+      "question": "串間",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 21,386",
+      "answer": [
+        "くしま"
+      ]
+    },
+    {
+      "question": "西都",
+      "meaning": "**Prefecture**: Miyazaki\n**Population**: 33,290",
+      "answer": [
+        "さいと"
+      ]
+    },
+    {
+      "question": "松本市",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 227,392",
+      "answer": [
+        "まつもといち"
+      ]
+    },
+    {
+      "question": "岡谷",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 53,722",
+      "answer": [
+        "おかや"
+      ]
+    },
+    {
+      "question": "諏訪",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 52,671",
+      "answer": [
+        "すわ"
+      ]
+    },
+    {
+      "question": "須坂",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 53,097",
+      "answer": [
+        "すざか"
+      ]
+    },
+    {
+      "question": "小諸",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 45,333",
+      "answer": [
+        "こもろ"
+      ]
+    },
+    {
+      "question": "駒ヶ根",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 34,696",
+      "answer": [
+        "こまがね"
+      ]
+    },
+    {
+      "question": "大町",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 31,276",
+      "answer": [
+        "おおまち"
+      ]
+    },
+    {
+      "question": "飯山",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 24,155",
+      "answer": [
+        "いいやま"
+      ]
+    },
+    {
+      "question": "飯田",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 107,129",
+      "answer": [
+        "いいだ"
+      ]
+    },
+    {
+      "question": "茅野",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 57,363",
+      "answer": [
+        "ちの"
+      ]
+    },
+    {
+      "question": "塩尻",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 67,781",
+      "answer": [
+        "しおじり"
+      ]
+    },
+    {
+      "question": "長野",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 378,204",
+      "answer": [
+        "ながの"
+      ]
+    },
+    {
+      "question": "千曲",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 63,305",
+      "answer": [
+        "ちくま"
+      ]
+    },
+    {
+      "question": "中野",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 46,295",
+      "answer": [
+        "なかの"
+      ]
+    },
+    {
+      "question": "佐久",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 100,077",
+      "answer": [
+        "さく"
+      ]
+    },
+    {
+      "question": "安曇野",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 97,084",
+      "answer": [
+        "あずみの"
+      ]
+    },
+    {
+      "question": "上田",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 161,887",
+      "answer": [
+        "うえだ"
+      ]
+    },
+    {
+      "question": "伊那",
+      "meaning": "**Prefecture**: Nagano\n**Population**: 71,937",
+      "answer": [
+        "いな"
+      ]
+    },
+    {
+      "question": "長崎",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 448,792",
+      "answer": [
+        "ながさき"
+      ]
+    },
+    {
+      "question": "佐世保",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 254,650",
+      "answer": [
+        "させぼ"
+      ]
+    },
+    {
+      "question": "島原",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 48,953",
+      "answer": [
+        "しまばら"
+      ]
+    },
+    {
+      "question": "大村",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 89,650",
+      "answer": [
+        "おおむら"
+      ]
+    },
+    {
+      "question": "対馬",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 36,347",
+      "answer": [
+        "つしま"
+      ]
+    },
+    {
+      "question": "壱岐",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 30,352",
+      "answer": [
+        "いき"
+      ]
+    },
+    {
+      "question": "五島",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 42,447",
+      "answer": [
+        "ごとう"
+      ]
+    },
+    {
+      "question": "諫早",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 142,635",
+      "answer": [
+        "いさはや"
+      ]
+    },
+    {
+      "question": "西海",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 32,737",
+      "answer": [
+        "さいかい"
+      ]
+    },
+    {
+      "question": "平戸",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 36,785",
+      "answer": [
+        "ひらど"
+      ]
+    },
+    {
+      "question": "雲仙",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 48,701",
+      "answer": [
+        "うんぜん"
+      ]
+    },
+    {
+      "question": "松浦",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 26,007",
+      "answer": [
+        "まつうら"
+      ]
+    },
+    {
+      "question": "南島原",
+      "meaning": "**Prefecture**: Nagasaki\n**Population**: 52,347",
+      "answer": [
+        "みなみしまばら"
+      ]
+    },
+    {
+      "question": "奈良",
+      "meaning": "**Prefecture**: Nara\n**Population**: 367,393",
+      "answer": [
+        "なら"
+      ]
+    },
+    {
+      "question": "大和高田",
+      "meaning": "**Prefecture**: Nara\n**Population**: 69,473",
+      "answer": [
+        "やまとたかだ"
+      ]
+    },
+    {
+      "question": "大和郡山",
+      "meaning": "**Prefecture**: Nara\n**Population**: 90,223",
+      "answer": [
+        "やまとこおりやま"
+      ]
+    },
+    {
+      "question": "天理",
+      "meaning": "**Prefecture**: Nara\n**Population**: 70,702",
+      "answer": [
+        "てんり"
+      ]
+    },
+    {
+      "question": "橿原",
+      "meaning": "**Prefecture**: Nara\n**Population**: 124,679",
+      "answer": [
+        "かしはら"
+      ]
+    },
+    {
+      "question": "桜井",
+      "meaning": "**Prefecture**: Nara\n**Population**: 60,699",
+      "answer": [
+        "さくらい"
+      ]
+    },
+    {
+      "question": "五條",
+      "meaning": "**Prefecture**: Nara\n**Population**: 36,002",
+      "answer": [
+        "ごじょう"
+      ]
+    },
+    {
+      "question": "御所",
+      "meaning": "**Prefecture**: Nara\n**Population**: 31,160",
+      "answer": [
+        "ごせ"
+      ]
+    },
+    {
+      "question": "生駒",
+      "meaning": "**Prefecture**: Nara\n**Population**: 115,359",
+      "answer": [
+        "いこま"
+      ]
+    },
+    {
+      "question": "香芝",
+      "meaning": "**Prefecture**: Nara\n**Population**: 72,967",
+      "answer": [
+        "かしば"
+      ]
+    },
+    {
+      "question": "葛城",
+      "meaning": "**Prefecture**: Nara\n**Population**: 35,194",
+      "answer": [
+        "かつらぎ"
+      ]
+    },
+    {
+      "question": "宇陀",
+      "meaning": "**Prefecture**: Nara\n**Population**: 35,895",
+      "answer": [
+        "うだ"
+      ]
+    },
+    {
+      "question": "新潟",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 813,053",
+      "answer": [
+        "にいがた"
+      ]
+    },
+    {
+      "question": "長岡",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 281,222",
+      "answer": [
+        "ながおか"
+      ]
+    },
+    {
+      "question": "柏崎",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 93,506",
+      "answer": [
+        "かしわざき"
+      ]
+    },
+    {
+      "question": "新発田",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 103,490",
+      "answer": [
+        "しばた"
+      ]
+    },
+    {
+      "question": "小千谷",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 39,304",
+      "answer": [
+        "おぢや"
+      ]
+    },
+    {
+      "question": "加茂",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 30,800",
+      "answer": [
+        "かも"
+      ]
+    },
+    {
+      "question": "見附",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 42,139",
+      "answer": [
+        "みつけ"
+      ]
+    },
+    {
+      "question": "村上",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 30,197",
+      "answer": [
+        "むらかみ"
+      ]
+    },
+    {
+      "question": "妙高",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 36,837",
+      "answer": [
+        "みょうこう"
+      ]
+    },
+    {
+      "question": "上越",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 206,175",
+      "answer": [
+        "じょうえつ"
+      ]
+    },
+    {
+      "question": "佐渡",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 65,037",
+      "answer": [
+        "さど"
+      ]
+    },
+    {
+      "question": "阿賀野",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 46,158",
+      "answer": [
+        "あがの"
+      ]
+    },
+    {
+      "question": "魚沼",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 42,334",
+      "answer": [
+        "うおぬま"
+      ]
+    },
+    {
+      "question": "南魚沼",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 62,518",
+      "answer": [
+        "みなみうおぬま"
+      ]
+    },
+    {
+      "question": "糸魚川",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 48,653",
+      "answer": [
+        "いといがわ"
+      ]
+    },
+    {
+      "question": "十日町",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 60,480",
+      "answer": [
+        "とおかまち"
+      ]
+    },
+    {
+      "question": "三条",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 103,199",
+      "answer": [
+        "さんじょう"
+      ]
+    },
+    {
+      "question": "五泉",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 55,936",
+      "answer": [
+        "ごせん"
+      ]
+    },
+    {
+      "question": "燕",
+      "meaning": "**Prefecture**: Niigata\n**Population**: 82,910",
+      "answer": [
+        "つばめ"
+      ]
+    },
+    {
+      "question": "大分",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 467,267",
+      "answer": [
+        "おおいた"
+      ]
+    },
+    {
+      "question": "別府",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 127,345",
+      "answer": [
+        "べっぷ"
+      ]
+    },
+    {
+      "question": "中津",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 84,179",
+      "answer": [
+        "なかつ"
+      ]
+    },
+    {
+      "question": "日田",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 72,601",
+      "answer": [
+        "ひた"
+      ]
+    },
+    {
+      "question": "佐伯",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 78,675",
+      "answer": [
+        "さいき"
+      ]
+    },
+    {
+      "question": "臼杵",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 42,464",
+      "answer": [
+        "うすき"
+      ]
+    },
+    {
+      "question": "津久見",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 20,561",
+      "answer": [
+        "つくみ"
+      ]
+    },
+    {
+      "question": "竹田",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 25,449",
+      "answer": [
+        "たけた"
+      ]
+    },
+    {
+      "question": "豊後高田",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 24,484",
+      "answer": [
+        "ぶんごたかだ"
+      ]
+    },
+    {
+      "question": "宇佐",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 59,971",
+      "answer": [
+        "うさ"
+      ]
+    },
+    {
+      "question": "杵築",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 33,465",
+      "answer": [
+        "きつき"
+      ]
+    },
+    {
+      "question": "由布",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 35,298",
+      "answer": [
+        "ゆふ"
+      ]
+    },
+    {
+      "question": "国東",
+      "meaning": "**Prefecture**: Oita Ōita\n**Population**: 33,473",
+      "answer": [
+        "くにさき"
+      ]
+    },
+    {
+      "question": "岡山",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 701,293",
+      "answer": [
+        "おかやま"
+      ]
+    },
+    {
+      "question": "倉敷",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 472,452",
+      "answer": [
+        "くらしき"
+      ]
+    },
+    {
+      "question": "津山",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 109,493",
+      "answer": [
+        "つやま"
+      ]
+    },
+    {
+      "question": "玉野",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 65,723",
+      "answer": [
+        "たまの"
+      ]
+    },
+    {
+      "question": "笠岡",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 55,987",
+      "answer": [
+        "かさおか"
+      ]
+    },
+    {
+      "question": "井原市",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 44,423",
+      "answer": [
+        "いばらいち"
+      ]
+    },
+    {
+      "question": "総社",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 66,789",
+      "answer": [
+        "そうじゃ"
+      ]
+    },
+    {
+      "question": "高梁",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 37,573",
+      "answer": [
+        "たかはし"
+      ]
+    },
+    {
+      "question": "新見",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 35,022",
+      "answer": [
+        "にいみ"
+      ]
+    },
+    {
+      "question": "備前",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 39,117",
+      "answer": [
+        "びぜん"
+      ]
+    },
+    {
+      "question": "瀬戸内",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 38,645",
+      "answer": [
+        "せとうち"
+      ]
+    },
+    {
+      "question": "赤磐",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 43,742",
+      "answer": [
+        "あかいわ"
+      ]
+    },
+    {
+      "question": "真庭",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 50,405",
+      "answer": [
+        "まにわ"
+      ]
+    },
+    {
+      "question": "美作",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 31,550",
+      "answer": [
+        "みまさか"
+      ]
+    },
+    {
+      "question": "浅口",
+      "meaning": "**Prefecture**: Okayama\n**Population**: 37,108",
+      "answer": [
+        "あさくち"
+      ]
+    },
+    {
+      "question": "那覇",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 314,162",
+      "answer": [
+        "なは"
+      ]
+    },
+    {
+      "question": "石垣",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 46,489",
+      "answer": [
+        "いしがき"
+      ]
+    },
+    {
+      "question": "宜野湾",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 91,233",
+      "answer": [
+        "ぎのわん"
+      ]
+    },
+    {
+      "question": "浦添",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 108,052",
+      "answer": [
+        "うらそえ"
+      ]
+    },
+    {
+      "question": "名護",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 60,598",
+      "answer": [
+        "なご"
+      ]
+    },
+    {
+      "question": "糸満",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 56,171",
+      "answer": [
+        "いとまん"
+      ]
+    },
+    {
+      "question": "沖縄",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 128,421",
+      "answer": [
+        "おきなわ"
+      ]
+    },
+    {
+      "question": "豊見城",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 54,586",
+      "answer": [
+        "とみぐすく"
+      ]
+    },
+    {
+      "question": "宮古島",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 52,777",
+      "answer": [
+        "みやこじま"
+      ]
+    },
+    {
+      "question": "南城",
+      "meaning": "**Prefecture**: Okinawa\n**Population**: 39,458",
+      "answer": [
+        "なんじょう"
+      ]
+    },
+    {
+      "question": "大阪",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 2,668,586",
+      "answer": [
+        "おおさか"
+      ]
+    },
+    {
+      "question": "堺",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 835,333",
+      "answer": [
+        "さかい"
+      ]
+    },
+    {
+      "question": "岸和田",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 200,538",
+      "answer": [
+        "きしわだ"
+      ]
+    },
+    {
+      "question": "豊中",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 387,269",
+      "answer": [
+        "とよなか"
+      ]
+    },
+    {
+      "question": "池田",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 104,426",
+      "answer": [
+        "いけだ"
+      ]
+    },
+    {
+      "question": "吹田",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 354,600",
+      "answer": [
+        "すいた"
+      ]
+    },
+    {
+      "question": "泉大津",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 78,014",
+      "answer": [
+        "いずみおおつ"
+      ]
+    },
+    {
+      "question": "高槻",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 354,228",
+      "answer": [
+        "たかつき"
+      ]
+    },
+    {
+      "question": "貝塚",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 90,447",
+      "answer": [
+        "かいづか"
+      ]
+    },
+    {
+      "question": "守口",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 146,294",
+      "answer": [
+        "もりぐち"
+      ]
+    },
+    {
+      "question": "枚方",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 406,201",
+      "answer": [
+        "ひらかた"
+      ]
+    },
+    {
+      "question": "茨木",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 272,240",
+      "answer": [
+        "いばらき"
+      ]
+    },
+    {
+      "question": "八尾",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 273,244",
+      "answer": [
+        "やお"
+      ]
+    },
+    {
+      "question": "泉佐野",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 99,636",
+      "answer": [
+        "いずみさの"
+      ]
+    },
+    {
+      "question": "富田林",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 122,205",
+      "answer": [
+        "とんだばやし"
+      ]
+    },
+    {
+      "question": "寝屋川",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 239,029",
+      "answer": [
+        "ねやがわ"
+      ]
+    },
+    {
+      "question": "河内長野",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 114,428",
+      "answer": [
+        "かわちながの"
+      ]
+    },
+    {
+      "question": "松原",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 125,274",
+      "answer": [
+        "まつばら"
+      ]
+    },
+    {
+      "question": "大東",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 125,847",
+      "answer": [
+        "だいとう"
+      ]
+    },
+    {
+      "question": "和泉",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 179,352",
+      "answer": [
+        "いずみ"
+      ]
+    },
+    {
+      "question": "箕面",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 127,757",
+      "answer": [
+        "みのお"
+      ]
+    },
+    {
+      "question": "柏原",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 75,875",
+      "answer": [
+        "かしわら"
+      ]
+    },
+    {
+      "question": "羽曳野",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 118,281",
+      "answer": [
+        "はびきの"
+      ]
+    },
+    {
+      "question": "門真",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 130,026",
+      "answer": [
+        "かどま"
+      ]
+    },
+    {
+      "question": "摂津",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 84,330",
+      "answer": [
+        "せっつ"
+      ]
+    },
+    {
+      "question": "高石",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 60,077",
+      "answer": [
+        "たかいし"
+      ]
+    },
+    {
+      "question": "藤井寺",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 65,892",
+      "answer": [
+        "ふじいでら"
+      ]
+    },
+    {
+      "question": "東大阪",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 509,157",
+      "answer": [
+        "ひがしおおさか"
+      ]
+    },
+    {
+      "question": "泉南",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 64,916",
+      "answer": [
+        "せんなん"
+      ]
+    },
+    {
+      "question": "四條畷",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 57,239",
+      "answer": [
+        "しじょうなわて"
+      ]
+    },
+    {
+      "question": "交野",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 77,853",
+      "answer": [
+        "かたの"
+      ]
+    },
+    {
+      "question": "大阪狭山",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 58,661",
+      "answer": [
+        "おおさかさやま"
+      ]
+    },
+    {
+      "question": "阪南",
+      "meaning": "**Prefecture**: Osaka\n**Population**: 56,853",
+      "answer": [
+        "はんなん"
+      ]
+    },
+    {
+      "question": "鳥栖",
+      "meaning": "**Prefecture**: Saga\n**Population**: 66,842",
+      "answer": [
+        "とす"
+      ]
+    },
+    {
+      "question": "伊万里",
+      "meaning": "**Prefecture**: Saga\n**Population**: 57,604",
+      "answer": [
+        "いまり"
+      ]
+    },
+    {
+      "question": "鹿島",
+      "meaning": "**Prefecture**: Saga\n**Population**: 31,326",
+      "answer": [
+        "かしま"
+      ]
+    },
+    {
+      "question": "多久",
+      "meaning": "**Prefecture**: Saga\n**Population**: 22,165",
+      "answer": [
+        "たく"
+      ]
+    },
+    {
+      "question": "唐津",
+      "meaning": "**Prefecture**: Saga\n**Population**: 129,194",
+      "answer": [
+        "からつ"
+      ]
+    },
+    {
+      "question": "小城",
+      "meaning": "**Prefecture**: Saga\n**Population**: 45,516",
+      "answer": [
+        "おぎ"
+      ]
+    },
+    {
+      "question": "佐賀",
+      "meaning": "**Prefecture**: Saga\n**Population**: 239,932",
+      "answer": [
+        "さが"
+      ]
+    },
+    {
+      "question": "嬉野",
+      "meaning": "**Prefecture**: Saga\n**Population**: 29,644",
+      "answer": [
+        "うれしの"
+      ]
+    },
+    {
+      "question": "武雄",
+      "meaning": "**Prefecture**: Saga\n**Population**: 50,788",
+      "answer": [
+        "たけお"
+      ]
+    },
+    {
+      "question": "神埼",
+      "meaning": "**Prefecture**: Saga\n**Population**: 33,449",
+      "answer": [
+        "かんざき"
+      ]
+    },
+    {
+      "question": "川越市",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 335,693",
+      "answer": [
+        "ありはら"
+      ]
+    },
+    {
+      "question": "川口",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 552,883",
+      "answer": [
+        "かわぐち"
+      ]
+    },
+    {
+      "question": "行田",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 87,462",
+      "answer": [
+        "ぎょうだ"
+      ]
+    },
+    {
+      "question": "秩父",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 69,139",
+      "answer": [
+        "ちちぶ"
+      ]
+    },
+    {
+      "question": "所沢",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 338,560",
+      "answer": [
+        "ところざわ"
+      ]
+    },
+    {
+      "question": "飯能",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 84,053",
+      "answer": [
+        "はんのう"
+      ]
+    },
+    {
+      "question": "加須",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 67,862",
+      "answer": [
+        "かぞ"
+      ]
+    },
+    {
+      "question": "東松山",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 90,840",
+      "answer": [
+        "ひがしまつやま"
+      ]
+    },
+    {
+      "question": "狭山",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 156,634",
+      "answer": [
+        "さやま"
+      ]
+    },
+    {
+      "question": "羽生",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 56,820",
+      "answer": [
+        "はにゅう"
+      ]
+    },
+    {
+      "question": "鴻巣",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 119,768",
+      "answer": [
+        "こうのす"
+      ]
+    },
+    {
+      "question": "上尾",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 222,479",
+      "answer": [
+        "あげお"
+      ]
+    },
+    {
+      "question": "草加",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 237,964",
+      "answer": [
+        "そうか"
+      ]
+    },
+    {
+      "question": "越谷",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 318,592",
+      "answer": [
+        "こしがや"
+      ]
+    },
+    {
+      "question": "蕨",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 70,410",
+      "answer": [
+        "わらび"
+      ]
+    },
+    {
+      "question": "戸田",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 118,591",
+      "answer": [
+        "とだ"
+      ]
+    },
+    {
+      "question": "入間",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 148,203",
+      "answer": [
+        "いるま"
+      ]
+    },
+    {
+      "question": "朝霞",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 126,902",
+      "answer": [
+        "あさか"
+      ]
+    },
+    {
+      "question": "志木",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 68,531",
+      "answer": [
+        "しき"
+      ]
+    },
+    {
+      "question": "和光",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 78,575",
+      "answer": [
+        "わこう"
+      ]
+    },
+    {
+      "question": "新座",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 155,926",
+      "answer": [
+        "にいざ"
+      ]
+    },
+    {
+      "question": "桶川",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 74,703",
+      "answer": [
+        "おけがわ"
+      ]
+    },
+    {
+      "question": "久喜",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 71,667",
+      "answer": [
+        "くき"
+      ]
+    },
+    {
+      "question": "北本",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 69,903",
+      "answer": [
+        "きたもと"
+      ]
+    },
+    {
+      "question": "八潮",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 78,601",
+      "answer": [
+        "やしお"
+      ]
+    },
+    {
+      "question": "富士見",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 105,286",
+      "answer": [
+        "ふじみ"
+      ]
+    },
+    {
+      "question": "三郷",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 128,956",
+      "answer": [
+        "みさと"
+      ]
+    },
+    {
+      "question": "蓮田",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 63,375",
+      "answer": [
+        "はすだ"
+      ]
+    },
+    {
+      "question": "坂戸",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 99,680",
+      "answer": [
+        "さかど"
+      ]
+    },
+    {
+      "question": "幸手",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 53,485",
+      "answer": [
+        "さって"
+      ]
+    },
+    {
+      "question": "鶴ヶ島",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 70,131",
+      "answer": [
+        "つるがしま"
+      ]
+    },
+    {
+      "question": "日高",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 55,454",
+      "answer": [
+        "ひだか"
+      ]
+    },
+    {
+      "question": "吉川",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 63,050",
+      "answer": [
+        "よしかわ"
+      ]
+    },
+    {
+      "question": "熊谷",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 204,853",
+      "answer": [
+        "くまがや"
+      ]
+    },
+    {
+      "question": "春日部",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 236,854",
+      "answer": [
+        "かすかべ"
+      ]
+    },
+    {
+      "question": "深谷",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 146,128",
+      "answer": [
+        "ふかや"
+      ]
+    },
+    {
+      "question": "本庄",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 81,805",
+      "answer": [
+        "ほんじょう"
+      ]
+    },
+    {
+      "question": "白岡",
+      "meaning": "**Prefecture**: Saitama\n**Population**: 51,684",
+      "answer": [
+        "しらおか"
+      ]
+    },
+    {
+      "question": "大津",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 329,024",
+      "answer": [
+        "おおつ"
+      ]
+    },
+    {
+      "question": "彦根",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 110,945",
+      "answer": [
+        "ひこね"
+      ]
+    },
+    {
+      "question": "草津",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 123,512",
+      "answer": [
+        "くさつ"
+      ]
+    },
+    {
+      "question": "守山",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 74,263",
+      "answer": [
+        "もりやま"
+      ]
+    },
+    {
+      "question": "栗東",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 62,353",
+      "answer": [
+        "りっとう"
+      ]
+    },
+    {
+      "question": "甲賀",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 94,007",
+      "answer": [
+        "こうか"
+      ]
+    },
+    {
+      "question": "野洲",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 49,821",
+      "answer": [
+        "やす"
+      ]
+    },
+    {
+      "question": "湖南",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 55,144",
+      "answer": [
+        "こなん"
+      ]
+    },
+    {
+      "question": "高島",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 52,967",
+      "answer": [
+        "たかしま"
+      ]
+    },
+    {
+      "question": "米原",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 40,757",
+      "answer": [
+        "まいばら"
+      ]
+    },
+    {
+      "question": "長浜",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 83,555",
+      "answer": [
+        "ながはま"
+      ]
+    },
+    {
+      "question": "近江八幡",
+      "meaning": "**Prefecture**: Shiga\n**Population**: 69,116",
+      "answer": [
+        "おうみはちまん"
+      ]
+    },
+    {
+      "question": "松江",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 195,875",
+      "answer": [
+        "まつえ"
+      ]
+    },
+    {
+      "question": "出雲",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 146,115",
+      "answer": [
+        "いずも"
+      ]
+    },
+    {
+      "question": "益田",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 50,980",
+      "answer": [
+        "ますだ"
+      ]
+    },
+    {
+      "question": "安来",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 42,997",
+      "answer": [
+        "やすぎ"
+      ]
+    },
+    {
+      "question": "江津",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 26,958",
+      "answer": [
+        "ごうつ"
+      ]
+    },
+    {
+      "question": "雲南",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 43,269",
+      "answer": [
+        "うんなん"
+      ]
+    },
+    {
+      "question": "浜田",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 61,325",
+      "answer": [
+        "はまだ"
+      ]
+    },
+    {
+      "question": "大田",
+      "meaning": "**Prefecture**: Shimane\n**Population**: 39,593",
+      "answer": [
+        "おおだ"
+      ]
+    },
+    {
+      "question": "静岡",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 710,944",
+      "answer": [
+        "しずおか"
+      ]
+    },
+    {
+      "question": "浜松",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 811,431",
+      "answer": [
+        "はままつ"
+      ]
+    },
+    {
+      "question": "沼津",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 206,818",
+      "answer": [
+        "ぬまづ"
+      ]
+    },
+    {
+      "question": "熱海",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 40,524",
+      "answer": [
+        "あたみ"
+      ]
+    },
+    {
+      "question": "三島",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 112,320",
+      "answer": [
+        "みしま"
+      ]
+    },
+    {
+      "question": "富士宮",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 122,122",
+      "answer": [
+        "ふじのみや"
+      ]
+    },
+    {
+      "question": "伊東",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 72,038",
+      "answer": [
+        "いとう"
+      ]
+    },
+    {
+      "question": "島田",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 95,762",
+      "answer": [
+        "しまだ"
+      ]
+    },
+    {
+      "question": "磐田",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 172,583",
+      "answer": [
+        "いわた"
+      ]
+    },
+    {
+      "question": "焼津",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 120,331",
+      "answer": [
+        "やいづ"
+      ]
+    },
+    {
+      "question": "掛川",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 118,660",
+      "answer": [
+        "かけがわ"
+      ]
+    },
+    {
+      "question": "藤枝",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 129,637",
+      "answer": [
+        "ふじえだ"
+      ]
+    },
+    {
+      "question": "御殿場",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 88,078",
+      "answer": [
+        "ごてんば"
+      ]
+    },
+    {
+      "question": "袋井",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 85,163",
+      "answer": [
+        "ふくろい"
+      ]
+    },
+    {
+      "question": "富士市",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 237,279",
+      "answer": [
+        "ふじいち"
+      ]
+    },
+    {
+      "question": "下田",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 25,784",
+      "answer": [
+        "しもだ"
+      ]
+    },
+    {
+      "question": "裾野",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 53,740",
+      "answer": [
+        "すその"
+      ]
+    },
+    {
+      "question": "湖西",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 44,545",
+      "answer": [
+        "こさい"
+      ]
+    },
+    {
+      "question": "伊豆",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 35,911",
+      "answer": [
+        "いず"
+      ]
+    },
+    {
+      "question": "御前崎",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 35,015",
+      "answer": [
+        "おまえざき"
+      ]
+    },
+    {
+      "question": "菊川",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 47,702",
+      "answer": [
+        "きくがわ"
+      ]
+    },
+    {
+      "question": "牧之原",
+      "meaning": "**Prefecture**: Shizuoka\n**Population**: 49,726",
+      "answer": [
+        "まきのはら"
+      ]
+    },
+    {
+      "question": "宇都宮",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 507,833",
+      "answer": [
+        "うつのみや"
+      ]
+    },
+    {
+      "question": "足利",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 157,793",
+      "answer": [
+        "あしかが"
+      ]
+    },
+    {
+      "question": "栃木",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 81,601",
+      "answer": [
+        "とちぎ"
+      ]
+    },
+    {
+      "question": "鹿沼",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 103,690",
+      "answer": [
+        "かぬま"
+      ]
+    },
+    {
+      "question": "小山",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 162,283",
+      "answer": [
+        "おやま"
+      ]
+    },
+    {
+      "question": "真岡",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 66,705",
+      "answer": [
+        "もおか"
+      ]
+    },
+    {
+      "question": "大田原",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 78,563",
+      "answer": [
+        "おおたわら"
+      ]
+    },
+    {
+      "question": "矢板",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 35,462",
+      "answer": [
+        "やいた"
+      ]
+    },
+    {
+      "question": "那須塩原",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 115,633",
+      "answer": [
+        "なすしおばら"
+      ]
+    },
+    {
+      "question": "佐野",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 123,034",
+      "answer": [
+        "さの"
+      ]
+    },
+    {
+      "question": "下野",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 59,459",
+      "answer": [
+        "しもつけ"
+      ]
+    },
+    {
+      "question": "日光",
+      "meaning": "**Prefecture**: Tochigi\n**Population**: 92,181",
+      "answer": [
+        "にっこう"
+      ]
+    },
+    {
+      "question": "徳島",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 266,370",
+      "answer": [
+        "とくしま"
+      ]
+    },
+    {
+      "question": "鳴門",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 62,453",
+      "answer": [
+        "なると"
+      ]
+    },
+    {
+      "question": "小松島",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 41,540",
+      "answer": [
+        "こまつしま"
+      ]
+    },
+    {
+      "question": "阿南",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 77,099",
+      "answer": [
+        "あなん"
+      ]
+    },
+    {
+      "question": "吉野川",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 44,905",
+      "answer": [
+        "よしのがわ"
+      ]
+    },
+    {
+      "question": "美馬",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 33,520",
+      "answer": [
+        "みま"
+      ]
+    },
+    {
+      "question": "阿波",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 40,303",
+      "answer": [
+        "あわ"
+      ]
+    },
+    {
+      "question": "三好",
+      "meaning": "**Prefecture**: Tokushima\n**Population**: 30,998",
+      "answer": [
+        "みよし"
+      ]
+    },
+    {
+      "question": "八王子",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 567,367",
+      "answer": [
+        "はちおうじ"
+      ]
+    },
+    {
+      "question": "立川",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 175,639",
+      "answer": [
+        "たちかわ"
+      ]
+    },
+    {
+      "question": "武蔵野",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 138,516",
+      "answer": [
+        "むさしの"
+      ]
+    },
+    {
+      "question": "三鷹",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 180,797",
+      "answer": [
+        "みたか"
+      ]
+    },
+    {
+      "question": "青梅",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 141,708",
+      "answer": [
+        "おうめ"
+      ]
+    },
+    {
+      "question": "昭島",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 111,763",
+      "answer": [
+        "あきしま"
+      ]
+    },
+    {
+      "question": "調布",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 219,053",
+      "answer": [
+        "ちょうふ"
+      ]
+    },
+    {
+      "question": "町田",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 413,786",
+      "answer": [
+        "まちだ"
+      ]
+    },
+    {
+      "question": "小金井",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 115,116",
+      "answer": [
+        "こがねい"
+      ]
+    },
+    {
+      "question": "小平",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 185,829",
+      "answer": [
+        "こだいら"
+      ]
+    },
+    {
+      "question": "日野",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 179,482",
+      "answer": [
+        "ひの"
+      ]
+    },
+    {
+      "question": "東村山",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 146,585",
+      "answer": [
+        "ひがしむらやま"
+      ]
+    },
+    {
+      "question": "国分寺",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 118,801",
+      "answer": [
+        "こくぶんじ"
+      ]
+    },
+    {
+      "question": "国立",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 73,362",
+      "answer": [
+        "くにたち"
+      ]
+    },
+    {
+      "question": "福生",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 60,413",
+      "answer": [
+        "ふっさ"
+      ]
+    },
+    {
+      "question": "狛江",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 78,237",
+      "answer": [
+        "こまえ"
+      ]
+    },
+    {
+      "question": "東大和",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 81,445",
+      "answer": [
+        "ひがしやまと"
+      ]
+    },
+    {
+      "question": "清瀬",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 73,518",
+      "answer": [
+        "きよせ"
+      ]
+    },
+    {
+      "question": "東久留米",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 115,405",
+      "answer": [
+        "ひがしくるめ"
+      ]
+    },
+    {
+      "question": "武蔵村山",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 68,333",
+      "answer": [
+        "むさしむらやま"
+      ]
+    },
+    {
+      "question": "多摩",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 149,404",
+      "answer": [
+        "たま"
+      ]
+    },
+    {
+      "question": "稲城",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 80,772",
+      "answer": [
+        "いなぎ"
+      ]
+    },
+    {
+      "question": "羽村",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 56,984",
+      "answer": [
+        "はむら"
+      ]
+    },
+    {
+      "question": "あきる野",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 80,268",
+      "answer": [
+        "あきるの"
+      ]
+    },
+    {
+      "question": "西東京",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 193,350",
+      "answer": [
+        "にしとうきょう"
+      ]
+    },
+    {
+      "question": "足立",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 629,392",
+      "answer": [
+        "あだち"
+      ]
+    },
+    {
+      "question": "荒川",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 194,777",
+      "answer": [
+        "あらかわ"
+      ]
+    },
+    {
+      "question": "文京",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 194,933",
+      "answer": [
+        "ぶんきょう"
+      ]
+    },
+    {
+      "question": "千代田",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 43,802",
+      "answer": [
+        "ちよだ"
+      ]
+    },
+    {
+      "question": "中央",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 104,997",
+      "answer": [
+        "ちゅうおう"
+      ]
+    },
+    {
+      "question": "江戸川",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 661,386",
+      "answer": [
+        "えどがわ"
+      ]
+    },
+    {
+      "question": "板橋",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 529,059",
+      "answer": [
+        "いたばし"
+      ]
+    },
+    {
+      "question": "葛飾",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 428,066",
+      "answer": [
+        "かつしか"
+      ]
+    },
+    {
+      "question": "北",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 330,646",
+      "answer": [
+        "きた"
+      ]
+    },
+    {
+      "question": "江東",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 436,337",
+      "answer": [
+        "こうとう"
+      ]
+    },
+    {
+      "question": "目黒",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 267,798",
+      "answer": [
+        "めぐろ"
+      ]
+    },
+    {
+      "question": "港",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 205,196",
+      "answer": [
+        "みなと"
+      ]
+    },
+    {
+      "question": "練馬",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 702,202",
+      "answer": [
+        "ねりま"
+      ]
+    },
+    {
+      "question": "世田谷",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 855,416",
+      "answer": [
+        "せたがや"
+      ]
+    },
+    {
+      "question": "渋谷",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 205,512",
+      "answer": [
+        "しぶや"
+      ]
+    },
+    {
+      "question": "品川",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 353,887",
+      "answer": [
+        "しながわ"
+      ]
+    },
+    {
+      "question": "新宿",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 309,463",
+      "answer": [
+        "しんじゅく"
+      ]
+    },
+    {
+      "question": "杉並",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 534,981",
+      "answer": [
+        "すぎなみ"
+      ]
+    },
+    {
+      "question": "墨田",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 237,433",
+      "answer": [
+        "すみだ"
+      ]
+    },
+    {
+      "question": "台東",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 168,277",
+      "answer": [
+        "たいとう"
+      ]
+    },
+    {
+      "question": "豊島",
+      "meaning": "**Prefecture**: Tokyo\n**Population**: 256,009",
+      "answer": [
+        "としま"
+      ]
+    },
+    {
+      "question": "鳥取",
+      "meaning": "**Prefecture**: Tottori\n**Population**: 200,315",
+      "answer": [
+        "とっとり"
+      ]
+    },
+    {
+      "question": "米子",
+      "meaning": "**Prefecture**: Tottori\n**Population**: 149,140",
+      "answer": [
+        "よなご"
+      ]
+    },
+    {
+      "question": "倉吉",
+      "meaning": "**Prefecture**: Tottori\n**Population**: 51,453",
+      "answer": [
+        "くらよし"
+      ]
+    },
+    {
+      "question": "境港",
+      "meaning": "**Prefecture**: Tottori\n**Population**: 35,908",
+      "answer": [
+        "さかいみなと"
+      ]
+    },
+    {
+      "question": "富山",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 421,116",
+      "answer": [
+        "とやま"
+      ]
+    },
+    {
+      "question": "魚津",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 45,945",
+      "answer": [
+        "うおづ"
+      ]
+    },
+    {
+      "question": "氷見",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 53,316",
+      "answer": [
+        "ひみ"
+      ]
+    },
+    {
+      "question": "滑川",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 33,789",
+      "answer": [
+        "なめりかわ"
+      ]
+    },
+    {
+      "question": "砺波",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 49,396",
+      "answer": [
+        "となみ"
+      ]
+    },
+    {
+      "question": "小矢部",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 32,656",
+      "answer": [
+        "おやべ"
+      ]
+    },
+    {
+      "question": "高岡",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 178,965",
+      "answer": [
+        "たかおか"
+      ]
+    },
+    {
+      "question": "射水",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 94,691",
+      "answer": [
+        "いみず"
+      ]
+    },
+    {
+      "question": "黒部",
+      "meaning": "**Prefecture**: Toyama\n**Population**: 42,612",
+      "answer": [
+        "くろべ"
+      ]
+    },
+    {
+      "question": "和歌山",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 372,175",
+      "answer": [
+        "わかやま"
+      ]
+    },
+    {
+      "question": "海南",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 55,877",
+      "answer": [
+        "かいなん"
+      ]
+    },
+    {
+      "question": "田辺",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 80,478",
+      "answer": [
+        "たなべ"
+      ]
+    },
+    {
+      "question": "御坊",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 26,335",
+      "answer": [
+        "ごぼう"
+      ]
+    },
+    {
+      "question": "有田",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 31,194",
+      "answer": [
+        "ありだ"
+      ]
+    },
+    {
+      "question": "新宮",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 32,654",
+      "answer": [
+        "しんぐう"
+      ]
+    },
+    {
+      "question": "紀の川",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 67,192",
+      "answer": [
+        "きのかわ"
+      ]
+    },
+    {
+      "question": "橋本",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 67,505",
+      "answer": [
+        "はしもと"
+      ]
+    },
+    {
+      "question": "岩出",
+      "meaning": "**Prefecture**: Wakayama\n**Population**: 51,843",
+      "answer": [
+        "いわで"
+      ]
+    },
+    {
+      "question": "山形",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 255,370",
+      "answer": [
+        "やまがた"
+      ]
+    },
+    {
+      "question": "米沢",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 91,704",
+      "answer": [
+        "よねざわ"
+      ]
+    },
+    {
+      "question": "新庄",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 39,808",
+      "answer": [
+        "しんじょう"
+      ]
+    },
+    {
+      "question": "寒河江",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 43,299",
+      "answer": [
+        "さがえ"
+      ]
+    },
+    {
+      "question": "上山",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 35,086",
+      "answer": [
+        "かみのやま"
+      ]
+    },
+    {
+      "question": "村山",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 27,586",
+      "answer": [
+        "むらやま"
+      ]
+    },
+    {
+      "question": "長井",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 30,285",
+      "answer": [
+        "ながい"
+      ]
+    },
+    {
+      "question": "天童",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 63,470",
+      "answer": [
+        "てんどう"
+      ]
+    },
+    {
+      "question": "東根",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 46,141",
+      "answer": [
+        "ひがしね"
+      ]
+    },
+    {
+      "question": "尾花沢",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 19,937",
+      "answer": [
+        "おばなざわ"
+      ]
+    },
+    {
+      "question": "南陽",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 34,542",
+      "answer": [
+        "なんよう"
+      ]
+    },
+    {
+      "question": "鶴岡",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 140,097",
+      "answer": [
+        "つるおか"
+      ]
+    },
+    {
+      "question": "酒田",
+      "meaning": "**Prefecture**: Yamagata\n**Population**: 114,964",
+      "answer": [
+        "さかた"
+      ]
+    },
+    {
+      "question": "宇部",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 176,370",
+      "answer": [
+        "うべ"
+      ]
+    },
+    {
+      "question": "防府",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 116,393",
+      "answer": [
+        "ほうふ"
+      ]
+    },
+    {
+      "question": "下松",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 54,026",
+      "answer": [
+        "くだまつ"
+      ]
+    },
+    {
+      "question": "周南",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 150,299",
+      "answer": [
+        "しゅうなん"
+      ]
+    },
+    {
+      "question": "光市",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 53,274",
+      "answer": [
+        "こういち"
+      ]
+    },
+    {
+      "question": "下関",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 286,073",
+      "answer": [
+        "しものせき"
+      ]
+    },
+    {
+      "question": "柳井",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 35,438",
+      "answer": [
+        "やない"
+      ]
+    },
+    {
+      "question": "萩市",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 55,831",
+      "answer": [
+        "しゅういち"
+      ]
+    },
+    {
+      "question": "長門",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 39,825",
+      "answer": [
+        "ながと"
+      ]
+    },
+    {
+      "question": "山口",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 192,008",
+      "answer": [
+        "やまぐち"
+      ]
+    },
+    {
+      "question": "岩国",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 146,885",
+      "answer": [
+        "いわくに"
+      ]
+    },
+    {
+      "question": "美祢",
+      "meaning": "**Prefecture**: Yamaguchi\n**Population**: 17,355",
+      "answer": [
+        "みね"
+      ]
+    },
+    {
+      "question": "甲府",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 199,374",
+      "answer": [
+        "こうふ"
+      ]
+    },
+    {
+      "question": "富士吉田",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 51,879",
+      "answer": [
+        "ふじよしだ"
+      ]
+    },
+    {
+      "question": "都留",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 34,439",
+      "answer": [
+        "つる"
+      ]
+    },
+    {
+      "question": "大月",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 29,869",
+      "answer": [
+        "おおつき"
+      ]
+    },
+    {
+      "question": "韮崎",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 33,539",
+      "answer": [
+        "にらさき"
+      ]
+    },
+    {
+      "question": "南アルプス",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 72,295",
+      "answer": [
+        "みなみアルプス"
+      ]
+    },
+    {
+      "question": "甲斐",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 74,077",
+      "answer": [
+        "かい"
+      ]
+    },
+    {
+      "question": "笛吹",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 71,184",
+      "answer": [
+        "ふえふき"
+      ]
+    },
+    {
+      "question": "北杜",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 47,754",
+      "answer": [
+        "ほくと"
+      ]
+    },
+    {
+      "question": "上野原",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 28,295",
+      "answer": [
+        "うえのはら"
+      ]
+    },
+    {
+      "question": "山梨",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 38,202",
+      "answer": [
+        "やまなし"
+      ]
+    },
+    {
+      "question": "甲州",
+      "meaning": "**Prefecture**: Yamanashi\n**Population**: 35,072",
+      "answer": [
+        "こうしゅう"
+      ]
+    }
+  ]
+}

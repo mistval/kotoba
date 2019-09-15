@@ -1,0 +1,4754 @@
+{
+  "uniqueId": "cities",
+  "name": "Cities Reading Quiz",
+  "article": "a",
+  "instructions": "Type the name of the below city in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "NONE",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "compileImages": true,
+  "commentFieldName": "Comment",
+  "description": "Cities in Japan [Data provided by ESPAlchemist#7091, edited by... me]",
+  "cards": [
+    {
+      "question": "三次市",
+      "answer": [
+        "みよしし"
+      ]
+    },
+    {
+      "question": "中野区",
+      "answer": [
+        "なかのく"
+      ]
+    },
+    {
+      "question": "豊島区",
+      "answer": [
+        "としまく"
+      ]
+    },
+    {
+      "question": "荒川区",
+      "answer": [
+        "あらかわく"
+      ]
+    },
+    {
+      "question": "目黒区",
+      "answer": [
+        "めぐろく"
+      ]
+    },
+    {
+      "question": "新宿区",
+      "answer": [
+        "しんじゅくく"
+      ]
+    },
+    {
+      "question": "板橋区",
+      "answer": [
+        "いたばしく"
+      ]
+    },
+    {
+      "question": "台東区",
+      "answer": [
+        "たいとうく"
+      ]
+    },
+    {
+      "question": "墨田区",
+      "answer": [
+        "すみだく"
+      ]
+    },
+    {
+      "question": "文京区",
+      "answer": [
+        "ぶんきょうく"
+      ]
+    },
+    {
+      "question": "北区",
+      "answer": [
+        "きたく"
+      ]
+    },
+    {
+      "question": "杉並区",
+      "answer": [
+        "すぎなみく"
+      ]
+    },
+    {
+      "question": "品川区",
+      "answer": [
+        "しながわく"
+      ]
+    },
+    {
+      "question": "世田谷区",
+      "answer": [
+        "せたがやく"
+      ]
+    },
+    {
+      "question": "練馬区",
+      "answer": [
+        "ねりまく"
+      ]
+    },
+    {
+      "question": "蕨市",
+      "answer": [
+        "わらびし"
+      ]
+    },
+    {
+      "question": "渋谷区",
+      "answer": [
+        "しぶやく"
+      ]
+    },
+    {
+      "question": "江戸川区",
+      "answer": [
+        "えどがわく"
+      ]
+    },
+    {
+      "question": "武蔵野市",
+      "answer": [
+        "むさしのし"
+      ]
+    },
+    {
+      "question": "葛飾区",
+      "answer": [
+        "かつしかく"
+      ]
+    },
+    {
+      "question": "狛江市",
+      "answer": [
+        "こまえし"
+      ]
+    },
+    {
+      "question": "西東京市",
+      "answer": [
+        "にしとうきょうし"
+      ]
+    },
+    {
+      "question": "大阪市",
+      "answer": [
+        "おおさかし"
+      ]
+    },
+    {
+      "question": "足立区",
+      "answer": [
+        "あだちく"
+      ]
+    },
+    {
+      "question": "守口市",
+      "answer": [
+        "もりぐちし"
+      ]
+    },
+    {
+      "question": "大田区",
+      "answer": [
+        "おおたく"
+      ]
+    },
+    {
+      "question": "江東区",
+      "answer": [
+        "こうとうく"
+      ]
+    },
+    {
+      "question": "三鷹市",
+      "answer": [
+        "みたかし"
+      ]
+    },
+    {
+      "question": "豊中市",
+      "answer": [
+        "とよなかし"
+      ]
+    },
+    {
+      "question": "門真市",
+      "answer": [
+        "かどまし"
+      ]
+    },
+    {
+      "question": "国分寺市",
+      "answer": [
+        "こくぶんじし"
+      ]
+    },
+    {
+      "question": "中央区",
+      "answer": [
+        "ちゅうおうく"
+      ]
+    },
+    {
+      "question": "調布市",
+      "answer": [
+        "ちょうふし"
+      ]
+    },
+    {
+      "question": "小金井市",
+      "answer": [
+        "こがねいし"
+      ]
+    },
+    {
+      "question": "港区",
+      "answer": [
+        "みなとく"
+      ]
+    },
+    {
+      "question": "吹田市",
+      "answer": [
+        "すいたし"
+      ]
+    },
+    {
+      "question": "寝屋川市",
+      "answer": [
+        "ねやがわし"
+      ]
+    },
+    {
+      "question": "川崎市",
+      "answer": [
+        "かわさきし"
+      ]
+    },
+    {
+      "question": "尼崎市",
+      "answer": [
+        "あまがさきし"
+      ]
+    },
+    {
+      "question": "浦安市",
+      "answer": [
+        "うらやすし"
+      ]
+    },
+    {
+      "question": "小平市",
+      "answer": [
+        "こだいらし"
+      ]
+    },
+    {
+      "question": "国立市",
+      "answer": [
+        "くにたちし"
+      ]
+    },
+    {
+      "question": "東久留米市",
+      "answer": [
+        "ひがしくるめし"
+      ]
+    },
+    {
+      "question": "川口市",
+      "answer": [
+        "かわぐちし"
+      ]
+    },
+    {
+      "question": "草加市",
+      "answer": [
+        "そうかし"
+      ]
+    },
+    {
+      "question": "東村山市",
+      "answer": [
+        "ひがしむらやまし"
+      ]
+    },
+    {
+      "question": "横浜市",
+      "answer": [
+        "よこはまし"
+      ]
+    },
+    {
+      "question": "府中市",
+      "answer": [
+        "ふちゅうし"
+      ]
+    },
+    {
+      "question": "大和市",
+      "answer": [
+        "やまとし"
+      ]
+    },
+    {
+      "question": "東大阪市",
+      "answer": [
+        "ひがしおおさかし"
+      ]
+    },
+    {
+      "question": "市川市",
+      "answer": [
+        "いちかわし"
+      ]
+    },
+    {
+      "question": "那覇市",
+      "answer": [
+        "なはし"
+      ]
+    },
+    {
+      "question": "伊丹市",
+      "answer": [
+        "いたみし"
+      ]
+    },
+    {
+      "question": "松戸市",
+      "answer": [
+        "まつどし"
+      ]
+    },
+    {
+      "question": "春日市",
+      "answer": [
+        "かすがし"
+      ]
+    },
+    {
+      "question": "習志野市",
+      "answer": [
+        "ならしのし"
+      ]
+    },
+    {
+      "question": "志木市",
+      "answer": [
+        "しきし"
+      ]
+    },
+    {
+      "question": "松原市",
+      "answer": [
+        "まつばらし"
+      ]
+    },
+    {
+      "question": "藤井寺市",
+      "answer": [
+        "ふじいでらし"
+      ]
+    },
+    {
+      "question": "座間市",
+      "answer": [
+        "ざまし"
+      ]
+    },
+    {
+      "question": "清瀬市",
+      "answer": [
+        "きよせし"
+      ]
+    },
+    {
+      "question": "立川市",
+      "answer": [
+        "たつかわし"
+      ]
+    },
+    {
+      "question": "向日市",
+      "answer": [
+        "むこうし"
+      ]
+    },
+    {
+      "question": "和光市",
+      "answer": [
+        "わこうし"
+      ]
+    },
+    {
+      "question": "多摩市",
+      "answer": [
+        "たまし"
+      ]
+    },
+    {
+      "question": "ふじみ野市",
+      "answer": [
+        "ふじみのし"
+      ]
+    },
+    {
+      "question": "朝霞市",
+      "answer": [
+        "あさかし"
+      ]
+    },
+    {
+      "question": "大東市",
+      "answer": [
+        "だいとうし"
+      ]
+    },
+    {
+      "question": "名古屋市",
+      "answer": [
+        "なごやし"
+      ]
+    },
+    {
+      "question": "船橋市",
+      "answer": [
+        "ふなばしし"
+      ]
+    },
+    {
+      "question": "新座市",
+      "answer": [
+        "にいざし"
+      ]
+    },
+    {
+      "question": "八尾市",
+      "answer": [
+        "やおし"
+      ]
+    },
+    {
+      "question": "戸田市",
+      "answer": [
+        "とだし"
+      ]
+    },
+    {
+      "question": "日野市",
+      "answer": [
+        "ひのし"
+      ]
+    },
+    {
+      "question": "茅ヶ崎市",
+      "answer": [
+        "ちがさきし"
+      ]
+    },
+    {
+      "question": "昭島市",
+      "answer": [
+        "あきしまし"
+      ]
+    },
+    {
+      "question": "枚方市",
+      "answer": [
+        "ひらかたし"
+      ]
+    },
+    {
+      "question": "泉大津市",
+      "answer": [
+        "いずみおおつし"
+      ]
+    },
+    {
+      "question": "東大和市",
+      "answer": [
+        "ひがしやまとし"
+      ]
+    },
+    {
+      "question": "明石市",
+      "answer": [
+        "あかしし"
+      ]
+    },
+    {
+      "question": "福生市",
+      "answer": [
+        "ふっさし"
+      ]
+    },
+    {
+      "question": "藤沢市",
+      "answer": [
+        "ふじさわし"
+      ]
+    },
+    {
+      "question": "町田市",
+      "answer": [
+        "まちだし"
+      ]
+    },
+    {
+      "question": "羽村市",
+      "answer": [
+        "はむらし"
+      ]
+    },
+    {
+      "question": "摂津市",
+      "answer": [
+        "せっつし"
+      ]
+    },
+    {
+      "question": "堺市",
+      "answer": [
+        "さかいし"
+      ]
+    },
+    {
+      "question": "浦添市",
+      "answer": [
+        "うらそえし"
+      ]
+    },
+    {
+      "question": "富士見市",
+      "answer": [
+        "ふじみし"
+      ]
+    },
+    {
+      "question": "高石市",
+      "answer": [
+        "たかいしし"
+      ]
+    },
+    {
+      "question": "越谷市",
+      "answer": [
+        "こしがやし"
+      ]
+    },
+    {
+      "question": "芦屋市",
+      "answer": [
+        "あしやし"
+      ]
+    },
+    {
+      "question": "鎌ヶ谷市",
+      "answer": [
+        "かまがやし"
+      ]
+    },
+    {
+      "question": "大阪狭山市",
+      "answer": [
+        "おおさかさやまし"
+      ]
+    },
+    {
+      "question": "上尾市",
+      "answer": [
+        "あげおし"
+      ]
+    },
+    {
+      "question": "西宮市",
+      "answer": [
+        "にしのみやし"
+      ]
+    },
+    {
+      "question": "海老名市",
+      "answer": [
+        "えびなし"
+      ]
+    },
+    {
+      "question": "池田市",
+      "answer": [
+        "いけだし"
+      ]
+    },
+    {
+      "question": "所沢市",
+      "answer": [
+        "ところざわし"
+      ]
+    },
+    {
+      "question": "岩倉市",
+      "answer": [
+        "いわくらし"
+      ]
+    },
+    {
+      "question": "宜野湾市",
+      "answer": [
+        "ぎのわんし"
+      ]
+    },
+    {
+      "question": "稲城市",
+      "answer": [
+        "いなぎし"
+      ]
+    },
+    {
+      "question": "羽曳野市",
+      "answer": [
+        "はびきのし"
+      ]
+    },
+    {
+      "question": "武蔵村山市",
+      "answer": [
+        "むさしむらやまし"
+      ]
+    },
+    {
+      "question": "流山市",
+      "answer": [
+        "ながれやまし"
+      ]
+    },
+    {
+      "question": "鎌倉市",
+      "answer": [
+        "かまくらし"
+      ]
+    },
+    {
+      "question": "北名古屋市",
+      "answer": [
+        "きたなごやし"
+      ]
+    },
+    {
+      "question": "八潮市",
+      "answer": [
+        "やしおし"
+      ]
+    },
+    {
+      "question": "三郷市",
+      "answer": [
+        "みさとし"
+      ]
+    },
+    {
+      "question": "清須市",
+      "answer": [
+        "きよすし"
+      ]
+    },
+    {
+      "question": "大和高田市",
+      "answer": [
+        "やまとたかだし"
+      ]
+    },
+    {
+      "question": "福岡市",
+      "answer": [
+        "ふくおかし"
+      ]
+    },
+    {
+      "question": "横須賀市",
+      "answer": [
+        "よこすかし"
+      ]
+    },
+    {
+      "question": "知立市",
+      "answer": [
+        "ちりゅうし"
+      ]
+    },
+    {
+      "question": "長岡京市",
+      "answer": [
+        "ながおかきょうし"
+      ]
+    },
+    {
+      "question": "鶴ヶ島市",
+      "answer": [
+        "つるがしまし"
+      ]
+    },
+    {
+      "question": "平塚市",
+      "answer": [
+        "ひらつかし"
+      ]
+    },
+    {
+      "question": "野々市市",
+      "answer": [
+        "ののいちし"
+      ]
+    },
+    {
+      "question": "尾張旭市",
+      "answer": [
+        "おわりあさひし"
+      ]
+    },
+    {
+      "question": "千代田区",
+      "answer": [
+        "ちよだく"
+      ]
+    },
+    {
+      "question": "綾瀬市",
+      "answer": [
+        "あやせし"
+      ]
+    },
+    {
+      "question": "八千代市",
+      "answer": [
+        "やちよし"
+      ]
+    },
+    {
+      "question": "春日部市",
+      "answer": [
+        "かすかべし"
+      ]
+    },
+    {
+      "question": "茨木市",
+      "answer": [
+        "いばらぎし"
+      ]
+    },
+    {
+      "question": "北本市",
+      "answer": [
+        "きたもとし"
+      ]
+    },
+    {
+      "question": "大野城市",
+      "answer": [
+        "おおのじょうし"
+      ]
+    },
+    {
+      "question": "千葉市",
+      "answer": [
+        "ちばし"
+      ]
+    },
+    {
+      "question": "柏市",
+      "answer": [
+        "かしわし"
+      ]
+    },
+    {
+      "question": "逗子市",
+      "answer": [
+        "ずしし"
+      ]
+    },
+    {
+      "question": "高槻市",
+      "answer": [
+        "たかつきし"
+      ]
+    },
+    {
+      "question": "高浜市",
+      "answer": [
+        "たかはまし"
+      ]
+    },
+    {
+      "question": "江南市",
+      "answer": [
+        "こうなんし"
+      ]
+    },
+    {
+      "question": "入間市",
+      "answer": [
+        "いるまし"
+      ]
+    },
+    {
+      "question": "一宮市",
+      "answer": [
+        "いちのみやし"
+      ]
+    },
+    {
+      "question": "塩竈市",
+      "answer": [
+        "しおがまし"
+      ]
+    },
+    {
+      "question": "春日井市",
+      "answer": [
+        "かすがいし"
+      ]
+    },
+    {
+      "question": "多賀城市",
+      "answer": [
+        "たがじょうし"
+      ]
+    },
+    {
+      "question": "狭山市",
+      "answer": [
+        "さやまし"
+      ]
+    },
+    {
+      "question": "橿原市",
+      "answer": [
+        "かしはらし"
+      ]
+    },
+    {
+      "question": "我孫子市",
+      "answer": [
+        "あびこし"
+      ]
+    },
+    {
+      "question": "富田林市",
+      "answer": [
+        "とんだばやしし"
+      ]
+    },
+    {
+      "question": "川越市",
+      "answer": [
+        "かわごえし"
+      ]
+    },
+    {
+      "question": "四条畷市",
+      "answer": [
+        "しじょうなわてし"
+      ]
+    },
+    {
+      "question": "交野市",
+      "answer": [
+        "かたのし"
+      ]
+    },
+    {
+      "question": "八王子市",
+      "answer": [
+        "はちおうじし"
+      ]
+    },
+    {
+      "question": "八幡市",
+      "answer": [
+        "やわたし"
+      ]
+    },
+    {
+      "question": "香芝市",
+      "answer": [
+        "かしばし"
+      ]
+    },
+    {
+      "question": "柏原市",
+      "answer": [
+        "かしわらし"
+      ]
+    },
+    {
+      "question": "豊明市",
+      "answer": [
+        "とよあけし"
+      ]
+    },
+    {
+      "question": "桶川市",
+      "answer": [
+        "おけがわし"
+      ]
+    },
+    {
+      "question": "川西市",
+      "answer": [
+        "かわにしし"
+      ]
+    },
+    {
+      "question": "刈谷市",
+      "answer": [
+        "かりやし"
+      ]
+    },
+    {
+      "question": "中間市",
+      "answer": [
+        "なかまし"
+      ]
+    },
+    {
+      "question": "宇治市",
+      "answer": [
+        "うじし"
+      ]
+    },
+    {
+      "question": "久喜市",
+      "answer": [
+        "くきし"
+      ]
+    },
+    {
+      "question": "岸和田市",
+      "answer": [
+        "きしわだし"
+      ]
+    },
+    {
+      "question": "神戸市",
+      "answer": [
+        "こうべし"
+      ]
+    },
+    {
+      "question": "豊見城市",
+      "answer": [
+        "とみぐすくし"
+      ]
+    },
+    {
+      "question": "高砂市",
+      "answer": [
+        "たかさごし"
+      ]
+    },
+    {
+      "question": "箕面市",
+      "answer": [
+        "みのおし"
+      ]
+    },
+    {
+      "question": "津島市",
+      "answer": [
+        "つしまし"
+      ]
+    },
+    {
+      "question": "焼津市",
+      "answer": [
+        "やいづし"
+      ]
+    },
+    {
+      "question": "沖縄市",
+      "answer": [
+        "おきなわし"
+      ]
+    },
+    {
+      "question": "熊本市",
+      "answer": [
+        "くまもとし"
+      ]
+    },
+    {
+      "question": "半田市",
+      "answer": [
+        "はんだし"
+      ]
+    },
+    {
+      "question": "四街道市",
+      "answer": [
+        "よつかいどうし"
+      ]
+    },
+    {
+      "question": "城陽市",
+      "answer": [
+        "じょうようし"
+      ]
+    },
+    {
+      "question": "大府市",
+      "answer": [
+        "おおぶし"
+      ]
+    },
+    {
+      "question": "東海市",
+      "answer": [
+        "とうかいし"
+      ]
+    },
+    {
+      "question": "坂戸市",
+      "answer": [
+        "さかどし"
+      ]
+    },
+    {
+      "question": "厚木市",
+      "answer": [
+        "あつぎし"
+      ]
+    },
+    {
+      "question": "小牧市",
+      "answer": [
+        "こまきし"
+      ]
+    },
+    {
+      "question": "蓮田市",
+      "answer": [
+        "はすだし"
+      ]
+    },
+    {
+      "question": "日進市",
+      "answer": [
+        "にっしんし"
+      ]
+    },
+    {
+      "question": "太宰府市",
+      "answer": [
+        "だざいふし"
+      ]
+    },
+    {
+      "question": "宝塚市",
+      "answer": [
+        "たからづかし"
+      ]
+    },
+    {
+      "question": "生駒市",
+      "answer": [
+        "いこまし"
+      ]
+    },
+    {
+      "question": "相模原市",
+      "answer": [
+        "さがみはらし"
+      ]
+    },
+    {
+      "question": "大和郡山市",
+      "answer": [
+        "やまとこおりやまし"
+      ]
+    },
+    {
+      "question": "和泉市",
+      "answer": [
+        "いずみし"
+      ]
+    },
+    {
+      "question": "貝塚市",
+      "answer": [
+        "かいづかし"
+      ]
+    },
+    {
+      "question": "安城市",
+      "answer": [
+        "あんじょうし"
+      ]
+    },
+    {
+      "question": "碧南市",
+      "answer": [
+        "へきなんし"
+      ]
+    },
+    {
+      "question": "岐阜市",
+      "answer": [
+        "ぎふし"
+      ]
+    },
+    {
+      "question": "北九州市",
+      "answer": [
+        "きたきゅうしゅうし"
+      ]
+    },
+    {
+      "question": "吉川市",
+      "answer": [
+        "よしかわし"
+      ]
+    },
+    {
+      "question": "加古川市",
+      "answer": [
+        "かこがわし"
+      ]
+    },
+    {
+      "question": "知多市",
+      "answer": [
+        "ちたし"
+      ]
+    },
+    {
+      "question": "瑞穂市",
+      "answer": [
+        "みずほし"
+      ]
+    },
+    {
+      "question": "草津市",
+      "answer": [
+        "くさつし"
+      ]
+    },
+    {
+      "question": "伊勢原市",
+      "answer": [
+        "いせはらし"
+      ]
+    },
+    {
+      "question": "泉佐野市",
+      "answer": [
+        "いずみさのし"
+      ]
+    },
+    {
+      "question": "三島市",
+      "answer": [
+        "みしまし"
+      ]
+    },
+    {
+      "question": "京都市",
+      "answer": [
+        "きょうとし"
+      ]
+    },
+    {
+      "question": "和歌山市",
+      "answer": [
+        "わかやまし"
+      ]
+    },
+    {
+      "question": "鴻巣市",
+      "answer": [
+        "こうのすし"
+      ]
+    },
+    {
+      "question": "小田原市",
+      "answer": [
+        "おだわらし"
+      ]
+    },
+    {
+      "question": "稲沢市",
+      "answer": [
+        "いなざわし"
+      ]
+    },
+    {
+      "question": "札幌市",
+      "answer": [
+        "さっぽろし"
+      ]
+    },
+    {
+      "question": "佐倉市",
+      "answer": [
+        "さくらし"
+      ]
+    },
+    {
+      "question": "各務原市",
+      "answer": [
+        "かかみがはらし"
+      ]
+    },
+    {
+      "question": "秦野市",
+      "answer": [
+        "はだのし"
+      ]
+    },
+    {
+      "question": "守谷市",
+      "answer": [
+        "もりやし"
+      ]
+    },
+    {
+      "question": "白井市",
+      "answer": [
+        "しらいし"
+      ]
+    },
+    {
+      "question": "阪南市",
+      "answer": [
+        "はんなんし"
+      ]
+    },
+    {
+      "question": "幸手市",
+      "answer": [
+        "さってし"
+      ]
+    },
+    {
+      "question": "取手市",
+      "answer": [
+        "とりでし"
+      ]
+    },
+    {
+      "question": "大牟田市",
+      "answer": [
+        "おおむたし"
+      ]
+    },
+    {
+      "question": "三浦市",
+      "answer": [
+        "みうらし"
+      ]
+    },
+    {
+      "question": "京田辺市",
+      "answer": [
+        "きょうたなべし"
+      ]
+    },
+    {
+      "question": "四日市市",
+      "answer": [
+        "よっかいちし"
+      ]
+    },
+    {
+      "question": "野田市",
+      "answer": [
+        "のだし"
+      ]
+    },
+    {
+      "question": "伊勢崎市",
+      "answer": [
+        "いせさきし"
+      ]
+    },
+    {
+      "question": "蒲郡市",
+      "answer": [
+        "がまごおりし"
+      ]
+    },
+    {
+      "question": "豊橋市",
+      "answer": [
+        "とよはしし"
+      ]
+    },
+    {
+      "question": "西尾市",
+      "answer": [
+        "にしおし"
+      ]
+    },
+    {
+      "question": "徳島市",
+      "answer": [
+        "とくしまし"
+      ]
+    },
+    {
+      "question": "東松山市",
+      "answer": [
+        "ひがしまつやまし"
+      ]
+    },
+    {
+      "question": "青梅市",
+      "answer": [
+        "おうめし"
+      ]
+    },
+    {
+      "question": "古賀市",
+      "answer": [
+        "こがし"
+      ]
+    },
+    {
+      "question": "守山市",
+      "answer": [
+        "もりやまし"
+      ]
+    },
+    {
+      "question": "岩出市",
+      "answer": [
+        "いわでし"
+      ]
+    },
+    {
+      "question": "牛久市",
+      "answer": [
+        "うしくし"
+      ]
+    },
+    {
+      "question": "泉南市",
+      "answer": [
+        "せんなんし"
+      ]
+    },
+    {
+      "question": "倉敷市",
+      "answer": [
+        "くらしきし"
+      ]
+    },
+    {
+      "question": "久留米市",
+      "answer": [
+        "くるめし"
+      ]
+    },
+    {
+      "question": "奈良市",
+      "answer": [
+        "ならし"
+      ]
+    },
+    {
+      "question": "前橋市",
+      "answer": [
+        "まえばしし"
+      ]
+    },
+    {
+      "question": "仙台市",
+      "answer": [
+        "せんだいし"
+      ]
+    },
+    {
+      "question": "行田市",
+      "answer": [
+        "ぎょうだし"
+      ]
+    },
+    {
+      "question": "館林市",
+      "answer": [
+        "たてばやしし"
+      ]
+    },
+    {
+      "question": "広島市",
+      "answer": [
+        "ひろしまし"
+      ]
+    },
+    {
+      "question": "小郡市",
+      "answer": [
+        "おごおりし"
+      ]
+    },
+    {
+      "question": "熊谷市",
+      "answer": [
+        "くまがやし"
+      ]
+    },
+    {
+      "question": "土浦市",
+      "answer": [
+        "つちうらし"
+      ]
+    },
+    {
+      "question": "多治見市",
+      "answer": [
+        "たじみし"
+      ]
+    },
+    {
+      "question": "羽島市",
+      "answer": [
+        "はしまし"
+      ]
+    },
+    {
+      "question": "境港市",
+      "answer": [
+        "さかいみなとし"
+      ]
+    },
+    {
+      "question": "宇都宮市",
+      "answer": [
+        "うつのみやし"
+      ]
+    },
+    {
+      "question": "水戸市",
+      "answer": [
+        "みとし"
+      ]
+    },
+    {
+      "question": "太田市",
+      "answer": [
+        "おおたし"
+      ]
+    },
+    {
+      "question": "松山市",
+      "answer": [
+        "まつやまし"
+      ]
+    },
+    {
+      "question": "糸満市",
+      "answer": [
+        "いとまんし"
+      ]
+    },
+    {
+      "question": "瀬戸市",
+      "answer": [
+        "せとし"
+      ]
+    },
+    {
+      "question": "栗東市",
+      "answer": [
+        "りっとうし"
+      ]
+    },
+    {
+      "question": "古河市",
+      "answer": [
+        "ふるかわし"
+      ]
+    },
+    {
+      "question": "日高市",
+      "answer": [
+        "ひだかし"
+      ]
+    },
+    {
+      "question": "筑後市",
+      "answer": [
+        "ちくごし"
+      ]
+    },
+    {
+      "question": "室蘭市",
+      "answer": [
+        "むろらんし"
+      ]
+    },
+    {
+      "question": "加須市",
+      "answer": [
+        "かぞし"
+      ]
+    },
+    {
+      "question": "大川市",
+      "answer": [
+        "おおかわし"
+      ]
+    },
+    {
+      "question": "可児市",
+      "answer": [
+        "かにし"
+      ]
+    },
+    {
+      "question": "米子市",
+      "answer": [
+        "よなごし"
+      ]
+    },
+    {
+      "question": "印西市",
+      "answer": [
+        "いんざいし"
+      ]
+    },
+    {
+      "question": "筑紫野市",
+      "answer": [
+        "ちくしのし"
+      ]
+    },
+    {
+      "question": "新潟市",
+      "answer": [
+        "にいがたし"
+      ]
+    },
+    {
+      "question": "高松市",
+      "answer": [
+        "たかまつし"
+      ]
+    },
+    {
+      "question": "高知市",
+      "answer": [
+        "こうちし"
+      ]
+    },
+    {
+      "question": "富士市",
+      "answer": [
+        "ふじし"
+      ]
+    },
+    {
+      "question": "鹿児島市",
+      "answer": [
+        "かごしまし"
+      ]
+    },
+    {
+      "question": "沼津市",
+      "answer": [
+        "ぬまづし"
+      ]
+    },
+    {
+      "question": "長崎市",
+      "answer": [
+        "ながさきし"
+      ]
+    },
+    {
+      "question": "豊川市",
+      "answer": [
+        "とよかわし"
+      ]
+    },
+    {
+      "question": "深谷市",
+      "answer": [
+        "ふかやし"
+      ]
+    },
+    {
+      "question": "磐田市",
+      "answer": [
+        "いわたし"
+      ]
+    },
+    {
+      "question": "福津市",
+      "answer": [
+        "ふくつし"
+      ]
+    },
+    {
+      "question": "河内長野市",
+      "answer": [
+        "かわちながのし"
+      ]
+    },
+    {
+      "question": "葛城市",
+      "answer": [
+        "かつらぎし"
+      ]
+    },
+    {
+      "question": "桑名市",
+      "answer": [
+        "くわなし"
+      ]
+    },
+    {
+      "question": "甲斐市",
+      "answer": [
+        "かいし"
+      ]
+    },
+    {
+      "question": "別府市",
+      "answer": [
+        "べっぷし"
+      ]
+    },
+    {
+      "question": "龍ヶ崎市",
+      "answer": [
+        "りゅうがさきし"
+      ]
+    },
+    {
+      "question": "鈴鹿市",
+      "answer": [
+        "すずかし"
+      ]
+    },
+    {
+      "question": "八街市",
+      "answer": [
+        "やまちし"
+      ]
+    },
+    {
+      "question": "合志市",
+      "answer": [
+        "こうしし"
+      ]
+    },
+    {
+      "question": "犬山市",
+      "answer": [
+        "いぬやまし"
+      ]
+    },
+    {
+      "question": "姫路市",
+      "answer": [
+        "ひめじし"
+      ]
+    },
+    {
+      "question": "行橋市",
+      "answer": [
+        "ゆくはしし"
+      ]
+    },
+    {
+      "question": "中央市",
+      "answer": [
+        "ちゅうおうし"
+      ]
+    },
+    {
+      "question": "丸亀市",
+      "answer": [
+        "まるがめし"
+      ]
+    },
+    {
+      "question": "愛西市",
+      "answer": [
+        "あいさいし"
+      ]
+    },
+    {
+      "question": "金沢市",
+      "answer": [
+        "かなざわし"
+      ]
+    },
+    {
+      "question": "荒尾市",
+      "answer": [
+        "あらおし"
+      ]
+    },
+    {
+      "question": "羽生市",
+      "answer": [
+        "はにゅうし"
+      ]
+    },
+    {
+      "question": "岡崎市",
+      "answer": [
+        "おかざきし"
+      ]
+    },
+    {
+      "question": "富里市",
+      "answer": [
+        "とみさとし"
+      ]
+    },
+    {
+      "question": "常滑市",
+      "answer": [
+        "とこなめし"
+      ]
+    },
+    {
+      "question": "柳川市",
+      "answer": [
+        "やながわし"
+      ]
+    },
+    {
+      "question": "小山市",
+      "answer": [
+        "おやまし"
+      ]
+    },
+    {
+      "question": "甲府市",
+      "answer": [
+        "こうふし"
+      ]
+    },
+    {
+      "question": "大分市",
+      "answer": [
+        "おおいたし"
+      ]
+    },
+    {
+      "question": "鳥栖市",
+      "answer": [
+        "とすし"
+      ]
+    },
+    {
+      "question": "茂原市",
+      "answer": [
+        "もばらし"
+      ]
+    },
+    {
+      "question": "直方市",
+      "answer": [
+        "のおがたし"
+      ]
+    },
+    {
+      "question": "田川市",
+      "answer": [
+        "たがわし"
+      ]
+    },
+    {
+      "question": "藤枝市",
+      "answer": [
+        "ふじえだし"
+      ]
+    },
+    {
+      "question": "小松島市",
+      "answer": [
+        "こまつしまし"
+      ]
+    },
+    {
+      "question": "本庄市",
+      "answer": [
+        "ほんじょうし"
+      ]
+    },
+    {
+      "question": "木更津市",
+      "answer": [
+        "きさらづし"
+      ]
+    },
+    {
+      "question": "福山市",
+      "answer": [
+        "ふくやまし"
+      ]
+    },
+    {
+      "question": "岡山市",
+      "answer": [
+        "おかやまし"
+      ]
+    },
+    {
+      "question": "足利市",
+      "answer": [
+        "あしかがし"
+      ]
+    },
+    {
+      "question": "弥富市",
+      "answer": [
+        "やとみし"
+      ]
+    },
+    {
+      "question": "善通寺市",
+      "answer": [
+        "ぜんつうじし"
+      ]
+    },
+    {
+      "question": "日立市",
+      "answer": [
+        "ひたちし"
+      ]
+    },
+    {
+      "question": "射水市",
+      "answer": [
+        "いみずし"
+      ]
+    },
+    {
+      "question": "銚子市",
+      "answer": [
+        "ちょうしし"
+      ]
+    },
+    {
+      "question": "高岡市",
+      "answer": [
+        "たかおかし"
+      ]
+    },
+    {
+      "question": "高崎市",
+      "answer": [
+        "たかさきし"
+      ]
+    },
+    {
+      "question": "有田市",
+      "answer": [
+        "ありたし"
+      ]
+    },
+    {
+      "question": "天理市",
+      "answer": [
+        "てんりし"
+      ]
+    },
+    {
+      "question": "南城市",
+      "answer": [
+        "なんじょうし"
+      ]
+    },
+    {
+      "question": "湖西市",
+      "answer": [
+        "こせいし"
+      ]
+    },
+    {
+      "question": "下野市",
+      "answer": [
+        "しもつけし"
+      ]
+    },
+    {
+      "question": "鯖江市",
+      "answer": [
+        "さばえし"
+      ]
+    },
+    {
+      "question": "宗像市",
+      "answer": [
+        "むなかたし"
+      ]
+    },
+    {
+      "question": "八戸市",
+      "answer": [
+        "はちのへし"
+      ]
+    },
+    {
+      "question": "結城市",
+      "answer": [
+        "ゆうきし"
+      ]
+    },
+    {
+      "question": "大垣市",
+      "answer": [
+        "おおがきし"
+      ]
+    },
+    {
+      "question": "木津川市",
+      "answer": [
+        "きづがわし"
+      ]
+    },
+    {
+      "question": "袋井市",
+      "answer": [
+        "ふくろいし"
+      ]
+    },
+    {
+      "question": "湖南市",
+      "answer": [
+        "こなんし"
+      ]
+    },
+    {
+      "question": "市原市",
+      "answer": [
+        "いちはらし"
+      ]
+    },
+    {
+      "question": "燕市",
+      "answer": [
+        "つばめし"
+      ]
+    },
+    {
+      "question": "岩沼市",
+      "answer": [
+        "いわぬまし"
+      ]
+    },
+    {
+      "question": "つくば市",
+      "answer": [
+        "つくばし"
+      ]
+    },
+    {
+      "question": "美濃加茂市",
+      "answer": [
+        "みのかもし"
+      ]
+    },
+    {
+      "question": "大村市",
+      "answer": [
+        "おおむらし"
+      ]
+    },
+    {
+      "question": "大津市",
+      "answer": [
+        "おおつし"
+      ]
+    },
+    {
+      "question": "鹿嶋市",
+      "answer": [
+        "かしまし"
+      ]
+    },
+    {
+      "question": "佐世保市",
+      "answer": [
+        "させぼし"
+      ]
+    },
+    {
+      "question": "呉市",
+      "answer": [
+        "くれし"
+      ]
+    },
+    {
+      "question": "名取市",
+      "answer": [
+        "なとりし"
+      ]
+    },
+    {
+      "question": "東金市",
+      "answer": [
+        "とうがねし"
+      ]
+    },
+    {
+      "question": "山形市",
+      "answer": [
+        "やまがたし"
+      ]
+    },
+    {
+      "question": "栃木市",
+      "answer": [
+        "とちぎし"
+      ]
+    },
+    {
+      "question": "熱海市",
+      "answer": [
+        "あたみし"
+      ]
+    },
+    {
+      "question": "江別市",
+      "answer": [
+        "えべつし"
+      ]
+    },
+    {
+      "question": "伊勢市",
+      "answer": [
+        "いせし"
+      ]
+    },
+    {
+      "question": "神栖市",
+      "answer": [
+        "かみすし"
+      ]
+    },
+    {
+      "question": "玉野市",
+      "answer": [
+        "たまのし"
+      ]
+    },
+    {
+      "question": "岡谷市",
+      "answer": [
+        "おかやし"
+      ]
+    },
+    {
+      "question": "袖ヶ浦市",
+      "answer": [
+        "そでがうらし"
+      ]
+    },
+    {
+      "question": "名張市",
+      "answer": [
+        "なばりし"
+      ]
+    },
+    {
+      "question": "宮崎市",
+      "answer": [
+        "みやざきし"
+      ]
+    },
+    {
+      "question": "滑川市",
+      "answer": [
+        "なめりかわし"
+      ]
+    },
+    {
+      "question": "飯塚市",
+      "answer": [
+        "いいづかし"
+      ]
+    },
+    {
+      "question": "防府市",
+      "answer": [
+        "ほうふし"
+      ]
+    },
+    {
+      "question": "野洲市",
+      "answer": [
+        "やすし"
+      ]
+    },
+    {
+      "question": "桜井市",
+      "answer": [
+        "さくらいし"
+      ]
+    },
+    {
+      "question": "宇部市",
+      "answer": [
+        "うべし"
+      ]
+    },
+    {
+      "question": "坂出市",
+      "answer": [
+        "さかいでし"
+      ]
+    },
+    {
+      "question": "下松市",
+      "answer": [
+        "しもまつし"
+      ]
+    },
+    {
+      "question": "御坊市",
+      "answer": [
+        "ごぼうし"
+      ]
+    },
+    {
+      "question": "真岡市",
+      "answer": [
+        "しんおかし"
+      ]
+    },
+    {
+      "question": "島原市",
+      "answer": [
+        "しまばらし"
+      ]
+    },
+    {
+      "question": "成田市",
+      "answer": [
+        "なりたし"
+      ]
+    },
+    {
+      "question": "伊東市",
+      "answer": [
+        "いとうし"
+      ]
+    },
+    {
+      "question": "光市",
+      "answer": [
+        "ひかりし"
+      ]
+    },
+    {
+      "question": "南足柄市",
+      "answer": [
+        "みなみあしがらし"
+      ]
+    },
+    {
+      "question": "能美市",
+      "answer": [
+        "のみし"
+      ]
+    },
+    {
+      "question": "下妻市",
+      "answer": [
+        "しもつまし"
+      ]
+    },
+    {
+      "question": "彦根市",
+      "answer": [
+        "ひこねし"
+      ]
+    },
+    {
+      "question": "天童市",
+      "answer": [
+        "てんどうし"
+      ]
+    },
+    {
+      "question": "那珂市",
+      "answer": [
+        "なかし"
+      ]
+    },
+    {
+      "question": "浅口市",
+      "answer": [
+        "あさくちし"
+      ]
+    },
+    {
+      "question": "佐賀市",
+      "answer": [
+        "さがし"
+      ]
+    },
+    {
+      "question": "海南市",
+      "answer": [
+        "かいなんし"
+      ]
+    },
+    {
+      "question": "観音寺市",
+      "answer": [
+        "かんのんじし"
+      ]
+    },
+    {
+      "question": "見附市",
+      "answer": [
+        "みつけし"
+      ]
+    },
+    {
+      "question": "三田市",
+      "answer": [
+        "さんだし"
+      ]
+    },
+    {
+      "question": "筑西市",
+      "answer": [
+        "ちくせいし"
+      ]
+    },
+    {
+      "question": "旭市",
+      "answer": [
+        "あさひし"
+      ]
+    },
+    {
+      "question": "浜松市",
+      "answer": [
+        "はままつし"
+      ]
+    },
+    {
+      "question": "小樽市",
+      "answer": [
+        "おたるし"
+      ]
+    },
+    {
+      "question": "小野市",
+      "answer": [
+        "おのし"
+      ]
+    },
+    {
+      "question": "常総市",
+      "answer": [
+        "じょうそうし"
+      ]
+    },
+    {
+      "question": "御前崎市",
+      "answer": [
+        "おまえざきし"
+      ]
+    },
+    {
+      "question": "土岐市",
+      "answer": [
+        "ときし"
+      ]
+    },
+    {
+      "question": "千曲市",
+      "answer": [
+        "ちくまし"
+      ]
+    },
+    {
+      "question": "新居浜市",
+      "answer": [
+        "にいはまし"
+      ]
+    },
+    {
+      "question": "伊豆の国市",
+      "answer": [
+        "いずのくにし"
+      ]
+    },
+    {
+      "question": "尾道市",
+      "answer": [
+        "おのみちし"
+      ]
+    },
+    {
+      "question": "橋本市",
+      "answer": [
+        "はしもとし"
+      ]
+    },
+    {
+      "question": "長野市",
+      "answer": [
+        "ながのし"
+      ]
+    },
+    {
+      "question": "御所市",
+      "answer": [
+        "ごせし"
+      ]
+    },
+    {
+      "question": "静岡市",
+      "answer": [
+        "しずおかし"
+      ]
+    },
+    {
+      "question": "宇土市",
+      "answer": [
+        "うとし"
+      ]
+    },
+    {
+      "question": "北広島市",
+      "answer": [
+        "きたひろしまし"
+      ]
+    },
+    {
+      "question": "菊川市",
+      "answer": [
+        "きくかわし"
+      ]
+    },
+    {
+      "question": "福井市",
+      "answer": [
+        "ふくいし"
+      ]
+    },
+    {
+      "question": "潮来市",
+      "answer": [
+        "いたこし"
+      ]
+    },
+    {
+      "question": "山陽小野田市",
+      "answer": [
+        "さんようおのだし"
+      ]
+    },
+    {
+      "question": "島田市",
+      "answer": [
+        "しまだし"
+      ]
+    },
+    {
+      "question": "諏訪市",
+      "answer": [
+        "すわし"
+      ]
+    },
+    {
+      "question": "小城市",
+      "answer": [
+        "おぎし"
+      ]
+    },
+    {
+      "question": "三木市",
+      "answer": [
+        "みきし"
+      ]
+    },
+    {
+      "question": "旭川市",
+      "answer": [
+        "あさひかわし"
+      ]
+    },
+    {
+      "question": "糸島市",
+      "answer": [
+        "いとしまし"
+      ]
+    },
+    {
+      "question": "坂東市",
+      "answer": [
+        "ばんどうし"
+      ]
+    },
+    {
+      "question": "玉名市",
+      "answer": [
+        "たまなし"
+      ]
+    },
+    {
+      "question": "鳴門市",
+      "answer": [
+        "なるとし"
+      ]
+    },
+    {
+      "question": "小諸市",
+      "answer": [
+        "こもろし"
+      ]
+    },
+    {
+      "question": "豊田市",
+      "answer": [
+        "とよたし"
+      ]
+    },
+    {
+      "question": "諫早市",
+      "answer": [
+        "いさはやし"
+      ]
+    },
+    {
+      "question": "桐生市",
+      "answer": [
+        "きりゅうし"
+      ]
+    },
+    {
+      "question": "館山市",
+      "answer": [
+        "たてやまし"
+      ]
+    },
+    {
+      "question": "御殿場市",
+      "answer": [
+        "ごてんばし"
+      ]
+    },
+    {
+      "question": "近江八幡市",
+      "answer": [
+        "おうみはちまんし"
+      ]
+    },
+    {
+      "question": "郡山市",
+      "answer": [
+        "こおりやまし"
+      ]
+    },
+    {
+      "question": "掛川市",
+      "answer": [
+        "かけがわし"
+      ]
+    },
+    {
+      "question": "牧之原市",
+      "answer": [
+        "まきのはらし"
+      ]
+    },
+    {
+      "question": "坂井市",
+      "answer": [
+        "さかいし"
+      ]
+    },
+    {
+      "question": "飯能市",
+      "answer": [
+        "はんのうし"
+      ]
+    },
+    {
+      "question": "富岡市",
+      "answer": [
+        "とみおかし"
+      ]
+    },
+    {
+      "question": "八女市",
+      "answer": [
+        "やめし"
+      ]
+    },
+    {
+      "question": "富士吉田市",
+      "answer": [
+        "ふじよしだし"
+      ]
+    },
+    {
+      "question": "東松島市",
+      "answer": [
+        "ひがしまつしまし"
+      ]
+    },
+    {
+      "question": "亀岡市",
+      "answer": [
+        "かめおかし"
+      ]
+    },
+    {
+      "question": "中野市",
+      "answer": [
+        "なかのし"
+      ]
+    },
+    {
+      "question": "笠岡市",
+      "answer": [
+        "かさおかし"
+      ]
+    },
+    {
+      "question": "函館市",
+      "answer": [
+        "はこだてし"
+      ]
+    },
+    {
+      "question": "今治市",
+      "answer": [
+        "いまばりし"
+      ]
+    },
+    {
+      "question": "津市",
+      "answer": [
+        "つし"
+      ]
+    },
+    {
+      "question": "匝瑳市",
+      "answer": [
+        "そうさし"
+      ]
+    },
+    {
+      "question": "赤穂市",
+      "answer": [
+        "あこうし"
+      ]
+    },
+    {
+      "question": "南国市",
+      "answer": [
+        "なんこくし"
+      ]
+    },
+    {
+      "question": "下関市",
+      "answer": [
+        "しものせきし"
+      ]
+    },
+    {
+      "question": "山武市",
+      "answer": [
+        "さんむし"
+      ]
+    },
+    {
+      "question": "砺波市",
+      "answer": [
+        "となみし"
+      ]
+    },
+    {
+      "question": "福島市",
+      "answer": [
+        "ふくしまし"
+      ]
+    },
+    {
+      "question": "富士宮市",
+      "answer": [
+        "ふじのみやし"
+      ]
+    },
+    {
+      "question": "裾野市",
+      "answer": [
+        "すそのし"
+      ]
+    },
+    {
+      "question": "藤岡市",
+      "answer": [
+        "ふじおかし"
+      ]
+    },
+    {
+      "question": "越前市",
+      "answer": [
+        "えちぜんし"
+      ]
+    },
+    {
+      "question": "大竹市",
+      "answer": [
+        "おおたけし"
+      ]
+    },
+    {
+      "question": "石岡市",
+      "answer": [
+        "いしおかし"
+      ]
+    },
+    {
+      "question": "小美玉市",
+      "answer": [
+        "おみたまし"
+      ]
+    },
+    {
+      "question": "青森市",
+      "answer": [
+        "あおもりし"
+      ]
+    },
+    {
+      "question": "滝川市",
+      "answer": [
+        "たきがわし"
+      ]
+    },
+    {
+      "question": "松江市",
+      "answer": [
+        "まつえし"
+      ]
+    },
+    {
+      "question": "秋田市",
+      "answer": [
+        "あきたし"
+      ]
+    },
+    {
+      "question": "潟上市",
+      "answer": [
+        "かたがみし"
+      ]
+    },
+    {
+      "question": "本宮市",
+      "answer": [
+        "もとみやし"
+      ]
+    },
+    {
+      "question": "渋川市",
+      "answer": [
+        "しぶかわし"
+      ]
+    },
+    {
+      "question": "三沢市",
+      "answer": [
+        "みさわし"
+      ]
+    },
+    {
+      "question": "弘前市",
+      "answer": [
+        "ひろさきし"
+      ]
+    },
+    {
+      "question": "須坂市",
+      "answer": [
+        "すざかし"
+      ]
+    },
+    {
+      "question": "田原市",
+      "answer": [
+        "たはらし"
+      ]
+    },
+    {
+      "question": "相生市",
+      "answer": [
+        "あいおいし"
+      ]
+    },
+    {
+      "question": "笛吹市",
+      "answer": [
+        "ふえふきし"
+      ]
+    },
+    {
+      "question": "佐野市",
+      "answer": [
+        "さのし"
+      ]
+    },
+    {
+      "question": "さぬき市",
+      "answer": [
+        "さぬきし"
+      ]
+    },
+    {
+      "question": "海津市",
+      "answer": [
+        "かいづし"
+      ]
+    },
+    {
+      "question": "富山市",
+      "answer": [
+        "とやまし"
+      ]
+    },
+    {
+      "question": "会津若松市",
+      "answer": [
+        "あいづわかまつし"
+      ]
+    },
+    {
+      "question": "盛岡市",
+      "answer": [
+        "もりおかし"
+      ]
+    },
+    {
+      "question": "長浜市",
+      "answer": [
+        "ながはまし"
+      ]
+    },
+    {
+      "question": "笠間市",
+      "answer": [
+        "かさまし"
+      ]
+    },
+    {
+      "question": "長岡市",
+      "answer": [
+        "ながおかし"
+      ]
+    },
+    {
+      "question": "宇城市",
+      "answer": [
+        "うきし"
+      ]
+    },
+    {
+      "question": "嘉麻市",
+      "answer": [
+        "かまし"
+      ]
+    },
+    {
+      "question": "西脇市",
+      "answer": [
+        "にしわきし"
+      ]
+    },
+    {
+      "question": "枕崎市",
+      "answer": [
+        "まくらざきし"
+      ]
+    },
+    {
+      "question": "香取市",
+      "answer": [
+        "かとりし"
+      ]
+    },
+    {
+      "question": "土佐市",
+      "answer": [
+        "とさし"
+      ]
+    },
+    {
+      "question": "姶良市",
+      "answer": [
+        "あいらし"
+      ]
+    },
+    {
+      "question": "加西市",
+      "answer": [
+        "かさいし"
+      ]
+    },
+    {
+      "question": "志摩市",
+      "answer": [
+        "しまし"
+      ]
+    },
+    {
+      "question": "総社市",
+      "answer": [
+        "そうしゃし"
+      ]
+    },
+    {
+      "question": "三豊市",
+      "answer": [
+        "みとよし"
+      ]
+    },
+    {
+      "question": "吉野川市",
+      "answer": [
+        "よしのがわし"
+      ]
+    },
+    {
+      "question": "寒河江市",
+      "answer": [
+        "さがえし"
+      ]
+    },
+    {
+      "question": "苫小牧市",
+      "answer": [
+        "とまこまいし"
+      ]
+    },
+    {
+      "question": "南島原市",
+      "answer": [
+        "みなみしまばらし"
+      ]
+    },
+    {
+      "question": "瀬戸内市",
+      "answer": [
+        "せとうちし"
+      ]
+    },
+    {
+      "question": "指宿市",
+      "answer": [
+        "いぶすきし"
+      ]
+    },
+    {
+      "question": "滝沢市",
+      "answer": [
+        "たきざわし"
+      ]
+    },
+    {
+      "question": "東近江市",
+      "answer": [
+        "ひがしおうみし"
+      ]
+    },
+    {
+      "question": "八幡浜市",
+      "answer": [
+        "やわたはまし"
+      ]
+    },
+    {
+      "question": "東広島市",
+      "answer": [
+        "ひがしひろしまし"
+      ]
+    },
+    {
+      "question": "石巻市",
+      "answer": [
+        "いしのまきし"
+      ]
+    },
+    {
+      "question": "小松市",
+      "answer": [
+        "こまつし"
+      ]
+    },
+    {
+      "question": "紀の川市",
+      "answer": [
+        "きのかわし"
+      ]
+    },
+    {
+      "question": "安曇野市",
+      "answer": [
+        "あづみのし"
+      ]
+    },
+    {
+      "question": "上田市",
+      "answer": [
+        "うえだし"
+      ]
+    },
+    {
+      "question": "羽咋市",
+      "answer": [
+        "はくいし"
+      ]
+    },
+    {
+      "question": "須賀川市",
+      "answer": [
+        "すかがわし"
+      ]
+    },
+    {
+      "question": "いちき串木野市",
+      "answer": [
+        "いちきくしきのし"
+      ]
+    },
+    {
+      "question": "気仙沼市",
+      "answer": [
+        "けせんぬまし"
+      ]
+    },
+    {
+      "question": "江田島市",
+      "answer": [
+        "えたじまし"
+      ]
+    },
+    {
+      "question": "君津市",
+      "answer": [
+        "きみつし"
+      ]
+    },
+    {
+      "question": "鹿島市",
+      "answer": [
+        "かしまし"
+      ]
+    },
+    {
+      "question": "東御市",
+      "answer": [
+        "とうみし"
+      ]
+    },
+    {
+      "question": "名護市",
+      "answer": [
+        "なごし"
+      ]
+    },
+    {
+      "question": "阿南市",
+      "answer": [
+        "あなんし"
+      ]
+    },
+    {
+      "question": "宮古島市",
+      "answer": [
+        "みやこじまし"
+      ]
+    },
+    {
+      "question": "南アルプス市",
+      "answer": [
+        "みなみアルプスし"
+      ]
+    },
+    {
+      "question": "敦賀市",
+      "answer": [
+        "つるがし"
+      ]
+    },
+    {
+      "question": "帯広市",
+      "answer": [
+        "おびひろし"
+      ]
+    },
+    {
+      "question": "松阪市",
+      "answer": [
+        "まつさかし"
+      ]
+    },
+    {
+      "question": "稲敷市",
+      "answer": [
+        "いなしきし"
+      ]
+    },
+    {
+      "question": "香南市",
+      "answer": [
+        "こうなんし"
+      ]
+    },
+    {
+      "question": "出雲市",
+      "answer": [
+        "いずもし"
+      ]
+    },
+    {
+      "question": "神埼市",
+      "answer": [
+        "かんざきし"
+      ]
+    },
+    {
+      "question": "洲本市",
+      "answer": [
+        "すもとし"
+      ]
+    },
+    {
+      "question": "唐津市",
+      "answer": [
+        "からつし"
+      ]
+    },
+    {
+      "question": "桜川市",
+      "answer": [
+        "さくらがわし"
+      ]
+    },
+    {
+      "question": "舞鶴市",
+      "answer": [
+        "まいづるし"
+      ]
+    },
+    {
+      "question": "亀山市",
+      "answer": [
+        "かめやまし"
+      ]
+    },
+    {
+      "question": "山口市",
+      "answer": [
+        "やまぐちし"
+      ]
+    },
+    {
+      "question": "鳥取市",
+      "answer": [
+        "とっとりし"
+      ]
+    },
+    {
+      "question": "淡路市",
+      "answer": [
+        "あわじし"
+      ]
+    },
+    {
+      "question": "北茨城市",
+      "answer": [
+        "きたいばらきし"
+      ]
+    },
+    {
+      "question": "武雄市",
+      "answer": [
+        "たけおし"
+      ]
+    },
+    {
+      "question": "都城市",
+      "answer": [
+        "みやこのじょうし"
+      ]
+    },
+    {
+      "question": "津久見市",
+      "answer": [
+        "つくみし"
+      ]
+    },
+    {
+      "question": "伊達市",
+      "answer": [
+        "だてし"
+      ]
+    },
+    {
+      "question": "加東市",
+      "answer": [
+        "かとうし"
+      ]
+    },
+    {
+      "question": "小千谷市",
+      "answer": [
+        "おじやし"
+      ]
+    },
+    {
+      "question": "柳井市",
+      "answer": [
+        "やないし"
+      ]
+    },
+    {
+      "question": "竹原市",
+      "answer": [
+        "たけはらし"
+      ]
+    },
+    {
+      "question": "鉾田市",
+      "answer": [
+        "ほこたし"
+      ]
+    },
+    {
+      "question": "豊前市",
+      "answer": [
+        "ぶぜんし"
+      ]
+    },
+    {
+      "question": "松本市",
+      "answer": [
+        "まつもとし"
+      ]
+    },
+    {
+      "question": "上天草市",
+      "answer": [
+        "かみあまくさし"
+      ]
+    },
+    {
+      "question": "下田市",
+      "answer": [
+        "しもだし"
+      ]
+    },
+    {
+      "question": "小矢部市",
+      "answer": [
+        "おやべし"
+      ]
+    },
+    {
+      "question": "登別市",
+      "answer": [
+        "のぼりべつし"
+      ]
+    },
+    {
+      "question": "加賀市",
+      "answer": [
+        "かがし"
+      ]
+    },
+    {
+      "question": "阿賀野市",
+      "answer": [
+        "あがのし"
+      ]
+    },
+    {
+      "question": "三条市",
+      "answer": [
+        "さんじょうし"
+      ]
+    },
+    {
+      "question": "富津市",
+      "answer": [
+        "ふっつし"
+      ]
+    },
+    {
+      "question": "砂川市",
+      "answer": [
+        "すながわし"
+      ]
+    },
+    {
+      "question": "瑞浪市",
+      "answer": [
+        "みずなみし"
+      ]
+    },
+    {
+      "question": "鹿屋市",
+      "answer": [
+        "かのやし"
+      ]
+    },
+    {
+      "question": "佐久市",
+      "answer": [
+        "さくし"
+      ]
+    },
+    {
+      "question": "朝倉市",
+      "answer": [
+        "あさくらし"
+      ]
+    },
+    {
+      "question": "廿日市市",
+      "answer": [
+        "はつかいちし"
+      ]
+    },
+    {
+      "question": "行方市",
+      "answer": [
+        "ゆくえし"
+      ]
+    },
+    {
+      "question": "雲仙市",
+      "answer": [
+        "うんぜんし"
+      ]
+    },
+    {
+      "question": "塩尻市",
+      "answer": [
+        "しおじりし"
+      ]
+    },
+    {
+      "question": "嬉野市",
+      "answer": [
+        "うれしのし"
+      ]
+    },
+    {
+      "question": "恵庭市",
+      "answer": [
+        "えにわし"
+      ]
+    },
+    {
+      "question": "韮崎市",
+      "answer": [
+        "にらさきし"
+      ]
+    },
+    {
+      "question": "氷見市",
+      "answer": [
+        "ひみし"
+      ]
+    },
+    {
+      "question": "加茂市",
+      "answer": [
+        "かもし"
+      ]
+    },
+    {
+      "question": "多久市",
+      "answer": [
+        "たくし"
+      ]
+    },
+    {
+      "question": "魚津市",
+      "answer": [
+        "うおづし"
+      ]
+    },
+    {
+      "question": "周南市",
+      "answer": [
+        "しゅうなんし"
+      ]
+    },
+    {
+      "question": "勝浦市",
+      "answer": [
+        "かつうらし"
+      ]
+    },
+    {
+      "question": "府中市",
+      "answer": [
+        "ふちゅうし"
+      ]
+    },
+    {
+      "question": "伊万里市",
+      "answer": [
+        "いまりし"
+      ]
+    },
+    {
+      "question": "安中市",
+      "answer": [
+        "やすなかし"
+      ]
+    },
+    {
+      "question": "東根市",
+      "answer": [
+        "ひがしねし"
+      ]
+    },
+    {
+      "question": "大田原市",
+      "answer": [
+        "おおたわらし"
+      ]
+    },
+    {
+      "question": "西条市",
+      "answer": [
+        "さいじょうし"
+      ]
+    },
+    {
+      "question": "角田市",
+      "answer": [
+        "つのだし"
+      ]
+    },
+    {
+      "question": "宮若市",
+      "answer": [
+        "みやわかし"
+      ]
+    },
+    {
+      "question": "三原市",
+      "answer": [
+        "みはらし"
+      ]
+    },
+    {
+      "question": "壱岐市",
+      "answer": [
+        "いきし"
+      ]
+    },
+    {
+      "question": "四国中央市",
+      "answer": [
+        "しこくちゅうおうし"
+      ]
+    },
+    {
+      "question": "北上市",
+      "answer": [
+        "きたかみし"
+      ]
+    },
+    {
+      "question": "津山市",
+      "answer": [
+        "つやまし"
+      ]
+    },
+    {
+      "question": "白河市",
+      "answer": [
+        "しらかわし"
+      ]
+    },
+    {
+      "question": "茅野市",
+      "answer": [
+        "ちのし"
+      ]
+    },
+    {
+      "question": "南陽市",
+      "answer": [
+        "なんようし"
+      ]
+    },
+    {
+      "question": "都留市",
+      "answer": [
+        "つるし"
+      ]
+    },
+    {
+      "question": "霧島市",
+      "answer": [
+        "きりしまし"
+      ]
+    },
+    {
+      "question": "村上市",
+      "answer": [
+        "むらかみし"
+      ]
+    },
+    {
+      "question": "上越市",
+      "answer": [
+        "じょうえつし"
+      ]
+    },
+    {
+      "question": "柏崎市",
+      "answer": [
+        "かしわざきし"
+      ]
+    },
+    {
+      "question": "鹿沼市",
+      "answer": [
+        "かぬまし"
+      ]
+    },
+    {
+      "question": "阿波市",
+      "answer": [
+        "あわし"
+      ]
+    },
+    {
+      "question": "駒ヶ根市",
+      "answer": [
+        "こまがねし"
+      ]
+    },
+    {
+      "question": "赤磐市",
+      "answer": [
+        "あかいわし"
+      ]
+    },
+    {
+      "question": "矢板市",
+      "answer": [
+        "やいたし"
+      ]
+    },
+    {
+      "question": "鳥羽市",
+      "answer": [
+        "とっぱし"
+      ]
+    },
+    {
+      "question": "日置市",
+      "answer": [
+        "ひおきし"
+      ]
+    },
+    {
+      "question": "伊予市",
+      "answer": [
+        "いよし"
+      ]
+    },
+    {
+      "question": "松浦市",
+      "answer": [
+        "まつうらし"
+      ]
+    },
+    {
+      "question": "八代市",
+      "answer": [
+        "やつしろし"
+      ]
+    },
+    {
+      "question": "関市",
+      "answer": [
+        "せきし"
+      ]
+    },
+    {
+      "question": "美濃市",
+      "answer": [
+        "みのし"
+      ]
+    },
+    {
+      "question": "相馬市",
+      "answer": [
+        "そうまし"
+      ]
+    },
+    {
+      "question": "石垣市",
+      "answer": [
+        "いしがきし"
+      ]
+    },
+    {
+      "question": "甲賀市",
+      "answer": [
+        "こうかし"
+      ]
+    },
+    {
+      "question": "那須塩原市",
+      "answer": [
+        "なすしおばらし"
+      ]
+    },
+    {
+      "question": "新発田市",
+      "answer": [
+        "しばたし"
+      ]
+    },
+    {
+      "question": "酒田市",
+      "answer": [
+        "さかたし"
+      ]
+    },
+    {
+      "question": "須崎市",
+      "answer": [
+        "すさきし"
+      ]
+    },
+    {
+      "question": "南房総市",
+      "answer": [
+        "みなみぼうそうし"
+      ]
+    },
+    {
+      "question": "七尾市",
+      "answer": [
+        "ななおし"
+      ]
+    },
+    {
+      "question": "山鹿市",
+      "answer": [
+        "やまがし"
+      ]
+    },
+    {
+      "question": "倉吉市",
+      "answer": [
+        "くらよしし"
+      ]
+    },
+    {
+      "question": "日向市",
+      "answer": [
+        "ひなたし"
+      ]
+    },
+    {
+      "question": "鴨川市",
+      "answer": [
+        "かもがわし"
+      ]
+    },
+    {
+      "question": "菊池市",
+      "answer": [
+        "きくちし"
+      ]
+    },
+    {
+      "question": "宇和島市",
+      "answer": [
+        "うわじまし"
+      ]
+    },
+    {
+      "question": "岩見沢市",
+      "answer": [
+        "いわみざわし"
+      ]
+    },
+    {
+      "question": "井原市",
+      "answer": [
+        "いばらし"
+      ]
+    },
+    {
+      "question": "南相馬市",
+      "answer": [
+        "みなみそうまし"
+      ]
+    },
+    {
+      "question": "阿久根市",
+      "answer": [
+        "あくねし"
+      ]
+    },
+    {
+      "question": "二本松市",
+      "answer": [
+        "にほんまつし"
+      ]
+    },
+    {
+      "question": "伊賀市",
+      "answer": [
+        "いがし"
+      ]
+    },
+    {
+      "question": "新庄市",
+      "answer": [
+        "しんじょうし"
+      ]
+    },
+    {
+      "question": "人吉市",
+      "answer": [
+        "ひとよしし"
+      ]
+    },
+    {
+      "question": "那須烏山市",
+      "answer": [
+        "なすからすやまし"
+      ]
+    },
+    {
+      "question": "黒石市",
+      "answer": [
+        "くろいしし"
+      ]
+    },
+    {
+      "question": "水俣市",
+      "answer": [
+        "みなまたし"
+      ]
+    },
+    {
+      "question": "出水市",
+      "answer": [
+        "いずみし"
+      ]
+    },
+    {
+      "question": "大崎市",
+      "answer": [
+        "おおさきし"
+      ]
+    },
+    {
+      "question": "中津市",
+      "answer": [
+        "なかつし"
+      ]
+    },
+    {
+      "question": "東温市",
+      "answer": [
+        "とうおんし"
+      ]
+    },
+    {
+      "question": "岩国市",
+      "answer": [
+        "いわくにし"
+      ]
+    },
+    {
+      "question": "米沢市",
+      "answer": [
+        "よねざわし"
+      ]
+    },
+    {
+      "question": "上野原市",
+      "answer": [
+        "うえのはらし"
+      ]
+    },
+    {
+      "question": "高萩市",
+      "answer": [
+        "たかはぎし"
+      ]
+    },
+    {
+      "question": "飯田市",
+      "answer": [
+        "いいだし"
+      ]
+    },
+    {
+      "question": "米原市",
+      "answer": [
+        "まいばらし"
+      ]
+    },
+    {
+      "question": "登米市",
+      "answer": [
+        "とめし"
+      ]
+    },
+    {
+      "question": "五泉市",
+      "answer": [
+        "ごせんし"
+      ]
+    },
+    {
+      "question": "千歳市",
+      "answer": [
+        "ちとせし"
+      ]
+    },
+    {
+      "question": "常陸太田市",
+      "answer": [
+        "ひたちおおたし"
+      ]
+    },
+    {
+      "question": "奄美市",
+      "answer": [
+        "あまみし"
+      ]
+    },
+    {
+      "question": "平戸市",
+      "answer": [
+        "ひらどし"
+      ]
+    },
+    {
+      "question": "延岡市",
+      "answer": [
+        "のべおかし"
+      ]
+    },
+    {
+      "question": "備前市",
+      "answer": [
+        "びぜんし"
+      ]
+    },
+    {
+      "question": "五所川原市",
+      "answer": [
+        "ごしょがわらし"
+      ]
+    },
+    {
+      "question": "薩摩川内市",
+      "answer": [
+        "さつませんだいし"
+      ]
+    },
+    {
+      "question": "日南市",
+      "answer": [
+        "にちなんし"
+      ]
+    },
+    {
+      "question": "横手市",
+      "answer": [
+        "よこてし"
+      ]
+    },
+    {
+      "question": "白山市",
+      "answer": [
+        "はくさんし"
+      ]
+    },
+    {
+      "question": "福知山市",
+      "answer": [
+        "ふくちやまし"
+      ]
+    },
+    {
+      "question": "臼杵市",
+      "answer": [
+        "うすきし"
+      ]
+    },
+    {
+      "question": "上山市",
+      "answer": [
+        "かみのやまし"
+      ]
+    },
+    {
+      "question": "宇陀市",
+      "answer": [
+        "うだし"
+      ]
+    },
+    {
+      "question": "能代市",
+      "answer": [
+        "のしろし"
+      ]
+    },
+    {
+      "question": "男鹿市",
+      "answer": [
+        "おがし"
+      ]
+    },
+    {
+      "question": "長井市",
+      "answer": [
+        "ながいし"
+      ]
+    },
+    {
+      "question": "丹波市",
+      "answer": [
+        "たんばし"
+      ]
+    },
+    {
+      "question": "村山市",
+      "answer": [
+        "むらやまし"
+      ]
+    },
+    {
+      "question": "宇佐市",
+      "answer": [
+        "うさし"
+      ]
+    },
+    {
+      "question": "天草市",
+      "answer": [
+        "あまくさし"
+      ]
+    },
+    {
+      "question": "小浜市",
+      "answer": [
+        "おばまし"
+      ]
+    },
+    {
+      "question": "白石市",
+      "answer": [
+        "しらいしし"
+      ]
+    },
+    {
+      "question": "西海市",
+      "answer": [
+        "さいかいし"
+      ]
+    },
+    {
+      "question": "山県市",
+      "answer": [
+        "やまがたし"
+      ]
+    },
+    {
+      "question": "釧路市",
+      "answer": [
+        "くしろし"
+      ]
+    },
+    {
+      "question": "常陸大宮市",
+      "answer": [
+        "ひたちおおみやし"
+      ]
+    },
+    {
+      "question": "甲州市",
+      "answer": [
+        "こうしゅうし"
+      ]
+    },
+    {
+      "question": "山梨市",
+      "answer": [
+        "やまなしし"
+      ]
+    },
+    {
+      "question": "大船渡市",
+      "answer": [
+        "おおふなとし"
+      ]
+    },
+    {
+      "question": "奥州市",
+      "answer": [
+        "おうしゅうし"
+      ]
+    },
+    {
+      "question": "新宮市",
+      "answer": [
+        "しんぐうし"
+      ]
+    },
+    {
+      "question": "豊岡市",
+      "answer": [
+        "とよおかし"
+      ]
+    },
+    {
+      "question": "中津川市",
+      "answer": [
+        "なかつがわし"
+      ]
+    },
+    {
+      "question": "北斗市",
+      "answer": [
+        "ほくとし"
+      ]
+    },
+    {
+      "question": "五條市",
+      "answer": [
+        "ごじょうし"
+      ]
+    },
+    {
+      "question": "京丹後市",
+      "answer": [
+        "きょうたんごし"
+      ]
+    },
+    {
+      "question": "宮津市",
+      "answer": [
+        "みやづし"
+      ]
+    },
+    {
+      "question": "胎内市",
+      "answer": [
+        "たいないし"
+      ]
+    },
+    {
+      "question": "杵築市",
+      "answer": [
+        "きつきし"
+      ]
+    },
+    {
+      "question": "秩父市",
+      "answer": [
+        "ちちぶし"
+      ]
+    },
+    {
+      "question": "飯山市",
+      "answer": [
+        "いいのやまし"
+      ]
+    },
+    {
+      "question": "沼田市",
+      "answer": [
+        "ぬまたし"
+      ]
+    },
+    {
+      "question": "志布志市",
+      "answer": [
+        "しぶしし"
+      ]
+    },
+    {
+      "question": "豊後高田市",
+      "answer": [
+        "ぶんごたかだし"
+      ]
+    },
+    {
+      "question": "篠山市",
+      "answer": [
+        "ささやまし"
+      ]
+    },
+    {
+      "question": "大洲市",
+      "answer": [
+        "おおずし"
+      ]
+    },
+    {
+      "question": "花巻市",
+      "answer": [
+        "はなまきし"
+      ]
+    },
+    {
+      "question": "南九州市",
+      "answer": [
+        "みなみきゅうしゅうし"
+      ]
+    },
+    {
+      "question": "垂水市",
+      "answer": [
+        "たるみずし"
+      ]
+    },
+    {
+      "question": "由布市",
+      "answer": [
+        "ゆふし"
+      ]
+    },
+    {
+      "question": "長門市",
+      "answer": [
+        "ながとし"
+      ]
+    },
+    {
+      "question": "尾鷲市",
+      "answer": [
+        "おわせし"
+      ]
+    },
+    {
+      "question": "恵那市",
+      "answer": [
+        "えなし"
+      ]
+    },
+    {
+      "question": "一関市",
+      "answer": [
+        "いちのせきし"
+      ]
+    },
+    {
+      "question": "日田市",
+      "answer": [
+        "ひたし"
+      ]
+    },
+    {
+      "question": "伊那市",
+      "answer": [
+        "いなし"
+      ]
+    },
+    {
+      "question": "綾部市",
+      "answer": [
+        "あやべし"
+      ]
+    },
+    {
+      "question": "南魚沼市",
+      "answer": [
+        "みなみうおぬまし"
+      ]
+    },
+    {
+      "question": "鶴岡市",
+      "answer": [
+        "つるおかし"
+      ]
+    },
+    {
+      "question": "大月市",
+      "answer": [
+        "おおつきし"
+      ]
+    },
+    {
+      "question": "大仙市",
+      "answer": [
+        "だいせんし"
+      ]
+    },
+    {
+      "question": "曽於市",
+      "answer": [
+        "そおし"
+      ]
+    },
+    {
+      "question": "国東市",
+      "answer": [
+        "くにさきし"
+      ]
+    },
+    {
+      "question": "勝山市",
+      "answer": [
+        "かつやまし"
+      ]
+    },
+    {
+      "question": "新城市",
+      "answer": [
+        "しんしろし"
+      ]
+    },
+    {
+      "question": "陸前高田市",
+      "answer": [
+        "りくぜんたかたし"
+      ]
+    },
+    {
+      "question": "十日町市",
+      "answer": [
+        "とおかまちし"
+      ]
+    },
+    {
+      "question": "安来市",
+      "answer": [
+        "やすぎし"
+      ]
+    },
+    {
+      "question": "五島市",
+      "answer": [
+        "ごしまし"
+      ]
+    },
+    {
+      "question": "平川市",
+      "answer": [
+        "ひらかわし"
+      ]
+    },
+    {
+      "question": "江津市",
+      "answer": [
+        "ごうつし"
+      ]
+    },
+    {
+      "question": "黒部市",
+      "answer": [
+        "くろべし"
+      ]
+    },
+    {
+      "question": "伊豆市",
+      "answer": [
+        "いずし"
+      ]
+    },
+    {
+      "question": "喜多方市",
+      "answer": [
+        "きたかたし"
+      ]
+    },
+    {
+      "question": "十和田市",
+      "answer": [
+        "とわだし"
+      ]
+    },
+    {
+      "question": "栗原市",
+      "answer": [
+        "くりはらし"
+      ]
+    },
+    {
+      "question": "赤平市",
+      "answer": [
+        "あかびらし"
+      ]
+    },
+    {
+      "question": "釜石市",
+      "answer": [
+        "かまいしし"
+      ]
+    },
+    {
+      "question": "本巣市",
+      "answer": [
+        "もとすし"
+      ]
+    },
+    {
+      "question": "田村市",
+      "answer": [
+        "たむらし"
+      ]
+    },
+    {
+      "question": "美唄市",
+      "answer": [
+        "びばいし"
+      ]
+    },
+    {
+      "question": "美馬市",
+      "answer": [
+        "みまし"
+      ]
+    },
+    {
+      "question": "大田市",
+      "answer": [
+        "おおたし"
+      ]
+    },
+    {
+      "question": "浜田市",
+      "answer": [
+        "はまだし"
+      ]
+    },
+    {
+      "question": "大館市",
+      "answer": [
+        "おおだてし"
+      ]
+    },
+    {
+      "question": "北見市",
+      "answer": [
+        "きたみし"
+      ]
+    },
+    {
+      "question": "佐伯市",
+      "answer": [
+        "さいきし"
+      ]
+    },
+    {
+      "question": "西之表市",
+      "answer": [
+        "にしのおもてし"
+      ]
+    },
+    {
+      "question": "小林市",
+      "answer": [
+        "こばやしし"
+      ]
+    },
+    {
+      "question": "南砺市",
+      "answer": [
+        "なんとし"
+      ]
+    },
+    {
+      "question": "朝来市",
+      "answer": [
+        "あさごし"
+      ]
+    },
+    {
+      "question": "西予市",
+      "answer": [
+        "せいよし"
+      ]
+    },
+    {
+      "question": "石狩市",
+      "answer": [
+        "いしかりし"
+      ]
+    },
+    {
+      "question": "宮古市",
+      "answer": [
+        "みやこし"
+      ]
+    },
+    {
+      "question": "宿毛市",
+      "answer": [
+        "すくもし"
+      ]
+    },
+    {
+      "question": "妙高市",
+      "answer": [
+        "みょうこうし"
+      ]
+    },
+    {
+      "question": "伊達市",
+      "answer": [
+        "だてし"
+      ]
+    },
+    {
+      "question": "網走市",
+      "answer": [
+        "あばしりし"
+      ]
+    },
+    {
+      "question": "留萌市",
+      "answer": [
+        "るもいし"
+      ]
+    },
+    {
+      "question": "萩市",
+      "answer": [
+        "はぎし"
+      ]
+    },
+    {
+      "question": "北杜市",
+      "answer": [
+        "ほくとし"
+      ]
+    },
+    {
+      "question": "田辺市",
+      "answer": [
+        "たなべし"
+      ]
+    },
+    {
+      "question": "雲南市",
+      "answer": [
+        "うんなんし"
+      ]
+    },
+    {
+      "question": "阿蘇市",
+      "answer": [
+        "あそし"
+      ]
+    },
+    {
+      "question": "伊佐市",
+      "answer": [
+        "いさし"
+      ]
+    },
+    {
+      "question": "高島市",
+      "answer": [
+        "たかしまし"
+      ]
+    },
+    {
+      "question": "歌志内市",
+      "answer": [
+        "うたしないし"
+      ]
+    },
+    {
+      "question": "佐渡市",
+      "answer": [
+        "さどし"
+      ]
+    },
+    {
+      "question": "美祢市",
+      "answer": [
+        "みねし"
+      ]
+    },
+    {
+      "question": "西都市",
+      "answer": [
+        "さいとし"
+      ]
+    },
+    {
+      "question": "輪島市",
+      "answer": [
+        "わじまし"
+      ]
+    },
+    {
+      "question": "美作市",
+      "answer": [
+        "みまさかし"
+      ]
+    },
+    {
+      "question": "二戸市",
+      "answer": [
+        "にのへし"
+      ]
+    },
+    {
+      "question": "串間市",
+      "answer": [
+        "くしまし"
+      ]
+    },
+    {
+      "question": "由利本荘市",
+      "answer": [
+        "ゆりほんじょうし"
+      ]
+    },
+    {
+      "question": "室戸市",
+      "answer": [
+        "むろとし"
+      ]
+    },
+    {
+      "question": "益田市",
+      "answer": [
+        "ますだし"
+      ]
+    },
+    {
+      "question": "珠洲市",
+      "answer": [
+        "すずし"
+      ]
+    },
+    {
+      "question": "高梁市",
+      "answer": [
+        "たかはしし"
+      ]
+    },
+    {
+      "question": "湯沢市",
+      "answer": [
+        "ゆざわし"
+      ]
+    },
+    {
+      "question": "豊後大野市",
+      "answer": [
+        "ぶんごおおのし"
+      ]
+    },
+    {
+      "question": "土佐清水市",
+      "answer": [
+        "とさしみずし"
+      ]
+    },
+    {
+      "question": "糸魚川市",
+      "answer": [
+        "いといがわし"
+      ]
+    },
+    {
+      "question": "養父市",
+      "answer": [
+        "やぶし"
+      ]
+    },
+    {
+      "question": "安芸市",
+      "answer": [
+        "あきし"
+      ]
+    },
+    {
+      "question": "宍粟市",
+      "answer": [
+        "しそうし"
+      ]
+    },
+    {
+      "question": "日光市",
+      "answer": [
+        "にっこうし"
+      ]
+    },
+    {
+      "question": "真庭市",
+      "answer": [
+        "まにわし"
+      ]
+    },
+    {
+      "question": "久慈市",
+      "answer": [
+        "くじし"
+      ]
+    },
+    {
+      "question": "安芸高田市",
+      "answer": [
+        "あきたかたし"
+      ]
+    },
+    {
+      "question": "四万十市",
+      "answer": [
+        "しまんとうし"
+      ]
+    },
+    {
+      "question": "南丹市",
+      "answer": [
+        "なんたんし"
+      ]
+    },
+    {
+      "question": "根室市",
+      "answer": [
+        "ねむろし"
+      ]
+    },
+    {
+      "question": "名寄市",
+      "answer": [
+        "なよせし"
+      ]
+    },
+    {
+      "question": "大町市",
+      "answer": [
+        "おおまちし"
+      ]
+    },
+    {
+      "question": "熊野市",
+      "answer": [
+        "くまのし"
+      ]
+    },
+    {
+      "question": "香美市",
+      "answer": [
+        "かみし"
+      ]
+    },
+    {
+      "question": "尾花沢市",
+      "answer": [
+        "おばなざわし"
+      ]
+    },
+    {
+      "question": "竹田市",
+      "answer": [
+        "たけたし"
+      ]
+    },
+    {
+      "question": "対馬市",
+      "answer": [
+        "つしまし"
+      ]
+    },
+    {
+      "question": "鹿角市",
+      "answer": [
+        "かづのし"
+      ]
+    },
+    {
+      "question": "稚内市",
+      "answer": [
+        "わっかないし"
+      ]
+    },
+    {
+      "question": "郡上市",
+      "answer": [
+        "ぐじょうし"
+      ]
+    },
+    {
+      "question": "魚沼市",
+      "answer": [
+        "うおぬまし"
+      ]
+    },
+    {
+      "question": "新見市",
+      "answer": [
+        "にいみし"
+      ]
+    },
+    {
+      "question": "下呂市",
+      "answer": [
+        "げろし"
+      ]
+    },
+    {
+      "question": "深川市",
+      "answer": [
+        "ふかがわし"
+      ]
+    },
+    {
+      "question": "高山市",
+      "answer": [
+        "たかやまし"
+      ]
+    },
+    {
+      "question": "三好市",
+      "answer": [
+        "みよしし"
+      ]
+    },
+    {
+      "question": "大野市",
+      "answer": [
+        "おおのし"
+      ]
+    },
+    {
+      "question": "富良野市",
+      "answer": [
+        "ふらのし"
+      ]
+    },
+    {
+      "question": "遠野市",
+      "answer": [
+        "とおのし"
+      ]
+    },
+    {
+      "question": "飛騨市",
+      "answer": [
+        "ひだし"
+      ]
+    },
+    {
+      "question": "八幡平市",
+      "answer": [
+        "はちまんたいし"
+      ]
+    },
+    {
+      "question": "庄原市",
+      "answer": [
+        "しょうばらし"
+      ]
+    },
+    {
+      "question": "北秋田市",
+      "answer": [
+        "きたあきたし"
+      ]
+    },
+    {
+      "question": "三笠市",
+      "answer": [
+        "みかさし"
+      ]
+    },
+    {
+      "question": "紋別市",
+      "answer": [
+        "もんべつし"
+      ]
+    },
+    {
+      "question": "仙北市",
+      "answer": [
+        "せんぼくし"
+      ]
+    },
+    {
+      "question": "士別市",
+      "answer": [
+        "しべつし"
+      ]
+    },
+    {
+      "question": "芦別市",
+      "answer": [
+        "あしべつし"
+      ]
+    },
+    {
+      "question": "夕張市",
+      "answer": [
+        "ゆうばりし"
+      ]
+    },
+    {
+      "question": "長久手市",
+      "answer": [
+        "ながくてし"
+      ]
+    },
+    {
+      "question": "大網白里市",
+      "answer": [
+        "おおあみしらさとし"
+      ]
+    },
+    {
+      "question": "富谷市",
+      "answer": [
+        "とみやし"
+      ]
+    },
+    {
+      "question": "白岡市",
+      "answer": [
+        "しらおかし"
+      ]
+    }
+  ]
+}

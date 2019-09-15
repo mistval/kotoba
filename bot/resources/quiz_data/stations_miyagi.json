@@ -1,0 +1,1411 @@
+{
+  "uniqueId": "stations_miyagi",
+  "name": "Miyagi Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below station name in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Miyagi station names](https://mb.jorudan.co.jp/os/eki/menu_sdj/)",
+  "cards": [
+    {
+      "question": "あおば通",
+      "answer": [
+        "あおばどおり"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aobadori/"
+    },
+    {
+      "question": "青葉通一番町",
+      "answer": [
+        "あおばどおりいちばんちょう"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aoba-dori_ichibancho/"
+    },
+    {
+      "question": "青葉山",
+      "answer": [
+        "あおばやま"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aobayama/"
+    },
+    {
+      "question": "旭ヶ丘",
+      "answer": [
+        "あさひがおか"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahigaoka_miyagi/"
+    },
+    {
+      "question": "愛宕",
+      "answer": [
+        "あたご"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atago_miyagi/"
+    },
+    {
+      "question": "愛宕橋",
+      "answer": [
+        "あたごばし"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atagobashi/"
+    },
+    {
+      "question": "愛子",
+      "answer": [
+        "あやし"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ayashi/"
+    },
+    {
+      "question": "荒井",
+      "answer": [
+        "あらい"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arai_miyagi/"
+    },
+    {
+      "question": "有壁",
+      "answer": [
+        "ありかべ"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arikabe/"
+    },
+    {
+      "question": "池月",
+      "answer": [
+        "いけづき"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikezuki/"
+    },
+    {
+      "question": "石越",
+      "answer": [
+        "いしこし"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishikoshi/"
+    },
+    {
+      "question": "石巻",
+      "answer": [
+        "いしのまき"
+      ],
+      "meaning": "仙石線、石巻線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishinomaki/"
+    },
+    {
+      "question": "石巻あゆみ野",
+      "answer": [
+        "いしのまきあゆみの"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishinomakiayumino/"
+    },
+    {
+      "question": "泉中央",
+      "answer": [
+        "いずみちゅうおう"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumichuo_miyagi/"
+    },
+    {
+      "question": "五橋",
+      "answer": [
+        "いつつばし"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itsutsubashi/"
+    },
+    {
+      "question": "岩切",
+      "answer": [
+        "いわきり"
+      ],
+      "meaning": "東北本線、仙石東北ラインなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakiri/"
+    },
+    {
+      "question": "岩出山",
+      "answer": [
+        "いわでやま"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwadeyama/"
+    },
+    {
+      "question": "岩沼",
+      "answer": [
+        "いわぬま"
+      ],
+      "meaning": "常磐線、東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwanuma/"
+    },
+    {
+      "question": "歌津",
+      "answer": [
+        "うたつ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utatsu/"
+    },
+    {
+      "question": "梅ヶ沢",
+      "answer": [
+        "うめがさわ"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umegasawa/"
+    },
+    {
+      "question": "浦宿",
+      "answer": [
+        "うらしゅく"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urashuku/"
+    },
+    {
+      "question": "大河原",
+      "answer": [
+        "おおがわら"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogawara_miyagi/"
+    },
+    {
+      "question": "逢隈",
+      "answer": [
+        "おおくま"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okuma/"
+    },
+    {
+      "question": "大町西公園",
+      "answer": [
+        "おおまちにしこうえん"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omachi_nishi-koen/"
+    },
+    {
+      "question": "大谷海岸",
+      "answer": [
+        "おおやかいがん"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oyakaigan/"
+    },
+    {
+      "question": "岡",
+      "answer": [
+        "おか"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oka_miyagi/"
+    },
+    {
+      "question": "奥新川",
+      "answer": [
+        "おくにっかわ"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oku-nikkawa/"
+    },
+    {
+      "question": "女川",
+      "answer": [
+        "おながわ"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onagawa/"
+    },
+    {
+      "question": "卸町",
+      "answer": [
+        "おろしまち"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oroshimachi_miyagi/"
+    },
+    {
+      "question": "角田",
+      "answer": [
+        "かくだ"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakuda/"
+    },
+    {
+      "question": "佳景山",
+      "answer": [
+        "かけやま"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakeyama/"
+    },
+    {
+      "question": "鹿島台",
+      "answer": [
+        "かしまだい"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashimadai/"
+    },
+    {
+      "question": "鹿妻",
+      "answer": [
+        "かづま"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kazuma/"
+    },
+    {
+      "question": "鹿又",
+      "answer": [
+        "かのまた"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanomata/"
+    },
+    {
+      "question": "上鹿折",
+      "answer": [
+        "かみししおり"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-shishiori/"
+    },
+    {
+      "question": "上野目",
+      "answer": [
+        "かみのめ"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaminome/"
+    },
+    {
+      "question": "上涌谷",
+      "answer": [
+        "かみわくや"
+      ],
+      "meaning": "石巻線、気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-wakuya/"
+    },
+    {
+      "question": "川内",
+      "answer": [
+        "かわうち"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawauchi_miyagi/"
+    },
+    {
+      "question": "川渡温泉",
+      "answer": [
+        "かわたびおんせん"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawatabi-onsen/"
+    },
+    {
+      "question": "河原町",
+      "answer": [
+        "かわらまち"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaramachi_miyagi/"
+    },
+    {
+      "question": "北浦",
+      "answer": [
+        "きたうら"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitaura_miyagi/"
+    },
+    {
+      "question": "北白川",
+      "answer": [
+        "きたしらかわ"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-shirakawa/"
+    },
+    {
+      "question": "北仙台",
+      "answer": [
+        "きたせんだい"
+      ],
+      "meaning": "仙山線、仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-sendai/"
+    },
+    {
+      "question": "北丸森",
+      "answer": [
+        "きたまるもり"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-marumori/"
+    },
+    {
+      "question": "北山",
+      "answer": [
+        "きたやま"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitayama_miyagi/"
+    },
+    {
+      "question": "北四番丁",
+      "answer": [
+        "きたよばんちょう"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-yobancho/"
+    },
+    {
+      "question": "葛岡",
+      "answer": [
+        "くずおか"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuzuoka/"
+    },
+    {
+      "question": "国見",
+      "answer": [
+        "くにみ"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kunimi_miyagi/"
+    },
+    {
+      "question": "熊ヶ根",
+      "answer": [
+        "くまがね"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kumagane/"
+    },
+    {
+      "question": "蔵内",
+      "answer": [
+        "くらうち"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurauchi/"
+    },
+    {
+      "question": "くりこま高原",
+      "answer": [
+        "くりこまこうげん"
+      ],
+      "meaning": "東北・北海道新幹線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurikomakogen/"
+    },
+    {
+      "question": "黒松",
+      "answer": [
+        "くろまつ"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuromatsu_miyagi/"
+    },
+    {
+      "question": "気仙沼",
+      "answer": [
+        "けせんぬま"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kesennuma/"
+    },
+    {
+      "question": "気仙沼市立病院",
+      "answer": [
+        "けせんぬましりつびょういん"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kesennuma_city_hospital/"
+    },
+    {
+      "question": "下馬",
+      "answer": [
+        "げば"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/geba/"
+    },
+    {
+      "question": "勾当台公園",
+      "answer": [
+        "こうとうだいこうえん"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotodaikoen/"
+    },
+    {
+      "question": "小金沢",
+      "answer": [
+        "こがねざわ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koganezawa/"
+    },
+    {
+      "question": "国際センター",
+      "answer": [
+        "こくさいせんたー"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/international_center_miyagi/"
+    },
+    {
+      "question": "国府多賀城",
+      "answer": [
+        "こくふたがじょう"
+      ],
+      "meaning": "東北本線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokufu-tagajo/"
+    },
+    {
+      "question": "小牛田",
+      "answer": [
+        "こごた"
+      ],
+      "meaning": "東北本線、石巻線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kogota/"
+    },
+    {
+      "question": "越河",
+      "answer": [
+        "こすごう"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosugo/"
+    },
+    {
+      "question": "小鶴新田",
+      "answer": [
+        "こづるしんでん"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kozurushinden/"
+    },
+    {
+      "question": "最知",
+      "answer": [
+        "さいち"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saichi/"
+    },
+    {
+      "question": "坂元",
+      "answer": [
+        "さかもと"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakamoto_miyagi/"
+    },
+    {
+      "question": "作並",
+      "answer": [
+        "さくなみ"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakunami/"
+    },
+    {
+      "question": "沢田",
+      "answer": [
+        "さわだ"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sawada/"
+    },
+    {
+      "question": "塩釜",
+      "answer": [
+        "しおがま"
+      ],
+      "meaning": "東北本線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiogama/"
+    },
+    {
+      "question": "鹿折唐桑",
+      "answer": [
+        "ししおりからくわ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shishiorikarakuwa/"
+    },
+    {
+      "question": "清水浜",
+      "answer": [
+        "しずはま"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizuhama/"
+    },
+    {
+      "question": "志津川",
+      "answer": [
+        "しづがわ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizugawa/"
+    },
+    {
+      "question": "志津川中央団地",
+      "answer": [
+        "しづがわちゅうおうだんち"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizugawa_chuo_danchi/"
+    },
+    {
+      "question": "品井沼",
+      "answer": [
+        "しないぬま"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinainuma/"
+    },
+    {
+      "question": "白石",
+      "answer": [
+        "しろいし"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroishi_miyagi/"
+    },
+    {
+      "question": "白石蔵王",
+      "answer": [
+        "しろいしざおう"
+      ],
+      "meaning": "東北・北海道新幹線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiroishizao/"
+    },
+    {
+      "question": "新利府",
+      "answer": [
+        "しんりふ"
+      ],
+      "meaning": "東北本線利府支線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-rifu/"
+    },
+    {
+      "question": "瀬峰",
+      "answer": [
+        "せみね"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/semine/"
+    },
+    {
+      "question": "仙台",
+      "answer": [
+        "せんだい"
+      ],
+      "meaning": "JR線、仙台空港アクセス線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sendai_miyagi/"
+    },
+    {
+      "question": "仙台空港",
+      "answer": [
+        "せんだいくうこう"
+      ],
+      "meaning": "仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sendai-airport/"
+    },
+    {
+      "question": "曽波神",
+      "answer": [
+        "そばのかみ"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sobanokami/"
+    },
+    {
+      "question": "太子堂",
+      "answer": [
+        "たいしどう"
+      ],
+      "meaning": "常磐線、東北本線、仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taishido/"
+    },
+    {
+      "question": "高城町",
+      "answer": [
+        "たかぎまち"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takagimachi/"
+    },
+    {
+      "question": "多賀城",
+      "answer": [
+        "たがじょう"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tagajo/"
+    },
+    {
+      "question": "田尻",
+      "answer": [
+        "たじり"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tajiri_miyagi/"
+    },
+    {
+      "question": "館腰",
+      "answer": [
+        "たてこし"
+      ],
+      "meaning": "常磐線、東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatekoshi/"
+    },
+    {
+      "question": "台原",
+      "answer": [
+        "だいのはら"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dainohara/"
+    },
+    {
+      "question": "塚目",
+      "answer": [
+        "つかのめ"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukanome/"
+    },
+    {
+      "question": "槻木",
+      "answer": [
+        "つきのき"
+      ],
+      "meaning": "東北本線、阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukinoki/"
+    },
+    {
+      "question": "榴ヶ岡",
+      "answer": [
+        "つつじがおか"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsutsujigaoka_miyagi/"
+    },
+    {
+      "question": "手樽",
+      "answer": [
+        "てたる"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tetaru/"
+    },
+    {
+      "question": "東照宮",
+      "answer": [
+        "とうしょうぐう"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toshogu/"
+    },
+    {
+      "question": "東名",
+      "answer": [
+        "とうな"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tona/"
+    },
+    {
+      "question": "東北福祉大前",
+      "answer": [
+        "とうほくふくしだいまえ"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tohokufukushidai-mae/"
+    },
+    {
+      "question": "富沢",
+      "answer": [
+        "とみざわ"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomizawa/"
+    },
+    {
+      "question": "中野栄",
+      "answer": [
+        "なかのさかえ"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanosakae/"
+    },
+    {
+      "question": "中山平温泉",
+      "answer": [
+        "なかやまだいらおんせん"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayamadairaonsen/"
+    },
+    {
+      "question": "長町",
+      "answer": [
+        "ながまち"
+      ],
+      "meaning": "常磐線、東北本線、仙台空港アクセス線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagamachi/"
+    },
+    {
+      "question": "長町一丁目",
+      "answer": [
+        "ながまちいっちょうめ"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagamachi-itchome/"
+    },
+    {
+      "question": "長町南",
+      "answer": [
+        "ながまちみなみ"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagamachiminami/"
+    },
+    {
+      "question": "名取",
+      "answer": [
+        "なとり"
+      ],
+      "meaning": "常磐線、東北本線、仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/natori/"
+    },
+    {
+      "question": "鳴子温泉",
+      "answer": [
+        "なるこおんせん"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruko-onsen/"
+    },
+    {
+      "question": "鳴子御殿湯",
+      "answer": [
+        "なるこごてんゆ"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruko-goten-yu/"
+    },
+    {
+      "question": "苦竹",
+      "answer": [
+        "にがたけ"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nigatake/"
+    },
+    {
+      "question": "西大崎",
+      "answer": [
+        "にしおおさき"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-osaki/"
+    },
+    {
+      "question": "西塩釜",
+      "answer": [
+        "にししおがま"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-shiogama/"
+    },
+    {
+      "question": "西古川",
+      "answer": [
+        "にしふるかわ"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-furukawa/"
+    },
+    {
+      "question": "新田",
+      "answer": [
+        "にった"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nitta_miyagi/"
+    },
+    {
+      "question": "のの岳",
+      "answer": [
+        "ののだけ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nonodake/"
+    },
+    {
+      "question": "野蒜",
+      "answer": [
+        "のびる"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nobiru/"
+    },
+    {
+      "question": "八幡大橋",
+      "answer": [
+        "はちまんおおはし"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachiman-ohashi/"
+    },
+    {
+      "question": "浜吉田",
+      "answer": [
+        "はまよしだ"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hama-yoshida/"
+    },
+    {
+      "question": "東大崎",
+      "answer": [
+        "ひがしおおさき"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-osaki/"
+    },
+    {
+      "question": "東塩釜",
+      "answer": [
+        "ひがししおがま"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-shiogama/"
+    },
+    {
+      "question": "東白石",
+      "answer": [
+        "ひがししろいし"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-shiroishi/"
+    },
+    {
+      "question": "東仙台",
+      "answer": [
+        "ひがしせんだい"
+      ],
+      "meaning": "東北本線、仙石東北ラインなど",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-sendai/"
+    },
+    {
+      "question": "東船岡",
+      "answer": [
+        "ひがしふなおか"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-funaoka/"
+    },
+    {
+      "question": "東矢本",
+      "answer": [
+        "ひがしやもと"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yamoto/"
+    },
+    {
+      "question": "広瀬通",
+      "answer": [
+        "ひろせどおり"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirosedori/"
+    },
+    {
+      "question": "福田町",
+      "answer": [
+        "ふくだまち"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukudamachi/"
+    },
+    {
+      "question": "不動の沢",
+      "answer": [
+        "ふどうのさわ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fudonosawa/"
+    },
+    {
+      "question": "船岡",
+      "answer": [
+        "ふなおか"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funaoka_miyagi/"
+    },
+    {
+      "question": "古川",
+      "answer": [
+        "ふるかわ"
+      ],
+      "meaning": "陸羽東線、秋田新幹線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furukawa/"
+    },
+    {
+      "question": "蛇田",
+      "answer": [
+        "へびた"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hebita/"
+    },
+    {
+      "question": "本塩釜",
+      "answer": [
+        "ほんしおがま"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-shiogama/"
+    },
+    {
+      "question": "前谷地",
+      "answer": [
+        "まえやち"
+      ],
+      "meaning": "石巻線、気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maeyachi/"
+    },
+    {
+      "question": "松岩",
+      "answer": [
+        "まついわ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuiwa/"
+    },
+    {
+      "question": "松島",
+      "answer": [
+        "まつしま"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsushima/"
+    },
+    {
+      "question": "松島海岸",
+      "answer": [
+        "まつしまかいがん"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsushimakaigan/"
+    },
+    {
+      "question": "松山町",
+      "answer": [
+        "まつやままち"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuyamamachi_miyagi/"
+    },
+    {
+      "question": "丸森",
+      "answer": [
+        "まるもり"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/marumori/"
+    },
+    {
+      "question": "万石浦",
+      "answer": [
+        "まんごくうら"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mangoku-ura/"
+    },
+    {
+      "question": "御岳堂",
+      "answer": [
+        "みたけどう"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitakedo/"
+    },
+    {
+      "question": "美田園",
+      "answer": [
+        "みたぞの"
+      ],
+      "meaning": "仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitazono/"
+    },
+    {
+      "question": "南角田",
+      "answer": [
+        "みなみかくだ"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kakuda/"
+    },
+    {
+      "question": "南気仙沼",
+      "answer": [
+        "みなみけせんぬま"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kesennuma/"
+    },
+    {
+      "question": "南三陸町役場・病院前",
+      "answer": [
+        "みなみさんりくちょうやくばびょういんまえ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-sanrikuchoyakuba_byoin-mae/"
+    },
+    {
+      "question": "南仙台",
+      "answer": [
+        "みなみせんだい"
+      ],
+      "meaning": "常磐線、東北本線、仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-sendai/"
+    },
+    {
+      "question": "宮城野通",
+      "answer": [
+        "みやぎのどおり"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyagino-dori/"
+    },
+    {
+      "question": "宮城野原",
+      "answer": [
+        "みやぎのはら"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyaginohara/"
+    },
+    {
+      "question": "本吉",
+      "answer": [
+        "もとよし"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motoyoshi/"
+    },
+    {
+      "question": "杜せきのした",
+      "answer": [
+        "もりせきのした"
+      ],
+      "meaning": "仙台空港アクセス線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/morisekinoshita/"
+    },
+    {
+      "question": "八乙女",
+      "answer": [
+        "やおとめ"
+      ],
+      "meaning": "仙台地下鉄南北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yaotome/"
+    },
+    {
+      "question": "八木山動物公園",
+      "answer": [
+        "やぎやまどうぶつこうえん"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yagiyama-zoological_park/"
+    },
+    {
+      "question": "薬師堂",
+      "answer": [
+        "やくしどう"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakushido_miyagi/"
+    },
+    {
+      "question": "柳津",
+      "answer": [
+        "やないづ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanaizu_miyagi/"
+    },
+    {
+      "question": "山下",
+      "answer": [
+        "やました"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamashita_miyagi/"
+    },
+    {
+      "question": "矢本",
+      "answer": [
+        "やもと"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamoto/"
+    },
+    {
+      "question": "有備館",
+      "answer": [
+        "ゆうびかん"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yubikan/"
+    },
+    {
+      "question": "横倉",
+      "answer": [
+        "よこくら"
+      ],
+      "meaning": "阿武隈急行",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokokura_miyagi/"
+    },
+    {
+      "question": "陸前赤井",
+      "answer": [
+        "りくぜんあかい"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-akai/"
+    },
+    {
+      "question": "陸前稲井",
+      "answer": [
+        "りくぜんいない"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-inai/"
+    },
+    {
+      "question": "陸前大塚",
+      "answer": [
+        "りくぜんおおつか"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-otsuka/"
+    },
+    {
+      "question": "陸前落合",
+      "answer": [
+        "りくぜんおちあい"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-ochiai/"
+    },
+    {
+      "question": "陸前小野",
+      "answer": [
+        "りくぜんおの"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-ono/"
+    },
+    {
+      "question": "陸前小泉",
+      "answer": [
+        "りくぜんこいずみ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-koizumi/"
+    },
+    {
+      "question": "陸前山王",
+      "answer": [
+        "りくぜんさんのう"
+      ],
+      "meaning": "東北本線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-sanno/"
+    },
+    {
+      "question": "陸前白沢",
+      "answer": [
+        "りくぜんしらさわ"
+      ],
+      "meaning": "仙山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-shirasawa/"
+    },
+    {
+      "question": "陸前高砂",
+      "answer": [
+        "りくぜんたかさご"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-takasago/"
+    },
+    {
+      "question": "陸前戸倉",
+      "answer": [
+        "りくぜんとぐら"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-togura/"
+    },
+    {
+      "question": "陸前富山",
+      "answer": [
+        "りくぜんとみやま"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-tomiyama/"
+    },
+    {
+      "question": "陸前豊里",
+      "answer": [
+        "りくぜんとよさと"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-toyosato/"
+    },
+    {
+      "question": "陸前階上",
+      "answer": [
+        "りくぜんはしかみ"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-hashikami/"
+    },
+    {
+      "question": "陸前浜田",
+      "answer": [
+        "りくぜんはまだ"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-hamada/"
+    },
+    {
+      "question": "陸前原ノ町",
+      "answer": [
+        "りくぜんはらのまち"
+      ],
+      "meaning": "仙石線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-haranomachi/"
+    },
+    {
+      "question": "陸前港",
+      "answer": [
+        "りくぜんみなと"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-minato/"
+    },
+    {
+      "question": "陸前谷地",
+      "answer": [
+        "りくぜんやち"
+      ],
+      "meaning": "陸羽東線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-yachi/"
+    },
+    {
+      "question": "陸前山下",
+      "answer": [
+        "りくぜんやました"
+      ],
+      "meaning": "仙石線、仙石東北ライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-yamashita/"
+    },
+    {
+      "question": "陸前横山",
+      "answer": [
+        "りくぜんよこやま"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rikuzen-yokoyama/"
+    },
+    {
+      "question": "利府",
+      "answer": [
+        "りふ"
+      ],
+      "meaning": "東北本線利府支線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rifu/"
+    },
+    {
+      "question": "連坊",
+      "answer": [
+        "れんぼう"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rembo/"
+    },
+    {
+      "question": "六丁の目",
+      "answer": [
+        "ろくちょうのめ"
+      ],
+      "meaning": "仙台地下鉄東西線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokuchonome/"
+    },
+    {
+      "question": "涌谷",
+      "answer": [
+        "わくや"
+      ],
+      "meaning": "石巻線、気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakuya/"
+    },
+    {
+      "question": "渡波",
+      "answer": [
+        "わたのは"
+      ],
+      "meaning": "石巻線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watanoha/"
+    },
+    {
+      "question": "亘理",
+      "answer": [
+        "わたり"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watari_miyagi/"
+    },
+    {
+      "question": "和渕",
+      "answer": [
+        "わぶち"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wabuchi/"
+    }
+  ]
+}
