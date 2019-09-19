@@ -3,7 +3,7 @@ const jishoWordSearch = require('./../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
 const addPaginationFooter = require('./../discord/add_pagination_footer.js');
-const createKanjiSearchNavigationChapter = require('./../discord/create_kanji_search_navigation_chapter.js');
+const createKanjiSearchDataSource = require('./../discord/create_kanji_search_data_source.js');
 const createStrokeOrderSearchNavigationChapter = require('./../discord/create_stroke_order_search_navigation_chapter.js');
 
 const STROKE_ORDER_EMOTE = '🇸';
@@ -35,15 +35,15 @@ class ExamplesSource {
   }
 }
 
-function createNavigationChapterInformationForKanji(authorName, word, prefix) {
-  const { navigationChapter, pageCount, hasResult } = createKanjiSearchNavigationChapter(
+function createNavigationChapterForKanji(authorName, word, prefix) {
+  const dataSource = createKanjiSearchDataSource(
     word,
     authorName,
     prefix,
     true,
   );
 
-  return new NavigationChapterInformation(navigationChapter, pageCount.length > 1, hasResult);
+  return new NavigationChapter(dataSource);
 }
 
 function createNavigationChapterInformationForStrokeOrder(authorName, word) {
@@ -87,16 +87,13 @@ function createNavigationForJishoResults(
 
   /* Create the Kanji (K) chapter */
 
-  const kanjiNavigationChapterInformation = createNavigationChapterInformationForKanji(
+  const kanjiNavigationChapter = createNavigationChapterForKanji(
     authorName,
     word,
     msg.prefix,
   );
 
-  if (kanjiNavigationChapterInformation.hasAnyPages) {
-    chapterForEmojiName[KANJI_EMOTE] =
-      kanjiNavigationChapterInformation.navigationChapter;
-  }
+  chapterForEmojiName[KANJI_EMOTE] = kanjiNavigationChapter;
 
   /* Create the stroke order (S) chapter */
 
