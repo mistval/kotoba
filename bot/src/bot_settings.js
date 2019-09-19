@@ -169,6 +169,19 @@ module.exports = [
     children:
     [
       {
+        userFacingName: 'Quiz font',
+        description: 'This setting controls the font used for text rendered for quizzes.',
+        allowedValuesDescription: availableFontsAllowedValuesString,
+        uniqueId: 'quiz_font',
+        defaultUserFacingValue: 'Noto Sans CJK',
+        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
+          fontForInput,
+          true,
+        ),
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.isMappable,
+      },
+      {
         userFacingName: 'Quiz text font color',
         description: 'This setting controls the color of the text rendered for quizzes.',
         allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
@@ -199,10 +212,10 @@ module.exports = [
         validateInternalValue: SettingsValidators.createRangeValidator(20, 200),
       },
       {
-        userFacingName: 'Quiz font',
-        description: 'This setting controls the font used for text rendered for quizzes.',
+        userFacingName: 'Furigana font',
+        description: 'This setting controls the font used for the furigana command.',
         allowedValuesDescription: availableFontsAllowedValuesString,
-        uniqueId: 'quiz_font',
+        uniqueId: 'furigana_font',
         defaultUserFacingValue: 'Noto Sans CJK',
         convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
           fontForInput,
@@ -240,19 +253,6 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(20, 80),
-      },
-      {
-        userFacingName: 'Furigana font',
-        description: 'This setting controls the font used for the furigana command.',
-        allowedValuesDescription: availableFontsAllowedValuesString,
-        uniqueId: 'furigana_font',
-        defaultUserFacingValue: 'Noto Sans CJK',
-        convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
-          fontForInput,
-          true,
-        ),
-        convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: SettingsValidators.isMappable,
       },
     ],
   },
