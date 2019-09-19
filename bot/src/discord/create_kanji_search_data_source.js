@@ -1,4 +1,3 @@
-const { NavigationChapter } = require('monochrome-bot');
 const extractKanji = require('../common/util/extract_kanji.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
 const addPaginationFooter = require('./add_pagination_footer.js');
@@ -7,7 +6,7 @@ const constants = require('./../common/constants.js');
 
 class KanjiNavigationDataSource {
   constructor(word, authorName, commandPrefix, forceNavigationFooter) {
-    this.word = word
+    this.word = word;
     this.authorName = authorName;
     this.commandPrefix = commandPrefix;
     this.forceNavigationFooter = forceNavigationFooter;
@@ -30,7 +29,7 @@ class KanjiNavigationDataSource {
   // Nothing to do here, but we need the method due to
   // interface contract.
   // eslint-disable-next-line class-methods-use-this
-  async prepareData() {
+  prepareData() {
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
@@ -74,7 +73,6 @@ function createKanjiSearchDataSource(
   commandPrefix,
   forceNavigationFooter,
 ) {
-
   const dataSource = new KanjiNavigationDataSource(
     searchQuery,
     authorName,
