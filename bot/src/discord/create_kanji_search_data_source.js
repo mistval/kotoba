@@ -8,24 +8,35 @@ const constants = require('./../common/constants.js');
 class KanjiNavigationDataSource {
   constructor(word, authorName, commandPrefix, forceNavigationFooter) {
     this.word = word
-    this.kanjis = extractKanji(word);
     this.authorName = authorName;
     this.commandPrefix = commandPrefix;
     this.forceNavigationFooter = forceNavigationFooter;
+    this.kanjisAsync = this.getKanjis();
+  }
+
+  async getKanjis() {
+    let kanjis = extractKanji(this.word);
+    if (kanjis.length === 0) {
+      kanjis = await jishoKanjiSearch(this.word);
+    }
+
+    return kanjis;
+  }
+
+  async countPages() {
+    return (await this.kanjisAsync).length;
   }
 
   // Nothing to do here, but we need the method due to
   // interface contract.
   // eslint-disable-next-line class-methods-use-this
   async prepareData() {
-    if (this.kanjis.length === 0) {
-      this.kanjis = await jishoKanjiSearch(this.word);
-    }
-    this.hasResult = this.kanjis.length > 0;
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
-    if (!this.hasResult) {
+    const kanjis = await this.kanjisAsync;
+
+    if (kanjis.length === 0) {
       return {
         embed: {
           title: 'Jisho Kanji Search',
@@ -35,21 +46,21 @@ class KanjiNavigationDataSource {
       };
     }
 
-    if (pageIndex >= this.kanjis.length) {
+    if (pageIndex >= kanjis.length) {
       return undefined;
     }
 
     const pageNumber = pageIndex + 1;
-    const lastPageNumber = this.kanjis.length;
+    const lastPageNumber = kanjis.length;
 
-    const page = await createKanjiSearchPage(this.kanjis[pageIndex], this.commandPrefix);
+    const page = await createKanjiSearchPage(kanjis[pageIndex], this.commandPrefix);
     const pageCopy = { ...page, embed: { ...page.embed } };
 
     if (lastPageNumber > 1) {
       pageCopy.embed.title += ` (page ${pageNumber} of ${lastPageNumber})`;
     }
 
-    if (this.kanjis.length > 1 || this.forceNavigationFooter) {
+    if (kanjis.length > 1 || this.forceNavigationFooter) {
       return addPaginationFooter(pageCopy, this.authorName);
     }
 
@@ -57,7 +68,7 @@ class KanjiNavigationDataSource {
   }
 }
 
-function createKanjiSearchNavigationChapter(
+function createKanjiSearchDataSource(
   searchQuery,
   authorName,
   commandPrefix,
@@ -71,11 +82,7 @@ function createKanjiSearchNavigationChapter(
     forceNavigationFooter,
   );
 
-  return {
-    navigationChapter: new NavigationChapter(dataSource),
-    pageCount: 2, //TODO: How to get these values?
-    hasResult: true //
-  };
+  return dataSource;
 }
 
-module.exports = createKanjiSearchNavigationChapter;
+module.exports = createKanjiSearchDataSource;

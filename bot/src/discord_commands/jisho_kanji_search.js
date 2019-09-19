@@ -1,6 +1,6 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const createKanjiNavigationChapter = require('./../discord/create_kanji_search_navigation_chapter.js');
-const { Navigation } = require('monochrome-bot');
+const createKanjiDataSource = require('./../discord/create_kanji_search_data_source.js');
+const { Navigation, NavigationChapter } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 module.exports = {
@@ -17,12 +17,15 @@ module.exports = {
       return throwPublicErrorInfo('Kanji', `Say **${prefix}kanji [kanji]** to search for kanji. For example: **${prefix}kanji 瞬間**. Say **${prefix}help kanji** for more help.`, 'No suffix');
     }
 
-    const { navigationChapter, pageCount } = await createKanjiNavigationChapter(
+    const dataSource = await createKanjiDataSource(
       suffix,
       msg.author.username,
       msg.prefix,
       false,
     );
+
+    const navigationChapter = new NavigationChapter(dataSource);
+    const pageCount = await dataSource.countPages();
 
     const navigation = Navigation.fromOneNavigationChapter(
       msg.author.id,
