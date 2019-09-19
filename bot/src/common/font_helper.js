@@ -21,6 +21,7 @@ fontMetaFilePaths.forEach((metaPath) => {
     fontFamily: meta.fontFamily,
     order: meta.order,
     description: meta.description,
+    hidden: !!meta.hidden,
   });
 });
 
