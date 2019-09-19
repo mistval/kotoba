@@ -62,6 +62,7 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
 }
 
 const fontDescriptionList = FontHelper.allFonts
+  .filter(fontInfo => !fontInfo.hidden)
   .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`)
   .join('\n');
 
