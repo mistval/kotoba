@@ -10,7 +10,6 @@ class KanjiNavigationDataSource {
     this.authorName = authorName;
     this.commandPrefix = commandPrefix;
     this.forceNavigationFooter = forceNavigationFooter;
-    this.kanjisAsync = this.getKanjis();
   }
 
   async getKanjis() {
@@ -23,6 +22,7 @@ class KanjiNavigationDataSource {
   }
 
   async countPages() {
+    this.kanjisAsync = this.kanjisAsync || this.getKanjis();
     return (await this.kanjisAsync).length;
   }
 
@@ -33,6 +33,7 @@ class KanjiNavigationDataSource {
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
+    this.kanjisAsync = this.kanjisAsync || this.getKanjis();
     const kanjis = await this.kanjisAsync;
 
     if (kanjis.length === 0) {
