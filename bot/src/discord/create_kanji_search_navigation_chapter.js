@@ -6,8 +6,9 @@ const jishoKanjiSearch = require('./../common/jisho_kanji_search.js');
 const constants = require('./../common/constants.js');
 
 class KanjiNavigationDataSource {
-  constructor(kanjis, authorName, commandPrefix, forceNavigationFooter) {
-    this.kanjis = kanjis;
+  constructor(word, authorName, commandPrefix, forceNavigationFooter) {
+    this.word = word
+    this.kanjis = extractKanji(word);
     this.authorName = authorName;
     this.commandPrefix = commandPrefix;
     this.forceNavigationFooter = forceNavigationFooter;
@@ -16,10 +17,24 @@ class KanjiNavigationDataSource {
   // Nothing to do here, but we need the method due to
   // interface contract.
   // eslint-disable-next-line class-methods-use-this
-  prepareData() {
+  async prepareData() {
+    if (this.kanjis.length === 0) {
+      this.kanjis = await jishoKanjiSearch(this.word);
+    }
+    this.hasResult = this.kanjis.length > 0;
   }
 
   async getPageFromPreparedData(arg, pageIndex) {
+    if (!this.hasResult) {
+      return {
+        embed: {
+          title: 'Jisho Kanji Search',
+          description: `I didn't find any results for ${this.word}`,
+          color: constants.EMBED_NEUTRAL_COLOR,
+        },
+      };
+    }
+
     if (pageIndex >= this.kanjis.length) {
       return undefined;
     }
@@ -42,35 +57,15 @@ class KanjiNavigationDataSource {
   }
 }
 
-async function createKanjiSearchNavigationChapter(
+function createKanjiSearchNavigationChapter(
   searchQuery,
   authorName,
   commandPrefix,
   forceNavigationFooter,
 ) {
-  let kanji = extractKanji(searchQuery);
-  if (kanji.length === 0) {
-    kanji = await jishoKanjiSearch(searchQuery);
-  }
-
-  if (kanji.length === 0) {
-    const pages = [{
-      embed: {
-        title: 'Jisho Kanji Search',
-        description: `I didn't find any results for ${searchQuery}`,
-        color: constants.EMBED_NEUTRAL_COLOR,
-      },
-    }];
-
-    return {
-      navigationChapter: NavigationChapter.fromContent(pages),
-      pageCount: 1,
-      hasResult: false,
-    };
-  }
 
   const dataSource = new KanjiNavigationDataSource(
-    kanji,
+    searchQuery,
     authorName,
     commandPrefix,
     forceNavigationFooter,
@@ -78,8 +73,8 @@ async function createKanjiSearchNavigationChapter(
 
   return {
     navigationChapter: new NavigationChapter(dataSource),
-    pageCount: kanji.length,
-    hasResult: true,
+    pageCount: 2, //TODO: How to get these values?
+    hasResult: true //
   };
 }
 
