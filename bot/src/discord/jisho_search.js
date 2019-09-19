@@ -12,9 +12,8 @@ const EXAMPLES_EMOTE = '🇪';
 const JISHO_EMOTE = '🇯';
 
 class NavigationChapterInformation {
-  constructor(navigationChapter, hasMultiplePages, hasAnyPages) {
+  constructor(navigationChapter, hasAnyPages) {
     this.navigationChapter = navigationChapter;
-    this.hasMultiplePages = hasMultiplePages;
     this.hasAnyPages = hasAnyPages;
   }
 }
@@ -53,8 +52,8 @@ function createNavigationChapterInformationForStrokeOrder(authorName, word) {
     true,
   );
 
-  const { navigationChapter, pageCount, hasKanjiResults } = navigationChapterInfo;
-  return new NavigationChapterInformation(navigationChapter, pageCount.length > 1, hasKanjiResults);
+  const { navigationChapter, hasKanjiResults } = navigationChapterInfo;
+  return new NavigationChapterInformation(navigationChapter, hasKanjiResults);
 }
 
 function createNavigationChapterInformationForExamples(authorName, word) {
