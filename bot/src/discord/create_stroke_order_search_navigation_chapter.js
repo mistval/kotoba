@@ -55,7 +55,6 @@ function createStrokeOrderSearchNavigationChapter(searchQuery, authorName, force
 
   return {
     navigationChapter: new NavigationChapter(dataSource),
-    pageCount: charactersToSearchFor.length,
     hasKanjiResults: kanji.length > 0,
   };
 }
