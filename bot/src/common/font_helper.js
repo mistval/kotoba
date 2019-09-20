@@ -8,7 +8,7 @@ const SUPPORTED_CHARACTERS_MAP_DIR_PATH = path.join(__dirname, '..', '..', 'gene
 const SUPPORTED_CHARACTERS_MAP_PATH = path.join(SUPPORTED_CHARACTERS_MAP_DIR_PATH, 'supported_chars_for_font.json');
 const RANDOM_FONT_SETTING = 'Random';
 
-const fontMetaFilePaths = glob.sync(`${__dirname}/../../fonts/**/meta.json`);
+const fontMetaFilePaths = glob.sync(`${__dirname}/../../../resources/fonts/**/meta.json`);
 const installedFonts = [];
 
 fontMetaFilePaths.forEach((metaPath) => {
