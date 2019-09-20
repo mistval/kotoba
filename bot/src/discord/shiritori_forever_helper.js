@@ -3,6 +3,7 @@ const shiritoriManager = require('shiritori');
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
 const assert = require('assert');
+const { FulfillmentError } = require('monochrome-bot');
 
 const sendAndDelete = require('./util/send_and_delete.js');
 const { Navigation } = require('monochrome-bot');
@@ -171,20 +172,34 @@ function discordDescriptionForRejection(rejectionReason, extraData) {
   return undefined;
 }
 
-function handleRejectedResult(monochrome, msg, rejectedResult) {
+async function handleRejectedResult(monochrome, msg, rejectedResult) {
   const { rejectionReason, extraData } = rejectedResult;
 
   if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
-    return retryPromise(() => msg.addReaction('❓'));
+    try {
+      return await retryPromise(() => msg.addReaction('❓'));
+    } catch (err) {
+      throw new FulfillmentError({
+        logDescription: 'Failed to add question mark reaction',
+        error: err,
+      });
+    }
   }
 
   const description = discordDescriptionForRejection(rejectionReason, extraData);
-  return retryPromise(() => sendAndDelete(
-    monochrome,
-    msg.channel.id,
-    description,
-    DELETE_MESSAGE_TIMEOUT_MS,
-  ));
+  try {
+    return await retryPromise(() => sendAndDelete(
+      monochrome,
+      msg.channel.id,
+      description,
+      DELETE_MESSAGE_TIMEOUT_MS,
+    ));
+  } catch (err) {
+    throw new FulfillmentError({
+      logDescription: 'Failed to send rejection reason',
+      error: err,
+    });
+  }
 }
 
 async function handleAcceptedResult(monochrome, msg, acceptedResult) {
