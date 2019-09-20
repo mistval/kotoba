@@ -365,7 +365,6 @@ async function createRoom(config, sockets) {
     newQuestionDelayAfterUnansweredInMs: 500,
     newQuestionDelayAfterAnsweredInMs: 500,
     additionalAnswerWaitTimeInMs: Math.max(Math.min(config.answerForgivenessWindow, 10000), 0),
-    font: 'Meiryo',
   };
 
   const roomID = generateUniqueID();

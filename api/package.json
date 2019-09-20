@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.2",
-    "canvas": "^1.6.12",
+    "canvas": "^2.6.0",
     "connect-mongo": "^2.0.3",
     "debug": "~2.6.9",
     "disk-array": "^1.0.1",
