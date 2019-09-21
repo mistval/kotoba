@@ -1,5 +1,5 @@
 const pronounceDb = require('./../common/pronunciation_db.js');
-const pronunciationData = require('./../../resources/dictionaries/pronunciation.json');
+const pronunciationData = require('./../../../resources/dictionaries/pronunciation.json');
 
 const VERBOSE = true;
 
