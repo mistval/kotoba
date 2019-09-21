@@ -43,7 +43,7 @@
     "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
     "render-furigana": "^2.0.1",
     "shiritori": "^2.0.4",
-    "unofficial-jisho-api": "^2.0.1"
+    "unofficial-jisho-api": "^2.0.5"
   },
   "devDependencies": {
     "@google-cloud/storage": "^2.5.0",
