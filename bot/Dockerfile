@@ -4,7 +4,6 @@ RUN apt-get update
 RUN apt-get -y install ffmpeg mongodb
 
 WORKDIR /var
-COPY ./resources ./resources
 COPY ./node-common ./node-common
 WORKDIR /var/node-common
 RUN npm ci
@@ -15,12 +14,14 @@ COPY ./bot/package.json .
 COPY ./bot/package-lock.json .
 RUN npm ci
 
+COPY ./resources/dictionaries ./resources
 COPY ./bot/src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./bot/src/common/mongo_connect.js ./src/common/mongo_connect.js
 COPY ./bot/resources/dictionaries ./resources/dictionaries
 COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
+COPY ./resources/fonts ./resources
 COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js
 RUN npm run buildfontcharactermap
 
