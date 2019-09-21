@@ -7,7 +7,7 @@ const csvStringify = require('csv-stringify/lib/sync');
 const { Storage } = require('@google-cloud/storage');
 
 const STORAGE_BUCKET_NAME = 'kotoba_public_quiz_data';
-const QUIZ_FILE_DIR = path.join(__dirname, '..', '..', 'resources', 'quiz_data');
+const QUIZ_FILE_DIR = path.join(__dirname, '..', '..', '..', 'resources', 'quiz_data');
 const CLOUD_AUTH_KEY_PATH = path.join(__dirname, 'gcloud_key.json');
 
 const storage = new Storage();

@@ -65,7 +65,7 @@ const meaningDeckSourceDeckNames = [
 ];
 
 function getPathForQuizDeckFile(fileName) {
-  return path.resolve(__dirname, '..', '..', 'resources', 'quiz_data', fileName || '');
+  return path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_data', fileName || '');
 }
 
 function getDiskArrayDirectoryForDeckName(deckName) {

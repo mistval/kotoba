@@ -14,10 +14,10 @@ COPY ./bot/package.json .
 COPY ./bot/package-lock.json .
 RUN npm ci
 
+RUN mkdir resources
 COPY ./resources/dictionaries ./resources
 COPY ./bot/src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./bot/src/common/mongo_connect.js ./src/common/mongo_connect.js
-COPY ./bot/resources/dictionaries ./resources/dictionaries
 COPY ./bot/src/build ./src/build
 RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
 
@@ -25,7 +25,7 @@ COPY ./resources/fonts ./resources
 COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js
 RUN npm run buildfontcharactermap
 
-COPY ./bot/resources ./resources
+COPY ./resources/quiz_data ./resources
 RUN npm run buildquiz
 
 RUN mkdir data
