@@ -19,7 +19,7 @@ COPY ./resources/dictionaries ./../resources/dictionaries
 COPY ./bot/src/common/pronunciation_db.js ./src/common/pronunciation_db.js
 COPY ./bot/src/common/mongo_connect.js ./src/common/mongo_connect.js
 COPY ./bot/src/build ./src/build
-RUN service mongodb start ; npm run buildpronunciation && npm run buildshiritori
+RUN service mongodb start ; sleep 15 && npm run buildpronunciation && npm run buildshiritori
 
 COPY ./resources/fonts ./../resources/fonts
 COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js

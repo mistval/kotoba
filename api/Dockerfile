@@ -21,7 +21,7 @@ RUN mv ./fonts/opentype/* /usr/share/fonts/opentype
 
 RUN npm ci
 RUN npm run buildquiz
-RUN service mongodb start ; npm run buildshiritori
+RUN service mongodb start ; sleep 15 && npm run buildshiritori
 
 RUN chmod +x ./start.sh
 CMD ./start.sh
