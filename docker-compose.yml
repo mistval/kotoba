@@ -1,6 +1,7 @@
 version: '3'
 services:
   kotoba-bot:
+    image: registry.gitlab.com/kotoba/monochrome2/bot:latest
     build:
       context: .
       dockerfile: ./bot/Dockerfile
@@ -16,11 +17,13 @@ services:
     depends_on:
       - mongo_readwrite
   kotoba-web:
+    image: registry.gitlab.com/kotoba/monochrome2/web:latest
     build:
       context: .
       dockerfile: ./kotobaweb/Dockerfile
     restart: always
   kotoba-api:
+    image: registry.gitlab.com/kotoba/monochrome2/api:latest
     build:
       context: .
       dockerfile: ./api/Dockerfile
@@ -33,6 +36,7 @@ services:
     depends_on:
       - mongo_readwrite
   kotoba-worker:
+    image: registry.gitlab.com/kotoba/monochrome2/worker:latest
     build:
       context: .
       dockerfile: ./worker/Dockerfile
@@ -47,6 +51,7 @@ services:
     image: mongo:4.0.9
     restart: always
   nginx:
+    image: registry.gitlab.com/kotoba/monochrome2/nginx
     build: ./nginx
     restart: always
     ports:
