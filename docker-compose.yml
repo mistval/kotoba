@@ -13,7 +13,7 @@ services:
     volumes:
       - ./user_data/bot:/var/app/data
       - ./user_data/shared_data:/var/shared_data
-      - ./config:/var/app/config
+      - ./config:/var/config
     depends_on:
       - mongo_readwrite
   kotoba-web:
@@ -32,7 +32,7 @@ services:
       MONGO_HOST: 'mongo_readwrite:27017'
     volumes:
       - ./user_data/shared_data:/var/shared_data
-      - ./config:/var/app/config
+      - ./config:/var/config
     depends_on:
       - mongo_readwrite
   kotoba-worker:
@@ -45,13 +45,11 @@ services:
       MONGO_HOST: 'mongo_readwrite:27017'
     depends_on:
       - mongo_readwrite
-    volumes:
-      - ./config:/var/app/config
   mongo_readwrite:
     image: mongo:4.0.9
     restart: always
   nginx:
-    image: registry.gitlab.com/kotoba/monochrome2/nginx
+    image: registry.gitlab.com/kotoba/monochrome2/nginx:latest
     build: ./nginx
     restart: always
     ports:
