@@ -23,7 +23,5 @@ RUN npm ci
 RUN npm run buildquiz
 RUN service mongodb start ; npm run buildshiritori
 
-COPY ./config.js ./..
-
 RUN chmod +x ./start.sh
 CMD ./start.sh

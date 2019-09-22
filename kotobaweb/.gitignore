@@ -25,6 +25,3 @@ yarn-error.log*
 # (I'm linking to the Github CDN instead, because
 # webpack takes forever to build the images)
 stroke_order_images
-
-# Private config
-/src/config.json

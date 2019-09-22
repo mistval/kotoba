@@ -1,5 +1,5 @@
 const passport = require('passport');
-const config = require('./../../config.js').api;
+const config = require('./../../config/config.js').api;
 const DiscordPassportStrategy = require('passport-discord').Strategy;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);

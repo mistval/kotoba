@@ -1,6 +1,6 @@
 const axios = require('axios').create({ timeout: 10000 });
 
-const API_KEY = require('./../../../config.js').bot.apiKeys.youtube;
+const API_KEY = require('./../../../config/config.js').bot.apiKeys.youtube;
 
 function hasApiKey() {
   return !!API_KEY;

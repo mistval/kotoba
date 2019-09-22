@@ -1,4 +1,4 @@
-const config = require('../../config').frontend;
+const config = require('../../config/frontend_config.js');
 const fs = require('fs');
 const path = require('path');
 

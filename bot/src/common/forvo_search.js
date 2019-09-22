@@ -1,6 +1,6 @@
 const axios = require('axios').create({ timeout: 10000 });
 
-const API_KEY = require('./../../../config.js').bot.apiKeys.forvo;
+const API_KEY = require('./../../../config/config.js').bot.apiKeys.forvo;
 
 const NOT_RESPONDING_ERROR_MESSAGE = 'No response';
 const preferredLanguageNames = ['Japanese', 'English'];

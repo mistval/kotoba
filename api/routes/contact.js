@@ -1,6 +1,6 @@
 const routes = require('express').Router();
 const nodemailer = require('nodemailer');
-const config = require('./../../config.js').api.mail;
+const config = require('./../../config/config.js').api.mail;
 const rateLimit = require('express-slow-down');
 
 const transporter = nodemailer.createTransport({
