@@ -162,9 +162,8 @@ async function addAggregateStats(statsIn) {
     stats.percentCorrectPerDeckWMA[deckUniqueId] = calculateWMA(dailyPercentCorrect);
   });
 
-  stats.deckShortNameForUniqueId = await getShortNamesForUniqueIds(
-    Object.keys(allSeenDeckUniqueIds),
-  );
+  const deckUniqueIds = Object.keys(allSeenDeckUniqueIds);
+  stats.deckShortNameForUniqueId = await getShortNamesForUniqueIds(deckUniqueIds);
 
   return stats;
 }
