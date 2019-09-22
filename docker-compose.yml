@@ -42,8 +42,6 @@ services:
   mongo_readwrite:
     image: mongo:4.0.9
     restart: always
-    volumes:
-      - ./user_data/mongo_readwrite_data:/data/db
   nginx:
     build: ./nginx
     restart: always
