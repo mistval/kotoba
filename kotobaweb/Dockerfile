@@ -5,7 +5,8 @@ COPY ./common ./common
 
 WORKDIR /var/app
 COPY ./kotobaweb .
-COPY ./config.js ./..
+RUN mkdir ./../config
+COPY ./config/frontend_config.js ./../config/
 RUN npm ci
 RUN npm run build
 
