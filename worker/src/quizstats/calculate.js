@@ -4,7 +4,13 @@ const UserModel = require('kotoba-node-common').models.createUserModel(dbConnect
 const render = require('./render.js');
 const mongoose = require('mongoose');
 
-const cachedStatsForUserId = {};
+const CACHE_EMPTY_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+let cachedStatsForUserId = {};
+
+setInterval(() => {
+  cachedStatsForUserId = {};
+}, CACHE_EMPTY_INTERVAL_MS);
 
 async function calculateStats(workerPool, userId) {
   // Find the user's ID in mongo, if a Discord user ID was given.
@@ -28,6 +34,8 @@ async function calculateStats(workerPool, userId) {
   const mongoUserIdStr = mongoUserId.toString();
   const cachedStats = cachedStatsForUserId[mongoUserIdStr];
 
+  // If there are no new reports since this user's stats were last
+  // cached, return the cached stats.
   if (cachedStats) {
     const mostRecentReport = await GameReportModel
       .find({ participants: mongoUserId })
@@ -45,10 +53,13 @@ async function calculateStats(workerPool, userId) {
     }
   }
 
+  // Calculate stats
   const stats = await workerPool.doWork('calculateStats', mongoUserIdStr);
   if (!stats) {
     return undefined;
   }
+
+  // Render and cache the stats
 
   // TODO: Canvas doesn't support worker threads, RIP
   // https://github.com/Automattic/node-canvas/issues/1394
