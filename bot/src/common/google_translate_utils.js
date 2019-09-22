@@ -7,7 +7,7 @@ const htmlEntities = new htmlEntitiesModule.XmlEntities();
 const { throwPublicErrorFatal } = require('./util/errors.js');
 const { languageNameForGoogleLanguageCode } = require('./language_code_maps.js');
 
-const API_KEY = require('./../../../config.js').bot.apiKeys.googleTranslate;
+const API_KEY = require('./../../../config/config.js').bot.apiKeys.googleTranslate;
 
 const TRANSLATE_API = 'https://translation.googleapis.com/language/translate/v2';
 const DETECTION_API = 'https://translation.googleapis.com/language/translate/v2/detect';

@@ -33,7 +33,5 @@ RUN mkdir data
 COPY ./bot/start.sh ./start.sh
 COPY ./bot/src ./src
 
-COPY ./config.js ./gcloud_key.json* ./../
-
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]

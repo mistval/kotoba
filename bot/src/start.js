@@ -2,7 +2,7 @@ const Monochrome = require('monochrome-bot');
 const globals = require('./common/globals.js');
 const path = require('path');
 const fs = require('fs');
-const config = require('./../../config.js').bot;
+const config = require('./../../config/config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const canvasInit = require('./common/canvas_init.js');
 const Bunyan = require('bunyan');
@@ -10,7 +10,7 @@ const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 
 const { ConsoleLogger } = Monochrome;
 
-const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'gcloud_key.json');
+const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'config', 'gcloud_key.json');
 const hasGCloudKey = fs.existsSync(GCLOUD_KEY_PATH);
 
 const { apiKeys } = config;
