@@ -40,7 +40,7 @@
     "kotoba-node-common": "file:../node-common",
     "moment": "2.24.0",
     "mongoose": "5.5.15",
-    "monochrome-bot": "git+https://github.com/mistval/monochrome.git",
+    "monochrome-bot": "3.0.0-alpha.0",
     "render-furigana": "^2.0.1",
     "shiritori": "^2.0.4",
     "unofficial-jisho-api": "^2.0.5"
