@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './strokeorder.css';
-import availableKanjiFiles from './available_kanji_files.json';
 import '../main.css';
 import Analytics from '../util/analytics';
 
 function uriForKanji(kanji) {
-  const fileCodeStringLength = 5;
-  const unicodeString = kanji.codePointAt(0).toString(16);
-  const fillZeroes = fileCodeStringLength - unicodeString.length;
-  const fileCode = new Array(fillZeroes + 1).join('0') + unicodeString;
-  const fileName = `${fileCode}_anim.gif`;
-
-  if (availableKanjiFiles[fileName]) {
-    return `https://raw.githubusercontent.com/mistval/kotoba/master/bot/resources/images/kanjianimations/${fileName}`;
-  }
-
-  return undefined;
+  const codePointBase16String = kanji.codePointAt(0).toString(16);
+  return `https://raw.githubusercontent.com/mistval/kanji_images/master/gifs/${codePointBase16String}.gif`;
 }
 
 function TextEntry(props) {
@@ -63,7 +53,7 @@ function createKanjiCards(kanjis) {
               </a>
             </h5>
             { uri
-              ? (<img className="card-img-bottom" src={uri} alt="kanji stroke order" />)
+              ? (<img className="card-img-bottom" src={uri} alt="Unknown kanji" />)
               : (<p>Unknown kanji</p>)
             }
           </div>
