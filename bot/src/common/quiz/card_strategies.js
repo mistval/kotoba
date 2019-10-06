@@ -11,7 +11,7 @@ const OXFORD_APP_ID = require('../../../../config/config.js').bot.apiKeys.oxford
 const OXFORD_API_KEY = require('../../../../config/config.js').bot.apiKeys.oxfordApiKey;
 
 const URI_MAX_LENGTH = 2048;
-const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', 'resources', 'quiz_audio');
+const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', '..', 'resources', 'quiz_audio');
 
 let BetterEnglishDefinitions;
 try {
