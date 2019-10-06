@@ -6,6 +6,8 @@ file_name=backup.tar.gz
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd $parent_path/..
 
+cp -f ./config/gcloud_key.json ./backup
+
 rm -rf ./backup_out
 mkdir -p ./backup_out/user_data/bot
 docker-compose exec -T mongo_readwrite mongodump --archive=./mongo_dump.archive
@@ -19,6 +21,6 @@ rm -rf ./gsutil_volume
 mkdir ./gsutil_volume
 tar cvfz ./gsutil_volume/$file_name ./backup_out
 
-docker run -v $parent_path/../gsutil_volume/:/var/backup -v $parent_path/../backup:/var/gcloud_key google/cloud-sdk:alpine /bin/bash -c "gcloud auth activate-service-account --key-file=/var/gcloud_key/gcloud_key.json && gsutil cp /var/backup/$file_name gs://$bucket_name"
+#docker run -v $parent_path/../gsutil_volume/:/var/backup -v $parent_path/../backup:/var/gcloud_key google/cloud-sdk:alpine /bin/bash -c "gcloud auth activate-service-account --key-file=/var/gcloud_key/gcloud_key.json && gsutil cp /var/backup/$file_name gs://$bucket_name"
 
 rm -rf ./gsutil_volume
