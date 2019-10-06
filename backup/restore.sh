@@ -6,7 +6,7 @@ file_name=backup.tar.gz
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd $parent_path
 
-cp -f ./config/gcloud_key.json ./backup
+cp -f ./../config/gcloud_key.json ./backup
 
 docker run -v $parent_path:/var/backup google/cloud-sdk:alpine /bin/bash -c "gcloud auth activate-service-account --key-file=/var/backup/gcloud_key.json && gsutil cp gs://$bucket_name/$file_name /var/backup"
 
