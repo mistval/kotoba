@@ -22,6 +22,8 @@ docker exec -i $(docker-compose ps -q mongo_readwrite) sh -c ' exec mongorestore
 rm -rf ./user_data/bot/monochrome-persistence
 rm -rf ./user_data/bot/quiz_saves
 rm -rf ./user_data/shared_data/custom_decks
+mkdir -p ./user_data/bot/
+mkdir -p ./user_data/shared_data/
 mv -f ./backup/temp/backup_out/user_data/bot/* ./user_data/bot/
 mv -f ./backup/temp/backup_out/user_data/shared_data/* ./user_data/shared_data/
 
