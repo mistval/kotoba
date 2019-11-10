@@ -58,13 +58,7 @@
       ],
       "meaning": "tomorrow"
     },
-    {
-      "question": "集る",
-      "answer": [
-        "あつまる"
-      ],
-      "meaning": "to gather"
-    },
+    null,
     {
       "question": "集める",
       "answer": [
@@ -461,7 +455,7 @@
       "meaning": "tonight"
     },
     {
-      "question": "下る",
+      "question": "下がる",
       "answer": [
         "さがる",
         "くだる"
