@@ -12,13 +12,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@polka/send-type": "^0.5.2",
-    "canvas": "^2.5.0",
+    "@polka/send-type": "0.5.2",
+    "canvas": "2.5.0",
     "kotoba-node-common": "file:../node-common",
-    "mongoose": "^5.7.9",
-    "polka": "^0.5.2",
-    "vega": "^5.4.0",
-    "wrecker": "^1.0.3"
+    "mongoose": "5.7.9",
+    "polka": "0.5.2",
+    "vega": "5.4.0",
+    "wrecker": "1.0.3"
   },
   "devDependencies": {
     "eslint": "4.19.1",
