@@ -41,7 +41,7 @@
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.24.0",
-    "mongoose": "5.7.5",
+    "mongoose": "^5.7.9",
     "monochrome-bot": "3.0.0-alpha.1",
     "parse5": "5.1.0",
     "render-furigana": "2.0.1",
