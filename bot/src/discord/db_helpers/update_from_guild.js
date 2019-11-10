@@ -15,7 +15,7 @@ async function updateDbFromGuild(guild) {
       guildRecord.iconBytes = Buffer.from(response.data);
       guildRecord.icon = guild.icon;
     } catch (err) {
-      globals.logger.error({
+      globals.logger.warn({
         event: 'FAILED TO DOWNLOAD GUILD ICON',
         err,
         guild,

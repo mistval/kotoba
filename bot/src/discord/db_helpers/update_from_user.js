@@ -18,7 +18,7 @@ async function updateDbFromUser(user, admin = false) {
       userRecord.discordUser.avatarBytes = Buffer.from(response.data);
       userRecord.discordUser.avatar = user.avatar;
     } catch (err) {
-      globals.logger.error({
+      globals.logger.warn({
         event: 'FAILED TO DOWNLOAD USER AVATAR',
         err,
         user,
