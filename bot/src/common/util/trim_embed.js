@@ -5,6 +5,10 @@ const EMBED_TITLE_MAX_LENGTH = 242;
 const EMBED_FIELD_TRIM_REPLACEMENT = ' [...]';
 
 function trimString(str, maxLength) {
+  if (!str) {
+    return str;
+  }
+
   if (str.length > maxLength) {
     let trimmedStr = str.substring(
       0,
