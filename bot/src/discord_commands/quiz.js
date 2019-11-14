@@ -513,8 +513,7 @@ class DiscordMessageSender {
 
     let content = {
       embed: {
-        title,
-        description: question.instructions,
+        description: `**${title}**\n${question.instructions || ''}`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
       },
