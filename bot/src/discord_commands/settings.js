@@ -158,11 +158,6 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
       color: EMBED_COLOR,
       fields: [
         {
-          name: 'Allowed values',
-          value: setting.allowedValuesDescription,
-          inline: true,
-        },
-        {
           name: 'Current value',
           value: await settings.getUserFacingSettingValue(
             setting.uniqueId,
@@ -181,6 +176,11 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
           name: 'Can be changed by',
           value: setting.userSetting ? 'Anyone' : 'Server admin',
           inline: true,
+        },
+        {
+          name: 'Allowed values',
+          value: setting.allowedValuesDescription,
+          inline: false,
         },
       ],
       footer: {
