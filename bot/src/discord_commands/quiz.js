@@ -528,7 +528,7 @@ class DiscordMessageSender {
       content.embed.footer = { text: question.hintString };
     }
     if (question.options) {
-      content.embed.description = 'Type the number of the correct answer!'; // This overwrites the quiz instructions.
+      content.embed.description = `${title}\nType the number of the correct answer!`;
       const fieldValue = question.options.map((option, index) => {
         const optionCharacter = `${index + 1}`;
         return `**${optionCharacter}:** ${option}`;
@@ -536,7 +536,7 @@ class DiscordMessageSender {
       content.embed.fields.push({ name: 'Possible Answers', value: fieldValue });
     }
     if (question.bodyAsText) {
-      content.embed.description = question.bodyAsText.substring(0, 2000); // This overwrites the quiz instructions.
+      content.embed.description += '\n\n' + question.bodyAsText;
     }
     if (question.bodyAsImageUri) {
       content.embed.image = { url: question.bodyAsImageUri };
@@ -545,7 +545,6 @@ class DiscordMessageSender {
       const serverId = this.commanderMessage.channel.guild.id;
       const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(this.bot, serverId);
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
-      content.embed.description = question.instructions;
       audioConnectionManager.play(this.bot, serverId, question.bodyAsAudioUri);
     }
 
