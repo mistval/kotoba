@@ -528,7 +528,7 @@ class DiscordMessageSender {
       content.embed.footer = { text: question.hintString };
     }
     if (question.options) {
-      content.embed.description = `${title}\nType the number of the correct answer!`;
+      content.embed.description = `**${title}**\nType the number of the correct answer!`;
       const fieldValue = question.options.map((option, index) => {
         const optionCharacter = `${index + 1}`;
         return `**${optionCharacter}:** ${option}`;
