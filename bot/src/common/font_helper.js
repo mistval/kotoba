@@ -46,7 +46,8 @@ function buildSupportedCharactersForFontMap() {
       font.characterSet.forEach((char) => {
         const glyph = font.glyphForCodePoint(char);
         try {
-          if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === 32) { // 32 = space
+          const space = 32;
+          if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === space) {
             supportedCharactersForFontInner[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
           }
         } catch (err) {
