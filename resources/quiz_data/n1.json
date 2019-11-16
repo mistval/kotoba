@@ -10426,7 +10426,13 @@
       ],
       "meaning": "space, interval, SPC"
     },
-    null,
+    {
+      "question": "絹",
+      "answer": [
+        "きぬ"
+      ],
+      "meaning": "silk"
+    },
     {
       "question": "省略",
       "answer": [
@@ -15027,6 +15033,104 @@
         "さどう"
       ],
       "meaning": "operation; functioning; running"
+    },
+    {
+      "question": "従う",
+      "answer": [
+        "したがう"
+      ],
+      "meaning": "to abide (by the rules); to obey; to follow; to accompany"
+    },
+    {
+      "question": "製品",
+      "answer": [
+        "せいひん"
+      ],
+      "meaning": "manufactured goods; finished goods; product"
+    },
+    {
+      "question": "監督",
+      "answer": [
+        "かんとく"
+      ],
+      "meaning": "supervision; control; superintendence; direction, director; superintendent; supervisor; coach; foreman; manager; overseer; controller; boss"
+    },
+    {
+      "question": "目標",
+      "answer": [
+        "もくひょう"
+      ],
+      "meaning": "mark; sign; landmark; benchmark, mark; objective; target"
+    },
+    {
+      "question": "稲",
+      "answer": [
+        "いね"
+      ],
+      "meaning": "rice plant"
+    },
+    {
+      "question": "睡眠",
+      "answer": [
+        "すいみん"
+      ],
+      "meaning": "sleep"
+    },
+    {
+      "question": "砂漠",
+      "answer": [
+        "さばく"
+      ],
+      "meaning": "desert"
+    },
+    {
+      "question": "礼儀",
+      "answer": [
+        "れいぎ"
+      ],
+      "meaning": "manners; courtesy; etiquette"
+    },
+    {
+      "question": "発展",
+      "answer": [
+        "はってん"
+      ],
+      "meaning": "development; growth; advancement; unfurling, expansion; extension; enlargement, playing around; having an active sex life"
+    },
+    {
+      "question": "癖",
+      "answer": [
+        "くせ"
+      ],
+      "meaning": "habit (often a bad habit, i.e. vice); tendency, peculiarity; idiosyncrasy; mannerism, crease; wrinkle; curl; kink"
+    },
+    {
+      "question": "症状",
+      "answer": [
+        "しょうじょう"
+      ],
+      "meaning": "symptoms; condition"
+    },
+    {
+      "question": "異常",
+      "answer": [
+        "いじょう"
+      ],
+      "meaning": "strangeness; abnormality; disorder"
+    },
+    {
+      "question": "異なる",
+      "answer": [
+        "ことなる"
+      ],
+      "meaning": "to differ; to vary; to disagree"
+    },
+    {
+      "question": "申し訳",
+      "answer": [
+        "もうしわけ"
+      ],
+      "meaning": "apology; excuse"
     }
   ]
 }
