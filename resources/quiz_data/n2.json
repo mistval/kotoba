@@ -681,7 +681,13 @@
       ],
       "meaning": "open, throw open, liberalization"
     },
-    null,
+    {
+      "question": "祝う",
+      "answer": [
+        "いわう"
+      ],
+      "meaning": "to congratulate; to celebrate; to observe (a festival)"
+    },
     {
       "question": "係わる",
       "answer": [
@@ -2581,7 +2587,13 @@
       ],
       "meaning": "chart, diagram, graph"
     },
-    null,
+    {
+      "question": "秘密",
+      "answer": [
+        "ひみつ"
+      ],
+      "meaning": "secret; secrecy; confidentiality; privacy, secret; mystery, esoteric teachings"
+    },
     {
       "question": "刷る",
       "answer": [
@@ -4158,7 +4170,13 @@
       ],
       "meaning": "exposure to the sun, sunny place"
     },
-    null,
+    {
+      "question": "瞬間",
+      "answer": [
+        "しゅんかん"
+      ],
+      "meaning": "moment; second; instant"
+    },
     {
       "question": "引返す",
       "answer": [
@@ -6374,7 +6392,13 @@
       ],
       "meaning": "cabinet minister"
     },
-    null,
+    {
+      "question": "真剣",
+      "answer": [
+        "しんけん"
+      ],
+      "meaning": "seriousness; earnestness, real sword (as opposed to unsharpened or wooden practice weapon)"
+    },
     {
       "question": "行事",
       "answer": [
@@ -7377,7 +7401,13 @@
       ],
       "meaning": "application; request; petition"
     },
-    null,
+    {
+      "question": "眺め",
+      "answer": [
+        "ながめ"
+      ],
+      "meaning": "scene; view; prospect; outlook"
+    },
     {
       "question": "儀式",
       "answer": [
@@ -8725,7 +8755,13 @@
       ],
       "meaning": "slanting; tilted; sloping; diagonal; oblique, unusual; slanted (view of the world); bad (mood)"
     },
-    null,
+    {
+      "question": "皮",
+      "answer": [
+        "かわ"
+      ],
+      "meaning": "skin; hide; pelt; fur, rind; peel; husk; bark, shell; sheath; wrapping, mask (hiding one's true nature); seeming"
+    },
     {
       "question": "方言",
       "answer": [
@@ -8802,6 +8838,13 @@
         "きんぞく"
       ],
       "meaning": "metal"
+    },
+    {
+      "question": "皿",
+      "answer": [
+        "さら"
+      ],
+      "meaning": "plate; dish; platter; disc, serving; helping; course, kanji radical 108 (at the bottom)"
     }
   ]
 }
