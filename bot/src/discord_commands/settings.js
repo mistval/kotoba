@@ -358,6 +358,9 @@ function tryCreateLocationErrorString(locationString, msg, setting) {
 
     return undefined;
   }
+  if (!msg.channel.guild) {
+    return `That's not a valid response. You can say **${Location.ME}** or **${Location.THIS_SERVER}**. You can also say **${CANCEL}** or **${BACK}**.`;
+  }
 
   // If we're here, then we are treating the location string as a list of channels.
   const channelIds = getChannelIds(locationStringLowerCase, msg);
@@ -552,7 +555,7 @@ async function tryPromptForSettingLocation(hook, msg, monochrome, settingNode, n
   // but is either a server or channel setting,
   // we can shortcut to setting on this server.
   const isServerOrChannelSetting = settingNode.serverSetting || settingNode.channelSetting;
-  if (isDm && (isServerOrChannelSetting) && !settingNode.userSetting) {
+  if (isDm && isServerOrChannelSetting && !settingNode.userSetting) {
     return tryApplyNewSetting(
       hook,
       monochrome,
