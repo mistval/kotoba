@@ -8570,13 +8570,7 @@
       ],
       "meaning": "assistance; aid; support"
     },
-    {
-      "question": "縄",
-      "answer": [
-        "なわ"
-      ],
-      "meaning": "rope; cord, policeman's rope"
-    },
+    null,
     {
       "question": "緊張",
       "answer": [
@@ -8584,34 +8578,10 @@
       ],
       "meaning": "tension; mental strain; nervousness"
     },
-    {
-      "question": "撃つ",
-      "answer": [
-        "うつ"
-      ],
-      "meaning": "to shoot (at), to attack; to defeat; to destroy; to avenge"
-    },
-    {
-      "question": "操作",
-      "answer": [
-        "そうさ"
-      ],
-      "meaning": "operation; management; handling, manipulating to one's benefit"
-    },
-    {
-      "question": "改善",
-      "answer": [
-        "かいぜん"
-      ],
-      "meaning": "betterment; improvement, kaizen (Japanese business philosophy of continuous improvement)"
-    },
-    {
-      "question": "攻撃",
-      "answer": [
-        "こうげき"
-      ],
-      "meaning": "attack; strike; offensive, criticism; censure; denunciation; condemnation"
-    },
+    null,
+    null,
+    null,
+    null,
     {
       "question": "政府",
       "answer": [
@@ -8619,14 +8589,7 @@
       ],
       "meaning": "government; administration"
     },
-    {
-      "question": "故郷",
-      "answer": [
-        "こきょう",
-        "ふるさと"
-      ],
-      "meaning": "home town; birthplace; native place; one's old home, ruins; historic remains"
-    },
+    null,
     {
       "question": "救う",
       "answer": [
@@ -8648,14 +8611,7 @@
       ],
       "meaning": "professor, teaching; instruction"
     },
-    {
-      "question": "綿",
-      "answer": [
-        "わた",
-        "めん"
-      ],
-      "meaning": "cotton, cotton plant (Gossypium spp.), batting; wadding; padding"
-    },
+    null,
     {
       "question": "整理",
       "answer": [
@@ -8678,20 +8634,8 @@
       ],
       "meaning": "complaint; grumbling; objection, phrase; words; expression"
     },
-    {
-      "question": "新鮮",
-      "answer": [
-        "しんせん"
-      ],
-      "meaning": "fresh"
-    },
-    {
-      "question": "旗",
-      "answer": [
-        "はた"
-      ],
-      "meaning": "flag"
-    },
+    null,
+    null,
     {
       "question": "日中",
       "answer": [
@@ -8713,20 +8657,8 @@
       ],
       "meaning": "easy; plain; simple"
     },
-    {
-      "question": "是非",
-      "answer": [
-        "ぜひ"
-      ],
-      "meaning": "certainly; without fail, right and wrong; pros and cons"
-    },
-    {
-      "question": "維持",
-      "answer": [
-        "いじ"
-      ],
-      "meaning": "maintenance; preservation; improvement"
-    },
+    null,
+    null,
     {
       "question": "暖かい",
       "answer": [
@@ -8734,20 +8666,8 @@
       ],
       "meaning": "warm; mild; genial"
     },
-    {
-      "question": "替える",
-      "answer": [
-        "かえる"
-      ],
-      "meaning": "to replace, to exchange; to interchange, to substitute"
-    },
-    {
-      "question": "絶滅",
-      "answer": [
-        "ぜつめつ"
-      ],
-      "meaning": "destruction; extinction"
-    },
+    null,
+    null,
     {
       "question": "結論",
       "answer": [
@@ -8790,35 +8710,10 @@
       ],
       "meaning": "condition; conditions; term; terms; requirement; requirements"
     },
-    {
-      "question": "板",
-      "answer": [
-        "いた"
-      ],
-      "meaning": "board; plank, sheet (of metal); plate (of glass); pane; slab, cutting board; chopping board, chef (esp. of high-end Japanese cuisine); cook, stage (i.e. at a theatre)"
-    },
-    {
-      "question": "株",
-      "answer": [
-        "かぶ"
-      ],
-      "meaning": "stock; share, stump, root; rootstock, strain (of bacteria, etc.), tradeable rank; goodwill, one's forte"
-    },
-    {
-      "question": "根",
-      "answer": [
-        "ね",
-        "こん"
-      ],
-      "meaning": "root (of a plant), root (of a tooth, hair, etc.); center (of a pimple, etc.), root (of all evil, etc.); source; origin; cause; basis, one's true nature, (fishing) reef, stick-to-itiveness; perseverance; persistence, radical (esp. one that tends to ionize easily), root, indriya (faculty of the body having a specific function, i.e. the sensory organs)"
-    },
-    {
-      "question": "案内",
-      "answer": [
-        "あんない"
-      ],
-      "meaning": "information; guidance; leading, to guide; to show (around); to conduct"
-    },
+    null,
+    null,
+    null,
+    null,
     {
       "question": "桜",
       "answer": [
@@ -8826,20 +8721,8 @@
       ],
       "meaning": "cherry tree; cherry blossom, decoy; fake buyer; shill, hired applauder, horse meat"
     },
-    {
-      "question": "梅",
-      "answer": [
-        "うめ"
-      ],
-      "meaning": "Japanese apricot (Prunus mume); Chinese plum, lowest (of a three-tier ranking system)"
-    },
-    {
-      "question": "梅雨",
-      "answer": [
-        "つゆ"
-      ],
-      "meaning": "rainy season (in Japan from early June to mid-July), rain during the rainy season"
-    },
+    null,
+    null,
     {
       "question": "結局",
       "answer": [
@@ -8854,41 +8737,11 @@
       ],
       "meaning": "chair; stool, post; office; position, traditional square chair with armrests and a torii-shaped back (used by the emperor, etc. during ceremonies)"
     },
-    {
-      "question": "結ぶ",
-      "answer": [
-        "むすぶ"
-      ],
-      "meaning": "to tie; to bind; to link, to bear (fruit), to close (e.g. deal); to confirm; to conclude, to connect (two distant places), to close tightly; to purse (e.g. lips), to unite (with); to ally; to join hands"
-    },
-    {
-      "question": "検査",
-      "answer": [
-        "けんさ"
-      ],
-      "meaning": "inspection (e.g. customs, factory); examination; scan (e.g. MRI, PET, etc.)"
-    },
-    {
-      "question": "検討",
-      "answer": [
-        "けんとう"
-      ],
-      "meaning": "consideration; examination; investigation; study; scrutiny; discussion; analysis; review"
-    },
-    {
-      "question": "模様",
-      "answer": [
-        "もよう"
-      ],
-      "meaning": "pattern; figure; design, state; condition, conjecture of the current situation; the way it seems, model; pattern; example, indicates that that noun seems likely (e.g. rain or storm), framework (in go); territorial framework; moyo"
-    },
-    {
-      "question": "機嫌",
-      "answer": [
-        "きげん"
-      ],
-      "meaning": "humour; humor; temper; mood; spirits, safety; health; well-being; one's situation, in a good mood; in high spirits; happy; cheery; merry; chipper"
-    },
+    null,
+    null,
+    null,
+    null,
+    null,
     {
       "question": "経営",
       "answer": [
@@ -8896,20 +8749,8 @@
       ],
       "meaning": "management; administration; operation; running (business); conducting"
     },
-    {
-      "question": "欠陥",
-      "answer": [
-        "けっかん"
-      ],
-      "meaning": "defect; fault; deficiency; deformity, shortage; gap"
-    },
-    {
-      "question": "次第",
-      "answer": [
-        "しだい"
-      ],
-      "meaning": "depending on, as soon as; immediately (upon), in accordance with, order; program; programme; precedence, circumstances; course of events; reason"
-    },
+    null,
+    null,
     {
       "question": "歓迎",
       "answer": [
@@ -8917,27 +8758,9 @@
       ],
       "meaning": "welcome; reception"
     },
-    {
-      "question": "武器",
-      "answer": [
-        "ぶき"
-      ],
-      "meaning": "weapon; arms; ordnance, weapon (something used to gain an advantage); asset"
-    },
-    {
-      "question": "組織",
-      "answer": [
-        "そしき"
-      ],
-      "meaning": "organization; organisation, structure; construction, tissue, system"
-    },
-    {
-      "question": "比較",
-      "answer": [
-        "ひかく"
-      ],
-      "meaning": "comparison"
-    },
+    null,
+    null,
+    null,
     {
       "question": "素晴らしい",
       "answer": [
@@ -8952,13 +8775,7 @@
       ],
       "meaning": "to be pleased with; to suit"
     },
-    {
-      "question": "納得",
-      "answer": [
-        "なっとく"
-      ],
-      "meaning": "consent; assent; agreement, understanding; comprehension; grasp"
-    },
+    null,
     {
       "question": "気温",
       "answer": [
@@ -8973,13 +8790,7 @@
       ],
       "meaning": "level; standard, water level"
     },
-    {
-      "question": "粗末",
-      "answer": [
-        "そまつ"
-      ],
-      "meaning": "crude; rough; plain; humble; shabby"
-    },
+    null,
     null,
     null,
     null,
