@@ -43,7 +43,7 @@ function createStrokeOrderSearchNavigationChapter(searchQuery, authorName, force
   const kanji = extractKanji(searchQuery);
   const charactersToSearchFor = [...kanji];
   if (kanji.length === 0) {
-    const uniqueCharacters = searchQuery.split('').filter((c, i) => searchQuery.indexOf(c) === i);
+    const uniqueCharacters = Array.from(searchQuery).filter((c, i) => searchQuery.indexOf(c) === i);
     charactersToSearchFor.push(...uniqueCharacters);
   }
 
