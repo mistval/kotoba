@@ -10,7 +10,7 @@ module.exports = {
   usageExample: '<prefix>eval 4+5',
   uniqueId: 'eval',
   hidden: true,
-  action(bot, msg, suffix) {
+  async action(bot, msg, suffix) {
     if (!suffix) {
       throw new FulfillmentError({
         publicMessage: `Say **${msg.prefix}eval javascript_code_here** to evaluate code.`,
@@ -19,8 +19,13 @@ module.exports = {
     }
 
     // eslint-disable-next-line no-eval
-    const result = eval(suffix);
-    const text = JSON.stringify(result, null, 2);
-    return msg.channel.createMessage(`\`\`\`js\n${text}\n\`\`\``);
+    try {
+      const result = await eval(suffix);
+      const text = JSON.stringify(result, null, 2);
+
+      return msg.channel.createMessage(`\`\`\`js\n${text}\n\`\`\``);
+    } catch (err) {
+      return msg.channel.createMessage(`\`\`\`${err.stack}\`\`\``);
+    }
   },
 };
