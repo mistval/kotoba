@@ -1,4 +1,5 @@
 const { FulfillmentError } = require('monochrome-bot');
+const { botAdminIds } = require('../../../config/config.js').bot;
 
 /**
 * Evaluate arbitrary javascript code and return the result. Syntax: }eval [javascript code]
@@ -15,6 +16,13 @@ module.exports = {
       throw new FulfillmentError({
         publicMessage: `Say **${msg.prefix}eval javascript_code_here** to evaluate code.`,
         logDescription: 'No argument',
+      });
+    }
+
+    if (botAdminIds.indexOf(msg.author.id) === -1) {
+      throw new FulfillmentError({
+        logDescription: 'Eval command is executing for non-Admin',
+        logLevel: 'fatal',
       });
     }
 
