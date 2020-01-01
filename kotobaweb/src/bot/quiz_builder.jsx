@@ -151,7 +151,7 @@ class QuizBuilder extends Component {
   handleAddDeckClick = () => {
     this.setState({
       editingDeck: true,
-      newDeckName: 'New_Deck',
+      newDeckName: 'SomeDeck',
     }, () => {
       this.newDeckNameInput.select();
     });
