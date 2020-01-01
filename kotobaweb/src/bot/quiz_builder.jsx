@@ -152,14 +152,6 @@ function validateRange(rangeString) {
   return rangeString.match(/^end$|^[0-9]*$/);
 }
 
-function setRangeInputValidityMessage(input, valid) {
-  if (valid) {
-    input.setCustomValidity('');
-  } else {
-    input.setCustomValidity('Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.');
-  }
-}
-
 function getRangeValidationErrorMessage(input, otherInput, mustBeLower) {
   if (!validateRange(input.value)) {
     return 'Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.';
@@ -273,14 +265,6 @@ class QuizBuilder extends Component {
 
     const startIndex = convertRangeStringToNumber(this.state.changeRangeStartIndex) || 1;
     let endIndex = convertRangeStringToNumber(this.state.changeRangeEndIndex) || Number.POSITIVE_INFINITY;
-
-    if (!Number.isFinite(startIndex) && !Number.isFinite(endIndex)) {
-      return;
-    }
-
-    if (startIndex > endIndex) {
-      endIndex = Number.POSITIVE_INFINITY;
-    }
 
     this.setState((state) => {
       const deck = state.decks[this.state.changeRangeDeckIndex];
