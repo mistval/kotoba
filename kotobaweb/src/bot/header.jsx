@@ -27,6 +27,9 @@ function render() {
           <li className="nav-item">
             <NavLink exact activeClassName="active" className="nav-link submenu-nav-link" to="/bot/quiz">QUIZ MANUAL</NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink exact activeClassName="active" className="nav-link submenu-nav-link" to="/bot/quizbuilder">QUIZ COMMAND BUILDER</NavLink>
+          </li>
         </ul>
       </div>
     </div>
