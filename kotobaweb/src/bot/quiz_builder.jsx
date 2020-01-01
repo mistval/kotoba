@@ -14,7 +14,23 @@ const styles = {
   },
 };
 
-function createDeck(name, startIndex = 0, endIndex = Number.POSITIVE_INFINITY) {
+function convertRangeNumberToString(number) {
+  if (number === Number.POSITIVE_INFINITY) {
+    return 'end';
+  }
+
+  return number.toString();
+}
+
+function convertRangeStringToNumber(string) {
+  if (string === 'end') {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  return parseInt(string);
+}
+
+function createDeck(name, startIndex = 1, endIndex = Number.POSITIVE_INFINITY) {
   return { name, startIndex, endIndex };
 }
 
@@ -72,8 +88,8 @@ function createCommand(args) {
 
   for (let i = 0; i < args.decks.length; i += 1) {
     const deck = args.decks[i];
-    if (deck.startIndex !== 0 || deck.endIndex !== Number.POSITIVE_INFINITY) {
-      deckParts.push(`${deck.name}(${deck.startIndex}-${deck.endIndex})`);
+    if (deck.startIndex !== 1 || deck.endIndex !== Number.POSITIVE_INFINITY) {
+      deckParts.push(`${deck.name}(${convertRangeNumberToString(deck.startIndex)}-${convertRangeNumberToString(deck.endIndex)})`);
     } else {
       deckParts.push(deck.name);
     }
@@ -102,18 +118,18 @@ function createCommand(args) {
 }
 
 function DeckRow(props) {
-  const endIndexElement = Number.isFinite(props.deck.endIndex)
-    ? <span>{props.deck.endIndex}</span>
-    : <span>∞</span>;
-
   return (
     <div className="d-flex justify-content-between align-items-center">
       <strong>{props.deck.name}</strong>
       <div className="d-flex align-items-center">
-        <span className="text-info">{props.deck.startIndex}-{endIndexElement}</span>
+        <a
+          href="#"
+          className="text-info"
+          onClick={() => props.onChangeRange(props.index)}>{convertRangeNumberToString(props.deck.startIndex)} - {convertRangeNumberToString(props.deck.endIndex)}
+        </a>
         &nbsp;&nbsp;
-        <button type="button" class="btn btn-danger bmd-btn-icon" onClick={() => props.onDeleteDeck(props.index)}>
-          <i class="material-icons text-danger">delete</i>
+        <button type="button" className="btn btn-danger bmd-btn-icon" onClick={() => props.onDeleteDeck(props.index)}>
+          <i className="material-icons text-danger">delete</i>
         </button>
       </div>
     </div>
@@ -121,7 +137,42 @@ function DeckRow(props) {
 }
 
 function DeckRows(props) {
-  return props.decks.map((deck, index) => <DeckRow deck={deck} index={index} onDeleteDeck={props.onDeleteDeck} />);
+  return props.decks.map((deck, index) => (
+      <DeckRow
+      deck={deck}
+      index={index}
+      onDeleteDeck={props.onDeleteDeck}
+      onChangeRange={props.onChangeRange}
+      key={deck.name}
+    />
+  ));
+}
+
+function validateRange(rangeString) {
+  return rangeString.match(/^end$|^[0-9]*$/);
+}
+
+function setRangeInputValidityMessage(input, valid) {
+  if (valid) {
+    input.setCustomValidity('');
+  } else {
+    input.setCustomValidity('Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.');
+  }
+}
+
+function getRangeValidationErrorMessage(input, otherInput, mustBeLower) {
+  if (!validateRange(input.value)) {
+    return 'Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.';
+  }
+
+  const inputValue = convertRangeStringToNumber(input.value);
+  const otherInputValue = convertRangeStringToNumber(otherInput.value);
+
+  if (mustBeLower && inputValue > otherInputValue) {
+    return 'The start index must be less than or equal to the end index.';
+  }
+
+  return '';
 }
 
 class QuizBuilder extends Component {
@@ -139,13 +190,32 @@ class QuizBuilder extends Component {
       additionalAnswerWaitWindow: quizDefaults.additionalAnswerWaitWindow,
       editingDeck: false,
       newDeckName: '',
+      changeRangeDeckIndex: -1,
+      changeRangeStartIndex: '1',
+      changeRangeEndIndex: 'end',
     };
+  }
+
+  changeRangeInputIsValid = () => {
+    return !this.rangeStartInput
+      || (!getRangeValidationErrorMessage(this.rangeStartInput, this.rangeEndInput, true) && !getRangeValidationErrorMessage(this.rangeEndInput, this.rangeStartInput, false));
   }
 
   handleDeleteDeck = (index) => {
     this.setState(state => ({
       decks: [...state.decks.slice(0, index), ...state.decks.slice(index + 1)],
     }));
+  }
+
+  handleChangeRange = (index) => {
+    const deck = this.state.decks[index];
+    this.setState({
+      changeRangeDeckIndex: index,
+      changeRangeStartIndex: convertRangeNumberToString(deck.startIndex),
+      changeRangeEndIndex: convertRangeNumberToString(deck.endIndex),
+    }, () => {
+      window.$(this.changeRangeModal).modal('show');
+    });
   }
 
   handleAddDeckClick = () => {
@@ -188,6 +258,46 @@ class QuizBuilder extends Component {
     }));
   }
 
+  handleRangeInputChanged = () => {
+    this.rangeStartInput.setCustomValidity(getRangeValidationErrorMessage(this.rangeStartInput, this.rangeEndInput, true));
+    this.rangeEndInput.setCustomValidity(getRangeValidationErrorMessage(this.rangeEndInput, this.rangeStartInput, false));
+
+    this.setState({
+      changeRangeStartIndex: this.rangeStartInput.value,
+      changeRangeEndIndex: this.rangeEndInput.value,
+    });
+  }
+
+  handleRangeChangeCommit = () => {
+    window.$(this.changeRangeModal).modal('hide');
+
+    const startIndex = convertRangeStringToNumber(this.state.changeRangeStartIndex) || 1;
+    let endIndex = convertRangeStringToNumber(this.state.changeRangeEndIndex) || Number.POSITIVE_INFINITY;
+
+    if (!Number.isFinite(startIndex) && !Number.isFinite(endIndex)) {
+      return;
+    }
+
+    if (startIndex > endIndex) {
+      endIndex = Number.POSITIVE_INFINITY;
+    }
+
+    this.setState((state) => {
+      const deck = state.decks[this.state.changeRangeDeckIndex];
+      deck.startIndex = startIndex;
+      deck.endIndex = endIndex;
+
+      return state;
+    });
+  }
+
+  handleRangeChangeInputKeyUp = (ev) => {
+    // 13 is Enter
+    if (ev.keyCode === 13 && this.changeRangeInputIsValid()) {
+      this.handleRangeChangeCommit();
+    }
+  }
+
   render() {
     const commandResult = createCommand(this.state);
     let commandElement;
@@ -199,6 +309,42 @@ class QuizBuilder extends Component {
 
     return (
       <>
+        <div className="modal" tabIndex="-1" role="dialog" id="changeRangeModal" ref={(changeRangeModal) => { this.changeRangeModal = changeRangeModal; }}>
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Card Range</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p>Set the range of cards to pull from this deck. For example if you only want to use the first 100 cards in the deck, set the range to 1-100.</p>
+                Start:&nbsp;
+                <input
+                  type="text"
+                  value={this.state.changeRangeStartIndex}
+                  onChange={this.handleRangeInputChanged}
+                  onKeyUp={this.handleRangeChangeInputKeyUp}
+                  ref={(input) => { this.rangeStartInput = input; }}
+                />
+                &nbsp;
+                End:&nbsp;
+                <input
+                  type="text"
+                  value={this.state.changeRangeEndIndex}
+                  onChange={this.handleRangeInputChanged}
+                  onKeyUp={this.handleRangeChangeInputKeyUp}
+                  ref={(input) => { this.rangeEndInput = input; }}
+                />
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary" data-dismiss="modal" disabled={!this.changeRangeInputIsValid()} onClick={this.handleRangeChangeCommit}>OK</button>
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="row">
           <div className="col-12">
             <div className="container">
@@ -214,7 +360,7 @@ class QuizBuilder extends Component {
                       <h5 className="card-title d-inline-block">Decks</h5>
                     </div>
                     <div className="card-body">
-                      <DeckRows decks={this.state.decks} onDeleteDeck={this.handleDeleteDeck} />
+                      <DeckRows decks={this.state.decks} onDeleteDeck={this.handleDeleteDeck} onChangeRange={this.handleChangeRange} />
                       <input
                         type="text"
                         value={this.state.newDeckName}
@@ -228,7 +374,7 @@ class QuizBuilder extends Component {
                     </div>
                     <div className="d-flex justify-content-end">
                       <button type="button" className="btn btn-primary bmd-btn-fab mr-3 mb-3" onClick={this.handleAddDeckClick}>
-                        <i class="material-icons">add</i>
+                        <i className="material-icons">add</i>
                       </button>
                     </div>
                   </div>
