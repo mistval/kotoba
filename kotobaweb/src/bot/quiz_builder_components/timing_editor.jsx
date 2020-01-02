@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { quizTimeModifierPresets, quizLimits } from 'kotoba-common';
 import { createTimeModifierParts } from './util';
 import styles from './styles';
+import HelpButton from './help_button';
 
 function SpeedsList(props) {
   return (
@@ -112,6 +113,10 @@ class TimingEditor extends Component {
     }
   }
 
+  componentDidUpdate() {
+    window.$('#answerTimeLimitPopover').popover();
+  }
+
   render() {
     const timeModifierParts = createTimeModifierParts(this.props.timing);
     const timeModifierPresetName = timeModifierParts[0];
@@ -138,7 +143,12 @@ class TimingEditor extends Component {
                 <div className="modal-body">
                   <p className="mb-4">Configure custom timing settings.</p>
                   <div class="form-group">
-                    Answer time limit (seconds):&nbsp;
+                    Answer time limit (seconds)&nbsp;
+                    <HelpButton
+                      popoverId="timeLimitPopover"
+                      popoverContent="After showing a question, I will wait this many seconds for someone to say the correct answer before I say time's up and move onto the next question."
+                      popoverTitle="Answer time limit"
+                    />
                     <input
                       id="answerTimeLimitInput"
                       className="form-control"
@@ -152,7 +162,30 @@ class TimingEditor extends Component {
                     />
                   </div>
                   <div class="form-group">
+                    Additional answer wait window (seconds):&nbsp;
+                    <HelpButton
+                      popoverId="additionalAnswerWaitPopover"
+                      popoverContent="After one user gives the correct answer, I will wait this many seconds for other users to also give the correct answer before I award points and show the answer."
+                      popoverTitle="Additional answer wait window"
+                    />
+                    <input
+                      className="form-control"
+                      type="number"
+                      step={.1}
+                      value={this.state.pendingAdditionalAnswerWaitWindow}
+                      onChange={this.handleAdditionalAnswerWaitWindowChanged}
+                      onKeyUp={this.handleInputKeyUp}
+                      min={quizLimits.additionalAnswerWaitWindow[0]}
+                      max={quizLimits.additionalAnswerWaitWindow[1]}
+                    />
+                  </div>
+                  <div class="form-group">
                     Delay after answered question (seconds):&nbsp;
+                    <HelpButton
+                      popoverId="delayAfterAnsweredPopover"
+                      popoverContent="After the Additional Answer Wait Window closes and I show the correct answer, I will wait this many seconds before showing the next question."
+                      popoverTitle="Delay after answered question"
+                    />
                     <input
                       className="form-control"
                       type="number"
@@ -166,6 +199,11 @@ class TimingEditor extends Component {
                   </div>
                   <div class="form-group">
                     Delay after <b>un</b>answered question (seconds):&nbsp;
+                    <HelpButton
+                      popoverId="delayAfterUnansweredPopover"
+                      popoverContent="After the the time limit is reached and I show the correct answer, I will wait this many seconds before showing the next question."
+                      popoverTitle="Delay after unanswered question"
+                    />
                     <input
                       className="form-control"
                       type="number"
@@ -175,19 +213,6 @@ class TimingEditor extends Component {
                       onKeyUp={this.handleInputKeyUp}
                       min={quizLimits.delayAfterUnansweredQuestion[0]}
                       max={quizLimits.delayAfterUnansweredQuestion[1]}
-                    />
-                  </div>
-                  <div class="form-group">
-                    Additional answer wait window (seconds):&nbsp;
-                    <input
-                      className="form-control"
-                      type="number"
-                      step={.1}
-                      value={this.state.pendingAdditionalAnswerWaitWindow}
-                      onChange={this.handleAdditionalAnswerWaitWindowChanged}
-                      onKeyUp={this.handleInputKeyUp}
-                      min={quizLimits.additionalAnswerWaitWindow[0]}
-                      max={quizLimits.additionalAnswerWaitWindow[1]}
                     />
                   </div>
                 </div>
