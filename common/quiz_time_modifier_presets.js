@@ -7,14 +7,14 @@ module.exports = {
   },
   faster: {
     answerTimeLimit: 16,
-    delayAfterUnansweredQuestion: .75,
-    delayAfterAnsweredQuestion: .75,
-    additionalAnswerWaitWindow: 1,
+    delayAfterUnansweredQuestion: 1,
+    delayAfterAnsweredQuestion: 1,
+    additionalAnswerWaitWindow: .75,
   },
   fast: {
     answerTimeLimit: 16,
-    delayAfterUnansweredQuestion: 1,
-    delayAfterAnsweredQuestion: 1,
+    delayAfterUnansweredQuestion: 1.5,
+    delayAfterAnsweredQuestion: 1.5,
     additionalAnswerWaitWindow: 1.5,
   },
   normal: {
