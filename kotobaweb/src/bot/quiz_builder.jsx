@@ -10,7 +10,16 @@ const styles = {
     fontSize: '28px',
   },
   card: {
-    minHeight: '300px',
+    minHeight: '400px',
+  },
+  selectedPresetDiv: {
+
+  },
+  unselectedPresetDiv: {
+
+  },
+  timingModal: {
+    maxWidth: '575px',
   },
 };
 
@@ -167,6 +176,30 @@ function getRangeValidationErrorMessage(input, otherInput, mustBeLower) {
   return '';
 }
 
+function SpeedsList(props) {
+  return (
+    <div className="list-group">
+      {Object.keys(quizTimeModifierPresets).map(presetName => (
+        <a
+          href="#"
+          className={`list-group-item list-group-item-action${presetName === props.selectedPresetName ? ' active' : ''}`}
+          onClick={(ev) => props.onPresetSelected(presetName)}
+          key={presetName}
+        >
+          {presetName}
+        </a>
+      ))}
+        <a
+          href="#"
+          className={`list-group-item list-group-item-action${props.selectedPresetName === 'custom' ? ' active' : ''}`}
+          onClick={(ev) => props.onPresetSelected('custom')}
+        >
+          custom
+        </a>
+    </div>
+  );
+}
+
 class QuizBuilder extends Component {
   constructor() {
     super();
@@ -282,6 +315,30 @@ class QuizBuilder extends Component {
     }
   }
 
+  handleTimePresetSelected = (presetName) => {
+    if (presetName === 'custom') {
+      window.$(this.customTimingModal).modal('show');
+    } else {
+      this.setState(quizTimeModifierPresets[presetName]);
+    }
+  }
+
+  handleAnswerTimeLimitChanged = (ev) => {
+
+  }
+
+  handleDelayAfterUnansweredQuestionChanged = (ev) => {
+
+  }
+
+  handleDelayAfterAnsweredQuestionChanged = (ev) => {
+
+  }
+
+  handleAdditionalAnswerWaitWindowChanged = (ev) => {
+
+  }
+
   render() {
     const commandResult = createCommand(this.state);
     let commandElement;
@@ -289,6 +346,16 @@ class QuizBuilder extends Component {
       commandElement = <span className="text-success text-center">{commandResult.commandText}</span>;
     } else {
       commandElement = <span className="text-warning">{commandResult.errorText}</span>;
+    }
+    
+    const timeModifierParts = createTimeModifierParts(this.state);
+    const timeModifierPresetName = timeModifierParts[0];
+
+    let selectedTimeModifierPresetName = 'custom';
+    if (!timeModifierPresetName) {
+      selectedTimeModifierPresetName = 'normal';
+    } else if (quizTimeModifierPresets[timeModifierPresetName]) {
+      selectedTimeModifierPresetName = timeModifierPresetName;
     }
 
     return (
@@ -329,6 +396,68 @@ class QuizBuilder extends Component {
             </div>
           </div>
         </div>
+        <div className="modal" tabIndex="-1" role="dialog" id="customTimingModal" ref={(customTimingModal) => { this.customTimingModal = customTimingModal; }}>
+          <div className="modal-dialog" style={styles.timingModal} role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Custom Timing</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p className="mb-4">Configure custom timing settings.</p>
+                <p>
+                  Answer time limit:&nbsp;
+                  <input
+                    type="number"
+                    step={.1}
+                    value={this.state.answerTimeLimit}
+                    onChange={this.handleRangeInputChanged}
+                    onKeyUp={this.handleRangeChangeInputKeyUp}
+                  />
+                  &nbsp;Seconds
+                </p>
+                <p>
+                  Delay after <b>un</b>answered question:&nbsp;
+                  <input
+                    type="number"
+                    step={.1}
+                    value={this.state.delayAfterUnansweredQuestion}
+                    onChange={this.handleRangeInputChanged}
+                    onKeyUp={this.handleRangeChangeInputKeyUp}
+                  />
+                  &nbsp;Seconds
+                </p>
+                <p>
+                  Delay after answered question:&nbsp;
+                  <input
+                    type="number"
+                    step={.1}
+                    value={this.state.delayAfterAnsweredQuestion}
+                    onChange={this.handleRangeInputChanged}
+                    onKeyUp={this.handleRangeChangeInputKeyUp}
+                  />
+                  &nbsp;Seconds
+                </p>
+                <p>
+                  Additional answer wait window:&nbsp;
+                  <input
+                    type="number"
+                    step={.1}
+                    value={this.state.additionalAnswerWaitWindow}
+                    onChange={this.handleRangeInputChanged}
+                    onKeyUp={this.handleRangeChangeInputKeyUp}
+                  />
+                  &nbsp;Seconds
+                </p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-primary" data-dismiss="modal" disabled={!this.changeRangeInputIsValid()}>OK</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="row">
           <div className="col-12">
             <div className="container">
@@ -338,7 +467,7 @@ class QuizBuilder extends Component {
                 </div>
               </div>
               <div className="row mt-5">
-                <div className="col-lg-5 offset-lg-1 mb-5">
+                <div className="col-lg-4 mb-5">
                   <div className="card" style={styles.card}>
                     <div className="card-block-title">
                       <h5 className="card-title d-inline-block">Decks</h5>
@@ -363,10 +492,23 @@ class QuizBuilder extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-5 mb-5">
+                <div className="col-lg-4 mb-5">
                   <div className="card" style={styles.card}>
                     <div className="card-block-title">
-                      <h5 className="card-title">Configuration</h5>
+                      <h5 className="card-title">Speed</h5>
+                    </div>
+                    <div className="card-body">
+                      <SpeedsList
+                        selectedPresetName={selectedTimeModifierPresetName}
+                        onPresetSelected={this.handleTimePresetSelected}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4 mb-5">
+                  <div className="card" style={styles.card}>
+                    <div className="card-block-title">
+                      <h5 className="card-title">Modes</h5>
                     </div>
                     <div className="card-body">
                     </div>
