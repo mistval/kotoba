@@ -171,7 +171,7 @@ class DeckEditor extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Set the range of cards to pull from this deck. For example if you only want to use the first 100 cards in the deck, set the range to 1-100.</p>
+                <p>Set the range of cards to pull from this deck. For example if you only want to pull cards from the first 100 cards in the deck, set the range to 1-100.</p>
                 Start:&nbsp;
                 <input
                   type="text"
