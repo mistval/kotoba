@@ -5,19 +5,9 @@ import '../main.css';
 import Header from './header';
 import Analytics from '../util/analytics';
 import DeckEditor from './quiz_builder_components/deck_editor';
-import { convertRangeNumberToString, createDeck } from './quiz_builder_components/util';
-
-const styles = {
-  commandText: {
-    fontSize: '28px',
-  },
-  card: {
-    minHeight: '400px',
-  },
-  timingModal: {
-    maxWidth: '575px',
-  },
-};
+import { convertRangeNumberToString, createDeck, createTimeModifierParts } from './quiz_builder_components/util';
+import TimingEditor from './quiz_builder_components/timing_editor';
+import styles from './quiz_builder_components/styles';
 
 function createCommandSuccess(commandText) {
   return { valid: true, commandText };
@@ -25,42 +15,6 @@ function createCommandSuccess(commandText) {
 
 function createCommandError(errorText) {
   return { valid: false, errorText };
-}
-
-function createTimeModifierParts(args) {
-  const presetEntries = Object.entries(quizTimeModifierPresets);
-  for (let i = 0; i < presetEntries.length; i += 1) {
-    const presetEntry = presetEntries[i];
-    const [presetName, presetValues] = presetEntry;
-
-    if (
-      presetValues.answerTimeLimit === args.answerTimeLimit
-      && presetValues.delayAfterUnansweredQuestion === args.delayAfterUnansweredQuestion
-      && presetValues.delayAfterAnsweredQuestion === args.delayAfterAnsweredQuestion
-      && presetValues.additionalAnswerWaitWindow === args.additionalAnswerWaitWindow) {
-        if (presetName === 'normal') {
-          return [];
-        }
-        return [presetName];
-      }
-  }
-
-  const parts = [];
-
-  if (quizDefaults.answerTimeLimit !== args.answerTimeLimit) {
-    parts.push(`answerTimeLimit=${args.answerTimeLimit}`);
-  }
-  if (quizDefaults.delayAfterUnansweredQuestion !== args.delayAfterUnansweredQuestion) {
-    parts.push(`delayAfterUnansweredQuestion=${args.delayAfterUnansweredQuestion}`);
-  }
-  if (quizDefaults.delayAfterAnsweredQuestion !== args.delayAfterAnsweredQuestion) {
-    parts.push(`delayAfterAnsweredQuestion=${args.delayAfterAnsweredQuestion}`);
-  }
-  if (quizDefaults.additionalAnswerWaitWindow !== args.additionalAnswerWaitWindow) {
-    parts.push(`additionalAnswerWaitWindow=${args.additionalAnswerWaitWindow}`);
-  }
-
-  return parts;
 }
 
 function createCommand(args) {
@@ -98,32 +52,8 @@ function createCommand(args) {
     commandParts.push('norace');
   }
 
-  commandParts.push(...createTimeModifierParts(args));
+  commandParts.push(...createTimeModifierParts(args.timing));
   return createCommandSuccess(commandParts.join(' '));
-}
-
-function SpeedsList(props) {
-  return (
-    <div className="list-group">
-      {Object.keys(quizTimeModifierPresets).map(presetName => (
-        <a
-          href="#"
-          className={`list-group-item list-group-item-action${presetName === props.selectedPresetName ? ' active' : ''}`}
-          onClick={(ev) => props.onPresetSelected(presetName)}
-          key={presetName}
-        >
-          {presetName}
-        </a>
-      ))}
-        <a
-          href="#"
-          className={`list-group-item list-group-item-action${props.selectedPresetName === 'custom' ? ' active' : ''}`}
-          onClick={(ev) => props.onPresetSelected('custom')}
-        >
-          custom
-        </a>
-    </div>
-  );
 }
 
 class QuizBuilder extends Component {
@@ -135,39 +65,21 @@ class QuizBuilder extends Component {
       conquest: false,
       scoreLimit: quizDefaults.scoreLimit,
       norace: false,
-      answerTimeLimit: quizDefaults.answerTimeLimit,
-      delayAfterAnsweredQuestion: quizDefaults.delayAfterAnsweredQuestion,
-      delayAfterUnansweredQuestion: quizDefaults.delayAfterUnansweredQuestion,
-      additionalAnswerWaitWindow: quizDefaults.additionalAnswerWaitWindow,
+      timing: {
+        answerTimeLimit: quizDefaults.answerTimeLimit,
+        delayAfterAnsweredQuestion: quizDefaults.delayAfterAnsweredQuestion,
+        delayAfterUnansweredQuestion: quizDefaults.delayAfterUnansweredQuestion,
+        additionalAnswerWaitWindow: quizDefaults.additionalAnswerWaitWindow,
+      },
     };
-  }
-
-  handleTimePresetSelected = (presetName) => {
-    if (presetName === 'custom') {
-      window.$(this.customTimingModal).modal('show');
-    } else {
-      this.setState(quizTimeModifierPresets[presetName]);
-    }
-  }
-
-  handleAnswerTimeLimitChanged = (ev) => {
-
-  }
-
-  handleDelayAfterUnansweredQuestionChanged = (ev) => {
-
-  }
-
-  handleDelayAfterAnsweredQuestionChanged = (ev) => {
-
-  }
-
-  handleAdditionalAnswerWaitWindowChanged = (ev) => {
-
   }
 
   handleDecksChanged = (decks) => {
     this.setState({ decks });
+  }
+
+  handleTimingChanged = (timing) => {
+    this.setState({ timing });
   }
 
   render() {
@@ -178,81 +90,9 @@ class QuizBuilder extends Component {
     } else {
       commandElement = <span className="text-warning">{commandResult.errorText}</span>;
     }
-    
-    const timeModifierParts = createTimeModifierParts(this.state);
-    const timeModifierPresetName = timeModifierParts[0];
-
-    let selectedTimeModifierPresetName = 'custom';
-    if (!timeModifierPresetName) {
-      selectedTimeModifierPresetName = 'normal';
-    } else if (quizTimeModifierPresets[timeModifierPresetName]) {
-      selectedTimeModifierPresetName = timeModifierPresetName;
-    }
 
     return (
       <>
-        <div className="modal" tabIndex="-1" role="dialog" id="customTimingModal" ref={(customTimingModal) => { this.customTimingModal = customTimingModal; }}>
-          <div className="modal-dialog" style={styles.timingModal} role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Custom Timing</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <p className="mb-4">Configure custom timing settings.</p>
-                <p>
-                  Answer time limit:&nbsp;
-                  <input
-                    type="number"
-                    step={.1}
-                    value={this.state.answerTimeLimit}
-                    onChange={this.handleRangeInputChanged}
-                    onKeyUp={this.handleRangeChangeInputKeyUp}
-                  />
-                  &nbsp;Seconds
-                </p>
-                <p>
-                  Delay after <b>un</b>answered question:&nbsp;
-                  <input
-                    type="number"
-                    step={.1}
-                    value={this.state.delayAfterUnansweredQuestion}
-                    onChange={this.handleRangeInputChanged}
-                    onKeyUp={this.handleRangeChangeInputKeyUp}
-                  />
-                  &nbsp;Seconds
-                </p>
-                <p>
-                  Delay after answered question:&nbsp;
-                  <input
-                    type="number"
-                    step={.1}
-                    value={this.state.delayAfterAnsweredQuestion}
-                    onChange={this.handleRangeInputChanged}
-                    onKeyUp={this.handleRangeChangeInputKeyUp}
-                  />
-                  &nbsp;Seconds
-                </p>
-                <p>
-                  Additional answer wait window:&nbsp;
-                  <input
-                    type="number"
-                    step={.1}
-                    value={this.state.additionalAnswerWaitWindow}
-                    onChange={this.handleRangeInputChanged}
-                    onKeyUp={this.handleRangeChangeInputKeyUp}
-                  />
-                  &nbsp;Seconds
-                </p>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-primary" data-dismiss="modal" disabled={false}>OK</button>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="row">
           <div className="col-12">
             <div className="container">
@@ -266,17 +106,7 @@ class QuizBuilder extends Component {
                   <DeckEditor decks={this.state.decks} onDecksChanged={this.handleDecksChanged} />
                 </div>
                 <div className="col-lg-4 mb-5">
-                  <div className="card" style={styles.card}>
-                    <div className="card-block-title">
-                      <h5 className="card-title">Speed</h5>
-                    </div>
-                    <div className="card-body">
-                      <SpeedsList
-                        selectedPresetName={selectedTimeModifierPresetName}
-                        onPresetSelected={this.handleTimePresetSelected}
-                      />
-                    </div>
-                  </div>
+                  <TimingEditor timing={this.state.timing} onTimingChanged={this.handleTimingChanged} />
                 </div>
                 <div className="col-lg-4 mb-5">
                   <div className="card" style={styles.card}>
