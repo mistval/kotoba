@@ -3,13 +3,13 @@ import { deckValidation } from 'kotoba-common';
 import styles from './styles';
 import { convertRangeNumberToString, convertRangeStringToNumber, createDeck } from './util';
 
-function getRangeValidationErrorMessage(input, otherInput, mustBeLower) {
-  if (!validateRange(input.value)) {
+function getRangeValidationErrorMessage(value, otherValue, mustBeLower) {
+  if (!validateRange(value)) {
     return 'Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.';
   }
 
-  const inputValue = convertRangeStringToNumber(input.value);
-  const otherInputValue = convertRangeStringToNumber(otherInput.value);
+  const inputValue = convertRangeStringToNumber(value);
+  const otherInputValue = convertRangeStringToNumber(otherValue);
 
   if (mustBeLower && inputValue > otherInputValue) {
     return 'The start index must be less than or equal to the end index.';
@@ -124,8 +124,8 @@ class DeckEditor extends Component {
   }
 
   handleRangeInputChanged = () => {
-    this.rangeStartInput.setCustomValidity(getRangeValidationErrorMessage(this.rangeStartInput, this.rangeEndInput, true));
-    this.rangeEndInput.setCustomValidity(getRangeValidationErrorMessage(this.rangeEndInput, this.rangeStartInput, false));
+    this.rangeStartInput.setCustomValidity(getRangeValidationErrorMessage(this.state.changeRangeStartIndex, this.state.changeRangeEndIndex, true));
+    this.rangeEndInput.setCustomValidity(getRangeValidationErrorMessage(this.state.changeRangeEndIndex, this.state.changeRangeStartIndex, false));
 
     this.setState({
       changeRangeStartIndex: this.rangeStartInput.value,
@@ -155,7 +155,10 @@ class DeckEditor extends Component {
 
   changeRangeInputIsValid = () => {
     return !this.rangeStartInput
-      || (!getRangeValidationErrorMessage(this.rangeStartInput, this.rangeEndInput, true) && !getRangeValidationErrorMessage(this.rangeEndInput, this.rangeStartInput, false));
+      || (
+        !getRangeValidationErrorMessage(this.state.changeRangeStartIndex, this.state.changeRangeEndIndex, true)
+        && !getRangeValidationErrorMessage(this.state.changeRangeEndIndex, this.state.changeRangeStartIndex, false)
+      );
   }
 
   render() {
