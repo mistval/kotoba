@@ -67,24 +67,32 @@ class TimingEditor extends Component {
     this.setState({
       pendingTimeLimit: parseFloat(ev.target.value),
     });
+
+    ev.target.focus();
   }
 
   handleDelayAfterUnansweredQuestionChanged = (ev) => {
     this.setState({
       pendingDelayAfterUnansweredQuestion: parseFloat(ev.target.value),
     });
+
+    ev.target.focus();
   }
 
   handleDelayAfterAnsweredQuestionChanged = (ev) => {
     this.setState({
       pendingDelayAfterAnsweredQuestion: parseFloat(ev.target.value),
     });
+
+    ev.target.focus();
   }
 
   handleAdditionalAnswerWaitWindowChanged = (ev) => {
     this.setState({
       pendingAdditionalAnswerWaitWindow: parseFloat(ev.target.value),
     });
+
+    ev.target.focus();
   }
 
   handleCommitTiming = () => {
@@ -129,9 +137,11 @@ class TimingEditor extends Component {
               <form>
                 <div className="modal-body">
                   <p className="mb-4">Configure custom timing settings.</p>
-                  <p>
-                    Answer time limit:&nbsp;
+                  <div class="form-group">
+                    Answer time limit (seconds):&nbsp;
                     <input
+                      id="answerTimeLimitInput"
+                      className="form-control"
                       type="number"
                       step={.1}
                       value={this.state.pendingTimeLimit}
@@ -140,11 +150,11 @@ class TimingEditor extends Component {
                       min={quizLimits.answerTimeLimit[0]}
                       max={quizLimits.answerTimeLimit[1]}
                     />
-                    &nbsp;Seconds
-                  </p>
-                  <p>
-                    Delay after answered question:&nbsp;
+                  </div>
+                  <div class="form-group">
+                    Delay after answered question (seconds):&nbsp;
                     <input
+                      className="form-control"
                       type="number"
                       step={.1}
                       value={this.state.pendingDelayAfterAnsweredQuestion}
@@ -153,11 +163,11 @@ class TimingEditor extends Component {
                       min={quizLimits.delayAfterAnsweredQuestion[0]}
                       max={quizLimits.delayAfterAnsweredQuestion[1]}
                     />
-                    &nbsp;Seconds
-                  </p>
-                  <p>
-                    Delay after <b>un</b>answered question:&nbsp;
+                  </div>
+                  <div class="form-group">
+                    Delay after <b>un</b>answered question (seconds):&nbsp;
                     <input
+                      className="form-control"
                       type="number"
                       step={.1}
                       value={this.state.pendingDelayAfterUnansweredQuestion}
@@ -166,11 +176,11 @@ class TimingEditor extends Component {
                       min={quizLimits.delayAfterUnansweredQuestion[0]}
                       max={quizLimits.delayAfterUnansweredQuestion[1]}
                     />
-                    &nbsp;Seconds
-                  </p>
-                  <p>
-                    Additional answer wait window:&nbsp;
+                  </div>
+                  <div class="form-group">
+                    Additional answer wait window (seconds):&nbsp;
                     <input
+                      className="form-control"
                       type="number"
                       step={.1}
                       value={this.state.pendingAdditionalAnswerWaitWindow}
@@ -179,8 +189,7 @@ class TimingEditor extends Component {
                       min={quizLimits.additionalAnswerWaitWindow[0]}
                       max={quizLimits.additionalAnswerWaitWindow[1]}
                     />
-                    &nbsp;Seconds
-                  </p>
+                  </div>
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleCommitTiming} disabled={!this.isValid()}>OK</button>

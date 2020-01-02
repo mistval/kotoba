@@ -41,16 +41,16 @@ export function createTimeModifierParts(timingArguments) {
   const parts = [];
 
   if (quizDefaults.answerTimeLimit !== timingArguments.answerTimeLimit) {
-    parts.push(`ATL=${timingArguments.answerTimeLimit}`);
+    parts.push(`atl=${timingArguments.answerTimeLimit}`);
   }
   if (quizDefaults.delayAfterUnansweredQuestion !== timingArguments.delayAfterUnansweredQuestion) {
-    parts.push(`DAUQ=${timingArguments.delayAfterUnansweredQuestion}`);
+    parts.push(`dauq=${timingArguments.delayAfterUnansweredQuestion}`);
   }
   if (quizDefaults.delayAfterAnsweredQuestion !== timingArguments.delayAfterAnsweredQuestion) {
-    parts.push(`DAAQ=${timingArguments.delayAfterAnsweredQuestion}`);
+    parts.push(`daaq=${timingArguments.delayAfterAnsweredQuestion}`);
   }
   if (quizDefaults.additionalAnswerWaitWindow !== timingArguments.additionalAnswerWaitWindow) {
-    parts.push(`AAWW=${timingArguments.additionalAnswerWaitWindow}`);
+    parts.push(`aaww=${timingArguments.additionalAnswerWaitWindow}`);
   }
 
   return parts;
