@@ -8,4 +8,7 @@ module.exports = {
   commandText: {
     fontSize: '28px',
   },
+  formText: {
+    color: '#212529',
+  },
 };

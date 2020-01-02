@@ -8,6 +8,7 @@ import DeckEditor from './quiz_builder_components/deck_editor';
 import { convertRangeNumberToString, createDeck, createTimeModifierParts } from './quiz_builder_components/util';
 import TimingEditor from './quiz_builder_components/timing_editor';
 import styles from './quiz_builder_components/styles';
+import OtherSettingsEditor from './quiz_builder_components/other_settings_editor';
 
 function createCommandSuccess(commandText) {
   return { valid: true, commandText };
@@ -36,19 +37,19 @@ function createCommand(args) {
 
   commandParts.push(deckParts.join('+'));
 
-  if (args.scoreLimit !== quizDefaults.scoreLimit) {
-    commandParts.push(args.scoreLimit);
+  if (args.otherSettings.scoreLimit !== quizDefaults.scoreLimit) {
+    commandParts.push(args.otherSettings.scoreLimit);
   }
 
-  if (args.conquest) {
+  if (args.otherSettings.conquest) {
     commandParts.push('conquest');
   }
 
-  if (args.hardcore) {
+  if (args.otherSettings.hardcore) {
     commandParts.push('hardcore');
   }
 
-  if (args.norace) {
+  if (args.otherSettings.norace) {
     commandParts.push('norace');
   }
 
@@ -61,15 +62,17 @@ class QuizBuilder extends Component {
     super();
     this.state = {
       decks: [createDeck('N5')],
-      hardcore: false,
-      conquest: false,
-      scoreLimit: quizDefaults.scoreLimit,
-      norace: false,
       timing: {
         answerTimeLimit: quizDefaults.answerTimeLimit,
         delayAfterAnsweredQuestion: quizDefaults.delayAfterAnsweredQuestion,
         delayAfterUnansweredQuestion: quizDefaults.delayAfterUnansweredQuestion,
         additionalAnswerWaitWindow: quizDefaults.additionalAnswerWaitWindow,
+      },
+      otherSettings: {
+        hardcore: false,
+        conquest: false,
+        scoreLimit: quizDefaults.scoreLimit,
+        norace: false,
       },
     };
   }
@@ -80,6 +83,10 @@ class QuizBuilder extends Component {
 
   handleTimingChanged = (timing) => {
     this.setState({ timing });
+  }
+
+  handleOtherSettingsChanged = (otherSettings) => {
+    this.setState({ otherSettings });
   }
 
   render() {
@@ -109,13 +116,7 @@ class QuizBuilder extends Component {
                   <TimingEditor timing={this.state.timing} onTimingChanged={this.handleTimingChanged} />
                 </div>
                 <div className="col-lg-4 mb-5">
-                  <div className="card" style={styles.card}>
-                    <div className="card-block-title">
-                      <h5 className="card-title">Other</h5>
-                    </div>
-                    <div className="card-body">
-                    </div>
-                  </div>
+                  <OtherSettingsEditor otherSettings={this.state.otherSettings} onOtherSettingsChanged={this.handleOtherSettingsChanged} />
                 </div>
               </div>
             </div>
