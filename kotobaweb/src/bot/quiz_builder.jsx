@@ -34,7 +34,7 @@ function createCommand(args) {
     }
   }
 
-  commandParts.push(deckParts.join(' + '));
+  commandParts.push(deckParts.join('+'));
 
   if (args.scoreLimit !== quizDefaults.scoreLimit) {
     commandParts.push(args.scoreLimit);
@@ -111,7 +111,7 @@ class QuizBuilder extends Component {
                 <div className="col-lg-4 mb-5">
                   <div className="card" style={styles.card}>
                     <div className="card-block-title">
-                      <h5 className="card-title">Modes</h5>
+                      <h5 className="card-title">Other</h5>
                     </div>
                     <div className="card-body">
                     </div>
