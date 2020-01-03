@@ -2,19 +2,14 @@ import React from 'react';
 import { quizLimits } from 'kotoba-common';
 import styles from './styles';
 import HelpButton from './help_button';
+import NumericInputBox from './../../controls/numeric_input_box';
 
 function OtherSettingsEditor(props) {
-  function handleScoreLimitChanged(ev) {
-    let newLimit = parseInt(ev.target.value);
-    newLimit = Math.max(newLimit, quizLimits.scoreLimit[0]);
-    newLimit = Math.min(newLimit, quizLimits.scoreLimit[1]);
-
+  function handleScoreLimitChanged(newLimit) {
     props.onOtherSettingsChanged({
       ...props.otherSettings,
       scoreLimit: newLimit,
     });
-
-    ev.target.focus();
   }
 
   function handleConquestModeChanged(ev) {
@@ -45,13 +40,12 @@ function OtherSettingsEditor(props) {
       </div>
       <div className="card-body">
         Score limit:&nbsp;
-        <input
-          type="number"
-          className="form-control"
+        <NumericInputBox
           value={props.otherSettings.scoreLimit}
+          minValue={quizLimits.scoreLimit[0]}
+          maxValue={quizLimits.scoreLimit[1]}
           onChange={handleScoreLimitChanged}
-          min={quizLimits.scoreLimit[0]}
-          max={quizLimits.scoreLimit[1]}
+          maxPlacesAfterDecimal={0}
         />
         <div className="checkbox mt-3">
           <label>
