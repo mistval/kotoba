@@ -3,6 +3,7 @@ import { quizTimeModifierPresets, quizLimits } from 'kotoba-common';
 import { createTimeModifierParts } from './util';
 import styles from './styles';
 import HelpButton from './help_button';
+import NumericInputBox from './../../controls/numeric_input_box';
 
 function SpeedsList(props) {
   return (
@@ -35,8 +36,7 @@ function isInRange(value, [min, max]) {
 class TimingEditor extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.setStateFromProps();
+    this.state = this.getStateFromProps();
   }
 
   isValid() {
@@ -46,13 +46,17 @@ class TimingEditor extends Component {
       && isInRange(this.state.pendingAdditionalAnswerWaitWindow, quizLimits.additionalAnswerWaitWindow);
   }
 
-  setStateFromProps() {
-    this.setState({
+  getStateFromProps() {
+    return {
       pendingTimeLimit: this.props.timing.answerTimeLimit,
       pendingDelayAfterUnansweredQuestion: this.props.timing.delayAfterUnansweredQuestion,
       pendingDelayAfterAnsweredQuestion: this.props.timing.delayAfterAnsweredQuestion,
       pendingAdditionalAnswerWaitWindow: this.props.timing.additionalAnswerWaitWindow,
-    });
+    };
+  }
+
+  setStateFromProps() {
+    this.setState(this.getStateFromProps());
   }
 
   handleTimePresetSelected = (presetName) => {
@@ -64,36 +68,28 @@ class TimingEditor extends Component {
     }
   }
 
-  handleAnswerTimeLimitChanged = (ev) => {
+  handleAnswerTimeLimitChanged = (value) => {
     this.setState({
-      pendingTimeLimit: parseFloat(ev.target.value),
+      pendingTimeLimit: value,
     });
-
-    ev.target.focus();
   }
 
-  handleDelayAfterUnansweredQuestionChanged = (ev) => {
+  handleDelayAfterUnansweredQuestionChanged = (value) => {
     this.setState({
-      pendingDelayAfterUnansweredQuestion: parseFloat(ev.target.value),
+      pendingDelayAfterUnansweredQuestion: value,
     });
-
-    ev.target.focus();
   }
 
-  handleDelayAfterAnsweredQuestionChanged = (ev) => {
+  handleDelayAfterAnsweredQuestionChanged = (value) => {
     this.setState({
-      pendingDelayAfterAnsweredQuestion: parseFloat(ev.target.value),
+      pendingDelayAfterAnsweredQuestion: value,
     });
-
-    ev.target.focus();
   }
 
-  handleAdditionalAnswerWaitWindowChanged = (ev) => {
+  handleAdditionalAnswerWaitWindowChanged = (value) => {
     this.setState({
-      pendingAdditionalAnswerWaitWindow: parseFloat(ev.target.value),
+      pendingAdditionalAnswerWaitWindow: parseFloat(value),
     });
-
-    ev.target.focus();
   }
 
   handleCommitTiming = () => {
@@ -106,9 +102,8 @@ class TimingEditor extends Component {
     });
   }
 
-  handleInputKeyUp = (ev) => {
-    // 13 is Enter
-    if (ev.keyCode === 13 && this.isValid()) {
+  handleEnter = () => {
+    if (this.isValid()) {
       this.handleCommitTiming();
     }
   }
@@ -149,16 +144,13 @@ class TimingEditor extends Component {
                       popoverContent="After showing a question, I will wait this many seconds for someone to say the correct answer before I say time's up and move onto the next question."
                       popoverTitle="Answer time limit"
                     />
-                    <input
-                      id="answerTimeLimitInput"
-                      className="form-control"
-                      type="number"
-                      step={.1}
+                    <NumericInputBox
                       value={this.state.pendingTimeLimit}
+                      minValue={quizLimits.answerTimeLimit[0]}
+                      maxValue={quizLimits.answerTimeLimit[1]}
+                      onEnter={this.handleEnter}
                       onChange={this.handleAnswerTimeLimitChanged}
-                      onKeyUp={this.handleInputKeyUp}
-                      min={quizLimits.answerTimeLimit[0]}
-                      max={quizLimits.answerTimeLimit[1]}
+                      maxPlacesAfterDecimal={1}
                     />
                   </div>
                   <div class="form-group">
@@ -168,15 +160,13 @@ class TimingEditor extends Component {
                       popoverContent="After one user gives the correct answer, I will wait this many seconds for other users to also give the correct answer before I award points and show the answer."
                       popoverTitle="Additional answer wait window"
                     />
-                    <input
-                      className="form-control"
-                      type="number"
-                      step={.1}
+                    <NumericInputBox
                       value={this.state.pendingAdditionalAnswerWaitWindow}
+                      minValue={quizLimits.additionalAnswerWaitWindow[0]}
+                      maxValue={quizLimits.additionalAnswerWaitWindow[1]}
+                      onEnter={this.handleEnter}
                       onChange={this.handleAdditionalAnswerWaitWindowChanged}
-                      onKeyUp={this.handleInputKeyUp}
-                      min={quizLimits.additionalAnswerWaitWindow[0]}
-                      max={quizLimits.additionalAnswerWaitWindow[1]}
+                      maxPlacesAfterDecimal={2}
                     />
                   </div>
                   <div class="form-group">
@@ -186,15 +176,13 @@ class TimingEditor extends Component {
                       popoverContent="After the Additional Answer Wait Window closes and I show the correct answer, I will wait this many seconds before showing the next question."
                       popoverTitle="Delay after answered question"
                     />
-                    <input
-                      className="form-control"
-                      type="number"
-                      step={.1}
+                    <NumericInputBox
                       value={this.state.pendingDelayAfterAnsweredQuestion}
+                      minValue={quizLimits.delayAfterAnsweredQuestion[0]}
+                      maxValue={quizLimits.delayAfterAnsweredQuestion[1]}
+                      onEnter={this.handleEnter}
                       onChange={this.handleDelayAfterAnsweredQuestionChanged}
-                      onKeyUp={this.handleInputKeyUp}
-                      min={quizLimits.delayAfterAnsweredQuestion[0]}
-                      max={quizLimits.delayAfterAnsweredQuestion[1]}
+                      maxPlacesAfterDecimal={1}
                     />
                   </div>
                   <div class="form-group">
@@ -204,15 +192,13 @@ class TimingEditor extends Component {
                       popoverContent="After the the time limit is reached and I show the correct answer, I will wait this many seconds before showing the next question."
                       popoverTitle="Delay after unanswered question"
                     />
-                    <input
-                      className="form-control"
-                      type="number"
-                      step={.1}
+                    <NumericInputBox
                       value={this.state.pendingDelayAfterUnansweredQuestion}
+                      minValue={quizLimits.delayAfterUnansweredQuestion[0]}
+                      maxValue={quizLimits.delayAfterUnansweredQuestion[1]}
+                      onEnter={this.handleEnter}
                       onChange={this.handleDelayAfterUnansweredQuestionChanged}
-                      onKeyUp={this.handleInputKeyUp}
-                      min={quizLimits.delayAfterUnansweredQuestion[0]}
-                      max={quizLimits.delayAfterUnansweredQuestion[1]}
+                      maxPlacesAfterDecimal={1}
                     />
                   </div>
                 </div>
