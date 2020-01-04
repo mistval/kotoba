@@ -53,10 +53,24 @@ class NumericInputBox extends Component {
     });
   }
 
-  handleBlur = () => {
-    if (!this.isValid(this.state.pendingValue)) {
-      this.setState({ pendingValue: this.props.value.toString() });
+  handleBlur = (ev) => {
+    let numericValue = parseFloat(ev.target.value);
+    let newPendingValue;
+
+    if (numericValue < this.props.minValue) {
+      this.props.onChange(this.props.minValue);
+      newPendingValue = this.props.minValue.toString();
+    } else if (numericValue > this.props.maxValue) {
+      this.props.onChange(this.props.maxValue);
+      newPendingValue = this.props.maxValue.toString();
+    } else {
+      newPendingValue = this.props.value.toString();
     }
+
+    this.setState(
+      { pendingValue: newPendingValue },
+      () => { this.input.value = newPendingValue; }
+    );
   }
 
   handleInputKeyUp = (ev) => {
@@ -78,6 +92,7 @@ class NumericInputBox extends Component {
         max={this.props.maxValue}
         step={this.getStep()}
         onKeyUp={this.handleInputKeyUp}
+        ref={(input) => { this.input = input; }}
       />
     );
   }
