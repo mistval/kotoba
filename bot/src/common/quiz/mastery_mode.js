@@ -71,22 +71,6 @@ function recycleCard(card, upcomingCardsIndexArray, numDecks) {
   return true;
 }
 
-function updateMasteryModeLeaderboard(deckId, finalScoreForUser, sessionStartTime, questionsAnswered, deckDepleted) {
-  if (deckId === -1) {
-    return Promise.resolve();
-  }
-
-  let completionTimeInMs = Date.now() - sessionStartTime;
-  return globals.persistence.editGlobalData(data => {
-    data.masteryModeQuizScores = data.masteryModeQuizScores || {};
-    data.masteryModeQuizScores[deckId] = data.masteryModeQuizScores[deckId] || [];
-    for (let userId of Object.keys(finalScoreForUser)) {
-      data.masteryModeQuizScores[deckId].push({deckDepleted: deckDepleted, score: finalScoreForUser[userId], userId: userId, completionTimeInMs: completionTimeInMs});
-    }
-    return data;
-  });
-}
-
 module.exports = {
   serializationIdentifier: 'MASTERY',
   questionLimitOverride: new SettingsOverride(Number.MAX_SAFE_INTEGER, true, true),
