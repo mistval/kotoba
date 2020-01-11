@@ -14,7 +14,5 @@ module.exports = {
   isReviewMode: true,
   recycleCard: () => false,
   overrideDeckTitle: title => 'Review Quiz',
-  updateGameModeLeaderboardForSessionEnded: () => {return Promise.resolve()},
   updateAnswerTimeLimitForUnansweredQuestion: timeLimit => timeLimit,
-  parseUserOverrides: () => { return {}; },
 };

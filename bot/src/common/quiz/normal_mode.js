@@ -2,18 +2,6 @@
 
 const SettingsOverride = require('./settings_override.js');
 
-function parseUserOverrides(settingsOverrides) {
-  let userScoreLimitOverride = settingsOverrides[0];
-  let userTimeBetweenQuestionsOverrideInMs = settingsOverrides[1] * 1000;
-  let userTimeoutOverrideInMs = settingsOverrides[2] * 1000;
-
-  return {
-    userScoreLimitOverride,
-    userTimeBetweenQuestionsOverrideInMs,
-    userTimeoutOverrideInMs,
-  };
-}
-
 module.exports = {
   serializationIdentifier: 'NORMAL',
   questionLimitOverride: new SettingsOverride(0, false, false, 1, 10000),
@@ -25,7 +13,5 @@ module.exports = {
   onlyOwnerOrAdminCanStop: false,
   recycleCard: () => false,
   overrideDeckTitle: title => title,
-  updateGameModeLeaderboardForSessionEnded: () => {return Promise.resolve()},
   updateAnswerTimeLimitForUnansweredQuestion: timeLimit => timeLimit,
-  parseUserOverrides: parseUserOverrides,
 };
