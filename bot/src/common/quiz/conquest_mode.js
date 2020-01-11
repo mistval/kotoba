@@ -18,54 +18,8 @@ function recycleCard(card, upcomingCardsIndexArray, numDecks) {
   return false;
 }
 
-function updateConquestModeLeaderboard(deckId, finalScoreForUser, sessionStartTime, questionsAnswered, deckDepleted, gameModeSettings) {
-  if (deckId === -1 || !gameModeSettings.eligibleForLeaderboard) {
-    return Promise.resolve();
-  }
-
-  let scorersInOrder = Object.keys(finalScoreForUser).map(key => {
-    return {
-      userId: key,
-      score: finalScoreForUser[key],
-    };
-  }).sort((a, b) => {
-    return b.score - a.score;
-  }).map(pair => {
-    return pair.userId;
-  });
-
-  let completionTimeInMs = Date.now() - sessionStartTime;
-  return globals.persistence.editGlobalData(data => {
-    data.conquestModeQuizScores = data.conquestModeQuizScores || {};
-    data.conquestModeQuizScores[deckId] = data.conquestModeQuizScores[deckId] || [];
-    data.conquestModeQuizScores[deckId].push({questionsAnswered: questionsAnswered, deckDepleted: deckDepleted, userIds: scorersInOrder, completionTimeInMs: completionTimeInMs});
-    return data;
-  });
-}
-
-function updateAnswerTimeLimitForUnansweredQuestion(currentTime, gameModeSettings) {
-  return Math.max(currentTime - gameModeSettings.timeoutReductionPerWrongAnswer, 2000);
-}
-
-function parseUserOverrides(settingsOverrides) {
-  let userTimeoutReductionPerWrongAnswerOverride = settingsOverrides[0] * 1000;
-  let userTimeoutOverrideInMs = settingsOverrides[1] * 1000;
-  let userTimeBetweenQuestionsOverrideInMs = settingsOverrides[2] * 1000;
-
-  userTimeoutReductionPerWrongAnswerOverride = Math.max(userTimeoutReductionPerWrongAnswerOverride, 0);
-  let timeoutReductionOverridden = !Number.isNaN(userTimeoutReductionPerWrongAnswerOverride);
-  let eligibleForLeaderboard = !timeoutReductionOverridden && Number.isNaN(userTimeoutOverrideInMs);
-
-  let gameModeSettings = {
-    timeoutReductionPerWrongAnswer: timeoutReductionOverridden ? userTimeoutReductionPerWrongAnswerOverride : 1750,
-    eligibleForLeaderboard: eligibleForLeaderboard,
-  };
-
-  return {
-    userTimeBetweenQuestionsOverrideInMs,
-    userTimeoutOverrideInMs,
-    gameModeSettings,
-  };
+function updateAnswerTimeLimitForUnansweredQuestion(currentTime) {
+  return Math.max(currentTime - 1750, 2000);
 }
 
 module.exports = {
@@ -79,8 +33,6 @@ module.exports = {
   onlyOwnerOrAdminCanStop: true,
   recycleCard: recycleCard,
   overrideDeckTitle: overrideDeckTitle,
-  updateGameModeLeaderboardForSessionEnded: updateConquestModeLeaderboard,
   isConquestMode: true,
   updateAnswerTimeLimitForUnansweredQuestion: updateAnswerTimeLimitForUnansweredQuestion,
-  parseUserOverrides: parseUserOverrides,
 };

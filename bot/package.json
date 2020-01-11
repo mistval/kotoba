@@ -38,6 +38,7 @@
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
     "kitsu": "7.0.4",
+    "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.24.0",

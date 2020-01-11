@@ -87,16 +87,6 @@ function updateMasteryModeLeaderboard(deckId, finalScoreForUser, sessionStartTim
   });
 }
 
-function parseUserOverrides(settingsOverrides) {
-  let userTimeBetweenQuestionsOverrideInMs = settingsOverrides[0] * 1000;
-  let userTimeoutOverrideInMs = settingsOverrides[1] * 1000;
-
-  return {
-    userTimeBetweenQuestionsOverrideInMs,
-    userTimeoutOverrideInMs,
-  };
-}
-
 module.exports = {
   serializationIdentifier: 'MASTERY',
   questionLimitOverride: new SettingsOverride(Number.MAX_SAFE_INTEGER, true, true),
@@ -108,8 +98,6 @@ module.exports = {
   onlyOwnerOrAdminCanStop: true,
   recycleCard: recycleCard,
   overrideDeckTitle: overrideDeckTitle,
-  updateGameModeLeaderboardForSessionEnded: updateMasteryModeLeaderboard,
   isMasteryMode: true,
-  parseUserOverrides: parseUserOverrides,
   updateAnswerTimeLimitForUnansweredQuestion: timeLimit => timeLimit,
 };
