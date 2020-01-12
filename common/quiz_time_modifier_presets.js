@@ -7,21 +7,21 @@ module.exports = {
   },
   faster: {
     answerTimeLimit: 16,
-    delayAfterUnansweredQuestion: 1,
-    delayAfterAnsweredQuestion: 1,
-    additionalAnswerWaitWindow: .7,
+    delayAfterUnansweredQuestion: .8,
+    delayAfterAnsweredQuestion: .8,
+    additionalAnswerWaitWindow: .5,
   },
   fast: {
     answerTimeLimit: 16,
-    delayAfterUnansweredQuestion: 1.5,
-    delayAfterAnsweredQuestion: 1.5,
-    additionalAnswerWaitWindow: 1.5,
+    delayAfterUnansweredQuestion: 1.2,
+    delayAfterAnsweredQuestion: 1.2,
+    additionalAnswerWaitWindow: 1,
   },
   normal: {
     answerTimeLimit: 16,
     delayAfterUnansweredQuestion: 3,
     delayAfterAnsweredQuestion: 2.2,
-    additionalAnswerWaitWindow: 2.1,
+    additionalAnswerWaitWindow: 2,
   },
   slow: {
     answerTimeLimit: 16,

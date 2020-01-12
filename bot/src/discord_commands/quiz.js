@@ -6,7 +6,7 @@ const sendStats = require('./../discord/quiz_stats.js');
 const { Permissions } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 const timingPresets = require('kotoba-common').quizTimeModifierPresets;
-const timingLimits = require('kotoba-common').quizLimits;
+const quizLimits = require('kotoba-common').quizLimits;
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
@@ -947,8 +947,7 @@ function createNonReviewGameMode(isMastery, isConquest) {
   }
 }
 
-function createSettings(settingsBlob, gameMode, remainingTokens) {
-
+function createSettings(settingsBlob, gameMode) {
   const serverNewQuestionDelayAfterUnansweredInMs = settingsBlob['quiz/japanese/new_question_delay_after_unanswered'] * 1000;
   const serverNewQuestionDelayAfterAnsweredInMs = settingsBlob['quiz/japanese/new_question_delay_after_answered'] * 1000;
   const serverAdditionalAnswerWaitTimeInMs = settingsBlob['quiz/japanese/additional_answer_wait_time'] * 1000;
@@ -961,34 +960,12 @@ function createSettings(settingsBlob, gameMode, remainingTokens) {
   const font = settingsBlob['quiz_font'];
 
   return {
-    scoreLimit:
-      gameMode.questionLimitOverride.doOverride(
-        serverScoreLimit,
-        userScoreLimitOverride,
-      ),
-    unansweredQuestionLimit:
-      gameMode.unansweredQuestionLimitOverride.doOverride(serverUnansweredQuestionLimit),
-    answerTimeLimitInMs:
-      gameMode.answerTimeLimitOverride.doOverride(
-        serverAnswerTimeLimitInMs,
-        userTimeoutOverrideInMs,
-      ),
-    newQuestionDelayAfterUnansweredInMs:
-      gameMode.newQuestionDelayAfterUnansweredOverride.doOverride(
-        serverNewQuestionDelayAfterUnansweredInMs,
-        userNewQuestionDelayAfterUnansweredOverrideInMs,
-      ),
-    newQuestionDelayAfterAnsweredInMs:
-      gameMode.newQuestionDelayAfterAnsweredOverride.doOverride(
-        serverNewQuestionDelayAfterAnsweredInMs,
-        userNewQuestionDelayAfterAnsweredOverrideInMs,
-      ),
-    additionalAnswerWaitTimeInMs:
-      gameMode.additionalAnswerWaitTimeOverride.doOverride(
-        serverAdditionalAnswerWaitTimeInMs,
-        userAdditionalAnswerWaitTimeInMs,
-      ),
-    gameModeSettings,
+    scoreLimit: gameMode.questionLimitOverride || serverScoreLimit,
+    unansweredQuestionLimit: gameMode.unansweredQuestionLimitOverride || serverUnansweredQuestionLimit,
+    answerTimeLimitInMs: serverAnswerTimeLimitInMs,
+    newQuestionDelayAfterUnansweredInMs: serverNewQuestionDelayAfterUnansweredInMs,
+    newQuestionDelayAfterAnsweredInMs: serverNewQuestionDelayAfterAnsweredInMs,
+    additionalAnswerWaitTimeInMs: serverAdditionalAnswerWaitTimeInMs,
     fontSize,
     fontColor,
     backgroundColor,
@@ -1182,16 +1159,16 @@ function consumeTimingTokens(commandTokens) {
       timingOverrides['quiz/japanese/additional_answer_wait_time'] = preset.additionalAnswerWaitWindow;
       timingOverrides['quiz/japanese/answer_time_limit'] = preset.answerTimeLimit;
     } else if (settingAbbreviation === 'atl') {
-      verifyValueIsInRange('Answer Time Limit', 'atl', ...timingLimits.answerTimeLimit, settingValue);
+      verifyValueIsInRange('Answer Time Limit', 'atl', ...quizLimits.answerTimeLimit, settingValue);
       timingOverrides['quiz/japanese/answer_time_limit'] = settingValue;
     } else if (settingAbbreviation === 'dauq') {
-      verifyValueIsInRange('Delay After Unanswered Question', 'dauq', ...timingLimits.delayAfterUnansweredQuestion, settingValue);
+      verifyValueIsInRange('Delay After Unanswered Question', 'dauq', ...quizLimits.delayAfterUnansweredQuestion, settingValue);
       timingOverrides['quiz/japanese/new_question_delay_after_unanswered'] = settingValue;
     } else if (settingAbbreviation === 'daaq') {
-      verifyValueIsInRange('Delay After Answered Question', 'daaq', ...timingLimits.delayAfterAnsweredQuestion, settingValue);
+      verifyValueIsInRange('Delay After Answered Question', 'daaq', ...quizLimits.delayAfterAnsweredQuestion, settingValue);
       timingOverrides['quiz/japanese/new_question_delay_after_answered'] = settingValue;
     } else if (settingAbbreviation === 'aaww') {
-      verifyValueIsInRange('Additional Answer Wait Window', 'aaww', ...timingLimits.additionalAnswerWaitWindow, settingValue);
+      verifyValueIsInRange('Additional Answer Wait Window', 'aaww', ...quizLimits.additionalAnswerWaitWindow, settingValue);
       timingOverrides['quiz/japanese/additional_answer_wait_time'] = settingValue;
     } else {
       // Could not consume token.
@@ -1247,7 +1224,41 @@ function consumeDeckListToken(commandTokens) {
     }
   });
 
-  return { decks, remainingTokens: commandTokens.split(1) };
+  return { decks, remainingTokens: commandTokens.slice(1) };
+}
+
+function consumeScoreLimitToken(commandTokens) {
+  if (commandTokens.length === 0) {
+    return { remainingTokens: commandTokens, questionLimitOverrides: {} };
+  }
+
+  const scoreLimitStr = commandTokens[0];
+  const scoreLimit = parseInt(scoreLimitStr);
+
+  if (Number.isNaN(scoreLimit)) {
+    const publicMessage = {
+      embed: {
+        title: 'Setting validation error',
+        description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s).`,
+        color: constants.EMBED_WRONG_COLOR,
+      },
+    };
+
+    throw new FulfillmentError({
+      publicMessage,
+      logDescription: 'NaN score limit',
+    });
+  }
+
+  const [minScoreLimit, maxScoreLimit] = quizLimits.scoreLimit;
+  const remainingTokens = commandTokens.slice(1);
+
+  return {
+    remainingTokens,
+    questionLimitOverrides: {
+      'quiz/japanese/score_limit': Math.min(Math.max(scoreLimit, minScoreLimit), maxScoreLimit),
+    },
+  };
 }
 
 module.exports = {
@@ -1268,12 +1279,12 @@ module.exports = {
     const cleanSuffix = suffix
       .replace(/ +/g, ' ')
       .replace(/ *\+ */g, '+')
-      .replace(/ *= */g, '+')
+      .replace(/ *= */g, '=')
       .replace(/ *-mc/g, '-mc')
       .trim()
       .toLowerCase();
     
-    const commandTokens = cleanSuffix.split(' ');
+    const commandTokens = cleanSuffix.split(' ').filter(x => x);
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
 
@@ -1289,7 +1300,7 @@ module.exports = {
     const serverSettingsOverridden = { ...serverSettings, ...timingOverrides };
 
     // Help operation
-    if (remainingTokens2.indexOf('help') !== -1) {
+    if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
       return showHelp(msg, isMastery, isConquest, masteryEnabled);
     }
 
@@ -1375,8 +1386,15 @@ module.exports = {
     // Create the deck collection.
     const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode);
 
+    const {
+      remainingTokens: remainingTokens5,
+      questionLimitOverrides,
+    } = consumeScoreLimitToken(remainingTokens4);
+
+    Object.assign(serverSettingsOverridden, questionLimitOverrides);
+
     // Create the session
-    const { settings, remainingTokens: remainingTokens5 } = createSettings(serverSettingsOverridden, gameMode, remainingTokens4);
+    const settings = createSettings(serverSettingsOverridden, gameMode);
     const session = Session.createNew(
       locationId,
       invokerId,
