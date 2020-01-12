@@ -285,7 +285,7 @@ class SessionInformation {
 
   markCurrentCardUnanswered() {
     // HACK. Unhackify this.
-    let newTimeLimit = this.getGameMode().updateAnswerTimeLimitForUnansweredQuestion(this.getSettings().answerTimeLimitInMs, this.getSettings().gameModeSettings);
+    let newTimeLimit = this.getGameMode().updateAnswerTimeLimitForUnansweredQuestion(this.getSettings().answerTimeLimitInMs);
     if (newTimeLimit !== this.getSettings().answerTimeLimitInMs) {
       this.getSettings().answerTimeLimitOverriden = true;
       this.getSettings().answerTimeLimitInMs = newTimeLimit;
