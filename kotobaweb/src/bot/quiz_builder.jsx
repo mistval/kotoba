@@ -37,7 +37,7 @@ function createCommand(args) {
 
   commandParts.push(deckParts.join('+'));
 
-  if (args.otherSettings.scoreLimit !== quizDefaults.scoreLimit) {
+  if (args.otherSettings.scoreLimit !== quizDefaults.scoreLimit && !args.otherSettings.conquest) {
     commandParts.push(args.otherSettings.scoreLimit);
   }
 
