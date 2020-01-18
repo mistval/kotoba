@@ -261,30 +261,16 @@ const afterQuizMessages = [
   },
   {
     embed: {
-      title: 'O, too fast/slow?',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can change timing settings by using the **<prefix>settings** command, or say **<prefix>help quiz** to see how to do it per-game.',
-    },
-  },
-  {
-    embed: {
-      title: 'O, your lame friends don\'t use Discord?',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: '[Play on the web](https://kotobaweb.com/)',
-    },
-  },
-  {
-    embed: {
-      title: 'Manual',
-      color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'For advanced quiz options, [visit me on the web](https://kotobaweb.com/bot/quiz).',
-    },
-  },
-  {
-    embed: {
       title: 'Stats',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'Say **<prefix>quiz stats** to see your stats for the past 30 days.',
+    },
+  },
+  {
+    embed: {
+      title: 'Quiz Command Builder',
+      color: constants.EMBED_NEUTRAL_COLOR,
+      description: 'For help configuring a quiz exactly how you want, try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) or check my [manual](https://kotobaweb.com/bot/quiz)',
     },
   },
 ];
