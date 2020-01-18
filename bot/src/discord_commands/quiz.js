@@ -270,7 +270,7 @@ const afterQuizMessages = [
     embed: {
       title: 'Quiz Command Builder',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'For help configuring a quiz exactly how you want, try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) or check my [manual](https://kotobaweb.com/bot/quiz)',
+      description: 'For help configuring a quiz exactly how you want, try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) or check my [manual](https://kotobaweb.com/bot/quiz).',
     },
   },
 ];
@@ -1075,7 +1075,7 @@ function verifyValueIsInRange(settingName, settingAbbreviation, min, max, value)
     const publicMessage = {
       embed: {
         title: 'Setting validation error',
-        description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**.`,
+        description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**. Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
       },
     };
@@ -1214,7 +1214,7 @@ function consumeScoreLimitToken(commandTokens) {
     const publicMessage = {
       embed: {
         title: 'Setting validation error',
-        description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s).`,
+        description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s). Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
       },
     };
