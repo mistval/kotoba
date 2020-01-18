@@ -1263,7 +1263,8 @@ module.exports = {
       .replace(/ +/g, ' ')
       .replace(/ *\+ */g, '+')
       .replace(/ *= */g, '=')
-      .replace(/ *-mc/g, '-mc')
+      .replace(/ *- */g, '-')
+      .replace(/ *\(/g, '(')
       .trim()
       .toLowerCase();
     
