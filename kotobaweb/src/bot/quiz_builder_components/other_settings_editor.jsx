@@ -46,13 +46,14 @@ function OtherSettingsEditor(props) {
           maxValue={quizLimits.scoreLimit[1]}
           onChange={handleScoreLimitChanged}
           maxPlacesAfterDecimal={0}
+          disabled={props.otherSettings.conquest}
         />
         <div className="checkbox mt-3">
           <label>
             <input type="checkbox" checked={props.otherSettings.conquest} onChange={handleConquestModeChanged} />&nbsp;<span style={styles.formText}>Conquest mode</span>&nbsp;
             <HelpButton
               popoverId="conquestModePopover"
-              popoverContent="<p>Conquest mode uses a spaced repetition algorithm that puts missed questions back into the deck so that you'll see them again and learn them.</p><p>You can use <b>k!quiz save</b> and <b>k!quiz load</b> to save and load progress.</p>"
+              popoverContent="<p>Conquest mode uses a spaced repetition algorithm that puts missed questions back into the deck so that you'll see them again and learn them.</p><p>You can use <b>k!quiz save</b> and <b>k!quiz load</b> to save and load progress. Conquest mode has no score limit and ends when the deck has been conquered.</p>"
               popoverTitle="Conquest Mode"
             />
           </label>

@@ -93,6 +93,7 @@ class NumericInputBox extends Component {
         step={this.getStep()}
         onKeyUp={this.handleInputKeyUp}
         ref={(input) => { this.input = input; }}
+        disabled={this.props.disabled}
       />
     );
   }
