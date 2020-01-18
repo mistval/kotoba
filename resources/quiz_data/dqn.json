@@ -1,0 +1,7718 @@
+{
+  "uniqueId": "dqn",
+  "name": "DQN Names Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the DQN name!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Comment",
+  "description": "[DQNの親が子供に付けそうな名前](https://dqname.jp/)",
+  "cards": [
+    {
+      "question": "キック今日中",
+      "answer": [
+        "きっくきょうじゅう"
+      ],
+      "meaning": "ねぇねぇ、>>295の挙げてる名前が「キック今日中」なんて字に見えるのは、俺がべろんべろんに酔っ払ってるせいだよね？\nなんか、ＤＱＮという域をはるか飛び越え、精神崩壊すら感じさせる名前だな。シュールというか。\n爆走蛇亜ｸﾝ以来の大物のﾖｶｰﾝ(\n∀\n)\n外国人に名前を訊かれるキック今日中くん。「キックキョウジュウ？ ドーユーイミデスカー？」「え、えと……プ、プロフェッサー\nキック……」\n教授ちゃうわぃwwww！",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1428"
+    },
+    {
+      "question": "爆走蛇亜",
+      "answer": [
+        "ばくそうじゃあ"
+      ],
+      "meaning": "最初は爆走だけ（これでも結構アレだけど）だったのが、蛇（じゃ）をつけるとパンチが効くとのことで爆走蛇となり、ヨメが「なんか戦隊モノの名前みたいね」と言うから伸ばし棒のかわりに亜をつけて爆走蛇亜となったらしい。もはや人間の名前じゃないと思うけど、本人達は「これで名前でナメられることはない、絶対大物になる」と大変ご満悦な様子でした。\n爆笑じゃあ。\nクラスに同姓の子がいると、「山田（爆）」になるんだねｗ。（笑）よりﾃﾗｲﾔｽｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha886"
+    },
+    {
+      "question": "北斗拳",
+      "answer": [
+        "ほとけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho481"
+    },
+    {
+      "question": "魔離鳴",
+      "answer": [
+        "まりあ"
+      ],
+      "meaning": "悪魔が離れて鳴く\nって親はどんな神経でつけたのか。普通の子だったけど漢字見てぎょっとした。\n昔は破魔子（はまこ）さんとかいたよね。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma855"
+    },
+    {
+      "question": "抱美弟",
+      "answer": [
+        "だびで"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta482"
+    },
+    {
+      "question": "創価",
+      "answer": [
+        "そうか"
+      ],
+      "meaning": "友人と「す\nすごいよね\nこの子ｗ」と苦笑い。\n煎餅嫌杉！！",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so253"
+    },
+    {
+      "question": "孫尚香",
+      "answer": [
+        "そんしょうこう"
+      ],
+      "meaning": "弟に「孫策（そんさく）」「曹操（そうそう）」「何進（かしん）」。\nあ、ヤダ。三国志おたく．．．\n三男だけしょぼい武将なのは何故･･････？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so222"
+    },
+    {
+      "question": "七七海恵",
+      "answer": [
+        "ななみめぐみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na770"
+    },
+    {
+      "question": "永遠零",
+      "answer": [
+        "とわれ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to941"
+    },
+    {
+      "question": "望己利",
+      "answer": [
+        "もこり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo515"
+    },
+    {
+      "question": "礼瑠飛",
+      "answer": [
+        "れるひ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re885"
+    },
+    {
+      "question": "李",
+      "answer": [
+        "りひと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2229"
+    },
+    {
+      "question": "女優",
+      "answer": [
+        "めもりー"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me309"
+    },
+    {
+      "question": "憧",
+      "answer": [
+        "あこ",
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2127"
+    },
+    {
+      "question": "承空",
+      "answer": [
+        "じょあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2423"
+    },
+    {
+      "question": "月姫",
+      "answer": [
+        "るのん",
+        "るな",
+        "ひめ",
+        "つき",
+        "つきめ",
+        "きらり",
+        "るびい",
+        "るう",
+        "あき",
+        "ほたる",
+        "うさぎ",
+        "まりん",
+        "だいあな",
+        "でぃあな",
+        "かぐや",
+        "らめ",
+        "かぐやひめ",
+        "るき"
+      ],
+      "meaning": "パパ命名、月のきれいな季節に生まれたからだそうです。\nかぐや姫にあやかったんでしょうか？ 育ての親を捨てて月に帰ってしまうような娘でいいのか？\n月子じゃダメなのか？ ダメなんだろうなぁ…\n「姫」という漢字を使うとこがポイントだと思われ。\nﾁｮｿみたいで嫌だ、「姫」なんて。\nヲタ信者が多い同人エロゲを思い出すのだが。\nＳＦ漫画に出てきた高重力惑星出身の怪力異星生物が思い出される。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1025"
+    },
+    {
+      "question": "金星",
+      "answer": [
+        "まあず"
+      ],
+      "meaning": "金星ってヴィーナスだよね……。おまけに姉は「海月」。\n子どもがかわいそうだから指摘しちゃえば？ 改名するなら早いほうがいい。\n「まあず」でも「びーなす」でもどっちも名前につけられたくないけど、「金星」で「まあず」はあんまりだ\n。どう考えても勘違いにしか思えないし、親のあふぉを晒していくことになるし\n。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma69"
+    },
+    {
+      "question": "永久愛",
+      "answer": [
+        "とあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to811"
+    },
+    {
+      "question": "日ッ飛",
+      "answer": [
+        "ひっと"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi105"
+    },
+    {
+      "question": "麗虹",
+      "answer": [
+        "れに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1046"
+    },
+    {
+      "question": "瞳子",
+      "answer": [
+        "めこ"
+      ],
+      "meaning": "姉妹に「叶子（かこ）」「虹子（にこ）」。私は吃驚したんだけど、「めこ」って東京では特に深い意味のない単語なの？ 字は可愛いのに、萬子ちゃんと同系統と考えてしまう私がおかしいのか……。\n瞳子なら、トウコやヒトミコって読みがあるのに",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me350"
+    },
+    {
+      "question": "星蒼",
+      "answer": [
+        "じょあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2458"
+    },
+    {
+      "question": "深愛",
+      "answer": [
+        "じょあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2485"
+    },
+    {
+      "question": "心愛",
+      "answer": [
+        "ここ",
+        "ころな",
+        "みあ",
+        "ここあ",
+        "ここあ",
+        "とら"
+      ],
+      "meaning": "散々ｶﾞｲｼｭﾂだが、今日見たのは男の子だった…orz\n誰もストッパーはおらんかったのか……。せめて香歌緒（かかお）にすれば音だけは男の子っぽくなったのになｗ\n嘉々雄なら字も男の子っぽいよｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1407"
+    },
+    {
+      "question": "初珠",
+      "answer": [
+        "うぃっしゅ"
+      ],
+      "meaning": "「初珠（ウィッシュ）です☆みんなから祝福される子になりますように！」ティッシュかと思った…。あー、ｗｉｓｈね。えええー！ でも女の子にウィッシュって…。いや男の子でも駄目だが。\n祝福よりアホかと思われる方が確実に多いだろうなぁ\n。まあ本人じゃなく親がだけど。\n少し脚色\n友達が女の子を出産。メールがきました。「初知（ウィッチ）です☆魔法が使える子になりますように！」",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu259"
+    },
+    {
+      "question": "七澄",
+      "answer": [
+        "なち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na868"
+    },
+    {
+      "question": "海月姫",
+      "answer": [
+        "りまな",
+        "かるき",
+        "かぐや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2041"
+    },
+    {
+      "question": "音音",
+      "answer": [
+        "のんのん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no655"
+    },
+    {
+      "question": "羽夢舞",
+      "answer": [
+        "ぱろま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1442"
+    },
+    {
+      "question": "羽奏",
+      "answer": [
+        "わおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa200"
+    },
+    {
+      "question": "衣那",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1993"
+    },
+    {
+      "question": "愛陽",
+      "answer": [
+        "なび",
+        "あいでぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na167"
+    },
+    {
+      "question": "愛永遠",
+      "answer": [
+        "まとあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1618"
+    },
+    {
+      "question": "麻里恵",
+      "answer": [
+        "まりえる"
+      ],
+      "meaning": "で、その「る」はどこから来たんだろう",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1169"
+    },
+    {
+      "question": "碧海",
+      "answer": [
+        "まりん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1303"
+    },
+    {
+      "question": "成恭",
+      "answer": [
+        "なち"
+      ],
+      "meaning": "ヨーロッパでは名乗れないと思う。名乗ったら普通に殴られるだろう。\n那智という姓の方がドイツで苦労したという話を聞いたことがある。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na453"
+    },
+    {
+      "question": "丞杏",
+      "answer": [
+        "じょあ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2184"
+    },
+    {
+      "question": "勝新",
+      "answer": [
+        "じょあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2207"
+    },
+    {
+      "question": "春愛人",
+      "answer": [
+        "はあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1422"
+    },
+    {
+      "question": "愛茅",
+      "answer": [
+        "なち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na456"
+    },
+    {
+      "question": "野象味",
+      "answer": [
+        "のぞみ"
+      ],
+      "meaning": "アフリカの大地を思い出す。\nすごい漢字。自分がそんな名前だったら泣くかも\n野原の象の味ってorz。先日動物園で見た「象の放尿シーン」が脳裏によみがえったよ…\nギャートルズ思い出した。マンモスの肉の輪切り。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no310"
+    },
+    {
+      "question": "青空",
+      "answer": [
+        "えあ",
+        "あおら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee3"
+    },
+    {
+      "question": "羽生",
+      "answer": [
+        "はあぶ",
+        "はにゅう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1697"
+    },
+    {
+      "question": "龍飛偉",
+      "answer": [
+        "るふぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1438"
+    },
+    {
+      "question": "夢希翔",
+      "answer": [
+        "ゆきと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1571"
+    },
+    {
+      "question": "望月姫",
+      "answer": [
+        "みつき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2563"
+    },
+    {
+      "question": "恋璃愛",
+      "answer": [
+        "こりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko950"
+    },
+    {
+      "question": "魔裟斗",
+      "answer": [
+        "まさと"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma887"
+    },
+    {
+      "question": "大樹",
+      "answer": [
+        "だいな"
+      ],
+      "meaning": "兄弟に「まいと」。二人合わせてダイナマイト…。元気いっぱいで何かの原動力になれるくらいのパワーを２人で出してほしいです…。\n自由\n個性をはきちがえた日教組教育の弊害。詳しくはマスコミ板等へ。\nそれ、なんですか？ 私としては、まったく子供の名前を洒落程度にしか考えてない親が増えたわねえ、としか思えないのですが。一生兄弟と漫才コンビ組んでいくわけではないんです。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta497"
+    },
+    {
+      "question": "慈代",
+      "answer": [
+        "じぇだい"
+      ],
+      "meaning": "娘が将来そんな名前の彼氏を連れて来たらやだなぁ\nフォースが感じられないから娘はやれんとか言って追い返す。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2137"
+    },
+    {
+      "question": "是留舵",
+      "answer": [
+        "ぜるだ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se667"
+    },
+    {
+      "question": "篤梨恩",
+      "answer": [
+        "ありおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3452"
+    },
+    {
+      "question": "本気",
+      "answer": [
+        "まじ"
+      ],
+      "meaning": "本気と書いてマジと読む\n他にはいない名前を、と思って付けた。\n漫画の影響かなぁ。立原あゆみ好きな男の人多いもんね。実際子供に付けんのは絶対嫌だねｗ\n「マジ」って言葉が死語にならない日を祈ります\n。\nむしろ完全に死語になってくれれば、ただの難読名前になって恥ずかしさが軽減されるかもよ。\nでも今、「なうい」て人がいたらやっぱり恥ずかしいだろ\n。完全に死語になって忘れ去られるまでには30年はかかりそう。\nそうだね。それまでに立派なﾄﾞｷｭｿになってるよね。\nいや、親は「マジ」って言葉がいずれ死語になるだろうことを、はじめから全く予想できなかったんだと思うよ。マジで。\n読みを変えればなんとか大丈夫じゃない？ モトキくんとかで。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma90"
+    },
+    {
+      "question": "芭旺",
+      "answer": [
+        "ばお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1748"
+    },
+    {
+      "question": "雪",
+      "answer": [
+        "あな",
+        "ゆうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3964"
+    },
+    {
+      "question": "士恵大",
+      "answer": [
+        "じぇだい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2283"
+    },
+    {
+      "question": "大海",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta658"
+    },
+    {
+      "question": "大偉",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta819"
+    },
+    {
+      "question": "大奈",
+      "answer": [
+        "だいな"
+      ],
+      "meaning": "「ひろな」ならかわいいんだけど。。。何でも親が競馬好きで、「だいな」ちゃんが生まれた時に「ダイナ何とか」って馬がめちゃめちゃ強かったから、それにあやかった…らしい。。\nえーと、えほんはいっさつにさつ。えんぴつはいっぽんにほん。おうまさんはいっちゃくにちゃく、ってかぞえるんだよね\nとか言いそう。\n馬ｲ！\nﾜﾛﾀ。しかし大奈って、ウルトラマンファン？と思うなあ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta532"
+    },
+    {
+      "question": "真里菜",
+      "answer": [
+        "まりな"
+      ],
+      "meaning": "女の子だって言われてたから、これしか考えてなくて\n「真里菜」という名前が可愛いだけに、不憫だな。少年。\n本人が悩む前に問答無用でカミングアウトさせるのかｗ。きっつー。\n「真里」で止めてやれよ…。無理すりゃ「マサト」と読めるじゃないか。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1028"
+    },
+    {
+      "question": "光将",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta889"
+    },
+    {
+      "question": "亜流音",
+      "answer": [
+        "ありおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2081"
+    },
+    {
+      "question": "虹飛",
+      "answer": [
+        "にとん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni254"
+    },
+    {
+      "question": "怜茜",
+      "answer": [
+        "れに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re977"
+    },
+    {
+      "question": "心菜",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1551"
+    },
+    {
+      "question": "心和",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1549"
+    },
+    {
+      "question": "環光",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1975"
+    },
+    {
+      "question": "翔玲",
+      "answer": [
+        "とれの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to762"
+    },
+    {
+      "question": "希望",
+      "answer": [
+        "ゆめ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1077"
+    },
+    {
+      "question": "心中",
+      "answer": [
+        "ここな"
+      ],
+      "meaning": "どういう意味を込めて、そんな漢字を選んだのだろう。親や兄弟は、なぜ反対してあげなかったのだろう。あまりにもｶﾜｲｿｽ…\n心太に気付かないのは100歩譲って許せるが、心中に気付かないのはもはや犯罪レベル。つか親は未だに気付いてないのか？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko908"
+    },
+    {
+      "question": "碧",
+      "answer": [
+        "あくあまりん"
+      ],
+      "meaning": "ﾌﾞﾂﾌﾞﾂ」言ってたけど、エメラルドとアクアマリン見て「\n」になってた。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1803"
+    },
+    {
+      "question": "星",
+      "answer": [
+        "ひかり",
+        "ひかり",
+        "あっぷる"
+      ],
+      "meaning": "100人に聞いたら100人が「ほし」と読むだろう。\nいや、５人ぐらいは「すたー」「せい」と。\n「きらり」と読ませるよりマシかな、と思ってしまった。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi434"
+    },
+    {
+      "question": "大穴",
+      "answer": [
+        "だいあな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta582"
+    },
+    {
+      "question": "星織華",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se502"
+    },
+    {
+      "question": "虎舞竜",
+      "answer": [
+        "ろうど"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ro198"
+    },
+    {
+      "question": "炎",
+      "answer": [
+        "ほのう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho27"
+    },
+    {
+      "question": "晴翔",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se734"
+    },
+    {
+      "question": "哉中",
+      "answer": [
+        "かな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka826"
+    },
+    {
+      "question": "野良",
+      "answer": [
+        "のら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no664"
+    },
+    {
+      "question": "静凉風",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se537"
+    },
+    {
+      "question": "神生理",
+      "answer": [
+        "かおり"
+      ],
+      "meaning": "読みは普通なのに字が\nﾊﾂﾞｶｼｲ!!",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka908"
+    },
+    {
+      "question": "七福神",
+      "answer": [
+        "のぞみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no457"
+    },
+    {
+      "question": "聖琉嘩",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se400"
+    },
+    {
+      "question": "倶楽雲",
+      "answer": [
+        "くらうん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku406"
+    },
+    {
+      "question": "優央良",
+      "answer": [
+        "やおい"
+      ],
+      "meaning": "じいじが考えた候補の中から決めました。気に入ってます(^-^)",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya80"
+    },
+    {
+      "question": "舞夏星",
+      "answer": [
+        "まなほ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1394"
+    },
+    {
+      "question": "友連乃",
+      "answer": [
+        "とれの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to476"
+    },
+    {
+      "question": "聖劉汐",
+      "answer": [
+        "せるしお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se663"
+    },
+    {
+      "question": "朱胡",
+      "answer": [
+        "すう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su377"
+    },
+    {
+      "question": "歩木鈴",
+      "answer": [
+        "ぽこりん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho427"
+    },
+    {
+      "question": "都怜乃",
+      "answer": [
+        "とれの"
+      ],
+      "meaning": "どういう思い入れがあったんだろう…。\nレビン\nトレノのトレノじゃないの？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to415"
+    },
+    {
+      "question": "澄歌",
+      "answer": [
+        "すう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su402"
+    },
+    {
+      "question": "珠優",
+      "answer": [
+        "すう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su360"
+    },
+    {
+      "question": "手洗",
+      "answer": [
+        "てぃあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te377"
+    },
+    {
+      "question": "智恵里",
+      "answer": [
+        "さくら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa665"
+    },
+    {
+      "question": "千襖",
+      "answer": [
+        "ちふす"
+      ],
+      "meaning": "最初、千草（ちぐさ）にしようと思ったんだけど、乳房みたいだからって、この名前にしたらしい\nチフスって…病気なかったっけ？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti262"
+    },
+    {
+      "question": "生愛",
+      "answer": [
+        "りばい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri1972"
+    },
+    {
+      "question": "水",
+      "answer": [
+        "あくわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3241"
+    },
+    {
+      "question": "緑夢",
+      "answer": [
+        "ぐりむ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku49"
+    },
+    {
+      "question": "凛空",
+      "answer": [
+        "りすか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri1067"
+    },
+    {
+      "question": "明芽",
+      "answer": [
+        "あくめ"
+      ],
+      "meaning": "読み方、変えてあげられないのかな\n「めいか」とか\n「アクメを迎え」でぐぐったらエロ小説ばかりｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1914"
+    },
+    {
+      "question": "妹愛",
+      "answer": [
+        "まりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1827"
+    },
+    {
+      "question": "十",
+      "answer": [
+        "ぷらす",
+        "てん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu198"
+    },
+    {
+      "question": "雫雲",
+      "answer": [
+        "だうん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta536"
+    },
+    {
+      "question": "甲子園",
+      "answer": [
+        "こうしえん"
+      ],
+      "meaning": "たけし軍団のダンカンの息子。いくらタイガースファンだからって\n。でも、甲子園君はベイスターズファンだそうです。\n本質的にスポーツ嫌いな子供だったら気の毒だね…。その名前でサッカーやバスケ好きになっても、なんだか周りに「？？」と思われそう。「お前は野球好きなんだ！ 野球と共に生きるんだ！」と産まれたときから親が決めつけてるように思えてちょっとイヤ。\n新聞の投書欄に本人の投書が載ってた。「父が野球に思い入れがあり、この名前をつけてくれた。父には感謝しているが、今春から野球をやめて、違う球技を始めた僕に納得してくれない。でも僕は父の生き方をたどれない」",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko256"
+    },
+    {
+      "question": "憐音",
+      "answer": [
+        "れお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re759"
+    },
+    {
+      "question": "博忠",
+      "answer": [
+        "はくち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1256"
+    },
+    {
+      "question": "頭希",
+      "answer": [
+        "のぞみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no443"
+    },
+    {
+      "question": "秋彩",
+      "answer": [
+        "あい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3808"
+    },
+    {
+      "question": "慧野巨",
+      "answer": [
+        "けやき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke211"
+    },
+    {
+      "question": "恋望空",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re970"
+    },
+    {
+      "question": "琉歩唯",
+      "answer": [
+        "るふぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru788"
+    },
+    {
+      "question": "姫守",
+      "answer": [
+        "ひも"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1822"
+    },
+    {
+      "question": "雲雀",
+      "answer": [
+        "すずめ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su451"
+    },
+    {
+      "question": "恋希空",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1038"
+    },
+    {
+      "question": "夜月姫",
+      "answer": [
+        "かぐや"
+      ],
+      "meaning": "名づけの本人は気に入ってるらしいが･･･。\nそりゃ、名前つけた本人は気に入ってるだろうが、名前を付けられた本人は気に入ってくれるかどうか",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1005"
+    },
+    {
+      "question": "奈々",
+      "answer": [
+        "だいな",
+        "にな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta774"
+    },
+    {
+      "question": "芽鼓",
+      "answer": [
+        "めこ"
+      ],
+      "meaning": "いじめられるよなぁ。\nいじめられるっていうか、赤面…",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me359"
+    },
+    {
+      "question": "の",
+      "answer": [
+        "の"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no166"
+    },
+    {
+      "question": "玲乃茜",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re689"
+    },
+    {
+      "question": "鳳虎",
+      "answer": [
+        "ぽこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho400"
+    },
+    {
+      "question": "白子",
+      "answer": [
+        "しらね"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1966"
+    },
+    {
+      "question": "達愛",
+      "answer": [
+        "だあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta862"
+    },
+    {
+      "question": "梓桜",
+      "answer": [
+        "あずさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2155"
+    },
+    {
+      "question": "愛人",
+      "answer": [
+        "のりと",
+        "らびっと",
+        "まなと",
+        "あいと",
+        "はあと",
+        "あると"
+      ],
+      "meaning": "響きは結構可愛いなと思ったら、由来が「愛される人になってほしい」。もちろん、漢字は「愛人」だよーん。\n「愛人」という名前もすごいが、私はよく聞く「皆に愛される人になってほしい」という名前の由来をきくたびに、ヘッセの童話を思い出す。母が神に一つだけ願いを叶えてやると言われ、「この子が皆に愛されますように\n」と願った。誰にでも愛される子になったが、誰も愛することのできない嫌な人に育ってしまった\n。愛されるより愛する人生の方が幸せということですかね。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no472"
+    },
+    {
+      "question": "怜乃愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re774"
+    },
+    {
+      "question": "流布射",
+      "answer": [
+        "るふぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1022"
+    },
+    {
+      "question": "遊撃主",
+      "answer": [
+        "しょーと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1830"
+    },
+    {
+      "question": "巡音",
+      "answer": [
+        "るか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1165"
+    },
+    {
+      "question": "香",
+      "answer": [
+        "かりな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1694"
+    },
+    {
+      "question": "銀魂",
+      "answer": [
+        "ぎんた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1071"
+    },
+    {
+      "question": "のんのん",
+      "answer": [
+        "のんのん"
+      ],
+      "meaning": "水木しげるの「のんのんばあとオレ」を思い出した。\nムーミンかと思ったｗ\nひらがな？ のんちゃんの誤植って事はないのかなぁ？ せめて「のんの」までにしてあげて欲しい…\n拝んでいるような感じですね。いまどき、ペットにも付けそうにないほどの、もの凄い名前だと思います。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no294"
+    },
+    {
+      "question": "麗乃愛",
+      "answer": [
+        "れのあ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re431"
+    },
+    {
+      "question": "怜音晏",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1053"
+    },
+    {
+      "question": "導",
+      "answer": [
+        "なび"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na606"
+    },
+    {
+      "question": "月永",
+      "answer": [
+        "ゆえ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1419"
+    },
+    {
+      "question": "華月姫",
+      "answer": [
+        "かぐや",
+        "はづき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1194"
+    },
+    {
+      "question": "しいたけ",
+      "answer": [
+        "しいたけ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1354"
+    },
+    {
+      "question": "玲乃愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re969"
+    },
+    {
+      "question": "大麻",
+      "answer": [
+        "たいま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta480"
+    },
+    {
+      "question": "海晃桜",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2768"
+    },
+    {
+      "question": "騎士",
+      "answer": [
+        "じぇだい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1855"
+    },
+    {
+      "question": "右翼",
+      "answer": [
+        "ゆうと",
+        "らいと"
+      ],
+      "meaning": "兄弟に「左翼（れふと）」。\nｳﾖｸ\nｻﾖｸと読まずにいられない…そ、それはﾓｺﾞﾓｺﾞ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu997"
+    },
+    {
+      "question": "至泰",
+      "answer": [
+        "じぇだい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1985"
+    },
+    {
+      "question": "京子",
+      "answer": [
+        "みえ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2834"
+    },
+    {
+      "question": "恋色奈",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1386"
+    },
+    {
+      "question": "美富",
+      "answer": [
+        "びとん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1978"
+    },
+    {
+      "question": "聖戦",
+      "answer": [
+        "じはーど"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1349"
+    },
+    {
+      "question": "煮物",
+      "answer": [
+        "にもの"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni167"
+    },
+    {
+      "question": "愛子",
+      "answer": [
+        "らぶし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra981"
+    },
+    {
+      "question": "核",
+      "answer": [
+        "あとむ"
+      ],
+      "meaning": "あとむって名前自体すごいけど、最近漢字を知ってまた驚いたよ。\n原子で「あとむ」ならわかるんだけど。核だけなら「ぬーくれあ」君だよなぁ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1451"
+    },
+    {
+      "question": "琉銀明",
+      "answer": [
+        "るぎあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1019"
+    },
+    {
+      "question": "転無",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko863"
+    },
+    {
+      "question": "心音",
+      "answer": [
+        "ころな",
+        "ねお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1503"
+    },
+    {
+      "question": "橙七",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta905"
+    },
+    {
+      "question": "新一",
+      "answer": [
+        "こなん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1314"
+    },
+    {
+      "question": "夢生",
+      "answer": [
+        "むう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mu65"
+    },
+    {
+      "question": "静梨華",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se397"
+    },
+    {
+      "question": "和気我",
+      "answer": [
+        "わきが"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa112"
+    },
+    {
+      "question": "雲広",
+      "answer": [
+        "うんこう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu263"
+    },
+    {
+      "question": "狩稲",
+      "answer": [
+        "かりーな"
+      ],
+      "meaning": "食べるのに困らないように。\n刈稲、でなきゃ狩猪でないと字が合わない。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka409"
+    },
+    {
+      "question": "美少女",
+      "answer": [
+        "みのと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2696"
+    },
+    {
+      "question": "野風平蔵重親",
+      "answer": [
+        "のかぜへいぞうしげちか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no518"
+    },
+    {
+      "question": "羽姫芽",
+      "answer": [
+        "わきが"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa113"
+    },
+    {
+      "question": "るにゃ",
+      "answer": [
+        "るにゃ"
+      ],
+      "meaning": "最初は「るうな」とつけようとしていたが、あだ名は「るにゃ」にしよう…などと話しているうちに、じゃあもう最初から「るにゃ」でいいよ、とこの名前になったらしい…\n本名言ってるのに基地外ブリッコみたいで気の毒だにゃ…\nあほにもほどがある\n。「お名前は？」「るにゃ」「あー“るな”ちゃんていうのー」なんて会話になりそうだ。\nきっと本人も「なんで“るにゃ”なの！？ “るな” でいいじゃん！ 意味わかんない！！」と言う日が来る…\nるにゃ！？ …今日一番の脱力をありがとう orz",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru617"
+    },
+    {
+      "question": "真剣佑",
+      "answer": [
+        "まっけんゆう"
+      ],
+      "meaning": "弟に「郷敦（ごうどん）」。親友であるマッケンジーさんの名前から取って名づけたそうです。\n血は日本人だけど、彼らはアメリカで暮らしているので、日系二世なんでは。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma917"
+    },
+    {
+      "question": "七海輝",
+      "answer": [
+        "けんしんおりおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke210"
+    },
+    {
+      "question": "萌胡莉",
+      "answer": [
+        "もこり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo418"
+    },
+    {
+      "question": "武尊",
+      "answer": [
+        "たける"
+      ],
+      "meaning": "兄弟に「光尊（ひかる）」。\n日本（ヤマト）武尊（タケルノミコト）なのにね。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta606"
+    },
+    {
+      "question": "苺萌珠",
+      "answer": [
+        "まめたま"
+      ],
+      "meaning": "「〇〇家に舞い降りた天使です(ﾊｧﾄ) 苺萌珠はお腹にいる時から、パーたまとマーたまにこの名前で呼ばれていました(ﾊｧﾄ)」胸が痛くなるほどかわいらしい顔立ちでした。\nなんだ、それ？ ってかほんとに名前？\n日本はもうダメだ…涙出てきた。\nわんこじゃないんだからさぁ…orz\n文面からもイタさが滲み出てるな･･･。\n数年でその名前呼ばれても返事しなくなるよな、きっと。\n将来、舞妓さん芸妓さんになるなら、アリかもしれないかもしれない。豆奴さんや豆福さんはいるもんね。もちろん本名じゃないがｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1105"
+    },
+    {
+      "question": "心瞳",
+      "answer": [
+        "ひとみ",
+        "こころひとみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1915"
+    },
+    {
+      "question": "出",
+      "answer": [
+        "で"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te270"
+    },
+    {
+      "question": "恋",
+      "answer": [
+        "れん",
+        "める"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re507"
+    },
+    {
+      "question": "流李素",
+      "answer": [
+        "るいず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1288"
+    },
+    {
+      "question": "凪日",
+      "answer": [
+        "なび"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na560"
+    },
+    {
+      "question": "詩羽楊",
+      "answer": [
+        "じばにゃん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2410"
+    },
+    {
+      "question": "愛引",
+      "answer": [
+        "あいーん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1684"
+    },
+    {
+      "question": "美",
+      "answer": [
+        "ぱるる",
+        "みま",
+        "みっしぇる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1636"
+    },
+    {
+      "question": "白雪",
+      "answer": [
+        "ひめ",
+        "しるく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1793"
+    },
+    {
+      "question": "日記",
+      "answer": [
+        "にっき"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni2"
+    },
+    {
+      "question": "るるる",
+      "answer": [
+        "るるる"
+      ],
+      "meaning": "「るるる」って呼びにくくないんだろうか。\nどういう意図でルルルなんだか。幼児には激しく発音のハードルが高い名前だし。そのうち奈々菜とか野乃望とかラララとかレレレとか（ｒｙ\nお〜でか〜けで〜すか〜〜？\n「近藤るるる」って萌え系漫画家がいた気がする。そこからとってたらイヤス(´\nω\n)",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru533"
+    },
+    {
+      "question": "飛哉亜李",
+      "answer": [
+        "ひゃあい"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1118"
+    },
+    {
+      "question": "海",
+      "answer": [
+        "えあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee413"
+    },
+    {
+      "question": "愛して",
+      "answer": [
+        "あいして"
+      ],
+      "meaning": "一生愛に飢えた人生を送りそう\nというか、名前はせめて名詞にして欲しい",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3080"
+    },
+    {
+      "question": "長生",
+      "answer": [
+        "ちょい"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti180"
+    },
+    {
+      "question": "ハム太郎",
+      "answer": [
+        "はむたろう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha211"
+    },
+    {
+      "question": "暖々",
+      "answer": [
+        "のんのん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no638"
+    },
+    {
+      "question": "美誠",
+      "answer": [
+        "みま"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1348"
+    },
+    {
+      "question": "玲新",
+      "answer": [
+        "れに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1177"
+    },
+    {
+      "question": "精飛愛",
+      "answer": [
+        "せぴあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se659"
+    },
+    {
+      "question": "汽車",
+      "answer": [
+        "きしゃ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki884"
+    },
+    {
+      "question": "我愛羅",
+      "answer": [
+        "があら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1157"
+    },
+    {
+      "question": "梓澪",
+      "answer": [
+        "あみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1975"
+    },
+    {
+      "question": "天夢雅",
+      "answer": [
+        "てんが"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te468"
+    },
+    {
+      "question": "幻の銀侍",
+      "answer": [
+        "まぼろしのぎんじ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1067"
+    },
+    {
+      "question": "初花",
+      "answer": [
+        "はか"
+      ],
+      "meaning": "破瓜？墓？\n初花は初潮の事。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1629"
+    },
+    {
+      "question": "大和",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta635"
+    },
+    {
+      "question": "真姫様",
+      "answer": [
+        "まひよ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1706"
+    },
+    {
+      "question": "大空翼",
+      "answer": [
+        "つばさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu304"
+    },
+    {
+      "question": "法華",
+      "answer": [
+        "ほのか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho444"
+    },
+    {
+      "question": "晴琉楽",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se606"
+    },
+    {
+      "question": "神",
+      "answer": [
+        "かみ",
+        "しはい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1022"
+    },
+    {
+      "question": "縁佳",
+      "answer": [
+        "ぺりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he103"
+    },
+    {
+      "question": "桂子",
+      "answer": [
+        "かつら"
+      ],
+      "meaning": "最初の字しか読まない。別にＤＱＮだとは思わないが、誰もが「けいこ」と読む。いちいち訂正をしなくちゃいけない名前ってかわいそう。姉に「桜子（さくら）」。\n何のために「子」をつけたのだろう？と不思議に思う。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka406"
+    },
+    {
+      "question": "杏果",
+      "answer": [
+        "ももか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo524"
+    },
+    {
+      "question": "迫香",
+      "answer": [
+        "せりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se390"
+    },
+    {
+      "question": "楽",
+      "answer": [
+        "たの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta847"
+    },
+    {
+      "question": "鳳晏",
+      "answer": [
+        "ぽあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho401"
+    },
+    {
+      "question": "波知",
+      "answer": [
+        "なち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na1"
+    },
+    {
+      "question": "輝星",
+      "answer": [
+        "こうせい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1188"
+    },
+    {
+      "question": "漢字",
+      "answer": [
+        "かんじ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka984"
+    },
+    {
+      "question": "永遠愛",
+      "answer": [
+        "とわな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to746"
+    },
+    {
+      "question": "琉吹",
+      "answer": [
+        "るふぃ"
+      ],
+      "meaning": "。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru19"
+    },
+    {
+      "question": "今鹿",
+      "answer": [
+        "なうしか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na433"
+    },
+    {
+      "question": "夢",
+      "answer": [
+        "きぼう",
+        "らむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1236"
+    },
+    {
+      "question": "美翼",
+      "answer": [
+        "みはね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1771"
+    },
+    {
+      "question": "東大",
+      "answer": [
+        "かしこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1082"
+    },
+    {
+      "question": "真路丹",
+      "answer": [
+        "まろに"
+      ],
+      "meaning": "パリに新婚旅行に行ったときにできた子供なんでマロニエにちなんだらしい。でも中途半端なところで止めたばっかりに、呼び名は当然「マロニーちゃん」。\n頭の中で中村玉緒の♪マロニーちゃん♪の声がﾘﾋﾟｰﾄしだしたorz",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma909"
+    },
+    {
+      "question": "姫",
+      "answer": [
+        "ぴめ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1574"
+    },
+    {
+      "question": "憧れ",
+      "answer": [
+        "あこがれ"
+      ],
+      "meaning": "。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1666"
+    },
+    {
+      "question": "歩如",
+      "answer": [
+        "ぽにょ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho377"
+    },
+    {
+      "question": "茉愛",
+      "answer": [
+        "まい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1325"
+    },
+    {
+      "question": "大凪",
+      "answer": [
+        "だいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta562"
+    },
+    {
+      "question": "太鳳",
+      "answer": [
+        "たお"
+      ],
+      "meaning": "パンダを思い出してしまったよ\nそれ凄いよね。女の子の名前とは思えない。\n「太めの鳳凰」か。う〜む\n。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta40"
+    },
+    {
+      "question": "衣奈",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1804"
+    },
+    {
+      "question": "七七七",
+      "answer": [
+        "ななみ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na458"
+    },
+    {
+      "question": "南京",
+      "answer": [
+        "みなみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1884"
+    },
+    {
+      "question": "永遠",
+      "answer": [
+        "とあ",
+        "とあ",
+        "ふわり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to439"
+    },
+    {
+      "question": "福福福福",
+      "answer": [
+        "ふくふくふくふく"
+      ],
+      "meaning": "とにかく幸せがいっぱいな人生を送って欲しい\nマジですかこれ！？ 名前のせいで普通の人生も送れないと思う\n福×４で「福士」くんでよかったのでは",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu564"
+    },
+    {
+      "question": "春歌",
+      "answer": [
+        "はるか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha898"
+    },
+    {
+      "question": "夢明",
+      "answer": [
+        "むーみん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mu66"
+    },
+    {
+      "question": "仮名",
+      "answer": [
+        "かな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka985"
+    },
+    {
+      "question": "羽来",
+      "answer": [
+        "ぱこ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1653"
+    },
+    {
+      "question": "友合子",
+      "answer": [
+        "ゆりこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1712"
+    },
+    {
+      "question": "桃李",
+      "answer": [
+        "とおり",
+        "もも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to809"
+    },
+    {
+      "question": "小林",
+      "answer": [
+        "かりん"
+      ],
+      "meaning": "小林さんとの結婚は無くなったわけだな\n大林さんと結婚しても漫才コンビみたいな名前になるな",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1698"
+    },
+    {
+      "question": "梛千",
+      "answer": [
+        "なち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na315"
+    },
+    {
+      "question": "伽莉依",
+      "answer": [
+        "きゃりい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki795"
+    },
+    {
+      "question": "衣",
+      "answer": [
+        "ころも"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko776"
+    },
+    {
+      "question": "慧漣",
+      "answer": [
+        "えれん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee511"
+    },
+    {
+      "question": "愛穂",
+      "answer": [
+        "らぶほ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1295"
+    },
+    {
+      "question": "卑弥呼",
+      "answer": [
+        "ひみこ"
+      ],
+      "meaning": "「なんか、日本の昔のえらい女王様なんでしょ？」だと。なんで、「ちょいと調べりゃわかる事」を調べないのかね\n調べてわかること云々の前に、誰もが学校で習うことなんじゃ………。\n自分の子に付ける名前だ。誰かにちなんでっていうなら、その人のことを徹底的に調べないかね？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi978"
+    },
+    {
+      "question": "聖闘",
+      "answer": [
+        "せいんと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se816"
+    },
+    {
+      "question": "地下",
+      "answer": [
+        "ちか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti164"
+    },
+    {
+      "question": "隆",
+      "answer": [
+        "よしゆき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo155"
+    },
+    {
+      "question": "笑太",
+      "answer": [
+        "えた",
+        "えいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee361"
+    },
+    {
+      "question": "原子",
+      "answer": [
+        "あとむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa797"
+    },
+    {
+      "question": "二成",
+      "answer": [
+        "ふたなり"
+      ],
+      "meaning": "一人目が普通なんだけど、去年産まれた次男が\n「ふたなり」の意味を知ってればそんな名前つけられん\n満子さんとか精子さんとか目じゃないね。ストレートだね。ｶﾞﾝｶﾞｯﾃくれ\n。\n恥ずかしくて本名あかせん。\n読み方変えてもあだ名でいつまでも言われそうだね。身近にいても気の毒すぎて意味を教えてあげられないかもしれないな。\nでも子どもって無意味に自分の名前\n字の意味とか調べちゃうよね。\n【辞書】ひとつのもので、二様の形状を持っていること。特に、一人で男女両方の性器をもっていること。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu216"
+    },
+    {
+      "question": "唯一神",
+      "answer": [
+        "ゆいか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1049"
+    },
+    {
+      "question": "蒼空",
+      "answer": [
+        "あおい",
+        "あおい",
+        "そら",
+        "そら"
+      ],
+      "meaning": "フリガナの位置が非常に気になる。\nどうやったら「そ」「ら」と読むのかと小一時間ですわ。何かの漫画の登場人物でいた気がするんだよね。。。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2072"
+    },
+    {
+      "question": "茄子",
+      "answer": [
+        "かこ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1003"
+    },
+    {
+      "question": "宇宙",
+      "answer": [
+        "ひろし",
+        "なさ",
+        "あーす"
+      ],
+      "meaning": "大地とか地球と書いて「あーす」なら、まだ理解のしようもあるのに、なぜに「宇宙」？\nアース＝宇宙、だと勘違いしてるんじゃなかろうか。そんなに宇宙が好きならまいど一号とでも(ry",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1542"
+    },
+    {
+      "question": "王子様",
+      "answer": [
+        "おうじさま"
+      ],
+      "meaning": "「プリンス」の方がまだ幸せかも知れない…。病院とかで「○○おうじさまく〜ん」とか呼ばれてんのか。\n手紙の宛名は「○○王子様様」って書かれるわけだ。\n「たかしくん」以上だなｗ\n将来、獣王くんや雷人くんが「王子様ってお前の名前ダセー！」とか言って、いじめが起きたりするんだろうかｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo139"
+    },
+    {
+      "question": "百合子",
+      "answer": [
+        "さゆり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa782"
+    },
+    {
+      "question": "ティアラ",
+      "answer": [
+        "てぃあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te279"
+    },
+    {
+      "question": "月",
+      "answer": [
+        "らいと",
+        "るな",
+        "のえる"
+      ],
+      "meaning": "『デスノート』のネタバレ注意\nマンガのキャラ\nらしい。\nデスノートに影響されてんだねぇ。\n将来殺人でもしたら、もう目も当ててられない。\nその漫画の主人公がカッコよくて、頭がキレて、なおかつ名前が奇抜で素敵！ って感じでつけたらしいです。\n作者がこの名前を付けたちゃんとした理由がある。なんでも、殺人犯だから絶対に有り得ない名前にして、実際にいる子供と被らないようにしたんだって。それなのに後からその名前を子供に付けちゃうんだからな…。\n原作者もまさかそんなことになってようとは思ってないかもね\n作者の気遣いなどＤＱＮ親には……作者もつけられた子もｶﾜｲｿｽ\n最近その主人公が死んじゃったらしく「こんなはずじゃなかったのに〜」ってメールがきた。もうﾊﾞｶか(ry",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra310"
+    },
+    {
+      "question": "大豆",
+      "answer": [
+        "だいず"
+      ],
+      "meaning": "妹に「小豆（あずき）」。あたしゃ聞き間違いかと思って、妙に甲高い声出してしまったよ。\nアニメの「あずきちゃん」を思い出したよ。確か弟も「だいず」だったなぁ\n。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta534"
+    },
+    {
+      "question": "小夜子",
+      "answer": [
+        "せれな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se813"
+    },
+    {
+      "question": "こな美",
+      "answer": [
+        "こなみ"
+      ],
+      "meaning": "「人と違う名前がよくってぇ〜」\nこなって…",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko949"
+    },
+    {
+      "question": "射夢",
+      "answer": [
+        "じゃむ"
+      ],
+      "meaning": "もはやネタでしか無い。本当なら親は子供に謝るべき。どれだけ子供が小学校中学校高校で馬鹿にされることやら。\n夢精が浮かんだ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1322"
+    },
+    {
+      "question": "悠",
+      "answer": [
+        "ゆうき",
+        "ゆうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1771"
+    },
+    {
+      "question": "裕仁",
+      "answer": [
+        "ゆに",
+        "ひろひと",
+        "わに"
+      ],
+      "meaning": "某マンガを思い出した。\n「わに」以前に「裕仁」の意味を知っての命名だろうか？\n誤植のお詫び文が載ってて、正しくは「ゆに」だそうです。女。\n[2006/09/16] 修正しました（旧：わに♂） by 管理人",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa116"
+    },
+    {
+      "question": "夢星",
+      "answer": [
+        "むせい"
+      ],
+      "meaning": "ω\n｀)",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mu86"
+    },
+    {
+      "question": "臨湖",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2729"
+    },
+    {
+      "question": "動画",
+      "answer": [
+        "てれび"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te157"
+    },
+    {
+      "question": "修留",
+      "answer": [
+        "おさる"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo271"
+    },
+    {
+      "question": "小豆",
+      "answer": [
+        "あずき"
+      ],
+      "meaning": "兄に「大豆（だいず）」。あたしゃ聞き間違いかと思って、妙に甲高い声出してしまったよ。\nアニメの「あずきちゃん」を思い出したよ。確か弟も「だいず」だったなぁ\n。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1704"
+    },
+    {
+      "question": "広之進影虎",
+      "answer": [
+        "ひろのしんかげとら"
+      ],
+      "meaning": "父親は広之進、じーちゃんは影虎と一歩も譲らなかったため、混合した名前になったそうな。戦国武将みたいでかっこいいけど、名前を張り出されると、一発で目立ってた。\nｶｺｲｲ！\n「名前でビンゴ」には不利があるなぁ。でも、すごい大物になりそな名前だね。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi214"
+    },
+    {
+      "question": "心羅奈",
+      "answer": [
+        "ころな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1987"
+    },
+    {
+      "question": "冠里",
+      "answer": [
+        "かむり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1018"
+    },
+    {
+      "question": "雄",
+      "answer": [
+        "らいおん"
+      ],
+      "meaning": "担当のお医者様は「受理されないかもよー」と言ったそうですが、母親は聞く耳持たず。ほんとに役所にだして受理されて、先生にうれしそうにご報告にいらしたそうです。\nじゃあ妹ができたら「雌（らいおねす）」だ。（\n∀\n）ｱｽｶ!!\nでも昔はウシ、ウマ、トリなんて名前もいたでねえべか？\nウシやトリは農家にとって宝物だから、と聞いたことがある。しかしライオン…。\nでも今度改正で確か「狼」とか「豹」とかも使えるようになるんだよね‥「待ってました」とばかりに使うＤＱＮがたくさんいそうで怖い。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra541"
+    },
+    {
+      "question": "聖梨華",
+      "answer": [
+        "せりか"
+      ],
+      "meaning": "車好きの人、子供の名前に当て字使って、ソアラとか、セリカとか、そんな感じでつける人いるのかな？\nは〜い！知り合いに付き合っていた頃に乗っていた車がセリカだったから娘に「聖梨華」って名前付けた超ＤＱＮ夫婦がいます！！\n八百屋と果物屋足したような名前だな･･･\n生理か？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se102"
+    },
+    {
+      "question": "林檎",
+      "answer": [
+        "りんご",
+        "あぽー",
+        "りんご"
+      ],
+      "meaning": "。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri822"
+    },
+    {
+      "question": "王子",
+      "answer": [
+        "きんぐ"
+      ],
+      "meaning": "なぜキング？？？ キングだったら「王」でしょう…\n頭の悪いのを公表したいからです。\n「わんこ」と読んでしまったｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki613"
+    },
+    {
+      "question": "瀬梨花",
+      "answer": [
+        "せりか"
+      ],
+      "meaning": "姉妹に「かむり」。\n珍走の連中はこれだからね。子どもなんて車と同列と思ってるんだよ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se373"
+    },
+    {
+      "question": "海未",
+      "answer": [
+        "うみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu319"
+    },
+    {
+      "question": "香生理",
+      "answer": [
+        "かおり"
+      ],
+      "meaning": "誤植であることを祈る…。\n生臭いですっ\nアノなんともいえない臭いを想像してしまってぅぉぇっぷ（AA略",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka806"
+    },
+    {
+      "question": "マリネ",
+      "answer": [
+        "まりね"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1167"
+    },
+    {
+      "question": "流星",
+      "answer": [
+        "ひかる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1204"
+    },
+    {
+      "question": "靖国",
+      "answer": [
+        "やすくに"
+      ],
+      "meaning": "ぎょええええ、誰も止めなかったんかい！ ｳﾖでも恐れ多くてそんな名前はつけんぞ。\nまともな会社のまともな人事には警戒されそうな気がする。警察や官庁や役所関係にはよけい嫌がられそうだ。「こいつの親の思想って？」と思われて落とされると思う。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya55"
+    },
+    {
+      "question": "雛菓",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2666"
+    },
+    {
+      "question": "彩",
+      "answer": [
+        "あやの",
+        "さやか",
+        "あかり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3320"
+    },
+    {
+      "question": "寿司",
+      "answer": [
+        "ひさし"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1092"
+    },
+    {
+      "question": "自由",
+      "answer": [
+        "みゆ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1307"
+    },
+    {
+      "question": "粋楽",
+      "answer": [
+        "いら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii780"
+    },
+    {
+      "question": "羽々亜",
+      "answer": [
+        "うはあ"
+      ],
+      "meaning": "双子に「亜羽々（あうは）」。どんな思い入れが有るんだ！配列変えただけじゃん。\n北斗神拳にやられちゃった人の断末魔みたい。\nそのうち「あべし」「うわらば」とか出てくるのかのぅ？ って「うわらば」って書いてたら、マツオ\nツラヤバがふと思い浮かんだ。\nうはｗｗｗｗｗ ←私はこれが浮かんだ。\n素直に「ウー！ハー！」が浮かんできたｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu281"
+    },
+    {
+      "question": "メロン",
+      "answer": [
+        "めろん"
+      ],
+      "meaning": "市の広報で見たときはひっくり返った。\nごつい感じの風貌なら泣くな。\n漢字が思いつかなかったんだな。\nさくらももこの息子のペンネームｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me488"
+    },
+    {
+      "question": "サラダ",
+      "answer": [
+        "さらだ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa630"
+    },
+    {
+      "question": "アロエ",
+      "answer": [
+        "あろえ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1685"
+    },
+    {
+      "question": "聖夜",
+      "answer": [
+        "のえる",
+        "きらや",
+        "ないと",
+        "みりあ",
+        "きよし",
+        "いぶ",
+        "のえる"
+      ],
+      "meaning": "普通に「せいや」と呼んでやれとｵﾓﾀ\nやっぱクリスマス\nイブから？ でも「クリスマス」が“聖夜”なのであって、「イブ」は“前夜”なんだけど…ちゃんと分かってんのかな…。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no360"
+    },
+    {
+      "question": "沙明菜",
+      "answer": [
+        "さかな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa634"
+    },
+    {
+      "question": "未愛",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2883"
+    },
+    {
+      "question": "速さ",
+      "answer": [
+        "はやさ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha900"
+    },
+    {
+      "question": "治譲",
+      "answer": [
+        "けある"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke187"
+    },
+    {
+      "question": "葉",
+      "answer": [
+        "えむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee406"
+    },
+    {
+      "question": "万華",
+      "answer": [
+        "まんげ"
+      ],
+      "meaning": "世の中には、本当に隠語を知らない、温室ハウス栽培な人間もいるんだよな。\n呼ぶ側も気の毒。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1722"
+    },
+    {
+      "question": "振門体",
+      "answer": [
+        "ふるもんてぃ"
+      ],
+      "meaning": "モンティ」とはすっぽんぽんの意味。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu56"
+    },
+    {
+      "question": "和亜元",
+      "answer": [
+        "わあげん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa106"
+    },
+    {
+      "question": "力",
+      "answer": [
+        "ぱわ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha97"
+    },
+    {
+      "question": "如月六子",
+      "answer": [
+        "ともこ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to438"
+    },
+    {
+      "question": "小百会",
+      "answer": [
+        "さゆり"
+      ],
+      "meaning": "ちいさいに、ひゃくに、あう（小百合）って覚えてたらしく、届け出のときに間違えちゃったらしい。\n熟字訓を知らなかったのね…お子さんｶﾜｲｿｽ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa583"
+    },
+    {
+      "question": "ラッキー星",
+      "answer": [
+        "らっきーすたー"
+      ],
+      "meaning": "「僕の名前ってとってもユニークでしょ！」\n本人は絶対こんなこと思ってないんだろうな。\nどうせならラッキーも漢字にすればいいのに。開運星とか。\n名前をネタにして笑いをとれるような強い子になってほしい。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra15"
+    },
+    {
+      "question": "麻理",
+      "answer": [
+        "あさり"
+      ],
+      "meaning": "もちろん、あのマンガからですって\n。\n苗字で浅利さんならともかく、あさりちゃん…かわいいけどツライね。今も連載されてるんだっけ？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1678"
+    },
+    {
+      "question": "典輝",
+      "answer": [
+        "てんが"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te473"
+    },
+    {
+      "question": "宝生也",
+      "answer": [
+        "だいや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta659"
+    },
+    {
+      "question": "素詠",
+      "answer": [
+        "しろよ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1309"
+    },
+    {
+      "question": "碧華",
+      "answer": [
+        "みはね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2897"
+    },
+    {
+      "question": "香夢利",
+      "answer": [
+        "かむり"
+      ],
+      "meaning": "姉妹に「せりか」。\n珍走の連中はこれだからね。子どもなんて車と同列と思ってるんだよ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka752"
+    },
+    {
+      "question": "諒璃",
+      "answer": [
+        "あさり"
+      ],
+      "meaning": "友達が「次の子は、しじみちゃんかな？」って冗談言ってたが(ﾜﾗ\nあさりちゃんかぁ\n懐かしいな。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1512"
+    },
+    {
+      "question": "心優",
+      "answer": [
+        "みひろ"
+      ],
+      "meaning": "一見マトモそうに見えつつ、メルヘン一杯なのがあざといぜ。\n優しい心で一生懸命読んでやっても「ここゆ」が精一杯。\n「心」って「み」の読み方もあったっけ？\nあるらしい。人名に限った特殊な読みのようです。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi628"
+    },
+    {
+      "question": "桜鈴",
+      "answer": [
+        "さりん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1004"
+    },
+    {
+      "question": "晴璃",
+      "answer": [
+        "ぱるる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1587"
+    },
+    {
+      "question": "憂雅璃",
+      "answer": [
+        "ゆうかり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1529"
+    },
+    {
+      "question": "静笑",
+      "answer": [
+        "えむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee387"
+    },
+    {
+      "question": "金魚",
+      "answer": [
+        "きんぎょ"
+      ],
+      "meaning": "もう、顎が外れるかと…。なんか、岡本かのこの小説タイトルから取ったそうな。じいちゃんズが学者系でねえ。孫は全員「謂れは由緒正しい」けれどＤＱＮ名。\nでももしも「ディスカスちゃん」「アロワナちゃん」なんて名づけて「いけてるでしょ？」なんて言われたら、まだ金魚ちゃんのほうが可愛い…と思ってしまうであろう私は魚マニア。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki296"
+    },
+    {
+      "question": "純愛",
+      "answer": [
+        "じゅんあい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1611"
+    },
+    {
+      "question": "紗綾",
+      "answer": [
+        "さりん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa633"
+    },
+    {
+      "question": "若香芽",
+      "answer": [
+        "わかめ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa122"
+    },
+    {
+      "question": "愛実美",
+      "answer": [
+        "みみみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1769"
+    },
+    {
+      "question": "亘渉",
+      "answer": [
+        "わたる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa164"
+    },
+    {
+      "question": "留風衣",
+      "answer": [
+        "るふぃ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru641"
+    },
+    {
+      "question": "可愛衣",
+      "answer": [
+        "かわいい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka416"
+    },
+    {
+      "question": "出美男",
+      "answer": [
+        "でみお"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te260"
+    },
+    {
+      "question": "如月",
+      "answer": [
+        "きさら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1476"
+    },
+    {
+      "question": "奇跡",
+      "answer": [
+        "だいや"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta479"
+    },
+    {
+      "question": "美少年",
+      "answer": [
+        "みさと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1672"
+    },
+    {
+      "question": "流吹",
+      "answer": [
+        "るふぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1133"
+    },
+    {
+      "question": "咲桜",
+      "answer": [
+        "さかな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa595"
+    },
+    {
+      "question": "芽",
+      "answer": [
+        "めぇい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me583"
+    },
+    {
+      "question": "日新",
+      "answer": [
+        "すねお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su319"
+    },
+    {
+      "question": "奈菜那",
+      "answer": [
+        "ななな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na460"
+    },
+    {
+      "question": "杏",
+      "answer": [
+        "いちご",
+        "もも"
+      ],
+      "meaning": "「アンズと書いてイチゴと読むんです！」だと。\n漢字を間違って登録したパターンじゃないのか？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii449"
+    },
+    {
+      "question": "恋織",
+      "answer": [
+        "れお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1099"
+    },
+    {
+      "question": "得美寿",
+      "answer": [
+        "えるびす"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee405"
+    },
+    {
+      "question": "珍子",
+      "answer": [
+        "よしこ"
+      ],
+      "meaning": "もちろんあだ名はち○こ。\n亡き祖母がまさにその名前。珍子とかいて「うずこ」と読んだ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo14"
+    },
+    {
+      "question": "雪華",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1648"
+    },
+    {
+      "question": "星輪太",
+      "answer": [
+        "ほわた"
+      ],
+      "meaning": "掛け声みたいだ。遠くから呼ぶ時は常に北斗の拳状態\n北斗大好きな私でも呼ぶのに躊躇われるわ。ケンが言う場合のみ有効な言葉だと思うんだが。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho409"
+    },
+    {
+      "question": "愛保",
+      "answer": [
+        "らぶほ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1001"
+    },
+    {
+      "question": "萌日香",
+      "answer": [
+        "もにか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo320"
+    },
+    {
+      "question": "恥子",
+      "answer": [
+        "さとこ"
+      ],
+      "meaning": "親御さんがﾃﾝﾊﾟって、「聡子」の「公」書き忘れたまま出生届出しちゃったんじゃないかと。あだなはやっぱり「はじこ」なんだって……。\n出生届に間違って書いて届けちゃったのかな。「聴子」と書いて「さとこ」と読む子なら知ってる。変な名前じゃないけど、初めて見たときは誤植かと思った。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa582"
+    },
+    {
+      "question": "誕生",
+      "answer": [
+        "ばーす"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha986"
+    },
+    {
+      "question": "獅子",
+      "answer": [
+        "きんぐ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki857"
+    },
+    {
+      "question": "三二一",
+      "answer": [
+        "みにー"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1304"
+    },
+    {
+      "question": "大",
+      "answer": [
+        "びっく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2102"
+    },
+    {
+      "question": "帝愛",
+      "answer": [
+        "てぃあら",
+        "てぃあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te419"
+    },
+    {
+      "question": "山梨",
+      "answer": [
+        "ふりん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu334"
+    },
+    {
+      "question": "ヒ鳴",
+      "answer": [
+        "ひな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1433"
+    },
+    {
+      "question": "初運子",
+      "answer": [
+        "しょうこ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2145"
+    },
+    {
+      "question": "自由々",
+      "answer": [
+        "みゆゆ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2645"
+    },
+    {
+      "question": "海魅美",
+      "answer": [
+        "みみみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1337"
+    },
+    {
+      "question": "雅治",
+      "answer": [
+        "ましゃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1731"
+    },
+    {
+      "question": "らいおん",
+      "answer": [
+        "らいおん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra55"
+    },
+    {
+      "question": "恋空",
+      "answer": [
+        "こころ",
+        "るん",
+        "るあ",
+        "すばる",
+        "こあ",
+        "そら",
+        "ひかり",
+        "れあ",
+        "このあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1184"
+    },
+    {
+      "question": "理",
+      "answer": [
+        "りん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2173"
+    },
+    {
+      "question": "戦争",
+      "answer": [
+        "せんそう"
+      ],
+      "meaning": "あれでまともに育ったら奇跡だなと思いました。\n台湾の政治家の連戦氏は、太平洋戦争中に生まれて、親が連戦連勝を願ってつけたそうです。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se377"
+    },
+    {
+      "question": "肴",
+      "answer": [
+        "ゆうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1347"
+    },
+    {
+      "question": "瑠美好",
+      "answer": [
+        "るびぃ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru754"
+    },
+    {
+      "question": "早苗月恵",
+      "answer": [
+        "さつきけい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1138"
+    },
+    {
+      "question": "天使",
+      "answer": [
+        "ふぇあり"
+      ],
+      "meaning": "妹に「羽根（ている）」。フェアリーテイルの意味は「おとぎ話」‥あれ？間違えちゃってません？？ \n当て字にするなら、「天使」なら「えんじぇる」「羽根」は「うぃんぐ」か\nそれでも激ＤＱＮだがなｗ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu207"
+    },
+    {
+      "question": "陽流",
+      "answer": [
+        "ぱるる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha962"
+    },
+    {
+      "question": "覇安威",
+      "answer": [
+        "はあい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1444"
+    },
+    {
+      "question": "月海愛",
+      "answer": [
+        "るなまりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru597"
+    },
+    {
+      "question": "磨姫大",
+      "answer": [
+        "まきだい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1335"
+    },
+    {
+      "question": "星聖夜",
+      "answer": [
+        "りいぶ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri1501"
+    },
+    {
+      "question": "左翼",
+      "answer": [
+        "れふと"
+      ],
+      "meaning": "兄弟に「右翼（らいと）」。\nｳﾖｸ\nｻﾖｸと読まずにいられない…そ、それはﾓｺﾞﾓｺﾞ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re496"
+    },
+    {
+      "question": "たかしくん",
+      "answer": [
+        "たかしくん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta255"
+    },
+    {
+      "question": "瑠恋星",
+      "answer": [
+        "るいず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1111"
+    },
+    {
+      "question": "多衣耶",
+      "answer": [
+        "だいや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta545"
+    },
+    {
+      "question": "新萌",
+      "answer": [
+        "にも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni175"
+    },
+    {
+      "question": "大賀寿",
+      "answer": [
+        "たいがーす"
+      ],
+      "meaning": "「大賀寿」って何だ？ オカズ？\nきっと「ひろかず」だ。そうでなきゃ「大ガス」だ。親が大ガス勤めなんだ。\n弱い子になりそう。\nダンカンの息子の名前が「甲子園」だけど、タイガース君とどっちがＤＱＮだろう…。しかし阪神ファンって盲目というか、濃いというか…\n関西ローカルの番組で「夫が子供に大賀寿（たいがーす）とつけようとして困っています」という悩み相談に対して「ええんちゃう？」と言ってた関西芸人たち…\nそんなもん関西芸人に相談するのが間違っとる。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta132"
+    },
+    {
+      "question": "月下美人",
+      "answer": [
+        "はにー"
+      ],
+      "meaning": "そのままの読みでよろしいですか？ ｹﾞｯｶﾋﾞｼﾞﾝちゃん。\n「月下美人」と書いて「ハニー」。新聞の子供紹介に出てたの。こんなＤＱＮな名前、そうそういないよね〜。\nごめんなさい、どうして「月下美人」が「ハニー」と読めるの？ 解説ｷﾎﾞｰﾝ。\n私も知りたい。ハニーなんて読めないよー。\nなんでなのか私のほうが知りたい。たしか「かわいらしく」なるようにつけたとか新聞に書いてあったような（うろおぼえｽﾏｿ）。\n気になったからぐぐるで「月下美人」「ハニー」を検索してみた。ラッツ＆スターの歌で「月下美人（ムーンライト\nハニー）」 と言うのが引っかかった。これかな？ これでいいのかよ、親…\n月下氷人だったらもっとおもしろかったのに。「なこうど」君とか。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha17"
+    },
+    {
+      "question": "汰唯弥",
+      "answer": [
+        "だいや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta654"
+    },
+    {
+      "question": "蝉",
+      "answer": [
+        "せみ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se638"
+    },
+    {
+      "question": "弥有二",
+      "answer": [
+        "みゅうつー"
+      ],
+      "meaning": "姉に「弥有（みゅう）」。\n「みゅうじ」くんとかならありかも。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1569"
+    },
+    {
+      "question": "天神",
+      "answer": [
+        "たかし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta878"
+    },
+    {
+      "question": "新幹線",
+      "answer": [
+        "しんかんせん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1648"
+    },
+    {
+      "question": "空理鈴",
+      "answer": [
+        "くりりん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku596"
+    },
+    {
+      "question": "悠木碧",
+      "answer": [
+        "ゆきあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1793"
+    },
+    {
+      "question": "法律守",
+      "answer": [
+        "ぽりす"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho387"
+    },
+    {
+      "question": "渉愛人",
+      "answer": [
+        "ふぁいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu227"
+    },
+    {
+      "question": "雨存",
+      "answer": [
+        "あまぞん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa782"
+    },
+    {
+      "question": "愛鈴",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2278"
+    },
+    {
+      "question": "蝶",
+      "answer": [
+        "あげは",
+        "あげは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2274"
+    },
+    {
+      "question": "恵太",
+      "answer": [
+        "えた"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee14"
+    },
+    {
+      "question": "瑠星恋",
+      "answer": [
+        "るいず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1212"
+    },
+    {
+      "question": "涼凪",
+      "answer": [
+        "りょな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2116"
+    },
+    {
+      "question": "雪恋",
+      "answer": [
+        "あられ"
+      ],
+      "meaning": "かわいいけど、読めないね。\nよく見ろ「雪恋」だ。「花」じゃなくて「恋」。ヴァカ度が全然違う。\n「んちゃー！」もしくは「感謝感激雨あられ〜」って言っちゃいそう。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1481"
+    },
+    {
+      "question": "羽愛人",
+      "answer": [
+        "はあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha938"
+    },
+    {
+      "question": "虹燃",
+      "answer": [
+        "にも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni201"
+    },
+    {
+      "question": "沙鈴",
+      "answer": [
+        "さりん"
+      ],
+      "meaning": "。これって改名認められるケースじゃないの？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa111"
+    },
+    {
+      "question": "秋桜理",
+      "answer": [
+        "あさり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3520"
+    },
+    {
+      "question": "佳空琉",
+      "answer": [
+        "けある"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke163"
+    },
+    {
+      "question": "栄務",
+      "answer": [
+        "あぶらはむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1697"
+    },
+    {
+      "question": "来夢",
+      "answer": [
+        "らむ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra534"
+    },
+    {
+      "question": "助格",
+      "answer": [
+        "へちぇく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he85"
+    },
+    {
+      "question": "海愛人",
+      "answer": [
+        "かあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1490"
+    },
+    {
+      "question": "愛礼怜",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1925"
+    },
+    {
+      "question": "暖空",
+      "answer": [
+        "ひなた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2198"
+    },
+    {
+      "question": "世歩玲",
+      "answer": [
+        "せふれ"
+      ],
+      "meaning": "カタカナで名前を書かれると、何故だかドキドキしてしまいます。\n将来を約束されたな｡･ﾟ･(ﾉД`)･ﾟ･｡\nセフレの次は「えんこ（援交）」かなぁｗ\n思春期になったらどうする気だろう。下手すりゃ一生馬鹿にされるぞ。意味が意味なだけに\n重要な場面のときに「紹介するよ、セフレ。実は子供ができて」なんて言われた日にゃぁ\n色んなことが頭かけめぐってしまうよ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se464"
+    },
+    {
+      "question": "依伽",
+      "answer": [
+        "いく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii498"
+    },
+    {
+      "question": "満月",
+      "answer": [
+        "ふるむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu566"
+    },
+    {
+      "question": "私望子",
+      "answer": [
+        "まのこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1007"
+    },
+    {
+      "question": "水夏",
+      "answer": [
+        "すいか"
+      ],
+      "meaning": "悪いけど、何でこんな名前に！？ってかわいそうになってしまったよ。\n超変というか、あり得ない。読みも漢字も最悪。スイカは野菜なんだよね！？",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su8"
+    },
+    {
+      "question": "輝",
+      "answer": [
+        "だいや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta851"
+    },
+    {
+      "question": "魅留音菜",
+      "answer": [
+        "みるおな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2168"
+    },
+    {
+      "question": "楓",
+      "answer": [
+        "とわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to866"
+    },
+    {
+      "question": "美寅",
+      "answer": [
+        "びとん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1144"
+    },
+    {
+      "question": "礼仁",
+      "answer": [
+        "れに",
+        "れーにん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re563"
+    },
+    {
+      "question": "月々菜",
+      "answer": [
+        "るなるな"
+      ],
+      "meaning": "どこまでが最初のルナで、どこからが次のルナなんだろ。\nﾙﾅﾙﾅってﾄﾞﾅﾄﾞﾅみたいでﾁﾄもの悲しい。\n月々菜をまぬがれられないのなら、せめて、せめて「ルルナ」とでも読ませてあげてほしかったよ…",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru465"
+    },
+    {
+      "question": "ひら美",
+      "answer": [
+        "ひらり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1874"
+    },
+    {
+      "question": "正汰",
+      "answer": [
+        "じゃすた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1433"
+    },
+    {
+      "question": "仁丹",
+      "answer": [
+        "ひとみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2002"
+    },
+    {
+      "question": "叶愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re936"
+    },
+    {
+      "question": "愛怜",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa2379"
+    },
+    {
+      "question": "永遠人",
+      "answer": [
+        "とわに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to769"
+    },
+    {
+      "question": "永羽",
+      "answer": [
+        "とわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to878"
+    },
+    {
+      "question": "勇魚",
+      "answer": [
+        "いさな"
+      ],
+      "meaning": "な名前。いさな＝鯨。鯨のように雄大に育ってほしいらしいです。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii49"
+    },
+    {
+      "question": "清飛鳥",
+      "answer": [
+        "しんあすか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1508"
+    },
+    {
+      "question": "息子",
+      "answer": [
+        "じゅにあ"
+      ],
+      "meaning": "キング牧師とか、外国では「○○の息子」という名前をつける事もあるという事を話したら、海外の流行に追いつくためにつけたのだとか。言わなきゃよかった…\n流行じゃなくて伝統だし。孫が生まれたらジュニアジュニアになるとか考えないんだよねー。\nありがちなんだけど、親が「五郎」で子が「小五郎」。高校の時の同級生で、学生時代のクラス名簿って保護者の名前が横の出てるじゃないですか。親の心意気はよーくわかるんですが、クラス替えの度に笑われていた彼。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1196"
+    },
+    {
+      "question": "万楽",
+      "answer": [
+        "まぐら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1553"
+    },
+    {
+      "question": "勉次",
+      "answer": [
+        "べんつ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he81"
+    },
+    {
+      "question": "玲",
+      "answer": [
+        "れな",
+        "くーる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1074"
+    },
+    {
+      "question": "舞曲",
+      "answer": [
+        "まいめろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1125"
+    },
+    {
+      "question": "美百良",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2246"
+    },
+    {
+      "question": "紗々",
+      "answer": [
+        "さしゃ",
+        "さしゃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1149"
+    },
+    {
+      "question": "園生女",
+      "answer": [
+        "そのおな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so515"
+    },
+    {
+      "question": "瑠美衣",
+      "answer": [
+        "るびぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru664"
+    },
+    {
+      "question": "沙加奈",
+      "answer": [
+        "さかな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa703"
+    },
+    {
+      "question": "玲弓",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re580"
+    },
+    {
+      "question": "霧",
+      "answer": [
+        "むう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mu158"
+    },
+    {
+      "question": "帝",
+      "answer": [
+        "おう"
+      ],
+      "meaning": "双子に「皇（こう）」。アカホンで貰った冊子「編集室が選んだユニークな名前の赤ちゃん（写真付き）」でハケーン。\n私も見たよ!! 「月刊 茶の間」っちゅーお茶の通販雑誌で。ＤＱＮ度が高いほど、あちこち露出させたいんだね（藁",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo143"
+    },
+    {
+      "question": "御祭",
+      "answer": [
+        "まつり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1736"
+    },
+    {
+      "question": "留宇加須",
+      "answer": [
+        "るうかす"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru65"
+    },
+    {
+      "question": "慧汰",
+      "answer": [
+        "えた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee328"
+    },
+    {
+      "question": "未翔",
+      "answer": [
+        "みはね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2096"
+    },
+    {
+      "question": "土人",
+      "answer": [
+        "つちひと"
+      ],
+      "meaning": "ドジンかよ！！\n土人は確かにどうかとおもう。しかし、土人のもともとの意味は、その土地のひと。土着人という意味で悪い意味では全然ない。しかしこのごろでは、南洋未開の地で、半裸で生活している蛮族、という意味に変わってしまったんですね。だから避けた方がいい名前なんですが。\nﾄﾞｼﾞﾝ･･･ひぇ〜",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu46"
+    },
+    {
+      "question": "愛月姫",
+      "answer": [
+        "あづき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3438"
+    },
+    {
+      "question": "湯女",
+      "answer": [
+        "ゆな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu182"
+    },
+    {
+      "question": "光",
+      "answer": [
+        "ぴかり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1975"
+    },
+    {
+      "question": "日向葵",
+      "answer": [
+        "ひまわり"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi935"
+    },
+    {
+      "question": "早世",
+      "answer": [
+        "さよ"
+      ],
+      "meaning": "早産だったから。\n【辞書】そうせい：若くして死ぬこと。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa474"
+    },
+    {
+      "question": "愛ミ夜",
+      "answer": [
+        "まみや"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1478"
+    },
+    {
+      "question": "蓮天",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re823"
+    },
+    {
+      "question": "夢大",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2534"
+    },
+    {
+      "question": "響音響",
+      "answer": [
+        "ひびき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1995"
+    },
+    {
+      "question": "未昊",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1713"
+    },
+    {
+      "question": "美姫楼",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2286"
+    },
+    {
+      "question": "大魂",
+      "answer": [
+        "だいそう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta856"
+    },
+    {
+      "question": "弥姫良",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1584"
+    },
+    {
+      "question": "日の丸",
+      "answer": [
+        "ひのまる"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1200"
+    },
+    {
+      "question": "愛歩",
+      "answer": [
+        "あほ"
+      ],
+      "meaning": "姉は「舞歩（まほ）」だからまだいいのに……あほって……\n関西逝ったら絶対虐められる。\n別に、関西以外でも普通に虐められるよｗ\nホで韻を踏みたいのなら、他にもたくさんあるのに。\n坂田出てきそう。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1573"
+    },
+    {
+      "question": "魅珀",
+      "answer": [
+        "みはね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2370"
+    },
+    {
+      "question": "美音",
+      "answer": [
+        "びとん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1568"
+    },
+    {
+      "question": "博恋",
+      "answer": [
+        "ばれん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1394"
+    },
+    {
+      "question": "花愛人",
+      "answer": [
+        "はあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1379"
+    },
+    {
+      "question": "麗望",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re768"
+    },
+    {
+      "question": "夢拓",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2427"
+    },
+    {
+      "question": "永久恋",
+      "answer": [
+        "とわれ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to885"
+    },
+    {
+      "question": "怜音",
+      "answer": [
+        "れお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re628"
+    },
+    {
+      "question": "勇愛人",
+      "answer": [
+        "はあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1135"
+    },
+    {
+      "question": "似萌",
+      "answer": [
+        "にも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni186"
+    },
+    {
+      "question": "愛麗玲",
+      "answer": [
+        "あられ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3494"
+    },
+    {
+      "question": "愛羽",
+      "answer": [
+        "みはね",
+        "あも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1905"
+    },
+    {
+      "question": "永遠夢",
+      "answer": [
+        "とわれ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to612"
+    },
+    {
+      "question": "麗希愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1010"
+    },
+    {
+      "question": "闘女",
+      "answer": [
+        "きゅあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1193"
+    },
+    {
+      "question": "愛瑠",
+      "answer": [
+        "める"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me429"
+    },
+    {
+      "question": "獣王",
+      "answer": [
+        "らいおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra619"
+    },
+    {
+      "question": "永遠輝",
+      "answer": [
+        "とわか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to742"
+    },
+    {
+      "question": "陽覇",
+      "answer": [
+        "よんは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo147"
+    },
+    {
+      "question": "麻梨",
+      "answer": [
+        "あさり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1924"
+    },
+    {
+      "question": "麗寿心",
+      "answer": [
+        "れずみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re607"
+    },
+    {
+      "question": "玲央那瑠斗",
+      "answer": [
+        "れおなるど"
+      ],
+      "meaning": "兄弟姉妹に「寿里絵都（じゅりえっと）」「花紗鈴（きゃさりん）」「有里羽朱（ゆりうす）」。\nネタだ。頼む。ネタと言ってくれ(;´Д`)\nごめん、言えない。\nすごい家だな(´ヘ｀;)ハァ。そこの家族は、家族全員の名前を間違えずに書けるのかな？ ２、３文字は間違えそう\n。\n敬虔なキリスト教信者で洗礼名をそのままつけちゃったんだよね？ね？ もしくはハーフで全員外国系の顔してるんだよね？ね？ね？ 頼むからそうだと言ってくれ……",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re235"
+    },
+    {
+      "question": "奏",
+      "answer": [
+        "かなう",
+        "そなた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1804"
+    },
+    {
+      "question": "一優",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1787"
+    },
+    {
+      "question": "侑",
+      "answer": [
+        "ゆうき",
+        "ゆうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1400"
+    },
+    {
+      "question": "玲愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re589"
+    },
+    {
+      "question": "未光",
+      "answer": [
+        "みひろ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1526"
+    },
+    {
+      "question": "四隼",
+      "answer": [
+        "よんじゅん"
+      ],
+      "meaning": "四男ではないけど、四番目の子なんですって。\n素で半島チックだなあ\nヨン様か？\n「ぺ」でいいのにね。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo79"
+    },
+    {
+      "question": "桜愛人",
+      "answer": [
+        "るると"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1218"
+    },
+    {
+      "question": "九珠",
+      "answer": [
+        "くず"
+      ],
+      "meaning": "双子に「四珠（しず）♀」。超可愛かったのだが、名前を聞いて固まった。\n我が子に「くず」なんて名前つける神経が理解できん。\nなぜわざわざ苦（九）と死（四）なのか\n親の気が知れん。\n一応由来を尋ねたら、「葛」と「静」にしたかったが、「葛」が人名に使えないので九珠と四珠にしたと言ってたが。\n明らかにイヂメられそうな名ですね…\n姓の方にこの字（葛）を持ち、子どもの頃に「ゴミクズ」とあだ名され、クズカゴを指して「おまえの部屋だ入れｺﾞﾙｧ」といじめられた私としては、他人事ながら気の毒でなりません。\n「葛」って、和歌では「恨み」の縁語。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku296"
+    },
+    {
+      "question": "怜愛",
+      "answer": [
+        "れのあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re952"
+    },
+    {
+      "question": "自由歩",
+      "answer": [
+        "みゆと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2671"
+    },
+    {
+      "question": "冬",
+      "answer": [
+        "そなた"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so402"
+    },
+    {
+      "question": "理想女",
+      "answer": [
+        "りそな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri1982"
+    },
+    {
+      "question": "アンドロメダ",
+      "answer": [
+        "あんどろめだ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1795"
+    },
+    {
+      "question": "四旬",
+      "answer": [
+        "よんじゅん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo85"
+    },
+    {
+      "question": "輝大和",
+      "answer": [
+        "きらやまと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki779"
+    },
+    {
+      "question": "絵音",
+      "answer": [
+        "えのん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee541"
+    },
+    {
+      "question": "愛国心",
+      "answer": [
+        "やまと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya79"
+    },
+    {
+      "question": "さゆり",
+      "answer": [
+        "さゆり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa947"
+    },
+    {
+      "question": "舞宇",
+      "answer": [
+        "まいう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma970"
+    },
+    {
+      "question": "琴々",
+      "answer": [
+        "ことこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1767"
+    },
+    {
+      "question": "大空",
+      "answer": [
+        "おおら",
+        "おおら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo327"
+    },
+    {
+      "question": "華実由",
+      "answer": [
+        "ぱみゅ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1462"
+    },
+    {
+      "question": "魅飛露",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi1422"
+    },
+    {
+      "question": "世潤",
+      "answer": [
+        "よんじゅん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo94"
+    },
+    {
+      "question": "真心",
+      "answer": [
+        "みひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2669"
+    },
+    {
+      "question": "初一音",
+      "answer": [
+        "はいね"
+      ],
+      "meaning": "部屋とＴシャツと私の人（名前忘れた）の娘の名前。なんかゴスロリ系の人のＨＮみたい\nそれを言うなら「部屋とＹシャツと私」\nついでに平松愛理。\n平松愛理の悪口はちょっとねぇ\n同じ女なら言うべきじゃない。\nどうして？\n子宮摘出手術をしたからだと思うけど、別に悪口ではないよ。だって初一音って十分変だと思うし。\n子宮関係の病気で妊娠が難しく、やっと授かった子だったから、産声を「初めて聞いた、たった一つの大切な音」として名付けたそうだよ。\nそういう由来聞くと、いい名前かもしれないって思えてくるけど、冷静に考えるとやっぱり変だよね。\n普通に初音とか初子でいいじゃん。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha799"
+    },
+    {
+      "question": "麗澄",
+      "answer": [
+        "れず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re986"
+    },
+    {
+      "question": "鈴子",
+      "answer": [
+        "すず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su412"
+    },
+    {
+      "question": "弥生",
+      "answer": [
+        "やおい"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya86"
+    },
+    {
+      "question": "歌姫",
+      "answer": [
+        "みく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2451"
+    },
+    {
+      "question": "美海深",
+      "answer": [
+        "みみみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2440"
+    },
+    {
+      "question": "吹奏楽",
+      "answer": [
+        "すいそうがく"
+      ],
+      "meaning": "両親が吹奏楽部がきっかけで出会ったため。生まれてすぐ押しつけ川磯素(´\nω\n`)　出産祝いには「クラリネット教則本」やら「フルート教則本」やら楽器自体（ヴァイオリンとか…）も届いたそうです。\n「すから」とか豚切りの名前の方がまだマシだったような…。\n「お名前は？」「吹奏楽です」「\n。あ、いや、部活じゃなくてね、お名前\n」「吹奏楽です」「\n。」となりそう。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su239"
+    },
+    {
+      "question": "向日葵",
+      "answer": [
+        "すみれ",
+        "むかひ"
+      ],
+      "meaning": "ヒマワリの花っていつも笑ってるみたいでしょ〜？ だから、Smileをローマ字で読んで「すみれ」なの。\n【辞書】ひまわり",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su308"
+    },
+    {
+      "question": "偉人",
+      "answer": [
+        "ぐれいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku455"
+    },
+    {
+      "question": "新日",
+      "answer": [
+        "にに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni207"
+    },
+    {
+      "question": "百翁",
+      "answer": [
+        "ゆな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1417"
+    },
+    {
+      "question": "乙女",
+      "answer": [
+        "じょう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2631"
+    },
+    {
+      "question": "美人",
+      "answer": [
+        "めがみ",
+        "みいに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me663"
+    },
+    {
+      "question": "お星ちん",
+      "answer": [
+        "おせちん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo333"
+    },
+    {
+      "question": "憂",
+      "answer": [
+        "ゆう"
+      ],
+      "meaning": "意味知った時の子供の気持ちを思うと\n子供の人生、親のせいで暗いなぁと気の毒でたまらない。\n優ならいいけど、憂は一つ目小僧のおばけみたいな形してるし。\n新聞に、最近の大学生は、留学生よりも日本語ができないって記事があった。「語彙力が中学生レベル」と判定された大学生では、「憂う」という言葉を正しく「心配する」という意味だと知っていたのは０％。ほとんどが「よろこぶ」という意味だと思っていたという。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu576"
+    },
+    {
+      "question": "吾郎",
+      "answer": [
+        "ごろう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko774"
+    },
+    {
+      "question": "千秋楽",
+      "answer": [
+        "てぃあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te421"
+    },
+    {
+      "question": "自由生",
+      "answer": [
+        "ふりい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu613"
+    },
+    {
+      "question": "映斗",
+      "answer": [
+        "うっと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu653"
+    },
+    {
+      "question": "葵い",
+      "answer": [
+        "あおい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4045"
+    },
+    {
+      "question": "苺苺苺",
+      "answer": [
+        "まりなる"
+      ],
+      "meaning": "上の子は沙也夏（さやか）ちゃんで普通なのに…。\nこれは四天王クラスじゃないか！？\n苺×３て…親はどんな願いを込めて付けたんだ？？\n将来息子がこんなＤＱＮ名の彼女連れてきたらｶｱﾁｬﾝどうしよう･･･。\nそんな親の元に生まれなくてよかったと本当に思うわ\n。さすがにそんな名前聞かされた日には愛想笑いもできず、(ﾟДﾟ)ﾊｧ？ って言っちゃいそう\n。\nどういう解釈なんだー！ まりなるママに聞いてみたいｗ\nまりなるってどういう意味なの？ イチゴ３個って言う意味の日本語なの？\nぐぐっても全然わからん。たぶん、近所においしい苺タルトで有名なマリナルってケーキ屋があるとかそういうのだろうｗ\n苺→「ま」い、苺→ストロベ「リ」ー、までしかわからない…。苺が３つでトリプルのル？\n愛愛愛（あえら）ﾁｬﾝってのもいたっけ。平仮名だとしても変だし、苺は一文字でも痛いので、ＤＱＮ度はマリナルに軍配が上がるなｗ\n苺苺苺って目が痛くなるよ(>_<)　愛愛愛の方がまだ目にやさしいかも…\n昔の漫画のちょいキャラ思い出した。子子子子　子子子（すねごし ねじこ）",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma975"
+    },
+    {
+      "question": "優馬",
+      "answer": [
+        "やぇんま"
+      ],
+      "meaning": "「“優しい馬”ってすごく良いと思わない？ ４足でしっかりと踏ん張って生きてる馬ってかっこいいと思う。でも“ゆうま”だと在来たりすぎてつまらないでしょ。やぇんまには月並みな発想しか出来ない人間にはなってほしくないのー。」\n哺乳類のほとんどは、カバだって鼠だって何だって４足でしっかりと踏ん張って生きてるわけだが（´\nω\n`) \nどうやって発音するんだろ‥‥やぇ。何回読み返しても「やえんま」としか発音できない。\n大人になったら自分で「ゆうま」と名乗ると思う。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya66"
+    },
+    {
+      "question": "紀之",
+      "answer": [
+        "きえ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1574"
+    },
+    {
+      "question": "清ら",
+      "answer": [
+        "ちゅら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti377"
+    },
+    {
+      "question": "金の翼",
+      "answer": [
+        "きんのすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1567"
+    },
+    {
+      "question": "陸空海",
+      "answer": [
+        "りくか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2385"
+    },
+    {
+      "question": "理恵",
+      "answer": [
+        "ちさと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti382"
+    },
+    {
+      "question": "神通嗣",
+      "answer": [
+        "かぃなおつぐ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka1533"
+    },
+    {
+      "question": "ポチ男",
+      "answer": [
+        "ぽちお"
+      ],
+      "meaning": "そこまでくるとネグレクトだよね。\nひょっとしたら、かの大コケドラマ「刑事部屋」から無理矢理取ったんじゃないだろうかとふと気付いた深夜。越智由紀男、愛称「ポチ」という名前の新人刑事が登場人物にいた。しかも演じていたのはドキュソネームなジャニーズJr.……ネタじゃなかったら多分ジャニヲタの仕業だ。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho238"
+    },
+    {
+      "question": "みゅ海",
+      "answer": [
+        "みゅう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2830"
+    },
+    {
+      "question": "紗優",
+      "answer": [
+        "きゃゆ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1582"
+    },
+    {
+      "question": "環",
+      "answer": [
+        "わあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa198"
+    },
+    {
+      "question": "栗伽",
+      "answer": [
+        "りか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2397"
+    },
+    {
+      "question": "彗昴",
+      "answer": [
+        "ながれぼし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na917"
+    },
+    {
+      "question": "羅冴",
+      "answer": [
+        "あみご"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4012"
+    },
+    {
+      "question": "萌太",
+      "answer": [
+        "きょうた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1573"
+    },
+    {
+      "question": "美空",
+      "answer": [
+        "びゅあっぷる"
+      ],
+      "meaning": "「美しい空って意味で読みは英語にしたの☆びゅーてぃーあっぷるの略なの〜」「空でアップルなの？」「だって空はアップルでしょ？ ｱﾚ？ もしかして星だった？」「\nいやー、まぁ、変わってて面白いんじゃない？」\nまあ「もしかして星だった？」と言ってるところを見ると、英語が間違ってても気にしないんじゃね…\n無事改名できたそうです。よくあるけど、呼びやすくかわいらしい名前になりました。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi1179"
+    },
+    {
+      "question": "蝶花",
+      "answer": [
+        "みつば"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2837"
+    },
+    {
+      "question": "衣赳",
+      "answer": [
+        "いっきゅう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii860"
+    },
+    {
+      "question": "奈々安寿絵里",
+      "answer": [
+        "ななあんじゅえり"
+      ],
+      "meaning": "私なんか姓も名前も１文字なのに（ｗ。名前の欄からはみ出しちゃってかわいそー。\nソレって、全部名前なの？ 鈴木　奈々安寿絵里とか？ 奈々安（苗字）寿絵里　かと思った。寿絵里だけでもかなりキテル\nなげぇなぁ。どーせ家では「ななちゃん」\nって呼ぶくせに。\n３人分入ってるよね。なな\nあん\nじゅえり。\n私は、なな\nあんじゅ\nえり、だと思った。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na296"
+    },
+    {
+      "question": "露羽安",
+      "answer": [
+        "ろわあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ro229"
+    },
+    {
+      "question": "離愛",
+      "answer": [
+        "りあん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2391"
+    },
+    {
+      "question": "葉虹來",
+      "answer": [
+        "ばにら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1830"
+    },
+    {
+      "question": "歩々",
+      "answer": [
+        "あお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4020"
+    },
+    {
+      "question": "日向",
+      "answer": [
+        "ひだまり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2278"
+    },
+    {
+      "question": "珠里也",
+      "answer": [
+        "すうりや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su445"
+    },
+    {
+      "question": "エリカ",
+      "answer": [
+        "えりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee435"
+    },
+    {
+      "question": "権兵衛",
+      "answer": [
+        "ごんべえ"
+      ],
+      "meaning": "爺が跡継ぎ（♂）が欲しかったんだ。「こいつなんぞ名無しの権兵衛」と無理やり命名したらしい……\n…てことはおにゃのこ？\nうん、「出産予定日が子供の日だから男児に違いない。わしが名づける。」と相当ハイテンションで名前考えてたらしい、その爺。\n酷すぎるよ、その爺…。最近の当て字ＤＱＮがまだマシに思える。親も呼びたくないでしょ、そんな名前。早く改名してあげればいいのに。\n私が生まれたとき婆さんが、「女の子なんか要らん」と言ったらしい。でもって父親も、自分自身が女兄弟ばっかりで男の子がほしかったものだから、男の子の名前ばっかり考えてたらしい。一応女として読める名前がついててよかった、と本気で思った。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko752"
+    },
+    {
+      "question": "涙雨",
+      "answer": [
+        "うるう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu645"
+    },
+    {
+      "question": "瑠々",
+      "answer": [
+        "るんるん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1437"
+    },
+    {
+      "question": "優秀人",
+      "answer": [
+        "すぐる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su448"
+    },
+    {
+      "question": "麻友桜凛南",
+      "answer": [
+        "まゆさりな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1813"
+    },
+    {
+      "question": "芳倫",
+      "answer": [
+        "かおり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka785"
+    },
+    {
+      "question": "宝皇子",
+      "answer": [
+        "ほうじ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho511"
+    },
+    {
+      "question": "春樹",
+      "answer": [
+        "はる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1819"
+    },
+    {
+      "question": "散離",
+      "answer": [
+        "ちぇり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti361"
+    },
+    {
+      "question": "瑛之介",
+      "answer": [
+        "えんのすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee604"
+    },
+    {
+      "question": "九彩",
+      "answer": [
+        "きゅあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1576"
+    },
+    {
+      "question": "いちご姫",
+      "answer": [
+        "いちごひめ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii109"
+    },
+    {
+      "question": "茉莉子",
+      "answer": [
+        "まりか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1925"
+    },
+    {
+      "question": "雪明",
+      "answer": [
+        "すのう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su449"
+    },
+    {
+      "question": "連峰",
+      "answer": [
+        "つづき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu308"
+    },
+    {
+      "question": "未来",
+      "answer": [
+        "みらくる",
+        "あすか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2799"
+    },
+    {
+      "question": "万里",
+      "answer": [
+        "より"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo163"
+    },
+    {
+      "question": "竹姫",
+      "answer": [
+        "かぐや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2013"
+    },
+    {
+      "question": "心",
+      "answer": [
+        "くくる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku655"
+    },
+    {
+      "question": "紅統",
+      "answer": [
+        "れっど"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1181"
+    },
+    {
+      "question": "晃",
+      "answer": [
+        "めざめる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me665"
+    },
+    {
+      "question": "華和",
+      "answer": [
+        "やわわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya139"
+    },
+    {
+      "question": "園楽",
+      "answer": [
+        "ぞら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so782"
+    },
+    {
+      "question": "依未唯",
+      "answer": [
+        "えいみい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee610"
+    },
+    {
+      "question": "弥杯",
+      "answer": [
+        "みつき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2855"
+    },
+    {
+      "question": "裕夫友",
+      "answer": [
+        "ゆめとも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1989"
+    },
+    {
+      "question": "百合",
+      "answer": [
+        "ゆあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1984"
+    },
+    {
+      "question": "如山",
+      "answer": [
+        "ふどう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu610"
+    },
+    {
+      "question": "鷹",
+      "answer": [
+        "ほうく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho508"
+    },
+    {
+      "question": "静海",
+      "answer": [
+        "いずみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii867"
+    },
+    {
+      "question": "小春",
+      "answer": [
+        "ひより"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2232"
+    },
+    {
+      "question": "充礼",
+      "answer": [
+        "じゅら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2608"
+    },
+    {
+      "question": "紅茶",
+      "answer": [
+        "こうや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2006"
+    },
+    {
+      "question": "枯子亜",
+      "answer": [
+        "ここあ"
+      ],
+      "meaning": "姉妹に「いちご」「みるく」。\n名前に枯れるの「枯」とかよく使うよな。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko905"
+    },
+    {
+      "question": "恭耀祐",
+      "answer": [
+        "きょうすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1575"
+    },
+    {
+      "question": "緩隼",
+      "answer": [
+        "ののと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no737"
+    },
+    {
+      "question": "音々栞",
+      "answer": [
+        "ねねか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ne240"
+    },
+    {
+      "question": "一円",
+      "answer": [
+        "ひのまる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2332"
+    },
+    {
+      "question": "カス美",
+      "answer": [
+        "かすみ"
+      ],
+      "meaning": "いくらでも字があるのに、なぜに「カス美」。意味があるかもしれないけど、なんかカスみたいじゃないか〜。\n姓名判断、字画にこだわりすぎた結果のように思う。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka87"
+    },
+    {
+      "question": "戦士",
+      "answer": [
+        "をりあ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wo3"
+    },
+    {
+      "question": "叶",
+      "answer": [
+        "りた",
+        "とわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2376"
+    },
+    {
+      "question": "優秀",
+      "answer": [
+        "すぐる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su446"
+    },
+    {
+      "question": "千谷子",
+      "answer": [
+        "ちゃこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti373"
+    },
+    {
+      "question": "義人",
+      "answer": [
+        "よしひと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo148"
+    },
+    {
+      "question": "海結",
+      "answer": [
+        "みゅい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2836"
+    },
+    {
+      "question": "翁",
+      "answer": [
+        "おきな"
+      ],
+      "meaning": "どうなってほしいの？\nハァ？ なんなの？ じいさんのような落ち着きある人になってほしい、とか？ ＤＱＮどころじゃないな。親はほんとに日本人でつか？\n奥菜恵のファンだったとか…",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo121"
+    },
+    {
+      "question": "永久恋愛",
+      "answer": [
+        "えくれあ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee349"
+    },
+    {
+      "question": "蓮凛",
+      "answer": [
+        "れり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1179"
+    },
+    {
+      "question": "玲海",
+      "answer": [
+        "れいまりん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1185"
+    },
+    {
+      "question": "龍神",
+      "answer": [
+        "りゅうと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2379"
+    },
+    {
+      "question": "優乃助",
+      "answer": [
+        "ゆきのすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1961"
+    },
+    {
+      "question": "夜空",
+      "answer": [
+        "さぎり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1273"
+    },
+    {
+      "question": "睦士",
+      "answer": [
+        "りくと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2374"
+    },
+    {
+      "question": "百千万",
+      "answer": [
+        "ひゅうま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2311"
+    },
+    {
+      "question": "埜",
+      "answer": [
+        "きよと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1588"
+    },
+    {
+      "question": "椿祈",
+      "answer": [
+        "つばき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu312"
+    },
+    {
+      "question": "大宝良",
+      "answer": [
+        "たから"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta980"
+    },
+    {
+      "question": "太陽",
+      "answer": [
+        "ひかり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2254"
+    },
+    {
+      "question": "色桃",
+      "answer": [
+        "いと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii871"
+    },
+    {
+      "question": "匠也",
+      "answer": [
+        "たくま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta993"
+    },
+    {
+      "question": "十和",
+      "answer": [
+        "てか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te528"
+    },
+    {
+      "question": "十兵",
+      "answer": [
+        "くりすとふぁー"
+      ],
+      "meaning": "きっとあだ名は「じゅうべい」だよな。\n自分で「じゅうべいです」と名乗ってる希ガス。\n「じゅうべい」のが一万倍格好良いだろソレｗ\nクロスとヒョウ→クロストヒョー→クリストファー、ってことですか\nムチャクチャや。\nほんとは栗十兵とつけたかったけど、栗の字が認められなかったので、十兵にしたって、みのもんたの番組で言ってた（愛の貧乏の後番組で）。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku302"
+    },
+    {
+      "question": "柴",
+      "answer": [
+        "ちゃろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti390"
+    },
+    {
+      "question": "七燈",
+      "answer": [
+        "ないと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na920"
+    },
+    {
+      "question": "幸笑",
+      "answer": [
+        "しえん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2596"
+    },
+    {
+      "question": "希児",
+      "answer": [
+        "まる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1902"
+    },
+    {
+      "question": "可愛",
+      "answer": [
+        "たける",
+        "きゅうと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta1008"
+    },
+    {
+      "question": "温",
+      "answer": [
+        "あたか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3988"
+    },
+    {
+      "question": "壱桜",
+      "answer": [
+        "いっさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii874"
+    },
+    {
+      "question": "愛恋",
+      "answer": [
+        "らぶ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1405"
+    },
+    {
+      "question": "姫舞",
+      "answer": [
+        "ひらり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2245"
+    },
+    {
+      "question": "苺夢",
+      "answer": [
+        "あかね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4017"
+    },
+    {
+      "question": "苺姫",
+      "answer": [
+        "いちご"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii868"
+    },
+    {
+      "question": "晟雷",
+      "answer": [
+        "せら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se919"
+    },
+    {
+      "question": "壽汰",
+      "answer": [
+        "じゅった"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2581"
+    },
+    {
+      "question": "凛千代",
+      "answer": [
+        "りりちよ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2350"
+    },
+    {
+      "question": "恋都",
+      "answer": [
+        "こまち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1961"
+    },
+    {
+      "question": "瑠綺晏",
+      "answer": [
+        "るきあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1454"
+    },
+    {
+      "question": "立日",
+      "answer": [
+        "りつ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2377"
+    },
+    {
+      "question": "美々愛",
+      "answer": [
+        "みりな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2833"
+    },
+    {
+      "question": "波琉翔",
+      "answer": [
+        "なると"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na923"
+    },
+    {
+      "question": "椿姫",
+      "answer": [
+        "つばきひめ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu283"
+    },
+    {
+      "question": "智子",
+      "answer": [
+        "ちぃこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti369"
+    },
+    {
+      "question": "大愛",
+      "answer": [
+        "たろう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta981"
+    },
+    {
+      "question": "千秋風",
+      "answer": [
+        "あすみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3970"
+    },
+    {
+      "question": "星砂",
+      "answer": [
+        "しずく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2635"
+    },
+    {
+      "question": "仁瑛",
+      "answer": [
+        "じぇい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2602"
+    },
+    {
+      "question": "笑鳳",
+      "answer": [
+        "えふう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee608"
+    },
+    {
+      "question": "渚美",
+      "answer": [
+        "なちゅら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na892"
+    },
+    {
+      "question": "充気郎",
+      "answer": [
+        "あきろう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3982"
+    },
+    {
+      "question": "珠輝来",
+      "answer": [
+        "すてら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su444"
+    },
+    {
+      "question": "桜愛",
+      "answer": [
+        "るるあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1439"
+    },
+    {
+      "question": "裟季天",
+      "answer": [
+        "さりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1269"
+    },
+    {
+      "question": "京介",
+      "answer": [
+        "あきら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3780"
+    },
+    {
+      "question": "気",
+      "answer": [
+        "そら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so785"
+    },
+    {
+      "question": "夏夏夏",
+      "answer": [
+        "ななみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na954"
+    },
+    {
+      "question": "伽良芽",
+      "answer": [
+        "きゃらめ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1501"
+    },
+    {
+      "question": "悪",
+      "answer": [
+        "たける"
+      ],
+      "meaning": "弟に「弁（さとす）」「京（なから）」。\n過去ログのまとめ\nご本人からのメール（2006/07/12）義務教育時代は「たける」または「たけき」と呼ばれていました。義務教育就学前と修了後、また家庭内での読みは「わる」でした。現在の戸籍上の名は違うものになっております（家庭裁判所で名の変更を済ませてあります）。ご心配くださったみなさまには、心より感謝しています。貴サイトが、今後も私のように辛い経験を将来担う子供が一人でも少なくなるように、親御さんたちの考える場として広まることを期待しております。\nご本人からのメール（2018/04/13）この度メールを差し上げますのは実際の審判書です。貴サイトを閲覧なさっていらっしゃる方々にとって「審判はこうした書式になります」とのお役に立てればと思い、今まで悩んではおりましたが、やはり後を絶たない無責任な親御さんによる大切なお子さんへの最初の贈り物が、その後の人生を狂わせてしまったり、お子さんにとって審判とはどのような書類になるのかなどの参考に、今後増え続ける改名への緒となることを祈った上で決意し、お送りさせていただくことに致しました。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta525"
+    },
+    {
+      "question": "愛悠迪",
+      "answer": [
+        "あゆみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4014"
+    },
+    {
+      "question": "愛香痢",
+      "answer": [
+        "あかり"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3712"
+    },
+    {
+      "question": "めろん",
+      "answer": [
+        "めろん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me644"
+    },
+    {
+      "question": "苺桜李",
+      "answer": [
+        "いおり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii876"
+    },
+    {
+      "question": "徠心",
+      "answer": [
+        "るの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1440"
+    },
+    {
+      "question": "美世来",
+      "answer": [
+        "びせる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2249"
+    },
+    {
+      "question": "神王",
+      "answer": [
+        "ぜうす"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se419"
+    },
+    {
+      "question": "真幸",
+      "answer": [
+        "しんしあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2639"
+    },
+    {
+      "question": "笑満",
+      "answer": [
+        "えみる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee613"
+    },
+    {
+      "question": "昇竜",
+      "answer": [
+        "のぼる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no742"
+    },
+    {
+      "question": "楓音",
+      "answer": [
+        "りおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2368"
+    },
+    {
+      "question": "嬉唄",
+      "answer": [
+        "うた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu647"
+    },
+    {
+      "question": "愛",
+      "answer": [
+        "めい",
+        "いつみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me664"
+    },
+    {
+      "question": "梛",
+      "answer": [
+        "なぎさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na911"
+    },
+    {
+      "question": "來悠",
+      "answer": [
+        "くうら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku656"
+    },
+    {
+      "question": "鈴心",
+      "answer": [
+        "らん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1397"
+    },
+    {
+      "question": "塁",
+      "answer": [
+        "かさね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2063"
+    },
+    {
+      "question": "瑠晶",
+      "answer": [
+        "りゅうせい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2358"
+    },
+    {
+      "question": "亮士和",
+      "answer": [
+        "りしな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2371"
+    },
+    {
+      "question": "龍輝",
+      "answer": [
+        "りゅき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2366"
+    },
+    {
+      "question": "嵐翔",
+      "answer": [
+        "あらし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3963"
+    },
+    {
+      "question": "友海",
+      "answer": [
+        "ゆうま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1969"
+    },
+    {
+      "question": "勇気",
+      "answer": [
+        "ちから"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti381"
+    },
+    {
+      "question": "未弥桜",
+      "answer": [
+        "みゃお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2821"
+    },
+    {
+      "question": "舞姫",
+      "answer": [
+        "まな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1921"
+    },
+    {
+      "question": "姫縁愛",
+      "answer": [
+        "ひより"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2265"
+    },
+    {
+      "question": "美智",
+      "answer": [
+        "ひとみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2279"
+    },
+    {
+      "question": "美愛望",
+      "answer": [
+        "みらの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2829"
+    },
+    {
+      "question": "舶麦",
+      "answer": [
+        "つむぎ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu310"
+    },
+    {
+      "question": "東海",
+      "answer": [
+        "しょうじ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2610"
+    },
+    {
+      "question": "朝陽華",
+      "answer": [
+        "さやか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1281"
+    },
+    {
+      "question": "汰強",
+      "answer": [
+        "でじる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te303"
+    },
+    {
+      "question": "蒼頼",
+      "answer": [
+        "そら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so780"
+    },
+    {
+      "question": "晴修直",
+      "answer": [
+        "せすな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se927"
+    },
+    {
+      "question": "成煌",
+      "answer": [
+        "たいら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta982"
+    },
+    {
+      "question": "成道",
+      "answer": [
+        "なみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na916"
+    },
+    {
+      "question": "真姫",
+      "answer": [
+        "まこと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1906"
+    },
+    {
+      "question": "真朱",
+      "answer": [
+        "まおそ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1901"
+    },
+    {
+      "question": "就要",
+      "answer": [
+        "ないる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na910"
+    },
+    {
+      "question": "朱",
+      "answer": [
+        "ちゅら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti376"
+    },
+    {
+      "question": "執逢",
+      "answer": [
+        "とあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to962"
+    },
+    {
+      "question": "咲南",
+      "answer": [
+        "みなみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2818"
+    },
+    {
+      "question": "幸葉",
+      "answer": [
+        "くろば"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku657"
+    },
+    {
+      "question": "光緑",
+      "answer": [
+        "みりょく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2870"
+    },
+    {
+      "question": "虎耀",
+      "answer": [
+        "きょう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1570"
+    },
+    {
+      "question": "賢一郎",
+      "answer": [
+        "けんいちろう"
+      ],
+      "meaning": "妹に「誠太郎（せいたろう）」。男が欲しかった、って男っぽい名前付けられる話ってたまに聞くけど、これはひどいよな。生きていて一度も名前で女だと思われることはないだろうよ。\nというかそもそも実生活に支障がありそう。身分証明書とか。カード使う時にトラブったりとか。\n顔は目がパッチリした姉妹らしいんだが、やはりというか、姉妹共にスポーツ刈りに近いショートヘアで、服も女の子っぽいのは着てないらしい。だから言わなければ誰も女児だとは気が付かないそーな。本人達は自分が女だとわかってるのか？ ここまで行くと、個人的には虐待だと思うんだけど、こういうのも公的に注意してもらえるのだろうか。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke121"
+    },
+    {
+      "question": "蛍",
+      "answer": [
+        "ねおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ne241"
+    },
+    {
+      "question": "輝宝",
+      "answer": [
+        "だいあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta985"
+    },
+    {
+      "question": "芽琉",
+      "answer": [
+        "めるる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me658"
+    },
+    {
+      "question": "芽愛梨",
+      "answer": [
+        "めありい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me672"
+    },
+    {
+      "question": "架希",
+      "answer": [
+        "かのん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2027"
+    },
+    {
+      "question": "黄熊",
+      "answer": [
+        "ぷう"
+      ],
+      "meaning": "大きくなったら「○○ぷぅです」って自己紹介するのかよ！？ 就職活動のとき、どうしたらいいんだよー\n面接官「名前は黄熊とありますが？」学生　「はい。」面接官「黄熊とは、なんと読むのですか？」学生　「ぷうです。」面接官「え、ぷう？」学生　「はい。ぷうです。画数最悪です。」面接官「\nで、そのぷうさんは学生時代何をしていましたか？」学生　「はい。小学校で苛められていました。」面接官「いや、そんなことは聞いていません。それにそれは“したこと”ではないですよね。」学生　「でも、おならぷうとか呼ばれてたんですよ。」面接官「いや、おならとかそういう問題じゃなくてですね\n」学生　「両親も、もう付けちゃったから仕方ないって言ってます。」面接官「聞いてません。帰って下さい。」学生　「あれあれ？ 怒らせていいんですか？ 呼びますよ、森の仲間を。」面接官「いいですよ。呼んで下さい。森の仲間とやらを。それで満足したら帰って下さい。」学生　「\n運がよかったな。今日は脳内から出てきたがらないみたいだ。」面接官「帰れよ。」",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu266"
+    },
+    {
+      "question": "逢誉",
+      "answer": [
+        "ほだか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho509"
+    },
+    {
+      "question": "哀伽",
+      "answer": [
+        "あいか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1587"
+    },
+    {
+      "question": "惺音",
+      "answer": [
+        "れおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1178"
+    },
+    {
+      "question": "恋箔",
+      "answer": [
+        "こはく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1977"
+    },
+    {
+      "question": "麻々",
+      "answer": [
+        "まあさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1915"
+    },
+    {
+      "question": "虹心子",
+      "answer": [
+        "にここ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni375"
+    },
+    {
+      "question": "真名果",
+      "answer": [
+        "まなみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1905"
+    },
+    {
+      "question": "真珠",
+      "answer": [
+        "ましゅう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1910"
+    },
+    {
+      "question": "丞央",
+      "answer": [
+        "じょお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2600"
+    },
+    {
+      "question": "初桃",
+      "answer": [
+        "はつみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1817"
+    },
+    {
+      "question": "琴姫七",
+      "answer": [
+        "ことひな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1973"
+    },
+    {
+      "question": "夏",
+      "answer": [
+        "ほたる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ho512"
+    },
+    {
+      "question": "温夢",
+      "answer": [
+        "おとむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo375"
+    },
+    {
+      "question": "英雄",
+      "answer": [
+        "ひろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2277"
+    },
+    {
+      "question": "羽令",
+      "answer": [
+        "しゅんり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2604"
+    },
+    {
+      "question": "杏蕗",
+      "answer": [
+        "ああろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3996"
+    },
+    {
+      "question": "葵穂",
+      "answer": [
+        "あお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4019"
+    },
+    {
+      "question": "愛瑠華",
+      "answer": [
+        "あろは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3993"
+    },
+    {
+      "question": "栞鳳",
+      "answer": [
+        "しょーん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2592"
+    },
+    {
+      "question": "幸",
+      "answer": [
+        "せれん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se925"
+    },
+    {
+      "question": "愛緒",
+      "answer": [
+        "あお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4018"
+    },
+    {
+      "question": "黎舞",
+      "answer": [
+        "らいぶ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1398"
+    },
+    {
+      "question": "澪衣",
+      "answer": [
+        "れい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1182"
+    },
+    {
+      "question": "昊獅",
+      "answer": [
+        "てんし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te527"
+    },
+    {
+      "question": "徠妃",
+      "answer": [
+        "くるみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku658"
+    },
+    {
+      "question": "來叶",
+      "answer": [
+        "こと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1990"
+    },
+    {
+      "question": "瑠星斗",
+      "answer": [
+        "りくと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2362"
+    },
+    {
+      "question": "力應",
+      "answer": [
+        "れお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1173"
+    },
+    {
+      "question": "遼於",
+      "answer": [
+        "りょお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2365"
+    },
+    {
+      "question": "良妃",
+      "answer": [
+        "らびん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1400"
+    },
+    {
+      "question": "凌直",
+      "answer": [
+        "りょうた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2369"
+    },
+    {
+      "question": "龍獅",
+      "answer": [
+        "りゅうら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2363"
+    },
+    {
+      "question": "龍空",
+      "answer": [
+        "とあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to956"
+    },
+    {
+      "question": "陽日",
+      "answer": [
+        "さにい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1287"
+    },
+    {
+      "question": "柚雛",
+      "answer": [
+        "ゆあな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1970"
+    },
+    {
+      "question": "魅幸香",
+      "answer": [
+        "みしか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2808"
+    },
+    {
+      "question": "姫輝",
+      "answer": [
+        "てぃあら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te521"
+    },
+    {
+      "question": "美和",
+      "answer": [
+        "にこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ni350"
+    },
+    {
+      "question": "美吹",
+      "answer": [
+        "いぶき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii864"
+    },
+    {
+      "question": "美祈",
+      "answer": [
+        "うい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu648"
+    },
+    {
+      "question": "妃良",
+      "answer": [
+        "こよい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1962"
+    },
+    {
+      "question": "乃音",
+      "answer": [
+        "のの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no738"
+    },
+    {
+      "question": "虹",
+      "answer": [
+        "はく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1799"
+    },
+    {
+      "question": "凪汰",
+      "answer": [
+        "なゆた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na943"
+    },
+    {
+      "question": "桃遙",
+      "answer": [
+        "ももは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo686"
+    },
+    {
+      "question": "桃魅純",
+      "answer": [
+        "もみじ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo671"
+    },
+    {
+      "question": "妬輝",
+      "answer": [
+        "とき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to972"
+    },
+    {
+      "question": "天川",
+      "answer": [
+        "ぎんが"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1579"
+    },
+    {
+      "question": "諦俐",
+      "answer": [
+        "ちぇり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti354"
+    },
+    {
+      "question": "超好愛",
+      "answer": [
+        "ここあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1697"
+    },
+    {
+      "question": "稚采",
+      "answer": [
+        "ちあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti375"
+    },
+    {
+      "question": "暖春",
+      "answer": [
+        "おんぷ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo374"
+    },
+    {
+      "question": "暖",
+      "answer": [
+        "だんり",
+        "ひまり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta987"
+    },
+    {
+      "question": "太平洋",
+      "answer": [
+        "もあな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo692"
+    },
+    {
+      "question": "早未",
+      "answer": [
+        "はさみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1800"
+    },
+    {
+      "question": "全仁久",
+      "answer": [
+        "たすく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta995"
+    },
+    {
+      "question": "聖海",
+      "answer": [
+        "しすこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2591"
+    },
+    {
+      "question": "正義",
+      "answer": [
+        "ゆうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu2007"
+    },
+    {
+      "question": "星光",
+      "answer": [
+        "ろうら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ro230"
+    },
+    {
+      "question": "芯和",
+      "answer": [
+        "しんば"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2597"
+    },
+    {
+      "question": "真主",
+      "answer": [
+        "みすず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2806"
+    },
+    {
+      "question": "上乃佳",
+      "answer": [
+        "ののか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=no735"
+    },
+    {
+      "question": "笑空",
+      "answer": [
+        "えあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee609"
+    },
+    {
+      "question": "純萌",
+      "answer": [
+        "じゅえ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2619"
+    },
+    {
+      "question": "潤多",
+      "answer": [
+        "るうた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1447"
+    },
+    {
+      "question": "秋桜",
+      "answer": [
+        "あきら"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3892"
+    },
+    {
+      "question": "朱椛",
+      "answer": [
+        "あも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4068"
+    },
+    {
+      "question": "慈縁",
+      "answer": [
+        "じぇん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2609"
+    },
+    {
+      "question": "侍蘭",
+      "answer": [
+        "さぶら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1306"
+    },
+    {
+      "question": "志研成",
+      "answer": [
+        "ことはる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2022"
+    },
+    {
+      "question": "士擁才",
+      "answer": [
+        "しょうさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2590"
+    },
+    {
+      "question": "桜雪",
+      "answer": [
+        "おの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo382"
+    },
+    {
+      "question": "桜空来",
+      "answer": [
+        "さくら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1285"
+    },
+    {
+      "question": "桜々",
+      "answer": [
+        "ここ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1967"
+    },
+    {
+      "question": "哉寿",
+      "answer": [
+        "えいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee602"
+    },
+    {
+      "question": "玄心",
+      "answer": [
+        "けんし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke216"
+    },
+    {
+      "question": "月涙",
+      "answer": [
+        "しずく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2614"
+    },
+    {
+      "question": "恵來",
+      "answer": [
+        "めぐる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me662"
+    },
+    {
+      "question": "琴雪",
+      "answer": [
+        "ことぶき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1972"
+    },
+    {
+      "question": "極",
+      "answer": [
+        "はるか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1806"
+    },
+    {
+      "question": "吉祥衣",
+      "answer": [
+        "しゅりい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2589"
+    },
+    {
+      "question": "菊千代輝童",
+      "answer": [
+        "きくちよきどう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1369"
+    },
+    {
+      "question": "凱",
+      "answer": [
+        "かいり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2015"
+    },
+    {
+      "question": "海月夜",
+      "answer": [
+        "かづや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2023"
+    },
+    {
+      "question": "海月",
+      "answer": [
+        "みるな",
+        "みづき",
+        "うずき"
+      ],
+      "meaning": "未だ「おめでとう」メールが出来ない私(-.-;) \n海月っていい名前だね。クラゲってうつと一発変換できるから楽だしね\nと天然を装って返信だ！\nクラゲもそうだけど、「こっち　みるな　よ」とかも言われちゃいそうだ\n。強い子になるといいけど。\n【辞書】くらげ",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi80"
+    },
+    {
+      "question": "花咲",
+      "answer": [
+        "はなび",
+        "きらら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1816"
+    },
+    {
+      "question": "花",
+      "answer": [
+        "ううあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu635"
+    },
+    {
+      "question": "禾來",
+      "answer": [
+        "さら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1276"
+    },
+    {
+      "question": "可小紅",
+      "answer": [
+        "こはく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2004"
+    },
+    {
+      "question": "穏里衣",
+      "answer": [
+        "おんりい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=oo368"
+    },
+    {
+      "question": "卯美美",
+      "answer": [
+        "うみみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu646"
+    },
+    {
+      "question": "葵凜",
+      "answer": [
+        "ありん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3997"
+    },
+    {
+      "question": "愛守",
+      "answer": [
+        "らるく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1420"
+    },
+    {
+      "question": "愛叶",
+      "answer": [
+        "まのん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1911"
+    },
+    {
+      "question": "莉渚采",
+      "answer": [
+        "りのふ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2394"
+    },
+    {
+      "question": "苺",
+      "answer": [
+        "べりい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he112"
+    },
+    {
+      "question": "羚煌",
+      "answer": [
+        "りあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2398"
+    },
+    {
+      "question": "百合空",
+      "answer": [
+        "ゆりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1976"
+    },
+    {
+      "question": "美風",
+      "answer": [
+        "みかさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2845"
+    },
+    {
+      "question": "太妃",
+      "answer": [
+        "たい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta990"
+    },
+    {
+      "question": "笑歌",
+      "answer": [
+        "わか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa199"
+    },
+    {
+      "question": "春風",
+      "answer": [
+        "はる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1833"
+    },
+    {
+      "question": "春花",
+      "answer": [
+        "ふわり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu615"
+    },
+    {
+      "question": "咲梨",
+      "answer": [
+        "えりん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee605"
+    },
+    {
+      "question": "沙也加",
+      "answer": [
+        "あやか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3873"
+    },
+    {
+      "question": "琴妃",
+      "answer": [
+        "ことめ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1976"
+    },
+    {
+      "question": "輝汰",
+      "answer": [
+        "ひなた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2165"
+    },
+    {
+      "question": "雅",
+      "answer": [
+        "やまと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ya138"
+    },
+    {
+      "question": "華音",
+      "answer": [
+        "はると"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1813"
+    },
+    {
+      "question": "歌奏",
+      "answer": [
+        "かなで"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2026"
+    },
+    {
+      "question": "乙姫華",
+      "answer": [
+        "ひめか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2269"
+    },
+    {
+      "question": "羽雪",
+      "answer": [
+        "こゆき",
+        "うき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1971"
+    },
+    {
+      "question": "一",
+      "answer": [
+        "あん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3553"
+    },
+    {
+      "question": "愛愛",
+      "answer": [
+        "りあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2375"
+    },
+    {
+      "question": "烈円",
+      "answer": [
+        "れん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1186"
+    },
+    {
+      "question": "暦未",
+      "answer": [
+        "こよみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1980"
+    },
+    {
+      "question": "美琉希",
+      "answer": [
+        "みるきい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2852"
+    },
+    {
+      "question": "紬",
+      "answer": [
+        "むぎ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mu179"
+    },
+    {
+      "question": "彩哉",
+      "answer": [
+        "あや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4048"
+    },
+    {
+      "question": "たまてば子",
+      "answer": [
+        "たまてばこ"
+      ],
+      "meaning": "。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta61"
+    },
+    {
+      "question": "翔音",
+      "answer": [
+        "しおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2611"
+    },
+    {
+      "question": "絆",
+      "answer": [
+        "りいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2353"
+    },
+    {
+      "question": "燎燦",
+      "answer": [
+        "りさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2382"
+    },
+    {
+      "question": "煌煌",
+      "answer": [
+        "こうき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1956"
+    },
+    {
+      "question": "和花",
+      "answer": [
+        "わこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa195"
+    },
+    {
+      "question": "浪豪",
+      "answer": [
+        "ろう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ro232"
+    },
+    {
+      "question": "涼音",
+      "answer": [
+        "みんと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2854"
+    },
+    {
+      "question": "流玖",
+      "answer": [
+        "るーく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1436"
+    },
+    {
+      "question": "璃恩",
+      "answer": [
+        "りよん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2400"
+    },
+    {
+      "question": "蘭生",
+      "answer": [
+        "らう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1401"
+    },
+    {
+      "question": "陽楽",
+      "answer": [
+        "ひらふ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2291"
+    },
+    {
+      "question": "遥",
+      "answer": [
+        "はると"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1814"
+    },
+    {
+      "question": "憂入合夢",
+      "answer": [
+        "うぃりあむ"
+      ],
+      "meaning": "ハーフなんだけど、どうしてわざわざ漢字を当てるかな\n。\nこんな字あてるくらいならカタカナでいいと思う。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu230"
+    },
+    {
+      "question": "勇温太",
+      "answer": [
+        "ゆんた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1941"
+    },
+    {
+      "question": "木海",
+      "answer": [
+        "こあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1978"
+    },
+    {
+      "question": "綿樹包",
+      "answer": [
+        "ゆもと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1838"
+    },
+    {
+      "question": "未海美",
+      "answer": [
+        "まゆみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1918"
+    },
+    {
+      "question": "満孔",
+      "answer": [
+        "みく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2937"
+    },
+    {
+      "question": "萌李桜",
+      "answer": [
+        "めりさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me670"
+    },
+    {
+      "question": "碧空",
+      "answer": [
+        "つばさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu309"
+    },
+    {
+      "question": "楓莉杏",
+      "answer": [
+        "るりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1453"
+    },
+    {
+      "question": "楓莱",
+      "answer": [
+        "かえら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2046"
+    },
+    {
+      "question": "柊愛",
+      "answer": [
+        "ひな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2260"
+    },
+    {
+      "question": "美雪珠",
+      "answer": [
+        "みすず"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2844"
+    },
+    {
+      "question": "美宇宙",
+      "answer": [
+        "みゆぅ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2810"
+    },
+    {
+      "question": "飛空",
+      "answer": [
+        "ひこう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2273"
+    },
+    {
+      "question": "緋優芽",
+      "answer": [
+        "ひゅうが"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2267"
+    },
+    {
+      "question": "妃姫",
+      "answer": [
+        "ぴの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2289"
+    },
+    {
+      "question": "桃雪",
+      "answer": [
+        "ひゆき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2259"
+    },
+    {
+      "question": "冬竜",
+      "answer": [
+        "きりゅう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1562"
+    },
+    {
+      "question": "都翔",
+      "answer": [
+        "いちは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii861"
+    },
+    {
+      "question": "天一夢",
+      "answer": [
+        "てんま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te522"
+    },
+    {
+      "question": "蝶陽湖",
+      "answer": [
+        "ちょこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti384"
+    },
+    {
+      "question": "拓凰",
+      "answer": [
+        "たくみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta991"
+    },
+    {
+      "question": "鷹鷲",
+      "answer": [
+        "たかし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta989"
+    },
+    {
+      "question": "汰空",
+      "answer": [
+        "たすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta977"
+    },
+    {
+      "question": "蒼碧",
+      "answer": [
+        "あおい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4016"
+    },
+    {
+      "question": "蒼結衣",
+      "answer": [
+        "あおい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4044"
+    },
+    {
+      "question": "聡",
+      "answer": [
+        "とし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to958"
+    },
+    {
+      "question": "想彩",
+      "answer": [
+        "ここあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2001"
+    },
+    {
+      "question": "爽羽波",
+      "answer": [
+        "さわわ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1259"
+    },
+    {
+      "question": "青空澄",
+      "answer": [
+        "そらと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so781"
+    },
+    {
+      "question": "星流",
+      "answer": [
+        "すい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=su447"
+    },
+    {
+      "question": "星梨",
+      "answer": [
+        "ひかり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2247"
+    },
+    {
+      "question": "星七",
+      "answer": [
+        "せいし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se890"
+    },
+    {
+      "question": "星河",
+      "answer": [
+        "しずく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2605"
+    },
+    {
+      "question": "真琉",
+      "answer": [
+        "まいる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1904"
+    },
+    {
+      "question": "真心朗",
+      "answer": [
+        "まはろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1907"
+    },
+    {
+      "question": "心姫",
+      "answer": [
+        "しふぃ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2617"
+    },
+    {
+      "question": "心暖",
+      "answer": [
+        "この"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1974"
+    },
+    {
+      "question": "信信",
+      "answer": [
+        "しのぶ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2534"
+    },
+    {
+      "question": "渉華",
+      "answer": [
+        "わか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa196"
+    },
+    {
+      "question": "昇愛",
+      "answer": [
+        "ゆきや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1965"
+    },
+    {
+      "question": "秋桜燈",
+      "answer": [
+        "あさひ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4030"
+    },
+    {
+      "question": "朱伽",
+      "answer": [
+        "あか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4058"
+    },
+    {
+      "question": "実冬",
+      "answer": [
+        "みんと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2850"
+    },
+    {
+      "question": "汐恋",
+      "answer": [
+        "せれん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se924"
+    },
+    {
+      "question": "詩詠",
+      "answer": [
+        "しえる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2606"
+    },
+    {
+      "question": "紫斗",
+      "answer": [
+        "ゆと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1997"
+    },
+    {
+      "question": "咲",
+      "answer": [
+        "りん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2357"
+    },
+    {
+      "question": "彩愛",
+      "answer": [
+        "あやみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3998"
+    },
+    {
+      "question": "紺人",
+      "answer": [
+        "あすと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4009"
+    },
+    {
+      "question": "紅紅",
+      "answer": [
+        "くれは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku652"
+    },
+    {
+      "question": "光輝",
+      "answer": [
+        "みき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2838"
+    },
+    {
+      "question": "虎志",
+      "answer": [
+        "つよし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu315"
+    },
+    {
+      "question": "健龍",
+      "answer": [
+        "たけと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta986"
+    },
+    {
+      "question": "月李",
+      "answer": [
+        "るい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1443"
+    },
+    {
+      "question": "月虹",
+      "answer": [
+        "るこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1434"
+    },
+    {
+      "question": "空翔",
+      "answer": [
+        "あおい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3974"
+    },
+    {
+      "question": "輝夢",
+      "answer": [
+        "らいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1403"
+    },
+    {
+      "question": "喜怒哀楽",
+      "answer": [
+        "ゆたか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu739"
+    },
+    {
+      "question": "茅弥生",
+      "answer": [
+        "ちゃお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti386"
+    },
+    {
+      "question": "凱星",
+      "answer": [
+        "ときあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to954"
+    },
+    {
+      "question": "海昇",
+      "answer": [
+        "あさひ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4006"
+    },
+    {
+      "question": "快知",
+      "answer": [
+        "かいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2029"
+    },
+    {
+      "question": "我颯",
+      "answer": [
+        "がふう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2024"
+    },
+    {
+      "question": "衛海",
+      "answer": [
+        "えいと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee598"
+    },
+    {
+      "question": "羽蘭",
+      "answer": [
+        "うらら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu644"
+    },
+    {
+      "question": "羽砂",
+      "answer": [
+        "つばさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu306"
+    },
+    {
+      "question": "羽",
+      "answer": [
+        "はく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1808"
+    },
+    {
+      "question": "宇宙介",
+      "answer": [
+        "ゆうすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1943"
+    },
+    {
+      "question": "旭玄",
+      "answer": [
+        "あさひ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4000"
+    },
+    {
+      "question": "愛百足",
+      "answer": [
+        "あどり"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1851"
+    },
+    {
+      "question": "愛姫",
+      "answer": [
+        "あいぴ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3925"
+    },
+    {
+      "question": "愛桃",
+      "answer": [
+        "めぐむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me666"
+    },
+    {
+      "question": "愛実結",
+      "answer": [
+        "らるむ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1404"
+    },
+    {
+      "question": "愛司",
+      "answer": [
+        "けいじ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ke220"
+    },
+    {
+      "question": "亜苺翔",
+      "answer": [
+        "あいか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4002"
+    },
+    {
+      "question": "莉春",
+      "answer": [
+        "りしゅ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2401"
+    },
+    {
+      "question": "悠日",
+      "answer": [
+        "ゆに"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1975"
+    },
+    {
+      "question": "芳咲美",
+      "answer": [
+        "かすみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2022"
+    },
+    {
+      "question": "姫愛",
+      "answer": [
+        "きらら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1581"
+    },
+    {
+      "question": "美月",
+      "answer": [
+        "ふゆ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu618"
+    },
+    {
+      "question": "虹海",
+      "answer": [
+        "この"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1979"
+    },
+    {
+      "question": "爽風",
+      "answer": [
+        "さわり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1290"
+    },
+    {
+      "question": "星愛",
+      "answer": [
+        "ちあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti372"
+    },
+    {
+      "question": "新雪",
+      "answer": [
+        "みゆき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2804"
+    },
+    {
+      "question": "心太",
+      "answer": [
+        "しんた",
+        "はあふ"
+      ],
+      "meaning": "過去ログのまとめ\n【辞書】ところてん",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si1"
+    },
+    {
+      "question": "春陽",
+      "answer": [
+        "はる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1826"
+    },
+    {
+      "question": "史心星",
+      "answer": [
+        "ふみとし"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu617"
+    },
+    {
+      "question": "瑳凪",
+      "answer": [
+        "さなぎ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1309"
+    },
+    {
+      "question": "雅雪",
+      "answer": [
+        "ませ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1919"
+    },
+    {
+      "question": "芽希",
+      "answer": [
+        "めい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me655"
+    },
+    {
+      "question": "夏夢",
+      "answer": [
+        "かむい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2040"
+    },
+    {
+      "question": "愛子エンジェル",
+      "answer": [
+        "あいこえんじぇる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa1988"
+    },
+    {
+      "question": "倭伽那",
+      "answer": [
+        "わかな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa149"
+    },
+    {
+      "question": "心結",
+      "answer": [
+        "しゅい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2586"
+    },
+    {
+      "question": "彩鈴",
+      "answer": [
+        "ありん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4023"
+    },
+    {
+      "question": "翔大",
+      "answer": [
+        "かい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2025"
+    },
+    {
+      "question": "翔咲",
+      "answer": [
+        "つばさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu313"
+    },
+    {
+      "question": "翔空",
+      "answer": [
+        "しおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2603"
+    },
+    {
+      "question": "煌雲",
+      "answer": [
+        "こう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1982"
+    },
+    {
+      "question": "惺",
+      "answer": [
+        "せな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se922"
+    },
+    {
+      "question": "徠良",
+      "answer": [
+        "さくら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1275"
+    },
+    {
+      "question": "凰来",
+      "answer": [
+        "ろおら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ro227"
+    },
+    {
+      "question": "凰妃",
+      "answer": [
+        "こはく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1945"
+    },
+    {
+      "question": "和ノ華",
+      "answer": [
+        "なのは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na847"
+    },
+    {
+      "question": "恋乃蒼",
+      "answer": [
+        "このあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1981"
+    },
+    {
+      "question": "隆月",
+      "answer": [
+        "りつ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2380"
+    },
+    {
+      "question": "琉紅愛",
+      "answer": [
+        "るくあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1446"
+    },
+    {
+      "question": "梨愛",
+      "answer": [
+        "りりあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2364"
+    },
+    {
+      "question": "吏桜",
+      "answer": [
+        "つかさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu303"
+    },
+    {
+      "question": "陽華",
+      "answer": [
+        "ひなり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2253"
+    },
+    {
+      "question": "曜莉",
+      "answer": [
+        "あいり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3976"
+    },
+    {
+      "question": "揺雪",
+      "answer": [
+        "ゆらな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1951"
+    },
+    {
+      "question": "悠凪",
+      "answer": [
+        "ゆな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1957"
+    },
+    {
+      "question": "優愛楽",
+      "answer": [
+        "ゆめら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1985"
+    },
+    {
+      "question": "夜月",
+      "answer": [
+        "ないと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na932"
+    },
+    {
+      "question": "夢彩",
+      "answer": [
+        "みらの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2871"
+    },
+    {
+      "question": "抹士萌",
+      "answer": [
+        "ましも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1938"
+    },
+    {
+      "question": "縫良",
+      "answer": [
+        "ぬえら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=nu18"
+    },
+    {
+      "question": "変歌",
+      "answer": [
+        "れん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1156"
+    },
+    {
+      "question": "碧泰",
+      "answer": [
+        "へいた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he110"
+    },
+    {
+      "question": "福蒼",
+      "answer": [
+        "さちあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1318"
+    },
+    {
+      "question": "舞桜",
+      "answer": [
+        "らお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1402"
+    },
+    {
+      "question": "不可思議光",
+      "answer": [
+        "ふかしぎこう"
+      ],
+      "meaning": "親は宗教関係？？\n痔の薬みたいだな。",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hu256"
+    },
+    {
+      "question": "彪楽",
+      "answer": [
+        "ひょうら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2287"
+    },
+    {
+      "question": "姫瑠",
+      "answer": [
+        "める"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me657"
+    },
+    {
+      "question": "姫桜香",
+      "answer": [
+        "きらり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1571"
+    },
+    {
+      "question": "美來",
+      "answer": [
+        "みくり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2832"
+    },
+    {
+      "question": "虹幸",
+      "answer": [
+        "なつね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na915"
+    },
+    {
+      "question": "奈星",
+      "answer": [
+        "なほ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na924"
+    },
+    {
+      "question": "惇心",
+      "answer": [
+        "まこと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1922"
+    },
+    {
+      "question": "兎湖",
+      "answer": [
+        "もこ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo672"
+    },
+    {
+      "question": "天翔",
+      "answer": [
+        "あまね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3968"
+    },
+    {
+      "question": "天音",
+      "answer": [
+        "そらん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so783"
+    },
+    {
+      "question": "椿咲",
+      "answer": [
+        "ちはな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti370"
+    },
+    {
+      "question": "暖色",
+      "answer": [
+        "ひいろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=hi2241"
+    },
+    {
+      "question": "琢碧",
+      "answer": [
+        "たくみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ta984"
+    },
+    {
+      "question": "大然",
+      "answer": [
+        "ぜん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se918"
+    },
+    {
+      "question": "早絢",
+      "answer": [
+        "さや"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1278"
+    },
+    {
+      "question": "雪亜",
+      "answer": [
+        "そら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so774"
+    },
+    {
+      "question": "生翔",
+      "answer": [
+        "きっか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1564"
+    },
+    {
+      "question": "星月",
+      "answer": [
+        "ないと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=na928"
+    },
+    {
+      "question": "星亜",
+      "answer": [
+        "てぃあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=te525"
+    },
+    {
+      "question": "仁一",
+      "answer": [
+        "じんいち"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2556"
+    },
+    {
+      "question": "心綺",
+      "answer": [
+        "ここあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1958"
+    },
+    {
+      "question": "心凰",
+      "answer": [
+        "しおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2601"
+    },
+    {
+      "question": "心大",
+      "answer": [
+        "こあと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1985"
+    },
+    {
+      "question": "心貴",
+      "answer": [
+        "みゅあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2842"
+    },
+    {
+      "question": "心々桜",
+      "answer": [
+        "ここは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1983"
+    },
+    {
+      "question": "笑助",
+      "answer": [
+        "じょうすけ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2582"
+    },
+    {
+      "question": "晶来",
+      "answer": [
+        "せいな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se916"
+    },
+    {
+      "question": "純粋彩",
+      "answer": [
+        "じゅきあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2594"
+    },
+    {
+      "question": "春晴",
+      "answer": [
+        "はる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1812"
+    },
+    {
+      "question": "春華",
+      "answer": [
+        "はな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1810"
+    },
+    {
+      "question": "樹海愛",
+      "answer": [
+        "じゅきあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2632"
+    },
+    {
+      "question": "実莉愛",
+      "answer": [
+        "みりあん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2831"
+    },
+    {
+      "question": "詩々朗",
+      "answer": [
+        "しうたろう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2587"
+    },
+    {
+      "question": "咲莉",
+      "answer": [
+        "しより"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2622"
+    },
+    {
+      "question": "咲雪",
+      "answer": [
+        "えみる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ee607"
+    },
+    {
+      "question": "佐佑",
+      "answer": [
+        "さゆん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa1261"
+    },
+    {
+      "question": "宏美",
+      "answer": [
+        "こう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1923"
+    },
+    {
+      "question": "功妃",
+      "answer": [
+        "こうき"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2021"
+    },
+    {
+      "question": "虎雄",
+      "answer": [
+        "とうま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to953"
+    },
+    {
+      "question": "虎壱",
+      "answer": [
+        "とい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to957"
+    },
+    {
+      "question": "湖太",
+      "answer": [
+        "こうた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1992"
+    },
+    {
+      "question": "月彩",
+      "answer": [
+        "るるあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1441"
+    },
+    {
+      "question": "月歌",
+      "answer": [
+        "るな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ru1444"
+    },
+    {
+      "question": "結来",
+      "answer": [
+        "ゆな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1919"
+    },
+    {
+      "question": "恵衣",
+      "answer": [
+        "めい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me661"
+    },
+    {
+      "question": "琴々美",
+      "answer": [
+        "ここみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1989"
+    },
+    {
+      "question": "寛泉",
+      "answer": [
+        "ちかせ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ti379"
+    },
+    {
+      "question": "椛央",
+      "answer": [
+        "かお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2017"
+    },
+    {
+      "question": "叶葉",
+      "answer": [
+        "よつば"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo164"
+    },
+    {
+      "question": "叶采",
+      "answer": [
+        "とあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=to951"
+    },
+    {
+      "question": "楽笑",
+      "answer": [
+        "かえ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2031"
+    },
+    {
+      "question": "海六",
+      "answer": [
+        "みろ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2815"
+    },
+    {
+      "question": "快人",
+      "answer": [
+        "かいんど"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2002"
+    },
+    {
+      "question": "芽來",
+      "answer": [
+        "めいく"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me651"
+    },
+    {
+      "question": "芽瑠愛",
+      "answer": [
+        "めるあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=me659"
+    },
+    {
+      "question": "一糸",
+      "answer": [
+        "いと"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii856"
+    },
+    {
+      "question": "杏雛",
+      "answer": [
+        "もな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo677"
+    },
+    {
+      "question": "杏自由",
+      "answer": [
+        "あんじゅ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3935"
+    },
+    {
+      "question": "愛俐逢",
+      "answer": [
+        "ありあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3971"
+    },
+    {
+      "question": "亜桜歌",
+      "answer": [
+        "あさか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3977"
+    },
+    {
+      "question": "蓮真珠",
+      "answer": [
+        "れんじゅ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1196"
+    },
+    {
+      "question": "恋叶",
+      "answer": [
+        "ここ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko2000"
+    },
+    {
+      "question": "莱煌",
+      "answer": [
+        "らいき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1399"
+    },
+    {
+      "question": "由渚",
+      "answer": [
+        "ゆな"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1981"
+    },
+    {
+      "question": "優扶馬",
+      "answer": [
+        "ゆうま"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1967"
+    },
+    {
+      "question": "唯愛",
+      "answer": [
+        "ゆゆな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1979"
+    },
+    {
+      "question": "虹色",
+      "answer": [
+        "こころ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ko1998"
+    },
+    {
+      "question": "虹音",
+      "answer": [
+        "れおん"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1180"
+    },
+    {
+      "question": "天使羽",
+      "answer": [
+        "あづは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa3877"
+    },
+    {
+      "question": "創風",
+      "answer": [
+        "そう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so779"
+    },
+    {
+      "question": "春光",
+      "answer": [
+        "はるひ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1822"
+    },
+    {
+      "question": "紫陽花",
+      "answer": [
+        "しおり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2621"
+    },
+    {
+      "question": "司空",
+      "answer": [
+        "つかさ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu311"
+    },
+    {
+      "question": "桜汰",
+      "answer": [
+        "ようた"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yo160"
+    },
+    {
+      "question": "月咲",
+      "answer": [
+        "つき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=tu305"
+    },
+    {
+      "question": "一千輝",
+      "answer": [
+        "いちか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii877"
+    },
+    {
+      "question": "杏雪",
+      "answer": [
+        "あずき"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4038"
+    },
+    {
+      "question": "愛七",
+      "answer": [
+        "いせ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii896"
+    },
+    {
+      "question": "藍",
+      "answer": [
+        "あおい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4050"
+    },
+    {
+      "question": "憂良",
+      "answer": [
+        "ゆら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1849"
+    },
+    {
+      "question": "夢羽",
+      "answer": [
+        "ゆう"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=yu1973"
+    },
+    {
+      "question": "百華",
+      "answer": [
+        "もか"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo15"
+    },
+    {
+      "question": "祷織",
+      "answer": [
+        "いのり"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ii879"
+    },
+    {
+      "question": "紬壽",
+      "answer": [
+        "じゅか"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2585"
+    },
+    {
+      "question": "誠心",
+      "answer": [
+        "せいご"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=se917"
+    },
+    {
+      "question": "真乃桜",
+      "answer": [
+        "まのお"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ma1917"
+    },
+    {
+      "question": "沙利菜愛利江留",
+      "answer": [
+        "さりなありえる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=sa967"
+    },
+    {
+      "question": "海夏桃",
+      "answer": [
+        "みなも"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mi2798"
+    },
+    {
+      "question": "杏羽",
+      "answer": [
+        "あんね"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=aa4072"
+    },
+    {
+      "question": "翔伊",
+      "answer": [
+        "そらい"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=so790"
+    },
+    {
+      "question": "綺羅々",
+      "answer": [
+        "きらきら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1525"
+    },
+    {
+      "question": "絆爽璃",
+      "answer": [
+        "きさら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ki1566"
+    },
+    {
+      "question": "琥芭",
+      "answer": [
+        "くうは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ku662"
+    },
+    {
+      "question": "櫻葉",
+      "answer": [
+        "ももは"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=mo694"
+    },
+    {
+      "question": "栞望",
+      "answer": [
+        "しの"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=si2598"
+    },
+    {
+      "question": "來",
+      "answer": [
+        "らいる"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ra1406"
+    },
+    {
+      "question": "和笑菜",
+      "answer": [
+        "わかな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=wa194"
+    },
+    {
+      "question": "和々",
+      "answer": [
+        "りな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ri2367"
+    },
+    {
+      "question": "和",
+      "answer": [
+        "かずみ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ka2010"
+    },
+    {
+      "question": "錬生成",
+      "answer": [
+        "れおな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=re1195"
+    },
+    {
+      "question": "蓮月",
+      "answer": [
+        "はるな"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=ha1834"
+    },
+    {
+      "question": "麗姫",
+      "answer": [
+        "うらら"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=uu641"
+    },
+    {
+      "question": "鈴藍",
+      "answer": [
+        "べるあ"
+      ],
+      "dictionaryLinkUri": "http://dqname.jp/index.php?md=view&c=he113"
+    }
+  ]
+}
