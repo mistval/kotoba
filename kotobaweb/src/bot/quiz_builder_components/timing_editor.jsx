@@ -134,7 +134,7 @@ class TimingEditor extends Component {
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <form>
+              <form onSubmit={this.handleCommitTiming}>
                 <div className="modal-body">
                   <p className="mb-4">Configure custom timing settings.</p>
                   <div class="form-group">
@@ -152,6 +152,7 @@ class TimingEditor extends Component {
                       max={quizLimits.answerTimeLimit[1]}
                       step={.1}
                       onChange={this.handleAnswerTimeLimitChanged}
+                      required
                     />
                   </div>
                   <div class="form-group">
@@ -169,6 +170,7 @@ class TimingEditor extends Component {
                       max={quizLimits.additionalAnswerWaitWindow[1]}
                       step={.1}
                       onChange={this.handleAdditionalAnswerWaitWindowChanged}
+                      required
                     />
                   </div>
                   <div class="form-group">
@@ -186,6 +188,7 @@ class TimingEditor extends Component {
                       max={quizLimits.delayAfterAnsweredQuestion[1]}
                       step={.1}
                       onChange={this.handleDelayAfterAnsweredQuestionChanged}
+                      required
                     />
                   </div>
                   <div class="form-group">
@@ -203,11 +206,12 @@ class TimingEditor extends Component {
                       max={quizLimits.delayAfterUnansweredQuestion[1]}
                       step={.1}
                       onChange={this.handleDelayAfterUnansweredQuestionChanged}
+                      required
                     />
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.handleCommitTiming} disabled={!this.isValid()}>OK</button>
+                  <button type="submit" className="btn btn-primary">OK</button>
                 </div>
               </form>
             </div>
