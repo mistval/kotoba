@@ -125,10 +125,14 @@ function createDeckNotFoundStatus(missingDeckName) {
   };
 }
 
+function resolveIndex(index, deckLength) {
+  return index === Number.MAX_SAFE_INTEGER ? deckLength : index;
+}
+
 function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
   const deckCopy = Object.assign({}, deck);
-  deckCopy.startIndex = deckInformation.startIndex;
-  deckCopy.endIndex = deckInformation.endIndex;
+  deckCopy.startIndex = resolveIndex(deckInformation.startIndex, deck.cards.length);
+  deckCopy.endIndex = resolveIndex(deckInformation.endIndex, deck.cards.length);
   deckCopy.mc = deckCopy.forceMC || (deckInformation.mc && !deckCopy.forceNoMC);
 
   return deckCopy;

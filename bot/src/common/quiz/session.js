@@ -118,7 +118,6 @@ class SessionInformation {
     this.clearTimers();
     if (gameOver) {
       this.createdReviewDecks_ = updateReviewDecks(this.locationId_, this);
-      this.commitGameModeScoresForGameOver_();
     }
     return this.scores_.commitScores();
   }
@@ -155,17 +154,6 @@ class SessionInformation {
 
   getScoresForUserPairs() {
     return this.scores_.getScoresForUserPairs();
-  }
-
-  commitGameModeScoresForGameOver_() {
-    let deckDepleted = this.deckCollection_.isEmpty();
-      return this.getGameMode().updateGameModeLeaderboardForSessionEnded(
-        this.deckCollection_.getDeckId(),
-        this.getScores().getScoresForLb(),
-        this.startTime_,
-        this.numCardsAnswered_,
-        deckDepleted,
-        this.getSettings().gameModeSettings);
   }
 
   oneAnswerPerPlayer() {
@@ -297,7 +285,7 @@ class SessionInformation {
 
   markCurrentCardUnanswered() {
     // HACK. Unhackify this.
-    let newTimeLimit = this.getGameMode().updateAnswerTimeLimitForUnansweredQuestion(this.getSettings().answerTimeLimitInMs, this.getSettings().gameModeSettings);
+    let newTimeLimit = this.getGameMode().updateAnswerTimeLimitForUnansweredQuestion(this.getSettings().answerTimeLimitInMs);
     if (newTimeLimit !== this.getSettings().answerTimeLimitInMs) {
       this.getSettings().answerTimeLimitOverriden = true;
       this.getSettings().answerTimeLimitInMs = newTimeLimit;

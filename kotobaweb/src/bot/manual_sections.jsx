@@ -14,35 +14,33 @@ class ManualSection {
 const manualSections = [];
 
 manualSections.push(new ManualSection(
-  'Basic help',
+  'Basic Help',
   (<p>To see available quiz decks, start a quiz, and see other basic help, just say <span className="example">k!quiz</span>.</p>),
 ));
 
 manualSections.push(new ManualSection(
+  'Command Builder',
+  (<p>For interactive help writing a custom quiz command, try my <a href="/bot/quizbuilder">Quiz Command Builder</a>.</p>),
+));
+
+manualSections.push(new ManualSection(
   'Custom Decks',
-  (
-    <p>You can create custom decks and import/export them from CSV in <a href="/dashboard">the dashboard</a>.</p>
-  ),
+  (<p>You can create custom decks and import/export them from CSV in <a href="/dashboard">the dashboard</a>.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'Score Limit',
-  (<p>The score limit of a quiz can be configured by specifying a number after the quiz name. For example: <span className="example">k!quiz N1 20</span> for a JLPT N1 quiz with a score limit of 20. Note that this does not apply to conquest or inferno mode quizzes (because they do not have a score limit). For those, the first number after the deck name is the question delay. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
-));
-
-manualSections.push(new ManualSection(
-  'Question Delay',
-  (<p>The delay between questions can be configured by specifying a number in seconds after the score limit. For example: <span className="example">k!quiz N1 20 1</span> for a JLPT N1 quiz with a score limit of 20 and a delay of 1 second in between questions. For conquest and inferno mode, omit the score limit, for example: <span className="example">k!quiz-conquest N1 1</span>. You can also use the <b>nodelay</b> keyword to set the delay to zero. For example: <span className="example">k!quiz N1 nodelay</span>. That is the same as <span className="example">k!quiz N1 10 0</span>. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
-));
-
-manualSections.push(new ManualSection(
-  'Time Limit',
-  (<p>The amount of time that you have to answer each question can be configured by specifying a number in seconds after the question delay. For example: <span className="example">k!quiz N1 20 1 10</span> for a JLPT N1 quiz with a score limit of 20, a delay of 1 second in between questions, and a time limit of 10 seconds to answer each question. For conquest and inferno mode, omit the score limit, for example: <span className="example">k!quiz-conquest N1 1 10</span>. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
+  (<p>The score limit of a quiz can be configured by specifying a number after the quiz name. For example: <span className="example">k!quiz N1 20</span> for a JLPT N1 quiz with a score limit of 20. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'Reviewing',
   (<p>You can replay the questions you got wrong. To replay the questions no one got correct during the most recent game in the current channel, say <span className="example">k!quiz review</span>. To replay the questions that <b>you</b> did not get correct in the most recent game that you scored at least one point in, say <span className="example">k!quiz reviewme</span>. Reviewme does not have to be used in the same channel that you played in. You can do it elsewhere, like in a DM. Note that if I reboot, I will forget your previous game and you will not be able to review it.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Mixing Decks',
+  (<p>You can mix any decks by using the + sign. For example: <span className="example">k!quiz N1+N2+N3</span>.</p>),
 ));
 
 manualSections.push(new ManualSection(
@@ -52,17 +50,37 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Conquest Mode',
-  (<p>Conquest mode tries to teach you by repeating questions that you do not correctly answer. If you answer a question correctly the first time, you will not see it again. If you get it wrong, you will see it again at least several more times. You can save and load your progress so that you do not have to do a whole deck in one sitting (that would be pretty hardcore). You can start a quiz in conquest mode like this: <span className="example">k!quiz-conquest N1</span>.</p>),
+  (<p>Conquest mode tries to teach you by repeating questions that you do not correctly answer. If you answer a question correctly the first time, you will not see it again. If you get it wrong, you will see it again at least several more times. You can save and load your progress so that you do not have to do a whole deck in one sitting (that would be pretty hardcore). You can start a quiz in conquest mode by writing <span className="example">conquest</span> somewhere in your quiz command. For example: <span className="example">k!quiz N1 conquest</span>.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Pacing Presets',
+  (<p>You can configure the pace of the game by using the pacing presets (from fastest to slowest) <span className="example">nodelay</span>, <span className="example">faster</span>, <span className="example">fast</span>, or <span className="example">slow</span>. Just specify the preset somewhere in your quiz command. For example: <span className="example">k!quiz N1 fast</span> for an N1 quiz that's a little faster than default. For more fine-grained control over pacing, see the next four sections in this manual, or use the <span className="example">custom</span> pacing option in my <a href="/bot/quizbuilder">Quiz Command Builder</a>.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Answer Time Limit',
+  (<p>The answer time limit of a quiz can be configured by specifying a number in seconds as the <span className="example">atl=</span> parameter. For example: <span className="example">k!quiz N1 atl=10</span> for a JLPT N1 quiz where you only get 10 seconds to answer each question. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Additional Answer Wait Window',
+  (<p>After a player answers correctly, other players have a small amount of time during which they can also answer correctly and get a point. This is the <span className="example">Additional Answer Wait Window</span>. You can configure it by specifying a number in seconds as the <span className="example">aaww=</span> parameter (d'aww &lt;3). For example: <span className="example">k!quiz N1 aaww=1</span> for a JLPT N1 quiz where other players only get one second to answer the question after someone answers correctly. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Delay After Answered Question',
+  (<p>After a question is answered correctly and the Additional Answer Wait Window closes, I will show the answer and wait a few seconds before showing the next question. You can configure the length of that wait by specifying a number in seconds as the <span className="example">daaq=</span> parameter. For example: <span className="example">k!quiz N1 daaq=1</span>. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Delay After Unanswered Question',
+  (<p>If time runs out and no one answers the question, I will show the answer and wait a few seconds before showing the next question. You can configure the length of that wait by specifying a number in seconds as the <span className="example">dauq=</span> parameter. For example: <span className="example">k!quiz N1 dauq=1</span>. You might want to set this much higher than Delay After Answered Question if you want some time to add questions to Anki or something. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'Changing fonts and colors',
   (<p>You can customize fonts and colors by using the <span className="example">k!settings</span> command and going into the fonts submenu by entering <span className="example">4</span>.</p>),
-));
-
-manualSections.push(new ManualSection(
-  'Mixing Decks',
-  (<p>You can mix any decks by using the + sign. For example: <span className="example">k!quiz N1+N2+N3</span>.</p>),
 ));
 
 manualSections.push(new ManualSection(

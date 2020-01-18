@@ -1,7 +1,3 @@
-
-const globals = require('./../globals.js');
-const SettingsOverride = require('./settings_override.js');
-
 const PERCENT_CORRECT_FOR_MASTERY = .76;
 
 const indexTopForStreakLength = {
@@ -71,45 +67,13 @@ function recycleCard(card, upcomingCardsIndexArray, numDecks) {
   return true;
 }
 
-function updateMasteryModeLeaderboard(deckId, finalScoreForUser, sessionStartTime, questionsAnswered, deckDepleted) {
-  if (deckId === -1) {
-    return Promise.resolve();
-  }
-
-  let completionTimeInMs = Date.now() - sessionStartTime;
-  return globals.persistence.editGlobalData(data => {
-    data.masteryModeQuizScores = data.masteryModeQuizScores || {};
-    data.masteryModeQuizScores[deckId] = data.masteryModeQuizScores[deckId] || [];
-    for (let userId of Object.keys(finalScoreForUser)) {
-      data.masteryModeQuizScores[deckId].push({deckDepleted: deckDepleted, score: finalScoreForUser[userId], userId: userId, completionTimeInMs: completionTimeInMs});
-    }
-    return data;
-  });
-}
-
-function parseUserOverrides(settingsOverrides) {
-  let userTimeBetweenQuestionsOverrideInMs = settingsOverrides[0] * 1000;
-  let userTimeoutOverrideInMs = settingsOverrides[1] * 1000;
-
-  return {
-    userTimeBetweenQuestionsOverrideInMs,
-    userTimeoutOverrideInMs,
-  };
-}
-
 module.exports = {
   serializationIdentifier: 'MASTERY',
-  questionLimitOverride: new SettingsOverride(Number.MAX_SAFE_INTEGER, true, true),
-  unansweredQuestionLimitOverride: new SettingsOverride(10, true, true),
-  answerTimeLimitOverride: new SettingsOverride(16000, false, false, 4000, 120000),
-  newQuestionDelayAfterUnansweredOverride: new SettingsOverride(4000, false, false, 0, 120000),
-  newQuestionDelayAfterAnsweredOverride: new SettingsOverride(2500, false, false, 0, 120000),
-  additionalAnswerWaitTimeOverride: new SettingsOverride(2150, false, false, 0, 120000),
+  questionLimitOverride: Number.MAX_SAFE_INTEGER,
+  unansweredQuestionLimitOverride: 15,
   onlyOwnerOrAdminCanStop: true,
   recycleCard: recycleCard,
   overrideDeckTitle: overrideDeckTitle,
-  updateGameModeLeaderboardForSessionEnded: updateMasteryModeLeaderboard,
   isMasteryMode: true,
-  parseUserOverrides: parseUserOverrides,
   updateAnswerTimeLimitForUnansweredQuestion: timeLimit => timeLimit,
 };
