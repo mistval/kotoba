@@ -1342,9 +1342,11 @@ module.exports = {
     let gameMode;
     let remainingTokens4;
     if (remainingTokens3.indexOf('reviewme') !== -1) {
+      remainingTokens4 = remainingTokens3.filter(t => t !== 'reviewme');
       gameMode = ReviewGameMode;
       decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForUserId[msg.author.id], prefix)];
     } else if (remainingTokens3.indexOf('review') !== -1) {
+      remainingTokens4 = remainingTokens3.filter(t => t !== 'review');
       gameMode = ReviewGameMode;
       decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForLocationId[locationId], prefix)];
     } else {
