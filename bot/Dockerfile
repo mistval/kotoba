@@ -5,6 +5,7 @@ RUN apt-get -y install ffmpeg mongodb
 
 WORKDIR /var
 COPY ./node-common ./node-common
+COPY ./common ./common
 WORKDIR /var/node-common
 RUN npm ci
 
