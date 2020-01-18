@@ -256,14 +256,14 @@ const afterQuizMessages = [
     embed: {
       title: 'Fonts',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can change fonts, colors, and sizes by using the **k!settings** command and going into the **Fonts** submenu.',
+      description: 'You can change fonts, colors, and sizes by using the **<prefix>settings** command and going into the **Fonts** submenu.',
     },
   },
   {
     embed: {
       title: 'O, too fast/slow?',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'You can change timing settings by using the **k!settings** command, or say **k!help quiz** to see how to do it per-game.',
+      description: 'You can change timing settings by using the **<prefix>settings** command, or say **<prefix>help quiz** to see how to do it per-game.',
     },
   },
   {
@@ -1198,18 +1198,7 @@ function consumeLoadCommandTokens(commandTokens) {
 
 function consumeDeckListToken(commandTokens) {
   if (commandTokens.length === 0) {
-    const publicMessage = {
-      embed: {
-        title: 'Deck validation error',
-        description: 'Please specify at least one deck. For example **k!quiz n5** or **k!quiz n2+n3**',
-        color: constants.EMBED_WRONG_COLOR,
-      },
-    };
-
-    throw new FulfillmentError({
-      publicMessage,
-      logDescription: 'No decks specified',
-    });
+    throw new Error('No decks specified');
   }
 
   const decksAndMixes = commandTokens[0].split('+').filter(d => d);
