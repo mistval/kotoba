@@ -1,5 +1,6 @@
 
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
+const { quizDefaults } = require('kotoba-common');
 
 const FontHelper = require('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
@@ -84,7 +85,7 @@ module.exports = [
         description: 'This setting controls how many seconds players have to answer a quiz question before I say time\'s up and move on to the next question.',
         allowedValuesDescription: 'A number between 5 and 120 (in seconds)',
         uniqueId: 'quiz/japanese/answer_time_limit',
-        defaultUserFacingValue: '16',
+        defaultUserFacingValue: quizDefaults.answerTimeLimit.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(5, 120),
@@ -94,7 +95,7 @@ module.exports = [
         description: 'This setting controls how many points the quiz game stops at. When a player scores this many points, the game stops and they win.',
         allowedValuesDescription: 'A whole number between 1 and 10000',
         uniqueId: 'quiz/japanese/score_limit',
-        defaultUserFacingValue: '10',
+        defaultUserFacingValue: quizDefaults.scoreLimit.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToInt,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(1, 10000),
@@ -115,7 +116,7 @@ module.exports = [
         description: 'This setting controls how long I will wait (in seconds) after a timed out question before showing a new one. By setting this higher, players get more time to view and consider the correct answer.',
         allowedValuesDescription: 'A number between 0 and 120',
         uniqueId: 'quiz/japanese/new_question_delay_after_unanswered',
-        defaultUserFacingValue: '3.25',
+        defaultUserFacingValue: quizDefaults.delayAfterUnansweredQuestion.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0, 120),
@@ -125,7 +126,7 @@ module.exports = [
         description: 'This setting controls how long I will wait (in seconds) after an answer is correctly answered and the window for additional answers closes, before I show a new question. For example, if **Additional answer wait window** is set to two, and this setting is set to three, then after a question is answered correctly a total of five seconds will pass before I ask a new one.',
         allowedValuesDescription: 'A number between 0 and 120',
         uniqueId: 'quiz/japanese/new_question_delay_after_answered',
-        defaultUserFacingValue: '2.5',
+        defaultUserFacingValue: quizDefaults.delayAfterAnsweredQuestion.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0, 120),
@@ -135,7 +136,7 @@ module.exports = [
         description: 'After a question is correctly answered, other players have a chance to also answer the question and get a point. This setting controls how long they have (in seconds).',
         allowedValuesDescription: 'A number between 0 and 120',
         uniqueId: 'quiz/japanese/additional_answer_wait_time',
-        defaultUserFacingValue: '2.15',
+        defaultUserFacingValue: quizDefaults.additionalAnswerWaitWindow.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0, 120),

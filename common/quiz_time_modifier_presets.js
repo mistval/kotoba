@@ -1,3 +1,5 @@
+const quizDefaults = require('./quiz_defaults.js');
+
 module.exports = {
   nodelay: {
     answerTimeLimit: 16,
@@ -18,10 +20,10 @@ module.exports = {
     additionalAnswerWaitWindow: 1,
   },
   normal: {
-    answerTimeLimit: 16,
-    delayAfterUnansweredQuestion: 3,
-    delayAfterAnsweredQuestion: 2.2,
-    additionalAnswerWaitWindow: 2,
+    answerTimeLimit: quizDefaults.answerTimeLimit,
+    delayAfterUnansweredQuestion: quizDefaults.delayAfterUnansweredQuestion,
+    delayAfterAnsweredQuestion: quizDefaults.delayAfterAnsweredQuestion,
+    additionalAnswerWaitWindow: quizDefaults.additionalAnswerWaitWindow,
   },
   slow: {
     answerTimeLimit: 16,
