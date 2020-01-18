@@ -9,6 +9,7 @@ import StrokeOrder from '../strokeorder/strokeorder';
 import KanjiGameCreate from '../kanjigame/create';
 import KanjiGameRoom from '../kanjigame/game';
 import BotQuizManual from '../bot/quiz_manual';
+import BotQuizBuilder from '../bot/quiz_builder';
 import KanjiGameJoin from '../kanjigame/join';
 import Analytics from '../util/analytics';
 import ShiritoriGameCreate from '../shiritori/create';
@@ -35,6 +36,7 @@ function render() {
           <Route exact path="/about" component={About} />
           <Route exact path="/bot" component={BotMain} />
           <Route exact path="/bot/quiz" component={BotQuizManual} />
+          <Route exact path="/bot/quizbuilder" component={BotQuizBuilder} />
           <Route exact path="/strokeorder" component={StrokeOrder} />
           <Route exact path="/dashboard/decks/:id" component={CustomDeck} />
           <Route exact path="/dashboard/game_reports/:id" component={GameReport} />
