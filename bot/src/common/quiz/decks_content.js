@@ -6,20 +6,15 @@ const stationsList = ["stations_full","stations_tokyo","stations_osaka","station
 const placesList = ["places_full","tokyo","kanagawa","saitama","chiba","ibaraki","tochigi","gunma","osaka","hyogo","kyoto","shiga","nara","wakayama","hokkaido","aomori","iwate","miyagi","akita","yamagata","fukushima","toyama","ishikawa","fukui","niigata","nagano","yamanashi","aichi","gifu","shizuoka","mie","tottori","shimane","okayama","hiroshima","yamaguchi","tokushima","kagawa","ehime","kochi","fukuoka","saga","nagasaki","kumamoto","oita","miyazaki","kagoshima","okinawa"];
 
 const categoryFields = [
-  {name: 'JLPT Kanji Reading Decks', value: 'N5 N4 N3 N2 N1'},
-  {name: 'JLPT Grammar Decks', value: 'gN5 gN4 gN3 gN2 gN1 vuN3 vuN2 vuN1'},
-  {name: 'JLPT Kanji Usage Decks', value: 'k_N5 k_N4 k_N3 k_N2 k_N1'},
-  {name: 'JLPT Listening Decks (audio) (under construction)', value: 'LN3 LN2 LN1'},
-  {name: 'Kanken Kanji Reading Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k'},
-  {name: 'Listening Vocabulary Decks (audio)', value: 'lvN5 lvN4 lvN3 lvN2 lvN1 lv10k lv9k lv8k lv7k lv6k lv5k lv4k lv3k lvj2k lv2k lvj1k lv1k'},
+  {name: 'JLPT Decks', value: 'N5 N4 N3 N2 N1 gN5 gN4 gN3 gN2 gN1 vuN3 vuN2 vuN1 k_N5 k_N4 k_N3 k_N2 k_N1 N5m N4m N3m N2m N1m'},
+  {name: 'Kanken Decks', value: '10k 9k 8k 7k 6k 5k 4k 3k j2k 2k j1k 1k 10km 9km 8km 7km 6km 5km 4km 3km j2km 2km j1km 1km'},
+  {name: 'Listening Decks (must be in voice channel)', value: 'LN3 LN2 LN1 lvN5 lvN4 lvN3 lvN2 lvN1 lv10k lv9k lv8k lv7k lv6k lv5k lv4k lv3k lvj2k lv2k lvj1k lv1k'},
   {name: '用語 Decks', value: 'pasokon rikagaku igaku shinrigaku keizai houritsu kenchiku nature animals birds bugs fish plants vegetables'},
-  {name: 'Japanese Proper Noun Decks', value: 'myouji namae onago seiyuu cities prefectures countries emperors'},
   {name: 'Japanese Place Name Decks', value: 'places_full tokyo osaka hokkaido aichi kanagawa (say **<prefix>quiz places** to see the rest)'},
   {name: 'Japanese Station Name Decks', value: 'stations_full stations_tokyo stations_osaka (say **<prefix>quiz stations** to see the rest)'},
-  {name: 'Japanese Misc. Decks', value: 'hiragana katakana common common_nojlpt k33 hard haard insane hentaigana kklc ranobe numbers yojijukugo kirakira sao jsyn jsyn_full jptrivia kokuji onomato 擬音語 radicals jouyou images jpdefs'},
-  {name: 'Japanese Word Meaning Decks', value: 'N5m N4m N3m N2m N1m 10km 9km 8km 7km 6km 5km 4km 3km j2km 2km j1km 1km animalsm birdsm bugsm fishm plantsm vegetablesm hardm commonm kokujim kklcm'},
+  {name: 'Japanese Misc. Decks', value: 'hiragana katakana common common_nojlpt k33 hard haard insane hentaigana kklc ranobe numbers yojijukugo kirakira sao jsyn jsyn_full jptrivia kokuji onomato 擬音語 radicals jouyou images jpdefs myouji namae onago seiyuu cities prefectures countries emperors'},
   {name: 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams4 anagrams5 anagrams6 (up to anagrams10)\nejtrans esyn_easy esyn_med esyn_hard'},
-  {name: 'Mixed Decks. The Grand Tour!', value: 'easymix medmix hardmix hardermix insanemix'},
+  {name: 'Mixed Decks', value: 'easymix medmix hardmix hardermix insanemix'},
 ];
 
 module.exports.createContent = function(prefix) {
