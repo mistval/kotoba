@@ -1071,11 +1071,11 @@ function throwIfShutdownScheduled(channelId) {
 }
 
 function verifyValueIsInRange(settingName, settingAbbreviation, min, max, value) {
-  if (value < min || value > max) {
+  if (value < min || value > max || Number.isNaN(value)) {
     const publicMessage = {
       embed: {
         title: 'Setting validation error',
-        description: `Invalid valid for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**.`,
+        description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**.`,
         color: constants.EMBED_WRONG_COLOR,
       },
     };
