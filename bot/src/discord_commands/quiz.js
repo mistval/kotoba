@@ -978,7 +978,15 @@ function getReviewDeckOrThrow(deck, prefix) {
   return deck;
 }
 
-const rangeRegex = /\(([0-9]*) *- *([0-9]*)\)/;
+const rangeRegex = /\(([0-9]*|end) *- *([0-9]*|end)\)/;
+
+function parseRangeLimit(rangeLimitStr) {
+  if (rangeLimitStr === 'end') {
+    return Number.MAX_SAFE_INTEGER;
+  }
+
+  return parseInt(rangeLimitStr, 10);
+}
 
 function getDeckNameAndModifierInformation(deckNames) {
   return deckNames.map((deckName) => {
@@ -989,8 +997,8 @@ function getDeckNameAndModifierInformation(deckNames) {
 
     const match = deckName.match(rangeRegex);
     if (match) {
-      startIndex = parseInt(match[1], 10);
-      endIndex = parseInt(match[2], 10);
+      startIndex = parseRangeLimit(match[1]);
+      endIndex = parseRangeLimit(match[2]);
       nameWithoutExtension = deckName.replace(rangeRegex, '');
     }
 
@@ -1340,7 +1348,7 @@ module.exports = {
       if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
         return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **${prefix}quiz** to see the decks I have!`, null, msg);
       } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.INDEX_OUT_OF_RANGE) {
-        return msg.channel.createMessage(`Something is wrong with the range for ${decksLookupResult.deckName}. The maximum range for that deck is (${decksLookupResult.allowedStart}-${decksLookupResult.allowedEnd})`);
+        return msg.channel.createMessage(`Something is wrong with the range for ${decksLookupResult.deckName}. The maximum range for that deck is (${decksLookupResult.allowedStart}-${decksLookupResult.allowedEnd}).`);
       } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.ALL_DECKS_FOUND) {
         ({ decks } = decksLookupResult);
       } else {
