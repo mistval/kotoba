@@ -340,7 +340,8 @@ class EditDeck extends Component {
         return;
       }
 
-      download(output, `${this.state.gridDeck.shortName || 'deck'}.csv`);
+      const outputWithBom = `\ufeff${output}`;
+      download(outputWithBom, `${this.state.gridDeck.shortName || 'deck'}.csv`);
     });
   }
 
