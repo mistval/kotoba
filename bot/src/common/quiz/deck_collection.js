@@ -168,6 +168,10 @@ class DeckCollection {
 
     let card = this.previousCardCache[deckIndex][cardIndex];
     if (!card) {
+      if (cardIndex >= this.decks[deckIndex].cards.length) {
+        return this.popUndisplayedCard(settings, gameMode);
+      }
+
       const deckCard = await this.decks[deckIndex].cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings, gameMode);
