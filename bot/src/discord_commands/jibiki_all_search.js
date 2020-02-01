@@ -1,6 +1,6 @@
 const {throwPublicErrorInfo} = require('./../common/util/errors.js');
 const {Navigation, NavigationChapter, FulfillmentError} = require('monochrome-bot');
-const axios = require('axios');
+const axios = require('axios').create({timeout: 10000, validateStatus: () => true});
 const constants = require('./../common/constants.js');
 
 const jibikiApiUri = 'https://api.jibiki.app';
@@ -10,7 +10,7 @@ module.exports = {
   commandAliases: ['jibiki', 'jb'],
   cooldown: 3,
   uniqueId: 'best_dictionary',
-  shortDescription: 'Search Jibiki.',
+  shortDescription: 'Search Jibiki for words, kanji and sentences.',
   usageExample: '<prefix>jibiki 女らしい',
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
@@ -35,6 +35,16 @@ module.exports = {
     }
 
     if (response.status === 200) {
+      if (response.data.length === 0) {
+        return msg.channel.createMessage({
+          embed: {
+            title: `No results for ${suffix}`,
+            description: 'You might want to try searching for a different term',
+            color: constants.EMBED_NEUTRAL_COLOR,
+          }
+        });
+      }
+
       const wordPages = [];
       const kanjiPages = [];
       const sentencePages = [];
