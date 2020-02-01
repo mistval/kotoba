@@ -26,8 +26,8 @@ module.exports = {
       });
     }
 
-    // eslint-disable-next-line no-eval
     try {
+      // eslint-disable-next-line no-eval
       const result = await eval(suffix);
       const text = JSON.stringify(result, null, 2);
 

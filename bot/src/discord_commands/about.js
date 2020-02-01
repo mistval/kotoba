@@ -1,7 +1,6 @@
 const { erisVersion } = require('monochrome-bot');
 const monochromeVersion = require('monochrome-bot/package.json').version;
 
-const monochromeVersionString = `Monochrome v${monochromeVersion}`;
 const erisVersionString = `Eris v${erisVersion}`;
 const nameString = 'K33#5261';
 const otherDevsString = 'Alkhwarizm#7349 💝 Foxie 💝#0001';

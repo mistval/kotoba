@@ -1,6 +1,6 @@
-const {throwPublicErrorInfo} = require('./../common/util/errors.js');
-const {Navigation, NavigationChapter, FulfillmentError} = require('monochrome-bot');
-const axios = require('axios').create({timeout: 10000, validateStatus: () => true});
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const { Navigation, NavigationChapter, FulfillmentError } = require('monochrome-bot');
+const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
 
 const jibikiApiUri = 'https://api.jibiki.app';
@@ -14,7 +14,7 @@ module.exports = {
   usageExample: '<prefix>jibiki 女らしい',
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
-      const {prefix} = msg;
+      const { prefix } = msg;
       return throwPublicErrorInfo('jibiki', `Say **${prefix}jibiki [text]** to search for words. For example: **${prefix}jibiki dance**`, 'No suffix');
     }
 
@@ -28,10 +28,10 @@ module.exports = {
             title: 'Amy is dead!',
             description: 'It looks like Jibiki servers are not responding!\nTry again later.',
             color: constants.EMBED_WRONG_COLOR,
-          }
+          },
         },
         logDescription: 'Jibiki timeout',
-      })
+      });
     }
 
     if (response.status === 200) {
@@ -41,7 +41,7 @@ module.exports = {
             title: `No results for ${suffix}`,
             description: 'You might want to try searching for a different term',
             color: constants.EMBED_NEUTRAL_COLOR,
-          }
+          },
         });
       }
 
@@ -264,9 +264,9 @@ module.exports = {
             title: 'Amy says no.',
             description: 'Jibiki; Internal server error.\nTry again later!',
             color: constants.EMBED_WRONG_COLOR,
-          }
+          },
         },
-        logDescription: `Jibiki internal server error`,
+        logDescription: 'Jibiki internal server error',
       });
     }
 
@@ -276,7 +276,7 @@ module.exports = {
           title: `Jibiki returned an unexpected code (${response.status})`,
           description: 'You might want to try again later.',
           color: constants.EMBED_WRONG_COLOR,
-        }
+        },
       },
       logDescription: `Jibiki ${response.status} status`,
     });
