@@ -4,7 +4,7 @@ const monochromeVersion = require('monochrome-bot/package.json').version;
 const monochromeVersionString = `Monochrome v${monochromeVersion}`;
 const erisVersionString = `Eris v${erisVersion}`;
 const nameString = 'K33#5261';
-const otherDevsString = 'Alkhwarizm#7349';
+const otherDevsString = 'Alkhwarizm#7349 💝 Foxie 💝#0001';
 
 function createPadding(length, longestLength) {
   return new Array((longestLength - length) + 1).join(' ');
@@ -32,6 +32,7 @@ Kotoba runs on the monochrome bot framework (https://github.com/mistval/monochro
 
 Kotoba uses data from the following sources:
     - Jisho (http://jisho.org)
+    - Jibiki (https://jibiki.app)
     - Weblio (http://weblio.jp/)
     - Google Translate (https://translate.google.com/)
     - KanjiVG (http://kanjivg.tagaini.net/)
