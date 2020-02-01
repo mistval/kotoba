@@ -1,5 +1,5 @@
 const {throwPublicErrorInfo} = require('./../common/util/errors.js');
-const {Navigation, NavigationChapter} = require('monochrome-bot');
+const {Navigation, NavigationChapter, FulfillmentError} = require('monochrome-bot');
 const axios = require('axios');
 const constants = require('./../common/constants.js');
 
@@ -18,7 +18,21 @@ module.exports = {
       return throwPublicErrorInfo('jibiki', `Say **${prefix}jibiki [text]** to search for words. For example: **${prefix}jibiki dance**`, 'No suffix');
     }
 
-    const response = await axios.get(`${jibikiApiUri}/all?query=${encodeURIComponent(suffix)}&sentenceCount=5`);
+    let response;
+    try {
+      response = await axios.get(`${jibikiApiUri}/all?query=${encodeURIComponent(suffix)}&sentenceCount=5`);
+    } catch (exception) {
+      throw new FulfillmentError({
+        publicMessage: {
+          embed: {
+            title: 'Amy is dead!',
+            description: 'It looks like Jibiki servers are not responding!\nTry again later.',
+            color: constants.EMBED_WRONG_COLOR,
+          }
+        },
+        logDescription: 'Jibiki timeout',
+      })
+    }
 
     if (response.status === 200) {
       const wordPages = [];
@@ -234,21 +248,27 @@ module.exports = {
         msg,
       );
     } else if (response.status === 500) {
-      return msg.channel.createMessage({
-        embed: {
-          title: 'Amy says no.',
-          description: 'Jibiki; Internal server error.\nTry again later!',
-          color: constants.EMBED_WRONG_COLOR,
+      throw new FulfillmentError({
+        publicMessage: {
+          embed: {
+            title: 'Amy says no.',
+            description: 'Jibiki; Internal server error.\nTry again later!',
+            color: constants.EMBED_WRONG_COLOR,
+          }
         },
+        logDescription: `Jibiki internal server error`,
       });
     }
 
-    return msg.channel.createMessage({
-      embed: {
-        title: `Jibiki returned an unexpected code (${response.status})`,
-        description: 'You might want to try again later.',
-        color: constants.EMBED_WRONG_COLOR,
+    throw new FulfillmentError({
+      publicMessage: {
+        embed: {
+          title: `Jibiki returned an unexpected code (${response.status})`,
+          description: 'You might want to try again later.',
+          color: constants.EMBED_WRONG_COLOR,
+        }
       },
+      logDescription: `Jibiki ${response.status} status`,
     });
   },
 };
