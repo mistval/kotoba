@@ -1,6 +1,6 @@
-const {throwPublicErrorInfo} = require('./../common/util/errors.js');
-const {Navigation, NavigationChapter, FulfillmentError} = require('monochrome-bot');
-const axios = require('axios').create({timeout: 10000, validateStatus: () => true});
+const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const { Navigation, NavigationChapter, FulfillmentError } = require('monochrome-bot');
+const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
 const array = require('./../common/util/array');
 
@@ -15,7 +15,7 @@ module.exports = {
   usageExample: '<prefix>jibiki 女らしい',
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
-      const {prefix} = msg;
+      const { prefix } = msg;
       return throwPublicErrorInfo('jibiki', `Say **${prefix}jibiki [text]** to search for words. For example: **${prefix}jibiki dance**`, 'No suffix');
     }
 
@@ -46,10 +46,10 @@ module.exports = {
         });
       }
 
-      const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, i) => ({
+      const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => ({
         embed: {
           title: `Showing results for ${suffix}`,
-          description: `Page ${i + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
+          description: `Page ${index + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
           url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
           color: 16740862,
           footer: {
@@ -167,54 +167,56 @@ module.exports = {
         },
       }));
 
-      const sentencePages = response.data.filter(entry => entry.sentences.length > 0).map(entry => ({
-        embed: {
-          title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
-            ? entry.word.forms[0].kanji.literal
-            : entry.word.forms[0].reading.literal}`,
-          url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-          color: 16740862,
-          footer: {
-            icon_url: 'https://jibiki.app/logo_circle.png',
-            text: 'Powered by Jibiki',
-          },
-          author: {
-            name: 'Powered by Jibiki',
+      const sentencePages = response.data
+        .filter(entry => entry.sentences.length > 0)
+        .map(entry => ({
+          embed: {
+            title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
+              ? entry.word.forms[0].kanji.literal
+              : entry.word.forms[0].reading.literal}`,
             url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-            icon_url: 'https://jibiki.app/logo_circle.png',
+            color: 16740862,
+            footer: {
+              icon_url: 'https://jibiki.app/logo_circle.png',
+              text: 'Powered by Jibiki',
+            },
+            author: {
+              name: 'Powered by Jibiki',
+              url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+              icon_url: 'https://jibiki.app/logo_circle.png',
+            },
+            fields: entry.sentences.map((sentence) => {
+              let name = '';
+              let value = '';
+
+              if (sentence.tags.length > 0) {
+                name += '(';
+              }
+              name += sentence.tags.join(', ');
+              if (sentence.tags.length > 0) {
+                name += ') ';
+              }
+              name += sentence.sentence;
+
+              Object.values(sentence.translations).forEach((translation, i) => {
+                value += `${i + 1}. `;
+                if (translation.tags.length > 0) {
+                  value += '(';
+                }
+                value += translation.tags.join(', ');
+                if (translation.tags.length > 0) {
+                  value += ') ';
+                }
+                value += translation.sentence;
+              });
+
+              return {
+                name,
+                value,
+              };
+            }),
           },
-          fields: entry.sentences.map((sentence) => {
-            let name = '';
-            let value = '';
-
-            if (sentence.tags.length > 0) {
-              name += '(';
-            }
-            name += sentence.tags.join(', ');
-            if (sentence.tags.length > 0) {
-              name += ') ';
-            }
-            name += sentence.sentence;
-
-            Object.values(sentence.translations).forEach((translation, i) => {
-              value += `${i + 1}. `;
-              if (translation.tags.length > 0) {
-                value += '(';
-              }
-              value += translation.tags.join(', ');
-              if (translation.tags.length > 0) {
-                value += ') ';
-              }
-              value += translation.sentence;
-            });
-
-            return {
-              name,
-              value,
-            };
-          }),
-        },
-      }));
+        }));
 
       return monochrome.getNavigationManager().show(
         new Navigation(
