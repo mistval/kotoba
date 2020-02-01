@@ -2,6 +2,7 @@ const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const { Navigation, NavigationChapter, FulfillmentError } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
+const array = require('./../common/util/array');
 
 const jibikiApiUri = 'https://api.jibiki.app';
 const maxFieldsPerPage = 8;
@@ -45,131 +46,146 @@ module.exports = {
         });
       }
 
-      const wordPages = [];
-      const kanjiPages = [];
-      const sentencePages = [];
+      const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => ({
+        embed: {
+          title: `Showing results for ${suffix}`,
+          description: `Page ${index + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
+          url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+          color: 16740862,
+          footer: {
+            icon_url: 'https://jibiki.app/logo_circle.png',
+            text: 'Powered by Jibiki',
+          },
+          author: {
+            name: 'Powered by Jibiki',
+            url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+            icon_url: 'https://jibiki.app/logo_circle.png',
+          },
+          fields: chunk.map((entry) => {
+            let word = '';
 
-      for (let page = 0; page < Math.ceil(response.data.length / maxFieldsPerPage); page += 1) {
-        const wordFields = [];
-
-        for (
-          let field = 0;
-          field < response.data.length - (page * maxFieldsPerPage);
-          field += 1
-        ) {
-          const entry = response.data[(page * maxFieldsPerPage) + field];
-          let word = '';
-
-          if (entry.word.forms[0].kanji.info !== null) {
-            word += `*Kanji note; ${entry.word.forms[0].kanji.info}*\n`;
-          }
-          if (entry.word.forms[0].reading.info !== null) {
-            word += `*Reading note; ${entry.word.forms[0].reading.info}*\n`;
-          }
-
-          if (entry.word.jlpt !== null) {
-            word += `**JLPT N${entry.word.jlpt}**\n`;
-          }
-
-          Object.values(entry.word.senses).forEach((sens, i) => {
-            if (sens.part_of_speech.length !== 0) {
-              word += `${i + 1}. (`;
+            if (entry.word.forms[0].kanji.info !== null) {
+              word += `*Kanji note; ${entry.word.forms[0].kanji.info}*\n`;
             }
-            word += sens.part_of_speech.map(pos => pos.short).join(', ');
-            if (sens.part_of_speech.length !== 0) {
-              word += ') ';
+            if (entry.word.forms[0].reading.info !== null) {
+              word += `*Reading note; ${entry.word.forms[0].reading.info}*\n`;
             }
 
-            if (sens.field_of_use.length !== 0) {
-              word += '[';
-            }
-            word += sens.field_of_use.map(fld => fld.long).join(', ');
-            if (sens.field_of_use.length !== 0) {
-              word += '] ';
+            if (entry.word.jlpt !== null) {
+              word += `**JLPT N${entry.word.jlpt}**\n`;
             }
 
-            word += `${sens.definitions.join('; ')}\n`;
-            if (sens.miscellaneous.length > 0) {
-              word += `*${sens.miscellaneous.join('; ')}*`;
-            }
-          });
-
-          wordFields.push({
-            name: entry.word.forms[0].kanji.literal === null
-              ? entry.word.forms[0].reading.literal
-              : `${entry.word.forms[0].kanji.literal}【${entry.word.forms[0].reading.literal}】`,
-            value: word,
-          });
-
-          if (entry.kanji.length > 0) {
-            const kanjiFields = [];
-
-            Object.values(entry.kanji).forEach((kanji) => {
-              let value = '';
-
-              value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
-              value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
-
-              value += '**Definitions**\n';
-              kanji.definitions.forEach((definition, i) => {
-                value += `${i + 1}. ${definition}\n`;
-              });
-
-              value += '\n';
-
-              if (kanji.miscellaneous.jlpt !== null) {
-                value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
+            Object.values(entry.word.senses).forEach((sens, i) => {
+              if (sens.part_of_speech.length !== 0) {
+                word += `${i + 1}. (`;
               }
-              if (kanji.miscellaneous.grade !== null) {
-                value += `Grade ${kanji.miscellaneous.grade}\n`;
-              }
-              if (kanji.miscellaneous.variant_type !== null) {
-                value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
-              }
-              if (kanji.miscellaneous.variant !== null) {
-                value += `Variant ${kanji.miscellaneous.variant}\n`;
-              }
-              if (kanji.miscellaneous.frequency !== null) {
-                value += `Frequency #${kanji.miscellaneous.frequency}\n`;
-              }
-              if (kanji.miscellaneous.radical_name !== null) {
-                value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
-              }
-              if (kanji.miscellaneous.stroke_count !== null) {
-                value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
+              word += sens.part_of_speech.map(pos => pos.short).join(', ');
+              if (sens.part_of_speech.length !== 0) {
+                word += ') ';
               }
 
-              kanjiFields.push({
-                name: kanji.literal,
-                value,
-              });
+              if (sens.field_of_use.length !== 0) {
+                word += '[';
+              }
+              word += sens.field_of_use.map(fld => fld.long).join(', ');
+              if (sens.field_of_use.length !== 0) {
+                word += '] ';
+              }
+
+              word += `${sens.definitions.join('; ')}\n`;
+              if (sens.miscellaneous.length > 0) {
+                word += `*${sens.miscellaneous.join('; ')}*\n`;
+              }
             });
 
-            kanjiPages.push({
-              embed: {
-                title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
-                  ? entry.word.forms[0].kanji.literal
-                  : entry.word.forms[0].reading.literal}`,
-                url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-                color: 16740862,
-                footer: {
-                  icon_url: 'https://jibiki.app/logo_circle.png',
-                  text: 'Powered by Jibiki',
-                },
-                author: {
-                  name: 'Powered by Jibiki',
-                  url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-                  icon_url: 'https://jibiki.app/logo_circle.png',
-                },
-                fields: kanjiFields,
-              },
+            return {
+              name: entry.word.forms[0].kanji.literal === null
+                ? entry.word.forms[0].reading.literal
+                : `${entry.word.forms[0].kanji.literal}【${entry.word.forms[0].reading.literal}】`,
+              value: word,
+            };
+          }),
+        },
+      }));
+
+      const kanjiPages = response.data.filter(entry => entry.kanji.length > 0).map(entry => ({
+        embed: {
+          title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
+            ? entry.word.forms[0].kanji.literal
+            : entry.word.forms[0].reading.literal}`,
+          url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+          color: 16740862,
+          footer: {
+            icon_url: 'https://jibiki.app/logo_circle.png',
+            text: 'Powered by Jibiki',
+          },
+          author: {
+            name: 'Powered by Jibiki',
+            url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+            icon_url: 'https://jibiki.app/logo_circle.png',
+          },
+          fields: entry.kanji.map((kanji) => {
+            let value = '';
+
+            value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
+            value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
+
+            value += '**Definitions**\n';
+            kanji.definitions.forEach((definition, i) => {
+              value += `${i + 1}. ${definition}\n`;
             });
-          }
 
-          if (entry.sentences.length > 0) {
-            const sentenceFields = [];
+            value += '\n';
 
-            Object.values(entry.sentences).forEach((sentence) => {
+            if (kanji.miscellaneous.jlpt !== null) {
+              value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
+            }
+            if (kanji.miscellaneous.grade !== null) {
+              value += `Grade ${kanji.miscellaneous.grade}\n`;
+            }
+            if (kanji.miscellaneous.variant_type !== null) {
+              value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
+            }
+            if (kanji.miscellaneous.variant !== null) {
+              value += `Variant ${kanji.miscellaneous.variant}\n`;
+            }
+            if (kanji.miscellaneous.frequency !== null) {
+              value += `Frequency #${kanji.miscellaneous.frequency}\n`;
+            }
+            if (kanji.miscellaneous.radical_name !== null) {
+              value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
+            }
+            if (kanji.miscellaneous.stroke_count !== null) {
+              value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
+            }
+
+            return {
+              name: kanji.literal,
+              value,
+            };
+          }),
+        },
+      }));
+
+      const sentencePages = response.data
+        .filter(entry => entry.sentences.length > 0)
+        .map(entry => ({
+          embed: {
+            title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
+              ? entry.word.forms[0].kanji.literal
+              : entry.word.forms[0].reading.literal}`,
+            url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+            color: 16740862,
+            footer: {
+              icon_url: 'https://jibiki.app/logo_circle.png',
+              text: 'Powered by Jibiki',
+            },
+            author: {
+              name: 'Powered by Jibiki',
+              url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+              icon_url: 'https://jibiki.app/logo_circle.png',
+            },
+            fields: entry.sentences.map((sentence) => {
               let name = '';
               let value = '';
 
@@ -194,53 +210,13 @@ module.exports = {
                 value += translation.sentence;
               });
 
-              sentenceFields.push({
+              return {
                 name,
                 value,
-              });
-            });
-
-            sentencePages.push({
-              embed: {
-                title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
-                  ? entry.word.forms[0].kanji.literal
-                  : entry.word.forms[0].reading.literal}`,
-                url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-                color: 16740862,
-                footer: {
-                  icon_url: 'https://jibiki.app/logo_circle.png',
-                  text: 'Powered by Jibiki',
-                },
-                author: {
-                  name: 'Powered by Jibiki',
-                  url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-                  icon_url: 'https://jibiki.app/logo_circle.png',
-                },
-                fields: sentenceFields,
-              },
-            });
-          }
-        }
-
-        wordPages.push({
-          embed: {
-            title: `Showing results for ${suffix}`,
-            description: `Page ${page + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
-            url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-            color: 16740862,
-            footer: {
-              icon_url: 'https://jibiki.app/logo_circle.png',
-              text: 'Powered by Jibiki',
-            },
-            author: {
-              name: 'Powered by Jibiki',
-              url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-              icon_url: 'https://jibiki.app/logo_circle.png',
-            },
-            fields: wordFields,
+              };
+            }),
           },
-        });
-      }
+        }));
 
       return monochrome.getNavigationManager().show(
         new Navigation(
