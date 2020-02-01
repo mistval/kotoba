@@ -6,10 +6,6 @@ const erisVersionString = `Eris v${erisVersion}`;
 const nameString = 'K33#5261';
 const otherDevsString = 'Alkhwarizm#7349 💝 Foxie 💝#0001';
 
-function createPadding(length, longestLength) {
-  return new Array((longestLength - length) + 1).join(' ');
-}
-
 module.exports = {
   commandAliases: ['about'],
   uniqueId: 'about53463',
@@ -20,9 +16,9 @@ module.exports = {
     return msg.channel.createMessage(`\`\`\`md
 # Kotoba
 
-[ CREATOR    ][ ${nameString}${createPadding(nameString.length, monochromeVersionString.length)} ]
-[ OTHER DEVS ][ ${otherDevsString}${createPadding(otherDevsString.length, monochromeVersionString.length)} ]
-[ LIBRARY    ][ ${erisVersionString}${createPadding(erisVersionString.length, monochromeVersionString.length)} ]
+[ CREATOR    ][ ${nameString} ]
+[ OTHER DEVS ][ ${otherDevsString} ]
+[ LIBRARY    ][ ${erisVersionString} ]
 [ FRAMEWORK  ][ Monochrome v${monochromeVersion} ]
 
 Need help, want to report a bug, make a suggestion, etc? Visit https://discordapp.com/invite/zkAKbyJ
