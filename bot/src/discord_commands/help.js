@@ -13,6 +13,7 @@ const NAVIGATION_EXPIRATION_TIME_MS = 30 * 60 * 1000; // 30 minutes
 
 const COMMANDS_TO_GENERATE_HELP_FOR = [
   'jisho',
+  'jibiki',
   'kanji',
   'strokeorder',
   'quiz',
