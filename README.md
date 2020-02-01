@@ -39,7 +39,7 @@ The bot will take some time to build and should then come online. Note that it w
 
 ```sh
 cd ./bot
-npm install
+npm ci
 npm start
 ```
 
