@@ -198,7 +198,7 @@ function showAdvancedHelp(monochrome, msg, targetAlias) {
     permissionsString += 'None';
   }
   fields.push({ name: 'Required permissions', value: permissionsString, inline: true });
-  if (command.aliases.length > 0) {
+  if (command.aliases.length > 1) {
     fields.push({
       name: 'Aliases',
       value: command.aliases.slice(1).map(alias => `${msg.prefix}${alias}`).join(', '),
