@@ -222,7 +222,7 @@ module.exports = {
         new Navigation(
           msg.author.id,
           true,
-          '🇯',
+          '🇼',
           {
             '🇼': NavigationChapter.fromContent(wordPages),
             '🇰': NavigationChapter.fromContent(kanjiPages),
