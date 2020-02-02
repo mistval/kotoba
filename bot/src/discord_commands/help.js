@@ -198,6 +198,13 @@ function showAdvancedHelp(monochrome, msg, targetAlias) {
     permissionsString += 'None';
   }
   fields.push({ name: 'Required permissions', value: permissionsString, inline: true });
+  if (command.aliases.length > 0) {
+    fields.push({
+      name: 'Aliases',
+      value: command.aliases.slice(1).map(alias => `${msg.prefix}${alias}`).join(', '),
+      inline: true,
+    });
+  }
   if (command.usageExample) {
     fields.push({ name: 'Usage example', value: command.usageExample.replace(PREFIX_REPLACE_REGEX, msg.prefix) });
   }

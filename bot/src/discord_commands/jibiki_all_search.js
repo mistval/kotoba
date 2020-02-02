@@ -224,9 +224,9 @@ module.exports = {
           true,
           '🇯',
           {
-            '🇯': NavigationChapter.fromContent(wordPages),
+            '🇼': NavigationChapter.fromContent(wordPages),
             '🇰': NavigationChapter.fromContent(kanjiPages),
-            '🇪': NavigationChapter.fromContent(sentencePages),
+            '🇸': NavigationChapter.fromContent(sentencePages),
           },
         ),
         constants.NAVIGATION_EXPIRATION_TIME,
