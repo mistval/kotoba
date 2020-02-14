@@ -53,8 +53,8 @@ module.exports = {
           url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
           color: 16740862,
           footer: {
-            icon_url: 'https://jibiki.app/logo_circle.png',
-            text: 'Powered by Jibiki',
+            icon_url: msg.author.avatarURL,
+            text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
           },
           author: {
             name: 'Powered by Jibiki',
@@ -116,8 +116,8 @@ module.exports = {
           url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
           color: 16740862,
           footer: {
-            icon_url: 'https://jibiki.app/logo_circle.png',
-            text: 'Powered by Jibiki',
+            icon_url: msg.author.avatarURL,
+            text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
           },
           author: {
             name: 'Powered by Jibiki',
@@ -177,8 +177,8 @@ module.exports = {
             url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
             color: 16740862,
             footer: {
-              icon_url: 'https://jibiki.app/logo_circle.png',
-              text: 'Powered by Jibiki',
+              icon_url: msg.author.avatarURL,
+              text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
             },
             author: {
               name: 'Powered by Jibiki',
