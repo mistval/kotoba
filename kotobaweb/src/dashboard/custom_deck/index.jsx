@@ -380,7 +380,12 @@ class EditDeck extends Component {
             };
 
             if (!isEmptyGridCard(newRow)) {
-              newRow.questionCreationStrategy = newRow.questionCreationStrategy || 'Image';
+              if (!newRow.questionCreationStrategy) {
+                const questionLength = newRow.question.length;
+                const maxLengthForImageQuestions = deckValidation.IMAGE_QUESTION_MAX_LENGTH;
+                newRow.questionCreationStrategy = questionLength > maxLengthForImageQuestions ? 'Text' : 'Image';
+              }
+
               newRow.instructions = newRow.instructions || state.defaultInstructions;
             }
 
