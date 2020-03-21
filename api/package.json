@@ -14,7 +14,7 @@
   "dependencies": {
     "bluebird": "^3.5.2",
     "canvas": "^2.6.0",
-    "connect-mongo": "^2.0.3",
+    "connect-mongo": "^3.2.0",
     "debug": "~2.6.9",
     "disk-array": "^1.0.1",
     "express": "~4.16.0",
