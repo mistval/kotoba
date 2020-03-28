@@ -1,0 +1,5203 @@
+{
+  "uniqueId": "jibiki_n4",
+  "name": "https://jibiki.app/ generated JLPT N4 quiz",
+  "article": "an",
+  "instructions": "Type the Japanese translation of the English shown",
+  "questionCreationStrategy": "TEXT_WITH_HINT",
+  "dictionaryLinkStrategy": "JISHO_ANSWER_WORD",
+  "answerTimeLimitStrategy": "WITH_HINT",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_ANSWER",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Comment",
+  "cards": [
+    {
+      "answer": [
+        "あんな"
+      ],
+      "question": "so; sort of; such (about something or someone distant from both speaker and listener, or about a situation unfamiliar to both speaker and listener); that"
+    },
+    {
+      "answer": [
+        "いらっしゃる"
+      ],
+      "question": "to be (somewhere); to come; to go"
+    },
+    {
+      "answer": [
+        "うん",
+        "うむ",
+        "ううむ"
+      ],
+      "question": "uh huh; yeah; yes"
+    },
+    {
+      "answer": [
+        "おいでになる",
+        "お出でになる",
+        "御出でになる"
+      ],
+      "question": "to be"
+    },
+    {
+      "answer": [
+        "おめでとうございます",
+        "おめでとう御座います",
+        "お目出度うございます",
+        "御目出度う御座います"
+      ],
+      "question": "congratulations"
+    },
+    {
+      "answer": [
+        "おかげ",
+        "お蔭",
+        "御蔭",
+        "お陰",
+        "御陰"
+      ],
+      "question": "benevolence (of Buddha); blessing; grace (of God)"
+    },
+    {
+      "answer": [
+        "おかえりなさい",
+        "お帰りなさい",
+        "御帰りなさい"
+      ],
+      "question": "welcome home"
+    },
+    {
+      "answer": [
+        "おみまい",
+        "お見舞い",
+        "お見舞",
+        "御見舞い",
+        "御見舞"
+      ],
+      "question": "calling on someone who is ill; enquiry; inquiry"
+    },
+    {
+      "answer": [
+        "おこさん",
+        "お子さん",
+        "御子さん"
+      ],
+      "question": "child"
+    },
+    {
+      "answer": [
+        "おじょうさん",
+        "お嬢さん",
+        "御嬢さん"
+      ],
+      "question": "(another's) daughter"
+    },
+    {
+      "answer": [
+        "おだいじに",
+        "お大事に"
+      ],
+      "question": "God bless you; bless you; get well soon; take care of yourself"
+    },
+    {
+      "answer": [
+        "おたく",
+        "お宅",
+        "御宅"
+      ],
+      "question": "your family; your home; your house"
+    },
+    {
+      "answer": [
+        "おみやげ",
+        "おみあげ",
+        "お土産",
+        "御土産"
+      ],
+      "question": "local specialty or souvenir bought as a gift while travelling"
+    },
+    {
+      "answer": [
+        "かしこまりました",
+        "畏まりました"
+      ],
+      "question": "certainly!"
+    },
+    {
+      "answer": [
+        "きっと",
+        "キッと",
+        "屹度",
+        "急度"
+      ],
+      "question": "almost certainly; most likely (e.g. 90 percent); surely; undoubtedly"
+    },
+    {
+      "answer": [
+        "けど",
+        "けれど",
+        "けれども",
+        "けども",
+        "けんど"
+      ],
+      "question": "although; but; however"
+    },
+    {
+      "answer": [
+        "こう",
+        "斯う"
+      ],
+      "question": "in this way; such; thus"
+    },
+    {
+      "answer": [
+        "このあいだ",
+        "このかん",
+        "この間",
+        "此の間"
+      ],
+      "question": "during this period; lately; recently; the other day"
+    },
+    {
+      "answer": [
+        "このごろ",
+        "このころ",
+        "この頃",
+        "此の頃"
+      ],
+      "question": "at present; lately; now; nowadays; recently; these days"
+    },
+    {
+      "answer": [
+        "これから",
+        "此れから",
+        "此から"
+      ],
+      "question": "after this"
+    },
+    {
+      "answer": [
+        "さっき",
+        "先"
+      ],
+      "question": "a moment ago; a short while ago; just now; some time ago"
+    },
+    {
+      "answer": [
+        "すっかり"
+      ],
+      "question": "all; completely; entirely; thoroughly; totally"
+    },
+    {
+      "answer": [
+        "すっと",
+        "スッと",
+        "スーッと",
+        "すうっと"
+      ],
+      "question": "all of a sudden; directly; quickly; straight"
+    },
+    {
+      "answer": [
+        "すると"
+      ],
+      "question": "hereupon; thereupon"
+    },
+    {
+      "answer": [
+        "ずっと",
+        "ずーっと",
+        "ずうっと"
+      ],
+      "question": "all along; all the way; continuously in some state (for a long time, distance); the whole time; throughout"
+    },
+    {
+      "answer": [
+        "それで",
+        "其れで"
+      ],
+      "question": "and; because of that; thereupon"
+    },
+    {
+      "answer": [
+        "それに",
+        "其れに"
+      ],
+      "question": "also; besides; in addition; moreover"
+    },
+    {
+      "answer": [
+        "それほど",
+        "それ程",
+        "其れ程",
+        "其程"
+      ],
+      "question": "that much; to that degree; to that extent"
+    },
+    {
+      "answer": [
+        "そんな"
+      ],
+      "question": "like that; such (about the actions of the listener, or about ideas expressed or understood by the listener); that sort of"
+    },
+    {
+      "answer": [
+        "だから"
+      ],
+      "question": "accordingly; consequently; for that reason; on those grounds; so; that is why; therefore"
+    },
+    {
+      "answer": [
+        "ちっとも",
+        "些とも"
+      ],
+      "question": "(not) a bit; (not) at all; (not) in the least; (not) in the slightest"
+    },
+    {
+      "answer": [
+        "ちゃん"
+      ],
+      "question": "suffix for familiar person"
+    },
+    {
+      "answer": [
+        "どんどん",
+        "ドンドン"
+      ],
+      "question": "banging; beating; booming; drumming (noise); pounding; stamping"
+    },
+    {
+      "answer": [
+        "はっきり",
+        "ハッキリ"
+      ],
+      "question": "clearly; distinctly; plainly"
+    },
+    {
+      "answer": [
+        "ばかり",
+        "ばっかり",
+        "ばっか",
+        "許り",
+        "許"
+      ],
+      "question": "merely; no more than; nothing but; only"
+    },
+    {
+      "answer": [
+        "もし",
+        "若し"
+      ],
+      "question": "if; in case; supposing"
+    },
+    {
+      "answer": [
+        "やっと"
+      ],
+      "question": "at last; at length"
+    },
+    {
+      "answer": [
+        "やっぱり",
+        "矢っ張り"
+      ],
+      "question": "also; either; likewise; too"
+    },
+    {
+      "answer": [
+        "アクセサリー",
+        "アクセサリ"
+      ],
+      "question": "accessory"
+    },
+    {
+      "answer": [
+        "あじあ",
+        "アジア",
+        "亜細亜"
+      ],
+      "question": "Asia"
+    },
+    {
+      "answer": [
+        "アナウンサー",
+        "アナウンサ"
+      ],
+      "question": "announcer; broadcaster; presenter; reporter"
+    },
+    {
+      "answer": [
+        "アルコール",
+        "アルコホル"
+      ],
+      "question": "alcohol"
+    },
+    {
+      "answer": [
+        "アルバイト"
+      ],
+      "question": "part-time job; side job"
+    },
+    {
+      "answer": [
+        "エスカレーター",
+        "エスカレータ"
+      ],
+      "question": "escalator"
+    },
+    {
+      "answer": [
+        "オートバイ"
+      ],
+      "question": "motorcycle"
+    },
+    {
+      "answer": [
+        "オーバー",
+        "オーバ"
+      ],
+      "question": "overcoat"
+    },
+    {
+      "answer": [
+        "カーテン"
+      ],
+      "question": "curtain; curtains"
+    },
+    {
+      "answer": [
+        "ガス",
+        "瓦斯"
+      ],
+      "question": "gas (state of matter, e.g. poison gas, natural gas)"
+    },
+    {
+      "answer": [
+        "ガソリン"
+      ],
+      "question": "gasoline; petrol"
+    },
+    {
+      "answer": [
+        "ガソリンスタンド",
+        "ガソリン・スタンド"
+      ],
+      "question": "gas station; petrol station"
+    },
+    {
+      "answer": [
+        "ガラス",
+        "しょうし",
+        "硝子"
+      ],
+      "question": "glass; pane"
+    },
+    {
+      "answer": [
+        "クラブ"
+      ],
+      "question": "nightclub"
+    },
+    {
+      "answer": [
+        "ケーキ"
+      ],
+      "question": "cake"
+    },
+    {
+      "answer": [
+        "コンサート"
+      ],
+      "question": "concert"
+    },
+    {
+      "answer": [
+        "コンピュータ",
+        "コンピューター"
+      ],
+      "question": "computer"
+    },
+    {
+      "answer": [
+        "サラダ"
+      ],
+      "question": "salad"
+    },
+    {
+      "answer": [
+        "サンダル"
+      ],
+      "question": "sandal"
+    },
+    {
+      "answer": [
+        "サンドイッチ",
+        "サンドウィッチ"
+      ],
+      "question": "sandwich"
+    },
+    {
+      "answer": [
+        "ジャム"
+      ],
+      "question": "jam"
+    },
+    {
+      "answer": [
+        "スーツ"
+      ],
+      "question": "suit (clothing)"
+    },
+    {
+      "answer": [
+        "スーツケース"
+      ],
+      "question": "suitcase"
+    },
+    {
+      "answer": [
+        "スーパー",
+        "スーパ"
+      ],
+      "question": "supermarket"
+    },
+    {
+      "answer": [
+        "スクリーン"
+      ],
+      "question": "screen"
+    },
+    {
+      "answer": [
+        "ステーキ"
+      ],
+      "question": "steak"
+    },
+    {
+      "answer": [
+        "ステレオ"
+      ],
+      "question": "stereo"
+    },
+    {
+      "answer": [
+        "ソフト"
+      ],
+      "question": "soft"
+    },
+    {
+      "answer": [
+        "タイプ"
+      ],
+      "question": "kind; sort; style; type"
+    },
+    {
+      "answer": [
+        "チェック"
+      ],
+      "question": "check; checkered; plaid"
+    },
+    {
+      "answer": [
+        "テキスト",
+        "テクスト"
+      ],
+      "question": "text"
+    },
+    {
+      "answer": [
+        "テニス"
+      ],
+      "question": "tennis"
+    },
+    {
+      "answer": [
+        "ハンドバッグ"
+      ],
+      "question": "handbag; purse"
+    },
+    {
+      "answer": [
+        "ハンバーグ"
+      ],
+      "question": "Hamburg steak; hamburger (meat, no bun)"
+    },
+    {
+      "answer": [
+        "パート"
+      ],
+      "question": "part"
+    },
+    {
+      "answer": [
+        "パソコン"
+      ],
+      "question": "personal computer"
+    },
+    {
+      "answer": [
+        "パパ"
+      ],
+      "question": "dad; daddy; papa"
+    },
+    {
+      "answer": [
+        "ビル"
+      ],
+      "question": "multi-floor building; multi-storey building"
+    },
+    {
+      "answer": [
+        "ピアノ",
+        "ピヤノ"
+      ],
+      "question": "piano"
+    },
+    {
+      "answer": [
+        "ファックス",
+        "ファクス",
+        "ＦＡＸ"
+      ],
+      "question": "facsimile; fax"
+    },
+    {
+      "answer": [
+        "プレゼント"
+      ],
+      "question": "gift; present"
+    },
+    {
+      "answer": [
+        "ベル"
+      ],
+      "question": "bell"
+    },
+    {
+      "answer": [
+        "レジ"
+      ],
+      "question": "(cash) register"
+    },
+    {
+      "answer": [
+        "レポート",
+        "リポート"
+      ],
+      "question": "paper; report"
+    },
+    {
+      "answer": [
+        "ワープロ"
+      ],
+      "question": "word processor"
+    },
+    {
+      "answer": [
+        "アメリカ",
+        "亜米利加",
+        "亜墨利加"
+      ],
+      "question": "America"
+    },
+    {
+      "answer": [
+        "あいさつ",
+        "挨拶"
+      ],
+      "question": "greeting; greetings; polite set phrase used when meeting or parting from somebody; salutation; salute"
+    },
+    {
+      "answer": [
+        "あんしん",
+        "安心",
+        "安神"
+      ],
+      "question": "peace of mind; relief"
+    },
+    {
+      "answer": [
+        "あんぜん",
+        "あんせん",
+        "安全"
+      ],
+      "question": "safety; security"
+    },
+    {
+      "answer": [
+        "あんない",
+        "あない",
+        "案内"
+      ],
+      "question": "guidance; leading (the way); showing around"
+    },
+    {
+      "answer": [
+        "いか",
+        "いげ",
+        "以下",
+        "已下"
+      ],
+      "question": "... and below; and downward; not exceeding"
+    },
+    {
+      "answer": [
+        "いがい",
+        "以外"
+      ],
+      "question": "excepting; with the exception of"
+    },
+    {
+      "answer": [
+        "いじょう",
+        "以上",
+        "已上"
+      ],
+      "question": "... and more; ... and upwards; not less than"
+    },
+    {
+      "answer": [
+        "いない",
+        "以内"
+      ],
+      "question": "inside of; less than; within"
+    },
+    {
+      "answer": [
+        "いけん",
+        "意見"
+      ],
+      "question": "comment; opinion; view"
+    },
+    {
+      "answer": [
+        "やすい",
+        "易い"
+      ],
+      "question": "easy"
+    },
+    {
+      "answer": [
+        "ため",
+        "為",
+        "爲",
+        "為め"
+      ],
+      "question": "advantage; benefit; good; welfare"
+    },
+    {
+      "answer": [
+        "なさる",
+        "為さる"
+      ],
+      "question": "to do"
+    },
+    {
+      "answer": [
+        "うつる",
+        "移る",
+        "遷る"
+      ],
+      "question": "to move (house); to transfer (department)"
+    },
+    {
+      "answer": [
+        "いがく",
+        "医学"
+      ],
+      "question": "medical science; medicine"
+    },
+    {
+      "answer": [
+        "そだてる",
+        "育てる"
+      ],
+      "question": "to bring up; to raise; to rear"
+    },
+    {
+      "answer": [
+        "いっしょうけんめい",
+        "一生懸命",
+        "一生けん命"
+      ],
+      "question": "for dear life; very hard; with all one's might; with utmost effort"
+    },
+    {
+      "answer": [
+        "いっぱい",
+        "一杯",
+        "１杯",
+        "一ぱい",
+        "１ぱい",
+        "一盃"
+      ],
+      "question": "amount necessary to fill a container (e.g. cupful, spoonful, etc.); drink (usu. alcoholic)"
+    },
+    {
+      "answer": [
+        "いん",
+        "員"
+      ],
+      "question": "member"
+    },
+    {
+      "answer": [
+        "ひっこす",
+        "ひきこす",
+        "引っ越す",
+        "引越す",
+        "引き越す",
+        "引っこす"
+      ],
+      "question": "to change residence; to move (house)"
+    },
+    {
+      "answer": [
+        "うそ",
+        "ウソ",
+        "嘘",
+        "噓"
+      ],
+      "question": "falsehood; fib; lie; untruth"
+    },
+    {
+      "answer": [
+        "はこぶ",
+        "運ぶ"
+      ],
+      "question": "to carry; to convey; to move; to transport"
+    },
+    {
+      "answer": [
+        "うんてん",
+        "運転"
+      ],
+      "question": "operating; operation (of a machine, etc.); run; running"
+    },
+    {
+      "answer": [
+        "うんてんしゅ",
+        "運転手"
+      ],
+      "question": "chauffeur; driver"
+    },
+    {
+      "answer": [
+        "うんどう",
+        "運動"
+      ],
+      "question": "exercise; physical training; work-out"
+    },
+    {
+      "answer": [
+        "くも",
+        "雲"
+      ],
+      "question": "cloud"
+    },
+    {
+      "answer": [
+        "とおく",
+        "遠く"
+      ],
+      "question": "at a distance; by far; distant; distant place; far away"
+    },
+    {
+      "answer": [
+        "えんりょ",
+        "遠慮"
+      ],
+      "question": "constraint; diffidence; discretion; hesitation; holding back; modesty; reserve; restraint; tact; thoughtfulness"
+    },
+    {
+      "answer": [
+        "よごれる",
+        "汚れる"
+      ],
+      "question": "to become dirty; to get dirty"
+    },
+    {
+      "answer": [
+        "おく",
+        "億"
+      ],
+      "question": "100,000,000; 10^8; hundred million"
+    },
+    {
+      "answer": [
+        "おくじょう",
+        "屋上"
+      ],
+      "question": "rooftop"
+    },
+    {
+      "answer": [
+        "さがる",
+        "下がる",
+        "下る"
+      ],
+      "question": "to come down; to drop; to fall; to get lower; to go down; to sink"
+    },
+    {
+      "answer": [
+        "さげる",
+        "下げる"
+      ],
+      "question": "to hang; to suspend; to wear (e.g. decoration)"
+    },
+    {
+      "answer": [
+        "くださる",
+        "下さる"
+      ],
+      "question": "to bestow; to confer; to give"
+    },
+    {
+      "answer": [
+        "げしゅく",
+        "下宿"
+      ],
+      "question": "board and lodging; boarding; lodging; room and board"
+    },
+    {
+      "answer": [
+        "したぎ",
+        "下着"
+      ],
+      "question": "underwear"
+    },
+    {
+      "answer": [
+        "おかしい",
+        "可笑しい",
+        "奇怪しい"
+      ],
+      "question": "amusing; comical; funny; laughable; ridiculous"
+    },
+    {
+      "answer": [
+        "かない",
+        "やうち",
+        "家内"
+      ],
+      "question": "(my) wife"
+    },
+    {
+      "answer": [
+        "かがく",
+        "科学"
+      ],
+      "question": "science"
+    },
+    {
+      "answer": [
+        "かじ",
+        "火事"
+      ],
+      "question": "conflagration; fire"
+    },
+    {
+      "answer": [
+        "はなみ",
+        "花見"
+      ],
+      "question": "cherry blossom viewing; flower viewing"
+    },
+    {
+      "answer": [
+        "いじめる",
+        "苛める",
+        "虐める"
+      ],
+      "question": "to be cruel to; to bully; to ill-treat; to persecute; to pick on; to tease; to torment"
+    },
+    {
+      "answer": [
+        "かちょう",
+        "課長"
+      ],
+      "question": "section chief; section manager"
+    },
+    {
+      "answer": [
+        "すぎる",
+        "過ぎる"
+      ],
+      "question": "to go beyond; to pass by; to pass through"
+    },
+    {
+      "answer": [
+        "かい",
+        "会"
+      ],
+      "question": "assembly; meeting; party"
+    },
+    {
+      "answer": [
+        "かいぎ",
+        "会議"
+      ],
+      "question": "assembly; conference; congress; convention; council; meeting; session"
+    },
+    {
+      "answer": [
+        "かいぎしつ",
+        "会議室"
+      ],
+      "question": "conference room; council room"
+    },
+    {
+      "answer": [
+        "かいじょう",
+        "会場"
+      ],
+      "question": "assembly hall; grounds; meeting place; venue"
+    },
+    {
+      "answer": [
+        "かいわ",
+        "会話"
+      ],
+      "question": "conversation"
+    },
+    {
+      "answer": [
+        "こわす",
+        "壊す",
+        "毀す"
+      ],
+      "question": "to break; to demolish; to destroy"
+    },
+    {
+      "answer": [
+        "こわれる",
+        "壊れる",
+        "毀れる"
+      ],
+      "question": "to be broken; to break"
+    },
+    {
+      "answer": [
+        "けが",
+        "ケガ",
+        "怪我"
+      ],
+      "question": "hurt; injury (to animate object)"
+    },
+    {
+      "answer": [
+        "かいがん",
+        "海岸"
+      ],
+      "question": "beach; coast"
+    },
+    {
+      "answer": [
+        "ひらく",
+        "開く"
+      ],
+      "question": "to open; to undo; to unpack; to unseal"
+    },
+    {
+      "answer": [
+        "がくぶ",
+        "学部"
+      ],
+      "question": "department of a university"
+    },
+    {
+      "answer": [
+        "たのしみ",
+        "楽しみ",
+        "愉しみ"
+      ],
+      "question": "amusement; diversion; enjoyment; hobby; pleasure"
+    },
+    {
+      "answer": [
+        "たのしむ",
+        "楽しむ",
+        "愉しむ",
+        "楽む"
+      ],
+      "question": "to enjoy (oneself)"
+    },
+    {
+      "answer": [
+        "われる",
+        "割れる",
+        "破れる"
+      ],
+      "question": "to be smashed; to break"
+    },
+    {
+      "answer": [
+        "すべる",
+        "滑る",
+        "辷る"
+      ],
+      "question": "to glide; to slide (e.g. on skis); to slip"
+    },
+    {
+      "answer": [
+        "かむ",
+        "噛む",
+        "咬む",
+        "嚙む",
+        "嚼む"
+      ],
+      "question": "to bite"
+    },
+    {
+      "answer": [
+        "かわく",
+        "乾く"
+      ],
+      "question": "to get dry"
+    },
+    {
+      "answer": [
+        "なれる",
+        "慣れる",
+        "馴れる"
+      ],
+      "question": "to become familiar with; to get used to; to grow accustomed to"
+    },
+    {
+      "answer": [
+        "かんごふ",
+        "看護婦"
+      ],
+      "question": "(female) nurse"
+    },
+    {
+      "answer": [
+        "かんたん",
+        "簡単",
+        "簡短",
+        "簡端"
+      ],
+      "question": "easy; simple; uncomplicated"
+    },
+    {
+      "answer": [
+        "あいだ",
+        "あわい",
+        "間"
+      ],
+      "question": "distance; gap; interval; space (between)"
+    },
+    {
+      "answer": [
+        "まにあう",
+        "間に合う",
+        "間にあう",
+        "まに合う"
+      ],
+      "question": "to be in time for"
+    },
+    {
+      "answer": [
+        "まちがえる",
+        "間違える"
+      ],
+      "question": "to commit an error (e.g. in calculation); to make a mistake (in)"
+    },
+    {
+      "answer": [
+        "かんけい",
+        "関係"
+      ],
+      "question": "connection; relation; relationship"
+    },
+    {
+      "answer": [
+        "おもちゃ",
+        "がんぐ",
+        "オモチャ",
+        "玩具",
+        "翫具"
+      ],
+      "question": "plaything; toy"
+    },
+    {
+      "answer": [
+        "がんばる",
+        "頑張る"
+      ],
+      "question": "to do one's best; to hang on; to hold out; to keep at it; to persevere; to persist"
+    },
+    {
+      "answer": [
+        "きけん",
+        "危険"
+      ],
+      "question": "danger; hazard; peril"
+    },
+    {
+      "answer": [
+        "よろこぶ",
+        "喜ぶ",
+        "悦ぶ",
+        "歓ぶ",
+        "慶ぶ",
+        "欣ぶ"
+      ],
+      "question": "to be delighted; to be glad; to be pleased"
+    },
+    {
+      "answer": [
+        "うれしい",
+        "嬉しい"
+      ],
+      "question": "delighted; glad; happy; overjoyed; pleased"
+    },
+    {
+      "answer": [
+        "よる",
+        "寄る"
+      ],
+      "question": "to approach; to be close to; to come near; to draw near"
+    },
+    {
+      "answer": [
+        "きかい",
+        "機会"
+      ],
+      "question": "chance; opportunity"
+    },
+    {
+      "answer": [
+        "かえり",
+        "帰り",
+        "還り"
+      ],
+      "question": "coming back; return"
+    },
+    {
+      "answer": [
+        "き",
+        "気",
+        "氣"
+      ],
+      "question": "heart; mind; spirit"
+    },
+    {
+      "answer": [
+        "きぶん",
+        "気分"
+      ],
+      "question": "feeling; mood"
+    },
+    {
+      "answer": [
+        "きしゃ",
+        "汽車"
+      ],
+      "question": "train (esp. long distance train)"
+    },
+    {
+      "answer": [
+        "いのる",
+        "祈る",
+        "祷る"
+      ],
+      "question": "to pray; to wish"
+    },
+    {
+      "answer": [
+        "きせつ",
+        "季節"
+      ],
+      "question": "season; time of year"
+    },
+    {
+      "answer": [
+        "きそく",
+        "規則"
+      ],
+      "question": "regulation; rule"
+    },
+    {
+      "answer": [
+        "おこす",
+        "起こす",
+        "起す"
+      ],
+      "question": "to pick up; to raise; to raise up; to set up"
+    },
+    {
+      "answer": [
+        "よろしい",
+        "宜しい"
+      ],
+      "question": "OK; all right; can; fine; good; may; very well; will do"
+    },
+    {
+      "answer": [
+        "ぎじゅつ",
+        "技術"
+      ],
+      "question": "engineering; technology"
+    },
+    {
+      "answer": [
+        "びっくり",
+        "ビックリ",
+        "吃驚",
+        "喫驚"
+      ],
+      "question": "to be amazed; to be astonished; to be frightened; to be surprised; to get startled; to jump"
+    },
+    {
+      "answer": [
+        "きゃく",
+        "かく",
+        "客"
+      ],
+      "question": "guest; visitor"
+    },
+    {
+      "answer": [
+        "ひさしぶり",
+        "久しぶり",
+        "久し振り"
+      ],
+      "question": "a long time (since the last time); first in a long time"
+    },
+    {
+      "answer": [
+        "きゅう",
+        "急"
+      ],
+      "question": "abrupt; sudden; unexpected"
+    },
+    {
+      "answer": [
+        "いそぐ",
+        "急ぐ"
+      ],
+      "question": "to hasten; to hurry; to make something happen sooner; to rush"
+    },
+    {
+      "answer": [
+        "きゅうこう",
+        "急行"
+      ],
+      "question": "hastening; hurrying (to somewhere); rushing"
+    },
+    {
+      "answer": [
+        "なく",
+        "泣く",
+        "哭く"
+      ],
+      "question": "to cry; to howl; to sob; to weep"
+    },
+    {
+      "answer": [
+        "きょうそう",
+        "競争"
+      ],
+      "question": "competition; contest; race; rivalry"
+    },
+    {
+      "answer": [
+        "きょういく",
+        "教育"
+      ],
+      "question": "education; instruction; schooling; teaching; training; upbringing"
+    },
+    {
+      "answer": [
+        "きょうかい",
+        "教会"
+      ],
+      "question": "church; congregation"
+    },
+    {
+      "answer": [
+        "きょうみ",
+        "興味"
+      ],
+      "question": "curiosity (about something); interest (in something); zest (for)"
+    },
+    {
+      "answer": [
+        "かがみ",
+        "鏡"
+      ],
+      "question": "looking-glass; mirror"
+    },
+    {
+      "answer": [
+        "おどろく",
+        "驚く",
+        "愕く",
+        "駭く"
+      ],
+      "question": "to be astonished; to be surprised"
+    },
+    {
+      "answer": [
+        "おっしゃる",
+        "仰る",
+        "仰有る",
+        "仰しゃる",
+        "仰っしゃる"
+      ],
+      "question": "to say; to speak; to talk; to tell"
+    },
+    {
+      "answer": [
+        "きんじょ",
+        "近所"
+      ],
+      "question": "neighborhood; neighbourhood"
+    },
+    {
+      "answer": [
+        "かねもち",
+        "金持ち",
+        "金持",
+        "銀持"
+      ],
+      "question": "rich person"
+    },
+    {
+      "answer": [
+        "く",
+        "区"
+      ],
+      "question": "borough; city (in Tokyo); ward"
+    },
+    {
+      "answer": [
+        "にがい",
+        "苦い"
+      ],
+      "question": "bitter"
+    },
+    {
+      "answer": [
+        "くうき",
+        "空気"
+      ],
+      "question": "air; atmosphere"
+    },
+    {
+      "answer": [
+        "くうこう",
+        "空港"
+      ],
+      "question": "airport"
+    },
+    {
+      "answer": [
+        "すみ",
+        "すま",
+        "隅",
+        "角"
+      ],
+      "question": "corner; nook; recess"
+    },
+    {
+      "answer": [
+        "きみ",
+        "君",
+        "公"
+      ],
+      "question": "buddy; pal; you"
+    },
+    {
+      "answer": [
+        "くん",
+        "君"
+      ],
+      "question": "Mr (junior); boy; master"
+    },
+    {
+      "answer": [
+        "かたち",
+        "よう",
+        "形",
+        "容",
+        "貌"
+      ],
+      "question": "figure; form; shape"
+    },
+    {
+      "answer": [
+        "けしき",
+        "けいしょく",
+        "景色"
+      ],
+      "question": "landscape; scene; scenery"
+    },
+    {
+      "answer": [
+        "けいけん",
+        "経験"
+      ],
+      "question": "experience"
+    },
+    {
+      "answer": [
+        "けいざい",
+        "経済"
+      ],
+      "question": "business; economics; economy; finance"
+    },
+    {
+      "answer": [
+        "けいかく",
+        "計画"
+      ],
+      "question": "plan; program; programme; project; schedule; scheme"
+    },
+    {
+      "answer": [
+        "けいさつ",
+        "警察"
+      ],
+      "question": "police"
+    },
+    {
+      "answer": [
+        "むかえる",
+        "迎える",
+        "邀える"
+      ],
+      "question": "to go out to meet"
+    },
+    {
+      "answer": [
+        "けっして",
+        "けして",
+        "決して"
+      ],
+      "question": "(not) at all; (not) by any means; (not) ever; (not) in any way; (not) in the least"
+    },
+    {
+      "answer": [
+        "きめる",
+        "決める",
+        "極める"
+      ],
+      "question": "to appoint; to arrange; to choose; to decide; to determine; to fix; to make up one's mind; to resolve; to set; to set one's heart on; to settle"
+    },
+    {
+      "answer": [
+        "ち",
+        "血"
+      ],
+      "question": "blood; consanguinity"
+    },
+    {
+      "answer": [
+        "つき",
+        "月"
+      ],
+      "question": "moon"
+    },
+    {
+      "answer": [
+        "けんか",
+        "ケンカ",
+        "喧嘩",
+        "諠譁"
+      ],
+      "question": "argument; brawl; fight; quarrel; scuffle; squabble"
+    },
+    {
+      "answer": [
+        "かたい",
+        "硬い",
+        "固い",
+        "堅い",
+        "緊い"
+      ],
+      "question": "hard; solid; tough"
+    },
+    {
+      "answer": [
+        "たてる",
+        "建てる"
+      ],
+      "question": "to build; to construct"
+    },
+    {
+      "answer": [
+        "けんきゅう",
+        "研究"
+      ],
+      "question": "investigation; research; study"
+    },
+    {
+      "answer": [
+        "けんきゅうしつ",
+        "研究室"
+      ],
+      "question": "laboratory"
+    },
+    {
+      "answer": [
+        "きぬ",
+        "絹"
+      ],
+      "question": "silk"
+    },
+    {
+      "answer": [
+        "みえる",
+        "見える"
+      ],
+      "question": "to be in sight; to be seen"
+    },
+    {
+      "answer": [
+        "けんぶつ",
+        "見物"
+      ],
+      "question": "sightseeing; viewing; watching"
+    },
+    {
+      "answer": [
+        "げんいん",
+        "げいいん",
+        "原因"
+      ],
+      "question": "cause; origin; source"
+    },
+    {
+      "answer": [
+        "きびしい",
+        "厳しい",
+        "酷しい"
+      ],
+      "question": "relentless; rigid; severe; strict; unsparing"
+    },
+    {
+      "answer": [
+        "こしょう",
+        "故障"
+      ],
+      "question": "accident; breakdown; failure; fault; out of order"
+    },
+    {
+      "answer": [
+        "みずうみ",
+        "湖"
+      ],
+      "question": "lake"
+    },
+    {
+      "answer": [
+        "くれる",
+        "呉れる"
+      ],
+      "question": "to give; to let (one) have"
+    },
+    {
+      "answer": [
+        "おかげさまで",
+        "お陰様で",
+        "お蔭様で",
+        "お陰さまで",
+        "御陰様で",
+        "御蔭様で"
+      ],
+      "question": "(I'm fine) thank you; fortunately; thanks to you; under the gods' shadow"
+    },
+    {
+      "answer": [
+        "ごしゅじん",
+        "ご主人",
+        "御主人"
+      ],
+      "question": "her husband; your husband"
+    },
+    {
+      "answer": [
+        "おつり",
+        "お釣り",
+        "御釣り",
+        "御釣"
+      ],
+      "question": "change (for a purchase)"
+    },
+    {
+      "answer": [
+        "おれい",
+        "おんれい",
+        "お礼",
+        "御礼"
+      ],
+      "question": "gratitude; thanks"
+    },
+    {
+      "answer": [
+        "こうつう",
+        "交通"
+      ],
+      "question": "communication; exchange (of ideas, etc.); intercourse; traffic; transportation"
+    },
+    {
+      "answer": [
+        "ひかり",
+        "光"
+      ],
+      "question": "light"
+    },
+    {
+      "answer": [
+        "ひかる",
+        "光る"
+      ],
+      "question": "to be bright; to glitter; to shine"
+    },
+    {
+      "answer": [
+        "こうむいん",
+        "公務員"
+      ],
+      "question": "civil servant; government worker; public servant"
+    },
+    {
+      "answer": [
+        "こうぎょう",
+        "工業"
+      ],
+      "question": "(manufacturing) industry"
+    },
+    {
+      "answer": [
+        "こうちょう",
+        "校長"
+      ],
+      "question": "headmaster; principal"
+    },
+    {
+      "answer": [
+        "かまう",
+        "構う"
+      ],
+      "question": "to be concerned about; to care about; to have a regard for; to mind"
+    },
+    {
+      "answer": [
+        "みなと",
+        "港",
+        "湊"
+      ],
+      "question": "harbor; harbour; port"
+    },
+    {
+      "answer": [
+        "かんがえる",
+        "考える",
+        "勘える",
+        "稽える"
+      ],
+      "question": "to contemplate; to meditate (on); to ponder; to reflect (on); to think (about, of); to think over"
+    },
+    {
+      "answer": [
+        "こうぎ",
+        "講義"
+      ],
+      "question": "lecture"
+    },
+    {
+      "answer": [
+        "こうどう",
+        "講堂"
+      ],
+      "question": "auditorium; lecture hall"
+    },
+    {
+      "answer": [
+        "こうがい",
+        "郊外"
+      ],
+      "question": "commuter belt; residential area on the outskirt of a city; suburb"
+    },
+    {
+      "answer": [
+        "ふりだす",
+        "降り出す",
+        "降りだす"
+      ],
+      "question": "to begin to rain; to begin to snow"
+    },
+    {
+      "answer": [
+        "こうこう",
+        "高校"
+      ],
+      "question": "high school; senior high school"
+    },
+    {
+      "answer": [
+        "こうこうせい",
+        "高校生"
+      ],
+      "question": "senior high school student"
+    },
+    {
+      "answer": [
+        "こうとうがっこう",
+        "高等学校"
+      ],
+      "question": "high school; senior high school"
+    },
+    {
+      "answer": [
+        "あう",
+        "おう",
+        "合う"
+      ],
+      "question": "to come together; to meet; to merge; to unite"
+    },
+    {
+      "answer": [
+        "こくさい",
+        "国際"
+      ],
+      "question": "international"
+    },
+    {
+      "answer": [
+        "こんど",
+        "今度"
+      ],
+      "question": "now; this time"
+    },
+    {
+      "answer": [
+        "こんや",
+        "今夜"
+      ],
+      "question": "this evening; tonight"
+    },
+    {
+      "answer": [
+        "さしあげる",
+        "差し上げる",
+        "差上げる",
+        "さし上げる"
+      ],
+      "question": "to give; to offer"
+    },
+    {
+      "answer": [
+        "すな",
+        "すなご",
+        "いさご",
+        "砂",
+        "沙",
+        "砂子",
+        "沙子"
+      ],
+      "question": "grit; sand"
+    },
+    {
+      "answer": [
+        "さらいげつ",
+        "再来月",
+        "さ来月"
+      ],
+      "question": "month after next"
+    },
+    {
+      "answer": [
+        "さらいしゅう",
+        "再来週",
+        "さ来週"
+      ],
+      "question": "week after next"
+    },
+    {
+      "answer": [
+        "もっとも",
+        "もとも",
+        "最も",
+        "尤も"
+      ],
+      "question": "extremely; most"
+    },
+    {
+      "answer": [
+        "さいきん",
+        "最近"
+      ],
+      "question": "lately; nowadays; recently; right now; these days"
+    },
+    {
+      "answer": [
+        "さいご",
+        "最後"
+      ],
+      "question": "conclusion; end"
+    },
+    {
+      "answer": [
+        "さいしょ",
+        "最初"
+      ],
+      "question": "beginning; first; onset; outset"
+    },
+    {
+      "answer": [
+        "つま",
+        "妻",
+        "夫",
+        "具"
+      ],
+      "question": "wife"
+    },
+    {
+      "answer": [
+        "すむ",
+        "済む",
+        "濟む"
+      ],
+      "question": "to be completed; to end; to finish"
+    },
+    {
+      "answer": [
+        "こまかい",
+        "細かい"
+      ],
+      "question": "small"
+    },
+    {
+      "answer": [
+        "さか",
+        "坂",
+        "阪"
+      ],
+      "question": "hill; slope"
+    },
+    {
+      "answer": [
+        "まいる",
+        "参る",
+        "詣る"
+      ],
+      "question": "to call; to come; to go"
+    },
+    {
+      "answer": [
+        "さんぎょう",
+        "産業"
+      ],
+      "question": "industry"
+    },
+    {
+      "answer": [
+        "しばらく",
+        "暫く",
+        "姑く",
+        "暫らく",
+        "須臾"
+      ],
+      "question": "for a minute; for a moment"
+    },
+    {
+      "answer": [
+        "のこる",
+        "残る",
+        "遺る"
+      ],
+      "question": "to be left; to remain"
+    },
+    {
+      "answer": [
+        "ざんねん",
+        "残念"
+      ],
+      "question": "deplorable; disappointing; regrettable; unfortunate; vexing"
+    },
+    {
+      "answer": [
+        "しまう",
+        "仕舞う",
+        "終う",
+        "了う",
+        "蔵う"
+      ],
+      "question": "to bring to a close; to end; to finish; to put an end to; to stop"
+    },
+    {
+      "answer": [
+        "うかがう",
+        "伺う"
+      ],
+      "question": "to ask; to be told; to hear; to inquire"
+    },
+    {
+      "answer": [
+        "はじめる",
+        "始める",
+        "創める"
+      ],
+      "question": "to begin; to commence; to initiate; to originate; to start"
+    },
+    {
+      "answer": [
+        "こ",
+        "子",
+        "児"
+      ],
+      "question": "child"
+    },
+    {
+      "answer": [
+        "し",
+        "市"
+      ],
+      "question": "city"
+    },
+    {
+      "answer": [
+        "しみん",
+        "市民"
+      ],
+      "question": "citizen; citizenry; public"
+    },
+    {
+      "answer": [
+        "おもいだす",
+        "思い出す",
+        "思いだす",
+        "おもい出す",
+        "思出す"
+      ],
+      "question": "to recall; to recollect; to remember"
+    },
+    {
+      "answer": [
+        "ゆび",
+        "および",
+        "おゆび",
+        "指"
+      ],
+      "question": "digit; finger; toe"
+    },
+    {
+      "answer": [
+        "ゆびわ",
+        "指輪",
+        "指環"
+      ],
+      "question": "(finger) ring"
+    },
+    {
+      "answer": [
+        "したく",
+        "支度",
+        "仕度"
+      ],
+      "question": "arrangements; preparation"
+    },
+    {
+      "answer": [
+        "うまい",
+        "上手い",
+        "美味い",
+        "旨い",
+        "巧い",
+        "甘い",
+        "美い"
+      ],
+      "question": "clever; expert; skilful; skillful; successful; wise"
+    },
+    {
+      "answer": [
+        "えだ",
+        "枝"
+      ],
+      "question": "bough; bow; branch; limb; twig"
+    },
+    {
+      "answer": [
+        "やむ",
+        "止む",
+        "已む",
+        "罷む"
+      ],
+      "question": "to be over; to cease; to stop"
+    },
+    {
+      "answer": [
+        "とめる",
+        "止める",
+        "留める",
+        "停める"
+      ],
+      "question": "to stop; to turn off"
+    },
+    {
+      "answer": [
+        "やめる",
+        "止める",
+        "已める",
+        "廃める"
+      ],
+      "question": "to cease; to discontinue; to end; to quit; to stop (an activity)"
+    },
+    {
+      "answer": [
+        "し",
+        "死"
+      ],
+      "question": "death; decease"
+    },
+    {
+      "answer": [
+        "いと",
+        "糸"
+      ],
+      "question": "string; thread; yarn"
+    },
+    {
+      "answer": [
+        "しけん",
+        "試験"
+      ],
+      "question": "exam; examination; test"
+    },
+    {
+      "answer": [
+        "しあい",
+        "試合",
+        "仕合"
+      ],
+      "question": "bout; contest; game; match"
+    },
+    {
+      "answer": [
+        "はいしゃ",
+        "歯医者"
+      ],
+      "question": "dentist"
+    },
+    {
+      "answer": [
+        "こと",
+        "こん",
+        "事",
+        "縡"
+      ],
+      "question": "matter; thing"
+    },
+    {
+      "answer": [
+        "じこ",
+        "ことゆえ",
+        "事故"
+      ],
+      "question": "accident; incident; trouble"
+    },
+    {
+      "answer": [
+        "じむしょ",
+        "じムしょ",
+        "事務所",
+        "事ム所"
+      ],
+      "question": "office"
+    },
+    {
+      "answer": [
+        "にる",
+        "似る"
+      ],
+      "question": "to look like; to resemble; to take after"
+    },
+    {
+      "answer": [
+        "じ",
+        "字"
+      ],
+      "question": "character (esp. kanji); letter; written text"
+    },
+    {
+      "answer": [
+        "てら",
+        "寺"
+      ],
+      "question": "temple (Buddhist)"
+    },
+    {
+      "answer": [
+        "じだい",
+        "時代"
+      ],
+      "question": "age; epoch; era; period"
+    },
+    {
+      "answer": [
+        "じゆう",
+        "自由"
+      ],
+      "question": "as it pleases you; freedom; liberty"
+    },
+    {
+      "answer": [
+        "しき",
+        "式"
+      ],
+      "question": "equation; expression; formula"
+    },
+    {
+      "answer": [
+        "しかる",
+        "叱る",
+        "𠮟る",
+        "呵る"
+      ],
+      "question": "to chide; to rebuke; to reprimand; to scold"
+    },
+    {
+      "answer": [
+        "しっぱい",
+        "失敗"
+      ],
+      "question": "blunder; failure; mistake"
+    },
+    {
+      "answer": [
+        "しつれい",
+        "しつらい",
+        "しちらい",
+        "失礼"
+      ],
+      "question": "discourtesy; impoliteness"
+    },
+    {
+      "answer": [
+        "すてる",
+        "捨てる",
+        "棄てる"
+      ],
+      "question": "to cast away; to discard; to dump; to throw away"
+    },
+    {
+      "answer": [
+        "しゃかい",
+        "社会"
+      ],
+      "question": "community; public; society; the world"
+    },
+    {
+      "answer": [
+        "しゃちょう",
+        "社長"
+      ],
+      "question": "company president; director; manager"
+    },
+    {
+      "answer": [
+        "あやまる",
+        "謝る"
+      ],
+      "question": "to apologise; to apologize"
+    },
+    {
+      "answer": [
+        "じゃま",
+        "邪魔"
+      ],
+      "question": "hindrance; nuisance; obstacle"
+    },
+    {
+      "answer": [
+        "とりかえる",
+        "取り替える",
+        "取り換える",
+        "取りかえる",
+        "取替える",
+        "取換える",
+        "取換る"
+      ],
+      "question": "to barter; to exchange; to swap"
+    },
+    {
+      "answer": [
+        "てぶくろ",
+        "手袋",
+        "手ぶくろ"
+      ],
+      "question": "glove; mitt; mitten"
+    },
+    {
+      "answer": [
+        "てつだう",
+        "手伝う",
+        "手つだう"
+      ],
+      "question": "to aid; to assist; to help"
+    },
+    {
+      "answer": [
+        "しゅみ",
+        "趣味"
+      ],
+      "question": "hobby; pastime"
+    },
+    {
+      "answer": [
+        "うける",
+        "ウケる",
+        "受ける",
+        "請ける",
+        "承ける",
+        "享ける"
+      ],
+      "question": "to get; to receive"
+    },
+    {
+      "answer": [
+        "ひろう",
+        "拾う"
+      ],
+      "question": "to find; to gather; to pick up"
+    },
+    {
+      "answer": [
+        "しゅうかん",
+        "習慣"
+      ],
+      "question": "habit"
+    },
+    {
+      "answer": [
+        "あつまる",
+        "集まる",
+        "集る"
+      ],
+      "question": "to assemble; to collect; to gather"
+    },
+    {
+      "answer": [
+        "あつめる",
+        "集める"
+      ],
+      "question": "to assemble; to collect; to gather"
+    },
+    {
+      "answer": [
+        "じゅうしょ",
+        "住所",
+        "住処"
+      ],
+      "question": "address (e.g. of house); domicile; residence"
+    },
+    {
+      "answer": [
+        "じゅうぶん",
+        "十分",
+        "充分"
+      ],
+      "question": "adequate; enough; plenty; satisfactory; sufficient"
+    },
+    {
+      "answer": [
+        "じゅうどう",
+        "柔道"
+      ],
+      "question": "judo"
+    },
+    {
+      "answer": [
+        "しゅっせき",
+        "出席"
+      ],
+      "question": "appearance; attendance; presence"
+    },
+    {
+      "answer": [
+        "しゅっぱつ",
+        "出発"
+      ],
+      "question": "departure"
+    },
+    {
+      "answer": [
+        "できるだけ",
+        "出来るだけ",
+        "出来る丈"
+      ],
+      "question": "as much as one can; as much as possible; if at all possible"
+    },
+    {
+      "answer": [
+        "じゅんび",
+        "準備"
+      ],
+      "question": "arrangements; getting ready; preparation; provision; reserving; setup"
+    },
+    {
+      "answer": [
+        "じょせい",
+        "にょしょう",
+        "女性"
+      ],
+      "question": "female; woman"
+    },
+    {
+      "answer": [
+        "そろそろ",
+        "ソロソロ"
+      ],
+      "question": "gingerly; gradually; quietly; slowly; steadily"
+    },
+    {
+      "answer": [
+        "かつ",
+        "勝つ",
+        "克つ",
+        "贏つ"
+      ],
+      "question": "to gain victory; to win"
+    },
+    {
+      "answer": [
+        "めしあがる",
+        "召し上がる",
+        "召しあがる",
+        "召上がる",
+        "召し上る"
+      ],
+      "question": "to drink; to eat"
+    },
+    {
+      "answer": [
+        "しょうらい",
+        "将来"
+      ],
+      "question": "future (usually near); prospects"
+    },
+    {
+      "answer": [
+        "しょうがっこう",
+        "小学校"
+      ],
+      "question": "elementary school; grade school; primary school"
+    },
+    {
+      "answer": [
+        "しょうせつ",
+        "小説"
+      ],
+      "question": "(short) story; novel"
+    },
+    {
+      "answer": [
+        "ことり",
+        "小鳥"
+      ],
+      "question": "little bird; small bird"
+    },
+    {
+      "answer": [
+        "とこや",
+        "床屋"
+      ],
+      "question": "barber; barber shop; barbershop"
+    },
+    {
+      "answer": [
+        "しょうち",
+        "承知"
+      ],
+      "question": "awareness; knowledge"
+    },
+    {
+      "answer": [
+        "しょうたい",
+        "しょうだい",
+        "招待",
+        "請待"
+      ],
+      "question": "invitation"
+    },
+    {
+      "answer": [
+        "けしゴム",
+        "消しゴム"
+      ],
+      "question": "India rubber; eraser"
+    },
+    {
+      "answer": [
+        "やく",
+        "焼く",
+        "燬く",
+        "焚く"
+      ],
+      "question": "to burn"
+    },
+    {
+      "answer": [
+        "やける",
+        "焼ける",
+        "灼ける",
+        "妬ける"
+      ],
+      "question": "to be heated; to be roasted; to be sunburnt; to burn; to fade (in the sun); to glow red (i.e. of the sky at sunset)"
+    },
+    {
+      "answer": [
+        "わらう",
+        "笑う",
+        "咲う",
+        "嗤う"
+      ],
+      "question": "to laugh"
+    },
+    {
+      "answer": [
+        "しょうかい",
+        "紹介"
+      ],
+      "question": "introduction; listing; presentation; referral"
+    },
+    {
+      "answer": [
+        "あがる",
+        "上がる",
+        "揚がる",
+        "挙がる",
+        "上る"
+      ],
+      "question": "to ascend; to be raised; to come up; to go up; to rise"
+    },
+    {
+      "answer": [
+        "ばあい",
+        "場合"
+      ],
+      "question": "case; situation"
+    },
+    {
+      "answer": [
+        "ばしょ",
+        "場所"
+      ],
+      "question": "location; place; position; spot"
+    },
+    {
+      "answer": [
+        "たたみ",
+        "畳",
+        "疊"
+      ],
+      "question": "Japanese straw floor coverings; tatami mat"
+    },
+    {
+      "answer": [
+        "かざる",
+        "飾る",
+        "餝る",
+        "錺る",
+        "荘る"
+      ],
+      "question": "to adorn; to decorate; to ornament"
+    },
+    {
+      "answer": [
+        "うえる",
+        "植える"
+      ],
+      "question": "to grow; to plant; to raise"
+    },
+    {
+      "answer": [
+        "さわる",
+        "触る"
+      ],
+      "question": "to feel; to touch"
+    },
+    {
+      "answer": [
+        "しょくじ",
+        "食事"
+      ],
+      "question": "dinner; meal"
+    },
+    {
+      "answer": [
+        "しょくりょうひん",
+        "食料品"
+      ],
+      "question": "foodstuff; groceries"
+    },
+    {
+      "answer": [
+        "ねぼう",
+        "寝坊",
+        "寐坊"
+      ],
+      "question": "oversleeping; sleeping in late"
+    },
+    {
+      "answer": [
+        "こころ",
+        "心"
+      ],
+      "question": "heart; mind; spirit"
+    },
+    {
+      "answer": [
+        "しんぱい",
+        "心配"
+      ],
+      "question": "anxiety; concern; fear; uneasiness; worry"
+    },
+    {
+      "answer": [
+        "しんぶんしゃ",
+        "新聞社"
+      ],
+      "question": "newspaper company"
+    },
+    {
+      "answer": [
+        "もり",
+        "森",
+        "杜"
+      ],
+      "question": "forest"
+    },
+    {
+      "answer": [
+        "ふかい",
+        "深い"
+      ],
+      "question": "deep"
+    },
+    {
+      "answer": [
+        "もうしあげる",
+        "申し上げる",
+        "申上げる",
+        "申しあげる"
+      ],
+      "question": "to express; to extend (greetings, congratulations, etc.); to offer; to say; to state; to tell"
+    },
+    {
+      "answer": [
+        "もうす",
+        "申す"
+      ],
+      "question": "to be called; to say"
+    },
+    {
+      "answer": [
+        "まじめ",
+        "マジメ",
+        "真面目",
+        "眞面目"
+      ],
+      "question": "earnest; grave; honest; serious; sober; steady"
+    },
+    {
+      "answer": [
+        "じんじゃ",
+        "神社"
+      ],
+      "question": "Shinto shrine"
+    },
+    {
+      "answer": [
+        "おや",
+        "親",
+        "祖"
+      ],
+      "question": "mother and father; parent; parents"
+    },
+    {
+      "answer": [
+        "しんせつ",
+        "親切",
+        "深切"
+      ],
+      "question": "considerate; friendly; generous; gentle; kind; nice"
+    },
+    {
+      "answer": [
+        "すすむ",
+        "進む"
+      ],
+      "question": "to advance; to go forward"
+    },
+    {
+      "answer": [
+        "にんぎょう",
+        "人形"
+      ],
+      "question": "doll; figure; puppet"
+    },
+    {
+      "answer": [
+        "じんこう",
+        "人口"
+      ],
+      "question": "population"
+    },
+    {
+      "answer": [
+        "ごみ",
+        "ゴミ",
+        "あくた",
+        "塵",
+        "芥"
+      ],
+      "question": "garbage; refuse; rubbish; trash"
+    },
+    {
+      "answer": [
+        "たずねる",
+        "尋ねる",
+        "訊ねる"
+      ],
+      "question": "to ask; to enquire; to inquire"
+    },
+    {
+      "answer": [
+        "すいえい",
+        "水泳"
+      ],
+      "question": "swimming"
+    },
+    {
+      "answer": [
+        "すいどう",
+        "水道"
+      ],
+      "question": "water service; water supply; waterworks"
+    },
+    {
+      "answer": [
+        "ずいぶん",
+        "随分",
+        "ずい分",
+        "隨分"
+      ],
+      "question": "awfully; considerably; extremely; surprisingly; terribly; very"
+    },
+    {
+      "answer": [
+        "すうがく",
+        "数学"
+      ],
+      "question": "arithmetic; mathematics"
+    },
+    {
+      "answer": [
+        "せかい",
+        "世界"
+      ],
+      "question": "society; the universe; the world"
+    },
+    {
+      "answer": [
+        "せわ",
+        "世話"
+      ],
+      "question": "aid; assistance; help; looking after"
+    },
+    {
+      "answer": [
+        "ぜひ",
+        "是非"
+      ],
+      "question": "certainly; without fail"
+    },
+    {
+      "answer": [
+        "すごい",
+        "スゴイ",
+        "スゴい",
+        "凄い"
+      ],
+      "question": "dreadful; terrible"
+    },
+    {
+      "answer": [
+        "なるべく",
+        "成るべく",
+        "成る可く"
+      ],
+      "question": "as much as possible; if possible; wherever practicable"
+    },
+    {
+      "answer": [
+        "なるほど",
+        "ナルホド",
+        "なる程",
+        "成る程",
+        "成程",
+        "成るほど"
+      ],
+      "question": "I see; indeed; that's right"
+    },
+    {
+      "answer": [
+        "せいじ",
+        "政治"
+      ],
+      "question": "government; politics"
+    },
+    {
+      "answer": [
+        "ほし",
+        "星"
+      ],
+      "question": "heavenly body; planet (usu. not including Earth); star (usu. not including the Sun)"
+    },
+    {
+      "answer": [
+        "ただしい",
+        "正しい"
+      ],
+      "question": "correct; right"
+    },
+    {
+      "answer": [
+        "しょうがつ",
+        "正月"
+      ],
+      "question": "New Year (esp. first three days)"
+    },
+    {
+      "answer": [
+        "いきる",
+        "生きる",
+        "活きる"
+      ],
+      "question": "to exist; to live"
+    },
+    {
+      "answer": [
+        "せいかつ",
+        "生活"
+      ],
+      "question": "life (one's daily existence); livelihood; living"
+    },
+    {
+      "answer": [
+        "せいさん",
+        "生産"
+      ],
+      "question": "manufacture; production"
+    },
+    {
+      "answer": [
+        "さかん",
+        "盛ん"
+      ],
+      "question": "popular"
+    },
+    {
+      "answer": [
+        "せい",
+        "製"
+      ],
+      "question": "-made; make"
+    },
+    {
+      "answer": [
+        "せいよう",
+        "西洋"
+      ],
+      "question": "Western countries; the Occident; the West"
+    },
+    {
+      "answer": [
+        "せき",
+        "席"
+      ],
+      "question": "seat"
+    },
+    {
+      "answer": [
+        "むかし",
+        "昔"
+      ],
+      "question": "former; olden days"
+    },
+    {
+      "answer": [
+        "いし",
+        "石"
+      ],
+      "question": "stone"
+    },
+    {
+      "answer": [
+        "つもり",
+        "積もり",
+        "積り"
+      ],
+      "question": "intention; plan"
+    },
+    {
+      "answer": [
+        "あかちゃん",
+        "赤ちゃん"
+      ],
+      "question": "baby; infant"
+    },
+    {
+      "answer": [
+        "あかんぼう",
+        "あかんぼ",
+        "赤ん坊",
+        "赤んぼ",
+        "赤んぼう"
+      ],
+      "question": "baby; infant"
+    },
+    {
+      "answer": [
+        "おる",
+        "折る"
+      ],
+      "question": "to break; to break off; to fracture; to pick (e.g. flowers); to snap off"
+    },
+    {
+      "answer": [
+        "おれる",
+        "折れる"
+      ],
+      "question": "to be broken; to break; to fracture; to snap"
+    },
+    {
+      "answer": [
+        "せつめい",
+        "説明"
+      ],
+      "question": "explanation; exposition"
+    },
+    {
+      "answer": [
+        "まず",
+        "先ず"
+      ],
+      "question": "above all; first (of all); firstly; to start with"
+    },
+    {
+      "answer": [
+        "せんぱい",
+        "先輩"
+      ],
+      "question": "elder; old-timer; older graduate; progenitor; senior (at work or school); superior"
+    },
+    {
+      "answer": [
+        "せんもん",
+        "専門",
+        "專門"
+      ],
+      "question": "area of expertise; expert; speciality; specialty; subject of study"
+    },
+    {
+      "answer": [
+        "せんそう",
+        "戦争"
+      ],
+      "question": "war"
+    },
+    {
+      "answer": [
+        "あさい",
+        "浅い"
+      ],
+      "question": "shallow; superficial"
+    },
+    {
+      "answer": [
+        "せん",
+        "線"
+      ],
+      "question": "line; stria; stripe"
+    },
+    {
+      "answer": [
+        "ぜんぜん",
+        "全然"
+      ],
+      "question": "(not) at all; (not) in the slightest"
+    },
+    {
+      "answer": [
+        "そふ",
+        "じじ",
+        "じい",
+        "おおじ",
+        "おじ",
+        "そぶ",
+        "祖父"
+      ],
+      "question": "grandfather"
+    },
+    {
+      "answer": [
+        "そぼ",
+        "ばば",
+        "おおば",
+        "おば",
+        "うば",
+        "祖母"
+      ],
+      "question": "grandmother"
+    },
+    {
+      "answer": [
+        "すばらしい",
+        "すんばらしい",
+        "素晴らしい",
+        "素晴しい",
+        "素薔薇しい"
+      ],
+      "question": "magnificent; splendid; wonderful"
+    },
+    {
+      "answer": [
+        "そうだん",
+        "相談"
+      ],
+      "question": "asking (somebody) for advice; consultation; discussing; discussion"
+    },
+    {
+      "answer": [
+        "くさ",
+        "草",
+        "艸"
+      ],
+      "question": "grass; herb; thatch; weed"
+    },
+    {
+      "answer": [
+        "おくる",
+        "送る"
+      ],
+      "question": "to despatch; to dispatch; to send (a thing); to transmit"
+    },
+    {
+      "answer": [
+        "さわぐ",
+        "騒ぐ",
+        "騷ぐ"
+      ],
+      "question": "to be noisy; to make noise; to make racket"
+    },
+    {
+      "answer": [
+        "むすこ",
+        "そく",
+        "息子",
+        "むす子",
+        "息"
+      ],
+      "question": "son"
+    },
+    {
+      "answer": [
+        "たす",
+        "足す"
+      ],
+      "question": "to add (numbers)"
+    },
+    {
+      "answer": [
+        "たりる",
+        "足りる"
+      ],
+      "question": "to be enough; to be sufficient"
+    },
+    {
+      "answer": [
+        "つづく",
+        "続く"
+      ],
+      "question": "to continue; to go on; to last"
+    },
+    {
+      "answer": [
+        "つづける",
+        "続ける"
+      ],
+      "question": "to continue; to keep on; to keep up"
+    },
+    {
+      "answer": [
+        "そつぎょう",
+        "卒業"
+      ],
+      "question": "completion (of a course); graduation"
+    },
+    {
+      "answer": [
+        "ふとる",
+        "太る",
+        "肥る"
+      ],
+      "question": "to gain weight; to get stout; to grow fat; to put on weight"
+    },
+    {
+      "answer": [
+        "うつ",
+        "打つ"
+      ],
+      "question": "to bang; to beat; to clap; to hit; to knock; to pound; to punch; to slap; to strike; to tap"
+    },
+    {
+      "answer": [
+        "だめ",
+        "ダメ",
+        "駄目"
+      ],
+      "question": "broken; no good; not serving its purpose; useless"
+    },
+    {
+      "answer": [
+        "たいいん",
+        "退院"
+      ],
+      "question": "discharge from hospital; leaving hospital"
+    },
+    {
+      "answer": [
+        "だいがくせい",
+        "大学生"
+      ],
+      "question": "college student; university student"
+    },
+    {
+      "answer": [
+        "だいじ",
+        "大事"
+      ],
+      "question": "crucial; important; serious"
+    },
+    {
+      "answer": [
+        "だいたい",
+        "大体"
+      ],
+      "question": "gist; main point; outline"
+    },
+    {
+      "answer": [
+        "たいてい",
+        "大抵",
+        "大てい"
+      ],
+      "question": "generally; mostly; ordinarily; usually"
+    },
+    {
+      "answer": [
+        "だいぶ",
+        "だいぶん",
+        "大分"
+      ],
+      "question": "a lot; considerably; greatly"
+    },
+    {
+      "answer": [
+        "たな",
+        "棚"
+      ],
+      "question": "ledge; rack; shelf; shelves"
+    },
+    {
+      "answer": [
+        "だんぼう",
+        "暖房",
+        "煖房"
+      ],
+      "question": "(indoor) heating"
+    },
+    {
+      "answer": [
+        "だんせい",
+        "男性"
+      ],
+      "question": "male; man"
+    },
+    {
+      "answer": [
+        "しらせる",
+        "知らせる",
+        "報せる"
+      ],
+      "question": "to advise; to inform; to notify"
+    },
+    {
+      "answer": [
+        "じしん",
+        "ない",
+        "なえ",
+        "じぶるい",
+        "地震"
+      ],
+      "question": "earthquake"
+    },
+    {
+      "answer": [
+        "ちり",
+        "地理"
+      ],
+      "question": "geography"
+    },
+    {
+      "answer": [
+        "はずかしい",
+        "恥ずかしい",
+        "恥かしい",
+        "恥しい",
+        "羞ずかしい",
+        "羞しい",
+        "羞かしい"
+      ],
+      "question": "ashamed; embarrassed; embarrassing; humiliated; shy"
+    },
+    {
+      "answer": [
+        "いたす",
+        "致す"
+      ],
+      "question": "to do"
+    },
+    {
+      "answer": [
+        "きもの",
+        "着物"
+      ],
+      "question": "Japanese traditional clothing (esp. full-length); kimono"
+    },
+    {
+      "answer": [
+        "ちゅうがっこう",
+        "中学校"
+      ],
+      "question": "junior high school; lower secondary school; middle school"
+    },
+    {
+      "answer": [
+        "ひるやすみ",
+        "昼休み"
+      ],
+      "question": "lunch break; noon recess; noon rest period"
+    },
+    {
+      "answer": [
+        "ちゅうい",
+        "注意"
+      ],
+      "question": "advice; attention (heed); being careful; caution; warning"
+    },
+    {
+      "answer": [
+        "ちゅうしゃ",
+        "注射"
+      ],
+      "question": "injection"
+    },
+    {
+      "answer": [
+        "むし",
+        "虫"
+      ],
+      "question": "bug; cricket; insect; moth"
+    },
+    {
+      "answer": [
+        "ちゅうしゃじょう",
+        "駐車場"
+      ],
+      "question": "car park; carpark; parking lot; parking place"
+    },
+    {
+      "answer": [
+        "ていねい",
+        "丁寧",
+        "叮嚀"
+      ],
+      "question": "civil; courteous; polite"
+    },
+    {
+      "answer": [
+        "はる",
+        "張る",
+        "貼る"
+      ],
+      "question": "to affix; to paste; to stick"
+    },
+    {
+      "answer": [
+        "しらべる",
+        "調べる"
+      ],
+      "question": "to check up; to examine; to inquire; to investigate; to look up; to search; to sense; to study"
+    },
+    {
+      "answer": [
+        "めずらしい",
+        "珍しい",
+        "珍らしい"
+      ],
+      "question": "curious; rare; unusual"
+    },
+    {
+      "answer": [
+        "かよう",
+        "通う"
+      ],
+      "question": "to go back and forth between; to go to and from (a place); to ply between; to run between (e.g. bus, train, etc.)"
+    },
+    {
+      "answer": [
+        "とおり",
+        "通り"
+      ],
+      "question": "avenue; road; street; way"
+    },
+    {
+      "answer": [
+        "とおる",
+        "通る",
+        "徹る",
+        "透る"
+      ],
+      "question": "to go along; to go by; to go by way of; to go past; to go via; to pass through; to take (a route); to travel along; to use (a road)"
+    },
+    {
+      "answer": [
+        "つける",
+        "漬ける",
+        "浸ける"
+      ],
+      "question": "to dip; to dunk; to soak (in); to steep"
+    },
+    {
+      "answer": [
+        "つる",
+        "釣る"
+      ],
+      "question": "to angle; to catch; to fish"
+    },
+    {
+      "answer": [
+        "ほど",
+        "程"
+      ],
+      "question": "degree; extent; measure"
+    },
+    {
+      "answer": [
+        "てきとう",
+        "テキトー",
+        "適当"
+      ],
+      "question": "adequate; appropriate; fair; fit; proper; suitable"
+    },
+    {
+      "answer": [
+        "てんきよほう",
+        "天気予報"
+      ],
+      "question": "weather forecast; weather report"
+    },
+    {
+      "answer": [
+        "てんらんかい",
+        "展覧会"
+      ],
+      "question": "exhibition"
+    },
+    {
+      "answer": [
+        "てんいん",
+        "ていいん",
+        "店員"
+      ],
+      "question": "clerk; employee (of a store); salesperson; shop assistant"
+    },
+    {
+      "answer": [
+        "てん",
+        "点"
+      ],
+      "question": "dot; mark; point; speck; spot"
+    },
+    {
+      "answer": [
+        "つく",
+        "点く"
+      ],
+      "question": "to be lighted; to be lit (e.g. electricity comes on)"
+    },
+    {
+      "answer": [
+        "つたえる",
+        "伝える"
+      ],
+      "question": "to bequeath; to communicate; to convey; to impart; to propagate; to report; to teach; to tell; to transmit"
+    },
+    {
+      "answer": [
+        "いなか",
+        "田舎"
+      ],
+      "question": "countryside; rural area; the sticks"
+    },
+    {
+      "answer": [
+        "でんとう",
+        "電灯",
+        "電燈"
+      ],
+      "question": "electric light"
+    },
+    {
+      "answer": [
+        "でんぽう",
+        "電報"
+      ],
+      "question": "telegram"
+    },
+    {
+      "answer": [
+        "ぬる",
+        "塗る"
+      ],
+      "question": "to lacquer; to paint; to plaster; to put up (wallpaper); to smear; to spread; to varnish"
+    },
+    {
+      "answer": [
+        "つごう",
+        "都合"
+      ],
+      "question": "circumstances; condition; convenience"
+    },
+    {
+      "answer": [
+        "おこる",
+        "いかる",
+        "怒る",
+        "瞋る"
+      ],
+      "question": "to get angry; to get mad"
+    },
+    {
+      "answer": [
+        "たおれる",
+        "倒れる"
+      ],
+      "question": "to collapse; to fall (over, down); to take a fall; to topple"
+    },
+    {
+      "answer": [
+        "しま",
+        "島",
+        "嶋"
+      ],
+      "question": "island"
+    },
+    {
+      "answer": [
+        "なげる",
+        "投げる"
+      ],
+      "question": "to cast; to fling; to hurl; to throw; to toss"
+    },
+    {
+      "answer": [
+        "ぬすむ",
+        "盗む",
+        "偸む"
+      ],
+      "question": "to steal"
+    },
+    {
+      "answer": [
+        "ゆ",
+        "湯"
+      ],
+      "question": "hot water"
+    },
+    {
+      "answer": [
+        "こたえ",
+        "いらえ",
+        "答え",
+        "答",
+        "応え",
+        "報え"
+      ],
+      "question": "answer; reply; response; solution"
+    },
+    {
+      "answer": [
+        "ふむ",
+        "踏む",
+        "履む",
+        "践む"
+      ],
+      "question": "to step on; to trample on; to tread on"
+    },
+    {
+      "answer": [
+        "にげる",
+        "逃げる",
+        "迯げる"
+      ],
+      "question": "to escape; to run away"
+    },
+    {
+      "answer": [
+        "うごく",
+        "動く"
+      ],
+      "question": "to move; to shake; to shift; to stir; to swing"
+    },
+    {
+      "answer": [
+        "どうぶつえん",
+        "動物園"
+      ],
+      "question": "zoo; zoological gardens"
+    },
+    {
+      "answer": [
+        "どうぐ",
+        "道具"
+      ],
+      "question": "apparatus; device; implement; instrument; tool; utensil"
+    },
+    {
+      "answer": [
+        "とくに",
+        "特に"
+      ],
+      "question": "especially; expressly; in particular; particularly"
+    },
+    {
+      "answer": [
+        "とっきゅう",
+        "特急"
+      ],
+      "question": "limited express (train, faster than an express)"
+    },
+    {
+      "answer": [
+        "とくべつ",
+        "特別"
+      ],
+      "question": "especial; exceptional; extraordinary; particular; special"
+    },
+    {
+      "answer": [
+        "とどける",
+        "届ける",
+        "屆ける"
+      ],
+      "question": "to deliver; to forward; to send"
+    },
+    {
+      "answer": [
+        "うち",
+        "内",
+        "中"
+      ],
+      "question": "inside; within"
+    },
+    {
+      "answer": [
+        "にっき",
+        "日記"
+      ],
+      "question": "diary; journal"
+    },
+    {
+      "answer": [
+        "にゅういん",
+        "入院"
+      ],
+      "question": "hospitalisation; hospitalization"
+    },
+    {
+      "answer": [
+        "にゅうがく",
+        "入学"
+      ],
+      "question": "enrolment (in university, etc.) (enrollment); entry to school or university; matriculation"
+    },
+    {
+      "answer": [
+        "ぬれる",
+        "濡れる",
+        "濡る"
+      ],
+      "question": "to get wet"
+    },
+    {
+      "answer": [
+        "ねつ",
+        "熱"
+      ],
+      "question": "heat"
+    },
+    {
+      "answer": [
+        "ねっしん",
+        "熱心"
+      ],
+      "question": "ardent; eager; enthusiastic; fervent; keen; zealous"
+    },
+    {
+      "answer": [
+        "はいけん",
+        "拝見",
+        "拜見"
+      ],
+      "question": "looking at; seeing"
+    },
+    {
+      "answer": [
+        "せなか",
+        "背中",
+        "背なか"
+      ],
+      "question": "back (of body)"
+    },
+    {
+      "answer": [
+        "ばい",
+        "倍"
+      ],
+      "question": "double; twice"
+    },
+    {
+      "answer": [
+        "とまる",
+        "泊まる",
+        "泊る"
+      ],
+      "question": "to stay at (e.g. hotel)"
+    },
+    {
+      "answer": [
+        "はず",
+        "筈",
+        "弭"
+      ],
+      "question": "bound to be; expectation that something took place, will take place or was in some state; expected to be; it should be so; must be"
+    },
+    {
+      "answer": [
+        "はつおん",
+        "発音"
+      ],
+      "question": "pronunciation"
+    },
+    {
+      "answer": [
+        "かみ",
+        "髪",
+        "髮"
+      ],
+      "question": "hair (on the head)"
+    },
+    {
+      "answer": [
+        "はんたい",
+        "反対"
+      ],
+      "question": "antagonism; dissent; hostility; objection; opposition; resistance"
+    },
+    {
+      "answer": [
+        "ばんぐみ",
+        "番組"
+      ],
+      "question": "program (e.g. TV); programme"
+    },
+    {
+      "answer": [
+        "かれ",
+        "彼"
+      ],
+      "question": "he; him"
+    },
+    {
+      "answer": [
+        "かれら",
+        "彼ら",
+        "彼等"
+      ],
+      "question": "them; they"
+    },
+    {
+      "answer": [
+        "かのじょ",
+        "彼女"
+      ],
+      "question": "her; she"
+    },
+    {
+      "answer": [
+        "かなしい",
+        "悲しい",
+        "哀しい",
+        "愛しい"
+      ],
+      "question": "miserable; sad; sorrowful; unhappy"
+    },
+    {
+      "answer": [
+        "くらべる",
+        "比べる",
+        "較べる",
+        "競べる"
+      ],
+      "question": "to compare; to make a comparison"
+    },
+    {
+      "answer": [
+        "ひじょうに",
+        "非常に"
+      ],
+      "question": "exceedingly; extremely; very"
+    },
+    {
+      "answer": [
+        "ひこうじょう",
+        "飛行場"
+      ],
+      "question": "airfield; airport"
+    },
+    {
+      "answer": [
+        "うつくしい",
+        "美しい",
+        "愛しい"
+      ],
+      "question": "beautiful; lovely; pretty; pure (heart, friendship, etc.); sweet"
+    },
+    {
+      "answer": [
+        "びじゅつかん",
+        "美術館"
+      ],
+      "question": "art gallery; art museum"
+    },
+    {
+      "answer": [
+        "かならず",
+        "必ず"
+      ],
+      "question": "always; certainly; invariably; necessarily; positively; without exception; without fail"
+    },
+    {
+      "answer": [
+        "ひつよう",
+        "必要",
+        "必用"
+      ],
+      "question": "essential; indispensable; necessary; needed"
+    },
+    {
+      "answer": [
+        "おもて",
+        "表"
+      ],
+      "question": "surface"
+    },
+    {
+      "answer": [
+        "しなもの",
+        "品物"
+      ],
+      "question": "article; goods; thing"
+    },
+    {
+      "answer": [
+        "ふべん",
+        "不便"
+      ],
+      "question": "inconvenience; inexpediency; unhandiness"
+    },
+    {
+      "answer": [
+        "おっと",
+        "夫",
+        "良人"
+      ],
+      "question": "husband"
+    },
+    {
+      "answer": [
+        "ふとん",
+        "布団",
+        "蒲団",
+        "薄団"
+      ],
+      "question": "Japanese bedding consisting of a mattress and a duvet; futon"
+    },
+    {
+      "answer": [
+        "ふつう",
+        "普通"
+      ],
+      "question": "general; ordinary; usual"
+    },
+    {
+      "answer": [
+        "まける",
+        "負ける",
+        "敗ける",
+        "敗北る"
+      ],
+      "question": "to be defeated; to lose"
+    },
+    {
+      "answer": [
+        "ぶどう",
+        "ブドウ",
+        "えび",
+        "葡萄"
+      ],
+      "question": "grape; grapevine"
+    },
+    {
+      "answer": [
+        "ぶちょう",
+        "部長"
+      ],
+      "question": "head (chief, director) of a section or department"
+    },
+    {
+      "answer": [
+        "ふくしゅう",
+        "復習"
+      ],
+      "question": "review (of learned material); revision"
+    },
+    {
+      "answer": [
+        "ふくざつ",
+        "複雑"
+      ],
+      "question": "complex; complicated; intricate; mixed (feelings)"
+    },
+    {
+      "answer": [
+        "はらう",
+        "払う"
+      ],
+      "question": "to pay (e.g. money, bill)"
+    },
+    {
+      "answer": [
+        "わかす",
+        "沸かす",
+        "鎔かす"
+      ],
+      "question": "to boil; to heat"
+    },
+    {
+      "answer": [
+        "ぶんか",
+        "文化"
+      ],
+      "question": "civilisation; civilization; culture"
+    },
+    {
+      "answer": [
+        "ぶんがく",
+        "文学"
+      ],
+      "question": "literature"
+    },
+    {
+      "answer": [
+        "ぶんぽう",
+        "文法"
+      ],
+      "question": "grammar; syntax"
+    },
+    {
+      "answer": [
+        "こめ",
+        "よね",
+        "めめ",
+        "コメ",
+        "米"
+      ],
+      "question": "(husked grains of) rice"
+    },
+    {
+      "answer": [
+        "かべ",
+        "へき",
+        "壁"
+      ],
+      "question": "partition; wall"
+    },
+    {
+      "answer": [
+        "べつ",
+        "べち",
+        "別"
+      ],
+      "question": "difference; discrimination; distinction"
+    },
+    {
+      "answer": [
+        "へん",
+        "変",
+        "變"
+      ],
+      "question": "curious; eccentric; fishy; funny; odd; peculiar; queer; strange; suspicious; weird"
+    },
+    {
+      "answer": [
+        "かえる",
+        "変える"
+      ],
+      "question": "to alter; to change; to convert; to transform; to turn; to vary"
+    },
+    {
+      "answer": [
+        "かわる",
+        "変わる",
+        "変る"
+      ],
+      "question": "to be altered; to be transformed; to change; to vary"
+    },
+    {
+      "answer": [
+        "かたづける",
+        "片付ける",
+        "片づける"
+      ],
+      "question": "to put away; to put in order; to straighten up; to tidy up"
+    },
+    {
+      "answer": [
+        "へんじ",
+        "返事",
+        "返辞"
+      ],
+      "question": "answer; reply; response"
+    },
+    {
+      "answer": [
+        "くれる",
+        "暮れる",
+        "眩れる",
+        "暗れる",
+        "昏れる"
+      ],
+      "question": "to get dark; to grow dark"
+    },
+    {
+      "answer": [
+        "ほうそう",
+        "放送"
+      ],
+      "question": "broadcast; broadcasting"
+    },
+    {
+      "answer": [
+        "ほうりつ",
+        "法律"
+      ],
+      "question": "law"
+    },
+    {
+      "answer": [
+        "たずねる",
+        "訪ねる"
+      ],
+      "question": "to call on; to pay a visit to; to visit"
+    },
+    {
+      "answer": [
+        "なくなる",
+        "亡くなる"
+      ],
+      "question": "to die"
+    },
+    {
+      "answer": [
+        "わすれもの",
+        "忘れ物"
+      ],
+      "question": "lost article; something forgotten"
+    },
+    {
+      "answer": [
+        "ぼうえき",
+        "貿易"
+      ],
+      "question": "trade (foreign)"
+    },
+    {
+      "answer": [
+        "ぼく",
+        "僕"
+      ],
+      "question": "I; me"
+    },
+    {
+      "answer": [
+        "ほとんど",
+        "殆ど",
+        "殆んど",
+        "幾ど"
+      ],
+      "question": "all but; almost; almost invariably; just about; mostly; nearly; practically; well-nigh"
+    },
+    {
+      "answer": [
+        "ほんやく",
+        "翻訳",
+        "飜訳"
+      ],
+      "question": "translation"
+    },
+    {
+      "answer": [
+        "または",
+        "又は"
+      ],
+      "question": "or; otherwise"
+    },
+    {
+      "answer": [
+        "まんが",
+        "マンガ",
+        "漫画"
+      ],
+      "question": "cartoon; comic; comic strip; manga"
+    },
+    {
+      "answer": [
+        "あじ",
+        "味"
+      ],
+      "question": "flavor; flavour; taste"
+    },
+    {
+      "answer": [
+        "みそ",
+        "味噌"
+      ],
+      "question": "fermented condiment usu. made from soybeans; miso"
+    },
+    {
+      "answer": [
+        "ねむい",
+        "眠い",
+        "睡い"
+      ],
+      "question": "drowsy; sleepy; somnolent"
+    },
+    {
+      "answer": [
+        "ねむる",
+        "ねぶる",
+        "眠る",
+        "睡る"
+      ],
+      "question": "to sleep (not necessarily lying down)"
+    },
+    {
+      "answer": [
+        "ゆめ",
+        "夢"
+      ],
+      "question": "dream"
+    },
+    {
+      "answer": [
+        "なくなる",
+        "無くなる"
+      ],
+      "question": "to be lost (e.g. luggage); to be missing"
+    },
+    {
+      "answer": [
+        "むり",
+        "ムリ",
+        "無理"
+      ],
+      "question": "unjustifiable; unnatural; unreasonable"
+    },
+    {
+      "answer": [
+        "むすめ",
+        "娘"
+      ],
+      "question": "daughter"
+    },
+    {
+      "answer": [
+        "なる",
+        "鳴る"
+      ],
+      "question": "to echo; to resound; to ring; to roar; to rumble; to sound"
+    },
+    {
+      "answer": [
+        "け",
+        "毛"
+      ],
+      "question": "hair"
+    },
+    {
+      "answer": [
+        "もめん",
+        "きわた",
+        "木綿",
+        "木棉"
+      ],
+      "question": "cotton (material)"
+    },
+    {
+      "answer": [
+        "もちろん",
+        "勿論"
+      ],
+      "question": "certainly; naturally; of course"
+    },
+    {
+      "answer": [
+        "もどる",
+        "戻る"
+      ],
+      "question": "to turn back (e.g. half-way)"
+    },
+    {
+      "answer": [
+        "もらう",
+        "貰う"
+      ],
+      "question": "to accept; to receive; to take"
+    },
+    {
+      "answer": [
+        "やくにたつ",
+        "役に立つ",
+        "役にたつ",
+        "やくに立つ"
+      ],
+      "question": "to be helpful; to be useful"
+    },
+    {
+      "answer": [
+        "やくそく",
+        "約束"
+      ],
+      "question": "agreement; appointment; arrangement; contract; date; engagement; one's word; pact; promise"
+    },
+    {
+      "answer": [
+        "わけ",
+        "訳"
+      ],
+      "question": "cause; circumstances; conclusion from reasoning, judgement or calculation based on something read or heard; meaning; reason; situation"
+    },
+    {
+      "answer": [
+        "おどる",
+        "踊る"
+      ],
+      "question": "to dance (orig. a hopping dance)"
+    },
+    {
+      "answer": [
+        "ゆしゅつ",
+        "しゅしゅつ",
+        "輸出"
+      ],
+      "question": "export; exportation"
+    },
+    {
+      "answer": [
+        "ゆにゅう",
+        "しゅにゅう",
+        "輸入"
+      ],
+      "question": "import; importation; introduction"
+    },
+    {
+      "answer": [
+        "ただいま",
+        "ただ今",
+        "唯今",
+        "只今"
+      ],
+      "question": "Here I am; I'm home!"
+    },
+    {
+      "answer": [
+        "やさしい",
+        "優しい"
+      ],
+      "question": "affectionate; amiable; gentle; graceful; kind; tender"
+    },
+    {
+      "answer": [
+        "あそび",
+        "遊び"
+      ],
+      "question": "playing"
+    },
+    {
+      "answer": [
+        "よしゅう",
+        "予習"
+      ],
+      "question": "preparation for a lesson"
+    },
+    {
+      "answer": [
+        "よてい",
+        "予定"
+      ],
+      "question": "arrangement; estimate; expectation; plans; program; programme; schedule"
+    },
+    {
+      "answer": [
+        "よやく",
+        "予約"
+      ],
+      "question": "advance order; appointment; booking; reservation"
+    },
+    {
+      "answer": [
+        "ゆれる",
+        "揺れる"
+      ],
+      "question": "to shake; to sway; to waver"
+    },
+    {
+      "answer": [
+        "さま",
+        "様",
+        "方",
+        "状"
+      ],
+      "question": "Miss; Mr.; Mrs.; Ms."
+    },
+    {
+      "answer": [
+        "よう",
+        "用"
+      ],
+      "question": "business; engagement; errand; task"
+    },
+    {
+      "answer": [
+        "ようい",
+        "用意"
+      ],
+      "question": "arrangements; getting ready; laying out (e.g. a meal); preparation; provision"
+    },
+    {
+      "answer": [
+        "ようじ",
+        "用事"
+      ],
+      "question": "affairs; business (to take care of); engagement; errand; tasks; things to do"
+    },
+    {
+      "answer": [
+        "は",
+        "葉"
+      ],
+      "question": "(pine) needle; blade (of grass); leaf"
+    },
+    {
+      "answer": [
+        "おどり",
+        "踊り"
+      ],
+      "question": "dance"
+    },
+    {
+      "answer": [
+        "おちる",
+        "落ちる",
+        "堕ちる",
+        "墜ちる",
+        "落る"
+      ],
+      "question": "to be used in a certain place (e.g. money); to drop; to fall (e.g. rain); to fall down; to fall onto (e.g. light or one's gaze); to sink (e.g. sun or moon)"
+    },
+    {
+      "answer": [
+        "りよう",
+        "利用"
+      ],
+      "question": "application; use; utilisation; utilization"
+    },
+    {
+      "answer": [
+        "りゆう",
+        "わけ",
+        "理由"
+      ],
+      "question": "motive; pretext; reason"
+    },
+    {
+      "answer": [
+        "うら",
+        "裏"
+      ],
+      "question": "bottom; opposite side; other side; reverse side; side hidden from view; undersurface"
+    },
+    {
+      "answer": [
+        "たてる",
+        "立てる"
+      ],
+      "question": "to erect; to put up; to raise; to set up; to stand up"
+    },
+    {
+      "answer": [
+        "るす",
+        "留守",
+        "留主"
+      ],
+      "question": "absence; being away from home"
+    },
+    {
+      "answer": [
+        "りょかん",
+        "旅館"
+      ],
+      "question": "Japanese-style lodging, usu. professionally-run; ryokan; traditional inn"
+    },
+    {
+      "answer": [
+        "りょうほう",
+        "両方"
+      ],
+      "question": "both; both parties; both sides"
+    },
+    {
+      "answer": [
+        "ちから",
+        "力"
+      ],
+      "question": "energy; force; might; strength; vigour (vigor)"
+    },
+    {
+      "answer": [
+        "はやし",
+        "林"
+      ],
+      "question": "copse; forest; thicket; woods"
+    },
+    {
+      "answer": [
+        "たとえば",
+        "例えば"
+      ],
+      "question": "e.g.; for example; for instance"
+    },
+    {
+      "answer": [
+        "ひえる",
+        "冷える"
+      ],
+      "question": "to cool down; to get chilly; to grow cold (from room temperature, e.g. in refrigerator)"
+    },
+    {
+      "answer": [
+        "れいぼう",
+        "冷房"
+      ],
+      "question": "air-conditioning; cooling"
+    },
+    {
+      "answer": [
+        "れきし",
+        "歴史"
+      ],
+      "question": "history"
+    },
+    {
+      "answer": [
+        "つれる",
+        "連れる"
+      ],
+      "question": "to be accompanied by; to bring along; to go with; to take (someone) with one"
+    },
+    {
+      "answer": [
+        "れんらく",
+        "連絡",
+        "聯絡"
+      ],
+      "question": "to contact; to get in touch"
+    },
+    {
+      "answer": [
+        "うで",
+        "腕"
+      ],
+      "question": "arm"
+    },
+    {
+      "answer": [
+        "すり",
+        "スリ",
+        "掏摸",
+        "掏児"
+      ],
+      "question": "pickpocket"
+    },
+    {
+      "answer": [
+        "いちど",
+        "ひとたび",
+        "一度",
+        "１度",
+        "一たび",
+        "ひと度",
+        "一とたび"
+      ],
+      "question": "on one occasion; once; one time"
+    },
+    {
+      "answer": [
+        "おと",
+        "ね",
+        "おん",
+        "音"
+      ],
+      "question": "noise; report; sound"
+    },
+    {
+      "answer": [
+        "おる",
+        "居る"
+      ],
+      "question": "to be; to be (animate); to exist"
+    },
+    {
+      "answer": [
+        "こうじょう",
+        "こうば",
+        "工場"
+      ],
+      "question": "factory; mill; plant; workshop"
+    },
+    {
+      "answer": [
+        "さびしい",
+        "さみしい",
+        "寂しい",
+        "淋しい"
+      ],
+      "question": "desolate; lonely; lonesome; solitary"
+    },
+    {
+      "answer": [
+        "ひるま",
+        "ちゅうかん",
+        "昼間"
+      ],
+      "question": "daytime; diurnal period; during the day; time from sunrise until sunset"
+    },
+    {
+      "answer": [
+        "てん",
+        "店"
+      ],
+      "question": "-shop; -store"
+    },
+    {
+      "answer": [
+        "とちゅう",
+        "途中"
+      ],
+      "question": "en route; on the way"
+    },
+    {
+      "answer": [
+        "かたい",
+        "難い"
+      ],
+      "question": "difficult; hard"
+    },
+    {
+      "answer": [
+        "つつむ",
+        "包む",
+        "裹む"
+      ],
+      "question": "to cover with; to do up; to dress in; to pack; to tuck in; to wrap up"
+    },
+    {
+      "answer": [
+        "まま",
+        "まんま",
+        "ママ",
+        "儘",
+        "侭"
+      ],
+      "question": "as; as it is; as one likes; because"
+    },
+    {
+      "answer": [
+        "すく",
+        "空く"
+      ],
+      "question": "to become less crowded; to get empty; to thin out"
+    },
+    {
+      "answer": [
+        "いただく",
+        "頂く",
+        "戴く"
+      ],
+      "question": "to accept; to buy; to get; to receive; to take"
+    },
+    {
+      "answer": [
+        "うけつけ",
+        "受付",
+        "受け付け",
+        "受付け",
+        "受け付"
+      ],
+      "question": "information desk; reception (desk)"
+    },
+    {
+      "answer": [
+        "うつす",
+        "写す"
+      ],
+      "question": "to duplicate; to imitate; to reproduce; to trace; to transcribe"
+    },
+    {
+      "answer": [
+        "うりば",
+        "売り場",
+        "売場"
+      ],
+      "question": "counter; department; sales floor; section; selling area"
+    },
+    {
+      "answer": [
+        "えらぶ",
+        "選ぶ",
+        "撰ぶ",
+        "択ぶ"
+      ],
+      "question": "to choose; to select"
+    },
+    {
+      "answer": [
+        "おくりもの",
+        "贈り物",
+        "贈りもの",
+        "贈物"
+      ],
+      "question": "gift; present"
+    },
+    {
+      "answer": [
+        "おくれる",
+        "遅れる",
+        "後れる"
+      ],
+      "question": "to be delayed; to be late; to be overdue; to fall behind; to fall behind schedule"
+    },
+    {
+      "answer": [
+        "おこなう",
+        "行う",
+        "行なう"
+      ],
+      "question": "to carry out; to conduct oneself; to do; to perform"
+    },
+    {
+      "answer": [
+        "おしいれ",
+        "押し入れ",
+        "押入",
+        "押入れ"
+      ],
+      "question": "closet"
+    },
+    {
+      "answer": [
+        "おとす",
+        "落とす",
+        "落す"
+      ],
+      "question": "to cast (one's gaze); to drop; to leave behind; to let fall; to lose; to pour in (liquid); to shed (light)"
+    },
+    {
+      "answer": [
+        "おもう",
+        "思う",
+        "想う",
+        "念う",
+        "憶う",
+        "懐う",
+        "惟う"
+      ],
+      "question": "to believe; to consider; to reckon; to think"
+    },
+    {
+      "answer": [
+        "おわり",
+        "終わり",
+        "終り",
+        "終"
+      ],
+      "question": "the end"
+    },
+    {
+      "answer": [
+        "かっこう",
+        "かっこ",
+        "カッコ",
+        "格好",
+        "恰好"
+      ],
+      "question": "figure; form; pose; posture; shape"
+    },
+    {
+      "answer": [
+        "かわり",
+        "代わり",
+        "替わり",
+        "代り",
+        "替り"
+      ],
+      "question": "replacement; replacing; substitute; substituting"
+    },
+    {
+      "answer": [
+        "きこえる",
+        "聞こえる",
+        "聞える",
+        "聴こえる",
+        "聴える"
+      ],
+      "question": "to be audible; to be heard"
+    },
+    {
+      "answer": [
+        "きまる",
+        "決まる",
+        "決る",
+        "極る"
+      ],
+      "question": "to be decided; to be settled"
+    },
+    {
+      "answer": [
+        "きもち",
+        "気持ち",
+        "気持"
+      ],
+      "question": "feeling; mood; sensation; state of mind"
+    },
+    {
+      "answer": [
+        "くび",
+        "クビ",
+        "首",
+        "頸",
+        "頚"
+      ],
+      "question": "neck"
+    },
+    {
+      "answer": [
+        "ぐあい",
+        "ぐわい",
+        "具合",
+        "工合",
+        "具合い",
+        "工合い"
+      ],
+      "question": "condition; state"
+    },
+    {
+      "answer": [
+        "こむ",
+        "込む",
+        "混む",
+        "籠む",
+        "篭む"
+      ],
+      "question": "to be crowded; to be packed"
+    },
+    {
+      "answer": [
+        "こわい",
+        "怖い",
+        "恐い"
+      ],
+      "question": "dreadful; eerie; frightening; scary"
+    },
+    {
+      "answer": [
+        "ごぞんじ",
+        "ご存じ",
+        "ご存知",
+        "御存じ",
+        "御存知"
+      ],
+      "question": "knowing"
+    },
+    {
+      "answer": [
+        "ごちそう",
+        "ご馳走",
+        "御馳走"
+      ],
+      "question": "feast; treating (someone)"
+    },
+    {
+      "answer": [
+        "さがす",
+        "探す",
+        "捜す"
+      ],
+      "question": "to look for; to search (for something desired, needed)"
+    },
+    {
+      "answer": [
+        "しかた",
+        "仕方"
+      ],
+      "question": "course; means; method; resource; way"
+    },
+    {
+      "answer": [
+        "しっかり",
+        "確り",
+        "聢り"
+      ],
+      "question": "firmly; securely; tightly (holding on)"
+    },
+    {
+      "answer": [
+        "じてん",
+        "ことばてん",
+        "辞典",
+        "辭典",
+        "ことば典",
+        "言葉典"
+      ],
+      "question": "dictionary; lexicon"
+    },
+    {
+      "answer": [
+        "たいふう",
+        "台風",
+        "颱風"
+      ],
+      "question": "hurricane; typhoon"
+    },
+    {
+      "answer": [
+        "たしか",
+        "確か",
+        "確",
+        "慥か"
+      ],
+      "question": "certain; definite; positive; sure"
+    },
+    {
+      "answer": [
+        "つかまえる",
+        "捕まえる",
+        "捉まえる",
+        "掴まえる"
+      ],
+      "question": "to arrest; to capture; to catch; to restrain; to seize"
+    },
+    {
+      "answer": [
+        "どろぼう",
+        "ドロボー",
+        "どろぼー",
+        "泥棒",
+        "泥坊"
+      ],
+      "question": "burglar; robber; thief"
+    },
+    {
+      "answer": [
+        "なおす",
+        "治す",
+        "直す"
+      ],
+      "question": "to cure; to heal"
+    },
+    {
+      "answer": [
+        "なおる",
+        "治る",
+        "直る"
+      ],
+      "question": "to be cured; to be healed; to get well"
+    },
+    {
+      "answer": [
+        "なかなか",
+        "中々",
+        "仲々",
+        "中中"
+      ],
+      "question": "considerably; easily; fairly; highly; quite; rather; readily; very"
+    },
+    {
+      "answer": [
+        "におい",
+        "匂い",
+        "臭い",
+        "匂"
+      ],
+      "question": "odor; odour; scent; smell; stench"
+    },
+    {
+      "answer": [
+        "にかいだて",
+        "二階建て",
+        "二階建"
+      ],
+      "question": "two-storied building"
+    },
+    {
+      "answer": [
+        "ねだん",
+        "値段",
+        "直段"
+      ],
+      "question": "cost; price"
+    },
+    {
+      "answer": [
+        "のど",
+        "のんど",
+        "のみと",
+        "のみど",
+        "ノド",
+        "喉",
+        "咽",
+        "吭"
+      ],
+      "question": "throat"
+    },
+    {
+      "answer": [
+        "のりかえる",
+        "乗り換える",
+        "乗り替える",
+        "乗りかえる"
+      ],
+      "question": "to change (bus, train); to transfer (trains)"
+    },
+    {
+      "answer": [
+        "のりもの",
+        "乗り物",
+        "乗物"
+      ],
+      "question": "conveyance; transport; vehicle"
+    },
+    {
+      "answer": [
+        "ひきだし",
+        "引き出し",
+        "引出し",
+        "抽き出し",
+        "抽出し",
+        "抽斗",
+        "抽匣"
+      ],
+      "question": "drawer"
+    },
+    {
+      "answer": [
+        "ひきだす",
+        "引き出す",
+        "引出す",
+        "引きだす"
+      ],
+      "question": "to draw out; to pull out; to take out; to withdraw"
+    },
+    {
+      "answer": [
+        "ひげ",
+        "ヒゲ",
+        "髭",
+        "鬚",
+        "髯"
+      ],
+      "question": "beard; moustache; whiskers"
+    },
+    {
+      "answer": [
+        "ひどい",
+        "酷い",
+        "非道い"
+      ],
+      "question": "cruel; hard; harsh; heartless; severe"
+    },
+    {
+      "answer": [
+        "ふえる",
+        "増える",
+        "殖える"
+      ],
+      "question": "to increase; to multiply"
+    },
+    {
+      "answer": [
+        "ふね",
+        "船",
+        "舟",
+        "槽"
+      ],
+      "question": "boat; ship; steamship; vessel; watercraft"
+    },
+    {
+      "answer": [
+        "ほめる",
+        "褒める",
+        "誉める",
+        "賞める",
+        "称める"
+      ],
+      "question": "to admire; to praise; to speak well of someone"
+    },
+    {
+      "answer": [
+        "おまつり",
+        "お祭り",
+        "お祭",
+        "御祭り",
+        "御祭"
+      ],
+      "question": "carnival; feast; festival"
+    },
+    {
+      "answer": [
+        "まわり",
+        "周り"
+      ],
+      "question": "circumference; girth"
+    },
+    {
+      "answer": [
+        "まわる",
+        "回る",
+        "廻る"
+      ],
+      "question": "to revolve; to turn"
+    },
+    {
+      "answer": [
+        "まんなか",
+        "真ん中",
+        "まん中"
+      ],
+      "question": "center; centre; heart; middle; midpoint"
+    },
+    {
+      "answer": [
+        "みつかる",
+        "見つかる",
+        "見付かる"
+      ],
+      "question": "to be discovered; to be found"
+    },
+    {
+      "answer": [
+        "みつける",
+        "みっける",
+        "見つける",
+        "見付ける",
+        "見附ける",
+        "見附る"
+      ],
+      "question": "to come across; to detect; to discover; to find (e.g. an error in a book); to spot"
+    },
+    {
+      "answer": [
+        "むかう",
+        "向かう",
+        "向う",
+        "対う"
+      ],
+      "question": "to face"
+    },
+    {
+      "answer": [
+        "やせる",
+        "痩せる",
+        "痩る",
+        "瘠せる",
+        "瘠る",
+        "瘦せる"
+      ],
+      "question": "to become thin; to lose weight; to reduce (one's) weight; to slim"
+    },
+    {
+      "answer": [
+        "やわらかい",
+        "柔らかい",
+        "軟らかい",
+        "柔かい"
+      ],
+      "question": "limber; limp; pliant; soft; supple; tender"
+    },
+    {
+      "answer": [
+        "よう",
+        "様"
+      ],
+      "question": "appearing ...; looking ..."
+    },
+    {
+      "answer": [
+        "わかれる",
+        "別れる"
+      ],
+      "question": "to be apart from; to part (usu. of people); to part from; to part with"
+    },
+    {
+      "answer": [
+        "わく",
+        "沸く"
+      ],
+      "question": "to boil; to grow hot (e.g. water)"
+    },
+    {
+      "answer": [
+        "わりあい",
+        "割合",
+        "割り合い"
+      ],
+      "question": "percentage; proportion; rate; ratio"
+    },
+    {
+      "answer": [
+        "ございます",
+        "御座います",
+        "ご座います"
+      ],
+      "question": "to be; to exist"
+    },
+    {
+      "answer": [
+        "いけません",
+        "行けません"
+      ],
+      "question": "not good; of no use; wrong"
+    },
+    {
+      "answer": [
+        "おいわい",
+        "お祝い",
+        "御祝い",
+        "お祝",
+        "御祝"
+      ],
+      "question": "celebration; congratulation; congratulations; congratulatory gift; festival"
+    },
+    {
+      "answer": [
+        "と",
+        "都"
+      ],
+      "question": "metropolitan; municipal"
+    },
+    {
+      "answer": [
+        "たまに",
+        "偶に",
+        "適に"
+      ],
+      "question": "now and then; occasionally; once in a while; rarely; seldom"
+    },
+    {
+      "answer": [
+        "ついて",
+        "就いて"
+      ],
+      "question": "about; as to; concerning; regarding"
+    },
+    {
+      "answer": [
+        "いくらでも",
+        "幾らでも"
+      ],
+      "question": "any amount; as many as one likes; as much as one likes"
+    },
+    {
+      "answer": [
+        "かんごし",
+        "看護師"
+      ],
+      "question": "(hospital) nurse; RN; registered nurse"
+    },
+    {
+      "answer": [
+        "アフリカ",
+        "阿弗利加",
+        "亜弗利加"
+      ],
+      "question": "Africa"
+    },
+    {
+      "answer": [
+        "だい",
+        "代"
+      ],
+      "question": "charge; cost; price"
+    },
+    {
+      "answer": [
+        "およぎかた",
+        "泳ぎ方"
+      ],
+      "question": "way of swimming"
+    },
+    {
+      "answer": [
+        "そんなに"
+      ],
+      "question": "like that; so; so much"
+    },
+    {
+      "answer": [
+        "もうすぐ",
+        "もう直ぐ"
+      ],
+      "question": "almost; before long; nearly; shortly; soon"
+    },
+    {
+      "answer": [
+        "はい",
+        "杯",
+        "盃"
+      ],
+      "question": "cup for alcoholic beverages; sake cup"
+    },
+    {
+      "answer": [
+        "や"
+      ],
+      "question": "and ... and; such things as ..."
+    },
+    {
+      "answer": [
+        "けん",
+        "軒"
+      ],
+      "question": "counter for buildings (esp. houses)"
+    },
+    {
+      "answer": [
+        "じゅう",
+        "ぢゅう",
+        "中"
+      ],
+      "question": "in the course of; through; throughout"
+    },
+    {
+      "answer": [
+        "ああ"
+      ],
+      "question": "like that (used for something or someone distant from both speaker and listener); so"
+    },
+    {
+      "answer": [
+        "し"
+      ],
+      "question": "and; besides; moreover; not only ... but also; what's more"
+    },
+    {
+      "answer": [
+        "いってらっしゃい",
+        "行ってらっしゃい"
+      ],
+      "question": "have a good day; see you; take care"
+    },
+    {
+      "answer": [
+        "そう",
+        "然う"
+      ],
+      "question": "in that way; such; thus"
+    },
+    {
+      "answer": [
+        "いってまいります",
+        "行ってまいります",
+        "行って参ります",
+        "いって参ります"
+      ],
+      "question": "I'm off; good bye; see you later"
+    },
+    {
+      "answer": [
+        "おまたせしました",
+        "お待たせしました"
+      ],
+      "question": "sorry to have kept you waiting; thank you for waiting"
+    },
+    {
+      "answer": [
+        "ごらんになる",
+        "ご覧になる",
+        "御覧になる",
+        "ご覧に成る",
+        "御覧に成る"
+      ],
+      "question": "to look; to see; to watch"
+    },
+    {
+      "answer": [
+        "か",
+        "家"
+      ],
+      "question": "-er; -ist"
+    },
+    {
+      "answer": [
+        "あっ",
+        "アッ",
+        "アっ",
+        "あ",
+        "ア"
+      ],
+      "question": "ah; oh"
+    }
+  ]
+}
