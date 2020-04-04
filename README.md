@@ -18,7 +18,7 @@ In addition to the three main projects there are a few other directories:
 
 ## Configuration
 
-After cloning the repo, fill out [config/config_sample.js](https://github.com/mistval/kotoba/blob/master/config/config_sample.js) and rename it to **config.js**. You only have to fill out the sections for the components you want to run. For example if you're only going to run the bot, you only have to fill out the **bot** section.
+After cloning the repo (recommend cloning with `--depth=1`), fill out [config/config_sample.js](https://github.com/mistval/kotoba/blob/master/config/config_sample.js) and rename it to **config.js**. You only have to fill out the sections for the components you want to run. For example if you're only going to run the bot, you only have to fill out the **bot** section.
 
 ## Self-hosting the bot
 
