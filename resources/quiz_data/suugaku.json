@@ -1,0 +1,5986 @@
+{
+  "uniqueId": "suugaku",
+  "name": "Math Term Reading Quiz",
+  "article": "a",
+  "instructions": "Type the Hirgana reading or English meaning of the math term!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Meaning",
+  "description": "Questions tagged as `math` in JMDict, courtesy of [https://jibiki.app](https://jibiki.app).",
+  "cards": [
+    {
+      "question": "ウイック回転",
+      "answer": [
+        "ウイックかいてん",
+        "Wick rotation"
+      ]
+    },
+    {
+      "question": "ベクトル空間",
+      "answer": [
+        "ベクトルくうかん",
+        "vector space"
+      ]
+    },
+    {
+      "question": "位相幾何学",
+      "answer": [
+        "いそうきかがく",
+        "topology"
+      ]
+    },
+    {
+      "question": "因数",
+      "answer": [
+        "いんすう",
+        "factor"
+      ]
+    },
+    {
+      "question": "右辺",
+      "answer": [
+        "うへん",
+        "RHS",
+        "right side (of an equation, expression, etc.)"
+      ]
+    },
+    {
+      "question": "円錐",
+      "answer": [
+        "えんすい",
+        "cone"
+      ]
+    },
+    {
+      "question": "円錐曲線",
+      "answer": [
+        "えんすいきょくせん",
+        "conic curve",
+        "conic section"
+      ]
+    },
+    {
+      "question": "演算",
+      "answer": [
+        "えんざん",
+        "calculation",
+        "operation"
+      ]
+    },
+    {
+      "question": "演算子",
+      "answer": [
+        "えんざんし",
+        "operator"
+      ]
+    },
+    {
+      "question": "仮数",
+      "answer": [
+        "かすう",
+        "mantissa (of a logarithm)"
+      ]
+    },
+    {
+      "question": "仮数部",
+      "answer": [
+        "かすうぶ",
+        "mantissa"
+      ]
+    },
+    {
+      "question": "加法",
+      "answer": [
+        "かほう",
+        "addition"
+      ]
+    },
+    {
+      "question": "可換群",
+      "answer": [
+        "かかんぐん",
+        "Abelian group",
+        "commutative group"
+      ]
+    },
+    {
+      "question": "解析性",
+      "answer": [
+        "かいせきせい",
+        "analyticity"
+      ]
+    },
+    {
+      "question": "外角",
+      "answer": [
+        "がいかく",
+        "exterior angle",
+        "external angle"
+      ]
+    },
+    {
+      "question": "外場",
+      "answer": [
+        "がいば",
+        "external field"
+      ]
+    },
+    {
+      "question": "外接",
+      "answer": [
+        "がいせつ",
+        "circumscription"
+      ]
+    },
+    {
+      "question": "確率変数",
+      "answer": [
+        "かくりつへんすう",
+        "random variable",
+        "stochastic variable"
+      ]
+    },
+    {
+      "question": "確率密度関数",
+      "answer": [
+        "かくりつみつどかんすう",
+        "probability density function"
+      ]
+    },
+    {
+      "question": "掛け合わせる",
+      "answer": [
+        "かけあわせる",
+        "to multiply"
+      ]
+    },
+    {
+      "question": "掛け算器",
+      "answer": [
+        "かけざんき",
+        "multiplier (spoken)"
+      ]
+    },
+    {
+      "question": "割線",
+      "answer": [
+        "かっせん",
+        "secant line"
+      ]
+    },
+    {
+      "question": "既約",
+      "answer": [
+        "きやく",
+        "irreducible"
+      ]
+    },
+    {
+      "question": "既約表現",
+      "answer": [
+        "きやくひょうげん",
+        "irreducible representation"
+      ]
+    },
+    {
+      "question": "期待値",
+      "answer": [
+        "きたいち",
+        "expectation",
+        "expectation value",
+        "expected value"
+      ]
+    },
+    {
+      "question": "逆行列",
+      "answer": [
+        "ぎゃくぎょうれつ",
+        "inverse matrix"
+      ]
+    },
+    {
+      "question": "逆数",
+      "answer": [
+        "ぎゃくすう",
+        "inverse number",
+        "multiplicative inverse",
+        "reciprocal"
+      ]
+    },
+    {
+      "question": "球",
+      "answer": [
+        "きゅう",
+        "sphere"
+      ]
+    },
+    {
+      "question": "級数",
+      "answer": [
+        "きゅうすう",
+        "series"
+      ]
+    },
+    {
+      "question": "虚数",
+      "answer": [
+        "きょすう",
+        "imaginary number"
+      ]
+    },
+    {
+      "question": "共同因子",
+      "answer": [
+        "きょうどういんし",
+        "cofactor"
+      ]
+    },
+    {
+      "question": "極座標",
+      "answer": [
+        "きょくざひょう",
+        "polar coordinates"
+      ]
+    },
+    {
+      "question": "近似値",
+      "answer": [
+        "きんじち",
+        "approximate value",
+        "approximation"
+      ]
+    },
+    {
+      "question": "空集合",
+      "answer": [
+        "くうしゅうごう",
+        "empty set"
+      ]
+    },
+    {
+      "question": "係数",
+      "answer": [
+        "けいすう",
+        "coefficient",
+        "factor",
+        "proportional constant"
+      ]
+    },
+    {
+      "question": "減法",
+      "answer": [
+        "げんぽう",
+        "subtraction"
+      ]
+    },
+    {
+      "question": "固有値",
+      "answer": [
+        "こゆうち",
+        "eigenvalue"
+      ]
+    },
+    {
+      "question": "公差",
+      "answer": [
+        "こうさ",
+        "common difference"
+      ]
+    },
+    {
+      "question": "恒等式",
+      "answer": [
+        "こうとうしき",
+        "identity"
+      ]
+    },
+    {
+      "question": "行ベクトル",
+      "answer": [
+        "ぎょうベクトル",
+        "row vector"
+      ]
+    },
+    {
+      "question": "行列式",
+      "answer": [
+        "ぎょうれつしき",
+        "determinant"
+      ]
+    },
+    {
+      "question": "根号",
+      "answer": [
+        "こんごう",
+        "radical sign",
+        "root sign"
+      ]
+    },
+    {
+      "question": "混分数",
+      "answer": [
+        "こんぶんすう",
+        "mixed fraction"
+      ]
+    },
+    {
+      "question": "最小二乗法",
+      "answer": [
+        "さいしょうにじょうほう",
+        "さいしょうじじょうほう",
+        "least-squares method"
+      ]
+    },
+    {
+      "question": "三角関数",
+      "answer": [
+        "さんかくかんすう",
+        "trigonometric function"
+      ]
+    },
+    {
+      "question": "三角系異常",
+      "answer": [
+        "さんかくけいいじょう",
+        "triangle anomaly"
+      ]
+    },
+    {
+      "question": "三乗",
+      "answer": [
+        "さんじょう",
+        "cube",
+        "third power"
+      ]
+    },
+    {
+      "question": "三乗根",
+      "answer": [
+        "さんじょうこん",
+        "cube root"
+      ]
+    },
+    {
+      "question": "四角形",
+      "answer": [
+        "しかくけい",
+        "しかっけい",
+        "quadrangle",
+        "quadrilateral",
+        "tetragon"
+      ]
+    },
+    {
+      "question": "指数関数",
+      "answer": [
+        "しすうかんすう",
+        "exponential function"
+      ]
+    },
+    {
+      "question": "次数",
+      "answer": [
+        "じすう",
+        "degree",
+        "order"
+      ]
+    },
+    {
+      "question": "自己共役",
+      "answer": [
+        "じこきょうやく",
+        "self adjoint"
+      ]
+    },
+    {
+      "question": "自己双対",
+      "answer": [
+        "じこそうつい",
+        "self dual"
+      ]
+    },
+    {
+      "question": "自然数",
+      "answer": [
+        "しぜんすう",
+        "natural number",
+        "nonnegative integer"
+      ]
+    },
+    {
+      "question": "自然対数",
+      "answer": [
+        "しぜんたいすう",
+        "natural logarithm"
+      ]
+    },
+    {
+      "question": "写像",
+      "answer": [
+        "しゃぞう",
+        "image",
+        "map",
+        "mapping",
+        "representation"
+      ]
+    },
+    {
+      "question": "射影",
+      "answer": [
+        "しゃえい",
+        "projection"
+      ]
+    },
+    {
+      "question": "斜辺",
+      "answer": [
+        "しゃへん",
+        "hypotenuse",
+        "oblique line"
+      ]
+    },
+    {
+      "question": "従属変数",
+      "answer": [
+        "じゅうぞくへんすう",
+        "dependent variable"
+      ]
+    },
+    {
+      "question": "純正数学",
+      "answer": [
+        "じゅんせいすうがく",
+        "pure mathematics"
+      ]
+    },
+    {
+      "question": "除算",
+      "answer": [
+        "じょざん",
+        "division"
+      ]
+    },
+    {
+      "question": "除法",
+      "answer": [
+        "じょほう",
+        "division"
+      ]
+    },
+    {
+      "question": "商",
+      "answer": [
+        "しょう",
+        "quotient"
+      ]
+    },
+    {
+      "question": "商業数学",
+      "answer": [
+        "しょうぎょうすうがく",
+        "commercial mathematics"
+      ]
+    },
+    {
+      "question": "乗算",
+      "answer": [
+        "じょうざん",
+        "multiplication"
+      ]
+    },
+    {
+      "question": "乗積",
+      "answer": [
+        "じょうせき",
+        "product"
+      ]
+    },
+    {
+      "question": "乗法",
+      "answer": [
+        "じょうほう",
+        "multiplication"
+      ]
+    },
+    {
+      "question": "乗冪",
+      "answer": [
+        "じょうべき",
+        "power"
+      ]
+    },
+    {
+      "question": "常用対数",
+      "answer": [
+        "じょうようたいすう",
+        "base-10 logarithm",
+        "common logarithm"
+      ]
+    },
+    {
+      "question": "数字",
+      "answer": [
+        "すうじ",
+        "digit",
+        "figure",
+        "numeral",
+        "numeric character"
+      ]
+    },
+    {
+      "question": "数列",
+      "answer": [
+        "すうれつ",
+        "progression",
+        "sequence"
+      ]
+    },
+    {
+      "question": "整数",
+      "answer": [
+        "せいすう",
+        "integer"
+      ]
+    },
+    {
+      "question": "正割",
+      "answer": [
+        "せいかつ",
+        "secant (trigonometric function)"
+      ]
+    },
+    {
+      "question": "正規分布",
+      "answer": [
+        "せいきぶんぷ",
+        "Gaussian distribution",
+        "normal distribution"
+      ]
+    },
+    {
+      "question": "正弦",
+      "answer": [
+        "せいげん",
+        "sine"
+      ]
+    },
+    {
+      "question": "正号",
+      "answer": [
+        "せいごう",
+        "plus sign (+)",
+        "positive sign"
+      ]
+    },
+    {
+      "question": "正接",
+      "answer": [
+        "せいせつ",
+        "tangent (trigonometric function)"
+      ]
+    },
+    {
+      "question": "正多角形",
+      "answer": [
+        "せいたかくけい",
+        "regular polygon"
+      ]
+    },
+    {
+      "question": "正方行列",
+      "answer": [
+        "せいほうぎょうれつ",
+        "square matrix"
+      ]
+    },
+    {
+      "question": "積",
+      "answer": [
+        "せき",
+        "product"
+      ]
+    },
+    {
+      "question": "積分",
+      "answer": [
+        "せきぶん",
+        "integration"
+      ]
+    },
+    {
+      "question": "積率",
+      "answer": [
+        "せきりつ",
+        "moment"
+      ]
+    },
+    {
+      "question": "接線",
+      "answer": [
+        "せっせん",
+        "tangent line",
+        "tangential line"
+      ]
+    },
+    {
+      "question": "接点",
+      "answer": [
+        "せってん",
+        "point of contact",
+        "tangent point"
+      ]
+    },
+    {
+      "question": "絶対値",
+      "answer": [
+        "ぜったいち",
+        "absolute value"
+      ]
+    },
+    {
+      "question": "尖度",
+      "answer": [
+        "せんど",
+        "kurtosis"
+      ]
+    },
+    {
+      "question": "線形",
+      "answer": [
+        "せんけい",
+        "linear"
+      ]
+    },
+    {
+      "question": "線分",
+      "answer": [
+        "せんぶん",
+        "line segment"
+      ]
+    },
+    {
+      "question": "漸近",
+      "answer": [
+        "ぜんきん",
+        "asymptote"
+      ]
+    },
+    {
+      "question": "全射",
+      "answer": [
+        "ぜんしゃ",
+        "epimorphism",
+        "onto mapping",
+        "surjection"
+      ]
+    },
+    {
+      "question": "全単射",
+      "answer": [
+        "ぜんたんしゃ",
+        "bijection"
+      ]
+    },
+    {
+      "question": "素数",
+      "answer": [
+        "そすう",
+        "prime number"
+      ]
+    },
+    {
+      "question": "双射",
+      "answer": [
+        "そうしゃ",
+        "bijection"
+      ]
+    },
+    {
+      "question": "双対",
+      "answer": [
+        "そうつい",
+        "duality"
+      ]
+    },
+    {
+      "question": "相関係数",
+      "answer": [
+        "そうかんけいすう",
+        "correlation coefficient"
+      ]
+    },
+    {
+      "question": "測度",
+      "answer": [
+        "そくど",
+        "measure"
+      ]
+    },
+    {
+      "question": "足し算",
+      "answer": [
+        "たしざん",
+        "addition"
+      ]
+    },
+    {
+      "question": "多角形",
+      "answer": [
+        "たかくけい",
+        "たかっけい",
+        "polygon"
+      ]
+    },
+    {
+      "question": "多項式",
+      "answer": [
+        "たこうしき",
+        "polynomial"
+      ]
+    },
+    {
+      "question": "多面体",
+      "answer": [
+        "ためんたい",
+        "polyhedron"
+      ]
+    },
+    {
+      "question": "対角化",
+      "answer": [
+        "たいかくか",
+        "diagonalisation",
+        "diagonalization"
+      ]
+    },
+    {
+      "question": "対数",
+      "answer": [
+        "たいすう",
+        "log",
+        "logarithm"
+      ]
+    },
+    {
+      "question": "帯分数",
+      "answer": [
+        "たいぶんすう",
+        "compound number",
+        "mixed fraction"
+      ]
+    },
+    {
+      "question": "単位行列",
+      "answer": [
+        "たんいぎょうれつ",
+        "identity matrix",
+        "unit matrix"
+      ]
+    },
+    {
+      "question": "単射",
+      "answer": [
+        "たんしゃ",
+        "injection",
+        "monomorphism"
+      ]
+    },
+    {
+      "question": "中数",
+      "answer": [
+        "ちゅうすう",
+        "average",
+        "mean"
+      ]
+    },
+    {
+      "question": "超越関数",
+      "answer": [
+        "ちょうえつかんすう",
+        "transcendental function"
+      ]
+    },
+    {
+      "question": "長方体",
+      "answer": [
+        "ちょうほうたい",
+        "cuboid",
+        "rectangular solid",
+        "right-angled parallelepiped"
+      ]
+    },
+    {
+      "question": "直方体",
+      "answer": [
+        "ちょくほうたい",
+        "cuboid",
+        "rectangular solid",
+        "right-angled parallelepiped"
+      ]
+    },
+    {
+      "question": "転置行列",
+      "answer": [
+        "てんちぎょうれつ",
+        "transpose",
+        "transposed matrix"
+      ]
+    },
+    {
+      "question": "等号",
+      "answer": [
+        "とうごう",
+        "equality sign",
+        "equals sign"
+      ]
+    },
+    {
+      "question": "等差数列",
+      "answer": [
+        "とうさすうれつ",
+        "arithmetic progression",
+        "arithmetic sequence"
+      ]
+    },
+    {
+      "question": "特異値分解",
+      "answer": [
+        "とくいちぶんかい",
+        "singular value analysis",
+        "singular value decomposition"
+      ]
+    },
+    {
+      "question": "特異点",
+      "answer": [
+        "とくいてん",
+        "singular point",
+        "singularity"
+      ]
+    },
+    {
+      "question": "独立変数",
+      "answer": [
+        "どくりつへんすう",
+        "independent variable"
+      ]
+    },
+    {
+      "question": "内角",
+      "answer": [
+        "ないかく",
+        "interior angle",
+        "internal angle"
+      ]
+    },
+    {
+      "question": "内積",
+      "answer": [
+        "ないせき",
+        "inner product"
+      ]
+    },
+    {
+      "question": "二項式",
+      "answer": [
+        "にこうしき",
+        "binomial"
+      ]
+    },
+    {
+      "question": "二項分布",
+      "answer": [
+        "にこうぶんぷ",
+        "binomial distribution"
+      ]
+    },
+    {
+      "question": "二乗根",
+      "answer": [
+        "にじょうこん",
+        "square root"
+      ]
+    },
+    {
+      "question": "二等辺三角形",
+      "answer": [
+        "にとうへんさんかっけい",
+        "にとうへんさんかくけい",
+        "isosceles triangle"
+      ]
+    },
+    {
+      "question": "判別式",
+      "answer": [
+        "はんべつしき",
+        "discriminant"
+      ]
+    },
+    {
+      "question": "半直線",
+      "answer": [
+        "はんちょくせん",
+        "half line",
+        "ray"
+      ]
+    },
+    {
+      "question": "反数",
+      "answer": [
+        "はんすう",
+        "additive inverse",
+        "opposite number"
+      ]
+    },
+    {
+      "question": "反変",
+      "answer": [
+        "はんぺん",
+        "contravariant"
+      ]
+    },
+    {
+      "question": "汎関数",
+      "answer": [
+        "はんかんすう",
+        "functional"
+      ]
+    },
+    {
+      "question": "被減数",
+      "answer": [
+        "ひげんすう",
+        "minuend"
+      ]
+    },
+    {
+      "question": "非可換群",
+      "answer": [
+        "ひかかんぐん",
+        "non-Abelian group",
+        "noncommutative group"
+      ]
+    },
+    {
+      "question": "微分",
+      "answer": [
+        "びぶん",
+        "differentiation"
+      ]
+    },
+    {
+      "question": "微分方程式",
+      "answer": [
+        "びぶんほうていしき",
+        "differential equation"
+      ]
+    },
+    {
+      "question": "標準偏差",
+      "answer": [
+        "ひょうじゅんへんさ",
+        "SD",
+        "standard deviation"
+      ]
+    },
+    {
+      "question": "不定計量空間",
+      "answer": [
+        "ふていけいりょうくうかん",
+        "indefinite metric space"
+      ]
+    },
+    {
+      "question": "不等号",
+      "answer": [
+        "ふとうごう",
+        "inequality sign",
+        "less-than sign or greater-than sign (< or >)"
+      ]
+    },
+    {
+      "question": "不変性",
+      "answer": [
+        "ふへんせい",
+        "invariance"
+      ]
+    },
+    {
+      "question": "負号",
+      "answer": [
+        "ふごう",
+        "minus sign (-)",
+        "negative sign"
+      ]
+    },
+    {
+      "question": "部分集合",
+      "answer": [
+        "ぶぶんしゅうごう",
+        "subset"
+      ]
+    },
+    {
+      "question": "複素数",
+      "answer": [
+        "ふくそすう",
+        "complex number"
+      ]
+    },
+    {
+      "question": "分数",
+      "answer": [
+        "ぶんすう",
+        "fraction"
+      ]
+    },
+    {
+      "question": "分母",
+      "answer": [
+        "ぶんぼ",
+        "denominator"
+      ]
+    },
+    {
+      "question": "平行四辺形",
+      "answer": [
+        "へいこうしへんけい",
+        "parallelogram"
+      ]
+    },
+    {
+      "question": "平方根",
+      "answer": [
+        "へいほうこん",
+        "square root"
+      ]
+    },
+    {
+      "question": "変域",
+      "answer": [
+        "へんいき",
+        "domain",
+        "range"
+      ]
+    },
+    {
+      "question": "変数",
+      "answer": [
+        "へんすう",
+        "variable"
+      ]
+    },
+    {
+      "question": "補数",
+      "answer": [
+        "ほすう",
+        "complement (of a number)"
+      ]
+    },
+    {
+      "question": "母集団",
+      "answer": [
+        "ぼしゅうだん",
+        "parent set",
+        "population",
+        "universe"
+      ]
+    },
+    {
+      "question": "放物線",
+      "answer": [
+        "ほうぶつせん",
+        "parabola"
+      ]
+    },
+    {
+      "question": "法線",
+      "answer": [
+        "ほうせん",
+        "normal vector"
+      ]
+    },
+    {
+      "question": "法線ベクトル",
+      "answer": [
+        "ほうせんベクトル",
+        "normal vector"
+      ]
+    },
+    {
+      "question": "未知数",
+      "answer": [
+        "みちすう",
+        "(an) unknown",
+        "unknown number",
+        "variable"
+      ]
+    },
+    {
+      "question": "無限小",
+      "answer": [
+        "むげんしょう",
+        "infinitesimal"
+      ]
+    },
+    {
+      "question": "無理数",
+      "answer": [
+        "むりすう",
+        "irrational number"
+      ]
+    },
+    {
+      "question": "尤度",
+      "answer": [
+        "ゆうど",
+        "likelihood"
+      ]
+    },
+    {
+      "question": "約数",
+      "answer": [
+        "やくすう",
+        "divisor",
+        "factor",
+        "measure"
+      ]
+    },
+    {
+      "question": "有効数字",
+      "answer": [
+        "ゆうこうすうじ",
+        "significant digits",
+        "significant figures"
+      ]
+    },
+    {
+      "question": "有理数",
+      "answer": [
+        "ゆうりすう",
+        "rational number"
+      ]
+    },
+    {
+      "question": "余弦",
+      "answer": [
+        "よげん",
+        "cosine"
+      ]
+    },
+    {
+      "question": "与点",
+      "answer": [
+        "よてん",
+        "point given"
+      ]
+    },
+    {
+      "question": "立方",
+      "answer": [
+        "りっぽう",
+        "cube"
+      ]
+    },
+    {
+      "question": "累乗",
+      "answer": [
+        "るいじょう",
+        "exponentiation"
+      ]
+    },
+    {
+      "question": "零行列",
+      "answer": [
+        "れいぎょうれつ",
+        "null matrix",
+        "zero matrix"
+      ]
+    },
+    {
+      "question": "和",
+      "answer": [
+        "わ",
+        "sum"
+      ]
+    },
+    {
+      "question": "歪度",
+      "answer": [
+        "わいど",
+        "skewness"
+      ]
+    },
+    {
+      "question": "冪",
+      "answer": [
+        "べき",
+        "exponent",
+        "power"
+      ]
+    },
+    {
+      "question": "べき乗",
+      "answer": [
+        "べきじょう",
+        "exponentiation",
+        "power"
+      ]
+    },
+    {
+      "question": "掛け算",
+      "answer": [
+        "かけざん",
+        "multiplication"
+      ]
+    },
+    {
+      "question": "関数",
+      "answer": [
+        "かんすう",
+        "function"
+      ]
+    },
+    {
+      "question": "引き算",
+      "answer": [
+        "ひきざん",
+        "subtraction"
+      ]
+    },
+    {
+      "question": "割り算",
+      "answer": [
+        "わりざん",
+        "division"
+      ]
+    },
+    {
+      "question": "陰関数",
+      "answer": [
+        "いんかんすう",
+        "implicit function"
+      ]
+    },
+    {
+      "question": "外心",
+      "answer": [
+        "がいしん",
+        "circumcenter",
+        "circumcentre",
+        "outer center",
+        "outer centre"
+      ]
+    },
+    {
+      "question": "既知数",
+      "answer": [
+        "きちすう",
+        "known quantity"
+      ]
+    },
+    {
+      "question": "無理式",
+      "answer": [
+        "むりしき",
+        "irrational expression"
+      ]
+    },
+    {
+      "question": "対辺",
+      "answer": [
+        "たいへん",
+        "opposite side"
+      ]
+    },
+    {
+      "question": "左辺",
+      "answer": [
+        "さへん",
+        "LHS",
+        "left side (of an equation, expression, etc.)"
+      ]
+    },
+    {
+      "question": "相乗積",
+      "answer": [
+        "そうじょうせき",
+        "product"
+      ]
+    },
+    {
+      "question": "底辺",
+      "answer": [
+        "ていへん",
+        "base (e.g. of a triangle)"
+      ]
+    },
+    {
+      "question": "底角",
+      "answer": [
+        "ていかく",
+        "base angle"
+      ]
+    },
+    {
+      "question": "無限級数",
+      "answer": [
+        "むげんきゅうすう",
+        "infinite series"
+      ]
+    },
+    {
+      "question": "無理方程式",
+      "answer": [
+        "むりほうていしき",
+        "irrational equation"
+      ]
+    },
+    {
+      "question": "無理関数",
+      "answer": [
+        "むりかんすう",
+        "irrational function"
+      ]
+    },
+    {
+      "question": "応用数学",
+      "answer": [
+        "おうようすうがく",
+        "applied mathematics"
+      ]
+    },
+    {
+      "question": "同位角",
+      "answer": [
+        "どういかく",
+        "corresponding angles"
+      ]
+    },
+    {
+      "question": "分数式",
+      "answer": [
+        "ぶんすうしき",
+        "fractional expression"
+      ]
+    },
+    {
+      "question": "逆関数",
+      "answer": [
+        "ぎゃくかんすう",
+        "inverse function"
+      ]
+    },
+    {
+      "question": "余接",
+      "answer": [
+        "よせつ",
+        "cotangent"
+      ]
+    },
+    {
+      "question": "余割",
+      "answer": [
+        "よかつ",
+        "cosecant"
+      ]
+    },
+    {
+      "question": "対称軸",
+      "answer": [
+        "たいしょうじく",
+        "axis of symmetry",
+        "line of symmetry"
+      ]
+    },
+    {
+      "question": "対数関数",
+      "answer": [
+        "たいすうかんすう",
+        "logarithmic function"
+      ]
+    },
+    {
+      "question": "最大公約数",
+      "answer": [
+        "さいだいこうやくすう",
+        "GCD",
+        "greatest common divisor"
+      ]
+    },
+    {
+      "question": "微分学",
+      "answer": [
+        "びぶんがく",
+        "differential calculus"
+      ]
+    },
+    {
+      "question": "微分法",
+      "answer": [
+        "びぶんほう",
+        "differentiation"
+      ]
+    },
+    {
+      "question": "微積分",
+      "answer": [
+        "びせきぶん",
+        "(differential and integral) calculus",
+        "infinitesimal calculus"
+      ]
+    },
+    {
+      "question": "自乗根",
+      "answer": [
+        "じじょうこん",
+        "square root"
+      ]
+    },
+    {
+      "question": "階乗",
+      "answer": [
+        "かいじょう",
+        "factorial"
+      ]
+    },
+    {
+      "question": "一次方程式",
+      "answer": [
+        "いちじほうていしき",
+        "linear equation"
+      ]
+    },
+    {
+      "question": "一次関数",
+      "answer": [
+        "いちじかんすう",
+        "linear function"
+      ]
+    },
+    {
+      "question": "二元方程式",
+      "answer": [
+        "にげんほうていしき",
+        "equation with two unknowns"
+      ]
+    },
+    {
+      "question": "二項定理",
+      "answer": [
+        "にこうていり",
+        "binomial theorem"
+      ]
+    },
+    {
+      "question": "二項係数",
+      "answer": [
+        "にこうけいすう",
+        "binomial coefficient"
+      ]
+    },
+    {
+      "question": "偏微分",
+      "answer": [
+        "へんびぶん",
+        "partial derivative",
+        "partial differentiation"
+      ]
+    },
+    {
+      "question": "等比級数",
+      "answer": [
+        "とうひきゅうすう",
+        "geometric series"
+      ]
+    },
+    {
+      "question": "等比数列",
+      "answer": [
+        "とうひすうれつ",
+        "geometric progression",
+        "geometric sequence"
+      ]
+    },
+    {
+      "question": "等式",
+      "answer": [
+        "とうしき",
+        "equality"
+      ]
+    },
+    {
+      "question": "累乗根",
+      "answer": [
+        "るいじょうこん",
+        "nth root"
+      ]
+    },
+    {
+      "question": "不定積分",
+      "answer": [
+        "ふていせきぶん",
+        "indefinite integral"
+      ]
+    },
+    {
+      "question": "不等式",
+      "answer": [
+        "ふとうしき",
+        "inequality (expression)"
+      ]
+    },
+    {
+      "question": "消去法",
+      "answer": [
+        "しょうきょほう",
+        "(process of) elimination"
+      ]
+    },
+    {
+      "question": "有限級数",
+      "answer": [
+        "ゆうげんきゅうすう",
+        "finite series"
+      ]
+    },
+    {
+      "question": "相加平均",
+      "answer": [
+        "そうかへいきん",
+        "arithmetic mean"
+      ]
+    },
+    {
+      "question": "相似形",
+      "answer": [
+        "そうじけい",
+        "similar figures (in geometry)"
+      ]
+    },
+    {
+      "question": "相乗平均",
+      "answer": [
+        "そうじょうへいきん",
+        "geometric mean"
+      ]
+    },
+    {
+      "question": "極大値",
+      "answer": [
+        "きょくだいち",
+        "local maximum"
+      ]
+    },
+    {
+      "question": "極小値",
+      "answer": [
+        "きょくしょうち",
+        "local minimum"
+      ]
+    },
+    {
+      "question": "極限値",
+      "answer": [
+        "きょくげんち",
+        "limit",
+        "limiting value"
+      ]
+    },
+    {
+      "question": "交換法則",
+      "answer": [
+        "こうかんほうそく",
+        "commutative law"
+      ]
+    },
+    {
+      "question": "整式",
+      "answer": [
+        "せいしき",
+        "polynomial"
+      ]
+    },
+    {
+      "question": "四辺形",
+      "answer": [
+        "しへんけい",
+        "quadrangle",
+        "quadrilateral",
+        "tetragon"
+      ]
+    },
+    {
+      "question": "懸垂線",
+      "answer": [
+        "けんすいせん",
+        "catenary"
+      ]
+    },
+    {
+      "question": "導関数",
+      "answer": [
+        "どうかんすう",
+        "derivative",
+        "derived function"
+      ]
+    },
+    {
+      "question": "虚根",
+      "answer": [
+        "きょこん",
+        "imaginary root"
+      ]
+    },
+    {
+      "question": "定義域",
+      "answer": [
+        "ていぎいき",
+        "domain"
+      ]
+    },
+    {
+      "question": "積分学",
+      "answer": [
+        "せきぶんがく",
+        "integral calculus"
+      ]
+    },
+    {
+      "question": "幾何級数",
+      "answer": [
+        "きかきゅうすう",
+        "geometric series"
+      ]
+    },
+    {
+      "question": "連立方程式",
+      "answer": [
+        "れんりつほうていしき",
+        "simultaneous equations"
+      ]
+    },
+    {
+      "question": "連続関数",
+      "answer": [
+        "れんぞくかんすう",
+        "continuous function"
+      ]
+    },
+    {
+      "question": "直角三角形",
+      "answer": [
+        "ちょっかくさんかっけい",
+        "ちょっかくさんかくけい",
+        "right triangle",
+        "right-angled triangle"
+      ]
+    },
+    {
+      "question": "既約分数",
+      "answer": [
+        "きやくぶんすう",
+        "irreducible fraction"
+      ]
+    },
+    {
+      "question": "内項",
+      "answer": [
+        "ないこう",
+        "internal terms"
+      ]
+    },
+    {
+      "question": "象限",
+      "answer": [
+        "しょうげん",
+        "quadrant"
+      ]
+    },
+    {
+      "question": "常数",
+      "answer": [
+        "じょうすう",
+        "constant",
+        "invariable"
+      ]
+    },
+    {
+      "question": "解式",
+      "answer": [
+        "かいしき",
+        "solution"
+      ]
+    },
+    {
+      "question": "単項式",
+      "answer": [
+        "たんこうしき",
+        "monomial (expression)"
+      ]
+    },
+    {
+      "question": "集合論",
+      "answer": [
+        "しゅうごうろん",
+        "set theory"
+      ]
+    },
+    {
+      "question": "全体集合",
+      "answer": [
+        "ぜんたいしゅうごう",
+        "universal set"
+      ]
+    },
+    {
+      "question": "算術平均",
+      "answer": [
+        "さんじゅつへいきん",
+        "arithmetic mean"
+      ]
+    },
+    {
+      "question": "代数関数",
+      "answer": [
+        "だいすうかんすう",
+        "algebraic function"
+      ]
+    },
+    {
+      "question": "立方根",
+      "answer": [
+        "りっぽうこん",
+        "cube root"
+      ]
+    },
+    {
+      "question": "変曲点",
+      "answer": [
+        "へんきょくてん",
+        "inflection point"
+      ]
+    },
+    {
+      "question": "正多面体",
+      "answer": [
+        "せいためんたい",
+        "regular polyhedron"
+      ]
+    },
+    {
+      "question": "素因数",
+      "answer": [
+        "そいんすう",
+        "prime factor"
+      ]
+    },
+    {
+      "question": "下界",
+      "answer": [
+        "かかい",
+        "lower bound"
+      ]
+    },
+    {
+      "question": "共役",
+      "answer": [
+        "きょうやく",
+        "きょうえき",
+        "conjugation"
+      ]
+    },
+    {
+      "question": "単位元",
+      "answer": [
+        "たんいげん",
+        "identity element",
+        "neutral element"
+      ]
+    },
+    {
+      "question": "反射的半順序",
+      "answer": [
+        "はんしゃてきはんじゅんじょ",
+        "reflexive partial ordering"
+      ]
+    },
+    {
+      "question": "虚数単位",
+      "answer": [
+        "きょすうたんい",
+        "imaginary unit"
+      ]
+    },
+    {
+      "question": "積分方程式",
+      "answer": [
+        "せきぶんほうていしき",
+        "integral equation"
+      ]
+    },
+    {
+      "question": "積分法",
+      "answer": [
+        "せきぶんほう",
+        "integration"
+      ]
+    },
+    {
+      "question": "度数分布",
+      "answer": [
+        "どすうぶんぷ",
+        "frequency distribution"
+      ]
+    },
+    {
+      "question": "有理関数",
+      "answer": [
+        "ゆうりかんすう",
+        "rational function"
+      ]
+    },
+    {
+      "question": "ガロア理論",
+      "answer": [
+        "ガロアりろん",
+        "Galois theory"
+      ]
+    },
+    {
+      "question": "ヒルベルト空間",
+      "answer": [
+        "ヒルベルトくうかん",
+        "Hilbert space"
+      ]
+    },
+    {
+      "question": "メタ数学",
+      "answer": [
+        "メタすうがく",
+        "metamathematics"
+      ]
+    },
+    {
+      "question": "ユークリッド空間",
+      "answer": [
+        "ユークリッドくうかん",
+        "Euclidean space"
+      ]
+    },
+    {
+      "question": "ローレンツ変換",
+      "answer": [
+        "ローレンツへんかん",
+        "Lorentz transformation"
+      ]
+    },
+    {
+      "question": "位置ベクトル",
+      "answer": [
+        "いちベクトル",
+        "position vector"
+      ]
+    },
+    {
+      "question": "一価関数",
+      "answer": [
+        "いっかかんすう",
+        "single-valued function"
+      ]
+    },
+    {
+      "question": "解析学",
+      "answer": [
+        "かいせきがく",
+        "analysis"
+      ]
+    },
+    {
+      "question": "回帰分析",
+      "answer": [
+        "かいきぶんせき",
+        "regression analysis"
+      ]
+    },
+    {
+      "question": "回転体",
+      "answer": [
+        "かいてんたい",
+        "solid of revolution"
+      ]
+    },
+    {
+      "question": "開法",
+      "answer": [
+        "かいほう",
+        "evolution",
+        "extraction of roots"
+      ]
+    },
+    {
+      "question": "確率分布",
+      "answer": [
+        "かくりつぶんぷ",
+        "probability distribution"
+      ]
+    },
+    {
+      "question": "類群",
+      "answer": [
+        "るいぐん",
+        "class group"
+      ]
+    },
+    {
+      "question": "二次体",
+      "answer": [
+        "にじたい",
+        "quadratic field"
+      ]
+    },
+    {
+      "question": "正規直交化",
+      "answer": [
+        "せいきちょっこうか",
+        "ortho-normalisation",
+        "ortho-normalization"
+      ]
+    },
+    {
+      "question": "正の数",
+      "answer": [
+        "せいのすう",
+        "positive number",
+        "positive value"
+      ]
+    },
+    {
+      "question": "外積",
+      "answer": [
+        "がいせき",
+        "cross product",
+        "outer product",
+        "vector product"
+      ]
+    },
+    {
+      "question": "ベクトル積",
+      "answer": [
+        "ベクトルせき",
+        "cross product",
+        "outer product",
+        "vector product"
+      ]
+    },
+    {
+      "question": "共形",
+      "answer": [
+        "きょうけい",
+        "conformal"
+      ]
+    },
+    {
+      "question": "厳密解",
+      "answer": [
+        "げんみつかい",
+        "exact solution"
+      ]
+    },
+    {
+      "question": "近似解",
+      "answer": [
+        "きんじかい",
+        "approximate solution"
+      ]
+    },
+    {
+      "question": "偏微分方程式",
+      "answer": [
+        "へんびぶんほうていしき",
+        "partial differential equation"
+      ]
+    },
+    {
+      "question": "冪零",
+      "answer": [
+        "べきれい",
+        "nilpotent"
+      ]
+    },
+    {
+      "question": "解",
+      "answer": [
+        "かい",
+        "root (e.g. of a polynomial)",
+        "solution (of an equation, inequality, etc.)"
+      ]
+    },
+    {
+      "question": "乗根",
+      "answer": [
+        "じょうこん",
+        "(nth) root"
+      ]
+    },
+    {
+      "question": "円関数",
+      "answer": [
+        "えんかんすう",
+        "circular function",
+        "trigonometric function"
+      ]
+    },
+    {
+      "question": "楕円関数",
+      "answer": [
+        "だえんかんすう",
+        "elliptic function"
+      ]
+    },
+    {
+      "question": "超楕円関数",
+      "answer": [
+        "ちょうだえんかんすう",
+        "hyperelliptic function"
+      ]
+    },
+    {
+      "question": "逆三角関数",
+      "answer": [
+        "ぎゃくさんかくかんすう",
+        "cyclometric function",
+        "inverse trigonometric function"
+      ]
+    },
+    {
+      "question": "メビウスの帯",
+      "answer": [
+        "メビウスのおび",
+        "メービウスのおび",
+        "Moebius strip",
+        "Möbius strip"
+      ]
+    },
+    {
+      "question": "圏論",
+      "answer": [
+        "けんろん",
+        "category theory"
+      ]
+    },
+    {
+      "question": "可換環論",
+      "answer": [
+        "かかんかんろん",
+        "commutative algebra"
+      ]
+    },
+    {
+      "question": "与式",
+      "answer": [
+        "よしき",
+        "the assigned equation"
+      ]
+    },
+    {
+      "question": "数直線",
+      "answer": [
+        "すうちょくせん",
+        "number line (e.g. on a graph)",
+        "real number line"
+      ]
+    },
+    {
+      "question": "抽象代数学",
+      "answer": [
+        "ちゅうしょうだいすうがく",
+        "abstract algebra",
+        "modern algebra"
+      ]
+    },
+    {
+      "question": "値域",
+      "answer": [
+        "ちいき",
+        "range (of a function or relation)"
+      ]
+    },
+    {
+      "question": "有理化",
+      "answer": [
+        "ゆうりか",
+        "rationalization (modifying part of an irrational expression, esp. denominators, to exclude roots or irrational numbers)"
+      ]
+    },
+    {
+      "question": "元",
+      "answer": [
+        "げん",
+        "unknown (e.g. in an equation)"
+      ]
+    },
+    {
+      "question": "次数解析",
+      "answer": [
+        "じすうかいせき",
+        "order analysis"
+      ]
+    },
+    {
+      "question": "ガウス分布",
+      "answer": [
+        "ガウスぶんぷ",
+        "Gaussian distribution",
+        "normal distribution"
+      ]
+    },
+    {
+      "question": "順序数",
+      "answer": [
+        "じゅんじょすう",
+        "ordinal number"
+      ]
+    },
+    {
+      "question": "中間値の定理",
+      "answer": [
+        "ちゅうかんちのていり",
+        "intermediate value theorem"
+      ]
+    },
+    {
+      "question": "平均値の定理",
+      "answer": [
+        "へいきんちのていり",
+        "mean value theorem"
+      ]
+    },
+    {
+      "question": "ラテン方陣",
+      "answer": [
+        "ラテンほうじん",
+        "Latin square"
+      ]
+    },
+    {
+      "question": "ファジー集合",
+      "answer": [
+        "ファジーしゅうごう",
+        "ファジィしゅうごう",
+        "fuzzy set"
+      ]
+    },
+    {
+      "question": "調和平均",
+      "answer": [
+        "ちょうわへいきん",
+        "harmonic mean"
+      ]
+    },
+    {
+      "question": "因数定理",
+      "answer": [
+        "いんすうていり",
+        "factor theorem"
+      ]
+    },
+    {
+      "question": "偶関数",
+      "answer": [
+        "ぐうかんすう",
+        "even function"
+      ]
+    },
+    {
+      "question": "奇関数",
+      "answer": [
+        "きかんすう",
+        "odd function"
+      ]
+    },
+    {
+      "question": "二次曲面",
+      "answer": [
+        "にじきょくめん",
+        "quadric surface"
+      ]
+    },
+    {
+      "question": "一次変換",
+      "answer": [
+        "いちじへんかん",
+        "linear transformation"
+      ]
+    },
+    {
+      "question": "線形写像",
+      "answer": [
+        "せんけいしゃぞう",
+        "linear map",
+        "linear mapping"
+      ]
+    },
+    {
+      "question": "大数の法則",
+      "answer": [
+        "たいすうのほうそく",
+        "law of large numbers"
+      ]
+    },
+    {
+      "question": "正則関数",
+      "answer": [
+        "せいそくかんすう",
+        "holomorphic function"
+      ]
+    },
+    {
+      "question": "標本平均",
+      "answer": [
+        "ひょうほんへいきん",
+        "sample average",
+        "sample mean"
+      ]
+    },
+    {
+      "question": "母平均",
+      "answer": [
+        "ぼへいきん",
+        "population mean"
+      ]
+    },
+    {
+      "question": "座標幾何学",
+      "answer": [
+        "ざひょうきかがく",
+        "coordinate geometry"
+      ]
+    },
+    {
+      "question": "底",
+      "answer": [
+        "てい",
+        "base (logarithmic, exponential, number system)",
+        "radix"
+      ]
+    },
+    {
+      "question": "仮説検定",
+      "answer": [
+        "かせつけんてい",
+        "hypothesis test",
+        "hypothesis testing"
+      ]
+    },
+    {
+      "question": "加群",
+      "answer": [
+        "かぐん",
+        "module"
+      ]
+    },
+    {
+      "question": "素イデアル",
+      "answer": [
+        "そイデアル",
+        "prime ideal"
+      ]
+    },
+    {
+      "question": "素元",
+      "answer": [
+        "そげん",
+        "prime element"
+      ]
+    },
+    {
+      "question": "代数的",
+      "answer": [
+        "だいすうてき",
+        "algebraical"
+      ]
+    },
+    {
+      "question": "代数閉体",
+      "answer": [
+        "だいすうへいたい",
+        "algebraically closed field"
+      ]
+    },
+    {
+      "question": "閉体",
+      "answer": [
+        "へいたい",
+        "closed field"
+      ]
+    },
+    {
+      "question": "準同型",
+      "answer": [
+        "じゅんどうけい",
+        "homomorphism"
+      ]
+    },
+    {
+      "question": "連続性",
+      "answer": [
+        "れんぞくせい",
+        "continuity"
+      ]
+    },
+    {
+      "question": "高木関数",
+      "answer": [
+        "たかぎかんすう",
+        "Takagi function"
+      ]
+    },
+    {
+      "question": "前層",
+      "answer": [
+        "ぜんそう",
+        "anterior layer",
+        "presheaf"
+      ]
+    },
+    {
+      "question": "巾零元",
+      "answer": [
+        "きんれいげん",
+        "nilpotent element"
+      ]
+    },
+    {
+      "question": "和集合",
+      "answer": [
+        "わしゅうごう",
+        "union"
+      ]
+    },
+    {
+      "question": "閉区間",
+      "answer": [
+        "へいくかん",
+        "closed interval"
+      ]
+    },
+    {
+      "question": "零因子",
+      "answer": [
+        "ぜろいんし",
+        "れいいんし",
+        "nil factor",
+        "null factor",
+        "zero divisor"
+      ]
+    },
+    {
+      "question": "距離空間",
+      "answer": [
+        "きょりくうかん",
+        "metric space"
+      ]
+    },
+    {
+      "question": "準連接的",
+      "answer": [
+        "じゅんれんせつてき",
+        "quasi-coherent"
+      ]
+    },
+    {
+      "question": "連接的",
+      "answer": [
+        "れんせつてき",
+        "coherent"
+      ]
+    },
+    {
+      "question": "被約",
+      "answer": [
+        "ひやく",
+        "reduced"
+      ]
+    },
+    {
+      "question": "有限生成",
+      "answer": [
+        "ゆうげんせいせい",
+        "finitely generated",
+        "of finite type"
+      ]
+    },
+    {
+      "question": "有限型",
+      "answer": [
+        "ゆうげんがた",
+        "of finite type"
+      ]
+    },
+    {
+      "question": "超越数論",
+      "answer": [
+        "ちょうえつすうろん",
+        "transcendental number theory"
+      ]
+    },
+    {
+      "question": "伸開線",
+      "answer": [
+        "しんかいせん",
+        "involute"
+      ]
+    },
+    {
+      "question": "インボリュート曲線",
+      "answer": [
+        "インボリュートきょくせん",
+        "involute curve"
+      ]
+    },
+    {
+      "question": "縮閉線",
+      "answer": [
+        "しゅくへいせん",
+        "evolute"
+      ]
+    },
+    {
+      "question": "エボリュート曲線",
+      "answer": [
+        "エボリュートきょくせん",
+        "evolute curve"
+      ]
+    },
+    {
+      "question": "方程式系",
+      "answer": [
+        "ほうていしきけい",
+        "system of equations"
+      ]
+    },
+    {
+      "question": "代数系",
+      "answer": [
+        "だいすうけい",
+        "algebraic system"
+      ]
+    },
+    {
+      "question": "割線法",
+      "answer": [
+        "かっせんほう",
+        "secant method"
+      ]
+    },
+    {
+      "question": "最小二乗",
+      "answer": [
+        "さいしょうにじょう",
+        "さいしょうじじょう",
+        "least-squares (method)"
+      ]
+    },
+    {
+      "question": "自明解",
+      "answer": [
+        "じめいかい",
+        "trivial solution"
+      ]
+    },
+    {
+      "question": "半自明解",
+      "answer": [
+        "はんじめいかい",
+        "semi-trivial solution"
+      ]
+    },
+    {
+      "question": "非自明解",
+      "answer": [
+        "ひじめいかい",
+        "non-trivial solution"
+      ]
+    },
+    {
+      "question": "正定値",
+      "answer": [
+        "せいていち",
+        "positive-definite (e.g. matrix)"
+      ]
+    },
+    {
+      "question": "項目応答理論",
+      "answer": [
+        "こうもくおうとうりろん",
+        "IRT",
+        "item response theory"
+      ]
+    },
+    {
+      "question": "８進数",
+      "answer": [
+        "はちしんすう",
+        "base 8",
+        "octal"
+      ]
+    },
+    {
+      "question": "ＬＵ分解",
+      "answer": [
+        "エルユーぶんかい",
+        "LU decomposition"
+      ]
+    },
+    {
+      "question": "カイ二乗検定",
+      "answer": [
+        "カイじじょうけんてい",
+        "カイにじょうけんてい",
+        "chi-square test",
+        "chi-squared test"
+      ]
+    },
+    {
+      "question": "ゼロ行列",
+      "answer": [
+        "ゼロぎょうれつ",
+        "null matrix",
+        "zero matrix"
+      ]
+    },
+    {
+      "question": "フーリエ変換",
+      "answer": [
+        "フーリエへんかん",
+        "フーリェへんかん",
+        "Fourier transform"
+      ]
+    },
+    {
+      "question": "ポワッソン分布",
+      "answer": [
+        "ポワッソンぶんぷ",
+        "Poisson distribution"
+      ]
+    },
+    {
+      "question": "逆フーリエ変換",
+      "answer": [
+        "ぎゃくフーリエへんかん",
+        "ぎゃくフーリェへんかん",
+        "inverse Fourier transform"
+      ]
+    },
+    {
+      "question": "逆高速フーリエ変換",
+      "answer": [
+        "ぎゃくこうそくフーリエへんかん",
+        "inverse fast Fourier transform"
+      ]
+    },
+    {
+      "question": "鏡映",
+      "answer": [
+        "きょうえい",
+        "reflection"
+      ]
+    },
+    {
+      "question": "局所的",
+      "answer": [
+        "きょくしょてき",
+        "local"
+      ]
+    },
+    {
+      "question": "結合法則",
+      "answer": [
+        "けつごうほうそく",
+        "associative law"
+      ]
+    },
+    {
+      "question": "弧長",
+      "answer": [
+        "こちょう",
+        "arc length"
+      ]
+    },
+    {
+      "question": "高速フーリエ変換",
+      "answer": [
+        "こうそくフーリエへんかん",
+        "FFT",
+        "Fast Fourier Transform"
+      ]
+    },
+    {
+      "question": "最頻値",
+      "answer": [
+        "さいひんち",
+        "mode"
+      ]
+    },
+    {
+      "question": "指数分布",
+      "answer": [
+        "しすうぶんぷ",
+        "exponential distribution"
+      ]
+    },
+    {
+      "question": "主成分分析",
+      "answer": [
+        "しゅせいぶんぶんせき",
+        "PCA",
+        "principal component analysis"
+      ]
+    },
+    {
+      "question": "重回帰",
+      "answer": [
+        "じゅうかいき",
+        "multiple regression"
+      ]
+    },
+    {
+      "question": "畳み込み",
+      "answer": [
+        "たたみこみ",
+        "convolution"
+      ]
+    },
+    {
+      "question": "真理値表",
+      "answer": [
+        "しんりちひょう",
+        "truth table"
+      ]
+    },
+    {
+      "question": "線形独立",
+      "answer": [
+        "せんけいどくりつ",
+        "linearly independent"
+      ]
+    },
+    {
+      "question": "多変数関数",
+      "answer": [
+        "たへんすうかんすう",
+        "multivariable function"
+      ]
+    },
+    {
+      "question": "対角行列",
+      "answer": [
+        "たいかくぎょうれつ",
+        "diagonal matrix"
+      ]
+    },
+    {
+      "question": "対称行列",
+      "answer": [
+        "たいしょうぎょうれつ",
+        "symmetric matrix"
+      ]
+    },
+    {
+      "question": "単調増加",
+      "answer": [
+        "たんちょうぞうか",
+        "monotonic increase"
+      ]
+    },
+    {
+      "question": "中心極限定理",
+      "answer": [
+        "ちゅうしんきょくげんていり",
+        "central limit theorem"
+      ]
+    },
+    {
+      "question": "二項",
+      "answer": [
+        "にこう",
+        "binary",
+        "binomial",
+        "dyadic"
+      ]
+    },
+    {
+      "question": "非正則行列",
+      "answer": [
+        "ひせいそくぎょうれつ",
+        "singular matrix"
+      ]
+    },
+    {
+      "question": "非負整数",
+      "answer": [
+        "ひふせいすう",
+        "natural number",
+        "non-negative integer",
+        "whole number"
+      ]
+    },
+    {
+      "question": "標準正規分布",
+      "answer": [
+        "ひょうじゅんせいきぶんぷ",
+        "standard normal distribution",
+        "z-distribution"
+      ]
+    },
+    {
+      "question": "複素区間",
+      "answer": [
+        "ふくそくかん",
+        "complex interval"
+      ]
+    },
+    {
+      "question": "複素定数",
+      "answer": [
+        "ふくそていすう",
+        "complex constant"
+      ]
+    },
+    {
+      "question": "分配法則",
+      "answer": [
+        "ぶんぱいほうそく",
+        "distributive law"
+      ]
+    },
+    {
+      "question": "母関数",
+      "answer": [
+        "ぼかんすう",
+        "generating function"
+      ]
+    },
+    {
+      "question": "包絡線",
+      "answer": [
+        "ほうらくせん",
+        "envelope"
+      ]
+    },
+    {
+      "question": "無限遠点",
+      "answer": [
+        "むげんえんてん",
+        "point at infinity"
+      ]
+    },
+    {
+      "question": "離散フーリエ変換",
+      "answer": [
+        "りさんフーリエへんかん",
+        "DFT",
+        "discrete Fourier Transform"
+      ]
+    },
+    {
+      "question": "列ベクトル",
+      "answer": [
+        "れつベクトル",
+        "column vector"
+      ]
+    },
+    {
+      "question": "閉包",
+      "answer": [
+        "へいほう",
+        "closure"
+      ]
+    },
+    {
+      "question": "貪欲法",
+      "answer": [
+        "どんよくほう",
+        "greedy algorithm"
+      ]
+    },
+    {
+      "question": "欲張り法",
+      "answer": [
+        "よくばりほう",
+        "greedy algorithm"
+      ]
+    },
+    {
+      "question": "相似比",
+      "answer": [
+        "そうじひ",
+        "dilation factor",
+        "homothetic ratio",
+        "ratio of magnification",
+        "scale factor",
+        "similitude ratio"
+      ]
+    },
+    {
+      "question": "二項方程式",
+      "answer": [
+        "にこうほうていしき",
+        "binomial equation"
+      ]
+    },
+    {
+      "question": "互いに素",
+      "answer": [
+        "たがいにそ",
+        "coprime",
+        "relatively prime"
+      ]
+    },
+    {
+      "question": "桁落ち",
+      "answer": [
+        "けたおち",
+        "cancellation of significant digits"
+      ]
+    },
+    {
+      "question": "螺線",
+      "answer": [
+        "らせん",
+        "helix"
+      ]
+    },
+    {
+      "question": "多様体",
+      "answer": [
+        "たようたい",
+        "manifold"
+      ]
+    },
+    {
+      "question": "積集合",
+      "answer": [
+        "せきしゅうごう",
+        "intersection"
+      ]
+    },
+    {
+      "question": "開集合",
+      "answer": [
+        "かいしゅうごう",
+        "open set"
+      ]
+    },
+    {
+      "question": "合併集合",
+      "answer": [
+        "がっぺいしゅうごう",
+        "union"
+      ]
+    },
+    {
+      "question": "共通集合",
+      "answer": [
+        "きょうつうしゅうごう",
+        "intersection"
+      ]
+    },
+    {
+      "question": "差集合",
+      "answer": [
+        "さしゅうごう",
+        "relative complement"
+      ]
+    },
+    {
+      "question": "直積集合",
+      "answer": [
+        "ちょくせきしゅうごう",
+        "direct product"
+      ]
+    },
+    {
+      "question": "直和集合",
+      "answer": [
+        "ちょくわしゅうごう",
+        "direct sum"
+      ]
+    },
+    {
+      "question": "点集合",
+      "answer": [
+        "てんしゅうごう",
+        "point set"
+      ]
+    },
+    {
+      "question": "凸集合",
+      "answer": [
+        "とつしゅうごう",
+        "convex set"
+      ]
+    },
+    {
+      "question": "閉集合",
+      "answer": [
+        "へいしゅうごう",
+        "closed set"
+      ]
+    },
+    {
+      "question": "冪集合",
+      "answer": [
+        "べきしゅうごう",
+        "power set"
+      ]
+    },
+    {
+      "question": "余集合",
+      "answer": [
+        "よしゅうごう",
+        "complement",
+        "complementary set"
+      ]
+    },
+    {
+      "question": "ドット積",
+      "answer": [
+        "ドットせき",
+        "dot product"
+      ]
+    },
+    {
+      "question": "クロス積",
+      "answer": [
+        "クロスせき",
+        "cross product"
+      ]
+    },
+    {
+      "question": "正六面体",
+      "answer": [
+        "せいろくめんたい",
+        "cube",
+        "regular hexahedron"
+      ]
+    },
+    {
+      "question": "作用素",
+      "answer": [
+        "さようそ",
+        "operator"
+      ]
+    },
+    {
+      "question": "有限体",
+      "answer": [
+        "ゆうげんたい",
+        "finite field"
+      ]
+    },
+    {
+      "question": "標数",
+      "answer": [
+        "ひょうすう",
+        "characteristic (of a ring or field in algebra)"
+      ]
+    },
+    {
+      "question": "クラインの壺",
+      "answer": [
+        "クラインのつぼ",
+        "Klein bottle"
+      ]
+    },
+    {
+      "question": "カオス理論",
+      "answer": [
+        "カオスりろん",
+        "chaos theory"
+      ]
+    },
+    {
+      "question": "劣",
+      "answer": [
+        "れつ",
+        "inferior",
+        "minor",
+        "sub-"
+      ]
+    },
+    {
+      "question": "非負",
+      "answer": [
+        "ひふ",
+        "non-negative"
+      ]
+    },
+    {
+      "question": "フーリエ級数",
+      "answer": [
+        "フーリエきゅうすう",
+        "Fourier series"
+      ]
+    },
+    {
+      "question": "べき級数",
+      "answer": [
+        "べききゅうすう",
+        "power series"
+      ]
+    },
+    {
+      "question": "素因数分解",
+      "answer": [
+        "そいんすうぶんかい",
+        "prime decomposition",
+        "prime factorization"
+      ]
+    },
+    {
+      "question": "有界",
+      "answer": [
+        "ゆうかい",
+        "bounded"
+      ]
+    },
+    {
+      "question": "偏導関数",
+      "answer": [
+        "へんどうかんすう",
+        "partial derivative"
+      ]
+    },
+    {
+      "question": "相異なる",
+      "answer": [
+        "あいことなる",
+        "to be (relatively) distinct (when referring to items in a set)",
+        "to be different and distinct"
+      ]
+    },
+    {
+      "question": "対心",
+      "answer": [
+        "たいしん",
+        "antipodal"
+      ]
+    },
+    {
+      "question": "対蹠",
+      "answer": [
+        "たいせき",
+        "antipodal"
+      ]
+    },
+    {
+      "question": "対蹠的",
+      "answer": [
+        "たいせきてき",
+        "antipodal"
+      ]
+    },
+    {
+      "question": "束",
+      "answer": [
+        "そく",
+        "lattice"
+      ]
+    },
+    {
+      "question": "非零",
+      "answer": [
+        "ひれい",
+        "non-zero"
+      ]
+    },
+    {
+      "question": "有意水準",
+      "answer": [
+        "ゆういすいじゅん",
+        "critical p-value",
+        "level of significance",
+        "significance level"
+      ]
+    },
+    {
+      "question": "連珠形",
+      "answer": [
+        "れんじゅけい",
+        "lemniscate"
+      ]
+    },
+    {
+      "question": "ロジスティック分布",
+      "answer": [
+        "ロジスティックぶんぷ",
+        "logistic distribution"
+      ]
+    },
+    {
+      "question": "原初元",
+      "answer": [
+        "げんしげん",
+        "primitive element (of a finite field)"
+      ]
+    },
+    {
+      "question": "緩増加超関数",
+      "answer": [
+        "かんぞうかちょうかんすう",
+        "tempered distribution"
+      ]
+    },
+    {
+      "question": "回帰式",
+      "answer": [
+        "かいきしき",
+        "regression equation"
+      ]
+    },
+    {
+      "question": "開区間",
+      "answer": [
+        "かいくかん",
+        "open interval"
+      ]
+    },
+    {
+      "question": "整域",
+      "answer": [
+        "せいいき",
+        "integral domain",
+        "ring with no divisors of zero"
+      ]
+    },
+    {
+      "question": "商環",
+      "answer": [
+        "しょうかん",
+        "quotient ring"
+      ]
+    },
+    {
+      "question": "非特異",
+      "answer": [
+        "ひとくい",
+        "nonsingular"
+      ]
+    },
+    {
+      "question": "次数付き",
+      "answer": [
+        "じすうつき",
+        "graded"
+      ]
+    },
+    {
+      "question": "負値性",
+      "answer": [
+        "ふちせい",
+        "negativity"
+      ]
+    },
+    {
+      "question": "正整数",
+      "answer": [
+        "せいせいすう",
+        "positive integer"
+      ]
+    },
+    {
+      "question": "零元",
+      "answer": [
+        "れいげん",
+        "zero element"
+      ]
+    },
+    {
+      "question": "代数多様体",
+      "answer": [
+        "だいすうたようたい",
+        "algebraic variety",
+        "locus defined by polynomial equations"
+      ]
+    },
+    {
+      "question": "擬射影",
+      "answer": [
+        "ぎしゃえい",
+        "quasiprojective"
+      ]
+    },
+    {
+      "question": "固有射",
+      "answer": [
+        "こゆうしゃ",
+        "map such that the inverse image of a compact set is compact",
+        "proper map"
+      ]
+    },
+    {
+      "question": "擬有効",
+      "answer": [
+        "ぎゆうこう",
+        "pseudoeffective"
+      ]
+    },
+    {
+      "question": "双有理",
+      "answer": [
+        "そうゆうり",
+        "birational"
+      ]
+    },
+    {
+      "question": "代数幾何学",
+      "answer": [
+        "だいすうきかがく",
+        "algebraic geometry"
+      ]
+    },
+    {
+      "question": "複素解析",
+      "answer": [
+        "ふくそかいせき",
+        "complex analysis"
+      ]
+    },
+    {
+      "question": "複素数体",
+      "answer": [
+        "ふくそすうたい",
+        "field of complex numbers"
+      ]
+    },
+    {
+      "question": "高次元",
+      "answer": [
+        "こうじげん",
+        "high dimension",
+        "higher dimensions"
+      ]
+    },
+    {
+      "question": "小平次元",
+      "answer": [
+        "こだいらじげん",
+        "Kodaira dimension"
+      ]
+    },
+    {
+      "question": "信頼区間",
+      "answer": [
+        "しんらいくかん",
+        "confidence interval"
+      ]
+    },
+    {
+      "question": "半順序集合",
+      "answer": [
+        "はんじゅんじょしゅうごう",
+        "partially ordered set",
+        "poset",
+        "semi-ordered set"
+      ]
+    },
+    {
+      "question": "半単純",
+      "answer": [
+        "はんたんじゅん",
+        "semisimple"
+      ]
+    },
+    {
+      "question": "部分加群",
+      "answer": [
+        "ぶぶんかぐん",
+        "submodule"
+      ]
+    },
+    {
+      "question": "乗法標準形",
+      "answer": [
+        "じょうほうひょうじゅんけい",
+        "CNF",
+        "conjunctive normal form"
+      ]
+    },
+    {
+      "question": "微分積分学",
+      "answer": [
+        "びぶんせきぶんがく",
+        "calculus"
+      ]
+    },
+    {
+      "question": "差分商",
+      "answer": [
+        "さぶんしょう",
+        "difference quotient",
+        "divided difference"
+      ]
+    },
+    {
+      "question": "可換環",
+      "answer": [
+        "かかんかん",
+        "commutative ring"
+      ]
+    },
+    {
+      "question": "荷重減衰",
+      "answer": [
+        "かじゅうげんすい",
+        "weight decay"
+      ]
+    },
+    {
+      "question": "角座標",
+      "answer": [
+        "かくざひょう",
+        "angular coordinate(s)"
+      ]
+    },
+    {
+      "question": "単峰型",
+      "answer": [
+        "たんほうがた",
+        "unimodal"
+      ]
+    },
+    {
+      "question": "多峰",
+      "answer": [
+        "たほう",
+        "multimodal"
+      ]
+    },
+    {
+      "question": "多峰性",
+      "answer": [
+        "たほうせい",
+        "multimodal",
+        "multimodality"
+      ]
+    },
+    {
+      "question": "線積分",
+      "answer": [
+        "せんせきぶん",
+        "contour integral",
+        "curve integral",
+        "line integral",
+        "path integral"
+      ]
+    },
+    {
+      "question": "限量子",
+      "answer": [
+        "げんりょうし",
+        "quantifier"
+      ]
+    },
+    {
+      "question": "フーリエ展開",
+      "answer": [
+        "フーリエてんかい",
+        "Fourier expansion"
+      ]
+    },
+    {
+      "question": "放物面",
+      "answer": [
+        "ほうぶつめん",
+        "paraboloid"
+      ]
+    },
+    {
+      "question": "発散級数",
+      "answer": [
+        "はっさんきゅうすう",
+        "divergent series"
+      ]
+    },
+    {
+      "question": "五次方程式",
+      "answer": [
+        "ごじほうていしき",
+        "quintic equation"
+      ]
+    },
+    {
+      "question": "収束級数",
+      "answer": [
+        "しゅうそくきゅうすう",
+        "convergent series"
+      ]
+    },
+    {
+      "question": "完全平方",
+      "answer": [
+        "かんぜんへいほう",
+        "perfect square"
+      ]
+    },
+    {
+      "question": "心臓形",
+      "answer": [
+        "しんぞうけい",
+        "cardioid"
+      ]
+    },
+    {
+      "question": "面角",
+      "answer": [
+        "めんかく",
+        "face angle"
+      ]
+    },
+    {
+      "question": "同値関係",
+      "answer": [
+        "どうちかんけい",
+        "equivalence relation"
+      ]
+    },
+    {
+      "question": "巡回群",
+      "answer": [
+        "じゅんかいぐん",
+        "cyclic group"
+      ]
+    },
+    {
+      "question": "零空間",
+      "answer": [
+        "ぜろくうかん",
+        "れいくうかん",
+        "ゼロくうかん",
+        "null space"
+      ]
+    },
+    {
+      "question": "集積点",
+      "answer": [
+        "しゅうせきてん",
+        "accumulation point",
+        "limit point"
+      ]
+    },
+    {
+      "question": "部分群",
+      "answer": [
+        "ぶぶんぐん",
+        "subgroup"
+      ]
+    },
+    {
+      "question": "超越数",
+      "answer": [
+        "ちょうえつすう",
+        "transcendental number"
+      ]
+    },
+    {
+      "question": "有向グラフ",
+      "answer": [
+        "ゆうこうグラフ",
+        "digraph",
+        "directed graph"
+      ]
+    },
+    {
+      "question": "調和数列",
+      "answer": [
+        "ちょうわすうれつ",
+        "harmonic progression"
+      ]
+    },
+    {
+      "question": "フーリエ解析",
+      "answer": [
+        "フーリエかいせき",
+        "Fourier analysis"
+      ]
+    },
+    {
+      "question": "一対一対応",
+      "answer": [
+        "いちたいいちたいおう",
+        "one-to-one correspondence"
+      ]
+    },
+    {
+      "question": "補間法",
+      "answer": [
+        "ほかんほう",
+        "interpolation"
+      ]
+    },
+    {
+      "question": "補外法",
+      "answer": [
+        "ほがいほう",
+        "extrapolation"
+      ]
+    },
+    {
+      "question": "計画行列",
+      "answer": [
+        "けいかくぎょうれつ",
+        "design matrix"
+      ]
+    },
+    {
+      "question": "ポアソン分布",
+      "answer": [
+        "ポアソンぶんぷ",
+        "Poisson distribution"
+      ]
+    },
+    {
+      "question": "アーベル群",
+      "answer": [
+        "アーベルぐん",
+        "Abelian group",
+        "commutative group"
+      ]
+    },
+    {
+      "question": "コッホ曲線",
+      "answer": [
+        "コッホきょくせん",
+        "Koch curve",
+        "Koch island",
+        "Koch snowflake"
+      ]
+    },
+    {
+      "question": "平面充填",
+      "answer": [
+        "へいめんじゅうてん",
+        "tesselation"
+      ]
+    },
+    {
+      "question": "空間充填",
+      "answer": [
+        "くうかんじゅうてん",
+        "space-filling"
+      ]
+    },
+    {
+      "question": "カタランの立体",
+      "answer": [
+        "カタランのりったい",
+        "Archimedean dual",
+        "Catalan solid"
+      ]
+    },
+    {
+      "question": "連続写像",
+      "answer": [
+        "れんぞくしゃぞう",
+        "continuous mapping",
+        "continuous transformation"
+      ]
+    },
+    {
+      "question": "一様連続",
+      "answer": [
+        "いちようれんぞく",
+        "uniform continuity"
+      ]
+    },
+    {
+      "question": "リプシッツ連続",
+      "answer": [
+        "リプシッツれんぞく",
+        "Lipschitz continuity"
+      ]
+    },
+    {
+      "question": "ロピタルの定理",
+      "answer": [
+        "ロピタルのていり",
+        "l'Hospital's rule",
+        "l'Hôpital's rule"
+      ]
+    },
+    {
+      "question": "最尤法",
+      "answer": [
+        "さいゆうほう",
+        "maximum likelihood method",
+        "maximum-likelihood estimation"
+      ]
+    },
+    {
+      "question": "双曲面",
+      "answer": [
+        "そうきょくめん",
+        "hyperboloid"
+      ]
+    },
+    {
+      "question": "逆写像",
+      "answer": [
+        "ぎゃくしゃぞう",
+        "inverse mapping"
+      ]
+    },
+    {
+      "question": "ｔ検定",
+      "answer": [
+        "ティーけんてい",
+        "t-test"
+      ]
+    },
+    {
+      "question": "分散分析",
+      "answer": [
+        "ぶんさんぶんせき",
+        "ANOVA",
+        "analysis of variance"
+      ]
+    },
+    {
+      "question": "ロジスティック回帰",
+      "answer": [
+        "ロジスティックかいき",
+        "logistic regression"
+      ]
+    },
+    {
+      "question": "負の二項分布",
+      "answer": [
+        "ふのにこうぶんぷ",
+        "negative binomial distribution"
+      ]
+    },
+    {
+      "question": "積率母関数",
+      "answer": [
+        "せきりつぼかんすう",
+        "moment-generating function"
+      ]
+    },
+    {
+      "question": "積率相関係数",
+      "answer": [
+        "せきりつそうかんけいすう",
+        "product-moment correlation coefficient"
+      ]
+    },
+    {
+      "question": "事後確率",
+      "answer": [
+        "じごかくりつ",
+        "posterior probability"
+      ]
+    },
+    {
+      "question": "事前確率",
+      "answer": [
+        "じぜんかくりつ",
+        "prior probability"
+      ]
+    },
+    {
+      "question": "尤度関数",
+      "answer": [
+        "ゆうどかんすう",
+        "likelihood function"
+      ]
+    },
+    {
+      "question": "尤度比",
+      "answer": [
+        "ゆうどひ",
+        "likelihood ratio"
+      ]
+    },
+    {
+      "question": "赤池情報量規準",
+      "answer": [
+        "あかいけじょうほうりょうきじゅん",
+        "AIC",
+        "Akaike information criterion"
+      ]
+    },
+    {
+      "question": "尤度比検定",
+      "answer": [
+        "ゆうどひけんてい",
+        "likelihood ratio test"
+      ]
+    },
+    {
+      "question": "ベイズ情報量基準",
+      "answer": [
+        "ベイズじょうほうりょうきじゅん",
+        "Bayesian information criterion"
+      ]
+    },
+    {
+      "question": "カイ二乗分布",
+      "answer": [
+        "カイじじょうぶんぷ",
+        "カイにじょうぶんぷ",
+        "chi-square distribution",
+        "chi-squared distribution"
+      ]
+    },
+    {
+      "question": "カイ二乗",
+      "answer": [
+        "カイじじょう",
+        "カイにじょう",
+        "chi-square",
+        "chi-squared"
+      ]
+    },
+    {
+      "question": "Ｇ検定",
+      "answer": [
+        "ジーけんてい",
+        "G-test"
+      ]
+    },
+    {
+      "question": "分割表",
+      "answer": [
+        "ぶんかつひょう",
+        "contingency table"
+      ]
+    },
+    {
+      "question": "共変量",
+      "answer": [
+        "きょうへんりょう",
+        "covariance",
+        "covariate"
+      ]
+    },
+    {
+      "question": "平均への回帰",
+      "answer": [
+        "へいきんへのかいき",
+        "regression to the mean",
+        "regression toward the mean"
+      ]
+    },
+    {
+      "question": "Ｆ検定",
+      "answer": [
+        "エフけんてい",
+        "F-test"
+      ]
+    },
+    {
+      "question": "Ｚ検定",
+      "answer": [
+        "ゼットけんてい",
+        "Z-test"
+      ]
+    },
+    {
+      "question": "シャピロウィルク検定",
+      "answer": [
+        "シャピロウィルクけんてい",
+        "Shapiro-Wilk Test"
+      ]
+    },
+    {
+      "question": "交差検定",
+      "answer": [
+        "こうさけんてい",
+        "cross-validation"
+      ]
+    },
+    {
+      "question": "第一種の過誤",
+      "answer": [
+        "だいいっしゅのかご",
+        "type I error"
+      ]
+    },
+    {
+      "question": "第二種の過誤",
+      "answer": [
+        "だいにしゅのかご",
+        "type II error"
+      ]
+    },
+    {
+      "question": "バートレット検定",
+      "answer": [
+        "バートレットけんてい",
+        "Bartlett's test"
+      ]
+    },
+    {
+      "question": "検定統計量",
+      "answer": [
+        "けんていとうけいりょう",
+        "test statistic"
+      ]
+    },
+    {
+      "question": "クラスカルワリス検定",
+      "answer": [
+        "クラスカルワリスけんてい",
+        "Kruskal-Wallis test"
+      ]
+    },
+    {
+      "question": "ブートストラップ法",
+      "answer": [
+        "ブートストラップほう",
+        "bootstrap method (of resampling)",
+        "bootstrapping"
+      ]
+    },
+    {
+      "question": "検出力",
+      "answer": [
+        "けんしゅつりょく",
+        "power",
+        "statistical power"
+      ]
+    },
+    {
+      "question": "逆元",
+      "answer": [
+        "ぎゃくげん",
+        "inverse element"
+      ]
+    },
+    {
+      "question": "特異行列",
+      "answer": [
+        "とくいぎょうれつ",
+        "singular matrix"
+      ]
+    },
+    {
+      "question": "正則行列",
+      "answer": [
+        "せいそくぎょうれつ",
+        "regular matrix"
+      ]
+    },
+    {
+      "question": "小行列式",
+      "answer": [
+        "しょうぎょうれつしき",
+        "minor (determinant)"
+      ]
+    },
+    {
+      "question": "共分散行列",
+      "answer": [
+        "きょうぶんさんぎょうれつ",
+        "covariance matrix"
+      ]
+    },
+    {
+      "question": "跡",
+      "answer": [
+        "せき",
+        "trace"
+      ]
+    },
+    {
+      "question": "微分係数",
+      "answer": [
+        "びぶんけいすう",
+        "derivative",
+        "differential coefficient"
+      ]
+    },
+    {
+      "question": "クロネッカー積",
+      "answer": [
+        "クロネッカーせき",
+        "Kronecker product"
+      ]
+    },
+    {
+      "question": "斜交群",
+      "answer": [
+        "しゃこうぐん",
+        "symplectic group"
+      ]
+    },
+    {
+      "question": "斜交座標",
+      "answer": [
+        "しゃこうざひょう",
+        "oblique coordinates"
+      ]
+    },
+    {
+      "question": "斜交座標系",
+      "answer": [
+        "しゃこうざひょうけい",
+        "oblique coordinate system"
+      ]
+    },
+    {
+      "question": "初項",
+      "answer": [
+        "しょこう",
+        "first term (e.g. of sequence)",
+        "initial term"
+      ]
+    },
+    {
+      "question": "公比",
+      "answer": [
+        "こうひ",
+        "common ratio",
+        "geometric ratio"
+      ]
+    },
+    {
+      "question": "正値",
+      "answer": [
+        "せいち",
+        "positive value"
+      ]
+    },
+    {
+      "question": "正値性",
+      "answer": [
+        "せいちせい",
+        "positivity"
+      ]
+    },
+    {
+      "question": "ヤンミルズ理論",
+      "answer": [
+        "ヤンミルズりろん",
+        "Yang-Mills theory"
+      ]
+    },
+    {
+      "question": "円周角",
+      "answer": [
+        "えんしゅうかく",
+        "angle at the circumference",
+        "circumferential angle",
+        "inscribed angle"
+      ]
+    },
+    {
+      "question": "凹角",
+      "answer": [
+        "おうかく",
+        "(a) re-entrant",
+        "concave angle"
+      ]
+    },
+    {
+      "question": "枝刈り",
+      "answer": [
+        "えだかり",
+        "pruning (e.g. decision tree)"
+      ]
+    },
+    {
+      "question": "正規直交基底",
+      "answer": [
+        "せいきちょっこうきてい",
+        "orthonormal basis"
+      ]
+    },
+    {
+      "question": "緩和法",
+      "answer": [
+        "かんわほう",
+        "relaxation method"
+      ]
+    },
+    {
+      "question": "双対性",
+      "answer": [
+        "そうついせい",
+        "duality"
+      ]
+    },
+    {
+      "question": "変分",
+      "answer": [
+        "へんぶん",
+        "variation"
+      ]
+    },
+    {
+      "question": "フィボナッチ数列",
+      "answer": [
+        "フィボナッチすうれつ",
+        "Fibonacci numbers",
+        "Fibonacci sequence",
+        "Fibonacci series"
+      ]
+    },
+    {
+      "question": "行優先",
+      "answer": [
+        "ぎょうゆうせん",
+        "row-major (e.g. vector)"
+      ]
+    },
+    {
+      "question": "列優先",
+      "answer": [
+        "れつゆうせん",
+        "column-major (e.g. vector)"
+      ]
+    },
+    {
+      "question": "中点連結定理",
+      "answer": [
+        "ちゅうてんれんけつていり",
+        "mid-point theorem"
+      ]
+    },
+    {
+      "question": "陽的",
+      "answer": [
+        "ようてき",
+        "explicit"
+      ]
+    },
+    {
+      "question": "陰的",
+      "answer": [
+        "いんてき",
+        "implicit"
+      ]
+    },
+    {
+      "question": "陽解法",
+      "answer": [
+        "ようかいほう",
+        "explicit method"
+      ]
+    },
+    {
+      "question": "偏微分式",
+      "answer": [
+        "へんびぶんしき",
+        "partial differential equation"
+      ]
+    },
+    {
+      "question": "冪数",
+      "answer": [
+        "べきすう",
+        "exponent",
+        "power"
+      ]
+    },
+    {
+      "question": "接平面",
+      "answer": [
+        "せつへいめん",
+        "tangent plane",
+        "tangential plane"
+      ]
+    },
+    {
+      "question": "全微分",
+      "answer": [
+        "ぜんびぶん",
+        "total derivative",
+        "total differential"
+      ]
+    },
+    {
+      "question": "重積分",
+      "answer": [
+        "じゅうせきぶん",
+        "multiple integral"
+      ]
+    },
+    {
+      "question": "多重積分",
+      "answer": [
+        "たじゅうせきぶん",
+        "multiple integral"
+      ]
+    },
+    {
+      "question": "線素",
+      "answer": [
+        "せんそ",
+        "line element"
+      ]
+    },
+    {
+      "question": "単連結",
+      "answer": [
+        "たんれんけつ",
+        "simply-connected"
+      ]
+    },
+    {
+      "question": "単連結空間",
+      "answer": [
+        "たんれんけつくうかん",
+        "simply-connected space"
+      ]
+    },
+    {
+      "question": "べき指数",
+      "answer": [
+        "べきしすう",
+        "exponent"
+      ]
+    },
+    {
+      "question": "オイラーの等式",
+      "answer": [
+        "オイラーのとうしき",
+        "Euler's equation",
+        "Euler's identity"
+      ]
+    },
+    {
+      "question": "オイラーの公式",
+      "answer": [
+        "オイラーのこうしき",
+        "Euler's formula"
+      ]
+    },
+    {
+      "question": "ボンフェローニ補正",
+      "answer": [
+        "ボンフェローニほせい",
+        "Bonferroni correction"
+      ]
+    },
+    {
+      "question": "ｐ値",
+      "answer": [
+        "ピーち",
+        "p-value"
+      ]
+    },
+    {
+      "question": "ノンパラメトリック法",
+      "answer": [
+        "ノンパラメトリックほう",
+        "non-parametric method"
+      ]
+    },
+    {
+      "question": "助変数",
+      "answer": [
+        "じょへんすう",
+        "parameter"
+      ]
+    },
+    {
+      "question": "変量効果",
+      "answer": [
+        "へんりょうこうか",
+        "random effect"
+      ]
+    },
+    {
+      "question": "固定効果",
+      "answer": [
+        "こていこうか",
+        "fixed effect"
+      ]
+    },
+    {
+      "question": "混合モデル",
+      "answer": [
+        "こんごうモデル",
+        "mixed model"
+      ]
+    },
+    {
+      "question": "一般線形モデル",
+      "answer": [
+        "いっぱんせんけいモデル",
+        "general linear model"
+      ]
+    },
+    {
+      "question": "一般化線形モデル",
+      "answer": [
+        "いっぱんかせんけいモデル",
+        "generalized linear model"
+      ]
+    },
+    {
+      "question": "対数尤度",
+      "answer": [
+        "たいすうゆうど",
+        "log-likelihood"
+      ]
+    },
+    {
+      "question": "決定係数",
+      "answer": [
+        "けっていけいすう",
+        "coefficient of determination"
+      ]
+    },
+    {
+      "question": "等分散性",
+      "answer": [
+        "とうぶんさんせい",
+        "homoscedasticity"
+      ]
+    },
+    {
+      "question": "不偏分散",
+      "answer": [
+        "ふへんぶんさん",
+        "unbiased estimate of population variance"
+      ]
+    },
+    {
+      "question": "標本分散",
+      "answer": [
+        "ひょうほんぶんさん",
+        "sample variance"
+      ]
+    },
+    {
+      "question": "母分散",
+      "answer": [
+        "ぼぶんさん",
+        "population variance"
+      ]
+    },
+    {
+      "question": "線形回帰",
+      "answer": [
+        "せんけいかいき",
+        "linear regression"
+      ]
+    },
+    {
+      "question": "オッズ比",
+      "answer": [
+        "オッズひ",
+        "odds ratio"
+      ]
+    },
+    {
+      "question": "有意性検定",
+      "answer": [
+        "ゆういせいけんてい",
+        "significance test",
+        "test of significance"
+      ]
+    },
+    {
+      "question": "ベイズ因子",
+      "answer": [
+        "ベイズいんし",
+        "Bayes factor"
+      ]
+    },
+    {
+      "question": "ベイズ確率",
+      "answer": [
+        "ベイズかくりつ",
+        "Bayesian probability"
+      ]
+    },
+    {
+      "question": "ベイズ推定",
+      "answer": [
+        "ベイズすいてい",
+        "Bayesian estimation",
+        "Bayesian inference"
+      ]
+    },
+    {
+      "question": "外れ値",
+      "answer": [
+        "はずれち",
+        "outlier"
+      ]
+    },
+    {
+      "question": "箱ひげ図",
+      "answer": [
+        "はこひげず",
+        "box plot",
+        "box-and-whisker diagram",
+        "box-and-whisker plot",
+        "boxplot"
+      ]
+    },
+    {
+      "question": "統計的ばらつき",
+      "answer": [
+        "とうけいてきばらつき",
+        "statistical dispersion",
+        "statistical variability"
+      ]
+    },
+    {
+      "question": "混合効果",
+      "answer": [
+        "こんごうこうか",
+        "mixed effects"
+      ]
+    },
+    {
+      "question": "多項式回帰",
+      "answer": [
+        "たこうしきかいき",
+        "polynomial regression"
+      ]
+    },
+    {
+      "question": "重回帰分析",
+      "answer": [
+        "じゅうかいきぶんせき",
+        "multiple regression analysis"
+      ]
+    },
+    {
+      "question": "疎行列",
+      "answer": [
+        "そぎょうれつ",
+        "sparse matrix"
+      ]
+    },
+    {
+      "question": "主対角線",
+      "answer": [
+        "しゅたいかくせん",
+        "main diagonal",
+        "principal diagonal"
+      ]
+    },
+    {
+      "question": "三角行列",
+      "answer": [
+        "さんかくぎょうれつ",
+        "triangular matrix"
+      ]
+    },
+    {
+      "question": "上三角行列",
+      "answer": [
+        "うえさんかくぎょうれつ",
+        "upper triangular matrix"
+      ]
+    },
+    {
+      "question": "下三角行列",
+      "answer": [
+        "したさんかくぎょうれつ",
+        "lower triangular matrix"
+      ]
+    },
+    {
+      "question": "ベクトル解析",
+      "answer": [
+        "ベクトルかいせき",
+        "vector analysis",
+        "vector calculus"
+      ]
+    },
+    {
+      "question": "回帰係数",
+      "answer": [
+        "かいきけいすう",
+        "regression coefficient"
+      ]
+    },
+    {
+      "question": "部分行列",
+      "answer": [
+        "ぶぶんぎょうれつ",
+        "submatrix"
+      ]
+    },
+    {
+      "question": "ブロック行列",
+      "answer": [
+        "ブロックぎょうれつ",
+        "block matrix"
+      ]
+    },
+    {
+      "question": "回転行列",
+      "answer": [
+        "かいてんぎょうれつ",
+        "rotation matrix"
+      ]
+    },
+    {
+      "question": "固有ベクトル",
+      "answer": [
+        "こゆうベクトル",
+        "eigenvector"
+      ]
+    },
+    {
+      "question": "テーラー展開",
+      "answer": [
+        "テーラーてんかい",
+        "テイラーてんかい",
+        "Taylor expansion"
+      ]
+    },
+    {
+      "question": "テーラー級数",
+      "answer": [
+        "テーラーきゅうすう",
+        "テイラーきゅうすう",
+        "Taylor series"
+      ]
+    },
+    {
+      "question": "変動係数",
+      "answer": [
+        "へんどうけいすう",
+        "coefficient of variation",
+        "variation coefficient"
+      ]
+    },
+    {
+      "question": "相対標準偏差",
+      "answer": [
+        "そうたいひょうじゅんへんさ",
+        "relative standard deviation"
+      ]
+    },
+    {
+      "question": "残差平方和",
+      "answer": [
+        "ざんさへいほうわ",
+        "residual sum of squares"
+      ]
+    },
+    {
+      "question": "残差",
+      "answer": [
+        "ざんさ",
+        "residual"
+      ]
+    },
+    {
+      "question": "差分方程式",
+      "answer": [
+        "さぶんほうていしき",
+        "difference equation"
+      ]
+    },
+    {
+      "question": "線形結合",
+      "answer": [
+        "せんけいけつごう",
+        "linear combination"
+      ]
+    },
+    {
+      "question": "漸化式",
+      "answer": [
+        "ぜんかしき",
+        "recurrence formula",
+        "recurrence relation"
+      ]
+    },
+    {
+      "question": "冪乗則",
+      "answer": [
+        "べきじょうそく",
+        "power law"
+      ]
+    },
+    {
+      "question": "ガンマ分布",
+      "answer": [
+        "ガンマぶんぷ",
+        "gamma distribution"
+      ]
+    },
+    {
+      "question": "最大エントロピー原理",
+      "answer": [
+        "さいだいエントロピーげんり",
+        "principle of maximum entropy"
+      ]
+    },
+    {
+      "question": "分布関数",
+      "answer": [
+        "ぶんぷかんすう",
+        "distribution function"
+      ]
+    },
+    {
+      "question": "リンク関数",
+      "answer": [
+        "リンクかんすう",
+        "link function"
+      ]
+    },
+    {
+      "question": "共通接線",
+      "answer": [
+        "きょうつうせっせん",
+        "common tangent"
+      ]
+    },
+    {
+      "question": "隣辺",
+      "answer": [
+        "りんぺん",
+        "adjacent side",
+        "cathetus"
+      ]
+    },
+    {
+      "question": "隣接辺",
+      "answer": [
+        "りんせつへん",
+        "adjacent side"
+      ]
+    },
+    {
+      "question": "球面調和関数",
+      "answer": [
+        "きゅうめんちょうわかんすう",
+        "spherical harmonics"
+      ]
+    },
+    {
+      "question": "短半径",
+      "answer": [
+        "たんはんけい",
+        "semiminor axis"
+      ]
+    },
+    {
+      "question": "共通部分",
+      "answer": [
+        "きょうつうぶぶん",
+        "common set",
+        "intersection (of sets)"
+      ]
+    },
+    {
+      "question": "優決定系",
+      "answer": [
+        "ゆうけっていけい",
+        "overdetermined"
+      ]
+    },
+    {
+      "question": "劣決定系",
+      "answer": [
+        "れつけっていけい",
+        "underdetermined system"
+      ]
+    },
+    {
+      "question": "対数正規分布",
+      "answer": [
+        "たいすうせいきぶんぷ",
+        "log-normal distribution",
+        "lognormal distribution"
+      ]
+    },
+    {
+      "question": "一様分布",
+      "answer": [
+        "いちようぶんぷ",
+        "uniform distribution"
+      ]
+    },
+    {
+      "question": "誤差分布",
+      "answer": [
+        "ごさぶんぷ",
+        "error distribution"
+      ]
+    },
+    {
+      "question": "多項分布",
+      "answer": [
+        "たこうぶんぷ",
+        "multinomial distribution"
+      ]
+    },
+    {
+      "question": "ベルヌーイ分布",
+      "answer": [
+        "ベルヌーイぶんぷ",
+        "Bernoulli distribution"
+      ]
+    },
+    {
+      "question": "ｔ分布",
+      "answer": [
+        "ティーぶんぷ",
+        "t-distribution"
+      ]
+    },
+    {
+      "question": "分布曲線",
+      "answer": [
+        "ぶんぷきょくせん",
+        "distribution curve"
+      ]
+    },
+    {
+      "question": "分布係数",
+      "answer": [
+        "ぶんぷけいすう",
+        "distribution factor"
+      ]
+    },
+    {
+      "question": "ディリクレ分布",
+      "answer": [
+        "ディリクレぶんぷ",
+        "Dirichlet distribution"
+      ]
+    },
+    {
+      "question": "ディリクレ級数",
+      "answer": [
+        "ディリクレきゅうすう",
+        "Dirichlet series"
+      ]
+    },
+    {
+      "question": "周辺確率分布",
+      "answer": [
+        "しゅうへんかくりつぶんぷ",
+        "marginal probability distribution"
+      ]
+    },
+    {
+      "question": "結合分布",
+      "answer": [
+        "けつごうぶんぷ",
+        "joint distribution"
+      ]
+    },
+    {
+      "question": "Ｆ分布",
+      "answer": [
+        "エフぶんぷ",
+        "F-distribution"
+      ]
+    },
+    {
+      "question": "一元配置分散分析",
+      "answer": [
+        "いちげんはいちぶんさんぶんせき",
+        "one-way ANOVA",
+        "one-way analysis of variance"
+      ]
+    },
+    {
+      "question": "平方剰余の相互法則",
+      "answer": [
+        "へいほうじょうよのそうごほうそく",
+        "law of quadratic reciprocity"
+      ]
+    },
+    {
+      "question": "共変性",
+      "answer": [
+        "きょうへんせい",
+        "covariance"
+      ]
+    },
+    {
+      "question": "反変性",
+      "answer": [
+        "はんぺんせい",
+        "contravariance"
+      ]
+    },
+    {
+      "question": "乱歩",
+      "answer": [
+        "らんぽ",
+        "random walk"
+      ]
+    },
+    {
+      "question": "最急降下法",
+      "answer": [
+        "さいきゅうこうかほう",
+        "gradient descent method",
+        "saddle point method",
+        "steepest descent method"
+      ]
+    },
+    {
+      "question": "エルゴード理論",
+      "answer": [
+        "エルゴードりろん",
+        "ergodic theory"
+      ]
+    },
+    {
+      "question": "条件付き確率",
+      "answer": [
+        "じょうけんつきかくりつ",
+        "conditional probability"
+      ]
+    },
+    {
+      "question": "確率場",
+      "answer": [
+        "かくりつば",
+        "random field"
+      ]
+    },
+    {
+      "question": "条件付き確率場",
+      "answer": [
+        "じょうけんつきかくりつば",
+        "CRF",
+        "conditional random field"
+      ]
+    },
+    {
+      "question": "八進法",
+      "answer": [
+        "はっしんほう",
+        "octal notation",
+        "octal numeral system"
+      ]
+    },
+    {
+      "question": "線形微分方程式",
+      "answer": [
+        "せんけいびぶんほうていしき",
+        "linear differential equation"
+      ]
+    },
+    {
+      "question": "計算式",
+      "answer": [
+        "けいさんしき",
+        "calculus",
+        "equation",
+        "formula",
+        "method of calculation"
+      ]
+    },
+    {
+      "question": "定積分",
+      "answer": [
+        "ていせきぶん",
+        "definite integral"
+      ]
+    },
+    {
+      "question": "面積分",
+      "answer": [
+        "めんせきぶん",
+        "surface integral"
+      ]
+    },
+    {
+      "question": "体積分",
+      "answer": [
+        "たいせきぶん",
+        "volume integral"
+      ]
+    },
+    {
+      "question": "確率積分",
+      "answer": [
+        "かくりつせきぶん",
+        "stochastic integral"
+      ]
+    },
+    {
+      "question": "部分積分",
+      "answer": [
+        "ぶぶんせきぶん",
+        "integration by parts",
+        "partial integration"
+      ]
+    },
+    {
+      "question": "陽関数",
+      "answer": [
+        "ようかんすう",
+        "explicit function"
+      ]
+    },
+    {
+      "question": "実部",
+      "answer": [
+        "じつぶ",
+        "real part (of complex number)"
+      ]
+    },
+    {
+      "question": "虚部",
+      "answer": [
+        "きょぶ",
+        "imaginary part (of complex number)"
+      ]
+    },
+    {
+      "question": "基本列",
+      "answer": [
+        "きほんれつ",
+        "Cauchy sequence",
+        "fundamental sequence"
+      ]
+    },
+    {
+      "question": "可換",
+      "answer": [
+        "かかん",
+        "commutative"
+      ]
+    },
+    {
+      "question": "コーシー列",
+      "answer": [
+        "コーシーれつ",
+        "Cauchy sequence"
+      ]
+    },
+    {
+      "question": "可換性",
+      "answer": [
+        "かかんせい",
+        "commutativity"
+      ]
+    },
+    {
+      "question": "非可換幾何",
+      "answer": [
+        "ひかかんきか",
+        "NCG",
+        "noncommutative geometry"
+      ]
+    },
+    {
+      "question": "非可換",
+      "answer": [
+        "ひかかん",
+        "noncommutative"
+      ]
+    },
+    {
+      "question": "非可換環",
+      "answer": [
+        "ひかかんかん",
+        "noncommutative ring"
+      ]
+    },
+    {
+      "question": "射影加群",
+      "answer": [
+        "しゃえいかぐん",
+        "projective module"
+      ]
+    },
+    {
+      "question": "入射加群",
+      "answer": [
+        "にゅうしゃかぐん",
+        "injective module"
+      ]
+    },
+    {
+      "question": "自由加群",
+      "answer": [
+        "じゆうかぐん",
+        "free module"
+      ]
+    },
+    {
+      "question": "平坦加群",
+      "answer": [
+        "へいたんかぐん",
+        "flat module"
+      ]
+    },
+    {
+      "question": "ネーター環",
+      "answer": [
+        "ネーターかん",
+        "Noetherian ring"
+      ]
+    },
+    {
+      "question": "アルティン環",
+      "answer": [
+        "アルティンかん",
+        "Artin ring",
+        "Artinian ring"
+      ]
+    },
+    {
+      "question": "アルチン環",
+      "answer": [
+        "アルチンかん",
+        "Artin ring",
+        "Artinian ring"
+      ]
+    },
+    {
+      "question": "全順序",
+      "answer": [
+        "ぜんじゅんじょ",
+        "total order (relation)"
+      ]
+    },
+    {
+      "question": "分母を払う",
+      "answer": [
+        "ぶんぼをはらう",
+        "to cancel a denominator",
+        "to clear an equation of fractions"
+      ]
+    },
+    {
+      "question": "直積",
+      "answer": [
+        "ちょくせき",
+        "Cartesian product",
+        "direct product"
+      ]
+    },
+    {
+      "question": "スペクトル分解",
+      "answer": [
+        "スペクトルぶんかい",
+        "spectral decomposition",
+        "spectral resolution"
+      ]
+    },
+    {
+      "question": "判別分析",
+      "answer": [
+        "はんべつぶんせき",
+        "discriminant analysis"
+      ]
+    },
+    {
+      "question": "二十面体",
+      "answer": [
+        "にじゅうめんたい",
+        "icosahedron"
+      ]
+    },
+    {
+      "question": "正二十面体",
+      "answer": [
+        "せいにじゅうめんたい",
+        "regular icosahedron"
+      ]
+    },
+    {
+      "question": "正十二面体",
+      "answer": [
+        "せいじゅうにめんた���",
+        "regular dodecahedron"
+      ]
+    },
+    {
+      "question": "十二面体",
+      "answer": [
+        "じゅうにめんたい",
+        "dodecahedron"
+      ]
+    },
+    {
+      "question": "九面体",
+      "answer": [
+        "きゅうめんたい",
+        "enneahedron",
+        "nonahedron"
+      ]
+    },
+    {
+      "question": "平行六面体",
+      "answer": [
+        "へいこうろくめんたい",
+        "parallelepiped"
+      ]
+    },
+    {
+      "question": "十面体",
+      "answer": [
+        "じゅうめんたい",
+        "decahedron"
+      ]
+    },
+    {
+      "question": "菱形十二面体",
+      "answer": [
+        "りょうけいじゅうにめんたい",
+        "rhombic dodecahedron"
+      ]
+    },
+    {
+      "question": "線型空間",
+      "answer": [
+        "せんけいくうかん",
+        "linear space"
+      ]
+    },
+    {
+      "question": "バナッハ空間",
+      "answer": [
+        "バナッハくうかん",
+        "Banach space"
+      ]
+    },
+    {
+      "question": "単調減少",
+      "answer": [
+        "たんちょうげんしょう",
+        "monotonic decrease"
+      ]
+    },
+    {
+      "question": "単調増加数列",
+      "answer": [
+        "たんちょうぞうかすうれつ",
+        "monotonically increasing sequence"
+      ]
+    },
+    {
+      "question": "単調減少数列",
+      "answer": [
+        "たんちょうげんしょうすうれつ",
+        "monotonically decreasing sequence"
+      ]
+    },
+    {
+      "question": "リーマン積分",
+      "answer": [
+        "リーマンせきぶん",
+        "Riemann integral"
+      ]
+    },
+    {
+      "question": "調和級数",
+      "answer": [
+        "ちょうわきゅうすう",
+        "harmonic series"
+      ]
+    },
+    {
+      "question": "多価関数",
+      "answer": [
+        "たかかんすう",
+        "multiple-valued function",
+        "multivalued function"
+      ]
+    },
+    {
+      "question": "合成関数",
+      "answer": [
+        "ごうせいかんすう",
+        "composite function"
+      ]
+    },
+    {
+      "question": "単調写像",
+      "answer": [
+        "たんちょうしゃぞう",
+        "monotonic mapping"
+      ]
+    },
+    {
+      "question": "初等関数",
+      "answer": [
+        "しょとうかんすう",
+        "elementary function"
+      ]
+    },
+    {
+      "question": "単調性",
+      "answer": [
+        "たんちょうせい",
+        "monotonicity"
+      ]
+    },
+    {
+      "question": "主値",
+      "answer": [
+        "しゅち",
+        "principal value"
+      ]
+    },
+    {
+      "question": "不連続点",
+      "answer": [
+        "ふれんぞくてん",
+        "discontinuity"
+      ]
+    },
+    {
+      "question": "加法定理",
+      "answer": [
+        "かほうていり",
+        "trigonometric addition formulas"
+      ]
+    },
+    {
+      "question": "対数微分法",
+      "answer": [
+        "たいすうびぶんほう",
+        "logarithmic differentiation"
+      ]
+    },
+    {
+      "question": "高次導関数",
+      "answer": [
+        "こうじどうかんすう",
+        "higher order derivative"
+      ]
+    },
+    {
+      "question": "無限回微分可能",
+      "answer": [
+        "むげんかいびぶんかのう",
+        "infinitely differentiable"
+      ]
+    },
+    {
+      "question": "原始関数",
+      "answer": [
+        "げんしかんすう",
+        "primitive function"
+      ]
+    },
+    {
+      "question": "積分定数",
+      "answer": [
+        "せきぶんていすう",
+        "constant of integration"
+      ]
+    },
+    {
+      "question": "部分積分法",
+      "answer": [
+        "ぶぶんせきぶんほう",
+        "integration by parts"
+      ]
+    },
+    {
+      "question": "部分分数分解",
+      "answer": [
+        "ぶぶんぶんすうぶんかい",
+        "decomposition into partial fractions",
+        "partial fraction decomposition"
+      ]
+    },
+    {
+      "question": "絶対収束",
+      "answer": [
+        "ぜったいしゅうそく",
+        "absolute convergence"
+      ]
+    },
+    {
+      "question": "条件収束",
+      "answer": [
+        "じょうけんしゅうそく",
+        "conditional convergence"
+      ]
+    },
+    {
+      "question": "部分和",
+      "answer": [
+        "ぶぶんわ",
+        "partial sum (of a sequence)"
+      ]
+    },
+    {
+      "question": "畳み込み級数",
+      "answer": [
+        "たたみこみきゅうすう",
+        "telescoping series"
+      ]
+    },
+    {
+      "question": "望遠鏡級数",
+      "answer": [
+        "ぼうえんきょうきゅうすう",
+        "telescoping series"
+      ]
+    },
+    {
+      "question": "交項級数",
+      "answer": [
+        "こうこうきゅうすう",
+        "alternating series"
+      ]
+    },
+    {
+      "question": "整級数",
+      "answer": [
+        "せいきゅうすう",
+        "power series"
+      ]
+    },
+    {
+      "question": "交代級数",
+      "answer": [
+        "こうたいきゅうすう",
+        "alternating series"
+      ]
+    },
+    {
+      "question": "単調関数",
+      "answer": [
+        "たんちょうかんすう",
+        "monotone function",
+        "monotonic function"
+      ]
+    },
+    {
+      "question": "関手",
+      "answer": [
+        "かんしゅ",
+        "functor"
+      ]
+    },
+    {
+      "question": "基本群",
+      "answer": [
+        "きほんぐん",
+        "fundamental group"
+      ]
+    },
+    {
+      "question": "実数値関数",
+      "answer": [
+        "じっすうちかんすう",
+        "real function",
+        "real-valued function"
+      ]
+    },
+    {
+      "question": "一般項",
+      "answer": [
+        "いっぱんこう",
+        "general term"
+      ]
+    },
+    {
+      "question": "広義積分",
+      "answer": [
+        "こうぎせきぶん",
+        "improper integral"
+      ]
+    },
+    {
+      "question": "被覆空間",
+      "answer": [
+        "ひふくくうかん",
+        "covering space"
+      ]
+    },
+    {
+      "question": "単体複体",
+      "answer": [
+        "たんたいふくたい",
+        "simplicial complex"
+      ]
+    },
+    {
+      "question": "複体",
+      "answer": [
+        "ふくたい",
+        "complex"
+      ]
+    },
+    {
+      "question": "二項演算",
+      "answer": [
+        "にこうえんざん",
+        "binary operation",
+        "dyadic operation"
+      ]
+    },
+    {
+      "question": "区分的",
+      "answer": [
+        "くぶんてき",
+        "piecewise"
+      ]
+    },
+    {
+      "question": "正規行列",
+      "answer": [
+        "せいきぎょうれつ",
+        "normal matrix"
+      ]
+    },
+    {
+      "question": "一次独立",
+      "answer": [
+        "いちじどくりつ",
+        "linearly independent"
+      ]
+    },
+    {
+      "question": "一次従属",
+      "answer": [
+        "いちじじゅうぞく",
+        "linearly dependent"
+      ]
+    },
+    {
+      "question": "線形従属",
+      "answer": [
+        "せんけいじゅうぞく",
+        "linearly dependent"
+      ]
+    },
+    {
+      "question": "過剰適応",
+      "answer": [
+        "かじょうてきおう",
+        "overfitting"
+      ]
+    },
+    {
+      "question": "四元数",
+      "answer": [
+        "しげんすう",
+        "quaternion"
+      ]
+    },
+    {
+      "question": "八元数",
+      "answer": [
+        "はちげんすう",
+        "octonion"
+      ]
+    },
+    {
+      "question": "クリフォード代数",
+      "answer": [
+        "クリフォードだいすう",
+        "Clifford algebra"
+      ]
+    },
+    {
+      "question": "異符号",
+      "answer": [
+        "いふごう",
+        "(having an) opposite sign",
+        "(of) opposite sign"
+      ]
+    },
+    {
+      "question": "ドジッター空間",
+      "answer": [
+        "ドジッターくうかん",
+        "de Sitter space"
+      ]
+    },
+    {
+      "question": "六十進法",
+      "answer": [
+        "ろくじっしんほう",
+        "base 60",
+        "sexagesimal"
+      ]
+    },
+    {
+      "question": "同値類",
+      "answer": [
+        "どうちるい",
+        "equivalence class"
+      ]
+    },
+    {
+      "question": "代数和",
+      "answer": [
+        "だいすうわ",
+        "algebraic sum"
+      ]
+    },
+    {
+      "question": "周長",
+      "answer": [
+        "しゅうちょう",
+        "circumference",
+        "perimeter"
+      ]
+    },
+    {
+      "question": "不定元",
+      "answer": [
+        "ふていげん",
+        "indeterminate"
+      ]
+    },
+    {
+      "question": "代数的数",
+      "answer": [
+        "だいすうてきすう",
+        "algebraic number"
+      ]
+    },
+    {
+      "question": "関係代数",
+      "answer": [
+        "かんけいだいすう",
+        "relation algebra"
+      ]
+    },
+    {
+      "question": "常微分方程式",
+      "answer": [
+        "じょうびぶんほうていしき",
+        "ordinary differential equation"
+      ]
+    },
+    {
+      "question": "確率微分方程式",
+      "answer": [
+        "かくりつびぶんほうていしき",
+        "stochastic differential equation"
+      ]
+    },
+    {
+      "question": "非線形微分方程式",
+      "answer": [
+        "ひせんけいびぶんほうていしき",
+        "nonlinear differential equation"
+      ]
+    },
+    {
+      "question": "非線形性",
+      "answer": [
+        "ひせんけいせい",
+        "nonlinearity"
+      ]
+    },
+    {
+      "question": "論理値",
+      "answer": [
+        "ろんりち",
+        "logical value (true or false)",
+        "truth value"
+      ]
+    },
+    {
+      "question": "スーパー楕円",
+      "answer": [
+        "スーパーだえん",
+        "superellipse"
+      ]
+    },
+    {
+      "question": "線形代数学",
+      "answer": [
+        "せんけいだいすうがく",
+        "linear algebra"
+      ]
+    },
+    {
+      "question": "共変",
+      "answer": [
+        "きょうへん",
+        "covariance",
+        "covariant"
+      ]
+    },
+    {
+      "question": "零集合",
+      "answer": [
+        "れいしゅうごう",
+        "null set",
+        "set of measure zero"
+      ]
+    },
+    {
+      "question": "冪根",
+      "answer": [
+        "べきこん",
+        "nth root"
+      ]
+    },
+    {
+      "question": "凸包",
+      "answer": [
+        "とつほう",
+        "convex hull"
+      ]
+    },
+    {
+      "question": "面対称",
+      "answer": [
+        "めんたいしょう",
+        "plane symmetry",
+        "symmetry with respect to a plane"
+      ]
+    },
+    {
+      "question": "スカラー場",
+      "answer": [
+        "スカラーば",
+        "scalar field"
+      ]
+    },
+    {
+      "question": "自己回帰モデル",
+      "answer": [
+        "じこかいきモデル",
+        "autoregressive model"
+      ]
+    },
+    {
+      "question": "事前確率分布",
+      "answer": [
+        "じぜんかくりつぶんぷ",
+        "prior probability distribution"
+      ]
+    },
+    {
+      "question": "事前分布",
+      "answer": [
+        "じぜんぶんぷ",
+        "prior",
+        "prior distribution",
+        "prior probability distribution"
+      ]
+    },
+    {
+      "question": "偶奇性",
+      "answer": [
+        "ぐうきせい",
+        "parity"
+      ]
+    },
+    {
+      "question": "楕円曲線",
+      "answer": [
+        "だえんきょくせん",
+        "elliptic curve"
+      ]
+    },
+    {
+      "question": "種数",
+      "answer": [
+        "しゅすう",
+        "genus"
+      ]
+    },
+    {
+      "question": "超曲面",
+      "answer": [
+        "ちょうきょくめん",
+        "hypersurface"
+      ]
+    },
+    {
+      "question": "超平面",
+      "answer": [
+        "ちょうへいめん",
+        "hyperplane"
+      ]
+    },
+    {
+      "question": "交代行列",
+      "answer": [
+        "こうたいぎょうれつ",
+        "skew-symmetric matrix"
+      ]
+    },
+    {
+      "question": "基本行列",
+      "answer": [
+        "きほんぎょうれつ",
+        "elementary matrix"
+      ]
+    },
+    {
+      "question": "退化次数",
+      "answer": [
+        "たいかじすう",
+        "nullity"
+      ]
+    },
+    {
+      "question": "余因子",
+      "answer": [
+        "よいんし",
+        "cofactor"
+      ]
+    },
+    {
+      "question": "連鎖律",
+      "answer": [
+        "れんさりつ",
+        "chain rule"
+      ]
+    },
+    {
+      "question": "全域木",
+      "answer": [
+        "ぜんいきぎ",
+        "spanning tree"
+      ]
+    },
+    {
+      "question": "留数",
+      "answer": [
+        "りゅうすう",
+        "residue"
+      ]
+    },
+    {
+      "question": "解析関数",
+      "answer": [
+        "かいせきかんすう",
+        "analytic function"
+      ]
+    },
+    {
+      "question": "有理型関数",
+      "answer": [
+        "ゆうりけいかんすう",
+        "ゆうりがたかんすう",
+        "meromorphic function"
+      ]
+    },
+    {
+      "question": "連結成分",
+      "answer": [
+        "れんけつせいぶん",
+        "connected component"
+      ]
+    },
+    {
+      "question": "調和関数",
+      "answer": [
+        "ちょうわかんすう",
+        "harmonic function"
+      ]
+    },
+    {
+      "question": "有向",
+      "answer": [
+        "ゆうこう",
+        "directed",
+        "oriented"
+      ]
+    },
+    {
+      "question": "床関数",
+      "answer": [
+        "ゆかかんすう",
+        "floor function"
+      ]
+    },
+    {
+      "question": "天井関数",
+      "answer": [
+        "てんじょうかんすう",
+        "ceiling function"
+      ]
+    },
+    {
+      "question": "関数行列式",
+      "answer": [
+        "かんすうぎょうれつしき",
+        "Jacobian"
+      ]
+    },
+    {
+      "question": "リーマン面",
+      "answer": [
+        "リーマンめん",
+        "Riemann surface"
+      ]
+    },
+    {
+      "question": "停留点",
+      "answer": [
+        "ていりゅうてん",
+        "stationary point"
+      ]
+    },
+    {
+      "question": "微積分学",
+      "answer": [
+        "びせきぶんがく",
+        "(differential and integral) calculus",
+        "infinitesimal calculus"
+      ]
+    },
+    {
+      "question": "有意性",
+      "answer": [
+        "ゆういせい",
+        "significance (esp. in statistics)"
+      ]
+    },
+    {
+      "question": "曲線下面積",
+      "answer": [
+        "きょくせんかめんせき",
+        "AUC",
+        "area under the curve"
+      ]
+    },
+    {
+      "question": "ブール論理",
+      "answer": [
+        "ブールろんり",
+        "Boolean logic"
+      ]
+    },
+    {
+      "question": "超階乗",
+      "answer": [
+        "ちょうかいじょう",
+        "superfactorial"
+      ]
+    },
+    {
+      "question": "拡大実数",
+      "answer": [
+        "かくちょうじっすう",
+        "extended real number"
+      ]
+    },
+    {
+      "question": "空間群",
+      "answer": [
+        "くうかんぐん",
+        "space group"
+      ]
+    },
+    {
+      "question": "点群",
+      "answer": [
+        "てんぐん",
+        "point group"
+      ]
+    },
+    {
+      "question": "群作用",
+      "answer": [
+        "ぐんさよう",
+        "group action"
+      ]
+    },
+    {
+      "question": "剰余類",
+      "answer": [
+        "じょうよるい",
+        "coset",
+        "residue class"
+      ]
+    },
+    {
+      "question": "恒等写像",
+      "answer": [
+        "こうとうしゃぞう",
+        "identity function",
+        "identity mapping"
+      ]
+    },
+    {
+      "question": "恒等作用素",
+      "answer": [
+        "こうとうさようそ",
+        "identity operator"
+      ]
+    },
+    {
+      "question": "恒等変換",
+      "answer": [
+        "うとうへんかん",
+        "identity transformation"
+      ]
+    },
+    {
+      "question": "恒等関係",
+      "answer": [
+        "こうとうかんけい",
+        "identity relation"
+      ]
+    },
+    {
+      "question": "特異値",
+      "answer": [
+        "とくいち",
+        "singular value"
+      ]
+    },
+    {
+      "question": "随伴行列",
+      "answer": [
+        "ずいはんぎょうれつ",
+        "Hermitian conjugate",
+        "adjoint matrix"
+      ]
+    },
+    {
+      "question": "線形変換",
+      "answer": [
+        "せんけいへんかん",
+        "linear transformation"
+      ]
+    },
+    {
+      "question": "線型作用素",
+      "answer": [
+        "せんけいさようそ",
+        "linear operator"
+      ]
+    },
+    {
+      "question": "一次形式",
+      "answer": [
+        "いちじけいしき",
+        "linear form",
+        "one-form"
+      ]
+    },
+    {
+      "question": "斉次函数",
+      "answer": [
+        "せいじかんすう",
+        "homogeneous function"
+      ]
+    },
+    {
+      "question": "線形化",
+      "answer": [
+        "せんけいか",
+        "linearization"
+      ]
+    },
+    {
+      "question": "並列化",
+      "answer": [
+        "へいれつか",
+        "parallelization"
+      ]
+    },
+    {
+      "question": "共役勾配法",
+      "answer": [
+        "きょうやくこうばいほう",
+        "CG method",
+        "conjugate gradient method",
+        "contragradient method"
+      ]
+    },
+    {
+      "question": "非線形共役勾配法",
+      "answer": [
+        "ひせんけいきょうやくこうばいほう",
+        "nonlinear conjugate gradient method"
+      ]
+    },
+    {
+      "question": "局在基底",
+      "answer": [
+        "きょくざいきてい",
+        "local basis",
+        "localized basis"
+      ]
+    },
+    {
+      "question": "加法的写像",
+      "answer": [
+        "かほうてきしゃぞう",
+        "additive mapping"
+      ]
+    },
+    {
+      "question": "点対称",
+      "answer": [
+        "てんたいしょう",
+        "point symmetry"
+      ]
+    },
+    {
+      "question": "恒等関数",
+      "answer": [
+        "こうとうかんすう",
+        "identity function",
+        "identity operator"
+      ]
+    },
+    {
+      "question": "恒等",
+      "answer": [
+        "こうとう",
+        "identity"
+      ]
+    },
+    {
+      "question": "真偽値",
+      "answer": [
+        "しんぎち",
+        "Boolean value",
+        "truth value"
+      ]
+    },
+    {
+      "question": "ノーフリーランチ定理",
+      "answer": [
+        "ノーフリーランチていり",
+        "no free lunch theorem"
+      ]
+    },
+    {
+      "question": "双曲幾何学",
+      "answer": [
+        "そうきょくきかがく",
+        "hyperbolic geometry"
+      ]
+    },
+    {
+      "question": "偶",
+      "answer": [
+        "ぐう",
+        "even",
+        "even number"
+      ]
+    },
+    {
+      "question": "除",
+      "answer": [
+        "じょ",
+        "division"
+      ]
+    }
+  ]
+}
