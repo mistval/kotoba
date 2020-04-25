@@ -436,7 +436,7 @@ class DiscordMessageSender {
         description: skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!'),
         color: constants.EMBED_WRONG_COLOR,
         fields,
-        footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\'.' },
+        footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\' or \'。\'.' },
       },
     };
     response = trimEmbed(response);

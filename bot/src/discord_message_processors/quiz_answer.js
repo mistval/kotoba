@@ -20,7 +20,7 @@ module.exports = {
       return true;
     }
     const msgLowercase = msg.content.toLowerCase();
-    if (msgLowercase === 'skip' || msgLowercase === 's' || msgLowercase === 'ｓ') {
+    if (msgLowercase === 'skip' || msgLowercase === 's' || msgLowercase === 'ｓ' || msgLowercase === '。' || msgLowercase === '。。') {
       return QuizManager.skip(msg.channel.id);
     }
     const isDm = !msg.channel.guild;
