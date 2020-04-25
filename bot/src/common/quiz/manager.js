@@ -264,17 +264,7 @@ class ShowAnswersAction extends Action {
             });
         });
       } else {
-        session.markCurrentCardUnanswered();
-        Promise.resolve(session.getMessageSender().showWrongAnswer(
-          currentCard,
-          false,
-          true,
-        )).catch(err => {
-          globals.logger.warn({
-            event: 'ERROR OUTPUTTING SCOREBOARD',
-            err,
-          });
-        });
+        return this.fulfill_(new ShowWrongAnswerAction(session, false, true));
       }
 
       if (scores.checkForWin()) {
@@ -336,9 +326,10 @@ class ShowAnswersAction extends Action {
 }
 
 class ShowWrongAnswerAction extends Action {
-  constructor(session, skipped) {
+  constructor(session, skipped, hardcore) {
     super(session);
     this.skipped_ = skipped;
+    this.hardcore_ = !!hardcore;
   }
 
   do() {
@@ -346,7 +337,7 @@ class ShowWrongAnswerAction extends Action {
     let currentCard = session.getCurrentCard();
     sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, []);
     session.markCurrentCardUnanswered();
-    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_)).catch(err => {
+    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_, this.hardcore_)).catch(err => {
       let question = currentCard.question;
       globals.logger.warn({
         event: 'FAILED TO SHOW TIMEOUT MESSAGE',
