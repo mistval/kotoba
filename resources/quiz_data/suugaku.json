@@ -48,7 +48,7 @@
       "answer": [
         "うへん",
         "RHS",
-        "right side (of an equation, expression, etc.)"
+        "right side"
       ]
     },
     {
@@ -85,7 +85,7 @@
       "question": "仮数",
       "answer": [
         "かすう",
-        "mantissa (of a logarithm)"
+        "mantissa"
       ]
     },
     {
@@ -165,7 +165,7 @@
       "question": "掛け算器",
       "answer": [
         "かけざんき",
-        "multiplier (spoken)"
+        "multiplier"
       ]
     },
     {
@@ -553,7 +553,7 @@
       "question": "正割",
       "answer": [
         "せいかつ",
-        "secant (trigonometric function)"
+        "secant"
       ]
     },
     {
@@ -575,7 +575,7 @@
       "question": "正号",
       "answer": [
         "せいごう",
-        "plus sign (+)",
+        "plus sign",
         "positive sign"
       ]
     },
@@ -583,7 +583,7 @@
       "question": "正接",
       "answer": [
         "せいせつ",
-        "tangent (trigonometric function)"
+        "tangent"
       ]
     },
     {
@@ -1002,7 +1002,7 @@
       "answer": [
         "ふとうごう",
         "inequality sign",
-        "less-than sign or greater-than sign (< or >)"
+        "less-than sign or greater-than sign"
       ]
     },
     {
@@ -1016,7 +1016,7 @@
       "question": "負号",
       "answer": [
         "ふごう",
-        "minus sign (-)",
+        "minus sign",
         "negative sign"
       ]
     },
@@ -1081,7 +1081,7 @@
       "question": "補数",
       "answer": [
         "ほすう",
-        "complement (of a number)"
+        "complement"
       ]
     },
     {
@@ -1118,7 +1118,7 @@
       "question": "未知数",
       "answer": [
         "みちすう",
-        "(an) unknown",
+        "unknown",
         "unknown number",
         "variable"
       ]
@@ -1305,7 +1305,7 @@
       "answer": [
         "さへん",
         "LHS",
-        "left side (of an equation, expression, etc.)"
+        "left side"
       ]
     },
     {
@@ -1319,7 +1319,7 @@
       "question": "底辺",
       "answer": [
         "ていへん",
-        "base (e.g. of a triangle)"
+        "base"
       ]
     },
     {
@@ -1433,7 +1433,7 @@
       "question": "微積分",
       "answer": [
         "びせきぶん",
-        "(differential and integral) calculus",
+        "calculus",
         "infinitesimal calculus"
       ]
     },
@@ -1534,14 +1534,14 @@
       "question": "不等式",
       "answer": [
         "ふとうしき",
-        "inequality (expression)"
+        "inequality"
       ]
     },
     {
       "question": "消去法",
       "answer": [
         "しょうきょほう",
-        "(process of) elimination"
+        "elimination"
       ]
     },
     {
@@ -1562,7 +1562,7 @@
       "question": "相似形",
       "answer": [
         "そうじけい",
-        "similar figures (in geometry)"
+        "similar figures"
       ]
     },
     {
@@ -1723,7 +1723,7 @@
       "question": "単項式",
       "answer": [
         "たんこうしき",
-        "monomial (expression)"
+        "monomial"
       ]
     },
     {
@@ -2019,15 +2019,15 @@
       "question": "解",
       "answer": [
         "かい",
-        "root (e.g. of a polynomial)",
-        "solution (of an equation, inequality, etc.)"
+        "root",
+        "solution"
       ]
     },
     {
       "question": "乗根",
       "answer": [
         "じょうこん",
-        "(nth) root"
+        "root"
       ]
     },
     {
@@ -2094,7 +2094,7 @@
       "question": "数直線",
       "answer": [
         "すうちょくせん",
-        "number line (e.g. on a graph)",
+        "number line",
         "real number line"
       ]
     },
@@ -2110,21 +2110,21 @@
       "question": "値域",
       "answer": [
         "ちいき",
-        "range (of a function or relation)"
+        "range"
       ]
     },
     {
       "question": "有理化",
       "answer": [
         "ゆうりか",
-        "rationalization (modifying part of an irrational expression, esp. denominators, to exclude roots or irrational numbers)"
+        "rationalization"
       ]
     },
     {
       "question": "元",
       "answer": [
         "げん",
-        "unknown (e.g. in an equation)"
+        "unknown"
       ]
     },
     {
@@ -2268,7 +2268,7 @@
       "question": "底",
       "answer": [
         "てい",
-        "base (logarithmic, exponential, number system)",
+        "base",
         "radix"
       ]
     },
@@ -2486,7 +2486,7 @@
       "answer": [
         "さいしょうにじょう",
         "さいしょうじじょう",
-        "least-squares (method)"
+        "least-squares"
       ]
     },
     {
@@ -2514,7 +2514,7 @@
       "question": "正定値",
       "answer": [
         "せいていち",
-        "positive-definite (e.g. matrix)"
+        "positive-definite"
       ]
     },
     {
@@ -2991,7 +2991,7 @@
       "question": "標数",
       "answer": [
         "ひょうすう",
-        "characteristic (of a ring or field in algebra)"
+        "characteristic"
       ]
     },
     {
@@ -3064,7 +3064,7 @@
       "question": "相異なる",
       "answer": [
         "あいことなる",
-        "to be (relatively) distinct (when referring to items in a set)",
+        "to be  distinct",
         "to be different and distinct"
       ]
     },
@@ -3130,7 +3130,7 @@
       "question": "原初元",
       "answer": [
         "げんしげん",
-        "primitive element (of a finite field)"
+        "primitive element"
       ]
     },
     {
@@ -3348,7 +3348,7 @@
       "question": "角座標",
       "answer": [
         "かくざひょう",
-        "angular coordinate(s)"
+        "angular coordinate"
       ]
     },
     {
@@ -3847,7 +3847,7 @@
       "question": "ブートストラップ法",
       "answer": [
         "ブートストラップほう",
-        "bootstrap method (of resampling)",
+        "bootstrap method",
         "bootstrapping"
       ]
     },
@@ -3884,7 +3884,7 @@
       "question": "小行列式",
       "answer": [
         "しょうぎょうれつしき",
-        "minor (determinant)"
+        "minor"
       ]
     },
     {
@@ -3941,7 +3941,7 @@
       "question": "初項",
       "answer": [
         "しょこう",
-        "first term (e.g. of sequence)",
+        "first term",
         "initial term"
       ]
     },
@@ -3987,7 +3987,7 @@
       "question": "凹角",
       "answer": [
         "おうかく",
-        "(a) re-entrant",
+        "re-entrant",
         "concave angle"
       ]
     },
@@ -3995,7 +3995,7 @@
       "question": "枝刈り",
       "answer": [
         "えだかり",
-        "pruning (e.g. decision tree)"
+        "pruning"
       ]
     },
     {
@@ -4039,14 +4039,14 @@
       "question": "行優先",
       "answer": [
         "ぎょうゆうせん",
-        "row-major (e.g. vector)"
+        "row-major"
       ]
     },
     {
       "question": "列優先",
       "answer": [
         "れつゆうせん",
-        "column-major (e.g. vector)"
+        "column-major"
       ]
     },
     {
@@ -4582,7 +4582,7 @@
       "answer": [
         "きょうつうぶぶん",
         "common set",
-        "intersection (of sets)"
+        "intersection"
       ]
     },
     {
@@ -4837,14 +4837,14 @@
       "question": "実部",
       "answer": [
         "じつぶ",
-        "real part (of complex number)"
+        "real part"
       ]
     },
     {
       "question": "虚部",
       "answer": [
         "きょぶ",
-        "imaginary part (of complex number)"
+        "imaginary part"
       ]
     },
     {
@@ -4953,7 +4953,7 @@
       "question": "全順序",
       "answer": [
         "ぜんじゅんじょ",
-        "total order (relation)"
+        "total order"
       ]
     },
     {
@@ -5218,7 +5218,7 @@
       "question": "部分和",
       "answer": [
         "ぶぶんわ",
-        "partial sum (of a sequence)"
+        "partial sum"
       ]
     },
     {
@@ -5396,8 +5396,8 @@
       "question": "異符号",
       "answer": [
         "いふごう",
-        "(having an) opposite sign",
-        "(of) opposite sign"
+        "opposite sign",
+        "opposite sign"
       ]
     },
     {
@@ -5490,7 +5490,7 @@
       "question": "論理値",
       "answer": [
         "ろんりち",
-        "logical value (true or false)",
+        "logical value",
         "truth value"
       ]
     },
@@ -5736,7 +5736,7 @@
       "question": "微積分学",
       "answer": [
         "びせきぶんがく",
-        "(differential and integral) calculus",
+        "calculus",
         "infinitesimal calculus"
       ]
     },
@@ -5744,7 +5744,7 @@
       "question": "有意性",
       "answer": [
         "ゆういせい",
-        "significance (esp. in statistics)"
+        "significance"
       ]
     },
     {
