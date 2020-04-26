@@ -48,7 +48,8 @@
     "render-furigana": "2.0.1",
     "shiritori": "2.0.4",
     "striptags": "3.1.1",
-    "unofficial-jisho-api": "2.0.5"
+    "unofficial-jisho-api": "2.0.5",
+    "validate-color": "1.0.8"
   },
   "devDependencies": {
     "@google-cloud/storage": "^2.5.0",
