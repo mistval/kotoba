@@ -453,7 +453,13 @@
       ],
       "meaning": "translation, de-encryption; deciphering, rendering"
     },
-    null,
+    {
+      "question": "禁止",
+      "answer": [
+        "きんし"
+      ],
+      "meaning": "prohibition; inhibition; ban"
+    },
     {
       "question": "笑顔",
       "answer": [
@@ -2785,7 +2791,13 @@
       ],
       "meaning": "to be finished"
     },
-    null,
+    {
+      "question": "禁煙",
+      "answer": [
+        "きんえん"
+      ],
+      "meaning": "abstaining from smoking; quitting smoking, No Smoking!; Smoking Prohibited!"
+    },
     {
       "question": "性",
       "answer": [
@@ -4064,7 +4076,13 @@
       ],
       "meaning": "zeal, enthusiasm"
     },
-    null,
+    {
+      "question": "直接",
+      "answer": [
+        "ちょくせつ"
+      ],
+      "meaning": "direct; immediate; personal; firsthand"
+    },
     {
       "question": "年代",
       "answer": [
@@ -6380,7 +6398,13 @@
       ],
       "meaning": "fishing; angling, change (e.g. for a purchase), trolling; writing false posts online"
     },
-    null,
+    {
+      "question": "目的",
+      "answer": [
+        "もくてき"
+      ],
+      "meaning": "purpose; goal; aim; objective; intention"
+    },
     {
       "question": "量",
       "answer": [
@@ -7579,7 +7603,14 @@
       ],
       "meaning": "order; command; decree; directive, (software) instruction; statement"
     },
-    null,
+    {
+      "question": "畑",
+      "answer": [
+        "はた",
+        "はたけ"
+      ],
+      "meaning": "field (for fruits, vegetables, etc.); cultivated land; vegetable plot; kitchen garden; plantation, field (of specialization); sphere; area, womb; birth; birthplace"
+    },
     {
       "question": "哲学",
       "answer": [
@@ -7935,7 +7966,13 @@
       ],
       "meaning": "rent"
     },
-    null,
+    {
+      "question": "生まれ",
+      "answer": [
+        "うまれ"
+      ],
+      "meaning": "birth; birthplace, born in (country, month, imperial era, zodiac year, etc.)"
+    },
     {
       "question": "審判",
       "answer": [
@@ -7971,7 +8008,13 @@
       ],
       "meaning": "trial; judgement; judgment"
     },
-    null,
+    {
+      "question": "生じる",
+      "answer": [
+        "しょうじる"
+      ],
+      "meaning": "to produce; to yield; to cause, to result from; to arise; to be generated"
+    },
     {
       "question": "衣服",
       "answer": [
@@ -8212,7 +8255,13 @@
       ],
       "meaning": "influence; effect, to influence; to affect; to have an influence on; to impact; to have an effect on"
     },
-    null,
+    {
+      "question": "現象",
+      "answer": [
+        "げんしょう"
+      ],
+      "meaning": "phenomenon"
+    },
     {
       "question": "微妙",
       "answer": [
@@ -8565,7 +8614,13 @@
       ],
       "meaning": "assistance; aid; support"
     },
-    null,
+    {
+      "question": "状況",
+      "answer": [
+        "じょうきょう"
+      ],
+      "meaning": "state of affairs (around you); situation; circumstances"
+    },
     {
       "question": "緊張",
       "answer": [
@@ -8573,10 +8628,34 @@
       ],
       "meaning": "tension; mental strain; nervousness"
     },
-    null,
-    null,
-    null,
-    null,
+    {
+      "question": "気温",
+      "answer": [
+        "きおん"
+      ],
+      "meaning": "atmospheric temperature"
+    },
+    {
+      "question": "結局",
+      "answer": [
+        "けっきょく"
+      ],
+      "meaning": "after all; eventually; in the end, conclusion; end, ending of a game of Go"
+    },
+    {
+      "question": "椅子",
+      "answer": [
+        "いす"
+      ],
+      "meaning": "chair; stool, post; office; position, traditional square chair with armrests and a torii-shaped back (used by the emperor, etc. during ceremonies)"
+    },
+    {
+      "question": "水準",
+      "answer": [
+        "すいじゅん"
+      ],
+      "meaning": "level; standard, water level"
+    },
     {
       "question": "政府",
       "answer": [
@@ -8584,7 +8663,13 @@
       ],
       "meaning": "government; administration"
     },
-    null,
+    {
+      "question": "波",
+      "answer": [
+        "なみ"
+      ],
+      "meaning": "wave, Poland"
+    },
     {
       "question": "救う",
       "answer": [
@@ -8606,7 +8691,13 @@
       ],
       "meaning": "professor, teaching; instruction"
     },
-    null,
+    {
+      "question": "涙",
+      "answer": [
+        "なみだ"
+      ],
+      "meaning": "tear; tears; lachrymal secretion, sympathy"
+    },
     {
       "question": "整理",
       "answer": [
@@ -8629,8 +8720,20 @@
       ],
       "meaning": "complaint; grumbling; objection, phrase; words; expression"
     },
-    null,
-    null,
+    {
+      "question": "渡す",
+      "answer": [
+        "わたす"
+      ],
+      "meaning": "to ferry across (e.g. a river); to carry across; to traverse, to lay across; to build across, to hand over; to hand in; to pass; to give; to transfer"
+    },
+    {
+      "question": "渡る",
+      "answer": [
+        "わたる"
+      ],
+      "meaning": "to cross over; to go across, to extend; to cover; to range; to span"
+    },
     {
       "question": "日中",
       "answer": [
@@ -8652,8 +8755,21 @@
       ],
       "meaning": "easy; plain; simple"
     },
-    null,
-    null,
+    {
+      "question": "経営",
+      "answer": [
+        "けいえい"
+      ],
+      "meaning": "management; administration; operation; running (business); conducting"
+    },
+    {
+      "question": "穴",
+      "answer": [
+        "あな",
+        "けつ"
+      ],
+      "meaning": "hole, deficit; shortage; missing person (in a team, meeting, etc.), vacancy; opening, flaw, profitable place (or item, etc.) not well known by others, upset victory (with a large payoff), pit (of a theater), hiding place, underbelly (of society, etc.), ass; arse; buttocks, rear; end, acupuncture point, hole; notch"
+    },
     {
       "question": "暖かい",
       "answer": [
@@ -8661,8 +8777,20 @@
       ],
       "meaning": "warm; mild; genial"
     },
-    null,
-    null,
+    {
+      "question": "熱中",
+      "answer": [
+        "ねっちゅう"
+      ],
+      "meaning": "become enthusiastic about; be full of enthusiasm for; be crazy about; be keen on; be absorbed in; be intent on; devote oneself to; give oneself up to; abandon oneself to; put one's heart into; go heart and soul into; be infatuated with; enthuse over; be hooked on; go in for in a big way; be nuts about"
+    },
+    {
+      "question": "歓迎",
+      "answer": [
+        "かんげい"
+      ],
+      "meaning": "welcome; reception"
+    },
     {
       "question": "結論",
       "answer": [
@@ -8705,148 +8833,6 @@
       ],
       "meaning": "condition; conditions; term; terms; requirement; requirements"
     },
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "桜",
-      "answer": [
-        "さくら"
-      ],
-      "meaning": "cherry tree; cherry blossom, decoy; fake buyer; shill, hired applauder, horse meat"
-    },
-    null,
-    null,
-    {
-      "question": "結局",
-      "answer": [
-        "けっきょく"
-      ],
-      "meaning": "after all; eventually; in the end, conclusion; end, ending of a game of Go"
-    },
-    {
-      "question": "椅子",
-      "answer": [
-        "いす"
-      ],
-      "meaning": "chair; stool, post; office; position, traditional square chair with armrests and a torii-shaped back (used by the emperor, etc. during ceremonies)"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "経営",
-      "answer": [
-        "けいえい"
-      ],
-      "meaning": "management; administration; operation; running (business); conducting"
-    },
-    null,
-    null,
-    {
-      "question": "歓迎",
-      "answer": [
-        "かんげい"
-      ],
-      "meaning": "welcome; reception"
-    },
-    null,
-    null,
-    null,
-    {
-      "question": "素晴らしい",
-      "answer": [
-        "すばらしい"
-      ],
-      "meaning": "wonderful; splendid; magnificent"
-    },
-    {
-      "question": "気に入る",
-      "answer": [
-        "きにいる"
-      ],
-      "meaning": "to be pleased with; to suit"
-    },
-    null,
-    {
-      "question": "気温",
-      "answer": [
-        "きおん"
-      ],
-      "meaning": "atmospheric temperature"
-    },
-    {
-      "question": "水準",
-      "answer": [
-        "すいじゅん"
-      ],
-      "meaning": "level; standard, water level"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "波",
-      "answer": [
-        "なみ"
-      ],
-      "meaning": "wave, Poland"
-    },
-    null,
-    {
-      "question": "涙",
-      "answer": [
-        "なみだ"
-      ],
-      "meaning": "tear; tears; lachrymal secretion, sympathy"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "渡す",
-      "answer": [
-        "わたす"
-      ],
-      "meaning": "to ferry across (e.g. a river); to carry across; to traverse, to lay across; to build across, to hand over; to hand in; to pass; to give; to transfer"
-    },
-    {
-      "question": "渡る",
-      "answer": [
-        "わたる"
-      ],
-      "meaning": "to cross over; to go across, to extend; to cover; to range; to span"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "穴",
-      "answer": [
-        "あな",
-        "けつ"
-      ],
-      "meaning": "hole, deficit; shortage; missing person (in a team, meeting, etc.), vacancy; opening, flaw, profitable place (or item, etc.) not well known by others, upset victory (with a large payoff), pit (of a theater), hiding place, underbelly (of society, etc.), ass; arse; buttocks, rear; end, acupuncture point, hole; notch"
-    },
-    null,
     {
       "question": "無事",
       "answer": [
@@ -8868,110 +8854,26 @@
       ],
       "meaning": "disregarding; ignoring"
     },
-    null,
     {
-      "question": "熱中",
+      "question": "素晴らしい",
       "answer": [
-        "ねっちゅう"
+        "すばらしい"
       ],
-      "meaning": "become enthusiastic about; be full of enthusiasm for; be crazy about; be keen on; be absorbed in; be intent on; devote oneself to; give oneself up to; abandon oneself to; put one's heart into; go heart and soul into; be infatuated with; enthuse over; be hooked on; go in for in a big way; be nuts about"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "状況",
-      "answer": [
-        "じょうきょう"
-      ],
-      "meaning": "state of affairs (around you); situation; circumstances"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "現象",
-      "answer": [
-        "げんしょう"
-      ],
-      "meaning": "phenomenon"
-    },
-    null,
-    null,
-    {
-      "question": "生じる",
-      "answer": [
-        "しょうじる"
-      ],
-      "meaning": "to produce; to yield; to cause, to result from; to arise; to be generated"
+      "meaning": "wonderful; splendid; magnificent"
     },
     {
-      "question": "生まれ",
+      "question": "桜",
       "answer": [
-        "うまれ"
+        "さくら"
       ],
-      "meaning": "birth; birthplace, born in (country, month, imperial era, zodiac year, etc.)"
-    },
-    null,
-    {
-      "question": "畑",
-      "answer": [
-        "はた",
-        "はたけ"
-      ],
-      "meaning": "field (for fruits, vegetables, etc.); cultivated land; vegetable plot; kitchen garden; plantation, field (of specialization); sphere; area, womb; birth; birthplace"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "目的",
-      "answer": [
-        "もくてき"
-      ],
-      "meaning": "purpose; goal; aim; objective; intention"
+      "meaning": "cherry tree; cherry blossom, decoy; fake buyer; shill, hired applauder, horse meat"
     },
     {
-      "question": "直接",
+      "question": "気に入る",
       "answer": [
-        "ちょくせつ"
+        "きにいる"
       ],
-      "meaning": "direct; immediate; personal; firsthand"
-    },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    {
-      "question": "禁煙",
-      "answer": [
-        "きんえん"
-      ],
-      "meaning": "abstaining from smoking; quitting smoking, No Smoking!; Smoking Prohibited!"
-    },
-    {
-      "question": "禁止",
-      "answer": [
-        "きんし"
-      ],
-      "meaning": "prohibition; inhibition; ban"
-    },
-    null,
-    null,
-    null,
-    null
+      "meaning": "to be pleased with; to suit"
+    }
   ]
 }
