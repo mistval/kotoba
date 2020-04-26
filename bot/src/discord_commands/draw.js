@@ -1,7 +1,6 @@
 const { render } = require('./../common/render_text.js');
 const fontHelper = require('./../common/font_helper.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const colorValidator = require('validate-color');
 const constants = require('./../common/constants.js');
 
 const longDescription = `Test font settings by drawing some text. You can specify the font, text color, and background color using command arguments. The arguments are:
@@ -23,14 +22,8 @@ ${
     .filter(f => !f.hidden)
     .map((f, i) => `${i + 1}. ${f.fontFamily}`)
     .join('\n')
-  }
-`;
-
-function validateColor(color) {
-  return colorValidator.validateHTMLColor(color)
-    || colorValidator.validateHTMLColorHex(color)
-    || colorValidator.validateHTMLColorName(color);
 }
+`;
 
 module.exports = {
   commandAliases: ['draw'],
@@ -50,62 +43,28 @@ module.exports = {
       return throwPublicErrorInfo('Draw', help, 'No arguments');
     }
 
-    let specifiedFontArgument = false;
-    let font = settings.quiz_font;
-    let color = settings.quiz_font_color;
-    let bgColor = settings.quiz_background_color;
-    let size = settings.quiz_font_size;
-
-    const text = suffix
-      .replace(/,\s+/g, ',').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')')
-      .replace(/font\s*=\s*([0-9]*)+/i, (m, g1) => {
-      specifiedFontArgument = true;
-      font = g1.replace(/\s/, '').toLowerCase();
-      return '';
-    }).replace(/color\s*=\s*(\S*)/i, (m, g1) => {
-      color = g1.replace(/\s/, '').toLowerCase();
-      return '';
-    }).replace(/bgcolor\s*=\s*(\S*)/i, (m, g1) => {
-      bgColor = g1.replace(/\s/, '').toLowerCase();
-      return '';
-    }).replace(/size\s*=\s*([0-9]*)+/i, (m, g1) => {
-      size = g1.replace(/\s/, '').toLowerCase();
-      return '';
-    }).trim() || '日本語';
-
-    if (specifiedFontArgument) {
-      const fontInt = parseInt(font);
-      const { fontFamily } = (fontHelper.installedFonts[fontInt - 1] || {});
-
-      if (!fontFamily) {
-        return throwPublicErrorInfo('Draw', `Please provide a number between 1 and ${fontHelper.installedFonts.length} as your font= setting.`, 'Invalid font');
-      }
-
-      font = fontFamily;
+    const argumentParseResult = fontHelper.parseFontArgs(suffix);
+    if (argumentParseResult.errorDescriptionShort) {
+      return throwPublicErrorInfo('Draw', argumentParseResult.errorDescriptionLong, argumentParseResult.errorDescriptionShort);
     }
 
-    const sizeInt = parseInt(size);
+    const fontFamily = argumentParseResult.fontFamily || settings.quiz_font;
+    const color = argumentParseResult.color || settings.quiz_font_color;
+    const bgColor = argumentParseResult.bgColor || settings.quiz_background_color;
+    const size = argumentParseResult.size || settings.quiz_font_size;
+    const text = argumentParseResult.remainingString || '日本語';
 
     if (text.length > 10) {
-      return throwPublicErrorInfo('Draw', `Please give me no more than 10 characters to draw.`, 'Input too long');
-    }
-    if (!validateColor(color)) {
-      return throwPublicErrorInfo('Draw', `Please provide a valid HTML color as your color= setting.`, 'Invalid color');
-    }
-    if (!validateColor(bgColor)) {
-      return throwPublicErrorInfo('Draw', `Please enter a valid HTML color as your bgcolor= setting.`, 'Invalid bgcolor');
-    }
-    if (sizeInt < 20 || sizeInt > 200) {
-      return throwPublicErrorInfo('Draw', `Please enter a number between 20 and 200 as your size= setting.`, 'Invalid size');
+      return throwPublicErrorInfo('Draw', 'Please give me no more than 10 characters to draw.', 'Input too long');
     }
 
-    const renderResult = await render(text, color, bgColor, sizeInt, font);
+    const renderResult = await render(text, color, bgColor, size, fontFamily);
 
     return msg.channel.createMessage(
       {
         embed: {
           title: 'Draw',
-          description: `__Drawn with__\nFont: **${font}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${sizeInt}**`,
+          description: `__Drawn with__\nFont: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**`,
           image: { url: 'attachment://upload.png' },
           color: constants.EMBED_NEUTRAL_COLOR,
         },
