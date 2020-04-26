@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const FontKit = require('fontkit');
+const colorValidator = require('validate-color');
 
 let supportedCharactersForFont;
 
@@ -30,6 +31,12 @@ try {
   supportedCharactersForFont = require(SUPPORTED_CHARACTERS_MAP_PATH);
 } catch (err) {
   // Might not exist, might not be needed. If it's needed, will error.
+}
+
+function validateColor(color) {
+  return colorValidator.validateHTMLColor(color)
+    || colorValidator.validateHTMLColorHex(color)
+    || colorValidator.validateHTMLColorName(color);
 }
 
 function buildSupportedCharactersForFontMap() {
@@ -113,6 +120,57 @@ function coerceFontFamilyForString(fontFamily, str) {
   return installedFonts[0].fontFamily;
 }
 
+function parseFontArgs(str) {
+  const parseResult = {};
+
+  parseResult.remainingString = str
+    .replace(/,\s+/g, ',').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')')
+    .replace(/font\s*=\s*([0-9]*)+/i, (m, g1) => {
+      const fontInt = parseInt(g1, 10);
+      parseResult.fontFamily = (installedFonts[fontInt - 1] || {}).fontFamily;
+
+      if (!parseResult.fontFamily) {
+        parseResult.errorDescriptionShort = 'Invalid font';
+        parseResult.errorDescriptionLong = `Please provide a number between 1 and ${installedFonts.length} as your font= setting.`;
+      }
+
+      return '';
+    })
+    .replace(/color\s*=\s*(\S*)/i, (m, g1) => {
+      parseResult.color = g1.toLowerCase();
+
+      if (!validateColor(parseResult.color)) {
+        parseResult.errorDescriptionShort = 'Invalid color';
+        parseResult.errorDescriptionLong = 'Please enter a valid HTML color as your color= setting.';
+      }
+
+      return '';
+    })
+    .replace(/bgcolor\s*=\s*(\S*)/i, (m, g1) => {
+      parseResult.bgColor = g1.toLowerCase();
+
+      if (!validateColor(parseResult.bgColor)) {
+        parseResult.errorDescriptionShort = 'Invalid bgcolor';
+        parseResult.errorDescriptionLong = 'Please enter a valid HTML color as your bgcolor= setting.';
+      }
+
+      return '';
+    })
+    .replace(/size\s*=\s*([0-9]*)+/i, (m, g1) => {
+      parseResult.size = parseInt(g1, 10);
+
+      if (parseResult.size < 20 || parseResult.size > 200) {
+        parseResult.errorDescriptionShort = 'Invalid size';
+        parseResult.errorDescriptionLong = 'Please enter a number between 20 and 200 as your size= setting.';
+      }
+
+      return '';
+    })
+    .trim();
+
+  return parseResult;
+}
+
 module.exports = {
   installedFonts,
   allFonts,
@@ -121,4 +179,5 @@ module.exports = {
   buildSupportedCharactersForFontMap,
   SUPPORTED_CHARACTERS_MAP_DIR_PATH,
   SUPPORTED_CHARACTERS_MAP_PATH,
+  parseFontArgs,
 };
