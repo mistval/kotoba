@@ -125,7 +125,7 @@ function parseFontArgs(str) {
 
   parseResult.remainingString = str
     .replace(/,\s+/g, ',').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')')
-    .replace(/font\s*=\s*([0-9]*)+/i, (m, g1) => {
+    .replace(/font\s*=\s*([0-9]*)+/ig, (m, g1) => {
       const fontInt = parseInt(g1, 10);
       parseResult.fontFamily = (installedFonts[fontInt - 1] || {}).fontFamily;
 
@@ -136,7 +136,7 @@ function parseFontArgs(str) {
 
       return '';
     })
-    .replace(/bgcolor\s*=\s*(\S*)/i, (m, g1) => {
+    .replace(/bgcolor\s*=\s*(\S*)/ig, (m, g1) => {
       parseResult.bgColor = g1.toLowerCase();
 
       if (!validateColor(parseResult.bgColor)) {
@@ -146,7 +146,7 @@ function parseFontArgs(str) {
 
       return '';
     })
-    .replace(/color\s*=\s*(\S*)/i, (m, g1) => {
+    .replace(/color\s*=\s*(\S*)/ig, (m, g1) => {
       parseResult.color = g1.toLowerCase();
 
       if (!validateColor(parseResult.color)) {
@@ -156,7 +156,7 @@ function parseFontArgs(str) {
 
       return '';
     })
-    .replace(/size\s*=\s*([0-9]*)+/i, (m, g1) => {
+    .replace(/size\s*=\s*([0-9]*)+/ig, (m, g1) => {
       parseResult.size = parseInt(g1, 10);
 
       if (parseResult.size < 20 || parseResult.size > 200) {
