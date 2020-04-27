@@ -136,7 +136,6 @@ class TimingEditor extends Component {
               </div>
               <form onSubmit={this.handleCommitTiming}>
                 <div className="modal-body">
-                  <p className="mb-4">Configure custom timing settings.</p>
                   <div class="form-group">
                     Answer time limit (seconds)&nbsp;
                     <HelpButton
