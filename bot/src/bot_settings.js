@@ -4,55 +4,12 @@ const { quizDefaults } = require('kotoba-common');
 
 const FontHelper = require('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
+const colorValidator = require('validate-color');
 
-function isInRange(min, max, value) {
-  return value >= min && value <= max;
-}
-
-function validateRGBColor(input) {
-  const MIN = 0;
-  const MAX = 255;
-
-  const regex = /rgb\([ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3})[ ]{0,}\)/i;
-  const regexResult = regex.exec(input);
-
-  if (!regexResult) {
-    return false;
-  }
-
-  const r = parseInt(regexResult[1], 10);
-  const g = parseInt(regexResult[2], 10);
-  const b = parseInt(regexResult[3], 10);
-
-  return isInRange(MIN, MAX, r) && isInRange(MIN, MAX, g) && isInRange(MIN, MAX, b);
-}
-
-function validateRGBAColor(input) {
-  const RGB_MIN = 0;
-  const RGB_MAX = 255;
-  const A_MIN = 0;
-  const A_MAX = 1;
-
-  const regex = /rgba\([ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]{1,3}),[ ]{0,}([0-9]*\.[0-9]+|[0-9]+)[ ]{0,}\)/i;
-  const regexResult = regex.exec(input);
-
-  if (!regexResult) {
-    return false;
-  }
-
-  const r = parseInt(regexResult[1], 10);
-  const g = parseInt(regexResult[2], 10);
-  const b = parseInt(regexResult[3], 10);
-  const a = parseFloat(regexResult[4], 10);
-
-  return isInRange(RGB_MIN, RGB_MAX, r)
-    && isInRange(RGB_MIN, RGB_MAX, g)
-    && isInRange(RGB_MIN, RGB_MAX, b)
-    && isInRange(A_MIN, A_MAX, a);
-}
-
-function validateRGBorRGBA(input) {
-  return validateRGBColor(input) || validateRGBAColor(input);
+function validateHTMLColor(color) {
+  return colorValidator.validateHTMLColor(color)
+    || colorValidator.validateHTMLColorHex(color)
+    || colorValidator.validateHTMLColorName(color);
 }
 
 function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidationResult) {
@@ -74,6 +31,7 @@ FontHelper.allFonts.forEach((fontInfo, index) => {
 });
 
 const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
+const allowedColorsString = 'You can enter [color names](https://www.w3schools.com/colors/colors_names.asp) like **red**, **blue**, **orchid**, etc, or enter an RGB value to set any color you want. To do that, [figure out](https://www.w3schools.com/colors/colors_rgb.asp) the red, blue, and green components of the color you want and enter a value like this **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). Each RGB color component must be a whole number between 0 and 255. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)';
 
 module.exports = [
   {
@@ -185,22 +143,22 @@ module.exports = [
       {
         userFacingName: 'Quiz text font color',
         description: 'This setting controls the color of the text rendered for quizzes.',
-        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        allowedValuesDescription: allowedColorsString,
         uniqueId: 'quiz_font_color',
         defaultUserFacingValue: 'rgb(0, 0, 0)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateRGBorRGBA,
+        validateInternalValue: validateHTMLColor,
       },
       {
         userFacingName: 'Quiz text background color',
         description: 'This setting controls the background color of the text rendered for quizzes.',
-        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        allowedValuesDescription: allowedColorsString,
         uniqueId: 'quiz_background_color',
         defaultUserFacingValue: 'rgb(255, 255, 255)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateRGBorRGBA,
+        validateInternalValue: validateHTMLColor,
       },
       {
         userFacingName: 'Quiz text font size',
@@ -228,22 +186,22 @@ module.exports = [
       {
         userFacingName: 'Furigana font color',
         description: 'This setting controls the color of the text produced by the furigana command.',
-        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        allowedValuesDescription: allowedColorsString,
         uniqueId: 'furigana_font_color',
         defaultUserFacingValue: 'rgb(192, 193, 194)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateRGBorRGBA,
+        validateInternalValue: validateHTMLColor,
       },
       {
         userFacingName: 'Furigana background color',
         description: 'This setting controls the background color of the text produced by the furigana command.',
-        allowedValuesDescription: 'Figure out the red, blue, and green components of the color you want and enter a value like this: **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). You can use [a tool like this](https://www.w3schools.com/colors/colors_rgb.asp) to get the color you want. Play around with the sliders, and then copy the **rgb(x,y,z)** value that it shows you. Each color component must be a whole number between 0 and 255. (rgba works too)',
+        allowedValuesDescription: allowedColorsString,
         uniqueId: 'furigana_background_color',
         defaultUserFacingValue: 'rgb(54, 57, 62)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateRGBorRGBA,
+        validateInternalValue: validateHTMLColor,
       },
       {
         userFacingName: 'Furigana font size',
