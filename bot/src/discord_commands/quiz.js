@@ -23,6 +23,8 @@ const DeckCollection = require('./../common/quiz/deck_collection.js');
 const Session = require('./../common/quiz/session.js');
 const trimEmbed = require('./../common/util/trim_embed.js');
 const audioConnectionManager = require('./../discord/audio_connection_manager.js');
+const fontHelper = require('./../common/font_helper.js');
+const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
@@ -1268,7 +1270,19 @@ module.exports = {
       .trim()
       .toLowerCase();
     
-    const commandTokens = cleanSuffix.split(' ').filter(x => x);
+    const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
+
+    if (fontArgParseResult.errorDescriptionShort) {
+      return throwPublicErrorFatal(
+        'Font settings error',
+        fontArgParseResult.errorDescriptionLong,
+        fontArgParseResult.errorDescriptionShort,
+      );
+    }
+
+    const cleanSuffixFontArgsParsed = fontArgParseResult.remainingString;
+
+    const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
 
@@ -1282,6 +1296,10 @@ module.exports = {
     const isNoRace = gameModes.norace;
     
     const serverSettingsOverridden = { ...serverSettings, ...timingOverrides };
+    serverSettingsOverridden.quiz_font = fontArgParseResult.fontFamily || serverSettingsOverridden.quiz_font;
+    serverSettingsOverridden.quiz_font_color = fontArgParseResult.color || serverSettingsOverridden.quiz_font_color;
+    serverSettingsOverridden.quiz_font_size = fontArgParseResult.size || serverSettingsOverridden.quiz_font_size;
+    serverSettingsOverridden.quiz_background_color = fontArgParseResult.bgColor || serverSettingsOverridden.quiz_background_color;
 
     // Help operation
     if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
