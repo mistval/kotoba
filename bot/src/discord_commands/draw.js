@@ -58,13 +58,16 @@ module.exports = {
       return throwPublicErrorInfo('Draw', 'Please give me no more than 10 characters to draw.', 'Input too long');
     }
 
-    const renderResult = await render(text, color, bgColor, size, fontFamily);
+    const renderResult = await render(text, color, bgColor, size, fontFamily, false);
+    const fontCharWarning = fontHelper.fontSupportsString(fontFamily, text)
+      ? ''
+      : '**WARNING: The selected font doesn\'t support some characters in your input.**';
 
     return msg.channel.createMessage(
       {
         embed: {
           title: 'Draw',
-          description: `Font: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**`,
+          description: `Font: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**\n${fontCharWarning}`,
           image: { url: 'attachment://upload.png' },
           color: constants.EMBED_NEUTRAL_COLOR,
         },

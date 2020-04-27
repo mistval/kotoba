@@ -171,6 +171,10 @@ function parseFontArgs(str) {
   return parseResult;
 }
 
+function fontSupportsString(fontFamily, string) {
+  return fontFamilySupportsChars(fontFamily, Array.from(string));
+}
+
 module.exports = {
   installedFonts,
   allFonts,
@@ -180,4 +184,5 @@ module.exports = {
   SUPPORTED_CHARACTERS_MAP_DIR_PATH,
   SUPPORTED_CHARACTERS_MAP_PATH,
   parseFontArgs,
+  fontSupportsString,
 };
