@@ -3,11 +3,11 @@ const fontHelper = require('./../common/font_helper.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
 
-const longDescription = `Test font settings by drawing some text. You can specify the font, text color, and background color using command arguments. The arguments are:
+const longDescription = `Use this command to test font settings by drawing some text. You can specify the font, text color, background color, and size using command arguments. The arguments are:
 
 \`font=X\` where X is the number of the font you want to use (see below)
-\`color=rgb(R,G,B)\` where R, G, and B are the red, green, and blue components, each a number between 0-255, to use for the **text** color. (\`rgba\` can also be used)
-\`bgcolor=rgb(R,G,B)\` where R, G, and B are the red, green, and blue components, each a number between 0-255, to use for the **background** color. (\`rgba\` can also be used)
+\`color=rgb(R,G,B)\` where R, G, and B are the red, green, and blue components, each a number between 0-255, to use for the **text** color. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)
+\`bgcolor=rgb(R,G,B)\` where R, G, and B are the red, green, and blue components, each a number between 0-255, to use for the **background** color. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)
 \`size=X\` where X is the size in pixels (20-200)
 
 For example:
@@ -64,7 +64,7 @@ module.exports = {
       {
         embed: {
           title: 'Draw',
-          description: `__Drawn with__\nFont: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**`,
+          description: `Font: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**`,
           image: { url: 'attachment://upload.png' },
           color: constants.EMBED_NEUTRAL_COLOR,
         },
