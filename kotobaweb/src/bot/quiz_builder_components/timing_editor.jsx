@@ -3,7 +3,6 @@ import { quizTimeModifierPresets, quizLimits } from 'kotoba-common';
 import { createTimeModifierParts } from './util';
 import styles from './styles';
 import HelpButton from './help_button';
-import NumericInputBox from './../../controls/numeric_input_box';
 
 function SpeedsList(props) {
   return (
