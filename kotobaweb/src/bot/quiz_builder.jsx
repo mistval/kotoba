@@ -55,6 +55,15 @@ function createCommand(args) {
   }
 
   commandParts.push(...createTimeModifierParts(args.timing));
+
+  if (args.fontSettings.textColor !== '#000000') {
+    commandParts.push(`color=${args.fontSettings.textColor}`);
+  }
+
+  if (args.fontSettings.backgroundColor !== '#ffffff') {
+    commandParts.push(`bgcolor=${args.fontSettings.backgroundColor}`);
+  }
+
   return createCommandSuccess(commandParts.join(' '));
 }
 
