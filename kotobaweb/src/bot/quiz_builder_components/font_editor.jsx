@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { SketchPicker } from 'react-color';
 import styles from './styles';
+import fontList from './font_list.json';
 
 class FontEditor extends PureComponent {
   handleTextColorChanged = (textColor) => {
@@ -43,11 +44,9 @@ class FontEditor extends PureComponent {
             <div className="form-group">
               <label htmlFor="exampleFormControlSelect1">Font Family</label>
               <select className="form-control" id="exampleFormControlSelect1" onChange={this.handleFontFamilyChanged} >
-                <option>1ggggggggggggggggggggggggggggggggggggggggggggg</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                { fontList.map((f, i) => 
+                  <option key={i} selected={i === this.props.fontSettings.fontFamilyIndex ? 'selected' : ''}>{f}</option>
+                ) }
               </select>
             </div>
           </div>
