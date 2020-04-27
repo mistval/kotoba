@@ -136,22 +136,22 @@ function parseFontArgs(str) {
 
       return '';
     })
-    .replace(/color\s*=\s*(\S*)/i, (m, g1) => {
-      parseResult.color = g1.toLowerCase();
-
-      if (!validateColor(parseResult.color)) {
-        parseResult.errorDescriptionShort = 'Invalid color';
-        parseResult.errorDescriptionLong = 'Please enter a valid HTML color as your color= setting.';
-      }
-
-      return '';
-    })
     .replace(/bgcolor\s*=\s*(\S*)/i, (m, g1) => {
       parseResult.bgColor = g1.toLowerCase();
 
       if (!validateColor(parseResult.bgColor)) {
         parseResult.errorDescriptionShort = 'Invalid bgcolor';
         parseResult.errorDescriptionLong = 'Please enter a valid HTML color as your bgcolor= setting.';
+      }
+
+      return '';
+    })
+    .replace(/color\s*=\s*(\S*)/i, (m, g1) => {
+      parseResult.color = g1.toLowerCase();
+
+      if (!validateColor(parseResult.color)) {
+        parseResult.errorDescriptionShort = 'Invalid color';
+        parseResult.errorDescriptionLong = 'Please enter a valid HTML color as your color= setting.';
       }
 
       return '';
