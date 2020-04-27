@@ -10,6 +10,9 @@ import TimingEditor from './quiz_builder_components/timing_editor';
 import styles from './quiz_builder_components/styles';
 import OtherSettingsEditor from './quiz_builder_components/other_settings_editor';
 import FontEditor from './quiz_builder_components/font_editor';
+import { checkPropTypes } from 'prop-types';
+
+const DEFAULT_FONT_SIZE = '100';
 
 function createCommandSuccess(commandText) {
   return { valid: true, commandText };
@@ -68,6 +71,10 @@ function createCommand(args) {
     commandParts.push(`bgcolor=${args.fontSettings.backgroundColor}`);
   }
 
+  if (args.fontSettings.fontSize !== DEFAULT_FONT_SIZE) {
+    commandParts.push(`size=${args.fontSettings.fontSize}`);
+  }
+
   return createCommandSuccess(commandParts.join(' '));
 }
 
@@ -92,6 +99,7 @@ class QuizBuilder extends Component {
         textColor: '#000000',
         backgroundColor: '#ffffff',
         fontFamilyIndex: 0,
+        fontSize: DEFAULT_FONT_SIZE,
       },
     };
   }
