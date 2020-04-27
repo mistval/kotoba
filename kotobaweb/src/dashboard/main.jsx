@@ -24,7 +24,7 @@ function getServerIcon(report) {
   }
 
   if (uri) {
-    return <img src={uri} height="24" width="24" class="rounded-circle mr-3" />;
+    return <img src={uri} height="24" width="24" className="rounded-circle mr-3" />;
   }
 
   return <div style={styles.emptyIconDiv} className="mr-3" />

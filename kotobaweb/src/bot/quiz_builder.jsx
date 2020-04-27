@@ -56,6 +56,10 @@ function createCommand(args) {
 
   commandParts.push(...createTimeModifierParts(args.timing));
 
+  if (args.fontSettings.fontFamilyIndex !== 0) {
+    commandParts.push(`font=${args.fontSettings.fontFamilyIndex + 1}`);
+  }
+
   if (args.fontSettings.textColor !== '#000000') {
     commandParts.push(`color=${args.fontSettings.textColor}`);
   }
@@ -87,6 +91,7 @@ class QuizBuilder extends Component {
       fontSettings: {
         textColor: '#000000',
         backgroundColor: '#ffffff',
+        fontFamilyIndex: 0,
       },
     };
   }

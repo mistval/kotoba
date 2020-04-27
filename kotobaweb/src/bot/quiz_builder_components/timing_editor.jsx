@@ -135,7 +135,7 @@ class TimingEditor extends Component {
               </div>
               <form onSubmit={this.handleCommitTiming}>
                 <div className="modal-body">
-                  <div class="form-group">
+                  <div className="form-group">
                     Answer time limit (seconds)&nbsp;
                     <HelpButton
                       popoverId="timeLimitPopover"
@@ -153,7 +153,7 @@ class TimingEditor extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     Additional answer wait window (seconds):&nbsp;
                     <HelpButton
                       popoverId="additionalAnswerWaitPopover"
@@ -171,7 +171,7 @@ class TimingEditor extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     Delay after answered question (seconds):&nbsp;
                     <HelpButton
                       popoverId="delayAfterAnsweredPopover"
@@ -189,7 +189,7 @@ class TimingEditor extends Component {
                       required
                     />
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     Delay after <b>un</b>answered question (seconds):&nbsp;
                     <HelpButton
                       popoverId="delayAfterUnansweredPopover"
