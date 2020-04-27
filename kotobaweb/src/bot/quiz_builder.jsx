@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { quizDefaults, quizTimeModifierPresets } from 'kotoba-common';
+import { quizDefaults } from 'kotoba-common';
 import './bot.css';
 import '../main.css';
 import Header from './header';
@@ -75,6 +75,10 @@ class QuizBuilder extends Component {
         scoreLimit: quizDefaults.scoreLimit,
         norace: false,
       },
+      fontSettings: {
+        textColor: '#000000',
+        backgroundColor: '#ffffff',
+      },
     };
   }
 
@@ -88,6 +92,10 @@ class QuizBuilder extends Component {
 
   handleOtherSettingsChanged = (otherSettings) => {
     this.setState({ otherSettings });
+  }
+
+  handleFontSettingsChanged = (fontSettings) => {
+    this.setState({ fontSettings });
   }
 
   render() {
@@ -122,7 +130,7 @@ class QuizBuilder extends Component {
               </div>
               <div className="row">
                 <div className="col mb-5">
-                  <FontEditor />
+                  <FontEditor fontSettings={this.state.fontSettings} onFontSettingsChanged={this.handleFontSettingsChanged} />
                 </div>
               </div>
             </div>
