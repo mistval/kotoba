@@ -12,7 +12,7 @@ function SpeedsList(props) {
         <a
           href="#"
           className={`list-group-item list-group-item-action${presetName === props.selectedPresetName ? ' active' : ''}`}
-          onClick={() => props.onPresetSelected(presetName)}
+          onClick={(ev) => { ev.preventDefault(); props.onPresetSelected(presetName); }}
           key={presetName}
         >
           {presetName}
@@ -21,7 +21,7 @@ function SpeedsList(props) {
         <a
           href="#"
           className={`list-group-item list-group-item-action${props.selectedPresetName === 'custom' ? ' active' : ''}`}
-          onClick={() => props.onPresetSelected('custom')}
+          onClick={(ev) => { ev.preventDefault(); props.onPresetSelected('custom'); }}
         >
           custom
         </a>
