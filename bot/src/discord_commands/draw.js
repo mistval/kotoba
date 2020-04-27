@@ -5,10 +5,10 @@ const constants = require('./../common/constants.js');
 
 const longDescription = `Use this command to test font settings by drawing some text. You can specify the font, text color, background color, and/or size using command arguments. The arguments are:
 
-\`font=X\` where X is the number of the font you want to use (see below)
-\`color=rgb(R,G,B)\` where R, G, and B are the [red, green, and blue components](https://www.w3schools.com/colors/colors_rgb.asp), each a number between 0-255, to use for the **text** color. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)
-\`bgcolor=rgb(R,G,B)\` where R, G, and B are the [red, green, and blue components](https://www.w3schools.com/colors/colors_rgb.asp), each a number between 0-255, to use for the **background** color. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)
-\`size=X\` where X is the size in pixels (20-200)
+\`font=X\` where X is the number of the font you want to use (see below).
+\`color=rgb(R,G,B)\` where R, G, and B are the [red, green, and blue components](https://www.w3schools.com/colors/colors_rgb.asp), each a number between 0-255, to use for the **text** color (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors).
+\`bgcolor=rgb(R,G,B)\` where R, G, and B are the [red, green, and blue components](https://www.w3schools.com/colors/colors_rgb.asp), each a number between 0-255, to use for the **background** color (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors).
+\`size=X\` where X is the size in pixels (20-200).
 
 For example:
 \`<prefix>draw 日本語 font=5 color=rgb(100,150,200) bgcolor=rgb(210,220,230) size=80\`
