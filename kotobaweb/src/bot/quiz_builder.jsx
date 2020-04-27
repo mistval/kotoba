@@ -9,6 +9,7 @@ import { convertRangeNumberToString, createDeck, createTimeModifierParts } from 
 import TimingEditor from './quiz_builder_components/timing_editor';
 import styles from './quiz_builder_components/styles';
 import OtherSettingsEditor from './quiz_builder_components/other_settings_editor';
+import FontEditor from './quiz_builder_components/font_editor';
 
 function createCommandSuccess(commandText) {
   return { valid: true, commandText };
@@ -109,14 +110,19 @@ class QuizBuilder extends Component {
                 </div>
               </div>
               <div className="row mt-5">
-                <div className="col-lg-4 mb-5">
+                <div className="col-lg-4 mb-4">
                   <DeckEditor decks={this.state.decks} onDecksChanged={this.handleDecksChanged} />
                 </div>
-                <div className="col-lg-4 mb-5">
+                <div className="col-lg-4 mb-4">
                   <TimingEditor timing={this.state.timing} onTimingChanged={this.handleTimingChanged} />
                 </div>
-                <div className="col-lg-4 mb-5">
+                <div className="col-lg-4 mb-4">
                   <OtherSettingsEditor otherSettings={this.state.otherSettings} onOtherSettingsChanged={this.handleOtherSettingsChanged} />
+                </div>
+              </div>
+              <div className="row">
+                <div className="col mb-5">
+                  <FontEditor />
                 </div>
               </div>
             </div>
