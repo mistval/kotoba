@@ -15,6 +15,8 @@ For example:
 
 When you find settings you like, you can use \`<prefix>settings\` to set them permanently, or use the same arguments in a quiz start command (for example \`<prefix>quiz n1 font=8\`)
 
+You can also use my [Quiz Command Builder](https://kotobaweb.com/bot/quizbuilder) to easily calculate these settings.
+
 __Available fonts__:
 ${
   fontHelper.installedFonts
