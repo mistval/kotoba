@@ -29,8 +29,8 @@
     "yup": "^0.26.6"
   },
   "scripts": {
-    "start": "node ./scripts/copy_config.js && set PORT=3001 && react-scripts start",
-    "build": "node ./scripts/copy_config.js && react-scripts build",
+    "start": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && set PORT=3001 && react-scripts start",
+    "build": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx",
@@ -41,7 +41,8 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "glob": "^7.1.6"
   },
   "browserslist": [
     ">0.2%",

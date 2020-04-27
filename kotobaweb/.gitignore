@@ -22,3 +22,6 @@ yarn-error.log*
 
 # This is copied from the root config by package.json scripts.
 config.json
+
+# This is automatically generated during build
+font_list.json
