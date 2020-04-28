@@ -41,6 +41,7 @@ class FontEditor extends PureComponent {
     console.log(this.props.fontSettings);
     return {
       ...this.props.fontSettings,
+      fontFamily: fontList[this.props.fontSettings.fontFamilyIndex],
     };
   }
 
