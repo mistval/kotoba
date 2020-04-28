@@ -10,7 +10,6 @@ import TimingEditor from './quiz_builder_components/timing_editor';
 import styles from './quiz_builder_components/styles';
 import OtherSettingsEditor from './quiz_builder_components/other_settings_editor';
 import FontEditor from './quiz_builder_components/font_editor';
-import { checkPropTypes } from 'prop-types';
 
 const DEFAULT_FONT_SIZE = '100';
 
