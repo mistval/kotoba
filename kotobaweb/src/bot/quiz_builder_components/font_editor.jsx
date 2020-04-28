@@ -3,7 +3,6 @@ import { SketchPicker } from 'react-color';
 import styles from './styles';
 import fontList from './font_list.json';
 import NumericInputBox from './../../controls/numeric_input_box';
-import DefaultColors from './../default_text_colors';
 
 function getRGBAColor({ rgb }) {
   return `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`;
@@ -13,7 +12,7 @@ class FontEditor extends PureComponent {
   handleTextColorChanged = (textColor) => {
     this.props.onFontSettingsChanged({
       ...this.props.fontSettings,
-      textColor: getRGBAColor(textColor),
+      color: getRGBAColor(textColor),
     });
   }
 
@@ -38,6 +37,13 @@ class FontEditor extends PureComponent {
     });
   }
 
+  createFontExampleStyle() {
+    console.log(this.props.fontSettings);
+    return {
+      ...this.props.fontSettings,
+    };
+  }
+
   render() {
     return (
       <div className="card" style={styles.card}>
@@ -47,7 +53,7 @@ class FontEditor extends PureComponent {
         <div className="card-body d-flex flex-row flex-wrap">
           <div className="mr-5 mb-4">
             <h6 className="text-center">Text Color</h6>
-            <SketchPicker color={this.props.fontSettings.textColor} onChange={this.handleTextColorChanged} />
+            <SketchPicker color={this.props.fontSettings.color} onChange={this.handleTextColorChanged} />
           </div>
           <div className="mr-5 mb-4">
             <h6 className="text-center">Background Color</h6>
@@ -72,7 +78,7 @@ class FontEditor extends PureComponent {
             />
           </div>
           <div className="mb-4">
-            <span className="py-2 px-3" style={{ backgroundColor: this.props.fontSettings.backgroundColor, color: this.props.fontSettings.textColor, fontSize: `${this.props.fontSettings.fontSize}px` }}>本</span>
+            <span className="py-2 px-3" style={this.createFontExampleStyle()}>本</span>
           </div>
         </div>
       </div>

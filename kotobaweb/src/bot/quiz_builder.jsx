@@ -12,7 +12,7 @@ import OtherSettingsEditor from './quiz_builder_components/other_settings_editor
 import FontEditor from './quiz_builder_components/font_editor';
 import DefaultColors from './default_text_colors';
 
-const DEFAULT_FONT_SIZE = '100';
+const DEFAULT_FONT_SIZE = 92;
 
 function createCommandSuccess(commandText) {
   return { valid: true, commandText };
@@ -63,8 +63,8 @@ function createCommand(args) {
     commandParts.push(`font=${args.fontSettings.fontFamilyIndex + 1}`);
   }
 
-  if (args.fontSettings.textColor !== DefaultColors.TEXT) {
-    commandParts.push(`color=${args.fontSettings.textColor}`);
+  if (args.fontSettings.color !== DefaultColors.TEXT) {
+    commandParts.push(`color=${args.fontSettings.color}`);
   }
 
   if (args.fontSettings.backgroundColor !== DefaultColors.BACKGROUND) {
@@ -96,7 +96,7 @@ class QuizBuilder extends Component {
         norace: false,
       },
       fontSettings: {
-        textColor: DefaultColors.TEXT,
+        color: DefaultColors.TEXT,
         backgroundColor: DefaultColors.BACKGROUND,
         fontFamilyIndex: 0,
         fontSize: DEFAULT_FONT_SIZE,
