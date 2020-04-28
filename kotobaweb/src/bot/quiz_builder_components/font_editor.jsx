@@ -41,8 +41,8 @@ class FontEditor extends PureComponent {
   render() {
     return (
       <div className="card" style={styles.card}>
-        <div className="card-block-title" style={{ backgroundColor: this.props.fontSettings.backgroundColor }}>
-          <h5 className="card-title d-inline-block" style={{ color: this.props.fontSettings.textColor }}>Font Settings</h5>
+        <div className="card-block-title">
+          <h5 className="card-title d-inline-block">Font Settings</h5>
         </div>
         <div className="card-body d-flex flex-row flex-wrap">
           <div className="mr-5 mb-4">
@@ -53,7 +53,7 @@ class FontEditor extends PureComponent {
             <h6 className="text-center">Background Color</h6>
             <SketchPicker color={this.props.fontSettings.backgroundColor} onChange={this.handleBackgroundColorChanged} />
           </div>
-          <div className="mb-4">
+          <div className="mr-5 mb-4">
             <div className="form-group">
               <label htmlFor="fontFamilySelect">Font Family</label>
               <select className="form-control" id="fontFamilySelect" onChange={this.handleFontFamilyChanged} >
@@ -70,6 +70,9 @@ class FontEditor extends PureComponent {
               onChange={this.handleFontSizeChanged}
               maxPlacesAfterDecimal={0}
             />
+          </div>
+          <div className="mb-4">
+            <span className="py-2 px-3" style={{ backgroundColor: this.props.fontSettings.backgroundColor, color: this.props.fontSettings.textColor, fontSize: `${this.props.fontSettings.fontSize}px` }}>本</span>
           </div>
         </div>
       </div>
