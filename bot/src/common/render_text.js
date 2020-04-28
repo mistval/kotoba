@@ -43,9 +43,15 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
     measurements.actualBoundingBoxAscent + TOP_PADDING_IN_PIXELS,
   );
 
-  const bufferOptions = { compressionLevel: 9, filters: canvas.PNG_FILTER_NONE };
-  const buffer = canvas.toBuffer('image/png', bufferOptions);
-  return buffer;
+  return new Promise((fulfill, reject) => {
+    const bufferOptions = { compressionLevel: 5, filters: canvas.PNG_FILTER_NONE };
+    canvas.toBuffer((err, buffer) => {
+      if (err) {
+        return reject(err);
+      }
+      return fulfill(buffer);
+    }, 'image/png', bufferOptions);
+  });
 }
 
 function renderJapaneseWithFurigana(text, mainFontSize, textColor, backgroundColor, fontSetting) {
