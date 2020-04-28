@@ -165,7 +165,7 @@ module.exports = [
         description: 'This setting controls the font size of the text rendered for quizzes.',
         allowedValuesDescription: 'A number between 20 and 200 (in font size points)',
         uniqueId: 'quiz_font_size',
-        defaultUserFacingValue: '100',
+        defaultUserFacingValue: '92',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(20, 200),
