@@ -3,19 +3,24 @@ import { SketchPicker } from 'react-color';
 import styles from './styles';
 import fontList from './font_list.json';
 import NumericInputBox from './../../controls/numeric_input_box';
+import DefaultColors from './../default_text_colors';
+
+function getRGBAColor({ rgb }) {
+  return `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`;
+}
 
 class FontEditor extends PureComponent {
   handleTextColorChanged = (textColor) => {
     this.props.onFontSettingsChanged({
       ...this.props.fontSettings,
-      textColor: textColor.hex,
+      textColor: getRGBAColor(textColor),
     });
   }
 
   handleBackgroundColorChanged = (backgroundColor) => {
     this.props.onFontSettingsChanged({
       ...this.props.fontSettings,
-      backgroundColor: backgroundColor.hex,
+      backgroundColor: getRGBAColor(backgroundColor),
     });
   }
 
@@ -34,7 +39,7 @@ class FontEditor extends PureComponent {
   }
 
   hasNonDefaultColor() {
-    return this.props.fontSettings.backgroundColor !== '#ffffff' || this.props.fontSettings.textColor !== '#000000';
+    return this.props.fontSettings.backgroundColor !== DefaultColors.BACKGROUND || this.props.fontSettings.textColor !== DefaultColors.TEXT;
   }
 
   getCardTitleBlockStyle() {
