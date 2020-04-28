@@ -42,7 +42,7 @@ class FontEditor extends PureComponent {
     return (
       <div className="card" style={styles.card}>
         <div className="card-block-title" style={{ backgroundColor: this.props.fontSettings.backgroundColor }}>
-          <h5 className="card-title d-inline-block" style={{ color: this.props.fontSettings.textColor }}>Font Settings フォントの設定</h5>
+          <h5 className="card-title d-inline-block" style={{ color: this.props.fontSettings.textColor }}>Font Settings</h5>
         </div>
         <div className="card-body d-flex flex-row">
           <div className="mr-5">
