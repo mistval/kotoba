@@ -33,11 +33,27 @@ class FontEditor extends PureComponent {
     });
   }
 
+  hasNonDefaultColor() {
+    return this.props.fontSettings.backgroundColor !== '#ffffff' || this.props.fontSettings.textColor !== '#000000';
+  }
+
+  getCardTitleBlockStyle() {
+    return this.hasNonDefaultColor()
+      ? { backgroundColor: this.props.fontSettings.backgroundColor }
+      : {};
+  }
+
+  getCardTitleTextStyle() {
+    return this.hasNonDefaultColor()
+      ? { color: this.props.fontSettings.textColor }
+      : {};
+  }
+
   render() {
     return (
       <div className="card" style={styles.card}>
-        <div className="card-block-title">
-          <h5 className="card-title d-inline-block">Font settings</h5>
+        <div className="card-block-title" style={this.getCardTitleBlockStyle()}>
+          <h5 className="card-title d-inline-block" style={this.getCardTitleTextStyle()}>Font settings</h5>
         </div>
         <div className="card-body d-flex flex-row">
           <div className="mr-5">
