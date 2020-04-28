@@ -10,6 +10,7 @@ import TimingEditor from './quiz_builder_components/timing_editor';
 import styles from './quiz_builder_components/styles';
 import OtherSettingsEditor from './quiz_builder_components/other_settings_editor';
 import FontEditor from './quiz_builder_components/font_editor';
+import DefaultColors from './default_text_colors';
 
 const DEFAULT_FONT_SIZE = '100';
 
@@ -62,11 +63,11 @@ function createCommand(args) {
     commandParts.push(`font=${args.fontSettings.fontFamilyIndex + 1}`);
   }
 
-  if (args.fontSettings.textColor !== '#000000') {
+  if (args.fontSettings.textColor !== DefaultColors.TEXT) {
     commandParts.push(`color=${args.fontSettings.textColor}`);
   }
 
-  if (args.fontSettings.backgroundColor !== '#ffffff') {
+  if (args.fontSettings.backgroundColor !== DefaultColors.BACKGROUND) {
     commandParts.push(`bgcolor=${args.fontSettings.backgroundColor}`);
   }
 
@@ -95,8 +96,8 @@ class QuizBuilder extends Component {
         norace: false,
       },
       fontSettings: {
-        textColor: '#000000',
-        backgroundColor: '#ffffff',
+        textColor: DefaultColors.TEXT,
+        backgroundColor: DefaultColors.BACKGROUND,
         fontFamilyIndex: 0,
         fontSize: DEFAULT_FONT_SIZE,
       },
