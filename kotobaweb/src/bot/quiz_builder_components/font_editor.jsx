@@ -86,7 +86,7 @@ class FontEditor extends PureComponent {
                 </div>
               </div>
               <div className="alert alert-info mb-0 mt-2" role="alert">
-                The font family in the 本 example will only change if your computer has the font installed. Beware that Discord scales down <b>large</b> images, which can make text look blurry. The default size of 92px occurs no scaling in most fonts for up to 4 characters.
+                The font family in the 本 example will only change if your computer has the font installed. Beware that Discord scales down <b>large</b> images, which can make text look blurry. The default size of 92px is not scaled in most fonts for up to 4 characters.
               </div>
             </div>
           </div>
