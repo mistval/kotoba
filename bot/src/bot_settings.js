@@ -19,13 +19,12 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
-const fontDescriptionList = FontHelper.allFonts
-  .filter(fontInfo => !fontInfo.hidden)
+const fontDescriptionList = FontHelper.listedFonts
   .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`)
   .join('\n');
 
 const fontForInput = {};
-FontHelper.allFonts.forEach((fontInfo, index) => {
+FontHelper.listedFonts.forEach((fontInfo, index) => {
   fontForInput[index + 1] = fontInfo.fontFamily;
   fontForInput[fontInfo.fontFamily.toLowerCase()] = fontInfo.fontFamily;
 });
