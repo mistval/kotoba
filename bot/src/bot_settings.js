@@ -29,8 +29,8 @@ FontHelper.listedFonts.forEach((fontInfo, index) => {
   fontForInput[fontInfo.fontFamily.toLowerCase()] = fontInfo.fontFamily;
 });
 
-const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}\n\nNote that some fonts support more kanji than others. You may see me fall back to a different font for kanji that isn't supported by your chosen font.`;
-const allowedColorsString = 'You can enter [color names](https://www.w3schools.com/colors/colors_names.asp) like **red**, **blue**, **orchid**, etc, or enter an RGB value to set any color you want. To do that, [figure out](https://www.w3schools.com/colors/colors_rgb.asp) the red, blue, and green components of the color you want and enter a value like this **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). Each RGB color component must be a whole number between 0 and 255. (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors)';
+const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}`;
+const allowedColorsString = 'You can enter [color names](https://www.w3schools.com/colors/colors_names.asp) like **red**, **blue**, **orchid**, etc, or enter an RGB value to set any color you want. To do that, [figure out](https://www.w3schools.com/colors/colors_rgb.asp) the red, blue, and green components of the color you want and enter a value like this **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). Each RGB color component must be a whole number between 0 and 255 (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors). You can test font colors with the **k!draw** command.';
 
 module.exports = [
   {

@@ -28,7 +28,7 @@ ${
 module.exports = {
   commandAliases: ['draw'],
   uniqueId: 'draw',
-  cooldown: 1.5,
+  cooldown: 2,
   shortDescription: 'Test font settings by drawing some text.',
   longDescription,
   requiredSettings: [
@@ -54,8 +54,8 @@ module.exports = {
     const size = argumentParseResult.size || settings.quiz_font_size;
     const text = argumentParseResult.remainingString || '日本語';
 
-    if (text.length > 10) {
-      return throwPublicErrorInfo('Draw', 'Please give me no more than 10 characters to draw.', 'Input too long');
+    if (text.length > 5) {
+      return throwPublicErrorInfo('Draw', 'Please give me no more than 5 characters to draw.', 'Input too long');
     }
 
     const renderResult = await render(text, color, bgColor, size, fontFamily, false);
