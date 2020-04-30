@@ -19,8 +19,7 @@ You can also use my [Quiz Command Builder](https://kotobaweb.com/bot/quizbuilder
 
 __Available fonts__:
 ${
-  fontHelper.installedFonts
-    .filter(f => !f.hidden)
+  fontHelper.listedInstalledFonts
     .map((f, i) => `${i + 1}. ${f.fontFamily}`)
     .join('\n')
 }

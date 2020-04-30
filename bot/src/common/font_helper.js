@@ -70,12 +70,16 @@ function buildSupportedCharactersForFontMap() {
 
 installedFonts.sort((a, b) => a.order - b.order);
 
+const listedInstalledFonts = installedFonts.filter(f => !f.hidden);
+
 const allFonts = installedFonts.slice();
 allFonts.push({
   fontFamily: RANDOM_FONT_SETTING,
   order: 1000,
   description: 'Cycle through fonts randomly',
 });
+
+const listedFonts = allFonts.filter(f => !f.hidden);
 
 function getRandomFont() {
   const randomIndex = Math.floor(Math.random() * installedFonts.length);
@@ -127,11 +131,11 @@ function parseFontArgs(str) {
     .replace(/,\s+/g, ',').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')')
     .replace(/font\s*=\s*([0-9]*)+/ig, (m, g1) => {
       const fontInt = parseInt(g1, 10);
-      parseResult.fontFamily = (installedFonts[fontInt - 1] || {}).fontFamily;
+      parseResult.fontFamily = (listedInstalledFonts[fontInt - 1] || {}).fontFamily;
 
       if (!parseResult.fontFamily) {
         parseResult.errorDescriptionShort = 'Invalid font';
-        parseResult.errorDescriptionLong = `Please provide a number between 1 and ${installedFonts.length} as your font= setting.`;
+        parseResult.errorDescriptionLong = `Please provide a number between 1 and ${listedInstalledFonts.length} as your font= setting.`;
       }
 
       return '';
@@ -177,7 +181,8 @@ function fontSupportsString(fontFamily, string) {
 
 module.exports = {
   installedFonts,
-  allFonts,
+  listedFonts,
+  listedInstalledFonts,
   getFontFamilyForFontSetting,
   coerceFontFamilyForString,
   buildSupportedCharactersForFontMap,
