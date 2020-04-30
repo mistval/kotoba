@@ -7,6 +7,7 @@ WORKDIR /var/app
 COPY ./kotobaweb .
 RUN mkdir ./../config
 COPY ./config/frontend_config.js ./../config/
+COPY ./resources/fonts/ ../resources/fonts/
 RUN npm ci
 RUN npm run build
 
