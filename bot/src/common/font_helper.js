@@ -16,9 +16,9 @@ fontMetaFilePaths.forEach((metaPath) => {
   // eslint-disable-next-line global-require,import/no-dynamic-require
   const meta = require(metaPath);
   const dir = path.dirname(metaPath);
-  const fontFilePath = glob.sync(`${dir}/*.{otf,ttf,ttc}`)[0];
+  const fontFilePaths = glob.sync(`${dir}/*.{otf,ttf,ttc}`);
   installedFonts.push({
-    filePath: fontFilePath,
+    filePaths: fontFilePaths,
     fontFamily: meta.fontFamily,
     order: meta.order,
     description: meta.description,
@@ -42,25 +42,27 @@ function validateColor(color) {
 function buildSupportedCharactersForFontMap() {
   const supportedCharactersForFontInner = {};
   installedFonts.forEach((fontInfo) => {
-    const fontKitFont = FontKit.openSync(fontInfo.filePath);
-    const fontKitFonts = fontKitFont.fonts || [fontKitFont];
     supportedCharactersForFontInner[fontInfo.fontFamily] = {};
+    fontInfo.filePaths.forEach((filePath) => {
+      const fontKitFont = FontKit.openSync(filePath);
+      const fontKitFonts = fontKitFont.fonts || [fontKitFont];
 
-    // font.characterSet contains code points that the font doesn't actually support.
-    // Not 100% sure how fonts work in this respect, but this is the only reliable
-    // way I could find to figure out which characters are actually supported.
-    fontKitFonts.forEach((font) => {
-      font.characterSet.forEach((char) => {
-        const glyph = font.glyphForCodePoint(char);
-        try {
-          const space = 32;
-          if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === space) {
-            supportedCharactersForFontInner[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
+      // font.characterSet contains code points that the font doesn't actually support.
+      // Not 100% sure how fonts work in this respect, but this is the only reliable
+      // way I could find to figure out which characters are actually supported.
+      fontKitFonts.forEach((font) => {
+        font.characterSet.forEach((char) => {
+          const glyph = font.glyphForCodePoint(char);
+          try {
+            const space = 32;
+            if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === space) {
+              supportedCharactersForFontInner[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
+            }
+          } catch (err) {
+            // NOOP. Some of the properties on glyph are getters that error
+            // if the glyph isn't supported. Catch those errors and skip the glyph.
           }
-        } catch (err) {
-          // NOOP. Some of the properties on glyph are getters that error
-          // if the glyph isn't supported. Catch those errors and skip the glyph.
-        }
+        });
       });
     });
   });

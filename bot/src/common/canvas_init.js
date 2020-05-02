@@ -3,11 +3,13 @@ const FontHelper = require('./font_helper.js');
 
 function init() {
   FontHelper.installedFonts.forEach((installedFont) => {
-    try {
-      Canvas.registerFont(installedFont.filePath, { family: installedFont.fontFamily });
-    } catch (err) {
-      throw new Error(`Failed to load font: ${installedFont.fontFamily} from ${installedFont.filePath}.`);
-    }
+    installedFont.filePaths.forEach((filePath) => {
+      try {
+        Canvas.registerFont(filePath, { family: installedFont.fontFamily });
+      } catch (err) {
+        throw new Error(`Failed to load font: ${installedFont.fontFamily} from ${installedFont.filePath}.`);
+      }
+    });
   });
 }
 
