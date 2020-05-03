@@ -1,6 +1,7 @@
 
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 const { quizDefaults } = require('kotoba-common');
+const { chunk } = require('./common/util/array.js');
 
 const FontHelper = require('./common/font_helper.js');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
@@ -19,9 +20,17 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
-const fontDescriptionList = FontHelper.listedFonts
-  .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`)
-  .join('\n');
+const fontDescriptionLines =  FontHelper.listedFonts
+  .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`);
+
+const fontDescriptionPages = chunk(fontDescriptionLines, 10);
+const fontAllowedValuesFields = [{
+  name: 'Allowed values',
+  value: `Enter the number of the font you want from below.\n\n${fontDescriptionPages[0].join('\n')}`,
+}].concat(fontDescriptionPages.slice(1).map(p => ({
+  name: 'Allowed values (cont.)',
+  value: p.join('\n'),
+})));
 
 const fontForInput = {};
 FontHelper.listedFonts.forEach((fontInfo, index) => {
@@ -29,7 +38,6 @@ FontHelper.listedFonts.forEach((fontInfo, index) => {
   fontForInput[fontInfo.fontFamily.toLowerCase()] = fontInfo.fontFamily;
 });
 
-const availableFontsAllowedValuesString = `Enter the number of the font you want from below.\n\n${fontDescriptionList}`;
 const allowedColorsString = 'You can enter [color names](https://www.w3schools.com/colors/colors_names.asp) like **red**, **blue**, **orchid**, etc, or enter an RGB value to set any color you want. To do that, [figure out](https://www.w3schools.com/colors/colors_rgb.asp) the red, blue, and green components of the color you want and enter a value like this **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). Each RGB color component must be a whole number between 0 and 255 (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors). You can test font colors with the **k!draw** command.';
 
 module.exports = [
@@ -129,7 +137,7 @@ module.exports = [
       {
         userFacingName: 'Quiz font',
         description: 'This setting controls the font used for text rendered for quizzes.',
-        allowedValuesDescription: availableFontsAllowedValuesString,
+        allowedValuesDescription: fontAllowedValuesFields,
         uniqueId: 'quiz_font',
         defaultUserFacingValue: 'Noto Sans CJK',
         convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(
@@ -172,7 +180,7 @@ module.exports = [
       {
         userFacingName: 'Furigana font',
         description: 'This setting controls the font used for the furigana command.',
-        allowedValuesDescription: availableFontsAllowedValuesString,
+        allowedValuesDescription: fontAllowedValuesFields,
         uniqueId: 'furigana_font',
         defaultUserFacingValue: 'Noto Sans CJK',
         convertUserFacingValueToInternalValue: SettingsConverters.createMapConverter(

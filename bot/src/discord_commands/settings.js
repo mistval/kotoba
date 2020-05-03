@@ -151,6 +151,10 @@ function createContentForCategory(category, iconUri) {
 }
 
 async function createContentForSetting(msg, settings, setting, iconUri) {
+  const allowedValuesFields = Array.isArray(setting.allowedValuesDescription)
+    ? setting.allowedValuesDescription
+    : [{ name: 'Allowed values', value: setting.allowedValuesDescription, inline: false }];
+
   return {
     embed: {
       title: `Settings (${setting.userFacingName})`,
@@ -177,11 +181,7 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
           value: setting.userSetting ? 'Anyone' : 'Server admin',
           inline: true,
         },
-        {
-          name: 'Allowed values',
-          value: setting.allowedValuesDescription,
-          inline: false,
-        },
+        ...allowedValuesFields,
       ],
       footer: {
         icon_url: iconUri,
