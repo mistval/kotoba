@@ -54,7 +54,7 @@ module.exports = {
     const size = argumentParseResult.size || settings.quiz_font_size;
     const text = argumentParseResult.remainingString || '日本語';
 
-    if (text.length > 5) {
+    if (Array.from(text).length > 5) {
       return throwPublicErrorInfo('Draw', 'Please give me no more than 5 characters to draw.', 'Input too long');
     }
 
