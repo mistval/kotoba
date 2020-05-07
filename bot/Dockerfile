@@ -1,4 +1,4 @@
-FROM node:12.16.1
+FROM node:12.16.3
 
 RUN apt-get update
 RUN apt-get -y install ffmpeg mongodb
