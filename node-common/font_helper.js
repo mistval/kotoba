@@ -1,37 +1,10 @@
 const glob = require('glob');
+const fs = require('fs');
 const path = require('path');
 const FontKit = require('fontkit');
 const colorValidator = require('validate-color');
 
-let supportedCharactersForFont;
-
-const SUPPORTED_CHARACTERS_MAP_DIR_PATH = path.join(__dirname, '..', '..', 'generated');
-const SUPPORTED_CHARACTERS_MAP_PATH = path.join(SUPPORTED_CHARACTERS_MAP_DIR_PATH, 'supported_chars_for_font.json');
-const RANDOM_FONT_SETTING = 'Random';
-
-const fontMetaFilePaths = glob.sync(`${__dirname}/../../../resources/fonts/**/meta.json`);
-const installedFonts = [];
-
-fontMetaFilePaths.forEach((metaPath) => {
-  // eslint-disable-next-line global-require,import/no-dynamic-require
-  const meta = require(metaPath);
-  const dir = path.dirname(metaPath);
-  const fontFilePaths = glob.sync(`${dir}/*.{otf,ttf,ttc}`);
-  installedFonts.push({
-    filePaths: fontFilePaths,
-    fontFamily: meta.fontFamily,
-    order: meta.order,
-    description: meta.description,
-    hidden: !!meta.hidden,
-  });
-});
-
-try {
-  // eslint-disable-next-line global-require,import/no-dynamic-require
-  supportedCharactersForFont = require(SUPPORTED_CHARACTERS_MAP_PATH);
-} catch (err) {
-  // Might not exist, might not be needed. If it's needed, will error.
-}
+const RANDOM_FONT_ALIAS = 'Random';
 
 function validateColor(color) {
   return colorValidator.validateHTMLColor(color)
@@ -39,101 +12,14 @@ function validateColor(color) {
     || colorValidator.validateHTMLColorName(color);
 }
 
-function buildSupportedCharactersForFontMap() {
-  const supportedCharactersForFontInner = {};
-  installedFonts.forEach((fontInfo) => {
-    supportedCharactersForFontInner[fontInfo.fontFamily] = {};
-    fontInfo.filePaths.forEach((filePath) => {
-      const fontKitFont = FontKit.openSync(filePath);
-      const fontKitFonts = fontKitFont.fonts || [fontKitFont];
-
-      // font.characterSet contains code points that the font doesn't actually support.
-      // Not 100% sure how fonts work in this respect, but this is the only reliable
-      // way I could find to figure out which characters are actually supported.
-      fontKitFonts.forEach((font) => {
-        font.characterSet.forEach((char) => {
-          const glyph = font.glyphForCodePoint(char);
-          try {
-            const space = 32;
-            if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === space) {
-              supportedCharactersForFontInner[fontInfo.fontFamily][String.fromCodePoint(char)] = true;
-            }
-          } catch (err) {
-            // NOOP. Some of the properties on glyph are getters that error
-            // if the glyph isn't supported. Catch those errors and skip the glyph.
-          }
-        });
-      });
-    });
-  });
-
-  return supportedCharactersForFontInner;
-}
-
-installedFonts.sort((a, b) => a.order - b.order);
-
-const listedInstalledFonts = installedFonts.filter(f => !f.hidden);
-
-const allFonts = installedFonts.slice();
-allFonts.push({
-  fontFamily: RANDOM_FONT_SETTING,
-  order: 1000,
-  description: 'Cycle through fonts randomly',
-});
-
-const listedFonts = allFonts.filter(f => !f.hidden);
-
-function getRandomFont() {
-  const randomIndex = Math.floor(Math.random() * installedFonts.length);
-  return installedFonts[randomIndex].fontFamily;
-}
-
-function getFontFamilyForFontSetting(fontSetting) {
-  if (fontSetting === RANDOM_FONT_SETTING) {
-    return getRandomFont();
-  }
-
-  const fontInfo = installedFonts.find(info => info.fontFamily === fontSetting);
-  if (!fontInfo) {
-    return installedFonts[0].fontFamily;
-  }
-
-  return fontInfo.fontFamily;
-}
-
-function fontFamilySupportsCharacter(fontFamily, char) {
-  if (!supportedCharactersForFont) {
-    throw new Error('No supported character map found. Please run: npm run buildfontcharactermap');
-  }
-  return supportedCharactersForFont[fontFamily] && supportedCharactersForFont[fontFamily][char];
-}
-
-function fontFamilySupportsChars(fontFamily, chars) {
-  return chars.every(c => fontFamilySupportsCharacter(fontFamily, c));
-}
-
-function coerceFontFamilyForString(fontFamily, str) {
-  const chars = Array.from(str);
-  if (fontFamilySupportsChars(fontFamily, chars)) {
-    return fontFamily;
-  }
-
-  const supportedFontInfo = installedFonts.find(f => fontFamilySupportsChars(f.fontFamily, chars));
-  if (supportedFontInfo) {
-    return supportedFontInfo.fontFamily;
-  }
-
-  return installedFonts[0].fontFamily;
-}
-
 function parseFontArgs(str) {
   const parseResult = {};
 
   parseResult.remainingString = str
     .replace(/,\s+/g, ',').replace(/\(\s+/g, '(').replace(/\s+\)/g, ')')
-    .replace(/font\s*=\s*([0-9]*)+/ig, (m, g1) => {
+    .replace(/font\s*=\s*([0-9]*)/ig, (m, g1) => {
       const fontInt = parseInt(g1, 10);
-      parseResult.fontFamily = (listedInstalledFonts[fontInt - 1] || {}).fontFamily;
+      parseResult.fontFamily = (fonts[fontInt - 1] || {}).fontFamily;
 
       if (!parseResult.fontFamily) {
         parseResult.errorDescriptionShort = 'Invalid font';
@@ -162,7 +48,7 @@ function parseFontArgs(str) {
 
       return '';
     })
-    .replace(/size\s*=\s*([0-9]*)+/ig, (m, g1) => {
+    .replace(/size\s*=\s*([0-9]*)/ig, (m, g1) => {
       parseResult.size = parseInt(g1, 10);
 
       if (parseResult.size < 20 || parseResult.size > 200) {
@@ -177,19 +63,123 @@ function parseFontArgs(str) {
   return parseResult;
 }
 
-function fontSupportsString(fontFamily, string) {
-  return fontFamilySupportsChars(fontFamily, Array.from(string));
+function getRandomElement(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
 
-module.exports = {
-  installedFonts,
-  listedFonts,
-  listedInstalledFonts,
-  getFontFamilyForFontSetting,
-  coerceFontFamilyForString,
-  buildSupportedCharactersForFontMap,
-  SUPPORTED_CHARACTERS_MAP_DIR_PATH,
-  SUPPORTED_CHARACTERS_MAP_PATH,
-  parseFontArgs,
-  fontSupportsString,
-};
+function buildSupportedCharactersForFontMap(fontsLocal) {
+  const supportedCharactersForFontFamilyLocal = {};
+  fontsLocal.forEach((font) => {
+    supportedCharactersForFontFamilyLocal[font.fontFamily] = {};
+    font.filePaths.forEach((filePath) => {
+      const fontKitFont = FontKit.openSync(filePath);
+      const fontKitFonts = fontKitFont.fonts || [fontKitFont];
+
+      // font.characterSet contains code points that the font doesn't actually support.
+      // Not 100% sure how fonts work in this respect, but this is the only reliable
+      // way I could find to figure out which characters are actually supported.
+      fontKitFonts.forEach((fontKitFont) => {
+        fontKitFont.characterSet.forEach((char) => {
+          const glyph = fontKitFont.glyphForCodePoint(char);
+          try {
+            const space = 32;
+            if (Number.isFinite(glyph.path.cbox.height) || glyph.layers || char === space) {
+              const str = String.fromCodePoint(char);
+              supportedCharactersForFontFamilyLocal[font.fontFamily][str] = true;
+            }
+          } catch (err) {
+            // NOOP. Some of the properties on glyph are getters that error
+            // if the glyph isn't supported. Catch those errors and skip the glyph.
+          }
+        });
+      });
+    });
+  });
+
+  return supportedCharactersForFontFamilyLocal;
+}
+
+function fontFamilyCanRenderCharacter(supportedCharactersForFontFamily, fontFamily, character) {
+  return supportedCharactersForFontFamily[fontFamily]
+    && supportedCharactersForFontFamily[fontFamily][character];
+}
+
+function fontFamilyCanRenderString(supportedCharactersForFontFamily, fontFamily, string) {
+  const characters = Array.from(string);
+  return characters.every(c => fontFamilyCanRenderCharacter(
+    supportedCharactersForFontFamily,
+    fontFamily,
+    c,
+  ));
+}
+
+class FontHelper {
+  constructor() {
+    this.fonts = [];
+    this.supportedCharactersForFontFamily = {};
+  }
+
+  loadFontsSync(fontsPath, supportedCharacterMapPath) {
+    this.fonts = [];
+  
+    const fontMetaFilePaths = glob.sync(`${fontsPath}}/**/meta.json`);
+    fontMetaFilePaths.forEach((metaPath) => {
+      // eslint-disable-next-line global-require,import/no-dynamic-require
+      const meta = JSON.parse(fs.readFileSync(metaPath));
+      const dir = path.dirname(metaPath);
+      const fontFilePaths = glob.sync(`${dir}/*.{otf,ttf,ttc}`);
+      this.fonts.push({
+        filePaths: fontFilePaths,
+        fontFamily: meta.fontFamily,
+        order: meta.order,
+        description: meta.description,
+        hidden: !!meta.hidden,
+      });
+    });
+  
+    try {
+      supportedCharactersForFontFamily = JSON.parse(fs.readFileSync(supportedCharacterMapPath));
+    } catch (err) {
+      this.supportedCharactersForFontFamily = buildSupportedCharactersForFontMap(this.fonts);
+
+      if (supportedCharacterMapPath) {
+        fs.mkdirSync(supportedCharacterMapPath, { recursive: true });
+        fs.writeFileSync(
+          supportedCharacterMapPath,
+          JSON.stringify(this.supportedCharactersForFontFamily),
+        );
+      }
+    }
+  
+    this.fonts.sort((a, b) => a.order - b.order);
+  }
+
+  getFontForAlias(fontAlias) {
+    if (fontAlias === RANDOM_FONT_ALIAS) {
+      return getRandomElement(this.fonts);
+    }
+  
+    const font = this.fonts.find(f => f.fontFamily === fontAlias);
+    return font || this.fonts[0];
+  }
+
+  coerceFontFamily(fontFamily, string) {
+    if (fontFamilyCanRenderString(this.supportedCharactersForFontFamily, fontFamily, string)) {
+      return fontFamily;
+    }
+  
+    const supportedFont = fonts.find(f => fontFamilyCanRenderString(
+      this.supportedCharactersForFontFamily,
+      f.fontFamily,
+      string,
+    ));
+    
+    return (supportedFont || {}).fontFamily || this.fonts[0].fontFamily;
+  }
+}
+
+FontHelper.parseFontArgs = parseFontArgs;
+FontHelper.prototype.parseFontArgs = parseFontArgs;
+
+module.exports = FontHelper;
