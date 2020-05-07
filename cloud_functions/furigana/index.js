@@ -29,7 +29,7 @@ exports.getFurigana = async (req, res) => {
 
     res.json(await getFurigana(req.query.text));
   } catch (err) {
-    res.send(err.message);
+    res.status(500).send(err.message);
     throw err;
   }
 };
