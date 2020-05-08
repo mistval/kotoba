@@ -1,8 +1,8 @@
+const axios = require('axios').create({ timeout: 10000 });
+const qs = require('qs');
+const { throwPublicErrorFatal, throwPublicErrorInfo } = require('./../common/util/errors.js');
 
-
-const textRenderer = require('./../common/render_text.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const { FulfillmentError } = require('monochrome-bot');
+const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
 
 module.exports = {
   commandAliases: ['furigana', 'furi', 'f'],
@@ -22,22 +22,34 @@ module.exports = {
       return throwPublicErrorInfo('Furigana', `Say **${prefix}furigana [Japanese text]** to render Japanese text with furigana. For example: **${prefix}furigana 家を出てすぐの所**`, 'No suffix');
     }
 
-    if (suffix.length > 200) {
-      throw new FulfillmentError({
-        publicMessage: 'Two hundred characters or fewer please :)',
-        autoDeletePublicMessage: true,
-        logDescription: 'Too long',
-      });
+    if (suffix.length > 500) {
+      return throwPublicErrorInfo('Furigana', 'Five hundred characters or fewer please :)', 'Too long');
     }
 
-    const buffer = await textRenderer.renderJapaneseWithFurigana(
-      suffix,
-      settings.furigana_main_font_size,
-      settings.furigana_font_color,
-      settings.furigana_background_color,
-      settings.furigana_font,
-    );
+    const args = qs.stringify({
+      text: suffix,
+      size: settings.furigana_main_font_size,
+      color: settings.furigana_font_color,
+      background_color: settings.furigana_background_color,
+      font_alias: settings.furigana_font,
+    });
 
-    return msg.channel.createMessage('', { name: 'furigana.png', file: buffer }, msg);
+    let pngData;
+    try {
+      const axiosResponse = await axios({
+        url: `http://${WORKER_HOST}/furigana/rendered?${args}`,
+        responseType: 'arraybuffer',
+      });
+
+      pngData = axiosResponse.data;
+    } catch (err) {
+      return throwPublicErrorFatal(
+        'Furigana',
+        'Sorry, there was a problem communicating with the furigana service, please try again later.', 'Furigana worker error',
+        err,
+      );
+    }
+
+    return msg.channel.createMessage('', { name: 'furigana.png', file: pngData }, msg);
   },
 };
