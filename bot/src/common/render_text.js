@@ -1,7 +1,6 @@
 
 
 const Canvas = require('canvas');
-const renderFurigana = require('render-furigana');
 const { fontHelper } = require('./../common/globals.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
@@ -53,30 +52,6 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
   });
 }
 
-function renderJapaneseWithFurigana(text, mainFontSize, textColor, backgroundColor, fontSetting) {
-  const fontFamily = fontHelper.getFontForAlias(fontSetting).fontFamily;
-  const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
-  const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
-  const kanjiFont = `${mainFontSizeDivisibleBy2}px ${fontFamily}`;
-  const furiganaFont = `${furiganaFontSize}px ${fontFamily}`;
-
-  // This is pretty arbitrary but works well.
-  const maxWidthInPixels = Math.ceil(Math.floor((mainFontSizeDivisibleBy2 / 40) * 600), 600);
-
-  const options = {
-    maxWidthInPixels,
-    backgroundColor,
-    textColor,
-  };
-
-  console.time('render furigana time');
-  return renderFurigana(text, kanjiFont, furiganaFont, options).then((data) => {
-    console.timeEnd('render furigana time');
-    return data;
-  });
-}
-
 module.exports = {
   render,
-  renderJapaneseWithFurigana,
 };
