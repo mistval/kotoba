@@ -10,6 +10,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "mongoose": "5.7.9"
+    "fontkit": "^1.8.1",
+    "glob": "^7.1.6",
+    "mongoose": "5.7.9",
+    "validate-color": "^1.0.8"
   }
 }

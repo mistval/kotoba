@@ -1,13 +1,12 @@
 const Canvas = require('canvas');
-const FontHelper = require('./font_helper.js');
 
-function init() {
-  FontHelper.installedFonts.forEach((installedFont) => {
-    installedFont.filePaths.forEach((filePath) => {
+function init(fontHelper) {
+  fontHelper.fonts.forEach((font) => {
+    font.filePaths.forEach((filePath) => {
       try {
-        Canvas.registerFont(filePath, { family: installedFont.fontFamily });
+        Canvas.registerFont(filePath, { family: font.fontFamily });
       } catch (err) {
-        throw new Error(`Failed to load font: ${installedFont.fontFamily} from ${installedFont.filePath}.`);
+        throw new Error(`Failed to load font: ${font.fontFamily} from ${filePath}.`);
       }
     });
   });

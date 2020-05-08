@@ -3,15 +3,8 @@ const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 const { quizDefaults } = require('kotoba-common');
 const { chunk } = require('./common/util/array.js');
 
-const FontHelper = require('./common/font_helper.js');
+const { fontHelper } = require('./common/globals');
 const shiritoriForeverHelper = require('./discord/shiritori_forever_helper.js');
-const colorValidator = require('validate-color');
-
-function validateHTMLColor(color) {
-  return colorValidator.validateHTMLColor(color)
-    || colorValidator.validateHTMLColorHex(color)
-    || colorValidator.validateHTMLColorName(color);
-}
 
 function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidationResult) {
   return shiritoriForeverHelper.handleEnabledChanged(
@@ -20,8 +13,9 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
-const fontDescriptionLines =  FontHelper.listedFonts
-  .map((fontInfo, index) => `${index + 1}. **${fontInfo.fontFamily}** - ${fontInfo.description}`);
+const fontDescriptionLines =  fontHelper.allowedFonts
+  .map((font, index) => `${index + 1}. **${font.fontFamily}** - ${font.description}`);
+fontDescriptionLines.push(`${fontHelper.allowedFonts.length + 1}. **Random** - Cycle through fonts randomly`);
 
 const fontDescriptionPages = chunk(fontDescriptionLines, 10);
 const fontAllowedValuesFields = [{
@@ -33,10 +27,13 @@ const fontAllowedValuesFields = [{
 })));
 
 const fontForInput = {};
-FontHelper.listedFonts.forEach((fontInfo, index) => {
+fontHelper.allowedFonts.forEach((fontInfo, index) => {
   fontForInput[index + 1] = fontInfo.fontFamily;
   fontForInput[fontInfo.fontFamily.toLowerCase()] = fontInfo.fontFamily;
 });
+
+fontForInput['random'] = fontHelper.RANDOM_FONT_ALIAS;
+fontForInput[fontHelper.allowedFonts.length + 1] = fontHelper.RANDOM_FONT_ALIAS;
 
 const allowedColorsString = 'You can enter [color names](https://www.w3schools.com/colors/colors_names.asp) like **red**, **blue**, **orchid**, etc, or enter an RGB value to set any color you want. To do that, [figure out](https://www.w3schools.com/colors/colors_rgb.asp) the red, blue, and green components of the color you want and enter a value like this **rgb(100, 50, 10)** (that\'s red 100, green 50, and blue 10). Each RGB color component must be a whole number between 0 and 255 (rgba works too, along with hsl, hsla, HTML color names, and HTML hex colors). You can test font colors with the **k!draw** command.';
 
@@ -155,7 +152,7 @@ module.exports = [
         defaultUserFacingValue: 'rgb(0, 0, 0)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateHTMLColor,
+        validateInternalValue: fontHelper.validateHTMLColor,
       },
       {
         userFacingName: 'Quiz text background color',
@@ -165,7 +162,7 @@ module.exports = [
         defaultUserFacingValue: 'rgb(255, 255, 255)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateHTMLColor,
+        validateInternalValue: fontHelper.validateHTMLColor,
       },
       {
         userFacingName: 'Quiz text font size',
@@ -198,7 +195,7 @@ module.exports = [
         defaultUserFacingValue: 'rgb(192, 193, 194)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateHTMLColor,
+        validateInternalValue: fontHelper.validateHTMLColor,
       },
       {
         userFacingName: 'Furigana background color',
@@ -208,7 +205,7 @@ module.exports = [
         defaultUserFacingValue: 'rgb(54, 57, 62)',
         convertUserFacingValueToInternalValue: SettingsConverters.toString,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: validateHTMLColor,
+        validateInternalValue: fontHelper.validateHTMLColor,
       },
       {
         userFacingName: 'Furigana font size',
