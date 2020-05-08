@@ -2,8 +2,7 @@
 
 const Canvas = require('canvas');
 const renderFurigana = require('render-furigana');
-
-const fontHelper = require('./font_helper.js');
+const { fontHelper } = require('./../common/globals.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
@@ -12,9 +11,9 @@ const BASE_RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 
 function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 96, fontSetting = 'Yu Mincho', allowFontFallback = true) {
-  const fontFamily = fontHelper.getFontFamilyForFontSetting(fontSetting);
+  const fontFamily = fontHelper.getFontForAlias(fontSetting).fontFamily;
   const coercedFont = allowFontFallback
-    ? fontHelper.coerceFontFamilyForString(fontFamily, text)
+    ? fontHelper.coerceFontFamily(fontFamily, text)
     : fontFamily;
 
   const canvas = Canvas.createCanvas(0, 0);
@@ -55,11 +54,11 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
 }
 
 function renderJapaneseWithFurigana(text, mainFontSize, textColor, backgroundColor, fontSetting) {
-  const font = fontHelper.getFontFamilyForFontSetting(fontSetting);
+  const fontFamily = fontHelper.getFontForAlias(fontSetting).fontFamily;
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
-  const kanjiFont = `${mainFontSizeDivisibleBy2}px ${font}`;
-  const furiganaFont = `${furiganaFontSize}px ${font}`;
+  const kanjiFont = `${mainFontSizeDivisibleBy2}px ${fontFamily}`;
+  const furiganaFont = `${furiganaFontSize}px ${fontFamily}`;
 
   // This is pretty arbitrary but works well.
   const maxWidthInPixels = Math.ceil(Math.floor((mainFontSizeDivisibleBy2 / 40) * 600), 600);

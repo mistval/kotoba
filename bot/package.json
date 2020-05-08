@@ -33,8 +33,6 @@
     "cheerio": "1.0.0-rc.2",
     "disk-array": "1.0.1",
     "edict-index": "0.0.2",
-    "fontkit": "1.8.0",
-    "glob": "7.1.4",
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
     "kitsu": "7.0.4",
@@ -48,8 +46,7 @@
     "render-furigana": "2.0.1",
     "shiritori": "2.0.4",
     "striptags": "3.1.1",
-    "unofficial-jisho-api": "2.0.5",
-    "validate-color": "1.0.8"
+    "unofficial-jisho-api": "2.0.5"
   },
   "devDependencies": {
     "@google-cloud/storage": "^2.5.0",

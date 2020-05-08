@@ -7,6 +7,7 @@ const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper
 const canvasInit = require('./common/canvas_init.js');
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
+const { FontHelper } = require('kotoba-node-common');
 
 const { ConsoleLogger } = Monochrome;
 
@@ -14,8 +15,6 @@ const GCLOUD_KEY_PATH = path.join(__dirname, '..', '..', 'config', 'gcloud_key.j
 const hasGCloudKey = fs.existsSync(GCLOUD_KEY_PATH);
 
 const { apiKeys } = config;
-
-canvasInit();
 
 function createLogger() {
   // Use Bunyan logger connected to StackDriver if GCP credentials are present.
@@ -124,15 +123,18 @@ function checkApiKeys(monochrome) {
   }
 }
 
-function saveGlobals(monochrome) {
-  globals.logger = monochrome.getLogger();
-  globals.persistence = monochrome.getPersistence();
-  globals.monochrome = monochrome;
-}
+const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
+const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
+globals.fontHelper = new FontHelper();
+globals.fontHelper.loadFontsSync(fontPath, fontCharacterMapPath);
 
 const monochrome = createBot();
 
+globals.logger = monochrome.getLogger();
+globals.persistence = monochrome.getPersistence();
+globals.monochrome = monochrome;
+
 checkApiKeys(monochrome);
-saveGlobals(monochrome);
 monochrome.connect();
 loadShiritoriForeverChannels(monochrome);
+canvasInit(globals.fontHelper);

@@ -1,5 +1,5 @@
 const { render } = require('./../common/render_text.js');
-const fontHelper = require('./../common/font_helper.js');
+const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
 
@@ -19,7 +19,7 @@ You can also use my [Quiz Command Builder](https://kotobaweb.com/bot/quizbuilder
 
 __Available fonts__:
 ${
-  fontHelper.listedInstalledFonts
+  fontHelper.allowedFonts
     .map((f, i) => `${i + 1}. ${f.fontFamily}`)
     .join('\n')
 }
@@ -48,18 +48,22 @@ module.exports = {
       return throwPublicErrorInfo('Draw', argumentParseResult.errorDescriptionLong, argumentParseResult.errorDescriptionShort);
     }
 
-    const fontFamily = argumentParseResult.fontFamily || settings.quiz_font;
+    let fontFamily = argumentParseResult.fontFamily || settings.quiz_font;
     const color = argumentParseResult.color || settings.quiz_font_color;
     const bgColor = argumentParseResult.bgColor || settings.quiz_background_color;
     const size = argumentParseResult.size || settings.quiz_font_size;
     const text = argumentParseResult.remainingString || '日本語';
+
+    if (fontFamily.toLowerCase() === fontHelper.RANDOM_FONT_ALIAS) {
+      fontFamily = fontHelper.fonts[0].fontFamily;
+    }
 
     if (Array.from(text).length > 5) {
       return throwPublicErrorInfo('Draw', 'Please give me no more than 5 characters to draw.', 'Input too long');
     }
 
     const renderResult = await render(text, color, bgColor, size, fontFamily, false);
-    const fontCharWarning = fontHelper.fontSupportsString(fontFamily, text)
+    const fontCharWarning = fontHelper.fontFamilyCanRenderString(fontFamily, text)
       ? ''
       : '**WARNING: The selected font doesn\'t support some characters in your input.**';
 

@@ -23,12 +23,11 @@ const DeckCollection = require('./../common/quiz/deck_collection.js');
 const Session = require('./../common/quiz/session.js');
 const trimEmbed = require('./../common/util/trim_embed.js');
 const audioConnectionManager = require('./../discord/audio_connection_manager.js');
-const fontHelper = require('./../common/font_helper.js');
+const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
-const NEW_QUESTION_DELAY_IN_MS_FOR_USER_OVERRIDE = 3000;
 const MASTERY_NAME = 'conquest';
 const CONQUEST_NAME = 'inferno';
 const MASTERY_EXTENSION = `-${MASTERY_NAME}`;
