@@ -101,6 +101,14 @@ class FontHelper {
     this.allowedFonts = this.fonts.filter(f => !f.hidden);
   }
 
+  registerFonts(canvas) {
+    this.fonts.forEach((font) => {
+      font.filePaths.forEach((filePath) => {
+        canvas.registerFont(filePath, { family: font.fontFamily });
+      });
+    });
+  }
+
   getFontForAlias(fontAlias) {
     if (fontAlias.toLowerCase() === RANDOM_FONT_ALIAS) {
       return getRandomElement(this.fonts);

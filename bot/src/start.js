@@ -4,10 +4,10 @@ const path = require('path');
 const fs = require('fs');
 const config = require('./../../config/config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
-const canvasInit = require('./common/canvas_init.js');
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const { FontHelper } = require('kotoba-node-common');
+const Canvas = require('canvas');
 
 const { ConsoleLogger } = Monochrome;
 
@@ -127,6 +127,7 @@ const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
 const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
 globals.fontHelper = new FontHelper();
 globals.fontHelper.loadFontsSync(fontPath, fontCharacterMapPath);
+globals.fontHelper.registerFonts(Canvas);
 
 const monochrome = createBot();
 
@@ -137,4 +138,3 @@ globals.monochrome = monochrome;
 checkApiKeys(monochrome);
 monochrome.connect();
 loadShiritoriForeverChannels(monochrome);
-canvasInit(globals.fontHelper);

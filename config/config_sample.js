@@ -36,4 +36,9 @@ module.exports = {
       secret: 'a secret for sessions. you can enter anything here, just make it long and unguessable and then never change it',
     },
   },
+
+  // Required for furigana bot command
+  worker: {
+    furiganaApiUri: '',
+  },
 };
