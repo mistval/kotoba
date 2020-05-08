@@ -4,7 +4,7 @@
   "description": "A Discord bot for learning Japanese",
   "main": "./src/start.js",
   "scripts": {
-    "start": "node --max_old_space_size=2500 .",
+    "start": "node --max_old_space_size=3000 .",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildall": "node ./src/build/buildall.js",
