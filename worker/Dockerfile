@@ -2,7 +2,6 @@ FROM node:12.16.1
 
 WORKDIR /var
 COPY ./resources/fonts ./resources/fonts
-COPY ./config ./config
 COPY ./node-common ./node-common
 WORKDIR /var/node-common
 RUN npm install
