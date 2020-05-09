@@ -1,10 +1,10 @@
 const models = require('./mongoose_models');
 const database = require('./mongodb.js');
 const constants = require('./constants.js');
-const FontHelper = require('./font_helper.js');
+const initializeFonts = require('./initialize_fonts.js');
 
 module.exports = {
-  FontHelper,
+  initializeFonts,
   models,
   database,
   constants,

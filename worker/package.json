@@ -7,7 +7,8 @@
     "start": "node --experimental-worker ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint ./src/",
-    "lintfix": "./node_modules/.bin/eslint --fix ./src/"
+    "lintfix": "./node_modules/.bin/eslint --fix ./src/",
+    "buildfontcharactermap": "node ../node-common/initialize_fonts.js ../resources/fonts ./generated/font_character_map.json"
   },
   "author": "",
   "license": "MIT",

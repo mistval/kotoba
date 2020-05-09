@@ -11,7 +11,7 @@
     "buildshiritori": "node ./src/build/build_shiritori_data.js",
     "buildpronunciation": "node ./src/build/build_pronunciation_data.js",
     "buildquiz": "node ./src/build/build_quiz_decks.js",
-    "buildfontcharactermap": "node ./src/build/build_font_character_map.js"
+    "buildfontcharactermap": "node ../node-common/initialize_fonts.js ../resources/fonts ./generated/font_character_map.json"
   },
   "repository": {
     "type": "git",
