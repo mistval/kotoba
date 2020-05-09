@@ -1,7 +1,8 @@
-const awaitHispadicIndex = require('../common/hispadic.js');
 const { Navigation } = require('monochrome-bot');
+const axios = require('axios').create({ timeout: 10000 });
 const constants = require('../common/constants.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
+const { hispadicApiUri } = require('./../../../config/config.js').bot;
 
 const MAX_RESULTS = 20;
 const MAX_LINES_PER_PAGE = 16;
@@ -74,8 +75,17 @@ module.exports = {
       return throwPublicErrorInfo('Español', `Usa ${prefix}español [palabra] para buscar una palabra. Por ejemplo: ${prefix}español 瞬間`, 'No suffix');
     }
 
-    const hispadicIndex = await awaitHispadicIndex;
-    const allResults = hispadicIndex.search(suffix, MAX_RESULTS);
+    let allResults;
+    try {
+      allResults = (await axios.get(`${hispadicApiUri}?query=${encodeURIComponent(suffix)}`)).data;
+    } catch (err) {
+      return throwPublicErrorFatal(
+        'Hispadic',
+        'Sorry, there was a problem communicating with the Hispadic service, please try again later.', 'Hispadic CF error',
+        err,
+      );
+    }
+
     const qualityResults = allResults.filter(r => r.matchType > 1);
     const results = qualityResults.length > 0 ? qualityResults : allResults;
 

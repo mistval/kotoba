@@ -15,6 +15,9 @@ module.exports = {
       oxfordAppId: '',
       oxfordApiKey: '',
     },
+
+    // Required for hispadic command
+    hispadicApiUri: '',
   },
 
   // Required for running KotobaWeb.com API

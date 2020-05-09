@@ -1,5 +1,5 @@
 {
-  "name": "furigana-cf",
+  "name": "hispadic-cf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "kuroshiro": "git+https://github.com/mistval/kuroshiro.git#npm_module",
-    "kuroshiro-analyzer-kuromoji": "^1.1.0"
+    "edict-index": "0.0.2"
   }
 }
