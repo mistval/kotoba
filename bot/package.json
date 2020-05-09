@@ -26,13 +26,11 @@
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
     "@google-cloud/logging-bunyan": "1.2.2",
-    "adm-zip": "0.4.13",
     "axios": "0.19.0",
     "bunyan": "1.8.12",
     "canvas": "2.6.1",
     "cheerio": "1.0.0-rc.2",
     "disk-array": "1.0.1",
-    "edict-index": "0.0.2",
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
     "kitsu": "7.0.4",
