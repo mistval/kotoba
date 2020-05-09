@@ -6,8 +6,8 @@ const config = require('./../../config/config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
-const { FontHelper } = require('kotoba-node-common');
 const Canvas = require('canvas');
+const { initializeFonts } = require('kotoba-node-common');
 
 const { ConsoleLogger } = Monochrome;
 
@@ -125,9 +125,7 @@ function checkApiKeys(monochrome) {
 
 const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
 const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
-globals.fontHelper = new FontHelper();
-globals.fontHelper.loadFontsSync(fontPath, fontCharacterMapPath);
-globals.fontHelper.registerFonts(Canvas);
+globals.fontHelper = initializeFonts(fontPath, fontCharacterMapPath, Canvas);
 
 const monochrome = createBot();
 

@@ -1,16 +1,14 @@
 const path = require('path');
 const renderFurigana = require('render-furigana');
-const { FontHelper } = require('kotoba-node-common');
+const { initializeFonts } = require('kotoba-node-common');
 const Canvas = require('canvas');
 const Config = require('./../../config/config.js');
 const fetch = require('node-fetch');
 
 const FONT_PATH = path.join(__dirname, '..', '..', 'resources', 'fonts');
-const CHARACTER_MAP_PATH = path.join(__dirname, '..', 'generated', 'font_char_map.json');
+const CHARACTER_MAP_PATH = path.join(__dirname, '..', 'generated', 'font_character_map.json');
 
-const fontHelper = new FontHelper();
-fontHelper.loadFontsSync(FONT_PATH, CHARACTER_MAP_PATH);
-fontHelper.registerFonts(Canvas);
+const fontHelper = initializeFonts(FONT_PATH, CHARACTER_MAP_PATH, Canvas);
 
 async function getFurigana(text) {
   const fetchResult = await fetch(`${Config.worker.furiganaApiUri}?text=${encodeURIComponent(text)}`);
