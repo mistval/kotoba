@@ -25,7 +25,6 @@ RUN service mongodb start ; sleep 15 && npm run buildpronunciation && npm run bu
 COPY ./resources/quiz_audio ./../resources/quiz_audio
 
 COPY ./resources/fonts ./../resources/fonts
-COPY ./bot/src/common/font_helper.js ./src/common/font_helper.js
 RUN npm run buildfontcharactermap
 
 COPY ./resources/quiz_data ./../resources/quiz_data
