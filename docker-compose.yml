@@ -43,6 +43,8 @@ services:
     restart: always
     environment: 
       MONGO_HOST: 'mongo_readwrite:27017'
+    volumes:
+      - ./config:/var/config
     depends_on:
       - mongo_readwrite
   mongo_readwrite:

@@ -1,5 +1,5 @@
 {
-  "name": "kotoba-node-common",
+  "name": "get-furigana",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "fontkit": "^1.8.1",
-    "glob": "^7.1.6",
-    "mongoose": "5.7.9",
-    "validate-color": "^1.0.8"
+    "kuroshiro": "git+https://github.com/mistval/kuroshiro.git#npm_module",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0"
   }
 }
