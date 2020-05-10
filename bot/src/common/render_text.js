@@ -10,7 +10,7 @@ const BASE_RIGHT_PADDING_IN_PIXELS = 6;
 const TOTAL_VERTICAL_PADDING_IN_PIXELS = TOP_PADDING_IN_PIXELS + BOTTOM_PADDING_IN_PIXELS;
 
 function render(text, textColor = 'black', backgroundColor = 'white', fontSize = 96, fontSetting = 'Yu Mincho', allowFontFallback = true) {
-  const fontFamily = fontHelper.getFontForAlias(fontSetting).fontFamily;
+  const { fontFamily } = fontHelper.getFontForAlias(fontSetting);
   const coercedFont = allowFontFallback
     ? fontHelper.coerceFontFamily(fontFamily, text)
     : fontFamily;
