@@ -5,7 +5,10 @@ let connectPromise;
 function connect() {
   if (!connectPromise) {
     connectPromise = new Promise((fulfill, reject) => {
-      mongoose.connect('mongodb://localhost/kotoba', { useNewUrlParser: true });
+      mongoose.connect(
+        'mongodb://localhost/kotoba',
+        { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
+      );
       mongoose.connection.on('error', (err) => {
         reject(err);
       });
