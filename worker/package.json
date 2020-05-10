@@ -4,7 +4,7 @@
   "description": "A worker cluster for CPU intensive operations.",
   "main": "src/index.js",
   "scripts": {
-    "start": "node --experimental-worker ./src/index.js",
+    "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
