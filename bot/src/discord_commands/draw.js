@@ -55,7 +55,7 @@ module.exports = {
     const text = argumentParseResult.remainingString || '日本語';
 
     if (fontFamily.toLowerCase() === fontHelper.RANDOM_FONT_ALIAS) {
-      fontFamily = fontHelper.fonts[0].fontFamily;
+      ([{ fontFamily }] = fontHelper.fonts);
     }
 
     if (Array.from(text).length > 5) {

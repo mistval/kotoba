@@ -4,7 +4,6 @@ const constants = require('../common/constants.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
 const { hispadicApiUri } = require('./../../../config/config.js').bot;
 
-const MAX_RESULTS = 20;
 const MAX_LINES_PER_PAGE = 16;
 
 function createFieldForResult(result) {
