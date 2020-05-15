@@ -9,7 +9,7 @@
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildall": "node ./src/build/buildall.js",
     "buildshiritori": "node ./src/build/build_shiritori_data.js",
-    "buildpronunciation": "node ./src/build/build_pronunciation_data.js",
+    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json",
     "buildquiz": "node ./src/build/build_quiz_decks.js",
     "buildfontcharactermap": "node ../node-common/initialize_fonts.js ../resources/fonts ./generated/font_character_map.json"
   },
