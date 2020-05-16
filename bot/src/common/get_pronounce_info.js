@@ -42,6 +42,10 @@ async function getPronounceInfo(queryWord, logger) {
 
   if (pronounceDataForQuery) {
     result.entries = pronounceDataForQuery.map((entry) => {
+      if (!entry.pitchAccent) {
+        return undefined;
+      }
+
       const katakanaLength = entry.katakana.length;
       return {
         hasPitchData: true,
@@ -53,7 +57,7 @@ async function getPronounceInfo(queryWord, logger) {
         pitchAccentClass: entry.pitchAccentClass,
         getAudioClips: () => searchForvo(entry.kanji[0]),
       };
-    });
+    }).filter(e => e);
   } else {
     try {
       const forvoData = await searchForvo(queryWord);
