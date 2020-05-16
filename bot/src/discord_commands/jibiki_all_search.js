@@ -168,7 +168,7 @@ module.exports = {
       }));
 
       const sentencePages = response.data
-        .filter(entry => entry.sentences.length > 0)
+        .filter(entry => entry.sentences && entry.sentences.length > 0)
         .map(entry => ({
           embed: {
             title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
@@ -218,16 +218,21 @@ module.exports = {
           },
         }));
 
+      const chapterDictionary = {
+        '🇼': NavigationChapter.fromContent(wordPages),
+        '🇰': NavigationChapter.fromContent(kanjiPages),
+      };
+
+      if (sentencePages.length > 0) {
+        chapterDictionary['🇸'] = NavigationChapter.fromContent(sentencePages);
+      }
+
       return monochrome.getNavigationManager().show(
         new Navigation(
           msg.author.id,
           true,
           '🇼',
-          {
-            '🇼': NavigationChapter.fromContent(wordPages),
-            '🇰': NavigationChapter.fromContent(kanjiPages),
-            '🇸': NavigationChapter.fromContent(sentencePages),
-          },
+          chapterDictionary,
         ),
         constants.NAVIGATION_EXPIRATION_TIME,
         msg.channel,
