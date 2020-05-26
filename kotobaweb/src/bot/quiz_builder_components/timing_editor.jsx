@@ -91,7 +91,11 @@ class TimingEditor extends Component {
     });
   }
 
-  handleCommitTiming = () => {
+  handleCommitTiming = (ev) => {
+    if (ev) {
+      ev.preventDefault();
+    }
+
     window.$(this.customTimingModal).modal('hide');
     this.props.onTimingChanged({
       answerTimeLimit: this.state.pendingTimeLimit,
