@@ -1017,6 +1017,16 @@ function getDeckNameAndModifierInformation(deckNames) {
   });
 }
 
+function showSettingsHelp(msg) {
+  return msg.channel.createMessage({
+    embed: {
+      title: 'Settings',
+      description: `You can use the **${msg.prefix}settings** command to configure settings.`,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  });
+}
+
 function showHelp(msg, isMastery, isConquest, masteryEnabled) {
   const prefix = msg.prefix;
 
@@ -1299,6 +1309,13 @@ module.exports = {
     serverSettingsOverridden.quiz_font_color = fontArgParseResult.color || serverSettingsOverridden.quiz_font_color;
     serverSettingsOverridden.quiz_font_size = fontArgParseResult.size || serverSettingsOverridden.quiz_font_size;
     serverSettingsOverridden.quiz_background_color = fontArgParseResult.bgColor || serverSettingsOverridden.quiz_background_color;
+
+    const hasSettingsToken = remainingTokens2.indexOf('settings') !== -1
+      || remainingTokens2.indexOf('setting') !== -1;
+
+    if (hasSettingsToken) {
+      return showSettingsHelp(msg);
+    }
 
     // Help operation
     if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
