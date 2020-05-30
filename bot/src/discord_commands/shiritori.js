@@ -1,13 +1,12 @@
 const assert = require('assert');
-
 const { Permissions } = require('monochrome-bot');
-
-const shiritoriManager = require('shiritori');
-
-const { REJECTION_REASON } = shiritoriManager;
+const shiritoriManager = require('kotoba-node-common').shiritori;
 const constants = require('./../common/constants.js');
 const errors = require('./../common/util/errors.js');
 const retryPromise = require('./../common/util/retry_promise.js');
+const globals = require('./../common/globals.js');
+
+const { REJECTION_REASON } = shiritoriManager;
 
 // Piggyback on the quiz scores for now.
 const quizScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
@@ -382,7 +381,7 @@ module.exports = {
       autoRejoin: false,
     };
 
-    shiritoriManager.createGame(locationId, clientDelegate, settings);
+    shiritoriManager.createGame(locationId, clientDelegate, settings, globals.resourceDatabase);
     shiritoriManager.addBotPlayer(locationId, bot.user.id);
     shiritoriManager.addRealPlayer(locationId, msg.author.id);
 
