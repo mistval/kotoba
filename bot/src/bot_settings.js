@@ -105,7 +105,7 @@ module.exports = [
       },
       {
         userFacingName: 'Conquest and Inferno modes enabled',
-        description: 'This setting controls whether Conquest and Inferno mode quizzes can be run. Say k!quiz-conquest and k!quiz-inferno to find out more about what those are. Since only the person who started a Conquest or Inferno mode quiz or a server admin can stop it, it has potential to be disruptive if not controlled, so it is disabled by default.',
+        description: 'This setting controls whether Conquest and Inferno mode quizzes can be run. Say `k!quiz conquest` and `k!quiz inferno` to find out more about what those are.',
         allowedValuesDescription: 'Either **enabled** or **disabled**',
         uniqueId: 'quiz/japanese/conquest_and_inferno_enabled',
         userSetting: false,

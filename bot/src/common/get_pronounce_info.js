@@ -2,7 +2,7 @@
 
 const convertToHiragana = require('./util/convert_to_hiragana.js');
 const searchForvo = require('./forvo_search.js');
-const pronounceDb = require('./pronunciation_db.js');
+const globals = require('./globals.js');
 
 function convertIndexStringToTrueFalse(wordLength, indexString) {
   if (!indexString) {
@@ -38,7 +38,8 @@ async function getPronounceInfo(queryWord, logger) {
   };
 
   const queryAsHiragana = convertToHiragana(queryWord);
-  const pronounceDataForQuery = await pronounceDb.search(queryAsHiragana);
+  const pronounceDataForQuery = await globals.resourceDatabase
+    .searchPronunciation(queryAsHiragana);
 
   if (pronounceDataForQuery) {
     result.entries = pronounceDataForQuery.map((entry) => {

@@ -70,7 +70,6 @@ const sequences = [
   'そ',
   'こ',
   'お',
-  'ぴゃ',
   'びゃ',
   'じゃ',
   'ぎゃ',
@@ -92,7 +91,6 @@ const sequences = [
   'ちゅ',
   'しゅ',
   'きゅ',
-  'ぴょ',
   'びょ',
   'じょ',
   'ぎょ',
@@ -103,9 +101,6 @@ const sequences = [
   'ちょ',
   'しょ',
   'きょ',
-  'ぢゃ',
-  'ぢゅ',
-  'ぢょ',
 ];
 
 assert(sequences.filter((sequence, i) => sequences.indexOf(sequence) === i).length === sequences.length, 'Duplicate sequences');

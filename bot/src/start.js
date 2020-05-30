@@ -7,7 +7,7 @@ const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const Canvas = require('canvas');
-const { initializeFonts } = require('kotoba-node-common');
+const { initializeFonts, initializeResourceDatabase } = require('kotoba-node-common');
 
 const { ConsoleLogger } = Monochrome;
 
@@ -123,16 +123,36 @@ function checkApiKeys(monochrome) {
   }
 }
 
-const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
-const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
-globals.fontHelper = initializeFonts(fontPath, fontCharacterMapPath, Canvas);
+async function start() {
+  const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
+  const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
+  globals.fontHelper = initializeFonts(fontPath, fontCharacterMapPath, Canvas);
 
-const monochrome = createBot();
+  const resourceDatabasePath = path.join(__dirname, '..', 'generated', 'resources.dat');
+  const pronunciationDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'pronunciation.json');
+  const randomWordDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'random_words.json');
+  const wordFrequencyDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'frequency.json');
+  const edictDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'edictutf8.txt');
+  globals.resourceDatabase = await initializeResourceDatabase(
+    resourceDatabasePath,
+    pronunciationDataPath,
+    randomWordDataPath,
+    wordFrequencyDataPath,
+    edictDataPath,
+  );
 
-globals.logger = monochrome.getLogger();
-globals.persistence = monochrome.getPersistence();
-globals.monochrome = monochrome;
+  const monochrome = createBot();
 
-checkApiKeys(monochrome);
-monochrome.connect();
-loadShiritoriForeverChannels(monochrome);
+  globals.logger = monochrome.getLogger();
+  globals.persistence = monochrome.getPersistence();
+  globals.monochrome = monochrome;
+
+  checkApiKeys(monochrome);
+  monochrome.connect();
+  loadShiritoriForeverChannels(monochrome);
+}
+
+start().catch((err) => {
+  console.warn(err);
+  process.exit(1);
+});
