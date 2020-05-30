@@ -11,10 +11,10 @@
   "license": "MIT",
   "dependencies": {
     "fontkit": "^1.8.1",
-    "glob": "^7.1.6",
+    "glob": "7.1.6",
     "mongoose": "5.7.9",
-    "sqlite": "^4.0.7",
-    "sqlite3": "^4.2.0",
-    "validate-color": "^1.0.8"
+    "sqlite": "4.0.7",
+    "sqlite3": "4.2.0",
+    "validate-color": "2.1.0"
   }
 }
