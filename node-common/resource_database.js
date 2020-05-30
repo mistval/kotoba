@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const sqlite = require('sqlite');
-const sqlite3 = require('sqlite3');
 const convertToHiragana = require('./convert_to_hiragana.js');
 const shiritoriWordStartingSequences = require('./shiritori/shiritori_word_starting_sequences.js');
 
@@ -197,6 +196,7 @@ class ResourceDatabase {
 
     await fs.promises.mkdir(path.dirname(databasePath), { recursive: true });
 
+    const sqlite3 = require('sqlite3');
     this.database = await sqlite.open({
       filename: databasePath,
       driver: sqlite3.Database,

@@ -26,7 +26,7 @@ async function getFurigana(text) {
 async function render(text, mainFontSize, textColor, backgroundColor, fontSetting) {
   const furigana = await getFurigana(text);
 
-  const fontFamily = fontHelper.getFontForAlias(fontSetting).fontFamily;
+  const { fontFamily } = fontHelper.getFontForAlias(fontSetting);
   const mainFontSizeDivisibleBy2 = Math.floor(mainFontSize / 2) * 2;
   const furiganaFontSize = mainFontSizeDivisibleBy2 / 2;
   const kanjiFont = `${mainFontSizeDivisibleBy2}px ${fontFamily}`;
