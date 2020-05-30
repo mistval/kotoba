@@ -8,6 +8,7 @@ const readline = require('readline');
 const rfs = require('rotating-file-stream');
 const moment = require('moment');
 const mongoConnection = require('kotoba-node-common').database.connection;
+const { initializeResourceDatabase } = require('kotoba-node-common');
 const path = require('path');
 
 const app = express();
@@ -86,10 +87,6 @@ app.use(express.json({ limit: '4mb' }));
 app.use(express.urlencoded({ extended: false, limit: '4mb' }));
 app.use('/api/', routes);
 
-// Start socket servers
-kanjiGame.startListen(sockets);
-shiritori.startListen(sockets);
-
 // Kill the process immediately on SIGINT in Windows.
 // Otherwise mongoose keeps it running for a long time
 // after SIGINT.
@@ -103,5 +100,16 @@ if (process.platform === "win32") {
     process.exit();
   });
 }
+
+const databasePath = path.join(__dirname, 'generated', 'resources.dat');
+
+initializeResourceDatabase(databasePath).then((db) => {
+  // Start socket servers
+  kanjiGame.startListen(sockets);
+  shiritori.startListen(sockets, db);
+}).catch((err) => {
+  console.warn(err);
+  process.exit(1);
+});
 
 module.exports = app;

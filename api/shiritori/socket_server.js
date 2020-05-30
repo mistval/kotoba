@@ -10,7 +10,7 @@
  */
 
 const EventEmitter = require('events');
-const shiritoriManager = require('shiritori');
+const shiritoriManager = require('kotoba-node-common').shiritori;
 const assert = require('assert');
 const NAMESPACE = require('./../common/socket_namespaces.js').SHIRITORI;
 const events = require('./../common/shiritori/socket_events.js');
@@ -36,6 +36,8 @@ const botUsernames = [
   'OptimusPrime (Bot)',
 ];
 
+let resourceDatabase;
+
 class Player {
   constructor(username, avatar, bot) {
     this.username = username;
@@ -60,7 +62,7 @@ class Room extends EventEmitter {
     this.lastKnownPlayerTurnSequence = [];
     this.ownerUsername = '';
 
-    shiritoriManager.createGame(ID, this, config);
+    shiritoriManager.createGame(ID, this, config, resourceDatabase);
 
     for (let i = 0; i < config.botPlayers; i += 1) {
       const botUsername = botUsernames[i];
@@ -401,7 +403,8 @@ function registerJoin(socket) {
   });
 }
 
-function startListen(sockets) {
+function startListen(sockets, db) {
+  resourceDatabase = db;
   const socketNamespace = sockets.of(NAMESPACE);
 
   socketNamespace.on('connection', (socket) => {

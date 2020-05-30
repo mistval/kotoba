@@ -186,6 +186,17 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, edictPath) {
 class ResourceDatabase {
   async load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, edictPath) {
     const needsBuild = !fs.existsSync(databasePath);
+    if (needsBuild && (
+      !pronunciationDataPath
+      || !randomWordDataPath
+      || !wordFrequencyDataPath
+      || !edictPath
+    )) {
+      throw new Error('Cannot build resource database. Required resource paths not provided.');
+    }
+
+    await fs.promises.mkdir(path.dirname(databasePath), { recursive: true });
+
     this.database = await sqlite.open({
       filename: databasePath,
       driver: sqlite3.Database,
