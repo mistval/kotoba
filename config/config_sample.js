@@ -23,11 +23,7 @@ module.exports = {
   // Required for running KotobaWeb.com API
   api: {
     domain: 'http://localhost', // the domain that you're running the API on.
-    mail: {
-      senderGmailUsername: 'gmailUsernameForAccountToSendContactFormMailFrom',
-      senderGmailPassword: 'passwordForAboveAccount',
-      recipientAddress: 'emailAddressToWhichToSendContactFormMail',
-    },
+    contactWebhookAddress: 'https://discordapp.com/api/webhooks/xxxxx/yyyyy', // The address of a Discord webhook to send contact form mail to
     auth: {
       discord: {
         clientId: 'your Discord application client ID for OAuth2',
