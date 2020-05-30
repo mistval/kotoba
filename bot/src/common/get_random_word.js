@@ -1,4 +1,4 @@
-const wordList = require('./../../../resources/dictionaries/random_word_corpus.json');
+const wordList = require('./../../../resources/dictionaries/random_words.json');
 
 const totalNumberOfWords = Object.keys(wordList)
   .reduce((total, key) => total + wordList[key].length, 0);

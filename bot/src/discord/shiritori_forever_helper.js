@@ -1,5 +1,5 @@
 
-const shiritoriManager = require('shiritori');
+const shiritoriManager = require('kotoba-node-common').shiritori;
 const globals = require('./../common/globals.js');
 const state = require('./../common/static_state.js');
 const assert = require('assert');
@@ -11,7 +11,8 @@ const { Navigation } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 const retryPromise = require('./../common/util/retry_promise.js');
 
-const japaneseGameStrategy = shiritoriManager.strategies.japanese;
+const JapaneseGameStrategy = shiritoriManager.strategies.japanese;
+let japaneseGameStrategy;
 
 const SHIRITORI_CHANNELS_LIST_KEY = 'shiritoriForeverDiscordChannels';
 const CHANNEL_SHIRITORI_KEY_PREFIX = 'shiritoriChannelDiscord_';
@@ -41,6 +42,8 @@ async function loadChannels(monochrome) {
       err,
     });
   }
+
+  japaneseGameStrategy = new JapaneseGameStrategy(globals.resourceDatabase);
 }
 
 function createDiscordContentForScoresPage(scoresPage) {

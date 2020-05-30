@@ -1,4 +1,4 @@
-const shiritoriManager = require('shiritori');
+const shiritoriManager = require('kotoba-node-common').shiritori;
 
 module.exports = {
   name: 'Shiritori Answer',
