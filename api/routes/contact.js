@@ -1,15 +1,7 @@
+const fetch = require('node-fetch');
 const routes = require('express').Router();
-const nodemailer = require('nodemailer');
-const config = require('./../../config/config.js').api.mail;
+const { contactWebhookAddress } = require('./../../config/config.js').api;
 const rateLimit = require('express-slow-down');
-
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: config.senderGmailUsername,
-    pass: config.senderGmailPassword,
-  },
-});
 
 const limiter = rateLimit({
   windowMs: 3 * 60 * 1000, // 3 minutes
@@ -18,25 +10,31 @@ const limiter = rateLimit({
 });
 
 routes.post('/', limiter, async (req, res, next) => {
-  const { email, message } = req.body;
-
-  const mailOptions = {
-    from: config.senderGmailUsername,
-    to: config.recipientAddress,
-    subject: 'Message via kotobaweb.com',
-    html: `From ${email}: ${message}`,
-  };
-
   try {
-    await transporter.sendMail(mailOptions);
+    const { email, message } = req.body;
+
+    await fetch(
+      contactWebhookAddress,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          embeds: [{
+            title: 'Contact received',
+            fields: [
+              { name: 'Sender', value: email },
+              { name: 'Message', value: message },
+            ],
+          }],
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    );
+
     res.json({ success: true });
   } catch (err) {
-    res.json({
-      success: false,
-      email: config.recipientAddress,
-    });
-
-    next(err);
+    res.status(500).json({ success: false });
   }
 });
 
