@@ -1,7 +1,7 @@
 
 
 const quizManager = require('./../common/quiz/manager.js');
-const shiritoriManager = require('shiritori');
+const shiritoriManager = require('kotoba-node-common').shiritori;
 
 module.exports = {
   commandAliases: ['endquiz', 'endtest', 'stop', 'quit', 'ｑｓ'],

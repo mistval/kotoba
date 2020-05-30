@@ -130,9 +130,15 @@ async function start() {
 
   const resourceDatabasePath = path.join(__dirname, '..', 'generated', 'resources.dat');
   const pronunciationDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'pronunciation.json');
+  const randomWordDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'random_words.json');
+  const wordFrequencyDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'frequency.json');
+  const edictDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'edictutf8.txt');
   globals.resourceDatabase = await initializeResourceDatabase(
     resourceDatabasePath,
     pronunciationDataPath,
+    randomWordDataPath,
+    wordFrequencyDataPath,
+    edictDataPath,
   );
 
   const monochrome = createBot();
