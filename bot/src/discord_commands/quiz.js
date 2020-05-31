@@ -990,6 +990,7 @@ function parseRangeLimit(rangeLimitStr) {
 }
 
 function getDeckNameAndModifierInformation(deckNames) {
+  const names = {};
   return deckNames.map((deckName) => {
     let nameWithoutExtension = deckName;
     let startIndex;
@@ -1008,13 +1009,19 @@ function getDeckNameAndModifierInformation(deckNames) {
       nameWithoutExtension = nameWithoutExtension.substring(0, nameWithoutExtension.length - 3);
     }
 
-    return {
-      deckNameOrUniqueId: nameWithoutExtension,
-      startIndex,
-      endIndex,
-      mc,
-    };
-  });
+    if (!names[nameWithoutExtension]) {
+      names[nameWithoutExtension] = true;
+
+      return {
+        deckNameOrUniqueId: nameWithoutExtension,
+        startIndex,
+        endIndex,
+        mc,
+      };
+    }
+
+    return undefined;
+  }).filter(x => x);
 }
 
 function showSettingsHelp(msg) {
