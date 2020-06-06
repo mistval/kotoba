@@ -42,9 +42,9 @@ async function render(text, mainFontSize, textColor, backgroundColor, fontSettin
 
   let maxWidthInPixels;
   if (text.length <= 50) {
-    maxWidthInPixels = 450;
+    maxWidthInPixels = 400;
   } else {
-    maxWidthInPixels = Math.min(450 * Math.floor(text.length / 50), 1200);
+    maxWidthInPixels = Math.min(525 * Math.floor(text.length / 50), 1575);
   }
 
   const options = {
