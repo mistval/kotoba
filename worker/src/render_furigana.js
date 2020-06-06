@@ -11,7 +11,15 @@ const CHARACTER_MAP_PATH = path.join(__dirname, '..', 'generated', 'font_charact
 const fontHelper = initializeFonts(FONT_PATH, CHARACTER_MAP_PATH, Canvas);
 
 async function getFurigana(text) {
-  const fetchResult = await fetch(`${Config.worker.furiganaApiUri}?text=${encodeURIComponent(text)}`);
+  const fetchResult = await fetch(`${Config.worker.furiganaApiUri}`, {
+    method: "post",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ text }),
+  });
+
   if (!fetchResult.ok) {
     throw new Error(`Unexpected response from furigana API: ${fetchResult.status}`);
   }
@@ -32,8 +40,12 @@ async function render(text, mainFontSize, textColor, backgroundColor, fontSettin
   const kanjiFont = `${mainFontSizeDivisibleBy2}px ${fontFamily}`;
   const furiganaFont = `${furiganaFontSize}px ${fontFamily}`;
 
-  // This is pretty arbitrary but works well.
-  const maxWidthInPixels = Math.ceil(Math.floor((mainFontSizeDivisibleBy2 / 40) * 600), 600);
+  let maxWidthInPixels;
+  if (text.length <= 50) {
+    maxWidthInPixels = 450;
+  } else {
+    maxWidthInPixels = Math.min(450 * Math.floor(text.length / 50), 1200);
+  }
 
   const options = {
     maxWidthInPixels,

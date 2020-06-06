@@ -45,7 +45,8 @@ module.exports = {
     } catch (err) {
       return throwPublicErrorFatal(
         'Furigana',
-        'Sorry, there was a problem communicating with the furigana service, please try again later.', 'Furigana worker error',
+        'Sorry, there was a problem communicating with the furigana service, please try again later.',
+        'Furigana worker error',
         err,
       );
     }
