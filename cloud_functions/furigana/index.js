@@ -14,6 +14,9 @@ function isBreakableCharacter(char) {
   if (char >= '\u4e00' && char <= '\u9faf') {
     return true; // ideographs
   }
+  if (/\s/.test(char)) {
+    return true;
+  }
   return false;
 }
 
