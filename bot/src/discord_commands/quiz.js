@@ -1389,8 +1389,6 @@ module.exports = {
 
       if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
         return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **${prefix}quiz** to see the decks I have!`, null, msg);
-      } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.INDEX_OUT_OF_RANGE) {
-        return msg.channel.createMessage(`Something is wrong with the range for ${decksLookupResult.deckName}. The maximum range for that deck is (${decksLookupResult.allowedStart}-${decksLookupResult.allowedEnd}).`);
       } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.ALL_DECKS_FOUND) {
         ({ decks } = decksLookupResult);
       } else {
