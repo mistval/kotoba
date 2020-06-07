@@ -22,7 +22,6 @@ const CACHE_SIZE_IN_PAGES = 1000;
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
   DECK_NOT_FOUND: 1,
-  INDEX_OUT_OF_RANGE: 2,
 };
 
 const DeletionStatus = {
@@ -417,29 +416,21 @@ async function deleteInternetDeck(searchTerm, deletingUserId) {
   return returnStatus;
 }
 
-class OutOfBoundsCardRangeStatus {
-  constructor(deck) {
-    this.status = DeckRequestStatus.INDEX_OUT_OF_RANGE;
-    this.deckName = deck.name;
-    this.allowedStart = 1;
-    this.allowedEnd = deck.cards.length;
-  }
-}
-
-function createOutOfBoundsCardRangeStatus(decks) {
-  for (let i = 0; i < decks.length; i += 1) {
-    const deck = decks[i];
+function coerceCardRanges(decks) {
+  decks.forEach((deck) => {
+    if (Number.isNaN(deck.startIndex)) {
+      deck.startIndex = 1;
+    }
+    if (Number.isNaN(deck.endIndex)) {
+      deck.endIndex = deck.cards.length;
+    }
 
     if (deck.startIndex !== undefined || deck.endIndex !== undefined) {
-      if (deck.startIndex < 1
-        || deck.endIndex > deck.cards.length
-        || deck.startIndex > deck.endIndex) {
-        return new OutOfBoundsCardRangeStatus(deck);
-      }
+      deck.startIndex = Math.max(1, Math.min(deck.startIndex || 1, deck.cards.length));
+      deck.endIndex = Math.max(deck.endIndex || 1, deck.startIndex || 1);
+      deck.endIndex = Math.max(1, Math.min(deck.endIndex || 1, deck.cards.length));
     }
-  }
-
-  return undefined;
+  });
 }
 
 function readFile(path) {
@@ -564,10 +555,7 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
     }
   }
 
-  const outOfBoundsStatus = createOutOfBoundsCardRangeStatus(decks);
-  if (outOfBoundsStatus) {
-    return outOfBoundsStatus;
-  }
+  coerceCardRanges(decks);
 
   // If all decks were found return success.
   return createAllDecksFoundStatus(decks);
