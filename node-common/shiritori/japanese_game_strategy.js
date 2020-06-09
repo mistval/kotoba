@@ -25,11 +25,13 @@ function getNextWordMustStartWith(currentWordReading) {
   const finalCharacter = currentWordReading[currentWordReading.length - 1];
   if (finalCharacter === 'ぢ') {
     return ['じ', 'ぢ'];
-  } if (finalCharacter === 'づ') {
+  } else if (finalCharacter === 'づ') {
     return ['ず', 'づ'];
-  } if (finalCharacter === 'を') {
+  } else if (finalCharacter === 'を') {
     return ['お', 'を'];
-  } if (!largeHiraganaForSmallHiragana[finalCharacter]) {
+  } else if (finalCharacter === 'っ') {
+    return ['つ', 'っ'];
+  } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
     return [finalCharacter];
   }
   return [
