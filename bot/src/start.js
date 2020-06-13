@@ -89,6 +89,7 @@ function createBot() {
         'guildPresences',
         'guildMessages',
         'guildMessageReactions',
+        'guildVoiceStates',
         'directMessages',
         'directMessageReactions',
       ],
