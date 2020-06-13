@@ -846,6 +846,7 @@ async function load(
   masteryModeEnabled,
   internetCardsAllowed,
   logger,
+  settings,
 ) {
   // TODO: Need to prevent loading decks with internet cards if internet decks aren't enabled.
   // Tech debt: The deck collection shouldn't be reloading itself.
@@ -894,6 +895,7 @@ async function load(
     saveData,
     scoreScopeId,
     messageSender,
+    settings,
   );
 
   try {
@@ -947,8 +949,8 @@ function createSettings(settingsBlob, gameMode) {
   const font = settingsBlob['quiz_font'];
 
   return {
-    scoreLimit: gameMode.questionLimitOverride || serverScoreLimit,
-    unansweredQuestionLimit: gameMode.unansweredQuestionLimitOverride || serverUnansweredQuestionLimit,
+    scoreLimit: gameMode ? (gameMode.questionLimitOverride || serverScoreLimit) : undefined,
+    unansweredQuestionLimit: gameMode ? (gameMode.unansweredQuestionLimitOverride || serverUnansweredQuestionLimit) : undefined,
     answerTimeLimitInMs: serverAnswerTimeLimitInMs,
     newQuestionDelayAfterUnansweredInMs: serverNewQuestionDelayAfterUnansweredInMs,
     newQuestionDelayAfterAnsweredInMs: serverNewQuestionDelayAfterAnsweredInMs,
@@ -1354,7 +1356,8 @@ module.exports = {
     // Load operation
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
     if (isLoad) {
-      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger());
+      const loadSettings = createSettings(serverSettingsOverridden);
+      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
     }
 
     const invokerId = msg.author.id;
