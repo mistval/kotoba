@@ -84,6 +84,14 @@ function createBot() {
         MESSAGE_UPDATE: true,
         TYPING_START: true,
       },
+      intents: [
+        'guilds',
+        'guildPresences',
+        'guildMessages',
+        'guildMessageReactions',
+        'directMessages',
+        'directMessageReactions',
+      ],
     },
     ...config,
   };
