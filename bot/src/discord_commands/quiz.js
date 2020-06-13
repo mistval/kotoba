@@ -948,7 +948,7 @@ function createSettings(settingsBlob, gameMode) {
   const backgroundColor = settingsBlob['quiz_background_color'];
   const font = settingsBlob['quiz_font'];
 
-  return {
+  const settings = {
     scoreLimit: gameMode ? (gameMode.questionLimitOverride || serverScoreLimit) : undefined,
     unansweredQuestionLimit: gameMode ? (gameMode.unansweredQuestionLimitOverride || serverUnansweredQuestionLimit) : undefined,
     answerTimeLimitInMs: serverAnswerTimeLimitInMs,
@@ -960,6 +960,12 @@ function createSettings(settingsBlob, gameMode) {
     backgroundColor,
     font,
   };
+
+  Object.entries(settings)
+    .filter(e => e[1] === undefined)
+    .forEach(e => { delete settings[e[0]] });
+  
+  return settings;
 }
 
 function getReviewDeckOrThrow(deck, prefix) {
