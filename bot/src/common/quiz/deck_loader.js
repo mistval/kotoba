@@ -566,13 +566,16 @@ function deepCopy(object) {
 }
 
 function createReviewDeck(unansweredCards) {
+  const cards = deepCopy(unansweredCards);
+  cards.forEach((c) => { delete c.deckProgress });
+
   return {
     uniqueId: 'REVIEW',
     name: 'Review Quiz',
     article: 'a',
-    requiresAudioConnection: unansweredCards.some(card => card.requiresAudioConnection),
-    isInternetDeck: unansweredCards.some(card => card.isInternetCard),
-    cards: createCardGetterFromInMemoryArray(deepCopy(unansweredCards)),
+    requiresAudioConnection: cards.some(card => card.requiresAudioConnection),
+    isInternetDeck: cards.some(card => card.isInternetCard),
+    cards: createCardGetterFromInMemoryArray(cards),
   };
 }
 
