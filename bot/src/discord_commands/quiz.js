@@ -964,7 +964,7 @@ function createSettings(settingsBlob, gameMode) {
   Object.entries(settings)
     .filter(e => e[1] === undefined)
     .forEach(e => { delete settings[e[0]] });
-  
+
   return settings;
 }
 
