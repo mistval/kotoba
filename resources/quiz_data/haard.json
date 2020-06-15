@@ -1890,7 +1890,8 @@
     {
       "question": "俘虜",
       "answer": [
-        "ふりょ"
+        "ふりょ",
+        "とりこ"
       ],
       "meaning": "【１級】captive, prisoner of war"
     },
@@ -10892,7 +10893,13 @@
       ],
       "meaning": "【１級】pompadour-like hair style, popular for unmarried women in the Edo period, shimada coiffure"
     },
-    null,
+    {
+      "question": "老い耄れ",
+      "answer": [
+        "おいぼれ"
+      ],
+      "meaning": "【１級】"
+    },
     {
       "question": "峻別",
       "answer": [
@@ -11421,7 +11428,8 @@
     {
       "question": "帯鋸",
       "answer": [
-        "おびのこ"
+        "おびのこ",
+        "おびのこぎり"
       ],
       "meaning": "【準１級】band saw"
     },
@@ -11806,7 +11814,8 @@
     {
       "question": "庵主",
       "answer": [
-        "あんしゅ"
+        "あんしゅ",
+        "あんじゅ"
       ],
       "meaning": "【準１級】owner of a hermitage, abbess, prioress, nun in charge of a Buddhist convent"
     },
@@ -12416,7 +12425,8 @@
     {
       "question": "御簾",
       "answer": [
-        "みす"
+        "みす",
+        "ぎょれん"
       ],
       "meaning": "【準１級】bamboo blind"
     },
@@ -13896,7 +13906,8 @@
     {
       "question": "手燭",
       "answer": [
-        "しゅしょく"
+        "しゅしょく",
+        "てしょく"
       ],
       "meaning": "【準１級】portable candlestick"
     },
@@ -17942,7 +17953,9 @@
     {
       "question": "杵",
       "answer": [
-        "きね"
+        "きね",
+        "き",
+        "しょ"
       ],
       "meaning": "【準１級】mallet, pestle, pounder"
     },
@@ -19881,7 +19894,8 @@
     {
       "question": "此の間",
       "answer": [
-        "このあいだ"
+        "このあいだ",
+        "このかん"
       ],
       "meaning": "【準１級】the other day, lately, recently, during this period, meanwhile, in the meantime"
     },
@@ -28587,7 +28601,8 @@
     {
       "question": "竹槍",
       "answer": [
-        "たけやり"
+        "たけやり",
+        "ちくそう"
       ],
       "meaning": "【準１級】bamboo spear"
     },
@@ -31406,7 +31421,7 @@
     {
       "question": "老耄",
       "answer": [
-        "おいぼれ"
+        "ろうもう"
       ],
       "meaning": "【１級】"
     },
@@ -33508,7 +33523,9 @@
     {
       "question": "芥",
       "answer": [
-        "あくた"
+        "あくた",
+        "ごみ",
+        "ごもく"
       ],
       "meaning": "【準１級】rubbish, trash, garbage, refuse, trash, rubbish, garbage"
     },
@@ -33609,7 +33626,8 @@
     {
       "question": "花籠",
       "answer": [
-        "はなかご"
+        "はなかご",
+        "けこ"
       ],
       "meaning": "【２級】flower basket, flower basket (or plate) used for flower-scattering rituals"
     },
@@ -34998,7 +35016,8 @@
     {
       "question": "蒼竜",
       "answer": [
-        "そうりょう"
+        "そうりょう",
+        "そうりゅう"
       ],
       "meaning": "【準１級】blue dragon, Azure Dragon (god said to rule over the eastern heavens), seven mansions (Chinese constellations) of the eastern heavens, large horse with a bluish-leaden coat, shape of an old pine tree"
     },
@@ -35735,7 +35754,8 @@
     {
       "question": "藍色",
       "answer": [
-        "あいいろ"
+        "あいいろ",
+        "らんしょく"
       ],
       "meaning": "【２級】indigo blue"
     },
@@ -37412,7 +37432,9 @@
     {
       "question": "褥",
       "answer": [
-        "しとね"
+        "しとね",
+        "にく",
+        "とこしき"
       ],
       "meaning": "【１級】cushion, pillow, mattress"
     },
@@ -38493,7 +38515,8 @@
     {
       "question": "讒言",
       "answer": [
-        "ざんげん"
+        "ざんげん",
+        "ぞうげん"
       ],
       "meaning": "【１級】false charge, slander, defamation"
     },
