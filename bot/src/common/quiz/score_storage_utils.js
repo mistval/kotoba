@@ -475,6 +475,13 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
   return Promise.all(promises);
 }
 
+function clearServerScores(serverId) {
+  return Promise.all([
+    UserServerTotalScoreModel.remove({ serverId }),
+    UserServerDeckScoreModel.remove({ serverId }),
+  ]);
+}
+
 function getGlobalScores(deckNames) {
   return getScores(undefined, deckNames);
 }
@@ -487,5 +494,6 @@ module.exports = {
   addScores,
   getGlobalScores,
   getServerScores,
+  clearServerScores,
   DECK_NOT_FOUND_ERROR_CODE,
 };
