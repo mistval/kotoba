@@ -92,6 +92,8 @@ module.exports = {
       return throwPublicErrorInfo('Español', `No encontré ningún resultado para **${suffix}**.`, 'No results');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const contents = createNavigationContents(results, suffix, msg.author.username);
     const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
 

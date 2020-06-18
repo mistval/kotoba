@@ -210,6 +210,8 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
   const persistence = monochrome.getPersistence();
   const channelID = msg.channel.id;
 
+  monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
   await createMessageForTurnTaken(
     monochrome,
     msg.channel.id,
@@ -264,8 +266,7 @@ function tryHandleMessage(monochrome, msg) {
       return handleAcceptedResult(monochrome, msg, acceptanceResult);
     }
     return handleRejectedResult(monochrome, msg, acceptanceResult);
-  })
-    .then(() => accepted);
+  }).then(() => accepted);
 }
 
 function sendDisabledMessage(monochrome, channelID) {

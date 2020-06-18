@@ -24,6 +24,8 @@ module.exports = {
       return false;
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const prefix = monochrome.getPersistence().getPrimaryPrefixForMessage(msg);
     return msg.channel.createMessage(`Hi ${msg.author.username}, say **${prefix}help** to see my commands!`);
   },

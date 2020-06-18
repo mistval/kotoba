@@ -56,6 +56,7 @@ function createBot() {
     genericDMReply: 'Say **<prefix>help** to see my commands!',
     genericMentionReply: 'Hi <@user>, say **<prefix>help** to see my commands!',
     inviteLinkDmReply: 'You can invite me to your server with this link! https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot&permissions=51264',
+    updateUserFromRestBucketClearInterval: 21600000, // six hours
     statusRotation: [
       '@ me for help!',
       'Half Life 3',
@@ -72,6 +73,7 @@ function createBot() {
     ],
     statusRotationIntervalInSeconds: 600,
     erisOptions: {
+      restMode: true,
       maxShards: 'auto',
       messageLimit: 0,
       disableEvents: {
@@ -86,7 +88,6 @@ function createBot() {
       },
       intents: [
         'guilds',
-        'guildPresences',
         'guildMessages',
         'guildMessageReactions',
         'guildVoiceStates',

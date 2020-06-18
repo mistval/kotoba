@@ -373,9 +373,10 @@ function createCorrectPercentageField(card) {
 }
 
 class DiscordMessageSender {
-  constructor(bot, commanderMessage) {
+  constructor(bot, commanderMessage, monochrome) {
     this.commanderMessage = commanderMessage;
     this.bot = bot;
+    this.monochrome = monochrome;
   }
 
   notifyStarting(inMs, quizName, quizDescription, quizLength, scoreLimit) {
@@ -454,6 +455,10 @@ class DiscordMessageSender {
   ) {
     this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
+
+    answerersInOrder.forEach((userId) => {
+      this.monochrome.updateUserFromREST(userId).catch(() => {});
+    });
 
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
@@ -1310,7 +1315,7 @@ module.exports = {
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
 
-    const messageSender = new DiscordMessageSender(bot, msg);
+    const messageSender = new DiscordMessageSender(bot, msg, monochrome);
     const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
     const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
 

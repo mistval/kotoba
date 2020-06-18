@@ -213,6 +213,8 @@ module.exports = {
     suffixReplaced = suffixReplaced.replace(/global/g, '');
     const deckNamesArray = getDeckNames(suffixReplaced);
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     let scoreQuery;
 
     try {

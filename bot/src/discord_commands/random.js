@@ -63,6 +63,8 @@ module.exports = {
   usageExample: '<prefix>random N3, <prefix>random 2k',
   action(bot, msg, suffix, monochrome) {
     const suffixLowerCase = suffix.toLowerCase();
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     return getRandomWordRecursive(
       suffixLowerCase,
       msg,

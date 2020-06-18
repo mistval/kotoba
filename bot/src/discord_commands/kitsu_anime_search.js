@@ -18,6 +18,8 @@ module.exports = {
       return throwPublicErrorInfo('Kitsu Anime Search', `Say **${prefix}a [anime]** to search for anime on Kitsu.io. For example: **${prefix}a Monster**. Say **${prefix}help anime** for more help.`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const navigation = await createAnimeSearchNavigation(
       msg.author.username,
       msg.author.id,
