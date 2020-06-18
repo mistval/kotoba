@@ -5,15 +5,15 @@ const constants = require('./../common/constants.js');
 module.exports = {
   commandAliases: ['resetserverleaderboard'],
   uniqueId: 'resetserverleaderboard',
-  cooldown: 2,
+  cooldown: 10,
   shortDescription: 'Reset the server leaderboard.',
   async action(bot, msg, suffix, monochrome) {
     if (!msg.channel.guild) {
-      return throwPublicErrorInfo('Reset', 'This command can only be used in a server.', 'In DM');
+      return throwPublicErrorInfo('Reset server leaderboard', 'This command can only be used in a server.', 'In DM');
     }
 
     if (!monochrome.userIsServerAdmin(msg)) {
-      return throwPublicErrorInfo('Reset', 'Only a server admin can use this command.', 'Not a server admin');
+      return throwPublicErrorInfo('Reset server leaderboard', 'Only a server admin can use this command.', 'Not a server admin');
     }
 
     await msg.channel.createMessage({
