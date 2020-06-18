@@ -17,6 +17,8 @@ module.exports = {
       return throwPublicErrorInfo('Stroke Order Search', `Say **${prefix}strokeorder [kanji]** to search for stroke order information. For example: **${prefix}strokeorder 瞬間**. Say **${prefix}help strokeorder** for more help.`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const { navigationChapter, pageCount } = createStrokeOrderNavigationChapter(
       suffix,
       msg.author.username,

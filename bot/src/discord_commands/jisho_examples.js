@@ -16,6 +16,8 @@ module.exports = {
       return throwPublicErrorInfo('Examples', `Say **${prefix}examples [text]** to search for examples. For example: **${prefix}examples 瞬間**`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     let pages = await createExampleSearchPages(suffix);
     if (pages.length > 1) {
       pages = addPaginationFooter(pages, msg.author.username);

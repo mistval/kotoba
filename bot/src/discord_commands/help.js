@@ -232,6 +232,8 @@ module.exports = {
     const paginate = canPaginate && suffix.indexOf('all') === -1;
     const suffixReplaced = suffix.replace(/all/g, '');
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     if (suffixReplaced) {
       return showAdvancedHelp(monochrome, msg, suffixReplaced);
     }

@@ -202,6 +202,7 @@ class DiscordClientDelegate {
   }
 
   onPlayerAnswered(currentPlayerId) {
+    this.monochrome.updateUserFromREST(currentPlayerId).catch(() => {});
     this.previousAnswererId = currentPlayerId;
   }
 

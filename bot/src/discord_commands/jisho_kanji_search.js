@@ -17,6 +17,8 @@ module.exports = {
       return throwPublicErrorInfo('Kanji', `Say **${prefix}kanji [kanji]** to search for kanji. For example: **${prefix}kanji 瞬間**. Say **${prefix}help kanji** for more help.`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const dataSource = await createKanjiDataSource(
       suffix,
       msg.author.username,

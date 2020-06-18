@@ -223,6 +223,8 @@ module.exports = {
       return throwPublicErrorInfo('Pronounce', `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     const logger = monochrome.getLogger();
     const pronounceInfo = await getPronounceInfo(suffix, logger);
     if (!pronounceInfo.found) {

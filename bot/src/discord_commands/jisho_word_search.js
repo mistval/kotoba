@@ -32,6 +32,8 @@ module.exports = {
     const searchTerm = suffix.replace(/--small/g, '').replace(/--big/g, '');
 
     if (big) {
+      monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
       const navigation = await jishoSearch.createNavigationForWord(
         msg.author.username,
         msg.author.id,

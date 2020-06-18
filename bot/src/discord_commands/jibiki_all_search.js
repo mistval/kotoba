@@ -46,6 +46,8 @@ module.exports = {
         });
       }
 
+      monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
       const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => ({
         embed: {
           title: `Showing results for ${suffix}`,

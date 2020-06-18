@@ -17,6 +17,8 @@ module.exports = {
       return throwPublicErrorInfo('Yourei', `Say **${prefix}y [word]** to search for example sentences on 用例.jp. For example: **${prefix}y 少し**. Say **${prefix}help yourei** for more help.`, 'No suffix');
     }
 
+    monochrome.updateUserFromREST(msg.author.id).catch(() => {});
+
     return youreiSearch.createNavigationForExamples(
       msg.author.username,
       msg.author.id,
