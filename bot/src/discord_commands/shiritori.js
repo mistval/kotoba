@@ -105,10 +105,11 @@ function saveScores(bot, commanderMessage, scoreForUserID) {
 }
 
 class DiscordClientDelegate {
-  constructor(bot, commanderMessage, logger) {
+  constructor(bot, commanderMessage, monochrome) {
     this.bot = bot;
     this.commanderMessage = commanderMessage;
-    this.logger = logger;
+    this.logger = monochrome.getLogger();
+    this.monochrome = monochrome;
   }
 
   onPlayerSetInactive(userId, reason) {
@@ -366,7 +367,7 @@ module.exports = {
 
     const { prefix } = msg;
     throwIfSessionInProgress(locationId, prefix);
-    const clientDelegate = new DiscordClientDelegate(bot, msg, monochrome.getLogger());
+    const clientDelegate = new DiscordClientDelegate(bot, msg, monochrome);
 
     const botTurnMinimumWaitInMs = serverSettings['shiritori/bot_turn_minimum_wait'] * 1000;
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
