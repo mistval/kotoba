@@ -941,34 +941,44 @@ function createNonReviewGameMode(isMastery, isConquest) {
   }
 }
 
-function createSettings(settingsBlob, gameMode) {
-  const serverNewQuestionDelayAfterUnansweredInMs = settingsBlob['quiz/japanese/new_question_delay_after_unanswered'] * 1000;
-  const serverNewQuestionDelayAfterAnsweredInMs = settingsBlob['quiz/japanese/new_question_delay_after_answered'] * 1000;
-  const serverAdditionalAnswerWaitTimeInMs = settingsBlob['quiz/japanese/additional_answer_wait_time'] * 1000;
-  const serverScoreLimit = settingsBlob['quiz/japanese/score_limit'];
-  const serverUnansweredQuestionLimit = settingsBlob['quiz/japanese/unanswered_question_limit'];
-  const serverAnswerTimeLimitInMs = settingsBlob['quiz/japanese/answer_time_limit'] * 1000;
-  const fontSize = settingsBlob['quiz_font_size'];
-  const fontColor = settingsBlob['quiz_font_color'];
-  const backgroundColor = settingsBlob['quiz_background_color'];
-  const font = settingsBlob['quiz_font'];
+function createSettingsForLoad(serverSettings, inlineSettings) {
+  const resolvedSettings = { ...serverSettings, ...inlineSettings };
 
   const settings = {
-    scoreLimit: gameMode ? (gameMode.questionLimitOverride || serverScoreLimit) : undefined,
-    unansweredQuestionLimit: gameMode ? (gameMode.unansweredQuestionLimitOverride || serverUnansweredQuestionLimit) : undefined,
-    answerTimeLimitInMs: serverAnswerTimeLimitInMs,
-    newQuestionDelayAfterUnansweredInMs: serverNewQuestionDelayAfterUnansweredInMs,
-    newQuestionDelayAfterAnsweredInMs: serverNewQuestionDelayAfterAnsweredInMs,
-    additionalAnswerWaitTimeInMs: serverAdditionalAnswerWaitTimeInMs,
-    fontSize,
-    fontColor,
-    backgroundColor,
-    font,
+    answerTimeLimitInMs: inlineSettings.answerTimeLimit * 1000,
+    newQuestionDelayAfterUnansweredInMs: inlineSettings.delayAfterUnansweredQuestion * 1000,
+    newQuestionDelayAfterAnsweredInMs: inlineSettings.delayAfterAnsweredQuestion * 1000,
+    additionalAnswerWaitTimeInMs: inlineSettings.additionalAnswerWaitWindow * 1000,
+    fontSize: resolvedSettings.size,
+    fontColor: resolvedSettings.color,
+    backgroundColor: resolvedSettings.bgColor,
+    font: resolvedSettings.fontFamily,
   };
 
-  Object.entries(settings)
-    .filter(e => e[1] === undefined)
-    .forEach(e => { delete settings[e[0]] });
+  Object.entries(settings).forEach(([key, value]) => {
+    if (value === undefined || Number.isNaN(value)) {
+      delete settings[key];
+    }
+  });
+
+  return settings;
+}
+
+function createSettings(serverSettings, inlineSettings, gameMode) {
+  const resolvedSettings = { ...serverSettings, ...inlineSettings };
+
+  const settings = {
+    scoreLimit: gameMode.questionLimitOverride || resolvedSettings.scoreLimit,
+    unansweredQuestionLimit: gameMode.unansweredQuestionLimitOverride || resolvedSettings.unansweredQuestionLimit,
+    answerTimeLimitInMs: resolvedSettings.answerTimeLimit * 1000,
+    newQuestionDelayAfterUnansweredInMs: resolvedSettings.delayAfterUnansweredQuestion * 1000,
+    newQuestionDelayAfterAnsweredInMs: resolvedSettings.delayAfterAnsweredQuestion * 1000,
+    additionalAnswerWaitTimeInMs: resolvedSettings.additionalAnswerWaitWindow * 1000,
+    fontSize: resolvedSettings.size,
+    fontColor: resolvedSettings.color,
+    backgroundColor: resolvedSettings.bgColor,
+    font: resolvedSettings.fontFamily,
+  };
 
   return settings;
 }
@@ -1179,22 +1189,19 @@ function consumeTimingTokens(commandTokens) {
     const [settingAbbreviation, settingValueString] = token.split('=');
     const settingValue = Number.parseFloat(settingValueString);
     if (preset) {
-      timingOverrides['quiz/japanese/new_question_delay_after_unanswered'] = preset.delayAfterUnansweredQuestion;
-      timingOverrides['quiz/japanese/new_question_delay_after_answered'] = preset.delayAfterAnsweredQuestion;
-      timingOverrides['quiz/japanese/additional_answer_wait_time'] = preset.additionalAnswerWaitWindow;
-      timingOverrides['quiz/japanese/answer_time_limit'] = preset.answerTimeLimit;
+      Object.assign(timingOverrides, preset);
     } else if (settingAbbreviation === 'atl') {
       verifyValueIsInRange('Answer Time Limit', 'atl', ...quizLimits.answerTimeLimit, settingValue);
-      timingOverrides['quiz/japanese/answer_time_limit'] = settingValue;
+      timingOverrides.answerTimeLimit = settingValue;
     } else if (settingAbbreviation === 'dauq') {
       verifyValueIsInRange('Delay After Unanswered Question', 'dauq', ...quizLimits.delayAfterUnansweredQuestion, settingValue);
-      timingOverrides['quiz/japanese/new_question_delay_after_unanswered'] = settingValue;
+      timingOverrides.delayAfterUnansweredQuestion = settingValue;
     } else if (settingAbbreviation === 'daaq') {
       verifyValueIsInRange('Delay After Answered Question', 'daaq', ...quizLimits.delayAfterAnsweredQuestion, settingValue);
-      timingOverrides['quiz/japanese/new_question_delay_after_answered'] = settingValue;
+      timingOverrides.delayAfterAnsweredQuestion = settingValue;
     } else if (settingAbbreviation === 'aaww') {
       verifyValueIsInRange('Additional Answer Wait Window', 'aaww', ...quizLimits.additionalAnswerWaitWindow, settingValue);
-      timingOverrides['quiz/japanese/additional_answer_wait_time'] = settingValue;
+      timingOverrides.additionalAnswerWaitWindow = settingValue;
     } else {
       // Could not consume token.
       remainingTokens.push(token);
@@ -1269,9 +1276,26 @@ function consumeScoreLimitToken(commandTokens) {
 
   return {
     remainingTokens,
-    questionLimitOverrides: {
-      'quiz/japanese/score_limit': Math.min(Math.max(scoreLimit, minScoreLimit), maxScoreLimit),
+    scoreLimitOverrides: {
+      scoreLimit: Math.min(Math.max(scoreLimit, minScoreLimit), maxScoreLimit),
     },
+  };
+}
+
+function getServerSettings(rawServerSettings) {
+  return {
+    bgColor: rawServerSettings.quiz_background_color,
+    fontFamily: rawServerSettings.quiz_font,
+    color: rawServerSettings.quiz_font_color,
+    size: rawServerSettings.quiz_font_size,
+    additionalAnswerWaitWindow: rawServerSettings['quiz/japanese/additional_answer_wait_time'],
+    answerTimeLimit: rawServerSettings['quiz/japanese/answer_time_limit'],
+    conquestAndInfernoEnabled: rawServerSettings['quiz/japanese/conquest_and_inferno_enabled'],
+    internetDecksEnabled: rawServerSettings['quiz/japanese/internet_decks_enabled'],
+    delayAfterAnsweredQuestion: rawServerSettings['quiz/japanese/new_question_delay_after_answered'],
+    delayAfterUnansweredQuestion: rawServerSettings['quiz/japanese/new_question_delay_after_unanswered'],
+    scoreLimit: rawServerSettings['quiz/japanese/score_limit'],
+    unansweredQuestionLimit: rawServerSettings['quiz/japanese/unanswered_question_limit'],
   };
 }
 
@@ -1289,7 +1313,7 @@ module.exports = {
     'quiz/japanese/internet_decks_enabled',
   ]),
   attachIsServerAdmin: true,
-  async action(bot, msg, suffix, monochrome, serverSettings) {
+  async action(bot, msg, suffix, monochrome, rawServerSettings) {
     const cleanSuffix = suffix
       .replace(/ +/g, ' ')
       .replace(/ *\+ */g, '+')
@@ -1299,6 +1323,7 @@ module.exports = {
       .trim()
       .toLowerCase();
     
+    const serverSettings = getServerSettings(rawServerSettings);
     const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
 
     if (fontArgParseResult.errorDescriptionShort) {
@@ -1309,26 +1334,21 @@ module.exports = {
       );
     }
 
-    const cleanSuffixFontArgsParsed = fontArgParseResult.remainingString;
+    const { remainingString: cleanSuffixFontArgsParsed, ...inlineSettings } = fontArgParseResult;
 
     const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
+    Object.assign(inlineSettings, timingOverrides);
 
     const messageSender = new DiscordMessageSender(bot, msg, monochrome);
-    const masteryEnabled = serverSettings['quiz/japanese/conquest_and_inferno_enabled'];
-    const internetDecksEnabled = serverSettings['quiz/japanese/internet_decks_enabled'];
+    const masteryEnabled = serverSettings.conquestAndInfernoEnabled;
+    const internetDecksEnabled = serverSettings.internetDecksEnabled;
 
     const isMastery = gameModes.mastery;
     const isConquest = gameModes.conquest;
     const isHardcore = gameModes.hardcore;
     const isNoRace = gameModes.norace;
-    
-    const serverSettingsOverridden = { ...serverSettings, ...timingOverrides };
-    serverSettingsOverridden.quiz_font = fontArgParseResult.fontFamily || serverSettingsOverridden.quiz_font;
-    serverSettingsOverridden.quiz_font_color = fontArgParseResult.color || serverSettingsOverridden.quiz_font_color;
-    serverSettingsOverridden.quiz_font_size = fontArgParseResult.size || serverSettingsOverridden.quiz_font_size;
-    serverSettingsOverridden.quiz_background_color = fontArgParseResult.bgColor || serverSettingsOverridden.quiz_background_color;
 
     const hasSettingsToken = remainingTokens2.indexOf('settings') !== -1
       || remainingTokens2.indexOf('setting') !== -1;
@@ -1367,7 +1387,7 @@ module.exports = {
     // Load operation
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
     if (isLoad) {
-      const loadSettings = createSettings(serverSettingsOverridden);
+      const loadSettings = createSettingsForLoad(serverSettings, inlineSettings);
       return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
     }
 
@@ -1427,13 +1447,13 @@ module.exports = {
 
     const {
       remainingTokens: remainingTokens5,
-      questionLimitOverrides,
+      scoreLimitOverrides,
     } = consumeScoreLimitToken(remainingTokens4);
 
-    Object.assign(serverSettingsOverridden, questionLimitOverrides);
+    Object.assign(inlineSettings, scoreLimitOverrides);
 
     // Create the session
-    const settings = createSettings(serverSettingsOverridden, gameMode);
+    const settings = createSettings(serverSettings, inlineSettings, gameMode);
     const session = Session.createNew(
       locationId,
       invokerId,
