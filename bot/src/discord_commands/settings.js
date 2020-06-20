@@ -37,6 +37,10 @@ function createKeyForMsg(msg) {
   return msg.channel.id + msg.author.id;
 }
 
+function replacePrefix(str, prefix) {
+  return str.replace(/<prefix>/g, prefix);
+}
+
 function tryUnregisterHook(hook) {
   if (hook) {
     return hook.unregister();
@@ -150,7 +154,7 @@ function createContentForCategory(category, iconUri) {
   };
 }
 
-async function createContentForSetting(msg, settings, setting, iconUri) {
+async function createContentForSetting(msg, settings, setting, iconUri, prefix) {
   const allowedValuesFields = Array.isArray(setting.allowedValuesDescription)
     ? setting.allowedValuesDescription
     : [{ name: 'Allowed values', value: setting.allowedValuesDescription, inline: false }];
@@ -158,7 +162,7 @@ async function createContentForSetting(msg, settings, setting, iconUri) {
   return {
     embed: {
       title: `Settings (${setting.userFacingName})`,
-      description: setting.description,
+      description: replacePrefix(setting.description, prefix),
       color: EMBED_COLOR,
       fields: [
         {
@@ -674,7 +678,8 @@ function showCategory(monochrome, msg, category) {
 async function showSetting(monochrome, msg, setting) {
   const iconUri = monochrome.getSettingsIconUri();
   const settings = monochrome.getSettings();
-  const settingContent = await createContentForSetting(msg, settings, setting, iconUri);
+  const prefix = monochrome.getPersistence().getPrimaryPrefixForMessage(msg);
+  const settingContent = await createContentForSetting(msg, settings, setting, iconUri, prefix);
   const hook = Hook.registerHook(
     msg.author.id, msg.channel.id,
     (cbHook, cbMsg) => handleSettingViewMsg(

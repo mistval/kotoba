@@ -133,7 +133,7 @@ module.exports = [
     [
       {
         userFacingName: 'Quiz font',
-        description: 'This setting controls the font used for text rendered for quizzes.',
+        description: 'This setting controls the font used for text rendered for quizzes. You can use the **<prefix>draw** command to test new font settings more easily. Say **<prefix>draw** for help.',
         allowedValuesDescription: fontAllowedValuesFields,
         uniqueId: 'quiz_font',
         defaultUserFacingValue: 'Noto Sans CJK',
@@ -146,7 +146,7 @@ module.exports = [
       },
       {
         userFacingName: 'Quiz text font color',
-        description: 'This setting controls the color of the text rendered for quizzes.',
+        description: 'This setting controls the color of the text rendered for quizzes. You can use the **<prefix>draw** command to test new color settings more easily. Say **<prefix>draw** for help.',
         allowedValuesDescription: allowedColorsString,
         uniqueId: 'quiz_font_color',
         defaultUserFacingValue: 'rgb(0, 0, 0)',
@@ -156,7 +156,7 @@ module.exports = [
       },
       {
         userFacingName: 'Quiz text background color',
-        description: 'This setting controls the background color of the text rendered for quizzes.',
+        description: 'This setting controls the background color of the text rendered for quizzes. You can use the **<prefix>draw** command to test new color settings more easily. Say **<prefix>draw** for help.',
         allowedValuesDescription: allowedColorsString,
         uniqueId: 'quiz_background_color',
         defaultUserFacingValue: 'rgb(255, 255, 255)',
@@ -166,7 +166,7 @@ module.exports = [
       },
       {
         userFacingName: 'Quiz text font size',
-        description: 'This setting controls the font size of the text rendered for quizzes.',
+        description: 'This setting controls the font size of the text rendered for quizzes. You can use the **<prefix>draw** command to test new size settings more easily. Say **<prefix>draw** for help.',
         allowedValuesDescription: 'A number between 20 and 200 (in font size points)',
         uniqueId: 'quiz_font_size',
         defaultUserFacingValue: '92',
