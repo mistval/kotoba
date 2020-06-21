@@ -9,11 +9,12 @@ async function updateDbFromGuild(guild) {
     guildRecord = new GuildModel({ id: guild.id });
   }
 
-  if (guildRecord.icon !== guild.icon && guild.icon) {
+  if (guild.icon && (guildRecord.icon !== guild.icon || !guildRecord.iconType)) {
     try {
       const response = await axios.get(guild.iconURL, { responseType: 'arraybuffer' });
       guildRecord.iconBytes = Buffer.from(response.data);
       guildRecord.icon = guild.icon;
+      guildRecord.iconType = response.headers['content-type'];
     } catch (err) {
       globals.logger.warn({
         event: 'FAILED TO DOWNLOAD GUILD ICON',

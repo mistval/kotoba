@@ -10,13 +10,14 @@ async function updateDbFromUser(user, admin = false) {
     userRecord = new UserModel({ discordUser: { id: user.id }, admin });
   }
 
-  const recordHasAvatarBytes = !!userRecord.discordUser.avatarBytes;
+  const recordHasAvatarType = !!userRecord.discordUser.avatarType;
   const avatarHasChanged = userRecord.discordUser.avatar !== user.avatar;
-  if (user.avatar && (!recordHasAvatarBytes || avatarHasChanged)) {
+  if (user.avatar && (avatarHasChanged || !recordHasAvatarType)) {
     try {
       const response = await axios.get(user.staticAvatarURL, { responseType: 'arraybuffer' });
       userRecord.discordUser.avatarBytes = Buffer.from(response.data);
       userRecord.discordUser.avatar = user.avatar;
+      userRecord.discordUser.avatarType = response.headers['content-type'];
     } catch (err) {
       globals.logger.warn({
         event: 'FAILED TO DOWNLOAD USER AVATAR',

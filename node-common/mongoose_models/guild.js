@@ -4,6 +4,7 @@ const GuildSchema = new mongoose.Schema({
   createdAt: { type: Date, required: true },
   icon: { type: String },
   iconBytes: { type: Buffer },
+  iconType: { type: String },
   id: { type: String, index: true },
   botJoinedAt: { type: Date, required: true },
   memberCount: { type: Number, required: true },
