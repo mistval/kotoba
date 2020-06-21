@@ -228,9 +228,12 @@ class ResourceDatabase {
 
   async getRandomWord(level) {
     if (level) {
-      const levelResult = await this.database.get('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % (SELECT COUNT(*) FROM RandomWords WHERE level = ?)),1', level, level);
-      if (levelResult) {
-        return levelResult.word;
+      const count = await this.database.get('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?', level);
+      if (count.count > 0) {
+        const levelResult = await this.database.get('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?),1', level, count.count);
+        if (levelResult) {
+          return levelResult.word;
+        }
       }
     }
 
