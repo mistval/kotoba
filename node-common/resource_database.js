@@ -13,6 +13,8 @@ const edictNounCodes = [
   'pn',
   'num',
   'n-adv',
+  'n-t',
+  'vs',
 ];
 
 async function buildPronunciationTable(database, pronunciationDataPath) {
