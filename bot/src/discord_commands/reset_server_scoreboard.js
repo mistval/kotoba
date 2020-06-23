@@ -19,7 +19,7 @@ module.exports = {
     await msg.channel.createMessage({
       embed: {
         title: '⚠️ Reset server leaderboard ⚠️',
-        description: `You are about to reset the server leaderboard. This is irreversible. If you\'re sure, say **confirm**. To cancel, say anything else.`,
+        description: 'You are about to reset the server leaderboard. This is irreversible. If you\'re sure, say **confirm**. To cancel, say anything else.',
         color: constants.EMBED_WARNING_COLOR,
       },
     });
@@ -28,14 +28,13 @@ module.exports = {
     try {
       responseMsg = await monochrome.waitForMessage(
         120000,
-        (c) => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
+        c => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
       );
     } catch (err) {
       if (err.message === 'WAITER TIMEOUT') {
         return msg.channel.createMessage('No response, did not reset the leaderboard.');
-      } else {
-        throw err;
       }
+      throw err;
     }
 
     const response = responseMsg.content.toLowerCase().trim();

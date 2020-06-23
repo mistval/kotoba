@@ -12,10 +12,10 @@ const fontHelper = initializeFonts(FONT_PATH, CHARACTER_MAP_PATH, Canvas);
 
 async function getFurigana(text) {
   const fetchResult = await fetch(`${Config.worker.furiganaApiUri}`, {
-    method: "post",
+    method: 'post',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({ text }),
   });
