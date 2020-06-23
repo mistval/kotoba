@@ -266,7 +266,8 @@ function tryHandleMessage(monochrome, msg) {
       return handleAcceptedResult(monochrome, msg, acceptanceResult);
     }
     return handleRejectedResult(monochrome, msg, acceptanceResult);
-  }).then(() => accepted);
+  })
+    .then(() => accepted);
 }
 
 function sendDisabledMessage(monochrome, channelID) {
