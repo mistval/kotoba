@@ -20,12 +20,16 @@ function isBreakableCharacter(char) {
   return false;
 }
 
-function splitResults(results) {
-  const newResults = [];
+function processResults(results) {
+  const processedResults = [];
 
   results.forEach((chunk) => {
+    if (chunk.text === chunk.reading) {
+      delete chunk.reading;
+    }
+
     if (chunk.reading) {
-      newResults.push(chunk);
+      processedResults.push(chunk);
     } else {
       const characters = chunk.text.split('').reverse();
       let nextChunkText = '';
@@ -33,28 +37,28 @@ function splitResults(results) {
         const character = characters.pop();
         if (isBreakableCharacter(character)) {
           if (nextChunkText) {
-            newResults.push({ text: nextChunkText });
+            processedResults.push({ text: nextChunkText });
             nextChunkText = '';
           }
-          newResults.push({ text: character });
+          processedResults.push({ text: character });
         } else {
           nextChunkText += character;
         }
       }
 
       if (nextChunkText) {
-        newResults.push({ text: nextChunkText });
+        processedResults.push({ text: nextChunkText });
       }
     }
   });
 
-  return newResults;
+  return processedResults;
 }
 
 async function getFurigana(text) {
   await initPromise;
   const results = await kuroshiro.convert(text, { to: 'hiragana', mode: 'raw' });
-  return splitResults(results);
+  return processResults(results);
 }
 
 /**
