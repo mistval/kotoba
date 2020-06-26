@@ -2,25 +2,24 @@ module.exports = {
 
   // Required for running Kotoba Discord bot
   bot: {
-    botToken: 'your bot token',
-    botAdminIds: ['your Discord user ID'],
+    botToken: 'your bot token', // REQUIRED
+    botAdminIds: ['your Discord user ID'], // OPTIONAL
 
     // API keys for services used by the bot.
     // You can leave these blank but some features won't work right or won't work at all.
     apiKeys: {
-      youtube: '',
-      googleTranslate: '',
-      forvo: '',
-      websterCth: '',
-      oxfordAppId: '',
-      oxfordApiKey: '',
+      youtube: '', // OPTIONAL but jukebox command won't work without it
+      googleTranslate: '', // OPTIONAL but translate command won't work without it
+      forvo: '', // OPTIONAL but pronounce command won't return forvo tracks without it
+      websterCth: '', // OPTIONAL but certain quiz decks won't work right without it
+      oxfordAppId: '', // OPTIONAL but certain quiz decks won't work right without it
+      oxfordApiKey: '', // OPTIONAL but certain quiz decks won't work right without it
     },
 
-    // Required for hispadic command
-    hispadicApiUri: '',
+    hispadicApiUri: '', // OPTIONAL but hispadic command won't work without it
   },
 
-  // Required for running KotobaWeb.com API
+  // Required if running KotobaWeb.com API
   api: {
     domain: 'http://localhost', // the domain that you're running the API on.
     contactWebhookAddress: 'https://discordapp.com/api/webhooks/xxxxx/yyyyy', // The address of a Discord webhook to send contact form mail to
@@ -36,8 +35,7 @@ module.exports = {
     },
   },
 
-  // Required for furigana bot command
   worker: {
-    furiganaApiUri: '',
+    furiganaApiUri: '', // OPTIONAL but furigana command won't work without it
   },
 };

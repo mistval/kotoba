@@ -15,21 +15,12 @@ In addition to the three main projects there are a few other directories:
 * [/nginx](https://github.com/mistval/kotoba/tree/master/nginx) - An nginx configuration for proxying HTTP requests to the [frontend](https://github.com/mistval/kotoba/tree/master/kotobaweb) and [API](https://github.com/mistval/kotoba/tree/master/api).
 * [/backup](https://github.com/mistval/kotoba/tree/master/backup) - Tools for backing up user data to Google Cloud Storage.
 * [/worker](https://github.com/mistval/kotoba/tree/master/worker) - A worker process for doing some heavy lifting for other processes whose event loops should not be blocked.
+* [/cloud_functions](https://github.com/mistval/kotoba/tree/master/worker) - The code for HTTP endpoints that can be deployed as cloud functions and which some bot commands rely on.
+* [/resources](https://github.com/mistval/kotoba/tree/master/resources) - Dictionaries, fonts, images, and other non-code assets.
 
 ## Configuration
 
-After cloning the repo (recommend cloning with `--depth=1`), fill out [config/config_sample.js](https://github.com/mistval/kotoba/blob/master/config/config_sample.js) and rename it to **config.js**. You only have to fill out the sections for the components you want to run. For example if you're only going to run the bot, you only have to fill out the **bot** section.
-
-## Self-hosting the bot
-
-After following the configuration instructions:
-
-```sh
-sudo apt install docker docker-compose
-sudo docker-compose up kotoba-bot kotoba-worker mongo_readwrite
-```
-
-The bot will take some time to build and should then come online. Note that it will be missing some fonts and features that are not in this repo. These instructions are for Ubuntu Linux.
+After cloning the repo (recommend cloning with `--depth=1`), fill out [config/config_sample.js](https://github.com/mistval/kotoba/blob/master/config/config_sample.js) and rename it to **config.js**. Most of the configuration is optional, but some features may not work right, or not at all, if they are not configured.
 
 ## Developing
 
@@ -43,31 +34,20 @@ npm ci
 npm start
 ```
 
-The bot will start and come online. Some commands won't work. There are additional steps required to make certain commands work:
-
-* Quiz command
-    1. In the ./bot directory, run `npm run buildquiz`.
-    2. In the ./bot directory, run `npm run buildfontcharactermap`.
-* Pronunciation command
-    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
-    2. In the ./bot directory, run `npm run buildpronunciation`.
-* Shiritori command
-    1. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
-    2. In the ./bot directory, run `npm run buildshiritori`.
+The bot will start and come online. It will take a while the first time, as the bot is building and caching resources. Give it up to 15 minutes. After the first time, it should start almost instantaneously.
 
 ### KotobaWeb
 
-1. Install **cairo** and **pango**. You can install them using the instructions for your operating system [here](https://github.com/Automattic/node-canvas/wiki/_pages).
-2. Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/).
+Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Then:
 
 ```sh
 cd ./api
-npm install
+npm ci
 npm run buildall
 npm run startdev_nix # Or on Windows: npm run startdev_win
 
 cd ../kotobaweb
-npm install
+npm ci
 npm start
 ```
 
@@ -111,9 +91,56 @@ The worker process handles some heavy lifting so that the event loop doesn't hav
 
 ```
 cd ./worker
-npm install
+npm ci
 npm start
 ```
+
+## Self-hosting the bot
+
+While it is possible to self-host Kotoba, there are some caveats and some of the setup is not straightforward. Before continuing, first consider why you want to self-host. Could you PR your desired features to this repo instead, so they can be added to public Kotoba? I encourage you to take that route if you can. Otherwise, read on.
+
+After following the **Configuration** instructions higher up in this readme:
+
+```sh
+sudo apt install docker docker-compose
+sudo docker-compose up kotoba-bot kotoba-worker mongo_readwrite
+```
+
+The bot will take some time to build and should then come online. Most things will work. However there is additional setup required for certain features:
+
+### Furigana and Hispadic commands
+
+These commands call out to HTTP endpoints that you need to host yourself one way or another. This is done mainly to reduce RAM usage on the main bot server. I use Google Cloud Platform to host these, they have a very generous free tier. The code you need to deploy is in the **cloud_functions** directory in this repo.
+
+For the furigana command:
+1. Create a new cloud function in the GCP console.
+2. Set the name to something unguessable.
+3. Set the trigger to HTTP.
+4. Check off "Allow unauthenticated invocations".
+5. Set the runtime to Node.js (version probably doesn't matter)
+6. Use the inline editor and paste in the index.js and package.json code.
+7. Set the "function to execute" to getFurigana.
+8. Set maximum function instances to 1.
+9. Deploy the function, get the URL of the HTTP endpoint, and add it to config/config.js.
+
+For the hispadic command:
+1. Create a new cloud function in the GCP console.
+2. Set the name to something unguessable.
+3. Set the trigger to HTTP.
+4. Check off "Allow unauthenticated invocations".
+5. Set the runtime to Node.js (version probably doesn't matter)
+6. Zip the index.js, hispadic.js, and package.json files in cloud_functions/hispadic, and use the "Zip upload" option to upload it to cloud storage (it's too big for the inline editor)
+7. Set the "function to execute" to search.
+8. Set maximum function instances to 1.
+9. Deploy the function, get the URL of the HTTP endpoint, and add it to config/config.js.
+
+### Fonts
+
+Most of the fonts in public Kotoba are not in this repo, due to their license conditions. But you can add whatever fonts you want. Just put them in resources/fonts and write meta.json files to describe them. Follow the example of the fonts that are already there.
+
+### Other missing functionality
+
+Some quiz decks are not in this repo, and some commands or other functionality also may not be, due to distribution and copyright concerns. If you self-host Kotoba, you will have to survive without some things.
 
 ## Help
 
