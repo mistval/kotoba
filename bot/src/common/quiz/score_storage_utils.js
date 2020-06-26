@@ -477,8 +477,8 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
 
 function clearServerScores(serverId) {
   return Promise.all([
-    UserServerTotalScoreModel.remove({ serverId }),
-    UserServerDeckScoreModel.remove({ serverId }),
+    UserServerTotalScoreModel.deleteMany({ serverId }),
+    UserServerDeckScoreModel.deleteMany({ serverId }),
   ]);
 }
 
