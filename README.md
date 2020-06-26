@@ -15,7 +15,7 @@ In addition to the three main projects there are a few other directories:
 * [/nginx](https://github.com/mistval/kotoba/tree/master/nginx) - An nginx configuration for proxying HTTP requests to the [frontend](https://github.com/mistval/kotoba/tree/master/kotobaweb) and [API](https://github.com/mistval/kotoba/tree/master/api).
 * [/backup](https://github.com/mistval/kotoba/tree/master/backup) - Tools for backing up user data to Google Cloud Storage.
 * [/worker](https://github.com/mistval/kotoba/tree/master/worker) - A worker process for doing some heavy lifting for other processes whose event loops should not be blocked.
-* [/cloud_functions](https://github.com/mistval/kotoba/tree/master/worker) - The code for HTTP endpoints that can be deployed as cloud functions and which some bot commands rely on.
+* [/cloud_functions](https://github.com/mistval/kotoba/tree/master/cloud_functions) - The code for HTTP endpoints that can be deployed as cloud functions and which some bot commands rely on.
 * [/resources](https://github.com/mistval/kotoba/tree/master/resources) - Dictionaries, fonts, images, and other non-code assets.
 
 ## Configuration
