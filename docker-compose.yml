@@ -53,6 +53,8 @@ services:
     restart: always
     volumes:
       - ./user_data/mongo_readwrite_data:/data/db
+    ports:
+      - '127.0.0.1:50001:27017'
   nginx:
     image: registry.gitlab.com/kotoba/monochrome2/nginx:latest
     build: ./nginx
