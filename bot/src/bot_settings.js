@@ -104,6 +104,16 @@ module.exports = [
         validateInternalValue: SettingsValidators.createRangeValidator(0, 120),
       },
       {
+        userFacingName: 'Max missed questions',
+        description: 'I will end the quiz early if you miss this many questions total (not necessarily in a row). **Be careful of accidentally having this enabled when doing conquest mode**. If necessary you can load a save with **<prefix>load 1 mmq=0** to disable it.',
+        allowedValuesDescription: 'A number between 0 and 1000. 0 means infinite.',
+        uniqueId: 'quiz_max_missed_questions',
+        defaultUserFacingValue: '0',
+        convertUserFacingValueToInternalValue: SettingsConverters.stringToInt,
+        convertInternalValueToUserFacingValue: SettingsConverters.toString,
+        validateInternalValue: SettingsValidators.createRangeValidator(0, 1000),
+      },
+      {
         userFacingName: 'Conquest and Inferno modes enabled',
         description: 'This setting controls whether Conquest and Inferno mode quizzes can be run. Say `k!quiz conquest` and `k!quiz inferno` to find out more about what those are.',
         allowedValuesDescription: 'Either **enabled** or **disabled**',
