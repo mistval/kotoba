@@ -66,6 +66,7 @@ class SessionInformation {
     session.ownerId_ = ownerId;
     session.startTime_ = Date.now();
     session.numCardsAnswered_ = 0;
+    session.numCardsUnanswered_ = 0;
     session.hardcore_ = hardcore;
     session.noRace_ = noRace;
     return session;
@@ -88,6 +89,7 @@ class SessionInformation {
     session.numCardsAnswered_ = saveData.numCardsAnswered;
     session.hardcore_ = !!saveData.hardcore;
     session.noRace_ = !!saveData.noRace;
+    session.numCardsUnanswered_ = saveData.numCardsUnanswered || 0;
 
     return session;
   }
@@ -176,6 +178,7 @@ class SessionInformation {
       numCardsAnswered: this.numCardsAnswered_,
       hardcore: this.hardcore_,
       noRace: this.noRace_,
+      numCardsUnanswered: this.numCardsUnanswered_,
     }
   }
 
@@ -217,6 +220,10 @@ class SessionInformation {
 
   getUnansweredQuestionsInARow() {
     return this.unansweredQuestionsInARow_;
+  }
+
+  getUnansweredQuestionsTotal() {
+    return this.numCardsUnanswered_;
   }
 
   getUnansweredCards(userId) {
@@ -290,6 +297,7 @@ class SessionInformation {
       this.getSettings().answerTimeLimitOverriden = true;
       this.getSettings().answerTimeLimitInMs = newTimeLimit;
     }
+    ++this.numCardsUnanswered_;
     this.recycleCurrentCard_();
   }
 
@@ -297,8 +305,12 @@ class SessionInformation {
     return this.currentCard_;
   }
 
-  checkTooManyWrongAnswers() {
+  checkTooManyWrongAnswersInARow() {
     return this.getUnansweredQuestionsInARow() >= this.getCurrentCard().unansweredQuestionLimit;
+  }
+
+  checkTooManyWrongAnswersTotal() {
+    return this.getSettings().maxMissedQuestions && this.getUnansweredQuestionsTotal() >= this.getSettings().maxMissedQuestions;
   }
 
   recycleCurrentCard_() {

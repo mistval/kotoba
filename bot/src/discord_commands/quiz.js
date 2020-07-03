@@ -650,9 +650,15 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
-    wrongAnswers,
+    info,
   ) {
-    const description = `${wrongAnswers} questions in a row went unanswered. So I stopped!`;
+    let description;
+    if (info.missedQuestionsInARow) {
+      description = `${info.missedQuestionsInARow} questions in a row went unanswered. So I stopped!`;
+    } else {
+      description = `${info.missedQuestionsTotal} questions total weren't answered. So I stopped!`;
+    }
+
     this.closeAudioConnection();
 
     return sendEndQuizMessages(
@@ -949,6 +955,7 @@ function createSettingsForLoad(serverSettings, inlineSettings) {
     newQuestionDelayAfterUnansweredInMs: inlineSettings.delayAfterUnansweredQuestion * 1000,
     newQuestionDelayAfterAnsweredInMs: inlineSettings.delayAfterAnsweredQuestion * 1000,
     additionalAnswerWaitTimeInMs: inlineSettings.additionalAnswerWaitWindow * 1000,
+    maxMissedQuestions: inlineSettings.maxMissedQuestions,
     fontSize: resolvedSettings.size,
     fontColor: resolvedSettings.color,
     backgroundColor: resolvedSettings.bgColor,
@@ -978,6 +985,7 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
     fontColor: resolvedSettings.color,
     backgroundColor: resolvedSettings.bgColor,
     font: resolvedSettings.fontFamily,
+    maxMissedQuestions: resolvedSettings.maxMissedQuestions,
   };
 
   return settings;
@@ -1202,6 +1210,9 @@ function consumeTimingTokens(commandTokens) {
     } else if (settingAbbreviation === 'aaww') {
       verifyValueIsInRange('Additional Answer Wait Window', 'aaww', ...quizLimits.additionalAnswerWaitWindow, settingValue);
       timingOverrides.additionalAnswerWaitWindow = settingValue;
+    } else if (settingAbbreviation === 'mmq') {
+      verifyValueIsInRange('Max Missed Questions', 'mmq', 0, 1000, settingValue);
+      timingOverrides.maxMissedQuestions = Math.floor(settingValue);
     } else {
       // Could not consume token.
       remainingTokens.push(token);
@@ -1296,6 +1307,7 @@ function getServerSettings(rawServerSettings) {
     delayAfterUnansweredQuestion: rawServerSettings['quiz/japanese/new_question_delay_after_unanswered'],
     scoreLimit: rawServerSettings['quiz/japanese/score_limit'],
     unansweredQuestionLimit: rawServerSettings['quiz/japanese/unanswered_question_limit'],
+    maxMissedQuestions: rawServerSettings.quiz_max_missed_questions,
   };
 }
 
@@ -1311,6 +1323,7 @@ module.exports = {
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',
+    'quiz_max_missed_questions',
   ]),
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {

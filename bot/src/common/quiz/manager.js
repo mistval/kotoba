@@ -213,12 +213,21 @@ class EndQuizNoQuestionsLeftAction extends Action {
   }
 }
 
-class EndQuizTooManyWrongAnswersAction extends Action {
+class EndQuizTooManyWrongAnswersInARowAction extends Action {
   do() {
     let session = this.getSession_();
-    let wrongAnswersCount = session.getUnansweredQuestionsInARow();
+    let missedQuestionsInARow = session.getUnansweredQuestionsInARow();
     let messageSender = session.getMessageSender();
-    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedTooManyWrongAnswers, wrongAnswersCount);
+    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedTooManyWrongAnswers, { missedQuestionsInARow });
+  }
+}
+
+class EndQuizTooManyWrongAnswersTotalAction extends Action {
+  do() {
+    let session = this.getSession_();
+    let missedQuestionsTotal = session.getUnansweredQuestionsTotal();
+    let messageSender = session.getMessageSender();
+    return endQuiz(true, session, messageSender, messageSender.notifyQuizEndedTooManyWrongAnswers, { missedQuestionsTotal });
   }
 }
 
@@ -345,8 +354,10 @@ class ShowWrongAnswerAction extends Action {
         err,
       });
     }).then(() => {
-      if (session.checkTooManyWrongAnswers()) {
-        return new EndQuizTooManyWrongAnswersAction(session);
+      if (session.checkTooManyWrongAnswersInARow()) {
+        return new EndQuizTooManyWrongAnswersInARowAction(session);
+      } else if (session.checkTooManyWrongAnswersTotal()) {
+        return new EndQuizTooManyWrongAnswersTotalAction(session);
       } else {
         return new WaitAction(session, currentCard.newQuestionDelayAfterUnansweredInMs, new AskQuestionAction(session));
       }
