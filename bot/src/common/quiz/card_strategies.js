@@ -376,9 +376,9 @@ function errorDelay() {
 }
 
 async function updateWithThesaurusSynonyms(card) {
-  const THESAURUS_MISSES_KEY = 'thesaurus_misses';
-  const thesaurusMisses = await globals.persistence.getData(THESAURUS_MISSES_KEY);
-  if (thesaurusMisses[card.question]) {
+  const cacheKey = `ThesaurusMisses_${card.question}`;
+  const isThesaurusMiss = await globals.persistence.getData(cacheKey);
+  if (isThesaurusMiss === true) {
     return false;
   }
 
@@ -391,15 +391,13 @@ async function updateWithThesaurusSynonyms(card) {
   }
 
   if (card.answer.length === 0) {
-    await globals.persistence.editData(THESAURUS_MISSES_KEY, (data) => {
-      globals.logger.warn({
-        event: 'THESAURUS MISS',
-        detail: card.question,
-      });
+    await globals.persistence.editData(cacheKey, () => true);
 
-      data[card.question] = true;
-      return data;
+    globals.logger.warn({
+      event: 'THESAURUS MISS',
+      detail: card.question,
     });
+
     return false;
   }
 
