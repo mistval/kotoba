@@ -42,7 +42,7 @@ function createBot() {
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
-  let storage = config.useMongo
+  const storage = config.useMongo
     ? new Monochrome.Plugins.MongoStorage(DB_CONNECTION_STRING, 'kotoba', 'monochromepersistence')
     : new Monochrome.Plugins.FPersist(persistenceDirectoryPath);
 
