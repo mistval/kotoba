@@ -8,6 +8,7 @@ const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const Canvas = require('canvas');
 const { initializeFonts, initializeResourceDatabase } = require('kotoba-node-common');
+const { DB_CONNECTION_STRING } = require('kotoba-node-common').database;
 
 const { ConsoleLogger } = Monochrome;
 
@@ -40,7 +41,10 @@ function createBot() {
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
   const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
-  const storage = new Monochrome.Plugins.FPersist(persistenceDirectoryPath);
+
+  let storage = config.useMongo
+    ? new Monochrome.Plugins.MongoStorage(DB_CONNECTION_STRING)
+    : new Monochrome.Plugins.FPersist(persistenceDirectoryPath);
 
   const options = {
     prefixes: ['k!'],
