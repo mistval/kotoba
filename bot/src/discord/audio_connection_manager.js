@@ -18,17 +18,13 @@ function getVoiceChannel(bot, serverId) {
   }
 
   const channelId = bot.voiceConnections.get(serverId).channelID;
-  const channel = bot.guilds.get(bot.channelGuildMap[channelId]).channels.get(channelId);
+  const channel = bot.guilds.get(serverId).channels.get(channelId);
 
   return channel;
 }
 
 function closeConnection(bot, serverId) {
-  if (!hasConnectionInServer(bot, serverId)) {
-    return undefined;
-  }
-
-  return getVoiceChannel(bot, serverId).leave();
+  return bot.guilds.get(serverId).leaveVoiceChannel();
 }
 
 function subscribeEvents(voiceConnection) {
