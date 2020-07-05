@@ -26,6 +26,8 @@ const audioConnectionManager = require('./../discord/audio_connection_manager.js
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
+const timingPresetsArr = Object.values(timingPresets);
+
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const MASTERY_NAME = 'conquest';
@@ -1193,7 +1195,7 @@ function consumeTimingTokens(commandTokens) {
   const timingOverrides = {};
 
   commandTokens.forEach((token) => {
-    const preset = timingPresets[token];
+    const preset = timingPresetsArr.find(p => p.aliases.indexOf(token) !== -1);
     const [settingAbbreviation, settingValueString] = token.split('=');
     const settingValue = Number.parseFloat(settingValueString);
     if (preset) {
