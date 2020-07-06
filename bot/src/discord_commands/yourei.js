@@ -1,7 +1,6 @@
-
-
 const youreiSearch = require('./../common/yourei_search.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const { Permissions } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['yourei', 'y'],
@@ -11,6 +10,7 @@ module.exports = {
   shortDescription: 'Search 用例.jp for more example sentences.',
   longDescription: 'Search 用例.jp for more Japanese example sentences, including usage frequency, and usage examples. There are no translation, though.',
   usageExample: '<prefix>yourei 少し',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

@@ -1,5 +1,5 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const { Navigation, NavigationChapter, FulfillmentError } = require('monochrome-bot');
+const { Navigation, NavigationChapter, FulfillmentError, Permissions } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
 const array = require('./../common/util/array');
@@ -13,6 +13,7 @@ module.exports = {
   uniqueId: 'best_dictionary',
   shortDescription: 'Search Jibiki for words, kanji and sentences.',
   usageExample: '<prefix>jibiki 女らしい',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

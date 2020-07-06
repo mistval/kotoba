@@ -3,6 +3,7 @@
 const createAnimeSearchNavigation = require('./../discord/create_anime_search_navigation.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
+const { Permissions } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['anime', 'a'],
@@ -12,6 +13,7 @@ module.exports = {
   shortDescription: 'Search Kitsu.io for anime information.',
   longDescription: 'Search Kitsu.io for anime information, including synopsis, rating and favorite counts.',
   usageExample: '<prefix>anime Monster',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

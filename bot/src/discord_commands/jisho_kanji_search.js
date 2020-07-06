@@ -1,6 +1,6 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const createKanjiDataSource = require('./../discord/create_kanji_search_data_source.js');
-const { Navigation, NavigationChapter } = require('monochrome-bot');
+const { Navigation, NavigationChapter, Permissions } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 module.exports = {
@@ -11,6 +11,7 @@ module.exports = {
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: '<prefix>kanji 少',
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
