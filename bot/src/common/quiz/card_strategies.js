@@ -360,9 +360,9 @@ async function applyOxfordSynonyms(card) {
       card.meaning += `\n[Oxford Thesaurus](https://en.oxforddictionaries.com/thesaurus/${card.question})`;
     }
   } catch (err) {
-    if (err.response.status !== 404) {
+    if (!err.response || err.response.status !== 404) {
       globals.logger.error({
-        event: 'FAILED TO QUERY OXFORD',
+        event: 'FAILED TO ADD OXFORD SYNONYMS',
         err,
       });
     }
