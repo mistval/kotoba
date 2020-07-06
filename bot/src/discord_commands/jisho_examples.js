@@ -1,7 +1,7 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
 const addPaginationFooter = require('./../discord/add_pagination_footer.js');
-const { Navigation } = require('monochrome-bot');
+const { Navigation, Permissions } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 module.exports = {
@@ -10,6 +10,7 @@ module.exports = {
   uniqueId: 'examples53059',
   shortDescription: 'Search Jisho for example sentences.',
   usageExample: '<prefix>examples 少し',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

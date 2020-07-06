@@ -1,4 +1,4 @@
-const { FulfillmentError, Navigation } = require('monochrome-bot');
+const { FulfillmentError, Navigation, Permissions } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 // Configuration start
@@ -226,6 +226,7 @@ function showAdvancedHelp(monochrome, msg, targetAlias) {
 module.exports = {
   uniqueId: 'help',
   commandAliases: ALIASES,
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
     const isDm = !msg.channel.guild;
     const canPaginate = isDm || msg.channel.permissionsOf(bot.user.id).json.addReactions;

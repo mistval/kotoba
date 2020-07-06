@@ -1,4 +1,4 @@
-const { erisVersion } = require('monochrome-bot');
+const { erisVersion, Permissions } = require('monochrome-bot');
 const monochromeVersion = require('monochrome-bot/package.json').version;
 
 const erisVersionString = `Eris v${erisVersion}`;
@@ -11,6 +11,7 @@ module.exports = {
   cooldown: 30,
   shortDescription: 'Show some meta information about me.',
   canBeChannelRestricted: false,
+  requiredBotPermissions: [Permissions.sendMessages],
   action(bot, msg) {
     return msg.channel.createMessage(`\`\`\`md
 # Kotoba

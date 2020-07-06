@@ -1,4 +1,5 @@
 const { EMBED_NEUTRAL_COLOR } = require('./../common/constants.js');
+const { Permissions } = require('monochrome-bot');
 
 
 const shiritoriForeverHelper = require('./../discord/shiritori_forever_helper');
@@ -37,6 +38,7 @@ module.exports = {
   shortDescription: 'Learn how to start or stop a long-running, no-time-limit game of shiritori in a channel.',
   hidden: false,
   uniqueId: 'shiritoriforever',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
     if (suffix === 'scores') {
       return shiritoriForeverHelper.sendScores(monochrome, msg);

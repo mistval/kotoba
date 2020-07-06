@@ -1,5 +1,4 @@
-
-const { FulfillmentError } = require('monochrome-bot');
+const { FulfillmentError, Permissions } = require('monochrome-bot');
 
 const Hook = require('./../discord_message_processors/user_and_channel_hook.js');
 const state = require('./../unreloadable_data.js');
@@ -760,6 +759,7 @@ module.exports = {
   canBeChannelRestricted: false,
   shortDescription: HELP_SHORT_DESCRIPTION,
   longDescription: HELP_LONG_DESCRIPTION,
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
     clearStateForMsg(msg);
 

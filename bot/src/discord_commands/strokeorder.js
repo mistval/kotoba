@@ -1,6 +1,6 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const createStrokeOrderNavigationChapter = require('./../discord/create_stroke_order_search_navigation_chapter.js');
-const { Navigation } = require('monochrome-bot');
+const { Navigation, Permissions } = require('monochrome-bot');
 const constants = require('./../common/constants.js');
 
 module.exports = {
@@ -11,6 +11,7 @@ module.exports = {
   shortDescription: 'Search for details about a kanji\'s strokes.',
   longDescription: 'Search for details about a kanji\'s strokes. For most kanji, I will provide a sequential stroke order diagram from Jisho and a stroke order gif generated from KanjiVG data. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: '<prefix>strokeorder 少',
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

@@ -1,6 +1,7 @@
 const axios = require('axios').create({ timeout: 10000 });
 const qs = require('qs');
 const { throwPublicErrorFatal, throwPublicErrorInfo } = require('./../common/util/errors.js');
+const { Permissions } = require('monochrome-bot');
 
 const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
 
@@ -10,6 +11,7 @@ module.exports = {
   uniqueId: 'furigana5345',
   shortDescription: 'Render furigana for Japanese text.',
   usageExample: '<prefix>furigana 吾輩は猫である',
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.sendMessages],
   requiredSettings: [
     'furigana_main_font_size',
     'furigana_font_color',

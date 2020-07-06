@@ -1,12 +1,14 @@
 const scores = require('../common/quiz/score_storage_utils.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
+const { Permissions } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['resetserverleaderboard'],
   uniqueId: 'resetserverleaderboard',
   cooldown: 10,
   shortDescription: 'Reset the server leaderboard.',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!msg.channel.guild) {
       return throwPublicErrorInfo('Reset server leaderboard', 'This command can only be used in a server.', 'In DM');

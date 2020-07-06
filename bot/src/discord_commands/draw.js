@@ -2,6 +2,7 @@ const { render } = require('./../common/render_text.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
+const { Permissions } = require('monochrome-bot');
 
 const longDescription = `Use this command to test font settings by drawing some text. You can specify the font, text color, background color, and/or size using command arguments. The arguments are:
 
@@ -31,6 +32,7 @@ module.exports = {
   cooldown: 2,
   shortDescription: 'Test font settings by drawing some text.',
   longDescription,
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
   requiredSettings: [
     'quiz_font_color',
     'quiz_background_color',

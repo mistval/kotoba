@@ -6,6 +6,7 @@ const constants = require('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
+  Permissions,
 } = require('monochrome-bot');
 
 const MAX_AUDIO_CLIPS = 6;
@@ -217,6 +218,7 @@ module.exports = {
   uniqueId: 'pronounce30294',
   shortDescription: 'Look up information about how to pronounce a Japanese word.',
   usageExample: '<prefix>pronounce 瞬間',
+  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

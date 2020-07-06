@@ -1,4 +1,4 @@
-const { Navigation } = require('monochrome-bot');
+const { Navigation, Permissions } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000 });
 const constants = require('../common/constants.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
@@ -68,6 +68,7 @@ module.exports = {
   cooldown: 3,
   shortDescription: 'Buscar Hispadic para resultados del diccionaro Español-Japonés.',
   canBeChannelRestricted: false,
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

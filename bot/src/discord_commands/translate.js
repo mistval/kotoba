@@ -1,6 +1,6 @@
-
 const assert = require('assert');
 const constants = require('./../common/constants.js');
+const { Permissions } = require('monochrome-bot');
 
 const googleTranslate = require('./../common/google_translate_utils.js');
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
@@ -138,6 +138,7 @@ module.exports = {
   shortDescription: 'Use Google Translate to translate text.',
   longDescription: createLongDescription(),
   usageExample: '<prefix>translate 吾輩は猫である',
+  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix) {
     const spaceIndex = msg.cleanContent.indexOf(' ');
     const cleanContent = msg.cleanContent.substring(spaceIndex + 1).trim();
