@@ -25,4 +25,4 @@ View the list of commands [here](https://kotobaweb.com/bot).
 
 ## Public bot
 
-[The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot) has a few things that aren't here.
+[The public version](https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot&permissions=52288) has a few things that aren't here.

@@ -59,7 +59,7 @@ function createBot() {
     missingPermissionsErrorMessage: 'I do not have permission to reply to that command in this channel. A server admin can give me the permissions I need in the channel settings. I need permission to **embed links**, **attach files**, and **add reactions**. If you do not want this command to be used in this channel, consider using **<prefix>settings** to disable it.',
     genericDMReply: 'Say **<prefix>help** to see my commands!',
     genericMentionReply: 'Hi <@user>, say **<prefix>help** to see my commands!',
-    inviteLinkDmReply: 'You can invite me to your server with this link! https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot&permissions=51264',
+    inviteLinkDmReply: 'You can invite me to your server with this link! https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot&permissions=52288',
     updateUserFromRestBucketClearInterval: 21600000, // six hours
     statusRotation: [
       '@ me for help!',
