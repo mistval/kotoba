@@ -861,10 +861,11 @@
       "meaning": "perfect attendance"
     },
     {
-      "question": "壊れた",
+      "question": "壊れる",
       "answer": [
-        "こわれた"
-      ]
+        "こわれる"
+      ],
+      "meaning": "to be broken, to break​; to fall through; to come to nothing​"
     },
     {
       "question": "捕獲",
@@ -1032,10 +1033,11 @@
       "meaning": "hill, height, knoll, rising ground, mound"
     },
     {
-      "question": "朽ちて",
+      "question": "朽ちる",
       "answer": [
-        "くちて"
-      ]
+        "くちる"
+      ],
+      "meaning": "to rot, to decay​"
     },
     {
       "question": "巨漢",
@@ -1052,12 +1054,11 @@
       "meaning": "basis, foundation"
     },
     {
-      "question": "測距",
+      "question": "息子",
       "answer": [
-        "そっきょ",
-        "そくきょ"
+        "むすこ"
       ],
-      "meaning": "distance surveying, measurement of distance"
+      "meaning": "son"
     },
     {
       "question": "防御",
@@ -2234,8 +2235,7 @@
     {
       "question": "抜群",
       "answer": [
-        "ばつぐん",
-        "はっぐん"
+        "ばつぐん"
       ],
       "meaning": "outstanding, excellent, exceptional, surpassing, extraordinary, distinguished"
     },
@@ -2871,8 +2871,7 @@
     {
       "question": "迷惑",
       "answer": [
-        "めいわく",
-        "べいこく"
+        "めいわく"
       ],
       "meaning": "trouble, bother, annoyance"
     },
@@ -3648,10 +3647,11 @@
       "meaning": "scenery, scene, landscape"
     },
     {
-      "question": "刈り",
+      "question": "出払う",
       "answer": [
-        "かり"
-      ]
+        "ではらう"
+      ],
+      "meaning": "to be all out"
     },
     {
       "question": "釈然",
@@ -3770,10 +3770,11 @@
       "meaning": "to bear, to stand, to endure, to put up with"
     },
     {
-      "question": "突拍子",
+      "question": "突拍子もない",
       "answer": [
-        "とっぴょうし"
-      ]
+        "とっぴょうしもない"
+      ],
+      "meaning": "astounding, tremendous, crazy, exorbitant​"
     },
     {
       "question": "尾翼",
@@ -4043,10 +4044,11 @@
       "meaning": "veterinarian"
     },
     {
-      "question": "澄んだ",
+      "question": "澄む",
       "answer": [
-        "すんだ"
-      ]
+        "すむ"
+      ],
+      "meaning": "to become clear (water, air, etc.), to become transparent; to resonate clearly (e.g. voice)​; to become serene; to become tranquil; to be free of worries​​"
     },
     {
       "question": "爆撃",
@@ -4269,20 +4271,6 @@
         "しはん"
       ],
       "meaning": "selling on the market (in the marketplace, in stores, etc.), making something commercially available"
-    },
-    {
-      "question": "出払う",
-      "answer": [
-        "ではらう"
-      ],
-      "meaning": "to be all out"
-    },
-    {
-      "question": "息子",
-      "answer": [
-        "むすこ"
-      ],
-      "meaning": "son"
     }
   ]
 }

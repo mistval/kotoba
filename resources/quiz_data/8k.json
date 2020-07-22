@@ -171,7 +171,13 @@
       ],
       "meaning": "prefectural road"
     },
-    null,
+    {
+      "question": "商店",
+      "answer": [
+        "しょうてん"
+      ],
+      "meaning": "shop, small store, business, firm"
+    },
     {
       "question": "箱",
       "answer": [
@@ -705,13 +711,6 @@
       "answer": [
         "くばる"
       ]
-    },
-    {
-      "question": "商店",
-      "answer": [
-        "しょうてん"
-      ],
-      "meaning": "shop, small store, business, firm"
     }
   ]
 }

@@ -170,13 +170,11 @@
       "meaning": "adviser, advisor, consultant"
     },
     {
-      "question": "貫",
+      "question": "貫く",
       "answer": [
-        "つらぬ",
-        "かん",
-        "ぬき"
+        "つらぬく"
       ],
-      "meaning": "kan (obs. unit of weight, approx. 3.75 kg, 8.3 lb), crosspiece (between pillars, etc.), penetrating tie beam"
+      "meaning": "to go through, to pierce, to penetrate; to run through (e.g. a river through a city), to pass through; to stick to (opinion, principles, etc.), to carry out, to persist with, to keep (e.g. faith), to maintain (e.g. independence)​​"
     },
     {
       "question": "喫煙",
@@ -302,7 +300,8 @@
       "question": "覆水",
       "answer": [
         "ふくすい"
-      ]
+      ],
+      "meaning": "spilled water"
     },
     {
       "question": "縫製",
@@ -928,10 +927,11 @@
       "meaning": "glen, ravine, gorge, canyon"
     },
     {
-      "question": "殴られ",
+      "question": "殴る",
       "answer": [
-        "なぐられ"
-      ]
+        "なぐる"
+      ],
+      "meaning": "to hit, to punch"
     },
     {
       "question": "塊",
@@ -1227,10 +1227,11 @@
       "meaning": "pardon, forgiveness, tolerance, overlooking"
     },
     {
-      "question": "慌ただしく",
+      "question": "慌ただしい",
       "answer": [
         "あわただしく"
-      ]
+      ],
+      "meaning": "busy, hurried, confused, flurried​"
     },
     {
       "question": "譲歩",
@@ -1703,10 +1704,11 @@
       "meaning": "vexing, annoying, frustrating, regrettable, mortifying"
     },
     {
-      "question": "既",
+      "question": "既に",
       "answer": [
-        "すで"
-      ]
+        "すでに"
+      ],
+      "meaning": "already"
     },
     {
       "question": "彫金",
@@ -1994,10 +1996,11 @@
       "meaning": "register of names, list of names, roll, register, proof of identity (for nobles, doctors, etc.) (Heian period)"
     },
     {
-      "question": "奪われ",
+      "question": "奪う",
       "answer": [
-        "うばわれ"
-      ]
+        "うばう"
+      ],
+      "meaning": "to steal, to take"
     },
     {
       "question": "難癖",
@@ -2177,19 +2180,19 @@
       "meaning": "explosion, rupture, break off"
     },
     {
-      "question": "擦り",
+      "question": "擦り傷",
       "answer": [
-        "すり",
-        "こすり",
-        "かすり"
+        "すりきず"
       ],
-      "meaning": "rubbing, scrubbing, scraping, grazing, touching lightly"
+      "meaning": "scratch, graze, abrasion​"
     },
     {
-      "question": "誘われ",
+      "question": "誘う",
       "answer": [
-        "さそわれ"
-      ]
+        "さそう",
+        "いざなう"
+      ],
+      "meaning": "to invite, to ask (someone to do), to call (for), to take (someone) along; to tempt, to lure, to entice, to seduce​​; to induce (tears, laughter, sleepiness, etc.), to arouse (e.g. sympathy), to provoke​"
     },
     {
       "question": "厘",
@@ -3478,8 +3481,7 @@
     {
       "question": "完了",
       "answer": [
-        "かんりょう",
-        "わんら"
+        "かんりょう"
       ],
       "meaning": "completion, conclusion, end"
     },
@@ -3661,10 +3663,11 @@
       "meaning": "stickiness, viscosity"
     },
     {
-      "question": "膨らませる",
+      "question": "膨らむ",
       "answer": [
-        "ふくらませる"
-      ]
+        "ふくらむ"
+      ],
+      "meaning": "to expand, to swell (out), to get big, to become inflated​"
     },
     {
       "question": "零度",
@@ -3765,10 +3768,11 @@
       "meaning": "domestic animals, livestock, cattle"
     },
     {
-      "question": "脅され",
+      "question": "脅す",
       "answer": [
-        "おどされ"
-      ]
+        "おどす"
+      ],
+      "meaning": "to threaten, to menace, to frighten (into doing)"
     },
     {
       "question": "擁立",
@@ -3919,10 +3923,11 @@
       "meaning": "saturation"
     },
     {
-      "question": "慕われ",
+      "question": "慕う",
       "answer": [
-        "したわれ"
-      ]
+        "したう"
+      ],
+      "meaning": "to yearn for, to long for, to pine for, to miss, to love dearly, to adore; to follow (someone)​; to idolize (for virtue, learning, status, etc.)​​"
     },
     {
       "question": "錯覚",
@@ -3995,10 +4000,11 @@
       "meaning": "multistoried building"
     },
     {
-      "question": "掲げ",
+      "question": "掲げる",
       "answer": [
-        "かかげ"
-      ]
+        "かかげる"
+      ],
+      "meaning": "to put up (a notice, sign, etc.), to hang out (e.g. a banner), to fly (e.g. a flag), to hoist, to raise, to display​"
     },
     {
       "question": "赤裸々",
