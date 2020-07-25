@@ -1196,11 +1196,17 @@ function consumeTimingTokens(commandTokens) {
 
   commandTokens.forEach((token) => {
     const preset = timingPresetsArr.find(p => p.aliases.indexOf(token) !== -1);
-    const [settingAbbreviation, settingValueString] = token.split('=');
-    const settingValue = Number.parseFloat(settingValueString);
     if (preset) {
       Object.assign(timingOverrides, preset);
-    } else if (settingAbbreviation === 'atl') {
+    } else {
+      remainingTokens.push(token);
+    }
+  });
+
+  remainingTokens.forEach((token) => {
+    const [settingAbbreviation, settingValueString] = token.split('=');
+    const settingValue = Number.parseFloat(settingValueString);
+    if (settingAbbreviation === 'atl') {
       verifyValueIsInRange('Answer Time Limit', 'atl', ...quizLimits.answerTimeLimit, settingValue);
       timingOverrides.answerTimeLimit = settingValue;
     } else if (settingAbbreviation === 'dauq') {
