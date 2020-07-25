@@ -17,6 +17,7 @@ const gameReportSchema = new mongoose.Schema({
   discordServerName: { type: String },
   discordChannelName: { type: String, required: true },
   scores: { type: [scoreType], required: true },
+  settings: { type: Object, required: true },
   questions: [{
     _id: false,
     deckUniqueId: { type: String, required: true },
