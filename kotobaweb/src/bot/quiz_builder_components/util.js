@@ -26,11 +26,10 @@ export function createTimeModifierParts(timingArguments) {
     const presetEntry = presetEntries[i];
     const [presetName, presetValues] = presetEntry;
 
-    if (
-      presetValues.answerTimeLimit === timingArguments.answerTimeLimit
-      && presetValues.delayAfterUnansweredQuestion === timingArguments.delayAfterUnansweredQuestion
-      && presetValues.delayAfterAnsweredQuestion === timingArguments.delayAfterAnsweredQuestion
-      && presetValues.additionalAnswerWaitWindow === timingArguments.additionalAnswerWaitWindow) {
+    const matchesPreset = Object.entries(presetValues)
+      .every(([presetKey, presetValue]) => timingArguments[presetKey] === presetValue);
+
+    if (matchesPreset) {
         if (presetName === 'normal') {
           return [];
         }

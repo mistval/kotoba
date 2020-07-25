@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { quizTimeModifierPresets, quizLimits } from 'kotoba-common';
+import { quizTimeModifierPresets, quizLimits, quizDefaults } from 'kotoba-common';
 import { createTimeModifierParts } from './util';
 import styles from './styles';
 import HelpButton from './help_button';
@@ -63,7 +63,7 @@ class TimingEditor extends Component {
       this.setStateFromProps();
       window.$(this.customTimingModal).modal('show');
     } else {
-      this.props.onTimingChanged(quizTimeModifierPresets[presetName]);
+      this.props.onTimingChanged({ ...quizDefaults, ...quizTimeModifierPresets[presetName] });
     }
   }
 
