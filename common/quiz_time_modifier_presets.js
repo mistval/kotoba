@@ -2,7 +2,6 @@ const quizDefaults = require('./quiz_defaults.js');
 
 module.exports = {
   nodelay: {
-    answerTimeLimit: 16,
     delayAfterUnansweredQuestion: 0,
     delayAfterAnsweredQuestion: 0,
     additionalAnswerWaitWindow: 0,
@@ -30,7 +29,7 @@ module.exports = {
     aliases: ['normal'],
   },
   slow: {
-    answerTimeLimit: 16,
+    answerTimeLimit: 30,
     delayAfterUnansweredQuestion: 4.5,
     delayAfterAnsweredQuestion: 3,
     additionalAnswerWaitWindow: 3.7,
