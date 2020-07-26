@@ -313,6 +313,16 @@ class SessionInformation {
     return this.getSettings().maxMissedQuestions && this.getUnansweredQuestionsTotal() >= this.getSettings().maxMissedQuestions;
   }
 
+  getDeckInfo() {
+    return this.deckCollection_.decks.map((deck) => ({
+      name: deck.name,
+      uniqueId: deck.uniqueId,
+      startIndex: deck.startIndex,
+      endIndex: deck.endIndex,
+      mc: deck.mc,
+    }));
+  }
+
   recycleCurrentCard_() {
     this.deckCollection_.recycleCard(this.getCurrentCard(), this.getGameMode());
   }
