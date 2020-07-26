@@ -1203,7 +1203,9 @@ function consumeTimingTokens(commandTokens) {
     }
   });
 
-  remainingTokens.forEach((token) => {
+  const remainingTokensCopy = remainingTokens.slice();
+  remainingTokens.splice(0, remainingTokens.length);
+  remainingTokensCopy.forEach((token) => {
     const [settingAbbreviation, settingValueString] = token.split('=');
     const settingValue = Number.parseFloat(settingValueString);
     if (settingAbbreviation === 'atl') {
