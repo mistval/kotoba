@@ -58,7 +58,13 @@
       ],
       "meaning": "tomorrow"
     },
-    null,
+    {
+      "question": "枝",
+      "answer": [
+        "えだ"
+      ],
+      "meaning": "branch; bow; bough; twig; limb, counter for long, thin things (i.e. swords)"
+    },
     {
       "question": "集める",
       "answer": [
@@ -1274,7 +1280,13 @@
       ],
       "meaning": "paper"
     },
-    null,
+    {
+      "question": "林",
+      "answer": [
+        "はやし"
+      ],
+      "meaning": "woods; forest; copse; thicket, bunch; line (of something); collection"
+    },
     {
       "question": "体",
       "answer": [
@@ -2744,7 +2756,13 @@
       ],
       "meaning": "culture; civilization; civilisation, Bunka era (1804.2.11-1818.4.22)"
     },
-    null,
+    {
+      "question": "机",
+      "answer": [
+        "つくえ"
+      ],
+      "meaning": "desk"
+    },
     {
       "question": "日記",
       "answer": [
@@ -2772,27 +2790,6 @@
         "ふつう"
       ],
       "meaning": "general; ordinary; usual, normally; generally; usually, local train; train that stops at every station"
-    },
-    {
-      "question": "机",
-      "answer": [
-        "つくえ"
-      ],
-      "meaning": "desk"
-    },
-    {
-      "question": "林",
-      "answer": [
-        "はやし"
-      ],
-      "meaning": "woods; forest; copse; thicket, bunch; line (of something); collection"
-    },
-    {
-      "question": "枝",
-      "answer": [
-        "えだ"
-      ],
-      "meaning": "branch; bow; bough; twig; limb, counter for long, thin things (i.e. swords)"
     }
   ]
 }

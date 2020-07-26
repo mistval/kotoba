@@ -10750,7 +10750,13 @@
       ],
       "meaning": "item"
     },
-    null,
+    {
+      "question": "縄",
+      "answer": [
+        "なわ"
+      ],
+      "meaning": "rope; cord, policeman's rope"
+    },
     {
       "question": "父母",
       "answer": [
@@ -15365,13 +15371,6 @@
         "かいぜん"
       ],
       "meaning": "betterment; improvement, kaizen (Japanese business philosophy of continuous improvement)"
-    },
-    {
-      "question": "縄",
-      "answer": [
-        "なわ"
-      ],
-      "meaning": "rope; cord, policeman's rope"
     }
   ]
 }
