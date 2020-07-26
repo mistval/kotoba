@@ -520,7 +520,13 @@ class StartAction extends Action {
     const quizLength = session.getRemainingCardCount();
     const scoreLimit = session.getScores().getScoreLimit();
 
-    sessionReportManager.notifyStarting(session.getLocationId(), session.getScoreScopeId(), name, session.getSettings());
+    sessionReportManager.notifyStarting(
+      session.getLocationId(),
+      session.getScoreScopeId(),
+      name,
+      session.getSettings(),
+      session.getDeckInfo(),
+    );
 
     return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description, quizLength, scoreLimit)).catch(err => {
       globals.logger.warn({

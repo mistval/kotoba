@@ -26,7 +26,13 @@ function calculateCanCopyToCustomDeck(card) {
   return true;
 }
 
-function notifyStarting(locationId, serverId, quizName, settings) {
+function notifyStarting(
+  locationId,
+  serverId,
+  quizName,
+  settings,
+  deckInfo,
+) {
   try {
     if (pendingReportForLocationId[locationId]) {
       globals.logger.warn({
@@ -35,7 +41,7 @@ function notifyStarting(locationId, serverId, quizName, settings) {
       });
     }
   
-    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings };
+    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo };
     pendingReportForLocationId[locationId] = report;
   } catch (err) {
     globals.logger.error({
@@ -169,6 +175,7 @@ async function processPendingReportForLocation(channel) {
       discordChannelName: guild ? guild.channels.get(channel.id).name : 'DM',
       scores,
       settings: report.settings,
+      decks: report.deckInfo,
       questions: report.cards.map((card) => ({
         ...card,
         correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),
