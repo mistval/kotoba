@@ -57,6 +57,7 @@ class SessionInformation {
 
   static createNew(locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
     let session = new SessionInformation();
+    session.isLoaded_ = false;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
     session.locationId_ = locationId;
@@ -77,6 +78,7 @@ class SessionInformation {
     let deckCollection = await DeckCollection.createFromSaveData(saveData.deckCollectionSaveData);
     let gameMode = gameModes.find(mode => mode.serializationIdentifier === saveData.gameModeIdentifier);
 
+    session.isLoaded_ = true;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
     session.locationId_ = locationId;
@@ -92,6 +94,10 @@ class SessionInformation {
     session.numCardsUnanswered_ = saveData.numCardsUnanswered || 0;
 
     return session;
+  }
+
+  getIsLoaded() {
+    return this.isLoaded_;
   }
 
   getScoreScopeId() {
