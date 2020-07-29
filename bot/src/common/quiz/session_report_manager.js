@@ -32,6 +32,7 @@ function notifyStarting(
   quizName,
   settings,
   deckInfo,
+  isLoaded,
 ) {
   try {
     if (pendingReportForLocationId[locationId]) {
@@ -41,7 +42,7 @@ function notifyStarting(
       });
     }
   
-    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo };
+    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo, isLoaded };
     pendingReportForLocationId[locationId] = report;
   } catch (err) {
     globals.logger.error({
@@ -176,6 +177,7 @@ async function processPendingReportForLocation(channel) {
       scores,
       settings: report.settings,
       decks: report.deckInfo,
+      isLoaded: report.isLoaded || false,
       questions: report.cards.map((card) => ({
         ...card,
         correctAnswerers: card.answererDiscordIds.map(id => userModelForId[id]),

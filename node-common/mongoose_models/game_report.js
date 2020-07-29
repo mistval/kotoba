@@ -19,6 +19,7 @@ const gameReportSchema = new mongoose.Schema({
   scores: { type: [scoreType], required: true },
   settings: { type: Object, required: true },
   decks: { type: Array, required: true },
+  isLoaded: { type: Boolean, required: true },
   questions: [{
     _id: false,
     deckUniqueId: { type: String, required: true },

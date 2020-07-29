@@ -526,6 +526,7 @@ class StartAction extends Action {
       name,
       session.getSettings(),
       session.getDeckInfo(),
+      session.getIsLoaded(),
     );
 
     return Promise.resolve(session.getMessageSender().notifyStarting(INITIAL_DELAY_IN_MS, name, description, quizLength, scoreLimit)).catch(err => {
