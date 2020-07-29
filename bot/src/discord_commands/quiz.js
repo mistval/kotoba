@@ -988,6 +988,7 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
     backgroundColor: resolvedSettings.bgColor,
     font: resolvedSettings.fontFamily,
     maxMissedQuestions: resolvedSettings.maxMissedQuestions,
+    shuffle: resolvedSettings.shuffle,
   };
 
   return settings;
@@ -1195,11 +1196,17 @@ function consumeTimingTokens(commandTokens) {
   const timingOverrides = {};
 
   commandTokens.forEach((token) => {
-    const preset = timingPresetsArr.find(p => p.aliases.indexOf(token) !== -1);
-    if (preset) {
-      Object.assign(timingOverrides, preset);
+    if (token === 'noshuffle') {
+      timingOverrides.shuffle = false;
+    } else if (token === 'shuffle') {
+      timingOverrides.shuffle = true;
     } else {
-      remainingTokens.push(token);
+      const preset = timingPresetsArr.find(p => p.aliases.indexOf(token) !== -1);
+      if (preset) {
+        Object.assign(timingOverrides, preset);
+      } else {
+        remainingTokens.push(token);
+      }
     }
   });
 
@@ -1318,6 +1325,7 @@ function getServerSettings(rawServerSettings) {
     scoreLimit: rawServerSettings['quiz/japanese/score_limit'],
     unansweredQuestionLimit: rawServerSettings['quiz/japanese/unanswered_question_limit'],
     maxMissedQuestions: rawServerSettings.quiz_max_missed_questions,
+    shuffle: rawServerSettings.quiz_shuffle,
   };
 }
 
@@ -1334,6 +1342,7 @@ module.exports = {
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',
     'quiz_max_missed_questions',
+    'quiz_shuffle',
   ]),
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
@@ -1465,9 +1474,6 @@ module.exports = {
     // 3. Check if a game is in progress
     throwIfSessionInProgressAtLocation(locationId, prefix);
 
-    // Create the deck collection.
-    const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode);
-
     const {
       remainingTokens: remainingTokens5,
       scoreLimitOverrides,
@@ -1477,6 +1483,10 @@ module.exports = {
 
     // Create the session
     const settings = createSettings(serverSettings, inlineSettings, gameMode);
+
+    // Create the deck collection.
+    const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode, settings.shuffle);
+
     const session = Session.createNew(
       locationId,
       invokerId,

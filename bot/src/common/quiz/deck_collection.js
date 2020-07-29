@@ -11,7 +11,7 @@ function deepCopy(object) {
   return JSON.parse(JSON.stringify(object));
 }
 
-function createRandomIndexSetForDecks(decks) {
+function createIndexSetForDecks(decks, shuffle) {
   const indexSet = [];
   decks.forEach((deck) => {
     const startIndex = deck.startIndex || 1;
@@ -21,7 +21,7 @@ function createRandomIndexSetForDecks(decks) {
       indices[i - startIndex] = i - 1;
     }
 
-    indexSet.push(shuffleArray(indices));
+    indexSet.push(shuffle ? shuffleArray(indices) : indices);
   });
 
   return indexSet;
@@ -36,11 +36,11 @@ class DeckCollection {
     this.discardedCards = [];
   }
 
-  static createNewFromDecks(decks, gameMode) {
+  static createNewFromDecks(decks, gameMode, shuffle) {
     const deckCollection = new DeckCollection();
     deckCollection.nextCardId = 0;
     deckCollection.decks = decks;
-    deckCollection.indexSet = createRandomIndexSetForDecks(decks);
+    deckCollection.indexSet = createIndexSetForDecks(decks, shuffle);
     deckCollection.initialCardCount = countCards(deckCollection.indexSet);
     const deckName = deckCollection.decks[0].name;
     if (deckCollection.decks.every(deck => deck.name === deckName)) {
