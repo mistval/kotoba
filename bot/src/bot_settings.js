@@ -114,6 +114,16 @@ module.exports = [
         validateInternalValue: SettingsValidators.createRangeValidator(0, 1000),
       },
       {
+        userFacingName: 'Shuffle questions',
+        description: 'This setting controls whether questions are shuffled or not. If you disable this, you will always see questions in the same order. Boring!',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'quiz_shuffle',
+        defaultUserFacingValue: 'Enabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
+      {
         userFacingName: 'Conquest and Inferno modes enabled',
         description: 'This setting controls whether Conquest and Inferno mode quizzes can be run. Say `k!quiz conquest` and `k!quiz inferno` to find out more about what those are.',
         allowedValuesDescription: 'Either **enabled** or **disabled**',
