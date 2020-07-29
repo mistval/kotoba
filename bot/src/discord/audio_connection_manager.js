@@ -92,7 +92,14 @@ async function openConnectionFromMessage(bot, msg) {
     return throwPublicErrorFatal('Audio', `I either don't have permission to join your voice channel, or I don't have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString || '**None**'}`, 'Lack voice permission');
   }
 
-  const voiceConnection = await voiceChannel.join();
+  let voiceConnection;
+  try {
+    voiceConnection = await voiceChannel.join();
+  } catch (err) {
+    await msg.channel.guild.leaveVoiceChannel();
+    throw err;
+  }
+
   subscribeEvents(voiceConnection);
 
   return msg.channel.createMessage({
