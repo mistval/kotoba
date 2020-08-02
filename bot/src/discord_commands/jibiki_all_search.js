@@ -133,12 +133,14 @@ module.exports = {
             value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
             value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
 
-            value += '**Definitions**\n';
-            kanji.definitions.forEach((definition, i) => {
-              value += `${i + 1}. ${definition}\n`;
-            });
+            if (kanji.definitions && kanji.definitions.length > 0) {
+              value += '**Definitions**\n';
+              kanji.definitions.forEach((definition, i) => {
+                value += `${i + 1}. ${definition}\n`;
+              });
 
-            value += '\n';
+              value += '\n';
+            }
 
             if (kanji.miscellaneous.jlpt !== null) {
               value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
