@@ -59,5 +59,8 @@ services:
     image: registry.gitlab.com/kotoba/monochrome2/nginx:latest
     build: ./nginx
     restart: always
+    depends_on:
+      - kotoba-api
+      - kotoba-web
     ports:
       - '80:80'
