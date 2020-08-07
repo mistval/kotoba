@@ -1,5 +1,5 @@
 function stringContainsInviteLink(str) {
-  return str.indexOf('discord.gg') !== -1;
+  return str.indexOf('discord.gg') !== -1 || str.indexOf('discord.com') === -1;
 }
 
 module.exports = {
