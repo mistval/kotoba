@@ -12,6 +12,7 @@ const INITIAL_DELAY_IN_MS = 5000;
 const REVEAL_INTERVAL_IN_MS = 10000;
 const MAX_SAVES_PER_USER = 5;
 const QUIZ_END_STATUS_ERROR = 1;
+const MAX_SAVE_QUESTIONS = 50000;
 
 /* LOADING AND INITIALIZATION */
 
@@ -128,6 +129,9 @@ function saveQuizCommand(locationId, savingUserId) {
   let ownerId = session.getOwnerId();
   if (savingUserId !== ownerId) {
     return session.getMessageSender().notifySaveFailedNotOwner();
+  }
+  if (session.getRemainingCardCount() > MAX_SAVE_QUESTIONS && !session.getIsLoaded()) {
+    return session.getMessageSender().notifySaveFailedTooManyQuestions(MAX_SAVE_QUESTIONS);
   }
 
   return saveManager.getSaveMementos(savingUserId).then(mementos => {
