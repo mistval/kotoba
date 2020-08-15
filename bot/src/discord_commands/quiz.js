@@ -57,6 +57,16 @@ function createTitleOnlyEmbed(title) {
   return createTitleOnlyEmbedWithColor(title, constants.EMBED_NEUTRAL_COLOR);
 }
 
+function createSaveFailedEmbed(description) {
+  return {
+    embed: {
+      title: 'Save failed',
+      description,
+      color: constants.EMBED_WARNING_COLOR,
+    },
+  };
+}
+
 function getFinalAnswerLineForQuestionAndAnswerLinkAnswer(card) {
   return `${card.question.replace(/\n/g, ' ')} ([${card.answer.join(', ')}](${card.dictionaryLink}))`;
 }
@@ -585,11 +595,11 @@ class DiscordMessageSender {
   }
 
   notifySaveFailedNoSpace(maxSaves) {
-    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying '${this.commanderMessage.prefix}quiz load'.`));
+    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed(`Can't save because you already have ${maxSaves} games saved! Try finishing them sometime, or just load them then stop them to delete them. You can view and load saves by saying '${this.commanderMessage.prefix}quiz load'.`));
   }
 
   notifySaveFailedIsReview() {
-    return this.commanderMessage.channel.createMessage(createTitleOnlyEmbed('You can\'t save a review quiz.'));
+    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed('You can\'t save a review quiz.'));
   }
 
   notifySaving() {
@@ -597,18 +607,11 @@ class DiscordMessageSender {
   }
 
   notifySaveFailedNotOwner() {
-    return this.commanderMessage.channel.createMessage(
-      createTitleOnlyEmbed('Only the person who started the quiz can save it. Maybe ask them nicely?'),
-    );
+    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed('Only the person who started the quiz can save it. Maybe ask them nicely?'));
   }
 
   notifySaveFailedTooManyQuestions(maxQuestions) {
-    return this.commanderMessage.channel.createMessage({
-      embed: {
-        title: 'Save failed',
-        description: `Can't save because there are too many questions left! You can only save up to ${maxQuestions} questions. If you want to save with a large deck, you can use the [range command](https://kotobaweb.com/bot/quiz#Question%20Range) to take a smaller slice of the deck. For example **k!quiz n1(1-1000)** to only use the first 1000 questions.`,
-      },
-    });
+    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed(`Can't save because there are too many questions left! You can only save up to ${maxQuestions} questions. If you want to save with a large deck, you can use the [range command](https://kotobaweb.com/bot/quiz#Question%20Range) to take a smaller slice of the deck. For example **k!quiz n1(1-1000)** to only use the first 1000 questions.`));
   }
 
   closeAudioConnection() {
