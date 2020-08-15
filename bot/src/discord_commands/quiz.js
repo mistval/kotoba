@@ -602,6 +602,15 @@ class DiscordMessageSender {
     );
   }
 
+  notifySaveFailedTooManyQuestions(maxQuestions) {
+    return this.commanderMessage.channel.createMessage({
+      embed: {
+        title: 'Save failed',
+        description: `Can't save because there are too many questions left! You can only save up to ${maxQuestions} questions. If you want to save with a large deck, you can use the [range command](https://kotobaweb.com/bot/quiz#Question%20Range) to take a smaller slice of the deck. For example **k!quiz n1(1-1000)** to only use the first 1000 questions.`,
+      },
+    });
+  }
+
   closeAudioConnection() {
     const guild = this.commanderMessage.channel.guild;
     if (!guild) {
