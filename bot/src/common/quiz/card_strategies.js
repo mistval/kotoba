@@ -160,45 +160,48 @@ function createTextQuestionWithHint(card, quizState) {
   if (!quizState.textQuestionWithHintStrategyState) {
     quizState.textQuestionWithHintStrategyState = {};
   }
-  let answer = card.options ? card.answer[1] : card.answer[0];
+
+  const answer = card.options ? card.answer[1] : card.answer[0];
+  const answerCharArray = answer.split('');
+
   if (quizState.textQuestionWithHintStrategyState.cardId !== card.id) {
     quizState.textQuestionWithHintStrategyState.cardId = card.id;
-    let totalNumberOfCharactersToReveal = Math.ceil(answer.length * NUMBER_OF_REVEALS_PER_CARD * FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL);
-    totalNumberOfCharactersToReveal = Math.min(totalNumberOfCharactersToReveal, answer.length - 1);
 
-    // Randomize which indices to reveal in which order
-    let allCharacterIndices = [];
-    for (let i = 0; i < answer.length; ++i) {
-      allCharacterIndices.push(i);
-    }
-    let shuffledIndices = shuffleArray(allCharacterIndices);
-    let revealIndexQueue = shuffledIndices.slice(0, totalNumberOfCharactersToReveal);
-    let revelationState = Array(answer.length + 1).join('_');
+    const spaceIndices = answerCharArray
+      .map((c, i) => c === ' ' ? i : -1)
+      .filter(i => i !== -1);
+    const nonSpaceIndices = answerCharArray
+      .map((c, i) => c === ' ' ? -1 : i)
+      .filter(i => i !== -1);
+
+    const revealedIndices = spaceIndices.reduce((d, i) => { d[i] = true; return d; }, {});
+
+    let totalNumberOfCharactersToReveal = Math.ceil(nonSpaceIndices.length * NUMBER_OF_REVEALS_PER_CARD * FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL);
+    totalNumberOfCharactersToReveal = Math.min(totalNumberOfCharactersToReveal, nonSpaceIndices.length - 1);
+
+    const revealIndexQueue = shuffleArray(nonSpaceIndices).slice(0, totalNumberOfCharactersToReveal);
+
+    quizState.textQuestionWithHintStrategyState.numIndicesPerReveal = Math.ceil(FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL * nonSpaceIndices.length);
     quizState.textQuestionWithHintStrategyState.revealIndexQueue = revealIndexQueue;
-    quizState.textQuestionWithHintStrategyState.revelationState = revelationState;
+    quizState.textQuestionWithHintStrategyState.revealedIndices = revealedIndices;
   } else {
-    let numberOfIndicesToReveal = Math.ceil(FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL * answer.length);
-    let revealIndexQueue = quizState.textQuestionWithHintStrategyState.revealIndexQueue;
-    let revelationStateArray = quizState.textQuestionWithHintStrategyState.revelationState.split('');
-    for (let i = 0; i < numberOfIndicesToReveal && revealIndexQueue.length > 0; ++i) {
-      let indexToReveal = revealIndexQueue.pop();
-      revelationStateArray[indexToReveal] = answer[indexToReveal];
-    }
-    let oldRevelationState = quizState.textQuestionWithHintStrategyState.revelationState;
-    let newRevelationState = revelationStateArray.join('');
+    const { revealedIndices, revealIndexQueue, numIndicesPerReveal } = quizState.textQuestionWithHintStrategyState;
 
-    // If no changes to the revelation state, return undefined to indicate so.
-    if (oldRevelationState === newRevelationState) {
+    if (revealIndexQueue.length === 0 || numIndicesPerReveal === 0) {
       return Promise.resolve();
     }
 
-    quizState.textQuestionWithHintStrategyState.revelationState = newRevelationState;
+    for (let i = 0; i < numIndicesPerReveal && revealIndexQueue.length > 0; ++i) {
+      revealedIndices[revealIndexQueue.pop()] = true;
+    }
   }
 
-  let revelationString = quizState.textQuestionWithHintStrategyState.revelationState.split('').join(' ');
+  const { revealedIndices } = quizState.textQuestionWithHintStrategyState;
+  const revealedAnswer = answerCharArray.map((c, i) => revealedIndices[i] ? c : '_').join(' ');
+
   let question = createQuestionCommon(card);
   question.bodyAsText = card.question;
-  question.hintString = revelationString;
+  question.hintString = revealedAnswer;
   return Promise.resolve(question);
 }
 
