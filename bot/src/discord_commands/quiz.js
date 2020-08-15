@@ -58,15 +58,15 @@ function createTitleOnlyEmbed(title) {
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkAnswer(card) {
-  return `${card.question} ([${card.answer.join(', ')}](${card.dictionaryLink}))`;
+  return `${card.question.replace(/\n/g, ' ')} ([${card.answer.join(', ')}](${card.dictionaryLink}))`;
 }
 
 function getFinalAnswerLineForQuestionAndAnswerBoldAnswer(card) {
-  return `-- ${card.question} (**${card.answer.join(', ')}**)`;
+  return `-- ${card.question.replace(/\n/g, ' ')} (**${card.answer.join(', ')}**)`;
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkQuestion(card) {
-  return `[${card.question}](${card.dictionaryLink}) (${card.answer.join(', ')})`;
+  return `[${card.question.replace(/\n/g, ' ')}](${card.dictionaryLink}) (${card.answer.join(', ')})`;
 }
 
 function getFinalAnswerLineForAnswerOnly(card) {
@@ -74,7 +74,7 @@ function getFinalAnswerLineForAnswerOnly(card) {
 }
 
 function getFinalAnswerLineForQuestionOnly(card) {
-  return `[${card.question}](${card.dictionaryLink})`;
+  return `[${card.question.replace(/\n/g, ' ')}](${card.dictionaryLink})`;
 }
 
 function getFinalAnswerLineForJpTestAudio(card) {
