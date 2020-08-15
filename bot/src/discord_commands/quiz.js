@@ -89,7 +89,6 @@ function getFinalAnswerLineForForvoAudioLink(card) {
 }
 
 function getFinalAnswerLineForHentaiganaComment(card) {
-  const answer = card.answer[0];
   return `${card.meaning} (${card.answer.join(', ')})`;
 }
 
@@ -507,6 +506,14 @@ class DiscordMessageSender {
       title = `${title} (${percentDone}% complete)`;
     }
 
+    const bodyLines = [`**${title}**`];
+
+    if (question.options) {
+      bodyLines.push('Type the number of the correct answer!');
+    } else if (question.instructions) {
+      bodyLines.push(question.instructions);
+    }
+
     let content = {
       embed: {
         description: `**${title}**\n${question.instructions || ''}`,
@@ -524,7 +531,6 @@ class DiscordMessageSender {
       content.embed.footer = { text: question.hintString };
     }
     if (question.options) {
-      content.embed.description = `**${title}**\nType the number of the correct answer!`;
       const fieldValue = question.options.map((option, index) => {
         const optionCharacter = `${index + 1}`;
         return `**${optionCharacter}:** ${option}`;
@@ -532,7 +538,8 @@ class DiscordMessageSender {
       content.embed.fields.push({ name: 'Possible Answers', value: fieldValue });
     }
     if (question.bodyAsText) {
-      content.embed.description += '\n\n' + question.bodyAsText;
+      bodyLines.push('');
+      bodyLines.push(question.bodyAsText);
     }
     if (question.bodyAsImageUri) {
       content.embed.image = { url: question.bodyAsImageUri };
@@ -544,6 +551,7 @@ class DiscordMessageSender {
       audioConnectionManager.play(this.bot, serverId, question.bodyAsAudioUri);
     }
 
+    content.embed.description = bodyLines.join('\n');
     content = trimEmbed(content);
     if (!questionId) {
       const msg = await this.commanderMessage.channel.createMessage(content, uploadInformation);
