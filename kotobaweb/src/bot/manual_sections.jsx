@@ -3,6 +3,7 @@
 /* eslint max-len: 0 */
 
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 class ManualSection {
   constructor(title, content) {
@@ -20,12 +21,12 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Command Builder',
-  (<p>For interactive help writing a custom quiz command, try my <a href="/bot/quizbuilder">Quiz Command Builder</a>.</p>),
+  (<p>For interactive help writing a custom quiz command, try my <NavLink to="/bot/quizbuilder">Quiz Command Builder</NavLink>.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'Custom Decks',
-  (<p>You can create custom decks and import/export them from CSV in <a href="/dashboard">the dashboard</a>.</p>),
+  (<p>You can create custom decks and import/export them from CSV in <NavLink to="/dashboard">the dashboard</NavLink>.</p>),
 ));
 
 manualSections.push(new ManualSection(
@@ -55,7 +56,7 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Pacing Presets',
-  (<p>You can configure the pace of the game by using the pacing presets (from fastest to slowest) <span className="example">nodelay</span>, <span className="example">faster</span>, <span className="example">fast</span>, or <span className="example">slow</span>. Just specify the preset somewhere in your quiz command. For example: <span className="example">k!quiz N1 fast</span> for an N1 quiz that's a little faster than default. For more fine-grained control over pacing, see the next four sections in this manual, or use the <span className="example">custom</span> pacing option in my <a href="/bot/quizbuilder">Quiz Command Builder</a>.</p>),
+  (<p>You can configure the pace of the game by using the pacing presets (from fastest to slowest) <span className="example">nodelay</span>, <span className="example">faster</span>, <span className="example">fast</span>, or <span className="example">slow</span>. Just specify the preset somewhere in your quiz command. For example: <span className="example">k!quiz N1 fast</span> for an N1 quiz that's a little faster than default. For more fine-grained control over pacing, see the next four sections in this manual, or use the <span className="example">custom</span> pacing option in my <NavLink to="/bot/quizbuilder">Quiz Command Builder</NavLink>.</p>),
 ));
 
 manualSections.push(new ManualSection(
@@ -85,7 +86,7 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Changing Fonts and Colors',
-  (<p>You can customize fonts and colors by using the <span className="example">k!settings</span> command and going into the fonts submenu by entering <span className="example">4</span>. Alternatively, you can use the <span className="example">font=</span>, <span className="example">color=</span>, and/or <span className="example">bgcolor=</span> inline options. For help doing that, and to more easily experiment with different settings, try the online <a href="/bot/quizbuilder">Quiz Command Builder</a> or use the <span className="example">k!draw</span> command in Discord and read the instructions it shows.</p>),
+  (<p>You can customize fonts and colors by using the <span className="example">k!settings</span> command and going into the fonts submenu by entering <span className="example">4</span>. Alternatively, you can use the <span className="example">font=</span>, <span className="example">color=</span>, and/or <span className="example">bgcolor=</span> inline options. For help doing that, and to more easily experiment with different settings, try the online <NavLink to="/bot/quizbuilder">Quiz Command Builder</NavLink> or use the <span className="example">k!draw</span> command in Discord and read the instructions it shows.</p>),
 ));
 
 manualSections.push(new ManualSection(
