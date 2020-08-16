@@ -45,7 +45,7 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Saving and Loading',
-  (<p>While a quiz is in progress, you can use <span className="example">k!quiz save</span> to save and pause it. When you are ready to play again, you can use <span className="example">k!quiz load</span> to load your save. This is mostly used for conquest mode.</p>),
+  (<p>While a quiz is in progress, you can use <span className="example">k!quiz save</span> to save and pause it. When you are ready to play again, you can use <span className="example">k!quiz load</span> to load your save. This is mostly used for conquest mode. When you save, most settings (fonts, timing settings, etc) are also saved and are restored on load. If you want to override any settings on load, you can do so by using the various parameters described more farther down, for example <span className="example">k!quiz load 1 font=5</span> will load your first save and use font #5.</p>),
 ));
 
 manualSections.push(new ManualSection(
@@ -79,8 +79,13 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
-  'Changing fonts and colors',
-  (<p>You can customize fonts and colors by using the <span className="example">k!settings</span> command and going into the fonts submenu by entering <span className="example">4</span>.</p>),
+  'Max Missed Questions',
+  (<p>You can use this setting to limit how many questions are allowed to be missed total (not necessarily in a row). If that many questions go unanswered, I will end the quiz. You can set this by using the <span className="example">mmq=</span> parameter. For example: <span className="example">k!quiz N1 mmq=3</span>. This setting can also be set with the <span className="example">k!settings</span> command. Note that there is also a separate setting that controls the maximum number of questions that can be missed <strong>in a row</strong>. That one can only be set by server admins, in <span className="example">k!settings</span>.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Changing Fonts and Colors',
+  (<p>You can customize fonts and colors by using the <span className="example">k!settings</span> command and going into the fonts submenu by entering <span className="example">4</span>. Alternatively, you can use the <span className="example">font=</span>, <span className="example">color=</span>, and/or <span className="example">bgcolor=</span> inline options. For help doing that, and to more easily experiment with different settings, try the online <a href="/bot/quizbuilder">Quiz Command Builder</a> or use the <span className="example">k!draw</span> command in Discord and read the instructions it shows.</p>),
 ));
 
 manualSections.push(new ManualSection(
@@ -89,18 +94,28 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
+  'Disabling Randomization',
+  (<p>If you want to disable randomization of question order, you can use the <span className="example">noshuffle</span> option. For example <span className="example">k!quiz n1 noshuffle</span>.</p>),
+));
+
+manualSections.push(new ManualSection(
   'Multiple Choice',
-  (<p>Some decks are multiple choice by default, and you can make most other decks multiple choice by adding <b>-mc</b> to the deck name. For example: <span className="example">k!quiz N1-mc</span> for a multiple choice N1 quiz. Some decks cannot be made multiple choice. For those, the -mc modifier will simply be ignored.</p>),
+  (<p>Some decks are multiple choice by default, and you can make most other decks multiple choice by adding <span className="example">-mc</span> to the deck name. For example: <span className="example">k!quiz N1-mc</span> for a multiple choice N1 quiz. Some decks cannot be made multiple choice. For those, the -mc modifier will simply be ignored. Note that the <span className="example">-mc</span> modifier is per-deck. So if you want to mix two decks and use multiple choice for both, you should do it like <span className="example">k!quiz N1-mc+N2-mc</span>.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'Hardcore Mode',
-  (<p>In hardcore mode each player only gets one chance to answer the question. Hardcore mode is always enabled for multiple choices quizzes (because I got tired of people typing in <b>1 2 3 4 hahahahahah</b>). Hardcore mode can be enabled for any quiz by saying <b>hardcore</b> anywhere in your quiz start command. For example: <span className="example">k!quiz N1 hardcore</span>.</p>),
+  (<p>In hardcore mode each player only gets one chance to answer the question. Hardcore mode is always enabled for multiple choices quizzes (because I got tired of people typing in <b>1 2 3 4 hahahahahah</b>). Hardcore mode can be enabled for any quiz by saying <span className="example">hardcore</span> anywhere in your quiz start command. For example: <span className="example">k!quiz N1 hardcore</span>.</p>),
 ));
 
 manualSections.push(new ManualSection(
   'No Race Mode',
-  (<p>By default, after a player gets a question correct, the timeout ends (almost) immediately and the bot moves on to the next question. If you would like to disable this, you can use the <b>norace</b> option. For example: <span className="example">k!quiz LN1 norace</span>. This is especially nice if you want to play listening quizzes with multiple people, so that everyone gets a chance to hear the whole audio track and answer.</p>),
+  (<p>By default, after a player gets a question correct, the timeout ends (almost) immediately and the bot moves on to the next question. If you would like to disable this, you can use the <span className="example">norace</span> option. For example: <span className="example">k!quiz LN1 norace</span>. This is especially nice if you want to play listening quizzes with multiple people, so that everyone gets a chance to hear the whole audio track and answer.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Answering in Spoilers',
+  (<p>I accept answers inside of spoiler tags. So you can type your answer surrounded by <span className="example">||</span> to hide your answer from other Discord users. For example <span className="example">||にほんご||</span>. This can be good if you want to compete with friends without having to type quickly. You can use a high value for the <span className="example">aaww=</span> parameter and give your answers in spoilers.</p>),
 ));
 
 export default manualSections;
