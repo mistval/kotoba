@@ -4,4 +4,5 @@ module.exports = {
   delayAfterUnansweredQuestion: [0, 120],
   delayAfterAnsweredQuestion: [0, 120],
   additionalAnswerWaitWindow: [0, 120],
+  maxMissedQuestions: [0, 1000],
 };

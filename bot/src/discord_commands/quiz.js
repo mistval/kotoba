@@ -1248,7 +1248,7 @@ function consumeTimingTokens(commandTokens) {
       verifyValueIsInRange('Additional Answer Wait Window', 'aaww', ...quizLimits.additionalAnswerWaitWindow, settingValue);
       timingOverrides.additionalAnswerWaitWindow = settingValue;
     } else if (settingAbbreviation === 'mmq') {
-      verifyValueIsInRange('Max Missed Questions', 'mmq', 0, 1000, settingValue);
+      verifyValueIsInRange('Max Missed Questions', 'mmq', ...quizLimits.maxMissedQuestions, settingValue);
       timingOverrides.maxMissedQuestions = Math.floor(settingValue);
     } else {
       // Could not consume token.

@@ -57,6 +57,10 @@ function createCommand(args) {
     commandParts.push('norace');
   }
 
+  if (args.otherSettings.maxMissedQuestions) {
+    commandParts.push(`mmq=${args.otherSettings.maxMissedQuestions}`);
+  }
+
   commandParts.push(...createTimeModifierParts(args.timing));
 
   if (args.fontSettings.fontFamilyIndex !== 0) {
@@ -94,6 +98,7 @@ class QuizBuilder extends Component {
         conquest: false,
         scoreLimit: quizDefaults.scoreLimit,
         norace: false,
+        maxMissedQuestions: 0,
       },
       fontSettings: {
         color: DefaultColors.TEXT,
