@@ -45,12 +45,12 @@ module.exports = [
       {
         userFacingName: 'Answer time limit',
         description: 'This setting controls how many seconds players have to answer a quiz question before I say time\'s up and move on to the next question.',
-        allowedValuesDescription: 'A number between 5 and 120 (in seconds)',
+        allowedValuesDescription: 'A number between 3 and 120 (in seconds)',
         uniqueId: 'quiz/japanese/answer_time_limit',
         defaultUserFacingValue: quizDefaults.answerTimeLimit.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: SettingsValidators.createRangeValidator(5, 120),
+        validateInternalValue: SettingsValidators.createRangeValidator(3, 120),
       },
       {
         userFacingName: 'Score limit',
