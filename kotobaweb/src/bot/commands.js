@@ -45,22 +45,6 @@ const commands = [
     ],
   ),
   new Command(
-    'anime',
-    'a',
-    'Search kitsu.io for information about an anime.',
-    [
-      new Example('anime', 'sword art online', 'kanime.png'),
-    ],
-  ),
-  new Command(
-    'yourei',
-    'y',
-    'Search yourei.jp for example sentences containing a word or phrase.',
-    [
-      new Example('yourei', '瞬間', 'kyourei.png'),
-    ],
-  ),
-  new Command(
     'strokeorder',
     's',
     'Search for stroke order gifs and diagrams for kanji. You can look up many kanji at a time and use reactions to navigate between results.',
@@ -79,6 +63,14 @@ const commands = [
     ],
   ),
   new Command(
+    'jibiki',
+    'jb',
+    'Search jibiki.app for a Japanese or English word.',
+    [
+      new Example('jibiki', '瞬間', 'kjibiki.png'),
+    ],
+  ),
+  new Command(
     'shiritori',
     'sh',
     'Start a game of shiritori in this channel.',
@@ -87,11 +79,11 @@ const commands = [
     ],
   ),
   new Command(
-    'leaderboard',
-    'lb',
-    'Check your position on the quiz leaderboard. Competition is fierce. Over 500,000 correct answers from users so far!',
+    'examples',
+    'ex',
+    'Search Jisho.org for example sentences.',
     [
-      new Example('leaderboard', '', 'kleaderboard.png'),
+      new Example('examples', '瞬間', 'kexamples.png'),
     ],
   ),
   new Command(
@@ -113,11 +105,35 @@ const commands = [
     ],
   ),
   new Command(
-    'examples',
-    'ex',
-    'Search Jisho.org for example sentences.',
+    'español',
+    'es',
+    '(Japanese-Spanish dictionary) Buscar Hispadic para resultados del diccionaro Español-Japonés.',
     [
-      new Example('examples', '瞬間', 'kexamples.png'),
+      new Example('español', 'estrella', 'kespanol.png'),
+    ],
+  ),
+  new Command(
+    'anime',
+    'a',
+    'Search kitsu.io for information about an anime.',
+    [
+      new Example('anime', 'sword art online', 'kanime.png'),
+    ],
+  ),
+  new Command(
+    'yourei',
+    'y',
+    'Search yourei.jp for example sentences containing a word or phrase.',
+    [
+      new Example('yourei', '瞬間', 'kyourei.png'),
+    ],
+  ),
+  new Command(
+    'leaderboard',
+    'lb',
+    'Check your position on the quiz leaderboard. Competition is fierce. Over seven million correct answers from users so far!',
+    [
+      new Example('leaderboard', '', 'kleaderboard.png'),
     ],
   ),
   new Command(
@@ -134,14 +150,6 @@ const commands = [
     'Search the Weblio dictionary for a word. (Results are in Japanese)',
     [
       new Example('weblio', '瞬間', 'kweblio.png'),
-    ],
-  ),
-  new Command(
-    'thesaurus',
-    'th',
-    'Search the Weblio thesaurus a word. (Results are in Japanese)',
-    [
-      new Example('thesaurus', '瞬間', 'kthesaurus.png'),
     ],
   ),
   new Command(
