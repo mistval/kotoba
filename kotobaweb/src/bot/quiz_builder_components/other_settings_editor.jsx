@@ -12,6 +12,13 @@ function OtherSettingsEditor(props) {
     });
   }
 
+  function handleMaxMissedQuestionsChanged(newSetting) {
+    props.onOtherSettingsChanged({
+      ...props.otherSettings,
+      maxMissedQuestions: newSetting,
+    });
+  }
+
   function handleConquestModeChanged(ev) {
     props.onOtherSettingsChanged({
       ...props.otherSettings,
@@ -39,15 +46,27 @@ function OtherSettingsEditor(props) {
         <h5 className="card-title d-inline-block">Other</h5>
       </div>
       <div className="card-body">
-        Score limit:&nbsp;
-        <NumericInputBox
-          value={props.otherSettings.scoreLimit}
-          minValue={quizLimits.scoreLimit[0]}
-          maxValue={quizLimits.scoreLimit[1]}
-          onChange={handleScoreLimitChanged}
-          maxPlacesAfterDecimal={0}
-          disabled={props.otherSettings.conquest}
-        />
+        <div>
+          Score limit:&nbsp;
+          <NumericInputBox
+            value={props.otherSettings.scoreLimit}
+            minValue={quizLimits.scoreLimit[0]}
+            maxValue={quizLimits.scoreLimit[1]}
+            onChange={handleScoreLimitChanged}
+            maxPlacesAfterDecimal={0}
+            disabled={props.otherSettings.conquest}
+          />
+        </div>
+        <div className="mt-2">
+          Max missed questions (0 means infinite):&nbsp;
+          <NumericInputBox
+            value={props.otherSettings.maxMissedQuestions}
+            minValue={quizLimits.maxMissedQuestions[0]}
+            maxValue={quizLimits.maxMissedQuestions[1]}
+            onChange={handleMaxMissedQuestionsChanged}
+            maxPlacesAfterDecimal={0}
+          />
+        </div>
         <div className="checkbox mt-3">
           <label>
             <input type="checkbox" checked={props.otherSettings.conquest} onChange={handleConquestModeChanged} />&nbsp;<span style={styles.formText}>Conquest mode</span>&nbsp;
