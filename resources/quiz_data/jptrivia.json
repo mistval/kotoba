@@ -3,7 +3,7 @@
   "name": "Japanese Trivia Quiz",
   "description": "Trivia questions from [chukai.ne.jp](http://www.chukai.ne.jp/~shintaku/hayaoshi/haya00.htm)",
   "article": "a",
-  "instructions": "empty",
+  "instructions": "",
   "questionCreationStrategy": "TEXT_WITH_HINT",
   "dictionaryLinkStrategy": "NONE",
   "answerTimeLimitStrategy": "WITH_HINT",
