@@ -2,7 +2,9 @@
 
 const ScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
 const constants = require('./../common/constants.js');
-const { Navigation, FulfillmentError, NavigationChapter, Permissions } = require('monochrome-bot');
+const {
+  Navigation, FulfillmentError, NavigationChapter, Permissions,
+} = require('monochrome-bot');
 
 const MAX_SCORERS_PER_PAGE = 20;
 

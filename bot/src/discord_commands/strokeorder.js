@@ -11,7 +11,11 @@ module.exports = {
   shortDescription: 'Search for details about a kanji\'s strokes.',
   longDescription: 'Search for details about a kanji\'s strokes. For most kanji, I will provide a sequential stroke order diagram from Jisho and a stroke order gif generated from KanjiVG data. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: '<prefix>strokeorder 少',
-  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.attachFiles,
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+  ],
   action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

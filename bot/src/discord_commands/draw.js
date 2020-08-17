@@ -32,7 +32,11 @@ module.exports = {
   cooldown: 2,
   shortDescription: 'Test font settings by drawing some text.',
   longDescription,
-  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.attachFiles,
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+  ],
   requiredSettings: [
     'quiz_font_color',
     'quiz_background_color',
