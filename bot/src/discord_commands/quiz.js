@@ -230,7 +230,7 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
     const unansweredQuestionsString = unansweredQuestionsLines.join('\n');
     fields.push({ name: `Unanswered Questions (${unansweredQuestions.length})`, value: unansweredQuestionsString });
   }
-  
+
   if (reportUri) {
     fields.push({ name: 'Game Report', value: `[View a report for this game](${reportUri}) (and add missed questions to your custom decks)` });
   }
@@ -804,8 +804,6 @@ Bring your friends! The top scorers will appear together as a team on the infern
 
 To start, say **${prefix}quiz${CONQUEST_EXTENSION}** plus a deck name. For example: **${prefix}quiz${CONQUEST_EXTENSION} N5**.
 
-You can override some quiz settings, however, doing so makes your final results ineligible for the leaderboard. If you want to play N5, lose half a second per wrong answer, and start with a time limit of 20 seconds, try this: **${prefix}quiz${CONQUEST_EXTENSION} N5 .5 20**.
-
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
     },
@@ -1374,7 +1372,7 @@ module.exports = {
       .replace(/ *\(/g, '(')
       .trim()
       .toLowerCase();
-    
+
     const serverSettings = getServerSettings(rawServerSettings);
     const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
 
