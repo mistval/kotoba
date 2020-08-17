@@ -161,11 +161,13 @@ function createTextQuestionWithHint(card, quizState) {
     quizState.textQuestionWithHintStrategyState = {};
   }
 
+  const cardKey = `${card.id}-${(card.answerHistory || []).length}`;
+
   const answer = card.options ? card.answer[1] : card.answer[0];
   const answerCharArray = answer.split('');
 
-  if (quizState.textQuestionWithHintStrategyState.cardId !== card.id) {
-    quizState.textQuestionWithHintStrategyState.cardId = card.id;
+  if (quizState.textQuestionWithHintStrategyState.cardKey !== cardKey) {
+    quizState.textQuestionWithHintStrategyState.cardKey = cardKey;
 
     const spaceIndices = answerCharArray
       .map((c, i) => c === ' ' ? i : -1)
@@ -316,7 +318,7 @@ async function applyWebsterSynonyms(card) {
       synsProcessed.push(syn);
     }
   });
-  
+
   card.answer = card.answer || [];
   card.answer = card.answer.concat(synsProcessed);
 
@@ -355,7 +357,7 @@ async function applyOxfordSynonyms(card) {
         synsProcessed.push(syn);
       }
     });
-    
+
     card.answer = card.answer || [];
     card.answer = card.answer.concat(synsProcessed);
 
