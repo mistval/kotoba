@@ -13,7 +13,11 @@ module.exports = {
   shortDescription: 'Search Jisho for an English or Japanese word.',
   longDescription: 'Search Jisho for an English or Japanese word. Tip: sometimes Jisho will interpret your English search term as a Japanese word written in romaji. To force it to interpret your search term as English, put quotes around your search term. Example: <prefix>jn "gone"\n\nThere are two display modes. The default is \'big\' (unless your server admins have changed it). There is also \'small\'. Try both:\n\n<prefix>jn 少し --big\n<prefix>j 少し --small\n\nServer admins can change the default display mode by using the <prefix>settings command.',
   usageExample: '<prefix>j 少し',
-  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.attachFiles,
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+  ],
   async action(bot, msg, suffix, monochrome, settings) {
     if (!suffix) {
       const { prefix } = msg;

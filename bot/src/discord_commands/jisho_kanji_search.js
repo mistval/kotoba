@@ -11,7 +11,11 @@ module.exports = {
   shortDescription: 'Search for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: '<prefix>kanji 少',
-  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.attachFiles,
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+  ],
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

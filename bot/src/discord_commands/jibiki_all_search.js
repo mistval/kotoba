@@ -1,5 +1,7 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const { Navigation, NavigationChapter, FulfillmentError, Permissions } = require('monochrome-bot');
+const {
+  Navigation, NavigationChapter, FulfillmentError, Permissions,
+} = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
 const array = require('./../common/util/array');
