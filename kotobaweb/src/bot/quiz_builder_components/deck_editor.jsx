@@ -30,7 +30,9 @@ function DeckRow(props) {
         <a
           href="#"
           className="text-info"
-          onClick={() => props.onChangeRange(props.index)}>{convertRangeNumberToString(props.deck.startIndex)} - {convertRangeNumberToString(props.deck.endIndex)}
+          onClick={(e) => { props.onChangeRange(props.index); e.preventDefault(); }}
+        >
+            {convertRangeNumberToString(props.deck.startIndex)} - {convertRangeNumberToString(props.deck.endIndex)}
         </a>
         &nbsp;&nbsp;
         <button type="button" className="btn btn-danger bmd-btn-icon" onClick={() => props.onDeleteDeck(props.index)}>
@@ -43,7 +45,7 @@ function DeckRow(props) {
 
 function DeckRows(props) {
   return props.decks.map((deck, index) => (
-      <DeckRow
+    <DeckRow
       deck={deck}
       index={index}
       onDeleteDeck={props.onDeleteDeck}
@@ -90,7 +92,7 @@ class DeckEditor extends Component {
   handleNewDeckBlur = () => {
     const deckName = this.newDeckNameInput.value
       .replace(/[^0-9a-zA-Z_]/g, ''); // Remove illegal characters
-    
+
     if (!deckName) {
       return this.setState({ editingDeck: false });
     }
@@ -98,7 +100,7 @@ class DeckEditor extends Component {
     if (this.props.decks.some(deck => deck.name.toLowerCase() === deckName.toLowerCase())) {
       return this.setState({ editingDeck: false });
     }
-    
+
     this.setState({
       editingDeck: false,
     }, () => {
