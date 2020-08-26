@@ -13,6 +13,10 @@ class HelpButton extends PureComponent {
     window.$(`#${this.props.popoverId}`).popover('hide');
   }
 
+  handleClick = (e) => {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <a
@@ -24,6 +28,7 @@ class HelpButton extends PureComponent {
         data-placement="top"
         data-content={this.props.popoverContent}
         onBlur={this.handleHelpButtonBlur}
+        onClick={this.handleClick}
       >
         <i className="material-icons">help</i>
       </a>
