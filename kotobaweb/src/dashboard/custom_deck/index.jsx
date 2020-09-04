@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import assert from 'assert';
 import ReactDataGrid from 'react-data-grid';
-import Header from '../header';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
-import NotificationStripe from '../../controls/notification_stripe';
 import { deckValidation } from 'kotoba-common';
+import Header from '../header';
+import NotificationStripe from '../../controls/notification_stripe';
 import { Editors } from 'react-data-grid-addons';
 import Analytics from '../../util/analytics';
-import assert from 'assert';
+import HelpButton from '../../bot/quiz_builder_components/help_button';
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -451,7 +452,7 @@ class EditDeck extends Component {
                 />
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="form-group">
                 <label className="bmd-label-floating" htmlFor="shortDeckName">Short deck name</label>
                 <input
@@ -465,7 +466,27 @@ class EditDeck extends Component {
                   pattern={deckValidation.SHORT_NAME_ALLOWED_CHARACTERS_REGEX_HTML}
                   required
                 />
-                <span className="bmd-help">Load on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
+                <span className="bmd-help">Load in Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
+              </div>
+            </div>
+            <div className="col-md-1 d-flex align-items-end mb-2">
+              <div className="checkbox">
+                <label>
+                  <input type="checkbox" />&nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
+                  <HelpButton
+                    popoverId="publicPopover"
+                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read the rules before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
+                    popoverTitle="Public Decks"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6 offset-md-1">
+              <div class="form-group">
+                <label for="comment">Description</label>
+                <textarea class="form-control" rows="5" id="comment" placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."></textarea>
               </div>
             </div>
           </div>
