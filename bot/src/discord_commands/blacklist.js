@@ -1,4 +1,5 @@
 const { FulfillmentError } = require('monochrome-bot');
+const updateDbFromUser = require('./../discord/db_helpers/update_from_user.js');
 
 /**
 * Blacklist a user with a reason
@@ -19,11 +20,14 @@ module.exports = {
       });
     }
 
-    const spaceIndex = suffix.indexOf(' ');
-    const userId = suffix.substring(0, spaceIndex);
-    const reason = suffix.substring(spaceIndex + 1);
+    const [userId, reason] = suffix.split(' ');
+
     const blacklist = monochrome.getBlacklist();
-    await blacklist.blacklistUser(bot, userId, reason);
+    await blacklist.blacklistUser(userId, reason);
+
+    const user = await monochrome.updateUserFromREST(userId);
+    await updateDbFromUser(user, { banReason: reason });
+
     return msg.channel.createMessage('The user was blacklisted');
   },
 };

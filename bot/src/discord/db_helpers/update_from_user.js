@@ -3,11 +3,11 @@ const UserModel = require('kotoba-node-common').models.createUserModel(dbConnect
 const axios = require('axios').create({ timeout: 10000 });
 const globals = require('./../../common/globals.js');
 
-async function updateDbFromUser(user, admin = false) {
+async function updateDbFromUser(user, options = {}) {
   let userRecord = await UserModel.findOne({ 'discordUser.id': user.id });
 
   if (!userRecord) {
-    userRecord = new UserModel({ discordUser: { id: user.id }, admin });
+    userRecord = new UserModel({ discordUser: { id: user.id } });
   }
 
   const recordHasAvatarType = !!userRecord.discordUser.avatarType;
@@ -27,8 +27,14 @@ async function updateDbFromUser(user, admin = false) {
     }
   }
 
-  userRecord.discordUser.username = user.username;
-  userRecord.discordUser.discriminator = user.discriminator;
+  userRecord.discordUser.username = user.username
+    || userRecord.discordUser.username;
+  userRecord.discordUser.discriminator = user.discriminator
+    || userRecord.discordUser.discriminator;
+
+  if (options.banReason) {
+    userRecord.ban = { reason: options.banReason };
+  }
 
   return userRecord.save();
 }

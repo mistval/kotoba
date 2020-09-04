@@ -21,7 +21,7 @@ module.exports = {
 
     const userId = suffix;
     const blacklist = monochrome.getBlacklist();
-    await blacklist.unblacklistUser(bot, userId);
+    await blacklist.unblacklistUser(userId);
     return msg.channel.createMessage('The user was unblacklisted');
   },
 };
