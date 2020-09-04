@@ -4,8 +4,6 @@
   "private": true,
   "scripts": {
     "start": "node ./server.js",
-    "startdev_win": "set PORT=3000 && node ./server.js",
-    "startdev_nix": "export PORT=3000 && node ./server.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lintfix": "./node_modules/eslint/bin/eslint.js --fix .",
     "buildquiz": "node ./build/build_quiz_decks.js",

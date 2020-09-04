@@ -44,46 +44,14 @@ Install **MongoDB** and start it on port 27017 (the default port). You can insta
 cd ./api
 npm ci
 npm run buildall
-npm run startdev_nix # Or on Windows: npm run startdev_win
+npm start
 
 cd ../kotobaweb
 npm ci
 npm start
 ```
 
-The API will start on port 3000 and the React dev server will start on port 3001. You'll need to setup a reverse proxy server to forward to them appropriately. You can use nginx with a configuration like this:
-
-```
-worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on;
-    keepalive_timeout  65;
-
-    server {
-        listen 80;
-
-        location /api {
-            client_max_body_size 4M;
-            proxy_pass http://localhost:3000;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            proxy_set_header Host $host;
-        }
-
-        location / {
-            proxy_pass http://localhost:3001;
-        }
-    }
-}
-```
+The API will start on port 80 and the React dev server will start on port 3001.
 
 ### Worker process
 
@@ -150,19 +118,19 @@ Some quiz decks are not in this repo, and some commands or other functionality a
 
 Data from the following third parties has been used in Kotoba.
 
-[Jisho.org](https://jisho.org/about)  
-[Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)  
-[KanjiVG](http://kanjivg.tagaini.net/)  
-[Forvo](https://forvo.com/)  
-[Merriam-Webster](https://www.merriam-webster.com)  
-[Oxford Dictionaries](https://www.oxforddictionaries.com/)  
-[Japanese Wiktionary](https://ja.wiktionary.org)  
-[EDICT](http://www.edrdg.org/jmdict/edict.html)  
-[ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)  
-[Kanjimaji](https://github.com/maurimo/kanimaji)  
-[Google Translate](https://translate.google.com/)  
-[YouTube](https://www.youtube.com/)  
-[Jonathan Waller's site](http://www.tanos.co.uk/)  
+[Jisho.org](https://jisho.org/about)
+[Princeton University Japanese WordNet](http://compling.hss.ntu.edu.sg/wnja/index.en.html)
+[KanjiVG](http://kanjivg.tagaini.net/)
+[Forvo](https://forvo.com/)
+[Merriam-Webster](https://www.merriam-webster.com)
+[Oxford Dictionaries](https://www.oxforddictionaries.com/)
+[Japanese Wiktionary](https://ja.wiktionary.org)
+[EDICT](http://www.edrdg.org/jmdict/edict.html)
+[ENAMDICT](https://www.edrdg.org/enamdict/enamdict_doc.html)
+[Kanjimaji](https://github.com/maurimo/kanimaji)
+[Google Translate](https://translate.google.com/)
+[YouTube](https://www.youtube.com/)
+[Jonathan Waller's site](http://www.tanos.co.uk/)
 
 In addition various people have contributed quiz data and are credited in the relevant quiz descriptions.
 
