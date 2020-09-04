@@ -486,7 +486,7 @@ class EditDeck extends Component {
             <div className="col-md-6 offset-md-1">
               <div class="form-group">
                 <label for="comment">Description</label>
-                <textarea class="form-control" rows="5" id="comment" placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."></textarea>
+                <textarea maxLength="500" class="form-control" rows="4" placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."></textarea>
               </div>
             </div>
           </div>
