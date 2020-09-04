@@ -14,12 +14,7 @@ function initialize(app) {
       // Register new user
       user = new UserModel({
         discordUser,
-        gameReports: [],
-        customDecks: [],
       });
-    } else {
-      // Update user Discord info
-      user.discordUser = discordUser;
     }
 
     user.admin = authConfig.adminDiscordIds.some(adminId => adminId === discordUser.id);
