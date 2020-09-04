@@ -74,6 +74,20 @@ app.use(
 
 authInit(app);
 
+app.use('/api', (req, res, next) => {
+  if (!req.user) {
+    return next();
+  }
+
+  if (req.user.ban) {
+    return res.status(403).json({
+      banReason: req.user.ban.reason,
+    });
+  } else {
+    return next();
+  }
+});
+
 app.use(express.json({ limit: '4mb' }));
 app.use(express.urlencoded({ extended: false, limit: '4mb' }));
 app.use('/api/', routes);
