@@ -1347,8 +1347,7 @@ function getServerSettings(rawServerSettings) {
 }
 
 module.exports = {
-  commandAliases: ['quiz', 'readingQuiz', 'starttest', 'startquiz', 'rt', 'rq', 'q'],
-  aliasesForHelp: ['quiz', 'q'],
+  commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
   uniqueId: 'readingQuiz14934',
   cooldown: 1,
