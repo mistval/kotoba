@@ -1,4 +1,5 @@
 const { FulfillmentError } = require('monochrome-bot');
+const updateDbFromUser = require('./../discord/db_helpers/update_from_user.js');
 
 /**
 * Blacklist a user with a reason
@@ -22,6 +23,10 @@ module.exports = {
     const userId = suffix;
     const blacklist = monochrome.getBlacklist();
     await blacklist.unblacklistUser(userId);
+
+    const user = await monochrome.updateUserFromREST(userId);
+    await updateDbFromUser(user, { unBan: true });
+
     return msg.channel.createMessage('The user was unblacklisted');
   },
 };

@@ -34,6 +34,8 @@ async function updateDbFromUser(user, options = {}) {
 
   if (options.banReason) {
     userRecord.ban = { reason: options.banReason };
+  } else if (options.unBan) {
+    userRecord.ban = undefined;
   }
 
   return userRecord.save();
