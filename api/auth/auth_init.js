@@ -32,7 +32,7 @@ function initialize(app) {
     const user = await UserModel.findById(userId);
     done(null, user);
   });
-  
+
   const scopes = ['identify', 'guilds'];
   const strategy = new DiscordPassportStrategy({
     clientID: authConfig.discord.clientId,
@@ -43,7 +43,7 @@ function initialize(app) {
   (accessToken, refreshToken, profile, done) => {
       return done(null, profile);
   });
-  
+
   passport.use(strategy);
 
   app.use(passport.initialize());
