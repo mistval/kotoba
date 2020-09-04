@@ -11,9 +11,15 @@ const DiscordAccountSchema = new mongoose.Schema({
   _id: false,
 });
 
+const BanInfoSchema = new mongoose.Schema({
+  reason: { type: String, required: true },
+  _id: false,
+});
+
 const UserSchema = new mongoose.Schema({
   discordUser: { type: DiscordAccountSchema, required: true },
-  admin: { type: Boolean, required: true },
+  admin: { type: Boolean, required: false, default: false },
+  ban: { type: BanInfoSchema, required: false, default: undefined },
 });
 
 function create(connection) {
