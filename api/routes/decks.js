@@ -163,7 +163,14 @@ routes.patch(
     req.deckMeta.name = req.body.name || req.deckMeta.name;
     req.deckMeta.shortName = req.body.shortName || req.deckMeta.shortName;
     req.deckMeta.lastModified = Date.now();
+    req.deckMeta.description = req.body.description || req.deckMeta.description || '';
 
+    if (req.body.public !== undefined) {
+      req.deckMeta.public = req.body.public;
+      req.deck.public = req.body.public;
+    }
+
+    req.deck.description = req.body.description || req.deck.description || '';
     req.deck.name = req.body.name || req.deck.name;
     req.deck.shortName = req.body.shortName || req.deck.shortName;
     req.deck._id = req.deckMeta._id;
