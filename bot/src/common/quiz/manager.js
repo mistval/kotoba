@@ -65,6 +65,7 @@ async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFina
         session.getUnansweredCards(),
         session.createAggregateUnansweredCardsLink(),
         session.getDidCreateReviewDecks(),
+        session.getDeckInfo(),
         delegateFinalArgument));
     }, 3);
   } catch (err) {

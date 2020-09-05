@@ -4,20 +4,25 @@ const UserModel = require('kotoba-node-common').models.createUserModel(mongoConn
 const CustomDeckVoteModel = require('kotoba-node-common').models.createCustomDeckVoteModel(mongoConnection);
 
 async function search(searchTerm = '') {
+  const filter = searchTerm.trim()
+    ? { $text: { $search: searchTerm }, public: true }
+    : { public: true };
+
   const results = await CustomDeckModel
-    .find(searchTerm.trim() ? { $text: { $search: searchTerm }, public: true } : {})
+    .find(filter)
     .sort({ score: -1 })
     .limit(100)
     .select('shortName name score')
-    .populate('owner', 'discordUser.username discordUser.discriminator');
+    .populate('owner', 'discordUser.username discordUser.discriminator')
+    .lean();
 
   return results.filter(r => r.owner);
 }
 
-async function voteForDiscordUser(discordUserId, deckUniqueId, vote) {
+async function getUserAndDeck(discordUserId, deckUniqueId) {
   const [user, deck] = await Promise.all([
-    UserModel.find({ 'discordUser.id': discordUserId }),
-    CustomDeckModel.find({ uniqueId: deckUniqueId }),
+    UserModel.findOne({ 'discordUser.id': discordUserId }).select('_id').lean(),
+    CustomDeckModel.findOne({ uniqueId: deckUniqueId }).select('_id public').lean(),
   ]);
 
   if (!user) {
@@ -28,21 +33,53 @@ async function voteForDiscordUser(discordUserId, deckUniqueId, vote) {
     throw new Error(`Could not find deck: ${deckUniqueId}`);
   }
 
+  return [user, deck];
+}
+
+async function voteForDiscordUser(discordUserId, deckUniqueId, vote) {
+  const [user, deck] = await getUserAndDeck(discordUserId, deckUniqueId);
+
   const updateInfo = await CustomDeckVoteModel.findOneAndUpdate(
     { voter: user._id, deck: deck._id },
     { vote },
-    { new: true, upsert: true, rawResult: true },
+    { upsert: true, rawResult: true },
   );
 
-  debugger;
+  let scoreChange = 0;
+  if (updateInfo.lastErrorObject.updatedExisting) {
+    if (updateInfo.value.vote && !vote) {
+      scoreChange = -1;
+    } else if (!updateInfo.value.vote && vote) {
+      scoreChange = 1;
+    }
+  } else {
+    scoreChange = vote ? 1 : 0;
+  }
 
-  // If there was no vote...
-  // If there was a vote and it wasnt changed...
-  // If there was a vote and it was switched to true...
-  // If there was a vote and it was switched to false...
+  if (scoreChange) {
+    await CustomDeckModel.findOneAndUpdate(
+      { _id: deck._id },
+      { $inc: { score: scoreChange } },
+    );
+  }
+}
+
+async function discordUserCanVote(discordUserId, deckUniqueId) {
+  const [user, deck] = await getUserAndDeck(discordUserId, deckUniqueId);
+  if (!deck.public) {
+    return false;
+  }
+
+  const voteRecord = await CustomDeckVoteModel
+    .findOne({ voter: user._id, deck: deck._id })
+    .select('_id')
+    .lean();
+
+  return !voteRecord;
 }
 
 module.exports = {
   search,
   voteForDiscordUser,
+  discordUserCanVote,
 };

@@ -1,4 +1,5 @@
 const Monochrome = require('monochrome-bot');
+const { ReactionButtons } = require('erex');
 const globals = require('./common/globals.js');
 const path = require('path');
 const fs = require('fs');
@@ -99,7 +100,23 @@ function createBot() {
     ...config,
   };
 
-  return new Monochrome(options);
+  const monochrome = new Monochrome(options);
+
+  monochrome.getErisBot().on('ready', () => {
+    monochrome.reactionButtonManager = new ReactionButtons.ReactionButtonManager(
+      monochrome.getErisBot().user.id,
+    );
+
+    monochrome.getErisBot().on('messageReactionAdd', (message, emoji, userId) => {
+      monochrome.reactionButtonManager.handleMessageReactionAdd(message, emoji, userId);
+    });
+
+    monochrome.getErisBot().on('messageReactionRemove', (message, emoji, userId) => {
+      monochrome.reactionButtonManager.handleMessageReactionRemove(message, emoji, userId);
+    });
+  });
+
+  return monochrome;
 }
 
 function checkApiKeys(monochrome) {
