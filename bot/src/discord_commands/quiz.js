@@ -946,7 +946,7 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
 
     throw new FulfillmentError({
       publicMessage: message,
-      logDescription: 'Session in progress',
+      logDescription: 'Session in progress here',
     });
   }
 }
@@ -1225,6 +1225,33 @@ function throwIfShutdownScheduled(channelId) {
     throw new FulfillmentError({
       publicMessage: messageContent,
       logDescription: 'Shutdown scheduled',
+    });
+  }
+}
+
+function throwIfAlreadyHasSession(userId) {
+  const sessionInfo = quizManager.getActiveSessionInformation();
+  if (sessionInfo.some(s => s.ownerId === userId)) {
+    const message = {
+      embed: {
+        title: 'Quiz In Progress',
+        description: `You already have a quiz session running somewhere. Please stop it before starting a new one here.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    };
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Session in progress elsewhere',
+    });
+  }
+}
+
+function throwIfTooManyDecks(deckCount) {
+  if (deckCount > 10) {
+    throw new FulfillmentError({
+      publicMessage: 'Please choose a maximum of ten decks.',
+      logDescription: 'Too many decks',
     });
   }
 }
@@ -1549,7 +1576,13 @@ module.exports = {
       return msg.channel.createMessage(advancedHelp);
     }
 
-    throwIfShutdownScheduled(msg.channel.id);
+    const locationId = msg.channel.id;
+    const prefix = msg.prefix;
+    const invokerId = msg.author.id;
+
+    throwIfShutdownScheduled(locationId);
+    throwIfSessionInProgressAtLocation(locationId, prefix);
+    throwIfAlreadyHasSession(invokerId);
 
     // Load operation
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
@@ -1558,11 +1591,8 @@ module.exports = {
       return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
     }
 
-    const invokerId = msg.author.id;
-    const locationId = msg.channel.id;
     const isDm = !msg.channel.guild;
     const scoreScopeId = getScoreScopeIdFromMsg(msg);
-    const prefix = msg.prefix;
 
     let decks;
     let gameMode;
@@ -1580,10 +1610,7 @@ module.exports = {
       const deckNames = deckListResult.decks;
       remainingTokens4 = deckListResult.remainingTokens;
       gameMode = createNonReviewGameMode(isMastery, isConquest);
-
-      if (deckNames.length > 10) {
-        return msg.channel.createMessage('Please choose a maximum of ten decks.');
-      }
+      throwIfTooManyDecks(deckNames.length);
 
       const invokerName = msg.author.name + msg.author.discriminator;
       const decksLookupResult = await deckLoader.getQuizDecks(
