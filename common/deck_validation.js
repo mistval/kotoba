@@ -18,6 +18,16 @@ const reservedWords = [
   'inferno',
   'nodelay',
   'norace',
+  'search',
+  'settings',
+  'setting',
+  'noshuffle',
+  'shuffle',
+  'fast',
+  'faster',
+  'slow',
+  'review',
+  'reviewme',
 ];
 
 const maxLengthForQuestionCreationStrategy = {
