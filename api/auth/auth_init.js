@@ -53,7 +53,7 @@ function initialize(app) {
   app.get(
     '/api/login/callback',
     passport.authenticate('discord'),
-    async (req, res) => {
+    (req, res) => {
       res.redirect('/dashboard');
     },
   );

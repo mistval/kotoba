@@ -19,51 +19,63 @@ function filePathForShortName(shortName) {
 }
 
 async function checkShortNameUnique(req, res, next) {
-  assert(req.user, 'No user attached');
+  try {
+    assert(req.user, 'No user attached');
 
-  const other = await CustomDeckModel.findOne({ shortName: req.body.shortName }).select('owner').lean().exec();
+    const other = await CustomDeckModel.findOne({ shortName: req.body.shortName }).select('owner').lean().exec();
 
-  if (req.method === 'POST' && other) {
-    return res.status(409).json({ message: `There is already a deck with that short name (${req.body.shortName}). Please choose another.` });
+    if (req.method === 'POST' && other) {
+      return res.status(409).json({ message: `There is already a deck with that short name (${req.body.shortName}). Please choose another.` });
+    }
+
+    if (req.method === 'PATCH' && other && !other._id.equals(req.deckMeta._id)) {
+      return res.status(409).json({ message: `There is already a deck with that short name (${req.body.shortName}). Please choose another.` });
+    }
+
+    next();
+  } catch (err) {
+    next(err);
   }
-
-  if (req.method === 'PATCH' && other && !other._id.equals(req.deckMeta._id)) {
-    return res.status(409).json({ message: `There is already a deck with that short name (${req.body.shortName}). Please choose another.` });
-  }
-
-  next();
 }
 
 async function checkHas100DecksOrFewer(req, res, next) {
-  assert(req.user, 'No user attached');
+  try {
+    assert(req.user, 'No user attached');
 
-  const existingDeckCount = await CustomDeckModel.count({ owner: req.user._id });
-  if (existingDeckCount >= MAX_DECKS_PER_USER) {
-    return res.status(403).json({ message: `You already have ${MAX_DECKS_PER_USER} decks, you can\'t add any more.` });
+    const existingDeckCount = await CustomDeckModel.countDocuments({ owner: req.user._id });
+    if (existingDeckCount >= MAX_DECKS_PER_USER) {
+      return res.status(403).json({ message: `You already have ${MAX_DECKS_PER_USER} decks, you can\'t add any more.` });
+    }
+
+    next();
+  } catch (err) {
+    next(err);
   }
-
-  next();
 }
 
 function createAttachDeckMeta(lean) {
   return async (req, res, next) => {
-    let id;
     try {
-      id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+      let id;
+      try {
+        id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+      } catch (err) {
+        return res.status(404).send();
+      }
+
+      let query = CustomDeckModel.findById(id);
+
+      if (lean) {
+        query = query.lean();
+      }
+
+      const deck = await query.exec();
+      req.deckMeta = deck;
+
+      next();
     } catch (err) {
-      return res.status(404).send();
+      next(err);
     }
-
-    let query = CustomDeckModel.findById(id);
-
-    if (lean) {
-      query = query.lean();
-    }
-
-    const deck = await query.exec();
-    req.deckMeta = deck;
-
-    next();
   };
 }
 
@@ -86,16 +98,15 @@ function checkRequesterIsAuthorized(req, res, next) {
   next();
 }
 
-function attachDeckFull(req, res, next) {
-  assert(req.deckMeta, 'No deck meta attached');
-  fs.readFile(filePathForShortName(req.deckMeta.shortName), 'utf8', (err, data) => {
-    if (err) {
-      return res.status(500).send({ message: 'Could not find the file for that deck. Please report this error.' });
-    }
-
+async function attachDeckFull(req, res, next) {
+  try {
+    assert(req.deckMeta, 'No deck meta attached');
+    const data = await fs.promises.readFile(filePathForShortName(req.deckMeta.shortName), 'utf8');
     req.deck = JSON.parse(data);
     next();
-  });
+  } catch (err) {
+    next(err);
+  }
 }
 
 const getLimiter = rateLimit({
@@ -123,19 +134,22 @@ routes.delete(
   createAttachDeckMeta(false),
   checkDeckMetaAttached,
   checkRequesterIsAuthorized,
-  async (req, res) => {
-    await req.deckMeta.delete();
-    await CustomDeckVoteModel.deleteMany({ deck: req.deckMeta._id });
-    fs.unlink(filePathForShortName(req.deckMeta.shortName), (err) => {
-      res.status(200).send();
-    });
+  async (req, res, next) => {
+    try {
+      await req.deckMeta.delete();
+      await CustomDeckVoteModel.deleteMany({ deck: req.deckMeta._id });
+      await fs.promises.unlink(filePathForShortName(req.deckMeta.shortName));
+      res.send();
+    } catch (err) {
+      next(err);
+    }
   }
 );
 
 const postPatchLimiter = rateLimit({
-  windowMs: 7 * 1000, // 7 seconds
-  delayAfter: 1,
-  delayMs: 7 * 1000, // 7 seconds
+  windowMs: 10000, // 10 seconds
+  delayAfter: 2,
+  delayMs: 7000, // 7 seconds
 });
 
 function writeFullDeck(deck) {
@@ -161,44 +175,48 @@ routes.patch(
   checkRequesterIsAuthorized,
   checkShortNameUnique,
   attachDeckFull,
-  async (req, res) => {
-    req.deckMeta.name = req.body.name || req.deckMeta.name;
-    req.deckMeta.shortName = req.body.shortName || req.deckMeta.shortName;
-    req.deckMeta.lastModified = Date.now();
-    req.deckMeta.description = req.body.description || req.deckMeta.description || '';
+  async (req, res, next) => {
+    try {
+      req.deckMeta.name = req.body.name || req.deckMeta.name;
+      req.deckMeta.shortName = req.body.shortName || req.deckMeta.shortName;
+      req.deckMeta.lastModified = Date.now();
+      req.deckMeta.description = req.body.description || req.deckMeta.description || '';
 
-    if (req.body.public !== undefined) {
-      req.deckMeta.public = req.body.public;
-      req.deck.public = req.body.public;
+      if (req.body.public !== undefined) {
+        req.deckMeta.public = req.body.public;
+        req.deck.public = req.body.public;
+      }
+
+      req.deck.description = req.body.description || req.deck.description || '';
+      req.deck.name = req.body.name || req.deck.name;
+      req.deck.shortName = req.body.shortName || req.deck.shortName;
+      req.deck._id = req.deckMeta._id;
+
+      if (req.deck.ownerDiscordUser.id === req.user.discordUser.id) {
+        req.deck.ownerDiscordUser = req.user.discordUser;
+      }
+
+      if (req.body.appendCards) {
+        req.deck.cards = req.deck.cards.concat(req.body.cards);
+      } else {
+        req.deck.cards = req.body.cards || req.deck.cards;
+      }
+
+      req.deck = deckValidation.sanitizeDeckPreValidation(req.deck);
+      const validationResult = deckValidation.validateDeck(req.deck);
+
+      if (!validationResult.success) {
+        return res.status(400).json({
+          errorType: deckValidation.DECK_VALIDATION_ERROR_TYPE,
+          ...validationResult,
+        });
+      }
+
+      await Promise.all([req.deckMeta.save(), writeFullDeck(req.deck)]);
+      res.status(200).send();
+    } catch (err) {
+      next(err);
     }
-
-    req.deck.description = req.body.description || req.deck.description || '';
-    req.deck.name = req.body.name || req.deck.name;
-    req.deck.shortName = req.body.shortName || req.deck.shortName;
-    req.deck._id = req.deckMeta._id;
-
-    if (req.deck.ownerDiscordUser.id === req.user.discordUser.id) {
-      req.deck.ownerDiscordUser = req.user.discordUser;
-    }
-
-    if (req.body.appendCards) {
-      req.deck.cards = req.deck.cards.concat(req.body.cards);
-    } else {
-      req.deck.cards = req.body.cards || req.deck.cards;
-    }
-
-    req.deck = deckValidation.sanitizeDeckPreValidation(req.deck);
-    const validationResult = deckValidation.validateDeck(req.deck);
-
-    if (!validationResult.success) {
-      return res.status(400).json({
-        errorType: deckValidation.DECK_VALIDATION_ERROR_TYPE,
-        ...validationResult,
-      });
-    }
-
-    await Promise.all([req.deckMeta.save(), writeFullDeck(req.deck)]);
-    res.status(200).send();
   }
 );
 
@@ -208,45 +226,49 @@ routes.post(
   checkAuth,
   checkShortNameUnique,
   checkHas100DecksOrFewer,
-  async (req, res) => {
-    let deckFull = {
-      owner: req.user._id,
-      name: req.body.name,
-      shortName: req.body.shortName,
-      description: req.body.description || '',
-      public: req.body.public || false,
-      cards: req.body.cards,
-      ownerDiscordUser: req.user.discordUser,
-      uniqueId: uuidv4(),
-    };
+  async (req, res, next) => {
+    try {
+      let deckFull = {
+        owner: req.user._id,
+        name: req.body.name,
+        shortName: req.body.shortName,
+        description: req.body.description || '',
+        public: req.body.public || false,
+        cards: req.body.cards,
+        ownerDiscordUser: req.user.discordUser,
+        uniqueId: uuidv4(),
+      };
 
-    deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
-    const validationResult = deckValidation.validateDeck(deckFull);
+      deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
+      const validationResult = deckValidation.validateDeck(deckFull);
 
-    if (!validationResult.success) {
-      return res.status(400).json({
-        errorType: deckValidation.DECK_VALIDATION_ERROR_TYPE,
-        ...validationResult,
+      if (!validationResult.success) {
+        return res.status(400).json({
+          errorType: deckValidation.DECK_VALIDATION_ERROR_TYPE,
+          ...validationResult,
+        });
+      }
+
+      const deckMeta = new CustomDeckModel({
+        owner: req.user._id,
+        name: deckFull.name,
+        shortName: deckFull.shortName,
+        lastModified: Date.now(),
+        uniqueId: deckFull.uniqueId,
+        public: deckFull.public,
+        description: deckFull.description,
       });
+
+      await deckMeta.save();
+
+      deckFull._id = deckMeta._id;
+
+      await writeFullDeck(deckFull);
+
+      res.json({ _id: deckMeta._id });
+    } catch (err) {
+      next(err);
     }
-
-    const deckMeta = new CustomDeckModel({
-      owner: req.user._id,
-      name: deckFull.name,
-      shortName: deckFull.shortName,
-      lastModified: Date.now(),
-      uniqueId: deckFull.uniqueId,
-      public: deckFull.public,
-      description: deckFull.description,
-    });
-
-    await deckMeta.save();
-
-    deckFull._id = deckMeta._id;
-
-    await writeFullDeck(deckFull);
-
-    res.json({ _id: deckMeta._id });
   },
 );
 

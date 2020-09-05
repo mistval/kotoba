@@ -92,6 +92,10 @@ app.use(express.json({ limit: '4mb' }));
 app.use(express.urlencoded({ extended: false, limit: '4mb' }));
 app.use('/api/', routes);
 
+app.use((err, req, res, next) => {
+  res.status(500).json({ success: false });
+});
+
 // Kill the process immediately on SIGINT in Windows.
 // Otherwise mongoose keeps it running for a long time
 // after SIGINT.
