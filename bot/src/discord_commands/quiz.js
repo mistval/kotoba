@@ -1,12 +1,13 @@
-
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
-const { Permissions } = require('monochrome-bot');
+const { Permissions, Navigation } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 const timingPresets = require('kotoba-common').quizTimeModifierPresets;
 const quizLimits = require('kotoba-common').quizLimits;
+const deckSearchUtils = require('./../common/quiz/deck_search.js');
+const arrayUtil = require('../common/util/array.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
@@ -35,6 +36,14 @@ const CONQUEST_NAME = 'inferno';
 const MASTERY_EXTENSION = `-${MASTERY_NAME}`;
 const CONQUEST_EXTENSION = `-${CONQUEST_NAME}`;
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
+
+const noDecksFoundPublicMessage = {
+  embed: {
+    title: 'No matches found',
+    description: 'No results were found for that search term.',
+    color: constants.EMBED_NEUTRAL_COLOR,
+  },
+};
 
 function createMasteryModeDisabledString(prefix) {
   return `Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`;
@@ -1346,6 +1355,38 @@ function getServerSettings(rawServerSettings) {
   };
 }
 
+async function doSearch(msg, monochrome, searchTerm = '') {
+  const results = await deckSearchUtils.search(searchTerm);
+  if (results.length === 0) {
+    throw new FulfillmentError({
+      publicMessage: noDecksFoundPublicMessage,
+      logDescription: 'No results',
+    });
+  }
+
+  const chunks = arrayUtil.chunk(results, 10);
+
+  const footer = searchTerm.trim()
+    ? undefined
+    : { icon_url: constants.FOOTER_ICON_URI, text: `You can provide a search term. For example: ${msg.prefix}quiz search kanken` };
+
+  const embeds = chunks.map((c, i) => ({
+    embed: {
+      title: `Custom Deck Search Results (page ${i + 1} of ${chunks.length})`,
+      fields: c.map((r) => ({
+        name: `${r.shortName} (${r.score} votes)`,
+        value: `__${r.name}__ by ${r.owner.discordUser.username}#${r.owner.discordUser.discriminator}`,
+      })),
+      color: constants.EMBED_NEUTRAL_COLOR,
+      footer,
+    },
+  }));
+
+  const navigation = Navigation.fromOneDimensionalContents(msg.author.id, embeds);
+
+  return monochrome.getNavigationManager().show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1385,6 +1426,11 @@ module.exports = {
     const { remainingString: cleanSuffixFontArgsParsed, ...inlineSettings } = fontArgParseResult;
 
     const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
+
+    if (commandTokens[0] === 'search') {
+      return doSearch(msg, monochrome, commandTokens[1]);
+    }
+
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
     Object.assign(inlineSettings, timingOverrides);
