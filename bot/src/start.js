@@ -103,9 +103,8 @@ function createBot() {
   const monochrome = new Monochrome(options);
 
   monochrome.getErisBot().on('ready', () => {
-    monochrome.reactionButtonManager = new ReactionButtons.ReactionButtonManager(
-      monochrome.getErisBot().user.id,
-    );
+    monochrome.reactionButtonManager = new ReactionButtons
+      .ReactionButtonManager(monochrome.getErisBot().user.id);
 
     monochrome.getErisBot().on('messageReactionAdd', (message, emoji, userId) => {
       monochrome.reactionButtonManager.handleMessageReactionAdd(message, emoji, userId);
