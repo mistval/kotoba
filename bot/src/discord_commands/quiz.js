@@ -8,6 +8,7 @@ const timingPresets = require('kotoba-common').quizTimeModifierPresets;
 const quizLimits = require('kotoba-common').quizLimits;
 const deckSearchUtils = require('./../common/quiz/deck_search.js');
 const arrayUtil = require('../common/util/array.js');
+const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
@@ -296,13 +297,9 @@ const afterQuizMessages = [
   },
 ];
 
-function createAfterQuizMessage(canReview, prefix) {
-  let index;
-  if (canReview) {
-    index = Math.floor(Math.random() * afterQuizMessages.length);
-  } else {
-    index = 1 + Math.floor(Math.random() * (afterQuizMessages.length - 1));
-  }
+function createAfterQuizMessage(prefix) {
+  const index = Math.floor(Math.random() * afterQuizMessages.length);
+
   const afterQuizMessage = { ...afterQuizMessages[index] };
   afterQuizMessage.embed = { ...afterQuizMessage.embed };
   afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
@@ -316,7 +313,9 @@ async function sendEndQuizMessages(
   unansweredQuestions,
   aggregateLink,
   canReview,
+  deckInfo,
   description,
+  monochrome,
 ) {
   const prefix = commanderMessage.prefix;
   const endQuizMessage = createEndQuizMessage(
@@ -330,7 +329,62 @@ async function sendEndQuizMessages(
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
-  const afterQuizMessage = createAfterQuizMessage(canReview, prefix);
+  const customDeck = (arrayUtil.shuffle(deckInfo || [])).find(d => d.internetDeck);
+
+  if (customDeck && monochrome) {
+    try {
+      userCanVote = await deckSearchUtils.discordUserCanVote(commanderMessage.author.id, customDeck.uniqueId);
+
+      if (userCanVote) {
+        const embed = {
+          title: 'Voting',
+          description: `Didjuu like **${customDeck.shortName}**? React with 👍 to vote for it, or react with ❌ and I won't ask you again for this deck.`,
+          color: constants.EMBED_NEUTRAL_COLOR,
+        };
+
+        const sentMessage = await commanderMessage.channel.createMessage({ embed });
+
+        return monochrome.reactionButtonManager.registerHandler(
+          sentMessage,
+          [],
+          {
+            '👍': async function(_, _, userId) {
+              try {
+                const user = monochrome.getErisBot().users.get(userId);
+                await updateDbFromUser(user);
+                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, true);
+              } catch (err) {
+                monochrome.getLogger().warn({
+                  event: 'FAILED VOTE',
+                  err,
+                });
+              }
+            },
+            '❌': async function(_, _, userId) {
+              try {
+                const user = monochrome.getErisBot().users.get(userId);
+                await updateDbFromUser(user);
+                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, false);
+              } catch (err) {
+                monochrome.getLogger().warn({
+                  event: 'FAILED TO VOTE',
+                  err,
+                });
+              }
+            },
+          },
+          { removeButtonsOnExpire: true, expirationTimeInMs: 180000 },
+        );
+      }
+    } catch (err) {
+      monochrome.getLogger().error({
+        event: 'ERROR OFFERING CUSTOM DECK VOTE',
+        err,
+      });
+    }
+  }
+
+  const afterQuizMessage = createAfterQuizMessage(prefix);
   if (afterQuizMessage) {
     return commanderMessage.channel.createMessage(afterQuizMessage);
   }
@@ -637,6 +691,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     scoreLimit,
   ) {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
@@ -649,7 +704,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
@@ -659,6 +716,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     cancelingUserId,
   ) {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
@@ -671,7 +729,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      undefined,
       description,
+      this.monochrome,
     );
   }
 
@@ -681,6 +741,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     info,
   ) {
     let description;
@@ -699,11 +760,13 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
-  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
+  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview, deckInfo) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
     this.closeAudioConnection();
 
@@ -714,7 +777,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      undefined,
       description,
+      this.monochrome,
     );
   }
 
@@ -724,6 +789,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     gameMode,
   ) {
     let description;
@@ -742,7 +808,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
@@ -758,6 +826,7 @@ class DiscordMessageSender {
       aggregateLink,
       false,
       description,
+      this.monochrome,
     );
   }
 
