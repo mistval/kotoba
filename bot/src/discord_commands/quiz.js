@@ -1581,6 +1581,10 @@ module.exports = {
       remainingTokens4 = deckListResult.remainingTokens;
       gameMode = createNonReviewGameMode(isMastery, isConquest);
 
+      if (deckNames.length > 10) {
+        return msg.channel.createMessage('Please choose a maximum of ten decks.');
+      }
+
       const invokerName = msg.author.name + msg.author.discriminator;
       const decksLookupResult = await deckLoader.getQuizDecks(
         getDeckNameAndModifierInformation(deckNames),
