@@ -344,7 +344,7 @@ async function sendEndQuizMessages(
 
         const sentMessage = await commanderMessage.channel.createMessage({ embed });
 
-        return monochrome.reactionButtonManager.registerHandler(
+        return await monochrome.reactionButtonManager.registerHandler(
           sentMessage,
           [],
           {
@@ -377,6 +377,10 @@ async function sendEndQuizMessages(
         );
       }
     } catch (err) {
+      if (err.code === 50013) {
+        return undefined;
+      }
+
       monochrome.getLogger().error({
         event: 'ERROR OFFERING CUSTOM DECK VOTE',
         err,
