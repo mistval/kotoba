@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
+const CustomDeckVoteModel = require('kotoba-node-common').models.createCustomDeckVoteModel(mongoConnection);
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
@@ -124,6 +125,7 @@ routes.delete(
   checkRequesterIsAuthorized,
   async (req, res) => {
     await req.deckMeta.delete();
+    await CustomDeckVoteModel.deleteMany({ deck: req.deckMeta._id });
     fs.unlink(filePathForShortName(req.deckMeta.shortName), (err) => {
       res.status(200).send();
     });
@@ -211,6 +213,8 @@ routes.post(
       owner: req.user._id,
       name: req.body.name,
       shortName: req.body.shortName,
+      description: req.body.description || '',
+      public: req.body.public || false,
       cards: req.body.cards,
       ownerDiscordUser: req.user.discordUser,
       uniqueId: uuidv4(),
@@ -232,6 +236,8 @@ routes.post(
       shortName: deckFull.shortName,
       lastModified: Date.now(),
       uniqueId: deckFull.uniqueId,
+      public: deckFull.public,
+      description: deckFull.description,
     });
 
     await deckMeta.save();
