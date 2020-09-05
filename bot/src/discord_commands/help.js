@@ -35,6 +35,11 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'about',
 ];
 
+const linksField = {
+  name: 'Links',
+  value: '[Support Server](https://discord.gg/zkAKbyJ) | [Web](https://kotobaweb.com/bot) | [GitHub](https://github.com/mistval/kotoba)',
+};
+
 // Configuration end
 
 const PREFIX_REPLACE_REGEX = /<prefix>/g;
@@ -126,6 +131,8 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
 
     pages.push({ embed });
   }
+
+  pages[0].embed.fields.push(linksField);
 
   return Navigation.fromOneDimensionalContents(commandMessage.author.id, pages);
 }
