@@ -488,7 +488,7 @@ class EditDeck extends Component {
                   &nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
                   <HelpButton
                     popoverId="publicPopover"
-                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read the rules before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
+                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
                     popoverTitle="Public Decks"
                   />
                 </label>
