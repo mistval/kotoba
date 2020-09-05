@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react';
 
 class HelpButton extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     window.$(`#${this.props.popoverId}`).popover({ html: true });
   }

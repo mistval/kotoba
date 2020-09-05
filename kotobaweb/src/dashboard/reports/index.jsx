@@ -25,7 +25,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
   return (
     <div className="d-flex flex-column align-items-center mx-2 mb-3" style={styles.scorer} key="id">
-      <img src={avatarUri} className="rounded-circle mb-3" height="128" width="128" />
+      <img src={avatarUri} alt="user avatar" className="rounded-circle mb-3" height="128" width="128" />
       {nameString}
       <span className="text-success">{pointsString}</span>
     </div>
@@ -34,7 +34,7 @@ function Scorer({ id, username, discriminator, avatar, points, index }) {
 
 function ScorerAvatarSmall({ discordUser }) {
   const uri = avatarUriForAvatar(discordUser.avatar, discordUser.id);
-  return <img src={uri} key={discordUser.id} className="rounded-circle mr-1 mb-1" width="24" height="24" />;
+  return <img alt="user avatar" src={uri} key={discordUser.id} className="rounded-circle mr-1 mb-1" width="24" height="24" />;
 }
 
 function ScorersCell({ scorers, participantForId }) {
