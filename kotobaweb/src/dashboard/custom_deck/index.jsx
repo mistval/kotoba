@@ -139,6 +139,8 @@ class EditDeck extends Component {
           name: `${localStorage.getItem('username')}'s New Quiz`,
           shortName: 'new_quiz',
           cards: [{ ...sampleGridCard }],
+          description: '',
+          public: false,
         }
       });
     }
@@ -150,6 +152,8 @@ class EditDeck extends Component {
         name: apiDeck.name,
         shortName: apiDeck.shortName,
         cards: apiCardsToGridCards(apiDeck.cards),
+        public: apiDeck.public || false,
+        description: apiDeck.description || '',
       };
 
       this.setState({ gridDeck });
@@ -208,6 +212,8 @@ class EditDeck extends Component {
     this.setState((state) => {
       state.gridDeck.name = this.fullNameField.value;
       state.gridDeck.shortName = this.shortNameField.value.toLowerCase();
+      state.gridDeck.description = this.descriptionTextArea.value;
+      state.gridDeck.public = this.publicCheckBox.checked;
 
       return state;
     });
@@ -267,6 +273,8 @@ class EditDeck extends Component {
     const saveDeck = deckValidation.sanitizeDeckPreValidation({
       name: this.state.gridDeck.name,
       shortName: this.state.gridDeck.shortName,
+      public: this.state.gridDeck.public,
+      description: this.state.gridDeck.description,
       cards: gridCardsToApiCards(this.state.gridDeck.cards),
     });
 
@@ -472,7 +480,12 @@ class EditDeck extends Component {
             <div className="col-md-1 d-flex align-items-end mb-2">
               <div className="checkbox">
                 <label>
-                  <input type="checkbox" />&nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
+                  <input
+                    type="checkbox" checked={this.state.gridDeck.public}
+                    onChange={this.onMetadataChange}
+                    ref={(el) => { this.publicCheckBox = el; }}
+                  />
+                  &nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
                   <HelpButton
                     popoverId="publicPopover"
                     popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read the rules before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
@@ -484,9 +497,17 @@ class EditDeck extends Component {
           </div>
           <div className="row">
             <div className="col-md-6 offset-md-1">
-              <div class="form-group">
+              <div className="form-group">
                 <label for="comment">Description</label>
-                <textarea maxLength="500" class="form-control" rows="4" placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."></textarea>
+                <textarea
+                  maxLength="500"
+                  className="form-control"
+                  rows="4"
+                  placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."
+                  onChange={this.onMetadataChange}
+                  value={this.state.gridDeck.description}
+                  ref={(el) => { this.descriptionTextArea = el; }}
+                />
               </div>
             </div>
           </div>

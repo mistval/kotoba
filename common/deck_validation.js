@@ -3,6 +3,7 @@ const SHORT_NAME_MAX_LENGTH = 25;
 const INSTRUCTIONS_MAX_LENGTH = 400;
 const IMAGE_QUESTION_MAX_LENGTH = 20;
 const TEXT_QUESTION_MAX_LENGTH = 400;
+const DESCRIPTION_MAX_LENGTH = 500;
 const ANSWERS_TOTAL_MAX_LENGTH = 200;
 const COMMENT_MAX_LENGTH = 600;
 const MAX_CARDS = 20000;
@@ -194,6 +195,10 @@ function validateDeck(deck) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Deck short name is not a string. Please report this error.');
   }
 
+  if (typeof deck.description !== typeof '') {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Deck description is not a string. Please report this error.');
+  }
+
   if (reservedWords.some(reservedName => reservedName === deck.shortName)) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'That short deck name is reserved. Please choose a different short name.');
   }
@@ -220,6 +225,10 @@ function validateDeck(deck) {
 
   if (deck.name.length < 1 || deck.name.length > FULL_NAME_MAX_LENGTH) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, `The deck's full name must be more than 0 and less than ${FULL_NAME_MAX_LENGTH} characters long.`);
+  }
+
+  if (deck.description.length > DESCRIPTION_MAX_LENGTH) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, `The deck's description must be less than ${DESCRIPTION_MAX_LENGTH} characters long.`);
   }
 
   return validateCards(deck.cards);
