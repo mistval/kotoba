@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ./bot/Dockerfile
     restart: always
-    environment: 
+    environment:
       MONGO_HOST: 'mongo_readwrite:27017'
       WORKER_HOST: 'kotoba-worker'
       FORCE_COLOR: '1'
@@ -28,8 +28,9 @@ services:
       context: .
       dockerfile: ./api/Dockerfile
     restart: always
-    environment: 
+    environment:
       MONGO_HOST: 'mongo_readwrite:27017'
+      NODE_ENV: 'production'
     volumes:
       - ./user_data/shared_data:/var/shared_data
       - ./config:/var/config
@@ -41,7 +42,7 @@ services:
       context: .
       dockerfile: ./worker/Dockerfile
     restart: always
-    environment: 
+    environment:
       MONGO_HOST: 'mongo_readwrite:27017'
     volumes:
       - ./config:/var/config

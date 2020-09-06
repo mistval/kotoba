@@ -10,6 +10,8 @@
     "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/edictutf8.txt"
   },
   "dependencies": {
+    "@google-cloud/error-reporting": "^2.0.0",
+    "@google-cloud/logging": "^8.0.5",
     "bluebird": "^3.5.2",
     "canvas": "^2.6.0",
     "connect-mongo": "^3.2.0",
@@ -20,16 +22,13 @@
     "express-slow-down": "^1.3.1",
     "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
-    "moment": "^2.24.0",
     "mongoose": "^5.9.16",
     "monochrome-bot": "^1.1.0",
-    "morgan": "~1.9.0",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.0",
     "passport-discord": "^0.1.3",
     "request-promise": "^4.2.2",
     "require-reload": "^0.2.2",
-    "rotating-file-stream": "^1.4.0",
     "socket.io": "^2.1.1",
     "uuid": "^3.3.2"
   },
