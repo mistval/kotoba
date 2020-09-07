@@ -1526,7 +1526,7 @@ module.exports = {
     const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
 
     if (commandTokens[0] === 'search') {
-      return doSearch(msg, monochrome, commandTokens[1]);
+      return doSearch(msg, monochrome, commandTokens.slice(1).join(' '));
     }
 
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
