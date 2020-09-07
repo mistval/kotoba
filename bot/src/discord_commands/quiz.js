@@ -24,7 +24,7 @@ const deckLoader = require('./../common/quiz/deck_loader.js');
 const DeckCollection = require('./../common/quiz/deck_collection.js');
 const Session = require('./../common/quiz/session.js');
 const trimEmbed = require('./../common/util/trim_embed.js');
-const audioConnectionManager = require('./../discord/audio_connection_manager.js');
+const AudioConnectionManager = require('./../discord/audio_connection_manager.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
@@ -484,12 +484,11 @@ class DiscordMessageSender {
   }
 
   stopAudio() {
-    const guild = this.commanderMessage.channel.guild;
-    if (!guild) {
+    if (!this.audioConnection) {
       return;
     }
 
-    audioConnectionManager.stopPlaying(this.bot, guild.id);
+    return this.audioConnection.stopPlaying();
   }
 
   showWrongAnswer(card, skipped, hardcore) {
@@ -622,10 +621,9 @@ class DiscordMessageSender {
       content.embed.image = { url: question.bodyAsImageUri };
     }
     if (question.bodyAsAudioUri) {
-      const serverId = this.commanderMessage.channel.guild.id;
-      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(this.bot, serverId);
+      const voiceChannel = this.audioConnection.getVoiceChannel();
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
-      audioConnectionManager.play(this.bot, serverId, question.bodyAsAudioUri);
+      this.audioConnection.play(question.bodyAsAudioUri);
     }
 
     content.embed.description = bodyLines.join('\n');
@@ -682,11 +680,11 @@ class DiscordMessageSender {
   }
 
   closeAudioConnection() {
-    const guild = this.commanderMessage.channel.guild;
-    if (!guild) {
+    if (!this.audioConnection) {
       return;
     }
-    return audioConnectionManager.closeConnection(this.bot, guild.id);
+
+    return this.audioConnection.close();
   }
 
   notifyQuizEndedScoreLimitReached(
@@ -1013,7 +1011,7 @@ async function load(
 
   try {
     if (session.requiresAudioConnection()) {
-      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+      messageSender.audioConnection = await AudioConnectionManager.create(bot, msg)
     }
 
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
@@ -1637,7 +1635,7 @@ module.exports = {
     // 1. Check the game mode.
     throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
 
-    // 3. Check if a game is in progress
+    // 2. Check if a game is in progress
     throwIfSessionInProgressAtLocation(locationId, prefix);
 
     const {
@@ -1665,13 +1663,13 @@ module.exports = {
       isNoRace,
     );
 
+    // 3. Check for internet cards
+    throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
+
     // 4. Try to establish audio connection
     if (session.requiresAudioConnection()) {
-      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+      messageSender.audioConnection = await AudioConnectionManager.create(bot, msg);
     }
-
-    // 2. Check for internet cards
-    throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
 
     // All systems go. Liftoff!
     quizManager.startSession(session, locationId);
