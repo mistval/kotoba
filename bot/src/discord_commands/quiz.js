@@ -329,7 +329,7 @@ async function sendEndQuizMessages(
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
-  const customDeck = (arrayUtil.shuffle(deckInfo || [])).find(d => d.internetDeck);
+  const customDeck = (arrayUtil.shuffle(deckInfo || [])).find(d => d.internetDeck && d.uniqueId !== 'REVIEW');
 
   if (customDeck && monochrome) {
     try {
