@@ -4,7 +4,7 @@ const UserModel = require('kotoba-node-common').models.createUserModel(dbConnect
 const render = require('./render.js');
 const mongoose = require('mongoose');
 
-const CACHE_EMPTY_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24 hours
+const CACHE_EMPTY_INTERVAL_MS = 12 * 60 * 60 * 1000; // 12 hours
 
 let cachedStatsForUserId = {};
 

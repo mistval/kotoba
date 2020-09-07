@@ -1,16 +1,18 @@
-
 const state = require('./../common/static_state.js');
 const assert = require('assert');
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
-const { Permissions } = require('monochrome-bot');
+const { Permissions, Navigation } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 const timingPresets = require('kotoba-common').quizTimeModifierPresets;
 const quizLimits = require('kotoba-common').quizLimits;
+const deckSearchUtils = require('./../common/quiz/deck_search.js');
+const arrayUtil = require('../common/util/array.js');
+const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
-const getAdvancedHelp = require('./../common/quiz/decks_content.js').getAdvancedHelp;
+const getCategoryHelp = require('./../common/quiz/decks_content.js').getCategoryHelp;
 const constants = require('./../common/constants.js');
 const { FulfillmentError } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
@@ -22,7 +24,7 @@ const deckLoader = require('./../common/quiz/deck_loader.js');
 const DeckCollection = require('./../common/quiz/deck_collection.js');
 const Session = require('./../common/quiz/session.js');
 const trimEmbed = require('./../common/util/trim_embed.js');
-const audioConnectionManager = require('./../discord/audio_connection_manager.js');
+const AudioConnectionManager = require('./../discord/audio_connection_manager.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
@@ -35,6 +37,14 @@ const CONQUEST_NAME = 'inferno';
 const MASTERY_EXTENSION = `-${MASTERY_NAME}`;
 const CONQUEST_EXTENSION = `-${CONQUEST_NAME}`;
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
+
+const noDecksFoundPublicMessage = {
+  embed: {
+    title: 'No matches found',
+    description: 'No results were found for that search term.',
+    color: constants.EMBED_NEUTRAL_COLOR,
+  },
+};
 
 function createMasteryModeDisabledString(prefix) {
   return `Conquest Mode is not enabled in this channel. Please do it in a different channel, or in DM, or ask a server admin to enable it by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`;
@@ -287,13 +297,9 @@ const afterQuizMessages = [
   },
 ];
 
-function createAfterQuizMessage(canReview, prefix) {
-  let index;
-  if (canReview) {
-    index = Math.floor(Math.random() * afterQuizMessages.length);
-  } else {
-    index = 1 + Math.floor(Math.random() * (afterQuizMessages.length - 1));
-  }
+function createAfterQuizMessage(prefix) {
+  const index = Math.floor(Math.random() * afterQuizMessages.length);
+
   const afterQuizMessage = { ...afterQuizMessages[index] };
   afterQuizMessage.embed = { ...afterQuizMessage.embed };
   afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
@@ -307,7 +313,9 @@ async function sendEndQuizMessages(
   unansweredQuestions,
   aggregateLink,
   canReview,
+  deckInfo,
   description,
+  monochrome,
 ) {
   const prefix = commanderMessage.prefix;
   const endQuizMessage = createEndQuizMessage(
@@ -321,7 +329,66 @@ async function sendEndQuizMessages(
   );
 
   await commanderMessage.channel.createMessage(endQuizMessage);
-  const afterQuizMessage = createAfterQuizMessage(canReview, prefix);
+  const customDeck = (arrayUtil.shuffle(deckInfo || [])).find(d => d.internetDeck && d.uniqueId !== 'REVIEW');
+
+  if (customDeck && monochrome) {
+    try {
+      userCanVote = await deckSearchUtils.discordUserCanVote(commanderMessage.author.id, customDeck.uniqueId);
+
+      if (userCanVote) {
+        const embed = {
+          title: 'Voting',
+          description: `Didjuu like **${customDeck.shortName}**? React with 👍 to vote for it, or react with ❌ and I won't ask you again for this deck.`,
+          color: constants.EMBED_NEUTRAL_COLOR,
+        };
+
+        const sentMessage = await commanderMessage.channel.createMessage({ embed });
+
+        return await monochrome.reactionButtonManager.registerHandler(
+          sentMessage,
+          [],
+          {
+            '👍': async function(_, _, userId) {
+              try {
+                const user = monochrome.getErisBot().users.get(userId);
+                await updateDbFromUser(user);
+                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, true);
+              } catch (err) {
+                monochrome.getLogger().warn({
+                  event: 'FAILED VOTE',
+                  err,
+                });
+              }
+            },
+            '❌': async function(_, _, userId) {
+              try {
+                const user = monochrome.getErisBot().users.get(userId);
+                await updateDbFromUser(user);
+                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, false);
+              } catch (err) {
+                monochrome.getLogger().warn({
+                  event: 'FAILED TO VOTE',
+                  err,
+                });
+              }
+            },
+          },
+          { removeButtonsOnExpire: true, expirationTimeInMs: 180000 },
+        );
+      }
+    } catch (err) {
+      if (err.code === 50013) {
+        return undefined;
+      }
+
+      monochrome.getLogger().warn({
+        event: 'ERROR OFFERING CUSTOM DECK VOTE',
+        err,
+      });
+    }
+  }
+
+  const afterQuizMessage = createAfterQuizMessage(prefix);
   if (afterQuizMessage) {
     return commanderMessage.channel.createMessage(afterQuizMessage);
   }
@@ -417,12 +484,11 @@ class DiscordMessageSender {
   }
 
   stopAudio() {
-    const guild = this.commanderMessage.channel.guild;
-    if (!guild) {
+    if (!this.audioConnection) {
       return;
     }
 
-    audioConnectionManager.stopPlaying(this.bot, guild.id);
+    return this.audioConnection.stopPlaying();
   }
 
   showWrongAnswer(card, skipped, hardcore) {
@@ -555,10 +621,9 @@ class DiscordMessageSender {
       content.embed.image = { url: question.bodyAsImageUri };
     }
     if (question.bodyAsAudioUri) {
-      const serverId = this.commanderMessage.channel.guild.id;
-      const voiceChannel = audioConnectionManager.getConnectedVoiceChannelForServerId(this.bot, serverId);
+      const voiceChannel = this.audioConnection.getVoiceChannel();
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
-      audioConnectionManager.play(this.bot, serverId, question.bodyAsAudioUri);
+      this.audioConnection.play(question.bodyAsAudioUri);
     }
 
     content.embed.description = bodyLines.join('\n');
@@ -615,11 +680,11 @@ class DiscordMessageSender {
   }
 
   closeAudioConnection() {
-    const guild = this.commanderMessage.channel.guild;
-    if (!guild) {
+    if (!this.audioConnection) {
       return;
     }
-    return audioConnectionManager.closeConnection(this.bot, guild.id);
+
+    return this.audioConnection.close();
   }
 
   notifyQuizEndedScoreLimitReached(
@@ -628,6 +693,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     scoreLimit,
   ) {
     const description = `The score limit of ${scoreLimit} was reached by <@${scores[0].userId}>. Congratulations!`;
@@ -640,7 +706,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
@@ -650,6 +718,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     cancelingUserId,
   ) {
     const description = `<@${cancelingUserId}> asked me to stop the quiz.`;
@@ -662,7 +731,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      undefined,
       description,
+      this.monochrome,
     );
   }
 
@@ -672,6 +743,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     info,
   ) {
     let description;
@@ -690,11 +762,13 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
-  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview) {
+  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview, deckInfo) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
     this.closeAudioConnection();
 
@@ -705,7 +779,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      undefined,
       description,
+      this.monochrome,
     );
   }
 
@@ -715,6 +791,7 @@ class DiscordMessageSender {
     unansweredQuestions,
     aggregateLink,
     canReview,
+    deckInfo,
     gameMode,
   ) {
     let description;
@@ -733,7 +810,9 @@ class DiscordMessageSender {
       unansweredQuestions,
       aggregateLink,
       canReview,
+      deckInfo,
       description,
+      this.monochrome,
     );
   }
 
@@ -749,6 +828,7 @@ class DiscordMessageSender {
       aggregateLink,
       false,
       description,
+      this.monochrome,
     );
   }
 
@@ -864,7 +944,7 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
 
     throw new FulfillmentError({
       publicMessage: message,
-      logDescription: 'Session in progress',
+      logDescription: 'Session in progress here',
     });
   }
 }
@@ -931,7 +1011,7 @@ async function load(
 
   try {
     if (session.requiresAudioConnection()) {
-      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+      messageSender.audioConnection = await AudioConnectionManager.create(bot, msg)
     }
 
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
@@ -1086,11 +1166,55 @@ function showSettingsHelp(msg) {
   });
 }
 
-function showHelp(msg, isMastery, isConquest, masteryEnabled) {
+const helpLongDescription = `
+This is advanced help. To see basic help and available quiz decks, say **<prefix>quiz**.
+
+There is more than can fit in this message. To see more details, [check out my web manual](https://kotobaweb.com/bot/quiz) and [quiz command builder](https://kotobaweb.com/bot/quizbuilder).
+
+- **Score limit**: To set the score limit, specify a number after the deck selection. For example: **<prefix>quiz N4 30**.
+- **Answer time limit**: Use the **atl=** parameter to specify an answer time limit. For example: **<prefix>quiz N4 atl=20**.
+- **Delay after unanswered question**: Use the **dauq=** parameter to set this. For example: **<prefix>quiz N4 dauq=10**.
+- **Delay after answered question**: Use the **daaq=** parameter to set this. For example: **<prefix>quiz N4 daaq=5**.
+- **Additional answer wait window**: Use the **aaww=** parameter to set this. For example: **<prefix>quiz N4 aaww=5**.
+- **Max missed questions**: Use the **mmq=** parameter to set this. For example: **<prefix>quiz N4 mmq=5**.
+- **Font settings**: You can use the **font=**, **size=**, **color=**, and **bgcolor=** parameters to control font settings. Say **<prefix>draw** for more info and a way to experiment with these easily.
+
+All of the above can also be set on a permanent basis by using the **<prefix>settings** command.
+
+You can enable **hardcore** mode to only allow one answer attempt. For example: **<prefix>quiz N4 hardcore**.
+
+You can review missed questions by using **<prefix>quiz review** or **<prefix>quiz reviewme** (the latter replays questions that **you** did not answer even if someone else did answer them).
+
+Other useful commands commands:
+**<prefix>quiz stop** (ends the current quiz)
+**<prefix>lb** (shows the quiz leaderboard)
+**<prefix>quiz ${MASTERY_NAME}** (show information about conquest mode)
+**<prefix>quiz search** (search for public custom decks)
+**<prefix>quiz save** (save your progress)
+**<prefix>quiz load** (load saved progress)
+`;
+
+
+function createAdvancedHelpContent(prefix) {
+  const description = helpLongDescription.replace(/<prefix>/g, prefix);
+  const content = {
+    embed: {
+      title: 'Advanced Help',
+      description,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    }
+  };
+
+  return content;
+}
+
+function showHelp(msg, isMastery, isConquest, masteryEnabled, advanced) {
   const prefix = msg.prefix;
 
   let helpMessage;
-  if (!isMastery && !isConquest) {
+  if (!isMastery && !isConquest && advanced) {
+    helpMessage = createAdvancedHelpContent(prefix);
+  } else if(!isMastery && !isConquest) {
     helpMessage = createHelpContent(prefix);
   } else if (isMastery) {
     helpMessage = createMasteryHelp(masteryEnabled, prefix);
@@ -1102,28 +1226,6 @@ function showHelp(msg, isMastery, isConquest, masteryEnabled) {
 
   return msg.channel.createMessage(helpMessage, null, msg);
 }
-
-const helpLongDescription = `
-See available quiz decks, or start a quiz.
-
-Below are some more advanced options. To see the rest, [Visit me on the web](https://kotobaweb.com/bot/quiz).
-
-You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
-**<prefix>quiz N4 30 1 10**
-
-Most decks can be made multiple choice by adding **-mc** to the end of its name. Like this:
-**<prefix>quiz N4-mc**
-
-You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
-**<prefix>quiz N4(1-100)**
-
-Associated commands:
-**<prefix>quiz stop** (ends the current quiz)
-**<prefix>lb** (shows the quiz leaderboard)
-**<prefix>quiz ${MASTERY_NAME}** (show information about conquest mode)
-
-You can set default quiz settings by using the **<prefix>settings** command.
-`;
 
 function throwIfShutdownScheduled(channelId) {
   if (globals.shutdownScheduled) {
@@ -1143,6 +1245,33 @@ function throwIfShutdownScheduled(channelId) {
     throw new FulfillmentError({
       publicMessage: messageContent,
       logDescription: 'Shutdown scheduled',
+    });
+  }
+}
+
+function throwIfAlreadyHasSession(userId) {
+  const sessionInfo = quizManager.getActiveSessionInformation();
+  if (sessionInfo.some(s => s.ownerId === userId)) {
+    const message = {
+      embed: {
+        title: 'Quiz In Progress',
+        description: `You already have a quiz session running somewhere. Please stop it before starting a new one here.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    };
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Session in progress elsewhere',
+    });
+  }
+}
+
+function throwIfTooManyDecks(deckCount) {
+  if (deckCount > 10) {
+    throw new FulfillmentError({
+      publicMessage: 'Please choose a maximum of ten decks.',
+      logDescription: 'Too many decks',
     });
   }
 }
@@ -1346,6 +1475,38 @@ function getServerSettings(rawServerSettings) {
   };
 }
 
+async function doSearch(msg, monochrome, searchTerm = '') {
+  const results = await deckSearchUtils.search(searchTerm);
+  if (results.length === 0) {
+    throw new FulfillmentError({
+      publicMessage: noDecksFoundPublicMessage,
+      logDescription: 'No results',
+    });
+  }
+
+  const chunks = arrayUtil.chunk(results, 10);
+
+  const footer = searchTerm.trim()
+    ? undefined
+    : { icon_url: constants.FOOTER_ICON_URI, text: `You can provide a search term. For example: ${msg.prefix}quiz search kanken` };
+
+  const embeds = chunks.map((c, i) => ({
+    embed: {
+      title: `Custom Deck Search Results (page ${i + 1} of ${chunks.length})`,
+      fields: c.map((r) => ({
+        name: `${r.shortName} (${r.score} votes)`,
+        value: `__${r.name}__ by ${r.owner.discordUser.username}#${r.owner.discordUser.discriminator}`,
+      })),
+      color: constants.EMBED_NEUTRAL_COLOR,
+      footer,
+    },
+  }));
+
+  const navigation = Navigation.fromOneDimensionalContents(msg.author.id, embeds);
+
+  return monochrome.getNavigationManager().show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1385,6 +1546,11 @@ module.exports = {
     const { remainingString: cleanSuffixFontArgsParsed, ...inlineSettings } = fontArgParseResult;
 
     const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
+
+    if (commandTokens[0] === 'search') {
+      return doSearch(msg, monochrome, commandTokens.slice(1).join(' '));
+    }
+
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
     let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
     Object.assign(inlineSettings, timingOverrides);
@@ -1407,7 +1573,7 @@ module.exports = {
 
     // Help operation
     if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
-      return showHelp(msg, isMastery, isConquest, masteryEnabled);
+      return showHelp(msg, isMastery, isConquest, masteryEnabled, remainingTokens2.indexOf('help') !== -1);
     }
 
     // View stats operation
@@ -1425,12 +1591,18 @@ module.exports = {
       return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
     }
 
-    const advancedHelp = getAdvancedHelp(remainingTokens2[0]);
-    if (advancedHelp) {
-      return msg.channel.createMessage(advancedHelp);
+    const categoryHelp = getCategoryHelp(remainingTokens2[0]);
+    if (categoryHelp) {
+      return msg.channel.createMessage(categoryHelp);
     }
 
-    throwIfShutdownScheduled(msg.channel.id);
+    const locationId = msg.channel.id;
+    const prefix = msg.prefix;
+    const invokerId = msg.author.id;
+
+    throwIfShutdownScheduled(locationId);
+    throwIfSessionInProgressAtLocation(locationId, prefix);
+    throwIfAlreadyHasSession(invokerId);
 
     // Load operation
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
@@ -1439,11 +1611,8 @@ module.exports = {
       return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
     }
 
-    const invokerId = msg.author.id;
-    const locationId = msg.channel.id;
     const isDm = !msg.channel.guild;
     const scoreScopeId = getScoreScopeIdFromMsg(msg);
-    const prefix = msg.prefix;
 
     let decks;
     let gameMode;
@@ -1461,6 +1630,7 @@ module.exports = {
       const deckNames = deckListResult.decks;
       remainingTokens4 = deckListResult.remainingTokens;
       gameMode = createNonReviewGameMode(isMastery, isConquest);
+      throwIfTooManyDecks(deckNames.length);
 
       const invokerName = msg.author.name + msg.author.discriminator;
       const decksLookupResult = await deckLoader.getQuizDecks(
@@ -1487,7 +1657,7 @@ module.exports = {
     // 1. Check the game mode.
     throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
 
-    // 3. Check if a game is in progress
+    // 2. Check if a game is in progress
     throwIfSessionInProgressAtLocation(locationId, prefix);
 
     const {
@@ -1515,13 +1685,13 @@ module.exports = {
       isNoRace,
     );
 
+    // 3. Check for internet cards
+    throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
+
     // 4. Try to establish audio connection
     if (session.requiresAudioConnection()) {
-      await audioConnectionManager.openConnectionFromMessage(bot, msg);
+      messageSender.audioConnection = await AudioConnectionManager.create(bot, msg);
     }
-
-    // 2. Check for internet cards
-    throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
 
     // All systems go. Liftoff!
     quizManager.startSession(session, locationId);

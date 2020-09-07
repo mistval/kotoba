@@ -67,7 +67,12 @@ function createScoresNavigation(monochrome, msg, scoresPages) {
   const contents = scoresPages.map(page => createDiscordContentForScoresPage(page));
   const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
 
-  return monochrome.getNavigationManager().show(navigation, 1800000, msg.channel, msg);
+  return monochrome.getNavigationManager().show(
+    navigation,
+    constants.NAVIGATION_EXPIRATION_TIME,
+    msg.channel,
+    msg,
+  );
 }
 
 function userNameForUserID(monochrome, userID) {

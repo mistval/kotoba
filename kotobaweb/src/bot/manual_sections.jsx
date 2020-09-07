@@ -119,4 +119,19 @@ manualSections.push(new ManualSection(
   (<p>I accept answers inside of spoiler tags. So you can type your answer surrounded by <span className="example">||</span> to hide your answer from other Discord users. For example <span className="example">||にほんご||</span>. This can be good if you want to compete with friends without having to type quickly. You can use a high value for the <span className="example">aaww=</span> parameter and give your answers in spoilers.</p>),
 ));
 
+manualSections.push(new ManualSection(
+  'Public Custom Deck Rules',
+  (
+    <>
+      <p>If you mark your deck as public, then other users can search for it using the <span className="example">k!quiz search</span> command. Therefore public decks must follow some rules:</p>
+      <ol>
+        <li>No explicit or mature content.</li>
+        <li>No troll decks.</li>
+        <li>No advertising (I don't mind if you put one server invite link in your deck description, but this may change if people complain).</li>
+      </ol>
+      <p>Violating these rules may lead to your deck being deleted or your being banned from using Kotoba. If you have questions or need to report a deck, visit <a href="https://discord.gg/zkAKbyJ">my server</a> or use the <NavLink to="/about">contact form</NavLink>.</p>
+    </>
+  ),
+));
+
 export default manualSections;

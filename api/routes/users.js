@@ -15,25 +15,33 @@ routes.get(
 routes.get(
   '/me/game_reports',
   checkAuth,
-  async (req, res) => {
-    const reports = await GameReportModel
-      .find({ participants: req.user })
-      .sort({ startTime: -1 })
-      .limit(40)
-      .select('sessionName startTime discordServerName discordServerIconUri')
-      .lean()
-      .exec();
+  async (req, res, next) => {
+    try {
+      const reports = await GameReportModel
+        .find({ participants: req.user })
+        .sort({ startTime: -1 })
+        .limit(40)
+        .select('sessionName startTime discordServerName discordServerIconUri')
+        .lean()
+        .exec();
 
-    res.json(reports);
+      res.json(reports);
+    } catch (err) {
+      next(err);
+    }
   },
 );
 
 routes.get(
   '/me/decks',
   checkAuth,
-  async (req, res) => {
-    const decks = await CustomDeckModel.find({ owner: req.user._id }).lean().exec();
-    return res.json(decks);
+  async (req, res, next) => {
+    try {
+      const decks = await CustomDeckModel.find({ owner: req.user._id }).lean().exec();
+      return res.json(decks);
+    } catch (err) {
+      next(err);
+    }
   },
 );
 
