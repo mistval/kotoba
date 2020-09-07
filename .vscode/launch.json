@@ -6,7 +6,6 @@
   "configurations": [
     {
       "type": "node",
-      "runtimeArgs": ["--experimental-worker"],
       "request": "launch",
       "name": "Launch Worker",
       "program": "${workspaceFolder}\\worker\\src\\index.js"
