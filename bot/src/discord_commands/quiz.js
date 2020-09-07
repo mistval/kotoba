@@ -381,7 +381,7 @@ async function sendEndQuizMessages(
         return undefined;
       }
 
-      monochrome.getLogger().error({
+      monochrome.getLogger().warn({
         event: 'ERROR OFFERING CUSTOM DECK VOTE',
         err,
       });
