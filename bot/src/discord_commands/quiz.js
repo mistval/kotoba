@@ -12,7 +12,7 @@ const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
-const getAdvancedHelp = require('./../common/quiz/decks_content.js').getAdvancedHelp;
+const getCategoryHelp = require('./../common/quiz/decks_content.js').getCategoryHelp;
 const constants = require('./../common/constants.js');
 const { FulfillmentError } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
@@ -1166,11 +1166,55 @@ function showSettingsHelp(msg) {
   });
 }
 
-function showHelp(msg, isMastery, isConquest, masteryEnabled) {
+const helpLongDescription = `
+This is advanced help. To see basic help and available quiz decks, say **<prefix>quiz**.
+
+There is more than can fit in this message. To see more details, [check out my web manual](https://kotobaweb.com/bot/quiz) and [quiz command builder](https://kotobaweb.com/bot/quizbuilder).
+
+- **Score limit**: To set the score limit, specify a number after the deck selection. For example: **<prefix>quiz N4 30**.
+- **Answer time limit**: Use the **atl=** parameter to specify an answer time limit. For example: **<prefix>quiz N4 atl=20**.
+- **Delay after unanswered question**: Use the **dauq=** parameter to set this. For example: **<prefix>quiz N4 dauq=10**.
+- **Delay after answered question**: Use the **daaq=** parameter to set this. For example: **<prefix>quiz N4 daaq=5**.
+- **Additional answer wait window**: Use the **aaww=** parameter to set this. For example: **<prefix>quiz N4 aaww=5**.
+- **Max missed questions**: Use the **mmq=** parameter to set this. For example: **<prefix>quiz N4 mmq=5**.
+- **Font settings**: You can use the **font=**, **size=**, **color=**, and **bgcolor=** parameters to control font settings. Say **<prefix>draw** for more info and a way to experiment with these easily.
+
+All of the above can also be set on a permanent basis by using the **<prefix>settings** command.
+
+You can enable **hardcore** mode to only allow one answer attempt. For example: **<prefix>quiz N4 hardcore**.
+
+You can review missed questions by using **<prefix>quiz review** or **<prefix>quiz reviewme** (the latter replays questions that **you** did not answer even if someone else did answer them).
+
+Other useful commands commands:
+**<prefix>quiz stop** (ends the current quiz)
+**<prefix>lb** (shows the quiz leaderboard)
+**<prefix>quiz ${MASTERY_NAME}** (show information about conquest mode)
+**<prefix>quiz search** (search for public custom decks)
+**<prefix>quiz save** (save your progress)
+**<prefix>quiz load** (load saved progress)
+`;
+
+
+function createAdvancedHelpContent(prefix) {
+  const description = helpLongDescription.replace(/<prefix>/g, prefix);
+  const content = {
+    embed: {
+      title: 'Advanced Help',
+      description,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    }
+  };
+
+  return content;
+}
+
+function showHelp(msg, isMastery, isConquest, masteryEnabled, advanced) {
   const prefix = msg.prefix;
 
   let helpMessage;
-  if (!isMastery && !isConquest) {
+  if (!isMastery && !isConquest && advanced) {
+    helpMessage = createAdvancedHelpContent(prefix);
+  } else if(!isMastery && !isConquest) {
     helpMessage = createHelpContent(prefix);
   } else if (isMastery) {
     helpMessage = createMasteryHelp(masteryEnabled, prefix);
@@ -1182,28 +1226,6 @@ function showHelp(msg, isMastery, isConquest, masteryEnabled) {
 
   return msg.channel.createMessage(helpMessage, null, msg);
 }
-
-const helpLongDescription = `
-See available quiz decks, or start a quiz.
-
-Below are some more advanced options. To see the rest, [Visit me on the web](https://kotobaweb.com/bot/quiz).
-
-You can configure some quiz settings. If you want a JLPT N4 quiz with a score limit of 30, only 1 second between questions, and only 10 seconds to answer, try this:
-**<prefix>quiz N4 30 1 10**
-
-Most decks can be made multiple choice by adding **-mc** to the end of its name. Like this:
-**<prefix>quiz N4-mc**
-
-You can set the range of cards that you want to see. For example, if you only want to see cards selected from the first 100 cards in the N4 deck, you can do this:
-**<prefix>quiz N4(1-100)**
-
-Associated commands:
-**<prefix>quiz stop** (ends the current quiz)
-**<prefix>lb** (shows the quiz leaderboard)
-**<prefix>quiz ${MASTERY_NAME}** (show information about conquest mode)
-
-You can set default quiz settings by using the **<prefix>settings** command.
-`;
 
 function throwIfShutdownScheduled(channelId) {
   if (globals.shutdownScheduled) {
@@ -1551,7 +1573,7 @@ module.exports = {
 
     // Help operation
     if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
-      return showHelp(msg, isMastery, isConquest, masteryEnabled);
+      return showHelp(msg, isMastery, isConquest, masteryEnabled, remainingTokens2.indexOf('help') !== -1);
     }
 
     // View stats operation
@@ -1569,9 +1591,9 @@ module.exports = {
       return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
     }
 
-    const advancedHelp = getAdvancedHelp(remainingTokens2[0]);
-    if (advancedHelp) {
-      return msg.channel.createMessage(advancedHelp);
+    const categoryHelp = getCategoryHelp(remainingTokens2[0]);
+    if (categoryHelp) {
+      return msg.channel.createMessage(categoryHelp);
     }
 
     const locationId = msg.channel.id;
