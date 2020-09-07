@@ -322,10 +322,12 @@ class SessionInformation {
   getDeckInfo() {
     return this.deckCollection_.decks.map((deck) => ({
       name: deck.name,
+      shortName: deck.shortName,
       uniqueId: deck.uniqueId,
       startIndex: deck.startIndex,
       endIndex: deck.endIndex,
       mc: deck.mc,
+      internetDeck: deck.isInternetDeck,
     }));
   }
 

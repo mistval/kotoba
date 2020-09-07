@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import assert from 'assert';
 import ReactDataGrid from 'react-data-grid';
-import Header from '../header';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
-import NotificationStripe from '../../controls/notification_stripe';
 import { deckValidation } from 'kotoba-common';
+import Header from '../header';
+import NotificationStripe from '../../controls/notification_stripe';
 import { Editors } from 'react-data-grid-addons';
 import Analytics from '../../util/analytics';
-import assert from 'assert';
+import HelpButton from '../../bot/quiz_builder_components/help_button';
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -138,6 +139,8 @@ class EditDeck extends Component {
           name: `${localStorage.getItem('username')}'s New Quiz`,
           shortName: 'new_quiz',
           cards: [{ ...sampleGridCard }],
+          description: '',
+          public: false,
         }
       });
     }
@@ -149,6 +152,8 @@ class EditDeck extends Component {
         name: apiDeck.name,
         shortName: apiDeck.shortName,
         cards: apiCardsToGridCards(apiDeck.cards),
+        public: apiDeck.public || false,
+        description: apiDeck.description || '',
       };
 
       this.setState({ gridDeck });
@@ -207,6 +212,8 @@ class EditDeck extends Component {
     this.setState((state) => {
       state.gridDeck.name = this.fullNameField.value;
       state.gridDeck.shortName = this.shortNameField.value.toLowerCase();
+      state.gridDeck.description = this.descriptionTextArea.value;
+      state.gridDeck.public = this.publicCheckBox.checked;
 
       return state;
     });
@@ -266,6 +273,8 @@ class EditDeck extends Component {
     const saveDeck = deckValidation.sanitizeDeckPreValidation({
       name: this.state.gridDeck.name,
       shortName: this.state.gridDeck.shortName,
+      public: this.state.gridDeck.public,
+      description: this.state.gridDeck.description,
       cards: gridCardsToApiCards(this.state.gridDeck.cards),
     });
 
@@ -451,7 +460,7 @@ class EditDeck extends Component {
                 />
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-2">
               <div className="form-group">
                 <label className="bmd-label-floating" htmlFor="shortDeckName">Short deck name</label>
                 <input
@@ -465,7 +474,40 @@ class EditDeck extends Component {
                   pattern={deckValidation.SHORT_NAME_ALLOWED_CHARACTERS_REGEX_HTML}
                   required
                 />
-                <span className="bmd-help">Load on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
+                <span className="bmd-help">Load in Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
+              </div>
+            </div>
+            <div className="col-md-1 d-flex align-items-end mb-2">
+              <div className="checkbox">
+                <label>
+                  <input
+                    type="checkbox" checked={this.state.gridDeck.public}
+                    onChange={this.onMetadataChange}
+                    ref={(el) => { this.publicCheckBox = el; }}
+                  />
+                  &nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
+                  <HelpButton
+                    popoverId="publicPopover"
+                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
+                    popoverTitle="Public Decks"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6 offset-md-1">
+              <div className="form-group">
+                <label for="comment">Description</label>
+                <textarea
+                  maxLength="500"
+                  className="form-control"
+                  rows="4"
+                  placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."
+                  onChange={this.onMetadataChange}
+                  value={this.state.gridDeck.description}
+                  ref={(el) => { this.descriptionTextArea = el; }}
+                />
               </div>
             </div>
           </div>

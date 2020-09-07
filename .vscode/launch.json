@@ -6,7 +6,6 @@
   "configurations": [
     {
       "type": "node",
-      "runtimeArgs": ["--experimental-worker"],
       "request": "launch",
       "name": "Launch Worker",
       "program": "${workspaceFolder}\\worker\\src\\index.js"
@@ -15,8 +14,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch API",
-      "program": "${workspaceFolder}\\api\\server.js",
-      "env": { "PORT": "3000" }
+      "program": "${workspaceFolder}\\api\\server.js"
     },
     {
       "type": "node",

@@ -34,7 +34,7 @@ routes.post('/', limiter, async (req, res, next) => {
 
     res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ success: false });
+    next(err);
   }
 });
 

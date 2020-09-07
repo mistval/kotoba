@@ -4,7 +4,7 @@ WORKDIR /var
 COPY ./resources/fonts ./resources/fonts
 COPY ./node-common ./node-common
 WORKDIR /var/node-common
-RUN npm ci
+RUN npm ci --no-optional
 
 WORKDIR /var/app
 COPY ./worker/package.json .

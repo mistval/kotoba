@@ -81,7 +81,7 @@ class DashboardHeader extends Component {
         return (
           <header className="w-100 d-flex justify-content-end">
             <div className="m-3">
-              <img src={this.state.avatarUri} className="rounded-circle mr-2" width="32" height="32" />
+              <img src={this.state.avatarUri} className="rounded-circle mr-2" width="32" height="32" alt="user avatar" />
               <a href="/api/logout">Logout</a>
             </div>
           </header>
@@ -90,7 +90,7 @@ class DashboardHeader extends Component {
 
       return (
         <header className="w-100 bg-light d-flex justify-content-center">
-          <img src={this.state.avatarUri} className="my-5 rounded-circle" />
+          <img src={this.state.avatarUri} className="my-5 rounded-circle" alt="user avatar" />
           <div className="d-flex flex-column justify-content-center ml-4">
             <h2>{this.state.username}</h2>
             <a href="/api/logout">Logout</a>
