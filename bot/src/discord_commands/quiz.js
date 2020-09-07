@@ -1185,7 +1185,7 @@ You can enable **hardcore** mode to only allow one answer attempt. For example: 
 
 You can review missed questions by using **<prefix>quiz review** or **<prefix>quiz reviewme** (the latter replays questions that **you** did not answer even if someone else did answer them).
 
-Other useful commands commands:
+Other useful commands:
 **<prefix>quiz stop** (ends the current quiz)
 **<prefix>lb** (shows the quiz leaderboard)
 **<prefix>quiz ${MASTERY_NAME}** (show information about conquest mode)
