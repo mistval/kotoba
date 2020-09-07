@@ -21,7 +21,7 @@ module.exports.createContent = function(prefix) {
   return {
     embed: {
       title: 'Quiz',
-      description: `Say **${prefix}quiz deckname** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. [Visit me on the web](https://kotobaweb.com/bot/quiz) to see advanced options and settings that you can use.`,
+      description: `Say **${prefix}quiz deckname** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. For advanced help, say **${prefix}quiz help** or [visit me on the web](https://kotobaweb.com/bot/quiz).`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: categoryFields.map(field => ({ name: field.name, value: field.value.replace(/<prefix>/g, prefix) })),
       footer: {
@@ -32,7 +32,7 @@ module.exports.createContent = function(prefix) {
   };
 };
 
-module.exports.getAdvancedHelp = function(keyword) {
+module.exports.getCategoryHelp = function(keyword) {
   if (keyword === 'stations') {
     return `Stations reading quizzes \`\`\`${stationsList.join(', ')}\`\`\``;
   } else if (keyword === 'places') {
