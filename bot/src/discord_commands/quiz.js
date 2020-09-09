@@ -491,8 +491,8 @@ class DiscordMessageSender {
     return this.audioConnection.stopPlaying();
   }
 
-  showWrongAnswer(card, skipped, hardcore) {
-    this.stopAudio();
+  async showWrongAnswer(card, skipped, hardcore) {
+    await this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
     const correctAnswerText = correctAnswerFunction(card, {}, {});
@@ -530,7 +530,7 @@ class DiscordMessageSender {
     scoreForUser,
     scoreLimit,
   ) {
-    this.stopAudio();
+    await this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
 
     answerersInOrder.forEach((userId) => {
@@ -623,7 +623,7 @@ class DiscordMessageSender {
     if (question.bodyAsAudioUri) {
       const voiceChannel = this.audioConnection.getVoiceChannel();
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
-      this.audioConnection.play(question.bodyAsAudioUri);
+      await this.audioConnection.play(question.bodyAsAudioUri);
     }
 
     content.embed.description = bodyLines.join('\n');

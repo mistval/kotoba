@@ -64,18 +64,12 @@ class AudioConnection {
     }
 
     try {
-      await bot.guilds.get(serverId).leaveVoiceChannel();
+      bot.guilds.get(serverId).leaveVoiceChannel();
       const voiceConnection = await voiceChannel.join();
       subscribeEvents(voiceConnection);
       return voiceConnection;
     } catch (err) {
-      await bot.guilds.get(serverId).leaveVoiceChannel().catch((disconnectErr) => {
-        globals.logger.error({
-          event: 'VOICE WARNING',
-          detail: 'Failed to disconnect from voice.',
-          err: disconnectErr,
-        });
-      });
+      bot.guilds.get(serverId).leaveVoiceChannel();
 
       globals.logger.warn({
         event: 'VOICE WARNING',
