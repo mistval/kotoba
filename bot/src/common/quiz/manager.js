@@ -20,8 +20,6 @@ if (!state.quizManager) {
   state.quizManager = {
     currentActionForLocationId: {},
     sessionForLocationId: {},
-    reviewDeckForLocationId: {},
-    reviewDeckForUserId: {},
   };
 }
 
@@ -37,7 +35,7 @@ function closeSession(session, gameOver) {
   delete state.quizManager.sessionForLocationId[locationId];
   delete state.quizManager.currentActionForLocationId[locationId];
 
-  return Promise.resolve(session.finalize(gameOver));
+  return session.finalize(gameOver);
 }
 
 async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFinalArgument) {
@@ -64,7 +62,6 @@ async function endQuiz(gameOver, session, notifier, notifyDelegate, delegateFina
         session.getScoresForUserPairs(),
         session.getUnansweredCards(),
         session.createAggregateUnansweredCardsLink(),
-        session.getDidCreateReviewDecks(),
         session.getDeckInfo(),
         delegateFinalArgument));
     }, 3);

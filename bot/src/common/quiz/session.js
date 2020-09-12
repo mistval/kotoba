@@ -1,7 +1,6 @@
 
 const globals = require('./../globals.js');
 const Scores = require('./scores.js');
-const state = require('./../static_state.js');
 const cardStrategies = require('./card_strategies.js');
 const DeckCollection = require('./deck_collection.js');
 const deckLoader = require('./deck_loader.js');
@@ -11,40 +10,25 @@ const gameModes = [
   require('./conquest_mode.js'),
 ];
 
-function createReviewDeck(unansweredCards) {
-  return deckLoader.createReviewDeck(unansweredCards);
-}
-
-function updateReviewDecks(locationId, sessionInformation) {
+async function updateReviewDecks(locationId, sessionInformation) {
   try {
-    let reviewDeckCreated = false;
     let users = sessionInformation.getAllKnownUsers();
+
+    const promises = [];
     for (let userId of users) {
       let unansweredCards = sessionInformation.getUnansweredCards(userId);
-      if (unansweredCards.length > 0) {
-        state.quizManager.reviewDeckForUserId[userId] = createReviewDeck(unansweredCards);
-        reviewDeckCreated = true;
-      } else {
-        delete state.quizManager.reviewDeckForUserId[userId];
-      }
+      promises.push(deckLoader.updateUserReviewDeck(unansweredCards, userId));
     }
 
     let cardsNoOneAnswered = sessionInformation.getUnansweredCards();
+    promises.push(deckLoader.updateLocationReviewDeck(cardsNoOneAnswered, locationId));
 
-    if (cardsNoOneAnswered.length <= 0) {
-      delete state.quizManager.reviewDeckForLocationId[locationId];
-    } else {
-      state.quizManager.reviewDeckForLocationId[locationId] = createReviewDeck(cardsNoOneAnswered);
-      reviewDeckCreated = true;
-    }
-
-    return reviewDeckCreated;
+    await Promise.all(promises);
   } catch (err) {
     globals.logger.error({
       event: 'ERROR UPDATING REVIEW DECK',
       err,
     });
-    return false;
   }
 }
 
@@ -122,10 +106,10 @@ class SessionInformation {
     return gotPoints;
   }
 
-  finalize(gameOver) {
+  async finalize(gameOver) {
     this.clearTimers();
     if (gameOver) {
-      this.createdReviewDecks_ = updateReviewDecks(this.locationId_, this);
+      await updateReviewDecks(this.locationId_, this);
     }
     return this.scores_.commitScores();
   }
@@ -154,10 +138,6 @@ class SessionInformation {
 
   getLocationId() {
     return this.locationId_;
-  }
-
-  getDidCreateReviewDecks() {
-    return this.createdReviewDecks_;
   }
 
   getScoresForUserPairs() {

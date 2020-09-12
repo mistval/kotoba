@@ -312,7 +312,6 @@ async function sendEndQuizMessages(
   scores,
   unansweredQuestions,
   aggregateLink,
-  canReview,
   deckInfo,
   description,
   monochrome,
@@ -692,7 +691,6 @@ class DiscordMessageSender {
     scores,
     unansweredQuestions,
     aggregateLink,
-    canReview,
     deckInfo,
     scoreLimit,
   ) {
@@ -705,7 +703,6 @@ class DiscordMessageSender {
       scores,
       unansweredQuestions,
       aggregateLink,
-      canReview,
       deckInfo,
       description,
       this.monochrome,
@@ -717,7 +714,6 @@ class DiscordMessageSender {
     scores,
     unansweredQuestions,
     aggregateLink,
-    canReview,
     deckInfo,
     cancelingUserId,
   ) {
@@ -730,7 +726,6 @@ class DiscordMessageSender {
       scores,
       unansweredQuestions,
       aggregateLink,
-      canReview,
       undefined,
       description,
       this.monochrome,
@@ -742,7 +737,6 @@ class DiscordMessageSender {
     scores,
     unansweredQuestions,
     aggregateLink,
-    canReview,
     deckInfo,
     info,
   ) {
@@ -761,14 +755,13 @@ class DiscordMessageSender {
       scores,
       unansweredQuestions,
       aggregateLink,
-      canReview,
       deckInfo,
       description,
       this.monochrome,
     );
   }
 
-  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, canReview, deckInfo) {
+  notifyQuizEndedError(quizName, scores, unansweredQuestions, aggregateLink, deckInfo) {
     const description = 'Sorry, I had an error and had to stop the quiz :( The error has been logged and will be addressed.';
     this.closeAudioConnection();
 
@@ -778,7 +771,6 @@ class DiscordMessageSender {
       scores,
       unansweredQuestions,
       aggregateLink,
-      canReview,
       undefined,
       description,
       this.monochrome,
@@ -790,7 +782,6 @@ class DiscordMessageSender {
     scores,
     unansweredQuestions,
     aggregateLink,
-    canReview,
     deckInfo,
     gameMode,
   ) {
@@ -809,7 +800,6 @@ class DiscordMessageSender {
       scores,
       unansweredQuestions,
       aggregateLink,
-      canReview,
       deckInfo,
       description,
       this.monochrome,
@@ -1620,11 +1610,11 @@ module.exports = {
     if (remainingTokens3.indexOf('reviewme') !== -1) {
       remainingTokens4 = remainingTokens3.filter(t => t !== 'reviewme');
       gameMode = ReviewGameMode;
-      decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForUserId[msg.author.id], prefix)];
+      decks = [getReviewDeckOrThrow(await deckLoader.getUserReviewDeck(msg.author.id), prefix)];
     } else if (remainingTokens3.indexOf('review') !== -1) {
       remainingTokens4 = remainingTokens3.filter(t => t !== 'review');
       gameMode = ReviewGameMode;
-      decks = [getReviewDeckOrThrow(state.quizManager.reviewDeckForLocationId[locationId], prefix)];
+      decks = [getReviewDeckOrThrow(await deckLoader.getLocationReviewDeck(locationId), prefix)];
     } else {
       const deckListResult = consumeDeckListToken(remainingTokens3);
       const deckNames = deckListResult.decks;

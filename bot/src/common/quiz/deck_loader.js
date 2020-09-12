@@ -6,6 +6,8 @@ const fs = require('fs');
 const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
+const UserReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createUser(mongoConnection);
+const LocationReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createLocation(mongoConnection);
 const decksMetadata = require('./../../../generated/quiz/decks.json');
 
 const CACHE_SIZE_IN_PAGES = 1000;
@@ -256,9 +258,49 @@ function createReviewDeck(unansweredCards) {
   };
 }
 
+async function updateReviewDeck(unansweredCards, model, id) {
+  if (unansweredCards.length > 0) {
+    await model.findByIdAndUpdate(
+      id,
+      { cards: unansweredCards.slice(0, 100), created: Date.now() },
+      { upsert: true },
+    );
+  } else {
+    await model.findByIdAndDelete(id);
+  }
+}
+
+async function getReviewDeck(model, id) {
+  const doc = await model.findById(id).lean().exec();
+  if (!doc) {
+    return undefined;
+  }
+
+  return createReviewDeck(doc.cards);
+}
+
+function updateUserReviewDeck(unansweredCards, userId) {
+  return updateReviewDeck(unansweredCards, UserReviewDeckModel, userId);
+}
+
+function updateLocationReviewDeck(unansweredCards, locationId) {
+  return updateReviewDeck(unansweredCards, LocationReviewDeckModel, locationId);
+}
+
+function getUserReviewDeck(userId) {
+  return getReviewDeck(UserReviewDeckModel, userId);
+}
+
+function getLocationReviewDeck(locationId) {
+  return getReviewDeck(LocationReviewDeckModel, locationId);
+}
+
 module.exports = {
   getQuizDecks,
   DeckRequestStatus,
-  createReviewDeck,
   loadDecks,
+  updateUserReviewDeck,
+  updateLocationReviewDeck,
+  getUserReviewDeck,
+  getLocationReviewDeck,
 };
