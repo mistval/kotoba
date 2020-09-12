@@ -6,7 +6,7 @@ async function initializeResourceDatabase(
   pronunciationDataPath,
   randomWordDataPath,
   wordFrequencyDataPath,
-  edictDataPath,
+  jmdictDataPath,
 ) {
   const resourceDatabase = new ResourceDatabase();
   await resourceDatabase.load(
@@ -14,7 +14,7 @@ async function initializeResourceDatabase(
     pronunciationDataPath,
     randomWordDataPath,
     wordFrequencyDataPath,
-    edictDataPath,
+    jmdictDataPath,
   );
 
   return resourceDatabase;

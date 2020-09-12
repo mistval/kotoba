@@ -1,11 +1,12 @@
 const fs = require('fs');
+const zlib = require('zlib');
 const path = require('path');
+const assert = require('assert');
 const sqlite = require('sqlite');
 const convertToHiragana = require('./convert_to_hiragana.js');
 const shiritoriWordStartingSequences = require('./shiritori/shiritori_word_starting_sequences.js');
 
-const edictPartOfSpeechRegex = /\((.*?)\)/;
-const edictNounCodes = [
+const jmdictNounCodes = [
   'n',
   'n-pref',
   'n-suf',
@@ -15,6 +16,7 @@ const edictNounCodes = [
   'n-adv',
   'n-t',
   'vs',
+  'adj-na',
 ];
 
 async function buildPronunciationTable(database, pronunciationDataPath) {
@@ -58,12 +60,6 @@ async function buildRandomWordsTable(database, randomWordDataPath) {
   await database.run('CREATE INDEX level ON RandomWords (level)');
 }
 
-function getEdictLines(edictPath) {
-  const edictLines = fs.readFileSync(edictPath, 'utf8').split('\n');
-  edictLines.shift(); // First line is a header.
-  return edictLines;
-}
-
 function buildReadingsForStartSequence(highestDifficultyForReading) {
   const readingsForStartSequence = {};
   const readings = Object.keys(highestDifficultyForReading);
@@ -105,75 +101,95 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
   );
 }
 
-async function buildShiritoriTable(database, wordFrequencyDataPath, edictPath) {
+async function decompressJson(filePath) {
+  const compressedBytes = await fs.promises.readFile(filePath);
+
+  const decompressedBytes = await new Promise((fulfill, reject) => {
+    zlib.gunzip(compressedBytes, (err, decompressed) => {
+      if (err) {
+        return reject(err);
+      }
+
+      return fulfill(decompressed);
+    });
+  });
+
+  const decompressedString = decompressedBytes.toString('utf8');
+  return JSON.parse(decompressedString);
+}
+
+function unique(arr) {
+  return arr.filter((e, i) => arr.indexOf(e) === i);
+}
+
+async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
+  const jmdictEntries = await decompressJson(jmdictPath);
   const wordsByFrequency = JSON.parse(await fs.promises.readFile(wordFrequencyDataPath));
   const highestDifficultyForReading = {};
 
   await database.run('CREATE TABLE ShiritoriWords (id INTEGER PRIMARY KEY AUTOINCREMENT, word CHAR(20), reading CHAR(20), data TEXT)');
   const insertWordStatement = await database.prepare('INSERT INTO ShiritoriWords (word, reading, data) VALUES (?, ?, ?)');
 
-  const edictLines = getEdictLines(edictPath);
-
   await database.run('BEGIN');
 
-  for (let i = 0; i < edictLines.length; i += 1) {
-    const line = edictLines[i];
+  for (let entryIndex = 0; entryIndex < jmdictEntries.length; entryIndex += 1) {
+    const entry = jmdictEntries[entryIndex];
+    const entryNum = entry.ent_seq[0];
+    const words = (entry.k_ele || []).flatMap(element => element.keb);
+    const readings = entry.r_ele.flatMap(element => element.reb);
+    const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
+    const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
+    const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
 
-    if (line) {
-      const tokens = line.split(' ');
-      const word = tokens.shift();
-      const wordAsHiragana = convertToHiragana(word);
-      const readingPart = tokens[0];
+    assert(readings.length > 0, `No readings for ${entryNum}`);
+    assert(partsOfSpeech.length > 0, `No POS for ${entryNum}`);
+    assert(definitions.length > 0, `No definitions for ${entryNum}`);
 
-      let reading;
-      if (readingPart.startsWith('[')) {
-        reading = convertToHiragana(readingPart.replace('[', '').replace(']', ''));
-        tokens.shift();
-      } else {
-        reading = wordAsHiragana;
+    if (words.length === 0) {
+      for (let readingIndex = 0; readingIndex < readings.length; ++readingIndex) {
+        const reading = readings[readingIndex];
+        const hiraganaReading = convertToHiragana(reading);
+        const difficultyScore = wordsByFrequency.indexOf(reading);
+
+        highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
+            ? Math.max(highestDifficultyForReading[reading], difficultyScore)
+            : difficultyScore;
+
+        const searchResult = {
+          word: reading,
+          reading: hiraganaReading,
+          definitions,
+          isNoun,
+          difficultyScore,
+        };
+
+        const json = JSON.stringify(searchResult);
+        await insertWordStatement.run(reading, hiraganaReading, json);
       }
+    } else {
+      for (let wordIndex = 0; wordIndex < words.length; ++wordIndex) {
+        const word = words[wordIndex];
+        const difficultyScore = wordsByFrequency.indexOf(word);
+        const hirganaReadings = unique(readings.map(convertToHiragana));
 
-      const definitionParts = tokens.join(' ').split('/');
-      definitionParts.pop(); // The last one is always empty
-      definitionParts.shift(); // The first one is always empty
+        for (let readingIndex = 0; readingIndex < hirganaReadings.length; ++readingIndex) {
+          const reading = hirganaReadings[readingIndex];
+          highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
+            ? Math.max(highestDifficultyForReading[reading], difficultyScore)
+            : difficultyScore;
 
-      const definitions = [];
-      let isNoun = false;
-      definitionParts.forEach((definitionPart) => {
-        let definition = definitionPart;
-        let partOfSpeechMatch = definition.match(edictPartOfSpeechRegex);
-        while (partOfSpeechMatch) {
-          definition = definition.replace(partOfSpeechMatch[0], '');
-          const partsOfSpeech = partOfSpeechMatch[1].split(',');
-          if (!isNoun) {
-            isNoun = partsOfSpeech.some(
-              partOfSpeechSymbol => edictNounCodes.indexOf(partOfSpeechSymbol) !== -1,
-            );
-          }
-          partOfSpeechMatch = definition.match(edictPartOfSpeechRegex);
+          const searchResult = {
+            word,
+            reading,
+            definitions,
+            isNoun,
+            difficultyScore,
+          };
+
+          const json = JSON.stringify(searchResult);
+          await insertWordStatement.run(word, reading, json);
         }
-
-        definition = definition.trim();
-        if (definition) {
-          definitions.push(definition);
-        }
-      });
-
-      const difficultyScore = wordsByFrequency.indexOf(word);
-      highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
-        ? Math.max(highestDifficultyForReading[reading], difficultyScore)
-        : difficultyScore;
-
-      const searchResult = {
-        word,
-        reading,
-        definitions,
-        isNoun,
-        difficultyScore,
-      };
-
-      const json = JSON.stringify(searchResult);
-      await insertWordStatement.run(word, reading, json);
+      }
     }
   }
 
@@ -185,13 +201,13 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, edictPath) {
 }
 
 class ResourceDatabase {
-  async load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, edictPath) {
+  async load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath) {
     const needsBuild = !fs.existsSync(databasePath);
     if (needsBuild && (
       !pronunciationDataPath
       || !randomWordDataPath
       || !wordFrequencyDataPath
-      || !edictPath
+      || !jmdictPath
     )) {
       throw new Error('Cannot build resource database. Required resource paths not provided.');
     }
@@ -207,7 +223,7 @@ class ResourceDatabase {
     if (needsBuild) {
       await buildPronunciationTable(this.database, pronunciationDataPath);
       await buildRandomWordsTable(this.database, randomWordDataPath);
-      await buildShiritoriTable(this.database, wordFrequencyDataPath, edictPath);
+      await buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
     }
 
     this.searchPronunciationStatement = await this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?');

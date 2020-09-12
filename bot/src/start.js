@@ -159,13 +159,13 @@ async function start() {
   const pronunciationDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'pronunciation.json');
   const randomWordDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'random_words.json');
   const wordFrequencyDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'frequency.json');
-  const edictDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'edictutf8.txt');
+  const jmdictPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'jmdict.json.gz');
   globals.resourceDatabase = await initializeResourceDatabase(
     resourceDatabasePath,
     pronunciationDataPath,
     randomWordDataPath,
     wordFrequencyDataPath,
-    edictDataPath,
+    jmdictPath,
   );
 
   const monochrome = createBot();
