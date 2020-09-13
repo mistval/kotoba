@@ -1,44 +1,26 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(dbConnection);
-const axios = require('axios').create({ timeout: 10000 });
-const globals = require('./../../common/globals.js');
+const removeUndefined = require('../../common/util/remove_undefined_values.js');
 
 async function updateDbFromUser(user, options = {}) {
-  let userRecord = await UserModel.findOne({ 'discordUser.id': user.id });
-
-  if (!userRecord) {
-    userRecord = new UserModel({ discordUser: { id: user.id } });
-  }
-
-  const recordHasAvatarType = !!userRecord.discordUser.avatarType;
-  const avatarHasChanged = userRecord.discordUser.avatar !== user.avatar;
-  if (user.avatar && (avatarHasChanged || !recordHasAvatarType)) {
-    try {
-      const response = await axios.get(user.staticAvatarURL, { responseType: 'arraybuffer' });
-      userRecord.discordUser.avatarBytes = Buffer.from(response.data);
-      userRecord.discordUser.avatar = user.avatar;
-      userRecord.discordUser.avatarType = response.headers['content-type'];
-    } catch (err) {
-      globals.logger.warn({
-        event: 'FAILED TO DOWNLOAD USER AVATAR',
-        err,
-        user,
-      });
-    }
-  }
-
-  userRecord.discordUser.username = user.username
-    || userRecord.discordUser.username;
-  userRecord.discordUser.discriminator = user.discriminator
-    || userRecord.discordUser.discriminator;
+  const update = removeUndefined({
+    'discordUser.id': user.id,
+    'discordUser.avatar': user.avatar,
+    'discordUser.username': user.username,
+    'discordUser.discriminator': user.discriminator,
+  });
 
   if (options.banReason) {
-    userRecord.ban = { reason: options.banReason };
+    update.ban = { reason: options.banReason };
   } else if (options.unBan) {
-    userRecord.ban = undefined;
+    update.ban = undefined;
   }
 
-  return userRecord.save();
+  return UserModel.findOneAndUpdate(
+    { 'discordUser.id': user.id },
+    update,
+    { upsert: true, new: true },
+  ).lean();
 }
 
 module.exports = updateDbFromUser;
