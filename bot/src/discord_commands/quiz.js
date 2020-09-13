@@ -1400,6 +1400,8 @@ function consumeDeckListToken(commandTokens) {
   const decksAndMixes = commandTokens[0].split('+').filter(d => d);
   const decks = [];
 
+  throwIfTooManyDecks(decksAndMixes.length);
+
   decksAndMixes.forEach((deckOrMix) => {
     const mixPreset = deckMixPresets[deckOrMix];
     if (mixPreset) {
@@ -1620,7 +1622,6 @@ module.exports = {
       const deckNames = deckListResult.decks;
       remainingTokens4 = deckListResult.remainingTokens;
       gameMode = createNonReviewGameMode(isMastery, isConquest);
-      throwIfTooManyDecks(deckNames.length);
 
       const invokerName = msg.author.name + msg.author.discriminator;
       const decksLookupResult = await deckLoader.getQuizDecks(
