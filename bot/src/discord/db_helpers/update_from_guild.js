@@ -1,36 +1,18 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GuildModel = require('kotoba-node-common').models.createGuildModel(dbConnection);
-const axios = require('axios').create({ timeout: 10000 });
-const globals = require('./../../common/globals.js');
 
-async function updateDbFromGuild(guild) {
-  let guildRecord = await GuildModel.findOne({ id: guild.id });
-  if (!guildRecord) {
-    guildRecord = new GuildModel({ id: guild.id });
-  }
+function updateDbFromGuild(guild) {
+  const update = {
+    id: guild.id,
+    icon: guild.icon,
+    name: guild.name,
+  };
 
-  if (guild.icon && (guildRecord.icon !== guild.icon || !guildRecord.iconType)) {
-    try {
-      const response = await axios.get(guild.iconURL, { responseType: 'arraybuffer' });
-      guildRecord.iconBytes = Buffer.from(response.data);
-      guildRecord.icon = guild.icon;
-      guildRecord.iconType = response.headers['content-type'];
-    } catch (err) {
-      globals.logger.warn({
-        event: 'FAILED TO DOWNLOAD GUILD ICON',
-        err,
-        guild,
-      });
-    }
-  }
-
-  guildRecord.createdAt = guild.createdAt;
-  guildRecord.botJoinedAt = guild.joinedAt;
-  guildRecord.memberCount = guild.memberCount;
-  guildRecord.name = guild.name;
-  guildRecord.ownerId = guild.ownerID;
-
-  return guildRecord.save();
+  return GuildModel.findOneAndUpdate(
+    { id: guild.id },
+    update,
+    { upsert: true, new: true },
+  ).lean();
 }
 
 module.exports = updateDbFromGuild;
