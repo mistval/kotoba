@@ -56,7 +56,7 @@ function createWordIdentificationDeckFromSource(sourceDeck) {
 }
 
 function getPathForQuizDeckFile(fileName) {
-  return path.resolve(__dirname, '..', 'quiz', 'decks', fileName || '');
+  return path.resolve(__dirname, '..', '..', 'resources', 'quiz_data', fileName || '');
 }
 
 function getDiskArrayDirectoryForDeckName(deckName) {
