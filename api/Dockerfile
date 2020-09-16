@@ -12,12 +12,7 @@ WORKDIR /var/node-common
 RUN npm ci
 
 WORKDIR /var/app
-
 COPY ./api .
-RUN mkdir -p /usr/share/fonts/opentype
-RUN mkdir -p /usr/share/fonts/truetype
-RUN mv ./fonts/truetype/* /usr/share/fonts/truetype
-RUN mv ./fonts/opentype/* /usr/share/fonts/opentype
 
 RUN npm ci
 RUN npm run buildquiz
