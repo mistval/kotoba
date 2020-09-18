@@ -161,17 +161,10 @@ const postPatchLimiter = rateLimit({
 });
 
 function writeFullDeck(deck) {
-  return new Promise((fulfill, reject) => {
-    const outPath = filePathForShortName(deck.shortName);
-    fs.writeFile(outPath, JSON.stringify(deck), (err) => {
-      if (err) {
-        console.warn(err);
-        reject(err);
-      }
-
-      fulfill();
-    });
-  });
+  return fs.promises.writeFile(
+    filePathForShortName(deck.shortName),
+    JSON.stringify(deck),
+  );
 }
 
 routes.patch(
@@ -186,6 +179,8 @@ routes.patch(
   attachDeckFull,
   async (req, res, next) => {
     try {
+      const oldShortName = req.deckMeta.shortName;
+
       req.deckMeta.name = req.body.name || req.deckMeta.name;
       req.deckMeta.shortName = req.body.shortName || req.deckMeta.shortName;
       req.deckMeta.lastModified = Date.now();
@@ -221,7 +216,12 @@ routes.patch(
         });
       }
 
-      await Promise.all([req.deckMeta.save(), writeFullDeck(req.deck)]);
+      const promises = [req.deckMeta.save(), writeFullDeck(req.deck)];
+      if (oldShortName !== req.deckMeta.shortName) {
+        promises.push(fs.promises.unlink(filePathForShortName(oldShortName)));
+      }
+
+      await Promise.all(promises);
       res.status(200).send();
     } catch (err) {
       next(err);
