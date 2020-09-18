@@ -11,7 +11,7 @@ module.exports = {
     }
 
     if (stringContainsInviteLink(msg.content)) {
-      return msg.channel.createMessage(`You can invite me to your server with this link! https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=52288`);
+      return msg.channel.createMessage(`You can invite me to your server with this link! https://discord.com/oauth2/authorize?client_id=${bot.user.id}&scope=bot&permissions=117824`);
     }
 
     const prefix = monochrome.getPersistence().getPrimaryPrefixForMessage(msg);

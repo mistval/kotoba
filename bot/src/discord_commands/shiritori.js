@@ -350,6 +350,7 @@ module.exports = {
     Permissions.embedLinks,
     Permissions.sendMessages,
     Permissions.addReactions,
+    Permissions.readMessageHistory,
   ],
   requiredSettings: [
     'shiritori/bot_turn_minimum_wait',
