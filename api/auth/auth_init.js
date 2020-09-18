@@ -8,19 +8,23 @@ const authConfig = config.auth;
 
 function initialize(app) {
   passport.serializeUser(async (discordUser, done) => {
-    let user = await UserModel.findOne({ 'discordUser.id': discordUser.id });
+    try {
+      let user = await UserModel.findOne({ 'discordUser.id': discordUser.id });
 
-    if (!user) {
-      // Register new user
-      user = new UserModel({
-        discordUser,
-      });
+      if (!user) {
+        // Register new user
+        user = new UserModel({
+          discordUser,
+        });
+      }
+
+      user.admin = authConfig.adminDiscordIds.some(adminId => adminId === discordUser.id);
+
+      await user.save();
+      done(null, user._id);
+    } catch (err) {
+      done(err);
     }
-
-    user.admin = authConfig.adminDiscordIds.some(adminId => adminId === discordUser.id);
-
-    await user.save();
-    done(null, user._id);
   });
 
   passport.deserializeUser(async (userId, done) => {

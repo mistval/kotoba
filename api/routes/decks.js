@@ -109,6 +109,14 @@ async function attachDeckFull(req, res, next) {
   }
 }
 
+function checkCanCreateDecks(req, res, next) {
+  if (!req.user.canCreateDecks) {
+    return res.status(403).send();
+  }
+
+  return next();
+}
+
 const getLimiter = rateLimit({
   windowMs: 60 * 1000, // 60 seconds
   delayAfter: 10,
@@ -170,6 +178,7 @@ routes.patch(
   '/:id',
   postPatchLimiter,
   checkAuth,
+  checkCanCreateDecks,
   createAttachDeckMeta(false),
   checkDeckMetaAttached,
   checkRequesterIsAuthorized,
@@ -224,6 +233,7 @@ routes.post(
   '/',
   postPatchLimiter,
   checkAuth,
+  checkCanCreateDecks,
   checkShortNameUnique,
   checkHas100DecksOrFewer,
   async (req, res, next) => {

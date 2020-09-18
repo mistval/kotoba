@@ -18,13 +18,16 @@ class DashboardHeader extends Component {
   async getUser() {
     try {
       const res = await axios.get('/api/users/me');
-      const { discordUser } = res.data;
+      const user = res.data;
+      const { discordUser } = user;
 
       const { username } = discordUser;
       const avatarUri = discordUser.avatar ? `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}` : defaultAvatar;
+      const { canCreateDecks } = user;
 
       localStorage.setItem('username', username);
       localStorage.setItem('avatarUri', avatarUri);
+      localStorage.setItem('canCreateDecks', canCreateDecks);
 
       this.setState({
         apiErrored: false,

@@ -8,7 +8,7 @@ routes.get(
   '/me',
   checkAuth,
   (req, res) => {
-    return res.json(req.user);
+    return res.json(req.user.toJSON({ virtuals: true }));
   },
 );
 

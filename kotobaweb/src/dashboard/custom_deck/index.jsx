@@ -420,6 +420,12 @@ class EditDeck extends Component {
       );
     }
 
+    if (localStorage.getItem('canCreateDecks') === 'false') {
+      return (
+        <NotificationStripe show={true} message="Your Discord account must be at least one week old to create decks. Please try again later." onClose={this.onErrorCloseClicked} isError={true} />
+      );
+    }
+
     return (
       <>
         <Header />
