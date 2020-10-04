@@ -53,13 +53,12 @@ class AudioConnection {
   constructor(bot, msg, voiceChannel) {
     this.bot = bot;
     this.msg = msg;
-    this.voiceChannel = voiceChannel;
+    this.initialVoiceChannel = voiceChannel;
   }
 
   static async getOrCreateConnection(bot, serverId, voiceChannel) {
     const connection = bot.voiceConnections.get(serverId);
     if (connection && connection.channelID) {
-      assert(connection.channelID === voiceChannel.id, 'We\'re connected, but to the wrong channel.');
       return connection;
     }
 
@@ -127,7 +126,7 @@ class AudioConnection {
     const voiceConnection = await AudioConnection.getOrCreateConnection(
       this.bot,
       this.msg.channel.guild.id,
-      this.voiceChannel,
+      this.initialVoiceChannel,
     );
 
     return voiceConnection.stopPlaying();
@@ -139,14 +138,22 @@ class AudioConnection {
     const voiceConnection = await AudioConnection.getOrCreateConnection(
       this.bot,
       this.msg.channel.guild.id,
-      this.voiceChannel,
+      this.initialVoiceChannel,
     );
 
     return voiceConnection.play(resource);
   }
 
-  getVoiceChannel() {
-    return this.voiceChannel;
+  async getVoiceChannel() {
+    const voiceConnection = await AudioConnection.getOrCreateConnection(
+      this.bot,
+      this.msg.channel.guild.id,
+      this.initialVoiceChannel,
+    );
+
+    const guildId = voiceConnection.id;
+    const channelId = voiceConnection.channelID;
+    return this.bot.guilds.get(guildId).channels.get(channelId);
   }
 
   close() {

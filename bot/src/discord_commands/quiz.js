@@ -620,7 +620,7 @@ class DiscordMessageSender {
       content.embed.image = { url: question.bodyAsImageUri };
     }
     if (question.bodyAsAudioUri) {
-      const voiceChannel = this.audioConnection.getVoiceChannel();
+      const voiceChannel = await this.audioConnection.getVoiceChannel();
       content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
       await this.audioConnection.play(question.bodyAsAudioUri);
     }
