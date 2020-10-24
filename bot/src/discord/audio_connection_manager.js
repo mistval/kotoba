@@ -1,6 +1,4 @@
-const assert = require('assert');
 const globals = require('./../common/globals.js');
-
 const constants = require('./../common/constants.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 

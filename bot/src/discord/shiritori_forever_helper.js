@@ -184,12 +184,21 @@ async function handleRejectedResult(monochrome, msg, rejectedResult) {
   const { rejectionReason, extraData } = rejectedResult;
 
   if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
-    try {
-      return await retryPromise(() => msg.addReaction('❓'));
-    } catch (err) {
+    const ownPermissions = msg.channel.permissionsOf(monochrome.getErisBot().user.id);
+    const canReact = ownPermissions.has('addReactions') && ownPermissions.has('readMessageHistory');
+
+    if (canReact) {
+      try {
+        return await retryPromise(() => msg.addReaction('❓'));
+      } catch (err) {
+        throw new FulfillmentError({
+          logDescription: 'Failed to add question mark reaction',
+          error: err,
+        });
+      }
+    } else {
       throw new FulfillmentError({
-        logDescription: 'Failed to add question mark reaction',
-        error: err,
+        logDescription: 'No permission to add question mark reaction.',
       });
     }
   }
