@@ -180,14 +180,21 @@ function discordDescriptionForRejection(rejectionReason, extraData) {
   return undefined;
 }
 
+function canReact(msg, ownId) {
+  if (!msg.channel.permissionsOf) {
+    return true;
+  }
+
+  const ownPermissions = msg.channel.permissionsOf(ownId);
+  return ownPermissions.has('addReactions') && ownPermissions.has('readMessageHistory');
+}
+
 async function handleRejectedResult(monochrome, msg, rejectedResult) {
   const { rejectionReason, extraData } = rejectedResult;
+  const ownId = monochrome.getErisBot().user.id;
 
   if (rejectionReason === shiritoriManager.REJECTION_REASON.UnknownWord) {
-    const ownPermissions = msg.channel.permissionsOf(monochrome.getErisBot().user.id);
-    const canReact = ownPermissions.has('addReactions') && ownPermissions.has('readMessageHistory');
-
-    if (canReact) {
+    if (canReact(msg, ownId)) {
       try {
         return await retryPromise(() => msg.addReaction('❓'));
       } catch (err) {
