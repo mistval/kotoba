@@ -400,6 +400,10 @@ function convertDatabaseFacingSaveIdToUserFacing(saveId) {
 }
 
 function convertUserFacingSaveIdToDatabaseFacing(saveId) {
+  if (saveId === 0) {
+    return 0;
+  }
+
   return saveId - 1;
 }
 
