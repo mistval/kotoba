@@ -6,11 +6,10 @@ let intervals = [];
 const NUMBER_OF_RETRIES = 50;
 
 function randomAction(msg, suffix, monochrome) {
-  const suffixLowerCase = suffix.toLowerCase();
   monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
   return randomHelper.getRandomWordRecursive(
-    suffixLowerCase,
+    suffix,
     msg,
     NUMBER_OF_RETRIES,
     monochrome,
@@ -27,122 +26,124 @@ function setTimer(id, msg, level, monochrome, freq, startTime) {
   } else {
     nextTime = freq;
   }
-  let index = intervals.findIndex(i => i.id === id);
+  const index = intervals.findIndex(i => i.id === id);
   if (index !== -1) {
     intervals[index].interval = setTimeout(() => {
       randomAction(msg, level, monochrome);
       setTimer(id, msg, level, monochrome, freq);
-    }, nextTime)
+    }, nextTime);
   }
 }
 
 async function setSchedule(suffix, msg, monochrome) {
   let freq = '';
-  let freqType = '';
   let start = '';
-  let level = '';
-  let suffixArray = suffix.split(" ");
-  if (suffixArray.length === 1 && suffixArray[0] === 'clear') {
+  const suffixArray = suffix.split(' ')
+    .map(s => s.trim().toLowerCase())
+    .filter(s => s);
+  const { length } = suffixArray;
+
+  if (length === 1 && suffixArray[0] === 'clear') {
     intervals.forEach(i => clearTimeout(i.interval));
     intervals = [];
-    msg.channel.createMessage('All scheduled commands have been cleared.');
-  } else if (suffixArray.length === 1 && suffixArray[0] === 'list') {
+    return msg.channel.createMessage('All scheduled commands have been cleared.');
+  }
+
+  if (length === 1 && suffixArray[0] === 'list') {
     if (intervals.length > 0) {
-      let list = '';
-      intervals.forEach(i => list = (list === '' ? '' : list + '\n') + 'ID: ' + i.id +
-                                            ', Channel: ' + i.channel +
-                                            ', Frequency: ' + i.frequency +
-                                            ', Start time: ' + i.start +
-                                            ', Level: ' + i.level);
-      msg.channel.createMessage(list);
-    } else {
-      msg.channel.createMessage('List is empty');
+      const list = intervals
+        .map(i => `ID: ${i.id}, Channel: ${i.channel}, Frequency: ${i.frequency}, Start time: ${i.start}, Level: ${i.level}`)
+        .join('\n');
+      return msg.channel.createMessage(list);
     }
-  } else if (suffixArray.length === 2 && suffixArray[0] === 'stop') {
-    let index = intervals.findIndex(i => i.id = suffixArray[1]);
+    return msg.channel.createMessage('List is empty.');
+  }
+
+  if (length === 2 && suffixArray[0] === 'stop') {
+    const index = intervals.findIndex(i => i.id === suffixArray[1]);
     if (index !== -1) {
       clearTimeout(intervals[index].interval);
       intervals.splice(index, 1);
-      msg.channel.createMessage('Scheduled command stopped succesfully.');
-    } else {
-      msg.channel.createMessage('Error: Scheduled command with ID ' + suffixArray[1] + ' not found.');
+      return msg.channel.createMessage('Scheduled command stopped succesfully.');
     }
-  } else if (suffixArray.length !== 3) {
-    msg.channel.createMessage('Error: You must specify frequency in hours (or use \'daily\' or \'weekly\'), and a starting time (or use \'now\'). Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'. Starting time valid fotmat is \'hh:mm\'.');
-  } else {
-    switch (suffixArray[0]) {
-      case 'daily':
-        freq = 24 * 60 * 60 * 1000;
-        freqType = "d";
-        break;
-      case 'weekly':
-        freq = 7 * 24 * 60 * 60 * 1000;
-        freqType = "w";
-        break;
-      default:
-        let regex = new RegExp(/[0-9]+[smhdw]/, 'i');
-        if (regex.test(suffixArray[0])) {
-          let index = suffixArray[0].length - 1;
-          let freqValue = Number.parseInt(suffixArray[0].substring(0, index));
-          freqType = suffixArray[0].substring(index);
-          switch (freqType) {
-            case 's':
-              freq = freqValue * 1000;
-              break;
-            case 'm':
-              freq = freqValue * 1000 * 60;
-              break;
-            case 'h':
-              freq = freqValue * 1000 * 60 * 60;
-              break;
-            case 'd':
-              freq = freqValue * 1000 * 60 * 60 * 24;
-              break;
-            case 'w':
-              freq = freqValue * 1000 * 60 * 60 * 24 * 7;
-              break;
-          }
-        } else {
-          msg.channel.createMessage('Error: You must specify frequency. Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'.');
-          return;
+    return msg.channel.createMessage(`Error: Scheduled command with ID ${suffixArray[1]} not found.`);
+  }
+
+  if (length !== 3) {
+    return msg.channel.createMessage('Error: You must specify frequency in hours (or use \'daily\' or \'weekly\'), and a starting time (or use \'now\'). Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'. Starting time valid fotmat is \'hh:mm\'.');
+  }
+
+  const [suffixFreq, suffixStart, suffixLevel] = suffixArray;
+
+  switch (suffixFreq) {
+    case 'daily':
+      freq = 24 * 60 * 60 * 1000;
+      break;
+    case 'weekly':
+      freq = 7 * 24 * 60 * 60 * 1000;
+      break;
+    default: {
+      const [, freqStr, freqType] = suffixFreq.match(/([0-9]+)([smhdw])/i) || [];
+      if (freqStr) {
+        const freqValue = Number.parseInt(freqStr, 10);
+        switch (freqType) {
+          case 's':
+            freq = freqValue * 1000;
+            break;
+          case 'm':
+            freq = freqValue * 1000 * 60;
+            break;
+          case 'h':
+            freq = freqValue * 1000 * 60 * 60;
+            break;
+          case 'd':
+            freq = freqValue * 1000 * 60 * 60 * 24;
+            break;
+          case 'w':
+            freq = freqValue * 1000 * 60 * 60 * 24 * 7;
+            break;
+          default:
+            break;
         }
-        break;
+      } else {
+        return msg.channel.createMessage('Error: You must specify frequency. Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'.');
+      }
+      break;
     }
-    switch(suffixArray[1]) {
-      case 'now':
+  }
+
+  switch (suffixStart) {
+    case 'now':
+      start = new Date();
+      start.setSeconds(0);
+      start.setMilliseconds(0);
+      break;
+    default: {
+      const [, hours, minutes] = suffixArray[1].match(/([0-9]{1,2}):([0-9]{2})/) || [];
+      if (hours) {
         start = new Date();
+        start.setHours(hours);
+        start.setMinutes(minutes);
         start.setSeconds(0);
         start.setMilliseconds(0);
-        break;
-      default:
-        let regex = new RegExp(/[0-9]{1,2}:[0-9]{2}/, 'i');
-        if (regex.test(suffixArray[1])) {
-          start = new Date();
-          let hours = suffixArray[1].split(':')[0];
-          let minutes = suffixArray[1].split(':')[1];
-          start.setHours(hours);
-          start.setMinutes(minutes);
-          start.setSeconds(0);
-          start.setMilliseconds(0);
-        } else {
-          msg.channel.createMessage('Error: Start time must be in format hh:mm.');
-          return;
-        }
-        break;
+      } else {
+        return msg.channel.createMessage('Error: Start time must be in format hh:mm.');
+      }
+      break;
     }
-    level = suffixArray[2];
-    let id = intervals.length > 0 ? intervals[intervals.length-1].id + 1 : 0;
-    intervals.push({
-      id: id,
-      channel: msg.channel.name,
-      frequency: suffixArray[0],
-      start: start.toString(),
-      level: level,
-      interval: setTimeout(() => {
-        setTimer(id, msg, level, monochrome, freq, start);
-      }, 0)
-    });
   }
+
+  const id = intervals.length > 0 ? intervals[intervals.length - 1].id + 1 : 0;
+  return intervals.push({
+    id,
+    channel: msg.channel.name,
+    frequency: suffixFreq,
+    start: start.toString(),
+    level: suffixLevel,
+    interval: setImmediate(() => {
+      setTimer(id, msg, suffixLevel, monochrome, freq, start);
+    }),
+  });
 }
 
 module.exports = {
@@ -155,11 +156,11 @@ module.exports = {
   usageExample: '<prefix>schedule 1h now N3, <prefix>schedule daily 18:00 2k',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
-    if(!monochrome.userIsServerAdmin(msg)){return;}
-    return setSchedule(
+    if (!monochrome.userIsServerAdmin(msg)) { return; }
+    setSchedule(
       suffix,
       msg,
-      monochrome
+      monochrome,
     );
   },
 };

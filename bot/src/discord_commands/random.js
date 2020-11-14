@@ -73,5 +73,5 @@ module.exports = {
       monochrome,
     );
   },
-  getRandomWordRecursive
+  getRandomWordRecursive,
 };
