@@ -27,6 +27,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'anime',
   'shiritoriforever',
   'random',
+  'schedule',
   'pronounce',
   'jukebox',
   'jn',
