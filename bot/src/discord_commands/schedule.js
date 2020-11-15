@@ -134,16 +134,18 @@ async function setSchedule(suffix, msg, monochrome) {
   }
 
   const id = intervals.length > 0 ? intervals[intervals.length - 1].id + 1 : 0;
-  return intervals.push({
+
+  intervals.push({
     id,
     channel: msg.channel.name,
     frequency: suffixFreq,
     start: start.toString(),
     level: suffixLevel,
-    interval: setImmediate(() => {
-      setTimer(id, msg, suffixLevel, monochrome, freq, start);
-    }),
   });
+
+  setTimer(id, msg, suffixLevel, monochrome, freq, start);
+
+  return null;
 }
 
 module.exports = {
