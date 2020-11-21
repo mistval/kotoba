@@ -115,7 +115,7 @@ async function setSchedule(suffix, msg) {
       case 'list':
         if (serverSchedules.length > 0) {
           const list = serverSchedules
-            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${new Date(i.start).toLocaleString()}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)}`)
+            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${new Date(i.start).toLocaleString()}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)}.`)
             .join('\n');
           return msg.channel.createMessage(list);
         }
@@ -159,7 +159,7 @@ async function setSchedule(suffix, msg) {
           }
           serverSchedules[index].status = statusConstants.running;
           await serverSchedules[index].save(); // put it into the database
-          return msg.channel.createMessage(`Scheduled command resumed succesfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}`);
+          return msg.channel.createMessage(`Scheduled command resumed succesfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}.`);
         }
         return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
 
@@ -216,7 +216,7 @@ async function setSchedule(suffix, msg) {
         return msg.channel.createMessage('Error: You must specify frequency. Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'.');
       }
       if (freq < frequencyCheck) {
-        return msg.channel.createMessage(`Error: Minimum frequency is ${formatFrequency(frequencyCheck)}`);
+        return msg.channel.createMessage(`Error: Minimum frequency is ${formatFrequency(frequencyCheck)}.`);
       }
       break;
     }
@@ -280,7 +280,7 @@ async function setSchedule(suffix, msg) {
     updateSchedule.level = suffixLevel;
     updateSchedule.status = statusConstants.running;
     await updateSchedule.save(); // put it into the database
-    return msg.channel.createMessage(`Scheduled updated correctly. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}`);
+    return msg.channel.createMessage(`Scheduled updated correctly. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
   }
   const schedule = new WordScheduleModel({
     _id: channelId,
@@ -291,7 +291,7 @@ async function setSchedule(suffix, msg) {
     status: statusConstants.running,
   });
   await schedule.save(); // put it into the database
-  return msg.channel.createMessage(`Scheduled created correctly. First word in ${getNextTime(schedule.start, schedule.frequency)}`);
+  return msg.channel.createMessage(`Scheduled created correctly. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
 
 async function loadIntervals(monochrome) {
