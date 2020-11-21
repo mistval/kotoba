@@ -5,6 +5,7 @@ const createGuildModel = require('./guild.js');
 const createCustomDeckVoteModel = require('./custom_deck_vote.js');
 const scores = require('./scores.js');
 const reviewDeck = require('./review_deck.js');
+const createWordSchedulesModel = require('./schedules.js');
 
 module.exports = {
   createCustomDeckModel,
@@ -14,4 +15,5 @@ module.exports = {
   createCustomDeckVoteModel,
   scores,
   reviewDeck,
+  createWordSchedulesModel,
 };
