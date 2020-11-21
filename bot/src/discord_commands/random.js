@@ -1,56 +1,5 @@
-const { FulfillmentError, Permissions } = require('monochrome-bot');
-const jishoWordSearch = require('./../common/jisho_word_search.js');
-const constants = require('./../common/constants.js');
-const jishoSearch = require('./../discord/jisho_search.js');
-const globals = require('./../common/globals.js');
-
-const NUMBER_OF_RETRIES = 50;
-
-const jishoNotRespondingResponse = {
-  embed: {
-    title: 'Jisho',
-    description: 'Sorry, Jisho is not responding, please try again later.',
-    color: constants.EMBED_NEUTRAL_COLOR,
-  },
-};
-
-async function getRandomWordRecursive(suffix, msg, retriesRemaining, monochrome) {
-  const navigationManager = monochrome.getNavigationManager();
-
-  if (retriesRemaining <= 0) {
-    throw new FulfillmentError({
-      publicMessage: jishoNotRespondingResponse,
-      logDescription: `Failed to get a random word ${NUMBER_OF_RETRIES} times`,
-      logLevel: 'error',
-    });
-  }
-
-  const word = await globals.resourceDatabase.getRandomWord(suffix);
-
-  let jishoData;
-  try {
-    jishoData = await jishoWordSearch(word);
-  } catch (err) {
-    throw new FulfillmentError({
-      publicMessage: jishoNotRespondingResponse,
-      logDescription: 'Jisho request error',
-      err,
-    });
-  }
-
-  if (!jishoData.hasResults) {
-    return getRandomWordRecursive(suffix, msg, retriesRemaining - 1, monochrome);
-  }
-
-  const navigation = jishoSearch.createNavigationForJishoResults(
-    msg,
-    msg.author.username,
-    msg.author.id,
-    jishoData,
-  );
-
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
-}
+const showRandomWord = require('./../discord/show_random_word.js');
+const { Permissions } = require('monochrome-bot');
 
 module.exports = {
   commandAliases: ['random', 'r'],
@@ -66,11 +15,11 @@ module.exports = {
     const suffixLowerCase = suffix.toLowerCase();
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-    return getRandomWordRecursive(
+    return showRandomWord(
       suffixLowerCase,
-      msg,
-      NUMBER_OF_RETRIES,
+      msg.channel,
       monochrome,
+      msg,
     );
   },
   getRandomWordRecursive,
