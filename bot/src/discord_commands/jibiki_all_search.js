@@ -1,10 +1,12 @@
 const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const {
-  Navigation, NavigationChapter, FulfillmentError, Permissions,
-} = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
 const constants = require('./../common/constants.js');
 const array = require('./../common/util/array');
+const trimEmbed = require('../common/util/trim_embed.js');
+
+const {
+  Navigation, NavigationChapter, FulfillmentError, Permissions,
+} = require('monochrome-bot');
 
 const jibikiApiUri = 'https://api.jibiki.app';
 const maxFieldsPerPage = 8;
@@ -51,7 +53,7 @@ module.exports = {
 
       monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-      const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => ({
+      const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => trimEmbed({
         embed: {
           title: `Showing results for ${suffix}`,
           description: `Page ${index + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
@@ -113,70 +115,72 @@ module.exports = {
         },
       }));
 
-      const kanjiPages = response.data.filter(entry => entry.kanji.length > 0).map(entry => ({
-        embed: {
-          title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
-            ? entry.word.forms[0].kanji.literal
-            : entry.word.forms[0].reading.literal}`,
-          url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-          color: 16740862,
-          footer: {
-            icon_url: msg.author.avatarURL,
-            text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
-          },
-          author: {
-            name: 'Powered by Jibiki',
+      const kanjiPages = response.data
+        .filter(entry => entry.kanji.length > 0)
+        .map(entry => trimEmbed({
+          embed: {
+            title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
+              ? entry.word.forms[0].kanji.literal
+              : entry.word.forms[0].reading.literal}`,
             url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-            icon_url: 'https://jibiki.app/logo_circle.png',
+            color: 16740862,
+            footer: {
+              icon_url: msg.author.avatarURL,
+              text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
+            },
+            author: {
+              name: 'Powered by Jibiki',
+              url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+              icon_url: 'https://jibiki.app/logo_circle.png',
+            },
+            fields: entry.kanji.map((kanji) => {
+              let value = '';
+
+              value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
+              value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
+
+              if (kanji.definitions && kanji.definitions.length > 0) {
+                value += '**Definitions**\n';
+                kanji.definitions.forEach((definition, i) => {
+                  value += `${i + 1}. ${definition}\n`;
+                });
+
+                value += '\n';
+              }
+
+              if (kanji.miscellaneous.jlpt !== null) {
+                value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
+              }
+              if (kanji.miscellaneous.grade !== null) {
+                value += `Grade ${kanji.miscellaneous.grade}\n`;
+              }
+              if (kanji.miscellaneous.variant_type !== null) {
+                value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
+              }
+              if (kanji.miscellaneous.variant !== null) {
+                value += `Variant ${kanji.miscellaneous.variant}\n`;
+              }
+              if (kanji.miscellaneous.frequency !== null) {
+                value += `Frequency #${kanji.miscellaneous.frequency}\n`;
+              }
+              if (kanji.miscellaneous.radical_name !== null) {
+                value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
+              }
+              if (kanji.miscellaneous.stroke_count !== null) {
+                value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
+              }
+
+              return {
+                name: kanji.literal,
+                value,
+              };
+            }),
           },
-          fields: entry.kanji.map((kanji) => {
-            let value = '';
-
-            value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
-            value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
-
-            if (kanji.definitions && kanji.definitions.length > 0) {
-              value += '**Definitions**\n';
-              kanji.definitions.forEach((definition, i) => {
-                value += `${i + 1}. ${definition}\n`;
-              });
-
-              value += '\n';
-            }
-
-            if (kanji.miscellaneous.jlpt !== null) {
-              value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
-            }
-            if (kanji.miscellaneous.grade !== null) {
-              value += `Grade ${kanji.miscellaneous.grade}\n`;
-            }
-            if (kanji.miscellaneous.variant_type !== null) {
-              value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
-            }
-            if (kanji.miscellaneous.variant !== null) {
-              value += `Variant ${kanji.miscellaneous.variant}\n`;
-            }
-            if (kanji.miscellaneous.frequency !== null) {
-              value += `Frequency #${kanji.miscellaneous.frequency}\n`;
-            }
-            if (kanji.miscellaneous.radical_name !== null) {
-              value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
-            }
-            if (kanji.miscellaneous.stroke_count !== null) {
-              value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
-            }
-
-            return {
-              name: kanji.literal,
-              value,
-            };
-          }),
-        },
-      }));
+        }));
 
       const sentencePages = response.data
         .filter(entry => entry.sentences && entry.sentences.length > 0)
-        .map(entry => ({
+        .map(entry => trimEmbed({
           embed: {
             title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
               ? entry.word.forms[0].kanji.literal
