@@ -178,6 +178,7 @@ async function setSchedule(suffix, msg) {
   const suffixArray = suffix.split(' ')
     .map(s => s.trim().toLowerCase())
     .filter(s => s);
+
   const { length } = suffixArray;
 
   if (length === 1) {
@@ -185,7 +186,7 @@ async function setSchedule(suffix, msg) {
     switch (suffixArray[0]) {
       case 'clear':
         await WordScheduleModel.deleteMany({ serverId });
-        return msg.channel.createMessage('All scheduled commands have been cleared.');
+        return msg.channel.createMessage('All WOTD schedules for this server have been cleared.');
 
       case 'list':
         if (serverSchedules.length > 0) {
@@ -194,28 +195,27 @@ async function setSchedule(suffix, msg) {
             .join('\n');
           return msg.channel.createMessage(list);
         }
-        return msg.channel.createMessage('List is empty.');
+        return msg.channel.createMessage('No WOTD schedules are currently active in this server.');
 
       case 'stop':
         index = serverSchedules.findIndex(i => i.id === channelId);
         if (index !== -1) {
-          clearTimeout(serverSchedules[index].interval);
           await WordScheduleModel.deleteOne({ _id: channelId });
-          return msg.channel.createMessage('Scheduled command stopped succesfully.');
+          return msg.channel.createMessage('The WOTD schedule for this channel was stopped successfully.');
         }
-        return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
+        return msg.channel.createMessage('There is no WOTD schedule in this channel.');
 
       case 'pause':
         index = serverSchedules.findIndex(i => i.id === channelId);
         if (index !== -1) {
           if (serverSchedules[index].status === statusConstants.paused) {
-            return msg.channel.createMessage('Scheduled command is already paused.');
+            return msg.channel.createMessage('This channel\'s WOTD schedule is already paused.');
           }
           serverSchedules[index].status = statusConstants.paused;
           await serverSchedules[index].save(); // put it into the database
-          return msg.channel.createMessage('Scheduled command paused succesfully.');
+          return msg.channel.createMessage('WOTD schedule paused successfully.');
         }
-        return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
+        return msg.channel.createMessage('There is no WOTD schedule in this channel.');
 
       case 'pauseall':
         await Promise.all(serverSchedules.map(async (schedule, i) => {
@@ -224,19 +224,19 @@ async function setSchedule(suffix, msg) {
             await serverSchedules[i].save(); // put it into the database
           }
         }));
-        return msg.channel.createMessage('All server\'s scheduled command have been paused.');
+        return msg.channel.createMessage('All WOTD schedules in this server have been paused.');
 
       case 'resume':
         index = serverSchedules.findIndex(i => i.id === channelId);
         if (index !== -1) {
           if (serverSchedules[index].status === statusConstants.running) {
-            return msg.channel.createMessage('Scheduled command is already running.');
+            return msg.channel.createMessage('The WOTD schedule for this channel is already active.');
           }
           serverSchedules[index].status = statusConstants.running;
           await serverSchedules[index].save(); // put it into the database
-          return msg.channel.createMessage(`Scheduled command resumed succesfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}.`);
+          return msg.channel.createMessage(`WOTD schedule resumed successfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}.`);
         }
-        return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
+        return msg.channel.createMessage('There is no WOTD schedule in this channel.');
 
       case 'resumeall':
         await Promise.all(serverSchedules.map(async (schedule, i) => {
@@ -245,14 +245,14 @@ async function setSchedule(suffix, msg) {
             await serverSchedules[i].save(); // put it into the database
           }
         }));
-        return msg.channel.createMessage('All server\'s scheduled command have been resumed.');
+        return msg.channel.createMessage('This servers WOTD schedules have all been resumed.');
 
       default:
     }
   }
 
   if (length !== 2 && length !== 3) {
-    return msg.channel.createMessage('Error: You must specify frequency in hours (or use \'daily\' or \'weekly\'), and a starting time (or use \'now\'). Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'. Starting time valid fotmat is \'hh:mm\'.');
+    return msg.channel.createMessage(`You must specify frequency in hours (or use **daily** or **weekly**), and a starting time (or use **now**). Say **${msg.prefix}help wotd** for help!`);
   }
 
   const [suffixFreq, suffixStart, suffixLevel] = suffixArray;
@@ -288,10 +288,10 @@ async function setSchedule(suffix, msg) {
             break;
         }
       } else {
-        return msg.channel.createMessage('Error: You must specify frequency. Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'.');
+        return msg.channel.createMessage(`You must specify frequency. Frequency formats consist of number and unit. Valid units are **s**, **m**, **h**, **d**, **w**.  Say **${msg.prefix}help wotd** for help!`);
       }
       if (frequency < frequencyCheck) {
-        return msg.channel.createMessage(`Error: Minimum frequency is ${formatFrequency(frequencyCheck)}.`);
+        return msg.channel.createMessage(`That frequency is too short. The minimum frequency is ${formatFrequency(frequencyCheck)}. Say **${msg.prefix}help wotd** for help!`);
       }
       break;
     }
@@ -303,7 +303,7 @@ async function setSchedule(suffix, msg) {
       const offset = start.getTime() % frequencyCheck;
       start.setTime(start.getTime() + (frequencyCheck - offset));
       if (offset > 0) {
-        await msg.channel.createMessage(`Info: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()}`);
+        await msg.channel.createMessage(`Success: The WOTD timer runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()} UTC`);
       }
       break;
     }
@@ -322,10 +322,10 @@ async function setSchedule(suffix, msg) {
           start.setDate(start.getDate() + 1);
         }
         if (offset > 0) {
-          await msg.channel.createMessage(`Info: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()}`);
+          await msg.channel.createMessage(`Success: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()} UTC`);
         }
       } else {
-        return msg.channel.createMessage('Error: Start time must be in format hh:mm.');
+        return msg.channel.createMessage(`Start time must be in the format **hh:mm** (UTC). Say **${msg.prefix}help wotd** for help!`);
       }
       break;
     }
@@ -352,7 +352,7 @@ async function setSchedule(suffix, msg) {
       case '1k':
         break;
       default:
-        return msg.channel.createMessage('Error: Level must be one of these: N1, N2, N3, N4, N5, 10k, 9k, 8k, 7k, 6k, 5k, 4k, 3k, j2k, 2k, j1k, 1k.');
+        return msg.channel.createMessage('Level must be one of: N1, N2, N3, N4, N5, 10k, 9k, 8k, 7k, 6k, 5k, 4k, 3k, j2k, 2k, j1k, 1k.');
     }
   }
 
@@ -365,8 +365,9 @@ async function setSchedule(suffix, msg) {
     updateSchedule.status = statusConstants.running;
     updateSchedule.lastSent = null;
     await updateSchedule.save(); // put it into the database
-    return msg.channel.createMessage(`Scheduled updated correctly. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
+    return msg.channel.createMessage(`WOTD schedule updated successfully. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
   }
+
   const schedule = new WordScheduleModel({
     _id: channelId,
     serverId,
@@ -375,8 +376,9 @@ async function setSchedule(suffix, msg) {
     level: suffixLevel,
     status: statusConstants.running,
   });
+
   await schedule.save(); // put it into the database
-  return msg.channel.createMessage(`Scheduled created correctly. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
+  return msg.channel.createMessage(`WOTD schedule created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
 
 async function loadIntervals(monochrome) {
