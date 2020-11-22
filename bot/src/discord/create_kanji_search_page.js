@@ -163,7 +163,7 @@ function createPageForKanjiData(kanjiData, prefix, strokes) {
       image: strokes ? { url: kanjiData.strokeOrderDiagramUri } : null,
       thumbnail: thumbnailInfo,
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: strokes ? null : {
+      footer: strokes ? undefined : {
         text: `Wanna see detailed stroke information for this Kanji? Try '${prefix}so ${kanjiData.query}'`,
         icon_url: constants.FOOTER_ICON_URI,
       },

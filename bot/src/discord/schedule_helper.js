@@ -1,5 +1,7 @@
+const assert = require('assert');
 const dbConnection = require('kotoba-node-common').database.connection;
 const WordScheduleModel = require('kotoba-node-common').models.createWordSchedulesModel(dbConnection);
+const { Permissions } = require('monochrome-bot');
 const showRandomWord = require('./show_random_word.js');
 
 const frequencyCheck = 30 * 60 * 1000;
@@ -8,6 +10,14 @@ const statusConstants = {
   running: 'running',
   paused: 'paused',
 };
+
+function hasSendPermissions(eris, channel) {
+  assert(channel.guild, 'Command is not being used in a server');
+  assert(channel.permissionsOf, 'Channel is not a text channel');
+
+  const permissions = channel.permissionsOf(eris.user.id);
+  return permissions.has(Permissions.sendMessages) && permissions.has(Permissions.embedLinks);
+}
 
 // Returns the channel for this WOTD schedule, or undefined
 // if we cannot get the channel or cannot send messages in it.
@@ -21,20 +31,9 @@ function getWOTDChannel(eris, serverId, channelId) {
 
   const channel = server.channels.get(channelId);
 
-  // If it's a guild channel, verify correct permissions.
-  if (channel.guild) {
-    // This checks that the channel is a TextChannel. Only they have this function.
-    if (!channel.permissionsOf) {
-      return undefined;
-    }
-
-    // Permissions that Kotoba has in this channel
-    const permissions = channel.permissionsOf(eris.user.id);
-
-    // Make sure we can send messages
-    if (!permissions.has('sendMessages')) {
-      return undefined;
-    }
+  // If Kotoba does not have permission to send the messages, return undefined.
+  if (!hasSendPermissions(eris, channel)) {
+    return undefined;
   }
 
   // All good
