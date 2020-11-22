@@ -4,6 +4,8 @@ const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.
 const constants = require('./../common/constants.js');
 const jishoSearch = require('./../discord/jisho_search.js');
 const globals = require('./../common/globals.js');
+const createKanjiSearchPage = require('./create_kanji_search_page.js');
+const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
 
 const NUMBER_OF_RETRIES = 50;
 
@@ -21,6 +23,8 @@ async function showRandomWord(
   monochrome,
   msg = undefined,
   retriesRemaining = NUMBER_OF_RETRIES,
+  showStrokeOrder = false,
+  showExamples = false,
 ) {
   const navigationManager = monochrome.getNavigationManager();
 
@@ -65,6 +69,30 @@ async function showRandomWord(
   );
 
   const firstPage = discordContents[0];
+  if (showStrokeOrder || showExamples) {
+    if (firstPage.embed.fields.length > 1) {
+      firstPage.embed.title += ' (click here for more results)';
+    }
+    firstPage.embed.fields = [firstPage.embed.fields[0]]; // discards the rest of the results
+    await channel.createMessage(firstPage);
+  }
+  if (showStrokeOrder) {
+    const kanji = word.match(/([\u4e00-\u9faf])/g);
+    await Promise.all(kanji.map(async (char) => { // shows the strokes of every kanji
+      const stroke = await createKanjiSearchPage(char, undefined, true);
+      await channel.createMessage(stroke);
+    }));
+    if (!showExamples) return null;
+  }
+  if (showExamples) {
+    const examples = await createExampleSearchPages(word);
+    if (examples.length > 1) {
+      [examples[0].embed.title] = examples[0].embed.title.split(' ('); // removes the '(Page 1 of X)' from the title
+      examples[0].embed.title += ' (click here for more examples)';
+    }
+    const example = examples[0]; // discards the other pages
+    return channel.createMessage(example);
+  }
   return channel.createMessage(firstPage);
 }
 

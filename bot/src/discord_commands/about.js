@@ -3,7 +3,7 @@ const monochromeVersion = require('monochrome-bot/package.json').version;
 
 const erisVersionString = `Eris v${erisVersion}`;
 const nameString = 'K33#5261';
-const otherDevsString = 'Alkhwarizm#7349, 💝 Amy 💝#0001';
+const otherDevsString = 'Alkhwarizm#7349, 💝 Amy 💝#0001, ernespa';
 
 module.exports = {
   commandAliases: ['about'],
