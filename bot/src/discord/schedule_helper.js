@@ -98,7 +98,9 @@ async function setTimer(monochrome, firstCall) {
     // we sync it manually with the clock for its next execution
     now = new Date();
     offset = now.getTime() % frequencyCheck;
-    nextTime = frequencyCheck - offset;
+    const nextTimeOut = frequencyCheck - offset;
+    assert(nextTimeOut > 120000, `Timeout is weirdly short (${nextTimeOut}ms)`);
+    nextTime = nextTimeOut;
   } catch (err) {
     monochrome.getLogger().error({
       err,
