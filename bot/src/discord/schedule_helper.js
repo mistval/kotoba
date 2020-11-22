@@ -303,7 +303,7 @@ async function setSchedule(suffix, msg) {
       const offset = start.getTime() % frequencyCheck;
       start.setTime(start.getTime() + (frequencyCheck - offset));
       if (offset > 0) {
-        await msg.channel.createMessage(`Success: The WOTD timer runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()} UTC`);
+        await msg.channel.createMessage(`Success: Your schedule has been set to start at ${start.toLocaleString()} UTC and run every ${formatFrequency(frequency)} thereafter.`);
       }
       break;
     }
@@ -322,7 +322,7 @@ async function setSchedule(suffix, msg) {
           start.setDate(start.getDate() + 1);
         }
         if (offset > 0) {
-          await msg.channel.createMessage(`Success: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()} UTC`);
+          await msg.channel.createMessage(`Success: your schedule has been set to start at ${start.toLocaleString()} UTC and run every ${formatFrequency(frequency)} thereafter.`);
         }
       } else {
         return msg.channel.createMessage(`Start time must be in the format **hh:mm** (UTC). Say **${msg.prefix}help wotd** for help!`);

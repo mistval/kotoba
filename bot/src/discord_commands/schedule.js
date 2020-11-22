@@ -11,7 +11,7 @@ For example: **<prefix>wotd daily now**
 
 Instead of **daily**, a custom frequency can be specified, such as **12h** for 12 hours. Supported units are **h** (hours), **m** (minutes), **s** (seconds), **d** (days), and **w** (weeks).
 
-Instead of **now**, a custom starting time can be used, such as 15:30 (for 3:30 in the afternoon). The timezone is UTC.
+Instead of **now**, a custom starting time can be used, such as 15:30 (for 3:30 in the afternoon). The timezone is UTC. The starting time will be rounded to the nearest 30 minutes.
 
 You can also optionally specific a JLPT or Kanken level, such as **N3** or **2k**.
 
