@@ -94,6 +94,7 @@ async function setTimer(monochrome, firstCall) {
         }
       }));
     }
+
     // Since it's an asynchronous function,
     // we sync it manually with the clock for its next execution
     now = new Date();
