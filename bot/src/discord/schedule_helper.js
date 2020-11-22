@@ -50,6 +50,7 @@ async function setTimer(monochrome, firstCall) {
   let now = new Date();
   let offset = now.getTime() % frequencyCheck;
   now = new Date(now - offset); // We sync the time with the frequencyCheck value
+
   try {
     // The first time this function is called we don't want to run the command,
     // just set the timer so it runs in sync with the frequencyCheck value
@@ -61,24 +62,35 @@ async function setTimer(monochrome, firstCall) {
         start: { $lte: now },
         $or: [{ lastSent: null }, { $expr: { $lt: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
       });
+
       await Promise.all(dueSchedules.map(async (schedule, i) => {
         const channel = getWOTDChannel(
           monochrome.getErisBot(),
           schedule.serverId,
           schedule.id,
         );
+
         if (channel) {
-          await showRandomWord(
-            schedule.level,
-            channel,
-            monochrome,
-            undefined,
-            undefined,
-            true,
-            true,
-          );
-          dueSchedules[i].lastSent = now;
-          await schedule.save();
+          try {
+            await showRandomWord(
+              schedule.level,
+              channel,
+              monochrome,
+              undefined,
+              undefined,
+              true,
+              true,
+            );
+
+            dueSchedules[i].lastSent = now;
+            await schedule.save();
+          } catch (err) {
+            monochrome.getLogger().warn({
+              err,
+              event: 'WOTD CHANNEL ERROR',
+              channel,
+            });
+          }
         }
       }));
     }
