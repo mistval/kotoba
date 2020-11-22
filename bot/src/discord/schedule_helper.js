@@ -50,7 +50,7 @@ async function setTimer(monochrome, firstCall) {
   let nextTime;
   let now = new Date();
   let offset = now.getTime() % frequencyCheck;
-  now -= offset; // We sync the time with the frequencyCheck value
+  now = new Date(now - offset); // We sync the time with the frequencyCheck value
   try {
     // The first time this function is called we don't want to run the command,
     // just set the timer so it runs in sync with the frequencyCheck value
@@ -60,7 +60,7 @@ async function setTimer(monochrome, firstCall) {
       const dueSchedules = await WordScheduleModel.find({
         status: statusConstants.running,
         start: { $lte: now },
-        $or: [{ lastSent: null }, { $expr: { $lt: ['$lastSent', { $toDate: { $subtract: [now, '$frequency'] } }] } }],
+        $or: [{ lastSent: null }, { $expr: { $lt: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
       });
       await Promise.all(dueSchedules.map(async (schedule, i) => {
         const channel = getWOTDChannel(
@@ -69,7 +69,15 @@ async function setTimer(monochrome, firstCall) {
           schedule.id,
         );
         if (channel) {
-          await showRandomWord(schedule.level, channel, monochrome);
+          await showRandomWord(
+            schedule.level,
+            channel,
+            monochrome,
+            undefined,
+            undefined,
+            true,
+            true,
+          );
           dueSchedules[i].lastSent = now;
           await schedule.save();
         }
@@ -169,7 +177,7 @@ async function setSchedule(suffix, msg) {
       case 'list':
         if (serverSchedules.length > 0) {
           const list = serverSchedules
-            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${i.start.toLocaleString()}, **Last time sent:** ${i.lastSent ? i.lastSent.toLocaleString() : 'never'}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)}.`)
+            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${i.start.toLocaleString()}, **Last time sent:** ${i.lastSent ? i.lastSent.toLocaleString() : 'never'}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)} (if status is 'running').`)
             .join('\n');
           return msg.channel.createMessage(list);
         }

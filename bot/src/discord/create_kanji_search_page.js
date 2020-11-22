@@ -116,7 +116,7 @@ function getDescriptionString(kanjiData) {
   return descriptionLines.join(', ');
 }
 
-function createPageForKanjiData(kanjiData, prefix) {
+function createPageForKanjiData(kanjiData, prefix, strokes) {
   if (!kanjiData.found) {
     return {
       embed: {
@@ -143,14 +143,16 @@ function createPageForKanjiData(kanjiData, prefix) {
     embedFields.push({ name: 'Meaning', inline: true, value: kanjiData.meaning });
   }
 
-  const examplesStr = getExamplesString(kanjiData);
-  if (examplesStr) {
-    embedFields.push({ name: 'Examples', inline: false, value: examplesStr });
+  if (!strokes) {
+    const examplesStr = getExamplesString(kanjiData);
+    if (examplesStr) {
+      embedFields.push({ name: 'Examples', inline: false, value: examplesStr });
+    }
   }
 
   const unicodeString = kanjiData.query.codePointAt(0).toString(16);
-  const fileName = `${unicodeString}.png`;
-  const thumbnailInfo = { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/pngs/${fileName}` };
+  const fileName = strokes ? `${unicodeString}.gif` : `${unicodeString}.png`;
+  const thumbnailInfo = strokes ? { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/gifs/${fileName}` } : { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/pngs/${fileName}` };
 
   return {
     embed: {
@@ -158,9 +160,10 @@ function createPageForKanjiData(kanjiData, prefix) {
       description: getDescriptionString(kanjiData),
       url: kanjiData.uri,
       fields: embedFields,
+      image: strokes ? { url: kanjiData.strokeOrderDiagramUri } : null,
       thumbnail: thumbnailInfo,
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: {
+      footer: strokes ? null : {
         text: `Wanna see detailed stroke information for this Kanji? Try '${prefix}so ${kanjiData.query}'`,
         icon_url: constants.FOOTER_ICON_URI,
       },
@@ -168,7 +171,7 @@ function createPageForKanjiData(kanjiData, prefix) {
   };
 }
 
-async function createPage(kanji, prefix) {
+async function createPage(kanji, prefix, strokes) {
   let kanjiData;
 
   try {
@@ -177,7 +180,7 @@ async function createPage(kanji, prefix) {
     return throwPublicErrorFatal('Jisho Kanji Search', 'Jisho is not responding. Please try again later.', 'Jisho fetch fail', err);
   }
 
-  return createPageForKanjiData(kanjiData, prefix);
+  return createPageForKanjiData(kanjiData, prefix, strokes);
 }
 
 module.exports = createPage;
