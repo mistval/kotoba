@@ -2,12 +2,44 @@ const dbConnection = require('kotoba-node-common').database.connection;
 const WordScheduleModel = require('kotoba-node-common').models.createWordSchedulesModel(dbConnection);
 const showRandomWord = require('./show_random_word.js');
 
-const frequencyCheck = 60 * 1000;
+const frequencyCheck = 30 * 60 * 1000;
 
 const statusConstants = {
   running: 'running',
   paused: 'paused',
 };
+
+// Returns the channel for this WOTD schedule, or undefined
+// if we cannot get the channel or cannot send messages in it.
+function getWOTDChannel(eris, serverId, channelId) {
+  const server = eris.guilds.get(serverId);
+
+  // If Kotoba is no longer in the server, return undefined.
+  if (!server) {
+    return undefined;
+  }
+
+  const channel = server.channels.get(channelId);
+
+  // If it's a guild channel, verify correct permissions.
+  if (channel.guild) {
+    // This checks that the channel is a TextChannel. Only they have this function.
+    if (!channel.permissionsOf) {
+      return undefined;
+    }
+
+    // Permissions that Kotoba has in this channel
+    const permissions = channel.permissionsOf(eris.user.id);
+
+    // Make sure we can send messages
+    if (!permissions.has('sendMessages')) {
+      return undefined;
+    }
+  }
+
+  // All good
+  return channel;
+}
 
 /**
  * Starts the interval
@@ -15,26 +47,48 @@ const statusConstants = {
  * @param {boolean} firstCall
  */
 async function setTimer(monochrome, firstCall) {
-  let now = (new Date()).getTime();
-  // The first time this function is called we don't want to run the command,
-  // just set the timer so it runs in sync with the frequencyCheck value
-  if (!firstCall) {
-    const pendingSchedules = await WordScheduleModel.find({ status: statusConstants.running });
-    pendingSchedules.forEach(async (schedule) => {
-      // We check if the schedule has reached the start date and if it's in sync
-      // with the frequency, with an error margin of 0.1s
-      if (now >= schedule.start && (now - schedule.start) % schedule.frequency < 100) {
-        const channel = monochrome.getErisBot()
-          .guilds.get(schedule.serverId)
-          .channels.get(schedule.id);
-        await showRandomWord(schedule.level, channel, monochrome);
-      }
+  let nextTime;
+  let now = new Date();
+  let offset = now.getTime() % frequencyCheck;
+  now -= offset; // We sync the time with the frequencyCheck value
+  try {
+    // The first time this function is called we don't want to run the command,
+    // just set the timer so it runs in sync with the frequencyCheck value
+    if (!firstCall) {
+      // We ask for the schedules that have reached the start date and
+      // have never been sent or the time since its last execution exceeds its frequency
+      const dueSchedules = await WordScheduleModel.find({
+        status: statusConstants.running,
+        start: { $lte: now },
+        $or: [{ lastSent: null }, { $expr: { $lt: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
+      });
+      await Promise.all(dueSchedules.map(async (schedule, i) => {
+        const channel = getWOTDChannel(
+          monochrome.getErisBot(),
+          schedule.serverId,
+          schedule.id,
+        );
+        if (channel) {
+          await showRandomWord(schedule.level, channel, monochrome);
+          dueSchedules[i].lastSent = now;
+          await schedule.save();
+        }
+      }));
+    }
+    // Since it's an asynchronous function,
+    // we sync it manually with the clock for its next execution
+    now = new Date();
+    offset = now.getTime() % frequencyCheck;
+    nextTime = frequencyCheck - offset;
+  } catch (err) {
+    monochrome.getLogger().error({
+      err,
+      event: 'WOTD ERROR',
     });
   }
-  // Since it's an asynchronous function, we sync it manually with the clock for it's next execution
-  now = (new Date()).getTime();
-  const offset = now % frequencyCheck;
-  const nextTime = frequencyCheck - offset;
+
+  // If there was an error and nextTime wasn't calculated, try again in 15 minutes
+  nextTime = nextTime || (now.getTime() + (15 * 60 * 1000));
 
   setTimeout(() => {
     setTimer(monochrome);
@@ -72,11 +126,11 @@ function formatFrequency(time) {
 
 /**
  * Gets the next time the command should run
- * @param {number} start
+ * @param {Date} start
  * @param {number} frequency
  */
 function getNextTime(start, frequency) {
-  const now = (new Date()).getTime();
+  const now = new Date();
   if (now > start) {
     return formatFrequency(frequency - ((now - start) % frequency));
   }
@@ -98,8 +152,8 @@ async function setSchedule(suffix, msg) {
     serverSchedules = [];
   }
 
-  let freq = '';
-  let start = '';
+  let frequency = 0;
+  const start = new Date();
   const suffixArray = suffix.split(' ')
     .map(s => s.trim().toLowerCase())
     .filter(s => s);
@@ -115,7 +169,7 @@ async function setSchedule(suffix, msg) {
       case 'list':
         if (serverSchedules.length > 0) {
           const list = serverSchedules
-            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${new Date(i.start).toLocaleString()}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)}.`)
+            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${i.start.toLocaleString()}, **Last time sent:** ${i.lastSent ? i.lastSent.toLocaleString() : 'never'}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)}.`)
             .join('\n');
           return msg.channel.createMessage(list);
         }
@@ -143,12 +197,12 @@ async function setSchedule(suffix, msg) {
         return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
 
       case 'pauseall':
-        await serverSchedules.forEach(async (schedule, i) => {
+        await Promise.all(serverSchedules.map(async (schedule, i) => {
           if (schedule.status === statusConstants.running) {
             serverSchedules[i].status = statusConstants.paused;
             await serverSchedules[i].save(); // put it into the database
           }
-        });
+        }));
         return msg.channel.createMessage('All server\'s scheduled command have been paused.');
 
       case 'resume':
@@ -164,12 +218,12 @@ async function setSchedule(suffix, msg) {
         return msg.channel.createMessage('Error: Scheduled command not found in this channel.');
 
       case 'resumeall':
-        await serverSchedules.forEach(async (schedule, i) => {
+        await Promise.all(serverSchedules.map(async (schedule, i) => {
           if (schedule.status === statusConstants.paused) {
             serverSchedules[i].status = statusConstants.running;
             await serverSchedules[i].save(); // put it into the database
           }
-        });
+        }));
         return msg.channel.createMessage('All server\'s scheduled command have been resumed.');
 
       default:
@@ -184,10 +238,10 @@ async function setSchedule(suffix, msg) {
 
   switch (suffixFreq) {
     case 'daily':
-      freq = 24 * 60 * 60 * 1000;
+      frequency = 24 * 60 * 60 * 1000;
       break;
     case 'weekly':
-      freq = 7 * 24 * 60 * 60 * 1000;
+      frequency = 7 * 24 * 60 * 60 * 1000;
       break;
     default: {
       const [, freqStr, freqType] = suffixFreq.match(/([0-9]+)([smhdw])/i) || [];
@@ -195,19 +249,19 @@ async function setSchedule(suffix, msg) {
         const freqValue = Number.parseInt(freqStr, 10);
         switch (freqType) {
           case 's':
-            freq = freqValue * 1000;
+            frequency = freqValue * 1000;
             break;
           case 'm':
-            freq = freqValue * 1000 * 60;
+            frequency = freqValue * 1000 * 60;
             break;
           case 'h':
-            freq = freqValue * 1000 * 60 * 60;
+            frequency = freqValue * 1000 * 60 * 60;
             break;
           case 'd':
-            freq = freqValue * 1000 * 60 * 60 * 24;
+            frequency = freqValue * 1000 * 60 * 60 * 24;
             break;
           case 'w':
-            freq = freqValue * 1000 * 60 * 60 * 24 * 7;
+            frequency = freqValue * 1000 * 60 * 60 * 24 * 7;
             break;
           default:
             break;
@@ -215,7 +269,7 @@ async function setSchedule(suffix, msg) {
       } else {
         return msg.channel.createMessage('Error: You must specify frequency. Frequency formats consist of number and unit. Valid units are \'s\', \'m\', \'h\', \'d\', \'w\'.');
       }
-      if (freq < frequencyCheck) {
+      if (frequency < frequencyCheck) {
         return msg.channel.createMessage(`Error: Minimum frequency is ${formatFrequency(frequencyCheck)}.`);
       }
       break;
@@ -223,22 +277,31 @@ async function setSchedule(suffix, msg) {
   }
 
   switch (suffixStart) {
-    case 'now':
-      start = new Date();
-      start.setSeconds(0);
-      start.setMilliseconds(0);
-      start.setMinutes(start.getMinutes() + 1);
+    case 'now': {
+      // We sync the time with the frequencyCheck value
+      const offset = start.getTime() % frequencyCheck;
+      start.setTime(start.getTime() + (frequencyCheck - offset));
+      if (offset > 0) {
+        await msg.channel.createMessage(`Info: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()}`);
+      }
       break;
+    }
     default: {
       const [, hours, minutes] = suffixArray[1].match(/([0-9]{1,2}):([0-9]{2})/) || [];
       if (hours) {
-        start = new Date();
         start.setHours(hours);
         start.setMinutes(minutes);
         start.setSeconds(0);
         start.setMilliseconds(0);
+        // We sync the time with the frequencyCheck value
+        const offset = start.getTime() % frequencyCheck;
+        start.setTime(start.getTime() + (frequencyCheck - offset));
+        // If it's already due it should start tomorrow
         if (start < new Date()) {
           start.setDate(start.getDate() + 1);
+        }
+        if (offset > 0) {
+          await msg.channel.createMessage(`Info: The schedule script runs every ${formatFrequency(frequencyCheck)}. Your schedule has been set to start at ${start.toLocaleString()}`);
         }
       } else {
         return msg.channel.createMessage('Error: Start time must be in format hh:mm.');
@@ -248,7 +311,7 @@ async function setSchedule(suffix, msg) {
   }
 
   if (length === 3) {
-    switch (suffixLevel.toLowerCase()) {
+    switch (suffixLevel) {
       case 'n1':
       case 'n2':
       case 'n3':
@@ -275,18 +338,19 @@ async function setSchedule(suffix, msg) {
   const updateSchedule = await WordScheduleModel.findById(channelId);
 
   if (updateSchedule) {
-    updateSchedule.frequency = freq;
-    updateSchedule.start = start.getTime();
+    updateSchedule.frequency = frequency;
+    updateSchedule.start = start;
     updateSchedule.level = suffixLevel;
     updateSchedule.status = statusConstants.running;
+    updateSchedule.lastSent = null;
     await updateSchedule.save(); // put it into the database
     return msg.channel.createMessage(`Scheduled updated correctly. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
   }
   const schedule = new WordScheduleModel({
     _id: channelId,
     serverId,
-    frequency: freq,
-    start: start.getTime(),
+    frequency,
+    start,
     level: suffixLevel,
     status: statusConstants.running,
   });

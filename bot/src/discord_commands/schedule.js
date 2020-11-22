@@ -11,8 +11,10 @@ module.exports = {
   usageExample: '<prefix>schedule 1h now N3, <prefix>schedule daily 18:00 2k',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   action(bot, msg, suffix, monochrome) {
-    if (!monochrome.userIsServerAdmin(msg)) { return; }
-    scheduleHelper.setSchedule(
+    if (!monochrome.userIsServerAdmin(msg)) {
+      return msg.channel.createMessage('This command is used for scheduling the \'random\' command to run periodically. It can only be used by the server admin.');
+    }
+    return scheduleHelper.setSchedule(
       suffix,
       msg,
     );
