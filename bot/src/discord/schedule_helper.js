@@ -84,6 +84,11 @@ async function setTimer(monochrome, firstCall) {
 
             dueSchedules[i].lastSent = now;
             await schedule.save();
+
+            monochrome.getLogger().info({
+              event: 'WOTD MESSAGE SENT',
+              channel,
+            });
           } catch (err) {
             monochrome.getLogger().warn({
               err,
