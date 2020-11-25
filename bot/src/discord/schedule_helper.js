@@ -389,9 +389,14 @@ async function setSchedule(suffix, msg) {
   return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
 
+let startedIntervals = false;
+
 async function loadIntervals(monochrome) {
   monochrome.getErisBot().on('ready', () => {
-    setTimer(monochrome, true);
+    if (!startedIntervals) {
+      startedIntervals = true;
+      setTimer(monochrome, true);
+    }
   });
 }
 
