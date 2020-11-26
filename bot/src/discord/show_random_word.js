@@ -78,9 +78,8 @@ async function showRandomWord(
   }
   if (showStrokeOrder) {
     const kanji = word.match(/([\u4e00-\u9faf])/g);
-    const kanjiPages = await Promise.all(kanji.map(async (char) => {
-      createKanjiSearchPage(char, undefined, true);
-    }));
+    const kanjiPages = await Promise.all(kanji.map(char =>
+      createKanjiSearchPage(char, undefined, true)));
     for (let i = 0; i < kanjiPages.length; i += 1) {
       /* eslint-disable-next-line no-await-in-loop */
       await channel.createMessage(kanjiPages[i]); // we need to show the kanjis in the correct order
