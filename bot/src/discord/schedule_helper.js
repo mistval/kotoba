@@ -167,6 +167,7 @@ function getNextTime(start, frequency) {
 async function setSchedule(suffix, msg) {
   const serverId = msg.guildID;
   const channelId = msg.channel.id;
+  let rounded = false;
 
   let serverSchedules = await WordScheduleModel.find({ serverId });
 
@@ -302,9 +303,9 @@ async function setSchedule(suffix, msg) {
     case 'now': {
       // We sync the time with the frequencyCheck value
       const offset = start.getTime() % frequencyCheck;
-      start.setTime(start.getTime() + (frequencyCheck - offset));
       if (offset > 0) {
-        await msg.channel.createMessage(`Success: Your schedule has been set to start at ${start.toLocaleString()} UTC and run every ${formatFrequency(frequency)} thereafter.`);
+        start.setTime(start.getTime() + (frequencyCheck - offset));
+        rounded = true;
       }
       break;
     }
@@ -317,13 +318,13 @@ async function setSchedule(suffix, msg) {
         start.setMilliseconds(0);
         // We sync the time with the frequencyCheck value
         const offset = start.getTime() % frequencyCheck;
-        start.setTime(start.getTime() + (frequencyCheck - offset));
+        if (offset > 0) {
+          start.setTime(start.getTime() + (frequencyCheck - offset));
+          rounded = true;
+        }
         // If it's already due it should start tomorrow
         if (start < new Date()) {
           start.setDate(start.getDate() + 1);
-        }
-        if (offset > 0) {
-          await msg.channel.createMessage(`Success: your schedule has been set to start at ${start.toLocaleString()} UTC and run every ${formatFrequency(frequency)} thereafter.`);
         }
       } else {
         return msg.channel.createMessage(`Start time must be in the format **hh:mm** (UTC). Say **${msg.prefix}help wotd** for help!`);
@@ -366,7 +367,10 @@ async function setSchedule(suffix, msg) {
     updateSchedule.status = statusConstants.running;
     updateSchedule.lastSent = null;
     await updateSchedule.save(); // put it into the database
-    return msg.channel.createMessage(`WOTD schedule updated successfully. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
+    if (rounded) {
+      return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(frequencyCheck)}. It will start at ${start.toLocaleString()} UTC.`);
+    }
+    return msg.channel.createMessage(`Your schedule has been updated successfully. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
   }
 
   const schedule = new WordScheduleModel({
@@ -379,7 +383,10 @@ async function setSchedule(suffix, msg) {
   });
 
   await schedule.save(); // put it into the database
-  return msg.channel.createMessage(`WOTD schedule created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
+  if (rounded) {
+    return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(frequencyCheck)}. It will start at ${start.toLocaleString()} UTC.`);
+  }
+  return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
 
 async function loadIntervals(monochrome) {

@@ -78,10 +78,13 @@ async function showRandomWord(
   }
   if (showStrokeOrder) {
     const kanji = word.match(/([\u4e00-\u9faf])/g);
-    await Promise.all(kanji.map(async (char) => { // shows the strokes of every kanji
-      const stroke = await createKanjiSearchPage(char, undefined, true);
-      await channel.createMessage(stroke);
+    const kanjiPages = await Promise.all(kanji.map(async (char) => {
+      createKanjiSearchPage(char, undefined, true);
     }));
+    for (let i = 0; i < kanjiPages.length; i += 1) {
+      /* eslint-disable-next-line no-await-in-loop */
+      await channel.createMessage(kanjiPages[i]); // we need to show the kanjis in the correct order
+    }
     if (!showExamples) return null;
   }
   if (showExamples) {
