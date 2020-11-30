@@ -60,7 +60,7 @@ async function setTimer(monochrome, firstCall) {
       const dueSchedules = await WordScheduleModel.find({
         status: statusConstants.running,
         start: { $lte: now },
-        $or: [{ lastSent: null }, { $expr: { $lt: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
+        $or: [{ lastSent: null }, { $expr: { $lte: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
       });
 
       await Promise.all(dueSchedules.map(async (schedule, i) => {
