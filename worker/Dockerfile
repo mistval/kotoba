@@ -1,4 +1,4 @@
-FROM node:12.19.0
+FROM node:12.20.0
 
 WORKDIR /var
 COPY ./resources/fonts ./resources/fonts
