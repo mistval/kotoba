@@ -3,6 +3,7 @@ const GameReportModel = require('kotoba-node-common').models.createGameReportMod
 const UserModel = require('kotoba-node-common').models.createUserModel(dbConnection);
 const render = require('./render.js');
 const mongoose = require('mongoose');
+const calculate = require('./calculate_stats_worker.js');
 
 const CACHE_EMPTY_INTERVAL_MS = 12 * 60 * 60 * 1000; // 12 hours
 
@@ -12,7 +13,7 @@ setInterval(() => {
   cachedStatsForUserId = {};
 }, CACHE_EMPTY_INTERVAL_MS);
 
-async function calculateStats(workerPool, userId) {
+async function calculateStats(userId) {
   // Find the user's ID in mongo, if a Discord user ID was given.
   // If no ID can be resolved, return undefined.
   let mongoUserId;
@@ -54,7 +55,7 @@ async function calculateStats(workerPool, userId) {
   }
 
   // Calculate stats
-  const stats = await workerPool.doWork('calculateStats', mongoUserIdStr);
+  const stats = await calculate(mongoUserIdStr);
   if (!stats) {
     return undefined;
   }

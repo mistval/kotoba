@@ -20,8 +20,7 @@
     "node-fetch": "2.6.1",
     "polka": "0.5.2",
     "render-furigana": "2.0.2",
-    "vega": "5.13.0",
-    "wrecker": "1.0.3"
+    "vega": "5.13.0"
   },
   "devDependencies": {
     "eslint": "4.19.1",
