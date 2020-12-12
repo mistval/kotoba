@@ -442,6 +442,7 @@ module.exports.RevealsLeftStrategy = {
   GRAMMAR: () => 0,
   JAPANESE_SETTINGS: () => 0,
   WITH_HINT: () => 2,
+  ADD_TO_LENGTH: () => 0,
 }
 
 module.exports.createTextQuestionWithHint = createTextQuestionWithHint;
