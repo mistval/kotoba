@@ -429,6 +429,7 @@ module.exports.AnswerTimeLimitStrategy = {
   GRAMMAR: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
   JAPANESE_SETTINGS: settings => settings.answerTimeLimitInMs,
   WITH_HINT: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
+  ADD_TO_LENGTH: (settings, card) => (card.questionLengthInMs || 0) + settings.answerTimeLimitInMs,
 };
 
 module.exports.AdditionalAnswerWaitStrategy = {
