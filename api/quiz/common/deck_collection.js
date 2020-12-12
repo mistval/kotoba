@@ -207,7 +207,7 @@ class DeckCollection {
     }
     if (card.answerTimeLimitInMs === undefined) {
       card.answerTimeLimitInMs =
-        cardStrategies.AnswerTimeLimitStrategy[card.answerTimeLimitStrategy](settings);
+        cardStrategies.AnswerTimeLimitStrategy[card.answerTimeLimitStrategy](settings, card);
     }
     if (card.additionalAnswerWaitTimeInMs === undefined) {
       card.additionalAnswerWaitTimeInMs =

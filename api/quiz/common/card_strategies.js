@@ -255,11 +255,12 @@ module.exports.AnswerTimeLimitStrategy = {
   GRAMMAR: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
   JAPANESE_SETTINGS: settings => {return settings.answerTimeLimitInMs;},
   WITH_HINT: settings => {return settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS;}, // HACK TODO: This should be an override type thing
+  ADD_TO_LENGTH: (settings, card) => {return (card.questionLengthInMs || 0) + settings.answerTimeLimitInMs;},
 };
 
 module.exports.AdditionalAnswerWaitStrategy = {
   JAPANESE_SETTINGS: settings => {return settings.additionalAnswerWaitTimeInMs;},
-  MULTIPLE_ANSWERS: settings => {return ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS;}
+  MULTIPLE_ANSWERS: () => {return ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS;}
 };
 
 module.exports.RevealsLeftStrategy = {
