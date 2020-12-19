@@ -136,18 +136,17 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
     const entry = jmdictEntries[entryIndex];
     const entryNum = entry.ent_seq[0];
     const words = (entry.k_ele || []).flatMap(element => element.keb);
-    const readings = entry.r_ele.flatMap(element => element.reb);
+    const readingElements = entry.r_ele;
     const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
     const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
     const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
 
-    assert(readings.length > 0, `No readings for ${entryNum}`);
+    assert(readingElements.length > 0, `No readings for ${entryNum}`);
     assert(partsOfSpeech.length > 0, `No POS for ${entryNum}`);
     assert(definitions.length > 0, `No definitions for ${entryNum}`);
 
     if (words.length === 0) {
-      for (let readingIndex = 0; readingIndex < readings.length; ++readingIndex) {
-        const reading = readings[readingIndex];
+      for (const reading of readingElements.flatMap(r => r.reb)) {
         const hiraganaReading = convertToHiragana(reading);
         const difficultyScore = wordsByFrequency.indexOf(reading);
 
@@ -167,13 +166,17 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
         await insertWordStatement.run(reading, hiraganaReading, json);
       }
     } else {
-      for (let wordIndex = 0; wordIndex < words.length; ++wordIndex) {
-        const word = words[wordIndex];
+      for (const word of words) {
         const difficultyScore = wordsByFrequency.indexOf(word);
-        const hirganaReadings = unique(readings.map(convertToHiragana));
 
-        for (let readingIndex = 0; readingIndex < hirganaReadings.length; ++readingIndex) {
-          const reading = hirganaReadings[readingIndex];
+        const relevantReadings = readingElements
+          .filter(r => !r.re_restr || r.re_restr.includes(word))
+          .flatMap(r => r.reb)
+          .map(convertToHiragana);
+
+        const uniqueReadings = unique(relevantReadings);
+
+        for (const reading of uniqueReadings) {
           highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
             ? Math.max(highestDifficultyForReading[reading], difficultyScore)
             : difficultyScore;
