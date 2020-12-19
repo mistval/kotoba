@@ -152,7 +152,7 @@ class DiscordClientDelegate {
     } else if (reason === shiritoriManager.EndGameReason.ERROR) {
       this.logger.error({
         event: 'ERROR',
-        args,
+        err: args,
       });
       description = 'I had an error and had to stop :( The error has been logged and will be addressed.';
     } else {
