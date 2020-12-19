@@ -40,7 +40,7 @@ function formatAnimeData(animeData, callerName) {
       fields: [
         {
           name: 'Rating:',
-          value: `:star: **${item.averageRating}** #${item.ratingRank}`,
+          value: item.averageRating === null ? 'Unknown' : `:star: **${item.averageRating}** #${item.ratingRank}`,
           inline: true,
         },
         {
@@ -49,7 +49,7 @@ function formatAnimeData(animeData, callerName) {
           inline: true,
         },
       ],
-      thumbnail: { url: item.posterImage.small },
+      thumbnail: item.posterImage ? { url: item.posterImage.small } : undefined,
       footer: {
         icon_url: constants.FOOTER_ICON_URI,
         text: `${callerName} can use the reaction buttons below to see more information!`,
