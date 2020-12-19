@@ -462,16 +462,22 @@ async function tryApplyNewSetting(
   } else {
     resultString = `The new setting has been applied to the channels: ${locationString}. It will override the server-wide setting in those channels, but will be overriden by user settings. The settings menu is now closed.`;
     const channelIds = getChannelIds(locationString, msg);
+    setResults = [];
 
-    const promises = channelIds.map(channelId => settings.setChannelSettingValue(
-      setting.uniqueId,
-      serverId,
-      channelId,
-      newUserFacingValue,
-      userIsServerAdmin,
-    ));
+    for (let channelIdIndex = 0; channelIdIndex < channelIds.length; channelIdIndex += 1) {
+      const channelId = channelIds[channelIdIndex];
 
-    setResults = await Promise.all(promises);
+      // eslint-disable-next-line no-await-in-loop
+      const setResult = await settings.setChannelSettingValue(
+        setting.uniqueId,
+        serverId,
+        channelId,
+        newUserFacingValue,
+        userIsServerAdmin,
+      );
+
+      setResults.push(setResult);
+    }
   }
 
   tryUnregisterHook(hook);
