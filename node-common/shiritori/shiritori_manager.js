@@ -92,6 +92,13 @@ async function endGame(gameID, reason, args) {
   }
 
   game.ended = true;
+
+  const currentPlayer = game.playerTurnSequence[game.currentPlayerIndex];
+
+  if (currentPlayer) {
+    playerTurnInputLoop.abortWait(game.ID, currentPlayer.ID);
+  }
+
   delete gameForGameID[gameID];
 }
 
