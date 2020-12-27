@@ -299,7 +299,7 @@ module.exports = [
         allowedValuesDescription: 'A number between 5 and 300',
         uniqueId: 'shiritori/answer_time_limit',
         serverOnly: false,
-        defaultUserFacingValue: '40',
+        defaultUserFacingValue: '50',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(5, 300),
