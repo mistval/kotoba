@@ -342,6 +342,9 @@ function convertStringToHiragana(str) {
         converted.push(char);
         nextIndex += 1;
       }
+    } else if (char === 'ｎ') {
+      converted.push('ん');
+      nextIndex += 1;
     } else {
       // Could not convert
       converted.push(char);
