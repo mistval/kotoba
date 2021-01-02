@@ -148,7 +148,10 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
     if (words.length === 0) {
       for (const reading of readingElements.flatMap(r => r.reb)) {
         const hiraganaReading = convertToHiragana(reading);
-        const difficultyScore = wordsByFrequency.indexOf(reading);
+        let difficultyScore = wordsByFrequency.indexOf(reading);
+        if (difficultyScore === -1) {
+          difficultyScore = Number.MAX_SAFE_INTEGER;
+        }
 
         highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
             ? Math.max(highestDifficultyForReading[reading], difficultyScore)

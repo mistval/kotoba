@@ -88,17 +88,17 @@ class JapaneseGameStrategy {
   async tryAcceptAnswer(answer, wordInformationsHistory) {
     const hiragana = convertToHiragana(answer);
     const possibleWordInformations = await this.resourceDatabase.getShiritoriWords(hiragana);
-  
+
     if (!possibleWordInformations || possibleWordInformations.length === 0) {
       return new RejectedResult(REJECTION_REASON.UnknownWord);
     }
-  
+
     let nextWordStartSequences;
     if (wordInformationsHistory.length > 0) {
       const previousWordInformation = wordInformationsHistory[wordInformationsHistory.length - 1];
       nextWordStartSequences = previousWordInformation.nextWordMustStartWith;
     }
-  
+
     const alreadyUsedReadings = [];
     const readingsEndingWithN = [];
     const readingsStartingWithWrongSequence = [];
@@ -130,11 +130,11 @@ class JapaneseGameStrategy {
         break;
       }
     }
-  
+
     if (answerToUse) {
       return new AcceptedResult(answerToUse, readingToUse, meaningToUse, readingToUse.length);
     }
-  
+
     if (alreadyUsedReadings.length > 0) {
       return new RejectedResult(REJECTION_REASON.ReadingAlreadyUsed, alreadyUsedReadings);
     } if (readingsEndingWithN.length > 0) {
@@ -150,11 +150,11 @@ class JapaneseGameStrategy {
     } if (noNounReadings.length > 0) {
       return new RejectedResult(REJECTION_REASON.NotNoun, noNounReadings);
     }
-  
+
     assert(false, 'Unexpected branch');
     return undefined;
   }
-  
+
   async getViableNextResult(wordInformationsHistory) {
     let startSequence;
     if (wordInformationsHistory.length > 0) {
@@ -163,15 +163,16 @@ class JapaneseGameStrategy {
     } else {
       startSequence = getRandomArrayElement(startSequences);
     }
-  
+
     const readingsForStartSequence = require('./readings_for_start_sequence.json');
     const possibleNextReadings = readingsForStartSequence[startSequence];
-  
+    assert(possibleNextReadings, `No next readings for ${startSequence}`);
+
     // Cube it in order to prefer more common words.
     const cubeRandom = Math.random() * Math.random() * Math.random();
     let nextReadingIndex = Math.floor(cubeRandom * possibleNextReadings.length);
     const firstReadingTestedIndex = nextReadingIndex;
-  
+
     // Find a word that is usable and return it.
     while (true) {
       const nextReading = possibleNextReadings[nextReadingIndex];
@@ -179,13 +180,13 @@ class JapaneseGameStrategy {
       if (result.accepted) {
         return result;
       }
-  
+
       nextReadingIndex += 1;
       if (nextReadingIndex === possibleNextReadings.length) {
         // Wrap around to the start of the array
         nextReadingIndex = 0;
       }
-  
+
       if (nextReadingIndex === firstReadingTestedIndex) {
         // We came full circle. Couldn't find a viable next word.
         // Should be extremely unlikely to happen as a game would need
