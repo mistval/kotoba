@@ -192,7 +192,7 @@ class JapaneseGameStrategy {
         // Should be extremely unlikely to happen as a game would need
         // to continue for a very long time for us to run out of usable
         // words
-        throw new Error('Could not find a viable next word');
+        throw new Error(`Could not find a viable next word for start sequence: ${startSequence}`);
       }
     }
   }
