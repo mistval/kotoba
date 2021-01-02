@@ -1,0 +1,8858 @@
+{
+  "uniqueId": "buddha",
+  "name": "Buddhist Terms Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the below word in Hiragana!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Meaning",
+  "cards": [
+    {
+      "question": "阿弥陀",
+      "answer": [
+        "あみだ"
+      ],
+      "meaning": "Amitabha (Buddha); Amida"
+    },
+    {
+      "question": "愛",
+      "answer": [
+        "あい"
+      ],
+      "meaning": "attachment; craving; desire"
+    },
+    {
+      "question": "愛楽",
+      "answer": [
+        "あいぎょう"
+      ],
+      "meaning": "seeking after (Buddhist teachings, etc.); wanting; desiring"
+    },
+    {
+      "question": "悪魔",
+      "answer": [
+        "あくま"
+      ],
+      "meaning": "Māra; evil spirits or forces that hinder one's path to enlightenment"
+    },
+    {
+      "question": "以心伝心",
+      "answer": [
+        "いしんでんしん"
+      ],
+      "meaning": "non-verbal Zen Buddhist transmission to a disciple of the central tenets of Buddhism"
+    },
+    {
+      "question": "意識",
+      "answer": [
+        "いしき"
+      ],
+      "meaning": "mano-vijnana (mental consciousness, cognizer of sensory information)"
+    },
+    {
+      "question": "意馬心猿",
+      "answer": [
+        "いばしんえん"
+      ],
+      "meaning": "it is hard to keep one's worldly desires and passions in check"
+    },
+    {
+      "question": "衣鉢",
+      "answer": [
+        "いはつ",
+        "えはつ",
+        "えはち"
+      ],
+      "meaning": "robes and a bowl (monk's key possessions auctioned off at his funeral); transmission of the dharma from master to disciple (in Zen)"
+    },
+    {
+      "question": "一念",
+      "answer": [
+        "いちねん"
+      ],
+      "meaning": "an incredibly short span of time (i.e. the time occupied by a single thought)"
+    },
+    {
+      "question": "一念",
+      "answer": [
+        "いちねん"
+      ],
+      "meaning": "a single repetition of a prayer (esp. in Jodo-shu)"
+    },
+    {
+      "question": "一味",
+      "answer": [
+        "いちみ"
+      ],
+      "meaning": "universality (of the teachings of Buddha)"
+    },
+    {
+      "question": "印",
+      "answer": [
+        "いん"
+      ],
+      "meaning": "mudra (symbolic hand gesture)"
+    },
+    {
+      "question": "因",
+      "answer": [
+        "いん"
+      ],
+      "meaning": "hetu (direct cause, esp. as opposed to indirect conditions)"
+    },
+    {
+      "question": "因縁",
+      "answer": [
+        "いんねん",
+        "いんえん"
+      ],
+      "meaning": "hetu and prataya (direct causes and indirect conditions, which underlie the actions of all things)"
+    },
+    {
+      "question": "因果",
+      "answer": [
+        "いんが"
+      ],
+      "meaning": "karma; fate"
+    },
+    {
+      "question": "引導",
+      "answer": [
+        "いんどう"
+      ],
+      "meaning": "last words recited to the newly departed; requiem"
+    },
+    {
+      "question": "引導",
+      "answer": [
+        "いんどう"
+      ],
+      "meaning": "converting people to Buddhism"
+    },
+    {
+      "question": "詠歌",
+      "answer": [
+        "えいか",
+        "えいが"
+      ],
+      "meaning": "pilgrim's song; pilgrim's hymn"
+    },
+    {
+      "question": "縁",
+      "answer": [
+        "えん",
+        "えにし",
+        "えに",
+        "え"
+      ],
+      "meaning": "pratyaya (indirect conditions, as opposed to direct causes)"
+    },
+    {
+      "question": "縁起",
+      "answer": [
+        "えんぎ",
+        "いんえん"
+      ],
+      "meaning": "dependent arising; doctrine that everything has a cause and there is nothing that arises out of nothing"
+    },
+    {
+      "question": "奥の院",
+      "answer": [
+        "おくのいん"
+      ],
+      "meaning": "inner sanctuary; inner shrine; sanctum sanctorum; holy of holies; place behind main hall of a temple enshrining temple founder, miraculous Buddhas, hidden statues, etc."
+    },
+    {
+      "question": "往生",
+      "answer": [
+        "おうじょう"
+      ],
+      "meaning": "passing on to the next life"
+    },
+    {
+      "question": "下界",
+      "answer": [
+        "げかい"
+      ],
+      "meaning": "this world (as opposed to heaven)"
+    },
+    {
+      "question": "化身",
+      "answer": [
+        "けしん"
+      ],
+      "meaning": "incarnation; impersonation; personification; avatar"
+    },
+    {
+      "question": "仮",
+      "answer": [
+        "け"
+      ],
+      "meaning": "lacking substance and existing in name only; something without substance"
+    },
+    {
+      "question": "伽藍",
+      "answer": [
+        "がらん"
+      ],
+      "meaning": "temple (esp. large one); monastery"
+    },
+    {
+      "question": "伽藍",
+      "answer": [
+        "がらん"
+      ],
+      "meaning": "temple building"
+    },
+    {
+      "question": "果報",
+      "answer": [
+        "かほう"
+      ],
+      "meaning": "vipaka (retribution)"
+    },
+    {
+      "question": "火の車",
+      "answer": [
+        "ひのくるま"
+      ],
+      "meaning": "fiery chariot (which carries the souls of sinners into hell)"
+    },
+    {
+      "question": "火宅",
+      "answer": [
+        "かたく"
+      ],
+      "meaning": "this world of suffering"
+    },
+    {
+      "question": "過去",
+      "answer": [
+        "かこ"
+      ],
+      "meaning": "previous life"
+    },
+    {
+      "question": "餓鬼",
+      "answer": [
+        "がき",
+        "ガキ"
+      ],
+      "meaning": "preta; hungry ghost"
+    },
+    {
+      "question": "餓鬼道",
+      "answer": [
+        "がきどう"
+      ],
+      "meaning": "hungry ghost (preta) realm"
+    },
+    {
+      "question": "会式",
+      "answer": [
+        "えしき"
+      ],
+      "meaning": "memorial service; temple service"
+    },
+    {
+      "question": "解脱",
+      "answer": [
+        "げだつ"
+      ],
+      "meaning": "liberation from earthly desires and the woes of man; deliverance of one's soul; moksha; mukti; vimukti"
+    },
+    {
+      "question": "外典",
+      "answer": [
+        "がいてん",
+        "げてん",
+        "げでん"
+      ],
+      "meaning": "non-Buddhist writings (esp. Confucian writings)"
+    },
+    {
+      "question": "外道",
+      "answer": [
+        "げどう"
+      ],
+      "meaning": "tirthika; non-Buddhist teachings; non-Buddhist"
+    },
+    {
+      "question": "観",
+      "answer": [
+        "かん"
+      ],
+      "meaning": "observation meditation"
+    },
+    {
+      "question": "観音様",
+      "answer": [
+        "かんのんさま"
+      ],
+      "meaning": "Avalokiteshvara (Bodhisattva); Avalokitesvara; Kannon; Kwannon; Guanyin; Buddhist deity of compassion"
+    },
+    {
+      "question": "観自在",
+      "answer": [
+        "かんじざい"
+      ],
+      "meaning": "Avalokiteshvara (Bodhisattva); Avalokitesvara; Kannon; Kwannon; Guanyin; Buddhist deity of compassion"
+    },
+    {
+      "question": "観念",
+      "answer": [
+        "かんねん"
+      ],
+      "meaning": "observation and contemplation; meditation"
+    },
+    {
+      "question": "旗",
+      "answer": [
+        "はた"
+      ],
+      "meaning": "pataka (banner)"
+    },
+    {
+      "question": "求法者",
+      "answer": [
+        "ぐほうしゃ"
+      ],
+      "meaning": "inquirer"
+    },
+    {
+      "question": "旧訳",
+      "answer": [
+        "きゅうやく",
+        "くやく"
+      ],
+      "meaning": "pre-Xuanzang Chinese translation (esp. 5th-mid 7th century)"
+    },
+    {
+      "question": "境",
+      "answer": [
+        "さかい",
+        "きょう"
+      ],
+      "meaning": "cognitive object; something perceptible by the sense organs or mind"
+    },
+    {
+      "question": "業",
+      "answer": [
+        "ごう"
+      ],
+      "meaning": "karma"
+    },
+    {
+      "question": "業火",
+      "answer": [
+        "ごうか"
+      ],
+      "meaning": "fire that consumes an evildoer"
+    },
+    {
+      "question": "極楽",
+      "answer": [
+        "ごくらく"
+      ],
+      "meaning": "Sukhavati (Amitabha's Pure Land)"
+    },
+    {
+      "question": "勤行",
+      "answer": [
+        "ごんぎょう"
+      ],
+      "meaning": "religious service"
+    },
+    {
+      "question": "金剛手",
+      "answer": [
+        "こんごうしゅ"
+      ],
+      "meaning": "Vajrapani; wielder of the vajra"
+    },
+    {
+      "question": "金輪際",
+      "answer": [
+        "こんりんざい"
+      ],
+      "meaning": "deepest bottom of the earth"
+    },
+    {
+      "question": "苦界",
+      "answer": [
+        "くがい"
+      ],
+      "meaning": "world of suffering"
+    },
+    {
+      "question": "愚痴",
+      "answer": [
+        "ぐち"
+      ],
+      "meaning": "moha (ignorance, folly)"
+    },
+    {
+      "question": "桑門",
+      "answer": [
+        "そうもん"
+      ],
+      "meaning": "monk; priest"
+    },
+    {
+      "question": "群生",
+      "answer": [
+        "ぐんせい",
+        "ぐんじょう"
+      ],
+      "meaning": "all animate creation"
+    },
+    {
+      "question": "袈裟",
+      "answer": [
+        "けさ"
+      ],
+      "meaning": "kasaya; monk's stole"
+    },
+    {
+      "question": "経文",
+      "answer": [
+        "きょうもん"
+      ],
+      "meaning": "scriptural text; scriptures; sutras"
+    },
+    {
+      "question": "権化",
+      "answer": [
+        "ごんげ"
+      ],
+      "meaning": "incarnation (of Buddha or bodhisattva); avatar"
+    },
+    {
+      "question": "現世",
+      "answer": [
+        "げんせい",
+        "げんせ",
+        "げんぜ",
+        "うつしよ"
+      ],
+      "meaning": "present world; present age; transient world; life"
+    },
+    {
+      "question": "庫裏",
+      "answer": [
+        "くり"
+      ],
+      "meaning": "temple kitchen; monastery kitchen"
+    },
+    {
+      "question": "庫裏",
+      "answer": [
+        "くり"
+      ],
+      "meaning": "quarters of a head priest (and his family)"
+    },
+    {
+      "question": "五戒",
+      "answer": [
+        "ごかい"
+      ],
+      "meaning": "the five precepts (prohibitions against killing, theft, sexual misconduct, lying and intemperance)"
+    },
+    {
+      "question": "五行",
+      "answer": [
+        "ごぎょう"
+      ],
+      "meaning": "five practices of the Bodhisattvas"
+    },
+    {
+      "question": "後生",
+      "answer": [
+        "ごしょう"
+      ],
+      "meaning": "afterlife"
+    },
+    {
+      "question": "悟り",
+      "answer": [
+        "さとり"
+      ],
+      "meaning": "enlightenment; spiritual awakening; satori"
+    },
+    {
+      "question": "悟る",
+      "answer": [
+        "さとる"
+      ],
+      "meaning": "to attain enlightenment"
+    },
+    {
+      "question": "護摩",
+      "answer": [
+        "ごま"
+      ],
+      "meaning": "homa; Buddhist rite of burning wooden sticks to ask a deity for blessings"
+    },
+    {
+      "question": "光明",
+      "answer": [
+        "こうみょう",
+        "こうめい"
+      ],
+      "meaning": "light emanating from a buddha or bodhisattva, symbolizing their wisdom and compassion"
+    },
+    {
+      "question": "公案",
+      "answer": [
+        "こうあん"
+      ],
+      "meaning": "koan; kōan; Zen question for meditation (e.g. the sound of one hand clapping)"
+    },
+    {
+      "question": "功徳",
+      "answer": [
+        "くどく"
+      ],
+      "meaning": "merit; virtuous deed; act of merit; act of charity"
+    },
+    {
+      "question": "功徳",
+      "answer": [
+        "くどく"
+      ],
+      "meaning": "divine reward (for virtuous deeds); grace (of the buddhas and gods); blessing"
+    },
+    {
+      "question": "行",
+      "answer": [
+        "ぎょう"
+      ],
+      "meaning": "carya (austerities)"
+    },
+    {
+      "question": "行",
+      "answer": [
+        "ぎょう"
+      ],
+      "meaning": "samskara (formations)"
+    },
+    {
+      "question": "行脚",
+      "answer": [
+        "あんぎゃ"
+      ],
+      "meaning": "pilgrimage"
+    },
+    {
+      "question": "降三世明王",
+      "answer": [
+        "ごうざんぜみょうおう"
+      ],
+      "meaning": "Trailokyavijaya Vidya-raja; conqueror of the three worlds"
+    },
+    {
+      "question": "劫火",
+      "answer": [
+        "ごうか",
+        "こうか"
+      ],
+      "meaning": "world-destroying conflagration"
+    },
+    {
+      "question": "沙門",
+      "answer": [
+        "しゃもん",
+        "さもん"
+      ],
+      "meaning": "shramana (wandering monk)"
+    },
+    {
+      "question": "座禅",
+      "answer": [
+        "ざぜん"
+      ],
+      "meaning": "zazen (seated Zen meditation, usu. in a cross-legged position)"
+    },
+    {
+      "question": "三界",
+      "answer": [
+        "さんがい"
+      ],
+      "meaning": "the three realms of existence"
+    },
+    {
+      "question": "三界",
+      "answer": [
+        "さんがい"
+      ],
+      "meaning": "the whole universe (of a billion worlds) that Buddha enlightened"
+    },
+    {
+      "question": "三界",
+      "answer": [
+        "さんがい"
+      ],
+      "meaning": "past, present and future existences"
+    },
+    {
+      "question": "３時",
+      "answer": [
+        "さんじ"
+      ],
+      "meaning": "three ages of Buddhism (following the death of Gautama Buddha; age of the true law, age of the copied law, and age of the degeneration of the law); three ages of the dharma"
+    },
+    {
+      "question": "三世",
+      "answer": [
+        "さんぜ",
+        "みよ"
+      ],
+      "meaning": "past, present and future existences"
+    },
+    {
+      "question": "三途の川",
+      "answer": [
+        "さんずのかわ"
+      ],
+      "meaning": "Sanzu River (Buddhist equivalent of the River Styx)"
+    },
+    {
+      "question": "三昧",
+      "answer": [
+        "さんまい",
+        "ざんまい"
+      ],
+      "meaning": "samadhi (state of intense concentration achieved through meditation)"
+    },
+    {
+      "question": "三門",
+      "answer": [
+        "さんもん"
+      ],
+      "meaning": "large triple gate to temple"
+    },
+    {
+      "question": "四苦八苦",
+      "answer": [
+        "しくはっく"
+      ],
+      "meaning": "the four and eight kinds of suffering"
+    },
+    {
+      "question": "思惟",
+      "answer": [
+        "しい",
+        "しゆい"
+      ],
+      "meaning": "using wisdom to get to the bottom of things; focusing one's mind; deep contemplation; concentrated thought; deliberating; pondering; reflecting"
+    },
+    {
+      "question": "しし座",
+      "answer": [
+        "ししざ"
+      ],
+      "meaning": "Buddha's seat; seat of a high monk"
+    },
+    {
+      "question": "慈眼",
+      "answer": [
+        "じげん",
+        "じがん"
+      ],
+      "meaning": "merciful eye (of a Buddha or a bodhisattva watching humanity)"
+    },
+    {
+      "question": "自力",
+      "answer": [
+        "じりき",
+        "じりょく"
+      ],
+      "meaning": "self-salvation"
+    },
+    {
+      "question": "七生",
+      "answer": [
+        "しちしょう"
+      ],
+      "meaning": "seven lives"
+    },
+    {
+      "question": "七宝",
+      "answer": [
+        "しっぽう",
+        "しちほう"
+      ],
+      "meaning": "the seven treasures (gold, silver, pearls, agate, crystal, coral, lapis lazuli)"
+    },
+    {
+      "question": "執行",
+      "answer": [
+        "しっこう",
+        "しゅぎょう",
+        "しゅうぎょう",
+        "しぎょう"
+      ],
+      "meaning": "lead monk performing various tasks in a temple"
+    },
+    {
+      "question": "実際",
+      "answer": [
+        "じっさい"
+      ],
+      "meaning": "bhutakoti (limit of reality)"
+    },
+    {
+      "question": "舎利",
+      "answer": [
+        "しゃり",
+        "さり"
+      ],
+      "meaning": "bones left after cremation (esp. those of a Buddha or Boddhisatva)"
+    },
+    {
+      "question": "邪魔",
+      "answer": [
+        "じゃま"
+      ],
+      "meaning": "demon who hinders Buddhist training; demon who obstructs sentient beings from maintaining moral behaviour"
+    },
+    {
+      "question": "修行者",
+      "answer": [
+        "しゅぎょうじゃ",
+        "すぎょうざ"
+      ],
+      "meaning": "practitioner of Buddhism"
+    },
+    {
+      "question": "修行者",
+      "answer": [
+        "しゅぎょうじゃ",
+        "すぎょうざ"
+      ],
+      "meaning": "practitioner of austerities; disciplinant"
+    },
+    {
+      "question": "修法",
+      "answer": [
+        "しゅほう",
+        "ずほう",
+        "すほう"
+      ],
+      "meaning": "prayer and austerities"
+    },
+    {
+      "question": "修羅",
+      "answer": [
+        "しゅら",
+        "すら"
+      ],
+      "meaning": "Asura; demigod; anti-god; titan; demigods that fight the Devas (gods) in Hindu mythology"
+    },
+    {
+      "question": "修羅道",
+      "answer": [
+        "しゅらどう"
+      ],
+      "meaning": "Asura realm"
+    },
+    {
+      "question": "衆生",
+      "answer": [
+        "しゅじょう",
+        "しゅうせい",
+        "すじょう"
+      ],
+      "meaning": "all living things; mankind; the people; the world"
+    },
+    {
+      "question": "出家",
+      "answer": [
+        "しゅっけ",
+        "すけ"
+      ],
+      "meaning": "entering the priesthood"
+    },
+    {
+      "question": "出家",
+      "answer": [
+        "しゅっけ",
+        "すけ"
+      ],
+      "meaning": "priest; monk; bonze"
+    },
+    {
+      "question": "諸行無常",
+      "answer": [
+        "しょぎょうむじょう"
+      ],
+      "meaning": "all things must pass; all worldly things are impermanent"
+    },
+    {
+      "question": "証",
+      "answer": [
+        "あかし",
+        "しょう"
+      ],
+      "meaning": "enlightenment"
+    },
+    {
+      "question": "浄土",
+      "answer": [
+        "じょうど"
+      ],
+      "meaning": "pure land (esp. the Western Pure Land paradise of Amitabha); (Buddhist) paradise"
+    },
+    {
+      "question": "色即是空",
+      "answer": [
+        "しきそくぜくう"
+      ],
+      "meaning": "form is emptiness; matter is void; all is vanity"
+    },
+    {
+      "question": "真言",
+      "answer": [
+        "しんごん"
+      ],
+      "meaning": "mantra"
+    },
+    {
+      "question": "真実",
+      "answer": [
+        "しんじつ",
+        "しんじち"
+      ],
+      "meaning": "absolute truth"
+    },
+    {
+      "question": "真如",
+      "answer": [
+        "しんにょ"
+      ],
+      "meaning": "tathata (the ultimate nature of all things)"
+    },
+    {
+      "question": "人道",
+      "answer": [
+        "じんどう",
+        "にんどう"
+      ],
+      "meaning": "human realm"
+    },
+    {
+      "question": "垂迹",
+      "answer": [
+        "すいじゃく",
+        "すいしゃく"
+      ],
+      "meaning": "temporary manifestation by a buddha (in order to save people); manifested form (often a Shinto deity)"
+    },
+    {
+      "question": "数珠",
+      "answer": [
+        "じゅず",
+        "ずず",
+        "じゅじゅ"
+      ],
+      "meaning": "rosary; string of prayer beads"
+    },
+    {
+      "question": "世界",
+      "answer": [
+        "せかい"
+      ],
+      "meaning": "realm governed by one Buddha; space"
+    },
+    {
+      "question": "正覚",
+      "answer": [
+        "しょうがく"
+      ],
+      "meaning": "perfect enlightenment"
+    },
+    {
+      "question": "生死",
+      "answer": [
+        "せいし",
+        "しょうし",
+        "しょうじ"
+      ],
+      "meaning": "samsara (cycle of death and rebirth)"
+    },
+    {
+      "question": "生者必滅",
+      "answer": [
+        "しょうじゃひつめつ"
+      ],
+      "meaning": "all living things must die"
+    },
+    {
+      "question": "生身",
+      "answer": [
+        "なまみ",
+        "しょうじん"
+      ],
+      "meaning": "physical body of Buddha or a bodhisattva"
+    },
+    {
+      "question": "摂取",
+      "answer": [
+        "せっしゅ"
+      ],
+      "meaning": "reception and protection"
+    },
+    {
+      "question": "洗浄",
+      "answer": [
+        "せんじょう"
+      ],
+      "meaning": "cleansing (one's mind and body)"
+    },
+    {
+      "question": "前生",
+      "answer": [
+        "ぜんしょう"
+      ],
+      "meaning": "previous existence"
+    },
+    {
+      "question": "善男善女",
+      "answer": [
+        "ぜんなんぜんにょ"
+      ],
+      "meaning": "pious men and women; religious people; the faithful"
+    },
+    {
+      "question": "禅",
+      "answer": [
+        "ぜん"
+      ],
+      "meaning": "dhyana (profound meditation)"
+    },
+    {
+      "question": "禅寺",
+      "answer": [
+        "ぜんでら"
+      ],
+      "meaning": "Zen temple"
+    },
+    {
+      "question": "僧位",
+      "answer": [
+        "そうい"
+      ],
+      "meaning": "rank (of a monk)"
+    },
+    {
+      "question": "僧職",
+      "answer": [
+        "そうしょく"
+      ],
+      "meaning": "priesthood"
+    },
+    {
+      "question": "僧籍",
+      "answer": [
+        "そうせき"
+      ],
+      "meaning": "priesthood"
+    },
+    {
+      "question": "僧徒",
+      "answer": [
+        "そうと"
+      ],
+      "meaning": "priests; monks"
+    },
+    {
+      "question": "僧侶",
+      "answer": [
+        "そうりょ"
+      ],
+      "meaning": "priest; monk; bonze"
+    },
+    {
+      "question": "叢林",
+      "answer": [
+        "そうりん"
+      ],
+      "meaning": "large (Zen) temple"
+    },
+    {
+      "question": "想",
+      "answer": [
+        "そう"
+      ],
+      "meaning": "samjna (perception)"
+    },
+    {
+      "question": "相応",
+      "answer": [
+        "そうおう"
+      ],
+      "meaning": "conjoining; association; samprayukta"
+    },
+    {
+      "question": "俗諦",
+      "answer": [
+        "ぞくたい"
+      ],
+      "meaning": "conventional truth"
+    },
+    {
+      "question": "他力本願",
+      "answer": [
+        "たりきほんがん"
+      ],
+      "meaning": "salvation by faith in Amitabha"
+    },
+    {
+      "question": "退治",
+      "answer": [
+        "たいじ"
+      ],
+      "meaning": "making someone renounce worldly desires in order to concentrate on Buddha's teachings"
+    },
+    {
+      "question": "大威徳明王",
+      "answer": [
+        "だいいとくみょうおう"
+      ],
+      "meaning": "Yamantaka Vidya-raja; conqueror of Death"
+    },
+    {
+      "question": "醍醐味",
+      "answer": [
+        "だいごみ"
+      ],
+      "meaning": "Buddha's gracious teachings"
+    },
+    {
+      "question": "題目",
+      "answer": [
+        "だいもく"
+      ],
+      "meaning": "Nichiren Buddhist chant"
+    },
+    {
+      "question": "卓",
+      "answer": [
+        "たく",
+        "しょく"
+      ],
+      "meaning": "offering table before an altar (sometimes used in tea ceremony)"
+    },
+    {
+      "question": "托鉢",
+      "answer": [
+        "たくはつ"
+      ],
+      "meaning": "going with one's bowl to the meditation hall at mealtime (in a Zen temple)"
+    },
+    {
+      "question": "旦那",
+      "answer": [
+        "だんな"
+      ],
+      "meaning": "alms; almsgiving; almsgiver"
+    },
+    {
+      "question": "知恵",
+      "answer": [
+        "ちえ"
+      ],
+      "meaning": "prajna (insight leading to enlightenment)"
+    },
+    {
+      "question": "畜生",
+      "answer": [
+        "ちくしょう",
+        "ちきしょう"
+      ],
+      "meaning": "person reborn into the animal realm"
+    },
+    {
+      "question": "畜生道",
+      "answer": [
+        "ちくしょうどう"
+      ],
+      "meaning": "animal realm"
+    },
+    {
+      "question": "中陰",
+      "answer": [
+        "ちゅういん"
+      ],
+      "meaning": "bardo; state (or period) of intermediate existence between one's death and rebirth (in Japan, 49 days)"
+    },
+    {
+      "question": "中尊",
+      "answer": [
+        "ちゅうぞん"
+      ],
+      "meaning": "central image (e.g. in a Buddha triad)"
+    },
+    {
+      "question": "中道",
+      "answer": [
+        "ちゅうどう"
+      ],
+      "meaning": "middle way; middle path"
+    },
+    {
+      "question": "長老",
+      "answer": [
+        "ちょうろう"
+      ],
+      "meaning": "senior monk"
+    },
+    {
+      "question": "天",
+      "answer": [
+        "てん",
+        "あめ",
+        "あま"
+      ],
+      "meaning": "svarga (heaven-like realm visited as a stage of death and rebirth)"
+    },
+    {
+      "question": "天",
+      "answer": [
+        "てん",
+        "あめ",
+        "あま"
+      ],
+      "meaning": "deva (divine being of Buddhism)"
+    },
+    {
+      "question": "天眼",
+      "answer": [
+        "てんげん",
+        "てんがん"
+      ],
+      "meaning": "the heavenly eye"
+    },
+    {
+      "question": "天眼通",
+      "answer": [
+        "てんげんつう",
+        "てんがんつう"
+      ],
+      "meaning": "clairvoyance"
+    },
+    {
+      "question": "天帝",
+      "answer": [
+        "てんてい"
+      ],
+      "meaning": "Shakra; Indra; king of heaven in Hindu mythology"
+    },
+    {
+      "question": "天魔",
+      "answer": [
+        "てんま"
+      ],
+      "meaning": "demon of the sixth heaven in the realm of desire who tries to prevent people from doing good"
+    },
+    {
+      "question": "転生",
+      "answer": [
+        "てんせい",
+        "てんしょう"
+      ],
+      "meaning": "transmigration of souls; reincarnation"
+    },
+    {
+      "question": "兎角",
+      "answer": [
+        "とかく"
+      ],
+      "meaning": "things that do not exist; rabbit horns"
+    },
+    {
+      "question": "撞木",
+      "answer": [
+        "しゅもく",
+        "しもく"
+      ],
+      "meaning": "T-shaped wooden bell hammer"
+    },
+    {
+      "question": "道場",
+      "answer": [
+        "どうじょう"
+      ],
+      "meaning": "manda (place of Buddhist practice or meditation, esp. the place under the bodhi tree where Buddha attained enlightenment)"
+    },
+    {
+      "question": "得",
+      "answer": [
+        "とく"
+      ],
+      "meaning": "rebirth in paradise, entering nirvana"
+    },
+    {
+      "question": "奈落",
+      "answer": [
+        "ならく"
+      ],
+      "meaning": "Naraka; Hell; Hades"
+    },
+    {
+      "question": "内緒",
+      "answer": [
+        "ないしょ",
+        "ないしょう"
+      ],
+      "meaning": "inner realization; personal enlightenment"
+    },
+    {
+      "question": "南無",
+      "answer": [
+        "なむ"
+      ],
+      "meaning": "amen; hail"
+    },
+    {
+      "question": "南無阿弥陀仏",
+      "answer": [
+        "なむあみだぶつ"
+      ],
+      "meaning": "Namu Amida Butsu; Hail Amitabha Buddha; Homage to Amida Buddha; prayer for rebirth in Sukhavati, the Pure Land of Amitabha"
+    },
+    {
+      "question": "南無妙法蓮華経",
+      "answer": [
+        "なむみょうほうれんげきょう"
+      ],
+      "meaning": "Glory to the Sutra; Hail Lotus Sutra"
+    },
+    {
+      "question": "肉眼",
+      "answer": [
+        "にくがん",
+        "にくげん"
+      ],
+      "meaning": "the physical eye"
+    },
+    {
+      "question": "入室",
+      "answer": [
+        "にゅうしつ",
+        "にっしつ"
+      ],
+      "meaning": "studying under a Buddhist teacher"
+    },
+    {
+      "question": "入定",
+      "answer": [
+        "にゅうじょう"
+      ],
+      "meaning": "entering a state of intense concentration"
+    },
+    {
+      "question": "入道",
+      "answer": [
+        "にゅうどう"
+      ],
+      "meaning": "entering the priesthood; priest; monk"
+    },
+    {
+      "question": "入滅",
+      "answer": [
+        "にゅうめつ"
+      ],
+      "meaning": "entering Nirvana; death (of Buddha, high priest, saint, etc.)"
+    },
+    {
+      "question": "如実",
+      "answer": [
+        "にょじつ"
+      ],
+      "meaning": "ultimate reality; absolute truth"
+    },
+    {
+      "question": "念珠",
+      "answer": [
+        "ねんじゅ",
+        "ねんず"
+      ],
+      "meaning": "rosary; string of prayer beads"
+    },
+    {
+      "question": "念仏",
+      "answer": [
+        "ねんぶつ"
+      ],
+      "meaning": "nenbutsu; nianfo; prayer to Amitabha Buddha"
+    },
+    {
+      "question": "念仏",
+      "answer": [
+        "ねんぶつ"
+      ],
+      "meaning": "visualizing a Buddha (in one's mind)"
+    },
+    {
+      "question": "白衣明妃",
+      "answer": [
+        "びゃくえみょうひ"
+      ],
+      "meaning": "Pandara"
+    },
+    {
+      "question": "八苦",
+      "answer": [
+        "はっく"
+      ],
+      "meaning": "the eight kinds of suffering (birth, old age, disease, death, parting from loved ones, meeting disliked ones, not getting what one seeks, pains of the five skandha)"
+    },
+    {
+      "question": "般若",
+      "answer": [
+        "はんにゃ"
+      ],
+      "meaning": "prajna; wisdom required to attain enlightenment"
+    },
+    {
+      "question": "煩悩",
+      "answer": [
+        "ぼんのう"
+      ],
+      "meaning": "klesha (polluting thoughts such as greed, hatred and delusion, which result in suffering)"
+    },
+    {
+      "question": "彼岸",
+      "answer": [
+        "ひがん"
+      ],
+      "meaning": "nirvana"
+    },
+    {
+      "question": "秘密",
+      "answer": [
+        "ひみつ"
+      ],
+      "meaning": "esoteric teachings"
+    },
+    {
+      "question": "非情",
+      "answer": [
+        "ひじょう"
+      ],
+      "meaning": "insentient (objects); insensate; inanimate"
+    },
+    {
+      "question": "非人",
+      "answer": [
+        "ひにん"
+      ],
+      "meaning": "non-human"
+    },
+    {
+      "question": "鼻根",
+      "answer": [
+        "びこん"
+      ],
+      "meaning": "nose; sense of smell"
+    },
+    {
+      "question": "不動",
+      "answer": [
+        "ふどう"
+      ],
+      "meaning": "Acala (Wisdom King); Fudō; fierce Buddhist deity"
+    },
+    {
+      "question": "不動明王",
+      "answer": [
+        "ふどうみょうおう"
+      ],
+      "meaning": "Acala (Wisdom King); Acalanatha; Fudō Myōō (Myō-ō); fierce Buddhist deity"
+    },
+    {
+      "question": "布施",
+      "answer": [
+        "ふせ"
+      ],
+      "meaning": "alms-giving; charity"
+    },
+    {
+      "question": "布施",
+      "answer": [
+        "ふせ"
+      ],
+      "meaning": "offerings (usu. money) to a priest (for reading sutras, etc.)"
+    },
+    {
+      "question": "仏頂尊勝",
+      "answer": [
+        "ぶちょうそんしょう"
+      ],
+      "meaning": "Usnisavijaya; Victorious Goddess of the Chignon"
+    },
+    {
+      "question": "仏法僧",
+      "answer": [
+        "ぶっぽうそう",
+        "ブッポウソウ"
+      ],
+      "meaning": "Buddha, Dharma, Sangha; The Three Jewels; Buddha, the teachings of Buddha, and the community of monks and nuns"
+    },
+    {
+      "question": "分身",
+      "answer": [
+        "ぶんしん",
+        "ぶんじん"
+      ],
+      "meaning": "incarnations of Buddha"
+    },
+    {
+      "question": "文殊",
+      "answer": [
+        "もんじゅ"
+      ],
+      "meaning": "Manjushri; Manjusri; Bodhisattva that represents transcendent wisdom"
+    },
+    {
+      "question": "平等観",
+      "answer": [
+        "びょうどうかん"
+      ],
+      "meaning": "contemplation of the equality of all things from the standpoint of emptiness"
+    },
+    {
+      "question": "弁財天",
+      "answer": [
+        "べんざいてん",
+        "べざいてん"
+      ],
+      "meaning": "Benzaiten; Saraswati; goddess of music, eloquence, also wealth and water"
+    },
+    {
+      "question": "菩薩",
+      "answer": [
+        "ぼさつ",
+        "ぼさち"
+      ],
+      "meaning": "bodhisattva; one who has reached enlightenment but vows to save all beings before becoming a buddha"
+    },
+    {
+      "question": "宝生",
+      "answer": [
+        "ほうしょう"
+      ],
+      "meaning": "Ratnasambhava; The Jewel-born (a dhyani-Buddha)"
+    },
+    {
+      "question": "方便",
+      "answer": [
+        "ほうべん"
+      ],
+      "meaning": "upaya (skillful means, methods of teaching)"
+    },
+    {
+      "question": "法",
+      "answer": [
+        "ほう"
+      ],
+      "meaning": "dharma; law"
+    },
+    {
+      "question": "法王",
+      "answer": [
+        "ほうおう"
+      ],
+      "meaning": "Buddha"
+    },
+    {
+      "question": "法具",
+      "answer": [
+        "ほうぐ"
+      ],
+      "meaning": "ritual implements"
+    },
+    {
+      "question": "凡僧",
+      "answer": [
+        "ぼんそう",
+        "ぼんぞう"
+      ],
+      "meaning": "unranked priest; ordinary priest"
+    },
+    {
+      "question": "摩利支",
+      "answer": [
+        "まりし"
+      ],
+      "meaning": "Marici"
+    },
+    {
+      "question": "摩利支天",
+      "answer": [
+        "まりしてん"
+      ],
+      "meaning": "Marici (Buddhist god of war)"
+    },
+    {
+      "question": "魔王",
+      "answer": [
+        "まおう"
+      ],
+      "meaning": "king of the demons who try to prevent people from doing good"
+    },
+    {
+      "question": "魔道",
+      "answer": [
+        "まどう"
+      ],
+      "meaning": "netherworld; world outside the six realms where evil spirits roam"
+    },
+    {
+      "question": "末世",
+      "answer": [
+        "まっせ",
+        "まっせい"
+      ],
+      "meaning": "age of the decline of Buddhism; latter days of the law"
+    },
+    {
+      "question": "末法",
+      "answer": [
+        "まっぽう"
+      ],
+      "meaning": "latter days of the law (one of the three ages of Buddhism); age of the degeneration of the law"
+    },
+    {
+      "question": "密教",
+      "answer": [
+        "みっきょう"
+      ],
+      "meaning": "Mikkyō; esoteric Buddhism; secret Buddhist teachings"
+    },
+    {
+      "question": "無縁",
+      "answer": [
+        "むえん"
+      ],
+      "meaning": "unrelated to the teachings of Buddha; unable to be saved by Buddha"
+    },
+    {
+      "question": "無我",
+      "answer": [
+        "むが"
+      ],
+      "meaning": "anatta; anatman; doctrine that states that humans do not possess souls"
+    },
+    {
+      "question": "無学",
+      "answer": [
+        "むがく"
+      ],
+      "meaning": "arhat; someone who has attained nirvana"
+    },
+    {
+      "question": "無残",
+      "answer": [
+        "むざん"
+      ],
+      "meaning": "breaking a religious precept without shame"
+    },
+    {
+      "question": "無常",
+      "answer": [
+        "むじょう"
+      ],
+      "meaning": "uncertainty; transiency; impermanence; mutability"
+    },
+    {
+      "question": "無情",
+      "answer": [
+        "むじょう"
+      ],
+      "meaning": "insentient; inanimate"
+    },
+    {
+      "question": "無念",
+      "answer": [
+        "むねん"
+      ],
+      "meaning": "freedom from obstructive thoughts"
+    },
+    {
+      "question": "冥土",
+      "answer": [
+        "めいど"
+      ],
+      "meaning": "Hades; the underworld; the other world; realm of the dead"
+    },
+    {
+      "question": "妄執",
+      "answer": [
+        "もうしゅう"
+      ],
+      "meaning": "deep-rooted delusion; firm conviction (based on incorrect beliefs)"
+    },
+    {
+      "question": "妄念",
+      "answer": [
+        "もうねん"
+      ],
+      "meaning": "conviction based on flawed ideas; obstructive thought"
+    },
+    {
+      "question": "羅漢",
+      "answer": [
+        "らかん"
+      ],
+      "meaning": "arhat"
+    },
+    {
+      "question": "来世",
+      "answer": [
+        "らいせ",
+        "らいせい"
+      ],
+      "meaning": "the next world; the hereafter; life after death"
+    },
+    {
+      "question": "律",
+      "answer": [
+        "りつ"
+      ],
+      "meaning": "vinaya (rules for the monastic community)"
+    },
+    {
+      "question": "竜神",
+      "answer": [
+        "りゅうじん"
+      ],
+      "meaning": "naga"
+    },
+    {
+      "question": "量",
+      "answer": [
+        "りょう"
+      ],
+      "meaning": "pramana; (in Indian philosophy) means by which one gains accurate and valid knowledge"
+    },
+    {
+      "question": "力士",
+      "answer": [
+        "りきし",
+        "りきじ"
+      ],
+      "meaning": "Deva king"
+    },
+    {
+      "question": "臨兵闘者皆陣裂在前",
+      "answer": [
+        "りんぴょうとうしゃかいじんれつざいぜん"
+      ],
+      "meaning": "nine cuts mudra (mudra: hand posture which forms a part of Hindu prayer); exorcism-purification spell"
+    },
+    {
+      "question": "輪廻",
+      "answer": [
+        "りんね"
+      ],
+      "meaning": "samsara; cycle of death and rebirth"
+    },
+    {
+      "question": "輪廻",
+      "answer": [
+        "りんね"
+      ],
+      "meaning": "being reborn; reincarnation"
+    },
+    {
+      "question": "六根清浄",
+      "answer": [
+        "ろっこんしょうじょう"
+      ],
+      "meaning": "purification of the six roots of perception"
+    },
+    {
+      "question": "刹那",
+      "answer": [
+        "せつな"
+      ],
+      "meaning": "kshana; duration of a single mental event (about 1/75 second); shortest possible interval of time"
+    },
+    {
+      "question": "娑婆",
+      "answer": [
+        "しゃば"
+      ],
+      "meaning": "this corrupt world; present world"
+    },
+    {
+      "question": "涅槃",
+      "answer": [
+        "ねはん"
+      ],
+      "meaning": "nirvana; supreme enlightenment"
+    },
+    {
+      "question": "涅槃",
+      "answer": [
+        "ねはん"
+      ],
+      "meaning": "death; death of Buddha"
+    },
+    {
+      "question": "玻璃",
+      "answer": [
+        "はり"
+      ],
+      "meaning": "quartz"
+    },
+    {
+      "question": "穢土",
+      "answer": [
+        "えど"
+      ],
+      "meaning": "this impure world (as opposed to the pure land)"
+    },
+    {
+      "question": "荼枳尼",
+      "answer": [
+        "だきに"
+      ],
+      "meaning": "Dakini (fairy-goddess)"
+    },
+    {
+      "question": "葷酒",
+      "answer": [
+        "くんしゅ"
+      ],
+      "meaning": "pungent vegetables (e.g. garlic or Chinese chives) and wine"
+    },
+    {
+      "question": "賽の河原",
+      "answer": [
+        "さいのかわら"
+      ],
+      "meaning": "Children's Limbo"
+    },
+    {
+      "question": "閻魔",
+      "answer": [
+        "えんま"
+      ],
+      "meaning": "Yama (king of the world of the dead, who judges the dead); Emma; Yan; Yomna"
+    },
+    {
+      "question": "韋陀天",
+      "answer": [
+        "いだてん"
+      ],
+      "meaning": "Wei-To (temple guardian sometimes confused with Vajrapani)"
+    },
+    {
+      "question": "悪業",
+      "answer": [
+        "あくごう"
+      ],
+      "meaning": "bad karma; sinful deed; evil deed"
+    },
+    {
+      "question": "吉祥天",
+      "answer": [
+        "きっしょうてん",
+        "きちじょうてん"
+      ],
+      "meaning": "Sri-mahadevi (consort of Vaishravana)"
+    },
+    {
+      "question": "劫",
+      "answer": [
+        "こう",
+        "ごう",
+        "コウ"
+      ],
+      "meaning": "kalpa (eon, aeon)"
+    },
+    {
+      "question": "三宝",
+      "answer": [
+        "さんぼう",
+        "さんぽう"
+      ],
+      "meaning": "the Three Jewels; the Triple Gem; Triratna; the Three Treasures; Buddha, Dharma, Sangha; Buddha, the teachings of Buddha, and the community of monks and nuns"
+    },
+    {
+      "question": "真諦",
+      "answer": [
+        "しんたい",
+        "しんてい"
+      ],
+      "meaning": "ultimate truth"
+    },
+    {
+      "question": "盛者必衰",
+      "answer": [
+        "じょうしゃひっすい",
+        "しょうしゃひっすい",
+        "しょうじゃひっすい",
+        "せいじゃひっすい"
+      ],
+      "meaning": "even the prosperous inevitably decay; sic transit gloria mundi; all that's fair must fade"
+    },
+    {
+      "question": "西方",
+      "answer": [
+        "せいほう",
+        "さいほう",
+        "にしがた"
+      ],
+      "meaning": "Western Pure Land (Amitabha's Buddhist paradise)"
+    },
+    {
+      "question": "天道",
+      "answer": [
+        "てんとう",
+        "てんどう",
+        "あまじ"
+      ],
+      "meaning": "deva realm (svarga)"
+    },
+    {
+      "question": "仏心",
+      "answer": [
+        "ぶっしん"
+      ],
+      "meaning": "Buddha's heart; Buddha's mercy"
+    },
+    {
+      "question": "仏性",
+      "answer": [
+        "ぶっしょう"
+      ],
+      "meaning": "Buddha-nature"
+    },
+    {
+      "question": "凡夫",
+      "answer": [
+        "ぼんぷ",
+        "ぼんぶ"
+      ],
+      "meaning": "unenlightened person"
+    },
+    {
+      "question": "刹",
+      "answer": [
+        "さつ",
+        "せつ"
+      ],
+      "meaning": "kshetra (realm, country); ksetra"
+    },
+    {
+      "question": "貪",
+      "answer": [
+        "たん",
+        "とん",
+        "どん"
+      ],
+      "meaning": "raga (desire)"
+    },
+    {
+      "question": "愛欲",
+      "answer": [
+        "あいよく"
+      ],
+      "meaning": "attachment (esp. to one's family or a member of the opposite sex)"
+    },
+    {
+      "question": "祈祷",
+      "answer": [
+        "きとう"
+      ],
+      "meaning": "exorcism"
+    },
+    {
+      "question": "十戒",
+      "answer": [
+        "じっかい"
+      ],
+      "meaning": "the 10 precepts"
+    },
+    {
+      "question": "貪欲",
+      "answer": [
+        "どんよく",
+        "とんよく",
+        "たんよく"
+      ],
+      "meaning": "raga (desire)"
+    },
+    {
+      "question": "曼荼羅",
+      "answer": [
+        "まんだら",
+        "マンダラ"
+      ],
+      "meaning": "mandala"
+    },
+    {
+      "question": "世",
+      "answer": [
+        "よ"
+      ],
+      "meaning": "world (of existence)"
+    },
+    {
+      "question": "無心",
+      "answer": [
+        "むしん"
+      ],
+      "meaning": "free from obstructive thoughts"
+    },
+    {
+      "question": "回向",
+      "answer": [
+        "えこう"
+      ],
+      "meaning": "memorial service; prayers for the repose of the soul"
+    },
+    {
+      "question": "回向",
+      "answer": [
+        "えこう"
+      ],
+      "meaning": "transfer of merit"
+    },
+    {
+      "question": "悟入",
+      "answer": [
+        "ごにゅう"
+      ],
+      "meaning": "entering enlightenment"
+    },
+    {
+      "question": "散華",
+      "answer": [
+        "さんげ"
+      ],
+      "meaning": "rite of scattering flowers"
+    },
+    {
+      "question": "阿羅漢",
+      "answer": [
+        "あらかん"
+      ],
+      "meaning": "arhat"
+    },
+    {
+      "question": "阿修羅",
+      "answer": [
+        "あしゅら",
+        "あすら"
+      ],
+      "meaning": "Asura; demigod; anti-god; titan; demigods that fight the Devas (gods) in Hindu mythology"
+    },
+    {
+      "question": "菩提",
+      "answer": [
+        "ぼだい"
+      ],
+      "meaning": "bodhi; enlightenment"
+    },
+    {
+      "question": "菩提",
+      "answer": [
+        "ぼだい"
+      ],
+      "meaning": "happiness in the next world"
+    },
+    {
+      "question": "波羅蜜",
+      "answer": [
+        "はらみつ",
+        "ぱらみつ",
+        "パラミツ"
+      ],
+      "meaning": "pāramitā; perfection; perfection of Buddhist practices or attaining enlightenment"
+    },
+    {
+      "question": "本土",
+      "answer": [
+        "ほんど"
+      ],
+      "meaning": "pure land; Buddha realm"
+    },
+    {
+      "question": "寂滅",
+      "answer": [
+        "じゃくめつ"
+      ],
+      "meaning": "nirvana"
+    },
+    {
+      "question": "実相",
+      "answer": [
+        "じっそう"
+      ],
+      "meaning": "true form of all things as they are; ultimate reality"
+    },
+    {
+      "question": "阿僧祇",
+      "answer": [
+        "あそうぎ"
+      ],
+      "meaning": "a number so great it can never be counted to"
+    },
+    {
+      "question": "那由他",
+      "answer": [
+        "なゆた"
+      ],
+      "meaning": "an extremely great number (often said to be 100 million)"
+    },
+    {
+      "question": "迷い",
+      "answer": [
+        "まよい"
+      ],
+      "meaning": "inability to reach enlightenment"
+    },
+    {
+      "question": "済度",
+      "answer": [
+        "さいど"
+      ],
+      "meaning": "redemption; salvation"
+    },
+    {
+      "question": "説法",
+      "answer": [
+        "せっぽう"
+      ],
+      "meaning": "lecture; sermon; preaching; moralizing; moralising"
+    },
+    {
+      "question": "竹箆",
+      "answer": [
+        "しっぺい",
+        "しっぺ"
+      ],
+      "meaning": "bamboo stick used to strike meditators into greater wakefulness (in Zen Buddhism)"
+    },
+    {
+      "question": "宿世",
+      "answer": [
+        "しゅくせ",
+        "すくせ"
+      ],
+      "meaning": "one's previous existence"
+    },
+    {
+      "question": "初七日",
+      "answer": [
+        "しょなのか",
+        "しょなぬか"
+      ],
+      "meaning": "memorial service held on the seventh day following a person's death"
+    },
+    {
+      "question": "悟道",
+      "answer": [
+        "ごどう"
+      ],
+      "meaning": "(the path of spiritual) enlightenment"
+    },
+    {
+      "question": "衆徒",
+      "answer": [
+        "しゅと"
+      ],
+      "meaning": "many priests"
+    },
+    {
+      "question": "罪障",
+      "answer": [
+        "ざいしょう"
+      ],
+      "meaning": "sins (which prevent entry into bliss)"
+    },
+    {
+      "question": "諸行",
+      "answer": [
+        "しょぎょう"
+      ],
+      "meaning": "all worldly phenomena; meritorious acts leading to enlightenment"
+    },
+    {
+      "question": "総本山",
+      "answer": [
+        "そうほんざん"
+      ],
+      "meaning": "head temple of a sect"
+    },
+    {
+      "question": "方丈",
+      "answer": [
+        "ほうじょう"
+      ],
+      "meaning": "abbot's chamber"
+    },
+    {
+      "question": "捨身",
+      "answer": [
+        "しゃしん"
+      ],
+      "meaning": "renouncing the flesh or the world; becoming a priest; risking one's life for others"
+    },
+    {
+      "question": "新訳",
+      "answer": [
+        "しんやく"
+      ],
+      "meaning": "post-Xuanzang Chinese translation (i.e. mid 7th century onward)"
+    },
+    {
+      "question": "結願",
+      "answer": [
+        "けちがん"
+      ],
+      "meaning": "expiration of term of a vow"
+    },
+    {
+      "question": "唱導",
+      "answer": [
+        "しょうどう"
+      ],
+      "meaning": "instructing in Buddhism; converting (someone) to Buddhism"
+    },
+    {
+      "question": "大悟",
+      "answer": [
+        "たいご",
+        "だいご"
+      ],
+      "meaning": "enlightenment; great wisdom"
+    },
+    {
+      "question": "得度",
+      "answer": [
+        "とくど"
+      ],
+      "meaning": "becoming a monk; entering priesthood"
+    },
+    {
+      "question": "禅定",
+      "answer": [
+        "ぜんじょう"
+      ],
+      "meaning": "dhyana-samadhi (meditative concentration)"
+    },
+    {
+      "question": "無一物",
+      "answer": [
+        "むいちもつ",
+        "むいちぶつ"
+      ],
+      "meaning": "being free of earthly attachments"
+    },
+    {
+      "question": "懈怠",
+      "answer": [
+        "けたい",
+        "かいたい",
+        "けだい",
+        "げたい"
+      ],
+      "meaning": "kausidya"
+    },
+    {
+      "question": "妄語戒",
+      "answer": [
+        "もうごかい"
+      ],
+      "meaning": "do not speak untruthfully (precept)"
+    },
+    {
+      "question": "無始",
+      "answer": [
+        "むし"
+      ],
+      "meaning": "beginninglessness"
+    },
+    {
+      "question": "無明",
+      "answer": [
+        "むみょう"
+      ],
+      "meaning": "avidya (ignorance)"
+    },
+    {
+      "question": "馬頭観音",
+      "answer": [
+        "ばとうかんのん"
+      ],
+      "meaning": "Hayagriva (manifestation of Avalokitesvara with an ornament in the shape of a horse's head)"
+    },
+    {
+      "question": "空即是色",
+      "answer": [
+        "くうそくぜしき"
+      ],
+      "meaning": "emptiness is form; illusion of the reality of matter"
+    },
+    {
+      "question": "後報",
+      "answer": [
+        "こうほう",
+        "ごほう"
+      ],
+      "meaning": "later retribution (for one's deed); later compensation"
+    },
+    {
+      "question": "発起",
+      "answer": [
+        "ほっき",
+        "はっき"
+      ],
+      "meaning": "spiritual awakening; resolution"
+    },
+    {
+      "question": "破邪",
+      "answer": [
+        "はじゃ"
+      ],
+      "meaning": "(sense of) crushing evil"
+    },
+    {
+      "question": "破邪顕正",
+      "answer": [
+        "はじゃけんしょう"
+      ],
+      "meaning": "(sense of) crushing evil and spreading the truth"
+    },
+    {
+      "question": "念誦",
+      "answer": [
+        "ねんじゅ"
+      ],
+      "meaning": "invocation"
+    },
+    {
+      "question": "濁世",
+      "answer": [
+        "だくせ",
+        "だくせい",
+        "じょくせ"
+      ],
+      "meaning": "this corrupt or degenerate world; this world or life; the world of mankind"
+    },
+    {
+      "question": "逆修",
+      "answer": [
+        "ぎゃくしゅ"
+      ],
+      "meaning": "holding a memorial service for oneself"
+    },
+    {
+      "question": "逆縁",
+      "answer": [
+        "ぎゃくえん"
+      ],
+      "meaning": "bad deed which ultimately results in the creation of a good Buddhist"
+    },
+    {
+      "question": "御詠歌",
+      "answer": [
+        "ごえいか"
+      ],
+      "meaning": "pilgrim's song; pilgrim's hymn; song in praise of the Buddha"
+    },
+    {
+      "question": "受戒",
+      "answer": [
+        "じゅかい"
+      ],
+      "meaning": "vowing to follow the precepts"
+    },
+    {
+      "question": "授戒",
+      "answer": [
+        "じゅかい"
+      ],
+      "meaning": "handing down the precepts"
+    },
+    {
+      "question": "罪障消滅",
+      "answer": [
+        "ざいしょうしょうめつ"
+      ],
+      "meaning": "expiation of sins"
+    },
+    {
+      "question": "托鉢僧",
+      "answer": [
+        "たくはつそう"
+      ],
+      "meaning": "mendicant priest"
+    },
+    {
+      "question": "舎利塔",
+      "answer": [
+        "しゃりとう"
+      ],
+      "meaning": "reliquary"
+    },
+    {
+      "question": "顕正",
+      "answer": [
+        "けんしょう",
+        "けんせい"
+      ],
+      "meaning": "revealing or demonstrating the truth"
+    },
+    {
+      "question": "居士",
+      "answer": [
+        "こじ"
+      ],
+      "meaning": "grhapati (layman; sometimes used as a posthumous suffix)"
+    },
+    {
+      "question": "七難",
+      "answer": [
+        "しちなん"
+      ],
+      "meaning": "the Seven Misfortunes"
+    },
+    {
+      "question": "七難八苦",
+      "answer": [
+        "しちなんはっく"
+      ],
+      "meaning": "the Seven Misfortunes and Eight Pains"
+    },
+    {
+      "question": "尼法師",
+      "answer": [
+        "あまほうし"
+      ],
+      "meaning": "nun"
+    },
+    {
+      "question": "寂光浄土",
+      "answer": [
+        "じゃっこうじょうど"
+      ],
+      "meaning": "paradise"
+    },
+    {
+      "question": "宿根",
+      "answer": [
+        "しゅっこん"
+      ],
+      "meaning": "fate predetermined from a prior existence"
+    },
+    {
+      "question": "宿悪",
+      "answer": [
+        "しゅくあく"
+      ],
+      "meaning": "old evils; evils committed in a previous existence"
+    },
+    {
+      "question": "宿業",
+      "answer": [
+        "しゅくごう"
+      ],
+      "meaning": "karma (from one's previous life)"
+    },
+    {
+      "question": "醍醐",
+      "answer": [
+        "だいご"
+      ],
+      "meaning": "ghee (held to be the greatest of all flavours); the ultimate truth of Buddhism; nirvana"
+    },
+    {
+      "question": "追善供養",
+      "answer": [
+        "ついぜんくよう"
+      ],
+      "meaning": "memorial service"
+    },
+    {
+      "question": "追福",
+      "answer": [
+        "ついふく"
+      ],
+      "meaning": "memorial service"
+    },
+    {
+      "question": "在俗",
+      "answer": [
+        "ざいぞく"
+      ],
+      "meaning": "living as a layperson; not entering the priesthood; layperson"
+    },
+    {
+      "question": "在家",
+      "answer": [
+        "ざいけ",
+        "ざいか"
+      ],
+      "meaning": "layperson; layman; laywoman; laity"
+    },
+    {
+      "question": "有心",
+      "answer": [
+        "うしん"
+      ],
+      "meaning": "attachment; distractions"
+    },
+    {
+      "question": "有情",
+      "answer": [
+        "うじょう"
+      ],
+      "meaning": "sentient beings"
+    },
+    {
+      "question": "精霊",
+      "answer": [
+        "しょうりょう"
+      ],
+      "meaning": "spirit of the deceased"
+    },
+    {
+      "question": "名号",
+      "answer": [
+        "みょうごう",
+        "めいごう"
+      ],
+      "meaning": "Buddha's name (esp. when used in prayer)"
+    },
+    {
+      "question": "施餓鬼",
+      "answer": [
+        "せがき"
+      ],
+      "meaning": "service for the benefit of suffering spirits"
+    },
+    {
+      "question": "山門",
+      "answer": [
+        "さんもん"
+      ],
+      "meaning": "main temple gate"
+    },
+    {
+      "question": "山門",
+      "answer": [
+        "さんもん"
+      ],
+      "meaning": "temple"
+    },
+    {
+      "question": "安心",
+      "answer": [
+        "あんじん"
+      ],
+      "meaning": "obtaining peace of mind through faith or ascetic practice"
+    },
+    {
+      "question": "第一義",
+      "answer": [
+        "だいいちぎ"
+      ],
+      "meaning": "absolute truth; ultimate truth"
+    },
+    {
+      "question": "戒壇",
+      "answer": [
+        "かいだん"
+      ],
+      "meaning": "ordination platform"
+    },
+    {
+      "question": "極楽浄土",
+      "answer": [
+        "ごくらくじょうど"
+      ],
+      "meaning": "Amitabha's Pure Land; Sukhavati"
+    },
+    {
+      "question": "如意",
+      "answer": [
+        "にょい"
+      ],
+      "meaning": "ceremonial sceptre used by monks when reciting sutras (scepter)"
+    },
+    {
+      "question": "四天王",
+      "answer": [
+        "してんのう"
+      ],
+      "meaning": "the Four Heavenly Kings (Dhrtarastra, Virudhaka, Virupaksa, and Vaisravana)"
+    },
+    {
+      "question": "四百四病",
+      "answer": [
+        "しひゃくしびょう"
+      ],
+      "meaning": "every type of disease"
+    },
+    {
+      "question": "導師",
+      "answer": [
+        "どうし"
+      ],
+      "meaning": "officiating priest; presiding priest at a ceremony"
+    },
+    {
+      "question": "海潮音",
+      "answer": [
+        "かいちょうおん"
+      ],
+      "meaning": "sound of massed chanting of sutras, etc."
+    },
+    {
+      "question": "良縁",
+      "answer": [
+        "りょうえん"
+      ],
+      "meaning": "good opportunity to be saved by Buddha"
+    },
+    {
+      "question": "退転",
+      "answer": [
+        "たいてん"
+      ],
+      "meaning": "backsliding"
+    },
+    {
+      "question": "悪因",
+      "answer": [
+        "あくいん"
+      ],
+      "meaning": "root of evil; bad cause"
+    },
+    {
+      "question": "大乗",
+      "answer": [
+        "だいじょう"
+      ],
+      "meaning": "Mahayana (Buddhism); the Great Vehicle"
+    },
+    {
+      "question": "大師",
+      "answer": [
+        "だいし"
+      ],
+      "meaning": "great teacher (i.e. a buddha, bodhisattva or high monk, esp. Kobo Daishi)"
+    },
+    {
+      "question": "大黒天",
+      "answer": [
+        "だいこくてん"
+      ],
+      "meaning": "Mahakala (incarnation of Mahesvara)"
+    },
+    {
+      "question": "大願",
+      "answer": [
+        "たいがん"
+      ],
+      "meaning": "ambition; the Buddha's great vow (to save all people)"
+    },
+    {
+      "question": "善女",
+      "answer": [
+        "ぜんにょ"
+      ],
+      "meaning": "pious woman"
+    },
+    {
+      "question": "多生",
+      "answer": [
+        "たしょう"
+      ],
+      "meaning": "metempsychosis"
+    },
+    {
+      "question": "炎熱地獄",
+      "answer": [
+        "えんねつじごく"
+      ],
+      "meaning": "flames of hell"
+    },
+    {
+      "question": "愛別離苦",
+      "answer": [
+        "あいべつりく"
+      ],
+      "meaning": "the pain of separation from loved ones"
+    },
+    {
+      "question": "愛染明王",
+      "answer": [
+        "あいぜんみょうおう"
+      ],
+      "meaning": "Ragaraja (esoteric school deity of love)"
+    },
+    {
+      "question": "常住",
+      "answer": [
+        "じょうじゅう"
+      ],
+      "meaning": "constancy; eternity"
+    },
+    {
+      "question": "知者",
+      "answer": [
+        "ちしゃ",
+        "ちさ"
+      ],
+      "meaning": "buddha; bodhisattva; enlightened priest"
+    },
+    {
+      "question": "説経",
+      "answer": [
+        "せっきょう"
+      ],
+      "meaning": "lecture on the sutras"
+    },
+    {
+      "question": "花立て",
+      "answer": [
+        "はなたて"
+      ],
+      "meaning": "vase for floral offerings"
+    },
+    {
+      "question": "法名",
+      "answer": [
+        "ほうみょう"
+      ],
+      "meaning": "Buddhist name; priest's name (on entering the priesthood)"
+    },
+    {
+      "question": "法名",
+      "answer": [
+        "ほうみょう"
+      ],
+      "meaning": "posthumous Buddhist name"
+    },
+    {
+      "question": "法身",
+      "answer": [
+        "ほっしん",
+        "ほうしん"
+      ],
+      "meaning": "dharmakaya (dharma body, Buddhism's highest form of existence)"
+    },
+    {
+      "question": "法相",
+      "answer": [
+        "ほっそう"
+      ],
+      "meaning": "dharmalaksana (dharma characteristics, the specific characteristics of all manifest phenomena)"
+    },
+    {
+      "question": "法界",
+      "answer": [
+        "ほっかい",
+        "ほうかい"
+      ],
+      "meaning": "universe"
+    },
+    {
+      "question": "法界",
+      "answer": [
+        "ほっかい",
+        "ほうかい"
+      ],
+      "meaning": "realm of thought"
+    },
+    {
+      "question": "法界",
+      "answer": [
+        "ほっかい",
+        "ほうかい"
+      ],
+      "meaning": "underlying principle of reality; manifestation of true thusness"
+    },
+    {
+      "question": "法華経",
+      "answer": [
+        "ほけきょう",
+        "ほっけきょう"
+      ],
+      "meaning": "Lotus Sutra"
+    },
+    {
+      "question": "法眼",
+      "answer": [
+        "ほうげん"
+      ],
+      "meaning": "the dharma eye"
+    },
+    {
+      "question": "法楽",
+      "answer": [
+        "ほうらく"
+      ],
+      "meaning": "pleasures of a pious life"
+    },
+    {
+      "question": "木魚",
+      "answer": [
+        "もくぎょ"
+      ],
+      "meaning": "fish gong; fish wood block; temple block; round, hollow, wood block (vaguely fish-shaped, usu. with scales), struck while chanting sutras"
+    },
+    {
+      "question": "妙法",
+      "answer": [
+        "みょうほう"
+      ],
+      "meaning": "marvelous law of Buddha; Saddharma"
+    },
+    {
+      "question": "妙法",
+      "answer": [
+        "みょうほう"
+      ],
+      "meaning": "Lotus Sutra; teachings of the Lotus Sutra"
+    },
+    {
+      "question": "魚板",
+      "answer": [
+        "ぎょばん"
+      ],
+      "meaning": "large flat wooden plank shaped like a fish, struck like a gong at temple to indicate time of day"
+    },
+    {
+      "question": "華厳",
+      "answer": [
+        "けごん"
+      ],
+      "meaning": "avatamsa (flower adornment, as a metaphor for becoming a buddha)"
+    },
+    {
+      "question": "信女",
+      "answer": [
+        "しんにょ"
+      ],
+      "meaning": "female lay devotee"
+    },
+    {
+      "question": "信士",
+      "answer": [
+        "しんじ",
+        "しんし"
+      ],
+      "meaning": "male lay devotee"
+    },
+    {
+      "question": "即身成仏",
+      "answer": [
+        "そくしんじょうぶつ"
+      ],
+      "meaning": "attainment of Buddhahood during life"
+    },
+    {
+      "question": "獄卒",
+      "answer": [
+        "ごくそつ"
+      ],
+      "meaning": "hell's tormenting devils"
+    },
+    {
+      "question": "護法",
+      "answer": [
+        "ごほう"
+      ],
+      "meaning": "defence of Buddhist doctrines; god who defends Buddhist doctrines"
+    },
+    {
+      "question": "難行道",
+      "answer": [
+        "なんぎょうどう"
+      ],
+      "meaning": "the hard way; striving for enlightenment through one's own efforts (as opposed to reliance on Amitabha)"
+    },
+    {
+      "question": "折伏",
+      "answer": [
+        "しゃくぶく",
+        "じゃくぶく"
+      ],
+      "meaning": "preaching down; breaking down somebody's false beliefs through confrontation (in order to convert them to the right faith)"
+    },
+    {
+      "question": "須弥山",
+      "answer": [
+        "しゅみせん",
+        "すみせん"
+      ],
+      "meaning": "Mount Sumeru (believed to be the centre of the Buddhist world)"
+    },
+    {
+      "question": "韋駄天",
+      "answer": [
+        "いだてん"
+      ],
+      "meaning": "Skanda (swift-footed guardian deity)"
+    },
+    {
+      "question": "有為",
+      "answer": [
+        "うい"
+      ],
+      "meaning": "perpetual change caused by karma; vicissitudes of life; that which is made"
+    },
+    {
+      "question": "厭離",
+      "answer": [
+        "おんり",
+        "えんり"
+      ],
+      "meaning": "departing from this world in disdain"
+    },
+    {
+      "question": "顕教",
+      "answer": [
+        "けんぎょう",
+        "けんきょう"
+      ],
+      "meaning": "Kengyō; exoteric Buddhism; public Buddhist teachings"
+    },
+    {
+      "question": "三悪趣",
+      "answer": [
+        "さんあくしゅ",
+        "さんなくしゅ",
+        "さんまくしゅ"
+      ],
+      "meaning": "the world of hungry spirits and the world of animals; three evil worlds hell"
+    },
+    {
+      "question": "三尊仏",
+      "answer": [
+        "さんぞんぶつ"
+      ],
+      "meaning": "Buddha triad; image of a Buddha attended by two Bodhisattvas"
+    },
+    {
+      "question": "止観",
+      "answer": [
+        "しかん"
+      ],
+      "meaning": "calm abiding and clear observation (Tendai meditation)"
+    },
+    {
+      "question": "此岸",
+      "answer": [
+        "しがん"
+      ],
+      "meaning": "this world; this life"
+    },
+    {
+      "question": "小乗",
+      "answer": [
+        "しょうじょう"
+      ],
+      "meaning": "Hinayana (Buddhism); the Lesser Vehicle"
+    },
+    {
+      "question": "台密",
+      "answer": [
+        "たいみつ"
+      ],
+      "meaning": "esoteric Buddhism of the Japanese Tendai sect"
+    },
+    {
+      "question": "鉄鉢",
+      "answer": [
+        "てっぱち",
+        "てつばち"
+      ],
+      "meaning": "mendicant priest's begging bowl"
+    },
+    {
+      "question": "如是",
+      "answer": [
+        "にょぜ"
+      ],
+      "meaning": "(\"like this\"; often the opening word of a sutra)"
+    },
+    {
+      "question": "放生会",
+      "answer": [
+        "ほうじょうえ"
+      ],
+      "meaning": "life release; ceremony of releasing captive animals"
+    },
+    {
+      "question": "妙法蓮華経",
+      "answer": [
+        "みょうほうれんげきょう"
+      ],
+      "meaning": "Lotus Sutra"
+    },
+    {
+      "question": "弥勒",
+      "answer": [
+        "みろく"
+      ],
+      "meaning": "Maitreya (Bodhisattva); Miroku"
+    },
+    {
+      "question": "六識",
+      "answer": [
+        "ろくしき"
+      ],
+      "meaning": "six consciousnesses (i.e. functions of the six sense organs: seeing, hearing, smelling, tasting, touching, and reasoning)"
+    },
+    {
+      "question": "六道",
+      "answer": [
+        "ろくどう"
+      ],
+      "meaning": "the six realms (Deva realm, Asura realm, Human realm, Animal realm, Hungry Ghost realm, Naraka realm)"
+    },
+    {
+      "question": "和讃",
+      "answer": [
+        "わさん"
+      ],
+      "meaning": "hymns of praise in Japanese"
+    },
+    {
+      "question": "毘沙門天",
+      "answer": [
+        "びしゃもんてん"
+      ],
+      "meaning": "Vaisravana (guardian god of Buddhism)"
+    },
+    {
+      "question": "三悪道",
+      "answer": [
+        "さんあくどう",
+        "さんなくどう",
+        "さんまくどう"
+      ],
+      "meaning": "the world of hungry spirits and the world of animals; three evil worlds hell"
+    },
+    {
+      "question": "欣求",
+      "answer": [
+        "ごんぐ"
+      ],
+      "meaning": "earnest aspiration (to go to paradise)"
+    },
+    {
+      "question": "払子",
+      "answer": [
+        "ほっす"
+      ],
+      "meaning": "hossu; (ceremonial) fly whisk; horse tail whisk"
+    },
+    {
+      "question": "義",
+      "answer": [
+        "ぎ"
+      ],
+      "meaning": "teachings; doctrine"
+    },
+    {
+      "question": "図像",
+      "answer": [
+        "ずぞう"
+      ],
+      "meaning": "simple ink drawing (of a buddha, mandala, etc.)"
+    },
+    {
+      "question": "理",
+      "answer": [
+        "り"
+      ],
+      "meaning": "general principle (as opposed to individual concrete phenomenon)"
+    },
+    {
+      "question": "外書",
+      "answer": [
+        "がいしょ"
+      ],
+      "meaning": "non-Buddhist writings"
+    },
+    {
+      "question": "密",
+      "answer": [
+        "みつ"
+      ],
+      "meaning": "esoteric Buddhism; secret Buddhist teachings"
+    },
+    {
+      "question": "結界",
+      "answer": [
+        "けっかい"
+      ],
+      "meaning": "(fixing) boundaries for religious practices"
+    },
+    {
+      "question": "結界",
+      "answer": [
+        "けっかい"
+      ],
+      "meaning": "prohibition (of items, people, spirits, etc. that would hinder Buddhist practice)"
+    },
+    {
+      "question": "結界",
+      "answer": [
+        "けっかい"
+      ],
+      "meaning": "fence between inner and outer sanctums in a temple"
+    },
+    {
+      "question": "三界流転",
+      "answer": [
+        "さんがいるてん"
+      ],
+      "meaning": "endless cycle of rebirth through the three worlds of past, present, and future existences"
+    },
+    {
+      "question": "生老病死",
+      "answer": [
+        "しょうろうびょうし"
+      ],
+      "meaning": "the four inevitables in human life (birth, aging, sickness, and death)"
+    },
+    {
+      "question": "西方浄土",
+      "answer": [
+        "さいほうじょうど"
+      ],
+      "meaning": "Western Pure Land (Amitabha's Buddhist paradise)"
+    },
+    {
+      "question": "念仏三昧",
+      "answer": [
+        "ねんぶつざんまい"
+      ],
+      "meaning": "being deep in prayer; praying devoutly to Amida Buddha"
+    },
+    {
+      "question": "不惜身命",
+      "answer": [
+        "ふしゃくしんみょう"
+      ],
+      "meaning": "devoting one's body and soul to Buddhist teachings; unsparing devotion to Buddhism"
+    },
+    {
+      "question": "無為自然",
+      "answer": [
+        "むいしぜん"
+      ],
+      "meaning": "unconditioned nature; unconditioned spontaneity"
+    },
+    {
+      "question": "苦",
+      "answer": [
+        "く"
+      ],
+      "meaning": "duhkha (suffering)"
+    },
+    {
+      "question": "現世利益",
+      "answer": [
+        "げんせりやく",
+        "げんぜりやく"
+      ],
+      "meaning": "benefits gained in this world through observance of the Buddhist teachings; happiness gained in this world through observance of the Buddhist teachings"
+    },
+    {
+      "question": "阿鼻地獄",
+      "answer": [
+        "あびじごく"
+      ],
+      "meaning": "Avici hell (the eighth and most painful of the eight hells)"
+    },
+    {
+      "question": "金剛力士",
+      "answer": [
+        "こんごうりきし"
+      ],
+      "meaning": "Deva king; fierce guardian god (at a temple gate)"
+    },
+    {
+      "question": "三世因果",
+      "answer": [
+        "さんぜいんが"
+      ],
+      "meaning": "retribution spanning the three temporal worlds (present, past, future)"
+    },
+    {
+      "question": "善悪不二",
+      "answer": [
+        "ぜんあくふに"
+      ],
+      "meaning": "Good and evil are but two faces of the same coin"
+    },
+    {
+      "question": "南無三宝",
+      "answer": [
+        "なむさんぼう"
+      ],
+      "meaning": "Homage to the Three Jewels (Buddha, Dharma and Sangha)"
+    },
+    {
+      "question": "如実知見",
+      "answer": [
+        "にょじつちけん"
+      ],
+      "meaning": "perceiving reality as it is; true awareness of reality"
+    },
+    {
+      "question": "八大地獄",
+      "answer": [
+        "はちだいじごく"
+      ],
+      "meaning": "The Eight Greater Hells"
+    },
+    {
+      "question": "無始無終",
+      "answer": [
+        "むしむしゅう",
+        "むしむじゅう"
+      ],
+      "meaning": "everlastingness; eternity"
+    },
+    {
+      "question": "空",
+      "answer": [
+        "くう"
+      ],
+      "meaning": "shunyata; emptiness; the lack of an immutable intrinsic nature within any phenomenon"
+    },
+    {
+      "question": "乗",
+      "answer": [
+        "じょう"
+      ],
+      "meaning": "Buddha's teachings"
+    },
+    {
+      "question": "知",
+      "answer": [
+        "ち"
+      ],
+      "meaning": "jnana (higher knowledge)"
+    },
+    {
+      "question": "当来",
+      "answer": [
+        "とうらい"
+      ],
+      "meaning": "afterlife; the hereafter"
+    },
+    {
+      "question": "大宝",
+      "answer": [
+        "たいほう",
+        "だいほう"
+      ],
+      "meaning": "great treasure (used to refer to bodhisattvas, esoteric teachings, etc.)"
+    },
+    {
+      "question": "大宝",
+      "answer": [
+        "たいほう",
+        "だいほう"
+      ],
+      "meaning": "homa-mandala (fire altar)"
+    },
+    {
+      "question": "法堂",
+      "answer": [
+        "はっとう",
+        "ほうどう"
+      ],
+      "meaning": "lecture hall of a temple (esp. Zen)"
+    },
+    {
+      "question": "塔頭",
+      "answer": [
+        "たっちゅう"
+      ],
+      "meaning": "small Zen temple built to commemorate the death of a high priest"
+    },
+    {
+      "question": "塔頭",
+      "answer": [
+        "たっちゅう"
+      ],
+      "meaning": "minor temple in the grounds of a head temple"
+    },
+    {
+      "question": "釈迦三尊",
+      "answer": [
+        "しゃかさんぞん"
+      ],
+      "meaning": "Shakyamuni triad; Gautama triad; image of Shakyamuni (Gautama) Buddha flanked by two attendants"
+    },
+    {
+      "question": "脇侍",
+      "answer": [
+        "わきじ",
+        "きょうじ"
+      ],
+      "meaning": "flanking image (e.g. in a Buddha triad)"
+    },
+    {
+      "question": "菩提を弔う",
+      "answer": [
+        "ぼだいをとむらう"
+      ],
+      "meaning": "to hold a memorial service for the dead, praying for their happiness in the next life by chanting sutras"
+    },
+    {
+      "question": "胎蔵界",
+      "answer": [
+        "たいぞうかい"
+      ],
+      "meaning": "Garbhadhatu; Womb Realm; Matrix Realm"
+    },
+    {
+      "question": "胎蔵界",
+      "answer": [
+        "たいぞうかい"
+      ],
+      "meaning": "Garbhadhatu Mandala; Womb Realm Mandala; Matrix Realm Mandala"
+    },
+    {
+      "question": "胎蔵界曼荼羅",
+      "answer": [
+        "たいぞうかいまんだら"
+      ],
+      "meaning": "Garbhadhatu Mandala; Womb Realm Mandala; Matrix Realm Mandala"
+    },
+    {
+      "question": "大日経",
+      "answer": [
+        "だいにちきょう"
+      ],
+      "meaning": "Mahavairocana Sutra; Mahavairocana Tantra"
+    },
+    {
+      "question": "大毘盧遮那成仏神変加持経",
+      "answer": [
+        "だいびるしゃなじょうぶつじんべんかじきょう"
+      ],
+      "meaning": "Mahavairocana Sutra; Mahavairocana Tantra"
+    },
+    {
+      "question": "胎蔵",
+      "answer": [
+        "たいぞう"
+      ],
+      "meaning": "Garbhadhatu; Womb Realm; Matrix Realm"
+    },
+    {
+      "question": "大日如来",
+      "answer": [
+        "だいにちにょらい"
+      ],
+      "meaning": "Vairocana; Mahavairocana (Bliss Body of the historical Gautama Buddha); Dainichi Buddha; Nyorai Buddha"
+    },
+    {
+      "question": "両界曼荼羅",
+      "answer": [
+        "りょうかいまんだら"
+      ],
+      "meaning": "Mandala of the Two Realms; Womb Realm and Matrix Realm Mandalas"
+    },
+    {
+      "question": "金剛界",
+      "answer": [
+        "こんごうかい"
+      ],
+      "meaning": "Vajradhatu; Diamond Realm"
+    },
+    {
+      "question": "金剛界",
+      "answer": [
+        "こんごうかい"
+      ],
+      "meaning": "Vajradathu Mandala; Diamond Realm Mandala"
+    },
+    {
+      "question": "金剛界曼荼羅",
+      "answer": [
+        "こんごうかいまんだら"
+      ],
+      "meaning": "Vajradhatu Mandala; Diamond Realm Mandala"
+    },
+    {
+      "question": "宝珠",
+      "answer": [
+        "ほうじゅ",
+        "ほうしゅ"
+      ],
+      "meaning": "Cintamani stone; wish-fulfilling jewel"
+    },
+    {
+      "question": "兜率天",
+      "answer": [
+        "とそつてん"
+      ],
+      "meaning": "Tusita heaven; Tushita; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "弥勒菩薩",
+      "answer": [
+        "みろくぼさつ"
+      ],
+      "meaning": "Maitreya (Bodhisattva); Miroku"
+    },
+    {
+      "question": "大自在",
+      "answer": [
+        "だいじざい"
+      ],
+      "meaning": "complete freedom; great freedom; great unhinderedness"
+    },
+    {
+      "question": "毘盧遮那",
+      "answer": [
+        "びるしゃな"
+      ],
+      "meaning": "Vairocana (Buddha who symbolizes the entirety of the phenomenological world)"
+    },
+    {
+      "question": "東密",
+      "answer": [
+        "とうみつ"
+      ],
+      "meaning": "esoteric Buddhism of the Japanese Shingon sect"
+    },
+    {
+      "question": "只管打坐",
+      "answer": [
+        "しかんたざ"
+      ],
+      "meaning": "shikantaza; meditation practice where one stays intensely focused without focusing on any particular object"
+    },
+    {
+      "question": "印契",
+      "answer": [
+        "いんげい",
+        "いんけい"
+      ],
+      "meaning": "mudra (symbolic hand gesture)"
+    },
+    {
+      "question": "四諦",
+      "answer": [
+        "したい"
+      ],
+      "meaning": "The Four Noble Truths"
+    },
+    {
+      "question": "苦集滅道",
+      "answer": [
+        "くじゅうめつどう",
+        "くじゅめつどう",
+        "くしゅめつどう"
+      ],
+      "meaning": "Suffering, Source of Suffering Desire, The Cessation of Suffering, The Way Leading to the Cessation of Suffering (The Four Noble Truths of Buddhism)"
+    },
+    {
+      "question": "八正道",
+      "answer": [
+        "はっしょうどう"
+      ],
+      "meaning": "noble eightfold path"
+    },
+    {
+      "question": "四有",
+      "answer": [
+        "しう"
+      ],
+      "meaning": "the four stages of existence: birth, life, death, and limbo"
+    },
+    {
+      "question": "生有",
+      "answer": [
+        "しょうう"
+      ],
+      "meaning": "the instant of birth (rebirth)"
+    },
+    {
+      "question": "死有",
+      "answer": [
+        "しう"
+      ],
+      "meaning": "the instant of death"
+    },
+    {
+      "question": "中有",
+      "answer": [
+        "ちゅうう"
+      ],
+      "meaning": "bardo; state (or period) of intermediate existence between one's death and rebirth (in Japan, 49 days)"
+    },
+    {
+      "question": "本有",
+      "answer": [
+        "ほんぬ",
+        "ほんう"
+      ],
+      "meaning": "state (or period) of life"
+    },
+    {
+      "question": "如露如電",
+      "answer": [
+        "にょろにょでん"
+      ],
+      "meaning": "existence (as we perceive it) is as mutable and incorporeal as is the morning dew or a flash of lightning"
+    },
+    {
+      "question": "祖師西来",
+      "answer": [
+        "そしせいらい"
+      ],
+      "meaning": "the coming of Bodhidharma from western India to China"
+    },
+    {
+      "question": "五大明王",
+      "answer": [
+        "ごだいみょうおう"
+      ],
+      "meaning": "five great wisdom kings (Acala, Kundali, Trilokavijaya, Vajrayaksa, Yamantaka)"
+    },
+    {
+      "question": "八大明王",
+      "answer": [
+        "はちだいみょうおう"
+      ],
+      "meaning": "eight great wisdom kings (Acala, Kundali, Mezu, Munosho, Trilokavijaya, Ucchusma, Vajrayaksa, Yamantaka)"
+    },
+    {
+      "question": "天竜八部衆",
+      "answer": [
+        "てんりゅうはちぶしゅう"
+      ],
+      "meaning": "the eight legions (devas, nagas, yaksas, gandharvas, asuras, garudas, kimnaras, mahoragas)"
+    },
+    {
+      "question": "八部衆",
+      "answer": [
+        "はちぶしゅう"
+      ],
+      "meaning": "the eight legions (devas, nagas, yaksas, gandharvas, asuras, garudas, kimnaras, mahoragas)"
+    },
+    {
+      "question": "八部",
+      "answer": [
+        "はちぶ"
+      ],
+      "meaning": "the eight legions (devas, nagas, yaksas, gandharvas, asuras, garudas, kimnaras, mahoragas)"
+    },
+    {
+      "question": "乾闥婆",
+      "answer": [
+        "けんだつば"
+      ],
+      "meaning": "gandharva (heavenly musicians and protectors of Buddhism)"
+    },
+    {
+      "question": "緊那羅",
+      "answer": [
+        "きんなら"
+      ],
+      "meaning": "kimnara (celestial musicians and protectors of Buddhism)"
+    },
+    {
+      "question": "摩ご羅迦",
+      "answer": [
+        "まごらが"
+      ],
+      "meaning": "mahoraga (protectors of Buddhism depicted as giant serpents)"
+    },
+    {
+      "question": "烏枢沙摩明王",
+      "answer": [
+        "うすさまみょうおう",
+        "うすしゃまみょうおう"
+      ],
+      "meaning": "Ucchusma"
+    },
+    {
+      "question": "地獄道",
+      "answer": [
+        "じごくどう"
+      ],
+      "meaning": "naraka (hell) realm"
+    },
+    {
+      "question": "阿修羅道",
+      "answer": [
+        "あしゅらどう"
+      ],
+      "meaning": "Asura realm"
+    },
+    {
+      "question": "人間道",
+      "answer": [
+        "にんげんどう"
+      ],
+      "meaning": "human realm"
+    },
+    {
+      "question": "十界",
+      "answer": [
+        "じっかい"
+      ],
+      "meaning": "ten spiritual realms"
+    },
+    {
+      "question": "仏界",
+      "answer": [
+        "ぶっかい"
+      ],
+      "meaning": "pure land"
+    },
+    {
+      "question": "人界",
+      "answer": [
+        "にんがい"
+      ],
+      "meaning": "spiritual realm of humanity"
+    },
+    {
+      "question": "兎角亀毛",
+      "answer": [
+        "とかくきもう"
+      ],
+      "meaning": "things that do not exist; horns on rabbits, fur on turtles"
+    },
+    {
+      "question": "唯識",
+      "answer": [
+        "ゆいしき"
+      ],
+      "meaning": "vijnapti-matrata (theory that all existence is subjective and nothing exists outside of the mind)"
+    },
+    {
+      "question": "根",
+      "answer": [
+        "こん"
+      ],
+      "meaning": "indriya (faculty of the body having a specific function, i.e. the sensory organs)"
+    },
+    {
+      "question": "帝釈天",
+      "answer": [
+        "たいしゃくてん"
+      ],
+      "meaning": "Śakra (Deva); Shakra; Indra; Shakra Devanam Indra; the king of heaven in Hindu mythology"
+    },
+    {
+      "question": "法性",
+      "answer": [
+        "ほっしょう",
+        "ほうしょう"
+      ],
+      "meaning": "dharmata (dharma nature, the true nature of all manifest phenomena)"
+    },
+    {
+      "question": "大円鏡智",
+      "answer": [
+        "だいえんきょうち"
+      ],
+      "meaning": "adarsa-jnana (great-perfect-mirror wisdom, wisdom clearly elucidating all things)"
+    },
+    {
+      "question": "不二",
+      "answer": [
+        "ふに"
+      ],
+      "meaning": "advaitam (non-duality)"
+    },
+    {
+      "question": "阿頼耶識",
+      "answer": [
+        "あらやしき"
+      ],
+      "meaning": "alaya-vijnana (store consciousness, consciousness forming the base of all human existence)"
+    },
+    {
+      "question": "無生法忍",
+      "answer": [
+        "むしょうほうにん"
+      ],
+      "meaning": "anutpattika-dharma-ksanti (recognition that nothing really arises or perishes)"
+    },
+    {
+      "question": "無生忍",
+      "answer": [
+        "むしょうにん"
+      ],
+      "meaning": "anutpattika-dharma-ksanti (recognition that nothing really arises or perishes)"
+    },
+    {
+      "question": "肉髻",
+      "answer": [
+        "にくけい",
+        "にっけい"
+      ],
+      "meaning": "ushnisha (protrusion on the top of a buddha's head)"
+    },
+    {
+      "question": "禅那",
+      "answer": [
+        "ぜんな"
+      ],
+      "meaning": "dhyana (profound meditation)"
+    },
+    {
+      "question": "瞋恚",
+      "answer": [
+        "しんい",
+        "しんに",
+        "しんね"
+      ],
+      "meaning": "dosa (ill will, antipathy)"
+    },
+    {
+      "question": "瞋",
+      "answer": [
+        "しん"
+      ],
+      "meaning": "dosa (ill will, antipathy)"
+    },
+    {
+      "question": "痴",
+      "answer": [
+        "ち"
+      ],
+      "meaning": "moha (ignorance, folly)"
+    },
+    {
+      "question": "三毒",
+      "answer": [
+        "さんどく"
+      ],
+      "meaning": "the three kleshas that poison the heart of man (desire, ill will and ignorance)"
+    },
+    {
+      "question": "十地",
+      "answer": [
+        "じゅうじ"
+      ],
+      "meaning": "dasabhumi (forty-first to fiftieth stages in the development of a bodhisattva)"
+    },
+    {
+      "question": "法輪",
+      "answer": [
+        "ほうりん"
+      ],
+      "meaning": "the teachings of Buddha (as likened to the Dharmachakra, originally a wheel-like weapon used to destroy the evils of mankind); Buddhist doctrine"
+    },
+    {
+      "question": "菩提道場",
+      "answer": [
+        "ぼだいどうじょう"
+      ],
+      "meaning": "Bodhi-manda (place of Buddhist practice or meditation, esp. the place under the bodhi tree where Buddha attained enlightenment)"
+    },
+    {
+      "question": "御方便",
+      "answer": [
+        "ごほうべん"
+      ],
+      "meaning": "upaya (skillful means, methods of teaching)"
+    },
+    {
+      "question": "本来の面目",
+      "answer": [
+        "ほんらいのめんぼく"
+      ],
+      "meaning": "one's true nature; one's original face"
+    },
+    {
+      "question": "果",
+      "answer": [
+        "か"
+      ],
+      "meaning": "phala (attained state, result)"
+    },
+    {
+      "question": "果",
+      "answer": [
+        "か"
+      ],
+      "meaning": "enlightenment (as the fruits of one's Buddhist practice)"
+    },
+    {
+      "question": "声明",
+      "answer": [
+        "しょうみょう"
+      ],
+      "meaning": "chanting of Buddhist hymns (usu. in Sanskrit or Chinese)"
+    },
+    {
+      "question": "事",
+      "answer": [
+        "じ"
+      ],
+      "meaning": "individual concrete phenomenon (as opposed to a general principle)"
+    },
+    {
+      "question": "如来蔵",
+      "answer": [
+        "にょらいぞう"
+      ],
+      "meaning": "tathagatagarbha (buddha-womb, the potential within all living things to become a buddha)"
+    },
+    {
+      "question": "悲",
+      "answer": [
+        "ひ"
+      ],
+      "meaning": "karuna (compassion)"
+    },
+    {
+      "question": "妄心",
+      "answer": [
+        "もうしん",
+        "もうじん"
+      ],
+      "meaning": "deluded mind (a mind polluted with klesha, incapable of understanding the original essence of things)"
+    },
+    {
+      "question": "有念",
+      "answer": [
+        "うねん"
+      ],
+      "meaning": "contemplation on concrete, tangible things"
+    },
+    {
+      "question": "般若波羅蜜多",
+      "answer": [
+        "はんにゃはらみった"
+      ],
+      "meaning": "prajna-paramita (perfection of wisdom)"
+    },
+    {
+      "question": "三身",
+      "answer": [
+        "さんじん",
+        "さんしん"
+      ],
+      "meaning": "trikaya (three bodies of the Buddha)"
+    },
+    {
+      "question": "報身",
+      "answer": [
+        "ほうじん",
+        "ほうしん"
+      ],
+      "meaning": "sambhogakaya (reward body, form taken by a buddha after completing its role as a bodhisattva)"
+    },
+    {
+      "question": "色身",
+      "answer": [
+        "しきしん"
+      ],
+      "meaning": "rupakaya (the physical body, esp. of a buddha)"
+    },
+    {
+      "question": "応身",
+      "answer": [
+        "おうじん"
+      ],
+      "meaning": "nirmanakaya (response body, form taken by a buddha according to the capabilities of those who are to be saved)"
+    },
+    {
+      "question": "偈",
+      "answer": [
+        "げ"
+      ],
+      "meaning": "gatha (poetic verse of a scripture)"
+    },
+    {
+      "question": "内障",
+      "answer": [
+        "ないしょう",
+        "そこひ"
+      ],
+      "meaning": "internal hindrance"
+    },
+    {
+      "question": "如",
+      "answer": [
+        "にょ"
+      ],
+      "meaning": "tathata (the ultimate nature of all things)"
+    },
+    {
+      "question": "頓悟",
+      "answer": [
+        "とんご"
+      ],
+      "meaning": "sudden enlightenment"
+    },
+    {
+      "question": "漸悟",
+      "answer": [
+        "ぜんご"
+      ],
+      "meaning": "gradual enlightenment"
+    },
+    {
+      "question": "兜率",
+      "answer": [
+        "とそつ"
+      ],
+      "meaning": "Tusita (heaven, pure land)"
+    },
+    {
+      "question": "不可得",
+      "answer": [
+        "ふかとく"
+      ],
+      "meaning": "the unobtainable (that which cannot be known)"
+    },
+    {
+      "question": "忍辱",
+      "answer": [
+        "にんにく"
+      ],
+      "meaning": "forbearance (in the face of difficulty, persecution, etc.)"
+    },
+    {
+      "question": "十悪",
+      "answer": [
+        "じゅうあく"
+      ],
+      "meaning": "the ten evil deeds"
+    },
+    {
+      "question": "十善",
+      "answer": [
+        "じゅうぜん"
+      ],
+      "meaning": "the ten good acts"
+    },
+    {
+      "question": "十方世界",
+      "answer": [
+        "じっぽうせかい"
+      ],
+      "meaning": "worlds of the ten directions"
+    },
+    {
+      "question": "１０８",
+      "answer": [
+        "ひゃくはち"
+      ],
+      "meaning": "the number of kleshas, worldly thoughts and passions"
+    },
+    {
+      "question": "現在世",
+      "answer": [
+        "げんざいせ"
+      ],
+      "meaning": "present world; present age; transient world; life"
+    },
+    {
+      "question": "四劫",
+      "answer": [
+        "しこう"
+      ],
+      "meaning": "the four kalpa (formation, existence, destruction, nothingness)"
+    },
+    {
+      "question": "成劫",
+      "answer": [
+        "じょうこう",
+        "じょうごう"
+      ],
+      "meaning": "the kalpa of formation (the first aeon of the universe)"
+    },
+    {
+      "question": "住劫",
+      "answer": [
+        "じゅうこう"
+      ],
+      "meaning": "the kalpa of existence (the second aeon of the universe)"
+    },
+    {
+      "question": "壊劫",
+      "answer": [
+        "えこう"
+      ],
+      "meaning": "the kalpa of destruction (the third aeon of the universe)"
+    },
+    {
+      "question": "空劫",
+      "answer": [
+        "くうこう",
+        "くうごう"
+      ],
+      "meaning": "the kalpa of nothingness (the final aeon of the universe)"
+    },
+    {
+      "question": "五蘊",
+      "answer": [
+        "ごうん"
+      ],
+      "meaning": "the five skandhas (the five aggregates: matter, sensation, perception, mental formations and consciousness)"
+    },
+    {
+      "question": "接心",
+      "answer": [
+        "せっしん",
+        "しょうしん"
+      ],
+      "meaning": "concentration"
+    },
+    {
+      "question": "印可",
+      "answer": [
+        "いんか"
+      ],
+      "meaning": "dharma transmission (formal confirmation of a student's awakening by his master)"
+    },
+    {
+      "question": "明",
+      "answer": [
+        "みょう"
+      ],
+      "meaning": "vidya (wisdom)"
+    },
+    {
+      "question": "五眼",
+      "answer": [
+        "ごげん"
+      ],
+      "meaning": "the five eyes (physical eye, heavenly eye, wisdom eye, dharma eye and Buddha eye)"
+    },
+    {
+      "question": "慧眼",
+      "answer": [
+        "えげん"
+      ],
+      "meaning": "the wisdom eye"
+    },
+    {
+      "question": "仏眼",
+      "answer": [
+        "ぶつげん"
+      ],
+      "meaning": "the Buddha eye"
+    },
+    {
+      "question": "貪愛",
+      "answer": [
+        "とんあい",
+        "とんない",
+        "どんあい"
+      ],
+      "meaning": "attachment; craving"
+    },
+    {
+      "question": "護摩壇",
+      "answer": [
+        "ごまだん"
+      ],
+      "meaning": "homa-mandala (fire altar)"
+    },
+    {
+      "question": "十二因縁",
+      "answer": [
+        "じゅうにいんねん"
+      ],
+      "meaning": "the twelve nidanas (continuum of twelve phases that lead to suffering)"
+    },
+    {
+      "question": "三門徒派",
+      "answer": [
+        "さんもんとは"
+      ],
+      "meaning": "Sanmonto sect (of Shin Buddhism)"
+    },
+    {
+      "question": "狗子仏性",
+      "answer": [
+        "くしぶっしょう"
+      ],
+      "meaning": "the Mu koan (\"does a dog have Buddha nature?\")"
+    },
+    {
+      "question": "無字",
+      "answer": [
+        "むじ"
+      ],
+      "meaning": "the one-character reply (\"no\") offered by Zhaozhou to the question \"Does a dog have Buddha nature?\""
+    },
+    {
+      "question": "菩提達磨",
+      "answer": [
+        "ぼだいだるま"
+      ],
+      "meaning": "Bodhidharma"
+    },
+    {
+      "question": "仏身",
+      "answer": [
+        "ぶっしん"
+      ],
+      "meaning": "buddhakaya (the body of Buddha)"
+    },
+    {
+      "question": "九品",
+      "answer": [
+        "くほん",
+        "ここのしな"
+      ],
+      "meaning": "nine levels of Amitabha's Pure Land"
+    },
+    {
+      "question": "九品蓮台",
+      "answer": [
+        "くほんれんだい"
+      ],
+      "meaning": "nine-tiered lotus leaf platform in Amitabha's Pure Land"
+    },
+    {
+      "question": "八万四千",
+      "answer": [
+        "はちまんよんせん",
+        "はちまんしせん"
+      ],
+      "meaning": "many"
+    },
+    {
+      "question": "我",
+      "answer": [
+        "が"
+      ],
+      "meaning": "obstinacy"
+    },
+    {
+      "question": "花かご",
+      "answer": [
+        "はなかご",
+        "けこ",
+        "はなこ"
+      ],
+      "meaning": "flower basket (or plate) used for flower-scattering rituals"
+    },
+    {
+      "question": "閼伽",
+      "answer": [
+        "あか"
+      ],
+      "meaning": "water offering to Buddha; holy water"
+    },
+    {
+      "question": "火車",
+      "answer": [
+        "かしゃ"
+      ],
+      "meaning": "fiery chariot"
+    },
+    {
+      "question": "頌",
+      "answer": [
+        "じゅ"
+      ],
+      "meaning": "gatha (poetic verse of a scripture)"
+    },
+    {
+      "question": "理体",
+      "answer": [
+        "りたい"
+      ],
+      "meaning": "essence of all things"
+    },
+    {
+      "question": "識",
+      "answer": [
+        "しき"
+      ],
+      "meaning": "vijnana; consciousness"
+    },
+    {
+      "question": "八識",
+      "answer": [
+        "はっしき",
+        "はちしき"
+      ],
+      "meaning": "eight consciousnesses (one for each of the five senses, consciousness of the mind, self-consciousness and store consciousness)"
+    },
+    {
+      "question": "末那識",
+      "answer": [
+        "まなしき"
+      ],
+      "meaning": "manas-vijnana (defiled mental consciousness, which gives rise to the perception of self)"
+    },
+    {
+      "question": "聞法",
+      "answer": [
+        "もんぼう",
+        "もんぽう"
+      ],
+      "meaning": "hearing the teachings of Buddha"
+    },
+    {
+      "question": "見仏",
+      "answer": [
+        "けんぶつ"
+      ],
+      "meaning": "seeing Buddha"
+    },
+    {
+      "question": "見仏聞法",
+      "answer": [
+        "けんぶつもんぽう",
+        "けんぶつもんぼう"
+      ],
+      "meaning": "seeing Buddha and hearing his teachings"
+    },
+    {
+      "question": "観仏",
+      "answer": [
+        "かんぶつ"
+      ],
+      "meaning": "contemplating Buddha"
+    },
+    {
+      "question": "順縁",
+      "answer": [
+        "じゅんえん"
+      ],
+      "meaning": "favorable condition (for entering the priesthood)"
+    },
+    {
+      "question": "五大",
+      "answer": [
+        "ごだい"
+      ],
+      "meaning": "the five elements (in Japanese philosophy: earth, water, fire, wind and void)"
+    },
+    {
+      "question": "五大",
+      "answer": [
+        "ごだい"
+      ],
+      "meaning": "five great wisdom kings"
+    },
+    {
+      "question": "優婆塞",
+      "answer": [
+        "うばそく"
+      ],
+      "meaning": "upasaka (devout male lay follower of Buddhism)"
+    },
+    {
+      "question": "優婆夷",
+      "answer": [
+        "うばい"
+      ],
+      "meaning": "upasika (devout female lay follower of Buddhism)"
+    },
+    {
+      "question": "応化",
+      "answer": [
+        "おうげ",
+        "おうけ"
+      ],
+      "meaning": "assumption of a suitable form (by a buddha or bodhisattva)"
+    },
+    {
+      "question": "末那",
+      "answer": [
+        "まな"
+      ],
+      "meaning": "manas (defiled mental consciousness, which gives rise to the perception of self)"
+    },
+    {
+      "question": "三宝荒神",
+      "answer": [
+        "さんぼうこうじん"
+      ],
+      "meaning": "guardian deity of the three jewels (Buddha, Dharma and Sangha)"
+    },
+    {
+      "question": "三諦",
+      "answer": [
+        "さんたい",
+        "さんだい"
+      ],
+      "meaning": "threefold truth (all things are void; all things are temporary; all things are in the middle state between these two) (in Tendai)"
+    },
+    {
+      "question": "観心",
+      "answer": [
+        "かんじん"
+      ],
+      "meaning": "introspection"
+    },
+    {
+      "question": "仮諦",
+      "answer": [
+        "けたい"
+      ],
+      "meaning": "truth of temporariness (holding that all things are temporary)"
+    },
+    {
+      "question": "空諦",
+      "answer": [
+        "くうたい"
+      ],
+      "meaning": "truth of emptiness (holding that all things are void)"
+    },
+    {
+      "question": "中諦",
+      "answer": [
+        "ちゅうたい"
+      ],
+      "meaning": "truth of the middle (all things are in a middle state, being void yet having temporary existence)"
+    },
+    {
+      "question": "天王",
+      "answer": [
+        "てんのう"
+      ],
+      "meaning": "heavenly king"
+    },
+    {
+      "question": "牛頭天王",
+      "answer": [
+        "ごずてんのう"
+      ],
+      "meaning": "Gozu Tenno (deity said to be the Indian god Gavagriva)"
+    },
+    {
+      "question": "塵",
+      "answer": [
+        "じん"
+      ],
+      "meaning": "defilement; impurity; affliction"
+    },
+    {
+      "question": "光明真言",
+      "answer": [
+        "こうみょうしんごん"
+      ],
+      "meaning": "Mantra of Light"
+    },
+    {
+      "question": "三綱",
+      "answer": [
+        "さんごう"
+      ],
+      "meaning": "three monastic positions with management roles at a temple"
+    },
+    {
+      "question": "鎮",
+      "answer": [
+        "ちん",
+        "しず"
+      ],
+      "meaning": "a weight"
+    },
+    {
+      "question": "法句経",
+      "answer": [
+        "ほっくきょう"
+      ],
+      "meaning": "Dhammapada"
+    },
+    {
+      "question": "食堂",
+      "answer": [
+        "じきどう"
+      ],
+      "meaning": "dining hall (at a temple)"
+    },
+    {
+      "question": "有",
+      "answer": [
+        "う"
+      ],
+      "meaning": "bhava (becoming, existence)"
+    },
+    {
+      "question": "立破",
+      "answer": [
+        "りっぱ",
+        "りゅうは"
+      ],
+      "meaning": "establishing and refuting (a doctrine)"
+    },
+    {
+      "question": "半跏思惟像",
+      "answer": [
+        "はんかしいぞう"
+      ],
+      "meaning": "statue of a figure sitting contemplatively in the half lotus position (often of Maitreya)"
+    },
+    {
+      "question": "顕",
+      "answer": [
+        "けん"
+      ],
+      "meaning": "exoteric Buddhism; public Buddhist teachings"
+    },
+    {
+      "question": "即",
+      "answer": [
+        "そく"
+      ],
+      "meaning": "oneness (of two opposing things); inseparability"
+    },
+    {
+      "question": "十八羅漢",
+      "answer": [
+        "じゅうはちらかん"
+      ],
+      "meaning": "the eighteen arhats"
+    },
+    {
+      "question": "十六羅漢",
+      "answer": [
+        "じゅうろくらかん"
+      ],
+      "meaning": "the sixteen arhats"
+    },
+    {
+      "question": "五智如来",
+      "answer": [
+        "ごちにょらい"
+      ],
+      "meaning": "five dhyani buddhas; five wisdom buddhas"
+    },
+    {
+      "question": "十大弟子",
+      "answer": [
+        "じゅうだいでし"
+      ],
+      "meaning": "the ten great disciples (of Buddha)"
+    },
+    {
+      "question": "十二神将",
+      "answer": [
+        "じゅうにじんしょう"
+      ],
+      "meaning": "the twelve divine generals (of Bhaisajyaguru)"
+    },
+    {
+      "question": "歓喜天",
+      "answer": [
+        "かんぎてん"
+      ],
+      "meaning": "Nandikesvara (Ganesh in the Buddhist pantheon)"
+    },
+    {
+      "question": "聖天",
+      "answer": [
+        "しょうてん",
+        "しょうでん"
+      ],
+      "meaning": "Nandikesvara (Ganesh in the Buddhist pantheon)"
+    },
+    {
+      "question": "大自在天",
+      "answer": [
+        "だいじざいてん"
+      ],
+      "meaning": "Mahesvara (Shiva in the Buddhist pantheon)"
+    },
+    {
+      "question": "自在天",
+      "answer": [
+        "じざいてん"
+      ],
+      "meaning": "Mahesvara (Shiva in the Buddhist pantheon)"
+    },
+    {
+      "question": "多聞天",
+      "answer": [
+        "たもんてん"
+      ],
+      "meaning": "Vaisravana (Buddhist deity)"
+    },
+    {
+      "question": "広目天",
+      "answer": [
+        "こうもくてん"
+      ],
+      "meaning": "Virupaksa (Buddhist deity)"
+    },
+    {
+      "question": "増長天",
+      "answer": [
+        "ぞうじょうてん",
+        "ぞうちょうてん"
+      ],
+      "meaning": "Virudhaka (Buddhist deity)"
+    },
+    {
+      "question": "持国天",
+      "answer": [
+        "じこくてん"
+      ],
+      "meaning": "Dhrtarastra (Buddhist deity)"
+    },
+    {
+      "question": "聖観音",
+      "answer": [
+        "しょうかんのん"
+      ],
+      "meaning": "Aryavalokitesvara (manifestation of Avalokitesvara)"
+    },
+    {
+      "question": "聖観世音",
+      "answer": [
+        "しょうかんぜのん"
+      ],
+      "meaning": "Aryavalokitesvara (manifestation of Avalokitesvara)"
+    },
+    {
+      "question": "如意輪観音",
+      "answer": [
+        "にょいりんかんのん"
+      ],
+      "meaning": "Cintamani-cakra (manifestation of Avalokitesvara)"
+    },
+    {
+      "question": "不空羂索観音",
+      "answer": [
+        "ふくうけんじゃくかんのん",
+        "ふくうけんさくかんのん"
+      ],
+      "meaning": "Amoghapasa (manifestation of Kannon)"
+    },
+    {
+      "question": "准胝観音",
+      "answer": [
+        "じゅんでいかんのん"
+      ],
+      "meaning": "Cundi (manifestation of Avalokitesvara)"
+    },
+    {
+      "question": "勢至菩薩",
+      "answer": [
+        "せいしぼさつ"
+      ],
+      "meaning": "Mahasthamaprapta (bodhisattva)"
+    },
+    {
+      "question": "孔雀明王",
+      "answer": [
+        "くじゃくみょうおう"
+      ],
+      "meaning": "Mahamayuri (deity usu. depicted riding a peacock)"
+    },
+    {
+      "question": "文殊菩薩",
+      "answer": [
+        "もんじゅぼさつ"
+      ],
+      "meaning": "Manjusri (Bodhisattva); Monju; Monjushuri; Wenshu"
+    },
+    {
+      "question": "月光菩薩",
+      "answer": [
+        "がっこうぼさつ"
+      ],
+      "meaning": "Candraprabha (bodhisattva)"
+    },
+    {
+      "question": "日光菩薩",
+      "answer": [
+        "にっこうぼさつ"
+      ],
+      "meaning": "Suryaprabha (bodhisattva)"
+    },
+    {
+      "question": "妙見菩薩",
+      "answer": [
+        "みょうけんぼさつ"
+      ],
+      "meaning": "Myōken (bodhisattva; deification of the North Star or the Big Dipper)"
+    },
+    {
+      "question": "虚空蔵菩薩",
+      "answer": [
+        "こくうぞうぼさつ"
+      ],
+      "meaning": "Akasagarbha (bodhisattva)"
+    },
+    {
+      "question": "普賢延命菩薩",
+      "answer": [
+        "ふげんえんめいぼさつ"
+      ],
+      "meaning": "image of the Samantabhadra of long life (with either two or twenty arms, usu. on a white elephant)"
+    },
+    {
+      "question": "薬王菩薩",
+      "answer": [
+        "やくおうぼさつ"
+      ],
+      "meaning": "Bhaisajyaraja (bodhisattva)"
+    },
+    {
+      "question": "大元帥明王",
+      "answer": [
+        "たいげんみょうおう",
+        "だいげんすいみょうおう"
+      ],
+      "meaning": "Atavaka (guardian deity)"
+    },
+    {
+      "question": "諸天",
+      "answer": [
+        "しょてん"
+      ],
+      "meaning": "various deities; the gods"
+    },
+    {
+      "question": "天部",
+      "answer": [
+        "てんぶ"
+      ],
+      "meaning": "deva"
+    },
+    {
+      "question": "天津鞴韜",
+      "answer": [
+        "てんしんふくとう",
+        "あまつたたら"
+      ],
+      "meaning": "bellows (of the) imperial harbor; Shinto Buddhist doctrines"
+    },
+    {
+      "question": "怨憎会苦",
+      "answer": [
+        "おんぞうえく"
+      ],
+      "meaning": "the pain of meeting people one dislikes"
+    },
+    {
+      "question": "求不得苦",
+      "answer": [
+        "ぐふとくく"
+      ],
+      "meaning": "the pain of not getting what one seeks"
+    },
+    {
+      "question": "五陰",
+      "answer": [
+        "ごおん"
+      ],
+      "meaning": "the five skandhas (the five aggregates: matter, sensation, perception, mental formations and consciousness)"
+    },
+    {
+      "question": "古訳",
+      "answer": [
+        "こやく"
+      ],
+      "meaning": "pre-Kumarajiva Chinese translation (i.e. before the 5th century)"
+    },
+    {
+      "question": "五陰盛苦",
+      "answer": [
+        "ごおんじょうく"
+      ],
+      "meaning": "the pain brought on by the five skandha"
+    },
+    {
+      "question": "獅子の座",
+      "answer": [
+        "ししのざ"
+      ],
+      "meaning": "Buddha's seat; seat of a high monk"
+    },
+    {
+      "question": "四苦",
+      "answer": [
+        "しく"
+      ],
+      "meaning": "the four kinds of suffering (birth, old age, disease, death)"
+    },
+    {
+      "question": "正見",
+      "answer": [
+        "しょうけん"
+      ],
+      "meaning": "right view"
+    },
+    {
+      "question": "正定業",
+      "answer": [
+        "しょうじょうごう"
+      ],
+      "meaning": "correct meditative activity (in Jodo, saying the name of Amitabha)"
+    },
+    {
+      "question": "正業",
+      "answer": [
+        "しょうごう"
+      ],
+      "meaning": "right action"
+    },
+    {
+      "question": "正行",
+      "answer": [
+        "しょうぎょう"
+      ],
+      "meaning": "correct practices (esp. in Jodo, the path to rebirth in paradise)"
+    },
+    {
+      "question": "助業",
+      "answer": [
+        "じょごう"
+      ],
+      "meaning": "auxiliary actions (in Jodo: recitation, observation, worship, praise and offering)"
+    },
+    {
+      "question": "正命",
+      "answer": [
+        "しょうみょう"
+      ],
+      "meaning": "right livelihood"
+    },
+    {
+      "question": "正念",
+      "answer": [
+        "しょうねん"
+      ],
+      "meaning": "right mindfulness"
+    },
+    {
+      "question": "正定",
+      "answer": [
+        "しょうじょう"
+      ],
+      "meaning": "right concentration"
+    },
+    {
+      "question": "苦諦",
+      "answer": [
+        "くたい"
+      ],
+      "meaning": "truth of suffering"
+    },
+    {
+      "question": "滅諦",
+      "answer": [
+        "めったい"
+      ],
+      "meaning": "truth of the cessation of suffering"
+    },
+    {
+      "question": "道諦",
+      "answer": [
+        "どうたい"
+      ],
+      "meaning": "truth of the way to the cessation of suffering"
+    },
+    {
+      "question": "阿耨多羅三藐三菩提",
+      "answer": [
+        "あのくたらさんみゃくさんぼだい"
+      ],
+      "meaning": "anuttara samyak sambodhi (supreme perfect enlightenment)"
+    },
+    {
+      "question": "八戒",
+      "answer": [
+        "はっかい",
+        "はちかい"
+      ],
+      "meaning": "the eight precepts (in addition to the five precepts, prohibitions against: lying in a luxurious bed; self-decoration, song and dance; and eating after noon)"
+    },
+    {
+      "question": "戒",
+      "answer": [
+        "かい",
+        "いんごと"
+      ],
+      "meaning": "admonition; commandment"
+    },
+    {
+      "question": "摩訶",
+      "answer": [
+        "まか"
+      ],
+      "meaning": "maha (great)"
+    },
+    {
+      "question": "出定",
+      "answer": [
+        "しゅつじょう"
+      ],
+      "meaning": "leaving a state of intense concentration"
+    },
+    {
+      "question": "発願",
+      "answer": [
+        "ほつがん"
+      ],
+      "meaning": "giving rise to the desire to save all sentient beings"
+    },
+    {
+      "question": "大般若経",
+      "answer": [
+        "だいはんにゃきょう"
+      ],
+      "meaning": "Great Perfection of Wisdom Sutra"
+    },
+    {
+      "question": "開経",
+      "answer": [
+        "かいきょう"
+      ],
+      "meaning": "prefatory sutra"
+    },
+    {
+      "question": "結経",
+      "answer": [
+        "けっきょう"
+      ],
+      "meaning": "sutra read in conclusion"
+    },
+    {
+      "question": "本経",
+      "answer": [
+        "ほんぎょう"
+      ],
+      "meaning": "main sutra (of a lecture)"
+    },
+    {
+      "question": "開経偈",
+      "answer": [
+        "かいきょうげ"
+      ],
+      "meaning": "opening chant of a sutra"
+    },
+    {
+      "question": "菩提薩埵",
+      "answer": [
+        "ぼだいさった"
+      ],
+      "meaning": "bodhisattva"
+    },
+    {
+      "question": "薩埵",
+      "answer": [
+        "さった"
+      ],
+      "meaning": "sattva (being)"
+    },
+    {
+      "question": "三世諸仏",
+      "answer": [
+        "さんぜしょぶつ"
+      ],
+      "meaning": "all Buddhas of past, present and future"
+    },
+    {
+      "question": "苦厄",
+      "answer": [
+        "くやく"
+      ],
+      "meaning": "hardship and misfortune"
+    },
+    {
+      "question": "色",
+      "answer": [
+        "しき"
+      ],
+      "meaning": "rupa (form)"
+    },
+    {
+      "question": "受",
+      "answer": [
+        "じゅ"
+      ],
+      "meaning": "vedana (sensation)"
+    },
+    {
+      "question": "十如是",
+      "answer": [
+        "じゅうにょぜ"
+      ],
+      "meaning": "ten thusnesses (in Tendai)"
+    },
+    {
+      "question": "諸法",
+      "answer": [
+        "しょほう"
+      ],
+      "meaning": "all existing things (formed and formless)"
+    },
+    {
+      "question": "空相",
+      "answer": [
+        "くうそう"
+      ],
+      "meaning": "the empty nature of all things"
+    },
+    {
+      "question": "不生不滅",
+      "answer": [
+        "ふしょうふめつ"
+      ],
+      "meaning": "neither arising nor ceasing"
+    },
+    {
+      "question": "垢",
+      "answer": [
+        "く"
+      ],
+      "meaning": "klesha (polluting thoughts such as greed, hatred and delusion, which result in suffering)"
+    },
+    {
+      "question": "不増不減",
+      "answer": [
+        "ふぞうふげん"
+      ],
+      "meaning": "nothing increases or decreases (because all things are void)"
+    },
+    {
+      "question": "滅道",
+      "answer": [
+        "めつどう"
+      ],
+      "meaning": "truths of the cessation of suffering and of the way to the cessation of suffering"
+    },
+    {
+      "question": "遠離",
+      "answer": [
+        "えんり",
+        "おんり"
+      ],
+      "meaning": "separation by a great distance"
+    },
+    {
+      "question": "顛倒",
+      "answer": [
+        "てんどう"
+      ],
+      "meaning": "cognitive distortion"
+    },
+    {
+      "question": "呪",
+      "answer": [
+        "じゅ"
+      ],
+      "meaning": "dharani; mantra"
+    },
+    {
+      "question": "明呪",
+      "answer": [
+        "みょうじゅ"
+      ],
+      "meaning": "mantra"
+    },
+    {
+      "question": "能所",
+      "answer": [
+        "のうじょ"
+      ],
+      "meaning": "subject and object; activity and passivity"
+    },
+    {
+      "question": "遍照金剛",
+      "answer": [
+        "へんじょうこんごう"
+      ],
+      "meaning": "Mahavairocana (esp. in esoteric Buddhism)"
+    },
+    {
+      "question": "地水火風空",
+      "answer": [
+        "ちすいかふうくう",
+        "じすいかふうくう"
+      ],
+      "meaning": "earth, water, fire, wind and void (the five elements)"
+    },
+    {
+      "question": "地水火風",
+      "answer": [
+        "ちすいかふう",
+        "じすいかふう"
+      ],
+      "meaning": "earth, water, fire, and wind (the four elements)"
+    },
+    {
+      "question": "金剛鈴",
+      "answer": [
+        "こんごうれい"
+      ],
+      "meaning": "vajra bell"
+    },
+    {
+      "question": "執金剛神",
+      "answer": [
+        "しゅこんごうじん",
+        "しゅうこんごうじん",
+        "しっこんごうじん"
+      ],
+      "meaning": "Vajradhara (vajra-wielding gods)"
+    },
+    {
+      "question": "滅罪",
+      "answer": [
+        "めつざい"
+      ],
+      "meaning": "expiation"
+    },
+    {
+      "question": "応供",
+      "answer": [
+        "おうぐ"
+      ],
+      "meaning": "arhat (meritorious person, esp. an epithet of Buddha)"
+    },
+    {
+      "question": "金剛頂経",
+      "answer": [
+        "こんごうちょうきょう"
+      ],
+      "meaning": "Vajrasekhara Sutra"
+    },
+    {
+      "question": "六大",
+      "answer": [
+        "ろくだい"
+      ],
+      "meaning": "the six elements (earth, water, fire, wind, void, and consciousness)"
+    },
+    {
+      "question": "四曼",
+      "answer": [
+        "しまん"
+      ],
+      "meaning": "four types of mandala (in Shingon)"
+    },
+    {
+      "question": "四種曼荼羅",
+      "answer": [
+        "ししゅまんだら"
+      ],
+      "meaning": "four types of mandala (in Shingon)"
+    },
+    {
+      "question": "口",
+      "answer": [
+        "く",
+        "こう"
+      ],
+      "meaning": "mouth; speech"
+    },
+    {
+      "question": "３密",
+      "answer": [
+        "さんみつ"
+      ],
+      "meaning": "three mysteries (Buddha's body, speech and mind)"
+    },
+    {
+      "question": "本地",
+      "answer": [
+        "ほんじ",
+        "ほんち"
+      ],
+      "meaning": "true form of a buddha"
+    },
+    {
+      "question": "加持身",
+      "answer": [
+        "かじしん"
+      ],
+      "meaning": "buddha-body within a practitioner (esoteric Buddhism)"
+    },
+    {
+      "question": "本地身",
+      "answer": [
+        "ほんじしん"
+      ],
+      "meaning": "(dharma-body of) Vairocana"
+    },
+    {
+      "question": "身口意",
+      "answer": [
+        "しんくい"
+      ],
+      "meaning": "action, speech and thought"
+    },
+    {
+      "question": "三業",
+      "answer": [
+        "さんごう"
+      ],
+      "meaning": "three activities (action, speech and thought)"
+    },
+    {
+      "question": "幢",
+      "answer": [
+        "はたほこ",
+        "はたぼこ",
+        "どう"
+      ],
+      "meaning": "long-handled Chinese spear bearing a small flag"
+    },
+    {
+      "question": "西序",
+      "answer": [
+        "せいじょ"
+      ],
+      "meaning": "memorial rite involving the western sanctum"
+    },
+    {
+      "question": "両班",
+      "answer": [
+        "りょうはん"
+      ],
+      "meaning": "preliminary introduction (Zen)"
+    },
+    {
+      "question": "遷流",
+      "answer": [
+        "せんる"
+      ],
+      "meaning": "transient"
+    },
+    {
+      "question": "知客",
+      "answer": [
+        "しか"
+      ],
+      "meaning": "head monk in charge of the administrative section of a zendo (Zen)"
+    },
+    {
+      "question": "座蒲",
+      "answer": [
+        "ざふ"
+      ],
+      "meaning": "round cushion used for Zen meditation (traditionally made of woven bulrush leaves)"
+    },
+    {
+      "question": "喝食",
+      "answer": [
+        "かっしき",
+        "かしき",
+        "かつじき"
+      ],
+      "meaning": "announcing meals (at a Zen monastery); meal announcer"
+    },
+    {
+      "question": "両忘",
+      "answer": [
+        "りょうぼう",
+        "りょうもう"
+      ],
+      "meaning": "detachment from dichotomies; detachment from objectivity and subjectivity"
+    },
+    {
+      "question": "回向文",
+      "answer": [
+        "えこうもん"
+      ],
+      "meaning": "closing recital that transfers the merit of the service to a buddha, a bodhisattva, or the dead"
+    },
+    {
+      "question": "究竟",
+      "answer": [
+        "くきょう"
+      ],
+      "meaning": "culmination; conclusion"
+    },
+    {
+      "question": "幡",
+      "answer": [
+        "ばん"
+      ],
+      "meaning": "pataka (banner)"
+    },
+    {
+      "question": "院",
+      "answer": [
+        "いん"
+      ],
+      "meaning": "sub-temple; minor temple building; temple; cloister"
+    },
+    {
+      "question": "一乗",
+      "answer": [
+        "いちじょう"
+      ],
+      "meaning": "ekayana (doctrine that only one teaching, usu. the Lotus Sutra, can lead to enlightenment)"
+    },
+    {
+      "question": "一実",
+      "answer": [
+        "いちじつ"
+      ],
+      "meaning": "the one absolute truth; the one reality"
+    },
+    {
+      "question": "盲亀浮木",
+      "answer": [
+        "もうきふぼく"
+      ],
+      "meaning": "unlikely event; rare occurrence"
+    },
+    {
+      "question": "盲亀の浮木",
+      "answer": [
+        "もうきのふぼく"
+      ],
+      "meaning": "unlikely event; rare occurrence"
+    },
+    {
+      "question": "阿闍梨",
+      "answer": [
+        "あじゃり",
+        "あざり"
+      ],
+      "meaning": "high monk (esp. one of correct conduct who acts as a role model for his pupils); high priest"
+    },
+    {
+      "question": "阿闍梨",
+      "answer": [
+        "あじゃり",
+        "あざり"
+      ],
+      "meaning": "initiate (esp. as a formal rank in Tendai and Shingon)"
+    },
+    {
+      "question": "阿闍梨",
+      "answer": [
+        "あじゃり",
+        "あざり"
+      ],
+      "meaning": "monk who conducts religious services"
+    },
+    {
+      "question": "神明",
+      "answer": [
+        "しんみょう"
+      ],
+      "meaning": "spirits of heaven and earth"
+    },
+    {
+      "question": "縁を結ぶ",
+      "answer": [
+        "えんをむすぶ"
+      ],
+      "meaning": "to form a connection (with Buddha)"
+    },
+    {
+      "question": "死苦",
+      "answer": [
+        "しく"
+      ],
+      "meaning": "inevitability of death (one of the four kinds of suffering)"
+    },
+    {
+      "question": "天界",
+      "answer": [
+        "てんかい",
+        "てんがい"
+      ],
+      "meaning": "heavenly realm; deva realm"
+    },
+    {
+      "question": "観法",
+      "answer": [
+        "かんぽう",
+        "かんぼう"
+      ],
+      "meaning": "method of contemplation"
+    },
+    {
+      "question": "一心三観",
+      "answer": [
+        "いっしんさんがん"
+      ],
+      "meaning": "simultaneous contemplation of the threefold truth (form of Tendai meditation)"
+    },
+    {
+      "question": "青面金剛",
+      "answer": [
+        "しょうめんこんごう",
+        "せいめんこんごう"
+      ],
+      "meaning": "Blue-Faced Vajra"
+    },
+    {
+      "question": "閻浮提",
+      "answer": [
+        "えんぶだい"
+      ],
+      "meaning": "Jambudvipa; continent of the terrestrial world"
+    },
+    {
+      "question": "戒行",
+      "answer": [
+        "かいぎょう"
+      ],
+      "meaning": "observing the precepts (of Buddhism)"
+    },
+    {
+      "question": "梵僧",
+      "answer": [
+        "ぼんそう"
+      ],
+      "meaning": "monk (esp. one who maintains his purity)"
+    },
+    {
+      "question": "雨宝童子",
+      "answer": [
+        "うほうどうじ"
+      ],
+      "meaning": "Uho Doji (divine rain-making boy)"
+    },
+    {
+      "question": "大姉",
+      "answer": [
+        "だいし"
+      ],
+      "meaning": "Sister (i.e. a nun; sometimes used as a posthumous suffix)"
+    },
+    {
+      "question": "阿蘭若",
+      "answer": [
+        "あらんにゃ"
+      ],
+      "meaning": "isolated place; hermitage"
+    },
+    {
+      "question": "性",
+      "answer": [
+        "しょう"
+      ],
+      "meaning": "that which does not change according to external influences"
+    },
+    {
+      "question": "内道",
+      "answer": [
+        "ないどう"
+      ],
+      "meaning": "Buddhist teachings; Buddhist"
+    },
+    {
+      "question": "鎮護国家",
+      "answer": [
+        "ちんごこっか"
+      ],
+      "meaning": "spiritual protection of the state"
+    },
+    {
+      "question": "面壁九年",
+      "answer": [
+        "めんぺきくねん"
+      ],
+      "meaning": "facing a wall for nine years in meditation (by Bodhidharma at Shaolin Temple)"
+    },
+    {
+      "question": "金胎",
+      "answer": [
+        "こんたい"
+      ],
+      "meaning": "Diamond Realm and Womb Realm"
+    },
+    {
+      "question": "金胎両部",
+      "answer": [
+        "こんたいりょうぶ"
+      ],
+      "meaning": "Diamond Realm and Womb Realm"
+    },
+    {
+      "question": "両部",
+      "answer": [
+        "りょうぶ"
+      ],
+      "meaning": "two parts; both parts"
+    },
+    {
+      "question": "化仏",
+      "answer": [
+        "けぶつ"
+      ],
+      "meaning": "transformed Buddha"
+    },
+    {
+      "question": "波羅夷",
+      "answer": [
+        "はらい"
+      ],
+      "meaning": "parajika (rules entailing expulsion from the sangha for life)"
+    },
+    {
+      "question": "四重禁",
+      "answer": [
+        "しじゅうきん",
+        "しじゅうごん"
+      ],
+      "meaning": "four grave prohibitions (killing, theft, adultery, and deceit)"
+    },
+    {
+      "question": "瑜伽",
+      "answer": [
+        "ゆが"
+      ],
+      "meaning": "yoga"
+    },
+    {
+      "question": "安居",
+      "answer": [
+        "あんご"
+      ],
+      "meaning": "varsika (meditation retreat; usu. for 90 days starting on the 15th day of the 4th month of the lunisolar calendar)"
+    },
+    {
+      "question": "夏",
+      "answer": [
+        "げ"
+      ],
+      "meaning": "summer (on the lunisolar calendar: 16th day of the 4th month to the 15th day of the 7th month)"
+    },
+    {
+      "question": "一夏",
+      "answer": [
+        "いちげ"
+      ],
+      "meaning": "one summer (during which a monk attends a summer retreat)"
+    },
+    {
+      "question": "臈",
+      "answer": [
+        "ろう"
+      ],
+      "meaning": "year in the Buddhist order (after the completion of the first meditation retreat)"
+    },
+    {
+      "question": "臘",
+      "answer": [
+        "ろう"
+      ],
+      "meaning": "offering ceremony held on the third day of the dog after the winter solstice"
+    },
+    {
+      "question": "相待",
+      "answer": [
+        "そうだい"
+      ],
+      "meaning": "existing in opposition or interdependence"
+    },
+    {
+      "question": "絶待",
+      "answer": [
+        "ぜつだい",
+        "ぜったい"
+      ],
+      "meaning": "absoluteness; incomparability; supremacy"
+    },
+    {
+      "question": "授記",
+      "answer": [
+        "じゅき"
+      ],
+      "meaning": "vyakarana (assurance of future enlightenment)"
+    },
+    {
+      "question": "有界",
+      "answer": [
+        "うかい",
+        "うがい"
+      ],
+      "meaning": "realm of existence"
+    },
+    {
+      "question": "夏安居",
+      "answer": [
+        "げあんご"
+      ],
+      "meaning": "summer retreat where monks stay in the same place to study"
+    },
+    {
+      "question": "冬安居",
+      "answer": [
+        "ふゆあんご"
+      ],
+      "meaning": "winter retreat"
+    },
+    {
+      "question": "夏中",
+      "answer": [
+        "げちゅう"
+      ],
+      "meaning": "period during which monks may go into a summer retreat"
+    },
+    {
+      "question": "仏教思想",
+      "answer": [
+        "ぶっきょうしそ"
+      ],
+      "meaning": "Buddhist thought; Buddhist concept"
+    },
+    {
+      "question": "放下",
+      "answer": [
+        "ほうか",
+        "ほうげ"
+      ],
+      "meaning": "discarding; abandoning"
+    },
+    {
+      "question": "お経",
+      "answer": [
+        "おきょう"
+      ],
+      "meaning": "sutra"
+    },
+    {
+      "question": "縁覚",
+      "answer": [
+        "えんがく"
+      ],
+      "meaning": "pratyekabuddha (one who achieves enlightenment without a teacher)"
+    },
+    {
+      "question": "大悟の境に入る",
+      "answer": [
+        "たいごのきょうにはいる",
+        "だいごのきょうにはいる"
+      ],
+      "meaning": "to attain enlightenment"
+    },
+    {
+      "question": "阿弥陀如来",
+      "answer": [
+        "あみだにょらい"
+      ],
+      "meaning": "Amitabha Tathagata; Amithaba"
+    },
+    {
+      "question": "四大",
+      "answer": [
+        "しだい"
+      ],
+      "meaning": "the four elements (earth, water, fire, wind)"
+    },
+    {
+      "question": "四大不調",
+      "answer": [
+        "しだいふちょう"
+      ],
+      "meaning": "falling ill (esp. of a monk); illness"
+    },
+    {
+      "question": "天花",
+      "answer": [
+        "てんげ",
+        "てんけ"
+      ],
+      "meaning": "flowers that bloom in the heavens; paper flowers scattered before the Buddha's image"
+    },
+    {
+      "question": "相即",
+      "answer": [
+        "そうそく"
+      ],
+      "meaning": "coming together and dissolving into oneness"
+    },
+    {
+      "question": "阿鼻",
+      "answer": [
+        "あび"
+      ],
+      "meaning": "Avici (lowest level of hell)"
+    },
+    {
+      "question": "仏牙",
+      "answer": [
+        "ぶつげ"
+      ],
+      "meaning": "tooth of Buddha recovered from his cremated ashes"
+    },
+    {
+      "question": "法体",
+      "answer": [
+        "ほったい",
+        "ほうたい"
+      ],
+      "meaning": "clerical appearance; appearance of a priest"
+    },
+    {
+      "question": "針の山",
+      "answer": [
+        "はりのやま"
+      ],
+      "meaning": "hell's mountain of needles"
+    },
+    {
+      "question": "示寂",
+      "answer": [
+        "じじゃく"
+      ],
+      "meaning": "death of a high-ranking priest"
+    },
+    {
+      "question": "苾蒭",
+      "answer": [
+        "ひっしゅ",
+        "ひっすう"
+      ],
+      "meaning": "bhikkhu (fully ordained Buddhist monk)"
+    },
+    {
+      "question": "利生",
+      "answer": [
+        "りしょう"
+      ],
+      "meaning": "blessings bestowed by the Buddha on all living creatures"
+    },
+    {
+      "question": "呪法",
+      "answer": [
+        "じゅほう"
+      ],
+      "meaning": "esoteric Buddhist ritual where incantations are chanted"
+    },
+    {
+      "question": "善神",
+      "answer": [
+        "ぜんしん"
+      ],
+      "meaning": "true teachings of Buddha"
+    },
+    {
+      "question": "正法",
+      "answer": [
+        "しょうぼう",
+        "しょうほう"
+      ],
+      "meaning": "true dharma; true teachings of Buddha"
+    },
+    {
+      "question": "諷経",
+      "answer": [
+        "ふぎん"
+      ],
+      "meaning": "chanting of the sutras"
+    },
+    {
+      "question": "抜苦与楽",
+      "answer": [
+        "ばっくよらく"
+      ],
+      "meaning": "a Buddha or Bodhisattva taking away suffering and conferring peace"
+    },
+    {
+      "question": "化転",
+      "answer": [
+        "けてん",
+        "けでん"
+      ],
+      "meaning": "turning evil into good through indoctrination; following the teachings of Buddha to turn the world's evil into good"
+    },
+    {
+      "question": "二河白道",
+      "answer": [
+        "にがびゃくどう"
+      ],
+      "meaning": "metaphor in which the road to paradise is likened to a white road between two rivers, one of water (wrath) and one of fire (greed)"
+    },
+    {
+      "question": "現生",
+      "answer": [
+        "げんしょう"
+      ],
+      "meaning": "present world"
+    },
+    {
+      "question": "仏種",
+      "answer": [
+        "ぶっしゅ"
+      ],
+      "meaning": "seed of Buddhahood"
+    },
+    {
+      "question": "空寂",
+      "answer": [
+        "くうじゃく"
+      ],
+      "meaning": "complete emptiness (i.e. as a denial of the inherent existence of all things); nirvana (where this emptiness is realized)"
+    },
+    {
+      "question": "壁立千仞",
+      "answer": [
+        "へきりつせんじん"
+      ],
+      "meaning": "precipitous cliff of great height, metaphor for absolute nature of Buddhist truth"
+    },
+    {
+      "question": "珠数",
+      "answer": [
+        "ずず"
+      ],
+      "meaning": "rosary"
+    },
+    {
+      "question": "是生滅法",
+      "answer": [
+        "ぜしょうめっぽう"
+      ],
+      "meaning": "the law of arising and ceasing; the law of creation and destruction"
+    },
+    {
+      "question": "生滅滅已",
+      "answer": [
+        "しょうめつめつい"
+      ],
+      "meaning": "going beyond life and death and entering Nirvana"
+    },
+    {
+      "question": "大般涅槃経",
+      "answer": [
+        "だいはつねはんぎょう"
+      ],
+      "meaning": "Mahayana Mahaparinirvana Sutra; Nirvana Sutra"
+    },
+    {
+      "question": "涅槃経",
+      "answer": [
+        "ねはんぎょう"
+      ],
+      "meaning": "Mahayana Mahaparinirvana Sutra; Nirvana Sutra"
+    },
+    {
+      "question": "雪山童子",
+      "answer": [
+        "せっせんどうじ"
+      ],
+      "meaning": "young ascetic of the Himalayas; one of the Buddha's past lives"
+    },
+    {
+      "question": "雪山偈",
+      "answer": [
+        "せっせんげ"
+      ],
+      "meaning": "Himalayan verses (of the Nirvana Sutra)"
+    },
+    {
+      "question": "教相判釈",
+      "answer": [
+        "きょうそうはんじゃく"
+      ],
+      "meaning": "classification of the sutras and their teachings"
+    },
+    {
+      "question": "五時教",
+      "answer": [
+        "ごじきょう"
+      ],
+      "meaning": "division of the Buddha's 50-year teachings into five periods (theory of the Tendai sect)"
+    },
+    {
+      "question": "五時八教",
+      "answer": [
+        "ごじはっきょう"
+      ],
+      "meaning": "division of the Buddha's 50-year teachings into five time periods and eight categories (theory of the Tendai sect)"
+    },
+    {
+      "question": "五味",
+      "answer": [
+        "ごみ"
+      ],
+      "meaning": "five flavors (milk at various stages of making ghee: fresh milk, cream, curdled milk, butter, and ghee); the five periods of the Buddha's teachings"
+    },
+    {
+      "question": "帝釈",
+      "answer": [
+        "たいしゃく"
+      ],
+      "meaning": "Śakra (Deva); Shakra; Indra; Shakra Devanam Indra; the king of heaven in Hindu mythology"
+    },
+    {
+      "question": "行徳",
+      "answer": [
+        "ぎょうとく"
+      ],
+      "meaning": "virtue gained by practising Buddhism"
+    },
+    {
+      "question": "蘇悉地経",
+      "answer": [
+        "そしつじきょう"
+      ],
+      "meaning": "Susiddhikara Sutra"
+    },
+    {
+      "question": "胎蔵曼荼羅",
+      "answer": [
+        "たいぞうまんだら"
+      ],
+      "meaning": "Garbhadhatu Mandala; Womb Realm Mandala; Matrix Realm Mandala"
+    },
+    {
+      "question": "阿しゅく仏",
+      "answer": [
+        "あしゅくぶつ"
+      ],
+      "meaning": "Akshobhya (the immovable buddha)"
+    },
+    {
+      "question": "阿しゅく",
+      "answer": [
+        "あしゅく"
+      ],
+      "meaning": "Akshobhya (the immovable buddha)"
+    },
+    {
+      "question": "十三仏",
+      "answer": [
+        "じゅうさんぶつ"
+      ],
+      "meaning": "the thirteen buddhas, bodhisattvas and wisdom kings"
+    },
+    {
+      "question": "本門",
+      "answer": [
+        "ほんもん"
+      ],
+      "meaning": "latter half of the Lotus Sutra, which describes the nature of the Buddha"
+    },
+    {
+      "question": "諸尊",
+      "answer": [
+        "しょそん"
+      ],
+      "meaning": "various buddhas, bodhisattvas, deities, etc."
+    },
+    {
+      "question": "仏足石",
+      "answer": [
+        "ぶっそくせき"
+      ],
+      "meaning": "footprint of the Buddha carved in stone"
+    },
+    {
+      "question": "輪宝",
+      "answer": [
+        "りんぼう",
+        "りんぽう"
+      ],
+      "meaning": "Cakraratna; wheel-shaped treasure possessed by the ideal universal ruler, carried in front of him during excursions to allow easy passage"
+    },
+    {
+      "question": "檀林",
+      "answer": [
+        "だんりん"
+      ],
+      "meaning": "Buddhist center for study and meditation; monastery; temple"
+    },
+    {
+      "question": "十王",
+      "answer": [
+        "じゅうおう"
+      ],
+      "meaning": "ten rulers of the afterlife (who judge the dead and determine their placement in their next life)"
+    },
+    {
+      "question": "宝生如来",
+      "answer": [
+        "ほうしょうにょらい"
+      ],
+      "meaning": "Ratnasambhava"
+    },
+    {
+      "question": "燃燈仏",
+      "answer": [
+        "ねんとうぶつ"
+      ],
+      "meaning": "Dīpankara Buddha; Dipankara (the lamp bearer)"
+    },
+    {
+      "question": "明王",
+      "answer": [
+        "みょうおう"
+      ],
+      "meaning": "Wisdom King; Vidyaraja"
+    },
+    {
+      "question": "晨朝",
+      "answer": [
+        "じんじょう",
+        "しんちょう",
+        "じんちょう"
+      ],
+      "meaning": "around six o'clock AM; dawn service"
+    },
+    {
+      "question": "中夜",
+      "answer": [
+        "ちゅうや"
+      ],
+      "meaning": "midnight period; midnight service"
+    },
+    {
+      "question": "六時",
+      "answer": [
+        "ろくじ"
+      ],
+      "meaning": "six periods of a day (morning, midday, afternoon, evening, midnight, late night)"
+    },
+    {
+      "question": "三昧耶形",
+      "answer": [
+        "さんまやぎょう",
+        "さまやぎょう"
+      ],
+      "meaning": "object or shape that symbolizes the vow of a buddha or bodhisattva to save all life"
+    },
+    {
+      "question": "愛染",
+      "answer": [
+        "あいぜん"
+      ],
+      "meaning": "being drawn to something one loves; amorous passion"
+    },
+    {
+      "question": "三昧耶",
+      "answer": [
+        "さんまや",
+        "さまや",
+        "さんまいや"
+      ],
+      "meaning": "time"
+    },
+    {
+      "question": "三昧耶",
+      "answer": [
+        "さんまや",
+        "さまや",
+        "さんまいや"
+      ],
+      "meaning": "meeting; coming together"
+    },
+    {
+      "question": "三昧耶",
+      "answer": [
+        "さんまや",
+        "さまや",
+        "さんまいや"
+      ],
+      "meaning": "equality, warning, or riddance of hindrances (esp. in esoteric Buddhism as vows of the buddhas and bodhisattvas)"
+    },
+    {
+      "question": "伝法灌頂",
+      "answer": [
+        "でんぼうかんじょう"
+      ],
+      "meaning": "consecration ritual for the conferral of the status of Acharya (in esoteric Buddhism)"
+    },
+    {
+      "question": "三昧耶戒",
+      "answer": [
+        "さんまやかい"
+      ],
+      "meaning": "precepts given to an adherent prior to being consecrated as an Acharya (in esoteric Buddhism)"
+    },
+    {
+      "question": "賓頭盧",
+      "answer": [
+        "びんずる"
+      ],
+      "meaning": "Pindola; Pindola Bharadvaja (one of four Arhats asked by the Buddha to remain in the world to propagate Buddhist law)"
+    },
+    {
+      "question": "信施",
+      "answer": [
+        "しんせ",
+        "しんぜ"
+      ],
+      "meaning": "almsgiving because of faith"
+    },
+    {
+      "question": "貧道",
+      "answer": [
+        "ひんどう"
+      ],
+      "meaning": "imperfect (Buddhist) training; imperfection in one's (Buddhist) training; incomplete training; poor training"
+    },
+    {
+      "question": "外教",
+      "answer": [
+        "がいきょう",
+        "げきょう"
+      ],
+      "meaning": "religion other than Buddhism"
+    },
+    {
+      "question": "内教",
+      "answer": [
+        "ないきょう"
+      ],
+      "meaning": "Buddhism"
+    },
+    {
+      "question": "神将",
+      "answer": [
+        "じんしょう",
+        "しんしょう"
+      ],
+      "meaning": "divine generals who protect pilgrims, etc."
+    },
+    {
+      "question": "血の池",
+      "answer": [
+        "ちのいけ"
+      ],
+      "meaning": "Blood Pond; pool of blood; pond of blood (in hell)"
+    },
+    {
+      "question": "六字大明呪",
+      "answer": [
+        "ろくじだいみょうじゅ"
+      ],
+      "meaning": "great six-syllable mantra (\"om mani padme hum\")"
+    },
+    {
+      "question": "定命",
+      "answer": [
+        "じょうみょう",
+        "ていめい"
+      ],
+      "meaning": "one's predestined length of life"
+    },
+    {
+      "question": "斎食",
+      "answer": [
+        "さいじき"
+      ],
+      "meaning": "morning meal (for priests, monks, etc.)"
+    },
+    {
+      "question": "寂静",
+      "answer": [
+        "じゃくじょう",
+        "せきせい"
+      ],
+      "meaning": "calmness of the heart; enlightenment"
+    },
+    {
+      "question": "常寂光土",
+      "answer": [
+        "じょうじゃっこうど"
+      ],
+      "meaning": "land of eternally tranquil light (highest realm in Tendai Buddhism)"
+    },
+    {
+      "question": "寂光",
+      "answer": [
+        "じゃっこう",
+        "じゃくこう"
+      ],
+      "meaning": "light of wisdom (when nearing nirvana); silent illumination"
+    },
+    {
+      "question": "寂光",
+      "answer": [
+        "じゃっこう",
+        "じゃくこう"
+      ],
+      "meaning": "paradise; nirvana"
+    },
+    {
+      "question": "禅院",
+      "answer": [
+        "ぜんいん"
+      ],
+      "meaning": "Zen temple"
+    },
+    {
+      "question": "庭詰",
+      "answer": [
+        "にわづめ"
+      ],
+      "meaning": "waiting in front of a temple to be accepted for training (in Zen Buddhism)"
+    },
+    {
+      "question": "行脚僧",
+      "answer": [
+        "あんぎゃそう"
+      ],
+      "meaning": "itinerant monk; monk on a pilgrimage"
+    },
+    {
+      "question": "旦過",
+      "answer": [
+        "たんが"
+      ],
+      "meaning": "staying the night (of an itinerant priest in Zen Buddhism); itinerant priest's lodging"
+    },
+    {
+      "question": "旦過",
+      "answer": [
+        "たんが"
+      ],
+      "meaning": "providing a room for an itinerant priest so that he may meditate for a long period of time"
+    },
+    {
+      "question": "開枕",
+      "answer": [
+        "かいちん"
+      ],
+      "meaning": "bringing out the pillows and futon (in Zen Buddhism); sleeping"
+    },
+    {
+      "question": "起龕",
+      "answer": [
+        "きがん"
+      ],
+      "meaning": "ceremonial removal of the coffin from the house (lay person) or temple (priest) (Zen Buddhism)"
+    },
+    {
+      "question": "華鬘",
+      "answer": [
+        "けまん"
+      ],
+      "meaning": "Buddhist decoration engraved with various motifs, often made from gilt copper (e.g. for adorning the inner shrine of a temple)"
+    },
+    {
+      "question": "花瓶",
+      "answer": [
+        "けびょう"
+      ],
+      "meaning": "vase used to hold flower offerings (often made of gilded copper)"
+    },
+    {
+      "question": "三具足",
+      "answer": [
+        "みつぐそく"
+      ],
+      "meaning": "three implements for worship (incense burner, flower vase and candle-stand)"
+    },
+    {
+      "question": "消災呪",
+      "answer": [
+        "しょうさいじゅ"
+      ],
+      "meaning": "disaster-preventing incantation; disaster-preventing dharani"
+    },
+    {
+      "question": "教化",
+      "answer": [
+        "きょうけ",
+        "きょうげ"
+      ],
+      "meaning": "guidance; teaching people and leading them to Buddhism"
+    },
+    {
+      "question": "仏土",
+      "answer": [
+        "ぶつど"
+      ],
+      "meaning": "realm of a Buddha; Pure Land; paradise"
+    },
+    {
+      "question": "仏土",
+      "answer": [
+        "ぶつど"
+      ],
+      "meaning": "Buddhist country; land where Buddha has appeared to spread his teachings"
+    },
+    {
+      "question": "唯識派",
+      "answer": [
+        "ゆいしきは"
+      ],
+      "meaning": "Consciousness-Only School (of Buddhism); Yogacara"
+    },
+    {
+      "question": "四土",
+      "answer": [
+        "しど"
+      ],
+      "meaning": "four realms (in Tendai Buddhism or Yogacara)"
+    },
+    {
+      "question": "捨離",
+      "answer": [
+        "しゃり"
+      ],
+      "meaning": "abandoning all worldly desires"
+    },
+    {
+      "question": "開浴",
+      "answer": [
+        "かいよく"
+      ],
+      "meaning": "bathing (in a Zen Temple)"
+    },
+    {
+      "question": "作務",
+      "answer": [
+        "さむ"
+      ],
+      "meaning": "work in a Zen temple (e.g. cleaning, working in the fields)"
+    },
+    {
+      "question": "監寺",
+      "answer": [
+        "かんす",
+        "かんず",
+        "かんじ"
+      ],
+      "meaning": "one of the six administrators of a Zen temple who substitutes for the chief priest"
+    },
+    {
+      "question": "維那",
+      "answer": [
+        "いな",
+        "いの"
+      ],
+      "meaning": "one of the six administrators of a Zen temple (in charge of general affairs)"
+    },
+    {
+      "question": "典座",
+      "answer": [
+        "てんざ",
+        "てんぞ"
+      ],
+      "meaning": "one of the six administrators of a Zen temple (in charge of food and other matters)"
+    },
+    {
+      "question": "透脱",
+      "answer": [
+        "とうだつ",
+        "ちょうとつ"
+      ],
+      "meaning": "liberation; reaching enlightenment"
+    },
+    {
+      "question": "前仏",
+      "answer": [
+        "ぜんぶつ"
+      ],
+      "meaning": "Buddha prior to Gautama"
+    },
+    {
+      "question": "前仏",
+      "answer": [
+        "ぜんぶつ"
+      ],
+      "meaning": "Gautama Buddha; Shakyamuni"
+    },
+    {
+      "question": "後仏",
+      "answer": [
+        "ごぶつ"
+      ],
+      "meaning": "Maitreya (buddha appearing 5.67 billion years after the death of Gautama)"
+    },
+    {
+      "question": "七仏通戒偈",
+      "answer": [
+        "しちぶつつうかいげ"
+      ],
+      "meaning": "Verse of the Shared Morality of the Seven Buddhas"
+    },
+    {
+      "question": "金剛般若経",
+      "answer": [
+        "こんごうはんにゃきょう"
+      ],
+      "meaning": "Diamond Wisdom Sutra; Diamond Sutra"
+    },
+    {
+      "question": "金剛般若波羅蜜多経",
+      "answer": [
+        "こんごうはんにゃはらみたきょう"
+      ],
+      "meaning": "Diamond Perfection of Wisdom Sutra; Diamond Sutra"
+    },
+    {
+      "question": "金剛経",
+      "answer": [
+        "こんごうきょう"
+      ],
+      "meaning": "Diamond Sutra"
+    },
+    {
+      "question": "金剛心",
+      "answer": [
+        "こんごうしん"
+      ],
+      "meaning": "extreme religious piety; unshakable faith"
+    },
+    {
+      "question": "仏智",
+      "answer": [
+        "ぶっち"
+      ],
+      "meaning": "omniscience (of a buddha)"
+    },
+    {
+      "question": "一増一減",
+      "answer": [
+        "いちぞういちげん"
+      ],
+      "meaning": "16,800,000-year period over which a human lifespan increases from ten years to 84,000 years (by one year per century) and then decreases back to ten (by one year per century)"
+    },
+    {
+      "question": "論書",
+      "answer": [
+        "ろんしょ"
+      ],
+      "meaning": "textbook of Buddhist treatises (containing interpretation of the sutras)"
+    },
+    {
+      "question": "唯心",
+      "answer": [
+        "ゆいしん"
+      ],
+      "meaning": "doctrine that all phenomena are produced from consciousness (a central teaching of the Avatamska sutra)"
+    },
+    {
+      "question": "禅知",
+      "answer": [
+        "ぜんち"
+      ],
+      "meaning": "wisdom obtained from meditation"
+    },
+    {
+      "question": "禅知",
+      "answer": [
+        "ぜんち"
+      ],
+      "meaning": "wisdom and meditation"
+    },
+    {
+      "question": "沙弥十戒",
+      "answer": [
+        "しゃみじっかい"
+      ],
+      "meaning": "the 10 precepts"
+    },
+    {
+      "question": "仏位",
+      "answer": [
+        "ぶつい"
+      ],
+      "meaning": "buddha state (ultimate level of Buddhist enlightenment); buddhahood"
+    },
+    {
+      "question": "山家",
+      "answer": [
+        "さんげ"
+      ],
+      "meaning": "Mountain School (of Song-period Tiantai Buddhism)"
+    },
+    {
+      "question": "山外",
+      "answer": [
+        "さんがい"
+      ],
+      "meaning": "Off-Mountain School (of Song-period Tiantai Buddhism)"
+    },
+    {
+      "question": "三悪",
+      "answer": [
+        "さんあく",
+        "さんなく",
+        "さんまく"
+      ],
+      "meaning": "the world of hungry spirits and the world of animals; three evil worlds hell"
+    },
+    {
+      "question": "十夜粥",
+      "answer": [
+        "じゅうやがゆ"
+      ],
+      "meaning": "rice gruel served in temples for ten-night memorial services"
+    },
+    {
+      "question": "十夜",
+      "answer": [
+        "じゅうや"
+      ],
+      "meaning": "ten-night memorial service (6th to 15th days of the 10th month in the lunar calendar)"
+    },
+    {
+      "question": "涅槃西風",
+      "answer": [
+        "ねはんにし",
+        "ねはんにしかぜ"
+      ],
+      "meaning": "wind blowing on the day of the Buddhist service held on the day of Buddha's death (15th day of the 2nd month)"
+    },
+    {
+      "question": "使",
+      "answer": [
+        "し"
+      ],
+      "meaning": "klesha (polluting thoughts such as greed, hatred and delusion, which result in suffering)"
+    },
+    {
+      "question": "摩訶毘盧遮那",
+      "answer": [
+        "まかびるしゃな"
+      ],
+      "meaning": "Mahavairocana (Buddha who symbolizes the entirety of the phenomenological world)"
+    },
+    {
+      "question": "金輪王",
+      "answer": [
+        "こんりんおう"
+      ],
+      "meaning": "gold wheel-turning sage king"
+    },
+    {
+      "question": "金輪",
+      "answer": [
+        "こんりん"
+      ],
+      "meaning": "gold wheel (highest of the three layered wheels that support the earth above the primordial void)"
+    },
+    {
+      "question": "金輪",
+      "answer": [
+        "こんりん"
+      ],
+      "meaning": "gold wheel-turning sage king"
+    },
+    {
+      "question": "十二縁起説",
+      "answer": [
+        "じゅうにえんぎせつ"
+      ],
+      "meaning": "Buddhist theory of the twelve-fold chain of causation, interdependent origination and co-dependent arising (San: pratītya-samutpāda); twelve causal links"
+    },
+    {
+      "question": "生病老死",
+      "answer": [
+        "せいびょうろうし"
+      ],
+      "meaning": "birth, illness, old age and death"
+    },
+    {
+      "question": "新発意",
+      "answer": [
+        "しんぼち",
+        "しんぼっち",
+        "しぼち"
+      ],
+      "meaning": "neophyte; new monk (or nun); new convert (to Buddhism)"
+    },
+    {
+      "question": "禅法",
+      "answer": [
+        "ぜんぽう",
+        "ぜんぼう"
+      ],
+      "meaning": "method of Buddhist study and practice that is based in meditative concentration; meditative methods used in Zen Buddhism"
+    },
+    {
+      "question": "三世十方",
+      "answer": [
+        "さんぜじっぽう"
+      ],
+      "meaning": "limitless time and space"
+    },
+    {
+      "question": "諸法実相",
+      "answer": [
+        "しょほうじっそう"
+      ],
+      "meaning": "concept that all things and phenomena reflect the truth"
+    },
+    {
+      "question": "定散二善",
+      "answer": [
+        "じょうさんにぜん"
+      ],
+      "meaning": "wholesomeness while meditating and in one's daily affairs"
+    },
+    {
+      "question": "口称",
+      "answer": [
+        "くしょう"
+      ],
+      "meaning": "chanting the invocation to Amida Buddha"
+    },
+    {
+      "question": "口称念仏",
+      "answer": [
+        "くしょうねんぶつ"
+      ],
+      "meaning": "chanting an invocation (to Amida Buddha); reciting a prayer"
+    },
+    {
+      "question": "事観",
+      "answer": [
+        "じかん"
+      ],
+      "meaning": "contemplation of phenomena"
+    },
+    {
+      "question": "理觀",
+      "answer": [
+        "りかん"
+      ],
+      "meaning": "contemplation of principle"
+    },
+    {
+      "question": "観念念仏",
+      "answer": [
+        "かんねんねんぶつ"
+      ],
+      "meaning": "contemplation (on Amida Buddha, the Pure Land, etc.)"
+    },
+    {
+      "question": "貪瞋痴",
+      "answer": [
+        "とんじんち"
+      ],
+      "meaning": "the three kilesas that poison the heart of man (greed, hatred and delusion)"
+    },
+    {
+      "question": "心念口称",
+      "answer": [
+        "しんねんくしょう"
+      ],
+      "meaning": "contemplating Buddha while chanting his name"
+    },
+    {
+      "question": "五門禅",
+      "answer": [
+        "ごもんぜん"
+      ],
+      "meaning": "five approaches to meditation; five objects of meditation"
+    },
+    {
+      "question": "品",
+      "answer": [
+        "ほん"
+      ],
+      "meaning": "level; grade"
+    },
+    {
+      "question": "品",
+      "answer": [
+        "ほん"
+      ],
+      "meaning": "chapter; section; volume"
+    },
+    {
+      "question": "品題",
+      "answer": [
+        "ほんだい"
+      ],
+      "meaning": "chapter title; section title; volume title"
+    },
+    {
+      "question": "般若経",
+      "answer": [
+        "はんにゃきょう",
+        "はんにゃぎょう"
+      ],
+      "meaning": "Prajnaparamita Sutra; Perfection of Wisdom Sutra"
+    },
+    {
+      "question": "別時念仏",
+      "answer": [
+        "べつじねんぶつ"
+      ],
+      "meaning": "recitation of Amida Buddha's name on a specified day and time period (practice of Pure Land Buddhists)"
+    },
+    {
+      "question": "般若波羅蜜",
+      "answer": [
+        "はんにゃはらみつ"
+      ],
+      "meaning": "prajna-paramita (perfection of wisdom)"
+    },
+    {
+      "question": "修行",
+      "answer": [
+        "しゅぎょう",
+        "すぎょう"
+      ],
+      "meaning": "ascetic practices"
+    },
+    {
+      "question": "劣機",
+      "answer": [
+        "れっき"
+      ],
+      "meaning": "inability to follow Buddhist teachings; person unable to follow Buddhist teachings"
+    },
+    {
+      "question": "不飲酒戒",
+      "answer": [
+        "ふおんじゅかい"
+      ],
+      "meaning": "Buddhist precept prohibiting the consumption of alcohol"
+    },
+    {
+      "question": "十牛",
+      "answer": [
+        "じゅうぎゅう"
+      ],
+      "meaning": "Ten Bulls (ten stages of the herding of an ox, used as an analogy for training the mind on the path to enlightenment)"
+    },
+    {
+      "question": "仏涅槃",
+      "answer": [
+        "ぶつねはん"
+      ],
+      "meaning": "the death of Shakyamuni Buddha"
+    },
+    {
+      "question": "仏涅槃",
+      "answer": [
+        "ぶつねはん"
+      ],
+      "meaning": "Buddhist service held on the day of Buddha's death (orig. 15th of the 2nd month, now 15th of the 3rd month)"
+    },
+    {
+      "question": "仏涅槃忌",
+      "answer": [
+        "ぶつねはんき"
+      ],
+      "meaning": "Buddhist service held on the day of Buddha's death (orig. 15th of the 2nd month, now 15th of the 3rd month)"
+    },
+    {
+      "question": "朝座",
+      "answer": [
+        "あさざ"
+      ],
+      "meaning": "morning service"
+    },
+    {
+      "question": "夕座",
+      "answer": [
+        "ゆうざ"
+      ],
+      "meaning": "evening service"
+    },
+    {
+      "question": "閻魔王",
+      "answer": [
+        "えんまおう"
+      ],
+      "meaning": "Yamaraja (king of the world of the dead, who judges the dead)"
+    },
+    {
+      "question": "護法善神",
+      "answer": [
+        "ごほうぜんじん"
+      ],
+      "meaning": "benevolent deities who protect the dharma"
+    },
+    {
+      "question": "閻魔天",
+      "answer": [
+        "えんまてん"
+      ],
+      "meaning": "Yama (as protector deity of the south in esoteric Buddhism)"
+    },
+    {
+      "question": "人頭幢",
+      "answer": [
+        "にんずどう"
+      ],
+      "meaning": "Yama's pole (with a human head on the top)"
+    },
+    {
+      "question": "離檀",
+      "answer": [
+        "りだん"
+      ],
+      "meaning": "severing the relationship between a temple and its supporters"
+    },
+    {
+      "question": "阿毘達磨",
+      "answer": [
+        "あびだつま"
+      ],
+      "meaning": "abhidharma; texts that contain detailed reworkings of the Buddhist sutras"
+    },
+    {
+      "question": "救済",
+      "answer": [
+        "くさい",
+        "ぐさい"
+      ],
+      "meaning": "salvation (from suffering based on Buddha's teachings)"
+    },
+    {
+      "question": "喝食行者",
+      "answer": [
+        "かっしきあんじゃ"
+      ],
+      "meaning": "meal announcer (at a Zen monastery)"
+    },
+    {
+      "question": "飛行の三鈷",
+      "answer": [
+        "ひぎょうのさんこ"
+      ],
+      "meaning": "three-pronged vajra flung by Kukai on his return from China to determine the Holy Land of Esoteric Buddhism"
+    },
+    {
+      "question": "神足通",
+      "answer": [
+        "じんそくつう"
+      ],
+      "meaning": "unimpeded bodily function (one of the six supernormal Buddhist powers)"
+    },
+    {
+      "question": "天耳通",
+      "answer": [
+        "てんにつう"
+      ],
+      "meaning": "divine hearing (one of the six supernormal Buddhist powers)"
+    },
+    {
+      "question": "他心通",
+      "answer": [
+        "たしんつう"
+      ],
+      "meaning": "awareness of the minds of others (one of the six supernormal Buddhist powers)"
+    },
+    {
+      "question": "宿命通",
+      "answer": [
+        "しゅくみょうつう"
+      ],
+      "meaning": "knowledge of previous lifetimes (one of the six supernormal Buddhist powers)"
+    },
+    {
+      "question": "漏尽通",
+      "answer": [
+        "ろじんつう"
+      ],
+      "meaning": "extinction of contamination (one of the six supernormal Buddhist powers)"
+    },
+    {
+      "question": "六神通",
+      "answer": [
+        "ろくじんずう",
+        "ろくじんつう"
+      ],
+      "meaning": "six supernormal powers"
+    },
+    {
+      "question": "三明",
+      "answer": [
+        "さんみょう"
+      ],
+      "meaning": "three kinds of awareness"
+    },
+    {
+      "question": "飛行",
+      "answer": [
+        "ひぎょう"
+      ],
+      "meaning": "flying without hindrance"
+    },
+    {
+      "question": "三鈷",
+      "answer": [
+        "さんこ",
+        "さんご"
+      ],
+      "meaning": "trident vajra"
+    },
+    {
+      "question": "飛行夜叉",
+      "answer": [
+        "ひぎょうやしゃ"
+      ],
+      "meaning": "flying yaksha"
+    },
+    {
+      "question": "独鈷",
+      "answer": [
+        "とっこ",
+        "どっこ"
+      ],
+      "meaning": "single-pronged vajra; tokko; dokko; copper or iron implement, pointed at both ends, used in esoteric Buddhist rituals"
+    },
+    {
+      "question": "礼盤",
+      "answer": [
+        "らいばん"
+      ],
+      "meaning": "platform in front of a temple's principal image, from which the officiating monk chants"
+    },
+    {
+      "question": "灌頂",
+      "answer": [
+        "かんじょう",
+        "かんちょう"
+      ],
+      "meaning": "baptism-like ceremony performed by the buddhas on a bodhisattva who attains buddhahood"
+    },
+    {
+      "question": "灌頂",
+      "answer": [
+        "かんじょう",
+        "かんちょう"
+      ],
+      "meaning": "baptism-like ceremony for conferring onto someone precepts, a mystic teaching, etc. (in esoteric Buddhism)"
+    },
+    {
+      "question": "灌頂",
+      "answer": [
+        "かんじょう",
+        "かんちょう"
+      ],
+      "meaning": "pouring water onto a gravestone"
+    },
+    {
+      "question": "智水",
+      "answer": [
+        "ちすい"
+      ],
+      "meaning": "purifying wisdom of a buddha"
+    },
+    {
+      "question": "智水",
+      "answer": [
+        "ちすい"
+      ],
+      "meaning": "purifying water of wisdom used in a Buddhist baptism"
+    },
+    {
+      "question": "軍持",
+      "answer": [
+        "ぐんじ"
+      ],
+      "meaning": "water bottle (of a monk, nun, etc.); flask"
+    },
+    {
+      "question": "水瓶",
+      "answer": [
+        "すいびょう",
+        "すいびん"
+      ],
+      "meaning": "portable water vessel (for drinking or washing up)"
+    },
+    {
+      "question": "宝瓶",
+      "answer": [
+        "ほうびょう"
+      ],
+      "meaning": "vase"
+    },
+    {
+      "question": "宝瓶",
+      "answer": [
+        "ほうびょう"
+      ],
+      "meaning": "vessel for water used in an esoteric Buddhist baptism"
+    },
+    {
+      "question": "法威",
+      "answer": [
+        "ほうい"
+      ],
+      "meaning": "influence of Buddhism; power of Buddhism"
+    },
+    {
+      "question": "法音",
+      "answer": [
+        "ほうおん"
+      ],
+      "meaning": "sound of sutra chanting"
+    },
+    {
+      "question": "報恩講",
+      "answer": [
+        "ほうおんこう"
+      ],
+      "meaning": "memorial services for the founder of the sect (esp. for Shinran in Shin Buddhism)"
+    },
+    {
+      "question": "法界無縁",
+      "answer": [
+        "ほうかいむえん",
+        "ほっかいむえん"
+      ],
+      "meaning": "all-encompassing mercy of the Buddha"
+    },
+    {
+      "question": "有縁",
+      "answer": [
+        "うえん"
+      ],
+      "meaning": "related to the teachings of Buddha; able to be saved by Buddha"
+    },
+    {
+      "question": "六根",
+      "answer": [
+        "ろっこん"
+      ],
+      "meaning": "six sense organs (eyes, ears, nose, tongue, body, and mind)"
+    },
+    {
+      "question": "六境",
+      "answer": [
+        "ろっきょう"
+      ],
+      "meaning": "six objective fields of the senses (shape and colour, sound, scent, flavour, physical feeling, and mental presentation)"
+    },
+    {
+      "question": "十八界",
+      "answer": [
+        "じゅうはっかい"
+      ],
+      "meaning": "eighteen components of perception (six sense objects, six sense faculties, six sense consciousnesses)"
+    },
+    {
+      "question": "法筵",
+      "answer": [
+        "ほうえん"
+      ],
+      "meaning": "preaching place"
+    },
+    {
+      "question": "法の筵",
+      "answer": [
+        "のりのむしろ"
+      ],
+      "meaning": "preaching place"
+    },
+    {
+      "question": "来迎柱",
+      "answer": [
+        "らいごうばしら"
+      ],
+      "meaning": "round pillars each side of the wall behind a shumidan dais"
+    },
+    {
+      "question": "来迎和讃",
+      "answer": [
+        "らいごうわさん"
+      ],
+      "meaning": "Japanese hymn praising the coming of the Buddha (thought to be written by Minamoto No Makoto)"
+    },
+    {
+      "question": "落堕",
+      "answer": [
+        "らくだ"
+      ],
+      "meaning": "marrying (of a monk)"
+    },
+    {
+      "question": "落堕",
+      "answer": [
+        "らくだ"
+      ],
+      "meaning": "returning to secular life (of a monk)"
+    },
+    {
+      "question": "楽変化天",
+      "answer": [
+        "らくへんげてん"
+      ],
+      "meaning": "heaven of enjoying emanations; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "欲界",
+      "answer": [
+        "よくかい",
+        "よっかい"
+      ],
+      "meaning": "desire realm"
+    },
+    {
+      "question": "六欲天",
+      "answer": [
+        "ろくよくてん"
+      ],
+      "meaning": "the six domains of the desire realm; the six heavens of the desire realm"
+    },
+    {
+      "question": "化楽天",
+      "answer": [
+        "けらくてん"
+      ],
+      "meaning": "heaven of enjoying emanations; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "他化自在天",
+      "answer": [
+        "たけじざいてん"
+      ],
+      "meaning": "heaven of controlling others' emanations"
+    },
+    {
+      "question": "夜摩天",
+      "answer": [
+        "やまてん"
+      ],
+      "meaning": "heaven without fighting; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "とう利天",
+      "answer": [
+        "とうりてん"
+      ],
+      "meaning": "heaven of the thirty-three; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "四王天",
+      "answer": [
+        "しおうてん"
+      ],
+      "meaning": "heaven of the Four Great Kings; one of the six heavens of the desire realm"
+    },
+    {
+      "question": "阿逸多",
+      "answer": [
+        "あいった"
+      ],
+      "meaning": "Maitreya (bodhisattva)"
+    },
+    {
+      "question": "阿逸多",
+      "answer": [
+        "あいった"
+      ],
+      "meaning": "Ajita (one of the sixteen arhats)"
+    },
+    {
+      "question": "臨終正念",
+      "answer": [
+        "りんじゅうしょうねん"
+      ],
+      "meaning": "holding the proper state of mindfulness at the moment of death"
+    },
+    {
+      "question": "四魔",
+      "answer": [
+        "しま"
+      ],
+      "meaning": "the four kinds of demons that make trouble for sentient beings"
+    },
+    {
+      "question": "煩悩魔",
+      "answer": [
+        "ぼんのうま"
+      ],
+      "meaning": "demon of ill desires that injures one's body and mind"
+    },
+    {
+      "question": "死魔",
+      "answer": [
+        "しま"
+      ],
+      "meaning": "demon of death"
+    },
+    {
+      "question": "陰魔",
+      "answer": [
+        "おんま"
+      ],
+      "meaning": "demon of aggregates (who causes many kinds of suffering)"
+    },
+    {
+      "question": "波旬",
+      "answer": [
+        "はじゅん"
+      ],
+      "meaning": "killer demon; demon who strives to destroy all goodness"
+    },
+    {
+      "question": "三千大千世界",
+      "answer": [
+        "さんぜんだいせんせかい"
+      ],
+      "meaning": "the whole universe (of a billion worlds) that Buddha enlightened"
+    },
+    {
+      "question": "色界",
+      "answer": [
+        "しきかい"
+      ],
+      "meaning": "form realm"
+    },
+    {
+      "question": "無色界",
+      "answer": [
+        "むしきかい"
+      ],
+      "meaning": "Mushikikai; formless realm; world free of greed or matter"
+    },
+    {
+      "question": "第六天",
+      "answer": [
+        "だいろくてん"
+      ],
+      "meaning": "sixth heaven (of the desire realm)"
+    },
+    {
+      "question": "上綱",
+      "answer": [
+        "じょうこう",
+        "じょうごう"
+      ],
+      "meaning": "top-ranking priest in the Office of Monastic Affairs"
+    },
+    {
+      "question": "三尊",
+      "answer": [
+        "さんぞん",
+        "さんそん"
+      ],
+      "meaning": "Buddha triad; image of a Buddha attended by two Bodhisattvas"
+    },
+    {
+      "question": "三尊",
+      "answer": [
+        "さんぞん",
+        "さんそん"
+      ],
+      "meaning": "The Three Jewels; Buddha, the teachings of Buddha, and the community of monks and nuns"
+    },
+    {
+      "question": "讃談",
+      "answer": [
+        "さんだん"
+      ],
+      "meaning": "praising Buddha; sermon"
+    },
+    {
+      "question": "讃談",
+      "answer": [
+        "さんだん"
+      ],
+      "meaning": "praise (second of the five gates of mindfulness)"
+    },
+    {
+      "question": "讃談",
+      "answer": [
+        "さんだん"
+      ],
+      "meaning": "style of Buddhistic song of praise, usually praising Buddha, the Bodhisattva, the Buddhistic teachings, etc."
+    },
+    {
+      "question": "五念門",
+      "answer": [
+        "ごねんもん"
+      ],
+      "meaning": "five gates of mindfulness: worship, praise, vows, observation, prayers for the dead"
+    },
+    {
+      "question": "仏徳",
+      "answer": [
+        "ぶっとく"
+      ],
+      "meaning": "virtues of Buddha"
+    },
+    {
+      "question": "舎利殿",
+      "answer": [
+        "しゃりでん"
+      ],
+      "meaning": "reliquary hall"
+    },
+    {
+      "question": "意生身",
+      "answer": [
+        "いしょうしん"
+      ],
+      "meaning": "mind-made body; body as born out of a certain kind of intent or mindfulness"
+    },
+    {
+      "question": "法蔵比丘",
+      "answer": [
+        "ほうぞうびく"
+      ],
+      "meaning": "Dharmakara Bodhisattva; Amitabha Buddha in a pre-enlightenment incarnation"
+    },
+    {
+      "question": "僧伽藍摩",
+      "answer": [
+        "そうがらんま",
+        "そうぎゃらんま"
+      ],
+      "meaning": "Buddhist convent or monastery"
+    },
+    {
+      "question": "法蔵",
+      "answer": [
+        "ほうぞう"
+      ],
+      "meaning": "Buddhist teachings; Buddhist scriptures"
+    },
+    {
+      "question": "法蔵",
+      "answer": [
+        "ほうぞう"
+      ],
+      "meaning": "Dharmakara; Amitabha Buddha in a pre-enlightenment incarnation"
+    },
+    {
+      "question": "性海",
+      "answer": [
+        "しょうかい"
+      ],
+      "meaning": "world of tathata; the pure and absolute truth of the tathata is as wide as the sea"
+    },
+    {
+      "question": "大聖",
+      "answer": [
+        "だいしょう"
+      ],
+      "meaning": "Buddha"
+    },
+    {
+      "question": "大聖",
+      "answer": [
+        "だいしょう"
+      ],
+      "meaning": "high-ranked bodhisattva"
+    },
+    {
+      "question": "幽回忌",
+      "answer": [
+        "ゆうかいき"
+      ],
+      "meaning": "memorial ceremony held on the 100th day of a person's death"
+    },
+    {
+      "question": "本来無一物",
+      "answer": [
+        "ほんらいむいちもつ"
+      ],
+      "meaning": "all things are essentially nothingness; all things come from nothingness; originally, there was nothing; Zen reminder to free oneself from attachments"
+    },
+    {
+      "question": "原始仏教",
+      "answer": [
+        "げんしぶっきょう"
+      ],
+      "meaning": "pre-sectarian Buddhism; the earliest Buddhism; original Buddhism"
+    },
+    {
+      "question": "五体投地",
+      "answer": [
+        "ごたいとうち"
+      ],
+      "meaning": "prostration; placing knees, hands and forehead on the ground to show utmost respect"
+    },
+    {
+      "question": "能力",
+      "answer": [
+        "のうりき"
+      ],
+      "meaning": "low-ranking priest who does manual labour at a temple; male temple employee"
+    },
+    {
+      "question": "遠諱",
+      "answer": [
+        "おんき"
+      ],
+      "meaning": "semicentennial memorial service"
+    },
+    {
+      "question": "比量",
+      "answer": [
+        "ひりょう"
+      ],
+      "meaning": "Pramana; epistemology"
+    },
+    {
+      "question": "護摩木",
+      "answer": [
+        "ごまぎ"
+      ],
+      "meaning": "homa stick; stick on which prayers are written, then ritually burnt before an idol to ask for blessings"
+    },
+    {
+      "question": "慧日",
+      "answer": [
+        "えにち"
+      ],
+      "meaning": "sun of wisdom; Buddha's or Bodhisattva's limitless light of wisdom"
+    },
+    {
+      "question": "真説",
+      "answer": [
+        "しんせつ"
+      ],
+      "meaning": "true teachings"
+    },
+    {
+      "question": "易行道",
+      "answer": [
+        "いぎょうどう"
+      ],
+      "meaning": "the easy way; attaining rebirth in the Pure Land through the vows of Amitabha (as opposed to one's own efforts)"
+    },
+    {
+      "question": "行乞",
+      "answer": [
+        "ぎょうこつ"
+      ],
+      "meaning": "going on an alms round (for food); going begging (for food); going to ask for alms of food; pindacara"
+    },
+    {
+      "question": "誕生仏",
+      "answer": [
+        "たんじょうぶつ"
+      ],
+      "meaning": "statue of the birth of Buddha (right hand pointing at the heavens, left hand pointing at the earth)"
+    },
+    {
+      "question": "香水",
+      "answer": [
+        "こうずい"
+      ],
+      "meaning": "scented water used for purification; water offering to Buddha"
+    },
+    {
+      "question": "回峰行",
+      "answer": [
+        "かいほうぎょう"
+      ],
+      "meaning": "thousand-day walk through the mountains from Hieizan to the old Imperial Palace in Kyoto (ascetic practice of the Tendai sect)"
+    },
+    {
+      "question": "懺法",
+      "answer": [
+        "せんぼう"
+      ],
+      "meaning": "penitence by chanting sutras; confession (of sins); Tendai ritual of chanting Lotus Sutra or to Kanzeon, Amida, or Kichijoten for forgiveness of sins performed unknowingly"
+    },
+    {
+      "question": "懺法",
+      "answer": [
+        "せんぼう"
+      ],
+      "meaning": "penitence sutra"
+    },
+    {
+      "question": "懺法",
+      "answer": [
+        "せんぼう"
+      ],
+      "meaning": "guidebook to penitence"
+    },
+    {
+      "question": "迷界",
+      "answer": [
+        "めいかい"
+      ],
+      "meaning": "world of the lost; human realm; this world"
+    },
+    {
+      "question": "浄玻璃の鏡",
+      "answer": [
+        "じょうはりのかがみ"
+      ],
+      "meaning": "mirror found in hell in Enma's chamber that allows people to see their good and bad deeds"
+    },
+    {
+      "question": "三学",
+      "answer": [
+        "さんがく"
+      ],
+      "meaning": "threefold training; three divisions of the noble eightfold path"
+    },
+    {
+      "question": "恵",
+      "answer": [
+        "え"
+      ],
+      "meaning": "prajñā (one of the three divisions of the noble eightfold path); wisdom"
+    },
+    {
+      "question": "女人成仏",
+      "answer": [
+        "にょにんじょうぶつ"
+      ],
+      "meaning": "a woman becoming a Buddha; a woman entering Nirvana"
+    },
+    {
+      "question": "善因",
+      "answer": [
+        "ぜんいん"
+      ],
+      "meaning": "good cause (that will bring a good reward); good deed"
+    },
+    {
+      "question": "応量器",
+      "answer": [
+        "おうりょうき"
+      ],
+      "meaning": "mendicant priest's begging bowl"
+    },
+    {
+      "question": "応器",
+      "answer": [
+        "おうき"
+      ],
+      "meaning": "mendicant priest's begging bowl"
+    },
+    {
+      "question": "堪能",
+      "answer": [
+        "かんのう"
+      ],
+      "meaning": "patience; perseverance; fortitude"
+    },
+    {
+      "question": "無所得",
+      "answer": [
+        "むしょとく"
+      ],
+      "meaning": "state of nonattachment; lack of attachment; not seeking anything"
+    },
+    {
+      "question": "取",
+      "answer": [
+        "しゅ"
+      ],
+      "meaning": "appropriation; obtaining"
+    },
+    {
+      "question": "名色",
+      "answer": [
+        "みょうしき"
+      ],
+      "meaning": "namarupa; name and form"
+    },
+    {
+      "question": "六処",
+      "answer": [
+        "ろくしょ"
+      ],
+      "meaning": "six sense organs (eyes, ears, nose, tongue, body, and mind)"
+    },
+    {
+      "question": "六入",
+      "answer": [
+        "ろくにゅう"
+      ],
+      "meaning": "six sense organs (eyes, ears, nose, tongue, body, and mind)"
+    },
+    {
+      "question": "触",
+      "answer": [
+        "そく"
+      ],
+      "meaning": "contact; touch"
+    },
+    {
+      "question": "触",
+      "answer": [
+        "そく"
+      ],
+      "meaning": "tactile object"
+    },
+    {
+      "question": "触",
+      "answer": [
+        "そく"
+      ],
+      "meaning": "uncleanliness"
+    },
+    {
+      "question": "二因",
+      "answer": [
+        "にいん"
+      ],
+      "meaning": "two causes"
+    },
+    {
+      "question": "五果",
+      "answer": [
+        "ごか"
+      ],
+      "meaning": "five types of effect in cause-and-effect relationships"
+    },
+    {
+      "question": "五果",
+      "answer": [
+        "ごか"
+      ],
+      "meaning": "five effects of ignorance and formations on one's current life"
+    },
+    {
+      "question": "三因仏性",
+      "answer": [
+        "さんいんぶっしょう"
+      ],
+      "meaning": "three causes of Buddha nature"
+    },
+    {
+      "question": "三因",
+      "answer": [
+        "さんいん"
+      ],
+      "meaning": "three causes of Buddha nature"
+    },
+    {
+      "question": "見思惑",
+      "answer": [
+        "けんじわく"
+      ],
+      "meaning": "mental disturbances arising from incorrect views and thoughts"
+    },
+    {
+      "question": "三惑",
+      "answer": [
+        "さんわく",
+        "さんなく"
+      ],
+      "meaning": "three mental disturbances"
+    },
+    {
+      "question": "二世",
+      "answer": [
+        "にせ"
+      ],
+      "meaning": "two existences; the present and the future"
+    },
+    {
+      "question": "一世",
+      "answer": [
+        "いっせ"
+      ],
+      "meaning": "one generation (past, present, or future)"
+    },
+    {
+      "question": "庫堂",
+      "answer": [
+        "くどう"
+      ],
+      "meaning": "temple kitchen"
+    },
+    {
+      "question": "弔い上げ",
+      "answer": [
+        "とむらいあげ",
+        "といあげ",
+        "とぶらいあげ"
+      ],
+      "meaning": "last death anniversary for which there is a memorial service held (usu. the 32nd or 49th)"
+    },
+    {
+      "question": "問い切り",
+      "answer": [
+        "といきり"
+      ],
+      "meaning": "last death anniversary for which there is a memorial service held (usu. the 32nd or 49th)"
+    },
+    {
+      "question": "揚げ斎",
+      "answer": [
+        "あげどき"
+      ],
+      "meaning": "last death anniversary for which there is a memorial service held (usu. the 32nd or 49th)"
+    },
+    {
+      "question": "百八煩悩",
+      "answer": [
+        "ひゃくはちぼんのう"
+      ],
+      "meaning": "the 108 kleshas; the 108 afflictions"
+    },
+    {
+      "question": "経塚",
+      "answer": [
+        "きょうづか"
+      ],
+      "meaning": "sutra mound"
+    },
+    {
+      "question": "内衣",
+      "answer": [
+        "ないえ"
+      ],
+      "meaning": "monk's waist robe"
+    },
+    {
+      "question": "寒苦鳥",
+      "answer": [
+        "かんくちょう",
+        "かんくどり",
+        "かんくとり"
+      ],
+      "meaning": "cold-suffering bird; kankuchō; imaginary bird said to live in the Himalayas who forgets the cold of night as soon as morning comes"
+    },
+    {
+      "question": "寒苦鳥",
+      "answer": [
+        "かんくちょう",
+        "かんくどり",
+        "かんくとり"
+      ],
+      "meaning": "(lazy) person who is poor at practicing asceticism; person unlikely to reach satori"
+    },
+    {
+      "question": "一生精進",
+      "answer": [
+        "いっしょうしょうじん"
+      ],
+      "meaning": "striving to adopt ascetic practices for one's whole life"
+    },
+    {
+      "question": "等活地獄",
+      "answer": [
+        "とうかつじごく"
+      ],
+      "meaning": "Sañjīva (one of the Eight Greater Hells); hell of being torn to pieces and revived over and over"
+    },
+    {
+      "question": "纏縛",
+      "answer": [
+        "てんばく"
+      ],
+      "meaning": "being bound by evil desires; klesha"
+    },
+    {
+      "question": "正法",
+      "answer": [
+        "せいほう"
+      ],
+      "meaning": "the true teachings of Buddha; Period of the True Law"
+    },
+    {
+      "question": "依報",
+      "answer": [
+        "えほう"
+      ],
+      "meaning": "circumstantial retribution; circumstances (e.g. geographical, societal) one is born into because of karma in previous lives"
+    },
+    {
+      "question": "正報",
+      "answer": [
+        "しょうほう"
+      ],
+      "meaning": "direct retribution; body and mind one is born into because of karma in previous lives"
+    },
+    {
+      "question": "身土不二",
+      "answer": [
+        "しんどふに"
+      ],
+      "meaning": "inseparability of body/mind and geographical circumstances"
+    },
+    {
+      "question": "修惑",
+      "answer": [
+        "しゅわく"
+      ],
+      "meaning": "perceptive mental disturbances"
+    },
+    {
+      "question": "思惑",
+      "answer": [
+        "しわく"
+      ],
+      "meaning": "perceptive mental disturbances"
+    },
+    {
+      "question": "臥具",
+      "answer": [
+        "がぐ"
+      ],
+      "meaning": "kasaya; monk's stole"
+    },
+    {
+      "question": "宝篋印塔",
+      "answer": [
+        "ほうきょういんとう"
+      ],
+      "meaning": "Hōkyōin pagoda; pagoda containing a Hōkyōin sutra"
+    },
+    {
+      "question": "密意",
+      "answer": [
+        "みつい"
+      ],
+      "meaning": "hidden intention"
+    },
+    {
+      "question": "講会",
+      "answer": [
+        "こうえ"
+      ],
+      "meaning": "(Buddhist) lecture meeting"
+    },
+    {
+      "question": "時衆",
+      "answer": [
+        "じしゅ",
+        "じしゅう"
+      ],
+      "meaning": "assembly of monks and laity (at a rite, sermon, etc.)"
+    },
+    {
+      "question": "時衆",
+      "answer": [
+        "じしゅ",
+        "じしゅう"
+      ],
+      "meaning": "(monks and laity of) the Jishū sect"
+    },
+    {
+      "question": "苦患",
+      "answer": [
+        "くげん"
+      ],
+      "meaning": "hellish pain; suffering; distress; agony"
+    },
+    {
+      "question": "唱題",
+      "answer": [
+        "しょうだい"
+      ],
+      "meaning": "chanting the title of a sutra (esp. the Lotus Sutra)"
+    },
+    {
+      "question": "化城",
+      "answer": [
+        "げじょう"
+      ],
+      "meaning": "castle magically created by the Buddha"
+    },
+    {
+      "question": "波羅蜜多",
+      "answer": [
+        "はらみった",
+        "はらみた"
+      ],
+      "meaning": "pāramitā; perfection; perfection of Buddhist practices or attaining enlightenment"
+    },
+    {
+      "question": "五位",
+      "answer": [
+        "ごい"
+      ],
+      "meaning": "five ranks; five stages"
+    },
+    {
+      "question": "天衆",
+      "answer": [
+        "てんしゅ",
+        "てんじゅ",
+        "てんしゅう"
+      ],
+      "meaning": "deva; celestial being"
+    },
+    {
+      "question": "天竜",
+      "answer": [
+        "てんりゅう",
+        "てんりょう"
+      ],
+      "meaning": "deva and naga"
+    },
+    {
+      "question": "摩尼",
+      "answer": [
+        "まに"
+      ],
+      "meaning": "jewel; pearl; gemstone"
+    },
+    {
+      "question": "摩尼",
+      "answer": [
+        "まに"
+      ],
+      "meaning": "Cintamani stone; wish-fulfilling jewel"
+    },
+    {
+      "question": "摩尼珠",
+      "answer": [
+        "まにじゅ",
+        "まにしゅ"
+      ],
+      "meaning": "jewel; pearl; gemstone"
+    },
+    {
+      "question": "如意宝珠",
+      "answer": [
+        "にょいほうじゅ"
+      ],
+      "meaning": "Cintamani stone; wish-fulfilling jewel"
+    },
+    {
+      "question": "摩尼宝珠",
+      "answer": [
+        "まにほうじゅ"
+      ],
+      "meaning": "jewel; pearl; gemstone"
+    },
+    {
+      "question": "宝珠の玉",
+      "answer": [
+        "ほうじゅのたま"
+      ],
+      "meaning": "Cintamani stone; wish-fulfilling jewel"
+    },
+    {
+      "question": "冷暖自知",
+      "answer": [
+        "れいだんじち"
+      ],
+      "meaning": "spiritual enlightenment only comes through personal experience"
+    },
+    {
+      "question": "四法印",
+      "answer": [
+        "しほういん"
+      ],
+      "meaning": "the four signs of orthodox Buddhism"
+    },
+    {
+      "question": "涅槃寂静",
+      "answer": [
+        "ねはんじゃくじょう"
+      ],
+      "meaning": "enlightenment leads to serenity"
+    },
+    {
+      "question": "一切皆苦",
+      "answer": [
+        "いっさいかいく"
+      ],
+      "meaning": "all things are causes of sufferings"
+    },
+    {
+      "question": "諸法無我",
+      "answer": [
+        "しょほうむが"
+      ],
+      "meaning": "idea that all things in the universe lack their own unchangeable substances"
+    },
+    {
+      "question": "後世",
+      "answer": [
+        "ごせ"
+      ],
+      "meaning": "the next world; afterlife; life after death"
+    },
+    {
+      "question": "日天子",
+      "answer": [
+        "にってんし"
+      ],
+      "meaning": "Surya (Hindu sun god also revered as one of the twelve devas in Shingon Buddhism)"
+    },
+    {
+      "question": "日天",
+      "answer": [
+        "にってん"
+      ],
+      "meaning": "Surya (Hindu sun god also revered as one of the twelve devas in Shingon Buddhism)"
+    },
+    {
+      "question": "月天子",
+      "answer": [
+        "がってんし"
+      ],
+      "meaning": "Chandra (Hindu moon god also revered as one of the twelve devas in Shingon Buddhism)"
+    },
+    {
+      "question": "月天",
+      "answer": [
+        "がってん"
+      ],
+      "meaning": "Chandra (Hindu moon god also revered as one of the twelve devas in Shingon Buddhism)"
+    },
+    {
+      "question": "迦陵頻伽",
+      "answer": [
+        "かりょうびんが"
+      ],
+      "meaning": "kalavinka; imaginary bird in paradise that sings sweet notes"
+    },
+    {
+      "question": "夜座",
+      "answer": [
+        "やざ"
+      ],
+      "meaning": "nocturnal seated Zen meditation (esp. around 8pm)"
+    },
+    {
+      "question": "草木国土悉皆成仏",
+      "answer": [
+        "そうもくこくどしっかいじょうぶつ"
+      ],
+      "meaning": "all things have the Buddha nature"
+    },
+    {
+      "question": "悉皆成仏",
+      "answer": [
+        "しっかいじょうぶつ"
+      ],
+      "meaning": "all things have the Buddha nature"
+    },
+    {
+      "question": "仁王経",
+      "answer": [
+        "にんのうぎょう"
+      ],
+      "meaning": "Humane King Sutra"
+    },
+    {
+      "question": "仁王般若波羅蜜経",
+      "answer": [
+        "にんのうはんにゃはらみつきょう"
+      ],
+      "meaning": "Humane King Sutra"
+    },
+    {
+      "question": "鎮壇具",
+      "answer": [
+        "ちんだんぐ"
+      ],
+      "meaning": "goods buried during the ground-breaking ceremony for a temple"
+    },
+    {
+      "question": "実化",
+      "answer": [
+        "じっけ"
+      ],
+      "meaning": "noumenal Buddha (in comparison to phenomenal Buddha)"
+    },
+    {
+      "question": "師家",
+      "answer": [
+        "しけ"
+      ],
+      "meaning": "Zen master"
+    },
+    {
+      "question": "葷酒山門に入るを許さず",
+      "answer": [
+        "くんしゅさんもんにいるをゆるさず"
+      ],
+      "meaning": "bringing pungent vegetables or liquor inside the temple is prohibited"
+    },
+    {
+      "question": "預流",
+      "answer": [
+        "よる"
+      ],
+      "meaning": "sotāpanna; śrotāpanna; stream-winner; stream-entrant"
+    },
+    {
+      "question": "二入四行論",
+      "answer": [
+        "ににゅうしぎょうろん"
+      ],
+      "meaning": "Treatise on the Two Entrances and Four Practices"
+    },
+    {
+      "question": "難化",
+      "answer": [
+        "なんけ"
+      ],
+      "meaning": "something difficult to teach"
+    },
+    {
+      "question": "長吏",
+      "answer": [
+        "ちょうり"
+      ],
+      "meaning": "administrator of a temple"
+    },
+    {
+      "question": "花水",
+      "answer": [
+        "はなみず"
+      ],
+      "meaning": "flowers and water offered to Buddha"
+    },
+    {
+      "question": "頂礼",
+      "answer": [
+        "ちょうらい"
+      ],
+      "meaning": "prostration; placing knees, hands and forehead on the ground to show utmost respect"
+    },
+    {
+      "question": "閻羅王",
+      "answer": [
+        "えんらおう"
+      ],
+      "meaning": "Yama (king of the world of the dead, who judges the dead); Emma; Yan; Yomna"
+    },
+    {
+      "question": "閻魔羅闍",
+      "answer": [
+        "えんまらじゃ"
+      ],
+      "meaning": "Yama (king of the world of the dead, who judges the dead); Emma; Yan; Yomna"
+    },
+    {
+      "question": "阿弥陀三尊",
+      "answer": [
+        "あみださんぞん"
+      ],
+      "meaning": "Amitabha triad; image of Amitabha Buddha flanked by the Bodhisattvas Avalokiteshvara and Mahasthamaprapta"
+    },
+    {
+      "question": "薬師三尊",
+      "answer": [
+        "やくしさんぞん"
+      ],
+      "meaning": "Bhaishajyaguru triad; image of Bhaishajyaguru Buddha flanked by the Bodhisattvas Suryaprabha and Candraprabha"
+    },
+    {
+      "question": "証果",
+      "answer": [
+        "しょうか"
+      ],
+      "meaning": "enlightenment attained through training"
+    },
+    {
+      "question": "仏餉",
+      "answer": [
+        "ぶっしょう"
+      ],
+      "meaning": "rice offered to Buddha"
+    },
+    {
+      "question": "御仏供",
+      "answer": [
+        "おぶく"
+      ],
+      "meaning": "offering to Buddha (often rice)"
+    },
+    {
+      "question": "常花",
+      "answer": [
+        "とこばな"
+      ],
+      "meaning": "eternally flowering flower (usu. made of metal)"
+    },
+    {
+      "question": "大叫喚地獄",
+      "answer": [
+        "だいきょうかんじごく"
+      ],
+      "meaning": "Mahāraurava; The Hell of Great Wailing; The Great Screaming Hell; the fifth of eight hot hells in Buddhism"
+    },
+    {
+      "question": "黒闇天",
+      "answer": [
+        "こくあんてん"
+      ],
+      "meaning": "Kalaratri (Deva)"
+    },
+    {
+      "question": "中蘊",
+      "answer": [
+        "ちゅううん"
+      ],
+      "meaning": "bardo; state (or period) of intermediate existence between one's death and rebirth (in Japan, 49 days)"
+    },
+    {
+      "question": "因縁生起",
+      "answer": [
+        "いんねんせいき"
+      ],
+      "meaning": "dependent arising; doctrine that everything has a cause and there is nothing that arises out of nothing"
+    },
+    {
+      "question": "勝義",
+      "answer": [
+        "しょうぎ"
+      ],
+      "meaning": "ultimate truth"
+    },
+    {
+      "question": "詩僧",
+      "answer": [
+        "しそう"
+      ],
+      "meaning": "priest with poetical talent; priest poet"
+    },
+    {
+      "question": "両部曼荼羅",
+      "answer": [
+        "りょうぶまんだら"
+      ],
+      "meaning": "Mandala of the Two Realms; Womb Realm and Matrix Realm Mandalas"
+    },
+    {
+      "question": "大曼荼羅",
+      "answer": [
+        "だいまんだら"
+      ],
+      "meaning": "great mandala (in Shingon); mandala with an image of each deity"
+    },
+    {
+      "question": "三昧耶曼荼羅",
+      "answer": [
+        "さんまやまんだら"
+      ],
+      "meaning": "samya mandala (in Shingon); mandala where each deity is represented by an object (lotus flower, gem, sword, etc.)"
+    },
+    {
+      "question": "法曼荼羅",
+      "answer": [
+        "ほうまんだら"
+      ],
+      "meaning": "dharma mandala (in Shingon); mandala were each deity is represented by its seed syllable in Sanskrit"
+    },
+    {
+      "question": "羯磨曼荼羅",
+      "answer": [
+        "かつままんだら"
+      ],
+      "meaning": "karma mandala (in Shingon); three-dimensional mandala with a sculpture of each deity"
+    },
+    {
+      "question": "大毘盧遮那経",
+      "answer": [
+        "だいびるしゃなきょう"
+      ],
+      "meaning": "Mahavairocana Sutra; Mahavairocana Tantra"
+    },
+    {
+      "question": "楞伽経",
+      "answer": [
+        "りょうがきょう"
+      ],
+      "meaning": "Lankavatara Sutra"
+    },
+    {
+      "question": "六祖壇経",
+      "answer": [
+        "ろくそだんきょう"
+      ],
+      "meaning": "Platform Sutra of the Sixth Patriarch; Platform Sutra"
+    },
+    {
+      "question": "鳩槃荼",
+      "answer": [
+        "くばんだ"
+      ],
+      "meaning": "Kumbhanda; demon with large testicles believed to drain people of their vitality"
+    },
+    {
+      "question": "三途川",
+      "answer": [
+        "そうずがわ"
+      ],
+      "meaning": "Sanzu River (Buddhist equivalent of the River Styx)"
+    },
+    {
+      "question": "倶利迦羅竜王",
+      "answer": [
+        "くりからりゅうおう"
+      ],
+      "meaning": "Dragon King Kulika; manifestation of Acala in the form of a flame-wreathed dragon wrapped around and swallowing the tip of an upright sword"
+    },
+    {
+      "question": "倶利迦羅",
+      "answer": [
+        "くりから"
+      ],
+      "meaning": "Kulika; manifestation of Acala in the form of a flame-wreathed dragon wrapped around and swallowing the tip of an upright sword"
+    },
+    {
+      "question": "善男",
+      "answer": [
+        "ぜんなん"
+      ],
+      "meaning": "pious man"
+    },
+    {
+      "question": "善女人",
+      "answer": [
+        "ぜんにょにん"
+      ],
+      "meaning": "pious woman; female believer"
+    },
+    {
+      "question": "善男子",
+      "answer": [
+        "ぜんなんし"
+      ],
+      "meaning": "pious man"
+    },
+    {
+      "question": "地獄の釜",
+      "answer": [
+        "じごくのかま"
+      ],
+      "meaning": "the cauldron of Hell (in which sinners are boiled)"
+    },
+    {
+      "question": "僧階",
+      "answer": [
+        "そうかい"
+      ],
+      "meaning": "rank (of a monk)"
+    },
+    {
+      "question": "過去世",
+      "answer": [
+        "かこぜ"
+      ],
+      "meaning": "one's previous life"
+    },
+    {
+      "question": "過去生",
+      "answer": [
+        "かこせい"
+      ],
+      "meaning": "one's previous life"
+    },
+    {
+      "question": "苦海",
+      "answer": [
+        "くかい",
+        "くがい"
+      ],
+      "meaning": "sea of suffering; human realm"
+    },
+    {
+      "question": "迷いの世界",
+      "answer": [
+        "まよいのせかい"
+      ],
+      "meaning": "world of the lost; human realm; this world"
+    },
+    {
+      "question": "報土",
+      "answer": [
+        "ほうど"
+      ],
+      "meaning": "pure land; paradise"
+    },
+    {
+      "question": "功徳を積む",
+      "answer": [
+        "くどくをつむ"
+      ],
+      "meaning": "to accumulate merit; to make merit"
+    },
+    {
+      "question": "功徳蔵",
+      "answer": [
+        "くどくぞう"
+      ],
+      "meaning": "one's accumulated merit; treasure house of merit"
+    },
+    {
+      "question": "功徳蔵",
+      "answer": [
+        "くどくぞう"
+      ],
+      "meaning": "Amithaba (Buddha)"
+    },
+    {
+      "question": "自力回向",
+      "answer": [
+        "じりきえこう"
+      ],
+      "meaning": "attempting to reach enlightenment only through merit one has accumulated by oneself"
+    },
+    {
+      "question": "お布施",
+      "answer": [
+        "おふせ"
+      ],
+      "meaning": "alms-giving; charity"
+    },
+    {
+      "question": "お布施",
+      "answer": [
+        "おふせ"
+      ],
+      "meaning": "offerings (usu. money) to a priest (for reading sutras, etc.)"
+    },
+    {
+      "question": "薩婆訶",
+      "answer": [
+        "そわか",
+        "そばか"
+      ],
+      "meaning": "svāhā; well said; so be it"
+    },
+    {
+      "question": "根本分裂",
+      "answer": [
+        "こんぽんぶんれつ"
+      ],
+      "meaning": "fundamental schism (between the early Sthaviravāda and Mahāsāṃghika Buddhist schools)"
+    },
+    {
+      "question": "四聖諦",
+      "answer": [
+        "ししょうたい"
+      ],
+      "meaning": "The Four Noble Truths"
+    },
+    {
+      "question": "集諦",
+      "answer": [
+        "じったい"
+      ],
+      "meaning": "truth of the origin of suffering"
+    },
+    {
+      "question": "初転法輪",
+      "answer": [
+        "しょてんぽうりん",
+        "しょてんぼうりん",
+        "しょてんほうりん"
+      ],
+      "meaning": "setting in motion the wheel of the dharma; the first turning of the wheel"
+    },
+    {
+      "question": "化身ラマ",
+      "answer": [
+        "けしんラマ"
+      ],
+      "meaning": "tulku; reincarnate Tibetan lama"
+    },
+    {
+      "question": "回向偈",
+      "answer": [
+        "えこうげ"
+      ],
+      "meaning": "closing recital that transfers the merit of the service to a buddha, a bodhisattva, or the dead"
+    },
+    {
+      "question": "聖人",
+      "answer": [
+        "しょうにん"
+      ],
+      "meaning": "person on the path to enlightenment"
+    },
+    {
+      "question": "聖人",
+      "answer": [
+        "しょうにん"
+      ],
+      "meaning": "Buddha; bodhisattva"
+    },
+    {
+      "question": "飛天",
+      "answer": [
+        "ひてん"
+      ],
+      "meaning": "heavenly beings shown flying around the main image in a temple"
+    },
+    {
+      "question": "観自在菩薩",
+      "answer": [
+        "かんじざいぼさつ"
+      ],
+      "meaning": "Avalokiteshvara (Bodhisattva); Avalokitesvara; Kannon; Kwannon; Guanyin; Buddhist deity of compassion"
+    },
+    {
+      "question": "転迷開悟",
+      "answer": [
+        "てんめいかいご"
+      ],
+      "meaning": "casting away one's vices or worldly desires and achieving enlightenment"
+    },
+    {
+      "question": "心所",
+      "answer": [
+        "しんじょ"
+      ],
+      "meaning": "mental functions; mental factors; mental states"
+    },
+    {
+      "question": "不害",
+      "answer": [
+        "ふがい"
+      ],
+      "meaning": "nonviolence; non-harming; ahimsa"
+    },
+    {
+      "question": "神王",
+      "answer": [
+        "しんのう",
+        "じんのう"
+      ],
+      "meaning": "guardian deity"
+    },
+    {
+      "question": "阿梨樹",
+      "answer": [
+        "ありじゅ"
+      ],
+      "meaning": "tree whose branches are said to split into seven pieces upon falling"
+    },
+    {
+      "question": "仏格",
+      "answer": [
+        "ぶっかく"
+      ],
+      "meaning": "buddhahood"
+    },
+    {
+      "question": "仏頂尊",
+      "answer": [
+        "ぶっちょうそん"
+      ],
+      "meaning": "Butchōson (type of Buddha representing omniscience in Mikkyō Buddhism); Butchō"
+    },
+    {
+      "question": "放生",
+      "answer": [
+        "ほうじょう"
+      ],
+      "meaning": "release of captive animals (birds, fish, etc.)"
+    },
+    {
+      "question": "文殊の知恵",
+      "answer": [
+        "もんじゅのちえ"
+      ],
+      "meaning": "the wisdom of Manjushri"
+    },
+    {
+      "question": "搩手",
+      "answer": [
+        "ちゃくしゅ"
+      ],
+      "meaning": "distance between the thumb and middle finger of an extended hand"
+    },
+    {
+      "question": "裙子",
+      "answer": [
+        "くんす",
+        "くんし"
+      ],
+      "meaning": "waist-robe; pleated lower garment"
+    },
+    {
+      "question": "綺語",
+      "answer": [
+        "きご",
+        "きぎょ"
+      ],
+      "meaning": "embellishing one's words (one of the ten evil deeds)"
+    },
+    {
+      "question": "八風",
+      "answer": [
+        "はちふう"
+      ],
+      "meaning": "eight winds; eight things that hinder enlightenment; prosperity, decline, disgrace, honor, praise, censure, suffering, and pleasure"
+    },
+    {
+      "question": "無始曠劫",
+      "answer": [
+        "むしこうごう"
+      ],
+      "meaning": "time immemorial"
+    },
+    {
+      "question": "曠劫",
+      "answer": [
+        "こうごう"
+      ],
+      "meaning": "aeons; eons; long time"
+    },
+    {
+      "question": "四念処",
+      "answer": [
+        "しねんじょ"
+      ],
+      "meaning": "satipatthana; mindfulness"
+    },
+    {
+      "question": "先生",
+      "answer": [
+        "せんじょう",
+        "せんしょう",
+        "ぜんじょう"
+      ],
+      "meaning": "previous existence"
+    },
+    {
+      "question": "空無辺処",
+      "answer": [
+        "くうむへんしょ"
+      ],
+      "meaning": "Kumuhensho; lowest heaven of Mushikikai; realm of non-form"
+    },
+    {
+      "question": "不殺生",
+      "answer": [
+        "ふせっしょう"
+      ],
+      "meaning": "ahimsa; abstinence from taking life; principle of non-violence in Jainism, Buddhism, Hinduism, etc."
+    },
+    {
+      "question": "声",
+      "answer": [
+        "しょう"
+      ],
+      "meaning": "voice; sound"
+    },
+    {
+      "question": "今世",
+      "answer": [
+        "こんせ",
+        "こんぜ"
+      ],
+      "meaning": "present world; present age"
+    },
+    {
+      "question": "緇衣",
+      "answer": [
+        "しえ",
+        "しい"
+      ],
+      "meaning": "priest's black robe"
+    },
+    {
+      "question": "緇衣",
+      "answer": [
+        "しえ",
+        "しい"
+      ],
+      "meaning": "priest"
+    },
+    {
+      "question": "選仏場",
+      "answer": [
+        "せんぶつじょう"
+      ],
+      "meaning": "Zen temple meditation hall"
+    },
+    {
+      "question": "仏国",
+      "answer": [
+        "ぶっこく"
+      ],
+      "meaning": "the land of Buddha; Buddhist paradise"
+    },
+    {
+      "question": "頓",
+      "answer": [
+        "とみ",
+        "とん",
+        "とに"
+      ],
+      "meaning": "attaining enlightenment in one effort (without ascetic practices, etc.)"
+    },
+    {
+      "question": "三厭",
+      "answer": [
+        "さんえん"
+      ],
+      "meaning": "red meat, bird and fish flesh; three disagreeable things"
+    },
+    {
+      "question": "三厭五葷",
+      "answer": [
+        "さんえんごくん"
+      ],
+      "meaning": "meat and the five pungent roots (avoided in Buddhist cuisine)"
+    },
+    {
+      "question": "行蘊",
+      "answer": [
+        "ぎょううん"
+      ],
+      "meaning": "formation of volition; aggregate of volition"
+    },
+    {
+      "question": "生所",
+      "answer": [
+        "しょうじょ",
+        "しょうしょ",
+        "うまれどころ"
+      ],
+      "meaning": "place of rebirth; place of reincarnation"
+    },
+    {
+      "question": "飲酒戒",
+      "answer": [
+        "おんじゅかい"
+      ],
+      "meaning": "Buddhist precept prohibiting the consumption of alcohol"
+    },
+    {
+      "question": "飲酒",
+      "answer": [
+        "おんじゅ",
+        "おんしゅ"
+      ],
+      "meaning": "consumption of alcohol (as prohibited by one of the Buddhist precepts)"
+    },
+    {
+      "question": "飲酒",
+      "answer": [
+        "おんじゅ",
+        "おんしゅ"
+      ],
+      "meaning": "Buddhist precept prohibiting the consumption of alcohol"
+    },
+    {
+      "question": "人天",
+      "answer": [
+        "にんでん",
+        "じんてん",
+        "にんてん"
+      ],
+      "meaning": "earth and heaven; human and heavenly beings"
+    },
+    {
+      "question": "応護",
+      "answer": [
+        "おうご"
+      ],
+      "meaning": "the Buddha's help (aid, succour)"
+    },
+    {
+      "question": "邪淫戒",
+      "answer": [
+        "じゃいんかい"
+      ],
+      "meaning": "prohibition on adultery and other indecent sexual acts"
+    },
+    {
+      "question": "伝持の八祖",
+      "answer": [
+        "でんじのはっそ"
+      ],
+      "meaning": "the eight doctrinal patriarchs who expounded the teachings (Nagarjuna, Nagabodhi, Vajrabodhi, Amoghavajra, Yi Xing, Huigo and Kukai) (in Shingon)"
+    },
+    {
+      "question": "付法の八祖",
+      "answer": [
+        "ふほうのはっそ"
+      ],
+      "meaning": "the Eight Lineage Patriarchs who received the transmission of the teachings, leading back to the Vairocana Buddha (Vairocana Buddha, Vajrasattva, Nagarjuna, Nagabodhi, Vajrabodhi, Amoghavajra, Huigo and Kukai) (in Shingon)"
+    },
+    {
+      "question": "七珍",
+      "answer": [
+        "しっちん",
+        "しちちん"
+      ],
+      "meaning": "the seven treasures (gold, silver, pearls, agate, crystal, coral, lapis lazuli)"
+    },
+    {
+      "question": "大悲観音",
+      "answer": [
+        "だいひかんのん"
+      ],
+      "meaning": "Kannon of Great Mercy (alt. name for Avalokiteshvara); Greatly Compassionate Kannon; Daihi Kannon"
+    },
+    {
+      "question": "不受不施派",
+      "answer": [
+        "ふじゅふせは"
+      ],
+      "meaning": "Nichiren sect that does not accept from or give to non-believers"
+    },
+    {
+      "question": "鼓楼",
+      "answer": [
+        "ころう",
+        "くろう"
+      ],
+      "meaning": "temple tower housing a drum for marking the passing of time"
+    },
+    {
+      "question": "五衰",
+      "answer": [
+        "ごすい"
+      ],
+      "meaning": "five signs of the impending death of a heavenly being"
+    },
+    {
+      "question": "大覚",
+      "answer": [
+        "だいかく",
+        "だいがく"
+      ],
+      "meaning": "great awakening; great enlightening"
+    },
+    {
+      "question": "大覚",
+      "answer": [
+        "だいかく",
+        "だいがく"
+      ],
+      "meaning": "greatly awakened person"
+    },
+    {
+      "question": "瑜伽行唯識学派",
+      "answer": [
+        "ゆがぎょうゆいしきがくは"
+      ],
+      "meaning": "Yoga Practice School; Consciousness-Only School"
+    },
+    {
+      "question": "瑜伽行派",
+      "answer": [
+        "ゆがぎょうは"
+      ],
+      "meaning": "Yogacara (school); Yogachara"
+    },
+    {
+      "question": "瑜伽師",
+      "answer": [
+        "ゆがし"
+      ],
+      "meaning": "yoga master"
+    },
+    {
+      "question": "惑",
+      "answer": [
+        "わく"
+      ],
+      "meaning": "klesha"
+    },
+    {
+      "question": "泥洹",
+      "answer": [
+        "ないおん"
+      ],
+      "meaning": "nirvana"
+    },
+    {
+      "question": "般涅槃",
+      "answer": [
+        "はつねはん"
+      ],
+      "meaning": "parinirvana; final release from the cycle of karma and rebirth"
+    },
+    {
+      "question": "行法",
+      "answer": [
+        "ぎょうほう",
+        "ぎょうぼう"
+      ],
+      "meaning": "practice of Buddhism; Buddhist training"
+    },
+    {
+      "question": "捨",
+      "answer": [
+        "しゃ"
+      ],
+      "meaning": "equanimity; upeksa; upekkha"
+    },
+    {
+      "question": "離行",
+      "answer": [
+        "りぎょう"
+      ],
+      "meaning": "renunciation; self-abnegation"
+    },
+    {
+      "question": "断行",
+      "answer": [
+        "だんぎょう"
+      ],
+      "meaning": "asceticism; practices that eliminate afflictions"
+    },
+    {
+      "question": "無瞋",
+      "answer": [
+        "むしん"
+      ],
+      "meaning": "non-anger; non-hatred; no-enmity"
+    },
+    {
+      "question": "三善根",
+      "answer": [
+        "さんぜんごん",
+        "さんぜんこん"
+      ],
+      "meaning": "three wholesome roots (no coveting, no anger, no delusion)"
+    },
+    {
+      "question": "無貪",
+      "answer": [
+        "むとん"
+      ],
+      "meaning": "non-craving; non-coveting"
+    },
+    {
+      "question": "無癡",
+      "answer": [
+        "むち"
+      ],
+      "meaning": "no delusion"
+    },
+    {
+      "question": "定",
+      "answer": [
+        "じょう"
+      ],
+      "meaning": "samadhi (state of intense concentration achieved through meditation)"
+    },
+    {
+      "question": "覚路",
+      "answer": [
+        "かくろ",
+        "がくろ"
+      ],
+      "meaning": "path to enlightenment"
+    },
+    {
+      "question": "三戦神",
+      "answer": [
+        "さんせんじん"
+      ],
+      "meaning": "the three guardian deities in time of war (Marici, Mahakala and Vaisravana)"
+    },
+    {
+      "question": "三天",
+      "answer": [
+        "さんてん",
+        "さんでん"
+      ],
+      "meaning": "the three deities (Marici, Mahakala, Sarasvati)"
+    },
+    {
+      "question": "三天",
+      "answer": [
+        "さんてん",
+        "さんでん"
+      ],
+      "meaning": "the three celestials (Shiva, Vishnu and Brahma)"
+    },
+    {
+      "question": "乾屎橛",
+      "answer": [
+        "かんしけつ"
+      ],
+      "meaning": "something worthless; something impure; something unimportant; dried excrement in the shape of a stick"
+    },
+    {
+      "question": "鉄札",
+      "answer": [
+        "てっさつ"
+      ],
+      "meaning": "iron tablet belonging to Yama that is inscribed with the names of souls to be sent to hell"
+    },
+    {
+      "question": "常見",
+      "answer": [
+        "じょうけん"
+      ],
+      "meaning": "eternalism (belief in permanence of things); sassatavada"
+    },
+    {
+      "question": "五障",
+      "answer": [
+        "ごしょう"
+      ],
+      "meaning": "five hindrances (that prevent a woman from becoming a Buddha, a Brahmā, a Shakra, a devil king, or a wheel-turning king); five obstructions to women's attainment"
+    },
+    {
+      "question": "五障",
+      "answer": [
+        "ごしょう"
+      ],
+      "meaning": "five hindrances (that impede ascetic practices; sensory desire, ill-will, sloth and torpor, restlessness and worry, doubt)"
+    },
+    {
+      "question": "変成男子",
+      "answer": [
+        "へんじょうなんし"
+      ],
+      "meaning": "a woman being reborn as a man (in order to qualify for Buddhahood)"
+    },
+    {
+      "question": "羯磨",
+      "answer": [
+        "かつま",
+        "こんま"
+      ],
+      "meaning": "karma"
+    },
+    {
+      "question": "像法",
+      "answer": [
+        "ぞうぼう"
+      ],
+      "meaning": "age of the copied law (one of the three ages of Buddhism); middle day of the law; age of semblance dharma"
+    },
+    {
+      "question": "覆",
+      "answer": [
+        "ふく"
+      ],
+      "meaning": "concealment (of one's vices); veil; cover"
+    },
+    {
+      "question": "提婆",
+      "answer": [
+        "だいば"
+      ],
+      "meaning": "deva (being with god-like characteristics)"
+    },
+    {
+      "question": "種子",
+      "answer": [
+        "しゅうじ",
+        "しゅじ"
+      ],
+      "meaning": "seed; bija"
+    },
+    {
+      "question": "種子",
+      "answer": [
+        "しゅうじ",
+        "しゅじ"
+      ],
+      "meaning": "seed syllable (Sanskrit character representing a Buddha or Bodhisattva)"
+    },
+    {
+      "question": "天地眼",
+      "answer": [
+        "てんちげん"
+      ],
+      "meaning": "Acala's eyes, one looking up and the other looking down"
+    },
+    {
+      "question": "無間",
+      "answer": [
+        "むけん",
+        "むげん"
+      ],
+      "meaning": "the Avici hell"
+    }
+  ]
+}
