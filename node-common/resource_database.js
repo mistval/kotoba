@@ -170,7 +170,10 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
       }
     } else {
       for (const word of words) {
-        const difficultyScore = wordsByFrequency.indexOf(word);
+        let difficultyScore = wordsByFrequency.indexOf(word);
+        if (difficultyScore === -1) {
+          difficultyScore = Number.MAX_SAFE_INTEGER;
+        }
 
         const relevantReadings = readingElements
           .filter(r => !r.re_restr || r.re_restr.includes(word))
