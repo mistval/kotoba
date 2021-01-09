@@ -813,7 +813,7 @@ class DiscordMessageSender {
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
     this.closeAudioConnection();
 
-    const description = 'I have to reboot for an update. I\'ll be back in about one minute :)';
+    const description = 'I have to reboot for an update. I\'ll be back in about two minutes :)';
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,
