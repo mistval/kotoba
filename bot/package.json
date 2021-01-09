@@ -33,17 +33,17 @@
     "erex": "0.0.1",
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
-    "kitsu": "7.0.4",
+    "kitsu": "9.1.18",
     "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.24.0",
     "mongoose": "5.7.9",
-    "monochrome-bot": "^3.0.0-alpha.23",
+    "monochrome-bot": "3.0.0-alpha.24",
     "parse5": "5.1.0",
     "qs": "6.9.4",
     "striptags": "3.1.1",
-    "unofficial-jisho-api": "2.0.5"
+    "unofficial-jisho-api": "2.0.13"
   },
   "devDependencies": {
     "csv-stringify": "^5.3.0",
