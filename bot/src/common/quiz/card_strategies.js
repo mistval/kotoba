@@ -48,7 +48,7 @@ function answerCompareConvertKana(card, answerCandidate) {
   let correctAnswersLowercase = arrayToLowerCase(card.answer);
   for (let i = 0; i < correctAnswersLowercase.length; ++i) {
     let correctAnswer = correctAnswersLowercase[i];
-    if (convertToHiragana(correctAnswer) === convertedAnswerCandidate) {
+    if (convertToHiragana(correctAnswer).localeCompare(convertedAnswerCandidate) === 0) {
       return i;
     }
   }
