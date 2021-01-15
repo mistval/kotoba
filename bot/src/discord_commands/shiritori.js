@@ -340,13 +340,23 @@ Starting a Shiritori game. I'll go first!
   `;
 }
 
+const longDescription = `
+Start a game of shiritori in this channel.
+
+To join a game that's already running, say **join**.
+To leave a game, say **leave**.
+If you want me to leave the game and let you humans duke it out, say **bot leave**.
+
+Some timing settings can be configured in **<prefix>settings**.
+`;
+
 module.exports = {
   commandAliases: ['shiritori', 'st', 'sh'],
   canBeChannelRestricted: true,
   cooldown: 2,
   uniqueId: 'shiritori43953',
   shortDescription: 'Start a game of shiritori in this channel.',
-  longDescription: 'Start a game of shiritori in this channel. **<prefix>shiritori hardcore** starts a game in hardcore mode, which means you get kicked out if you give an invalid answer. Some timing settings can be configured in **<prefix>settings**.',
+  longDescription,
   requiredBotPermissions: [
     Permissions.embedLinks,
     Permissions.sendMessages,
