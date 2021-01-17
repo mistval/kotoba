@@ -44,10 +44,11 @@ function removeSpoilerTags(answerCandidate) {
 }
 
 function answerCompareConvertKana(card, answerCandidate) {
-  const convertedAnswerCandidate = convertToHiragana(removeSpoilerTags(answerCandidate));
-  for (let i = 0; i < card.answer.length; ++i) {
-    const correctAnswer = card.answer[i];
-    if (convertToHiragana(correctAnswer).localeCompare(convertedAnswerCandidate, 'en', { sensitivity: 'base' }) === 0) {
+  let convertedAnswerCandidate = convertToHiragana(removeSpoilerTags(answerCandidate));
+  let correctAnswersLowercase = arrayToLowerCase(card.answer);
+  for (let i = 0; i < correctAnswersLowercase.length; ++i) {
+    let correctAnswer = correctAnswersLowercase[i];
+    if (convertToHiragana(correctAnswer) === convertedAnswerCandidate) {
       return i;
     }
   }
