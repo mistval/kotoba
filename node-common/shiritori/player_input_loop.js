@@ -134,7 +134,7 @@ function realPlayerTurnInputLoop(game, player) {
 
         // TODO: Because of this, there is a (very) short period of time when the loop is not
         // accepting answers and answers might get lost.
-        const answerResult = await game.strategy.tryAcceptAnswer(input, game.answerHistory);
+        const answerResult = await game.strategy.tryAcceptAnswer(input, game.answerHistory, false);
 
         if (answerResult.accepted) {
           const turnResult = new TurnResult(

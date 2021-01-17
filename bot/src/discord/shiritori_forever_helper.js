@@ -280,6 +280,7 @@ function tryHandleMessage(monochrome, msg) {
     return japaneseGameStrategy.tryAcceptAnswer(
       msg.content,
       previousWordInformation ? [previousWordInformation] : [],
+      false,
     );
   }).then((acceptanceResult) => {
     ({ accepted } = acceptanceResult);

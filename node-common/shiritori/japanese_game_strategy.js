@@ -8,6 +8,7 @@ const REJECTION_REASON = {
   ReadingEndsWithN: 'Reading ends with N',
   WrongStartSequence: 'Does not start with the right characters',
   NotNoun: 'Not a noun',
+  BotBanned: 'Bot not allowed to use that word',
 };
 
 const largeHiraganaForSmallHiragana = {
@@ -85,7 +86,7 @@ class JapaneseGameStrategy {
     this.resourceDatabase = resourceDatabase;
   }
 
-  async tryAcceptAnswer(answer, wordInformationsHistory) {
+  async tryAcceptAnswer(answer, wordInformationsHistory, isBot) {
     const hiragana = convertToHiragana(answer);
     const possibleWordInformations = await this.resourceDatabase.getShiritoriWords(hiragana);
 
@@ -106,6 +107,7 @@ class JapaneseGameStrategy {
     let readingToUse;
     let answerToUse;
     let meaningToUse;
+    let botBanned = false;
     for (let i = 0; i < possibleWordInformations.length; i += 1) {
       const possibleWordInformation = possibleWordInformations[i];
       const { reading } = possibleWordInformation;
@@ -121,6 +123,8 @@ class JapaneseGameStrategy {
         pushUnique(alreadyUsedReadings, reading);
       } else if (!possibleWordInformation.isNoun) {
         pushUnique(noNounReadings, reading);
+      } else if (isBot && possibleWordInformation.botBanned) {
+        botBanned = true;
       } else {
         readingToUse = reading;
         answerToUse = possibleWordInformation.word;
@@ -149,6 +153,8 @@ class JapaneseGameStrategy {
       );
     } if (noNounReadings.length > 0) {
       return new RejectedResult(REJECTION_REASON.NotNoun, noNounReadings);
+    } if (botBanned) {
+      return new RejectedResult(REJECTION_REASON.BotBanned);
     }
 
     assert(false, 'Unexpected branch');
@@ -176,7 +182,7 @@ class JapaneseGameStrategy {
     // Find a word that is usable and return it.
     while (true) {
       const nextReading = possibleNextReadings[nextReadingIndex];
-      const result = await this.tryAcceptAnswer(nextReading, wordInformationsHistory);
+      const result = await this.tryAcceptAnswer(nextReading, wordInformationsHistory, true);
       if (result.accepted) {
         return result;
       }

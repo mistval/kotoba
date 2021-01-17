@@ -138,7 +138,9 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
     const words = (entry.k_ele || []).flatMap(element => element.keb);
     const readingElements = entry.r_ele;
     const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
+    const misc = entry.sense.flatMap(s => s.misc);
     const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
+    const botBanned = misc.includes('vulg');
     const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
 
     assert(readingElements.length > 0, `No readings for ${entryNum}`);
@@ -163,6 +165,7 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
           definitions,
           isNoun,
           difficultyScore,
+          botBanned,
         };
 
         const json = JSON.stringify(searchResult);
@@ -193,6 +196,7 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
             definitions,
             isNoun,
             difficultyScore,
+            botBanned,
           };
 
           const json = JSON.stringify(searchResult);
