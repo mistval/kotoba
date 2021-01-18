@@ -52,6 +52,17 @@ function getWOTDChannel(eris, serverId, channelId) {
   return channel;
 }
 
+function calculateNextSendTime(previousScheduledTime, frequency) {
+  const previousScheduledTimeMs = previousScheduledTime.getTime();
+  const now = new Date();
+  const msSincePreviousScheduledTime = now - previousScheduledTimeMs;
+  const ticksSincePreviousScheduledTime = msSincePreviousScheduledTime / frequency;
+  const nextSendTimeMs = previousScheduledTimeMs
+    + (Math.ceil(ticksSincePreviousScheduledTime) * frequency);
+
+  return new Date(nextSendTimeMs);
+}
+
 async function sendSchedule(schedule, monochrome) {
   const channel = getWOTDChannel(
     monochrome.getErisBot(),
@@ -62,7 +73,7 @@ async function sendSchedule(schedule, monochrome) {
   if (channel) {
     try {
       // eslint-disable-next-line no-param-reassign
-      schedule.lastSent = new Date();
+      schedule.nextSendTime = calculateNextSendTime(schedule.nextSendTime, schedule.frequency);
       await schedule.save();
 
       await showRandomWord(
@@ -96,8 +107,7 @@ async function pollLoop(monochrome) {
     const now = new Date();
     const dueSchedules = await WordScheduleModel.find({
       status: StatusConstants.RUNNING,
-      start: { $lte: now },
-      $or: [{ lastSent: null }, { $expr: { $lte: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
+      nextSendTime: { $lt: now },
     });
 
     for (const schedule of dueSchedules) {
@@ -148,15 +158,12 @@ function formatFrequency(time) {
 
 /**
  * Gets the next time the command should run
- * @param {Date} start
+ * @param {Date} nextSendTime
  * @param {number} frequency
  */
-function getNextTime(start, frequency) {
+function getNextTime(nextSendTime) {
   const now = new Date();
-  if (now > start) {
-    return formatFrequency(frequency - ((now - start) % frequency));
-  }
-  return formatFrequency(start - now);
+  return formatFrequency(nextSendTime - now);
 }
 
 /**
@@ -193,7 +200,7 @@ async function setSchedule(suffix, msg) {
       case 'list':
         if (serverSchedules.length > 0) {
           const list = serverSchedules
-            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Start time:** ${i.start.toLocaleString()}, **Last time sent:** ${i.lastSent ? i.lastSent.toLocaleString() : 'never'}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.start, i.frequency)} (if status is 'running').`)
+            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.nextSendTime)} (if status is 'running').`)
             .join('\n');
           return msg.channel.createMessage(list);
         }
@@ -236,7 +243,7 @@ async function setSchedule(suffix, msg) {
           }
           serverSchedules[index].status = StatusConstants.RUNNING;
           await serverSchedules[index].save(); // put it into the database
-          return msg.channel.createMessage(`WOTD schedule resumed successfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}.`);
+          return msg.channel.createMessage(`WOTD schedule resumed successfully. Next word in ${getNextTime(serverSchedules[index].nextSendTime)}.`);
         }
         return msg.channel.createMessage('There is no WOTD schedule in this channel.');
 
@@ -362,22 +369,21 @@ async function setSchedule(suffix, msg) {
 
   if (updateSchedule) {
     updateSchedule.frequency = frequency;
-    updateSchedule.start = start;
     updateSchedule.level = suffixLevel;
     updateSchedule.status = StatusConstants.RUNNING;
-    updateSchedule.lastSent = null;
+    updateSchedule.nextSendTime = start;
     await updateSchedule.save(); // put it into the database
     if (rounded) {
       return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
     }
-    return msg.channel.createMessage(`Your schedule has been updated successfully. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
+    return msg.channel.createMessage(`Your schedule has been updated successfully. Next word in ${getNextTime(start)}.`);
   }
 
   const schedule = new WordScheduleModel({
     _id: channelId,
     serverId,
     frequency,
-    start,
+    nextSendTime: start,
     level: suffixLevel,
     status: StatusConstants.RUNNING,
   });
@@ -386,7 +392,7 @@ async function setSchedule(suffix, msg) {
   if (rounded) {
     return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
   }
-  return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
+  return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(start)}.`);
 }
 
 let startedPollLoop = false;
