@@ -114,6 +114,8 @@ function createBot() {
     monochrome.getErisBot().on('messageReactionRemove', (message, emoji, userId) => {
       monochrome.reactionButtonManager.handleMessageReactionRemove(message, emoji, userId);
     });
+
+    loadScheduleIntervals(monochrome);
   });
 
   return monochrome;
@@ -178,7 +180,6 @@ async function start() {
   checkApiKeys(monochrome);
   monochrome.connect();
   loadShiritoriForeverChannels(monochrome);
-  loadScheduleIntervals(monochrome);
 }
 
 start().catch((err) => {

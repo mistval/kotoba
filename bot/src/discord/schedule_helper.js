@@ -1,15 +1,22 @@
+const util = require('util');
 const assert = require('assert');
 const dbConnection = require('kotoba-node-common').database.connection;
 const WordScheduleModel = require('kotoba-node-common').models.createWordSchedulesModel(dbConnection);
 const { Permissions } = require('monochrome-bot');
 const showRandomWord = require('./show_random_word.js');
 
-const frequencyCheck = 30 * 60 * 1000;
+const wait = util.promisify(setTimeout);
+
+const POLL_INTERVAL_MS = 60000; // 1 minute
+const CHANNEL_SPACING_DELAY_MS = 4000; // 4 seconds
+const frequencyCheck = 30 * 60 * 1000; // 30 minutes
 
 const statusConstants = {
   running: 'running',
   paused: 'paused',
 };
+
+let pollLoopHandle;
 
 function hasSendPermissions(eris, channel) {
   assert(channel.guild, 'Command is not being used in a server');
@@ -31,6 +38,11 @@ function getWOTDChannel(eris, serverId, channelId) {
 
   const channel = server.channels.get(channelId);
 
+  // If the channel no longer exists, return undefined
+  if (!channel) {
+    return undefined;
+  }
+
   // If Kotoba does not have permission to send the messages, return undefined.
   if (!hasSendPermissions(eris, channel)) {
     return undefined;
@@ -40,86 +52,69 @@ function getWOTDChannel(eris, serverId, channelId) {
   return channel;
 }
 
-/**
- * Starts the interval
- * @param {Monochrome} monochrome
- * @param {boolean} firstCall
- */
-async function setTimer(monochrome, firstCall) {
-  let nextTime;
-  let now = new Date();
-  let offset = now.getTime() % frequencyCheck;
-  now = new Date(now - offset); // We sync the time with the frequencyCheck value
+async function sendSchedule(schedule, monochrome) {
+  const channel = getWOTDChannel(
+    monochrome.getErisBot(),
+    schedule.serverId,
+    schedule.id,
+  );
 
-  try {
-    // The first time this function is called we don't want to run the command,
-    // just set the timer so it runs in sync with the frequencyCheck value
-    if (!firstCall) {
-      // We ask for the schedules that have reached the start date and
-      // have never been sent or the time since its last execution exceeds its frequency
-      const dueSchedules = await WordScheduleModel.find({
-        status: statusConstants.running,
-        start: { $lte: now },
-        $or: [{ lastSent: null }, { $expr: { $lte: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
+  if (channel) {
+    try {
+      await showRandomWord(
+        schedule.level,
+        channel,
+        monochrome,
+        undefined,
+        undefined,
+        true,
+        true,
+      );
+
+      // eslint-disable-next-line no-param-reassign
+      schedule.lastSent = new Date();
+      await schedule.save();
+
+      monochrome.getLogger().info({
+        event: 'WOTD MESSAGE SENT',
+        channel,
       });
-
-      await Promise.all(dueSchedules.map(async (schedule, i) => {
-        const channel = getWOTDChannel(
-          monochrome.getErisBot(),
-          schedule.serverId,
-          schedule.id,
-        );
-
-        if (channel) {
-          try {
-            await showRandomWord(
-              schedule.level,
-              channel,
-              monochrome,
-              undefined,
-              undefined,
-              true,
-              true,
-            );
-
-            dueSchedules[i].lastSent = now;
-            await schedule.save();
-
-            monochrome.getLogger().info({
-              event: 'WOTD MESSAGE SENT',
-              channel,
-            });
-          } catch (err) {
-            monochrome.getLogger().warn({
-              err,
-              event: 'WOTD CHANNEL ERROR',
-              channel,
-            });
-          }
-        }
-      }));
+    } catch (err) {
+      monochrome.getLogger().warn({
+        err,
+        event: 'WOTD CHANNEL ERROR',
+        channel,
+      });
     }
+  } else {
+    await schedule.remove();
+  }
+}
 
-    // Since it's an asynchronous function,
-    // we sync it manually with the clock for its next execution
-    now = new Date();
-    offset = now.getTime() % frequencyCheck;
-    const nextTimeOut = frequencyCheck - offset;
-    assert(firstCall || nextTimeOut > 120000, `Timeout is weirdly short (${nextTimeOut}ms)`);
-    nextTime = nextTimeOut;
+async function pollLoop(monochrome) {
+  try {
+    const now = new Date();
+    const dueSchedules = await WordScheduleModel.find({
+      status: statusConstants.running,
+      start: { $lte: now },
+      $or: [{ lastSent: null }, { $expr: { $lte: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
+    });
+
+    for (const schedule of dueSchedules) {
+      // eslint-disable-next-line no-await-in-loop
+      await sendSchedule(schedule, monochrome);
+      // eslint-disable-next-line no-await-in-loop
+      await wait(CHANNEL_SPACING_DELAY_MS);
+    }
   } catch (err) {
     monochrome.getLogger().error({
       err,
       event: 'WOTD ERROR',
     });
+  } finally {
+    clearTimeout(pollLoopHandle);
+    pollLoopHandle = setTimeout(() => pollLoop(monochrome), POLL_INTERVAL_MS);
   }
-
-  // If there was an error and nextTime wasn't calculated, try again in 15 minutes
-  nextTime = nextTime || (now.getTime() + (15 * 60 * 1000));
-
-  setTimeout(() => {
-    setTimer(monochrome);
-  }, nextTime);
 }
 
 /**
@@ -394,15 +389,13 @@ async function setSchedule(suffix, msg) {
   return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
 
-let startedIntervals = false;
+let startedPollLoop = false;
 
 async function loadIntervals(monochrome) {
-  monochrome.getErisBot().on('ready', () => {
-    if (!startedIntervals) {
-      startedIntervals = true;
-      setTimer(monochrome, true);
-    }
-  });
+  if (!startedPollLoop) {
+    startedPollLoop = true;
+    pollLoop(monochrome);
+  }
 }
 
 module.exports = {
