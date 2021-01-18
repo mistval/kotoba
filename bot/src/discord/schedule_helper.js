@@ -9,11 +9,11 @@ const wait = util.promisify(setTimeout);
 
 const POLL_INTERVAL_MS = 60000; // 1 minute
 const CHANNEL_SPACING_DELAY_MS = 4000; // 4 seconds
-const frequencyCheck = 30 * 60 * 1000; // 30 minutes
+const FREQUENCY_CHECK = 30 * 60 * 1000; // 30 minutes
 
-const statusConstants = {
-  running: 'running',
-  paused: 'paused',
+const StatusConstants = {
+  RUNNING: 'running',
+  PAUSED: 'paused',
 };
 
 let pollLoopHandle;
@@ -95,7 +95,7 @@ async function pollLoop(monochrome) {
   try {
     const now = new Date();
     const dueSchedules = await WordScheduleModel.find({
-      status: statusConstants.running,
+      status: StatusConstants.RUNNING,
       start: { $lte: now },
       $or: [{ lastSent: null }, { $expr: { $lte: ['$lastSent', { $subtract: [now, '$frequency'] }] } }],
     });
@@ -210,10 +210,10 @@ async function setSchedule(suffix, msg) {
       case 'pause':
         index = serverSchedules.findIndex(i => i.id === channelId);
         if (index !== -1) {
-          if (serverSchedules[index].status === statusConstants.paused) {
+          if (serverSchedules[index].status === StatusConstants.PAUSED) {
             return msg.channel.createMessage('This channel\'s WOTD schedule is already paused.');
           }
-          serverSchedules[index].status = statusConstants.paused;
+          serverSchedules[index].status = StatusConstants.PAUSED;
           await serverSchedules[index].save(); // put it into the database
           return msg.channel.createMessage('WOTD schedule paused successfully.');
         }
@@ -221,8 +221,8 @@ async function setSchedule(suffix, msg) {
 
       case 'pauseall':
         await Promise.all(serverSchedules.map(async (schedule, i) => {
-          if (schedule.status === statusConstants.running) {
-            serverSchedules[i].status = statusConstants.paused;
+          if (schedule.status === StatusConstants.RUNNING) {
+            serverSchedules[i].status = StatusConstants.PAUSED;
             await serverSchedules[i].save(); // put it into the database
           }
         }));
@@ -231,10 +231,10 @@ async function setSchedule(suffix, msg) {
       case 'resume':
         index = serverSchedules.findIndex(i => i.id === channelId);
         if (index !== -1) {
-          if (serverSchedules[index].status === statusConstants.running) {
+          if (serverSchedules[index].status === StatusConstants.RUNNING) {
             return msg.channel.createMessage('The WOTD schedule for this channel is already active.');
           }
-          serverSchedules[index].status = statusConstants.running;
+          serverSchedules[index].status = StatusConstants.RUNNING;
           await serverSchedules[index].save(); // put it into the database
           return msg.channel.createMessage(`WOTD schedule resumed successfully. Next word in ${getNextTime(serverSchedules[index].start, serverSchedules[index].frequency)}.`);
         }
@@ -242,8 +242,8 @@ async function setSchedule(suffix, msg) {
 
       case 'resumeall':
         await Promise.all(serverSchedules.map(async (schedule, i) => {
-          if (schedule.status === statusConstants.paused) {
-            serverSchedules[i].status = statusConstants.running;
+          if (schedule.status === StatusConstants.PAUSED) {
+            serverSchedules[i].status = StatusConstants.RUNNING;
             await serverSchedules[i].save(); // put it into the database
           }
         }));
@@ -292,8 +292,8 @@ async function setSchedule(suffix, msg) {
       } else {
         return msg.channel.createMessage(`You must specify frequency. Frequency formats consist of number and unit. Valid units are **s**, **m**, **h**, **d**, **w**.  Say **${msg.prefix}help wotd** for help!`);
       }
-      if (frequency < frequencyCheck) {
-        return msg.channel.createMessage(`That frequency is too short. The minimum frequency is ${formatFrequency(frequencyCheck)}. Say **${msg.prefix}help wotd** for help!`);
+      if (frequency < FREQUENCY_CHECK) {
+        return msg.channel.createMessage(`That frequency is too short. The minimum frequency is ${formatFrequency(FREQUENCY_CHECK)}. Say **${msg.prefix}help wotd** for help!`);
       }
       break;
     }
@@ -302,9 +302,9 @@ async function setSchedule(suffix, msg) {
   switch (suffixStart) {
     case 'now': {
       // We sync the time with the frequencyCheck value
-      const offset = start.getTime() % frequencyCheck;
+      const offset = start.getTime() % FREQUENCY_CHECK;
       if (offset > 0) {
-        start.setTime(start.getTime() + (frequencyCheck - offset));
+        start.setTime(start.getTime() + (FREQUENCY_CHECK - offset));
         rounded = true;
       }
       break;
@@ -317,9 +317,9 @@ async function setSchedule(suffix, msg) {
         start.setSeconds(0);
         start.setMilliseconds(0);
         // We sync the time with the frequencyCheck value
-        const offset = start.getTime() % frequencyCheck;
+        const offset = start.getTime() % FREQUENCY_CHECK;
         if (offset > 0) {
-          start.setTime(start.getTime() + (frequencyCheck - offset));
+          start.setTime(start.getTime() + (FREQUENCY_CHECK - offset));
           rounded = true;
         }
         // If it's already due it should start tomorrow
@@ -364,11 +364,11 @@ async function setSchedule(suffix, msg) {
     updateSchedule.frequency = frequency;
     updateSchedule.start = start;
     updateSchedule.level = suffixLevel;
-    updateSchedule.status = statusConstants.running;
+    updateSchedule.status = StatusConstants.RUNNING;
     updateSchedule.lastSent = null;
     await updateSchedule.save(); // put it into the database
     if (rounded) {
-      return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(frequencyCheck)}. It will start at ${start.toLocaleString()} UTC.`);
+      return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
     }
     return msg.channel.createMessage(`Your schedule has been updated successfully. Next word in ${getNextTime(updateSchedule.start, updateSchedule.frequency)}.`);
   }
@@ -379,12 +379,12 @@ async function setSchedule(suffix, msg) {
     frequency,
     start,
     level: suffixLevel,
-    status: statusConstants.running,
+    status: StatusConstants.RUNNING,
   });
 
   await schedule.save(); // put it into the database
   if (rounded) {
-    return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(frequencyCheck)}. It will start at ${start.toLocaleString()} UTC.`);
+    return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
   }
   return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(schedule.start, schedule.frequency)}.`);
 }
