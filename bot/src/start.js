@@ -5,7 +5,6 @@ const path = require('path');
 const fs = require('fs');
 const config = require('./../../config/config.js').bot;
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
-const loadScheduleIntervals = require('./discord/schedule_helper.js').loadIntervals;
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const Canvas = require('canvas');
@@ -178,7 +177,6 @@ async function start() {
   checkApiKeys(monochrome);
   monochrome.connect();
   loadShiritoriForeverChannels(monochrome);
-  loadScheduleIntervals(monochrome);
 }
 
 start().catch((err) => {
