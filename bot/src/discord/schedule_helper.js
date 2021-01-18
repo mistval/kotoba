@@ -61,6 +61,10 @@ async function sendSchedule(schedule, monochrome) {
 
   if (channel) {
     try {
+      // eslint-disable-next-line no-param-reassign
+      schedule.lastSent = new Date();
+      await schedule.save();
+
       await showRandomWord(
         schedule.level,
         channel,
@@ -70,10 +74,6 @@ async function sendSchedule(schedule, monochrome) {
         true,
         true,
       );
-
-      // eslint-disable-next-line no-param-reassign
-      schedule.lastSent = new Date();
-      await schedule.save();
 
       monochrome.getLogger().info({
         event: 'WOTD MESSAGE SENT',
