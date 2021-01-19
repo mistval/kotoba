@@ -10,6 +10,7 @@ const wait = util.promisify(setTimeout);
 const POLL_INTERVAL_MS = 60000; // 1 minute
 const CHANNEL_SPACING_DELAY_MS = 4000; // 4 seconds
 const FREQUENCY_CHECK = 30 * 60 * 1000; // 30 minutes
+const MAX_FREQUENCY = 8 * 7 * 24 * 60 * 60 * 1000; // 8 weeks
 
 const StatusConstants = {
   RUNNING: 'running',
@@ -301,6 +302,9 @@ async function setSchedule(suffix, msg) {
       }
       if (frequency < FREQUENCY_CHECK) {
         return msg.channel.createMessage(`That frequency is too short. The minimum frequency is ${formatFrequency(FREQUENCY_CHECK)}. Say **${msg.prefix}help wotd** for help!`);
+      }
+      if (frequency > MAX_FREQUENCY) {
+        return msg.channel.createMessage(`That frequency is too long. The maximum frequency is ${formatFrequency(MAX_FREQUENCY)}. Say **${msg.prefix}help wotd** for help!`);
       }
       break;
     }
