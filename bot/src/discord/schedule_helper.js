@@ -323,8 +323,15 @@ async function setSchedule(suffix, msg) {
     default: {
       const [, hours, minutes] = suffixArray[1].match(/([0-9]{1,2}):([0-9]{2})/) || [];
       if (hours) {
-        start.setHours(hours);
-        start.setMinutes(minutes);
+        const hoursInt = Number.parseInt(hours, 10);
+        const minutesInt = Number.parseInt(minutes, 10) || 0;
+
+        if (hoursInt > 23 || minutesInt > 59) {
+          return msg.channel.createMessage(`Start time must be in the format **hh:mm** (UTC). **hh** must be between 0 and 23 and **mm** must be between 0 and 59. Say **${msg.prefix}help wotd** for help!`);
+        }
+
+        start.setHours(hoursInt);
+        start.setMinutes(minutesInt);
         start.setSeconds(0);
         start.setMilliseconds(0);
         // We sync the time with the frequencyCheck value
