@@ -75,7 +75,7 @@ class About extends Component {
             <p>
               If you have feedback or ideas, please let me know using the contact form.
               The code for the website is&nbsp;
-              <a href="https://github.com/mistval/kotobaweb">
+              <a href="https://github.com/mistval/kotoba/tree/master/kotobaweb">
                 open source
               </a>
               &nbsp;and contributions are welcome.
