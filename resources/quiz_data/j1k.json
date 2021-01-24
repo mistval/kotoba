@@ -4,7 +4,7 @@
   "article": "a",
   "instructions": "Type the reading of the below word in Hiragana!",
   "questionCreationStrategy": "IMAGE",
-  "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
+  "dictionaryLinkStrategy": "WEBLIO_QUESTION",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
   "cardPreprocessingStrategy": "NONE",
   "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
