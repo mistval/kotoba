@@ -1,6 +1,6 @@
 {
   "uniqueId": "pokemon",
-  "description": "Enter the name of the pokemon in Japanese or English!",
+  "description": "Enter the name of the Pokemon in Japanese or English!",
   "name": "Pokemon Quiz",
   "article": "a",
   "instructions": "Who's that Pokemon?",
@@ -214,8 +214,8 @@
     {
       "question": "https://cdn.bulbagarden.net/upload/thumb/8/81/029Nidoran.png/250px-029Nidoran.png",
       "answer": [
-        "Nidoran♀",
-        "ニドラン♀"
+        "Nidoran",
+        "ニドラン"
       ]
     },
     {
@@ -235,8 +235,8 @@
     {
       "question": "https://cdn.bulbagarden.net/upload/thumb/4/4a/032Nidoran.png/250px-032Nidoran.png",
       "answer": [
-        "Nidoran♂",
-        "ニドラン♂"
+        "Nidoran",
+        "ニドラン"
       ]
     },
     {
