@@ -12,7 +12,7 @@ const categoryFields = [
   {name: '用語 Decks', value: 'suugaku pasokon rikagaku igaku shinrigaku keizai houritsu kenchiku buddha nature animals birds bugs fish plants vegetables'},
   {name: 'Japanese Place Name Decks', value: 'places_full tokyo osaka hokkaido aichi kanagawa (say **<prefix>quiz places** to see the rest)'},
   {name: 'Japanese Station Name Decks', value: 'stations_full stations_tokyo stations_osaka (say **<prefix>quiz stations** to see the rest)'},
-  {name: 'Japanese Misc. Decks', value: 'hiragana katakana kanawords rtk_vocab kotowaza common common_nojlpt k33 hard haard insane hentaigana kklc ranobe numbers yojijukugo kirakira dqn sao jsyn jsyn_full jptrivia kokuji onomato 擬音語 radicals jouyou images jpdefs myouji namae onago seiyuu cities prefectures countries emperors kunyomi'},
+  {name: 'Japanese Misc. Decks', value: 'hiragana katakana kanawords rtk_vocab kotowaza common common_nojlpt k33 hard haard insane hentaigana kklc ranobe numbers yojijukugo kirakira dqn sao jsyn jsyn_full jptrivia kokuji onomato 擬音語 radicals jouyou images jpdefs myouji namae onago seiyuu cities prefectures countries emperors kunyomi pokemon'},
   {name: 'English Decks', value: 'defs1 defs2 defs3 (up to defs17)\nanagrams4 anagrams5 anagrams6 (up to anagrams10)\nejtrans trivia esyn_easy esyn_med esyn_hard'},
   {name: 'Mixed Decks', value: 'easymix medmix hardmix hardermix insanemix easymixjp medmixjp hardmixjp hardermixjp insanemixjp'},
 ];
