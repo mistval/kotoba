@@ -2,7 +2,7 @@
   "uniqueId": "nagasaki",
   "name": "Nagasaki Place Name Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below Nagasaki place name in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

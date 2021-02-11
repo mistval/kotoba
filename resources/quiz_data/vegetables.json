@@ -2,7 +2,7 @@
   "uniqueId": "vegetables",
   "name": "Vegetables & Fruit Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below fruit or vegetable name in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

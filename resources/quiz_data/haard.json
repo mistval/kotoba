@@ -2,7 +2,7 @@
   "uniqueId": "tough",
   "name": "Haard Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading of the word in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

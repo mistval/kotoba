@@ -2,7 +2,7 @@
   "uniqueId": "kanken_1k",
   "name": "Kanken 1級 Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below word in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WEBLIO_QUESTION",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

@@ -2,7 +2,7 @@
   "uniqueId": "niigata",
   "name": "Niigata Place Name Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below Niigata place name in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "WIKIPEDIA_QUESTION_FIRST_TOKEN",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

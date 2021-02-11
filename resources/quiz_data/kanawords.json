@@ -2,7 +2,7 @@
   "uniqueId": "kanawords",
   "name": "Kana Words Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading of the word in romaji (Hepburn) or kana!",
+  "instructions": "Type the reading in Romaji (Hepburn) or kana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",

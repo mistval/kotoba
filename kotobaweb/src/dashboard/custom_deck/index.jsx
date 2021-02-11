@@ -53,7 +53,7 @@ const sampleGridCard = {
   question: '明日',
   answers: 'あした,あす',
   comment: 'Tomorrow',
-  instructions: 'Type the reading of the word in hiragana!',
+  instructions: 'Type the reading!',
   questionCreationStrategy: upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]),
 };
 
@@ -126,7 +126,7 @@ class EditDeck extends Component {
       stripeIsError: false,
       stripeMessage: '',
       saving: false,
-      defaultInstructions: 'Type the reading of the word in hiragana!',
+      defaultInstructions: 'Type the reading!',
     };
   }
 

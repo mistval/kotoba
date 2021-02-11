@@ -2,7 +2,7 @@
   "uniqueId": "bugs",
   "name": "Bugs Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading of the below bug in Hiragana!",
+  "instructions": "Type the reading!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "JISHO_QUESTION_WORD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
