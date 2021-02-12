@@ -1964,11 +1964,11 @@
       "meaning": "problem"
     },
     {
-      "question": "八百屋",
+      "question": "森",
       "answer": [
-        "やおや"
+        "もり"
       ],
-      "meaning": "greengrocer"
+      "meaning": "forest, shrine grove"
     },
     {
       "question": "簡単",
@@ -2085,11 +2085,11 @@
       "meaning": "to laugh, to smile, to sneer; to ridicule, to be dumbfounded; to be flabbergasted"
     },
     {
-      "question": "砂",
+      "question": "星",
       "answer": [
-        "すな"
+        "ほし"
       ],
-      "meaning": "sand; grit, gold dust; silver dust"
+      "meaning": "star; any light-emitting (or reflecting) heavenly body (except for the sun and the moon), offender; perpetrator, star point (in go); hoshi; intersection marked with a dot, circular symbol (said to be shaped like a shining star), bullseye, one's star (out of the nine stars)"
     },
     {
       "question": "上がる",
@@ -2331,7 +2331,7 @@
       "answer": [
         "みずうみ"
       ],
-      "meaning": "lake, lake (in place names)"
+      "meaning": "lake"
     },
     {
       "question": "普通",
@@ -2769,20 +2769,6 @@
         "にっき"
       ],
       "meaning": "diary; journal"
-    },
-    {
-      "question": "森",
-      "answer": [
-        "もり"
-      ],
-      "meaning": "forest, shrine grove"
-    },
-    {
-      "question": "星",
-      "answer": [
-        "ほし"
-      ],
-      "meaning": "star; any light-emitting (or reflecting) heavenly body (except for the sun and the moon), offender; perpetrator, star point (in go); hoshi; intersection marked with a dot, circular symbol (said to be shaped like a shining star), bullseye, one's star (out of the nine stars)"
     }
   ]
 }
