@@ -188,29 +188,35 @@ async function build() {
   const quizDeckFileNames = await fs.readdir(getPathForQuizDeckFile());
   for (let i = 0; i < quizDeckFileNames.length; i += 1) {
     const fileName = quizDeckFileNames[i];
-    const deckName = fileName.replace('.json', '');
 
-    // We creates the arrays in sequence instead of in parallel
-    // because that way there's less memory pressure.
-    // eslint-disable-next-line no-await-in-loop
-    const deckString = await fs.readFile(getPathForQuizDeckFile(fileName), 'utf8');
-    const deck = JSON.parse(deckString);
+    try {
+      const deckName = fileName.replace('.json', '');
 
-    const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
-    deck.cardDiskArrayPath = diskArrayDirectory;
-    assertNoDuplicateCards(deckName, deck);
-    assertNoAnswerlessQuestions(deckName, deck);
-    assertNoEmptyAnswers(deckName, deck);
+      // We creates the arrays in sequence instead of in parallel
+      // because that way there's less memory pressure.
+      // eslint-disable-next-line no-await-in-loop
+      const deckString = await fs.readFile(getPathForQuizDeckFile(fileName), 'utf8');
+      const deck = JSON.parse(deckString);
 
-    // eslint-disable-next-line no-await-in-loop
-    await diskArray.create(deck.cards, diskArrayDirectory);
-    // eslint-disable-next-line no-await-in-loop
-    deckDataForDeckName = await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
-    // eslint-disable-next-line no-await-in-loop
-    deckDataForDeckName = await createMeaningDeck(deckDataForDeckName, deck, deckName);
+      const diskArrayDirectory = getDiskArrayDirectoryForDeckName(deckName);
+      deck.cardDiskArrayPath = diskArrayDirectory;
+      assertNoDuplicateCards(deckName, deck);
+      assertNoAnswerlessQuestions(deckName, deck);
+      assertNoEmptyAnswers(deckName, deck);
 
-    delete deck.cards;
-    deckDataForDeckName[deckName] = deck;
+      // eslint-disable-next-line no-await-in-loop
+      await diskArray.create(deck.cards, diskArrayDirectory);
+      // eslint-disable-next-line no-await-in-loop
+      deckDataForDeckName = await createWordIdentificationDeck(deckDataForDeckName, deck, deckName);
+      // eslint-disable-next-line no-await-in-loop
+      deckDataForDeckName = await createMeaningDeck(deckDataForDeckName, deck, deckName);
+
+      delete deck.cards;
+      deckDataForDeckName[deckName] = deck;
+    } catch (err) {
+      console.warn(`Error building ${fileName}`);
+      throw err;
+    }
   }
 
   const deckDataString = JSON.stringify(deckDataForDeckName, null, 2);
