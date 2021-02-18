@@ -560,10 +560,10 @@ class EditDeck extends Component {
                   Consider exporting your deck as CSV and keeping a copy safe on your computer, just in case.
                 </li>
                 <li>
-                  If you have any problems or need help, <a href="https://discord.gg/zkAKbyJ">visit me in my lair</a>.
+                  If you have any problems or need help, <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a>.
                 </li>
                 <li>
-                  If you think your deck is good enough to be included on Kotoba's main deck list, <a href="https://discord.gg/zkAKbyJ">visit me in my lair</a> and tell me. Consider the following guidelines first.
+                  If you think your deck is good enough to be included on Kotoba's main deck list, <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a> and tell me. Consider the following guidelines first.
                   <ul>
                     <li>Deck should be unique, or a better version of an existing deck.</li>
                     <li>Deck should have 300+ questions.</li>

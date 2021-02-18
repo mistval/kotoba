@@ -129,7 +129,7 @@ manualSections.push(new ManualSection(
         <li>No troll decks.</li>
         <li>No advertising (I don't mind if you put one server invite link in your deck description, but this may change if people complain).</li>
       </ol>
-      <p>Violating these rules may lead to your deck being deleted or your being banned from using Kotoba. If you have questions or need to report a deck, visit <a href="https://discord.gg/zkAKbyJ">my server</a> or use the <NavLink to="/about">contact form</NavLink>.</p>
+      <p>Violating these rules may lead to your deck being deleted or your being banned from using Kotoba. If you have questions or need to report a deck, visit <a href="https://discord.gg/S92qCjbNHt">my server</a> or use the <NavLink to="/about">contact form</NavLink>.</p>
     </>
   ),
 ));
