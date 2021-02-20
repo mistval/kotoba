@@ -21,7 +21,7 @@ module.exports = {
 [ LIBRARY    ][ ${erisVersionString} ]
 [ FRAMEWORK  ][ Monochrome v${monochromeVersion} ]
 
-Need help, want to report a bug, make a suggestion, etc? Visit https://discordapp.com/invite/zkAKbyJ
+Need help, want to report a bug, make a suggestion, etc? Visit https://discord.gg/S92qCjbNHt
 
 Kotoba's code is mostly open source (https://github.com/mistval/kotoba).
 Kotoba runs on the monochrome bot framework (https://github.com/mistval/monochrome).
