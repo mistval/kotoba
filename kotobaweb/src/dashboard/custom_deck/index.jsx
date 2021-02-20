@@ -11,6 +11,15 @@ import NotificationStripe from '../../controls/notification_stripe';
 import { Editors } from 'react-data-grid-addons';
 import Analytics from '../../util/analytics';
 import HelpButton from '../../bot/quiz_builder_components/help_button';
+import { deckPermissions } from 'kotoba-common';
+
+const {
+  DeckPermissions,
+  REQUEST_SECRET_HEADER,
+  RESPONSE_PERMISSIONS_HEADER,
+  RESPONSE_READONLY_SECRET_HEADER,
+  RESPONSE_READWRITE_SECRET_HEADER,
+} = deckPermissions;
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -127,6 +136,7 @@ class EditDeck extends Component {
       stripeMessage: '',
       saving: false,
       defaultInstructions: 'Type the reading!',
+      permissions: DeckPermissions.NONE,
     };
   }
 
@@ -141,12 +151,19 @@ class EditDeck extends Component {
           cards: [{ ...sampleGridCard }],
           description: '',
           public: false,
-        }
+        },
+        permissions: DeckPermissions.OWNER,
       });
     }
 
     try {
-      const apiDeck = (await axios.get(`/api/decks/${deckId}`)).data;
+      const response = await axios.get(`/api/decks/${deckId}`, { headers: { [REQUEST_SECRET_HEADER]: this.getSecretFromUrl() } });
+
+      const apiDeck = response.data;
+      const permissions = response.headers[RESPONSE_PERMISSIONS_HEADER.toLowerCase()];
+      const readOnlySecret = response.headers[RESPONSE_READONLY_SECRET_HEADER.toLowerCase()];
+      const readWriteSecret = response.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
+
       const gridDeck = {
         _id: apiDeck._id,
         name: apiDeck.name,
@@ -156,7 +173,7 @@ class EditDeck extends Component {
         description: apiDeck.description || '',
       };
 
-      this.setState({ gridDeck });
+      this.setState({ gridDeck, permissions, readOnlySecret, readWriteSecret });
     } catch (err) {
       return this.handleError(err);
     }
@@ -292,12 +309,15 @@ class EditDeck extends Component {
     try {
       if (!this.state.gridDeck._id) {
         const res = await axios.post('/api/decks', saveDeck);
+
         this.setState((state) => {
           state.gridDeck._id = res.data._id;
+          state.readOnlySecret = res.headers[RESPONSE_READONLY_SECRET_HEADER.toLowerCase()];
+          state.readWriteSecret = res.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
           return state;
         });
       } else {
-        await axios.patch(`/api/decks/${this.state.gridDeck._id}`, saveDeck);
+        await axios.patch(`/api/decks/${this.state.gridDeck._id}`, saveDeck, { headers: { [REQUEST_SECRET_HEADER]: this.getSecretFromUrl() } });
       }
 
       this.setState({
@@ -413,6 +433,52 @@ class EditDeck extends Component {
     });
   }
 
+  getSecretLink = (secret) => {
+    return `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
+  }
+
+  getReadOnlyLink = () => {
+    return this.getSecretLink(this.state.readOnlySecret);
+  }
+
+  getReadWriteLink = () => {
+    return this.getSecretLink(this.state.readWriteSecret);
+  }
+
+  onResetViewLink = async () => {
+    try {
+      const res = await axios.post(`/api/decks/${this.state.gridDeck._id}/reset_read_secret`);
+      this.setState({ readOnlySecret: res.data });
+    } catch (err) {
+      this.handleError(err);
+    }
+  }
+
+  onResetEditLink = async () => {
+    try {
+      const res = await axios.post(`/api/decks/${this.state.gridDeck._id}/reset_write_secret`);
+      this.setState({ readWriteSecret: res.data });
+    } catch (err) {
+      this.handleError(err);
+    }
+  }
+
+  canSave = () => {
+    return !this.state.saving && (this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE);
+  }
+
+  canDelete = () => {
+    return this.state.permissions === DeckPermissions.OWNER;
+  }
+
+  canEdit = () => {
+    return this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE;
+  }
+
+  getSecretFromUrl = () => {
+    return new URLSearchParams(this.props.location.search).get("secret") || '';
+  }
+
   render() {
     if (!this.state.gridDeck) {
       return (
@@ -425,6 +491,9 @@ class EditDeck extends Component {
         <NotificationStripe show={true} message="Your Discord account must be at least one week old to create decks. Please try again later." onClose={this.onErrorCloseClicked} isError={true} />
       );
     }
+
+    const readOnlyLink = this.getReadOnlyLink();
+    const readWriteLink = this.getReadWriteLink();
 
     return (
       <>
@@ -455,6 +524,7 @@ class EditDeck extends Component {
               <div className="form-group">
                 <label className="bmd-label-floating" htmlFor="fullDeckName">Full deck name</label>
                 <input
+                  disabled={!this.canEdit()}
                   autoComplete="off"
                   onChange={this.onMetadataChange}
                   name="fullDeckName"
@@ -470,6 +540,7 @@ class EditDeck extends Component {
               <div className="form-group">
                 <label className="bmd-label-floating" htmlFor="shortDeckName">Short deck name</label>
                 <input
+                  disabled={!this.canEdit()}
                   autoComplete="off"
                   onChange={this.onMetadataChange}
                   name="shortDeckName"
@@ -487,6 +558,7 @@ class EditDeck extends Component {
               <div className="checkbox">
                 <label>
                   <input
+                    disabled={!this.canEdit()}
                     type="checkbox" checked={this.state.gridDeck.public}
                     onChange={this.onMetadataChange}
                     ref={(el) => { this.publicCheckBox = el; }}
@@ -504,8 +576,9 @@ class EditDeck extends Component {
           <div className="row">
             <div className="col-md-6 offset-md-1">
               <div className="form-group">
-                <label for="comment">Description</label>
+                <label htmlFor="comment">Description</label>
                 <textarea
+                  disabled={!this.canEdit()}
                   maxLength="500"
                   className="form-control"
                   rows="4"
@@ -519,16 +592,16 @@ class EditDeck extends Component {
           </div>
           <div className="row mt-4">
             <div className="col-xl-1 col-md-2 d-flex flex-column align-items-center">
-              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center" style={styles.actionButton} disabled={this.state.saving} onClick={this.onSave}>
+              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center" style={styles.actionButton} disabled={!this.canSave()} onClick={this.onSave}>
                 <i className="material-icons" style={styles.icon}>save</i>Save to bot
               </button>
               <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} onClick={this.onExport}>
                 <i className="material-icons" style={styles.icon}>vertical_align_bottom</i>Export as CSV
               </button>
-              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} onClick={this.onImport}>
+              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canEdit()} onClick={this.onImport}>
                 <i className="material-icons" style={styles.icon}>vertical_align_top</i>Import from CSV
               </button>
-              <button className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} data-toggle="modal" data-target="#deleteConfirmationModal">
+              <button className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canDelete()} data-toggle="modal" data-target="#deleteConfirmationModal">
                 <i className="material-icons" style={styles.icon}>delete</i>Delete
               </button>
             </div>
@@ -538,11 +611,31 @@ class EditDeck extends Component {
                 rowGetter={i => this.state.gridDeck.cards[i] || createEmptyGridCard(i) }
                 rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 20000)}
                 minHeight={900}
-                enableCellSelect={true}
+                enableCellSelect={this.canEdit()}
                 onGridRowsUpdated={this.onGridRowsUpdated}
               />
             </div>
           </div>
+          { this.state.readOnlySecret &&
+          <div className="row mt-5">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
+              <b>View Link</b> - Anyone with this link can view and download this deck.
+              <div className="input-group mb-3">
+                <input type="text" className="form-control" value={readOnlyLink} onClick={e => e.target.select()} />
+                <div className="input-group-append">
+                  <button className="btn btn-outline-secondary" type="button" onClick={this.onResetViewLink}>Reset</button>
+                </div>
+              </div>
+              <b>Edit Link</b> - Anyone with this link can view and edit this deck.
+              <div className="input-group mb-3">
+                <input type="text" className="form-control" value={readWriteLink} onClick={e => e.target.select()} />
+                <div className="input-group-append">
+                  <button className="btn btn-outline-secondary" type="button" onClick={this.onResetEditLink}>Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
           <div className="row mt-5">
             <div className="col-12">
               <h2>Pro Tips</h2>
