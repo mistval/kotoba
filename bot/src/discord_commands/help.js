@@ -37,7 +37,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
 
 const linksField = {
   name: 'Links',
-  value: '[Support Server](https://discord.gg/zkAKbyJ) | [Web](https://kotobaweb.com/bot) | [GitHub](https://github.com/mistval/kotoba)',
+  value: '[Support Server](https://discord.gg/S92qCjbNHt) | [Web](https://kotobaweb.com/bot) | [GitHub](https://github.com/mistval/kotoba)',
 };
 
 // Configuration end

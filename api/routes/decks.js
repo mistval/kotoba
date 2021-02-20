@@ -11,10 +11,20 @@ const path = require('path');
 const rateLimit = require('express-slow-down');
 const { deckValidation } = require('kotoba-common');
 const uuidv4 = require('uuid/v4');
+const { crypto } = require('kotoba-node-common');
+
+const {
+  DeckPermissions,
+  RESPONSE_PERMISSIONS_HEADER,
+  REQUEST_SECRET_HEADER,
+  RESPONSE_READONLY_SECRET_HEADER,
+  RESPONSE_READWRITE_SECRET_HEADER,
+} = require('kotoba-common').deckPermissions;
 
 const MAX_DECKS_PER_USER = 100;
 
 function filePathForShortName(shortName) {
+  assert(deckValidation.SHORT_NAME_ALLOWED_CHARACTERS_REGEX.test(shortName));
   return path.join(CUSTOM_DECK_DIR, `${shortName}.json`);
 }
 
@@ -53,6 +63,18 @@ async function checkHas100DecksOrFewer(req, res, next) {
   }
 }
 
+async function ensureSecrets(deck) {
+  if (!deck.readOnlySecret) {
+    const secrets = {
+      readOnlySecret: crypto.generateDeckSecret(),
+      readWriteSecret: crypto.generateDeckSecret(),
+    };
+
+    await CustomDeckModel.findByIdAndUpdate(deck._id, secrets);
+    Object.assign(deck, secrets);
+  }
+}
+
 function createAttachDeckMeta(lean) {
   return async (req, res, next) => {
     try {
@@ -70,6 +92,12 @@ function createAttachDeckMeta(lean) {
       }
 
       const deck = await query.exec();
+
+      if (!deck) {
+        return res.status(404).json({ message: 'Deck not found. It was deleted at some point. If you did not delete it, please report this.' });
+      }
+
+      await ensureSecrets(deck);
       req.deckMeta = deck;
 
       next();
@@ -79,20 +107,66 @@ function createAttachDeckMeta(lean) {
   };
 }
 
-function checkDeckMetaAttached(req, res, next) {
-  if (!req.deckMeta) {
-    return res.status(404).json({ message: 'Deck not found. It was deleted at some point. If you did not delete it, please report this.' });
+function attachPermissions(req, res, next) {
+  assert(req.deckMeta, 'Deck meta not attached');
+  assert(req.user, 'User not attached');
+
+  const providedSecret = req.header(REQUEST_SECRET_HEADER);
+
+  if (req.deckMeta.owner.equals(req.user._id) || req.user.admin) {
+    req.deckPermissions = DeckPermissions.OWNER;
+
+    res.header(RESPONSE_READONLY_SECRET_HEADER, req.deckMeta.readOnlySecret);
+    res.header(RESPONSE_READWRITE_SECRET_HEADER, req.deckMeta.readWriteSecret);
+  } else if (providedSecret === req.deckMeta.readWriteSecret) {
+    req.deckPermissions = DeckPermissions.READWRITE;
+  } else if (providedSecret === req.deckMeta.readOnlySecret) {
+    req.deckPermissions = DeckPermissions.READONLY;
+  } else {
+    req.deckPermissions = DeckPermissions.NONE;
+  }
+
+  res.header(RESPONSE_PERMISSIONS_HEADER, req.deckPermissions);
+
+  next();
+}
+
+function checkCanViewSecrets(req, res, next) {
+  assert(req.deckPermissions, 'Permissions not attached');
+
+  if (req.deckPermissions !== DeckPermissions.OWNER) {
+    return res.status(403).send({ message: 'You do not have permission to view this deck\'s secrets.' });
   }
 
   next();
 }
 
-function checkRequesterIsAuthorized(req, res, next) {
-  assert(req.deckMeta, 'No deck meta attached');
-  assert(req.user, 'No user attached');
+function checkCanViewDeck(req, res, next) {
+  assert(req.deckPermissions, 'Permissions not attached');
 
-  if (!req.deckMeta.owner.equals(req.user._id) && !req.user.admin) {
-    return res.status(403).send({ message: 'That deck does not belong to you. You can only view and edit decks that you own.' });
+  if (req.deckPermissions === DeckPermissions.NONE) {
+    return res.status(403).send({ message: 'You do not have permission to view this deck.' });
+  }
+
+  next();
+}
+
+function checkCanDeleteDeck(req, res, next) {
+  assert(req.deckPermissions, 'Permissions not attached');
+
+  if (req.deckPermissions !== DeckPermissions.OWNER) {
+    return res.status(403).send({ message: 'You do not have permission to delete this deck.' });
+  }
+
+  next();
+}
+
+function checkCanEditDeck(req, res, next) {
+  assert(req.deckPermissions, 'Permissions not attached');
+  assert(req.deckMeta, 'Meta not attached');
+
+  if (req.deckPermissions !== DeckPermissions.OWNER && req.deckPermissions !== DeckPermissions.READWRITE) {
+    return res.status(403).send({ message: 'You do not have permission to edit this deck.' });
   }
 
   next();
@@ -128,11 +202,15 @@ routes.get(
   getLimiter,
   checkAuth,
   createAttachDeckMeta(true),
-  checkDeckMetaAttached,
-  checkRequesterIsAuthorized,
-  attachDeckFull,
-  async (req, res) => {
-    return res.json(req.deck);
+  attachPermissions,
+  checkCanViewDeck,
+  async (req, res, next) => {
+    const filePath = filePathForShortName(req.deckMeta.shortName);
+    return res.sendFile(filePath, {}, (err) => {
+      if (err) {
+        next(err);
+      }
+    });
   },
 );
 
@@ -140,8 +218,8 @@ routes.delete(
   '/:id',
   checkAuth,
   createAttachDeckMeta(false),
-  checkDeckMetaAttached,
-  checkRequesterIsAuthorized,
+  attachPermissions,
+  checkCanDeleteDeck,
   async (req, res, next) => {
     try {
       await req.deckMeta.delete();
@@ -173,8 +251,8 @@ routes.patch(
   checkAuth,
   checkCanCreateDecks,
   createAttachDeckMeta(false),
-  checkDeckMetaAttached,
-  checkRequesterIsAuthorized,
+  attachPermissions,
+  checkCanEditDeck,
   checkShortNameUnique,
   attachDeckFull,
   async (req, res, next) => {
@@ -275,7 +353,44 @@ routes.post(
 
       await writeFullDeck(deckFull);
 
-      res.json({ _id: deckMeta._id });
+      res
+        .header(RESPONSE_READONLY_SECRET_HEADER, deckMeta.readOnlySecret)
+        .header(RESPONSE_READWRITE_SECRET_HEADER, deckMeta.readWriteSecret)
+        .json({ _id: deckMeta._id });
+    } catch (err) {
+      next(err);
+    }
+  },
+);
+
+routes.post(
+  '/:id/reset_read_secret',
+  checkAuth,
+  createAttachDeckMeta(false),
+  attachPermissions,
+  checkCanViewSecrets,
+  async (req, res, next) => {
+    try {
+      req.deckMeta.readOnlySecret = crypto.generateDeckSecret();
+      await req.deckMeta.save();
+      res.status(200).send(req.deckMeta.readOnlySecret);
+    } catch (err) {
+      next(err);
+    }
+  },
+);
+
+routes.post(
+  '/:id/reset_write_secret',
+  checkAuth,
+  createAttachDeckMeta(false),
+  attachPermissions,
+  checkCanViewSecrets,
+  async (req, res, next) => {
+    try {
+      req.deckMeta.readWriteSecret = crypto.generateDeckSecret();
+      await req.deckMeta.save();
+      res.status(200).send(req.deckMeta.readWriteSecret);
     } catch (err) {
       next(err);
     }

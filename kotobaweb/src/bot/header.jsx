@@ -17,7 +17,7 @@ function render() {
           <div className="mt-3">
             <a href="https://discordapp.com/oauth2/authorize?client_id=251239170058616833&scope=bot&permissions=52288" target="_blank" rel="noopener noreferrer">INVITE</a>
             <a className="ml-4" href="https://github.com/mistval/kotoba" target="_blank" rel="noopener noreferrer">GITHUB</a>
-            <a className="ml-4" href="https://discord.gg/zkAKbyJ" target="_blank" rel="noopener noreferrer">HELP</a>
+            <a className="ml-4" href="https://discord.gg/S92qCjbNHt" target="_blank" rel="noopener noreferrer">HELP</a>
           </div>
         </div>
         <ul className="nav nav-tabs bg-light mt-5">

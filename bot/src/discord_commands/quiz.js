@@ -409,7 +409,8 @@ function convertUserFacingSaveIdToDatabaseFacing(saveId) {
 
 function getTimeString(timestamp) {
   const date = new Date(timestamp);
-  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+  const minutes = date.getMinutes();
+  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${minutes < 10 ? '0' + minutes : minutes}`;
 }
 
 function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraContent) {

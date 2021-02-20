@@ -112,7 +112,7 @@ Some quiz decks are not in this repo, and some commands or other functionality a
 
 ## Help
 
-[Support](https://discord.gg/f4Gkqku)
+[Support](https://discord.gg/S92qCjbNHt)
 
 ## Third party links
 

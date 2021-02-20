@@ -142,6 +142,7 @@ if (errors) {
 }
 
 app.use((err, req, res, next) => {
+  console.warn(err);
   res.status(500).json({ success: false });
 });
 
