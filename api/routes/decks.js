@@ -63,15 +63,20 @@ async function checkHas100DecksOrFewer(req, res, next) {
   }
 }
 
-async function ensureSecrets(deck) {
-  if (!deck.readOnlySecret) {
+async function ensureSecrets(deckMeta) {
+  if (!deckMeta.readOnlySecret) {
+    const [secret1, secret2] = await Promise.all([
+      crypto.generateDeckSecret(),
+      crypto.generateDeckSecret(),
+    ]);
+
     const secrets = {
-      readOnlySecret: crypto.generateDeckSecret(),
-      readWriteSecret: crypto.generateDeckSecret(),
+      readOnlySecret: secret1,
+      readWriteSecret: secret2,
     };
 
-    await CustomDeckModel.findByIdAndUpdate(deck._id, secrets);
-    Object.assign(deck, secrets);
+    await CustomDeckModel.findByIdAndUpdate(deckMeta._id, secrets);
+    Object.assign(deckMeta, secrets);
   }
 }
 
@@ -348,6 +353,7 @@ routes.post(
       });
 
       await deckMeta.save();
+      await ensureSecrets(deckMeta);
 
       deckFull._id = deckMeta._id;
 
@@ -371,7 +377,7 @@ routes.post(
   checkCanViewSecrets,
   async (req, res, next) => {
     try {
-      req.deckMeta.readOnlySecret = crypto.generateDeckSecret();
+      req.deckMeta.readOnlySecret = await crypto.generateDeckSecret();
       await req.deckMeta.save();
       res.status(200).send(req.deckMeta.readOnlySecret);
     } catch (err) {
@@ -388,7 +394,7 @@ routes.post(
   checkCanViewSecrets,
   async (req, res, next) => {
     try {
-      req.deckMeta.readWriteSecret = crypto.generateDeckSecret();
+      req.deckMeta.readWriteSecret = await crypto.generateDeckSecret();
       await req.deckMeta.save();
       res.status(200).send(req.deckMeta.readWriteSecret);
     } catch (err) {

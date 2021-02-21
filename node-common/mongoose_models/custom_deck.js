@@ -10,8 +10,8 @@ const customDeckSchema = new mongoose.Schema({
   public: { type: Boolean, index: true, default: false },
   description: { type: String, default: '' },
   score: { type: Number, default: 0, index: true },
-  readOnlySecret: { type: String, default: crypto.generateDeckSecret, required: true, index: false },
-  readWriteSecret: { type: String, default: crypto.generateDeckSecret, required: true, index: false },
+  readOnlySecret: { type: String, required: false, index: false },
+  readWriteSecret: { type: String, required: false, index: false },
 });
 
 customDeckSchema.index({ name: 'text', description: 'text' });

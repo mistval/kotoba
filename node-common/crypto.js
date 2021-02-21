@@ -1,8 +1,15 @@
 const crypto = require('crypto');
 
 function generateDeckSecret() {
-  const secret = crypto.randomBytes(6);
-  return secret.toString('hex');
+  return new Promise((fulfill, reject) => {
+    crypto.randomBytes(6, (err, buffer) => {
+      if (err) {
+        return reject(err);
+      }
+
+      fulfill(buffer.toString('hex'));
+    });
+  });
 }
 
 module.exports = {
