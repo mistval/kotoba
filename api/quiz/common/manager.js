@@ -267,9 +267,6 @@ class ShowAnswersAction extends Action {
     const inputAsInt = parseInt(input);
     if (!card.options || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       session.answerAttempters.push(userId);
-      if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
-        return this.getSession_().tryAcceptAnswer(userId, userName, input);
-      }
     }
 
     return this.getSession_().tryAcceptAnswer(userId, userName, input);
