@@ -3,14 +3,15 @@ function parseSubArgs(input) {
   const equalsArguments = {};
 
   input = input.replace(/([^ ]*)=([^ ]*)/g, (m, argName, argValue) => {
+    argValue = Number.parseFloat(argValue) || argValue;
     equalsArguments[argName] = argValue;
     return '';
   }).replace(/(\w+)-(\w+)/g, (m, start, end) => {
-    range = { start, end };
+    range = { start: Number.parseFloat(start) || start, end: Number.parseFloat(end) || end };
     return '';
   });
 
-  const keywords = input.split(' ').filter(x => x);
+  const keywords = input.split(' ').filter(x => x).map(k => Number.parseFloat(k) || k);
 
   return { range, equalsArguments, keywords };
 }
