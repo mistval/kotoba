@@ -165,7 +165,7 @@ function parseIntEx(input) {
     return Number.NaN;
   }
 
-  if (input >= '０' || input <= '９') {
+  if (input >= '０' && input <= '９') {
     return input.codePointAt(0) - fullWidthZeroCodePoint;
   }
 
