@@ -425,11 +425,19 @@ module.exports.CardPreprocessingStrategy = {
 
 /* TIMING STRATEGIES */
 
+function resolveTimeLimitForLongQuestionTypes(defaultTime, settings) {
+  if (settings.inlineSettings && settings.inlineSettings.answerTimeLimit) {
+    return settings.inlineSettings.answerTimeLimit * 1000;
+  }
+
+  return Math.max(defaultTime, settings.answerTimeLimitInMs);
+}
+
 module.exports.AnswerTimeLimitStrategy = {
-  ANAGRAMS: (settings, card) => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_ANAGRAMS_BASE_TIME_LIMIT_IN_MS + (Math.max(0, card.question.length - 5) * 2000), settings.answerTimeLimitInMs),
-  GRAMMAR: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
+  ANAGRAMS: (settings, card) => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : resolveTimeLimitForLongQuestionTypes(DEFAULT_ANAGRAMS_BASE_TIME_LIMIT_IN_MS + (Math.max(0, card.question.length - 5) * 2000), settings),
+  GRAMMAR: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : resolveTimeLimitForLongQuestionTypes(DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS, settings), // HACK TODO: This should be an override type thing
   JAPANESE_SETTINGS: settings => settings.answerTimeLimitInMs,
-  WITH_HINT: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : Math.max(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings.answerTimeLimitInMs), // HACK TODO: This should be an override type thing
+  WITH_HINT: settings => settings.answerTimeLimitOverriden ? settings.answerTimeLimitInMs : resolveTimeLimitForLongQuestionTypes(DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS, settings), // HACK TODO: This should be an override type thing
   ADD_TO_LENGTH: (settings, card) => (card.questionLengthInMs || 0) + settings.answerTimeLimitInMs,
 };
 

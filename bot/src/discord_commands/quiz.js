@@ -1060,6 +1060,8 @@ function createSettingsForLoad(serverSettings, inlineSettings) {
     fontColor: resolvedSettings.color,
     backgroundColor: resolvedSettings.bgColor,
     font: resolvedSettings.fontFamily,
+    serverSettings,
+    inlineSettings,
   };
 
   Object.entries(settings).forEach(([key, value]) => {
@@ -1087,6 +1089,8 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
     font: resolvedSettings.fontFamily,
     maxMissedQuestions: resolvedSettings.maxMissedQuestions,
     shuffle: resolvedSettings.shuffle,
+    serverSettings,
+    inlineSettings,
   };
 
   return settings;
