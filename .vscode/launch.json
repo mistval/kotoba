@@ -22,6 +22,23 @@
       "name": "Launch bot",
       "program": "${workspaceFolder}\\bot\\src\\start.js",
       "env": { "PORT": "3000"}
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha Current File",
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": "${workspaceRoot}/bot/node_modules/.bin/mocha",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/bot/node_modules/.bin/mocha.cmd"
+      },
+      "runtimeArgs": [
+        "--timeout",
+        "999999",
+        "--colors",
+        "${file}"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
     }
   ]
 }
