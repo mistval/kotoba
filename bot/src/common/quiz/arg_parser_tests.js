@@ -101,5 +101,23 @@ describe('Arg parser tests', function() {
       chai.assert.deepEqual(result.globalArgs.keywords, ['slow', 'nodelay', 10]);
       chai.assert.deepEqual(result.globalArgs.equalsArguments, { atl: 10, daaq: 9 });
     });
+
+    it('Can handle rgb deck arguments', function() {
+      const result = ArgParser.parseArgs('n1(mc color=rgb(0,1,2))');
+
+      chai.assert.deepEqual(result.decks[0].deckArgs.equalsArguments.color, 'rgb(0,1,2)');
+    });
+
+    it('Can handle multiple rgb deck arguments', function() {
+      const result = ArgParser.parseArgs('n1(color=rgb(0,1,2) mc bgcolor=rgba(5,6,7,8))');
+
+      chai.assert.deepEqual(result.decks[0].deckArgs.equalsArguments.color, 'rgb(0,1,2)');
+      chai.assert.deepEqual(result.decks[0].deckArgs.equalsArguments.bgcolor, 'rgba(5,6,7,8)');
+    });
+
+    it ('Can handle spaces in rgb arguments', function() {
+      const result = ArgParser.parseArgs('n1(bgcolor=rgba(  5  ,  6  ,  7  ,  8  ))');
+      chai.assert.deepEqual(result.decks[0].deckArgs.equalsArguments.bgcolor, 'rgba(5,6,7,8)');
+    });
   });
 });

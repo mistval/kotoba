@@ -27,6 +27,7 @@ const trimEmbed = require('./../common/util/trim_embed.js');
 const AudioConnectionManager = require('./../discord/audio_connection_manager.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const ArgsParser = require('../common/quiz/arg_parser.js');
 
 const timingPresetsArr = Object.values(timingPresets);
 
@@ -1513,6 +1514,95 @@ async function doSearch(msg, monochrome, searchTerm = '') {
   return monochrome.getNavigationManager().show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
+function removeFromArrAndReturn(arr, filter) {
+  const index = arr.findIndex(filter);
+  const element = arr[index];
+
+  if (element) {
+    arr.splice(index, 1);
+  }
+
+  return element;
+}
+
+function removeFromObjAndReturn(obj, key) {
+  const val = obj[key];
+  delete obj[key];
+  return val;
+}
+
+function removeUndefinedAndNaN(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).filter(([, value]) => value !== undefined && !Number.isNaN(value)),
+  );
+}
+
+function throwUnknownArgumentError(parameter) {
+  const publicMessage = {
+    embed: {
+      title: 'Unknown parameter',
+      description: `I didn't understand **${parameter}**. Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
+      color: constants.EMBED_WRONG_COLOR,
+    },
+  };
+
+  throw new FulfillmentError({
+    publicMessage,
+    logDescription: `Unknown parameter: ${parameter}`,
+  });
+}
+
+function convertKnownArgsToSettings(args) {
+  let shuffle = undefined;
+  if (removeFromArrAndReturn(args.keywords, e => e === 'shuffle')) {
+    shuffle = true;
+  } else if (removeFromArrAndReturn(args.keywords, e => e === 'noshuffle')) {
+    shuffle = false;
+  }
+
+  const multipleChoice = removeFromArrAndReturn(args.keywords, e => e === 'mc') ? true : undefined;
+
+  const settings =  removeUndefinedAndNaN({
+    scoreLimit: removeFromArrAndReturn(args.keywords, e => Number.isInteger(e)),
+    answerTimeLimitInMs: removeFromObjAndReturn(args.equalsArguments, 'atl') * 1000,
+    newQuestionDelayAfterUnansweredInMs: removeFromObjAndReturn(args.equalsArguments, 'dauq') * 1000,
+    newQuestionDelayAfterAnsweredInMs: removeFromObjAndReturn(args.equalsArguments, 'daaq') * 1000,
+    additionalAnswerWaitTimeInMs: removeFromObjAndReturn(args.equalsArguments, 'aaww') * 1000,
+    fontSize: removeFromObjAndReturn(args.equalsArguments, 'size'),
+    fontColor: removeFromObjAndReturn(args.equalsArguments, 'color'),
+    bgColor: removeFromObjAndReturn(args.equalsArguments, 'bgcolor'),
+    font: removeFromObjAndReturn(args.equalsArguments, 'font'),
+    maxMissedQuestions: removeFromObjAndReturn(args.equalsArguments, 'mmq'),
+    shuffle,
+    multipleChoice,
+    rangeStart: args.range.start,
+    rangeEnd: args.range.end,
+  });
+
+  if (args.keywords.length > 0) {
+    throwUnknownArgumentError(args.keywords[0]);
+  }
+
+  const remainingEqualsArguments = Object.keys(args.equalsArguments);
+  if (remainingEqualsArguments.length > 0) {
+    throwUnknownArgumentError(remainingEqualsArguments[0]);
+  }
+
+  return settings;
+}
+
+function parseInlineArgs(cleanSuffix, expectDeckFirst) {
+  const parsed = ArgsParser.parseArgs(cleanSuffix);
+
+  const inlineGlobalSettings = convertKnownArgsToSettings(parsed.globalArgs);
+  const inlineDeckSettings = parsed.decks.map(deck => ({
+    deckName: deck.deckName,
+    deckSettings: convertKnownArgsToSettings(deck.deckArgs),
+  }));
+
+  return ;
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1529,78 +1619,71 @@ module.exports = {
   ]),
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
-    const cleanSuffix = suffix
-      .replace(/ +/g, ' ')
-      .replace(/ *\+ */g, '+')
-      .replace(/ *= */g, '=')
-      .replace(/ *- */g, '-')
-      .replace(/ *\(/g, '(')
-      .trim()
-      .toLowerCase();
+    const cleanSuffix = suffix.trim().toLowerCase();
+    const tokens = suffix.split(/\s/);
+    const firstToken = tokens[0];
 
     const serverSettings = getServerSettings(rawServerSettings);
-    const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
+    const masteryEnabled = serverSettings.conquestAndInfernoEnabled;
+    const internetDecksEnabled = serverSettings.internetDecksEnabled;
+    //const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
 
+    /*
     if (fontArgParseResult.errorDescriptionShort) {
       return throwPublicErrorFatal(
         'Font settings error',
         fontArgParseResult.errorDescriptionLong,
         fontArgParseResult.errorDescriptionShort,
       );
+    } */
+
+    // const { remainingString: cleanSuffixFontArgsParsed, ...inlineSettings } = fontArgParseResult;
+
+    // const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
+
+    if (firstToken === 'search') {
+      return doSearch(msg, monochrome, tokens.slice(1).join(' '));
     }
 
-    const { remainingString: cleanSuffixFontArgsParsed, ...inlineSettings } = fontArgParseResult;
-
-    const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
-
-    if (commandTokens[0] === 'search') {
-      return doSearch(msg, monochrome, commandTokens.slice(1).join(' '));
+    if (firstToken === 'setting' || firstToken === 'settings') {
+      return showSettingsHelp(msg);
     }
 
-    let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
-    let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
-    Object.assign(inlineSettings, timingOverrides);
+    if (firstToken === 'stats') {
+      return sendStats(msg, tokens[1]);
+    }
+
+    if (firstToken === 'save') {
+      return quizManager.saveQuiz(msg.channel.id, msg.author.id);
+    }
+
+    if (['stop', 'end', 'endquiz', 'quit', 'exit'].some(s => s === firstToken)) {
+      return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
+    }
+
+    if (firstToken === 'help' || tokens.length === 0) {
+      const isMastery = msg.extension === 'conquest' || cleanSuffix.includes(' conquest');
+      const isConquest = msg.extension === 'inferno' || cleanSuffix.includes(' inferno');
+      const isAdvancedHelp = firstToken === 'help';
+
+      return showHelp(msg, isMastery, isConquest, masteryEnabled, isAdvancedHelp);
+    }
+
+    const categoryHelp = getCategoryHelp(firstToken);
+    if (categoryHelp) {
+      return msg.channel.createMessage(categoryHelp);
+    }
+
+    //let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);
+    //let { remainingTokens: remainingTokens2, timingOverrides } = consumeTimingTokens(remainingTokens1);
+    // Object.assign(inlineSettings, timingOverrides);
 
     const messageSender = new DiscordMessageSender(bot, msg, monochrome);
-    const masteryEnabled = serverSettings.conquestAndInfernoEnabled;
-    const internetDecksEnabled = serverSettings.internetDecksEnabled;
 
     const isMastery = gameModes.mastery;
     const isConquest = gameModes.conquest;
     const isHardcore = gameModes.hardcore;
     const isNoRace = gameModes.norace;
-
-    const hasSettingsToken = remainingTokens2.indexOf('settings') !== -1
-      || remainingTokens2.indexOf('setting') !== -1;
-
-    if (hasSettingsToken) {
-      return showSettingsHelp(msg);
-    }
-
-    // Help operation
-    if (remainingTokens2.indexOf('help') !== -1 || remainingTokens2.length === 0) {
-      return showHelp(msg, isMastery, isConquest, masteryEnabled, remainingTokens2.indexOf('help') !== -1);
-    }
-
-    // View stats operation
-    if (remainingTokens2.indexOf('stats') !== -1) {
-      return sendStats(msg, remainingTokens2[1]);
-    }
-
-    // Save operation
-    if (remainingTokens2.indexOf('save') !== -1) {
-      return quizManager.saveQuiz(msg.channel.id, msg.author.id);
-    }
-
-    // Stop operation
-    if (intersect(['stop', 'end', 'endquiz', 'quit', 'exit'], remainingTokens2).length > 0) {
-      return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
-    }
-
-    const categoryHelp = getCategoryHelp(remainingTokens2[0]);
-    if (categoryHelp) {
-      return msg.channel.createMessage(categoryHelp);
-    }
 
     const locationId = msg.channel.id;
     const prefix = msg.prefix;
@@ -1610,11 +1693,17 @@ module.exports = {
     throwIfSessionInProgressAtLocation(locationId, prefix);
     throwIfAlreadyHasSession(invokerId);
 
+    if (firstToken === 'load') {
+      const rest = tokens.slice(1).join(' ');
+      const parsedArgs = parseInlineArgs(rest, false);
+      const loadSettings = createSettingsForLoad(serverSettings, parsedArgs);
+      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
+    }
+
     // Load operation
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
     if (isLoad) {
-      const loadSettings = createSettingsForLoad(serverSettings, inlineSettings);
-      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
+
     }
 
     const isDm = !msg.channel.guild;

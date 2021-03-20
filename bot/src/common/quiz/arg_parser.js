@@ -3,7 +3,7 @@ function parseSubArgs(input) {
   const equalsArguments = {};
 
   input = input.replace(/([^ ]*)=([^ ]*)/g, (m, argName, argValue) => {
-    argValue = Number.parseFloat(argValue) || argValue;
+    argValue = Number.parseFloat(argValue) || argValue.replace('[', '(').replace(']', ')');
     equalsArguments[argName] = argValue;
     return '';
   }).replace(/(\w+)-(\w+)/g, (m, start, end) => {
@@ -24,6 +24,14 @@ function parseArgs(input, expectDeckFirst) {
     .replace(/\s*-\s*/g, '-')
     .replace(/\(\s*/g, '(')
     .replace(/\s*\)/g, ')')
+    .replace(/\s*,\s*/g, ',')
+    // Temporarily replace the parens in color functions with square brackets
+    .replace(/rgb\(([^)]*)\)/g, 'rgb[$1]')
+    .replace(/rgba\(([^)]*)\)/g, 'rgba[$1]')
+    .replace(/hsl\(([^)]*)\)/g, 'hsl[$1]')
+    .replace(/hsla\(([^)]*)\)/g, 'hsla[$1]')
+    .replace(/hwb\(([^)]*)\)/g, 'hwb[$1]')
+    .replace(/lab\(([^)]*)\)/g, 'lab[$1]')
     .trim()
     .toLowerCase();
 
