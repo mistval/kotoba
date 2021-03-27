@@ -36,7 +36,7 @@ async function showRandomWord(
     });
   }
 
-  const word = await globals.resourceDatabase.getRandomWord(level);
+  const word = globals.resourceDatabase.getRandomWord(level);
 
   let jishoData;
   try {

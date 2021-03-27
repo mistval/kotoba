@@ -88,7 +88,7 @@ class JapaneseGameStrategy {
 
   async tryAcceptAnswer(answer, wordInformationsHistory, isBot) {
     const hiragana = convertToHiragana(answer);
-    const possibleWordInformations = await this.resourceDatabase.getShiritoriWords(hiragana);
+    const possibleWordInformations = this.resourceDatabase.getShiritoriWords(hiragana);
 
     if (!possibleWordInformations || possibleWordInformations.length === 0) {
       return new RejectedResult(REJECTION_REASON.UnknownWord);

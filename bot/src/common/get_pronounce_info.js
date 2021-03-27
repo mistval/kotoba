@@ -38,7 +38,7 @@ async function getPronounceInfo(queryWord, logger) {
   };
 
   const queryAsHiragana = convertToHiragana(queryWord);
-  const pronounceDataForQuery = await globals.resourceDatabase
+  const pronounceDataForQuery = globals.resourceDatabase
     .searchPronunciation(queryAsHiragana);
 
   if (pronounceDataForQuery) {
