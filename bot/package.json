@@ -8,9 +8,8 @@
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildall": "node ./src/build/buildall.js",
-    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz",
-    "buildquiz": "node ./src/build/build_quiz_decks.js",
-    "buildfontcharactermap": "node ../node-common/initialize_fonts.js ../resources/fonts ./generated/font_character_map.json"
+    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts",
+    "buildquiz": "node ./src/build/build_quiz_decks.js"
   },
   "repository": {
     "type": "git",

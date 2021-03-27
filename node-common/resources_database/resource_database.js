@@ -3,15 +3,19 @@ const path = require('path');
 const buildPronunciationTable = require('./build_pronunciation_table.js');
 const buildRandomWordsTable = require('./build_random_words_table.js');
 const buildShiritoriTable = require('./build_shiritori_table.js');
+const buildFontCharacterTable = require('./build_font_character_table.js');
 
 class ResourceDatabase {
-  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath) {
+  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath) {
+    this.characterStatementForStringLength = {};
+
     const needsBuild = !fs.existsSync(databasePath);
     if (needsBuild && (
       !pronunciationDataPath
       || !randomWordDataPath
       || !wordFrequencyDataPath
       || !jmdictPath
+      || !fontsPath
     )) {
       throw new Error('Cannot build resource database. Required resource paths not provided.');
     }
@@ -23,6 +27,7 @@ class ResourceDatabase {
     this.database.pragma('journal_mode = WAL');
 
     if (needsBuild) {
+      buildFontCharacterTable(this.database, fontsPath);
       buildPronunciationTable(this.database, pronunciationDataPath);
       buildRandomWordsTable(this.database, randomWordDataPath);
       buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
@@ -33,6 +38,23 @@ class ResourceDatabase {
     this.getNumRandomWordsStatement = this.database.prepare('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?;');
     this.getRandomWordByLevelStatement = this.database.prepare('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?), 1;');
     this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
+  }
+
+  getFontHasAllCharacters(fontFileName, str) {
+    const chars = [...str];
+
+    // Making a separate prepared statement for each string length has much better
+    // query performance than using the INSTR function.
+    if (!this.characterStatementForStringLength[chars.length]) {
+      const questionMarks = Array(chars.length).fill('?');
+      this.characterStatementForStringLength[chars.length] = this.database.prepare(`
+SELECT COUNT(*) = ${chars.length} AS hasAll
+FROM FontCharacters
+WHERE fontFileName = ? AND character IN (${questionMarks.join(',')});
+      `);
+    }
+
+    return this.characterStatementForStringLength[chars.length].get(fontFileName, ...chars).hasAll === 1;
   }
 
   getShiritoriWords(searchTermAsHiragana) {

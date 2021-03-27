@@ -69,9 +69,11 @@ module.exports = {
     }
 
     const renderResult = await render(text, color, bgColor, size, fontFamily, false);
+    console.time('r');
     const fontCharWarning = fontHelper.fontFamilyCanRenderString(fontFamily, text)
       ? ''
       : '**WARNING: The selected font doesn\'t support some characters in your input.**';
+    console.timeEnd('r');
 
     return msg.channel.createMessage(
       {

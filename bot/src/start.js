@@ -154,9 +154,7 @@ function checkApiKeys(monochrome) {
 }
 
 async function start() {
-  const fontPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
-  const fontCharacterMapPath = path.join(__dirname, '..', 'generated', 'font_character_map.json');
-  globals.fontHelper = initializeFonts(fontPath, fontCharacterMapPath, Canvas);
+  const fontsPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
 
   const resourceDatabasePath = path.join(__dirname, '..', 'generated', 'resources.dat');
   const pronunciationDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'pronunciation.json');
@@ -169,7 +167,10 @@ async function start() {
     randomWordDataPath,
     wordFrequencyDataPath,
     jmdictPath,
+    fontsPath,
   );
+
+  globals.fontHelper = initializeFonts(fontsPath, globals.resourceDatabase, Canvas);
 
   const monochrome = createBot();
 
