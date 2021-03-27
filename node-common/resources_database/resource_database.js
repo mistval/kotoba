@@ -7,7 +7,7 @@ const buildFontCharacterTable = require('./build_font_character_table.js');
 
 class ResourceDatabase {
   load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath) {
-    this.characterStatementForStringLength = {};
+    this.characterStatementForKey = {};
 
     const needsBuild = !fs.existsSync(databasePath);
     if (needsBuild && (
@@ -40,21 +40,23 @@ class ResourceDatabase {
     this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
   }
 
-  getFontHasAllCharacters(fontFileName, str) {
-    const chars = [...str];
+  getFontsHaveAllCharacters(fontFileNames, str) {
+    const chars = [...new Set(...str)];
 
     // Making a separate prepared statement for each string length has much better
     // query performance than using the INSTR function.
-    if (!this.characterStatementForStringLength[chars.length]) {
-      const questionMarks = Array(chars.length).fill('?');
-      this.characterStatementForStringLength[chars.length] = this.database.prepare(`
-SELECT COUNT(*) = ${chars.length} AS hasAll
+    const statementKey = `${fontFileNames.length}-${chars.length}`;
+    if (!this.characterStatementForKey[statementKey]) {
+      const characterQuestionMarks = Array(chars.length).fill('?');
+      const fontQuestionMarks = Array(fontFileNames.length).fill('?');
+      this.characterStatementForKey[statementKey] = this.database.prepare(`
+SELECT COUNT(DISTINCT character) = ${chars.length} AS hasAll
 FROM FontCharacters
-WHERE fontFileName = ? AND character IN (${questionMarks.join(',')});
+WHERE fontFileName IN (${fontQuestionMarks.join(',')}) AND character IN (${characterQuestionMarks.join(',')});
       `);
     }
 
-    return this.characterStatementForStringLength[chars.length].get(fontFileName, ...chars).hasAll === 1;
+    return this.characterStatementForKey[statementKey].get(...fontFileNames, ...chars).hasAll === 1;
   }
 
   getShiritoriWords(searchTermAsHiragana) {

@@ -70,7 +70,7 @@ class FontHelper {
 
   fontFamilyCanRenderString(fontFamily, string) {
     const fontFileNames = this.fontFileNamesForFontFamily[fontFamily] || [];
-    return fontFileNames.some(f => this.resourceDatabase.getFontHasAllCharacters(f, string));
+    return this.resourceDatabase.getFontsHaveAllCharacters(fontFileNames, string);
   }
 
   coerceFontFamily(fontFamily, string) {
