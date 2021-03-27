@@ -1,4 +1,4 @@
-const ResourceDatabase = require('./resource_database.js');
+const ResourceDatabase = require('./resources_database/resource_database.js');
 const fs = require('fs');
 
 async function initializeResourceDatabase(

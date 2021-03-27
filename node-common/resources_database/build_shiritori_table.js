@@ -1,9 +1,9 @@
 const fs = require('fs');
-const zlib = require('zlib');
-const path = require('path');
 const assert = require('assert');
-const convertToHiragana = require('./convert_to_hiragana.js');
-const shiritoriWordStartingSequences = require('./shiritori/shiritori_word_starting_sequences.js');
+const path = require('path');
+const zlib = require('zlib');
+const shiritoriWordStartingSequences = require('../shiritori/shiritori_word_starting_sequences.js');
+const convertToHiragana = require('../convert_to_hiragana.js');
 
 const jmdictNounCodes = [
   'n',
@@ -17,48 +17,6 @@ const jmdictNounCodes = [
   'vs',
   'adj-na',
 ];
-
-function buildPronunciationTable(database, pronunciationDataPath) {
-  const pronunciationData = JSON.parse(fs.readFileSync(pronunciationDataPath));
-  const searchTerms = Object.keys(pronunciationData);
-
-  database.exec('CREATE TABLE PronunciationSearchResults (searchTerm CHAR(20) PRIMARY KEY, resultsJson TEXT);');
-  const insertStatement = database.prepare('INSERT INTO PronunciationSearchResults VALUES (?, ?);');
-
-  const insertTransaction = database.transaction(() => {
-    for (let i = 0; i < searchTerms.length; i += 1) {
-      const searchTerm = searchTerms[i];
-      const results = pronunciationData[searchTerm];
-
-      insertStatement.run(searchTerm, JSON.stringify(results));
-    }
-  });
-
-  insertTransaction();
-}
-
-function buildRandomWordsTable(database, randomWordDataPath) {
-  const randomWordData = JSON.parse(fs.readFileSync(randomWordDataPath));
-  const levels = Object.keys(randomWordData);
-
-  database.exec('CREATE TABLE RandomWords (id INTEGER PRIMARY KEY AUTOINCREMENT, level CHAR(5), word CHAR (10));');
-  const insertStatement = database.prepare('INSERT INTO RandomWords (level, word) VALUES (?, ?);');
-
-  const insertTransaction = database.transaction(() => {
-    for (let i = 0; i < levels.length; i += 1) {
-      const level = levels[i];
-      const words = randomWordData[level];
-
-      for (let j = 0; j < words.length; j += 1) {
-        insertStatement.run(level, words[j]);
-      }
-    }
-  });
-
-  insertTransaction();
-
-  database.exec('CREATE INDEX level ON RandomWords (level);');
-}
 
 function buildReadingsForStartSequence(highestDifficultyForReading) {
   const readingsForStartSequence = {};
@@ -96,7 +54,7 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
   });
 
   fs.writeFileSync(
-    path.join(__dirname, 'shiritori', 'readings_for_start_sequence.json'),
+    path.join(__dirname, '..', 'shiritori', 'readings_for_start_sequence.json'),
     JSON.stringify(readingsForStartSequence),
   );
 }
@@ -114,7 +72,7 @@ function unique(arr) {
   return arr.filter((e, i) => arr.indexOf(e) === i);
 }
 
-function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
+module.exports = function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
   const jmdictEntries = decompressJson(jmdictPath);
   const wordsByFrequency = JSON.parse(fs.readFileSync(wordFrequencyDataPath));
   const highestDifficultyForReading = {};
@@ -205,66 +163,3 @@ function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
   database.exec('CREATE INDEX shiritori_word ON ShiritoriWords (word);');
   database.exec('CREATE INDEX shiritori_reading ON ShiritoriWords (reading);');
 }
-
-class ResourceDatabase {
-  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath) {
-    const needsBuild = !fs.existsSync(databasePath);
-    if (needsBuild && (
-      !pronunciationDataPath
-      || !randomWordDataPath
-      || !wordFrequencyDataPath
-      || !jmdictPath
-    )) {
-      throw new Error('Cannot build resource database. Required resource paths not provided.');
-    }
-
-    fs.mkdirSync(path.dirname(databasePath), { recursive: true });
-
-    const sqlite = require('better-sqlite3');
-    this.database = sqlite(databasePath);
-    this.database.pragma('journal_mode = WAL');
-
-    if (needsBuild) {
-      buildPronunciationTable(this.database, pronunciationDataPath);
-      buildRandomWordsTable(this.database, randomWordDataPath);
-      buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
-    }
-
-    this.searchPronunciationStatement = this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?;');
-    this.searchShiritoriStatement = this.database.prepare('SELECT data FROM ShiritoriWords WHERE word = ? OR reading = ?;');
-    this.getNumRandomWordsStatement = this.database.prepare('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?;');
-    this.getRandomWordByLevelStatement = this.database.prepare('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?), 1;');
-    this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
-  }
-
-  getShiritoriWords(searchTermAsHiragana) {
-    const results = this.searchShiritoriStatement.all(
-      searchTermAsHiragana,
-      searchTermAsHiragana,
-    );
-
-    return results.map(r => JSON.parse(r.data));
-  }
-
-  searchPronunciation(searchTerm) {
-    const result = this.searchPronunciationStatement.get(searchTerm);
-    return JSON.parse((result || {}).resultsJson || '[]');
-  }
-
-  getRandomWord(level) {
-    if (level) {
-      const count = this.getNumRandomWordsStatement.get(level);
-      if (count.count > 0) {
-        const levelResult = this.getRandomWordByLevelStatement.get(level, count.count);
-        if (levelResult) {
-          return levelResult.word;
-        }
-      }
-    }
-
-    const result = this.getRandomWordStatement.get();
-    return result.word;
-  }
-}
-
-module.exports = ResourceDatabase;
