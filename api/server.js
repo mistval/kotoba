@@ -162,13 +162,10 @@ if (process.platform === "win32") {
 
 const databasePath = path.join(__dirname, 'generated', 'resources.dat');
 
-initializeResourceDatabase(databasePath).then((db) => {
-  // Start socket servers
-  kanjiGame.startListen(sockets);
-  shiritori.startListen(sockets, db);
-}).catch((err) => {
-  console.warn(err);
-  process.exit(1);
-});
+const db = initializeResourceDatabase(databasePath);
+
+// Start socket servers
+kanjiGame.startListen(sockets);
+shiritori.startListen(sockets, db);
 
 module.exports = app;
