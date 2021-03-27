@@ -175,6 +175,7 @@ const hiraganaForRomaji = {
   wo: 'を',
   nn: 'ん',
   n: 'ん',
+  'n\'': 'ん',
 
   kya: 'きゃ',
   kyu: 'きゅ',
@@ -264,12 +265,14 @@ const hiraganaForRomaji = {
   da: 'だ',
   di: 'ぢ',
   du: 'づ',
+  dzu: 'づ',
   de: 'で',
   do: 'ど',
 
   dda: 'っだ',
   ddi: 'っぢ',
   ddu: 'っづ',
+  ddzu: 'っづ',
   dde: 'っで',
   ddo: 'っど',
 
