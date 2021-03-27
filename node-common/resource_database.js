@@ -101,18 +101,10 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
   );
 }
 
-async function decompressJson(filePath) {
-  const compressedBytes = await fs.promises.readFile(filePath);
+function decompressJson(filePath) {
+  const compressedBytes = fs.readFileSync(filePath);
 
-  const decompressedBytes = await new Promise((fulfill, reject) => {
-    zlib.gunzip(compressedBytes, (err, decompressed) => {
-      if (err) {
-        return reject(err);
-      }
-
-      return fulfill(decompressed);
-    });
-  });
+  const decompressedBytes = zlib.gunzipSync(compressedBytes);
 
   const decompressedString = decompressedBytes.toString('utf8');
   return JSON.parse(decompressedString);
@@ -122,9 +114,9 @@ function unique(arr) {
   return arr.filter((e, i) => arr.indexOf(e) === i);
 }
 
-async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
-  const jmdictEntries = await decompressJson(jmdictPath);
-  const wordsByFrequency = JSON.parse(await fs.promises.readFile(wordFrequencyDataPath));
+function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) {
+  const jmdictEntries = decompressJson(jmdictPath);
+  const wordsByFrequency = JSON.parse(fs.readFileSync(wordFrequencyDataPath));
   const highestDifficultyForReading = {};
 
   database.exec('CREATE TABLE ShiritoriWords (id INTEGER PRIMARY KEY AUTOINCREMENT, word CHAR(20), reading CHAR(20), data TEXT);');
@@ -215,7 +207,7 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
 }
 
 class ResourceDatabase {
-  async load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath) {
+  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath) {
     const needsBuild = !fs.existsSync(databasePath);
     if (needsBuild && (
       !pronunciationDataPath
@@ -226,7 +218,7 @@ class ResourceDatabase {
       throw new Error('Cannot build resource database. Required resource paths not provided.');
     }
 
-    await fs.promises.mkdir(path.dirname(databasePath), { recursive: true });
+    fs.mkdirSync(path.dirname(databasePath), { recursive: true });
 
     const sqlite = require('better-sqlite3');
     this.database = sqlite(databasePath);
@@ -235,7 +227,7 @@ class ResourceDatabase {
     if (needsBuild) {
       buildPronunciationTable(this.database, pronunciationDataPath);
       buildRandomWordsTable(this.database, randomWordDataPath);
-      await buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
+      buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
     }
 
     this.searchPronunciationStatement = this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?;');
