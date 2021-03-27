@@ -2,7 +2,6 @@ const fs = require('fs');
 const zlib = require('zlib');
 const path = require('path');
 const assert = require('assert');
-const sqlite = require('sqlite');
 const convertToHiragana = require('./convert_to_hiragana.js');
 const shiritoriWordStartingSequences = require('./shiritori/shiritori_word_starting_sequences.js');
 
@@ -19,45 +18,46 @@ const jmdictNounCodes = [
   'adj-na',
 ];
 
-async function buildPronunciationTable(database, pronunciationDataPath) {
+function buildPronunciationTable(database, pronunciationDataPath) {
   const pronunciationData = JSON.parse(fs.readFileSync(pronunciationDataPath));
   const searchTerms = Object.keys(pronunciationData);
 
-  await database.run('CREATE TABLE PronunciationSearchResults (searchTerm CHAR(20) PRIMARY KEY, resultsJson TEXT)');
-  const statement = await database.prepare('INSERT INTO PronunciationSearchResults VALUES (?, ?)');
+  database.exec('CREATE TABLE PronunciationSearchResults (searchTerm CHAR(20) PRIMARY KEY, resultsJson TEXT);');
+  const insertStatement = database.prepare('INSERT INTO PronunciationSearchResults VALUES (?, ?);');
 
-  await database.run('BEGIN');
+  const insertTransaction = database.transaction(() => {
+    for (let i = 0; i < searchTerms.length; i += 1) {
+      const searchTerm = searchTerms[i];
+      const results = pronunciationData[searchTerm];
 
-  for (let i = 0; i < searchTerms.length; i += 1) {
-    const searchTerm = searchTerms[i];
-    const results = pronunciationData[searchTerm];
+      insertStatement.run(searchTerm, JSON.stringify(results));
+    }
+  });
 
-    await statement.run(searchTerm, JSON.stringify(results));
-  }
-
-  await database.run('COMMIT');
+  insertTransaction();
 }
 
-async function buildRandomWordsTable(database, randomWordDataPath) {
+function buildRandomWordsTable(database, randomWordDataPath) {
   const randomWordData = JSON.parse(fs.readFileSync(randomWordDataPath));
   const levels = Object.keys(randomWordData);
 
-  await database.run('CREATE TABLE RandomWords (id INTEGER PRIMARY KEY AUTOINCREMENT, level CHAR(5), word CHAR (10))');
-  const statement = await database.prepare('INSERT INTO RandomWords (level, word) VALUES (?, ?)');
+  database.exec('CREATE TABLE RandomWords (id INTEGER PRIMARY KEY AUTOINCREMENT, level CHAR(5), word CHAR (10));');
+  const insertStatement = database.prepare('INSERT INTO RandomWords (level, word) VALUES (?, ?);');
 
-  await database.run('BEGIN');
+  const insertTransaction = database.transaction(() => {
+    for (let i = 0; i < levels.length; i += 1) {
+      const level = levels[i];
+      const words = randomWordData[level];
 
-  for (let i = 0; i < levels.length; i += 1) {
-    const level = levels[i];
-    const words = randomWordData[level];
-
-    for (let j = 0; j < words.length; j += 1) {
-      await statement.run(level, words[j]);
+      for (let j = 0; j < words.length; j += 1) {
+        insertStatement.run(level, words[j]);
+      }
     }
-  }
+  });
 
-  await database.run('COMMIT');
-  await database.run('CREATE INDEX level ON RandomWords (level)');
+  insertTransaction();
+
+  database.exec('CREATE INDEX level ON RandomWords (level);');
 }
 
 function buildReadingsForStartSequence(highestDifficultyForReading) {
@@ -127,72 +127,40 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
   const wordsByFrequency = JSON.parse(await fs.promises.readFile(wordFrequencyDataPath));
   const highestDifficultyForReading = {};
 
-  await database.run('CREATE TABLE ShiritoriWords (id INTEGER PRIMARY KEY AUTOINCREMENT, word CHAR(20), reading CHAR(20), data TEXT)');
-  const insertWordStatement = await database.prepare('INSERT INTO ShiritoriWords (word, reading, data) VALUES (?, ?, ?)');
+  database.exec('CREATE TABLE ShiritoriWords (id INTEGER PRIMARY KEY AUTOINCREMENT, word CHAR(20), reading CHAR(20), data TEXT);');
+  const insertWordStatement = database.prepare('INSERT INTO ShiritoriWords (word, reading, data) VALUES (?, ?, ?);');
 
-  await database.run('BEGIN');
+  const insertTransaction = database.transaction(() => {
+    for (let entryIndex = 0; entryIndex < jmdictEntries.length; entryIndex += 1) {
+      const entry = jmdictEntries[entryIndex];
+      const entryNum = entry.ent_seq[0];
+      const words = (entry.k_ele || []).flatMap(element => element.keb);
+      const readingElements = entry.r_ele;
+      const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
+      const misc = entry.sense.flatMap(s => s.misc);
+      const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
+      const botBanned = misc.includes('vulg');
+      const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
 
-  for (let entryIndex = 0; entryIndex < jmdictEntries.length; entryIndex += 1) {
-    const entry = jmdictEntries[entryIndex];
-    const entryNum = entry.ent_seq[0];
-    const words = (entry.k_ele || []).flatMap(element => element.keb);
-    const readingElements = entry.r_ele;
-    const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
-    const misc = entry.sense.flatMap(s => s.misc);
-    const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
-    const botBanned = misc.includes('vulg');
-    const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
+      assert(readingElements.length > 0, `No readings for ${entryNum}`);
+      assert(partsOfSpeech.length > 0, `No POS for ${entryNum}`);
+      assert(definitions.length > 0, `No definitions for ${entryNum}`);
 
-    assert(readingElements.length > 0, `No readings for ${entryNum}`);
-    assert(partsOfSpeech.length > 0, `No POS for ${entryNum}`);
-    assert(definitions.length > 0, `No definitions for ${entryNum}`);
+      if (words.length === 0) {
+        for (const reading of readingElements.flatMap(r => r.reb)) {
+          const hiraganaReading = convertToHiragana(reading);
+          let difficultyScore = wordsByFrequency.indexOf(reading);
+          if (difficultyScore === -1) {
+            difficultyScore = Number.MAX_SAFE_INTEGER;
+          }
 
-    if (words.length === 0) {
-      for (const reading of readingElements.flatMap(r => r.reb)) {
-        const hiraganaReading = convertToHiragana(reading);
-        let difficultyScore = wordsByFrequency.indexOf(reading);
-        if (difficultyScore === -1) {
-          difficultyScore = Number.MAX_SAFE_INTEGER;
-        }
-
-        highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
-            ? Math.max(highestDifficultyForReading[reading], difficultyScore)
-            : difficultyScore;
-
-        const searchResult = {
-          word: reading,
-          reading: hiraganaReading,
-          definitions,
-          isNoun,
-          difficultyScore,
-          botBanned,
-        };
-
-        const json = JSON.stringify(searchResult);
-        await insertWordStatement.run(reading, hiraganaReading, json);
-      }
-    } else {
-      for (const word of words) {
-        let difficultyScore = wordsByFrequency.indexOf(word);
-        if (difficultyScore === -1) {
-          difficultyScore = Number.MAX_SAFE_INTEGER;
-        }
-
-        const relevantReadings = readingElements
-          .filter(r => !r.re_restr || r.re_restr.includes(word))
-          .flatMap(r => r.reb)
-          .map(convertToHiragana);
-
-        const uniqueReadings = unique(relevantReadings);
-
-        for (const reading of uniqueReadings) {
           highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
-            ? Math.max(highestDifficultyForReading[reading], difficultyScore)
-            : difficultyScore;
+              ? Math.max(highestDifficultyForReading[reading], difficultyScore)
+              : difficultyScore;
 
           const searchResult = {
-            word,
-            reading,
+            word: reading,
+            reading: hiraganaReading,
             definitions,
             isNoun,
             difficultyScore,
@@ -200,17 +168,50 @@ async function buildShiritoriTable(database, wordFrequencyDataPath, jmdictPath) 
           };
 
           const json = JSON.stringify(searchResult);
-          await insertWordStatement.run(word, reading, json);
+          insertWordStatement.run(reading, hiraganaReading, json);
+        }
+      } else {
+        for (const word of words) {
+          let difficultyScore = wordsByFrequency.indexOf(word);
+          if (difficultyScore === -1) {
+            difficultyScore = Number.MAX_SAFE_INTEGER;
+          }
+
+          const relevantReadings = readingElements
+            .filter(r => !r.re_restr || r.re_restr.includes(word))
+            .flatMap(r => r.reb)
+            .map(convertToHiragana);
+
+          const uniqueReadings = unique(relevantReadings);
+
+          for (const reading of uniqueReadings) {
+            highestDifficultyForReading[reading] = highestDifficultyForReading[reading]
+              ? Math.max(highestDifficultyForReading[reading], difficultyScore)
+              : difficultyScore;
+
+            const searchResult = {
+              word,
+              reading,
+              definitions,
+              isNoun,
+              difficultyScore,
+              botBanned,
+            };
+
+            const json = JSON.stringify(searchResult);
+            insertWordStatement.run(word, reading, json);
+          }
         }
       }
     }
-  }
+  });
+
+  insertTransaction();
 
   buildReadingsForStartSequence(highestDifficultyForReading);
 
-  await database.run('COMMIT');
-  await database.run('CREATE INDEX shiritori_word ON ShiritoriWords (word)');
-  await database.run('CREATE INDEX shiritori_reading ON ShiritoriWords (reading)');
+  database.exec('CREATE INDEX shiritori_word ON ShiritoriWords (word);');
+  database.exec('CREATE INDEX shiritori_reading ON ShiritoriWords (reading);');
 }
 
 class ResourceDatabase {
@@ -227,24 +228,25 @@ class ResourceDatabase {
 
     await fs.promises.mkdir(path.dirname(databasePath), { recursive: true });
 
-    const sqlite3 = require('sqlite3');
-    this.database = await sqlite.open({
-      filename: databasePath,
-      driver: sqlite3.Database,
-    });
+    const sqlite = require('better-sqlite3');
+    this.database = sqlite(databasePath);
+    this.database.pragma('journal_mode = WAL');
 
     if (needsBuild) {
-      await buildPronunciationTable(this.database, pronunciationDataPath);
-      await buildRandomWordsTable(this.database, randomWordDataPath);
+      buildPronunciationTable(this.database, pronunciationDataPath);
+      buildRandomWordsTable(this.database, randomWordDataPath);
       await buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
     }
 
-    this.searchPronunciationStatement = await this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?');
-    this.searchShiritoriStatement = await this.database.prepare('SELECT data FROM ShiritoriWords WHERE word = ? OR reading = ?');
+    this.searchPronunciationStatement = this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?;');
+    this.searchShiritoriStatement = this.database.prepare('SELECT data FROM ShiritoriWords WHERE word = ? OR reading = ?;');
+    this.getNumRandomWordsStatement = this.database.prepare('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?;');
+    this.getRandomWordByLevelStatement = this.database.prepare('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?), 1;');
+    this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
   }
 
-  async getShiritoriWords(searchTermAsHiragana) {
-    const results = await this.searchShiritoriStatement.all(
+  getShiritoriWords(searchTermAsHiragana) {
+    const results = this.searchShiritoriStatement.all(
       searchTermAsHiragana,
       searchTermAsHiragana,
     );
@@ -252,23 +254,23 @@ class ResourceDatabase {
     return results.map(r => JSON.parse(r.data));
   }
 
-  async searchPronunciation(searchTerm) {
-    const result = await this.searchPronunciationStatement.get(searchTerm);
+  searchPronunciation(searchTerm) {
+    const result = this.searchPronunciationStatement.get(searchTerm);
     return JSON.parse((result || {}).resultsJson || '[]');
   }
 
-  async getRandomWord(level) {
+  getRandomWord(level) {
     if (level) {
-      const count = await this.database.get('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?', level);
+      const count = this.getNumRandomWordsStatement.get(level);
       if (count.count > 0) {
-        const levelResult = await this.database.get('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?),1', level, count.count);
+        const levelResult = this.getRandomWordByLevelStatement.get(level, count.count);
         if (levelResult) {
           return levelResult.word;
         }
       }
     }
 
-    const result = await this.database.get('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords)');
+    const result = this.getRandomWordStatement.get();
     return result.word;
   }
 }
