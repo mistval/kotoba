@@ -31,10 +31,12 @@ After cloning the repo (recommend cloning with `--depth=1`), fill out [config/co
 ```sh
 cd ./bot
 npm ci
+npm run buildquiz # takes a few minutes
+npm run buildresources # takes a few minutes
 npm start
 ```
 
-The bot will start and come online. It will take a while the first time, as the bot is building and caching resources. Give it up to 15 minutes. After the first time, it should start almost instantaneously.
+The bot will start and come online. The `buildquiz` and `buildresources` commands generally only need to be run once (unless you change quiz data or such).
 
 ### KotobaWeb
 
