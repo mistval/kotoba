@@ -41,7 +41,7 @@ class ResourceDatabase {
   }
 
   getFontsHaveAllCharacters(fontFileNames, str) {
-    const chars = [...new Set([...str])];
+    const chars = [...new Set(str)];
 
     // Making a separate prepared statement for each string length has much better
     // query performance than using the INSTR function.
