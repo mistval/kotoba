@@ -150,6 +150,11 @@ function assertNoDuplicateCards(deckName, deck) {
       throw new Error(`Duplicate question in ${deckName}: ${card.question}`);
     }
     seen[card.question] = true;
+
+    const uniqueAnswers = [...new Set(card.answer)];
+    if (uniqueAnswers.length !== card.answer.length) {
+      throw new Error(`Duplicate answer in ${deckName}: ${card.question}: ${JSON.stringify(card.answer)}`);
+    }
   });
 }
 
