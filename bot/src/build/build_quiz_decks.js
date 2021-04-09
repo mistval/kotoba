@@ -155,6 +155,13 @@ function assertNoDuplicateCards(deckName, deck) {
     if (uniqueAnswers.length !== card.answer.length) {
       throw new Error(`Duplicate answer in ${deckName}: ${card.question}: ${JSON.stringify(card.answer)}`);
     }
+
+    if (card.options) {
+      const uniqueOptions = [...new Set(card.options)];
+      if (uniqueOptions.length !== card.options.length) {
+        throw new Error(`Duplicate option in ${deckName}: ${card.question}: ${JSON.stringify(card.options)}`);
+      }
+    }
   });
 }
 
