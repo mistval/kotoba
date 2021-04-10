@@ -3,6 +3,89 @@ const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const constants = require('./../common/constants.js');
 const { Permissions } = require('monochrome-bot');
 
+const serverConfirmationMessages = {
+  noResponse: 'No response, did not reset the leaderboard.',
+  nonConfirmResponse: 'You did not say **confirm**. The server leaderboard has **not** been reset.',
+  success: 'The server leaderboard has been reset.',
+};
+
+const userConfirmationMessages = {
+  noResponse: 'No response, did not reset user\'s scores.',
+  nonConfirmResponse: 'You did not say **confirm**. The user\'s scores have **not** been reset.',
+  success: 'The user\'s scores have been reset.',
+};
+
+function getUserId(suffix) {
+  const match = suffix.match(/(?:<@!?)?([0-9]+)>?/);
+  if (!match) {
+    return undefined;
+  }
+
+  const fullMatch = match[0];
+  if (fullMatch !== suffix) {
+    return undefined;
+  }
+
+  const id = match[1];
+  return id;
+}
+
+async function waitForConfirmation(monochrome, messages, msg, userId) {
+  let responseMsg;
+  try {
+    responseMsg = await monochrome.waitForMessage(
+      120000,
+      c => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
+    );
+  } catch (err) {
+    if (err.message === 'WAITER TIMEOUT') {
+      return msg.channel.createMessage(messages.noResponse);
+    }
+
+    throw err;
+  }
+
+  const response = responseMsg.content.toLowerCase().trim();
+
+  if (response !== 'confirm') {
+    return msg.channel.createMessage(messages.nonConfirmResponse);
+  }
+
+  await scores.clearServerScores(msg.channel.guild.id, userId);
+
+  return msg.channel.createMessage(messages.success);
+}
+
+async function resetServerUser(monochrome, msg, suffix) {
+  const userId = getUserId(suffix);
+
+  if (!userId) {
+    return msg.channel.createMessage(`I didn't understand the user ID (**${suffix}**), please provide a numeric user ID or a mention.`);
+  }
+
+  await msg.channel.createMessage({
+    embed: {
+      title: '⚠️ Reset User Server Scores ⚠️',
+      description: `You are about to erase all of <@${userId}>'s (${userId}) scores in this server. This is irreversible. If you're sure, say **confirm**. To cancel, say anything else.`,
+      color: constants.EMBED_WARNING_COLOR,
+    },
+  });
+
+  return waitForConfirmation(monochrome, userConfirmationMessages, msg, userId);
+}
+
+async function resetServer(monochrome, msg) {
+  await msg.channel.createMessage({
+    embed: {
+      title: '⚠️ Reset Server Leaderboard ⚠️',
+      description: 'You are about to reset the leaderboard in this server. This is irreversible. If you\'re sure, say **confirm**. To cancel, say anything else.\n\nTo reset just one user\'s scores, cancel this and then use the command again with a user ID or mention (not username).',
+      color: constants.EMBED_WARNING_COLOR,
+    },
+  });
+
+  return waitForConfirmation(monochrome, serverConfirmationMessages, msg);
+}
+
 module.exports = {
   commandAliases: ['resetserverleaderboard'],
   uniqueId: 'resetserverleaderboard',
@@ -18,35 +101,10 @@ module.exports = {
       return throwPublicErrorInfo('Reset server leaderboard', 'Only a server admin can use this command.', 'Not a server admin');
     }
 
-    await msg.channel.createMessage({
-      embed: {
-        title: '⚠️ Reset server leaderboard ⚠️',
-        description: 'You are about to reset the server leaderboard. This is irreversible. If you\'re sure, say **confirm**. To cancel, say anything else.',
-        color: constants.EMBED_WARNING_COLOR,
-      },
-    });
+    const userIdSpecified = Boolean(suffix);
 
-    let responseMsg;
-    try {
-      responseMsg = await monochrome.waitForMessage(
-        120000,
-        c => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
-      );
-    } catch (err) {
-      if (err.message === 'WAITER TIMEOUT') {
-        return msg.channel.createMessage('No response, did not reset the leaderboard.');
-      }
-      throw err;
-    }
-
-    const response = responseMsg.content.toLowerCase().trim();
-
-    if (response !== 'confirm') {
-      return msg.channel.createMessage('You did not say **confirm**. The server leaderboard has **not** been reset.');
-    }
-
-    await scores.clearServerScores(msg.channel.guild.id);
-
-    return msg.channel.createMessage('The server leaderboard has been reset.');
+    return userIdSpecified
+      ? resetServerUser(monochrome, msg, suffix)
+      : resetServer(monochrome, msg);
   },
 };

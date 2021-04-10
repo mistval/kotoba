@@ -475,10 +475,14 @@ function addScores(serverId, scoresForUserId, usernameForUserId) {
   return Promise.all(promises);
 }
 
-function clearServerScores(serverId) {
+function clearServerScores(serverId, userId) {
+  const filter = userId
+    ? { serverId, userId }
+    : { serverId };
+
   return Promise.all([
-    UserServerTotalScoreModel.deleteMany({ serverId }),
-    UserServerDeckScoreModel.deleteMany({ serverId }),
+    UserServerTotalScoreModel.deleteMany(filter),
+    UserServerDeckScoreModel.deleteMany(filter),
   ]);
 }
 
