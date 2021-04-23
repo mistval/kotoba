@@ -272,9 +272,8 @@ class ShowAnswersAction extends Action {
       let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
       let scoreLimit = scores.getScoreLimit();
 
-      sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, answerersInOrder);
-
       if (answerersInOrder.length > 0) {
+        sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, answerersInOrder);
         session.markCurrentCardAnswered();
         Promise.resolve(session.getMessageSender().outputQuestionScorers(
           currentCard,
