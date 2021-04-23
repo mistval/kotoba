@@ -1237,7 +1237,7 @@ function throwIfShutdownScheduled(channelId) {
     const messageContent = {
       embed: {
         title: 'Scheduled Update',
-        description: 'I\'m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about three minutes.',
+        description: 'I\'m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about five minutes.',
         color: constants.EMBED_WARNING_COLOR,
         footer: {
           icon_url: constants.FOOTER_ICON_URI,
