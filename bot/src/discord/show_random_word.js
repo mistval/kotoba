@@ -77,7 +77,7 @@ async function showRandomWord(
     await channel.createMessage(firstPage);
   }
   if (showStrokeOrder) {
-    const kanji = word.match(/([\u4e00-\u9faf])/g);
+    const kanji = word.match(/([\u4e00-\u9faf])/g) || [];
     const kanjiPages = await Promise.all(kanji.map(char =>
       createKanjiSearchPage(char, undefined, true)));
     for (let i = 0; i < kanjiPages.length; i += 1) {
