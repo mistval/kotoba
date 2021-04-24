@@ -15,15 +15,6 @@ COPY ./bot/package.json .
 COPY ./bot/package-lock.json .
 RUN npm ci
 
-COPY ./resources/dictionaries ./../resources/dictionaries
-COPY ./bot/src/build ./src/build
-
-COPY ./resources/quiz_audio ./../resources/quiz_audio
-
-COPY ./resources/fonts ./../resources/fonts
-COPY ./resources/quiz_data ./../resources/quiz_data
-RUN npm run buildquiz
-
 COPY ./resources ./../resources
 RUN npm run buildresources
 
