@@ -28,15 +28,18 @@ After cloning the repo (recommend cloning with `--depth=1`), fill out [config/co
 
 ### Discord bot
 
+After following the **Configuration** instructions above:
+
+Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Or, use Docker: `docker run -p 27017:27017 mongo`. Then:
+
 ```sh
 cd ./bot
 npm ci
-npm run buildquiz # takes a few minutes
-npm run buildresources # takes a few minutes
+npm run buildresources # this takes a few minutes
 npm start
 ```
 
-The bot will start and come online. The `buildquiz` and `buildresources` commands generally only need to be run once (unless you change quiz data or such).
+The bot will start and come online. The `npm run buildresources` command generally only needs to be run once (unless you change quiz data or such).
 
 ### KotobaWeb
 

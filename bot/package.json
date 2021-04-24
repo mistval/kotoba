@@ -7,9 +7,7 @@
     "start": "node --max_old_space_size=3000 .",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
-    "buildall": "node ./src/build/buildall.js",
-    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts",
-    "buildquiz": "node ./src/build/build_quiz_decks.js"
+    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data"
   },
   "repository": {
     "type": "git",
@@ -28,7 +26,6 @@
     "bunyan": "1.8.12",
     "canvas": "2.6.1",
     "cheerio": "1.0.0-rc.2",
-    "disk-array": "1.0.1",
     "erex": "0.0.1",
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",

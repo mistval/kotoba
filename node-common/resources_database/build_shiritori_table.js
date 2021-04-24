@@ -160,6 +160,6 @@ module.exports = function buildShiritoriTable(database, wordFrequencyDataPath, j
 
   buildReadingsForStartSequence(highestDifficultyForReading);
 
-  database.exec('CREATE INDEX shiritori_word ON ShiritoriWords (word);');
-  database.exec('CREATE INDEX shiritori_reading ON ShiritoriWords (reading);');
+  database.exec('CREATE INDEX shiritoriWordIndex ON ShiritoriWords (word);');
+  database.exec('CREATE INDEX shiritoriReadingIndex ON ShiritoriWords (reading);');
 }

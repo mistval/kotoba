@@ -1,5 +1,4 @@
 const state = require('./../static_state.js');
-const arrayOnDisk = require('disk-array');
 const globals = require('./../globals.js');
 const path = require('path');
 const fs = require('fs');
@@ -25,57 +24,15 @@ function createCardGetterFromInMemoryArray(array) {
   };
 }
 
-function createCardGetterFromDiskArray(array) {
-  return array;
-}
-
-async function loadDecks() {
-  if (state.quizDecksLoader) {
-    return;
-  }
-
-  state.quizDecksLoader = {
-    quizDeckForName: {},
-    quizDeckForUniqueId: {},
-    quizDecksCache: new arrayOnDisk.Cache(CACHE_SIZE_IN_PAGES),
+function createCardGetterForSqliteDeck(deck) {
+  return {
+    get: i => {
+      const card = globals.resourceDatabase.getQuizQuestion(deck.shortName, i);
+      return Promise.resolve(card);
+    },
+    length: deck.length,
   };
-
-  const deckNames = Object.keys(decksMetadata);
-  const cache = state.quizDecksLoader.quizDecksCache;
-
-  for (let i = 0; i < deckNames.length; i += 1) {
-    const deckName = deckNames[i];
-    try {
-      const deckMetadata = decksMetadata[deckName];
-      if (!deckMetadata.uniqueId
-        || state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId]) {
-        throw new Error(`Deck ${deckName} does not have a unique uniqueId, or doesn't have one at all.`);
-      }
-
-      // Await makes this code simpler, and the performance is irrelevant.
-      // eslint-disable-next-line no-await-in-loop
-      const diskArray = await arrayOnDisk.load(deckMetadata.cardDiskArrayPath, cache);
-      const deck = JSON.parse(JSON.stringify(deckMetadata));
-      deck.cards = createCardGetterFromDiskArray(diskArray);
-      deck.isInternetDeck = false;
-      state.quizDecksLoader.quizDeckForName[deckName] = deck;
-      state.quizDecksLoader.quizDeckForUniqueId[deckMetadata.uniqueId] = deck;
-    } catch (err) {
-      globals.logger.error({
-        event: 'ERROR LOADING DECK',
-        detail: deckName,
-        err,
-      });
-    }
-  }
 }
-
-loadDecks().catch(err => {
-  globals.logger.error({
-    event: 'ERROR LOADING DECKS',
-    err,
-  });
-});
 
 function createAllDecksFoundStatus(decks) {
   return {
@@ -96,7 +53,7 @@ function resolveIndex(index, deckLength) {
 }
 
 function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
-  const deckCopy = Object.assign({}, deck);
+  const deckCopy = { ...deck };
   deckCopy.startIndex = resolveIndex(deckInformation.startIndex, deck.cards.length);
   deckCopy.endIndex = resolveIndex(deckInformation.endIndex, deck.cards.length);
   deckCopy.mc = deckCopy.forceMC || (deckInformation.mc && !deckCopy.forceNoMC);
@@ -105,12 +62,13 @@ function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
 }
 
 function getDeckFromMemory(deckInformation) {
-  let deck = state.quizDecksLoader.quizDeckForName[deckInformation.deckNameOrUniqueId]
-    || state.quizDecksLoader.quizDeckForUniqueId[deckInformation.deckNameOrUniqueId];
+  let deck = globals.resourceDatabase.getQuizDeckMeta(deckInformation.deckNameOrUniqueId);
 
   if (deck) {
+    deck.cards = createCardGetterForSqliteDeck(deck);
     deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
   }
+
   return deck;
 }
 
@@ -298,7 +256,6 @@ function getLocationReviewDeck(locationId) {
 module.exports = {
   getQuizDecks,
   DeckRequestStatus,
-  loadDecks,
   updateUserReviewDeck,
   updateLocationReviewDeck,
   getUserReviewDeck,

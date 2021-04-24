@@ -4,9 +4,10 @@ const buildPronunciationTable = require('./build_pronunciation_table.js');
 const buildRandomWordsTable = require('./build_random_words_table.js');
 const buildShiritoriTable = require('./build_shiritori_table.js');
 const buildFontCharacterTable = require('./build_font_character_table.js');
+const buildQuizQuestionsTable = require('./build_quiz_tables.js');
 
 class ResourceDatabase {
-  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath) {
+  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath, quizDataPath) {
     this.characterStatementForKey = {};
 
     const needsBuild = !fs.existsSync(databasePath);
@@ -16,6 +17,7 @@ class ResourceDatabase {
       || !wordFrequencyDataPath
       || !jmdictPath
       || !fontsPath
+      || !quizDataPath
     )) {
       throw new Error('Cannot build resource database. Required resource paths not provided.');
     }
@@ -27,6 +29,7 @@ class ResourceDatabase {
     this.database.pragma('journal_mode = WAL');
 
     if (needsBuild) {
+      buildQuizQuestionsTable(this.database, quizDataPath);
       buildFontCharacterTable(this.database, fontsPath);
       buildPronunciationTable(this.database, pronunciationDataPath);
       buildRandomWordsTable(this.database, randomWordDataPath);
@@ -38,6 +41,18 @@ class ResourceDatabase {
     this.getNumRandomWordsStatement = this.database.prepare('SELECT COUNT(*) as count FROM RandomWords WHERE level = ?;');
     this.getRandomWordByLevelStatement = this.database.prepare('SELECT word FROM RandomWords WHERE level = ? LIMIT (ABS(RANDOM()) % ?), 1;');
     this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
+    this.getQuizQuestionStatement = this.database.prepare('SELECT questionJson FROM QuizQuestions WHERE deckName = ? AND idx = ?;');
+    this.getQuizDeckMetaStatement = this.database.prepare('SELECT metaJson FROM QuizDecksMeta WHERE deckName = ? OR deckUniqueId = ?;');
+  }
+
+  getQuizQuestion(deckName, index) {
+    const result = this.getQuizQuestionStatement.get(deckName, index);
+    return result && JSON.parse(result.questionJson);
+  }
+
+  getQuizDeckMeta(deckName) {
+    const result = this.getQuizDeckMetaStatement.get(deckName, deckName);
+    return result && JSON.parse(result.metaJson);
   }
 
   getFontsHaveAllCharacters(fontFileNames, str) {

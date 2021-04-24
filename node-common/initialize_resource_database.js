@@ -8,6 +8,7 @@ function initializeResourceDatabase(
   wordFrequencyDataPath,
   jmdictDataPath,
   fontsPath,
+  quizDataPath,
 ) {
   const resourceDatabase = new ResourceDatabase();
   resourceDatabase.load(
@@ -17,6 +18,7 @@ function initializeResourceDatabase(
     wordFrequencyDataPath,
     jmdictDataPath,
     fontsPath,
+    quizDataPath,
   );
 
   return resourceDatabase;
@@ -36,6 +38,7 @@ if (require.main === module) {
     process.argv[5],
     process.argv[6],
     process.argv[7],
+    process.argv[8],
   );
 }
 

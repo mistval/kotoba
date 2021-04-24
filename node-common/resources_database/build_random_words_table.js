@@ -20,5 +20,5 @@ module.exports = function buildRandomWordsTable(database, randomWordDataPath) {
 
   insertTransaction();
 
-  database.exec('CREATE INDEX level ON RandomWords (level);');
+  database.exec('CREATE INDEX levelIndex ON RandomWords (level);');
 }
