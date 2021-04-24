@@ -10,7 +10,7 @@ cp -f ./config/gcloud_key.json ./backup
 
 rm -rf ./backup_out
 mkdir -p ./backup_out/user_data/bot
-docker-compose exec -T mongo_readwrite mongodump --archive=./mongo_dump.archive
+docker-compose exec -T mongo_readwrite mongodump --archive=./mongo_dump.archive --excludeCollection=gamereports
 docker-compose exec -T mongo_readwrite cat ./mongo_dump.archive > ./backup_out/mongo_dump.archive
 
 cp -r ./user_data/bot/monochrome-persistence ./backup_out/user_data/bot
