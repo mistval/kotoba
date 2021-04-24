@@ -216,9 +216,9 @@ function buildQuizTables(database, quizDataPath) {
     }
   });
 
-  database.exec('CREATE INDEX quizQuestionsIndex ON QuizQuestions (deckName, idx);');
-  database.exec('CREATE INDEX quizMetaNameIndex ON QuizDecksMeta (deckName);');
-  database.exec('CREATE INDEX quizMetaUniqueIdIndex ON QuizDecksMeta (deckUniqueId);');
+  database.exec('CREATE UNIQUE INDEX quizQuestionsIndex ON QuizQuestions (deckName, idx);');
+  database.exec('CREATE UNIQUE INDEX quizMetaNameIndex ON QuizDecksMeta (deckName);');
+  database.exec('CREATE UNIQUE INDEX quizMetaUniqueIdIndex ON QuizDecksMeta (deckUniqueId);');
 }
 
 module.exports = buildQuizTables;

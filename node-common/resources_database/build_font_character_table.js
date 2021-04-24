@@ -35,7 +35,7 @@ module.exports = function buildFontCharacterTable(database, fontsDirPath) {
   }
 
   database.exec('CREATE TABLE FontCharacters (fontFileName VARCHAR(100), character CHAR(1));');
-  database.exec('CREATE UNIQUE INDEX font_chars ON FontCharacters (fontFileName, character);');
+  database.exec('CREATE UNIQUE INDEX fontCharactersIndex ON FontCharacters (fontFileName, character);');
   const insertStatement = database.prepare('INSERT INTO FontCharacters VALUES (?, ?) ON CONFLICT DO NOTHING;');
 
   const transaction = database.transaction(() => {

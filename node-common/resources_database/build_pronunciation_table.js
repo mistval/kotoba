@@ -18,5 +18,5 @@ module.exports = function buildPronunciationTable(database, pronunciationDataPat
 
   insertTransaction();
 
-  database.exec('CREATE INDEX pronunciationIndex ON PronunciationSearchResults (searchTerm);');
+  database.exec('CREATE UNIQUE INDEX pronunciationIndex ON PronunciationSearchResults (searchTerm);');
 }
