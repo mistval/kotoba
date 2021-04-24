@@ -13,13 +13,6 @@ const OXFORD_API_KEY = require('../../../../config/config.js').bot.apiKeys.oxfor
 const URI_MAX_LENGTH = 2048;
 const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', '..', 'resources', 'quiz_audio');
 
-let BetterEnglishDefinitions;
-try {
-  BetterEnglishDefinitions = require('./../BetterEnglishDefinitions.js');
-} catch (err) {
-  // The better english definitions are not available in the public repo. The crappy definitions will be used.
-}
-
 const DEFAULT_WITH_HINT_TIME_LIMIT_IN_MS = 28000;
 const DEFAULT_GRAMMAR_TIME_LIMIT_IN_MS = 45000;
 const DEFAULT_ANAGRAMS_BASE_TIME_LIMIT_IN_MS = 22000;
@@ -247,19 +240,6 @@ module.exports.ScoreAnswerStrategy = {
 
 /* CARD PREPROCESSING STRATEGIES */
 
-function updateWithBetterEnglishDefinition(card) {
-  if (!BetterEnglishDefinitions) {
-    return Promise.resolve(card);
-  }
-  return BetterEnglishDefinitions.getDefinition(card.answer[0]).then(result => {
-    card.question = result.question;
-    card.answer = [result.answer];
-    return card;
-  }).catch(err => {
-    return false;
-  });
-}
-
 function randomizeQuestionCharacters(card) {
   let newQuestion = card.question;
 
@@ -416,7 +396,6 @@ async function updateWithThesaurusSynonyms(card) {
 }
 
 module.exports.CardPreprocessingStrategy = {
-  BETTER_ENGLISH_DEFINITIONS: updateWithBetterEnglishDefinition,
   THESAURUS_SYNONYMS: updateWithThesaurusSynonyms,
   RANDOMIZE_QUESTION_CHARACTERS: randomizeQuestionCharacters,
   FORVO_AUDIO: updateWithForvoAudioUri,
