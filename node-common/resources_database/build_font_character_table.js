@@ -2,6 +2,11 @@ const path = require('path');
 const glob = require('glob');
 const FontKit = require('fontkit');
 
+const charsSupportedInAllFonts = [
+  ' ',
+  '　',
+];
+
 module.exports = function buildFontCharacterTable(database, fontsDirPath) {
   const fontFilePaths = glob.sync(`${fontsDirPath}/**/*.{otf,ttf,ttc}`);
   const insertRows = [];
@@ -16,6 +21,10 @@ module.exports = function buildFontCharacterTable(database, fontsDirPath) {
     const fileName = path.basename(fontFilePath);
     const fontKitRootFont = FontKit.openSync(fontFilePath);
     const fontKitFonts = fontKitRootFont.fonts || [fontKitRootFont];
+
+    insertRows.push(
+      ...charsSupportedInAllFonts.map(char => [fileName, char]),
+    );
 
     for (const fontKitFont of fontKitFonts) {
       for (const codePoint of fontKitFont.characterSet) {
