@@ -3,6 +3,7 @@ FROM node:12.22.1
 WORKDIR /var
 COPY ./resources/fonts ./resources/fonts
 COPY ./resources/dictionaries ./resources/dictionaries
+COPY ./resources/quiz_data ./resources/quiz_data
 COPY ./node-common ./node-common
 WORKDIR /var/node-common
 RUN npm ci --no-optional
