@@ -1,9 +1,9 @@
 
 const assert = require('assert');
+const globals = require('../globals.js');
 const dbConnection = require('kotoba-node-common').database.connection;
 const scoreModels = require('kotoba-node-common').models.scores;
 const { createCustomDeckModel } = require('kotoba-node-common').models;
-const decksMetadata = require('./../../../generated/quiz/decks.json');
 
 const SHIRITORI_DECK_ID = 'shiritori';
 const DECK_NOT_FOUND_ERROR_CODE = 'ENODECK';
@@ -13,15 +13,6 @@ const UserServerTotalScoreModel = scoreModels.createUserServerTotalScoreModel(db
 const UserGlobalDeckScoreModel = scoreModels.createUserGlobalDeckScoreModel(dbConnection);
 const UserServerDeckScoreModel = scoreModels.createUserServerDeckScoreModel(dbConnection);
 const CustomDeckModel = createCustomDeckModel(dbConnection);
-
-const uniqueIdForDeckName = {};
-
-Object.keys(decksMetadata).forEach((deckName) => {
-  const { uniqueId } = decksMetadata[deckName];
-  uniqueIdForDeckName[deckName.toLowerCase()] = uniqueId;
-});
-
-uniqueIdForDeckName[SHIRITORI_DECK_ID] = SHIRITORI_DECK_ID;
 
 function updateUserGlobalTotalScore(userId, score, userName) {
   if (Math.floor(score) <= 0) {
@@ -395,12 +386,14 @@ class ServerDeckScoreQuery {
 
 async function getDeckUniqueIds(deckNames) {
   const promises = deckNames.map(deckName => deckName.toLowerCase()).map(async (deckName) => {
-    if (uniqueIdForDeckName[deckName]) {
-      return uniqueIdForDeckName[deckName];
+    if (deckName === SHIRITORI_DECK_ID) {
+      return SHIRITORI_DECK_ID;
     }
 
-    if (Object.values(uniqueIdForDeckName).includes(deckName)) {
-      return deckName;
+    const deckMeta = globals.resourceDatabase.getQuizDeckMeta(deckName);
+
+    if (deckMeta) {
+      return deckMeta.uniqueId;
     }
 
     const customDeck = await CustomDeckModel

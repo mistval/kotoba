@@ -1,4 +1,3 @@
-const state = require('./../static_state.js');
 const globals = require('./../globals.js');
 const path = require('path');
 const fs = require('fs');
@@ -7,9 +6,6 @@ const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const UserReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createUser(mongoConnection);
 const LocationReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createLocation(mongoConnection);
-const decksMetadata = require('./../../../generated/quiz/decks.json');
-
-const CACHE_SIZE_IN_PAGES = 1000;
 
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
