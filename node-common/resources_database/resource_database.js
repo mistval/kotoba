@@ -4,7 +4,7 @@ const buildPronunciationTable = require('./build_pronunciation_table.js');
 const buildRandomWordsTable = require('./build_random_words_table.js');
 const buildShiritoriTable = require('./build_shiritori_table.js');
 const buildFontCharacterTable = require('./build_font_character_table.js');
-const buildQuizQuestionsTable = require('./build_quiz_tables.js');
+const { buildDeckTables, updateDeck } = require('./build_quiz_tables.js');
 
 class ResourceDatabase {
   load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath, quizDataPath) {
@@ -29,7 +29,7 @@ class ResourceDatabase {
     this.database.pragma('journal_mode = WAL');
 
     if (needsBuild) {
-      buildQuizQuestionsTable(this.database, quizDataPath);
+      buildDeckTables(this.database, quizDataPath);
       buildFontCharacterTable(this.database, fontsPath);
       buildPronunciationTable(this.database, pronunciationDataPath);
       buildRandomWordsTable(this.database, randomWordDataPath);
@@ -101,6 +101,10 @@ WHERE fontFileName IN (${fontQuestionMarks.join(',')}) AND character IN (${chara
 
     const result = this.getRandomWordStatement.get();
     return result.word;
+  }
+
+  updateQuizDeck(deckName, deck) {
+    updateDeck(this.database, deckName, deck);
   }
 }
 

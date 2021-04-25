@@ -129,6 +129,21 @@ function insertMeta(database, deckName, deck) {
   insertStatement.run(deckName, deck.uniqueId, JSON.stringify(deckCopy));
 }
 
+function updateDeck(database, deckName, deck) {
+  const deleteMetaStatement = database.prepare('DELETE FROM QuizDecksMeta WHERE deckName = ?;');
+  const deleteCardsStatement = database.prepare(`DELETE FROM QuizQuestions WHERE deckName = ?;`);
+
+  const updateTransaction = database.transaction(() => {
+    deleteMetaStatement.run(deckName);
+    deleteCardsStatement.run(deckName);
+
+    insertMeta(database, deckName, deck);
+    insertCards(database, deckName, deck.cards);
+  });
+
+  updateTransaction();
+}
+
 function createWordIdentificationDeck(database, sourceDeckName, sourceDeck) {
   if (listeningVocabDeckSourceDeckNames.indexOf(sourceDeckName) === -1) {
     return;
@@ -188,7 +203,7 @@ function createMeaningDeck(database, sourceDeckName, sourceDeck) {
   insertMeta(database, meaningDeckName, sourceDeckCopy);
 }
 
-function buildQuizTables(database, quizDataPath) {
+function buildDeckTables(database, quizDataPath) {
   database.exec('CREATE TABLE QuizQuestions (deckName CHAR(20), idx INT, questionJson TEXT);');
   database.exec('CREATE TABLE QuizDecksMeta (deckName CHAR(20), deckUniqueId CHAR(20), metaJson TEXT);');
 
@@ -221,4 +236,7 @@ function buildQuizTables(database, quizDataPath) {
   database.exec('CREATE UNIQUE INDEX quizMetaUniqueIdIndex ON QuizDecksMeta (deckUniqueId);');
 }
 
-module.exports = buildQuizTables;
+module.exports = {
+  buildDeckTables,
+  updateDeck,
+};
