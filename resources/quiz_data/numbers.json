@@ -11,7 +11,7 @@
   "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
   "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
-  "answerCompareStrategy": "STRICT",
+  "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Comment",
   "cards": [
     {
