@@ -157,18 +157,7 @@ async function start() {
   const fontsPath = path.join(__dirname, '..', '..', 'resources', 'fonts');
 
   const resourceDatabasePath = path.join(__dirname, '..', 'generated', 'resources.dat');
-  const pronunciationDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'pronunciation.json');
-  const randomWordDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'random_words.json');
-  const wordFrequencyDataPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'frequency.json');
-  const jmdictPath = path.join(__dirname, '..', '..', 'resources', 'dictionaries', 'jmdict.json.gz');
-  globals.resourceDatabase = await initializeResourceDatabase(
-    resourceDatabasePath,
-    pronunciationDataPath,
-    randomWordDataPath,
-    wordFrequencyDataPath,
-    jmdictPath,
-    fontsPath,
-  );
+  globals.resourceDatabase = await initializeResourceDatabase(resourceDatabasePath);
 
   globals.fontHelper = initializeFonts(fontsPath, globals.resourceDatabase, Canvas);
 
