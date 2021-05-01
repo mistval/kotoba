@@ -10,10 +10,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "^7.1.2",
-    "fontkit": "^1.8.1",
+    "better-sqlite3": "7.1.2",
+    "fontkit": "1.8.1",
     "glob": "7.1.6",
-    "mongoose": "^5.12.2",
+    "mongoose": "5.12.2",
     "sqlite": "4.0.7",
     "validate-color": "2.1.0"
   }
