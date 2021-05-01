@@ -293,6 +293,30 @@ const hiraganaForRomaji = {
   ppu: 'っぷ',
   ppe: 'っぺ',
   ppo: 'っぽ',
+
+  ca: 'か',
+  ci: 'し',
+  cu: 'く',
+  ce: 'せ',
+  co: 'こ',
+
+  cya: 'ちゃ',
+  cyi: 'ちぃ',
+  cyu: 'ちゅ',
+  cye: 'ちぇ',
+  cyo: 'ちょ',
+
+  cca: 'っか',
+  cci: 'っし',
+  ccu: 'っく',
+  cce: 'っせ',
+  cco: 'っこ',
+
+  ccya: 'っちゃ',
+  ccyi: 'っちぃ',
+  ccyu: 'っちゅ',
+  ccye: 'っちぇ',
+  ccyo: 'っちょ',
 };
 
 function convertStringToHiragana(str) {
