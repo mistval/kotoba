@@ -357,7 +357,7 @@ function convertStringToHiragana(str) {
         const hiragana = hiraganaForRomaji[chars];
 
         if (hiragana) {
-          converted.push(hiragana);
+          converted.push(...hiragana);
           nextIndex += length;
           didConvert = true;
           break;
