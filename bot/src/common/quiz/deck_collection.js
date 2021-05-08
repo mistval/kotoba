@@ -21,7 +21,7 @@ function createIndexSetForDecks(decks, shuffle) {
       indices[i - startIndex] = i - 1;
     }
 
-    indexSet.push(shuffle ? shuffleArray(indices) : indices);
+    indexSet.push(shuffle ? shuffleArray(indices) : indices.reverse());
   });
 
   return indexSet;
