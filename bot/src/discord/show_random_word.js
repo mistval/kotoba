@@ -45,7 +45,7 @@ async function showRandomWord(
     throw new FulfillmentError({
       publicMessage: jishoNotRespondingResponse,
       logDescription: 'Jisho request error',
-      err,
+      error: err,
     });
   }
 

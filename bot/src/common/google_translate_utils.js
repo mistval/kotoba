@@ -28,7 +28,7 @@ Object.keys(languageNameForGoogleLanguageCode).forEach((googleLanguageCode) => {
 });
 
 function throwNotRespondingError(internalError) {
-  return throwPublicErrorFatal('Google Translate', 'Sorry, Google translate is not responding. Please try again later.', 'Error', internalError);
+  return throwPublicErrorFatal('Google Translate', 'Sorry, Google translate is not responding. Please try again later.', 'Google Translate Not Responding', internalError);
 }
 
 // Tries to resolve input to a language code.

@@ -15,7 +15,7 @@ module.exports = {
       const errorMessage = 'There was an unhandled error while reloading. Monochrome will continue to run, but may be in a bad state. You should restart it as soon as possible. Check the logs for more details.';
       throw new FulfillmentError({
         publicMessage: errorMessage,
-        err,
+        error: err,
       });
     }
   },

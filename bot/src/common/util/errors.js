@@ -16,7 +16,7 @@ function throwPublicError(sourceCommandName, publicMessage, logDescription, embe
   throw new FulfillmentError({
     publicMessage: errorContent,
     logDescription,
-    err,
+    error: err,
   });
 }
 
