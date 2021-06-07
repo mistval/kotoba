@@ -14,7 +14,6 @@ const gameModes = [
 const LOGGER_TITLE = 'QUIZ';
 
 function createReviewDeck(unansweredCards) {
-  return deckLoader.createReviewDeck(unansweredCards);
 }
 
 function updateReviewDecks(locationId, sessionInformation) {

@@ -69,21 +69,26 @@ module.exports.AnswerCompareStrategy = {
 /* DICTIONARY LINK STRATEGIES */
 
 module.exports.CreateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.question);},
-  JISHO_QUESTION_KANJI: card => {return `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`;},
-  JISHO_ANSWER_WORD: card => {return 'http://jisho.org/search/' + encodeURIComponent(card.answer[0]);},
-  WEBSTER_ANSWER: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.answer[0]);},
-  WEBSTER_QUESTION: card => {return 'https://www.merriam-webster.com/dictionary/' + encodeURIComponent(card.question);},
-  NONE: card => {return '';},
+  JISHO_QUESTION_WORD: card => `http://jisho.org/search/${encodeURIComponent(card.question)}`,
+  JISHO_QUESTION_KANJI: card => `http://jisho.org/search/${encodeURIComponent(card.question)}%23kanji`,
+  JISHO_ANSWER_WORD: card => `http://jisho.org/search/${encodeURIComponent(getAnswerToLink(card))}`,
+  WEBSTER_ANSWER: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(getAnswerToLink(card))}`,
+  WEBSTER_QUESTION: card => `https://www.merriam-webster.com/dictionary/${encodeURIComponent(card.question)}`,
+  WIKIPEDIA_QUESTION_FIRST_TOKEN: card => `https://ja.wikipedia.org/wiki/${encodeURIComponent(card.question.split(' ')[0])}`,
+  PROVIDED_ON_CARD: card => card.dictionaryLinkUri ? card.dictionaryLinkUri.replace('%2Fwiki%2F%25', '/wiki/%') : '', // HACK: For some reason a minority of questions get their URIs messed up during the build process
+  WEBLIO_QUESTION: card => `https://www.weblio.jp/content/${encodeURIComponent(card.question)}`,
+  NONE: () => '',
 };
 
 module.exports.CreateAggregateDictionaryLinkStrategy = {
-  JISHO_QUESTION_WORD: cards => {return createAggregateLink(cards.map(card => card.question));},
-  JISHO_QUESTION_KANJI: cards => {return createAggregateLink(cards.map(card => card.question), 'kanji');},
-  JISHO_ANSWER_WORD: cards => {return createAggregateLink(cards.map(card => card.answer[0]));},
-  WEBSTER_ANSWER: cards => {return '';},
-  WEBSTER_QUESTION: card => {return '';},
-  NONE: cards => {return '';},
+  JISHO_QUESTION_WORD: cards => createAggregateLink(cards.map(card => card.question)),
+  JISHO_QUESTION_KANJI: cards => createAggregateLink(cards.map(card => card.question), 'kanji'),
+  JISHO_ANSWER_WORD: cards => createAggregateLink(cards.map(card => card.answer[0])),
+  WEBSTER_ANSWER: () => '',
+  WEBSTER_QUESTION: () => '',
+  WIKIPEDIA_QUESTION_FIRST_TOKEN: () => '',
+  PROVIDED_ON_CARD: () => '',
+  NONE: () => '',
 };
 
 /* QUESTION CREATION STRATEGIES */
