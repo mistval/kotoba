@@ -15,7 +15,6 @@ WORKDIR /var/app
 COPY ./api .
 
 RUN npm ci
-RUN npm run buildquiz
 RUN npm run buildresources
 
 CMD ["npm", "start"]
