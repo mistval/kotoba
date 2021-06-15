@@ -19,7 +19,7 @@
     "mongoose": "5.12.5",
     "node-fetch": "2.6.1",
     "polka": "0.5.2",
-    "render-furigana": "2.0.2",
+    "render-furigana": "^2.0.4",
     "vega": "5.17.3"
   },
   "devDependencies": {
