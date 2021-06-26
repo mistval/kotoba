@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./bot/Dockerfile
-    restart: always
+    restart: unless-stopped
     environment:
       MONGO_HOST: 'mongo_readwrite:27017'
       WORKER_HOST: 'kotoba-worker'
@@ -21,7 +21,7 @@ services:
     build:
       context: .
       dockerfile: ./kotobaweb/Dockerfile
-    restart: always
+    restart: unless-stopped
   kotoba-api:
     image: registry.gitlab.com/kotoba/monochrome2/api:latest
     build:
@@ -41,7 +41,7 @@ services:
     build:
       context: .
       dockerfile: ./worker/Dockerfile
-    restart: always
+    restart: unless-stopped
     environment:
       MONGO_HOST: 'mongo_readwrite:27017'
     volumes:
@@ -51,7 +51,7 @@ services:
   mongo_readwrite:
     image: mongo:4.2.9
     command: '--wiredTigerCacheSizeGB 0.25'
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./user_data/mongo_readwrite_data:/data/db
     ports:
@@ -59,7 +59,7 @@ services:
   nginx:
     image: registry.gitlab.com/kotoba/monochrome2/nginx:latest
     build: ./nginx
-    restart: always
+    restart: unless-stopped
     depends_on:
       - kotoba-api
       - kotoba-web
