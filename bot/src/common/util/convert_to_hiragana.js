@@ -200,12 +200,18 @@ const hiraganaForRomaji = {
   ssyo: 'っしょ',
 
   cha: 'ちゃ',
+  tya: 'ちゃ',
   chu: 'ちゅ',
+  tyu: 'ちゅ',
   cho: 'ちょ',
+  tyo: 'ちょ',
 
   ccha: 'っちゃ',
+  ttya: 'っちゃ',
   cchu: 'っちゅ',
+  ttyu: 'っちゅ',
   ccho: 'っちょ',
+  ttyo: 'っちょ',
 
   nya: 'にゃ',
   nyu: 'にゅ',
@@ -229,10 +235,13 @@ const hiraganaForRomaji = {
 
   ja: 'じゃ',
   jya: 'じゃ',
+  zya: 'じゃ',
   ju: 'じゅ',
   jyu: 'じゅ',
+  zyu: 'じゅ',
   jo: 'じょ',
   jyo: 'じょ',
+  zyo: 'じょ',
 
   dya: 'ぢゃ',
   dyu: 'ぢゅ',
@@ -258,6 +267,7 @@ const hiraganaForRomaji = {
 
   za: 'ざ',
   ji: 'じ',
+  zi: 'じ',
   zu: 'ず',
   ze: 'ぜ',
   zo: 'ぞ',
