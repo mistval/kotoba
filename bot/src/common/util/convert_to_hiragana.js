@@ -151,7 +151,6 @@ const hiraganaForRomaji = {
   hi: 'ひ',
   hu: 'ふ',
   fu: 'ふ',
-  fi: 'ふぃ',
   he: 'へ',
   ho: 'ほ',
 
@@ -327,6 +326,53 @@ const hiraganaForRomaji = {
   ccyu: 'っちゅ',
   ccye: 'っちぇ',
   ccyo: 'っちょ',
+
+  fa: 'ふぁ',
+  fi: 'ふぃ',
+  fyu: 'ふゅ',
+  fe: 'ふぇ',
+  fo: 'ふぉ',
+
+  wi: 'うぃ',
+  wyi: 'ゐ',
+  we: 'うぇ',
+  wye: 'ゑ',
+  who: 'うぉ',
+
+  va: 'ゔぁ',
+  vi: 'ゔぃ',
+  vu: 'ゔ',
+  ve: 'ゔぇ',
+  vo: 'ゔぉ',
+
+  tsa: 'つぁ',
+  tsi: 'つぃ',
+  tse: 'つぇ',
+  tso: 'つぉ',
+
+  che: 'ちぇ',
+  she: 'しぇ',
+  je: 'じぇ',
+  ye: 'いぇ',
+
+  kwa: 'くぁ',
+  kwi: 'くぃ',
+  kwe: 'くぇ',
+  kwo: 'くぉ',
+  
+  gwa: 'ぐぁ',
+  gwi: 'ぐぃ',
+  gwe: 'ぐぇ',
+  gwo: 'ぐぉ',
+
+  teli: 'てぃ',
+  texi: 'てぃ',
+  deli: 'でぃ',
+  dexi: 'でぃ',
+  delyu: 'でゅ',
+  dexyu: 'でゅ',
+  tolu: 'とぅ',
+  toxu: 'とぅ',
 };
 
 function convertStringToHiragana(str) {
