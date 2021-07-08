@@ -359,7 +359,7 @@ const hiraganaForRomaji = {
   kwi: 'くぃ',
   kwe: 'くぇ',
   kwo: 'くぉ',
-  
+
   gwa: 'ぐぁ',
   gwi: 'ぐぃ',
   gwe: 'ぐぇ',
