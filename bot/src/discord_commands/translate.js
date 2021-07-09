@@ -140,8 +140,6 @@ module.exports = {
   usageExample: '<prefix>translate 吾輩は猫である',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   async action(bot, msg, suffix) {
-    const spaceIndex = msg.cleanContent.indexOf(' ');
-    const cleanContent = msg.cleanContent.substring(spaceIndex + 1).trim();
     const languageCodes = getLanguageCodesFromExtension(msg.extension);
     verifyLanguageCodesValid(languageCodes, msg.prefix);
 
@@ -151,13 +149,13 @@ module.exports = {
 
     const [languageCodeFrom, languageCodeTo] = await coerceLanguageCodes(
       languageCodes,
-      cleanContent,
+      suffix,
     );
 
     const result = await googleTranslate.translate(
       languageCodeFrom,
       languageCodeTo,
-      cleanContent,
+      suffix,
     );
 
     const discordContent = resultToDiscordContent(languageCodeFrom, languageCodeTo, result);
