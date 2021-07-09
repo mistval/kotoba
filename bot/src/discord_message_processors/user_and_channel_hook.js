@@ -37,10 +37,10 @@ class Hook {
     clearTimeout(this.timer);
     delete this.timer;
     this.timer = setTimeout(
-      () => {
+      async () => {
         try {
           this.unregister();
-          timeoutCallback();
+          await timeoutCallback();
         } catch (err) {
           this.logger.error({
             event: 'HOOK EXPIRATION CALLBACK ERRORED',
