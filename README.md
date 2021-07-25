@@ -41,6 +41,8 @@ npm start
 
 The bot will start and come online. The `npm run buildresources` command generally only needs to be run once (unless you change quiz data or such).
 
+VS Code is recommended for development. This repo contains a VS Code `launch.json` with a `Launch bot` configuration for debugging in VS Code.
+
 ### KotobaWeb
 
 Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Then:
