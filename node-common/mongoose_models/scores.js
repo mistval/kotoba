@@ -32,7 +32,7 @@ const UserServerDeckSchema = new mongoose.Schema({
   lastKnownUsername: { type: String, required: true },
 });
 
-UserServerDeckSchema.index({ userId: 1, deckUniqueId: 1, serverId: 1 }, { unique: true });
+UserServerDeckSchema.index({ serverId: 1, deckUniqueId: 1, userId: 1 }, { unique: true });
 
 module.exports = {
   createUserGlobalTotalScoreModel: (connection) => {
