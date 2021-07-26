@@ -13,7 +13,7 @@ const UserServerTotalSchema = new mongoose.Schema({
   lastKnownUsername: { type: String, required: true },
 });
 
-UserServerTotalSchema.index({ userId: 1, serverId: 1 }, { unique: true });
+UserServerTotalSchema.index({ serverId: 1, userId: 1 }, { unique: true });
 
 const UserGlobalDeckSchema = new mongoose.Schema({
   userId: { type: String, required: true },
