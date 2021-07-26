@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const UserGlobalTotalSchema = new mongoose.Schema({
   userId: { type: String, required: true, index: true, unique: true },
   score: { type: Number, required: true, index: true, min: 1 },
-  lastKnownUsername: { type: String, required: true, index: true },
+  lastKnownUsername: { type: String, required: true },
 });
 
 const UserServerTotalSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   serverId: { type: String, required: true },
   score: { type: Number, required: true, index: true, min: 1 },
-  lastKnownUsername: { type: String, required: true, index: true },
+  lastKnownUsername: { type: String, required: true },
 });
 
 UserServerTotalSchema.index({ userId: 1, serverId: 1 }, { unique: true });
@@ -19,7 +19,7 @@ const UserGlobalDeckSchema = new mongoose.Schema({
   userId: { type: String, required: true },
   deckUniqueId: { type: String, required: true },
   score: { type: Number, required: true, index: true, min: 1 },
-  lastKnownUsername: { type: String, required: true, index: true },
+  lastKnownUsername: { type: String, required: true },
 });
 
 UserGlobalDeckSchema.index({ userId: 1, deckUniqueId: 1 }, { unique: true });
@@ -29,7 +29,7 @@ const UserServerDeckSchema = new mongoose.Schema({
   deckUniqueId: { type: String, required: true },
   serverId: { type: String, required: true },
   score: { type: Number, required: true, index: true, min: 1 },
-  lastKnownUsername: { type: String, required: true, index: true },
+  lastKnownUsername: { type: String, required: true },
 });
 
 UserServerDeckSchema.index({ userId: 1, deckUniqueId: 1, serverId: 1 }, { unique: true });
