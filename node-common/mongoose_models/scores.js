@@ -22,7 +22,7 @@ const UserGlobalDeckSchema = new mongoose.Schema({
   lastKnownUsername: { type: String, required: true },
 });
 
-UserGlobalDeckSchema.index({ userId: 1, deckUniqueId: 1 }, { unique: true });
+UserGlobalDeckSchema.index({ deckUniqueId: 1, userId: 1 }, { unique: true });
 
 const UserServerDeckSchema = new mongoose.Schema({
   userId: { type: String, required: true },
