@@ -17,7 +17,6 @@ const {
   DeckPermissions,
   RESPONSE_PERMISSIONS_HEADER,
   REQUEST_SECRET_HEADER,
-  RESPONSE_READONLY_SECRET_HEADER,
   RESPONSE_READWRITE_SECRET_HEADER,
 } = require('kotoba-common').deckPermissions;
 
@@ -64,15 +63,9 @@ async function checkHas100DecksOrFewer(req, res, next) {
 }
 
 async function ensureSecrets(deckMeta) {
-  if (!deckMeta.readOnlySecret) {
-    const [secret1, secret2] = await Promise.all([
-      crypto.generateDeckSecret(),
-      crypto.generateDeckSecret(),
-    ]);
-
+  if (!deckMeta.readWriteSecret) {
     const secrets = {
-      readOnlySecret: secret1,
-      readWriteSecret: secret2,
+      readWriteSecret: await crypto.generateDeckSecret(),
     };
 
     await CustomDeckModel.findByIdAndUpdate(deckMeta._id, secrets);
@@ -121,14 +114,11 @@ function attachPermissions(req, res, next) {
   if (req.deckMeta.owner.equals(req.user._id) || req.user.admin) {
     req.deckPermissions = DeckPermissions.OWNER;
 
-    res.header(RESPONSE_READONLY_SECRET_HEADER, req.deckMeta.readOnlySecret);
     res.header(RESPONSE_READWRITE_SECRET_HEADER, req.deckMeta.readWriteSecret);
   } else if (providedSecret === req.deckMeta.readWriteSecret) {
     req.deckPermissions = DeckPermissions.READWRITE;
-  } else if (providedSecret === req.deckMeta.readOnlySecret) {
-    req.deckPermissions = DeckPermissions.READONLY;
   } else {
-    req.deckPermissions = DeckPermissions.NONE;
+    req.deckPermissions = DeckPermissions.READONLY;
   }
 
   res.header(RESPONSE_PERMISSIONS_HEADER, req.deckPermissions);
@@ -360,26 +350,8 @@ routes.post(
       await writeFullDeck(deckFull);
 
       res
-        .header(RESPONSE_READONLY_SECRET_HEADER, deckMeta.readOnlySecret)
         .header(RESPONSE_READWRITE_SECRET_HEADER, deckMeta.readWriteSecret)
         .json({ _id: deckMeta._id });
-    } catch (err) {
-      next(err);
-    }
-  },
-);
-
-routes.post(
-  '/:id/reset_read_secret',
-  checkAuth,
-  createAttachDeckMeta(false),
-  attachPermissions,
-  checkCanViewSecrets,
-  async (req, res, next) => {
-    try {
-      req.deckMeta.readOnlySecret = await crypto.generateDeckSecret();
-      await req.deckMeta.save();
-      res.status(200).send(req.deckMeta.readOnlySecret);
     } catch (err) {
       next(err);
     }

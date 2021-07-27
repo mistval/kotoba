@@ -17,7 +17,6 @@ const {
   DeckPermissions,
   REQUEST_SECRET_HEADER,
   RESPONSE_PERMISSIONS_HEADER,
-  RESPONSE_READONLY_SECRET_HEADER,
   RESPONSE_READWRITE_SECRET_HEADER,
 } = deckPermissions;
 
@@ -161,7 +160,6 @@ class EditDeck extends Component {
 
       const apiDeck = response.data;
       const permissions = response.headers[RESPONSE_PERMISSIONS_HEADER.toLowerCase()];
-      const readOnlySecret = response.headers[RESPONSE_READONLY_SECRET_HEADER.toLowerCase()];
       const readWriteSecret = response.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
 
       const gridDeck = {
@@ -173,7 +171,7 @@ class EditDeck extends Component {
         description: apiDeck.description || '',
       };
 
-      this.setState({ gridDeck, permissions, readOnlySecret, readWriteSecret });
+      this.setState({ gridDeck, permissions, readWriteSecret });
     } catch (err) {
       return this.handleError(err);
     }
@@ -312,7 +310,6 @@ class EditDeck extends Component {
 
         this.setState((state) => {
           state.gridDeck._id = res.data._id;
-          state.readOnlySecret = res.headers[RESPONSE_READONLY_SECRET_HEADER.toLowerCase()];
           state.readWriteSecret = res.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
           return state;
         });
@@ -437,21 +434,8 @@ class EditDeck extends Component {
     return `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
   }
 
-  getReadOnlyLink = () => {
-    return this.getSecretLink(this.state.readOnlySecret);
-  }
-
   getReadWriteLink = () => {
     return this.getSecretLink(this.state.readWriteSecret);
-  }
-
-  onResetViewLink = async () => {
-    try {
-      const res = await axios.post(`/api/decks/${this.state.gridDeck._id}/reset_read_secret`);
-      this.setState({ readOnlySecret: res.data });
-    } catch (err) {
-      this.handleError(err);
-    }
   }
 
   onResetEditLink = async () => {
@@ -492,7 +476,6 @@ class EditDeck extends Component {
       );
     }
 
-    const readOnlyLink = this.getReadOnlyLink();
     const readWriteLink = this.getReadWriteLink();
 
     return (
@@ -616,16 +599,9 @@ class EditDeck extends Component {
               />
             </div>
           </div>
-          { this.state.readOnlySecret &&
+          { this.state.readWriteSecret &&
           <div className="row mt-5">
             <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
-              <b>View Link</b> - Anyone with this link can view and download this deck.
-              <div className="input-group mb-3">
-                <input type="text" className="form-control" value={readOnlyLink} onClick={e => e.target.select()} />
-                <div className="input-group-append">
-                  <button className="btn btn-outline-secondary" type="button" onClick={this.onResetViewLink}>Reset</button>
-                </div>
-              </div>
               <b>Edit Link</b> - Anyone with this link can view and edit this deck.
               <div className="input-group mb-3">
                 <input type="text" className="form-control" value={readWriteLink} onClick={e => e.target.select()} />

@@ -135,7 +135,7 @@ async function getCustomDeckFromDisk(deckInfo) {
     uniqueId: deckRaw.uniqueId,
     name: deckRaw.name,
     shortName: deckRaw.shortName,
-    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}#${deckRaw.ownerDiscordUser.discriminator}. ${deckRaw.description || ''}`,
+    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}#${deckRaw.ownerDiscordUser.discriminator}. [View full deck](https://kotobaweb.com/dashboard/decks/${deckRaw._id}). ${deckRaw.description || ''}`,
     article: 'a',
     dictionaryLinkStrategy: 'NONE',
     answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
