@@ -10,7 +10,7 @@ function calculateCanCopyToCustomDeck(card) {
   if (card.answerTimeLimitStrategy === 'ANAGRAMS') {
     return false;
   }
-  
+
   if (card.scoreAnswerStrategy === 'MULTIPLE_ANSWERS_POSITION_POINTS') {
     return false;
   }
@@ -41,7 +41,7 @@ function notifyStarting(
         detail: locationId,
       });
     }
-  
+
     const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo, isLoaded };
     pendingReportForLocationId[locationId] = report;
   } catch (err) {
@@ -136,11 +136,11 @@ async function processPendingReportForLocation(channel) {
     const allAnswererDiscordIdsNonUnique = report.cards
       .map(card => card.answererDiscordIds)
       .reduce((allIds, x) => allIds.concat(x), []);
-    
+
     if (allAnswererDiscordIdsNonUnique.length === 0) {
       return;
     }
-    
+
     const allAnswererDiscordIdsUnique = allAnswererDiscordIdsNonUnique
       .filter((x, i) => allAnswererDiscordIdsNonUnique.indexOf(x) === i);
 
@@ -173,7 +173,7 @@ async function processPendingReportForLocation(channel) {
       participants: userModels,
       discordServerIconUri: guild ? guild.iconURL : undefined,
       discordServerName: guild ? guild.name : undefined,
-      discordChannelName: guild ? guild.channels.get(channel.id).name : 'DM',
+      discordChannelName: guild ? channel.name : 'DM',
       scores,
       settings: report.settings,
       decks: report.deckInfo,
