@@ -2,7 +2,7 @@
   "uniqueId": "stations_nara",
   "name": "Nara Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -28,7 +28,7 @@
       "answer": [
         "あまがつじ"
       ],
-      "meaning": "近鉄橿原線、近鉄天理線",
+      "meaning": "近鉄橿原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/amagatsuji/"
     },
     {
@@ -232,6 +232,22 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasumigaoka_nara/"
     },
     {
+      "question": "葛城山上",
+      "answer": [
+        "かつらぎさんじょう"
+      ],
+      "meaning": "葛城山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuragisanjo/"
+    },
+    {
+      "question": "葛城登山口",
+      "answer": [
+        "かつらぎとざんぐち"
+      ],
+      "meaning": "葛城山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katsuragitozanguchi/"
+    },
+    {
       "question": "金橋",
       "answer": [
         "かなはし"
@@ -252,7 +268,7 @@
       "answer": [
         "がっけんきたいこま"
       ],
-      "meaning": "近鉄けいはんな線など",
+      "meaning": "近鉄けいはんな線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakken-kita-ikoma/"
     },
     {
@@ -260,7 +276,7 @@
       "answer": [
         "がっけんならとみがおか"
       ],
-      "meaning": "近鉄けいはんな線など",
+      "meaning": "近鉄けいはんな線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakken-nara-tomigaoka/"
     },
     {
@@ -284,7 +300,7 @@
       "answer": [
         "きんてつこおりやま"
       ],
-      "meaning": "近鉄橿原線、近鉄天理線",
+      "meaning": "近鉄橿原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kintetsu-koriyama/"
     },
     {
@@ -324,7 +340,7 @@
       "answer": [
         "くじょう"
       ],
-      "meaning": "近鉄橿原線、近鉄天理線",
+      "meaning": "近鉄橿原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kujo_nara/"
     },
     {
@@ -356,7 +372,7 @@
       "answer": [
         "こおりやま"
       ],
-      "meaning": "関西本線（西日本）",
+      "meaning": "関西本線（西日本）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koriyama_nara/"
     },
     {
@@ -412,7 +428,7 @@
       "answer": [
         "さんごう"
       ],
-      "meaning": "関西本線（西日本）",
+      "meaning": "関西本線（西日本）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sango_nara/"
     },
     {
@@ -460,7 +476,7 @@
       "answer": [
         "しらにわだい"
       ],
-      "meaning": "近鉄けいはんな線など",
+      "meaning": "近鉄けいはんな線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiraniwadai/"
     },
     {
@@ -482,7 +498,8 @@
     {
       "question": "ＪＲ五位堂",
       "answer": [
-        "じぇいあーるごいどう"
+        "じぇいあーるごいどう",
+        "JRごいどう"
       ],
       "meaning": "桜井線、和歌山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-goido/"
@@ -596,7 +613,7 @@
       "answer": [
         "つつい"
       ],
-      "meaning": "近鉄橿原線、近鉄天理線",
+      "meaning": "近鉄橿原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsutsui_nara/"
     },
     {
@@ -684,7 +701,7 @@
       "answer": [
         "にしのきょう"
       ],
-      "meaning": "近鉄橿原線、近鉄天理線",
+      "meaning": "近鉄橿原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinokyo/"
     },
     {
@@ -828,7 +845,7 @@
       "answer": [
         "ほうりゅうじ"
       ],
-      "meaning": "関西本線（西日本）",
+      "meaning": "関西本線（西日本）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horyuji/"
     },
     {
@@ -948,7 +965,7 @@
       "answer": [
         "やまとこいずみ"
       ],
-      "meaning": "関西本線（西日本）",
+      "meaning": "関西本線（西日本）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamato-koizumi/"
     },
     {

@@ -2,7 +2,7 @@
   "uniqueId": "stations_chiba",
   "name": "Chiba Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -84,7 +84,7 @@
       "answer": [
         "あびこ"
       ],
-      "meaning": "JR線、東京メトロ千代田線",
+      "meaning": "常磐線各停、常磐線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abiko_chiba/"
     },
     {
@@ -460,7 +460,7 @@
       "answer": [
         "かしわ"
       ],
-      "meaning": "JR線、東京メトロ千代田線など",
+      "meaning": "常磐線各停、常磐線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiwa/"
     },
     {
@@ -693,7 +693,7 @@
         "がくえんまえ"
       ],
       "meaning": "京成千原線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakuen-mae_keisei/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gakuen-mae_chiba/?page=2"
     },
     {
       "question": "木下",
@@ -716,7 +716,7 @@
       "answer": [
         "きたかしわ"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kashiwa/"
     },
     {
@@ -724,7 +724,7 @@
       "answer": [
         "きたこがね"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kogane/"
     },
     {
@@ -756,7 +756,7 @@
       "answer": [
         "きたまつど"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-matsudo/"
     },
     {
@@ -1380,7 +1380,7 @@
       "answer": [
         "しんまつど"
       ],
-      "meaning": "JR線、東京メトロ千代田線",
+      "meaning": "常磐線各停、武蔵野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shim-matsudo/?page=2"
     },
     {
@@ -1700,7 +1700,7 @@
       "answer": [
         "てんのうだい"
       ],
-      "meaning": "JR線、東京メトロ千代田線",
+      "meaning": "常磐線各停、常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tennodai/"
     },
     {
@@ -2037,7 +2037,7 @@
         "ばらきなかやま"
       ],
       "meaning": "東京メトロ東西線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/barakinakayama/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/baraki-nakayama/"
     },
     {
       "question": "東我孫子",
@@ -2084,7 +2084,7 @@
       "answer": [
         "ひがしなりた"
       ],
-      "meaning": "京成本線、芝山鉄道など",
+      "meaning": "芝山鉄道、京成東成田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-narita/"
     },
     {
@@ -2348,7 +2348,7 @@
       "answer": [
         "まつど"
       ],
-      "meaning": "JR線、東京メトロ千代田線など",
+      "meaning": "常磐線各停、常磐線、新京成線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsudo/"
     },
     {
@@ -2372,7 +2372,7 @@
       "answer": [
         "まばし"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線など",
+      "meaning": "常磐線各停、流鉄流山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mabashi/"
     },
     {
@@ -2412,7 +2412,7 @@
       "answer": [
         "みなみかしわ"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kashiwa/"
     },
     {
@@ -2517,7 +2517,7 @@
         "もとやわた"
       ],
       "meaning": "中央・総武線各停、都営新宿線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moto-yawata/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motoyawata/"
     },
     {
       "question": "物井",

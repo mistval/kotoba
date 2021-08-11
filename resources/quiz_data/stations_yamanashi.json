@@ -2,7 +2,7 @@
   "uniqueId": "stations_yamanashi",
   "name": "Yamanashi Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -246,6 +246,14 @@
       ],
       "meaning": "富士急行線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaguchiko/"
+    },
+    {
+      "question": "河口湖畔",
+      "answer": [
+        "かわぐちこはん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/lakeside/"
     },
     {
       "question": "清里",
@@ -550,6 +558,14 @@
       ],
       "meaning": "富士急行線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisan/"
+    },
+    {
+      "question": "富士見台",
+      "answer": [
+        "ふじみだい"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujimidai_yamanashi/"
     },
     {
       "question": "三つ峠",

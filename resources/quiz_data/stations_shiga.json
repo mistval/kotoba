@@ -2,7 +2,7 @@
   "uniqueId": "stations_shiga",
   "name": "Shiga Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -36,7 +36,7 @@
       "answer": [
         "あづち"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azuchi/"
     },
     {
@@ -100,7 +100,7 @@
       "answer": [
         "いしやま"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishiyama/"
     },
     {
@@ -124,7 +124,7 @@
       "answer": [
         "いなえ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inae/"
     },
     {
@@ -196,7 +196,7 @@
       "answer": [
         "おうみはちまん"
       ],
-      "meaning": "東海道・山陽本線、近江鉄道八日市線",
+      "meaning": "琵琶湖線、近江鉄道八日市線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omi-hachiman/"
     },
     {
@@ -220,7 +220,7 @@
       "answer": [
         "おおつ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otsu/"
     },
     {
@@ -308,7 +308,7 @@
       "answer": [
         "かわせ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawase/"
     },
     {
@@ -372,7 +372,7 @@
       "answer": [
         "くさつ"
       ],
-      "meaning": "東海道・山陽本線、草津線",
+      "meaning": "琵琶湖線、草津線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusatsu_shiga/"
     },
     {
@@ -424,6 +424,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/cable_sakamoto/"
     },
     {
+      "question": "公園前",
+      "answer": [
+        "こうえんまえ"
+      ],
+      "meaning": "八幡山ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koenmae/"
+    },
+    {
       "question": "甲賀",
       "answer": [
         "こうか"
@@ -460,7 +468,7 @@
       "answer": [
         "さかた"
       ],
-      "meaning": "北陸本線など",
+      "meaning": "琵琶湖線、北陸本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakata_shiga/"
     },
     {
@@ -524,7 +532,7 @@
       "answer": [
         "しのはら"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinohara_shiga/"
     },
     {
@@ -556,7 +564,7 @@
       "answer": [
         "せた"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seta_shiga/"
     },
     {
@@ -564,7 +572,7 @@
       "answer": [
         "ぜぜ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zeze/"
     },
     {
@@ -604,7 +612,7 @@
       "answer": [
         "たむら"
       ],
-      "meaning": "北陸本線など",
+      "meaning": "琵琶湖線、北陸本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamura/"
     },
     {
@@ -692,7 +700,7 @@
       "answer": [
         "ながはま"
       ],
-      "meaning": "北陸本線など",
+      "meaning": "琵琶湖線、北陸本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagahama/"
     },
     {
@@ -716,8 +724,16 @@
       "answer": [
         "のとがわ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/notogawa/"
+    },
+    {
+      "question": "八幡城址",
+      "answer": [
+        "はちまんじょうし"
+      ],
+      "meaning": "八幡山ロープウェー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachimanjoshi/"
     },
     {
       "question": "比叡山坂本",
@@ -732,7 +748,7 @@
       "answer": [
         "ひこね"
       ],
-      "meaning": "東海道・山陽本線、近江鉄道本線",
+      "meaning": "琵琶湖線、近江鉄道本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikone/"
     },
     {
@@ -876,7 +892,7 @@
       "answer": [
         "みなみくさつ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kusatsu/"
     },
     {
@@ -892,7 +908,7 @@
       "answer": [
         "みなみひこね"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-hikone/"
     },
     {
@@ -916,7 +932,7 @@
       "answer": [
         "もりやま"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moriyama_shiga/"
     },
     {
@@ -924,7 +940,7 @@
       "answer": [
         "やす"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasu_shiga/"
     },
     {
@@ -948,7 +964,7 @@
       "answer": [
         "りっとう"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "琵琶湖線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ritto/"
     },
     {

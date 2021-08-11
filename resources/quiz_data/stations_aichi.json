@@ -2,7 +2,7 @@
   "uniqueId": "stations_aichi",
   "name": "Aichi Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -84,8 +84,8 @@
       "answer": [
         "あおやま"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aoyama_meitetsu/"
+      "meaning": "名鉄河和線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aoyama_aichi/"
     },
     {
       "question": "赤池",
@@ -108,7 +108,7 @@
       "answer": [
         "あぐい"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/agui/"
     },
     {
@@ -116,7 +116,7 @@
       "answer": [
         "あげ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/age/"
     },
     {
@@ -276,7 +276,7 @@
       "answer": [
         "いしぼとけ"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishibotoke/"
     },
     {
@@ -332,7 +332,7 @@
       "answer": [
         "いぬやまぐち"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inuyamaguchi/"
     },
     {
@@ -380,7 +380,7 @@
       "answer": [
         "いわくら"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakura_aichi/"
     },
     {
@@ -420,7 +420,7 @@
       "answer": [
         "うえだい"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uedai/"
     },
     {
@@ -468,7 +468,7 @@
       "answer": [
         "うめつぼ"
       ],
-      "meaning": "名鉄豊田線、名鉄三河線など",
+      "meaning": "名鉄豊田線、名鉄三河線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umetsubo/"
     },
     {
@@ -820,7 +820,7 @@
       "answer": [
         "かしわもり"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiwamori/"
     },
     {
@@ -828,8 +828,8 @@
       "answer": [
         "かすがい"
       ],
-      "meaning": "中央本線（東海）",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasugai_aichi/"
+      "meaning": "名鉄小牧線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kasugai_meitetsu/"
     },
     {
       "question": "烏森",
@@ -908,7 +908,7 @@
       "answer": [
         "かみとよた"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-toyota/"
     },
     {
@@ -1188,7 +1188,7 @@
       "answer": [
         "くろざさ"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurozasa/"
     },
     {
@@ -1260,7 +1260,7 @@
       "answer": [
         "こうなん"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konan_aichi/"
     },
     {
@@ -1276,7 +1276,7 @@
       "answer": [
         "こうわ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kowa/"
     },
     {
@@ -1284,7 +1284,7 @@
       "answer": [
         "こうわぐち"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kowaguchi/"
     },
     {
@@ -1324,7 +1324,7 @@
       "answer": [
         "こつようすい"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotsuyosui/"
     },
     {
@@ -1380,7 +1380,7 @@
       "answer": [
         "こめのき"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komenoki/?page=2"
     },
     {
@@ -1389,7 +1389,7 @@
         "こもと"
       ],
       "meaning": "あおなみ線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komoto/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komoto_aichi/?page=2"
     },
     {
       "question": "御器所",
@@ -1436,7 +1436,7 @@
       "answer": [
         "さかべ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakabe/"
     },
     {
@@ -1549,7 +1549,7 @@
         "さんのう"
       ],
       "meaning": "名鉄津島線、名鉄犬山線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanno_meitetsu/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanno_aichi/"
     },
     {
       "question": "塩釜口",
@@ -1637,7 +1637,7 @@
         "しやくしょ"
       ],
       "meaning": "名古屋地下鉄名城線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho_nagoya/"
     },
     {
       "question": "市役所前",
@@ -1645,7 +1645,7 @@
         "しやくしょまえ"
       ],
       "meaning": "豊橋鉄道市内線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_aichi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_toyohashi/"
     },
     {
       "question": "聚楽園",
@@ -1684,7 +1684,7 @@
       "answer": [
         "しらさわ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirasawa_aichi/"
     },
     {
@@ -1844,7 +1844,7 @@
       "answer": [
         "じょうすい"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/josui/?page=2"
     },
     {
@@ -1908,7 +1908,7 @@
       "answer": [
         "すみよしちょう"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumiyoshicho/"
     },
     {
@@ -1980,7 +1980,7 @@
       "answer": [
         "たいさんじ"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taisanji_aichi/"
     },
     {
@@ -2020,7 +2020,7 @@
       "answer": [
         "たかよこすか"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takayokosuka/"
     },
     {
@@ -2052,7 +2052,7 @@
       "answer": [
         "たつみがおか"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatsumigaoka/"
     },
     {
@@ -2116,7 +2116,7 @@
       "answer": [
         "ちたたけとよ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chitataketoyo/"
     },
     {
@@ -2124,7 +2124,7 @@
       "answer": [
         "ちたはんだ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chitahanda/"
     },
     {
@@ -2268,7 +2268,7 @@
       "answer": [
         "とくしげなごやげいだい"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokushigenagoyageidai/"
     },
     {
@@ -2340,7 +2340,7 @@
       "answer": [
         "とよたし"
       ],
-      "meaning": "名鉄豊田線、名鉄三河線など",
+      "meaning": "名鉄豊田線、名鉄三河線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyotashi/"
     },
     {
@@ -2405,7 +2405,7 @@
         "なかじま"
       ],
       "meaning": "あおなみ線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakajima/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakajima_aichi/"
     },
     {
       "question": "中水野",
@@ -2516,7 +2516,7 @@
       "answer": [
         "ならわ"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/narawa/"
     },
     {
@@ -2620,7 +2620,7 @@
       "answer": [
         "にしはる"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishiharu/"
     },
     {
@@ -2636,7 +2636,7 @@
       "answer": [
         "にっしん"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nisshin_aichi/"
     },
     {
@@ -2740,7 +2740,7 @@
       "answer": [
         "はんだぐち"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/handaguchi/"
     },
     {
@@ -2916,7 +2916,7 @@
       "answer": [
         "ふき"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線など",
+      "meaning": "名鉄河和線、名鉄知多新線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuki/"
     },
     {
@@ -2988,7 +2988,7 @@
       "answer": [
         "ふそう"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuso/"
     },
     {
@@ -3044,7 +3044,7 @@
       "answer": [
         "へいあんどおり"
       ],
-      "meaning": "名鉄小牧線など",
+      "meaning": "名古屋地下鉄名城線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/heiandori/"
     },
     {
@@ -3084,7 +3084,7 @@
       "answer": [
         "ほてい"
       ],
-      "meaning": "名鉄犬山線など",
+      "meaning": "名鉄犬山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hotei/"
     },
     {
@@ -3108,8 +3108,8 @@
       "answer": [
         "ほりた"
       ],
-      "meaning": "名古屋地下鉄名城線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horita/"
+      "meaning": "名古屋地下鉄名城線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horita_nagoyashiei/"
     },
     {
       "question": "本郷",
@@ -3396,7 +3396,7 @@
       "answer": [
         "みなみかぎや"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kagiya/?page=2"
     },
     {
@@ -3444,7 +3444,7 @@
       "answer": [
         "みよしがおか"
       ],
-      "meaning": "名鉄豊田線など",
+      "meaning": "名鉄豊田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyoshigaoka/?page=2"
     },
     {
@@ -3668,7 +3668,7 @@
       "answer": [
         "やわたしんでん"
       ],
-      "meaning": "名鉄常滑線、名鉄河和線",
+      "meaning": "名鉄河和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yawatashinden/"
     },
     {

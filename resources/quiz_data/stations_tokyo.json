@@ -2,7 +2,7 @@
   "uniqueId": "stations_tokyo",
   "name": "Tokyo Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -20,7 +20,7 @@
       "answer": [
         "あいはら"
       ],
-      "meaning": "横浜線、相模線",
+      "meaning": "横浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aihara/"
     },
     {
@@ -45,7 +45,7 @@
         "あおみ"
       ],
       "meaning": "ゆりかもめ",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aomi_tokyo/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aomi_tokyo_odaiba/"
     },
     {
       "question": "青物横丁",
@@ -124,7 +124,7 @@
       "answer": [
         "あきしま"
       ],
-      "meaning": "青梅線、五日市線",
+      "meaning": "青梅線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akishima/"
     },
     {
@@ -181,7 +181,7 @@
         "あざぶじゅうばん"
       ],
       "meaning": "東京メトロ南北線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azabujuban/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azabu-juban/?page=2"
     },
     {
       "question": "飛鳥山",
@@ -204,7 +204,7 @@
       "answer": [
         "あなもりいなり"
       ],
-      "meaning": "京急本線、京急空港線",
+      "meaning": "京急空港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/anamori-inari/?page=2"
     },
     {
@@ -212,7 +212,7 @@
       "answer": [
         "あやせ"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停、東京メトロ千代田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ayase/?page=2"
     },
     {
@@ -300,7 +300,7 @@
       "answer": [
         "いいだばし"
       ],
-      "meaning": "JR線、東京メトロ東西線など",
+      "meaning": "中央・総武線各停、東京メトロ東西線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iidabashi/"
     },
     {
@@ -397,7 +397,7 @@
         "いたばしくやくしょまえ"
       ],
       "meaning": "都営三田線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itabashikuyakusho-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itabashikuyakushomae/"
     },
     {
       "question": "板橋本町",
@@ -412,7 +412,7 @@
       "answer": [
         "いちがや"
       ],
-      "meaning": "JR線、東京メトロ有楽町線など",
+      "meaning": "中央・総武線各停、東京メトロ有楽町線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichigaya/"
     },
     {
@@ -428,7 +428,7 @@
       "answer": [
         "いなぎ"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inagi/"
     },
     {
@@ -532,7 +532,7 @@
       "answer": [
         "うしだ"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushida_tokyo/"
     },
     {
@@ -572,7 +572,7 @@
       "answer": [
         "うめじま"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/umejima/"
     },
     {
@@ -677,7 +677,7 @@
         "おうじかみや"
       ],
       "meaning": "東京メトロ南北線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ojikamiya/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oji-kamiya/"
     },
     {
       "question": "青梅",
@@ -685,7 +685,7 @@
         "おうめ"
       ],
       "meaning": "青梅線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ome/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ome_tokyo_tama/"
     },
     {
       "question": "青梅街道",
@@ -732,7 +732,7 @@
       "answer": [
         "おおくぼ"
       ],
-      "meaning": "中央線、中央・総武線各停",
+      "meaning": "中央・総武線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okubo_tokyo/"
     },
     {
@@ -796,7 +796,7 @@
       "answer": [
         "おおとりい"
       ],
-      "meaning": "京急本線、京急空港線",
+      "meaning": "京急空港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/otorii/"
     },
     {
@@ -844,7 +844,7 @@
       "answer": [
         "おがわ"
       ],
-      "meaning": "西武新宿線、西武国分寺線など",
+      "meaning": "西武国分寺線、西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogawa_tokyo/?page=2"
     },
     {
@@ -868,7 +868,7 @@
       "answer": [
         "おく"
       ],
-      "meaning": "上野東京ライン、高崎線など",
+      "meaning": "高崎線、宇都宮線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oku_tokyo/?page=2"
     },
     {
@@ -924,7 +924,7 @@
       "answer": [
         "おだきゅうたませんたー"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/odakyu-tama_center/?page=2"
     },
     {
@@ -932,7 +932,7 @@
       "answer": [
         "おだきゅうながやま"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/odakyu-nagayama/?page=2"
     },
     {
@@ -949,7 +949,7 @@
         "おちあいみなみながさき"
       ],
       "meaning": "都営大江戸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ochiai-minaminagasaki/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ochiai-minami-nagasaki/?page=2"
     },
     {
       "question": "御茶ノ水",
@@ -1068,7 +1068,7 @@
       "answer": [
         "かたくら"
       ],
-      "meaning": "横浜線、相模線",
+      "meaning": "横浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katakura/"
     },
     {
@@ -1084,7 +1084,7 @@
       "answer": [
         "かなまち"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanamachi_tokyo/"
     },
     {
@@ -1100,7 +1100,7 @@
       "answer": [
         "かねがふち"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanegafuchi/"
     },
     {
@@ -1196,7 +1196,7 @@
       "answer": [
         "かめあり"
       ],
-      "meaning": "常磐線各停、常磐線、東京メトロ千代田線",
+      "meaning": "常磐線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kameari/?page=2"
     },
     {
@@ -1228,7 +1228,7 @@
       "answer": [
         "からきだ"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karakida/?page=2"
     },
     {
@@ -1332,7 +1332,7 @@
       "answer": [
         "きたせんじゅ"
       ],
-      "meaning": "JR線、東京メトロ日比谷線など",
+      "meaning": "常磐線各停、常磐線、東京メトロ日比谷線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-senju/"
     },
     {
@@ -1461,7 +1461,7 @@
         "ぎんざいっちょうめ"
       ],
       "meaning": "東京メトロ有楽町線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ginza-itchome/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ginza-itchome_tokyo/?page=2"
     },
     {
       "question": "久が原",
@@ -1540,7 +1540,7 @@
       "answer": [
         "けいおうかたくら"
       ],
-      "meaning": "京王線、京王高尾線",
+      "meaning": "京王高尾線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-katakura/"
     },
     {
@@ -1548,7 +1548,7 @@
       "answer": [
         "けいおうたまがわ"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-tamagawa/"
     },
     {
@@ -1556,7 +1556,7 @@
       "answer": [
         "けいおうたませんたー"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-tama-center/"
     },
     {
@@ -1564,7 +1564,7 @@
       "answer": [
         "けいおうながやま"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-nagayama/"
     },
     {
@@ -1580,7 +1580,7 @@
       "answer": [
         "けいおうほりのうち"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-horino-uchi/"
     },
     {
@@ -1588,7 +1588,7 @@
       "answer": [
         "けいおうよみうりらんど"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-yomiuri-land/"
     },
     {
@@ -1644,7 +1644,7 @@
       "answer": [
         "けいせいたていし"
       ],
-      "meaning": "京成本線、京成押上線など",
+      "meaning": "京成押上線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keisei-tateishi/"
     },
     {
@@ -1652,7 +1652,7 @@
       "answer": [
         "けいせいひきふね"
       ],
-      "meaning": "京成本線、京成押上線など",
+      "meaning": "京成押上線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keisei-hikifune/"
     },
     {
@@ -1708,7 +1708,7 @@
       "answer": [
         "こうじや"
       ],
-      "meaning": "京急本線、京急空港線",
+      "meaning": "京急空港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kojiya/"
     },
     {
@@ -1744,14 +1744,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokusai-tenjijo/"
     },
     {
-      "question": "国際展示場正門",
-      "answer": [
-        "こくさいてんじじょうせいもん"
-      ],
-      "meaning": "ゆりかもめ",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokusai-tenjijo-seimon/"
-    },
-    {
       "question": "国分寺",
       "answer": [
         "こくぶんじ"
@@ -1780,7 +1772,7 @@
       "answer": [
         "こすげ"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosuge/"
     },
     {
@@ -1821,7 +1813,7 @@
         "こまえ"
       ],
       "meaning": "小田急線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komae/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/komae/"
     },
     {
       "question": "駒込",
@@ -1900,7 +1892,7 @@
       "answer": [
         "ごたんの"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gotanno/?page=2"
     },
     {
@@ -1964,7 +1956,7 @@
       "answer": [
         "ささづか"
       ],
-      "meaning": "都営新宿線、京王線など",
+      "meaning": "京王線、京王新線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasazuka/"
     },
     {
@@ -2052,7 +2044,7 @@
       "answer": [
         "しなのまち"
       ],
-      "meaning": "中央線、中央・総武線各停",
+      "meaning": "中央・総武線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinanomachi/"
     },
     {
@@ -2125,7 +2117,7 @@
         "しむらさかうえ"
       ],
       "meaning": "都営三田線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimurasakaue/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimura-sakaue/"
     },
     {
       "question": "志村三丁目",
@@ -2133,7 +2125,7 @@
         "しむらさんちょうめ"
       ],
       "meaning": "都営三田線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimurasanchome/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimura-sanchome/"
     },
     {
       "question": "志茂",
@@ -2245,7 +2237,7 @@
         "しろかねたかなわ"
       ],
       "meaning": "東京メトロ南北線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirokanetakanawa/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirokane-takanawa/?page=2"
     },
     {
       "question": "白金台",
@@ -2372,7 +2364,7 @@
       "answer": [
         "しんさくらだい"
       ],
-      "meaning": "西武池袋線、西武有楽町線",
+      "meaning": "西武有楽町線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-sakuradai/?page=3"
     },
     {
@@ -2436,7 +2428,7 @@
       "answer": [
         "しんせんしんじゅく"
       ],
-      "meaning": "都営新宿線、京王線など",
+      "meaning": "都営新宿線、京王新線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinsen-shinjuku/?page=3"
     },
     {
@@ -2525,7 +2517,7 @@
         "じゆうがおか"
       ],
       "meaning": "東急東横線、東急大井町線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jiyugaoka_tokyu/?page=4"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jiyugaoka_tokyo/?page=4"
     },
     {
       "question": "神保町",
@@ -2541,14 +2533,14 @@
         "すいてんぐうまえ"
       ],
       "meaning": "東京メトロ半蔵門線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suitengu-mae_tokyo/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suitengumae_tokyo/"
     },
     {
       "question": "水道橋",
       "answer": [
         "すいどうばし"
       ],
-      "meaning": "JR線、都営三田線",
+      "meaning": "中央・総武線各停、都営三田線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suidobashi/"
     },
     {
@@ -2644,7 +2636,7 @@
       "answer": [
         "せいぶたちかわ"
       ],
-      "meaning": "西武新宿線、西武拝島線",
+      "meaning": "西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seibu-tachikawa/"
     },
     {
@@ -2654,14 +2646,6 @@
       ],
       "meaning": "西武新宿線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seibu-yagisawa/"
-    },
-    {
-      "question": "西武遊園地",
-      "answer": [
-        "せいぶゆうえんち"
-      ],
-      "meaning": "西武新宿線、西武多摩湖線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seibu-yuenchi/"
     },
     {
       "question": "世田谷",
@@ -2740,7 +2724,7 @@
       "answer": [
         "せんだがや"
       ],
-      "meaning": "中央線、中央・総武線各停",
+      "meaning": "中央・総武線各停",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sendagaya/"
     },
     {
@@ -2788,7 +2772,7 @@
       "answer": [
         "たかお"
       ],
-      "meaning": "中央線、京王線、京王高尾線など",
+      "meaning": "中央線、京王高尾線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takao_tokyo/"
     },
     {
@@ -2804,7 +2788,7 @@
       "answer": [
         "たかおさんぐち"
       ],
-      "meaning": "京王線、京王高尾線",
+      "meaning": "京王高尾線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaosanguchi/"
     },
     {
@@ -2822,6 +2806,14 @@
       ],
       "meaning": "山手線、東京メトロ東西線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takadanobaba/"
+    },
+    {
+      "question": "高輪ゲートウェイ",
+      "answer": [
+        "たかなわげーとうぇい"
+      ],
+      "meaning": "山手線、京浜東北線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takanawa_gateway/"
     },
     {
       "question": "高輪台",
@@ -2853,7 +2845,7 @@
         "たかまつ"
       ],
       "meaning": "多摩モノレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamatsu_tama/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takamatsu_tokyo/"
     },
     {
       "question": "宝町",
@@ -2892,7 +2884,7 @@
       "answer": [
         "たけのつか"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takenotsuka/"
     },
     {
@@ -2916,7 +2908,7 @@
       "answer": [
         "たちかわ"
       ],
-      "meaning": "中央線、青梅線、五日市線など",
+      "meaning": "中央線、青梅線、南武線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachikawa/"
     },
     {
@@ -2933,7 +2925,7 @@
         "たちかわみなみ"
       ],
       "meaning": "多摩モノレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachikawa-minami/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachikawa-minami/?page=2"
     },
     {
       "question": "立飛",
@@ -2996,15 +2988,23 @@
       "answer": [
         "たまがわじょうすい"
       ],
-      "meaning": "西武新宿線、西武拝島線など",
+      "meaning": "西武拝島線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamagawajosui/?page=2"
+    },
+    {
+      "question": "多摩湖",
+      "answer": [
+        "たまこ"
+      ],
+      "meaning": "西武多摩湖線、西武山口線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamako/?page=2"
     },
     {
       "question": "多摩境",
       "answer": [
         "たまさかい"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tamasakai/?page=2"
     },
     {
@@ -3045,7 +3045,7 @@
         "ためいけさんのう"
       ],
       "meaning": "東京メトロ銀座線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tameikesan-no/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tameike-sanno/?page=2"
     },
     {
       "question": "田原町",
@@ -3085,7 +3085,7 @@
         "だいば"
       ],
       "meaning": "ゆりかもめ",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daiba_tokyo/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daiba_tokyo/?page=3"
     },
     {
       "question": "大門",
@@ -3093,7 +3093,7 @@
         "だいもん"
       ],
       "meaning": "都営浅草線、都営大江戸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daimon_tokyo/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daimon_tokyo/?page=3"
     },
     {
       "question": "地下鉄赤塚",
@@ -3204,7 +3204,7 @@
       "answer": [
         "てんくうばし"
       ],
-      "meaning": "京急本線、京急空港線など",
+      "meaning": "京急空港線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tenkubashi/"
     },
     {
@@ -3232,6 +3232,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokyo/"
     },
     {
+      "question": "東京国際クルーズターミナル",
+      "answer": [
+        "とうきょうこくさいくるーずたーみなる"
+      ],
+      "meaning": "ゆりかもめ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokyo_international_cruise_terminal/"
+    },
+    {
       "question": "東京テレポート",
       "answer": [
         "とうきょうてれぽーと"
@@ -3240,12 +3248,20 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokyo_teleport/"
     },
     {
+      "question": "東京ビッグサイト",
+      "answer": [
+        "とうきょうびっぐさいと"
+      ],
+      "meaning": "ゆりかもめ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokyo_big_sight/"
+    },
+    {
       "question": "東大前",
       "answer": [
         "とうだいまえ"
       ],
       "meaning": "東京メトロ南北線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/todai-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/todaimae/"
     },
     {
       "question": "東武練馬",
@@ -3300,7 +3316,7 @@
       "answer": [
         "としまえん"
       ],
-      "meaning": "都営大江戸線、西武池袋線など",
+      "meaning": "都営大江戸線、西武豊島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toshimaen/"
     },
     {
@@ -3309,7 +3325,7 @@
         "とちょうまえ"
       ],
       "meaning": "都営大江戸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tocho-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tochomae_orikaeshi/"
     },
     {
       "question": "都電雑司ヶ谷",
@@ -3357,7 +3373,7 @@
         "とよす"
       ],
       "meaning": "東京メトロ有楽町線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyosu/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyosu/?page=2"
     },
     {
       "question": "豊田",
@@ -3365,7 +3381,7 @@
         "とよだ"
       ],
       "meaning": "中央線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyoda_tokyo/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyoda_tokyo/?page=2"
     },
     {
       "question": "虎ノ門",
@@ -3374,6 +3390,14 @@
       ],
       "meaning": "東京メトロ銀座線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toranomon/?page=2"
+    },
+    {
+      "question": "虎ノ門ヒルズ",
+      "answer": [
+        "とらのもんひるず"
+      ],
+      "meaning": "東京メトロ日比谷線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toranomon_hills/?page=2"
     },
     {
       "question": "都立家政",
@@ -3413,14 +3437,14 @@
         "なかおかちまち"
       ],
       "meaning": "東京メトロ日比谷線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakaokachimachi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka-okachimachi/"
     },
     {
       "question": "中神",
       "answer": [
         "なかがみ"
       ],
-      "meaning": "青梅線、五日市線",
+      "meaning": "青梅線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakagami/"
     },
     {
@@ -3445,7 +3469,7 @@
         "なかのさかうえ"
       ],
       "meaning": "東京メトロ丸ノ内線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanosakaue/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakano-sakaue/"
     },
     {
       "question": "中野新橋",
@@ -3453,7 +3477,7 @@
         "なかのしんばし"
       ],
       "meaning": "東京メトロ丸ノ内線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanoshimbashi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakano-shimbashi/"
     },
     {
       "question": "中野富士見町",
@@ -3461,7 +3485,7 @@
         "なかのふじみちょう"
       ],
       "meaning": "東京メトロ丸ノ内線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakanofujimicho/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakano-fujimicho/"
     },
     {
       "question": "中延",
@@ -3532,7 +3556,7 @@
       "answer": [
         "にしあらい"
       ],
-      "meaning": "東武伊勢崎線、東武大師線など",
+      "meaning": "東武スカイツリーラインなど",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-arai/"
     },
     {
@@ -3556,7 +3580,7 @@
       "answer": [
         "にしおおい"
       ],
-      "meaning": "横須賀線、湘南新宿ライン",
+      "meaning": "横須賀線、湘南新宿ラインなど",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-oi/"
     },
     {
@@ -3668,7 +3692,7 @@
       "answer": [
         "にしたちかわ"
       ],
-      "meaning": "青梅線、五日市線",
+      "meaning": "青梅線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-tachikawa/"
     },
     {
@@ -3733,7 +3757,7 @@
         "にじゅうばしまえ"
       ],
       "meaning": "東京メトロ千代田線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijubashi-mae/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijubashimae/?page=2"
     },
     {
       "question": "日暮里",
@@ -3797,7 +3821,7 @@
         "ねりまかすがちょう"
       ],
       "meaning": "都営大江戸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nerimakasugacho/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nerima-kasugacho/"
     },
     {
       "question": "練馬高野台",
@@ -3828,7 +3852,7 @@
       "answer": [
         "はいじま"
       ],
-      "meaning": "JR線、西武新宿線、西武拝島線",
+      "meaning": "JR線、西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haijima/"
     },
     {
@@ -3836,7 +3860,7 @@
       "answer": [
         "はぎやま"
       ],
-      "meaning": "西武新宿線、西武多摩湖線など",
+      "meaning": "西武多摩湖線、西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagiyama/"
     },
     {
@@ -3860,7 +3884,7 @@
       "answer": [
         "はざま"
       ],
-      "meaning": "京王線、京王高尾線",
+      "meaning": "京王高尾線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hazama_tokyo/"
     },
     {
@@ -3884,7 +3908,7 @@
       "answer": [
         "はたがや"
       ],
-      "meaning": "都営新宿線、京王線など",
+      "meaning": "京王新線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatagaya/"
     },
     {
@@ -3900,7 +3924,7 @@
       "answer": [
         "はちおうじ"
       ],
-      "meaning": "中央線、横浜線、相模線など",
+      "meaning": "中央線、横浜線、八高線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachioji/"
     },
     {
@@ -3908,7 +3932,7 @@
       "answer": [
         "はちおうじみなみの"
       ],
-      "meaning": "横浜線、相模線",
+      "meaning": "横浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hachiojiminamino/"
     },
     {
@@ -3932,7 +3956,7 @@
       "answer": [
         "はつだい"
       ],
-      "meaning": "都営新宿線、京王線など",
+      "meaning": "京王新線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatsudai/"
     },
     {
@@ -3952,44 +3976,36 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hana-koganei/"
     },
     {
-      "question": "羽田空港国際線ターミナル",
+      "question": "羽田空港第１ターミナル",
       "answer": [
-        "はねだくうこうこくさいせんたーみなる"
-      ],
-      "meaning": "京急本線、京急空港線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda-airport_international_terminal_keikyu/"
-    },
-    {
-      "question": "羽田空港国際線ビル",
-      "answer": [
-        "はねだくうこうこくさいせんびる"
+        "はねだくうこうだいいちたーみなる"
       ],
       "meaning": "東京モノレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda-airport_international_terminal_monorail/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda_airport_terminal_1/"
     },
     {
-      "question": "羽田空港国内線ターミナル",
+      "question": "羽田空港第１・第２ターミナル",
       "answer": [
-        "はねだくうこうこくないせんたーみなる"
+        "はねだくうこうだいいちだいにたーみなる"
       ],
-      "meaning": "京急本線、京急空港線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda-airport_domestic_terminal/"
+      "meaning": "京急空港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda_airport_terminal_1_2/"
     },
     {
-      "question": "羽田空港第１ビル",
+      "question": "羽田空港第３ターミナル",
       "answer": [
-        "はねだくうこうだいいちびる"
+        "はねだくうこうだいさんたーみなる"
+      ],
+      "meaning": "京急空港線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda_airport_terminal_3/"
+    },
+    {
+      "question": "羽田空港第２ターミナル",
+      "answer": [
+        "はねだくうこうだいにたーみなる"
       ],
       "meaning": "東京モノレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda-airport_terminal_1/"
-    },
-    {
-      "question": "羽田空港第２ビル",
-      "answer": [
-        "はねだくうこうだいにびる"
-      ],
-      "meaning": "東京モノレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda-airport_terminal_2/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneda_airport_terminal_2/"
     },
     {
       "question": "浜田山",
@@ -4188,7 +4204,7 @@
       "answer": [
         "ひがしなかがみ"
       ],
-      "meaning": "青梅線、五日市線",
+      "meaning": "青梅線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-nakagami/"
     },
     {
@@ -4196,7 +4212,7 @@
       "answer": [
         "ひがしなかの"
       ],
-      "meaning": "JR線、都営大江戸線",
+      "meaning": "中央・総武線各停、都営大江戸線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-nakano/"
     },
     {
@@ -4252,7 +4268,7 @@
       "answer": [
         "ひがしむこうじま"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-mukojima/?page=2"
     },
     {
@@ -4268,7 +4284,7 @@
       "answer": [
         "ひがしやまとし"
       ],
-      "meaning": "西武新宿線、西武拝島線",
+      "meaning": "西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashiyamatoshi/?page=2"
     },
     {
@@ -4276,7 +4292,7 @@
       "answer": [
         "ひきふね"
       ],
-      "meaning": "東武伊勢崎線、東武亀戸線など",
+      "meaning": "東武スカイツリーラインなど",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hikifune/?page=2"
     },
     {
@@ -4365,7 +4381,7 @@
         "ふじみだい"
       ],
       "meaning": "西武池袋線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujimidai/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujimidai_tokyo/"
     },
     {
       "question": "二子玉川",
@@ -4440,14 +4456,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funabori/"
     },
     {
-      "question": "船の科学館",
-      "answer": [
-        "ふねのかがくかん"
-      ],
-      "meaning": "ゆりかもめ",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fune-no-kagakukan/"
-    },
-    {
       "question": "分倍河原",
       "answer": [
         "ぶばいがわら"
@@ -4500,7 +4508,7 @@
       "answer": [
         "ほりきり"
       ],
-      "meaning": "東武伊勢崎線など",
+      "meaning": "東武スカイツリーライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horikiri/"
     },
     {
@@ -4517,7 +4525,7 @@
         "ほんこまごめ"
       ],
       "meaning": "東京メトロ南北線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/honkomagome/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hon-komagome/"
     },
     {
       "question": "本郷三丁目",
@@ -4525,7 +4533,7 @@
         "ほんごうさんちょうめ"
       ],
       "meaning": "東京メトロ丸ノ内線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hongosanchome/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hongo-sanchome/"
     },
     {
       "question": "本所吾妻橋",
@@ -4604,7 +4612,7 @@
       "answer": [
         "みかわしま"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikawashima/"
     },
     {
@@ -4661,7 +4669,7 @@
         "みつこしまえ"
       ],
       "meaning": "東京メトロ銀座線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsukoshi-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsukoshimae/"
     },
     {
       "question": "緑が丘",
@@ -4684,7 +4692,7 @@
       "answer": [
         "みなみおおさわ"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-osawa/"
     },
     {
@@ -4708,7 +4716,7 @@
       "answer": [
         "みなみせんじゅ"
       ],
-      "meaning": "JR線、東京メトロ日比谷線など",
+      "meaning": "常磐線、東京メトロ日比谷線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-senju/"
     },
     {
@@ -4728,12 +4736,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minamidaira/"
     },
     {
-      "question": "南町田",
+      "question": "南町田グランベリーパーク",
       "answer": [
-        "みなみまちだ"
+        "みなみまちだぐらんべりーぱーく"
       ],
       "meaning": "東急田園都市線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-machida/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-machida-grandberry-park/"
     },
     {
       "question": "見沼代親水公園",
@@ -4836,7 +4844,7 @@
       "answer": [
         "むさしすながわ"
       ],
-      "meaning": "西武新宿線、西武拝島線",
+      "meaning": "西武拝島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/musashi-sunagawa/"
     },
     {
@@ -4884,7 +4892,7 @@
       "answer": [
         "むさしやまと"
       ],
-      "meaning": "西武新宿線、西武多摩湖線",
+      "meaning": "西武多摩湖線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/musashi-yamato/"
     },
     {
@@ -4893,7 +4901,7 @@
         "めいじじんぐうまえ"
       ],
       "meaning": "東京メトロ千代田線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meijijingu-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meiji-jingumae/"
     },
     {
       "question": "明大前",
@@ -4924,7 +4932,7 @@
       "answer": [
         "めじろだい"
       ],
-      "meaning": "京王線、京王高尾線",
+      "meaning": "京王高尾線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mejirodai/"
     },
     {
@@ -4957,7 +4965,7 @@
         "もんぜんなかちょう"
       ],
       "meaning": "東京メトロ東西線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/monzennakacho/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/monzen-nakacho/"
     },
     {
       "question": "矢川",
@@ -4980,7 +4988,7 @@
       "answer": [
         "やさか"
       ],
-      "meaning": "西武新宿線、西武多摩湖線",
+      "meaning": "西武多摩湖線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasaka_tokyo/"
     },
     {
@@ -5004,7 +5012,7 @@
       "answer": [
         "やひろ"
       ],
-      "meaning": "京成本線、京成押上線など",
+      "meaning": "京成押上線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yahiro/"
     },
     {
@@ -5028,7 +5036,7 @@
       "answer": [
         "やまだ"
       ],
-      "meaning": "京王線、京王高尾線",
+      "meaning": "京王高尾線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamada_tokyo/"
     },
     {
@@ -5076,7 +5084,7 @@
       "answer": [
         "よつぎ"
       ],
-      "meaning": "京成本線、京成押上線など",
+      "meaning": "京成押上線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yotsugi/"
     },
     {

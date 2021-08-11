@@ -1,8 +1,8 @@
 {
-  "uniqueId": "stations_hokaido",
-  "name": "Hokaido Stations Reading Quiz",
+  "uniqueId": "stations_hokkaido",
+  "name": "Hokkaido Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -13,7 +13,7 @@
   "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
   "answerCompareStrategy": "CONVERT_KANA",
   "commentFieldName": "Line(s)",
-  "description": "[Hokaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
+  "description": "[Hokkaido station names](https://mb.jorudan.co.jp/os/eki/menu_hok/)",
   "cards": [
     {
       "question": "愛山",
@@ -132,7 +132,7 @@
       "answer": [
         "あっけし"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akkeshi/"
     },
     {
@@ -140,7 +140,7 @@
       "answer": [
         "あっとこ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/attoko/"
     },
     {
@@ -148,7 +148,7 @@
       "answer": [
         "あつが"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atsuga/"
     },
     {
@@ -172,7 +172,7 @@
       "answer": [
         "あねべつ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/anebetsu/"
     },
     {
@@ -228,7 +228,7 @@
       "answer": [
         "いくの"
       ],
-      "meaning": "石北本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikuno_hokkaido/"
     },
     {
@@ -252,7 +252,7 @@
       "answer": [
         "いしかりかなざわ"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishikari-kanazawa/"
     },
     {
@@ -260,7 +260,7 @@
       "answer": [
         "いしかりつきがた"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishikari-tsukigata/"
     },
     {
@@ -340,7 +340,7 @@
       "answer": [
         "いといざわ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itoizawa/"
     },
     {
@@ -372,7 +372,7 @@
       "answer": [
         "いのう"
       ],
-      "meaning": "函館本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ino_hokkaido/?page=2"
     },
     {
@@ -408,6 +408,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/usu/"
     },
     {
+      "question": "有珠山頂",
+      "answer": [
+        "うすさんちょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/usu_sancho/"
+    },
+    {
       "question": "歌内",
       "answer": [
         "うたない"
@@ -420,7 +428,7 @@
       "answer": [
         "うとま"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utoma/"
     },
     {
@@ -428,7 +436,7 @@
       "answer": [
         "うらうす"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urausu/"
     },
     {
@@ -436,7 +444,7 @@
       "answer": [
         "うらかわ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urakawa_hokkaido/"
     },
     {
@@ -468,7 +476,7 @@
       "answer": [
         "えふえ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/efue/"
     },
     {
@@ -516,7 +524,7 @@
       "answer": [
         "おおかりべ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okaribe/"
     },
     {
@@ -548,7 +556,7 @@
       "answer": [
         "おおぬま"
       ],
-      "meaning": "函館本線",
+      "meaning": "函館本線、函館本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onuma_hokkaido/"
     },
     {
@@ -565,7 +573,7 @@
         "おおまち"
       ],
       "meaning": "函館市電５系統",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omachi_hakodate/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omachi_hokkaido/"
     },
     {
       "question": "大谷地",
@@ -588,7 +596,7 @@
       "answer": [
         "おぎふし"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogifushi/"
     },
     {
@@ -612,7 +620,7 @@
       "answer": [
         "おさつない"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osatsunai/"
     },
     {
@@ -668,7 +676,7 @@
       "answer": [
         "おそきない"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/osokinai/?page=2"
     },
     {
@@ -708,7 +716,7 @@
       "answer": [
         "おちいし"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ochiishi/?page=2"
     },
     {
@@ -748,7 +756,7 @@
       "answer": [
         "おぼろ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oboro/?page=2"
     },
     {
@@ -844,7 +852,7 @@
       "answer": [
         "かみおぼろ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-oboro/"
     },
     {
@@ -876,7 +884,7 @@
       "answer": [
         "かみほろのべ"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-horonobe/"
     },
     {
@@ -972,7 +980,7 @@
       "answer": [
         "きたけんぶち"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kembuchi/"
     },
     {
@@ -1044,7 +1052,7 @@
       "answer": [
         "きたひので"
       ],
-      "meaning": "石北本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-hinode/"
     },
     {
@@ -1068,7 +1076,7 @@
       "answer": [
         "きたぴっぷ"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-pippu/"
     },
     {
@@ -1116,7 +1124,7 @@
       "answer": [
         "きよはた"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiyohata/?page=2"
     },
     {
@@ -1140,7 +1148,7 @@
       "answer": [
         "くしろ"
       ],
-      "meaning": "根室本線、釧網本線",
+      "meaning": "根室本線、花咲線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kushiro_hokkaido/"
     },
     {
@@ -1200,6 +1208,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuroiwa/"
     },
     {
+      "question": "黒岳",
+      "answer": [
+        "くろだけ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mt_kurodake/"
+    },
+    {
       "question": "黒松内",
       "answer": [
         "くろまつない"
@@ -1221,7 +1237,7 @@
         "けいばじょうまえ"
       ],
       "meaning": "函館市電２系統など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keibajo-mae_hakodate/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keibajo-mae_hokkaido/"
     },
     {
       "question": "剣淵",
@@ -1324,7 +1340,7 @@
       "answer": [
         "こんぶもり"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kombumori/"
     },
     {
@@ -1396,7 +1412,7 @@
       "answer": [
         "さってき"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/satteki/"
     },
     {
@@ -1404,7 +1420,7 @@
       "answer": [
         "さっぴない"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sappinai/"
     },
     {
@@ -1444,7 +1460,7 @@
       "answer": [
         "さまに"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/samani/"
     },
     {
@@ -1476,7 +1492,7 @@
       "answer": [
         "しおみ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiomi_hokkaido/"
     },
     {
@@ -1494,14 +1510,6 @@
       ],
       "meaning": "富良野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikauchi/"
-    },
-    {
-      "question": "鹿ノ谷",
-      "answer": [
-        "しかのたに"
-      ],
-      "meaning": "石勝線夕張支線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikanotani/"
     },
     {
       "question": "鹿部",
@@ -1532,7 +1540,7 @@
       "answer": [
         "しずない"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizunai/"
     },
     {
@@ -1584,14 +1592,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimamatsu/"
     },
     {
-      "question": "清水沢",
-      "answer": [
-        "しみずさわ"
-      ],
-      "meaning": "石勝線夕張支線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimizusawa/"
-    },
-    {
       "question": "占冠",
       "answer": [
         "しむかっぷ"
@@ -1612,7 +1612,7 @@
       "answer": [
         "しもしべつ"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-shibetsu/"
     },
     {
@@ -1620,7 +1620,7 @@
       "answer": [
         "しもとっぷ"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-toppu/"
     },
     {
@@ -1629,15 +1629,7 @@
         "しもぬま"
       ],
       "meaning": "宗谷本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonuma/?page=2"
-    },
-    {
-      "question": "尺別",
-      "answer": [
-        "しゃくべつ"
-      ],
-      "meaning": "根室本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shakubetsu/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimonuma/"
     },
     {
       "question": "社台",
@@ -1645,7 +1637,7 @@
         "しゃだい"
       ],
       "meaning": "室蘭本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shadai/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shadai/"
     },
     {
       "question": "市役所前",
@@ -1660,8 +1652,16 @@
       "answer": [
         "しょうぐんざん"
       ],
-      "meaning": "石北本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shogunzan/?page=2"
+    },
+    {
+      "question": "昭和新山",
+      "answer": [
+        "しょうわしんざん"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/showa_shinzan/?page=2"
     },
     {
       "question": "昭和橋",
@@ -1749,7 +1749,7 @@
         "しんかわちょう"
       ],
       "meaning": "函館市電２系統など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkawacho_hakodate/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinkawacho_hokkaido/?page=2"
     },
     {
       "question": "新琴似",
@@ -1781,7 +1781,7 @@
         "しんちとせくうこう"
       ],
       "meaning": "千歳線、快速エアポート",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/new_chitose_airport/?page=3"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/new_chitose_airport/?page=2"
     },
     {
       "question": "新得",
@@ -1789,14 +1789,14 @@
         "しんとく"
       ],
       "meaning": "石勝線、根室本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shintoku/?page=3"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shintoku/?page=2"
     },
     {
       "question": "新十津川",
       "answer": [
         "しんとつかわ"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-totsukawa/?page=3"
     },
     {
@@ -1828,7 +1828,7 @@
       "answer": [
         "しんゆうばり"
       ],
-      "meaning": "石勝線、石勝線夕張支線",
+      "meaning": "石勝線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-yubari/?page=3"
     },
     {
@@ -1869,7 +1869,7 @@
         "すえひろちょう"
       ],
       "meaning": "函館市電５系統",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suehirocho_hakodate/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suehirocho_hokkaido/"
     },
     {
       "question": "杉並町",
@@ -1908,7 +1908,7 @@
       "answer": [
         "せっぷ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seppu/"
     },
     {
@@ -1926,6 +1926,14 @@
       ],
       "meaning": "函館本線、快速エアポート",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zenibako/"
+    },
+    {
+      "question": "層雲峡",
+      "answer": [
+        "そううんきょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sounkyo/"
     },
     {
       "question": "桑園",
@@ -2061,7 +2069,7 @@
         "ちとせちょう"
       ],
       "meaning": "函館市電２系統など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chitosecho_hakodate/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chitosecho_hokkaido/"
     },
     {
       "question": "智北",
@@ -2084,7 +2092,7 @@
       "answer": [
         "ちゃない"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chanai/"
     },
     {
@@ -2120,14 +2128,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/choshiguchi/"
     },
     {
-      "question": "直別",
-      "answer": [
-        "ちょくべつ"
-      ],
-      "meaning": "根室本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chokubetsu/"
-    },
-    {
       "question": "千代ヶ岡",
       "answer": [
         "ちよがおか"
@@ -2148,7 +2148,7 @@
       "answer": [
         "ちらいおつ"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chiraiotsu/"
     },
     {
@@ -2156,7 +2156,7 @@
       "answer": [
         "つきがおか"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukigaoka/"
     },
     {
@@ -2172,7 +2172,7 @@
       "answer": [
         "つるぬま"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurunuma/"
     },
     {
@@ -2228,7 +2228,7 @@
       "answer": [
         "とううん"
       ],
-      "meaning": "石北本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/to-un_hokkaido/"
     },
     {
@@ -2292,7 +2292,7 @@
       "answer": [
         "とくみつ"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokumitsu/"
     },
     {
@@ -2324,7 +2324,7 @@
       "answer": [
         "とみかわ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomikawa/"
     },
     {
@@ -2340,7 +2340,7 @@
       "answer": [
         "とよがおか"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyogaoka/"
     },
     {
@@ -2356,7 +2356,7 @@
       "answer": [
         "とよさと"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyosato_hokkaido/"
     },
     {
@@ -2364,7 +2364,7 @@
       "answer": [
         "とよしみず"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyoshimizu/?page=2"
     },
     {
@@ -2428,7 +2428,7 @@
       "answer": [
         "なかごや"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakagoya/"
     },
     {
@@ -2556,7 +2556,7 @@
       "answer": [
         "にいかっぷ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niikappu/"
     },
     {
@@ -2612,7 +2612,7 @@
       "answer": [
         "にしさまに"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-samani/"
     },
     {
@@ -2756,7 +2756,7 @@
       "answer": [
         "にしわだ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-wada/?page=2"
     },
     {
@@ -2800,14 +2800,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nunobe/"
     },
     {
-      "question": "沼ノ沢",
-      "answer": [
-        "ぬまのさわ"
-      ],
-      "meaning": "石勝線夕張支線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/numanosawa/"
-    },
-    {
       "question": "沼ノ端",
       "answer": [
         "ぬまのはた"
@@ -2828,7 +2820,7 @@
       "answer": [
         "ねむろ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nemuro/"
     },
     {
@@ -2952,14 +2944,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hassamuminami/"
     },
     {
-      "question": "初田牛",
-      "answer": [
-        "はったうし"
-      ],
-      "meaning": "根室本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hattaushi/"
-    },
-    {
       "question": "初野",
       "answer": [
         "はつの"
@@ -2996,7 +2980,7 @@
       "answer": [
         "はまなか"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamanaka/"
     },
     {
@@ -3012,7 +2996,7 @@
       "answer": [
         "はるたち"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harutachi/"
     },
     {
@@ -3029,7 +3013,7 @@
         "ばっかい"
       ],
       "meaning": "宗谷本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bakkai/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bakkai/"
     },
     {
       "question": "緋牛内",
@@ -3060,7 +3044,7 @@
       "answer": [
         "ひがしくしろ"
       ],
-      "meaning": "根室本線、釧網本線",
+      "meaning": "根室本線、花咲線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kushiro/"
     },
     {
@@ -3100,7 +3084,7 @@
       "answer": [
         "ひがししずない"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-shizunai/"
     },
     {
@@ -3116,7 +3100,7 @@
       "answer": [
         "ひがしちょう"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashicho/"
     },
     {
@@ -3132,7 +3116,7 @@
       "answer": [
         "ひがしねむろ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-nemuro/"
     },
     {
@@ -3172,7 +3156,7 @@
       "answer": [
         "ひがしろくせん"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-rokusen/"
     },
     {
@@ -3180,7 +3164,7 @@
       "answer": [
         "ひだかとうべつ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hidaka-tobetsu/"
     },
     {
@@ -3188,7 +3172,7 @@
       "answer": [
         "ひだかほろべつ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hidaka-horobetsu/"
     },
     {
@@ -3196,7 +3180,7 @@
       "answer": [
         "ひだかみついし"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hidaka-mitsuishi/?page=2"
     },
     {
@@ -3204,7 +3188,7 @@
       "answer": [
         "ひだかもんべつ"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hidaka-mombetsu/?page=2"
     },
     {
@@ -3356,7 +3340,7 @@
       "answer": [
         "ふるせ"
       ],
-      "meaning": "根室本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furuse/"
     },
     {
@@ -3372,7 +3356,7 @@
       "answer": [
         "べっとが"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bettoga/"
     },
     {
@@ -3380,7 +3364,7 @@
       "answer": [
         "べっぽ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/beppo/"
     },
     {
@@ -3388,7 +3372,7 @@
       "answer": [
         "ほうえい"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoei/"
     },
     {
@@ -3412,7 +3396,7 @@
       "answer": [
         "ほくせい"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hokusei/"
     },
     {
@@ -3500,7 +3484,7 @@
       "answer": [
         "ほんきり"
       ],
-      "meaning": "日高本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/honkiri/"
     },
     {
@@ -3648,19 +3632,11 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-otaru/"
     },
     {
-      "question": "南清水沢",
-      "answer": [
-        "みなみしみずさわ"
-      ],
-      "meaning": "石勝線夕張支線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-shimizusawa/"
-    },
-    {
       "question": "南下徳富",
       "answer": [
         "みなみしもとっぷ"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-shimo-toppu/"
     },
     {
@@ -3668,7 +3644,7 @@
       "answer": [
         "みなみしゃり"
       ],
-      "meaning": "釧網本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-shari/"
     },
     {
@@ -3684,7 +3660,7 @@
       "answer": [
         "みなみてしかが"
       ],
-      "meaning": "釧網本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-teshikaga/"
     },
     {
@@ -3708,7 +3684,7 @@
       "answer": [
         "みなみびふか"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-bifuka/"
     },
     {
@@ -3716,7 +3692,7 @@
       "answer": [
         "みなみぴっぷ"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-pippu/"
     },
     {
@@ -3749,7 +3725,7 @@
         "みやのさわ"
       ],
       "meaning": "札幌地下鉄東西線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyanosawa/?page=2"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyanosawa/"
     },
     {
       "question": "鵡川",
@@ -3764,7 +3740,7 @@
       "answer": [
         "むさ"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/musa_hokkaido/"
     },
     {
@@ -3860,7 +3836,7 @@
       "answer": [
         "もとなかごや"
       ],
-      "meaning": "学園都市線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/moto-nakagoya/"
     },
     {
@@ -3892,7 +3868,7 @@
       "answer": [
         "もり"
       ],
-      "meaning": "函館本線",
+      "meaning": "函館本線、函館本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mori_hokkaido/"
     },
     {
@@ -3900,7 +3876,7 @@
       "answer": [
         "もんしず"
       ],
-      "meaning": "根室本線",
+      "meaning": "根室本線、花咲線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/monshizu/"
     },
     {
@@ -3908,7 +3884,7 @@
       "answer": [
         "もんぽない"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momponai/"
     },
     {
@@ -3924,7 +3900,7 @@
       "answer": [
         "やすうし"
       ],
-      "meaning": "宗谷本線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasuushi/"
     },
     {
@@ -3998,14 +3974,6 @@
       ],
       "meaning": "宗谷本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yuchi/"
-    },
-    {
-      "question": "夕張",
-      "answer": [
-        "ゆうばり"
-      ],
-      "meaning": "石勝線夕張支線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yubari/"
     },
     {
       "question": "勇払",

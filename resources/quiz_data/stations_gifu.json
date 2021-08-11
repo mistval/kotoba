@@ -2,7 +2,7 @@
   "uniqueId": "stations_gifu",
   "name": "Gifu Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -116,7 +116,7 @@
       "answer": [
         "うつぼ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utsubo/"
     },
     {
@@ -124,7 +124,7 @@
       "answer": [
         "うぬま"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unuma/"
     },
     {
@@ -132,7 +132,7 @@
       "answer": [
         "うぬまじゅく"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unumajuku/"
     },
     {
@@ -204,7 +204,7 @@
       "answer": [
         "おがせ"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogase/"
     },
     {
@@ -228,7 +228,7 @@
       "answer": [
         "かかみがはらしやくしょまえ"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakamigahara-shiyakusho-mae/"
     },
     {
@@ -236,7 +236,7 @@
       "answer": [
         "かがみがはら"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagamigahara/"
     },
     {
@@ -284,7 +284,7 @@
       "answer": [
         "かみあそう"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-aso/"
     },
     {
@@ -348,7 +348,7 @@
       "answer": [
         "きりどおし"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kiridoshi/"
     },
     {
@@ -380,7 +380,7 @@
       "answer": [
         "くぐの"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuguno/"
     },
     {
@@ -404,7 +404,7 @@
       "answer": [
         "げろ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gero/"
     },
     {
@@ -444,7 +444,7 @@
       "answer": [
         "こび"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobi/"
     },
     {
@@ -484,7 +484,7 @@
       "answer": [
         "さかかみ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakakami/"
     },
     {
@@ -500,7 +500,7 @@
       "answer": [
         "さかほぎ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakahogi/"
     },
     {
@@ -532,7 +532,7 @@
       "answer": [
         "しみんこうえんまえ"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiminkoen-mae/"
     },
     {
@@ -540,7 +540,7 @@
       "answer": [
         "しもあそう"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-aso/"
     },
     {
@@ -556,15 +556,23 @@
       "answer": [
         "しもゆい"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-yui/"
+    },
+    {
+      "question": "しらかば平",
+      "answer": [
+        "しらかばだいら"
+      ],
+      "meaning": "新穂高第２ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirakabadaira/"
     },
     {
       "question": "白川口",
       "answer": [
         "しらかわぐち"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shirakawaguchi/"
     },
     {
@@ -596,7 +604,7 @@
       "answer": [
         "しんかのう"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-kano/"
     },
     {
@@ -604,7 +612,7 @@
       "answer": [
         "しんなか"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-naka/"
     },
     {
@@ -614,6 +622,14 @@
       ],
       "meaning": "名鉄竹鼻線、名鉄羽島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-hashima/"
+    },
+    {
+      "question": "新穂高温泉",
+      "answer": [
+        "しんほたかおんせん"
+      ],
+      "meaning": "新穂高第１ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-hotaka_onsen/"
     },
     {
       "question": "十九条",
@@ -628,7 +644,7 @@
       "answer": [
         "じょうろ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/joro/"
     },
     {
@@ -644,7 +660,7 @@
       "answer": [
         "すぎさき"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugisaki/"
     },
     {
@@ -652,7 +668,7 @@
       "answer": [
         "すぎはら"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sugihara/"
     },
     {
@@ -716,7 +732,7 @@
       "answer": [
         "ぜんしょうじ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zenshoji/"
     },
     {
@@ -724,7 +740,7 @@
       "answer": [
         "そはら"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sohara_gifu/"
     },
     {
@@ -748,7 +764,7 @@
       "answer": [
         "たかだばし"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takadabashi/"
     },
     {
@@ -756,7 +772,7 @@
       "answer": [
         "たかやま"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takayama/"
     },
     {
@@ -764,7 +780,7 @@
       "answer": [
         "たがみ"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tagami_gifu/"
     },
     {
@@ -828,7 +844,7 @@
       "answer": [
         "つのがわ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsunogawa/"
     },
     {
@@ -836,7 +852,7 @@
       "answer": [
         "てぢから"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tejikara/"
     },
     {
@@ -876,7 +892,7 @@
       "answer": [
         "なか"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naka/"
     },
     {
@@ -884,7 +900,7 @@
       "answer": [
         "なかかわべ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakakawabe/"
     },
     {
@@ -900,7 +916,7 @@
       "answer": [
         "ながもり"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagamori/"
     },
     {
@@ -908,8 +924,16 @@
       "answer": [
         "なぎさ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nagisa_gifu/"
+    },
+    {
+      "question": "鍋平高原",
+      "answer": [
+        "なべだいらこうげん"
+      ],
+      "meaning": "新穂高第１ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nabedairakogen/"
     },
     {
       "question": "鍋原",
@@ -952,11 +976,19 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-gifu/"
     },
     {
+      "question": "西穂高口",
+      "answer": [
+        "にしほたかぐち"
+      ],
+      "meaning": "新穂高第２ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishihotakaguchi/"
+    },
+    {
       "question": "二十軒",
       "answer": [
         "にじっけん"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijikken/"
     },
     {
@@ -1012,7 +1044,7 @@
       "answer": [
         "はば"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haba_gifu/"
     },
     {
@@ -1029,7 +1061,7 @@
         "はんの"
       ],
       "meaning": "長良川鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanno/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hanno_gifu/"
     },
     {
       "question": "東赤坂",
@@ -1060,7 +1092,7 @@
       "answer": [
         "ひだいちのみや"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-ichinomiya/"
     },
     {
@@ -1068,7 +1100,7 @@
       "answer": [
         "ひだおさか"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-osaka/"
     },
     {
@@ -1076,7 +1108,7 @@
       "answer": [
         "ひだかなやま"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-kanayama/"
     },
     {
@@ -1084,7 +1116,7 @@
       "answer": [
         "ひだこくふ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-kokufu/"
     },
     {
@@ -1092,7 +1124,7 @@
       "answer": [
         "ひだはぎわら"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-hagiwara/"
     },
     {
@@ -1100,7 +1132,7 @@
       "answer": [
         "ひだふるかわ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-furukawa/"
     },
     {
@@ -1108,7 +1140,7 @@
       "answer": [
         "ひだほそえ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-hosoe/"
     },
     {
@@ -1116,7 +1148,7 @@
       "answer": [
         "ひだみやだ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hida-miyada/"
     },
     {
@@ -1180,7 +1212,7 @@
       "answer": [
         "ほずえ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hozue/"
     },
     {
@@ -1188,7 +1220,7 @@
       "answer": [
         "ほそばた"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hosobata/"
     },
     {
@@ -1236,7 +1268,7 @@
       "answer": [
         "みかきの"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikakino/"
     },
     {
@@ -1308,7 +1340,7 @@
       "answer": [
         "みのおおた"
       ],
-      "meaning": "高山本線、太多線、長良川鉄道",
+      "meaning": "JR線、長良川鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mino-ota/"
     },
     {
@@ -1404,7 +1436,7 @@
       "answer": [
         "めいてつぎふ"
       ],
-      "meaning": "名鉄竹鼻線、名鉄犬山線など",
+      "meaning": "名鉄竹鼻線、名鉄各務原線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meitetsu-gifu/"
     },
     {
@@ -1412,7 +1444,7 @@
       "answer": [
         "めいでんかかみがはら"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/meiden-kakamigahara/"
     },
     {
@@ -1436,7 +1468,7 @@
       "answer": [
         "やけいし"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yakeishi/"
     },
     {
@@ -1500,7 +1532,7 @@
       "answer": [
         "ろっけん"
       ],
-      "meaning": "名鉄犬山線、名鉄各務原線",
+      "meaning": "名鉄各務原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokken_gifu/"
     }
   ]

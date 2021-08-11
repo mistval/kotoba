@@ -2,7 +2,7 @@
   "uniqueId": "stations_miyagi",
   "name": "Miyagi Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -38,6 +38,14 @@
       ],
       "meaning": "仙台地下鉄東西線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aobayama/"
+    },
+    {
+      "question": "赤岩港",
+      "answer": [
+        "あかいわみなと"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akaiwaminato/"
     },
     {
       "question": "旭ヶ丘",
@@ -142,6 +150,14 @@
       ],
       "meaning": "東北本線、仙石東北ラインなど",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwakiri/"
+    },
+    {
+      "question": "岩月",
+      "answer": [
+        "いわつき"
+      ],
+      "meaning": "気仙沼線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwatsuki_miyagi/"
     },
     {
       "question": "岩出山",
@@ -310,6 +326,14 @@
       ],
       "meaning": "石巻線、気仙沼線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-wakuya/"
+    },
+    {
+      "question": "唐桑大沢",
+      "answer": [
+        "からくわおおさわ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karakuwaosawa/"
     },
     {
       "question": "川内",

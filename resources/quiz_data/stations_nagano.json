@@ -2,7 +2,7 @@
   "uniqueId": "stations_nagano",
   "name": "Nagano Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -76,7 +76,7 @@
       "answer": [
         "あずさばし"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azusabashi/"
     },
     {
@@ -84,7 +84,7 @@
       "answer": [
         "あずみおいわけ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azumi-oiwake/"
     },
     {
@@ -92,7 +92,7 @@
       "answer": [
         "あずみくつかけ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/azumi-kutsukake/"
     },
     {
@@ -108,7 +108,7 @@
       "answer": [
         "ありあけ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ariake_nagano/"
     },
     {
@@ -132,7 +132,7 @@
       "answer": [
         "いいもり"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iimori/"
     },
     {
@@ -156,7 +156,7 @@
       "answer": [
         "いなお"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inao/"
     },
     {
@@ -316,7 +316,7 @@
       "answer": [
         "うみのくち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uminokuchi/"
     },
     {
@@ -334,14 +334,6 @@
       ],
       "meaning": "松本電鉄上高地線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/endo/"
-    },
-    {
-      "question": "扇沢",
-      "answer": [
-        "おうぎざわ"
-      ],
-      "meaning": "",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogizawa/"
     },
     {
       "question": "大桑",
@@ -500,7 +492,7 @@
       "answer": [
         "かみしろ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamishiro/"
     },
     {
@@ -596,7 +588,7 @@
       "answer": [
         "きたおおまち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-omachi/"
     },
     {
@@ -604,7 +596,7 @@
       "answer": [
         "きたおたり"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-otari/"
     },
     {
@@ -652,7 +644,7 @@
       "answer": [
         "きたほその"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-hosono/"
     },
     {
@@ -660,7 +652,7 @@
       "answer": [
         "きたまつもと"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-matsumoto/"
     },
     {
@@ -940,7 +932,7 @@
       "answer": [
         "しなのおおまち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinano-omachi/"
     },
     {
@@ -964,7 +956,7 @@
       "answer": [
         "しなのきざき"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinano-kizaki/"
     },
     {
@@ -1012,7 +1004,7 @@
       "answer": [
         "しなのときわ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinano-tokiwa/"
     },
     {
@@ -1020,7 +1012,7 @@
       "answer": [
         "しなのまつかわ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinano-matsukawa/"
     },
     {
@@ -1028,7 +1020,7 @@
       "answer": [
         "しなのもりうえ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinano-moriue/"
     },
     {
@@ -1052,7 +1044,7 @@
       "answer": [
         "しまうち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimauchi/?page=2"
     },
     {
@@ -1060,7 +1052,7 @@
       "answer": [
         "しまたかまつ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimatakamatsu/?page=2"
     },
     {
@@ -1213,7 +1205,7 @@
         "せんじょうじき"
       ],
       "meaning": "駒ヶ岳ロープウェイ",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senjojiki_ropeway/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/senjojiki_nagano/"
     },
     {
       "question": "善光寺下",
@@ -1332,7 +1324,7 @@
       "answer": [
         "ちくに"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuni/"
     },
     {
@@ -1436,7 +1428,7 @@
       "answer": [
         "とよしな"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyoshina/"
     },
     {
@@ -1468,7 +1460,7 @@
       "answer": [
         "なかがや"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakagaya/"
     },
     {
@@ -1500,7 +1492,7 @@
       "answer": [
         "なかつち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakatsuchi/"
     },
     {
@@ -1644,7 +1636,7 @@
       "answer": [
         "はくば"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakuba/"
     },
     {
@@ -1652,7 +1644,7 @@
       "answer": [
         "はくばおおいけ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakubaoike/"
     },
     {
@@ -1660,7 +1652,7 @@
       "answer": [
         "はくやちょう"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakuyacho/"
     },
     {
@@ -1732,7 +1724,7 @@
       "answer": [
         "ひといちば"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitoichiba/"
     },
     {
@@ -1820,7 +1812,7 @@
       "answer": [
         "ほその"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hosono_nagano/"
     },
     {
@@ -1828,7 +1820,7 @@
       "answer": [
         "ほたか"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hotaka/"
     },
     {
@@ -1900,7 +1892,7 @@
       "answer": [
         "みなみおおまち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-omachi/"
     },
     {
@@ -1908,7 +1900,7 @@
       "answer": [
         "みなみおたり"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-otari/"
     },
     {
@@ -1916,7 +1908,7 @@
       "answer": [
         "みなみかみしろ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-kamishiro/"
     },
     {
@@ -1924,7 +1916,7 @@
       "answer": [
         "みなみとよしな"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-toyoshina/"
     },
     {
@@ -2068,16 +2060,8 @@
       "answer": [
         "やなば"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanaba/"
-    },
-    {
-      "question": "ヤナバスキー場前",
-      "answer": [
-        "やなばすきーじょうまえ"
-      ],
-      "meaning": "大糸線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yanabaskijo-mae/"
     },
     {
       "question": "藪原",

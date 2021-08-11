@@ -2,7 +2,7 @@
   "uniqueId": "stations_akita",
   "name": "Akita Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -56,12 +56,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aniai/"
     },
     {
-      "question": "阿仁前田",
+      "question": "阿仁前田温泉",
       "answer": [
-        "あにまえだ"
+        "あにまえだおんせん"
       ],
       "meaning": "秋田内陸縦貫鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/animaeda/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/animaedaonsen/"
     },
     {
       "question": "阿仁マタギ",
@@ -110,6 +110,14 @@
       ],
       "meaning": "奥羽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikawasakura/"
+    },
+    {
+      "question": "泉外旭川",
+      "answer": [
+        "いずみそとあさひかわ"
+      ],
+      "meaning": "奥羽本線、男鹿線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi-sotoasahikawa/"
     },
     {
       "question": "岩城みなと",
@@ -320,14 +328,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oga_akita/"
     },
     {
-      "question": "小ヶ田",
-      "answer": [
-        "おがた"
-      ],
-      "meaning": "秋田内陸縦貫鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogata_akita/"
-    },
-    {
       "question": "奥阿仁",
       "answer": [
         "おくあに"
@@ -500,8 +500,8 @@
       "answer": [
         "くろさわ"
       ],
-      "meaning": "北上線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurosawa_akita/"
+      "meaning": "など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurosawa_yuri/"
     },
     {
       "question": "鯉川",
@@ -662,6 +662,14 @@
       ],
       "meaning": "奥羽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jumonji/"
+    },
+    {
+      "question": "縄文小ヶ田",
+      "answer": [
+        "じょうもんおがた"
+      ],
+      "meaning": "秋田内陸縦貫鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jomon_ogata/"
     },
     {
       "question": "神宮寺",

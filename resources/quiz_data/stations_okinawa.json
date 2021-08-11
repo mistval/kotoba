@@ -2,7 +2,7 @@
   "uniqueId": "stations_okinawa",
   "name": "Okinawa Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -40,6 +40,22 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asahibashi/"
     },
     {
+      "question": "石嶺",
+      "answer": [
+        "いしみね"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishimine/"
+    },
+    {
+      "question": "浦添前田",
+      "answer": [
+        "うらそえまえだ"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/urasoemaeda/"
+    },
+    {
       "question": "奥武山公園",
       "answer": [
         "おうのやまこうえん"
@@ -54,6 +70,14 @@
       ],
       "meaning": "ゆいレール",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oroku/"
+    },
+    {
+      "question": "経塚",
+      "answer": [
+        "きょうづか"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyozuka/"
     },
     {
       "question": "儀保",
@@ -94,6 +118,14 @@
       ],
       "meaning": "ゆいレール",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsubogawa/"
+    },
+    {
+      "question": "てだこ浦西",
+      "answer": [
+        "てだこうらにし"
+      ],
+      "meaning": "ゆいレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tedako-uranishi/"
     },
     {
       "question": "那覇空港",

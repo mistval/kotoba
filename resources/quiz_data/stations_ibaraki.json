@@ -2,7 +2,7 @@
   "uniqueId": "stations_ibaraki",
   "name": "Ibaraki Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -36,7 +36,7 @@
       "answer": [
         "あらかわおき"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arakawaoki/"
     },
     {
@@ -124,7 +124,7 @@
       "answer": [
         "うしく"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushiku/"
     },
     {
@@ -344,6 +344,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenkyugakuen/"
     },
     {
+      "question": "工機前",
+      "answer": [
+        "こうきまえ"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kokimae/"
+    },
+    {
       "question": "荒野台",
       "answer": [
         "こうやだい"
@@ -356,7 +364,7 @@
       "answer": [
         "こが"
       ],
-      "meaning": "湘南新宿ライン、宇都宮線など",
+      "meaning": "湘南新宿ライン、宇都宮線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koga_ibaraki/"
     },
     {
@@ -388,7 +396,7 @@
       "answer": [
         "さぬき"
       ],
-      "meaning": "JR線、関鉄竜ヶ崎線",
+      "meaning": "関鉄竜ヶ崎線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanuki/"
     },
     {
@@ -580,7 +588,7 @@
       "answer": [
         "つちうら"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuchiura/"
     },
     {
@@ -660,7 +668,7 @@
       "answer": [
         "とりで"
       ],
-      "meaning": "JR線、東京メトロ千代田線など",
+      "meaning": "常磐線各停、常磐線、関鉄常総線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toride/"
     },
     {
@@ -718,14 +726,6 @@
       ],
       "meaning": "関鉄常総線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-toride/"
-    },
-    {
-      "question": "日工前",
-      "answer": [
-        "にっこうまえ"
-      ],
-      "meaning": "ひたちなか海浜鉄道湊線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nikkomae/"
     },
     {
       "question": "女体山",
@@ -876,7 +876,7 @@
       "answer": [
         "ひたちのうしく"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitachino-ushiku/"
     },
     {
@@ -916,7 +916,7 @@
       "answer": [
         "ふじしろ"
       ],
-      "meaning": "上野東京ライン、常磐線",
+      "meaning": "常磐線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujishiro/"
     },
     {
@@ -974,6 +974,14 @@
       ],
       "meaning": "関鉄常総線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-moriya/"
+    },
+    {
+      "question": "美乃浜学園",
+      "answer": [
+        "みのはまがくえん"
+      ],
+      "meaning": "ひたちなか海浜鉄道湊線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minohama-gakuen/"
     },
     {
       "question": "宮脇",
@@ -1034,7 +1042,7 @@
     {
       "question": "ゆめみ野",
       "answer": [
-        "ゆみめの"
+        "ゆめみの"
       ],
       "meaning": "関鉄常総線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yumemino/"
@@ -1046,6 +1054,14 @@
       ],
       "meaning": "関鉄竜ヶ崎線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryugasaki/"
+    },
+    {
+      "question": "龍ヶ崎市",
+      "answer": [
+        "りゅうがさきし"
+      ],
+      "meaning": "常磐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryugasakishi/"
     }
   ]
 }

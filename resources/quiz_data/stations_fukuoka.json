@@ -2,7 +2,7 @@
   "uniqueId": "stations_fukuoka",
   "name": "Fukuoka Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -116,7 +116,7 @@
       "answer": [
         "いきさん"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikisan/"
     },
     {
@@ -176,6 +176,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/idemitsubijutsukan/"
     },
     {
+      "question": "糸島高校前",
+      "answer": [
+        "いとしまこうこうまえ"
+      ],
+      "meaning": "筑肥線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itoshimakokomae/"
+    },
+    {
       "question": "糸田",
       "answer": [
         "いとだ"
@@ -220,7 +228,7 @@
       "answer": [
         "いまじゅく"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imajuku/"
     },
     {
@@ -357,7 +365,7 @@
         "おおほりこうえん"
       ],
       "meaning": "福岡地下鉄空港線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohorikoen/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohori_park/"
     },
     {
       "question": "大溝",
@@ -548,7 +556,7 @@
       "answer": [
         "かふり"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kafuri/"
     },
     {
@@ -740,7 +748,7 @@
       "answer": [
         "きゅうだいがっけんとし"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyudai-gakkentoshi/"
     },
     {
@@ -1060,8 +1068,8 @@
       "answer": [
         "しい"
       ],
-      "meaning": "日田彦山線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shii_fukuoka/"
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shii_kitakyushu/"
     },
     {
       "question": "志井公園",
@@ -1092,7 +1100,7 @@
       "answer": [
         "しかか"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shikaka/"
     },
     {
@@ -1140,7 +1148,7 @@
       "answer": [
         "しもやまと"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimoyamato/"
     },
     {
@@ -1228,8 +1236,8 @@
       "answer": [
         "じょうの"
       ],
-      "meaning": "日豊本線、日田彦山線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jono_fukuoka/?page=2"
+      "meaning": "北九州モノレール",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jono_kitakyushu/?page=2"
     },
     {
       "question": "次郎丸",
@@ -1268,7 +1276,7 @@
       "answer": [
         "すせんじ"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/susenji/"
     },
     {
@@ -1388,7 +1396,7 @@
       "answer": [
         "だいにゅう"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dainyu/"
     },
     {
@@ -1492,7 +1500,7 @@
       "answer": [
         "ちくぜんふかえ"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-fukae/"
     },
     {
@@ -1500,7 +1508,7 @@
       "answer": [
         "ちくぜんまえばる"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikuzen-maebaru/"
     },
     {
@@ -1973,7 +1981,7 @@
         "のーふぉーくひろば"
       ],
       "meaning": "門司港レトロ観光線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/norfork_hiroba/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/norfolk_hiroba/"
     },
     {
       "question": "羽犬塚",
@@ -2044,7 +2052,7 @@
       "answer": [
         "はたえ"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hatae/"
     },
     {
@@ -2165,7 +2173,7 @@
         "ふくおかくうこう"
       ],
       "meaning": "福岡地下鉄空港線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuoka-airport/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuoka_airport/"
     },
     {
       "question": "福大前",
@@ -2188,7 +2196,7 @@
       "answer": [
         "ふくよし"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuyoshi/"
     },
     {
@@ -2412,7 +2420,7 @@
       "answer": [
         "みさきがおか"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misakigaoka/"
     },
     {
@@ -2678,6 +2686,14 @@
       ],
       "meaning": "日田彦山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yobuno/"
+    },
+    {
+      "question": "令和コスタ行橋",
+      "answer": [
+        "れいわこすたゆくはし"
+      ],
+      "meaning": "平成筑豊鉄道田川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/reiwa_costa_yukuhashi/"
     },
     {
       "question": "六本松",

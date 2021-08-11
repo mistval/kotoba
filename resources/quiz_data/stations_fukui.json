@@ -2,7 +2,7 @@
   "uniqueId": "stations_fukui",
   "name": "Fukui Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -692,7 +692,7 @@
       "answer": [
         "にっかかがくまえ"
       ],
-      "meaning": "えちぜん鉄道三国芦原線など",
+      "meaning": "えちぜん鉄道三国芦原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nikkakagaku-mae/"
     },
     {
@@ -700,7 +700,7 @@
       "answer": [
         "にったづか"
       ],
-      "meaning": "えちぜん鉄道三国芦原線など",
+      "meaning": "えちぜん鉄道三国芦原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nittazuka/"
     },
     {
@@ -804,7 +804,7 @@
       "answer": [
         "ふくだいまえにしふくい"
       ],
-      "meaning": "えちぜん鉄道三国芦原線など",
+      "meaning": "えちぜん鉄道三国芦原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukudai-mae-nishi-fukui/"
     },
     {
@@ -972,7 +972,7 @@
       "answer": [
         "やつしま"
       ],
-      "meaning": "えちぜん鉄道三国芦原線など",
+      "meaning": "えちぜん鉄道三国芦原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yatsushima/"
     },
     {
@@ -1028,7 +1028,7 @@
       "answer": [
         "わしづかはりばら"
       ],
-      "meaning": "えちぜん鉄道三国芦原線など",
+      "meaning": "えちぜん鉄道三国芦原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/washizukaharibara/"
     }
   ]

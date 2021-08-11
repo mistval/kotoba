@@ -2,7 +2,7 @@
   "uniqueId": "stations_nagasaki",
   "name": "Nagasaki Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -56,6 +56,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/abozaki/"
     },
     {
+      "question": "有明湯江",
+      "answer": [
+        "ありあけゆえ"
+      ],
+      "meaning": "島原鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ariakeyue/"
+    },
+    {
       "question": "諫早",
       "answer": [
         "いさはや"
@@ -64,12 +72,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isahaya/"
     },
     {
-      "question": "諫早東高校前",
+      "question": "諫早東高校",
       "answer": [
-        "いさはやひがしこうこうまえ"
+        "いさはやひがしこうこう"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isahayahigashikoko-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/isahayahigashikoko/"
     },
     {
       "question": "石橋",
@@ -86,6 +94,14 @@
       ],
       "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichinuno/"
+    },
+    {
+      "question": "稲佐岳",
+      "answer": [
+        "いなさだけ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inasa_dake/"
     },
     {
       "question": "今福",
@@ -224,12 +240,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogushigo/"
     },
     {
-      "question": "小野本町",
+      "question": "小野",
       "answer": [
-        "おのほんまち"
+        "おの"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onohommachi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ono_nagasaki/"
     },
     {
       "question": "皆瀬",
@@ -304,12 +320,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/atomic_bomb_museum/"
     },
     {
-      "question": "神代町",
+      "question": "神代",
       "answer": [
-        "こうじろまち"
+        "こうじろ"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kojiromachi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kojiro_nagasaki/"
     },
     {
       "question": "高田",
@@ -416,22 +432,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiambashi/"
     },
     {
-      "question": "島鉄本社前",
-      "answer": [
-        "しまてつほんしゃまえ"
-      ],
-      "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimatetsuhonsha-mae/"
-    },
-    {
-      "question": "島鉄湯江",
-      "answer": [
-        "しまてつゆえ"
-      ],
-      "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimatetsuyue/"
-    },
-    {
       "question": "島原",
       "answer": [
         "しまばら"
@@ -440,12 +440,20 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimabara/"
     },
     {
-      "question": "島原外港",
+      "question": "島原港",
       "answer": [
-        "しまばらがいこう"
+        "しまばらこう"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimabaragaiko/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimabarako/"
+    },
+    {
+      "question": "島原船津",
+      "answer": [
+        "しまばらふなつ"
+      ],
+      "meaning": "島原鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimabarafunatsu/"
     },
     {
       "question": "市民会館",
@@ -568,12 +576,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taisho_nagasaki/"
     },
     {
-      "question": "多比良町",
+      "question": "多比良",
       "answer": [
-        "たいらまち"
+        "たいら"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tairamachi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taira/"
     },
     {
       "question": "高岩",
@@ -784,6 +792,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-hamanomachi/"
     },
     {
+      "question": "仁田峠",
+      "answer": [
+        "にたとうげ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nita_pass/"
+    },
+    {
       "question": "野中",
       "answer": [
         "のなか"
@@ -872,6 +888,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hidariishi/"
     },
     {
+      "question": "淵神社",
+      "answer": [
+        "ふちじんじゃ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuchi_shrine/"
+    },
+    {
       "question": "平和公園",
       "answer": [
         "へいわこうえん"
@@ -936,12 +960,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuura-hatsudensho-mae/"
     },
     {
-      "question": "松尾町",
+      "question": "松尾",
       "answer": [
-        "まつおまち"
+        "まつお"
       ],
       "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuomachi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/matsuo_nagasaki/"
     },
     {
       "question": "松原",
@@ -970,7 +994,7 @@
     {
       "question": "御厨",
       "answer": [
-        "みくりや"
+        "みくりやながさき"
       ],
       "meaning": "松浦鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikuriya_nagasaki/"
@@ -984,12 +1008,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/michinoo/"
     },
     {
-      "question": "南島原",
+      "question": "妙見岳",
       "answer": [
-        "みなみしまばら"
+        "みょうけんだけ"
       ],
-      "meaning": "島原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-shimabara/"
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myokendake/"
     },
     {
       "question": "めがね橋",
@@ -1054,6 +1078,14 @@
       ],
       "meaning": "松浦鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshii_nagasaki/"
+    },
+    {
+      "question": "霊丘公園体育館",
+      "answer": [
+        "れいきゅうこうえんたいいくかん"
+      ],
+      "meaning": "島原鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/reikyukoentaiikukan/"
     },
     {
       "question": "若葉町",

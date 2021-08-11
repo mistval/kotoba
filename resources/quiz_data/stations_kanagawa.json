@@ -2,7 +2,7 @@
   "uniqueId": "stations_kanagawa",
   "name": "Kanagawa Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -140,7 +140,7 @@
       "answer": [
         "いずみちゅうおう"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumichuo_kanagawa/"
     },
     {
@@ -148,7 +148,7 @@
       "answer": [
         "いずみの"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumino/"
     },
     {
@@ -268,8 +268,16 @@
       "answer": [
         "うらが"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uraga/"
+    },
+    {
+      "question": "運河パーク",
+      "answer": [
+        "うんがぱーく"
+      ],
+      "meaning": "ヨコハマエアキャビン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/unga-park/"
     },
     {
       "question": "江田",
@@ -292,7 +300,7 @@
       "answer": [
         "えびな"
       ],
-      "meaning": "相模線、小田急線、相鉄本線",
+      "meaning": "JR線、小田急線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ebina/"
     },
     {
@@ -448,12 +456,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakio/"
     },
     {
-      "question": "花月園前",
+      "question": "花月総持寺",
       "answer": [
-        "かげつえんまえ"
+        "かげつそうじじ"
       ],
       "meaning": "京急本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagetsuen-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kagetsusojiji/"
     },
     {
       "question": "風祭",
@@ -476,7 +484,7 @@
       "answer": [
         "かしわだい"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kashiwadai/"
     },
     {
@@ -500,7 +508,7 @@
       "answer": [
         "かたせえのしま"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katase-enoshima/"
     },
     {
@@ -644,7 +652,7 @@
       "answer": [
         "かわさき"
       ],
-      "meaning": "京浜東北線、高崎線など",
+      "meaning": "京浜東北線、南武線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawasaki/?page=2"
     },
     {
@@ -708,7 +716,7 @@
       "answer": [
         "きたくりはま"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kurihama/"
     },
     {
@@ -748,7 +756,7 @@
       "answer": [
         "きぼうがおか"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kibogaoka/"
     },
     {
@@ -764,7 +772,7 @@
       "answer": [
         "くげぬまかいがん"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kugenuma-kaigan/"
     },
     {
@@ -796,7 +804,7 @@
       "answer": [
         "くりひら"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurihira/"
     },
     {
@@ -804,7 +812,7 @@
       "answer": [
         "くろかわ"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurokawa_kanagawa/"
     },
     {
@@ -820,7 +828,7 @@
       "answer": [
         "けいおういなだづつみ"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keio-inadazutsumi/"
     },
     {
@@ -828,7 +836,7 @@
       "answer": [
         "けいきゅうおおつ"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keikyu-otsu/"
     },
     {
@@ -844,7 +852,7 @@
       "answer": [
         "けいきゅうくりはま"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keikyu-kurihama/"
     },
     {
@@ -884,8 +892,16 @@
       "answer": [
         "けいきゅうながさわ"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keikyu-nagasawa/"
+    },
+    {
+      "question": "京急東神奈川",
+      "answer": [
+        "けいきゅうひがしかながわ"
+      ],
+      "meaning": "京急本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keikyu_higashikanagawa/"
     },
     {
       "question": "県立大学",
@@ -893,7 +909,7 @@
         "けんりつだいがく"
       ],
       "meaning": "京急本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenritsudaigaku/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kenritsudaigaku_kanagawa/"
     },
     {
       "question": "公園上",
@@ -916,7 +932,7 @@
       "answer": [
         "こうざしぶや"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koza-shibuya/"
     },
     {
@@ -1052,7 +1068,7 @@
       "answer": [
         "さがみおおつか"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sagami-otsuka/"
     },
     {
@@ -1092,7 +1108,7 @@
       "answer": [
         "さがみの"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sagamino/"
     },
     {
@@ -1116,7 +1132,7 @@
       "answer": [
         "さくらがおか"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakuragaoka/"
     },
     {
@@ -1124,7 +1140,7 @@
       "answer": [
         "さくらぎちょう"
       ],
-      "meaning": "JR線、横浜市営ブルーライン",
+      "meaning": "JR線、横浜市営ブルーラインなど",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakuragicho/"
     },
     {
@@ -1140,7 +1156,7 @@
       "answer": [
         "さつきだい"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/satsukidai/"
     },
     {
@@ -1158,14 +1174,6 @@
       ],
       "meaning": "シーサイドライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sangyoshinko_center/"
-    },
-    {
-      "question": "産業道路",
-      "answer": [
-        "さんぎょうどうろ"
-      ],
-      "meaning": "京急大師線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sangyodoro/"
     },
     {
       "question": "座間",
@@ -1284,7 +1292,7 @@
       "answer": [
         "しょうなんだい"
       ],
-      "meaning": "小田急線、小田急江ノ島線など",
+      "meaning": "小田急江ノ島線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shonandai/"
     },
     {
@@ -1316,7 +1324,7 @@
       "answer": [
         "しんおおつ"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-otsu/"
     },
     {
@@ -1352,19 +1360,11 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-sugita/?page=2"
     },
     {
-      "question": "新逗子",
-      "answer": [
-        "しんずし"
-      ],
-      "meaning": "京急逗子線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-zushi/?page=2"
-    },
-    {
       "question": "新高島",
       "answer": [
         "しんたかしま"
       ],
-      "meaning": "東急東横線など",
+      "meaning": "みなとみらい線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-takashima/?page=2"
     },
     {
@@ -1432,11 +1432,19 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zushi/"
     },
     {
+      "question": "逗子・葉山",
+      "answer": [
+        "ずしはやま"
+      ],
+      "meaning": "京急逗子線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zushi-hayama/"
+    },
+    {
       "question": "瀬谷",
       "answer": [
         "せや"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/seya/"
     },
     {
@@ -1460,7 +1468,7 @@
       "answer": [
         "ぜんぎょう"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/zengyo/"
     },
     {
@@ -1544,6 +1552,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tammachi/"
     },
     {
+      "question": "大師橋",
+      "answer": [
+        "だいしばし"
+      ],
+      "meaning": "京急大師線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daishibashi/"
+    },
+    {
       "question": "大雄山",
       "answer": [
         "だいゆうざん"
@@ -1564,7 +1580,7 @@
       "answer": [
         "ちゅうおうりんかん"
       ],
-      "meaning": "東急田園都市線、小田急線など",
+      "meaning": "東急田園都市線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chuorinkan/"
     },
     {
@@ -1580,7 +1596,7 @@
       "answer": [
         "ちょうご"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chogo/"
     },
     {
@@ -1604,7 +1620,7 @@
       "answer": [
         "つくいはま"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukuihama/"
     },
     {
@@ -1644,7 +1660,7 @@
       "answer": [
         "つるがみね"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurugamine/"
     },
     {
@@ -1652,7 +1668,7 @@
       "answer": [
         "つるま"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuruma/"
     },
     {
@@ -1768,14 +1784,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakagawa_kanagawa/"
     },
     {
-      "question": "仲木戸",
-      "answer": [
-        "なかきど"
-      ],
-      "meaning": "京急本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakakido/"
-    },
-    {
       "question": "中強羅",
       "answer": [
         "なかごうら"
@@ -1789,7 +1797,7 @@
         "なかだ"
       ],
       "meaning": "横浜市営ブルーライン",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakada_yokohama/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakada_kanagawa/"
     },
     {
       "question": "中野島",
@@ -1868,7 +1876,7 @@
       "answer": [
         "にしや"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishiya/"
     },
     {
@@ -1900,7 +1908,7 @@
       "answer": [
         "にほんおおどおり"
       ],
-      "meaning": "東急東横線など",
+      "meaning": "みなとみらい線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nihon-odori/"
     },
     {
@@ -1916,7 +1924,7 @@
       "answer": [
         "ねぶかわ"
       ],
-      "meaning": "東海道本線（東日本）など",
+      "meaning": "東海道本線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nebukawa/"
     },
     {
@@ -1976,11 +1984,19 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hakoneyumoto/"
     },
     {
+      "question": "羽沢横浜国大",
+      "answer": [
+        "はざわよこはまこくだい"
+      ],
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hazawa_yokohama-kokudai/"
+    },
+    {
       "question": "橋本",
       "answer": [
         "はしもと"
       ],
-      "meaning": "横浜線、相模線、京王線、京王相模原線",
+      "meaning": "横浜線、相模線、京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashimoto_kanagawa/"
     },
     {
@@ -2028,7 +2044,7 @@
       "answer": [
         "はやかわ"
       ],
-      "meaning": "東海道本線（東日本）など",
+      "meaning": "東海道本線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hayakawa/"
     },
     {
@@ -2044,7 +2060,7 @@
       "answer": [
         "はるひの"
       ],
-      "meaning": "小田急線、小田急多摩線",
+      "meaning": "小田急多摩線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haruhino/"
     },
     {
@@ -2052,7 +2068,7 @@
       "answer": [
         "ばしゃみち"
       ],
-      "meaning": "東急東横線など",
+      "meaning": "みなとみらい線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bashamichi/"
     },
     {
@@ -2132,7 +2148,7 @@
       "answer": [
         "ひがしりんかん"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-rinkan/"
     },
     {
@@ -2212,7 +2228,7 @@
       "answer": [
         "ふじさわ"
       ],
-      "meaning": "JR線、小田急線、小田急江ノ島線など",
+      "meaning": "東海道本線（東日本）、小田急江ノ島線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisawa/"
     },
     {
@@ -2220,7 +2236,7 @@
       "answer": [
         "ふじさわほんまち"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujisawahommachi/"
     },
     {
@@ -2260,7 +2276,7 @@
       "answer": [
         "ふたまたがわ"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線、相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/futamatagawa/"
     },
     {
@@ -2293,7 +2309,7 @@
         "ほしかわ"
       ],
       "meaning": "相鉄本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshikawa_sotetsu/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshikawa_kanagawa/"
     },
     {
       "question": "螢田",
@@ -2332,7 +2348,7 @@
       "answer": [
         "ほんくげぬま"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/honkugenuma/"
     },
     {
@@ -2372,7 +2388,7 @@
       "answer": [
         "まなづる"
       ],
-      "meaning": "東海道本線（東日本）など",
+      "meaning": "東海道本線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/manazuru/"
     },
     {
@@ -2380,7 +2396,7 @@
       "answer": [
         "まぼりかいがん"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maborikaigan/"
     },
     {
@@ -2388,7 +2404,7 @@
       "answer": [
         "みうらかいがん"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miurakaigan/"
     },
     {
@@ -2396,7 +2412,7 @@
       "answer": [
         "みさきぐち"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/misakiguchi_kanagawa/"
     },
     {
@@ -2412,7 +2428,7 @@
       "answer": [
         "みつきょう"
       ],
-      "meaning": "相鉄本線",
+      "meaning": "相鉄・ＪＲ直通線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mitsukyo/"
     },
     {
@@ -2468,7 +2484,7 @@
       "answer": [
         "みなみまきがはら"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-makigahara/"
     },
     {
@@ -2476,7 +2492,7 @@
       "answer": [
         "みなみりんかん"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-rinkan/"
     },
     {
@@ -2580,7 +2596,7 @@
       "answer": [
         "むつあいにちだいまえ"
       ],
-      "meaning": "小田急線、小田急江ノ島線",
+      "meaning": "小田急江ノ島線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mutsuainichidai-mae/"
     },
     {
@@ -2612,7 +2628,7 @@
       "answer": [
         "もとまちちゅうかがい"
       ],
-      "meaning": "東急東横線など",
+      "meaning": "みなとみらい線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motomachi-chukagai/"
     },
     {
@@ -2668,7 +2684,7 @@
       "answer": [
         "やまと"
       ],
-      "meaning": "小田急線、小田急江ノ島線など",
+      "meaning": "相鉄・ＪＲ直通線、小田急江ノ島線、相鉄本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamato_kanagawa/"
     },
     {
@@ -2676,7 +2692,7 @@
       "answer": [
         "やよいだい"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yayoidai/"
     },
     {
@@ -2692,7 +2708,7 @@
       "answer": [
         "ゆがわら"
       ],
-      "meaning": "東海道本線（東日本）など",
+      "meaning": "東海道本線（東日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yugawara/"
     },
     {
@@ -2700,7 +2716,7 @@
       "answer": [
         "ゆめがおか"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yumegaoka/"
     },
     {
@@ -2764,7 +2780,7 @@
       "answer": [
         "りょくえんとし"
       ],
-      "meaning": "相鉄本線、相鉄いずみ野線",
+      "meaning": "相鉄いずみ野線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryokuentoshi/"
     },
     {
@@ -2772,7 +2788,7 @@
       "answer": [
         "わいあーるぴーのび"
       ],
-      "meaning": "京急本線、京急久里浜線",
+      "meaning": "京急久里浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yrp-nobi/"
     },
     {
@@ -2780,7 +2796,7 @@
       "answer": [
         "わかばだい"
       ],
-      "meaning": "京王線、京王相模原線",
+      "meaning": "京王相模原線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/wakabadai/"
     },
     {

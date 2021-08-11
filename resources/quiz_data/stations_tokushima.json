@@ -2,7 +2,7 @@
   "uniqueId": "stations_tokushima",
   "name": "Tokushima Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -92,7 +92,7 @@
       "answer": [
         "あわかいなん"
       ],
-      "meaning": "牟岐線",
+      "meaning": "牟岐線、阿佐海岸鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awa-kainan/"
     },
     {
@@ -252,7 +252,7 @@
       "answer": [
         "かいふ"
       ],
-      "meaning": "牟岐線、阿佐海岸鉄道",
+      "meaning": "阿佐海岸鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaifu/"
     },
     {
@@ -424,6 +424,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tainohama/"
     },
     {
+      "question": "太龍寺",
+      "answer": [
+        "たいりゅうじ"
+      ],
+      "meaning": "太龍寺ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tairyuji/"
+    },
+    {
       "question": "立江",
       "answer": [
         "たつえ"
@@ -480,6 +488,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tokushima/"
     },
     {
+      "question": "登山口",
+      "answer": [
+        "とざんぐち"
+      ],
+      "meaning": "箸蔵山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tozanguchi_hashikurasan/"
+    },
+    {
       "question": "鳴門",
       "answer": [
         "なると"
@@ -518,6 +534,14 @@
       ],
       "meaning": "土讃線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashikura/"
+    },
+    {
+      "question": "箸蔵寺",
+      "answer": [
+        "はしくらじ"
+      ],
+      "meaning": "箸蔵山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hashikuraji/"
     },
     {
       "question": "羽ノ浦",
@@ -638,6 +662,14 @@
       ],
       "meaning": "鳴門線、高徳線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshinari/"
+    },
+    {
+      "question": "鷲の里",
+      "answer": [
+        "わしのさと"
+      ],
+      "meaning": "太龍寺ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/washinosato/"
     }
   ]
 }

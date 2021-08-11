@@ -2,7 +2,7 @@
   "uniqueId": "stations_kagawa",
   "name": "Kagawa Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -60,7 +60,7 @@
       "answer": [
         "うたづ"
       ],
-      "meaning": "瀬戸大橋線、予讃線",
+      "meaning": "予讃線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utazu/"
     },
     {
@@ -340,7 +340,7 @@
       "answer": [
         "さぬきしおや"
       ],
-      "meaning": "瀬戸大橋線、予讃線",
+      "meaning": "予讃線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanuki-shioya/"
     },
     {
@@ -384,12 +384,28 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanjo_kagawa/"
     },
     {
+      "question": "山頂",
+      "answer": [
+        "さんちょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sancho_kankakei/"
+    },
+    {
       "question": "三本松",
       "answer": [
         "さんぼんまつ"
       ],
       "meaning": "高徳線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sambommatsu_kagawa/"
+    },
+    {
+      "question": "山麓",
+      "answer": [
+        "さんろく"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanroku_unpenji/"
     },
     {
       "question": "塩入",
@@ -508,7 +524,7 @@
       "answer": [
         "たどつ"
       ],
-      "meaning": "瀬戸大橋線、予讃線など",
+      "meaning": "予讃線、土讃線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tadotsu/"
     },
     {
@@ -656,6 +672,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fusazaki/"
     },
     {
+      "question": "伏石",
+      "answer": [
+        "ふせいし"
+      ],
+      "meaning": "高松琴平電鉄琴平線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuseishi/"
+    },
+    {
       "question": "古高松",
       "answer": [
         "ふるたかまつ"
@@ -692,7 +716,7 @@
       "answer": [
         "まるがめ"
       ],
-      "meaning": "瀬戸大橋線、予讃線",
+      "meaning": "予讃線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/marugame/"
     },
     {

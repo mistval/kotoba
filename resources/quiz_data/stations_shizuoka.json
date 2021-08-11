@@ -2,7 +2,7 @@
   "uniqueId": "stations_shizuoka",
   "name": "Shizuoka Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -488,6 +488,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/katahama/"
     },
     {
+      "question": "門出",
+      "answer": [
+        "かどで"
+      ],
+      "meaning": "大井川鐵道大井川本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kadode/"
+    },
+    {
       "question": "金指",
       "answer": [
         "かなさし"
@@ -597,7 +605,7 @@
         "かんなみ"
       ],
       "meaning": "東海道本線（東海）",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kannami/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kannami/?page=2"
     },
     {
       "question": "蒲原",
@@ -676,8 +684,8 @@
       "answer": [
         "くさなぎ"
       ],
-      "meaning": "東海道本線（東海）",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusanagi_shizuoka/"
+      "meaning": "静岡鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusanagi_shizuoka-tetsudo/"
     },
     {
       "question": "久能山",
@@ -720,12 +728,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kowada/"
     },
     {
-      "question": "五和",
+      "question": "合格",
       "answer": [
-        "ごか"
+        "ごうかく"
       ],
       "meaning": "大井川鐵道大井川本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goka/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goukaku/"
     },
     {
       "question": "御殿場",
@@ -1320,6 +1328,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/numazu/"
     },
     {
+      "question": "寝姿山",
+      "answer": [
+        "ねすがたやま"
+      ],
+      "meaning": "下田ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mt_nesugata/"
+    },
+    {
       "question": "八幡",
       "answer": [
         "はちまん"
@@ -1584,6 +1600,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikadodai/"
     },
     {
+      "question": "御厨",
+      "answer": [
+        "みくりや"
+      ],
+      "meaning": "東海道本線（東海）",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mikuriya_shizuoka/"
+    },
+    {
       "question": "水窪",
       "answer": [
         "みさくぼ"
@@ -1716,8 +1740,8 @@
       "answer": [
         "ゆのき"
       ],
-      "meaning": "身延線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunoki_shizuoka/"
+      "meaning": "静岡鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunoki_shizuoka-tetsudo/"
     },
     {
       "question": "吉原",

@@ -2,7 +2,7 @@
   "uniqueId": "stations_yamaguchi",
   "name": "Yamaguchi Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -440,12 +440,28 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotoshiba/"
     },
     {
+      "question": "山頂",
+      "answer": [
+        "さんちょう"
+      ],
+      "meaning": "岩国城ロープウエー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sancho_iwakuni_castle/"
+    },
+    {
       "question": "三見",
       "answer": [
         "さんみ"
       ],
       "meaning": "山陰本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sammi/"
+    },
+    {
+      "question": "山麓",
+      "answer": [
+        "さんろく"
+      ],
+      "meaning": "岩国城ロープウエー",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanroku_iwakuni_castle/"
     },
     {
       "question": "重安",
@@ -654,6 +670,14 @@
       ],
       "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daido/"
+    },
+    {
+      "question": "壇ノ浦",
+      "answer": [
+        "だんのうら"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dannoura/"
     },
     {
       "question": "長府",
@@ -942,6 +966,14 @@
       ],
       "meaning": "山陰本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hitomaru/"
+    },
+    {
+      "question": "火の山",
+      "answer": [
+        "ひのやま"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hinoyama/"
     },
     {
       "question": "深溝",

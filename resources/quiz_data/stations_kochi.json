@@ -2,7 +2,7 @@
   "uniqueId": "stations_kochi",
   "name": "Kochi Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -32,6 +32,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aki/"
     },
     {
+      "question": "あき総合病院前",
+      "answer": [
+        "あきそうごうびょういんまえ"
+      ],
+      "meaning": "土佐くろしお鉄道阿佐線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aki-sogo-byoin-mae/"
+    },
+    {
       "question": "曙町",
       "answer": [
         "あけぼのちょう"
@@ -52,8 +60,8 @@
       "answer": [
         "あさくら"
       ],
-      "meaning": "土讃線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakura_kochi/"
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asakura_tosa/"
     },
     {
       "question": "朝倉駅前",
@@ -140,7 +148,7 @@
       "answer": [
         "ありおか"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/arioka/"
     },
     {
@@ -180,8 +188,8 @@
       "answer": [
         "いの"
       ],
-      "meaning": "土讃線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ino_kochi/"
+      "meaning": "とさでん伊野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ino_tosa/"
     },
     {
       "question": "伊野駅前",
@@ -492,7 +500,7 @@
       "answer": [
         "くにみ"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kunimi_kochi/"
     },
     {
@@ -508,7 +516,7 @@
       "answer": [
         "ぐどう"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gudo/"
     },
     {
@@ -548,7 +556,7 @@
       "answer": [
         "こうぎょうだんち"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kogyodanchi/"
     },
     {
@@ -780,7 +788,7 @@
       "answer": [
         "すくも"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sukumo/"
     },
     {
@@ -1180,7 +1188,7 @@
       "answer": [
         "ひがしすくも"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashisukumo/"
     },
     {
@@ -1188,7 +1196,7 @@
       "answer": [
         "ひらた"
       ],
-      "meaning": "土佐くろしお鉄道中村線など",
+      "meaning": "土佐くろしお鉄道宿毛線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirata_kochi/"
     },
     {

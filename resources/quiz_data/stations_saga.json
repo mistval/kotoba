@@ -2,7 +2,7 @@
   "uniqueId": "stations_saga",
   "name": "Saga Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -28,7 +28,7 @@
       "answer": [
         "いがや"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/igaya/"
     },
     {
@@ -52,7 +52,7 @@
       "answer": [
         "うしづ"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ushizu/"
     },
     {
@@ -148,7 +148,7 @@
       "answer": [
         "からつ"
       ],
-      "meaning": "JR線、福岡地下鉄空港線",
+      "meaning": "筑肥線（伊万里）、唐津線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karatsu/"
     },
     {
@@ -164,7 +164,7 @@
       "answer": [
         "かんざき"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanzaki_saga/"
     },
     {
@@ -212,7 +212,7 @@
       "answer": [
         "くぼた"
       ],
-      "meaning": "長崎本線、佐世保線など",
+      "meaning": "長崎本線、唐津線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubota_saga/"
     },
     {
@@ -244,7 +244,7 @@
       "answer": [
         "さが"
       ],
-      "meaning": "長崎本線、佐世保線など",
+      "meaning": "長崎本線、唐津線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saga/"
     },
     {
@@ -268,7 +268,7 @@
       "answer": [
         "しんとす"
       ],
-      "meaning": "長崎本線、佐世保線など",
+      "meaning": "長崎本線、九州新幹線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-tosu/"
     },
     {
@@ -332,7 +332,7 @@
       "answer": [
         "とす"
       ],
-      "meaning": "鹿児島本線、長崎本線など",
+      "meaning": "鹿児島本線、長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tosu/"
     },
     {
@@ -348,7 +348,7 @@
       "answer": [
         "なかばる"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakabaru/"
     },
     {
@@ -364,7 +364,7 @@
       "answer": [
         "なべしま"
       ],
-      "meaning": "長崎本線、佐世保線など",
+      "meaning": "長崎本線、唐津線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nabeshima/"
     },
     {
@@ -396,7 +396,7 @@
       "answer": [
         "にしからつ"
       ],
-      "meaning": "唐津線、筑肥線、福岡地下鉄空港線",
+      "meaning": "唐津線、筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-karatsu/"
     },
     {
@@ -404,7 +404,7 @@
       "answer": [
         "にじのまつばら"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nijinomatsubara/"
     },
     {
@@ -420,7 +420,7 @@
       "answer": [
         "はまさき"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hamasaki/"
     },
     {
@@ -428,7 +428,7 @@
       "answer": [
         "ひがしからつ"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-karatsu/"
     },
     {
@@ -524,7 +524,7 @@
       "answer": [
         "ひぜんふもと"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hizen-fumoto/"
     },
     {
@@ -620,7 +620,7 @@
       "answer": [
         "よしのがりこうえん"
       ],
-      "meaning": "長崎本線、佐世保線",
+      "meaning": "長崎本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshinogarikoen/"
     },
     {
@@ -628,7 +628,7 @@
       "answer": [
         "わただ"
       ],
-      "meaning": "筑肥線、福岡地下鉄空港線",
+      "meaning": "筑肥線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/watada/"
     }
   ]

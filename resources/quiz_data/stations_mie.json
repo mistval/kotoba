@@ -2,7 +2,7 @@
   "uniqueId": "stations_mie",
   "name": "Mie Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -212,7 +212,7 @@
       "answer": [
         "いけのうらしーさいど"
       ],
-      "meaning": "参宮線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ikeno-ura-seaside/"
     },
     {
@@ -1724,7 +1724,7 @@
       "answer": [
         "みなみよっかいち"
       ],
-      "meaning": "関西本線（東海）、伊勢鉄道",
+      "meaning": "関西本線（東海）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yokkaichi/"
     },
     {
@@ -1820,7 +1820,7 @@
       "answer": [
         "よっかいち"
       ],
-      "meaning": "関西本線（東海）、伊勢鉄道",
+      "meaning": "関西本線（東海）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokkaichi/"
     },
     {
@@ -1838,6 +1838,22 @@
       ],
       "meaning": "参宮線、紀勢本線（東海）など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokken_mie/"
+    },
+    {
+      "question": "ロープウェイ山上公園",
+      "answer": [
+        "ろーぷうぇいさんじょうこうえん"
+      ],
+      "meaning": "御在所ロープウエイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/summit_park/"
+    },
+    {
+      "question": "ロープウェイ湯の山温泉",
+      "answer": [
+        "ろーぷうぇいゆのやまおんせん"
+      ],
+      "meaning": "御在所ロープウエイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunoyama_onsen/"
     }
   ]
 }

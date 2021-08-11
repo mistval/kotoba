@@ -2,7 +2,7 @@
   "uniqueId": "stations_hyougo",
   "name": "Hyougo Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -20,7 +20,7 @@
       "answer": [
         "あいおい"
       ],
-      "meaning": "東海道・山陽本線、赤穂線など",
+      "meaning": "山陽本線、赤穂線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aioi_hyogo/"
     },
     {
@@ -36,7 +36,7 @@
       "answer": [
         "あいの"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aino_hyogo/"
     },
     {
@@ -44,7 +44,7 @@
       "answer": [
         "あいもと"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aimoto_hyogo/"
     },
     {
@@ -84,7 +84,7 @@
       "answer": [
         "あかし"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akashi/"
     },
     {
@@ -92,7 +92,7 @@
       "answer": [
         "あがほ"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/agaho/"
     },
     {
@@ -100,7 +100,7 @@
       "answer": [
         "あさぎり"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asagiri_hyogo/"
     },
     {
@@ -132,7 +132,7 @@
       "answer": [
         "あぼし"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aboshi/"
     },
     {
@@ -284,7 +284,7 @@
       "answer": [
         "いなでら"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inadera/"
     },
     {
@@ -340,7 +340,7 @@
       "answer": [
         "うおずみ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/uozumi/"
     },
     {
@@ -452,7 +452,7 @@
       "answer": [
         "おおくぼ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okubo_hyogo/"
     },
     {
@@ -564,7 +564,7 @@
       "answer": [
         "かこがわ"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "ＪＲ神戸線、加古川線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakogawa/"
     },
     {
@@ -652,7 +652,7 @@
       "answer": [
         "かわにしいけだ"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawanishi-ikeda/"
     },
     {
@@ -684,7 +684,7 @@
       "answer": [
         "きたいたみ"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-itami/"
     },
     {
@@ -772,7 +772,7 @@
       "answer": [
         "くさの"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kusano_hyogo/"
     },
     {
@@ -832,12 +832,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurodasho/"
     },
     {
-      "question": "京コンピュータ前",
+      "question": "計算科学センター",
       "answer": [
-        "けいこんぴゅーたまえ"
+        "けいさんかがくせんたー"
       ],
       "meaning": "ポートライナー",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kei_computer-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keisan_kagaku_center/"
     },
     {
       "question": "県庁前",
@@ -876,7 +876,7 @@
       "answer": [
         "こうしえんぐち"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koshienguchi/"
     },
     {
@@ -892,7 +892,7 @@
       "answer": [
         "こうそくながた"
       ],
-      "meaning": "阪神本線、山陽電鉄本線など",
+      "meaning": "阪神本線、神戸高速鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosoku-nagata/"
     },
     {
@@ -916,7 +916,7 @@
       "answer": [
         "こうなんやまて"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konan-yamate/"
     },
     {
@@ -940,7 +940,7 @@
       "answer": [
         "こうべ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobe_hyogo/"
     },
     {
@@ -1028,7 +1028,7 @@
       "answer": [
         "ごちゃく"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gochaku/?page=2"
     },
     {
@@ -1052,7 +1052,7 @@
       "answer": [
         "さくらしゅくがわ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakura-shukugawa/"
     },
     {
@@ -1060,7 +1060,7 @@
       "answer": [
         "さこし"
       ],
-      "meaning": "東海道・山陽本線、赤穂線",
+      "meaning": "赤穂線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakoshi/"
     },
     {
@@ -1076,7 +1076,7 @@
       "answer": [
         "ささやまぐち"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasayamaguchi/"
     },
     {
@@ -1100,7 +1100,7 @@
       "answer": [
         "さんだ"
       ],
-      "meaning": "福知山線、神戸電鉄三田線など",
+      "meaning": "福知山線、ＪＲ宝塚線、神戸電鉄三田線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanda_hyogo/"
     },
     {
@@ -1116,7 +1116,7 @@
       "answer": [
         "さんのみや"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sannomiya_hyogo/"
     },
     {
@@ -1212,7 +1212,7 @@
       "answer": [
         "しおや"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shioya_hyogo/"
     },
     {
@@ -1300,7 +1300,7 @@
       "answer": [
         "しんさんだ"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-sanda/"
     },
     {
@@ -1332,7 +1332,7 @@
       "answer": [
         "しんながた"
       ],
-      "meaning": "東海道・山陽本線、神戸市営西神・山手線など",
+      "meaning": "ＪＲ神戸線、神戸市営西神・山手線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-nagata/"
     },
     {
@@ -1372,7 +1372,7 @@
       "answer": [
         "すま"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suma/"
     },
     {
@@ -1388,7 +1388,7 @@
       "answer": [
         "すまかいひんこうえん"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sumakaihinkoen/"
     },
     {
@@ -1428,7 +1428,7 @@
       "answer": [
         "せっつもとやま"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/settsu-motoyama/"
     },
     {
@@ -1452,7 +1452,7 @@
       "answer": [
         "そね"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sone_hyogo/"
     },
     {
@@ -1484,7 +1484,7 @@
       "answer": [
         "たかとり"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takatori_hyogo/"
     },
     {
@@ -1492,7 +1492,7 @@
       "answer": [
         "たからづか"
       ],
-      "meaning": "福知山線、阪急今津線、阪急宝塚線",
+      "meaning": "福知山線、ＪＲ宝塚線、阪急今津線、阪急宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takarazuka/"
     },
     {
@@ -1548,7 +1548,7 @@
       "answer": [
         "たけだお"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takedao/"
     },
     {
@@ -1572,7 +1572,7 @@
       "answer": [
         "たちばな"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tachibana/"
     },
     {
@@ -1580,7 +1580,7 @@
       "answer": [
         "たつの"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatsuno_hyogo/"
     },
     {
@@ -1596,7 +1596,7 @@
       "answer": [
         "たにがみ"
       ],
-      "meaning": "神戸市営西神・山手線など",
+      "meaning": "神戸市営北神線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanigami/"
     },
     {
@@ -1612,7 +1612,7 @@
       "answer": [
         "たるみ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tarumi_hyogo/"
     },
     {
@@ -1636,7 +1636,7 @@
       "answer": [
         "だいかい"
       ],
-      "meaning": "山陽電鉄本線など",
+      "meaning": "阪神本線、神戸高速鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daikai/?page=2"
     },
     {
@@ -1660,7 +1660,7 @@
       "answer": [
         "つかぐち"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsukaguchi/"
     },
     {
@@ -1676,7 +1676,7 @@
       "answer": [
         "つちやま"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuchiyama/"
     },
     {
@@ -1748,7 +1748,7 @@
       "answer": [
         "どうじょう"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/dojo/"
     },
     {
@@ -1796,7 +1796,7 @@
       "answer": [
         "なかやまでら"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakayamadera/"
     },
     {
@@ -1812,7 +1812,7 @@
       "answer": [
         "なだ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nada/"
     },
     {
@@ -1820,16 +1820,16 @@
       "answer": [
         "なまぜ"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/namaze/"
     },
     {
-      "question": "鳴尾",
+      "question": "鳴尾・武庫川女子大前",
       "answer": [
-        "なるお"
+        "なるおむこがわじょしだいまえ"
       ],
       "meaning": "阪神本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruo/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/naruo-mukogawajoshidai-mae/"
     },
     {
       "question": "新井",
@@ -1860,7 +1860,7 @@
       "answer": [
         "にしあいおい"
       ],
-      "meaning": "東海道・山陽本線、赤穂線",
+      "meaning": "赤穂線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-aioi/"
     },
     {
@@ -1868,7 +1868,7 @@
       "answer": [
         "にしあかし"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-akashi/"
     },
     {
@@ -1916,7 +1916,7 @@
       "answer": [
         "にしだい"
       ],
-      "meaning": "山陽電鉄本線など",
+      "meaning": "阪神本線、山陽電鉄本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishidai_hyogo/"
     },
     {
@@ -1932,8 +1932,8 @@
       "answer": [
         "にしのみや"
       ],
-      "meaning": "東海道・山陽本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hyogo/"
+      "meaning": "阪神本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiya_hanshin/"
     },
     {
       "question": "西宮北口",
@@ -1948,7 +1948,7 @@
       "answer": [
         "にしのみやなじお"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishinomiyanajio/"
     },
     {
@@ -1972,7 +1972,7 @@
       "answer": [
         "にしもとまち"
       ],
-      "meaning": "阪神本線、山陽電鉄本線など",
+      "meaning": "阪神本線、神戸高速鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-motomachi/"
     },
     {
@@ -2092,7 +2092,7 @@
       "answer": [
         "はりまかつはら"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harima-katsuhara/"
     },
     {
@@ -2164,7 +2164,7 @@
       "answer": [
         "ばんしゅうあこう"
       ],
-      "meaning": "東海道・山陽本線、赤穂線",
+      "meaning": "赤穂線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/banshu-ako/"
     },
     {
@@ -2188,7 +2188,7 @@
       "answer": [
         "ひがしかこがわ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kakogawa/"
     },
     {
@@ -2228,7 +2228,7 @@
       "answer": [
         "ひがしひめじ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-himeji/"
     },
     {
@@ -2260,7 +2260,7 @@
       "answer": [
         "ひめじ"
       ],
-      "meaning": "東海道・山陽本線、播但線など",
+      "meaning": "ＪＲ神戸線、播但線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himeji/"
     },
     {
@@ -2268,7 +2268,7 @@
       "answer": [
         "ひめじべっしょ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himejibessho/"
     },
     {
@@ -2276,7 +2276,7 @@
       "answer": [
         "ひょうご"
       ],
-      "meaning": "東海道・山陽本線など",
+      "meaning": "ＪＲ神戸線、和田岬線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hyogo/"
     },
     {
@@ -2316,7 +2316,7 @@
       "answer": [
         "ひろの"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hirono_hyogo/"
     },
     {
@@ -2380,7 +2380,7 @@
       "answer": [
         "ふるいち"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/furuichi_hyogo/"
     },
     {
@@ -2404,7 +2404,7 @@
       "answer": [
         "ほうでん"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoden/"
     },
     {
@@ -2452,7 +2452,7 @@
       "answer": [
         "まいこ"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maiko/"
     },
     {
@@ -2476,7 +2476,7 @@
       "answer": [
         "まや"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maya/"
     },
     {
@@ -2604,7 +2604,7 @@
       "answer": [
         "みなみやしろ"
       ],
-      "meaning": "福知山線",
+      "meaning": "福知山線、ＪＲ宝塚線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-yashiro/"
     },
     {
@@ -2676,7 +2676,7 @@
       "answer": [
         "もとまち"
       ],
-      "meaning": "東海道・山陽本線、阪神本線、山陽電鉄本線など",
+      "meaning": "ＪＲ神戸線、阪神本線、神戸高速鉄道など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motomachi_hyogo/"
     },
     {
@@ -2836,7 +2836,7 @@
       "answer": [
         "ろっこうみち"
       ],
-      "meaning": "東海道・山陽本線",
+      "meaning": "ＪＲ神戸線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/rokkomichi/"
     },
     {

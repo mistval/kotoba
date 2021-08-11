@@ -2,7 +2,7 @@
   "uniqueId": "stations_okayama",
   "name": "Okayama Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -1029,7 +1029,7 @@
         "びっちゅうくれせ"
       ],
       "meaning": "井原鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bichu-kurese/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/bitchu-kurese/"
     },
     {
       "question": "備中神代",

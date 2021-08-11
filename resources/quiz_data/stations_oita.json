@@ -2,7 +2,7 @@
   "uniqueId": "stations_oita",
   "name": "Oita Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -376,6 +376,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurusaki/"
     },
     {
+      "question": "鶴見山上",
+      "answer": [
+        "つるみさんじょう"
+      ],
+      "meaning": "別府ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsurumi_sanjo/"
+    },
+    {
       "question": "光岡",
       "answer": [
         "てるおか"
@@ -606,6 +614,14 @@
       ],
       "meaning": "日豊本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/beppu_oita/"
+    },
+    {
+      "question": "別府高原",
+      "answer": [
+        "べっぷこうげん"
+      ],
+      "meaning": "別府ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/beppu_kogen/"
     },
     {
       "question": "別府大学",

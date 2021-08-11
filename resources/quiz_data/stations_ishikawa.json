@@ -2,7 +2,7 @@
   "uniqueId": "stations_ishikawa",
   "name": "Ishikawa Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -148,7 +148,7 @@
       "answer": [
         "かなざわ"
       ],
-      "meaning": "北陸本線、北陸新幹線、ＩＲいしかわ鉄道など",
+      "meaning": "北陸本線、北陸新幹線、ＩＲいしかわ鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanazawa/"
     },
     {
@@ -268,7 +268,7 @@
       "answer": [
         "つばた"
       ],
-      "meaning": "七尾線、ＩＲいしかわ鉄道など",
+      "meaning": "七尾線、ＩＲいしかわ鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsubata/"
     },
     {
@@ -396,8 +396,8 @@
       "answer": [
         "ののいち"
       ],
-      "meaning": "北陸本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nonoichi_ishikawa/"
+      "meaning": "北陸鉄道石川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nonoichi_hokuriku/"
     },
     {
       "question": "野々市工大前",
@@ -436,7 +436,7 @@
       "answer": [
         "ひがしかなざわ"
       ],
-      "meaning": "ＩＲいしかわ鉄道など",
+      "meaning": "ＩＲいしかわ鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-kanazawa/"
     },
     {
@@ -548,7 +548,7 @@
       "answer": [
         "もりもと"
       ],
-      "meaning": "ＩＲいしかわ鉄道など",
+      "meaning": "ＩＲいしかわ鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/morimoto/"
     },
     {

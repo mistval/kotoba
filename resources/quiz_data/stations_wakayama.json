@@ -2,7 +2,7 @@
   "uniqueId": "stations_wakayama",
   "name": "Wakayama Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -196,7 +196,7 @@
       "answer": [
         "きい"
       ],
-      "meaning": "阪和線、関西空港線",
+      "meaning": "阪和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kii/"
     },
     {
@@ -316,7 +316,7 @@
       "answer": [
         "きいなかのしま"
       ],
-      "meaning": "阪和線、関西空港線",
+      "meaning": "阪和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kii-nakanoshima/"
     },
     {
@@ -589,7 +589,7 @@
         "しやくしょまえ"
       ],
       "meaning": "紀州鉄道",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_wakayama/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_gobo/"
     },
     {
       "question": "白浜",
@@ -900,7 +900,7 @@
       "answer": [
         "むそた"
       ],
-      "meaning": "阪和線、関西空港線",
+      "meaning": "阪和線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/musota/"
     },
     {

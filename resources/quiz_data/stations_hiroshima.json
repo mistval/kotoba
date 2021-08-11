@@ -2,7 +2,7 @@
   "uniqueId": "stations_hiroshima",
   "name": "Hiroshima Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -496,14 +496,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kisa/"
     },
     {
-      "question": "競艇場前",
-      "answer": [
-        "きょうていじょうまえ"
-      ],
-      "meaning": "広島電鉄宮島線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kyoteijo-mae_hiroshima/"
-    },
-    {
       "question": "祇園新橋北",
       "answer": [
         "ぎおんしんばしきた"
@@ -680,12 +672,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sancho_senkojiyama/"
     },
     {
-      "question": "山陽女子大前",
+      "question": "山陽女学園前",
       "answer": [
-        "さんようじょしだいまえ"
+        "さんようじょがくえんまえ"
       ],
       "meaning": "広島電鉄宮島線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/san-yo-joshidai-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanyo-jyogakuen-mae/"
     },
     {
       "question": "山麓",
@@ -760,12 +752,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_hiroshima/"
     },
     {
-      "question": "修大附属鈴峯前",
+      "question": "修大協創中高前",
       "answer": [
-        "しゅうだいふぞくすずがみねまえ"
+        "しゅうだいきょうそうちゅうこうまえ"
       ],
       "meaning": "広島電鉄宮島線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shudaifuzoku-suzugamine-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shudai-kyoso-chuko-mae/"
     },
     {
       "question": "縮景園前",
@@ -1232,38 +1224,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nyuno_hiroshima/"
     },
     {
-      "question": "広島",
-      "answer": [
-        "ひろしま"
-      ],
-      "meaning": "山陽本線、芸備線、呉線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiroshima/"
-    },
-    {
-      "question": "福山",
-      "answer": [
-        "ふくやま"
-      ],
-      "meaning": "山陽本線、福塩線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuyama/"
-    },
-    {
-      "question": "三原",
-      "answer": [
-        "みはら"
-      ],
-      "meaning": "山陽本線、呉線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mihara/"
-    },
-    {
-      "question": "宮島口",
-      "answer": [
-        "みやじまぐち"
-      ],
-      "meaning": "山陽本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyajimaguchi/"
-    },
-    {
       "question": "白島",
       "answer": [
         "はくしま"
@@ -1382,6 +1342,14 @@
       ],
       "meaning": "呉線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiro/"
+    },
+    {
+      "question": "広島",
+      "answer": [
+        "ひろしま"
+      ],
+      "meaning": "山陽本線、芸備線、呉線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiroshima/"
     },
     {
       "question": "広島駅",
@@ -1552,6 +1520,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukushimacho/"
     },
     {
+      "question": "福山",
+      "answer": [
+        "ふくやま"
+      ],
+      "meaning": "山陽本線、福塩線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukuyama/"
+    },
+    {
       "question": "袋町",
       "answer": [
         "ふくろまち"
@@ -1608,12 +1584,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funairimachi/"
     },
     {
-      "question": "舟入南町",
+      "question": "舟入南",
       "answer": [
-        "ふないりみなみまち"
+        "ふないりみなみ"
       ],
       "meaning": "広島電鉄６号線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funairi-minami-machi/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/funairi-minami/"
     },
     {
       "question": "古市",
@@ -1792,6 +1768,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-machi_6-chome/"
     },
     {
+      "question": "三原",
+      "answer": [
+        "みはら"
+      ],
+      "meaning": "山陽本線、呉線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mihara/"
+    },
+    {
       "question": "宮内",
       "answer": [
         "みやうち"
@@ -1806,6 +1790,22 @@
       ],
       "meaning": "山陽本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyauchikushido/"
+    },
+    {
+      "question": "宮島口",
+      "answer": [
+        "みやじまぐち"
+      ],
+      "meaning": "山陽本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyajimaguchi/"
+    },
+    {
+      "question": "宮島ボートレース場",
+      "answer": [
+        "みやじまぼーとれーすじょう"
+      ],
+      "meaning": "広島電鉄宮島線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miyajima-boat_race_stadium/"
     },
     {
       "question": "御幸橋",
@@ -1965,7 +1965,7 @@
         "よこがわえき"
       ],
       "meaning": "広島電鉄７号線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokogawa_sta__hiroshima/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yokogawa_sta_hiroshima/"
     },
     {
       "question": "吉浦",

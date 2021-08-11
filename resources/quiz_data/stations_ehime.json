@@ -2,7 +2,7 @@
   "uniqueId": "stations_ehime",
   "name": "Ehime Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -616,6 +616,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/goro/"
     },
     {
+      "question": "東雲口",
+      "answer": [
+        "しののめぐち"
+      ],
+      "meaning": "松山城ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shinonomeguchi/"
+    },
+    {
       "question": "清水町",
       "answer": [
         "しみずまち"
@@ -632,6 +640,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-uwa/"
     },
     {
+      "question": "下谷",
+      "answer": [
+        "しもだに"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimodani/"
+    },
+    {
       "question": "下灘",
       "answer": [
         "しもなだ"
@@ -645,7 +661,7 @@
         "しやくしょまえ"
       ],
       "meaning": "伊予鉄道松山市駅線など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_ehime/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shiyakusho-mae_matsuyama/"
     },
     {
       "question": "新川",
@@ -658,7 +674,8 @@
     {
       "question": "ＪＲ松山駅前",
       "answer": [
-        "じぇいあーるまつやまえきまえ"
+        "じぇいあーるまつやまえきまえ",
+        "JRまつやまえきまえ"
       ],
       "meaning": "伊予鉄道ＪＲ松山駅前線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jr-matsuyamaekimae/"
@@ -670,6 +687,14 @@
       ],
       "meaning": "伊予鉄道郡中線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jizomachi/"
+    },
+    {
+      "question": "成就",
+      "answer": [
+        "じょうじゅ"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/joju/"
     },
     {
       "question": "関川",
@@ -766,6 +791,14 @@
       ],
       "meaning": "予土線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chikanaga/"
+    },
+    {
+      "question": "長者ヶ平",
+      "answer": [
+        "ちょうじゃがなる"
+      ],
+      "meaning": "松山城ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chojaganaru/"
     },
     {
       "question": "鉄砲町",
@@ -972,7 +1005,7 @@
       "answer": [
         "ほんまちいっちょうめ"
       ],
-      "meaning": "伊予鉄道本町線",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachiicchome/"
     },
     {
@@ -980,7 +1013,7 @@
       "answer": [
         "ほんまちごちょうめ"
       ],
-      "meaning": "伊予鉄道本町線など",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachigochome/"
     },
     {
@@ -988,7 +1021,7 @@
       "answer": [
         "ほんまちさんちょうめ"
       ],
-      "meaning": "伊予鉄道本町線など",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachisanchome/"
     },
     {
@@ -996,7 +1029,7 @@
       "answer": [
         "ほんまちよんちょうめ"
       ],
-      "meaning": "伊予鉄道本町線など",
+      "meaning": "",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachiyonchome/"
     },
     {
@@ -1004,7 +1037,7 @@
       "answer": [
         "ほんまちろくちょうめ"
       ],
-      "meaning": "伊予鉄道本町線など",
+      "meaning": "伊予鉄道環状線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hommachirokuchome/"
     },
     {
@@ -1078,6 +1111,14 @@
       ],
       "meaning": "伊予鉄道高浜線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minatoyama/"
+    },
+    {
+      "question": "南伊予",
+      "answer": [
+        "みなみいよ"
+      ],
+      "meaning": "予讃線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-iyo/"
     },
     {
       "question": "南堀端",

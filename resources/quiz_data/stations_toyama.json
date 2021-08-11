@@ -2,7 +2,7 @@
   "uniqueId": "stations_toyama",
   "name": "Toyama Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -84,7 +84,7 @@
       "answer": [
         "あわじま"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/awajima/"
     },
     {
@@ -116,7 +116,7 @@
       "answer": [
         "いぬじましんまち"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inujimashinmachi/"
     },
     {
@@ -124,7 +124,7 @@
       "answer": [
         "いのたに"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/inotani/"
     },
     {
@@ -140,7 +140,7 @@
       "answer": [
         "いわせはま"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwasehama/"
     },
     {
@@ -148,7 +148,7 @@
       "answer": [
         "いんてっくほんしゃまえ"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/intec-honsha-mae/"
     },
     {
@@ -252,7 +252,7 @@
       "answer": [
         "えっちゅうなかじま"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/etchu-nakajima/"
     },
     {
@@ -284,7 +284,7 @@
       "answer": [
         "えっちゅうやつお"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/etchu-yatsuo/"
     },
     {
@@ -328,14 +328,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ote_mall/"
     },
     {
-      "question": "大広田",
-      "answer": [
-        "おおひろた"
-      ],
-      "meaning": "富山ライトレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohirota/"
-    },
-    {
       "question": "大町",
       "answer": [
         "おおまち"
@@ -364,7 +356,7 @@
       "answer": [
         "おくだちゅうがっこうまえ"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okudachugakko-mae/"
     },
     {
@@ -414,6 +406,14 @@
       ],
       "meaning": "万葉線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kataharamachi_toyama/"
+    },
+    {
+      "question": "カナルパークホテル富山",
+      "answer": [
+        "かなるぱーくとやままえ"
+      ],
+      "meaning": "富山地鉄富山港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/canal-park-hotel-toyama-mae/"
     },
     {
       "question": "鐘釣",
@@ -528,14 +528,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurobedaira/"
     },
     {
-      "question": "黒部ダム",
-      "answer": [
-        "くろべだむ"
-      ],
-      "meaning": "",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurobe_dam/"
-    },
-    {
       "question": "グランドプラザ前",
       "answer": [
         "ぐらんどぷらざまえ"
@@ -548,7 +540,7 @@
       "answer": [
         "けいりんじょうまえ"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/keirinjo-mae_toyama/"
     },
     {
@@ -604,8 +596,8 @@
       "answer": [
         "こすぎ"
       ],
-      "meaning": "富山地鉄不二越・上滝線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosugi_chitetsu/"
+      "meaning": "あいの風とやま鉄道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosugi_ainokaze/"
     },
     {
       "question": "小屋平",
@@ -622,6 +614,14 @@
       ],
       "meaning": "富山地鉄立山線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gohyakkoku/"
+    },
+    {
+      "question": "栄町",
+      "answer": [
+        "さかえまち"
+      ],
+      "meaning": "富山地鉄不二越・上滝線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sakaemachi_toyama/"
     },
     {
       "question": "坂下町",
@@ -652,7 +652,7 @@
       "answer": [
         "ささづ"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasazu/"
     },
     {
@@ -708,7 +708,7 @@
       "answer": [
         "しもおくい"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-okui/"
     },
     {
@@ -804,7 +804,7 @@
       "answer": [
         "じょうがわら"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jogawara/"
     },
     {
@@ -888,14 +888,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daikanbo/"
     },
     {
-      "question": "大学前",
-      "answer": [
-        "だいがくまえ"
-      ],
-      "meaning": "富山地鉄富山軌道線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daigaku-mae_toyama/"
-    },
-    {
       "question": "大川寺",
       "answer": [
         "だいせんじ"
@@ -932,7 +924,7 @@
       "answer": [
         "ちさと"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/chisato_toyama/"
     },
     {
@@ -1044,7 +1036,7 @@
       "answer": [
         "とやま"
       ],
-      "meaning": "高山本線、北陸新幹線、あいの風とやま鉄道",
+      "meaning": "JR線、あいの風とやま鉄道",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyama/"
     },
     {
@@ -1056,20 +1048,20 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyamaeki/"
     },
     {
-      "question": "富山駅北",
+      "question": "富山大学前",
       "answer": [
-        "とやまえききた"
-      ],
-      "meaning": "富山ライトレール",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyamaeki-kita/"
-    },
-    {
-      "question": "富山トヨペット本社前",
-      "answer": [
-        "とやまとよぺっとほんしゃまえ"
+        "とやまだいがくまえ"
       ],
       "meaning": "富山地鉄富山軌道線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyama_toyopet-honsha-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyamadaigaku-mae/"
+    },
+    {
+      "question": "トヨタモビリティ富山Ｇスクエア",
+      "answer": [
+        "とよたもびりてぃとやまじーすくえあ"
+      ],
+      "meaning": "富山地鉄富山軌道線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyota_mobility_toyama_g_square/"
     },
     {
       "question": "中加積",
@@ -1172,7 +1164,7 @@
       "answer": [
         "にしとやま"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-toyama/"
     },
     {
@@ -1212,7 +1204,7 @@
       "answer": [
         "にれはら"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nirehara/"
     },
     {
@@ -1248,11 +1240,19 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nomachiguchi/"
     },
     {
+      "question": "萩浦小学校前",
+      "answer": [
+        "はぎうらしょうがっこうまえ"
+      ],
+      "meaning": "富山地鉄富山港線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hagiurashogakko-mae/"
+    },
+    {
       "question": "蓮町",
       "answer": [
         "はすまち"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hasumachi/"
     },
     {
@@ -1284,7 +1284,7 @@
       "answer": [
         "はやほし"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hayahoshi/"
     },
     {
@@ -1300,7 +1300,7 @@
       "answer": [
         "ひがしいわせ"
       ],
-      "meaning": "富山ライトレール",
+      "meaning": "富山地鉄富山港線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-iwase/"
     },
     {
@@ -1356,7 +1356,7 @@
       "answer": [
         "ひがしやつお"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/higashi-yatsuo/"
     },
     {
@@ -1436,7 +1436,7 @@
       "answer": [
         "ふちゅううさか"
       ],
-      "meaning": "高山本線",
+      "meaning": "高山本線など",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fuchu-usaka/"
     },
     {

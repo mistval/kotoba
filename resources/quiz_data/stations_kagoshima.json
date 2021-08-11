@@ -2,7 +2,7 @@
   "uniqueId": "stations_kagoshima",
   "name": "Kagoshima Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -404,8 +404,8 @@
       "answer": [
         "こおりもと"
       ],
-      "meaning": "指宿枕崎線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/korimoto_kagoshima/"
+      "meaning": "鹿児島市電１系統など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/korimoto_kagoshima-shiden/"
     },
     {
       "question": "国分",
@@ -668,8 +668,8 @@
       "answer": [
         "たにやま"
       ],
-      "meaning": "指宿枕崎線、鹿児島市電１系統",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taniyama_kagoshima/"
+      "meaning": "鹿児島市電１系統",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taniyama_kagoshima-shiden/"
     },
     {
       "question": "帖佐",

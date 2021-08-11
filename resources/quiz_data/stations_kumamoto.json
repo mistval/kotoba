@@ -2,7 +2,7 @@
   "uniqueId": "stations_kumamoto",
   "name": "Kumamoto Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -38,14 +38,6 @@
       ],
       "meaning": "豊肥本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/aso_kumamoto/"
-    },
-    {
-      "question": "阿蘇山西",
-      "answer": [
-        "あそさんにし"
-      ],
-      "meaning": "阿蘇山ロープウェー",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/asosannishi/"
     },
     {
       "question": "阿蘇下田",
@@ -224,14 +216,6 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kaiji/"
     },
     {
-      "question": "火口西",
-      "answer": [
-        "かこうにし"
-      ],
-      "meaning": "阿蘇山ロープウェー",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kakounishi/"
-    },
-    {
       "question": "加勢",
       "answer": [
         "かせ"
@@ -253,15 +237,7 @@
         "かみくまもと"
       ],
       "meaning": "鹿児島本線、熊本電鉄菊池線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-kumamoto/"
-    },
-    {
-      "question": "上熊本駅前",
-      "answer": [
-        "かみくまもとえきまえ"
-      ],
-      "meaning": "熊本市電Ｂ系統",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamikumamotoekimae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamikumamoto_jr-kumamoto_electric_railway/"
     },
     {
       "question": "上田浦",
@@ -408,12 +384,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurokamimachi/"
     },
     {
-      "question": "神水・市民病院前",
+      "question": "神水交差点",
       "answer": [
-        "くわみずしみんびょういんまえ"
+        "くわみずこうさてん"
       ],
       "meaning": "熊本市電Ａ系統など",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuwamizu_shimin_byoin-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuwamizukosaten/"
     },
     {
       "question": "慶徳校前",
@@ -496,12 +472,12 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/gofukumachi_kumamoto/"
     },
     {
-      "question": "再春荘前",
+      "question": "再春医療センター前",
       "answer": [
-        "さいしゅんそうまえ"
+        "さいしゅんいりょうせんたーまえ"
       ],
       "meaning": "熊本電鉄菊池線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saishunso-mae/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/saishun_medical_center-mae/"
     },
     {
       "question": "坂本",

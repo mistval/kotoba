@@ -2,7 +2,7 @@
   "uniqueId": "stations_fukushima",
   "name": "Fukushima Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -284,8 +284,8 @@
       "answer": [
         "いずみ"
       ],
-      "meaning": "常磐線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi_fukushima/"
+      "meaning": "福島交通飯坂線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/izumi_fukushima-kotsu/"
     },
     {
       "question": "泉郷",
@@ -685,7 +685,7 @@
         "こおり"
       ],
       "meaning": "東北本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ko-ori/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koori/"
     },
     {
       "question": "郡山",

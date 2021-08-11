@@ -1,8 +1,8 @@
 {
-  "uniqueId": "stations_nigata",
+  "uniqueId": "stations_niigata",
   "name": "Niigata Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -116,7 +116,7 @@
       "answer": [
         "いといがわ"
       ],
-      "meaning": "大糸線、北陸新幹線、日本海ひすいライン",
+      "meaning": "JR線、日本海ひすいライン",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itoigawa/"
     },
     {
@@ -272,6 +272,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/echigo-oshima/"
     },
     {
+      "question": "えちご押上ひすい海岸",
+      "answer": [
+        "えちごおしあげひすいかいがん"
+      ],
+      "meaning": "日本海ひすいライン",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/echigo-oshiage-hisui-kaigan/"
+    },
+    {
       "question": "越後片貝",
       "answer": [
         "えちごかたかい"
@@ -389,7 +397,7 @@
         "えちごひろた"
       ],
       "meaning": "信越本線",
-      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/echigo-hirota/"
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/echigo-hirota/?page=2"
     },
     {
       "question": "越後堀之内",
@@ -732,7 +740,7 @@
       "answer": [
         "くびきおおの"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kubikiono/"
     },
     {
@@ -780,7 +788,7 @@
       "answer": [
         "こたき"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kotaki/"
     },
     {
@@ -854,6 +862,22 @@
       ],
       "meaning": "信越本線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanjo_niigata/"
+    },
+    {
+      "question": "山頂",
+      "answer": [
+        "さんちょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sancho_yahikoyama/"
+    },
+    {
+      "question": "山麓",
+      "answer": [
+        "さんろく"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanroku_yahikoyama/"
     },
     {
       "question": "塩沢",
@@ -1204,7 +1228,7 @@
       "answer": [
         "ねち"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nechi/"
     },
     {
@@ -1292,7 +1316,7 @@
       "answer": [
         "ひめかわ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/himekawa_niigata/"
     },
     {
@@ -1300,7 +1324,7 @@
       "answer": [
         "ひらいわ"
       ],
-      "meaning": "大糸線",
+      "meaning": "大糸線、大糸線（西日本）",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hiraiwa/"
     },
     {

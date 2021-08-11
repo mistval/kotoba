@@ -2,7 +2,7 @@
   "uniqueId": "stations_gunma",
   "name": "Gunma Stations Reading Quiz",
   "article": "a",
-  "instructions": "Type the reading!",
+  "instructions": "Type the reading of the below station name in Hiragana!",
   "questionCreationStrategy": "IMAGE",
   "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
   "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
@@ -540,7 +540,7 @@
       "answer": [
         "しんまち"
       ],
-      "meaning": "湘南新宿ライン、高崎線など",
+      "meaning": "湘南新宿ライン、高崎線",
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimmachi_gumma/"
     },
     {
@@ -872,6 +872,22 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haneo/"
     },
     {
+      "question": "榛名高原",
+      "answer": [
+        "はるなこうげん"
+      ],
+      "meaning": "榛名山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harunakogen/"
+    },
+    {
+      "question": "榛名富士山頂",
+      "answer": [
+        "はるなふじさんちょう"
+      ],
+      "meaning": "榛名山ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/harunafujisancho/"
+    },
+    {
       "question": "東小泉",
       "answer": [
         "ひがしこいずみ"
@@ -1016,6 +1032,14 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-takasaki/"
     },
     {
+      "question": "見晴",
+      "answer": [
+        "みはらし"
+      ],
+      "meaning": "伊香保ロープウェイ",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/miharashi/"
+    },
+    {
       "question": "本宿",
       "answer": [
         "もとじゅく"
@@ -1048,7 +1072,7 @@
       "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yagura/"
     },
     {
-      "question": "薮塚",
+      "question": "藪塚",
       "answer": [
         "やぶづか"
       ],
