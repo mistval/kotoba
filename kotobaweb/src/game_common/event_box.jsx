@@ -7,8 +7,7 @@ import { NavLink } from 'react-router-dom';
 import createAnchorIfUriPresent from '../util/create_anchor_if_uri_present';
 import { GameEndReason } from '../common/kanji_game/socket_event_enums';
 import './game_common.css';
-
-const avatars = require.context('./../img/user_avatars');
+import { getAvatar } from '../util/avatars';
 
 const DescriptionForGameEndReason = {
   [GameEndReason.TOO_MANY_UNANSWERED_QUESTIONS]: 'Too many questions went unanswered in a row.',
@@ -79,7 +78,7 @@ class EventBox extends Component {
       return (
         <div>
           { eventData.avatar
-            && <img width="64" height="64" src={avatars(`./${eventData.avatar}.png`)} alt="user avatar" className="align-top" /> }
+            && <img width="64" height="64" src={getAvatar(eventData.avatar)} alt="user avatar" className="align-top" /> }
           <div className="inline-block ml-3">
             <span>{eventData.username}</span>
             <br />

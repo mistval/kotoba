@@ -335,9 +335,9 @@ class EditDeck extends Component {
         stripeIsError: false,
         stripeMessage: (
           <span>
-            Saved. You can load this deck on Discord with
+            Saved. You can load this deck on Discord with&nbsp;
             <strong>
-              k!quiz
+              k!quiz&nbsp;
               {state.gridDeck.shortName}
             </strong>
             .
@@ -549,9 +549,9 @@ class EditDeck extends Component {
                   required
                 />
                 <span className="bmd-help">
-                  Load in Discord with
+                  Load in Discord with&nbsp;
                   <strong>
-                    k!quiz
+                    k!quiz&nbsp;
                     {this.state.gridDeck.shortName}
                   </strong>
                 </span>

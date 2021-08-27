@@ -18,5 +18,6 @@ module.exports = {
       'react/jsx-filename-extension': 'off',
       'jsx-a11y/anchor-is-valid': 'off',
       'no-underscore-dangle': ['error', { allow: ['_id'] }],
+      'import/prefer-default-export': 'off',
     },
 };

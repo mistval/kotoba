@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
-const avatars = require.context('./../img/user_avatars');
+import { getAvatar } from '../util/avatars';
 
 class RightPanel extends Component {
   constructor(props) {
@@ -54,7 +53,7 @@ class RightPanel extends Component {
                 return (
                   <div key={username}>
                     { avatar
-                      && <img width="64" height="64" src={avatars(`./${avatar}.png`)} alt="user avatar" /> }
+                      && <img width="64" height="64" src={getAvatar(avatar)} alt="user avatar" /> }
                     <div className="inline-block ml-3">
                       <span>{username}</span>
                       <br />

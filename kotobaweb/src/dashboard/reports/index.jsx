@@ -294,7 +294,7 @@ class ReportView extends Component {
           if (err.response.data.rejectedCard) {
             errorMessage = (
               <span>
-                That deck already has this question:
+                That deck already has this question:&nbsp;
                 <strong>{err.response.data.rejectedCard.question}</strong>
                 . No questions were added.
               </span>
@@ -431,7 +431,7 @@ class ReportView extends Component {
                 <li>If you're logged in, questions that you didn't answer are highlighted in red.</li>
                 <li>If a question cannot be checked off and added to a deck, that means its question type is not yet supported for custom decks.</li>
                 <li>
-                  If you need help, need to report a bug, or make a suggestion, visit me in
+                  If you need help, need to report a bug, or make a suggestion, visit me in&nbsp;
                   <a href="https://discord.gg/S92qCjbNHt">my lair</a>
                   .
                 </li>
