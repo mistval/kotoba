@@ -7,7 +7,6 @@ import csvParse from 'csv-parse';
 import download from 'js-file-download';
 import { deckValidation, deckPermissions } from 'kotoba-common';
 import { Editors } from 'react-data-grid-addons';
-import Header from '../header';
 import NotificationStripe from '../../controls/notification_stripe';
 import Analytics from '../../util/analytics';
 import HelpButton from '../../bot/quiz_builder_components/help_button';
@@ -494,7 +493,6 @@ class EditDeck extends Component {
 
     return (
       <>
-        <Header />
         <input type="file" accept=".csv" style={styles.hiddenFileInput} onChange={this.onFileSelected} ref={(el) => { this.fileInputField = el; }} />
         <div className="modal" tabIndex="-1" role="dialog" id="deleteConfirmationModal">
           <div className="modal-dialog" role="document">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import { Link } from 'react-router-dom';
 import defaultAvatar from '../img/discord_default_avatar.png';
 
 const styles = {
@@ -49,7 +50,7 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
         <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
           <div className="d-flex align-items-center">
             {getServerIcon(report)}
-            <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
+            <Link to={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</Link>
           </div>
           <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
         </div>
@@ -71,11 +72,11 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
     return (
       <div className="d-flex flex-column">
         <span>No custom quiz decks.</span>
-        <a href="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
+        <Link to="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
           <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i>
           {' '}
           Create new
-        </a>
+        </Link>
       </div>
     );
   }
@@ -87,21 +88,21 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
       <div style={styles.listDiv}>
         { quizDecksSorted.map(deck => (
           <div className="py-1" key={deck._id}>
-            <a href={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>
+            <Link to={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>
               {deck.name}
               {' '}
               (
               {deck.shortName}
               )
-            </a>
+            </Link>
           </div>
         )) }
       </div>
-      <a href="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
+      <Link to="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
         <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i>
         {' '}
         Create new
-      </a>
+      </Link>
     </>
   );
 }

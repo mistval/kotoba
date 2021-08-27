@@ -1,6 +1,5 @@
 import React, { Component, PureComponent } from 'react';
 import axios from 'axios';
-import Header from '../header';
 import defaultAvatar from '../../img/discord_default_avatar.png';
 import NotificationStripe from '../../controls/notification_stripe';
 import Analytics from '../../util/analytics';
@@ -344,7 +343,6 @@ class ReportView extends Component {
 
     return (
       <>
-        <Header />
         <main className="container">
           <div className="row">
             <div className="col-12">

@@ -15,9 +15,8 @@ import Analytics from '../util/analytics';
 import ShiritoriGameCreate from '../shiritori/create';
 import ShiritoriGameRoom from '../shiritori/game';
 import ShiritoriGameJoin from '../shiritori/join';
-import Dashboard from '../dashboard';
-import CustomDeck from '../dashboard/custom_deck';
-import GameReport from '../dashboard/reports';
+import { Dashboard } from '../dashboard';
+
 
 Analytics.init();
 
@@ -36,15 +35,13 @@ function render() {
           <Route exact path="/bot/quiz" component={BotQuizManual} />
           <Route exact path="/bot/quizbuilder" component={BotQuizBuilder} />
           <Route exact path="/strokeorder" component={StrokeOrder} />
-          <Route exact path="/dashboard/decks/:id" component={CustomDeck} />
-          <Route exact path="/dashboard/game_reports/:id" component={GameReport} />
-          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/kanjigame/create" component={KanjiGameCreate} />
           <Route exact path="/kanjigame/game" component={KanjiGameRoom} />
           <Route exact path="/kanjigame/join" component={KanjiGameJoin} />
           <Route exact path="/shiritori/create" component={ShiritoriGameCreate} />
           <Route exact path="/shiritori/game" component={ShiritoriGameRoom} />
           <Route exact path="/shiritori/join" component={ShiritoriGameJoin} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route
             exact
             path="/"
