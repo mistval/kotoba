@@ -29,16 +29,14 @@ class LogList extends Component {
     }
 
     return (
-     <>
-      { this.state.logFiles.map((fileName, i) => {
-        return (
+      <>
+        { this.state.logFiles.map((fileName, i) => (
           <div className="ml-2 mt-2">
             <a href={`/admin/logs/${i}`}>{fileName}</a>
           </div>
-        );
-      }) }
-      <span>{this.state.errorMessage}</span>
-     </> 
+        )) }
+        <span>{this.state.errorMessage}</span>
+      </>
     );
   }
 }

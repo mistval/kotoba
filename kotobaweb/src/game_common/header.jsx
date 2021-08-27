@@ -2,7 +2,9 @@ import React from 'react';
 import '../main.css';
 
 function render(props) {
-  const { image, title, description, imageId } = props;
+  const {
+    image, title, description, imageId,
+  } = props;
 
   return (
     <div className="row pt-5 bg-light">

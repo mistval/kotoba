@@ -2,7 +2,7 @@ import React from 'react';
 import { quizLimits } from 'kotoba-common';
 import styles from './styles';
 import HelpButton from './help_button';
-import NumericInputBox from './../../controls/numeric_input_box';
+import NumericInputBox from '../../controls/numeric_input_box';
 
 function OtherSettingsEditor(props) {
   function handleScoreLimitChanged(newLimit) {
@@ -69,7 +69,9 @@ function OtherSettingsEditor(props) {
         </div>
         <div className="checkbox mt-3">
           <label>
-            <input type="checkbox" checked={props.otherSettings.conquest} onChange={handleConquestModeChanged} />&nbsp;<span style={styles.formText}>Conquest mode</span>&nbsp;
+            <input type="checkbox" checked={props.otherSettings.conquest} onChange={handleConquestModeChanged} />
+            <span style={styles.formText}>Conquest mode</span>
+&nbsp;
             <HelpButton
               popoverId="conquestModePopover"
               popoverContent="<p>Conquest mode uses a spaced repetition algorithm that puts missed questions back into the deck so that you'll see them again and learn them.</p><p>You can use <b>k!quiz save</b> and <b>k!quiz load</b> to save and load progress. Conquest mode has no score limit and ends when the deck has been conquered.</p>"
@@ -79,7 +81,9 @@ function OtherSettingsEditor(props) {
         </div>
         <div className="checkbox mt-2">
           <label>
-            <input type="checkbox" checked={props.otherSettings.hardcore} onChange={handleHardcoreModeChanged} />&nbsp;<span style={styles.formText}>Hardcore mode</span>&nbsp;
+            <input type="checkbox" checked={props.otherSettings.hardcore} onChange={handleHardcoreModeChanged} />
+            <span style={styles.formText}>Hardcore mode</span>
+&nbsp;
             <HelpButton
               popoverId="hardcoreModePopover"
               popoverContent="Hardcore mode only gives players one chance to answer each question correctly."
@@ -89,7 +93,9 @@ function OtherSettingsEditor(props) {
         </div>
         <div className="checkbox mt-2">
           <label>
-            <input type="checkbox" checked={props.otherSettings.norace} onChange={handleNoRaceModeChanged} />&nbsp;<span style={styles.formText}>No race mode</span>&nbsp;
+            <input type="checkbox" checked={props.otherSettings.norace} onChange={handleNoRaceModeChanged} />
+            <span style={styles.formText}>No race mode</span>
+&nbsp;
             <HelpButton
               popoverId="noRaceModePopover"
               popoverContent="<p>In No Race Mode, I will always let the timer run out before moving onto the next question, even if someone answers it correctly. This is good for audio decks or grammar decks when you want to make sure everyone has plenty of time.</p><p>You can still say <b>skip</b> or <b>s</b> to skip to the next question early.</p>"

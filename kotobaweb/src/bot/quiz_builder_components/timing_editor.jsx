@@ -17,13 +17,13 @@ function SpeedsList(props) {
           {presetName}
         </a>
       ))}
-        <a
-          href="#"
-          className={`list-group-item list-group-item-action${props.selectedPresetName === 'custom' ? ' active' : ''}`}
-          onClick={(ev) => { ev.preventDefault(); props.onPresetSelected('custom'); }}
-        >
-          custom
-        </a>
+      <a
+        href="#"
+        className={`list-group-item list-group-item-action${props.selectedPresetName === 'custom' ? ' active' : ''}`}
+        onClick={(ev) => { ev.preventDefault(); props.onPresetSelected('custom'); }}
+      >
+        custom
+      </a>
     </div>
   );
 }
@@ -152,7 +152,7 @@ class TimingEditor extends Component {
                       value={this.state.pendingTimeLimit}
                       min={quizLimits.answerTimeLimit[0]}
                       max={quizLimits.answerTimeLimit[1]}
-                      step={.1}
+                      step={0.1}
                       onChange={this.handleAnswerTimeLimitChanged}
                       required
                     />
@@ -170,7 +170,7 @@ class TimingEditor extends Component {
                       value={this.state.pendingAdditionalAnswerWaitWindow}
                       min={quizLimits.additionalAnswerWaitWindow[0]}
                       max={quizLimits.additionalAnswerWaitWindow[1]}
-                      step={.1}
+                      step={0.1}
                       onChange={this.handleAdditionalAnswerWaitWindowChanged}
                       required
                     />
@@ -188,13 +188,16 @@ class TimingEditor extends Component {
                       value={this.state.pendingDelayAfterAnsweredQuestion}
                       min={quizLimits.delayAfterAnsweredQuestion[0]}
                       max={quizLimits.delayAfterAnsweredQuestion[1]}
-                      step={.1}
+                      step={0.1}
                       onChange={this.handleDelayAfterAnsweredQuestionChanged}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    Delay after <b>un</b>answered question (seconds):&nbsp;
+                    Delay after
+                    {' '}
+                    <b>un</b>
+                    answered question (seconds):&nbsp;
                     <HelpButton
                       popoverId="delayAfterUnansweredPopover"
                       popoverContent="After the the time limit is reached and I show the correct answer, I will wait this many seconds before showing the next question."
@@ -206,7 +209,7 @@ class TimingEditor extends Component {
                       value={this.state.pendingDelayAfterUnansweredQuestion}
                       min={quizLimits.delayAfterUnansweredQuestion[0]}
                       max={quizLimits.delayAfterUnansweredQuestion[1]}
-                      step={.1}
+                      step={0.1}
                       onChange={this.handleDelayAfterUnansweredQuestionChanged}
                       required
                     />
@@ -231,7 +234,7 @@ class TimingEditor extends Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 

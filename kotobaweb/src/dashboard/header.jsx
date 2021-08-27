@@ -73,10 +73,13 @@ class DashboardHeader extends Component {
           <p>Discord users can login via Discord to manage Kotoba bot.</p>
           <DiscordLoginButton />
           <div className="alert alert-danger mt-3" role="alert">
-            <strong>Oh snap!</strong> There was a problem communicating with the login server. Retrying. Error: {this.state.apiErrorMessage}
+            <strong>Oh snap!</strong>
+            {' '}
+            There was a problem communicating with the login server. Retrying. Error:
+            {this.state.apiErrorMessage}
           </div>
         </header>
-      )
+      );
     }
 
     if (this.state.username) {

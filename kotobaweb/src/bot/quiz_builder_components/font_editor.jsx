@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { SketchPicker } from 'react-color';
 import styles from './styles';
 import fontList from './font_list.json';
-import NumericInputBox from './../../controls/numeric_input_box';
+import NumericInputBox from '../../controls/numeric_input_box';
 
 function getRGBAColor({ rgb }) {
   return `rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`;
@@ -66,10 +66,8 @@ class FontEditor extends PureComponent {
                 <div>
                   <div className="form-group">
                     <label htmlFor="fontFamilySelect">Font Family</label>
-                    <select className="form-control" id="fontFamilySelect" onChange={this.handleFontFamilyChanged} >
-                      { fontList.map((f, i) =>
-                        <option key={i} selected={i === this.props.fontSettings.fontFamilyIndex ? 'selected' : ''}>{f[0]}</option>
-                      ) }
+                    <select className="form-control" id="fontFamilySelect" onChange={this.handleFontFamilyChanged}>
+                      { fontList.map((f, i) => <option key={i} selected={i === this.props.fontSettings.fontFamilyIndex ? 'selected' : ''}>{f[0]}</option>) }
                     </select>
                   </div>
                   <label>Font Size</label>
@@ -86,7 +84,11 @@ class FontEditor extends PureComponent {
                 </div>
               </div>
               <div className="alert alert-info mb-0 mt-2" role="alert">
-                The font family in the 本 example will only change if your computer has the font installed. Beware that Discord scales down <b>large</b> images, which can make text look blurry. The default size of 92px is not scaled in most fonts for up to 4 characters.
+                The font family in the 本 example will only change if your computer has the font installed. Beware that Discord scales down
+                {' '}
+                <b>large</b>
+                {' '}
+                images, which can make text look blurry. The default size of 92px is not scaled in most fonts for up to 4 characters.
               </div>
             </div>
           </div>

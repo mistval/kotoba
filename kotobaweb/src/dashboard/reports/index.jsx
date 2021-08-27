@@ -1,6 +1,6 @@
 import React, { Component, PureComponent } from 'react';
-import Header from './../header';
 import axios from 'axios';
+import Header from '../header';
 import defaultAvatar from '../../img/discord_default_avatar.png';
 import NotificationStripe from '../../controls/notification_stripe';
 import Analytics from '../../util/analytics';
@@ -17,7 +17,9 @@ function avatarUriForAvatar(avatar, userId) {
   return avatar ? `https://cdn.discordapp.com/avatars/${userId}/${avatar}` : defaultAvatar;
 }
 
-function Scorer({ id, username, discriminator, avatar, points, index }) {
+function Scorer({
+  id, username, discriminator, avatar, points, index,
+}) {
   const trophy = trophies[index] || '';
   const nameString = `${trophy} ${username}#${discriminator}`.trim();
   const pointsString = `${points} points`;
@@ -51,7 +53,9 @@ function ScorersCell({ scorers, participantForId }) {
   );
 }
 
-function CardRow({ card, participantForId, onCheck, selfUserId }) {
+function CardRow({
+  card, participantForId, onCheck, selfUserId,
+}) {
   const selfWasInGame = !!participantForId[selfUserId];
   const rowClass = !selfWasInGame || card.correctAnswerers.indexOf(selfUserId) !== -1
     ? ''
@@ -65,27 +69,35 @@ function CardRow({ card, participantForId, onCheck, selfUserId }) {
       <td>{card.comment}</td>
       <ScorersCell scorers={card.correctAnswerers} participantForId={participantForId} />
     </tr>
-  )
+  );
 }
 
 class Questions extends PureComponent {
   render() {
-    return this.props.cards.map((card, i) => {
-      return (
-        <CardRow
-          card={card}
-          participantForId={this.props.participantForId}
-          key={i}
-          onCheck={(ev) => this.props.onCardChecked(i)}
-          selfUserId={this.props.selfUserId}
-        />
-      );
-    });
+    return this.props.cards.map((card, i) => (
+      <CardRow
+        card={card}
+        participantForId={this.props.participantForId}
+        key={i}
+        onCheck={ev => this.props.onCardChecked(i)}
+        selfUserId={this.props.selfUserId}
+      />
+    ));
   }
 }
 
-const loginErrorMessage = <span>You must be logged in to do that. <a href="/api/login" className="text-info">Login</a></span>;
-const noDecksErrorMessage = <span>You don't have any custom decks yet. <a href="/dashboard/decks/new" className="text-info">Create one</a></span>;
+const loginErrorMessage = (
+  <span>
+    You must be logged in to do that.
+    <a href="/api/login" className="text-info">Login</a>
+  </span>
+);
+const noDecksErrorMessage = (
+  <span>
+    You don't have any custom decks yet.
+    <a href="/dashboard/decks/new" className="text-info">Create one</a>
+  </span>
+);
 
 function getParticipantsAsScorerElements(participants, pointsForParticipantId) {
   return participants.sort((p2, p1) => pointsForParticipantId[p1._id] - pointsForParticipantId[p2._id]).map((p, i) => (
@@ -93,7 +105,8 @@ function getParticipantsAsScorerElements(participants, pointsForParticipantId) {
       {...p.discordUser}
       index={i}
       points={pointsForParticipantId[p._id]}
-      key={p._id} />
+      key={p._id}
+    />
   ));
 }
 
@@ -209,7 +222,7 @@ class ReportView extends Component {
   }
 
   onCheckAll = (ev) => {
-    const checked = ev.target.checked;
+    const { checked } = ev.target;
 
     this.setState((state) => {
       state.checkAll = checked;
@@ -267,7 +280,13 @@ class ReportView extends Component {
         let errorMessage;
         if (err.response && err.response.data) {
           if (err.response.data.rejectedCard) {
-            errorMessage = <span>That deck already has this question: <strong>{err.response.data.rejectedCard.question}</strong>. No questions were added.</span>;
+            errorMessage = (
+              <span>
+                That deck already has this question:
+                <strong>{err.response.data.rejectedCard.question}</strong>
+                . No questions were added.
+              </span>
+            );
           } else if (err.response.data.rejectionReason) {
             errorMessage = err.response.data.rejectionReason;
           } else {
@@ -356,7 +375,13 @@ class ReportView extends Component {
                   <option value={-1}>Choose a deck</option>
                   {
                     (this.state.customDecks || []).map((deck, i) => (
-                      <option key={deck._id} value={i}>{deck.name} ({deck.shortName})</option>
+                      <option key={deck._id} value={i}>
+                        {deck.name}
+                        {' '}
+                        (
+                        {deck.shortName}
+                        )
+                      </option>
                     ))
                   }
                 </select>
@@ -372,7 +397,11 @@ class ReportView extends Component {
               <ul>
                 <li>If you're logged in, questions that you didn't answer are highlighted in red.</li>
                 <li>If a question cannot be checked off and added to a deck, that means its question type is not yet supported for custom decks.</li>
-                <li>If you need help, need to report a bug, or make a suggestion, visit me in <a href="https://discord.gg/S92qCjbNHt">my lair</a>.</li>
+                <li>
+                  If you need help, need to report a bug, or make a suggestion, visit me in
+                  <a href="https://discord.gg/S92qCjbNHt">my lair</a>
+                  .
+                </li>
               </ul>
             </div>
           </div>

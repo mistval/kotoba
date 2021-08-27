@@ -28,9 +28,11 @@ class LogViewer extends Component {
 
     return (
       <main>
-        { logLines.map((line, i) => <div key={i} className="mb-4 mt-4">
-          {line}
-        </div>) }
+        { logLines.map((line, i) => (
+          <div key={i} className="mb-4 mt-4">
+            {line}
+          </div>
+        )) }
         <span>{this.state.errorMessage}</span>
       </main>
     );

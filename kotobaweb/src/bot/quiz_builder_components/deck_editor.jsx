@@ -32,7 +32,10 @@ function DeckRow(props) {
           className="text-info"
           onClick={(e) => { props.onChangeRange(props.index); e.preventDefault(); }}
         >
-            {convertRangeNumberToString(props.deck.startIndex)} - {convertRangeNumberToString(props.deck.endIndex)}
+          {convertRangeNumberToString(props.deck.startIndex)}
+          {' '}
+          -
+          {convertRangeNumberToString(props.deck.endIndex)}
         </a>
         &nbsp;&nbsp;
         <button type="button" className="btn btn-danger bmd-btn-icon" onClick={() => props.onDeleteDeck(props.index)}>
@@ -139,7 +142,7 @@ class DeckEditor extends Component {
     window.$(this.changeRangeModal).modal('hide');
 
     const startIndex = convertRangeStringToNumber(this.state.changeRangeStartIndex) || 1;
-    let endIndex = convertRangeStringToNumber(this.state.changeRangeEndIndex) || Number.POSITIVE_INFINITY;
+    const endIndex = convertRangeStringToNumber(this.state.changeRangeEndIndex) || Number.POSITIVE_INFINITY;
 
     const decks = this.props.decks.slice();
     const deckToChange = decks[this.state.changeRangeDeckIndex];
@@ -155,13 +158,11 @@ class DeckEditor extends Component {
     }
   }
 
-  changeRangeInputIsValid = () => {
-    return !this.rangeStartInput
+  changeRangeInputIsValid = () => !this.rangeStartInput
       || (
         !getRangeValidationErrorMessage(this.state.changeRangeStartIndex, this.state.changeRangeEndIndex, true)
         && !getRangeValidationErrorMessage(this.state.changeRangeEndIndex, this.state.changeRangeStartIndex, false)
-      );
-  }
+      )
 
   render() {
     return (

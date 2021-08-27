@@ -174,7 +174,7 @@ class Game extends Component {
       this.setState({
         instructions: (
           <span>
-          Currently <span className="text-danger">inactive</span>. Say anything to rejoin the game.
+            Currently <span className="text-danger">inactive</span>. Say anything to rejoin the game.
           </span>
         ),
       });
@@ -201,7 +201,7 @@ class Game extends Component {
       this.setState({
         instructions: (
           <span>
-          Enter a Japanese word starting with <span className="text-primary">{startsWith}</span>
+            Enter a Japanese word starting with <span className="text-primary">{startsWith}</span>
           </span>
         ),
       });

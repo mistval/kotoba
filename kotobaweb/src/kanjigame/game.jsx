@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
-import SocketNamespaces from './../common/socket_namespaces';
+import SocketNamespaces from '../common/socket_namespaces';
 import socketEvents from '../common/kanji_game/socket_events';
 import 'bootstrap-material-design-icons/css/material-icons.css';
 import './game.css';
@@ -292,7 +292,7 @@ class Game extends Component {
           {...currentQuestionData}
           onSubmit={this.onSubmit}
           onSkip={this.onSkip}
-          canHideInstructions={true}
+          canHideInstructions
         />
       </div>
     );

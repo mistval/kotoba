@@ -17,7 +17,7 @@ class NumericInputBox extends Component {
     if (indexOfDecimal === value.length - 1) {
       return false;
     }
-  
+
     const number = parseFloat(value);
     if (Number.isNaN(number)) {
       return false;
@@ -33,7 +33,7 @@ class NumericInputBox extends Component {
     } else {
       placesAfterDecimal = value.length - indexOfDecimal - 1;
     }
-  
+
     if (placesAfterDecimal > this.props.maxPlacesAfterDecimal) {
       return false;
     }
@@ -45,7 +45,7 @@ class NumericInputBox extends Component {
     ev.target.focus();
 
     if (this.isValid(ev.target.value)) {
-      this.props.onChange(parseFloat(ev.target.value))
+      this.props.onChange(parseFloat(ev.target.value));
     }
 
     this.setState({
@@ -54,7 +54,7 @@ class NumericInputBox extends Component {
   }
 
   handleBlur = (ev) => {
-    let numericValue = parseFloat(ev.target.value);
+    const numericValue = parseFloat(ev.target.value);
     let newPendingValue;
 
     if (numericValue < this.props.minValue) {
@@ -69,7 +69,7 @@ class NumericInputBox extends Component {
 
     this.setState(
       { pendingValue: newPendingValue },
-      () => { this.input.value = newPendingValue; }
+      () => { this.input.value = newPendingValue; },
     );
   }
 

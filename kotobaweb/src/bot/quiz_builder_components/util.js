@@ -30,11 +30,11 @@ export function createTimeModifierParts(timingArguments) {
       .every(([presetKey, presetValue]) => timingArguments[presetKey] === presetValue);
 
     if (matchesPreset) {
-        if (presetName === 'normal') {
-          return [];
-        }
-        return [presetName];
+      if (presetName === 'normal') {
+        return [];
       }
+      return [presetName];
+    }
   }
 
   const parts = [];

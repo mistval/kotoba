@@ -5,13 +5,12 @@ import ReactDataGrid from 'react-data-grid';
 import csvStringify from 'csv-stringify';
 import csvParse from 'csv-parse';
 import download from 'js-file-download';
-import { deckValidation } from 'kotoba-common';
+import { deckValidation, deckPermissions } from 'kotoba-common';
+import { Editors } from 'react-data-grid-addons';
 import Header from '../header';
 import NotificationStripe from '../../controls/notification_stripe';
-import { Editors } from 'react-data-grid-addons';
 import Analytics from '../../util/analytics';
 import HelpButton from '../../bot/quiz_builder_components/help_button';
-import { deckPermissions } from 'kotoba-common';
 
 const {
   DeckPermissions,
@@ -25,12 +24,10 @@ function upperCaseFirstCharOnly(str) {
   return [lowerChars[0].toUpperCase(), ...lowerChars.slice(1)].join('');
 }
 
-const renderAsDropdownOptions = deckValidation.allowedQuestionCreationStrategies.map((strat) => {
-  return {
-    id: strat,
-    value: upperCaseFirstCharOnly(strat),
-  };
-});
+const renderAsDropdownOptions = deckValidation.allowedQuestionCreationStrategies.map(strat => ({
+  id: strat,
+  value: upperCaseFirstCharOnly(strat),
+}));
 
 const RenderAsEditor = <Editors.DropDownEditor options={renderAsDropdownOptions} />;
 
@@ -53,7 +50,9 @@ const columns = [
   { key: 'answers', name: 'Answers', editable: true },
   { key: 'comment', name: 'Comment', editable: true },
   { key: 'instructions', name: 'Instructions', editable: true },
-  { key: 'questionCreationStrategy', name: 'Render as', editor: RenderAsEditor, editable: true, width: 110 },
+  {
+    key: 'questionCreationStrategy', name: 'Render as', editor: RenderAsEditor, editable: true, width: 110,
+  },
 ];
 
 const sampleGridCard = {
@@ -211,7 +210,7 @@ class EditDeck extends Component {
         updatedGridCard.questionCreationStrategy = '';
       }
 
-      Object.keys(updatedGridCard).forEach(key => {
+      Object.keys(updatedGridCard).forEach((key) => {
         if (typeof updatedGridCard[key] === typeof '') {
           updatedGridCard[key] = updatedGridCard[key].trim();
         }
@@ -320,7 +319,14 @@ class EditDeck extends Component {
       this.setState({
         showStripe: true,
         stripeIsError: false,
-        stripeMessage: <span>Saved. You can load this deck on Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong>.</span>,
+        stripeMessage: <span>
+          Saved. You can load this deck on Discord with
+          <strong>
+            k!quiz
+            {this.state.gridDeck.shortName}
+          </strong>
+          .
+        </span>,
       });
     } catch (err) {
       this.handleError(err);
@@ -349,8 +355,7 @@ class EditDeck extends Component {
   }
 
   onExport = () => {
-    const exportCardRows = this.state.gridDeck.cards.map(q =>
-      [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy]);
+    const exportCardRows = this.state.gridDeck.cards.map(q => [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy]);
 
     const exportHeaderRow = ['Question', 'Answers', 'Comment', 'Instructions', 'Render as'];
     const exportRows = [exportHeaderRow].concat(exportCardRows);
@@ -421,7 +426,7 @@ class EditDeck extends Component {
           return state;
         });
       });
-    }
+    };
   }
 
   onErrorCloseClicked = () => {
@@ -430,13 +435,9 @@ class EditDeck extends Component {
     });
   }
 
-  getSecretLink = (secret) => {
-    return `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
-  }
+  getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`
 
-  getReadWriteLink = () => {
-    return this.getSecretLink(this.state.readWriteSecret);
-  }
+  getReadWriteLink = () => this.getSecretLink(this.state.readWriteSecret)
 
   onResetEditLink = async () => {
     try {
@@ -447,21 +448,13 @@ class EditDeck extends Component {
     }
   }
 
-  canSave = () => {
-    return !this.state.saving && (this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE);
-  }
+  canSave = () => !this.state.saving && (this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE)
 
-  canDelete = () => {
-    return this.state.permissions === DeckPermissions.OWNER;
-  }
+  canDelete = () => this.state.permissions === DeckPermissions.OWNER
 
-  canEdit = () => {
-    return this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE;
-  }
+  canEdit = () => this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE
 
-  getSecretFromUrl = () => {
-    return new URLSearchParams(this.props.location.search).get("secret") || '';
-  }
+  getSecretFromUrl = () => new URLSearchParams(this.props.location.search).get('secret') || ''
 
   render() {
     if (!this.state.gridDeck) {
@@ -472,7 +465,7 @@ class EditDeck extends Component {
 
     if (localStorage.getItem('canCreateDecks') === 'false') {
       return (
-        <NotificationStripe show={true} message="Your Discord account must be at least one week old to create decks. Please try again later." onClose={this.onErrorCloseClicked} isError={true} />
+        <NotificationStripe show message="Your Discord account must be at least one week old to create decks. Please try again later." onClose={this.onErrorCloseClicked} isError />
       );
     }
 
@@ -534,7 +527,13 @@ class EditDeck extends Component {
                   pattern={deckValidation.SHORT_NAME_ALLOWED_CHARACTERS_REGEX_HTML}
                   required
                 />
-                <span className="bmd-help">Load in Discord with <strong>k!quiz {this.state.gridDeck.shortName}</strong></span>
+                <span className="bmd-help">
+                  Load in Discord with
+                  <strong>
+                    k!quiz
+                    {this.state.gridDeck.shortName}
+                  </strong>
+                </span>
               </div>
             </div>
             <div className="col-md-1 d-flex align-items-end mb-2">
@@ -542,11 +541,14 @@ class EditDeck extends Component {
                 <label>
                   <input
                     disabled={!this.canEdit()}
-                    type="checkbox" checked={this.state.gridDeck.public}
+                    type="checkbox"
+                    checked={this.state.gridDeck.public}
                     onChange={this.onMetadataChange}
                     ref={(el) => { this.publicCheckBox = el; }}
                   />
-                  &nbsp;<span style={{ color: '#212529' }}>Public</span>&nbsp;
+                  &nbsp;
+                  <span style={{ color: '#212529' }}>Public</span>
+&nbsp;
                   <HelpButton
                     popoverId="publicPopover"
                     popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
@@ -576,22 +578,26 @@ class EditDeck extends Component {
           <div className="row mt-4">
             <div className="col-xl-1 col-md-2 d-flex flex-column align-items-center">
               <button className="btn btn-primary btn-outline d-flex flex-column align-items-center" style={styles.actionButton} disabled={!this.canSave()} onClick={this.onSave}>
-                <i className="material-icons" style={styles.icon}>save</i>Save to bot
+                <i className="material-icons" style={styles.icon}>save</i>
+                Save to bot
               </button>
               <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} onClick={this.onExport}>
-                <i className="material-icons" style={styles.icon}>vertical_align_bottom</i>Export as CSV
+                <i className="material-icons" style={styles.icon}>vertical_align_bottom</i>
+                Export as CSV
               </button>
               <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canEdit()} onClick={this.onImport}>
-                <i className="material-icons" style={styles.icon}>vertical_align_top</i>Import from CSV
+                <i className="material-icons" style={styles.icon}>vertical_align_top</i>
+                Import from CSV
               </button>
               <button className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canDelete()} data-toggle="modal" data-target="#deleteConfirmationModal">
-                <i className="material-icons" style={styles.icon}>delete</i>Delete
+                <i className="material-icons" style={styles.icon}>delete</i>
+                Delete
               </button>
             </div>
             <div className="col-xl-11 col-md-10">
               <ReactDataGrid
                 columns={columns}
-                rowGetter={i => this.state.gridDeck.cards[i] || createEmptyGridCard(i) }
+                rowGetter={i => this.state.gridDeck.cards[i] || createEmptyGridCard(i)}
                 rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 20000)}
                 minHeight={900}
                 enableCellSelect={this.canEdit()}
@@ -599,10 +605,13 @@ class EditDeck extends Component {
               />
             </div>
           </div>
-          { this.state.readWriteSecret &&
+          { this.state.readWriteSecret
+          && (
           <div className="row mt-5">
             <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
-              <b>Edit Link</b> - Anyone with this link can view and edit this deck.
+              <b>Edit Link</b>
+              {' '}
+              - Anyone with this link can view and edit this deck.
               <div className="input-group mb-3">
                 <input type="text" className="form-control" value={readWriteLink} onClick={e => e.target.select()} />
                 <div className="input-group-append">
@@ -611,6 +620,7 @@ class EditDeck extends Component {
               </div>
             </div>
           </div>
+          )
           }
           <div className="row mt-5">
             <div className="col-12">
@@ -629,10 +639,17 @@ class EditDeck extends Component {
                   Consider exporting your deck as CSV and keeping a copy safe on your computer, just in case.
                 </li>
                 <li>
-                  If you have any problems or need help, <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a>.
+                  If you have any problems or need help,
+                  {' '}
+                  <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a>
+                  .
                 </li>
                 <li>
-                  If you think your deck is good enough to be included on Kotoba's main deck list, <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a> and tell me. Consider the following guidelines first.
+                  If you think your deck is good enough to be included on Kotoba's main deck list,
+                  {' '}
+                  <a href="https://discord.gg/S92qCjbNHt">visit me in my lair</a>
+                  {' '}
+                  and tell me. Consider the following guidelines first.
                   <ul>
                     <li>Deck should be unique, or a better version of an existing deck.</li>
                     <li>Deck should have 300+ questions.</li>
@@ -646,7 +663,7 @@ class EditDeck extends Component {
           <NotificationStripe show={this.state.showStripe} message={this.state.stripeMessage} onClose={this.onErrorCloseClicked} isError={this.state.stripeIsError} />
         </main>
       </>
-    )
+    );
   }
 }
 

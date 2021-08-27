@@ -16,7 +16,7 @@ class Button extends Component {
   render() {
     return (
       <a type="button" className="btn btn-raised btn-primary" style={styles.button} href="/api/login">
-        <i className="fab fa-discord" style={styles.icon}></i>
+        <i className="fab fa-discord" style={styles.icon} />
         <span>Login with Discord</span>
       </a>
     );

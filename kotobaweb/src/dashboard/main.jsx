@@ -14,7 +14,7 @@ const styles = {
   emptyIconDiv: {
     width: '24px',
     height: '24px',
-  }
+  },
 };
 
 function getServerIcon(report) {
@@ -27,12 +27,12 @@ function getServerIcon(report) {
     return <img src={uri} height="24" width="24" className="rounded-circle mr-3" alt="server icon" />;
   }
 
-  return <div style={styles.emptyIconDiv} className="mr-3" />
+  return <div style={styles.emptyIconDiv} className="mr-3" />;
 }
 
 function createGameReportsBody(gameReports, gameReportsErrorMessage) {
   if (gameReportsErrorMessage) {
-    return <span className="text-danger">Error retrieving game reports from server. Try refreshing or trying again later.</span>
+    return <span className="text-danger">Error retrieving game reports from server. Try refreshing or trying again later.</span>;
   }
 
   if (!gameReports) {
@@ -45,24 +45,22 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
 
   return (
     <div style={styles.listDiv}>
-      { gameReports.map((report) => {
-        return (
-          <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
-            <div className="d-flex align-items-center">
-              {getServerIcon(report)}
-              <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
-            </div>
-            <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
+      { gameReports.map(report => (
+        <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
+          <div className="d-flex align-items-center">
+            {getServerIcon(report)}
+            <a href={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</a>
           </div>
-        );
-      }) }
+          <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
+        </div>
+      )) }
     </div>
   );
 }
 
 function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
   if (quizDecksErrorMessage) {
-    return <span className="text-danger">Error retrieving quiz decks from server. Try refreshing or trying again later.</span>
+    return <span className="text-danger">Error retrieving quiz decks from server. Try refreshing or trying again later.</span>;
   }
 
   if (!quizDecks) {
@@ -74,7 +72,9 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
       <div className="d-flex flex-column">
         <span>No custom quiz decks.</span>
         <a href="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
-          <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i> Create new
+          <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i>
+          {' '}
+          Create new
         </a>
       </div>
     );
@@ -85,16 +85,22 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
   return (
     <>
       <div style={styles.listDiv}>
-        { quizDecksSorted.map((deck) => {
-          return (
-            <div className="py-1" key={deck._id}>
-               <a href={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>{deck.name} ({deck.shortName})</a>
-            </div>
-          );
-        }) }
+        { quizDecksSorted.map(deck => (
+          <div className="py-1" key={deck._id}>
+            <a href={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>
+              {deck.name}
+              {' '}
+              (
+              {deck.shortName}
+              )
+            </a>
+          </div>
+        )) }
       </div>
       <a href="/dashboard/decks/new" className="btn btn-outline-primary mt-4 d-flex justify-content-center align-items-center">
-        <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i> Create new
+        <i className="material-icons mr-2" style={styles.newQuizDeckIcon}>add_box</i>
+        {' '}
+        Create new
       </a>
     </>
   );
@@ -157,7 +163,7 @@ class LoggedInMain extends Component {
                 <h5 className="card-title">Custom Quiz Decks</h5>
               </div>
               <div className="card-body">
-                 { createCustomDecksBody(this.state.quizDecks, this.state.quizDecksErrorMessage) }
+                { createCustomDecksBody(this.state.quizDecks, this.state.quizDecksErrorMessage) }
               </div>
             </div>
           </div>

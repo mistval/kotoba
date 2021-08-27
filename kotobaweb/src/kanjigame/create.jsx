@@ -15,7 +15,7 @@ import TabBar from '../controls/tabbar';
 import Analytics from '../util/analytics';
 import tabs from './tabs';
 import Header from './header';
-import SocketNamespaces from './../common/socket_namespaces';
+import SocketNamespaces from '../common/socket_namespaces';
 import createSocket from '../util/create_socket';
 
 const listPickerItems = decks.map(deckInformation => ({
