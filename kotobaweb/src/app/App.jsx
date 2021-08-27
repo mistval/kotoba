@@ -17,8 +17,6 @@ import ShiritoriGameRoom from '../shiritori/game';
 import ShiritoriGameJoin from '../shiritori/join';
 import Dashboard from '../dashboard';
 import CustomDeck from '../dashboard/custom_deck';
-import LogList from '../admin/logs/list';
-import LogViewer from '../admin/logs/log';
 import GameReport from '../dashboard/reports';
 
 Analytics.init();
@@ -47,8 +45,6 @@ function render() {
           <Route exact path="/shiritori/create" component={ShiritoriGameCreate} />
           <Route exact path="/shiritori/game" component={ShiritoriGameRoom} />
           <Route exact path="/shiritori/join" component={ShiritoriGameJoin} />
-          <Route exact path="/admin/logs" component={LogList} />
-          <Route path="/admin/logs/:logIndex" component={LogViewer} />
           <Route
             exact
             path="/"

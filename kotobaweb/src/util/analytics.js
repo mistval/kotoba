@@ -1,5 +1,5 @@
 import ReactGA from 'react-ga';
-import { googleAnalyticsTrackingID } from '../config';
+import { googleAnalyticsTrackingID } from '../config.json';
 
 const analytics = {
   setPageView(view) {

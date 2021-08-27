@@ -38,7 +38,6 @@ class FontEditor extends PureComponent {
   }
 
   createFontExampleStyle() {
-    console.log(this.props.fontSettings);
     return {
       ...this.props.fontSettings,
       fontFamily: fontList[this.props.fontSettings.fontFamilyIndex],
@@ -67,7 +66,7 @@ class FontEditor extends PureComponent {
                   <div className="form-group">
                     <label htmlFor="fontFamilySelect">Font Family</label>
                     <select className="form-control" id="fontFamilySelect" onChange={this.handleFontFamilyChanged}>
-                      { fontList.map((f, i) => <option key={i} selected={i === this.props.fontSettings.fontFamilyIndex ? 'selected' : ''}>{f[0]}</option>) }
+                      { fontList.map((f, i) => <option key={f[0]} selected={i === this.props.fontSettings.fontFamilyIndex ? 'selected' : ''}>{f[0]}</option>) }
                     </select>
                   </div>
                   <label>Font Size</label>

@@ -76,6 +76,11 @@ function createEmptyGridCard(index) {
   return { ...emptyGridCard, index };
 }
 
+function isEmptyGridCard(row) {
+  assert(Object.keys(row).length === 6, 'Unexpected number of row properties'); // All the below properties plus index and questionCreationStrategy
+  return !row.question && !row.answers && !row.comment && !row.instructions;
+}
+
 function gridCardsToApiCards(gridCards) {
   const cards = gridCards.map((gridCard) => {
     if (isEmptyGridCard(gridCard)) {
@@ -119,11 +124,6 @@ function apiCardsToGridCards(apiCards) {
   });
 }
 
-function isEmptyGridCard(row) {
-  assert(Object.keys(row).length === 6, 'Unexpected number of row properties'); // All the below properties plus index and questionCreationStrategy
-  return !row.question && !row.answers && !row.comment && !row.instructions;
-}
-
 class EditDeck extends Component {
   constructor() {
     super();
@@ -142,7 +142,7 @@ class EditDeck extends Component {
     const deckId = this.props.match.params.id;
 
     if (deckId === 'new') {
-      return this.setState({
+      this.setState({
         gridDeck: {
           name: `${localStorage.getItem('username')}'s New Quiz`,
           shortName: 'new_quiz',
@@ -152,6 +152,8 @@ class EditDeck extends Component {
         },
         permissions: DeckPermissions.OWNER,
       });
+
+      return;
     }
 
     try {
@@ -172,7 +174,7 @@ class EditDeck extends Component {
 
       this.setState({ gridDeck, permissions, readWriteSecret });
     } catch (err) {
-      return this.handleError(err);
+      this.handleError(err);
     }
   }
 
@@ -181,25 +183,29 @@ class EditDeck extends Component {
     Analytics.setPageView('/dashboard/decks');
   }
 
-  onGridRowsUpdated = ({ fromRow: gridCardIndex, toRow, updated }) => {
+  onGridRowsUpdated = ({ fromRow: gridCardIndex, updated }) => {
     this.setState((state) => {
+      const newState = { ...state };
+      newState.gridDeck = { ...state.gridDeck };
+      newState.gridDeck.cards = [...state.gridDeck.cards];
+
       // Push empty cards to fill the space up to this one
-      while (state.gridDeck.cards.length < gridCardIndex + 1) {
-        const row = createEmptyGridCard(state.gridDeck.cards.length);
-        state.gridDeck.cards.push(row);
+      while (newState.gridDeck.cards.length < gridCardIndex + 1) {
+        const row = createEmptyGridCard(newState.gridDeck.cards.length);
+        newState.gridDeck.cards.push(row);
       }
 
-      const gridCard = state.gridDeck.cards[gridCardIndex];
+      const gridCard = newState.gridDeck.cards[gridCardIndex];
       const isNewGridCard = isEmptyGridCard(gridCard);
 
       if (updated.instructions !== undefined) {
-        state.defaultInstructions = updated.instructions;
+        newState.defaultInstructions = updated.instructions;
       }
 
       const updatedGridCard = { ...gridCard, ...updated };
       if (isNewGridCard && !isEmptyGridCard(updatedGridCard)) {
         if (!updatedGridCard.instructions) {
-          updatedGridCard.instructions = state.defaultInstructions.trim();
+          updatedGridCard.instructions = newState.defaultInstructions.trim();
         }
         if (!updatedGridCard.questionCreationStrategy) {
           updatedGridCard.questionCreationStrategy = upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]);
@@ -216,20 +222,23 @@ class EditDeck extends Component {
         }
       });
 
-      state.gridDeck.cards[gridCardIndex] = updatedGridCard;
+      newState.gridDeck.cards[gridCardIndex] = updatedGridCard;
 
-      return state;
+      return newState;
     });
   };
 
   onMetadataChange = () => {
     this.setState((state) => {
-      state.gridDeck.name = this.fullNameField.value;
-      state.gridDeck.shortName = this.shortNameField.value.toLowerCase();
-      state.gridDeck.description = this.descriptionTextArea.value;
-      state.gridDeck.public = this.publicCheckBox.checked;
+      const newState = { ...state };
+      newState.gridDeck = { ...state.gridDeck };
 
-      return state;
+      newState.gridDeck.name = this.fullNameField.value;
+      newState.gridDeck.shortName = this.shortNameField.value.toLowerCase();
+      newState.gridDeck.description = this.descriptionTextArea.value;
+      newState.gridDeck.public = this.publicCheckBox.checked;
+
+      return newState;
     });
   }
 
@@ -266,7 +275,8 @@ class EditDeck extends Component {
       } else if (response.status === 413) {
         stripeMessage = 'Your deck is too big. There is a limit of 20,000 questions and also an overall combined size limit in megabytes. Make sure your CSV size is smaller than approx 2 MB.';
       } else if (responseBody.errorType === deckValidation.DECK_VALIDATION_ERROR_TYPE) {
-        return this.handleValidationError(responseBody);
+        this.handleValidationError(responseBody);
+        return;
       } else if (responseBody.message) {
         stripeMessage = responseBody.message;
       } else {
@@ -295,7 +305,8 @@ class EditDeck extends Component {
     const validationResult = deckValidation.validateDeck(saveDeck);
 
     if (!validationResult.success) {
-      return this.handleValidationError(validationResult);
+      this.handleValidationError(validationResult);
+      return;
     }
 
     this.setState({
@@ -308,26 +319,31 @@ class EditDeck extends Component {
         const res = await axios.post('/api/decks', saveDeck);
 
         this.setState((state) => {
-          state.gridDeck._id = res.data._id;
-          state.readWriteSecret = res.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
-          return state;
+          const newState = { ...state };
+          newState.gridDeck = { ...state.gridDeck };
+
+          newState.gridDeck._id = res.data._id;
+          newState.readWriteSecret = res.headers[RESPONSE_READWRITE_SECRET_HEADER.toLowerCase()];
+          return newState;
         });
       } else {
         await axios.patch(`/api/decks/${this.state.gridDeck._id}`, saveDeck, { headers: { [REQUEST_SECRET_HEADER]: this.getSecretFromUrl() } });
       }
 
-      this.setState({
+      this.setState(state => ({
         showStripe: true,
         stripeIsError: false,
-        stripeMessage: <span>
-          Saved. You can load this deck on Discord with
-          <strong>
-            k!quiz
-            {this.state.gridDeck.shortName}
-          </strong>
-          .
-        </span>,
-      });
+        stripeMessage: (
+          <span>
+            Saved. You can load this deck on Discord with
+            <strong>
+              k!quiz
+              {state.gridDeck.shortName}
+            </strong>
+            .
+          </span>
+        ),
+      }));
     } catch (err) {
       this.handleError(err);
     }
@@ -400,7 +416,10 @@ class EditDeck extends Component {
         }
 
         this.setState((state) => {
-          state.gridDeck.cards = rows.slice(1).map((row, index) => {
+          const newState = { ...state };
+          newState.gridDeck = { ...state.gridDeck };
+
+          newState.gridDeck.cards = rows.slice(1).map((row, index) => {
             const newRow = {
               index,
               question: row[0] ? row[0].trim() : '',
@@ -417,13 +436,13 @@ class EditDeck extends Component {
                 newRow.questionCreationStrategy = questionLength > maxLengthForImageQuestions ? 'Text' : 'Image';
               }
 
-              newRow.instructions = newRow.instructions || state.defaultInstructions;
+              newRow.instructions = newRow.instructions || newState.defaultInstructions;
             }
 
             return newRow;
           });
 
-          return state;
+          return newState;
         });
       });
     };
@@ -435,12 +454,14 @@ class EditDeck extends Component {
     });
   }
 
-  getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`
+  getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
 
-  getReadWriteLink = () => this.getSecretLink(this.state.readWriteSecret)
+  getReadWriteLink = () => this.getSecretLink(this.state.readWriteSecret);
 
   onResetEditLink = async () => {
     try {
+      // no idea why this rule is triggering on this line
+      // eslint-disable-next-line react/no-access-state-in-setstate
       const res = await axios.post(`/api/decks/${this.state.gridDeck._id}/reset_write_secret`);
       this.setState({ readWriteSecret: res.data });
     } catch (err) {
@@ -577,19 +598,43 @@ class EditDeck extends Component {
           </div>
           <div className="row mt-4">
             <div className="col-xl-1 col-md-2 d-flex flex-column align-items-center">
-              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center" style={styles.actionButton} disabled={!this.canSave()} onClick={this.onSave}>
+              <button
+                type="button"
+                className="btn btn-primary btn-outline d-flex flex-column align-items-center"
+                style={styles.actionButton}
+                disabled={!this.canSave()}
+                onClick={this.onSave}
+              >
                 <i className="material-icons" style={styles.icon}>save</i>
                 Save to bot
               </button>
-              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} onClick={this.onExport}>
+              <button
+                type="button"
+                className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4"
+                style={styles.actionButton}
+                onClick={this.onExport}
+              >
                 <i className="material-icons" style={styles.icon}>vertical_align_bottom</i>
                 Export as CSV
               </button>
-              <button className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canEdit()} onClick={this.onImport}>
+              <button
+                type="button"
+                className="btn btn-primary btn-outline d-flex flex-column align-items-center mt-4"
+                style={styles.actionButton}
+                disabled={!this.canEdit()}
+                onClick={this.onImport}
+              >
                 <i className="material-icons" style={styles.icon}>vertical_align_top</i>
                 Import from CSV
               </button>
-              <button className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4" style={styles.actionButton} disabled={!this.canDelete()} data-toggle="modal" data-target="#deleteConfirmationModal">
+              <button
+                type="button"
+                className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4"
+                style={styles.actionButton}
+                disabled={!this.canDelete()}
+                data-toggle="modal"
+                data-target="#deleteConfirmationModal"
+              >
                 <i className="material-icons" style={styles.icon}>delete</i>
                 Delete
               </button>

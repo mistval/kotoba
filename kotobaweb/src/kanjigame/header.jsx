@@ -4,7 +4,7 @@ import '../main.css';
 import KanjiImage from '../img/kanji.png';
 import './header.css';
 
-function render(props) {
+function render() {
   return (
     <Header
       image={KanjiImage}

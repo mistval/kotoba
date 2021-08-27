@@ -13,7 +13,7 @@ export function convertRangeStringToNumber(string) {
     return Number.POSITIVE_INFINITY;
   }
 
-  return parseInt(string);
+  return parseInt(string, 10);
 }
 
 export function createDeck(name, startIndex = 1, endIndex = Number.POSITIVE_INFINITY) {

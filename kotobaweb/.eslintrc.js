@@ -14,5 +14,9 @@ module.exports = {
       'react/destructuring-assignment': 'off',
       'max-len': 'off',
       'react/no-unescaped-entities': 'off',
+      'react/sort-comp': 'off',
+      'react/jsx-filename-extension': 'off',
+      'jsx-a11y/anchor-is-valid': 'off',
+      'no-underscore-dangle': ['error', { allow: ['_id'] }],
     },
 };

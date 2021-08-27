@@ -74,15 +74,19 @@ function CardRow({
 
 class Questions extends PureComponent {
   render() {
-    return this.props.cards.map((card, i) => (
-      <CardRow
-        card={card}
-        participantForId={this.props.participantForId}
-        key={i}
-        onCheck={ev => this.props.onCardChecked(i)}
-        selfUserId={this.props.selfUserId}
-      />
-    ));
+    return this.props.cards.map((card, i) => {
+      const key = `${this.props.reportId}/${i}`;
+
+      return (
+        <CardRow
+          card={card}
+          participantForId={this.props.participantForId}
+          key={key}
+          onCheck={() => this.props.onCardChecked(i)}
+          selfUserId={this.props.selfUserId}
+        />
+      );
+    });
   }
 }
 
@@ -205,19 +209,25 @@ class ReportView extends Component {
 
   onCardChecked = (index) => {
     this.setState((state) => {
-      const card = state.report.questions[index];
-      const checked = !card.checked && card.canCopyToCustomDeck;
-      if (!checked) {
-        state.checkAll = false;
-      }
-      state.report.questions[index].checked = checked;
-      if (checked) {
-        state.anySelected = true;
-      } else {
-        state.anySelected = state.report.questions.some(q => q.checked);
+      const newState = { ...state };
+      newState.report = { ...state.report };
+      newState.report.questions = [...newState.report.questions];
+
+      const card = { ...newState.report.questions[index] };
+      newState.report.questions[index] = card;
+      card.checked = !card.checked && card.canCopyToCustomDeck;
+
+      if (!card.checked) {
+        newState.checkAll = false;
       }
 
-      return state;
+      if (card.checked) {
+        newState.anySelected = true;
+      } else {
+        newState.anySelected = newState.report.questions.some(q => q.checked);
+      }
+
+      return newState;
     });
   }
 
@@ -225,14 +235,17 @@ class ReportView extends Component {
     const { checked } = ev.target;
 
     this.setState((state) => {
-      state.checkAll = checked;
-      state.anySelected = checked;
-      state.report.questions.forEach((question) => {
-        console.log(JSON.stringify(question));
-        question.checked = checked && question.canCopyToCustomDeck;
-      });
+      const newState = { ...state };
+      newState.report = { ...state.report };
 
-      return state;
+      newState.checkAll = checked;
+      newState.anySelected = checked;
+      newState.report.questions = state.report.questions.map(question => ({
+        ...question,
+        checked: checked && question.canCopyToCustomDeck,
+      }));
+
+      return newState;
     });
   }
 
@@ -243,11 +256,11 @@ class ReportView extends Component {
   }
 
   onAddRequsted = () => {
-    this.setState({
-      stripeMessage: this.state.customDecks ? noDecksErrorMessage : loginErrorMessage,
+    this.setState(state => ({
+      stripeMessage: state.customDecks ? noDecksErrorMessage : loginErrorMessage,
       stripeMessageIsError: true,
       showStripeMessage: true,
-    });
+    }));
   }
 
   onAddToDeck = () => {
@@ -276,7 +289,6 @@ class ReportView extends Component {
           showStripeMessage: true,
         });
       } catch (err) {
-        console.log(JSON.stringify(err, null, 2));
         let errorMessage;
         if (err.response && err.response.data) {
           if (err.response.data.rejectedCard) {
@@ -310,9 +322,8 @@ class ReportView extends Component {
   }
 
   onSelectedDeckChanged = (ev) => {
-    console.log(ev.target.value);
     this.setState({
-      selectedDeckIndex: parseInt(ev.target.value),
+      selectedDeckIndex: parseInt(ev.target.value, 10),
     });
   }
 
@@ -350,7 +361,14 @@ class ReportView extends Component {
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th width="2%"><input type="checkbox" disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)} checked={this.state.checkAll} onChange={this.onCheckAll} /></th>
+                      <th width="2%">
+                        <input
+                          type="checkbox"
+                          disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)}
+                          checked={this.state.checkAll}
+                          onChange={this.onCheckAll}
+                        />
+                      </th>
                       <th scope="col" width="30%">Question</th>
                       <th scope="col" width="28%">Answers</th>
                       <th scope="col" width="25%">Comment</th>
@@ -363,12 +381,20 @@ class ReportView extends Component {
                       participantForId={participantForId}
                       onCardChecked={this.onCardChecked}
                       selfUserId={this.state.selfUserId}
+                      reportId={this.state.report._id}
                     />
                   </tbody>
                 </table>
               </div>
               <div className={`col-12 p-0${!this.state.customDecks || this.state.customDecks.length === 0 ? '' : ' d-none'}`}>
-                <button className="btn btn-primary" disabled={!this.state.anySelected} onClick={this.onAddRequsted}>Add selected questions to custom deck</button>
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  disabled={!this.state.anySelected}
+                  onClick={this.onAddRequsted}
+                >
+                  Add selected questions to custom deck
+                </button>
               </div>
               <div className={this.state.customDecks && this.state.customDecks.length > 0 ? '' : 'd-none'}>
                 <select className="custom-select mb-2 mt-5" defaultValue={-1} onChange={this.onSelectedDeckChanged}>
@@ -385,7 +411,14 @@ class ReportView extends Component {
                     ))
                   }
                 </select>
-                <button className="btn btn-primary mb-5" onClick={this.onAddToDeck} disabled={this.state.adding || this.state.selectedDeckIndex === -1 || !this.state.anySelected}>Add selected questions to deck</button>
+                <button
+                  type="submit"
+                  className="btn btn-primary mb-5"
+                  onClick={this.onAddToDeck}
+                  disabled={this.state.adding || this.state.selectedDeckIndex === -1 || !this.state.anySelected}
+                >
+                  Add selected questions to deck
+                </button>
               </div>
             </div>
           </div>
@@ -406,7 +439,12 @@ class ReportView extends Component {
             </div>
           </div>
         </aside>
-        <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />
+        <NotificationStripe
+          show={this.state.showStripeMessage}
+          message={this.state.stripeMessage}
+          onClose={this.onStripeCloseClicked}
+          isError={this.state.stripeMessageIsError}
+        />
       </>
     );
   }

@@ -3,6 +3,10 @@ import { deckValidation } from 'kotoba-common';
 import styles from './styles';
 import { convertRangeNumberToString, convertRangeStringToNumber, createDeck } from './util';
 
+function validateRange(rangeString) {
+  return rangeString.match(/^end$|^[0-9]*$/);
+}
+
 function getRangeValidationErrorMessage(value, otherValue, mustBeLower) {
   if (!validateRange(value)) {
     return 'Please enter a whole number 1 or greater, or \'end\' for the last card in the deck.';
@@ -16,10 +20,6 @@ function getRangeValidationErrorMessage(value, otherValue, mustBeLower) {
   }
 
   return '';
-}
-
-function validateRange(rangeString) {
-  return rangeString.match(/^end$|^[0-9]*$/);
 }
 
 function DeckRow(props) {
@@ -97,18 +97,16 @@ class DeckEditor extends Component {
       .replace(/[^0-9a-zA-Z_]/g, ''); // Remove illegal characters
 
     if (!deckName) {
-      return this.setState({ editingDeck: false });
+      this.setState({ editingDeck: false });
+    } else if (this.props.decks.some(deck => deck.name.toLowerCase() === deckName.toLowerCase())) {
+      this.setState({ editingDeck: false });
+    } else {
+      this.setState({
+        editingDeck: false,
+      }, () => {
+        this.props.onDecksChanged([...this.props.decks, createDeck(deckName)]);
+      });
     }
-
-    if (this.props.decks.some(deck => deck.name.toLowerCase() === deckName.toLowerCase())) {
-      return this.setState({ editingDeck: false });
-    }
-
-    this.setState({
-      editingDeck: false,
-    }, () => {
-      this.props.onDecksChanged([...this.props.decks, createDeck(deckName)]);
-    });
   }
 
   handleDeleteDeck = (index) => {

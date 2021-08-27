@@ -8,7 +8,6 @@ class DashboardHeader extends Component {
     super(props);
     this.state = {
       apiErrored: false,
-      apiSuccess: false,
       username: localStorage.getItem('username'),
       avatarUri: localStorage.getItem('avatarUri'),
       apiErrorMessage: '',
@@ -32,7 +31,6 @@ class DashboardHeader extends Component {
       this.setState({
         apiErrored: false,
         apiErrorMessage: '',
-        apiSuccess: true,
         username,
         avatarUri,
       });
@@ -42,19 +40,18 @@ class DashboardHeader extends Component {
       }
     } catch (err) {
       if (err.response.status === 401) {
-        return this.setState({
+        this.setState({
           username: '',
           avatarUri: '',
-          apiSuccess: true,
         });
+      } else {
+        this.setState({
+          apiErrored: true,
+          apiErrorMessage: err.message,
+        });
+
+        this.retryTimer = setTimeout(() => this.getUser(), 10000);
       }
-
-      this.setState({
-        apiErrored: true,
-        apiErrorMessage: err.message,
-      });
-
-      this.retryTimer = setTimeout(() => this.getUser(), 10000);
     }
   }
 

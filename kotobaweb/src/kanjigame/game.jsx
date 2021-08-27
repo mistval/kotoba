@@ -158,14 +158,17 @@ class Game extends Component {
     Analytics.event(ANALYTICS_CATEGORY, 'Joining');
 
     this.socket.on('error', (err) => {
+      // eslint-disable-next-line no-console
       console.warn(err);
     });
 
     this.socket.on('connect_error', (err) => {
+      // eslint-disable-next-line no-console
       console.warn(err);
     });
 
     this.socket.on('reconnect_error', (err) => {
+      // eslint-disable-next-line no-console
       console.warn(err);
     });
 

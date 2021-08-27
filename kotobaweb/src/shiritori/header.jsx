@@ -4,7 +4,7 @@ import '../main.css';
 import ShiritoriImage from '../img/shiritori.png';
 import './header.css';
 
-function render(props) {
+function render() {
   return (
     <Header
       image={ShiritoriImage}

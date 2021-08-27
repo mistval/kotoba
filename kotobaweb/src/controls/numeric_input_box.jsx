@@ -9,7 +9,7 @@ class NumericInputBox extends Component {
   }
 
   getStep() {
-    return 1 / Math.pow(10, this.props.maxPlacesAfterDecimal);
+    return 1 / (10 ** this.props.maxPlacesAfterDecimal);
   }
 
   isValid(value) {
