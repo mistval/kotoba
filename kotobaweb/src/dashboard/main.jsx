@@ -18,10 +18,14 @@ const styles = {
   },
 };
 
-function getServerIcon(report) {
+function getServerIcon(report, user) {
   let uri = report.discordServerIconUri;
   if (!uri && !report.discordServerName) {
-    uri = localStorage.getItem('avatarUri') || defaultAvatar;
+    const avatarUri = user.discordUser.avatar
+      ? `https://cdn.discordapp.com/avatars/${user.discordUser.id}/${user.discordUser.avatar}`
+      : defaultAvatar;
+
+    uri = avatarUri || defaultAvatar;
   }
 
   if (uri) {
@@ -31,7 +35,7 @@ function getServerIcon(report) {
   return <div style={styles.emptyIconDiv} className="mr-3" />;
 }
 
-function createGameReportsBody(gameReports, gameReportsErrorMessage) {
+function createGameReportsBody(gameReports, gameReportsErrorMessage, user) {
   if (gameReportsErrorMessage) {
     return <span className="text-danger">Error retrieving game reports from server. Try refreshing or trying again later.</span>;
   }
@@ -49,7 +53,7 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage) {
       { gameReports.map(report => (
         <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
           <div className="d-flex align-items-center">
-            {getServerIcon(report)}
+            {getServerIcon(report, user)}
             <Link to={`/dashboard/game_reports/${report._id}`} style={styles.listAnchor}>{report.sessionName}</Link>
           </div>
           <span>{moment(report.startTime).format('MMMM Do, h:mm a')}</span>
@@ -154,7 +158,7 @@ class LoggedInMain extends Component {
                 <h5 className="card-title">Session Reports</h5>
               </div>
               <div className="card-body">
-                { createGameReportsBody(this.state.gameReports, this.state.gameReportsErrorMessage) }
+                { createGameReportsBody(this.state.gameReports, this.state.gameReportsErrorMessage, this.props.user) }
               </div>
             </div>
           </div>

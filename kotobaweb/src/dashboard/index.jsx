@@ -80,9 +80,9 @@ export function Dashboard() {
     <>
       <DashboardHeader user={user} />
       <Switch>
-        { user && <Route path={`${match.path}/decks/:id`} component={CustomDeck} /> }
-        <Route path={`${match.path}/game_reports/:id`} component={GameReport} />
-        { user && <Route path={match.path} component={Main} /> }
+        <Route path={`${match.path}/decks/:id`} render={props => user && <CustomDeck {...props} user={user} />} />
+        <Route path={`${match.path}/game_reports/:id`} render={props => <GameReport {...props} user={user} />} />
+        <Route path={match.path} render={props => user && <Main {...props} user={user} />} />
       </Switch>
     </>
   );

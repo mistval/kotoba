@@ -1,6 +1,3 @@
-// The anchor usage comes directly from Bootstrap examples: https://getbootstrap.com/docs/4.0/components/list-group/
-/* eslint jsx-a11y/anchor-is-valid: 0 */
-
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 

@@ -143,19 +143,7 @@ class ReportView extends Component {
       checkedLogin: false,
       adding: false,
       selectedDeckIndex: -1,
-      selfUserId: '',
     };
-  }
-
-  async loadUser() {
-    try {
-      const user = (await axios.get('/api/users/me')).data;
-      this.setState({
-        selfUserId: user._id,
-      });
-    } catch (err) {
-      // NOOP
-    }
   }
 
   async loadReport() {
@@ -202,7 +190,6 @@ class ReportView extends Component {
   componentDidMount() {
     this.loadReport();
     this.loadCustomDecks();
-    this.loadUser();
     Analytics.setPageView('/dashboard/reports');
   }
 
@@ -378,7 +365,7 @@ class ReportView extends Component {
                       cards={this.state.report.questions}
                       participantForId={participantForId}
                       onCardChecked={this.onCardChecked}
-                      selfUserId={this.state.selfUserId}
+                      selfUserId={this.props.user?._id}
                       reportId={this.state.report._id}
                     />
                   </tbody>
@@ -426,7 +413,7 @@ class ReportView extends Component {
             <div className="col-12">
               <h2>Pro tips</h2>
               <ul>
-                <li>If you're logged in, questions that you didn't answer are highlighted in red.</li>
+                <li>If you are logged in, questions that you didn't answer are highlighted in red.</li>
                 <li>If a question cannot be checked off and added to a deck, that means its question type is not yet supported for custom decks.</li>
                 <li>
                   If you need help, need to report a bug, or make a suggestion, visit me in&nbsp;

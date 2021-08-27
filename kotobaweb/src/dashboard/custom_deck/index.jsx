@@ -143,7 +143,7 @@ class EditDeck extends Component {
     if (deckId === 'new') {
       this.setState({
         gridDeck: {
-          name: `${localStorage.getItem('username')}'s New Quiz`,
+          name: `${this.props.user.discordUser.username}'s New Quiz`,
           shortName: 'new_quiz',
           cards: [{ ...sampleGridCard }],
           description: '',
@@ -483,7 +483,7 @@ class EditDeck extends Component {
       );
     }
 
-    if (localStorage.getItem('canCreateDecks') === 'false') {
+    if (!this.props.user.canCreateDecks) {
       return (
         <NotificationStripe show message="Your Discord account must be at least one week old to create decks. Please try again later." onClose={this.onErrorCloseClicked} isError />
       );
