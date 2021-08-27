@@ -91,8 +91,10 @@ class About extends Component {
               <a href="https://github.com/darkgray1981/kanjiquizbot">kanjiquizbot</a>.
             </p>
             <p>
-              The kanji stroke order graphics were generated using <a href="https://github.com/maurimo/kanimaji">Kanimaji</a>&nbsp;
-              and <a href="https://kanjivg.tagaini.net/">KanjiVG</a>.
+              The kanji stroke order graphics were generated using&nbsp;
+              <a href="https://github.com/maurimo/kanimaji">Kanimaji</a>
+              &nbsp;and&nbsp;
+              <a href="https://kanjivg.tagaini.net/">KanjiVG</a>.
             </p>
             <p>The favicon comes from <a href="https://icons8.com/">Icons8</a>.</p>
           </div>
