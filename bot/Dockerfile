@@ -1,4 +1,4 @@
-FROM node:14.17.5
+FROM node:14.17.6
 
 RUN apt-get update
 RUN apt-get -y install ffmpeg
