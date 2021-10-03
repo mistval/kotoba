@@ -10,6 +10,7 @@ const { Navigation } = require('monochrome-bot');
 
 const constants = require('./../common/constants.js');
 const retryPromise = require('./../common/util/retry_promise.js');
+const { chunk } = require('../common/util/array.js');
 
 const JapaneseGameStrategy = shiritoriManager.strategies.japanese;
 let japaneseGameStrategy;
@@ -47,8 +48,8 @@ async function loadChannels(monochrome) {
 }
 
 function createDiscordContentForScoresPage(scoresPage) {
-  const fields = scoresPage.map((scoreInfo, index) => ({
-    name: `${index + 1}) ${scoreInfo.username}`,
+  const fields = scoresPage.map(scoreInfo => ({
+    name: `${scoreInfo.rank}) ${scoreInfo.username}`,
     value: `${scoreInfo.score} points`,
     inline: true,
   }));
@@ -91,26 +92,23 @@ async function sendScores(monochrome, msg) {
 
   const scoreForUserID = channelData.scores || {};
   const nameForUserId = channelData.names || {};
+
   const sortedScores = Object.keys(scoreForUserID)
     .map(userID => ({
       username: nameForUserId[userID] || userNameForUserID(monochrome, userID),
       score: scoreForUserID[userID],
     }))
-    .sort((a, b) => a.score - b.score);
+    .sort((a, b) => a.score - b.score)
+    .map((score, index) => ({
+      ...score,
+      rank: index + 1,
+    }));
 
   if (sortedScores.length === 0) {
     return msg.channel.createMessage('There aren\'t any Shiritori Forever scores in this channel yet. Maybe Shiritori Forever is not enabled here, or no one has played yet.');
   }
 
-  const pages = [[]];
-  while (sortedScores.length > 0) {
-    const currentPage = pages[pages.length - 1];
-    currentPage.push(sortedScores.pop());
-
-    if (currentPage.length >= 20 && sortedScores.length > 0) {
-      pages.push([]);
-    }
-  }
+  const pages = chunk(sortedScores, 20);
 
   return createScoresNavigation(monochrome, msg, pages);
 }
