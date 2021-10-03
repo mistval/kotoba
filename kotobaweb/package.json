@@ -28,7 +28,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "socket.io-client": "^2.1.1",
-    "yup": "^0.26.6"
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && set PORT=3001 && react-scripts start",
