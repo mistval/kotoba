@@ -19,7 +19,7 @@
     "express-slow-down": "1.3.1",
     "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
-    "mongoose": "5.13.3",
+    "mongoose": "^6.0.8",
     "monochrome-bot": "^1.1.0",
     "node-fetch": "2.6.1",
     "passport": "0.4.1",
