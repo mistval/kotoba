@@ -112,7 +112,7 @@ async function updateUserServerDeckScore(userId, serverId, deckUniqueId, score, 
 
 class GlobalTotalScoreQuery {
   countUsers() {
-    return UserGlobalTotalScoreModel.countDocuments({});
+    return UserGlobalTotalScoreModel.countDocuments({}).exec();
   }
 
   async countTotalScore() {
@@ -143,7 +143,7 @@ class GlobalTotalScoreQuery {
     }
 
     const { score } = userRecord;
-    const numHigherScorers = await UserGlobalTotalScoreModel.countDocuments({ score: { $gt: score } });
+    const numHigherScorers = await UserGlobalTotalScoreModel.countDocuments({ score: { $gt: score } }).exec();
 
     return { rank: numHigherScorers, score };
   }
@@ -241,7 +241,7 @@ class ServerTotalScoreQuery {
   }
 
   countUsers() {
-    return UserServerTotalScoreModel.countDocuments({ serverId: this.serverId });
+    return UserServerTotalScoreModel.countDocuments({ serverId: this.serverId }).exec();
   }
 
   async countTotalScore() {
@@ -293,7 +293,7 @@ class ServerTotalScoreQuery {
     const numHigherScorers = await UserServerTotalScoreModel.countDocuments({
       score: { $gt: score },
       serverId: this.serverId,
-    });
+    }).exec();
 
     return { rank: numHigherScorers, score };
   }
