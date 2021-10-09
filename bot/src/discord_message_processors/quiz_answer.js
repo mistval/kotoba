@@ -1,4 +1,4 @@
-const QuizManager = require('./../common/quiz/manager.js');
+const QuizManager = require('../common/quiz/manager.js');
 
 module.exports = {
   name: 'Quiz Answer',

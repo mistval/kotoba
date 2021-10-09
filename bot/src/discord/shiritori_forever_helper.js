@@ -1,15 +1,14 @@
-
 const shiritoriManager = require('kotoba-node-common').shiritori;
-const globals = require('./../common/globals.js');
-const state = require('./../common/static_state.js');
 const assert = require('assert');
 const { FulfillmentError } = require('monochrome-bot');
+const { Navigation } = require('monochrome-bot');
+const globals = require('../common/globals.js');
+const state = require('../common/static_state.js');
 
 const sendAndDelete = require('./util/send_and_delete.js');
-const { Navigation } = require('monochrome-bot');
 
-const constants = require('./../common/constants.js');
-const retryPromise = require('./../common/util/retry_promise.js');
+const constants = require('../common/constants.js');
+const retryPromise = require('../common/util/retry_promise.js');
 const { chunk } = require('../common/util/array.js');
 
 const JapaneseGameStrategy = shiritoriManager.strategies.japanese;
@@ -48,7 +47,7 @@ async function loadChannels(monochrome) {
 }
 
 function createDiscordContentForScoresPage(scoresPage) {
-  const fields = scoresPage.map(scoreInfo => ({
+  const fields = scoresPage.map((scoreInfo) => ({
     name: `${scoreInfo.rank}) ${scoreInfo.username}`,
     value: `${scoreInfo.score} points`,
     inline: true,
@@ -65,7 +64,7 @@ function createDiscordContentForScoresPage(scoresPage) {
 }
 
 function createScoresNavigation(monochrome, msg, scoresPages) {
-  const contents = scoresPages.map(page => createDiscordContentForScoresPage(page));
+  const contents = scoresPages.map((page) => createDiscordContentForScoresPage(page));
   const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
 
   return monochrome.getNavigationManager().show(
@@ -94,7 +93,7 @@ async function sendScores(monochrome, msg) {
   const nameForUserId = channelData.names || {};
 
   const sortedScores = Object.keys(scoreForUserID)
-    .map(userID => ({
+    .map((userID) => ({
       username: nameForUserId[userID] || userNameForUserID(monochrome, userID),
       score: scoreForUserID[userID],
     }))

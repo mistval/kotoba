@@ -1,10 +1,10 @@
 const { NavigationChapter, Navigation } = require('monochrome-bot');
-const jishoWordSearch = require('./../common/jisho_word_search.js');
+const jishoWordSearch = require('../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
-const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
-const addPaginationFooter = require('./../discord/add_pagination_footer.js');
-const createKanjiSearchDataSource = require('./../discord/create_kanji_search_data_source.js');
-const createStrokeOrderSearchNavigationChapter = require('./../discord/create_stroke_order_search_navigation_chapter.js');
+const createExampleSearchPages = require('./create_example_search_pages.js');
+const addPaginationFooter = require('./add_pagination_footer.js');
+const createKanjiSearchDataSource = require('./create_kanji_search_data_source.js');
+const createStrokeOrderSearchNavigationChapter = require('./create_stroke_order_search_navigation_chapter.js');
 
 const STROKE_ORDER_EMOTE = '🇸';
 const KANJI_EMOTE = '🇰';
@@ -103,8 +103,8 @@ function createNavigationForJishoResults(
   );
 
   if (strokeOrderNavigationChapterInformation.hasAnyPages) {
-    chapterForEmojiName[STROKE_ORDER_EMOTE] =
-      strokeOrderNavigationChapterInformation.navigationChapter;
+    chapterForEmojiName[STROKE_ORDER_EMOTE] = strokeOrderNavigationChapterInformation
+      .navigationChapter;
   }
 
   /* Create the examples (E) chapter */
@@ -144,8 +144,9 @@ async function createNavigationForWord(authorName, authorId, word, msg) {
 
 async function createSmallResultForWord(word) {
   const crossPlatformResponseData = await jishoWordSearch(word);
-  const discordContent =
-    JishoDiscordContentFormatter.formatJishoDataSmall(crossPlatformResponseData);
+  const discordContent = JishoDiscordContentFormatter.formatJishoDataSmall(
+    crossPlatformResponseData,
+  );
 
   return discordContent;
 }

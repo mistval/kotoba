@@ -1,7 +1,7 @@
 const axios = require('axios').create({ timeout: 10000 });
-const constants = require('./../common/constants.js');
 const UnofficialJishoApi = require('unofficial-jisho-api');
-const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const constants = require('../common/constants.js');
+const { throwPublicErrorFatal } = require('../common/util/errors.js');
 
 const jishoApi = new UnofficialJishoApi();
 

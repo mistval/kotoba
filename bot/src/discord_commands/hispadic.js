@@ -1,8 +1,8 @@
 const { Navigation, Permissions } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000 });
 const constants = require('../common/constants.js');
-const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
-const { hispadicApiUri } = require('./../../../config/config.js').bot;
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
+const { hispadicApiUri } = require('../../../config/config.js').bot;
 
 const MAX_LINES_PER_PAGE = 16;
 
@@ -86,7 +86,7 @@ module.exports = {
       );
     }
 
-    const qualityResults = allResults.filter(r => r.matchType > 1);
+    const qualityResults = allResults.filter((r) => r.matchType > 1);
     const results = qualityResults.length > 0 ? qualityResults : allResults;
 
     if (results.length === 0) {

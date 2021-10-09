@@ -1,6 +1,6 @@
 const axios = require('axios').create({ timeout: 10000 });
-const constants = require('./../common/constants.js');
 const moment = require('moment');
+const constants = require('../common/constants.js');
 
 const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
 

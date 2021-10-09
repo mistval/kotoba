@@ -1,13 +1,11 @@
-
-
-const getPronounceInfo = require('./../common/get_pronounce_info.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const constants = require('./../common/constants.js');
 const {
   NavigationChapter,
   Navigation,
   Permissions,
 } = require('monochrome-bot');
+const getPronounceInfo = require('../common/get_pronounce_info.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const constants = require('../common/constants.js');
 
 const MAX_AUDIO_CLIPS = 6;
 
@@ -109,7 +107,7 @@ function addAudioClipsField(fields, forvoData) {
   if (forvoData && forvoData.found) {
     const { audioClips } = forvoData;
     const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS)
-      .map(audioClip => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
+      .map((audioClip) => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
 
     fields.push({
       name: 'Audio Clips',

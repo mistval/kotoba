@@ -1,15 +1,15 @@
 const assert = require('assert');
 const { Permissions } = require('monochrome-bot');
 const shiritoriManager = require('kotoba-node-common').shiritori;
-const constants = require('./../common/constants.js');
-const errors = require('./../common/util/errors.js');
-const retryPromise = require('./../common/util/retry_promise.js');
-const globals = require('./../common/globals.js');
+const constants = require('../common/constants.js');
+const errors = require('../common/util/errors.js');
+const retryPromise = require('../common/util/retry_promise.js');
+const globals = require('../common/globals.js');
 
 const { REJECTION_REASON } = shiritoriManager;
 
 // Piggyback on the quiz scores for now.
-const quizScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
+const quizScoreStorageUtils = require('../common/quiz/score_storage_utils.js');
 
 const EMBED_FIELD_MAX_LENGTH = 1024;
 const EMBED_TRUNCATION_REPLACEMENT = '   [...]';
@@ -31,7 +31,7 @@ function createMarkdownLinkForWord(word) {
 function createScoresString(scoreForUserID) {
   return Object.keys(scoreForUserID)
     .sort((userIdA, userIdB) => scoreForUserID[userIdB] - scoreForUserID[userIdA])
-    .map(userId => `<@${userId}> has ${scoreForUserID[userId]} points`).join('\n');
+    .map((userId) => `<@${userId}> has ${scoreForUserID[userId]} points`).join('\n');
 }
 
 function getPluralizer(array) {
@@ -162,7 +162,7 @@ class DiscordClientDelegate {
 
     const wordHistory = shiritoriManager.getAnswerHistory(channelId);
 
-    let wordHistoryString = wordHistory.map(wordInformation => wordInformation.word).join('　');
+    let wordHistoryString = wordHistory.map((wordInformation) => wordInformation.word).join('　');
     if (wordHistoryString.length > EMBED_FIELD_MAX_LENGTH) {
       wordHistoryString = wordHistoryString.substring(
         0,

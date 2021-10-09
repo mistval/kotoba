@@ -1,8 +1,7 @@
-const { EMBED_NEUTRAL_COLOR } = require('./../common/constants.js');
 const { Permissions } = require('monochrome-bot');
+const { EMBED_NEUTRAL_COLOR } = require('../common/constants.js');
 
-
-const shiritoriForeverHelper = require('./../discord/shiritori_forever_helper');
+const shiritoriForeverHelper = require('../discord/shiritori_forever_helper');
 
 function createInstructions(prefix) {
   const INSTRUCTIONS_DESCRIPTION = `

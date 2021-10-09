@@ -1,13 +1,13 @@
 const assert = require('assert');
-const constants = require('./../common/constants.js');
 const { Permissions } = require('monochrome-bot');
+const constants = require('../common/constants.js');
 
-const googleTranslate = require('./../common/google_translate_utils.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
+const googleTranslate = require('../common/google_translate_utils.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
 
 function createLongDescription() {
   const supportedLanguageString = Object.keys(googleTranslate.languageNameForLanguageCode)
-    .map(key => `${googleTranslate.languageNameForLanguageCode[key]} (${key})`).join(', ');
+    .map((key) => `${googleTranslate.languageNameForLanguageCode[key]} (${key})`).join(', ');
 
   return `Use Google Translate to translate text. If you want to translate from any language into English, or from English into Japanese, you can just use <prefix>translate and I will usually detect the languages and do what you want.
 
@@ -42,8 +42,9 @@ function respondNoSuffix(msg) {
   }
 
   const languageCodes = getLanguageCodesFromExtension(msg.extension);
-  const languageNames = languageCodes.map(languageCode =>
-    googleTranslate.toLanguageName(languageCode));
+  const languageNames = languageCodes.map(
+    (languageCode) => googleTranslate.toLanguageName(languageCode),
+  );
 
   let errorMessage = '';
 

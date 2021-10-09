@@ -5,7 +5,7 @@
  * @param transform The transform function to apply to each chunk (and possibly it's elements)
  * @returns Array[][] Returns an array of pages with an array of fields inside of every page
  */
-function chunk(arr, chunkSize, transform = c => c) {
+function chunk(arr, chunkSize, transform = (c) => c) {
   const result = [];
   const arrCopy = [...arr];
 

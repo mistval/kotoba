@@ -1,6 +1,6 @@
 const { Permissions, FulfillmentError } = require('monochrome-bot');
 const constants = require('../common/constants');
-const scheduleHelper = require('./../discord/schedule_helper');
+const scheduleHelper = require('../discord/schedule_helper');
 
 const longDescription = `
 Schedule a word of the day (or a word at some other frequency). This command can be only used by a server admin.

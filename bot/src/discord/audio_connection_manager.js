@@ -1,6 +1,6 @@
-const globals = require('./../common/globals.js');
-const constants = require('./../common/constants.js');
-const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const globals = require('../common/globals.js');
+const constants = require('../common/constants.js');
+const { throwPublicErrorFatal } = require('../common/util/errors.js');
 
 const VOICE_CHANNEL_TYPE = 2;
 const STAGE_CHANNEL_TYPE = 13;
@@ -16,13 +16,16 @@ function userCanJoinAndTalk(voiceChannel, user) {
 }
 
 function getChannelsCanTalkIn(guild, user) {
-  const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE);
-  return voiceChannels.filter(channel => userCanJoinAndTalk(channel, user));
+  const voiceChannels = guild.channels.filter((channel) => channel.type === VOICE_CHANNEL_TYPE);
+  return voiceChannels.filter((channel) => userCanJoinAndTalk(channel, user));
 }
 
 function getVoiceChannelForUser(guild, userId) {
-  const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE || channel.type === STAGE_CHANNEL_TYPE);
-  const userVoiceChannel = voiceChannels.find(channel => channel.voiceMembers.get(userId));
+  const voiceChannels = guild.channels.filter(
+    (channel) => channel.type === VOICE_CHANNEL_TYPE || channel.type === STAGE_CHANNEL_TYPE,
+  );
+
+  const userVoiceChannel = voiceChannels.find((channel) => channel.voiceMembers.get(userId));
 
   return userVoiceChannel;
 }
@@ -48,10 +51,15 @@ function subscribeEvents(voiceConnection) {
   });
 }
 
+function isStageChannel(bot, connection) {
+  const guild = bot.guilds.get(connection.id);
+  return guild?.channels.get(connection.channelID)?.type !== STAGE_CHANNEL_TYPE;
+}
+
 function isUsableConnection(bot, connection) {
   return connection
     && connection.channelID
-    && bot.guilds.get(connection.id)?.channels.get(connection.channelID)?.type !== STAGE_CHANNEL_TYPE;
+    && isStageChannel(bot, connection);
 }
 
 class AudioConnection {
@@ -106,7 +114,7 @@ class AudioConnection {
 
     const channelsCanTalkIn = getChannelsCanTalkIn(msg.channel.guild, bot.user);
     if (channelsCanTalkIn.indexOf(voiceChannel) === -1) {
-      const channelsCanTalkInString = channelsCanTalkIn.map(channel => `**<#${channel.id}>**`).join(' ');
+      const channelsCanTalkInString = channelsCanTalkIn.map((channel) => `**<#${channel.id}>**`).join(' ');
       return throwPublicErrorFatal('Audio', `I either don't have permission to join your voice channel, or I don't have permission to talk in it. I'm allowed to talk in the following voice channels: ${channelsCanTalkInString || '**None**'}`, 'Lack voice permission');
     }
 

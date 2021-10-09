@@ -1,6 +1,6 @@
-const jishoSearch = require('./../discord/jisho_search.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const { Permissions } = require('monochrome-bot');
+const jishoSearch = require('../discord/jisho_search.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['jn'],

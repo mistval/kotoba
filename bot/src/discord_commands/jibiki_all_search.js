@@ -1,12 +1,12 @@
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
-const constants = require('./../common/constants.js');
-const array = require('./../common/util/array');
-const trimEmbed = require('../common/util/trim_embed.js');
-
 const {
   Navigation, NavigationChapter, FulfillmentError, Permissions,
 } = require('monochrome-bot');
+
+const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const constants = require('../common/constants.js');
+const array = require('../common/util/array');
+const trimEmbed = require('../common/util/trim_embed.js');
 
 const jibikiApiUri = 'https://api.jibiki.app';
 const maxFieldsPerPage = 8;
@@ -86,7 +86,7 @@ module.exports = {
               if (sens.part_of_speech.length !== 0) {
                 word += `${i + 1}. (`;
               }
-              word += sens.part_of_speech.map(pos => pos.short).join(', ');
+              word += sens.part_of_speech.map((pos) => pos.short).join(', ');
               if (sens.part_of_speech.length !== 0) {
                 word += ') ';
               }
@@ -94,7 +94,7 @@ module.exports = {
               if (sens.field_of_use.length !== 0) {
                 word += '[';
               }
-              word += sens.field_of_use.map(fld => fld.long).join(', ');
+              word += sens.field_of_use.map((fld) => fld.long).join(', ');
               if (sens.field_of_use.length !== 0) {
                 word += '] ';
               }
@@ -116,8 +116,8 @@ module.exports = {
       }));
 
       const kanjiPages = response.data
-        .filter(entry => entry.kanji.length > 0)
-        .map(entry => trimEmbed({
+        .filter((entry) => entry.kanji.length > 0)
+        .map((entry) => trimEmbed({
           embed: {
             title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
               ? entry.word.forms[0].kanji.literal
@@ -179,8 +179,8 @@ module.exports = {
         }));
 
       const sentencePages = response.data
-        .filter(entry => entry.sentences && entry.sentences.length > 0)
-        .map(entry => trimEmbed({
+        .filter((entry) => entry.sentences && entry.sentences.length > 0)
+        .map((entry) => trimEmbed({
           embed: {
             title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
               ? entry.word.forms[0].kanji.literal

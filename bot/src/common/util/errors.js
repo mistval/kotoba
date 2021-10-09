@@ -1,8 +1,6 @@
-
-
 const { FulfillmentError } = require('monochrome-bot');
 
-const constants = require('./../constants.js');
+const constants = require('../constants.js');
 
 function throwPublicError(sourceCommandName, publicMessage, logDescription, embedColor, err) {
   const errorContent = {

@@ -1,5 +1,3 @@
-
-
 const convertToHiragana = require('./util/convert_to_hiragana.js');
 const searchForvo = require('./forvo_search.js');
 const globals = require('./globals.js');
@@ -10,8 +8,8 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
   }
 
   const trueIndices = indexString.split('0')
-    .filter(str => !!str)
-    .map(str => parseInt(str, 10) - 1);
+    .filter((str) => !!str)
+    .map((str) => parseInt(str, 10) - 1);
 
   const trueAndFalse = [];
   for (let i = 0; i < wordLength; i += 1) {
@@ -22,13 +20,13 @@ function convertIndexStringToTrueFalse(wordLength, indexString) {
 }
 
 function getHighLowPitch(wordLength, pitchAccentString) {
-  const parts = pitchAccentString.split('').map(int => parseInt(int, 10));
+  const parts = pitchAccentString.split('').map((int) => parseInt(int, 10));
 
   while (parts.length < wordLength) {
     parts.unshift(0);
   }
 
-  return parts.map(int => (!!int));
+  return parts.map((int) => (!!int));
 }
 
 async function getPronounceInfo(queryWord, logger) {
@@ -58,7 +56,7 @@ async function getPronounceInfo(queryWord, logger) {
         pitchAccentClass: entry.pitchAccentClass,
         getAudioClips: () => searchForvo(entry.kanji[0]),
       };
-    }).filter(e => e);
+    }).filter((e) => e);
   } else {
     try {
       const forvoData = await searchForvo(queryWord);

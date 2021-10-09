@@ -1,9 +1,15 @@
 module.exports = {
     "extends": "airbnb-base",
+    "parserOptions": {
+      "ecmaVersion": 2020,
+    },
     "rules": {
       "class-methods-use-this": [2, { "exceptMethods": ['prepareData'] }],
       "no-console": "off",
       "import/extensions": "off",
+      "no-else-return": "off",
+      "prefer-object-spread": "off",
+      "max-classes-per-file": "off",
       'no-restricted-syntax': [
         'error',
         {

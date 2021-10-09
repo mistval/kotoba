@@ -1,5 +1,5 @@
 const { FulfillmentError, Navigation, Permissions } = require('monochrome-bot');
-const constants = require('./../common/constants.js');
+const constants = require('../common/constants.js');
 
 // Configuration start
 
@@ -58,15 +58,15 @@ function validateCommand(command) {
   } else if (command.longDescription && typeof command.longDescription !== typeof '') {
     throw new Error(`The longDescription must be a string. It is not for ${commandName}`);
   } else if (
-    command.aliasesForHelp &&
-    (!Array.isArray(command.aliasesForHelp) || command.aliasesForHelp.length < 1)
+    command.aliasesForHelp
+    && (!Array.isArray(command.aliasesForHelp) || command.aliasesForHelp.length < 1)
   ) {
     throw new Error(`The aliasesForHelp must be an array. It is not for ${commandName}`);
   }
 }
 
 function prefixAliases(aliases, prefix) {
-  return aliases.map(alias => `${prefix}${alias}`);
+  return aliases.map((alias) => `${prefix}${alias}`);
 }
 
 function createFieldForCommand(command, prefix) {
@@ -114,7 +114,7 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
     const endIndex = startIndex + maxCommandsPerPage;
     const fields = commandsCopy
       .slice(startIndex, endIndex)
-      .map(command => createFieldForCommand(command, commandMessage.prefix));
+      .map((command) => createFieldForCommand(command, commandMessage.prefix));
 
     const embed = {
       description: `Say **${prefixedHelpCommand} CommandNameHere** to see more information about a specific command.`,
@@ -138,7 +138,7 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
 }
 
 function indexOfAliasInList(command, list) {
-  return list.findIndex(alias => command.aliases.indexOf(alias) !== -1);
+  return list.findIndex((alias) => command.aliases.indexOf(alias) !== -1);
 }
 
 function compareCommandOrder(commandA, commandB, orderList) {
@@ -147,7 +147,7 @@ function compareCommandOrder(commandA, commandB, orderList) {
 
 function getCommandsForTopLevelHelpInOrder(nonHiddenCommands, generationOrder) {
   return nonHiddenCommands
-    .filter(command => indexOfAliasInList(command, generationOrder) !== -1)
+    .filter((command) => indexOfAliasInList(command, generationOrder) !== -1)
     .sort((a, b) => compareCommandOrder(a, b, generationOrder));
 }
 
@@ -207,7 +207,7 @@ function showAdvancedHelp(monochrome, msg, targetAlias) {
   if (command.aliases.length > 1) {
     fields.push({
       name: 'Aliases',
-      value: command.aliases.slice(1).map(alias => `${msg.prefix}${alias}`).join(', '),
+      value: command.aliases.slice(1).map((alias) => `${msg.prefix}${alias}`).join(', '),
       inline: true,
     });
   }

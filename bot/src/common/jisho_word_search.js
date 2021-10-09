@@ -1,4 +1,3 @@
-
 const UnofficialJishoApi = require('unofficial-jisho-api');
 
 const errors = require('./util/errors.js');
@@ -33,7 +32,7 @@ function getMeanings(senses) {
 
       let seeAlso = [];
       if (sense.see_also) {
-        seeAlso = sense.see_also.map(word => ({
+        seeAlso = sense.see_also.map((word) => ({
           word,
           uri: `${JISHO_SEARCH_BASE_URI}${encodeURIComponent(word)}`,
         }));
@@ -98,10 +97,10 @@ function sortWords(words, searchPhrase) {
 
 function formatJlptTags(jlptTags) {
   return jlptTags
-    .map(tag => parseInt(tag.replace('jlpt-n', ''), 10))
+    .map((tag) => parseInt(tag.replace('jlpt-n', ''), 10))
     .sort()
     .reverse()
-    .map(level => `JLPT N${level}`)
+    .map((level) => `JLPT N${level}`)
     .slice(0, 1);
 }
 
@@ -119,9 +118,9 @@ function parseJishoResponse(jishoResponseBody, searchPhrase) {
     const allWords = Object.keys(readingsForWord);
     const sortedWords = sortWords(allWords, searchPhrase);
 
-    const sortedWordsAndReadings = sortedWords.map(word => ({
+    const sortedWordsAndReadings = sortedWords.map((word) => ({
       word,
-      readings: readingsForWord[word].filter(reading => !!reading),
+      readings: readingsForWord[word].filter((reading) => !!reading),
     }));
 
     const jlptTags = formatJlptTags(jishoResponseItem.jlpt);

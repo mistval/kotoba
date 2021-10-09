@@ -1,5 +1,5 @@
-const globals = require('./../globals.js');
 const assert = require('assert');
+const globals = require('../globals.js');
 
 async function retryPromise(promiseFactory, retryCount = 3) {
   let retriesLeft = retryCount;

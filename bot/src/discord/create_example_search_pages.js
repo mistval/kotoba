@@ -1,7 +1,7 @@
 const UnofficialJishoApi = require('unofficial-jisho-api');
 const ArrayUtil = require('../common/util/array.js');
-const constants = require('./../common/constants.js');
-const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const constants = require('../common/constants.js');
+const { throwPublicErrorFatal } = require('../common/util/errors.js');
 
 const jishoApi = new UnofficialJishoApi();
 
@@ -25,11 +25,13 @@ function createPagesForExamplesData(examplesData) {
     }];
   }
 
-  const shortExamples = examplesData.results.filter(result =>
-    result.kanji.length < LONG_CUTOFF_IN_CHARS);
+  const shortExamples = examplesData.results.filter(
+    (result) => result.kanji.length < LONG_CUTOFF_IN_CHARS,
+  );
 
-  const longExamples = examplesData.results.filter(result =>
-    result.kanji.length >= LONG_CUTOFF_IN_CHARS);
+  const longExamples = examplesData.results.filter(
+    (result) => result.kanji.length >= LONG_CUTOFF_IN_CHARS,
+  );
 
   const sortedExamples = shortExamples.concat(longExamples);
   const chunkedExamples = ArrayUtil.chunk(sortedExamples, MAX_RESULTS_PER_PAGE);
@@ -39,7 +41,7 @@ function createPagesForExamplesData(examplesData) {
       url: examplesData.uri,
       title: createPageTitle(examplesData.query, pageIndex, chunkedExamples.length),
       color: constants.EMBED_NEUTRAL_COLOR,
-      fields: examples.map(example => ({
+      fields: examples.map((example) => ({
         name: example.kanji,
         value: `${example.kana}\n${example.english}`,
       })),

@@ -1,9 +1,7 @@
-
-
-const createAnimeSearchNavigation = require('./../discord/create_anime_search_navigation.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const constants = require('./../common/constants.js');
 const { Permissions } = require('monochrome-bot');
+const createAnimeSearchNavigation = require('../discord/create_anime_search_navigation.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const constants = require('../common/constants.js');
 
 module.exports = {
   commandAliases: ['anime', 'a'],

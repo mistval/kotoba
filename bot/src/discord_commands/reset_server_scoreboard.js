@@ -1,7 +1,7 @@
-const scores = require('../common/quiz/score_storage_utils.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const constants = require('./../common/constants.js');
 const { Permissions } = require('monochrome-bot');
+const scores = require('../common/quiz/score_storage_utils.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const constants = require('../common/constants.js');
 
 const serverConfirmationMessages = {
   noResponse: 'No response, did not reset the leaderboard.',
@@ -35,7 +35,7 @@ async function waitForConfirmation(monochrome, messages, msg, userId) {
   try {
     responseMsg = await monochrome.waitForMessage(
       120000,
-      c => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
+      (c) => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
     );
   } catch (err) {
     if (err.message === 'WAITER TIMEOUT') {

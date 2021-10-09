@@ -1,5 +1,5 @@
-const showRandomWord = require('./../discord/show_random_word.js');
 const { Permissions } = require('monochrome-bot');
+const showRandomWord = require('../discord/show_random_word.js');
 
 module.exports = {
   commandAliases: ['random', 'r'],

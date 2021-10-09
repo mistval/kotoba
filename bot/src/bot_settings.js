@@ -1,4 +1,3 @@
-
 const { SettingsConverters, SettingsValidators } = require('monochrome-bot');
 const { quizDefaults } = require('kotoba-common');
 const { chunk } = require('./common/util/array.js');
@@ -21,7 +20,7 @@ const fontDescriptionPages = chunk(fontDescriptionLines, 10);
 const fontAllowedValuesFields = [{
   name: 'Allowed values',
   value: `Enter the number of the font you want from below.\n\n${fontDescriptionPages[0].join('\n')}`,
-}].concat(fontDescriptionPages.slice(1).map(p => ({
+}].concat(fontDescriptionPages.slice(1).map((p) => ({
   name: 'Allowed values (cont.)',
   value: p.join('\n'),
 })));

@@ -1,7 +1,7 @@
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const createStrokeOrderNavigationChapter = require('./../discord/create_stroke_order_search_navigation_chapter.js');
 const { Navigation, Permissions } = require('monochrome-bot');
-const constants = require('./../common/constants.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const createStrokeOrderNavigationChapter = require('../discord/create_stroke_order_search_navigation_chapter.js');
+const constants = require('../common/constants.js');
 
 module.exports = {
   commandAliases: ['strokeorder', 's', 'so'],

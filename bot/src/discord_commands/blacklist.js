@@ -1,5 +1,5 @@
 const { FulfillmentError } = require('monochrome-bot');
-const updateDbFromUser = require('./../discord/db_helpers/update_from_user.js');
+const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 /**
 * Blacklist a user with a reason

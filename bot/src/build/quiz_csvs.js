@@ -59,7 +59,7 @@ async function go() {
     // eslint-disable-next-line import/no-dynamic-require,global-require
     const deck = JSON.parse(fs.readFileSync(filePath));
 
-    const cardsAsRows = deck.cards.filter(c => c).map(card => [
+    const cardsAsRows = deck.cards.filter((c) => c).map((card) => [
       card.question,
       card.answer.join(', '),
       card.meaning,

@@ -1,7 +1,5 @@
-
-
 const Canvas = require('canvas');
-const { fontHelper } = require('./../common/globals.js');
+const { fontHelper } = require('./globals.js');
 
 const TOP_PADDING_IN_PIXELS = 6;
 const BOTTOM_PADDING_IN_PIXELS = 6;
@@ -26,9 +24,9 @@ function render(text, textColor = 'black', backgroundColor = 'white', fontSize =
   const totalHorizontalPaddingInPixels = leftPaddingInPixels + rightPaddingInPixels;
 
   canvas.width = measurements.width + totalHorizontalPaddingInPixels;
-  canvas.height = measurements.actualBoundingBoxAscent +
-    measurements.actualBoundingBoxDescent +
-    TOTAL_VERTICAL_PADDING_IN_PIXELS;
+  canvas.height = measurements.actualBoundingBoxAscent
+    + measurements.actualBoundingBoxDescent
+    + TOTAL_VERTICAL_PADDING_IN_PIXELS;
 
   ctx.fillStyle = backgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);

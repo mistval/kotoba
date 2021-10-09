@@ -1,11 +1,11 @@
 const { FulfillmentError } = require('monochrome-bot');
-const jishoWordSearch = require('./../common/jisho_word_search.js');
+const jishoWordSearch = require('../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
-const constants = require('./../common/constants.js');
-const jishoSearch = require('./../discord/jisho_search.js');
-const globals = require('./../common/globals.js');
+const constants = require('../common/constants.js');
+const jishoSearch = require('./jisho_search.js');
+const globals = require('../common/globals.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
-const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
+const createExampleSearchPages = require('./create_example_search_pages.js');
 
 const NUMBER_OF_RETRIES = 50;
 
@@ -78,8 +78,10 @@ async function showRandomWord(
   }
   if (showStrokeOrder) {
     const kanji = word.match(/([\u4e00-\u9faf])/g) || [];
-    const kanjiPages = await Promise.all(kanji.map(char =>
-      createKanjiSearchPage(char, undefined, true)));
+    const kanjiPages = await Promise.all(
+      kanji.map((char) => createKanjiSearchPage(char, undefined, true)),
+    );
+
     for (let i = 0; i < kanjiPages.length; i += 1) {
       /* eslint-disable-next-line no-await-in-loop */
       await channel.createMessage(kanjiPages[i]); // we need to show the kanjis in the correct order

@@ -1,6 +1,6 @@
 const UnofficialJishoApi = require('unofficial-jisho-api');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
-const constants = require('./../common/constants.js');
+const constants = require('../common/constants.js');
 
 const jishoApi = new UnofficialJishoApi();
 
@@ -52,11 +52,13 @@ function addEmbedFieldsForParts(kanjiData, embedFields) {
 }
 
 function sortExamplesByHaveDesiredKanji(examples, desiredKanji) {
-  const examplesWithDesiredKanji = examples.filter(ex =>
-    ex.example.indexOf(desiredKanji) !== -1);
+  const examplesWithDesiredKanji = examples.filter(
+    (ex) => ex.example.indexOf(desiredKanji) !== -1,
+  );
 
-  const examplesWithoutDesiredKanji = examples.filter(ex =>
-    ex.example.indexOf(desiredKanji) === -1);
+  const examplesWithoutDesiredKanji = examples.filter(
+    (ex) => ex.example.indexOf(desiredKanji) === -1,
+  );
 
   return examplesWithDesiredKanji.concat(examplesWithoutDesiredKanji);
 }

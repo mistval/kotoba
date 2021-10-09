@@ -1,8 +1,7 @@
-
 const { FulfillmentError, Permissions } = require('monochrome-bot');
 
-const YoutubeApi = require('./../common/youtube_api_utils.js');
-const retryPromise = require('./../common/util/retry_promise.js');
+const YoutubeApi = require('../common/youtube_api_utils.js');
+const retryPromise = require('../common/util/retry_promise.js');
 
 const PLAYLIST_ID = 'PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ';
 

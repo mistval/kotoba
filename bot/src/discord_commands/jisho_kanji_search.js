@@ -1,7 +1,7 @@
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const createKanjiDataSource = require('./../discord/create_kanji_search_data_source.js');
 const { Navigation, NavigationChapter, Permissions } = require('monochrome-bot');
-const constants = require('./../common/constants.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const createKanjiDataSource = require('../discord/create_kanji_search_data_source.js');
+const constants = require('../common/constants.js');
 
 module.exports = {
   commandAliases: ['kanji', 'k'],

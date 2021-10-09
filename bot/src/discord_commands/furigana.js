@@ -1,7 +1,7 @@
 const axios = require('axios').create({ timeout: 10000 });
 const qs = require('qs');
-const { throwPublicErrorFatal, throwPublicErrorInfo } = require('./../common/util/errors.js');
 const { Permissions } = require('monochrome-bot');
+const { throwPublicErrorFatal, throwPublicErrorInfo } = require('../common/util/errors.js');
 
 const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
 

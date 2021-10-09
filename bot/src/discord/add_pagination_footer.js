@@ -1,4 +1,4 @@
-const constants = require('./../common/constants.js');
+const constants = require('../common/constants.js');
 
 function addPaginationFooter(pages, authorName) {
   let sanitizedPages = pages;
@@ -7,7 +7,7 @@ function addPaginationFooter(pages, authorName) {
     sanitizedPages = [pages];
   }
 
-  const pageCopies = sanitizedPages.map(page => ({
+  const pageCopies = sanitizedPages.map((page) => ({
     ...page,
     embed: {
       ...page.embed,

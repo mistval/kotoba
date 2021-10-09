@@ -1,10 +1,8 @@
-
-
-const ScoreStorageUtils = require('./../common/quiz/score_storage_utils.js');
-const constants = require('./../common/constants.js');
 const {
   Navigation, FulfillmentError, NavigationChapter, Permissions,
 } = require('monochrome-bot');
+const ScoreStorageUtils = require('../common/quiz/score_storage_utils.js');
+const constants = require('../common/constants.js');
 
 const MAX_SCORERS_PER_PAGE = 20;
 
@@ -146,8 +144,13 @@ function userRankIsInRange(startIndex, records, userRank) {
 }
 
 function createScorerFields(startIndex, records, userRank, userScore, userName) {
-  const fields = records.map((record, index) =>
-    createFieldForScorer(startIndex + index, record.lastKnownUsername, record.score));
+  const fields = records.map(
+    (record, index) => createFieldForScorer(
+      startIndex + index,
+      record.lastKnownUsername,
+      record.score,
+    ),
+  );
 
   if (userRank !== undefined && !userRankIsInRange(startIndex, records, userRank)) {
     fields.push(createFieldForScorer(userRank, userName, userScore));

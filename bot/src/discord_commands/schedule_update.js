@@ -1,5 +1,5 @@
 const globals = require('../common/globals.js');
-const state = require('./../common/static_state.js');
+const state = require('../common/static_state.js');
 
 const retryPromise = require('../common/util/retry_promise.js');
 const quizManager = require('../common/quiz/manager.js');
@@ -18,8 +18,8 @@ const { shutdownNotifyChannels } = state.scheduledShutdown;
 
 function getChannelsFromChannelIds(bot, channelIds) {
   const dmChannels = channelIds
-    .map(channelId => bot.privateChannels.get(channelId))
-    .filter(x => x);
+    .map((channelId) => bot.privateChannels.get(channelId))
+    .filter((x) => x);
 
   const guildChannels = channelIds.map((channelId) => {
     const guild = bot.guilds.get(bot.channelGuildMap[channelId]);
@@ -28,7 +28,7 @@ function getChannelsFromChannelIds(bot, channelIds) {
     }
 
     return undefined;
-  }).filter(x => x);
+  }).filter((x) => x);
 
   return dmChannels.concat(guildChannels);
 }
@@ -78,7 +78,7 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
     };
 
     const promises = uniqueById(channels)
-      .map(channel => retryPromise(() => channel.createMessage(message)));
+      .map((channel) => retryPromise(() => channel.createMessage(message)));
 
     await Promise.all(promises);
   } catch (err) {
@@ -104,7 +104,7 @@ async function sendShutdownMessageToChannels(channels, logger) {
     };
 
     const promises = uniqueById(channels)
-      .map(channel => retryPromise(() => channel.createMessage(message)));
+      .map((channel) => retryPromise(() => channel.createMessage(message)));
 
     await Promise.all(promises);
   } catch (err) {

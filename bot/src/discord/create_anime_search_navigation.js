@@ -1,10 +1,9 @@
-
 const Kitsu = require('kitsu');
 const { Navigation } = require('monochrome-bot');
 
-const constants = require('./../common/constants.js');
-const trimEmbed = require('./../common/util/trim_embed.js');
-const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./../common/util/errors.js');
+const constants = require('../common/constants.js');
+const trimEmbed = require('../common/util/trim_embed.js');
+const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
 
 const api = new Kitsu();
 

@@ -1,16 +1,16 @@
 const Monochrome = require('monochrome-bot');
 const { ReactionButtons } = require('erex');
-const globals = require('./common/globals.js');
 const path = require('path');
 const fs = require('fs');
-const config = require('./../../config/config.js').bot;
-const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
-const loadScheduleIntervals = require('./discord/schedule_helper.js').loadIntervals;
 const Bunyan = require('bunyan');
 const StackdriverBunyan = require('@google-cloud/logging-bunyan').LoggingBunyan;
 const Canvas = require('canvas');
 const { initializeFonts, initializeResourceDatabase } = require('kotoba-node-common');
 const { DB_CONNECTION_STRING } = require('kotoba-node-common').database;
+const loadScheduleIntervals = require('./discord/schedule_helper.js').loadIntervals;
+const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
+const config = require('../../config/config.js').bot;
+const globals = require('./common/globals.js');
 
 const { ConsoleLogger } = Monochrome;
 

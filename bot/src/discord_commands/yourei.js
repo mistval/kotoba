@@ -1,6 +1,6 @@
-const youreiSearch = require('./../common/yourei_search.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
 const { Permissions } = require('monochrome-bot');
+const youreiSearch = require('../common/yourei_search.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
 
 module.exports = {
   commandAliases: ['yourei', 'y'],

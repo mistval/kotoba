@@ -1,8 +1,8 @@
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const createExampleSearchPages = require('./../discord/create_example_search_pages.js');
-const addPaginationFooter = require('./../discord/add_pagination_footer.js');
 const { Navigation, Permissions } = require('monochrome-bot');
-const constants = require('./../common/constants.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const createExampleSearchPages = require('../discord/create_example_search_pages.js');
+const addPaginationFooter = require('../discord/add_pagination_footer.js');
+const constants = require('../common/constants.js');
 
 module.exports = {
   commandAliases: ['examples', 'ex'],

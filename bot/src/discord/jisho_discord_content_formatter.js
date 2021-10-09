@@ -1,10 +1,9 @@
 /* The functions in this file take cross-platform Jisho data
  * and convert it into an array of Discord message contents. */
 
-
-const constants = require('./../common/constants.js');
-const { throwPublicErrorInfo } = require('./../common/util/errors.js');
-const trimEmbed = require('./../common/util/trim_embed.js');
+const constants = require('../common/constants.js');
+const { throwPublicErrorInfo } = require('../common/util/errors.js');
+const trimEmbed = require('../common/util/trim_embed.js');
 
 const MAX_LINES_PER_BIG_PAGE = 11;
 const MAX_MEANINGS_SMALL = 3;
@@ -42,7 +41,7 @@ function getLineForMeaning(meaning, meaningNumber) {
     line += ` *[${tags.join(', ')}]*`;
   }
   if (seeAlso.length > 0) {
-    const linkListString = seeAlso.map(seeAlsoEntry => `[${seeAlsoEntry.word}](${seeAlsoEntry.uri})`)
+    const linkListString = seeAlso.map((seeAlsoEntry) => `[${seeAlsoEntry.word}](${seeAlsoEntry.uri})`)
       .join(', ');
     line += `  (See also: ${linkListString})`;
   }

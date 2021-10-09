@@ -186,8 +186,8 @@ async function setSchedule(suffix, msg) {
   let frequency = 0;
   const start = new Date();
   const suffixArray = suffix.split(' ')
-    .map(s => s.trim().toLowerCase())
-    .filter(s => s);
+    .map((s) => s.trim().toLowerCase())
+    .filter((s) => s);
 
   const { length } = suffixArray;
 
@@ -201,14 +201,14 @@ async function setSchedule(suffix, msg) {
       case 'list':
         if (serverSchedules.length > 0) {
           const list = serverSchedules
-            .map(i => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.nextSendTime)} (if status is 'running').`)
+            .map((i) => `**Channel:** ${msg.channel.guild.channels.get(i.id).name}, **Frequency:** ${formatFrequency(i.frequency)}, **Level:** ${i.level ? i.level : 'any'}, **Status:** ${i.status}, **Next word in** ${getNextTime(i.nextSendTime)} (if status is 'running').`)
             .join('\n');
           return msg.channel.createMessage(list);
         }
         return msg.channel.createMessage('No WOTD schedules are currently active in this server.');
 
       case 'stop':
-        index = serverSchedules.findIndex(i => i.id === channelId);
+        index = serverSchedules.findIndex((i) => i.id === channelId);
         if (index !== -1) {
           await WordScheduleModel.deleteOne({ _id: channelId });
           return msg.channel.createMessage('The WOTD schedule for this channel was stopped successfully.');
@@ -216,7 +216,7 @@ async function setSchedule(suffix, msg) {
         return msg.channel.createMessage('There is no WOTD schedule in this channel.');
 
       case 'pause':
-        index = serverSchedules.findIndex(i => i.id === channelId);
+        index = serverSchedules.findIndex((i) => i.id === channelId);
         if (index !== -1) {
           if (serverSchedules[index].status === StatusConstants.PAUSED) {
             return msg.channel.createMessage('This channel\'s WOTD schedule is already paused.');
@@ -237,7 +237,7 @@ async function setSchedule(suffix, msg) {
         return msg.channel.createMessage('All WOTD schedules in this server have been paused.');
 
       case 'resume':
-        index = serverSchedules.findIndex(i => i.id === channelId);
+        index = serverSchedules.findIndex((i) => i.id === channelId);
         if (index !== -1) {
           if (serverSchedules[index].status === StatusConstants.RUNNING) {
             return msg.channel.createMessage('The WOTD schedule for this channel is already active.');

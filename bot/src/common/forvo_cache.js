@@ -13,8 +13,8 @@ async function getPronunciationClipsForWord(word) {
     return [];
   }
 
-  const audioClips = forvoResponseData.audioClips.filter(clipInfo => clipInfo.langname === 'Japanese');
-  const audioClipWebUris = audioClips.map(clipInfo => clipInfo.audioUri);
+  const audioClips = forvoResponseData.audioClips.filter((clipInfo) => clipInfo.langname === 'Japanese');
+  const audioClipWebUris = audioClips.map((clipInfo) => clipInfo.audioUri);
 
   return audioClipWebUris;
 }

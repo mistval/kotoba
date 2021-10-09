@@ -1,4 +1,3 @@
-
 const { FulfillmentError } = require('monochrome-bot');
 
 module.exports = {

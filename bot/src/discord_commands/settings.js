@@ -1,7 +1,7 @@
 const { FulfillmentError, Permissions } = require('monochrome-bot');
 
-const Hook = require('./../discord_message_processors/user_and_channel_hook.js');
-const state = require('./../unreloadable_data.js');
+const Hook = require('../discord_message_processors/user_and_channel_hook.js');
+const state = require('../unreloadable_data.js');
 
 // CONFIG START
 
@@ -271,7 +271,7 @@ function getChannelIds(locationString, msg) {
     const channelString = channelStrings[i];
     const regexResult = /<#(.*?)>/.exec(channelString);
     const { channels } = msg.channel.guild;
-    if (!regexResult || !channels.find(channel => channel.id === regexResult[1])) {
+    if (!regexResult || !channels.find((channel) => channel.id === regexResult[1])) {
       return channelString;
     }
     channelIds.push(regexResult[1]);
