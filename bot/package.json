@@ -24,7 +24,7 @@
     "@google-cloud/logging-bunyan": "3.0.1",
     "axios": "0.21.2",
     "bunyan": "1.8.12",
-    "canvas": "2.6.1",
+    "canvas": "2.8.0",
     "cheerio": "1.0.0-rc.10",
     "erex": "0.0.1",
     "html-entities": "1.2.1",
@@ -37,7 +37,7 @@
     "monochrome-bot": "^3.0.0-alpha.27",
     "parse5": "5.1.0",
     "qs": "6.9.4",
-    "unofficial-jisho-api": "^2.2.2"
+    "unofficial-jisho-api": "2.2.2"
   },
   "devDependencies": {
     "chai": "^4.3.4",
