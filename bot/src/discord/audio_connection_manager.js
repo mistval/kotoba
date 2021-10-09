@@ -3,6 +3,7 @@ const constants = require('./../common/constants.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 
 const VOICE_CHANNEL_TYPE = 2;
+const STAGE_CHANNEL_TYPE = 13;
 const EMBED_TITLE = 'Audio';
 
 function hasConnectionInServer(bot, serverId) {
@@ -20,7 +21,7 @@ function getChannelsCanTalkIn(guild, user) {
 }
 
 function getVoiceChannelForUser(guild, userId) {
-  const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE);
+  const voiceChannels = guild.channels.filter(channel => channel.type === VOICE_CHANNEL_TYPE || channel.type === STAGE_CHANNEL_TYPE);
   const userVoiceChannel = voiceChannels.find(channel => channel.voiceMembers.get(userId));
 
   return userVoiceChannel;
@@ -47,6 +48,12 @@ function subscribeEvents(voiceConnection) {
   });
 }
 
+function isUsableConnection(bot, connection) {
+  return connection
+    && connection.channelID
+    && bot.guilds.get(connection.id)?.channels.get(connection.channelID)?.type !== STAGE_CHANNEL_TYPE;
+}
+
 class AudioConnection {
   constructor(bot, msg, voiceChannel) {
     this.bot = bot;
@@ -56,7 +63,7 @@ class AudioConnection {
 
   static async getOrCreateConnection(bot, serverId, voiceChannel) {
     const connection = bot.voiceConnections.get(serverId);
-    if (connection && connection.channelID) {
+    if (isUsableConnection(bot, connection)) {
       return connection;
     }
 
@@ -91,6 +98,10 @@ class AudioConnection {
     const voiceChannel = getVoiceChannelForUser(msg.channel.guild, msg.author.id);
     if (!voiceChannel) {
       return throwPublicErrorFatal('Audio', 'A voice connection is required for that. Please enter a voice channel and try again.', 'User not in voice');
+    }
+
+    if (voiceChannel.type === STAGE_CHANNEL_TYPE) {
+      return throwPublicErrorFatal('Audio', 'I cannot join stage channels. Please use a normal voice channel.', 'Stage channel');
     }
 
     const channelsCanTalkIn = getChannelsCanTalkIn(msg.channel.guild, bot.user);
