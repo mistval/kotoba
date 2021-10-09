@@ -3,6 +3,7 @@ module.exports = {
     "rules": {
       "class-methods-use-this": [2, { "exceptMethods": ['prepareData'] }],
       "no-console": "off",
+      "import/extensions": "off",
       'no-restricted-syntax': [
         'error',
         {
