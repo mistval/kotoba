@@ -1,7 +1,11 @@
+const util = require('util');
 const globals = require('../common/globals.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
 
+const wait = util.promisify(setTimeout);
+
+const VOICE_READY_TIMEOUT_MS = 10000;
 const VOICE_CHANNEL_TYPE = 2;
 const STAGE_CHANNEL_TYPE = 13;
 const EMBED_TITLE = 'Audio';
@@ -30,6 +34,26 @@ function getVoiceChannelForUser(guild, userId) {
   return userVoiceChannel;
 }
 
+async function waitAndThrow() {
+  await wait(VOICE_READY_TIMEOUT_MS);
+  return throwPublicErrorFatal('Audio', 'I could not connect to the voice channel in a timely manner. Please try again.', 'Voice timeout');
+}
+
+function waitForReady(voiceConnection) {
+  if (voiceConnection.ready) {
+    return Promise.resolve();
+  }
+
+  const readyPromise = new Promise((fulfill) => {
+    voiceConnection.on('ready', () => fulfill());
+  });
+
+  return Promise.race([
+    readyPromise,
+    waitAndThrow(),
+  ]);
+}
+
 function subscribeEvents(voiceConnection) {
   voiceConnection.on('warn', (message) => {
     globals.logger.warn({
@@ -53,13 +77,13 @@ function subscribeEvents(voiceConnection) {
 
 function isStageChannel(bot, connection) {
   const guild = bot.guilds.get(connection.id);
-  return guild?.channels.get(connection.channelID)?.type !== STAGE_CHANNEL_TYPE;
+  return guild?.channels.get(connection.channelID)?.type === STAGE_CHANNEL_TYPE;
 }
 
 function isUsableConnection(bot, connection) {
   return connection
     && connection.channelID
-    && isStageChannel(bot, connection);
+    && !isStageChannel(bot, connection);
 }
 
 class AudioConnection {
@@ -79,9 +103,10 @@ class AudioConnection {
       bot.guilds.get(serverId).leaveVoiceChannel();
       const voiceConnection = await voiceChannel.join();
       subscribeEvents(voiceConnection);
+      await waitForReady(voiceConnection);
       return voiceConnection;
     } catch (err) {
-      bot.guilds.get(serverId).leaveVoiceChannel();
+      bot.guilds.get(serverId)?.leaveVoiceChannel();
 
       globals.logger.warn({
         event: 'VOICE WARNING',
