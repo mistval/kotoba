@@ -10,6 +10,7 @@ const LocationReviewDeckModel = require('kotoba-node-common').models.reviewDeck.
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
   DECK_NOT_FOUND: 1,
+  RANGE_INVALID: 2,
 };
 
 function createCardGetterFromInMemoryArray(array) {
@@ -44,6 +45,48 @@ function createDeckNotFoundStatus(missingDeckName) {
   };
 }
 
+function createDeckRangeInvalidStatus(deck) {
+  return {
+    status: DeckRequestStatus.RANGE_INVALID,
+    invalidDeckName: deck.shortName,
+    validStartIndex: 1,
+    validEndIndex: deck.cards.length,
+  };
+}
+
+function rangeValid(deck) {
+  const { startIndex, endIndex } = deck;
+
+  const startIndexDefined = Boolean(startIndex);
+  const endIndexDefined = Boolean(endIndex);
+
+  if (startIndexDefined) {
+    if (
+      startIndex < 1
+      || startIndex > deck.cards.length
+    ) {
+      return false;
+    }
+  }
+
+  if (endIndexDefined) {
+    if (
+      endIndex < 1
+      || endIndex > deck.cards.length
+    ) {
+      return false;
+    }
+  }
+
+  if (startIndexDefined && endIndexDefined) {
+    if (startIndex > endIndex) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 function resolveIndex(index, deckLength) {
   return index === Number.MAX_SAFE_INTEGER ? deckLength : index;
 }
@@ -66,23 +109,6 @@ function getDeckFromMemory(deckInformation) {
   }
 
   return deck;
-}
-
-function coerceCardRanges(decks) {
-  decks.forEach((deck) => {
-    if (Number.isNaN(deck.startIndex)) {
-      deck.startIndex = 1;
-    }
-    if (Number.isNaN(deck.endIndex)) {
-      deck.endIndex = deck.cards.length;
-    }
-
-    if (deck.startIndex !== undefined || deck.endIndex !== undefined) {
-      deck.startIndex = Math.max(1, Math.min(deck.startIndex || 1, deck.cards.length));
-      deck.endIndex = Math.max(deck.endIndex || 1, deck.startIndex || 1);
-      deck.endIndex = Math.max(1, Math.min(deck.endIndex || 1, deck.cards.length));
-    }
-  });
 }
 
 function readFile(path) {
@@ -186,9 +212,11 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
     if (!deck) {
       return createDeckNotFoundStatus(deckInfos[i].deckNameOrUniqueId);
     }
-  }
 
-  coerceCardRanges(decks);
+    if (!rangeValid(deck)) {
+      return createDeckRangeInvalidStatus(deck);
+    }
+  }
 
   // If all decks were found return success.
   return createAllDecksFoundStatus(decks);

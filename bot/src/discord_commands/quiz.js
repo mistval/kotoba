@@ -1646,10 +1646,12 @@ module.exports = {
 
       if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
         return msg.channel.createMessage(`I don't have a deck named **${decksLookupResult.notFoundDeckName}**. Say **${prefix}quiz** to see the decks I have!`, null, msg);
+      } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.RANGE_INVALID) {
+        return msg.channel.createMessage(`The range of questions you specified for **${decksLookupResult.invalidDeckName}** is not valid. The valid range of questions is between **${decksLookupResult.validStartIndex}** and **${decksLookupResult.validEndIndex}**.`, null, msg);
       } else if (decksLookupResult.status === deckLoader.DeckRequestStatus.ALL_DECKS_FOUND) {
         ({ decks } = decksLookupResult);
       } else {
-        assert(`Unknown deck lookup status: ${decksLookupResult.status}`);
+        assert.fail(`Unknown deck lookup status: ${decksLookupResult.status}`);
       }
     }
 
