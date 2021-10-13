@@ -4,7 +4,7 @@
   "description": "A Discord bot for learning Japanese",
   "main": "./src/start.js",
   "scripts": {
-    "start": "node .",
+    "start": "node --unhandled-rejections=warn .",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data"
