@@ -7,7 +7,7 @@ const customDeckSchema = new mongoose.Schema({
   shortName: { type: String, required: true, index: true },
   lastModified: { type: Date, required: true },
   uniqueId: { type: String, required: true, index: true },
-  public: { type: Boolean, index: true, default: false },
+  public: { type: Boolean, default: false },
   description: { type: String, default: '' },
   score: { type: Number, default: 0, index: true },
   readWriteSecret: { type: String, required: false, index: false },
