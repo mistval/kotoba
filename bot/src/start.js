@@ -116,6 +116,10 @@ function createBot() {
     });
 
     loadScheduleIntervals(monochrome);
+
+    process.on('uncaughtException', (err) => {
+      monochrome.getLogger().fatal({ event: 'UNCAUGHT_EXCEPTION', err });
+    });
   });
 
   return monochrome;
