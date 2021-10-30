@@ -53,27 +53,31 @@ module.exports = {
 
     await msg.channel.createMessage('Deleting...');
 
-    const dbUser = await UserModel.find({ 'discordUser.id': msg.author.id }).lean().exec();
+    const dbUser = await UserModel.findOne({ 'discordUser.id': msg.author.id }, '_id').lean().exec();
     const dbUserId = dbUser?._id;
 
     if (dbUserId) {
-      const customDecks = await CustomDeckModel.find({ owner: dbUserId }).lean().exec();
+      const customDecks = await CustomDeckModel.find({ owner: dbUserId }, 'shortName').lean().exec();
       await Promise.all(
         customDecks.map(async (customDeck) => {
           const deckPath = path.join(CUSTOM_DECK_DIR, `${customDeck.shortName}.json`);
-          await fs.promises.unlink(deckPath);
-          await CustomDeckModel.deleteOne({ _id: customDeck._id });
+          await fs.promises.unlink(deckPath)
+            .catch((err) => monochrome.getLogger().error({ event: 'ERROR DELETING DECK', err }));
+
+          await CustomDeckModel.deleteOne({ _id: customDeck._id }).exec();
         }),
       );
 
       await Promise.all([
-        CustomDeckVoteModel.deleteMany({ voter: dbUserId }),
+        CustomDeckVoteModel.deleteMany({ voter: dbUserId }).exec(),
         ReportModel.updateMany({
           participants: dbUserId,
         }, {
-          $pull: { participants: dbUserId, 'questions.correctAnswerers': dbUserId },
-        }),
+          $pull: { participants: dbUserId, 'questions.$.correctAnswerers': dbUserId },
+        }).exec(),
       ]);
+
+      await ReportModel.deleteMany({ 'participants.0': { $exists: false } }).exec();
     }
 
     await Promise.all([
@@ -82,7 +86,7 @@ module.exports = {
     ]);
 
     if (dbUser) {
-      await UserModel.deleteOne({ _id: dbUser._id });
+      await UserModel.deleteOne({ _id: dbUser._id }).exec();
     }
 
     return msg.channel.createMessage(`Your data has been deleted / scheduled for deletion. Deletion of database backup and log data may take up to 30 days. To opt out of all future data collection, use the **${msg.prefix}banme** command.`);
