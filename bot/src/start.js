@@ -103,7 +103,12 @@ function createBot() {
 
   const monochrome = new Monochrome(options);
 
+  let handledReady = false;
   monochrome.getErisBot().on('ready', () => {
+    if (handledReady) {
+      return;
+    }
+
     monochrome.reactionButtonManager = new ReactionButtons
       .ReactionButtonManager(monochrome.getErisBot().user.id);
 
@@ -120,6 +125,8 @@ function createBot() {
     process.on('uncaughtException', (err) => {
       monochrome.getLogger().fatal({ event: 'UNCAUGHT_EXCEPTION', err });
     });
+
+    handledReady = true;
   });
 
   return monochrome;
