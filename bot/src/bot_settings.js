@@ -268,7 +268,7 @@ module.exports = [
         defaultUserFacingValue: '.7',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: SettingsValidators.createRangeValidator(0, 1),
+        validateInternalValue: SettingsValidators.createRangeValidator(0, 3),
       },
       {
         userFacingName: 'Bot turn minimum wait',
