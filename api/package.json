@@ -3,16 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node --unhandled-rejections=warn ./server.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lintfix": "./node_modules/eslint/bin/eslint.js --fix .",
     "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data"
   },
   "dependencies": {
-    "@google-cloud/error-reporting": "2.0.0",
-    "@google-cloud/logging": "8.0.8",
+    "@google-cloud/error-reporting": "2.0.4",
+    "@google-cloud/logging": "9.6.1",
     "bluebird": "3.7.2",
-    "canvas": "2.6.1",
+    "canvas": "2.8.0",
     "connect-mongo": "3.2.0",
     "express": "4.16.4",
     "express-session": "1.17.1",
@@ -20,16 +20,10 @@
     "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
     "mongoose": "^6.0.8",
-    "monochrome-bot": "^1.1.0",
     "node-fetch": "2.6.1",
     "passport": "0.4.1",
     "passport-discord": "0.1.4",
     "socket.io": "2.4.0",
-    "uuid": "3.4.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.6.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "uuid": "8.3.2"
   }
 }

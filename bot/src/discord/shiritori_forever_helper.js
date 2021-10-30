@@ -97,7 +97,7 @@ async function sendScores(monochrome, msg) {
       username: nameForUserId[userID] || userNameForUserID(monochrome, userID),
       score: scoreForUserID[userID],
     }))
-    .sort((a, b) => a.score - b.score)
+    .sort((a, b) => b.score - a.score)
     .map((score, index) => ({
       ...score,
       rank: index + 1,

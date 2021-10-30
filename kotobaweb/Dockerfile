@@ -1,4 +1,4 @@
-FROM node:14-alpine as reactBuilder
+FROM node:16-alpine as reactBuilder
 
 WORKDIR /var
 COPY ./common ./common

@@ -23,7 +23,7 @@ function createModals() {
                 <button type="button" className="close" data-dismiss="modal" />
               </div>
               <div className="modal-body">
-                <img src={exampleImages(`./${example.imageName}`)} alt="command example" />
+                <img src={exampleImages(`./${example.imageName}`).default} alt="command example" />
               </div>
             </div>
           </div>

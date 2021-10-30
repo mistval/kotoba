@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Prompt } from 'react-router-dom';
 import axios from 'axios';
 import assert from 'assert';
 import ReactDataGrid from 'react-data-grid';
@@ -17,6 +18,8 @@ const {
   RESPONSE_PERMISSIONS_HEADER,
   RESPONSE_READWRITE_SECRET_HEADER,
 } = deckPermissions;
+
+const unsavedChangesMessage = 'You have unsaved changes. Are you sure you want to leave?';
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
@@ -134,6 +137,7 @@ class EditDeck extends Component {
       saving: false,
       defaultInstructions: 'Type the reading!',
       permissions: DeckPermissions.NONE,
+      hasUncommittedChanges: false,
     };
   }
 
@@ -180,11 +184,16 @@ class EditDeck extends Component {
   componentDidMount() {
     this.loadDeck();
     Analytics.setPageView('/dashboard/decks');
+    window.addEventListener('beforeunload', this.beforeUnloadListener);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.beforeUnloadListener);
   }
 
   onGridRowsUpdated = ({ fromRow: gridCardIndex, updated }) => {
     this.setState((state) => {
-      const newState = { ...state };
+      const newState = { ...state, hasUncommittedChanges: true };
       newState.gridDeck = { ...state.gridDeck };
       newState.gridDeck.cards = [...state.gridDeck.cards];
 
@@ -229,7 +238,7 @@ class EditDeck extends Component {
 
   onMetadataChange = () => {
     this.setState((state) => {
-      const newState = { ...state };
+      const newState = { ...state, hasUncommittedChanges: true };
       newState.gridDeck = { ...state.gridDeck };
 
       newState.gridDeck.name = this.fullNameField.value;
@@ -332,6 +341,7 @@ class EditDeck extends Component {
       this.setState(state => ({
         showStripe: true,
         stripeIsError: false,
+        hasUncommittedChanges: false,
         stripeMessage: (
           <span>
             Saved. You can load this deck on Discord with&nbsp;
@@ -475,6 +485,16 @@ class EditDeck extends Component {
   canEdit = () => this.state.permissions === DeckPermissions.OWNER || this.state.permissions === DeckPermissions.READWRITE
 
   getSecretFromUrl = () => new URLSearchParams(this.props.location.search).get('secret') || ''
+
+  beforeUnloadListener = (event) => {
+    if (this.state.hasUncommittedChanges) {
+      // eslint-disable-next-line no-param-reassign
+      (event || window.event).returnValue = unsavedChangesMessage;
+      return unsavedChangesMessage;
+    }
+
+    return undefined;
+  }
 
   render() {
     if (!this.state.gridDeck) {
@@ -704,6 +724,10 @@ class EditDeck extends Component {
             </div>
           </div>
           <NotificationStripe show={this.state.showStripe} message={this.state.stripeMessage} onClose={this.onErrorCloseClicked} isError={this.state.stripeIsError} />
+          <Prompt
+            when={this.state.hasUncommittedChanges}
+            message={unsavedChangesMessage}
+          />
         </main>
       </>
     );

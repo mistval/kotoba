@@ -14,17 +14,12 @@
   "license": "MIT",
   "dependencies": {
     "@polka/send-type": "0.5.2",
-    "canvas": "2.6.1",
+    "canvas": "2.8.0",
     "kotoba-node-common": "file:../node-common",
-    "mongoose": "^6.0.8",
+    "mongoose": "6.0.10",
     "node-fetch": "2.6.1",
     "polka": "0.5.2",
     "render-furigana": "^2.0.4",
     "vega": "5.17.3"
-  },
-  "devDependencies": {
-    "eslint": "4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0"
   }
 }

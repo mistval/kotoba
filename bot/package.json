@@ -4,7 +4,7 @@
   "description": "A Discord bot for learning Japanese",
   "main": "./src/start.js",
   "scripts": {
-    "start": "node .",
+    "start": "node --unhandled-rejections=warn .",
     "lint": "./node_modules/.bin/eslint ./src/",
     "lintfix": "./node_modules/.bin/eslint --fix ./src/",
     "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data"
@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
-    "@google-cloud/logging-bunyan": "3.0.1",
+    "@google-cloud/logging-bunyan": "3.1.1",
     "axios": "0.21.2",
     "bunyan": "1.8.12",
-    "canvas": "2.6.1",
+    "canvas": "2.8.0",
     "cheerio": "1.0.0-rc.10",
     "erex": "0.0.1",
     "html-entities": "1.2.1",
@@ -34,10 +34,10 @@
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.24.0",
-    "monochrome-bot": "^3.0.0-alpha.27",
+    "monochrome-bot": "^3.0.0-alpha.28",
     "parse5": "5.1.0",
     "qs": "6.9.4",
-    "unofficial-jisho-api": "^2.2.2"
+    "unofficial-jisho-api": "2.2.2"
   },
   "devDependencies": {
     "chai": "^4.3.4",

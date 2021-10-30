@@ -24,6 +24,11 @@ function createLogger() {
   if (hasGCloudKey) {
     const consoleLogger = new ConsoleLogger();
     const stackDriverLogger = new StackdriverBunyan({ keyFilename: GCLOUD_KEY_PATH });
+
+    stackDriverLogger.on('error', (err) => {
+      consoleLogger.warn({ event: 'BUNYAN LOGGING ERROR', err });
+    });
+
     return Bunyan.createLogger({
       name: 'kotoba-bot',
       streams: [
@@ -103,7 +108,12 @@ function createBot() {
 
   const monochrome = new Monochrome(options);
 
+  let handledReady = false;
   monochrome.getErisBot().on('ready', () => {
+    if (handledReady) {
+      return;
+    }
+
     monochrome.reactionButtonManager = new ReactionButtons
       .ReactionButtonManager(monochrome.getErisBot().user.id);
 
@@ -116,6 +126,12 @@ function createBot() {
     });
 
     loadScheduleIntervals(monochrome);
+
+    process.on('uncaughtException', (err) => {
+      monochrome.getLogger().fatal({ event: 'UNCAUGHT_EXCEPTION', err });
+    });
+
+    handledReady = true;
   });
 
   return monochrome;

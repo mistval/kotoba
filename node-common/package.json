@@ -10,12 +10,12 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "7.1.2",
+    "better-sqlite3": "7.4.3",
     "fontkit": "1.8.1",
     "glob": "7.1.6",
-    "mongoose": "^6.0.8",
+    "mongoose": "6.0.8",
     "sqlite": "4.0.7",
-    "tar": "^6.1.11",
+    "tar": "6.1.11",
     "validate-color": "2.1.0"
   }
 }

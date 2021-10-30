@@ -10,6 +10,7 @@ module.exports = {
       "no-else-return": "off",
       "prefer-object-spread": "off",
       "max-classes-per-file": "off",
+      "no-underscore-dangle": ["error", { "allow": ["_id"] }],
       'no-restricted-syntax': [
         'error',
         {

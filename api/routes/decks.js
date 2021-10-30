@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const rateLimit = require('express-slow-down');
 const { deckValidation } = require('kotoba-common');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 const { crypto } = require('kotoba-node-common');
 
 const {
