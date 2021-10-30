@@ -491,7 +491,7 @@ function clearUserScores(userId) {
   return Promise.all([
     UserServerTotalScoreModel.deleteMany({ userId }).exec(),
     UserServerDeckScoreModel.deleteMany({ userId }).exec(),
-    UserGlobalDeckScoreModel.deleteMany({ userId }).exec(),
+    UserGlobalTotalScoreModel.deleteMany({ userId }).exec(),
     UserGlobalDeckScoreModel.deleteMany({ userId }).exec(),
   ]);
 }
