@@ -1,8 +1,4 @@
-const unreloadableDataStore = require('../unreloadable_data.js');
-
-if (!unreloadableDataStore.hookForUserAndChannel) {
-  unreloadableDataStore.hookForUserAndChannel = {};
-}
+const hookForUserAndChannel = {};
 
 function createHookIdentifier(userId, channelId) {
   return userId + channelId;
@@ -17,16 +13,16 @@ class Hook {
   }
 
   register() {
-    const existingHook = unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()];
+    const existingHook = hookForUserAndChannel[this.getIdentifier()];
     if (existingHook) {
       existingHook.unregister();
     }
-    unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()] = this;
+    hookForUserAndChannel[this.getIdentifier()] = this;
     this.registered = true;
   }
 
   unregister() {
-    delete unreloadableDataStore.hookForUserAndChannel[this.getIdentifier()];
+    delete hookForUserAndChannel[this.getIdentifier()];
     this.registered = false;
     clearTimeout(this.timer);
     delete this.timer;
@@ -65,7 +61,7 @@ module.exports = {
   priority: 1000,
   action(bot, msg, monochrome) {
     const hookIdentifier = createHookIdentifier(msg.author.id, msg.channel.id);
-    const correspondingHook = unreloadableDataStore.hookForUserAndChannel[hookIdentifier];
+    const correspondingHook = hookForUserAndChannel[hookIdentifier];
     if (correspondingHook) {
       return correspondingHook.callback(correspondingHook, msg, monochrome);
     }

@@ -1,7 +1,6 @@
 const { FulfillmentError, Permissions } = require('monochrome-bot');
 
 const Hook = require('../discord_message_processors/user_and_channel_hook.js');
-const state = require('../unreloadable_data.js');
 
 // CONFIG START
 
@@ -12,20 +11,14 @@ const HELP_LONG_DESCRIPTION = 'Configure my settings. Server admins can configur
 
 // CONFIG END
 
-if (!state.settingsCommand) {
-  state.settingsCommand = {
-    msgSentForKey: {},
-    itemIdSentForKey: {},
-  };
-}
+const msgSentForKey = {};
+const itemIdSentForKey = {};
 
 const Location = {
   ME: 'me',
   THIS_SERVER: 'this server',
   THIS_CHANNEL: 'this channel',
 };
-
-const { msgSentForKey, itemIdSentForKey } = state.settingsCommand;
 
 const CATEGORY_DESCRIPTION = 'The following subcategories and settings are available. Type the number of the one you want to see/change.';
 const HOOK_EXPIRATION_MS = 180000;
@@ -50,8 +43,8 @@ function tryUnregisterHook(hook) {
 
 function clearStateForMsg(msg) {
   const key = createKeyForMsg(msg);
-  delete state.settingsCommand.msgSentForKey[key];
-  delete state.settingsCommand.itemIdSentForKey[key];
+  delete msgSentForKey[key];
+  delete itemIdSentForKey[key];
 }
 
 async function sendMessageUnique(responseToMsg, content, itemId) {
