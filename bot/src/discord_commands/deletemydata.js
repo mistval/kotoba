@@ -53,7 +53,7 @@ module.exports = {
 
     await msg.channel.createMessage('Deleting...');
 
-    const dbUser = await UserModel.findOne({ 'discordUser.id': msg.author.id }, '_id').lean().exec();
+    const dbUser = await UserModel.findOne({ 'discordUser.id': msg.author.id }, '_id').exec();
     const dbUserId = dbUser?._id;
 
     if (dbUserId) {
@@ -78,16 +78,23 @@ module.exports = {
       ]);
 
       await ReportModel.deleteMany({ 'participants.0': { $exists: false } }).exec();
+
+      dbUser.discordUser = {
+        username: 'deleted',
+        discriminator: 'deleted',
+        id: msg.author.id,
+      };
     }
 
     await Promise.all([
-      monochrome.getSettings().resetUserSettings(msg.author.id),
+      UserModel.db.collection('monochromepersistence').deleteOne({ key: `User${msg.author.id}` }),
+      UserModel.db.collection('monochromepersistence').updateMany(
+        { key: /^shiritoriChannelDiscord_/ },
+        { $unset: { [`value.scores.${msg.author.id}`]: '' } },
+      ),
       ScoreUtils.clearUserScores(msg.author.id),
+      dbUser?.save(),
     ]);
-
-    if (dbUser) {
-      await UserModel.deleteOne({ _id: dbUser._id }).exec();
-    }
 
     return msg.channel.createMessage(`Your data has been deleted / scheduled for deletion. Deletion of database backup and log data may take up to 30 days. To opt out of all future data collection, use the **${msg.prefix}banme** command.`);
   },
