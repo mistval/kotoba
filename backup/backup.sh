@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
 bucket_name=kotoba_backup_n
 file_name=backup.tar.gz
 kotoba_directory=/root/kotoba
