@@ -4,6 +4,7 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
@@ -22,6 +23,14 @@
       "name": "Launch bot",
       "program": "${workspaceFolder}\\bot\\src\\start.js",
       "env": { "PORT": "3000"}
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "name": "Build resources",
+      "cwd": "${workspaceFolder}\\bot",
+      "args": ["run", "buildresources"]
     },
     {
       "type": "node",
