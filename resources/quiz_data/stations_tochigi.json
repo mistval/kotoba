@@ -1,0 +1,971 @@
+{
+  "uniqueId": "stations_tochigi",
+  "name": "Tochigi Stations Reading Quiz",
+  "article": "a",
+  "instructions": "Type the reading of the station name!",
+  "questionCreationStrategy": "IMAGE",
+  "dictionaryLinkStrategy": "PROVIDED_ON_CARD",
+  "answerTimeLimitStrategy": "JAPANESE_SETTINGS",
+  "cardPreprocessingStrategy": "NONE",
+  "discordFinalAnswerListElementStrategy": "QUESTION_AND_ANSWER_LINK_QUESTION",
+  "scoreAnswerStrategy": "ONE_ANSWER_ONE_POINT",
+  "additionalAnswerWaitStrategy": "JAPANESE_SETTINGS",
+  "discordIntermediateAnswerListElementStrategy": "CORRECT_ANSWERS",
+  "answerCompareStrategy": "CONVERT_KANA",
+  "commentFieldName": "Line(s)",
+  "description": "[Tochigi station names](https://mb.jorudan.co.jp/os/eki/menu_tcg/)",
+  "cards": [
+    {
+      "question": "県",
+      "answer": [
+        "あがた"
+      ],
+      "meaning": "東武伊勢崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/agata/"
+    },
+    {
+      "question": "明智平",
+      "answer": [
+        "あけちだいら"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akechidaira/"
+    },
+    {
+      "question": "足尾",
+      "answer": [
+        "あしお"
+      ],
+      "meaning": "わたらせ渓谷鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashio/"
+    },
+    {
+      "question": "足利",
+      "answer": [
+        "あしかが"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashikaga/"
+    },
+    {
+      "question": "足利市",
+      "answer": [
+        "あしかがし"
+      ],
+      "meaning": "東武伊勢崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ashikagashi/"
+    },
+    {
+      "question": "家中",
+      "answer": [
+        "いえなか"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ienaka/"
+    },
+    {
+      "question": "石橋",
+      "answer": [
+        "いしばし"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ishibashi_tochigi/"
+    },
+    {
+      "question": "板荷",
+      "answer": [
+        "いたが"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/itaga/"
+    },
+    {
+      "question": "市塙",
+      "answer": [
+        "いちはな"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ichihana/"
+    },
+    {
+      "question": "今市",
+      "answer": [
+        "いまいち"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/imaichi/"
+    },
+    {
+      "question": "岩舟",
+      "answer": [
+        "いわふね"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/iwafune/"
+    },
+    {
+      "question": "氏家",
+      "answer": [
+        "うじいえ"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ujiie/"
+    },
+    {
+      "question": "宇都宮",
+      "answer": [
+        "うつのみや"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/utsunomiya/"
+    },
+    {
+      "question": "江曽島",
+      "answer": [
+        "えそじま"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/esojima/"
+    },
+    {
+      "question": "大金",
+      "answer": [
+        "おおがね"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ogane/"
+    },
+    {
+      "question": "大桑",
+      "answer": [
+        "おおくわ"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okuwa_tochigi/"
+    },
+    {
+      "question": "大平下",
+      "answer": [
+        "おおひらした"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ohirashita/"
+    },
+    {
+      "question": "岡本",
+      "answer": [
+        "おかもと"
+      ],
+      "meaning": "宇都宮線、烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/okamoto_tochigi/"
+    },
+    {
+      "question": "男鹿高原",
+      "answer": [
+        "おじかこうげん"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ojikakogen/"
+    },
+    {
+      "question": "小俣",
+      "answer": [
+        "おまた"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omata_tochigi/"
+    },
+    {
+      "question": "思川",
+      "answer": [
+        "おもいがわ"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/omoigawa/"
+    },
+    {
+      "question": "小山",
+      "answer": [
+        "おやま"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/oyama_tochigi/"
+    },
+    {
+      "question": "温泉山麓",
+      "answer": [
+        "おんせんさんろく"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/onsen_sanroku/"
+    },
+    {
+      "question": "片岡",
+      "answer": [
+        "かたおか"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kataoka/"
+    },
+    {
+      "question": "合戦場",
+      "answer": [
+        "かっせんば"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kassemba/"
+    },
+    {
+      "question": "鹿沼",
+      "answer": [
+        "かぬま"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kanuma/"
+    },
+    {
+      "question": "蒲須坂",
+      "answer": [
+        "かますさか"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kamasusaka/"
+    },
+    {
+      "question": "上今市",
+      "answer": [
+        "かみいまいち"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-imaichi/"
+    },
+    {
+      "question": "上三依塩原温泉口",
+      "answer": [
+        "かみみよりしおばらおんせんぐち"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kami-miyorishiobara-onsenguchi/"
+    },
+    {
+      "question": "烏山",
+      "answer": [
+        "からすやま"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/karasuyama/"
+    },
+    {
+      "question": "川治温泉",
+      "answer": [
+        "かわじおんせん"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaji-onsen/"
+    },
+    {
+      "question": "川治湯元",
+      "answer": [
+        "かわじゆもと"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kawaji-yumoto/"
+    },
+    {
+      "question": "北鹿沼",
+      "answer": [
+        "きたかぬま"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-kanuma/"
+    },
+    {
+      "question": "北真岡",
+      "answer": [
+        "きたもおか"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kita-mo-oka/"
+    },
+    {
+      "question": "北山",
+      "answer": [
+        "きたやま"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kitayama_tochigi/"
+    },
+    {
+      "question": "鬼怒川温泉",
+      "answer": [
+        "きぬがわおんせん"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinugawaonsen/"
+    },
+    {
+      "question": "鬼怒川公園",
+      "answer": [
+        "きぬがわこうえん"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kinugawakoen/"
+    },
+    {
+      "question": "久下田",
+      "answer": [
+        "くげた"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kugeta/"
+    },
+    {
+      "question": "葛生",
+      "answer": [
+        "くずう"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuzuu/"
+    },
+    {
+      "question": "国谷",
+      "answer": [
+        "くにや"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuniya/"
+    },
+    {
+      "question": "黒磯",
+      "answer": [
+        "くろいそ"
+      ],
+      "meaning": "宇都宮線、東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kuroiso/"
+    },
+    {
+      "question": "黒田原",
+      "answer": [
+        "くろだはら"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kurodahara/"
+    },
+    {
+      "question": "鴻野山",
+      "answer": [
+        "こうのやま"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/konoyama/"
+    },
+    {
+      "question": "小金井",
+      "answer": [
+        "こがねい"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/koganei/"
+    },
+    {
+      "question": "小佐越",
+      "answer": [
+        "こさごえ"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kosagoe/"
+    },
+    {
+      "question": "小塙",
+      "answer": [
+        "こばな"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/kobana/"
+    },
+    {
+      "question": "笹原田",
+      "answer": [
+        "ささはらだ"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sasaharada/"
+    },
+    {
+      "question": "佐野",
+      "answer": [
+        "さの"
+      ],
+      "meaning": "両毛線、東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sano/"
+    },
+    {
+      "question": "佐野市",
+      "answer": [
+        "さのし"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/sanoshi/"
+    },
+    {
+      "question": "静和",
+      "answer": [
+        "しずわ"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shizuwa/"
+    },
+    {
+      "question": "下今市",
+      "answer": [
+        "しもいまいち"
+      ],
+      "meaning": "東武日光線、東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-imaichi/"
+    },
+    {
+      "question": "下小代",
+      "answer": [
+        "しもごしろ"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimo-goshiro/"
+    },
+    {
+      "question": "下野大沢",
+      "answer": [
+        "しもつけおおさわ"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimotsuke-osawa/"
+    },
+    {
+      "question": "下野花岡",
+      "answer": [
+        "しもつけはなおか"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shimotsuke-hanaoka/"
+    },
+    {
+      "question": "新大平下",
+      "answer": [
+        "しんおおひらした"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-ohirashita/"
+    },
+    {
+      "question": "新鹿沼",
+      "answer": [
+        "しんかぬま"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-kanuma/"
+    },
+    {
+      "question": "新高徳",
+      "answer": [
+        "しんたかとく"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-takatoku/"
+    },
+    {
+      "question": "新栃木",
+      "answer": [
+        "しんとちぎ"
+      ],
+      "meaning": "東武日光線、東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-tochigi/"
+    },
+    {
+      "question": "新藤原",
+      "answer": [
+        "しんふじわら"
+      ],
+      "meaning": "東武鬼怒川線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/shin-fujiwara/"
+    },
+    {
+      "question": "自治医大",
+      "answer": [
+        "じちいだい"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/jichi_medical_university/"
+    },
+    {
+      "question": "雀宮",
+      "answer": [
+        "すずめのみや"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/suzumenomiya/"
+    },
+    {
+      "question": "高久",
+      "answer": [
+        "たかく"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/takaku/"
+    },
+    {
+      "question": "滝",
+      "answer": [
+        "たき"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/taki_tochigi/"
+    },
+    {
+      "question": "田島",
+      "answer": [
+        "たじま"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tajima_tochigi/"
+    },
+    {
+      "question": "多田羅",
+      "answer": [
+        "たたら"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tatara_tochigi/"
+    },
+    {
+      "question": "多田",
+      "answer": [
+        "ただ"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tada_tochigi/"
+    },
+    {
+      "question": "田沼",
+      "answer": [
+        "たぬま"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tanuma/"
+    },
+    {
+      "question": "大谷向",
+      "answer": [
+        "だいやむこう"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/daiyamuko/"
+    },
+    {
+      "question": "通洞",
+      "answer": [
+        "つうどう"
+      ],
+      "meaning": "わたらせ渓谷鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsudo/"
+    },
+    {
+      "question": "鶴田",
+      "answer": [
+        "つるた"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tsuruta/"
+    },
+    {
+      "question": "寺内",
+      "answer": [
+        "てらうち"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/terauchi/"
+    },
+    {
+      "question": "展望台",
+      "answer": [
+        "てんぼうだい"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/akechidaira_lookout/"
+    },
+    {
+      "question": "天矢場",
+      "answer": [
+        "てんやば"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ten-yaba/"
+    },
+    {
+      "question": "東武和泉",
+      "answer": [
+        "とうぶいずみ"
+      ],
+      "meaning": "東武伊勢崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobu-izumi/"
+    },
+    {
+      "question": "東武宇都宮",
+      "answer": [
+        "とうぶうつのみや"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobu-utsunomiya/"
+    },
+    {
+      "question": "東武金崎",
+      "answer": [
+        "とうぶかなさき"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobu-kanasaki/"
+    },
+    {
+      "question": "東武日光",
+      "answer": [
+        "とうぶにっこう"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobu-nikko/"
+    },
+    {
+      "question": "東武ワールドスクウェア",
+      "answer": [
+        "とうぶわーるどすくうぇあ"
+      ],
+      "meaning": "東武鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tobu_world_square/"
+    },
+    {
+      "question": "栃木",
+      "answer": [
+        "とちぎ"
+      ],
+      "meaning": "両毛線、東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tochigi/"
+    },
+    {
+      "question": "富田",
+      "answer": [
+        "とみた"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/tomita_tochigi/"
+    },
+    {
+      "question": "豊原",
+      "answer": [
+        "とよはら"
+      ],
+      "meaning": "東北本線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/toyohara/"
+    },
+    {
+      "question": "中三依温泉",
+      "answer": [
+        "なかみよりおんせん"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nakamiyori-onsen/"
+    },
+    {
+      "question": "那須塩原",
+      "answer": [
+        "なすしおばら"
+      ],
+      "meaning": "宇都宮線など",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nasushiobara/"
+    },
+    {
+      "question": "那須ロープウェイ山頂",
+      "answer": [
+        "なすろーぷうぇいさんちょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nasu_ropeway_sancho/"
+    },
+    {
+      "question": "那須ロープウェイ山麓",
+      "answer": [
+        "なすろーぷうぇいさんろく"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nasu_ropeway_sanroku/"
+    },
+    {
+      "question": "七井",
+      "answer": [
+        "なない"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nanai/"
+    },
+    {
+      "question": "仁井田",
+      "answer": [
+        "にいた"
+      ],
+      "meaning": "烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niita_tochigi/"
+    },
+    {
+      "question": "西川田",
+      "answer": [
+        "にしかわだ"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishikawada/"
+    },
+    {
+      "question": "西田井",
+      "answer": [
+        "にしだい"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishidai_tochigi/"
+    },
+    {
+      "question": "西那須野",
+      "answer": [
+        "にしなすの"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nishi-nasuno/"
+    },
+    {
+      "question": "日光",
+      "answer": [
+        "にっこう"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nikko/"
+    },
+    {
+      "question": "楡木",
+      "answer": [
+        "にれぎ"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/niregi/"
+    },
+    {
+      "question": "野木",
+      "answer": [
+        "のぎ"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nogi_tochigi/"
+    },
+    {
+      "question": "野崎",
+      "answer": [
+        "のざき"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/nozaki_tochigi/"
+    },
+    {
+      "question": "原向",
+      "answer": [
+        "はらむこう"
+      ],
+      "meaning": "わたらせ渓谷鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/haramuko/"
+    },
+    {
+      "question": "福居",
+      "answer": [
+        "ふくい"
+      ],
+      "meaning": "東武伊勢崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fukui_tochigi/"
+    },
+    {
+      "question": "藤岡",
+      "answer": [
+        "ふじおか"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fujioka_tochigi/"
+    },
+    {
+      "question": "文挟",
+      "answer": [
+        "ふばさみ"
+      ],
+      "meaning": "日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/fubasami/"
+    },
+    {
+      "question": "宝積寺",
+      "answer": [
+        "ほうしゃくじ"
+      ],
+      "meaning": "宇都宮線、烏山線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/hoshakuji/"
+    },
+    {
+      "question": "堀米",
+      "answer": [
+        "ほりごめ"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/horigome/"
+    },
+    {
+      "question": "益子",
+      "answer": [
+        "ましこ"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mashiko/"
+    },
+    {
+      "question": "間藤",
+      "answer": [
+        "まとう"
+      ],
+      "meaning": "わたらせ渓谷鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mato/"
+    },
+    {
+      "question": "間々田",
+      "answer": [
+        "ままだ"
+      ],
+      "meaning": "湘南新宿ライン、宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mamada/"
+    },
+    {
+      "question": "丸山山頂",
+      "answer": [
+        "まるやまさんちょう"
+      ],
+      "meaning": "",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/maruyama_sancho/"
+    },
+    {
+      "question": "南宇都宮",
+      "answer": [
+        "みなみうつのみや"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/minami-utsunomiya/"
+    },
+    {
+      "question": "壬生",
+      "answer": [
+        "みぶ"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mibu/"
+    },
+    {
+      "question": "明神",
+      "answer": [
+        "みょうじん"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/myojin/"
+    },
+    {
+      "question": "真岡",
+      "answer": [
+        "もおか"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/mo-oka/"
+    },
+    {
+      "question": "茂木",
+      "answer": [
+        "もてぎ"
+      ],
+      "meaning": "真岡鐵道",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/motegi/"
+    },
+    {
+      "question": "樅山",
+      "answer": [
+        "もみやま"
+      ],
+      "meaning": "東武日光線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/momiyama/"
+    },
+    {
+      "question": "矢板",
+      "answer": [
+        "やいた"
+      ],
+      "meaning": "宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yaita/"
+    },
+    {
+      "question": "野州大塚",
+      "answer": [
+        "やしゅうおおつか"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashu-otsuka/"
+    },
+    {
+      "question": "野州平川",
+      "answer": [
+        "やしゅうひらかわ"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashu-hirakawa/"
+    },
+    {
+      "question": "野州山辺",
+      "answer": [
+        "やしゅうやまべ"
+      ],
+      "meaning": "東武伊勢崎線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yashu-yamabe/"
+    },
+    {
+      "question": "安塚",
+      "answer": [
+        "やすづか"
+      ],
+      "meaning": "東武宇都宮線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yasuzuka/"
+    },
+    {
+      "question": "山前",
+      "answer": [
+        "やままえ"
+      ],
+      "meaning": "両毛線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yamamae/"
+    },
+    {
+      "question": "湯西川温泉",
+      "answer": [
+        "ゆにしがわおんせん"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yunishigawaonsen/"
+    },
+    {
+      "question": "吉水",
+      "answer": [
+        "よしみず"
+      ],
+      "meaning": "東武佐野線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/yoshimizu/"
+    },
+    {
+      "question": "龍王峡",
+      "answer": [
+        "りゅうおうきょう"
+      ],
+      "meaning": "野岩鉄道会津鬼怒川線",
+      "dictionaryLinkUri": "https://mb.jorudan.co.jp/os/eki/ryuokyo/"
+    }
+  ]
+}
