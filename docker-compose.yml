@@ -50,7 +50,7 @@ services:
       - mongo_readwrite
   mongo_readwrite:
     image: mongo:4.4.9
-    command: '--wiredTigerCacheSizeGB 0.25'
+    command: '--wiredTigerCacheSizeGB 1.00'
     restart: unless-stopped
     volumes:
       - ./user_data/mongo_readwrite_data:/data/db
