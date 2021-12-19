@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "bootstrap-material-design-icons": "^2.2.0",
     "csv-parse": "^4.4.0",
     "csv-stringify": "^5.3.0",
