@@ -4,6 +4,11 @@ import defaultAvatar from '../../img/discord_default_avatar.png';
 import NotificationStripe from '../../controls/notification_stripe';
 import Analytics from '../../util/analytics';
 
+const ShowMode = {
+  all: 'all',
+  wrong: 'wrong',
+};
+
 const trophies = ['🏆', '🥈', '🥉'];
 
 const styles = {
@@ -52,11 +57,18 @@ function ScorersCell({ scorers, participantForId }) {
   );
 }
 
+function didAnswerCard(card, participantForId, selfUserId) {
+  const selfWasInGame = Boolean(participantForId[selfUserId]);
+  const selfDidAnswer = card.correctAnswerers.includes(selfUserId);
+  const anyoneDidAnswer = card.correctAnswerers.length > 0;
+
+  return (selfWasInGame && selfDidAnswer) || (!selfWasInGame && anyoneDidAnswer);
+}
+
 function CardRow({
   card, participantForId, onCheck, selfUserId,
 }) {
-  const selfWasInGame = !!participantForId[selfUserId];
-  const rowClass = !selfWasInGame || card.correctAnswerers.indexOf(selfUserId) !== -1
+  const rowClass = didAnswerCard(card, participantForId, selfUserId)
     ? ''
     : 'alert alert-danger';
 
@@ -89,12 +101,6 @@ class Questions extends PureComponent {
   }
 }
 
-const loginErrorMessage = (
-  <span>
-    You must be logged in to do that.
-    <a href="/api/login" className="text-info">Login</a>
-  </span>
-);
 const noDecksErrorMessage = (
   <span>
     You don't have any custom decks yet.
@@ -137,13 +143,18 @@ class ReportView extends Component {
       showStripeMessage: false,
       stripeMessage: '',
       stripeMessageIsError: false,
-      checkAll: false,
-      anySelected: false,
       customDecks: undefined,
-      checkedLogin: false,
       adding: false,
       selectedDeckIndex: -1,
     };
+  }
+
+  allSelectableSelected() {
+    return this.state.questionsToShow.every(c => c.checked || !c.canCopyToCustomDeck);
+  }
+
+  anySelected() {
+    return this.state.questionsToShow.some(c => c.checked);
   }
 
   async loadReport() {
@@ -151,7 +162,7 @@ class ReportView extends Component {
 
     try {
       const report = (await axios.get(`/api/game_reports/${reportId}`)).data;
-      this.setState({ report });
+      this.setState({ report, questionsToShow: report.questions });
     } catch (err) {
       let errorMessage;
       if (err.response && err.response.status === 404) {
@@ -193,40 +204,44 @@ class ReportView extends Component {
     Analytics.setPageView('/dashboard/reports');
   }
 
+  onShowModeChanged = (ev) => {
+    if (ev.target.value === ShowMode.all) {
+      this.setState(prev => ({
+        ...prev,
+        questionsToShow: prev.report.questions,
+      }));
+    } else {
+      this.setState(prev => ({
+        ...prev,
+        questionsToShow: prev.report.questions.filter(q => !didAnswerCard(q, this.getParticipantForId(), this.props.user?._id)),
+      }));
+    }
+  }
+
   onCardChecked = (index) => {
     this.setState((state) => {
-      const newState = { ...state };
-      newState.report = { ...state.report };
-      newState.report.questions = [...newState.report.questions];
+      const newQuestionsToShow = state.questionsToShow.map((q, i) => {
+        if (i === index) {
+          return {
+            ...q,
+            checked: !q.checked && q.canCopyToCustomDeck,
+          };
+        }
 
-      const card = { ...newState.report.questions[index] };
-      newState.report.questions[index] = card;
-      card.checked = !card.checked && card.canCopyToCustomDeck;
+        return q;
+      });
 
-      if (!card.checked) {
-        newState.checkAll = false;
-      }
-
-      if (card.checked) {
-        newState.anySelected = true;
-      } else {
-        newState.anySelected = newState.report.questions.some(q => q.checked);
-      }
-
-      return newState;
+      return { ...state, questionsToShow: newQuestionsToShow };
     });
   }
 
-  onCheckAll = (ev) => {
+  onCheckAllSelectable = (ev) => {
     const { checked } = ev.target;
 
     this.setState((state) => {
       const newState = { ...state };
-      newState.report = { ...state.report };
 
-      newState.checkAll = checked;
-      newState.anySelected = checked;
-      newState.report.questions = state.report.questions.map(question => ({
+      newState.questionsToShow = state.questionsToShow.map(question => ({
         ...question,
         checked: checked && question.canCopyToCustomDeck,
       }));
@@ -241,9 +256,9 @@ class ReportView extends Component {
     });
   }
 
-  onAddRequsted = () => {
-    this.setState(state => ({
-      stripeMessage: state.customDecks ? noDecksErrorMessage : loginErrorMessage,
+  onAddRequested = () => {
+    this.setState(() => ({
+      stripeMessage: noDecksErrorMessage,
       stripeMessageIsError: true,
       showStripeMessage: true,
     }));
@@ -258,7 +273,7 @@ class ReportView extends Component {
         const deck = this.state.customDecks[this.state.selectedDeckIndex];
         const request = {
           appendCards: true,
-          cards: getUniqueCards(this.state.report.questions.filter(q => q.checked).map(q => ({
+          cards: getUniqueCards(this.state.questionsToShow.filter(q => q.checked).map(q => ({
             question: q.question,
             answers: q.answers,
             comment: q.comment,
@@ -313,20 +328,26 @@ class ReportView extends Component {
     });
   }
 
-  render() {
-    if (!this.state.report) {
-      return <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />;
-    }
-
+  getParticipantForId = () => {
     const participantForId = {};
     this.state.report.participants.forEach((participant) => {
       participantForId[participant._id] = participant;
     });
 
+    return participantForId;
+  }
+
+  render() {
+    if (!this.state.report) {
+      return <NotificationStripe show={this.state.showStripeMessage} message={this.state.stripeMessage} onClose={this.onStripeCloseClicked} isError={this.state.stripeMessageIsError} />;
+    }
+
     const pointsForParticipantId = {};
     this.state.report.scores.forEach(({ user, score }) => {
       pointsForParticipantId[user] = score;
     });
+
+    const participantForId = this.getParticipantForId();
 
     return (
       <>
@@ -343,15 +364,21 @@ class ReportView extends Component {
                 <div className="d-flex flex-wrap mt-5 justify-content-center">
                   { getParticipantsAsScorerElements(this.state.report.participants, pointsForParticipantId) }
                 </div>
+                <span className="align-self-start">
+                  <select className="browser-default custom-select" onChange={this.onShowModeChanged}>
+                    <option value="all">Show all</option>
+                    <option value="unanswered">Show wrong</option>
+                  </select>
+                </span>
                 <table className="table mt-5 table-bordered table-hover">
                   <thead>
                     <tr>
                       <th width="2%">
                         <input
                           type="checkbox"
-                          disabled={!this.state.report.questions.some(q => q.canCopyToCustomDeck)}
-                          checked={this.state.checkAll}
-                          onChange={this.onCheckAll}
+                          disabled={!this.state.questionsToShow.some(q => q.canCopyToCustomDeck)}
+                          checked={this.allSelectableSelected()}
+                          onChange={this.onCheckAllSelectable}
                         />
                       </th>
                       <th scope="col" width="30%">Question</th>
@@ -362,7 +389,7 @@ class ReportView extends Component {
                   </thead>
                   <tbody>
                     <Questions
-                      cards={this.state.report.questions}
+                      cards={this.state.questionsToShow}
                       participantForId={participantForId}
                       onCardChecked={this.onCardChecked}
                       selfUserId={this.props.user?._id}
@@ -371,12 +398,12 @@ class ReportView extends Component {
                   </tbody>
                 </table>
               </div>
-              <div className={`col-12 p-0${!this.state.customDecks || this.state.customDecks.length === 0 ? '' : ' d-none'}`}>
+              <div className={`col-12 p-0${this.state.customDecks?.length === 0 ? '' : ' d-none'}`}>
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  disabled={!this.state.anySelected}
-                  onClick={this.onAddRequsted}
+                  disabled={!this.anySelected()}
+                  onClick={this.onAddRequested}
                 >
                   Add selected questions to custom deck
                 </button>
@@ -400,7 +427,7 @@ class ReportView extends Component {
                   type="submit"
                   className="btn btn-primary mb-5"
                   onClick={this.onAddToDeck}
-                  disabled={this.state.adding || this.state.selectedDeckIndex === -1 || !this.state.anySelected}
+                  disabled={this.state.adding || this.state.selectedDeckIndex === -1 || !this.anySelected()}
                 >
                   Add selected questions to deck
                 </button>
@@ -413,7 +440,6 @@ class ReportView extends Component {
             <div className="col-12">
               <h2>Pro tips</h2>
               <ul>
-                <li>If you are logged in, questions that you didn't answer are highlighted in red.</li>
                 <li>If a question cannot be checked off and added to a deck, that means its question type is not yet supported for custom decks.</li>
                 <li>
                   If you need help, need to report a bug, or make a suggestion, visit me in&nbsp;
