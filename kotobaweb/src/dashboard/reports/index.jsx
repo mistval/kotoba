@@ -364,13 +364,13 @@ class ReportView extends Component {
                 <div className="d-flex flex-wrap mt-5 justify-content-center">
                   { getParticipantsAsScorerElements(this.state.report.participants, pointsForParticipantId) }
                 </div>
-                <span className="align-self-start">
+                <span className="align-self-start mt-2">
                   <select className="browser-default custom-select" onChange={this.onShowModeChanged}>
-                    <option value="all">Show all</option>
-                    <option value="unanswered">Show wrong</option>
+                    <option value={ShowMode.all}>Show all</option>
+                    <option value={ShowMode.wrong}>Show wrong</option>
                   </select>
                 </span>
-                <table className="table mt-5 table-bordered table-hover">
+                <table className="table mt-3 table-bordered table-hover">
                   <thead>
                     <tr>
                       <th width="2%">
