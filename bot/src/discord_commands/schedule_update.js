@@ -78,7 +78,7 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
     };
 
     const promises = uniqueById(channels)
-      .map((channel) => retryPromise(() => channel.createMessage(message)));
+      .map((channel) => retryPromise(() => channel.createMessage({ ...message })));
 
     await Promise.all(promises);
   } catch (err) {
@@ -104,7 +104,7 @@ async function sendShutdownMessageToChannels(channels, logger) {
     };
 
     const promises = uniqueById(channels)
-      .map((channel) => retryPromise(() => channel.createMessage(message)));
+      .map((channel) => retryPromise(() => channel.createMessage({ ...message })));
 
     await Promise.all(promises);
   } catch (err) {
