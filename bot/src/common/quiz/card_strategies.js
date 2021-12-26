@@ -1,4 +1,5 @@
 const path = require('path');
+const assert = require('assert');
 const globals = require('../globals.js');
 const axios = require('axios').create({ timeout: 10000 });
 const renderText = require('./../render_text.js').render;
@@ -9,6 +10,7 @@ const retryPromise = require('../util/retry_promise.js');
 const WEBSTER_CTH_API_KEY = require('../../../../config/config.js').bot.apiKeys.websterCth;
 const OXFORD_APP_ID = require('../../../../config/config.js').bot.apiKeys.oxfordAppId;
 const OXFORD_API_KEY = require('../../../../config/config.js').bot.apiKeys.oxfordApiKey;
+const renderStrokes = require('./../render_text.js').renderStrokes;
 
 const URI_MAX_LENGTH = 2048;
 const JLPT_AUDIO_FILE_DIRECTORY = path.resolve(__dirname, '..', '..', '..', '..', 'resources', 'quiz_audio');
@@ -201,6 +203,21 @@ function createTextQuestionWithHint(card, quizState) {
   return Promise.resolve(question);
 }
 
+async function createQuestionImageHighlightStroke(card) {
+  const question = createQuestionCommon(card);
+
+  const strokeData = globals.resourceDatabase.getStrokeData(card.question);
+  assert(strokeData, `No stroke data for ${card.question}`);
+  const pathIndex = Math.floor(card.highlightedStrokeNormalizedIndex * strokeData.paths.length);
+
+  const pngBuffer = await renderStrokes(strokeData.paths, pathIndex, card.fontColor, card.backgroundColor);
+
+  question.bodyAsPngBuffer = pngBuffer;
+  card.answer = [(pathIndex + 1).toString()];
+
+  return question;
+}
+
 module.exports.CreateQuestionStrategy = {
   IMAGE: createImageQuestion,
   IMAGE_URI: createImageUriQuestion,
@@ -208,6 +225,7 @@ module.exports.CreateQuestionStrategy = {
   TEXT: createTextQuestion,
   JLPT_AUDIO_FILE: createJlptAudioFileQuestion,
   FORVO_AUDIO_FILE: createForvoAudioFileQuestion,
+  IMAGE_HIGHLIGHT_STROKE: createQuestionImageHighlightStroke,
 };
 
 /* SCORING STRATEGIES */
@@ -395,10 +413,16 @@ async function updateWithThesaurusSynonyms(card) {
   return card;
 }
 
+function highlightStroke(card) {
+  card.highlightedStrokeNormalizedIndex = Math.random();
+  return Promise.resolve(card);
+}
+
 module.exports.CardPreprocessingStrategy = {
   THESAURUS_SYNONYMS: updateWithThesaurusSynonyms,
   RANDOMIZE_QUESTION_CHARACTERS: randomizeQuestionCharacters,
   FORVO_AUDIO: updateWithForvoAudioUri,
+  HIGHLIGHT_STROKE: highlightStroke,
   NONE: card => Promise.resolve(card),
 };
 

@@ -4,10 +4,11 @@ const buildPronunciationTable = require('./build_pronunciation_table.js');
 const buildRandomWordsTable = require('./build_random_words_table.js');
 const buildShiritoriTable = require('./build_shiritori_table.js');
 const buildFontCharacterTable = require('./build_font_character_table.js');
+const buildKanjiVgTable = require('./build_kanji_vg_table.js');
 const { buildDeckTables, updateDeck } = require('./build_quiz_tables.js');
 
 class ResourceDatabase {
-  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath, quizDataPath) {
+  load(databasePath, pronunciationDataPath, randomWordDataPath, wordFrequencyDataPath, jmdictPath, fontsPath, quizDataPath, kanjiVgPath) {
     this.characterStatementForKey = {};
 
     const needsBuild = !fs.existsSync(databasePath);
@@ -18,6 +19,7 @@ class ResourceDatabase {
       || !jmdictPath
       || !fontsPath
       || !quizDataPath
+      || !kanjiVgPath
     )) {
       throw new Error('Cannot build resource database. Required resource paths not provided.');
     }
@@ -29,6 +31,7 @@ class ResourceDatabase {
     this.database.pragma('journal_mode = WAL');
 
     if (needsBuild) {
+      buildKanjiVgTable(this.database, kanjiVgPath);
       buildDeckTables(this.database, quizDataPath);
       buildFontCharacterTable(this.database, fontsPath);
       buildPronunciationTable(this.database, pronunciationDataPath);
@@ -43,6 +46,7 @@ class ResourceDatabase {
     this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
     this.getQuizQuestionStatement = this.database.prepare('SELECT questionJson FROM QuizQuestions WHERE deckName = ? AND idx = ?;');
     this.getQuizDeckMetaStatement = this.database.prepare('SELECT metaJson FROM QuizDecksMeta WHERE deckName = ? OR deckUniqueId = ?;');
+    this.getStrokeDataStatement = this.database.prepare('SELECT strokeDataJson FROM StrokeData WHERE kanji = ?;');
   }
 
   getQuizQuestion(deckName, index) {
@@ -86,6 +90,11 @@ WHERE fontFileName IN (${fontQuestionMarks.join(',')}) AND character IN (${chara
   searchPronunciation(searchTerm) {
     const result = this.searchPronunciationStatement.get(searchTerm);
     return JSON.parse((result || {}).resultsJson || '[]');
+  }
+
+  getStrokeData(kanji) {
+    const result = this.getStrokeDataStatement.get(kanji);
+    return JSON.parse((result || {}).strokeDataJson || 'null');
   }
 
   getRandomWord(level) {
