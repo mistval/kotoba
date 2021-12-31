@@ -1485,7 +1485,7 @@ async function doSearch(msg, monochrome, searchTerm = '') {
   const results = await deckSearchUtils.search(searchTerm);
   if (results.length === 0) {
     throw new FulfillmentError({
-      publicMessage: noDecksFoundPublicMessage,
+      publicMessage: { ...noDecksFoundPublicMessage },
       logDescription: 'No results',
     });
   }
