@@ -129,7 +129,7 @@ class GlobalTotalScoreQuery {
   getScores(startIndex, endIndex) {
     return UserGlobalTotalScoreModel
       .find({}, { lastKnownUsername: 1, score: 1, _id: 0 })
-      .sort('-score')
+      .sort('-score userId')
       .skip(startIndex)
       .limit(endIndex - startIndex)
       .lean()
@@ -185,7 +185,7 @@ class GlobalDeckScoreQuery {
           lastKnownUsername: { $last: '$lastKnownUsername' },
         },
       }, {
-        $sort: { score: -1 },
+        $sort: { score: -1, _id: 1 },
       }, {
         $skip: startIndex,
       }, {
@@ -267,7 +267,7 @@ class ServerTotalScoreQuery {
           lastKnownUsername: { $last: '$lastKnownUsername' },
         },
       }, {
-        $sort: { score: -1 },
+        $sort: { score: -1, _id: 1 },
       }, {
         $skip: startIndex,
       }, {
@@ -335,7 +335,7 @@ class ServerDeckScoreQuery {
           lastKnownUsername: { $last: '$lastKnownUsername' },
         },
       }, {
-        $sort: { score: -1 },
+        $sort: { score: -1, _id: 1 },
       }, {
         $skip: startIndex,
       }, {
