@@ -20,21 +20,34 @@ function decompressAndParseXml(filePath) {
   return result;
 }
 
-function findPaths(obj, paths = []) {
+function findPaths(obj, paths) {
+  const top = !Boolean(paths);
+
+  if (top) {
+    paths = [];
+  }
+
   if (Array.isArray(obj)) {
     obj.forEach(o => findPaths(o, paths));
   } else {
     const kvps = Object.entries(obj);
     kvps.forEach(([key, value]) => {
       if (key === 'path') {
-        paths.push(...value.map(p => p.$.d));
+        paths.push(...value.map(p => ({ d: p.$.d, id: p.$.id })));
       } else if (typeof value === 'object') {
         findPaths(value, paths);
       }
     });
   }
 
-  return paths;
+  if (top) {
+    return paths.sort((a, b) => {
+      const aStrokeNumber = Number(a.id.split('-s')[1]);
+      const bStrokeNumber = Number(b.id.split('-s')[1]);
+
+      return aStrokeNumber - bStrokeNumber;
+    }).map(e => e.d);
+  }
 }
 
 module.exports = function buildKanjiVgTable(database, kanjiVgPath) {
