@@ -10,15 +10,18 @@ async function updateDbFromUser(user, options = {}) {
     'discordUser.discriminator': user.discriminator,
   });
 
+  const $set = update;
+  const $unset = {};
+
   if (options.banReason) {
-    update.ban = { reason: options.banReason };
+    $set.ban = { reason: options.banReason };
   } else if (options.unBan) {
-    update.ban = undefined;
+    $unset.ban = '';
   }
 
   return UserModel.findOneAndUpdate(
     { 'discordUser.id': user.id },
-    update,
+    { $set, $unset },
     { upsert: true, new: true },
   ).lean();
 }
