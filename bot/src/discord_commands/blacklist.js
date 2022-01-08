@@ -20,7 +20,8 @@ module.exports = {
       });
     }
 
-    const [userId, reason] = suffix.split(' ');
+    const [userId, ...reasonArr] = suffix.split(' ');
+    const reason = reasonArr.join(' ');
 
     const blacklist = monochrome.getBlacklist();
     await blacklist.blacklistUser(userId, reason);
