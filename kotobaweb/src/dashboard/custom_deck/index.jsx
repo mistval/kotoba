@@ -88,11 +88,12 @@ function gridCardsToApiCards(gridCards) {
     if (isEmptyGridCard(gridCard)) {
       return null;
     }
+
     const apiCard = {
-      question: gridCard.question,
-      answers: gridCard.answers.replace(/、/g, ',').split(','),
-      comment: gridCard.comment,
-      instructions: gridCard.instructions,
+      question: gridCard.question.replaceAll('\\n', '\n'),
+      answers: gridCard.answers.replaceAll('、', ',').split(','),
+      comment: gridCard.comment.replaceAll('\\n', '\n'),
+      instructions: gridCard.instructions.replaceAll('\\n', '\n'),
       questionCreationStrategy: gridCard.questionCreationStrategy.toUpperCase(),
     };
 

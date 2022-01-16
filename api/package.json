@@ -6,7 +6,7 @@
     "start": "node --unhandled-rejections=warn ./server.js",
     "lint": "./node_modules/eslint/bin/eslint.js .",
     "lintfix": "./node_modules/eslint/bin/eslint.js --fix .",
-    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data"
+    "buildresources": "node ../node-common/initialize_resource_database.js ./generated/resources.dat ../resources/dictionaries/pronunciation.json ../resources/dictionaries/random_words.json ../resources/dictionaries/frequency.json ../resources/dictionaries/jmdict.json.gz ../resources/fonts ../resources/quiz_data ../resources/dictionaries/kanjivg.xml.gz"
   },
   "dependencies": {
     "@google-cloud/error-reporting": "2.0.4",
