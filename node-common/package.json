@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "7.4.3",
+    "better-sqlite3": "^7.5.0",
     "fontkit": "1.8.1",
     "glob": "7.1.6",
     "mongoose": "6.0.8",

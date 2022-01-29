@@ -14,10 +14,10 @@
   "license": "MIT",
   "dependencies": {
     "@polka/send-type": "0.5.2",
-    "canvas": "2.8.0",
+    "canvas": "^2.9.0",
     "kotoba-node-common": "file:../node-common",
     "mongoose": "6.0.10",
-    "node-fetch": "2.6.1",
+    "node-fetch": "^2.6.7",
     "polka": "0.5.2",
     "render-furigana": "^2.0.4",
     "vega": "5.17.3"
