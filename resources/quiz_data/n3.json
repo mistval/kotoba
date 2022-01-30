@@ -5746,12 +5746,11 @@
       "meaning": "neighbourhood"
     },
     {
-      "question": "頬",
+      "question": "気に入る",
       "answer": [
-        "ほお",
-        "ほほ"
+        "きにいる"
       ],
-      "meaning": "cheek (of face), face; mug, surface, surrounding area, cheek; cheeks"
+      "meaning": "to be pleased with; to suit"
     },
     {
       "question": "空港",
@@ -8868,13 +8867,6 @@
         "さくら"
       ],
       "meaning": "cherry tree; cherry blossom, decoy; fake buyer; shill, hired applauder, horse meat"
-    },
-    {
-      "question": "気に入る",
-      "answer": [
-        "きにいる"
-      ],
-      "meaning": "to be pleased with; to suit"
     }
   ]
 }
