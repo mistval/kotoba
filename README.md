@@ -48,7 +48,7 @@ VS Code is recommended for development. This repo contains a VS Code `launch.jso
 
 ### KotobaWeb
 
-Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Then:
+Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Or, use Docker: `docker run -p 27017:27017 mongo`. Then:
 
 ```sh
 cd ./node-common
