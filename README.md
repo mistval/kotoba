@@ -33,7 +33,10 @@ After following the **Configuration** instructions above:
 Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Or, use Docker: `docker run -p 27017:27017 mongo`. Then:
 
 ```sh
-cd ./bot
+cd ./node-common
+npm ci
+
+cd ../bot
 npm ci
 npm run buildresources # this takes a few minutes
 npm start
@@ -48,9 +51,12 @@ VS Code is recommended for development. This repo contains a VS Code `launch.jso
 Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Then:
 
 ```sh
-cd ./api
+cd ./node-common
 npm ci
-npm run buildall
+
+cd ../api
+npm ci
+npm run buildresources # this takes a few minutes
 npm start
 
 cd ../kotobaweb
