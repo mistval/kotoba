@@ -76,6 +76,7 @@ class SessionInformation {
     session.hardcore_ = !!saveData.hardcore;
     session.noRace_ = !!saveData.noRace;
     session.numCardsUnanswered_ = saveData.numCardsUnanswered || 0;
+    session.saveNameOverride_ = saveData.saveNameOverride;
 
     return session;
   }
@@ -165,6 +166,7 @@ class SessionInformation {
       hardcore: this.hardcore_,
       noRace: this.noRace_,
       numCardsUnanswered: this.numCardsUnanswered_,
+      saveNameOverride: this.saveNameOverride_,
     }
   }
 
@@ -247,6 +249,14 @@ class SessionInformation {
 
   getName() {
     return this.deckCollection_.getName();
+  }
+
+  getSaveName() {
+    return this.saveNameOverride_ || this.getName();
+  }
+
+  setSaveName(saveName) {
+    this.saveNameOverride_ = saveName || this.saveNameOverride_;
   }
 
   addTimer(timer) {

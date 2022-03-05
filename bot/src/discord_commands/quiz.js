@@ -1535,11 +1535,21 @@ module.exports = {
       .replace(/ *= */g, '=')
       .replace(/ *- */g, '-')
       .replace(/ *\(/g, '(')
-      .trim()
-      .toLowerCase();
+      .trim();
+
+    const cleanSuffixTokens = cleanSuffix.split(' ');
+
+    // Save operation
+    const isSave = cleanSuffixTokens[0]?.toLowerCase() === 'save';
+    if (isSave) {
+      const saveName = cleanSuffixTokens.slice(1).join(' ') || undefined;
+      return quizManager.saveQuiz(msg.channel.id, msg.author.id, saveName);
+    }
+
+    const cleanSuffixLowercase = cleanSuffix.toLowerCase();
 
     const serverSettings = getServerSettings(rawServerSettings);
-    const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffix);
+    const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffixLowercase);
 
     if (fontArgParseResult.errorDescriptionShort) {
       return throwPublicErrorFatal(
@@ -1585,11 +1595,6 @@ module.exports = {
     // View stats operation
     if (remainingTokens2.indexOf('stats') !== -1) {
       return sendStats(msg, remainingTokens2[1]);
-    }
-
-    // Save operation
-    if (remainingTokens2.indexOf('save') !== -1) {
-      return quizManager.saveQuiz(msg.channel.id, msg.author.id);
     }
 
     // Stop operation

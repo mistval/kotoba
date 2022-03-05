@@ -116,7 +116,7 @@ function skipCommand(locationId) {
   return false;
 }
 
-function saveQuizCommand(locationId, savingUserId) {
+function saveQuizCommand(locationId, savingUserId, saveName) {
   let session = state.quizManager.sessionForLocationId[locationId];
   if (!session) {
     return Promise.resolve(false);
@@ -139,6 +139,7 @@ function saveQuizCommand(locationId, savingUserId) {
     }
     if (hasSpace) {
       session.saveRequestedByUserId = savingUserId;
+      session.setSaveName(saveName);
       return session.getMessageSender().notifySaving();
     } else {
       return session.getMessageSender().notifySaveFailedNoSpace(MAX_SAVES_PER_USER);
@@ -591,7 +592,7 @@ class SaveAction extends Action {
     let session = this.getSession_();
     return Promise.resolve(closeSession(session, false)).then(() => {
       let saveData = session.createSaveData();
-      return saveManager.save(saveData, this.savingUserId_, session.getName(), session.getGameModeIdentifier());
+      return saveManager.save(saveData, this.savingUserId_, session.getSaveName(), session.getGameModeIdentifier());
     }).then(() => {
       sessionReportManager.notifyStopped(session.getLocationId(), session.getScoresForUserPairs());
       return session.getMessageSender().notifySaveSuccessful().catch(err => {
@@ -685,8 +686,8 @@ class QuizManager {
     return stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin);
   }
 
-  saveQuiz(locationId, savingUserId) {
-    return saveQuizCommand(locationId, savingUserId);
+  saveQuiz(locationId, savingUserId, saveName) {
+    return saveQuizCommand(locationId, savingUserId, saveName);
   }
 
   skip(locationId) {
