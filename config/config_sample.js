@@ -19,22 +19,23 @@ module.exports = {
     hispadicApiUri: '', // OPTIONAL but hispadic command won't work without it
   },
 
-  // Required if running KotobaWeb.com API
+  // Required for running KotobaWeb.com API (can be ignored if you're only running the bot)
   api: {
-    domain: 'http://localhost', // the domain that you're running the API on.
-    contactWebhookAddress: 'https://discordapp.com/api/webhooks/xxxxx/yyyyy', // The address of a Discord webhook to send contact form mail to
+    domain: 'http://localhost', // REQUIRED the domain that you're running the API on. The default value here is correct for running the API on your own machine.
+    contactWebhookAddress: 'https://discordapp.com/api/webhooks/xxxxx/yyyyy', // OPTIONAL but the contact form won't work without it.
     auth: {
       discord: {
-        clientId: 'your Discord application client ID for OAuth2',
-        clientSecret: 'your Discord application client secret for OAuth2',
+        clientId: 'your Discord application client ID for OAuth2', // OPTIONAL but login won't work without it
+        clientSecret: 'your Discord application client secret for OAuth2', // OPTIONAL but login won't work without it
       },
-      adminDiscordIds: ['your discord ID'],
+      adminDiscordIds: ['your discord ID'], // OPTIONAL (allows you to edit/delete anyone's custom deck if you're in this array)
     },
     session: {
-      secret: 'a secret for sessions. you can enter anything here, just make it long and unguessable and then never change it',
+      secret: 'a secret for sessions. you can enter anything here, just make it long and unguessable and then never change it', // OPTIONAL but login will be insecure without it
     },
   },
 
+  // Required for running the worker process (it's necessary only for certain bot features like furigana and quiz stats)
   worker: {
     furiganaApiUri: '', // OPTIONAL but furigana command won't work without it
   },
