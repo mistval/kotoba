@@ -12,6 +12,8 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
+function onShiritoriForeverLaxLongVowelsChanged() {}
+
 const fontDescriptionLines = fontHelper.allowedFonts
   .map((font, index) => `${index + 1}. **${font.fontFamily}** - ${font.description}`);
 fontDescriptionLines.push(`${fontHelper.allowedFonts.length + 1}. **Random** - Cycle through fonts randomly`);
@@ -303,6 +305,17 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(5, 300),
       },
+      {
+        userFacingName: 'Lax long vowels',
+        description: 'This setting controls how long vowels are treated. If enabled, when words with long vowels at the end like りょこう are played, こ and う are both valid starting letters.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori/lax_long_vowels',
+        serverOnly: false,
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
     ],
   },
   {
@@ -321,6 +334,19 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
         onChannelSettingChanged: onShiritoriForeverEnabledChanged,
+      },
+      {
+        userFacingName: 'Lax long vowels',
+        description: 'This setting controls how long vowels are treated. If enabled, when words with long vowels at the end like りょこう are played, こ and う are both valid starting letters.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori_forever/lax_long_vowels',
+        userSetting: false,
+        serverSetting: false,
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+        onChannelSettingChanged: onShiritoriForeverLaxLongVowelsChanged,
       },
     ],
   },

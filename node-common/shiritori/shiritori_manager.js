@@ -216,6 +216,7 @@ function validateConfig(config) {
   assert(typeof config.botTurnMinimumWaitInMs === typeof 1, 'Must provide numerical botTurnMinimumWaitInMs config option');
   assert(typeof config.botScoreMultiplier === typeof 1, 'Must provide numerical botScoreMultiplier config option');
   assert(typeof config.autoRejoin === typeof true, 'Must provide boolean autoRejoin config option');
+  assert(typeof config.laxLongVowels === typeof true, 'Must provide boolean laxLongVowels config option');
 }
 
 function createGame(gameID, delegate, config, resourceDatabase) {

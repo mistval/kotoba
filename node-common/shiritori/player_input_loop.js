@@ -134,7 +134,7 @@ function realPlayerTurnInputLoop(game, player) {
 
         // TODO: Because of this, there is a (very) short period of time when the loop is not
         // accepting answers and answers might get lost.
-        const answerResult = await game.strategy.tryAcceptAnswer(input, game.answerHistory, false);
+        const answerResult = await game.strategy.tryAcceptAnswer(game.config, input, game.answerHistory, false);
 
         if (answerResult.accepted) {
           const turnResult = new TurnResult(
@@ -168,7 +168,7 @@ function realPlayerTurnInputLoop(game, player) {
 }
 
 async function takeBotTurn(game) {
-  const botAnswer = await game.strategy.getViableNextResult(game.answerHistory);
+  const botAnswer = await game.strategy.getViableNextResult(game.config, game.answerHistory);
   const minDelayMs = game.config.botTurnMinimumWaitInMs;
   const maxDelayMs = game.config.botTurnMaximumWaitInMs;
   const delay = minDelayMs + Math.floor(Math.random() * (maxDelayMs - minDelayMs));
