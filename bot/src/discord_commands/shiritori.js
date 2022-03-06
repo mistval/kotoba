@@ -368,6 +368,7 @@ module.exports = {
     'shiritori/bot_turn_maximum_wait',
     'shiritori/answer_time_limit',
     'shiritori/bot_score_multiplier',
+    'shiritori/lax_long_vowels',
   ],
   async action(bot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
@@ -385,6 +386,7 @@ module.exports = {
     const botTurnMaximumWaitInMs = Math.max(botTurnMinimumWaitInMs, serverSettings['shiritori/bot_turn_maximum_wait'] * 1000);
     const singlePlayerTimeoutMs = serverSettings['shiritori/answer_time_limit'] * 1000;
     const botScoreMultiplier = serverSettings['shiritori/bot_score_multiplier'];
+    const laxLongVowels = serverSettings['shiritori/lax_long_vowels'];
 
     const settings = {
       singlePlayerTimeoutMs,
@@ -392,6 +394,7 @@ module.exports = {
       botTurnMaximumWaitInMs,
       botTurnMinimumWaitInMs,
       botScoreMultiplier,
+      laxLongVowels,
       autoRejoin: false,
     };
 

@@ -1,6 +1,7 @@
 const assert = require('assert');
 const startSequences = require('./shiritori_word_starting_sequences.js');
 const convertToHiragana = require('./../convert_to_hiragana.js');
+const lengthenerForChar = require('./../hiragana_lengtheners.js');
 
 const REJECTION_REASON = {
   UnknownWord: 'Unknown word',
@@ -22,8 +23,24 @@ const largeHiraganaForSmallHiragana = {
   ぉ: 'お',
 };
 
-function getNextWordMustStartWith(currentWordReading) {
+function getNextWordMustStartWith(settings, currentWordReading) {
   const finalCharacter = currentWordReading[currentWordReading.length - 1];
+  let secondLastCharacter = undefined;
+
+  if(currentWordReading.length >= 2) {
+    secondLastCharacter = currentWordReading[currentWordReading.length - 2];
+  }
+
+  if(settings.laxLongVowels && lengthenerForChar[secondLastCharacter] == finalCharacter) {
+    dupSettings = { ...settings };
+    dupSettings.laxLongVowels = false;  // Don't use lax long vowels twice.
+
+    // Get the normal "next word must start with" for both the last and second-last character
+    return getNextWordMustStartWith(dupSettings, currentWordReading).concat(
+      getNextWordMustStartWith(dupSettings, currentWordReading.substring(0, currentWordReading.length - 1))
+    );
+  }
+
   if (finalCharacter === 'ぢ') {
     return ['じ', 'ぢ'];
   } else if (finalCharacter === 'づ') {
@@ -42,20 +59,20 @@ function getNextWordMustStartWith(currentWordReading) {
 }
 
 class WordInformation {
-  constructor(word, reading, meaning) {
+  constructor(settings, word, reading, meaning) {
     this.word = word;
     this.reading = reading;
     this.meaning = meaning;
-    this.nextWordMustStartWith = getNextWordMustStartWith(this.reading);
+    this.nextWordMustStartWith = getNextWordMustStartWith(settings, this.reading);
     this.uri = `https://jisho.org/search/${encodeURIComponent(this.word)}`;
   }
 }
 
 class AcceptedResult {
-  constructor(word, reading, meaning, score) {
+  constructor(settings, word, reading, meaning, score) {
     this.accepted = true;
     this.score = score;
-    this.word = new WordInformation(word, reading, meaning);
+    this.word = new WordInformation(settings, word, reading, meaning);
   }
 }
 
@@ -86,7 +103,7 @@ class JapaneseGameStrategy {
     this.resourceDatabase = resourceDatabase;
   }
 
-  async tryAcceptAnswer(answer, wordInformationsHistory, isBot) {
+  async tryAcceptAnswer(settings, answer, wordInformationsHistory, isBot) {
     const hiragana = convertToHiragana(answer);
     const possibleWordInformations = this.resourceDatabase.getShiritoriWords(hiragana);
 
@@ -136,7 +153,7 @@ class JapaneseGameStrategy {
     }
 
     if (answerToUse) {
-      return new AcceptedResult(answerToUse, readingToUse, meaningToUse, readingToUse.length);
+      return new AcceptedResult(settings, answerToUse, readingToUse, meaningToUse, readingToUse.length);
     }
 
     if (alreadyUsedReadings.length > 0) {
@@ -161,7 +178,7 @@ class JapaneseGameStrategy {
     return undefined;
   }
 
-  async getViableNextResult(wordInformationsHistory) {
+  async getViableNextResult(settings, wordInformationsHistory) {
     let startSequence;
     if (wordInformationsHistory.length > 0) {
       const previousWordInformation = wordInformationsHistory[wordInformationsHistory.length - 1];
@@ -182,7 +199,7 @@ class JapaneseGameStrategy {
     // Find a word that is usable and return it.
     while (true) {
       const nextReading = possibleNextReadings[nextReadingIndex];
-      const result = await this.tryAcceptAnswer(nextReading, wordInformationsHistory, true);
+      const result = await this.tryAcceptAnswer(settings, nextReading, wordInformationsHistory, true);
       if (result.accepted) {
         return result;
       }

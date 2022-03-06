@@ -186,6 +186,17 @@ function canReact(msg, ownId) {
   return ownPermissions.has('addReactions') && ownPermissions.has('readMessageHistory');
 }
 
+async function getShiritoriForeverSettings(monochrome, guildID, channelID) {
+  const laxLongVowels = await monochrome.getSettings().getInternalSettingValue(
+    'shiritori_forever/lax_long_vowels',
+    guildID,
+    channelID,
+    '', // No need to specify user id.
+  );
+
+  return { laxLongVowels };
+}
+
 async function handleRejectedResult(monochrome, msg, rejectedResult) {
   const { rejectionReason, extraData } = rejectedResult;
   const ownId = monochrome.getErisBot().user.id;
@@ -272,20 +283,23 @@ function tryHandleMessage(monochrome, msg) {
   }
 
   let accepted = false;
-  return monochrome.getPersistence().getData(createKeyForChannel(msg.channel.id)).then((data) => {
-    const { previousWordInformation } = data;
-    return japaneseGameStrategy.tryAcceptAnswer(
-      msg.content,
-      previousWordInformation ? [previousWordInformation] : [],
-      false,
-    );
-  }).then((acceptanceResult) => {
-    ({ accepted } = acceptanceResult);
-    if (accepted) {
-      return handleAcceptedResult(monochrome, msg, acceptanceResult);
-    }
-    return handleRejectedResult(monochrome, msg, acceptanceResult);
-  })
+  return monochrome.getPersistence().getData(createKeyForChannel(msg.channel.id))
+    .then(async (data) => {
+      const { previousWordInformation } = data;
+      return japaneseGameStrategy.tryAcceptAnswer(
+        await getShiritoriForeverSettings(monochrome, msg.channel.guild.id, msg.channel.id),
+        msg.content,
+        previousWordInformation ? [previousWordInformation] : [],
+        false,
+      );
+    })
+    .then((acceptanceResult) => {
+      ({ accepted } = acceptanceResult);
+      if (accepted) {
+        return handleAcceptedResult(monochrome, msg, acceptanceResult);
+      }
+      return handleRejectedResult(monochrome, msg, acceptanceResult);
+    })
     .then(() => accepted);
 }
 
@@ -311,7 +325,10 @@ function sendEnabledMessage(monochrome, channelID) {
 
 async function sendFirstWord(monochrome, channelID) {
   const persistence = monochrome.getPersistence();
-  const result = await japaneseGameStrategy.getViableNextResult([]);
+  const result = await japaneseGameStrategy.getViableNextResult(
+    await getShiritoriForeverSettings(monochrome, '', channelID), // Can't seem to get Guild ID.
+    [],
+  );
   const wordInformation = result.word;
 
   await createMessageForTurnTaken(

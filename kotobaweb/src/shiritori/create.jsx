@@ -39,6 +39,7 @@ class Create extends PureComponent {
       botScoreMultiplier: DEFAULT_BOT_PLAYER_SCORE_MULTIPLIER_DISCRETE / 100,
       private: false,
       username: DEFAULT_USERNAME,
+      laxLongVowels: false,
     };
   }
 
@@ -63,9 +64,9 @@ class Create extends PureComponent {
     this.socket.emit(socketEvents.Client.CREATE_GAME, this.state);
   }
 
-  onPrivateGameChanged = (ev) => {
+  onCheckboxUpdate = (fieldName, ev) => {
     this.setState({
-      private: ev.target.checked,
+      [fieldName]: ev.target.checked,
     });
   }
 
@@ -121,9 +122,29 @@ class Create extends PureComponent {
                         onChange={newValue => this.onUpdateField('botScoreMultiplier', newValue / 100)}
                       />
                     </div>
-                    <div className="checkbox mt-5">
+                    <div
+                      className="checkbox mt-5"
+                      title="If true, after words ending with long vowels, the next word can start with the letter before the long vowel."
+                    >
                       <label>
-                        <input type="checkbox" name="privateGame" checked={this.state.private} onChange={this.onPrivateGameChanged} />
+                        <input
+                          type="checkbox"
+                          name="laxLongVowels"
+                          checked={this.state.laxLongVowels}
+                          onChange={ev => this.onCheckboxUpdate('laxLongVowels', ev)}
+                        />
+                        {' '}
+                        <span className="label-darker">Lax long vowels</span>
+                      </label>
+                    </div>
+                    <div className="checkbox">
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="privateGame"
+                          checked={this.state.private}
+                          onChange={ev => this.onCheckboxUpdate('private', ev)}
+                        />
                         {' '}
                         <span className="label-darker">Private game</span>
                       </label>
