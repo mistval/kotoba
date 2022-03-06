@@ -26,6 +26,7 @@ const largeHiraganaForSmallHiragana = {
 function getNextWordMustStartWith(settings, currentWordReading) {
   const finalCharacter = currentWordReading[currentWordReading.length - 1];
   let secondLastCharacter = undefined;
+  let wordHead = currentWordReading.substring(0, currentWordReading.length - 1);
 
   if(currentWordReading.length >= 2) {
     secondLastCharacter = currentWordReading[currentWordReading.length - 2];
@@ -37,8 +38,30 @@ function getNextWordMustStartWith(settings, currentWordReading) {
 
     // Get the normal "next word must start with" for both the last and second-last character
     return getNextWordMustStartWith(dupSettings, currentWordReading).concat(
-      getNextWordMustStartWith(dupSettings, currentWordReading.substring(0, currentWordReading.length - 1))
+      getNextWordMustStartWith(dupSettings, wordHead)
     );
+  }
+
+  if(settings.smallLetters && largeHiraganaForSmallHiragana[finalCharacter]) {
+    dupSettings = { ...settings };
+    dupSettings.smallLetters = false;
+
+    return [largeHiraganaForSmallHiragana[finalCharacter]].concat(
+      getNextWordMustStartWith(dupSettings, currentWordReading)
+    );
+  }
+
+  if(largeHiraganaForSmallHiragana[finalCharacter]) {
+    prevLetter = currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length - 1);
+    let accept = [];
+
+    // We want to accept　じゃ after くちぢゃ.
+    let prefixAccept = getNextWordMustStartWith(settings, prevLetter);
+    for(word of prefixAccept) {
+      accept.push(word + finalCharacter);
+    }
+
+    return accept;
   }
 
   if (finalCharacter === 'ぢ') {
@@ -49,13 +72,9 @@ function getNextWordMustStartWith(settings, currentWordReading) {
     return ['お', 'を'];
   } else if (finalCharacter === 'っ') {
     return ['つ', 'っ'];
-  } else if (!largeHiraganaForSmallHiragana[finalCharacter]) {
-    return [finalCharacter];
   }
-  return [
-    largeHiraganaForSmallHiragana[finalCharacter],
-    currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length),
-  ];
+
+  return [finalCharacter];
 }
 
 class WordInformation {

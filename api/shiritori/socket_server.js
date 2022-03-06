@@ -336,6 +336,7 @@ function coerceConfig(desiredConfig) {
   coercedConfig.botPlayers = coerceRange(0, 3, desiredConfig.botPlayers);
 
   coercedConfig.laxLongVowels = !!desiredConfig.laxLongVowels;
+  coercedConfig.smallLetters = !!desiredConfig.smallLetters;
   coercedConfig.private = !!desiredConfig.private;
   coercedConfig.autoRejoin = true;
 

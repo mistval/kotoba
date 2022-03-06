@@ -13,6 +13,7 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
 }
 
 function onShiritoriForeverLaxLongVowelsChanged() {}
+function onShiritoriForeverSmallLettersChanged() {}
 
 const fontDescriptionLines = fontHelper.allowedFonts
   .map((font, index) => `${index + 1}. **${font.fontFamily}** - ${font.description}`);
@@ -316,6 +317,17 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
       },
+      {
+        userFacingName: 'Small letters',
+        description: 'This setting controls how small letters are treated. If enabled, when words with small letters at the end like えんじょ are played, じょ and よ are both valid starting letters.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori/small_letters',
+        serverOnly: false,
+        defaultUserFacingValue: 'Enabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
     ],
   },
   {
@@ -347,6 +359,19 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
         onChannelSettingChanged: onShiritoriForeverLaxLongVowelsChanged,
+      },
+      {
+        userFacingName: 'Small letters',
+        description: 'This setting controls how small letters are treated. If enabled, when words with small letters at the end like えんじょ are played, じょ and よ are both valid starting letters.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori_forever/small_letters',
+        userSetting: false,
+        serverSetting: false,
+        defaultUserFacingValue: 'Enabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+        onChannelSettingChanged: onShiritoriForeverSmallLettersChanged,
       },
     ],
   },

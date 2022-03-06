@@ -40,6 +40,7 @@ class Create extends PureComponent {
       private: false,
       username: DEFAULT_USERNAME,
       laxLongVowels: false,
+      smallLetters: true,
     };
   }
 
@@ -135,6 +136,21 @@ class Create extends PureComponent {
                         />
                         {' '}
                         <span className="label-darker">Lax long vowels</span>
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      title="If true, after words ending with small letters, the next word can start with the small letter or the last two letters."
+                    >
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="smallLetters"
+                          checked={this.state.smallLetters}
+                          onChange={ev => this.onCheckboxUpdate('smallLetters', ev)}
+                        />
+                        {' '}
+                        <span className="label-darker">Small letters</span>
                       </label>
                     </div>
                     <div className="checkbox">
