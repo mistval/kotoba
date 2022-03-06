@@ -191,10 +191,16 @@ async function getShiritoriForeverSettings(monochrome, guildID, channelID) {
     'shiritori_forever/lax_long_vowels',
     guildID,
     channelID,
-    '', // No need to specify user id.
+    '', // This is not a per-user setting
+  );
+  const smallLetters = await monochrome.getSettings().getInternalSettingValue(
+    'shiritori_forever/small_letters',
+    guildID,
+    channelID,
+    '', // This is not a per-user setting
   );
 
-  return { laxLongVowels };
+  return { laxLongVowels, smallLetters };
 }
 
 async function handleRejectedResult(monochrome, msg, rejectedResult) {
