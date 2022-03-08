@@ -41,6 +41,7 @@ class Create extends PureComponent {
       username: DEFAULT_USERNAME,
       laxLongVowels: false,
       smallLetters: true,
+      laxDakuten: false,
     };
   }
 
@@ -151,6 +152,21 @@ class Create extends PureComponent {
                         />
                         {' '}
                         <span className="label-darker">Small letters</span>
+                      </label>
+                    </div>
+                    <div
+                      className="checkbox"
+                      title="If true, if the word ends with a character that can be dakuten'd or that can have dakuten removed, the next word can start with any of the variants."
+                    >
+                      <label>
+                        <input
+                          type="checkbox"
+                          name="laxDakuten"
+                          checked={this.state.laxDakuten}
+                          onChange={ev => this.onCheckboxUpdate('laxDakuten', ev)}
+                        />
+                        {' '}
+                        <span className="label-darker">Lax Dakuten</span>
                       </label>
                     </div>
                     <div className="checkbox">

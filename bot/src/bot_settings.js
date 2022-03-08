@@ -12,9 +12,6 @@ function onShiritoriForeverEnabledChanged(treeNode, channelID, newSettingValidat
   );
 }
 
-function onShiritoriForeverLaxLongVowelsChanged() {}
-function onShiritoriForeverSmallLettersChanged() {}
-
 const fontDescriptionLines = fontHelper.allowedFonts
   .map((font, index) => `${index + 1}. **${font.fontFamily}** - ${font.description}`);
 fontDescriptionLines.push(`${fontHelper.allowedFonts.length + 1}. **Random** - Cycle through fonts randomly`);
@@ -328,6 +325,17 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
       },
+      {
+        userFacingName: 'Lax Dakuten',
+        description: 'This setting controls whether or not dakuten variants are allowed. For instance, if さいふ is played, ぶちょう would be accepted if this setting is enabled.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori/lax_dakuten',
+        serverOnly: false,
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
     ],
   },
   {
@@ -358,7 +366,6 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
-        onChannelSettingChanged: onShiritoriForeverLaxLongVowelsChanged,
       },
       {
         userFacingName: 'Small letters',
@@ -371,7 +378,18 @@ module.exports = [
         convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
         convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
         validateInternalValue: SettingsValidators.isBoolean,
-        onChannelSettingChanged: onShiritoriForeverSmallLettersChanged,
+      },
+      {
+        userFacingName: 'Lax Dakuten',
+        description: 'This setting controls whether or not dakuten variants are allowed. For instance, if さいふ is played, ぶちょう would be accepted if this setting is enabled.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'shiritori_forever/lax_dakuten',
+        userSetting: false,
+        serverSetting: false,
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
       },
     ],
   },

@@ -218,6 +218,7 @@ function validateConfig(config) {
   assert(typeof config.autoRejoin === typeof true, 'Must provide boolean autoRejoin config option');
   assert(typeof config.laxLongVowels === typeof true, 'Must provide boolean laxLongVowels config option');
   assert(typeof config.smallLetters === typeof true, 'Must provide boolean smallLetters config option');
+  assert(typeof config.laxDakuten == typeof true, 'Must provide boolean dakuten config option');
 }
 
 function createGame(gameID, delegate, config, resourceDatabase) {
