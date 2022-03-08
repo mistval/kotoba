@@ -18,8 +18,8 @@ const AvatarPool = require('../game_common/avatar_pool.js');
 
 const MAX_TIMEOUT_MS = 300000;
 const MIN_TIMEOUT_MS = 5000;
-const BOT_TURN_WAIT_MIN_MS = 2000;
-const BOT_TURN_WAIT_MAX_MS = 5000;
+const BOT_TURN_WAIT_MIN_MS = 1000;
+const BOT_TURN_WAIT_MAX_MS = 2000;
 const MAX_BOT_SCORE_MULTIPLIER = 1;
 const MIN_BOT_SCORE_MULTIPLIER = 0;
 const MULTIPLAYER_CLOSE_DELAY_MS = 300000;
