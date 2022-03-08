@@ -337,7 +337,7 @@ function coerceConfig(desiredConfig) {
 
   coercedConfig.laxLongVowels = !!desiredConfig.laxLongVowels;
   coercedConfig.smallLetters = !!desiredConfig.smallLetters;
-  coercedConfig.lax_dakuten = !!desiredConfig.lax_dakuten;
+  coercedConfig.laxDakuten = !!desiredConfig.laxDakuten;
   coercedConfig.private = !!desiredConfig.private;
   coercedConfig.autoRejoin = true;
 
