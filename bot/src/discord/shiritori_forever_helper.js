@@ -197,10 +197,16 @@ async function getShiritoriForeverSettings(monochrome, guildID, channelID) {
     'shiritori_forever/small_letters',
     guildID,
     channelID,
-    '', // This is not a per-user setting
+    '',
+  );
+  const laxDakuten = await monochrome.getSettings().getInternalSettingValue(
+    'shiritori_forever/dakuten',
+    guildID,
+    channelID,
+    '',
   );
 
-  return { laxLongVowels, smallLetters };
+  return { laxLongVowels, smallLetters, laxDakuten };
 }
 
 async function handleRejectedResult(monochrome, msg, rejectedResult) {

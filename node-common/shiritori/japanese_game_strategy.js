@@ -2,6 +2,7 @@ const assert = require('assert');
 const startSequences = require('./shiritori_word_starting_sequences.js');
 const convertToHiragana = require('./../convert_to_hiragana.js');
 const lengthenerForChar = require('./../hiragana_lengtheners.js');
+const dakutenVariants = require('./../dakuten_variants.js');
 
 const REJECTION_REASON = {
   UnknownWord: 'Unknown word',
@@ -33,7 +34,7 @@ function getNextWordMustStartWith(settings, currentWordReading) {
   }
 
   if(settings.laxLongVowels && lengthenerForChar[secondLastCharacter] == finalCharacter) {
-    dupSettings = { ...settings };
+    let dupSettings = { ...settings };
     dupSettings.laxLongVowels = false;  // Don't use lax long vowels twice.
 
     // Get the normal "next word must start with" for both the last and second-last character
@@ -43,7 +44,7 @@ function getNextWordMustStartWith(settings, currentWordReading) {
   }
 
   if(settings.smallLetters && largeHiraganaForSmallHiragana[finalCharacter]) {
-    dupSettings = { ...settings };
+    let dupSettings = { ...settings };
     dupSettings.smallLetters = false;
 
     return [largeHiraganaForSmallHiragana[finalCharacter]].concat(
@@ -55,13 +56,22 @@ function getNextWordMustStartWith(settings, currentWordReading) {
     prevLetter = currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length - 1);
     let accept = [];
 
-    // We want to accept　じゃ after くちぢゃ.
+    // We want to accept じゃ after くちぢゃ.
     let prefixAccept = getNextWordMustStartWith(settings, prevLetter);
     for(word of prefixAccept) {
       accept.push(word + finalCharacter);
     }
 
     return accept;
+  }
+
+  // This check must happen after the long vowels check in order to process じょう properly into じょ、しょ、う、ゔ
+  // It must happen after the small letters check to process しょ correctly into じょ、しょ
+  if(settings.laxDakuten) {
+    let dupSettings = { ...settings };
+    dupSettings.laxDakuten = false;
+
+    return getNextWordMustStartWith(dupSettings, currentWordReading).concat(dakutenVariants[finalCharacter]);
   }
 
   if (finalCharacter === 'ぢ') {
