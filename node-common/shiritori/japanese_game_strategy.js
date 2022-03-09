@@ -24,6 +24,8 @@ const largeHiraganaForSmallHiragana = {
   ぉ: 'お',
 };
 
+const noStartSmallHiragana = ['ぁ', 'ぉ', 'ぅ', 'ぇ', 'ぃ'];
+
 function getNextWordMustStartWith(settings, currentWordReading) {
   const finalCharacter = currentWordReading[currentWordReading.length - 1];
   let secondLastCharacter = undefined;
@@ -52,8 +54,13 @@ function getNextWordMustStartWith(settings, currentWordReading) {
     );
   }
 
+  // For words like ソファ, we should fall back to the head to avoid cases where nothing can be played.
+  if(!settings.smallLetters && largeHiraganaForSmallHiragana[finalCharacter] && noStartSmallHiragana.includes(finalCharacter)) {
+      return getNextWordMustStartWith(settings, wordHead);
+  }
+
   if(largeHiraganaForSmallHiragana[finalCharacter]) {
-    prevLetter = currentWordReading.substring(currentWordReading.length - 2, currentWordReading.length - 1);
+    prevLetter = currentWordReading[currentWordReading.length - 2];
     let accept = [];
 
     // We want to accept じゃ after くちぢゃ.
@@ -82,6 +89,8 @@ function getNextWordMustStartWith(settings, currentWordReading) {
     return ['お', 'を'];
   } else if (finalCharacter === 'っ') {
     return ['つ', 'っ'];
+  } else if (finalCharacter === 'ゔ') {
+    return ['ゔ', 'う'];
   }
 
   return [finalCharacter];
