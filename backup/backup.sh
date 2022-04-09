@@ -2,6 +2,8 @@
 
 set -e
 
+START_DATE=$(date +%s)
+
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 
 bucket_name=kotoba_backup_n
@@ -27,3 +29,5 @@ docker run -v $kotoba_directory/backup/gsutil_volume/:/var/backup google/cloud-s
 
 rm -rf $kotoba_directory/backup/gsutil_volume
 rm -rf $kotoba_directory/backup/backup_out
+
+curl -X POST -d '{"embeds":[{"title": "Backup Complete"}]}' -H 'Content-Type: application/json' WEBHOOK_URL_HERE
