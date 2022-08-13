@@ -4,7 +4,7 @@ const staticDecks = require('./deck_list.json');
 const constants = require('./../constants.js');
 const config = require('../../../../config/config.js');
 
-const CACHE_TTL_SECONDS = 60 * 60; // 1 hour 
+const CACHE_TTL_SECONDS = 10; // 1 hour
 const DYNAMIC_DECKS_CACHE_KEY = 'dynamicDecks';
 
 let expired = false;
@@ -24,7 +24,10 @@ function refreshDynamicDeckCache() {
     .then(json => {
       dynamicDeckCache.set(DYNAMIC_DECKS_CACHE_KEY, json);
     }).catch(() => {
-      dynamicDeckCache.set(DYNAMIC_DECKS_CACHE_KEY, '');
+      dynamicDeckCache.set(
+        DYNAMIC_DECKS_CACHE_KEY,
+        dynamicDeckCache.get(DYNAMIC_DECKS_CACHE_KEY),
+      );
     });
 }
 
