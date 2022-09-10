@@ -30,4 +30,5 @@ docker run -v $kotoba_directory/backup/gsutil_volume/:/var/backup google/cloud-s
 rm -rf $kotoba_directory/backup/gsutil_volume
 rm -rf $kotoba_directory/backup/backup_out
 
-curl -X POST -d '{"embeds":[{"title": "Backup Complete"}]}' -H 'Content-Type: application/json' WEBHOOK_URL_HERE
+SECONDS_ELAPSED=$((($(date  +%s) - $START_DATE )))
+curl -X POST -d "{\"embeds\":[{\"title\": \"Backup Complete\",\"fields\":[{\"name\":\"Time Elapsed\",\"value\":\"$SECONDS_ELAPSED Seconds\"}]}]}" -H 'Content-Type: application/json' WEBHOOK_URL_HERE
