@@ -1184,7 +1184,7 @@ function getDeckNameAndModifierInformation(deckNames) {
   }).filter(x => x);
 
   const sumAppearanceWeight = decks.reduce((acc, deck) => acc + (deck.appearanceWeight ?? 0), 0);
-  const allHavePercentage = decks.every(deck => deck.appearanceWeight !== undefined);
+  const allHaveAppearanceWeight = decks.every(deck => deck.appearanceWeight !== undefined);
 
   if (sumAppearanceWeight > MAX_APPEARANCE_WEIGHT) {
     throw new FulfillmentError({
@@ -1193,7 +1193,7 @@ function getDeckNameAndModifierInformation(deckNames) {
     });
   }
 
-  if (allHavePercentage && sumAppearanceWeight !== MAX_APPEARANCE_WEIGHT) {
+  if (allHaveAppearanceWeight && sumAppearanceWeight !== MAX_APPEARANCE_WEIGHT) {
     throw new FulfillmentError({
       publicMessage: `If an appearance weight is specified for every deck, they must add up to ${MAX_APPEARANCE_WEIGHT}%.`,
       logDescription: 'The combined appearance weight of all decks must equal the max appearance weight.',
@@ -1201,9 +1201,9 @@ function getDeckNameAndModifierInformation(deckNames) {
   }
 
   const remainingToDistribute = MAX_APPEARANCE_WEIGHT - sumAppearanceWeight;
-  const decksWithoutappearanceWeight = decks.filter(d => d.appearanceWeight === undefined);
-  const appearanceWeightPerUnspecifiedDeck = remainingToDistribute / decksWithoutappearanceWeight.length;
-  decksWithoutappearanceWeight.forEach((deck) => {
+  const decksWithoutAppearanceWeight = decks.filter(d => d.appearanceWeight === undefined);
+  const appearanceWeightPerUnspecifiedDeck = remainingToDistribute / decksWithoutAppearanceWeight.length;
+  decksWithoutAppearanceWeight.forEach((deck) => {
     deck.appearanceWeight = appearanceWeightPerUnspecifiedDeck;
   });
 
