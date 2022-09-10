@@ -45,7 +45,6 @@ class DeckCollection {
 
   static createNewFromDecks(decks, gameMode, shuffle) {
     const deckCollection = new DeckCollection();
-    deckCollection.deckSettings = createDeckSettings(decks);
     deckCollection.nextCardId = 0;
     deckCollection.decks = decks;
     deckCollection.indexSet = createIndexSetForDecks(decks, shuffle);
@@ -83,7 +82,12 @@ class DeckCollection {
     deckCollection.name = saveData.name;
     deckCollection.nextCardId = saveData.nextCardId;
     deckCollection.previousCardCache = saveData.previousCardCache;
-    deckCollection.deckSettings = saveData.deckSettings ?? createDeckSettings(deckCollection.decks);
+
+    const deckSettings = saveData.deckSettings ?? createDeckSettings(deckCollection.decks);
+
+    for (let i = 0; i < deckSettings.length; ++i) {
+      Object.assign(deckCollection.decks[i], deckSettings[i]);
+    }
 
     return deckCollection;
   }
@@ -156,7 +160,6 @@ class DeckCollection {
     const decksWithCardsLeft = this.indexSet.map((cardIndexes, index) => ({
       cardIndexes,
       deck: this.decks[index],
-      deckSettings: this.deckSettings[index],
       index,
     })).filter(deck => deck.cardIndexes.length > 0);
 
@@ -164,11 +167,11 @@ class DeckCollection {
     let remainingRandomFactor = randomFactor;
 
     const deckToUse = decksWithCardsLeft.find((deck) => {
-      if (remainingRandomFactor <= deck.deckSettings.appearanceWeight) {
+      if (remainingRandomFactor <= deck.deck.appearanceWeight) {
         return true;
       }
 
-      remainingRandomFactor -= deck.deckSettings.appearanceWeight;
+      remainingRandomFactor -= deck.deck.appearanceWeight;
     }) ?? decksWithCardsLeft[decksWithCardsLeft.length - 1];
 
     const deckIndex = deckToUse.index;
@@ -325,7 +328,7 @@ class DeckCollection {
       nextCardId: this.nextCardId,
       previousCardCache: this.previousCardCache,
       initialCardCount: this.initialCardCount,
-      deckSettings: this.deckSettings,
+      deckSettings: createDeckSettings(this.decks),
     };
   }
 

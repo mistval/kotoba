@@ -318,6 +318,7 @@ class SessionInformation {
       endIndex: deck.endIndex,
       mc: deck.mc,
       internetDeck: deck.isInternetDeck,
+      appearanceWeight: deck.appearanceWeight,
     }));
   }
 

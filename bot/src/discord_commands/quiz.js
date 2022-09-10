@@ -1147,7 +1147,6 @@ function getDeckNameAndModifierInformation(deckNames) {
               logDescription: `Invalid appearance weight`,
             });
           }
-
         } else if (/(?:[0-9]*|end)-(?:[0-9]*|end)/.test(argument)) {
           const [start, end] = argument.split('-');
           startIndex = parseRangeLimit(start);

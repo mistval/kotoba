@@ -117,7 +117,7 @@ async function notifyStopped(locationId, scores) {
 }
 
 function timeout() {
-  return new Promise((fulfill, reject) => {
+  return new Promise((fulfill) => {
     setTimeout(fulfill, 5000);
   });
 }
