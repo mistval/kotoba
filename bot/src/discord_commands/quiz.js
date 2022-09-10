@@ -1135,7 +1135,7 @@ function getDeckNameAndModifierInformation(deckNames) {
 
     const deckArguments = deckName.match(/\(([^)]*)\)/);
     if (deckArguments) {
-      const arguments = deckArguments[1].replace(/\s+/g, ' ').replace(/ *- */g, '-').split('/');
+      const arguments = deckArguments[1].split('/');
       arguments.forEach((argument) => {
         if (argument === 'mc') {
           mc = true;
@@ -1591,11 +1591,13 @@ module.exports = {
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
     const cleanSuffix = substituteDeckArguments(
       suffix
-        .replace(/ +/g, ' ')
+        .replace(/\s+/g, ' ')
         .replace(/ *\+ */g, '+')
         .replace(/ *= */g, '=')
         .replace(/ *- */g, '-')
         .replace(/ *\(/g, '(')
+        .replace(/\( +/g, '(')
+        .replace(/ +\)/g, ')')
         .trim(),
     );
 
