@@ -31,7 +31,7 @@ const gameReportSchema = new mongoose.Schema({
     instructions: { type: String, default: '' },
     linkQuestion: { type: Boolean, default: false },
     uri: { type: String, default: '' },
-    correctAnswerers: [{ type: [mongoose.Schema.Types.ObjectId], required: true, ref: 'User' }],
+    correctAnswerers: [{ type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' }],
   }],
 });
 
