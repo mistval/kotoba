@@ -815,7 +815,7 @@ class DiscordMessageSender {
   notifyStoppingAllQuizzes(quizName, scores, unansweredQuestions, aggregateLink) {
     this.closeAudioConnection();
 
-    const description = 'I have to reboot for an update. I\'ll be back in about two minutes :)';
+    const description = 'I have to reboot for an update. I\'ll be back in about five minutes :)';
     return sendEndQuizMessages(
       this.commanderMessage,
       quizName,

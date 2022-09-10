@@ -94,7 +94,7 @@ async function sendShutdownMessageToChannels(channels, logger) {
     const message = {
       embed: {
         title: 'Update time!',
-        description: 'I\'m going down for a scheduled update now. See ya in about three minutes.',
+        description: 'I\'m going down for a scheduled update now. See ya in about five minutes.',
         color: EMBED_WARNING_COLOR,
         footer: {
           icon_url: FOOTER_ICON_URI,
