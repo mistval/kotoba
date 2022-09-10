@@ -5,4 +5,5 @@ module.exports = {
   delayAfterAnsweredQuestion: [0, 120],
   additionalAnswerWaitWindow: [0, 120],
   maxMissedQuestions: [0, 1000],
+  appearanceWeight: [1, 100],
 };

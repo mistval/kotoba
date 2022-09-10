@@ -27,6 +27,7 @@ const trimEmbed = require('./../common/util/trim_embed.js');
 const AudioConnectionManager = require('./../discord/audio_connection_manager.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const MAX_APPEARANCE_WEIGHT = require('kotoba-common').quizLimits.appearanceWeight[1];
 
 const timingPresetsArr = Object.values(timingPresets);
 
@@ -1115,8 +1116,6 @@ function getReviewDeckOrThrow(deck, prefix) {
   return deck;
 }
 
-const rangeRegex = /\(([0-9]*|end) *- *([0-9]*|end)\)/;
-
 function parseRangeLimit(rangeLimitStr) {
   if (rangeLimitStr === 'end') {
     return Number.MAX_SAFE_INTEGER;
@@ -1127,17 +1126,41 @@ function parseRangeLimit(rangeLimitStr) {
 
 function getDeckNameAndModifierInformation(deckNames) {
   const names = {};
-  return deckNames.map((deckName) => {
+  const decks = deckNames.map((deckName) => {
     let nameWithoutExtension = deckName;
     let startIndex;
     let endIndex;
     let mc = false;
+    let appearanceWeight = undefined;
 
-    const match = deckName.match(rangeRegex);
-    if (match) {
-      startIndex = parseRangeLimit(match[1]);
-      endIndex = parseRangeLimit(match[2]);
-      nameWithoutExtension = deckName.replace(rangeRegex, '');
+    const deckArguments = deckName.match(/\(([^)]*)\)/);
+    if (deckArguments) {
+      const arguments = deckArguments[1].replace(/\s+/g, ' ').replace(/ *- */g, '-').split('/');
+      arguments.forEach((argument) => {
+        if (argument === 'mc') {
+          mc = true;
+        } else if (/^[0-9.]+%$/.test(argument)) {
+          appearanceWeight = Number(argument.replace('%', ''));
+          if (Number.isNaN(appearanceWeight) || appearanceWeight <= 0 || appearanceWeight > MAX_APPEARANCE_WEIGHT) {
+            throw new FulfillmentError({
+              publicMessage: `Invalid appearance weight: ${argument}`,
+              logDescription: `Invalid appearance weight`,
+            });
+          }
+
+        } else if (/(?:[0-9]*|end)-(?:[0-9]*|end)/.test(argument)) {
+          const [start, end] = argument.split('-');
+          startIndex = parseRangeLimit(start);
+          endIndex = parseRangeLimit(end);
+        } else {
+          throw new FulfillmentError({
+            publicMessage: `I didn't understand the deck argument **${argument}** in ${deckName}.`,
+            logDescription: 'Invalid deck argument',
+          });
+        }
+      });
+
+      nameWithoutExtension = deckName.replace(deckArguments[0], '');
     }
 
     if (nameWithoutExtension.endsWith('-mc')) {
@@ -1152,12 +1175,39 @@ function getDeckNameAndModifierInformation(deckNames) {
         deckNameOrUniqueId: nameWithoutExtension,
         startIndex,
         endIndex,
+        appearanceWeight,
         mc,
       };
     }
 
     return undefined;
   }).filter(x => x);
+
+  const sumAppearanceWeight = decks.reduce((acc, deck) => acc + (deck.appearanceWeight ?? 0), 0);
+  const allHavePercentage = decks.every(deck => deck.appearanceWeight !== undefined);
+
+  if (sumAppearanceWeight > MAX_APPEARANCE_WEIGHT) {
+    throw new FulfillmentError({
+      publicMessage: `The combined appearance weight of all decks cannot exceed ${MAX_APPEARANCE_WEIGHT}%.`,
+      logDescription: `The combined appearance weight of all decks cannot exceed ${MAX_APPEARANCE_WEIGHT}%.`,
+    });
+  }
+
+  if (allHavePercentage && sumAppearanceWeight !== MAX_APPEARANCE_WEIGHT) {
+    throw new FulfillmentError({
+      publicMessage: `If an appearance weight is specified for every deck, they must add up to ${MAX_APPEARANCE_WEIGHT}%.`,
+      logDescription: 'The combined appearance weight of all decks must equal the max appearance weight.',
+    });
+  }
+
+  const remainingToDistribute = MAX_APPEARANCE_WEIGHT - sumAppearanceWeight;
+  const decksWithoutappearanceWeight = decks.filter(d => d.appearanceWeight === undefined);
+  const appearanceWeightPerUnspecifiedDeck = remainingToDistribute / decksWithoutappearanceWeight.length;
+  decksWithoutappearanceWeight.forEach((deck) => {
+    deck.appearanceWeight = appearanceWeightPerUnspecifiedDeck;
+  });
+
+  return decks;
 }
 
 function showSettingsHelp(msg) {
@@ -1513,6 +1563,16 @@ async function doSearch(msg, monochrome, searchTerm = '') {
   return monochrome.getNavigationManager().show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
 }
 
+function substituteDeckArguments(suffix) {
+  const regex = /\(([^)]+)\s+([^)]+)\)/;
+  let replacedSuffix = suffix;
+  while (regex.test(replacedSuffix)) {
+    replacedSuffix = replacedSuffix.replace(regex, '($1/$2)');
+  }
+
+  return replacedSuffix;
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1529,13 +1589,15 @@ module.exports = {
   ]),
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
-    const cleanSuffix = suffix
-      .replace(/ +/g, ' ')
-      .replace(/ *\+ */g, '+')
-      .replace(/ *= */g, '=')
-      .replace(/ *- */g, '-')
-      .replace(/ *\(/g, '(')
-      .trim();
+    const cleanSuffix = substituteDeckArguments(
+      suffix
+        .replace(/ +/g, ' ')
+        .replace(/ *\+ */g, '+')
+        .replace(/ *= */g, '=')
+        .replace(/ *- */g, '-')
+        .replace(/ *\(/g, '(')
+        .trim(),
+    );
 
     const cleanSuffixTokens = cleanSuffix.split(' ');
 

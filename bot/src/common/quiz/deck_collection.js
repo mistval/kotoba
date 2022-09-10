@@ -4,6 +4,7 @@ const assert = require('assert');
 const cardStrategies = require('./card_strategies.js');
 const deckLoader = require('./deck_loader.js');
 const shuffleArray = require('./../util/array.js').shuffle;
+const MAX_APPEARANCE_WEIGHT = require('kotoba-common').quizLimits.appearanceWeight[1];
 
 const NUM_OPTIONS_FOR_MC = 5;
 
@@ -31,6 +32,12 @@ function countCards(indexSet) {
   return indexSet.reduce((sum, indices) => sum + indices.length, 0);
 }
 
+function createDeckSettings(decks) {
+  return decks.map((deck) => ({
+    appearanceWeight: deck.appearanceWeight ?? (MAX_APPEARANCE_WEIGHT / decks.length),
+  }));
+}
+
 class DeckCollection {
   constructor() {
     this.discardedCards = [];
@@ -38,6 +45,7 @@ class DeckCollection {
 
   static createNewFromDecks(decks, gameMode, shuffle) {
     const deckCollection = new DeckCollection();
+    deckCollection.deckSettings = createDeckSettings(decks);
     deckCollection.nextCardId = 0;
     deckCollection.decks = decks;
     deckCollection.indexSet = createIndexSetForDecks(decks, shuffle);
@@ -75,6 +83,8 @@ class DeckCollection {
     deckCollection.name = saveData.name;
     deckCollection.nextCardId = saveData.nextCardId;
     deckCollection.previousCardCache = saveData.previousCardCache;
+    deckCollection.deckSettings = saveData.deckSettings ?? createDeckSettings(deckCollection.decks);
+
     return deckCollection;
   }
 
@@ -143,36 +153,39 @@ class DeckCollection {
       return undefined;
     }
 
-    const numDecksWithCardsLeft = this.indexSet.reduce((total, deck) =>
-      (deck.length > 0 ? total + 1 : total), 0);
+    const decksWithCardsLeft = this.indexSet.map((cardIndexes, index) => ({
+      cardIndexes,
+      deck: this.decks[index],
+      deckSettings: this.deckSettings[index],
+      index,
+    })).filter(deck => deck.cardIndexes.length > 0);
 
-    let deckWithCardsLeftIndex = Math.floor(Math.random() * numDecksWithCardsLeft);
-    let deckIndex = 0;
-    for (let i = 0; i < this.indexSet.length; i += 1) {
-      const array = this.indexSet[i];
-      if (array.length > 0) {
-        deckWithCardsLeftIndex -= 1;
+    const randomFactor = Math.random() * MAX_APPEARANCE_WEIGHT;
+    let remainingRandomFactor = randomFactor;
+
+    const deckToUse = decksWithCardsLeft.find((deck) => {
+      if (remainingRandomFactor <= deck.deckSettings.appearanceWeight) {
+        return true;
       }
-      if (deckWithCardsLeftIndex === -1) {
-        break;
-      }
-      deckIndex += 1;
-    }
+
+      remainingRandomFactor -= deck.deckSettings.appearanceWeight;
+    }) ?? decksWithCardsLeft[decksWithCardsLeft.length - 1];
+
+    const deckIndex = deckToUse.index;
+    const cardIndex = deckToUse.cardIndexes.pop();
+    const deck = deckToUse.deck;
 
     // Calculate progress before popping the next card
     // so that that card is not counted as complete.
     const progress = this.calculateProgress();
 
-    const cardIndex = this.indexSet[deckIndex].pop();
-    const deck = this.decks[deckIndex];
-
     let card = this.previousCardCache[deckIndex][cardIndex];
     if (!card) {
-      if (cardIndex >= this.decks[deckIndex].cards.length) {
+      if (cardIndex >= deck.cards.length) {
         return this.popUndisplayedCard(settings, gameMode);
       }
 
-      const deckCard = await this.decks[deckIndex].cards.get(cardIndex);
+      const deckCard = await deck.cards.get(cardIndex);
       if (!deckCard) {
         return this.popUndisplayedCard(settings, gameMode);
       }
@@ -312,6 +325,7 @@ class DeckCollection {
       nextCardId: this.nextCardId,
       previousCardCache: this.previousCardCache,
       initialCardCount: this.initialCardCount,
+      deckSettings: this.deckSettings,
     };
   }
 

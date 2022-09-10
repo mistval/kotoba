@@ -96,6 +96,7 @@ function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
   deckCopy.startIndex = resolveIndex(deckInformation.startIndex, deck.cards.length);
   deckCopy.endIndex = resolveIndex(deckInformation.endIndex, deck.cards.length);
   deckCopy.mc = deckCopy.forceMC || (deckInformation.mc && !deckCopy.forceNoMC);
+  deckCopy.appearanceWeight = deckInformation.appearanceWeight;
 
   return deckCopy;
 }
