@@ -1597,6 +1597,7 @@ module.exports = {
         .replace(/ *\(/g, '(')
         .replace(/\( +/g, '(')
         .replace(/ +\)/g, ')')
+        .replace(/, +/g, ',')
         .trim(),
     );
 
