@@ -1,4 +1,4 @@
-FROM node:16-alpine as reactBuilder
+FROM node@sha256:2c6c59cf4d34d4f937ddfcf33bab9d8bbad8658d1b9de7b97622566a52167f2b as reactBuilder
 
 WORKDIR /var
 COPY ./common ./common
