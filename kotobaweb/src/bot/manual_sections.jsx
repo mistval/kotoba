@@ -41,7 +41,12 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Mixing Decks',
-  (<p>You can mix any decks by using the + sign. For example: <span className="example">k!quiz N1+N2+N3</span>.</p>),
+  (
+    <>
+      <p>You can mix any decks by using the + sign. For example: <span className="example">k!quiz N1+N2+N3</span>.</p>
+      <p>You can also control the percentage of questions that come from each deck. For example: <span className="example">k!quiz N1(20%)+N2(30%)+N3(50%)</span>. By default, each deck has an equal chance of having the next question pulled from it.</p>
+    </>
+  ),
 ));
 
 manualSections.push(new ManualSection(
@@ -130,6 +135,24 @@ manualSections.push(new ManualSection(
         <li>No advertising (I don't mind if you put one server invite link in your deck description, but this may change if people complain).</li>
       </ol>
       <p>Violating these rules may lead to your deck being deleted or your being banned from using Kotoba. If you have questions or need to report a deck, visit <a href="https://discord.gg/S92qCjbNHt">my server</a> or use the <NavLink to="/about">contact form</NavLink>.</p>
+    </>
+  ),
+));
+
+manualSections.push(new ManualSection(
+  'Developers',
+  (
+    <>
+      <p>
+        Kotoba has a REST API which was built for use by this website. Some developers have also used the API to build things like role-granting bots
+        (i.e. you pass a certain quiz, you get a certain role). I neither encourage nor discourage this. The API has little to no documentation, may change at any time,
+        and support is limited. If that is acceptable to you, you may use the API.
+      </p>
+      <p>
+        When a quiz ends, Kotoba sends a link to a session report, which looks something like <span className="example">https://kotobaweb.com/dashboard/game_reports/631cd23b848792b5c3a1a6c1</span>.
+        You may replace the <span className="example">dashboard</span> part of the URL with <span className="example">api</span> to fetch machine-readable JSON which contains
+        scores, settings used, and other relevant information.
+      </p>
     </>
   ),
 ));
