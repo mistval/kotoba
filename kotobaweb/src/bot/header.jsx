@@ -33,6 +33,9 @@ function render() {
           <li className="nav-item">
             <NavLink exact activeClassName="active" className="nav-link submenu-nav-link" to="/bot/privacy">PRIVACY POLICY</NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink exact activeClassName="active" className="nav-link submenu-nav-link" to="/bot/tos">TERMS OF SERVICE</NavLink>
+          </li>
         </ul>
       </div>
     </div>

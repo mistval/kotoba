@@ -11,6 +11,7 @@ import KanjiGameRoom from '../kanjigame/game';
 import BotQuizManual from '../bot/quiz_manual';
 import BotQuizBuilder from '../bot/quiz_builder';
 import BotPrivacyPolicy from '../bot/privacy_policy';
+import BotTermsOfService from '../bot/tos';
 import KanjiGameJoin from '../kanjigame/join';
 import Analytics from '../util/analytics';
 import ShiritoriGameCreate from '../shiritori/create';
@@ -36,6 +37,7 @@ function render() {
           <Route exact path="/bot/quiz" component={BotQuizManual} />
           <Route exact path="/bot/quizbuilder" component={BotQuizBuilder} />
           <Route exact path="/bot/privacy" component={BotPrivacyPolicy} />
+          <Route exact path="/bot/tos" component={BotTermsOfService} />
           <Route exact path="/strokeorder" component={StrokeOrder} />
           <Route exact path="/kanjigame/create" component={KanjiGameCreate} />
           <Route exact path="/kanjigame/game" component={KanjiGameRoom} />
