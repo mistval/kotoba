@@ -27,7 +27,7 @@ ${
 `;
 
 module.exports = {
-  commandAliases: ['draw'],
+  commandAliases: ['draw', 'd'],
   uniqueId: 'draw',
   cooldown: 2,
   shortDescription: 'Test font settings by drawing some text.',
