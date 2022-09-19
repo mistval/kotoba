@@ -54,6 +54,14 @@ function sanitizeDeckPreValidation(deck) {
     return deck;
   }
 
+  if (!deck.restrictToServers) {
+    deck.restrictToServers = [];
+  }
+
+  if (typeof deck.restrictToServers === 'string') {
+    deck.restrictToServers = deck.restrictToServers.split(',').filter(Boolean);
+  }
+
   const deckCopy = { ...deck, cards: deck.cards.slice() };
 
   if (typeof deckCopy.shortName === typeof '') {
@@ -209,6 +217,14 @@ function countOccurrences(str, character) {
 function validateDeck(deck) {
   if (typeof deck !== typeof {}) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Deck is not an object. Please report this error.');
+  }
+
+  if (!Array.isArray(deck.restrictToServers)) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Restrict to servers is not an array. Please report this error.');
+  }
+
+  if (deck.restrictToServers.some(s => !/^[0-9]+$/.test(s))) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Invalid server ID to restrict usage to. Server IDs must be numbers.');
   }
 
   if (typeof deck.name !== typeof '') {

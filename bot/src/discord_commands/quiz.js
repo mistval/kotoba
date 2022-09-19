@@ -950,6 +950,25 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
   }
 }
 
+function throwIfDeckNotAllowedInServer(session) {
+  const unallowedDeck = session.getRestrictedDeckNameForThisScoreScope();
+
+  if (unallowedDeck) {
+    const message = {
+      embed: {
+        title: 'Deck not allowed in this server',
+        description: `The deck **${unallowedDeck.shortName}** cannot be used in this server.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    };
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Deck not allowed in this server',
+    });
+  }
+}
+
 async function load(
   bot,
   msg,
@@ -1009,6 +1028,8 @@ async function load(
     messageSender,
     settings,
   );
+
+  throwIfDeckNotAllowedInServer(session);
 
   try {
     if (session.requiresAudioConnection()) {
@@ -1727,13 +1748,14 @@ module.exports = {
     // At this point we have the decks and are ready to start the quiz unless:
     // 1. The game mode is not allowed in this channel.
     // 2. The deck contains internet cards, but internet decks are not allowed in this channel.
-    // 3. A quiz is already in progress in this channel.
-    // 4. We need to establish a voice connection but cannot do so
+    // 3. The deck is not allowed to be used in this server.
+    // 4. A quiz is already in progress in this channel.
+    // 5. We need to establish a voice connection but cannot do so
 
-    // 1. Check the game mode.
+    // Check the game mode.
     throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
 
-    // 2. Check if a game is in progress
+    // Check if a game is in progress
     throwIfSessionInProgressAtLocation(locationId, prefix);
 
     const {
@@ -1761,10 +1783,13 @@ module.exports = {
       isNoRace,
     );
 
-    // 3. Check for internet cards
+    // Check if deck can be used in this server
+    throwIfDeckNotAllowedInServer(session);
+
+    // Check for internet cards
     throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
 
-    // 4. Try to establish audio connection
+    // Try to establish audio connection
     if (session.requiresAudioConnection()) {
       messageSender.audioConnection = await AudioConnectionManager.create(bot, msg);
     }

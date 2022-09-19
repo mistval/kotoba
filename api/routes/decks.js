@@ -258,6 +258,7 @@ routes.patch(
       req.deckMeta.shortName = req.body.shortName || req.deckMeta.shortName;
       req.deckMeta.lastModified = Date.now();
       req.deckMeta.description = req.body.description || req.deckMeta.description || '';
+      req.deckMeta.restrictToServers = req.body.restrictToServers || req.deckMeta.restrictToServers || [];
 
       if (req.body.public !== undefined) {
         req.deckMeta.public = req.body.public;
@@ -268,6 +269,7 @@ routes.patch(
       req.deck.name = req.body.name || req.deck.name;
       req.deck.shortName = req.body.shortName || req.deck.shortName;
       req.deck._id = req.deckMeta._id;
+      req.deck.restrictToServers = req.deckMeta.restrictToServers;
 
       if (req.deck.ownerDiscordUser.id === req.user.discordUser.id) {
         req.deck.ownerDiscordUser = req.user.discordUser;
@@ -312,6 +314,7 @@ routes.post(
   async (req, res, next) => {
     try {
       let deckFull = {
+        restrictToServers: req.body.restrictToServers,
         owner: req.user._id,
         name: req.body.name,
         shortName: req.body.shortName,
@@ -333,6 +336,7 @@ routes.post(
       }
 
       const deckMeta = new CustomDeckModel({
+        restrictToServers: deckFull.restrictToServers,
         owner: req.user._id,
         name: deckFull.name,
         shortName: deckFull.shortName,

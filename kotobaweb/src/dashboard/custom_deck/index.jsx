@@ -153,6 +153,7 @@ class EditDeck extends Component {
           cards: [{ ...sampleGridCard }],
           description: '',
           public: false,
+          restrictToServers: '',
         },
         permissions: DeckPermissions.OWNER,
       });
@@ -169,6 +170,7 @@ class EditDeck extends Component {
 
       const gridDeck = {
         _id: apiDeck._id,
+        restrictToServers: apiDeck.restrictToServers?.join(',') ?? '',
         name: apiDeck.name,
         shortName: apiDeck.shortName,
         cards: apiCardsToGridCards(apiDeck.cards),
@@ -304,6 +306,7 @@ class EditDeck extends Component {
 
   onSave = async () => {
     const saveDeck = deckValidation.sanitizeDeckPreValidation({
+      restrictToServers: this.state.gridDeck.restrictToServers,
       name: this.state.gridDeck.name,
       shortName: this.state.gridDeck.shortName,
       public: this.state.gridDeck.public,
@@ -462,6 +465,17 @@ class EditDeck extends Component {
     this.setState({
       showStripe: false,
     });
+  }
+
+  onRestrictToServersChanged = (e) => {
+    const { value } = e.target;
+
+    this.setState(state => ({
+      gridDeck: {
+        ...state.gridDeck,
+        restrictToServers: value,
+      },
+    }));
   }
 
   getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
@@ -667,6 +681,16 @@ class EditDeck extends Component {
                 enableCellSelect={this.canEdit()}
                 onGridRowsUpdated={this.onGridRowsUpdated}
               />
+            </div>
+          </div>
+          <div className="row mt-5">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
+              <b>Restrict to servers</b>
+              {' '}
+              - Enter a comma-separated list of server IDs if you want to restrict where this deck can be used.
+              <div className="input-group mb-3">
+                <input type="text" className="form-control" value={this.state.gridDeck.restrictToServers} onChange={this.onRestrictToServersChanged} />
+              </div>
             </div>
           </div>
           { this.state.readWriteSecret

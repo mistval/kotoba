@@ -89,6 +89,16 @@ class SessionInformation {
     return this.scores_.scoreScopeId;
   }
 
+  getRestrictedDeckNameForThisScoreScope() {
+    const decks = this.getDeckInfo();
+    const scoreScope = this.getScoreScopeId();
+
+    return decks.find(d => {
+      const restrictTo = d.restrictToServers ?? [];
+      return restrictTo.length > 0 && !restrictTo.includes(scoreScope);
+    });
+  }
+
   requiresAudioConnection() {
     return this.deckCollection_.requiresAudioConnection();
   }
@@ -311,6 +321,7 @@ class SessionInformation {
 
   getDeckInfo() {
     return this.deckCollection_.decks.map((deck) => ({
+      restrictToServers: deck.restrictToServers,
       name: deck.name,
       shortName: deck.shortName,
       uniqueId: deck.uniqueId,
