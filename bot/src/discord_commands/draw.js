@@ -58,6 +58,7 @@ module.exports = {
     const color = argumentParseResult.color || settings.quiz_font_color;
     const bgColor = argumentParseResult.bgColor || settings.quiz_background_color;
     const size = argumentParseResult.size || settings.quiz_font_size;
+    const effect = argumentParseResult.effect || settings.quiz_font_effect;
     const text = argumentParseResult.remainingString || '日本語';
 
     if (fontFamily.toLowerCase() === fontHelper.RANDOM_FONT_ALIAS) {
@@ -68,7 +69,7 @@ module.exports = {
       return throwPublicErrorInfo('Draw', 'Please give me no more than 5 characters to draw.', 'Input too long');
     }
 
-    const renderResult = await render(text, color, bgColor, size, fontFamily, false);
+    const renderResult = await render(text, color, bgColor, size, fontFamily, effect, false);
     const fontCharWarning = fontHelper.fontFamilyCanRenderString(fontFamily, text)
       ? ''
       : '**WARNING: The selected font doesn\'t support some characters in your input.**';

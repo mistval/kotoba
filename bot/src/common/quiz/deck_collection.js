@@ -271,6 +271,9 @@ class DeckCollection {
     if (card.compareAnswer === undefined) {
       card.compareAnswer = cardStrategies.AnswerCompareStrategy[card.answerCompareStrategy];
     }
+    if (card.effect === undefined) {
+      card.effect = settings.effect;
+    }
     card.createQuestion = cardStrategies.CreateQuestionStrategy[card.questionCreationStrategy];
     card.preprocess = cardStrategies.CardPreprocessingStrategy[card.preprocessingStrategy];
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];

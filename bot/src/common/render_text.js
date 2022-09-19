@@ -8,8 +8,8 @@ function render(
   backgroundColor = 'white',
   fontSize = 96,
   fontSetting = 'Yu Mincho',
-  allowFontFallback = true,
   effect = 'none',
+  allowFontFallback = true,
 ) {
   const topPaddingInPixels = effect === 'antiocr' ? 30 : 6;
   const bottomPaddingInPixels = effect === 'antiocr' ? 30 : 6;
@@ -42,7 +42,7 @@ function render(
 
   if (effect === 'antiocr') {
     ctx.fillStyle = '#333333';
-    ctx.font = 'bold 30px Arial';
+    ctx.font = 'bold 30px DejaVu Sans';
     ctx.shadowColor = 'black';
     ctx.shadowBlur = 6;
     ctx.shadowOffsetX = 6;

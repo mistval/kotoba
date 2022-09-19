@@ -132,6 +132,10 @@ class FontHelper {
 
         return '';
       })
+      .replace(/effect\s*=\s*antiocr/ig, (m, g1) => {
+        parseResult.effect = 'antiocr'
+        return '';
+      })
       .trim();
 
     return parseResult;
