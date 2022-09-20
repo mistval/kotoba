@@ -37,7 +37,7 @@ function render(
     + measurements.actualBoundingBoxDescent
     + totalVerticalPaddingInPixels;
 
-  ctx.fillStyle = backgroundColor;
+  ctx.fillStyle = effect === 'antiocr' ? 'white' : backgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   if (effect === 'antiocr') {
