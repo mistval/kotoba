@@ -37,13 +37,13 @@ function render(
     + measurements.actualBoundingBoxDescent
     + totalVerticalPaddingInPixels;
 
-  ctx.fillStyle = effect === 'antiocr' ? 'white' : backgroundColor;
+  ctx.fillStyle = effect === 'antiocr' ? 'black' : backgroundColor;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   if (effect === 'antiocr') {
-    ctx.fillStyle = '#333333';
+    ctx.fillStyle = '#555555';
     ctx.font = 'bold 30px DejaVu Sans';
-    ctx.shadowColor = 'black';
+    ctx.shadowColor = '#333333';
     ctx.shadowBlur = 6;
     ctx.shadowOffsetX = 6;
     ctx.shadowOffsetY = 6;
