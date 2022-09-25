@@ -223,7 +223,7 @@ class Room extends EventEmitter {
       this.emitEventToAll(events.Server.ROOM_CLOSED);
       Object.keys(this.userInfoForSocketID).forEach((socketID) => {
         const unqualifiedSocketID = socketID.replace(`${namespace}#`, '');
-        const client = this.sockets.in(this.roomID).connected[unqualifiedSocketID];
+        const client = this.sockets.sockets.get(unqualifiedSocketID);
 
         if (client) {
           client.leave(this.roomID);
