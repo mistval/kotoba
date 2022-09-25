@@ -24,6 +24,8 @@ routes.get(
         return res.status(404).json({ message: 'Deck not found. Please check the link.' });
       }
 
+      res.header('Cache-Control', 'max-age=31536000');
+
       res.json(report);
     } catch (err) {
       next(err);
