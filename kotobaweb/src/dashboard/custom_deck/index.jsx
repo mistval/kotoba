@@ -154,6 +154,7 @@ class EditDeck extends Component {
           description: '',
           public: false,
           restrictToServers: '',
+          hidden: false,
         },
         permissions: DeckPermissions.OWNER,
       });
@@ -176,6 +177,7 @@ class EditDeck extends Component {
         cards: apiCardsToGridCards(apiDeck.cards),
         public: apiDeck.public || false,
         description: apiDeck.description || '',
+        hidden: apiDeck.hidden || false,
       };
 
       this.setState({ gridDeck, permissions, readWriteSecret });
@@ -242,12 +244,26 @@ class EditDeck extends Component {
   onMetadataChange = () => {
     this.setState((state) => {
       const newState = { ...state, hasUncommittedChanges: true };
-      newState.gridDeck = { ...state.gridDeck };
+      const newGridDeck = { ...state.gridDeck };
+      newState.gridDeck = newGridDeck;
 
-      newState.gridDeck.name = this.fullNameField.value;
-      newState.gridDeck.shortName = this.shortNameField.value.toLowerCase();
-      newState.gridDeck.description = this.descriptionTextArea.value;
-      newState.gridDeck.public = this.publicCheckBox.checked;
+      const hiddenChanged = this.hiddenCheckBox.checked !== newGridDeck.hidden;
+      const publicChanged = this.publicCheckBox.checked !== newGridDeck.public;
+
+      newGridDeck.name = this.fullNameField.value;
+      newGridDeck.shortName = this.shortNameField.value.toLowerCase();
+      newGridDeck.description = this.descriptionTextArea.value;
+      newGridDeck.public = this.publicCheckBox.checked;
+      newGridDeck.hidden = this.hiddenCheckBox.checked;
+      newGridDeck.restrictToServers = this.restrictToServersInput.value;
+
+      if (hiddenChanged && newGridDeck.hidden) {
+        newGridDeck.public = false;
+      }
+
+      if (publicChanged && newGridDeck.public) {
+        newGridDeck.hidden = false;
+      }
 
       return newState;
     });
@@ -310,6 +326,7 @@ class EditDeck extends Component {
       name: this.state.gridDeck.name,
       shortName: this.state.gridDeck.shortName,
       public: this.state.gridDeck.public,
+      hidden: this.state.gridDeck.hidden,
       description: this.state.gridDeck.description,
       cards: gridCardsToApiCards(this.state.gridDeck.cards),
     });
@@ -467,17 +484,6 @@ class EditDeck extends Component {
     });
   }
 
-  onRestrictToServersChanged = (e) => {
-    const { value } = e.target;
-
-    this.setState(state => ({
-      gridDeck: {
-        ...state.gridDeck,
-        restrictToServers: value,
-      },
-    }));
-  }
-
   getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
 
   getReadWriteLink = () => this.getSecretLink(this.state.readWriteSecret);
@@ -590,27 +596,6 @@ class EditDeck extends Component {
                 </span>
               </div>
             </div>
-            <div className="col-md-1 d-flex align-items-end mb-2">
-              <div className="checkbox">
-                <label>
-                  <input
-                    disabled={!this.canEdit()}
-                    type="checkbox"
-                    checked={this.state.gridDeck.public}
-                    onChange={this.onMetadataChange}
-                    ref={(el) => { this.publicCheckBox = el; }}
-                  />
-                  &nbsp;
-                  <span style={{ color: '#212529' }}>Public</span>
-&nbsp;
-                  <HelpButton
-                    popoverId="publicPopover"
-                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
-                    popoverTitle="Public Decks"
-                  />
-                </label>
-              </div>
-            </div>
           </div>
           <div className="row">
             <div className="col-md-6 offset-md-1">
@@ -684,18 +669,68 @@ class EditDeck extends Component {
             </div>
           </div>
           <div className="row mt-5">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2 d-flex align-items-end">
+              <div className="checkbox mr-3">
+                <label>
+                  <input
+                    disabled={!this.canEdit()}
+                    type="checkbox"
+                    checked={this.state.gridDeck.public}
+                    onChange={this.onMetadataChange}
+                    ref={(el) => { this.publicCheckBox = el; }}
+                  />
+                  &nbsp;
+                  <span style={{ color: '#212529' }}>Public</span>
+&nbsp;
+                  <HelpButton
+                    popoverId="publicPopover"
+                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
+                    popoverTitle="Public Decks"
+                  />
+                </label>
+              </div>
+
+              <div className="checkbox">
+                <label>
+                  <input
+                    disabled={!this.canEdit()}
+                    type="checkbox"
+                    checked={this.state.gridDeck.hidden}
+                    onChange={this.onMetadataChange}
+                    ref={(el) => { this.hiddenCheckBox = el; }}
+                  />
+                  &nbsp;
+                  <span style={{ color: '#212529' }}>Hidden</span>
+&nbsp;
+                  <HelpButton
+                    popoverId="hiddenPopover"
+                    popoverContent="<p>Hidden decks cannot be viewed or downloaded by anyone except the author or someone who possesses the edit link.</p>"
+                    popoverTitle="Hidden Decks"
+                  />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="row mt-3">
             <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
               <b>Restrict to servers</b>
               {' '}
-              - Enter a comma-separated list of server IDs if you want to restrict where this deck can be used.
+              - Enter a comma-separated list of server (or channel) IDs if you want to restrict where this deck can be used.
               <div className="input-group mb-3">
-                <input type="text" className="form-control" value={this.state.gridDeck.restrictToServers} onChange={this.onRestrictToServersChanged} />
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.gridDeck.restrictToServers}
+                  ref={(el) => { this.restrictToServersInput = el; }}
+                  onChange={this.onMetadataChange}
+                  disabled={!this.canEdit() || this.state.gridDeck.public}
+                />
               </div>
             </div>
           </div>
           { this.state.readWriteSecret
           && (
-          <div className="row mt-5">
+          <div className="row mt-3">
             <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
               <b>Edit Link</b>
               {' '}
@@ -740,7 +775,7 @@ class EditDeck extends Component {
                   and tell me. Consider the following guidelines first.
                   <ul>
                     <li>Deck should be unique, or a better version of an existing deck.</li>
-                    <li>Deck should have 300+ questions.</li>
+                    <li>Deck should have 500+ questions.</li>
                     <li>Deck should be safe-for-work.</li>
                     <li>Deck should contain few or no mistakes.</li>
                   </ul>
