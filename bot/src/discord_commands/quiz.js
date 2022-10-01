@@ -956,7 +956,7 @@ function throwIfDeckNotAllowedInServer(session) {
   if (unallowedDeck) {
     const message = {
       embed: {
-        title: 'Deck not allowed in this server',
+        title: 'Deck not allowed here',
         description: `The deck **${unallowedDeck.shortName}** cannot be used in this server or channel.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
@@ -964,7 +964,7 @@ function throwIfDeckNotAllowedInServer(session) {
 
     throw new FulfillmentError({
       publicMessage: message,
-      logDescription: 'Deck not allowed in this server',
+      logDescription: 'Deck not allowed here',
     });
   }
 }
@@ -1031,13 +1031,12 @@ async function load(
     settings,
   );
 
-  throwIfDeckNotAllowedInServer(session);
-
   try {
     if (session.requiresAudioConnection()) {
       messageSender.audioConnection = await AudioConnectionManager.create(bot, msg)
     }
 
+    throwIfDeckNotAllowedInServer(session);
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
   } catch (err) {
     await saveManager.restore(msg.author.id, memento);
