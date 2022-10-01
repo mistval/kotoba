@@ -92,10 +92,11 @@ class SessionInformation {
   getRestrictedDeckNameForThisScoreScope() {
     const decks = this.getDeckInfo();
     const scoreScope = this.getScoreScopeId();
+    const locationId = this.getLocationId();
 
     return decks.find(d => {
       const restrictTo = d.restrictToServers ?? [];
-      return restrictTo.length > 0 && !restrictTo.includes(scoreScope);
+      return restrictTo.length > 0 && !restrictTo.includes(scoreScope) && !restrictTo.includes(locationId);
     });
   }
 
@@ -322,6 +323,7 @@ class SessionInformation {
   getDeckInfo() {
     return this.deckCollection_.decks.map((deck) => ({
       restrictToServers: deck.restrictToServers,
+      hidden: deck.hidden,
       name: deck.name,
       shortName: deck.shortName,
       uniqueId: deck.uniqueId,

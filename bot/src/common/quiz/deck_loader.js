@@ -157,12 +157,13 @@ async function getCustomDeckFromDisk(deckInfo) {
     };
   });
 
-  const viewFullDeckPart = deckRaw.restrictToServers?.length > 0 && deckRaw.public === false
+  const viewFullDeckPart = deckRaw.hidden
     ? ''
     : `[View full deck](https://kotobaweb.com/dashboard/decks/${deckRaw._id}). `;
 
   const deck = {
     restrictToServers: deckRaw.restrictToServers,
+    hidden: deckRaw.hidden,
     isInternetDeck: true,
     uniqueId: deckRaw.uniqueId,
     name: deckRaw.name,
