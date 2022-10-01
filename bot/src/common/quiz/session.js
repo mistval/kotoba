@@ -39,8 +39,9 @@ class SessionInformation {
     this.currentCard_ = undefined;
   }
 
-  static createNew(locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
+  static createNew(rawStartCommand, locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
     let session = new SessionInformation();
+    session.rawStartCommand_ = rawStartCommand;
     session.isLoaded_ = false;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
@@ -57,11 +58,12 @@ class SessionInformation {
     return session;
   }
 
-  static async createFromSaveData(locationId, saveData, scoreScopeId, messageSender, settings) {
+  static async createFromSaveData(rawStartCommand, locationId, saveData, scoreScopeId, messageSender, settings) {
     let session = new SessionInformation();
     let deckCollection = await DeckCollection.createFromSaveData(saveData.deckCollectionSaveData);
     let gameMode = gameModes.find(mode => mode.serializationIdentifier === saveData.gameModeIdentifier);
 
+    session.rawStartCommand_ = rawStartCommand;
     session.isLoaded_ = true;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
@@ -81,12 +83,27 @@ class SessionInformation {
     return session;
   }
 
+  getRawStartCommand() {
+    return this.rawStartCommand_;
+  }
+
   getIsLoaded() {
     return this.isLoaded_;
   }
 
   getScoreScopeId() {
     return this.scores_.scoreScopeId;
+  }
+
+  getRestrictedDeckNameForThisScoreScope() {
+    const decks = this.getDeckInfo();
+    const scoreScope = this.getScoreScopeId();
+    const locationId = this.getLocationId();
+
+    return decks.find(d => {
+      const restrictTo = d.restrictToServers ?? [];
+      return restrictTo.length > 0 && !restrictTo.includes(scoreScope) && !restrictTo.includes(locationId);
+    });
   }
 
   requiresAudioConnection() {
@@ -311,6 +328,8 @@ class SessionInformation {
 
   getDeckInfo() {
     return this.deckCollection_.decks.map((deck) => ({
+      restrictToServers: deck.restrictToServers,
+      hidden: deck.hidden,
       name: deck.name,
       shortName: deck.shortName,
       uniqueId: deck.uniqueId,

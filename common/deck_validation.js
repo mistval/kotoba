@@ -54,6 +54,22 @@ function sanitizeDeckPreValidation(deck) {
     return deck;
   }
 
+  if (!deck.restrictToServers) {
+    deck.restrictToServers = [];
+  }
+
+  if (!deck.hidden) {
+    deck.hidden = false;
+  }
+
+  if (typeof deck.restrictToServers === 'string') {
+    deck.restrictToServers = deck.restrictToServers.split(',').filter(Boolean);
+  }
+
+  if (deck.public) {
+    deck.restrictToServers = [];
+  }
+
   const deckCopy = { ...deck, cards: deck.cards.slice() };
 
   if (typeof deckCopy.shortName === typeof '') {
@@ -209,6 +225,30 @@ function countOccurrences(str, character) {
 function validateDeck(deck) {
   if (typeof deck !== typeof {}) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Deck is not an object. Please report this error.');
+  }
+
+  if (typeof deck.hidden !== typeof true) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Hidden is not boolean. Please report this error.');
+  }
+
+  if (typeof deck.public !== typeof true) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Public is not boolean. Please report this error.');
+  }
+
+  if (deck.hidden && deck.public) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'A deck cannot be both public and hidden');
+  }
+
+  if (!Array.isArray(deck.restrictToServers)) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Restrict to servers is not an array. Please report this error.');
+  }
+
+  if (deck.restrictToServers.some(s => !/^[0-9]+$/.test(s))) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Invalid server ID to restrict usage to. Server IDs must be numbers.');
+  }
+
+  if (deck.public && deck.restrictToServers.length > 0) {
+    return createFailureValidationResult(NON_LINE_ERROR_LINE, 'A deck cannot be public and also restricted to specific servers. If you want to restrict to specific servers, make the deck hidden.');
   }
 
   if (typeof deck.name !== typeof '') {

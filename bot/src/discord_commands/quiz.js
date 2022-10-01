@@ -950,6 +950,25 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
   }
 }
 
+function throwIfDeckNotAllowedInServer(session) {
+  const unallowedDeck = session.getRestrictedDeckNameForThisScoreScope();
+
+  if (unallowedDeck) {
+    const message = {
+      embed: {
+        title: 'Deck not allowed here',
+        description: `The deck **${unallowedDeck.shortName}** cannot be used in this server or channel.`,
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    };
+
+    throw new FulfillmentError({
+      publicMessage: message,
+      logDescription: 'Deck not allowed here',
+    });
+  }
+}
+
 async function load(
   bot,
   msg,
@@ -959,6 +978,7 @@ async function load(
   internetCardsAllowed,
   logger,
   settings,
+  rawStartCommand,
 ) {
   // TODO: Need to prevent loading decks with internet cards if internet decks aren't enabled.
   // Tech debt: The deck collection shouldn't be reloading itself.
@@ -1003,6 +1023,7 @@ async function load(
 
   const saveData = await saveManager.load(memento);
   const session = await Session.createFromSaveData(
+    rawStartCommand,
     msg.channel.id,
     saveData,
     scoreScopeId,
@@ -1015,6 +1036,7 @@ async function load(
       messageSender.audioConnection = await AudioConnectionManager.create(bot, msg)
     }
 
+    throwIfDeckNotAllowedInServer(session);
     throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix);
   } catch (err) {
     await saveManager.restore(msg.author.id, memento);
@@ -1685,7 +1707,17 @@ module.exports = {
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
     if (isLoad) {
       const loadSettings = createSettingsForLoad(serverSettings, inlineSettings);
-      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
+      return load(
+        bot,
+        msg,
+        loadArgument,
+        messageSender,
+        masteryEnabled,
+        internetDecksEnabled,
+        monochrome.getLogger(),
+        loadSettings,
+        msg.content,
+      );
     }
 
     const isDm = !msg.channel.guild;
@@ -1729,13 +1761,14 @@ module.exports = {
     // At this point we have the decks and are ready to start the quiz unless:
     // 1. The game mode is not allowed in this channel.
     // 2. The deck contains internet cards, but internet decks are not allowed in this channel.
-    // 3. A quiz is already in progress in this channel.
-    // 4. We need to establish a voice connection but cannot do so
+    // 3. The deck is not allowed to be used in this server.
+    // 4. A quiz is already in progress in this channel.
+    // 5. We need to establish a voice connection but cannot do so
 
-    // 1. Check the game mode.
+    // Check the game mode.
     throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix);
 
-    // 2. Check if a game is in progress
+    // Check if a game is in progress
     throwIfSessionInProgressAtLocation(locationId, prefix);
 
     const {
@@ -1752,6 +1785,7 @@ module.exports = {
     const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode, settings.shuffle);
 
     const session = Session.createNew(
+      msg.content,
       locationId,
       invokerId,
       deckCollection,
@@ -1763,10 +1797,13 @@ module.exports = {
       isNoRace,
     );
 
-    // 3. Check for internet cards
+    // Check if deck can be used in this server
+    throwIfDeckNotAllowedInServer(session);
+
+    // Check for internet cards
     throwIfInternetCardsNotAllowed(isDm, session, internetDecksEnabled, prefix);
 
-    // 4. Try to establish audio connection
+    // Try to establish audio connection
     if (session.requiresAudioConnection()) {
       messageSender.audioConnection = await AudioConnectionManager.create(bot, msg);
     }

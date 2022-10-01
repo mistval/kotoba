@@ -20,6 +20,7 @@ const gameReportSchema = new mongoose.Schema({
   settings: { type: Object, required: true },
   decks: { type: Array, required: true },
   isLoaded: { type: Boolean, required: true },
+  rawStartCommand: { type: String, required: true },
   questions: [{
     _id: false,
     deckUniqueId: { type: String, required: true },

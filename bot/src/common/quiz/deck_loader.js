@@ -157,12 +157,18 @@ async function getCustomDeckFromDisk(deckInfo) {
     };
   });
 
+  const viewFullDeckPart = deckRaw.hidden
+    ? ''
+    : `[View full deck](https://kotobaweb.com/dashboard/decks/${deckRaw._id}). `;
+
   const deck = {
+    restrictToServers: deckRaw.restrictToServers,
+    hidden: deckRaw.hidden,
     isInternetDeck: true,
     uniqueId: deckRaw.uniqueId,
     name: deckRaw.name,
     shortName: deckRaw.shortName,
-    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}#${deckRaw.ownerDiscordUser.discriminator}. [View full deck](https://kotobaweb.com/dashboard/decks/${deckRaw._id}). ${deckRaw.description || ''}`,
+    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}#${deckRaw.ownerDiscordUser.discriminator}. ${viewFullDeckPart}${deckRaw.description || ''}`,
     article: 'a',
     dictionaryLinkStrategy: 'NONE',
     answerTimeLimitStrategy: 'JAPANESE_SETTINGS',
