@@ -978,6 +978,7 @@ async function load(
   internetCardsAllowed,
   logger,
   settings,
+  rawStartCommand,
 ) {
   // TODO: Need to prevent loading decks with internet cards if internet decks aren't enabled.
   // Tech debt: The deck collection shouldn't be reloading itself.
@@ -1022,6 +1023,7 @@ async function load(
 
   const saveData = await saveManager.load(memento);
   const session = await Session.createFromSaveData(
+    rawStartCommand,
     msg.channel.id,
     saveData,
     scoreScopeId,
@@ -1704,7 +1706,17 @@ module.exports = {
     const { isLoad, loadArgument, remainingTokens: remainingTokens3 } = consumeLoadCommandTokens(remainingTokens2);
     if (isLoad) {
       const loadSettings = createSettingsForLoad(serverSettings, inlineSettings);
-      return load(bot, msg, loadArgument, messageSender, masteryEnabled, internetDecksEnabled, monochrome.getLogger(), loadSettings);
+      return load(
+        bot,
+        msg,
+        loadArgument,
+        messageSender,
+        masteryEnabled,
+        internetDecksEnabled,
+        monochrome.getLogger(),
+        loadSettings,
+        msg.content,
+      );
     }
 
     const isDm = !msg.channel.guild;
@@ -1772,6 +1784,7 @@ module.exports = {
     const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode, settings.shuffle);
 
     const session = Session.createNew(
+      msg.content,
       locationId,
       invokerId,
       deckCollection,

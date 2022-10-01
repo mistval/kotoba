@@ -27,6 +27,7 @@ function calculateCanCopyToCustomDeck(card) {
 }
 
 function notifyStarting(
+  rawStartCommand,
   locationId,
   serverId,
   quizName,
@@ -42,7 +43,7 @@ function notifyStarting(
       });
     }
 
-    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo, isLoaded };
+    const report = { quizName, cards: [], startTime: Date.now(), serverId, settings, deckInfo, isLoaded, rawStartCommand };
     pendingReportForLocationId[locationId] = report;
   } catch (err) {
     globals.logger.error({
@@ -167,6 +168,7 @@ async function processPendingReportForLocation(channel) {
     })).filter(scoreInfo => scoreInfo.user);
 
     const reportModel = new GameReportModel({
+      rawStartCommand: report.rawStartCommand,
       sessionName: report.quizName,
       startTime: report.startTime,
       endTime: Date.now(),

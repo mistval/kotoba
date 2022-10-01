@@ -39,8 +39,9 @@ class SessionInformation {
     this.currentCard_ = undefined;
   }
 
-  static createNew(locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
+  static createNew(rawStartCommand, locationId, ownerId, deckCollection, messageSender, scoreScopeId, settings, gameMode, hardcore, noRace) {
     let session = new SessionInformation();
+    session.rawStartCommand_ = rawStartCommand;
     session.isLoaded_ = false;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
@@ -57,11 +58,12 @@ class SessionInformation {
     return session;
   }
 
-  static async createFromSaveData(locationId, saveData, scoreScopeId, messageSender, settings) {
+  static async createFromSaveData(rawStartCommand, locationId, saveData, scoreScopeId, messageSender, settings) {
     let session = new SessionInformation();
     let deckCollection = await DeckCollection.createFromSaveData(saveData.deckCollectionSaveData);
     let gameMode = gameModes.find(mode => mode.serializationIdentifier === saveData.gameModeIdentifier);
 
+    session.rawStartCommand_ = rawStartCommand;
     session.isLoaded_ = true;
     session.deckCollection_ = deckCollection;
     session.messageSender_ = messageSender;
@@ -79,6 +81,10 @@ class SessionInformation {
     session.saveNameOverride_ = saveData.saveNameOverride;
 
     return session;
+  }
+
+  getRawStartCommand() {
+    return this.rawStartCommand_;
   }
 
   getIsLoaded() {

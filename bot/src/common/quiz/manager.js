@@ -538,6 +538,7 @@ class StartAction extends Action {
     const scoreLimit = session.getScores().getScoreLimit();
 
     sessionReportManager.notifyStarting(
+      session.getRawStartCommand(),
       session.getLocationId(),
       session.getScoreScopeId(),
       name,
