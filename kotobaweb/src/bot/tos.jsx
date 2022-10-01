@@ -11,7 +11,7 @@ I reserve the right to restrict your usage of the bot at any time for any reason
 That being said I'm not going to do that unless you're being a jerk. I can and do ban people from using the bot, but it's a rare occurrence. Here are some things that may get you banned:
 
 - Using bot features to harrass anyone or any server
-- Creating public custom quiz decks that are offensive (if you do want to make quiz decks with graphic language, they must be private and have an unguessable name)
+- Creating unrestricted custom quiz decks that are offensive (if you do want to make quiz decks with graphic language, you must restrict them to your own server)
 - Attempting to attack the bot itself in any way
 - Being extremely disruptive in the support server
 

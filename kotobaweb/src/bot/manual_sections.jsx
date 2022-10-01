@@ -125,10 +125,10 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
-  'Public Custom Deck Rules',
+  'Searchable Custom Deck Rules',
   (
     <>
-      <p>If you mark your deck as public, then other users can search for it using the <span className="example">k!quiz search</span> command. Therefore public decks must follow some rules:</p>
+      <p>If you mark your deck as searchable, then other users can search for it using the <span className="example">k!quiz search</span> command. Therefore searchable decks must follow some rules:</p>
       <ol>
         <li>No explicit or mature content.</li>
         <li>No troll decks.</li>

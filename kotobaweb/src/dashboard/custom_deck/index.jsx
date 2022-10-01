@@ -606,7 +606,7 @@ class EditDeck extends Component {
                   maxLength="500"
                   className="form-control"
                   rows="4"
-                  placeholder="Enter a description and any keywords that would help users find your deck (if it's public)."
+                  placeholder="Enter a description and any keywords that would help users find your deck (if it's searchable)."
                   onChange={this.onMetadataChange}
                   value={this.state.gridDeck.description}
                   ref={(el) => { this.descriptionTextArea = el; }}
@@ -680,12 +680,12 @@ class EditDeck extends Component {
                     ref={(el) => { this.publicCheckBox = el; }}
                   />
                   &nbsp;
-                  <span style={{ color: '#212529' }}>Public</span>
+                  <span style={{ color: '#212529' }}>Searchable</span>
 &nbsp;
                   <HelpButton
                     popoverId="publicPopover"
-                    popoverContent="<p>Public decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Public%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck public.</p><p>Note that even if your deck isn't public, anyone who knows its name can still use it!</p>"
-                    popoverTitle="Public Decks"
+                    popoverContent="<p>Searchable decks can be found by anyone by using the <b>k!quiz search</b> command.</p><p>Read <a href='/bot/quiz#Searchable%20Custom%20Deck%20Rules' target='_blank'>the rules</a> before making your deck searchable.</p><p>Note that even if your deck isn't searchable, anyone who knows its name can still use it!</p>"
+                    popoverTitle="Searchable Decks"
                   />
                 </label>
               </div>
