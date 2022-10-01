@@ -113,12 +113,13 @@ function attachPermissions(req, res, next) {
 
   if (req.deckMeta.owner.equals(req.user._id) || req.user.admin) {
     req.deckPermissions = DeckPermissions.OWNER;
-
     res.header(RESPONSE_READWRITE_SECRET_HEADER, req.deckMeta.readWriteSecret);
   } else if (providedSecret === req.deckMeta.readWriteSecret) {
     req.deckPermissions = DeckPermissions.READWRITE;
-  } else {
+  } else if (!req.deckMeta.hidden) {
     req.deckPermissions = DeckPermissions.READONLY;
+  } else {
+    req.deckPermissions = DeckPermissions.NONE;
   }
 
   res.header(RESPONSE_PERMISSIONS_HEADER, req.deckPermissions);
@@ -259,17 +260,16 @@ routes.patch(
       req.deckMeta.lastModified = Date.now();
       req.deckMeta.description = req.body.description || req.deckMeta.description || '';
       req.deckMeta.restrictToServers = req.body.restrictToServers || req.deckMeta.restrictToServers || [];
-
-      if (req.body.public !== undefined) {
-        req.deckMeta.public = req.body.public;
-        req.deck.public = req.body.public;
-      }
+      req.deckMeta.public = req.body.public ?? req.deckMetadata.public ?? false;
+      req.deckMeta.hidden = req.body.hidden ?? req.deckMetadata.hidden ?? false;
 
       req.deck.description = req.body.description || req.deck.description || '';
       req.deck.name = req.body.name || req.deck.name;
       req.deck.shortName = req.body.shortName || req.deck.shortName;
       req.deck._id = req.deckMeta._id;
       req.deck.restrictToServers = req.deckMeta.restrictToServers;
+      req.deck.public = req.body.public ?? req.deck.public;
+      req.deck.hidden = req.body.hidden ?? req.deck.hidden;
 
       if (req.deck.ownerDiscordUser.id === req.user.discordUser.id) {
         req.deck.ownerDiscordUser = req.user.discordUser;
@@ -315,6 +315,7 @@ routes.post(
     try {
       let deckFull = {
         restrictToServers: req.body.restrictToServers,
+        hidden: req.body.hidden || false,
         owner: req.user._id,
         name: req.body.name,
         shortName: req.body.shortName,
@@ -337,6 +338,7 @@ routes.post(
 
       const deckMeta = new CustomDeckModel({
         restrictToServers: deckFull.restrictToServers,
+        hidden: deckFull.hidden,
         owner: req.user._id,
         name: deckFull.name,
         shortName: deckFull.shortName,

@@ -12,6 +12,7 @@ const customDeckSchema = new mongoose.Schema({
   score: { type: Number, default: 0, index: true },
   readWriteSecret: { type: String, required: false, index: false },
   restrictToServers: { type: [String], default: [], required: true },
+  hidden: { type: Boolean, default: false },
 });
 
 customDeckSchema.index({ name: 'text', description: 'text' });
