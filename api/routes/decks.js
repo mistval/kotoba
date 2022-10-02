@@ -260,8 +260,8 @@ routes.patch(
       req.deckMeta.lastModified = Date.now();
       req.deckMeta.description = req.body.description || req.deckMeta.description || '';
       req.deckMeta.restrictToServers = req.body.restrictToServers || req.deckMeta.restrictToServers || [];
-      req.deckMeta.public = req.body.public ?? req.deckMetadata.public ?? false;
-      req.deckMeta.hidden = req.body.hidden ?? req.deckMetadata.hidden ?? false;
+      req.deckMeta.public = req.body.public ?? req.deckMeta.public ?? false;
+      req.deckMeta.hidden = req.body.hidden ?? req.deckMeta.hidden ?? false;
 
       req.deck.description = req.body.description || req.deck.description || '';
       req.deck.name = req.body.name || req.deck.name;
