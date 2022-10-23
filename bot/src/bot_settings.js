@@ -59,7 +59,7 @@ module.exports = [
         defaultUserFacingValue: quizDefaults.scoreLimit.toString(),
         convertUserFacingValueToInternalValue: SettingsConverters.stringToInt,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: SettingsValidators.createRangeValidator(1, 10000),
+        validateInternalValue: SettingsValidators.createRangeValidator(1, 1000000),
       },
       {
         userFacingName: 'Unanswered question limit',
