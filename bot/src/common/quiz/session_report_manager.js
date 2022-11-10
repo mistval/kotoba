@@ -3,6 +3,7 @@ const GameReportModel = require('kotoba-node-common').models.createGameReportMod
 const globals = require('./../globals.js');
 const updateDbFromUser = require('../../discord/db_helpers/update_from_user.js');
 const updateDbFromGuild = require('../../discord/db_helpers/update_from_guild.js');
+const { safeSetTimeout } = require('kotoba-common').safeTimers;
 
 const pendingReportForLocationId = {};
 
@@ -119,7 +120,7 @@ async function notifyStopped(locationId, scores) {
 
 function timeout() {
   return new Promise((fulfill) => {
-    setTimeout(fulfill, 5000);
+    safeSetTimeout(fulfill, 5000);
   });
 }
 

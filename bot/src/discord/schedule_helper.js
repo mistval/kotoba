@@ -1,11 +1,9 @@
-const util = require('util');
 const assert = require('assert');
 const dbConnection = require('kotoba-node-common').database.connection;
 const WordScheduleModel = require('kotoba-node-common').models.createWordSchedulesModel(dbConnection);
 const { Permissions } = require('monochrome-bot');
+const { safeWait, safeSetTimeout } = require('kotoba-common').safeTimers;
 const showRandomWord = require('./show_random_word.js');
-
-const wait = util.promisify(setTimeout);
 
 const POLL_INTERVAL_MS = 60000; // 1 minute
 const CHANNEL_SPACING_DELAY_MS = 4000; // 4 seconds
@@ -115,7 +113,7 @@ async function pollLoop(monochrome) {
       // eslint-disable-next-line no-await-in-loop
       await sendSchedule(schedule, monochrome);
       // eslint-disable-next-line no-await-in-loop
-      await wait(CHANNEL_SPACING_DELAY_MS);
+      await safeWait(CHANNEL_SPACING_DELAY_MS);
     }
   } catch (err) {
     monochrome.getLogger().error({
@@ -124,7 +122,7 @@ async function pollLoop(monochrome) {
     });
   } finally {
     clearTimeout(pollLoopHandle);
-    pollLoopHandle = setTimeout(() => pollLoop(monochrome), POLL_INTERVAL_MS);
+    pollLoopHandle = safeSetTimeout(() => pollLoop(monochrome), POLL_INTERVAL_MS);
   }
 }
 

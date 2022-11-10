@@ -1,6 +1,6 @@
+const { safeWait } = require('kotoba-common').safeTimers;
 const globals = require('../common/globals.js');
 const state = require('../common/static_state.js');
-
 const retryPromise = require('../common/util/retry_promise.js');
 const quizManager = require('../common/quiz/manager.js');
 const { EMBED_WARNING_COLOR, FOOTER_ICON_URI } = require('../common/constants.js');
@@ -53,14 +53,6 @@ function uniqueById(arr) {
   });
 
   return unique;
-}
-
-function wait(ms) {
-  return new Promise((fulfill) => {
-    setTimeout(() => {
-      fulfill();
-    }, ms);
-  });
 }
 
 async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger) {
@@ -142,7 +134,7 @@ module.exports = {
       });
 
       // eslint-disable-next-line no-await-in-loop
-      await wait(NEXT_MESSAGE_DELAY_MS);
+      await safeWait(NEXT_MESSAGE_DELAY_MS);
 
       countdown -= NEXT_MESSAGE_DELAY_MS;
     }

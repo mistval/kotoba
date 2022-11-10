@@ -7,6 +7,7 @@ const convertToHiragana = require('./../util/convert_to_hiragana.js');
 const shuffleArray = require('./../util/array.js').shuffle;
 const forvoAudioCache = require('./../forvo_cache.js');
 const retryPromise = require('../util/retry_promise.js');
+const { safeSetTimeout } = require('kotoba-common').safeTimers;
 const WEBSTER_CTH_API_KEY = require('../../../../config/config.js').bot.apiKeys.websterCth;
 const OXFORD_APP_ID = require('../../../../config/config.js').bot.apiKeys.oxfordAppId;
 const OXFORD_API_KEY = require('../../../../config/config.js').bot.apiKeys.oxfordApiKey;
@@ -375,7 +376,7 @@ async function applyOxfordSynonyms(card) {
 
 function errorDelay() {
   return new Promise((fulfill) => {
-    setTimeout(() => fulfill(), 4000);
+    safeSetTimeout(() => fulfill(), 4000);
   });
 }
 

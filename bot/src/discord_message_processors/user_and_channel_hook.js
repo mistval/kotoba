@@ -1,3 +1,5 @@
+const { safeSetTimeout } = require('kotoba-common').safeTimers;
+
 const hookForUserAndChannel = {};
 
 function createHookIdentifier(userId, channelId) {
@@ -31,7 +33,7 @@ class Hook {
   setExpirationInMs(expiration, timeoutCallback) {
     clearTimeout(this.timer);
     delete this.timer;
-    this.timer = setTimeout(
+    this.timer = safeSetTimeout(
       async () => {
         try {
           this.unregister();

@@ -7,6 +7,7 @@ const cardStrategies = require('./card_strategies.js');
 const retryPromise = require('./../util/retry_promise.js');
 const globals = require('./../globals.js');
 const sessionReportManager = require('./session_report_manager.js');
+const { safeSetTimeout } = require('kotoba-common').safeTimers;
 
 const INITIAL_DELAY_IN_MS = 5000;
 const REVEAL_INTERVAL_IN_MS = 10000;
@@ -313,7 +314,7 @@ class ShowAnswersAction extends Action {
         ? this.timeLeft
         : currentCard.additionalAnswerWaitTimeInMs;
 
-      let timer = setTimeout(() => this.endTimeout(), additionalAnswerWaitTimeInMs);
+      let timer = safeSetTimeout(() => this.endTimeout(), additionalAnswerWaitTimeInMs);
       session.addTimer(timer);
     });
   }
@@ -429,7 +430,7 @@ class AskQuestionAction extends Action {
     }
 
     let session = this.getSession_();
-    let timer = setTimeout(() => {
+    let timer = safeSetTimeout(() => {
       try {
         cardStrategies.createTextQuestionWithHint(session.getCurrentCard(), session).then(question => {
           if (question) {
@@ -510,7 +511,7 @@ class AskQuestionAction extends Action {
         }).then(shownQuestionId => {
           this.shownQuestionId_ = shownQuestionId;
           this.timeoutStartTime = new Date();
-          let timer = setTimeout(() => {
+          let timer = safeSetTimeout(() => {
             try {
               fulfill(new ShowWrongAnswerAction(session, false));
             } catch(err) {
@@ -569,7 +570,7 @@ class WaitAction extends Action {
   do() {
     return new Promise((fulfill, reject) => {
       this.fulfill_ = fulfill;
-      let timer = setTimeout(() => {
+      let timer = safeSetTimeout(() => {
         fulfill(this.nextAction_);
       }, this.waitInterval_);
       this.getSession_().addTimer(timer);

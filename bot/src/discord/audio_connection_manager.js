@@ -1,9 +1,7 @@
-const util = require('util');
+const { safeWait } = require('kotoba-common').safeTimers;
 const globals = require('../common/globals.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
-
-const wait = util.promisify(setTimeout);
 
 const VOICE_READY_TIMEOUT_MS = 10000;
 const VOICE_CHANNEL_TYPE = 2;
@@ -35,7 +33,7 @@ function getVoiceChannelForUser(guild, userId) {
 }
 
 async function waitAndThrow() {
-  await wait(VOICE_READY_TIMEOUT_MS);
+  await safeWait(VOICE_READY_TIMEOUT_MS);
   return throwPublicErrorFatal('Audio', 'I could not connect to the voice channel in a timely manner. Please try again.', 'Voice timeout');
 }
 
