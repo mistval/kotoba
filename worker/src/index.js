@@ -24,6 +24,7 @@ polka().get('/users/:userId/quizstats', async (req, res) => {
 
     send(res, 200, result, { 'Content-Type': 'image/png' });
   } catch (err) {
+    console.warn(err);
     send(res, 500, { message: err.message, stack: err.stack });
   }
 }).listen(PORT, (err) => {
