@@ -1,5 +1,4 @@
 const axios = require('axios').create({ timeout: 10000 });
-const qs = require('qs');
 const { Permissions } = require('monochrome-bot');
 const { throwPublicErrorFatal, throwPublicErrorInfo } = require('../common/util/errors.js');
 
@@ -28,13 +27,13 @@ module.exports = {
       return throwPublicErrorInfo('Furigana', 'Five hundred characters or fewer please :)', 'Too long');
     }
 
-    const args = qs.stringify({
+    const args = new URLSearchParams({
       text: suffix,
       size: settings.furigana_main_font_size,
       color: settings.furigana_font_color,
       background_color: settings.furigana_background_color,
       font_alias: settings.furigana_font,
-    });
+    }).toString();
 
     let pngData;
     try {
