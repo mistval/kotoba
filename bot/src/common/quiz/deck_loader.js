@@ -153,6 +153,7 @@ async function getCustomDeckFromDisk(deckInfo) {
       answer: card.answers,
       meaning: card.comment,
       questionCreationStrategy: card.questionCreationStrategy,
+      answerTimeLimitStrategy: card.answerTimeLimitStrategy,
       instructions: card.instructions,
     };
   });

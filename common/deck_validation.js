@@ -34,6 +34,8 @@ const reservedWords = [
 const maxLengthForQuestionCreationStrategy = {
   IMAGE: IMAGE_QUESTION_MAX_LENGTH,
   TEXT: TEXT_QUESTION_MAX_LENGTH,
+  IMAGE_WITH_HINT: IMAGE_QUESTION_MAX_LENGTH,
+  TEXT_WITH_HINT: TEXT_QUESTION_MAX_LENGTH,
 };
 
 const allowedQuestionCreationStrategies = Object.keys(maxLengthForQuestionCreationStrategy);
@@ -109,6 +111,10 @@ function sanitizeDeckPreValidation(deck) {
       cardCopy.questionCreationStrategy = cardCopy.questionCreationStrategy.trim();
     }
 
+    if (cardCopy.questionCreationStrategy.includes('HINT')) {
+      cardCopy.answerTimeLimitStrategy = 'WITH_HINT';
+    }
+
     cardCopy.answers = cardCopy.answers
       .filter(x => typeof x === typeof '')
       .map(x => x.trim())
@@ -132,16 +138,8 @@ function validateCards(cards) {
       return createFailureValidationResult(cardIndex, 'Question is not an object. Please report this error.', card);
     }
 
-    if (typeof card.questionCreationStrategy !== typeof '') {
-      return createFailureValidationResult(cardIndex, 'Question creation strategy is not a string. Please report this error.', card);
-    }
-
-    if (!card.questionCreationStrategy) {
-      return createFailureValidationResult(cardIndex, 'No value for Render As. Render As must be either Image or Text.', card);
-    }
-
     if (!allowedQuestionCreationStrategies.some(strat => strat === card.questionCreationStrategy)) {
-      return createFailureValidationResult(cardIndex, 'Invalid Render As strategy. It must be either Image or Text.', card);
+      return createFailureValidationResult(cardIndex, `Invalid Render As strategy. It must be either Image, Text, Image with hint, or Text with hint.`, card);
     }
 
     if (typeof card.question !== typeof '') {
@@ -152,16 +150,12 @@ function validateCards(cards) {
       return createFailureValidationResult(cardIndex, 'No question. Please add a question or clear out the row.', card);
     }
 
-    if (card.questionCreationStrategy === 'IMAGE' && card.question.length > IMAGE_QUESTION_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `That question is too long to render as an image. Only questions ${IMAGE_QUESTION_MAX_LENGTH} characters long or shorter can be rendered as an image. Consider shortening the question or setting its Render As to 'Text'.`, card);
+    if (card.question.length > maxLengthForQuestionCreationStrategy[card.questionCreationStrategy]) {
+      return createFailureValidationResult(cardIndex, `That question is too long for that render mode. Questions must be ${maxLengthForQuestionCreationStrategy[card.questionCreationStrategy]} characters long or shorter.`, card);
     }
 
-    if (card.questionCreationStrategy === 'TEXT' && card.question.length > TEXT_QUESTION_MAX_LENGTH) {
-      return createFailureValidationResult(cardIndex, `That question is too long. Questions must be ${TEXT_QUESTION_MAX_LENGTH} characters long or shorter.`, card);
-    }
-
-    if (card.questionCreationStrategy !== 'IMAGE' && card.questionCreationStrategy !== 'TEXT') {
-      throw new Error('Unexpected question creation strategy');
+    if (card.questionCreationStrategy.includes('HINT') !== (card.answerTimeLimitStrategy === 'WITH_HINT')) {
+      return createFailureValidationResult(cardIndex, 'Mismatch between question creation strategy and answer time limit strategy.', card);
     }
 
     if (!Array.isArray(card.answers)) {

@@ -23,6 +23,11 @@ const NUMBER_OF_REVEALS_PER_CARD = 2;
 const FRACTION_OF_WORD_TO_REVEAL_PER_REVEAL = .25;
 const ADDITIONAL_ANSWER_WAIT_TIME_FOR_MULTIPLE_ANSWERS = 10000;
 
+const QuestionDisplayType = {
+  IMAGE: 'IMAGE',
+  TEXT: 'TEXT',
+};
+
 /* UTIL */
 
 function arrayToLowerCase(array) {
@@ -153,7 +158,7 @@ async function createForvoAudioFileQuestion(card) {
   return Promise.resolve(question);
 }
 
-function createTextQuestionWithHint(card, quizState) {
+async function createQuestionWithHint(imageDisplayType, card, quizState) {
   if (!quizState.textQuestionWithHintStrategyState) {
     quizState.textQuestionWithHintStrategyState = {};
   }
@@ -199,9 +204,24 @@ function createTextQuestionWithHint(card, quizState) {
   const revealedAnswer = answerCharArray.map((c, i) => revealedIndices[i] ? c : '_').join(' ');
 
   let question = createQuestionCommon(card);
-  question.bodyAsText = card.question;
+
+  if (imageDisplayType === QuestionDisplayType.TEXT) {
+    question.bodyAsText = card.question;
+  } else {
+    question.bodyAsPngBuffer = await renderText(card.question, card.fontColor, card.backgroundColor, card.fontSize, card.font);
+  }
+
   question.hintString = revealedAnswer;
+
   return Promise.resolve(question);
+}
+
+function createTextQuestionWithHint(card, quizState) {
+  return createQuestionWithHint(QuestionDisplayType.TEXT, card, quizState);
+}
+
+function createImageQuestionWithHint(card, quizState) {
+  return createQuestionWithHint(QuestionDisplayType.IMAGE, card, quizState);
 }
 
 async function createQuestionImageHighlightStroke(card) {
@@ -223,6 +243,7 @@ module.exports.CreateQuestionStrategy = {
   IMAGE: createImageQuestion,
   IMAGE_URI: createImageUriQuestion,
   TEXT_WITH_HINT: createTextQuestionWithHint,
+  IMAGE_WITH_HINT: createImageQuestionWithHint,
   TEXT: createTextQuestion,
   JLPT_AUDIO_FILE: createJlptAudioFileQuestion,
   FORVO_AUDIO_FILE: createForvoAudioFileQuestion,

@@ -23,7 +23,7 @@ const unsavedChangesMessage = 'You have unsaved changes. Are you sure you want t
 
 function upperCaseFirstCharOnly(str) {
   const lowerChars = str.toLowerCase().split('');
-  return [lowerChars[0].toUpperCase(), ...lowerChars.slice(1)].join('');
+  return [lowerChars[0].toUpperCase(), ...lowerChars.slice(1)].join('').replace(/_/g, ' ');
 }
 
 const renderAsDropdownOptions = deckValidation.allowedQuestionCreationStrategies.map(strat => ({
@@ -94,7 +94,7 @@ function gridCardsToApiCards(gridCards) {
       answers: gridCard.answers.replaceAll('、', ',').split(','),
       comment: gridCard.comment.replaceAll('\\n', '\n'),
       instructions: gridCard.instructions.replaceAll('\\n', '\n'),
-      questionCreationStrategy: gridCard.questionCreationStrategy.toUpperCase(),
+      questionCreationStrategy: gridCard.questionCreationStrategy.toUpperCase().replace(/ /g, '_'),
     };
 
     return apiCard;
