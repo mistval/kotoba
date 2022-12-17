@@ -163,11 +163,15 @@ class JapaneseGameStrategy {
     let answerToUse;
     let meaningToUse;
     let botBanned = false;
+
     for (let i = 0; i < possibleWordInformations.length; i += 1) {
       const possibleWordInformation = possibleWordInformations[i];
       const { reading } = possibleWordInformation;
       const alreadyUsed = readingAlreadyUsed(reading, wordInformationsHistory);
-      if (
+
+      if (!possibleWordInformation.isNoun) {
+        pushUnique(noNounReadings, reading);
+      } else if (
         nextWordStartSequences
         && !nextWordStartSequences.some(sequence => reading.startsWith(sequence))
       ) {
@@ -176,8 +180,6 @@ class JapaneseGameStrategy {
         pushUnique(readingsEndingWithN, reading);
       } else if (alreadyUsed) {
         pushUnique(alreadyUsedReadings, reading);
-      } else if (!possibleWordInformation.isNoun) {
-        pushUnique(noNounReadings, reading);
       } else if (isBot && possibleWordInformation.botBanned) {
         botBanned = true;
       } else {
