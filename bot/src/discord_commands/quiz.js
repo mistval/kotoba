@@ -1596,6 +1596,21 @@ function substituteDeckArguments(suffix) {
   return replacedSuffix;
 }
 
+async function warnIfNoSaveSlotsAvailable(msg) {
+  const hasAvailableSlots = await saveManager.userHasAvailableSaveSlots(msg.author.id);
+  if (!hasAvailableSlots) {
+    const warningMessage = {
+      embed: {
+        title: 'No Save Slots Available',
+        description: `You have no available save slots and will not be able to save this session. To free up a save slot, you can delete an existing save by loading it via the \`${msg.prefix}quiz load\` command and then stopping it with \`${msg.prefix}quiz stop\`.`,
+        color: constants.EMBED_WARNING_COLOR,
+      },
+    };
+
+    await msg.channel.createMessage(warningMessage);
+  }
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1806,6 +1821,10 @@ module.exports = {
     // Try to establish audio connection
     if (session.requiresAudioConnection()) {
       messageSender.audioConnection = await AudioConnectionManager.create(bot, msg);
+    }
+
+    if (isMastery) {
+      await warnIfNoSaveSlotsAvailable(msg);
     }
 
     // All systems go. Liftoff!

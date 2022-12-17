@@ -148,3 +148,8 @@ module.exports.restore = function(userId, mementoToRestore) {
     return dbData[QUIZ_SAVES_KEY].length - 1;
   });
 }
+
+module.exports.userHasAvailableSaveSlots = async function(userId) {
+  const mementos = await module.exports.getSaveMementos(userId);
+  return mementos.length < MAX_RESTORABLE_PER_USER;
+}
