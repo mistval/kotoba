@@ -33,12 +33,10 @@ function trimEmbed(content) {
 
   contentCopy.embed.fields = contentCopy.embed.fields
     ?.filter((f) => f.name?.trim())
-    ?.map((field) => {
-      const fieldCopy = Object.assign({}, field);
-      fieldCopy.value = trimString(fieldCopy.value, EMBED_FIELD_MAX_LENGTH);
-
-      return fieldCopy;
-    });
+    ?.map((field) => ({
+      ...field,
+      value: trimString(field.value, EMBED_FIELD_MAX_LENGTH),
+    }));
 
   return contentCopy;
 }
