@@ -31,18 +31,14 @@ function trimEmbed(content) {
   contentCopy.embed = Object.assign({}, content.embed);
   contentCopy.embed.title = trimString(contentCopy.embed.title, EMBED_TITLE_MAX_LENGTH);
 
-  if (!contentCopy.embed.fields || contentCopy.embed.fields.length === 0) {
-    return contentCopy;
-  }
+  contentCopy.embed.fields = contentCopy.embed.fields
+    ?.filter((f) => f.name?.trim())
+    ?.map((field) => {
+      const fieldCopy = Object.assign({}, field);
+      fieldCopy.value = trimString(fieldCopy.value, EMBED_FIELD_MAX_LENGTH);
 
-  const { fields } = contentCopy.embed;
-
-  contentCopy.embed.fields = fields.map((field) => {
-    const fieldCopy = Object.assign({}, field);
-    fieldCopy.value = trimString(fieldCopy.value, EMBED_FIELD_MAX_LENGTH);
-
-    return fieldCopy;
-  });
+      return fieldCopy;
+    });
 
   return contentCopy;
 }
