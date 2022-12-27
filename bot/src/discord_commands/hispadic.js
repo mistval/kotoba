@@ -63,12 +63,21 @@ function createNavigationContents(results, query, username) {
 }
 
 module.exports = {
-  commandAliases: ['español', 'es'],
+  commandAliases: ['hispadic', 'es'],
   uniqueId: 'hispadic_search',
   cooldown: 3,
   shortDescription: 'Buscar Hispadic para resultados del diccionaro Español-Japonés.',
   canBeChannelRestricted: false,
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'word',
+      description: 'The word/phrase to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

@@ -18,6 +18,15 @@ module.exports = {
   shortDescription: 'Search Jibiki for words, kanji and sentences.',
   usageExample: '<prefix>jibiki 女らしい',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'word',
+      description: 'The word/phrase to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

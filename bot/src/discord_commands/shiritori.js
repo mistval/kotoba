@@ -372,6 +372,10 @@ module.exports = {
     'shiritori/small_letters',
     'shiritori/lax_dakuten',
   ],
+  interaction: {
+    compatibilityMode: true,
+    options: [],
+  },
   async action(bot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
     const suffixLowerCase = suffix.toLowerCase();

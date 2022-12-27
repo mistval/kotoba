@@ -12,7 +12,7 @@ const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
-const getCategoryHelp = require('./../common/quiz/decks_content.js').getCategoryHelp;
+const { getCategoryHelp, deckOptionsForInteraction } = require('./../common/quiz/decks_content.js');
 const constants = require('./../common/constants.js');
 const { FulfillmentError } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
@@ -484,6 +484,10 @@ class DiscordMessageSender {
         description: embedDescription,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields,
+        footer: this.commanderMessage.isInteraction ? {
+          icon_url: constants.FOOTER_ICON_URI,
+          text: `There's a lot more I can do without slash commands. Say ${this.commanderMessage.prefix}help quiz for more info.`,
+        } : undefined,
       },
     });
   }
@@ -1625,6 +1629,56 @@ module.exports = {
     'quiz_max_missed_questions',
     'quiz_shuffle',
   ]),
+  interaction: {
+    description: 'Start a quiz',
+    compatibilityMode: true,
+    options: [
+      {
+      name: 'deck',
+      description: 'The deck from which to draw questions.',
+      type: 3,
+      required: true,
+      choices: deckOptionsForInteraction,
+    }, {
+      name: 'scorelimit',
+      description: 'The score that must be achieved in order to win.',
+      type: 4,
+      required: false,
+      min_value: 1,
+      max_value: 10_000,
+    }, {
+      name: 'pace',
+      description: 'The overall speed of the session.',
+      type: 3,
+      required: false,
+      choices: [{
+        name: 'No Delay',
+        value: 'nodelay',
+      }, {
+        name: 'Faster',
+        value: 'faster',
+      }, {
+        name: 'Fast',
+        value: 'fast',
+      }, {
+        name: 'Normal',
+        value: 'normal',
+      }, {
+        name: 'Slow',
+        value: 'slow',
+      }],
+    }, {
+      name: 'conquest',
+      description: 'Conquest Mode - I\'ll repeat questions you miss (score limit is ignored in conquest mode).',
+      type: 5,
+      required: false,
+    }, {
+      name: 'hardcore',
+      description: 'Hardcore Mode - You have only one chance to answer each question.',
+      type: 5,
+      required: false,
+    }],
+  },
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
     const cleanSuffix = substituteDeckArguments(
@@ -1800,7 +1854,7 @@ module.exports = {
     const deckCollection = DeckCollection.createNewFromDecks(decks, gameMode, settings.shuffle);
 
     const session = Session.createNew(
-      msg.content,
+      `${msg.prefix}quiz ${suffix}`,
       locationId,
       invokerId,
       deckCollection,

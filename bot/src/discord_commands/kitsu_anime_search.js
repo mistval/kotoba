@@ -12,6 +12,15 @@ module.exports = {
   longDescription: 'Search Kitsu.io for anime information, including synopsis, rating and favorite counts.',
   usageExample: '<prefix>anime Monster',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'title',
+      description: 'The title of the anime to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

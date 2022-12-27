@@ -22,7 +22,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'examples',
   'translate',
   'furigana',
-  'español',
+  'hispadic',
   'yourei',
   'anime',
   'shiritoriforever',
@@ -233,6 +233,19 @@ module.exports = {
   uniqueId: 'help',
   commandAliases: ALIASES,
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  shortDescription: 'Show a list of commands or get advanced help for a specific command.',
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'command',
+      description: 'The name of a command to get advanced help for',
+      type: 3,
+      choices: COMMANDS_TO_GENERATE_HELP_FOR.map((commandName) => ({
+        name: commandName,
+        value: commandName,
+      })),
+    }],
+  },
   action(bot, msg, suffix, monochrome) {
     const isDm = !msg.channel.guild;
     const canPaginate = isDm || msg.channel.permissionsOf(bot.user.id).json.addReactions;

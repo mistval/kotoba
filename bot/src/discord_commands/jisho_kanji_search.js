@@ -8,7 +8,7 @@ module.exports = {
   canBeChannelRestricted: true,
   cooldown: 3,
   uniqueId: 'jishokanji54094',
-  shortDescription: 'Search for information about a kanji.',
+  shortDescription: 'Search Jisho for information about a kanji.',
   longDescription: 'Search Jisho for information about a kanji character. For most kanji, I will show JLPT level, frequency information, readings, examples, and more. If you enter more than one character, I\'ll show results for all of them.',
   usageExample: '<prefix>kanji 少',
   requiredBotPermissions: [
@@ -16,6 +16,15 @@ module.exports = {
     Permissions.embedLinks,
     Permissions.sendMessages,
   ],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'kanji',
+      description: 'The kanji to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

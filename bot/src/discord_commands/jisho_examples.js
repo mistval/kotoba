@@ -11,6 +11,15 @@ module.exports = {
   shortDescription: 'Search Jisho for example sentences.',
   usageExample: '<prefix>examples 少し',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'word',
+      description: 'The word/phrase to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

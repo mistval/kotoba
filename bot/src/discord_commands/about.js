@@ -12,6 +12,9 @@ module.exports = {
   shortDescription: 'Show some meta information about me.',
   canBeChannelRestricted: false,
   requiredBotPermissions: [Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+  },
   action(bot, msg) {
     return msg.channel.createMessage(`\`\`\`md
 # Kotoba

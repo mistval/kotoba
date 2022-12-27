@@ -11,6 +11,15 @@ module.exports = {
   longDescription: 'Search 用例.jp for more Japanese example sentences, including usage frequency, and usage examples. There are no translation, though.',
   usageExample: '<prefix>yourei 少し',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'word',
+      description: 'The word/phrase to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

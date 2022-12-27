@@ -38,6 +38,10 @@ module.exports = {
   hidden: false,
   uniqueId: 'shiritoriforever',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [],
+  },
   action(bot, msg, suffix, monochrome) {
     if (suffix === 'scores') {
       return shiritoriForeverHelper.sendScores(monochrome, msg);

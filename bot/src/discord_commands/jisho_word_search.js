@@ -18,6 +18,15 @@ module.exports = {
     Permissions.embedLinks,
     Permissions.sendMessages,
   ],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'word',
+      description: 'The word/phrase to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome, settings) {
     if (!suffix) {
       const { prefix } = msg;

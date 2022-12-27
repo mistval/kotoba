@@ -759,6 +759,10 @@ module.exports = {
   shortDescription: HELP_SHORT_DESCRIPTION,
   longDescription: HELP_LONG_DESCRIPTION,
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [],
+  },
   action(bot, msg, suffix, monochrome) {
     clearStateForMsg(msg);
 

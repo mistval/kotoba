@@ -69,3 +69,77 @@ module.exports.getCategoryHelp = function(keyword) {
 
   return `${subCategory.description}  \`\`\`${subCategory.decks.join(', ')}\`\`\``
 };
+
+module.exports.deckOptionsForInteraction = [{
+  name: 'JLPT N5',
+  value: 'n5',
+},{
+  name: 'JLPT N4',
+  value: 'n4',
+},{
+  name: 'JLPT N3',
+  value: 'n3',
+},{
+  name: 'JLPT N2',
+  value: 'n2',
+},{
+  name: 'JLPT N1',
+  value: 'n1',
+},{
+  name: 'Hiragana',
+  value: 'hiragana',
+},{
+  name: 'Katakana',
+  value: 'katakana',
+},{
+  name: 'Hiragana Words',
+  value: 'kanawords',
+},{
+  name: 'Common',
+  value: 'common',
+},{
+  name: 'Hard',
+  value: 'hard',
+},{
+  name: 'Haard',
+  value: 'haard',
+},{
+  name: 'Cities',
+  value: 'cities',
+},{
+  name: 'First Names',
+  value: 'namae',
+},{
+  name: 'Last Names',
+  value: 'myouji',
+},{
+  name: 'Prefectures',
+  value: 'prefectures',
+},{
+  name: 'English Anagrams Length 5',
+  value: 'anagrams5',
+},{
+  name: 'English Anagrams Length 6',
+  value: 'anagrams6',
+},{
+  name: 'English Anagrams Length 7',
+  value: 'anagrams7',
+},{
+  name: 'English Anagrams Length 8',
+  value: 'anagrams8',
+},{
+  name: 'Easy Mix',
+  value: 'easymix',
+},{
+  name: 'Medium Mix',
+  value: 'medmix',
+},{
+  name: 'Hard Mix',
+  value: 'hardmix',
+},{
+  name: 'Harder Mix',
+  value: 'hardermix',
+},{
+  name: 'Insane Mix',
+  value: 'insanemix',
+}];

@@ -16,6 +16,15 @@ module.exports = {
     Permissions.embedLinks,
     Permissions.sendMessages,
   ],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'kanji',
+      description: 'The kanji to search for',
+      type: 3,
+      required: true,
+    }],
+  },
   action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;

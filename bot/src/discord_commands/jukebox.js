@@ -15,6 +15,10 @@ module.exports = {
   shortDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link.',
   longDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link. Songs are chosen from this playlist: https://www.youtube.com/watch?v=iyL_SXBlNIk&list=PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ. There are about 800 songs.',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  interaction: {
+    compatibilityMode: true,
+    options: [],
+  },
   async initialize(monochrome) {
     const logger = monochrome.getLogger();
 

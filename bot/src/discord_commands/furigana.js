@@ -17,6 +17,15 @@ module.exports = {
     'furigana_background_color',
     'furigana_font',
   ],
+  interaction: {
+    compatibilityMode: true,
+    options: [{
+      name: 'sentence',
+      description: 'The text to render furigana for',
+      type: 3,
+      required: true,
+    }],
+  },
   async action(bot, msg, suffix, monochrome, settings) {
     if (!suffix) {
       const { prefix } = msg;
