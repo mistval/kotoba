@@ -64,4 +64,4 @@ services:
       - kotoba-api
       - kotoba-web
     ports:
-      - '80:80'
+      - '127.0.0.1:3001:80'
