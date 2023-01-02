@@ -27,7 +27,7 @@
     "react-markdown": "^7.1.0",
     "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "socket.io-client": "^4.4.1",
     "yup": "^0.32.9"
   },
@@ -42,7 +42,7 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "glob": "^7.1.6"
