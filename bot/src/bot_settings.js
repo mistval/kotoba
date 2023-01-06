@@ -262,7 +262,7 @@ module.exports = [
       {
         userFacingName: 'Bot score multiplier',
         description: 'The bot\'s score is multiplied by this number to handicap it.',
-        allowedValuesDescription: 'A number between 0 and 1',
+        allowedValuesDescription: 'A number between 0 and 3',
         uniqueId: 'shiritori/bot_score_multiplier',
         serverOnly: false,
         defaultUserFacingValue: '.7',
