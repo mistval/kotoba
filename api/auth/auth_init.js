@@ -64,9 +64,14 @@ function initialize(app) {
 
   app.get(
     '/api/logout',
-    (req, res) => {
-      req.logout();
-      res.redirect('/dashboard');
+    (req, res, next) => {
+      req.logout((err) => {
+        if (err) {
+          return next(err);
+        }
+
+        res.redirect('/dashboard');
+      });
     },
   );
 }
