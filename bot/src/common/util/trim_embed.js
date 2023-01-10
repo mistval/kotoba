@@ -30,6 +30,7 @@ function trimEmbed(content) {
   const contentCopy = Object.assign({}, content);
   contentCopy.embed = Object.assign({}, content.embed);
   contentCopy.embed.title = trimString(contentCopy.embed.title, EMBED_TITLE_MAX_LENGTH);
+  contentCopy.embed.url = contentCopy.embed.url || undefined;
 
   contentCopy.embed.fields = contentCopy.embed.fields
     ?.filter((f) => f.name?.trim())
