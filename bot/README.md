@@ -12,12 +12,7 @@ Follow the directions in the [top level readme](https://github.com/mistval/kotob
 
 ## Fonts
 
-Due to licensing restrictions on redistribution, some of the fonts that public Kotoba uses are not included in the Github repo. You should be able to find them by Googling. Fonts not in this repo include:
-
-* PopRumCute
-* CP_Revenge
-* Genkaimincho
-* kurobara-cinderella
+Due to licensing restrictions on redistribution, some of the fonts that public Kotoba uses are not included in the Github repo. You should be able to find them by Googling their names.
 
 ## Commands
 
