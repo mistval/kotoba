@@ -92,6 +92,10 @@ function resolveIndex(index, deckLength) {
 }
 
 function shallowCopyDeckAndAddModifiers(deck, deckInformation) {
+  if (!deck) {
+    return deck;
+  }
+
   const deckCopy = { ...deck };
   deckCopy.startIndex = resolveIndex(deckInformation.startIndex, deck.cards.length);
   deckCopy.endIndex = resolveIndex(deckInformation.endIndex, deck.cards.length);
@@ -106,7 +110,6 @@ function getDeckFromMemory(deckInformation) {
 
   if (deck) {
     deck.cards = createCardGetterForSqliteDeck(deck);
-    deck = shallowCopyDeckAndAddModifiers(deck, deckInformation);
   }
 
   return deck;
@@ -183,16 +186,18 @@ async function getCustomDeckFromDisk(deckInfo) {
     cards: createCardGetterFromInMemoryArray(cards),
   };
 
-  return shallowCopyDeckAndAddModifiers(deck, deckInfo);
+  return deck;
 }
 
-async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
+async function getQuizDecks(deckInfos) {
   const decks = [];
 
   // Try to get decks from memory.
   deckInfos.forEach((deckInfo) => {
-    decks.push(getDeckFromMemory(deckInfo));
+    decks.push(shallowCopyDeckAndAddModifiers(getDeckFromMemory(deckInfo), deckInfo));
   });
+
+  const deckPromiseForDeckName = {};
 
   // For any decks not found in memory, look for them as custom decks on disk.
   const customDeckPromises = decks.map((deck, i) => {
@@ -200,9 +205,13 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
       return undefined;
     }
 
-    return getCustomDeckFromDisk(deckInfos[i]).then(customDeck => {
+    const existingDeckPromise = deckPromiseForDeckName[deckInfos[i].deckNameOrUniqueId];
+    const deckPromise = existingDeckPromise ?? getCustomDeckFromDisk(deckInfos[i]);
+    deckPromiseForDeckName[deckInfos[i].deckNameOrUniqueId] = deckPromise;
+
+    return deckPromise.then(customDeck => {
       if (customDeck) {
-        decks[i] = customDeck;
+        decks[i] = shallowCopyDeckAndAddModifiers(customDeck, deckInfos[i]);
       }
     }).catch(err => {
       globals.logger.error({
@@ -210,7 +219,7 @@ async function getQuizDecks(deckInfos, invokerUserId, invokerUserName) {
         err,
       });
     });
-  }).filter(x => x);
+  }).filter(Boolean);
 
   await Promise.all(customDeckPromises);
 

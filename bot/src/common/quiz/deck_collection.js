@@ -74,6 +74,12 @@ class DeckCollection {
     });
 
     const deckLookupStatus = await deckLoader.getQuizDecks(deckQueries);
+    if (deckLookupStatus.notFoundDeckName) {
+      const error = new Error('Deck not found');
+      error.code = 'DECK_NOT_FOUND';
+      throw error;
+    }
+
     const deckCollection = new DeckCollection();
     deckCollection.decks = deckLookupStatus.decks;
     deckCollection.initialCardCount = saveData.initialCardCount;

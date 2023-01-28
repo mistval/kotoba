@@ -954,6 +954,21 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
   }
 }
 
+function throwSavedDeckNotFound() {
+  const message = {
+    embed: {
+      title: 'Deck Not Found',
+      description: `Sorry, one or more decks in that save could not be found. They were probably deleted by their owner. The save could not be loaded and has been deleted.`,
+      color: constants.EMBED_NEUTRAL_COLOR,
+    },
+  };
+
+  throw new FulfillmentError({
+    publicMessage: message,
+    logDescription: 'Saved deck could not be loaded',
+  });
+}
+
 function throwIfDeckNotAllowedInServer(session) {
   const unallowedDeck = session.getRestrictedDeckNameForThisScoreScope();
 
@@ -1026,14 +1041,25 @@ async function load(
   throwIfGameModeNotAllowed(isDm, memento, masteryModeEnabled, prefix);
 
   const saveData = await saveManager.load(memento);
-  const session = await Session.createFromSaveData(
-    rawStartCommand,
-    msg.channel.id,
-    saveData,
-    scoreScopeId,
-    messageSender,
-    settings,
-  );
+
+  let session;
+
+  try {
+    session = await Session.createFromSaveData(
+      rawStartCommand,
+      msg.channel.id,
+      saveData,
+      scoreScopeId,
+      messageSender,
+      settings,
+    );
+  } catch (err) {
+    if (err.code === 'DECK_NOT_FOUND') {
+      throwSavedDeckNotFound();
+    }
+
+    throw err;
+  }
 
   try {
     if (session.requiresAudioConnection()) {
@@ -1195,20 +1221,14 @@ function getDeckNameAndModifierInformation(deckNames) {
       nameWithoutExtension = nameWithoutExtension.substring(0, nameWithoutExtension.length - 3);
     }
 
-    if (!names[nameWithoutExtension]) {
-      names[nameWithoutExtension] = true;
-
-      return {
-        deckNameOrUniqueId: nameWithoutExtension,
-        startIndex,
-        endIndex,
-        appearanceWeight,
-        mc,
-      };
-    }
-
-    return undefined;
-  }).filter(x => x);
+    return {
+      deckNameOrUniqueId: nameWithoutExtension,
+      startIndex,
+      endIndex,
+      appearanceWeight,
+      mc,
+    };
+  }).filter(Boolean);
 
   const sumAppearanceWeight = decks.reduce((acc, deck) => acc + (deck.appearanceWeight ?? 0), 0);
   const allHaveAppearanceWeight = decks.every(deck => deck.appearanceWeight !== undefined);
@@ -1809,11 +1829,8 @@ module.exports = {
       remainingTokens4 = deckListResult.remainingTokens;
       gameMode = createNonReviewGameMode(isMastery, isConquest);
 
-      const invokerName = msg.author.name + msg.author.discriminator;
       const decksLookupResult = await deckLoader.getQuizDecks(
         getDeckNameAndModifierInformation(deckNames),
-        invokerId,
-        invokerName,
       );
 
       if (decksLookupResult.status === deckLoader.DeckRequestStatus.DECK_NOT_FOUND) {
