@@ -138,10 +138,10 @@ class DiscordClientDelegate {
     return undefined;
   }
 
-  onGameEnded(reason, args) {
+  async onGameEnded(reason, args) {
     const channelId = this.commanderMessage.channel.id;
     const scoreForUserID = shiritoriManager.getScores(channelId);
-    saveScores(this.bot, this.commanderMessage, scoreForUserID);
+    await saveScores(this.bot, this.commanderMessage, scoreForUserID);
 
     let description;
 
