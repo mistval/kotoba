@@ -71,9 +71,17 @@ async function go() {
     const csvStr = csvStringify(cardsAsRows);
     const csvFileName = fileName.replace('.json', '.csv');
 
-    fs.writeFileSync(path.join(OUTPUT_DIR, csvFileName), csvStr);
+    const outputFilePath = path.join(OUTPUT_DIR, csvFileName);
+    fs.writeFileSync(outputFilePath, csvStr);
+    console.log(`Wrote ${outputFilePath}`);
   }
 }
 
 go()
-  .catch((err) => { console.warn(err); });
+  .then(() => {
+    console.log('Done');
+  })
+  .catch((err) => {
+    console.warn(err);
+    process.exit(1);
+  });
