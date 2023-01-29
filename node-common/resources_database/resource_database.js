@@ -28,7 +28,8 @@ class ResourceDatabase {
 
     const sqlite = require('better-sqlite3');
     this.database = sqlite(databasePath);
-    this.database.pragma('journal_mode = WAL');
+    this.database.pragma('journal_mode = WAL;');
+    this.database.pragma('cache_size = 20000;')
 
     if (needsBuild) {
       buildKanjiVgTable(this.database, kanjiVgPath);
@@ -37,6 +38,7 @@ class ResourceDatabase {
       buildPronunciationTable(this.database, pronunciationDataPath);
       buildRandomWordsTable(this.database, randomWordDataPath);
       buildShiritoriTable(this.database, wordFrequencyDataPath, jmdictPath);
+      this.database.exec('VACUUM;');
     }
 
     this.searchPronunciationStatement = this.database.prepare('SELECT resultsJson FROM PronunciationSearchResults WHERE searchTerm = ?;');
