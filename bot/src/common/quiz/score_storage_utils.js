@@ -27,6 +27,7 @@ function updateUserGlobalTotalScore(userId, score, userName) {
       $set: {
         userId,
         lastKnownUsername: userName,
+        lastUpdated: new Date(),
       },
       $inc: {
         score: Math.floor(score),
@@ -51,6 +52,7 @@ async function updateUserServerTotalScore(userId, serverId, score, userName) {
         serverId,
         userId,
         lastKnownUsername: userName,
+        lastUpdated: new Date(),
       },
       $inc: {
         score: Math.floor(score),
@@ -75,6 +77,7 @@ function updateUserGlobalDeckScore(userId, deckUniqueId, score, userName) {
         userId,
         deckUniqueId,
         lastKnownUsername: userName,
+        lastUpdated: new Date(),
       },
       $inc: {
         score: Math.floor(score),
@@ -101,6 +104,7 @@ async function updateUserServerDeckScore(userId, serverId, deckUniqueId, score, 
         serverId,
         deckUniqueId,
         lastKnownUsername: userName,
+        lastUpdated: new Date(),
       },
       $inc: {
         score: Math.floor(score),
