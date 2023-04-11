@@ -82,7 +82,9 @@ npm start
 
 While it is possible to self-host Kotoba, there are some caveats and some of the setup is not straightforward. Before continuing, first consider why you want to self-host. Could you PR your desired features to this repo instead, so they can be added to public Kotoba? I encourage you to take that route if you can. Otherwise, read on.
 
-After following the **Configuration** instructions higher up in this readme:
+Kotoba is deployed via Docker images built for ARM64. To build for a more typical environment, search this repo for `arm64v8/node` and replace it with just `node` in the Dockerfiles.
+
+Then after following the **Configuration** instructions higher up in this readme, run:
 
 ```sh
 sudo apt install docker docker-compose
