@@ -11,7 +11,8 @@ module.exports = {
   usageExample: '<prefix>eval 4+5',
   uniqueId: 'eval',
   hidden: true,
-  async action(bot, msg, suffix) {
+  // eslint-disable-next-line no-unused-vars
+  async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       throw new FulfillmentError({
         publicMessage: `Say **${msg.prefix}eval javascript_code_here** to evaluate code.`,
