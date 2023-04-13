@@ -11,6 +11,6 @@ COPY ./resources/fonts/ ../resources/fonts/
 RUN npm ci
 RUN npm run build
 
-FROM nginx
+FROM nginx:1.23.4-bullseye
 COPY --from=reactBuilder /var/app/build /usr/share/nginx/html
 COPY ./kotobaweb/nginx.conf /etc/nginx/conf.d/default.conf
