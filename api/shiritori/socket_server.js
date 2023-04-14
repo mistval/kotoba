@@ -226,10 +226,7 @@ class Room extends EventEmitter {
 
     setTimeout(() => {
       this.emitEventToAll(events.Server.ROOM_CLOSED);
-
-      Object.values(this.sockets.in(this.roomID).connected).forEach(
-        client => client.leave(this.roomID),
-      );
+      this.sockets.in(this.roomID).socketsLeave();
 
       delete roomForRoomID[this.roomID];
       this.emit(ROOM_CLOSED_EVENT);
