@@ -8,6 +8,11 @@ async function sendAndDelete(monochrome, channelId, content, deleteInMs) {
     try {
       await sentMessage.delete();
     } catch (err) {
+      if (err.code === 10008) {
+        // message already deleted
+        return;
+      }
+
       const logger = monochrome.getLogger();
       logger.warn({
         event: 'ERROR DELETING OWN MESSAGE AFTER DELAY',
