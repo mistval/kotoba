@@ -34,7 +34,7 @@ const gameReportSchema = new mongoose.Schema({
     uri: { type: String, default: '' },
     correctAnswerers: [{ type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' }],
   }],
-});
+}, { versionKey: false });
 
 function create(connection) {
   return connection.model('GameReport', gameReportSchema);

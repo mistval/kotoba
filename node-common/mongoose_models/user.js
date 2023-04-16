@@ -19,7 +19,7 @@ const DiscordAccountSchema = new mongoose.Schema({
   id: { type: String, required: true, index: true },
   email: { type: String, required: false },
   _id: false,
-});
+}, { versionKey: false });
 
 DiscordAccountSchema.virtual('createdAt').get(function() {
   return calculateDiscordSnowflakeDate(this.id);

@@ -7,7 +7,7 @@ const WordScheduleSchema = new mongoose.Schema({
   nextSendTime: { type: Date, required: true, index: true },
   level: { type: String, required: false },
   status: { type: String, required: false, default: 'running' },
-});
+}, { versionKey: false });
 
 function create(connection) {
   return connection.model('ServerSchedule', WordScheduleSchema);

@@ -5,7 +5,7 @@ const UserGlobalTotalSchema = new mongoose.Schema({
   score: { type: Number, required: true, index: true, min: 1 },
   lastKnownUsername: { type: String, required: true },
   lastUpdated: Date,
-});
+}, { versionKey: false });
 
 const UserServerTotalSchema = new mongoose.Schema({
   userId: { type: String, required: true },
@@ -13,7 +13,7 @@ const UserServerTotalSchema = new mongoose.Schema({
   score: { type: Number, required: true, min: 1 },
   lastKnownUsername: { type: String, required: true },
   lastUpdated: Date,
-});
+}, { versionKey: false });
 
 UserServerTotalSchema.index({ serverId: 1, userId: 1 }, { unique: true });
 
@@ -23,7 +23,7 @@ const UserGlobalDeckSchema = new mongoose.Schema({
   score: { type: Number, required: true, min: 1 },
   lastKnownUsername: { type: String, required: true },
   lastUpdated: Date,
-});
+}, { versionKey: false });
 
 UserGlobalDeckSchema.index({ deckUniqueId: 1, userId: 1 }, { unique: true });
 
@@ -34,7 +34,7 @@ const UserServerDeckSchema = new mongoose.Schema({
   score: { type: Number, required: true, min: 1 },
   lastKnownUsername: { type: String, required: true },
   lastUpdated: Date,
-});
+}, { versionKey: false });
 
 UserServerDeckSchema.index({ serverId: 1, deckUniqueId: 1, userId: 1 }, { unique: true });
 

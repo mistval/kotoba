@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const crypto = require('../crypto.js');
 
 const customDeckSchema = new mongoose.Schema({
   owner: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User', index: true },
@@ -13,7 +12,7 @@ const customDeckSchema = new mongoose.Schema({
   readWriteSecret: { type: String, required: false, index: false },
   restrictToServers: { type: [String], default: [], required: true },
   hidden: { type: Boolean, default: false },
-});
+}, { versionKey: false });
 
 customDeckSchema.index({ name: 'text', description: 'text' });
 

@@ -10,7 +10,7 @@ const GuildSchema = new mongoose.Schema({
   memberCount: { type: Number, required: true },
   name: { type: String, required: true },
   ownerId: { type: String, required: true },
-});
+}, { versionKey: false });
 
 function create(connection) {
   return connection.model('Guild', GuildSchema);

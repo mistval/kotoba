@@ -6,7 +6,7 @@ const reviewDeckSchema = new mongoose.Schema({
   _id: { type: String, required: true },
   created: { type: Date, required: true, index: true, expires: TWO_DAYS },
   cards: { type: Array, required: true },
-});
+}, { versionKey: false });
 
 function createUser(connection) {
   return connection.model('UserReviewDeck', reviewDeckSchema);
