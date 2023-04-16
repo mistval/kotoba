@@ -78,8 +78,16 @@ function createSaveFailedEmbed(description) {
   };
 }
 
+function markdownLink(text, url) {
+  if (!url) {
+    return text;
+  }
+
+  return `[${text}](${url})`;
+}
+
 function getFinalAnswerLineForQuestionAndAnswerLinkAnswer(card) {
-  return `${card.question.replace(/\n/g, ' ')} ([${card.answer.join(', ')}](${card.dictionaryLink}))`;
+  return `${card.question.replace(/\n/g, ' ')} (${markdownLink(card.answer.join(', '), card.dictionaryLink)})`;
 }
 
 function getFinalAnswerLineForQuestionAndAnswerBoldAnswer(card) {
@@ -87,26 +95,26 @@ function getFinalAnswerLineForQuestionAndAnswerBoldAnswer(card) {
 }
 
 function getFinalAnswerLineForQuestionAndAnswerLinkQuestion(card) {
-  return `[${card.question.replace(/\n/g, ' ')}](${card.dictionaryLink}) (${card.answer.join(', ')})`;
+  return `${markdownLink(card.question.replace(/\n/g, ' '), card.dictionaryLink)} (${card.answer.join(', ')})`;
 }
 
 function getFinalAnswerLineForAnswerOnly(card) {
-  return `[${card.answer.join(',')}](${card.dictionaryLink})`;
+  return markdownLink(card.answer.join(', '), card.dictionaryLink);
 }
 
 function getFinalAnswerLineForQuestionOnly(card) {
-  return `[${card.question.replace(/\n/g, ' ')}](${card.dictionaryLink})`;
+  return markdownLink(card.question.replace(/\n/g, ' '), card.dictionaryLink);
 }
 
 function getFinalAnswerLineForJpTestAudio(card) {
   const uri = `http://japanesetest4you.com/mp3/${card.question}`
-  return `[${card.question}](${uri}) (${card.answer.join(', ')})`;
+  return `${markdownLink(card.question, uri)} (${card.answer.join(', ')})`;
 }
 
 function getFinalAnswerLineForForvoAudioLink(card) {
   const answer = card.answer[0];
   const uri = `https://forvo.com/word/${encodeURIComponent(answer)}/#ja`;
-  return `[${answer}](${uri})`;
+  return markdownLink(answer, uri);
 }
 
 function getFinalAnswerLineForHentaiganaComment(card) {
