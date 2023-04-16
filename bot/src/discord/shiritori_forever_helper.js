@@ -122,7 +122,7 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
   const bot = monochrome.getErisBot();
   const { username } = bot.users.get(userID);
   const {
-    word, reading, meaning, nextWordMustStartWith,
+    word, reading, meaning, nextWordMustStartWith, vulgar,
   } = wordInformation;
   const readingStringPart = reading ? ` (${reading})` : '';
   const scoreStringPart = userScore ? ` (${userScore})` : '';
@@ -135,13 +135,13 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
     },
     {
       name: 'It means',
-      value: meaning,
+      value: !vulgar && meaning,
     },
     {
       name: 'Next word starts with',
       value: nextWordMustStartWith.join(', '),
     },
-  ];
+  ].filter((f) => Boolean(f?.value));
 
   return retryPromise(() => bot.createMessage(channelID, {
     embed: {

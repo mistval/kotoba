@@ -55,7 +55,7 @@ function buildReadingsForStartSequence(highestDifficultyForReading) {
 
   fs.writeFileSync(
     path.join(__dirname, '..', 'shiritori', 'readings_for_start_sequence.json'),
-    JSON.stringify(readingsForStartSequence),
+    JSON.stringify(readingsForStartSequence, null, 2),
   );
 }
 
@@ -89,12 +89,13 @@ module.exports = function buildShiritoriTable(database, wordFrequencyDataPath, j
       const partsOfSpeech = entry.sense.flatMap(sense => sense.pos);
       const misc = entry.sense.flatMap(s => s.misc);
       const isNoun = jmdictNounCodes.some(c => partsOfSpeech.includes(c));
-      const botBanned = misc.includes('vulg');
-      const definitions = entry.sense[0].gloss.map(gloss => gloss.$t);
+      const botBanned = misc.includes('vulg') || misc.includes('derog');
+      const definitions = entry.sense[0].gloss.map(g => g._ ?? g);
 
       assert(readingElements.length > 0, `No readings for ${entryNum}`);
       assert(partsOfSpeech.length > 0, `No POS for ${entryNum}`);
       assert(definitions.length > 0, `No definitions for ${entryNum}`);
+      assert(definitions.every(g => typeof g === 'string'), `Non-string definition for ${entryNum}`);
 
       if (words.length === 0) {
         for (const reading of readingElements.flatMap(r => r.reb)) {
@@ -148,8 +149,9 @@ module.exports = function buildShiritoriTable(database, wordFrequencyDataPath, j
               botBanned,
             };
 
+            const hiraganaWord = convertToHiragana(word);
             const json = JSON.stringify(searchResult);
-            insertWordStatement.run(word, reading, json);
+            insertWordStatement.run(hiraganaWord, reading, json);
           }
         }
       }

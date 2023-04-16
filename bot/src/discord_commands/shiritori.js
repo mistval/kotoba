@@ -228,13 +228,13 @@ class DiscordClientDelegate {
       },
       {
         name: 'It means',
-        value: previousWordInformation.meaning,
+        value: !previousWordInformation.vulgar && previousWordInformation.meaning,
       },
       {
         name: 'Next word starts with',
         value: previousWordInformation.nextWordMustStartWith.join(', '),
       },
-    ];
+    ].filter((f) => Boolean(f?.value));
 
     let content = '';
     const previousWasBot = this.previousAnswererId === this.bot.user.id;

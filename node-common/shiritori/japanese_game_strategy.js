@@ -97,20 +97,21 @@ function getNextWordMustStartWith(settings, currentWordReading) {
 }
 
 class WordInformation {
-  constructor(settings, word, reading, meaning) {
+  constructor(settings, word, reading, meaning, vulgar) {
     this.word = word;
     this.reading = reading;
     this.meaning = meaning;
+    this.vulgar = vulgar;
     this.nextWordMustStartWith = getNextWordMustStartWith(settings, this.reading);
     this.uri = `https://jisho.org/search/${encodeURIComponent(this.word)}`;
   }
 }
 
 class AcceptedResult {
-  constructor(settings, word, reading, meaning, score) {
+  constructor(settings, word, reading, meaning, score, vulgar) {
     this.accepted = true;
     this.score = score;
-    this.word = new WordInformation(settings, word, reading, meaning);
+    this.word = new WordInformation(settings, word, reading, meaning, vulgar);
   }
 }
 
@@ -193,7 +194,8 @@ class JapaneseGameStrategy {
     }
 
     if (answerToUse) {
-      return new AcceptedResult(settings, answerToUse, readingToUse, meaningToUse, readingToUse.length);
+      const vulgar = Boolean(possibleWordInformations[0].botBanned);
+      return new AcceptedResult(settings, answerToUse, readingToUse, meaningToUse, readingToUse.length, vulgar);
     }
 
     if (alreadyUsedReadings.length > 0) {
