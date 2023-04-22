@@ -1,6 +1,5 @@
 const extractKanji = require('../common/util/extract_kanji.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
-const addPaginationFooter = require('./add_pagination_footer.js');
 const jishoKanjiSearch = require('../common/jisho_kanji_search.js');
 const constants = require('../common/constants.js');
 
@@ -37,13 +36,13 @@ class KanjiNavigationDataSource {
     const kanjis = await this.kanjisAsync;
 
     if (kanjis.length === 0) {
-      return {
+      return [{
         embed: {
           title: 'Jisho Kanji Search',
-          description: `I didn't find any results for ${this.word}`,
+          description: `I didn't find any kanji results for ${this.word}.`,
           color: constants.EMBED_NEUTRAL_COLOR,
         },
-      };
+      }, undefined];
     }
 
     if (pageIndex >= kanjis.length) {
@@ -60,8 +59,8 @@ class KanjiNavigationDataSource {
       pageCopy.embed.title += ` (page ${pageNumber} of ${lastPageNumber})`;
     }
 
-    if (kanjis.length > 1 || this.forceNavigationFooter) {
-      return addPaginationFooter(pageCopy, this.authorName);
+    if (pageIndex === kanjis.length - 1) {
+      return [pageCopy, undefined];
     }
 
     return pageCopy;

@@ -28,5 +28,6 @@ async function getCached(key, ttl, getter) {
 }
 
 module.exports = {
+  Cache,
   getCached,
 };

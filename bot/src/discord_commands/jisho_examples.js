@@ -1,8 +1,7 @@
-const { Navigation, Permissions } = require('monochrome-bot');
+const { Permissions } = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createExampleSearchPages = require('../discord/create_example_search_pages.js');
-const addPaginationFooter = require('../discord/add_pagination_footer.js');
-const constants = require('../common/constants.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['examples', 'ex'],
@@ -28,18 +27,8 @@ module.exports = {
 
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-    let pages = await createExampleSearchPages(suffix);
-    if (pages.length > 1) {
-      pages = addPaginationFooter(pages, msg.author.username);
-    }
-
-    const navigation = Navigation.fromOneDimensionalContents(msg.author.id, pages);
-
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
-      msg,
-    );
+    const pages = await createExampleSearchPages(suffix);
+    const navigationChapters = [{ title: '', pages }];
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
   },
 };

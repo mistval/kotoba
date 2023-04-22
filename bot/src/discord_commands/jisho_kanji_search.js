@@ -1,7 +1,7 @@
-const { Navigation, NavigationChapter, Permissions } = require('monochrome-bot');
+const { Permissions } = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createKanjiDataSource = require('../discord/create_kanji_search_data_source.js');
-const constants = require('../common/constants.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['kanji', 'k'],
@@ -40,20 +40,7 @@ module.exports = {
       false,
     );
 
-    const navigationChapter = new NavigationChapter(dataSource);
-    const pageCount = await dataSource.countPages();
-
-    const navigation = Navigation.fromOneNavigationChapter(
-      msg.author.id,
-      navigationChapter,
-      pageCount > 1,
-    );
-
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
-      msg,
-    );
+    const navigationChapters = [{ title: '', getPages: (i) => dataSource.getPageFromPreparedData(undefined, i) }];
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
   },
 };

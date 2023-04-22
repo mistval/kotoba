@@ -6,6 +6,7 @@ const jishoSearch = require('./jisho_search.js');
 const globals = require('../common/globals.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
 const createExampleSearchPages = require('./create_example_search_pages.js');
+const { PaginatedMessage } = require('./components/paginated_message.js');
 
 const NUMBER_OF_RETRIES = 50;
 
@@ -26,8 +27,6 @@ async function showRandomWord(
   showStrokeOrder = false,
   showExamples = false,
 ) {
-  const navigationManager = monochrome.getNavigationManager();
-
   if (retriesRemaining <= 0) {
     throw new FulfillmentError({
       publicMessage: jishoNotRespondingResponse,
@@ -61,7 +60,7 @@ async function showRandomWord(
       jishoData,
     );
 
-    return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, channel, msg);
+    return PaginatedMessage.sendAsMessageReply(msg, navigation);
   }
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     jishoData,

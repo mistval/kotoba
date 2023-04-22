@@ -1,7 +1,7 @@
-const { Navigation, Permissions } = require('monochrome-bot');
+const { Permissions } = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createStrokeOrderNavigationChapter = require('../discord/create_stroke_order_search_navigation_chapter.js');
-const constants = require('../common/constants.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['strokeorder', 's', 'so'],
@@ -33,23 +33,13 @@ module.exports = {
 
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-    const { navigationChapter, pageCount } = createStrokeOrderNavigationChapter(
+    const { navigationChapter } = createStrokeOrderNavigationChapter(
       suffix,
       msg.author.username,
       false,
     );
 
-    const navigation = Navigation.fromOneNavigationChapter(
-      msg.author.id,
-      navigationChapter,
-      pageCount > 1,
-    );
-
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
-      msg,
-    );
+    const navigationChapters = [{ title: '', getPages: (i) => navigationChapter.getPageFromPreparedData(undefined, i) }];
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
   },
 };

@@ -11,6 +11,7 @@ const loadScheduleIntervals = require('./discord/schedule_helper.js').loadInterv
 const loadShiritoriForeverChannels = require('./discord/shiritori_forever_helper.js').loadChannels;
 const config = require('../../config/config.js').bot;
 const globals = require('./common/globals.js');
+const { handleInteraction } = require('./discord/components/interactive_message.js');
 
 const { ConsoleLogger } = Monochrome;
 
@@ -123,6 +124,20 @@ function createBot() {
 
     monochrome.getErisBot().on('messageReactionRemove', (message, emoji, userId) => {
       monochrome.reactionButtonManager.handleMessageReactionRemove(message, emoji, userId);
+    });
+
+    monochrome.getErisBot().on('interactionCreate', (interaction) => {
+      interaction.author = interaction.user ?? interaction.member?.user;
+
+      if (monochrome.blacklist_.isUserBlacklistedQuick(interaction.author.id)) {
+        return;
+      }
+
+      if (interaction.type === 3) {
+        return handleInteraction(interaction);
+      }
+
+      monochrome.commandManager_.processInteraction(monochrome.bot_, interaction);
     });
 
     loadScheduleIntervals(monochrome);

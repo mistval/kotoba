@@ -1,7 +1,5 @@
-const { NavigationChapter } = require('monochrome-bot');
 const extractKanji = require('../common/util/extract_kanji.js');
 const createStrokeOrderSearchPage = require('./create_stroke_order_search_page.js');
-const addPaginationFooter = require('./add_pagination_footer.js');
 
 class StrokeOrderNavigationDataSource {
   constructor(characters, authorName, forceNavigationFooter) {
@@ -31,8 +29,8 @@ class StrokeOrderNavigationDataSource {
       pageCopy.embed.title += ` (page ${pageNumber} of ${lastPageNumber})`;
     }
 
-    if (this.characters.length > 1 || this.forceNavigationFooter) {
-      return addPaginationFooter(pageCopy, this.authorName);
+    if (pageIndex === this.characters.length - 1) {
+      return [pageCopy, undefined];
     }
 
     return pageCopy;
@@ -54,7 +52,7 @@ function createStrokeOrderSearchNavigationChapter(searchQuery, authorName, force
   );
 
   return {
-    navigationChapter: new NavigationChapter(dataSource),
+    navigationChapter: dataSource,
     hasKanjiResults: kanji.length > 0,
     pageCount: charactersToSearchFor.length,
   };

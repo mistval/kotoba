@@ -1,7 +1,7 @@
 const { Permissions } = require('monochrome-bot');
 const jishoSearch = require('../discord/jisho_search.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
-const constants = require('../common/constants.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['jisho', 'j', 'en', 'ja', 'jp', 'ja-en', 'jp-en', 'en-jp', 'en-ja'],
@@ -11,7 +11,7 @@ module.exports = {
   uniqueId: 'jishoword403895',
   requiredSettings: 'dictionary/display_mode',
   shortDescription: 'Search Jisho for an English or Japanese word.',
-  longDescription: 'Search Jisho for an English or Japanese word. Tip: sometimes Jisho will interpret your English search term as a Japanese word written in romaji. To force it to interpret your search term as English, put quotes around your search term. Example: <prefix>jn "gone"\n\nThere are two display modes. The default is \'big\' (unless your server admins have changed it). There is also \'small\'. Try both:\n\n<prefix>jn 少し --big\n<prefix>j 少し --small\n\nServer admins can change the default display mode by using the <prefix>settings command.',
+  longDescription: 'Search Jisho for an English or Japanese word. Tip: sometimes Jisho will interpret your English search term as a Japanese word written in romaji. To force it to interpret your search term as English, put quotes around your search term. Example: <prefix>jisho "gone"\n\nThere are two display modes. The default is \'big\' (unless your server admins have changed it). There is also \'small\'. Try both:\n\n<prefix>jisho 少し --big\n<prefix>jisho 少し --small\n\nServer admins can change the default display mode by using the <prefix>settings command.',
   usageExample: '<prefix>j 少し',
   requiredBotPermissions: [
     Permissions.attachFiles,
@@ -57,12 +57,7 @@ module.exports = {
         monochrome.getNavigationManager(),
       );
 
-      return monochrome.getNavigationManager().show(
-        navigation,
-        constants.NAVIGATION_EXPIRATION_TIME,
-        msg.channel,
-        msg,
-      );
+      return PaginatedMessage.sendAsMessageReply(msg, navigation);
     }
 
     const result = await jishoSearch.createSmallResultForWord(searchTerm);

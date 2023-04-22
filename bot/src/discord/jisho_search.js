@@ -1,22 +1,8 @@
-const { NavigationChapter, Navigation } = require('monochrome-bot');
 const jishoWordSearch = require('../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const createExampleSearchPages = require('./create_example_search_pages.js');
-const addPaginationFooter = require('./add_pagination_footer.js');
 const createKanjiSearchDataSource = require('./create_kanji_search_data_source.js');
 const createStrokeOrderSearchNavigationChapter = require('./create_stroke_order_search_navigation_chapter.js');
-
-const STROKE_ORDER_EMOTE = '🇸';
-const KANJI_EMOTE = '🇰';
-const EXAMPLES_EMOTE = '🇪';
-const JISHO_EMOTE = '🇯';
-
-class NavigationChapterInformation {
-  constructor(navigationChapter, hasAnyPages) {
-    this.navigationChapter = navigationChapter;
-    this.hasAnyPages = hasAnyPages;
-  }
-}
 
 class ExamplesSource {
   constructor(authorName, word) {
@@ -24,25 +10,21 @@ class ExamplesSource {
     this.authorName = authorName;
   }
 
-  async prepareData() {
-    return addPaginationFooter(await createExampleSearchPages(this.word), this.authorName);
-  }
-
   // eslint-disable-next-line class-methods-use-this
-  getPageFromPreparedData(pages, pageIndex) {
-    return pages[pageIndex];
+  async getPageFromPreparedData() {
+    this.pagePromise ??= createExampleSearchPages(this.word);
+    const pages = await this.pagePromise;
+    return pages;
   }
 }
 
 function createNavigationChapterForKanji(authorName, word, prefix) {
-  const dataSource = createKanjiSearchDataSource(
+  return createKanjiSearchDataSource(
     word,
     authorName,
     prefix,
     true,
   );
-
-  return new NavigationChapter(dataSource);
 }
 
 function createNavigationChapterInformationForStrokeOrder(authorName, word) {
@@ -53,14 +35,16 @@ function createNavigationChapterInformationForStrokeOrder(authorName, word) {
   );
 
   const { navigationChapter, hasKanjiResults } = navigationChapterInfo;
-  return new NavigationChapterInformation(navigationChapter, hasKanjiResults);
+  if (!hasKanjiResults) {
+    return undefined;
+  }
+
+  return navigationChapter;
 }
 
 function createNavigationChapterInformationForExamples(authorName, word) {
   const examplesSource = new ExamplesSource(authorName, word);
-  const navigationChapter = new NavigationChapter(examplesSource);
-
-  return navigationChapter;
+  return examplesSource;
 }
 
 function createNavigationForJishoResults(
@@ -69,8 +53,6 @@ function createNavigationForJishoResults(
   authorId,
   crossPlatformResponseData,
 ) {
-  const chapterForEmojiName = {};
-
   /* Create the Jisho (J) chapter */
 
   const word = crossPlatformResponseData.searchPhrase;
@@ -81,44 +63,54 @@ function createNavigationForJishoResults(
     authorName,
   );
 
-  const jishoNavigationChapter = NavigationChapter.fromContent(discordContents);
-  chapterForEmojiName[JISHO_EMOTE] = jishoNavigationChapter;
+  const jishoNavigationChapter = { title: '辞', pages: [...discordContents, undefined] };
 
   /* Create the Kanji (K) chapter */
 
-  const kanjiNavigationChapter = createNavigationChapterForKanji(
+  const kanjiDataSource = createNavigationChapterForKanji(
     authorName,
     word,
     msg.prefix,
   );
 
-  chapterForEmojiName[KANJI_EMOTE] = kanjiNavigationChapter;
+  const kanjiNavigationChapter = {
+    title: '漢',
+    getPages: (i) => kanjiDataSource.getPageFromPreparedData(undefined, i),
+  };
 
   /* Create the stroke order (S) chapter */
 
-  const strokeOrderNavigationChapterInformation = createNavigationChapterInformationForStrokeOrder(
+  const strokeOrderDataSource = createNavigationChapterInformationForStrokeOrder(
     authorName,
     word,
     false,
   );
 
-  if (strokeOrderNavigationChapterInformation.hasAnyPages) {
-    chapterForEmojiName[STROKE_ORDER_EMOTE] = strokeOrderNavigationChapterInformation
-      .navigationChapter;
-  }
+  const strokeOrderNavigationChapter = strokeOrderDataSource && {
+    title: '書',
+    getPages: (i) => strokeOrderDataSource.getPageFromPreparedData(undefined, i),
+  };
 
   /* Create the examples (E) chapter */
 
-  const examplesNavigationChapter = createNavigationChapterInformationForExamples(
+  const examplesDataSource = createNavigationChapterInformationForExamples(
     authorName,
     word,
   );
 
-  chapterForEmojiName[EXAMPLES_EMOTE] = examplesNavigationChapter;
+  const examplesNavigationChapter = {
+    title: '例',
+    getPages: (i) => examplesDataSource.getPageFromPreparedData(undefined, i),
+  };
 
   /* Create the navigation. */
 
-  return new Navigation(authorId, true, JISHO_EMOTE, chapterForEmojiName);
+  return [
+    jishoNavigationChapter,
+    kanjiNavigationChapter,
+    strokeOrderNavigationChapter,
+    examplesNavigationChapter,
+  ].filter(Boolean);
 }
 
 async function createOnePageBigResultForWord(word) {

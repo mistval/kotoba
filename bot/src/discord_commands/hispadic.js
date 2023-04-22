@@ -90,7 +90,8 @@ module.exports = {
     } catch (err) {
       return throwPublicErrorFatal(
         'Hispadic',
-        'Sorry, there was a problem communicating with the Hispadic service, please try again later.', 'Hispadic CF error',
+        'Sorry, there was a problem communicating with the Hispadic service, please try again later.',
+        'Hispadic CF error',
         err,
       );
     }
