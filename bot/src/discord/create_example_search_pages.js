@@ -22,7 +22,7 @@ function createPagesForExamplesData(examplesData) {
         description: `I didn't find any example results for [${examplesData.query}](${examplesData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
-    }, undefined];
+    }];
   }
 
   const shortExamples = examplesData.results.filter(
