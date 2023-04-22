@@ -83,7 +83,7 @@ function formatSentenceData(sentences, keyword, showFullSentences = false) {
       showFullSentences ? sentence.short : keyword,
     );
     return {
-      name: highlighted.replace(/ +/g, ' '),
+      name: highlighted,
       value: `-- ${sentence.source}`,
       inline: false,
     };
