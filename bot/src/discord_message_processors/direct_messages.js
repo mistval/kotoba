@@ -6,7 +6,7 @@ module.exports = {
   name: 'Direct Message',
   priority: -1,
   action: (bot, msg, monochrome) => {
-    if (msg.channel.guild) {
+    if (msg.channel.guild || msg.guildID) {
       return false;
     }
 
