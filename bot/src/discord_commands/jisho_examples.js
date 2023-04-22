@@ -1,7 +1,6 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createExampleSearchPages = require('../discord/create_example_search_pages.js');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['examples', 'ex'],

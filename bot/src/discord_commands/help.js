@@ -1,5 +1,4 @@
-const { FulfillmentError, Permissions } = require('monochrome-bot');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
+const { FulfillmentError, Permissions, PaginatedMessage } = require('monochrome-bot');
 const constants = require('../common/constants.js');
 
 // Configuration start

@@ -1,9 +1,8 @@
 const {
-  FulfillmentError, Permissions,
+  FulfillmentError, Permissions, PaginatedMessage,
 } = require('monochrome-bot');
 const ScoreStorageUtils = require('../common/quiz/score_storage_utils.js');
 const constants = require('../common/constants.js');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 const MAX_SCORERS_PER_PAGE = 20;
 

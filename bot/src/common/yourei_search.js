@@ -1,11 +1,11 @@
 const axios = require('axios').create({ timeout: 10000 });
 const cheerio = require('cheerio');
 
+const { PaginatedMessage } = require('monochrome-bot');
 const constants = require('./constants.js');
 const trimEmbed = require('./util/trim_embed.js');
 const { highlight } = require('./util/sentence_highlighter.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('./util/errors.js');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 const YOUREI_BASE_URL = 'http://yourei.jp';
 const SENTENCES_PER_FETCH = 20;

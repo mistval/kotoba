@@ -1,7 +1,6 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createStrokeOrderNavigationChapter = require('../discord/create_stroke_order_search_navigation_chapter.js');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['strokeorder', 's', 'so'],

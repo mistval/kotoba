@@ -1,7 +1,7 @@
 const {
   Permissions,
+  PaginatedMessage,
 } = require('monochrome-bot');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 const getPronounceInfo = require('../common/get_pronounce_info.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');

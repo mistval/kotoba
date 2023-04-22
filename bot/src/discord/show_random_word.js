@@ -1,4 +1,4 @@
-const { FulfillmentError } = require('monochrome-bot');
+const { FulfillmentError, PaginatedMessage } = require('monochrome-bot');
 const jishoWordSearch = require('../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const constants = require('../common/constants.js');
@@ -6,7 +6,6 @@ const jishoSearch = require('./jisho_search.js');
 const globals = require('../common/globals.js');
 const createKanjiSearchPage = require('./create_kanji_search_page.js');
 const createExampleSearchPages = require('./create_example_search_pages.js');
-const { PaginatedMessage } = require('./components/paginated_message.js');
 
 const NUMBER_OF_RETRIES = 50;
 

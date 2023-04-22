@@ -1,5 +1,4 @@
-const { Permissions } = require('monochrome-bot');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const createPagesForAnime = require('../discord/create_anime_search_navigation.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 

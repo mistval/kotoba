@@ -1,6 +1,5 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000 });
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
 const { hispadicApiUri } = require('../../../config/config.js').bot;

@@ -1,7 +1,6 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const jishoSearch = require('../discord/jisho_search.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 module.exports = {
   commandAliases: ['jisho', 'j', 'en', 'ja', 'jp', 'ja-en', 'jp-en', 'en-jp', 'en-ja'],

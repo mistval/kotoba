@@ -1,8 +1,7 @@
 const {
-  FulfillmentError, Permissions,
+  FulfillmentError, Permissions, PaginatedMessage,
 } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
-const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');

@@ -14,7 +14,7 @@ class ExamplesSource {
   async getPageFromPreparedData() {
     this.pagePromise ??= createExampleSearchPages(this.word);
     const pages = await this.pagePromise;
-    return pages;
+    return [...pages, undefined];
   }
 }
 

@@ -1,7 +1,6 @@
 const shiritoriManager = require('kotoba-node-common').shiritori;
 const assert = require('assert');
-const { FulfillmentError } = require('monochrome-bot');
-const { PaginatedMessage } = require('./components/paginated_message.js');
+const { FulfillmentError, PaginatedMessage } = require('monochrome-bot');
 const globals = require('../common/globals.js');
 const state = require('../common/static_state.js');
 
