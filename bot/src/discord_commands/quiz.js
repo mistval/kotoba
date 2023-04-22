@@ -1655,8 +1655,9 @@ async function autoCompleteSearch(option) {
     return defaultDeckOptionsForInteraction;
   }
 
-  const parts = input.split(/\s*\+\s*/);
-  const searchValue = parts[parts.length - 1].trim();
+  const hasMultipleParts = input.includes('+');
+  const parts = hasMultipleParts ? input.split(/\s*\+\s*/) : undefined;
+  const searchValue = hasMultipleParts ? parts[parts.length - 1].trim() : input;
 
   if (!searchValue) {
     return [{
@@ -1692,19 +1693,25 @@ async function autoCompleteSearch(option) {
     },
   );
 
-  const previousParts = parts.slice(0, parts.length - 1);
+  const previousParts = hasMultipleParts ? parts.slice(0, parts.length - 1) : undefined;
   return uniqueResults.map((r) => {
     const userSubmitted = typeof r.score === 'number';
     const userSubmittedPart = userSubmitted ? ` - User Submitted - ${r.score} upvotes` : '';
+    const namePart = `${r.shortName} (${r.name}${userSubmittedPart})`;
+    const valuePart = r.shortName;
+
+    if (!previousParts) {
+      return { name: namePart.slice(0, 100), value: valuePart };
+    }
 
     const name = [
       ...previousParts,
-      `${r.shortName} (${r.name}${userSubmittedPart})`,
+      namePart,
     ].join(' + ');
 
     const value = [
       ...previousParts,
-      `${r.shortName}`,
+      valuePart,
     ].join('+');
 
     return { name: name.slice(0, 100), value };
