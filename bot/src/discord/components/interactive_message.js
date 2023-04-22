@@ -9,9 +9,10 @@ const interactiveMessageForMessageId = new Map();
 const sleep = util.promisify(setTimeout);
 
 class InteractiveMessage {
-  constructor(ownerId, { id } = {}) {
+  constructor(ownerId, { id, parentMessage } = {}) {
     this.id = id ?? 'interactive_message';
     this.ownerId = ownerId;
+    this.parentMessage = parentMessage;
   }
 
   setComponents(componentGroup) {
@@ -48,7 +49,7 @@ class InteractiveMessage {
     this.messagePromise = retryPromise(() => channel.createMessage({
       embed: this.embed,
       components: this.components,
-    }));
+    }, undefined, this.parentMessage));
 
     const message = await this.messagePromise;
     interactiveMessageForMessageId.set(message.id, this);

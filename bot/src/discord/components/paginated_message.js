@@ -14,7 +14,12 @@ function endArrayWithUndefined(arr) {
 
 class PaginatedMessage {
   static async sendAsMessageReply(msg, chaptersArg, interactiveMessageOptions) {
-    return this.send(msg.channel, msg.author.id, chaptersArg, interactiveMessageOptions);
+    return this.send(
+      msg.channel,
+      msg.author.id,
+      chaptersArg,
+      { ...interactiveMessageOptions, parentMessage: msg },
+    );
   }
 
   static async send(channel, ownerId, chaptersArg, interactiveMessageOptions) {
