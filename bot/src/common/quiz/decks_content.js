@@ -1,49 +1,29 @@
-const Cache = require('node-cache');
 const fetch = require('node-fetch');
+const Cache = require('../caching.js');
 const staticDecks = require('./deck_list.json');
 const constants = require('./../constants.js');
 const config = require('../../../../config/config.js');
 
-const CACHE_TTL_SECONDS = 60 * 60; // 1 hour
-const DYNAMIC_DECKS_CACHE_KEY = 'dynamicDecks';
+const DECKS_CACHE_KEY = 'quizDeckList';
+const CACHE_EXPIRATION_SECONDS = 60 * 60; // 1 hour
 
-let expired = false;
+function getDecks() {
+  return Cache.getCached(DECKS_CACHE_KEY, CACHE_EXPIRATION_SECONDS, async () => {
+    if (!config.bot.dynamicDecksUrl) {
+      return staticDecks;
+    }
 
-const dynamicDeckCache = new Cache({
-  stdTTL: CACHE_TTL_SECONDS,
-  deleteOnExpire: false,
-});
+    const response = await fetch(config.bot.dynamicDecksUrl);
+    if (!response.ok) {
+      return staticDecks;
+    }
 
-function refreshDynamicDeckCache() {
-  if (!config.bot.dynamicDecksUrl) {
-    return;
-  }
-
-  fetch(config.bot.dynamicDecksUrl)
-    .then(res => res.json())
-    .then(json => {
-      dynamicDeckCache.set(DYNAMIC_DECKS_CACHE_KEY, json);
-    }).catch(() => {
-      dynamicDeckCache.set(
-        DYNAMIC_DECKS_CACHE_KEY,
-        dynamicDeckCache.get(DYNAMIC_DECKS_CACHE_KEY),
-      );
-    });
+    return response.json();
+  });
 }
 
-dynamicDeckCache.on( "expired", () => {
-  expired = true;
-});
-
-refreshDynamicDeckCache();
-
-module.exports.createContent = function(prefix) {
-  if (expired) {
-    refreshDynamicDeckCache();
-    expired = false;
-  }
-
-  const decks = dynamicDeckCache.get(DYNAMIC_DECKS_CACHE_KEY) ?? staticDecks;
+module.exports.createContent = async function(prefix) {
+  const decks = await getDecks();
 
   return {
     embed: {
@@ -59,8 +39,8 @@ module.exports.createContent = function(prefix) {
   };
 };
 
-module.exports.getCategoryHelp = function(keyword) {
-  const decks = dynamicDeckCache.get(DYNAMIC_DECKS_CACHE_KEY) ?? staticDecks;
+module.exports.getCategoryHelp = async function(keyword) {
+  const decks = await getDecks();
   const subCategory = decks.subCategories.find(category => category.keyword === keyword);
 
   if (!subCategory) {
@@ -70,76 +50,76 @@ module.exports.getCategoryHelp = function(keyword) {
   return `${subCategory.description}  \`\`\`${subCategory.decks.join(', ')}\`\`\``
 };
 
-module.exports.deckOptionsForInteraction = [{
-  name: 'JLPT N5',
+module.exports.defaultDeckOptionsForInteraction = [{
+  name: 'n5 (JLPT N5 Reading Quiz)',
   value: 'n5',
 },{
-  name: 'JLPT N4',
+  name: 'n4 (JLPT N4 Reading Quiz)',
   value: 'n4',
 },{
-  name: 'JLPT N3',
+  name: 'n3 (JLPT N3 Reading Quiz)',
   value: 'n3',
 },{
-  name: 'JLPT N2',
+  name: 'n2 (JLPT N2 Reading Quiz)',
   value: 'n2',
 },{
-  name: 'JLPT N1',
+  name: 'n1 (JLPT N1 Reading Quiz)',
   value: 'n1',
 },{
-  name: 'Hiragana',
+  name: 'hiragana (Hiragana Reading Quiz)',
   value: 'hiragana',
 },{
-  name: 'Katakana',
+  name: 'katakana (Katakana Reading Quiz)',
   value: 'katakana',
 },{
-  name: 'Hiragana Words',
+  name: 'kanawords (Kana Words Reading Quiz)',
   value: 'kanawords',
 },{
-  name: 'Common',
+  name: 'common (Common Words Reading Quiz)',
   value: 'common',
 },{
-  name: 'Hard',
+  name: 'hard (Hard Reading Quiz)',
   value: 'hard',
 },{
-  name: 'Haard',
+  name: 'haard (Haard Reading Quiz)',
   value: 'haard',
 },{
-  name: 'Cities',
+  name: 'cities (Cities Reading Quiz)',
   value: 'cities',
 },{
-  name: 'First Names',
+  name: 'namae (Namae Reading Quiz)',
   value: 'namae',
 },{
-  name: 'Last Names',
+  name: 'myouji (Myouji Reading Quiz)',
   value: 'myouji',
 },{
-  name: 'Prefectures',
+  name: 'prefectures (Prefectures Reading Quiz)',
   value: 'prefectures',
 },{
-  name: 'English Anagrams Length 5',
+  name: 'anagrams5 (English Anagrams Length 5 Quiz)',
   value: 'anagrams5',
 },{
-  name: 'English Anagrams Length 6',
+  name: 'anagrams6 (English Anagrams Length 6 Quiz)',
   value: 'anagrams6',
 },{
-  name: 'English Anagrams Length 7',
+  name: 'anagrams7 (English Anagrams Length 7 Quiz)',
   value: 'anagrams7',
 },{
-  name: 'English Anagrams Length 8',
+  name: 'anagrams8 (English Anagrams Length 8 Quiz)',
   value: 'anagrams8',
 },{
-  name: 'Easy Mix',
+  name: 'easymix (Easy Mix)',
   value: 'easymix',
 },{
-  name: 'Medium Mix',
+  name: 'medmix (Medium Mix)',
   value: 'medmix',
 },{
-  name: 'Hard Mix',
+  name: 'hardmix (Hard Mix)',
   value: 'hardmix',
 },{
-  name: 'Harder Mix',
+  name: 'hardermix (Harder Mix)',
   value: 'hardermix',
 },{
-  name: 'Insane Mix',
+  name: 'insanemix (Insane Mix)',
   value: 'insanemix',
 }];

@@ -6,9 +6,15 @@ WORKDIR /var/app/better-sqlite3
 RUN npm install
 
 WORKDIR /var/app
-COPY . .
+COPY package.json package-lock.json ./
 RUN npm ci
 
+COPY ./run.sh ./run.sh
 RUN chmod +x ./run.sh
+
+COPY ./utils ./utils
+COPY ./run.js ./run.js
+COPY ./data ./data
+COPY ./benchmarks ./benchmarks
 
 CMD ["./run.sh"]

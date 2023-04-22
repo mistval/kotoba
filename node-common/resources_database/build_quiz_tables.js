@@ -125,8 +125,11 @@ function insertMeta(database, deckName, deck) {
   const deckCopy = { ...deck, shortName: deckName, length: deck.cards.length };
   delete deckCopy.cards;
 
-  const insertStatement = database.prepare(`INSERT INTO QuizDecksMeta VALUES (?, ?, ?);`);
-  insertStatement.run(deckName, deck.uniqueId, JSON.stringify(deckCopy));
+  const insertStatement = database.prepare(`INSERT INTO QuizDecksMeta VALUES (?, ?, ?, ?);`);
+  insertStatement.run(deckName, deck.name, deck.uniqueId, JSON.stringify(deckCopy));
+
+  const insertFtsStatement = database.prepare(`INSERT INTO QuizDecksMetaFTS VALUES (?, ?, ?);`);
+  insertFtsStatement.run(deckName, deck.name, deck.description);
 }
 
 function createWordIdentificationDeck(database, sourceDeckName, sourceDeck) {
@@ -213,7 +216,8 @@ function updateDeck(database, deckName, deck) {
 
 function buildDeckTables(database, quizDataPath) {
   database.exec('CREATE TABLE QuizQuestions (deckName CHAR(20), idx INT, questionJson TEXT);');
-  database.exec('CREATE TABLE QuizDecksMeta (deckName CHAR(20), deckUniqueId CHAR(20), metaJson TEXT);');
+  database.exec('CREATE TABLE QuizDecksMeta (deckName CHAR(20), deckFullName TEXT, deckUniqueId CHAR(20), metaJson TEXT);');
+  database.exec('CREATE VIRTUAL TABLE QuizDecksMetaFTS USING FTS5(deckName, deckFullName, description);')
 
   const quizDeckFileNames = fs.readdirSync(quizDataPath);
   quizDeckFileNames.forEach((fileName) => {

@@ -1,5 +1,6 @@
-const state = require('./../common/static_state.js');
 const assert = require('assert');
+const state = require('./../common/static_state.js');
+const Cache = require('../common/caching.js');
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
 const { Permissions, Navigation } = require('monochrome-bot');
@@ -12,7 +13,7 @@ const updateDbFromUser = require('../discord/db_helpers/update_from_user.js');
 
 const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
-const { getCategoryHelp, deckOptionsForInteraction } = require('./../common/quiz/decks_content.js');
+const { getCategoryHelp, defaultDeckOptionsForInteraction } = require('./../common/quiz/decks_content.js');
 const constants = require('./../common/constants.js');
 const { FulfillmentError } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
@@ -1317,14 +1318,14 @@ function createAdvancedHelpContent(prefix) {
   return content;
 }
 
-function showHelp(msg, isMastery, isConquest, masteryEnabled, advanced) {
+async function showHelp(msg, isMastery, isConquest, masteryEnabled, advanced) {
   const prefix = msg.prefix;
 
   let helpMessage;
   if (!isMastery && !isConquest && advanced) {
     helpMessage = createAdvancedHelpContent(prefix);
   } else if(!isMastery && !isConquest) {
-    helpMessage = createHelpContent(prefix);
+    helpMessage = await createHelpContent(prefix);
   } else if (isMastery) {
     helpMessage = createMasteryHelp(masteryEnabled, prefix);
   } else if (isConquest) {
@@ -1587,7 +1588,11 @@ function getServerSettings(rawServerSettings) {
 }
 
 async function doSearch(msg, monochrome, searchTerm = '') {
-  const results = await deckSearchUtils.search(searchTerm);
+  const results = await deckSearchUtils.searchCustomFullText(
+    searchTerm,
+    { populateOwner: true, limit: 100 },
+  );
+
   if (results.length === 0) {
     throw new FulfillmentError({
       publicMessage: { ...noDecksFoundPublicMessage },
@@ -1606,7 +1611,7 @@ async function doSearch(msg, monochrome, searchTerm = '') {
       title: `Custom Deck Search Results (page ${i + 1} of ${chunks.length})`,
       fields: c.map((r) => ({
         name: `${r.shortName} (${r.score} votes)`,
-        value: `__${r.name}__ by ${r.owner.discordUser.username}#${r.owner.discordUser.discriminator}`,
+        value: `__${r.name}__ by ${r.owner?.discordUser.username ?? 'Unknown User'}#${r.owner?.discordUser.discriminator ?? '????'}`,
       })),
       color: constants.EMBED_NEUTRAL_COLOR,
       footer,
@@ -1643,6 +1648,69 @@ async function warnIfNoSaveSlotsAvailable(msg) {
   }
 }
 
+async function autoCompleteSearch(option) {
+  const input = option.value.trim();
+
+  if (!input) {
+    return defaultDeckOptionsForInteraction;
+  }
+
+  const parts = input.split(/\s*\+\s*/);
+  const searchValue = parts[parts.length - 1].trim();
+
+  if (!searchValue) {
+    return [{
+      name: input,
+      value: input,
+    }];
+  }
+
+  const uniqueResults = await Cache.getCached(
+    `quiz_autocomplete_search:${searchValue}`,
+    60 * 60,
+    async () => {
+      const builtInDecksPrefixResults = deckSearchUtils.searchBuiltInPrefix(searchValue, { limit: 10 });
+      const builtInDecksFullTextResults = deckSearchUtils.searchBuiltInFullText(searchValue, { limit: 10 });
+      const [customDeckPrefixResults, customDeckFullTextResults] = await Promise.all([
+        deckSearchUtils.searchCustomPrefix(searchValue, { limit: 5 }),
+        deckSearchUtils.searchCustomFullText(searchValue, { populateOwner: false, limit: 20 }),
+      ]);
+
+      const seen = new Set();
+      return builtInDecksPrefixResults.concat(
+        builtInDecksFullTextResults,
+        customDeckPrefixResults,
+        customDeckFullTextResults,
+      ).filter((r) => {
+        if (seen.has(r.shortName)) {
+          return false;
+        }
+
+        seen.add(r.shortName);
+        return true;
+      });
+    },
+  );
+
+  const previousParts = parts.slice(0, parts.length - 1);
+  return uniqueResults.map((r) => {
+    const userSubmitted = typeof r.score === 'number';
+    const userSubmittedPart = userSubmitted ? ` - User Submitted - ${r.score} upvotes` : '';
+
+    const name = [
+      ...previousParts,
+      `${r.shortName} (${r.name}${userSubmittedPart})`,
+    ].join(' + ');
+
+    const value = [
+      ...previousParts,
+      `${r.shortName}`,
+    ].join('+');
+
+    return { name: name.slice(0, 100), value };
+  });
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1666,7 +1734,15 @@ module.exports = {
       description: 'The deck from which to draw questions.',
       type: 3,
       required: true,
-      choices: deckOptionsForInteraction,
+      autocomplete: true,
+      async performAutoComplete(bot, interaction, option, monochrome) {
+        const results = await autoCompleteSearch(option);
+        monochrome.getLogger().info({
+          event: 'QUIZ DECK AUTOCOMPLETED',
+          detail: `'${option.value}' - ${results.length} results`,
+        });
+        return results;
+      },
     }, {
       name: 'scorelimit',
       description: 'The score that must be achieved in order to win.',
@@ -1787,7 +1863,7 @@ module.exports = {
       return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
     }
 
-    const categoryHelp = getCategoryHelp(remainingTokens2[0]);
+    const categoryHelp = await getCategoryHelp(remainingTokens2[0]);
     if (categoryHelp) {
       return msg.channel.createMessage(categoryHelp);
     }

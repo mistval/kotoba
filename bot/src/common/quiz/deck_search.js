@@ -1,28 +1,63 @@
+const escapeStringRegexp = require('escape-string-regexp');
+const globals = require('../globals.js');
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);
 const CustomDeckVoteModel = require('kotoba-node-common').models.createCustomDeckVoteModel(mongoConnection);
 
-async function search(searchTerm = '') {
+async function searchCustomFullText(
+  searchTerm = '',
+  { populateOwner = false, limit = 100 } = {},
+) {
   const filter = searchTerm.trim()
     ? { $text: { $search: searchTerm }, public: true }
     : { public: true };
 
-  const results = await CustomDeckModel
+  let query = CustomDeckModel
     .find(filter)
     .sort({ score: -1 })
-    .limit(100)
-    .select('shortName name score')
-    .populate('owner', 'discordUser.username discordUser.discriminator')
-    .lean();
+    .limit(limit)
+    .select('shortName name score');
 
-  return results.filter(r => r.owner);
+  if (populateOwner) {
+    query = query.populate('owner', 'discordUser.username discordUser.discriminator');
+  }
+
+  const results = await query.lean().exec();
+
+  return results;
+}
+
+async function searchCustomPrefix(searchTerm, { limit = 100 } = {}) {
+  if (!searchTerm) {
+    return searchCustomFullText('', { limit, populateOwner: false });
+  }
+
+  const results = await CustomDeckModel.find({
+    shortName: { $regex: `^${escapeStringRegexp(searchTerm.toLowerCase())}` },
+    public: true,
+  })
+    .sort({ score: -1 })
+    .limit(limit)
+    .select('shortName name score')
+    .lean()
+    .exec();
+
+  return results;
+}
+
+function searchBuiltInPrefix(searchTerm, { limit = 100 } = {}) {
+  return globals.resourceDatabase.prefixSearchQuizDeckShortNames(searchTerm, limit);
+}
+
+function searchBuiltInFullText(searchTerm, { limit = 100 } = {}) {
+  return globals.resourceDatabase.fullTextSearchQuizDecks(searchTerm, limit);
 }
 
 async function getUserAndDeck(discordUserId, deckUniqueId) {
   const [user, deck] = await Promise.all([
-    UserModel.findOne({ 'discordUser.id': discordUserId }).select('_id').lean(),
-    CustomDeckModel.findOne({ uniqueId: deckUniqueId }).select('_id public').lean(),
+    UserModel.findOne({ 'discordUser.id': discordUserId }).select('_id').lean().exec(),
+    CustomDeckModel.findOne({ uniqueId: deckUniqueId }).select('_id public').lean().exec(),
   ]);
 
   if (!user) {
@@ -73,13 +108,17 @@ async function discordUserCanVote(discordUserId, deckUniqueId) {
   const voteRecord = await CustomDeckVoteModel
     .findOne({ voter: user._id, deck: deck._id })
     .select('_id')
-    .lean();
+    .lean()
+    .exec();
 
   return !voteRecord;
 }
 
 module.exports = {
-  search,
+  searchCustomFullText,
+  searchCustomPrefix,
+  searchBuiltInPrefix,
+  searchBuiltInFullText,
   voteForDiscordUser,
   discordUserCanVote,
 };

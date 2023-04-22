@@ -48,6 +48,8 @@ class ResourceDatabase {
     this.getRandomWordStatement = this.database.prepare('SELECT word FROM RandomWords WHERE id = ABS(RANDOM()) %(SELECT COUNT(*) FROM RandomWords);');
     this.getQuizQuestionStatement = this.database.prepare('SELECT questionJson FROM QuizQuestions WHERE deckName = ? AND idx = ?;');
     this.getQuizDeckMetaStatement = this.database.prepare('SELECT metaJson FROM QuizDecksMeta WHERE deckName = ? OR deckUniqueId = ?;');
+    this.prefixSearchQuizDeckShortNamesStatement = this.database.prepare('SELECT deckName AS shortName, deckFullName AS name FROM QuizDecksMeta WHERE deckName LIKE ? LIMIT ?;');
+    this.fullTextSearchQuizDeckMetaStatement = this.database.prepare('SELECT deckName AS shortName, deckFullName AS name FROM QuizDecksMetaFTS WHERE QuizDecksMetaFTS MATCH ? LIMIT ?;')
     this.getStrokeDataStatement = this.database.prepare('SELECT strokeDataJson FROM StrokeData WHERE kanji = ?;');
   }
 
@@ -59,6 +61,17 @@ class ResourceDatabase {
   getQuizDeckMeta(deckName) {
     const result = this.getQuizDeckMetaStatement.get(deckName, deckName);
     return result && JSON.parse(result.metaJson);
+  }
+
+  prefixSearchQuizDeckShortNames(searchTerm, limit) {
+    const sanitizedSearchTerm = searchTerm.replaceAll('_', '').replaceAll('%', '');
+    const results = this.prefixSearchQuizDeckShortNamesStatement.all(`${sanitizedSearchTerm}%`, limit);
+    return results;
+  }
+
+  fullTextSearchQuizDecks(searchTerm, limit) {
+    const results = this.prefixSearchQuizDeckShortNamesStatement.all(searchTerm, limit);
+    return results;
   }
 
   getFontsHaveAllCharacters(fontFileNames, str) {

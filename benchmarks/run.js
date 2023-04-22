@@ -1,6 +1,8 @@
+const { doFTSQueryBenchmark } = require('./benchmarks/query_quiz_fts.js');
 const { doRenderBenchmark } = require('./benchmarks/render_text.js');
 
 async function main() {
+  await doFTSQueryBenchmark(100_000);
   await doRenderBenchmark({ parallelism: 1 });
   await doRenderBenchmark({ parallelism: 2 });
   await doRenderBenchmark({ parallelism: 3 });
