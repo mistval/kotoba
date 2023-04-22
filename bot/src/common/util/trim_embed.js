@@ -1,4 +1,5 @@
-const EMBED_FIELD_MAX_LENGTH = 1024;
+const EMBED_FIELD_NAME_MAX_LENGTH = 256;
+const EMBED_FIELD_VALUE_MAX_LENGTH = 1024;
 
 // Experimentally determined. It's supposed to be 256 but in practice it seems to not be >.>
 const EMBED_TITLE_MAX_LENGTH = 242;
@@ -36,7 +37,8 @@ function trimEmbed(content) {
     ?.filter((f) => f.name?.trim())
     ?.map((field) => ({
       ...field,
-      value: trimString(field.value, EMBED_FIELD_MAX_LENGTH),
+      name: trimString(field.name, EMBED_FIELD_NAME_MAX_LENGTH),
+      value: trimString(field.value, EMBED_FIELD_VALUE_MAX_LENGTH),
     }));
 
   return contentCopy;
