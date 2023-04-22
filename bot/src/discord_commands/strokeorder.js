@@ -40,6 +40,8 @@ module.exports = {
     );
 
     const navigationChapters = [{ title: '', getPages: (i) => navigationChapter.getPageFromPreparedData(undefined, i) }];
-    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
+    const paginatedMessageId = `jisho_stroke_order_"${suffix}"`;
+
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters, { id: paginatedMessageId });
   },
 };

@@ -29,6 +29,8 @@ module.exports = {
 
     const pages = await createExampleSearchPages(suffix);
     const navigationChapters = [{ title: '', pages }];
-    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
+    const paginatedMessageId = `jisho_examples_"${suffix}"`;
+
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters, { id: paginatedMessageId });
   },
 };

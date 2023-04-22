@@ -41,6 +41,8 @@ module.exports = {
     );
 
     const navigationChapters = [{ title: '', getPages: (i) => dataSource.getPageFromPreparedData(undefined, i) }];
-    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters);
+    const paginatedMessageId = `jisho_kanji_"${suffix}"`;
+
+    return PaginatedMessage.sendAsMessageReply(msg, navigationChapters, { id: paginatedMessageId });
   },
 };

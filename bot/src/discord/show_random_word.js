@@ -60,7 +60,8 @@ async function showRandomWord(
       jishoData,
     );
 
-    return PaginatedMessage.sendAsMessageReply(msg, navigation);
+    const paginatedMessageId = `random_word_${word}`;
+    return PaginatedMessage.sendAsMessageReply(msg, navigation, { id: paginatedMessageId });
   }
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     jishoData,

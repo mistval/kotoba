@@ -57,7 +57,8 @@ module.exports = {
         monochrome.getNavigationManager(),
       );
 
-      return PaginatedMessage.sendAsMessageReply(msg, navigation);
+      const paginatedMessageId = `jisho_all_"${searchTerm}"_${big ? 'big' : 'small'}`;
+      return PaginatedMessage.sendAsMessageReply(msg, navigation, { id: paginatedMessageId });
     }
 
     const result = await jishoSearch.createSmallResultForWord(searchTerm);

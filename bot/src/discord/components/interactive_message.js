@@ -1,12 +1,16 @@
+const util = require('util');
 const globals = require('../../common/globals.js');
 const retryPromise = require('../../common/util/retry_promise.js');
 
 const AUTO_TIMEOUT_MS = 1000 * 60 * 60; // 1 hour
+const ACKNOWLEDGE_TIMEOUT_MS = 1000 * 2; // 2 seconds
 
 const interactiveMessageForMessageId = new Map();
+const sleep = util.promisify(setTimeout);
 
 class InteractiveMessage {
-  constructor(ownerId) {
+  constructor(ownerId, { id } = {}) {
+    this.id = id ?? 'interactive_message';
     this.ownerId = ownerId;
   }
 
@@ -64,6 +68,10 @@ class InteractiveMessage {
   }
 
   async handleInteraction(interaction) {
+    if (this.handlingInteraction) {
+      return;
+    }
+
     if ((interaction.member ?? interaction.user)?.id !== this.ownerId) {
       return;
     }
@@ -74,7 +82,12 @@ class InteractiveMessage {
       return;
     }
 
-    await component.action();
+    this.handlingInteraction = true;
+    try {
+      await component.action();
+    } finally {
+      this.handlingInteraction = false;
+    }
   }
 }
 
@@ -85,8 +98,19 @@ async function handleInteraction(interaction) {
     return;
   }
 
-  await interactiveMessage.handleInteraction(interaction);
-  await interaction.acknowledge();
+  try {
+    const handlePromise = interactiveMessage.handleInteraction(interaction);
+    await Promise.race([
+      handlePromise,
+      sleep(ACKNOWLEDGE_TIMEOUT_MS),
+    ]);
+
+    await interaction.acknowledge();
+    await handlePromise;
+  } catch (err) {
+    err.interactiveMessageId = interactiveMessage.id;
+    throw err;
+  }
 }
 
 module.exports = {

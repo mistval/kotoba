@@ -13,11 +13,11 @@ function endArrayWithUndefined(arr) {
 }
 
 class PaginatedMessage {
-  static async sendAsMessageReply(msg, chaptersArg) {
-    return this.send(msg.channel, msg.author.id, chaptersArg);
+  static async sendAsMessageReply(msg, chaptersArg, interactiveMessageOptions) {
+    return this.send(msg.channel, msg.author.id, chaptersArg, interactiveMessageOptions);
   }
 
-  static async send(channel, ownerId, chaptersArg) {
+  static async send(channel, ownerId, chaptersArg, interactiveMessageOptions) {
     assert(chaptersArg.length, 'Must have at least one chapter');
     const isSingleChapter = chaptersArg.length === 1;
     const chapters = chaptersArg.map((c) => {
@@ -30,7 +30,7 @@ class PaginatedMessage {
       };
     });
 
-    const interactiveMessage = new InteractiveMessage(ownerId);
+    const interactiveMessage = new InteractiveMessage(ownerId, interactiveMessageOptions);
     let currentChapterIndex = 0;
     let currentPageIndex = 0;
 

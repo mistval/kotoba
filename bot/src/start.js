@@ -134,7 +134,14 @@ function createBot() {
       }
 
       if (interaction.type === 3) {
-        return handleInteraction(interaction);
+        return handleInteraction(interaction)
+          .catch((err) => {
+            monochrome.getLogger().error({
+              event: 'INTERACTION HANDLER ERROR',
+              err,
+              detail: `Server: ${interaction.guildID ?? 'DM'} - Interactive message ID: ${err.interactiveMessageId}`,
+            });
+          });
       }
 
       monochrome.commandManager_.processInteraction(monochrome.bot_, interaction);
