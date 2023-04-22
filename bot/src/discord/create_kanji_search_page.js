@@ -124,7 +124,7 @@ function createPageForKanjiData(kanjiData, prefix, strokes) {
       embed: {
         url: kanjiData.uri,
         title: 'Jisho Kanji Search',
-        description: `I didn't find any results for [${kanjiData.query}](${kanjiData.uri}).`,
+        description: `I didn't find any kanji results for [${kanjiData.query}](${kanjiData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };

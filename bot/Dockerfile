@@ -1,4 +1,4 @@
-FROM arm64v8/node:18.15.0
+FROM arm64v8/node:18.16.0
 
 RUN apt-get update
 RUN apt-get -y install ffmpeg build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev

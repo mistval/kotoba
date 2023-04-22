@@ -1,4 +1,4 @@
-const { FulfillmentError } = require('monochrome-bot');
+const { FulfillmentError, PaginatedMessage } = require('monochrome-bot');
 const jishoWordSearch = require('../common/jisho_word_search.js');
 const JishoDiscordContentFormatter = require('./jisho_discord_content_formatter.js');
 const constants = require('../common/constants.js');
@@ -26,8 +26,6 @@ async function showRandomWord(
   showStrokeOrder = false,
   showExamples = false,
 ) {
-  const navigationManager = monochrome.getNavigationManager();
-
   if (retriesRemaining <= 0) {
     throw new FulfillmentError({
       publicMessage: jishoNotRespondingResponse,
@@ -61,7 +59,8 @@ async function showRandomWord(
       jishoData,
     );
 
-    return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, channel, msg);
+    const paginatedMessageId = `random_word_${word}`;
+    return PaginatedMessage.sendAsMessageReply(msg, navigation, { id: paginatedMessageId });
   }
   const discordContents = JishoDiscordContentFormatter.formatJishoDataBig(
     jishoData,

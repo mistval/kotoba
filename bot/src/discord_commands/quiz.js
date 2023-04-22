@@ -3,7 +3,7 @@ const state = require('./../common/static_state.js');
 const Cache = require('../common/caching.js');
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
-const { Permissions, Navigation } = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 const timingPresets = require('kotoba-common').quizTimeModifierPresets;
 const quizLimits = require('kotoba-common').quizLimits;
@@ -1618,9 +1618,8 @@ async function doSearch(msg, monochrome, searchTerm = '') {
     },
   }));
 
-  const navigation = Navigation.fromOneDimensionalContents(msg.author.id, embeds);
-
-  return monochrome.getNavigationManager().show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+  const interactiveMessageId = `quiz_search_"${searchTerm}"`;
+  return PaginatedMessage.sendAsMessageReply(msg, [{ title: '', pages: embeds }], { id: interactiveMessageId });
 }
 
 function substituteDeckArguments(suffix) {

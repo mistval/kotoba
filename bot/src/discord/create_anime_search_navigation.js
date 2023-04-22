@@ -1,6 +1,4 @@
 const Kitsu = require('kitsu');
-const { Navigation } = require('monochrome-bot');
-
 const constants = require('../common/constants.js');
 const trimEmbed = require('../common/util/trim_embed.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
@@ -29,7 +27,7 @@ async function searchAnime(keyword) {
   }
 }
 
-function formatAnimeData(animeData, callerName) {
+function formatAnimeData(animeData) {
   return animeData.map((item, index) => {
     const embed = {
       title: `${item.canonicalTitle} (page ${index + 1} of ${animeData.length})`,
@@ -49,27 +47,20 @@ function formatAnimeData(animeData, callerName) {
         },
       ],
       thumbnail: item.posterImage ? { url: item.posterImage.small } : undefined,
-      footer: {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${callerName} can use the reaction buttons below to see more information!`,
-      },
     };
 
     return trimEmbed({ embed });
   });
 }
 
-async function createNavigationForAnime(authorName, authorId, keyword) {
+async function createPagesForAnime(keyword) {
   const searchResults = await searchAnime(keyword);
 
   if (searchResults.length === 0) {
     return throwPublicErrorInfo('Kitsu Anime Search', `I didn't find any results for **${keyword}**.`, 'No results');
   }
 
-  const discordContent = formatAnimeData(searchResults, authorName);
-  const navigation = Navigation.fromOneDimensionalContents(authorId, discordContent);
-
-  return navigation;
+  return formatAnimeData(searchResults);
 }
 
-module.exports = createNavigationForAnime;
+module.exports = createPagesForAnime;

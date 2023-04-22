@@ -1,7 +1,6 @@
 const {
-  NavigationChapter,
-  Navigation,
   Permissions,
+  PaginatedMessage,
 } = require('monochrome-bot');
 const getPronounceInfo = require('../common/get_pronounce_info.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
@@ -117,9 +116,8 @@ function addAudioClipsField(fields, forvoData) {
 }
 
 class PronunciationDataSource {
-  constructor(authorName, pronounceInfo, logger) {
+  constructor(pronounceInfo, logger) {
     this.pronounceInfo = pronounceInfo;
-    this.authorName = authorName;
     this.logger = logger;
   }
 
@@ -183,30 +181,24 @@ class PronunciationDataSource {
 
     addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
 
-    if (numberOfPages > 1) {
-      embed.footer = {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${this.authorName} can use the reaction buttons below to see more information!`,
-      };
-    }
-
     return content;
   }
 }
 
-function createFoundResult(msg, pronounceInfo, navigationManager, logger) {
+function createFoundResult(suffix, msg, pronounceInfo, logger) {
   const navigationDataSource = new PronunciationDataSource(
-    msg.author.username,
     pronounceInfo,
     logger,
   );
 
-  const navigationChapter = new NavigationChapter(navigationDataSource);
-  const chapterForEmojiName = { a: navigationChapter };
-  const hasMultiplePages = pronounceInfo.entries.length > 1;
-  const authorId = msg.author.id;
-  const navigation = new Navigation(authorId, hasMultiplePages, 'a', chapterForEmojiName);
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+  const chapters = [{
+    title: '',
+    maxPages: pronounceInfo.entries.length,
+    getPages: (i) => navigationDataSource.getPageFromPreparedData(undefined, i),
+  }];
+
+  const interactiveMessageId = `pronounce_"${suffix}"`;
+  return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
 }
 
 module.exports = {
@@ -244,6 +236,6 @@ module.exports = {
       return createNotFoundResult(msg, pronounceInfo);
     }
 
-    return createFoundResult(msg, pronounceInfo, monochrome.getNavigationManager(), logger);
+    return createFoundResult(suffix, msg, pronounceInfo, logger);
   },
 };

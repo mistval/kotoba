@@ -659,7 +659,8 @@ function showCategory(monochrome, msg, category) {
   const iconUri = monochrome.getSettingsIconUri();
   const categoryContent = createContentForCategory(category, iconUri);
   const hook = Hook.registerHook(
-    msg.author.id, msg.channel.id,
+    msg.author.id,
+    msg.channel.id,
     (cbHook, cbMsg) => handleCategoryViewMsg(
       cbHook,
       monochrome,
@@ -679,7 +680,8 @@ async function showSetting(monochrome, msg, setting) {
   const prefix = monochrome.getPersistence().getPrimaryPrefixForMessage(msg);
   const settingContent = await createContentForSetting(msg, settings, setting, iconUri, prefix);
   const hook = Hook.registerHook(
-    msg.author.id, msg.channel.id,
+    msg.author.id,
+    msg.channel.id,
     (cbHook, cbMsg) => handleSettingViewMsg(
       cbHook,
       monochrome,

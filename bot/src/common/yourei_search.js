@@ -1,7 +1,7 @@
 const axios = require('axios').create({ timeout: 10000 });
 const cheerio = require('cheerio');
-const { Navigation, NavigationChapter } = require('monochrome-bot');
 
+const { PaginatedMessage } = require('monochrome-bot');
 const constants = require('./constants.js');
 const trimEmbed = require('./util/trim_embed.js');
 const { highlight } = require('./util/sentence_highlighter.js');
@@ -11,9 +11,6 @@ const YOUREI_BASE_URL = 'http://yourei.jp';
 const SENTENCES_PER_FETCH = 20;
 
 const EXAMPLES_PER_PAGE = 4;
-const SENTENCES_EMOTE = '🇸';
-const FULLTEXT_EMOTE = '🇫';
-const USAGE_EMOTE = '🇺';
 
 function getExampleSentences($) {
   return $('#sentence-example-list').find('li').map((idx, item) => {
@@ -80,7 +77,7 @@ async function scrapeWebPage(keyword) {
 }
 
 function formatSentenceData(sentences, keyword, showFullSentences = false) {
-  return sentences.map((sentence) => {
+  return sentences.filter((s) => s.full.trim()).map((sentence) => {
     const highlighted = highlight(
       showFullSentences ? sentence.full : sentence.short,
       showFullSentences ? sentence.short : keyword,
@@ -93,7 +90,7 @@ function formatSentenceData(sentences, keyword, showFullSentences = false) {
   });
 }
 
-function createNavigationChapterForSentences(scrapeResult, authorName, showFullSentences) {
+function createNavigationChapterForSentences(scrapeResult, showFullSentences) {
   const pages = [];
   const {
     data: { sentences },
@@ -104,7 +101,7 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
   const fields = formatSentenceData(sentences, keyword, showFullSentences).reverse();
 
   let pageNumber = 1;
-  const pageCount = Math.ceil(sentences.length / EXAMPLES_PER_PAGE);
+  const pageCount = Math.ceil(fields.length / EXAMPLES_PER_PAGE);
   while (fields.length !== 0) {
     const embed = {
       title: `${keyword} - 用例.jp Search Results ${showFullSentences ? '(whole context)' : ''} (page ${pageNumber} of ${pageCount})`,
@@ -112,10 +109,6 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
       url: self,
       fields: [],
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${authorName} can use the reaction buttons below to see more information!`,
-      },
     };
     for (let i = 0; i < EXAMPLES_PER_PAGE; i += 1) {
       if (fields.length !== 0) embed.fields.push(fields.pop());
@@ -124,10 +117,10 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
     pageNumber += 1;
   }
 
-  return NavigationChapter.fromContent(pages);
+  return pages;
 }
 
-function createNavigationChapterForUsage(scrapeResult, authorName) {
+function createNavigationChapterForUsage(scrapeResult) {
   const {
     data: { usageFrequencies, usageExamples },
     meta: { keyword },
@@ -150,29 +143,26 @@ function createNavigationChapterForUsage(scrapeResult, authorName) {
     url: self,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [frequencyField, usageExampleField],
-    footer: {
-      icon_url: constants.FOOTER_ICON_URI,
-      text: `${authorName} can use the reaction buttons below to see more information!`,
-    },
   };
 
-  return NavigationChapter.fromContent([trimEmbed({ embed })]);
+  return [trimEmbed({ embed })];
 }
 
-async function createNavigationForExamples(authorName, authorId, keyword, msg, navigationManager) {
+async function createNavigationForExamples(keyword, msg) {
   const searchResults = await scrapeWebPage(keyword);
 
   if (searchResults.data.sentences.length === 0) {
     return throwPublicErrorInfo('用例.jp', `I didn't find any results for **${keyword}**.`, 'No results');
   }
 
-  const chapters = {};
-  chapters[SENTENCES_EMOTE] = createNavigationChapterForSentences(searchResults, authorName, false);
-  chapters[FULLTEXT_EMOTE] = createNavigationChapterForSentences(searchResults, authorName, true);
-  chapters[USAGE_EMOTE] = createNavigationChapterForUsage(searchResults, authorName);
+  const chapters = [
+    { title: 'Sentences', pages: createNavigationChapterForSentences(searchResults, false) },
+    { title: 'Full Context', pages: createNavigationChapterForSentences(searchResults, true) },
+    { title: 'Usage', pages: createNavigationChapterForUsage(searchResults) },
+  ];
 
-  const navigation = new Navigation(authorId, true, SENTENCES_EMOTE, chapters);
-  return navigationManager.show(navigation, constants.NAVIGATION_EXPIRATION_TIME, msg.channel, msg);
+  const interactiveMessageId = `yourei_"${keyword}"`;
+  return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
 }
 
 module.exports = {

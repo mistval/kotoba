@@ -75,7 +75,6 @@ function formatJishoDataBig(
   jishoData,
   pagingPermitted,
   forMultiChapterNavigation,
-  callerName,
 ) {
   if (!jishoData.hasResults) {
     return throwForEmptyJishoData(jishoData);
@@ -115,10 +114,6 @@ function formatJishoDataBig(
     for (let index = 0; index < numberOfPages; index += 1) {
       const discordContent = discordContents[index];
       discordContent.embed.title += ` (page ${index + 1} of ${numberOfPages})`;
-      discordContent.embed.footer = {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${callerName} can use the reaction buttons below to see more information!`,
-      };
     }
   }
 
