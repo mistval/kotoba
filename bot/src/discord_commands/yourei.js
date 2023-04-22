@@ -29,8 +29,6 @@ module.exports = {
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
     return youreiSearch.createNavigationForExamples(
-      msg.author.username,
-      msg.author.id,
       suffix,
       msg,
       monochrome.getNavigationManager(),

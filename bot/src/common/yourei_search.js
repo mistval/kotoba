@@ -90,7 +90,7 @@ function formatSentenceData(sentences, keyword, showFullSentences = false) {
   });
 }
 
-function createNavigationChapterForSentences(scrapeResult, authorName, showFullSentences) {
+function createNavigationChapterForSentences(scrapeResult, showFullSentences) {
   const pages = [];
   const {
     data: { sentences },
@@ -109,10 +109,6 @@ function createNavigationChapterForSentences(scrapeResult, authorName, showFullS
       url: self,
       fields: [],
       color: constants.EMBED_NEUTRAL_COLOR,
-      footer: {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${authorName} can use the reaction buttons below to see more information!`,
-      },
     };
     for (let i = 0; i < EXAMPLES_PER_PAGE; i += 1) {
       if (fields.length !== 0) embed.fields.push(fields.pop());
@@ -156,7 +152,7 @@ function createNavigationChapterForUsage(scrapeResult, authorName) {
   return [trimEmbed({ embed })];
 }
 
-async function createNavigationForExamples(authorName, authorId, keyword, msg) {
+async function createNavigationForExamples(keyword, msg) {
   const searchResults = await scrapeWebPage(keyword);
 
   if (searchResults.data.sentences.length === 0) {
@@ -164,13 +160,13 @@ async function createNavigationForExamples(authorName, authorId, keyword, msg) {
   }
 
   const chapters = [
-    { title: 'Sentences', pages: createNavigationChapterForSentences(searchResults, authorName, false) },
-    { title: 'Full Context', pages: createNavigationChapterForSentences(searchResults, authorName, true) },
-    { title: 'Usage', pages: createNavigationChapterForUsage(searchResults, authorName) },
+    { title: 'Sentences', pages: createNavigationChapterForSentences(searchResults, false) },
+    { title: 'Full Context', pages: createNavigationChapterForSentences(searchResults, true) },
+    { title: 'Usage', pages: createNavigationChapterForUsage(searchResults) },
   ];
 
   const interactiveMessageId = `yourei_"${keyword}"`;
-  return PaginatedMessage.send(msg.channel, authorId, chapters, { id: interactiveMessageId });
+  return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
 }
 
 module.exports = {

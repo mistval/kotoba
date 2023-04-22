@@ -1,8 +1,9 @@
 const {
-  Navigation, NavigationChapter, FulfillmentError, Permissions,
+  FulfillmentError, Permissions,
 } = require('monochrome-bot');
-
 const axios = require('axios').create({ timeout: 10000, validateStatus: () => true });
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
+
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');
 const array = require('../common/util/array');
@@ -68,10 +69,6 @@ module.exports = {
           description: `Page ${index + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
           url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
           color: 16740862,
-          footer: {
-            icon_url: msg.author.avatarURL,
-            text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
-          },
           author: {
             name: 'Powered by Jibiki',
             url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
@@ -124,68 +121,80 @@ module.exports = {
         },
       }));
 
+      const seenTitles = new Set();
       const kanjiPages = response.data
-        .filter((entry) => entry.kanji.length > 0)
-        .map((entry) => trimEmbed({
-          embed: {
-            title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
-              ? entry.word.forms[0].kanji.literal
-              : entry.word.forms[0].reading.literal}`,
-            url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-            color: 16740862,
-            footer: {
-              icon_url: msg.author.avatarURL,
-              text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
-            },
-            author: {
-              name: 'Powered by Jibiki',
+        .flatMap((entry) => {
+          if (entry.kanji.length === 0) {
+            return [];
+          }
+
+          const title = `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
+            ? entry.word.forms[0].kanji.literal
+            : entry.word.forms[0].reading.literal}`;
+
+          if (seenTitles.has(title)) {
+            return [];
+          }
+
+          seenTitles.add(title);
+
+          return trimEmbed({
+            embed: {
+              title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
+                ? entry.word.forms[0].kanji.literal
+                : entry.word.forms[0].reading.literal}`,
               url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
-              icon_url: 'https://jibiki.app/logo_circle.png',
+              color: 16740862,
+              author: {
+                name: 'Powered by Jibiki',
+                url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
+                icon_url: 'https://jibiki.app/logo_circle.png',
+              },
+              fields: entry.kanji.map((kanji) => {
+                let value = '';
+
+                value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
+                value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
+
+                if (kanji.definitions && kanji.definitions.length > 0) {
+                  value += '**Definitions**\n';
+                  kanji.definitions.forEach((definition, i) => {
+                    value += `${i + 1}. ${definition}\n`;
+                  });
+
+                  value += '\n';
+                }
+
+                if (kanji.miscellaneous.jlpt !== null) {
+                  value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
+                }
+                if (kanji.miscellaneous.grade !== null) {
+                  value += `Grade ${kanji.miscellaneous.grade}\n`;
+                }
+                if (kanji.miscellaneous.variant_type !== null) {
+                  value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
+                }
+                if (kanji.miscellaneous.variant !== null) {
+                  value += `Variant ${kanji.miscellaneous.variant}\n`;
+                }
+                if (kanji.miscellaneous.frequency !== null) {
+                  value += `Frequency #${kanji.miscellaneous.frequency}\n`;
+                }
+                if (kanji.miscellaneous.radical_name !== null) {
+                  value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
+                }
+                if (kanji.miscellaneous.stroke_count !== null) {
+                  value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
+                }
+
+                return {
+                  name: kanji.literal,
+                  value,
+                };
+              }),
             },
-            fields: entry.kanji.map((kanji) => {
-              let value = '';
-
-              value += `**Onyomi**\n${kanji.readings.onyomi.join(', ')}\n`;
-              value += `**Kunyomi**\n${kanji.readings.kunyomi.join(', ')}\n\n`;
-
-              if (kanji.definitions && kanji.definitions.length > 0) {
-                value += '**Definitions**\n';
-                kanji.definitions.forEach((definition, i) => {
-                  value += `${i + 1}. ${definition}\n`;
-                });
-
-                value += '\n';
-              }
-
-              if (kanji.miscellaneous.jlpt !== null) {
-                value += `JLPT N${kanji.miscellaneous.jlpt}\n`;
-              }
-              if (kanji.miscellaneous.grade !== null) {
-                value += `Grade ${kanji.miscellaneous.grade}\n`;
-              }
-              if (kanji.miscellaneous.variant_type !== null) {
-                value += `Variant type ${kanji.miscellaneous.variant_type}\n`;
-              }
-              if (kanji.miscellaneous.variant !== null) {
-                value += `Variant ${kanji.miscellaneous.variant}\n`;
-              }
-              if (kanji.miscellaneous.frequency !== null) {
-                value += `Frequency #${kanji.miscellaneous.frequency}\n`;
-              }
-              if (kanji.miscellaneous.radical_name !== null) {
-                value += `Radical name ${kanji.miscellaneous.radical_name}\n`;
-              }
-              if (kanji.miscellaneous.stroke_count !== null) {
-                value += `Stroke count ${kanji.miscellaneous.stroke_count}`;
-              }
-
-              return {
-                name: kanji.literal,
-                value,
-              };
-            }),
-          },
-        }));
+          });
+        });
 
       const sentencePages = response.data
         .filter((entry) => entry.sentences && entry.sentences.length > 0)
@@ -196,10 +205,6 @@ module.exports = {
               : entry.word.forms[0].reading.literal}`,
             url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
             color: 16740862,
-            footer: {
-              icon_url: msg.author.avatarURL,
-              text: `${msg.author.username} can use the reactions below to navigate the pages.\nW = words, K = kanji and S = sentences.`,
-            },
             author: {
               name: 'Powered by Jibiki',
               url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
@@ -238,26 +243,14 @@ module.exports = {
           },
         }));
 
-      const chapterDictionary = {
-        '🇼': NavigationChapter.fromContent(wordPages),
-        '🇰': NavigationChapter.fromContent(kanjiPages),
-      };
+      const chapters = [
+        { title: '辞', pages: wordPages },
+        { title: '漢', pages: kanjiPages },
+        sentencePages.length > 0 && { title: '例', pages: sentencePages },
+      ].filter(Boolean);
 
-      if (sentencePages.length > 0) {
-        chapterDictionary['🇸'] = NavigationChapter.fromContent(sentencePages);
-      }
-
-      return monochrome.getNavigationManager().show(
-        new Navigation(
-          msg.author.id,
-          true,
-          '🇼',
-          chapterDictionary,
-        ),
-        constants.NAVIGATION_EXPIRATION_TIME,
-        msg.channel,
-        msg,
-      );
+      const interactiveMessageId = `jibiki_"${suffix}"`;
+      return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
     } else if (response.status === 500) {
       throw new FulfillmentError({
         publicMessage: {

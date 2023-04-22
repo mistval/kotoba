@@ -41,6 +41,10 @@ class PaginatedMessage {
       if (needsPage) {
         const pages = createArray(await currentChapter.getPages(currentPageIndex));
         currentChapter.pages.push(...pages);
+
+        if (currentChapter.maxPages <= currentChapter.pages.length) {
+          currentChapter.pages.push(undefined);
+        }
       }
 
       let currentPage = currentChapter.pages[currentPageIndex];
