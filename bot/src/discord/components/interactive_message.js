@@ -1,6 +1,6 @@
+const assert = require('assert');
 const util = require('util');
-const globals = require('../../common/globals.js');
-const retryPromise = require('../../common/util/retry_promise.js');
+const EventEmitter = require('events');
 
 const AUTO_TIMEOUT_MS = 1000 * 60 * 60; // 1 hour
 const ACKNOWLEDGE_TIMEOUT_MS = 1000 * 2; // 2 seconds
@@ -8,8 +8,28 @@ const ACKNOWLEDGE_TIMEOUT_MS = 1000 * 2; // 2 seconds
 const interactiveMessageForMessageId = new Map();
 const sleep = util.promisify(setTimeout);
 
-class InteractiveMessage {
+async function retryPromise(promiseFactory, retryCount = 3) {
+  let retriesLeft = retryCount;
+
+  do {
+    try {
+      // eslint-disable-next-line no-await-in-loop
+      return await promiseFactory();
+    } catch (err) {
+      retriesLeft -= 1;
+      if (retriesLeft <= 0) {
+        throw err;
+      }
+    }
+  } while (retriesLeft > 0);
+
+  assert(false, 'Unexpected branch');
+  return undefined;
+}
+
+class InteractiveMessage extends EventEmitter {
   constructor(ownerId, { id, parentMessage } = {}) {
+    super();
     this.id = id ?? 'interactive_message';
     this.ownerId = ownerId;
     this.parentMessage = parentMessage;
@@ -58,10 +78,7 @@ class InteractiveMessage {
       try {
         await this.disableInteraction();
       } catch (err) {
-        globals.logger.warn({
-          event: 'FAILED TO DISABLE INTERACTIVE MESSAGE',
-          err,
-        });
+        this.emit('error', err);
       }
     }, AUTO_TIMEOUT_MS);
 

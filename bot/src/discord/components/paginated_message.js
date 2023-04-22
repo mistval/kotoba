@@ -1,6 +1,9 @@
 const assert = require('assert');
+const EventEmitter = require('events');
 const { InteractiveMessage } = require('./interactive_message.js');
 const { Button, ComponentGroup } = require('./message_components.js');
+
+const events = new EventEmitter();
 
 function createArray(el) {
   return Array.isArray(el) ? el : [el];
@@ -36,6 +39,10 @@ class PaginatedMessage {
     });
 
     const interactiveMessage = new InteractiveMessage(ownerId, interactiveMessageOptions);
+    interactiveMessage.on('error', (err) => {
+      events.emit('error', err);
+    });
+
     let currentChapterIndex = 0;
     let currentPageIndex = 0;
 
@@ -127,5 +134,6 @@ class PaginatedMessage {
 }
 
 module.exports = {
+  events,
   PaginatedMessage,
 };
