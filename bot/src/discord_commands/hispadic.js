@@ -1,5 +1,6 @@
-const { Navigation, Permissions } = require('monochrome-bot');
+const { Permissions } = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000 });
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
 const { hispadicApiUri } = require('../../../config/config.js').bot;
@@ -36,7 +37,7 @@ function createMessageContentsForResults(pages, query, username) {
   }));
 }
 
-function createNavigationContents(results, query, username) {
+function createPages(results, query, username) {
   const pages = [];
   let resultsForCurrentPage = [];
   let currentPageLines = 0;
@@ -105,14 +106,9 @@ module.exports = {
 
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-    const contents = createNavigationContents(results, suffix, msg.author.username);
-    const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
+    const pages = createPages(results, suffix, msg.author.username);
+    const interactiveMessageId = `hispadic_search_"${suffix}"`;
 
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
-      msg,
-    );
+    return PaginatedMessage.sendAsMessageReply(msg, [{ title: '', pages }], { id: interactiveMessageId });
   },
 };

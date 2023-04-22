@@ -1,7 +1,7 @@
 const { Permissions } = require('monochrome-bot');
-const createAnimeSearchNavigation = require('../discord/create_anime_search_navigation.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
+const createPagesForAnime = require('../discord/create_anime_search_navigation.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
-const constants = require('../common/constants.js');
 
 module.exports = {
   commandAliases: ['anime', 'a'],
@@ -29,17 +29,11 @@ module.exports = {
 
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
-    const navigation = await createAnimeSearchNavigation(
-      msg.author.username,
-      msg.author.id,
+    const pages = await createPagesForAnime(
       suffix,
     );
 
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
-      msg,
-    );
+    const interactiveMessageId = `anime_search_"${suffix}"`;
+    return PaginatedMessage.sendAsMessageReply(msg, [{ title: '', pages }], { id: interactiveMessageId });
   },
 };

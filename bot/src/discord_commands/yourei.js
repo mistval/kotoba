@@ -31,7 +31,6 @@ module.exports = {
     return youreiSearch.createNavigationForExamples(
       suffix,
       msg,
-      monochrome.getNavigationManager(),
     );
   },
 };

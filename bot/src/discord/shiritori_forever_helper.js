@@ -1,7 +1,7 @@
 const shiritoriManager = require('kotoba-node-common').shiritori;
 const assert = require('assert');
 const { FulfillmentError } = require('monochrome-bot');
-const { Navigation } = require('monochrome-bot');
+const { PaginatedMessage } = require('./components/paginated_message.js');
 const globals = require('../common/globals.js');
 const state = require('../common/static_state.js');
 
@@ -63,16 +63,11 @@ function createDiscordContentForScoresPage(scoresPage) {
   };
 }
 
-function createScoresNavigation(monochrome, msg, scoresPages) {
+function createScoresNavigation(msg, scoresPages) {
   const contents = scoresPages.map((page) => createDiscordContentForScoresPage(page));
-  const navigation = Navigation.fromOneDimensionalContents(msg.author.id, contents);
 
-  return monochrome.getNavigationManager().show(
-    navigation,
-    constants.NAVIGATION_EXPIRATION_TIME,
-    msg.channel,
-    msg,
-  );
+  const interactiveMessageId = 'sf_scores';
+  return PaginatedMessage.sendAsMessageReply(msg, [{ title: '', pages: contents }], { id: interactiveMessageId });
 }
 
 function userNameForUserID(monochrome, userID) {
@@ -109,7 +104,7 @@ async function sendScores(monochrome, msg) {
 
   const pages = chunk(sortedScores, 20);
 
-  return createScoresNavigation(monochrome, msg, pages);
+  return createScoresNavigation(msg, pages);
 }
 
 function getPrefixForChannelID(monochrome, channelID) {

@@ -120,7 +120,7 @@ function createNavigationChapterForSentences(scrapeResult, showFullSentences) {
   return pages;
 }
 
-function createNavigationChapterForUsage(scrapeResult, authorName) {
+function createNavigationChapterForUsage(scrapeResult) {
   const {
     data: { usageFrequencies, usageExamples },
     meta: { keyword },
@@ -143,10 +143,6 @@ function createNavigationChapterForUsage(scrapeResult, authorName) {
     url: self,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [frequencyField, usageExampleField],
-    footer: {
-      icon_url: constants.FOOTER_ICON_URI,
-      text: `${authorName} can use the reaction buttons below to see more information!`,
-    },
   };
 
   return [trimEmbed({ embed })];

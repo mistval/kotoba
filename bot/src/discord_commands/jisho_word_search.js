@@ -54,7 +54,6 @@ module.exports = {
         msg.author.id,
         searchTerm,
         msg,
-        monochrome.getNavigationManager(),
       );
 
       const paginatedMessageId = `jisho_all_"${searchTerm}"_${big ? 'big' : 'small'}`;

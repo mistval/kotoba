@@ -116,9 +116,8 @@ function addAudioClipsField(fields, forvoData) {
 }
 
 class PronunciationDataSource {
-  constructor(authorName, pronounceInfo, logger) {
+  constructor(pronounceInfo, logger) {
     this.pronounceInfo = pronounceInfo;
-    this.authorName = authorName;
     this.logger = logger;
   }
 
@@ -182,20 +181,12 @@ class PronunciationDataSource {
 
     addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
 
-    if (numberOfPages > 1) {
-      embed.footer = {
-        icon_url: constants.FOOTER_ICON_URI,
-        text: `${this.authorName} can use the reaction buttons below to see more information!`,
-      };
-    }
-
     return content;
   }
 }
 
 function createFoundResult(suffix, msg, pronounceInfo, logger) {
   const navigationDataSource = new PronunciationDataSource(
-    msg.author.username,
     pronounceInfo,
     logger,
   );

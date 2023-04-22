@@ -1,4 +1,5 @@
-const { FulfillmentError, Navigation, Permissions } = require('monochrome-bot');
+const { FulfillmentError, Permissions } = require('monochrome-bot');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 const constants = require('../common/constants.js');
 
 // Configuration start
@@ -9,7 +10,6 @@ const ALIASES = ['help', 'h'];
 const WEB_COMMANDS_URI = 'https://kotobaweb.com/bot'; // If you have commands documentation on the web
 const EMBED_TITLE = 'Kotoba';
 const EMBED_ICON_URI = constants.FOOTER_ICON_URI;
-const NAVIGATION_EXPIRATION_TIME_MS = 30 * 60 * 1000; // 30 minutes
 
 const COMMANDS_TO_GENERATE_HELP_FOR = [
   'jisho',
@@ -90,7 +90,7 @@ function createFieldForCommand(command, prefix) {
   };
 }
 
-function createNavigationForCommands(commands, commandMessage, paginate) {
+function createPagesForCommands(commands, commandMessage, paginate) {
   if (commands.length === 0) {
     return undefined;
   }
@@ -104,10 +104,6 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
   const numPages = Math.max(1, Math.ceil(commandsCopy.length / maxCommandsPerPage));
   const prefixedHelpCommand = `${commandMessage.prefix}${ALIASES[0]}`;
   const pages = [];
-
-  const footer = commandsCopy.length <= maxCommandsPerPage
-    ? undefined
-    : { text: `${commandMessage.author.username} can use the arrow reactions to see more commands.`, icon_url: EMBED_ICON_URI };
 
   for (let startIndex = 0; startIndex < commandsCopy.length; startIndex += maxCommandsPerPage) {
     const pageNumber = (startIndex / maxCommandsPerPage) + 1;
@@ -126,7 +122,6 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
       url: WEB_COMMANDS_URI,
       fields,
       color: EMBED_COLOR,
-      footer,
     };
 
     pages.push({ embed });
@@ -134,7 +129,7 @@ function createNavigationForCommands(commands, commandMessage, paginate) {
 
   pages[0].embed.fields.push(linksField);
 
-  return Navigation.fromOneDimensionalContents(commandMessage.author.id, pages);
+  return pages;
 }
 
 function indexOfAliasInList(command, list) {
@@ -159,14 +154,10 @@ async function showGeneralHelp(monochrome, msg, paginate) {
     COMMANDS_TO_GENERATE_HELP_FOR,
   );
 
-  const navigation = createNavigationForCommands(commandsToDisplayHelpFor, msg, paginate);
-  if (navigation) {
-    return monochrome.getNavigationManager().show(
-      navigation,
-      NAVIGATION_EXPIRATION_TIME_MS,
-      msg.channel,
-      msg,
-    );
+  const pages = createPagesForCommands(commandsToDisplayHelpFor, msg, paginate);
+  if (pages) {
+    const interactiveMessageId = 'help';
+    return PaginatedMessage.sendAsMessageReply(msg, [{ title: '', pages }], { id: interactiveMessageId });
   }
 
   throw new FulfillmentError({
