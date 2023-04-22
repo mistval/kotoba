@@ -1,8 +1,9 @@
 const {
-  Navigation, FulfillmentError, NavigationChapter, Permissions,
+  FulfillmentError, Permissions,
 } = require('monochrome-bot');
 const ScoreStorageUtils = require('../common/quiz/score_storage_utils.js');
 const constants = require('../common/constants.js');
+const { PaginatedMessage } = require('../discord/components/paginated_message.js');
 
 const MAX_SCORERS_PER_PAGE = 20;
 
@@ -251,7 +252,7 @@ module.exports = {
 
     const numUsers = await scoreQuery.countUsers();
 
-    const showArrows = numUsers > MAX_SCORERS_PER_PAGE;
+    const maxPages = Math.ceil(numUsers / MAX_SCORERS_PER_PAGE);
     const navigationDataSource = new ScoresDataSource(
       deckNamesArray,
       isGlobal,
@@ -259,18 +260,17 @@ module.exports = {
       msg,
     );
 
-    const navigationChapter = new NavigationChapter(navigationDataSource);
-    const navigation = Navigation.fromOneNavigationChapter(
-      msg.author.id,
-      navigationChapter,
-      showArrows,
-    );
+    const navigationChapters = [{
+      title: '',
+      maxPages,
+      getPages: (i) => navigationDataSource.getPageFromPreparedData(undefined, i),
+    }];
 
-    return monochrome.getNavigationManager().show(
-      navigation,
-      constants.NAVIGATION_EXPIRATION_TIME,
-      msg.channel,
+    const interactiveMessageId = `leaderboard_"${suffix}"`;
+    return PaginatedMessage.sendAsMessageReply(
       msg,
+      navigationChapters,
+      { id: interactiveMessageId },
     );
   },
 };
