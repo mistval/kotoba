@@ -985,7 +985,7 @@ function throwIfDeckNotAllowedInServer(session) {
     const message = {
       embed: {
         title: 'Deck not allowed here',
-        description: `The deck **${unallowedDeck.shortName}** cannot be used in this server or channel.`,
+        description: `The deck **${unallowedDeck.shortName}** cannot be used in this server or channel because its owner chose to restrict access.`,
         color: constants.EMBED_NEUTRAL_COLOR,
       },
     };
