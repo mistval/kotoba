@@ -9,6 +9,7 @@ async function main() {
   await doRenderBenchmark({ parallelism: 4 });
   await doRenderBenchmark({ parallelism: 8 });
   await doRenderBenchmark({ parallelism: 16 });
+  await doRenderBenchmark({ parallelism: 4, effect: 'antiocr', numWords: 1000 });
 }
 
 main().then(() => {

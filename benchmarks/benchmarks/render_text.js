@@ -6,7 +6,7 @@ const { render } = require('../utils/render_text.js');
 async function doRenderBenchmark({
   numWords = 10000,
   parallelism = 4,
-  effect = undefined,
+  effect = 'none',
   fontSize = undefined,
   font = undefined,
 } = {}) {
@@ -19,7 +19,7 @@ async function doRenderBenchmark({
     };
   });
 
-  const timerName = `Rendering ${numWords} words with ${parallelism} parallelism`;
+  const timerName = `Rendering ${numWords} words with ${parallelism} parallelism and effect ${effect}`;
   console.time(timerName);
   await Promise.all(factoryFunctions.map((factoryFunction) => {
     return limit(factoryFunction);

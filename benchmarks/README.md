@@ -13,3 +13,5 @@ ARM64 version:
 ```bash
 docker run -it --rm $(docker build -q -f ./Dockerfile.arm64v8node .)
 ```
+
+(it may take several minutes before any output appears)
