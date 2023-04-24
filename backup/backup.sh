@@ -14,7 +14,14 @@ rm -rf $kotoba_directory/backup/backup_out
 mkdir -p $kotoba_directory/backup/backup_out/user_data/bot
 
 cd $kotoba_directory
-docker compose exec -T mongo_readwrite mongodump --archive=./mongo_dump.archive --db=kotoba --excludeCollection=gamereports --excludeCollection=userreviewdecks --excludeCollection=locationreviewdecks
+docker compose exec -T mongo_readwrite mongodump \
+  --archive=./mongo_dump.archive \
+  --db=kotoba \
+  --excludeCollection=gamereports \
+  --excludeCollection=userreviewdecks \
+  --excludeCollection=locationreviewdecks \
+  --excludeCollection=cachedkvps
+
 docker compose exec -T mongo_readwrite cat ./mongo_dump.archive > $kotoba_directory/backup/backup_out/mongo_dump.archive
 
 cp -r $kotoba_directory/user_data/bot/quiz_saves $kotoba_directory/backup/backup_out/user_data/bot
