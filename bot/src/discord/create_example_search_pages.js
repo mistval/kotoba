@@ -1,9 +1,7 @@
-const UnofficialJishoApi = require('unofficial-jisho-api');
 const ArrayUtil = require('../common/util/array.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
-
-const jishoApi = new UnofficialJishoApi();
+const jishoApi = require('../common/cached_jisho_api.js');
 
 const MAX_RESULTS_PER_PAGE = 4;
 const LONG_CUTOFF_IN_CHARS = 22;

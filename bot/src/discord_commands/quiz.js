@@ -1,6 +1,6 @@
 const assert = require('assert');
 const state = require('./../common/static_state.js');
-const Cache = require('../common/caching.js');
+const Cache = require('kotoba-node-common').cache;
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
 const { Permissions, PaginatedMessage } = require('monochrome-bot');
@@ -1665,7 +1665,7 @@ async function autoCompleteSearch(option) {
     }];
   }
 
-  const uniqueResults = await Cache.getCached(
+  const uniqueResults = await Cache.getCachedInProcess(
     `quiz_autocomplete_search:${searchValue}`,
     60 * 60,
     async () => {

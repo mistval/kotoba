@@ -97,7 +97,7 @@ async function sendSchedule(schedule, monochrome) {
       });
     }
   } else {
-    await schedule.remove();
+    await schedule.deleteOne();
   }
 }
 

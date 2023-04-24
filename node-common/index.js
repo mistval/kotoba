@@ -5,6 +5,7 @@ const initializeFonts = require('./initialize_fonts.js');
 const initializeResourceDatabase = require('./initialize_resource_database.js');
 const shiritori = require('./shiritori/index.js');
 const crypto = require('./crypto.js');
+const cache = require('./caching.js');
 
 module.exports = {
   initializeResourceDatabase,
@@ -14,4 +15,5 @@ module.exports = {
   constants,
   shiritori,
   crypto,
+  cache,
 };

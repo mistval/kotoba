@@ -1,9 +1,8 @@
 const axios = require('axios').create({ timeout: 10000 });
-const UnofficialJishoApi = require('unofficial-jisho-api');
+const { cache } = require('kotoba-node-common');
+const jishoApi = require('../common/cached_jisho_api.js');
 const constants = require('../common/constants.js');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
-
-const jishoApi = new UnofficialJishoApi();
 
 function addEmbedFieldForRadical(kanjiInformation, embedFields) {
   const fieldsCopy = [...embedFields];
@@ -92,12 +91,13 @@ async function getStrokeOrderGifUri(kanji) {
   // Check if we can GET the animation.
   // We only need to know if it's available.
   // We don't need to download it.
-  try {
-    await axios.get(animationUri);
-    return animationUri;
-  } catch (err) {
-    return '';
-  }
+  const exists = await cache.getCachedInDatabase(
+    `stroke_gif_existence:${unicodeString}`,
+    null,
+    () => axios.get(animationUri).then(() => true).catch(() => false),
+  );
+
+  return exists ? animationUri : '';
 }
 
 async function getKanjiData(kanji) {

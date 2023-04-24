@@ -1,8 +1,6 @@
-const UnofficialJishoApi = require('unofficial-jisho-api');
+const jishoApi = require('./cached_jisho_api.js');
 
 const errors = require('./util/errors.js');
-
-const jishoApi = new UnofficialJishoApi();
 
 const JISHO_SEARCH_BASE_URI = 'http://jisho.org/search/';
 

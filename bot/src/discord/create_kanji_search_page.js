@@ -1,8 +1,6 @@
-const UnofficialJishoApi = require('unofficial-jisho-api');
+const jishoApi = require('../common/cached_jisho_api.js');
 const { throwPublicErrorFatal } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');
-
-const jishoApi = new UnofficialJishoApi();
 
 const MAXIMUM_EXAMPLE_COUNT = 4;
 const MAXIMUM_EXAMPLE_LENGTH_IN_CHARS = 300;

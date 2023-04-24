@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const Cache = require('../caching.js');
+const Cache = require('kotoba-node-common').cache;
 const staticDecks = require('./deck_list.json');
 const constants = require('./../constants.js');
 const config = require('../../../../config/config.js');
@@ -8,7 +8,7 @@ const DECKS_CACHE_KEY = 'quizDeckList';
 const CACHE_EXPIRATION_SECONDS = 60 * 60; // 1 hour
 
 function getDecks() {
-  return Cache.getCached(DECKS_CACHE_KEY, CACHE_EXPIRATION_SECONDS, async () => {
+  return Cache.getCachedInProcess(DECKS_CACHE_KEY, CACHE_EXPIRATION_SECONDS, async () => {
     if (!config.bot.dynamicDecksUrl) {
       return staticDecks;
     }
