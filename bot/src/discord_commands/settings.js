@@ -760,7 +760,11 @@ module.exports = {
   canBeChannelRestricted: false,
   shortDescription: HELP_SHORT_DESCRIPTION,
   longDescription: HELP_LONG_DESCRIPTION,
-  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+    Permissions.readMessages,
+  ],
   interaction: {
     compatibilityMode: true,
     options: [],

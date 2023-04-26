@@ -1724,7 +1724,12 @@ module.exports = {
   cooldown: 1,
   shortDescription: 'See how to start a quiz in this channel.',
   longDescription: helpLongDescription,
-  requiredBotPermissions: [Permissions.attachFiles, Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.attachFiles,
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+    Permissions.readMessages,
+  ],
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',

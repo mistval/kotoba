@@ -37,7 +37,11 @@ module.exports = {
   shortDescription: 'Learn how to start or stop a long-running, no-time-limit game of shiritori in a channel.',
   hidden: false,
   uniqueId: 'shiritoriforever',
-  requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
+  requiredBotPermissions: [
+    Permissions.embedLinks,
+    Permissions.sendMessages,
+    Permissions.readMessages,
+  ],
   interaction: {
     compatibilityMode: true,
     options: [],
