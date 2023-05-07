@@ -14,6 +14,7 @@ const REVEAL_INTERVAL_IN_MS = 10000;
 const MAX_SAVES_PER_USER = 5;
 const QUIZ_END_STATUS_ERROR = 1;
 const MAX_SAVE_QUESTIONS = 50000;
+const HARDCORE_BLIND_EYE_INTERVAL_IN_MS = 1000;
 
 /* LOADING AND INITIALIZATION */
 
@@ -405,7 +406,7 @@ class AskQuestionAction extends Action {
       timeLeft -= (new Date() - this.timeoutStartTime);
     }
 
-    const inputAsInt = parseIntEx(input.replace(/\|\|/g, ''));
+    const inputAsInt = parseIntEx(input.replaceAll('||', ''));
     if (!card.options || card.options.indexOf(input) !== -1 || (!Number.isNaN(inputAsInt) && inputAsInt <= card.options.length)) {
       if (!Number.isNaN(inputAsInt) && card.options) {
         input = `${inputAsInt}`;
@@ -413,8 +414,16 @@ class AskQuestionAction extends Action {
       session.answerAttempters.push(userId);
       if (session.getOwnerId() === userId && oneAnswerPerPlayer) {
         const accepted = session.tryAcceptAnswer(userId, userName, input);
-        this.fulfill_(new ShowAnswersAction(session, timeLeft));
-        return accepted;
+        const timeSinceAskedMs = (new Date() - this.timeoutStartTime) || Number.MAX_SAFE_INTEGER;
+        const isWithinBlindEyeInterval = timeSinceAskedMs <= HARDCORE_BLIND_EYE_INTERVAL_IN_MS;
+        if (accepted || !isWithinBlindEyeInterval) {
+          this.fulfill_(new ShowAnswersAction(session, timeLeft));
+          return accepted;
+        }
+
+        if (isWithinBlindEyeInterval) {
+          session.answerAttempters.pop();
+        }
       }
     }
     let accepted = session.tryAcceptAnswer(userId, userName, input);
