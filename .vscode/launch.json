@@ -9,20 +9,22 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Worker",
-      "program": "${workspaceFolder}\\worker\\src\\index.js"
+      "program": "${workspaceFolder}\\worker\\src\\index.js",
+      "runtimeArgs": ["--preserve-symlinks"]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Launch API",
-      "program": "${workspaceFolder}\\api\\server.js"
+      "program": "${workspaceFolder}\\api\\server.js",
+      "runtimeArgs": ["--preserve-symlinks"]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Launch bot",
       "program": "${workspaceFolder}\\bot\\src\\start.js",
-      "env": { "PORT": "3000"}
+      "runtimeArgs": ["--preserve-symlinks"]
     },
     {
       "type": "node",
@@ -30,7 +32,8 @@
       "runtimeExecutable": "npm",
       "name": "Build resources",
       "cwd": "${workspaceFolder}\\bot",
-      "args": ["run", "buildresources"]
+      "args": ["run", "buildresources"],
+      "runtimeArgs": ["--preserve-symlinks"]
     },
     {
       "type": "node",
