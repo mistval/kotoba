@@ -442,7 +442,7 @@ async function tryApplyNewSetting(
       ),
     ];
   } else if (locationStringLowerCase === Location.THIS_CHANNEL) {
-    resultString = 'The new setting has been applied to this channel. It will override the server-wide setting in this channel, but will be overriden by user settings. The settings menu is now closed.';
+    resultString = 'The new setting has been applied to this channel (and its descendents). It will override the server-wide setting in this channel, but will be overriden by user settings. The settings menu is now closed.';
     const childChannelIds = getChildChannelIds(msg.channel.guild, msg.channel.id);
     setResults = [
       await settings.setChannelSettingValue(
@@ -465,7 +465,7 @@ async function tryApplyNewSetting(
       ),
     ];
   } else {
-    resultString = `The new setting has been applied to the channels: ${locationString}. It will override the server-wide setting in those channels, but will be overriden by user settings. The settings menu is now closed.`;
+    resultString = `The new setting has been applied to the channels: ${locationString} (and their descendents). It will override the server-wide setting in those channels, but will be overriden by user settings. The settings menu is now closed.`;
     const channelIds = getChannelIds(locationString, msg);
     setResults = [];
 
