@@ -162,7 +162,7 @@ async function createContentForSetting(msg, settings, setting, iconUri, prefix) 
           value: await settings.getUserFacingSettingValue(
             setting.uniqueId,
             msg.channel.guild ? msg.channel.guild.id : msg.channel.id,
-            msg.channel.id,
+            msg.channel,
             msg.author.id,
           ),
           inline: true,
@@ -262,11 +262,17 @@ function getChannelIds(locationString, msg) {
 
   for (let i = 0; i < channelStrings.length; i += 1) {
     const channelString = channelStrings[i];
-    const regexResult = /<#(.*?)>/.exec(channelString);
-    const { channels } = msg.channel.guild;
-    if (!regexResult || !channels.find((channel) => channel.id === regexResult[1])) {
+    const regexResult = /<#([^>]*)>/.exec(channelString);
+    const { channels, threads } = msg.channel.guild;
+    if (!regexResult) {
       return channelString;
     }
+
+    const channelExists = channels.has(regexResult[1]) || threads.has(regexResult[1]);
+    if (!channelExists) {
+      return channelString;
+    }
+
     channelIds.push(regexResult[1]);
   }
 
@@ -382,6 +388,10 @@ function tryHandleCancelBack(hook, monochrome, msg, node) {
   );
 }
 
+function getChildChannelIds(guild, parentId) {
+  return guild.threads.filter((c) => c.parentID === parentId).map((c) => c.id);
+}
+
 async function tryApplyNewSetting(
   hook,
   monochrome,
@@ -433,11 +443,13 @@ async function tryApplyNewSetting(
     ];
   } else if (locationStringLowerCase === Location.THIS_CHANNEL) {
     resultString = 'The new setting has been applied to this channel. It will override the server-wide setting in this channel, but will be overriden by user settings. The settings menu is now closed.';
+    const childChannelIds = getChildChannelIds(msg.channel.guild, msg.channel.id);
     setResults = [
       await settings.setChannelSettingValue(
         setting.uniqueId,
         serverId,
         msg.channel.id,
+        childChannelIds,
         newUserFacingValue,
         userIsServerAdmin,
       ),
@@ -459,12 +471,14 @@ async function tryApplyNewSetting(
 
     for (let channelIdIndex = 0; channelIdIndex < channelIds.length; channelIdIndex += 1) {
       const channelId = channelIds[channelIdIndex];
+      const childChannelIds = getChildChannelIds(msg.channel.guild, channelId);
 
       // eslint-disable-next-line no-await-in-loop
       const setResult = await settings.setChannelSettingValue(
         setting.uniqueId,
         serverId,
         channelId,
+        childChannelIds,
         newUserFacingValue,
         userIsServerAdmin,
       );

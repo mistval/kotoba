@@ -180,23 +180,23 @@ function canReact(msg, ownId) {
   return ownPermissions.has('addReactions') && ownPermissions.has('readMessageHistory');
 }
 
-async function getShiritoriForeverSettings(monochrome, guildID, channelID) {
+async function getShiritoriForeverSettings(monochrome, guildID, channel) {
   const laxLongVowels = await monochrome.getSettings().getInternalSettingValue(
     'shiritori_forever/lax_long_vowels',
     guildID,
-    channelID,
+    channel,
     '', // This is not a per-user setting
   );
   const smallLetters = await monochrome.getSettings().getInternalSettingValue(
     'shiritori_forever/small_letters',
     guildID,
-    channelID,
+    channel,
     '',
   );
   const laxDakuten = await monochrome.getSettings().getInternalSettingValue(
     'shiritori_forever/dakuten',
     guildID,
-    channelID,
+    channel,
     '',
   );
 
@@ -293,7 +293,11 @@ function tryHandleMessage(monochrome, msg) {
     .then(async (data) => {
       const { previousWordInformation } = data;
       return japaneseGameStrategy.tryAcceptAnswer(
-        await getShiritoriForeverSettings(monochrome, msg.channel.guild.id, msg.channel.id),
+        await getShiritoriForeverSettings(
+          monochrome,
+          msg.channel.guild.id,
+          msg.channel,
+        ),
         msg.content,
         previousWordInformation ? [previousWordInformation] : [],
         false,
