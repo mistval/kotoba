@@ -246,7 +246,7 @@ module.exports = {
         { title: '辞', pages: wordPages },
         { title: '漢', pages: kanjiPages },
         sentencePages.length > 0 && { title: '例', pages: sentencePages },
-      ].filter(Boolean);
+      ].filter(Boolean).filter((c) => c.pages.length > 0);
 
       const interactiveMessageId = `jibiki_"${suffix}"`;
       return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
