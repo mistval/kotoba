@@ -5,7 +5,7 @@ const { Permissions } = require('monochrome-bot');
 const { safeWait, safeSetTimeout } = require('kotoba-common').safeTimers;
 const showRandomWord = require('./show_random_word.js');
 
-const POLL_INTERVAL_MS = 60000; // 1 minute
+const POLL_INTERVAL_MS = 1000; // 1 minute
 const CHANNEL_SPACING_DELAY_MS = 4000; // 4 seconds
 const FREQUENCY_CHECK = 30 * 60 * 1000; // 30 minutes
 const MAX_FREQUENCY = 8 * 7 * 24 * 60 * 60 * 1000; // 8 weeks
@@ -91,7 +91,7 @@ async function sendSchedule(schedule, monochrome) {
       });
     } catch (err) {
       monochrome.getLogger().warn({
-        err,
+        err: err?.error?.error ?? err?.error ?? err,
         event: 'WOTD CHANNEL ERROR',
         channel,
       });
