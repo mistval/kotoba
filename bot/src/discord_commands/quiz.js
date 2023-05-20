@@ -1140,6 +1140,7 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
   const resolvedSettings = { ...serverSettings, ...inlineSettings };
 
   const settings = {
+    isConquest: gameMode.isMasteryMode ?? false,
     scoreLimit: gameMode.questionLimitOverride || resolvedSettings.scoreLimit,
     unansweredQuestionLimit: gameMode.unansweredQuestionLimitOverride || resolvedSettings.unansweredQuestionLimit,
     answerTimeLimitInMs: resolvedSettings.answerTimeLimit * 1000,
