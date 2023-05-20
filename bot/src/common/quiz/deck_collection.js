@@ -38,6 +38,23 @@ function createDeckSettings(decks) {
   }));
 }
 
+function shuffleOptions(card) {
+  if (!card.options || !(card.answer[0] >= '1' && card.answer[0] <= '5')) {
+    return card;
+  }
+
+  const shuffledOptions = shuffleArray(card.options);
+  const correctOptionIndex = shuffledOptions.indexOf(card.answer[1]);
+  if (correctOptionIndex === -1) {
+    return card;
+  }
+
+  card.options = shuffledOptions;
+  card.answer[0] = (correctOptionIndex + 1).toString();
+
+  return card;
+}
+
 class DeckCollection {
   constructor() {
     this.discardedCards = [];
@@ -285,6 +302,8 @@ class DeckCollection {
     card.scoreAnswer = cardStrategies.ScoreAnswerStrategy[card.scoreAnswerStrategy];
 
     const { mc } = card;
+    shuffleOptions(card);
+
     if (!mc || card.options) {
       return card;
     }
