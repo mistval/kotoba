@@ -12,8 +12,7 @@ class ExamplesSource {
 
   // eslint-disable-next-line class-methods-use-this
   async getPageFromPreparedData() {
-    this.pagePromise ??= createExampleSearchPages(this.word);
-    const pages = await this.pagePromise;
+    const pages = await createExampleSearchPages(this.word);
     return [...pages, undefined];
   }
 }
