@@ -8,7 +8,7 @@ module.exports = {
       return false;
     }
 
-    const userName = `${msg.author.username}#${msg.author.discriminator}`;
+    const userName = msg.author.username;
     const result = QuizManager.processUserInput(
       msg.channel.id,
       msg.author.id,

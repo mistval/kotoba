@@ -177,7 +177,7 @@ class ScoresDataSource {
   async getPageFromPreparedData(_, pageIndex) {
     const startIndex = pageIndex * MAX_SCORERS_PER_PAGE;
     const endIndex = startIndex + MAX_SCORERS_PER_PAGE;
-    const username = `${this.msg.author.username}#${this.msg.author.discriminator}`;
+    const username = `${this.msg.author.username}`;
 
     if (startIndex > 0 && startIndex >= this.numUsers) {
       return undefined;

@@ -76,7 +76,7 @@ function userNameForUserID(monochrome, userID) {
     return 'Unknown User';
   }
 
-  return `${user.username}#${user.discriminator}`;
+  return `${user.username}`;
 }
 
 async function sendScores(monochrome, msg) {
@@ -271,7 +271,7 @@ async function handleAcceptedResult(monochrome, msg, acceptedResult) {
       dataCopy.names = {};
     }
 
-    dataCopy.names[msg.author.id] = `${msg.author.username}#${msg.author.discriminator}`;
+    dataCopy.names[msg.author.id] = `${msg.author.username}`;
     dataCopy.scores[msg.author.id] += acceptedResult.score;
     userScore = dataCopy.scores[msg.author.id];
 

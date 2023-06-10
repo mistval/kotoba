@@ -78,7 +78,7 @@ function getNameForUserID(bot, userIDs) {
   const nameForUserID = {};
   userIDs.forEach((userID) => {
     const user = bot.users.get(userID);
-    nameForUserID[userID] = `${user.username}#${user.discriminator}`;
+    nameForUserID[userID] = user.username;
   });
 
   return nameForUserID;

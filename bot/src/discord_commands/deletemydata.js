@@ -81,7 +81,6 @@ module.exports = {
 
       dbUser.discordUser = {
         username: 'deleted',
-        discriminator: 'deleted',
         id: msg.author.id,
       };
     }

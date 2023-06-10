@@ -20,7 +20,7 @@ async function searchCustomFullText(
     .select('shortName name score');
 
   if (populateOwner) {
-    query = query.populate('owner', 'discordUser.username discordUser.discriminator');
+    query = query.populate('owner', 'discordUser.username');
   }
 
   const results = await query.lean().exec();

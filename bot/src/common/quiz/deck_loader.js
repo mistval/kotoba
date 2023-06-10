@@ -172,7 +172,7 @@ async function getCustomDeckFromDisk(deckInfo) {
     uniqueId: deckRaw.uniqueId,
     name: deckRaw.name,
     shortName: deckRaw.shortName,
-    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}#${deckRaw.ownerDiscordUser.discriminator}. ${viewFullDeckPart}${deckRaw.description || ''}`,
+    description: `Custom quiz by ${deckRaw.ownerDiscordUser.username}. ${viewFullDeckPart}${deckRaw.description || ''}`,
     article: 'a',
     dictionaryLinkStrategy: 'NONE',
     answerTimeLimitStrategy: 'JAPANESE_SETTINGS',

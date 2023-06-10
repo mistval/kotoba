@@ -22,10 +22,10 @@ function avatarUriForAvatar(avatar, userId) {
 }
 
 function Scorer({
-  id, username, discriminator, avatar, points, index,
+  id, username, avatar, points, index,
 }) {
   const trophy = trophies[index] || '';
-  const nameString = `${trophy} ${username}#${discriminator}`.trim();
+  const nameString = `${trophy} ${username}`.trim();
   const pointsString = `${points} points`;
   const avatarUri = avatarUriForAvatar(avatar, id);
 

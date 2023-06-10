@@ -79,7 +79,6 @@ if (hasGCloudKey) {
           if (req.user.discordUser) {
             logInfo.user.discordUser.id = req.user.discordUser.id;
             logInfo.user.discordUser.username = req.user.discordUser.username;
-            logInfo.user.discordUser.discriminator = req.user.discordUser.discriminator;
           }
         }
 

@@ -7,7 +7,6 @@ async function updateDbFromUser(user, options = {}) {
     'discordUser.id': user.id,
     'discordUser.avatar': user.avatar,
     'discordUser.username': user.username,
-    'discordUser.discriminator': user.discriminator,
   });
 
   const $set = update;

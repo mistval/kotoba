@@ -7,7 +7,7 @@ import Header from './header';
 const policy = `When you use Kotoba bot certain information is collected about you. That information is as follows:
 
 1. Game scores - Scores that you achieved in quiz, shiritori, or other games.
-2. Basic user information - Username, discriminator, avatar link, Discord user ID.
+2. Basic user information - Username, avatar link, Discord user ID.
 3. Custom quiz decks - Quiz decks that you have created on this website.
 4. Custom quiz deck votes - Votes you submitted by thumbsing-up or thumbsing-down a message when prompted by the bot.
 5. Quiz session reports - Statistics about questions you answered correctly/incorrectly in the quiz feature.

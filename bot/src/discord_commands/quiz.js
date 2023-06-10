@@ -1612,7 +1612,7 @@ async function doSearch(msg, monochrome, searchTerm = '') {
       title: `Custom Deck Search Results (page ${i + 1} of ${chunks.length})`,
       fields: c.map((r) => ({
         name: `${r.shortName} (${r.score} votes)`,
-        value: `__${r.name}__ by ${r.owner?.discordUser.username ?? 'Unknown User'}#${r.owner?.discordUser.discriminator ?? '????'}`,
+        value: `__${r.name}__ by ${r.owner?.discordUser.username ?? 'Unknown User'}`,
       })),
       color: constants.EMBED_NEUTRAL_COLOR,
       footer,

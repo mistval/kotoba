@@ -47,11 +47,8 @@ function createBot() {
   const commandsDirectoryPath = path.join(__dirname, 'discord_commands');
   const messageProcessorsDirectoryPath = path.join(__dirname, 'discord_message_processors');
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
-  const persistenceDirectoryPath = path.join(__dirname, '..', 'data', 'monochrome-persistence');
 
-  const storage = config.useMongo
-    ? new Monochrome.Plugins.MongoStorage(DB_CONNECTION_STRING, 'kotoba', 'monochromepersistence')
-    : new Monochrome.Plugins.FPersist(persistenceDirectoryPath);
+  const storage = new Monochrome.Plugins.MongoStorage(DB_CONNECTION_STRING, 'kotoba', 'monochromepersistence');
 
   const options = {
     prefixes: ['k!'],
