@@ -20,7 +20,7 @@
     "react-bootstrap-table2-editor": "^1.2.3",
     "react-color": "^2.18.0",
     "react-data-grid": "^6.1.0",
-    "react-data-grid-addons": "^6.1.0",
+    "react-data-grid-addons": "^7.0.0-alpha.24",
     "react-dom": "^16.5.1",
     "react-ga": "^2.5.3",
     "react-loader-spinner": "^4.0.0",
@@ -28,7 +28,7 @@
     "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "socket.io-client": "^4.4.1",
+    "socket.io-client": "^4.6.2",
     "yup": "^0.32.9"
   },
   "scripts": {
