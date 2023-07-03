@@ -37,9 +37,9 @@
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.29.4",
-    "monochrome-bot": "^3.0.0-alpha.57",
+    "monochrome-bot": "^3.0.0-alpha.58",
     "parse5": "5.1.0",
-    "unofficial-jisho-api": "2.2.2"
+    "unofficial-jisho-api": "^2.3.2"
   },
   "devDependencies": {
     "chai": "^4.3.4",
