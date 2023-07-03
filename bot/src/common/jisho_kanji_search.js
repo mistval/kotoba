@@ -13,7 +13,14 @@ async function searchKanjiFromWord(word) {
       const kanjiURI = jishoApi.getUriForKanjiSearch(word);
 
       try {
-        const response = await axios.get(kanjiURI);
+        const response = await axios({
+          method: 'get',
+          url: kanjiURI,
+          headers: {
+            'User-Agent': 'Kotoba Discord Bot (https://github.com/mistval/kotoba)',
+          },
+        });
+
         const $ = cheerio.load(response.data);
         const kanjis = $('.character a').text();
         return extractKanji(kanjis);
