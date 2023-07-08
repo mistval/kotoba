@@ -162,6 +162,32 @@ function createWordIdentificationDeck(database, sourceDeckName, sourceDeck) {
   insertMeta(database, wordIDDeckName, sourceDeckCopy);
 }
 
+function trimMeaning(str) {
+  const maxLength = 200;
+
+  if (str < maxLength) {
+    return str;
+  }
+
+  for (const splitChar of [';', ',']) {
+    const parts = str.split(splitChar);
+    let result = parts[0];
+    if (result.length > maxLength) {
+      continue;
+    }
+
+    let nextPartIndex = 1;
+    while (parts[nextPartIndex] && (result.length + parts[nextPartIndex].length) < maxLength) {
+      result = `${result}${splitChar}${parts[nextPartIndex]}`;
+      nextPartIndex += 1;
+    }
+
+    return result;
+  }
+
+  throw new Error(`Meaning too long: ${str}`);
+}
+
 function createMeaningDeck(database, sourceDeckName, sourceDeck) {
   if (meaningDeckSourceDeckNames.indexOf(sourceDeckName) === -1) {
     return;
@@ -181,7 +207,7 @@ function createMeaningDeck(database, sourceDeckName, sourceDeck) {
     .filter(card => card && card.meaning)
     .map(card => ({
       question: card.question,
-      answer: [card.meaning],
+      answer: [trimMeaning(card.meaning)],
       meaning: card.answer[0],
     }));
 
