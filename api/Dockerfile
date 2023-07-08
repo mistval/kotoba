@@ -17,4 +17,6 @@ COPY ./api .
 RUN npm ci
 RUN npm run buildresources
 
+ENV NODE_ENV=production
+
 CMD ["npm", "start"]
