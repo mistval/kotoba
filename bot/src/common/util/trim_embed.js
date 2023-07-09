@@ -30,11 +30,11 @@ function trimEmbed(content) {
 
   return {
     ...content,
-    embeds: content.embeds.map((embed) => ({
+    embeds: content.embeds?.map((embed) => ({
       ...embed,
       title: trimString(embed.title, EMBED_TITLE_MAX_LENGTH),
       url: embed.url || undefined,
-      fields: embed.fields.filter((field) => field.name?.trim()).map((field) => ({
+      fields: embed.fields?.filter((field) => field.name?.trim()).map((field) => ({
         ...field,
         name: trimString(field.name, EMBED_FIELD_NAME_MAX_LENGTH),
         value: trimString(field.value, EMBED_FIELD_VALUE_MAX_LENGTH),
