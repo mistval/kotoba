@@ -8,11 +8,11 @@ module.exports = {
   hidden: true,
   async action(bot, msg, suffix, monochrome) {
     await msg.channel.createMessage({
-      embed: {
+      embeds: [{
         title: '⚠️ Ban Self ⚠️',
         description: 'You are about to ban yourself from using me. I will completely ignore any messages you send and leave any servers you own. If you are sure you want to do this, say **confirm**. To cancel, say anything else.',
         color: constants.EMBED_WARNING_COLOR,
-      },
+      }],
     });
 
     let responseMsg;

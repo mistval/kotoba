@@ -64,11 +64,11 @@ async function resetServerUser(monochrome, msg, suffix) {
   }
 
   await msg.channel.createMessage({
-    embed: {
+    embeds: [{
       title: '⚠️ Reset User Server Scores ⚠️',
       description: `You are about to erase all of <@${userId}>'s (${userId}) scores in this server. This is irreversible. If you're sure, say **confirm**. To cancel, say anything else.`,
       color: constants.EMBED_WARNING_COLOR,
-    },
+    }],
   });
 
   return waitForConfirmation(monochrome, userConfirmationMessages, msg, userId);
@@ -76,11 +76,11 @@ async function resetServerUser(monochrome, msg, suffix) {
 
 async function resetServer(monochrome, msg) {
   await msg.channel.createMessage({
-    embed: {
+    embeds: [{
       title: '⚠️ Reset Server Leaderboard ⚠️',
       description: 'You are about to reset the leaderboard in this server. This is irreversible. If you\'re sure, say **confirm**. To cancel, say anything else.\n\nTo reset just one user\'s scores, cancel this and then use the command again with a user ID or mention (not username).',
       color: constants.EMBED_WARNING_COLOR,
-    },
+    }],
   });
 
   return waitForConfirmation(monochrome, serverConfirmationMessages, msg);

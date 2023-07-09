@@ -24,24 +24,23 @@ function trimString(str, maxLength) {
 }
 
 function trimEmbed(content) {
-  if (!content || !content.embed) {
+  if (!content || !content.embeds) {
     return content;
   }
 
-  const contentCopy = Object.assign({}, content);
-  contentCopy.embed = Object.assign({}, content.embed);
-  contentCopy.embed.title = trimString(contentCopy.embed.title, EMBED_TITLE_MAX_LENGTH);
-  contentCopy.embed.url = contentCopy.embed.url || undefined;
-
-  contentCopy.embed.fields = contentCopy.embed.fields
-    ?.filter((f) => f.name?.trim())
-    ?.map((field) => ({
-      ...field,
-      name: trimString(field.name, EMBED_FIELD_NAME_MAX_LENGTH),
-      value: trimString(field.value, EMBED_FIELD_VALUE_MAX_LENGTH),
-    }));
-
-  return contentCopy;
+  return {
+    ...content,
+    embeds: content.embeds.map((embed) => ({
+      ...embed,
+      title: trimString(embed.title, EMBED_TITLE_MAX_LENGTH),
+      url: embed.url || undefined,
+      fields: embed.fields.filter((field) => field.name?.trim()).map((field) => ({
+        ...field,
+        name: trimString(field.name, EMBED_FIELD_NAME_MAX_LENGTH),
+        value: trimString(field.value, EMBED_FIELD_VALUE_MAX_LENGTH),
+      })),
+    })),
+  };
 }
 
 module.exports = trimEmbed;

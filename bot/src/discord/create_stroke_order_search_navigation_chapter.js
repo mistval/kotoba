@@ -23,17 +23,16 @@ class StrokeOrderNavigationDataSource {
     const lastPageNumber = this.characters.length;
 
     const page = await createStrokeOrderSearchPage(this.characters[pageIndex]);
-    const pageCopy = { ...page, embed: { ...page.embed } };
 
     if (lastPageNumber > 1) {
-      pageCopy.embed.title += ` (page ${pageNumber} of ${lastPageNumber})`;
+      page.embeds[0].title += ` (page ${pageNumber} of ${lastPageNumber})`;
     }
 
     if (pageIndex === this.characters.length - 1) {
-      return [pageCopy, undefined];
+      return [page, undefined];
     }
 
-    return pageCopy;
+    return page;
   }
 }
 

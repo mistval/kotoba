@@ -120,13 +120,13 @@ function resultToDiscordContent(fromLanguage, toLanguage, result) {
   ];
 
   return {
-    embed: {
+    embeds: [{
       title: 'Result from Google Translate',
       description: result.text.substring(0, 2048),
       url: result.uri.length < 2048 ? result.uri : undefined,
       fields: embedFields,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 

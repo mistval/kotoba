@@ -14,12 +14,12 @@ function createPageTitle(query, pageIndex, pageCount) {
 function createPagesForExamplesData(examplesData) {
   if (!examplesData.found) {
     return [{
-      embed: {
+      embeds: [{
         url: examplesData.uri,
         title: 'Jisho Example Search',
         description: `I didn't find any example results for [${examplesData.query}](${examplesData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     }];
   }
 
@@ -35,7 +35,7 @@ function createPagesForExamplesData(examplesData) {
   const chunkedExamples = ArrayUtil.chunk(sortedExamples, MAX_RESULTS_PER_PAGE);
 
   const pages = chunkedExamples.map((examples, pageIndex) => ({
-    embed: {
+    embeds: [{
       url: examplesData.uri,
       title: createPageTitle(examplesData.query, pageIndex, chunkedExamples.length),
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -43,7 +43,7 @@ function createPagesForExamplesData(examplesData) {
         name: example.kanji,
         value: `${example.kana}\n${example.english}`,
       })),
-    },
+    }],
   }));
 
   return pages;

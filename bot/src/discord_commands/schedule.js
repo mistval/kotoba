@@ -37,11 +37,11 @@ module.exports = {
     if (!monochrome.userIsServerAdmin(msg)) {
       throw new FulfillmentError({
         publicMessage: {
-          embed: {
+          embeds: [{
             title: 'Word of the Day',
             description: 'A server admin can use this command to create a schedule for me to send information about a random word. Ask a server admin to configure it! ',
             color: constants.EMBED_NEUTRAL_COLOR,
-          },
+          }],
         },
         logDescription: 'Not server admin',
       });
@@ -50,11 +50,11 @@ module.exports = {
     if (!msg.channel.guild) {
       throw new FulfillmentError({
         publicMessage: {
-          embed: {
+          embeds: [{
             title: 'Word of the Day',
             description: 'This command can only be used in a server.',
             color: constants.EMBED_NEUTRAL_COLOR,
-          },
+          }],
         },
         logDescription: 'Not in a server',
       });

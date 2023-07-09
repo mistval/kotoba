@@ -58,11 +58,11 @@ function discordDescriptionForRejection(rejectionReason, extraData) {
 
 function sendEmbedWithColor(channel, title, description, color) {
   return retryPromise(() => channel.createMessage({
-    embed: {
+    embeds: [{
       title,
       description,
       color,
-    },
+    }],
   }));
 }
 
@@ -190,7 +190,7 @@ class DiscordClientDelegate {
 
     const { prefix } = this.commanderMessage;
     return retryPromise(() => this.commanderMessage.channel.createMessage({
-      embed: {
+      embeds: [{
         title: 'Shiritori Ended',
         description,
         color: constants.EMBED_NEUTRAL_COLOR,
@@ -199,7 +199,7 @@ class DiscordClientDelegate {
           text: `Say '${prefix}lb shiritori' to see the leaderboard for this server. '${prefix}lb global shiritori' for global scores.`,
           icon_url: constants.FOOTER_ICON_URI,
         },
-      },
+      }],
     }));
   }
 
@@ -245,7 +245,7 @@ class DiscordClientDelegate {
 
     const message = {
       content,
-      embed: {
+      embeds: [{
         description: `${previousAnswererUsername} went and now it's <@${playerId}>'s turn!`,
         fields,
         color: constants.EMBED_NEUTRAL_COLOR,
@@ -253,7 +253,7 @@ class DiscordClientDelegate {
           text: 'Say \'join\' to join!',
           icon_url: constants.FOOTER_ICON_URI,
         },
-      },
+      }],
     };
 
     await retryPromise(() => this.commanderMessage.channel.createMessage(message));
@@ -310,7 +310,7 @@ class DiscordClientDelegate {
 
     const description = discordDescriptionForRejection(rejectionReason, rejectionInfo);
     return retryPromise(() => this.commanderMessage.channel.createMessage({
-      embed: {
+      embeds: [{
         title: `Answer Rejected (${input})`,
         description,
         color: constants.EMBED_WRONG_COLOR,
@@ -318,7 +318,7 @@ class DiscordClientDelegate {
           icon_url: constants.FOOTER_ICON_URI,
           text: 'Better come up with something else ;)',
         },
-      },
+      }],
     }));
   }
 
@@ -362,7 +362,7 @@ module.exports = {
     Permissions.sendMessages,
     Permissions.addReactions,
     Permissions.readMessageHistory,
-    Permissions.readMessages,
+    Permissions.viewChannel,
   ],
   requiredSettings: [
     'shiritori/bot_turn_minimum_wait',
@@ -414,11 +414,11 @@ module.exports = {
     shiritoriManager.addRealPlayer(locationId, msg.author.id);
 
     await retryPromise(() => msg.channel.createMessage({
-      embed: {
+      embeds: [{
         title: 'Shiritori',
         description: getGameStartDescription(prefix),
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     }));
 
     return shiritoriManager.startGame(locationId);

@@ -19,11 +19,11 @@ will likewise allow you to stop the game.
   `;
 
   return {
-    embed: {
+    embeds: [{
       title: 'Shiritori Forever',
       description: INSTRUCTIONS_DESCRIPTION,
       color: EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 
@@ -40,7 +40,7 @@ module.exports = {
   requiredBotPermissions: [
     Permissions.embedLinks,
     Permissions.sendMessages,
-    Permissions.readMessages,
+    Permissions.viewChannel,
   ],
   interaction: {
     compatibilityMode: true,

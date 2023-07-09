@@ -49,6 +49,25 @@ function createBot() {
   const settingsFilePath = path.join(__dirname, 'bot_settings.js');
 
   const storage = new Monochrome.Plugins.MongoStorage(DB_CONNECTION_STRING, 'kotoba', 'monochromepersistence');
+  const gatewayOptions = {
+    maxShards: 'auto',
+    intents: [
+      'guilds',
+      'guildMessages',
+      'guildMessageReactions',
+      'guildVoiceStates',
+      'directMessages',
+      'directMessageReactions',
+      'messageContent',
+    ],
+    disableEvents: {
+      GUILD_UPDATE: true,
+      GUILD_BAN_ADD: true,
+      GUILD_BAN_REMOVE: true,
+      MESSAGE_UPDATE: true,
+      TYPING_START: true,
+    },
+  };
 
   const options = {
     prefixes: ['k!'],
@@ -82,23 +101,9 @@ function createBot() {
     statusRotationIntervalInSeconds: 600,
     erisOptions: {
       restMode: true,
-      maxShards: 'auto',
       messageLimit: 0,
-      disableEvents: {
-        GUILD_UPDATE: true,
-        GUILD_BAN_ADD: true,
-        GUILD_BAN_REMOVE: true,
-        MESSAGE_UPDATE: true,
-        TYPING_START: true,
-      },
-      intents: [
-        'guilds',
-        'guildMessages',
-        'guildMessageReactions',
-        'guildVoiceStates',
-        'directMessages',
-        'directMessageReactions',
-      ],
+      gateway: gatewayOptions,
+      ...gatewayOptions,
     },
     ...config,
   };

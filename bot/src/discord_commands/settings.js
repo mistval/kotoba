@@ -118,7 +118,7 @@ function createContentForRoot(children, iconUri, prefix) {
   };
 
   return {
-    embed: {
+    embeds: [{
       title: 'Settings',
       description: CATEGORY_DESCRIPTION,
       fields: [...createFieldsForChildren(children), fieldForReset],
@@ -127,13 +127,13 @@ function createContentForRoot(children, iconUri, prefix) {
         icon_url: iconUri,
         text: 'Say \'cancel\' to cancel.',
       },
-    },
+    }],
   };
 }
 
 function createContentForCategory(category, iconUri) {
   return {
-    embed: {
+    embeds: [{
       title: `Settings (${category.userFacingName})`,
       description: CATEGORY_DESCRIPTION,
       fields: createFieldsForChildren(category.children),
@@ -142,7 +142,7 @@ function createContentForCategory(category, iconUri) {
         icon_url: iconUri,
         text: 'You can also say \'back\' or \'cancel\'.',
       },
-    },
+    }],
   };
 }
 
@@ -152,7 +152,7 @@ async function createContentForSetting(msg, settings, setting, iconUri, prefix) 
     : [{ name: 'Allowed values', value: setting.allowedValuesDescription, inline: false }];
 
   return {
-    embed: {
+    embeds: [{
       title: `Settings (${setting.userFacingName})`,
       description: replacePrefix(setting.description, prefix),
       color: EMBED_COLOR,
@@ -183,7 +183,7 @@ async function createContentForSetting(msg, settings, setting, iconUri, prefix) 
         icon_url: iconUri,
         text: 'To change the value, type in the new value. Or say \'back\' or \'cancel\'.',
       },
-    },
+    }],
   };
 }
 
@@ -738,11 +738,11 @@ async function resetUserSettings(monochrome, msg) {
   const settings = monochrome.getSettings();
   await settings.resetUserSettings(msg.author.id);
   return msg.channel.createMessage({
-    embed: {
+    embeds: [{
       title: 'Settings reset',
       description: 'Your user settings have been reset.',
       color: EMBED_COLOR,
-    },
+    }],
   });
 }
 
@@ -760,11 +760,11 @@ async function resetServerSettings(monochrome, msg) {
   await settings.resetServerAndChannelSettings(serverId);
 
   return msg.channel.createMessage({
-    embed: {
+    embeds: [{
       title: 'Settings reset',
       description: 'This server\'s server and channel settings have been reset (except for command prefix).',
       color: EMBED_COLOR,
-    },
+    }],
   });
 }
 
@@ -777,7 +777,7 @@ module.exports = {
   requiredBotPermissions: [
     Permissions.embedLinks,
     Permissions.sendMessages,
-    Permissions.readMessages,
+    Permissions.viewChannel,
   ],
   interaction: {
     compatibilityMode: true,

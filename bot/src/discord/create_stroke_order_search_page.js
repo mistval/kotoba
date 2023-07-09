@@ -52,34 +52,34 @@ function createPageForKanjiDataAndGif(kanjiData, gifUri) {
     embedFields = addEmbedFieldForStrokeCount(kanjiData, embedFields);
 
     return {
-      embed: {
+      embeds: [{
         title: kanjiData.query,
         url: kanjiData.uri,
         fields: embedFields,
         color: constants.EMBED_NEUTRAL_COLOR,
         image: { url: kanjiData.strokeOrderDiagramUri },
         thumbnail: { url: gifUri },
-      },
+      }],
     };
   }
 
   if (gifUri) {
     return {
-      embed: {
+      embeds: [{
         title: kanjiData.query,
         color: constants.EMBED_NEUTRAL_COLOR,
         image: { url: gifUri },
-      },
+      }],
     };
   }
 
   return {
-    embed: {
+    embeds: [{
       url: kanjiData.uri,
       title: 'Stroke Order Search',
       description: `I didn't find any results for [${kanjiData.query}](${kanjiData.uri}).`,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 

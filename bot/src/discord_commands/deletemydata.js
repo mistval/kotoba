@@ -24,11 +24,11 @@ module.exports = {
   hidden: true,
   async action(bot, msg, suffix, monochrome) {
     await msg.channel.createMessage({
-      embed: {
+      embeds: [{
         title: '⚠️ Delete User Data ⚠️',
         description: 'You are about to delete all data about you that I possess, including settings, quiz scores, custom decks, and all the other thingies. There is no going back. If you\'re sure, say **confirm**. To cancel, say anything else.',
         color: constants.EMBED_WARNING_COLOR,
-      },
+      }],
     });
 
     let responseMsg;

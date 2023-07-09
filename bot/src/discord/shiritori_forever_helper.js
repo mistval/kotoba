@@ -53,12 +53,12 @@ function createDiscordContentForScoresPage(scoresPage) {
   }));
 
   return {
-    embed: {
+    embeds: [{
       title: 'Scores',
       description: 'Shiritori Forever scores in the current channel.\nYou get one point per character in your answer.',
       fields,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 
@@ -138,14 +138,14 @@ function createMessageForTurnTaken(monochrome, channelID, userID, wordInformatio
   ].filter((f) => Boolean(f?.value));
 
   return retryPromise(() => bot.createMessage(channelID, {
-    embed: {
+    embeds: [{
       fields,
       color: constants.EMBED_NEUTRAL_COLOR,
       footer: {
         text: `Say '${prefix}sf scores' to see the current scores.`,
         icon_url: constants.FOOTER_ICON_URI,
       },
-    },
+    }],
   }));
 }
 
@@ -315,21 +315,21 @@ function tryHandleMessage(monochrome, msg) {
 
 function sendDisabledMessage(monochrome, channelID) {
   return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
-    embed: {
+    embeds: [{
       title: 'Shiritori Forever disabled',
       description: 'Shiritori Forever is no longer running in this channel',
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   }));
 }
 
 function sendEnabledMessage(monochrome, channelID) {
   return retryPromise(() => monochrome.getErisBot().createMessage(channelID, {
-    embed: {
+    embeds: [{
       title: 'Shiritori Forever enabled',
       description: 'Shiritori Forever is now running in this channel. I\'ll go first!',
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   }));
 }
 

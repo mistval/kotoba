@@ -53,11 +53,11 @@ function createFieldForScorer(index, username, score) {
 
 function notifyDeckNotFound(deckName) {
   const content = {
-    embed: {
+    embeds: [{
       title: 'Leaderboard',
       description: `I don't have a deck named **${deckName}**.`,
       color: constants.EMBED_WRONG_COLOR,
-    },
+    }],
   };
 
   throw new FulfillmentError({
@@ -194,13 +194,13 @@ class ScoresDataSource {
     const userScore = (userRankAndScore || {}).score;
 
     return {
-      embed: {
+      embeds: [{
         color: constants.EMBED_NEUTRAL_COLOR,
         title: createTitle(this.deckNames, this.isGlobal ? undefined : this.msg.channel.guild.name),
         description: createDescription(numUsers, totalScore, this.isGlobal, this.msg.prefix),
         fields: createScorerFields(startIndex, scores, userRank, userScore, username),
         footer: createFooter(this.isGlobal, this.deckNames, this.msg.prefix),
-      },
+      }],
     };
   }
 }

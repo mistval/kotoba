@@ -29,7 +29,7 @@ async function searchAnime(keyword) {
 
 function formatAnimeData(animeData) {
   return animeData.map((item, index) => {
-    const embed = {
+    const embeds = [{
       title: `${item.canonicalTitle} (page ${index + 1} of ${animeData.length})`,
       description: item.synopsis,
       url: `${KITSU_PAGE_BASE_URI}${item.slug}`,
@@ -47,9 +47,9 @@ function formatAnimeData(animeData) {
         },
       ],
       thumbnail: item.posterImage ? { url: item.posterImage.small } : undefined,
-    };
+    }];
 
-    return trimEmbed({ embed });
+    return trimEmbed({ embeds });
   });
 }
 

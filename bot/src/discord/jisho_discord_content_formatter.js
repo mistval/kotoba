@@ -105,7 +105,7 @@ function formatJishoDataBig(
       dictionaryEntriesQueue.push(nextEntry);
     }
 
-    const trimmedContent = trimEmbed({ embed });
+    const trimmedContent = trimEmbed({ embeds: [embed] });
     discordContents.push(trimmedContent);
   }
 
@@ -113,7 +113,7 @@ function formatJishoDataBig(
   if (pagingPermitted && (numberOfPages > 1 || forMultiChapterNavigation)) {
     for (let index = 0; index < numberOfPages; index += 1) {
       const discordContent = discordContents[index];
-      discordContent.embed.title += ` (page ${index + 1} of ${numberOfPages})`;
+      discordContent.embeds[0].title += ` (page ${index + 1} of ${numberOfPages})`;
     }
   }
 
@@ -163,7 +163,7 @@ function formatJishoDataSmall(jishoData) {
     embed.fields.push(meaningsField);
   }
 
-  const trimmedContent = trimEmbed({ embed });
+  const trimmedContent = trimEmbed({ embeds: [embed] });
   return trimmedContent;
 }
 

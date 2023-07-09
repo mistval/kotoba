@@ -26,13 +26,13 @@ function createMessageContentsForResults(pages, query, username) {
 
   const numPages = pages.length;
   return pages.map((results, i) => ({
-    embed: {
+    embeds: [{
       title: `${query} (Página ${i + 1} de ${numPages})`,
       url: `http://hispadic.byethost3.com/searchres.php?jp=${encodeURIComponent(query)}&accion=Buscar`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: results.map(createFieldForResult),
       footer,
-    },
+    }],
   }));
 }
 

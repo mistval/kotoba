@@ -76,11 +76,11 @@ module.exports = {
 
     return msg.channel.createMessage(
       {
-        embed: {
+        embeds: [{
           description: `Drawn for: <@${msg.author.id}>\nFont: **${fontFamily}**\nText color: **${color}**\nBackground color: **${bgColor}**\nFont size: **${size}**\n${fontCharWarning}`,
           image: { url: 'attachment://upload.png' },
           color: constants.EMBED_NEUTRAL_COLOR,
-        },
+        }],
       },
       { file: renderResult, name: 'upload.png' },
     );

@@ -58,7 +58,7 @@ function uniqueById(arr) {
 async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger) {
   try {
     const message = {
-      embed: {
+      embeds: [{
         title: 'WARNING: Scheduled Update',
         description: `I am going down for a **scheduled update in ${timeRemainingMs / 1000} seconds**. Please save your game if you don't want to lose progress.`,
         color: EMBED_WARNING_COLOR,
@@ -66,7 +66,7 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
           icon_url: FOOTER_ICON_URI,
           text: 'I\'m getting an update! Yay!',
         },
-      },
+      }],
     };
 
     const promises = uniqueById(channels)
@@ -84,7 +84,7 @@ async function sendCountdownMessageToChannels(channels, timeRemainingMs, logger)
 async function sendShutdownMessageToChannels(channels, logger) {
   try {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Update time!',
         description: 'I\'m going down for a scheduled update now. See ya in about five minutes.',
         color: EMBED_WARNING_COLOR,
@@ -92,7 +92,7 @@ async function sendShutdownMessageToChannels(channels, logger) {
           icon_url: FOOTER_ICON_URI,
           text: 'I\'m getting an update! Yay!',
         },
-      },
+      }],
     };
 
     const promises = uniqueById(channels)

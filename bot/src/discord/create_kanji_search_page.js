@@ -119,12 +119,12 @@ function getDescriptionString(kanjiData) {
 function createPageForKanjiData(kanjiData, prefix, strokes) {
   if (!kanjiData.found) {
     return {
-      embed: {
+      embeds: [{
         url: kanjiData.uri,
         title: 'Jisho Kanji Search',
         description: `I didn't find any kanji results for [${kanjiData.query}](${kanjiData.uri}).`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
   }
 
@@ -155,7 +155,7 @@ function createPageForKanjiData(kanjiData, prefix, strokes) {
   const thumbnailInfo = strokes ? { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/gifs/${fileName}` } : { url: `https://raw.githubusercontent.com/mistval/kanji_images/master/pngs/${fileName}` };
 
   return {
-    embed: {
+    embeds: [{
       title: kanjiData.query,
       description: getDescriptionString(kanjiData),
       url: kanjiData.uri,
@@ -167,7 +167,7 @@ function createPageForKanjiData(kanjiData, prefix, strokes) {
         text: `Wanna see detailed stroke information for this Kanji? Try '${prefix}so ${kanjiData.query}'`,
         icon_url: constants.FOOTER_ICON_URI,
       },
-    },
+    }],
   };
 }
 

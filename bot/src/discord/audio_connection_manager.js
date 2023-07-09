@@ -145,11 +145,11 @@ class AudioConnection {
 
     try {
       await msg.channel.createMessage({
-        embed: {
+        embeds: [{
           title: EMBED_TITLE,
           description: `Connected to voice channel <#${voiceChannel.id}>`,
           color: constants.EMBED_CORRECT_COLOR,
-        },
+        }],
       });
     } catch (err) {
       globals.logger.warn({

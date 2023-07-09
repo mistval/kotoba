@@ -41,11 +41,11 @@ const CONQUEST_EXTENSION = `-${CONQUEST_NAME}`;
 const INTERMEDIATE_ANSWER_TRUNCATION_REPLACEMENT = ' [...]';
 
 const noDecksFoundPublicMessage = {
-  embed: {
+  embeds: [{
     title: 'No matches found',
     description: 'No results were found for that search term.',
     color: constants.EMBED_NEUTRAL_COLOR,
-  },
+  }],
 };
 
 function createMasteryModeDisabledString(prefix) {
@@ -58,10 +58,10 @@ function createConquestModeDisabledString(prefix) {
 
 function createTitleOnlyEmbedWithColor(title, color) {
   return {
-    embed: {
+    embeds: [{
       title,
       color,
-    },
+    }],
   };
 }
 
@@ -71,11 +71,11 @@ function createTitleOnlyEmbed(title) {
 
 function createSaveFailedEmbed(description) {
   return {
-    embed: {
+    embeds: [{
       title: 'Save failed',
       description,
       color: constants.EMBED_WARNING_COLOR,
-    },
+    }],
   };
 }
 
@@ -256,14 +256,14 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
   }
 
   const response = {
-    embed: {
+    embeds: [{
       title: `${quizName} Ended`,
       url: aggregateLink,
       description,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields,
       footer: { icon_url: constants.FOOTER_ICON_URI, text: `Say ${prefix}lb to see the server leaderboard.` },
-    },
+    }],
   };
 
   return trimEmbed(response);
@@ -271,39 +271,39 @@ function createEndQuizMessage(quizName, scores, unansweredQuestions, aggregateLi
 
 const afterQuizMessages = [
   {
-    embed: {
+    embeds: [{
       title: 'Reviewing',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'Say **<prefix>quiz review** to review the questions no one answered, or **<prefix>quiz reviewme** to review the questions you didn\'t answer (only if you did answer at least one). You can say **<prefix>quiz reviewme** somewhere else (like in a DM) if you prefer.',
-    },
+    }],
   },
   {
-    embed: {
+    embeds: [{
       title: 'O, so you want Anki in Discord?',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: `Try **Conquest Mode**. Say **<prefix>quiz ${MASTERY_NAME}** to learn more.`,
-    },
+    }],
   },
   {
-    embed: {
+    embeds: [{
       title: 'Fonts',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'You can change fonts, colors, and sizes by using the **<prefix>settings** command and going into the **Fonts** submenu.',
-    },
+    }],
   },
   {
-    embed: {
+    embeds: [{
       title: 'Stats',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'Say **<prefix>quiz stats** to see your stats for the past 30 days.',
-    },
+    }],
   },
   {
-    embed: {
+    embeds: [{
       title: 'Quiz Command Builder',
       color: constants.EMBED_NEUTRAL_COLOR,
       description: 'For help configuring a quiz exactly how you want, try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) or check my [manual](https://kotobaweb.com/bot/quiz).',
-    },
+    }],
   },
 ];
 
@@ -311,8 +311,8 @@ function createAfterQuizMessage(prefix) {
   const index = Math.floor(Math.random() * afterQuizMessages.length);
 
   const afterQuizMessage = { ...afterQuizMessages[index] };
-  afterQuizMessage.embed = { ...afterQuizMessage.embed };
-  afterQuizMessage.embed.description = afterQuizMessage.embed.description.replace(/<prefix>/g, prefix);
+  afterQuizMessage.embeds = afterQuizMessage.embeds.map(embed => ({ ...embed }));
+  afterQuizMessage.embeds[0].description = afterQuizMessage.embeds[0].description.replace(/<prefix>/g, prefix);
   return afterQuizMessage;
 }
 
@@ -345,13 +345,13 @@ async function sendEndQuizMessages(
       userCanVote = await deckSearchUtils.discordUserCanVote(commanderMessage.author.id, customDeck.uniqueId);
 
       if (userCanVote) {
-        const embed = {
+        const embeds = [{
           title: 'Voting',
           description: `Didjuu like **${customDeck.shortName}**? React with 👍 to vote for it, or react with ❌ and I won't ask you again for this deck.`,
           color: constants.EMBED_NEUTRAL_COLOR,
-        };
+        }];
 
-        const sentMessage = await commanderMessage.channel.createMessage({ embed });
+        const sentMessage = await commanderMessage.channel.createMessage({ embeds });
 
         return await monochrome.reactionButtonManager.registerHandler(
           sentMessage,
@@ -425,12 +425,12 @@ function getTimeString(timestamp) {
 
 function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraContent) {
   const prefix = msg.prefix;
-  const embed = {
+  const embeds = [{
     title: 'Loading',
     description: `You can load a save by using this command again with the number of the save you want (listed below). For example **${prefix}quiz load 1**.`,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [],
-  };
+  }];
 
   if (currentSaveMementos.length > 0) {
     embed.fields.push({
@@ -450,7 +450,7 @@ function sendSaveMementos(msg, currentSaveMementos, recyclingBinMementos, extraC
     });
   }
 
-  return msg.channel.createMessage({ content: extraContent, embed }, null, msg);
+  return msg.channel.createMessage({ content: extraContent, embeds }, null, msg);
 }
 
 function createCorrectPercentageField(card) {
@@ -488,7 +488,7 @@ class DiscordMessageSender {
     }
 
     return this.commanderMessage.channel.createMessage({
-      embed: {
+      embeds: [{
         title: embedTitle,
         description: embedDescription,
         color: constants.EMBED_NEUTRAL_COLOR,
@@ -497,7 +497,7 @@ class DiscordMessageSender {
           icon_url: constants.FOOTER_ICON_URI,
           text: `There's a lot more I can do without slash commands. Say ${this.commanderMessage.prefix}help quiz for more info.`,
         } : undefined,
-      },
+      }],
     });
   }
 
@@ -527,14 +527,14 @@ class DiscordMessageSender {
       fields.push({ name: card.commentFieldName, value: card.meaning, inline: false });
     }
     let response = {
-      embed: {
+      embeds: [{
         title: card.deckName,
         url: card.dictionaryLink,
         description: skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!'),
         color: constants.EMBED_WRONG_COLOR,
         fields,
         footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\' or \'。\'.' },
-      },
+      }],
     };
     response = trimEmbed(response);
     return this.commanderMessage.channel.createMessage(response);
@@ -577,13 +577,13 @@ class DiscordMessageSender {
     }
 
     let response = {
-      embed: {
+      embeds: [{
         title: card.deckName,
         url: card.dictionaryLink,
         description: `<@${answerersInOrder[0]}> got it first!`,
         color: constants.EMBED_CORRECT_COLOR,
         fields,
-      },
+      }],
     };
 
     response = trimEmbed(response);
@@ -609,42 +609,42 @@ class DiscordMessageSender {
     }
 
     let content = {
-      embed: {
+      embeds: [{
         description: `**${title}**\n${question.instructions || ''}`,
         color: constants.EMBED_NEUTRAL_COLOR,
         fields: [],
-      },
+      }],
     };
 
     let uploadInformation;
     if (question.bodyAsPngBuffer) {
-      content.embed.image = { url: 'attachment://upload.png' };
+      content.embeds[0].image = { url: 'attachment://upload.png' };
       uploadInformation = { file: question.bodyAsPngBuffer, name: 'upload.png' };
     }
     if (question.hintString) {
-      content.embed.footer = { text: question.hintString };
+      content.embeds[0].footer = { text: question.hintString };
     }
     if (question.options) {
       const fieldValue = question.options.map((option, index) => {
         const optionCharacter = `${index + 1}`;
         return `**${optionCharacter}:** ${option}`;
       }).join('\n');
-      content.embed.fields.push({ name: 'Possible Answers', value: fieldValue });
+      content.embeds[0].fields.push({ name: 'Possible Answers', value: fieldValue });
     }
     if (question.bodyAsText) {
       bodyLines.push('');
       bodyLines.push(question.bodyAsText);
     }
     if (question.bodyAsImageUri) {
-      content.embed.image = { url: question.bodyAsImageUri };
+      content.embeds[0].image = { url: question.bodyAsImageUri };
     }
     if (question.bodyAsAudioUri) {
       const voiceChannel = await this.audioConnection.getVoiceChannel();
-      content.embed.fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
+      content.embeds[0].fields.push({name: 'Now playing in', value: `<#${voiceChannel.id}>`});
       await this.audioConnection.play(question.bodyAsAudioUri);
     }
 
-    content.embed.description = bodyLines.join('\n');
+    content.embeds[0].description = bodyLines.join('\n');
     content = trimEmbed(content);
     if (!questionId) {
       const msg = await this.commanderMessage.channel.createMessage(content, uploadInformation);
@@ -667,14 +667,14 @@ class DiscordMessageSender {
       });
     }
 
-    const embed = {
+    const embeds = [{
       title: 'Saved',
       description: `The quiz has been saved and paused! Say **${this.commanderMessage.prefix}quiz load** later to start it again.`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields,
-    };
+    }];
 
-    return this.commanderMessage.channel.createMessage({ embed });
+    return this.commanderMessage.channel.createMessage({ embeds });
   }
 
   notifySaveFailedNoSpace(maxSaves) {
@@ -866,7 +866,7 @@ function createMasteryHelp(isEnabledInServer, prefix) {
   }
 
   return {
-    embed: {
+    embeds: [{
       title: 'Conquest Mode',
       description: `In Conquest Mode your goal is to conquer one or more entire quiz decks. If you get a question right on the first try, you won't see it again. But if you get it wrong, you'll see it again until I think you've learned it. The game ends when I think you know every card in the deck (or if you miss too many questions in a row or use **${prefix}quiz stop**).
 
@@ -877,7 +877,7 @@ To start, say **${prefix}quiz ${MASTERY_NAME}** with a deck name. For example: *
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
       footer: { icon_url: constants.FOOTER_ICON_URI, text: `You can also conquer multiple decks. For example: ${prefix}quiz N5+N4 ${MASTERY_NAME}` },
-    },
+    }],
   };
 }
 
@@ -888,7 +888,7 @@ function createConquestHelp(isEnabledInServer, prefix) {
   }
 
   return {
-    embed: {
+    embeds: [{
       title: 'Inferno Mode',
       description: `In Inferno Mode, every time you miss a question, you have a little bit less time to answer the next one. And I might throw that question back into the deck, so try to remember it!
 
@@ -900,7 +900,7 @@ To start, say **${prefix}quiz${CONQUEST_EXTENSION}** plus a deck name. For examp
 
 ${footerMessage}`,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 
@@ -911,11 +911,11 @@ function getScoreScopeIdFromMsg(msg) {
 function throwIfInternetCardsNotAllowed(isDm, session, internetCardsAllowed, prefix) {
   if (!internetCardsAllowed && !isDm && session.containsInternetCards()) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Internet decks disabled',
         description: `That deck contains internet cards, but internet decks are disabled in this channel. You can try in a different channel, or in a DM, or ask a server admin to enable internet decks by saying **${prefix}settings quiz/japanese/internet_decks_enabled enabled**`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -932,11 +932,11 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix) {
        gameMode.serializationIdentifier === MasteryGameMode.serializationIdentifier ||
        gameMode.serializationIdentifier === ConquestGameMode.serializationIdentifier)) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Game mode disabled',
         description: `That game mode is not enabled in this channel. You can try it in a different channel, or via DM, or ask a server admin to enable the game mode by saying **${prefix}settings quiz/japanese/conquest_and_inferno_enabled enabled**`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -949,11 +949,11 @@ function throwIfGameModeNotAllowed(isDm, gameMode, masteryEnabled, prefix) {
 function throwIfSessionInProgressAtLocation(locationId, prefix) {
   if (quizManager.isSessionInProgressAtLocation(locationId)) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Quiz In Progress',
         description: `Only one quiz can run in a channel at a time. Try another channel, or DM. You can stop the currently running quiz by saying **${prefix}quiz stop**`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -965,11 +965,11 @@ function throwIfSessionInProgressAtLocation(locationId, prefix) {
 
 function throwSavedDeckNotFound() {
   const message = {
-    embed: {
+    embeds: [{
       title: 'Deck Not Found',
       description: `Sorry, one or more decks in that save could not be found. They were probably deleted by their owner. The save could not be loaded and has been deleted.`,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 
   throw new FulfillmentError({
@@ -983,11 +983,11 @@ function throwIfDeckNotAllowedInServer(session) {
 
   if (unallowedDeck) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Deck not allowed here',
         description: `The deck **${unallowedDeck.shortName}** cannot be used in this server or channel because its owner chose to restrict access.`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1164,11 +1164,11 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
 function getReviewDeckOrThrow(deck, prefix) {
   if (!deck) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Review deck not found',
         description: `I don\'t remember the session you want to review. Say **${prefix}quiz** to start a new session!`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1269,11 +1269,11 @@ function getDeckNameAndModifierInformation(deckNames) {
 
 function showSettingsHelp(msg) {
   return msg.channel.createMessage({
-    embed: {
+    embeds: [{
       title: 'Settings',
       description: `You can use the **${msg.prefix}settings** command to configure settings.`,
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   });
 }
 
@@ -1309,11 +1309,11 @@ Other useful commands:
 function createAdvancedHelpContent(prefix) {
   const description = helpLongDescription.replace(/<prefix>/g, prefix);
   const content = {
-    embed: {
+    embeds: [{
       title: 'Advanced Help',
       description,
       color: constants.EMBED_NEUTRAL_COLOR,
-    }
+    }]
   };
 
   return content;
@@ -1342,7 +1342,7 @@ function throwIfShutdownScheduled(channelId) {
   if (globals.shutdownScheduled) {
     state.scheduledShutdown.shutdownNotifyChannels.push(channelId);
     const messageContent = {
-      embed: {
+      embeds: [{
         title: 'Scheduled Update',
         description: 'I\'m scheduled to reboot for an update in a few minutes so now\'s a bad time :) Please try again in about five minutes.',
         color: constants.EMBED_WARNING_COLOR,
@@ -1350,7 +1350,7 @@ function throwIfShutdownScheduled(channelId) {
           icon_url: constants.FOOTER_ICON_URI,
           text: 'I\'m getting an update! Yay!',
         },
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1364,11 +1364,11 @@ function throwIfAlreadyHasSession(userId) {
   const sessionInfo = quizManager.getActiveSessionInformation();
   if (sessionInfo.some(s => s.ownerId === userId)) {
     const message = {
-      embed: {
+      embeds: [{
         title: 'Quiz In Progress',
         description: `You already have a quiz session running somewhere. Please stop it before starting a new one here.`,
         color: constants.EMBED_NEUTRAL_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1390,11 +1390,11 @@ function throwIfTooManyDecks(deckCount) {
 function verifyValueIsInRange(settingName, settingAbbreviation, min, max, value) {
   if (value < min || value > max || Number.isNaN(value)) {
     const publicMessage = {
-      embed: {
+      embeds: [{
         title: 'Setting validation error',
         description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**. Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1407,11 +1407,11 @@ function verifyValueIsInRange(settingName, settingAbbreviation, min, max, value)
 function validateGameModeCombination(gameModes) {
   if (gameModes.conquest && gameModes.mastery) {
     const publicMessage = {
-      embed: {
+      embeds: [{
         title: 'Setting validation error',
         description: 'You cannot enable both Conquest and Inferno mode at the same time. Please choose one or the other.',
         color: constants.EMBED_WRONG_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1545,11 +1545,11 @@ function consumeScoreLimitToken(commandTokens) {
 
   if (Number.isNaN(scoreLimit)) {
     const publicMessage = {
-      embed: {
+      embeds: [{
         title: 'Setting validation error',
         description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s). Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
-      },
+      }],
     };
 
     throw new FulfillmentError({
@@ -1608,7 +1608,7 @@ async function doSearch(msg, monochrome, searchTerm = '') {
     : { icon_url: constants.FOOTER_ICON_URI, text: `You can provide a search term. For example: ${msg.prefix}quiz search kanken` };
 
   const embeds = chunks.map((c, i) => ({
-    embed: {
+    embeds: [{
       title: `Custom Deck Search Results (page ${i + 1} of ${chunks.length})`,
       fields: c.map((r) => ({
         name: `${r.shortName} (${r.score} votes)`,
@@ -1616,7 +1616,7 @@ async function doSearch(msg, monochrome, searchTerm = '') {
       })),
       color: constants.EMBED_NEUTRAL_COLOR,
       footer,
-    },
+    }],
   }));
 
   const interactiveMessageId = `quiz_search_"${searchTerm}"`;
@@ -1637,11 +1637,11 @@ async function warnIfNoSaveSlotsAvailable(msg) {
   const hasAvailableSlots = await saveManager.userHasAvailableSaveSlots(msg.author.id);
   if (!hasAvailableSlots) {
     const warningMessage = {
-      embed: {
+      embeds: [{
         title: 'No Save Slots Available',
         description: `You have no available save slots and will not be able to save this session. To free up a save slot, you can delete an existing save by loading it via the \`${msg.prefix}quiz load\` command and then stopping it with \`${msg.prefix}quiz stop\`.`,
         color: constants.EMBED_WARNING_COLOR,
-      },
+      }],
     };
 
     await msg.channel.createMessage(warningMessage);
@@ -1729,7 +1729,7 @@ module.exports = {
     Permissions.attachFiles,
     Permissions.embedLinks,
     Permissions.sendMessages,
-    Permissions.readMessages,
+    Permissions.viewChannel,
   ],
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',

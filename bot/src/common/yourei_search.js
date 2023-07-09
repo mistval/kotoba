@@ -113,7 +113,7 @@ function createNavigationChapterForSentences(scrapeResult, showFullSentences) {
     for (let i = 0; i < EXAMPLES_PER_PAGE; i += 1) {
       if (fields.length !== 0) embed.fields.push(fields.pop());
     }
-    pages.push(trimEmbed({ embed }));
+    pages.push(trimEmbed({ embeds: [embed] }));
     pageNumber += 1;
   }
 
@@ -138,14 +138,14 @@ function createNavigationChapterForUsage(scrapeResult) {
     inline: false,
   };
 
-  const embed = {
+  const embeds = [{
     title: `${keyword} - 用例.jp Search Results`,
     url: self,
     color: constants.EMBED_NEUTRAL_COLOR,
     fields: [frequencyField, usageExampleField],
-  };
+  }];
 
-  return [trimEmbed({ embed })];
+  return [trimEmbed({ embeds })];
 }
 
 async function createNavigationForExamples(keyword, msg) {

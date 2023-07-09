@@ -26,7 +26,7 @@ module.exports.createContent = async function(prefix) {
   const decks = await getDecks();
 
   return {
-    embed: {
+    embeds: [{
       title: 'Quiz',
       description: `Say **${prefix}quiz deckname** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. For advanced help, say **${prefix}quiz help** or [visit me on the web](https://kotobaweb.com/bot/quiz).`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -35,7 +35,7 @@ module.exports.createContent = async function(prefix) {
         icon_url: constants.FOOTER_ICON_URI,
         text: `You can mix any decks by using the + symbol. For example: ${prefix}quiz N5+N4+N3`,
       },
-    },
+    }],
   };
 };
 

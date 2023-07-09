@@ -39,11 +39,11 @@ module.exports = {
     } catch (exception) {
       throw new FulfillmentError({
         publicMessage: {
-          embed: {
+          embeds: [{
             title: 'Amy is dead!',
             description: 'It looks like Jibiki servers are not responding!\nTry again later.',
             color: constants.EMBED_WRONG_COLOR,
-          },
+          }],
         },
         logDescription: 'Jibiki timeout',
       });
@@ -52,18 +52,18 @@ module.exports = {
     if (response.status === 200) {
       if (response.data.length === 0) {
         return msg.channel.createMessage({
-          embed: {
+          embeds: [{
             title: `No results for ${suffix}`,
             description: 'You might want to try searching for a different term',
             color: constants.EMBED_NEUTRAL_COLOR,
-          },
+          }],
         });
       }
 
       monochrome.updateUserFromREST(msg.author.id).catch(() => {});
 
       const wordPages = array.chunk(response.data, maxFieldsPerPage, (chunk, index) => trimEmbed({
-        embed: {
+        embeds: [{
           title: `Showing results for ${suffix}`,
           description: `Page ${index + 1} out of ${Math.ceil(response.data.length / maxFieldsPerPage)} (${response.data.length} results)`,
           url: `https://jibiki.app?query=${encodeURIComponent(suffix)}`,
@@ -117,7 +117,7 @@ module.exports = {
               value: word,
             };
           }),
-        },
+        }],
       }));
 
       const seenTitles = new Set();
@@ -138,7 +138,7 @@ module.exports = {
           seenTitles.add(title);
 
           return trimEmbed({
-            embed: {
+            embeds: [{
               title: `Showing kanji for word ${entry.word.forms[0].kanji.literal !== null
                 ? entry.word.forms[0].kanji.literal
                 : entry.word.forms[0].reading.literal}`,
@@ -191,14 +191,14 @@ module.exports = {
                   value,
                 };
               }),
-            },
+            }],
           });
         });
 
       const sentencePages = response.data
         .filter((entry) => entry.sentences && entry.sentences.length > 0)
         .map((entry) => trimEmbed({
-          embed: {
+          embeds: [{
             title: `Showing sentences for word ${entry.word.forms[0].kanji.literal !== null
               ? entry.word.forms[0].kanji.literal
               : entry.word.forms[0].reading.literal}`,
@@ -239,7 +239,7 @@ module.exports = {
                 value,
               };
             }),
-          },
+          }],
         }));
 
       const chapters = [
@@ -253,11 +253,11 @@ module.exports = {
     } else if (response.status === 500) {
       throw new FulfillmentError({
         publicMessage: {
-          embed: {
+          embeds: [{
             title: 'Amy says no.',
             description: 'Jibiki; Internal server error.\nTry again later!',
             color: constants.EMBED_WRONG_COLOR,
-          },
+          }],
         },
         logDescription: 'Jibiki internal server error',
       });
@@ -265,11 +265,11 @@ module.exports = {
 
     throw new FulfillmentError({
       publicMessage: {
-        embed: {
+        embeds: [{
           title: `Jibiki returned an unexpected code (${response.status})`,
           description: 'You might want to try again later.',
           color: constants.EMBED_WRONG_COLOR,
-        },
+        }],
       },
       logDescription: `Jibiki ${response.status} status`,
     });

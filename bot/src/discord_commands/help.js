@@ -111,7 +111,7 @@ function createPagesForCommands(commands, commandMessage, paginate) {
       .slice(startIndex, endIndex)
       .map((command) => createFieldForCommand(command, commandMessage.prefix));
 
-    const embed = {
+    const embeds = [{
       description: `Say **${prefixedHelpCommand} CommandNameHere** to see more information about a specific command.`,
       author: {
         name: `${EMBED_TITLE} (page ${pageNumber} of ${numPages})`,
@@ -121,12 +121,12 @@ function createPagesForCommands(commands, commandMessage, paginate) {
       url: WEB_COMMANDS_URI,
       fields,
       color: EMBED_COLOR,
-    };
+    }];
 
-    pages.push({ embed });
+    pages.push({ embeds });
   }
 
-  pages[0].embed.fields.push(linksField);
+  pages[0].embeds[0].fields.push(linksField);
 
   return pages;
 }
@@ -208,12 +208,12 @@ function showAdvancedHelp(monochrome, msg, targetAlias) {
   const prefixedDescription = unprefixedDescription.replace(PREFIX_REPLACE_REGEX, msg.prefix);
 
   const botContent = {
-    embed: {
+    embeds: [{
       title: `${msg.prefix}${command.aliases[0]}`,
       description: prefixedDescription,
       color: EMBED_COLOR,
       fields,
-    },
+    }],
   };
 
   return msg.channel.createMessage(botContent, null, msg);

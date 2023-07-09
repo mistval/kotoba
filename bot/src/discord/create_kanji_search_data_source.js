@@ -37,11 +37,11 @@ class KanjiNavigationDataSource {
 
     if (kanjis.length === 0) {
       return [{
-        embed: {
+        embeds: [{
           title: 'Jisho Kanji Search',
           description: `I didn't find any kanji results for ${this.word}.`,
           color: constants.EMBED_NEUTRAL_COLOR,
-        },
+        }],
       }, undefined];
     }
 
@@ -53,17 +53,16 @@ class KanjiNavigationDataSource {
     const lastPageNumber = kanjis.length;
 
     const page = await createKanjiSearchPage(kanjis[pageIndex], this.commandPrefix);
-    const pageCopy = { ...page, embed: { ...page.embed } };
 
     if (lastPageNumber > 1) {
-      pageCopy.embed.title += ` (page ${pageNumber} of ${lastPageNumber})`;
+      page.embeds[0].title += ` (page ${pageNumber} of ${lastPageNumber})`;
     }
 
     if (pageIndex === kanjis.length - 1) {
-      return [pageCopy, undefined];
+      return [page, undefined];
     }
 
-    return pageCopy;
+    return page;
   }
 }
 

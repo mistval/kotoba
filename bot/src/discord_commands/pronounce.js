@@ -12,16 +12,16 @@ const smallKatakana = ['ァ', 'ィ', 'ゥ', 'ェ', 'ォ', 'ャ', 'ュ', 'ョ', '
 
 function createEmbedContent() {
   return {
-    embed: {
+    embeds: [{
       color: constants.EMBED_NEUTRAL_COLOR,
-    },
+    }],
   };
 }
 
 function createNotFoundResult(msg, pronounceInfo) {
   const content = createEmbedContent();
   const { query } = pronounceInfo;
-  content.embed.description = `I didn't find any results for **${query}**.`;
+  content.embeds[0].description = `I didn't find any results for **${query}**.`;
 
   return msg.channel.createMessage(content, null, msg);
 }

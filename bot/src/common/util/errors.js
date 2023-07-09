@@ -4,11 +4,11 @@ const constants = require('../constants.js');
 
 function throwPublicError(sourceCommandName, publicMessage, logDescription, embedColor, err) {
   const errorContent = {
-    embed: {
+    embeds: [{
       title: sourceCommandName,
       description: publicMessage,
       color: embedColor,
-    },
+    }],
   };
 
   throw new FulfillmentError({

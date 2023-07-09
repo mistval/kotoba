@@ -10,11 +10,11 @@ const createExampleSearchPages = require('./create_example_search_pages.js');
 const NUMBER_OF_RETRIES = 50;
 
 const jishoNotRespondingResponse = {
-  embed: {
+  embeds: [{
     title: 'Jisho',
     description: 'Sorry, Jisho is not responding, please try again later.',
     color: constants.EMBED_NEUTRAL_COLOR,
-  },
+  }],
 };
 
 async function showRandomWord(
@@ -69,10 +69,12 @@ async function showRandomWord(
 
   const firstPage = discordContents[0];
   if (showStrokeOrder || showExamples) {
-    if (firstPage.embed.fields.length > 1) {
-      firstPage.embed.title += ' (click here for more results)';
+    if (firstPage.embeds[0].fields.length > 1) {
+      firstPage.embeds[0].title += ' (click here for more results)';
     }
-    firstPage.embed.fields = [firstPage.embed.fields[0]]; // discards the rest of the results
+
+    // discard the rest of the results
+    firstPage.embeds[0].fields = [firstPage.embeds[0].fields[0]];
     await channel.createMessage(firstPage);
   }
   if (showStrokeOrder) {
@@ -90,8 +92,8 @@ async function showRandomWord(
   if (showExamples) {
     const examples = await createExampleSearchPages(word);
     if (examples.length > 1) {
-      [examples[0].embed.title] = examples[0].embed.title.split(' ('); // removes the '(Page 1 of X)' from the title
-      examples[0].embed.title += ' (click here for more examples)';
+      [examples[0].embeds[0].title] = examples[0].embeds[0].title.split(' ('); // removes the '(Page 1 of X)' from the title
+      examples[0].embeds[0].title += ' (click here for more examples)';
     }
     const example = examples[0]; // discards the other pages
     return channel.createMessage(example);
