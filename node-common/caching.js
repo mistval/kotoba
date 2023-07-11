@@ -29,14 +29,28 @@ async function getCachedInProcess(key, ttlSeconds, getter) {
   });
 }
 
+function queryDatabaseCache(key) {
+  return databaseCache.findByIdAndUpdate(
+    key,
+    { $inc: { hits: 1 } },
+    {
+      projection: {
+        _id: 0,
+        data: 1,
+      }
+    }
+  ).lean().exec();
+}
+
 async function getCachedInDatabase(key, ttlSeconds, getter) {
-  const cached1 = await databaseCache.findById(key, 'data -_id').lean().exec();
+  const cached1 = await queryDatabaseCache(key);
+
   if (cached1) {
     return cached1.data;
   }
 
   return locko.doWithLock(`database_cache:${key}`, async () => {
-    const cached2 = await databaseCache.findById(key).lean().exec();
+    const cached2 = await queryDatabaseCache(key);
     if (cached2) {
       return cached2.data;
     }
@@ -46,6 +60,7 @@ async function getCachedInDatabase(key, ttlSeconds, getter) {
     await databaseCache.create({
       _id: key,
       data: value,
+      hits: 0,
       expires: new Date(Date.now() + ttlSeconds * 1000),
     });
 

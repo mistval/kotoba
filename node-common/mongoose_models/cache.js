@@ -4,6 +4,7 @@ const cacheSchema = new mongoose.Schema({
   _id: { type: String, required: true },
   data: { type: mongoose.Schema.Types.Mixed, required: true },
   expires: { type: Date, required: true, /* expires: 0 */ },
+  hits: { type: Number, required: true, default: 0 },
 }, { versionKey: false });
 
 function create(connection) {
