@@ -149,19 +149,19 @@ class PronunciationDataSource {
     }
 
     const content = createEmbedContent();
-    const { embed } = content;
+    const { embeds } = content;
     const word = this.getWordForTitle(entry);
     const uriEncodedWord = encodeURIComponent(word);
-    embed.title = `${word} ${pagesString}`;
+    embeds[0].title = `${word} ${pagesString}`;
 
     if (entry.hasPitchData) {
-      embed.url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
+      embeds[0].url = `http://www.gavo.t.u-tokyo.ac.jp/ojad/search/index/word:${uriEncodedWord}`;
     }
 
-    embed.fields = [];
-    addPitchField(embed.fields, entry);
-    addMutedSoundsField(embed.fields, entry);
-    addNasalSoundsField(embed.fields, entry);
+    embeds[0].fields = [];
+    addPitchField(embeds[0].fields, entry);
+    addMutedSoundsField(embeds[0].fields, entry);
+    addNasalSoundsField(embeds[0].fields, entry);
 
     let forvoData;
 
@@ -179,7 +179,7 @@ class PronunciationDataSource {
       }
     }
 
-    addAudioClipsField(embed.fields, forvoData, this.pronounceInfo);
+    addAudioClipsField(embeds[0].fields, forvoData, this.pronounceInfo);
 
     return content;
   }
