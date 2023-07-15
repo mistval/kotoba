@@ -49,7 +49,7 @@ services:
     depends_on:
       - mongo_readwrite
   mongo_readwrite:
-    image: mongo:5.0.16
+    image: mongo:6.0.8
     command: '--wiredTigerCacheSizeGB 4.00'
     restart: unless-stopped
     volumes:
