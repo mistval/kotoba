@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
-    "@google-cloud/logging-bunyan": "4.2.2",
+    "@google-cloud/logging-bunyan": "^4.2.2",
     "axios": "0.21.2",
     "bunyan": "1.8.12",
     "canvas": "^2.10.2",
