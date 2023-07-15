@@ -619,10 +619,9 @@ class DiscordMessageSender {
       }],
     };
 
-    let uploadInformation;
     if (question.bodyAsPngBuffer) {
       content.embeds[0].image = { url: 'attachment://upload.png' };
-      uploadInformation = { file: question.bodyAsPngBuffer, name: 'upload.png' };
+      content.attachments = [{ file: question.bodyAsPngBuffer, filename: 'upload.png' }];
     }
     if (question.hintString) {
       content.embeds[0].footer = { text: question.hintString };
@@ -650,11 +649,11 @@ class DiscordMessageSender {
     content.embeds[0].description = bodyLines.join('\n');
     content = trimEmbed(content);
     if (!questionId) {
-      const msg = await this.commanderMessage.channel.createMessage(content, uploadInformation);
+      const msg = await this.commanderMessage.channel.createMessage(content);
       return msg.id;
     }
 
-    return this.bot.editMessage(this.commanderMessage.channel.id, questionId, content, uploadInformation);
+    return this.bot.editMessage(this.commanderMessage.channel.id, questionId, content);
   }
 
   async notifySaveSuccessful() {

@@ -48,9 +48,10 @@ async function sendStats(msg, requestedUserId) {
         url: 'attachment://chart.png',
       },
     }],
-  }, {
-    name: 'chart.png',
-    file: Buffer.from(deckPieChart, 'base64'),
+    attachments: [{
+      filename: 'chart.png',
+      file: Buffer.from(deckPieChart, 'base64'),
+    }],
   });
 
   await msg.channel.createMessage({
@@ -62,9 +63,10 @@ async function sendStats(msg, requestedUserId) {
         url: 'attachment://chart.png',
       },
     }],
-  }, {
-    name: 'chart.png',
-    file: Buffer.from(pointsPerDayChart, 'base64'),
+    attachments: [{
+      filename: 'chart.png',
+      file: Buffer.from(pointsPerDayChart, 'base64'),
+    }],
   });
 
   return msg.channel.createMessage({
@@ -75,9 +77,10 @@ async function sendStats(msg, requestedUserId) {
         url: 'attachment://chart.png',
       },
     }],
-  }, {
-    name: 'chart.png',
-    file: Buffer.from(percentCorrectChart, 'base64'),
+    attachments: [{
+      filename: 'chart.png',
+      file: Buffer.from(percentCorrectChart, 'base64'),
+    }],
   });
 }
 
