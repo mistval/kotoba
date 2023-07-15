@@ -81,8 +81,8 @@ module.exports = {
           image: { url: 'attachment://upload.png' },
           color: constants.EMBED_NEUTRAL_COLOR,
         }],
+        attachments: [{ file: renderResult, filename: 'upload.png' }],
       },
-      { file: renderResult, name: 'upload.png' },
     );
   },
 };
