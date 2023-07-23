@@ -383,7 +383,7 @@ async function setSchedule(suffix, msg) {
     updateSchedule.nextSendTime = start;
     await updateSchedule.save(); // put it into the database
     if (rounded) {
-      return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
+      return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start in <t:${start.getTime() / 1000}:R>.`);
     }
     return msg.channel.createMessage(`Your schedule has been updated successfully. Next word in ${getNextTime(start)}.`);
   }
@@ -399,7 +399,7 @@ async function setSchedule(suffix, msg) {
 
   await schedule.save(); // put it into the database
   if (rounded) {
-    return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start at ${start.toLocaleString()} UTC.`);
+    return msg.channel.createMessage(`Your schedule has been rounded up to the nearest ${formatFrequency(FREQUENCY_CHECK)}. It will start in <t:${start.getTime() / 1000}:R>.`);
   }
   return msg.channel.createMessage(`Your schedule has been created successfully. First word in ${getNextTime(start)}.`);
 }
