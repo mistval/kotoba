@@ -218,7 +218,7 @@ routes.delete(
   checkCanDeleteDeck,
   async (req, res, next) => {
     try {
-      await req.deckMeta.delete();
+      await req.deckMeta.deleteOne();
       await CustomDeckVoteModel.deleteMany({ deck: req.deckMeta._id });
       await fs.promises.unlink(filePathForShortName(req.deckMeta.shortName));
       res.send();
