@@ -70,7 +70,7 @@ function createBot() {
   };
 
   const options = {
-    prefixes: ['k!'],
+    prefixes: ['k!', 'k！'],
     commandsDirectoryPath,
     messageProcessorsDirectoryPath,
     logger: createLogger(),
