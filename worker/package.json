@@ -16,7 +16,7 @@
     "@polka/send-type": "0.5.2",
     "canvas": "^2.10.2",
     "kotoba-node-common": "file:../node-common",
-    "mongoose": "^6.11.3",
+    "mongoose": "^6.12.0",
     "node-fetch": "^2.6.7",
     "polka": "0.5.2",
     "render-furigana": "^2.0.4",
