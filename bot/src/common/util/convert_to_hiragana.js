@@ -432,7 +432,7 @@ function convertStringToHiragana(str) {
       // Convert half-width numerals into full-width
       converted.push(String.fromCharCode(char.charCodeAt(0) + 0xFEE0));
       nextIndex += 1;
-    } else if (char === 'ー') {
+    } else if (char === 'ー' || char === '-') {
       // Convert ー to a hiragana representation based on the previous character
       if (lengthenerForChar[previousChar]) {
         converted.push(lengthenerForChar[previousChar]);
