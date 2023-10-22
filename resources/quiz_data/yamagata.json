@@ -34,7 +34,7 @@
       "answer": [
         "あこやちょう"
       ],
-      "meaning": "Akoyachou"
+      "meaning": "Akoyachō"
     },
     {
       "question": "旭が丘",
@@ -55,14 +55,14 @@
       "answer": [
         "あずまちょう"
       ],
-      "meaning": "Azumachou"
+      "meaning": "Azumachō"
     },
     {
       "question": "荒楯町 (ちょう)",
       "answer": [
         "あらたてちょう"
       ],
-      "meaning": "Aratatechou"
+      "meaning": "Aratatechō"
     },
     {
       "question": "飯田西",
@@ -111,7 +111,7 @@
       "answer": [
         "かすみちょう"
       ],
-      "meaning": "Kasumichou"
+      "meaning": "Kasumichō"
     },
     {
       "question": "上桜田",
@@ -132,7 +132,7 @@
       "answer": [
         "きのみちょう"
       ],
-      "meaning": "Kinomichou"
+      "meaning": "Kinomichō"
     },
     {
       "question": "小姓町 (まち)",
@@ -293,7 +293,7 @@
       "answer": [
         "まつみちょう"
       ],
-      "meaning": "Matsumichou"
+      "meaning": "Matsumichō"
     },
     {
       "question": "馬見ケ崎",
@@ -370,7 +370,7 @@
       "answer": [
         "ごびょう"
       ],
-      "meaning": "Gobyou"
+      "meaning": "Gobyō"
     },
     {
       "question": "塩井町塩野",
@@ -405,28 +405,28 @@
       "answer": [
         "はなざわちょう"
       ],
-      "meaning": "Hanazawachou"
+      "meaning": "Hanazawachō"
     },
     {
       "question": "万世町片子",
       "answer": [
         "ばんせいちょうかたこ"
       ],
-      "meaning": "Banseichoukatako"
+      "meaning": "Banseichōkatako"
     },
     {
       "question": "万世町桑山",
       "answer": [
         "ばんせいちょうくわやま"
       ],
-      "meaning": "Banseichoukuwayama"
+      "meaning": "Banseichōkuwayama"
     },
     {
       "question": "万世町堂森",
       "answer": [
         "ばんせいちょうどうもり"
       ],
-      "meaning": "Banseichoudoumori"
+      "meaning": "Banseichōdoumori"
     },
     {
       "question": "東大通",
@@ -545,7 +545,7 @@
       "answer": [
         "しんじょうし"
       ],
-      "meaning": "Shinjou (city)"
+      "meaning": "Shinjō (city)"
     },
     {
       "question": "小田島町 (まち)",
@@ -720,7 +720,7 @@
       "answer": [
         "かまたほんちょう"
       ],
-      "meaning": "Kamatahonchou"
+      "meaning": "Kamatahonchō"
     },
     {
       "question": "北久野本",
@@ -748,7 +748,7 @@
       "answer": [
         "たづるちょう"
       ],
-      "meaning": "Tadzuruchou"
+      "meaning": "Tazuruchō"
     },
     {
       "question": "長岡北",
@@ -825,7 +825,7 @@
       "answer": [
         "じんまちちゅうおう"
       ],
-      "meaning": "Jinmachichuuou"
+      "meaning": "Jinmachichūō"
     },
     {
       "question": "神町西",
@@ -930,7 +930,7 @@
       "answer": [
         "にしむらやまぐんかほくちょう"
       ],
-      "meaning": "Nishimurayamagunkahokuchou"
+      "meaning": "Nishimurayamagunkahokuchō"
     },
     {
       "question": "谷地中央",
@@ -973,6 +973,111 @@
         "あまるめ"
       ],
       "meaning": "Amarume"
+    },
+    {
+      "question": "東置賜郡川西町 (まち)",
+      "answer": [
+        "ひがしおきたまぐんかわにしまち"
+      ],
+      "meaning": "Higashiokitamagunkawanishimachi"
+    },
+    {
+      "question": "三間通",
+      "answer": [
+        "みつまどおり"
+      ],
+      "meaning": "Mitsumadoori"
+    },
+    {
+      "question": "中島通り",
+      "answer": [
+        "なかじまどおり"
+      ],
+      "meaning": "Nakajimadoori"
+    },
+    {
+      "question": "中央南",
+      "answer": [
+        "ちゅうおうみなみ"
+      ],
+      "meaning": "Chūōminami"
+    },
+    {
+      "question": "若木通り",
+      "answer": [
+        "おさなぎどおり"
+      ],
+      "meaning": "Osanagidoori"
+    },
+    {
+      "question": "楯岡俵町 (まち)",
+      "answer": [
+        "たておかたわらまち"
+      ],
+      "meaning": "Tateokatawaramachi"
+    },
+    {
+      "question": "沖の町 (まち)",
+      "answer": [
+        "おきのまち"
+      ],
+      "meaning": "Okinomachi"
+    },
+    {
+      "question": "林泉寺",
+      "answer": [
+        "りんせんじ"
+      ],
+      "meaning": "Rinsenji"
+    },
+    {
+      "question": "万世町金谷",
+      "answer": [
+        "ばんせいちょうかなや"
+      ],
+      "meaning": "Banseichōkanaya"
+    },
+    {
+      "question": "万世町牛森",
+      "answer": [
+        "ばんせいちょううしもり"
+      ],
+      "meaning": "Banseichōushimori"
+    },
+    {
+      "question": "信夫町 (まち)",
+      "answer": [
+        "しのぶまち"
+      ],
+      "meaning": "Shinobumachi"
+    },
+    {
+      "question": "南館西",
+      "answer": [
+        "みなみだてにし"
+      ],
+      "meaning": "Minamidatenishi"
+    },
+    {
+      "question": "南一番町 (ちょう)",
+      "answer": [
+        "みなみいちばんちょう"
+      ],
+      "meaning": "Minamiichibanchō"
+    },
+    {
+      "question": "鳥居ケ丘",
+      "answer": [
+        "とりいがおか"
+      ],
+      "meaning": "Toriigaoka"
+    },
+    {
+      "question": "陣場",
+      "answer": [
+        "じんば"
+      ],
+      "meaning": "Jinba"
     }
   ]
 }
