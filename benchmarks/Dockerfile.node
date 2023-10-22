@@ -1,4 +1,4 @@
-FROM node:18.16.0
+FROM node:18.18.2
 
 WORKDIR /var/app
 RUN git clone https://github.com/JoshuaWise/better-sqlite3.git
