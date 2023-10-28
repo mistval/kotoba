@@ -3,12 +3,24 @@ const checkAuth = require('./../auth/check_auth.js');
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(mongoConnection);
+const UserGlobalTotalScoresModel = require('kotoba-node-common').models.scores.createUserGlobalTotalScoreModel(mongoConnection);
 
 routes.get(
   '/me',
   checkAuth,
-  (req, res) => {
-    return res.json(req.user.toJSON({ virtuals: true }));
+  async (req, res, next) => {
+    try {
+      const response = {
+        ...req.user.toJSON({ virtuals: true }),
+        privileges: await req.user.getPrivileges({ UserGlobalTotalScoresModel }),
+      };
+
+      delete response.antiPrivileges;
+
+      res.json(response);
+    } catch (err) {
+      next(err);
+    }
   },
 );
 

@@ -21,10 +21,11 @@ const {
 } = require('kotoba-common').deckPermissions;
 
 const MAX_DECKS_PER_USER = 100;
+const COERCED_CUSTOM_DECK_DIR = CUSTOM_DECK_DIR.replace('\\api\\node_modules', '');
 
 function filePathForShortName(shortName) {
   assert(deckValidation.SHORT_NAME_ALLOWED_CHARACTERS_REGEX.test(shortName));
-  return path.join(CUSTOM_DECK_DIR, `${shortName}.json`);
+  return path.join(COERCED_CUSTOM_DECK_DIR, `${shortName}.json`);
 }
 
 async function checkShortNameUnique(req, res, next) {
@@ -282,7 +283,7 @@ routes.patch(
       }
 
       req.deck = deckValidation.sanitizeDeckPreValidation(req.deck);
-      const validationResult = deckValidation.validateDeck(req.deck);
+      const validationResult = deckValidation.validateDeck(req.deck, req.user.privileges);
 
       if (!validationResult.success) {
         return res.status(400).json({
@@ -327,7 +328,7 @@ routes.post(
       };
 
       deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
-      const validationResult = deckValidation.validateDeck(deckFull);
+      const validationResult = deckValidation.validateDeck(deckFull, req.user.privileges);
 
       if (!validationResult.success) {
         return res.status(400).json({
