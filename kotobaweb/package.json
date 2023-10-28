@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mistval/react-rangeslider": "^2.2.0",
     "axios": "^0.21.2",
     "bootstrap-material-design-icons": "^2.2.0",
     "csv-parse": "^4.4.0",
@@ -25,7 +26,6 @@
     "react-ga": "^2.5.3",
     "react-loader-spinner": "^4.0.0",
     "react-markdown": "^7.1.0",
-    "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "socket.io-client": "^4.4.1",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",

@@ -30,11 +30,11 @@ class ListPicker extends PureComponent {
     return (
       <div>
         <div className="list-group" style={listPickerBoxStyles}>
-          {items.map(item => (
+          {items.map((item) => (
             <a
               href="#"
               className={`list-group-item list-group-item-action${selectedItems.indexOf(item) !== -1 ? ' active' : ''}`}
-              onClick={ev => this.toggle(ev, item)}
+              onClick={(ev) => this.toggle(ev, item)}
               key={item.key}
             >
               {item.value}
@@ -43,10 +43,9 @@ class ListPicker extends PureComponent {
         </div>
         <div className="pt-1">
           { selectedItems[0]
-            && <hr />
-          }
-          {selectedItems.map(item => (
-            <button type="button" className="btn btn-outline-primary mr-2" onClick={ev => this.toggle(ev, item)} key={item.key}>
+            && <hr />}
+          {selectedItems.map((item) => (
+            <button type="button" className="btn btn-outline-primary mr-2" onClick={(ev) => this.toggle(ev, item)} key={item.key}>
               {item.value}
               {' '}
               <span aria-hidden="true">&times;</span>

@@ -67,9 +67,8 @@ class Create extends Component {
                 </div>
                 <div className="card-body" style={cardBodyStyles}>
                   { gameInfos.length < 1
-                    && <p>There are currently no public games available to join.</p>
-                  }
-                  { gameInfos.map(gameInfo => (
+                    && <p>There are currently no public games available to join.</p>}
+                  { gameInfos.map((gameInfo) => (
                     <div className="mb-2" key={gameInfo.ID}>
                       <NavLink exact to={`/shiritori/game?gameID=${gameInfo.ID}`}>{`${gameInfo.ownerUsername}'s game `}</NavLink>
                     </div>

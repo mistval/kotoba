@@ -45,8 +45,8 @@ function ScorerAvatarSmall({ discordUser }) {
 
 function ScorersCell({ scorers, participantForId }) {
   const avatars = scorers
-    .map(scorer => participantForId[scorer].discordUser)
-    .map(dUser => <ScorerAvatarSmall discordUser={dUser} key={dUser.id} />);
+    .map((scorer) => participantForId[scorer].discordUser)
+    .map((dUser) => <ScorerAvatarSmall discordUser={dUser} key={dUser.id} />);
 
   return (
     <td>
@@ -74,7 +74,7 @@ function CardRow({
 
   return (
     <tr onClick={onCheck} className={rowClass}>
-      <td><input type="checkbox" checked={card.checked} disabled={!card.canCopyToCustomDeck} /></td>
+      <td><input type="checkbox" checked={card.checked} disabled={!card.canCopyToCustomDeck} aria-label="selection checkbox" /></td>
       <td>{card.question}</td>
       <td>{card.answers.join(', ')}</td>
       <td>{card.comment}</td>
@@ -150,11 +150,11 @@ class ReportView extends Component {
   }
 
   allSelectableSelected() {
-    return this.state.questionsToShow.every(c => c.checked || !c.canCopyToCustomDeck);
+    return this.state.questionsToShow.every((c) => c.checked || !c.canCopyToCustomDeck);
   }
 
   anySelected() {
-    return this.state.questionsToShow.some(c => c.checked);
+    return this.state.questionsToShow.some((c) => c.checked);
   }
 
   async loadReport() {
@@ -206,14 +206,14 @@ class ReportView extends Component {
 
   onShowModeChanged = (ev) => {
     if (ev.target.value === ShowMode.all) {
-      this.setState(prev => ({
+      this.setState((prev) => ({
         ...prev,
         questionsToShow: prev.report.questions,
       }));
     } else {
-      this.setState(prev => ({
+      this.setState((prev) => ({
         ...prev,
-        questionsToShow: prev.report.questions.filter(q => !didAnswerCard(q, this.getParticipantForId(), this.props.user?._id)),
+        questionsToShow: prev.report.questions.filter((q) => !didAnswerCard(q, this.getParticipantForId(), this.props.user?._id)),
       }));
     }
   }
@@ -241,7 +241,7 @@ class ReportView extends Component {
     this.setState((state) => {
       const newState = { ...state };
 
-      newState.questionsToShow = state.questionsToShow.map(question => ({
+      newState.questionsToShow = state.questionsToShow.map((question) => ({
         ...question,
         checked: checked && question.canCopyToCustomDeck,
       }));
@@ -273,7 +273,7 @@ class ReportView extends Component {
         const deck = this.state.customDecks[this.state.selectedDeckIndex];
         const request = {
           appendCards: true,
-          cards: getUniqueCards(this.state.questionsToShow.filter(q => q.checked).map(q => ({
+          cards: getUniqueCards(this.state.questionsToShow.filter((q) => q.checked).map((q) => ({
             question: q.question,
             answers: q.answers,
             comment: q.comment,
@@ -376,7 +376,7 @@ class ReportView extends Component {
                       <th width="2%">
                         <input
                           type="checkbox"
-                          disabled={!this.state.questionsToShow.some(q => q.canCopyToCustomDeck)}
+                          disabled={!this.state.questionsToShow.some((q) => q.canCopyToCustomDeck)}
                           checked={this.allSelectableSelected()}
                           onChange={this.onCheckAllSelectable}
                         />

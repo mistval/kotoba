@@ -13,14 +13,14 @@ function modalIdForExample(example) {
 
 function createModals() {
   return commands.map(
-    command => command.examples.filter(example => example.imageName).map(example => (
+    (command) => command.examples.filter((example) => example.imageName).map((example) => (
       <div className="modal fade" id={modalIdForExample(example)} key={example.key}>
         <div className="modal-dialog modal-lg">
           <div className="modal-content">
             <div className="center-block">
               <div className="modal-header">
                 <h5 className="modal-title">{example.exampleText}</h5>
-                <button type="button" className="close" data-dismiss="modal" />
+                <button type="button" className="close" data-dismiss="modal" aria-label="close" />
               </div>
               <div className="modal-body">
                 <img src={exampleImages(`./${example.imageName}`).default} alt="command example" />
@@ -34,7 +34,7 @@ function createModals() {
 }
 
 function createExamplesJsx(examples) {
-  return examples.filter(example => example.imageName).map(example => (
+  return examples.filter((example) => example.imageName).map((example) => (
     <a href="#" data-toggle="modal" data-target={`#${modalIdForExample(example)}`} className="card-link" key={example.key}>{example.exampleText}</a>
   ));
 }
@@ -42,7 +42,7 @@ function createExamplesJsx(examples) {
 function Commands() {
   return (
     <div className="row">
-      { commands.map(command => (
+      { commands.map((command) => (
         <div className="col-xl-3 col-lg-4 col-md-6 col-sm-12 pr-3 pb-4" key={command.key}>
           <div className="card">
             <div className="card-body">
@@ -53,8 +53,7 @@ function Commands() {
                       short:&nbsp;
                       {command.shortCommand}
                     </h6>
-                  )
-                }
+                  )}
               <p className="card-text">{command.description}</p>
               {createExamplesJsx(command.examples)}
             </div>

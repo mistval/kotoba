@@ -50,7 +50,7 @@ function createGameReportsBody(gameReports, gameReportsErrorMessage, user) {
 
   return (
     <div style={styles.listDiv}>
-      { gameReports.map(report => (
+      { gameReports.map((report) => (
         <div className="py-1 d-flex justify-content-between align-items-center mr-2" key={report._id}>
           <div className="d-flex align-items-center">
             {getServerIcon(report, user)}
@@ -90,7 +90,7 @@ function createCustomDecksBody(quizDecks, quizDecksErrorMessage) {
   return (
     <>
       <div style={styles.listDiv}>
-        { quizDecksSorted.map(deck => (
+        { quizDecksSorted.map((deck) => (
           <div className="py-1" key={deck._id}>
             <Link to={`/dashboard/decks/${deck._id}`} style={styles.listAnchor}>
               {deck.name}

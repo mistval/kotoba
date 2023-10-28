@@ -19,7 +19,6 @@ import ShiritoriGameRoom from '../shiritori/game';
 import ShiritoriGameJoin from '../shiritori/join';
 import { Dashboard } from '../dashboard';
 
-
 Analytics.init();
 
 function renderNotFound() {

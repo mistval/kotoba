@@ -7,7 +7,7 @@ import HelpButton from './help_button';
 function SpeedsList(props) {
   return (
     <div className="list-group">
-      {Object.keys(quizTimeModifierPresets).map(presetName => (
+      {Object.keys(quizTimeModifierPresets).map((presetName) => (
         <a
           href="#"
           className={`list-group-item list-group-item-action${presetName === props.selectedPresetName ? ' active' : ''}`}
@@ -28,21 +28,10 @@ function SpeedsList(props) {
   );
 }
 
-function isInRange(value, [min, max]) {
-  return value >= min && value <= max;
-}
-
 class TimingEditor extends Component {
   constructor(props) {
     super(props);
     this.state = this.getStateFromProps();
-  }
-
-  isValid() {
-    return isInRange(this.state.pendingTimeLimit, quizLimits.answerTimeLimit)
-      && isInRange(this.state.pendingDelayAfterUnansweredQuestion, quizLimits.delayAfterUnansweredQuestion)
-      && isInRange(this.state.pendingDelayAfterAnsweredQuestion, quizLimits.delayAfterAnsweredQuestion)
-      && isInRange(this.state.pendingAdditionalAnswerWaitWindow, quizLimits.additionalAnswerWaitWindow);
   }
 
   getStateFromProps() {
@@ -103,12 +92,6 @@ class TimingEditor extends Component {
       delayAfterUnansweredQuestion: this.state.pendingDelayAfterUnansweredQuestion,
       additionalAnswerWaitWindow: this.state.pendingAdditionalAnswerWaitWindow,
     });
-  }
-
-  handleEnter = () => {
-    if (this.isValid()) {
-      this.handleCommitTiming();
-    }
   }
 
   componentDidUpdate() {

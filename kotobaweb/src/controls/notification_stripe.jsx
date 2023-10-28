@@ -46,5 +46,4 @@ function NotificationStripe(props) {
   );
 }
 
-
 export default NotificationStripe;

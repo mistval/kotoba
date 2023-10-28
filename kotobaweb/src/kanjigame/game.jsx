@@ -41,7 +41,7 @@ function UnansweredQuestions(props) {
   return (
     <div className="m-4 mt-5">
       <h4 className="mb-3">Unanswered questions</h4>
-      { unansweredQuestions.map(questionInfo => (
+      { unansweredQuestions.map((questionInfo) => (
         <span key={questionInfo.question}>
           {createAnchorIfUriPresent(questionInfo.question, questionInfo.dictionaryLink)}
           &nbsp;&nbsp;
@@ -102,57 +102,57 @@ class Game extends Component {
 
     this.socket.on(
       socketEvents.Server.CHAT,
-      data => this.handleEventBoxEvent(EventBox.EventType.CHAT, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.CHAT, data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_LEFT,
-      data => this.handleEventBoxEvent(EventBox.EventType.PLAYER_LEFT, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.PLAYER_LEFT, data),
     );
 
     this.socket.on(
       socketEvents.Server.UNANSWERED,
-      data => this.handleEventBoxEvent(EventBox.EventType.NO_ANSWER, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.NO_ANSWER, data),
     );
 
     this.socket.on(
       socketEvents.Server.ANSWERED,
-      data => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_KANJI, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_KANJI, data),
     );
 
     this.socket.on(
       socketEvents.Server.GAME_ENDED,
-      data => this.handleEventBoxEvent(EventBox.EventType.GAME_ENDED, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.GAME_ENDED, data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_JOINED,
-      data => this.handleEventBoxEvent(EventBox.EventType.PLAYER_JOINED, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.PLAYER_JOINED, data),
     );
 
     this.socket.on(
       socketEvents.Server.ROOM_CLOSED,
-      data => this.handleRoomClosed(data),
+      (data) => this.handleRoomClosed(data),
     );
 
     this.socket.on(
       socketEvents.Server.SCORE_UPDATE,
-      data => this.handleScoreUpdate(data),
+      (data) => this.handleScoreUpdate(data),
     );
 
     this.socket.on(
       socketEvents.Server.NEW_QUESTION,
-      data => this.handleNewQuestion(data),
+      (data) => this.handleNewQuestion(data),
     );
 
     this.socket.on(
       socketEvents.Server.AVATAR_ASSIGNED,
-      data => this.handleAvatarAssigned(data),
+      (data) => this.handleAvatarAssigned(data),
     );
 
     this.socket.on(
       socketEvents.Server.UNANSWERED_QUESTIONS_LIST,
-      data => this.handleUnansweredQuestionsListUpdate(data),
+      (data) => this.handleUnansweredQuestionsListUpdate(data),
     );
 
     Analytics.event(ANALYTICS_CATEGORY, 'Joining');
@@ -270,7 +270,7 @@ class Game extends Component {
     } = this.state;
 
     const usernames = Object.keys(scoresData.scoreForUsername);
-    const users = usernames.map(username => ({
+    const users = usernames.map((username) => ({
       username,
       score: scoresData.scoreForUsername[username],
       avatar: scoresData.avatarForUsername[username],

@@ -45,7 +45,7 @@ class RightPanel extends Component {
           { users.length > 0 && (
             <div className="m-4 mt-5">
               <h4 className="mb-3">Players</h4>
-              { users.filter(user => !user.hide).map((user) => {
+              { users.filter((user) => !user.hide).map((user) => {
                 const {
                   score, avatar, username,
                 } = user;

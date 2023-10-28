@@ -2,9 +2,9 @@
 /* eslint react/jsx-one-expression-per-line: 0 */
 
 import React, { Component } from 'react';
-import Slider from 'react-rangeslider';
+import Slider from '@mistval/react-rangeslider';
 import PropTypes from 'prop-types';
-import 'react-rangeslider/lib/index.css';
+import '@mistval/react-rangeslider/lib/index.css';
 import './slider.css';
 
 class VolumeSlider extends Component {
@@ -65,7 +65,7 @@ VolumeSlider.propTypes = {
 };
 
 VolumeSlider.defaultProps = {
-  format: value => `${value}`,
+  format: (value) => `${value}`,
 };
 
 export default VolumeSlider;

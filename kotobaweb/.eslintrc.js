@@ -19,5 +19,9 @@ module.exports = {
       'jsx-a11y/anchor-is-valid': 'off',
       'no-underscore-dangle': ['error', { allow: ['_id'] }],
       'import/prefer-default-export': 'off',
+      'max-classes-per-file': 'off',
+      'react/jsx-no-bind': 'off',
+      'react/jsx-props-no-spreading': 'off',
+      'react/no-deprecated': 'off',
     },
 };

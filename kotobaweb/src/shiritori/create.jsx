@@ -100,7 +100,7 @@ class Create extends PureComponent {
                         max="300"
                         defaultValue={`${DEFAULT_TIMEOUT_S}`}
                         format={formatSeconds}
-                        onChange={newValue => this.onUpdateField('timeoutMs', newValue * 1000)}
+                        onChange={(newValue) => this.onUpdateField('timeoutMs', newValue * 1000)}
                       />
                     </div>
                     <div className="form-group mt-5">
@@ -110,7 +110,7 @@ class Create extends PureComponent {
                         min="0"
                         max="3"
                         defaultValue={`${DEFAULT_NUM_BOT_PLAYERS}`}
-                        onChange={newValue => this.onUpdateField('botPlayers', newValue)}
+                        onChange={(newValue) => this.onUpdateField('botPlayers', newValue)}
                       />
                     </div>
                     <div className="form-group mt-5">
@@ -121,7 +121,7 @@ class Create extends PureComponent {
                         max="100"
                         defaultValue={`${DEFAULT_BOT_PLAYER_SCORE_MULTIPLIER_DISCRETE}`}
                         format={formatWithDecimal}
-                        onChange={newValue => this.onUpdateField('botScoreMultiplier', newValue / 100)}
+                        onChange={(newValue) => this.onUpdateField('botScoreMultiplier', newValue / 100)}
                       />
                     </div>
                     <div
@@ -133,7 +133,7 @@ class Create extends PureComponent {
                           type="checkbox"
                           name="laxLongVowels"
                           checked={this.state.laxLongVowels}
-                          onChange={ev => this.onCheckboxUpdate('laxLongVowels', ev)}
+                          onChange={(ev) => this.onCheckboxUpdate('laxLongVowels', ev)}
                         />
                         {' '}
                         <span className="label-darker">Lax long vowels</span>
@@ -148,7 +148,7 @@ class Create extends PureComponent {
                           type="checkbox"
                           name="smallLetters"
                           checked={this.state.smallLetters}
-                          onChange={ev => this.onCheckboxUpdate('smallLetters', ev)}
+                          onChange={(ev) => this.onCheckboxUpdate('smallLetters', ev)}
                         />
                         {' '}
                         <span className="label-darker">Small letters</span>
@@ -163,7 +163,7 @@ class Create extends PureComponent {
                           type="checkbox"
                           name="laxDakuten"
                           checked={this.state.laxDakuten}
-                          onChange={ev => this.onCheckboxUpdate('laxDakuten', ev)}
+                          onChange={(ev) => this.onCheckboxUpdate('laxDakuten', ev)}
                         />
                         {' '}
                         <span className="label-darker">Lax Dakuten</span>
@@ -175,7 +175,7 @@ class Create extends PureComponent {
                           type="checkbox"
                           name="privateGame"
                           checked={this.state.private}
-                          onChange={ev => this.onCheckboxUpdate('private', ev)}
+                          onChange={(ev) => this.onCheckboxUpdate('private', ev)}
                         />
                         {' '}
                         <span className="label-darker">Private game</span>
@@ -195,7 +195,7 @@ class Create extends PureComponent {
                       className="form-control mt-2"
                       name="username"
                       defaultValue={DEFAULT_USERNAME}
-                      onChange={newValue => this.onUpdateField('username', newValue)}
+                      onChange={(newValue) => this.onUpdateField('username', newValue)}
                       minLength="1"
                       maxLength="20"
                       required

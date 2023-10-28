@@ -70,72 +70,72 @@ class Game extends Component {
 
     this.socket.on(
       socketEvents.Server.CHAT,
-      data => this.handleEventBoxEvent(EventBox.EventType.CHAT, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.CHAT, data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_LEFT,
-      data => this.handleEventBoxEvent(EventBox.EventType.PLAYER_LEFT, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.PLAYER_LEFT, data),
     );
 
     this.socket.on(
       socketEvents.Server.ANSWERED,
-      data => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_SHIRITORI, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_SHIRITORI, data),
     );
 
     this.socket.on(
       socketEvents.Server.GAME_ENDED,
-      data => this.handleGameEnded(data),
+      (data) => this.handleGameEnded(data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_JOINED,
-      data => this.handleEventBoxEvent(EventBox.EventType.PLAYER_JOINED, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.PLAYER_JOINED, data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_ANSWERED,
-      data => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_SHIRITORI, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.CORRECT_ANSWER_SHIRITORI, data),
     );
 
     this.socket.on(
       socketEvents.Server.ROOM_CLOSED,
-      data => this.handleRoomClosed(data),
+      (data) => this.handleRoomClosed(data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_LIST,
-      data => this.handlePlayerListUpdate(data),
+      (data) => this.handlePlayerListUpdate(data),
     );
 
     this.socket.on(
       socketEvents.Server.USERNAME_ASSIGNED,
-      data => this.handleUsernameAssigned(data),
+      (data) => this.handleUsernameAssigned(data),
     );
 
     this.socket.on(
       socketEvents.Server.WAITING_FOR_ANSWER_FROM_USER,
-      data => this.handleWaitingForAnswerFromUser(data),
+      (data) => this.handleWaitingForAnswerFromUser(data),
     );
 
     this.socket.on(
       socketEvents.Server.ANSWER_REJECTED,
-      data => this.handleAnswerRejected(data),
+      (data) => this.handleAnswerRejected(data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_SKIPPED,
-      data => this.handleEventBoxEvent(EventBox.EventType.PLAYER_SKIPPED, data),
+      (data) => this.handleEventBoxEvent(EventBox.EventType.PLAYER_SKIPPED, data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_SET_INACTIVE,
-      data => this.handlePlayerSetInactive(data),
+      (data) => this.handlePlayerSetInactive(data),
     );
 
     this.socket.on(
       socketEvents.Server.PLAYER_REACTIVATED,
-      data => this.handlePlayerReactivated(data),
+      (data) => this.handlePlayerReactivated(data),
     );
 
     Analytics.event(ANALYTICS_CATEGORY, 'Joining');
@@ -238,9 +238,9 @@ class Game extends Component {
   }
 
   handlePlayerListUpdate = (playersServer) => {
-    const players = playersServer.map(player => ({ ...player, hide: !player.present }));
+    const players = playersServer.map((player) => ({ ...player, hide: !player.present }));
     const { username } = this.state;
-    const self = players.find(player => player.username === username);
+    const self = players.find((player) => player.username === username);
     this.setState({ players, self });
   }
 

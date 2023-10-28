@@ -9,7 +9,7 @@ function QuizManual() {
   return (
     <div className="row">
       <div className="col-xl-2 col-lg-3 col-md-3 col-sm-12 pl-5 mb-5">
-        { manualSections.map(section => (
+        { manualSections.map((section) => (
           <p className="toc-item text-muted" key={section.title}>
             <a href={`#${section.title}`}>{ section.title }</a>
           </p>

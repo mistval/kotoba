@@ -98,7 +98,7 @@ class DeckEditor extends Component {
 
     if (!deckName) {
       this.setState({ editingDeck: false });
-    } else if (this.props.decks.some(deck => deck.name.toLowerCase() === deckName.toLowerCase())) {
+    } else if (this.props.decks.some((deck) => deck.name.toLowerCase() === deckName.toLowerCase())) {
       this.setState({ editingDeck: false });
     } else {
       this.setState({

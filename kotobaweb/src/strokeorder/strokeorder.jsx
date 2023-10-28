@@ -54,13 +54,12 @@ function createKanjiCards(kanjis) {
             </h5>
             { uri
               ? (<img className="card-img-bottom" src={uri} alt="Unknown kanji" />)
-              : (<p>Unknown kanji</p>)
-            }
+              : (<p>Unknown kanji</p>)}
           </div>
         </div>
       </div>
     );
-  }).filter(element => !!element);
+  }).filter((element) => !!element);
 }
 
 function KanjiCards(props) {

@@ -190,7 +190,7 @@ class EventBox extends Component {
     return (
       <div id="eventBox" className={subclass}>
         <div className="container" id="eventBoxContainer" ref={(el) => { this.eventBoxContainer = el; }}>
-          { events.map(ev => (
+          { events.map((ev) => (
             <div className="row" key={ev.eventID}>
               <div className="col-sm-12">
                 {this.getEventSpecificJsx(ev)}

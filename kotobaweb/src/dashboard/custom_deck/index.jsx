@@ -214,7 +214,7 @@ class EditDeck extends Component {
         }
         if (!updatedGridCard.questionCreationStrategy) {
           updatedGridCard.questionCreationStrategy = getUserFacingNameForQuestionCreationStrategy(
-            deckValidation.getAllowedQuestionCreationStrategies()[0]
+            deckValidation.getAllowedQuestionCreationStrategies()[0],
           );
         }
       }
@@ -356,7 +356,7 @@ class EditDeck extends Component {
         await axios.patch(`/api/decks/${this.state.gridDeck._id}`, saveDeck, { headers: { [REQUEST_SECRET_HEADER]: this.getSecretFromUrl() } });
       }
 
-      this.setState(state => ({
+      this.setState((state) => ({
         showStripe: true,
         stripeIsError: false,
         hasUncommittedChanges: false,
@@ -398,7 +398,7 @@ class EditDeck extends Component {
   }
 
   onExport = () => {
-    const exportCardRows = this.state.gridDeck.cards.map(q => [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy]);
+    const exportCardRows = this.state.gridDeck.cards.map((q) => [q.question, q.answers, q.comment, q.instructions, q.questionCreationStrategy]);
 
     const exportHeaderRow = ['Question', 'Answers', 'Comment', 'Instructions', 'Render as'];
     const exportRows = [exportHeaderRow].concat(exportCardRows);
@@ -481,7 +481,7 @@ class EditDeck extends Component {
     });
   }
 
-  getSecretLink = secret => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
+  getSecretLink = (secret) => `https://kotobaweb.com/dashboard/decks/${this.state.gridDeck._id}?secret=${secret}`;
 
   getReadWriteLink = () => this.getSecretLink(this.state.readWriteSecret);
 
@@ -531,7 +531,7 @@ class EditDeck extends Component {
 
     const renderAsDropdownOptions = deckValidation
       .getAllowedQuestionCreationStrategies(this.props.user.privileges)
-      .map(strat => ({
+      .map((strat) => ({
         id: strat,
         value: getUserFacingNameForQuestionCreationStrategy(strat),
       }));
@@ -677,7 +677,7 @@ class EditDeck extends Component {
             <div className="col-xl-11 col-md-10">
               <ReactDataGrid
                 columns={columns}
-                rowGetter={i => this.state.gridDeck.cards[i] || createEmptyGridCard(i)}
+                rowGetter={(i) => this.state.gridDeck.cards[i] || createEmptyGridCard(i)}
                 rowsCount={Math.min(this.state.gridDeck.cards.length + 30, 20000)}
                 minHeight={900}
                 enableCellSelect={this.canEdit()}
@@ -753,15 +753,14 @@ class EditDeck extends Component {
               {' '}
               - Anyone with this link can view and edit this deck.
               <div className="input-group mb-3">
-                <input type="text" className="form-control" value={readWriteLink} onClick={e => e.target.select()} />
+                <input type="text" className="form-control" value={readWriteLink} onClick={(e) => e.target.select()} />
                 <div className="input-group-append">
                   <button className="btn btn-outline-secondary" type="button" onClick={this.onResetEditLink}>Reset</button>
                 </div>
               </div>
             </div>
           </div>
-          )
-          }
+          )}
           <div className="row mt-5">
             <div className="col-12">
               <h2>Pro Tips</h2>

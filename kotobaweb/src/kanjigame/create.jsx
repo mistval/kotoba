@@ -18,7 +18,7 @@ import Header from './header';
 import SocketNamespaces from '../common/socket_namespaces';
 import createSocket from '../util/create_socket';
 
-const listPickerItems = decks.map(deckInformation => ({
+const listPickerItems = decks.map((deckInformation) => ({
   key: deckInformation.shortName,
   value: deckInformation.longName,
 }));
@@ -74,8 +74,7 @@ function RenderForm({ formikArgs }) {
             <div className="alert alert-warning mt-3" role="alert">
               {formikArgs.errors.decks}
             </div>
-            )
-          }
+            )}
         </div>
         <div className="col-lg-4 mb-5">
           <div className="card">
@@ -91,7 +90,7 @@ function RenderForm({ formikArgs }) {
                   max="100"
                   defaultValue="30"
                   format={formatSeconds}
-                  onChange={newValue => formikArgs.setFieldValue('answerTimeLimit', newValue)}
+                  onChange={(newValue) => formikArgs.setFieldValue('answerTimeLimit', newValue)}
                 />
               </div>
               <div className="form-group mt-5">
@@ -102,7 +101,7 @@ function RenderForm({ formikArgs }) {
                   max="10000"
                   defaultValue="0"
                   format={formatMilliseconds}
-                  onChange={newValue => formikArgs.setFieldValue('answerLeeway', newValue)}
+                  onChange={(newValue) => formikArgs.setFieldValue('answerLeeway', newValue)}
                 />
               </div>
               <div className="checkbox mt-5">
@@ -153,7 +152,7 @@ class Create extends PureComponent {
 
   submitCreate = (values) => {
     const gameConfig = {
-      decks: values.decks.map(deck => deck.key),
+      decks: values.decks.map((deck) => deck.key),
       answerTimeLimitInMs: values.answerTimeLimit * 1000,
       answerForgivenessWindow: values.answerLeeway,
       private: values.privateGame,
@@ -187,7 +186,7 @@ class Create extends PureComponent {
             validationSchema={formSchema}
             onSubmit={this.submitCreate}
           >
-            {formikArgs => (
+            {(formikArgs) => (
               <RenderForm formikArgs={formikArgs} />
             )}
           </Formik>

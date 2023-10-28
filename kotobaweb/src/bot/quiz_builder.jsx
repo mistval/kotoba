@@ -135,35 +135,33 @@ class QuizBuilder extends Component {
     }
 
     return (
-      <>
-        <div className="row">
-          <div className="col-12">
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-12 d-flex justify-content-center">
-                  <strong style={styles.commandText}>{commandElement}</strong>
-                </div>
+      <div className="row">
+        <div className="col-12">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 d-flex justify-content-center">
+                <strong style={styles.commandText}>{commandElement}</strong>
               </div>
-              <div className="row mt-5">
-                <div className="col-lg-4 mb-4">
-                  <DeckEditor decks={this.state.decks} onDecksChanged={this.handleDecksChanged} />
-                </div>
-                <div className="col-lg-4 mb-4">
-                  <TimingEditor timing={this.state.timing} onTimingChanged={this.handleTimingChanged} />
-                </div>
-                <div className="col-lg-4 mb-4">
-                  <OtherSettingsEditor otherSettings={this.state.otherSettings} onOtherSettingsChanged={this.handleOtherSettingsChanged} />
-                </div>
+            </div>
+            <div className="row mt-5">
+              <div className="col-lg-4 mb-4">
+                <DeckEditor decks={this.state.decks} onDecksChanged={this.handleDecksChanged} />
               </div>
-              <div className="row">
-                <div className="col mb-5">
-                  <FontEditor fontSettings={this.state.fontSettings} onFontSettingsChanged={this.handleFontSettingsChanged} />
-                </div>
+              <div className="col-lg-4 mb-4">
+                <TimingEditor timing={this.state.timing} onTimingChanged={this.handleTimingChanged} />
+              </div>
+              <div className="col-lg-4 mb-4">
+                <OtherSettingsEditor otherSettings={this.state.otherSettings} onOtherSettingsChanged={this.handleOtherSettingsChanged} />
+              </div>
+            </div>
+            <div className="row">
+              <div className="col mb-5">
+                <FontEditor fontSettings={this.state.fontSettings} onFontSettingsChanged={this.handleFontSettingsChanged} />
               </div>
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
