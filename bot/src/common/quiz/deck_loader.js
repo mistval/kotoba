@@ -7,6 +7,8 @@ const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckMod
 const UserReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createUser(mongoConnection);
 const LocationReviewDeckModel = require('kotoba-node-common').models.reviewDeck.createLocation(mongoConnection);
 
+const COERCED_CUSTOM_DECK_DIR = CUSTOM_DECK_DIR.replace('\\bot\\node_modules', '');
+
 const DeckRequestStatus = {
   ALL_DECKS_FOUND: 0,
   DECK_NOT_FOUND: 1,
@@ -132,12 +134,12 @@ async function getCustomDeckFromDisk(deckInfo) {
   let deckRaw;
 
   try {
-    const deckPath = path.join(CUSTOM_DECK_DIR, `${deckNameOrUniqueId}.json`);
+    const deckPath = path.join(COERCED_CUSTOM_DECK_DIR, `${deckNameOrUniqueId}.json`);
     deckRaw = await readFile(deckPath);
   } catch (err) {
     const deckMeta = await CustomDeckModel.findOne({ uniqueId: deckNameOrUniqueId });
     if (deckMeta) {
-      const deckPath = path.join(CUSTOM_DECK_DIR, `${deckMeta.shortName}.json`);
+      const deckPath = path.join(COERCED_CUSTOM_DECK_DIR, `${deckMeta.shortName}.json`);
       deckRaw = await readFile(deckPath);
     }
   }
