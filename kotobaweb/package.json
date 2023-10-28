@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && set PORT=3001 && NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && react-scripts build",
+    "build": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx",
