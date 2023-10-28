@@ -3,6 +3,7 @@ const config = require('./../../config/config.js').api;
 const DiscordPassportStrategy = require('passport-discord').Strategy;
 const mongoConnection = require('kotoba-node-common').database.connection;
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);
+const UserGlobalTotalScoresModel = require('kotoba-node-common').models.scores.createUserGlobalTotalScoreModel(mongoConnection);
 
 const authConfig = config.auth;
 
@@ -28,8 +29,14 @@ function initialize(app) {
   });
 
   passport.deserializeUser(async (userId, done) => {
-    const user = await UserModel.findById(userId);
-    done(null, user);
+    try {
+      const user = await UserModel.findById(userId);
+      const privileges = await user.getPrivileges({ UserGlobalTotalScoresModel });
+      user.privileges = privileges;
+      done(null, user);
+    } catch (err) {
+      done(err);
+    }
   });
 
   const scopes = ['identify', 'guilds'];

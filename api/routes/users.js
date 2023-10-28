@@ -3,7 +3,6 @@ const checkAuth = require('./../auth/check_auth.js');
 const mongoConnection = require('kotoba-node-common').database.connection;
 const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckModel(mongoConnection);
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(mongoConnection);
-const UserGlobalTotalScoresModel = require('kotoba-node-common').models.scores.createUserGlobalTotalScoreModel(mongoConnection);
 
 routes.get(
   '/me',
@@ -12,7 +11,7 @@ routes.get(
     try {
       const response = {
         ...req.user.toJSON({ virtuals: true }),
-        privileges: await req.user.getPrivileges({ UserGlobalTotalScoresModel }),
+        privileges: req.user.privileges,
       };
 
       delete response.antiPrivileges;
