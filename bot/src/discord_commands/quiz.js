@@ -481,6 +481,7 @@ class DiscordMessageSender {
 
     const fields = [
       { name: 'Deck size', value: quizLength, inline: true },
+      { name: 'Started by', value: this.commanderMessage.author.mention, inline: true },
     ];
 
     if (scoreLimit !== Number.MAX_SAFE_INTEGER) {
