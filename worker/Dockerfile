@@ -1,4 +1,4 @@
-FROM arm64v8/node:18.18.2
+FROM arm64v8/node:20.9.0
 
 RUN apt-get update
 RUN apt-get -y install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev

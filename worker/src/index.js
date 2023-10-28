@@ -32,5 +32,7 @@ polka().get('/users/:userId/quizstats', async (req, res) => {
     console.warn('Error starting');
     console.warn(err);
     process.exit(1);
+  } else {
+    console.log('Started');
   }
 });

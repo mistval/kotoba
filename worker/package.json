@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@polka/send-type": "0.5.2",
-    "canvas": "^2.10.2",
+    "canvas": "^2.11.2",
     "kotoba-node-common": "file:../node-common",
     "mongoose": "^6.12.0",
     "node-fetch": "^2.6.7",
