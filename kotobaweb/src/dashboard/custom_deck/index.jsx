@@ -21,17 +21,16 @@ const {
 
 const unsavedChangesMessage = 'You have unsaved changes. Are you sure you want to leave?';
 
-function upperCaseFirstCharOnly(str) {
+function getUserFacingNameForQuestionCreationStrategy(str) {
+  if (str === 'IMAGE_URI') {
+    return 'Image URI';
+  }
+
   const lowerChars = str.toLowerCase().split('');
-  return [lowerChars[0].toUpperCase(), ...lowerChars.slice(1)].join('').replace(/_/g, ' ');
+  return [
+    lowerChars[0].toUpperCase(), ...lowerChars.slice(1),
+  ].join('').replace(/_/g, ' ');
 }
-
-const renderAsDropdownOptions = deckValidation.allowedQuestionCreationStrategies.map(strat => ({
-  id: strat,
-  value: upperCaseFirstCharOnly(strat),
-}));
-
-const RenderAsEditor = <Editors.DropDownEditor options={renderAsDropdownOptions} />;
 
 const styles = {
   icon: {
@@ -46,24 +45,15 @@ const styles = {
   },
 };
 
-const columns = [
-  { key: 'index', name: '#', width: 62 },
-  { key: 'question', name: 'Question', editable: true },
-  { key: 'answers', name: 'Answers', editable: true },
-  { key: 'comment', name: 'Comment', editable: true },
-  { key: 'instructions', name: 'Instructions', editable: true },
-  {
-    key: 'questionCreationStrategy', name: 'Render as', editor: RenderAsEditor, editable: true, width: 110,
-  },
-];
-
 const sampleGridCard = {
   index: 0,
   question: '明日',
   answers: 'あした,あす',
   comment: 'Tomorrow',
   instructions: 'Type the reading!',
-  questionCreationStrategy: upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]),
+  questionCreationStrategy: getUserFacingNameForQuestionCreationStrategy(
+    deckValidation.getAllowedQuestionCreationStrategies()[0],
+  ),
 };
 
 const emptyGridCard = {
@@ -120,7 +110,9 @@ function apiCardsToGridCards(apiCards) {
       answers: apiCard.answers.join(','),
       comment: apiCard.comment,
       instructions: apiCard.instructions,
-      questionCreationStrategy: upperCaseFirstCharOnly(apiCard.questionCreationStrategy),
+      questionCreationStrategy: getUserFacingNameForQuestionCreationStrategy(
+        apiCard.questionCreationStrategy,
+      ),
     };
 
     return gridCard;
@@ -221,7 +213,9 @@ class EditDeck extends Component {
           updatedGridCard.instructions = newState.defaultInstructions.trim();
         }
         if (!updatedGridCard.questionCreationStrategy) {
-          updatedGridCard.questionCreationStrategy = upperCaseFirstCharOnly(deckValidation.allowedQuestionCreationStrategies[0]);
+          updatedGridCard.questionCreationStrategy = getUserFacingNameForQuestionCreationStrategy(
+            deckValidation.getAllowedQuestionCreationStrategies()[0]
+          );
         }
       }
 
@@ -331,7 +325,10 @@ class EditDeck extends Component {
       cards: gridCardsToApiCards(this.state.gridDeck.cards),
     });
 
-    const validationResult = deckValidation.validateDeck(saveDeck);
+    const validationResult = deckValidation.validateDeck(
+      saveDeck,
+      this.props.user.privileges,
+    );
 
     if (!validationResult.success) {
       this.handleValidationError(validationResult);
@@ -531,6 +528,26 @@ class EditDeck extends Component {
     }
 
     const readWriteLink = this.getReadWriteLink();
+
+    const renderAsDropdownOptions = deckValidation
+      .getAllowedQuestionCreationStrategies(this.props.user.privileges)
+      .map(strat => ({
+        id: strat,
+        value: getUserFacingNameForQuestionCreationStrategy(strat),
+      }));
+
+    const RenderAsEditor = <Editors.DropDownEditor options={renderAsDropdownOptions} />;
+
+    const columns = [
+      { key: 'index', name: '#', width: 62 },
+      { key: 'question', name: 'Question', editable: true },
+      { key: 'answers', name: 'Answers', editable: true },
+      { key: 'comment', name: 'Comment', editable: true },
+      { key: 'instructions', name: 'Instructions', editable: true },
+      {
+        key: 'questionCreationStrategy', name: 'Render as', editor: RenderAsEditor, editable: true, width: 110,
+      },
+    ];
 
     return (
       <>

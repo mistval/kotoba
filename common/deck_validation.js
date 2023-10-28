@@ -8,6 +8,7 @@ const MAX_NEWLINES_IN_DESCRIPTION = 8;
 const ANSWERS_TOTAL_MAX_LENGTH = 200;
 const COMMENT_MAX_LENGTH = 600;
 const MAX_CARDS = 10000;
+const IMAGE_URI_MAX_LENGTH = 400;
 const NON_LINE_ERROR_LINE = -1;
 const SHORT_NAME_ALLOWED_CHARACTERS_REGEX_HTML = '^[a-zA-Z0-9_]{1,25}$';
 const SHORT_NAME_ALLOWED_CHARACTERS_REGEX = /^[a-z0-9_]{1,25}$/;
@@ -36,11 +37,31 @@ const maxLengthForQuestionCreationStrategy = {
   TEXT: TEXT_QUESTION_MAX_LENGTH,
   IMAGE_WITH_HINT: IMAGE_QUESTION_MAX_LENGTH,
   TEXT_WITH_HINT: TEXT_QUESTION_MAX_LENGTH,
+  IMAGE_URI: IMAGE_URI_MAX_LENGTH,
 };
 
-const allowedQuestionCreationStrategies = Object.keys(maxLengthForQuestionCreationStrategy);
+const globallyAllowedQuestionCreationStrategies = [
+  'IMAGE',
+  'TEXT',
+  'IMAGE_WITH_HINT',
+  'TEXT_WITH_HINT',
+];
+
+const additionalQuestionCreationStrategiesForPrivilege = {
+  image_cards: ['IMAGE_URI'],
+};
 
 const successValidationResult = { success: true };
+
+function getAllowedQuestionCreationStrategies(userPrivileges = []) {
+  return globallyAllowedQuestionCreationStrategies
+    .concat(
+      userPrivileges
+        ?.filter(p => p.value)
+        ?.flatMap(p => additionalQuestionCreationStrategiesForPrivilege[p.id] ?? [])
+        ?? [],
+    );
+}
 
 function createFailureValidationResult(rejectedLine, rejectionReason, card) {
   return {
@@ -126,7 +147,9 @@ function sanitizeDeckPreValidation(deck) {
   return deckCopy;
 }
 
-function validateCards(cards) {
+function validateCards(cards, userPrivileges = []) {
+  const allowedQuestionCreationStrategies = getAllowedQuestionCreationStrategies(userPrivileges);
+
   for (let cardIndex = 0; cardIndex < cards.length; cardIndex += 1) {
     const card = cards[cardIndex];
 
@@ -156,6 +179,12 @@ function validateCards(cards) {
 
     if (card.questionCreationStrategy.includes('HINT') !== (card.answerTimeLimitStrategy === 'WITH_HINT')) {
       return createFailureValidationResult(cardIndex, 'Mismatch between question creation strategy and answer time limit strategy.', card);
+    }
+
+    if (card.questionCreationStrategy === 'IMAGE_URI') {
+      if (!card.question.startsWith('http://') && !card.question.startsWith('https://')) {
+        return createFailureValidationResult(cardIndex, 'Image URI questions must be links to images, starting with https:// or http://', card);
+      }
     }
 
     if (!Array.isArray(card.answers)) {
@@ -216,7 +245,7 @@ function countOccurrences(str, character) {
   return count;
 }
 
-function validateDeck(deck) {
+function validateDeck(deck, userPrivileges = []) {
   if (typeof deck !== typeof {}) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, 'Deck is not an object. Please report this error.');
   }
@@ -297,7 +326,7 @@ function validateDeck(deck) {
     return createFailureValidationResult(NON_LINE_ERROR_LINE, `The deck's description must have no more than ${MAX_NEWLINES_IN_DESCRIPTION} newlines.`);
   }
 
-  return validateCards(deck.cards);
+  return validateCards(deck.cards, userPrivileges);
 }
 
 module.exports = {
@@ -312,7 +341,7 @@ module.exports = {
   DECK_VALIDATION_ERROR_TYPE,
   SHORT_NAME_ALLOWED_CHARACTERS_REGEX,
   SHORT_NAME_ALLOWED_CHARACTERS_REGEX_HTML,
-  allowedQuestionCreationStrategies,
+  getAllowedQuestionCreationStrategies,
   validateDeck,
   sanitizeDeckPreValidation,
 };

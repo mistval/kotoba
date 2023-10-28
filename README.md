@@ -48,8 +48,6 @@ VS Code is recommended for development. This repo contains a VS Code `launch.jso
 
 ### KotobaWeb
 
-Note that the frontend (`kotobaweb` directory) should be run under node v16.14.0. Different versions (even different versions of 16) might not work. The API should still be run under Node 18 (yeah it's a pain).
-
 Install **MongoDB** and start it on port 27017 (the default port). You can install it using the instructions for your operating system [here](https://docs.mongodb.com/manual/installation/). Or, use Docker: `docker run -p 27017:27017 mongo`. Then:
 
 ```sh
