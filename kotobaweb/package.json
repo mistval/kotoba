@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@mistval/react-rangeslider": "^2.2.0",
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "bootstrap-material-design-icons": "^2.2.0",
     "csv-parse": "^4.4.0",
     "csv-stringify": "^5.3.0",
