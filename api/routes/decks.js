@@ -20,7 +20,6 @@ const {
   RESPONSE_READWRITE_SECRET_HEADER,
 } = require('kotoba-common').deckPermissions;
 
-const MAX_DECKS_PER_USER = 100;
 const COERCED_CUSTOM_DECK_DIR = CUSTOM_DECK_DIR.replace('\\api\\node_modules', '');
 
 function filePathForShortName(shortName) {
@@ -53,8 +52,11 @@ async function checkHas100DecksOrFewer(req, res, next) {
     assert(req.user, 'No user attached');
 
     const existingDeckCount = await CustomDeckModel.countDocuments({ owner: req.user._id });
-    if (existingDeckCount >= MAX_DECKS_PER_USER) {
-      return res.status(403).json({ message: `You already have ${MAX_DECKS_PER_USER} decks, you can\'t add any more.` });
+    const numDecksAllowed = req.user.numCustomDecksAllowed;
+    assert(Number.isInteger(numDecksAllowed), `numCustomDecksAllowed (${numDecksAllowed}) is not an integer`);
+
+    if (existingDeckCount >= numDecksAllowed) {
+      return res.status(403).json({ message: `You already have ${existingDeckCount} decks, you can\'t add any more.` });
     }
 
     next();

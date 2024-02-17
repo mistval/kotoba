@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const DISCORD_EPOCH_MS = 1420070400000;
 const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 const IMAGE_CARDS_SCORE_THRESHOLD = 1_000;
+const DEFAULT_MAX_DECKS_PER_USER = 100;
 
 function calculateDiscordSnowflakeDate(snowflake) {
   const snowFlakeInt = BigInt(snowflake);
@@ -36,6 +37,10 @@ const UserSchema = new mongoose.Schema({
   ban: { type: BanInfoSchema, required: false, default: undefined },
   privileges: { type: [Object], required: false, default: [] },
   antiPrivileges: { type: [Object], required: false, default: [] },
+});
+
+UserSchema.virtual('numCustomDecksAllowed').get(function() {
+  return this.privileges?.find?.(p => p.id === 'num_custom_decks_allowed')?.value ?? DEFAULT_MAX_DECKS_PER_USER;
 });
 
 UserSchema.virtual('canCreateDecks').get(function() {
@@ -82,6 +87,9 @@ UserSchema.method('getPrivileges', async function({ UserGlobalTotalScoresModel }
   }, {
     id: 'image_cards',
     value: await this.canCreateImageCards(UserGlobalTotalScoresModel),
+  }, {
+    id: 'num_custom_decks_allowed',
+    value: this.numCustomDecksAllowed,
   }];
 });
 
