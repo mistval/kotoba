@@ -125,7 +125,7 @@ class FontHelper {
       .replace(/size\s*=\s*([0-9]*)/ig, (m, g1) => {
         parseResult.size = parseInt(g1, 10);
 
-        if (parseResult.size < 20 || parseResult.size > 200) {
+        if (parseResult.size < 6 || parseResult.size > 200) {
           parseResult.errorDescriptionShort = 'Invalid size';
           parseResult.errorDescriptionLong = 'Please enter a number between 20 and 200 as your size= setting.';
         }
