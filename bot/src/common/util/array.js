@@ -28,7 +28,14 @@ function shuffle(array) {
   return newArray;
 }
 
+function partition(array, partionerFunc) {
+  const partition1 = array.filter((el) => partionerFunc(el));
+  const partition2 = array.filter((el) => !partionerFunc(el));
+  return [partition1, partition2];
+}
+
 module.exports = {
   chunk,
   shuffle,
+  partition,
 };

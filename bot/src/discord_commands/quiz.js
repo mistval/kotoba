@@ -1589,10 +1589,10 @@ function getServerSettings(rawServerSettings) {
   };
 }
 
-async function doSearch(msg, monochrome, searchTerm = '') {
+async function doSearch(msg, searchTerm = '', options) {
   const results = await deckSearchUtils.searchCustomFullText(
     searchTerm,
-    { populateOwner: true, limit: 100 },
+    { populateOwner: true, limit: 100, ...options },
   );
 
   if (results.length === 0) {
@@ -1838,7 +1838,13 @@ module.exports = {
     const commandTokens = cleanSuffixFontArgsParsed.split(' ').filter(x => x);
 
     if (commandTokens[0] === 'search') {
-      return doSearch(msg, monochrome, commandTokens.slice(1).join(' '));
+      const [optionTokens, queryTokens] = arrayUtil.partition(commandTokens.slice(1), t => t.includes('='));
+      const query = queryTokens.join(' ');
+      const options = Object.fromEntries(
+        optionTokens.map(t => t.split('=')),
+      );
+
+      return doSearch(msg, query, options);
     }
 
     let { remainingTokens: remainingTokens1, gameModes } = consumeGameModeTokens(commandTokens, msg.extension);

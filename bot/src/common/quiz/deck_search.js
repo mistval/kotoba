@@ -5,9 +5,15 @@ const CustomDeckModel = require('kotoba-node-common').models.createCustomDeckMod
 const UserModel = require('kotoba-node-common').models.createUserModel(mongoConnection);
 const CustomDeckVoteModel = require('kotoba-node-common').models.createCustomDeckVoteModel(mongoConnection);
 
+const sorterSpecForSortMode = {
+  popular: { score: -1 },
+  newest: { _id: -1 },
+  updated: { lastModified: -1 }
+};
+
 async function searchCustomFullText(
   searchTerm = '',
-  { populateOwner = false, limit = 100 } = {},
+  { populateOwner = false, limit = 100, sort = 'popular' } = {},
 ) {
   const filter = searchTerm.trim()
     ? { $text: { $search: searchTerm }, public: true }
@@ -15,7 +21,7 @@ async function searchCustomFullText(
 
   let query = CustomDeckModel
     .find(filter)
-    .sort({ score: -1 })
+    .sort(sorterSpecForSortMode[sort] ?? sorterSpecForSortMode.popular)
     .limit(limit)
     .select('shortName name score');
 
