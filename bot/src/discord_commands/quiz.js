@@ -1592,7 +1592,7 @@ function getServerSettings(rawServerSettings) {
 async function doSearch(msg, searchTerm = '', options) {
   const results = await deckSearchUtils.searchCustomFullText(
     searchTerm,
-    { populateOwner: true, limit: 100, ...options },
+    {  ...options, populateOwner: true, limit: 100 },
   );
 
   if (results.length === 0) {
