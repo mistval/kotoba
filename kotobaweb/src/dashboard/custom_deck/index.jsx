@@ -431,7 +431,13 @@ class EditDeck extends Component {
 
     fileReader.onloadend = () => {
       const str = fileReader.result;
-      csvParse(str, (err, rows) => {
+      const isTsv = str.startsWith('#separator:tab');
+      const stringToParse = str
+        .replace(/^#[a-z]+:[a-z]+$/m, '')
+        .replace(/^#[a-z]+:[a-z]+$/m, '')
+        .trim();
+
+      csvParse(stringToParse, { delimiter: isTsv ? '\t' : ',' }, (err, rows) => {
         if (err) {
           this.setState({
             showStripe: true,
@@ -551,7 +557,7 @@ class EditDeck extends Component {
 
     return (
       <>
-        <input type="file" accept=".csv" style={styles.hiddenFileInput} onChange={this.onFileSelected} ref={(el) => { this.fileInputField = el; }} />
+        <input type="file" accept=".csv,.txt" style={styles.hiddenFileInput} onChange={this.onFileSelected} ref={(el) => { this.fileInputField = el; }} />
         <div className="modal" tabIndex="-1" role="dialog" id="deleteConfirmationModal">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
@@ -660,7 +666,7 @@ class EditDeck extends Component {
                 onClick={this.onImport}
               >
                 <i className="material-icons" style={styles.icon}>vertical_align_top</i>
-                Import from CSV
+                Import from CSV/TXT
               </button>
               <button
                 type="button"
