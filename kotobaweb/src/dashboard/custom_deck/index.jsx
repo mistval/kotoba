@@ -431,13 +431,14 @@ class EditDeck extends Component {
 
     fileReader.onloadend = () => {
       const str = fileReader.result;
-      const isTsv = str.startsWith('#separator:tab');
+      const isAnkiFormat = str.startsWith('#separator:tab');
       const stringToParse = str
-        .replace(/^#[a-z]+:[a-z]+$/m, '')
-        .replace(/^#[a-z]+:[a-z]+$/m, '')
+        .replace(/^#[a-z]+:[a-z]+\n/, '')
+        .trim()
+        .replace(/^#[a-z]+:[a-z]+\n/, '')
         .trim();
 
-      csvParse(stringToParse, { delimiter: isTsv ? '\t' : ',' }, (err, rows) => {
+      csvParse(stringToParse, { delimiter: isAnkiFormat ? '\t' : ',' }, (err, rows) => {
         if (err) {
           this.setState({
             showStripe: true,
@@ -452,7 +453,7 @@ class EditDeck extends Component {
           const newState = { ...state };
           newState.gridDeck = { ...state.gridDeck };
 
-          newState.gridDeck.cards = rows.slice(1).map((row, index) => {
+          newState.gridDeck.cards = rows.slice(isAnkiFormat ? 0 : 1).map((row, index) => {
             const newRow = {
               index,
               question: row[0] ? row[0].trim() : '',
