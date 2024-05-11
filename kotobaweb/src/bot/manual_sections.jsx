@@ -26,7 +26,13 @@ manualSections.push(new ManualSection(
 
 manualSections.push(new ManualSection(
   'Custom Decks',
-  (<p>You can create custom decks and import/export them from CSV in <NavLink to="/dashboard">the dashboard</NavLink>.</p>),
+  (
+    <>
+      <p>You can create custom decks and import/export them from files in <NavLink to="/dashboard">the dashboard</NavLink>.</p>
+      <p>To import a deck from Anki, click the deck settings button in Anki (the cog icon to the right of the "Due" column on the deck list), click "Export", select "Cards in Plain Text (txt)" as the export format, uncheck "Include HTML and media references", then click export and save the file.</p>
+      <p>To import from a CSV file, create a spreadsheet with at least two columns with headings (Question and Answer) and optionally up to three more columns (Comment, Instructions, Render As). Save it as a CSV file. Note that there's a lot of variation in how different software exports spreadsheets to CSV, and not all of them will work (at least with default export settings). You should have good luck using Google Sheets.</p>
+    </>
+  ),
 ));
 
 manualSections.push(new ManualSection(

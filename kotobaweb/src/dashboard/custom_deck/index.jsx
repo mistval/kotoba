@@ -667,8 +667,9 @@ class EditDeck extends Component {
                 onClick={this.onImport}
               >
                 <i className="material-icons" style={styles.icon}>vertical_align_top</i>
-                Import from CSV/TXT
+                Import from File
               </button>
+              <a href="/bot/quiz#Custom Decks" target="new">Importing from Anki?</a>
               <button
                 type="button"
                 className="btn btn-danger btn-outline d-flex flex-column align-items-center mt-4"
