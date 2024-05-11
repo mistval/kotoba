@@ -25,17 +25,6 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
-  'Custom Decks',
-  (
-    <>
-      <p>You can create custom decks and import/export them from files in <NavLink to="/dashboard">the dashboard</NavLink>.</p>
-      <p>To import a deck from Anki, click the deck settings button in Anki (the cog icon to the right of the "Due" column on the deck list), click "Export", select "Cards in Plain Text (txt)" as the export format, uncheck "Include HTML and media references", then click export and save the file.</p>
-      <p>To import from a CSV file, create a spreadsheet with at least two columns with headings (Question and Answer) and optionally up to three more columns (Comment, Instructions, Render As). Save it as a CSV file. Note that there's a lot of variation in how different software exports spreadsheets to CSV, and not all of them will work (at least with default export settings). You should have good luck using Google Sheets.</p>
-    </>
-  ),
-));
-
-manualSections.push(new ManualSection(
   'Score Limit',
   (<p>The score limit of a quiz can be configured by specifying a number after the quiz name. For example: <span className="example">k!quiz N1 20</span> for a JLPT N1 quiz with a score limit of 20. This setting can also be set with the <span className="example">k!settings</span> command.</p>),
 ));
@@ -128,6 +117,17 @@ manualSections.push(new ManualSection(
 manualSections.push(new ManualSection(
   'Answering in Spoilers',
   (<p>I accept answers inside of spoiler tags. So you can type your answer surrounded by <span className="example">||</span> to hide your answer from other Discord users. For example <span className="example">||にほんご||</span>. This can be good if you want to compete with friends without having to type quickly. You can use a high value for the <span className="example">aaww=</span> parameter and give your answers in spoilers.</p>),
+));
+
+manualSections.push(new ManualSection(
+  'Custom Decks',
+  (
+    <>
+      <p>You can create custom decks and import/export them from files in <NavLink to="/dashboard">the dashboard</NavLink>.</p>
+      <p>To import a deck from Anki, click the deck settings button in Anki (the cog icon to the right of the "Due" column on the deck list), click "Export", select "Cards in Plain Text (txt)" as the export format, uncheck "Include HTML and media references", then click export and save the file.</p>
+      <p>To import from a CSV file, create a spreadsheet with at least two columns with headings (Question and Answer) and optionally up to three more columns (Comment, Instructions, Render As). Save it as a CSV file. Note that there's a lot of variation in how different software exports spreadsheets to CSV, and not all of them will work (at least with default export settings). You should have good luck using Google Sheets.</p>
+    </>
+  ),
 ));
 
 manualSections.push(new ManualSection(
