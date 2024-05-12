@@ -217,7 +217,7 @@ function validateCards(cards, userPrivileges = []) {
     }
   }
 
-  const indexForQuestion = {};
+  const indexForQuestion = new Map();
 
   for (let cardIndex = 0; cardIndex < cards.length; cardIndex += 1) {
     const card = cards[cardIndex];
@@ -225,9 +225,9 @@ function validateCards(cards, userPrivileges = []) {
       continue;
     }
 
-    const existingIndex = indexForQuestion[card.question];
+    const existingIndex = indexForQuestion.get(card.question);
     if (existingIndex === undefined) {
-      indexForQuestion[card.question] = cardIndex;
+      indexForQuestion.set(card.question, cardIndex);
     } else {
       return createFailureValidationResult(cardIndex, `Questions #${existingIndex} and #${cardIndex} have the same question. All questions must be unique.`, card);
     }
