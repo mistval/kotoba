@@ -10,11 +10,13 @@ const KITSU_PAGE_BASE_URI = 'https://kitsu.io/anime/';
 async function searchAnime(keyword) {
   try {
     const { data } = await api.get('anime', {
-      fields: {
-        anime: 'canonicalTitle,synopsis,posterImage,averageRating,favoritesCount,slug,popularityRank,ratingRank',
+      params: {
+        fields: {
+          anime: 'canonicalTitle,synopsis,posterImage,averageRating,favoritesCount,slug,popularityRank,ratingRank',
+        },
+        filter: { text: keyword },
+        page: { limit: 10 },
       },
-      filter: { text: keyword },
-      page: { limit: 10 },
     });
     return data;
   } catch (error) {
