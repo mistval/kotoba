@@ -380,7 +380,7 @@ class EditDeck extends Component {
     });
   }
 
-  onDelete = async () => {
+  onDeleteDeck = async () => {
     try {
       // There is only something to delete if the deck has been saved.
       if (this.state.gridDeck._id) {
@@ -395,6 +395,48 @@ class EditDeck extends Component {
         this.handleError(err);
       }
     }
+  }
+
+  onDeleteDuplicates = () => {
+    this.setState((state) => {
+      const seenQuestion = new Set();
+      const newState = { ...state };
+      newState.gridDeck = { ...state.gridDeck };
+      newState.gridDeck.cards = newState.gridDeck.cards.filter((card) => {
+        if (isEmptyGridCard(card)) {
+          return true;
+        }
+
+        if (seenQuestion.has(card.question)) {
+          return false;
+        }
+
+        seenQuestion.add(card.question);
+        return true;
+      });
+
+      return newState;
+    });
+  }
+
+  onDeleteMissingAnswers = () => {
+    this.setState((state) => {
+      const newState = { ...state };
+      newState.gridDeck = { ...state.gridDeck };
+      newState.gridDeck.cards = newState.gridDeck.cards.filter((card) => {
+        if (isEmptyGridCard(card)) {
+          return true;
+        }
+
+        if (card.question.trim() && card.answers.trim()) {
+          return true;
+        }
+
+        return false;
+      });
+
+      return newState;
+    });
   }
 
   onExport = () => {
@@ -559,7 +601,7 @@ class EditDeck extends Component {
     return (
       <>
         <input type="file" accept=".csv,.txt" style={styles.hiddenFileInput} onChange={this.onFileSelected} ref={(el) => { this.fileInputField = el; }} />
-        <div className="modal" tabIndex="-1" role="dialog" id="deleteConfirmationModal">
+        <div className="modal" tabIndex="-1" role="dialog" id="deleteDeckConfirmationModal">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
@@ -572,7 +614,45 @@ class EditDeck extends Component {
                 <p>This deck will be permanently deleted.</p>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={this.onDelete}>DELETE</button>
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={this.onDeleteDeck}>DELETE</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="modal" tabIndex="-1" role="dialog" id="deleteDuplicatesConfirmationModal">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title text-danger">Delete Duplicate Questions</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p>Delete all rows that have the same question as an earlier row.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={this.onDeleteDuplicates}>DELETE</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="modal" tabIndex="-1" role="dialog" id="deleteMissingAnswersConfirmationModal">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title text-danger">Delete Missing Answers</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <p>Delete all rows that have an empty answer.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={this.onDeleteMissingAnswers}>DELETE</button>
                 <button type="button" className="btn btn-primary" data-dismiss="modal">Cancel</button>
               </div>
             </div>
@@ -676,7 +756,7 @@ class EditDeck extends Component {
                 style={styles.actionButton}
                 disabled={!this.canDelete()}
                 data-toggle="modal"
-                data-target="#deleteConfirmationModal"
+                data-target="#deleteDeckConfirmationModal"
               >
                 <i className="material-icons" style={styles.icon}>delete</i>
                 Delete
@@ -694,6 +774,11 @@ class EditDeck extends Component {
             </div>
           </div>
           <div className="row mt-5">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
+              <h2>Settings</h2>
+            </div>
+          </div>
+          <div className="row mt-2">
             <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2 d-flex align-items-end">
               <div className="checkbox mr-3">
                 <label>
@@ -769,6 +854,31 @@ class EditDeck extends Component {
             </div>
           </div>
           )}
+          <div className="row mt-5">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
+              <h2>Tools</h2>
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-xl-11 col-md-10 offset-xl-1 offset-md-2">
+              <button
+                className="btn btn-outline-primary mr-2"
+                type="button"
+                data-toggle="modal"
+                data-target="#deleteDuplicatesConfirmationModal"
+              >
+                Delete Duplicate Questions
+              </button>
+              <button
+                className="btn btn-outline-primary mr-2"
+                type="button"
+                data-toggle="modal"
+                data-target="#deleteMissingAnswersConfirmationModal"
+              >
+                Delete Missing Answers
+              </button>
+            </div>
+          </div>
           <div className="row mt-5">
             <div className="col-12">
               <h2>Pro Tips</h2>
