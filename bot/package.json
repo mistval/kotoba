@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
-    "@google-cloud/logging-bunyan": "^4.2.2",
+    "@google-cloud/logging-bunyan": "5.1.0",
     "axios": "1.6.0",
     "bunyan": "1.8.12",
     "canvas": "^2.11.2",
@@ -37,7 +37,7 @@
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
     "moment": "2.29.4",
-    "monochrome-bot": "^3.0.0-alpha.60",
+    "monochrome-bot": "3.0.0-alpha.60",
     "parse5": "5.1.0",
     "unofficial-jisho-api": "^2.3.2"
   },
