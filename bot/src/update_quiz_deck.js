@@ -3,15 +3,17 @@ const ResourceDatabase = require('kotoba-node-common/resources_database/resource
 const { default: axios } = require('axios');
 
 async function main() {
-  const deckUrl = process.argv[2];
+  const deckUrlString = process.argv[2];
 
-  if (!deckUrl) {
+  if (!deckUrlString) {
     console.warn('No deck URL argument provided');
     process.exit(2);
   }
 
-  const deckName = deckUrl.substr(deckUrl.lastIndexOf('/') + 1).replace('.json', '');
-  const deck = (await axios.get(deckUrl)).data;
+  const deckUrl = new URL(deckUrlString);
+  const deckUrlPath = deckUrl.pathname;
+  const deckName = deckUrlPath.substring(deckUrlPath.lastIndexOf('/') + 1).replace('.json', '');
+  const deck = (await axios.get(deckUrlString)).data;
 
   const resourceDatabasePath = path.join(__dirname, '..', 'generated', 'resources.dat');
   const resourcesDatabase = new ResourceDatabase();
