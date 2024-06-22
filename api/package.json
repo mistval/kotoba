@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@google-cloud/error-reporting": "2.0.4",
-    "@google-cloud/logging": "10.5.0",
+    "@google-cloud/logging": "^11.1.0",
     "bluebird": "3.7.2",
     "canvas": "^2.11.2",
     "connect-mongo": "3.2.0",
