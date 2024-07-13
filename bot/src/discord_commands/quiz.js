@@ -1739,16 +1739,6 @@ async function getCombinedAliases(msg, monochrome) {
   return serverAliases.concat(userAliases);
 }
 
-/*
-Only server admin can add server alias
-Only server admin can delete server alias
-Setting an alias interactively as a normal user, does not prompt for scope
-Setting an alias non-interactively as a normal user, ignores "server" and saves as user alias
-Test on all the moeway commands
-Test short-circuiting to any stage (include 1, 2, 3, 4 tokens) (test with non-admin user too)
-Make sure server aliases take precedence over user ones
-*/
-
 async function handleAliasCommand(
   monochrome,
   msg,

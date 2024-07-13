@@ -95,6 +95,11 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
+  'Aliases',
+  (<p>You can save aliases for quiz commands that you use often. For example if you like to do <span className="example">k!quiz N1(1-100) font=5</span> you can save that as an alias named <span className="example">myquiz</span> and then you can just do <span className="example">k!quiz myquiz</span>. Say <span className="example">k!quiz alias</span> to add or delete aliases.</p>),
+));
+
+manualSections.push(new ManualSection(
   'Disabling Randomization',
   (<p>If you want to disable randomization of question order, you can use the <span className="example">noshuffle</span> option. For example <span className="example">k!quiz n1 noshuffle</span>.</p>),
 ));
