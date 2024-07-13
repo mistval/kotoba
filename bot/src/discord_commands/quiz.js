@@ -28,11 +28,13 @@ const trimEmbed = require('./../common/util/trim_embed.js');
 const AudioConnectionManager = require('./../discord/audio_connection_manager.js');
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
+const escapeStringRegexp = require('escape-string-regexp');
 const MAX_APPEARANCE_WEIGHT = require('kotoba-common').quizLimits.appearanceWeight[1];
 
 const timingPresetsArr = Object.values(timingPresets);
 
 const MAXIMUM_UNANSWERED_QUESTIONS_DISPLAYED = 20;
+const MAX_ALIASES = 20;
 const MAX_INTERMEDIATE_CORRECT_ANSWERS_FIELD_LENGTH = 275;
 const MASTERY_NAME = 'conquest';
 const CONQUEST_NAME = 'inferno';
@@ -1719,6 +1721,308 @@ async function autoCompleteSearch(option) {
   });
 }
 
+async function getAliases(msg, monochrome) {
+  const persistence = monochrome.getPersistence();
+  const [serverAliasesData, userAliasesData] = await Promise.all([
+    persistence.getDataForServer(msg.channel.guild?.id ?? msg.channel.id),
+    persistence.getDataForUser(msg.author.id),
+  ]);
+
+  return {
+    serverAliases: serverAliasesData.quizAliases ?? [],
+    userAliases: userAliasesData.quizAliases ?? [],
+  };
+}
+
+async function getCombinedAliases(msg, monochrome) {
+  const { serverAliases, userAliases } = await getAliases(msg, monochrome);
+  return serverAliases.concat(userAliases);
+}
+
+/*
+Only server admin can add server alias
+Only server admin can delete server alias
+Setting an alias interactively as a normal user, does not prompt for scope
+Setting an alias non-interactively as a normal user, ignores "server" and saves as user alias
+Test on all the moeway commands
+Test short-circuiting to any stage (include 1, 2, 3, 4 tokens) (test with non-admin user too)
+Make sure server aliases take precedence over user ones
+*/
+
+async function handleAliasCommand(
+  monochrome,
+  msg,
+  tokens,
+) {
+  async function doPrompt(
+    title,
+    description,
+    isAcceptableInput,
+    acceptableInputDescription,
+    fields,
+    footerText,
+  ) {
+    let input;
+
+    while (true) {
+      try {
+        await msg.channel.createMessage(trimEmbed({
+          embeds: [{
+            color: constants.EMBED_NEUTRAL_COLOR,
+            title,
+            description,
+            fields,
+            footer: footerText ? {
+              icon_url: constants.FOOTER_ICON_URI,
+              text: footerText,
+            } : undefined
+          }],
+        }));
+    
+        input = await monochrome.waitForMessage(
+          120000,
+          (c) => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
+        );
+    
+        const inputLower = input.content.toLowerCase().trim();
+
+        if (inputLower === 'cancel') {
+          await msg.channel.createMessage({
+            embeds: [{
+              color: constants.EMBED_WRONG_COLOR,
+              title: 'The operation has been canceled.',
+            }],
+          });
+
+          return undefined;
+        }
+
+        if (isAcceptableInput(inputLower)) {
+          return inputLower;
+        }
+  
+        await msg.channel.createMessage({
+          embeds: [{
+            color: constants.EMBED_WRONG_COLOR,
+            title: 'Invalid input',
+            description: acceptableInputDescription,
+          }],
+        });
+      } catch (err) {
+        if (err.message === 'WAITER TIMEOUT') {
+          await msg.channel.createMessage(`Time's up. The alias menu has been closed.`);
+          return;
+        }
+
+        throw err;
+      }
+    }
+  }
+
+  const serverId = msg.channel.guild?.id ?? msg.channel.id;
+
+  let aliasOperation = tokens[0]?.toLowerCase();
+  let aliasName = tokens[1]?.toLowerCase();
+  let aliasScope;
+  let aliasValue;
+
+  if (aliasOperation && aliasName) {
+    const thirdToken = tokens[2];
+
+    if (thirdToken === 'server' || thirdToken === 'self') {
+      aliasScope = thirdToken;
+      aliasValue = tokens.slice(3).join(' ');
+    } else if (thirdToken) {
+      aliasScope = 'self';
+      aliasValue = tokens.slice(2).join(' ');;
+    }
+  }
+
+  
+  const persistence = monochrome.getPersistence();
+  const { serverAliases, userAliases } = await getAliases(msg, monochrome);
+
+  aliasOperation ||= await doPrompt(
+    'Quiz Aliases',
+    'Say \`add\` to add a new alias (or overwrite an existing one). Say \`delete\` to delete an existing alias. Say \`cancel\` to cancel.',
+    (input) => input === 'add' || input === 'delete',
+    'Please say `add`, `delete` or `cancel`.',
+    [{
+      name: 'Active Aliases in this Server',
+      value: serverAliases.length ? serverAliases.map(a => `* \`${a.name}\` → \`${a.value}\``).join('\n') : 'None',
+      inline: false,
+    }, {
+      name: 'Your Active Aliases',
+      value: userAliases.length ? userAliases.map(a => `* \`${a.name}\` → \`${a.value}\``).join('\n') : 'None',
+      inline: false,
+    }]
+  );
+
+  if (!aliasOperation) {
+    return;
+  }
+
+  if (!msg.authorIsServerAdmin) {
+    aliasScope = 'self';
+  }
+
+  if (aliasOperation === 'add') {
+    aliasName ||= await doPrompt(
+      'Quiz Aliases',
+      'What would you like to name the alias? For example `myquiz1`, `myquiz2`, etc.',
+      (input) => /^[a-z][a-z0-9]+$/.test(input) && input !== 'alias',
+      'The alias name must be alphanumeric and must start with a letter. It also cannot be `alias`.',
+    );
+  
+    if (!aliasName) {
+      return;
+    }
+
+    aliasScope ||= await doPrompt(
+      'Quiz Aliases',
+      'Where should the alias apply? Say `server` to make it apply to the server, or `self` to make it apply only to you.',
+      (input) => input === 'server' || input === 'self',
+      'Please say `server`, `self`, or cancel.',
+    );
+  
+    if (!aliasScope) {
+      return;
+    }
+  
+    aliasValue ||= await doPrompt(
+      'Quiz Aliases',
+      'What quiz command would you like the alias to map to? For example `N4+N3 font=3 size=60`',
+      () => true,
+      'No restrictions.',
+    );
+
+    if (!aliasValue) {
+      return;
+    }
+
+    if (aliasScope === 'server') {
+      if (serverAliases.length >= MAX_ALIASES) {
+        return msg.channel.createMessage({
+          embeds: [{
+            color: constants.EMBED_WRONG_COLOR,
+            title: 'Alias limit reached',
+            description: `The server has reached the maximum number of aliases (${MAX_ALIASES}).`,
+          }],
+        });
+      }
+
+      await persistence.editDataForServer(serverId, (data) => {
+        data.quizAliases ||= [];
+        const matchingAlias = data.quizAliases.find(a => a.name === aliasName);
+        if (matchingAlias) {
+          matchingAlias.value = aliasValue;
+          return data;
+        }
+
+        data.quizAliases.push({ name: aliasName, value: aliasValue });
+        return data;
+      });
+    } else {
+      if (userAliases.length >= MAX_ALIASES) {
+        return msg.channel.createMessage({
+          embeds: [{
+            color: constants.EMBED_WRONG_COLOR,
+            title: 'Alias limit reached',
+            description: `You have reached the maximum number of aliases (${MAX_ALIASES}).`,
+          }],
+        });
+      }
+
+      await persistence.editDataForUser(msg.author.id, (data) => {
+        data.quizAliases ||= [];
+        const matchingAlias = data.quizAliases.find(a => a.name === aliasName);
+        if (matchingAlias) {
+          matchingAlias.value = aliasValue;
+          return data;
+        }
+
+        data.quizAliases.push({ name: aliasName, value: aliasValue });
+        return data;
+      });
+    }
+
+    return msg.channel.createMessage({
+      embeds: [{
+        color: constants.EMBED_CORRECT_COLOR,
+        title: 'Alias added',
+        description: `The alias **${aliasName}** has been added. Say \`${msg.prefix}quiz ${aliasName}\` to try it.`,
+      }],
+    });
+  } else if (aliasOperation === 'delete') {
+    const deletableAliases = msg.authorIsServerAdmin ? serverAliases.concat(userAliases) : userAliases;
+
+    if (deletableAliases.length === 0) {
+      return msg.channel.createMessage({
+        embeds: [{
+          color: constants.EMBED_NEUTRAL_COLOR,
+          title: 'Quiz Aliases',
+          description: `There aren't any aliases that you can delete.`,
+        }],
+      }); 
+    }
+
+    aliasName ||= await doPrompt(
+      'Quiz Aliases',
+      'Which alias would you like to delete?',
+      (input) => deletableAliases.some(a => a.name === input),
+      `Cannot delete that alias. The aliases you can delete are: ${deletableAliases.map(a => `\`${a.name}\``).join(', ') || '`None`'}. You can also say \`cancel\` to cancel.`,
+      [{
+        name: 'Deletable Aliases',
+        value: deletableAliases.length ? deletableAliases.map(a => `\`${a.name}\` (\`${a.value}\`)`).join('\n') : '`None`',
+      }],
+      `Say the name of the alias to delete. For example: ${deletableAliases[0].name}`
+    );
+  
+    if (!aliasName) {
+      return;
+    }
+
+    if (msg.authorIsServerAdmin) {
+      await persistence.editDataForServer(serverId, (data) => {
+        return {
+          ...data,
+          quizAliases: data.quizAliases?.filter(a => a.name !== aliasName) ?? [],
+        };
+      });
+    }
+
+    await persistence.editDataForUser(msg.author.id, (data) => {
+      return {
+        ...data,
+        quizAliases: data.quizAliases?.filter(a => a.name !== aliasName) ?? [],
+      };
+    });
+
+    return msg.channel.createMessage({
+      embeds: [{
+        color: constants.EMBED_CORRECT_COLOR,
+        title: 'Alias deleted',
+        description: `The alias **${aliasName}** has been deleted.`,
+      }],
+    });
+  } else if (aliasOperation) {
+    assert.fail('Invalid alias operation');
+  }
+}
+
+function normalizeCommandString(commandString) {
+  return commandString
+        .replace(/\s+/g, ' ')
+        .replace(/ *\+ */g, '+')
+        .replace(/ *= */g, '=')
+        .replace(/ *- */g, '-')
+        .replace(/ *\(/g, '(')
+        .replace(/\( +/g, '(')
+        .replace(/ +\)/g, ')')
+        .replace(/, +/g, ',')
+        .trim().toLowerCase();
+}
+
 module.exports = {
   commandAliases: ['quiz', 'q'],
   canBeChannelRestricted: true,
@@ -1798,32 +2102,34 @@ module.exports = {
   },
   attachIsServerAdmin: true,
   async action(bot, msg, suffix, monochrome, rawServerSettings) {
-    const cleanSuffix = substituteDeckArguments(
-      suffix
-        .replace(/\s+/g, ' ')
-        .replace(/ *\+ */g, '+')
-        .replace(/ *= */g, '=')
-        .replace(/ *- */g, '-')
-        .replace(/ *\(/g, '(')
-        .replace(/\( +/g, '(')
-        .replace(/ +\)/g, ')')
-        .replace(/, +/g, ',')
-        .trim(),
-    );
+    let commandString = normalizeCommandString(suffix);
+    if (commandString.startsWith('alias ') || commandString === 'alias') {
+      return handleAliasCommand(monochrome, msg, commandString.split(' ').slice(1));
+    }
 
-    const cleanSuffixTokens = cleanSuffix.split(' ');
+    const aliases = await getCombinedAliases(msg, monochrome);
+
+    for (const alias of aliases) {
+      const aliasRegex = new RegExp(`\\b${escapeStringRegexp(alias.name)}\\b`, 'g');
+      if (aliasRegex.test(commandString)) {
+        commandString = commandString.replace(aliasRegex, normalizeCommandString(alias.value));
+        break;
+      }
+    }
+
+    commandString = substituteDeckArguments(commandString);
+
+    const cleanSuffixTokens = commandString.split(' ');
 
     // Save operation
-    const isSave = cleanSuffixTokens[0]?.toLowerCase() === 'save';
+    const isSave = cleanSuffixTokens[0] === 'save';
     if (isSave) {
       const saveName = cleanSuffixTokens.slice(1).join(' ') || undefined;
       return quizManager.saveQuiz(msg.channel.id, msg.author.id, saveName);
     }
 
-    const cleanSuffixLowercase = cleanSuffix.toLowerCase();
-
     const serverSettings = getServerSettings(rawServerSettings);
-    const fontArgParseResult = fontHelper.parseFontArgs(cleanSuffixLowercase);
+    const fontArgParseResult = fontHelper.parseFontArgs(commandString);
 
     if (fontArgParseResult.errorDescriptionShort) {
       return throwPublicErrorFatal(
