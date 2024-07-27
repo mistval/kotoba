@@ -1,7 +1,7 @@
 const fs = require('fs');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { createTunnel } = require('tunnel-ssh');
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies,import/no-unresolved
 const { MongoClient } = require('mongodb');
 
 async function doUpdateMany(collection, filter, update) {

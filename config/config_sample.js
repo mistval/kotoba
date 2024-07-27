@@ -18,6 +18,7 @@ module.exports = {
 
     hispadicApiUri: '', // OPTIONAL but hispadic command won't work without it
     dynamicDecksUrl: '', // OPTIONAL if specified then deck_list.json will be (lazily) fetched from this URL instead of using the default deck_list.json
+    botWebClientBaseUri: 'https://kotobaweb.com', // If you're going to run kotobaweb, put the base URI here
   },
 
   // Required for running KotobaWeb.com API (can be ignored if you're only running the bot)

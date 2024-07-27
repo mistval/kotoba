@@ -1,4 +1,5 @@
 const { FulfillmentError, Permissions, PaginatedMessage } = require('monochrome-bot');
+const kotobaWebBaseUri = require('../../../config/config.js').bot.botWebClientBaseUri;
 const constants = require('../common/constants.js');
 
 // Configuration start
@@ -6,7 +7,7 @@ const constants = require('../common/constants.js');
 const MAX_COMMANDS_PER_PAGE = 8;
 const EMBED_COLOR = constants.EMBED_NEUTRAL_COLOR;
 const ALIASES = ['help', 'h'];
-const WEB_COMMANDS_URI = 'https://kotobaweb.com/bot'; // If you have commands documentation on the web
+const WEB_COMMANDS_URI = `${kotobaWebBaseUri}/bot`; // If you have commands documentation on the web
 const EMBED_TITLE = 'Kotoba';
 const EMBED_ICON_URI = constants.FOOTER_ICON_URI;
 
@@ -36,7 +37,7 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
 
 const linksField = {
   name: 'Links',
-  value: '[Support Server](https://discord.gg/S92qCjbNHt) | [Web](https://kotobaweb.com/bot) | [GitHub](https://github.com/mistval/kotoba)',
+  value: `[Support Server](https://discord.gg/S92qCjbNHt) | [Web](${kotobaWebBaseUri}/bot) | [GitHub](https://github.com/mistval/kotoba)`,
 };
 
 // Configuration end

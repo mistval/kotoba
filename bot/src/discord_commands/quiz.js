@@ -1,4 +1,5 @@
 const assert = require('assert');
+const kotobaWebBaseUri = require('./../../../config/config.js').bot.kotobaWebBaseUri;
 const state = require('./../common/static_state.js');
 const Cache = require('kotoba-node-common').cache;
 const globals = require('./../common/globals.js');
@@ -304,7 +305,7 @@ const afterQuizMessages = [
     embeds: [{
       title: 'Quiz Command Builder',
       color: constants.EMBED_NEUTRAL_COLOR,
-      description: 'For help configuring a quiz exactly how you want, try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) or check my [manual](https://kotobaweb.com/bot/quiz).',
+      description: `For help configuring a quiz exactly how you want, try my [quiz command builder](${kotobaWebBaseUri}/bot/quizbuilder) or check my [manual](${kotobaWebBaseUri}/bot/quiz).`,
     }],
   },
 ];
@@ -696,7 +697,7 @@ class DiscordMessageSender {
   }
 
   notifySaveFailedTooManyQuestions(maxQuestions) {
-    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed(`Can't save because there are too many questions left! You can only save up to ${maxQuestions} questions. If you want to save with a large deck, you can use the [range command](https://kotobaweb.com/bot/quiz#Question%20Range) to take a smaller slice of the deck. For example **k!quiz n1(1-1000)** to only use the first 1000 questions.`));
+    return this.commanderMessage.channel.createMessage(createSaveFailedEmbed(`Can't save because there are too many questions left! You can only save up to ${maxQuestions} questions. If you want to save with a large deck, you can use the [range command](${kotobaWebBaseUri}/bot/quiz#Question%20Range) to take a smaller slice of the deck. For example **k!quiz n1(1-1000)** to only use the first 1000 questions.`));
   }
 
   closeAudioConnection() {
@@ -1282,7 +1283,7 @@ function showSettingsHelp(msg) {
 const helpLongDescription = `
 This is advanced help. To see basic help and available quiz decks, say **<prefix>quiz**.
 
-There is more than can fit in this message. To see more details, [check out my web manual](https://kotobaweb.com/bot/quiz) and [quiz command builder](https://kotobaweb.com/bot/quizbuilder).
+There is more than can fit in this message. To see more details, [check out my web manual](${kotobaWebBaseUri}/bot/quiz) and [quiz command builder](${kotobaWebBaseUri}/bot/quizbuilder).
 
 - **Score limit**: To set the score limit, specify a number after the deck selection. For example: **<prefix>quiz N4 30**.
 - **Answer time limit**: Use the **atl=** parameter to specify an answer time limit. For example: **<prefix>quiz N4 atl=20**.
@@ -1394,7 +1395,7 @@ function verifyValueIsInRange(settingName, settingAbbreviation, min, max, value)
     const publicMessage = {
       embeds: [{
         title: 'Setting validation error',
-        description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**. Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
+        description: `Invalid value for ${settingName} (${settingAbbreviation}). Please provide a value between ${min} and ${max}. For example **${settingAbbreviation}=${min}**. Try my [quiz command builder](${kotobaWebBaseUri}/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
       }],
     };
@@ -1549,7 +1550,7 @@ function consumeScoreLimitToken(commandTokens) {
     const publicMessage = {
       embeds: [{
         title: 'Setting validation error',
-        description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s). Try my [quiz command builder](https://kotobaweb.com/bot/quizbuilder) if you need help.`,
+        description: `**${scoreLimitStr}** is not a valid score limit. Please provide a numeric score limit after the deck name(s). Try my [quiz command builder](${kotobaWebBaseUri}/bot/quizbuilder) if you need help.`,
         color: constants.EMBED_WRONG_COLOR,
       }],
     };

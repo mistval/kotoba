@@ -28,7 +28,7 @@ module.exports.createContent = async function(prefix) {
   return {
     embeds: [{
       title: 'Quiz',
-      description: `Say **${prefix}quiz deckname** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. For advanced help, say **${prefix}quiz help** or [visit me on the web](https://kotobaweb.com/bot/quiz).`,
+      description: `Say **${prefix}quiz deckname** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. For advanced help, say **${prefix}quiz help** or [visit me on the web](${config.bot.botWebClientBaseUri}/bot/quiz).`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: decks.mainDecks.map(field => ({ name: field.name, value: field.value.replace(/<prefix>/g, prefix) })),
       footer: {
