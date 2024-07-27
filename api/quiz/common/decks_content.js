@@ -20,7 +20,7 @@ const categoryFields = [
 
 module.exports.createContent = function(prefix) {
   return {
-    embed: {
+    embeds: [{
       title: 'Quiz',
       description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. [Visit me on the web](${kotobaWebBaseUri}/quiz.html) to see advanced options and settings that you can use.`,
       color: constants.EMBED_NEUTRAL_COLOR,
@@ -29,7 +29,7 @@ module.exports.createContent = function(prefix) {
         icon_url: constants.FOOTER_ICON_URI,
         text: `You can mix any decks by using the + symbol. For example: ${prefix}quiz N5+N4+N3`,
       },
-    },
+    }],
   };
 };
 
@@ -43,11 +43,11 @@ module.exports.getHelpForCategory = function(userInput) {
         examples += '\nk!quiz ' + deckName;
       }
       let content = {
-        embed: {
+        embeds: [{
           title: categoryField.name,
           description: examples,
           color: constants.EMBED_NEUTRAL_COLOR,
-        },
+        }],
       };
 
       return content;
