@@ -83,7 +83,7 @@ async function voteForDiscordUser(discordUserId, deckUniqueId, vote) {
   const updateInfo = await CustomDeckVoteModel.findOneAndUpdate(
     { voter: user._id, deck: deck._id },
     { vote },
-    { upsert: true, rawResult: true },
+    { upsert: true, includeResultMetadata: true },
   );
 
   let scoreChange = 0;
