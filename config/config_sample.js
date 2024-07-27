@@ -2,7 +2,7 @@ module.exports = {
 
   // Required for running Kotoba Discord bot
   bot: {
-    botToken: 'your bot token', // REQUIRED
+    botToken: 'Bot <your bot token>', // REQUIRED
     botAdminIds: ['your Discord user ID'], // OPTIONAL
 
     // API keys for services used by the bot.
@@ -18,6 +18,7 @@ module.exports = {
 
     hispadicApiUri: '', // OPTIONAL but hispadic command won't work without it
     dynamicDecksUrl: '', // OPTIONAL if specified then deck_list.json will be (lazily) fetched from this URL instead of using the default deck_list.json
+    botWebClientBaseUri: 'https://kotobaweb.com', // If you're going to run kotobaweb, put the base URI here
   },
 
   // Required for running KotobaWeb.com API (can be ignored if you're only running the bot)

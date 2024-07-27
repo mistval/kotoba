@@ -1,6 +1,7 @@
 const dbConnection = require('kotoba-node-common').database.connection;
 const GameReportModel = require('kotoba-node-common').models.createGameReportModel(dbConnection);
 const globals = require('./../globals.js');
+const kotobaWebBaseUri = require('./../../../../config/config.js').bot.botWebClientBaseUri;
 const updateDbFromUser = require('../../discord/db_helpers/update_from_user.js');
 const updateDbFromGuild = require('../../discord/db_helpers/update_from_guild.js');
 const { safeSetTimeout } = require('kotoba-common').safeTimers;
@@ -188,7 +189,7 @@ async function processPendingReportForLocation(channel) {
     });
 
     await reportModel.save();
-    return `https://kotobaweb.com/dashboard/game_reports/${reportModel._id}`;
+    return `${kotobaWebBaseUri}/dashboard/game_reports/${reportModel._id}`;
   } catch (err) {
     globals.logger.error({
       event: 'ERROR STOPPING AND FINISHING REPORT',

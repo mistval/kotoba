@@ -61,6 +61,6 @@ module.exports = {
       );
     }
 
-    return msg.channel.createMessage('', { name: 'furigana.png', file: pngData }, msg);
+    return msg.channel.createMessage({ attachments: [{ filename: 'furigana.png', file: pngData }] }, undefined, msg);
   },
 };

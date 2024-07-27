@@ -1,4 +1,5 @@
 const globals = require('./../globals.js');
+const kotobaWebBaseUri = require('./../../../../config/config.js').bot.botWebClientBaseUri;
 const path = require('path');
 const fs = require('fs');
 const { CUSTOM_DECK_DIR } = require('kotoba-node-common').constants;
@@ -165,7 +166,7 @@ async function getCustomDeckFromDisk(deckInfo) {
 
   const viewFullDeckPart = deckRaw.hidden
     ? ''
-    : `[View full deck](https://kotobaweb.com/dashboard/decks/${deckRaw._id}). `;
+    : `[View full deck](${kotobaWebBaseUri}/dashboard/decks/${deckRaw._id}). `;
 
   const deck = {
     restrictToServers: deckRaw.restrictToServers,

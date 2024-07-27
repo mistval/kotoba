@@ -14,6 +14,11 @@ module.exports = {
       .map((guild) => `${guild.name} (${guild.memberCount} members)`)
       .join('\n');
 
-    return msg.channel.createMessage('Here is a list of servers that I\'m in.', { file: guildsString, name: 'servers.txt' });
+    const content = {
+      content: 'Here is a list of servers that I\'m in.',
+      attachments: [{ file: guildsString, filename: 'servers.txt' }],
+    };
+
+    return msg.channel.createMessage(content);
   },
 };

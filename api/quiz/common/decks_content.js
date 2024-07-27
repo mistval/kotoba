@@ -1,6 +1,7 @@
 'use strict'
 
 const constants = require('./../constants.js');
+const kotobaWebBaseUri = require('./../../../config/config.js').bot.botWebClientBaseUri;
 
 const categoryFields = [
   {'name': 'JLPT Kanji Reading Decks', value: 'N5 N4 N3 N2 N1'},
@@ -19,16 +20,16 @@ const categoryFields = [
 
 module.exports.createContent = function(prefix) {
   return {
-    embed: {
+    embeds: [{
       title: 'Quiz',
-      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. [Visit me on the web](http://kotobaweb.com/quiz.html) to see advanced options and settings that you can use.`,
+      description: `Say **${prefix}quiz <deck name>** to start a quiz (Example: **${prefix}quiz N5**). Say **${prefix}quiz stop** to stop a quiz. Say **nodelay** after the deck name for a lightning fast quiz, for example: **k!quiz N1 nodelay**. [Visit me on the web](${kotobaWebBaseUri}/quiz.html) to see advanced options and settings that you can use.`,
       color: constants.EMBED_NEUTRAL_COLOR,
       fields: categoryFields,
       footer: {
         icon_url: constants.FOOTER_ICON_URI,
         text: `You can mix any decks by using the + symbol. For example: ${prefix}quiz N5+N4+N3`,
       },
-    },
+    }],
   };
 };
 
@@ -42,11 +43,11 @@ module.exports.getHelpForCategory = function(userInput) {
         examples += '\nk!quiz ' + deckName;
       }
       let content = {
-        embed: {
+        embeds: [{
           title: categoryField.name,
           description: examples,
           color: constants.EMBED_NEUTRAL_COLOR,
-        },
+        }],
       };
 
       return content;

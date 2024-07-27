@@ -1,7 +1,7 @@
 const { erisVersion, Permissions } = require('monochrome-bot');
 const monochromeVersion = require('monochrome-bot/package.json').version;
 
-const erisVersionString = `Eris v${erisVersion}`;
+const erisVersionString = `Dysnomia v${erisVersion}`;
 const nameString = 'K33#5261';
 const otherDevsString = 'Alkhwarizm#7349, 💝 Amy 💝#0001, ernespa';
 
