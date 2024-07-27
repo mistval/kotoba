@@ -2,7 +2,7 @@ module.exports = {
 
   // Required for running Kotoba Discord bot
   bot: {
-    botToken: 'your bot token', // REQUIRED
+    botToken: 'Bot <your bot token>', // REQUIRED
     botAdminIds: ['your Discord user ID'], // OPTIONAL
 
     // API keys for services used by the bot.
