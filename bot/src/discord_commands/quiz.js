@@ -1,5 +1,5 @@
 const assert = require('assert');
-const kotobaWebBaseUri = require('./../../../config/config.js').bot.kotobaWebBaseUri;
+const kotobaWebBaseUri = require('./../../../config/config.js').bot.botWebClientBaseUri;
 const state = require('./../common/static_state.js');
 const Cache = require('kotoba-node-common').cache;
 const globals = require('./../common/globals.js');

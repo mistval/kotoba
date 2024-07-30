@@ -67,7 +67,7 @@ module.exports = {
   uniqueId: 'hispadic_search',
   cooldown: 3,
   shortDescription: 'Buscar Hispadic para resultados del diccionaro Español-Japonés.',
-  canBeChannelRestricted: false,
+  canBeChannelRestricted: true,
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
