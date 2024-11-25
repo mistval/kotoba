@@ -172,6 +172,7 @@ const hiraganaForRomaji = {
 
   wa: 'わ',
   wo: 'を',
+  xn: 'ん',
   nn: 'ん',
   n: 'ん',
   'n\'': 'ん',
