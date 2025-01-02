@@ -1,4 +1,4 @@
-FROM arm64v8/node:20.16.0 as reactBuilder
+FROM arm64v8/node:22.12.0 as reactBuilder
 
 WORKDIR /var
 COPY ./common ./common

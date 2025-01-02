@@ -24,7 +24,7 @@ After cloning the repo (recommend cloning with `--depth=1`), fill out [config/co
 
 ## Developing
 
-**Node v20 is recommended**
+**Node v22 is recommended**
 
 ### Discord bot
 
