@@ -1,7 +1,4 @@
-const {
-  Permissions,
-  PaginatedMessage,
-} = require('monochrome-bot');
+const { Permissions, PaginatedMessage } = require('monochrome-bot');
 const getPronounceInfo = require('../common/get_pronounce_info.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');
@@ -12,9 +9,11 @@ const smallKatakana = ['ァ', 'ィ', 'ゥ', 'ェ', 'ォ', 'ャ', 'ュ', 'ョ', '
 
 function createEmbedContent() {
   return {
-    embeds: [{
-      color: constants.EMBED_NEUTRAL_COLOR,
-    }],
+    embeds: [
+      {
+        color: constants.EMBED_NEUTRAL_COLOR,
+      },
+    ],
   };
 }
 
@@ -66,10 +65,39 @@ function createLHString(pronounceInfo) {
   return str;
 }
 
+function getPitchPattern(pronounceInfo) {
+  const alternatives = {
+    heio: '平板 / 尾高 \nHeiban / Odaka',
+    naka: '中高 \nNakadaka',
+    atama: '頭高 \nAtamadaka',
+  };
+  const pitch = pronounceInfo.pitchAccent; // 食べる -> たべる -> Low High Low -> [False, True, False]
+  if (!pitch[0]) {
+    delete alternatives.atama;
+    Object.entries(pitch).forEach(([index, element]) => {
+      const i = parseInt(index, 10);
+
+      if (i > 0 && !element) {
+        delete alternatives.heio;
+      } else if (i === pitch.length && !element) {
+        delete alternatives.naka;
+      }
+    });
+  } else {
+    delete alternatives.heio;
+    delete alternatives.naka;
+  }
+  return Object.values(alternatives)[0];
+}
+
 function addPitchField(fields, pronounceInfo) {
   if (pronounceInfo.hasPitchData && pronounceInfo.pitchAccent.length > 0) {
+    const pitchPattern = getPitchPattern(pronounceInfo);
     const { katakana } = pronounceInfo;
-    const underlinedKana = underlineStringAtTrueIndices(katakana, pronounceInfo.pitchAccent);
+    const underlinedKana = underlineStringAtTrueIndices(
+      katakana,
+      pronounceInfo.pitchAccent,
+    );
     const lhString = createLHString(pronounceInfo);
     const fieldValue = `${underlinedKana}\n ${lhString}`;
     fields.push({
@@ -77,22 +105,32 @@ function addPitchField(fields, pronounceInfo) {
       value: fieldValue,
       inline: true,
     });
+    fields.push({
+      name: 'Pattern',
+      value: pitchPattern,
+      inline: true,
+    });
   }
 }
-
 function addMutedSoundsField(fields, pronounceInfo) {
   if (pronounceInfo.hasPitchData && pronounceInfo.noPronounceIndices.length > 0) {
     const { katakana } = pronounceInfo;
     fields.push({
       name: 'Muted sounds',
-      value: underlineStringAtTrueIndices(katakana, pronounceInfo.noPronounceIndices),
+      value: underlineStringAtTrueIndices(
+        katakana,
+        pronounceInfo.noPronounceIndices,
+      ),
       inline: true,
     });
   }
 }
 
 function addNasalSoundsField(fields, pronounceInfo) {
-  if (pronounceInfo.hasPitchData && pronounceInfo.nasalPitchIndices.length > 0) {
+  if (
+    pronounceInfo.hasPitchData
+    && pronounceInfo.nasalPitchIndices.length > 0
+  ) {
     const { katakana } = pronounceInfo;
     fields.push({
       name: 'Nasal sounds',
@@ -105,8 +143,12 @@ function addNasalSoundsField(fields, pronounceInfo) {
 function addAudioClipsField(fields, forvoData) {
   if (forvoData && forvoData.found) {
     const { audioClips } = forvoData;
-    const audioClipsString = audioClips.slice(0, MAX_AUDIO_CLIPS)
-      .map((audioClip) => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`).join('\n');
+    const audioClipsString = audioClips
+      .slice(0, MAX_AUDIO_CLIPS)
+      .map(
+        (audioClip) => `:musical_note:  [**${audioClip.userName}**, ${audioClip.gender} from ${audioClip.country}](${audioClip.forvoUri})`,
+      )
+      .join('\n');
 
     fields.push({
       name: 'Audio Clips',
@@ -191,14 +233,18 @@ function createFoundResult(suffix, msg, pronounceInfo, logger) {
     logger,
   );
 
-  const chapters = [{
-    title: '',
-    maxPages: pronounceInfo.entries.length,
-    getPages: (i) => navigationDataSource.getPageFromPreparedData(undefined, i),
-  }];
+  const chapters = [
+    {
+      title: '',
+      maxPages: pronounceInfo.entries.length,
+      getPages: (i) => navigationDataSource.getPageFromPreparedData(undefined, i),
+    },
+  ];
 
   const interactiveMessageId = `pronounce_"${suffix}"`;
-  return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
+  return PaginatedMessage.sendAsMessageReply(msg, chapters, {
+    id: interactiveMessageId,
+  });
 }
 
 module.exports = {
@@ -206,7 +252,8 @@ module.exports = {
   canBeChannelRestricted: true,
   cooldown: 5,
   uniqueId: 'pronounce30294',
-  shortDescription: 'Look up information about how to pronounce a Japanese word.',
+  shortDescription:
+    'Look up information about how to pronounce a Japanese word.',
   usageExample: '<prefix>pronounce 瞬間',
   requiredBotPermissions: [
     Permissions.attachFiles,
@@ -215,17 +262,23 @@ module.exports = {
   ],
   interaction: {
     compatibilityMode: true,
-    options: [{
-      name: 'word',
-      description: 'The word to search for',
-      type: 3,
-      required: true,
-    }],
+    options: [
+      {
+        name: 'word',
+        description: 'The word to search for',
+        type: 3,
+        required: true,
+      },
+    ],
   },
   async action(bot, msg, suffix, monochrome) {
     if (!suffix) {
       const { prefix } = msg;
-      return throwPublicErrorInfo('Pronounce', `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`, 'No suffix');
+      return throwPublicErrorInfo(
+        'Pronounce',
+        `Say **${prefix}pronounce [word]** to see pronunciation information for a word. For example: **${prefix}pronounce 瞬間**`,
+        'No suffix',
+      );
     }
 
     monochrome.updateUserFromREST(msg.author.id).catch(() => {});
