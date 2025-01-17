@@ -73,7 +73,7 @@ UserSchema.method('canCreateImageCards', async function(UserGlobalTotalScoresMod
     return true;
   }
 
-  const count = await UserGlobalTotalScoresModel.count(
+  const count = await UserGlobalTotalScoresModel.countDocuments(
     { userId: this.discordUser.id, score: { $gte: IMAGE_CARDS_SCORE_THRESHOLD } },
   );
 
