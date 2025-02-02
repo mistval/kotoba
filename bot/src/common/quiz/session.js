@@ -342,7 +342,7 @@ class SessionInformation {
   }
 
   recycleCurrentCard_() {
-    this.deckCollection_.recycleCard(this.getCurrentCard(), this.getGameMode());
+    this.deckCollection_.recycleCard(this.getCurrentCard(), this.getGameMode(), this.getSettings());
   }
 }
 

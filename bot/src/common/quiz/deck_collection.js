@@ -375,8 +375,8 @@ class DeckCollection {
     return -1;
   }
 
-  recycleCard(card, gameMode) {
-    const recycled = gameMode.recycleCard(card, this.indexSet[card.deckIndex], this.decks.length);
+  recycleCard(card, gameMode, settings) {
+    const recycled = gameMode.recycleCard(card, this.indexSet[card.deckIndex], this.decks.length, settings);
     if (!recycled) {
       // The previous card cache gets saved to disk if the user saves.
       // But we don't want to save all previously seen cards, that would

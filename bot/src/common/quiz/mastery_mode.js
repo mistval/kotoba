@@ -1,5 +1,3 @@
-const PERCENT_CORRECT_FOR_MASTERY = .76;
-
 const indexTopForStreakLength = {
   0: 16,
   1: 35,
@@ -39,8 +37,8 @@ function calculateIndexTop(streakLength) {
     || indexTopForStreakLength[indexTopForStreakLength.length - 1] * (streakLength - indexTopForStreakLength.length + 2);
 }
 
-function recycleCard(card, upcomingCardsIndexArray, numDecks) {
-  if (calculatePercentCorrect(card) >= PERCENT_CORRECT_FOR_MASTERY) {
+function recycleCard(card, upcomingCardsIndexArray, numDecks, settings) {
+  if (calculatePercentCorrect(card) >= settings.conquestModePercentCorrectThreshold) {
     return false;
   }
 
@@ -49,7 +47,7 @@ function recycleCard(card, upcomingCardsIndexArray, numDecks) {
 
   const arraySize = upcomingCardsIndexArray.length;
   const randomFactor = Math.random() * .40 + .60;
-  const newDistanceFromFront = Math.floor(indexTop * randomFactor / numDecks);
+  const newDistanceFromFront = Math.floor(indexTop * settings.conquestModeSpacingModifier * randomFactor / numDecks);
   let index = arraySize - 1 - newDistanceFromFront;
 
   if (index < 0) {

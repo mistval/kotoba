@@ -1126,6 +1126,8 @@ function createSettingsForLoad(serverSettings, inlineSettings) {
     fontColor: resolvedSettings.color,
     backgroundColor: resolvedSettings.bgColor,
     font: resolvedSettings.fontFamily,
+    conquestModeSpacingModifier: resolvedSettings.conquestModeSpacingModifier,
+    conquestModePercentCorrectThreshold: resolvedSettings.conquestModePercentCorrectThreshold / 100,
     serverSettings,
     inlineSettings,
   };
@@ -1157,6 +1159,8 @@ function createSettings(serverSettings, inlineSettings, gameMode) {
     font: resolvedSettings.fontFamily,
     maxMissedQuestions: resolvedSettings.maxMissedQuestions,
     shuffle: resolvedSettings.shuffle,
+    conquestModeSpacingModifier: resolvedSettings.conquestModeSpacingModifier,
+    conquestModePercentCorrectThreshold: resolvedSettings.conquestModePercentCorrectThreshold / 100,
     serverSettings,
     inlineSettings,
   };
@@ -1586,6 +1590,8 @@ function getServerSettings(rawServerSettings) {
     delayAfterUnansweredQuestion: rawServerSettings['quiz/japanese/new_question_delay_after_unanswered'],
     scoreLimit: rawServerSettings['quiz/japanese/score_limit'],
     unansweredQuestionLimit: rawServerSettings['quiz/japanese/unanswered_question_limit'],
+    conquestModePercentCorrectThreshold: rawServerSettings.quiz_conquest_mode_percent_correct_threshold,
+    conquestModeSpacingModifier: rawServerSettings.quiz_conquest_mode_spacing_modifier,
     maxMissedQuestions: rawServerSettings.quiz_max_missed_questions,
     shuffle: rawServerSettings.quiz_shuffle,
   };

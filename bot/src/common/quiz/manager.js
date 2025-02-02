@@ -717,6 +717,8 @@ class QuizManager {
       'quiz_background_color',
       'quiz_font_size',
       'quiz_font',
+      'quiz_conquest_mode_percent_correct_threshold',
+      'quiz_conquest_mode_spacing_modifier',
     ];
   }
 
