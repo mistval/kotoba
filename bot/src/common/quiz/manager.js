@@ -591,6 +591,12 @@ class WaitAction extends Action {
       this.fulfill_();
     }
   }
+
+  skip() {
+    if (this.fulfill_) {
+      this.fulfill_(this.nextAction_);
+    }
+  }
 }
 
 class SaveAction extends Action {
