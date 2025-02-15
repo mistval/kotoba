@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const axios = require('axios').create({ timeout: 10000 });
 const constants = require('../common/constants.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
@@ -70,6 +72,14 @@ module.exports = {
   canBeChannelRestricted: true,
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [{
       name: 'word',

@@ -1,4 +1,4 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const { EMBED_NEUTRAL_COLOR } = require('../common/constants.js');
 
 const shiritoriForeverHelper = require('../discord/shiritori_forever_helper');
@@ -43,6 +43,13 @@ module.exports = {
     Permissions.viewChannel,
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+    ],
     compatibilityMode: true,
     options: [],
   },

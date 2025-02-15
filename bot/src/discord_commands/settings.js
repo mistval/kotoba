@@ -1,4 +1,6 @@
-const { FulfillmentError, Permissions } = require('monochrome-bot');
+const {
+  FulfillmentError, Permissions, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 
 const Hook = require('../discord_message_processors/user_and_channel_hook.js');
 
@@ -780,6 +782,13 @@ module.exports = {
     Permissions.viewChannel,
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+    ],
     compatibilityMode: true,
     options: [],
   },

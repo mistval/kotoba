@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const jishoSearch = require('../discord/jisho_search.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
 
@@ -18,6 +20,14 @@ module.exports = {
     Permissions.sendMessages,
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [{
       name: 'word',

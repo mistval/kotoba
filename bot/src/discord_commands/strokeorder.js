@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createStrokeOrderNavigationChapter = require('../discord/create_stroke_order_search_navigation_chapter.js');
 
@@ -16,6 +18,14 @@ module.exports = {
     Permissions.sendMessages,
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [{
       name: 'kanji',

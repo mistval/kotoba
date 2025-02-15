@@ -1,4 +1,6 @@
-const { erisVersion, Permissions } = require('monochrome-bot');
+const {
+  erisVersion, Permissions, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const monochromeVersion = require('monochrome-bot/package.json').version;
 
 const erisVersionString = `Dysnomia v${erisVersion}`;
@@ -14,6 +16,13 @@ module.exports = {
   requiredBotPermissions: [Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+    ],
   },
   action(bot, msg) {
     return msg.channel.createMessage(`\`\`\`md

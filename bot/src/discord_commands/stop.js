@@ -1,4 +1,5 @@
 const shiritoriManager = require('kotoba-node-common').shiritori;
+const { ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const quizManager = require('../common/quiz/manager.js');
 
 module.exports = {
@@ -10,6 +11,13 @@ module.exports = {
   interaction: {
     compatibilityMode: true,
     options: [],
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+    ],
   },
   async action(bot, msg) {
     const locationId = msg.channel.id;

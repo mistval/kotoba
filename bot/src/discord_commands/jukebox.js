@@ -1,4 +1,6 @@
-const { FulfillmentError, Permissions } = require('monochrome-bot');
+const {
+  FulfillmentError, Permissions, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 
 const YoutubeApi = require('../common/youtube_api_utils.js');
 const retryPromise = require('../common/util/retry_promise.js');
@@ -16,6 +18,14 @@ module.exports = {
   longDescription: 'I will pick a song for you (probably Touhou or Vocaloid) and post a Youtube link. Songs are chosen from this playlist: https://www.youtube.com/watch?v=iyL_SXBlNIk&list=PL1oF0LpY0BK5BAWpSp55KT3TQVKierClZ. There are about 800 songs.',
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [],
   },

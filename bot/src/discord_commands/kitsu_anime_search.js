@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const createPagesForAnime = require('../discord/create_anime_search_navigation.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 
@@ -13,6 +15,14 @@ module.exports = {
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     options: [{
       name: 'title',
       description: 'The title of the anime to search for',

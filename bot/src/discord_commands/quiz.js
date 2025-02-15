@@ -4,7 +4,7 @@ const state = require('./../common/static_state.js');
 const Cache = require('kotoba-node-common').cache;
 const globals = require('./../common/globals.js');
 const sendStats = require('./../discord/quiz_stats.js');
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const { Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const quizReportManager = require('./../common/quiz/session_report_manager.js');
 const timingPresets = require('kotoba-common').quizTimeModifierPresets;
 const quizLimits = require('kotoba-common').quizLimits;
@@ -2041,6 +2041,13 @@ module.exports = {
   interaction: {
     description: 'Start a quiz',
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL
+    ],
     options: [
       {
       name: 'deck',

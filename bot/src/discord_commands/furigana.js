@@ -1,5 +1,5 @@
 const axios = require('axios').create({ timeout: 10000 });
-const { Permissions } = require('monochrome-bot');
+const { Permissions, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const { throwPublicErrorFatal, throwPublicErrorInfo } = require('../common/util/errors.js');
 
 const WORKER_HOST = process.env.WORKER_HOST || 'localhost';
@@ -18,6 +18,14 @@ module.exports = {
     'furigana_font',
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [{
       name: 'sentence',

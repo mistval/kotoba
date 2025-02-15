@@ -1,4 +1,6 @@
-const { FulfillmentError, Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  FulfillmentError, Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const kotobaWebBaseUri = require('../../../config/config.js').bot.botWebClientBaseUri;
 const constants = require('../common/constants.js');
 
@@ -226,6 +228,14 @@ module.exports = {
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   shortDescription: 'Show a list of commands or get advanced help for a specific command.',
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [{
       name: 'command',

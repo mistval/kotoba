@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const getPronounceInfo = require('../common/get_pronounce_info.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const constants = require('../common/constants.js');
@@ -261,6 +263,14 @@ module.exports = {
     Permissions.sendMessages,
   ],
   interaction: {
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     compatibilityMode: true,
     options: [
       {

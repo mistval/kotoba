@@ -1,4 +1,4 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const youreiSearch = require('../common/yourei_search.js');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 
@@ -13,6 +13,14 @@ module.exports = {
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     options: [{
       name: 'word',
       description: 'The word/phrase to search for',

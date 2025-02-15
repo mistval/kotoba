@@ -1,4 +1,4 @@
-const { Permissions } = require('monochrome-bot');
+const { Permissions, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const showRandomWord = require('../discord/show_random_word.js');
 
 module.exports = {
@@ -13,6 +13,14 @@ module.exports = {
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     options: [{
       name: 'level',
       description: 'A JLPT or Kanken level to choose a random word from.',

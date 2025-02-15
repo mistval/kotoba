@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createKanjiDataSource = require('../discord/create_kanji_search_data_source.js');
 
@@ -17,6 +19,14 @@ module.exports = {
   ],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     options: [{
       name: 'kanji',
       description: 'The kanji to search for',

@@ -1,4 +1,6 @@
-const { Permissions, PaginatedMessage } = require('monochrome-bot');
+const {
+  Permissions, PaginatedMessage, ApplicationContexts, ApplicationIntegrationTypes,
+} = require('monochrome-bot');
 const { throwPublicErrorInfo } = require('../common/util/errors.js');
 const createExampleSearchPages = require('../discord/create_example_search_pages.js');
 
@@ -11,6 +13,14 @@ module.exports = {
   requiredBotPermissions: [Permissions.embedLinks, Permissions.sendMessages],
   interaction: {
     compatibilityMode: true,
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+      ApplicationContexts.PRIVATE_CHANNEL],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+      ApplicationIntegrationTypes.USER_INSTALL,
+    ],
     options: [{
       name: 'word',
       description: 'The word/phrase to search for',

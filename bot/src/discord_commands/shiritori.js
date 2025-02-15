@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { Permissions } = require('monochrome-bot');
+const { Permissions, ApplicationContexts, ApplicationIntegrationTypes } = require('monochrome-bot');
 const shiritoriManager = require('kotoba-node-common').shiritori;
 const constants = require('../common/constants.js');
 const errors = require('../common/util/errors.js');
@@ -376,6 +376,13 @@ module.exports = {
   interaction: {
     compatibilityMode: true,
     options: [],
+    contexts: [
+      ApplicationContexts.GUILD,
+      ApplicationContexts.BOT_DM,
+    ],
+    integrationTypes: [
+      ApplicationIntegrationTypes.GUILD_INSTALL,
+    ],
   },
   async action(bot, msg, suffix, monochrome, serverSettings) {
     const locationId = msg.channel.id;
