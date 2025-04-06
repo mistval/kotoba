@@ -63,7 +63,7 @@ if (hasGCloudKey) {
         const logInfo = {
           method: req.method,
           route: req.originalUrl,
-          ip: req.ip,
+          ip: req.headers['cf-connecting-ip'] ?? req.ip,
           statusCode: res.statusCode,
           startTime,
           finishTime,
