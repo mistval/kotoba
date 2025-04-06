@@ -19,8 +19,7 @@ docker compose exec -T mongo_readwrite mongodump \
   --db=kotoba \
   --excludeCollection=gamereports \
   --excludeCollection=userreviewdecks \
-  --excludeCollection=locationreviewdecks \
-  --excludeCollection=cachedkvps
+  --excludeCollection=locationreviewdecks
 
 docker compose exec -T mongo_readwrite cat ./mongo_dump.archive > $kotoba_directory/backup/backup_out/mongo_dump.archive
 
