@@ -16,7 +16,7 @@ const quizManager = require('./../common/quiz/manager.js');
 const createHelpContent = require('./../common/quiz/decks_content.js').createContent;
 const { getCategoryHelp, defaultDeckOptionsForInteraction } = require('./../common/quiz/decks_content.js');
 const constants = require('./../common/constants.js');
-const { FulfillmentError } = require('monochrome-bot');
+const { FulfillmentError, InteractiveMessage, Button, ComponentGroup } = require('monochrome-bot');
 const NormalGameMode = require('./../common/quiz/normal_mode.js');
 const MasteryGameMode = require('./../common/quiz/mastery_mode.js');
 const ConquestGameMode = require('./../common/quiz/conquest_mode.js');
@@ -30,6 +30,10 @@ const AudioConnectionManager = require('./../discord/audio_connection_manager.js
 const { fontHelper } = require('./../common/globals.js');
 const { throwPublicErrorFatal } = require('./../common/util/errors.js');
 const escapeStringRegexp = require('escape-string-regexp');
+const createKanjiDataSource = require('../discord/create_kanji_search_data_source.js');
+const createExampleSearchPages = require('../discord/create_example_search_pages.js');
+const { sendExamplesAsStandaloneMessage: triggerYoureiExampleLookup } = require('../common/yourei_search.js')
+
 const MAX_APPEARANCE_WEIGHT = require('kotoba-common').quizLimits.appearanceWeight[1];
 
 const timingPresetsArr = Object.values(timingPresets);
@@ -467,6 +471,53 @@ function createCorrectPercentageField(card) {
   return undefined;
 }
 
+function createInteractiveQuizResponse(response, ownerId, question, channel, prefix) {
+  const interactiveMessage = new InteractiveMessage(ownerId, {
+    id: `quiz_response_${question}`
+  })
+  const buttonOptions = { style: 2 }
+  const components = ComponentGroup([
+    Button(
+      '🔎 Look Up Kanji',
+      async () => {
+        return await triggerKanjiLookup(question, ownerId, channel, prefix)
+      },
+      buttonOptions
+    ),
+    Button(
+      '📗 Jisho Examples',
+      async () => {
+        return await triggerJishoExampleLookup(question, ownerId, channel)
+      },
+      buttonOptions
+    ),
+    Button(
+      '📖 Yourei Examples',
+      async () => {
+        return await triggerYoureiExampleLookup(question, ownerId, channel)
+      },
+      buttonOptions
+    ),
+  ])
+  interactiveMessage.setEmbeds(response.embeds)
+  interactiveMessage.setComponents(components)
+  interactiveMessage.sendOrUpdate(channel)
+}
+
+async function triggerKanjiLookup(text, ownerId, channel, prefix) {
+  const dataSource = await createKanjiDataSource(text, '', prefix, false)
+  const navigationChapters = [{ title: '', getPages: (i) => dataSource.getPageFromPreparedData(undefined, i) }];
+  const paginatedMessageId = `jisho_kanji_"${text}"`;
+  PaginatedMessage.send(channel, ownerId, navigationChapters, { id: paginatedMessageId })
+}
+
+async function triggerJishoExampleLookup(text, ownerId, channel) {
+  const pages = await createExampleSearchPages(text);
+  const navigationChapters = [{ title: '', pages }];
+  const paginatedMessageId = `jisho_examples_"${text}"`;
+  PaginatedMessage.send(channel, ownerId, navigationChapters, { id: paginatedMessageId })
+}
+
 class DiscordMessageSender {
   constructor(bot, commanderMessage, monochrome) {
     this.commanderMessage = commanderMessage;
@@ -513,7 +564,7 @@ class DiscordMessageSender {
     return this.audioConnection.stopPlaying();
   }
 
-  async showWrongAnswer(card, skipped, hardcore) {
+  async showWrongAnswer(card, skipped, hardcore, quickSearchEnabled) {
     await this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
@@ -541,7 +592,11 @@ class DiscordMessageSender {
       }],
     };
     response = trimEmbed(response);
-    return this.commanderMessage.channel.createMessage(response);
+    const channel = this.commanderMessage.channel
+    if (quickSearchEnabled) {
+      return createInteractiveQuizResponse(response, this.commanderMessage.author.id, card.question, channel, this.commanderMessage.prefix)
+    }
+    return channel.createMessage(response);
   }
 
   async outputQuestionScorers(
@@ -551,6 +606,7 @@ class DiscordMessageSender {
     pointsForAnswer,
     scoreForUser,
     scoreLimit,
+    quickSearchEnabled
   ) {
     await this.stopAudio();
     const scorersListText = answerersInOrder.map(answerer => `<@${answerer}> (${scoreForUser[answerer].totalScore} points)`).join('\n');
@@ -592,6 +648,11 @@ class DiscordMessageSender {
 
     response = trimEmbed(response);
 
+    if (quickSearchEnabled) {
+      const { channel, prefix } = this.commanderMessage
+      const ownerId = this.commanderMessage.author.id
+      return createInteractiveQuizResponse(response, ownerId, card.question, channel, prefix)
+    }
     const newMessage = await this.commanderMessage.channel.createMessage(response);
     return newMessage && newMessage.id;
   }
@@ -1594,6 +1655,7 @@ function getServerSettings(rawServerSettings) {
     conquestModeSpacingModifier: rawServerSettings.quiz_conquest_mode_spacing_modifier,
     maxMissedQuestions: rawServerSettings.quiz_max_missed_questions,
     shuffle: rawServerSettings.quiz_shuffle,
+    quickSearchEnabled: rawServerSettings['quiz/japanese/quick_search_enabled']
   };
 }
 
@@ -1774,12 +1836,12 @@ async function handleAliasCommand(
             } : undefined
           }],
         }));
-    
+
         input = await monochrome.waitForMessage(
           120000,
           (c) => c.author.id === msg.author.id && c.channel.id === msg.channel.id,
         );
-    
+
         const inputLower = input.content.toLowerCase().trim();
 
         if (inputLower === 'cancel') {
@@ -1796,7 +1858,7 @@ async function handleAliasCommand(
         if (isAcceptableInput(inputLower)) {
           return inputLower;
         }
-  
+
         await msg.channel.createMessage({
           embeds: [{
             color: constants.EMBED_WRONG_COLOR,
@@ -1834,7 +1896,7 @@ async function handleAliasCommand(
     }
   }
 
-  
+
   const persistence = monochrome.getPersistence();
   const { serverAliases, userAliases } = await getAliases(msg, monochrome);
 
@@ -1869,7 +1931,7 @@ async function handleAliasCommand(
       (input) => /^[a-z][a-z0-9]+$/.test(input) && input !== 'alias',
       'The alias name must be alphanumeric and must start with a letter. It also cannot be `alias`.',
     );
-  
+
     if (!aliasName) {
       return;
     }
@@ -1880,11 +1942,11 @@ async function handleAliasCommand(
       (input) => input === 'server' || input === 'self',
       'Please say `server`, `self`, or cancel.',
     );
-  
+
     if (!aliasScope) {
       return;
     }
-  
+
     aliasValue ||= await doPrompt(
       'Quiz Aliases',
       'What quiz command would you like the alias to map to? For example `N4+N3 font=3 size=60`',
@@ -1959,7 +2021,7 @@ async function handleAliasCommand(
           title: 'Quiz Aliases',
           description: `There aren't any aliases that you can delete.`,
         }],
-      }); 
+      });
     }
 
     aliasName ||= await doPrompt(
@@ -1973,7 +2035,7 @@ async function handleAliasCommand(
       }],
       `Say the name of the alias to delete. For example: ${deletableAliases[0].name}`
     );
-  
+
     if (!aliasName) {
       return;
     }
@@ -2035,6 +2097,7 @@ module.exports = {
   requiredSettings: quizManager.getDesiredSettings().concat([
     'quiz/japanese/conquest_and_inferno_enabled',
     'quiz/japanese/internet_decks_enabled',
+    'quiz/japanese/quick_search_enabled',
     'quiz_max_missed_questions',
     'quiz_shuffle',
   ]),
@@ -2292,7 +2355,7 @@ module.exports = {
       settings,
       gameMode,
       isHardcore,
-      isNoRace,
+      isNoRace
     );
 
     // Check if deck can be used in this server

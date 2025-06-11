@@ -165,6 +165,24 @@ async function createNavigationForExamples(keyword, msg) {
   return PaginatedMessage.sendAsMessageReply(msg, chapters, { id: interactiveMessageId });
 }
 
+async function sendExamplesAsStandaloneMessage(keyword, ownerId, channel) {
+  const searchResults = await scrapeWebPage(keyword);
+
+  if (searchResults.data.sentences.length === 0) {
+    return throwPublicErrorInfo('用例.jp', `I didn't find any results for **${keyword}**.`, 'No results');
+  }
+
+  const chapters = [
+    { title: 'Sentences', pages: createNavigationChapterForSentences(searchResults, false) },
+    { title: 'Full Context', pages: createNavigationChapterForSentences(searchResults, true) },
+    { title: 'Usage', pages: createNavigationChapterForUsage(searchResults) },
+  ];
+
+  const interactiveMessageId = `yourei_"${keyword}"`;
+  return PaginatedMessage.send(channel, ownerId, chapters, { id: interactiveMessageId });
+}
+
 module.exports = {
   createNavigationForExamples,
+  sendExamplesAsStandaloneMessage
 };

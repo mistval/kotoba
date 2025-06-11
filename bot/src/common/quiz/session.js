@@ -170,6 +170,10 @@ class SessionInformation {
     return this.noRace_;
   }
 
+  isQuickSearchEnabled() {
+    return this.settings_.serverSettings.quickSearchEnabled;
+  }
+
   createSaveData() {
     return {
       deckCollectionSaveData: this.deckCollection_.createSaveData(),

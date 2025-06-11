@@ -274,6 +274,7 @@ class ShowAnswersAction extends Action {
       let answersForUser = scores.getCurrentQuestionsAnswersForUser();
       let pointsForAnswer = scores.getCurrentQuestionPointsForAnswer();
       let scoreLimit = scores.getScoreLimit();
+      const quickSearchEnabled = session.isQuickSearchEnabled()
 
       if (answerersInOrder.length > 0) {
         sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, answerersInOrder);
@@ -285,6 +286,7 @@ class ShowAnswersAction extends Action {
           pointsForAnswer,
           scoresForUser,
           scoreLimit,
+          quickSearchEnabled,
           )).catch(err => {
             globals.logger.warn({
               event: 'ERROR OUTPUTTING SCOREBOARD',
@@ -363,9 +365,10 @@ class ShowWrongAnswerAction extends Action {
   do() {
     let session = this.getSession_();
     let currentCard = session.getCurrentCard();
+    const quickSearchEnabled = session.isQuickSearchEnabled()
     sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, []);
     session.markCurrentCardUnanswered();
-    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_, this.hardcore_)).catch(err => {
+    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_, this.hardcore_, quickSearchEnabled)).catch(err => {
       let question = currentCard.question;
       globals.logger.warn({
         event: 'FAILED TO SHOW TIMEOUT MESSAGE',
