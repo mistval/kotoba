@@ -164,6 +164,16 @@ module.exports = [
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
         validateInternalValue: SettingsValidators.createRangeValidator(0.1, 5),
       },
+      {
+        userFacingName: 'Quick Search enabled',
+        description: 'When enabled, quiz results will contain reaction emojis that you can click on to get kanji information or example sentences for the resulting word.',
+        allowedValuesDescription: 'Either **enabled** or **disabled**',
+        uniqueId: 'quiz/japanese/quick_search_enabled',
+        defaultUserFacingValue: 'Disabled',
+        convertUserFacingValueToInternalValue: SettingsConverters.createStringToBooleanConverter('enabled', 'disabled'),
+        convertInternalValueToUserFacingValue: SettingsConverters.createBooleanToStringConverter('Enabled', 'Disabled'),
+        validateInternalValue: SettingsValidators.isBoolean,
+      },
     ],
   },
   {
