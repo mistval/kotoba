@@ -7,7 +7,7 @@ function render(props) {
   } = props;
 
   return (
-    <div className="row pt-5 bg-light">
+    <div className="row pt-5 bg-secondary">
       <div className="col-sm-12">
         <img id={imageId} className="align-top mr-4 mb-4" alt="header" src={image} />
         <div className="inline-block mb-3">

@@ -110,6 +110,26 @@ label {
   color: var(--text-color);
 }
 
+/* Bootstrap Material Design floating labels */
+.bmd-label-floating {
+  color: var(--text-muted) !important;
+}
+
+.bmd-label-floating.is-focused,
+.bmd-label-floating.is-filled {
+  color: var(--btn-primary-bg) !important;
+}
+
+/* Bootstrap background utilities */
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-color) !important;
+}
+
 /* Buttons */
 .btn-outline-primary {
   color: var(--btn-primary-bg);

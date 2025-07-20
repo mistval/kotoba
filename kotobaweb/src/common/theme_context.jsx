@@ -14,10 +14,7 @@ export function useTheme() {
 }
 
 export function ThemeProvider({ children }) {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Get the stored preference from settings
-    return getSetting('darkMode');
-  });
+  const [isDarkMode, setIsDarkMode] = useState(() => getSetting('darkMode'));
 
   // Apply the theme to the document root
   useEffect(() => {
