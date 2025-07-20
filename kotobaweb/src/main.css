@@ -120,6 +120,16 @@ label {
   color: var(--btn-primary-bg) !important;
 }
 
+/* Bootstrap Material Design placeholder labels */
+.bmd-label-placeholder {
+  color: var(--text-muted) !important;
+}
+
+.bmd-label-placeholder.is-focused,
+.bmd-label-placeholder.is-filled {
+  color: var(--btn-primary-bg) !important;
+}
+
 /* Bootstrap background utilities */
 .bg-secondary {
   background-color: var(--bg-secondary) !important;
