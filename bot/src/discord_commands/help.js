@@ -18,7 +18,6 @@ const COMMANDS_TO_GENERATE_HELP_FOR = [
   'kanji',
   'strokeorder',
   'quiz',
-  'jibiki',
   'weblio',
   'shiritori',
   'examples',
