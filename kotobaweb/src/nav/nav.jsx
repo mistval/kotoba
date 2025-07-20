@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import ThemeToggle from '../controls/theme_toggle';
 
 function isInKanjiGame(match, location) {
   return location.pathname.startsWith('/kanjigame');
@@ -37,6 +38,9 @@ function render() {
             <NavLink exact activeClassName="active" className="nav-link" to="/about">About</NavLink>
           </li>
         </ul>
+        <div className="ml-auto d-flex align-items-center">
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
