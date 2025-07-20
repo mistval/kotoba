@@ -1,3 +1,4 @@
+
 const FULL_NAME_MAX_LENGTH = 60;
 const SHORT_NAME_MAX_LENGTH = 25;
 const INSTRUCTIONS_MAX_LENGTH = 400;
@@ -56,10 +57,9 @@ const successValidationResult = { success: true };
 function getAllowedQuestionCreationStrategies(userPrivileges = []) {
   return globallyAllowedQuestionCreationStrategies
     .concat(
-      userPrivileges
-        ?.filter(p => p.value)
-        ?.flatMap(p => additionalQuestionCreationStrategiesForPrivilege[p.id] ?? [])
-        ?? [],
+      (userPrivileges || [])
+        .filter(p => p.value)
+        .flatMap(p => additionalQuestionCreationStrategiesForPrivilege[p.id] || []),
     );
 }
 
