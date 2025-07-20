@@ -357,7 +357,7 @@ class ReportView extends Component {
               <div className="d-flex flex-column mt-5 align-items-center">
                 <h1>{this.state.report.sessionName}</h1>
                 <div className="d-flex align-items-center mb-5">
-                  <span className="badge badge-primary">
+                  <span className="badge badge-primary text-light">
                     { this.state.report.discordServerName || 'DM' }
                   </span>
                 </div>

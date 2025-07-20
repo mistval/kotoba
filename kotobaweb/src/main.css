@@ -188,6 +188,13 @@ a:hover {
   color: var(--text-color);
 }
 
+.table thead th {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
 .table th {
   color: var(--text-color);
   border-color: var(--border-color);
@@ -204,6 +211,15 @@ a:hover {
 .table-hover tbody tr:hover {
   background-color: var(--bg-secondary);
   color: var(--text-color);
+}
+
+.table-bordered {
+  border-color: var(--border-color);
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-color: var(--border-color);
 }
 
 /* List groups */
