@@ -29,6 +29,96 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <!-- Critical CSS for theme variables - must load before theme script -->
+    <style>
+      /* CSS Variables for theming */
+      :root.light-theme {
+        --bg-color: #ffffff;
+        --bg-secondary: #f8f9fa;
+        --text-color: #212529;
+        --text-muted: rgba(0, 0, 0, .65);
+        --border-color: #dee2e6;
+        --card-bg: #ffffff;
+        --input-bg: #ffffff;
+        --input-border: #ced4da;
+        --navbar-bg: #343a40;
+        --navbar-text: #ffffff;
+        --btn-primary-bg: #007bff;
+        --btn-primary-border: #007bff;
+        --btn-outline-border: #6c757d;
+        --link-color: #007bff;
+        --success-color: #28a745;
+        --danger-color: #dc3545;
+        --warning-color: #ffc107;
+        --info-color: #17a2b8;
+        --shadow: rgba(0, 0, 0, 0.125);
+        --shadow-hover: rgba(0, 0, 0, 0.15);
+      }
+
+      :root.dark-theme {
+        --bg-color: #121212;
+        --bg-secondary: #1e1e1e;
+        --text-color: #e4e6ea;
+        --text-muted: rgba(255, 255, 255, .65);
+        --border-color: #373a3c;
+        --card-bg: #1e1e1e;
+        --input-bg: #2d2d2d;
+        --input-border: #495057;
+        --navbar-bg: #0d1117;
+        --navbar-text: #ffffff;
+        --btn-primary-bg: #0d6efd;
+        --btn-primary-border: #0d6efd;
+        --btn-outline-border: #6c757d;
+        --link-color: #66b3ff;
+        --success-color: #20c997;
+        --danger-color: #fd7e14;
+        --warning-color: #ffc107;
+        --info-color: #20c997;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --shadow-hover: rgba(0, 0, 0, 0.4);
+      }
+
+      /* Critical body styling */
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      /* Only add transitions after page load */
+      body.transitions-enabled {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+
+    <!-- Theme initialization script - prevents flash of light theme -->
+    <script>
+      (function() {
+        try {
+          var settings = JSON.parse(localStorage.getItem('kotoba-settings') || '{}');
+          var isDarkMode = settings.darkMode;
+          if (isDarkMode) {
+            document.documentElement.classList.add('dark-theme');
+            document.documentElement.classList.remove('light-theme');
+          } else {
+            document.documentElement.classList.add('light-theme');
+            document.documentElement.classList.remove('dark-theme');
+          }
+
+          // Enable transitions after a brief delay to prevent flash during initial load
+          setTimeout(function() {
+            document.body.classList.add('transitions-enabled');
+          }, 1000);
+        } catch (e) {
+          // If there's an error reading settings, default to light theme
+          document.documentElement.classList.add('light-theme');
+          document.documentElement.classList.remove('dark-theme');
+          setTimeout(function() {
+            document.body.classList.add('transitions-enabled');
+          }, 1000);
+        }
+      })();
+    </script>
+
     <title>KotobaWeb</title>
   </head>
   <body>

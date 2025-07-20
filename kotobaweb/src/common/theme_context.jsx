@@ -26,6 +26,9 @@ export function ThemeProvider({ children }) {
       root.classList.add('light-theme');
       root.classList.remove('dark-theme');
     }
+
+    // Ensure transitions are enabled when toggling
+    document.body.classList.add('transitions-enabled');
   }, [isDarkMode]);
 
   // Persist theme preference to settings
