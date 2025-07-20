@@ -136,6 +136,19 @@ select.form-control option {
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
+/* Disabled form controls styling for dark mode */
+:root.dark-theme .form-control:disabled,
+:root.dark-theme .form-control[disabled],
+:root.dark-theme .custom-select:disabled,
+:root.dark-theme .browser-default:disabled,
+:root.dark-theme select.form-control:disabled {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
 /* Form labels */
 .form-label,
 label {
