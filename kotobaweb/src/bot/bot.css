@@ -6,3 +6,8 @@
 .example {
   color: #3f51b5;
 }
+
+/* Dark mode styling for example class */
+:root.dark-theme .example {
+  color: #b0b0b0;
+}
