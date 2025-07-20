@@ -1,6 +1,7 @@
 import React, {
   createContext, useContext, useState, useEffect, useMemo,
 } from 'react';
+import { getSetting, setSetting } from './settings';
 
 const ThemeContext = createContext();
 
@@ -14,13 +15,8 @@ export function useTheme() {
 
 export function ThemeProvider({ children }) {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Try to get the stored preference from localStorage
-    const stored = localStorage.getItem('kotoba-dark-mode');
-    if (stored !== null) {
-      return JSON.parse(stored);
-    }
-    // Default to light mode
-    return false;
+    // Get the stored preference from settings
+    return getSetting('darkMode');
   });
 
   // Apply the theme to the document root
@@ -35,9 +31,9 @@ export function ThemeProvider({ children }) {
     }
   }, [isDarkMode]);
 
-  // Persist theme preference to localStorage
+  // Persist theme preference to settings
   useEffect(() => {
-    localStorage.setItem('kotoba-dark-mode', JSON.stringify(isDarkMode));
+    setSetting('darkMode', isDarkMode);
   }, [isDarkMode]);
 
   const toggleTheme = () => {
