@@ -505,3 +505,107 @@ a:hover {
 .toc-item {
   font-size: 13px;
 }
+
+/* React Data Grid theming */
+.react-grid-Container {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.react-grid-Main {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Grid {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.react-grid-Header {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.react-grid-HeaderRow {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-HeaderCell {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+  font-weight: 600 !important;
+}
+
+.widget-HeaderCell__value {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+}
+
+.react-grid-Viewport {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Canvas {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Row {
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.react-grid-Row--even {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Row--odd {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-Cell {
+  background-color: inherit !important;
+  color: var(--text-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+.react-grid-Cell__value {
+  color: var(--text-color) !important;
+}
+
+.react-grid-Cell:hover {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-Cell:focus {
+  outline: 2px solid var(--btn-primary-bg) !important;
+  outline-offset: -2px !important;
+}
+
+/* Selected cell styling */
+.rdg-selected {
+  background-color: var(--btn-primary-bg) !important;
+  color: white !important;
+  outline: 2px solid var(--btn-primary-bg) !important;
+}
+
+.drag-handle {
+  background-color: var(--btn-primary-bg) !important;
+}
+
+/* Input styling within cells when editing */
+.react-grid-Cell input,
+.react-grid-Cell select,
+.react-grid-Cell textarea {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+.react-grid-Cell input:focus,
+.react-grid-Cell select:focus,
+.react-grid-Cell textarea:focus {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--btn-primary-bg) !important;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+}
