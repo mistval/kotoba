@@ -150,6 +150,47 @@ label {
   color: var(--text-color) !important;
 }
 
+/* Checkbox and radio inputs - make them more visible in dark mode */
+.checkbox input[type="checkbox"],
+.radio input[type="radio"],
+input[type="checkbox"],
+input[type="radio"] {
+  filter: brightness(1.2) contrast(1.1);
+  opacity: 0.9;
+}
+
+:root.dark-theme .checkbox input[type="checkbox"],
+:root.dark-theme .radio input[type="radio"],
+:root.dark-theme input[type="checkbox"],
+:root.dark-theme input[type="radio"] {
+  filter: brightness(2.5) contrast(2) saturate(1.5) !important;
+  opacity: 1 !important;
+  background-color: var(--input-bg) !important;
+  border: 2px solid var(--input-border) !important;
+  accent-color: var(--btn-primary-bg) !important;
+  -webkit-appearance: auto !important;
+  appearance: auto !important;
+}
+
+/* Bootstrap Material Design checkbox styling for dark mode */
+:root.dark-theme .checkbox label .checkbox-decorator .check,
+:root.dark-theme label.checkbox-inline .checkbox-decorator .check {
+  border: 0.125rem solid var(--input-border) !important;
+  background-color: var(--input-bg) !important;
+}
+
+:root.dark-theme .checkbox input[type="checkbox"]:checked + .checkbox-decorator .check,
+:root.dark-theme .checkbox input[type="checkbox"]:checked + .checkbox-decorator .check::before {
+  background-color: var(--btn-primary-bg) !important;
+  border-color: var(--btn-primary-bg) !important;
+  color: #ffffff !important;
+}
+
+:root.dark-theme .checkbox label .checkbox-decorator .check::before,
+:root.dark-theme label.checkbox-inline .checkbox-decorator .check::before {
+  color: #ffffff !important;
+}
+
 /* Bootstrap Material Design floating labels */
 .bmd-label-floating {
   color: var(--text-muted) !important;
