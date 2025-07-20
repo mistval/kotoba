@@ -2,6 +2,7 @@ import React, {
   createContext, useContext, useState, useEffect, useMemo,
 } from 'react';
 import { getSetting, setSetting } from './settings';
+import analytics from '../util/analytics';
 
 const ThemeContext = createContext();
 
@@ -37,7 +38,18 @@ export function ThemeProvider({ children }) {
   }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
+    setIsDarkMode((prev) => {
+      const newTheme = !prev;
+
+      // Send analytics event for theme toggle
+      analytics.event(
+        'Theme',
+        'Toggle',
+        newTheme ? 'Dark Mode' : 'Light Mode',
+      );
+
+      return newTheme;
+    });
   };
 
   const value = useMemo(() => ({

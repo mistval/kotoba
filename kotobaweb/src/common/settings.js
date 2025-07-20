@@ -2,8 +2,16 @@
 
 const SETTINGS_KEY = 'kotoba-settings';
 
+// Function to get system theme preference
+function getSystemThemePreference() {
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  return false; // Default to light theme if unable to detect
+}
+
 const DEFAULT_SETTINGS = {
-  darkMode: false,
+  darkMode: getSystemThemePreference(),
   // Future settings can be added here
   // language: 'en',
   // fontSize: 'medium',
@@ -38,7 +46,14 @@ export function updateSettings(newSettings) {
 
 export function getSetting(key) {
   const settings = getSettings();
-  return settings[key];
+  const value = settings[key];
+
+  // Special handling for darkMode - if no explicit setting exists, use system preference
+  if (key === 'darkMode' && value === undefined) {
+    return getSystemThemePreference();
+  }
+
+  return value;
 }
 
 export function setSetting(key, value) {

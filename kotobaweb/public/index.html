@@ -96,6 +96,12 @@
         try {
           var settings = JSON.parse(localStorage.getItem('kotoba-settings') || '{}');
           var isDarkMode = settings.darkMode;
+
+          // If no saved preference, use system preference
+          if (isDarkMode === undefined) {
+            isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          }
+
           if (isDarkMode) {
             document.documentElement.classList.add('dark-theme');
             document.documentElement.classList.remove('light-theme');
@@ -109,9 +115,15 @@
             document.body.classList.add('transitions-enabled');
           }, 1000);
         } catch (e) {
-          // If there's an error reading settings, default to light theme
-          document.documentElement.classList.add('light-theme');
-          document.documentElement.classList.remove('dark-theme');
+          // If there's an error reading settings, use system preference or default to light theme
+          var isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDarkMode) {
+            document.documentElement.classList.add('dark-theme');
+            document.documentElement.classList.remove('light-theme');
+          } else {
+            document.documentElement.classList.add('light-theme');
+            document.documentElement.classList.remove('dark-theme');
+          }
           setTimeout(function() {
             document.body.classList.add('transitions-enabled');
           }, 1000);
