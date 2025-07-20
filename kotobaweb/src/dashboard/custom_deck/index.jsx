@@ -790,7 +790,7 @@ class EditDeck extends Component {
                     ref={(el) => { this.publicCheckBox = el; }}
                   />
                   &nbsp;
-                  <span style={{ color: '#212529' }}>Searchable</span>
+                  <span>Searchable</span>
 &nbsp;
                   <HelpButton
                     popoverId="publicPopover"
@@ -810,7 +810,7 @@ class EditDeck extends Component {
                     ref={(el) => { this.hiddenCheckBox = el; }}
                   />
                   &nbsp;
-                  <span style={{ color: '#212529' }}>Hidden</span>
+                  <span>Hidden</span>
 &nbsp;
                   <HelpButton
                     popoverId="hiddenPopover"
