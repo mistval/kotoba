@@ -5,7 +5,7 @@ import '../main.css';
 
 function render() {
   return (
-    <div className="row pt-5 mb-5 bg-light">
+    <div className="row pt-5 mb-5 bg-secondary">
       <div className="col-sm-12">
         <img className="align-top mr-4 mb-4" alt="bot avatar" id="avatar" src={Avatar} />
         <div className="inline-block">
@@ -20,7 +20,7 @@ function render() {
             <a className="ml-4" href="https://discord.gg/S92qCjbNHt" target="_blank" rel="noopener noreferrer">HELP</a>
           </div>
         </div>
-        <ul className="nav nav-tabs bg-light mt-5">
+        <ul className="nav nav-tabs bg-secondary mt-5">
           <li className="nav-item">
             <NavLink exact activeClassName="active" className="nav-link submenu-nav-link" to="/bot">COMMANDS</NavLink>
           </li>

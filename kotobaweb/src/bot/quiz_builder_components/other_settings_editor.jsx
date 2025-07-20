@@ -70,7 +70,7 @@ function OtherSettingsEditor(props) {
         <div className="checkbox mt-3">
           <label>
             <input type="checkbox" checked={props.otherSettings.conquest} onChange={handleConquestModeChanged} />
-            <span style={styles.formText}>Conquest mode</span>
+            <span>Conquest mode</span>
 &nbsp;
             <HelpButton
               popoverId="conquestModePopover"
@@ -82,7 +82,7 @@ function OtherSettingsEditor(props) {
         <div className="checkbox mt-2">
           <label>
             <input type="checkbox" checked={props.otherSettings.hardcore} onChange={handleHardcoreModeChanged} />
-            <span style={styles.formText}>Hardcore mode</span>
+            <span>Hardcore mode</span>
 &nbsp;
             <HelpButton
               popoverId="hardcoreModePopover"
@@ -94,7 +94,7 @@ function OtherSettingsEditor(props) {
         <div className="checkbox mt-2">
           <label>
             <input type="checkbox" checked={props.otherSettings.norace} onChange={handleNoRaceModeChanged} />
-            <span style={styles.formText}>No race mode</span>
+            <span>No race mode</span>
 &nbsp;
             <HelpButton
               popoverId="noRaceModePopover"

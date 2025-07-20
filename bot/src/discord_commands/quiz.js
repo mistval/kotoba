@@ -501,7 +501,7 @@ function createInteractiveQuizResponse(response, ownerId, question, channel, pre
   ])
   interactiveMessage.setEmbeds(response.embeds)
   interactiveMessage.setComponents(components)
-  interactiveMessage.sendOrUpdate(channel)
+  return interactiveMessage.sendOrUpdate(channel)
 }
 
 async function triggerKanjiLookup(text, ownerId, channel, prefix) {

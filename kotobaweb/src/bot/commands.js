@@ -63,14 +63,6 @@ const commands = [
     ],
   ),
   new Command(
-    'jibiki',
-    'jb',
-    'Search jibiki.app for a Japanese or English word.',
-    [
-      new Example('jibiki', '瞬間', 'kjibiki.png'),
-    ],
-  ),
-  new Command(
     'shiritori',
     'sh',
     'Start a game of shiritori in this channel.',

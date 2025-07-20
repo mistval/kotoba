@@ -184,5 +184,5 @@ async function sendExamplesAsStandaloneMessage(keyword, ownerId, channel) {
 
 module.exports = {
   createNavigationForExamples,
-  sendExamplesAsStandaloneMessage
+  sendExamplesAsStandaloneMessage,
 };

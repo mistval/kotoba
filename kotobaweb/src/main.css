@@ -1,3 +1,619 @@
+/* CSS Variables for theming */
+:root.light-theme {
+  --bg-color: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-color: #212529;
+  --text-muted: rgba(0, 0, 0, .65);
+  --border-color: #dee2e6;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #ced4da;
+  --navbar-bg: #343a40;
+  --navbar-text: #ffffff;
+  --btn-primary-bg: #007bff;
+  --btn-primary-border: #007bff;
+  --btn-outline-border: #6c757d;
+  --link-color: #007bff;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --shadow: rgba(0, 0, 0, 0.125);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+:root.dark-theme {
+  --bg-color: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-color: #e4e6ea;
+  --text-muted: rgba(255, 255, 255, .65);
+  --border-color: #373a3c;
+  --card-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-border: #495057;
+  --navbar-bg: #0d1117;
+  --navbar-text: #ffffff;
+  --btn-primary-bg: #0d6efd;
+  --btn-primary-border: #0d6efd;
+  --btn-outline-border: #6c757d;
+  --link-color: #66b3ff;
+  --success-color: #20c997;
+  --danger-color: #fd7e14;
+  --warning-color: #ffc107;
+  --info-color: #20c997;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
+}
+
+/* Apply theme colors to body and common elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Card components */
+.card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+  box-shadow: 0 0.125rem 0.25rem var(--shadow);
+}
+
+.card:hover {
+  box-shadow: 0 0.25rem 0.5rem var(--shadow-hover);
+}
+
+.card-header {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.card-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.card-footer {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+/* Form controls */
+.form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+.form-control:focus {
+  background-color: var(--input-bg);
+  border-color: var(--btn-primary-border);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: var(--text-color);
+}
+
+.form-control::placeholder {
+  color: var(--text-muted);
+}
+
+/* Select elements */
+.custom-select,
+.browser-default,
+select.form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+.custom-select:focus,
+.browser-default:focus,
+select.form-control:focus {
+  background-color: var(--input-bg);
+  border-color: var(--btn-primary-border);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: var(--text-color);
+}
+
+/* Select options */
+.custom-select option,
+.browser-default option,
+select.form-control option {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+/* Dark theme specific form control styling */
+:root.dark-theme .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+:root.dark-theme .custom-select:focus,
+:root.dark-theme .browser-default:focus,
+:root.dark-theme select.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Disabled form controls styling for dark mode */
+:root.dark-theme .form-control:disabled,
+:root.dark-theme .form-control[disabled],
+:root.dark-theme .custom-select:disabled,
+:root.dark-theme .browser-default:disabled,
+:root.dark-theme select.form-control:disabled {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* Form labels */
+.form-label,
+label {
+  color: var(--text-color);
+}
+
+/* Checkbox and radio labels - more specific to override Bootstrap Material Design */
+.checkbox label,
+.radio label,
+.checkbox label span,
+.radio label span {
+  color: var(--text-color) !important;
+}
+
+/* Checkbox and radio inputs - make them more visible in dark mode */
+.checkbox input[type="checkbox"],
+.radio input[type="radio"],
+input[type="checkbox"],
+input[type="radio"] {
+  filter: brightness(1.2) contrast(1.1);
+  opacity: 0.9;
+}
+
+:root.dark-theme .checkbox input[type="checkbox"],
+:root.dark-theme .radio input[type="radio"],
+:root.dark-theme input[type="checkbox"],
+:root.dark-theme input[type="radio"] {
+  filter: brightness(2.5) contrast(2) saturate(1.5) !important;
+  opacity: 1 !important;
+  background-color: var(--input-bg) !important;
+  border: 2px solid var(--input-border) !important;
+  accent-color: var(--btn-primary-bg) !important;
+  -webkit-appearance: auto !important;
+  appearance: auto !important;
+}
+
+/* Bootstrap Material Design checkbox styling for dark mode */
+:root.dark-theme .checkbox label .checkbox-decorator .check,
+:root.dark-theme label.checkbox-inline .checkbox-decorator .check {
+  border: 0.125rem solid var(--input-border) !important;
+  background-color: var(--input-bg) !important;
+}
+
+:root.dark-theme .checkbox input[type="checkbox"]:checked + .checkbox-decorator .check,
+:root.dark-theme .checkbox input[type="checkbox"]:checked + .checkbox-decorator .check::before {
+  background-color: var(--btn-primary-bg) !important;
+  border-color: var(--btn-primary-bg) !important;
+  color: #ffffff !important;
+}
+
+:root.dark-theme .checkbox label .checkbox-decorator .check::before,
+:root.dark-theme label.checkbox-inline .checkbox-decorator .check::before {
+  color: #ffffff !important;
+}
+
+/* Bootstrap Material Design floating labels */
+.bmd-label-floating {
+  color: var(--text-muted) !important;
+}
+
+.bmd-label-floating.is-focused,
+.bmd-label-floating.is-filled {
+  color: var(--btn-primary-bg) !important;
+}
+
+/* Bootstrap Material Design placeholder labels */
+.bmd-label-placeholder {
+  color: var(--text-muted) !important;
+}
+
+.bmd-label-placeholder.is-focused,
+.bmd-label-placeholder.is-filled {
+  color: var(--btn-primary-bg) !important;
+}
+
+/* Bootstrap background utilities */
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-light {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-color) !important;
+}
+
+/* Buttons */
+.btn-outline-primary {
+  color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+  color: #ffffff;
+}
+
+.btn-outline-secondary {
+  color: var(--text-color);
+  border-color: var(--btn-outline-border);
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--btn-outline-border);
+  border-color: var(--btn-outline-border);
+  color: #ffffff;
+}
+
+.btn-outline-danger {
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.btn-outline-success {
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-color);
+  filter: brightness(1.2);
+}
+
+/* Tables */
+.table {
+  color: var(--text-color);
+}
+
+.table thead th {
+  color: var(--text-color);
+  border-color: var(--border-color);
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.table th {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.table td {
+  border-color: var(--border-color);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--bg-secondary);
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+}
+
+.table-bordered {
+  border-color: var(--border-color);
+}
+
+.table-bordered th,
+.table-bordered td {
+  border-color: var(--border-color);
+}
+
+/* List groups */
+.list-group-item {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.list-group-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.list-group-item.active {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+  color: #ffffff;
+}
+
+/* Navbar (keeping original dark styling but making it responsive to theme) */
+:root.dark-theme .navbar-dark {
+  background-color: var(--navbar-bg) !important;
+}
+
+/* Modal */
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.modal-header {
+  border-color: var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.modal-body {
+  background-color: var(--card-bg);
+}
+
+.modal-footer {
+  border-color: var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.modal-title {
+  color: var(--text-color);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.dropdown-item {
+  color: var(--text-color);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+}
+
+.dropdown-divider {
+  border-color: var(--border-color);
+}
+
+/* Popovers */
+.popover {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
+  box-shadow: 0 0.5rem 1rem var(--shadow);
+}
+
+.popover .popover-header {
+  background-color: var(--bg-secondary);
+  border-bottom-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.popover .popover-body {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.popover .arrow::before {
+  border-color: var(--border-color);
+}
+
+.popover .arrow::after {
+  border-color: var(--card-bg);
+}
+
+/* Popover arrow positioning for different placements */
+.popover.bs-popover-top .arrow::before,
+.popover.bs-popover-auto[x-placement^="top"] .arrow::before {
+  border-top-color: var(--border-color);
+}
+
+.popover.bs-popover-top .arrow::after,
+.popover.bs-popover-auto[x-placement^="top"] .arrow::after {
+  border-top-color: var(--card-bg);
+}
+
+.popover.bs-popover-right .arrow::before,
+.popover.bs-popover-auto[x-placement^="right"] .arrow::before {
+  border-right-color: var(--border-color);
+}
+
+.popover.bs-popover-right .arrow::after,
+.popover.bs-popover-auto[x-placement^="right"] .arrow::after {
+  border-right-color: var(--card-bg);
+}
+
+.popover.bs-popover-bottom .arrow::before,
+.popover.bs-popover-auto[x-placement^="bottom"] .arrow::before {
+  border-bottom-color: var(--border-color);
+}
+
+.popover.bs-popover-bottom .arrow::after,
+.popover.bs-popover-auto[x-placement^="bottom"] .arrow::after {
+  border-bottom-color: var(--card-bg);
+}
+
+.popover.bs-popover-left .arrow::before,
+.popover.bs-popover-auto[x-placement^="left"] .arrow::before {
+  border-left-color: var(--border-color);
+}
+
+.popover.bs-popover-left .arrow::after,
+.popover.bs-popover-auto[x-placement^="left"] .arrow::after {
+  border-left-color: var(--card-bg);
+}
+
+/* Alert components */
+.alert {
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.alert-primary {
+  background-color: var(--bg-secondary);
+  border-color: var(--btn-primary-border);
+  color: var(--text-color);
+}
+
+.alert-success {
+  background-color: var(--bg-secondary);
+  border-color: var(--success-color);
+  color: var(--text-color);
+}
+
+.alert-danger {
+  background-color: var(--bg-secondary);
+  border-color: var(--danger-color);
+  color: var(--text-color);
+}
+
+.alert-warning {
+  background-color: var(--bg-secondary);
+  border-color: var(--warning-color);
+  color: var(--text-color);
+}
+
+.alert-info {
+  background-color: var(--bg-secondary);
+  border-color: var(--info-color);
+  color: var(--text-color);
+}
+
+/* Progress bars */
+.progress {
+  background-color: var(--bg-secondary);
+}
+
+/* Badges */
+.badge {
+  color: var(--text-color);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background-color: var(--bg-secondary);
+}
+
+.breadcrumb-item a {
+  color: var(--link-color);
+}
+
+.breadcrumb-item.active {
+  color: var(--text-muted);
+}
+
+/* Pagination */
+.page-link {
+  color: var(--link-color);
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.page-link:hover {
+  color: var(--link-color);
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.page-item.active .page-link {
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+}
+
+.page-item.disabled .page-link {
+  color: var(--text-muted);
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* Navbar brand and text */
+.navbar-brand {
+  color: var(--navbar-text) !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--navbar-text) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--navbar-text) !important;
+}
+
+/* Text utilities that respect theme */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Border utilities */
+.border {
+  border-color: var(--border-color) !important;
+}
+
+.border-top {
+  border-top-color: var(--border-color) !important;
+}
+
+.border-bottom {
+  border-bottom-color: var(--border-color) !important;
+}
+
+.border-left {
+  border-left-color: var(--border-color) !important;
+}
+
+.border-right {
+  border-right-color: var(--border-color) !important;
+}
+
+/* Navigation tabs */
+.nav-tabs {
+  border-color: var(--border-color);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: var(--link-color);
+  border-color: var(--border-color);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-color: var(--border-color) var(--border-color) var(--bg-color);
+}
+
+/* Submenu nav links */
+.submenu-nav-link {
+  color: var(--text-color) !important;
+}
+
+.submenu-nav-link:hover {
+  color: var(--link-color) !important;
+}
+
+.submenu-nav-link.active {
+  color: var(--text-color) !important;
+  background-color: var(--bg-color) !important;
+  border-color: var(--border-color) var(--border-color) var(--bg-color) !important;
+}
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -9,7 +625,7 @@
  }
 
 .label-darker {
-  color: rgba(0, 0, 0, .65);
+  color: var(--text-muted);
 }
 
 .submenu-nav-link.active {
@@ -18,4 +634,108 @@
 
 .toc-item {
   font-size: 13px;
+}
+
+/* React Data Grid theming */
+.react-grid-Container {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.react-grid-Main {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Grid {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.react-grid-Header {
+  background-color: var(--bg-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.react-grid-HeaderRow {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-HeaderCell {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+  font-weight: 600 !important;
+}
+
+.widget-HeaderCell__value {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+}
+
+.react-grid-Viewport {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Canvas {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Row {
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.react-grid-Row--even {
+  background-color: var(--bg-color) !important;
+}
+
+.react-grid-Row--odd {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-Cell {
+  background-color: inherit !important;
+  color: var(--text-color) !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+.react-grid-Cell__value {
+  color: var(--text-color) !important;
+}
+
+.react-grid-Cell:hover {
+  background-color: var(--bg-secondary) !important;
+}
+
+.react-grid-Cell:focus {
+  outline: 2px solid var(--btn-primary-bg) !important;
+  outline-offset: -2px !important;
+}
+
+/* Selected cell styling */
+.rdg-selected {
+  background-color: var(--btn-primary-bg) !important;
+  color: white !important;
+  outline: 2px solid var(--btn-primary-bg) !important;
+}
+
+.drag-handle {
+  background-color: var(--btn-primary-bg) !important;
+}
+
+/* Input styling within cells when editing */
+.react-grid-Cell input,
+.react-grid-Cell select,
+.react-grid-Cell textarea {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+.react-grid-Cell input:focus,
+.react-grid-Cell select:focus,
+.react-grid-Cell textarea:focus {
+  background-color: var(--input-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--btn-primary-bg) !important;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
 }

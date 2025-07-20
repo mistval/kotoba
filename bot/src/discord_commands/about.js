@@ -40,7 +40,6 @@ Kotoba runs on the monochrome bot framework (https://github.com/mistval/monochro
 
 Kotoba uses data from the following sources:
     - Jisho (http://jisho.org)
-    - Jibiki (https://jibiki.app)
     - Weblio (http://weblio.jp/)
     - Google Translate (https://translate.google.com/)
     - KanjiVG (http://kanjivg.tagaini.net/)
