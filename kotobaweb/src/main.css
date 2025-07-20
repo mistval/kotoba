@@ -399,6 +399,43 @@ a:hover {
   border-right-color: var(--border-color) !important;
 }
 
+/* Navigation tabs */
+.nav-tabs {
+  border-color: var(--border-color);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-color);
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  color: var(--link-color);
+  border-color: var(--border-color);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border-color: var(--border-color) var(--border-color) var(--bg-color);
+}
+
+/* Submenu nav links */
+.submenu-nav-link {
+  color: var(--text-color) !important;
+}
+
+.submenu-nav-link:hover {
+  color: var(--link-color) !important;
+}
+
+.submenu-nav-link.active {
+  color: var(--text-color) !important;
+  background-color: var(--bg-color) !important;
+  border-color: var(--border-color) var(--border-color) var(--bg-color) !important;
+}
+
 .center-block {
   display: block;
   margin-left: auto;
