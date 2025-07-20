@@ -99,8 +99,40 @@ body {
   color: var(--text-muted);
 }
 
+/* Select elements */
+.custom-select,
+.browser-default,
+select.form-control {
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-color);
+}
+
+.custom-select:focus,
+.browser-default:focus,
+select.form-control:focus {
+  background-color: var(--input-bg);
+  border-color: var(--btn-primary-border);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  color: var(--text-color);
+}
+
+/* Select options */
+.custom-select option,
+.browser-default option,
+select.form-control option {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
 /* Dark theme specific form control styling */
 :root.dark-theme .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+:root.dark-theme .custom-select:focus,
+:root.dark-theme .browser-default:focus,
+:root.dark-theme select.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
