@@ -162,7 +162,7 @@ module.exports = [
         defaultUserFacingValue: '1',
         convertUserFacingValueToInternalValue: SettingsConverters.stringToFloat,
         convertInternalValueToUserFacingValue: SettingsConverters.toString,
-        validateInternalValue: SettingsValidators.createRangeValidator(0.1, 5),
+        validateInternalValue: SettingsValidators.createRangeValidator(0.1, 10),
       },
       {
         userFacingName: 'Quick Search enabled',
