@@ -1,8 +1,7 @@
-const Vega = require('vega');
-
 const CHART_BG_COLOR = '#34363c';
 
 async function renderSpecToBuffer(spec) {
+  const Vega = await import('vega');
   const view = new Vega.View(Vega.parse(spec)).renderer('none').initialize();
   const canvas = await view.toCanvas();
   const buffer = canvas.toBuffer();
