@@ -7,11 +7,15 @@ const renderFurigana = require('./render_furigana.js');
 const PORT = parseInt(process.env.PORT || 80, 10);
 
 polka().get('/users/:userId/quizstats', async (req, res) => {
-  const result = await calculateStats(req.params.userId);
-  if (result) {
-    return send(res, 200, result);
+  try {
+    const result = await calculateStats(req.params.userId);
+    if (result) {
+      return send(res, 200, result);
+    }
+    return send(res, 404);
+  } catch (err) {
+    return send(res, 500, { message: err.message, stack: err.stack });
   }
-  return send(res, 404);
 }).get('/furigana/rendered', async (req, res) => {
   try {
     const result = await renderFurigana(
