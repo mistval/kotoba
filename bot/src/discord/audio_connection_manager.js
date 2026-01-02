@@ -98,7 +98,6 @@ class AudioConnection {
     }
 
     try {
-      bot.guilds.get(serverId).leaveVoiceChannel();
       const voiceConnection = await voiceChannel.join();
       subscribeEvents(voiceConnection);
       await waitForReady(voiceConnection);
