@@ -24,7 +24,7 @@ After cloning the repo (recommend cloning with `--depth=1`), fill out [config/co
 
 ## Developing
 
-**Node v22 is recommended**
+Check the [.nvmrc](./nvmrc) file for the suggested version of Node.js to use. Other minor/patch versions will likely work too.
 
 ### Discord bot
 
