@@ -40,7 +40,7 @@
     "lintfix": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx --fix"
   },
   "devDependencies": {
-    "eslint": "7.32.0",
+    "eslint": "9.26.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
