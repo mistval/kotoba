@@ -22,7 +22,7 @@
   "homepage": "https://github.com/mistval/kotoba#readme",
   "dependencies": {
     "@google-cloud/logging-bunyan": "5.1.0",
-    "axios": "^1.12.2",
+    "axios": "^1.13.5",
     "bunyan": "1.8.12",
     "canvas": "^3.2.0",
     "canvas-5-polyfill": "0.1.5",
@@ -32,7 +32,7 @@
     "html-entities": "1.2.1",
     "htmlparser": "1.7.7",
     "https-proxy-agent": "5.0.0",
-    "kitsu": "^10.2.0",
+    "kitsu": "^11.1.0",
     "kotoba-common": "file:../common",
     "kotoba-node-common": "file:../node-common",
     "match-tags": "0.0.1",
