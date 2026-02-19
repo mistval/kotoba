@@ -12,7 +12,7 @@
   "dependencies": {
     "better-sqlite3": "^12.5.0",
     "fontkit": "^2.0.2",
-    "glob": "7.1.6",
+    "glob": "13.0.6",
     "locko": "^1.0.0",
     "mongoose": "^8.13.1",
     "node-cache": "^5.1.2",
