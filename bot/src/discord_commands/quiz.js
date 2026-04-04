@@ -352,45 +352,39 @@ async function sendEndQuizMessages(
       userCanVote = await deckSearchUtils.discordUserCanVote(commanderMessage.author.id, customDeck.uniqueId);
 
       if (userCanVote) {
-        const embeds = [{
+        const userId = commanderMessage.author.id;
+        const voteMessage = new InteractiveMessage(userId, { id: `vote_${customDeck.uniqueId}` });
+
+        voteMessage.setEmbeds([{
           title: 'Voting',
-          description: `Didjuu like **${customDeck.shortName}**? React with 👍 to vote for it, or react with ❌ and I won't ask you again for this deck.`,
+          description: `Didjuu like **${customDeck.shortName}**? React with 👍 to vote for it, or react with 🤷 and I won't ask you again for this deck.`,
           color: constants.EMBED_NEUTRAL_COLOR,
-        }];
+        }]);
 
-        const sentMessage = await commanderMessage.channel.createMessage({ embeds });
+        voteMessage.setComponents(ComponentGroup([
+          Button('👍 Like', async () => {
+            try {
+              const user = monochrome.getErisBot().users.get(userId);
+              await updateDbFromUser(user);
+              await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, true);
+            } catch (err) {
+              monochrome.getLogger().warn({ event: 'FAILED VOTE', err });
+            }
+            await voteMessage.disableInteraction();
+          }, { style: 3 }),
+          Button("🤷 Meh", async () => {
+            try {
+              const user = monochrome.getErisBot().users.get(userId);
+              await updateDbFromUser(user);
+              await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, false);
+            } catch (err) {
+              monochrome.getLogger().warn({ event: 'FAILED TO VOTE', err });
+            }
+            await voteMessage.disableInteraction();
+          }, { style: 4 }),
+        ]));
 
-        return await monochrome.reactionButtonManager.registerHandler(
-          sentMessage,
-          [],
-          {
-            '👍': async function(_, _, userId) {
-              try {
-                const user = monochrome.getErisBot().users.get(userId);
-                await updateDbFromUser(user);
-                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, true);
-              } catch (err) {
-                monochrome.getLogger().warn({
-                  event: 'FAILED VOTE',
-                  err,
-                });
-              }
-            },
-            '❌': async function(_, _, userId) {
-              try {
-                const user = monochrome.getErisBot().users.get(userId);
-                await updateDbFromUser(user);
-                await deckSearchUtils.voteForDiscordUser(userId, customDeck.uniqueId, false);
-              } catch (err) {
-                monochrome.getLogger().warn({
-                  event: 'FAILED TO VOTE',
-                  err,
-                });
-              }
-            },
-          },
-          { removeButtonsOnExpire: true, expirationTimeInMs: 180000 },
-        );
+        return await voteMessage.sendOrUpdate(commanderMessage.channel);
       }
     } catch (err) {
       if (err.code === 50013) {
