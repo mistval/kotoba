@@ -1,5 +1,4 @@
 const Monochrome = require('monochrome-bot');
-const { ReactionButtons } = require('erex');
 const path = require('path');
 const fs = require('fs');
 const Bunyan = require('bunyan');
@@ -115,17 +114,6 @@ function createBot() {
     if (handledReady) {
       return;
     }
-
-    monochrome.reactionButtonManager = new ReactionButtons
-      .ReactionButtonManager(monochrome.getErisBot().user.id);
-
-    monochrome.getErisBot().on('messageReactionAdd', (message, emoji, member) => {
-      monochrome.reactionButtonManager.handleMessageReactionAdd(message, emoji, member.id);
-    });
-
-    monochrome.getErisBot().on('messageReactionRemove', (message, emoji, userId) => {
-      monochrome.reactionButtonManager.handleMessageReactionRemove(message, emoji, userId);
-    });
 
     loadScheduleIntervals(monochrome);
 
