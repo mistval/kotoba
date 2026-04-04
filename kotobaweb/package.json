@@ -32,14 +32,15 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && set PORT=3001 && NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "start": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && set PORT=3001 && cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "build": "node ./scripts/copy_config.js && node ./scripts/build_font_list.js && cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx",
     "lintfix": "./node_modules/eslint/bin/eslint.js ./src --ext .js,.jsx --fix"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.14.0",

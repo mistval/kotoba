@@ -64,7 +64,7 @@ npm ci
 npm start
 ```
 
-The API will start on port 80 and the React dev server will start on port 3001.
+The API will start on port 80 and the React dev server will start on port 3001. Note: after you login, if you are redirected back to `localhost/dashboard` and it just says `Cannot GET /`, then use the address bar to navigate to `localhost:3001/dashboard` and you should be logged in.
 
 ### Worker process
 
