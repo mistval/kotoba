@@ -353,7 +353,9 @@ async function sendEndQuizMessages(
 
       if (userCanVote) {
         const userId = commanderMessage.author.id;
-        const voteMessage = new InteractiveMessage(userId, { id: `vote_${customDeck.uniqueId}` });
+        const voteMessage = new InteractiveMessage(userId, { id: `vote_${customDeck.uniqueId}` }).on('error', err => {
+          monochrome.getLogger().warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
+        });
 
         voteMessage.setEmbeds([{
           title: 'Voting',
@@ -468,7 +470,10 @@ function createCorrectPercentageField(card) {
 function createInteractiveQuizResponse(response, ownerId, question, channel, prefix) {
   const interactiveMessage = new InteractiveMessage(ownerId, {
     id: `quiz_response_${question}`
-  })
+  }).on('error', err => {
+    globals.logger.warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
+  });
+
   const buttonOptions = { style: 2 }
   const components = ComponentGroup([
     Button(
