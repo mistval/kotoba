@@ -353,7 +353,7 @@ async function sendEndQuizMessages(
 
       if (userCanVote) {
         const userId = commanderMessage.author.id;
-        const voteMessage = new InteractiveMessage(userId, { id: `vote_${customDeck.uniqueId}` }).on('error', err => {
+        const voteMessage = new InteractiveMessage(userId, { id: `vote_${userId}_${Date.now()}` }).on('error', err => {
           monochrome.getLogger().warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
         });
 
@@ -469,7 +469,7 @@ function createCorrectPercentageField(card) {
 
 function createInteractiveQuizResponse(response, ownerId, question, channel, prefix) {
   const interactiveMessage = new InteractiveMessage(ownerId, {
-    id: `quiz_response_${question}`
+    id: `quiz_response_${ownerId}_${Date.now()}`
   }).on('error', err => {
     globals.logger.warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
   });
