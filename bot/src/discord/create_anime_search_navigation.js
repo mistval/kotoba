@@ -1,14 +1,14 @@
-const Kitsu = require('kitsu');
 const constants = require('../common/constants.js');
 const trimEmbed = require('../common/util/trim_embed.js');
 const { throwPublicErrorInfo, throwPublicErrorFatal } = require('../common/util/errors.js');
-
-const api = new Kitsu();
 
 const KITSU_PAGE_BASE_URI = 'https://kitsu.io/anime/';
 
 async function searchAnime(keyword) {
   try {
+    const Kitsu = (await import('kitsu')).default;
+    const api = new Kitsu();
+
     const { data } = await api.get('anime', {
       params: {
         fields: {
