@@ -96,12 +96,16 @@ function stopAllQuizzesCommand() {
   return promise;
 }
 
-function stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin) {
+function stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin, force) {
   let session = state.quizManager.sessionForLocationId[locationId];
 
   if (session) {
     let messageSender = session.getMessageSender();
     let gameMode = session.getGameMode();
+    if (session.getIsLoaded() && !force) {
+      return Promise.resolve(messageSender.requestForceStop(cancelingUserId, cancelingUserIsAdmin));
+    }
+
     if (gameMode.onlyOwnerOrAdminCanStop && !cancelingUserIsAdmin && session.getOwnerId() !== cancelingUserId) {
       return Promise.resolve(messageSender.notifyStopFailedUserNotAuthorized());
     }
@@ -702,8 +706,8 @@ class QuizManager {
     return stopAllQuizzesCommand();
   }
 
-  stopQuiz(locationId, cancelingUserId, cancelingUserIsAdmin) {
-    return stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin);
+  stopQuiz(locationId, cancelingUserId, cancelingUserIsAdmin, force) {
+    return stopQuizCommand(locationId, cancelingUserId, cancelingUserIsAdmin, force);
   }
 
   saveQuiz(locationId, savingUserId, saveName) {

@@ -354,7 +354,7 @@ async function sendEndQuizMessages(
       if (userCanVote) {
         const userId = commanderMessage.author.id;
         const voteMessage = new InteractiveMessage(userId, { id: `vote_${userId}_${Date.now()}` }).on('error', err => {
-          monochrome.getLogger().warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
+          monochrome.getLogger().error({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
         });
 
         voteMessage.setEmbeds([{
@@ -471,7 +471,7 @@ function createInteractiveQuizResponse(response, ownerId, question, channel, pre
   const interactiveMessage = new InteractiveMessage(ownerId, {
     id: `quiz_response_${ownerId}_${Date.now()}`
   }).on('error', err => {
-    globals.logger.warn({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
+    globals.logger.error({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
   });
 
   const buttonOptions = { style: 2 }
@@ -561,6 +561,33 @@ class DiscordMessageSender {
     }
 
     return this.audioConnection.stopPlaying();
+  }
+
+  async requestForceStop(cancelingUserId, cancelingUserIsAdmin) {
+    this.monochrome.getLogger().info({ event: 'Requesting force stop', cancelingUserId, cancelingUserIsAdmin });
+
+    const requestForceStopMessage = new InteractiveMessage(cancelingUserId, { id: `force_stop_${cancelingUserId}_${Date.now()}` }).on('error', err => {
+      this.monochrome.getLogger().error({ event: 'INTERACTIVE MESSAGE ERROR EVENT', err });
+    });
+
+    requestForceStopMessage.setEmbeds([{
+      title: 'Stop?',
+      description: `Are you sure you want to stop the quiz without saving? If so, press **Stop**. Or press **Save** to save instead.`,
+      color: constants.EMBED_WARNING_COLOR,
+    }]);
+
+    requestForceStopMessage.setComponents(ComponentGroup([
+      Button('Stop', async () => {
+        await quizManager.stopQuiz(this.commanderMessage.channel.id, cancelingUserId, cancelingUserIsAdmin, true);
+        await requestForceStopMessage.disableInteraction();
+      }, { style: 4 }),
+      Button('Save', async () => {
+        await quizManager.saveQuiz(this.commanderMessage.channel.id, cancelingUserId);
+        await requestForceStopMessage.disableInteraction();
+      }, { style: 3 }),
+    ]));
+
+    return requestForceStopMessage.sendOrUpdate(this.commanderMessage.channel);
   }
 
   async showWrongAnswer(card, skipped, hardcore, quickSearchEnabled) {
@@ -2250,7 +2277,7 @@ module.exports = {
 
     // Stop operation
     if (intersect(['stop', 'end', 'endquiz', 'quit', 'exit'], remainingTokens2).length > 0) {
-      return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin);
+      return quizManager.stopQuiz(msg.channel.id, msg.author.id, msg.authorIsServerAdmin, false);
     }
 
     const categoryHelp = await getCategoryHelp(remainingTokens2[0]);
