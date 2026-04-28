@@ -8,9 +8,9 @@ const CustomDeckVoteModel = require('kotoba-node-common').models.createCustomDec
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
+const nodeCrypto = require('crypto');
 const rateLimit = require('express-slow-down');
 const { deckValidation } = require('kotoba-common');
-const { v4: uuidv4 } = require('uuid');
 const { crypto } = require('kotoba-node-common');
 
 const {
@@ -326,7 +326,7 @@ routes.post(
         public: req.body.public || false,
         cards: req.body.cards,
         ownerDiscordUser: req.user.discordUser,
-        uniqueId: uuidv4(),
+        uniqueId: nodeCrypto.randomUUID(),
       };
 
       deckFull = deckValidation.sanitizeDeckPreValidation(deckFull);
