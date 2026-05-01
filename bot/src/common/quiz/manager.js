@@ -122,6 +122,15 @@ function skipCommand(locationId) {
   return false;
 }
 
+function discardCommand(locationId) {
+  let action = state.quizManager.currentActionForLocationId[locationId];
+  if (action && action.discard) {
+    action.discard();
+    return true;
+  }
+  return false;
+}
+
 function saveQuizCommand(locationId, savingUserId, saveName) {
   let session = state.quizManager.sessionForLocationId[locationId];
   if (!session) {
@@ -360,10 +369,11 @@ class ShowAnswersAction extends Action {
 }
 
 class ShowWrongAnswerAction extends Action {
-  constructor(session, skipped, hardcore) {
+  constructor(session, skipped, hardcore, discarded) {
     super(session);
     this.skipped_ = skipped;
     this.hardcore_ = !!hardcore;
+    this.discarded_ = !!discarded;
   }
 
   do() {
@@ -371,8 +381,12 @@ class ShowWrongAnswerAction extends Action {
     let currentCard = session.getCurrentCard();
     const quickSearchEnabled = session.isQuickSearchEnabled()
     sessionReportManager.notifyAnswered(session.getLocationId(), currentCard, []);
-    session.markCurrentCardUnanswered();
-    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_, this.hardcore_, quickSearchEnabled)).catch(err => {
+    if (this.discarded_) {
+      session.discardCurrentCard();
+    } else {
+      session.markCurrentCardUnanswered();
+    }
+    return Promise.resolve(session.getMessageSender().showWrongAnswer(currentCard, this.skipped_, this.hardcore_, quickSearchEnabled, this.discarded_)).catch(err => {
       let question = currentCard.question;
       globals.logger.warn({
         event: 'FAILED TO SHOW TIMEOUT MESSAGE',
@@ -484,6 +498,25 @@ class AskQuestionAction extends Action {
     } catch (err) {
       globals.logger.error({
         event: 'FAILED TO SKIP',
+        err,
+      });
+    }
+  }
+
+  discard() {
+    try {
+      if (this.fulfill_) {
+        let session = this.getSession_();
+        let gameMode = session.getGameMode();
+        if (gameMode.isMasteryMode) {
+          this.fulfill_(new ShowWrongAnswerAction(session, false, false, true));
+        } else {
+          this.fulfill_(new ShowWrongAnswerAction(session, true, false, false));
+        }
+      }
+    } catch (err) {
+      globals.logger.error({
+        event: 'FAILED TO DISCARD',
         err,
       });
     }
@@ -716,6 +749,10 @@ class QuizManager {
 
   skip(locationId) {
     return skipCommand(locationId);
+  }
+
+  discard(locationId) {
+    return discardCommand(locationId);
   }
 
   getDesiredSettings() {

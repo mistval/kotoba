@@ -23,6 +23,9 @@ module.exports = {
     if (msgLowercase === 'skip' || msgLowercase === 's' || msgLowercase === 'ｓ' || msgLowercase === '。' || msgLowercase === '。。') {
       return QuizManager.skip(msg.channel.id);
     }
+    if (msgLowercase === 'discard' || msgLowercase === 'd' || msgLowercase === 'ｄ') {
+      return QuizManager.discard(msg.channel.id);
+    }
     const isDm = !msg.channel.guild;
     if (isDm) {
       return 'Wrong answer in DM';

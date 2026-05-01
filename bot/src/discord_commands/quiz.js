@@ -590,7 +590,7 @@ class DiscordMessageSender {
     return requestForceStopMessage.sendOrUpdate(this.commanderMessage.channel);
   }
 
-  async showWrongAnswer(card, skipped, hardcore, quickSearchEnabled) {
+  async showWrongAnswer(card, skipped, hardcore, quickSearchEnabled, discarded) {
     await this.stopAudio();
     const correctAnswerFunction =
       IntermediateAnswerListElementStrategy[card.discordIntermediateAnswerListElementStrategy];
@@ -607,14 +607,15 @@ class DiscordMessageSender {
     if (card.meaning) {
       fields.push({ name: card.commentFieldName, value: card.meaning, inline: false });
     }
+
     let response = {
       embeds: [{
         title: card.deckName,
         url: card.dictionaryLink,
-        description: skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!'),
+        description: discarded ? 'Card discarded and will not appear again!' : (skipped ? 'Question skipped!' : (hardcore ? 'No one got it right' : 'Time\'s up!')),
         color: constants.EMBED_WRONG_COLOR,
         fields,
-        footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'skip\' or just \'s\' or \'。\'.' },
+        footer: { icon_url: constants.FOOTER_ICON_URI, text: 'You can skip questions by saying \'s\' or \'。\'. In conquest mode you can discard questions (won\'t appear again) by saying \'d\'.' },
       }],
     };
     response = trimEmbed(response);

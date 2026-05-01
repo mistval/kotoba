@@ -37,7 +37,11 @@ function calculateIndexTop(streakLength) {
     || indexTopForStreakLength[indexTopForStreakLength.length - 1] * (streakLength - indexTopForStreakLength.length + 2);
 }
 
-function recycleCard(card, upcomingCardsIndexArray, numDecks, settings) {
+function recycleCard(card, upcomingCardsIndexArray, numDecks, settings, forceDiscard) {
+  if (forceDiscard) {
+    return false;
+  }
+
   if (calculatePercentCorrect(card) >= settings.conquestModePercentCorrectThreshold) {
     return false;
   }

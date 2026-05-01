@@ -55,6 +55,11 @@ manualSections.push(new ManualSection(
 ));
 
 manualSections.push(new ManualSection(
+  'Skipping and Discarding',
+  (<p>During a quiz, say <span className="example">skip</span> or just <span className="example">s</span> to skip a question. This still counts as getting the question "wrong", it just accelerates the timer. In conquest mode, you can also say <span className="example">discard</span> or just <span className="example">d</span> to discard a question. Unlike skipping, discarding a question means you won't see it again.</p>),
+));
+
+manualSections.push(new ManualSection(
   'Pacing Presets',
   (<p>You can configure the pace of the game by using the pacing presets (from fastest to slowest) <span className="example">nodelay</span>, <span className="example">faster</span>, <span className="example">fast</span>, or <span className="example">slow</span>. Just specify the preset somewhere in your quiz command. For example: <span className="example">k!quiz N1 fast</span> for an N1 quiz that's a little faster than default. For more fine-grained control over pacing, see the next four sections in this manual, or use the <span className="example">custom</span> pacing option in my <NavLink to="/bot/quizbuilder">Quiz Command Builder</NavLink>.</p>),
 ));

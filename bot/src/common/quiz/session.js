@@ -307,7 +307,7 @@ class SessionInformation {
     this.recycleCurrentCard_();
   }
 
-  markCurrentCardUnanswered() {
+  markCurrentCardUnanswered(forceDiscard) {
     // HACK. Unhackify this.
     let newTimeLimit = this.getGameMode().updateAnswerTimeLimitForUnansweredQuestion(this.getSettings().answerTimeLimitInMs);
     if (newTimeLimit !== this.getSettings().answerTimeLimitInMs) {
@@ -315,7 +315,11 @@ class SessionInformation {
       this.getSettings().answerTimeLimitInMs = newTimeLimit;
     }
     ++this.numCardsUnanswered_;
-    this.recycleCurrentCard_();
+    this.recycleCurrentCard_(forceDiscard);
+  }
+
+  discardCurrentCard() {
+    this.markCurrentCardUnanswered(true);
   }
 
   getCurrentCard() {
@@ -345,8 +349,8 @@ class SessionInformation {
     }));
   }
 
-  recycleCurrentCard_() {
-    this.deckCollection_.recycleCard(this.getCurrentCard(), this.getGameMode(), this.getSettings());
+  recycleCurrentCard_(forceDiscard) {
+    this.deckCollection_.recycleCard(this.getCurrentCard(), this.getGameMode(), this.getSettings(), forceDiscard);
   }
 }
 
